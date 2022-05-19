@@ -103,7 +103,6 @@ paths:
       tags:
         - print.printConnector
       summary: Get connectors from print
-      description: The list of available print connectors.
       operationId: print_ListConnectors
       parameters:
         - $ref: '#/components/parameters/top'
@@ -208,7 +207,6 @@ paths:
       tags:
         - print.printConnector
       summary: Get connectors from print
-      description: The list of available print connectors.
       operationId: print_GetConnectors
       parameters:
         - name: printConnector-id
@@ -315,7 +313,6 @@ paths:
       tags:
         - print.printOperation
       summary: Get operations from print
-      description: The list of print long running operations.
       operationId: print_ListOperations
       parameters:
         - $ref: '#/components/parameters/top'
@@ -402,7 +399,6 @@ paths:
       tags:
         - print.printOperation
       summary: Get operations from print
-      description: The list of print long running operations.
       operationId: print_GetOperations
       parameters:
         - name: printOperation-id
@@ -503,7 +499,6 @@ paths:
       tags:
         - print.printer
       summary: Get printers from print
-      description: The list of printers registered in the tenant.
       operationId: print_ListPrinters
       parameters:
         - $ref: '#/components/parameters/top'
@@ -636,7 +631,6 @@ paths:
       tags:
         - print.printer
       summary: Get printers from print
-      description: The list of printers registered in the tenant.
       operationId: print_GetPrinters
       parameters:
         - name: printer-id
@@ -722,6 +716,12 @@ paths:
               operationId: print.Printers.ListTaskTriggers
               parameters:
                 printer-id: $request.path.printer-id
+            getCapabilities:
+              operationId: print.printers.printer.getCapabilities
+            resetDefaults:
+              operationId: print.printers.printer.resetDefaults
+            restoreFactoryDefaults:
+              operationId: print.printers.printer.restoreFactoryDefaults
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -780,7 +780,6 @@ paths:
       tags:
         - print.printer
       summary: Get connectors from print
-      description: The connectors that are associated with the printer.
       operationId: print.printers_ListConnectors
       parameters:
         - name: printer-id
@@ -870,7 +869,6 @@ paths:
       tags:
         - print.printer
       summary: Get connectors from print
-      description: The connectors that are associated with the printer.
       operationId: print.printers_GetConnectors
       parameters:
         - name: printer-id
@@ -1083,7 +1081,6 @@ paths:
       tags:
         - print.printer
       summary: Get shares from print
-      description: 'The list of printerShares that are associated with the printer. Currently, only one printerShare can be associated with the printer. Read-only. Nullable.'
       operationId: print.printers_ListShares
       parameters:
         - name: printer-id
@@ -1193,7 +1190,6 @@ paths:
       tags:
         - print.printer
       summary: Get shares from print
-      description: 'The list of printerShares that are associated with the printer. Currently, only one printerShare can be associated with the printer. Read-only. Nullable.'
       operationId: print.printers_GetShares
       parameters:
         - name: printer-id
@@ -1290,7 +1286,6 @@ paths:
       tags:
         - print.printer
       summary: Get taskTriggers from print
-      description: A list of task triggers that are associated with the printer.
       operationId: print.printers_ListTaskTriggers
       parameters:
         - name: printer-id
@@ -1391,7 +1386,6 @@ paths:
       tags:
         - print.printer
       summary: Get taskTriggers from print
-      description: A list of task triggers that are associated with the printer.
       operationId: print.printers_GetTaskTriggers
       parameters:
         - name: printer-id
@@ -1520,7 +1514,6 @@ paths:
       tags:
         - print.printer
       summary: Get definition from print
-      description: An abstract definition that will be used to create a printTask when triggered by a print event. Read-only.
       operationId: print.printers.taskTriggers_GetDefinition
       parameters:
         - name: printer-id
@@ -1885,7 +1878,6 @@ paths:
       tags:
         - print.printerShare
       summary: Get allowedGroups from print
-      description: The groups whose users have access to print using the printer.
       operationId: print.printerShares_ListAllowedGroups
       parameters:
         - name: printerShare-id
@@ -2197,7 +2189,6 @@ paths:
       tags:
         - print.printerShare
       summary: Get ref of allowedGroups from print
-      description: The groups whose users have access to print using the printer.
       operationId: print.printerShares_ListGraphRefAllowedGroups
       parameters:
         - name: printerShare-id
@@ -2375,7 +2366,6 @@ paths:
       tags:
         - print.printerShare
       summary: Get allowedUsers from print
-      description: The users who have access to print using the printer.
       operationId: print.printerShares_ListAllowedUsers
       parameters:
         - name: printerShare-id
@@ -2840,7 +2830,6 @@ paths:
       tags:
         - print.printerShare
       summary: Get ref of allowedUsers from print
-      description: The users who have access to print using the printer.
       operationId: print.printerShares_ListGraphRefAllowedUsers
       parameters:
         - name: printerShare-id
@@ -3072,7 +3061,6 @@ paths:
       tags:
         - print.printerShare
       summary: Get printer from print
-      description: The printer that this printer share is related to.
       operationId: print.printerShares_GetPrinter
       parameters:
         - name: printerShare-id
@@ -3291,7 +3279,6 @@ paths:
       tags:
         - print.reportRoot
       summary: Get applicationSignInDetailedSummary from print
-      description: Represents a detailed summary of an application sign-in.
       operationId: print.reports_ListApplicationSignInDetailedSummary
       parameters:
         - $ref: '#/components/parameters/top'
@@ -3387,7 +3374,6 @@ paths:
       tags:
         - print.reportRoot
       summary: Get applicationSignInDetailedSummary from print
-      description: Represents a detailed summary of an application sign-in.
       operationId: print.reports_GetApplicationSignInDetailedSummary
       parameters:
         - name: applicationSignInDetailedSummary-id
@@ -3491,7 +3477,6 @@ paths:
       tags:
         - print.reportRoot
       summary: Get authenticationMethods from print
-      description: Container for navigation properties for Azure AD authentication methods resources.
       operationId: print.reports_GetAuthenticationMethods
       parameters:
         - name: $select
@@ -3530,6 +3515,10 @@ paths:
           links:
             userRegistrationDetails:
               operationId: print.reports.AuthenticationMethods.ListUserRegistrationDetails
+            usersRegisteredByFeature:
+              operationId: print.reports.authenticationMethods.usersRegisteredByFeature
+            usersRegisteredByMethod:
+              operationId: print.reports.authenticationMethods.usersRegisteredByMethod
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3663,7 +3652,6 @@ paths:
       tags:
         - print.reportRoot
       summary: Get userRegistrationDetails from print
-      description: 'Represents the state of a user''s authentication methods, including which methods are registered and which features the user is registered and capable of (such as multi-factor authentication, self-service password reset, and passwordless authentication).'
       operationId: print.reports.authenticationMethods_ListUserRegistrationDetails
       parameters:
         - $ref: '#/components/parameters/top'
@@ -3774,7 +3762,6 @@ paths:
       tags:
         - print.reportRoot
       summary: Get userRegistrationDetails from print
-      description: 'Represents the state of a user''s authentication methods, including which methods are registered and which features the user is registered and capable of (such as multi-factor authentication, self-service password reset, and passwordless authentication).'
       operationId: print.reports.authenticationMethods_GetUserRegistrationDetails
       parameters:
         - name: userRegistrationDetails-id
@@ -3883,7 +3870,6 @@ paths:
       tags:
         - print.reportRoot
       summary: Get credentialUserRegistrationDetails from print
-      description: Details of the usage of self-service password reset and multi-factor authentication (MFA) for all registered users.
       operationId: print.reports_ListCredentialUserRegistrationDetails
       parameters:
         - $ref: '#/components/parameters/top'
@@ -3985,7 +3971,6 @@ paths:
       tags:
         - print.reportRoot
       summary: Get credentialUserRegistrationDetails from print
-      description: Details of the usage of self-service password reset and multi-factor authentication (MFA) for all registered users.
       operationId: print.reports_GetCredentialUserRegistrationDetails
       parameters:
         - name: credentialUserRegistrationDetails-id
@@ -5675,7 +5660,6 @@ paths:
       tags:
         - print.reportRoot
       summary: Get userCredentialUsageDetails from print
-      description: Represents the self-service password reset (SSPR) usage for a given tenant.
       operationId: print.reports_ListUserCredentialUsageDetails
       parameters:
         - $ref: '#/components/parameters/top'
@@ -5777,7 +5761,6 @@ paths:
       tags:
         - print.reportRoot
       summary: Get userCredentialUsageDetails from print
-      description: Represents the self-service password reset (SSPR) usage for a given tenant.
       operationId: print.reports_GetUserCredentialUsageDetails
       parameters:
         - name: userCredentialUsageDetails-id
@@ -5883,7 +5866,6 @@ paths:
       tags:
         - print.printService
       summary: Get services from print
-      description: The list of available Universal Print service endpoints.
       operationId: print_ListServices
       parameters:
         - $ref: '#/components/parameters/top'
@@ -5966,7 +5948,6 @@ paths:
       tags:
         - print.printService
       summary: Get services from print
-      description: The list of available Universal Print service endpoints.
       operationId: print_GetServices
       parameters:
         - name: printService-id
@@ -6072,7 +6053,6 @@ paths:
       tags:
         - print.printService
       summary: Get endpoints from print
-      description: Endpoints that can be used to access the service. Read-only. Nullable.
       operationId: print.services_ListEndpoints
       parameters:
         - name: printService-id
@@ -6174,7 +6154,6 @@ paths:
       tags:
         - print.printService
       summary: Get endpoints from print
-      description: Endpoints that can be used to access the service. Read-only. Nullable.
       operationId: print.services_GetEndpoints
       parameters:
         - name: printService-id
@@ -6296,7 +6275,6 @@ paths:
       tags:
         - print.printerShare
       summary: Get shares from print
-      description: The list of printer shares registered in the tenant.
       operationId: print_ListShares
       parameters:
         - $ref: '#/components/parameters/top'
@@ -6421,7 +6399,6 @@ paths:
       tags:
         - print.printerShare
       summary: Get shares from print
-      description: The list of printer shares registered in the tenant.
       operationId: print_GetShares
       parameters:
         - name: printerShare-id
@@ -6557,7 +6534,6 @@ paths:
       tags:
         - print.printerShare
       summary: Get allowedGroups from print
-      description: The groups whose users have access to print using the printer.
       operationId: print.shares_ListAllowedGroups
       parameters:
         - name: printerShare-id
@@ -6869,7 +6845,6 @@ paths:
       tags:
         - print.printerShare
       summary: Get ref of allowedGroups from print
-      description: The groups whose users have access to print using the printer.
       operationId: print.shares_ListGraphRefAllowedGroups
       parameters:
         - name: printerShare-id
@@ -7047,7 +7022,6 @@ paths:
       tags:
         - print.printerShare
       summary: Get allowedUsers from print
-      description: The users who have access to print using the printer.
       operationId: print.shares_ListAllowedUsers
       parameters:
         - name: printerShare-id
@@ -7512,7 +7486,6 @@ paths:
       tags:
         - print.printerShare
       summary: Get ref of allowedUsers from print
-      description: The users who have access to print using the printer.
       operationId: print.shares_ListGraphRefAllowedUsers
       parameters:
         - name: printerShare-id
@@ -7744,7 +7717,6 @@ paths:
       tags:
         - print.printerShare
       summary: Get printer from print
-      description: The printer that this printer share is related to.
       operationId: print.shares_GetPrinter
       parameters:
         - name: printerShare-id
@@ -7838,7 +7810,6 @@ paths:
       tags:
         - print.printTaskDefinition
       summary: Get taskDefinitions from print
-      description: List of abstract definition for a task that can be triggered when various events occur within Universal Print.
       operationId: print_ListTaskDefinitions
       parameters:
         - $ref: '#/components/parameters/top'
@@ -7927,7 +7898,6 @@ paths:
       tags:
         - print.printTaskDefinition
       summary: Get taskDefinitions from print
-      description: List of abstract definition for a task that can be triggered when various events occur within Universal Print.
       operationId: print_GetTaskDefinitions
       parameters:
         - name: printTaskDefinition-id
@@ -8035,7 +8005,6 @@ paths:
       tags:
         - print.printTaskDefinition
       summary: Get tasks from print
-      description: A list of tasks that have been created based on this definition. The list includes currently running tasks and recently completed tasks. Read-only.
       operationId: print.taskDefinitions_ListTasks
       parameters:
         - name: printTaskDefinition-id
@@ -8141,7 +8110,6 @@ paths:
       tags:
         - print.printTaskDefinition
       summary: Get tasks from print
-      description: A list of tasks that have been created based on this definition. The list includes currently running tasks and recently completed tasks. Read-only.
       operationId: print.taskDefinitions_GetTasks
       parameters:
         - name: printTaskDefinition-id
@@ -8278,7 +8246,6 @@ paths:
       tags:
         - print.printTaskDefinition
       summary: Get definition from print
-      description: The printTaskDefinition that was used to create this task. Read-only.
       operationId: print.taskDefinitions.tasks_GetDefinition
       parameters:
         - name: printTaskDefinition-id
@@ -8344,7 +8311,6 @@ paths:
       tags:
         - print.printTaskDefinition
       summary: Get trigger from print
-      description: The printTaskTrigger that triggered this task's execution. Read-only.
       operationId: print.taskDefinitions.tasks_GetTrigger
       parameters:
         - name: printTaskDefinition-id

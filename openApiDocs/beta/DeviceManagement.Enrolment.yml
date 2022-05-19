@@ -11,7 +11,6 @@ paths:
       tags:
         - deviceManagement.androidDeviceOwnerEnrollmentProfile
       summary: Get androidDeviceOwnerEnrollmentProfiles from deviceManagement
-      description: Android device owner enrollment profile entities.
       operationId: deviceManagement_ListAndroidDeviceOwnerEnrollmentProfiles
       parameters:
         - $ref: '#/components/parameters/top'
@@ -149,7 +148,6 @@ paths:
       tags:
         - deviceManagement.androidDeviceOwnerEnrollmentProfile
       summary: Get androidDeviceOwnerEnrollmentProfiles from deviceManagement
-      description: Android device owner enrollment profile entities.
       operationId: deviceManagement_GetAndroidDeviceOwnerEnrollmentProfiles
       parameters:
         - name: androidDeviceOwnerEnrollmentProfile-id
@@ -209,6 +207,11 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.androidDeviceOwnerEnrollmentProfile'
+          links:
+            createToken:
+              operationId: deviceManagement.androidDeviceOwnerEnrollmentProfiles.androidDeviceOwnerEnrollmentProfile.createToken
+            revokeToken:
+              operationId: deviceManagement.androidDeviceOwnerEnrollmentProfiles.androidDeviceOwnerEnrollmentProfile.revokeToken
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -267,7 +270,6 @@ paths:
       tags:
         - deviceManagement.androidForWorkEnrollmentProfile
       summary: Get androidForWorkEnrollmentProfiles from deviceManagement
-      description: Android for Work enrollment profile entities.
       operationId: deviceManagement_ListAndroidForWorkEnrollmentProfiles
       parameters:
         - $ref: '#/components/parameters/top'
@@ -378,7 +380,6 @@ paths:
       tags:
         - deviceManagement.androidForWorkEnrollmentProfile
       summary: Get androidForWorkEnrollmentProfiles from deviceManagement
-      description: Android for Work enrollment profile entities.
       operationId: deviceManagement_GetAndroidForWorkEnrollmentProfiles
       parameters:
         - name: androidForWorkEnrollmentProfile-id
@@ -429,6 +430,11 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.androidForWorkEnrollmentProfile'
+          links:
+            createToken:
+              operationId: deviceManagement.androidForWorkEnrollmentProfiles.androidForWorkEnrollmentProfile.createToken
+            revokeToken:
+              operationId: deviceManagement.androidForWorkEnrollmentProfiles.androidForWorkEnrollmentProfile.revokeToken
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -487,7 +493,6 @@ paths:
       tags:
         - deviceManagement.appleUserInitiatedEnrollmentProfile
       summary: Get appleUserInitiatedEnrollmentProfiles from deviceManagement
-      description: Apple user initiated enrollment profiles
       operationId: deviceManagement_ListAppleUserInitiatedEnrollmentProfiles
       parameters:
         - $ref: '#/components/parameters/top'
@@ -594,7 +599,6 @@ paths:
       tags:
         - deviceManagement.appleUserInitiatedEnrollmentProfile
       summary: Get appleUserInitiatedEnrollmentProfiles from deviceManagement
-      description: Apple user initiated enrollment profiles
       operationId: deviceManagement_GetAppleUserInitiatedEnrollmentProfiles
       parameters:
         - name: appleUserInitiatedEnrollmentProfile-id
@@ -650,6 +654,8 @@ paths:
               operationId: deviceManagement.AppleUserInitiatedEnrollmentProfiles.ListAssignments
               parameters:
                 appleUserInitiatedEnrollmentProfile-id: $request.path.appleUserInitiatedEnrollmentProfile-id
+            setPriority:
+              operationId: deviceManagement.appleUserInitiatedEnrollmentProfiles.appleUserInitiatedEnrollmentProfile.setPriority
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -708,7 +714,6 @@ paths:
       tags:
         - deviceManagement.appleUserInitiatedEnrollmentProfile
       summary: Get assignments from deviceManagement
-      description: The list of assignments for this profile.
       operationId: deviceManagement.appleUserInitiatedEnrollmentProfiles_ListAssignments
       parameters:
         - name: appleUserInitiatedEnrollmentProfile-id
@@ -807,7 +812,6 @@ paths:
       tags:
         - deviceManagement.appleUserInitiatedEnrollmentProfile
       summary: Get assignments from deviceManagement
-      description: The list of assignments for this profile.
       operationId: deviceManagement.appleUserInitiatedEnrollmentProfiles_GetAssignments
       parameters:
         - name: appleUserInitiatedEnrollmentProfile-id
@@ -928,7 +932,6 @@ paths:
       tags:
         - deviceManagement.deviceManagementAutopilotEvent
       summary: Get autopilotEvents from deviceManagement
-      description: The list of autopilot events for the tenant.
       operationId: deviceManagement_ListAutopilotEvents
       parameters:
         - $ref: '#/components/parameters/top'
@@ -1089,7 +1092,6 @@ paths:
       tags:
         - deviceManagement.deviceManagementAutopilotEvent
       summary: Get autopilotEvents from deviceManagement
-      description: The list of autopilot events for the tenant.
       operationId: deviceManagement_GetAutopilotEvents
       parameters:
         - name: deviceManagementAutopilotEvent-id
@@ -1221,7 +1223,6 @@ paths:
       tags:
         - deviceManagement.deviceManagementAutopilotEvent
       summary: Get policyStatusDetails from deviceManagement
-      description: Policy and application status details for this device.
       operationId: deviceManagement.autopilotEvents_ListPolicyStatusDetails
       parameters:
         - name: deviceManagementAutopilotEvent-id
@@ -1335,7 +1336,6 @@ paths:
       tags:
         - deviceManagement.deviceManagementAutopilotEvent
       summary: Get policyStatusDetails from deviceManagement
-      description: Policy and application status details for this device.
       operationId: deviceManagement.autopilotEvents_GetPolicyStatusDetails
       parameters:
         - name: deviceManagementAutopilotEvent-id
@@ -1461,7 +1461,6 @@ paths:
       tags:
         - deviceManagement.onPremisesConditionalAccessSettings
       summary: Get conditionalAccessSettings from deviceManagement
-      description: The Exchange on premises conditional access settings. On premises conditional access will require devices to be both enrolled and compliant for mail access
       operationId: deviceManagement_GetConditionalAccessSettings
       parameters:
         - name: $select
@@ -1542,7 +1541,6 @@ paths:
       tags:
         - deviceManagement.depOnboardingSetting
       summary: Get depOnboardingSettings from deviceManagement
-      description: This collections of multiple DEP tokens per-tenant.
       operationId: deviceManagement_ListDepOnboardingSettings
       parameters:
         - $ref: '#/components/parameters/top'
@@ -1667,7 +1665,6 @@ paths:
       tags:
         - deviceManagement.depOnboardingSetting
       summary: Get depOnboardingSettings from deviceManagement
-      description: This collections of multiple DEP tokens per-tenant.
       operationId: deviceManagement_GetDepOnboardingSettings
       parameters:
         - name: depOnboardingSetting-id
@@ -1745,6 +1742,18 @@ paths:
               operationId: deviceManagement.DepOnboardingSettings.ListImportedAppleDeviceIdentities
               parameters:
                 depOnboardingSetting-id: $request.path.depOnboardingSetting-id
+            generateEncryptionPublicKey:
+              operationId: deviceManagement.depOnboardingSettings.depOnboardingSetting.generateEncryptionPublicKey
+            getEncryptionPublicKey:
+              operationId: deviceManagement.depOnboardingSettings.depOnboardingSetting.getEncryptionPublicKey
+            shareForSchoolDataSyncService:
+              operationId: deviceManagement.depOnboardingSettings.depOnboardingSetting.shareForSchoolDataSyncService
+            syncWithAppleDeviceEnrollmentProgram:
+              operationId: deviceManagement.depOnboardingSettings.depOnboardingSetting.syncWithAppleDeviceEnrollmentProgram
+            unshareForSchoolDataSyncService:
+              operationId: deviceManagement.depOnboardingSettings.depOnboardingSetting.unshareForSchoolDataSyncService
+            uploadDepToken:
+              operationId: deviceManagement.depOnboardingSettings.depOnboardingSetting.uploadDepToken
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1803,7 +1812,6 @@ paths:
       tags:
         - deviceManagement.depOnboardingSetting
       summary: Get defaultIosEnrollmentProfile from deviceManagement
-      description: Default iOS Enrollment Profile
       operationId: deviceManagement.depOnboardingSettings_GetDefaultIosEnrollmentProfile
       parameters:
         - name: depOnboardingSetting-id
@@ -1906,7 +1914,6 @@ paths:
       tags:
         - deviceManagement.depOnboardingSetting
       summary: Get defaultMacOsEnrollmentProfile from deviceManagement
-      description: Default MacOs Enrollment Profile
       operationId: deviceManagement.depOnboardingSettings_GetDefaultMacOsEnrollmentProfile
       parameters:
         - name: depOnboardingSetting-id
@@ -1989,7 +1996,6 @@ paths:
       tags:
         - deviceManagement.depOnboardingSetting
       summary: Get enrollmentProfiles from deviceManagement
-      description: The enrollment profiles.
       operationId: deviceManagement.depOnboardingSettings_ListEnrollmentProfiles
       parameters:
         - name: depOnboardingSetting-id
@@ -2103,7 +2109,6 @@ paths:
       tags:
         - deviceManagement.depOnboardingSetting
       summary: Get enrollmentProfiles from deviceManagement
-      description: The enrollment profiles.
       operationId: deviceManagement.depOnboardingSettings_GetEnrollmentProfiles
       parameters:
         - name: depOnboardingSetting-id
@@ -2157,6 +2162,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.enrollmentProfile'
+          links:
+            exportMobileConfig:
+              operationId: deviceManagement.depOnboardingSettings.depOnboardingSetting.enrollmentProfiles.enrollmentProfile.exportMobileConfig
+            setDefaultProfile:
+              operationId: deviceManagement.depOnboardingSettings.depOnboardingSetting.enrollmentProfiles.enrollmentProfile.setDefaultProfile
+            updateDeviceProfileAssignment:
+              operationId: deviceManagement.depOnboardingSettings.depOnboardingSetting.enrollmentProfiles.enrollmentProfile.updateDeviceProfileAssignment
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2229,7 +2241,6 @@ paths:
       tags:
         - deviceManagement.depOnboardingSetting
       summary: Get importedAppleDeviceIdentities from deviceManagement
-      description: The imported Apple device identities.
       operationId: deviceManagement.depOnboardingSettings_ListImportedAppleDeviceIdentities
       parameters:
         - name: depOnboardingSetting-id
@@ -2358,7 +2369,6 @@ paths:
       tags:
         - deviceManagement.depOnboardingSetting
       summary: Get importedAppleDeviceIdentities from deviceManagement
-      description: The imported Apple device identities.
       operationId: deviceManagement.depOnboardingSettings_GetImportedAppleDeviceIdentities
       parameters:
         - name: depOnboardingSetting-id
@@ -2489,7 +2499,6 @@ paths:
       tags:
         - deviceManagement.deviceEnrollmentConfiguration
       summary: Get deviceEnrollmentConfigurations from deviceManagement
-      description: The list of device enrollment configurations
       operationId: deviceManagement_ListDeviceEnrollmentConfigurations
       parameters:
         - $ref: '#/components/parameters/top'
@@ -2596,7 +2605,6 @@ paths:
       tags:
         - deviceManagement.deviceEnrollmentConfiguration
       summary: Get deviceEnrollmentConfigurations from deviceManagement
-      description: The list of device enrollment configurations
       operationId: deviceManagement_GetDeviceEnrollmentConfigurations
       parameters:
         - name: deviceEnrollmentConfiguration-id
@@ -2652,6 +2660,12 @@ paths:
               operationId: deviceManagement.DeviceEnrollmentConfigurations.ListAssignments
               parameters:
                 deviceEnrollmentConfiguration-id: $request.path.deviceEnrollmentConfiguration-id
+            assign:
+              operationId: deviceManagement.deviceEnrollmentConfigurations.deviceEnrollmentConfiguration.assign
+            createEnrollmentNotificationConfiguration:
+              operationId: deviceManagement.deviceEnrollmentConfigurations.deviceEnrollmentConfiguration.createEnrollmentNotificationConfiguration
+            setPriority:
+              operationId: deviceManagement.deviceEnrollmentConfigurations.deviceEnrollmentConfiguration.setPriority
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2710,7 +2724,6 @@ paths:
       tags:
         - deviceManagement.deviceEnrollmentConfiguration
       summary: Get assignments from deviceManagement
-      description: The list of group assignments for the device configuration profile
       operationId: deviceManagement.deviceEnrollmentConfigurations_ListAssignments
       parameters:
         - name: deviceEnrollmentConfiguration-id
@@ -2815,7 +2828,6 @@ paths:
       tags:
         - deviceManagement.deviceEnrollmentConfiguration
       summary: Get assignments from deviceManagement
-      description: The list of group assignments for the device configuration profile
       operationId: deviceManagement.deviceEnrollmentConfigurations_GetAssignments
       parameters:
         - name: deviceEnrollmentConfiguration-id
@@ -2938,7 +2950,6 @@ paths:
       tags:
         - deviceManagement.importedDeviceIdentity
       summary: Get importedDeviceIdentities from deviceManagement
-      description: The imported device identities.
       operationId: deviceManagement_ListImportedDeviceIdentities
       parameters:
         - $ref: '#/components/parameters/top'
@@ -3043,7 +3054,6 @@ paths:
       tags:
         - deviceManagement.importedDeviceIdentity
       summary: Get importedDeviceIdentities from deviceManagement
-      description: The imported device identities.
       operationId: deviceManagement_GetImportedDeviceIdentities
       parameters:
         - name: importedDeviceIdentity-id
@@ -3150,7 +3160,6 @@ paths:
       tags:
         - deviceManagement.importedWindowsAutopilotDeviceIdentity
       summary: Get importedWindowsAutopilotDeviceIdentities from deviceManagement
-      description: Collection of imported Windows autopilot devices.
       operationId: deviceManagement_ListImportedWindowsAutopilotDeviceIdentities
       parameters:
         - $ref: '#/components/parameters/top'
@@ -3252,7 +3261,6 @@ paths:
       tags:
         - deviceManagement.importedWindowsAutopilotDeviceIdentity
       summary: Get importedWindowsAutopilotDeviceIdentities from deviceManagement
-      description: Collection of imported Windows autopilot devices.
       operationId: deviceManagement_GetImportedWindowsAutopilotDeviceIdentities
       parameters:
         - name: importedWindowsAutopilotDeviceIdentity-id
@@ -3358,7 +3366,6 @@ paths:
       tags:
         - deviceManagement.userExperienceAnalyticsNotAutopilotReadyDevice
       summary: Get userExperienceAnalyticsNotAutopilotReadyDevice from deviceManagement
-      description: User experience analytics devices not Windows Autopilot ready.
       operationId: deviceManagement_ListUserExperienceAnalyticsNotAutopilotReadyDevice
       parameters:
         - $ref: '#/components/parameters/top'
@@ -3466,7 +3473,6 @@ paths:
       tags:
         - deviceManagement.userExperienceAnalyticsNotAutopilotReadyDevice
       summary: Get userExperienceAnalyticsNotAutopilotReadyDevice from deviceManagement
-      description: User experience analytics devices not Windows Autopilot ready.
       operationId: deviceManagement_GetUserExperienceAnalyticsNotAutopilotReadyDevice
       parameters:
         - name: userExperienceAnalyticsNotAutopilotReadyDevice-id
@@ -3574,7 +3580,6 @@ paths:
       tags:
         - deviceManagement.windowsAutopilotDeploymentProfile
       summary: Get windowsAutopilotDeploymentProfiles from deviceManagement
-      description: Windows auto pilot deployment profiles
       operationId: deviceManagement_ListWindowsAutopilotDeploymentProfiles
       parameters:
         - $ref: '#/components/parameters/top'
@@ -3698,7 +3703,6 @@ paths:
       tags:
         - deviceManagement.windowsAutopilotDeploymentProfile
       summary: Get windowsAutopilotDeploymentProfiles from deviceManagement
-      description: Windows auto pilot deployment profiles
       operationId: deviceManagement_GetWindowsAutopilotDeploymentProfiles
       parameters:
         - name: windowsAutopilotDeploymentProfile-id
@@ -3765,6 +3769,8 @@ paths:
               operationId: deviceManagement.WindowsAutopilotDeploymentProfiles.ListAssignments
               parameters:
                 windowsAutopilotDeploymentProfile-id: $request.path.windowsAutopilotDeploymentProfile-id
+            assign:
+              operationId: deviceManagement.windowsAutopilotDeploymentProfiles.windowsAutopilotDeploymentProfile.assign
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3823,7 +3829,6 @@ paths:
       tags:
         - deviceManagement.windowsAutopilotDeploymentProfile
       summary: Get assignedDevices from deviceManagement
-      description: The list of assigned devices for the profile.
       operationId: deviceManagement.windowsAutopilotDeploymentProfiles_ListAssignedDevices
       parameters:
         - name: windowsAutopilotDeploymentProfile-id
@@ -3998,7 +4003,6 @@ paths:
       tags:
         - deviceManagement.windowsAutopilotDeploymentProfile
       summary: Get assignedDevices from deviceManagement
-      description: The list of assigned devices for the profile.
       operationId: deviceManagement.windowsAutopilotDeploymentProfiles_GetAssignedDevices
       parameters:
         - name: windowsAutopilotDeploymentProfile-id
@@ -4086,6 +4090,16 @@ paths:
               parameters:
                 windowsAutopilotDeploymentProfile-id: $request.path.windowsAutopilotDeploymentProfile-id
                 windowsAutopilotDeviceIdentity-id: $request.path.windowsAutopilotDeviceIdentity-id
+            assignResourceAccountToDevice:
+              operationId: deviceManagement.windowsAutopilotDeploymentProfiles.windowsAutopilotDeploymentProfile.assignedDevices.windowsAutopilotDeviceIdentity.assignResourceAccountToDevice
+            assignUserToDevice:
+              operationId: deviceManagement.windowsAutopilotDeploymentProfiles.windowsAutopilotDeploymentProfile.assignedDevices.windowsAutopilotDeviceIdentity.assignUserToDevice
+            unassignResourceAccountFromDevice:
+              operationId: deviceManagement.windowsAutopilotDeploymentProfiles.windowsAutopilotDeploymentProfile.assignedDevices.windowsAutopilotDeviceIdentity.unassignResourceAccountFromDevice
+            unassignUserFromDevice:
+              operationId: deviceManagement.windowsAutopilotDeploymentProfiles.windowsAutopilotDeploymentProfile.assignedDevices.windowsAutopilotDeviceIdentity.unassignUserFromDevice
+            updateDeviceProperties:
+              operationId: deviceManagement.windowsAutopilotDeploymentProfiles.windowsAutopilotDeploymentProfile.assignedDevices.windowsAutopilotDeviceIdentity.updateDeviceProperties
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4158,7 +4172,6 @@ paths:
       tags:
         - deviceManagement.windowsAutopilotDeploymentProfile
       summary: Get deploymentProfile from deviceManagement
-      description: Deployment profile currently assigned to the Windows autopilot device.
       operationId: deviceManagement.windowsAutopilotDeploymentProfiles.assignedDevices_GetDeploymentProfile
       parameters:
         - name: windowsAutopilotDeploymentProfile-id
@@ -4242,7 +4255,6 @@ paths:
       tags:
         - deviceManagement.windowsAutopilotDeploymentProfile
       summary: Get intendedDeploymentProfile from deviceManagement
-      description: Deployment profile intended to be assigned to the Windows autopilot device.
       operationId: deviceManagement.windowsAutopilotDeploymentProfiles.assignedDevices_GetIntendedDeploymentProfile
       parameters:
         - name: windowsAutopilotDeploymentProfile-id
@@ -4326,7 +4338,6 @@ paths:
       tags:
         - deviceManagement.windowsAutopilotDeploymentProfile
       summary: Get assignments from deviceManagement
-      description: The list of group assignments for the profile.
       operationId: deviceManagement.windowsAutopilotDeploymentProfiles_ListAssignments
       parameters:
         - name: windowsAutopilotDeploymentProfile-id
@@ -4431,7 +4442,6 @@ paths:
       tags:
         - deviceManagement.windowsAutopilotDeploymentProfile
       summary: Get assignments from deviceManagement
-      description: The list of group assignments for the profile.
       operationId: deviceManagement.windowsAutopilotDeploymentProfiles_GetAssignments
       parameters:
         - name: windowsAutopilotDeploymentProfile-id
@@ -4554,7 +4564,6 @@ paths:
       tags:
         - deviceManagement.windowsAutopilotDeviceIdentity
       summary: Get windowsAutopilotDeviceIdentities from deviceManagement
-      description: The Windows autopilot device identities contained collection.
       operationId: deviceManagement_ListWindowsAutopilotDeviceIdentities
       parameters:
         - $ref: '#/components/parameters/top'
@@ -4714,7 +4723,6 @@ paths:
       tags:
         - deviceManagement.windowsAutopilotDeviceIdentity
       summary: Get windowsAutopilotDeviceIdentities from deviceManagement
-      description: The Windows autopilot device identities contained collection.
       operationId: deviceManagement_GetWindowsAutopilotDeviceIdentities
       parameters:
         - name: windowsAutopilotDeviceIdentity-id
@@ -4793,6 +4801,16 @@ paths:
               operationId: deviceManagement.WindowsAutopilotDeviceIdentities.GetIntendedDeploymentProfile
               parameters:
                 windowsAutopilotDeviceIdentity-id: $request.path.windowsAutopilotDeviceIdentity-id
+            assignResourceAccountToDevice:
+              operationId: deviceManagement.windowsAutopilotDeviceIdentities.windowsAutopilotDeviceIdentity.assignResourceAccountToDevice
+            assignUserToDevice:
+              operationId: deviceManagement.windowsAutopilotDeviceIdentities.windowsAutopilotDeviceIdentity.assignUserToDevice
+            unassignResourceAccountFromDevice:
+              operationId: deviceManagement.windowsAutopilotDeviceIdentities.windowsAutopilotDeviceIdentity.unassignResourceAccountFromDevice
+            unassignUserFromDevice:
+              operationId: deviceManagement.windowsAutopilotDeviceIdentities.windowsAutopilotDeviceIdentity.unassignUserFromDevice
+            updateDeviceProperties:
+              operationId: deviceManagement.windowsAutopilotDeviceIdentities.windowsAutopilotDeviceIdentity.updateDeviceProperties
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4851,7 +4869,6 @@ paths:
       tags:
         - deviceManagement.windowsAutopilotDeviceIdentity
       summary: Get deploymentProfile from deviceManagement
-      description: Deployment profile currently assigned to the Windows autopilot device.
       operationId: deviceManagement.windowsAutopilotDeviceIdentities_GetDeploymentProfile
       parameters:
         - name: windowsAutopilotDeviceIdentity-id
@@ -4926,7 +4943,6 @@ paths:
       tags:
         - deviceManagement.windowsAutopilotDeviceIdentity
       summary: Get intendedDeploymentProfile from deviceManagement
-      description: Deployment profile intended to be assigned to the Windows autopilot device.
       operationId: deviceManagement.windowsAutopilotDeviceIdentities_GetIntendedDeploymentProfile
       parameters:
         - name: windowsAutopilotDeviceIdentity-id
@@ -5001,7 +5017,6 @@ paths:
       tags:
         - deviceManagement.windowsAutopilotSettings
       summary: Get windowsAutopilotSettings from deviceManagement
-      description: The Windows autopilot account settings.
       operationId: deviceManagement_GetWindowsAutopilotSettings
       parameters:
         - name: $select
@@ -5038,6 +5053,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.windowsAutopilotSettings'
+          links:
+            sync:
+              operationId: deviceManagement.windowsAutopilotSettings.sync
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5081,7 +5099,6 @@ paths:
       tags:
         - deviceManagement.windowsFeatureUpdateProfile
       summary: Get windowsFeatureUpdateProfiles from deviceManagement
-      description: A collection of windows feature update profiles
       operationId: deviceManagement_ListWindowsFeatureUpdateProfiles
       parameters:
         - $ref: '#/components/parameters/top'
@@ -5191,7 +5208,6 @@ paths:
       tags:
         - deviceManagement.windowsFeatureUpdateProfile
       summary: Get windowsFeatureUpdateProfiles from deviceManagement
-      description: A collection of windows feature update profiles
       operationId: deviceManagement_GetWindowsFeatureUpdateProfiles
       parameters:
         - name: windowsFeatureUpdateProfile-id
@@ -5248,6 +5264,8 @@ paths:
               operationId: deviceManagement.WindowsFeatureUpdateProfiles.ListAssignments
               parameters:
                 windowsFeatureUpdateProfile-id: $request.path.windowsFeatureUpdateProfile-id
+            assign:
+              operationId: deviceManagement.windowsFeatureUpdateProfiles.windowsFeatureUpdateProfile.assign
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5306,7 +5324,6 @@ paths:
       tags:
         - deviceManagement.windowsFeatureUpdateProfile
       summary: Get assignments from deviceManagement
-      description: The list of group assignments of the profile.
       operationId: deviceManagement.windowsFeatureUpdateProfiles_ListAssignments
       parameters:
         - name: windowsFeatureUpdateProfile-id
@@ -5405,7 +5422,6 @@ paths:
       tags:
         - deviceManagement.windowsFeatureUpdateProfile
       summary: Get assignments from deviceManagement
-      description: The list of group assignments of the profile.
       operationId: deviceManagement.windowsFeatureUpdateProfiles_GetAssignments
       parameters:
         - name: windowsFeatureUpdateProfile-id
@@ -5823,6 +5839,8 @@ paths:
               operationId: roleManagement.cloudPC.ResourceNamespaces.ListResourceActions
               parameters:
                 unifiedRbacResourceNamespace-id: $request.path.unifiedRbacResourceNamespace-id
+            importResourceActions:
+              operationId: roleManagement.cloudPC.resourceNamespaces.unifiedRbacResourceNamespace.importResourceActions
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5922,7 +5940,6 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Get resourceActions from roleManagement
-      description: Operations that an authorized principal are allowed to perform.
       operationId: roleManagement.cloudPC.resourceNamespaces_ListResourceActions
       parameters:
         - name: unifiedRbacResourceNamespace-id
@@ -6032,7 +6049,6 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Get resourceActions from roleManagement
-      description: Operations that an authorized principal are allowed to perform.
       operationId: roleManagement.cloudPC.resourceNamespaces_GetResourceActions
       parameters:
         - name: unifiedRbacResourceNamespace-id
@@ -6525,7 +6541,6 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Get appScopes from roleManagement
-      description: Read-only collection with details of the app specific scopes when the assignment scopes are app specific. Containment entity. Read-only.
       operationId: roleManagement.cloudPC.roleAssignments_ListAppScopes
       parameters:
         - name: unifiedRoleAssignmentMultiple-id
@@ -6627,7 +6642,6 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Get appScopes from roleManagement
-      description: Read-only collection with details of the app specific scopes when the assignment scopes are app specific. Containment entity. Read-only.
       operationId: roleManagement.cloudPC.roleAssignments_GetAppScopes
       parameters:
         - name: unifiedRoleAssignmentMultiple-id
@@ -6749,7 +6763,6 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Get directoryScopes from roleManagement
-      description: Read-only collection referencing the directory objects that are scope of the assignment. Provided so that callers can get the directory objects using $expand at the same time as getting the role assignment. Read-only.  Supports $expand.
       operationId: roleManagement.cloudPC.roleAssignments_ListDirectoryScopes
       parameters:
         - name: unifiedRoleAssignmentMultiple-id
@@ -6818,7 +6831,6 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Get directoryScopes from roleManagement
-      description: Read-only collection referencing the directory objects that are scope of the assignment. Provided so that callers can get the directory objects using $expand at the same time as getting the role assignment. Read-only.  Supports $expand.
       operationId: roleManagement.cloudPC.roleAssignments_GetDirectoryScopes
       parameters:
         - name: unifiedRoleAssignmentMultiple-id
@@ -6875,7 +6887,6 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Get principals from roleManagement
-      description: Read-only collection referencing the assigned principals. Provided so that callers can get the principals using $expand at the same time as getting the role assignment. Read-only.  Supports $expand.
       operationId: roleManagement.cloudPC.roleAssignments_ListPrincipals
       parameters:
         - name: unifiedRoleAssignmentMultiple-id
@@ -6944,7 +6955,6 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Get principals from roleManagement
-      description: Read-only collection referencing the assigned principals. Provided so that callers can get the principals using $expand at the same time as getting the role assignment. Read-only.  Supports $expand.
       operationId: roleManagement.cloudPC.roleAssignments_GetPrincipals
       parameters:
         - name: unifiedRoleAssignmentMultiple-id
@@ -7001,7 +7011,6 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Get roleDefinition from roleManagement
-      description: 'Specifies the roleDefinition that the assignment is for. Provided so that callers can get the role definition using $expand at the same time as getting the role assignment.  Supports $filter (eq operator on id, isBuiltIn, and displayName, and startsWith operator on displayName)  and $expand.'
       operationId: roleManagement.cloudPC.roleAssignments_GetRoleDefinition
       parameters:
         - name: unifiedRoleAssignmentMultiple-id
@@ -7284,7 +7293,6 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Get inheritsPermissionsFrom from roleManagement
-      description: Read-only collection of role definitions that the given role definition inherits from. Only Azure AD built-in roles support this attribute.
       operationId: roleManagement.cloudPC.roleDefinitions_ListInheritsPermissionsFrom
       parameters:
         - name: unifiedRoleDefinition-id
@@ -7406,7 +7414,6 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Get inheritsPermissionsFrom from roleManagement
-      description: Read-only collection of role definitions that the given role definition inherits from. Only Azure AD built-in roles support this attribute.
       operationId: roleManagement.cloudPC.roleDefinitions_GetInheritsPermissionsFrom
       parameters:
         - name: unifiedRoleDefinition-id
@@ -7542,7 +7549,6 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Get deviceManagement from roleManagement
-      description: The RbacApplication for Device Management
       operationId: roleManagement_GetDeviceManagement
       parameters:
         - name: $select
@@ -7765,6 +7771,8 @@ paths:
               operationId: roleManagement.deviceManagement.ResourceNamespaces.ListResourceActions
               parameters:
                 unifiedRbacResourceNamespace-id: $request.path.unifiedRbacResourceNamespace-id
+            importResourceActions:
+              operationId: roleManagement.deviceManagement.resourceNamespaces.unifiedRbacResourceNamespace.importResourceActions
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -7864,7 +7872,6 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Get resourceActions from roleManagement
-      description: Operations that an authorized principal are allowed to perform.
       operationId: roleManagement.deviceManagement.resourceNamespaces_ListResourceActions
       parameters:
         - name: unifiedRbacResourceNamespace-id
@@ -7974,7 +7981,6 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Get resourceActions from roleManagement
-      description: Operations that an authorized principal are allowed to perform.
       operationId: roleManagement.deviceManagement.resourceNamespaces_GetResourceActions
       parameters:
         - name: unifiedRbacResourceNamespace-id
@@ -8467,7 +8473,6 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Get appScopes from roleManagement
-      description: Read-only collection with details of the app specific scopes when the assignment scopes are app specific. Containment entity. Read-only.
       operationId: roleManagement.deviceManagement.roleAssignments_ListAppScopes
       parameters:
         - name: unifiedRoleAssignmentMultiple-id
@@ -8569,7 +8574,6 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Get appScopes from roleManagement
-      description: Read-only collection with details of the app specific scopes when the assignment scopes are app specific. Containment entity. Read-only.
       operationId: roleManagement.deviceManagement.roleAssignments_GetAppScopes
       parameters:
         - name: unifiedRoleAssignmentMultiple-id
@@ -8691,7 +8695,6 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Get directoryScopes from roleManagement
-      description: Read-only collection referencing the directory objects that are scope of the assignment. Provided so that callers can get the directory objects using $expand at the same time as getting the role assignment. Read-only.  Supports $expand.
       operationId: roleManagement.deviceManagement.roleAssignments_ListDirectoryScopes
       parameters:
         - name: unifiedRoleAssignmentMultiple-id
@@ -8760,7 +8763,6 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Get directoryScopes from roleManagement
-      description: Read-only collection referencing the directory objects that are scope of the assignment. Provided so that callers can get the directory objects using $expand at the same time as getting the role assignment. Read-only.  Supports $expand.
       operationId: roleManagement.deviceManagement.roleAssignments_GetDirectoryScopes
       parameters:
         - name: unifiedRoleAssignmentMultiple-id
@@ -8817,7 +8819,6 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Get principals from roleManagement
-      description: Read-only collection referencing the assigned principals. Provided so that callers can get the principals using $expand at the same time as getting the role assignment. Read-only.  Supports $expand.
       operationId: roleManagement.deviceManagement.roleAssignments_ListPrincipals
       parameters:
         - name: unifiedRoleAssignmentMultiple-id
@@ -8886,7 +8887,6 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Get principals from roleManagement
-      description: Read-only collection referencing the assigned principals. Provided so that callers can get the principals using $expand at the same time as getting the role assignment. Read-only.  Supports $expand.
       operationId: roleManagement.deviceManagement.roleAssignments_GetPrincipals
       parameters:
         - name: unifiedRoleAssignmentMultiple-id
@@ -8943,7 +8943,6 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Get roleDefinition from roleManagement
-      description: 'Specifies the roleDefinition that the assignment is for. Provided so that callers can get the role definition using $expand at the same time as getting the role assignment.  Supports $filter (eq operator on id, isBuiltIn, and displayName, and startsWith operator on displayName)  and $expand.'
       operationId: roleManagement.deviceManagement.roleAssignments_GetRoleDefinition
       parameters:
         - name: unifiedRoleAssignmentMultiple-id
@@ -9226,7 +9225,6 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Get inheritsPermissionsFrom from roleManagement
-      description: Read-only collection of role definitions that the given role definition inherits from. Only Azure AD built-in roles support this attribute.
       operationId: roleManagement.deviceManagement.roleDefinitions_ListInheritsPermissionsFrom
       parameters:
         - name: unifiedRoleDefinition-id
@@ -9348,7 +9346,6 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Get inheritsPermissionsFrom from roleManagement
-      description: Read-only collection of role definitions that the given role definition inherits from. Only Azure AD built-in roles support this attribute.
       operationId: roleManagement.deviceManagement.roleDefinitions_GetInheritsPermissionsFrom
       parameters:
         - name: unifiedRoleDefinition-id
@@ -9484,7 +9481,6 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get directory from roleManagement
-      description: Read-only. Nullable.
       operationId: roleManagement_GetDirectory
       parameters:
         - name: $select
@@ -9563,6 +9559,10 @@ paths:
               operationId: roleManagement.Directory.ListRoleEligibilityScheduleRequests
             roleEligibilitySchedules:
               operationId: roleManagement.Directory.ListRoleEligibilitySchedules
+            roleScheduleInstances:
+              operationId: roleManagement.directory.roleScheduleInstances
+            roleSchedules:
+              operationId: roleManagement.directory.roleSchedules
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -9837,6 +9837,8 @@ paths:
               operationId: roleManagement.directory.ResourceNamespaces.ListResourceActions
               parameters:
                 unifiedRbacResourceNamespace-id: $request.path.unifiedRbacResourceNamespace-id
+            importResourceActions:
+              operationId: roleManagement.directory.resourceNamespaces.unifiedRbacResourceNamespace.importResourceActions
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -9936,7 +9938,6 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get resourceActions from roleManagement
-      description: Operations that an authorized principal are allowed to perform.
       operationId: roleManagement.directory.resourceNamespaces_ListResourceActions
       parameters:
         - name: unifiedRbacResourceNamespace-id
@@ -10046,7 +10047,6 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get resourceActions from roleManagement
-      description: Operations that an authorized principal are allowed to perform.
       operationId: roleManagement.directory.resourceNamespaces_GetResourceActions
       parameters:
         - name: unifiedRbacResourceNamespace-id
@@ -10760,7 +10760,6 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get roleAssignments from roleManagement
-      description: Resource to grant access to users or groups.
       operationId: roleManagement.directory_ListRoleAssignments
       parameters:
         - $ref: '#/components/parameters/top'
@@ -10870,7 +10869,6 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get roleAssignments from roleManagement
-      description: Resource to grant access to users or groups.
       operationId: roleManagement.directory_GetRoleAssignments
       parameters:
         - name: unifiedRoleAssignment-id
@@ -11001,7 +10999,6 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get appScope from roleManagement
-      description: Details of the app specific scope when the assignment scope is app specific. Containment entity.
       operationId: roleManagement.directory.roleAssignments_GetAppScope
       parameters:
         - name: unifiedRoleAssignment-id
@@ -11102,7 +11099,6 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get directoryScope from roleManagement
-      description: The directory object that is the scope of the assignment. Provided so that callers can get the directory object using $expand at the same time as getting the role assignment. Read-only. Supports $expand.
       operationId: roleManagement.directory.roleAssignments_GetDirectoryScope
       parameters:
         - name: unifiedRoleAssignment-id
@@ -11152,7 +11148,6 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get principal from roleManagement
-      description: The assigned principal. Provided so that callers can get the principal using $expand at the same time as getting the role assignment. Read-only. Supports $expand.
       operationId: roleManagement.directory.roleAssignments_GetPrincipal
       parameters:
         - name: unifiedRoleAssignment-id
@@ -11202,7 +11197,6 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get roleDefinition from roleManagement
-      description: The roleDefinition the assignment is for. Provided so that callers can get the role definition using $expand at the same time as getting the role assignment. roleDefinition.id will be auto expanded. Supports $expand.
       operationId: roleManagement.directory.roleAssignments_GetRoleDefinition
       parameters:
         - name: unifiedRoleAssignment-id
@@ -11266,7 +11260,6 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get roleAssignmentScheduleInstances from roleManagement
-      description: Instances for active role assignments.
       operationId: roleManagement.directory_ListRoleAssignmentScheduleInstances
       parameters:
         - $ref: '#/components/parameters/top'
@@ -11387,7 +11380,6 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get roleAssignmentScheduleInstances from roleManagement
-      description: Instances for active role assignments.
       operationId: roleManagement.directory_GetRoleAssignmentScheduleInstances
       parameters:
         - name: unifiedRoleAssignmentScheduleInstance-id
@@ -11527,7 +11519,6 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get activatedUsing from roleManagement
-      description: 'If the roleAssignmentScheduleInstance is activated by a roleEligibilityScheduleRequest, this is the link to the related schedule instance.'
       operationId: roleManagement.directory.roleAssignmentScheduleInstances_GetActivatedUsing
       parameters:
         - name: unifiedRoleAssignmentScheduleInstance-id
@@ -11640,7 +11631,6 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get roleAssignmentScheduleRequests from roleManagement
-      description: Requests for active role assignments to principals through PIM.
       operationId: roleManagement.directory_ListRoleAssignmentScheduleRequests
       parameters:
         - $ref: '#/components/parameters/top'
@@ -11781,7 +11771,6 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get roleAssignmentScheduleRequests from roleManagement
-      description: Requests for active role assignments to principals through PIM.
       operationId: roleManagement.directory_GetRoleAssignmentScheduleRequests
       parameters:
         - name: unifiedRoleAssignmentScheduleRequest-id
@@ -11875,6 +11864,8 @@ paths:
               operationId: roleManagement.directory.RoleAssignmentScheduleRequests.GetTargetSchedule
               parameters:
                 unifiedRoleAssignmentScheduleRequest-id: $request.path.unifiedRoleAssignmentScheduleRequest-id
+            cancel:
+              operationId: roleManagement.directory.roleAssignmentScheduleRequests.unifiedRoleAssignmentScheduleRequest.cancel
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -11933,7 +11924,6 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get activatedUsing from roleManagement
-      description: 'If the request is from an eligible administrator to activate a role, this parameter will show the related eligible assignment for that activation.'
       operationId: roleManagement.directory.roleAssignmentScheduleRequests_GetActivatedUsing
       parameters:
         - name: unifiedRoleAssignmentScheduleRequest-id
@@ -12017,7 +12007,6 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get appScope from roleManagement
-      description: Read-only property with details of the app specific scope when the assignment scope is app specific. Containment entity.
       operationId: roleManagement.directory.roleAssignmentScheduleRequests_GetAppScope
       parameters:
         - name: unifiedRoleAssignmentScheduleRequest-id
@@ -12068,7 +12057,6 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get directoryScope from roleManagement
-      description: Property referencing the directory object that is the scope of the assignment. Provided so that callers can get the directory object using $expand at the same time as getting the role assignment. Read-only.
       operationId: roleManagement.directory.roleAssignmentScheduleRequests_GetDirectoryScope
       parameters:
         - name: unifiedRoleAssignmentScheduleRequest-id
@@ -12138,7 +12126,6 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get principal from roleManagement
-      description: Property referencing the principal that is getting a role assignment through the request. Provided so that callers can get the principal using $expand at the same time as getting the role assignment. Read-only.
       operationId: roleManagement.directory.roleAssignmentScheduleRequests_GetPrincipal
       parameters:
         - name: unifiedRoleAssignmentScheduleRequest-id
@@ -12188,7 +12175,6 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get roleDefinition from roleManagement
-      description: Property indicating the roleDefinition the assignment is for. Provided so that callers can get the role definition using $expand at the same time as getting the role assignment. roleDefinition.Id will be auto expanded.
       operationId: roleManagement.directory.roleAssignmentScheduleRequests_GetRoleDefinition
       parameters:
         - name: unifiedRoleAssignmentScheduleRequest-id
@@ -12252,7 +12238,6 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get targetSchedule from roleManagement
-      description: Property indicating the schedule for an eligible role assignment.
       operationId: roleManagement.directory.roleAssignmentScheduleRequests_GetTargetSchedule
       parameters:
         - name: unifiedRoleAssignmentScheduleRequest-id
@@ -12374,7 +12359,6 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get roleAssignmentSchedules from roleManagement
-      description: Schedules for active role assignment operations.
       operationId: roleManagement.directory_ListRoleAssignmentSchedules
       parameters:
         - $ref: '#/components/parameters/top'
@@ -12498,7 +12482,6 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get roleAssignmentSchedules from roleManagement
-      description: Schedules for active role assignment operations.
       operationId: roleManagement.directory_GetRoleAssignmentSchedules
       parameters:
         - name: unifiedRoleAssignmentSchedule-id
@@ -12639,7 +12622,6 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get activatedUsing from roleManagement
-      description: 'If the roleAssignmentSchedule is activated by a roleEligibilitySchedule, this is the link to that schedule.'
       operationId: roleManagement.directory.roleAssignmentSchedules_GetActivatedUsing
       parameters:
         - name: unifiedRoleAssignmentSchedule-id
@@ -12754,7 +12736,6 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get roleDefinitions from roleManagement
-      description: Resource representing the roles allowed by RBAC providers and the permissions assigned to the roles.
       operationId: roleManagement.directory_ListRoleDefinitions
       parameters:
         - $ref: '#/components/parameters/top'
@@ -12861,7 +12842,6 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get roleDefinitions from roleManagement
-      description: Resource representing the roles allowed by RBAC providers and the permissions assigned to the roles.
       operationId: roleManagement.directory_GetRoleDefinitions
       parameters:
         - name: unifiedRoleDefinition-id
@@ -12975,7 +12955,6 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get inheritsPermissionsFrom from roleManagement
-      description: Read-only collection of role definitions that the given role definition inherits from. Only Azure AD built-in roles support this attribute.
       operationId: roleManagement.directory.roleDefinitions_ListInheritsPermissionsFrom
       parameters:
         - name: unifiedRoleDefinition-id
@@ -13097,7 +13076,6 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get inheritsPermissionsFrom from roleManagement
-      description: Read-only collection of role definitions that the given role definition inherits from. Only Azure AD built-in roles support this attribute.
       operationId: roleManagement.directory.roleDefinitions_GetInheritsPermissionsFrom
       parameters:
         - name: unifiedRoleDefinition-id
@@ -13233,7 +13211,6 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get roleEligibilityScheduleInstances from roleManagement
-      description: Instances for role eligibility requests.
       operationId: roleManagement.directory_ListRoleEligibilityScheduleInstances
       parameters:
         - $ref: '#/components/parameters/top'
@@ -13346,7 +13323,6 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get roleEligibilityScheduleInstances from roleManagement
-      description: Instances for role eligibility requests.
       operationId: roleManagement.directory_GetRoleEligibilityScheduleInstances
       parameters:
         - name: unifiedRoleEligibilityScheduleInstance-id
@@ -13509,7 +13485,6 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get roleEligibilityScheduleRequests from roleManagement
-      description: Requests for role eligibilities for principals through PIM.
       operationId: roleManagement.directory_ListRoleEligibilityScheduleRequests
       parameters:
         - $ref: '#/components/parameters/top'
@@ -13648,7 +13623,6 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get roleEligibilityScheduleRequests from roleManagement
-      description: Requests for role eligibilities for principals through PIM.
       operationId: roleManagement.directory_GetRoleEligibilityScheduleRequests
       parameters:
         - name: unifiedRoleEligibilityScheduleRequest-id
@@ -13736,6 +13710,8 @@ paths:
               operationId: roleManagement.directory.RoleEligibilityScheduleRequests.GetTargetSchedule
               parameters:
                 unifiedRoleEligibilityScheduleRequest-id: $request.path.unifiedRoleEligibilityScheduleRequest-id
+            cancel:
+              operationId: roleManagement.directory.roleEligibilityScheduleRequests.unifiedRoleEligibilityScheduleRequest.cancel
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -13794,7 +13770,6 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get appScope from roleManagement
-      description: Read-only property with details of the app-specific scope when the assignment scope is app-specific. Containment entity.
       operationId: roleManagement.directory.roleEligibilityScheduleRequests_GetAppScope
       parameters:
         - name: unifiedRoleEligibilityScheduleRequest-id
@@ -13845,7 +13820,6 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get directoryScope from roleManagement
-      description: Property referencing the directory object that is the scope of the assignment. Provided so that callers can get the directory object using $expand at the same time as getting the role assignment. Read-only.
       operationId: roleManagement.directory.roleEligibilityScheduleRequests_GetDirectoryScope
       parameters:
         - name: unifiedRoleEligibilityScheduleRequest-id
@@ -13915,7 +13889,6 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get principal from roleManagement
-      description: Property referencing the principal that is getting a role assignment through the request. Provided so that callers can get the principal using $expand at the same time as getting the role assignment. Read-only.
       operationId: roleManagement.directory.roleEligibilityScheduleRequests_GetPrincipal
       parameters:
         - name: unifiedRoleEligibilityScheduleRequest-id
@@ -13965,7 +13938,6 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get roleDefinition from roleManagement
-      description: Property indicating the roleDefinition the assignment is for. Provided so that callers can get the role definition using $expand at the same time as getting the role assignment. roleDefinition.Id will be auto expanded.
       operationId: roleManagement.directory.roleEligibilityScheduleRequests_GetRoleDefinition
       parameters:
         - name: unifiedRoleEligibilityScheduleRequest-id
@@ -14029,7 +14001,6 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get targetSchedule from roleManagement
-      description: Property indicating the schedule for an eligible role assignment.
       operationId: roleManagement.directory.roleEligibilityScheduleRequests_GetTargetSchedule
       parameters:
         - name: unifiedRoleEligibilityScheduleRequest-id
@@ -14144,7 +14115,6 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get roleEligibilitySchedules from roleManagement
-      description: Schedules for role eligibility operations.
       operationId: roleManagement.directory_ListRoleEligibilitySchedules
       parameters:
         - $ref: '#/components/parameters/top'
@@ -14263,7 +14233,6 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get roleEligibilitySchedules from roleManagement
-      description: Schedules for role eligibility operations.
       operationId: roleManagement.directory_GetRoleEligibilitySchedules
       parameters:
         - name: unifiedRoleEligibilitySchedule-id
@@ -14667,7 +14636,6 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get appScope from roleManagement
-      description: Details of the app specific scope when the assignment scope is app specific. Containment entity.
       operationId: roleManagement.directory.transitiveRoleAssignments_GetAppScope
       parameters:
         - name: unifiedRoleAssignment-id
@@ -14768,7 +14736,6 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get directoryScope from roleManagement
-      description: The directory object that is the scope of the assignment. Provided so that callers can get the directory object using $expand at the same time as getting the role assignment. Read-only. Supports $expand.
       operationId: roleManagement.directory.transitiveRoleAssignments_GetDirectoryScope
       parameters:
         - name: unifiedRoleAssignment-id
@@ -14818,7 +14785,6 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get principal from roleManagement
-      description: The assigned principal. Provided so that callers can get the principal using $expand at the same time as getting the role assignment. Read-only. Supports $expand.
       operationId: roleManagement.directory.transitiveRoleAssignments_GetPrincipal
       parameters:
         - name: unifiedRoleAssignment-id
@@ -14868,7 +14834,6 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get roleDefinition from roleManagement
-      description: The roleDefinition the assignment is for. Provided so that callers can get the role definition using $expand at the same time as getting the role assignment. roleDefinition.id will be auto expanded. Supports $expand.
       operationId: roleManagement.directory.transitiveRoleAssignments_GetRoleDefinition
       parameters:
         - name: unifiedRoleAssignment-id
@@ -14932,7 +14897,6 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get entitlementManagement from roleManagement
-      description: Container for roles and assignments for entitlement management resources.
       operationId: roleManagement_GetEntitlementManagement
       parameters:
         - name: $select
@@ -15011,6 +14975,10 @@ paths:
               operationId: roleManagement.EntitlementManagement.ListRoleEligibilityScheduleRequests
             roleEligibilitySchedules:
               operationId: roleManagement.EntitlementManagement.ListRoleEligibilitySchedules
+            roleScheduleInstances:
+              operationId: roleManagement.entitlementManagement.roleScheduleInstances
+            roleSchedules:
+              operationId: roleManagement.entitlementManagement.roleSchedules
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -15285,6 +15253,8 @@ paths:
               operationId: roleManagement.entitlementManagement.ResourceNamespaces.ListResourceActions
               parameters:
                 unifiedRbacResourceNamespace-id: $request.path.unifiedRbacResourceNamespace-id
+            importResourceActions:
+              operationId: roleManagement.entitlementManagement.resourceNamespaces.unifiedRbacResourceNamespace.importResourceActions
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -15384,7 +15354,6 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get resourceActions from roleManagement
-      description: Operations that an authorized principal are allowed to perform.
       operationId: roleManagement.entitlementManagement.resourceNamespaces_ListResourceActions
       parameters:
         - name: unifiedRbacResourceNamespace-id
@@ -15494,7 +15463,6 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get resourceActions from roleManagement
-      description: Operations that an authorized principal are allowed to perform.
       operationId: roleManagement.entitlementManagement.resourceNamespaces_GetResourceActions
       parameters:
         - name: unifiedRbacResourceNamespace-id
@@ -16208,7 +16176,6 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get roleAssignments from roleManagement
-      description: Resource to grant access to users or groups.
       operationId: roleManagement.entitlementManagement_ListRoleAssignments
       parameters:
         - $ref: '#/components/parameters/top'
@@ -16318,7 +16285,6 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get roleAssignments from roleManagement
-      description: Resource to grant access to users or groups.
       operationId: roleManagement.entitlementManagement_GetRoleAssignments
       parameters:
         - name: unifiedRoleAssignment-id
@@ -16449,7 +16415,6 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get appScope from roleManagement
-      description: Details of the app specific scope when the assignment scope is app specific. Containment entity.
       operationId: roleManagement.entitlementManagement.roleAssignments_GetAppScope
       parameters:
         - name: unifiedRoleAssignment-id
@@ -16550,7 +16515,6 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get directoryScope from roleManagement
-      description: The directory object that is the scope of the assignment. Provided so that callers can get the directory object using $expand at the same time as getting the role assignment. Read-only. Supports $expand.
       operationId: roleManagement.entitlementManagement.roleAssignments_GetDirectoryScope
       parameters:
         - name: unifiedRoleAssignment-id
@@ -16600,7 +16564,6 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get principal from roleManagement
-      description: The assigned principal. Provided so that callers can get the principal using $expand at the same time as getting the role assignment. Read-only. Supports $expand.
       operationId: roleManagement.entitlementManagement.roleAssignments_GetPrincipal
       parameters:
         - name: unifiedRoleAssignment-id
@@ -16650,7 +16613,6 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get roleDefinition from roleManagement
-      description: The roleDefinition the assignment is for. Provided so that callers can get the role definition using $expand at the same time as getting the role assignment. roleDefinition.id will be auto expanded. Supports $expand.
       operationId: roleManagement.entitlementManagement.roleAssignments_GetRoleDefinition
       parameters:
         - name: unifiedRoleAssignment-id
@@ -16714,7 +16676,6 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get roleAssignmentScheduleInstances from roleManagement
-      description: Instances for active role assignments.
       operationId: roleManagement.entitlementManagement_ListRoleAssignmentScheduleInstances
       parameters:
         - $ref: '#/components/parameters/top'
@@ -16835,7 +16796,6 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get roleAssignmentScheduleInstances from roleManagement
-      description: Instances for active role assignments.
       operationId: roleManagement.entitlementManagement_GetRoleAssignmentScheduleInstances
       parameters:
         - name: unifiedRoleAssignmentScheduleInstance-id
@@ -16975,7 +16935,6 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get activatedUsing from roleManagement
-      description: 'If the roleAssignmentScheduleInstance is activated by a roleEligibilityScheduleRequest, this is the link to the related schedule instance.'
       operationId: roleManagement.entitlementManagement.roleAssignmentScheduleInstances_GetActivatedUsing
       parameters:
         - name: unifiedRoleAssignmentScheduleInstance-id
@@ -17088,7 +17047,6 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get roleAssignmentScheduleRequests from roleManagement
-      description: Requests for active role assignments to principals through PIM.
       operationId: roleManagement.entitlementManagement_ListRoleAssignmentScheduleRequests
       parameters:
         - $ref: '#/components/parameters/top'
@@ -17229,7 +17187,6 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get roleAssignmentScheduleRequests from roleManagement
-      description: Requests for active role assignments to principals through PIM.
       operationId: roleManagement.entitlementManagement_GetRoleAssignmentScheduleRequests
       parameters:
         - name: unifiedRoleAssignmentScheduleRequest-id
@@ -17323,6 +17280,8 @@ paths:
               operationId: roleManagement.entitlementManagement.RoleAssignmentScheduleRequests.GetTargetSchedule
               parameters:
                 unifiedRoleAssignmentScheduleRequest-id: $request.path.unifiedRoleAssignmentScheduleRequest-id
+            cancel:
+              operationId: roleManagement.entitlementManagement.roleAssignmentScheduleRequests.unifiedRoleAssignmentScheduleRequest.cancel
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -17381,7 +17340,6 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get activatedUsing from roleManagement
-      description: 'If the request is from an eligible administrator to activate a role, this parameter will show the related eligible assignment for that activation.'
       operationId: roleManagement.entitlementManagement.roleAssignmentScheduleRequests_GetActivatedUsing
       parameters:
         - name: unifiedRoleAssignmentScheduleRequest-id
@@ -17465,7 +17423,6 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get appScope from roleManagement
-      description: Read-only property with details of the app specific scope when the assignment scope is app specific. Containment entity.
       operationId: roleManagement.entitlementManagement.roleAssignmentScheduleRequests_GetAppScope
       parameters:
         - name: unifiedRoleAssignmentScheduleRequest-id
@@ -17516,7 +17473,6 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get directoryScope from roleManagement
-      description: Property referencing the directory object that is the scope of the assignment. Provided so that callers can get the directory object using $expand at the same time as getting the role assignment. Read-only.
       operationId: roleManagement.entitlementManagement.roleAssignmentScheduleRequests_GetDirectoryScope
       parameters:
         - name: unifiedRoleAssignmentScheduleRequest-id
@@ -17586,7 +17542,6 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get principal from roleManagement
-      description: Property referencing the principal that is getting a role assignment through the request. Provided so that callers can get the principal using $expand at the same time as getting the role assignment. Read-only.
       operationId: roleManagement.entitlementManagement.roleAssignmentScheduleRequests_GetPrincipal
       parameters:
         - name: unifiedRoleAssignmentScheduleRequest-id
@@ -17636,7 +17591,6 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get roleDefinition from roleManagement
-      description: Property indicating the roleDefinition the assignment is for. Provided so that callers can get the role definition using $expand at the same time as getting the role assignment. roleDefinition.Id will be auto expanded.
       operationId: roleManagement.entitlementManagement.roleAssignmentScheduleRequests_GetRoleDefinition
       parameters:
         - name: unifiedRoleAssignmentScheduleRequest-id
@@ -17700,7 +17654,6 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get targetSchedule from roleManagement
-      description: Property indicating the schedule for an eligible role assignment.
       operationId: roleManagement.entitlementManagement.roleAssignmentScheduleRequests_GetTargetSchedule
       parameters:
         - name: unifiedRoleAssignmentScheduleRequest-id
@@ -17822,7 +17775,6 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get roleAssignmentSchedules from roleManagement
-      description: Schedules for active role assignment operations.
       operationId: roleManagement.entitlementManagement_ListRoleAssignmentSchedules
       parameters:
         - $ref: '#/components/parameters/top'
@@ -17946,7 +17898,6 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get roleAssignmentSchedules from roleManagement
-      description: Schedules for active role assignment operations.
       operationId: roleManagement.entitlementManagement_GetRoleAssignmentSchedules
       parameters:
         - name: unifiedRoleAssignmentSchedule-id
@@ -18087,7 +18038,6 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get activatedUsing from roleManagement
-      description: 'If the roleAssignmentSchedule is activated by a roleEligibilitySchedule, this is the link to that schedule.'
       operationId: roleManagement.entitlementManagement.roleAssignmentSchedules_GetActivatedUsing
       parameters:
         - name: unifiedRoleAssignmentSchedule-id
@@ -18202,7 +18152,6 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get roleDefinitions from roleManagement
-      description: Resource representing the roles allowed by RBAC providers and the permissions assigned to the roles.
       operationId: roleManagement.entitlementManagement_ListRoleDefinitions
       parameters:
         - $ref: '#/components/parameters/top'
@@ -18309,7 +18258,6 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get roleDefinitions from roleManagement
-      description: Resource representing the roles allowed by RBAC providers and the permissions assigned to the roles.
       operationId: roleManagement.entitlementManagement_GetRoleDefinitions
       parameters:
         - name: unifiedRoleDefinition-id
@@ -18423,7 +18371,6 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get inheritsPermissionsFrom from roleManagement
-      description: Read-only collection of role definitions that the given role definition inherits from. Only Azure AD built-in roles support this attribute.
       operationId: roleManagement.entitlementManagement.roleDefinitions_ListInheritsPermissionsFrom
       parameters:
         - name: unifiedRoleDefinition-id
@@ -18545,7 +18492,6 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get inheritsPermissionsFrom from roleManagement
-      description: Read-only collection of role definitions that the given role definition inherits from. Only Azure AD built-in roles support this attribute.
       operationId: roleManagement.entitlementManagement.roleDefinitions_GetInheritsPermissionsFrom
       parameters:
         - name: unifiedRoleDefinition-id
@@ -18681,7 +18627,6 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get roleEligibilityScheduleInstances from roleManagement
-      description: Instances for role eligibility requests.
       operationId: roleManagement.entitlementManagement_ListRoleEligibilityScheduleInstances
       parameters:
         - $ref: '#/components/parameters/top'
@@ -18794,7 +18739,6 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get roleEligibilityScheduleInstances from roleManagement
-      description: Instances for role eligibility requests.
       operationId: roleManagement.entitlementManagement_GetRoleEligibilityScheduleInstances
       parameters:
         - name: unifiedRoleEligibilityScheduleInstance-id
@@ -18957,7 +18901,6 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get roleEligibilityScheduleRequests from roleManagement
-      description: Requests for role eligibilities for principals through PIM.
       operationId: roleManagement.entitlementManagement_ListRoleEligibilityScheduleRequests
       parameters:
         - $ref: '#/components/parameters/top'
@@ -19096,7 +19039,6 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get roleEligibilityScheduleRequests from roleManagement
-      description: Requests for role eligibilities for principals through PIM.
       operationId: roleManagement.entitlementManagement_GetRoleEligibilityScheduleRequests
       parameters:
         - name: unifiedRoleEligibilityScheduleRequest-id
@@ -19184,6 +19126,8 @@ paths:
               operationId: roleManagement.entitlementManagement.RoleEligibilityScheduleRequests.GetTargetSchedule
               parameters:
                 unifiedRoleEligibilityScheduleRequest-id: $request.path.unifiedRoleEligibilityScheduleRequest-id
+            cancel:
+              operationId: roleManagement.entitlementManagement.roleEligibilityScheduleRequests.unifiedRoleEligibilityScheduleRequest.cancel
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -19242,7 +19186,6 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get appScope from roleManagement
-      description: Read-only property with details of the app-specific scope when the assignment scope is app-specific. Containment entity.
       operationId: roleManagement.entitlementManagement.roleEligibilityScheduleRequests_GetAppScope
       parameters:
         - name: unifiedRoleEligibilityScheduleRequest-id
@@ -19293,7 +19236,6 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get directoryScope from roleManagement
-      description: Property referencing the directory object that is the scope of the assignment. Provided so that callers can get the directory object using $expand at the same time as getting the role assignment. Read-only.
       operationId: roleManagement.entitlementManagement.roleEligibilityScheduleRequests_GetDirectoryScope
       parameters:
         - name: unifiedRoleEligibilityScheduleRequest-id
@@ -19363,7 +19305,6 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get principal from roleManagement
-      description: Property referencing the principal that is getting a role assignment through the request. Provided so that callers can get the principal using $expand at the same time as getting the role assignment. Read-only.
       operationId: roleManagement.entitlementManagement.roleEligibilityScheduleRequests_GetPrincipal
       parameters:
         - name: unifiedRoleEligibilityScheduleRequest-id
@@ -19413,7 +19354,6 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get roleDefinition from roleManagement
-      description: Property indicating the roleDefinition the assignment is for. Provided so that callers can get the role definition using $expand at the same time as getting the role assignment. roleDefinition.Id will be auto expanded.
       operationId: roleManagement.entitlementManagement.roleEligibilityScheduleRequests_GetRoleDefinition
       parameters:
         - name: unifiedRoleEligibilityScheduleRequest-id
@@ -19477,7 +19417,6 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get targetSchedule from roleManagement
-      description: Property indicating the schedule for an eligible role assignment.
       operationId: roleManagement.entitlementManagement.roleEligibilityScheduleRequests_GetTargetSchedule
       parameters:
         - name: unifiedRoleEligibilityScheduleRequest-id
@@ -19592,7 +19531,6 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get roleEligibilitySchedules from roleManagement
-      description: Schedules for role eligibility operations.
       operationId: roleManagement.entitlementManagement_ListRoleEligibilitySchedules
       parameters:
         - $ref: '#/components/parameters/top'
@@ -19711,7 +19649,6 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get roleEligibilitySchedules from roleManagement
-      description: Schedules for role eligibility operations.
       operationId: roleManagement.entitlementManagement_GetRoleEligibilitySchedules
       parameters:
         - name: unifiedRoleEligibilitySchedule-id
@@ -20115,7 +20052,6 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get appScope from roleManagement
-      description: Details of the app specific scope when the assignment scope is app specific. Containment entity.
       operationId: roleManagement.entitlementManagement.transitiveRoleAssignments_GetAppScope
       parameters:
         - name: unifiedRoleAssignment-id
@@ -20216,7 +20152,6 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get directoryScope from roleManagement
-      description: The directory object that is the scope of the assignment. Provided so that callers can get the directory object using $expand at the same time as getting the role assignment. Read-only. Supports $expand.
       operationId: roleManagement.entitlementManagement.transitiveRoleAssignments_GetDirectoryScope
       parameters:
         - name: unifiedRoleAssignment-id
@@ -20266,7 +20201,6 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get principal from roleManagement
-      description: The assigned principal. Provided so that callers can get the principal using $expand at the same time as getting the role assignment. Read-only. Supports $expand.
       operationId: roleManagement.entitlementManagement.transitiveRoleAssignments_GetPrincipal
       parameters:
         - name: unifiedRoleAssignment-id
@@ -20316,7 +20250,6 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get roleDefinition from roleManagement
-      description: The roleDefinition the assignment is for. Provided so that callers can get the role definition using $expand at the same time as getting the role assignment. roleDefinition.id will be auto expanded. Supports $expand.
       operationId: roleManagement.entitlementManagement.transitiveRoleAssignments_GetRoleDefinition
       parameters:
         - name: unifiedRoleAssignment-id

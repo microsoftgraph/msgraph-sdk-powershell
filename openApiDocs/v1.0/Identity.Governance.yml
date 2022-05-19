@@ -177,7 +177,6 @@ paths:
       tags:
         - agreements.agreementAcceptance
       summary: Get acceptances from agreements
-      description: Read-only. Information about acceptances of this agreement.
       operationId: agreements_ListAcceptances
       parameters:
         - name: agreement-id
@@ -312,7 +311,6 @@ paths:
       tags:
         - agreements.agreementAcceptance
       summary: Get acceptances from agreements
-      description: Read-only. Information about acceptances of this agreement.
       operationId: agreements_GetAcceptances
       parameters:
         - name: agreement-id
@@ -445,7 +443,6 @@ paths:
       tags:
         - agreements.agreementFile
       summary: Get file from agreements
-      description: Default PDF linked to this agreement.
       operationId: agreements_GetFile
       parameters:
         - name: agreement-id
@@ -558,7 +555,6 @@ paths:
       tags:
         - agreements.agreementFile
       summary: Get localizations from agreements
-      description: The localized version of the terms of use agreement files attached to the agreement.
       operationId: agreements.file_ListLocalizations
       parameters:
         - name: agreement-id
@@ -677,7 +673,6 @@ paths:
       tags:
         - agreements.agreementFile
       summary: Get localizations from agreements
-      description: The localized version of the terms of use agreement files attached to the agreement.
       operationId: agreements.file_GetLocalizations
       parameters:
         - name: agreement-id
@@ -812,7 +807,6 @@ paths:
       tags:
         - agreements.agreementFile
       summary: Get versions from agreements
-      description: Read-only. Customized versions of the terms of use agreement in the Azure AD tenant.
       operationId: agreements.file.localizations_ListVersions
       parameters:
         - name: agreement-id
@@ -943,7 +937,6 @@ paths:
       tags:
         - agreements.agreementFile
       summary: Get versions from agreements
-      description: Read-only. Customized versions of the terms of use agreement in the Azure AD tenant.
       operationId: agreements.file.localizations_GetVersions
       parameters:
         - name: agreement-id
@@ -1091,7 +1084,6 @@ paths:
       tags:
         - agreements.agreementFileLocalization
       summary: Get files from agreements
-      description: 'PDFs linked to this agreement. Note: This property is in the process of being deprecated. Use the  file property instead.'
       operationId: agreements_ListFiles
       parameters:
         - name: agreement-id
@@ -1210,7 +1202,6 @@ paths:
       tags:
         - agreements.agreementFileLocalization
       summary: Get files from agreements
-      description: 'PDFs linked to this agreement. Note: This property is in the process of being deprecated. Use the  file property instead.'
       operationId: agreements_GetFiles
       parameters:
         - name: agreement-id
@@ -1345,7 +1336,6 @@ paths:
       tags:
         - agreements.agreementFileLocalization
       summary: Get versions from agreements
-      description: Read-only. Customized versions of the terms of use agreement in the Azure AD tenant.
       operationId: agreements.files_ListVersions
       parameters:
         - name: agreement-id
@@ -1476,7 +1466,6 @@ paths:
       tags:
         - agreements.agreementFileLocalization
       summary: Get versions from agreements
-      description: Read-only. Customized versions of the terms of use agreement in the Azure AD tenant.
       operationId: agreements.files_GetVersions
       parameters:
         - name: agreement-id
@@ -1784,7 +1773,6 @@ paths:
       tags:
         - identityGovernance.accessReviewSet
       summary: Get definitions from identityGovernance
-      description: Represents the template and scheduling for an access review.
       operationId: identityGovernance.accessReviews_ListDefinitions
       parameters:
         - $ref: '#/components/parameters/top'
@@ -1906,7 +1894,6 @@ paths:
       tags:
         - identityGovernance.accessReviewSet
       summary: Get definitions from identityGovernance
-      description: Represents the template and scheduling for an access review.
       operationId: identityGovernance.accessReviews_GetDefinitions
       parameters:
         - name: accessReviewScheduleDefinition-id
@@ -1967,6 +1954,8 @@ paths:
               operationId: identityGovernance.accessReviews.Definitions.ListInstances
               parameters:
                 accessReviewScheduleDefinition-id: $request.path.accessReviewScheduleDefinition-id
+            stop:
+              operationId: identityGovernance.accessReviews.definitions.accessReviewScheduleDefinition.stop
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2025,7 +2014,6 @@ paths:
       tags:
         - identityGovernance.accessReviewSet
       summary: Get instances from identityGovernance
-      description: 'Set of access reviews instances for this access review series. Access reviews that do not recur will only have one instance; otherwise, there is an instance for each recurrence.'
       operationId: identityGovernance.accessReviews.definitions_ListInstances
       parameters:
         - name: accessReviewScheduleDefinition-id
@@ -2143,7 +2131,6 @@ paths:
       tags:
         - identityGovernance.accessReviewSet
       summary: Get instances from identityGovernance
-      description: 'Set of access reviews instances for this access review series. Access reviews that do not recur will only have one instance; otherwise, there is an instance for each recurrence.'
       operationId: identityGovernance.accessReviews.definitions_GetInstances
       parameters:
         - name: accessReviewScheduleDefinition-id
@@ -2212,6 +2199,18 @@ paths:
               parameters:
                 accessReviewScheduleDefinition-id: $request.path.accessReviewScheduleDefinition-id
                 accessReviewInstance-id: $request.path.accessReviewInstance-id
+            acceptRecommendations:
+              operationId: identityGovernance.accessReviews.definitions.accessReviewScheduleDefinition.instances.accessReviewInstance.acceptRecommendations
+            applyDecisions:
+              operationId: identityGovernance.accessReviews.definitions.accessReviewScheduleDefinition.instances.accessReviewInstance.applyDecisions
+            batchRecordDecisions:
+              operationId: identityGovernance.accessReviews.definitions.accessReviewScheduleDefinition.instances.accessReviewInstance.batchRecordDecisions
+            resetDecisions:
+              operationId: identityGovernance.accessReviews.definitions.accessReviewScheduleDefinition.instances.accessReviewInstance.resetDecisions
+            sendReminder:
+              operationId: identityGovernance.accessReviews.definitions.accessReviewScheduleDefinition.instances.accessReviewInstance.sendReminder
+            stop:
+              operationId: identityGovernance.accessReviews.definitions.accessReviewScheduleDefinition.instances.accessReviewInstance.stop
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2284,7 +2283,6 @@ paths:
       tags:
         - identityGovernance.accessReviewSet
       summary: Get contactedReviewers from identityGovernance
-      description: 'Returns the collection of reviewers who were contacted to complete this review. While the reviewers and fallbackReviewers properties of the accessReviewScheduleDefinition might specify group owners or managers as reviewers, contactedReviewers returns their individual identities. Supports $select. Read-only.'
       operationId: identityGovernance.accessReviews.definitions.instances_ListContactedReviewers
       parameters:
         - name: accessReviewScheduleDefinition-id
@@ -2403,7 +2401,6 @@ paths:
       tags:
         - identityGovernance.accessReviewSet
       summary: Get contactedReviewers from identityGovernance
-      description: 'Returns the collection of reviewers who were contacted to complete this review. While the reviewers and fallbackReviewers properties of the accessReviewScheduleDefinition might specify group owners or managers as reviewers, contactedReviewers returns their individual identities. Supports $select. Read-only.'
       operationId: identityGovernance.accessReviews.definitions.instances_GetContactedReviewers
       parameters:
         - name: accessReviewScheduleDefinition-id
@@ -2547,7 +2544,6 @@ paths:
       tags:
         - identityGovernance.accessReviewSet
       summary: Get decisions from identityGovernance
-      description: 'Each user reviewed in an accessReviewInstance has a decision item representing if they were approved, denied, or not yet reviewed.'
       operationId: identityGovernance.accessReviews.definitions.instances_ListDecisions
       parameters:
         - name: accessReviewScheduleDefinition-id
@@ -2696,7 +2692,6 @@ paths:
       tags:
         - identityGovernance.accessReviewSet
       summary: Get decisions from identityGovernance
-      description: 'Each user reviewed in an accessReviewInstance has a decision item representing if they were approved, denied, or not yet reviewed.'
       operationId: identityGovernance.accessReviews.definitions.instances_GetDecisions
       parameters:
         - name: accessReviewScheduleDefinition-id
@@ -3168,7 +3163,6 @@ paths:
       tags:
         - identityGovernance.accessReviewSet
       summary: Get historyDefinitions from identityGovernance
-      description: Represents a collection of access review history data and the scopes used to collect that data.
       operationId: identityGovernance.accessReviews_ListHistoryDefinitions
       parameters:
         - $ref: '#/components/parameters/top'
@@ -3278,7 +3272,6 @@ paths:
       tags:
         - identityGovernance.accessReviewSet
       summary: Get historyDefinitions from identityGovernance
-      description: Represents a collection of access review history data and the scopes used to collect that data.
       operationId: identityGovernance.accessReviews_GetHistoryDefinitions
       parameters:
         - name: accessReviewHistoryDefinition-id
@@ -3393,7 +3386,6 @@ paths:
       tags:
         - identityGovernance.accessReviewSet
       summary: Get instances from identityGovernance
-      description: 'If the accessReviewHistoryDefinition is a recurring definition, instances represent each recurrence. A definition that does not recur will have exactly one instance.'
       operationId: identityGovernance.accessReviews.historyDefinitions_ListInstances
       parameters:
         - name: accessReviewHistoryDefinition-id
@@ -3510,7 +3502,6 @@ paths:
       tags:
         - identityGovernance.accessReviewSet
       summary: Get instances from identityGovernance
-      description: 'If the accessReviewHistoryDefinition is a recurring definition, instances represent each recurrence. A definition that does not recur will have exactly one instance.'
       operationId: identityGovernance.accessReviews.historyDefinitions_GetInstances
       parameters:
         - name: accessReviewHistoryDefinition-id
@@ -3565,6 +3556,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.accessReviewHistoryInstance'
+          links:
+            generateDownloadUri:
+              operationId: identityGovernance.accessReviews.historyDefinitions.accessReviewHistoryDefinition.instances.accessReviewHistoryInstance.generateDownloadUri
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3749,7 +3743,6 @@ paths:
       tags:
         - identityGovernance.appConsentApprovalRoute
       summary: Get appConsentRequests from identityGovernance
-      description: A collection of userConsentRequest objects for a specific application.
       operationId: identityGovernance.appConsent_ListAppConsentRequests
       parameters:
         - $ref: '#/components/parameters/top'
@@ -3841,7 +3834,6 @@ paths:
       tags:
         - identityGovernance.appConsentApprovalRoute
       summary: Get appConsentRequests from identityGovernance
-      description: A collection of userConsentRequest objects for a specific application.
       operationId: identityGovernance.appConsent_GetAppConsentRequests
       parameters:
         - name: appConsentRequest-id
@@ -3950,7 +3942,6 @@ paths:
       tags:
         - identityGovernance.appConsentApprovalRoute
       summary: Get userConsentRequests from identityGovernance
-      description: A list of pending user consent requests.
       operationId: identityGovernance.appConsent.appConsentRequests_ListUserConsentRequests
       parameters:
         - name: appConsentRequest-id
@@ -4069,7 +4060,6 @@ paths:
       tags:
         - identityGovernance.appConsentApprovalRoute
       summary: Get userConsentRequests from identityGovernance
-      description: A list of pending user consent requests.
       operationId: identityGovernance.appConsent.appConsentRequests_GetUserConsentRequests
       parameters:
         - name: appConsentRequest-id
@@ -4204,7 +4194,6 @@ paths:
       tags:
         - identityGovernance.appConsentApprovalRoute
       summary: Get approval from identityGovernance
-      description: Approval decisions associated with a request.
       operationId: identityGovernance.appConsent.appConsentRequests.userConsentRequests_GetApproval
       parameters:
         - name: appConsentRequest-id
@@ -4332,7 +4321,6 @@ paths:
       tags:
         - identityGovernance.appConsentApprovalRoute
       summary: Get stages from identityGovernance
-      description: 'Used for the approvalStages property of approval settings in the requestApprovalSettings property of an access package assignment policy. Specifies the primary, fallback, and escalation approvers of each stage.'
       operationId: identityGovernance.appConsent.appConsentRequests.userConsentRequests.approval_ListStages
       parameters:
         - name: appConsentRequest-id
@@ -4463,7 +4451,6 @@ paths:
       tags:
         - identityGovernance.appConsentApprovalRoute
       summary: Get stages from identityGovernance
-      description: 'Used for the approvalStages property of approval settings in the requestApprovalSettings property of an access package assignment policy. Specifies the primary, fallback, and escalation approvers of each stage.'
       operationId: identityGovernance.appConsent.appConsentRequests.userConsentRequests.approval_GetStages
       parameters:
         - name: appConsentRequest-id
@@ -4789,7 +4776,6 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get accessPackageAssignmentApprovals from identityGovernance
-      description: Approval stages for assignment requests.
       operationId: identityGovernance.entitlementManagement_ListAccessPackageAssignmentApprovals
       parameters:
         - $ref: '#/components/parameters/top'
@@ -4872,7 +4858,6 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get accessPackageAssignmentApprovals from identityGovernance
-      description: Approval stages for assignment requests.
       operationId: identityGovernance.entitlementManagement_GetAccessPackageAssignmentApprovals
       parameters:
         - name: approval-id
@@ -4978,7 +4963,6 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get stages from identityGovernance
-      description: 'Used for the approvalStages property of approval settings in the requestApprovalSettings property of an access package assignment policy. Specifies the primary, fallback, and escalation approvers of each stage.'
       operationId: identityGovernance.entitlementManagement.accessPackageAssignmentApprovals_ListStages
       parameters:
         - name: approval-id
@@ -5095,7 +5079,6 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get stages from identityGovernance
-      description: 'Used for the approvalStages property of approval settings in the requestApprovalSettings property of an access package assignment policy. Specifies the primary, fallback, and escalation approvers of each stage.'
       operationId: identityGovernance.entitlementManagement.accessPackageAssignmentApprovals_GetStages
       parameters:
         - name: approval-id
@@ -5253,7 +5236,6 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get accessPackages from identityGovernance
-      description: Represents access package objects.
       operationId: identityGovernance.entitlementManagement_ListAccessPackages
       parameters:
         - $ref: '#/components/parameters/top'
@@ -5353,7 +5335,6 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get accessPackages from identityGovernance
-      description: Represents access package objects.
       operationId: identityGovernance.entitlementManagement_GetAccessPackages
       parameters:
         - name: accessPackage-id
@@ -5412,6 +5393,8 @@ paths:
               operationId: identityGovernance.entitlementManagement.AccessPackages.GetCatalog
               parameters:
                 accessPackage-id: $request.path.accessPackage-id
+            getApplicablePolicyRequirements:
+              operationId: identityGovernance.entitlementManagement.accessPackages.accessPackage.getApplicablePolicyRequirements
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5470,7 +5453,6 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get assignmentPolicies from identityGovernance
-      description: Read-only. Nullable.
       operationId: identityGovernance.entitlementManagement.accessPackages_ListAssignmentPolicies
       parameters:
         - name: accessPackage-id
@@ -5600,7 +5582,6 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get assignmentPolicies from identityGovernance
-      description: Read-only. Nullable.
       operationId: identityGovernance.entitlementManagement.accessPackages_GetAssignmentPolicies
       parameters:
         - name: accessPackage-id
@@ -5745,7 +5726,6 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get accessPackage from identityGovernance
-      description: The access package with this policy. Read-only. Nullable. Supports $expand.
       operationId: identityGovernance.entitlementManagement.accessPackages.assignmentPolicies_GetAccessPackage
       parameters:
         - name: accessPackage-id
@@ -5821,7 +5801,6 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get catalog from identityGovernance
-      description: Catalog of the access package containing this policy. Read-only.
       operationId: identityGovernance.entitlementManagement.accessPackages.assignmentPolicies_GetCatalog
       parameters:
         - name: accessPackage-id
@@ -5892,7 +5871,6 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get catalog from identityGovernance
-      description: Read-only. Nullable.
       operationId: identityGovernance.entitlementManagement.accessPackages_GetCatalog
       parameters:
         - name: accessPackage-id
@@ -6018,7 +5996,6 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get assignmentPolicies from identityGovernance
-      description: Access package assignment policies.
       operationId: identityGovernance.entitlementManagement_ListAssignmentPolicies
       parameters:
         - $ref: '#/components/parameters/top'
@@ -6133,7 +6110,6 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get assignmentPolicies from identityGovernance
-      description: Access package assignment policies.
       operationId: identityGovernance.entitlementManagement_GetAssignmentPolicies
       parameters:
         - name: accessPackageAssignmentPolicy-id
@@ -6255,7 +6231,6 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get accessPackage from identityGovernance
-      description: The access package with this policy. Read-only. Nullable. Supports $expand.
       operationId: identityGovernance.entitlementManagement.assignmentPolicies_GetAccessPackage
       parameters:
         - name: accessPackageAssignmentPolicy-id
@@ -6322,7 +6297,6 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get catalog from identityGovernance
-      description: Catalog of the access package containing this policy. Read-only.
       operationId: identityGovernance.entitlementManagement.assignmentPolicies_GetCatalog
       parameters:
         - name: accessPackageAssignmentPolicy-id
@@ -6385,7 +6359,6 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get assignmentRequests from identityGovernance
-      description: Represents access package assignment requests created by or on behalf of a user.
       operationId: identityGovernance.entitlementManagement_ListAssignmentRequests
       parameters:
         - $ref: '#/components/parameters/top'
@@ -6490,7 +6463,6 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get assignmentRequests from identityGovernance
-      description: Represents access package assignment requests created by or on behalf of a user.
       operationId: identityGovernance.entitlementManagement_GetAssignmentRequests
       parameters:
         - name: accessPackageAssignmentRequest-id
@@ -6556,6 +6528,10 @@ paths:
               operationId: identityGovernance.entitlementManagement.AssignmentRequests.GetRequestor
               parameters:
                 accessPackageAssignmentRequest-id: $request.path.accessPackageAssignmentRequest-id
+            cancel:
+              operationId: identityGovernance.entitlementManagement.assignmentRequests.accessPackageAssignmentRequest.cancel
+            reprocess:
+              operationId: identityGovernance.entitlementManagement.assignmentRequests.accessPackageAssignmentRequest.reprocess
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -6614,7 +6590,6 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get accessPackage from identityGovernance
-      description: The access package associated with the accessPackageAssignmentRequest. An access package defines the collections of resource roles and the policies for how one or more users can get access to those resources. Read-only. Nullable. Supports $expand.
       operationId: identityGovernance.entitlementManagement.assignmentRequests_GetAccessPackage
       parameters:
         - name: accessPackageAssignmentRequest-id
@@ -6681,7 +6656,6 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get assignment from identityGovernance
-      description: 'For a requestType of UserAdd or AdminAdd, this is an access package assignment requested to be created.  For a requestType of UserRemove, AdminRemove or SystemRemove, this has the id property of an existing assignment to be removed.   Supports $expand.'
       operationId: identityGovernance.entitlementManagement.assignmentRequests_GetAssignment
       parameters:
         - name: accessPackageAssignmentRequest-id
@@ -6793,7 +6767,6 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get requestor from identityGovernance
-      description: 'The subject who requested or, if a direct assignment, was assigned. Read-only. Nullable. Supports $expand.'
       operationId: identityGovernance.entitlementManagement.assignmentRequests_GetRequestor
       parameters:
         - name: accessPackageAssignmentRequest-id
@@ -6886,7 +6859,6 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get assignments from identityGovernance
-      description: Represents the grant of an access package to a subject (user or group).
       operationId: identityGovernance.entitlementManagement_ListAssignments
       parameters:
         - $ref: '#/components/parameters/top'
@@ -6985,7 +6957,6 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get assignments from identityGovernance
-      description: Represents the grant of an access package to a subject (user or group).
       operationId: identityGovernance.entitlementManagement_GetAssignments
       parameters:
         - name: accessPackageAssignment-id
@@ -7049,6 +7020,8 @@ paths:
               operationId: identityGovernance.entitlementManagement.Assignments.GetTarget
               parameters:
                 accessPackageAssignment-id: $request.path.accessPackageAssignment-id
+            reprocess:
+              operationId: identityGovernance.entitlementManagement.assignments.accessPackageAssignment.reprocess
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -7107,7 +7080,6 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get accessPackage from identityGovernance
-      description: Read-only. Nullable. Supports $filter (eq) on the id property and $expand query parameters.
       operationId: identityGovernance.entitlementManagement.assignments_GetAccessPackage
       parameters:
         - name: accessPackageAssignment-id
@@ -7174,7 +7146,6 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get assignmentPolicy from identityGovernance
-      description: Read-only. Supports $filter (eq) on the id property and $expand query parameters.
       operationId: identityGovernance.entitlementManagement.assignments_GetAssignmentPolicy
       parameters:
         - name: accessPackageAssignment-id
@@ -7266,7 +7237,6 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get target from identityGovernance
-      description: The subject of the access package assignment. Read-only. Nullable. Supports $expand. Supports $filter (eq) on objectId.
       operationId: identityGovernance.entitlementManagement.assignments_GetTarget
       parameters:
         - name: accessPackageAssignment-id
@@ -7359,7 +7329,6 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get catalogs from identityGovernance
-      description: Represents a collection of access packages.
       operationId: identityGovernance.entitlementManagement_ListCatalogs
       parameters:
         - $ref: '#/components/parameters/top'
@@ -7463,7 +7432,6 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get catalogs from identityGovernance
-      description: Represents a collection of access packages.
       operationId: identityGovernance.entitlementManagement_GetCatalogs
       parameters:
         - name: accessPackageCatalog-id
@@ -7576,7 +7544,6 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get accessPackages from identityGovernance
-      description: The access packages in this catalog. Read-only. Nullable. Supports $expand.
       operationId: identityGovernance.entitlementManagement.catalogs_ListAccessPackages
       parameters:
         - name: accessPackageCatalog-id
@@ -7691,7 +7658,6 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get accessPackages from identityGovernance
-      description: The access packages in this catalog. Read-only. Nullable. Supports $expand.
       operationId: identityGovernance.entitlementManagement.catalogs_GetAccessPackages
       parameters:
         - name: accessPackageCatalog-id
@@ -7759,6 +7725,8 @@ paths:
               parameters:
                 accessPackageCatalog-id: $request.path.accessPackageCatalog-id
                 accessPackage-id: $request.path.accessPackage-id
+            getApplicablePolicyRequirements:
+              operationId: identityGovernance.entitlementManagement.catalogs.accessPackageCatalog.accessPackages.accessPackage.getApplicablePolicyRequirements
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -7831,7 +7799,6 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get assignmentPolicies from identityGovernance
-      description: Read-only. Nullable.
       operationId: identityGovernance.entitlementManagement.catalogs.accessPackages_ListAssignmentPolicies
       parameters:
         - name: accessPackageCatalog-id
@@ -7975,7 +7942,6 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get assignmentPolicies from identityGovernance
-      description: Read-only. Nullable.
       operationId: identityGovernance.entitlementManagement.catalogs.accessPackages_GetAssignmentPolicies
       parameters:
         - name: accessPackageCatalog-id
@@ -8143,7 +8109,6 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get accessPackage from identityGovernance
-      description: The access package with this policy. Read-only. Nullable. Supports $expand.
       operationId: identityGovernance.entitlementManagement.catalogs.accessPackages.assignmentPolicies_GetAccessPackage
       parameters:
         - name: accessPackageCatalog-id
@@ -8228,7 +8193,6 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get catalog from identityGovernance
-      description: Catalog of the access package containing this policy. Read-only.
       operationId: identityGovernance.entitlementManagement.catalogs.accessPackages.assignmentPolicies_GetCatalog
       parameters:
         - name: accessPackageCatalog-id
@@ -8307,7 +8271,6 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get catalog from identityGovernance
-      description: Read-only. Nullable.
       operationId: identityGovernance.entitlementManagement.catalogs.accessPackages_GetCatalog
       parameters:
         - name: accessPackageCatalog-id
@@ -8455,7 +8418,6 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get connectedOrganizations from identityGovernance
-      description: Represents references to a directory or domain of another organization whose users can request access.
       operationId: identityGovernance.entitlementManagement_ListConnectedOrganizations
       parameters:
         - $ref: '#/components/parameters/top'
@@ -8558,7 +8520,6 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get connectedOrganizations from identityGovernance
-      description: Represents references to a directory or domain of another organization whose users can request access.
       operationId: identityGovernance.entitlementManagement_GetConnectedOrganizations
       parameters:
         - name: connectedOrganization-id
@@ -8676,7 +8637,6 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get externalSponsors from identityGovernance
-      description: Nullable.
       operationId: identityGovernance.entitlementManagement.connectedOrganizations_ListExternalSponsors
       parameters:
         - name: connectedOrganization-id
@@ -8812,7 +8772,6 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get ref of externalSponsors from identityGovernance
-      description: Nullable.
       operationId: identityGovernance.entitlementManagement.connectedOrganizations_ListGraphRefExternalSponsors
       parameters:
         - name: connectedOrganization-id
@@ -8890,7 +8849,6 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get internalSponsors from identityGovernance
-      description: Nullable.
       operationId: identityGovernance.entitlementManagement.connectedOrganizations_ListInternalSponsors
       parameters:
         - name: connectedOrganization-id
@@ -8989,7 +8947,6 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get internalSponsors from identityGovernance
-      description: Nullable.
       operationId: identityGovernance.entitlementManagement.connectedOrganizations_GetInternalSponsors
       parameters:
         - name: connectedOrganization-id
@@ -9110,7 +9067,6 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get settings from identityGovernance
-      description: Represents the settings that control the behavior of Azure AD entitlement management.
       operationId: identityGovernance.entitlementManagement_GetSettings
       parameters:
         - name: $select
@@ -9274,7 +9230,6 @@ paths:
       tags:
         - identityGovernance.termsOfUseContainer
       summary: Get agreementAcceptances from identityGovernance
-      description: Represents the current status of a user's response to a company's customizable terms of use agreement.
       operationId: identityGovernance.termsOfUse_ListAgreementAcceptances
       parameters:
         - $ref: '#/components/parameters/top'
@@ -9394,7 +9349,6 @@ paths:
       tags:
         - identityGovernance.termsOfUseContainer
       summary: Get agreementAcceptances from identityGovernance
-      description: Represents the current status of a user's response to a company's customizable terms of use agreement.
       operationId: identityGovernance.termsOfUse_GetAgreementAcceptances
       parameters:
         - name: agreementAcceptance-id
@@ -9506,7 +9460,6 @@ paths:
       tags:
         - identityGovernance.termsOfUseContainer
       summary: Get agreements from identityGovernance
-      description: Represents a tenant's customizable terms of use agreement that's created and managed with Azure Active Directory (Azure AD).
       operationId: identityGovernance.termsOfUse_ListAgreements
       parameters:
         - $ref: '#/components/parameters/top'
@@ -9608,7 +9561,6 @@ paths:
       tags:
         - identityGovernance.termsOfUseContainer
       summary: Get agreements from identityGovernance
-      description: Represents a tenant's customizable terms of use agreement that's created and managed with Azure Active Directory (Azure AD).
       operationId: identityGovernance.termsOfUse_GetAgreements
       parameters:
         - name: agreement-id
@@ -9731,7 +9683,6 @@ paths:
       tags:
         - identityGovernance.termsOfUseContainer
       summary: Get acceptances from identityGovernance
-      description: Read-only. Information about acceptances of this agreement.
       operationId: identityGovernance.termsOfUse.agreements_ListAcceptances
       parameters:
         - name: agreement-id
@@ -9866,7 +9817,6 @@ paths:
       tags:
         - identityGovernance.termsOfUseContainer
       summary: Get acceptances from identityGovernance
-      description: Read-only. Information about acceptances of this agreement.
       operationId: identityGovernance.termsOfUse.agreements_GetAcceptances
       parameters:
         - name: agreement-id
@@ -9999,7 +9949,6 @@ paths:
       tags:
         - identityGovernance.termsOfUseContainer
       summary: Get file from identityGovernance
-      description: Default PDF linked to this agreement.
       operationId: identityGovernance.termsOfUse.agreements_GetFile
       parameters:
         - name: agreement-id
@@ -10112,7 +10061,6 @@ paths:
       tags:
         - identityGovernance.termsOfUseContainer
       summary: Get localizations from identityGovernance
-      description: The localized version of the terms of use agreement files attached to the agreement.
       operationId: identityGovernance.termsOfUse.agreements.file_ListLocalizations
       parameters:
         - name: agreement-id
@@ -10231,7 +10179,6 @@ paths:
       tags:
         - identityGovernance.termsOfUseContainer
       summary: Get localizations from identityGovernance
-      description: The localized version of the terms of use agreement files attached to the agreement.
       operationId: identityGovernance.termsOfUse.agreements.file_GetLocalizations
       parameters:
         - name: agreement-id
@@ -10366,7 +10313,6 @@ paths:
       tags:
         - identityGovernance.termsOfUseContainer
       summary: Get versions from identityGovernance
-      description: Read-only. Customized versions of the terms of use agreement in the Azure AD tenant.
       operationId: identityGovernance.termsOfUse.agreements.file.localizations_ListVersions
       parameters:
         - name: agreement-id
@@ -10497,7 +10443,6 @@ paths:
       tags:
         - identityGovernance.termsOfUseContainer
       summary: Get versions from identityGovernance
-      description: Read-only. Customized versions of the terms of use agreement in the Azure AD tenant.
       operationId: identityGovernance.termsOfUse.agreements.file.localizations_GetVersions
       parameters:
         - name: agreement-id
@@ -10645,7 +10590,6 @@ paths:
       tags:
         - identityGovernance.termsOfUseContainer
       summary: Get files from identityGovernance
-      description: 'PDFs linked to this agreement. Note: This property is in the process of being deprecated. Use the  file property instead.'
       operationId: identityGovernance.termsOfUse.agreements_ListFiles
       parameters:
         - name: agreement-id
@@ -10764,7 +10708,6 @@ paths:
       tags:
         - identityGovernance.termsOfUseContainer
       summary: Get files from identityGovernance
-      description: 'PDFs linked to this agreement. Note: This property is in the process of being deprecated. Use the  file property instead.'
       operationId: identityGovernance.termsOfUse.agreements_GetFiles
       parameters:
         - name: agreement-id
@@ -10899,7 +10842,6 @@ paths:
       tags:
         - identityGovernance.termsOfUseContainer
       summary: Get versions from identityGovernance
-      description: Read-only. Customized versions of the terms of use agreement in the Azure AD tenant.
       operationId: identityGovernance.termsOfUse.agreements.files_ListVersions
       parameters:
         - name: agreement-id
@@ -11030,7 +10972,6 @@ paths:
       tags:
         - identityGovernance.termsOfUseContainer
       summary: Get versions from identityGovernance
-      description: Read-only. Customized versions of the terms of use agreement in the Azure AD tenant.
       operationId: identityGovernance.termsOfUse.agreements.files_GetVersions
       parameters:
         - name: agreement-id
@@ -11178,7 +11119,6 @@ paths:
       tags:
         - users.agreementAcceptance
       summary: Get agreementAcceptances from users
-      description: The user's terms of use acceptance statuses. Read-only. Nullable.
       operationId: users_ListAgreementAcceptances
       parameters:
         - name: user-id
@@ -11283,7 +11223,6 @@ paths:
       tags:
         - users.agreementAcceptance
       summary: Get agreementAcceptances from users
-      description: The user's terms of use acceptance statuses. Read-only. Nullable.
       operationId: users_GetAgreementAcceptances
       parameters:
         - name: user-id

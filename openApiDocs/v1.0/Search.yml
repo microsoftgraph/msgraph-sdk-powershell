@@ -301,7 +301,6 @@ paths:
       tags:
         - external.externalConnection
       summary: Get groups from external
-      description: Read-only. Nullable.
       operationId: external.connections_ListGroups
       parameters:
         - name: externalConnection-id
@@ -405,7 +404,6 @@ paths:
       tags:
         - external.externalConnection
       summary: Get groups from external
-      description: Read-only. Nullable.
       operationId: external.connections_GetGroups
       parameters:
         - name: externalConnection-id
@@ -535,7 +533,6 @@ paths:
       tags:
         - external.externalConnection
       summary: Get members from external
-      description: 'A member added to an externalGroup. You can add Azure Active Directory users, Azure Active Directory groups, or other externalGroups as members.'
       operationId: external.connections.groups_ListMembers
       parameters:
         - name: externalConnection-id
@@ -648,7 +645,6 @@ paths:
       tags:
         - external.externalConnection
       summary: Get members from external
-      description: 'A member added to an externalGroup. You can add Azure Active Directory users, Azure Active Directory groups, or other externalGroups as members.'
       operationId: external.connections.groups_GetMembers
       parameters:
         - name: externalConnection-id
@@ -790,7 +786,6 @@ paths:
       tags:
         - external.externalConnection
       summary: Get items from external
-      description: Read-only. Nullable.
       operationId: external.connections_ListItems
       parameters:
         - name: externalConnection-id
@@ -895,7 +890,6 @@ paths:
       tags:
         - external.externalConnection
       summary: Get items from external
-      description: Read-only. Nullable.
       operationId: external.connections_GetItems
       parameters:
         - name: externalConnection-id
@@ -1018,7 +1012,6 @@ paths:
       tags:
         - external.externalConnection
       summary: Get operations from external
-      description: Read-only. Nullable.
       operationId: external.connections_ListOperations
       parameters:
         - name: externalConnection-id
@@ -1120,7 +1113,6 @@ paths:
       tags:
         - external.externalConnection
       summary: Get operations from external
-      description: Read-only. Nullable.
       operationId: external.connections_GetOperations
       parameters:
         - name: externalConnection-id
@@ -1242,7 +1234,6 @@ paths:
       tags:
         - external.externalConnection
       summary: Get schema from external
-      description: Read-only. Nullable.
       operationId: external.connections_GetSchema
       parameters:
         - name: externalConnection-id
@@ -1376,6 +1367,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.searchEntity'
+          links:
+            query:
+              operationId: search.query
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation

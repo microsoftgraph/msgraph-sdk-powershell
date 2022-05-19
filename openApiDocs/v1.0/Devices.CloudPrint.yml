@@ -95,7 +95,6 @@ paths:
       tags:
         - print.printConnector
       summary: Get connectors from print
-      description: The list of available print connectors.
       operationId: print_ListConnectors
       parameters:
         - $ref: '#/components/parameters/top'
@@ -194,7 +193,6 @@ paths:
       tags:
         - print.printConnector
       summary: Get connectors from print
-      description: The list of available print connectors.
       operationId: print_GetConnectors
       parameters:
         - name: printConnector-id
@@ -299,7 +297,6 @@ paths:
       tags:
         - print.printOperation
       summary: Get operations from print
-      description: The list of print long running operations.
       operationId: print_ListOperations
       parameters:
         - $ref: '#/components/parameters/top'
@@ -386,7 +383,6 @@ paths:
       tags:
         - print.printOperation
       summary: Get operations from print
-      description: The list of print long running operations.
       operationId: print_GetOperations
       parameters:
         - name: printOperation-id
@@ -487,7 +483,6 @@ paths:
       tags:
         - print.printer
       summary: Get printers from print
-      description: The list of printers registered in the tenant.
       operationId: print_ListPrinters
       parameters:
         - $ref: '#/components/parameters/top'
@@ -612,7 +607,6 @@ paths:
       tags:
         - print.printer
       summary: Get printers from print
-      description: The list of printers registered in the tenant.
       operationId: print_GetPrinters
       parameters:
         - name: printer-id
@@ -690,6 +684,8 @@ paths:
               operationId: print.Printers.ListTaskTriggers
               parameters:
                 printer-id: $request.path.printer-id
+            restoreFactoryDefaults:
+              operationId: print.printers.printer.restoreFactoryDefaults
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -748,7 +744,6 @@ paths:
       tags:
         - print.printer
       summary: Get connectors from print
-      description: The connectors that are associated with the printer.
       operationId: print.printers_ListConnectors
       parameters:
         - name: printer-id
@@ -832,7 +827,6 @@ paths:
       tags:
         - print.printer
       summary: Get connectors from print
-      description: The connectors that are associated with the printer.
       operationId: print.printers_GetConnectors
       parameters:
         - name: printer-id
@@ -914,7 +908,6 @@ paths:
       tags:
         - print.printer
       summary: Get shares from print
-      description: 'The list of printerShares that are associated with the printer. Currently, only one printerShare can be associated with the printer. Read-only. Nullable.'
       operationId: print.printers_ListShares
       parameters:
         - name: printer-id
@@ -1018,7 +1011,6 @@ paths:
       tags:
         - print.printer
       summary: Get shares from print
-      description: 'The list of printerShares that are associated with the printer. Currently, only one printerShare can be associated with the printer. Read-only. Nullable.'
       operationId: print.printers_GetShares
       parameters:
         - name: printer-id
@@ -1113,7 +1105,6 @@ paths:
       tags:
         - print.printer
       summary: Get taskTriggers from print
-      description: A list of task triggers that are associated with the printer.
       operationId: print.printers_ListTaskTriggers
       parameters:
         - name: printer-id
@@ -1214,7 +1205,6 @@ paths:
       tags:
         - print.printer
       summary: Get taskTriggers from print
-      description: A list of task triggers that are associated with the printer.
       operationId: print.printers_GetTaskTriggers
       parameters:
         - name: printer-id
@@ -1343,7 +1333,6 @@ paths:
       tags:
         - print.printer
       summary: Get definition from print
-      description: An abstract definition that will be used to create a printTask when triggered by a print event. Read-only.
       operationId: print.printers.taskTriggers_GetDefinition
       parameters:
         - name: printer-id
@@ -1449,7 +1438,6 @@ paths:
       tags:
         - print.printService
       summary: Get services from print
-      description: The list of available Universal Print service endpoints.
       operationId: print_ListServices
       parameters:
         - $ref: '#/components/parameters/top'
@@ -1532,7 +1520,6 @@ paths:
       tags:
         - print.printService
       summary: Get services from print
-      description: The list of available Universal Print service endpoints.
       operationId: print_GetServices
       parameters:
         - name: printService-id
@@ -1638,7 +1625,6 @@ paths:
       tags:
         - print.printService
       summary: Get endpoints from print
-      description: Endpoints that can be used to access the service. Read-only. Nullable.
       operationId: print.services_ListEndpoints
       parameters:
         - name: printService-id
@@ -1740,7 +1726,6 @@ paths:
       tags:
         - print.printService
       summary: Get endpoints from print
-      description: Endpoints that can be used to access the service. Read-only. Nullable.
       operationId: print.services_GetEndpoints
       parameters:
         - name: printService-id
@@ -1862,7 +1847,6 @@ paths:
       tags:
         - print.printerShare
       summary: Get shares from print
-      description: The list of printer shares registered in the tenant.
       operationId: print_ListShares
       parameters:
         - $ref: '#/components/parameters/top'
@@ -1981,7 +1965,6 @@ paths:
       tags:
         - print.printerShare
       summary: Get shares from print
-      description: The list of printer shares registered in the tenant.
       operationId: print_GetShares
       parameters:
         - name: printerShare-id
@@ -2115,7 +2098,6 @@ paths:
       tags:
         - print.printerShare
       summary: Get allowedGroups from print
-      description: The groups whose users have access to print using the printer.
       operationId: print.shares_ListAllowedGroups
       parameters:
         - name: printerShare-id
@@ -2389,7 +2371,6 @@ paths:
       tags:
         - print.printerShare
       summary: Get ref of allowedGroups from print
-      description: The groups whose users have access to print using the printer.
       operationId: print.shares_ListGraphRefAllowedGroups
       parameters:
         - name: printerShare-id
@@ -2543,7 +2524,6 @@ paths:
       tags:
         - print.printerShare
       summary: Get allowedUsers from print
-      description: The users who have access to print using the printer.
       operationId: print.shares_ListAllowedUsers
       parameters:
         - name: printerShare-id
@@ -2951,7 +2931,6 @@ paths:
       tags:
         - print.printerShare
       summary: Get ref of allowedUsers from print
-      description: The users who have access to print using the printer.
       operationId: print.shares_ListGraphRefAllowedUsers
       parameters:
         - name: printerShare-id
@@ -3169,7 +3148,6 @@ paths:
       tags:
         - print.printerShare
       summary: Get printer from print
-      description: The printer that this printer share is related to.
       operationId: print.shares_GetPrinter
       parameters:
         - name: printerShare-id
@@ -3255,7 +3233,6 @@ paths:
       tags:
         - print.printTaskDefinition
       summary: Get taskDefinitions from print
-      description: List of abstract definition for a task that can be triggered when various events occur within Universal Print.
       operationId: print_ListTaskDefinitions
       parameters:
         - $ref: '#/components/parameters/top'
@@ -3344,7 +3321,6 @@ paths:
       tags:
         - print.printTaskDefinition
       summary: Get taskDefinitions from print
-      description: List of abstract definition for a task that can be triggered when various events occur within Universal Print.
       operationId: print_GetTaskDefinitions
       parameters:
         - name: printTaskDefinition-id
@@ -3452,7 +3428,6 @@ paths:
       tags:
         - print.printTaskDefinition
       summary: Get tasks from print
-      description: A list of tasks that have been created based on this definition. The list includes currently running tasks and recently completed tasks. Read-only.
       operationId: print.taskDefinitions_ListTasks
       parameters:
         - name: printTaskDefinition-id
@@ -3558,7 +3533,6 @@ paths:
       tags:
         - print.printTaskDefinition
       summary: Get tasks from print
-      description: A list of tasks that have been created based on this definition. The list includes currently running tasks and recently completed tasks. Read-only.
       operationId: print.taskDefinitions_GetTasks
       parameters:
         - name: printTaskDefinition-id
@@ -3695,7 +3669,6 @@ paths:
       tags:
         - print.printTaskDefinition
       summary: Get definition from print
-      description: The printTaskDefinition that was used to create this task. Read-only.
       operationId: print.taskDefinitions.tasks_GetDefinition
       parameters:
         - name: printTaskDefinition-id
@@ -3761,7 +3734,6 @@ paths:
       tags:
         - print.printTaskDefinition
       summary: Get trigger from print
-      description: The printTaskTrigger that triggered this task's execution. Read-only.
       operationId: print.taskDefinitions.tasks_GetTrigger
       parameters:
         - name: printTaskDefinition-id
@@ -15783,11 +15755,11 @@ components:
       properties:
         key:
           type: string
-          description: Key.
+          description: 'Contains the name of the field that a value is associated with. When a sign in or domain hint is included in the sign-in request, corresponding fields are included as key-value pairs. Possible keys: Login hint present, Domain hint present.'
           nullable: true
         value:
           type: string
-          description: Value.
+          description: Contains the corresponding value for the specified key. The value is true if a sign in hint was included in the sign-in request; otherwise false. The value is true if a domain hint was included in the sign-in request; otherwise false.
           nullable: true
       additionalProperties:
         type: object

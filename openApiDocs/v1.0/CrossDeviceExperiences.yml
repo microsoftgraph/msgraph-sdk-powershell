@@ -11,7 +11,6 @@ paths:
       tags:
         - users.userActivity
       summary: Get activities from users
-      description: The user's activities across devices. Read-only. Nullable.
       operationId: users_ListActivities
       parameters:
         - name: user-id
@@ -148,7 +147,6 @@ paths:
       tags:
         - users.userActivity
       summary: Get activities from users
-      description: The user's activities across devices. Read-only. Nullable.
       operationId: users_GetActivities
       parameters:
         - name: user-id
@@ -289,7 +287,6 @@ paths:
       tags:
         - users.userActivity
       summary: Get historyItems from users
-      description: Optional. NavigationProperty/Containment; navigation property to the activity's historyItems.
       operationId: users.activities_ListHistoryItems
       parameters:
         - name: user-id
@@ -425,7 +422,6 @@ paths:
       tags:
         - users.userActivity
       summary: Get historyItems from users
-      description: Optional. NavigationProperty/Containment; navigation property to the activity's historyItems.
       operationId: users.activities_GetHistoryItems
       parameters:
         - name: user-id
@@ -583,7 +579,6 @@ paths:
       tags:
         - users.userActivity
       summary: Get activity from users
-      description: Optional. NavigationProperty/Containment; navigation property to the associated activity.
       operationId: users.activities.historyItems_GetActivity
       parameters:
         - name: user-id

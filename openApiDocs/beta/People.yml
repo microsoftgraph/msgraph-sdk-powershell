@@ -117,7 +117,6 @@ paths:
       tags:
         - users.userAnalytics
       summary: Get activityStatistics from users
-      description: The collection of work activities that a user spent time on during and outside of working hours. Read-only. Nullable.
       operationId: users.analytics_ListActivityStatistics
       parameters:
         - name: user-id
@@ -228,7 +227,6 @@ paths:
       tags:
         - users.userAnalytics
       summary: Get activityStatistics from users
-      description: The collection of work activities that a user spent time on during and outside of working hours. Read-only. Nullable.
       operationId: users.analytics_GetActivityStatistics
       parameters:
         - name: user-id
@@ -353,7 +351,6 @@ paths:
       tags:
         - users.person
       summary: Get people from users
-      description: 'Read-only. The most relevant people to the user. The collection is ordered by their relevance to the user, which is determined by the user''s communication, collaboration and business relationships. A person is an aggregation of information from across mail, contacts and social networks.'
       operationId: users_ListPeople
       parameters:
         - name: user-id
@@ -497,7 +494,6 @@ paths:
       tags:
         - users.person
       summary: Get people from users
-      description: 'Read-only. The most relevant people to the user. The collection is ordered by their relevance to the user, which is determined by the user''s communication, collaboration and business relationships. A person is an aggregation of information from across mail, contacts and social networks.'
       operationId: users_GetPeople
       parameters:
         - name: user-id
@@ -625,7 +621,6 @@ paths:
       tags:
         - users.profile
       summary: Get profile from users
-      description: Represents properties that are descriptive of a user in a tenant.
       operationId: users_GetProfile
       parameters:
         - name: user-id
@@ -1101,7 +1096,6 @@ paths:
       tags:
         - users.profile
       summary: Get addresses from users
-      description: Represents details of addresses associated with the user.
       operationId: users.profile_ListAddresses
       parameters:
         - name: user-id
@@ -1230,7 +1224,6 @@ paths:
       tags:
         - users.profile
       summary: Get addresses from users
-      description: Represents details of addresses associated with the user.
       operationId: users.profile_GetAddresses
       parameters:
         - name: user-id
@@ -1361,7 +1354,6 @@ paths:
       tags:
         - users.profile
       summary: Get anniversaries from users
-      description: Represents the details of meaningful dates associated with a person.
       operationId: users.profile_ListAnniversaries
       parameters:
         - name: user-id
@@ -1490,7 +1482,6 @@ paths:
       tags:
         - users.profile
       summary: Get anniversaries from users
-      description: Represents the details of meaningful dates associated with a person.
       operationId: users.profile_GetAnniversaries
       parameters:
         - name: user-id
@@ -1621,7 +1612,6 @@ paths:
       tags:
         - users.profile
       summary: Get awards from users
-      description: Represents the details of awards or honors associated with a person.
       operationId: users.profile_ListAwards
       parameters:
         - name: user-id
@@ -1759,7 +1749,6 @@ paths:
       tags:
         - users.profile
       summary: Get awards from users
-      description: Represents the details of awards or honors associated with a person.
       operationId: users.profile_GetAwards
       parameters:
         - name: user-id
@@ -1893,7 +1882,6 @@ paths:
       tags:
         - users.profile
       summary: Get certifications from users
-      description: Represents the details of certifications associated with a person.
       operationId: users.profile_ListCertifications
       parameters:
         - name: user-id
@@ -2043,7 +2031,6 @@ paths:
       tags:
         - users.profile
       summary: Get certifications from users
-      description: Represents the details of certifications associated with a person.
       operationId: users.profile_GetCertifications
       parameters:
         - name: user-id
@@ -2181,7 +2168,6 @@ paths:
       tags:
         - users.profile
       summary: Get educationalActivities from users
-      description: 'Represents data that a user has supplied related to undergraduate, graduate, postgraduate or other educational activities.'
       operationId: users.profile_ListEducationalActivities
       parameters:
         - name: user-id
@@ -2316,7 +2302,6 @@ paths:
       tags:
         - users.profile
       summary: Get educationalActivities from users
-      description: 'Represents data that a user has supplied related to undergraduate, graduate, postgraduate or other educational activities.'
       operationId: users.profile_GetEducationalActivities
       parameters:
         - name: user-id
@@ -2449,7 +2434,6 @@ paths:
       tags:
         - users.profile
       summary: Get emails from users
-      description: Represents detailed information about email addresses associated with the user.
       operationId: users.profile_ListEmails
       parameters:
         - name: user-id
@@ -2578,7 +2562,6 @@ paths:
       tags:
         - users.profile
       summary: Get emails from users
-      description: Represents detailed information about email addresses associated with the user.
       operationId: users.profile_GetEmails
       parameters:
         - name: user-id
@@ -2709,7 +2692,6 @@ paths:
       tags:
         - users.profile
       summary: Get interests from users
-      description: Provides detailed information about interests the user has associated with themselves in various services.
       operationId: users.profile_ListInterests
       parameters:
         - name: user-id
@@ -2847,7 +2829,6 @@ paths:
       tags:
         - users.profile
       summary: Get interests from users
-      description: Provides detailed information about interests the user has associated with themselves in various services.
       operationId: users.profile_GetInterests
       parameters:
         - name: user-id
@@ -2981,7 +2962,6 @@ paths:
       tags:
         - users.profile
       summary: Get languages from users
-      description: Represents detailed information about languages that a user has added to their profile.
       operationId: users.profile_ListLanguages
       parameters:
         - name: user-id
@@ -3122,7 +3102,6 @@ paths:
       tags:
         - users.profile
       summary: Get languages from users
-      description: Represents detailed information about languages that a user has added to their profile.
       operationId: users.profile_GetLanguages
       parameters:
         - name: user-id
@@ -3257,7 +3236,6 @@ paths:
       tags:
         - users.profile
       summary: Get names from users
-      description: Represents the names a user has added to their profile.
       operationId: users.profile_ListNames
       parameters:
         - name: user-id
@@ -3410,7 +3388,6 @@ paths:
       tags:
         - users.profile
       summary: Get names from users
-      description: Represents the names a user has added to their profile.
       operationId: users.profile_GetNames
       parameters:
         - name: user-id
@@ -3549,7 +3526,6 @@ paths:
       tags:
         - users.profile
       summary: Get notes from users
-      description: Represents notes that a user has added to their profile.
       operationId: users.profile_ListNotes
       parameters:
         - name: user-id
@@ -3678,7 +3654,6 @@ paths:
       tags:
         - users.profile
       summary: Get notes from users
-      description: Represents notes that a user has added to their profile.
       operationId: users.profile_GetNotes
       parameters:
         - name: user-id
@@ -3809,7 +3784,6 @@ paths:
       tags:
         - users.profile
       summary: Get patents from users
-      description: Represents patents that a user has added to their profile.
       operationId: users.profile_ListPatents
       parameters:
         - name: user-id
@@ -3950,7 +3924,6 @@ paths:
       tags:
         - users.profile
       summary: Get patents from users
-      description: Represents patents that a user has added to their profile.
       operationId: users.profile_GetPatents
       parameters:
         - name: user-id
@@ -4085,7 +4058,6 @@ paths:
       tags:
         - users.profile
       summary: Get phones from users
-      description: Represents detailed information about phone numbers associated with a user in various services.
       operationId: users.profile_ListPhones
       parameters:
         - name: user-id
@@ -4214,7 +4186,6 @@ paths:
       tags:
         - users.profile
       summary: Get phones from users
-      description: Represents detailed information about phone numbers associated with a user in various services.
       operationId: users.profile_GetPhones
       parameters:
         - name: user-id
@@ -4345,7 +4316,6 @@ paths:
       tags:
         - users.profile
       summary: Get positions from users
-      description: Represents detailed information about work positions associated with a user's profile.
       operationId: users.profile_ListPositions
       parameters:
         - name: user-id
@@ -4480,7 +4450,6 @@ paths:
       tags:
         - users.profile
       summary: Get positions from users
-      description: Represents detailed information about work positions associated with a user's profile.
       operationId: users.profile_GetPositions
       parameters:
         - name: user-id
@@ -4613,7 +4582,6 @@ paths:
       tags:
         - users.profile
       summary: Get projects from users
-      description: Represents detailed information about projects associated with a user.
       operationId: users.profile_ListProjects
       parameters:
         - name: user-id
@@ -4757,7 +4725,6 @@ paths:
       tags:
         - users.profile
       summary: Get projects from users
-      description: Represents detailed information about projects associated with a user.
       operationId: users.profile_GetProjects
       parameters:
         - name: user-id
@@ -4893,7 +4860,6 @@ paths:
       tags:
         - users.profile
       summary: Get publications from users
-      description: Represents details of any publications a user has added to their profile.
       operationId: users.profile_ListPublications
       parameters:
         - name: user-id
@@ -5031,7 +4997,6 @@ paths:
       tags:
         - users.profile
       summary: Get publications from users
-      description: Represents details of any publications a user has added to their profile.
       operationId: users.profile_GetPublications
       parameters:
         - name: user-id
@@ -5165,7 +5130,6 @@ paths:
       tags:
         - users.profile
       summary: Get skills from users
-      description: Represents detailed information about skills associated with a user in various services.
       operationId: users.profile_ListSkills
       parameters:
         - name: user-id
@@ -5303,7 +5267,6 @@ paths:
       tags:
         - users.profile
       summary: Get skills from users
-      description: Represents detailed information about skills associated with a user in various services.
       operationId: users.profile_GetSkills
       parameters:
         - name: user-id
@@ -5437,7 +5400,6 @@ paths:
       tags:
         - users.profile
       summary: Get webAccounts from users
-      description: Represents web accounts the user has indicated they use or has added to their user profile.
       operationId: users.profile_ListWebAccounts
       parameters:
         - name: user-id
@@ -5575,7 +5537,6 @@ paths:
       tags:
         - users.profile
       summary: Get webAccounts from users
-      description: Represents web accounts the user has indicated they use or has added to their user profile.
       operationId: users.profile_GetWebAccounts
       parameters:
         - name: user-id
@@ -5709,7 +5670,6 @@ paths:
       tags:
         - users.profile
       summary: Get websites from users
-      description: Represents detailed information about websites associated with a user in various services.
       operationId: users.profile_ListWebsites
       parameters:
         - name: user-id
@@ -5844,7 +5804,6 @@ paths:
       tags:
         - users.profile
       summary: Get websites from users
-      description: Represents detailed information about websites associated with a user in various services.
       operationId: users.profile_GetWebsites
       parameters:
         - name: user-id

@@ -10,8 +10,7 @@ paths:
     get:
       tags:
         - bookingBusinesses.bookingBusiness
-      summary: Get entities from bookingBusinesses
-      description: List bookingBusinesses
+      summary: List bookingBusinesses
       operationId: bookingBusinesses.bookingBusiness_ListBookingBusiness
       parameters:
         - $ref: '#/components/parameters/top'
@@ -113,8 +112,7 @@ paths:
     post:
       tags:
         - bookingBusinesses.bookingBusiness
-      summary: Add new entity to bookingBusinesses
-      description: Create bookingBusiness
+      summary: Create bookingBusiness
       operationId: bookingBusinesses.bookingBusiness_CreateBookingBusiness
       requestBody:
         description: New entity
@@ -138,7 +136,6 @@ paths:
       tags:
         - bookingBusinesses.bookingBusiness
       summary: Get entity from bookingBusinesses by key
-      description: Represents a Microsot Bookings Business.
       operationId: bookingBusinesses.bookingBusiness_GetBookingBusiness
       parameters:
         - name: bookingBusiness-id
@@ -227,6 +224,12 @@ paths:
               operationId: bookingBusinesses.ListStaffMembers
               parameters:
                 bookingBusiness-id: $request.path.bookingBusiness-id
+            getStaffAvailability:
+              operationId: bookingBusinesses.bookingBusiness.getStaffAvailability
+            publish:
+              operationId: bookingBusinesses.bookingBusiness.publish
+            unpublish:
+              operationId: bookingBusinesses.bookingBusiness.unpublish
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -285,7 +288,6 @@ paths:
       tags:
         - bookingBusinesses.bookingAppointment
       summary: Get appointments from bookingBusinesses
-      description: All the appointments of this business. Read-only. Nullable.
       operationId: bookingBusinesses_ListAppointments
       parameters:
         - name: bookingBusiness-id
@@ -486,7 +488,6 @@ paths:
       tags:
         - bookingBusinesses.bookingAppointment
       summary: Get appointments from bookingBusinesses
-      description: All the appointments of this business. Read-only. Nullable.
       operationId: bookingBusinesses_GetAppointments
       parameters:
         - name: bookingBusiness-id
@@ -569,6 +570,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.bookingAppointment'
+          links:
+            cancel:
+              operationId: bookingBusinesses.bookingBusiness.appointments.bookingAppointment.cancel
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -641,7 +645,6 @@ paths:
       tags:
         - bookingBusinesses.Actions
       summary: Invoke action cancel
-      description: 'Cancels the giving booking appointment, sending a message to the involved parties.'
       operationId: bookingBusinesses.appointments_cancel
       parameters:
         - name: bookingBusiness-id
@@ -682,7 +685,6 @@ paths:
       tags:
         - bookingBusinesses.bookingAppointment
       summary: Get calendarView from bookingBusinesses
-      description: The set of appointments of this business in a specified date range. Read-only. Nullable.
       operationId: bookingBusinesses_ListCalendarView
       parameters:
         - name: bookingBusiness-id
@@ -895,7 +897,6 @@ paths:
       tags:
         - bookingBusinesses.bookingAppointment
       summary: Get calendarView from bookingBusinesses
-      description: The set of appointments of this business in a specified date range. Read-only. Nullable.
       operationId: bookingBusinesses_GetCalendarView
       parameters:
         - name: bookingBusiness-id
@@ -990,6 +991,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.bookingAppointment'
+          links:
+            cancel:
+              operationId: bookingBusinesses.bookingBusiness.calendarView.bookingAppointment.cancel
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1062,7 +1066,6 @@ paths:
       tags:
         - bookingBusinesses.Actions
       summary: Invoke action cancel
-      description: 'Cancels the giving booking appointment, sending a message to the involved parties.'
       operationId: bookingBusinesses.calendarView_cancel
       parameters:
         - name: bookingBusiness-id
@@ -1103,7 +1106,6 @@ paths:
       tags:
         - bookingBusinesses.bookingCustomer
       summary: Get customers from bookingBusinesses
-      description: All the customers of this business. Read-only. Nullable.
       operationId: bookingBusinesses_ListCustomers
       parameters:
         - name: bookingBusiness-id
@@ -1211,7 +1213,6 @@ paths:
       tags:
         - bookingBusinesses.bookingCustomer
       summary: Get customers from bookingBusinesses
-      description: All the customers of this business. Read-only. Nullable.
       operationId: bookingBusinesses_GetCustomers
       parameters:
         - name: bookingBusiness-id
@@ -1335,7 +1336,6 @@ paths:
       tags:
         - bookingBusinesses.bookingCustomQuestion
       summary: Get customQuestions from bookingBusinesses
-      description: All the custom questions of this business. Read-only. Nullable.
       operationId: bookingBusinesses_ListCustomQuestions
       parameters:
         - name: bookingBusiness-id
@@ -1440,7 +1440,6 @@ paths:
       tags:
         - bookingBusinesses.bookingCustomQuestion
       summary: Get customQuestions from bookingBusinesses
-      description: All the custom questions of this business. Read-only. Nullable.
       operationId: bookingBusinesses_GetCustomQuestions
       parameters:
         - name: bookingBusiness-id
@@ -1613,7 +1612,6 @@ paths:
       tags:
         - bookingBusinesses.Actions
       summary: Invoke action publish
-      description: Makes the scheduling page of this business available to the general public.
       operationId: bookingBusinesses_publish
       parameters:
         - name: bookingBusiness-id
@@ -1634,7 +1632,6 @@ paths:
       tags:
         - bookingBusinesses.Actions
       summary: Invoke action unpublish
-      description: Prevents the general public from seeing the scheduling page of this business.
       operationId: bookingBusinesses_unpublish
       parameters:
         - name: bookingBusiness-id
@@ -1655,7 +1652,6 @@ paths:
       tags:
         - bookingBusinesses.bookingService
       summary: Get services from bookingBusinesses
-      description: All the services offered by this business. Read-only. Nullable.
       operationId: bookingBusinesses_ListServices
       parameters:
         - name: bookingBusiness-id
@@ -1808,7 +1804,6 @@ paths:
       tags:
         - bookingBusinesses.bookingService
       summary: Get services from bookingBusinesses
-      description: All the services offered by this business. Read-only. Nullable.
       operationId: bookingBusinesses_GetServices
       parameters:
         - name: bookingBusiness-id
@@ -1947,7 +1942,6 @@ paths:
       tags:
         - bookingBusinesses.bookingStaffMember
       summary: Get staffMembers from bookingBusinesses
-      description: All the staff members that provide services in this business. Read-only. Nullable.
       operationId: bookingBusinesses_ListStaffMembers
       parameters:
         - name: bookingBusiness-id
@@ -2067,7 +2061,6 @@ paths:
       tags:
         - bookingBusinesses.bookingStaffMember
       summary: Get staffMembers from bookingBusinesses
-      description: All the staff members that provide services in this business. Read-only. Nullable.
       operationId: bookingBusinesses_GetStaffMembers
       parameters:
         - name: bookingBusiness-id
@@ -2194,8 +2187,7 @@ paths:
     get:
       tags:
         - bookingCurrencies.bookingCurrency
-      summary: Get entities from bookingCurrencies
-      description: List bookingCurrencies
+      summary: List bookingCurrencies
       operationId: bookingCurrencies.bookingCurrency_ListBookingCurrency
       parameters:
         - $ref: '#/components/parameters/top'

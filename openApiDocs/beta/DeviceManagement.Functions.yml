@@ -11,7 +11,6 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function downloadApplePushNotificationCertificateSigningRequest
-      description: Download Apple push notification certificate signing request
       operationId: deviceManagement.applePushNotificationCertificate_downloadApplePushNotificationCertificateSigningRequest
       responses:
         '200':
@@ -337,7 +336,6 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function exportMobileConfig
-      description: Exports the mobile configuration
       operationId: deviceManagement.depOnboardingSettings.enrollmentProfiles_exportMobileConfig
       parameters:
         - name: depOnboardingSetting-id
@@ -375,7 +373,6 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function getEncryptionPublicKey
-      description: Get a public key to use to encrypt the Apple device enrollment program token
       operationId: deviceManagement.depOnboardingSettings_getEncryptionPublicKey
       parameters:
         - name: depOnboardingSetting-id
@@ -523,7 +520,6 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function getRemediationHistory
-      description: Function to get the number of remediations by a device health scripts
       operationId: deviceManagement.deviceHealthScripts_getRemediationHistory
       parameters:
         - name: deviceHealthScript-id
@@ -761,7 +757,6 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function getAssignedRoleDetails
-      description: Retrieves the assigned role definitions and role assignments of the currently authenticated user.
       operationId: deviceManagement_getAssignedRoleDetails
       responses:
         '200':

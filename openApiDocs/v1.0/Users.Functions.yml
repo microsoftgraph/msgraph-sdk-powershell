@@ -38,6 +38,894 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
+  '/users/{user-id}/authentication/microsoftAuthenticatorMethods/{microsoftAuthenticatorAuthenticationMethod-id}/device/memberOf/{directoryObject-id}/microsoft.graph.user/microsoft.graph.getManagedAppDiagnosticStatuses()':
+    get:
+      tags:
+        - users.Functions
+      summary: Invoke function getManagedAppDiagnosticStatuses
+      operationId: users.authentication.microsoftAuthenticatorMethods.device.memberOf.microsoft.graph.user_getManagedAppDiagnosticStatuses
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: microsoftAuthenticatorAuthenticationMethod-id
+          in: path
+          description: 'key: id of microsoftAuthenticatorAuthenticationMethod'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: microsoftAuthenticatorAuthenticationMethod
+        - name: directoryObject-id
+          in: path
+          description: 'key: id of directoryObject'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: directoryObject
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.managedAppDiagnosticStatus'
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/users/{user-id}/authentication/microsoftAuthenticatorMethods/{microsoftAuthenticatorAuthenticationMethod-id}/device/memberOf/{directoryObject-id}/microsoft.graph.user/microsoft.graph.getManagedAppPolicies()':
+    get:
+      tags:
+        - users.Functions
+      summary: Invoke function getManagedAppPolicies
+      operationId: users.authentication.microsoftAuthenticatorMethods.device.memberOf.microsoft.graph.user_getManagedAppPolicies
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: microsoftAuthenticatorAuthenticationMethod-id
+          in: path
+          description: 'key: id of microsoftAuthenticatorAuthenticationMethod'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: microsoftAuthenticatorAuthenticationMethod
+        - name: directoryObject-id
+          in: path
+          description: 'key: id of directoryObject'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: directoryObject
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.managedAppPolicy'
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/users/{user-id}/authentication/microsoftAuthenticatorMethods/{microsoftAuthenticatorAuthenticationMethod-id}/device/memberOf/{directoryObject-id}/microsoft.graph.user/microsoft.graph.reminderView(StartDateTime=''{StartDateTime}'',EndDateTime=''{EndDateTime}'')':
+    get:
+      tags:
+        - users.Functions
+      summary: Invoke function reminderView
+      operationId: users.authentication.microsoftAuthenticatorMethods.device.memberOf.microsoft.graph.user_reminderView
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: microsoftAuthenticatorAuthenticationMethod-id
+          in: path
+          description: 'key: id of microsoftAuthenticatorAuthenticationMethod'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: microsoftAuthenticatorAuthenticationMethod
+        - name: directoryObject-id
+          in: path
+          description: 'key: id of directoryObject'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: directoryObject
+        - name: StartDateTime
+          in: path
+          description: 'Usage: StartDateTime=''{StartDateTime}'''
+          required: true
+          schema:
+            type: string
+        - name: EndDateTime
+          in: path
+          description: 'Usage: EndDateTime=''{EndDateTime}'''
+          required: true
+          schema:
+            type: string
+            nullable: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.reminder'
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/users/{user-id}/authentication/microsoftAuthenticatorMethods/{microsoftAuthenticatorAuthenticationMethod-id}/device/registeredUsers/{directoryObject-id}/microsoft.graph.user/microsoft.graph.getManagedAppDiagnosticStatuses()':
+    get:
+      tags:
+        - users.Functions
+      summary: Invoke function getManagedAppDiagnosticStatuses
+      operationId: users.authentication.microsoftAuthenticatorMethods.device.registeredUsers.microsoft.graph.user_getManagedAppDiagnosticStatuses
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: microsoftAuthenticatorAuthenticationMethod-id
+          in: path
+          description: 'key: id of microsoftAuthenticatorAuthenticationMethod'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: microsoftAuthenticatorAuthenticationMethod
+        - name: directoryObject-id
+          in: path
+          description: 'key: id of directoryObject'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: directoryObject
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.managedAppDiagnosticStatus'
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/users/{user-id}/authentication/microsoftAuthenticatorMethods/{microsoftAuthenticatorAuthenticationMethod-id}/device/registeredUsers/{directoryObject-id}/microsoft.graph.user/microsoft.graph.getManagedAppPolicies()':
+    get:
+      tags:
+        - users.Functions
+      summary: Invoke function getManagedAppPolicies
+      operationId: users.authentication.microsoftAuthenticatorMethods.device.registeredUsers.microsoft.graph.user_getManagedAppPolicies
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: microsoftAuthenticatorAuthenticationMethod-id
+          in: path
+          description: 'key: id of microsoftAuthenticatorAuthenticationMethod'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: microsoftAuthenticatorAuthenticationMethod
+        - name: directoryObject-id
+          in: path
+          description: 'key: id of directoryObject'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: directoryObject
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.managedAppPolicy'
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/users/{user-id}/authentication/microsoftAuthenticatorMethods/{microsoftAuthenticatorAuthenticationMethod-id}/device/registeredUsers/{directoryObject-id}/microsoft.graph.user/microsoft.graph.reminderView(StartDateTime=''{StartDateTime}'',EndDateTime=''{EndDateTime}'')':
+    get:
+      tags:
+        - users.Functions
+      summary: Invoke function reminderView
+      operationId: users.authentication.microsoftAuthenticatorMethods.device.registeredUsers.microsoft.graph.user_reminderView
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: microsoftAuthenticatorAuthenticationMethod-id
+          in: path
+          description: 'key: id of microsoftAuthenticatorAuthenticationMethod'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: microsoftAuthenticatorAuthenticationMethod
+        - name: directoryObject-id
+          in: path
+          description: 'key: id of directoryObject'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: directoryObject
+        - name: StartDateTime
+          in: path
+          description: 'Usage: StartDateTime=''{StartDateTime}'''
+          required: true
+          schema:
+            type: string
+        - name: EndDateTime
+          in: path
+          description: 'Usage: EndDateTime=''{EndDateTime}'''
+          required: true
+          schema:
+            type: string
+            nullable: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.reminder'
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/users/{user-id}/authentication/microsoftAuthenticatorMethods/{microsoftAuthenticatorAuthenticationMethod-id}/device/transitiveMemberOf/{directoryObject-id}/microsoft.graph.user/microsoft.graph.getManagedAppDiagnosticStatuses()':
+    get:
+      tags:
+        - users.Functions
+      summary: Invoke function getManagedAppDiagnosticStatuses
+      operationId: users.authentication.microsoftAuthenticatorMethods.device.transitiveMemberOf.microsoft.graph.user_getManagedAppDiagnosticStatuses
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: microsoftAuthenticatorAuthenticationMethod-id
+          in: path
+          description: 'key: id of microsoftAuthenticatorAuthenticationMethod'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: microsoftAuthenticatorAuthenticationMethod
+        - name: directoryObject-id
+          in: path
+          description: 'key: id of directoryObject'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: directoryObject
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.managedAppDiagnosticStatus'
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/users/{user-id}/authentication/microsoftAuthenticatorMethods/{microsoftAuthenticatorAuthenticationMethod-id}/device/transitiveMemberOf/{directoryObject-id}/microsoft.graph.user/microsoft.graph.getManagedAppPolicies()':
+    get:
+      tags:
+        - users.Functions
+      summary: Invoke function getManagedAppPolicies
+      operationId: users.authentication.microsoftAuthenticatorMethods.device.transitiveMemberOf.microsoft.graph.user_getManagedAppPolicies
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: microsoftAuthenticatorAuthenticationMethod-id
+          in: path
+          description: 'key: id of microsoftAuthenticatorAuthenticationMethod'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: microsoftAuthenticatorAuthenticationMethod
+        - name: directoryObject-id
+          in: path
+          description: 'key: id of directoryObject'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: directoryObject
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.managedAppPolicy'
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/users/{user-id}/authentication/microsoftAuthenticatorMethods/{microsoftAuthenticatorAuthenticationMethod-id}/device/transitiveMemberOf/{directoryObject-id}/microsoft.graph.user/microsoft.graph.reminderView(StartDateTime=''{StartDateTime}'',EndDateTime=''{EndDateTime}'')':
+    get:
+      tags:
+        - users.Functions
+      summary: Invoke function reminderView
+      operationId: users.authentication.microsoftAuthenticatorMethods.device.transitiveMemberOf.microsoft.graph.user_reminderView
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: microsoftAuthenticatorAuthenticationMethod-id
+          in: path
+          description: 'key: id of microsoftAuthenticatorAuthenticationMethod'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: microsoftAuthenticatorAuthenticationMethod
+        - name: directoryObject-id
+          in: path
+          description: 'key: id of directoryObject'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: directoryObject
+        - name: StartDateTime
+          in: path
+          description: 'Usage: StartDateTime=''{StartDateTime}'''
+          required: true
+          schema:
+            type: string
+        - name: EndDateTime
+          in: path
+          description: 'Usage: EndDateTime=''{EndDateTime}'''
+          required: true
+          schema:
+            type: string
+            nullable: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.reminder'
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/users/{user-id}/authentication/windowsHelloForBusinessMethods/{windowsHelloForBusinessAuthenticationMethod-id}/device/memberOf/{directoryObject-id}/microsoft.graph.user/microsoft.graph.getManagedAppDiagnosticStatuses()':
+    get:
+      tags:
+        - users.Functions
+      summary: Invoke function getManagedAppDiagnosticStatuses
+      operationId: users.authentication.windowsHelloForBusinessMethods.device.memberOf.microsoft.graph.user_getManagedAppDiagnosticStatuses
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: windowsHelloForBusinessAuthenticationMethod-id
+          in: path
+          description: 'key: id of windowsHelloForBusinessAuthenticationMethod'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: windowsHelloForBusinessAuthenticationMethod
+        - name: directoryObject-id
+          in: path
+          description: 'key: id of directoryObject'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: directoryObject
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.managedAppDiagnosticStatus'
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/users/{user-id}/authentication/windowsHelloForBusinessMethods/{windowsHelloForBusinessAuthenticationMethod-id}/device/memberOf/{directoryObject-id}/microsoft.graph.user/microsoft.graph.getManagedAppPolicies()':
+    get:
+      tags:
+        - users.Functions
+      summary: Invoke function getManagedAppPolicies
+      operationId: users.authentication.windowsHelloForBusinessMethods.device.memberOf.microsoft.graph.user_getManagedAppPolicies
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: windowsHelloForBusinessAuthenticationMethod-id
+          in: path
+          description: 'key: id of windowsHelloForBusinessAuthenticationMethod'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: windowsHelloForBusinessAuthenticationMethod
+        - name: directoryObject-id
+          in: path
+          description: 'key: id of directoryObject'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: directoryObject
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.managedAppPolicy'
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/users/{user-id}/authentication/windowsHelloForBusinessMethods/{windowsHelloForBusinessAuthenticationMethod-id}/device/memberOf/{directoryObject-id}/microsoft.graph.user/microsoft.graph.reminderView(StartDateTime=''{StartDateTime}'',EndDateTime=''{EndDateTime}'')':
+    get:
+      tags:
+        - users.Functions
+      summary: Invoke function reminderView
+      operationId: users.authentication.windowsHelloForBusinessMethods.device.memberOf.microsoft.graph.user_reminderView
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: windowsHelloForBusinessAuthenticationMethod-id
+          in: path
+          description: 'key: id of windowsHelloForBusinessAuthenticationMethod'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: windowsHelloForBusinessAuthenticationMethod
+        - name: directoryObject-id
+          in: path
+          description: 'key: id of directoryObject'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: directoryObject
+        - name: StartDateTime
+          in: path
+          description: 'Usage: StartDateTime=''{StartDateTime}'''
+          required: true
+          schema:
+            type: string
+        - name: EndDateTime
+          in: path
+          description: 'Usage: EndDateTime=''{EndDateTime}'''
+          required: true
+          schema:
+            type: string
+            nullable: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.reminder'
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/users/{user-id}/authentication/windowsHelloForBusinessMethods/{windowsHelloForBusinessAuthenticationMethod-id}/device/registeredUsers/{directoryObject-id}/microsoft.graph.user/microsoft.graph.getManagedAppDiagnosticStatuses()':
+    get:
+      tags:
+        - users.Functions
+      summary: Invoke function getManagedAppDiagnosticStatuses
+      operationId: users.authentication.windowsHelloForBusinessMethods.device.registeredUsers.microsoft.graph.user_getManagedAppDiagnosticStatuses
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: windowsHelloForBusinessAuthenticationMethod-id
+          in: path
+          description: 'key: id of windowsHelloForBusinessAuthenticationMethod'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: windowsHelloForBusinessAuthenticationMethod
+        - name: directoryObject-id
+          in: path
+          description: 'key: id of directoryObject'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: directoryObject
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.managedAppDiagnosticStatus'
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/users/{user-id}/authentication/windowsHelloForBusinessMethods/{windowsHelloForBusinessAuthenticationMethod-id}/device/registeredUsers/{directoryObject-id}/microsoft.graph.user/microsoft.graph.getManagedAppPolicies()':
+    get:
+      tags:
+        - users.Functions
+      summary: Invoke function getManagedAppPolicies
+      operationId: users.authentication.windowsHelloForBusinessMethods.device.registeredUsers.microsoft.graph.user_getManagedAppPolicies
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: windowsHelloForBusinessAuthenticationMethod-id
+          in: path
+          description: 'key: id of windowsHelloForBusinessAuthenticationMethod'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: windowsHelloForBusinessAuthenticationMethod
+        - name: directoryObject-id
+          in: path
+          description: 'key: id of directoryObject'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: directoryObject
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.managedAppPolicy'
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/users/{user-id}/authentication/windowsHelloForBusinessMethods/{windowsHelloForBusinessAuthenticationMethod-id}/device/registeredUsers/{directoryObject-id}/microsoft.graph.user/microsoft.graph.reminderView(StartDateTime=''{StartDateTime}'',EndDateTime=''{EndDateTime}'')':
+    get:
+      tags:
+        - users.Functions
+      summary: Invoke function reminderView
+      operationId: users.authentication.windowsHelloForBusinessMethods.device.registeredUsers.microsoft.graph.user_reminderView
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: windowsHelloForBusinessAuthenticationMethod-id
+          in: path
+          description: 'key: id of windowsHelloForBusinessAuthenticationMethod'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: windowsHelloForBusinessAuthenticationMethod
+        - name: directoryObject-id
+          in: path
+          description: 'key: id of directoryObject'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: directoryObject
+        - name: StartDateTime
+          in: path
+          description: 'Usage: StartDateTime=''{StartDateTime}'''
+          required: true
+          schema:
+            type: string
+        - name: EndDateTime
+          in: path
+          description: 'Usage: EndDateTime=''{EndDateTime}'''
+          required: true
+          schema:
+            type: string
+            nullable: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.reminder'
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/users/{user-id}/authentication/windowsHelloForBusinessMethods/{windowsHelloForBusinessAuthenticationMethod-id}/device/transitiveMemberOf/{directoryObject-id}/microsoft.graph.user/microsoft.graph.getManagedAppDiagnosticStatuses()':
+    get:
+      tags:
+        - users.Functions
+      summary: Invoke function getManagedAppDiagnosticStatuses
+      operationId: users.authentication.windowsHelloForBusinessMethods.device.transitiveMemberOf.microsoft.graph.user_getManagedAppDiagnosticStatuses
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: windowsHelloForBusinessAuthenticationMethod-id
+          in: path
+          description: 'key: id of windowsHelloForBusinessAuthenticationMethod'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: windowsHelloForBusinessAuthenticationMethod
+        - name: directoryObject-id
+          in: path
+          description: 'key: id of directoryObject'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: directoryObject
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.managedAppDiagnosticStatus'
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/users/{user-id}/authentication/windowsHelloForBusinessMethods/{windowsHelloForBusinessAuthenticationMethod-id}/device/transitiveMemberOf/{directoryObject-id}/microsoft.graph.user/microsoft.graph.getManagedAppPolicies()':
+    get:
+      tags:
+        - users.Functions
+      summary: Invoke function getManagedAppPolicies
+      operationId: users.authentication.windowsHelloForBusinessMethods.device.transitiveMemberOf.microsoft.graph.user_getManagedAppPolicies
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: windowsHelloForBusinessAuthenticationMethod-id
+          in: path
+          description: 'key: id of windowsHelloForBusinessAuthenticationMethod'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: windowsHelloForBusinessAuthenticationMethod
+        - name: directoryObject-id
+          in: path
+          description: 'key: id of directoryObject'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: directoryObject
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.managedAppPolicy'
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/users/{user-id}/authentication/windowsHelloForBusinessMethods/{windowsHelloForBusinessAuthenticationMethod-id}/device/transitiveMemberOf/{directoryObject-id}/microsoft.graph.user/microsoft.graph.reminderView(StartDateTime=''{StartDateTime}'',EndDateTime=''{EndDateTime}'')':
+    get:
+      tags:
+        - users.Functions
+      summary: Invoke function reminderView
+      operationId: users.authentication.windowsHelloForBusinessMethods.device.transitiveMemberOf.microsoft.graph.user_reminderView
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: windowsHelloForBusinessAuthenticationMethod-id
+          in: path
+          description: 'key: id of windowsHelloForBusinessAuthenticationMethod'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: windowsHelloForBusinessAuthenticationMethod
+        - name: directoryObject-id
+          in: path
+          description: 'key: id of directoryObject'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: directoryObject
+        - name: StartDateTime
+          in: path
+          description: 'Usage: StartDateTime=''{StartDateTime}'''
+          required: true
+          schema:
+            type: string
+        - name: EndDateTime
+          in: path
+          description: 'Usage: EndDateTime=''{EndDateTime}'''
+          required: true
+          schema:
+            type: string
+            nullable: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.reminder'
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
   '/users/{user-id}/calendar/calendarView/{event-id}/instances/microsoft.graph.delta()':
     get:
       tags:
@@ -1027,6 +1915,133 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
+  '/users/{user-id}/directReports/{directoryObject-id}/microsoft.graph.user/microsoft.graph.getManagedAppDiagnosticStatuses()':
+    get:
+      tags:
+        - users.Functions
+      summary: Invoke function getManagedAppDiagnosticStatuses
+      operationId: users.directReports.microsoft.graph.user_getManagedAppDiagnosticStatuses
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: directoryObject-id
+          in: path
+          description: 'key: id of directoryObject'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: directoryObject
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.managedAppDiagnosticStatus'
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/users/{user-id}/directReports/{directoryObject-id}/microsoft.graph.user/microsoft.graph.getManagedAppPolicies()':
+    get:
+      tags:
+        - users.Functions
+      summary: Invoke function getManagedAppPolicies
+      operationId: users.directReports.microsoft.graph.user_getManagedAppPolicies
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: directoryObject-id
+          in: path
+          description: 'key: id of directoryObject'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: directoryObject
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.managedAppPolicy'
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/users/{user-id}/directReports/{directoryObject-id}/microsoft.graph.user/microsoft.graph.reminderView(StartDateTime=''{StartDateTime}'',EndDateTime=''{EndDateTime}'')':
+    get:
+      tags:
+        - users.Functions
+      summary: Invoke function reminderView
+      operationId: users.directReports.microsoft.graph.user_reminderView
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: directoryObject-id
+          in: path
+          description: 'key: id of directoryObject'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: directoryObject
+        - name: StartDateTime
+          in: path
+          description: 'Usage: StartDateTime=''{StartDateTime}'''
+          required: true
+          schema:
+            type: string
+        - name: EndDateTime
+          in: path
+          description: 'Usage: EndDateTime=''{EndDateTime}'''
+          required: true
+          schema:
+            type: string
+            nullable: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.reminder'
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
   '/users/{user-id}/drives/{drive-id}/items/{driveItem-id}/listItem/microsoft.graph.getActivitiesByInterval()':
     get:
       tags:
@@ -1885,6 +2900,133 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
+  '/users/{user-id}/memberOf/{directoryObject-id}/microsoft.graph.user/microsoft.graph.getManagedAppDiagnosticStatuses()':
+    get:
+      tags:
+        - users.Functions
+      summary: Invoke function getManagedAppDiagnosticStatuses
+      operationId: users.memberOf.microsoft.graph.user_getManagedAppDiagnosticStatuses
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: directoryObject-id
+          in: path
+          description: 'key: id of directoryObject'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: directoryObject
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.managedAppDiagnosticStatus'
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/users/{user-id}/memberOf/{directoryObject-id}/microsoft.graph.user/microsoft.graph.getManagedAppPolicies()':
+    get:
+      tags:
+        - users.Functions
+      summary: Invoke function getManagedAppPolicies
+      operationId: users.memberOf.microsoft.graph.user_getManagedAppPolicies
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: directoryObject-id
+          in: path
+          description: 'key: id of directoryObject'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: directoryObject
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.managedAppPolicy'
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/users/{user-id}/memberOf/{directoryObject-id}/microsoft.graph.user/microsoft.graph.reminderView(StartDateTime=''{StartDateTime}'',EndDateTime=''{EndDateTime}'')':
+    get:
+      tags:
+        - users.Functions
+      summary: Invoke function reminderView
+      operationId: users.memberOf.microsoft.graph.user_reminderView
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: directoryObject-id
+          in: path
+          description: 'key: id of directoryObject'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: directoryObject
+        - name: StartDateTime
+          in: path
+          description: 'Usage: StartDateTime=''{StartDateTime}'''
+          required: true
+          schema:
+            type: string
+        - name: EndDateTime
+          in: path
+          description: 'Usage: EndDateTime=''{EndDateTime}'''
+          required: true
+          schema:
+            type: string
+            nullable: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.reminder'
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
   '/users/{user-id}/messages/microsoft.graph.delta()':
     get:
       tags:
@@ -1922,7 +3064,6 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function getManagedAppDiagnosticStatuses
-      description: Gets diagnostics validation status for a given user.
       operationId: users_getManagedAppDiagnosticStatuses
       parameters:
         - name: user-id
@@ -1955,7 +3096,6 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function getManagedAppPolicies
-      description: Gets app restrictions for a given user.
       operationId: users_getManagedAppPolicies
       parameters:
         - name: user-id
@@ -2451,6 +3591,133 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
+  '/users/{user-id}/transitiveMemberOf/{directoryObject-id}/microsoft.graph.user/microsoft.graph.getManagedAppDiagnosticStatuses()':
+    get:
+      tags:
+        - users.Functions
+      summary: Invoke function getManagedAppDiagnosticStatuses
+      operationId: users.transitiveMemberOf.microsoft.graph.user_getManagedAppDiagnosticStatuses
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: directoryObject-id
+          in: path
+          description: 'key: id of directoryObject'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: directoryObject
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.managedAppDiagnosticStatus'
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/users/{user-id}/transitiveMemberOf/{directoryObject-id}/microsoft.graph.user/microsoft.graph.getManagedAppPolicies()':
+    get:
+      tags:
+        - users.Functions
+      summary: Invoke function getManagedAppPolicies
+      operationId: users.transitiveMemberOf.microsoft.graph.user_getManagedAppPolicies
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: directoryObject-id
+          in: path
+          description: 'key: id of directoryObject'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: directoryObject
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.managedAppPolicy'
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/users/{user-id}/transitiveMemberOf/{directoryObject-id}/microsoft.graph.user/microsoft.graph.reminderView(StartDateTime=''{StartDateTime}'',EndDateTime=''{EndDateTime}'')':
+    get:
+      tags:
+        - users.Functions
+      summary: Invoke function reminderView
+      operationId: users.transitiveMemberOf.microsoft.graph.user_reminderView
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: directoryObject-id
+          in: path
+          description: 'key: id of directoryObject'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: directoryObject
+        - name: StartDateTime
+          in: path
+          description: 'Usage: StartDateTime=''{StartDateTime}'''
+          required: true
+          schema:
+            type: string
+        - name: EndDateTime
+          in: path
+          description: 'Usage: EndDateTime=''{EndDateTime}'''
+          required: true
+          schema:
+            type: string
+            nullable: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.reminder'
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
   /users/microsoft.graph.delta():
     get:
       tags:
@@ -2539,6 +3806,85 @@ components:
               description: Optional. NavigationProperty/Containment; navigation property to the activity's historyItems.
           additionalProperties:
             type: object
+    microsoft.graph.managedAppDiagnosticStatus:
+      title: managedAppDiagnosticStatus
+      type: object
+      properties:
+        mitigationInstruction:
+          type: string
+          description: Instruction on how to mitigate a failed validation
+          nullable: true
+        state:
+          type: string
+          description: The state of the operation
+          nullable: true
+        validationName:
+          type: string
+          description: The validation friendly name
+          nullable: true
+      additionalProperties:
+        type: object
+      description: Represents diagnostics status.
+    microsoft.graph.managedAppPolicy:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: managedAppPolicy
+          type: object
+          properties:
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The date and time the policy was created.
+              format: date-time
+            description:
+              type: string
+              description: The policy's description.
+              nullable: true
+            displayName:
+              type: string
+              description: Policy display name.
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Last time the policy was modified.
+              format: date-time
+            version:
+              type: string
+              description: Version of the entity.
+              nullable: true
+          additionalProperties:
+            type: object
+          description: The ManagedAppPolicy resource represents a base type for platform specific policies.
+    microsoft.graph.reminder:
+      title: reminder
+      type: object
+      properties:
+        changeKey:
+          type: string
+          description: 'Identifies the version of the reminder. Every time the reminder is changed, changeKey changes as well. This allows Exchange to apply changes to the correct version of the object.'
+          nullable: true
+        eventEndTime:
+          $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
+        eventId:
+          type: string
+          description: The unique ID of the event. Read only.
+          nullable: true
+        eventLocation:
+          $ref: '#/components/schemas/microsoft.graph.location'
+        eventStartTime:
+          $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
+        eventSubject:
+          type: string
+          description: The text of the event's subject line.
+          nullable: true
+        eventWebLink:
+          type: string
+          description: The URL to open the event in Outlook on the web.The event will open in the browser if you are logged in to your mailbox via Outlook on the web. You will be prompted to login if you are not already logged in with the browser.This URL cannot be accessed from within an iFrame.
+          nullable: true
+        reminderFireTime:
+          $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
+      additionalProperties:
+        type: object
     microsoft.graph.event:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.outlookItem'
@@ -3275,85 +4621,6 @@ components:
               description: The collection of single-value extended properties defined for the mailFolder. Read-only. Nullable.
           additionalProperties:
             type: object
-    microsoft.graph.managedAppDiagnosticStatus:
-      title: managedAppDiagnosticStatus
-      type: object
-      properties:
-        mitigationInstruction:
-          type: string
-          description: Instruction on how to mitigate a failed validation
-          nullable: true
-        state:
-          type: string
-          description: The state of the operation
-          nullable: true
-        validationName:
-          type: string
-          description: The validation friendly name
-          nullable: true
-      additionalProperties:
-        type: object
-      description: Represents diagnostics status.
-    microsoft.graph.managedAppPolicy:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: managedAppPolicy
-          type: object
-          properties:
-            createdDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: The date and time the policy was created.
-              format: date-time
-            description:
-              type: string
-              description: The policy's description.
-              nullable: true
-            displayName:
-              type: string
-              description: Policy display name.
-            lastModifiedDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: Last time the policy was modified.
-              format: date-time
-            version:
-              type: string
-              description: Version of the entity.
-              nullable: true
-          additionalProperties:
-            type: object
-          description: The ManagedAppPolicy resource represents a base type for platform specific policies.
-    microsoft.graph.reminder:
-      title: reminder
-      type: object
-      properties:
-        changeKey:
-          type: string
-          description: 'Identifies the version of the reminder. Every time the reminder is changed, changeKey changes as well. This allows Exchange to apply changes to the correct version of the object.'
-          nullable: true
-        eventEndTime:
-          $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
-        eventId:
-          type: string
-          description: The unique ID of the event. Read only.
-          nullable: true
-        eventLocation:
-          $ref: '#/components/schemas/microsoft.graph.location'
-        eventStartTime:
-          $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
-        eventSubject:
-          type: string
-          description: The text of the event's subject line.
-          nullable: true
-        eventWebLink:
-          type: string
-          description: The URL to open the event in Outlook on the web.The event will open in the browser if you are logged in to your mailbox via Outlook on the web. You will be prompted to login if you are not already logged in with the browser.This URL cannot be accessed from within an iFrame.
-          nullable: true
-        reminderFireTime:
-          $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
-      additionalProperties:
-        type: object
     microsoft.graph.onenotePagePreview:
       title: onenotePagePreview
       type: object
@@ -4108,6 +5375,49 @@ components:
               $ref: '#/components/schemas/microsoft.graph.userActivity'
           additionalProperties:
             type: object
+    microsoft.graph.dateTimeTimeZone:
+      title: dateTimeTimeZone
+      type: object
+      properties:
+        dateTime:
+          type: string
+          description: 'A single point of time in a combined date and time representation ({date}T{time}). For example, ''2019-04-16T09:00:00''.'
+        timeZone:
+          type: string
+          description: 'Represents a time zone, for example, ''Pacific Standard Time''. See below for possible values.'
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.location:
+      title: location
+      type: object
+      properties:
+        address:
+          $ref: '#/components/schemas/microsoft.graph.physicalAddress'
+        coordinates:
+          $ref: '#/components/schemas/microsoft.graph.outlookGeoCoordinates'
+        displayName:
+          type: string
+          description: The name associated with the location.
+          nullable: true
+        locationEmailAddress:
+          type: string
+          description: Optional email address of the location.
+          nullable: true
+        locationType:
+          $ref: '#/components/schemas/microsoft.graph.locationType'
+        locationUri:
+          type: string
+          description: Optional URI representing the location.
+          nullable: true
+        uniqueId:
+          type: string
+          description: For internal use only.
+          nullable: true
+        uniqueIdType:
+          $ref: '#/components/schemas/microsoft.graph.locationUniqueIdType'
+      additionalProperties:
+        type: object
     microsoft.graph.outlookItem:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -4162,19 +5472,6 @@ components:
           $ref: '#/components/schemas/microsoft.graph.bodyType'
       additionalProperties:
         type: object
-    microsoft.graph.dateTimeTimeZone:
-      title: dateTimeTimeZone
-      type: object
-      properties:
-        dateTime:
-          type: string
-          description: 'A single point of time in a combined date and time representation ({date}T{time}). For example, ''2019-04-16T09:00:00''.'
-        timeZone:
-          type: string
-          description: 'Represents a time zone, for example, ''Pacific Standard Time''. See below for possible values.'
-          nullable: true
-      additionalProperties:
-        type: object
     microsoft.graph.importance:
       title: importance
       enum:
@@ -4182,36 +5479,6 @@ components:
         - normal
         - high
       type: string
-    microsoft.graph.location:
-      title: location
-      type: object
-      properties:
-        address:
-          $ref: '#/components/schemas/microsoft.graph.physicalAddress'
-        coordinates:
-          $ref: '#/components/schemas/microsoft.graph.outlookGeoCoordinates'
-        displayName:
-          type: string
-          description: The name associated with the location.
-          nullable: true
-        locationEmailAddress:
-          type: string
-          description: Optional email address of the location.
-          nullable: true
-        locationType:
-          $ref: '#/components/schemas/microsoft.graph.locationType'
-        locationUri:
-          type: string
-          description: Optional URI representing the location.
-          nullable: true
-        uniqueId:
-          type: string
-          description: For internal use only.
-          nullable: true
-        uniqueIdType:
-          $ref: '#/components/schemas/microsoft.graph.locationUniqueIdType'
-      additionalProperties:
-        type: object
     microsoft.graph.onlineMeetingInfo:
       title: onlineMeetingInfo
       type: object
@@ -6524,32 +7791,6 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    microsoft.graph.attendeeBase:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.recipient'
-        - title: attendeeBase
-          type: object
-          properties:
-            type:
-              $ref: '#/components/schemas/microsoft.graph.attendeeType'
-          additionalProperties:
-            type: object
-    microsoft.graph.timeSlot:
-      title: timeSlot
-      type: object
-      properties:
-        end:
-          $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
-        start:
-          $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
-      additionalProperties:
-        type: object
-    microsoft.graph.bodyType:
-      title: bodyType
-      enum:
-        - text
-        - html
-      type: string
     microsoft.graph.outlookGeoCoordinates:
       title: outlookGeoCoordinates
       type: object
@@ -6603,6 +7844,32 @@ components:
         - directory
         - private
         - bing
+      type: string
+    microsoft.graph.attendeeBase:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.recipient'
+        - title: attendeeBase
+          type: object
+          properties:
+            type:
+              $ref: '#/components/schemas/microsoft.graph.attendeeType'
+          additionalProperties:
+            type: object
+    microsoft.graph.timeSlot:
+      title: timeSlot
+      type: object
+      properties:
+        end:
+          $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
+        start:
+          $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
+      additionalProperties:
+        type: object
+    microsoft.graph.bodyType:
+      title: bodyType
+      enum:
+        - text
+        - html
       type: string
     microsoft.graph.phone:
       title: phone
@@ -12695,11 +13962,11 @@ components:
       properties:
         key:
           type: string
-          description: Key.
+          description: 'Contains the name of the field that a value is associated with. When a sign in or domain hint is included in the sign-in request, corresponding fields are included as key-value pairs. Possible keys: Login hint present, Domain hint present.'
           nullable: true
         value:
           type: string
-          description: Value.
+          description: Contains the corresponding value for the specified key. The value is true if a sign in hint was included in the sign-in request; otherwise false. The value is true if a domain hint was included in the sign-in request; otherwise false.
           nullable: true
       additionalProperties:
         type: object

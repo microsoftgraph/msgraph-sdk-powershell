@@ -376,6 +376,10 @@ paths:
               operationId: compliance.ediscovery.Cases.ListTags
               parameters:
                 case-id: $request.path.case-id
+            close:
+              operationId: compliance.ediscovery.cases.case.close
+            reopen:
+              operationId: compliance.ediscovery.cases.case.reopen
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -434,7 +438,6 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Get custodians from compliance
-      description: Returns a list of case custodian objects for this case.  Nullable.
       operationId: compliance.ediscovery.cases_ListCustodians
       parameters:
         - name: case-id
@@ -565,7 +568,6 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Get custodians from compliance
-      description: Returns a list of case custodian objects for this case.  Nullable.
       operationId: compliance.ediscovery.cases_GetCustodians
       parameters:
         - name: case-id
@@ -651,6 +653,16 @@ paths:
               parameters:
                 case-id: $request.path.case-id
                 custodian-id: $request.path.custodian-id
+            activate:
+              operationId: compliance.ediscovery.cases.case.custodians.custodian.activate
+            applyHold:
+              operationId: compliance.ediscovery.cases.case.custodians.custodian.applyHold
+            release:
+              operationId: compliance.ediscovery.cases.case.custodians.custodian.release
+            removeHold:
+              operationId: compliance.ediscovery.cases.case.custodians.custodian.removeHold
+            updateIndex:
+              operationId: compliance.ediscovery.cases.case.custodians.custodian.updateIndex
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -858,7 +870,6 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Get siteSources from compliance
-      description: Data source entity for SharePoint sites associated with the custodian.
       operationId: compliance.ediscovery.cases.custodians_ListSiteSources
       parameters:
         - name: case-id
@@ -982,7 +993,6 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Get siteSources from compliance
-      description: Data source entity for SharePoint sites associated with the custodian.
       operationId: compliance.ediscovery.cases.custodians_GetSiteSources
       parameters:
         - name: case-id
@@ -1136,7 +1146,6 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Get site from compliance
-      description: The SharePoint site associated with the siteSource.
       operationId: compliance.ediscovery.cases.custodians.siteSources_GetSite
       parameters:
         - name: case-id
@@ -1343,7 +1352,6 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Get unifiedGroupSources from compliance
-      description: Data source entity for groups associated with the custodian.
       operationId: compliance.ediscovery.cases.custodians_ListUnifiedGroupSources
       parameters:
         - name: case-id
@@ -1470,7 +1478,6 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Get unifiedGroupSources from compliance
-      description: Data source entity for groups associated with the custodian.
       operationId: compliance.ediscovery.cases.custodians_GetUnifiedGroupSources
       parameters:
         - name: case-id
@@ -1625,7 +1632,6 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Get group from compliance
-      description: The group associated with the unifiedGroupSource.
       operationId: compliance.ediscovery.cases.custodians.unifiedGroupSources_GetGroup
       parameters:
         - name: case-id
@@ -1964,7 +1970,6 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Get userSources from compliance
-      description: Data source entity for a the custodian. This is the container for a custodian's mailbox and OneDrive for Business site.
       operationId: compliance.ediscovery.cases.custodians_ListUserSources
       parameters:
         - name: case-id
@@ -2095,7 +2100,6 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Get userSources from compliance
-      description: Data source entity for a the custodian. This is the container for a custodian's mailbox and OneDrive for Business site.
       operationId: compliance.ediscovery.cases.custodians_GetUserSources
       parameters:
         - name: case-id
@@ -2313,7 +2317,6 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Get legalHolds from compliance
-      description: Returns a list of case legalHold objects for this case.  Nullable.
       operationId: compliance.ediscovery.cases_ListLegalHolds
       parameters:
         - name: case-id
@@ -2445,7 +2448,6 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Get legalHolds from compliance
-      description: Returns a list of case legalHold objects for this case.  Nullable.
       operationId: compliance.ediscovery.cases_GetLegalHolds
       parameters:
         - name: case-id
@@ -2597,7 +2599,6 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Get siteSources from compliance
-      description: Data source entity for SharePoint sites associated with the legal hold.
       operationId: compliance.ediscovery.cases.legalHolds_ListSiteSources
       parameters:
         - name: case-id
@@ -2721,7 +2722,6 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Get siteSources from compliance
-      description: Data source entity for SharePoint sites associated with the legal hold.
       operationId: compliance.ediscovery.cases.legalHolds_GetSiteSources
       parameters:
         - name: case-id
@@ -2875,7 +2875,6 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Get site from compliance
-      description: The SharePoint site associated with the siteSource.
       operationId: compliance.ediscovery.cases.legalHolds.siteSources_GetSite
       parameters:
         - name: case-id
@@ -3362,7 +3361,6 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Get group from compliance
-      description: The group associated with the unifiedGroupSource.
       operationId: compliance.ediscovery.cases.legalHolds.unifiedGroupSources_GetGroup
       parameters:
         - name: case-id
@@ -3701,7 +3699,6 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Get userSources from compliance
-      description: Data source entity for a the legal hold. This is the container for a mailbox and OneDrive for Business site.
       operationId: compliance.ediscovery.cases.legalHolds_ListUserSources
       parameters:
         - name: case-id
@@ -3832,7 +3829,6 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Get userSources from compliance
-      description: Data source entity for a the legal hold. This is the container for a mailbox and OneDrive for Business site.
       operationId: compliance.ediscovery.cases.legalHolds_GetUserSources
       parameters:
         - name: case-id
@@ -4020,7 +4016,6 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Get noncustodialDataSources from compliance
-      description: Returns a list of case noncustodialDataSource objects for this case.  Nullable.
       operationId: compliance.ediscovery.cases_ListNoncustodialDataSources
       parameters:
         - name: case-id
@@ -4141,7 +4136,6 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Get noncustodialDataSources from compliance
-      description: Returns a list of case noncustodialDataSource objects for this case.  Nullable.
       operationId: compliance.ediscovery.cases_GetNoncustodialDataSources
       parameters:
         - name: case-id
@@ -4211,6 +4205,14 @@ paths:
               parameters:
                 case-id: $request.path.case-id
                 noncustodialDataSource-id: $request.path.noncustodialDataSource-id
+            applyHold:
+              operationId: compliance.ediscovery.cases.case.noncustodialDataSources.noncustodialDataSource.applyHold
+            release:
+              operationId: compliance.ediscovery.cases.case.noncustodialDataSources.noncustodialDataSource.release
+            removeHold:
+              operationId: compliance.ediscovery.cases.case.noncustodialDataSources.noncustodialDataSource.removeHold
+            updateIndex:
+              operationId: compliance.ediscovery.cases.case.noncustodialDataSources.noncustodialDataSource.updateIndex
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4283,7 +4285,6 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Get dataSource from compliance
-      description: User source or SharePoint site data source as non-custodial data source.
       operationId: compliance.ediscovery.cases.noncustodialDataSources_GetDataSource
       parameters:
         - name: case-id
@@ -4585,7 +4586,6 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Get operations from compliance
-      description: Returns a list of case operation objects for this case. Nullable.
       operationId: compliance.ediscovery.cases_ListOperations
       parameters:
         - name: case-id
@@ -4702,7 +4702,6 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Get operations from compliance
-      description: Returns a list of case operation objects for this case. Nullable.
       operationId: compliance.ediscovery.cases_GetOperations
       parameters:
         - name: case-id
@@ -4866,7 +4865,6 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Get reviewSets from compliance
-      description: Returns a list of reviewSet objects in the case. Read-only. Nullable.
       operationId: compliance.ediscovery.cases_ListReviewSets
       parameters:
         - name: case-id
@@ -4973,7 +4971,6 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Get reviewSets from compliance
-      description: Returns a list of reviewSet objects in the case. Read-only. Nullable.
       operationId: compliance.ediscovery.cases_GetReviewSets
       parameters:
         - name: case-id
@@ -5032,6 +5029,10 @@ paths:
               parameters:
                 case-id: $request.path.case-id
                 reviewSet-id: $request.path.reviewSet-id
+            addToReviewSet:
+              operationId: compliance.ediscovery.cases.case.reviewSets.reviewSet.addToReviewSet
+            export:
+              operationId: compliance.ediscovery.cases.case.reviewSets.reviewSet.export
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5198,7 +5199,6 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Get queries from compliance
-      description: Read-only. Nullable.
       operationId: compliance.ediscovery.cases.reviewSets_ListQueries
       parameters:
         - name: case-id
@@ -5326,7 +5326,6 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Get queries from compliance
-      description: Read-only. Nullable.
       operationId: compliance.ediscovery.cases.reviewSets_GetQueries
       parameters:
         - name: case-id
@@ -5387,6 +5386,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.ediscovery.reviewSetQuery'
+          links:
+            applyTags:
+              operationId: compliance.ediscovery.cases.case.reviewSets.reviewSet.queries.reviewSetQuery.applyTags
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5568,6 +5570,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.ediscovery.caseSettings'
+          links:
+            resetToDefault:
+              operationId: compliance.ediscovery.cases.case.settings.resetToDefault
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5646,7 +5651,6 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Get sourceCollections from compliance
-      description: Returns a list of sourceCollection objects associated with this case.
       operationId: compliance.ediscovery.cases_ListSourceCollections
       parameters:
         - name: case-id
@@ -5776,7 +5780,6 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Get sourceCollections from compliance
-      description: Returns a list of sourceCollection objects associated with this case.
       operationId: compliance.ediscovery.cases_GetSourceCollections
       parameters:
         - name: case-id
@@ -5868,6 +5871,10 @@ paths:
               parameters:
                 case-id: $request.path.case-id
                 sourceCollection-id: $request.path.sourceCollection-id
+            estimateStatistics:
+              operationId: compliance.ediscovery.cases.case.sourceCollections.sourceCollection.estimateStatistics
+            purgeData:
+              operationId: compliance.ediscovery.cases.case.sourceCollections.sourceCollection.purgeData
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5940,7 +5947,6 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Get additionalSources from compliance
-      description: Adds an additional source to the sourceCollection.
       operationId: compliance.ediscovery.cases.sourceCollections_ListAdditionalSources
       parameters:
         - name: case-id
@@ -6062,7 +6068,6 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Get additionalSources from compliance
-      description: Adds an additional source to the sourceCollection.
       operationId: compliance.ediscovery.cases.sourceCollections_GetAdditionalSources
       parameters:
         - name: case-id
@@ -6207,7 +6212,6 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Get addToReviewSetOperation from compliance
-      description: Adds the results of the sourceCollection to the specified reviewSet.
       operationId: compliance.ediscovery.cases.sourceCollections_GetAddToReviewSetOperation
       parameters:
         - name: case-id
@@ -6285,7 +6289,6 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Get custodianSources from compliance
-      description: Custodian sources that are included in the sourceCollection.
       operationId: compliance.ediscovery.cases.sourceCollections_ListCustodianSources
       parameters:
         - name: case-id
@@ -6370,7 +6373,6 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Get custodianSources from compliance
-      description: Custodian sources that are included in the sourceCollection.
       operationId: compliance.ediscovery.cases.sourceCollections_GetCustodianSources
       parameters:
         - name: case-id
@@ -6437,7 +6439,6 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Get lastEstimateStatisticsOperation from compliance
-      description: The last estimate operation associated with the sourceCollection.
       operationId: compliance.ediscovery.cases.sourceCollections_GetLastEstimateStatisticsOperation
       parameters:
         - name: case-id
@@ -6568,7 +6569,6 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Get noncustodialSources from compliance
-      description: noncustodialDataSource sources that are included in the sourceCollection
       operationId: compliance.ediscovery.cases.sourceCollections_ListNoncustodialSources
       parameters:
         - name: case-id
@@ -6666,7 +6666,6 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Get noncustodialSources from compliance
-      description: noncustodialDataSource sources that are included in the sourceCollection
       operationId: compliance.ediscovery.cases.sourceCollections_GetNoncustodialSources
       parameters:
         - name: case-id
@@ -6753,7 +6752,6 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Get tags from compliance
-      description: Returns a list of tag objects associated to this case.
       operationId: compliance.ediscovery.cases_ListTags
       parameters:
         - name: case-id
@@ -6868,7 +6866,6 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Get tags from compliance
-      description: Returns a list of tag objects associated to this case.
       operationId: compliance.ediscovery.cases_GetTags
       parameters:
         - name: case-id
@@ -7008,7 +7005,6 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Get childTags from compliance
-      description: Returns the tags that are a child of a tag.
       operationId: compliance.ediscovery.cases.tags_ListChildTags
       parameters:
         - name: case-id
@@ -7100,7 +7096,6 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Get childTags from compliance
-      description: Returns the tags that are a child of a tag.
       operationId: compliance.ediscovery.cases.tags_GetChildTags
       parameters:
         - name: case-id
@@ -7185,7 +7180,6 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Get parent from compliance
-      description: Returns the parent tag of the specified tag.
       operationId: compliance.ediscovery.cases.tags_GetParent
       parameters:
         - name: case-id

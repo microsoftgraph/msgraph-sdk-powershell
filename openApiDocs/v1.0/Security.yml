@@ -10,8 +10,7 @@ paths:
     get:
       tags:
         - security.security
-      summary: Get security
-      description: security resource type
+      summary: security resource type
       operationId: security.security_GetSecurity
       parameters:
         - name: $select
@@ -84,7 +83,6 @@ paths:
       tags:
         - security.alert
       summary: Get alerts from security
-      description: Notifications for suspicious or potential security issues in a customer’s tenant.
       operationId: security_ListAlerts
       parameters:
         - $ref: '#/components/parameters/top'
@@ -282,7 +280,6 @@ paths:
       tags:
         - security.alert
       summary: Get alerts from security
-      description: Notifications for suspicious or potential security issues in a customer’s tenant.
       operationId: security_GetAlerts
       parameters:
         - name: alert-id

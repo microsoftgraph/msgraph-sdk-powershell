@@ -9727,6 +9727,8 @@ paths:
               parameters:
                 company-id: $request.path.company-id
                 journal-id: $request.path.journal-id
+            post:
+              operationId: financials.companies.company.journals.journal.post
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -12497,6 +12499,8 @@ paths:
               parameters:
                 company-id: $request.path.company-id
                 purchaseInvoice-id: $request.path.purchaseInvoice-id
+            post:
+              operationId: financials.companies.company.purchaseInvoices.purchaseInvoice.post
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -20095,6 +20099,16 @@ paths:
               parameters:
                 company-id: $request.path.company-id
                 salesInvoice-id: $request.path.salesInvoice-id
+            cancel:
+              operationId: financials.companies.company.salesInvoices.salesInvoice.cancel
+            cancelAndSend:
+              operationId: financials.companies.company.salesInvoices.salesInvoice.cancelAndSend
+            post:
+              operationId: financials.companies.company.salesInvoices.salesInvoice.post
+            postAndSend:
+              operationId: financials.companies.company.salesInvoices.salesInvoice.postAndSend
+            send:
+              operationId: financials.companies.company.salesInvoices.salesInvoice.send
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -28213,6 +28227,10 @@ paths:
               parameters:
                 company-id: $request.path.company-id
                 salesQuote-id: $request.path.salesQuote-id
+            makeInvoice:
+              operationId: financials.companies.company.salesQuotes.salesQuote.makeInvoice
+            send:
+              operationId: financials.companies.company.salesQuotes.salesQuote.send
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation

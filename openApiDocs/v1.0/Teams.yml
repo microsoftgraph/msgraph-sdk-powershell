@@ -210,7 +210,6 @@ paths:
       tags:
         - appCatalogs.teamsApp
       summary: Get appDefinitions from appCatalogs
-      description: The details for each version of the app.
       operationId: appCatalogs.teamsApps_ListAppDefinitions
       parameters:
         - name: teamsApp-id
@@ -332,7 +331,6 @@ paths:
       tags:
         - appCatalogs.teamsApp
       summary: Get appDefinitions from appCatalogs
-      description: The details for each version of the app.
       operationId: appCatalogs.teamsApps_GetAppDefinitions
       parameters:
         - name: teamsApp-id
@@ -468,7 +466,6 @@ paths:
       tags:
         - appCatalogs.teamsApp
       summary: Get bot from appCatalogs
-      description: The details of the bot specified in the Teams app manifest.
       operationId: appCatalogs.teamsApps.appDefinitions_GetBot
       parameters:
         - name: teamsApp-id
@@ -587,8 +584,7 @@ paths:
     get:
       tags:
         - chats.chat
-      summary: Get entities from chats
-      description: List chats
+      summary: List chats
       operationId: chats.chat_ListChat
       parameters:
         - $ref: '#/components/parameters/top'
@@ -674,8 +670,7 @@ paths:
     post:
       tags:
         - chats.chat
-      summary: Add new entity to chats
-      description: Create chat
+      summary: Create chat
       operationId: chats.chat_CreateChat
       requestBody:
         description: New entity
@@ -771,6 +766,8 @@ paths:
               operationId: chats.ListTabs
               parameters:
                 chat-id: $request.path.chat-id
+            sendActivityNotification:
+              operationId: chats.chat.sendActivityNotification
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -829,7 +826,6 @@ paths:
       tags:
         - chats.teamsAppInstallation
       summary: Get installedApps from chats
-      description: A collection of all the apps in the chat. Nullable.
       operationId: chats_ListInstalledApps
       parameters:
         - name: chat-id
@@ -929,7 +925,6 @@ paths:
       tags:
         - chats.teamsAppInstallation
       summary: Get installedApps from chats
-      description: A collection of all the apps in the chat. Nullable.
       operationId: chats_GetInstalledApps
       parameters:
         - name: chat-id
@@ -992,6 +987,8 @@ paths:
               parameters:
                 chat-id: $request.path.chat-id
                 teamsAppInstallation-id: $request.path.teamsAppInstallation-id
+            upgrade:
+              operationId: chats.chat.installedApps.teamsAppInstallation.upgrade
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1091,7 +1088,6 @@ paths:
       tags:
         - chats.teamsAppInstallation
       summary: Get teamsApp from chats
-      description: The app that is installed.
       operationId: chats.installedApps_GetTeamsApp
       parameters:
         - name: chat-id
@@ -1158,7 +1154,6 @@ paths:
       tags:
         - chats.teamsAppInstallation
       summary: Get teamsAppDefinition from chats
-      description: The details of this version of the app.
       operationId: chats.installedApps_GetTeamsAppDefinition
       parameters:
         - name: chat-id
@@ -1230,7 +1225,6 @@ paths:
       tags:
         - chats.conversationMember
       summary: Get members from chats
-      description: A collection of all the members in the chat. Nullable.
       operationId: chats_ListMembers
       parameters:
         - name: chat-id
@@ -1335,7 +1329,6 @@ paths:
       tags:
         - chats.conversationMember
       summary: Get members from chats
-      description: A collection of all the members in the chat. Nullable.
       operationId: chats_GetMembers
       parameters:
         - name: chat-id
@@ -1504,7 +1497,6 @@ paths:
       tags:
         - chats.chatMessage
       summary: Get messages from chats
-      description: A collection of all the messages in the chat. Nullable.
       operationId: chats_ListMessages
       parameters:
         - name: chat-id
@@ -1667,7 +1659,6 @@ paths:
       tags:
         - chats.chatMessage
       summary: Get messages from chats
-      description: A collection of all the messages in the chat. Nullable.
       operationId: chats_GetMessages
       parameters:
         - name: chat-id
@@ -1823,7 +1814,6 @@ paths:
       tags:
         - chats.chatMessage
       summary: Get hostedContents from chats
-      description: 'Content in a message hosted by Microsoft Teams - for example, images or code snippets.'
       operationId: chats.messages_ListHostedContents
       parameters:
         - name: chat-id
@@ -1939,7 +1929,6 @@ paths:
       tags:
         - chats.chatMessage
       summary: Get hostedContents from chats
-      description: 'Content in a message hosted by Microsoft Teams - for example, images or code snippets.'
       operationId: chats.messages_GetHostedContents
       parameters:
         - name: chat-id
@@ -2082,7 +2071,6 @@ paths:
       tags:
         - chats.chatMessage
       summary: Get replies from chats
-      description: Replies for a specified message. Supports $expand for channel messages.
       operationId: chats.messages_ListReplies
       parameters:
         - name: chat-id
@@ -2259,7 +2247,6 @@ paths:
       tags:
         - chats.chatMessage
       summary: Get replies from chats
-      description: Replies for a specified message. Supports $expand for channel messages.
       operationId: chats.messages_GetReplies
       parameters:
         - name: chat-id
@@ -2438,7 +2425,6 @@ paths:
       tags:
         - chats.chatMessage
       summary: Get hostedContents from chats
-      description: 'Content in a message hosted by Microsoft Teams - for example, images or code snippets.'
       operationId: chats.messages.replies_ListHostedContents
       parameters:
         - name: chat-id
@@ -2568,7 +2554,6 @@ paths:
       tags:
         - chats.chatMessage
       summary: Get hostedContents from chats
-      description: 'Content in a message hosted by Microsoft Teams - for example, images or code snippets.'
       operationId: chats.messages.replies_GetHostedContents
       parameters:
         - name: chat-id
@@ -2850,7 +2835,6 @@ paths:
       tags:
         - chats.teamsTab
       summary: Get tabs from chats
-      description: A collection of all the tabs in the chat. Nullable.
       operationId: chats_ListTabs
       parameters:
         - name: chat-id
@@ -2957,7 +2941,6 @@ paths:
       tags:
         - chats.teamsTab
       summary: Get tabs from chats
-      description: A collection of all the tabs in the chat. Nullable.
       operationId: chats_GetTabs
       parameters:
         - name: chat-id
@@ -3088,7 +3071,6 @@ paths:
       tags:
         - chats.teamsTab
       summary: Get teamsApp from chats
-      description: The application that is linked to the tab.
       operationId: chats.tabs_GetTeamsApp
       parameters:
         - name: chat-id
@@ -3179,7 +3161,6 @@ paths:
       tags:
         - groups.team
       summary: Get team from groups
-      description: The team associated with this group.
       operationId: groups_GetTeam
       parameters:
         - name: group-id
@@ -3340,7 +3321,6 @@ paths:
       tags:
         - groups.team
       summary: Get channels from groups
-      description: The collection of channels and messages associated with the team.
       operationId: groups.team_ListChannels
       parameters:
         - name: group-id
@@ -3465,7 +3445,6 @@ paths:
       tags:
         - groups.team
       summary: Get channels from groups
-      description: The collection of channels and messages associated with the team.
       operationId: groups.team_GetChannels
       parameters:
         - name: group-id
@@ -3549,6 +3528,12 @@ paths:
               parameters:
                 group-id: $request.path.group-id
                 channel-id: $request.path.channel-id
+            completeMigration:
+              operationId: groups.group.team.channels.channel.completeMigration
+            provisionEmail:
+              operationId: groups.group.team.channels.channel.provisionEmail
+            removeEmail:
+              operationId: groups.group.team.channels.channel.removeEmail
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3621,7 +3606,6 @@ paths:
       tags:
         - groups.team
       summary: Get filesFolder from groups
-      description: Metadata for the location where the channel's files are stored.
       operationId: groups.team.channels_GetFilesFolder
       parameters:
         - name: group-id
@@ -3781,7 +3765,6 @@ paths:
       tags:
         - groups.team
       summary: Get content for the navigation property filesFolder from groups
-      description: 'The content stream, if the item represents a file.'
       operationId: groups.team.channels_GetFilesFolderContent
       parameters:
         - name: group-id
@@ -3813,7 +3796,6 @@ paths:
       tags:
         - groups.team
       summary: Update content for the navigation property filesFolder in groups
-      description: 'The content stream, if the item represents a file.'
       operationId: groups.team.channels_SetFilesFolderContent
       parameters:
         - name: group-id
@@ -3849,7 +3831,6 @@ paths:
       tags:
         - groups.team
       summary: Get members from groups
-      description: A collection of membership records associated with the channel.
       operationId: groups.team.channels_ListMembers
       parameters:
         - name: group-id
@@ -3968,7 +3949,6 @@ paths:
       tags:
         - groups.team
       summary: Get members from groups
-      description: A collection of membership records associated with the channel.
       operationId: groups.team.channels_GetMembers
       parameters:
         - name: group-id
@@ -4112,7 +4092,6 @@ paths:
       tags:
         - groups.team
       summary: Get messages from groups
-      description: A collection of all the messages in the channel. A navigation property. Nullable.
       operationId: groups.team.channels_ListMessages
       parameters:
         - name: group-id
@@ -4289,7 +4268,6 @@ paths:
       tags:
         - groups.team
       summary: Get messages from groups
-      description: A collection of all the messages in the channel. A navigation property. Nullable.
       operationId: groups.team.channels_GetMessages
       parameters:
         - name: group-id
@@ -4468,7 +4446,6 @@ paths:
       tags:
         - groups.team
       summary: Get hostedContents from groups
-      description: 'Content in a message hosted by Microsoft Teams - for example, images or code snippets.'
       operationId: groups.team.channels.messages_ListHostedContents
       parameters:
         - name: group-id
@@ -4598,7 +4575,6 @@ paths:
       tags:
         - groups.team
       summary: Get hostedContents from groups
-      description: 'Content in a message hosted by Microsoft Teams - for example, images or code snippets.'
       operationId: groups.team.channels.messages_GetHostedContents
       parameters:
         - name: group-id
@@ -4762,7 +4738,6 @@ paths:
       tags:
         - groups.team
       summary: Get replies from groups
-      description: Replies for a specified message. Supports $expand for channel messages.
       operationId: groups.team.channels.messages_ListReplies
       parameters:
         - name: group-id
@@ -4953,7 +4928,6 @@ paths:
       tags:
         - groups.team
       summary: Get replies from groups
-      description: Replies for a specified message. Supports $expand for channel messages.
       operationId: groups.team.channels.messages_GetReplies
       parameters:
         - name: group-id
@@ -5155,7 +5129,6 @@ paths:
       tags:
         - groups.team
       summary: Get hostedContents from groups
-      description: 'Content in a message hosted by Microsoft Teams - for example, images or code snippets.'
       operationId: groups.team.channels.messages.replies_ListHostedContents
       parameters:
         - name: group-id
@@ -5299,7 +5272,6 @@ paths:
       tags:
         - groups.team
       summary: Get hostedContents from groups
-      description: 'Content in a message hosted by Microsoft Teams - for example, images or code snippets.'
       operationId: groups.team.channels.messages.replies_GetHostedContents
       parameters:
         - name: group-id
@@ -5484,7 +5456,6 @@ paths:
       tags:
         - groups.team
       summary: Get tabs from groups
-      description: A collection of all the tabs in the channel. A navigation property.
       operationId: groups.team.channels_ListTabs
       parameters:
         - name: group-id
@@ -5605,7 +5576,6 @@ paths:
       tags:
         - groups.team
       summary: Get tabs from groups
-      description: A collection of all the tabs in the channel. A navigation property.
       operationId: groups.team.channels_GetTabs
       parameters:
         - name: group-id
@@ -5758,7 +5728,6 @@ paths:
       tags:
         - groups.team
       summary: Get teamsApp from groups
-      description: The application that is linked to the tab.
       operationId: groups.team.channels.tabs_GetTeamsApp
       parameters:
         - name: group-id
@@ -6083,7 +6052,6 @@ paths:
       tags:
         - groups.team
       summary: Get installedApps from groups
-      description: The apps installed in this team.
       operationId: groups.team_ListInstalledApps
       parameters:
         - name: group-id
@@ -6183,7 +6151,6 @@ paths:
       tags:
         - groups.team
       summary: Get installedApps from groups
-      description: The apps installed in this team.
       operationId: groups.team_GetInstalledApps
       parameters:
         - name: group-id
@@ -6246,6 +6213,8 @@ paths:
               parameters:
                 group-id: $request.path.group-id
                 teamsAppInstallation-id: $request.path.teamsAppInstallation-id
+            upgrade:
+              operationId: groups.group.team.installedApps.teamsAppInstallation.upgrade
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -6318,7 +6287,6 @@ paths:
       tags:
         - groups.team
       summary: Get teamsApp from groups
-      description: The app that is installed.
       operationId: groups.team.installedApps_GetTeamsApp
       parameters:
         - name: group-id
@@ -6385,7 +6353,6 @@ paths:
       tags:
         - groups.team
       summary: Get teamsAppDefinition from groups
-      description: The details of this version of the app.
       operationId: groups.team.installedApps_GetTeamsAppDefinition
       parameters:
         - name: group-id
@@ -6457,7 +6424,6 @@ paths:
       tags:
         - groups.team
       summary: Get members from groups
-      description: Members and owners of the team.
       operationId: groups.team_ListMembers
       parameters:
         - name: group-id
@@ -6562,7 +6528,6 @@ paths:
       tags:
         - groups.team
       summary: Get members from groups
-      description: Members and owners of the team.
       operationId: groups.team_GetMembers
       parameters:
         - name: group-id
@@ -6685,7 +6650,6 @@ paths:
       tags:
         - groups.team
       summary: Get operations from groups
-      description: The async operations that ran or are running on this team.
       operationId: groups.team_ListOperations
       parameters:
         - name: group-id
@@ -6805,7 +6769,6 @@ paths:
       tags:
         - groups.team
       summary: Get operations from groups
-      description: The async operations that ran or are running on this team.
       operationId: groups.team_GetOperations
       parameters:
         - name: group-id
@@ -6933,7 +6896,6 @@ paths:
       tags:
         - groups.team
       summary: Get primaryChannel from groups
-      description: The general channel for the team.
       operationId: groups.team_GetPrimaryChannel
       parameters:
         - name: group-id
@@ -7006,6 +6968,12 @@ paths:
               operationId: groups.team.PrimaryChannel.ListTabs
               parameters:
                 group-id: $request.path.group-id
+            completeMigration:
+              operationId: groups.group.team.primaryChannel.completeMigration
+            provisionEmail:
+              operationId: groups.group.team.primaryChannel.provisionEmail
+            removeEmail:
+              operationId: groups.group.team.primaryChannel.removeEmail
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -7064,7 +7032,6 @@ paths:
       tags:
         - groups.team
       summary: Get filesFolder from groups
-      description: Metadata for the location where the channel's files are stored.
       operationId: groups.team.primaryChannel_GetFilesFolder
       parameters:
         - name: group-id
@@ -7207,7 +7174,6 @@ paths:
       tags:
         - groups.team
       summary: Get content for the navigation property filesFolder from groups
-      description: 'The content stream, if the item represents a file.'
       operationId: groups.team.primaryChannel_GetFilesFolderContent
       parameters:
         - name: group-id
@@ -7232,7 +7198,6 @@ paths:
       tags:
         - groups.team
       summary: Update content for the navigation property filesFolder in groups
-      description: 'The content stream, if the item represents a file.'
       operationId: groups.team.primaryChannel_SetFilesFolderContent
       parameters:
         - name: group-id
@@ -7261,7 +7226,6 @@ paths:
       tags:
         - groups.team
       summary: Get members from groups
-      description: A collection of membership records associated with the channel.
       operationId: groups.team.primaryChannel_ListMembers
       parameters:
         - name: group-id
@@ -7366,7 +7330,6 @@ paths:
       tags:
         - groups.team
       summary: Get members from groups
-      description: A collection of membership records associated with the channel.
       operationId: groups.team.primaryChannel_GetMembers
       parameters:
         - name: group-id
@@ -7489,7 +7452,6 @@ paths:
       tags:
         - groups.team
       summary: Get messages from groups
-      description: A collection of all the messages in the channel. A navigation property. Nullable.
       operationId: groups.team.primaryChannel_ListMessages
       parameters:
         - name: group-id
@@ -7652,7 +7614,6 @@ paths:
       tags:
         - groups.team
       summary: Get messages from groups
-      description: A collection of all the messages in the channel. A navigation property. Nullable.
       operationId: groups.team.primaryChannel_GetMessages
       parameters:
         - name: group-id
@@ -7808,7 +7769,6 @@ paths:
       tags:
         - groups.team
       summary: Get hostedContents from groups
-      description: 'Content in a message hosted by Microsoft Teams - for example, images or code snippets.'
       operationId: groups.team.primaryChannel.messages_ListHostedContents
       parameters:
         - name: group-id
@@ -7924,7 +7884,6 @@ paths:
       tags:
         - groups.team
       summary: Get hostedContents from groups
-      description: 'Content in a message hosted by Microsoft Teams - for example, images or code snippets.'
       operationId: groups.team.primaryChannel.messages_GetHostedContents
       parameters:
         - name: group-id
@@ -8067,7 +8026,6 @@ paths:
       tags:
         - groups.team
       summary: Get replies from groups
-      description: Replies for a specified message. Supports $expand for channel messages.
       operationId: groups.team.primaryChannel.messages_ListReplies
       parameters:
         - name: group-id
@@ -8244,7 +8202,6 @@ paths:
       tags:
         - groups.team
       summary: Get replies from groups
-      description: Replies for a specified message. Supports $expand for channel messages.
       operationId: groups.team.primaryChannel.messages_GetReplies
       parameters:
         - name: group-id
@@ -8423,7 +8380,6 @@ paths:
       tags:
         - groups.team
       summary: Get hostedContents from groups
-      description: 'Content in a message hosted by Microsoft Teams - for example, images or code snippets.'
       operationId: groups.team.primaryChannel.messages.replies_ListHostedContents
       parameters:
         - name: group-id
@@ -8553,7 +8509,6 @@ paths:
       tags:
         - groups.team
       summary: Get hostedContents from groups
-      description: 'Content in a message hosted by Microsoft Teams - for example, images or code snippets.'
       operationId: groups.team.primaryChannel.messages.replies_GetHostedContents
       parameters:
         - name: group-id
@@ -8717,7 +8672,6 @@ paths:
       tags:
         - groups.team
       summary: Get tabs from groups
-      description: A collection of all the tabs in the channel. A navigation property.
       operationId: groups.team.primaryChannel_ListTabs
       parameters:
         - name: group-id
@@ -8824,7 +8778,6 @@ paths:
       tags:
         - groups.team
       summary: Get tabs from groups
-      description: A collection of all the tabs in the channel. A navigation property.
       operationId: groups.team.primaryChannel_GetTabs
       parameters:
         - name: group-id
@@ -8955,7 +8908,6 @@ paths:
       tags:
         - groups.team
       summary: Get teamsApp from groups
-      description: The application that is linked to the tab.
       operationId: groups.team.primaryChannel.tabs_GetTeamsApp
       parameters:
         - name: group-id
@@ -9022,7 +8974,6 @@ paths:
       tags:
         - groups.team
       summary: Get schedule from groups
-      description: The schedule of shifts for this team.
       operationId: groups.team_GetSchedule
       parameters:
         - name: group-id
@@ -9128,6 +9079,8 @@ paths:
               operationId: groups.team.Schedule.ListTimesOff
               parameters:
                 group-id: $request.path.group-id
+            share:
+              operationId: groups.group.team.schedule.share
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -9960,7 +9913,6 @@ paths:
       tags:
         - groups.team
       summary: Get schedulingGroups from groups
-      description: The logical grouping of users in the schedule (usually by role).
       operationId: groups.team.schedule_ListSchedulingGroups
       parameters:
         - name: group-id
@@ -10062,7 +10014,6 @@ paths:
       tags:
         - groups.team
       summary: Get schedulingGroups from groups
-      description: The logical grouping of users in the schedule (usually by role).
       operationId: groups.team.schedule_GetSchedulingGroups
       parameters:
         - name: group-id
@@ -10176,7 +10127,6 @@ paths:
       tags:
         - groups.team
       summary: Get shifts from groups
-      description: The shifts in the schedule.
       operationId: groups.team.schedule_ListShifts
       parameters:
         - name: group-id
@@ -10281,7 +10231,6 @@ paths:
       tags:
         - groups.team
       summary: Get shifts from groups
-      description: The shifts in the schedule.
       operationId: groups.team.schedule_GetShifts
       parameters:
         - name: group-id
@@ -10674,7 +10623,6 @@ paths:
       tags:
         - groups.team
       summary: Get timeOffReasons from groups
-      description: The set of reasons for a time off in the schedule.
       operationId: groups.team.schedule_ListTimeOffReasons
       parameters:
         - name: group-id
@@ -10776,7 +10724,6 @@ paths:
       tags:
         - groups.team
       summary: Get timeOffReasons from groups
-      description: The set of reasons for a time off in the schedule.
       operationId: groups.team.schedule_GetTimeOffReasons
       parameters:
         - name: group-id
@@ -11136,7 +11083,6 @@ paths:
       tags:
         - groups.team
       summary: Get timesOff from groups
-      description: The instances of times off in the schedule.
       operationId: groups.team.schedule_ListTimesOff
       parameters:
         - name: group-id
@@ -11238,7 +11184,6 @@ paths:
       tags:
         - groups.team
       summary: Get timesOff from groups
-      description: The instances of times off in the schedule.
       operationId: groups.team.schedule_GetTimesOff
       parameters:
         - name: group-id
@@ -11352,7 +11297,6 @@ paths:
       tags:
         - groups.team
       summary: Get template from groups
-      description: The template this team was created from. See available templates.
       operationId: groups.team_GetTemplate
       parameters:
         - name: group-id
@@ -11400,8 +11344,7 @@ paths:
     get:
       tags:
         - teams.team
-      summary: Get entities from teams
-      description: List teams
+      summary: List teams
       operationId: teams.team_ListTeam
       parameters:
         - $ref: '#/components/parameters/top'
@@ -11513,8 +11456,7 @@ paths:
     post:
       tags:
         - teams.team
-      summary: Add new entity to teams
-      description: Create team
+      summary: Create team
       operationId: teams.team_CreateTeam
       requestBody:
         description: New entity
@@ -11537,8 +11479,7 @@ paths:
     get:
       tags:
         - teams.team
-      summary: Get entity from teams by key
-      description: Get team
+      summary: Get team
       operationId: teams.team_GetTeam
       parameters:
         - name: team-id
@@ -11641,14 +11582,23 @@ paths:
               operationId: teams.GetSchedule
               parameters:
                 team-id: $request.path.team-id
+            archive:
+              operationId: teams.team.archive
+            clone:
+              operationId: teams.team.clone
+            completeMigration:
+              operationId: teams.team.completeMigration
+            sendActivityNotification:
+              operationId: teams.team.sendActivityNotification
+            unarchive:
+              operationId: teams.team.unarchive
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     patch:
       tags:
         - teams.team
-      summary: Update entity in teams
-      description: Update team
+      summary: Update team
       operationId: teams.team_UpdateTeam
       parameters:
         - name: team-id
@@ -11700,7 +11650,6 @@ paths:
       tags:
         - teams.channel
       summary: Get channels from teams
-      description: The collection of channels and messages associated with the team.
       operationId: teams_ListChannels
       parameters:
         - name: team-id
@@ -11825,7 +11774,6 @@ paths:
       tags:
         - teams.channel
       summary: Get channels from teams
-      description: The collection of channels and messages associated with the team.
       operationId: teams_GetChannels
       parameters:
         - name: team-id
@@ -11909,6 +11857,12 @@ paths:
               parameters:
                 team-id: $request.path.team-id
                 channel-id: $request.path.channel-id
+            completeMigration:
+              operationId: teams.team.channels.channel.completeMigration
+            provisionEmail:
+              operationId: teams.team.channels.channel.provisionEmail
+            removeEmail:
+              operationId: teams.team.channels.channel.removeEmail
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -11981,7 +11935,6 @@ paths:
       tags:
         - teams.channel
       summary: Get filesFolder from teams
-      description: Metadata for the location where the channel's files are stored.
       operationId: teams.channels_GetFilesFolder
       parameters:
         - name: team-id
@@ -12141,7 +12094,6 @@ paths:
       tags:
         - teams.channel
       summary: Get content for the navigation property filesFolder from teams
-      description: 'The content stream, if the item represents a file.'
       operationId: teams.channels_GetFilesFolderContent
       parameters:
         - name: team-id
@@ -12173,7 +12125,6 @@ paths:
       tags:
         - teams.channel
       summary: Update content for the navigation property filesFolder in teams
-      description: 'The content stream, if the item represents a file.'
       operationId: teams.channels_SetFilesFolderContent
       parameters:
         - name: team-id
@@ -12209,7 +12160,6 @@ paths:
       tags:
         - teams.channel
       summary: Get members from teams
-      description: A collection of membership records associated with the channel.
       operationId: teams.channels_ListMembers
       parameters:
         - name: team-id
@@ -12328,7 +12278,6 @@ paths:
       tags:
         - teams.channel
       summary: Get members from teams
-      description: A collection of membership records associated with the channel.
       operationId: teams.channels_GetMembers
       parameters:
         - name: team-id
@@ -12525,7 +12474,6 @@ paths:
       tags:
         - teams.channel
       summary: Get messages from teams
-      description: A collection of all the messages in the channel. A navigation property. Nullable.
       operationId: teams.channels_ListMessages
       parameters:
         - name: team-id
@@ -12702,7 +12650,6 @@ paths:
       tags:
         - teams.channel
       summary: Get messages from teams
-      description: A collection of all the messages in the channel. A navigation property. Nullable.
       operationId: teams.channels_GetMessages
       parameters:
         - name: team-id
@@ -12881,7 +12828,6 @@ paths:
       tags:
         - teams.channel
       summary: Get hostedContents from teams
-      description: 'Content in a message hosted by Microsoft Teams - for example, images or code snippets.'
       operationId: teams.channels.messages_ListHostedContents
       parameters:
         - name: team-id
@@ -13011,7 +12957,6 @@ paths:
       tags:
         - teams.channel
       summary: Get hostedContents from teams
-      description: 'Content in a message hosted by Microsoft Teams - for example, images or code snippets.'
       operationId: teams.channels.messages_GetHostedContents
       parameters:
         - name: team-id
@@ -13175,7 +13120,6 @@ paths:
       tags:
         - teams.channel
       summary: Get replies from teams
-      description: Replies for a specified message. Supports $expand for channel messages.
       operationId: teams.channels.messages_ListReplies
       parameters:
         - name: team-id
@@ -13366,7 +13310,6 @@ paths:
       tags:
         - teams.channel
       summary: Get replies from teams
-      description: Replies for a specified message. Supports $expand for channel messages.
       operationId: teams.channels.messages_GetReplies
       parameters:
         - name: team-id
@@ -13568,7 +13511,6 @@ paths:
       tags:
         - teams.channel
       summary: Get hostedContents from teams
-      description: 'Content in a message hosted by Microsoft Teams - for example, images or code snippets.'
       operationId: teams.channels.messages.replies_ListHostedContents
       parameters:
         - name: team-id
@@ -13712,7 +13654,6 @@ paths:
       tags:
         - teams.channel
       summary: Get hostedContents from teams
-      description: 'Content in a message hosted by Microsoft Teams - for example, images or code snippets.'
       operationId: teams.channels.messages.replies_GetHostedContents
       parameters:
         - name: team-id
@@ -14067,7 +14008,6 @@ paths:
       tags:
         - teams.channel
       summary: Get tabs from teams
-      description: A collection of all the tabs in the channel. A navigation property.
       operationId: teams.channels_ListTabs
       parameters:
         - name: team-id
@@ -14188,7 +14128,6 @@ paths:
       tags:
         - teams.channel
       summary: Get tabs from teams
-      description: A collection of all the tabs in the channel. A navigation property.
       operationId: teams.channels_GetTabs
       parameters:
         - name: team-id
@@ -14341,7 +14280,6 @@ paths:
       tags:
         - teams.channel
       summary: Get teamsApp from teams
-      description: The application that is linked to the tab.
       operationId: teams.channels.tabs_GetTeamsApp
       parameters:
         - name: team-id
@@ -14698,7 +14636,6 @@ paths:
       tags:
         - teams.teamsAppInstallation
       summary: Get installedApps from teams
-      description: The apps installed in this team.
       operationId: teams_ListInstalledApps
       parameters:
         - name: team-id
@@ -14798,7 +14735,6 @@ paths:
       tags:
         - teams.teamsAppInstallation
       summary: Get installedApps from teams
-      description: The apps installed in this team.
       operationId: teams_GetInstalledApps
       parameters:
         - name: team-id
@@ -14861,6 +14797,8 @@ paths:
               parameters:
                 team-id: $request.path.team-id
                 teamsAppInstallation-id: $request.path.teamsAppInstallation-id
+            upgrade:
+              operationId: teams.team.installedApps.teamsAppInstallation.upgrade
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -14960,7 +14898,6 @@ paths:
       tags:
         - teams.teamsAppInstallation
       summary: Get teamsApp from teams
-      description: The app that is installed.
       operationId: teams.installedApps_GetTeamsApp
       parameters:
         - name: team-id
@@ -15027,7 +14964,6 @@ paths:
       tags:
         - teams.teamsAppInstallation
       summary: Get teamsAppDefinition from teams
-      description: The details of this version of the app.
       operationId: teams.installedApps_GetTeamsAppDefinition
       parameters:
         - name: team-id
@@ -15099,7 +15035,6 @@ paths:
       tags:
         - teams.conversationMember
       summary: Get members from teams
-      description: Members and owners of the team.
       operationId: teams_ListMembers
       parameters:
         - name: team-id
@@ -15204,7 +15139,6 @@ paths:
       tags:
         - teams.conversationMember
       summary: Get members from teams
-      description: Members and owners of the team.
       operationId: teams_GetMembers
       parameters:
         - name: team-id
@@ -15540,7 +15474,6 @@ paths:
       tags:
         - teams.teamsAsyncOperation
       summary: Get operations from teams
-      description: The async operations that ran or are running on this team.
       operationId: teams_ListOperations
       parameters:
         - name: team-id
@@ -15660,7 +15593,6 @@ paths:
       tags:
         - teams.teamsAsyncOperation
       summary: Get operations from teams
-      description: The async operations that ran or are running on this team.
       operationId: teams_GetOperations
       parameters:
         - name: team-id
@@ -15788,7 +15720,6 @@ paths:
       tags:
         - teams.channel
       summary: Get primaryChannel from teams
-      description: The general channel for the team.
       operationId: teams_GetPrimaryChannel
       parameters:
         - name: team-id
@@ -15861,6 +15792,12 @@ paths:
               operationId: teams.PrimaryChannel.ListTabs
               parameters:
                 team-id: $request.path.team-id
+            completeMigration:
+              operationId: teams.team.primaryChannel.completeMigration
+            provisionEmail:
+              operationId: teams.team.primaryChannel.provisionEmail
+            removeEmail:
+              operationId: teams.team.primaryChannel.removeEmail
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -15919,7 +15856,6 @@ paths:
       tags:
         - teams.channel
       summary: Get filesFolder from teams
-      description: Metadata for the location where the channel's files are stored.
       operationId: teams.primaryChannel_GetFilesFolder
       parameters:
         - name: team-id
@@ -16062,7 +15998,6 @@ paths:
       tags:
         - teams.channel
       summary: Get content for the navigation property filesFolder from teams
-      description: 'The content stream, if the item represents a file.'
       operationId: teams.primaryChannel_GetFilesFolderContent
       parameters:
         - name: team-id
@@ -16087,7 +16022,6 @@ paths:
       tags:
         - teams.channel
       summary: Update content for the navigation property filesFolder in teams
-      description: 'The content stream, if the item represents a file.'
       operationId: teams.primaryChannel_SetFilesFolderContent
       parameters:
         - name: team-id
@@ -16116,7 +16050,6 @@ paths:
       tags:
         - teams.channel
       summary: Get members from teams
-      description: A collection of membership records associated with the channel.
       operationId: teams.primaryChannel_ListMembers
       parameters:
         - name: team-id
@@ -16221,7 +16154,6 @@ paths:
       tags:
         - teams.channel
       summary: Get members from teams
-      description: A collection of membership records associated with the channel.
       operationId: teams.primaryChannel_GetMembers
       parameters:
         - name: team-id
@@ -16390,7 +16322,6 @@ paths:
       tags:
         - teams.channel
       summary: Get messages from teams
-      description: A collection of all the messages in the channel. A navigation property. Nullable.
       operationId: teams.primaryChannel_ListMessages
       parameters:
         - name: team-id
@@ -16553,7 +16484,6 @@ paths:
       tags:
         - teams.channel
       summary: Get messages from teams
-      description: A collection of all the messages in the channel. A navigation property. Nullable.
       operationId: teams.primaryChannel_GetMessages
       parameters:
         - name: team-id
@@ -16709,7 +16639,6 @@ paths:
       tags:
         - teams.channel
       summary: Get hostedContents from teams
-      description: 'Content in a message hosted by Microsoft Teams - for example, images or code snippets.'
       operationId: teams.primaryChannel.messages_ListHostedContents
       parameters:
         - name: team-id
@@ -16825,7 +16754,6 @@ paths:
       tags:
         - teams.channel
       summary: Get hostedContents from teams
-      description: 'Content in a message hosted by Microsoft Teams - for example, images or code snippets.'
       operationId: teams.primaryChannel.messages_GetHostedContents
       parameters:
         - name: team-id
@@ -16968,7 +16896,6 @@ paths:
       tags:
         - teams.channel
       summary: Get replies from teams
-      description: Replies for a specified message. Supports $expand for channel messages.
       operationId: teams.primaryChannel.messages_ListReplies
       parameters:
         - name: team-id
@@ -17145,7 +17072,6 @@ paths:
       tags:
         - teams.channel
       summary: Get replies from teams
-      description: Replies for a specified message. Supports $expand for channel messages.
       operationId: teams.primaryChannel.messages_GetReplies
       parameters:
         - name: team-id
@@ -17324,7 +17250,6 @@ paths:
       tags:
         - teams.channel
       summary: Get hostedContents from teams
-      description: 'Content in a message hosted by Microsoft Teams - for example, images or code snippets.'
       operationId: teams.primaryChannel.messages.replies_ListHostedContents
       parameters:
         - name: team-id
@@ -17454,7 +17379,6 @@ paths:
       tags:
         - teams.channel
       summary: Get hostedContents from teams
-      description: 'Content in a message hosted by Microsoft Teams - for example, images or code snippets.'
       operationId: teams.primaryChannel.messages.replies_GetHostedContents
       parameters:
         - name: team-id
@@ -17753,7 +17677,6 @@ paths:
       tags:
         - teams.channel
       summary: Get tabs from teams
-      description: A collection of all the tabs in the channel. A navigation property.
       operationId: teams.primaryChannel_ListTabs
       parameters:
         - name: team-id
@@ -17860,7 +17783,6 @@ paths:
       tags:
         - teams.channel
       summary: Get tabs from teams
-      description: A collection of all the tabs in the channel. A navigation property.
       operationId: teams.primaryChannel_GetTabs
       parameters:
         - name: team-id
@@ -17991,7 +17913,6 @@ paths:
       tags:
         - teams.channel
       summary: Get teamsApp from teams
-      description: The application that is linked to the tab.
       operationId: teams.primaryChannel.tabs_GetTeamsApp
       parameters:
         - name: team-id
@@ -18058,7 +17979,6 @@ paths:
       tags:
         - teams.schedule
       summary: Get schedule from teams
-      description: The schedule of shifts for this team.
       operationId: teams_GetSchedule
       parameters:
         - name: team-id
@@ -18164,6 +18084,8 @@ paths:
               operationId: teams.Schedule.ListTimesOff
               parameters:
                 team-id: $request.path.team-id
+            share:
+              operationId: teams.team.schedule.share
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -19040,7 +18962,6 @@ paths:
       tags:
         - teams.schedule
       summary: Get schedulingGroups from teams
-      description: The logical grouping of users in the schedule (usually by role).
       operationId: teams.schedule_ListSchedulingGroups
       parameters:
         - name: team-id
@@ -19142,7 +19063,6 @@ paths:
       tags:
         - teams.schedule
       summary: Get schedulingGroups from teams
-      description: The logical grouping of users in the schedule (usually by role).
       operationId: teams.schedule_GetSchedulingGroups
       parameters:
         - name: team-id
@@ -19256,7 +19176,6 @@ paths:
       tags:
         - teams.schedule
       summary: Get shifts from teams
-      description: The shifts in the schedule.
       operationId: teams.schedule_ListShifts
       parameters:
         - name: team-id
@@ -19361,7 +19280,6 @@ paths:
       tags:
         - teams.schedule
       summary: Get shifts from teams
-      description: The shifts in the schedule.
       operationId: teams.schedule_GetShifts
       parameters:
         - name: team-id
@@ -19754,7 +19672,6 @@ paths:
       tags:
         - teams.schedule
       summary: Get timeOffReasons from teams
-      description: The set of reasons for a time off in the schedule.
       operationId: teams.schedule_ListTimeOffReasons
       parameters:
         - name: team-id
@@ -19856,7 +19773,6 @@ paths:
       tags:
         - teams.schedule
       summary: Get timeOffReasons from teams
-      description: The set of reasons for a time off in the schedule.
       operationId: teams.schedule_GetTimeOffReasons
       parameters:
         - name: team-id
@@ -20216,7 +20132,6 @@ paths:
       tags:
         - teams.schedule
       summary: Get timesOff from teams
-      description: The instances of times off in the schedule.
       operationId: teams.schedule_ListTimesOff
       parameters:
         - name: team-id
@@ -20318,7 +20233,6 @@ paths:
       tags:
         - teams.schedule
       summary: Get timesOff from teams
-      description: The instances of times off in the schedule.
       operationId: teams.schedule_GetTimesOff
       parameters:
         - name: team-id
@@ -20432,7 +20346,6 @@ paths:
       tags:
         - teams.teamsTemplate
       summary: Get template from teams
-      description: The template this team was created from. See available templates.
       operationId: teams_GetTemplate
       parameters:
         - name: team-id
@@ -20569,7 +20482,6 @@ paths:
       tags:
         - teamwork.workforceIntegration
       summary: Get workforceIntegrations from teamwork
-      description: A workforce integration with shifts.
       operationId: teamwork_ListWorkforceIntegrations
       parameters:
         - $ref: '#/components/parameters/top'
@@ -20677,7 +20589,6 @@ paths:
       tags:
         - teamwork.workforceIntegration
       summary: Get workforceIntegrations from teamwork
-      description: A workforce integration with shifts.
       operationId: teamwork_GetWorkforceIntegrations
       parameters:
         - name: workforceIntegration-id
@@ -21064,7 +20975,6 @@ paths:
       tags:
         - users.chat
       summary: Get installedApps from users
-      description: A collection of all the apps in the chat. Nullable.
       operationId: users.chats_ListInstalledApps
       parameters:
         - name: user-id
@@ -21178,7 +21088,6 @@ paths:
       tags:
         - users.chat
       summary: Get installedApps from users
-      description: A collection of all the apps in the chat. Nullable.
       operationId: users.chats_GetInstalledApps
       parameters:
         - name: user-id
@@ -21250,6 +21159,8 @@ paths:
                 user-id: $request.path.user-id
                 chat-id: $request.path.chat-id
                 teamsAppInstallation-id: $request.path.teamsAppInstallation-id
+            upgrade:
+              operationId: users.user.chats.chat.installedApps.teamsAppInstallation.upgrade
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -21336,7 +21247,6 @@ paths:
       tags:
         - users.chat
       summary: Get teamsApp from users
-      description: The app that is installed.
       operationId: users.chats.installedApps_GetTeamsApp
       parameters:
         - name: user-id
@@ -21411,7 +21321,6 @@ paths:
       tags:
         - users.chat
       summary: Get teamsAppDefinition from users
-      description: The details of this version of the app.
       operationId: users.chats.installedApps_GetTeamsAppDefinition
       parameters:
         - name: user-id
@@ -21491,7 +21400,6 @@ paths:
       tags:
         - users.chat
       summary: Get members from users
-      description: A collection of all the members in the chat. Nullable.
       operationId: users.chats_ListMembers
       parameters:
         - name: user-id
@@ -21610,7 +21518,6 @@ paths:
       tags:
         - users.chat
       summary: Get members from users
-      description: A collection of all the members in the chat. Nullable.
       operationId: users.chats_GetMembers
       parameters:
         - name: user-id
@@ -21754,7 +21661,6 @@ paths:
       tags:
         - users.chat
       summary: Get messages from users
-      description: A collection of all the messages in the chat. Nullable.
       operationId: users.chats_ListMessages
       parameters:
         - name: user-id
@@ -21931,7 +21837,6 @@ paths:
       tags:
         - users.chat
       summary: Get messages from users
-      description: A collection of all the messages in the chat. Nullable.
       operationId: users.chats_GetMessages
       parameters:
         - name: user-id
@@ -22110,7 +22015,6 @@ paths:
       tags:
         - users.chat
       summary: Get hostedContents from users
-      description: 'Content in a message hosted by Microsoft Teams - for example, images or code snippets.'
       operationId: users.chats.messages_ListHostedContents
       parameters:
         - name: user-id
@@ -22240,7 +22144,6 @@ paths:
       tags:
         - users.chat
       summary: Get hostedContents from users
-      description: 'Content in a message hosted by Microsoft Teams - for example, images or code snippets.'
       operationId: users.chats.messages_GetHostedContents
       parameters:
         - name: user-id
@@ -22404,7 +22307,6 @@ paths:
       tags:
         - users.chat
       summary: Get replies from users
-      description: Replies for a specified message. Supports $expand for channel messages.
       operationId: users.chats.messages_ListReplies
       parameters:
         - name: user-id
@@ -22595,7 +22497,6 @@ paths:
       tags:
         - users.chat
       summary: Get replies from users
-      description: Replies for a specified message. Supports $expand for channel messages.
       operationId: users.chats.messages_GetReplies
       parameters:
         - name: user-id
@@ -22797,7 +22698,6 @@ paths:
       tags:
         - users.chat
       summary: Get hostedContents from users
-      description: 'Content in a message hosted by Microsoft Teams - for example, images or code snippets.'
       operationId: users.chats.messages.replies_ListHostedContents
       parameters:
         - name: user-id
@@ -22941,7 +22841,6 @@ paths:
       tags:
         - users.chat
       summary: Get hostedContents from users
-      description: 'Content in a message hosted by Microsoft Teams - for example, images or code snippets.'
       operationId: users.chats.messages.replies_GetHostedContents
       parameters:
         - name: user-id
@@ -23126,7 +23025,6 @@ paths:
       tags:
         - users.chat
       summary: Get tabs from users
-      description: A collection of all the tabs in the chat. Nullable.
       operationId: users.chats_ListTabs
       parameters:
         - name: user-id
@@ -23247,7 +23145,6 @@ paths:
       tags:
         - users.chat
       summary: Get tabs from users
-      description: A collection of all the tabs in the chat. Nullable.
       operationId: users.chats_GetTabs
       parameters:
         - name: user-id
@@ -23400,7 +23297,6 @@ paths:
       tags:
         - users.chat
       summary: Get teamsApp from users
-      description: The application that is linked to the tab.
       operationId: users.chats.tabs_GetTeamsApp
       parameters:
         - name: user-id
@@ -23475,7 +23371,6 @@ paths:
       tags:
         - users.team
       summary: Get joinedTeams from users
-      description: The Microsoft Teams teams that the user is a member of. Read-only. Nullable.
       operationId: users_ListJoinedTeams
       parameters:
         - name: user-id
@@ -23626,7 +23521,6 @@ paths:
       tags:
         - users.team
       summary: Get joinedTeams from users
-      description: The Microsoft Teams teams that the user is a member of. Read-only. Nullable.
       operationId: users_GetJoinedTeams
       parameters:
         - name: user-id
@@ -23816,7 +23710,6 @@ paths:
       tags:
         - users.team
       summary: Get channels from users
-      description: The collection of channels and messages associated with the team.
       operationId: users.joinedTeams_ListChannels
       parameters:
         - name: user-id
@@ -23955,7 +23848,6 @@ paths:
       tags:
         - users.team
       summary: Get channels from users
-      description: The collection of channels and messages associated with the team.
       operationId: users.joinedTeams_GetChannels
       parameters:
         - name: user-id
@@ -24050,6 +23942,12 @@ paths:
                 user-id: $request.path.user-id
                 team-id: $request.path.team-id
                 channel-id: $request.path.channel-id
+            completeMigration:
+              operationId: users.user.joinedTeams.team.channels.channel.completeMigration
+            provisionEmail:
+              operationId: users.user.joinedTeams.team.channels.channel.provisionEmail
+            removeEmail:
+              operationId: users.user.joinedTeams.team.channels.channel.removeEmail
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -24136,7 +24034,6 @@ paths:
       tags:
         - users.team
       summary: Get filesFolder from users
-      description: Metadata for the location where the channel's files are stored.
       operationId: users.joinedTeams.channels_GetFilesFolder
       parameters:
         - name: user-id
@@ -24313,7 +24210,6 @@ paths:
       tags:
         - users.team
       summary: Get content for the navigation property filesFolder from users
-      description: 'The content stream, if the item represents a file.'
       operationId: users.joinedTeams.channels_GetFilesFolderContent
       parameters:
         - name: user-id
@@ -24352,7 +24248,6 @@ paths:
       tags:
         - users.team
       summary: Update content for the navigation property filesFolder in users
-      description: 'The content stream, if the item represents a file.'
       operationId: users.joinedTeams.channels_SetFilesFolderContent
       parameters:
         - name: user-id
@@ -24395,7 +24290,6 @@ paths:
       tags:
         - users.team
       summary: Get members from users
-      description: A collection of membership records associated with the channel.
       operationId: users.joinedTeams.channels_ListMembers
       parameters:
         - name: user-id
@@ -24528,7 +24422,6 @@ paths:
       tags:
         - users.team
       summary: Get members from users
-      description: A collection of membership records associated with the channel.
       operationId: users.joinedTeams.channels_GetMembers
       parameters:
         - name: user-id
@@ -24693,7 +24586,6 @@ paths:
       tags:
         - users.team
       summary: Get messages from users
-      description: A collection of all the messages in the channel. A navigation property. Nullable.
       operationId: users.joinedTeams.channels_ListMessages
       parameters:
         - name: user-id
@@ -24884,7 +24776,6 @@ paths:
       tags:
         - users.team
       summary: Get messages from users
-      description: A collection of all the messages in the channel. A navigation property. Nullable.
       operationId: users.joinedTeams.channels_GetMessages
       parameters:
         - name: user-id
@@ -25086,7 +24977,6 @@ paths:
       tags:
         - users.team
       summary: Get hostedContents from users
-      description: 'Content in a message hosted by Microsoft Teams - for example, images or code snippets.'
       operationId: users.joinedTeams.channels.messages_ListHostedContents
       parameters:
         - name: user-id
@@ -25230,7 +25120,6 @@ paths:
       tags:
         - users.team
       summary: Get hostedContents from users
-      description: 'Content in a message hosted by Microsoft Teams - for example, images or code snippets.'
       operationId: users.joinedTeams.channels.messages_GetHostedContents
       parameters:
         - name: user-id
@@ -25415,7 +25304,6 @@ paths:
       tags:
         - users.team
       summary: Get replies from users
-      description: Replies for a specified message. Supports $expand for channel messages.
       operationId: users.joinedTeams.channels.messages_ListReplies
       parameters:
         - name: user-id
@@ -25620,7 +25508,6 @@ paths:
       tags:
         - users.team
       summary: Get replies from users
-      description: Replies for a specified message. Supports $expand for channel messages.
       operationId: users.joinedTeams.channels.messages_GetReplies
       parameters:
         - name: user-id
@@ -25845,7 +25732,6 @@ paths:
       tags:
         - users.team
       summary: Get hostedContents from users
-      description: 'Content in a message hosted by Microsoft Teams - for example, images or code snippets.'
       operationId: users.joinedTeams.channels.messages.replies_ListHostedContents
       parameters:
         - name: user-id
@@ -26003,7 +25889,6 @@ paths:
       tags:
         - users.team
       summary: Get hostedContents from users
-      description: 'Content in a message hosted by Microsoft Teams - for example, images or code snippets.'
       operationId: users.joinedTeams.channels.messages.replies_GetHostedContents
       parameters:
         - name: user-id
@@ -26209,7 +26094,6 @@ paths:
       tags:
         - users.team
       summary: Get tabs from users
-      description: A collection of all the tabs in the channel. A navigation property.
       operationId: users.joinedTeams.channels_ListTabs
       parameters:
         - name: user-id
@@ -26344,7 +26228,6 @@ paths:
       tags:
         - users.team
       summary: Get tabs from users
-      description: A collection of all the tabs in the channel. A navigation property.
       operationId: users.joinedTeams.channels_GetTabs
       parameters:
         - name: user-id
@@ -26519,7 +26402,6 @@ paths:
       tags:
         - users.team
       summary: Get teamsApp from users
-      description: The application that is linked to the tab.
       operationId: users.joinedTeams.channels.tabs_GetTeamsApp
       parameters:
         - name: user-id
@@ -26886,7 +26768,6 @@ paths:
       tags:
         - users.team
       summary: Get installedApps from users
-      description: The apps installed in this team.
       operationId: users.joinedTeams_ListInstalledApps
       parameters:
         - name: user-id
@@ -27000,7 +26881,6 @@ paths:
       tags:
         - users.team
       summary: Get installedApps from users
-      description: The apps installed in this team.
       operationId: users.joinedTeams_GetInstalledApps
       parameters:
         - name: user-id
@@ -27072,6 +26952,8 @@ paths:
                 user-id: $request.path.user-id
                 team-id: $request.path.team-id
                 teamsAppInstallation-id: $request.path.teamsAppInstallation-id
+            upgrade:
+              operationId: users.user.joinedTeams.team.installedApps.teamsAppInstallation.upgrade
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -27158,7 +27040,6 @@ paths:
       tags:
         - users.team
       summary: Get teamsApp from users
-      description: The app that is installed.
       operationId: users.joinedTeams.installedApps_GetTeamsApp
       parameters:
         - name: user-id
@@ -27233,7 +27114,6 @@ paths:
       tags:
         - users.team
       summary: Get teamsAppDefinition from users
-      description: The details of this version of the app.
       operationId: users.joinedTeams.installedApps_GetTeamsAppDefinition
       parameters:
         - name: user-id
@@ -27313,7 +27193,6 @@ paths:
       tags:
         - users.team
       summary: Get members from users
-      description: Members and owners of the team.
       operationId: users.joinedTeams_ListMembers
       parameters:
         - name: user-id
@@ -27432,7 +27311,6 @@ paths:
       tags:
         - users.team
       summary: Get members from users
-      description: Members and owners of the team.
       operationId: users.joinedTeams_GetMembers
       parameters:
         - name: user-id
@@ -27576,7 +27454,6 @@ paths:
       tags:
         - users.team
       summary: Get operations from users
-      description: The async operations that ran or are running on this team.
       operationId: users.joinedTeams_ListOperations
       parameters:
         - name: user-id
@@ -27710,7 +27587,6 @@ paths:
       tags:
         - users.team
       summary: Get operations from users
-      description: The async operations that ran or are running on this team.
       operationId: users.joinedTeams_GetOperations
       parameters:
         - name: user-id
@@ -27859,7 +27735,6 @@ paths:
       tags:
         - users.team
       summary: Get primaryChannel from users
-      description: The general channel for the team.
       operationId: users.joinedTeams_GetPrimaryChannel
       parameters:
         - name: user-id
@@ -27943,6 +27818,12 @@ paths:
               parameters:
                 user-id: $request.path.user-id
                 team-id: $request.path.team-id
+            completeMigration:
+              operationId: users.user.joinedTeams.team.primaryChannel.completeMigration
+            provisionEmail:
+              operationId: users.user.joinedTeams.team.primaryChannel.provisionEmail
+            removeEmail:
+              operationId: users.user.joinedTeams.team.primaryChannel.removeEmail
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -28015,7 +27896,6 @@ paths:
       tags:
         - users.team
       summary: Get filesFolder from users
-      description: Metadata for the location where the channel's files are stored.
       operationId: users.joinedTeams.primaryChannel_GetFilesFolder
       parameters:
         - name: user-id
@@ -28175,7 +28055,6 @@ paths:
       tags:
         - users.team
       summary: Get content for the navigation property filesFolder from users
-      description: 'The content stream, if the item represents a file.'
       operationId: users.joinedTeams.primaryChannel_GetFilesFolderContent
       parameters:
         - name: user-id
@@ -28207,7 +28086,6 @@ paths:
       tags:
         - users.team
       summary: Update content for the navigation property filesFolder in users
-      description: 'The content stream, if the item represents a file.'
       operationId: users.joinedTeams.primaryChannel_SetFilesFolderContent
       parameters:
         - name: user-id
@@ -28243,7 +28121,6 @@ paths:
       tags:
         - users.team
       summary: Get members from users
-      description: A collection of membership records associated with the channel.
       operationId: users.joinedTeams.primaryChannel_ListMembers
       parameters:
         - name: user-id
@@ -28362,7 +28239,6 @@ paths:
       tags:
         - users.team
       summary: Get members from users
-      description: A collection of membership records associated with the channel.
       operationId: users.joinedTeams.primaryChannel_GetMembers
       parameters:
         - name: user-id
@@ -28506,7 +28382,6 @@ paths:
       tags:
         - users.team
       summary: Get messages from users
-      description: A collection of all the messages in the channel. A navigation property. Nullable.
       operationId: users.joinedTeams.primaryChannel_ListMessages
       parameters:
         - name: user-id
@@ -28683,7 +28558,6 @@ paths:
       tags:
         - users.team
       summary: Get messages from users
-      description: A collection of all the messages in the channel. A navigation property. Nullable.
       operationId: users.joinedTeams.primaryChannel_GetMessages
       parameters:
         - name: user-id
@@ -28862,7 +28736,6 @@ paths:
       tags:
         - users.team
       summary: Get hostedContents from users
-      description: 'Content in a message hosted by Microsoft Teams - for example, images or code snippets.'
       operationId: users.joinedTeams.primaryChannel.messages_ListHostedContents
       parameters:
         - name: user-id
@@ -28992,7 +28865,6 @@ paths:
       tags:
         - users.team
       summary: Get hostedContents from users
-      description: 'Content in a message hosted by Microsoft Teams - for example, images or code snippets.'
       operationId: users.joinedTeams.primaryChannel.messages_GetHostedContents
       parameters:
         - name: user-id
@@ -29156,7 +29028,6 @@ paths:
       tags:
         - users.team
       summary: Get replies from users
-      description: Replies for a specified message. Supports $expand for channel messages.
       operationId: users.joinedTeams.primaryChannel.messages_ListReplies
       parameters:
         - name: user-id
@@ -29347,7 +29218,6 @@ paths:
       tags:
         - users.team
       summary: Get replies from users
-      description: Replies for a specified message. Supports $expand for channel messages.
       operationId: users.joinedTeams.primaryChannel.messages_GetReplies
       parameters:
         - name: user-id
@@ -29549,7 +29419,6 @@ paths:
       tags:
         - users.team
       summary: Get hostedContents from users
-      description: 'Content in a message hosted by Microsoft Teams - for example, images or code snippets.'
       operationId: users.joinedTeams.primaryChannel.messages.replies_ListHostedContents
       parameters:
         - name: user-id
@@ -29693,7 +29562,6 @@ paths:
       tags:
         - users.team
       summary: Get hostedContents from users
-      description: 'Content in a message hosted by Microsoft Teams - for example, images or code snippets.'
       operationId: users.joinedTeams.primaryChannel.messages.replies_GetHostedContents
       parameters:
         - name: user-id
@@ -29878,7 +29746,6 @@ paths:
       tags:
         - users.team
       summary: Get tabs from users
-      description: A collection of all the tabs in the channel. A navigation property.
       operationId: users.joinedTeams.primaryChannel_ListTabs
       parameters:
         - name: user-id
@@ -29999,7 +29866,6 @@ paths:
       tags:
         - users.team
       summary: Get tabs from users
-      description: A collection of all the tabs in the channel. A navigation property.
       operationId: users.joinedTeams.primaryChannel_GetTabs
       parameters:
         - name: user-id
@@ -30152,7 +30018,6 @@ paths:
       tags:
         - users.team
       summary: Get teamsApp from users
-      description: The application that is linked to the tab.
       operationId: users.joinedTeams.primaryChannel.tabs_GetTeamsApp
       parameters:
         - name: user-id
@@ -30227,7 +30092,6 @@ paths:
       tags:
         - users.team
       summary: Get schedule from users
-      description: The schedule of shifts for this team.
       operationId: users.joinedTeams_GetSchedule
       parameters:
         - name: user-id
@@ -30349,6 +30213,8 @@ paths:
               parameters:
                 user-id: $request.path.user-id
                 team-id: $request.path.team-id
+            share:
+              operationId: users.user.joinedTeams.team.schedule.share
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -31300,7 +31166,6 @@ paths:
       tags:
         - users.team
       summary: Get schedulingGroups from users
-      description: The logical grouping of users in the schedule (usually by role).
       operationId: users.joinedTeams.schedule_ListSchedulingGroups
       parameters:
         - name: user-id
@@ -31416,7 +31281,6 @@ paths:
       tags:
         - users.team
       summary: Get schedulingGroups from users
-      description: The logical grouping of users in the schedule (usually by role).
       operationId: users.joinedTeams.schedule_GetSchedulingGroups
       parameters:
         - name: user-id
@@ -31551,7 +31415,6 @@ paths:
       tags:
         - users.team
       summary: Get shifts from users
-      description: The shifts in the schedule.
       operationId: users.joinedTeams.schedule_ListShifts
       parameters:
         - name: user-id
@@ -31670,7 +31533,6 @@ paths:
       tags:
         - users.team
       summary: Get shifts from users
-      description: The shifts in the schedule.
       operationId: users.joinedTeams.schedule_GetShifts
       parameters:
         - name: user-id
@@ -32119,7 +31981,6 @@ paths:
       tags:
         - users.team
       summary: Get timeOffReasons from users
-      description: The set of reasons for a time off in the schedule.
       operationId: users.joinedTeams.schedule_ListTimeOffReasons
       parameters:
         - name: user-id
@@ -32235,7 +32096,6 @@ paths:
       tags:
         - users.team
       summary: Get timeOffReasons from users
-      description: The set of reasons for a time off in the schedule.
       operationId: users.joinedTeams.schedule_GetTimeOffReasons
       parameters:
         - name: user-id
@@ -32651,7 +32511,6 @@ paths:
       tags:
         - users.team
       summary: Get timesOff from users
-      description: The instances of times off in the schedule.
       operationId: users.joinedTeams.schedule_ListTimesOff
       parameters:
         - name: user-id
@@ -32767,7 +32626,6 @@ paths:
       tags:
         - users.team
       summary: Get timesOff from users
-      description: The instances of times off in the schedule.
       operationId: users.joinedTeams.schedule_GetTimesOff
       parameters:
         - name: user-id
@@ -32902,7 +32760,6 @@ paths:
       tags:
         - users.team
       summary: Get template from users
-      description: The template this team was created from. See available templates.
       operationId: users.joinedTeams_GetTemplate
       parameters:
         - name: user-id
@@ -32958,7 +32815,6 @@ paths:
       tags:
         - users.userTeamwork
       summary: Get teamwork from users
-      description: A container for Microsoft Teams features available for the user. Read-only. Nullable.
       operationId: users_GetTeamwork
       parameters:
         - name: user-id
@@ -33006,6 +32862,8 @@ paths:
               operationId: users.Teamwork.ListInstalledApps
               parameters:
                 user-id: $request.path.user-id
+            sendActivityNotification:
+              operationId: users.user.teamwork.sendActivityNotification
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -33064,7 +32922,6 @@ paths:
       tags:
         - users.userTeamwork
       summary: Get installedApps from users
-      description: The apps installed in the personal scope of this user.
       operationId: users.teamwork_ListInstalledApps
       parameters:
         - name: user-id
@@ -33166,7 +33023,6 @@ paths:
       tags:
         - users.userTeamwork
       summary: Get installedApps from users
-      description: The apps installed in the personal scope of this user.
       operationId: users.teamwork_GetInstalledApps
       parameters:
         - name: user-id
@@ -33308,7 +33164,6 @@ paths:
       tags:
         - users.userTeamwork
       summary: Get chat from users
-      description: The chat between the user and Teams app.
       operationId: users.teamwork.installedApps_GetChat
       parameters:
         - name: user-id
@@ -43529,11 +43384,11 @@ components:
       properties:
         key:
           type: string
-          description: Key.
+          description: 'Contains the name of the field that a value is associated with. When a sign in or domain hint is included in the sign-in request, corresponding fields are included as key-value pairs. Possible keys: Login hint present, Domain hint present.'
           nullable: true
         value:
           type: string
-          description: Value.
+          description: Contains the corresponding value for the specified key. The value is true if a sign in hint was included in the sign-in request; otherwise false. The value is true if a domain hint was included in the sign-in request; otherwise false.
           nullable: true
       additionalProperties:
         type: object

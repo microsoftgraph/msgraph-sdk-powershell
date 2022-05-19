@@ -10,8 +10,7 @@ paths:
     get:
       tags:
         - users.user
-      summary: Get entities from users
-      description: List users
+      summary: List users
       operationId: users.user_ListUser
       parameters:
         - name: ConsistencyLevel
@@ -382,8 +381,7 @@ paths:
     post:
       tags:
         - users.user
-      summary: Add new entity to users
-      description: 'Tutorial: Use the Privileged Identity Management (PIM) API to assign Azure AD roles'
+      summary: 'Tutorial: Use the access reviews API to review access to your security groups'
       operationId: users.user_CreateUser
       requestBody:
         description: New entity
@@ -406,8 +404,7 @@ paths:
     get:
       tags:
         - users.user
-      summary: Get entity from users by key
-      description: Helpers (examples that aren't included in the docs)
+      summary: Helpers (examples that aren't included in the docs)
       operationId: users.user_GetUser
       parameters:
         - name: user-id
@@ -796,14 +793,51 @@ paths:
               operationId: users.GetTodo
               parameters:
                 user-id: $request.path.user-id
+            assignLicense:
+              operationId: users.user.assignLicense
+            changePassword:
+              operationId: users.user.changePassword
+            checkMemberGroups:
+              operationId: users.user.checkMemberGroups
+            checkMemberObjects:
+              operationId: users.user.checkMemberObjects
+            exportPersonalData:
+              operationId: users.user.exportPersonalData
+            findMeetingTimes:
+              operationId: users.user.findMeetingTimes
+            getMailTips:
+              operationId: users.user.getMailTips
+            getManagedAppDiagnosticStatuses:
+              operationId: users.user.getManagedAppDiagnosticStatuses
+            getManagedAppPolicies:
+              operationId: users.user.getManagedAppPolicies
+            getMemberGroups:
+              operationId: users.user.getMemberGroups
+            getMemberObjects:
+              operationId: users.user.getMemberObjects
+            reminderView:
+              operationId: users.user.reminderView
+            removeAllDevicesFromManagement:
+              operationId: users.user.removeAllDevicesFromManagement
+            reprocessLicenseAssignment:
+              operationId: users.user.reprocessLicenseAssignment
+            restore:
+              operationId: users.user.restore
+            revokeSignInSessions:
+              operationId: users.user.revokeSignInSessions
+            sendMail:
+              operationId: users.user.sendMail
+            translateExchangeIds:
+              operationId: users.user.translateExchangeIds
+            wipeManagedAppRegistrationsByDeviceTag:
+              operationId: users.user.wipeManagedAppRegistrationsByDeviceTag
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.user
-      summary: Update entity in users
-      description: 'Assign, update, or remove custom security attributes using the Microsoft Graph API (Preview)'
+      summary: 'Assign, update, or remove custom security attributes using the Microsoft Graph API (Preview)'
       operationId: users.user_UpdateUser
       parameters:
         - name: user-id
@@ -829,8 +863,7 @@ paths:
     delete:
       tags:
         - users.user
-      summary: Delete entity from users
-      description: 'Tutorial: Use the Privileged Identity Management (PIM) API to assign Azure AD roles'
+      summary: 'Tutorial: Use the access reviews API to review access to your security groups'
       operationId: users.user_DeleteUser
       parameters:
         - name: user-id
@@ -856,7 +889,6 @@ paths:
       tags:
         - users.directoryObject
       summary: Get createdObjects from users
-      description: Directory objects that were created by the user. Read-only. Nullable.
       operationId: users_ListCreatedObjects
       parameters:
         - name: user-id
@@ -925,7 +957,6 @@ paths:
       tags:
         - users.directoryObject
       summary: Get createdObjects from users
-      description: Directory objects that were created by the user. Read-only. Nullable.
       operationId: users_GetCreatedObjects
       parameters:
         - name: user-id
@@ -982,7 +1013,6 @@ paths:
       tags:
         - users.directoryObject
       summary: Get directReports from users
-      description: The users and contacts that report to the user. (The users and contacts that have their manager property set to this user.) Read-only. Nullable. Supports $expand.
       operationId: users_ListDirectReports
       parameters:
         - name: user-id
@@ -1051,7 +1081,6 @@ paths:
       tags:
         - users.directoryObject
       summary: Get directReports from users
-      description: The users and contacts that report to the user. (The users and contacts that have their manager property set to this user.) Read-only. Nullable. Supports $expand.
       operationId: users_GetDirectReports
       parameters:
         - name: user-id
@@ -1108,7 +1137,6 @@ paths:
       tags:
         - users.extension
       summary: Get extensions from users
-      description: The collection of open extensions defined for the user. Nullable.
       operationId: users_ListExtensions
       parameters:
         - name: user-id
@@ -1204,7 +1232,6 @@ paths:
       tags:
         - users.extension
       summary: Get extensions from users
-      description: The collection of open extensions defined for the user. Nullable.
       operationId: users_GetExtensions
       parameters:
         - name: user-id
@@ -1324,7 +1351,6 @@ paths:
       tags:
         - users.licenseDetails
       summary: Get licenseDetails from users
-      description: A collection of this user's license details. Read-only.
       operationId: users_ListLicenseDetails
       parameters:
         - name: user-id
@@ -1429,7 +1455,6 @@ paths:
       tags:
         - users.licenseDetails
       summary: Get licenseDetails from users
-      description: A collection of this user's license details. Read-only.
       operationId: users_GetLicenseDetails
       parameters:
         - name: user-id
@@ -1552,7 +1577,6 @@ paths:
       tags:
         - users.directoryObject
       summary: Get manager from users
-      description: 'The user or contact that is this user''s manager. Read-only. (HTTP Methods: GET, PUT, DELETE.). Supports $expand.'
       operationId: users_GetManager
       parameters:
         - name: user-id
@@ -1602,7 +1626,6 @@ paths:
       tags:
         - users.directoryObject
       summary: Get ref of manager from users
-      description: 'The user or contact that is this user''s manager. Read-only. (HTTP Methods: GET, PUT, DELETE.). Supports $expand.'
       operationId: users_GetGraphRefManager
       parameters:
         - name: user-id
@@ -1677,7 +1700,6 @@ paths:
       tags:
         - users.directoryObject
       summary: Get memberOf from users
-      description: 'The groups, directory roles and administrative units that the user is a member of. Read-only. Nullable. Supports $expand.'
       operationId: users_ListMemberOf
       parameters:
         - name: user-id
@@ -1746,7 +1768,6 @@ paths:
       tags:
         - users.directoryObject
       summary: Get memberOf from users
-      description: 'The groups, directory roles and administrative units that the user is a member of. Read-only. Nullable. Supports $expand.'
       operationId: users_GetMemberOf
       parameters:
         - name: user-id
@@ -1943,7 +1964,6 @@ paths:
       tags:
         - users.outlookUser
       summary: Get outlook from users
-      description: Selective Outlook services available to the user. Read-only. Nullable.
       operationId: users_GetOutlook
       parameters:
         - name: user-id
@@ -1978,6 +1998,10 @@ paths:
               operationId: users.Outlook.ListMasterCategories
               parameters:
                 user-id: $request.path.user-id
+            supportedLanguages:
+              operationId: users.user.outlook.supportedLanguages
+            supportedTimeZones:
+              operationId: users.user.outlook.supportedTimeZones
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2036,7 +2060,6 @@ paths:
       tags:
         - users.outlookUser
       summary: Get masterCategories from users
-      description: A list of categories defined for the user.
       operationId: users.outlook_ListMasterCategories
       parameters:
         - name: user-id
@@ -2125,7 +2148,6 @@ paths:
       tags:
         - users.outlookUser
       summary: Get masterCategories from users
-      description: A list of categories defined for the user.
       operationId: users.outlook_GetMasterCategories
       parameters:
         - name: user-id
@@ -2235,7 +2257,6 @@ paths:
       tags:
         - users.directoryObject
       summary: Get ownedDevices from users
-      description: Devices that are owned by the user. Read-only. Nullable. Supports $expand.
       operationId: users_ListOwnedDevices
       parameters:
         - name: user-id
@@ -2304,7 +2325,6 @@ paths:
       tags:
         - users.directoryObject
       summary: Get ownedDevices from users
-      description: Devices that are owned by the user. Read-only. Nullable. Supports $expand.
       operationId: users_GetOwnedDevices
       parameters:
         - name: user-id
@@ -2361,7 +2381,6 @@ paths:
       tags:
         - users.directoryObject
       summary: Get ownedObjects from users
-      description: Directory objects that are owned by the user. Read-only. Nullable. Supports $expand.
       operationId: users_ListOwnedObjects
       parameters:
         - name: user-id
@@ -2430,7 +2449,6 @@ paths:
       tags:
         - users.directoryObject
       summary: Get ownedObjects from users
-      description: Directory objects that are owned by the user. Read-only. Nullable. Supports $expand.
       operationId: users_GetOwnedObjects
       parameters:
         - name: user-id
@@ -2487,7 +2505,6 @@ paths:
       tags:
         - users.profilePhoto
       summary: Get photo from users
-      description: The user's profile photo. Read-only.
       operationId: users_GetPhoto
       parameters:
         - name: user-id
@@ -2628,7 +2645,6 @@ paths:
       tags:
         - users.profilePhoto
       summary: Get photos from users
-      description: Read-only. Nullable.
       operationId: users_ListPhotos
       parameters:
         - name: user-id
@@ -2717,7 +2733,6 @@ paths:
       tags:
         - users.profilePhoto
       summary: Get photos from users
-      description: Read-only. Nullable.
       operationId: users_GetPhotos
       parameters:
         - name: user-id
@@ -2893,7 +2908,6 @@ paths:
       tags:
         - users.directoryObject
       summary: Get registeredDevices from users
-      description: Devices that are registered for the user. Read-only. Nullable. Supports $expand.
       operationId: users_ListRegisteredDevices
       parameters:
         - name: user-id
@@ -2962,7 +2976,6 @@ paths:
       tags:
         - users.directoryObject
       summary: Get registeredDevices from users
-      description: Devices that are registered for the user. Read-only. Nullable. Supports $expand.
       operationId: users_GetRegisteredDevices
       parameters:
         - name: user-id
@@ -3019,7 +3032,6 @@ paths:
       tags:
         - users.userSettings
       summary: Get settings from users
-      description: Read-only. Nullable.
       operationId: users_GetSettings
       parameters:
         - name: user-id
@@ -3127,7 +3139,6 @@ paths:
       tags:
         - users.userSettings
       summary: Get shiftPreferences from users
-      description: The shift preferences for the user.
       operationId: users.settings_GetShiftPreferences
       parameters:
         - name: user-id
@@ -3230,7 +3241,6 @@ paths:
       tags:
         - users.todo
       summary: Get todo from users
-      description: Represents the To Do services available to a user.
       operationId: users_GetTodo
       parameters:
         - name: user-id
@@ -3336,7 +3346,6 @@ paths:
       tags:
         - users.todo
       summary: Get lists from users
-      description: The task lists in the users mailbox.
       operationId: users.todo_ListLists
       parameters:
         - name: user-id
@@ -3448,7 +3457,6 @@ paths:
       tags:
         - users.todo
       summary: Get lists from users
-      description: The task lists in the users mailbox.
       operationId: users.todo_GetLists
       parameters:
         - name: user-id
@@ -3587,7 +3595,6 @@ paths:
       tags:
         - users.todo
       summary: Get extensions from users
-      description: The collection of open extensions defined for the task list. Nullable.
       operationId: users.todo.lists_ListExtensions
       parameters:
         - name: user-id
@@ -3697,7 +3704,6 @@ paths:
       tags:
         - users.todo
       summary: Get extensions from users
-      description: The collection of open extensions defined for the task list. Nullable.
       operationId: users.todo.lists_GetExtensions
       parameters:
         - name: user-id
@@ -3838,7 +3844,6 @@ paths:
       tags:
         - users.todo
       summary: Get tasks from users
-      description: The tasks in this task list. Read-only. Nullable.
       operationId: users.todo.lists_ListTasks
       parameters:
         - name: user-id
@@ -3993,7 +3998,6 @@ paths:
       tags:
         - users.todo
       summary: Get tasks from users
-      description: The tasks in this task list. Read-only. Nullable.
       operationId: users.todo.lists_GetTasks
       parameters:
         - name: user-id
@@ -4472,7 +4476,6 @@ paths:
       tags:
         - users.todo
       summary: Get extensions from users
-      description: The collection of open extensions defined for the task. Nullable.
       operationId: users.todo.lists.tasks_ListExtensions
       parameters:
         - name: user-id
@@ -4596,7 +4599,6 @@ paths:
       tags:
         - users.todo
       summary: Get extensions from users
-      description: The collection of open extensions defined for the task. Nullable.
       operationId: users.todo.lists.tasks_GetExtensions
       parameters:
         - name: user-id
@@ -4758,7 +4760,6 @@ paths:
       tags:
         - users.todo
       summary: Get linkedResources from users
-      description: A collection of resources linked to the task.
       operationId: users.todo.lists.tasks_ListLinkedResources
       parameters:
         - name: user-id
@@ -4894,7 +4895,6 @@ paths:
       tags:
         - users.todo
       summary: Get linkedResources from users
-      description: A collection of resources linked to the task.
       operationId: users.todo.lists.tasks_GetLinkedResources
       parameters:
         - name: user-id
@@ -15334,11 +15334,11 @@ components:
       properties:
         key:
           type: string
-          description: Key.
+          description: 'Contains the name of the field that a value is associated with. When a sign in or domain hint is included in the sign-in request, corresponding fields are included as key-value pairs. Possible keys: Login hint present, Domain hint present.'
           nullable: true
         value:
           type: string
-          description: Value.
+          description: Contains the corresponding value for the specified key. The value is true if a sign in hint was included in the sign-in request; otherwise false. The value is true if a domain hint was included in the sign-in request; otherwise false.
           nullable: true
       additionalProperties:
         type: object

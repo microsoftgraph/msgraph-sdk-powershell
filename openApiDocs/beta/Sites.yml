@@ -11,7 +11,6 @@ paths:
       tags:
         - groups.site
       summary: Get sites from groups
-      description: The list of SharePoint sites in this group. Access the default site with /sites/root.
       operationId: groups_ListSites
       parameters:
         - name: group-id
@@ -184,7 +183,6 @@ paths:
       tags:
         - groups.site
       summary: Get sites from groups
-      description: The list of SharePoint sites in this group. Access the default site with /sites/root.
       operationId: groups_GetSites
       parameters:
         - name: group-id
@@ -432,7 +430,6 @@ paths:
       tags:
         - groups.site
       summary: Get analytics from groups
-      description: Analytics about the view activities that took place in this site.
       operationId: groups.sites_GetAnalytics
       parameters:
         - name: group-id
@@ -510,7 +507,6 @@ paths:
       tags:
         - groups.site
       summary: Get columns from groups
-      description: The collection of column definitions reusable across lists under this site.
       operationId: groups.sites_ListColumns
       parameters:
         - name: group-id
@@ -715,7 +711,6 @@ paths:
       tags:
         - groups.site
       summary: Get columns from groups
-      description: The collection of column definitions reusable across lists under this site.
       operationId: groups.sites_GetColumns
       parameters:
         - name: group-id
@@ -896,7 +891,6 @@ paths:
       tags:
         - groups.site
       summary: Get sourceColumn from groups
-      description: The source column for content type column.
       operationId: groups.sites.columns_GetSourceColumn
       parameters:
         - name: group-id
@@ -999,7 +993,6 @@ paths:
       tags:
         - groups.site
       summary: Get contentTypes from groups
-      description: The collection of content types defined for this site.
       operationId: groups.sites_ListContentTypes
       parameters:
         - name: group-id
@@ -1161,7 +1154,6 @@ paths:
       tags:
         - groups.site
       summary: Get contentTypes from groups
-      description: The collection of content types defined for this site.
       operationId: groups.sites_GetContentTypes
       parameters:
         - name: group-id
@@ -1271,6 +1263,16 @@ paths:
                 group-id: $request.path.group-id
                 site-id: $request.path.site-id
                 contentType-id: $request.path.contentType-id
+            associateWithHubSites:
+              operationId: groups.group.sites.site.contentTypes.contentType.associateWithHubSites
+            copyToDefaultContentLocation:
+              operationId: groups.group.sites.site.contentTypes.contentType.copyToDefaultContentLocation
+            isPublished:
+              operationId: groups.group.sites.site.contentTypes.contentType.isPublished
+            publish:
+              operationId: groups.group.sites.site.contentTypes.contentType.publish
+            unpublish:
+              operationId: groups.group.sites.site.contentTypes.contentType.unpublish
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1357,7 +1359,6 @@ paths:
       tags:
         - groups.site
       summary: Get base from groups
-      description: Parent contentType from which this content type is derived.
       operationId: groups.sites.contentTypes_GetBase
       parameters:
         - name: group-id
@@ -1475,7 +1476,6 @@ paths:
       tags:
         - groups.site
       summary: Get baseTypes from groups
-      description: The collection of content types that are ancestors of this content type.
       operationId: groups.sites.contentTypes_ListBaseTypes
       parameters:
         - name: group-id
@@ -1607,7 +1607,6 @@ paths:
       tags:
         - groups.site
       summary: Get baseTypes from groups
-      description: The collection of content types that are ancestors of this content type.
       operationId: groups.sites.contentTypes_GetBaseTypes
       parameters:
         - name: group-id
@@ -1737,7 +1736,6 @@ paths:
       tags:
         - groups.site
       summary: Get columnLinks from groups
-      description: The collection of columns that are required by this content type
       operationId: groups.sites.contentTypes_ListColumnLinks
       parameters:
         - name: group-id
@@ -1864,7 +1862,6 @@ paths:
       tags:
         - groups.site
       summary: Get columnLinks from groups
-      description: The collection of columns that are required by this content type
       operationId: groups.sites.contentTypes_GetColumnLinks
       parameters:
         - name: group-id
@@ -2027,7 +2024,6 @@ paths:
       tags:
         - groups.site
       summary: Get columnPositions from groups
-      description: Column order information in a content type.
       operationId: groups.sites.contentTypes_ListColumnPositions
       parameters:
         - name: group-id
@@ -2202,7 +2198,6 @@ paths:
       tags:
         - groups.site
       summary: Get columnPositions from groups
-      description: Column order information in a content type.
       operationId: groups.sites.contentTypes_GetColumnPositions
       parameters:
         - name: group-id
@@ -2313,7 +2308,6 @@ paths:
       tags:
         - groups.site
       summary: Get columns from groups
-      description: The collection of column definitions for this contentType.
       operationId: groups.sites.contentTypes_ListColumns
       parameters:
         - name: group-id
@@ -2532,7 +2526,6 @@ paths:
       tags:
         - groups.site
       summary: Get columns from groups
-      description: The collection of column definitions for this contentType.
       operationId: groups.sites.contentTypes_GetColumns
       parameters:
         - name: group-id
@@ -2735,7 +2728,6 @@ paths:
       tags:
         - groups.site
       summary: Get sourceColumn from groups
-      description: The source column for content type column.
       operationId: groups.sites.contentTypes.columns_GetSourceColumn
       parameters:
         - name: group-id
@@ -2846,7 +2838,6 @@ paths:
       tags:
         - groups.site
       summary: Get drive from groups
-      description: The default drive (document library) for this site.
       operationId: groups.sites_GetDrive
       parameters:
         - name: group-id
@@ -2980,7 +2971,6 @@ paths:
       tags:
         - groups.site
       summary: Get drives from groups
-      description: The collection of drives (document libraries) under this site.
       operationId: groups.sites_ListDrives
       parameters:
         - name: group-id
@@ -3113,7 +3103,6 @@ paths:
       tags:
         - groups.site
       summary: Get drives from groups
-      description: The collection of drives (document libraries) under this site.
       operationId: groups.sites_GetDrives
       parameters:
         - name: group-id
@@ -3263,7 +3252,6 @@ paths:
       tags:
         - groups.site
       summary: Get externalColumns from groups
-      description: The collection of column definitions available in the site that are referenced from the sites in the parent hierarchy of the current site.
       operationId: groups.sites_ListExternalColumns
       parameters:
         - name: group-id
@@ -3431,7 +3419,6 @@ paths:
       tags:
         - groups.site
       summary: Get externalColumns from groups
-      description: The collection of column definitions available in the site that are referenced from the sites in the parent hierarchy of the current site.
       operationId: groups.sites_GetExternalColumns
       parameters:
         - name: group-id
@@ -3534,7 +3521,6 @@ paths:
       tags:
         - groups.site
       summary: Get items from groups
-      description: Used to address any item contained in this site. This collection cannot be enumerated.
       operationId: groups.sites_ListItems
       parameters:
         - name: group-id
@@ -3638,7 +3624,6 @@ paths:
       tags:
         - groups.site
       summary: Get items from groups
-      description: Used to address any item contained in this site. This collection cannot be enumerated.
       operationId: groups.sites_GetItems
       parameters:
         - name: group-id
@@ -3727,7 +3712,6 @@ paths:
       tags:
         - groups.site
       summary: Get lists from groups
-      description: The collection of lists under this site.
       operationId: groups.sites_ListLists
       parameters:
         - name: group-id
@@ -3894,7 +3878,6 @@ paths:
       tags:
         - groups.site
       summary: Get lists from groups
-      description: The collection of lists under this site.
       operationId: groups.sites_GetLists
       parameters:
         - name: group-id
@@ -4121,7 +4104,6 @@ paths:
       tags:
         - groups.site
       summary: Get activities from groups
-      description: The recent activities that took place within this list.
       operationId: groups.sites.lists_ListActivities
       parameters:
         - name: group-id
@@ -4258,7 +4240,6 @@ paths:
       tags:
         - groups.site
       summary: Get columns from groups
-      description: The collection of field definitions for this list.
       operationId: groups.sites.lists_ListColumns
       parameters:
         - name: group-id
@@ -4477,7 +4458,6 @@ paths:
       tags:
         - groups.site
       summary: Get columns from groups
-      description: The collection of field definitions for this list.
       operationId: groups.sites.lists_GetColumns
       parameters:
         - name: group-id
@@ -4680,7 +4660,6 @@ paths:
       tags:
         - groups.site
       summary: Get sourceColumn from groups
-      description: The source column for content type column.
       operationId: groups.sites.lists.columns_GetSourceColumn
       parameters:
         - name: group-id
@@ -4791,7 +4770,6 @@ paths:
       tags:
         - groups.site
       summary: Get contentTypes from groups
-      description: The collection of content types present in this list.
       operationId: groups.sites.lists_ListContentTypes
       parameters:
         - name: group-id
@@ -4967,7 +4945,6 @@ paths:
       tags:
         - groups.site
       summary: Get contentTypes from groups
-      description: The collection of content types present in this list.
       operationId: groups.sites.lists_GetContentTypes
       parameters:
         - name: group-id
@@ -5089,6 +5066,16 @@ paths:
                 site-id: $request.path.site-id
                 list-id: $request.path.list-id
                 contentType-id: $request.path.contentType-id
+            associateWithHubSites:
+              operationId: groups.group.sites.site.lists.list.contentTypes.contentType.associateWithHubSites
+            copyToDefaultContentLocation:
+              operationId: groups.group.sites.site.lists.list.contentTypes.contentType.copyToDefaultContentLocation
+            isPublished:
+              operationId: groups.group.sites.site.lists.list.contentTypes.contentType.isPublished
+            publish:
+              operationId: groups.group.sites.site.lists.list.contentTypes.contentType.publish
+            unpublish:
+              operationId: groups.group.sites.site.lists.list.contentTypes.contentType.unpublish
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5189,7 +5176,6 @@ paths:
       tags:
         - groups.site
       summary: Get base from groups
-      description: Parent contentType from which this content type is derived.
       operationId: groups.sites.lists.contentTypes_GetBase
       parameters:
         - name: group-id
@@ -5319,7 +5305,6 @@ paths:
       tags:
         - groups.site
       summary: Get baseTypes from groups
-      description: The collection of content types that are ancestors of this content type.
       operationId: groups.sites.lists.contentTypes_ListBaseTypes
       parameters:
         - name: group-id
@@ -5458,7 +5443,6 @@ paths:
       tags:
         - groups.site
       summary: Get baseTypes from groups
-      description: The collection of content types that are ancestors of this content type.
       operationId: groups.sites.lists.contentTypes_GetBaseTypes
       parameters:
         - name: group-id
@@ -5600,7 +5584,6 @@ paths:
       tags:
         - groups.site
       summary: Get columnLinks from groups
-      description: The collection of columns that are required by this content type
       operationId: groups.sites.lists.contentTypes_ListColumnLinks
       parameters:
         - name: group-id
@@ -5741,7 +5724,6 @@ paths:
       tags:
         - groups.site
       summary: Get columnLinks from groups
-      description: The collection of columns that are required by this content type
       operationId: groups.sites.lists.contentTypes_GetColumnLinks
       parameters:
         - name: group-id
@@ -5925,7 +5907,6 @@ paths:
       tags:
         - groups.site
       summary: Get columnPositions from groups
-      description: Column order information in a content type.
       operationId: groups.sites.lists.contentTypes_ListColumnPositions
       parameters:
         - name: group-id
@@ -6107,7 +6088,6 @@ paths:
       tags:
         - groups.site
       summary: Get columnPositions from groups
-      description: Column order information in a content type.
       operationId: groups.sites.lists.contentTypes_GetColumnPositions
       parameters:
         - name: group-id
@@ -6226,7 +6206,6 @@ paths:
       tags:
         - groups.site
       summary: Get columns from groups
-      description: The collection of column definitions for this contentType.
       operationId: groups.sites.lists.contentTypes_ListColumns
       parameters:
         - name: group-id
@@ -6459,7 +6438,6 @@ paths:
       tags:
         - groups.site
       summary: Get columns from groups
-      description: The collection of column definitions for this contentType.
       operationId: groups.sites.lists.contentTypes_GetColumns
       parameters:
         - name: group-id
@@ -6684,7 +6662,6 @@ paths:
       tags:
         - groups.site
       summary: Get sourceColumn from groups
-      description: The source column for content type column.
       operationId: groups.sites.lists.contentTypes.columns_GetSourceColumn
       parameters:
         - name: group-id
@@ -6803,7 +6780,6 @@ paths:
       tags:
         - groups.site
       summary: Get drive from groups
-      description: 'Only present on document libraries. Allows access to the list as a [drive][] resource with [driveItems][driveItem].'
       operationId: groups.sites.lists_GetDrive
       parameters:
         - name: group-id
@@ -6953,7 +6929,6 @@ paths:
       tags:
         - groups.site
       summary: Get items from groups
-      description: All items contained in the list.
       operationId: groups.sites.lists_ListItems
       parameters:
         - name: group-id
@@ -7129,7 +7104,6 @@ paths:
       tags:
         - groups.site
       summary: Get items from groups
-      description: All items contained in the list.
       operationId: groups.sites.lists_GetItems
       parameters:
         - name: group-id
@@ -7276,6 +7250,10 @@ paths:
                 site-id: $request.path.site-id
                 list-id: $request.path.list-id
                 listItem-id: $request.path.listItem-id
+            createLink:
+              operationId: groups.group.sites.site.lists.list.items.listItem.createLink
+            getActivitiesByInterval:
+              operationId: groups.group.sites.site.lists.list.items.listItem.getActivitiesByInterval
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -7376,7 +7354,6 @@ paths:
       tags:
         - groups.site
       summary: Get activities from groups
-      description: The list of recent activities that took place on this item.
       operationId: groups.sites.lists.items_ListActivities
       parameters:
         - name: group-id
@@ -7527,7 +7504,6 @@ paths:
       tags:
         - groups.site
       summary: Get activities from groups
-      description: The list of recent activities that took place on this item.
       operationId: groups.sites.lists.items_GetActivities
       parameters:
         - name: group-id
@@ -7956,7 +7932,6 @@ paths:
       tags:
         - groups.site
       summary: Get content for the navigation property driveItem from groups
-      description: 'The content stream, if the item represents a file.'
       operationId: groups.sites.lists.items.activities_GetDriveItemContent
       parameters:
         - name: group-id
@@ -8009,7 +7984,6 @@ paths:
       tags:
         - groups.site
       summary: Update content for the navigation property driveItem in groups
-      description: 'The content stream, if the item represents a file.'
       operationId: groups.sites.lists.items.activities_SetDriveItemContent
       parameters:
         - name: group-id
@@ -8235,7 +8209,6 @@ paths:
       tags:
         - groups.site
       summary: Get analytics from groups
-      description: Analytics about the view activities that took place on this item.
       operationId: groups.sites.lists.items_GetAnalytics
       parameters:
         - name: group-id
@@ -8333,7 +8306,6 @@ paths:
       tags:
         - groups.site
       summary: Get documentSetVersions from groups
-      description: Version information for a document set version created by a user.
       operationId: groups.sites.lists.items_ListDocumentSetVersions
       parameters:
         - name: group-id
@@ -8497,7 +8469,6 @@ paths:
       tags:
         - groups.site
       summary: Get documentSetVersions from groups
-      description: Version information for a document set version created by a user.
       operationId: groups.sites.lists.items_GetDocumentSetVersions
       parameters:
         - name: group-id
@@ -8585,6 +8556,8 @@ paths:
                 list-id: $request.path.list-id
                 listItem-id: $request.path.listItem-id
                 documentSetVersion-id: $request.path.documentSetVersion-id
+            restore:
+              operationId: groups.group.sites.site.lists.list.items.listItem.documentSetVersions.documentSetVersion.restore
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -8699,7 +8672,6 @@ paths:
       tags:
         - groups.site
       summary: Get driveItem from groups
-      description: 'For document libraries, the driveItem relationship exposes the listItem as a [driveItem][]'
       operationId: groups.sites.lists.items_GetDriveItem
       parameters:
         - name: group-id
@@ -8904,7 +8876,6 @@ paths:
       tags:
         - groups.site
       summary: Get content for the navigation property driveItem from groups
-      description: 'The content stream, if the item represents a file.'
       operationId: groups.sites.lists.items_GetDriveItemContent
       parameters:
         - name: group-id
@@ -8950,7 +8921,6 @@ paths:
       tags:
         - groups.site
       summary: Update content for the navigation property driveItem in groups
-      description: 'The content stream, if the item represents a file.'
       operationId: groups.sites.lists.items_SetDriveItemContent
       parameters:
         - name: group-id
@@ -9000,7 +8970,6 @@ paths:
       tags:
         - groups.site
       summary: Get fields from groups
-      description: The values of the columns set on this list item.
       operationId: groups.sites.lists.items_GetFields
       parameters:
         - name: group-id
@@ -9162,7 +9131,6 @@ paths:
       tags:
         - groups.site
       summary: Get versions from groups
-      description: The list of previous versions of the list item.
       operationId: groups.sites.lists.items_ListVersions
       parameters:
         - name: group-id
@@ -9311,7 +9279,6 @@ paths:
       tags:
         - groups.site
       summary: Get versions from groups
-      description: The list of previous versions of the list item.
       operationId: groups.sites.lists.items_GetVersions
       parameters:
         - name: group-id
@@ -9394,6 +9361,8 @@ paths:
                 list-id: $request.path.list-id
                 listItem-id: $request.path.listItem-id
                 listItemVersion-id: $request.path.listItemVersion-id
+            restoreVersion:
+              operationId: groups.group.sites.site.lists.list.items.listItem.versions.listItemVersion.restoreVersion
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -9508,7 +9477,6 @@ paths:
       tags:
         - groups.site
       summary: Get fields from groups
-      description: A collection of the fields and values for this version of the list item.
       operationId: groups.sites.lists.items.versions_GetFields
       parameters:
         - name: group-id
@@ -9691,7 +9659,6 @@ paths:
       tags:
         - groups.site
       summary: Get operations from groups
-      description: The collection of long running operations for the list.
       operationId: groups.sites.lists_ListOperations
       parameters:
         - name: group-id
@@ -9842,7 +9809,6 @@ paths:
       tags:
         - groups.site
       summary: Get operations from groups
-      description: The collection of long running operations for the list.
       operationId: groups.sites.lists_GetOperations
       parameters:
         - name: group-id
@@ -10013,7 +9979,6 @@ paths:
       tags:
         - groups.site
       summary: Get subscriptions from groups
-      description: The set of subscriptions on the list.
       operationId: groups.sites.lists_ListSubscriptions
       parameters:
         - name: group-id
@@ -10182,7 +10147,6 @@ paths:
       tags:
         - groups.site
       summary: Get subscriptions from groups
-      description: The set of subscriptions on the list.
       operationId: groups.sites.lists_GetSubscriptions
       parameters:
         - name: group-id
@@ -10359,7 +10323,6 @@ paths:
       tags:
         - groups.site
       summary: Get onenote from groups
-      description: Calls the OneNote service for notebook related operations.
       operationId: groups.sites_GetOnenote
       parameters:
         - name: group-id
@@ -10522,7 +10485,6 @@ paths:
       tags:
         - groups.site
       summary: Get notebooks from groups
-      description: The collection of OneNote notebooks that are owned by the user or group. Read-only. Nullable.
       operationId: groups.sites.onenote_ListNotebooks
       parameters:
         - name: group-id
@@ -10672,7 +10634,6 @@ paths:
       tags:
         - groups.site
       summary: Get notebooks from groups
-      description: The collection of OneNote notebooks that are owned by the user or group. Read-only. Nullable.
       operationId: groups.sites.onenote_GetNotebooks
       parameters:
         - name: group-id
@@ -10756,6 +10717,8 @@ paths:
                 group-id: $request.path.group-id
                 site-id: $request.path.site-id
                 notebook-id: $request.path.notebook-id
+            copyNotebook:
+              operationId: groups.group.sites.site.onenote.notebooks.notebook.copyNotebook
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -10842,7 +10805,6 @@ paths:
       tags:
         - groups.site
       summary: Get sectionGroups from groups
-      description: The section groups in the notebook. Read-only. Nullable.
       operationId: groups.sites.onenote.notebooks_ListSectionGroups
       parameters:
         - name: group-id
@@ -10998,7 +10960,6 @@ paths:
       tags:
         - groups.site
       summary: Get sectionGroups from groups
-      description: The section groups in the notebook. Read-only. Nullable.
       operationId: groups.sites.onenote.notebooks_GetSectionGroups
       parameters:
         - name: group-id
@@ -11205,7 +11166,6 @@ paths:
       tags:
         - groups.site
       summary: Get parentNotebook from groups
-      description: The notebook that contains the section group. Read-only.
       operationId: groups.sites.onenote.notebooks.sectionGroups_GetParentNotebook
       parameters:
         - name: group-id
@@ -11306,7 +11266,6 @@ paths:
       tags:
         - groups.site
       summary: Get parentSectionGroup from groups
-      description: The section group that contains the section group. Read-only.
       operationId: groups.sites.onenote.notebooks.sectionGroups_GetParentSectionGroup
       parameters:
         - name: group-id
@@ -11421,7 +11380,6 @@ paths:
       tags:
         - groups.site
       summary: Get sectionGroups from groups
-      description: The section groups in the section. Read-only. Nullable.
       operationId: groups.sites.onenote.notebooks.sectionGroups_ListSectionGroups
       parameters:
         - name: group-id
@@ -11540,7 +11498,6 @@ paths:
       tags:
         - groups.site
       summary: Get sectionGroups from groups
-      description: The section groups in the section. Read-only. Nullable.
       operationId: groups.sites.onenote.notebooks.sectionGroups_GetSectionGroups
       parameters:
         - name: group-id
@@ -11666,7 +11623,6 @@ paths:
       tags:
         - groups.site
       summary: Get sections from groups
-      description: The sections in the section group. Read-only. Nullable.
       operationId: groups.sites.onenote.notebooks.sectionGroups_ListSections
       parameters:
         - name: group-id
@@ -11837,7 +11793,6 @@ paths:
       tags:
         - groups.site
       summary: Get sections from groups
-      description: The sections in the section group. Read-only. Nullable.
       operationId: groups.sites.onenote.notebooks.sectionGroups_GetSections
       parameters:
         - name: group-id
@@ -11946,6 +11901,10 @@ paths:
                 notebook-id: $request.path.notebook-id
                 sectionGroup-id: $request.path.sectionGroup-id
                 onenoteSection-id: $request.path.onenoteSection-id
+            copyToNotebook:
+              operationId: groups.group.sites.site.onenote.notebooks.notebook.sectionGroups.sectionGroup.sections.onenoteSection.copyToNotebook
+            copyToSectionGroup:
+              operationId: groups.group.sites.site.onenote.notebooks.notebook.sectionGroups.sectionGroup.sections.onenoteSection.copyToSectionGroup
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -12060,7 +12019,6 @@ paths:
       tags:
         - groups.site
       summary: Get pages from groups
-      description: The collection of pages in the section.  Read-only. Nullable.
       operationId: groups.sites.onenote.notebooks.sectionGroups.sections_ListPages
       parameters:
         - name: group-id
@@ -12249,7 +12207,6 @@ paths:
       tags:
         - groups.site
       summary: Get pages from groups
-      description: The collection of pages in the section.  Read-only. Nullable.
       operationId: groups.sites.onenote.notebooks.sectionGroups.sections_GetPages
       parameters:
         - name: group-id
@@ -12359,6 +12316,12 @@ paths:
                 sectionGroup-id: $request.path.sectionGroup-id
                 onenoteSection-id: $request.path.onenoteSection-id
                 onenotePage-id: $request.path.onenotePage-id
+            copyToSection:
+              operationId: groups.group.sites.site.onenote.notebooks.notebook.sectionGroups.sectionGroup.sections.onenoteSection.pages.onenotePage.copyToSection
+            onenotePatchContent:
+              operationId: groups.group.sites.site.onenote.notebooks.notebook.sectionGroups.sectionGroup.sections.onenoteSection.pages.onenotePage.onenotePatchContent
+            preview:
+              operationId: groups.group.sites.site.onenote.notebooks.notebook.sectionGroups.sectionGroup.sections.onenoteSection.pages.onenotePage.preview
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -12487,7 +12450,6 @@ paths:
       tags:
         - groups.site
       summary: Get content for the navigation property pages from groups
-      description: The page's HTML content.
       operationId: groups.sites.onenote.notebooks.sectionGroups.sections_GetPagesContent
       parameters:
         - name: group-id
@@ -12547,7 +12509,6 @@ paths:
       tags:
         - groups.site
       summary: Update content for the navigation property pages in groups
-      description: The page's HTML content.
       operationId: groups.sites.onenote.notebooks.sectionGroups.sections_SetPagesContent
       parameters:
         - name: group-id
@@ -12611,7 +12572,6 @@ paths:
       tags:
         - groups.site
       summary: Get parentNotebook from groups
-      description: The notebook that contains the page.  Read-only.
       operationId: groups.sites.onenote.notebooks.sectionGroups.sections.pages_GetParentNotebook
       parameters:
         - name: group-id
@@ -12730,7 +12690,6 @@ paths:
       tags:
         - groups.site
       summary: Get parentSection from groups
-      description: The section that contains the page. Read-only.
       operationId: groups.sites.onenote.notebooks.sectionGroups.sections.pages_GetParentSection
       parameters:
         - name: group-id
@@ -12857,7 +12816,6 @@ paths:
       tags:
         - groups.site
       summary: Get parentNotebook from groups
-      description: The notebook that contains the section.  Read-only.
       operationId: groups.sites.onenote.notebooks.sectionGroups.sections_GetParentNotebook
       parameters:
         - name: group-id
@@ -12967,7 +12925,6 @@ paths:
       tags:
         - groups.site
       summary: Get parentSectionGroup from groups
-      description: The section group that contains the section.  Read-only.
       operationId: groups.sites.onenote.notebooks.sectionGroups.sections_GetParentSectionGroup
       parameters:
         - name: group-id
@@ -13093,7 +13050,6 @@ paths:
       tags:
         - groups.site
       summary: Get sections from groups
-      description: The sections in the notebook. Read-only. Nullable.
       operationId: groups.sites.onenote.notebooks_ListSections
       parameters:
         - name: group-id
@@ -13250,7 +13206,6 @@ paths:
       tags:
         - groups.site
       summary: Get sections from groups
-      description: The sections in the notebook. Read-only. Nullable.
       operationId: groups.sites.onenote.notebooks_GetSections
       parameters:
         - name: group-id
@@ -13349,6 +13304,10 @@ paths:
                 site-id: $request.path.site-id
                 notebook-id: $request.path.notebook-id
                 onenoteSection-id: $request.path.onenoteSection-id
+            copyToNotebook:
+              operationId: groups.group.sites.site.onenote.notebooks.notebook.sections.onenoteSection.copyToNotebook
+            copyToSectionGroup:
+              operationId: groups.group.sites.site.onenote.notebooks.notebook.sections.onenoteSection.copyToSectionGroup
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -13449,7 +13408,6 @@ paths:
       tags:
         - groups.site
       summary: Get pages from groups
-      description: The collection of pages in the section.  Read-only. Nullable.
       operationId: groups.sites.onenote.notebooks.sections_ListPages
       parameters:
         - name: group-id
@@ -13624,7 +13582,6 @@ paths:
       tags:
         - groups.site
       summary: Get pages from groups
-      description: The collection of pages in the section.  Read-only. Nullable.
       operationId: groups.sites.onenote.notebooks.sections_GetPages
       parameters:
         - name: group-id
@@ -13725,6 +13682,12 @@ paths:
                 notebook-id: $request.path.notebook-id
                 onenoteSection-id: $request.path.onenoteSection-id
                 onenotePage-id: $request.path.onenotePage-id
+            copyToSection:
+              operationId: groups.group.sites.site.onenote.notebooks.notebook.sections.onenoteSection.pages.onenotePage.copyToSection
+            onenotePatchContent:
+              operationId: groups.group.sites.site.onenote.notebooks.notebook.sections.onenoteSection.pages.onenotePage.onenotePatchContent
+            preview:
+              operationId: groups.group.sites.site.onenote.notebooks.notebook.sections.onenoteSection.pages.onenotePage.preview
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -13839,7 +13802,6 @@ paths:
       tags:
         - groups.site
       summary: Get content for the navigation property pages from groups
-      description: The page's HTML content.
       operationId: groups.sites.onenote.notebooks.sections_GetPagesContent
       parameters:
         - name: group-id
@@ -13892,7 +13854,6 @@ paths:
       tags:
         - groups.site
       summary: Update content for the navigation property pages in groups
-      description: The page's HTML content.
       operationId: groups.sites.onenote.notebooks.sections_SetPagesContent
       parameters:
         - name: group-id
@@ -13949,7 +13910,6 @@ paths:
       tags:
         - groups.site
       summary: Get parentNotebook from groups
-      description: The notebook that contains the page.  Read-only.
       operationId: groups.sites.onenote.notebooks.sections.pages_GetParentNotebook
       parameters:
         - name: group-id
@@ -14059,7 +14019,6 @@ paths:
       tags:
         - groups.site
       summary: Get parentSection from groups
-      description: The section that contains the page. Read-only.
       operationId: groups.sites.onenote.notebooks.sections.pages_GetParentSection
       parameters:
         - name: group-id
@@ -14176,7 +14135,6 @@ paths:
       tags:
         - groups.site
       summary: Get parentNotebook from groups
-      description: The notebook that contains the section.  Read-only.
       operationId: groups.sites.onenote.notebooks.sections_GetParentNotebook
       parameters:
         - name: group-id
@@ -14277,7 +14235,6 @@ paths:
       tags:
         - groups.site
       summary: Get parentSectionGroup from groups
-      description: The section group that contains the section.  Read-only.
       operationId: groups.sites.onenote.notebooks.sections_GetParentSectionGroup
       parameters:
         - name: group-id
@@ -14392,7 +14349,6 @@ paths:
       tags:
         - groups.site
       summary: Get operations from groups
-      description: 'The status of OneNote operations. Getting an operations collection is not supported, but you can get the status of long-running operations if the Operation-Location header is returned in the response. Read-only. Nullable.'
       operationId: groups.sites.onenote_ListOperations
       parameters:
         - name: group-id
@@ -14523,7 +14479,6 @@ paths:
       tags:
         - groups.site
       summary: Get operations from groups
-      description: 'The status of OneNote operations. Getting an operations collection is not supported, but you can get the status of long-running operations if the Operation-Location header is returned in the response. Read-only. Nullable.'
       operationId: groups.sites.onenote_GetOperations
       parameters:
         - name: group-id
@@ -14671,7 +14626,6 @@ paths:
       tags:
         - groups.site
       summary: Get pages from groups
-      description: The pages in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
       operationId: groups.sites.onenote_ListPages
       parameters:
         - name: group-id
@@ -14818,7 +14772,6 @@ paths:
       tags:
         - groups.site
       summary: Get pages from groups
-      description: The pages in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
       operationId: groups.sites.onenote_GetPages
       parameters:
         - name: group-id
@@ -14901,6 +14854,12 @@ paths:
                 group-id: $request.path.group-id
                 site-id: $request.path.site-id
                 onenotePage-id: $request.path.onenotePage-id
+            copyToSection:
+              operationId: groups.group.sites.site.onenote.pages.onenotePage.copyToSection
+            onenotePatchContent:
+              operationId: groups.group.sites.site.onenote.pages.onenotePage.onenotePatchContent
+            preview:
+              operationId: groups.group.sites.site.onenote.pages.onenotePage.preview
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -14987,7 +14946,6 @@ paths:
       tags:
         - groups.site
       summary: Get content for the navigation property pages from groups
-      description: The page's HTML content.
       operationId: groups.sites.onenote_GetPagesContent
       parameters:
         - name: group-id
@@ -15026,7 +14984,6 @@ paths:
       tags:
         - groups.site
       summary: Update content for the navigation property pages in groups
-      description: The page's HTML content.
       operationId: groups.sites.onenote_SetPagesContent
       parameters:
         - name: group-id
@@ -15069,7 +15026,6 @@ paths:
       tags:
         - groups.site
       summary: Get parentNotebook from groups
-      description: The notebook that contains the page.  Read-only.
       operationId: groups.sites.onenote.pages_GetParentNotebook
       parameters:
         - name: group-id
@@ -15161,7 +15117,6 @@ paths:
       tags:
         - groups.site
       summary: Get parentSection from groups
-      description: The section that contains the page. Read-only.
       operationId: groups.sites.onenote.pages_GetParentSection
       parameters:
         - name: group-id
@@ -15258,7 +15213,6 @@ paths:
       tags:
         - groups.site
       summary: Get resources from groups
-      description: 'The image and other file resources in OneNote pages. Getting a resources collection is not supported, but you can get the binary content of a specific resource. Read-only. Nullable.'
       operationId: groups.sites.onenote_ListResources
       parameters:
         - name: group-id
@@ -15377,7 +15331,6 @@ paths:
       tags:
         - groups.site
       summary: Get resources from groups
-      description: 'The image and other file resources in OneNote pages. Getting a resources collection is not supported, but you can get the binary content of a specific resource. Read-only. Nullable.'
       operationId: groups.sites.onenote_GetResources
       parameters:
         - name: group-id
@@ -15521,7 +15474,6 @@ paths:
       tags:
         - groups.site
       summary: Get content for the navigation property resources from groups
-      description: The content stream
       operationId: groups.sites.onenote_GetResourcesContent
       parameters:
         - name: group-id
@@ -15560,7 +15512,6 @@ paths:
       tags:
         - groups.site
       summary: Update content for the navigation property resources in groups
-      description: The content stream
       operationId: groups.sites.onenote_SetResourcesContent
       parameters:
         - name: group-id
@@ -15603,7 +15554,6 @@ paths:
       tags:
         - groups.site
       summary: Get sectionGroups from groups
-      description: The section groups in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
       operationId: groups.sites.onenote_ListSectionGroups
       parameters:
         - name: group-id
@@ -15745,7 +15695,6 @@ paths:
       tags:
         - groups.site
       summary: Get sectionGroups from groups
-      description: The section groups in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
       operationId: groups.sites.onenote_GetSectionGroups
       parameters:
         - name: group-id
@@ -15927,7 +15876,6 @@ paths:
       tags:
         - groups.site
       summary: Get parentNotebook from groups
-      description: The notebook that contains the section group. Read-only.
       operationId: groups.sites.onenote.sectionGroups_GetParentNotebook
       parameters:
         - name: group-id
@@ -16019,7 +15967,6 @@ paths:
       tags:
         - groups.site
       summary: Get parentSectionGroup from groups
-      description: The section group that contains the section group. Read-only.
       operationId: groups.sites.onenote.sectionGroups_GetParentSectionGroup
       parameters:
         - name: group-id
@@ -16123,7 +16070,6 @@ paths:
       tags:
         - groups.site
       summary: Get sectionGroups from groups
-      description: The section groups in the section. Read-only. Nullable.
       operationId: groups.sites.onenote.sectionGroups_ListSectionGroups
       parameters:
         - name: group-id
@@ -16235,7 +16181,6 @@ paths:
       tags:
         - groups.site
       summary: Get sectionGroups from groups
-      description: The section groups in the section. Read-only. Nullable.
       operationId: groups.sites.onenote.sectionGroups_GetSectionGroups
       parameters:
         - name: group-id
@@ -16350,7 +16295,6 @@ paths:
       tags:
         - groups.site
       summary: Get sections from groups
-      description: The sections in the section group. Read-only. Nullable.
       operationId: groups.sites.onenote.sectionGroups_ListSections
       parameters:
         - name: group-id
@@ -16507,7 +16451,6 @@ paths:
       tags:
         - groups.site
       summary: Get sections from groups
-      description: The sections in the section group. Read-only. Nullable.
       operationId: groups.sites.onenote.sectionGroups_GetSections
       parameters:
         - name: group-id
@@ -16606,6 +16549,10 @@ paths:
                 site-id: $request.path.site-id
                 sectionGroup-id: $request.path.sectionGroup-id
                 onenoteSection-id: $request.path.onenoteSection-id
+            copyToNotebook:
+              operationId: groups.group.sites.site.onenote.sectionGroups.sectionGroup.sections.onenoteSection.copyToNotebook
+            copyToSectionGroup:
+              operationId: groups.group.sites.site.onenote.sectionGroups.sectionGroup.sections.onenoteSection.copyToSectionGroup
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -16706,7 +16653,6 @@ paths:
       tags:
         - groups.site
       summary: Get pages from groups
-      description: The collection of pages in the section.  Read-only. Nullable.
       operationId: groups.sites.onenote.sectionGroups.sections_ListPages
       parameters:
         - name: group-id
@@ -16881,7 +16827,6 @@ paths:
       tags:
         - groups.site
       summary: Get pages from groups
-      description: The collection of pages in the section.  Read-only. Nullable.
       operationId: groups.sites.onenote.sectionGroups.sections_GetPages
       parameters:
         - name: group-id
@@ -16982,6 +16927,12 @@ paths:
                 sectionGroup-id: $request.path.sectionGroup-id
                 onenoteSection-id: $request.path.onenoteSection-id
                 onenotePage-id: $request.path.onenotePage-id
+            copyToSection:
+              operationId: groups.group.sites.site.onenote.sectionGroups.sectionGroup.sections.onenoteSection.pages.onenotePage.copyToSection
+            onenotePatchContent:
+              operationId: groups.group.sites.site.onenote.sectionGroups.sectionGroup.sections.onenoteSection.pages.onenotePage.onenotePatchContent
+            preview:
+              operationId: groups.group.sites.site.onenote.sectionGroups.sectionGroup.sections.onenoteSection.pages.onenotePage.preview
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -17096,7 +17047,6 @@ paths:
       tags:
         - groups.site
       summary: Get content for the navigation property pages from groups
-      description: The page's HTML content.
       operationId: groups.sites.onenote.sectionGroups.sections_GetPagesContent
       parameters:
         - name: group-id
@@ -17149,7 +17099,6 @@ paths:
       tags:
         - groups.site
       summary: Update content for the navigation property pages in groups
-      description: The page's HTML content.
       operationId: groups.sites.onenote.sectionGroups.sections_SetPagesContent
       parameters:
         - name: group-id
@@ -17206,7 +17155,6 @@ paths:
       tags:
         - groups.site
       summary: Get parentNotebook from groups
-      description: The notebook that contains the page.  Read-only.
       operationId: groups.sites.onenote.sectionGroups.sections.pages_GetParentNotebook
       parameters:
         - name: group-id
@@ -17316,7 +17264,6 @@ paths:
       tags:
         - groups.site
       summary: Get parentSection from groups
-      description: The section that contains the page. Read-only.
       operationId: groups.sites.onenote.sectionGroups.sections.pages_GetParentSection
       parameters:
         - name: group-id
@@ -17433,7 +17380,6 @@ paths:
       tags:
         - groups.site
       summary: Get parentNotebook from groups
-      description: The notebook that contains the section.  Read-only.
       operationId: groups.sites.onenote.sectionGroups.sections_GetParentNotebook
       parameters:
         - name: group-id
@@ -17534,7 +17480,6 @@ paths:
       tags:
         - groups.site
       summary: Get parentSectionGroup from groups
-      description: The section group that contains the section.  Read-only.
       operationId: groups.sites.onenote.sectionGroups.sections_GetParentSectionGroup
       parameters:
         - name: group-id
@@ -17649,7 +17594,6 @@ paths:
       tags:
         - groups.site
       summary: Get sections from groups
-      description: The sections in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
       operationId: groups.sites.onenote_ListSections
       parameters:
         - name: group-id
@@ -17792,7 +17736,6 @@ paths:
       tags:
         - groups.site
       summary: Get sections from groups
-      description: The sections in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
       operationId: groups.sites.onenote_GetSections
       parameters:
         - name: group-id
@@ -17881,6 +17824,10 @@ paths:
                 group-id: $request.path.group-id
                 site-id: $request.path.site-id
                 onenoteSection-id: $request.path.onenoteSection-id
+            copyToNotebook:
+              operationId: groups.group.sites.site.onenote.sections.onenoteSection.copyToNotebook
+            copyToSectionGroup:
+              operationId: groups.group.sites.site.onenote.sections.onenoteSection.copyToSectionGroup
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -17967,7 +17914,6 @@ paths:
       tags:
         - groups.site
       summary: Get pages from groups
-      description: The collection of pages in the section.  Read-only. Nullable.
       operationId: groups.sites.onenote.sections_ListPages
       parameters:
         - name: group-id
@@ -18128,7 +18074,6 @@ paths:
       tags:
         - groups.site
       summary: Get pages from groups
-      description: The collection of pages in the section.  Read-only. Nullable.
       operationId: groups.sites.onenote.sections_GetPages
       parameters:
         - name: group-id
@@ -18220,6 +18165,12 @@ paths:
                 site-id: $request.path.site-id
                 onenoteSection-id: $request.path.onenoteSection-id
                 onenotePage-id: $request.path.onenotePage-id
+            copyToSection:
+              operationId: groups.group.sites.site.onenote.sections.onenoteSection.pages.onenotePage.copyToSection
+            onenotePatchContent:
+              operationId: groups.group.sites.site.onenote.sections.onenoteSection.pages.onenotePage.onenotePatchContent
+            preview:
+              operationId: groups.group.sites.site.onenote.sections.onenoteSection.pages.onenotePage.preview
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -18320,7 +18271,6 @@ paths:
       tags:
         - groups.site
       summary: Get content for the navigation property pages from groups
-      description: The page's HTML content.
       operationId: groups.sites.onenote.sections_GetPagesContent
       parameters:
         - name: group-id
@@ -18366,7 +18316,6 @@ paths:
       tags:
         - groups.site
       summary: Update content for the navigation property pages in groups
-      description: The page's HTML content.
       operationId: groups.sites.onenote.sections_SetPagesContent
       parameters:
         - name: group-id
@@ -18416,7 +18365,6 @@ paths:
       tags:
         - groups.site
       summary: Get parentNotebook from groups
-      description: The notebook that contains the page.  Read-only.
       operationId: groups.sites.onenote.sections.pages_GetParentNotebook
       parameters:
         - name: group-id
@@ -18517,7 +18465,6 @@ paths:
       tags:
         - groups.site
       summary: Get parentSection from groups
-      description: The section that contains the page. Read-only.
       operationId: groups.sites.onenote.sections.pages_GetParentSection
       parameters:
         - name: group-id
@@ -18624,7 +18571,6 @@ paths:
       tags:
         - groups.site
       summary: Get parentNotebook from groups
-      description: The notebook that contains the section.  Read-only.
       operationId: groups.sites.onenote.sections_GetParentNotebook
       parameters:
         - name: group-id
@@ -18716,7 +18662,6 @@ paths:
       tags:
         - groups.site
       summary: Get parentSectionGroup from groups
-      description: The section group that contains the section.  Read-only.
       operationId: groups.sites.onenote.sections_GetParentSectionGroup
       parameters:
         - name: group-id
@@ -18820,7 +18765,6 @@ paths:
       tags:
         - groups.site
       summary: Get operations from groups
-      description: The collection of long running operations for the site.
       operationId: groups.sites_ListOperations
       parameters:
         - name: group-id
@@ -18957,7 +18901,6 @@ paths:
       tags:
         - groups.site
       summary: Get operations from groups
-      description: The collection of long running operations for the site.
       operationId: groups.sites_GetOperations
       parameters:
         - name: group-id
@@ -19107,7 +19050,6 @@ paths:
       tags:
         - groups.site
       summary: Get pages from groups
-      description: The collection of pages in the SitePages list in this site.
       operationId: groups.sites_ListPages
       parameters:
         - name: group-id
@@ -19263,7 +19205,6 @@ paths:
       tags:
         - groups.site
       summary: Get pages from groups
-      description: The collection of pages in the SitePages list in this site.
       operationId: groups.sites_GetPages
       parameters:
         - name: group-id
@@ -19349,6 +19290,8 @@ paths:
                 group-id: $request.path.group-id
                 site-id: $request.path.site-id
                 sitePage-id: $request.path.sitePage-id
+            publish:
+              operationId: groups.group.sites.site.pages.sitePage.publish
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -19435,7 +19378,6 @@ paths:
       tags:
         - groups.site
       summary: Get permissions from groups
-      description: The permissions associated with the site. Nullable.
       operationId: groups.sites_ListPermissions
       parameters:
         - name: group-id
@@ -19578,7 +19520,6 @@ paths:
       tags:
         - groups.site
       summary: Get permissions from groups
-      description: The permissions associated with the site. Nullable.
       operationId: groups.sites_GetPermissions
       parameters:
         - name: group-id
@@ -19644,6 +19585,11 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.permission'
+          links:
+            grant:
+              operationId: groups.group.sites.site.permissions.permission.grant
+            revokeGrants:
+              operationId: groups.group.sites.site.permissions.permission.revokeGrants
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -19730,7 +19676,6 @@ paths:
       tags:
         - groups.site
       summary: Get sites from groups
-      description: The collection of the sub-sites under this site.
       operationId: groups.sites_ListSites
       parameters:
         - name: group-id
@@ -19880,7 +19825,6 @@ paths:
       tags:
         - groups.site
       summary: Get sites from groups
-      description: The collection of the sub-sites under this site.
       operationId: groups.sites_GetSites
       parameters:
         - name: group-id
@@ -20087,7 +20031,6 @@ paths:
       tags:
         - groups.site
       summary: Get termStore from groups
-      description: The termStore under this site.
       operationId: groups.sites_GetTermStore
       parameters:
         - name: group-id
@@ -20224,7 +20167,6 @@ paths:
       tags:
         - groups.site
       summary: Get groups from groups
-      description: Collection of all groups available in the term store.
       operationId: groups.sites.termStore_ListGroups
       parameters:
         - name: group-id
@@ -20351,7 +20293,6 @@ paths:
       tags:
         - groups.site
       summary: Get groups from groups
-      description: Collection of all groups available in the term store.
       operationId: groups.sites.termStore_GetGroups
       parameters:
         - name: group-id
@@ -20506,7 +20447,6 @@ paths:
       tags:
         - groups.site
       summary: Get sets from groups
-      description: 'All sets under the group in a term [store].'
       operationId: groups.sites.termStore.groups_ListSets
       parameters:
         - name: group-id
@@ -20650,7 +20590,6 @@ paths:
       tags:
         - groups.site
       summary: Get sets from groups
-      description: 'All sets under the group in a term [store].'
       operationId: groups.sites.termStore.groups_GetSets
       parameters:
         - name: group-id
@@ -20853,7 +20792,6 @@ paths:
       tags:
         - groups.site
       summary: Get children from groups
-      description: 'Children terms of set in term [store].'
       operationId: groups.sites.termStore.groups.sets_ListChildren
       parameters:
         - name: group-id
@@ -21012,7 +20950,6 @@ paths:
       tags:
         - groups.site
       summary: Get children from groups
-      description: 'Children terms of set in term [store].'
       operationId: groups.sites.termStore.groups.sets_GetChildren
       parameters:
         - name: group-id
@@ -21231,7 +21168,6 @@ paths:
       tags:
         - groups.site
       summary: Get children from groups
-      description: Children of current term.
       operationId: groups.sites.termStore.groups.sets.children_ListChildren
       parameters:
         - name: group-id
@@ -21404,7 +21340,6 @@ paths:
       tags:
         - groups.site
       summary: Get children from groups
-      description: Children of current term.
       operationId: groups.sites.termStore.groups.sets.children_GetChildren
       parameters:
         - name: group-id
@@ -21647,7 +21582,6 @@ paths:
       tags:
         - groups.site
       summary: Get relations from groups
-      description: To indicate which terms are related to the current term as either pinned or reused.
       operationId: groups.sites.termStore.groups.sets.children.children_ListRelations
       parameters:
         - name: group-id
@@ -21822,7 +21756,6 @@ paths:
       tags:
         - groups.site
       summary: Get relations from groups
-      description: To indicate which terms are related to the current term as either pinned or reused.
       operationId: groups.sites.termStore.groups.sets.children.children_GetRelations
       parameters:
         - name: group-id
@@ -22085,7 +22018,6 @@ paths:
       tags:
         - groups.site
       summary: Get fromTerm from groups
-      description: 'The from [term] of the relation. The term from which the relationship is defined. A null value would indicate the relation is directly with the [set].'
       operationId: groups.sites.termStore.groups.sets.children.children.relations_GetFromTerm
       parameters:
         - name: group-id
@@ -22218,7 +22150,6 @@ paths:
       tags:
         - groups.site
       summary: Get set from groups
-      description: 'The [set] in which the relation is relevant.'
       operationId: groups.sites.termStore.groups.sets.children.children.relations_GetSet
       parameters:
         - name: group-id
@@ -22362,7 +22293,6 @@ paths:
       tags:
         - groups.site
       summary: Get toTerm from groups
-      description: 'The to [term] of the relation. The term to which the relationship is defined.'
       operationId: groups.sites.termStore.groups.sets.children.children.relations_GetToTerm
       parameters:
         - name: group-id
@@ -22495,7 +22425,6 @@ paths:
       tags:
         - groups.site
       summary: Get set from groups
-      description: 'The [set] in which the term is created.'
       operationId: groups.sites.termStore.groups.sets.children.children_GetSet
       parameters:
         - name: group-id
@@ -22628,7 +22557,6 @@ paths:
       tags:
         - groups.site
       summary: Get relations from groups
-      description: To indicate which terms are related to the current term as either pinned or reused.
       operationId: groups.sites.termStore.groups.sets.children_ListRelations
       parameters:
         - name: group-id
@@ -22789,7 +22717,6 @@ paths:
       tags:
         - groups.site
       summary: Get relations from groups
-      description: To indicate which terms are related to the current term as either pinned or reused.
       operationId: groups.sites.termStore.groups.sets.children_GetRelations
       parameters:
         - name: group-id
@@ -23028,7 +22955,6 @@ paths:
       tags:
         - groups.site
       summary: Get fromTerm from groups
-      description: 'The from [term] of the relation. The term from which the relationship is defined. A null value would indicate the relation is directly with the [set].'
       operationId: groups.sites.termStore.groups.sets.children.relations_GetFromTerm
       parameters:
         - name: group-id
@@ -23151,7 +23077,6 @@ paths:
       tags:
         - groups.site
       summary: Get set from groups
-      description: 'The [set] in which the relation is relevant.'
       operationId: groups.sites.termStore.groups.sets.children.relations_GetSet
       parameters:
         - name: group-id
@@ -23284,7 +23209,6 @@ paths:
       tags:
         - groups.site
       summary: Get toTerm from groups
-      description: 'The to [term] of the relation. The term to which the relationship is defined.'
       operationId: groups.sites.termStore.groups.sets.children.relations_GetToTerm
       parameters:
         - name: group-id
@@ -23407,7 +23331,6 @@ paths:
       tags:
         - groups.site
       summary: Get set from groups
-      description: 'The [set] in which the term is created.'
       operationId: groups.sites.termStore.groups.sets.children_GetSet
       parameters:
         - name: group-id
@@ -23529,7 +23452,6 @@ paths:
       tags:
         - groups.site
       summary: Get parentGroup from groups
-      description: 'The parent [group] that contains the set.'
       operationId: groups.sites.termStore.groups.sets_GetParentGroup
       parameters:
         - name: group-id
@@ -23706,7 +23628,6 @@ paths:
       tags:
         - groups.site
       summary: Get relations from groups
-      description: Indicates which terms have been pinned or reused directly under the set.
       operationId: groups.sites.termStore.groups.sets_ListRelations
       parameters:
         - name: group-id
@@ -23853,7 +23774,6 @@ paths:
       tags:
         - groups.site
       summary: Get relations from groups
-      description: Indicates which terms have been pinned or reused directly under the set.
       operationId: groups.sites.termStore.groups.sets_GetRelations
       parameters:
         - name: group-id
@@ -24068,7 +23988,6 @@ paths:
       tags:
         - groups.site
       summary: Get fromTerm from groups
-      description: 'The from [term] of the relation. The term from which the relationship is defined. A null value would indicate the relation is directly with the [set].'
       operationId: groups.sites.termStore.groups.sets.relations_GetFromTerm
       parameters:
         - name: group-id
@@ -24181,7 +24100,6 @@ paths:
       tags:
         - groups.site
       summary: Get set from groups
-      description: 'The [set] in which the relation is relevant.'
       operationId: groups.sites.termStore.groups.sets.relations_GetSet
       parameters:
         - name: group-id
@@ -24303,7 +24221,6 @@ paths:
       tags:
         - groups.site
       summary: Get toTerm from groups
-      description: 'The to [term] of the relation. The term to which the relationship is defined.'
       operationId: groups.sites.termStore.groups.sets.relations_GetToTerm
       parameters:
         - name: group-id
@@ -24416,7 +24333,6 @@ paths:
       tags:
         - groups.site
       summary: Get terms from groups
-      description: All the terms under the set.
       operationId: groups.sites.termStore.groups.sets_ListTerms
       parameters:
         - name: group-id
@@ -24575,7 +24491,6 @@ paths:
       tags:
         - groups.site
       summary: Get terms from groups
-      description: All the terms under the set.
       operationId: groups.sites.termStore.groups.sets_GetTerms
       parameters:
         - name: group-id
@@ -24794,7 +24709,6 @@ paths:
       tags:
         - groups.site
       summary: Get children from groups
-      description: Children of current term.
       operationId: groups.sites.termStore.groups.sets.terms_ListChildren
       parameters:
         - name: group-id
@@ -24967,7 +24881,6 @@ paths:
       tags:
         - groups.site
       summary: Get children from groups
-      description: Children of current term.
       operationId: groups.sites.termStore.groups.sets.terms_GetChildren
       parameters:
         - name: group-id
@@ -25210,7 +25123,6 @@ paths:
       tags:
         - groups.site
       summary: Get relations from groups
-      description: To indicate which terms are related to the current term as either pinned or reused.
       operationId: groups.sites.termStore.groups.sets.terms.children_ListRelations
       parameters:
         - name: group-id
@@ -25385,7 +25297,6 @@ paths:
       tags:
         - groups.site
       summary: Get relations from groups
-      description: To indicate which terms are related to the current term as either pinned or reused.
       operationId: groups.sites.termStore.groups.sets.terms.children_GetRelations
       parameters:
         - name: group-id
@@ -25648,7 +25559,6 @@ paths:
       tags:
         - groups.site
       summary: Get fromTerm from groups
-      description: 'The from [term] of the relation. The term from which the relationship is defined. A null value would indicate the relation is directly with the [set].'
       operationId: groups.sites.termStore.groups.sets.terms.children.relations_GetFromTerm
       parameters:
         - name: group-id
@@ -25781,7 +25691,6 @@ paths:
       tags:
         - groups.site
       summary: Get set from groups
-      description: 'The [set] in which the relation is relevant.'
       operationId: groups.sites.termStore.groups.sets.terms.children.relations_GetSet
       parameters:
         - name: group-id
@@ -25925,7 +25834,6 @@ paths:
       tags:
         - groups.site
       summary: Get toTerm from groups
-      description: 'The to [term] of the relation. The term to which the relationship is defined.'
       operationId: groups.sites.termStore.groups.sets.terms.children.relations_GetToTerm
       parameters:
         - name: group-id
@@ -26058,7 +25966,6 @@ paths:
       tags:
         - groups.site
       summary: Get set from groups
-      description: 'The [set] in which the term is created.'
       operationId: groups.sites.termStore.groups.sets.terms.children_GetSet
       parameters:
         - name: group-id
@@ -26191,7 +26098,6 @@ paths:
       tags:
         - groups.site
       summary: Get relations from groups
-      description: To indicate which terms are related to the current term as either pinned or reused.
       operationId: groups.sites.termStore.groups.sets.terms_ListRelations
       parameters:
         - name: group-id
@@ -26352,7 +26258,6 @@ paths:
       tags:
         - groups.site
       summary: Get relations from groups
-      description: To indicate which terms are related to the current term as either pinned or reused.
       operationId: groups.sites.termStore.groups.sets.terms_GetRelations
       parameters:
         - name: group-id
@@ -26591,7 +26496,6 @@ paths:
       tags:
         - groups.site
       summary: Get fromTerm from groups
-      description: 'The from [term] of the relation. The term from which the relationship is defined. A null value would indicate the relation is directly with the [set].'
       operationId: groups.sites.termStore.groups.sets.terms.relations_GetFromTerm
       parameters:
         - name: group-id
@@ -26714,7 +26618,6 @@ paths:
       tags:
         - groups.site
       summary: Get set from groups
-      description: 'The [set] in which the relation is relevant.'
       operationId: groups.sites.termStore.groups.sets.terms.relations_GetSet
       parameters:
         - name: group-id
@@ -26847,7 +26750,6 @@ paths:
       tags:
         - groups.site
       summary: Get toTerm from groups
-      description: 'The to [term] of the relation. The term to which the relationship is defined.'
       operationId: groups.sites.termStore.groups.sets.terms.relations_GetToTerm
       parameters:
         - name: group-id
@@ -26970,7 +26872,6 @@ paths:
       tags:
         - groups.site
       summary: Get set from groups
-      description: 'The [set] in which the term is created.'
       operationId: groups.sites.termStore.groups.sets.terms_GetSet
       parameters:
         - name: group-id
@@ -27092,7 +26993,6 @@ paths:
       tags:
         - groups.site
       summary: Get sets from groups
-      description: Collection of all sets available in the term store.
       operationId: groups.sites.termStore_ListSets
       parameters:
         - name: group-id
@@ -27222,7 +27122,6 @@ paths:
       tags:
         - groups.site
       summary: Get sets from groups
-      description: Collection of all sets available in the term store.
       operationId: groups.sites.termStore_GetSets
       parameters:
         - name: group-id
@@ -27400,7 +27299,6 @@ paths:
       tags:
         - groups.site
       summary: Get children from groups
-      description: 'Children terms of set in term [store].'
       operationId: groups.sites.termStore.sets_ListChildren
       parameters:
         - name: group-id
@@ -27545,7 +27443,6 @@ paths:
       tags:
         - groups.site
       summary: Get children from groups
-      description: 'Children terms of set in term [store].'
       operationId: groups.sites.termStore.sets_GetChildren
       parameters:
         - name: group-id
@@ -27740,7 +27637,6 @@ paths:
       tags:
         - groups.site
       summary: Get children from groups
-      description: Children of current term.
       operationId: groups.sites.termStore.sets.children_ListChildren
       parameters:
         - name: group-id
@@ -27899,7 +27795,6 @@ paths:
       tags:
         - groups.site
       summary: Get children from groups
-      description: Children of current term.
       operationId: groups.sites.termStore.sets.children_GetChildren
       parameters:
         - name: group-id
@@ -28118,7 +28013,6 @@ paths:
       tags:
         - groups.site
       summary: Get relations from groups
-      description: To indicate which terms are related to the current term as either pinned or reused.
       operationId: groups.sites.termStore.sets.children.children_ListRelations
       parameters:
         - name: group-id
@@ -28279,7 +28173,6 @@ paths:
       tags:
         - groups.site
       summary: Get relations from groups
-      description: To indicate which terms are related to the current term as either pinned or reused.
       operationId: groups.sites.termStore.sets.children.children_GetRelations
       parameters:
         - name: group-id
@@ -28518,7 +28411,6 @@ paths:
       tags:
         - groups.site
       summary: Get fromTerm from groups
-      description: 'The from [term] of the relation. The term from which the relationship is defined. A null value would indicate the relation is directly with the [set].'
       operationId: groups.sites.termStore.sets.children.children.relations_GetFromTerm
       parameters:
         - name: group-id
@@ -28641,7 +28533,6 @@ paths:
       tags:
         - groups.site
       summary: Get set from groups
-      description: 'The [set] in which the relation is relevant.'
       operationId: groups.sites.termStore.sets.children.children.relations_GetSet
       parameters:
         - name: group-id
@@ -28774,7 +28665,6 @@ paths:
       tags:
         - groups.site
       summary: Get toTerm from groups
-      description: 'The to [term] of the relation. The term to which the relationship is defined.'
       operationId: groups.sites.termStore.sets.children.children.relations_GetToTerm
       parameters:
         - name: group-id
@@ -28897,7 +28787,6 @@ paths:
       tags:
         - groups.site
       summary: Get set from groups
-      description: 'The [set] in which the term is created.'
       operationId: groups.sites.termStore.sets.children.children_GetSet
       parameters:
         - name: group-id
@@ -29019,7 +28908,6 @@ paths:
       tags:
         - groups.site
       summary: Get relations from groups
-      description: To indicate which terms are related to the current term as either pinned or reused.
       operationId: groups.sites.termStore.sets.children_ListRelations
       parameters:
         - name: group-id
@@ -29166,7 +29054,6 @@ paths:
       tags:
         - groups.site
       summary: Get relations from groups
-      description: To indicate which terms are related to the current term as either pinned or reused.
       operationId: groups.sites.termStore.sets.children_GetRelations
       parameters:
         - name: group-id
@@ -29381,7 +29268,6 @@ paths:
       tags:
         - groups.site
       summary: Get fromTerm from groups
-      description: 'The from [term] of the relation. The term from which the relationship is defined. A null value would indicate the relation is directly with the [set].'
       operationId: groups.sites.termStore.sets.children.relations_GetFromTerm
       parameters:
         - name: group-id
@@ -29494,7 +29380,6 @@ paths:
       tags:
         - groups.site
       summary: Get set from groups
-      description: 'The [set] in which the relation is relevant.'
       operationId: groups.sites.termStore.sets.children.relations_GetSet
       parameters:
         - name: group-id
@@ -29616,7 +29501,6 @@ paths:
       tags:
         - groups.site
       summary: Get toTerm from groups
-      description: 'The to [term] of the relation. The term to which the relationship is defined.'
       operationId: groups.sites.termStore.sets.children.relations_GetToTerm
       parameters:
         - name: group-id
@@ -29729,7 +29613,6 @@ paths:
       tags:
         - groups.site
       summary: Get set from groups
-      description: 'The [set] in which the term is created.'
       operationId: groups.sites.termStore.sets.children_GetSet
       parameters:
         - name: group-id
@@ -29840,7 +29723,6 @@ paths:
       tags:
         - groups.site
       summary: Get parentGroup from groups
-      description: 'The parent [group] that contains the set.'
       operationId: groups.sites.termStore.sets_GetParentGroup
       parameters:
         - name: group-id
@@ -29995,7 +29877,6 @@ paths:
       tags:
         - groups.site
       summary: Get sets from groups
-      description: 'All sets under the group in a term [store].'
       operationId: groups.sites.termStore.sets.parentGroup_ListSets
       parameters:
         - name: group-id
@@ -30139,7 +30020,6 @@ paths:
       tags:
         - groups.site
       summary: Get sets from groups
-      description: 'All sets under the group in a term [store].'
       operationId: groups.sites.termStore.sets.parentGroup_GetSets
       parameters:
         - name: group-id
@@ -30342,7 +30222,6 @@ paths:
       tags:
         - groups.site
       summary: Get children from groups
-      description: 'Children terms of set in term [store].'
       operationId: groups.sites.termStore.sets.parentGroup.sets_ListChildren
       parameters:
         - name: group-id
@@ -30501,7 +30380,6 @@ paths:
       tags:
         - groups.site
       summary: Get children from groups
-      description: 'Children terms of set in term [store].'
       operationId: groups.sites.termStore.sets.parentGroup.sets_GetChildren
       parameters:
         - name: group-id
@@ -30720,7 +30598,6 @@ paths:
       tags:
         - groups.site
       summary: Get children from groups
-      description: Children of current term.
       operationId: groups.sites.termStore.sets.parentGroup.sets.children_ListChildren
       parameters:
         - name: group-id
@@ -30893,7 +30770,6 @@ paths:
       tags:
         - groups.site
       summary: Get children from groups
-      description: Children of current term.
       operationId: groups.sites.termStore.sets.parentGroup.sets.children_GetChildren
       parameters:
         - name: group-id
@@ -31136,7 +31012,6 @@ paths:
       tags:
         - groups.site
       summary: Get relations from groups
-      description: To indicate which terms are related to the current term as either pinned or reused.
       operationId: groups.sites.termStore.sets.parentGroup.sets.children.children_ListRelations
       parameters:
         - name: group-id
@@ -31311,7 +31186,6 @@ paths:
       tags:
         - groups.site
       summary: Get relations from groups
-      description: To indicate which terms are related to the current term as either pinned or reused.
       operationId: groups.sites.termStore.sets.parentGroup.sets.children.children_GetRelations
       parameters:
         - name: group-id
@@ -31574,7 +31448,6 @@ paths:
       tags:
         - groups.site
       summary: Get fromTerm from groups
-      description: 'The from [term] of the relation. The term from which the relationship is defined. A null value would indicate the relation is directly with the [set].'
       operationId: groups.sites.termStore.sets.parentGroup.sets.children.children.relations_GetFromTerm
       parameters:
         - name: group-id
@@ -31707,7 +31580,6 @@ paths:
       tags:
         - groups.site
       summary: Get set from groups
-      description: 'The [set] in which the relation is relevant.'
       operationId: groups.sites.termStore.sets.parentGroup.sets.children.children.relations_GetSet
       parameters:
         - name: group-id
@@ -31851,7 +31723,6 @@ paths:
       tags:
         - groups.site
       summary: Get toTerm from groups
-      description: 'The to [term] of the relation. The term to which the relationship is defined.'
       operationId: groups.sites.termStore.sets.parentGroup.sets.children.children.relations_GetToTerm
       parameters:
         - name: group-id
@@ -31984,7 +31855,6 @@ paths:
       tags:
         - groups.site
       summary: Get set from groups
-      description: 'The [set] in which the term is created.'
       operationId: groups.sites.termStore.sets.parentGroup.sets.children.children_GetSet
       parameters:
         - name: group-id
@@ -32117,7 +31987,6 @@ paths:
       tags:
         - groups.site
       summary: Get relations from groups
-      description: To indicate which terms are related to the current term as either pinned or reused.
       operationId: groups.sites.termStore.sets.parentGroup.sets.children_ListRelations
       parameters:
         - name: group-id
@@ -32278,7 +32147,6 @@ paths:
       tags:
         - groups.site
       summary: Get relations from groups
-      description: To indicate which terms are related to the current term as either pinned or reused.
       operationId: groups.sites.termStore.sets.parentGroup.sets.children_GetRelations
       parameters:
         - name: group-id
@@ -32517,7 +32385,6 @@ paths:
       tags:
         - groups.site
       summary: Get fromTerm from groups
-      description: 'The from [term] of the relation. The term from which the relationship is defined. A null value would indicate the relation is directly with the [set].'
       operationId: groups.sites.termStore.sets.parentGroup.sets.children.relations_GetFromTerm
       parameters:
         - name: group-id
@@ -32640,7 +32507,6 @@ paths:
       tags:
         - groups.site
       summary: Get set from groups
-      description: 'The [set] in which the relation is relevant.'
       operationId: groups.sites.termStore.sets.parentGroup.sets.children.relations_GetSet
       parameters:
         - name: group-id
@@ -32773,7 +32639,6 @@ paths:
       tags:
         - groups.site
       summary: Get toTerm from groups
-      description: 'The to [term] of the relation. The term to which the relationship is defined.'
       operationId: groups.sites.termStore.sets.parentGroup.sets.children.relations_GetToTerm
       parameters:
         - name: group-id
@@ -32896,7 +32761,6 @@ paths:
       tags:
         - groups.site
       summary: Get set from groups
-      description: 'The [set] in which the term is created.'
       operationId: groups.sites.termStore.sets.parentGroup.sets.children_GetSet
       parameters:
         - name: group-id
@@ -33018,7 +32882,6 @@ paths:
       tags:
         - groups.site
       summary: Get relations from groups
-      description: Indicates which terms have been pinned or reused directly under the set.
       operationId: groups.sites.termStore.sets.parentGroup.sets_ListRelations
       parameters:
         - name: group-id
@@ -33165,7 +33028,6 @@ paths:
       tags:
         - groups.site
       summary: Get relations from groups
-      description: Indicates which terms have been pinned or reused directly under the set.
       operationId: groups.sites.termStore.sets.parentGroup.sets_GetRelations
       parameters:
         - name: group-id
@@ -33380,7 +33242,6 @@ paths:
       tags:
         - groups.site
       summary: Get fromTerm from groups
-      description: 'The from [term] of the relation. The term from which the relationship is defined. A null value would indicate the relation is directly with the [set].'
       operationId: groups.sites.termStore.sets.parentGroup.sets.relations_GetFromTerm
       parameters:
         - name: group-id
@@ -33493,7 +33354,6 @@ paths:
       tags:
         - groups.site
       summary: Get set from groups
-      description: 'The [set] in which the relation is relevant.'
       operationId: groups.sites.termStore.sets.parentGroup.sets.relations_GetSet
       parameters:
         - name: group-id
@@ -33615,7 +33475,6 @@ paths:
       tags:
         - groups.site
       summary: Get toTerm from groups
-      description: 'The to [term] of the relation. The term to which the relationship is defined.'
       operationId: groups.sites.termStore.sets.parentGroup.sets.relations_GetToTerm
       parameters:
         - name: group-id
@@ -33728,7 +33587,6 @@ paths:
       tags:
         - groups.site
       summary: Get terms from groups
-      description: All the terms under the set.
       operationId: groups.sites.termStore.sets.parentGroup.sets_ListTerms
       parameters:
         - name: group-id
@@ -33887,7 +33745,6 @@ paths:
       tags:
         - groups.site
       summary: Get terms from groups
-      description: All the terms under the set.
       operationId: groups.sites.termStore.sets.parentGroup.sets_GetTerms
       parameters:
         - name: group-id
@@ -34106,7 +33963,6 @@ paths:
       tags:
         - groups.site
       summary: Get children from groups
-      description: Children of current term.
       operationId: groups.sites.termStore.sets.parentGroup.sets.terms_ListChildren
       parameters:
         - name: group-id
@@ -34279,7 +34135,6 @@ paths:
       tags:
         - groups.site
       summary: Get children from groups
-      description: Children of current term.
       operationId: groups.sites.termStore.sets.parentGroup.sets.terms_GetChildren
       parameters:
         - name: group-id
@@ -34522,7 +34377,6 @@ paths:
       tags:
         - groups.site
       summary: Get relations from groups
-      description: To indicate which terms are related to the current term as either pinned or reused.
       operationId: groups.sites.termStore.sets.parentGroup.sets.terms.children_ListRelations
       parameters:
         - name: group-id
@@ -34697,7 +34551,6 @@ paths:
       tags:
         - groups.site
       summary: Get relations from groups
-      description: To indicate which terms are related to the current term as either pinned or reused.
       operationId: groups.sites.termStore.sets.parentGroup.sets.terms.children_GetRelations
       parameters:
         - name: group-id
@@ -34960,7 +34813,6 @@ paths:
       tags:
         - groups.site
       summary: Get fromTerm from groups
-      description: 'The from [term] of the relation. The term from which the relationship is defined. A null value would indicate the relation is directly with the [set].'
       operationId: groups.sites.termStore.sets.parentGroup.sets.terms.children.relations_GetFromTerm
       parameters:
         - name: group-id
@@ -35093,7 +34945,6 @@ paths:
       tags:
         - groups.site
       summary: Get set from groups
-      description: 'The [set] in which the relation is relevant.'
       operationId: groups.sites.termStore.sets.parentGroup.sets.terms.children.relations_GetSet
       parameters:
         - name: group-id
@@ -35237,7 +35088,6 @@ paths:
       tags:
         - groups.site
       summary: Get toTerm from groups
-      description: 'The to [term] of the relation. The term to which the relationship is defined.'
       operationId: groups.sites.termStore.sets.parentGroup.sets.terms.children.relations_GetToTerm
       parameters:
         - name: group-id
@@ -35370,7 +35220,6 @@ paths:
       tags:
         - groups.site
       summary: Get set from groups
-      description: 'The [set] in which the term is created.'
       operationId: groups.sites.termStore.sets.parentGroup.sets.terms.children_GetSet
       parameters:
         - name: group-id
@@ -35503,7 +35352,6 @@ paths:
       tags:
         - groups.site
       summary: Get relations from groups
-      description: To indicate which terms are related to the current term as either pinned or reused.
       operationId: groups.sites.termStore.sets.parentGroup.sets.terms_ListRelations
       parameters:
         - name: group-id
@@ -35664,7 +35512,6 @@ paths:
       tags:
         - groups.site
       summary: Get relations from groups
-      description: To indicate which terms are related to the current term as either pinned or reused.
       operationId: groups.sites.termStore.sets.parentGroup.sets.terms_GetRelations
       parameters:
         - name: group-id
@@ -35903,7 +35750,6 @@ paths:
       tags:
         - groups.site
       summary: Get fromTerm from groups
-      description: 'The from [term] of the relation. The term from which the relationship is defined. A null value would indicate the relation is directly with the [set].'
       operationId: groups.sites.termStore.sets.parentGroup.sets.terms.relations_GetFromTerm
       parameters:
         - name: group-id
@@ -36026,7 +35872,6 @@ paths:
       tags:
         - groups.site
       summary: Get set from groups
-      description: 'The [set] in which the relation is relevant.'
       operationId: groups.sites.termStore.sets.parentGroup.sets.terms.relations_GetSet
       parameters:
         - name: group-id
@@ -36159,7 +36004,6 @@ paths:
       tags:
         - groups.site
       summary: Get toTerm from groups
-      description: 'The to [term] of the relation. The term to which the relationship is defined.'
       operationId: groups.sites.termStore.sets.parentGroup.sets.terms.relations_GetToTerm
       parameters:
         - name: group-id
@@ -36282,7 +36126,6 @@ paths:
       tags:
         - groups.site
       summary: Get set from groups
-      description: 'The [set] in which the term is created.'
       operationId: groups.sites.termStore.sets.parentGroup.sets.terms_GetSet
       parameters:
         - name: group-id
@@ -36404,7 +36247,6 @@ paths:
       tags:
         - groups.site
       summary: Get relations from groups
-      description: Indicates which terms have been pinned or reused directly under the set.
       operationId: groups.sites.termStore.sets_ListRelations
       parameters:
         - name: group-id
@@ -36537,7 +36379,6 @@ paths:
       tags:
         - groups.site
       summary: Get relations from groups
-      description: Indicates which terms have been pinned or reused directly under the set.
       operationId: groups.sites.termStore.sets_GetRelations
       parameters:
         - name: group-id
@@ -36728,7 +36569,6 @@ paths:
       tags:
         - groups.site
       summary: Get fromTerm from groups
-      description: 'The from [term] of the relation. The term from which the relationship is defined. A null value would indicate the relation is directly with the [set].'
       operationId: groups.sites.termStore.sets.relations_GetFromTerm
       parameters:
         - name: group-id
@@ -36831,7 +36671,6 @@ paths:
       tags:
         - groups.site
       summary: Get set from groups
-      description: 'The [set] in which the relation is relevant.'
       operationId: groups.sites.termStore.sets.relations_GetSet
       parameters:
         - name: group-id
@@ -36942,7 +36781,6 @@ paths:
       tags:
         - groups.site
       summary: Get toTerm from groups
-      description: 'The to [term] of the relation. The term to which the relationship is defined.'
       operationId: groups.sites.termStore.sets.relations_GetToTerm
       parameters:
         - name: group-id
@@ -37045,7 +36883,6 @@ paths:
       tags:
         - groups.site
       summary: Get terms from groups
-      description: All the terms under the set.
       operationId: groups.sites.termStore.sets_ListTerms
       parameters:
         - name: group-id
@@ -37190,7 +37027,6 @@ paths:
       tags:
         - groups.site
       summary: Get terms from groups
-      description: All the terms under the set.
       operationId: groups.sites.termStore.sets_GetTerms
       parameters:
         - name: group-id
@@ -37385,7 +37221,6 @@ paths:
       tags:
         - groups.site
       summary: Get children from groups
-      description: Children of current term.
       operationId: groups.sites.termStore.sets.terms_ListChildren
       parameters:
         - name: group-id
@@ -37544,7 +37379,6 @@ paths:
       tags:
         - groups.site
       summary: Get children from groups
-      description: Children of current term.
       operationId: groups.sites.termStore.sets.terms_GetChildren
       parameters:
         - name: group-id
@@ -37763,7 +37597,6 @@ paths:
       tags:
         - groups.site
       summary: Get relations from groups
-      description: To indicate which terms are related to the current term as either pinned or reused.
       operationId: groups.sites.termStore.sets.terms.children_ListRelations
       parameters:
         - name: group-id
@@ -37924,7 +37757,6 @@ paths:
       tags:
         - groups.site
       summary: Get relations from groups
-      description: To indicate which terms are related to the current term as either pinned or reused.
       operationId: groups.sites.termStore.sets.terms.children_GetRelations
       parameters:
         - name: group-id
@@ -38163,7 +37995,6 @@ paths:
       tags:
         - groups.site
       summary: Get fromTerm from groups
-      description: 'The from [term] of the relation. The term from which the relationship is defined. A null value would indicate the relation is directly with the [set].'
       operationId: groups.sites.termStore.sets.terms.children.relations_GetFromTerm
       parameters:
         - name: group-id
@@ -38286,7 +38117,6 @@ paths:
       tags:
         - groups.site
       summary: Get set from groups
-      description: 'The [set] in which the relation is relevant.'
       operationId: groups.sites.termStore.sets.terms.children.relations_GetSet
       parameters:
         - name: group-id
@@ -38419,7 +38249,6 @@ paths:
       tags:
         - groups.site
       summary: Get toTerm from groups
-      description: 'The to [term] of the relation. The term to which the relationship is defined.'
       operationId: groups.sites.termStore.sets.terms.children.relations_GetToTerm
       parameters:
         - name: group-id
@@ -38542,7 +38371,6 @@ paths:
       tags:
         - groups.site
       summary: Get set from groups
-      description: 'The [set] in which the term is created.'
       operationId: groups.sites.termStore.sets.terms.children_GetSet
       parameters:
         - name: group-id
@@ -38664,7 +38492,6 @@ paths:
       tags:
         - groups.site
       summary: Get relations from groups
-      description: To indicate which terms are related to the current term as either pinned or reused.
       operationId: groups.sites.termStore.sets.terms_ListRelations
       parameters:
         - name: group-id
@@ -38811,7 +38638,6 @@ paths:
       tags:
         - groups.site
       summary: Get relations from groups
-      description: To indicate which terms are related to the current term as either pinned or reused.
       operationId: groups.sites.termStore.sets.terms_GetRelations
       parameters:
         - name: group-id
@@ -39026,7 +38852,6 @@ paths:
       tags:
         - groups.site
       summary: Get fromTerm from groups
-      description: 'The from [term] of the relation. The term from which the relationship is defined. A null value would indicate the relation is directly with the [set].'
       operationId: groups.sites.termStore.sets.terms.relations_GetFromTerm
       parameters:
         - name: group-id
@@ -39139,7 +38964,6 @@ paths:
       tags:
         - groups.site
       summary: Get set from groups
-      description: 'The [set] in which the relation is relevant.'
       operationId: groups.sites.termStore.sets.terms.relations_GetSet
       parameters:
         - name: group-id
@@ -39261,7 +39085,6 @@ paths:
       tags:
         - groups.site
       summary: Get toTerm from groups
-      description: 'The to [term] of the relation. The term to which the relationship is defined.'
       operationId: groups.sites.termStore.sets.terms.relations_GetToTerm
       parameters:
         - name: group-id
@@ -39374,7 +39197,6 @@ paths:
       tags:
         - groups.site
       summary: Get set from groups
-      description: 'The [set] in which the term is created.'
       operationId: groups.sites.termStore.sets.terms_GetSet
       parameters:
         - name: group-id
@@ -39484,8 +39306,7 @@ paths:
     get:
       tags:
         - sites.site
-      summary: Get entities from sites
-      description: Search for sites
+      summary: Search for sites
       operationId: sites.site_ListSite
       parameters:
         - $ref: '#/components/parameters/top'
@@ -39620,8 +39441,7 @@ paths:
     get:
       tags:
         - sites.site
-      summary: Get entity from sites by key
-      description: Get a site resource
+      summary: Get a site resource
       operationId: sites.site_GetSite
       parameters:
         - name: site-id
@@ -39774,6 +39594,12 @@ paths:
               operationId: sites.GetOnenote
               parameters:
                 site-id: $request.path.site-id
+            getActivitiesByInterval:
+              operationId: sites.site.getActivitiesByInterval
+            getApplicableContentTypesForList:
+              operationId: sites.site.getApplicableContentTypesForList
+            getByPath:
+              operationId: sites.site.getByPath
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -39808,7 +39634,6 @@ paths:
       tags:
         - sites.itemAnalytics
       summary: Get analytics from sites
-      description: Analytics about the view activities that took place in this site.
       operationId: sites_GetAnalytics
       parameters:
         - name: site-id
@@ -39876,7 +39701,6 @@ paths:
       tags:
         - sites.columnDefinition
       summary: Get columns from sites
-      description: The collection of column definitions reusable across lists under this site.
       operationId: sites_ListColumns
       parameters:
         - name: site-id
@@ -40067,7 +39891,6 @@ paths:
       tags:
         - sites.columnDefinition
       summary: Get columns from sites
-      description: The collection of column definitions reusable across lists under this site.
       operationId: sites_GetColumns
       parameters:
         - name: site-id
@@ -40226,7 +40049,6 @@ paths:
       tags:
         - sites.columnDefinition
       summary: Get sourceColumn from sites
-      description: The source column for content type column.
       operationId: sites.columns_GetSourceColumn
       parameters:
         - name: site-id
@@ -40321,7 +40143,6 @@ paths:
       tags:
         - sites.contentType
       summary: Get contentTypes from sites
-      description: The collection of content types defined for this site.
       operationId: sites_ListContentTypes
       parameters:
         - name: site-id
@@ -40469,7 +40290,6 @@ paths:
       tags:
         - sites.contentType
       summary: Get contentTypes from sites
-      description: The collection of content types defined for this site.
       operationId: sites_GetContentTypes
       parameters:
         - name: site-id
@@ -40567,6 +40387,16 @@ paths:
               parameters:
                 site-id: $request.path.site-id
                 contentType-id: $request.path.contentType-id
+            associateWithHubSites:
+              operationId: sites.site.contentTypes.contentType.associateWithHubSites
+            copyToDefaultContentLocation:
+              operationId: sites.site.contentTypes.contentType.copyToDefaultContentLocation
+            isPublished:
+              operationId: sites.site.contentTypes.contentType.isPublished
+            publish:
+              operationId: sites.site.contentTypes.contentType.publish
+            unpublish:
+              operationId: sites.site.contentTypes.contentType.unpublish
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -40639,7 +40469,6 @@ paths:
       tags:
         - sites.contentType
       summary: Get base from sites
-      description: Parent contentType from which this content type is derived.
       operationId: sites.contentTypes_GetBase
       parameters:
         - name: site-id
@@ -40745,7 +40574,6 @@ paths:
       tags:
         - sites.contentType
       summary: Get baseTypes from sites
-      description: The collection of content types that are ancestors of this content type.
       operationId: sites.contentTypes_ListBaseTypes
       parameters:
         - name: site-id
@@ -40870,7 +40698,6 @@ paths:
       tags:
         - sites.contentType
       summary: Get baseTypes from sites
-      description: The collection of content types that are ancestors of this content type.
       operationId: sites.contentTypes_GetBaseTypes
       parameters:
         - name: site-id
@@ -40988,7 +40815,6 @@ paths:
       tags:
         - sites.contentType
       summary: Get columnLinks from sites
-      description: The collection of columns that are required by this content type
       operationId: sites.contentTypes_ListColumnLinks
       parameters:
         - name: site-id
@@ -41101,7 +40927,6 @@ paths:
       tags:
         - sites.contentType
       summary: Get columnLinks from sites
-      description: The collection of columns that are required by this content type
       operationId: sites.contentTypes_GetColumnLinks
       parameters:
         - name: site-id
@@ -41243,7 +41068,6 @@ paths:
       tags:
         - sites.contentType
       summary: Get columnPositions from sites
-      description: Column order information in a content type.
       operationId: sites.contentTypes_ListColumnPositions
       parameters:
         - name: site-id
@@ -41411,7 +41235,6 @@ paths:
       tags:
         - sites.contentType
       summary: Get columnPositions from sites
-      description: Column order information in a content type.
       operationId: sites.contentTypes_GetColumnPositions
       parameters:
         - name: site-id
@@ -41514,7 +41337,6 @@ paths:
       tags:
         - sites.contentType
       summary: Get columns from sites
-      description: The collection of column definitions for this contentType.
       operationId: sites.contentTypes_ListColumns
       parameters:
         - name: site-id
@@ -41719,7 +41541,6 @@ paths:
       tags:
         - sites.contentType
       summary: Get columns from sites
-      description: The collection of column definitions for this contentType.
       operationId: sites.contentTypes_GetColumns
       parameters:
         - name: site-id
@@ -41900,7 +41721,6 @@ paths:
       tags:
         - sites.contentType
       summary: Get sourceColumn from sites
-      description: The source column for content type column.
       operationId: sites.contentTypes.columns_GetSourceColumn
       parameters:
         - name: site-id
@@ -42285,7 +42105,6 @@ paths:
       tags:
         - sites.drive
       summary: Get drive from sites
-      description: The default drive (document library) for this site.
       operationId: sites_GetDrive
       parameters:
         - name: site-id
@@ -42403,7 +42222,6 @@ paths:
       tags:
         - sites.drive
       summary: Get drives from sites
-      description: The collection of drives (document libraries) under this site.
       operationId: sites_ListDrives
       parameters:
         - name: site-id
@@ -42529,7 +42347,6 @@ paths:
       tags:
         - sites.drive
       summary: Get drives from sites
-      description: The collection of drives (document libraries) under this site.
       operationId: sites_GetDrives
       parameters:
         - name: site-id
@@ -42663,7 +42480,6 @@ paths:
       tags:
         - sites.columnDefinition
       summary: Get externalColumns from sites
-      description: The collection of column definitions available in the site that are referenced from the sites in the parent hierarchy of the current site.
       operationId: sites_ListExternalColumns
       parameters:
         - name: site-id
@@ -42824,7 +42640,6 @@ paths:
       tags:
         - sites.columnDefinition
       summary: Get externalColumns from sites
-      description: The collection of column definitions available in the site that are referenced from the sites in the parent hierarchy of the current site.
       operationId: sites_GetExternalColumns
       parameters:
         - name: site-id
@@ -42919,7 +42734,6 @@ paths:
       tags:
         - sites.list
       summary: Get lists from sites
-      description: The collection of lists under this site.
       operationId: sites_ListLists
       parameters:
         - name: site-id
@@ -43072,7 +42886,6 @@ paths:
       tags:
         - sites.list
       summary: Get lists from sites
-      description: The collection of lists under this site.
       operationId: sites_GetLists
       parameters:
         - name: site-id
@@ -43269,7 +43082,6 @@ paths:
       tags:
         - sites.list
       summary: Get activities from sites
-      description: The recent activities that took place within this list.
       operationId: sites.lists_ListActivities
       parameters:
         - name: site-id
@@ -43392,7 +43204,6 @@ paths:
       tags:
         - sites.list
       summary: Get columns from sites
-      description: The collection of field definitions for this list.
       operationId: sites.lists_ListColumns
       parameters:
         - name: site-id
@@ -43597,7 +43408,6 @@ paths:
       tags:
         - sites.list
       summary: Get columns from sites
-      description: The collection of field definitions for this list.
       operationId: sites.lists_GetColumns
       parameters:
         - name: site-id
@@ -43778,7 +43588,6 @@ paths:
       tags:
         - sites.list
       summary: Get sourceColumn from sites
-      description: The source column for content type column.
       operationId: sites.lists.columns_GetSourceColumn
       parameters:
         - name: site-id
@@ -43881,7 +43690,6 @@ paths:
       tags:
         - sites.list
       summary: Get contentTypes from sites
-      description: The collection of content types present in this list.
       operationId: sites.lists_ListContentTypes
       parameters:
         - name: site-id
@@ -44043,7 +43851,6 @@ paths:
       tags:
         - sites.list
       summary: Get contentTypes from sites
-      description: The collection of content types present in this list.
       operationId: sites.lists_GetContentTypes
       parameters:
         - name: site-id
@@ -44153,6 +43960,16 @@ paths:
                 site-id: $request.path.site-id
                 list-id: $request.path.list-id
                 contentType-id: $request.path.contentType-id
+            associateWithHubSites:
+              operationId: sites.site.lists.list.contentTypes.contentType.associateWithHubSites
+            copyToDefaultContentLocation:
+              operationId: sites.site.lists.list.contentTypes.contentType.copyToDefaultContentLocation
+            isPublished:
+              operationId: sites.site.lists.list.contentTypes.contentType.isPublished
+            publish:
+              operationId: sites.site.lists.list.contentTypes.contentType.publish
+            unpublish:
+              operationId: sites.site.lists.list.contentTypes.contentType.unpublish
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -44239,7 +44056,6 @@ paths:
       tags:
         - sites.list
       summary: Get base from sites
-      description: Parent contentType from which this content type is derived.
       operationId: sites.lists.contentTypes_GetBase
       parameters:
         - name: site-id
@@ -44357,7 +44173,6 @@ paths:
       tags:
         - sites.list
       summary: Get baseTypes from sites
-      description: The collection of content types that are ancestors of this content type.
       operationId: sites.lists.contentTypes_ListBaseTypes
       parameters:
         - name: site-id
@@ -44489,7 +44304,6 @@ paths:
       tags:
         - sites.list
       summary: Get baseTypes from sites
-      description: The collection of content types that are ancestors of this content type.
       operationId: sites.lists.contentTypes_GetBaseTypes
       parameters:
         - name: site-id
@@ -44619,7 +44433,6 @@ paths:
       tags:
         - sites.list
       summary: Get columnLinks from sites
-      description: The collection of columns that are required by this content type
       operationId: sites.lists.contentTypes_ListColumnLinks
       parameters:
         - name: site-id
@@ -44746,7 +44559,6 @@ paths:
       tags:
         - sites.list
       summary: Get columnLinks from sites
-      description: The collection of columns that are required by this content type
       operationId: sites.lists.contentTypes_GetColumnLinks
       parameters:
         - name: site-id
@@ -44909,7 +44721,6 @@ paths:
       tags:
         - sites.list
       summary: Get columnPositions from sites
-      description: Column order information in a content type.
       operationId: sites.lists.contentTypes_ListColumnPositions
       parameters:
         - name: site-id
@@ -45084,7 +44895,6 @@ paths:
       tags:
         - sites.list
       summary: Get columnPositions from sites
-      description: Column order information in a content type.
       operationId: sites.lists.contentTypes_GetColumnPositions
       parameters:
         - name: site-id
@@ -45195,7 +45005,6 @@ paths:
       tags:
         - sites.list
       summary: Get columns from sites
-      description: The collection of column definitions for this contentType.
       operationId: sites.lists.contentTypes_ListColumns
       parameters:
         - name: site-id
@@ -45414,7 +45223,6 @@ paths:
       tags:
         - sites.list
       summary: Get columns from sites
-      description: The collection of column definitions for this contentType.
       operationId: sites.lists.contentTypes_GetColumns
       parameters:
         - name: site-id
@@ -45617,7 +45425,6 @@ paths:
       tags:
         - sites.list
       summary: Get sourceColumn from sites
-      description: The source column for content type column.
       operationId: sites.lists.contentTypes.columns_GetSourceColumn
       parameters:
         - name: site-id
@@ -46066,7 +45873,6 @@ paths:
       tags:
         - sites.list
       summary: Get drive from sites
-      description: 'Only present on document libraries. Allows access to the list as a [drive][] resource with [driveItems][driveItem].'
       operationId: sites.lists_GetDrive
       parameters:
         - name: site-id
@@ -46200,7 +46006,6 @@ paths:
       tags:
         - sites.list
       summary: Get items from sites
-      description: All items contained in the list.
       operationId: sites.lists_ListItems
       parameters:
         - name: site-id
@@ -46362,7 +46167,6 @@ paths:
       tags:
         - sites.list
       summary: Get items from sites
-      description: All items contained in the list.
       operationId: sites.lists_GetItems
       parameters:
         - name: site-id
@@ -46494,6 +46298,10 @@ paths:
                 site-id: $request.path.site-id
                 list-id: $request.path.list-id
                 listItem-id: $request.path.listItem-id
+            createLink:
+              operationId: sites.site.lists.list.items.listItem.createLink
+            getActivitiesByInterval:
+              operationId: sites.site.lists.list.items.listItem.getActivitiesByInterval
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -46580,7 +46388,6 @@ paths:
       tags:
         - sites.list
       summary: Get activities from sites
-      description: The list of recent activities that took place on this item.
       operationId: sites.lists.items_ListActivities
       parameters:
         - name: site-id
@@ -46717,7 +46524,6 @@ paths:
       tags:
         - sites.list
       summary: Get activities from sites
-      description: The list of recent activities that took place on this item.
       operationId: sites.lists.items_GetActivities
       parameters:
         - name: site-id
@@ -47105,7 +46911,6 @@ paths:
       tags:
         - sites.list
       summary: Get content for the navigation property driveItem from sites
-      description: 'The content stream, if the item represents a file.'
       operationId: sites.lists.items.activities_GetDriveItemContent
       parameters:
         - name: site-id
@@ -47151,7 +46956,6 @@ paths:
       tags:
         - sites.list
       summary: Update content for the navigation property driveItem in sites
-      description: 'The content stream, if the item represents a file.'
       operationId: sites.lists.items.activities_SetDriveItemContent
       parameters:
         - name: site-id
@@ -47355,7 +47159,6 @@ paths:
       tags:
         - sites.list
       summary: Get analytics from sites
-      description: Analytics about the view activities that took place on this item.
       operationId: sites.lists.items_GetAnalytics
       parameters:
         - name: site-id
@@ -47443,7 +47246,6 @@ paths:
       tags:
         - sites.list
       summary: Get documentSetVersions from sites
-      description: Version information for a document set version created by a user.
       operationId: sites.lists.items_ListDocumentSetVersions
       parameters:
         - name: site-id
@@ -47593,7 +47395,6 @@ paths:
       tags:
         - sites.list
       summary: Get documentSetVersions from sites
-      description: Version information for a document set version created by a user.
       operationId: sites.lists.items_GetDocumentSetVersions
       parameters:
         - name: site-id
@@ -47673,6 +47474,8 @@ paths:
                 list-id: $request.path.list-id
                 listItem-id: $request.path.listItem-id
                 documentSetVersion-id: $request.path.documentSetVersion-id
+            restore:
+              operationId: sites.site.lists.list.items.listItem.documentSetVersions.documentSetVersion.restore
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -47814,7 +47617,6 @@ paths:
       tags:
         - sites.list
       summary: Get driveItem from sites
-      description: 'For document libraries, the driveItem relationship exposes the listItem as a [driveItem][]'
       operationId: sites.lists.items_GetDriveItem
       parameters:
         - name: site-id
@@ -48001,7 +47803,6 @@ paths:
       tags:
         - sites.list
       summary: Get content for the navigation property driveItem from sites
-      description: 'The content stream, if the item represents a file.'
       operationId: sites.lists.items_GetDriveItemContent
       parameters:
         - name: site-id
@@ -48040,7 +47841,6 @@ paths:
       tags:
         - sites.list
       summary: Update content for the navigation property driveItem in sites
-      description: 'The content stream, if the item represents a file.'
       operationId: sites.lists.items_SetDriveItemContent
       parameters:
         - name: site-id
@@ -48083,7 +47883,6 @@ paths:
       tags:
         - sites.list
       summary: Get fields from sites
-      description: The values of the columns set on this list item.
       operationId: sites.lists.items_GetFields
       parameters:
         - name: site-id
@@ -48361,7 +48160,6 @@ paths:
       tags:
         - sites.list
       summary: Get versions from sites
-      description: The list of previous versions of the list item.
       operationId: sites.lists.items_ListVersions
       parameters:
         - name: site-id
@@ -48496,7 +48294,6 @@ paths:
       tags:
         - sites.list
       summary: Get versions from sites
-      description: The list of previous versions of the list item.
       operationId: sites.lists.items_GetVersions
       parameters:
         - name: site-id
@@ -48571,6 +48368,8 @@ paths:
                 list-id: $request.path.list-id
                 listItem-id: $request.path.listItem-id
                 listItemVersion-id: $request.path.listItemVersion-id
+            restoreVersion:
+              operationId: sites.site.lists.list.items.listItem.versions.listItemVersion.restoreVersion
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -48671,7 +48470,6 @@ paths:
       tags:
         - sites.list
       summary: Get fields from sites
-      description: A collection of the fields and values for this version of the list item.
       operationId: sites.lists.items.versions_GetFields
       parameters:
         - name: site-id
@@ -48959,7 +48757,6 @@ paths:
       tags:
         - sites.list
       summary: Get operations from sites
-      description: The collection of long running operations for the list.
       operationId: sites.lists_ListOperations
       parameters:
         - name: site-id
@@ -49096,7 +48893,6 @@ paths:
       tags:
         - sites.list
       summary: Get operations from sites
-      description: The collection of long running operations for the list.
       operationId: sites.lists_GetOperations
       parameters:
         - name: site-id
@@ -49246,7 +49042,6 @@ paths:
       tags:
         - sites.list
       summary: Get subscriptions from sites
-      description: The set of subscriptions on the list.
       operationId: sites.lists_ListSubscriptions
       parameters:
         - name: site-id
@@ -49401,7 +49196,6 @@ paths:
       tags:
         - sites.list
       summary: Get subscriptions from sites
-      description: The set of subscriptions on the list.
       operationId: sites.lists_GetSubscriptions
       parameters:
         - name: site-id
@@ -51108,7 +50902,6 @@ paths:
       tags:
         - sites.sitePage
       summary: Get pages from sites
-      description: The collection of pages in the SitePages list in this site.
       operationId: sites_ListPages
       parameters:
         - name: site-id
@@ -51250,7 +51043,6 @@ paths:
       tags:
         - sites.sitePage
       summary: Get pages from sites
-      description: The collection of pages in the SitePages list in this site.
       operationId: sites_GetPages
       parameters:
         - name: site-id
@@ -51327,6 +51119,8 @@ paths:
               parameters:
                 site-id: $request.path.site-id
                 sitePage-id: $request.path.sitePage-id
+            publish:
+              operationId: sites.site.pages.sitePage.publish
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -51426,7 +51220,6 @@ paths:
       tags:
         - sites.permission
       summary: Get permissions from sites
-      description: The permissions associated with the site. Nullable.
       operationId: sites_ListPermissions
       parameters:
         - name: site-id
@@ -51555,7 +51348,6 @@ paths:
       tags:
         - sites.permission
       summary: Get permissions from sites
-      description: The permissions associated with the site. Nullable.
       operationId: sites_GetPermissions
       parameters:
         - name: site-id
@@ -51614,6 +51406,11 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.permission'
+          links:
+            grant:
+              operationId: sites.site.permissions.permission.grant
+            revokeGrants:
+              operationId: sites.site.permissions.permission.revokeGrants
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -51789,7 +51586,6 @@ paths:
       tags:
         - sites.site
       summary: Get sites from sites
-      description: The collection of the sub-sites under this site.
       operationId: sites_ListSites
       parameters:
         - name: site-id
@@ -51932,7 +51728,6 @@ paths:
       tags:
         - sites.site
       summary: Get sites from sites
-      description: The collection of the sub-sites under this site.
       operationId: sites_GetSites
       parameters:
         - name: site-id
@@ -52116,7 +51911,6 @@ paths:
       tags:
         - sites.store
       summary: Get termStore from sites
-      description: The termStore under this site.
       operationId: sites_GetTermStore
       parameters:
         - name: site-id
@@ -52230,7 +52024,6 @@ paths:
       tags:
         - sites.store
       summary: Get groups from sites
-      description: Collection of all groups available in the term store.
       operationId: sites.termStore_ListGroups
       parameters:
         - name: site-id
@@ -52343,7 +52136,6 @@ paths:
       tags:
         - sites.store
       summary: Get groups from sites
-      description: Collection of all groups available in the term store.
       operationId: sites.termStore_GetGroups
       parameters:
         - name: site-id
@@ -52476,7 +52268,6 @@ paths:
       tags:
         - sites.store
       summary: Get sets from sites
-      description: 'All sets under the group in a term [store].'
       operationId: sites.termStore.groups_ListSets
       parameters:
         - name: site-id
@@ -52606,7 +52397,6 @@ paths:
       tags:
         - sites.store
       summary: Get sets from sites
-      description: 'All sets under the group in a term [store].'
       operationId: sites.termStore.groups_GetSets
       parameters:
         - name: site-id
@@ -52784,7 +52574,6 @@ paths:
       tags:
         - sites.store
       summary: Get children from sites
-      description: 'Children terms of set in term [store].'
       operationId: sites.termStore.groups.sets_ListChildren
       parameters:
         - name: site-id
@@ -52929,7 +52718,6 @@ paths:
       tags:
         - sites.store
       summary: Get children from sites
-      description: 'Children terms of set in term [store].'
       operationId: sites.termStore.groups.sets_GetChildren
       parameters:
         - name: site-id
@@ -53124,7 +52912,6 @@ paths:
       tags:
         - sites.store
       summary: Get children from sites
-      description: Children of current term.
       operationId: sites.termStore.groups.sets.children_ListChildren
       parameters:
         - name: site-id
@@ -53283,7 +53070,6 @@ paths:
       tags:
         - sites.store
       summary: Get children from sites
-      description: Children of current term.
       operationId: sites.termStore.groups.sets.children_GetChildren
       parameters:
         - name: site-id
@@ -53502,7 +53288,6 @@ paths:
       tags:
         - sites.store
       summary: Get relations from sites
-      description: To indicate which terms are related to the current term as either pinned or reused.
       operationId: sites.termStore.groups.sets.children.children_ListRelations
       parameters:
         - name: site-id
@@ -53663,7 +53448,6 @@ paths:
       tags:
         - sites.store
       summary: Get relations from sites
-      description: To indicate which terms are related to the current term as either pinned or reused.
       operationId: sites.termStore.groups.sets.children.children_GetRelations
       parameters:
         - name: site-id
@@ -53902,7 +53686,6 @@ paths:
       tags:
         - sites.store
       summary: Get fromTerm from sites
-      description: 'The from [term] of the relation. The term from which the relationship is defined. A null value would indicate the relation is directly with the [set].'
       operationId: sites.termStore.groups.sets.children.children.relations_GetFromTerm
       parameters:
         - name: site-id
@@ -54025,7 +53808,6 @@ paths:
       tags:
         - sites.store
       summary: Get set from sites
-      description: 'The [set] in which the relation is relevant.'
       operationId: sites.termStore.groups.sets.children.children.relations_GetSet
       parameters:
         - name: site-id
@@ -54158,7 +53940,6 @@ paths:
       tags:
         - sites.store
       summary: Get toTerm from sites
-      description: 'The to [term] of the relation. The term to which the relationship is defined.'
       operationId: sites.termStore.groups.sets.children.children.relations_GetToTerm
       parameters:
         - name: site-id
@@ -54281,7 +54062,6 @@ paths:
       tags:
         - sites.store
       summary: Get set from sites
-      description: 'The [set] in which the term is created.'
       operationId: sites.termStore.groups.sets.children.children_GetSet
       parameters:
         - name: site-id
@@ -54403,7 +54183,6 @@ paths:
       tags:
         - sites.store
       summary: Get relations from sites
-      description: To indicate which terms are related to the current term as either pinned or reused.
       operationId: sites.termStore.groups.sets.children_ListRelations
       parameters:
         - name: site-id
@@ -54550,7 +54329,6 @@ paths:
       tags:
         - sites.store
       summary: Get relations from sites
-      description: To indicate which terms are related to the current term as either pinned or reused.
       operationId: sites.termStore.groups.sets.children_GetRelations
       parameters:
         - name: site-id
@@ -54765,7 +54543,6 @@ paths:
       tags:
         - sites.store
       summary: Get fromTerm from sites
-      description: 'The from [term] of the relation. The term from which the relationship is defined. A null value would indicate the relation is directly with the [set].'
       operationId: sites.termStore.groups.sets.children.relations_GetFromTerm
       parameters:
         - name: site-id
@@ -54878,7 +54655,6 @@ paths:
       tags:
         - sites.store
       summary: Get set from sites
-      description: 'The [set] in which the relation is relevant.'
       operationId: sites.termStore.groups.sets.children.relations_GetSet
       parameters:
         - name: site-id
@@ -55000,7 +54776,6 @@ paths:
       tags:
         - sites.store
       summary: Get toTerm from sites
-      description: 'The to [term] of the relation. The term to which the relationship is defined.'
       operationId: sites.termStore.groups.sets.children.relations_GetToTerm
       parameters:
         - name: site-id
@@ -55113,7 +54888,6 @@ paths:
       tags:
         - sites.store
       summary: Get set from sites
-      description: 'The [set] in which the term is created.'
       operationId: sites.termStore.groups.sets.children_GetSet
       parameters:
         - name: site-id
@@ -55224,7 +54998,6 @@ paths:
       tags:
         - sites.store
       summary: Get parentGroup from sites
-      description: 'The parent [group] that contains the set.'
       operationId: sites.termStore.groups.sets_GetParentGroup
       parameters:
         - name: site-id
@@ -55379,7 +55152,6 @@ paths:
       tags:
         - sites.store
       summary: Get relations from sites
-      description: Indicates which terms have been pinned or reused directly under the set.
       operationId: sites.termStore.groups.sets_ListRelations
       parameters:
         - name: site-id
@@ -55512,7 +55284,6 @@ paths:
       tags:
         - sites.store
       summary: Get relations from sites
-      description: Indicates which terms have been pinned or reused directly under the set.
       operationId: sites.termStore.groups.sets_GetRelations
       parameters:
         - name: site-id
@@ -55703,7 +55474,6 @@ paths:
       tags:
         - sites.store
       summary: Get fromTerm from sites
-      description: 'The from [term] of the relation. The term from which the relationship is defined. A null value would indicate the relation is directly with the [set].'
       operationId: sites.termStore.groups.sets.relations_GetFromTerm
       parameters:
         - name: site-id
@@ -55806,7 +55576,6 @@ paths:
       tags:
         - sites.store
       summary: Get set from sites
-      description: 'The [set] in which the relation is relevant.'
       operationId: sites.termStore.groups.sets.relations_GetSet
       parameters:
         - name: site-id
@@ -55917,7 +55686,6 @@ paths:
       tags:
         - sites.store
       summary: Get toTerm from sites
-      description: 'The to [term] of the relation. The term to which the relationship is defined.'
       operationId: sites.termStore.groups.sets.relations_GetToTerm
       parameters:
         - name: site-id
@@ -56020,7 +55788,6 @@ paths:
       tags:
         - sites.store
       summary: Get terms from sites
-      description: All the terms under the set.
       operationId: sites.termStore.groups.sets_ListTerms
       parameters:
         - name: site-id
@@ -56165,7 +55932,6 @@ paths:
       tags:
         - sites.store
       summary: Get terms from sites
-      description: All the terms under the set.
       operationId: sites.termStore.groups.sets_GetTerms
       parameters:
         - name: site-id
@@ -56360,7 +56126,6 @@ paths:
       tags:
         - sites.store
       summary: Get children from sites
-      description: Children of current term.
       operationId: sites.termStore.groups.sets.terms_ListChildren
       parameters:
         - name: site-id
@@ -56519,7 +56284,6 @@ paths:
       tags:
         - sites.store
       summary: Get children from sites
-      description: Children of current term.
       operationId: sites.termStore.groups.sets.terms_GetChildren
       parameters:
         - name: site-id
@@ -56738,7 +56502,6 @@ paths:
       tags:
         - sites.store
       summary: Get relations from sites
-      description: To indicate which terms are related to the current term as either pinned or reused.
       operationId: sites.termStore.groups.sets.terms.children_ListRelations
       parameters:
         - name: site-id
@@ -56899,7 +56662,6 @@ paths:
       tags:
         - sites.store
       summary: Get relations from sites
-      description: To indicate which terms are related to the current term as either pinned or reused.
       operationId: sites.termStore.groups.sets.terms.children_GetRelations
       parameters:
         - name: site-id
@@ -57138,7 +56900,6 @@ paths:
       tags:
         - sites.store
       summary: Get fromTerm from sites
-      description: 'The from [term] of the relation. The term from which the relationship is defined. A null value would indicate the relation is directly with the [set].'
       operationId: sites.termStore.groups.sets.terms.children.relations_GetFromTerm
       parameters:
         - name: site-id
@@ -57261,7 +57022,6 @@ paths:
       tags:
         - sites.store
       summary: Get set from sites
-      description: 'The [set] in which the relation is relevant.'
       operationId: sites.termStore.groups.sets.terms.children.relations_GetSet
       parameters:
         - name: site-id
@@ -57394,7 +57154,6 @@ paths:
       tags:
         - sites.store
       summary: Get toTerm from sites
-      description: 'The to [term] of the relation. The term to which the relationship is defined.'
       operationId: sites.termStore.groups.sets.terms.children.relations_GetToTerm
       parameters:
         - name: site-id
@@ -57517,7 +57276,6 @@ paths:
       tags:
         - sites.store
       summary: Get set from sites
-      description: 'The [set] in which the term is created.'
       operationId: sites.termStore.groups.sets.terms.children_GetSet
       parameters:
         - name: site-id
@@ -57639,7 +57397,6 @@ paths:
       tags:
         - sites.store
       summary: Get relations from sites
-      description: To indicate which terms are related to the current term as either pinned or reused.
       operationId: sites.termStore.groups.sets.terms_ListRelations
       parameters:
         - name: site-id
@@ -57786,7 +57543,6 @@ paths:
       tags:
         - sites.store
       summary: Get relations from sites
-      description: To indicate which terms are related to the current term as either pinned or reused.
       operationId: sites.termStore.groups.sets.terms_GetRelations
       parameters:
         - name: site-id
@@ -58001,7 +57757,6 @@ paths:
       tags:
         - sites.store
       summary: Get fromTerm from sites
-      description: 'The from [term] of the relation. The term from which the relationship is defined. A null value would indicate the relation is directly with the [set].'
       operationId: sites.termStore.groups.sets.terms.relations_GetFromTerm
       parameters:
         - name: site-id
@@ -58114,7 +57869,6 @@ paths:
       tags:
         - sites.store
       summary: Get set from sites
-      description: 'The [set] in which the relation is relevant.'
       operationId: sites.termStore.groups.sets.terms.relations_GetSet
       parameters:
         - name: site-id
@@ -58236,7 +57990,6 @@ paths:
       tags:
         - sites.store
       summary: Get toTerm from sites
-      description: 'The to [term] of the relation. The term to which the relationship is defined.'
       operationId: sites.termStore.groups.sets.terms.relations_GetToTerm
       parameters:
         - name: site-id
@@ -58349,7 +58102,6 @@ paths:
       tags:
         - sites.store
       summary: Get set from sites
-      description: 'The [set] in which the term is created.'
       operationId: sites.termStore.groups.sets.terms_GetSet
       parameters:
         - name: site-id
@@ -58460,7 +58212,6 @@ paths:
       tags:
         - sites.store
       summary: Get sets from sites
-      description: Collection of all sets available in the term store.
       operationId: sites.termStore_ListSets
       parameters:
         - name: site-id
@@ -58576,7 +58327,6 @@ paths:
       tags:
         - sites.store
       summary: Get sets from sites
-      description: Collection of all sets available in the term store.
       operationId: sites.termStore_GetSets
       parameters:
         - name: site-id
@@ -58729,7 +58479,6 @@ paths:
       tags:
         - sites.store
       summary: Get children from sites
-      description: 'Children terms of set in term [store].'
       operationId: sites.termStore.sets_ListChildren
       parameters:
         - name: site-id
@@ -58860,7 +58609,6 @@ paths:
       tags:
         - sites.store
       summary: Get children from sites
-      description: 'Children terms of set in term [store].'
       operationId: sites.termStore.sets_GetChildren
       parameters:
         - name: site-id
@@ -59031,7 +58779,6 @@ paths:
       tags:
         - sites.store
       summary: Get children from sites
-      description: Children of current term.
       operationId: sites.termStore.sets.children_ListChildren
       parameters:
         - name: site-id
@@ -59176,7 +58923,6 @@ paths:
       tags:
         - sites.store
       summary: Get children from sites
-      description: Children of current term.
       operationId: sites.termStore.sets.children_GetChildren
       parameters:
         - name: site-id
@@ -59371,7 +59117,6 @@ paths:
       tags:
         - sites.store
       summary: Get relations from sites
-      description: To indicate which terms are related to the current term as either pinned or reused.
       operationId: sites.termStore.sets.children.children_ListRelations
       parameters:
         - name: site-id
@@ -59518,7 +59263,6 @@ paths:
       tags:
         - sites.store
       summary: Get relations from sites
-      description: To indicate which terms are related to the current term as either pinned or reused.
       operationId: sites.termStore.sets.children.children_GetRelations
       parameters:
         - name: site-id
@@ -59733,7 +59477,6 @@ paths:
       tags:
         - sites.store
       summary: Get fromTerm from sites
-      description: 'The from [term] of the relation. The term from which the relationship is defined. A null value would indicate the relation is directly with the [set].'
       operationId: sites.termStore.sets.children.children.relations_GetFromTerm
       parameters:
         - name: site-id
@@ -59846,7 +59589,6 @@ paths:
       tags:
         - sites.store
       summary: Get set from sites
-      description: 'The [set] in which the relation is relevant.'
       operationId: sites.termStore.sets.children.children.relations_GetSet
       parameters:
         - name: site-id
@@ -59968,7 +59710,6 @@ paths:
       tags:
         - sites.store
       summary: Get toTerm from sites
-      description: 'The to [term] of the relation. The term to which the relationship is defined.'
       operationId: sites.termStore.sets.children.children.relations_GetToTerm
       parameters:
         - name: site-id
@@ -60081,7 +59822,6 @@ paths:
       tags:
         - sites.store
       summary: Get set from sites
-      description: 'The [set] in which the term is created.'
       operationId: sites.termStore.sets.children.children_GetSet
       parameters:
         - name: site-id
@@ -60192,7 +59932,6 @@ paths:
       tags:
         - sites.store
       summary: Get relations from sites
-      description: To indicate which terms are related to the current term as either pinned or reused.
       operationId: sites.termStore.sets.children_ListRelations
       parameters:
         - name: site-id
@@ -60325,7 +60064,6 @@ paths:
       tags:
         - sites.store
       summary: Get relations from sites
-      description: To indicate which terms are related to the current term as either pinned or reused.
       operationId: sites.termStore.sets.children_GetRelations
       parameters:
         - name: site-id
@@ -60516,7 +60254,6 @@ paths:
       tags:
         - sites.store
       summary: Get fromTerm from sites
-      description: 'The from [term] of the relation. The term from which the relationship is defined. A null value would indicate the relation is directly with the [set].'
       operationId: sites.termStore.sets.children.relations_GetFromTerm
       parameters:
         - name: site-id
@@ -60619,7 +60356,6 @@ paths:
       tags:
         - sites.store
       summary: Get set from sites
-      description: 'The [set] in which the relation is relevant.'
       operationId: sites.termStore.sets.children.relations_GetSet
       parameters:
         - name: site-id
@@ -60730,7 +60466,6 @@ paths:
       tags:
         - sites.store
       summary: Get toTerm from sites
-      description: 'The to [term] of the relation. The term to which the relationship is defined.'
       operationId: sites.termStore.sets.children.relations_GetToTerm
       parameters:
         - name: site-id
@@ -60833,7 +60568,6 @@ paths:
       tags:
         - sites.store
       summary: Get set from sites
-      description: 'The [set] in which the term is created.'
       operationId: sites.termStore.sets.children_GetSet
       parameters:
         - name: site-id
@@ -60933,7 +60667,6 @@ paths:
       tags:
         - sites.store
       summary: Get parentGroup from sites
-      description: 'The parent [group] that contains the set.'
       operationId: sites.termStore.sets_GetParentGroup
       parameters:
         - name: site-id
@@ -61066,7 +60799,6 @@ paths:
       tags:
         - sites.store
       summary: Get sets from sites
-      description: 'All sets under the group in a term [store].'
       operationId: sites.termStore.sets.parentGroup_ListSets
       parameters:
         - name: site-id
@@ -61196,7 +60928,6 @@ paths:
       tags:
         - sites.store
       summary: Get sets from sites
-      description: 'All sets under the group in a term [store].'
       operationId: sites.termStore.sets.parentGroup_GetSets
       parameters:
         - name: site-id
@@ -61374,7 +61105,6 @@ paths:
       tags:
         - sites.store
       summary: Get children from sites
-      description: 'Children terms of set in term [store].'
       operationId: sites.termStore.sets.parentGroup.sets_ListChildren
       parameters:
         - name: site-id
@@ -61519,7 +61249,6 @@ paths:
       tags:
         - sites.store
       summary: Get children from sites
-      description: 'Children terms of set in term [store].'
       operationId: sites.termStore.sets.parentGroup.sets_GetChildren
       parameters:
         - name: site-id
@@ -61714,7 +61443,6 @@ paths:
       tags:
         - sites.store
       summary: Get children from sites
-      description: Children of current term.
       operationId: sites.termStore.sets.parentGroup.sets.children_ListChildren
       parameters:
         - name: site-id
@@ -61873,7 +61601,6 @@ paths:
       tags:
         - sites.store
       summary: Get children from sites
-      description: Children of current term.
       operationId: sites.termStore.sets.parentGroup.sets.children_GetChildren
       parameters:
         - name: site-id
@@ -62092,7 +61819,6 @@ paths:
       tags:
         - sites.store
       summary: Get relations from sites
-      description: To indicate which terms are related to the current term as either pinned or reused.
       operationId: sites.termStore.sets.parentGroup.sets.children.children_ListRelations
       parameters:
         - name: site-id
@@ -62253,7 +61979,6 @@ paths:
       tags:
         - sites.store
       summary: Get relations from sites
-      description: To indicate which terms are related to the current term as either pinned or reused.
       operationId: sites.termStore.sets.parentGroup.sets.children.children_GetRelations
       parameters:
         - name: site-id
@@ -62492,7 +62217,6 @@ paths:
       tags:
         - sites.store
       summary: Get fromTerm from sites
-      description: 'The from [term] of the relation. The term from which the relationship is defined. A null value would indicate the relation is directly with the [set].'
       operationId: sites.termStore.sets.parentGroup.sets.children.children.relations_GetFromTerm
       parameters:
         - name: site-id
@@ -62615,7 +62339,6 @@ paths:
       tags:
         - sites.store
       summary: Get set from sites
-      description: 'The [set] in which the relation is relevant.'
       operationId: sites.termStore.sets.parentGroup.sets.children.children.relations_GetSet
       parameters:
         - name: site-id
@@ -62748,7 +62471,6 @@ paths:
       tags:
         - sites.store
       summary: Get toTerm from sites
-      description: 'The to [term] of the relation. The term to which the relationship is defined.'
       operationId: sites.termStore.sets.parentGroup.sets.children.children.relations_GetToTerm
       parameters:
         - name: site-id
@@ -62871,7 +62593,6 @@ paths:
       tags:
         - sites.store
       summary: Get set from sites
-      description: 'The [set] in which the term is created.'
       operationId: sites.termStore.sets.parentGroup.sets.children.children_GetSet
       parameters:
         - name: site-id
@@ -62993,7 +62714,6 @@ paths:
       tags:
         - sites.store
       summary: Get relations from sites
-      description: To indicate which terms are related to the current term as either pinned or reused.
       operationId: sites.termStore.sets.parentGroup.sets.children_ListRelations
       parameters:
         - name: site-id
@@ -63140,7 +62860,6 @@ paths:
       tags:
         - sites.store
       summary: Get relations from sites
-      description: To indicate which terms are related to the current term as either pinned or reused.
       operationId: sites.termStore.sets.parentGroup.sets.children_GetRelations
       parameters:
         - name: site-id
@@ -63355,7 +63074,6 @@ paths:
       tags:
         - sites.store
       summary: Get fromTerm from sites
-      description: 'The from [term] of the relation. The term from which the relationship is defined. A null value would indicate the relation is directly with the [set].'
       operationId: sites.termStore.sets.parentGroup.sets.children.relations_GetFromTerm
       parameters:
         - name: site-id
@@ -63468,7 +63186,6 @@ paths:
       tags:
         - sites.store
       summary: Get set from sites
-      description: 'The [set] in which the relation is relevant.'
       operationId: sites.termStore.sets.parentGroup.sets.children.relations_GetSet
       parameters:
         - name: site-id
@@ -63590,7 +63307,6 @@ paths:
       tags:
         - sites.store
       summary: Get toTerm from sites
-      description: 'The to [term] of the relation. The term to which the relationship is defined.'
       operationId: sites.termStore.sets.parentGroup.sets.children.relations_GetToTerm
       parameters:
         - name: site-id
@@ -63703,7 +63419,6 @@ paths:
       tags:
         - sites.store
       summary: Get set from sites
-      description: 'The [set] in which the term is created.'
       operationId: sites.termStore.sets.parentGroup.sets.children_GetSet
       parameters:
         - name: site-id
@@ -63814,7 +63529,6 @@ paths:
       tags:
         - sites.store
       summary: Get relations from sites
-      description: Indicates which terms have been pinned or reused directly under the set.
       operationId: sites.termStore.sets.parentGroup.sets_ListRelations
       parameters:
         - name: site-id
@@ -63947,7 +63661,6 @@ paths:
       tags:
         - sites.store
       summary: Get relations from sites
-      description: Indicates which terms have been pinned or reused directly under the set.
       operationId: sites.termStore.sets.parentGroup.sets_GetRelations
       parameters:
         - name: site-id
@@ -64138,7 +63851,6 @@ paths:
       tags:
         - sites.store
       summary: Get fromTerm from sites
-      description: 'The from [term] of the relation. The term from which the relationship is defined. A null value would indicate the relation is directly with the [set].'
       operationId: sites.termStore.sets.parentGroup.sets.relations_GetFromTerm
       parameters:
         - name: site-id
@@ -64241,7 +63953,6 @@ paths:
       tags:
         - sites.store
       summary: Get set from sites
-      description: 'The [set] in which the relation is relevant.'
       operationId: sites.termStore.sets.parentGroup.sets.relations_GetSet
       parameters:
         - name: site-id
@@ -64352,7 +64063,6 @@ paths:
       tags:
         - sites.store
       summary: Get toTerm from sites
-      description: 'The to [term] of the relation. The term to which the relationship is defined.'
       operationId: sites.termStore.sets.parentGroup.sets.relations_GetToTerm
       parameters:
         - name: site-id
@@ -64455,7 +64165,6 @@ paths:
       tags:
         - sites.store
       summary: Get terms from sites
-      description: All the terms under the set.
       operationId: sites.termStore.sets.parentGroup.sets_ListTerms
       parameters:
         - name: site-id
@@ -64600,7 +64309,6 @@ paths:
       tags:
         - sites.store
       summary: Get terms from sites
-      description: All the terms under the set.
       operationId: sites.termStore.sets.parentGroup.sets_GetTerms
       parameters:
         - name: site-id
@@ -64795,7 +64503,6 @@ paths:
       tags:
         - sites.store
       summary: Get children from sites
-      description: Children of current term.
       operationId: sites.termStore.sets.parentGroup.sets.terms_ListChildren
       parameters:
         - name: site-id
@@ -64954,7 +64661,6 @@ paths:
       tags:
         - sites.store
       summary: Get children from sites
-      description: Children of current term.
       operationId: sites.termStore.sets.parentGroup.sets.terms_GetChildren
       parameters:
         - name: site-id
@@ -65173,7 +64879,6 @@ paths:
       tags:
         - sites.store
       summary: Get relations from sites
-      description: To indicate which terms are related to the current term as either pinned or reused.
       operationId: sites.termStore.sets.parentGroup.sets.terms.children_ListRelations
       parameters:
         - name: site-id
@@ -65334,7 +65039,6 @@ paths:
       tags:
         - sites.store
       summary: Get relations from sites
-      description: To indicate which terms are related to the current term as either pinned or reused.
       operationId: sites.termStore.sets.parentGroup.sets.terms.children_GetRelations
       parameters:
         - name: site-id
@@ -65573,7 +65277,6 @@ paths:
       tags:
         - sites.store
       summary: Get fromTerm from sites
-      description: 'The from [term] of the relation. The term from which the relationship is defined. A null value would indicate the relation is directly with the [set].'
       operationId: sites.termStore.sets.parentGroup.sets.terms.children.relations_GetFromTerm
       parameters:
         - name: site-id
@@ -65696,7 +65399,6 @@ paths:
       tags:
         - sites.store
       summary: Get set from sites
-      description: 'The [set] in which the relation is relevant.'
       operationId: sites.termStore.sets.parentGroup.sets.terms.children.relations_GetSet
       parameters:
         - name: site-id
@@ -65829,7 +65531,6 @@ paths:
       tags:
         - sites.store
       summary: Get toTerm from sites
-      description: 'The to [term] of the relation. The term to which the relationship is defined.'
       operationId: sites.termStore.sets.parentGroup.sets.terms.children.relations_GetToTerm
       parameters:
         - name: site-id
@@ -65952,7 +65653,6 @@ paths:
       tags:
         - sites.store
       summary: Get set from sites
-      description: 'The [set] in which the term is created.'
       operationId: sites.termStore.sets.parentGroup.sets.terms.children_GetSet
       parameters:
         - name: site-id
@@ -66074,7 +65774,6 @@ paths:
       tags:
         - sites.store
       summary: Get relations from sites
-      description: To indicate which terms are related to the current term as either pinned or reused.
       operationId: sites.termStore.sets.parentGroup.sets.terms_ListRelations
       parameters:
         - name: site-id
@@ -66221,7 +65920,6 @@ paths:
       tags:
         - sites.store
       summary: Get relations from sites
-      description: To indicate which terms are related to the current term as either pinned or reused.
       operationId: sites.termStore.sets.parentGroup.sets.terms_GetRelations
       parameters:
         - name: site-id
@@ -66436,7 +66134,6 @@ paths:
       tags:
         - sites.store
       summary: Get fromTerm from sites
-      description: 'The from [term] of the relation. The term from which the relationship is defined. A null value would indicate the relation is directly with the [set].'
       operationId: sites.termStore.sets.parentGroup.sets.terms.relations_GetFromTerm
       parameters:
         - name: site-id
@@ -66549,7 +66246,6 @@ paths:
       tags:
         - sites.store
       summary: Get set from sites
-      description: 'The [set] in which the relation is relevant.'
       operationId: sites.termStore.sets.parentGroup.sets.terms.relations_GetSet
       parameters:
         - name: site-id
@@ -66671,7 +66367,6 @@ paths:
       tags:
         - sites.store
       summary: Get toTerm from sites
-      description: 'The to [term] of the relation. The term to which the relationship is defined.'
       operationId: sites.termStore.sets.parentGroup.sets.terms.relations_GetToTerm
       parameters:
         - name: site-id
@@ -66784,7 +66479,6 @@ paths:
       tags:
         - sites.store
       summary: Get set from sites
-      description: 'The [set] in which the term is created.'
       operationId: sites.termStore.sets.parentGroup.sets.terms_GetSet
       parameters:
         - name: site-id
@@ -66895,7 +66589,6 @@ paths:
       tags:
         - sites.store
       summary: Get relations from sites
-      description: Indicates which terms have been pinned or reused directly under the set.
       operationId: sites.termStore.sets_ListRelations
       parameters:
         - name: site-id
@@ -67014,7 +66707,6 @@ paths:
       tags:
         - sites.store
       summary: Get relations from sites
-      description: Indicates which terms have been pinned or reused directly under the set.
       operationId: sites.termStore.sets_GetRelations
       parameters:
         - name: site-id
@@ -67181,7 +66873,6 @@ paths:
       tags:
         - sites.store
       summary: Get fromTerm from sites
-      description: 'The from [term] of the relation. The term from which the relationship is defined. A null value would indicate the relation is directly with the [set].'
       operationId: sites.termStore.sets.relations_GetFromTerm
       parameters:
         - name: site-id
@@ -67274,7 +66965,6 @@ paths:
       tags:
         - sites.store
       summary: Get set from sites
-      description: 'The [set] in which the relation is relevant.'
       operationId: sites.termStore.sets.relations_GetSet
       parameters:
         - name: site-id
@@ -67374,7 +67064,6 @@ paths:
       tags:
         - sites.store
       summary: Get toTerm from sites
-      description: 'The to [term] of the relation. The term to which the relationship is defined.'
       operationId: sites.termStore.sets.relations_GetToTerm
       parameters:
         - name: site-id
@@ -67467,7 +67156,6 @@ paths:
       tags:
         - sites.store
       summary: Get terms from sites
-      description: All the terms under the set.
       operationId: sites.termStore.sets_ListTerms
       parameters:
         - name: site-id
@@ -67598,7 +67286,6 @@ paths:
       tags:
         - sites.store
       summary: Get terms from sites
-      description: All the terms under the set.
       operationId: sites.termStore.sets_GetTerms
       parameters:
         - name: site-id
@@ -67769,7 +67456,6 @@ paths:
       tags:
         - sites.store
       summary: Get children from sites
-      description: Children of current term.
       operationId: sites.termStore.sets.terms_ListChildren
       parameters:
         - name: site-id
@@ -67914,7 +67600,6 @@ paths:
       tags:
         - sites.store
       summary: Get children from sites
-      description: Children of current term.
       operationId: sites.termStore.sets.terms_GetChildren
       parameters:
         - name: site-id
@@ -68109,7 +67794,6 @@ paths:
       tags:
         - sites.store
       summary: Get relations from sites
-      description: To indicate which terms are related to the current term as either pinned or reused.
       operationId: sites.termStore.sets.terms.children_ListRelations
       parameters:
         - name: site-id
@@ -68256,7 +67940,6 @@ paths:
       tags:
         - sites.store
       summary: Get relations from sites
-      description: To indicate which terms are related to the current term as either pinned or reused.
       operationId: sites.termStore.sets.terms.children_GetRelations
       parameters:
         - name: site-id
@@ -68471,7 +68154,6 @@ paths:
       tags:
         - sites.store
       summary: Get fromTerm from sites
-      description: 'The from [term] of the relation. The term from which the relationship is defined. A null value would indicate the relation is directly with the [set].'
       operationId: sites.termStore.sets.terms.children.relations_GetFromTerm
       parameters:
         - name: site-id
@@ -68584,7 +68266,6 @@ paths:
       tags:
         - sites.store
       summary: Get set from sites
-      description: 'The [set] in which the relation is relevant.'
       operationId: sites.termStore.sets.terms.children.relations_GetSet
       parameters:
         - name: site-id
@@ -68706,7 +68387,6 @@ paths:
       tags:
         - sites.store
       summary: Get toTerm from sites
-      description: 'The to [term] of the relation. The term to which the relationship is defined.'
       operationId: sites.termStore.sets.terms.children.relations_GetToTerm
       parameters:
         - name: site-id
@@ -68819,7 +68499,6 @@ paths:
       tags:
         - sites.store
       summary: Get set from sites
-      description: 'The [set] in which the term is created.'
       operationId: sites.termStore.sets.terms.children_GetSet
       parameters:
         - name: site-id
@@ -68930,7 +68609,6 @@ paths:
       tags:
         - sites.store
       summary: Get relations from sites
-      description: To indicate which terms are related to the current term as either pinned or reused.
       operationId: sites.termStore.sets.terms_ListRelations
       parameters:
         - name: site-id
@@ -69063,7 +68741,6 @@ paths:
       tags:
         - sites.store
       summary: Get relations from sites
-      description: To indicate which terms are related to the current term as either pinned or reused.
       operationId: sites.termStore.sets.terms_GetRelations
       parameters:
         - name: site-id
@@ -69254,7 +68931,6 @@ paths:
       tags:
         - sites.store
       summary: Get fromTerm from sites
-      description: 'The from [term] of the relation. The term from which the relationship is defined. A null value would indicate the relation is directly with the [set].'
       operationId: sites.termStore.sets.terms.relations_GetFromTerm
       parameters:
         - name: site-id
@@ -69357,7 +69033,6 @@ paths:
       tags:
         - sites.store
       summary: Get set from sites
-      description: 'The [set] in which the relation is relevant.'
       operationId: sites.termStore.sets.terms.relations_GetSet
       parameters:
         - name: site-id
@@ -69468,7 +69143,6 @@ paths:
       tags:
         - sites.store
       summary: Get toTerm from sites
-      description: 'The to [term] of the relation. The term to which the relationship is defined.'
       operationId: sites.termStore.sets.terms.relations_GetToTerm
       parameters:
         - name: site-id
@@ -69571,7 +69245,6 @@ paths:
       tags:
         - sites.store
       summary: Get set from sites
-      description: 'The [set] in which the term is created.'
       operationId: sites.termStore.sets.terms_GetSet
       parameters:
         - name: site-id

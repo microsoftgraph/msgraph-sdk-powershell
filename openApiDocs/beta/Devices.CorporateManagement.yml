@@ -150,6 +150,8 @@ paths:
               operationId: deviceAppManagement.ListDeviceAppManagementTasks
             wdacSupplementalPolicies:
               operationId: deviceAppManagement.ListWdacSupplementalPolicies
+            syncMicrosoftStoreForBusinessApps:
+              operationId: deviceAppManagement.syncMicrosoftStoreForBusinessApps
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -176,7 +178,6 @@ paths:
       tags:
         - deviceAppManagement.androidManagedAppProtection
       summary: Get androidManagedAppProtections from deviceAppManagement
-      description: Android managed app policies.
       operationId: deviceAppManagement_ListAndroidManagedAppProtections
       parameters:
         - $ref: '#/components/parameters/top'
@@ -533,7 +534,6 @@ paths:
       tags:
         - deviceAppManagement.androidManagedAppProtection
       summary: Get androidManagedAppProtections from deviceAppManagement
-      description: Android managed app policies.
       operationId: deviceAppManagement_GetAndroidManagedAppProtections
       parameters:
         - name: androidManagedAppProtection-id
@@ -741,7 +741,6 @@ paths:
       tags:
         - deviceAppManagement.androidManagedAppProtection
       summary: Get apps from deviceAppManagement
-      description: List of apps to which the policy is deployed.
       operationId: deviceAppManagement.androidManagedAppProtections_ListApps
       parameters:
         - name: androidManagedAppProtection-id
@@ -843,7 +842,6 @@ paths:
       tags:
         - deviceAppManagement.androidManagedAppProtection
       summary: Get apps from deviceAppManagement
-      description: List of apps to which the policy is deployed.
       operationId: deviceAppManagement.androidManagedAppProtections_GetApps
       parameters:
         - name: androidManagedAppProtection-id
@@ -965,7 +963,6 @@ paths:
       tags:
         - deviceAppManagement.androidManagedAppProtection
       summary: Get deploymentSummary from deviceAppManagement
-      description: Navigation property to deployment summary of the configuration.
       operationId: deviceAppManagement.androidManagedAppProtections_GetDeploymentSummary
       parameters:
         - name: androidManagedAppProtection-id
@@ -1108,7 +1105,6 @@ paths:
       tags:
         - deviceAppManagement.defaultManagedAppProtection
       summary: Get defaultManagedAppProtections from deviceAppManagement
-      description: Default managed app policies.
       operationId: deviceAppManagement_ListDefaultManagedAppProtections
       parameters:
         - $ref: '#/components/parameters/top'
@@ -1490,7 +1486,6 @@ paths:
       tags:
         - deviceAppManagement.defaultManagedAppProtection
       summary: Get defaultManagedAppProtections from deviceAppManagement
-      description: Default managed app policies.
       operationId: deviceAppManagement_GetDefaultManagedAppProtections
       parameters:
         - name: defaultManagedAppProtection-id
@@ -1701,7 +1696,6 @@ paths:
       tags:
         - deviceAppManagement.defaultManagedAppProtection
       summary: Get apps from deviceAppManagement
-      description: List of apps to which the policy is deployed.
       operationId: deviceAppManagement.defaultManagedAppProtections_ListApps
       parameters:
         - name: defaultManagedAppProtection-id
@@ -1803,7 +1797,6 @@ paths:
       tags:
         - deviceAppManagement.defaultManagedAppProtection
       summary: Get apps from deviceAppManagement
-      description: List of apps to which the policy is deployed.
       operationId: deviceAppManagement.defaultManagedAppProtections_GetApps
       parameters:
         - name: defaultManagedAppProtection-id
@@ -1925,7 +1918,6 @@ paths:
       tags:
         - deviceAppManagement.defaultManagedAppProtection
       summary: Get deploymentSummary from deviceAppManagement
-      description: Navigation property to deployment summary of the configuration.
       operationId: deviceAppManagement.defaultManagedAppProtections_GetDeploymentSummary
       parameters:
         - name: defaultManagedAppProtection-id
@@ -2029,7 +2021,6 @@ paths:
       tags:
         - deviceAppManagement.deviceAppManagementTask
       summary: Get deviceAppManagementTasks from deviceAppManagement
-      description: Device app management tasks.
       operationId: deviceAppManagement_ListDeviceAppManagementTasks
       parameters:
         - $ref: '#/components/parameters/top'
@@ -2140,7 +2131,6 @@ paths:
       tags:
         - deviceAppManagement.deviceAppManagementTask
       summary: Get deviceAppManagementTasks from deviceAppManagement
-      description: Device app management tasks.
       operationId: deviceAppManagement_GetDeviceAppManagementTasks
       parameters:
         - name: deviceAppManagementTask-id
@@ -2191,6 +2181,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.deviceAppManagementTask'
+          links:
+            updateStatus:
+              operationId: deviceAppManagement.deviceAppManagementTasks.deviceAppManagementTask.updateStatus
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2249,7 +2242,6 @@ paths:
       tags:
         - deviceAppManagement.Actions
       summary: Invoke action updateStatus
-      description: Set the task's status and attach a note.
       operationId: deviceAppManagement.deviceAppManagementTasks_updateStatus
       parameters:
         - name: deviceAppManagementTask-id
@@ -2285,7 +2277,6 @@ paths:
       tags:
         - deviceAppManagement.enterpriseCodeSigningCertificate
       summary: Get enterpriseCodeSigningCertificates from deviceAppManagement
-      description: The Windows Enterprise Code Signing Certificate.
       operationId: deviceAppManagement_ListEnterpriseCodeSigningCertificates
       parameters:
         - $ref: '#/components/parameters/top'
@@ -2390,7 +2381,6 @@ paths:
       tags:
         - deviceAppManagement.enterpriseCodeSigningCertificate
       summary: Get enterpriseCodeSigningCertificates from deviceAppManagement
-      description: The Windows Enterprise Code Signing Certificate.
       operationId: deviceAppManagement_GetEnterpriseCodeSigningCertificates
       parameters:
         - name: enterpriseCodeSigningCertificate-id
@@ -2497,7 +2487,6 @@ paths:
       tags:
         - deviceAppManagement.iosLobAppProvisioningConfiguration
       summary: Get iosLobAppProvisioningConfigurations from deviceAppManagement
-      description: The IOS Lob App Provisioning Configurations.
       operationId: deviceAppManagement_ListIosLobAppProvisioningConfigurations
       parameters:
         - $ref: '#/components/parameters/top'
@@ -2613,7 +2602,6 @@ paths:
       tags:
         - deviceAppManagement.iosLobAppProvisioningConfiguration
       summary: Get iosLobAppProvisioningConfigurations from deviceAppManagement
-      description: The IOS Lob App Provisioning Configurations.
       operationId: deviceAppManagement_GetIosLobAppProvisioningConfigurations
       parameters:
         - name: iosLobAppProvisioningConfiguration-id
@@ -2688,6 +2676,8 @@ paths:
               operationId: deviceAppManagement.IosLobAppProvisioningConfigurations.ListUserStatuses
               parameters:
                 iosLobAppProvisioningConfiguration-id: $request.path.iosLobAppProvisioningConfiguration-id
+            assign:
+              operationId: deviceAppManagement.iosLobAppProvisioningConfigurations.iosLobAppProvisioningConfiguration.assign
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2746,7 +2736,6 @@ paths:
       tags:
         - deviceAppManagement.iosLobAppProvisioningConfiguration
       summary: Get assignments from deviceAppManagement
-      description: The associated group assignments for IosLobAppProvisioningConfiguration.
       operationId: deviceAppManagement.iosLobAppProvisioningConfigurations_ListAssignments
       parameters:
         - name: iosLobAppProvisioningConfiguration-id
@@ -2845,7 +2834,6 @@ paths:
       tags:
         - deviceAppManagement.iosLobAppProvisioningConfiguration
       summary: Get assignments from deviceAppManagement
-      description: The associated group assignments for IosLobAppProvisioningConfiguration.
       operationId: deviceAppManagement.iosLobAppProvisioningConfigurations_GetAssignments
       parameters:
         - name: iosLobAppProvisioningConfiguration-id
@@ -2966,7 +2954,6 @@ paths:
       tags:
         - deviceAppManagement.iosLobAppProvisioningConfiguration
       summary: Get deviceStatuses from deviceAppManagement
-      description: The list of device installation states for this mobile app configuration.
       operationId: deviceAppManagement.iosLobAppProvisioningConfigurations_ListDeviceStatuses
       parameters:
         - name: iosLobAppProvisioningConfiguration-id
@@ -3086,7 +3073,6 @@ paths:
       tags:
         - deviceAppManagement.iosLobAppProvisioningConfiguration
       summary: Get deviceStatuses from deviceAppManagement
-      description: The list of device installation states for this mobile app configuration.
       operationId: deviceAppManagement.iosLobAppProvisioningConfigurations_GetDeviceStatuses
       parameters:
         - name: iosLobAppProvisioningConfiguration-id
@@ -3214,7 +3200,6 @@ paths:
       tags:
         - deviceAppManagement.iosLobAppProvisioningConfiguration
       summary: Get groupAssignments from deviceAppManagement
-      description: The associated group assignments.
       operationId: deviceAppManagement.iosLobAppProvisioningConfigurations_ListGroupAssignments
       parameters:
         - name: iosLobAppProvisioningConfiguration-id
@@ -3313,7 +3298,6 @@ paths:
       tags:
         - deviceAppManagement.iosLobAppProvisioningConfiguration
       summary: Get groupAssignments from deviceAppManagement
-      description: The associated group assignments.
       operationId: deviceAppManagement.iosLobAppProvisioningConfigurations_GetGroupAssignments
       parameters:
         - name: iosLobAppProvisioningConfiguration-id
@@ -3472,7 +3456,6 @@ paths:
       tags:
         - deviceAppManagement.iosLobAppProvisioningConfiguration
       summary: Get userStatuses from deviceAppManagement
-      description: The list of user installation states for this mobile app configuration.
       operationId: deviceAppManagement.iosLobAppProvisioningConfigurations_ListUserStatuses
       parameters:
         - name: iosLobAppProvisioningConfiguration-id
@@ -3583,7 +3566,6 @@ paths:
       tags:
         - deviceAppManagement.iosLobAppProvisioningConfiguration
       summary: Get userStatuses from deviceAppManagement
-      description: The list of user installation states for this mobile app configuration.
       operationId: deviceAppManagement.iosLobAppProvisioningConfigurations_GetUserStatuses
       parameters:
         - name: iosLobAppProvisioningConfiguration-id
@@ -3747,7 +3729,6 @@ paths:
       tags:
         - deviceAppManagement.iosManagedAppProtection
       summary: Get iosManagedAppProtections from deviceAppManagement
-      description: iOS managed app policies.
       operationId: deviceAppManagement_ListIosManagedAppProtections
       parameters:
         - $ref: '#/components/parameters/top'
@@ -4044,7 +4025,6 @@ paths:
       tags:
         - deviceAppManagement.iosManagedAppProtection
       summary: Get iosManagedAppProtections from deviceAppManagement
-      description: iOS managed app policies.
       operationId: deviceAppManagement_GetIosManagedAppProtections
       parameters:
         - name: iosManagedAppProtection-id
@@ -4232,7 +4212,6 @@ paths:
       tags:
         - deviceAppManagement.iosManagedAppProtection
       summary: Get apps from deviceAppManagement
-      description: List of apps to which the policy is deployed.
       operationId: deviceAppManagement.iosManagedAppProtections_ListApps
       parameters:
         - name: iosManagedAppProtection-id
@@ -4334,7 +4313,6 @@ paths:
       tags:
         - deviceAppManagement.iosManagedAppProtection
       summary: Get apps from deviceAppManagement
-      description: List of apps to which the policy is deployed.
       operationId: deviceAppManagement.iosManagedAppProtections_GetApps
       parameters:
         - name: iosManagedAppProtection-id
@@ -4456,7 +4434,6 @@ paths:
       tags:
         - deviceAppManagement.iosManagedAppProtection
       summary: Get deploymentSummary from deviceAppManagement
-      description: Navigation property to deployment summary of the configuration.
       operationId: deviceAppManagement.iosManagedAppProtections_GetDeploymentSummary
       parameters:
         - name: iosManagedAppProtection-id
@@ -4599,7 +4576,6 @@ paths:
       tags:
         - deviceAppManagement.managedAppPolicy
       summary: Get managedAppPolicies from deviceAppManagement
-      description: Managed app policies.
       operationId: deviceAppManagement_ListManagedAppPolicies
       parameters:
         - $ref: '#/components/parameters/top'
@@ -4698,7 +4674,6 @@ paths:
       tags:
         - deviceAppManagement.managedAppPolicy
       summary: Get managedAppPolicies from deviceAppManagement
-      description: Managed app policies.
       operationId: deviceAppManagement_GetManagedAppPolicies
       parameters:
         - name: managedAppPolicy-id
@@ -4745,6 +4720,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.managedAppPolicy'
+          links:
+            targetApps:
+              operationId: deviceAppManagement.managedAppPolicies.managedAppPolicy.targetApps
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4975,7 +4953,6 @@ paths:
       tags:
         - deviceAppManagement.managedAppRegistration
       summary: Get managedAppRegistrations from deviceAppManagement
-      description: The managed app registrations.
       operationId: deviceAppManagement_ListManagedAppRegistrations
       parameters:
         - $ref: '#/components/parameters/top'
@@ -5110,7 +5087,6 @@ paths:
       tags:
         - deviceAppManagement.managedAppRegistration
       summary: Get managedAppRegistrations from deviceAppManagement
-      description: The managed app registrations.
       operationId: deviceAppManagement_GetManagedAppRegistrations
       parameters:
         - name: managedAppRegistration-id
@@ -5244,7 +5220,6 @@ paths:
       tags:
         - deviceAppManagement.managedAppRegistration
       summary: Get appliedPolicies from deviceAppManagement
-      description: Zero or more policys already applied on the registered app when it last synchronized with managment service.
       operationId: deviceAppManagement.managedAppRegistrations_ListAppliedPolicies
       parameters:
         - name: managedAppRegistration-id
@@ -5358,7 +5333,6 @@ paths:
       tags:
         - deviceAppManagement.managedAppRegistration
       summary: Get appliedPolicies from deviceAppManagement
-      description: Zero or more policys already applied on the registered app when it last synchronized with managment service.
       operationId: deviceAppManagement.managedAppRegistrations_GetAppliedPolicies
       parameters:
         - name: managedAppRegistration-id
@@ -5412,6 +5386,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.managedAppPolicy'
+          links:
+            targetApps:
+              operationId: deviceAppManagement.managedAppRegistrations.managedAppRegistration.appliedPolicies.managedAppPolicy.targetApps
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5691,7 +5668,6 @@ paths:
       tags:
         - deviceAppManagement.managedAppRegistration
       summary: Get intendedPolicies from deviceAppManagement
-      description: Zero or more policies admin intended for the app as of now.
       operationId: deviceAppManagement.managedAppRegistrations_ListIntendedPolicies
       parameters:
         - name: managedAppRegistration-id
@@ -5805,7 +5781,6 @@ paths:
       tags:
         - deviceAppManagement.managedAppRegistration
       summary: Get intendedPolicies from deviceAppManagement
-      description: Zero or more policies admin intended for the app as of now.
       operationId: deviceAppManagement.managedAppRegistrations_GetIntendedPolicies
       parameters:
         - name: managedAppRegistration-id
@@ -5859,6 +5834,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.managedAppPolicy'
+          links:
+            targetApps:
+              operationId: deviceAppManagement.managedAppRegistrations.managedAppRegistration.intendedPolicies.managedAppPolicy.targetApps
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -6138,7 +6116,6 @@ paths:
       tags:
         - deviceAppManagement.managedAppRegistration
       summary: Get operations from deviceAppManagement
-      description: Zero or more long running operations triggered on the app registration.
       operationId: deviceAppManagement.managedAppRegistrations_ListOperations
       parameters:
         - name: managedAppRegistration-id
@@ -6246,7 +6223,6 @@ paths:
       tags:
         - deviceAppManagement.managedAppRegistration
       summary: Get operations from deviceAppManagement
-      description: Zero or more long running operations triggered on the app registration.
       operationId: deviceAppManagement.managedAppRegistrations_GetOperations
       parameters:
         - name: managedAppRegistration-id
@@ -6395,7 +6371,6 @@ paths:
       tags:
         - deviceAppManagement.managedAppStatus
       summary: Get managedAppStatuses from deviceAppManagement
-      description: The managed app statuses.
       operationId: deviceAppManagement_ListManagedAppStatuses
       parameters:
         - $ref: '#/components/parameters/top'
@@ -6482,7 +6457,6 @@ paths:
       tags:
         - deviceAppManagement.managedAppStatus
       summary: Get managedAppStatuses from deviceAppManagement
-      description: The managed app statuses.
       operationId: deviceAppManagement_GetManagedAppStatuses
       parameters:
         - name: managedAppStatus-id
@@ -6583,7 +6557,6 @@ paths:
       tags:
         - deviceAppManagement.managedEBookCategory
       summary: Get managedEBookCategories from deviceAppManagement
-      description: The mobile eBook categories.
       operationId: deviceAppManagement_ListManagedEBookCategories
       parameters:
         - $ref: '#/components/parameters/top'
@@ -6670,7 +6643,6 @@ paths:
       tags:
         - deviceAppManagement.managedEBookCategory
       summary: Get managedEBookCategories from deviceAppManagement
-      description: The mobile eBook categories.
       operationId: deviceAppManagement_GetManagedEBookCategories
       parameters:
         - name: managedEBookCategory-id
@@ -6771,7 +6743,6 @@ paths:
       tags:
         - deviceAppManagement.managedEBook
       summary: Get managedEBooks from deviceAppManagement
-      description: The Managed eBook.
       operationId: deviceAppManagement_ListManagedEBooks
       parameters:
         - $ref: '#/components/parameters/top'
@@ -6889,7 +6860,6 @@ paths:
       tags:
         - deviceAppManagement.managedEBook
       summary: Get managedEBooks from deviceAppManagement
-      description: The Managed eBook.
       operationId: deviceAppManagement_GetManagedEBooks
       parameters:
         - name: managedEBook-id
@@ -6970,6 +6940,8 @@ paths:
               operationId: deviceAppManagement.ManagedEBooks.ListUserStateSummary
               parameters:
                 managedEBook-id: $request.path.managedEBook-id
+            assign:
+              operationId: deviceAppManagement.managedEBooks.managedEBook.assign
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -7028,7 +7000,6 @@ paths:
       tags:
         - deviceAppManagement.managedEBook
       summary: Get assignments from deviceAppManagement
-      description: The list of assignments for this eBook.
       operationId: deviceAppManagement.managedEBooks_ListAssignments
       parameters:
         - name: managedEBook-id
@@ -7130,7 +7101,6 @@ paths:
       tags:
         - deviceAppManagement.managedEBook
       summary: Get assignments from deviceAppManagement
-      description: The list of assignments for this eBook.
       operationId: deviceAppManagement.managedEBooks_GetAssignments
       parameters:
         - name: managedEBook-id
@@ -7252,7 +7222,6 @@ paths:
       tags:
         - deviceAppManagement.managedEBook
       summary: Get categories from deviceAppManagement
-      description: The list of categories for this eBook.
       operationId: deviceAppManagement.managedEBooks_ListCategories
       parameters:
         - name: managedEBook-id
@@ -7324,7 +7293,6 @@ paths:
       tags:
         - deviceAppManagement.managedEBook
       summary: Get categories from deviceAppManagement
-      description: The list of categories for this eBook.
       operationId: deviceAppManagement.managedEBooks_GetCategories
       parameters:
         - name: managedEBook-id
@@ -7382,7 +7350,6 @@ paths:
       tags:
         - deviceAppManagement.managedEBook
       summary: Get deviceStates from deviceAppManagement
-      description: The list of installation states for this eBook.
       operationId: deviceAppManagement.managedEBooks_ListDeviceStates
       parameters:
         - name: managedEBook-id
@@ -7502,7 +7469,6 @@ paths:
       tags:
         - deviceAppManagement.managedEBook
       summary: Get deviceStates from deviceAppManagement
-      description: The list of installation states for this eBook.
       operationId: deviceAppManagement.managedEBooks_GetDeviceStates
       parameters:
         - name: managedEBook-id
@@ -7630,7 +7596,6 @@ paths:
       tags:
         - deviceAppManagement.managedEBook
       summary: Get installSummary from deviceAppManagement
-      description: Mobile App Install Summary.
       operationId: deviceAppManagement.managedEBooks_GetInstallSummary
       parameters:
         - name: managedEBook-id
@@ -7769,7 +7734,6 @@ paths:
       tags:
         - deviceAppManagement.managedEBook
       summary: Get userStateSummary from deviceAppManagement
-      description: The list of installation states for this eBook.
       operationId: deviceAppManagement.managedEBooks_ListUserStateSummary
       parameters:
         - name: managedEBook-id
@@ -7879,7 +7843,6 @@ paths:
       tags:
         - deviceAppManagement.managedEBook
       summary: Get userStateSummary from deviceAppManagement
-      description: The list of installation states for this eBook.
       operationId: deviceAppManagement.managedEBooks_GetUserStateSummary
       parameters:
         - name: managedEBook-id
@@ -8011,7 +7974,6 @@ paths:
       tags:
         - deviceAppManagement.managedEBook
       summary: Get deviceStates from deviceAppManagement
-      description: The install state of the eBook.
       operationId: deviceAppManagement.managedEBooks.userStateSummary_ListDeviceStates
       parameters:
         - name: managedEBook-id
@@ -8145,7 +8107,6 @@ paths:
       tags:
         - deviceAppManagement.managedEBook
       summary: Get deviceStates from deviceAppManagement
-      description: The install state of the eBook.
       operationId: deviceAppManagement.managedEBooks.userStateSummary_GetDeviceStates
       parameters:
         - name: managedEBook-id
@@ -8294,7 +8255,6 @@ paths:
       tags:
         - deviceAppManagement.mdmWindowsInformationProtectionPolicy
       summary: Get mdmWindowsInformationProtectionPolicies from deviceAppManagement
-      description: Windows information protection for apps running on devices which are MDM enrolled.
       operationId: deviceAppManagement_ListMdmWindowsInformationProtectionPolicies
       parameters:
         - $ref: '#/components/parameters/top'
@@ -8465,7 +8425,6 @@ paths:
       tags:
         - deviceAppManagement.mdmWindowsInformationProtectionPolicy
       summary: Get mdmWindowsInformationProtectionPolicies from deviceAppManagement
-      description: Windows information protection for apps running on devices which are MDM enrolled.
       operationId: deviceAppManagement_GetMdmWindowsInformationProtectionPolicies
       parameters:
         - name: mdmWindowsInformationProtectionPolicy-id
@@ -8650,7 +8609,6 @@ paths:
       tags:
         - deviceAppManagement.Actions
       summary: Invoke action syncMicrosoftStoreForBusinessApps
-      description: Syncs Intune account with Microsoft Store For Business
       operationId: deviceAppManagement_syncMicrosoftStoreForBusinessApps
       responses:
         '204':
@@ -8663,7 +8621,6 @@ paths:
       tags:
         - deviceAppManagement.mobileAppCategory
       summary: Get mobileAppCategories from deviceAppManagement
-      description: The mobile app categories.
       operationId: deviceAppManagement_ListMobileAppCategories
       parameters:
         - $ref: '#/components/parameters/top'
@@ -8750,7 +8707,6 @@ paths:
       tags:
         - deviceAppManagement.mobileAppCategory
       summary: Get mobileAppCategories from deviceAppManagement
-      description: The mobile app categories.
       operationId: deviceAppManagement_GetMobileAppCategories
       parameters:
         - name: mobileAppCategory-id
@@ -8851,7 +8807,6 @@ paths:
       tags:
         - deviceAppManagement.managedDeviceMobileAppConfiguration
       summary: Get mobileAppConfigurations from deviceAppManagement
-      description: The Managed Device Mobile Application Configurations.
       operationId: deviceAppManagement_ListMobileAppConfigurations
       parameters:
         - $ref: '#/components/parameters/top'
@@ -8963,7 +8918,6 @@ paths:
       tags:
         - deviceAppManagement.managedDeviceMobileAppConfiguration
       summary: Get mobileAppConfigurations from deviceAppManagement
-      description: The Managed Device Mobile Application Configurations.
       operationId: deviceAppManagement_GetMobileAppConfigurations
       parameters:
         - name: managedDeviceMobileAppConfiguration-id
@@ -9042,6 +8996,8 @@ paths:
               operationId: deviceAppManagement.MobileAppConfigurations.GetUserStatusSummary
               parameters:
                 managedDeviceMobileAppConfiguration-id: $request.path.managedDeviceMobileAppConfiguration-id
+            assign:
+              operationId: deviceAppManagement.mobileAppConfigurations.managedDeviceMobileAppConfiguration.assign
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -9100,7 +9056,6 @@ paths:
       tags:
         - deviceAppManagement.managedDeviceMobileAppConfiguration
       summary: Get assignments from deviceAppManagement
-      description: The list of group assignemenets for app configration.
       operationId: deviceAppManagement.mobileAppConfigurations_ListAssignments
       parameters:
         - name: managedDeviceMobileAppConfiguration-id
@@ -9199,7 +9154,6 @@ paths:
       tags:
         - deviceAppManagement.managedDeviceMobileAppConfiguration
       summary: Get assignments from deviceAppManagement
-      description: The list of group assignemenets for app configration.
       operationId: deviceAppManagement.mobileAppConfigurations_GetAssignments
       parameters:
         - name: managedDeviceMobileAppConfiguration-id
@@ -9320,7 +9274,6 @@ paths:
       tags:
         - deviceAppManagement.managedDeviceMobileAppConfiguration
       summary: Get deviceStatuses from deviceAppManagement
-      description: List of ManagedDeviceMobileAppConfigurationDeviceStatus.
       operationId: deviceAppManagement.mobileAppConfigurations_ListDeviceStatuses
       parameters:
         - name: managedDeviceMobileAppConfiguration-id
@@ -9440,7 +9393,6 @@ paths:
       tags:
         - deviceAppManagement.managedDeviceMobileAppConfiguration
       summary: Get deviceStatuses from deviceAppManagement
-      description: List of ManagedDeviceMobileAppConfigurationDeviceStatus.
       operationId: deviceAppManagement.mobileAppConfigurations_GetDeviceStatuses
       parameters:
         - name: managedDeviceMobileAppConfiguration-id
@@ -9568,7 +9520,6 @@ paths:
       tags:
         - deviceAppManagement.managedDeviceMobileAppConfiguration
       summary: Get deviceStatusSummary from deviceAppManagement
-      description: App configuration device status summary.
       operationId: deviceAppManagement.mobileAppConfigurations_GetDeviceStatusSummary
       parameters:
         - name: managedDeviceMobileAppConfiguration-id
@@ -9710,7 +9661,6 @@ paths:
       tags:
         - deviceAppManagement.managedDeviceMobileAppConfiguration
       summary: Get userStatuses from deviceAppManagement
-      description: List of ManagedDeviceMobileAppConfigurationUserStatus.
       operationId: deviceAppManagement.mobileAppConfigurations_ListUserStatuses
       parameters:
         - name: managedDeviceMobileAppConfiguration-id
@@ -9821,7 +9771,6 @@ paths:
       tags:
         - deviceAppManagement.managedDeviceMobileAppConfiguration
       summary: Get userStatuses from deviceAppManagement
-      description: List of ManagedDeviceMobileAppConfigurationUserStatus.
       operationId: deviceAppManagement.mobileAppConfigurations_GetUserStatuses
       parameters:
         - name: managedDeviceMobileAppConfiguration-id
@@ -9946,7 +9895,6 @@ paths:
       tags:
         - deviceAppManagement.managedDeviceMobileAppConfiguration
       summary: Get userStatusSummary from deviceAppManagement
-      description: App configuration user status summary.
       operationId: deviceAppManagement.mobileAppConfigurations_GetUserStatusSummary
       parameters:
         - name: managedDeviceMobileAppConfiguration-id
@@ -10053,7 +10001,6 @@ paths:
       tags:
         - deviceAppManagement.mobileApp
       summary: Get mobileApps from deviceAppManagement
-      description: The mobile apps.
       operationId: deviceAppManagement_ListMobileApps
       parameters:
         - $ref: '#/components/parameters/top'
@@ -10203,7 +10150,6 @@ paths:
       tags:
         - deviceAppManagement.mobileApp
       summary: Get mobileApps from deviceAppManagement
-      description: The mobile apps.
       operationId: deviceAppManagement_GetMobileApps
       parameters:
         - name: mobileApp-id
@@ -10300,6 +10246,12 @@ paths:
               operationId: deviceAppManagement.MobileApps.ListUserStatuses
               parameters:
                 mobileApp-id: $request.path.mobileApp-id
+            assign:
+              operationId: deviceAppManagement.mobileApps.mobileApp.assign
+            getRelatedAppStates:
+              operationId: deviceAppManagement.mobileApps.mobileApp.getRelatedAppStates
+            updateRelationships:
+              operationId: deviceAppManagement.mobileApps.mobileApp.updateRelationships
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -10358,7 +10310,6 @@ paths:
       tags:
         - deviceAppManagement.mobileApp
       summary: Get assignments from deviceAppManagement
-      description: The list of group assignments for this mobile app.
       operationId: deviceAppManagement.mobileApps_ListAssignments
       parameters:
         - name: mobileApp-id
@@ -10469,7 +10420,6 @@ paths:
       tags:
         - deviceAppManagement.mobileApp
       summary: Get assignments from deviceAppManagement
-      description: The list of group assignments for this mobile app.
       operationId: deviceAppManagement.mobileApps_GetAssignments
       parameters:
         - name: mobileApp-id
@@ -10594,7 +10544,6 @@ paths:
       tags:
         - deviceAppManagement.mobileApp
       summary: Get categories from deviceAppManagement
-      description: The list of categories for this app.
       operationId: deviceAppManagement.mobileApps_ListCategories
       parameters:
         - name: mobileApp-id
@@ -10666,7 +10615,6 @@ paths:
       tags:
         - deviceAppManagement.mobileApp
       summary: Get categories from deviceAppManagement
-      description: The list of categories for this app.
       operationId: deviceAppManagement.mobileApps_GetCategories
       parameters:
         - name: mobileApp-id
@@ -10724,7 +10672,6 @@ paths:
       tags:
         - deviceAppManagement.mobileApp
       summary: Get deviceStatuses from deviceAppManagement
-      description: The list of installation states for this mobile app.
       operationId: deviceAppManagement.mobileApps_ListDeviceStatuses
       parameters:
         - name: mobileApp-id
@@ -10858,7 +10805,6 @@ paths:
       tags:
         - deviceAppManagement.mobileApp
       summary: Get deviceStatuses from deviceAppManagement
-      description: The list of installation states for this mobile app.
       operationId: deviceAppManagement.mobileApps_GetDeviceStatuses
       parameters:
         - name: mobileApp-id
@@ -10998,7 +10944,6 @@ paths:
       tags:
         - deviceAppManagement.mobileApp
       summary: Get app from deviceAppManagement
-      description: The navigation link to the mobile app.
       operationId: deviceAppManagement.mobileApps.deviceStatuses_GetApp
       parameters:
         - name: mobileApp-id
@@ -11116,7 +11061,6 @@ paths:
       tags:
         - deviceAppManagement.mobileApp
       summary: Get installSummary from deviceAppManagement
-      description: Mobile App Install Summary.
       operationId: deviceAppManagement.mobileApps_GetInstallSummary
       parameters:
         - name: mobileApp-id
@@ -11305,7 +11249,6 @@ paths:
       tags:
         - deviceAppManagement.Actions
       summary: Invoke action revokeAllLicenses
-      description: Revoke all assigned iOS VPP licenses for given app.
       operationId: deviceAppManagement.mobileApps.microsoft.graph.iosVppApp_revokeAllLicenses
       parameters:
         - name: mobileApp-id
@@ -11339,7 +11282,6 @@ paths:
       tags:
         - deviceAppManagement.Actions
       summary: Invoke action revokeDeviceLicense
-      description: Revoke assigned iOS VPP device license for given app.
       operationId: deviceAppManagement.mobileApps.microsoft.graph.iosVppApp_revokeDeviceLicense
       parameters:
         - name: mobileApp-id
@@ -11376,7 +11318,6 @@ paths:
       tags:
         - deviceAppManagement.Actions
       summary: Invoke action revokeUserLicense
-      description: Revoke assigned iOS VPP user license for given app.
       operationId: deviceAppManagement.mobileApps.microsoft.graph.iosVppApp_revokeUserLicense
       parameters:
         - name: mobileApp-id
@@ -11447,7 +11388,6 @@ paths:
       tags:
         - deviceAppManagement.mobileApp
       summary: Get relationships from deviceAppManagement
-      description: List of relationships for this mobile app.
       operationId: deviceAppManagement.mobileApps_ListRelationships
       parameters:
         - name: mobileApp-id
@@ -11558,7 +11498,6 @@ paths:
       tags:
         - deviceAppManagement.mobileApp
       summary: Get relationships from deviceAppManagement
-      description: List of relationships for this mobile app.
       operationId: deviceAppManagement.mobileApps_GetRelationships
       parameters:
         - name: mobileApp-id
@@ -11683,7 +11622,6 @@ paths:
       tags:
         - deviceAppManagement.mobileApp
       summary: Get userStatuses from deviceAppManagement
-      description: The list of installation states for this mobile app.
       operationId: deviceAppManagement.mobileApps_ListUserStatuses
       parameters:
         - name: mobileApp-id
@@ -11798,7 +11736,6 @@ paths:
       tags:
         - deviceAppManagement.mobileApp
       summary: Get userStatuses from deviceAppManagement
-      description: The list of installation states for this mobile app.
       operationId: deviceAppManagement.mobileApps_GetUserStatuses
       parameters:
         - name: mobileApp-id
@@ -11938,7 +11875,6 @@ paths:
       tags:
         - deviceAppManagement.mobileApp
       summary: Get app from deviceAppManagement
-      description: The navigation link to the mobile app.
       operationId: deviceAppManagement.mobileApps.userStatuses_GetApp
       parameters:
         - name: mobileApp-id
@@ -12056,7 +11992,6 @@ paths:
       tags:
         - deviceAppManagement.mobileApp
       summary: Get deviceStatuses from deviceAppManagement
-      description: The install state of the app on devices.
       operationId: deviceAppManagement.mobileApps.userStatuses_ListDeviceStatuses
       parameters:
         - name: mobileApp-id
@@ -12204,7 +12139,6 @@ paths:
       tags:
         - deviceAppManagement.mobileApp
       summary: Get deviceStatuses from deviceAppManagement
-      description: The install state of the app on devices.
       operationId: deviceAppManagement.mobileApps.userStatuses_GetDeviceStatuses
       parameters:
         - name: mobileApp-id
@@ -12366,7 +12300,6 @@ paths:
       tags:
         - deviceAppManagement.mobileApp
       summary: Get app from deviceAppManagement
-      description: The navigation link to the mobile app.
       operationId: deviceAppManagement.mobileApps.userStatuses.deviceStatuses_GetApp
       parameters:
         - name: mobileApp-id
@@ -12640,7 +12573,6 @@ paths:
       tags:
         - deviceAppManagement.policySet
       summary: Get policySets from deviceAppManagement
-      description: The PolicySet of Policies and Applications
       operationId: deviceAppManagement_ListPolicySets
       parameters:
         - $ref: '#/components/parameters/top'
@@ -12749,7 +12681,6 @@ paths:
       tags:
         - deviceAppManagement.policySet
       summary: Get policySets from deviceAppManagement
-      description: The PolicySet of Policies and Applications
       operationId: deviceAppManagement_GetPolicySets
       parameters:
         - name: policySet-id
@@ -12811,6 +12742,8 @@ paths:
               operationId: deviceAppManagement.PolicySets.ListItems
               parameters:
                 policySet-id: $request.path.policySet-id
+            update:
+              operationId: deviceAppManagement.policySets.policySet.update
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -12869,7 +12802,6 @@ paths:
       tags:
         - deviceAppManagement.policySet
       summary: Get assignments from deviceAppManagement
-      description: Assignments of the PolicySet.
       operationId: deviceAppManagement.policySets_ListAssignments
       parameters:
         - name: policySet-id
@@ -12971,7 +12903,6 @@ paths:
       tags:
         - deviceAppManagement.policySet
       summary: Get assignments from deviceAppManagement
-      description: Assignments of the PolicySet.
       operationId: deviceAppManagement.policySets_GetAssignments
       parameters:
         - name: policySet-id
@@ -13093,7 +13024,6 @@ paths:
       tags:
         - deviceAppManagement.policySet
       summary: Get items from deviceAppManagement
-      description: Items of the PolicySet with maximum count 100.
       operationId: deviceAppManagement.policySets_ListItems
       parameters:
         - name: policySet-id
@@ -13213,7 +13143,6 @@ paths:
       tags:
         - deviceAppManagement.policySet
       summary: Get items from deviceAppManagement
-      description: Items of the PolicySet with maximum count 100.
       operationId: deviceAppManagement.policySets_GetItems
       parameters:
         - name: policySet-id
@@ -13427,7 +13356,6 @@ paths:
       tags:
         - deviceAppManagement.sideLoadingKey
       summary: Get sideLoadingKeys from deviceAppManagement
-      description: Side Loading Keys that are required for the Windows 8 and 8.1 Apps installation.
       operationId: deviceAppManagement_ListSideLoadingKeys
       parameters:
         - $ref: '#/components/parameters/top'
@@ -13523,7 +13451,6 @@ paths:
       tags:
         - deviceAppManagement.sideLoadingKey
       summary: Get sideLoadingKeys from deviceAppManagement
-      description: Side Loading Keys that are required for the Windows 8 and 8.1 Apps installation.
       operationId: deviceAppManagement_GetSideLoadingKeys
       parameters:
         - name: sideLoadingKey-id
@@ -13627,7 +13554,6 @@ paths:
       tags:
         - deviceAppManagement.symantecCodeSigningCertificate
       summary: Get symantecCodeSigningCertificate from deviceAppManagement
-      description: The WinPhone Symantec Code Signing Certificate.
       operationId: deviceAppManagement_GetSymantecCodeSigningCertificate
       parameters:
         - name: $select
@@ -13713,7 +13639,6 @@ paths:
       tags:
         - deviceAppManagement.targetedManagedAppConfiguration
       summary: Get targetedManagedAppConfigurations from deviceAppManagement
-      description: Targeted managed app configurations.
       operationId: deviceAppManagement_ListTargetedManagedAppConfigurations
       parameters:
         - $ref: '#/components/parameters/top'
@@ -13830,7 +13755,6 @@ paths:
       tags:
         - deviceAppManagement.targetedManagedAppConfiguration
       summary: Get targetedManagedAppConfigurations from deviceAppManagement
-      description: Targeted managed app configurations.
       operationId: deviceAppManagement_GetTargetedManagedAppConfigurations
       parameters:
         - name: targetedManagedAppConfiguration-id
@@ -13900,6 +13824,10 @@ paths:
               operationId: deviceAppManagement.TargetedManagedAppConfigurations.GetDeploymentSummary
               parameters:
                 targetedManagedAppConfiguration-id: $request.path.targetedManagedAppConfiguration-id
+            assign:
+              operationId: deviceAppManagement.targetedManagedAppConfigurations.targetedManagedAppConfiguration.assign
+            targetApps:
+              operationId: deviceAppManagement.targetedManagedAppConfigurations.targetedManagedAppConfiguration.targetApps
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -13958,7 +13886,6 @@ paths:
       tags:
         - deviceAppManagement.targetedManagedAppConfiguration
       summary: Get apps from deviceAppManagement
-      description: List of apps to which the policy is deployed.
       operationId: deviceAppManagement.targetedManagedAppConfigurations_ListApps
       parameters:
         - name: targetedManagedAppConfiguration-id
@@ -14060,7 +13987,6 @@ paths:
       tags:
         - deviceAppManagement.targetedManagedAppConfiguration
       summary: Get apps from deviceAppManagement
-      description: List of apps to which the policy is deployed.
       operationId: deviceAppManagement.targetedManagedAppConfigurations_GetApps
       parameters:
         - name: targetedManagedAppConfiguration-id
@@ -14182,7 +14108,6 @@ paths:
       tags:
         - deviceAppManagement.targetedManagedAppConfiguration
       summary: Get assignments from deviceAppManagement
-      description: Navigation property to list of inclusion and exclusion groups to which the policy is deployed.
       operationId: deviceAppManagement.targetedManagedAppConfigurations_ListAssignments
       parameters:
         - name: targetedManagedAppConfiguration-id
@@ -14287,7 +14212,6 @@ paths:
       tags:
         - deviceAppManagement.targetedManagedAppConfiguration
       summary: Get assignments from deviceAppManagement
-      description: Navigation property to list of inclusion and exclusion groups to which the policy is deployed.
       operationId: deviceAppManagement.targetedManagedAppConfigurations_GetAssignments
       parameters:
         - name: targetedManagedAppConfiguration-id
@@ -14410,7 +14334,6 @@ paths:
       tags:
         - deviceAppManagement.targetedManagedAppConfiguration
       summary: Get deploymentSummary from deviceAppManagement
-      description: Navigation property to deployment summary of the configuration.
       operationId: deviceAppManagement.targetedManagedAppConfigurations_GetDeploymentSummary
       parameters:
         - name: targetedManagedAppConfiguration-id
@@ -14623,7 +14546,6 @@ paths:
       tags:
         - deviceAppManagement.vppToken
       summary: Get vppTokens from deviceAppManagement
-      description: List of Vpp tokens for this organization.
       operationId: deviceAppManagement_ListVppTokens
       parameters:
         - $ref: '#/components/parameters/top'
@@ -14755,7 +14677,6 @@ paths:
       tags:
         - deviceAppManagement.vppToken
       summary: Get vppTokens from deviceAppManagement
-      description: List of Vpp tokens for this organization.
       operationId: deviceAppManagement_GetVppTokens
       parameters:
         - name: vppToken-id
@@ -14813,6 +14734,11 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.vppToken'
+          links:
+            revokeLicenses:
+              operationId: deviceAppManagement.vppTokens.vppToken.revokeLicenses
+            syncLicenses:
+              operationId: deviceAppManagement.vppTokens.vppToken.syncLicenses
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -14871,7 +14797,6 @@ paths:
       tags:
         - deviceAppManagement.Actions
       summary: Invoke action revokeLicenses
-      description: Revoke licenses associated with a specific appleVolumePurchaseProgramToken
       operationId: deviceAppManagement.vppTokens_revokeLicenses
       parameters:
         - name: vppToken-id
@@ -14909,7 +14834,6 @@ paths:
       tags:
         - deviceAppManagement.Actions
       summary: Invoke action syncLicenses
-      description: Syncs licenses associated with a specific appleVolumePurchaseProgramToken
       operationId: deviceAppManagement.vppTokens_syncLicenses
       parameters:
         - name: vppToken-id
@@ -14978,7 +14902,6 @@ paths:
       tags:
         - deviceAppManagement.windowsDefenderApplicationControlSupplementalPolicy
       summary: Get wdacSupplementalPolicies from deviceAppManagement
-      description: The collection of Windows Defender Application Control Supplemental Policies.
       operationId: deviceAppManagement_ListWdacSupplementalPolicies
       parameters:
         - $ref: '#/components/parameters/top'
@@ -15089,7 +15012,6 @@ paths:
       tags:
         - deviceAppManagement.windowsDefenderApplicationControlSupplementalPolicy
       summary: Get wdacSupplementalPolicies from deviceAppManagement
-      description: The collection of Windows Defender Application Control Supplemental Policies.
       operationId: deviceAppManagement_GetWdacSupplementalPolicies
       parameters:
         - name: windowsDefenderApplicationControlSupplementalPolicy-id
@@ -15157,6 +15079,8 @@ paths:
               operationId: deviceAppManagement.WdacSupplementalPolicies.ListDeviceStatuses
               parameters:
                 windowsDefenderApplicationControlSupplementalPolicy-id: $request.path.windowsDefenderApplicationControlSupplementalPolicy-id
+            assign:
+              operationId: deviceAppManagement.wdacSupplementalPolicies.windowsDefenderApplicationControlSupplementalPolicy.assign
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -15215,7 +15139,6 @@ paths:
       tags:
         - deviceAppManagement.windowsDefenderApplicationControlSupplementalPolicy
       summary: Get assignments from deviceAppManagement
-      description: The associated group assignments for this WindowsDefenderApplicationControl supplemental policy.
       operationId: deviceAppManagement.wdacSupplementalPolicies_ListAssignments
       parameters:
         - name: windowsDefenderApplicationControlSupplementalPolicy-id
@@ -15314,7 +15237,6 @@ paths:
       tags:
         - deviceAppManagement.windowsDefenderApplicationControlSupplementalPolicy
       summary: Get assignments from deviceAppManagement
-      description: The associated group assignments for this WindowsDefenderApplicationControl supplemental policy.
       operationId: deviceAppManagement.wdacSupplementalPolicies_GetAssignments
       parameters:
         - name: windowsDefenderApplicationControlSupplementalPolicy-id
@@ -15435,7 +15357,6 @@ paths:
       tags:
         - deviceAppManagement.windowsDefenderApplicationControlSupplementalPolicy
       summary: Get deploySummary from deviceAppManagement
-      description: WindowsDefenderApplicationControl supplemental policy deployment summary.
       operationId: deviceAppManagement.wdacSupplementalPolicies_GetDeploySummary
       parameters:
         - name: windowsDefenderApplicationControlSupplementalPolicy-id
@@ -15536,7 +15457,6 @@ paths:
       tags:
         - deviceAppManagement.windowsDefenderApplicationControlSupplementalPolicy
       summary: Get deviceStatuses from deviceAppManagement
-      description: The list of device deployment states for this WindowsDefenderApplicationControl supplemental policy.
       operationId: deviceAppManagement.wdacSupplementalPolicies_ListDeviceStatuses
       parameters:
         - name: windowsDefenderApplicationControlSupplementalPolicy-id
@@ -15661,7 +15581,6 @@ paths:
       tags:
         - deviceAppManagement.windowsDefenderApplicationControlSupplementalPolicy
       summary: Get deviceStatuses from deviceAppManagement
-      description: The list of device deployment states for this WindowsDefenderApplicationControl supplemental policy.
       operationId: deviceAppManagement.wdacSupplementalPolicies_GetDeviceStatuses
       parameters:
         - name: windowsDefenderApplicationControlSupplementalPolicy-id
@@ -15798,7 +15717,6 @@ paths:
       tags:
         - deviceAppManagement.windowsDefenderApplicationControlSupplementalPolicy
       summary: Get policy from deviceAppManagement
-      description: The navigation link to the WindowsDefenderApplicationControl supplemental policy.
       operationId: deviceAppManagement.wdacSupplementalPolicies.deviceStatuses_GetPolicy
       parameters:
         - name: windowsDefenderApplicationControlSupplementalPolicy-id
@@ -15918,7 +15836,6 @@ paths:
       tags:
         - deviceAppManagement.windowsInformationProtectionDeviceRegistration
       summary: Get windowsInformationProtectionDeviceRegistrations from deviceAppManagement
-      description: Windows information protection device registrations that are not MDM enrolled.
       operationId: deviceAppManagement_ListWindowsInformationProtectionDeviceRegistrations
       parameters:
         - $ref: '#/components/parameters/top'
@@ -16017,7 +15934,6 @@ paths:
       tags:
         - deviceAppManagement.windowsInformationProtectionDeviceRegistration
       summary: Get windowsInformationProtectionDeviceRegistrations from deviceAppManagement
-      description: Windows information protection device registrations that are not MDM enrolled.
       operationId: deviceAppManagement_GetWindowsInformationProtectionDeviceRegistrations
       parameters:
         - name: windowsInformationProtectionDeviceRegistration-id
@@ -16064,6 +15980,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.windowsInformationProtectionDeviceRegistration'
+          links:
+            wipe:
+              operationId: deviceAppManagement.windowsInformationProtectionDeviceRegistrations.windowsInformationProtectionDeviceRegistration.wipe
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -16142,7 +16061,6 @@ paths:
       tags:
         - deviceAppManagement.windowsInformationProtectionPolicy
       summary: Get windowsInformationProtectionPolicies from deviceAppManagement
-      description: Windows information protection for apps running on devices which are not MDM enrolled.
       operationId: deviceAppManagement_ListWindowsInformationProtectionPolicies
       parameters:
         - $ref: '#/components/parameters/top'
@@ -16349,7 +16267,6 @@ paths:
       tags:
         - deviceAppManagement.windowsInformationProtectionPolicy
       summary: Get windowsInformationProtectionPolicies from deviceAppManagement
-      description: Windows information protection for apps running on devices which are not MDM enrolled.
       operationId: deviceAppManagement_GetWindowsInformationProtectionPolicies
       parameters:
         - name: windowsInformationProtectionPolicy-id
@@ -16507,7 +16424,6 @@ paths:
       tags:
         - deviceAppManagement.windowsInformationProtectionWipeAction
       summary: Get windowsInformationProtectionWipeActions from deviceAppManagement
-      description: Windows information protection wipe actions.
       operationId: deviceAppManagement_ListWindowsInformationProtectionWipeActions
       parameters:
         - $ref: '#/components/parameters/top'
@@ -16606,7 +16522,6 @@ paths:
       tags:
         - deviceAppManagement.windowsInformationProtectionWipeAction
       summary: Get windowsInformationProtectionWipeActions from deviceAppManagement
-      description: Windows information protection wipe actions.
       operationId: deviceAppManagement_GetWindowsInformationProtectionWipeActions
       parameters:
         - name: windowsInformationProtectionWipeAction-id
@@ -16711,7 +16626,6 @@ paths:
       tags:
         - deviceAppManagement.windowsManagementApp
       summary: Get windowsManagementApp from deviceAppManagement
-      description: Windows management app.
       operationId: deviceAppManagement_GetWindowsManagementApp
       parameters:
         - name: $select
@@ -16826,7 +16740,6 @@ paths:
       tags:
         - officeConfiguration.officeClientConfiguration
       summary: Get clientConfigurations from officeConfiguration
-      description: List of office Client configuration.
       operationId: officeConfiguration_ListClientConfigurations
       parameters:
         - $ref: '#/components/parameters/top'
@@ -16930,7 +16843,6 @@ paths:
       tags:
         - officeConfiguration.officeClientConfiguration
       summary: Get clientConfigurations from officeConfiguration
-      description: List of office Client configuration.
       operationId: officeConfiguration_GetClientConfigurations
       parameters:
         - name: officeClientConfiguration-id
@@ -16985,6 +16897,8 @@ paths:
               operationId: officeConfiguration.ClientConfigurations.ListAssignments
               parameters:
                 officeClientConfiguration-id: $request.path.officeClientConfiguration-id
+            assign:
+              operationId: officeConfiguration.clientConfigurations.officeClientConfiguration.assign
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -17043,7 +16957,6 @@ paths:
       tags:
         - officeConfiguration.officeClientConfiguration
       summary: Get assignments from officeConfiguration
-      description: The list of group assignments for the policy.
       operationId: officeConfiguration.clientConfigurations_ListAssignments
       parameters:
         - name: officeClientConfiguration-id
@@ -17142,7 +17055,6 @@ paths:
       tags:
         - officeConfiguration.officeClientConfiguration
       summary: Get assignments from officeConfiguration
-      description: The list of group assignments for the policy.
       operationId: officeConfiguration.clientConfigurations_GetAssignments
       parameters:
         - name: officeClientConfiguration-id
@@ -17309,7 +17221,6 @@ paths:
       tags:
         - officeConfiguration.officeClientConfiguration
       summary: Get policyPayload for the navigation property clientConfigurations from officeConfiguration
-      description: 'Policy settings JSON string in binary format, these values cannot be changed by the user.'
       operationId: officeConfiguration_GetClientConfigurationsPolicyPayload
       parameters:
         - name: officeClientConfiguration-id
@@ -17334,7 +17245,6 @@ paths:
       tags:
         - officeConfiguration.officeClientConfiguration
       summary: Update policyPayload for the navigation property clientConfigurations in officeConfiguration
-      description: 'Policy settings JSON string in binary format, these values cannot be changed by the user.'
       operationId: officeConfiguration_SetClientConfigurationsPolicyPayload
       parameters:
         - name: officeClientConfiguration-id
@@ -17363,7 +17273,6 @@ paths:
       tags:
         - officeConfiguration.officeClientConfiguration
       summary: Get userPreferencePayload for the navigation property clientConfigurations from officeConfiguration
-      description: 'Preference settings JSON string in binary format, these values can be overridden by the user.'
       operationId: officeConfiguration_GetClientConfigurationsUserPreferencePayload
       parameters:
         - name: officeClientConfiguration-id
@@ -17388,7 +17297,6 @@ paths:
       tags:
         - officeConfiguration.officeClientConfiguration
       summary: Update userPreferencePayload for the navigation property clientConfigurations in officeConfiguration
-      description: 'Preference settings JSON string in binary format, these values can be overridden by the user.'
       operationId: officeConfiguration_SetClientConfigurationsUserPreferencePayload
       parameters:
         - name: officeClientConfiguration-id
@@ -17451,7 +17359,6 @@ paths:
       tags:
         - users.deviceEnrollmentConfiguration
       summary: Get deviceEnrollmentConfigurations from users
-      description: Get enrollment configurations targeted to the user
       operationId: users_ListDeviceEnrollmentConfigurations
       parameters:
         - name: user-id
@@ -17573,7 +17480,6 @@ paths:
       tags:
         - users.deviceEnrollmentConfiguration
       summary: Get deviceEnrollmentConfigurations from users
-      description: Get enrollment configurations targeted to the user
       operationId: users_GetDeviceEnrollmentConfigurations
       parameters:
         - name: user-id
@@ -17637,6 +17543,12 @@ paths:
               parameters:
                 user-id: $request.path.user-id
                 deviceEnrollmentConfiguration-id: $request.path.deviceEnrollmentConfiguration-id
+            assign:
+              operationId: users.user.deviceEnrollmentConfigurations.deviceEnrollmentConfiguration.assign
+            createEnrollmentNotificationConfiguration:
+              operationId: users.user.deviceEnrollmentConfigurations.deviceEnrollmentConfiguration.createEnrollmentNotificationConfiguration
+            setPriority:
+              operationId: users.user.deviceEnrollmentConfigurations.deviceEnrollmentConfiguration.setPriority
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -17709,7 +17621,6 @@ paths:
       tags:
         - users.deviceEnrollmentConfiguration
       summary: Get assignments from users
-      description: The list of group assignments for the device configuration profile
       operationId: users.deviceEnrollmentConfigurations_ListAssignments
       parameters:
         - name: user-id
@@ -17828,7 +17739,6 @@ paths:
       tags:
         - users.deviceEnrollmentConfiguration
       summary: Get assignments from users
-      description: The list of group assignments for the device configuration profile
       operationId: users.deviceEnrollmentConfigurations_GetAssignments
       parameters:
         - name: user-id
@@ -17972,7 +17882,6 @@ paths:
       tags:
         - users.deviceManagementTroubleshootingEvent
       summary: Get deviceManagementTroubleshootingEvents from users
-      description: The list of troubleshooting events for this user.
       operationId: users_ListDeviceManagementTroubleshootingEvents
       parameters:
         - name: user-id
@@ -18083,7 +17992,6 @@ paths:
       tags:
         - users.deviceManagementTroubleshootingEvent
       summary: Get deviceManagementTroubleshootingEvents from users
-      description: The list of troubleshooting events for this user.
       operationId: users_GetDeviceManagementTroubleshootingEvents
       parameters:
         - name: user-id
@@ -18208,7 +18116,6 @@ paths:
       tags:
         - users.managedAppRegistration
       summary: Get managedAppRegistrations from users
-      description: Zero or more managed app registrations that belong to the user.
       operationId: users_ListManagedAppRegistrations
       parameters:
         - name: user-id
@@ -18328,7 +18235,6 @@ paths:
       tags:
         - users.managedAppRegistration
       summary: Get managedAppRegistrations from users
-      description: Zero or more managed app registrations that belong to the user.
       operationId: users_GetManagedAppRegistrations
       parameters:
         - name: user-id
@@ -18422,7 +18328,6 @@ paths:
       tags:
         - users.managedDevice
       summary: Get managedDevices from users
-      description: The managed devices associated with the user.
       operationId: users_ListManagedDevices
       parameters:
         - name: user-id
@@ -18775,7 +18680,6 @@ paths:
       tags:
         - users.managedDevice
       summary: Get managedDevices from users
-      description: The managed devices associated with the user.
       operationId: users_GetManagedDevices
       parameters:
         - name: user-id
@@ -18973,6 +18877,88 @@ paths:
               parameters:
                 user-id: $request.path.user-id
                 managedDevice-id: $request.path.managedDevice-id
+            activateDeviceEsim:
+              operationId: users.user.managedDevices.managedDevice.activateDeviceEsim
+            bypassActivationLock:
+              operationId: users.user.managedDevices.managedDevice.bypassActivationLock
+            cleanWindowsDevice:
+              operationId: users.user.managedDevices.managedDevice.cleanWindowsDevice
+            createDeviceLogCollectionRequest:
+              operationId: users.user.managedDevices.managedDevice.createDeviceLogCollectionRequest
+            deleteUserFromSharedAppleDevice:
+              operationId: users.user.managedDevices.managedDevice.deleteUserFromSharedAppleDevice
+            deprovision:
+              operationId: users.user.managedDevices.managedDevice.deprovision
+            disable:
+              operationId: users.user.managedDevices.managedDevice.disable
+            disableLostMode:
+              operationId: users.user.managedDevices.managedDevice.disableLostMode
+            enableLostMode:
+              operationId: users.user.managedDevices.managedDevice.enableLostMode
+            getCloudPcRemoteActionResults:
+              operationId: users.user.managedDevices.managedDevice.getCloudPcRemoteActionResults
+            getCloudPcReviewStatus:
+              operationId: users.user.managedDevices.managedDevice.getCloudPcReviewStatus
+            getFileVaultKey:
+              operationId: users.user.managedDevices.managedDevice.getFileVaultKey
+            getNonCompliantSettings:
+              operationId: users.user.managedDevices.managedDevice.getNonCompliantSettings
+            getOemWarranty:
+              operationId: users.user.managedDevices.managedDevice.getOemWarranty
+            locateDevice:
+              operationId: users.user.managedDevices.managedDevice.locateDevice
+            logoutSharedAppleDeviceActiveUser:
+              operationId: users.user.managedDevices.managedDevice.logoutSharedAppleDeviceActiveUser
+            overrideComplianceState:
+              operationId: users.user.managedDevices.managedDevice.overrideComplianceState
+            playLostModeSound:
+              operationId: users.user.managedDevices.managedDevice.playLostModeSound
+            rebootNow:
+              operationId: users.user.managedDevices.managedDevice.rebootNow
+            recoverPasscode:
+              operationId: users.user.managedDevices.managedDevice.recoverPasscode
+            reenable:
+              operationId: users.user.managedDevices.managedDevice.reenable
+            remoteLock:
+              operationId: users.user.managedDevices.managedDevice.remoteLock
+            reprovisionCloudPc:
+              operationId: users.user.managedDevices.managedDevice.reprovisionCloudPc
+            requestRemoteAssistance:
+              operationId: users.user.managedDevices.managedDevice.requestRemoteAssistance
+            resetPasscode:
+              operationId: users.user.managedDevices.managedDevice.resetPasscode
+            resizeCloudPc:
+              operationId: users.user.managedDevices.managedDevice.resizeCloudPc
+            restoreCloudPc:
+              operationId: users.user.managedDevices.managedDevice.restoreCloudPc
+            retire:
+              operationId: users.user.managedDevices.managedDevice.retire
+            revokeAppleVppLicenses:
+              operationId: users.user.managedDevices.managedDevice.revokeAppleVppLicenses
+            rotateBitLockerKeys:
+              operationId: users.user.managedDevices.managedDevice.rotateBitLockerKeys
+            rotateFileVaultKey:
+              operationId: users.user.managedDevices.managedDevice.rotateFileVaultKey
+            sendCustomNotificationToCompanyPortal:
+              operationId: users.user.managedDevices.managedDevice.sendCustomNotificationToCompanyPortal
+            setCloudPcReviewStatus:
+              operationId: users.user.managedDevices.managedDevice.setCloudPcReviewStatus
+            setDeviceName:
+              operationId: users.user.managedDevices.managedDevice.setDeviceName
+            shutDown:
+              operationId: users.user.managedDevices.managedDevice.shutDown
+            syncDevice:
+              operationId: users.user.managedDevices.managedDevice.syncDevice
+            triggerConfigurationManagerAction:
+              operationId: users.user.managedDevices.managedDevice.triggerConfigurationManagerAction
+            updateWindowsDeviceAccount:
+              operationId: users.user.managedDevices.managedDevice.updateWindowsDeviceAccount
+            windowsDefenderScan:
+              operationId: users.user.managedDevices.managedDevice.windowsDefenderScan
+            windowsDefenderUpdateSignatures:
+              operationId: users.user.managedDevices.managedDevice.windowsDefenderUpdateSignatures
+            wipe:
+              operationId: users.user.managedDevices.managedDevice.wipe
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -19045,7 +19031,6 @@ paths:
       tags:
         - users.managedDevice
       summary: Get assignmentFilterEvaluationStatusDetails from users
-      description: Managed device mobile app configuration states for this device.
       operationId: users.managedDevices_ListAssignmentFilterEvaluationStatusDetails
       parameters:
         - name: user-id
@@ -19158,7 +19143,6 @@ paths:
       tags:
         - users.managedDevice
       summary: Get assignmentFilterEvaluationStatusDetails from users
-      description: Managed device mobile app configuration states for this device.
       operationId: users.managedDevices_GetAssignmentFilterEvaluationStatusDetails
       parameters:
         - name: user-id
@@ -19300,7 +19284,6 @@ paths:
       tags:
         - users.managedDevice
       summary: Get detectedApps from users
-      description: All applications currently installed on the device
       operationId: users.managedDevices_ListDetectedApps
       parameters:
         - name: user-id
@@ -19387,7 +19370,6 @@ paths:
       tags:
         - users.managedDevice
       summary: Get detectedApps from users
-      description: All applications currently installed on the device
       operationId: users.managedDevices_GetDetectedApps
       parameters:
         - name: user-id
@@ -19463,7 +19445,6 @@ paths:
       tags:
         - users.managedDevice
       summary: Get deviceCategory from users
-      description: Device category
       operationId: users.managedDevices_GetDeviceCategory
       parameters:
         - name: user-id
@@ -19586,7 +19567,6 @@ paths:
       tags:
         - users.managedDevice
       summary: Get deviceCompliancePolicyStates from users
-      description: Device compliance policy states for this device.
       operationId: users.managedDevices_ListDeviceCompliancePolicyStates
       parameters:
         - name: user-id
@@ -19720,7 +19700,6 @@ paths:
       tags:
         - users.managedDevice
       summary: Get deviceCompliancePolicyStates from users
-      description: Device compliance policy states for this device.
       operationId: users.managedDevices_GetDeviceCompliancePolicyStates
       parameters:
         - name: user-id
@@ -19869,7 +19848,6 @@ paths:
       tags:
         - users.managedDevice
       summary: Get deviceConfigurationStates from users
-      description: Device configuration states for this device.
       operationId: users.managedDevices_ListDeviceConfigurationStates
       parameters:
         - name: user-id
@@ -20003,7 +19981,6 @@ paths:
       tags:
         - users.managedDevice
       summary: Get deviceConfigurationStates from users
-      description: Device configuration states for this device.
       operationId: users.managedDevices_GetDeviceConfigurationStates
       parameters:
         - name: user-id
@@ -20152,7 +20129,6 @@ paths:
       tags:
         - users.managedDevice
       summary: Get logCollectionRequests from users
-      description: List of log collection requests
       operationId: users.managedDevices_ListLogCollectionRequests
       parameters:
         - name: user-id
@@ -20286,7 +20262,6 @@ paths:
       tags:
         - users.managedDevice
       summary: Get logCollectionRequests from users
-      description: List of log collection requests
       operationId: users.managedDevices_GetLogCollectionRequests
       parameters:
         - name: user-id
@@ -20349,6 +20324,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.deviceLogCollectionResponse'
+          links:
+            createDownloadUrl:
+              operationId: users.user.managedDevices.managedDevice.logCollectionRequests.deviceLogCollectionResponse.createDownloadUrl
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -20435,7 +20413,6 @@ paths:
       tags:
         - users.managedDevice
       summary: Get managedDeviceMobileAppConfigurationStates from users
-      description: Managed device mobile app configuration states for this device.
       operationId: users.managedDevices_ListManagedDeviceMobileAppConfigurationStates
       parameters:
         - name: user-id
@@ -20569,7 +20546,6 @@ paths:
       tags:
         - users.managedDevice
       summary: Get managedDeviceMobileAppConfigurationStates from users
-      description: Managed device mobile app configuration states for this device.
       operationId: users.managedDevices_GetManagedDeviceMobileAppConfigurationStates
       parameters:
         - name: user-id
@@ -20718,7 +20694,6 @@ paths:
       tags:
         - users.managedDevice
       summary: Get securityBaselineStates from users
-      description: Security baseline states for this device.
       operationId: users.managedDevices_ListSecurityBaselineStates
       parameters:
         - name: user-id
@@ -20842,7 +20817,6 @@ paths:
       tags:
         - users.managedDevice
       summary: Get securityBaselineStates from users
-      description: Security baseline states for this device.
       operationId: users.managedDevices_GetSecurityBaselineStates
       parameters:
         - name: user-id
@@ -20996,7 +20970,6 @@ paths:
       tags:
         - users.managedDevice
       summary: Get settingStates from users
-      description: The security baseline state for different settings for a device
       operationId: users.managedDevices.securityBaselineStates_ListSettingStates
       parameters:
         - name: user-id
@@ -21144,7 +21117,6 @@ paths:
       tags:
         - users.managedDevice
       summary: Get settingStates from users
-      description: The security baseline state for different settings for a device
       operationId: users.managedDevices.securityBaselineStates_GetSettingStates
       parameters:
         - name: user-id
@@ -21314,7 +21286,6 @@ paths:
       tags:
         - users.managedDevice
       summary: Get users from users
-      description: The primary users associated with the managed device.
       operationId: users.managedDevices_ListUsers
       parameters:
         - name: user-id
@@ -21749,7 +21720,6 @@ paths:
       tags:
         - users.managedDevice
       summary: Get windowsProtectionState from users
-      description: The device protection status. This property is read-only.
       operationId: users.managedDevices_GetWindowsProtectionState
       parameters:
         - name: user-id
@@ -21897,7 +21867,6 @@ paths:
       tags:
         - users.managedDevice
       summary: Get detectedMalwareState from users
-      description: Device malware list
       operationId: users.managedDevices.windowsProtectionState_ListDetectedMalwareState
       parameters:
         - name: user-id
@@ -22037,7 +22006,6 @@ paths:
       tags:
         - users.managedDevice
       summary: Get detectedMalwareState from users
-      description: Device malware list
       operationId: users.managedDevices.windowsProtectionState_GetDetectedMalwareState
       parameters:
         - name: user-id
@@ -22188,7 +22156,6 @@ paths:
       tags:
         - users.mobileAppIntentAndState
       summary: Get mobileAppIntentAndStates from users
-      description: The list of troubleshooting events for this user.
       operationId: users_ListMobileAppIntentAndStates
       parameters:
         - name: user-id
@@ -22293,7 +22260,6 @@ paths:
       tags:
         - users.mobileAppIntentAndState
       summary: Get mobileAppIntentAndStates from users
-      description: The list of troubleshooting events for this user.
       operationId: users_GetMobileAppIntentAndStates
       parameters:
         - name: user-id
@@ -22416,7 +22382,6 @@ paths:
       tags:
         - users.mobileAppTroubleshootingEvent
       summary: Get mobileAppTroubleshootingEvents from users
-      description: The list of mobile app troubleshooting events for this user.
       operationId: users_ListMobileAppTroubleshootingEvents
       parameters:
         - name: user-id
@@ -22541,7 +22506,6 @@ paths:
       tags:
         - users.mobileAppTroubleshootingEvent
       summary: Get mobileAppTroubleshootingEvents from users
-      description: The list of mobile app troubleshooting events for this user.
       operationId: users_GetMobileAppTroubleshootingEvents
       parameters:
         - name: user-id
@@ -22678,7 +22642,6 @@ paths:
       tags:
         - users.mobileAppTroubleshootingEvent
       summary: Get appLogCollectionRequests from users
-      description: The collection property of AppLogUploadRequest.
       operationId: users.mobileAppTroubleshootingEvents_ListAppLogCollectionRequests
       parameters:
         - name: user-id
@@ -22800,7 +22763,6 @@ paths:
       tags:
         - users.mobileAppTroubleshootingEvent
       summary: Get appLogCollectionRequests from users
-      description: The collection property of AppLogUploadRequest.
       operationId: users.mobileAppTroubleshootingEvents_GetAppLogCollectionRequests
       parameters:
         - name: user-id
@@ -22859,6 +22821,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.appLogCollectionRequest'
+          links:
+            createDownloadUrl:
+              operationId: users.user.mobileAppTroubleshootingEvents.mobileAppTroubleshootingEvent.appLogCollectionRequests.appLogCollectionRequest.createDownloadUrl
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -22945,7 +22910,6 @@ paths:
       tags:
         - users.windowsInformationProtectionDeviceRegistration
       summary: Get windowsInformationProtectionDeviceRegistrations from users
-      description: Zero or more WIP device registrations that belong to the user.
       operationId: users_ListWindowsInformationProtectionDeviceRegistrations
       parameters:
         - name: user-id
@@ -23029,7 +22993,6 @@ paths:
       tags:
         - users.windowsInformationProtectionDeviceRegistration
       summary: Get windowsInformationProtectionDeviceRegistrations from users
-      description: Zero or more WIP device registrations that belong to the user.
       operationId: users_GetWindowsInformationProtectionDeviceRegistrations
       parameters:
         - name: user-id

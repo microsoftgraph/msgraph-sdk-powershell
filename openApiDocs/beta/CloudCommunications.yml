@@ -61,6 +61,8 @@ paths:
               operationId: communications.ListOnlineMeetings
             presences:
               operationId: communications.ListPresences
+            getPresencesByUserId:
+              operationId: communications.getPresencesByUserId
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -310,7 +312,6 @@ paths:
       tags:
         - communications.callRecord
       summary: Get sessions from communications
-      description: 'List of sessions involved in the call. Peer-to-peer calls typically only have one session, whereas group calls typically have at least one session per participant. Read-only. Nullable.'
       operationId: communications.callRecords_ListSessions
       parameters:
         - name: callRecord-id
@@ -426,7 +427,6 @@ paths:
       tags:
         - communications.callRecord
       summary: Get sessions from communications
-      description: 'List of sessions involved in the call. Peer-to-peer calls typically only have one session, whereas group calls typically have at least one session per participant. Read-only. Nullable.'
       operationId: communications.callRecords_GetSessions
       parameters:
         - name: callRecord-id
@@ -560,7 +560,6 @@ paths:
       tags:
         - communications.callRecord
       summary: Get segments from communications
-      description: The list of segments involved in the session. Read-only. Nullable.
       operationId: communications.callRecords.sessions_ListSegments
       parameters:
         - name: callRecord-id
@@ -688,7 +687,6 @@ paths:
       tags:
         - communications.callRecord
       summary: Get segments from communications
-      description: The list of segments involved in the session. Read-only. Nullable.
       operationId: communications.callRecords.sessions_GetSegments
       parameters:
         - name: callRecord-id
@@ -1092,6 +1090,36 @@ paths:
               operationId: communications.Calls.ListParticipants
               parameters:
                 call-id: $request.path.call-id
+            addLargeGalleryView:
+              operationId: communications.calls.call.addLargeGalleryView
+            answer:
+              operationId: communications.calls.call.answer
+            cancelMediaProcessing:
+              operationId: communications.calls.call.cancelMediaProcessing
+            changeScreenSharingRole:
+              operationId: communications.calls.call.changeScreenSharingRole
+            keepAlive:
+              operationId: communications.calls.call.keepAlive
+            mute:
+              operationId: communications.calls.call.mute
+            playPrompt:
+              operationId: communications.calls.call.playPrompt
+            record:
+              operationId: communications.calls.call.record
+            recordResponse:
+              operationId: communications.calls.call.recordResponse
+            redirect:
+              operationId: communications.calls.call.redirect
+            reject:
+              operationId: communications.calls.call.reject
+            subscribeToTone:
+              operationId: communications.calls.call.subscribeToTone
+            transfer:
+              operationId: communications.calls.call.transfer
+            unmute:
+              operationId: communications.calls.call.unmute
+            updateRecordingStatus:
+              operationId: communications.calls.call.updateRecordingStatus
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1150,7 +1178,6 @@ paths:
       tags:
         - communications.call
       summary: Get audioRoutingGroups from communications
-      description: Read-only. Nullable.
       operationId: communications.calls_ListAudioRoutingGroups
       parameters:
         - name: call-id
@@ -1255,7 +1282,6 @@ paths:
       tags:
         - communications.call
       summary: Get audioRoutingGroups from communications
-      description: Read-only. Nullable.
       operationId: communications.calls_GetAudioRoutingGroups
       parameters:
         - name: call-id
@@ -1378,7 +1404,6 @@ paths:
       tags:
         - communications.call
       summary: Get contentSharingSessions from communications
-      description: Read-only. Nullable.
       operationId: communications.calls_ListContentSharingSessions
       parameters:
         - name: call-id
@@ -1474,7 +1499,6 @@ paths:
       tags:
         - communications.call
       summary: Get contentSharingSessions from communications
-      description: Read-only. Nullable.
       operationId: communications.calls_GetContentSharingSessions
       parameters:
         - name: call-id
@@ -2235,7 +2259,6 @@ paths:
       tags:
         - communications.call
       summary: Get operations from communications
-      description: Read-only. Nullable.
       operationId: communications.calls_ListOperations
       parameters:
         - name: call-id
@@ -2340,7 +2363,6 @@ paths:
       tags:
         - communications.call
       summary: Get operations from communications
-      description: Read-only. Nullable.
       operationId: communications.calls_GetOperations
       parameters:
         - name: call-id
@@ -2463,7 +2485,6 @@ paths:
       tags:
         - communications.call
       summary: Get participants from communications
-      description: Read-only. Nullable.
       operationId: communications.calls_ListParticipants
       parameters:
         - name: call-id
@@ -2577,7 +2598,6 @@ paths:
       tags:
         - communications.call
       summary: Get participants from communications
-      description: Read-only. Nullable.
       operationId: communications.calls_GetParticipants
       parameters:
         - name: call-id
@@ -2631,6 +2651,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.participant'
+          links:
+            mute:
+              operationId: communications.calls.call.participants.participant.mute
+            startHoldMusic:
+              operationId: communications.calls.call.participants.participant.startHoldMusic
+            stopHoldMusic:
+              operationId: communications.calls.call.participants.participant.stopHoldMusic
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3293,7 +3320,6 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Get alternativeRecording for the navigation property onlineMeetings from communications
-      description: The content stream of the alternative recording of a Microsoft Teams live event. Read-only.
       operationId: communications_GetOnlineMeetingsAlternativeRecording
       parameters:
         - name: onlineMeeting-id
@@ -3318,7 +3344,6 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Update alternativeRecording for the navigation property onlineMeetings in communications
-      description: The content stream of the alternative recording of a Microsoft Teams live event. Read-only.
       operationId: communications_SetOnlineMeetingsAlternativeRecording
       parameters:
         - name: onlineMeeting-id
@@ -3347,7 +3372,6 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Get attendanceReports from communications
-      description: The attendance reports of an online meeting. Read-only.
       operationId: communications.onlineMeetings_ListAttendanceReports
       parameters:
         - name: onlineMeeting-id
@@ -3454,7 +3478,6 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Get attendanceReports from communications
-      description: The attendance reports of an online meeting. Read-only.
       operationId: communications.onlineMeetings_GetAttendanceReports
       parameters:
         - name: onlineMeeting-id
@@ -3585,7 +3608,6 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Get attendanceRecords from communications
-      description: List of attendance records of an attendance report. Read-only.
       operationId: communications.onlineMeetings.attendanceReports_ListAttendanceRecords
       parameters:
         - name: onlineMeeting-id
@@ -3713,7 +3735,6 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Get attendanceRecords from communications
-      description: List of attendance records of an attendance report. Read-only.
       operationId: communications.onlineMeetings.attendanceReports_GetAttendanceRecords
       parameters:
         - name: onlineMeeting-id
@@ -3860,7 +3881,6 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Get attendeeReport for the navigation property onlineMeetings from communications
-      description: The content stream of the attendee report of a Teams live event. Read-only.
       operationId: communications_GetOnlineMeetingsAttendeeReport
       parameters:
         - name: onlineMeeting-id
@@ -3885,7 +3905,6 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Update attendeeReport for the navigation property onlineMeetings in communications
-      description: The content stream of the attendee report of a Teams live event. Read-only.
       operationId: communications_SetOnlineMeetingsAttendeeReport
       parameters:
         - name: onlineMeeting-id
@@ -4022,7 +4041,6 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Get attendanceRecords from communications
-      description: List of attendance records of an attendance report. Read-only.
       operationId: communications.onlineMeetings.meetingAttendanceReport_ListAttendanceRecords
       parameters:
         - name: onlineMeeting-id
@@ -4136,7 +4154,6 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Get attendanceRecords from communications
-      description: List of attendance records of an attendance report. Read-only.
       operationId: communications.onlineMeetings.meetingAttendanceReport_GetAttendanceRecords
       parameters:
         - name: onlineMeeting-id
@@ -4262,7 +4279,6 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Get recording for the navigation property onlineMeetings from communications
-      description: The content stream of the recording of a Teams live event. Read-only.
       operationId: communications_GetOnlineMeetingsRecording
       parameters:
         - name: onlineMeeting-id
@@ -4287,7 +4303,6 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Update recording for the navigation property onlineMeetings in communications
-      description: The content stream of the recording of a Teams live event. Read-only.
       operationId: communications_SetOnlineMeetingsRecording
       parameters:
         - name: onlineMeeting-id
@@ -4316,7 +4331,6 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Get registration from communications
-      description: The registration that has been enabled for an online meeting. One online meeting can only have one registration enabled.
       operationId: communications.onlineMeetings_GetRegistration
       parameters:
         - name: onlineMeeting-id
@@ -4436,7 +4450,6 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Get customQuestions from communications
-      description: Custom registration questions.
       operationId: communications.onlineMeetings.registration_ListCustomQuestions
       parameters:
         - name: onlineMeeting-id
@@ -4544,7 +4557,6 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Get customQuestions from communications
-      description: Custom registration questions.
       operationId: communications.onlineMeetings.registration_GetCustomQuestions
       parameters:
         - name: onlineMeeting-id
@@ -4845,6 +4857,15 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.presence'
+          links:
+            clearPresence:
+              operationId: communications.presences.presence.clearPresence
+            clearUserPreferredPresence:
+              operationId: communications.presences.presence.clearUserPreferredPresence
+            setPresence:
+              operationId: communications.presences.presence.setPresence
+            setUserPreferredPresence:
+              operationId: communications.presences.presence.setUserPreferredPresence
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5389,7 +5410,6 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Get alternativeRecording for the navigation property onlineMeetings from users
-      description: The content stream of the alternative recording of a Microsoft Teams live event. Read-only.
       operationId: users_GetOnlineMeetingsAlternativeRecording
       parameters:
         - name: user-id
@@ -5421,7 +5441,6 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Update alternativeRecording for the navigation property onlineMeetings in users
-      description: The content stream of the alternative recording of a Microsoft Teams live event. Read-only.
       operationId: users_SetOnlineMeetingsAlternativeRecording
       parameters:
         - name: user-id
@@ -5457,7 +5476,6 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Get attendanceReports from users
-      description: The attendance reports of an online meeting. Read-only.
       operationId: users.onlineMeetings_ListAttendanceReports
       parameters:
         - name: user-id
@@ -5578,7 +5596,6 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Get attendanceReports from users
-      description: The attendance reports of an online meeting. Read-only.
       operationId: users.onlineMeetings_GetAttendanceReports
       parameters:
         - name: user-id
@@ -5731,7 +5748,6 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Get attendanceRecords from users
-      description: List of attendance records of an attendance report. Read-only.
       operationId: users.onlineMeetings.attendanceReports_ListAttendanceRecords
       parameters:
         - name: user-id
@@ -5873,7 +5889,6 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Get attendanceRecords from users
-      description: List of attendance records of an attendance report. Read-only.
       operationId: users.onlineMeetings.attendanceReports_GetAttendanceRecords
       parameters:
         - name: user-id
@@ -6041,7 +6056,6 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Get attendeeReport for the navigation property onlineMeetings from users
-      description: The content stream of the attendee report of a Teams live event. Read-only.
       operationId: users_GetOnlineMeetingsAttendeeReport
       parameters:
         - name: user-id
@@ -6073,7 +6087,6 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Update attendeeReport for the navigation property onlineMeetings in users
-      description: The content stream of the attendee report of a Teams live event. Read-only.
       operationId: users_SetOnlineMeetingsAttendeeReport
       parameters:
         - name: user-id
@@ -6239,7 +6252,6 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Get attendanceRecords from users
-      description: List of attendance records of an attendance report. Read-only.
       operationId: users.onlineMeetings.meetingAttendanceReport_ListAttendanceRecords
       parameters:
         - name: user-id
@@ -6367,7 +6379,6 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Get attendanceRecords from users
-      description: List of attendance records of an attendance report. Read-only.
       operationId: users.onlineMeetings.meetingAttendanceReport_GetAttendanceRecords
       parameters:
         - name: user-id
@@ -6514,7 +6525,6 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Get recording for the navigation property onlineMeetings from users
-      description: The content stream of the recording of a Teams live event. Read-only.
       operationId: users_GetOnlineMeetingsRecording
       parameters:
         - name: user-id
@@ -6546,7 +6556,6 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Update recording for the navigation property onlineMeetings in users
-      description: The content stream of the recording of a Teams live event. Read-only.
       operationId: users_SetOnlineMeetingsRecording
       parameters:
         - name: user-id
@@ -6582,7 +6591,6 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Get registration from users
-      description: The registration that has been enabled for an online meeting. One online meeting can only have one registration enabled.
       operationId: users.onlineMeetings_GetRegistration
       parameters:
         - name: user-id
@@ -6725,7 +6733,6 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Get customQuestions from users
-      description: Custom registration questions.
       operationId: users.onlineMeetings.registration_ListCustomQuestions
       parameters:
         - name: user-id
@@ -6847,7 +6854,6 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Get customQuestions from users
-      description: Custom registration questions.
       operationId: users.onlineMeetings.registration_GetCustomQuestions
       parameters:
         - name: user-id
@@ -7035,6 +7041,15 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.presence'
+          links:
+            clearPresence:
+              operationId: users.user.presence.clearPresence
+            clearUserPreferredPresence:
+              operationId: users.user.presence.clearUserPreferredPresence
+            setPresence:
+              operationId: users.user.presence.setPresence
+            setUserPreferredPresence:
+              operationId: users.user.presence.setUserPreferredPresence
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
