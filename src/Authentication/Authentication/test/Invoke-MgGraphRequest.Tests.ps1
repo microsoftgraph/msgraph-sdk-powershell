@@ -1,5 +1,5 @@
 ﻿
-Describe 'Invoke-MgGraphRequest Command' {
+Describe 'Invoke-MgGraphRequest Command' -skip {
      BeforeAll {
          $utils = Join-Path $PSScriptRoot "../../../../tools/Utilities/utils.ps1" -Resolve
           . $utils
