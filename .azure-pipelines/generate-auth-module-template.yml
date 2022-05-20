@@ -67,7 +67,7 @@ jobs:
     inputs:
         userProvideBuildInfo: 'msBuildInfo'
         msBuildVersion: '16.0'
-        msBuildArchitecture: 'x64'
+        msBuildArchitecture: 'DotNetCore'
         msBuildCommandline: '"C:\Program Files\dotnet\dotnet.exe" msbuild $(System.DefaultWorkingDirectory)//src//Authentication//Authentication.sln /nologo /nr:false'
 
   - task: CodeMetrics@1
