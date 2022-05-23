@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Planner
-Module Guid: f7181f05-8604-49a6-b85b-abd0c2dcdeef
+Module Guid: 3df10e14-8e9e-4238-b1b3-6a562ea7f5cf
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.planner
 Help Version: 1.0.0.0
 Locale: en-US
@@ -12,9 +12,7 @@ Microsoft Graph PowerShell Cmdlets
 
 ## Microsoft.Graph.Planner Cmdlets
 ### [Get-MgGroupPlanner](Get-MgGroupPlanner.md)
-Selective Planner services available to the group.
-Read-only.
-Nullable.
+Entry-point to Planner resource that might exist for a Unified Group.
 
 ### [Get-MgGroupPlannerPlan](Get-MgGroupPlannerPlan.md)
 Read-only.
@@ -22,19 +20,19 @@ Nullable.
 Returns the plannerPlans owned by the group.
 
 ### [Get-MgGroupPlannerPlanBucket](Get-MgGroupPlannerPlanBucket.md)
-Collection of buckets in the plan.
 Read-only.
 Nullable.
+Collection of buckets in the plan.
 
 ### [Get-MgGroupPlannerPlanDetail](Get-MgGroupPlannerPlanDetail.md)
-Additional details about the plan.
 Read-only.
 Nullable.
+Additional details about the plan.
 
 ### [Get-MgGroupPlannerPlanTask](Get-MgGroupPlannerPlanTask.md)
-Collection of tasks in the plan.
 Read-only.
 Nullable.
+Collection of tasks in the plan.
 
 ### [Get-MgPlanner](Get-MgPlanner.md)
 Get planner
@@ -55,19 +53,19 @@ Nullable.
 Returns a collection of the specified plans
 
 ### [Get-MgPlannerPlanBucket](Get-MgPlannerPlanBucket.md)
-Collection of buckets in the plan.
 Read-only.
 Nullable.
+Collection of buckets in the plan.
 
 ### [Get-MgPlannerPlanDetail](Get-MgPlannerPlanDetail.md)
-Additional details about the plan.
 Read-only.
 Nullable.
+Additional details about the plan.
 
 ### [Get-MgPlannerPlanTask](Get-MgPlannerPlanTask.md)
-Collection of tasks in the plan.
 Read-only.
 Nullable.
+Collection of tasks in the plan.
 
 ### [Get-MgPlannerTask](Get-MgPlannerTask.md)
 Read-only.
@@ -95,9 +93,8 @@ Nullable.
 Used to render the task correctly in the task board view when grouped by progress.
 
 ### [Get-MgUserPlanner](Get-MgUserPlanner.md)
-Selective Planner services available to the user.
+Entry-point to the Planner resource that might exist for a user.
 Read-only.
-Nullable.
 
 ### [Get-MgUserPlannerPlan](Get-MgUserPlannerPlan.md)
 Read-only.
@@ -107,7 +104,7 @@ Returns the plannerTasks assigned to the user.
 ### [Get-MgUserPlannerTask](Get-MgUserPlannerTask.md)
 Read-only.
 Nullable.
-Returns the plannerTasks assigned to the user.
+Returns the plannerPlans shared with the user.
 
 ### [New-MgPlannerBucket](New-MgPlannerBucket.md)
 Read-only.
@@ -125,9 +122,9 @@ Nullable.
 Returns a collection of the specified tasks
 
 ### [Remove-MgGroupPlannerPlanDetail](Remove-MgGroupPlannerPlanDetail.md)
-Additional details about the plan.
 Read-only.
 Nullable.
+Additional details about the plan.
 
 ### [Remove-MgPlannerBucket](Remove-MgPlannerBucket.md)
 Read-only.
@@ -160,14 +157,12 @@ Nullable.
 Used to render the task correctly in the task board view when grouped by progress.
 
 ### [Update-MgGroupPlanner](Update-MgGroupPlanner.md)
-Selective Planner services available to the group.
-Read-only.
-Nullable.
+Entry-point to Planner resource that might exist for a Unified Group.
 
 ### [Update-MgGroupPlannerPlanDetail](Update-MgGroupPlannerPlanDetail.md)
-Additional details about the plan.
 Read-only.
 Nullable.
+Additional details about the plan.
 
 ### [Update-MgPlanner](Update-MgPlanner.md)
 Update planner
@@ -183,9 +178,9 @@ Nullable.
 Returns a collection of the specified plans
 
 ### [Update-MgPlannerPlanDetail](Update-MgPlannerPlanDetail.md)
-Additional details about the plan.
 Read-only.
 Nullable.
+Additional details about the plan.
 
 ### [Update-MgPlannerTask](Update-MgPlannerTask.md)
 Read-only.
@@ -213,7 +208,6 @@ Nullable.
 Used to render the task correctly in the task board view when grouped by progress.
 
 ### [Update-MgUserPlanner](Update-MgUserPlanner.md)
-Selective Planner services available to the user.
+Entry-point to the Planner resource that might exist for a user.
 Read-only.
-Nullable.
 

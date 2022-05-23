@@ -8,9 +8,9 @@ schema: 2.0.0
 # Update-MgPlannerPlanDetail
 
 ## SYNOPSIS
-Additional details about the plan.
 Read-only.
 Nullable.
+Additional details about the plan.
 
 ## SYNTAX
 
@@ -41,9 +41,9 @@ Update-MgPlannerPlanDetail -InputObject <IPlannerIdentity> [-AdditionalPropertie
 ```
 
 ## DESCRIPTION
-Additional details about the plan.
 Read-only.
 Nullable.
+Additional details about the plan.
 
 ## EXAMPLES
 
