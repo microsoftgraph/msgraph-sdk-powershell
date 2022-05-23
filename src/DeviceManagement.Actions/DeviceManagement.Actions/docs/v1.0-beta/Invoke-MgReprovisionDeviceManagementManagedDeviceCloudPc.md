@@ -1,11 +1,11 @@
 ---
 external help file:
 Module Name: Microsoft.Graph.DeviceManagement.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.actions/invoke-mgclouddevicemanagementscriptdevicerunstatemanageddevice
+online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.actions/invoke-mgreprovisiondevicemanagementmanageddevicecloudpc
 schema: 2.0.0
 ---
 
-# Invoke-MgCloudDeviceManagementScriptDeviceRunStateManagedDevice
+# Invoke-MgReprovisionDeviceManagementManagedDeviceCloudPc
 
 ## SYNOPSIS
 Invoke action reprovisionCloudPc
@@ -14,14 +14,14 @@ Invoke action reprovisionCloudPc
 
 ### Cloud (Default)
 ```
-Invoke-MgCloudDeviceManagementScriptDeviceRunStateManagedDevice -DeviceManagementScriptDeviceStateId <String>
- -DeviceManagementScriptId <String> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Invoke-MgReprovisionDeviceManagementManagedDeviceCloudPc -ManagedDeviceId <String> [-PassThru] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### CloudViaIdentity
 ```
-Invoke-MgCloudDeviceManagementScriptDeviceRunStateManagedDevice
- -InputObject <IDeviceManagementActionsIdentity> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Invoke-MgReprovisionDeviceManagementManagedDeviceCloudPc -InputObject <IDeviceManagementActionsIdentity>
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -30,36 +30,6 @@ Invoke action reprovisionCloudPc
 ## EXAMPLES
 
 ## PARAMETERS
-
-### -DeviceManagementScriptDeviceStateId
-key: id of deviceManagementScriptDeviceState
-
-```yaml
-Type: System.String
-Parameter Sets: Cloud
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -DeviceManagementScriptId
-key: id of deviceManagementScript
-
-```yaml
-Type: System.String
-Parameter Sets: Cloud
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
 
 ### -InputObject
 Identity Parameter
@@ -74,6 +44,21 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### -ManagedDeviceId
+key: id of managedDevice
+
+```yaml
+Type: System.String
+Parameter Sets: Cloud
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -137,6 +122,8 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## NOTES
 
 ALIASES
+
+### Invoke-MgCloudDeviceManagementManagedDevice
 
 COMPLEX PARAMETER PROPERTIES
 
