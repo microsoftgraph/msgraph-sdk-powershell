@@ -12,12 +12,7 @@ Invoke function getByPath
 
 ## SYNTAX
 
-### Get3 (Default)
-```
-Get-MgSiteByPath -SiteId <String> [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
-```
-
-### Get
+### Get (Default)
 ```
 Get-MgSiteByPath -Path <String> -SiteId <String> [<CommonParameters>]
 ```
@@ -27,12 +22,6 @@ Get-MgSiteByPath -Path <String> -SiteId <String> [<CommonParameters>]
 Get-MgSiteByPath -InputObject <ISitesIdentity> [<CommonParameters>]
 ```
 
-### GetViaIdentity3
-```
-Get-MgSiteByPath -InputObject <ISitesIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
- [<CommonParameters>]
-```
-
 ## DESCRIPTION
 Invoke function getByPath
 
@@ -40,28 +29,13 @@ Invoke function getByPath
 
 ## PARAMETERS
 
-### -ExpandProperty
-Expand related entities
-
-```yaml
-Type: System.String[]
-Parameter Sets: Get3, GetViaIdentity3
-Aliases: Expand
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -InputObject
 Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.ISitesIdentity
-Parameter Sets: GetViaIdentity, GetViaIdentity3
+Parameter Sets: GetViaIdentity
 Aliases:
 
 Required: True
@@ -86,27 +60,12 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Property
-Select properties to be returned
-
-```yaml
-Type: System.String[]
-Parameter Sets: Get3, GetViaIdentity3
-Aliases: Select
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -SiteId
 key: id of site
 
 ```yaml
 Type: System.String
-Parameter Sets: Get, Get3
+Parameter Sets: Get
 Aliases:
 
 Required: True
