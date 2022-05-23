@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgGroupEvent
 
 ## SYNOPSIS
-The group's events.
+The group's calendar events.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Remove-MgGroupEvent -InputObject <ICalendarIdentity> [-IfMatch <String>] [-PassT
 ```
 
 ## DESCRIPTION
-The group's events.
+The group's calendar events.
 
 ## EXAMPLES
 
