@@ -8,10 +8,9 @@ schema: 2.0.0
 # Remove-MgUserPerson
 
 ## SYNOPSIS
+People that are relevant to the user.
 Read-only.
-The most relevant people to the user.
-The collection is ordered by their relevance to the user, which is determined by the user's communication, collaboration and business relationships.
-A person is an aggregation of information from across mail, contacts and social networks.
+Nullable.
 
 ## SYNTAX
 
@@ -28,10 +27,9 @@ Remove-MgUserPerson -InputObject <IPeopleIdentity> [-IfMatch <String>] [-PassThr
 ```
 
 ## DESCRIPTION
+People that are relevant to the user.
 Read-only.
-The most relevant people to the user.
-The collection is ordered by their relevance to the user, which is determined by the user's communication, collaboration and business relationships.
-A person is an aggregation of information from across mail, contacts and social networks.
+Nullable.
 
 ## EXAMPLES
 
