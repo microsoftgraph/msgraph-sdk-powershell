@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Calendar
-Module Guid: e784fed5-77b7-4104-bced-5148534467f6
+Module Guid: f565e662-4fa6-4d9c-86da-f65ce9e341c3
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.calendar
 Help Version: 1.0.0.0
 Locale: en-US
@@ -34,7 +34,7 @@ Navigation property.
 Read-only.
 
 ### [Get-MgGroupEvent](Get-MgGroupEvent.md)
-The group's events.
+The group's calendar events.
 
 ### [Get-MgGroupEventAttachment](Get-MgGroupEventAttachment.md)
 The collection of FileAttachment, ItemAttachment, and referenceAttachment attachments for the event.
@@ -43,6 +43,11 @@ Read-only.
 Nullable.
 
 ### [Get-MgGroupEventCalendar](Get-MgGroupEventCalendar.md)
+The calendar that contains the event.
+Navigation property.
+Read-only.
+
+### [Get-MgGroupEventCalendarByRef](Get-MgGroupEventCalendarByRef.md)
 The calendar that contains the event.
 Navigation property.
 Read-only.
@@ -116,7 +121,7 @@ Nullable.
 
 ### [Get-MgUserEvent](Get-MgUserEvent.md)
 The user's events.
-Default is to show events under the Default Calendar.
+Default is to show Events under the Default Calendar.
 Read-only.
 Nullable.
 
@@ -127,6 +132,11 @@ Read-only.
 Nullable.
 
 ### [Get-MgUserEventCalendar](Get-MgUserEventCalendar.md)
+The calendar that contains the event.
+Navigation property.
+Read-only.
+
+### [Get-MgUserEventCalendarByRef](Get-MgUserEventCalendarByRef.md)
 The calendar that contains the event.
 Navigation property.
 Read-only.
@@ -166,7 +176,7 @@ Read-only.
 Nullable.
 
 ### [New-MgGroupEvent](New-MgGroupEvent.md)
-The group's events.
+The group's calendar events.
 
 ### [New-MgGroupEventAttachment](New-MgGroupEventAttachment.md)
 The collection of FileAttachment, ItemAttachment, and referenceAttachment attachments for the event.
@@ -234,7 +244,7 @@ Nullable.
 
 ### [New-MgUserEvent](New-MgUserEvent.md)
 The user's events.
-Default is to show events under the Default Calendar.
+Default is to show Events under the Default Calendar.
 Read-only.
 Nullable.
 
@@ -279,7 +289,7 @@ Read-only.
 Nullable.
 
 ### [Remove-MgGroupEvent](Remove-MgGroupEvent.md)
-The group's events.
+The group's calendar events.
 
 ### [Remove-MgGroupEventAttachment](Remove-MgGroupEventAttachment.md)
 The collection of FileAttachment, ItemAttachment, and referenceAttachment attachments for the event.
@@ -287,7 +297,7 @@ Navigation property.
 Read-only.
 Nullable.
 
-### [Remove-MgGroupEventCalendar](Remove-MgGroupEventCalendar.md)
+### [Remove-MgGroupEventCalendarByRef](Remove-MgGroupEventCalendarByRef.md)
 The calendar that contains the event.
 Navigation property.
 Read-only.
@@ -341,7 +351,7 @@ Nullable.
 
 ### [Remove-MgUserEvent](Remove-MgUserEvent.md)
 The user's events.
-Default is to show events under the Default Calendar.
+Default is to show Events under the Default Calendar.
 Read-only.
 Nullable.
 
@@ -351,7 +361,7 @@ Navigation property.
 Read-only.
 Nullable.
 
-### [Remove-MgUserEventCalendar](Remove-MgUserEventCalendar.md)
+### [Remove-MgUserEventCalendarByRef](Remove-MgUserEventCalendarByRef.md)
 The calendar that contains the event.
 Navigation property.
 Read-only.
@@ -377,6 +387,16 @@ The collection of single-value extended properties defined for the event.
 Read-only.
 Nullable.
 
+### [Set-MgGroupEventCalendarByRef](Set-MgGroupEventCalendarByRef.md)
+The calendar that contains the event.
+Navigation property.
+Read-only.
+
+### [Set-MgUserEventCalendarByRef](Set-MgUserEventCalendarByRef.md)
+The calendar that contains the event.
+Navigation property.
+Read-only.
+
 ### [Update-MgGroupCalendarMultiValueExtendedProperty](Update-MgGroupCalendarMultiValueExtendedProperty.md)
 The collection of multi-value extended properties defined for the calendar.
 Read-only.
@@ -391,7 +411,7 @@ Read-only.
 Nullable.
 
 ### [Update-MgGroupEvent](Update-MgGroupEvent.md)
-The group's events.
+The group's calendar events.
 
 ### [Update-MgGroupEventAttachment](Update-MgGroupEventAttachment.md)
 The collection of FileAttachment, ItemAttachment, and referenceAttachment attachments for the event.
@@ -448,7 +468,7 @@ Nullable.
 
 ### [Update-MgUserEvent](Update-MgUserEvent.md)
 The user's events.
-Default is to show events under the Default Calendar.
+Default is to show Events under the Default Calendar.
 Read-only.
 Nullable.
 

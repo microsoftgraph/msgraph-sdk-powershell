@@ -1,11 +1,11 @@
 ---
 external help file:
 Module Name: Microsoft.Graph.Calendar
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.calendar/remove-mgusereventcalendar
+online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.calendar/set-mgusereventcalendarbyref
 schema: 2.0.0
 ---
 
-# Remove-MgUserEventCalendar
+# Set-MgUserEventCalendarByRef
 
 ## SYNOPSIS
 The calendar that contains the event.
@@ -14,16 +14,28 @@ Read-only.
 
 ## SYNTAX
 
-### Delete1 (Default)
+### SetExpanded1 (Default)
 ```
-Remove-MgUserEventCalendar -EventId <String> -UserId <String> [-IfMatch <String>] [-PassThru] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+Set-MgUserEventCalendarByRef -EventId <String> -UserId <String> [-AdditionalProperties <Hashtable>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### DeleteViaIdentity1
+### Set1
 ```
-Remove-MgUserEventCalendar -InputObject <ICalendarIdentity> [-IfMatch <String>] [-PassThru] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+Set-MgUserEventCalendarByRef -EventId <String> -UserId <String> -BodyParameter <Hashtable> [-PassThru]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
+```
+
+### SetViaIdentity1
+```
+Set-MgUserEventCalendarByRef -InputObject <ICalendarIdentity> -BodyParameter <Hashtable> [-PassThru]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
+```
+
+### SetViaIdentityExpanded1
+```
+Set-MgUserEventCalendarByRef -InputObject <ICalendarIdentity> [-AdditionalProperties <Hashtable>] [-PassThru]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -35,30 +47,45 @@ Read-only.
 
 ## PARAMETERS
 
-### -EventId
-key: id of event
+### -AdditionalProperties
+Additional Parameters
 
 ```yaml
-Type: System.String
-Parameter Sets: Delete1
+Type: System.Collections.Hashtable
+Parameter Sets: SetExpanded1, SetViaIdentityExpanded1
 Aliases:
 
-Required: True
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -IfMatch
-ETag
+### -BodyParameter
+.
+
+```yaml
+Type: System.Collections.Hashtable
+Parameter Sets: Set1, SetViaIdentity1
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### -EventId
+key: id of event
 
 ```yaml
 Type: System.String
-Parameter Sets: (All)
+Parameter Sets: Set1, SetExpanded1
 Aliases:
 
-Required: False
+Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -71,7 +98,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.ICalendarIdentity
-Parameter Sets: DeleteViaIdentity1
+Parameter Sets: SetViaIdentity1, SetViaIdentityExpanded1
 Aliases:
 
 Required: True
@@ -101,7 +128,7 @@ key: id of user
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete1
+Parameter Sets: Set1, SetExpanded1
 Aliases:
 
 Required: True
@@ -148,6 +175,8 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.PowerShell.Models.ICalendarIdentity
+
+### System.Collections.Hashtable
 
 ## OUTPUTS
 
