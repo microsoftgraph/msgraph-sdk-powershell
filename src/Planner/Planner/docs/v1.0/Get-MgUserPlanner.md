@@ -8,9 +8,8 @@ schema: 2.0.0
 # Get-MgUserPlanner
 
 ## SYNOPSIS
-Selective Planner services available to the user.
+Entry-point to the Planner resource that might exist for a user.
 Read-only.
-Nullable.
 
 ## SYNTAX
 
@@ -26,9 +25,8 @@ Get-MgUserPlanner -InputObject <IPlannerIdentity> [-ExpandProperty <String[]>] [
 ```
 
 ## DESCRIPTION
-Selective Planner services available to the user.
+Entry-point to the Planner resource that might exist for a user.
 Read-only.
-Nullable.
 
 ## EXAMPLES
 
