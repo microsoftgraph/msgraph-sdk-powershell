@@ -217,7 +217,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOnenotePage
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOnenotePage1
 
 ## NOTES
 

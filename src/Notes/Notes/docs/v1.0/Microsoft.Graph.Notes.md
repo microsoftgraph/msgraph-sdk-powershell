@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Notes
-Module Guid: 01c6be7c-3f2c-41aa-ab11-700a8b3e1599
+Module Guid: 1a17971f-d871-4bb3-ac95-1da6d7914de2
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.notes
 Help Version: 1.0.0.0
 Locale: en-US
@@ -64,6 +64,11 @@ The sections in the section group.
 Read-only.
 Nullable.
 
+### [Get-MgGroupOnenoteSectionGroupSectionGroupByRef](Get-MgGroupOnenoteSectionGroupSectionGroupByRef.md)
+The section groups in the section.
+Read-only.
+Nullable.
+
 ### [Get-MgGroupOnenoteSectionPage](Get-MgGroupOnenoteSectionPage.md)
 The collection of pages in the section.
 Read-only.
@@ -119,6 +124,11 @@ Nullable.
 
 ### [Get-MgSiteOnenoteSectionGroupSection](Get-MgSiteOnenoteSectionGroupSection.md)
 The sections in the section group.
+Read-only.
+Nullable.
+
+### [Get-MgSiteOnenoteSectionGroupSectionGroupByRef](Get-MgSiteOnenoteSectionGroupSectionGroupByRef.md)
+The section groups in the section.
 Read-only.
 Nullable.
 
@@ -180,6 +190,11 @@ The sections in the section group.
 Read-only.
 Nullable.
 
+### [Get-MgUserOnenoteSectionGroupSectionGroupByRef](Get-MgUserOnenoteSectionGroupSectionGroupByRef.md)
+The section groups in the section.
+Read-only.
+Nullable.
+
 ### [Get-MgUserOnenoteSectionPage](Get-MgUserOnenoteSectionPage.md)
 The collection of pages in the section.
 Read-only.
@@ -217,6 +232,11 @@ Nullable.
 
 ### [New-MgGroupOnenoteSectionGroupSection](New-MgGroupOnenoteSectionGroupSection.md)
 The sections in the section group.
+Read-only.
+Nullable.
+
+### [New-MgGroupOnenoteSectionGroupSectionGroupByRef](New-MgGroupOnenoteSectionGroupSectionGroupByRef.md)
+The section groups in the section.
 Read-only.
 Nullable.
 
@@ -260,6 +280,11 @@ The sections in the section group.
 Read-only.
 Nullable.
 
+### [New-MgSiteOnenoteSectionGroupSectionGroupByRef](New-MgSiteOnenoteSectionGroupSectionGroupByRef.md)
+The section groups in the section.
+Read-only.
+Nullable.
+
 ### [New-MgSiteOnenoteSectionPage](New-MgSiteOnenoteSectionPage.md)
 The collection of pages in the section.
 Read-only.
@@ -297,6 +322,11 @@ Nullable.
 
 ### [New-MgUserOnenoteSectionGroupSection](New-MgUserOnenoteSectionGroupSection.md)
 The sections in the section group.
+Read-only.
+Nullable.
+
+### [New-MgUserOnenoteSectionGroupSectionGroupByRef](New-MgUserOnenoteSectionGroupSectionGroupByRef.md)
+The section groups in the section.
 Read-only.
 Nullable.
 
