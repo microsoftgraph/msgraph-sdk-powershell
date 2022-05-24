@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Sites
-Module Guid: 5e949aa4-699c-4499-96f8-28994c897acf
+Module Guid: 37974c32-395b-4086-9c34-dd94ce9e4f1b
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.sites
 Help Version: 1.0.0.0
 Locale: en-US
@@ -52,7 +52,7 @@ The list of SharePoint sites in this group.
 Access the default site with /sites/root.
 
 ### [Get-MgSite](Get-MgSite.md)
-Invoke function getByPath
+Get entity from sites by key
 
 ### [Get-MgSiteActivityByInterval](Get-MgSiteActivityByInterval.md)
 Invoke function getActivitiesByInterval
@@ -65,6 +65,9 @@ Analytics about the view activities that took place in this site.
 
 ### [Get-MgSiteApplicableContentType](Get-MgSiteApplicableContentType.md)
 Invoke function getApplicableContentTypesForList
+
+### [Get-MgSiteByPath](Get-MgSiteByPath.md)
+Invoke function getByPath
 
 ### [Get-MgSiteColumn](Get-MgSiteColumn.md)
 The collection of column definitions reusable across lists under this site.
@@ -212,9 +215,6 @@ Nullable.
 
 ### [Get-MgSiteRecentNotebook](Get-MgSiteRecentNotebook.md)
 Invoke function getRecentNotebooks
-
-### [Get-MgSiteSiteByRef](Get-MgSiteSiteByRef.md)
-The collection of the sub-sites under this site.
 
 ### [Get-MgSiteTermStore](Get-MgSiteTermStore.md)
 The default termStore under this site.
@@ -442,7 +442,10 @@ The [set] in which the term is created.
 The [set] in which the term is created.
 
 ### [Get-MgSubSite](Get-MgSubSite.md)
-Get entity from sites by key
+The collection of the sub-sites under this site.
+
+### [Get-MgSubSiteByRef](Get-MgSubSiteByRef.md)
+The collection of the sub-sites under this site.
 
 ### [Get-MgUserFollowedSite](Get-MgUserFollowedSite.md)
 Get followedSites from users
@@ -530,9 +533,6 @@ The set of subscriptions on the list.
 The permissions associated with the site.
 Nullable.
 
-### [New-MgSiteSiteByRef](New-MgSiteSiteByRef.md)
-The collection of the sub-sites under this site.
-
 ### [New-MgSiteTermStore](New-MgSiteTermStore.md)
 The collection of termStores under this site.
 
@@ -584,8 +584,8 @@ Children of current term.
 ### [New-MgSiteTermStoreSetTermRelation](New-MgSiteTermStoreSetTermRelation.md)
 To indicate which terms are related to the current term as either pinned or reused.
 
-### [New-MgSubSite](New-MgSubSite.md)
-Add new entity to sites
+### [New-MgSubSiteByRef](New-MgSubSiteByRef.md)
+The collection of the sub-sites under this site.
 
 ### [New-MgUserFollowedSiteByRef](New-MgUserFollowedSiteByRef.md)
 Create new navigation property ref to followedSites for users
@@ -976,6 +976,9 @@ Invoke action unpublish
 The list of SharePoint sites in this group.
 Access the default site with /sites/root.
 
+### [Update-MgSite](Update-MgSite.md)
+Update entity in sites
+
 ### [Update-MgSiteColumn](Update-MgSiteColumn.md)
 The collection of column definitions reusable across lists under this site.
 
@@ -1081,7 +1084,4 @@ Children of current term.
 
 ### [Update-MgSiteTermStoreSetTermRelation](Update-MgSiteTermStoreSetTermRelation.md)
 To indicate which terms are related to the current term as either pinned or reused.
-
-### [Update-MgSubSite](Update-MgSubSite.md)
-Update entity in sites
 
