@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Users.Actions
-Module Guid: 7b5c668d-59a2-48a9-b13a-fa6d1cbe8578
+Module Guid: e7470e09-4459-4d46-b05b-cb9c2d097c81
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.actions
 Help Version: 1.0.0.0
 Locale: en-US
@@ -167,17 +167,14 @@ Invoke action batchRecordDecisions
 ### [Invoke-MgBatchUserPendingAccessReviewInstanceRecordDecision](Invoke-MgBatchUserPendingAccessReviewInstanceRecordDecision.md)
 Invoke action batchRecordDecisions
 
-### [Invoke-MgBulkUserManagedDeviceReprovisionCloudPc](Invoke-MgBulkUserManagedDeviceReprovisionCloudPc.md)
+### [Invoke-MgBulkReprovisionUserManagedDeviceCloudPc](Invoke-MgBulkReprovisionUserManagedDeviceCloudPc.md)
 Invoke action bulkReprovisionCloudPc
 
-### [Invoke-MgBulkUserManagedDeviceRestoreCloudPc](Invoke-MgBulkUserManagedDeviceRestoreCloudPc.md)
+### [Invoke-MgBulkRestoreUserManagedDeviceCloudPc](Invoke-MgBulkRestoreUserManagedDeviceCloudPc.md)
 Invoke action bulkRestoreCloudPc
 
 ### [Invoke-MgCleanUserManagedDeviceWindowDevice](Invoke-MgCleanUserManagedDeviceWindowDevice.md)
 Clean Windows device
-
-### [Invoke-MgCloudUserManagedDevice](Invoke-MgCloudUserManagedDevice.md)
-Invoke action reprovisionCloudPc
 
 ### [Invoke-MgCreateOrGetUserOnlineMeeting](Invoke-MgCreateOrGetUserOnlineMeeting.md)
 Invoke action createOrGet
@@ -262,6 +259,9 @@ Invoke action reply
 
 ### [Invoke-MgReprovisionUserCloudPc](Invoke-MgReprovisionUserCloudPc.md)
 Invoke action reprovision
+
+### [Invoke-MgReprovisionUserManagedDeviceCloudPc](Invoke-MgReprovisionUserManagedDeviceCloudPc.md)
+Invoke action reprovisionCloudPc
 
 ### [Invoke-MgRetireUserManagedDevice](Invoke-MgRetireUserManagedDevice.md)
 Retire a device

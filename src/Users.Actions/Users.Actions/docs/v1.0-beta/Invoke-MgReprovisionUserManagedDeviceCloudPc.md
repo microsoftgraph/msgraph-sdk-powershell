@@ -1,82 +1,35 @@
 ---
 external help file:
 Module Name: Microsoft.Graph.Users.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.actions/invoke-mgbulkusermanageddevicerestorecloudpc
+online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.actions/invoke-mgreprovisionusermanageddevicecloudpc
 schema: 2.0.0
 ---
 
-# Invoke-MgBulkUserManagedDeviceRestoreCloudPc
+# Invoke-MgReprovisionUserManagedDeviceCloudPc
 
 ## SYNOPSIS
-Invoke action bulkRestoreCloudPc
+Invoke action reprovisionCloudPc
 
 ## SYNTAX
 
-### BulkExpanded (Default)
+### Cloud (Default)
 ```
-Invoke-MgBulkUserManagedDeviceRestoreCloudPc -UserId <String> [-AdditionalProperties <Hashtable>]
- [-ManagedDeviceIds <String[]>] [-RestorePointDateTime <DateTime>] [-TimeRange <String>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
-```
-
-### Bulk
-```
-Invoke-MgBulkUserManagedDeviceRestoreCloudPc -UserId <String>
- -BodyParameter <IPaths14X3W2OUsersUserIdManageddevicesMicrosoftGraphBulkrestorecloudpcPostRequestbodyContentApplicationJsonSchema>
- [-Confirm] [-WhatIf] [<CommonParameters>]
+Invoke-MgReprovisionUserManagedDeviceCloudPc -ManagedDeviceId <String> -UserId <String> [-PassThru] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
-### BulkViaIdentity
+### CloudViaIdentity
 ```
-Invoke-MgBulkUserManagedDeviceRestoreCloudPc -InputObject <IUsersActionsIdentity>
- -BodyParameter <IPaths14X3W2OUsersUserIdManageddevicesMicrosoftGraphBulkrestorecloudpcPostRequestbodyContentApplicationJsonSchema>
- [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### BulkViaIdentityExpanded
-```
-Invoke-MgBulkUserManagedDeviceRestoreCloudPc -InputObject <IUsersActionsIdentity>
- [-AdditionalProperties <Hashtable>] [-ManagedDeviceIds <String[]>] [-RestorePointDateTime <DateTime>]
- [-TimeRange <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
+Invoke-MgReprovisionUserManagedDeviceCloudPc -InputObject <IUsersActionsIdentity> [-PassThru] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Invoke action bulkRestoreCloudPc
+Invoke action reprovisionCloudPc
 
 ## EXAMPLES
 
 ## PARAMETERS
-
-### -AdditionalProperties
-Additional Parameters
-
-```yaml
-Type: System.Collections.Hashtable
-Parameter Sets: BulkExpanded, BulkViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -BodyParameter
-.
-To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
-
-```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths14X3W2OUsersUserIdManageddevicesMicrosoftGraphBulkrestorecloudpcPostRequestbodyContentApplicationJsonSchema
-Parameter Sets: Bulk, BulkViaIdentity
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
 
 ### -InputObject
 Identity Parameter
@@ -84,7 +37,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
-Parameter Sets: BulkViaIdentity, BulkViaIdentityExpanded
+Parameter Sets: CloudViaIdentity
 Aliases:
 
 Required: True
@@ -94,42 +47,27 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -ManagedDeviceIds
-.
-
-```yaml
-Type: System.String[]
-Parameter Sets: BulkExpanded, BulkViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -RestorePointDateTime
-.
-
-```yaml
-Type: System.DateTime
-Parameter Sets: BulkExpanded, BulkViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -TimeRange
-restoreTimeRange
+### -ManagedDeviceId
+key: id of managedDevice
 
 ```yaml
 Type: System.String
-Parameter Sets: BulkExpanded, BulkViaIdentityExpanded
+Parameter Sets: Cloud
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -PassThru
+Returns true when the command succeeds
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -144,7 +82,7 @@ key: id of user
 
 ```yaml
 Type: System.String
-Parameter Sets: Bulk, BulkExpanded
+Parameter Sets: Cloud
 Aliases:
 
 Required: True
@@ -190,28 +128,22 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPaths14X3W2OUsersUserIdManageddevicesMicrosoftGraphBulkrestorecloudpcPostRequestbodyContentApplicationJsonSchema
-
 ### Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCloudPcBulkRemoteActionResult
+### System.Boolean
 
 ## NOTES
 
 ALIASES
 
+### Invoke-MgCloudUserManagedDevice
+
 COMPLEX PARAMETER PROPERTIES
 
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
-
-BODYPARAMETER <IPaths14X3W2OUsersUserIdManageddevicesMicrosoftGraphBulkrestorecloudpcPostRequestbodyContentApplicationJsonSchema>: .
-  - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[ManagedDeviceIds <String[]>]`: 
-  - `[RestorePointDateTime <DateTime?>]`: 
-  - `[TimeRange <String>]`: restoreTimeRange
 
 INPUTOBJECT <IUsersActionsIdentity>: Identity Parameter
   - `[AccessReviewInstanceDecisionItemId <String>]`: key: id of accessReviewInstanceDecisionItem
