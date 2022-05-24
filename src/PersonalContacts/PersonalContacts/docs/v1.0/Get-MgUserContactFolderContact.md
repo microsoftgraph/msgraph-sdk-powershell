@@ -250,7 +250,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphContact
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphContact1
 
 ## NOTES
 

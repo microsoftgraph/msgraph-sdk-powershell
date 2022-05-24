@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.PersonalContacts
-Module Guid: f1be5481-67fd-41e8-8825-3e5afae7e053
+Module Guid: 45749eb3-0c71-482e-b8bb-e9ce99d8a0cb
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.personalcontacts
 Help Version: 1.0.0.0
 Locale: en-US
@@ -18,6 +18,7 @@ Nullable.
 
 ### [Get-MgUserContactExtension](Get-MgUserContactExtension.md)
 The collection of open extensions defined for the contact.
+Read-only.
 Nullable.
 
 ### [Get-MgUserContactFolder](Get-MgUserContactFolder.md)
@@ -39,6 +40,7 @@ Nullable.
 
 ### [Get-MgUserContactFolderContactExtension](Get-MgUserContactFolderContactExtension.md)
 The collection of open extensions defined for the contact.
+Read-only.
 Nullable.
 
 ### [Get-MgUserContactFolderContactMultiValueExtendedProperty](Get-MgUserContactFolderContactMultiValueExtendedProperty.md)
@@ -94,6 +96,7 @@ Nullable.
 
 ### [New-MgUserContactExtension](New-MgUserContactExtension.md)
 The collection of open extensions defined for the contact.
+Read-only.
 Nullable.
 
 ### [New-MgUserContactFolder](New-MgUserContactFolder.md)
@@ -115,6 +118,7 @@ Nullable.
 
 ### [New-MgUserContactFolderContactExtension](New-MgUserContactFolderContactExtension.md)
 The collection of open extensions defined for the contact.
+Read-only.
 Nullable.
 
 ### [New-MgUserContactFolderContactMultiValueExtendedProperty](New-MgUserContactFolderContactMultiValueExtendedProperty.md)
@@ -154,6 +158,7 @@ Nullable.
 
 ### [Remove-MgUserContactExtension](Remove-MgUserContactExtension.md)
 The collection of open extensions defined for the contact.
+Read-only.
 Nullable.
 
 ### [Remove-MgUserContactFolder](Remove-MgUserContactFolder.md)
@@ -175,6 +180,7 @@ Nullable.
 
 ### [Remove-MgUserContactFolderContactExtension](Remove-MgUserContactFolderContactExtension.md)
 The collection of open extensions defined for the contact.
+Read-only.
 Nullable.
 
 ### [Remove-MgUserContactFolderContactMultiValueExtendedProperty](Remove-MgUserContactFolderContactMultiValueExtendedProperty.md)
@@ -230,6 +236,7 @@ Nullable.
 
 ### [Update-MgUserContactExtension](Update-MgUserContactExtension.md)
 The collection of open extensions defined for the contact.
+Read-only.
 Nullable.
 
 ### [Update-MgUserContactFolder](Update-MgUserContactFolder.md)
@@ -251,6 +258,7 @@ Nullable.
 
 ### [Update-MgUserContactFolderContactExtension](Update-MgUserContactFolderContactExtension.md)
 The collection of open extensions defined for the contact.
+Read-only.
 Nullable.
 
 ### [Update-MgUserContactFolderContactMultiValueExtendedProperty](Update-MgUserContactFolderContactMultiValueExtendedProperty.md)
