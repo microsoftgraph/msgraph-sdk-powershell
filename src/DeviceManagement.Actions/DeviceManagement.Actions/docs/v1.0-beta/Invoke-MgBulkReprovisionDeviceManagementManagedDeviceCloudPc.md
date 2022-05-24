@@ -1,11 +1,11 @@
 ---
 external help file:
 Module Name: Microsoft.Graph.DeviceManagement.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.actions/invoke-mgbulkdevicemanagementcomanageddevicereprovisioncloudpc
+online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.actions/invoke-mgbulkreprovisiondevicemanagementmanageddevicecloudpc
 schema: 2.0.0
 ---
 
-# Invoke-MgBulkDeviceManagementComanagedDeviceReprovisionCloudPc
+# Invoke-MgBulkReprovisionDeviceManagementManagedDeviceCloudPc
 
 ## SYNOPSIS
 Invoke action bulkReprovisionCloudPc
@@ -14,14 +14,14 @@ Invoke action bulkReprovisionCloudPc
 
 ### BulkExpanded (Default)
 ```
-Invoke-MgBulkDeviceManagementComanagedDeviceReprovisionCloudPc [-AdditionalProperties <Hashtable>]
+Invoke-MgBulkReprovisionDeviceManagementManagedDeviceCloudPc [-AdditionalProperties <Hashtable>]
  [-ManagedDeviceIds <String[]>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Bulk
 ```
-Invoke-MgBulkDeviceManagementComanagedDeviceReprovisionCloudPc
- -BodyParameter <IPaths1WrkhgvDevicemanagementComanageddevicesMicrosoftGraphBulkreprovisioncloudpcPostRequestbodyContentApplicationJsonSchema>
+Invoke-MgBulkReprovisionDeviceManagementManagedDeviceCloudPc
+ -BodyParameter <IPaths16D2Us5DevicemanagementManageddevicesMicrosoftGraphBulkreprovisioncloudpcPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -52,7 +52,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths1WrkhgvDevicemanagementComanageddevicesMicrosoftGraphBulkreprovisioncloudpcPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.PowerShell.Models.IPaths16D2Us5DevicemanagementManageddevicesMicrosoftGraphBulkreprovisioncloudpcPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Bulk
 Aliases:
 
@@ -129,7 +129,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPaths1WrkhgvDevicemanagementComanageddevicesMicrosoftGraphBulkreprovisioncloudpcPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.PowerShell.Models.IPaths16D2Us5DevicemanagementManageddevicesMicrosoftGraphBulkreprovisioncloudpcPostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 
@@ -139,12 +139,14 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ALIASES
 
+### Invoke-MgBulkDeviceManagementManagedDeviceReprovisionCloudPc
+
 COMPLEX PARAMETER PROPERTIES
 
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-BODYPARAMETER <IPaths1WrkhgvDevicemanagementComanageddevicesMicrosoftGraphBulkreprovisioncloudpcPostRequestbodyContentApplicationJsonSchema>: .
+BODYPARAMETER <IPaths16D2Us5DevicemanagementManageddevicesMicrosoftGraphBulkreprovisioncloudpcPostRequestbodyContentApplicationJsonSchema>: .
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[ManagedDeviceIds <String[]>]`: 
 

@@ -1,58 +1,91 @@
 ---
 external help file:
 Module Name: Microsoft.Graph.DeviceManagement.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.actions/invoke-mgclouddevicemanagementdeviceshellscriptdevicerunstatemanageddevice
+online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.actions/invoke-mgbulkrestoredevicemanagementdetectedappmanageddevicecloudpc
 schema: 2.0.0
 ---
 
-# Invoke-MgCloudDeviceManagementDeviceShellScriptDeviceRunStateManagedDevice
+# Invoke-MgBulkRestoreDeviceManagementDetectedAppManagedDeviceCloudPc
 
 ## SYNOPSIS
-Invoke action reprovisionCloudPc
+Invoke action bulkRestoreCloudPc
 
 ## SYNTAX
 
-### Cloud (Default)
+### BulkExpanded (Default)
 ```
-Invoke-MgCloudDeviceManagementDeviceShellScriptDeviceRunStateManagedDevice
- -DeviceManagementScriptDeviceStateId <String> -DeviceShellScriptId <String> [-PassThru] [-Confirm] [-WhatIf]
+Invoke-MgBulkRestoreDeviceManagementDetectedAppManagedDeviceCloudPc -DetectedAppId <String>
+ [-AdditionalProperties <Hashtable>] [-ManagedDeviceIds <String[]>] [-RestorePointDateTime <DateTime>]
+ [-TimeRange <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
+```
+
+### Bulk
+```
+Invoke-MgBulkRestoreDeviceManagementDetectedAppManagedDeviceCloudPc -DetectedAppId <String>
+ -BodyParameter <IPathsFnejuzDevicemanagementDetectedappsDetectedappIdManageddevicesMicrosoftGraphBulkrestorecloudpcPostRequestbodyContentApplicationJsonSchema>
+ [-Confirm] [-WhatIf] [<CommonParameters>]
+```
+
+### BulkViaIdentity
+```
+Invoke-MgBulkRestoreDeviceManagementDetectedAppManagedDeviceCloudPc
+ -InputObject <IDeviceManagementActionsIdentity>
+ -BodyParameter <IPathsFnejuzDevicemanagementDetectedappsDetectedappIdManageddevicesMicrosoftGraphBulkrestorecloudpcPostRequestbodyContentApplicationJsonSchema>
+ [-Confirm] [-WhatIf] [<CommonParameters>]
+```
+
+### BulkViaIdentityExpanded
+```
+Invoke-MgBulkRestoreDeviceManagementDetectedAppManagedDeviceCloudPc
+ -InputObject <IDeviceManagementActionsIdentity> [-AdditionalProperties <Hashtable>]
+ [-ManagedDeviceIds <String[]>] [-RestorePointDateTime <DateTime>] [-TimeRange <String>] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
-### CloudViaIdentity
-```
-Invoke-MgCloudDeviceManagementDeviceShellScriptDeviceRunStateManagedDevice
- -InputObject <IDeviceManagementActionsIdentity> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
 ## DESCRIPTION
-Invoke action reprovisionCloudPc
+Invoke action bulkRestoreCloudPc
 
 ## EXAMPLES
 
 ## PARAMETERS
 
-### -DeviceManagementScriptDeviceStateId
-key: id of deviceManagementScriptDeviceState
+### -AdditionalProperties
+Additional Parameters
 
 ```yaml
-Type: System.String
-Parameter Sets: Cloud
+Type: System.Collections.Hashtable
+Parameter Sets: BulkExpanded, BulkViaIdentityExpanded
 Aliases:
 
-Required: True
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -DeviceShellScriptId
-key: id of deviceShellScript
+### -BodyParameter
+.
+To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
+
+```yaml
+Type: Microsoft.Graph.PowerShell.Models.IPathsFnejuzDevicemanagementDetectedappsDetectedappIdManageddevicesMicrosoftGraphBulkrestorecloudpcPostRequestbodyContentApplicationJsonSchema
+Parameter Sets: Bulk, BulkViaIdentity
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### -DetectedAppId
+key: id of detectedApp
 
 ```yaml
 Type: System.String
-Parameter Sets: Cloud
+Parameter Sets: Bulk, BulkExpanded
 Aliases:
 
 Required: True
@@ -68,7 +101,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementActionsIdentity
-Parameter Sets: CloudViaIdentity
+Parameter Sets: BulkViaIdentity, BulkViaIdentityExpanded
 Aliases:
 
 Required: True
@@ -78,12 +111,42 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -PassThru
-Returns true when the command succeeds
+### -ManagedDeviceIds
+.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
+Type: System.String[]
+Parameter Sets: BulkExpanded, BulkViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -RestorePointDateTime
+.
+
+```yaml
+Type: System.DateTime
+Parameter Sets: BulkExpanded, BulkViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -TimeRange
+restoreTimeRange
+
+```yaml
+Type: System.String
+Parameter Sets: BulkExpanded, BulkViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -131,18 +194,28 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IDeviceManagementActionsIdentity
 
+### Microsoft.Graph.PowerShell.Models.IPathsFnejuzDevicemanagementDetectedappsDetectedappIdManageddevicesMicrosoftGraphBulkrestorecloudpcPostRequestbodyContentApplicationJsonSchema
+
 ## OUTPUTS
 
-### System.Boolean
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCloudPcBulkRemoteActionResult
 
 ## NOTES
 
 ALIASES
 
+### Invoke-MgBulkDeviceManagementDetectedAppManagedDeviceRestoreCloudPc
+
 COMPLEX PARAMETER PROPERTIES
 
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
+
+BODYPARAMETER <IPathsFnejuzDevicemanagementDetectedappsDetectedappIdManageddevicesMicrosoftGraphBulkrestorecloudpcPostRequestbodyContentApplicationJsonSchema>: .
+  - `[(Any) <Object>]`: This indicates any property can be added to this object.
+  - `[ManagedDeviceIds <String[]>]`: 
+  - `[RestorePointDateTime <DateTime?>]`: 
+  - `[TimeRange <String>]`: restoreTimeRange
 
 INPUTOBJECT <IDeviceManagementActionsIdentity>: Identity Parameter
   - `[AndroidDeviceOwnerEnrollmentProfileId <String>]`: key: id of androidDeviceOwnerEnrollmentProfile

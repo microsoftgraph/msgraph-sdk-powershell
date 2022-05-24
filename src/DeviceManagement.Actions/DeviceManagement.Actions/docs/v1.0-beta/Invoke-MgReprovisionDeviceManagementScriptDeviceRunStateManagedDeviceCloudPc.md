@@ -1,90 +1,58 @@
 ---
 external help file:
 Module Name: Microsoft.Graph.DeviceManagement.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.actions/invoke-mgbulkdevicemanagementdetectedappmanageddevicereprovisioncloudpc
+online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.actions/invoke-mgreprovisiondevicemanagementscriptdevicerunstatemanageddevicecloudpc
 schema: 2.0.0
 ---
 
-# Invoke-MgBulkDeviceManagementDetectedAppManagedDeviceReprovisionCloudPc
+# Invoke-MgReprovisionDeviceManagementScriptDeviceRunStateManagedDeviceCloudPc
 
 ## SYNOPSIS
-Invoke action bulkReprovisionCloudPc
+Invoke action reprovisionCloudPc
 
 ## SYNTAX
 
-### BulkExpanded (Default)
+### Cloud (Default)
 ```
-Invoke-MgBulkDeviceManagementDetectedAppManagedDeviceReprovisionCloudPc -DetectedAppId <String>
- [-AdditionalProperties <Hashtable>] [-ManagedDeviceIds <String[]>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
-```
-
-### Bulk
-```
-Invoke-MgBulkDeviceManagementDetectedAppManagedDeviceReprovisionCloudPc -DetectedAppId <String>
- -BodyParameter <IPaths16P9NunDevicemanagementDetectedappsDetectedappIdManageddevicesMicrosoftGraphBulkreprovisioncloudpcPostRequestbodyContentApplicationJsonSchema>
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Invoke-MgReprovisionDeviceManagementScriptDeviceRunStateManagedDeviceCloudPc
+ -DeviceManagementScriptDeviceStateId <String> -DeviceManagementScriptId <String> [-PassThru] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
-### BulkViaIdentity
+### CloudViaIdentity
 ```
-Invoke-MgBulkDeviceManagementDetectedAppManagedDeviceReprovisionCloudPc
- -InputObject <IDeviceManagementActionsIdentity>
- -BodyParameter <IPaths16P9NunDevicemanagementDetectedappsDetectedappIdManageddevicesMicrosoftGraphBulkreprovisioncloudpcPostRequestbodyContentApplicationJsonSchema>
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### BulkViaIdentityExpanded
-```
-Invoke-MgBulkDeviceManagementDetectedAppManagedDeviceReprovisionCloudPc
- -InputObject <IDeviceManagementActionsIdentity> [-AdditionalProperties <Hashtable>]
- [-ManagedDeviceIds <String[]>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Invoke-MgReprovisionDeviceManagementScriptDeviceRunStateManagedDeviceCloudPc
+ -InputObject <IDeviceManagementActionsIdentity> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Invoke action bulkReprovisionCloudPc
+Invoke action reprovisionCloudPc
 
 ## EXAMPLES
 
 ## PARAMETERS
 
-### -AdditionalProperties
-Additional Parameters
+### -DeviceManagementScriptDeviceStateId
+key: id of deviceManagementScriptDeviceState
 
 ```yaml
-Type: System.Collections.Hashtable
-Parameter Sets: BulkExpanded, BulkViaIdentityExpanded
+Type: System.String
+Parameter Sets: Cloud
 Aliases:
 
-Required: False
+Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -BodyParameter
-.
-To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
-
-```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths16P9NunDevicemanagementDetectedappsDetectedappIdManageddevicesMicrosoftGraphBulkreprovisioncloudpcPostRequestbodyContentApplicationJsonSchema
-Parameter Sets: Bulk, BulkViaIdentity
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -DetectedAppId
-key: id of detectedApp
+### -DeviceManagementScriptId
+key: id of deviceManagementScript
 
 ```yaml
 Type: System.String
-Parameter Sets: Bulk, BulkExpanded
+Parameter Sets: Cloud
 Aliases:
 
 Required: True
@@ -100,28 +68,13 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementActionsIdentity
-Parameter Sets: BulkViaIdentity, BulkViaIdentityExpanded
+Parameter Sets: CloudViaIdentity
 Aliases:
 
 Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -ManagedDeviceIds
-.
-
-```yaml
-Type: System.String[]
-Parameter Sets: BulkExpanded, BulkViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -178,8 +131,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IDeviceManagementActionsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IPaths16P9NunDevicemanagementDetectedappsDetectedappIdManageddevicesMicrosoftGraphBulkreprovisioncloudpcPostRequestbodyContentApplicationJsonSchema
-
 ## OUTPUTS
 
 ### System.Boolean
@@ -188,14 +139,12 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ALIASES
 
+### Invoke-MgCloudDeviceManagementScriptDeviceRunStateManagedDevice
+
 COMPLEX PARAMETER PROPERTIES
 
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
-
-BODYPARAMETER <IPaths16P9NunDevicemanagementDetectedappsDetectedappIdManageddevicesMicrosoftGraphBulkreprovisioncloudpcPostRequestbodyContentApplicationJsonSchema>: .
-  - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[ManagedDeviceIds <String[]>]`: 
 
 INPUTOBJECT <IDeviceManagementActionsIdentity>: Identity Parameter
   - `[AndroidDeviceOwnerEnrollmentProfileId <String>]`: key: id of androidDeviceOwnerEnrollmentProfile

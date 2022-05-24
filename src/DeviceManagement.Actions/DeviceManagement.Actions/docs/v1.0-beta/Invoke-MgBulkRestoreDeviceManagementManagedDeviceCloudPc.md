@@ -1,11 +1,11 @@
 ---
 external help file:
 Module Name: Microsoft.Graph.DeviceManagement.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.actions/invoke-mgbulkdevicemanagementmanageddevicerestorecloudpc
+online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.actions/invoke-mgbulkrestoredevicemanagementmanageddevicecloudpc
 schema: 2.0.0
 ---
 
-# Invoke-MgBulkDeviceManagementManagedDeviceRestoreCloudPc
+# Invoke-MgBulkRestoreDeviceManagementManagedDeviceCloudPc
 
 ## SYNOPSIS
 Invoke action bulkRestoreCloudPc
@@ -14,14 +14,14 @@ Invoke action bulkRestoreCloudPc
 
 ### BulkExpanded (Default)
 ```
-Invoke-MgBulkDeviceManagementManagedDeviceRestoreCloudPc [-AdditionalProperties <Hashtable>]
+Invoke-MgBulkRestoreDeviceManagementManagedDeviceCloudPc [-AdditionalProperties <Hashtable>]
  [-ManagedDeviceIds <String[]>] [-RestorePointDateTime <DateTime>] [-TimeRange <String>] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### Bulk
 ```
-Invoke-MgBulkDeviceManagementManagedDeviceRestoreCloudPc
+Invoke-MgBulkRestoreDeviceManagementManagedDeviceCloudPc
  -BodyParameter <IPaths2F9570DevicemanagementManageddevicesMicrosoftGraphBulkrestorecloudpcPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -154,6 +154,8 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## NOTES
 
 ALIASES
+
+### Invoke-MgBulkDeviceManagementManagedDeviceRestoreCloudPc
 
 COMPLEX PARAMETER PROPERTIES
 

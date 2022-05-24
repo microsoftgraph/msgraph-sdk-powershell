@@ -1,33 +1,32 @@
 ---
 external help file:
 Module Name: Microsoft.Graph.DeviceManagement.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.actions/invoke-mgbulkdevicemanagementcomanageddevicerestorecloudpc
+online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.actions/invoke-mgbulkreprovisiondevicemanagementcomanageddevicecloudpc
 schema: 2.0.0
 ---
 
-# Invoke-MgBulkDeviceManagementComanagedDeviceRestoreCloudPc
+# Invoke-MgBulkReprovisionDeviceManagementComanagedDeviceCloudPc
 
 ## SYNOPSIS
-Invoke action bulkRestoreCloudPc
+Invoke action bulkReprovisionCloudPc
 
 ## SYNTAX
 
 ### BulkExpanded (Default)
 ```
-Invoke-MgBulkDeviceManagementComanagedDeviceRestoreCloudPc [-AdditionalProperties <Hashtable>]
- [-ManagedDeviceIds <String[]>] [-RestorePointDateTime <DateTime>] [-TimeRange <String>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+Invoke-MgBulkReprovisionDeviceManagementComanagedDeviceCloudPc [-AdditionalProperties <Hashtable>]
+ [-ManagedDeviceIds <String[]>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Bulk
 ```
-Invoke-MgBulkDeviceManagementComanagedDeviceRestoreCloudPc
- -BodyParameter <IPaths1Rxaz9ODevicemanagementComanageddevicesMicrosoftGraphBulkrestorecloudpcPostRequestbodyContentApplicationJsonSchema>
- [-Confirm] [-WhatIf] [<CommonParameters>]
+Invoke-MgBulkReprovisionDeviceManagementComanagedDeviceCloudPc
+ -BodyParameter <IPaths1WrkhgvDevicemanagementComanageddevicesMicrosoftGraphBulkreprovisioncloudpcPostRequestbodyContentApplicationJsonSchema>
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Invoke action bulkRestoreCloudPc
+Invoke action bulkReprovisionCloudPc
 
 ## EXAMPLES
 
@@ -53,7 +52,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths1Rxaz9ODevicemanagementComanageddevicesMicrosoftGraphBulkrestorecloudpcPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.PowerShell.Models.IPaths1WrkhgvDevicemanagementComanageddevicesMicrosoftGraphBulkreprovisioncloudpcPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Bulk
 Aliases:
 
@@ -79,27 +78,12 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -RestorePointDateTime
-.
+### -PassThru
+Returns true when the command succeeds
 
 ```yaml
-Type: System.DateTime
-Parameter Sets: BulkExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -TimeRange
-restoreTimeRange
-
-```yaml
-Type: System.String
-Parameter Sets: BulkExpanded
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -145,26 +129,26 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPaths1Rxaz9ODevicemanagementComanageddevicesMicrosoftGraphBulkrestorecloudpcPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.PowerShell.Models.IPaths1WrkhgvDevicemanagementComanageddevicesMicrosoftGraphBulkreprovisioncloudpcPostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCloudPcBulkRemoteActionResult
+### System.Boolean
 
 ## NOTES
 
 ALIASES
+
+### Invoke-MgBulkDeviceManagementComanagedDeviceReprovisionCloudPc
 
 COMPLEX PARAMETER PROPERTIES
 
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-BODYPARAMETER <IPaths1Rxaz9ODevicemanagementComanageddevicesMicrosoftGraphBulkrestorecloudpcPostRequestbodyContentApplicationJsonSchema>: .
+BODYPARAMETER <IPaths1WrkhgvDevicemanagementComanageddevicesMicrosoftGraphBulkreprovisioncloudpcPostRequestbodyContentApplicationJsonSchema>: .
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[ManagedDeviceIds <String[]>]`: 
-  - `[RestorePointDateTime <DateTime?>]`: 
-  - `[TimeRange <String>]`: restoreTimeRange
 
 ## RELATED LINKS
 
