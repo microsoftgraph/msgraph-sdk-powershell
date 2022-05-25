@@ -16,7 +16,14 @@ require:
 > see https://github.com/Azure/autorest/blob/master/docs/powershell/directives.md
 
 ``` yaml
-# Directives go here!
+directive:
+# Remove invalid paths.
+  - remove-path-by-operation: ^deviceManagement_.*UserExperienceAnalytics.*$
+# Remove cmdlets.
+  - where:
+      verb: Update
+      subject: ^DeviceManagementWindowAutopilotDeviceIdentity$
+    remove: true
 ```
 
 ### Versioning

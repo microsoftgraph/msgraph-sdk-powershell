@@ -16,7 +16,15 @@ require:
 > see https://github.com/Azure/autorest/blob/master/docs/powershell/directives.md
 
 ``` yaml
-# Directives go here!
+directive:
+# Remove invalid paths.
+  - remove-path-by-operation: ^admin(?!\.serviceAnnouncement).*$
+
+# Drop admin from command names.
+  - where:
+      subject: (.*)AdminServiceAnnouncement(.*)
+    set:
+      subject: $1ServiceAnnouncement$2
 ```
 
 ### Versioning

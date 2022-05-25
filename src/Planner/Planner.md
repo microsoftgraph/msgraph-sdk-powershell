@@ -16,7 +16,39 @@ require:
 > see https://github.com/Azure/autorest/blob/master/docs/powershell/directives.md
 
 ``` yaml
-# Directives go here!
+directive:
+# Remove paths that are not valid.
+  - remove-path-by-operation: ^users.planner_(Create|Update|Delete)All|planner.buckets_(Get|Create|Update|Delete)Tasks|planner.buckets.tasks.*|planner.plans_(Get|Create|Update|Delete)Buckets|planner.plans.buckets.*|planner.plans_(Get|Create|Update|Delete)Tasks|planner.plans.tasks.*$
+# Remove cmdlets
+  - where:
+      verb: Remove
+      subject: ^(User|Group)Planner$
+    remove: true
+  - where:
+      verb: Remove|New|Update
+      subject: ^(User|Group)Planner(Task|Plan)$
+    remove: true
+  - where:
+      verb: Remove
+      subject: ^Planner(Plan|Task)Detail$
+    remove: true
+    # Only list is supported.
+  - where:
+      verb: Get
+      variant: Get.*
+      subject: ^UserPlanner(Task|Plan)$
+    remove: true
+  - where:
+      verb: Get
+      variant: Get.*
+      subject: ^UserPlannerPlanTask$
+    remove: true
+  - where:
+      subject: ^UserPlanner(Task[A-Z].*|Plan[A-Z].*)$
+    remove: true
+  - where:
+      subject: ^GroupPlanner(PlanBucket[A-Z].*|PlanTask[A-Z].*)$
+    remove: true
 ```
 
 ### Versioning

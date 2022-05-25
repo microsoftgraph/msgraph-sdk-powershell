@@ -16,7 +16,23 @@ require:
 > see https://github.com/Azure/autorest/blob/master/docs/powershell/directives.md
 
 ``` yaml
-# Directives go here!
+directive:
+# Remove invalid root paths e.g. users{id}/todo
+  - remove-path-by-operation: users_(Get|Create|Update|Delete|Set)(Todo|outlook)
+# Remove commands
+  - where:
+      verb: New
+      subject: ^UserLicenseDetail$
+    remove: true
+# Alias then rename cmdlets to avoid breaking change.
+  - where:
+      subject: ^User(Member|TransitiveMember)$
+    set:
+      alias: ${verb}-Mg${subject}
+  - where:
+      subject: ^User(Member|TransitiveMember)$
+    set:
+      subject: User$1Of
 ```
 
 ### Versioning

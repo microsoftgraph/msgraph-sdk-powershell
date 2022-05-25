@@ -16,7 +16,23 @@ require:
 > see https://github.com/Azure/autorest/blob/master/docs/powershell/directives.md
 
 ``` yaml
-# Directives go here!
+directive:
+# Rename cmdlets.
+  - where:
+      subject: ^(DeviceManagement(Condition|ConditionStatementManagementCondition|ConditionStatementManagementConditionStatement))$
+    set:
+      subject: $1ForPlatform
+# TODO: Clean up
+  # - where:
+  #     subject: ^(DeviceManagementRoleScopeTag)$
+  #     variant: ^Get$
+  #   set:
+  #     subject: $1ById
+  # - where:
+  #     subject: ^(DeviceManagementRoleScopeTag)$
+  #     variant: ^Get1$|^GetViaIdentity$
+  #   set:
+  #     subject: $1ByResource
 ```
 
 ### Versioning

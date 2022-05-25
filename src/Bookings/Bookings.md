@@ -16,7 +16,14 @@ require:
 > see https://github.com/Azure/autorest/blob/master/docs/powershell/directives.md
 
 ``` yaml
-# Directives go here!
+directive:
+# Remove invalid paths.
+  - remove-path-by-operation: ^solutions.solutionsRoot.*$
+# Rename cmdlets
+  - where:
+      subject: ^Solution(.*)$
+    set:
+      subject: $1
 ```
 
 ### Versioning

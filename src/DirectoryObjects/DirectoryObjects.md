@@ -16,7 +16,20 @@ require:
 > see https://github.com/Azure/autorest/blob/master/docs/powershell/directives.md
 
 ``` yaml
-# Directives go here!
+directive:
+# Rename cmdlets
+# TODO: Clean up
+  # - where:
+  #     verb: Get
+  #     subject: (^DirectoryObject$)
+  #     variant: ^(Get|Get3|GetExpanded|GetExpanded1)$
+  #   set:
+  #     verb: Get
+  #     subject: $1ById
+  - where:
+      subject: (^DirectoryObject)MicrosoftGraph(AdministrativeUnitDelta$)
+    set:
+      subject: $1$2
 ```
 
 ### Versioning

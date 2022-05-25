@@ -16,7 +16,66 @@ require:
 > see https://github.com/Azure/autorest/blob/master/docs/powershell/directives.md
 
 ``` yaml
-# Directives go here!
+directive:
+# Remove invalid paths.
+  - remove-path-by-operation: onPremisesPublishingProfiles\.(connectors\.memberOf_.*|connectors_GetMemberOf|connectorGroups\.members_.*|connectorGroups_(Get|Create|Update|Delete)Members)
+
+# Remove cmdlets
+# TODO: Clean up
+  # - where:
+  #     verb: Test
+  #     subject: (Application|ServicePrincipal)SynchronizationJobCredentials
+  #     variant: Validate1|ValidateExpanded1|ValidateViaIdentity1|ValidateViaIdentityExpanded1
+  #   remove: true
+  # - where:
+  #     verb: Get
+  #     subject: (Application|ServicePrincipal)AvailableExtensionProperty
+  #   remove: true
+# Alias then rename cmdlets to avoid breaking change.
+  - where:
+      subject: ^(ServicePrincipal|Application)(Member|TransitiveMember|CreatedOnBehalf)$
+    set:
+      alias: ${verb}-Mg${subject}
+  - where:
+      subject: ^(ServicePrincipal|Application)(Member|TransitiveMember|CreatedOnBehalf)$
+    set:
+      subject: $1$2Of
+# Rename wrongly named cmdlets
+# TODO: Clean up
+  # - where:
+  #     verb: Get
+  #     subject: (^Application$)
+  #     variant: Get2|Get3|GetExpanded|GetExpanded1
+  #   set:
+  #     verb: Get
+  #     subject: $1ById
+  # - where:
+  #     verb: Get
+  #     subject: (^ServicePrincipal$)
+  #     variant: Get1|Get3|GetExpanded|GetExpanded1
+  #   set:
+  #     verb: Get
+  #     subject: $1ById
+# Rename cmdlets with duplicates in their name.
+  - where:
+      subject: ^(OnPremisPublishingProfile)(\1)+
+    set:
+      subject: $1
+# Fix AutoREST OnPremis* typo.
+  - where:
+      subject: ^OnPremis(PublishingProfile.*)$
+    set:
+      subject: OnPremise$1
+# Fix cmdlet name
+  - where:
+      subject: (^OnPremisePublishingProfileConnectorMember$)
+    set:
+      subject: $1Of
+# Singularize credentials.
+  - where:
+      subject: (.*)(FederatedIdentityCredential)s(.*)
+    set:
+      subject: $1$2$3
 ```
 
 ### Versioning

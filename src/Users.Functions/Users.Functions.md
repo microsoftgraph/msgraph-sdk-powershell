@@ -16,7 +16,25 @@ require:
 > see https://github.com/Azure/autorest/blob/master/docs/powershell/directives.md
 
 ``` yaml
-# Directives go here!
+directive:
+# Remove invalid paths.
+  - remove-path-by-operation: .*exceptionOccurrences.*|users\.onenote\..*.parent.*|users.*\.calendarView.*|.*\.notebooks\.section.*|.*\.sectionGroups.section.*|.*\.sections\.pages.*|users\.calendar\.events\..*|users\.calendarGroups\.calendars|users\.calendars\.events\..*|users\.events\.calendar\..*
+# Rename cmdlets.
+  - where:
+      verb: Get
+      subject: ^(UserOnenote)Notebook(RecentNotebook)$
+    set:
+      subject: $1$2
+  - where:
+      verb: Invoke
+      subject: ^(CalendarUserEventCalendar|CalendarUserCalendar)$
+    set:
+      subject: $1AllowedCalendarSharingRoles
+  - where:
+      verb: Get
+      subject: ^(UserManagedDevice)$
+    set:
+      subject: $1WithAppFailure
 ```
 
 ### Versioning
