@@ -12,7 +12,6 @@ Param(
     [switch] $ExcludeNotesSection
 )
 $ErrorActionPreference = "Stop"
-$LASTEXITCODE = $null
 if ($PSEdition -ne "Core") {
     Write-Error "This script requires PowerShell Core to execute. [Note] Generated cmdlets will work in both PowerShell Core or Windows PowerShell."
 }
@@ -43,9 +42,10 @@ else {
 
 # Build module
 Write-Debug "Building '$ModuleFullName' module..."
-& $BuildModulePS1 -Docs -Release -ExcludeExampleTemplates:$ExcludeExampleTemplates -ExcludeNotesSection:$ExcludeNotesSection
-if ($LASTEXITCODE) {
-    Write-Error "Failed to build '$ModuleFullName' module."
+. $BuildModulePS1 -Docs -Release -ExcludeExampleTemplates:$ExcludeExampleTemplates -ExcludeNotesSection:$ExcludeNotesSection | Out-Null
+if ($lastexitcode -ne 0) {
+    Write-Debug "Failed to build '$ModuleFullName' module."
+    exit $lastexitcode
 }
 
 [HashTable]$ModuleManifestSettings = @{

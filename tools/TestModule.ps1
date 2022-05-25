@@ -9,7 +9,7 @@ if (!(Get-Module -Name Pester -ListAvailable)) {
 }
 
 if(-not $Isolated) {
-  Write-Host -ForegroundColor Green 'Creating isolated process...'
+  Write-Debug 'Creating isolated process...'
   $pwsh = [System.Diagnostics.Process]::GetCurrentProcess().Path
   & "$pwsh" -NonInteractive -NoLogo -NoProfile -File $MyInvocation.MyCommand.Path @PSBoundParameters -Isolated
   return
@@ -36,5 +36,3 @@ $PesterConfiguration.TestResult.OutputPath = (Join-Path $ModuleTestsPath "$modul
 
 $TestResults = Invoke-Pester -Configuration $PesterConfiguration
 If ($TestResults.FailedCount -gt 0) { Write-Error "$($TestResults.FailedCount) tests failed." }
-
-Write-Host -ForegroundColor Green '-------------Done-------------'

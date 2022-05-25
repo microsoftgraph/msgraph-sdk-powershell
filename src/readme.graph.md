@@ -26,7 +26,6 @@ metadata:
 prefix: Mg
 module-name: Microsoft.Graph.$(service-name)
 subject-prefix: $(service-name)
-namespace: Microsoft.Graph.PowerShell
 sanitize-names: false
 ```
 

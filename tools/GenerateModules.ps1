@@ -21,14 +21,14 @@ enum VersionState {
     NotOnFeed
 }
 $ErrorActionPreference = 'Stop'
-$LastExitCode = 0
+$MaxMemorySize = 16384
 
 if ($PSEdition -ne 'Core') {
     Write-Error 'This script requires PowerShell Core to execute. [Note] Generated cmdlets will work in both PowerShell Core or Windows PowerShell.'
 }
 
 if (-not $Isolated) {
-    Write-Host -ForegroundColor Green 'Creating isolated process...'
+    Write-Debug 'Creating isolated process...'
     $pwsh = [System.Diagnostics.Process]::GetCurrentProcess().Path
     & "$pwsh" -NonInteractive -NoLogo -NoProfile -File $MyInvocation.MyCommand.Path @PSBoundParameters -Isolated
     return
@@ -43,7 +43,7 @@ if (!(Get-Module -Name powershell-yaml -ListAvailable)) {
 }
 
 # Set NODE max memory to 8 Gb.
-$ENV:NODE_OPTIONS = '--max-old-space-size=8192'
+$ENV:NODE_OPTIONS = "--max-old-space-size=$MaxMemorySize"
 $ModulePrefix = "Microsoft.Graph"
 $ScriptRoot = $PSScriptRoot
 $ModulesOutputPath = Join-Path $ScriptRoot "..\src\"
@@ -61,7 +61,7 @@ $ValidateUpdatedModuleVersionPS1 = Join-Path $ScriptRoot ".\ValidateUpdatedModul
 $CleanUpPsm1 = Join-Path $ScriptRoot "\PostGeneration\CleanUpPsm1.ps1" -Resolve
 . (Join-Path $ScriptRoot "\Utilities\FileUtils.ps1")
 if (-not (Test-Path $ArtifactsLocation)) {
-    New-Item -Path $ArtifactsLocation -Type Directory
+    New-Item -Path $ArtifactsLocation -Type Directory | Out-Null
 }
 
 if (-not (Test-Path $ModuleMappingConfigPath)) {
@@ -99,6 +99,7 @@ if ($ModulesToGenerate.Count -eq 0) {
 $Stopwatch = [system.diagnostics.stopwatch]::StartNew()
 $ModulesToGenerate | ForEach-Object {
     $Module = $_
+    Write-Host -ForegroundColor Green "-------------'$Module'-------------"
     $ModulePath = Join-Path $ModulesOutputPath $Module
     $ModuleConfig = Join-Path $ModulePath "\$Module.md"
     Copy-ModuleTemplate -Destination $ModuleConfig -TemplatePath (Join-Path $TemplatePath "module.md") -ModuleName $Module
@@ -106,73 +107,72 @@ $ModulesToGenerate | ForEach-Object {
     $ApiVersionToGenerate | ForEach-Object {
         $ApiVersion = $_
         $OpenApiFile = Join-Path $OpenApiPath $ApiVersion "$Module.yml"
-        if (-not (Test-Path $OpenApiFile)) { break }
+        if (Test-Path $OpenApiFile) {
+            Write-Host -ForegroundColor Green "-------------[$ApiVersion]-------------"
+            $ModuleName = ($ApiVersion -eq "beta" ? "Beta.$Module" : $Module)
+            $ModuleFullName = "$ModulePrefix.$ModuleName"
+            $ModuleProjectPath = Join-Path $ModulePath $ApiVersion
 
-        $ModuleName = ($ApiVersion -eq "beta" ? "Beta.$Module" : $Module)
-        $ModuleFullName = "$ModulePrefix.$ModuleName"
-        $ModuleProjectPath = Join-Path $ModulePath $ApiVersion
+            $AutoRestModuleConfig = Join-Path $ModuleProjectPath "\readme.md"
+            Copy-ModuleTemplate -Destination $AutoRestModuleConfig -TemplatePath (Join-Path $ScriptRoot "\Templates\readme$ApiVersion.md") -ModuleName $Module
 
-        $AutoRestModuleConfig = Join-Path $ModuleProjectPath "\readme.md"
-        Copy-ModuleTemplate -Destination $AutoRestModuleConfig -TemplatePath (Join-Path $ScriptRoot "\Templates\readme$ApiVersion.md") -ModuleName $Module
-
-        # Read specified module version from readme.
-        $ModuleVersion = . $ReadModuleReadMePS1 -ReadMePath $AutoRestModuleConfig -FieldToRead "module-version"
-        if ($null -eq $ModuleVersion) {
-            # Module version not set in readme.md.
-            Write-Error "Version number is not set on $ModuleFullName module. Please set 'module-version' in $AutoRestModuleConfig."
-        }
-
-        # Validate module version with the one on PSGallery.
-        [VersionState] $VersionState = & $ValidateUpdatedModuleVersionPS1 -ModuleName "$ModuleFullName" -NextVersion $ModuleVersion -PSRepository RepositoryName -ModulePreviewNumber $ModulePreviewNumber
-
-        if ($VersionState.Equals([VersionState]::Invalid)) {
-            Write-Warning "The specified version in $ModuleFullName module is either higher or lower than what's on $RepositoryName. Update the 'module-version' in $AutoRestModuleConfig"
-        }
-        elseif ($VersionState.Equals([VersionState]::EqualToFeed)) {
-            Write-Warning "$ModuleFullName module skipped. Version has not changed and is equal to what's on $RepositoryName."
-        }
-        elseif ($VersionState.Equals([VersionState]::Valid) -or $VersionState.Equals([VersionState]::NotOnFeed)) {
-            $ModuleReleaseNotes = & $ReadModuleReadMePS1 -ReadMePath $ModuleConfig -FieldToRead "release-notes"
-            if ($ModuleReleaseNotes -eq $null) {
-                # Release notes not set in readme.md.
-                Write-Error "Release notes not set on $ModuleFullName module. Please set 'release-notes' in $AutoRestModuleConfig."
+            # Read specified module version from readme.
+            $ModuleVersion = . $ReadModuleReadMePS1 -ReadMePath $AutoRestModuleConfig -FieldToRead "module-version"
+            if ($null -eq $ModuleVersion) {
+                # Module version not set in readme.md.
+                Write-Error "Version number is not set on $ModuleFullName module. Please set 'module-version' in $AutoRestModuleConfig."
             }
-            Write-Host -ForegroundColor Green "-------------'$ModuleFullName'-------------"
-            if ($SkipGeneration) {
-                Write-Warning "Skipping generation of '$ModuleFullName' module."
+            # Validate module version with the one on PSGallery.
+            [VersionState] $VersionState = & $ValidateUpdatedModuleVersionPS1 -ModuleName "$ModuleFullName" -NextVersion $ModuleVersion -PSRepository RepositoryName -ModulePreviewNumber $ModulePreviewNumber
+
+            if ($VersionState.Equals([VersionState]::Invalid)) {
+                Write-Warning "The specified version in $ModuleFullName module is either higher or lower than what's on $RepositoryName. Update the 'module-version' in $AutoRestModuleConfig"
             }
-            else {
-                autorest --module-version:$ModuleVersion --service-name:$ModuleName --input-file:$OpenApiFile $AutoRestModuleConfig
-                if ($LastExitCode) {
-                    Write-Error "AutoREST failed to generate '$ModuleName' module."
+            elseif ($VersionState.Equals([VersionState]::EqualToFeed)) {
+                Write-Warning "$ModuleFullName module skipped. Version has not changed and is equal to what's on $RepositoryName."
+            }
+            elseif ($VersionState.Equals([VersionState]::Valid) -or $VersionState.Equals([VersionState]::NotOnFeed)) {
+                $ModuleReleaseNotes = & $ReadModuleReadMePS1 -ReadMePath $ModuleConfig -FieldToRead "release-notes"
+                if ($ModuleReleaseNotes -eq $null) {
+                    # Release notes not set in readme.md.
+                    Write-Error "Release notes not set on $ModuleFullName module. Please set 'release-notes' in $AutoRestModuleConfig."
                 }
-                Write-Debug "AutoRest generated '$ModuleFullName' successfully."
-            }
-
-            # Manage generated module.
-            Write-Debug "Managing '$ModuleFullName' module..."
-            . $ManageGeneratedModulePS1 -ModuleName $ModuleFullName -ModuleSrc $ModuleProjectPath -ApiVersion $ApiVersion
-
-            if ($Build) {
-                # Build generated module.
-                if ($EnableSigning) {
-                    # Sign generated module.
-                    . $BuildModulePS1 -ModuleFullName $ModuleFullName -ModuleSrc $ModuleProjectPath -ModuleVersion $ModuleVersion -ModulePreviewNumber $ModulePreviewNumber -RequiredModules $RequiredGraphModules -ReleaseNotes $ModuleReleaseNotes -EnableSigning -ExcludeExampleTemplates:$ExcludeExampleTemplates -ExcludeNotesSection:$ExcludeNotesSection
+                if ($SkipGeneration) {
+                    Write-Warning "Skipping generation of '$ModuleFullName' module."
                 }
                 else {
-                    . $BuildModulePS1 -ModuleFullName $ModuleFullName -ModuleSrc $ModuleProjectPath -ModuleVersion $ModuleVersion -ModulePreviewNumber $ModulePreviewNumber -RequiredModules $RequiredGraphModules -ReleaseNotes $ModuleReleaseNotes -ExcludeExampleTemplates:$ExcludeExampleTemplates -ExcludeNotesSection:$ExcludeNotesSection
+                    npx autorest --max-memory-size=$MaxMemorySize --module-version:$ModuleVersion --service-name:$ModuleName --input-file:$OpenApiFile $AutoRestModuleConfig
+                    if ($lastexitcode -ne 0) {
+                        Write-Host -ForegroundColor Red "AutoREST failed to generate '$ModuleName' module."
+                        exit $lastexitcode
+                    }
+                    Write-Debug "AutoRest generated '$ModuleFullName' successfully."
+
+                    # Manage generated module.
+                    Write-Debug "Managing '$ModuleFullName' module..."
+                    . $ManageGeneratedModulePS1 -ModuleName $ModuleFullName -ModuleSrc $ModuleProjectPath -ApiVersion $ApiVersion
                 }
-                . $CleanUpPsm1 -ModuleProjectPath $ModuleProjectPath -FullyQualifiedModuleName $ModuleFullName
-            }
+                if ($Build) {
+                    # Build generated module.
+                    if ($EnableSigning) {
+                        # Sign generated module.
+                        . $BuildModulePS1 -ModuleFullName $ModuleFullName -ModuleSrc $ModuleProjectPath -ModuleVersion $ModuleVersion -ModulePreviewNumber $ModulePreviewNumber -RequiredModules $RequiredGraphModules -ReleaseNotes $ModuleReleaseNotes -EnableSigning -ExcludeExampleTemplates:$ExcludeExampleTemplates -ExcludeNotesSection:$ExcludeNotesSection
+                    }
+                    else {
+                        . $BuildModulePS1 -ModuleFullName $ModuleFullName -ModuleSrc $ModuleProjectPath -ModuleVersion $ModuleVersion -ModulePreviewNumber $ModulePreviewNumber -RequiredModules $RequiredGraphModules -ReleaseNotes $ModuleReleaseNotes -ExcludeExampleTemplates:$ExcludeExampleTemplates -ExcludeNotesSection:$ExcludeNotesSection
+                    }
+                    . $CleanUpPsm1 -ModuleProjectPath $ModuleProjectPath -FullyQualifiedModuleName $ModuleFullName
+                }
 
-            if ($Test) {
-                . $TestModulePS1 -ModulePath $ModuleProjectPath -ModuleName $ModuleFullName -ModuleTestsPath (Join-Path $ModuleProjectPath "test")
-            }
+                if ($Test) {
+                    . $TestModulePS1 -ModulePath $ModuleProjectPath -ModuleName $ModuleFullName -ModuleTestsPath (Join-Path $ModuleProjectPath "test")
+                }
 
-            if ($Pack) {
-                # TODO: Update PackModule script to use new project structure.
-                # Pack generated module.
-                #. $PackModulePS1 -Module $Module -ArtifactsLocation $ArtifactsLocation -ExcludeMarkdownDocsFromNugetPackage
+                if ($Pack) {
+                    # TODO: Update PackModule script to use new project structure.
+                    # Pack generated module.
+                    #. $PackModulePS1 -Module $Module -ArtifactsLocation $ArtifactsLocation -ExcludeMarkdownDocsFromNugetPackage
+                }
             }
         }
     }
