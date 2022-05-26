@@ -37,7 +37,7 @@ pool: $(BUILDAGENT)
 trigger:
     branches:
       include:
-      - master
+      - main
       - dev
       - releases/*
       - bugfixes/*
@@ -62,7 +62,7 @@ stages:
         targetType: 'inline'
         script: |
             printenv
-            if ('$(Build.SourceBranchName)' -eq "master"){
+            if ('$(Build.SourceBranchName)' -eq "main"){
                 Write-Host "##vso[task.setvariable variable=BUILDNUMBER;isOutput=true]-1"
             }
             Write-Host $(BUILDNUMBER)
