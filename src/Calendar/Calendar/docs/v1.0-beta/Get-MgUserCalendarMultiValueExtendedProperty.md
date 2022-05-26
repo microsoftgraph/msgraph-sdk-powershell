@@ -21,19 +21,19 @@ Get-MgUserCalendarMultiValueExtendedProperty -UserId <String> [-ExpandProperty <
  [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
-### Get2
-```
-Get-MgUserCalendarMultiValueExtendedProperty -MultiValueLegacyExtendedPropertyId <String> -UserId <String>
- [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
-```
-
-### Get3
+### Get
 ```
 Get-MgUserCalendarMultiValueExtendedProperty -CalendarId <String> -MultiValueLegacyExtendedPropertyId <String>
  -UserId <String> [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
-### GetViaIdentity2
+### Get3
+```
+Get-MgUserCalendarMultiValueExtendedProperty -MultiValueLegacyExtendedPropertyId <String> -UserId <String>
+ [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
+```
+
+### GetViaIdentity
 ```
 Get-MgUserCalendarMultiValueExtendedProperty -InputObject <ICalendarIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
@@ -81,7 +81,7 @@ key: id of calendar
 
 ```yaml
 Type: System.String
-Parameter Sets: Get3, List3
+Parameter Sets: Get, List3
 Aliases:
 
 Required: True
@@ -143,7 +143,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.ICalendarIdentity
-Parameter Sets: GetViaIdentity2, GetViaIdentity3
+Parameter Sets: GetViaIdentity, GetViaIdentity3
 Aliases:
 
 Required: True
@@ -158,7 +158,7 @@ key: id of multiValueLegacyExtendedProperty
 
 ```yaml
 Type: System.String
-Parameter Sets: Get2, Get3
+Parameter Sets: Get, Get3
 Aliases:
 
 Required: True
@@ -263,7 +263,7 @@ key: id of user
 
 ```yaml
 Type: System.String
-Parameter Sets: Get2, Get3, List2, List3
+Parameter Sets: Get, Get3, List2, List3
 Aliases:
 
 Required: True

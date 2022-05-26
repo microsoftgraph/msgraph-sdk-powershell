@@ -12,25 +12,19 @@ Represents references to a directory or domain of another organization whose use
 
 ## SYNTAX
 
-### CreateWithDomainIdentitySource (Default)
-```
-New-MgEntitlementManagementConnectedOrganization -DomainName <String> [-Description <String>]
- [-DisplayName <String>] [-State <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### Create1
-```
-New-MgEntitlementManagementConnectedOrganization -BodyParameter <IMicrosoftGraphConnectedOrganization1>
- [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### CreateExpanded1
+### CreateExpanded1 (Default)
 ```
 New-MgEntitlementManagementConnectedOrganization [-AdditionalProperties <Hashtable>]
  [-CreatedDateTime <DateTime>] [-Description <String>] [-DisplayName <String>]
  [-ExternalSponsors <IMicrosoftGraphDirectoryObject[]>] [-Id <String>]
  [-IdentitySources <IMicrosoftGraphIdentitySource[]>] [-InternalSponsors <IMicrosoftGraphDirectoryObject[]>]
  [-ModifiedDateTime <DateTime>] [-State <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
+```
+
+### Create1
+```
+New-MgEntitlementManagementConnectedOrganization -BodyParameter <IMicrosoftGraphConnectedOrganization1>
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -93,7 +87,7 @@ The description of the connected organization.
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded1, CreateWithDomainIdentitySource
+Parameter Sets: CreateExpanded1
 Aliases:
 
 Required: False
@@ -109,25 +103,10 @@ Supports $filter (eq).
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded1, CreateWithDomainIdentitySource
+Parameter Sets: CreateExpanded1
 Aliases:
 
 Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -DomainName
-The domain name of the connected organization identity source.
-
-```yaml
-Type: System.String
-Parameter Sets: CreateWithDomainIdentitySource
-Aliases:
-
-Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -219,7 +198,7 @@ connectedOrganizationState
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded1, CreateWithDomainIdentitySource
+Parameter Sets: CreateExpanded1
 Aliases:
 
 Required: False
@@ -268,8 +247,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphConnectedOrganization1
 
 ## OUTPUTS
-
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphConnectedOrganization
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphConnectedOrganization1
 

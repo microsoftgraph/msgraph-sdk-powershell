@@ -327,6 +327,7 @@ Accept wildcard characters: False
 
 ### -Extensions
 The collection of open extensions defined for the contact.
+Read-only.
 Nullable.
 To construct, please use Get-Help -Online and see NOTES section for EXTENSIONS properties and create a hash table.
 
@@ -894,9 +895,9 @@ BODYPARAMETER <IMicrosoftGraphContact>: contact
   - `[Department <String>]`: The contact's department.
   - `[DisplayName <String>]`: The contact's display name. You can specify the display name in a create or update operation. Note that later updates to other properties may cause an automatically generated value to overwrite the displayName value you have specified. To preserve a pre-existing value, always include it as displayName in an update operation.
   - `[EmailAddresses <IMicrosoftGraphEmailAddress[]>]`: The contact's email addresses.
-    - `[Address <String>]`: The email address of an entity instance.
-    - `[Name <String>]`: The display name of an entity instance.
-  - `[Extensions <IMicrosoftGraphExtension[]>]`: The collection of open extensions defined for the contact. Nullable.
+    - `[Address <String>]`: The email address of the person or entity.
+    - `[Name <String>]`: The display name of the person or entity.
+  - `[Extensions <IMicrosoftGraphExtension[]>]`: The collection of open extensions defined for the contact. Read-only. Nullable.
     - `[Id <String>]`: Read-only.
   - `[FileAs <String>]`: The name the contact is filed under.
   - `[Generation <String>]`: The contact's generation.
@@ -942,10 +943,10 @@ BUSINESSADDRESS <IMicrosoftGraphPhysicalAddress>: physicalAddress
   - `[Street <String>]`: The street.
 
 EMAILADDRESSES <IMicrosoftGraphEmailAddress[]>: The contact's email addresses.
-  - `[Address <String>]`: The email address of an entity instance.
-  - `[Name <String>]`: The display name of an entity instance.
+  - `[Address <String>]`: The email address of the person or entity.
+  - `[Name <String>]`: The display name of the person or entity.
 
-EXTENSIONS <IMicrosoftGraphExtension[]>: The collection of open extensions defined for the contact. Nullable.
+EXTENSIONS <IMicrosoftGraphExtension[]>: The collection of open extensions defined for the contact. Read-only. Nullable.
   - `[Id <String>]`: Read-only.
 
 HOMEADDRESS <IMicrosoftGraphPhysicalAddress>: physicalAddress
