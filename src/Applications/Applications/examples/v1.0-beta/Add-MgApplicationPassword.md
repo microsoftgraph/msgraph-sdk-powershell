@@ -60,4 +60,4 @@ AdditionalProperties : {[@odata.context,
 
 Add a password to an application that becomes valid at 12:00 am the next day and is valid for six months.
 
-Use `$secret.StartDateTime.ToLocalTime()` to convert the dates from UTC to the local timezone.
+Use `$secret.StartDateTime.ToLocalTime()` to convert the returned dates from UTC to the local timezone.
