@@ -19,12 +19,11 @@ require:
 directive:
   - remove-path-by-operation: .*\.onenote\..*parent.*|.*\.calendarView.*|.*\.notebooks\.section.*|.*\.sectionGroups\.section.*|.*\.sections\.pages.*|.*\.calendar\.events\..*$|.*\.events\..*$
 # Remove cmdlets
-# TODO: Clean up
-  # - where:
-  #     verb: Test
-  #     subject: ^GroupProperty$
-  #     variant: Validate1|ValidateExpanded1|Validate3|ValidateExpanded3
-  #   remove: true
+  - where:
+      verb: Test
+      subject: ^GroupProperty$
+      variant: Validate1|ValidateExpanded1
+    remove: true
   - where:
       verb: Get
       subject: (Group)AvailableExtensionProperty
@@ -34,13 +33,13 @@ directive:
       subject: ^(GroupLifecyclePolicy)(\1)+
     set:
       subject: $1
-# TODO: Clean up
-  # - where:
-  #     verb: Test
-  #     subject: ^(GroupDynamicMembership)$
-  #     variant: Evaluate1|EvaluateExpanded1
-  #   set:
-  #     subject: $1Rule
+  - where:
+      verb: Test
+      subject: ^(GroupDynamicMembership)$
+      variant: Evaluate1|EvaluateExpanded1
+    set:
+      subject: $1Rule
+#TODO: Clean up
   # - where:
   #     verb: Get
   #     subject: ^Group$
