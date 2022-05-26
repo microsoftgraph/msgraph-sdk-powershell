@@ -1,5 +1,6 @@
 # Copyright (c) Microsoft Corporation. All rights reserved.
 # Licensed under the MIT License.
+[CmdletBinding()]
 Param(
     [string] $VersionNumber,
     [string] $ReleaseNotes = "See https://aka.ms/GraphPowerShell-Release.",

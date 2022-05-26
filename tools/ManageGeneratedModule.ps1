@@ -7,6 +7,7 @@ Manages generated modules by managing dependencies and configuring authenticatio
 .PARAMETER Module
 The name of the module to manage.
 #>
+[CmdletBinding()]
 Param(
     [Parameter(Mandatory = $true)][ValidateNotNullOrEmpty()][string]$ModuleName,
     [Parameter(Mandatory = $true)][ValidateNotNullOrEmpty()][string]$ModuleSrc,

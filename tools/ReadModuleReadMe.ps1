@@ -1,6 +1,6 @@
 # Copyright (c) Microsoft Corporation. All rights reserved.
 # Licensed under the MIT License.
-
+[CmdletBinding()]
 param(
     [Parameter(Mandatory = $true)][ValidateNotNullOrEmpty()][string] $ReadMePath,
     [Parameter(Mandatory = $true)][ValidateNotNullOrEmpty()][string] $FieldToRead

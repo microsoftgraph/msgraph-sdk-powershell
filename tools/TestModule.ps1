@@ -1,5 +1,6 @@
 # Copyright (c) Microsoft Corporation. All rights reserved.
 # Licensed under the MIT License.
+[CmdletBinding()]
 param([string] $ModulePath, [string] $ModuleName, [string] $ModuleTestsPath, [switch]$Isolated)
 $ErrorActionPreference = 'Stop'
 

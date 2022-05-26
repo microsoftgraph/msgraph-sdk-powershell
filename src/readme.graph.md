@@ -413,16 +413,32 @@ directive:
       variant: ^(Check|Verify)(.*)
     set:
       verb: Confirm
-# Add ByRef suffix to /$ref cmdlets
+# Rename prepositions to bypass https://github.com/Azure/autorest.powershell/issues/795.
   - where:
-      subject: ^(\w*[a-z])GraphRef([A-Z]\w*)$
+      subject: ^(\w*[a-z])GraphBPre(\w*)$
     set:
-      subject: $1$2ByRef
-# Remove *ByRef commands
+      subject: $1By$2
   - where:
-      verb: Get|Remove|New
-      subject: ^UserPlanner(FavoritePlanByRef|RecentPlanByRef|RosterPlanByRef)$
-    remove: true
+      subject: ^(\w*[a-z])GraphWPre(\w*)$
+    set:
+      subject: $1With$2
+  - where:
+      subject: ^(\w*[a-z])GraphAPre(\w*)$
+    set:
+      subject: $1At$2
+  - where:
+      subject: ^(\w*[a-z])GraphFPre(\w*)$
+    set:
+      subject: $1For$2
+  - where:
+      subject: ^(\w*[a-z])GraphOPre(\w*)$
+    set:
+      subject: $1Of$2
+# Remove *ByRef commands
+  # - where:
+  #     verb: Get|Remove|New
+  #     subject: ^UserPlanner(FavoritePlanByRef|RecentPlanByRef|RosterPlanByRef)$
+  #   remove: true
 # Rename *ByRef commands
 #TODO: Clean-up.
   # - where:
@@ -443,27 +459,27 @@ directive:
   #     variant: ^List$|^List2$|^Create$|^Create2$|^CreateExpanded$|^CreateExpanded2$|^CreateViaIdentity$|^CreateViaIdentity2$|^CreateViaIdentityExpanded$|^CreateViaIdentityExpanded2$
   #   set:
   #     subject: GroupTransitiveMemberOfByRef
-  - where:
-      subject: ^SiteSite(ByRef)$
-    set:
-      subject: SubSite$1
-# Alias then rename cmdlets to avoid breaking change.
-  - where:
-      subject: ^(User|ServicePrincipal|Contact|Device)(Member|TransitiveMember)ByRef$
-    set:
-      alias: ${verb}-Mg${subject}
-  - where:
-      subject: ^(User|ServicePrincipal|Contact|Device)(Member|TransitiveMember)ByRef$
-    set:
-      subject: $1$2OfByRef
-  - where:
-      subject: ^(Application|Group)(CreatedOnBehalf)ByRef$
-    set:
-      alias: ${verb}-Mg${subject}
-  - where:
-      subject: ^(Application|Group)(CreatedOnBehalf)ByRef$
-    set:
-      subject: $1$2OfByRef
+#   - where:
+#       subject: ^SiteSite(ByRef)$
+#     set:
+#       subject: SubSite$1
+# # Alias then rename cmdlets to avoid breaking change.
+#   - where:
+#       subject: ^(User|ServicePrincipal|Contact|Device)(Member|TransitiveMember)ByRef$
+#     set:
+#       alias: ${verb}-Mg${subject}
+#   - where:
+#       subject: ^(User|ServicePrincipal|Contact|Device)(Member|TransitiveMember)ByRef$
+#     set:
+#       subject: $1$2OfByRef
+#   - where:
+#       subject: ^(Application|Group)(CreatedOnBehalf)ByRef$
+#     set:
+#       alias: ${verb}-Mg${subject}
+#   - where:
+#       subject: ^(Application|Group)(CreatedOnBehalf)ByRef$
+#     set:
+#       subject: $1$2OfByRef
 # Modify generated .json.cs model classes.
   - from: source-file-csharp
     where: $
