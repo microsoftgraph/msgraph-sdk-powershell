@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Sites
-Module Guid: 5e949aa4-699c-4499-96f8-28994c897acf
+Module Guid: 87cf0927-d82b-456a-9024-6c49919c9b62
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.sites
 Help Version: 1.0.0.0
 Locale: en-US
@@ -64,7 +64,7 @@ The list of SharePoint sites in this group.
 Access the default site with /sites/root.
 
 ### [Get-MgSite](Get-MgSite.md)
-Get entities from sites
+Get entity from sites by key
 
 ### [Get-MgSiteActivityByInterval](Get-MgSiteActivityByInterval.md)
 Invoke function getActivitiesByInterval
@@ -255,13 +255,13 @@ Nullable.
 ### [Get-MgSiteRecentNotebook](Get-MgSiteRecentNotebook.md)
 Invoke function getRecentNotebooks
 
-### [Get-MgSiteSiteByRef](Get-MgSiteSiteByRef.md)
-The collection of the sub-sites under this site.
-
 ### [Get-MgSiteTermStore](Get-MgSiteTermStore.md)
 The default termStore under this site.
 
 ### [Get-MgSubSite](Get-MgSubSite.md)
+The collection of the sub-sites under this site.
+
+### [Get-MgSubSiteByRef](Get-MgSubSiteByRef.md)
 The collection of the sub-sites under this site.
 
 ### [Get-MgUserFollowedSite](Get-MgUserFollowedSite.md)
@@ -291,9 +291,6 @@ Invoke action associateWithHubSites
 ### [New-MgGroupSite](New-MgGroupSite.md)
 The list of SharePoint sites in this group.
 Access the default site with /sites/root.
-
-### [New-MgSite](New-MgSite.md)
-Add new entity to sites
 
 ### [New-MgSiteColumn](New-MgSiteColumn.md)
 The collection of column definitions reusable across lists under this site.
@@ -362,7 +359,7 @@ The collection of pages in the SitePages list in this site.
 The permissions associated with the site.
 Nullable.
 
-### [New-MgSiteSiteByRef](New-MgSiteSiteByRef.md)
+### [New-MgSubSiteByRef](New-MgSubSiteByRef.md)
 The collection of the sub-sites under this site.
 
 ### [New-MgUserFollowedSiteByRef](New-MgUserFollowedSiteByRef.md)

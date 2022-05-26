@@ -10,7 +10,7 @@ schema: 2.0.0
 ## SYNOPSIS
 Read-only.
 Nullable.
-Returns the plannerTasks assigned to the user.
+Returns the plannerPlans shared with the user.
 
 ## SYNTAX
 
@@ -23,7 +23,7 @@ Get-MgUserPlannerTask -UserId <String> [-ExpandProperty <String[]>] [-Filter <St
 ## DESCRIPTION
 Read-only.
 Nullable.
-Returns the plannerTasks assigned to the user.
+Returns the plannerPlans shared with the user.
 
 ## EXAMPLES
 
