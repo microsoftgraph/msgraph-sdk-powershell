@@ -27,6 +27,7 @@ if ($PSEdition -ne 'Core') {
 
 $ModulePrefix = "Microsoft.Graph"
 $ModuleName = "Authentication"
+$ModuleFullName = "$ModulePrefix.$ModuleName"
 $AuthModuleManifest = "Microsoft.Graph.Authentication.psd1"
 $SigningKeyFile = "35MSSharedLib1024.snk"
 $BuildModulePS1 = Join-Path $PSScriptRoot ".\BuildModule.ps1" -Resolve
@@ -37,7 +38,7 @@ $AuthSrcPath = Join-Path $PSScriptRoot "..\src\Authentication\"
 $AuthModulePath = Join-Path $AuthSrcPath "Authentication" -Resolve
 $TestModulePS1 = Join-Path $PSScriptRoot ".\TestModule.ps1" -Resolve
 $RunModulePS1 = Join-Path $AuthModulePath ".\run-module.ps1" -Resolve
-$AuthCoreCSProj = Join-Path $AuthSrcPath "$ModuleName.Core" "$ModulePrefix.$ModuleName.Core.csproj"
+$AuthCoreCSProj = Join-Path $AuthSrcPath "$ModuleName.Core" "$ModuleFullName.Core.csproj"
 $CSProjHelperPS1 = Join-Path $PSScriptRoot "./CSProjHelper.ps1"
 
 # Import scripts
@@ -47,20 +48,20 @@ $CSProjHelperPS1 = Join-Path $PSScriptRoot "./CSProjHelper.ps1"
 $ManifestContent = Import-LocalizedData -BaseDirectory $AuthModulePath -FileName $AuthModuleManifest
 if ($null -eq $ManifestContent.ModuleVersion) {
   # Module version not set in module manifest (psd1).
-  Write-Error "Version number is not set on $ModulePrefix.$ModuleName module. Please set 'ModuleVersion' in $AuthModulePath\$AuthModuleManifest."
+  Write-Error "Version number is not set on $ModuleFullName module. Please set 'ModuleVersion' in $AuthModulePath\$AuthModuleManifest."
 }
 $AllowPreRelease = $true
 if ($ModulePreviewNumber -eq -1) {
   $AllowPreRelease = $false
 }
 # Validate module version with the one on PSGallery.
-[VersionState]$VersionState = & $ValidateUpdatedModuleVersionPS1 -ModuleName "$ModulePrefix.$ModuleName" -NextVersion $ManifestContent.ModuleVersion -PSRepository $RepositoryName -ModulePreviewNumber $ModulePreviewNumber
+[VersionState]$VersionState = & $ValidateUpdatedModuleVersionPS1 -ModuleName "$ModuleFullName" -NextVersion $ManifestContent.ModuleVersion -PSRepository $RepositoryName -ModulePreviewNumber $ModulePreviewNumber
 
 if ($VersionState.Equals([VersionState]::Invalid)) {
-  Write-Warning "The specified version in $ModulePrefix.$ModuleName module is either higher or lower than what's on $RepositoryName. Update 'ModuleVersion' in $AuthModulePath$AuthModuleManifest."
+  Write-Warning "The specified version in $ModuleFullName module is either higher or lower than what's on $RepositoryName. Update 'ModuleVersion' in $AuthModulePath$AuthModuleManifest."
 }
 elseif ($VersionState.Equals([VersionState]::EqualToFeed) -and !$BuildWhenEqual) {
-  Write-Warning "$ModulePrefix.$ModuleName module skipped. Version has not changed and is equal to what's on $RepositoryName."
+  Write-Warning "$ModuleFullName module skipped. Version has not changed and is equal to what's on $RepositoryName."
 }
 elseif ($VersionState.Equals([VersionState]::Valid) -or $VersionState.Equals([VersionState]::NotOnFeed) -or $BuildWhenEqual) {
   $ModuleVersion = $ManifestContent.ModuleVersion
@@ -68,15 +69,15 @@ elseif ($VersionState.Equals([VersionState]::Valid) -or $VersionState.Equals([Ve
   if ($Build -or $Run) {
     if ($EnableSigning) {
       Set-CSProjValues -ModuleCsProj $AuthCoreCSProj -ModuleVersion $ModuleVersion -AssemblyOriginatorKeyFile $SigningKeyFile
-      & $BuildModulePS1 -Module $ModuleName -ModulePrefix $ModulePrefix -ModuleVersion $ModuleVersion -ModulePreviewNumber $ModulePreviewNumber -ReleaseNotes $ManifestContent.PrivateData.PSData.ReleaseNotes -EnableSigning
+      & $BuildModulePS1 -ModuleFullName $ModuleFullName -ModuleSrc $AuthModulePath -ModuleVersion $ModuleVersion -ModulePreviewNumber $ModulePreviewNumber -ReleaseNotes $ManifestContent.PrivateData.PSData.ReleaseNotes -EnableSigning
     }
     else {
       Set-CSProjValues -ModuleCsProj $AuthCoreCSProj -ModuleVersion $ModuleVersion
-      & $BuildModulePS1 -Module $ModuleName -ModulePrefix $ModulePrefix -ModuleVersion $ModuleVersion -ModulePreviewNumber $ModulePreviewNumber -ReleaseNotes $ManifestContent.PrivateData.PSData.ReleaseNotes
+      & $BuildModulePS1 -ModuleFullName $ModuleFullName -ModuleSrc $AuthModulePath -ModuleVersion $ModuleVersion -ModulePreviewNumber $ModulePreviewNumber -ReleaseNotes $ManifestContent.PrivateData.PSData.ReleaseNotes
     }
   }
   if ($Test) {
-    & $TestModulePS1 -ModulePath (Join-Path $AuthModulePath "artifacts" ) -ModuleName "$ModulePrefix.$ModuleName" -ModuleTestsPath (Join-Path $AuthModulePath "test")
+    & $TestModulePS1 -ModulePath (Join-Path $AuthModulePath "artifacts" ) -ModuleName "$ModuleFullName" -ModuleTestsPath (Join-Path $AuthModulePath "test")
   }
 
   if ($Pack -or $Run) {
@@ -84,7 +85,7 @@ elseif ($VersionState.Equals([VersionState]::Valid) -or $VersionState.Equals([Ve
   }
 
   if ($Run) {
-    & $RunModulePS1 -ModuleName "$ModulePrefix.$ModuleName" -ArtifactLocation $ArtifactsLocation
+    & $RunModulePS1 -ModuleName "$ModuleFullName" -ArtifactLocation $ArtifactsLocation
   }
 
   if ($Publish) {
