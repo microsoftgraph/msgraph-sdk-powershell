@@ -12350,7 +12350,7 @@ paths:
         - users.Actions
       summary: Invoke action wipeManagedAppRegistrationsByDeviceTag
       description: Issues a wipe operation on an app registration with specified device tag.
-      operationId: users_wipeManagedAppRegistrationsByDeviceTag
+      operationId: users_wipeManagedAppRegistrationsGraphBPreDeviceTag
       parameters:
         - name: user-id
           in: path
@@ -15146,7 +15146,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action getByIds
-      operationId: users_getByIds
+      operationId: users_getGraphBPreIds
       requestBody:
         description: Action parameters
         content:

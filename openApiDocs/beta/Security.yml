@@ -4700,7 +4700,7 @@ paths:
       tags:
         - security.Actions
       summary: Invoke action deleteTiIndicatorsByExternalId
-      operationId: security.tiIndicators_deleteTiIndicatorsByExternalId
+      operationId: security.tiIndicators_deleteTiIndicatorsGraphBPreExternalId
       requestBody:
         description: Action parameters
         content:

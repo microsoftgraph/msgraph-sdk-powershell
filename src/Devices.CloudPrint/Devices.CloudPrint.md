@@ -16,7 +16,7 @@ require:
 > see https://github.com/Azure/autorest/blob/master/docs/powershell/directives.md
 
 ``` yaml
-directive:
+# directive:
 # Remove cmdlets
 # TODO: Clean up
   # - where:

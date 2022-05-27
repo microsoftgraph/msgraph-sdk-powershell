@@ -37,7 +37,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function filterByCurrentUser
-      operationId: users.appConsentRequestsForApproval.userConsentRequests_filterByCurrentUser
+      operationId: users.appConsentRequestsGraphFPreApproval.userConsentRequests_filterGraphBPreCurrentUser
       parameters:
         - name: user-id
           in: path
@@ -76,7 +76,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function filterByCurrentUser
-      operationId: users.appConsentRequestsForApproval_filterByCurrentUser
+      operationId: users.appConsentRequestsGraphFPreApproval_filterGraphBPreCurrentUser
       parameters:
         - name: user-id
           in: path
@@ -108,7 +108,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function filterByCurrentUser
-      operationId: users.approvals_filterByCurrentUser
+      operationId: users.approvals_filterGraphBPreCurrentUser
       parameters:
         - name: user-id
           in: path
@@ -1714,7 +1714,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function getUserIdsWithFlaggedAppRegistration
-      operationId: users.managedAppRegistrations_getUserIdsWithFlaggedAppRegistration
+      operationId: users.managedAppRegistrations_getUserIdsGraphWPreFlaggedAppRegistration
       parameters:
         - name: user-id
           in: path
@@ -2153,7 +2153,7 @@ paths:
         - users.Functions
       summary: Invoke function getManagedDevicesWithAppFailures
       description: Retrieves the list of devices with failed apps
-      operationId: users_getManagedDevicesWithAppFailures
+      operationId: users_getManagedDevicesGraphWPreAppFailures
       parameters:
         - name: user-id
           in: path
@@ -2181,7 +2181,7 @@ paths:
         - users.Functions
       summary: Invoke function getManagedDevicesWithFailedOrPendingApps
       description: Retrieves the list of devices with failed or pending apps
-      operationId: users_getManagedDevicesWithFailedOrPendingApps
+      operationId: users_getManagedDevicesGraphWPreFailedOrPendingApps
       parameters:
         - name: user-id
           in: path
@@ -2600,7 +2600,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function filterByCurrentUser
-      operationId: users.pendingAccessReviewInstances.decisions_filterByCurrentUser
+      operationId: users.pendingAccessReviewInstances.decisions_filterGraphBPreCurrentUser
       parameters:
         - name: user-id
           in: path
@@ -2639,7 +2639,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function filterByCurrentUser
-      operationId: users.pendingAccessReviewInstances.stages.decisions_filterByCurrentUser
+      operationId: users.pendingAccessReviewInstances.stages.decisions_filterGraphBPreCurrentUser
       parameters:
         - name: user-id
           in: path
@@ -2685,7 +2685,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function filterByCurrentUser
-      operationId: users.pendingAccessReviewInstances.stages_filterByCurrentUser
+      operationId: users.pendingAccessReviewInstances.stages_filterGraphBPreCurrentUser
       parameters:
         - name: user-id
           in: path
@@ -2724,7 +2724,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function filterByCurrentUser
-      operationId: users.pendingAccessReviewInstances_filterByCurrentUser
+      operationId: users.pendingAccessReviewInstances_filterGraphBPreCurrentUser
       parameters:
         - name: user-id
           in: path

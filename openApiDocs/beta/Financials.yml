@@ -498,7 +498,7 @@ paths:
               parameters:
                 company-id: $request.path.company-id
             unitsOfMeasure:
-              operationId: financials.Companies.ListUnitsOfMeasure
+              operationId: financials.Companies.ListUnitsGraphOPreMeasure
               parameters:
                 company-id: $request.path.company-id
             vendors:
@@ -32484,7 +32484,7 @@ paths:
       tags:
         - financials.company
       summary: Get unitsOfMeasure from financials
-      operationId: financials.companies_ListUnitsOfMeasure
+      operationId: financials.companies_ListUnitsGraphOPreMeasure
       parameters:
         - name: company-id
           in: path
@@ -32574,7 +32574,7 @@ paths:
       tags:
         - financials.company
       summary: Create new navigation property to unitsOfMeasure for financials
-      operationId: financials.companies_CreateUnitsOfMeasure
+      operationId: financials.companies_CreateUnitsGraphOPreMeasure
       parameters:
         - name: company-id
           in: path
@@ -32605,7 +32605,7 @@ paths:
       tags:
         - financials.company
       summary: Get unitsOfMeasure from financials
-      operationId: financials.companies_GetUnitsOfMeasure
+      operationId: financials.companies_GetUnitsGraphOPreMeasure
       parameters:
         - name: company-id
           in: path
@@ -32663,7 +32663,7 @@ paths:
       tags:
         - financials.company
       summary: Update the navigation property unitsOfMeasure in financials
-      operationId: financials.companies_UpdateUnitsOfMeasure
+      operationId: financials.companies_UpdateUnitsGraphOPreMeasure
       parameters:
         - name: company-id
           in: path
@@ -32696,7 +32696,7 @@ paths:
       tags:
         - financials.company
       summary: Delete navigation property unitsOfMeasure for financials
-      operationId: financials.companies_DeleteUnitsOfMeasure
+      operationId: financials.companies_DeleteUnitsGraphOPreMeasure
       parameters:
         - name: company-id
           in: path

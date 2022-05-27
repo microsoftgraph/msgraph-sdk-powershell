@@ -1749,7 +1749,7 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function getManagementConditionStatementsForPlatform
-      operationId: deviceManagement.managementConditions.managementConditionStatements_getManagementConditionStatementsForPlatform
+      operationId: deviceManagement.managementConditions.managementConditionStatements_getManagementConditionStatementsGraphFPrePlatform
       parameters:
         - name: managementCondition-id
           in: path
@@ -1781,7 +1781,7 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function getManagementConditionsForPlatform
-      operationId: deviceManagement.managementConditions_getManagementConditionsForPlatform
+      operationId: deviceManagement.managementConditions_getManagementConditionsGraphFPrePlatform
       parameters:
         - name: platform
           in: path
@@ -1806,7 +1806,7 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function getManagementConditionsForPlatform
-      operationId: deviceManagement.managementConditionStatements.managementConditions_getManagementConditionsForPlatform
+      operationId: deviceManagement.managementConditionStatements.managementConditions_getManagementConditionsGraphFPrePlatform
       parameters:
         - name: managementConditionStatement-id
           in: path
@@ -1862,7 +1862,7 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function getManagementConditionStatementsForPlatform
-      operationId: deviceManagement.managementConditionStatements_getManagementConditionStatementsForPlatform
+      operationId: deviceManagement.managementConditionStatements_getManagementConditionStatementsGraphFPrePlatform
       parameters:
         - name: platform
           in: path
@@ -1981,7 +1981,7 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function getRoleScopeTagsByIds
-      operationId: deviceManagement_getRoleScopeTagsByIds
+      operationId: deviceManagement_getRoleScopeTagsGraphBPreIds
       parameters:
         - name: ids
           in: query
@@ -2006,7 +2006,7 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function getRoleScopeTagsByResource
-      operationId: deviceManagement_getRoleScopeTagsByResource
+      operationId: deviceManagement_getRoleScopeTagsGraphBPreResource
       parameters:
         - name: resource
           in: path
@@ -2056,7 +2056,7 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function scopedForResource
-      operationId: deviceManagement_scopedForResource
+      operationId: deviceManagement_scopedGraphFPreResource
       parameters:
         - name: resource
           in: path
@@ -2122,7 +2122,7 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function getScopesForUser
-      operationId: deviceManagement.resourceOperations_getScopesForUser
+      operationId: deviceManagement.resourceOperations_getScopesGraphFPreUser
       parameters:
         - name: resourceOperation-id
           in: path

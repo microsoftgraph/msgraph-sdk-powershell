@@ -2274,7 +2274,7 @@ paths:
               parameters:
                 invitation-id: $request.path.invitation-id
             memberOf:
-              operationId: invitations.InvitedUser.ListMemberOf
+              operationId: invitations.InvitedUser.ListMemberGraphOPre
               parameters:
                 invitation-id: $request.path.invitation-id
             oauth2PermissionGrants:
@@ -2294,11 +2294,11 @@ paths:
               parameters:
                 invitation-id: $request.path.invitation-id
             scopedRoleMemberOf:
-              operationId: invitations.InvitedUser.ListScopedRoleMemberOf
+              operationId: invitations.InvitedUser.ListScopedRoleMemberGraphOPre
               parameters:
                 invitation-id: $request.path.invitation-id
             transitiveMemberOf:
-              operationId: invitations.InvitedUser.ListTransitiveMemberOf
+              operationId: invitations.InvitedUser.ListTransitiveMemberGraphOPre
               parameters:
                 invitation-id: $request.path.invitation-id
             calendar:
@@ -2446,7 +2446,7 @@ paths:
         - invitations.user
       summary: Get ref of invitedUser from invitations
       description: The user created as part of the invitation creation. Read-Only
-      operationId: invitations_GetGraphRefInvitedUser
+      operationId: invitations_GetInvitedUserGraphBPreRef
       parameters:
         - name: invitation-id
           in: path
@@ -2484,7 +2484,7 @@ paths:
               parameters:
                 invitation-id: $request.path.invitation-id
             memberOf:
-              operationId: invitations.InvitedUser.ListMemberOf
+              operationId: invitations.InvitedUser.ListMemberGraphOPre
               parameters:
                 invitation-id: $request.path.invitation-id
             oauth2PermissionGrants:
@@ -2504,11 +2504,11 @@ paths:
               parameters:
                 invitation-id: $request.path.invitation-id
             scopedRoleMemberOf:
-              operationId: invitations.InvitedUser.ListScopedRoleMemberOf
+              operationId: invitations.InvitedUser.ListScopedRoleMemberGraphOPre
               parameters:
                 invitation-id: $request.path.invitation-id
             transitiveMemberOf:
-              operationId: invitations.InvitedUser.ListTransitiveMemberOf
+              operationId: invitations.InvitedUser.ListTransitiveMemberGraphOPre
               parameters:
                 invitation-id: $request.path.invitation-id
             calendar:
@@ -2655,7 +2655,7 @@ paths:
         - invitations.user
       summary: Update the ref of navigation property invitedUser in invitations
       description: The user created as part of the invitation creation. Read-Only
-      operationId: invitations_SetGraphRefInvitedUser
+      operationId: invitations_SetInvitedUserGraphBPreRef
       parameters:
         - name: invitation-id
           in: path
@@ -2684,7 +2684,7 @@ paths:
         - invitations.user
       summary: Delete ref of navigation property invitedUser for invitations
       description: The user created as part of the invitation creation. Read-Only
-      operationId: invitations_DeleteGraphRefInvitedUser
+      operationId: invitations_DeleteInvitedUserGraphBPreRef
       parameters:
         - name: invitation-id
           in: path
@@ -3023,7 +3023,7 @@ paths:
         - organization.certificateBasedAuthConfiguration
       summary: Get ref of certificateBasedAuthConfiguration from organization
       description: Navigation property to manage certificate-based authentication configuration. Only a single instance of certificateBasedAuthConfiguration can be created in the collection.
-      operationId: organization_ListGraphRefCertificateBasedAuthConfiguration
+      operationId: organization_ListCertificateBasedAuthConfigurationGraphBPreRef
       parameters:
         - name: organization-id
           in: path
@@ -3080,7 +3080,7 @@ paths:
         - organization.certificateBasedAuthConfiguration
       summary: Create new navigation property ref to certificateBasedAuthConfiguration for organization
       description: Navigation property to manage certificate-based authentication configuration. Only a single instance of certificateBasedAuthConfiguration can be created in the collection.
-      operationId: organization_CreateGraphRefCertificateBasedAuthConfiguration
+      operationId: organization_CreateCertificateBasedAuthConfigurationGraphBPreRef
       parameters:
         - name: organization-id
           in: path
@@ -6297,7 +6297,7 @@ paths:
               parameters:
                 user-id: $request.path.user-id
             windowsHelloForBusinessMethods:
-              operationId: users.Authentication.ListWindowsHelloForBusinessMethods
+              operationId: users.Authentication.ListWindowsHelloGraphFPreBusinessMethods
               parameters:
                 user-id: $request.path.user-id
         default:
@@ -7189,7 +7189,7 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.device'
           links:
             memberOf:
-              operationId: users.authentication.microsoftAuthenticatorMethods.Device.ListMemberOf
+              operationId: users.authentication.microsoftAuthenticatorMethods.Device.ListMemberGraphOPre
               parameters:
                 user-id: $request.path.user-id
                 microsoftAuthenticatorAuthenticationMethod-id: $request.path.microsoftAuthenticatorAuthenticationMethod-id
@@ -7204,7 +7204,7 @@ paths:
                 user-id: $request.path.user-id
                 microsoftAuthenticatorAuthenticationMethod-id: $request.path.microsoftAuthenticatorAuthenticationMethod-id
             transitiveMemberOf:
-              operationId: users.authentication.microsoftAuthenticatorMethods.Device.ListTransitiveMemberOf
+              operationId: users.authentication.microsoftAuthenticatorMethods.Device.ListTransitiveMemberGraphOPre
               parameters:
                 user-id: $request.path.user-id
                 microsoftAuthenticatorAuthenticationMethod-id: $request.path.microsoftAuthenticatorAuthenticationMethod-id
@@ -7288,7 +7288,7 @@ paths:
         - users.authentication
       summary: Get windowsHelloForBusinessMethods from users
       description: Represents the Windows Hello for Business authentication method registered to a user for authentication.
-      operationId: users.authentication_ListWindowsHelloForBusinessMethods
+      operationId: users.authentication_ListWindowsHelloGraphFPreBusinessMethods
       parameters:
         - name: user-id
           in: path
@@ -7378,7 +7378,7 @@ paths:
         - users.authentication
       summary: Create new navigation property to windowsHelloForBusinessMethods for users
       description: Represents the Windows Hello for Business authentication method registered to a user for authentication.
-      operationId: users.authentication_CreateWindowsHelloForBusinessMethods
+      operationId: users.authentication_CreateWindowsHelloGraphFPreBusinessMethods
       parameters:
         - name: user-id
           in: path
@@ -7410,7 +7410,7 @@ paths:
         - users.authentication
       summary: Get windowsHelloForBusinessMethods from users
       description: Represents the Windows Hello for Business authentication method registered to a user for authentication.
-      operationId: users.authentication_GetWindowsHelloForBusinessMethods
+      operationId: users.authentication_GetWindowsHelloGraphFPreBusinessMethods
       parameters:
         - name: user-id
           in: path
@@ -7464,7 +7464,7 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.windowsHelloForBusinessAuthenticationMethod'
           links:
             device:
-              operationId: users.authentication.WindowsHelloForBusinessMethods.GetDevice
+              operationId: users.authentication.WindowsHelloGraphFPreBusinessMethods.GetDevice
               parameters:
                 user-id: $request.path.user-id
                 windowsHelloForBusinessAuthenticationMethod-id: $request.path.windowsHelloForBusinessAuthenticationMethod-id
@@ -7476,7 +7476,7 @@ paths:
         - users.authentication
       summary: Update the navigation property windowsHelloForBusinessMethods in users
       description: Represents the Windows Hello for Business authentication method registered to a user for authentication.
-      operationId: users.authentication_UpdateWindowsHelloForBusinessMethods
+      operationId: users.authentication_UpdateWindowsHelloGraphFPreBusinessMethods
       parameters:
         - name: user-id
           in: path
@@ -7510,7 +7510,7 @@ paths:
         - users.authentication
       summary: Delete navigation property windowsHelloForBusinessMethods for users
       description: Represents the Windows Hello for Business authentication method registered to a user for authentication.
-      operationId: users.authentication_DeleteWindowsHelloForBusinessMethods
+      operationId: users.authentication_DeleteWindowsHelloGraphFPreBusinessMethods
       parameters:
         - name: user-id
           in: path
@@ -7543,7 +7543,7 @@ paths:
         - users.authentication
       summary: Get device from users
       description: 'The registered device on which this Windows Hello for Business key resides. Supports $expand. When you get a user''s Windows Hello for Business registration information, this property is returned only on a single GET and when you specify ?$expand. For example, GET /users/admin@contoso.com/authentication/windowsHelloForBusinessMethods/_jpuR-TGZtk6aQCLF3BQjA2?$expand=device.'
-      operationId: users.authentication.windowsHelloForBusinessMethods_GetDevice
+      operationId: users.authentication.windowsHelloGraphFPreBusinessMethods_GetDevice
       parameters:
         - name: user-id
           in: path
@@ -7622,27 +7622,27 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.device'
           links:
             memberOf:
-              operationId: users.authentication.windowsHelloForBusinessMethods.Device.ListMemberOf
+              operationId: users.authentication.windowsHelloGraphFPreBusinessMethods.Device.ListMemberGraphOPre
               parameters:
                 user-id: $request.path.user-id
                 windowsHelloForBusinessAuthenticationMethod-id: $request.path.windowsHelloForBusinessAuthenticationMethod-id
             registeredOwners:
-              operationId: users.authentication.windowsHelloForBusinessMethods.Device.ListRegisteredOwners
+              operationId: users.authentication.windowsHelloGraphFPreBusinessMethods.Device.ListRegisteredOwners
               parameters:
                 user-id: $request.path.user-id
                 windowsHelloForBusinessAuthenticationMethod-id: $request.path.windowsHelloForBusinessAuthenticationMethod-id
             registeredUsers:
-              operationId: users.authentication.windowsHelloForBusinessMethods.Device.ListRegisteredUsers
+              operationId: users.authentication.windowsHelloGraphFPreBusinessMethods.Device.ListRegisteredUsers
               parameters:
                 user-id: $request.path.user-id
                 windowsHelloForBusinessAuthenticationMethod-id: $request.path.windowsHelloForBusinessAuthenticationMethod-id
             transitiveMemberOf:
-              operationId: users.authentication.windowsHelloForBusinessMethods.Device.ListTransitiveMemberOf
+              operationId: users.authentication.windowsHelloGraphFPreBusinessMethods.Device.ListTransitiveMemberGraphOPre
               parameters:
                 user-id: $request.path.user-id
                 windowsHelloForBusinessAuthenticationMethod-id: $request.path.windowsHelloForBusinessAuthenticationMethod-id
             extensions:
-              operationId: users.authentication.windowsHelloForBusinessMethods.Device.ListExtensions
+              operationId: users.authentication.windowsHelloGraphFPreBusinessMethods.Device.ListExtensions
               parameters:
                 user-id: $request.path.user-id
                 windowsHelloForBusinessAuthenticationMethod-id: $request.path.windowsHelloForBusinessAuthenticationMethod-id
@@ -7654,7 +7654,7 @@ paths:
         - users.authentication
       summary: Update the navigation property device in users
       description: 'The registered device on which this Windows Hello for Business key resides. Supports $expand. When you get a user''s Windows Hello for Business registration information, this property is returned only on a single GET and when you specify ?$expand. For example, GET /users/admin@contoso.com/authentication/windowsHelloForBusinessMethods/_jpuR-TGZtk6aQCLF3BQjA2?$expand=device.'
-      operationId: users.authentication.windowsHelloForBusinessMethods_UpdateDevice
+      operationId: users.authentication.windowsHelloGraphFPreBusinessMethods_UpdateDevice
       parameters:
         - name: user-id
           in: path
@@ -7688,7 +7688,7 @@ paths:
         - users.authentication
       summary: Delete navigation property device for users
       description: 'The registered device on which this Windows Hello for Business key resides. Supports $expand. When you get a user''s Windows Hello for Business registration information, this property is returned only on a single GET and when you specify ?$expand. For example, GET /users/admin@contoso.com/authentication/windowsHelloForBusinessMethods/_jpuR-TGZtk6aQCLF3BQjA2?$expand=device.'
-      operationId: users.authentication.windowsHelloForBusinessMethods_DeleteDevice
+      operationId: users.authentication.windowsHelloGraphFPreBusinessMethods_DeleteDevice
       parameters:
         - name: user-id
           in: path

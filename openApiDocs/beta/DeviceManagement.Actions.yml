@@ -66,7 +66,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action createToken
-      operationId: deviceManagement.androidForWorkEnrollmentProfiles_createToken
+      operationId: deviceManagement.androidGraphFPreWorkEnrollmentProfiles_createToken
       parameters:
         - name: androidForWorkEnrollmentProfile-id
           in: path
@@ -101,7 +101,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action revokeToken
-      operationId: deviceManagement.androidForWorkEnrollmentProfiles_revokeToken
+      operationId: deviceManagement.androidGraphFPreWorkEnrollmentProfiles_revokeToken
       parameters:
         - name: androidForWorkEnrollmentProfile-id
           in: path
@@ -121,7 +121,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action completeSignup
-      operationId: deviceManagement.androidForWorkSettings_completeSignup
+      operationId: deviceManagement.androidGraphFPreWorkSettings_completeSignup
       requestBody:
         description: Action parameters
         content:
@@ -146,7 +146,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action requestSignupUrl
-      operationId: deviceManagement.androidForWorkSettings_requestSignupUrl
+      operationId: deviceManagement.androidGraphFPreWorkSettings_requestSignupUrl
       requestBody:
         description: Action parameters
         content:
@@ -176,7 +176,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action syncApps
-      operationId: deviceManagement.androidForWorkSettings_syncApps
+      operationId: deviceManagement.androidGraphFPreWorkSettings_syncApps
       responses:
         '204':
           description: Success
@@ -188,7 +188,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action unbind
-      operationId: deviceManagement.androidForWorkSettings_unbind
+      operationId: deviceManagement.androidGraphFPreWorkSettings_unbind
       responses:
         '204':
           description: Success
@@ -2066,7 +2066,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action shareForSchoolDataSyncService
-      operationId: deviceManagement.depOnboardingSettings_shareForSchoolDataSyncService
+      operationId: deviceManagement.depOnboardingSettings_shareGraphFPreSchoolDataSyncService
       parameters:
         - name: depOnboardingSetting-id
           in: path
@@ -2087,7 +2087,7 @@ paths:
         - deviceManagement.Actions
       summary: Invoke action syncWithAppleDeviceEnrollmentProgram
       description: Synchronizes between Apple Device Enrollment Program and Intune
-      operationId: deviceManagement.depOnboardingSettings_syncWithAppleDeviceEnrollmentProgram
+      operationId: deviceManagement.depOnboardingSettings_syncGraphWPreAppleDeviceEnrollmentProgram
       parameters:
         - name: depOnboardingSetting-id
           in: path
@@ -2107,7 +2107,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action unshareForSchoolDataSyncService
-      operationId: deviceManagement.depOnboardingSettings_unshareForSchoolDataSyncService
+      operationId: deviceManagement.depOnboardingSettings_unshareGraphFPreSchoolDataSyncService
       parameters:
         - name: depOnboardingSetting-id
           in: path
@@ -2395,7 +2395,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action scheduleActionsForRules
-      operationId: deviceManagement.deviceCompliancePolicies_scheduleActionsForRules
+      operationId: deviceManagement.deviceCompliancePolicies_scheduleActionsGraphFPreRules
       parameters:
         - name: deviceCompliancePolicy-id
           in: path
@@ -3916,7 +3916,7 @@ paths:
         - deviceManagement.Actions
       summary: Invoke action extendFeatureUpdatesPause
       description: Extend Feature Updates Pause for a Windows Update for Business ring.
-      operationId: deviceManagement.deviceConfigurations.groupAssignments.deviceConfiguration.microsoft.graph.windowsUpdateForBusinessConfiguration_extendFeatureUpdatesPause
+      operationId: deviceManagement.deviceConfigurations.groupAssignments.deviceConfiguration.microsoft.graph.windowsUpdateGraphFPreBusinessConfiguration_extendFeatureUpdatesPause
       parameters:
         - name: deviceConfiguration-id
           in: path
@@ -3944,7 +3944,7 @@ paths:
         - deviceManagement.Actions
       summary: Invoke action extendQualityUpdatesPause
       description: Extend Quality Updates Pause for a Windows Update for Business ring.
-      operationId: deviceManagement.deviceConfigurations.groupAssignments.deviceConfiguration.microsoft.graph.windowsUpdateForBusinessConfiguration_extendQualityUpdatesPause
+      operationId: deviceManagement.deviceConfigurations.groupAssignments.deviceConfiguration.microsoft.graph.windowsUpdateGraphFPreBusinessConfiguration_extendQualityUpdatesPause
       parameters:
         - name: deviceConfiguration-id
           in: path
@@ -4084,7 +4084,7 @@ paths:
         - deviceManagement.Actions
       summary: Invoke action extendFeatureUpdatesPause
       description: Extend Feature Updates Pause for a Windows Update for Business ring.
-      operationId: deviceManagement.deviceConfigurations.microsoft.graph.windowsUpdateForBusinessConfiguration_extendFeatureUpdatesPause
+      operationId: deviceManagement.deviceConfigurations.microsoft.graph.windowsUpdateGraphFPreBusinessConfiguration_extendFeatureUpdatesPause
       parameters:
         - name: deviceConfiguration-id
           in: path
@@ -4105,7 +4105,7 @@ paths:
         - deviceManagement.Actions
       summary: Invoke action extendQualityUpdatesPause
       description: Extend Quality Updates Pause for a Windows Update for Business ring.
-      operationId: deviceManagement.deviceConfigurations.microsoft.graph.windowsUpdateForBusinessConfiguration_extendQualityUpdatesPause
+      operationId: deviceManagement.deviceConfigurations.microsoft.graph.windowsUpdateGraphFPreBusinessConfiguration_extendQualityUpdatesPause
       parameters:
         - name: deviceConfiguration-id
           in: path
@@ -16389,7 +16389,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action getCompliancePoliciesReportForDevice
-      operationId: deviceManagement.reports_getCompliancePoliciesReportForDevice
+      operationId: deviceManagement.reports_getCompliancePoliciesReportGraphFPreDevice
       requestBody:
         description: Action parameters
         content:
@@ -16992,7 +16992,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action getConfigurationPoliciesReportForDevice
-      operationId: deviceManagement.reports_getConfigurationPoliciesReportForDevice
+      operationId: deviceManagement.reports_getConfigurationPoliciesReportGraphFPreDevice
       requestBody:
         description: Action parameters
         content:
@@ -17997,7 +17997,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action getEnrollmentConfigurationPoliciesByDevice
-      operationId: deviceManagement.reports_getEnrollmentConfigurationPoliciesByDevice
+      operationId: deviceManagement.reports_getEnrollmentConfigurationPoliciesGraphBPreDevice
       requestBody:
         description: Action parameters
         content:
@@ -19575,7 +19575,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action queryByPlatformType
-      operationId: deviceManagement.resourceAccessProfiles_queryByPlatformType
+      operationId: deviceManagement.resourceAccessProfiles_queryGraphBPrePlatformType
       requestBody:
         description: Action parameters
         content:
@@ -19723,7 +19723,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action getRoleScopeTagsById
-      operationId: deviceManagement.roleAssignments.roleScopeTags_getRoleScopeTagsById
+      operationId: deviceManagement.roleAssignments.roleScopeTags_getRoleScopeTagsGraphBPreId
       parameters:
         - name: deviceAndAppManagementRoleAssignment-id
           in: path
@@ -19804,7 +19804,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action getRoleScopeTagsById
-      operationId: deviceManagement.roleScopeTags_getRoleScopeTagsById
+      operationId: deviceManagement.roleScopeTags_getRoleScopeTagsGraphBPreId
       requestBody:
         description: Action parameters
         content:

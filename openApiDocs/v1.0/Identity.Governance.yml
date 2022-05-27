@@ -1771,7 +1771,7 @@ paths:
             appConsent:
               operationId: identityGovernance.GetAppConsent
             termsOfUse:
-              operationId: identityGovernance.GetTermsOfUse
+              operationId: identityGovernance.GetTermsGraphOPreUse
             entitlementManagement:
               operationId: identityGovernance.GetEntitlementManagement
         default:
@@ -3019,7 +3019,7 @@ paths:
       tags:
         - identityGovernance.Functions
       summary: Invoke function filterByCurrentUser
-      operationId: identityGovernance.accessReviews.definitions.instances.decisions_filterByCurrentUser
+      operationId: identityGovernance.accessReviews.definitions.instances.decisions_filterGraphBPreCurrentUser
       parameters:
         - name: accessReviewScheduleDefinition-id
           in: path
@@ -3242,7 +3242,7 @@ paths:
       tags:
         - identityGovernance.Functions
       summary: Invoke function filterByCurrentUser
-      operationId: identityGovernance.accessReviews.definitions.instances_filterByCurrentUser
+      operationId: identityGovernance.accessReviews.definitions.instances_filterGraphBPreCurrentUser
       parameters:
         - name: accessReviewScheduleDefinition-id
           in: path
@@ -3294,7 +3294,7 @@ paths:
       tags:
         - identityGovernance.Functions
       summary: Invoke function filterByCurrentUser
-      operationId: identityGovernance.accessReviews.definitions_filterByCurrentUser
+      operationId: identityGovernance.accessReviews.definitions_filterGraphBPreCurrentUser
       parameters:
         - name: on
           in: path
@@ -4849,7 +4849,7 @@ paths:
       tags:
         - identityGovernance.Functions
       summary: Invoke function filterByCurrentUser
-      operationId: identityGovernance.appConsent.appConsentRequests.userConsentRequests_filterByCurrentUser
+      operationId: identityGovernance.appConsent.appConsentRequests.userConsentRequests_filterGraphBPreCurrentUser
       parameters:
         - name: appConsentRequest-id
           in: path
@@ -4881,7 +4881,7 @@ paths:
       tags:
         - identityGovernance.Functions
       summary: Invoke function filterByCurrentUser
-      operationId: identityGovernance.appConsent.appConsentRequests_filterByCurrentUser
+      operationId: identityGovernance.appConsent.appConsentRequests_filterGraphBPreCurrentUser
       parameters:
         - name: on
           in: path
@@ -5482,7 +5482,7 @@ paths:
       tags:
         - identityGovernance.Functions
       summary: Invoke function filterByCurrentUser
-      operationId: identityGovernance.entitlementManagement.accessPackageAssignmentApprovals_filterByCurrentUser
+      operationId: identityGovernance.entitlementManagement.accessPackageAssignmentApprovals_filterGraphBPreCurrentUser
       parameters:
         - name: on
           in: path
@@ -6105,7 +6105,7 @@ paths:
         - identityGovernance.entitlementManagement
       summary: Get ref of accessPackage from identityGovernance
       description: The access package with this policy. Read-only. Nullable. Supports $expand.
-      operationId: identityGovernance.entitlementManagement.accessPackages.assignmentPolicies_GetGraphRefAccessPackage
+      operationId: identityGovernance.entitlementManagement.accessPackages.assignmentPolicies_GetAccessPackageGraphBPreRef
       parameters:
         - name: accessPackage-id
           in: path
@@ -6147,7 +6147,7 @@ paths:
         - identityGovernance.entitlementManagement
       summary: Update the ref of navigation property accessPackage in identityGovernance
       description: The access package with this policy. Read-only. Nullable. Supports $expand.
-      operationId: identityGovernance.entitlementManagement.accessPackages.assignmentPolicies_SetGraphRefAccessPackage
+      operationId: identityGovernance.entitlementManagement.accessPackages.assignmentPolicies_SetAccessPackageGraphBPreRef
       parameters:
         - name: accessPackage-id
           in: path
@@ -6183,7 +6183,7 @@ paths:
         - identityGovernance.entitlementManagement
       summary: Delete ref of navigation property accessPackage for identityGovernance
       description: The access package with this policy. Read-only. Nullable. Supports $expand.
-      operationId: identityGovernance.entitlementManagement.accessPackages.assignmentPolicies_DeleteGraphRefAccessPackage
+      operationId: identityGovernance.entitlementManagement.accessPackages.assignmentPolicies_DeleteAccessPackageGraphBPreRef
       parameters:
         - name: accessPackage-id
           in: path
@@ -6318,7 +6318,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get ref of catalog from identityGovernance
-      operationId: identityGovernance.entitlementManagement.accessPackages.assignmentPolicies_GetGraphRefCatalog
+      operationId: identityGovernance.entitlementManagement.accessPackages.assignmentPolicies_GetCatalogGraphBPreRef
       parameters:
         - name: accessPackage-id
           in: path
@@ -6354,7 +6354,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Update the ref of navigation property catalog in identityGovernance
-      operationId: identityGovernance.entitlementManagement.accessPackages.assignmentPolicies_SetGraphRefCatalog
+      operationId: identityGovernance.entitlementManagement.accessPackages.assignmentPolicies_SetCatalogGraphBPreRef
       parameters:
         - name: accessPackage-id
           in: path
@@ -6389,7 +6389,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Delete ref of navigation property catalog for identityGovernance
-      operationId: identityGovernance.entitlementManagement.accessPackages.assignmentPolicies_DeleteGraphRefCatalog
+      operationId: identityGovernance.entitlementManagement.accessPackages.assignmentPolicies_DeleteCatalogGraphBPreRef
       parameters:
         - name: accessPackage-id
           in: path
@@ -6485,7 +6485,7 @@ paths:
         - identityGovernance.entitlementManagement
       summary: Get ref of catalog from identityGovernance
       description: Read-only. Nullable.
-      operationId: identityGovernance.entitlementManagement.accessPackages_GetGraphRefCatalog
+      operationId: identityGovernance.entitlementManagement.accessPackages_GetCatalogGraphBPreRef
       parameters:
         - name: accessPackage-id
           in: path
@@ -6514,7 +6514,7 @@ paths:
         - identityGovernance.entitlementManagement
       summary: Update the ref of navigation property catalog in identityGovernance
       description: Read-only. Nullable.
-      operationId: identityGovernance.entitlementManagement.accessPackages_SetGraphRefCatalog
+      operationId: identityGovernance.entitlementManagement.accessPackages_SetCatalogGraphBPreRef
       parameters:
         - name: accessPackage-id
           in: path
@@ -6543,7 +6543,7 @@ paths:
         - identityGovernance.entitlementManagement
       summary: Delete ref of navigation property catalog for identityGovernance
       description: Read-only. Nullable.
-      operationId: identityGovernance.entitlementManagement.accessPackages_DeleteGraphRefCatalog
+      operationId: identityGovernance.entitlementManagement.accessPackages_DeleteCatalogGraphBPreRef
       parameters:
         - name: accessPackage-id
           in: path
@@ -6594,7 +6594,7 @@ paths:
       tags:
         - identityGovernance.Functions
       summary: Invoke function filterByCurrentUser
-      operationId: identityGovernance.entitlementManagement.accessPackages_filterByCurrentUser
+      operationId: identityGovernance.entitlementManagement.accessPackages_filterGraphBPreCurrentUser
       parameters:
         - name: on
           in: path
@@ -6936,7 +6936,7 @@ paths:
         - identityGovernance.entitlementManagement
       summary: Get ref of accessPackage from identityGovernance
       description: The access package with this policy. Read-only. Nullable. Supports $expand.
-      operationId: identityGovernance.entitlementManagement.assignmentPolicies_GetGraphRefAccessPackage
+      operationId: identityGovernance.entitlementManagement.assignmentPolicies_GetAccessPackageGraphBPreRef
       parameters:
         - name: accessPackageAssignmentPolicy-id
           in: path
@@ -6969,7 +6969,7 @@ paths:
         - identityGovernance.entitlementManagement
       summary: Update the ref of navigation property accessPackage in identityGovernance
       description: The access package with this policy. Read-only. Nullable. Supports $expand.
-      operationId: identityGovernance.entitlementManagement.assignmentPolicies_SetGraphRefAccessPackage
+      operationId: identityGovernance.entitlementManagement.assignmentPolicies_SetAccessPackageGraphBPreRef
       parameters:
         - name: accessPackageAssignmentPolicy-id
           in: path
@@ -6998,7 +6998,7 @@ paths:
         - identityGovernance.entitlementManagement
       summary: Delete ref of navigation property accessPackage for identityGovernance
       description: The access package with this policy. Read-only. Nullable. Supports $expand.
-      operationId: identityGovernance.entitlementManagement.assignmentPolicies_DeleteGraphRefAccessPackage
+      operationId: identityGovernance.entitlementManagement.assignmentPolicies_DeleteAccessPackageGraphBPreRef
       parameters:
         - name: accessPackageAssignmentPolicy-id
           in: path
@@ -7111,7 +7111,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get ref of catalog from identityGovernance
-      operationId: identityGovernance.entitlementManagement.assignmentPolicies_GetGraphRefCatalog
+      operationId: identityGovernance.entitlementManagement.assignmentPolicies_GetCatalogGraphBPreRef
       parameters:
         - name: accessPackageAssignmentPolicy-id
           in: path
@@ -7139,7 +7139,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Update the ref of navigation property catalog in identityGovernance
-      operationId: identityGovernance.entitlementManagement.assignmentPolicies_SetGraphRefCatalog
+      operationId: identityGovernance.entitlementManagement.assignmentPolicies_SetCatalogGraphBPreRef
       parameters:
         - name: accessPackageAssignmentPolicy-id
           in: path
@@ -7167,7 +7167,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Delete ref of navigation property catalog for identityGovernance
-      operationId: identityGovernance.entitlementManagement.assignmentPolicies_DeleteGraphRefCatalog
+      operationId: identityGovernance.entitlementManagement.assignmentPolicies_DeleteCatalogGraphBPreRef
       parameters:
         - name: accessPackageAssignmentPolicy-id
           in: path
@@ -7506,7 +7506,7 @@ paths:
         - identityGovernance.entitlementManagement
       summary: Get ref of accessPackage from identityGovernance
       description: The access package associated with the accessPackageAssignmentRequest. An access package defines the collections of resource roles and the policies for how one or more users can get access to those resources. Read-only. Nullable.  Supports $expand.
-      operationId: identityGovernance.entitlementManagement.assignmentRequests_GetGraphRefAccessPackage
+      operationId: identityGovernance.entitlementManagement.assignmentRequests_GetAccessPackageGraphBPreRef
       parameters:
         - name: accessPackageAssignmentRequest-id
           in: path
@@ -7539,7 +7539,7 @@ paths:
         - identityGovernance.entitlementManagement
       summary: Update the ref of navigation property accessPackage in identityGovernance
       description: The access package associated with the accessPackageAssignmentRequest. An access package defines the collections of resource roles and the policies for how one or more users can get access to those resources. Read-only. Nullable.  Supports $expand.
-      operationId: identityGovernance.entitlementManagement.assignmentRequests_SetGraphRefAccessPackage
+      operationId: identityGovernance.entitlementManagement.assignmentRequests_SetAccessPackageGraphBPreRef
       parameters:
         - name: accessPackageAssignmentRequest-id
           in: path
@@ -7568,7 +7568,7 @@ paths:
         - identityGovernance.entitlementManagement
       summary: Delete ref of navigation property accessPackage for identityGovernance
       description: The access package associated with the accessPackageAssignmentRequest. An access package defines the collections of resource roles and the policies for how one or more users can get access to those resources. Read-only. Nullable.  Supports $expand.
-      operationId: identityGovernance.entitlementManagement.assignmentRequests_DeleteGraphRefAccessPackage
+      operationId: identityGovernance.entitlementManagement.assignmentRequests_DeleteAccessPackageGraphBPreRef
       parameters:
         - name: accessPackageAssignmentRequest-id
           in: path
@@ -7692,7 +7692,7 @@ paths:
         - identityGovernance.entitlementManagement
       summary: Get ref of assignment from identityGovernance
       description: 'For a requestType of UserAdd or AdminAdd, this is an access package assignment requested to be created.  For a requestType of UserRemove, AdminRemove or SystemRemove, this has the id property of an existing assignment to be removed.   Supports $expand.'
-      operationId: identityGovernance.entitlementManagement.assignmentRequests_GetGraphRefAssignment
+      operationId: identityGovernance.entitlementManagement.assignmentRequests_GetAssignmentGraphBPreRef
       parameters:
         - name: accessPackageAssignmentRequest-id
           in: path
@@ -7729,7 +7729,7 @@ paths:
         - identityGovernance.entitlementManagement
       summary: Update the ref of navigation property assignment in identityGovernance
       description: 'For a requestType of UserAdd or AdminAdd, this is an access package assignment requested to be created.  For a requestType of UserRemove, AdminRemove or SystemRemove, this has the id property of an existing assignment to be removed.   Supports $expand.'
-      operationId: identityGovernance.entitlementManagement.assignmentRequests_SetGraphRefAssignment
+      operationId: identityGovernance.entitlementManagement.assignmentRequests_SetAssignmentGraphBPreRef
       parameters:
         - name: accessPackageAssignmentRequest-id
           in: path
@@ -7758,7 +7758,7 @@ paths:
         - identityGovernance.entitlementManagement
       summary: Delete ref of navigation property assignment for identityGovernance
       description: 'For a requestType of UserAdd or AdminAdd, this is an access package assignment requested to be created.  For a requestType of UserRemove, AdminRemove or SystemRemove, this has the id property of an existing assignment to be removed.   Supports $expand.'
-      operationId: identityGovernance.entitlementManagement.assignmentRequests_DeleteGraphRefAssignment
+      operationId: identityGovernance.entitlementManagement.assignmentRequests_DeleteAssignmentGraphBPreRef
       parameters:
         - name: accessPackageAssignmentRequest-id
           in: path
@@ -7866,7 +7866,7 @@ paths:
         - identityGovernance.entitlementManagement
       summary: Get ref of requestor from identityGovernance
       description: 'The subject who requested or, if a direct assignment, was assigned. Read-only. Nullable. Supports $expand.'
-      operationId: identityGovernance.entitlementManagement.assignmentRequests_GetGraphRefRequestor
+      operationId: identityGovernance.entitlementManagement.assignmentRequests_GetRequestorGraphBPreRef
       parameters:
         - name: accessPackageAssignmentRequest-id
           in: path
@@ -7895,7 +7895,7 @@ paths:
         - identityGovernance.entitlementManagement
       summary: Update the ref of navigation property requestor in identityGovernance
       description: 'The subject who requested or, if a direct assignment, was assigned. Read-only. Nullable. Supports $expand.'
-      operationId: identityGovernance.entitlementManagement.assignmentRequests_SetGraphRefRequestor
+      operationId: identityGovernance.entitlementManagement.assignmentRequests_SetRequestorGraphBPreRef
       parameters:
         - name: accessPackageAssignmentRequest-id
           in: path
@@ -7924,7 +7924,7 @@ paths:
         - identityGovernance.entitlementManagement
       summary: Delete ref of navigation property requestor for identityGovernance
       description: 'The subject who requested or, if a direct assignment, was assigned. Read-only. Nullable. Supports $expand.'
-      operationId: identityGovernance.entitlementManagement.assignmentRequests_DeleteGraphRefRequestor
+      operationId: identityGovernance.entitlementManagement.assignmentRequests_DeleteRequestorGraphBPreRef
       parameters:
         - name: accessPackageAssignmentRequest-id
           in: path
@@ -7949,7 +7949,7 @@ paths:
       tags:
         - identityGovernance.Functions
       summary: Invoke function filterByCurrentUser
-      operationId: identityGovernance.entitlementManagement.assignmentRequests_filterByCurrentUser
+      operationId: identityGovernance.entitlementManagement.assignmentRequests_filterGraphBPreCurrentUser
       parameters:
         - name: on
           in: path
@@ -8280,7 +8280,7 @@ paths:
         - identityGovernance.entitlementManagement
       summary: Get ref of accessPackage from identityGovernance
       description: Read-only. Nullable. Supports $filter (eq) on the id property and $expand query parameters.
-      operationId: identityGovernance.entitlementManagement.assignments_GetGraphRefAccessPackage
+      operationId: identityGovernance.entitlementManagement.assignments_GetAccessPackageGraphBPreRef
       parameters:
         - name: accessPackageAssignment-id
           in: path
@@ -8313,7 +8313,7 @@ paths:
         - identityGovernance.entitlementManagement
       summary: Update the ref of navigation property accessPackage in identityGovernance
       description: Read-only. Nullable. Supports $filter (eq) on the id property and $expand query parameters.
-      operationId: identityGovernance.entitlementManagement.assignments_SetGraphRefAccessPackage
+      operationId: identityGovernance.entitlementManagement.assignments_SetAccessPackageGraphBPreRef
       parameters:
         - name: accessPackageAssignment-id
           in: path
@@ -8342,7 +8342,7 @@ paths:
         - identityGovernance.entitlementManagement
       summary: Delete ref of navigation property accessPackage for identityGovernance
       description: Read-only. Nullable. Supports $filter (eq) on the id property and $expand query parameters.
-      operationId: identityGovernance.entitlementManagement.assignments_DeleteGraphRefAccessPackage
+      operationId: identityGovernance.entitlementManagement.assignments_DeleteAccessPackageGraphBPreRef
       parameters:
         - name: accessPackageAssignment-id
           in: path
@@ -8464,7 +8464,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get ref of assignmentPolicy from identityGovernance
-      operationId: identityGovernance.entitlementManagement.assignments_GetGraphRefAssignmentPolicy
+      operationId: identityGovernance.entitlementManagement.assignments_GetAssignmentPolicyGraphBPreRef
       parameters:
         - name: accessPackageAssignment-id
           in: path
@@ -8496,7 +8496,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Update the ref of navigation property assignmentPolicy in identityGovernance
-      operationId: identityGovernance.entitlementManagement.assignments_SetGraphRefAssignmentPolicy
+      operationId: identityGovernance.entitlementManagement.assignments_SetAssignmentPolicyGraphBPreRef
       parameters:
         - name: accessPackageAssignment-id
           in: path
@@ -8524,7 +8524,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Delete ref of navigation property assignmentPolicy for identityGovernance
-      operationId: identityGovernance.entitlementManagement.assignments_DeleteGraphRefAssignmentPolicy
+      operationId: identityGovernance.entitlementManagement.assignments_DeleteAssignmentPolicyGraphBPreRef
       parameters:
         - name: accessPackageAssignment-id
           in: path
@@ -8612,7 +8612,7 @@ paths:
         - identityGovernance.entitlementManagement
       summary: Get ref of target from identityGovernance
       description: The subject of the access package assignment. Read-only. Nullable. Supports $expand. Supports $filter (eq) on objectId.
-      operationId: identityGovernance.entitlementManagement.assignments_GetGraphRefTarget
+      operationId: identityGovernance.entitlementManagement.assignments_GetTargetGraphBPreRef
       parameters:
         - name: accessPackageAssignment-id
           in: path
@@ -8641,7 +8641,7 @@ paths:
         - identityGovernance.entitlementManagement
       summary: Update the ref of navigation property target in identityGovernance
       description: The subject of the access package assignment. Read-only. Nullable. Supports $expand. Supports $filter (eq) on objectId.
-      operationId: identityGovernance.entitlementManagement.assignments_SetGraphRefTarget
+      operationId: identityGovernance.entitlementManagement.assignments_SetTargetGraphBPreRef
       parameters:
         - name: accessPackageAssignment-id
           in: path
@@ -8670,7 +8670,7 @@ paths:
         - identityGovernance.entitlementManagement
       summary: Delete ref of navigation property target for identityGovernance
       description: The subject of the access package assignment. Read-only. Nullable. Supports $expand. Supports $filter (eq) on objectId.
-      operationId: identityGovernance.entitlementManagement.assignments_DeleteGraphRefTarget
+      operationId: identityGovernance.entitlementManagement.assignments_DeleteTargetGraphBPreRef
       parameters:
         - name: accessPackageAssignment-id
           in: path
@@ -8695,7 +8695,7 @@ paths:
       tags:
         - identityGovernance.Functions
       summary: Invoke function filterByCurrentUser
-      operationId: identityGovernance.entitlementManagement.assignments_filterByCurrentUser
+      operationId: identityGovernance.entitlementManagement.assignments_filterGraphBPreCurrentUser
       parameters:
         - name: on
           in: path
@@ -9636,7 +9636,7 @@ paths:
         - identityGovernance.entitlementManagement
       summary: Get ref of accessPackage from identityGovernance
       description: The access package with this policy. Read-only. Nullable. Supports $expand.
-      operationId: identityGovernance.entitlementManagement.catalogs.accessPackages.assignmentPolicies_GetGraphRefAccessPackage
+      operationId: identityGovernance.entitlementManagement.catalogs.accessPackages.assignmentPolicies_GetAccessPackageGraphBPreRef
       parameters:
         - name: accessPackageCatalog-id
           in: path
@@ -9687,7 +9687,7 @@ paths:
         - identityGovernance.entitlementManagement
       summary: Update the ref of navigation property accessPackage in identityGovernance
       description: The access package with this policy. Read-only. Nullable. Supports $expand.
-      operationId: identityGovernance.entitlementManagement.catalogs.accessPackages.assignmentPolicies_SetGraphRefAccessPackage
+      operationId: identityGovernance.entitlementManagement.catalogs.accessPackages.assignmentPolicies_SetAccessPackageGraphBPreRef
       parameters:
         - name: accessPackageCatalog-id
           in: path
@@ -9730,7 +9730,7 @@ paths:
         - identityGovernance.entitlementManagement
       summary: Delete ref of navigation property accessPackage for identityGovernance
       description: The access package with this policy. Read-only. Nullable. Supports $expand.
-      operationId: identityGovernance.entitlementManagement.catalogs.accessPackages.assignmentPolicies_DeleteGraphRefAccessPackage
+      operationId: identityGovernance.entitlementManagement.catalogs.accessPackages.assignmentPolicies_DeleteAccessPackageGraphBPreRef
       parameters:
         - name: accessPackageCatalog-id
           in: path
@@ -9887,7 +9887,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get ref of catalog from identityGovernance
-      operationId: identityGovernance.entitlementManagement.catalogs.accessPackages.assignmentPolicies_GetGraphRefCatalog
+      operationId: identityGovernance.entitlementManagement.catalogs.accessPackages.assignmentPolicies_GetCatalogGraphBPreRef
       parameters:
         - name: accessPackageCatalog-id
           in: path
@@ -9931,7 +9931,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Update the ref of navigation property catalog in identityGovernance
-      operationId: identityGovernance.entitlementManagement.catalogs.accessPackages.assignmentPolicies_SetGraphRefCatalog
+      operationId: identityGovernance.entitlementManagement.catalogs.accessPackages.assignmentPolicies_SetCatalogGraphBPreRef
       parameters:
         - name: accessPackageCatalog-id
           in: path
@@ -9973,7 +9973,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Delete ref of navigation property catalog for identityGovernance
-      operationId: identityGovernance.entitlementManagement.catalogs.accessPackages.assignmentPolicies_DeleteGraphRefCatalog
+      operationId: identityGovernance.entitlementManagement.catalogs.accessPackages.assignmentPolicies_DeleteCatalogGraphBPreRef
       parameters:
         - name: accessPackageCatalog-id
           in: path
@@ -10084,7 +10084,7 @@ paths:
         - identityGovernance.entitlementManagement
       summary: Get ref of catalog from identityGovernance
       description: Read-only. Nullable.
-      operationId: identityGovernance.entitlementManagement.catalogs.accessPackages_GetGraphRefCatalog
+      operationId: identityGovernance.entitlementManagement.catalogs.accessPackages_GetCatalogGraphBPreRef
       parameters:
         - name: accessPackageCatalog-id
           in: path
@@ -10121,7 +10121,7 @@ paths:
         - identityGovernance.entitlementManagement
       summary: Update the ref of navigation property catalog in identityGovernance
       description: Read-only. Nullable.
-      operationId: identityGovernance.entitlementManagement.catalogs.accessPackages_SetGraphRefCatalog
+      operationId: identityGovernance.entitlementManagement.catalogs.accessPackages_SetCatalogGraphBPreRef
       parameters:
         - name: accessPackageCatalog-id
           in: path
@@ -10157,7 +10157,7 @@ paths:
         - identityGovernance.entitlementManagement
       summary: Delete ref of navigation property catalog for identityGovernance
       description: Read-only. Nullable.
-      operationId: identityGovernance.entitlementManagement.catalogs.accessPackages_DeleteGraphRefCatalog
+      operationId: identityGovernance.entitlementManagement.catalogs.accessPackages_DeleteCatalogGraphBPreRef
       parameters:
         - name: accessPackageCatalog-id
           in: path
@@ -10222,7 +10222,7 @@ paths:
       tags:
         - identityGovernance.Functions
       summary: Invoke function filterByCurrentUser
-      operationId: identityGovernance.entitlementManagement.catalogs.accessPackages_filterByCurrentUser
+      operationId: identityGovernance.entitlementManagement.catalogs.accessPackages_filterGraphBPreCurrentUser
       parameters:
         - name: accessPackageCatalog-id
           in: path
@@ -11047,7 +11047,7 @@ paths:
       tags:
         - identityGovernance.termsOfUseContainer
       summary: Get termsOfUse from identityGovernance
-      operationId: identityGovernance_GetTermsOfUse
+      operationId: identityGovernance_GetTermsGraphOPreUse
       parameters:
         - name: $select
           in: query
@@ -11086,9 +11086,9 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.termsOfUseContainer'
           links:
             agreementAcceptances:
-              operationId: identityGovernance.TermsOfUse.ListAgreementAcceptances
+              operationId: identityGovernance.TermsGraphOPreUse.ListAgreementAcceptances
             agreements:
-              operationId: identityGovernance.TermsOfUse.ListAgreements
+              operationId: identityGovernance.TermsGraphOPreUse.ListAgreements
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -11096,7 +11096,7 @@ paths:
       tags:
         - identityGovernance.termsOfUseContainer
       summary: Update the navigation property termsOfUse in identityGovernance
-      operationId: identityGovernance_UpdateTermsOfUse
+      operationId: identityGovernance_UpdateTermsGraphOPreUse
       requestBody:
         description: New navigation property values
         content:
@@ -11114,7 +11114,7 @@ paths:
       tags:
         - identityGovernance.termsOfUseContainer
       summary: Delete navigation property termsOfUse for identityGovernance
-      operationId: identityGovernance_DeleteTermsOfUse
+      operationId: identityGovernance_DeleteTermsGraphOPreUse
       parameters:
         - name: If-Match
           in: header
@@ -11133,7 +11133,7 @@ paths:
         - identityGovernance.termsOfUseContainer
       summary: Get agreementAcceptances from identityGovernance
       description: Represents the current status of a user's response to a company's customizable terms of use agreement.
-      operationId: identityGovernance.termsOfUse_ListAgreementAcceptances
+      operationId: identityGovernance.termsGraphOPreUse_ListAgreementAcceptances
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -11244,7 +11244,7 @@ paths:
         - identityGovernance.termsOfUseContainer
       summary: Create new navigation property to agreementAcceptances for identityGovernance
       description: Represents the current status of a user's response to a company's customizable terms of use agreement.
-      operationId: identityGovernance.termsOfUse_CreateAgreementAcceptances
+      operationId: identityGovernance.termsGraphOPreUse_CreateAgreementAcceptances
       requestBody:
         description: New navigation property
         content:
@@ -11268,7 +11268,7 @@ paths:
         - identityGovernance.termsOfUseContainer
       summary: Get agreementAcceptances from identityGovernance
       description: Represents the current status of a user's response to a company's customizable terms of use agreement.
-      operationId: identityGovernance.termsOfUse_GetAgreementAcceptances
+      operationId: identityGovernance.termsGraphOPreUse_GetAgreementAcceptances
       parameters:
         - name: agreementAcceptance-id
           in: path
@@ -11329,7 +11329,7 @@ paths:
         - identityGovernance.termsOfUseContainer
       summary: Update the navigation property agreementAcceptances in identityGovernance
       description: Represents the current status of a user's response to a company's customizable terms of use agreement.
-      operationId: identityGovernance.termsOfUse_UpdateAgreementAcceptances
+      operationId: identityGovernance.termsGraphOPreUse_UpdateAgreementAcceptances
       parameters:
         - name: agreementAcceptance-id
           in: path
@@ -11356,7 +11356,7 @@ paths:
         - identityGovernance.termsOfUseContainer
       summary: Delete navigation property agreementAcceptances for identityGovernance
       description: Represents the current status of a user's response to a company's customizable terms of use agreement.
-      operationId: identityGovernance.termsOfUse_DeleteAgreementAcceptances
+      operationId: identityGovernance.termsGraphOPreUse_DeleteAgreementAcceptances
       parameters:
         - name: agreementAcceptance-id
           in: path
@@ -11382,7 +11382,7 @@ paths:
         - identityGovernance.termsOfUseContainer
       summary: Get agreements from identityGovernance
       description: Represents a tenant's customizable terms of use agreement that's created and managed with Azure Active Directory (Azure AD).
-      operationId: identityGovernance.termsOfUse_ListAgreements
+      operationId: identityGovernance.termsGraphOPreUse_ListAgreements
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -11475,7 +11475,7 @@ paths:
         - identityGovernance.termsOfUseContainer
       summary: Create new navigation property to agreements for identityGovernance
       description: Represents a tenant's customizable terms of use agreement that's created and managed with Azure Active Directory (Azure AD).
-      operationId: identityGovernance.termsOfUse_CreateAgreements
+      operationId: identityGovernance.termsGraphOPreUse_CreateAgreements
       requestBody:
         description: New navigation property
         content:
@@ -11499,7 +11499,7 @@ paths:
         - identityGovernance.termsOfUseContainer
       summary: Get agreements from identityGovernance
       description: Represents a tenant's customizable terms of use agreement that's created and managed with Azure Active Directory (Azure AD).
-      operationId: identityGovernance.termsOfUse_GetAgreements
+      operationId: identityGovernance.termsGraphOPreUse_GetAgreements
       parameters:
         - name: agreement-id
           in: path
@@ -11552,15 +11552,15 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.agreement'
           links:
             acceptances:
-              operationId: identityGovernance.termsOfUse.Agreements.ListAcceptances
+              operationId: identityGovernance.termsGraphOPreUse.Agreements.ListAcceptances
               parameters:
                 agreement-id: $request.path.agreement-id
             file:
-              operationId: identityGovernance.termsOfUse.Agreements.GetFile
+              operationId: identityGovernance.termsGraphOPreUse.Agreements.GetFile
               parameters:
                 agreement-id: $request.path.agreement-id
             files:
-              operationId: identityGovernance.termsOfUse.Agreements.ListFiles
+              operationId: identityGovernance.termsGraphOPreUse.Agreements.ListFiles
               parameters:
                 agreement-id: $request.path.agreement-id
         default:
@@ -11571,7 +11571,7 @@ paths:
         - identityGovernance.termsOfUseContainer
       summary: Update the navigation property agreements in identityGovernance
       description: Represents a tenant's customizable terms of use agreement that's created and managed with Azure Active Directory (Azure AD).
-      operationId: identityGovernance.termsOfUse_UpdateAgreements
+      operationId: identityGovernance.termsGraphOPreUse_UpdateAgreements
       parameters:
         - name: agreement-id
           in: path
@@ -11598,7 +11598,7 @@ paths:
         - identityGovernance.termsOfUseContainer
       summary: Delete navigation property agreements for identityGovernance
       description: Represents a tenant's customizable terms of use agreement that's created and managed with Azure Active Directory (Azure AD).
-      operationId: identityGovernance.termsOfUse_DeleteAgreements
+      operationId: identityGovernance.termsGraphOPreUse_DeleteAgreements
       parameters:
         - name: agreement-id
           in: path
@@ -11743,7 +11743,7 @@ paths:
         - users.agreementAcceptance
       summary: Get ref of agreementAcceptances from users
       description: The user's terms of use acceptance statuses. Read-only. Nullable.
-      operationId: users_ListGraphRefAgreementAcceptances
+      operationId: users_ListAgreementAcceptancesGraphBPreRef
       parameters:
         - name: user-id
           in: path
@@ -11824,7 +11824,7 @@ paths:
         - users.agreementAcceptance
       summary: Create new navigation property ref to agreementAcceptances for users
       description: The user's terms of use acceptance statuses. Read-only. Nullable.
-      operationId: users_CreateGraphRefAgreementAcceptances
+      operationId: users_CreateAgreementAcceptancesGraphBPreRef
       parameters:
         - name: user-id
           in: path

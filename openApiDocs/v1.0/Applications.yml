@@ -313,7 +313,7 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.application'
           links:
             createdOnBehalfOf:
-              operationId: applications.GetCreatedOnBehalfOf
+              operationId: applications.GetCreatedOnBehalfGraphOPre
               parameters:
                 application-id: $request.path.application-id
             extensionProperties:
@@ -395,7 +395,7 @@ paths:
         - applications.directoryObject
       summary: Get createdOnBehalfOf from applications
       description: Read-only.
-      operationId: applications_GetCreatedOnBehalfOf
+      operationId: applications_GetCreatedOnBehalfGraphOPre
       parameters:
         - name: application-id
           in: path
@@ -445,7 +445,7 @@ paths:
         - applications.directoryObject
       summary: Get ref of createdOnBehalfOf from applications
       description: Read-only.
-      operationId: applications_GetGraphRefCreatedOnBehalfOf
+      operationId: applications_GetCreatedOnBehalfGraphOPreGraphBPreRef
       parameters:
         - name: application-id
           in: path
@@ -469,7 +469,7 @@ paths:
         - applications.directoryObject
       summary: Update the ref of navigation property createdOnBehalfOf in applications
       description: Read-only.
-      operationId: applications_SetGraphRefCreatedOnBehalfOf
+      operationId: applications_SetCreatedOnBehalfGraphOPreGraphBPreRef
       parameters:
         - name: application-id
           in: path
@@ -498,7 +498,7 @@ paths:
         - applications.directoryObject
       summary: Delete ref of navigation property createdOnBehalfOf for applications
       description: Read-only.
-      operationId: applications_DeleteGraphRefCreatedOnBehalfOf
+      operationId: applications_DeleteCreatedOnBehalfGraphOPreGraphBPreRef
       parameters:
         - name: application-id
           in: path
@@ -876,7 +876,7 @@ paths:
       tags:
         - applications.homeRealmDiscoveryPolicy
       summary: Get ref of homeRealmDiscoveryPolicies from applications
-      operationId: applications_ListGraphRefHomeRealmDiscoveryPolicies
+      operationId: applications_ListHomeRealmDiscoveryPoliciesGraphBPreRef
       parameters:
         - name: application-id
           in: path
@@ -940,7 +940,7 @@ paths:
       tags:
         - applications.homeRealmDiscoveryPolicy
       summary: Create new navigation property ref to homeRealmDiscoveryPolicies for applications
-      operationId: applications_CreateGraphRefHomeRealmDiscoveryPolicies
+      operationId: applications_CreateHomeRealmDiscoveryPoliciesGraphBPreRef
       parameters:
         - name: application-id
           in: path
@@ -1495,7 +1495,7 @@ paths:
         - applications.directoryObject
       summary: Get ref of owners from applications
       description: Directory objects that are owners of the application. Read-only. Nullable. Supports $expand.
-      operationId: applications_ListGraphRefOwners
+      operationId: applications_ListOwnersGraphBPreRef
       parameters:
         - name: application-id
           in: path
@@ -1552,7 +1552,7 @@ paths:
         - applications.directoryObject
       summary: Create new navigation property ref to owners for applications
       description: Directory objects that are owners of the application. Read-only. Nullable. Supports $expand.
-      operationId: applications_CreateGraphRefOwners
+      operationId: applications_CreateOwnersGraphBPreRef
       parameters:
         - name: application-id
           in: path
@@ -1683,7 +1683,7 @@ paths:
       tags:
         - applications.tokenIssuancePolicy
       summary: Get ref of tokenIssuancePolicies from applications
-      operationId: applications_ListGraphRefTokenIssuancePolicies
+      operationId: applications_ListTokenIssuancePoliciesGraphBPreRef
       parameters:
         - name: application-id
           in: path
@@ -1747,7 +1747,7 @@ paths:
       tags:
         - applications.tokenIssuancePolicy
       summary: Create new navigation property ref to tokenIssuancePolicies for applications
-      operationId: applications_CreateGraphRefTokenIssuancePolicies
+      operationId: applications_CreateTokenIssuancePoliciesGraphBPreRef
       parameters:
         - name: application-id
           in: path
@@ -1880,7 +1880,7 @@ paths:
         - applications.tokenLifetimePolicy
       summary: Get ref of tokenLifetimePolicies from applications
       description: The tokenLifetimePolicies assigned to this application. Supports $expand.
-      operationId: applications_ListGraphRefTokenLifetimePolicies
+      operationId: applications_ListTokenLifetimePoliciesGraphBPreRef
       parameters:
         - name: application-id
           in: path
@@ -1945,7 +1945,7 @@ paths:
         - applications.tokenLifetimePolicy
       summary: Create new navigation property ref to tokenLifetimePolicies for applications
       description: The tokenLifetimePolicies assigned to this application. Supports $expand.
-      operationId: applications_CreateGraphRefTokenLifetimePolicies
+      operationId: applications_CreateTokenLifetimePoliciesGraphBPreRef
       parameters:
         - name: application-id
           in: path
@@ -2030,7 +2030,7 @@ paths:
       tags:
         - applications.Actions
       summary: Invoke action getByIds
-      operationId: applications_getByIds
+      operationId: applications_getGraphBPreIds
       requestBody:
         description: Action parameters
         content:
@@ -2999,7 +2999,7 @@ paths:
               parameters:
                 servicePrincipal-id: $request.path.servicePrincipal-id
             memberOf:
-              operationId: servicePrincipals.ListMemberOf
+              operationId: servicePrincipals.ListMemberGraphOPre
               parameters:
                 servicePrincipal-id: $request.path.servicePrincipal-id
             oauth2PermissionGrants:
@@ -3023,7 +3023,7 @@ paths:
               parameters:
                 servicePrincipal-id: $request.path.servicePrincipal-id
             transitiveMemberOf:
-              operationId: servicePrincipals.ListTransitiveMemberOf
+              operationId: servicePrincipals.ListTransitiveMemberGraphOPre
               parameters:
                 servicePrincipal-id: $request.path.servicePrincipal-id
         default:
@@ -3712,7 +3712,7 @@ paths:
         - servicePrincipals.claimsMappingPolicy
       summary: Get ref of claimsMappingPolicies from servicePrincipals
       description: The claimsMappingPolicies assigned to this service principal. Supports $expand.
-      operationId: servicePrincipals_ListGraphRefClaimsMappingPolicies
+      operationId: servicePrincipals_ListClaimsMappingPoliciesGraphBPreRef
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -3777,7 +3777,7 @@ paths:
         - servicePrincipals.claimsMappingPolicy
       summary: Create new navigation property ref to claimsMappingPolicies for servicePrincipals
       description: The claimsMappingPolicies assigned to this service principal. Supports $expand.
-      operationId: servicePrincipals_CreateGraphRefClaimsMappingPolicies
+      operationId: servicePrincipals_CreateClaimsMappingPoliciesGraphBPreRef
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -3896,7 +3896,7 @@ paths:
         - servicePrincipals.directoryObject
       summary: Get ref of createdObjects from servicePrincipals
       description: Directory objects created by this service principal. Read-only. Nullable.
-      operationId: servicePrincipals_ListGraphRefCreatedObjects
+      operationId: servicePrincipals_ListCreatedObjectsGraphBPreRef
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -3953,7 +3953,7 @@ paths:
         - servicePrincipals.directoryObject
       summary: Create new navigation property ref to createdObjects for servicePrincipals
       description: Directory objects created by this service principal. Read-only. Nullable.
-      operationId: servicePrincipals_CreateGraphRefCreatedObjects
+      operationId: servicePrincipals_CreateCreatedObjectsGraphBPreRef
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -4588,7 +4588,7 @@ paths:
         - servicePrincipals.homeRealmDiscoveryPolicy
       summary: Get ref of homeRealmDiscoveryPolicies from servicePrincipals
       description: The homeRealmDiscoveryPolicies assigned to this service principal. Supports $expand.
-      operationId: servicePrincipals_ListGraphRefHomeRealmDiscoveryPolicies
+      operationId: servicePrincipals_ListHomeRealmDiscoveryPoliciesGraphBPreRef
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -4653,7 +4653,7 @@ paths:
         - servicePrincipals.homeRealmDiscoveryPolicy
       summary: Create new navigation property ref to homeRealmDiscoveryPolicies for servicePrincipals
       description: The homeRealmDiscoveryPolicies assigned to this service principal. Supports $expand.
-      operationId: servicePrincipals_CreateGraphRefHomeRealmDiscoveryPolicies
+      operationId: servicePrincipals_CreateHomeRealmDiscoveryPoliciesGraphBPreRef
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -4689,7 +4689,7 @@ paths:
         - servicePrincipals.directoryObject
       summary: Get memberOf from servicePrincipals
       description: 'Roles that this service principal is a member of. HTTP Methods: GET Read-only. Nullable. Supports $expand.'
-      operationId: servicePrincipals_ListMemberOf
+      operationId: servicePrincipals_ListMemberGraphOPre
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -4772,7 +4772,7 @@ paths:
         - servicePrincipals.directoryObject
       summary: Get ref of memberOf from servicePrincipals
       description: 'Roles that this service principal is a member of. HTTP Methods: GET Read-only. Nullable. Supports $expand.'
-      operationId: servicePrincipals_ListGraphRefMemberOf
+      operationId: servicePrincipals_ListMemberGraphOPreGraphBPreRef
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -4829,7 +4829,7 @@ paths:
         - servicePrincipals.directoryObject
       summary: Create new navigation property ref to memberOf for servicePrincipals
       description: 'Roles that this service principal is a member of. HTTP Methods: GET Read-only. Nullable. Supports $expand.'
-      operationId: servicePrincipals_CreateGraphRefMemberOf
+      operationId: servicePrincipals_CreateMemberGraphOPreGraphBPreRef
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -5332,7 +5332,7 @@ paths:
         - servicePrincipals.oAuth2PermissionGrant
       summary: Get ref of oauth2PermissionGrants from servicePrincipals
       description: Delegated permission grants authorizing this service principal to access an API on behalf of a signed-in user. Read-only. Nullable.
-      operationId: servicePrincipals_ListGraphRefOauth2PermissionGrants
+      operationId: servicePrincipals_ListOauth2PermissionGrantsGraphBPreRef
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -5397,7 +5397,7 @@ paths:
         - servicePrincipals.oAuth2PermissionGrant
       summary: Create new navigation property ref to oauth2PermissionGrants for servicePrincipals
       description: Delegated permission grants authorizing this service principal to access an API on behalf of a signed-in user. Read-only. Nullable.
-      operationId: servicePrincipals_CreateGraphRefOauth2PermissionGrants
+      operationId: servicePrincipals_CreateOauth2PermissionGrantsGraphBPreRef
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -5516,7 +5516,7 @@ paths:
         - servicePrincipals.directoryObject
       summary: Get ref of ownedObjects from servicePrincipals
       description: Directory objects that are owned by this service principal. Read-only. Nullable. Supports $expand.
-      operationId: servicePrincipals_ListGraphRefOwnedObjects
+      operationId: servicePrincipals_ListOwnedObjectsGraphBPreRef
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -5573,7 +5573,7 @@ paths:
         - servicePrincipals.directoryObject
       summary: Create new navigation property ref to ownedObjects for servicePrincipals
       description: Directory objects that are owned by this service principal. Read-only. Nullable. Supports $expand.
-      operationId: servicePrincipals_CreateGraphRefOwnedObjects
+      operationId: servicePrincipals_CreateOwnedObjectsGraphBPreRef
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -5692,7 +5692,7 @@ paths:
         - servicePrincipals.directoryObject
       summary: Get ref of owners from servicePrincipals
       description: Directory objects that are owners of this servicePrincipal. The owners are a set of non-admin users or servicePrincipals who are allowed to modify this object. Read-only. Nullable. Supports $expand.
-      operationId: servicePrincipals_ListGraphRefOwners
+      operationId: servicePrincipals_ListOwnersGraphBPreRef
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -5749,7 +5749,7 @@ paths:
         - servicePrincipals.directoryObject
       summary: Create new navigation property ref to owners for servicePrincipals
       description: Directory objects that are owners of this servicePrincipal. The owners are a set of non-admin users or servicePrincipals who are allowed to modify this object. Read-only. Nullable. Supports $expand.
-      operationId: servicePrincipals_CreateGraphRefOwners
+      operationId: servicePrincipals_CreateOwnersGraphBPreRef
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -5882,7 +5882,7 @@ paths:
         - servicePrincipals.tokenIssuancePolicy
       summary: Get ref of tokenIssuancePolicies from servicePrincipals
       description: The tokenIssuancePolicies assigned to this service principal.
-      operationId: servicePrincipals_ListGraphRefTokenIssuancePolicies
+      operationId: servicePrincipals_ListTokenIssuancePoliciesGraphBPreRef
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -5947,7 +5947,7 @@ paths:
         - servicePrincipals.tokenIssuancePolicy
       summary: Create new navigation property ref to tokenIssuancePolicies for servicePrincipals
       description: The tokenIssuancePolicies assigned to this service principal.
-      operationId: servicePrincipals_CreateGraphRefTokenIssuancePolicies
+      operationId: servicePrincipals_CreateTokenIssuancePoliciesGraphBPreRef
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -6080,7 +6080,7 @@ paths:
         - servicePrincipals.tokenLifetimePolicy
       summary: Get ref of tokenLifetimePolicies from servicePrincipals
       description: The tokenLifetimePolicies assigned to this service principal.
-      operationId: servicePrincipals_ListGraphRefTokenLifetimePolicies
+      operationId: servicePrincipals_ListTokenLifetimePoliciesGraphBPreRef
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -6145,7 +6145,7 @@ paths:
         - servicePrincipals.tokenLifetimePolicy
       summary: Create new navigation property ref to tokenLifetimePolicies for servicePrincipals
       description: The tokenLifetimePolicies assigned to this service principal.
-      operationId: servicePrincipals_CreateGraphRefTokenLifetimePolicies
+      operationId: servicePrincipals_CreateTokenLifetimePoliciesGraphBPreRef
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -6180,7 +6180,7 @@ paths:
       tags:
         - servicePrincipals.directoryObject
       summary: Get transitiveMemberOf from servicePrincipals
-      operationId: servicePrincipals_ListTransitiveMemberOf
+      operationId: servicePrincipals_ListTransitiveMemberGraphOPre
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -6262,7 +6262,7 @@ paths:
       tags:
         - servicePrincipals.directoryObject
       summary: Get ref of transitiveMemberOf from servicePrincipals
-      operationId: servicePrincipals_ListGraphRefTransitiveMemberOf
+      operationId: servicePrincipals_ListTransitiveMemberGraphOPreGraphBPreRef
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -6318,7 +6318,7 @@ paths:
       tags:
         - servicePrincipals.directoryObject
       summary: Create new navigation property ref to transitiveMemberOf for servicePrincipals
-      operationId: servicePrincipals_CreateGraphRefTransitiveMemberOf
+      operationId: servicePrincipals_CreateTransitiveMemberGraphOPreGraphBPreRef
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -6403,7 +6403,7 @@ paths:
       tags:
         - servicePrincipals.Actions
       summary: Invoke action getByIds
-      operationId: servicePrincipals_getByIds
+      operationId: servicePrincipals_getGraphBPreIds
       requestBody:
         description: Action parameters
         content:

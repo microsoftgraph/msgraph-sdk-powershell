@@ -661,7 +661,7 @@ paths:
         - deviceManagement.detectedApp
       summary: Get ref of managedDevices from deviceManagement
       description: The devices that have the discovered application installed
-      operationId: deviceManagement.detectedApps_ListGraphRefManagedDevices
+      operationId: deviceManagement.detectedApps_ListManagedDevicesGraphBPreRef
       parameters:
         - name: detectedApp-id
           in: path
@@ -818,7 +818,7 @@ paths:
         - deviceManagement.detectedApp
       summary: Create new navigation property ref to managedDevices for deviceManagement
       description: The devices that have the discovered application installed
-      operationId: deviceManagement.detectedApps_CreateGraphRefManagedDevices
+      operationId: deviceManagement.detectedApps_CreateManagedDevicesGraphBPreRef
       parameters:
         - name: detectedApp-id
           in: path
@@ -1261,7 +1261,7 @@ paths:
               parameters:
                 deviceCompliancePolicy-id: $request.path.deviceCompliancePolicy-id
             scheduledActionsForRule:
-              operationId: deviceManagement.DeviceCompliancePolicies.ListScheduledActionsForRule
+              operationId: deviceManagement.DeviceCompliancePolicies.ListScheduledActionsGraphFPreRule
               parameters:
                 deviceCompliancePolicy-id: $request.path.deviceCompliancePolicy-id
             userStatuses:
@@ -2208,7 +2208,7 @@ paths:
         - deviceManagement.deviceCompliancePolicy
       summary: Get scheduledActionsForRule from deviceManagement
       description: The list of scheduled action per rule for this compliance policy. This is a required property when creating any individual per-platform compliance policies.
-      operationId: deviceManagement.deviceCompliancePolicies_ListScheduledActionsForRule
+      operationId: deviceManagement.deviceCompliancePolicies_ListScheduledActionsGraphFPreRule
       parameters:
         - name: deviceCompliancePolicy-id
           in: path
@@ -2292,7 +2292,7 @@ paths:
         - deviceManagement.deviceCompliancePolicy
       summary: Create new navigation property to scheduledActionsForRule for deviceManagement
       description: The list of scheduled action per rule for this compliance policy. This is a required property when creating any individual per-platform compliance policies.
-      operationId: deviceManagement.deviceCompliancePolicies_CreateScheduledActionsForRule
+      operationId: deviceManagement.deviceCompliancePolicies_CreateScheduledActionsGraphFPreRule
       parameters:
         - name: deviceCompliancePolicy-id
           in: path
@@ -2324,7 +2324,7 @@ paths:
         - deviceManagement.deviceCompliancePolicy
       summary: Get scheduledActionsForRule from deviceManagement
       description: The list of scheduled action per rule for this compliance policy. This is a required property when creating any individual per-platform compliance policies.
-      operationId: deviceManagement.deviceCompliancePolicies_GetScheduledActionsForRule
+      operationId: deviceManagement.deviceCompliancePolicies_GetScheduledActionsGraphFPreRule
       parameters:
         - name: deviceCompliancePolicy-id
           in: path
@@ -2376,7 +2376,7 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.deviceComplianceScheduledActionForRule'
           links:
             scheduledActionConfigurations:
-              operationId: deviceManagement.deviceCompliancePolicies.ScheduledActionsForRule.ListScheduledActionConfigurations
+              operationId: deviceManagement.deviceCompliancePolicies.ScheduledActionsGraphFPreRule.ListScheduledActionConfigurations
               parameters:
                 deviceCompliancePolicy-id: $request.path.deviceCompliancePolicy-id
                 deviceComplianceScheduledActionForRule-id: $request.path.deviceComplianceScheduledActionForRule-id
@@ -2388,7 +2388,7 @@ paths:
         - deviceManagement.deviceCompliancePolicy
       summary: Update the navigation property scheduledActionsForRule in deviceManagement
       description: The list of scheduled action per rule for this compliance policy. This is a required property when creating any individual per-platform compliance policies.
-      operationId: deviceManagement.deviceCompliancePolicies_UpdateScheduledActionsForRule
+      operationId: deviceManagement.deviceCompliancePolicies_UpdateScheduledActionsGraphFPreRule
       parameters:
         - name: deviceCompliancePolicy-id
           in: path
@@ -2422,7 +2422,7 @@ paths:
         - deviceManagement.deviceCompliancePolicy
       summary: Delete navigation property scheduledActionsForRule for deviceManagement
       description: The list of scheduled action per rule for this compliance policy. This is a required property when creating any individual per-platform compliance policies.
-      operationId: deviceManagement.deviceCompliancePolicies_DeleteScheduledActionsForRule
+      operationId: deviceManagement.deviceCompliancePolicies_DeleteScheduledActionsGraphFPreRule
       parameters:
         - name: deviceCompliancePolicy-id
           in: path
@@ -2455,7 +2455,7 @@ paths:
         - deviceManagement.deviceCompliancePolicy
       summary: Get scheduledActionConfigurations from deviceManagement
       description: The list of scheduled action configurations for this compliance policy. Compliance policy must have one and only one block scheduled action.
-      operationId: deviceManagement.deviceCompliancePolicies.scheduledActionsForRule_ListScheduledActionConfigurations
+      operationId: deviceManagement.deviceCompliancePolicies.scheduledActionsGraphFPreRule_ListScheduledActionConfigurations
       parameters:
         - name: deviceCompliancePolicy-id
           in: path
@@ -2553,7 +2553,7 @@ paths:
         - deviceManagement.deviceCompliancePolicy
       summary: Create new navigation property to scheduledActionConfigurations for deviceManagement
       description: The list of scheduled action configurations for this compliance policy. Compliance policy must have one and only one block scheduled action.
-      operationId: deviceManagement.deviceCompliancePolicies.scheduledActionsForRule_CreateScheduledActionConfigurations
+      operationId: deviceManagement.deviceCompliancePolicies.scheduledActionsGraphFPreRule_CreateScheduledActionConfigurations
       parameters:
         - name: deviceCompliancePolicy-id
           in: path
@@ -2592,7 +2592,7 @@ paths:
         - deviceManagement.deviceCompliancePolicy
       summary: Get scheduledActionConfigurations from deviceManagement
       description: The list of scheduled action configurations for this compliance policy. Compliance policy must have one and only one block scheduled action.
-      operationId: deviceManagement.deviceCompliancePolicies.scheduledActionsForRule_GetScheduledActionConfigurations
+      operationId: deviceManagement.deviceCompliancePolicies.scheduledActionsGraphFPreRule_GetScheduledActionConfigurations
       parameters:
         - name: deviceCompliancePolicy-id
           in: path
@@ -2658,7 +2658,7 @@ paths:
         - deviceManagement.deviceCompliancePolicy
       summary: Update the navigation property scheduledActionConfigurations in deviceManagement
       description: The list of scheduled action configurations for this compliance policy. Compliance policy must have one and only one block scheduled action.
-      operationId: deviceManagement.deviceCompliancePolicies.scheduledActionsForRule_UpdateScheduledActionConfigurations
+      operationId: deviceManagement.deviceCompliancePolicies.scheduledActionsGraphFPreRule_UpdateScheduledActionConfigurations
       parameters:
         - name: deviceCompliancePolicy-id
           in: path
@@ -2699,7 +2699,7 @@ paths:
         - deviceManagement.deviceCompliancePolicy
       summary: Delete navigation property scheduledActionConfigurations for deviceManagement
       description: The list of scheduled action configurations for this compliance policy. Compliance policy must have one and only one block scheduled action.
-      operationId: deviceManagement.deviceCompliancePolicies.scheduledActionsForRule_DeleteScheduledActionConfigurations
+      operationId: deviceManagement.deviceCompliancePolicies.scheduledActionsGraphFPreRule_DeleteScheduledActionConfigurations
       parameters:
         - name: deviceCompliancePolicy-id
           in: path
@@ -5346,7 +5346,7 @@ paths:
         - deviceManagement.managedDeviceOverview
       summary: Get ref of managedDeviceOverview from deviceManagement
       description: Device overview
-      operationId: deviceManagement_GetGraphRefManagedDeviceOverview
+      operationId: deviceManagement_GetManagedDeviceOverviewGraphBPreRef
       responses:
         '200':
           description: Retrieved navigation property link
@@ -5362,7 +5362,7 @@ paths:
         - deviceManagement.managedDeviceOverview
       summary: Update the ref of navigation property managedDeviceOverview in deviceManagement
       description: Device overview
-      operationId: deviceManagement_SetGraphRefManagedDeviceOverview
+      operationId: deviceManagement_SetManagedDeviceOverviewGraphBPreRef
       requestBody:
         description: New navigation property ref values
         content:
@@ -5383,7 +5383,7 @@ paths:
         - deviceManagement.managedDeviceOverview
       summary: Delete ref of navigation property managedDeviceOverview for deviceManagement
       description: Device overview
-      operationId: deviceManagement_DeleteGraphRefManagedDeviceOverview
+      operationId: deviceManagement_DeleteManagedDeviceOverviewGraphBPreRef
       parameters:
         - name: If-Match
           in: header
@@ -6977,7 +6977,7 @@ paths:
         - deviceManagement.softwareUpdateStatusSummary
       summary: Get ref of softwareUpdateStatusSummary from deviceManagement
       description: The software update status summary.
-      operationId: deviceManagement_GetGraphRefSoftwareUpdateStatusSummary
+      operationId: deviceManagement_GetSoftwareUpdateStatusSummaryGraphBPreRef
       responses:
         '200':
           description: Retrieved navigation property link
@@ -6993,7 +6993,7 @@ paths:
         - deviceManagement.softwareUpdateStatusSummary
       summary: Update the ref of navigation property softwareUpdateStatusSummary in deviceManagement
       description: The software update status summary.
-      operationId: deviceManagement_SetGraphRefSoftwareUpdateStatusSummary
+      operationId: deviceManagement_SetSoftwareUpdateStatusSummaryGraphBPreRef
       requestBody:
         description: New navigation property ref values
         content:
@@ -7014,7 +7014,7 @@ paths:
         - deviceManagement.softwareUpdateStatusSummary
       summary: Delete ref of navigation property softwareUpdateStatusSummary for deviceManagement
       description: The software update status summary.
-      operationId: deviceManagement_DeleteGraphRefSoftwareUpdateStatusSummary
+      operationId: deviceManagement_DeleteSoftwareUpdateStatusSummaryGraphBPreRef
       parameters:
         - name: If-Match
           in: header

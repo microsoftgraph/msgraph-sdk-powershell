@@ -1288,13 +1288,13 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.site'
           links:
             createdByUser:
-              operationId: compliance.ediscovery.cases.custodians.siteSources.Site.GetCreatedByUser
+              operationId: compliance.ediscovery.cases.custodians.siteSources.Site.GetCreatedGraphBPreUser
               parameters:
                 case-id: $request.path.case-id
                 custodian-id: $request.path.custodian-id
                 siteSource-id: $request.path.siteSource-id
             lastModifiedByUser:
-              operationId: compliance.ediscovery.cases.custodians.siteSources.Site.GetLastModifiedByUser
+              operationId: compliance.ediscovery.cases.custodians.siteSources.Site.GetLastModifiedGraphBPreUser
               parameters:
                 case-id: $request.path.case-id
                 custodian-id: $request.path.custodian-id
@@ -1392,7 +1392,7 @@ paths:
         - compliance.ediscoveryroot
       summary: Get ref of site from compliance
       description: The SharePoint site associated with the siteSource.
-      operationId: compliance.ediscovery.cases.custodians.siteSources_GetGraphRefSite
+      operationId: compliance.ediscovery.cases.custodians.siteSources_GetSiteGraphBPreRef
       parameters:
         - name: case-id
           in: path
@@ -1424,13 +1424,13 @@ paths:
                 type: string
           links:
             createdByUser:
-              operationId: compliance.ediscovery.cases.custodians.siteSources.Site.GetCreatedByUser
+              operationId: compliance.ediscovery.cases.custodians.siteSources.Site.GetCreatedGraphBPreUser
               parameters:
                 case-id: $request.path.case-id
                 custodian-id: $request.path.custodian-id
                 siteSource-id: $request.path.siteSource-id
             lastModifiedByUser:
-              operationId: compliance.ediscovery.cases.custodians.siteSources.Site.GetLastModifiedByUser
+              operationId: compliance.ediscovery.cases.custodians.siteSources.Site.GetLastModifiedGraphBPreUser
               parameters:
                 case-id: $request.path.case-id
                 custodian-id: $request.path.custodian-id
@@ -1527,7 +1527,7 @@ paths:
         - compliance.ediscoveryroot
       summary: Update the ref of navigation property site in compliance
       description: The SharePoint site associated with the siteSource.
-      operationId: compliance.ediscovery.cases.custodians.siteSources_SetGraphRefSite
+      operationId: compliance.ediscovery.cases.custodians.siteSources_SetSiteGraphBPreRef
       parameters:
         - name: case-id
           in: path
@@ -1570,7 +1570,7 @@ paths:
         - compliance.ediscoveryroot
       summary: Delete ref of navigation property site for compliance
       description: The SharePoint site associated with the siteSource.
-      operationId: compliance.ediscovery.cases.custodians.siteSources_DeleteGraphRefSite
+      operationId: compliance.ediscovery.cases.custodians.siteSources_DeleteSiteGraphBPreRef
       parameters:
         - name: case-id
           in: path
@@ -2077,7 +2077,7 @@ paths:
                 custodian-id: $request.path.custodian-id
                 unifiedGroupSource-id: $request.path.unifiedGroupSource-id
             createdOnBehalfOf:
-              operationId: compliance.ediscovery.cases.custodians.unifiedGroupSources.Group.GetCreatedOnBehalfOf
+              operationId: compliance.ediscovery.cases.custodians.unifiedGroupSources.Group.GetCreatedOnBehalfGraphOPre
               parameters:
                 case-id: $request.path.case-id
                 custodian-id: $request.path.custodian-id
@@ -2089,7 +2089,7 @@ paths:
                 custodian-id: $request.path.custodian-id
                 unifiedGroupSource-id: $request.path.unifiedGroupSource-id
             memberOf:
-              operationId: compliance.ediscovery.cases.custodians.unifiedGroupSources.Group.ListMemberOf
+              operationId: compliance.ediscovery.cases.custodians.unifiedGroupSources.Group.ListMemberGraphOPre
               parameters:
                 case-id: $request.path.case-id
                 custodian-id: $request.path.custodian-id
@@ -2101,7 +2101,7 @@ paths:
                 custodian-id: $request.path.custodian-id
                 unifiedGroupSource-id: $request.path.unifiedGroupSource-id
             membersWithLicenseErrors:
-              operationId: compliance.ediscovery.cases.custodians.unifiedGroupSources.Group.ListMembersWithLicenseErrors
+              operationId: compliance.ediscovery.cases.custodians.unifiedGroupSources.Group.ListMembersGraphWPreLicenseErrors
               parameters:
                 case-id: $request.path.case-id
                 custodian-id: $request.path.custodian-id
@@ -2125,7 +2125,7 @@ paths:
                 custodian-id: $request.path.custodian-id
                 unifiedGroupSource-id: $request.path.unifiedGroupSource-id
             transitiveMemberOf:
-              operationId: compliance.ediscovery.cases.custodians.unifiedGroupSources.Group.ListTransitiveMemberOf
+              operationId: compliance.ediscovery.cases.custodians.unifiedGroupSources.Group.ListTransitiveMemberGraphOPre
               parameters:
                 case-id: $request.path.case-id
                 custodian-id: $request.path.custodian-id
@@ -2247,7 +2247,7 @@ paths:
         - compliance.ediscoveryroot
       summary: Get ref of group from compliance
       description: The group associated with the unifiedGroupSource.
-      operationId: compliance.ediscovery.cases.custodians.unifiedGroupSources_GetGraphRefGroup
+      operationId: compliance.ediscovery.cases.custodians.unifiedGroupSources_GetGroupGraphBPreRef
       parameters:
         - name: case-id
           in: path
@@ -2285,7 +2285,7 @@ paths:
                 custodian-id: $request.path.custodian-id
                 unifiedGroupSource-id: $request.path.unifiedGroupSource-id
             createdOnBehalfOf:
-              operationId: compliance.ediscovery.cases.custodians.unifiedGroupSources.Group.GetCreatedOnBehalfOf
+              operationId: compliance.ediscovery.cases.custodians.unifiedGroupSources.Group.GetCreatedOnBehalfGraphOPre
               parameters:
                 case-id: $request.path.case-id
                 custodian-id: $request.path.custodian-id
@@ -2297,7 +2297,7 @@ paths:
                 custodian-id: $request.path.custodian-id
                 unifiedGroupSource-id: $request.path.unifiedGroupSource-id
             memberOf:
-              operationId: compliance.ediscovery.cases.custodians.unifiedGroupSources.Group.ListMemberOf
+              operationId: compliance.ediscovery.cases.custodians.unifiedGroupSources.Group.ListMemberGraphOPre
               parameters:
                 case-id: $request.path.case-id
                 custodian-id: $request.path.custodian-id
@@ -2309,7 +2309,7 @@ paths:
                 custodian-id: $request.path.custodian-id
                 unifiedGroupSource-id: $request.path.unifiedGroupSource-id
             membersWithLicenseErrors:
-              operationId: compliance.ediscovery.cases.custodians.unifiedGroupSources.Group.ListMembersWithLicenseErrors
+              operationId: compliance.ediscovery.cases.custodians.unifiedGroupSources.Group.ListMembersGraphWPreLicenseErrors
               parameters:
                 case-id: $request.path.case-id
                 custodian-id: $request.path.custodian-id
@@ -2333,7 +2333,7 @@ paths:
                 custodian-id: $request.path.custodian-id
                 unifiedGroupSource-id: $request.path.unifiedGroupSource-id
             transitiveMemberOf:
-              operationId: compliance.ediscovery.cases.custodians.unifiedGroupSources.Group.ListTransitiveMemberOf
+              operationId: compliance.ediscovery.cases.custodians.unifiedGroupSources.Group.ListTransitiveMemberGraphOPre
               parameters:
                 case-id: $request.path.case-id
                 custodian-id: $request.path.custodian-id
@@ -2454,7 +2454,7 @@ paths:
         - compliance.ediscoveryroot
       summary: Update the ref of navigation property group in compliance
       description: The group associated with the unifiedGroupSource.
-      operationId: compliance.ediscovery.cases.custodians.unifiedGroupSources_SetGraphRefGroup
+      operationId: compliance.ediscovery.cases.custodians.unifiedGroupSources_SetGroupGraphBPreRef
       parameters:
         - name: case-id
           in: path
@@ -2497,7 +2497,7 @@ paths:
         - compliance.ediscoveryroot
       summary: Delete ref of navigation property group for compliance
       description: The group associated with the unifiedGroupSource.
-      operationId: compliance.ediscovery.cases.custodians.unifiedGroupSources_DeleteGraphRefGroup
+      operationId: compliance.ediscovery.cases.custodians.unifiedGroupSources_DeleteGroupGraphBPreRef
       parameters:
         - name: case-id
           in: path
@@ -3602,13 +3602,13 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.site'
           links:
             createdByUser:
-              operationId: compliance.ediscovery.cases.legalHolds.siteSources.Site.GetCreatedByUser
+              operationId: compliance.ediscovery.cases.legalHolds.siteSources.Site.GetCreatedGraphBPreUser
               parameters:
                 case-id: $request.path.case-id
                 legalHold-id: $request.path.legalHold-id
                 siteSource-id: $request.path.siteSource-id
             lastModifiedByUser:
-              operationId: compliance.ediscovery.cases.legalHolds.siteSources.Site.GetLastModifiedByUser
+              operationId: compliance.ediscovery.cases.legalHolds.siteSources.Site.GetLastModifiedGraphBPreUser
               parameters:
                 case-id: $request.path.case-id
                 legalHold-id: $request.path.legalHold-id
@@ -3706,7 +3706,7 @@ paths:
         - compliance.ediscoveryroot
       summary: Get ref of site from compliance
       description: The SharePoint site associated with the siteSource.
-      operationId: compliance.ediscovery.cases.legalHolds.siteSources_GetGraphRefSite
+      operationId: compliance.ediscovery.cases.legalHolds.siteSources_GetSiteGraphBPreRef
       parameters:
         - name: case-id
           in: path
@@ -3738,13 +3738,13 @@ paths:
                 type: string
           links:
             createdByUser:
-              operationId: compliance.ediscovery.cases.legalHolds.siteSources.Site.GetCreatedByUser
+              operationId: compliance.ediscovery.cases.legalHolds.siteSources.Site.GetCreatedGraphBPreUser
               parameters:
                 case-id: $request.path.case-id
                 legalHold-id: $request.path.legalHold-id
                 siteSource-id: $request.path.siteSource-id
             lastModifiedByUser:
-              operationId: compliance.ediscovery.cases.legalHolds.siteSources.Site.GetLastModifiedByUser
+              operationId: compliance.ediscovery.cases.legalHolds.siteSources.Site.GetLastModifiedGraphBPreUser
               parameters:
                 case-id: $request.path.case-id
                 legalHold-id: $request.path.legalHold-id
@@ -3841,7 +3841,7 @@ paths:
         - compliance.ediscoveryroot
       summary: Update the ref of navigation property site in compliance
       description: The SharePoint site associated with the siteSource.
-      operationId: compliance.ediscovery.cases.legalHolds.siteSources_SetGraphRefSite
+      operationId: compliance.ediscovery.cases.legalHolds.siteSources_SetSiteGraphBPreRef
       parameters:
         - name: case-id
           in: path
@@ -3884,7 +3884,7 @@ paths:
         - compliance.ediscoveryroot
       summary: Delete ref of navigation property site for compliance
       description: The SharePoint site associated with the siteSource.
-      operationId: compliance.ediscovery.cases.legalHolds.siteSources_DeleteGraphRefSite
+      operationId: compliance.ediscovery.cases.legalHolds.siteSources_DeleteSiteGraphBPreRef
       parameters:
         - name: case-id
           in: path
@@ -4386,7 +4386,7 @@ paths:
                 legalHold-id: $request.path.legalHold-id
                 unifiedGroupSource-id: $request.path.unifiedGroupSource-id
             createdOnBehalfOf:
-              operationId: compliance.ediscovery.cases.legalHolds.unifiedGroupSources.Group.GetCreatedOnBehalfOf
+              operationId: compliance.ediscovery.cases.legalHolds.unifiedGroupSources.Group.GetCreatedOnBehalfGraphOPre
               parameters:
                 case-id: $request.path.case-id
                 legalHold-id: $request.path.legalHold-id
@@ -4398,7 +4398,7 @@ paths:
                 legalHold-id: $request.path.legalHold-id
                 unifiedGroupSource-id: $request.path.unifiedGroupSource-id
             memberOf:
-              operationId: compliance.ediscovery.cases.legalHolds.unifiedGroupSources.Group.ListMemberOf
+              operationId: compliance.ediscovery.cases.legalHolds.unifiedGroupSources.Group.ListMemberGraphOPre
               parameters:
                 case-id: $request.path.case-id
                 legalHold-id: $request.path.legalHold-id
@@ -4410,7 +4410,7 @@ paths:
                 legalHold-id: $request.path.legalHold-id
                 unifiedGroupSource-id: $request.path.unifiedGroupSource-id
             membersWithLicenseErrors:
-              operationId: compliance.ediscovery.cases.legalHolds.unifiedGroupSources.Group.ListMembersWithLicenseErrors
+              operationId: compliance.ediscovery.cases.legalHolds.unifiedGroupSources.Group.ListMembersGraphWPreLicenseErrors
               parameters:
                 case-id: $request.path.case-id
                 legalHold-id: $request.path.legalHold-id
@@ -4434,7 +4434,7 @@ paths:
                 legalHold-id: $request.path.legalHold-id
                 unifiedGroupSource-id: $request.path.unifiedGroupSource-id
             transitiveMemberOf:
-              operationId: compliance.ediscovery.cases.legalHolds.unifiedGroupSources.Group.ListTransitiveMemberOf
+              operationId: compliance.ediscovery.cases.legalHolds.unifiedGroupSources.Group.ListTransitiveMemberGraphOPre
               parameters:
                 case-id: $request.path.case-id
                 legalHold-id: $request.path.legalHold-id
@@ -4556,7 +4556,7 @@ paths:
         - compliance.ediscoveryroot
       summary: Get ref of group from compliance
       description: The group associated with the unifiedGroupSource.
-      operationId: compliance.ediscovery.cases.legalHolds.unifiedGroupSources_GetGraphRefGroup
+      operationId: compliance.ediscovery.cases.legalHolds.unifiedGroupSources_GetGroupGraphBPreRef
       parameters:
         - name: case-id
           in: path
@@ -4594,7 +4594,7 @@ paths:
                 legalHold-id: $request.path.legalHold-id
                 unifiedGroupSource-id: $request.path.unifiedGroupSource-id
             createdOnBehalfOf:
-              operationId: compliance.ediscovery.cases.legalHolds.unifiedGroupSources.Group.GetCreatedOnBehalfOf
+              operationId: compliance.ediscovery.cases.legalHolds.unifiedGroupSources.Group.GetCreatedOnBehalfGraphOPre
               parameters:
                 case-id: $request.path.case-id
                 legalHold-id: $request.path.legalHold-id
@@ -4606,7 +4606,7 @@ paths:
                 legalHold-id: $request.path.legalHold-id
                 unifiedGroupSource-id: $request.path.unifiedGroupSource-id
             memberOf:
-              operationId: compliance.ediscovery.cases.legalHolds.unifiedGroupSources.Group.ListMemberOf
+              operationId: compliance.ediscovery.cases.legalHolds.unifiedGroupSources.Group.ListMemberGraphOPre
               parameters:
                 case-id: $request.path.case-id
                 legalHold-id: $request.path.legalHold-id
@@ -4618,7 +4618,7 @@ paths:
                 legalHold-id: $request.path.legalHold-id
                 unifiedGroupSource-id: $request.path.unifiedGroupSource-id
             membersWithLicenseErrors:
-              operationId: compliance.ediscovery.cases.legalHolds.unifiedGroupSources.Group.ListMembersWithLicenseErrors
+              operationId: compliance.ediscovery.cases.legalHolds.unifiedGroupSources.Group.ListMembersGraphWPreLicenseErrors
               parameters:
                 case-id: $request.path.case-id
                 legalHold-id: $request.path.legalHold-id
@@ -4642,7 +4642,7 @@ paths:
                 legalHold-id: $request.path.legalHold-id
                 unifiedGroupSource-id: $request.path.unifiedGroupSource-id
             transitiveMemberOf:
-              operationId: compliance.ediscovery.cases.legalHolds.unifiedGroupSources.Group.ListTransitiveMemberOf
+              operationId: compliance.ediscovery.cases.legalHolds.unifiedGroupSources.Group.ListTransitiveMemberGraphOPre
               parameters:
                 case-id: $request.path.case-id
                 legalHold-id: $request.path.legalHold-id
@@ -4763,7 +4763,7 @@ paths:
         - compliance.ediscoveryroot
       summary: Update the ref of navigation property group in compliance
       description: The group associated with the unifiedGroupSource.
-      operationId: compliance.ediscovery.cases.legalHolds.unifiedGroupSources_SetGraphRefGroup
+      operationId: compliance.ediscovery.cases.legalHolds.unifiedGroupSources_SetGroupGraphBPreRef
       parameters:
         - name: case-id
           in: path
@@ -4806,7 +4806,7 @@ paths:
         - compliance.ediscoveryroot
       summary: Delete ref of navigation property group for compliance
       description: The group associated with the unifiedGroupSource.
-      operationId: compliance.ediscovery.cases.legalHolds.unifiedGroupSources_DeleteGraphRefGroup
+      operationId: compliance.ediscovery.cases.legalHolds.unifiedGroupSources_DeleteGroupGraphBPreRef
       parameters:
         - name: case-id
           in: path
@@ -7546,7 +7546,7 @@ paths:
         - compliance.ediscoveryroot
       summary: Get ref of addToReviewSetOperation from compliance
       description: Adds the results of the sourceCollection to the specified reviewSet.
-      operationId: compliance.ediscovery.cases.sourceCollections_GetGraphRefAddToReviewSetOperation
+      operationId: compliance.ediscovery.cases.sourceCollections_GetAddToReviewSetOperationGraphBPreRef
       parameters:
         - name: case-id
           in: path
@@ -7588,7 +7588,7 @@ paths:
         - compliance.ediscoveryroot
       summary: Update the ref of navigation property addToReviewSetOperation in compliance
       description: Adds the results of the sourceCollection to the specified reviewSet.
-      operationId: compliance.ediscovery.cases.sourceCollections_SetGraphRefAddToReviewSetOperation
+      operationId: compliance.ediscovery.cases.sourceCollections_SetAddToReviewSetOperationGraphBPreRef
       parameters:
         - name: case-id
           in: path
@@ -7624,7 +7624,7 @@ paths:
         - compliance.ediscoveryroot
       summary: Delete ref of navigation property addToReviewSetOperation for compliance
       description: Adds the results of the sourceCollection to the specified reviewSet.
-      operationId: compliance.ediscovery.cases.sourceCollections_DeleteGraphRefAddToReviewSetOperation
+      operationId: compliance.ediscovery.cases.sourceCollections_DeleteAddToReviewSetOperationGraphBPreRef
       parameters:
         - name: case-id
           in: path
@@ -7756,7 +7756,7 @@ paths:
         - compliance.ediscoveryroot
       summary: Get ref of custodianSources from compliance
       description: Custodian sources that are included in the sourceCollection.
-      operationId: compliance.ediscovery.cases.sourceCollections_ListGraphRefCustodianSources
+      operationId: compliance.ediscovery.cases.sourceCollections_ListCustodianSourcesGraphBPreRef
       parameters:
         - name: case-id
           in: path
@@ -7826,7 +7826,7 @@ paths:
         - compliance.ediscoveryroot
       summary: Create new navigation property ref to custodianSources for compliance
       description: Custodian sources that are included in the sourceCollection.
-      operationId: compliance.ediscovery.cases.sourceCollections_CreateGraphRefCustodianSources
+      operationId: compliance.ediscovery.cases.sourceCollections_CreateCustodianSourcesGraphBPreRef
       parameters:
         - name: case-id
           in: path
@@ -7946,7 +7946,7 @@ paths:
         - compliance.ediscoveryroot
       summary: Get ref of lastEstimateStatisticsOperation from compliance
       description: The last estimate operation associated with the sourceCollection.
-      operationId: compliance.ediscovery.cases.sourceCollections_GetGraphRefLastEstimateStatisticsOperation
+      operationId: compliance.ediscovery.cases.sourceCollections_GetLastEstimateStatisticsOperationGraphBPreRef
       parameters:
         - name: case-id
           in: path
@@ -7983,7 +7983,7 @@ paths:
         - compliance.ediscoveryroot
       summary: Update the ref of navigation property lastEstimateStatisticsOperation in compliance
       description: The last estimate operation associated with the sourceCollection.
-      operationId: compliance.ediscovery.cases.sourceCollections_SetGraphRefLastEstimateStatisticsOperation
+      operationId: compliance.ediscovery.cases.sourceCollections_SetLastEstimateStatisticsOperationGraphBPreRef
       parameters:
         - name: case-id
           in: path
@@ -8019,7 +8019,7 @@ paths:
         - compliance.ediscoveryroot
       summary: Delete ref of navigation property lastEstimateStatisticsOperation for compliance
       description: The last estimate operation associated with the sourceCollection.
-      operationId: compliance.ediscovery.cases.sourceCollections_DeleteGraphRefLastEstimateStatisticsOperation
+      operationId: compliance.ediscovery.cases.sourceCollections_DeleteLastEstimateStatisticsOperationGraphBPreRef
       parameters:
         - name: case-id
           in: path
@@ -8218,7 +8218,7 @@ paths:
         - compliance.ediscoveryroot
       summary: Get ref of noncustodialSources from compliance
       description: noncustodialDataSource sources that are included in the sourceCollection
-      operationId: compliance.ediscovery.cases.sourceCollections_ListGraphRefNoncustodialSources
+      operationId: compliance.ediscovery.cases.sourceCollections_ListNoncustodialSourcesGraphBPreRef
       parameters:
         - name: case-id
           in: path
@@ -8294,7 +8294,7 @@ paths:
         - compliance.ediscoveryroot
       summary: Create new navigation property ref to noncustodialSources for compliance
       description: noncustodialDataSource sources that are included in the sourceCollection
-      operationId: compliance.ediscovery.cases.sourceCollections_CreateGraphRefNoncustodialSources
+      operationId: compliance.ediscovery.cases.sourceCollections_CreateNoncustodialSourcesGraphBPreRef
       parameters:
         - name: case-id
           in: path
@@ -8799,7 +8799,7 @@ paths:
         - compliance.ediscoveryroot
       summary: Get ref of childTags from compliance
       description: Returns the tags that are a child of a tag.
-      operationId: compliance.ediscovery.cases.tags_ListGraphRefChildTags
+      operationId: compliance.ediscovery.cases.tags_ListChildTagsGraphBPreRef
       parameters:
         - name: case-id
           in: path
@@ -8871,7 +8871,7 @@ paths:
         - compliance.ediscoveryroot
       summary: Create new navigation property ref to childTags for compliance
       description: Returns the tags that are a child of a tag.
-      operationId: compliance.ediscovery.cases.tags_CreateGraphRefChildTags
+      operationId: compliance.ediscovery.cases.tags_CreateChildTagsGraphBPreRef
       parameters:
         - name: case-id
           in: path
@@ -9023,7 +9023,7 @@ paths:
         - compliance.ediscoveryroot
       summary: Get ref of parent from compliance
       description: Returns the parent tag of the specified tag.
-      operationId: compliance.ediscovery.cases.tags_GetGraphRefParent
+      operationId: compliance.ediscovery.cases.tags_GetParentGraphBPreRef
       parameters:
         - name: case-id
           in: path
@@ -9065,7 +9065,7 @@ paths:
         - compliance.ediscoveryroot
       summary: Update the ref of navigation property parent in compliance
       description: Returns the parent tag of the specified tag.
-      operationId: compliance.ediscovery.cases.tags_SetGraphRefParent
+      operationId: compliance.ediscovery.cases.tags_SetParentGraphBPreRef
       parameters:
         - name: case-id
           in: path
@@ -9101,7 +9101,7 @@ paths:
         - compliance.ediscoveryroot
       summary: Delete ref of navigation property parent for compliance
       description: Returns the parent tag of the specified tag.
-      operationId: compliance.ediscovery.cases.tags_DeleteGraphRefParent
+      operationId: compliance.ediscovery.cases.tags_DeleteParentGraphBPreRef
       parameters:
         - name: case-id
           in: path

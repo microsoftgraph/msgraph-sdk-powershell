@@ -3069,7 +3069,7 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action getPresencesByUserId
-      operationId: communications_getPresencesByUserId
+      operationId: communications_getPresencesGraphBPreUserId
       requestBody:
         description: Action parameters
         content:

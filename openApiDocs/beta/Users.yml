@@ -765,7 +765,7 @@ paths:
               parameters:
                 user-id: $request.path.user-id
             memberOf:
-              operationId: users.ListMemberOf
+              operationId: users.ListMemberGraphOPre
               parameters:
                 user-id: $request.path.user-id
             oauth2PermissionGrants:
@@ -785,11 +785,11 @@ paths:
               parameters:
                 user-id: $request.path.user-id
             scopedRoleMemberOf:
-              operationId: users.ListScopedRoleMemberOf
+              operationId: users.ListScopedRoleMemberGraphOPre
               parameters:
                 user-id: $request.path.user-id
             transitiveMemberOf:
-              operationId: users.ListTransitiveMemberOf
+              operationId: users.ListTransitiveMemberGraphOPre
               parameters:
                 user-id: $request.path.user-id
             transitiveReports:
@@ -865,7 +865,7 @@ paths:
               parameters:
                 user-id: $request.path.user-id
             appConsentRequestsForApproval:
-              operationId: users.ListAppConsentRequestsForApproval
+              operationId: users.ListAppConsentRequestsGraphFPreApproval
               parameters:
                 user-id: $request.path.user-id
             approvals:
@@ -1126,7 +1126,7 @@ paths:
         - users.directoryObject
       summary: Get ref of createdObjects from users
       description: Directory objects that were created by the user. Read-only. Nullable.
-      operationId: users_ListGraphRefCreatedObjects
+      operationId: users_ListCreatedObjectsGraphBPreRef
       parameters:
         - name: user-id
           in: path
@@ -1183,7 +1183,7 @@ paths:
         - users.directoryObject
       summary: Create new navigation property ref to createdObjects for users
       description: Directory objects that were created by the user. Read-only. Nullable.
-      operationId: users_CreateGraphRefCreatedObjects
+      operationId: users_CreateCreatedObjectsGraphBPreRef
       parameters:
         - name: user-id
           in: path
@@ -1302,7 +1302,7 @@ paths:
         - users.directoryObject
       summary: Get ref of directReports from users
       description: The users and contacts that report to the user. (The users and contacts that have their manager property set to this user.) Read-only. Nullable. Supports $expand.
-      operationId: users_ListGraphRefDirectReports
+      operationId: users_ListDirectReportsGraphBPreRef
       parameters:
         - name: user-id
           in: path
@@ -1359,7 +1359,7 @@ paths:
         - users.directoryObject
       summary: Create new navigation property ref to directReports for users
       description: The users and contacts that report to the user. (The users and contacts that have their manager property set to this user.) Read-only. Nullable. Supports $expand.
-      operationId: users_CreateGraphRefDirectReports
+      operationId: users_CreateDirectReportsGraphBPreRef
       parameters:
         - name: user-id
           in: path
@@ -1923,7 +1923,7 @@ paths:
         - users.directoryObject
       summary: Get ref of manager from users
       description: 'The user or contact that is this user''s manager. Read-only. (HTTP Methods: GET, PUT, DELETE.). Supports $expand.'
-      operationId: users_GetGraphRefManager
+      operationId: users_GetManagerGraphBPreRef
       parameters:
         - name: user-id
           in: path
@@ -1947,7 +1947,7 @@ paths:
         - users.directoryObject
       summary: Update the ref of navigation property manager in users
       description: 'The user or contact that is this user''s manager. Read-only. (HTTP Methods: GET, PUT, DELETE.). Supports $expand.'
-      operationId: users_SetGraphRefManager
+      operationId: users_SetManagerGraphBPreRef
       parameters:
         - name: user-id
           in: path
@@ -1976,7 +1976,7 @@ paths:
         - users.directoryObject
       summary: Delete ref of navigation property manager for users
       description: 'The user or contact that is this user''s manager. Read-only. (HTTP Methods: GET, PUT, DELETE.). Supports $expand.'
-      operationId: users_DeleteGraphRefManager
+      operationId: users_DeleteManagerGraphBPreRef
       parameters:
         - name: user-id
           in: path
@@ -2002,7 +2002,7 @@ paths:
         - users.directoryObject
       summary: Get memberOf from users
       description: The groups and directory roles that the user is a member of. Read-only. Nullable. Supports $expand.
-      operationId: users_ListMemberOf
+      operationId: users_ListMemberGraphOPre
       parameters:
         - name: user-id
           in: path
@@ -2085,7 +2085,7 @@ paths:
         - users.directoryObject
       summary: Get ref of memberOf from users
       description: The groups and directory roles that the user is a member of. Read-only. Nullable. Supports $expand.
-      operationId: users_ListGraphRefMemberOf
+      operationId: users_ListMemberGraphOPreGraphBPreRef
       parameters:
         - name: user-id
           in: path
@@ -2142,7 +2142,7 @@ paths:
         - users.directoryObject
       summary: Create new navigation property ref to memberOf for users
       description: The groups and directory roles that the user is a member of. Read-only. Nullable. Supports $expand.
-      operationId: users_CreateGraphRefMemberOf
+      operationId: users_CreateMemberGraphOPreGraphBPreRef
       parameters:
         - name: user-id
           in: path
@@ -2533,7 +2533,7 @@ paths:
       tags:
         - users.oAuth2PermissionGrant
       summary: Get ref of oauth2PermissionGrants from users
-      operationId: users_ListGraphRefOauth2PermissionGrants
+      operationId: users_ListOauth2PermissionGrantsGraphBPreRef
       parameters:
         - name: user-id
           in: path
@@ -2601,7 +2601,7 @@ paths:
       tags:
         - users.oAuth2PermissionGrant
       summary: Create new navigation property ref to oauth2PermissionGrants for users
-      operationId: users_CreateGraphRefOauth2PermissionGrants
+      operationId: users_CreateOauth2PermissionGrantsGraphBPreRef
       parameters:
         - name: user-id
           in: path
@@ -8791,7 +8791,7 @@ paths:
         - users.directoryObject
       summary: Get ref of ownedDevices from users
       description: Devices that are owned by the user. Read-only. Nullable. Supports $expand.
-      operationId: users_ListGraphRefOwnedDevices
+      operationId: users_ListOwnedDevicesGraphBPreRef
       parameters:
         - name: user-id
           in: path
@@ -8848,7 +8848,7 @@ paths:
         - users.directoryObject
       summary: Create new navigation property ref to ownedDevices for users
       description: Devices that are owned by the user. Read-only. Nullable. Supports $expand.
-      operationId: users_CreateGraphRefOwnedDevices
+      operationId: users_CreateOwnedDevicesGraphBPreRef
       parameters:
         - name: user-id
           in: path
@@ -8967,7 +8967,7 @@ paths:
         - users.directoryObject
       summary: Get ref of ownedObjects from users
       description: Directory objects that are owned by the user. Read-only. Nullable. Supports $expand.
-      operationId: users_ListGraphRefOwnedObjects
+      operationId: users_ListOwnedObjectsGraphBPreRef
       parameters:
         - name: user-id
           in: path
@@ -9024,7 +9024,7 @@ paths:
         - users.directoryObject
       summary: Create new navigation property ref to ownedObjects for users
       description: Directory objects that are owned by the user. Read-only. Nullable. Supports $expand.
-      operationId: users_CreateGraphRefOwnedObjects
+      operationId: users_CreateOwnedObjectsGraphBPreRef
       parameters:
         - name: user-id
           in: path
@@ -9570,7 +9570,7 @@ paths:
         - users.directoryObject
       summary: Get ref of registeredDevices from users
       description: Devices that are registered for the user. Read-only. Nullable. Supports $expand.
-      operationId: users_ListGraphRefRegisteredDevices
+      operationId: users_ListRegisteredDevicesGraphBPreRef
       parameters:
         - name: user-id
           in: path
@@ -9627,7 +9627,7 @@ paths:
         - users.directoryObject
       summary: Create new navigation property ref to registeredDevices for users
       description: Devices that are registered for the user. Read-only. Nullable. Supports $expand.
-      operationId: users_CreateGraphRefRegisteredDevices
+      operationId: users_CreateRegisteredDevicesGraphBPreRef
       parameters:
         - name: user-id
           in: path
@@ -11811,7 +11811,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Get transitiveMemberOf from users
-      operationId: users_ListTransitiveMemberOf
+      operationId: users_ListTransitiveMemberGraphOPre
       parameters:
         - name: user-id
           in: path
@@ -11893,7 +11893,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Get ref of transitiveMemberOf from users
-      operationId: users_ListGraphRefTransitiveMemberOf
+      operationId: users_ListTransitiveMemberGraphOPreGraphBPreRef
       parameters:
         - name: user-id
           in: path
@@ -11949,7 +11949,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Create new navigation property ref to transitiveMemberOf for users
-      operationId: users_CreateGraphRefTransitiveMemberOf
+      operationId: users_CreateTransitiveMemberGraphOPreGraphBPreRef
       parameters:
         - name: user-id
           in: path
@@ -12068,7 +12068,7 @@ paths:
         - users.directoryObject
       summary: Get ref of transitiveReports from users
       description: The transitive reports for a user. Read-only.
-      operationId: users_ListGraphRefTransitiveReports
+      operationId: users_ListTransitiveReportsGraphBPreRef
       parameters:
         - name: user-id
           in: path
@@ -12125,7 +12125,7 @@ paths:
         - users.directoryObject
       summary: Create new navigation property ref to transitiveReports for users
       description: The transitive reports for a user. Read-only.
-      operationId: users_CreateGraphRefTransitiveReports
+      operationId: users_CreateTransitiveReportsGraphBPreRef
       parameters:
         - name: user-id
           in: path

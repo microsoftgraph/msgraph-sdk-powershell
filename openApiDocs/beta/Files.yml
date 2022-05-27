@@ -239,11 +239,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.drive'
           links:
             createdByUser:
-              operationId: drives.GetCreatedByUser
+              operationId: drives.GetCreatedGraphBPreUser
               parameters:
                 drive-id: $request.path.drive-id
             lastModifiedByUser:
-              operationId: drives.GetLastModifiedByUser
+              operationId: drives.GetLastModifiedGraphBPreUser
               parameters:
                 drive-id: $request.path.drive-id
             activities:
@@ -702,12 +702,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.driveItem'
           links:
             createdByUser:
-              operationId: drives.activities.DriveItem.GetCreatedByUser
+              operationId: drives.activities.DriveItem.GetCreatedGraphBPreUser
               parameters:
                 drive-id: $request.path.drive-id
                 itemActivityOLD-id: $request.path.itemActivityOLD-id
             lastModifiedByUser:
-              operationId: drives.activities.DriveItem.GetLastModifiedByUser
+              operationId: drives.activities.DriveItem.GetLastModifiedGraphBPreUser
               parameters:
                 drive-id: $request.path.drive-id
                 itemActivityOLD-id: $request.path.itemActivityOLD-id
@@ -764,7 +764,7 @@ paths:
       tags:
         - drives.itemActivityOLD
       summary: Get ref of driveItem from drives
-      operationId: drives.activities_GetGraphRefDriveItem
+      operationId: drives.activities_GetDriveItemGraphBPreRef
       parameters:
         - name: drive-id
           in: path
@@ -789,12 +789,12 @@ paths:
                 type: string
           links:
             createdByUser:
-              operationId: drives.activities.DriveItem.GetCreatedByUser
+              operationId: drives.activities.DriveItem.GetCreatedGraphBPreUser
               parameters:
                 drive-id: $request.path.drive-id
                 itemActivityOLD-id: $request.path.itemActivityOLD-id
             lastModifiedByUser:
-              operationId: drives.activities.DriveItem.GetLastModifiedByUser
+              operationId: drives.activities.DriveItem.GetLastModifiedGraphBPreUser
               parameters:
                 drive-id: $request.path.drive-id
                 itemActivityOLD-id: $request.path.itemActivityOLD-id
@@ -850,7 +850,7 @@ paths:
       tags:
         - drives.itemActivityOLD
       summary: Update the ref of navigation property driveItem in drives
-      operationId: drives.activities_SetGraphRefDriveItem
+      operationId: drives.activities_SetDriveItemGraphBPreRef
       parameters:
         - name: drive-id
           in: path
@@ -885,7 +885,7 @@ paths:
       tags:
         - drives.itemActivityOLD
       summary: Delete ref of navigation property driveItem for drives
-      operationId: drives.activities_DeleteGraphRefDriveItem
+      operationId: drives.activities_DeleteDriveItemGraphBPreRef
       parameters:
         - name: drive-id
           in: path
@@ -992,12 +992,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.listItem'
           links:
             createdByUser:
-              operationId: drives.activities.ListItem.GetCreatedByUser
+              operationId: drives.activities.ListItem.GetCreatedGraphBPreUser
               parameters:
                 drive-id: $request.path.drive-id
                 itemActivityOLD-id: $request.path.itemActivityOLD-id
             lastModifiedByUser:
-              operationId: drives.activities.ListItem.GetLastModifiedByUser
+              operationId: drives.activities.ListItem.GetLastModifiedGraphBPreUser
               parameters:
                 drive-id: $request.path.drive-id
                 itemActivityOLD-id: $request.path.itemActivityOLD-id
@@ -1034,7 +1034,7 @@ paths:
       tags:
         - drives.itemActivityOLD
       summary: Get ref of listItem from drives
-      operationId: drives.activities_GetGraphRefListItem
+      operationId: drives.activities_GetListItemGraphBPreRef
       parameters:
         - name: drive-id
           in: path
@@ -1059,12 +1059,12 @@ paths:
                 type: string
           links:
             createdByUser:
-              operationId: drives.activities.ListItem.GetCreatedByUser
+              operationId: drives.activities.ListItem.GetCreatedGraphBPreUser
               parameters:
                 drive-id: $request.path.drive-id
                 itemActivityOLD-id: $request.path.itemActivityOLD-id
             lastModifiedByUser:
-              operationId: drives.activities.ListItem.GetLastModifiedByUser
+              operationId: drives.activities.ListItem.GetLastModifiedGraphBPreUser
               parameters:
                 drive-id: $request.path.drive-id
                 itemActivityOLD-id: $request.path.itemActivityOLD-id
@@ -1100,7 +1100,7 @@ paths:
       tags:
         - drives.itemActivityOLD
       summary: Update the ref of navigation property listItem in drives
-      operationId: drives.activities_SetGraphRefListItem
+      operationId: drives.activities_SetListItemGraphBPreRef
       parameters:
         - name: drive-id
           in: path
@@ -1135,7 +1135,7 @@ paths:
       tags:
         - drives.itemActivityOLD
       summary: Delete ref of navigation property listItem for drives
-      operationId: drives.activities_DeleteGraphRefListItem
+      operationId: drives.activities_DeleteListItemGraphBPreRef
       parameters:
         - name: drive-id
           in: path
@@ -1230,7 +1230,7 @@ paths:
       tags:
         - drives.Functions
       summary: Invoke function getActivitiesByInterval
-      operationId: drives.activities.listItem_getActivitiesByInterval
+      operationId: drives.activities.listItem_getActivitiesGraphBPreInterval
       parameters:
         - name: drive-id
           in: path
@@ -1492,7 +1492,7 @@ paths:
         - drives.driveItem
       summary: Get ref of bundles from drives
       description: 'Collection of [bundles][bundle] (albums and multi-select-shared sets of items). Only in personal OneDrive.'
-      operationId: drives_ListGraphRefBundles
+      operationId: drives_ListBundlesGraphBPreRef
       parameters:
         - name: drive-id
           in: path
@@ -1617,7 +1617,7 @@ paths:
         - drives.driveItem
       summary: Create new navigation property ref to bundles for drives
       description: 'Collection of [bundles][bundle] (albums and multi-select-shared sets of items). Only in personal OneDrive.'
-      operationId: drives_CreateGraphRefBundles
+      operationId: drives_CreateBundlesGraphBPreRef
       parameters:
         - name: drive-id
           in: path
@@ -1860,7 +1860,7 @@ paths:
         - drives.driveItem
       summary: Get ref of following from drives
       description: The list of items the user is following. Only in OneDrive for Business.
-      operationId: drives_ListGraphRefFollowing
+      operationId: drives_ListFollowingGraphBPreRef
       parameters:
         - name: drive-id
           in: path
@@ -1985,7 +1985,7 @@ paths:
         - drives.driveItem
       summary: Create new navigation property ref to following for drives
       description: The list of items the user is following. Only in OneDrive for Business.
-      operationId: drives_CreateGraphRefFollowing
+      operationId: drives_CreateFollowingGraphBPreRef
       parameters:
         - name: drive-id
           in: path
@@ -2365,12 +2365,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.driveItem'
           links:
             createdByUser:
-              operationId: drives.Items.GetCreatedByUser
+              operationId: drives.Items.GetCreatedGraphBPreUser
               parameters:
                 drive-id: $request.path.drive-id
                 driveItem-id: $request.path.driveItem-id
             lastModifiedByUser:
-              operationId: drives.Items.GetLastModifiedByUser
+              operationId: drives.Items.GetLastModifiedGraphBPreUser
               parameters:
                 drive-id: $request.path.drive-id
                 driveItem-id: $request.path.driveItem-id
@@ -2633,11 +2633,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.list'
           links:
             createdByUser:
-              operationId: drives.List.GetCreatedByUser
+              operationId: drives.List.GetCreatedGraphBPreUser
               parameters:
                 drive-id: $request.path.drive-id
             lastModifiedByUser:
-              operationId: drives.List.GetLastModifiedByUser
+              operationId: drives.List.GetLastModifiedGraphBPreUser
               parameters:
                 drive-id: $request.path.drive-id
             activities:
@@ -3098,12 +3098,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.driveItem'
           links:
             createdByUser:
-              operationId: drives.list.activities.DriveItem.GetCreatedByUser
+              operationId: drives.list.activities.DriveItem.GetCreatedGraphBPreUser
               parameters:
                 drive-id: $request.path.drive-id
                 itemActivityOLD-id: $request.path.itemActivityOLD-id
             lastModifiedByUser:
-              operationId: drives.list.activities.DriveItem.GetLastModifiedByUser
+              operationId: drives.list.activities.DriveItem.GetLastModifiedGraphBPreUser
               parameters:
                 drive-id: $request.path.drive-id
                 itemActivityOLD-id: $request.path.itemActivityOLD-id
@@ -3160,7 +3160,7 @@ paths:
       tags:
         - drives.list
       summary: Get ref of driveItem from drives
-      operationId: drives.list.activities_GetGraphRefDriveItem
+      operationId: drives.list.activities_GetDriveItemGraphBPreRef
       parameters:
         - name: drive-id
           in: path
@@ -3185,12 +3185,12 @@ paths:
                 type: string
           links:
             createdByUser:
-              operationId: drives.list.activities.DriveItem.GetCreatedByUser
+              operationId: drives.list.activities.DriveItem.GetCreatedGraphBPreUser
               parameters:
                 drive-id: $request.path.drive-id
                 itemActivityOLD-id: $request.path.itemActivityOLD-id
             lastModifiedByUser:
-              operationId: drives.list.activities.DriveItem.GetLastModifiedByUser
+              operationId: drives.list.activities.DriveItem.GetLastModifiedGraphBPreUser
               parameters:
                 drive-id: $request.path.drive-id
                 itemActivityOLD-id: $request.path.itemActivityOLD-id
@@ -3246,7 +3246,7 @@ paths:
       tags:
         - drives.list
       summary: Update the ref of navigation property driveItem in drives
-      operationId: drives.list.activities_SetGraphRefDriveItem
+      operationId: drives.list.activities_SetDriveItemGraphBPreRef
       parameters:
         - name: drive-id
           in: path
@@ -3281,7 +3281,7 @@ paths:
       tags:
         - drives.list
       summary: Delete ref of navigation property driveItem for drives
-      operationId: drives.list.activities_DeleteGraphRefDriveItem
+      operationId: drives.list.activities_DeleteDriveItemGraphBPreRef
       parameters:
         - name: drive-id
           in: path
@@ -3388,12 +3388,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.listItem'
           links:
             createdByUser:
-              operationId: drives.list.activities.ListItem.GetCreatedByUser
+              operationId: drives.list.activities.ListItem.GetCreatedGraphBPreUser
               parameters:
                 drive-id: $request.path.drive-id
                 itemActivityOLD-id: $request.path.itemActivityOLD-id
             lastModifiedByUser:
-              operationId: drives.list.activities.ListItem.GetLastModifiedByUser
+              operationId: drives.list.activities.ListItem.GetLastModifiedGraphBPreUser
               parameters:
                 drive-id: $request.path.drive-id
                 itemActivityOLD-id: $request.path.itemActivityOLD-id
@@ -3430,7 +3430,7 @@ paths:
       tags:
         - drives.list
       summary: Get ref of listItem from drives
-      operationId: drives.list.activities_GetGraphRefListItem
+      operationId: drives.list.activities_GetListItemGraphBPreRef
       parameters:
         - name: drive-id
           in: path
@@ -3455,12 +3455,12 @@ paths:
                 type: string
           links:
             createdByUser:
-              operationId: drives.list.activities.ListItem.GetCreatedByUser
+              operationId: drives.list.activities.ListItem.GetCreatedGraphBPreUser
               parameters:
                 drive-id: $request.path.drive-id
                 itemActivityOLD-id: $request.path.itemActivityOLD-id
             lastModifiedByUser:
-              operationId: drives.list.activities.ListItem.GetLastModifiedByUser
+              operationId: drives.list.activities.ListItem.GetLastModifiedGraphBPreUser
               parameters:
                 drive-id: $request.path.drive-id
                 itemActivityOLD-id: $request.path.itemActivityOLD-id
@@ -3496,7 +3496,7 @@ paths:
       tags:
         - drives.list
       summary: Update the ref of navigation property listItem in drives
-      operationId: drives.list.activities_SetGraphRefListItem
+      operationId: drives.list.activities_SetListItemGraphBPreRef
       parameters:
         - name: drive-id
           in: path
@@ -3531,7 +3531,7 @@ paths:
       tags:
         - drives.list
       summary: Delete ref of navigation property listItem for drives
-      operationId: drives.list.activities_DeleteGraphRefListItem
+      operationId: drives.list.activities_DeleteListItemGraphBPreRef
       parameters:
         - name: drive-id
           in: path
@@ -3626,7 +3626,7 @@ paths:
       tags:
         - drives.Functions
       summary: Invoke function getActivitiesByInterval
-      operationId: drives.list.activities.listItem_getActivitiesByInterval
+      operationId: drives.list.activities.listItem_getActivitiesGraphBPreInterval
       parameters:
         - name: drive-id
           in: path
@@ -4143,7 +4143,7 @@ paths:
         - drives.list
       summary: Get ref of sourceColumn from drives
       description: The source column for the content type column.
-      operationId: drives.list.columns_GetGraphRefSourceColumn
+      operationId: drives.list.columns_GetSourceColumnGraphBPreRef
       parameters:
         - name: drive-id
           in: path
@@ -4180,7 +4180,7 @@ paths:
         - drives.list
       summary: Update the ref of navigation property sourceColumn in drives
       description: The source column for the content type column.
-      operationId: drives.list.columns_SetGraphRefSourceColumn
+      operationId: drives.list.columns_SetSourceColumnGraphBPreRef
       parameters:
         - name: drive-id
           in: path
@@ -4216,7 +4216,7 @@ paths:
         - drives.list
       summary: Delete ref of navigation property sourceColumn for drives
       description: The source column for the content type column.
-      operationId: drives.list.columns_DeleteGraphRefSourceColumn
+      operationId: drives.list.columns_DeleteSourceColumnGraphBPreRef
       parameters:
         - name: drive-id
           in: path
@@ -4690,7 +4690,7 @@ paths:
         - drives.list
       summary: Get ref of base from drives
       description: Parent contentType from which this content type is derived.
-      operationId: drives.list.contentTypes_GetGraphRefBase
+      operationId: drives.list.contentTypes_GetBaseGraphBPreRef
       parameters:
         - name: drive-id
           in: path
@@ -4747,7 +4747,7 @@ paths:
         - drives.list
       summary: Update the ref of navigation property base in drives
       description: Parent contentType from which this content type is derived.
-      operationId: drives.list.contentTypes_SetGraphRefBase
+      operationId: drives.list.contentTypes_SetBaseGraphBPreRef
       parameters:
         - name: drive-id
           in: path
@@ -4783,7 +4783,7 @@ paths:
         - drives.list
       summary: Delete ref of navigation property base for drives
       description: Parent contentType from which this content type is derived.
-      operationId: drives.list.contentTypes_DeleteGraphRefBase
+      operationId: drives.list.contentTypes_DeleteBaseGraphBPreRef
       parameters:
         - name: drive-id
           in: path
@@ -4815,7 +4815,7 @@ paths:
       tags:
         - drives.Actions
       summary: Invoke action associateWithHubSites
-      operationId: drives.list.contentTypes.base_associateWithHubSites
+      operationId: drives.list.contentTypes.base_associateGraphWPreHubSites
       parameters:
         - name: drive-id
           in: path
@@ -5128,7 +5128,7 @@ paths:
         - drives.list
       summary: Get ref of baseTypes from drives
       description: The collection of content types that are ancestors of this content type.
-      operationId: drives.list.contentTypes_ListGraphRefBaseTypes
+      operationId: drives.list.contentTypes_ListBaseTypesGraphBPreRef
       parameters:
         - name: drive-id
           in: path
@@ -5218,7 +5218,7 @@ paths:
         - drives.list
       summary: Create new navigation property ref to baseTypes for drives
       description: The collection of content types that are ancestors of this content type.
-      operationId: drives.list.contentTypes_CreateGraphRefBaseTypes
+      operationId: drives.list.contentTypes_CreateBaseTypesGraphBPreRef
       parameters:
         - name: drive-id
           in: path
@@ -5834,7 +5834,7 @@ paths:
         - drives.list
       summary: Get ref of columnPositions from drives
       description: Column order information in a content type.
-      operationId: drives.list.contentTypes_ListGraphRefColumnPositions
+      operationId: drives.list.contentTypes_ListColumnPositionsGraphBPreRef
       parameters:
         - name: drive-id
           in: path
@@ -5958,7 +5958,7 @@ paths:
         - drives.list
       summary: Create new navigation property ref to columnPositions for drives
       description: Column order information in a content type.
-      operationId: drives.list.contentTypes_CreateGraphRefColumnPositions
+      operationId: drives.list.contentTypes_CreateColumnPositionsGraphBPreRef
       parameters:
         - name: drive-id
           in: path
@@ -6507,7 +6507,7 @@ paths:
         - drives.list
       summary: Get ref of sourceColumn from drives
       description: The source column for the content type column.
-      operationId: drives.list.contentTypes.columns_GetGraphRefSourceColumn
+      operationId: drives.list.contentTypes.columns_GetSourceColumnGraphBPreRef
       parameters:
         - name: drive-id
           in: path
@@ -6552,7 +6552,7 @@ paths:
         - drives.list
       summary: Update the ref of navigation property sourceColumn in drives
       description: The source column for the content type column.
-      operationId: drives.list.contentTypes.columns_SetGraphRefSourceColumn
+      operationId: drives.list.contentTypes.columns_SetSourceColumnGraphBPreRef
       parameters:
         - name: drive-id
           in: path
@@ -6595,7 +6595,7 @@ paths:
         - drives.list
       summary: Delete ref of navigation property sourceColumn for drives
       description: The source column for the content type column.
-      operationId: drives.list.contentTypes.columns_DeleteGraphRefSourceColumn
+      operationId: drives.list.contentTypes.columns_DeleteSourceColumnGraphBPreRef
       parameters:
         - name: drive-id
           in: path
@@ -6634,7 +6634,7 @@ paths:
       tags:
         - drives.Actions
       summary: Invoke action associateWithHubSites
-      operationId: drives.list.contentTypes_associateWithHubSites
+      operationId: drives.list.contentTypes_associateGraphWPreHubSites
       parameters:
         - name: drive-id
           in: path
@@ -6980,11 +6980,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.drive'
           links:
             createdByUser:
-              operationId: drives.list.Drive.GetCreatedByUser
+              operationId: drives.list.Drive.GetCreatedGraphBPreUser
               parameters:
                 drive-id: $request.path.drive-id
             lastModifiedByUser:
-              operationId: drives.list.Drive.GetLastModifiedByUser
+              operationId: drives.list.Drive.GetLastModifiedGraphBPreUser
               parameters:
                 drive-id: $request.path.drive-id
             activities:
@@ -7024,7 +7024,7 @@ paths:
         - drives.list
       summary: Get ref of drive from drives
       description: 'Only present on document libraries. Allows access to the list as a [drive][] resource with [driveItems][driveItem].'
-      operationId: drives.list_GetGraphRefDrive
+      operationId: drives.list_GetDriveGraphBPreRef
       parameters:
         - name: drive-id
           in: path
@@ -7042,11 +7042,11 @@ paths:
                 type: string
           links:
             createdByUser:
-              operationId: drives.list.Drive.GetCreatedByUser
+              operationId: drives.list.Drive.GetCreatedGraphBPreUser
               parameters:
                 drive-id: $request.path.drive-id
             lastModifiedByUser:
-              operationId: drives.list.Drive.GetLastModifiedByUser
+              operationId: drives.list.Drive.GetLastModifiedGraphBPreUser
               parameters:
                 drive-id: $request.path.drive-id
             activities:
@@ -7085,7 +7085,7 @@ paths:
         - drives.list
       summary: Update the ref of navigation property drive in drives
       description: 'Only present on document libraries. Allows access to the list as a [drive][] resource with [driveItems][driveItem].'
-      operationId: drives.list_SetGraphRefDrive
+      operationId: drives.list_SetDriveGraphBPreRef
       parameters:
         - name: drive-id
           in: path
@@ -7114,7 +7114,7 @@ paths:
         - drives.list
       summary: Delete ref of navigation property drive for drives
       description: 'Only present on document libraries. Allows access to the list as a [drive][] resource with [driveItems][driveItem].'
-      operationId: drives.list_DeleteGraphRefDrive
+      operationId: drives.list_DeleteDriveGraphBPreRef
       parameters:
         - name: drive-id
           in: path
@@ -7376,12 +7376,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.listItem'
           links:
             createdByUser:
-              operationId: drives.list.Items.GetCreatedByUser
+              operationId: drives.list.Items.GetCreatedGraphBPreUser
               parameters:
                 drive-id: $request.path.drive-id
                 listItem-id: $request.path.listItem-id
             lastModifiedByUser:
-              operationId: drives.list.Items.GetLastModifiedByUser
+              operationId: drives.list.Items.GetLastModifiedGraphBPreUser
               parameters:
                 drive-id: $request.path.drive-id
                 listItem-id: $request.path.listItem-id
@@ -7898,13 +7898,13 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.driveItem'
           links:
             createdByUser:
-              operationId: drives.list.items.activities.DriveItem.GetCreatedByUser
+              operationId: drives.list.items.activities.DriveItem.GetCreatedGraphBPreUser
               parameters:
                 drive-id: $request.path.drive-id
                 listItem-id: $request.path.listItem-id
                 itemActivityOLD-id: $request.path.itemActivityOLD-id
             lastModifiedByUser:
-              operationId: drives.list.items.activities.DriveItem.GetLastModifiedByUser
+              operationId: drives.list.items.activities.DriveItem.GetLastModifiedGraphBPreUser
               parameters:
                 drive-id: $request.path.drive-id
                 listItem-id: $request.path.listItem-id
@@ -7971,7 +7971,7 @@ paths:
       tags:
         - drives.list
       summary: Get ref of driveItem from drives
-      operationId: drives.list.items.activities_GetGraphRefDriveItem
+      operationId: drives.list.items.activities_GetDriveItemGraphBPreRef
       parameters:
         - name: drive-id
           in: path
@@ -8003,13 +8003,13 @@ paths:
                 type: string
           links:
             createdByUser:
-              operationId: drives.list.items.activities.DriveItem.GetCreatedByUser
+              operationId: drives.list.items.activities.DriveItem.GetCreatedGraphBPreUser
               parameters:
                 drive-id: $request.path.drive-id
                 listItem-id: $request.path.listItem-id
                 itemActivityOLD-id: $request.path.itemActivityOLD-id
             lastModifiedByUser:
-              operationId: drives.list.items.activities.DriveItem.GetLastModifiedByUser
+              operationId: drives.list.items.activities.DriveItem.GetLastModifiedGraphBPreUser
               parameters:
                 drive-id: $request.path.drive-id
                 listItem-id: $request.path.listItem-id
@@ -8075,7 +8075,7 @@ paths:
       tags:
         - drives.list
       summary: Update the ref of navigation property driveItem in drives
-      operationId: drives.list.items.activities_SetGraphRefDriveItem
+      operationId: drives.list.items.activities_SetDriveItemGraphBPreRef
       parameters:
         - name: drive-id
           in: path
@@ -8117,7 +8117,7 @@ paths:
       tags:
         - drives.list
       summary: Delete ref of navigation property driveItem for drives
-      operationId: drives.list.items.activities_DeleteGraphRefDriveItem
+      operationId: drives.list.items.activities_DeleteDriveItemGraphBPreRef
       parameters:
         - name: drive-id
           in: path
@@ -8238,13 +8238,13 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.listItem'
           links:
             createdByUser:
-              operationId: drives.list.items.activities.ListItem.GetCreatedByUser
+              operationId: drives.list.items.activities.ListItem.GetCreatedGraphBPreUser
               parameters:
                 drive-id: $request.path.drive-id
                 listItem-id: $request.path.listItem-id
                 itemActivityOLD-id: $request.path.itemActivityOLD-id
             lastModifiedByUser:
-              operationId: drives.list.items.activities.ListItem.GetLastModifiedByUser
+              operationId: drives.list.items.activities.ListItem.GetLastModifiedGraphBPreUser
               parameters:
                 drive-id: $request.path.drive-id
                 listItem-id: $request.path.listItem-id
@@ -8287,7 +8287,7 @@ paths:
       tags:
         - drives.list
       summary: Get ref of listItem from drives
-      operationId: drives.list.items.activities_GetGraphRefListItem
+      operationId: drives.list.items.activities_GetListItemGraphBPreRef
       parameters:
         - name: drive-id
           in: path
@@ -8319,13 +8319,13 @@ paths:
                 type: string
           links:
             createdByUser:
-              operationId: drives.list.items.activities.ListItem.GetCreatedByUser
+              operationId: drives.list.items.activities.ListItem.GetCreatedGraphBPreUser
               parameters:
                 drive-id: $request.path.drive-id
                 listItem-id: $request.path.listItem-id
                 itemActivityOLD-id: $request.path.itemActivityOLD-id
             lastModifiedByUser:
-              operationId: drives.list.items.activities.ListItem.GetLastModifiedByUser
+              operationId: drives.list.items.activities.ListItem.GetLastModifiedGraphBPreUser
               parameters:
                 drive-id: $request.path.drive-id
                 listItem-id: $request.path.listItem-id
@@ -8367,7 +8367,7 @@ paths:
       tags:
         - drives.list
       summary: Update the ref of navigation property listItem in drives
-      operationId: drives.list.items.activities_SetGraphRefListItem
+      operationId: drives.list.items.activities_SetListItemGraphBPreRef
       parameters:
         - name: drive-id
           in: path
@@ -8409,7 +8409,7 @@ paths:
       tags:
         - drives.list
       summary: Delete ref of navigation property listItem for drives
-      operationId: drives.list.items.activities_DeleteGraphRefListItem
+      operationId: drives.list.items.activities_DeleteListItemGraphBPreRef
       parameters:
         - name: drive-id
           in: path
@@ -8518,7 +8518,7 @@ paths:
       tags:
         - drives.Functions
       summary: Invoke function getActivitiesByInterval
-      operationId: drives.list.items.activities.listItem_getActivitiesByInterval
+      operationId: drives.list.items.activities.listItem_getActivitiesGraphBPreInterval
       parameters:
         - name: drive-id
           in: path
@@ -8658,7 +8658,7 @@ paths:
         - drives.list
       summary: Get ref of analytics from drives
       description: Analytics about the view activities that took place on this item.
-      operationId: drives.list.items_GetGraphRefAnalytics
+      operationId: drives.list.items_GetAnalyticsGraphBPreRef
       parameters:
         - name: drive-id
           in: path
@@ -8705,7 +8705,7 @@ paths:
         - drives.list
       summary: Update the ref of navigation property analytics in drives
       description: Analytics about the view activities that took place on this item.
-      operationId: drives.list.items_SetGraphRefAnalytics
+      operationId: drives.list.items_SetAnalyticsGraphBPreRef
       parameters:
         - name: drive-id
           in: path
@@ -8741,7 +8741,7 @@ paths:
         - drives.list
       summary: Delete ref of navigation property analytics for drives
       description: Analytics about the view activities that took place on this item.
-      operationId: drives.list.items_DeleteGraphRefAnalytics
+      operationId: drives.list.items_DeleteAnalyticsGraphBPreRef
       parameters:
         - name: drive-id
           in: path
@@ -8880,12 +8880,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.driveItem'
           links:
             createdByUser:
-              operationId: drives.list.items.DriveItem.GetCreatedByUser
+              operationId: drives.list.items.DriveItem.GetCreatedGraphBPreUser
               parameters:
                 drive-id: $request.path.drive-id
                 listItem-id: $request.path.listItem-id
             lastModifiedByUser:
-              operationId: drives.list.items.DriveItem.GetLastModifiedByUser
+              operationId: drives.list.items.DriveItem.GetLastModifiedGraphBPreUser
               parameters:
                 drive-id: $request.path.drive-id
                 listItem-id: $request.path.listItem-id
@@ -8943,7 +8943,7 @@ paths:
         - drives.list
       summary: Get ref of driveItem from drives
       description: 'For document libraries, the driveItem relationship exposes the listItem as a [driveItem][]'
-      operationId: drives.list.items_GetGraphRefDriveItem
+      operationId: drives.list.items_GetDriveItemGraphBPreRef
       parameters:
         - name: drive-id
           in: path
@@ -8968,12 +8968,12 @@ paths:
                 type: string
           links:
             createdByUser:
-              operationId: drives.list.items.DriveItem.GetCreatedByUser
+              operationId: drives.list.items.DriveItem.GetCreatedGraphBPreUser
               parameters:
                 drive-id: $request.path.drive-id
                 listItem-id: $request.path.listItem-id
             lastModifiedByUser:
-              operationId: drives.list.items.DriveItem.GetLastModifiedByUser
+              operationId: drives.list.items.DriveItem.GetLastModifiedGraphBPreUser
               parameters:
                 drive-id: $request.path.drive-id
                 listItem-id: $request.path.listItem-id
@@ -9030,7 +9030,7 @@ paths:
         - drives.list
       summary: Update the ref of navigation property driveItem in drives
       description: 'For document libraries, the driveItem relationship exposes the listItem as a [driveItem][]'
-      operationId: drives.list.items_SetGraphRefDriveItem
+      operationId: drives.list.items_SetDriveItemGraphBPreRef
       parameters:
         - name: drive-id
           in: path
@@ -9066,7 +9066,7 @@ paths:
         - drives.list
       summary: Delete ref of navigation property driveItem for drives
       description: 'For document libraries, the driveItem relationship exposes the listItem as a [driveItem][]'
-      operationId: drives.list.items_DeleteGraphRefDriveItem
+      operationId: drives.list.items_DeleteDriveItemGraphBPreRef
       parameters:
         - name: drive-id
           in: path
@@ -9283,7 +9283,7 @@ paths:
       tags:
         - drives.Functions
       summary: Invoke function getActivitiesByInterval
-      operationId: drives.list.items_getActivitiesByInterval
+      operationId: drives.list.items_getActivitiesGraphBPreInterval
       parameters:
         - name: drive-id
           in: path
@@ -10485,7 +10485,7 @@ paths:
       tags:
         - drives.Functions
       summary: Invoke function sharedWithMe
-      operationId: drives_sharedWithMe
+      operationId: drives_sharedGraphWPreMe
       parameters:
         - name: drive-id
           in: path
@@ -10611,11 +10611,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.driveItem'
           links:
             createdByUser:
-              operationId: drives.Root.GetCreatedByUser
+              operationId: drives.Root.GetCreatedGraphBPreUser
               parameters:
                 drive-id: $request.path.drive-id
             lastModifiedByUser:
-              operationId: drives.Root.GetLastModifiedByUser
+              operationId: drives.Root.GetLastModifiedGraphBPreUser
               parameters:
                 drive-id: $request.path.drive-id
             workbook:
@@ -10974,7 +10974,7 @@ paths:
         - drives.driveItem
       summary: Get ref of special from drives
       description: Collection of common folders available in OneDrive. Read-only. Nullable.
-      operationId: drives_ListGraphRefSpecial
+      operationId: drives_ListSpecialGraphBPreRef
       parameters:
         - name: drive-id
           in: path
@@ -11099,7 +11099,7 @@ paths:
         - drives.driveItem
       summary: Create new navigation property ref to special for drives
       description: Collection of common folders available in OneDrive. Read-only. Nullable.
-      operationId: drives_CreateGraphRefSpecial
+      operationId: drives_CreateSpecialGraphBPreRef
       parameters:
         - name: drive-id
           in: path
@@ -11209,11 +11209,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.drive'
           links:
             createdByUser:
-              operationId: groups.Drive.GetCreatedByUser
+              operationId: groups.Drive.GetCreatedGraphBPreUser
               parameters:
                 group-id: $request.path.group-id
             lastModifiedByUser:
-              operationId: groups.Drive.GetLastModifiedByUser
+              operationId: groups.Drive.GetLastModifiedGraphBPreUser
               parameters:
                 group-id: $request.path.group-id
             activities:
@@ -11253,7 +11253,7 @@ paths:
         - groups.drive
       summary: Get ref of drive from groups
       description: The group's default drive. Read-only.
-      operationId: groups_GetGraphRefDrive
+      operationId: groups_GetDriveGraphBPreRef
       parameters:
         - name: group-id
           in: path
@@ -11271,11 +11271,11 @@ paths:
                 type: string
           links:
             createdByUser:
-              operationId: groups.Drive.GetCreatedByUser
+              operationId: groups.Drive.GetCreatedGraphBPreUser
               parameters:
                 group-id: $request.path.group-id
             lastModifiedByUser:
-              operationId: groups.Drive.GetLastModifiedByUser
+              operationId: groups.Drive.GetLastModifiedGraphBPreUser
               parameters:
                 group-id: $request.path.group-id
             activities:
@@ -11314,7 +11314,7 @@ paths:
         - groups.drive
       summary: Update the ref of navigation property drive in groups
       description: The group's default drive. Read-only.
-      operationId: groups_SetGraphRefDrive
+      operationId: groups_SetDriveGraphBPreRef
       parameters:
         - name: group-id
           in: path
@@ -11343,7 +11343,7 @@ paths:
         - groups.drive
       summary: Delete ref of navigation property drive for groups
       description: The group's default drive. Read-only.
-      operationId: groups_DeleteGraphRefDrive
+      operationId: groups_DeleteDriveGraphBPreRef
       parameters:
         - name: group-id
           in: path
@@ -11621,12 +11621,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.drive'
           links:
             createdByUser:
-              operationId: groups.Drives.GetCreatedByUser
+              operationId: groups.Drives.GetCreatedGraphBPreUser
               parameters:
                 group-id: $request.path.group-id
                 drive-id: $request.path.drive-id
             lastModifiedByUser:
-              operationId: groups.Drives.GetLastModifiedByUser
+              operationId: groups.Drives.GetLastModifiedGraphBPreUser
               parameters:
                 group-id: $request.path.group-id
                 drive-id: $request.path.drive-id
@@ -11951,11 +11951,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.sharedDriveItem'
           links:
             createdByUser:
-              operationId: shares.GetCreatedByUser
+              operationId: shares.GetCreatedGraphBPreUser
               parameters:
                 sharedDriveItem-id: $request.path.sharedDriveItem-id
             lastModifiedByUser:
-              operationId: shares.GetLastModifiedByUser
+              operationId: shares.GetLastModifiedGraphBPreUser
               parameters:
                 sharedDriveItem-id: $request.path.sharedDriveItem-id
             driveItem:
@@ -12144,11 +12144,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.driveItem'
           links:
             createdByUser:
-              operationId: shares.DriveItem.GetCreatedByUser
+              operationId: shares.DriveItem.GetCreatedGraphBPreUser
               parameters:
                 sharedDriveItem-id: $request.path.sharedDriveItem-id
             lastModifiedByUser:
-              operationId: shares.DriveItem.GetLastModifiedByUser
+              operationId: shares.DriveItem.GetLastModifiedGraphBPreUser
               parameters:
                 sharedDriveItem-id: $request.path.sharedDriveItem-id
             workbook:
@@ -12196,7 +12196,7 @@ paths:
         - shares.driveItem
       summary: Get ref of driveItem from shares
       description: Used to access the underlying driveItem
-      operationId: shares_GetGraphRefDriveItem
+      operationId: shares_GetDriveItemGraphBPreRef
       parameters:
         - name: sharedDriveItem-id
           in: path
@@ -12214,11 +12214,11 @@ paths:
                 type: string
           links:
             createdByUser:
-              operationId: shares.DriveItem.GetCreatedByUser
+              operationId: shares.DriveItem.GetCreatedGraphBPreUser
               parameters:
                 sharedDriveItem-id: $request.path.sharedDriveItem-id
             lastModifiedByUser:
-              operationId: shares.DriveItem.GetLastModifiedByUser
+              operationId: shares.DriveItem.GetLastModifiedGraphBPreUser
               parameters:
                 sharedDriveItem-id: $request.path.sharedDriveItem-id
             workbook:
@@ -12265,7 +12265,7 @@ paths:
         - shares.driveItem
       summary: Update the ref of navigation property driveItem in shares
       description: Used to access the underlying driveItem
-      operationId: shares_SetGraphRefDriveItem
+      operationId: shares_SetDriveItemGraphBPreRef
       parameters:
         - name: sharedDriveItem-id
           in: path
@@ -12294,7 +12294,7 @@ paths:
         - shares.driveItem
       summary: Delete ref of navigation property driveItem for shares
       description: Used to access the underlying driveItem
-      operationId: shares_DeleteGraphRefDriveItem
+      operationId: shares_DeleteDriveItemGraphBPreRef
       parameters:
         - name: sharedDriveItem-id
           in: path
@@ -12527,7 +12527,7 @@ paths:
         - shares.driveItem
       summary: Get ref of items from shares
       description: All driveItems contained in the sharing root. This collection cannot be enumerated.
-      operationId: shares_ListGraphRefItems
+      operationId: shares_ListItemsGraphBPreRef
       parameters:
         - name: sharedDriveItem-id
           in: path
@@ -12652,7 +12652,7 @@ paths:
         - shares.driveItem
       summary: Create new navigation property ref to items for shares
       description: All driveItems contained in the sharing root. This collection cannot be enumerated.
-      operationId: shares_CreateGraphRefItems
+      operationId: shares_CreateItemsGraphBPreRef
       parameters:
         - name: sharedDriveItem-id
           in: path
@@ -12761,11 +12761,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.list'
           links:
             createdByUser:
-              operationId: shares.List.GetCreatedByUser
+              operationId: shares.List.GetCreatedGraphBPreUser
               parameters:
                 sharedDriveItem-id: $request.path.sharedDriveItem-id
             lastModifiedByUser:
-              operationId: shares.List.GetLastModifiedByUser
+              operationId: shares.List.GetLastModifiedGraphBPreUser
               parameters:
                 sharedDriveItem-id: $request.path.sharedDriveItem-id
             activities:
@@ -13226,12 +13226,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.driveItem'
           links:
             createdByUser:
-              operationId: shares.list.activities.DriveItem.GetCreatedByUser
+              operationId: shares.list.activities.DriveItem.GetCreatedGraphBPreUser
               parameters:
                 sharedDriveItem-id: $request.path.sharedDriveItem-id
                 itemActivityOLD-id: $request.path.itemActivityOLD-id
             lastModifiedByUser:
-              operationId: shares.list.activities.DriveItem.GetLastModifiedByUser
+              operationId: shares.list.activities.DriveItem.GetLastModifiedGraphBPreUser
               parameters:
                 sharedDriveItem-id: $request.path.sharedDriveItem-id
                 itemActivityOLD-id: $request.path.itemActivityOLD-id
@@ -13288,7 +13288,7 @@ paths:
       tags:
         - shares.list
       summary: Get ref of driveItem from shares
-      operationId: shares.list.activities_GetGraphRefDriveItem
+      operationId: shares.list.activities_GetDriveItemGraphBPreRef
       parameters:
         - name: sharedDriveItem-id
           in: path
@@ -13313,12 +13313,12 @@ paths:
                 type: string
           links:
             createdByUser:
-              operationId: shares.list.activities.DriveItem.GetCreatedByUser
+              operationId: shares.list.activities.DriveItem.GetCreatedGraphBPreUser
               parameters:
                 sharedDriveItem-id: $request.path.sharedDriveItem-id
                 itemActivityOLD-id: $request.path.itemActivityOLD-id
             lastModifiedByUser:
-              operationId: shares.list.activities.DriveItem.GetLastModifiedByUser
+              operationId: shares.list.activities.DriveItem.GetLastModifiedGraphBPreUser
               parameters:
                 sharedDriveItem-id: $request.path.sharedDriveItem-id
                 itemActivityOLD-id: $request.path.itemActivityOLD-id
@@ -13374,7 +13374,7 @@ paths:
       tags:
         - shares.list
       summary: Update the ref of navigation property driveItem in shares
-      operationId: shares.list.activities_SetGraphRefDriveItem
+      operationId: shares.list.activities_SetDriveItemGraphBPreRef
       parameters:
         - name: sharedDriveItem-id
           in: path
@@ -13409,7 +13409,7 @@ paths:
       tags:
         - shares.list
       summary: Delete ref of navigation property driveItem for shares
-      operationId: shares.list.activities_DeleteGraphRefDriveItem
+      operationId: shares.list.activities_DeleteDriveItemGraphBPreRef
       parameters:
         - name: sharedDriveItem-id
           in: path
@@ -13516,12 +13516,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.listItem'
           links:
             createdByUser:
-              operationId: shares.list.activities.ListItem.GetCreatedByUser
+              operationId: shares.list.activities.ListItem.GetCreatedGraphBPreUser
               parameters:
                 sharedDriveItem-id: $request.path.sharedDriveItem-id
                 itemActivityOLD-id: $request.path.itemActivityOLD-id
             lastModifiedByUser:
-              operationId: shares.list.activities.ListItem.GetLastModifiedByUser
+              operationId: shares.list.activities.ListItem.GetLastModifiedGraphBPreUser
               parameters:
                 sharedDriveItem-id: $request.path.sharedDriveItem-id
                 itemActivityOLD-id: $request.path.itemActivityOLD-id
@@ -13558,7 +13558,7 @@ paths:
       tags:
         - shares.list
       summary: Get ref of listItem from shares
-      operationId: shares.list.activities_GetGraphRefListItem
+      operationId: shares.list.activities_GetListItemGraphBPreRef
       parameters:
         - name: sharedDriveItem-id
           in: path
@@ -13583,12 +13583,12 @@ paths:
                 type: string
           links:
             createdByUser:
-              operationId: shares.list.activities.ListItem.GetCreatedByUser
+              operationId: shares.list.activities.ListItem.GetCreatedGraphBPreUser
               parameters:
                 sharedDriveItem-id: $request.path.sharedDriveItem-id
                 itemActivityOLD-id: $request.path.itemActivityOLD-id
             lastModifiedByUser:
-              operationId: shares.list.activities.ListItem.GetLastModifiedByUser
+              operationId: shares.list.activities.ListItem.GetLastModifiedGraphBPreUser
               parameters:
                 sharedDriveItem-id: $request.path.sharedDriveItem-id
                 itemActivityOLD-id: $request.path.itemActivityOLD-id
@@ -13624,7 +13624,7 @@ paths:
       tags:
         - shares.list
       summary: Update the ref of navigation property listItem in shares
-      operationId: shares.list.activities_SetGraphRefListItem
+      operationId: shares.list.activities_SetListItemGraphBPreRef
       parameters:
         - name: sharedDriveItem-id
           in: path
@@ -13659,7 +13659,7 @@ paths:
       tags:
         - shares.list
       summary: Delete ref of navigation property listItem for shares
-      operationId: shares.list.activities_DeleteGraphRefListItem
+      operationId: shares.list.activities_DeleteListItemGraphBPreRef
       parameters:
         - name: sharedDriveItem-id
           in: path
@@ -13754,7 +13754,7 @@ paths:
       tags:
         - shares.Functions
       summary: Invoke function getActivitiesByInterval
-      operationId: shares.list.activities.listItem_getActivitiesByInterval
+      operationId: shares.list.activities.listItem_getActivitiesGraphBPreInterval
       parameters:
         - name: sharedDriveItem-id
           in: path
@@ -14271,7 +14271,7 @@ paths:
         - shares.list
       summary: Get ref of sourceColumn from shares
       description: The source column for the content type column.
-      operationId: shares.list.columns_GetGraphRefSourceColumn
+      operationId: shares.list.columns_GetSourceColumnGraphBPreRef
       parameters:
         - name: sharedDriveItem-id
           in: path
@@ -14308,7 +14308,7 @@ paths:
         - shares.list
       summary: Update the ref of navigation property sourceColumn in shares
       description: The source column for the content type column.
-      operationId: shares.list.columns_SetGraphRefSourceColumn
+      operationId: shares.list.columns_SetSourceColumnGraphBPreRef
       parameters:
         - name: sharedDriveItem-id
           in: path
@@ -14344,7 +14344,7 @@ paths:
         - shares.list
       summary: Delete ref of navigation property sourceColumn for shares
       description: The source column for the content type column.
-      operationId: shares.list.columns_DeleteGraphRefSourceColumn
+      operationId: shares.list.columns_DeleteSourceColumnGraphBPreRef
       parameters:
         - name: sharedDriveItem-id
           in: path
@@ -14818,7 +14818,7 @@ paths:
         - shares.list
       summary: Get ref of base from shares
       description: Parent contentType from which this content type is derived.
-      operationId: shares.list.contentTypes_GetGraphRefBase
+      operationId: shares.list.contentTypes_GetBaseGraphBPreRef
       parameters:
         - name: sharedDriveItem-id
           in: path
@@ -14875,7 +14875,7 @@ paths:
         - shares.list
       summary: Update the ref of navigation property base in shares
       description: Parent contentType from which this content type is derived.
-      operationId: shares.list.contentTypes_SetGraphRefBase
+      operationId: shares.list.contentTypes_SetBaseGraphBPreRef
       parameters:
         - name: sharedDriveItem-id
           in: path
@@ -14911,7 +14911,7 @@ paths:
         - shares.list
       summary: Delete ref of navigation property base for shares
       description: Parent contentType from which this content type is derived.
-      operationId: shares.list.contentTypes_DeleteGraphRefBase
+      operationId: shares.list.contentTypes_DeleteBaseGraphBPreRef
       parameters:
         - name: sharedDriveItem-id
           in: path
@@ -14943,7 +14943,7 @@ paths:
       tags:
         - shares.Actions
       summary: Invoke action associateWithHubSites
-      operationId: shares.list.contentTypes.base_associateWithHubSites
+      operationId: shares.list.contentTypes.base_associateGraphWPreHubSites
       parameters:
         - name: sharedDriveItem-id
           in: path
@@ -15256,7 +15256,7 @@ paths:
         - shares.list
       summary: Get ref of baseTypes from shares
       description: The collection of content types that are ancestors of this content type.
-      operationId: shares.list.contentTypes_ListGraphRefBaseTypes
+      operationId: shares.list.contentTypes_ListBaseTypesGraphBPreRef
       parameters:
         - name: sharedDriveItem-id
           in: path
@@ -15346,7 +15346,7 @@ paths:
         - shares.list
       summary: Create new navigation property ref to baseTypes for shares
       description: The collection of content types that are ancestors of this content type.
-      operationId: shares.list.contentTypes_CreateGraphRefBaseTypes
+      operationId: shares.list.contentTypes_CreateBaseTypesGraphBPreRef
       parameters:
         - name: sharedDriveItem-id
           in: path
@@ -15962,7 +15962,7 @@ paths:
         - shares.list
       summary: Get ref of columnPositions from shares
       description: Column order information in a content type.
-      operationId: shares.list.contentTypes_ListGraphRefColumnPositions
+      operationId: shares.list.contentTypes_ListColumnPositionsGraphBPreRef
       parameters:
         - name: sharedDriveItem-id
           in: path
@@ -16086,7 +16086,7 @@ paths:
         - shares.list
       summary: Create new navigation property ref to columnPositions for shares
       description: Column order information in a content type.
-      operationId: shares.list.contentTypes_CreateGraphRefColumnPositions
+      operationId: shares.list.contentTypes_CreateColumnPositionsGraphBPreRef
       parameters:
         - name: sharedDriveItem-id
           in: path
@@ -16635,7 +16635,7 @@ paths:
         - shares.list
       summary: Get ref of sourceColumn from shares
       description: The source column for the content type column.
-      operationId: shares.list.contentTypes.columns_GetGraphRefSourceColumn
+      operationId: shares.list.contentTypes.columns_GetSourceColumnGraphBPreRef
       parameters:
         - name: sharedDriveItem-id
           in: path
@@ -16680,7 +16680,7 @@ paths:
         - shares.list
       summary: Update the ref of navigation property sourceColumn in shares
       description: The source column for the content type column.
-      operationId: shares.list.contentTypes.columns_SetGraphRefSourceColumn
+      operationId: shares.list.contentTypes.columns_SetSourceColumnGraphBPreRef
       parameters:
         - name: sharedDriveItem-id
           in: path
@@ -16723,7 +16723,7 @@ paths:
         - shares.list
       summary: Delete ref of navigation property sourceColumn for shares
       description: The source column for the content type column.
-      operationId: shares.list.contentTypes.columns_DeleteGraphRefSourceColumn
+      operationId: shares.list.contentTypes.columns_DeleteSourceColumnGraphBPreRef
       parameters:
         - name: sharedDriveItem-id
           in: path
@@ -16762,7 +16762,7 @@ paths:
       tags:
         - shares.Actions
       summary: Invoke action associateWithHubSites
-      operationId: shares.list.contentTypes_associateWithHubSites
+      operationId: shares.list.contentTypes_associateGraphWPreHubSites
       parameters:
         - name: sharedDriveItem-id
           in: path
@@ -17108,11 +17108,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.drive'
           links:
             createdByUser:
-              operationId: shares.list.Drive.GetCreatedByUser
+              operationId: shares.list.Drive.GetCreatedGraphBPreUser
               parameters:
                 sharedDriveItem-id: $request.path.sharedDriveItem-id
             lastModifiedByUser:
-              operationId: shares.list.Drive.GetLastModifiedByUser
+              operationId: shares.list.Drive.GetLastModifiedGraphBPreUser
               parameters:
                 sharedDriveItem-id: $request.path.sharedDriveItem-id
             activities:
@@ -17152,7 +17152,7 @@ paths:
         - shares.list
       summary: Get ref of drive from shares
       description: 'Only present on document libraries. Allows access to the list as a [drive][] resource with [driveItems][driveItem].'
-      operationId: shares.list_GetGraphRefDrive
+      operationId: shares.list_GetDriveGraphBPreRef
       parameters:
         - name: sharedDriveItem-id
           in: path
@@ -17170,11 +17170,11 @@ paths:
                 type: string
           links:
             createdByUser:
-              operationId: shares.list.Drive.GetCreatedByUser
+              operationId: shares.list.Drive.GetCreatedGraphBPreUser
               parameters:
                 sharedDriveItem-id: $request.path.sharedDriveItem-id
             lastModifiedByUser:
-              operationId: shares.list.Drive.GetLastModifiedByUser
+              operationId: shares.list.Drive.GetLastModifiedGraphBPreUser
               parameters:
                 sharedDriveItem-id: $request.path.sharedDriveItem-id
             activities:
@@ -17213,7 +17213,7 @@ paths:
         - shares.list
       summary: Update the ref of navigation property drive in shares
       description: 'Only present on document libraries. Allows access to the list as a [drive][] resource with [driveItems][driveItem].'
-      operationId: shares.list_SetGraphRefDrive
+      operationId: shares.list_SetDriveGraphBPreRef
       parameters:
         - name: sharedDriveItem-id
           in: path
@@ -17242,7 +17242,7 @@ paths:
         - shares.list
       summary: Delete ref of navigation property drive for shares
       description: 'Only present on document libraries. Allows access to the list as a [drive][] resource with [driveItems][driveItem].'
-      operationId: shares.list_DeleteGraphRefDrive
+      operationId: shares.list_DeleteDriveGraphBPreRef
       parameters:
         - name: sharedDriveItem-id
           in: path
@@ -17504,12 +17504,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.listItem'
           links:
             createdByUser:
-              operationId: shares.list.Items.GetCreatedByUser
+              operationId: shares.list.Items.GetCreatedGraphBPreUser
               parameters:
                 sharedDriveItem-id: $request.path.sharedDriveItem-id
                 listItem-id: $request.path.listItem-id
             lastModifiedByUser:
-              operationId: shares.list.Items.GetLastModifiedByUser
+              operationId: shares.list.Items.GetLastModifiedGraphBPreUser
               parameters:
                 sharedDriveItem-id: $request.path.sharedDriveItem-id
                 listItem-id: $request.path.listItem-id
@@ -18026,13 +18026,13 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.driveItem'
           links:
             createdByUser:
-              operationId: shares.list.items.activities.DriveItem.GetCreatedByUser
+              operationId: shares.list.items.activities.DriveItem.GetCreatedGraphBPreUser
               parameters:
                 sharedDriveItem-id: $request.path.sharedDriveItem-id
                 listItem-id: $request.path.listItem-id
                 itemActivityOLD-id: $request.path.itemActivityOLD-id
             lastModifiedByUser:
-              operationId: shares.list.items.activities.DriveItem.GetLastModifiedByUser
+              operationId: shares.list.items.activities.DriveItem.GetLastModifiedGraphBPreUser
               parameters:
                 sharedDriveItem-id: $request.path.sharedDriveItem-id
                 listItem-id: $request.path.listItem-id
@@ -18099,7 +18099,7 @@ paths:
       tags:
         - shares.list
       summary: Get ref of driveItem from shares
-      operationId: shares.list.items.activities_GetGraphRefDriveItem
+      operationId: shares.list.items.activities_GetDriveItemGraphBPreRef
       parameters:
         - name: sharedDriveItem-id
           in: path
@@ -18131,13 +18131,13 @@ paths:
                 type: string
           links:
             createdByUser:
-              operationId: shares.list.items.activities.DriveItem.GetCreatedByUser
+              operationId: shares.list.items.activities.DriveItem.GetCreatedGraphBPreUser
               parameters:
                 sharedDriveItem-id: $request.path.sharedDriveItem-id
                 listItem-id: $request.path.listItem-id
                 itemActivityOLD-id: $request.path.itemActivityOLD-id
             lastModifiedByUser:
-              operationId: shares.list.items.activities.DriveItem.GetLastModifiedByUser
+              operationId: shares.list.items.activities.DriveItem.GetLastModifiedGraphBPreUser
               parameters:
                 sharedDriveItem-id: $request.path.sharedDriveItem-id
                 listItem-id: $request.path.listItem-id
@@ -18203,7 +18203,7 @@ paths:
       tags:
         - shares.list
       summary: Update the ref of navigation property driveItem in shares
-      operationId: shares.list.items.activities_SetGraphRefDriveItem
+      operationId: shares.list.items.activities_SetDriveItemGraphBPreRef
       parameters:
         - name: sharedDriveItem-id
           in: path
@@ -18245,7 +18245,7 @@ paths:
       tags:
         - shares.list
       summary: Delete ref of navigation property driveItem for shares
-      operationId: shares.list.items.activities_DeleteGraphRefDriveItem
+      operationId: shares.list.items.activities_DeleteDriveItemGraphBPreRef
       parameters:
         - name: sharedDriveItem-id
           in: path
@@ -18366,13 +18366,13 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.listItem'
           links:
             createdByUser:
-              operationId: shares.list.items.activities.ListItem.GetCreatedByUser
+              operationId: shares.list.items.activities.ListItem.GetCreatedGraphBPreUser
               parameters:
                 sharedDriveItem-id: $request.path.sharedDriveItem-id
                 listItem-id: $request.path.listItem-id
                 itemActivityOLD-id: $request.path.itemActivityOLD-id
             lastModifiedByUser:
-              operationId: shares.list.items.activities.ListItem.GetLastModifiedByUser
+              operationId: shares.list.items.activities.ListItem.GetLastModifiedGraphBPreUser
               parameters:
                 sharedDriveItem-id: $request.path.sharedDriveItem-id
                 listItem-id: $request.path.listItem-id
@@ -18415,7 +18415,7 @@ paths:
       tags:
         - shares.list
       summary: Get ref of listItem from shares
-      operationId: shares.list.items.activities_GetGraphRefListItem
+      operationId: shares.list.items.activities_GetListItemGraphBPreRef
       parameters:
         - name: sharedDriveItem-id
           in: path
@@ -18447,13 +18447,13 @@ paths:
                 type: string
           links:
             createdByUser:
-              operationId: shares.list.items.activities.ListItem.GetCreatedByUser
+              operationId: shares.list.items.activities.ListItem.GetCreatedGraphBPreUser
               parameters:
                 sharedDriveItem-id: $request.path.sharedDriveItem-id
                 listItem-id: $request.path.listItem-id
                 itemActivityOLD-id: $request.path.itemActivityOLD-id
             lastModifiedByUser:
-              operationId: shares.list.items.activities.ListItem.GetLastModifiedByUser
+              operationId: shares.list.items.activities.ListItem.GetLastModifiedGraphBPreUser
               parameters:
                 sharedDriveItem-id: $request.path.sharedDriveItem-id
                 listItem-id: $request.path.listItem-id
@@ -18495,7 +18495,7 @@ paths:
       tags:
         - shares.list
       summary: Update the ref of navigation property listItem in shares
-      operationId: shares.list.items.activities_SetGraphRefListItem
+      operationId: shares.list.items.activities_SetListItemGraphBPreRef
       parameters:
         - name: sharedDriveItem-id
           in: path
@@ -18537,7 +18537,7 @@ paths:
       tags:
         - shares.list
       summary: Delete ref of navigation property listItem for shares
-      operationId: shares.list.items.activities_DeleteGraphRefListItem
+      operationId: shares.list.items.activities_DeleteListItemGraphBPreRef
       parameters:
         - name: sharedDriveItem-id
           in: path
@@ -18646,7 +18646,7 @@ paths:
       tags:
         - shares.Functions
       summary: Invoke function getActivitiesByInterval
-      operationId: shares.list.items.activities.listItem_getActivitiesByInterval
+      operationId: shares.list.items.activities.listItem_getActivitiesGraphBPreInterval
       parameters:
         - name: sharedDriveItem-id
           in: path
@@ -18786,7 +18786,7 @@ paths:
         - shares.list
       summary: Get ref of analytics from shares
       description: Analytics about the view activities that took place on this item.
-      operationId: shares.list.items_GetGraphRefAnalytics
+      operationId: shares.list.items_GetAnalyticsGraphBPreRef
       parameters:
         - name: sharedDriveItem-id
           in: path
@@ -18833,7 +18833,7 @@ paths:
         - shares.list
       summary: Update the ref of navigation property analytics in shares
       description: Analytics about the view activities that took place on this item.
-      operationId: shares.list.items_SetGraphRefAnalytics
+      operationId: shares.list.items_SetAnalyticsGraphBPreRef
       parameters:
         - name: sharedDriveItem-id
           in: path
@@ -18869,7 +18869,7 @@ paths:
         - shares.list
       summary: Delete ref of navigation property analytics for shares
       description: Analytics about the view activities that took place on this item.
-      operationId: shares.list.items_DeleteGraphRefAnalytics
+      operationId: shares.list.items_DeleteAnalyticsGraphBPreRef
       parameters:
         - name: sharedDriveItem-id
           in: path
@@ -19008,12 +19008,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.driveItem'
           links:
             createdByUser:
-              operationId: shares.list.items.DriveItem.GetCreatedByUser
+              operationId: shares.list.items.DriveItem.GetCreatedGraphBPreUser
               parameters:
                 sharedDriveItem-id: $request.path.sharedDriveItem-id
                 listItem-id: $request.path.listItem-id
             lastModifiedByUser:
-              operationId: shares.list.items.DriveItem.GetLastModifiedByUser
+              operationId: shares.list.items.DriveItem.GetLastModifiedGraphBPreUser
               parameters:
                 sharedDriveItem-id: $request.path.sharedDriveItem-id
                 listItem-id: $request.path.listItem-id
@@ -19071,7 +19071,7 @@ paths:
         - shares.list
       summary: Get ref of driveItem from shares
       description: 'For document libraries, the driveItem relationship exposes the listItem as a [driveItem][]'
-      operationId: shares.list.items_GetGraphRefDriveItem
+      operationId: shares.list.items_GetDriveItemGraphBPreRef
       parameters:
         - name: sharedDriveItem-id
           in: path
@@ -19096,12 +19096,12 @@ paths:
                 type: string
           links:
             createdByUser:
-              operationId: shares.list.items.DriveItem.GetCreatedByUser
+              operationId: shares.list.items.DriveItem.GetCreatedGraphBPreUser
               parameters:
                 sharedDriveItem-id: $request.path.sharedDriveItem-id
                 listItem-id: $request.path.listItem-id
             lastModifiedByUser:
-              operationId: shares.list.items.DriveItem.GetLastModifiedByUser
+              operationId: shares.list.items.DriveItem.GetLastModifiedGraphBPreUser
               parameters:
                 sharedDriveItem-id: $request.path.sharedDriveItem-id
                 listItem-id: $request.path.listItem-id
@@ -19158,7 +19158,7 @@ paths:
         - shares.list
       summary: Update the ref of navigation property driveItem in shares
       description: 'For document libraries, the driveItem relationship exposes the listItem as a [driveItem][]'
-      operationId: shares.list.items_SetGraphRefDriveItem
+      operationId: shares.list.items_SetDriveItemGraphBPreRef
       parameters:
         - name: sharedDriveItem-id
           in: path
@@ -19194,7 +19194,7 @@ paths:
         - shares.list
       summary: Delete ref of navigation property driveItem for shares
       description: 'For document libraries, the driveItem relationship exposes the listItem as a [driveItem][]'
-      operationId: shares.list.items_DeleteGraphRefDriveItem
+      operationId: shares.list.items_DeleteDriveItemGraphBPreRef
       parameters:
         - name: sharedDriveItem-id
           in: path
@@ -19411,7 +19411,7 @@ paths:
       tags:
         - shares.Functions
       summary: Invoke function getActivitiesByInterval
-      operationId: shares.list.items_getActivitiesByInterval
+      operationId: shares.list.items_getActivitiesGraphBPreInterval
       parameters:
         - name: sharedDriveItem-id
           in: path
@@ -20623,11 +20623,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.listItem'
           links:
             createdByUser:
-              operationId: shares.ListItem.GetCreatedByUser
+              operationId: shares.ListItem.GetCreatedGraphBPreUser
               parameters:
                 sharedDriveItem-id: $request.path.sharedDriveItem-id
             lastModifiedByUser:
-              operationId: shares.ListItem.GetLastModifiedByUser
+              operationId: shares.ListItem.GetLastModifiedGraphBPreUser
               parameters:
                 sharedDriveItem-id: $request.path.sharedDriveItem-id
             activities:
@@ -21080,12 +21080,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.driveItem'
           links:
             createdByUser:
-              operationId: shares.listItem.activities.DriveItem.GetCreatedByUser
+              operationId: shares.listItem.activities.DriveItem.GetCreatedGraphBPreUser
               parameters:
                 sharedDriveItem-id: $request.path.sharedDriveItem-id
                 itemActivityOLD-id: $request.path.itemActivityOLD-id
             lastModifiedByUser:
-              operationId: shares.listItem.activities.DriveItem.GetLastModifiedByUser
+              operationId: shares.listItem.activities.DriveItem.GetLastModifiedGraphBPreUser
               parameters:
                 sharedDriveItem-id: $request.path.sharedDriveItem-id
                 itemActivityOLD-id: $request.path.itemActivityOLD-id
@@ -21142,7 +21142,7 @@ paths:
       tags:
         - shares.listItem
       summary: Get ref of driveItem from shares
-      operationId: shares.listItem.activities_GetGraphRefDriveItem
+      operationId: shares.listItem.activities_GetDriveItemGraphBPreRef
       parameters:
         - name: sharedDriveItem-id
           in: path
@@ -21167,12 +21167,12 @@ paths:
                 type: string
           links:
             createdByUser:
-              operationId: shares.listItem.activities.DriveItem.GetCreatedByUser
+              operationId: shares.listItem.activities.DriveItem.GetCreatedGraphBPreUser
               parameters:
                 sharedDriveItem-id: $request.path.sharedDriveItem-id
                 itemActivityOLD-id: $request.path.itemActivityOLD-id
             lastModifiedByUser:
-              operationId: shares.listItem.activities.DriveItem.GetLastModifiedByUser
+              operationId: shares.listItem.activities.DriveItem.GetLastModifiedGraphBPreUser
               parameters:
                 sharedDriveItem-id: $request.path.sharedDriveItem-id
                 itemActivityOLD-id: $request.path.itemActivityOLD-id
@@ -21228,7 +21228,7 @@ paths:
       tags:
         - shares.listItem
       summary: Update the ref of navigation property driveItem in shares
-      operationId: shares.listItem.activities_SetGraphRefDriveItem
+      operationId: shares.listItem.activities_SetDriveItemGraphBPreRef
       parameters:
         - name: sharedDriveItem-id
           in: path
@@ -21263,7 +21263,7 @@ paths:
       tags:
         - shares.listItem
       summary: Delete ref of navigation property driveItem for shares
-      operationId: shares.listItem.activities_DeleteGraphRefDriveItem
+      operationId: shares.listItem.activities_DeleteDriveItemGraphBPreRef
       parameters:
         - name: sharedDriveItem-id
           in: path
@@ -21370,12 +21370,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.listItem'
           links:
             createdByUser:
-              operationId: shares.listItem.activities.ListItem.GetCreatedByUser
+              operationId: shares.listItem.activities.ListItem.GetCreatedGraphBPreUser
               parameters:
                 sharedDriveItem-id: $request.path.sharedDriveItem-id
                 itemActivityOLD-id: $request.path.itemActivityOLD-id
             lastModifiedByUser:
-              operationId: shares.listItem.activities.ListItem.GetLastModifiedByUser
+              operationId: shares.listItem.activities.ListItem.GetLastModifiedGraphBPreUser
               parameters:
                 sharedDriveItem-id: $request.path.sharedDriveItem-id
                 itemActivityOLD-id: $request.path.itemActivityOLD-id
@@ -21412,7 +21412,7 @@ paths:
       tags:
         - shares.listItem
       summary: Get ref of listItem from shares
-      operationId: shares.listItem.activities_GetGraphRefListItem
+      operationId: shares.listItem.activities_GetListItemGraphBPreRef
       parameters:
         - name: sharedDriveItem-id
           in: path
@@ -21437,12 +21437,12 @@ paths:
                 type: string
           links:
             createdByUser:
-              operationId: shares.listItem.activities.ListItem.GetCreatedByUser
+              operationId: shares.listItem.activities.ListItem.GetCreatedGraphBPreUser
               parameters:
                 sharedDriveItem-id: $request.path.sharedDriveItem-id
                 itemActivityOLD-id: $request.path.itemActivityOLD-id
             lastModifiedByUser:
-              operationId: shares.listItem.activities.ListItem.GetLastModifiedByUser
+              operationId: shares.listItem.activities.ListItem.GetLastModifiedGraphBPreUser
               parameters:
                 sharedDriveItem-id: $request.path.sharedDriveItem-id
                 itemActivityOLD-id: $request.path.itemActivityOLD-id
@@ -21478,7 +21478,7 @@ paths:
       tags:
         - shares.listItem
       summary: Update the ref of navigation property listItem in shares
-      operationId: shares.listItem.activities_SetGraphRefListItem
+      operationId: shares.listItem.activities_SetListItemGraphBPreRef
       parameters:
         - name: sharedDriveItem-id
           in: path
@@ -21513,7 +21513,7 @@ paths:
       tags:
         - shares.listItem
       summary: Delete ref of navigation property listItem for shares
-      operationId: shares.listItem.activities_DeleteGraphRefListItem
+      operationId: shares.listItem.activities_DeleteListItemGraphBPreRef
       parameters:
         - name: sharedDriveItem-id
           in: path
@@ -21608,7 +21608,7 @@ paths:
       tags:
         - shares.Functions
       summary: Invoke function getActivitiesByInterval
-      operationId: shares.listItem.activities.listItem_getActivitiesByInterval
+      operationId: shares.listItem.activities.listItem_getActivitiesGraphBPreInterval
       parameters:
         - name: sharedDriveItem-id
           in: path
@@ -21731,7 +21731,7 @@ paths:
         - shares.listItem
       summary: Get ref of analytics from shares
       description: Analytics about the view activities that took place on this item.
-      operationId: shares.listItem_GetGraphRefAnalytics
+      operationId: shares.listItem_GetAnalyticsGraphBPreRef
       parameters:
         - name: sharedDriveItem-id
           in: path
@@ -21768,7 +21768,7 @@ paths:
         - shares.listItem
       summary: Update the ref of navigation property analytics in shares
       description: Analytics about the view activities that took place on this item.
-      operationId: shares.listItem_SetGraphRefAnalytics
+      operationId: shares.listItem_SetAnalyticsGraphBPreRef
       parameters:
         - name: sharedDriveItem-id
           in: path
@@ -21797,7 +21797,7 @@ paths:
         - shares.listItem
       summary: Delete ref of navigation property analytics for shares
       description: Analytics about the view activities that took place on this item.
-      operationId: shares.listItem_DeleteGraphRefAnalytics
+      operationId: shares.listItem_DeleteAnalyticsGraphBPreRef
       parameters:
         - name: sharedDriveItem-id
           in: path
@@ -21922,11 +21922,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.driveItem'
           links:
             createdByUser:
-              operationId: shares.listItem.DriveItem.GetCreatedByUser
+              operationId: shares.listItem.DriveItem.GetCreatedGraphBPreUser
               parameters:
                 sharedDriveItem-id: $request.path.sharedDriveItem-id
             lastModifiedByUser:
-              operationId: shares.listItem.DriveItem.GetLastModifiedByUser
+              operationId: shares.listItem.DriveItem.GetLastModifiedGraphBPreUser
               parameters:
                 sharedDriveItem-id: $request.path.sharedDriveItem-id
             workbook:
@@ -21974,7 +21974,7 @@ paths:
         - shares.listItem
       summary: Get ref of driveItem from shares
       description: 'For document libraries, the driveItem relationship exposes the listItem as a [driveItem][]'
-      operationId: shares.listItem_GetGraphRefDriveItem
+      operationId: shares.listItem_GetDriveItemGraphBPreRef
       parameters:
         - name: sharedDriveItem-id
           in: path
@@ -21992,11 +21992,11 @@ paths:
                 type: string
           links:
             createdByUser:
-              operationId: shares.listItem.DriveItem.GetCreatedByUser
+              operationId: shares.listItem.DriveItem.GetCreatedGraphBPreUser
               parameters:
                 sharedDriveItem-id: $request.path.sharedDriveItem-id
             lastModifiedByUser:
-              operationId: shares.listItem.DriveItem.GetLastModifiedByUser
+              operationId: shares.listItem.DriveItem.GetLastModifiedGraphBPreUser
               parameters:
                 sharedDriveItem-id: $request.path.sharedDriveItem-id
             workbook:
@@ -22043,7 +22043,7 @@ paths:
         - shares.listItem
       summary: Update the ref of navigation property driveItem in shares
       description: 'For document libraries, the driveItem relationship exposes the listItem as a [driveItem][]'
-      operationId: shares.listItem_SetGraphRefDriveItem
+      operationId: shares.listItem_SetDriveItemGraphBPreRef
       parameters:
         - name: sharedDriveItem-id
           in: path
@@ -22072,7 +22072,7 @@ paths:
         - shares.listItem
       summary: Delete ref of navigation property driveItem for shares
       description: 'For document libraries, the driveItem relationship exposes the listItem as a [driveItem][]'
-      operationId: shares.listItem_DeleteGraphRefDriveItem
+      operationId: shares.listItem_DeleteDriveItemGraphBPreRef
       parameters:
         - name: sharedDriveItem-id
           in: path
@@ -22254,7 +22254,7 @@ paths:
       tags:
         - shares.Functions
       summary: Invoke function getActivitiesByInterval
-      operationId: shares.listItem_getActivitiesByInterval
+      operationId: shares.listItem_getActivitiesGraphBPreInterval
       parameters:
         - name: sharedDriveItem-id
           in: path
@@ -23000,11 +23000,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.driveItem'
           links:
             createdByUser:
-              operationId: shares.Root.GetCreatedByUser
+              operationId: shares.Root.GetCreatedGraphBPreUser
               parameters:
                 sharedDriveItem-id: $request.path.sharedDriveItem-id
             lastModifiedByUser:
-              operationId: shares.Root.GetLastModifiedByUser
+              operationId: shares.Root.GetLastModifiedGraphBPreUser
               parameters:
                 sharedDriveItem-id: $request.path.sharedDriveItem-id
             workbook:
@@ -23052,7 +23052,7 @@ paths:
         - shares.driveItem
       summary: Get ref of root from shares
       description: Used to access the underlying driveItem. Deprecated -- use driveItem instead.
-      operationId: shares_GetGraphRefRoot
+      operationId: shares_GetRootGraphBPreRef
       parameters:
         - name: sharedDriveItem-id
           in: path
@@ -23070,11 +23070,11 @@ paths:
                 type: string
           links:
             createdByUser:
-              operationId: shares.Root.GetCreatedByUser
+              operationId: shares.Root.GetCreatedGraphBPreUser
               parameters:
                 sharedDriveItem-id: $request.path.sharedDriveItem-id
             lastModifiedByUser:
-              operationId: shares.Root.GetLastModifiedByUser
+              operationId: shares.Root.GetLastModifiedGraphBPreUser
               parameters:
                 sharedDriveItem-id: $request.path.sharedDriveItem-id
             workbook:
@@ -23121,7 +23121,7 @@ paths:
         - shares.driveItem
       summary: Update the ref of navigation property root in shares
       description: Used to access the underlying driveItem. Deprecated -- use driveItem instead.
-      operationId: shares_SetGraphRefRoot
+      operationId: shares_SetRootGraphBPreRef
       parameters:
         - name: sharedDriveItem-id
           in: path
@@ -23150,7 +23150,7 @@ paths:
         - shares.driveItem
       summary: Delete ref of navigation property root for shares
       description: Used to access the underlying driveItem. Deprecated -- use driveItem instead.
-      operationId: shares_DeleteGraphRefRoot
+      operationId: shares_DeleteRootGraphBPreRef
       parameters:
         - name: sharedDriveItem-id
           in: path
@@ -23265,11 +23265,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.site'
           links:
             createdByUser:
-              operationId: shares.Site.GetCreatedByUser
+              operationId: shares.Site.GetCreatedGraphBPreUser
               parameters:
                 sharedDriveItem-id: $request.path.sharedDriveItem-id
             lastModifiedByUser:
-              operationId: shares.Site.GetLastModifiedByUser
+              operationId: shares.Site.GetLastModifiedGraphBPreUser
               parameters:
                 sharedDriveItem-id: $request.path.sharedDriveItem-id
             analytics:
@@ -23337,7 +23337,7 @@ paths:
         - shares.site
       summary: Get ref of site from shares
       description: Used to access the underlying site
-      operationId: shares_GetGraphRefSite
+      operationId: shares_GetSiteGraphBPreRef
       parameters:
         - name: sharedDriveItem-id
           in: path
@@ -23355,11 +23355,11 @@ paths:
                 type: string
           links:
             createdByUser:
-              operationId: shares.Site.GetCreatedByUser
+              operationId: shares.Site.GetCreatedGraphBPreUser
               parameters:
                 sharedDriveItem-id: $request.path.sharedDriveItem-id
             lastModifiedByUser:
-              operationId: shares.Site.GetLastModifiedByUser
+              operationId: shares.Site.GetLastModifiedGraphBPreUser
               parameters:
                 sharedDriveItem-id: $request.path.sharedDriveItem-id
             analytics:
@@ -23426,7 +23426,7 @@ paths:
         - shares.site
       summary: Update the ref of navigation property site in shares
       description: Used to access the underlying site
-      operationId: shares_SetGraphRefSite
+      operationId: shares_SetSiteGraphBPreRef
       parameters:
         - name: sharedDriveItem-id
           in: path
@@ -23455,7 +23455,7 @@ paths:
         - shares.site
       summary: Delete ref of navigation property site for shares
       description: Used to access the underlying site
-      operationId: shares_DeleteGraphRefSite
+      operationId: shares_DeleteSiteGraphBPreRef
       parameters:
         - name: sharedDriveItem-id
           in: path
@@ -23555,11 +23555,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.drive'
           links:
             createdByUser:
-              operationId: users.Drive.GetCreatedByUser
+              operationId: users.Drive.GetCreatedGraphBPreUser
               parameters:
                 user-id: $request.path.user-id
             lastModifiedByUser:
-              operationId: users.Drive.GetLastModifiedByUser
+              operationId: users.Drive.GetLastModifiedGraphBPreUser
               parameters:
                 user-id: $request.path.user-id
             activities:
@@ -23599,7 +23599,7 @@ paths:
         - users.drive
       summary: Get ref of drive from users
       description: The user's OneDrive. Read-only.
-      operationId: users_GetGraphRefDrive
+      operationId: users_GetDriveGraphBPreRef
       parameters:
         - name: user-id
           in: path
@@ -23617,11 +23617,11 @@ paths:
                 type: string
           links:
             createdByUser:
-              operationId: users.Drive.GetCreatedByUser
+              operationId: users.Drive.GetCreatedGraphBPreUser
               parameters:
                 user-id: $request.path.user-id
             lastModifiedByUser:
-              operationId: users.Drive.GetLastModifiedByUser
+              operationId: users.Drive.GetLastModifiedGraphBPreUser
               parameters:
                 user-id: $request.path.user-id
             activities:
@@ -23660,7 +23660,7 @@ paths:
         - users.drive
       summary: Update the ref of navigation property drive in users
       description: The user's OneDrive. Read-only.
-      operationId: users_SetGraphRefDrive
+      operationId: users_SetDriveGraphBPreRef
       parameters:
         - name: user-id
           in: path
@@ -23689,7 +23689,7 @@ paths:
         - users.drive
       summary: Delete ref of navigation property drive for users
       description: The user's OneDrive. Read-only.
-      operationId: users_DeleteGraphRefDrive
+      operationId: users_DeleteDriveGraphBPreRef
       parameters:
         - name: user-id
           in: path
@@ -23967,12 +23967,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.drive'
           links:
             createdByUser:
-              operationId: users.Drives.GetCreatedByUser
+              operationId: users.Drives.GetCreatedGraphBPreUser
               parameters:
                 user-id: $request.path.user-id
                 drive-id: $request.path.drive-id
             lastModifiedByUser:
-              operationId: users.Drives.GetLastModifiedByUser
+              operationId: users.Drives.GetLastModifiedGraphBPreUser
               parameters:
                 user-id: $request.path.user-id
                 drive-id: $request.path.drive-id

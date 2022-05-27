@@ -1351,7 +1351,7 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action addMembersById
-      operationId: admin.windows.updates.deployments.audience.exclusions_addMembersById
+      operationId: admin.windows.updates.deployments.audience.exclusions_addMembersGraphBPreId
       parameters:
         - name: deployment-id
           in: path
@@ -1437,7 +1437,7 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action removeMembersById
-      operationId: admin.windows.updates.deployments.audience.exclusions_removeMembersById
+      operationId: admin.windows.updates.deployments.audience.exclusions_removeMembersGraphBPreId
       parameters:
         - name: deployment-id
           in: path
@@ -1518,7 +1518,7 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action enrollAssetsById
-      operationId: admin.windows.updates.deployments.audience.exclusions_enrollAssetsById
+      operationId: admin.windows.updates.deployments.audience.exclusions_enrollAssetsGraphBPreId
       parameters:
         - name: deployment-id
           in: path
@@ -1594,7 +1594,7 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action unenrollAssetsById
-      operationId: admin.windows.updates.deployments.audience.exclusions_unenrollAssetsById
+      operationId: admin.windows.updates.deployments.audience.exclusions_unenrollAssetsGraphBPreId
       parameters:
         - name: deployment-id
           in: path
@@ -1908,7 +1908,7 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action addMembersById
-      operationId: admin.windows.updates.deployments.audience.members_addMembersById
+      operationId: admin.windows.updates.deployments.audience.members_addMembersGraphBPreId
       parameters:
         - name: deployment-id
           in: path
@@ -1994,7 +1994,7 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action removeMembersById
-      operationId: admin.windows.updates.deployments.audience.members_removeMembersById
+      operationId: admin.windows.updates.deployments.audience.members_removeMembersGraphBPreId
       parameters:
         - name: deployment-id
           in: path
@@ -2075,7 +2075,7 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action enrollAssetsById
-      operationId: admin.windows.updates.deployments.audience.members_enrollAssetsById
+      operationId: admin.windows.updates.deployments.audience.members_enrollAssetsGraphBPreId
       parameters:
         - name: deployment-id
           in: path
@@ -2151,7 +2151,7 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action unenrollAssetsById
-      operationId: admin.windows.updates.deployments.audience.members_unenrollAssetsById
+      operationId: admin.windows.updates.deployments.audience.members_unenrollAssetsGraphBPreId
       parameters:
         - name: deployment-id
           in: path
@@ -2237,7 +2237,7 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action updateAudienceById
-      operationId: admin.windows.updates.deployments.audience_updateAudienceById
+      operationId: admin.windows.updates.deployments.audience_updateAudienceGraphBPreId
       parameters:
         - name: deployment-id
           in: path
@@ -2521,7 +2521,7 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action addMembersById
-      operationId: admin.windows.updates.updatableAssets_addMembersById
+      operationId: admin.windows.updates.updatableAssets_addMembersGraphBPreId
       parameters:
         - name: updatableAsset-id
           in: path
@@ -2593,7 +2593,7 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action removeMembersById
-      operationId: admin.windows.updates.updatableAssets_removeMembersById
+      operationId: admin.windows.updates.updatableAssets_removeMembersGraphBPreId
       parameters:
         - name: updatableAsset-id
           in: path
@@ -2659,7 +2659,7 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action enrollAssetsById
-      operationId: admin.windows.updates.updatableAssets_enrollAssetsById
+      operationId: admin.windows.updates.updatableAssets_enrollAssetsGraphBPreId
       requestBody:
         description: Action parameters
         content:
@@ -2719,7 +2719,7 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action unenrollAssetsById
-      operationId: admin.windows.updates.updatableAssets_unenrollAssetsById
+      operationId: admin.windows.updates.updatableAssets_unenrollAssetsGraphBPreId
       requestBody:
         description: Action parameters
         content:

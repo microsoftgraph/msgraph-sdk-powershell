@@ -296,12 +296,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.site'
           links:
             createdByUser:
-              operationId: groups.Sites.GetCreatedByUser
+              operationId: groups.Sites.GetCreatedGraphBPreUser
               parameters:
                 group-id: $request.path.group-id
                 site-id: $request.path.site-id
             lastModifiedByUser:
-              operationId: groups.Sites.GetLastModifiedByUser
+              operationId: groups.Sites.GetLastModifiedGraphBPreUser
               parameters:
                 group-id: $request.path.group-id
                 site-id: $request.path.site-id
@@ -709,11 +709,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.site'
           links:
             createdByUser:
-              operationId: sites.GetCreatedByUser
+              operationId: sites.GetCreatedGraphBPreUser
               parameters:
                 site-id: $request.path.site-id
             lastModifiedByUser:
-              operationId: sites.GetLastModifiedByUser
+              operationId: sites.GetLastModifiedGraphBPreUser
               parameters:
                 site-id: $request.path.site-id
             analytics:
@@ -899,7 +899,7 @@ paths:
         - sites.itemAnalytics
       summary: Get ref of analytics from sites
       description: Analytics about the view activities that took place in this site.
-      operationId: sites_GetGraphRefAnalytics
+      operationId: sites_GetAnalyticsGraphBPreRef
       parameters:
         - name: site-id
           in: path
@@ -936,7 +936,7 @@ paths:
         - sites.itemAnalytics
       summary: Update the ref of navigation property analytics in sites
       description: Analytics about the view activities that took place in this site.
-      operationId: sites_SetGraphRefAnalytics
+      operationId: sites_SetAnalyticsGraphBPreRef
       parameters:
         - name: site-id
           in: path
@@ -965,7 +965,7 @@ paths:
         - sites.itemAnalytics
       summary: Delete ref of navigation property analytics for sites
       description: Analytics about the view activities that took place in this site.
-      operationId: sites_DeleteGraphRefAnalytics
+      operationId: sites_DeleteAnalyticsGraphBPreRef
       parameters:
         - name: site-id
           in: path
@@ -1453,7 +1453,7 @@ paths:
         - sites.columnDefinition
       summary: Get ref of sourceColumn from sites
       description: The source column for the content type column.
-      operationId: sites.columns_GetGraphRefSourceColumn
+      operationId: sites.columns_GetSourceColumnGraphBPreRef
       parameters:
         - name: site-id
           in: path
@@ -1490,7 +1490,7 @@ paths:
         - sites.columnDefinition
       summary: Update the ref of navigation property sourceColumn in sites
       description: The source column for the content type column.
-      operationId: sites.columns_SetGraphRefSourceColumn
+      operationId: sites.columns_SetSourceColumnGraphBPreRef
       parameters:
         - name: site-id
           in: path
@@ -1526,7 +1526,7 @@ paths:
         - sites.columnDefinition
       summary: Delete ref of navigation property sourceColumn for sites
       description: The source column for the content type column.
-      operationId: sites.columns_DeleteGraphRefSourceColumn
+      operationId: sites.columns_DeleteSourceColumnGraphBPreRef
       parameters:
         - name: site-id
           in: path
@@ -2000,7 +2000,7 @@ paths:
         - sites.contentType
       summary: Get ref of base from sites
       description: Parent contentType from which this content type is derived.
-      operationId: sites.contentTypes_GetGraphRefBase
+      operationId: sites.contentTypes_GetBaseGraphBPreRef
       parameters:
         - name: site-id
           in: path
@@ -2057,7 +2057,7 @@ paths:
         - sites.contentType
       summary: Update the ref of navigation property base in sites
       description: Parent contentType from which this content type is derived.
-      operationId: sites.contentTypes_SetGraphRefBase
+      operationId: sites.contentTypes_SetBaseGraphBPreRef
       parameters:
         - name: site-id
           in: path
@@ -2093,7 +2093,7 @@ paths:
         - sites.contentType
       summary: Delete ref of navigation property base for sites
       description: Parent contentType from which this content type is derived.
-      operationId: sites.contentTypes_DeleteGraphRefBase
+      operationId: sites.contentTypes_DeleteBaseGraphBPreRef
       parameters:
         - name: site-id
           in: path
@@ -2125,7 +2125,7 @@ paths:
       tags:
         - sites.Actions
       summary: Invoke action associateWithHubSites
-      operationId: sites.contentTypes.base_associateWithHubSites
+      operationId: sites.contentTypes.base_associateGraphWPreHubSites
       parameters:
         - name: site-id
           in: path
@@ -2438,7 +2438,7 @@ paths:
         - sites.contentType
       summary: Get ref of baseTypes from sites
       description: The collection of content types that are ancestors of this content type.
-      operationId: sites.contentTypes_ListGraphRefBaseTypes
+      operationId: sites.contentTypes_ListBaseTypesGraphBPreRef
       parameters:
         - name: site-id
           in: path
@@ -2528,7 +2528,7 @@ paths:
         - sites.contentType
       summary: Create new navigation property ref to baseTypes for sites
       description: The collection of content types that are ancestors of this content type.
-      operationId: sites.contentTypes_CreateGraphRefBaseTypes
+      operationId: sites.contentTypes_CreateBaseTypesGraphBPreRef
       parameters:
         - name: site-id
           in: path
@@ -3144,7 +3144,7 @@ paths:
         - sites.contentType
       summary: Get ref of columnPositions from sites
       description: Column order information in a content type.
-      operationId: sites.contentTypes_ListGraphRefColumnPositions
+      operationId: sites.contentTypes_ListColumnPositionsGraphBPreRef
       parameters:
         - name: site-id
           in: path
@@ -3268,7 +3268,7 @@ paths:
         - sites.contentType
       summary: Create new navigation property ref to columnPositions for sites
       description: Column order information in a content type.
-      operationId: sites.contentTypes_CreateGraphRefColumnPositions
+      operationId: sites.contentTypes_CreateColumnPositionsGraphBPreRef
       parameters:
         - name: site-id
           in: path
@@ -3817,7 +3817,7 @@ paths:
         - sites.contentType
       summary: Get ref of sourceColumn from sites
       description: The source column for the content type column.
-      operationId: sites.contentTypes.columns_GetGraphRefSourceColumn
+      operationId: sites.contentTypes.columns_GetSourceColumnGraphBPreRef
       parameters:
         - name: site-id
           in: path
@@ -3862,7 +3862,7 @@ paths:
         - sites.contentType
       summary: Update the ref of navigation property sourceColumn in sites
       description: The source column for the content type column.
-      operationId: sites.contentTypes.columns_SetGraphRefSourceColumn
+      operationId: sites.contentTypes.columns_SetSourceColumnGraphBPreRef
       parameters:
         - name: site-id
           in: path
@@ -3905,7 +3905,7 @@ paths:
         - sites.contentType
       summary: Delete ref of navigation property sourceColumn for sites
       description: The source column for the content type column.
-      operationId: sites.contentTypes.columns_DeleteGraphRefSourceColumn
+      operationId: sites.contentTypes.columns_DeleteSourceColumnGraphBPreRef
       parameters:
         - name: site-id
           in: path
@@ -3944,7 +3944,7 @@ paths:
       tags:
         - sites.Actions
       summary: Invoke action associateWithHubSites
-      operationId: sites.contentTypes_associateWithHubSites
+      operationId: sites.contentTypes_associateGraphWPreHubSites
       parameters:
         - name: site-id
           in: path
@@ -4290,11 +4290,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.drive'
           links:
             createdByUser:
-              operationId: sites.Drive.GetCreatedByUser
+              operationId: sites.Drive.GetCreatedGraphBPreUser
               parameters:
                 site-id: $request.path.site-id
             lastModifiedByUser:
-              operationId: sites.Drive.GetLastModifiedByUser
+              operationId: sites.Drive.GetLastModifiedGraphBPreUser
               parameters:
                 site-id: $request.path.site-id
             activities:
@@ -4334,7 +4334,7 @@ paths:
         - sites.drive
       summary: Get ref of drive from sites
       description: The default drive (document library) for this site.
-      operationId: sites_GetGraphRefDrive
+      operationId: sites_GetDriveGraphBPreRef
       parameters:
         - name: site-id
           in: path
@@ -4352,11 +4352,11 @@ paths:
                 type: string
           links:
             createdByUser:
-              operationId: sites.Drive.GetCreatedByUser
+              operationId: sites.Drive.GetCreatedGraphBPreUser
               parameters:
                 site-id: $request.path.site-id
             lastModifiedByUser:
-              operationId: sites.Drive.GetLastModifiedByUser
+              operationId: sites.Drive.GetLastModifiedGraphBPreUser
               parameters:
                 site-id: $request.path.site-id
             activities:
@@ -4395,7 +4395,7 @@ paths:
         - sites.drive
       summary: Update the ref of navigation property drive in sites
       description: The default drive (document library) for this site.
-      operationId: sites_SetGraphRefDrive
+      operationId: sites_SetDriveGraphBPreRef
       parameters:
         - name: site-id
           in: path
@@ -4424,7 +4424,7 @@ paths:
         - sites.drive
       summary: Delete ref of navigation property drive for sites
       description: The default drive (document library) for this site.
-      operationId: sites_DeleteGraphRefDrive
+      operationId: sites_DeleteDriveGraphBPreRef
       parameters:
         - name: site-id
           in: path
@@ -4590,7 +4590,7 @@ paths:
         - sites.drive
       summary: Get ref of drives from sites
       description: The collection of drives (document libraries) under this site.
-      operationId: sites_ListGraphRefDrives
+      operationId: sites_ListDrivesGraphBPreRef
       parameters:
         - name: site-id
           in: path
@@ -4673,7 +4673,7 @@ paths:
         - sites.drive
       summary: Create new navigation property ref to drives for sites
       description: The collection of drives (document libraries) under this site.
-      operationId: sites_CreateGraphRefDrives
+      operationId: sites_CreateDrivesGraphBPreRef
       parameters:
         - name: site-id
           in: path
@@ -4884,7 +4884,7 @@ paths:
         - sites.columnDefinition
       summary: Get ref of externalColumns from sites
       description: The collection of column definitions available in the site that are referenced from the sites in the parent hierarchy of the current site.
-      operationId: sites_ListGraphRefExternalColumns
+      operationId: sites_ListExternalColumnsGraphBPreRef
       parameters:
         - name: site-id
           in: path
@@ -5001,7 +5001,7 @@ paths:
         - sites.columnDefinition
       summary: Create new navigation property ref to externalColumns for sites
       description: The collection of column definitions available in the site that are referenced from the sites in the parent hierarchy of the current site.
-      operationId: sites_CreateGraphRefExternalColumns
+      operationId: sites_CreateExternalColumnsGraphBPreRef
       parameters:
         - name: site-id
           in: path
@@ -5285,12 +5285,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.list'
           links:
             createdByUser:
-              operationId: sites.Lists.GetCreatedByUser
+              operationId: sites.Lists.GetCreatedGraphBPreUser
               parameters:
                 site-id: $request.path.site-id
                 list-id: $request.path.list-id
             lastModifiedByUser:
-              operationId: sites.Lists.GetLastModifiedByUser
+              operationId: sites.Lists.GetLastModifiedGraphBPreUser
               parameters:
                 site-id: $request.path.site-id
                 list-id: $request.path.list-id
@@ -5817,13 +5817,13 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.driveItem'
           links:
             createdByUser:
-              operationId: sites.lists.activities.DriveItem.GetCreatedByUser
+              operationId: sites.lists.activities.DriveItem.GetCreatedGraphBPreUser
               parameters:
                 site-id: $request.path.site-id
                 list-id: $request.path.list-id
                 itemActivityOLD-id: $request.path.itemActivityOLD-id
             lastModifiedByUser:
-              operationId: sites.lists.activities.DriveItem.GetLastModifiedByUser
+              operationId: sites.lists.activities.DriveItem.GetLastModifiedGraphBPreUser
               parameters:
                 site-id: $request.path.site-id
                 list-id: $request.path.list-id
@@ -5890,7 +5890,7 @@ paths:
       tags:
         - sites.list
       summary: Get ref of driveItem from sites
-      operationId: sites.lists.activities_GetGraphRefDriveItem
+      operationId: sites.lists.activities_GetDriveItemGraphBPreRef
       parameters:
         - name: site-id
           in: path
@@ -5922,13 +5922,13 @@ paths:
                 type: string
           links:
             createdByUser:
-              operationId: sites.lists.activities.DriveItem.GetCreatedByUser
+              operationId: sites.lists.activities.DriveItem.GetCreatedGraphBPreUser
               parameters:
                 site-id: $request.path.site-id
                 list-id: $request.path.list-id
                 itemActivityOLD-id: $request.path.itemActivityOLD-id
             lastModifiedByUser:
-              operationId: sites.lists.activities.DriveItem.GetLastModifiedByUser
+              operationId: sites.lists.activities.DriveItem.GetLastModifiedGraphBPreUser
               parameters:
                 site-id: $request.path.site-id
                 list-id: $request.path.list-id
@@ -5994,7 +5994,7 @@ paths:
       tags:
         - sites.list
       summary: Update the ref of navigation property driveItem in sites
-      operationId: sites.lists.activities_SetGraphRefDriveItem
+      operationId: sites.lists.activities_SetDriveItemGraphBPreRef
       parameters:
         - name: site-id
           in: path
@@ -6036,7 +6036,7 @@ paths:
       tags:
         - sites.list
       summary: Delete ref of navigation property driveItem for sites
-      operationId: sites.lists.activities_DeleteGraphRefDriveItem
+      operationId: sites.lists.activities_DeleteDriveItemGraphBPreRef
       parameters:
         - name: site-id
           in: path
@@ -6157,13 +6157,13 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.listItem'
           links:
             createdByUser:
-              operationId: sites.lists.activities.ListItem.GetCreatedByUser
+              operationId: sites.lists.activities.ListItem.GetCreatedGraphBPreUser
               parameters:
                 site-id: $request.path.site-id
                 list-id: $request.path.list-id
                 itemActivityOLD-id: $request.path.itemActivityOLD-id
             lastModifiedByUser:
-              operationId: sites.lists.activities.ListItem.GetLastModifiedByUser
+              operationId: sites.lists.activities.ListItem.GetLastModifiedGraphBPreUser
               parameters:
                 site-id: $request.path.site-id
                 list-id: $request.path.list-id
@@ -6206,7 +6206,7 @@ paths:
       tags:
         - sites.list
       summary: Get ref of listItem from sites
-      operationId: sites.lists.activities_GetGraphRefListItem
+      operationId: sites.lists.activities_GetListItemGraphBPreRef
       parameters:
         - name: site-id
           in: path
@@ -6238,13 +6238,13 @@ paths:
                 type: string
           links:
             createdByUser:
-              operationId: sites.lists.activities.ListItem.GetCreatedByUser
+              operationId: sites.lists.activities.ListItem.GetCreatedGraphBPreUser
               parameters:
                 site-id: $request.path.site-id
                 list-id: $request.path.list-id
                 itemActivityOLD-id: $request.path.itemActivityOLD-id
             lastModifiedByUser:
-              operationId: sites.lists.activities.ListItem.GetLastModifiedByUser
+              operationId: sites.lists.activities.ListItem.GetLastModifiedGraphBPreUser
               parameters:
                 site-id: $request.path.site-id
                 list-id: $request.path.list-id
@@ -6286,7 +6286,7 @@ paths:
       tags:
         - sites.list
       summary: Update the ref of navigation property listItem in sites
-      operationId: sites.lists.activities_SetGraphRefListItem
+      operationId: sites.lists.activities_SetListItemGraphBPreRef
       parameters:
         - name: site-id
           in: path
@@ -6328,7 +6328,7 @@ paths:
       tags:
         - sites.list
       summary: Delete ref of navigation property listItem for sites
-      operationId: sites.lists.activities_DeleteGraphRefListItem
+      operationId: sites.lists.activities_DeleteListItemGraphBPreRef
       parameters:
         - name: site-id
           in: path
@@ -6437,7 +6437,7 @@ paths:
       tags:
         - sites.Functions
       summary: Invoke function getActivitiesByInterval
-      operationId: sites.lists.activities.listItem_getActivitiesByInterval
+      operationId: sites.lists.activities.listItem_getActivitiesGraphBPreInterval
       parameters:
         - name: site-id
           in: path
@@ -7005,7 +7005,7 @@ paths:
         - sites.list
       summary: Get ref of sourceColumn from sites
       description: The source column for the content type column.
-      operationId: sites.lists.columns_GetGraphRefSourceColumn
+      operationId: sites.lists.columns_GetSourceColumnGraphBPreRef
       parameters:
         - name: site-id
           in: path
@@ -7050,7 +7050,7 @@ paths:
         - sites.list
       summary: Update the ref of navigation property sourceColumn in sites
       description: The source column for the content type column.
-      operationId: sites.lists.columns_SetGraphRefSourceColumn
+      operationId: sites.lists.columns_SetSourceColumnGraphBPreRef
       parameters:
         - name: site-id
           in: path
@@ -7093,7 +7093,7 @@ paths:
         - sites.list
       summary: Delete ref of navigation property sourceColumn for sites
       description: The source column for the content type column.
-      operationId: sites.lists.columns_DeleteGraphRefSourceColumn
+      operationId: sites.lists.columns_DeleteSourceColumnGraphBPreRef
       parameters:
         - name: site-id
           in: path
@@ -7626,7 +7626,7 @@ paths:
         - sites.list
       summary: Get ref of base from sites
       description: Parent contentType from which this content type is derived.
-      operationId: sites.lists.contentTypes_GetGraphRefBase
+      operationId: sites.lists.contentTypes_GetBaseGraphBPreRef
       parameters:
         - name: site-id
           in: path
@@ -7695,7 +7695,7 @@ paths:
         - sites.list
       summary: Update the ref of navigation property base in sites
       description: Parent contentType from which this content type is derived.
-      operationId: sites.lists.contentTypes_SetGraphRefBase
+      operationId: sites.lists.contentTypes_SetBaseGraphBPreRef
       parameters:
         - name: site-id
           in: path
@@ -7738,7 +7738,7 @@ paths:
         - sites.list
       summary: Delete ref of navigation property base for sites
       description: Parent contentType from which this content type is derived.
-      operationId: sites.lists.contentTypes_DeleteGraphRefBase
+      operationId: sites.lists.contentTypes_DeleteBaseGraphBPreRef
       parameters:
         - name: site-id
           in: path
@@ -7777,7 +7777,7 @@ paths:
       tags:
         - sites.Actions
       summary: Invoke action associateWithHubSites
-      operationId: sites.lists.contentTypes.base_associateWithHubSites
+      operationId: sites.lists.contentTypes.base_associateGraphWPreHubSites
       parameters:
         - name: site-id
           in: path
@@ -8132,7 +8132,7 @@ paths:
         - sites.list
       summary: Get ref of baseTypes from sites
       description: The collection of content types that are ancestors of this content type.
-      operationId: sites.lists.contentTypes_ListGraphRefBaseTypes
+      operationId: sites.lists.contentTypes_ListBaseTypesGraphBPreRef
       parameters:
         - name: site-id
           in: path
@@ -8229,7 +8229,7 @@ paths:
         - sites.list
       summary: Create new navigation property ref to baseTypes for sites
       description: The collection of content types that are ancestors of this content type.
-      operationId: sites.lists.contentTypes_CreateGraphRefBaseTypes
+      operationId: sites.lists.contentTypes_CreateBaseTypesGraphBPreRef
       parameters:
         - name: site-id
           in: path
@@ -8915,7 +8915,7 @@ paths:
         - sites.list
       summary: Get ref of columnPositions from sites
       description: Column order information in a content type.
-      operationId: sites.lists.contentTypes_ListGraphRefColumnPositions
+      operationId: sites.lists.contentTypes_ListColumnPositionsGraphBPreRef
       parameters:
         - name: site-id
           in: path
@@ -9046,7 +9046,7 @@ paths:
         - sites.list
       summary: Create new navigation property ref to columnPositions for sites
       description: Column order information in a content type.
-      operationId: sites.lists.contentTypes_CreateGraphRefColumnPositions
+      operationId: sites.lists.contentTypes_CreateColumnPositionsGraphBPreRef
       parameters:
         - name: site-id
           in: path
@@ -9646,7 +9646,7 @@ paths:
         - sites.list
       summary: Get ref of sourceColumn from sites
       description: The source column for the content type column.
-      operationId: sites.lists.contentTypes.columns_GetGraphRefSourceColumn
+      operationId: sites.lists.contentTypes.columns_GetSourceColumnGraphBPreRef
       parameters:
         - name: site-id
           in: path
@@ -9699,7 +9699,7 @@ paths:
         - sites.list
       summary: Update the ref of navigation property sourceColumn in sites
       description: The source column for the content type column.
-      operationId: sites.lists.contentTypes.columns_SetGraphRefSourceColumn
+      operationId: sites.lists.contentTypes.columns_SetSourceColumnGraphBPreRef
       parameters:
         - name: site-id
           in: path
@@ -9749,7 +9749,7 @@ paths:
         - sites.list
       summary: Delete ref of navigation property sourceColumn for sites
       description: The source column for the content type column.
-      operationId: sites.lists.contentTypes.columns_DeleteGraphRefSourceColumn
+      operationId: sites.lists.contentTypes.columns_DeleteSourceColumnGraphBPreRef
       parameters:
         - name: site-id
           in: path
@@ -9795,7 +9795,7 @@ paths:
       tags:
         - sites.Actions
       summary: Invoke action associateWithHubSites
-      operationId: sites.lists.contentTypes_associateWithHubSites
+      operationId: sites.lists.contentTypes_associateGraphWPreHubSites
       parameters:
         - name: site-id
           in: path
@@ -10204,12 +10204,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.drive'
           links:
             createdByUser:
-              operationId: sites.lists.Drive.GetCreatedByUser
+              operationId: sites.lists.Drive.GetCreatedGraphBPreUser
               parameters:
                 site-id: $request.path.site-id
                 list-id: $request.path.list-id
             lastModifiedByUser:
-              operationId: sites.lists.Drive.GetLastModifiedByUser
+              operationId: sites.lists.Drive.GetLastModifiedGraphBPreUser
               parameters:
                 site-id: $request.path.site-id
                 list-id: $request.path.list-id
@@ -10257,7 +10257,7 @@ paths:
         - sites.list
       summary: Get ref of drive from sites
       description: 'Only present on document libraries. Allows access to the list as a [drive][] resource with [driveItems][driveItem].'
-      operationId: sites.lists_GetGraphRefDrive
+      operationId: sites.lists_GetDriveGraphBPreRef
       parameters:
         - name: site-id
           in: path
@@ -10282,12 +10282,12 @@ paths:
                 type: string
           links:
             createdByUser:
-              operationId: sites.lists.Drive.GetCreatedByUser
+              operationId: sites.lists.Drive.GetCreatedGraphBPreUser
               parameters:
                 site-id: $request.path.site-id
                 list-id: $request.path.list-id
             lastModifiedByUser:
-              operationId: sites.lists.Drive.GetLastModifiedByUser
+              operationId: sites.lists.Drive.GetLastModifiedGraphBPreUser
               parameters:
                 site-id: $request.path.site-id
                 list-id: $request.path.list-id
@@ -10334,7 +10334,7 @@ paths:
         - sites.list
       summary: Update the ref of navigation property drive in sites
       description: 'Only present on document libraries. Allows access to the list as a [drive][] resource with [driveItems][driveItem].'
-      operationId: sites.lists_SetGraphRefDrive
+      operationId: sites.lists_SetDriveGraphBPreRef
       parameters:
         - name: site-id
           in: path
@@ -10370,7 +10370,7 @@ paths:
         - sites.list
       summary: Delete ref of navigation property drive for sites
       description: 'Only present on document libraries. Allows access to the list as a [drive][] resource with [driveItems][driveItem].'
-      operationId: sites.lists_DeleteGraphRefDrive
+      operationId: sites.lists_DeleteDriveGraphBPreRef
       parameters:
         - name: site-id
           in: path
@@ -10660,13 +10660,13 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.listItem'
           links:
             createdByUser:
-              operationId: sites.lists.Items.GetCreatedByUser
+              operationId: sites.lists.Items.GetCreatedGraphBPreUser
               parameters:
                 site-id: $request.path.site-id
                 list-id: $request.path.list-id
                 listItem-id: $request.path.listItem-id
             lastModifiedByUser:
-              operationId: sites.lists.Items.GetLastModifiedByUser
+              operationId: sites.lists.Items.GetLastModifiedGraphBPreUser
               parameters:
                 site-id: $request.path.site-id
                 list-id: $request.path.list-id
@@ -11247,14 +11247,14 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.driveItem'
           links:
             createdByUser:
-              operationId: sites.lists.items.activities.DriveItem.GetCreatedByUser
+              operationId: sites.lists.items.activities.DriveItem.GetCreatedGraphBPreUser
               parameters:
                 site-id: $request.path.site-id
                 list-id: $request.path.list-id
                 listItem-id: $request.path.listItem-id
                 itemActivityOLD-id: $request.path.itemActivityOLD-id
             lastModifiedByUser:
-              operationId: sites.lists.items.activities.DriveItem.GetLastModifiedByUser
+              operationId: sites.lists.items.activities.DriveItem.GetLastModifiedGraphBPreUser
               parameters:
                 site-id: $request.path.site-id
                 list-id: $request.path.list-id
@@ -11331,7 +11331,7 @@ paths:
       tags:
         - sites.list
       summary: Get ref of driveItem from sites
-      operationId: sites.lists.items.activities_GetGraphRefDriveItem
+      operationId: sites.lists.items.activities_GetDriveItemGraphBPreRef
       parameters:
         - name: site-id
           in: path
@@ -11370,14 +11370,14 @@ paths:
                 type: string
           links:
             createdByUser:
-              operationId: sites.lists.items.activities.DriveItem.GetCreatedByUser
+              operationId: sites.lists.items.activities.DriveItem.GetCreatedGraphBPreUser
               parameters:
                 site-id: $request.path.site-id
                 list-id: $request.path.list-id
                 listItem-id: $request.path.listItem-id
                 itemActivityOLD-id: $request.path.itemActivityOLD-id
             lastModifiedByUser:
-              operationId: sites.lists.items.activities.DriveItem.GetLastModifiedByUser
+              operationId: sites.lists.items.activities.DriveItem.GetLastModifiedGraphBPreUser
               parameters:
                 site-id: $request.path.site-id
                 list-id: $request.path.list-id
@@ -11453,7 +11453,7 @@ paths:
       tags:
         - sites.list
       summary: Update the ref of navigation property driveItem in sites
-      operationId: sites.lists.items.activities_SetGraphRefDriveItem
+      operationId: sites.lists.items.activities_SetDriveItemGraphBPreRef
       parameters:
         - name: site-id
           in: path
@@ -11502,7 +11502,7 @@ paths:
       tags:
         - sites.list
       summary: Delete ref of navigation property driveItem for sites
-      operationId: sites.lists.items.activities_DeleteGraphRefDriveItem
+      operationId: sites.lists.items.activities_DeleteDriveItemGraphBPreRef
       parameters:
         - name: site-id
           in: path
@@ -11637,14 +11637,14 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.listItem'
           links:
             createdByUser:
-              operationId: sites.lists.items.activities.ListItem.GetCreatedByUser
+              operationId: sites.lists.items.activities.ListItem.GetCreatedGraphBPreUser
               parameters:
                 site-id: $request.path.site-id
                 list-id: $request.path.list-id
                 listItem-id: $request.path.listItem-id
                 itemActivityOLD-id: $request.path.itemActivityOLD-id
             lastModifiedByUser:
-              operationId: sites.lists.items.activities.ListItem.GetLastModifiedByUser
+              operationId: sites.lists.items.activities.ListItem.GetLastModifiedGraphBPreUser
               parameters:
                 site-id: $request.path.site-id
                 list-id: $request.path.list-id
@@ -11693,7 +11693,7 @@ paths:
       tags:
         - sites.list
       summary: Get ref of listItem from sites
-      operationId: sites.lists.items.activities_GetGraphRefListItem
+      operationId: sites.lists.items.activities_GetListItemGraphBPreRef
       parameters:
         - name: site-id
           in: path
@@ -11732,14 +11732,14 @@ paths:
                 type: string
           links:
             createdByUser:
-              operationId: sites.lists.items.activities.ListItem.GetCreatedByUser
+              operationId: sites.lists.items.activities.ListItem.GetCreatedGraphBPreUser
               parameters:
                 site-id: $request.path.site-id
                 list-id: $request.path.list-id
                 listItem-id: $request.path.listItem-id
                 itemActivityOLD-id: $request.path.itemActivityOLD-id
             lastModifiedByUser:
-              operationId: sites.lists.items.activities.ListItem.GetLastModifiedByUser
+              operationId: sites.lists.items.activities.ListItem.GetLastModifiedGraphBPreUser
               parameters:
                 site-id: $request.path.site-id
                 list-id: $request.path.list-id
@@ -11787,7 +11787,7 @@ paths:
       tags:
         - sites.list
       summary: Update the ref of navigation property listItem in sites
-      operationId: sites.lists.items.activities_SetGraphRefListItem
+      operationId: sites.lists.items.activities_SetListItemGraphBPreRef
       parameters:
         - name: site-id
           in: path
@@ -11836,7 +11836,7 @@ paths:
       tags:
         - sites.list
       summary: Delete ref of navigation property listItem for sites
-      operationId: sites.lists.items.activities_DeleteGraphRefListItem
+      operationId: sites.lists.items.activities_DeleteListItemGraphBPreRef
       parameters:
         - name: site-id
           in: path
@@ -11959,7 +11959,7 @@ paths:
       tags:
         - sites.Functions
       summary: Invoke function getActivitiesByInterval
-      operationId: sites.lists.items.activities.listItem_getActivitiesByInterval
+      operationId: sites.lists.items.activities.listItem_getActivitiesGraphBPreInterval
       parameters:
         - name: site-id
           in: path
@@ -12116,7 +12116,7 @@ paths:
         - sites.list
       summary: Get ref of analytics from sites
       description: Analytics about the view activities that took place on this item.
-      operationId: sites.lists.items_GetGraphRefAnalytics
+      operationId: sites.lists.items_GetAnalyticsGraphBPreRef
       parameters:
         - name: site-id
           in: path
@@ -12173,7 +12173,7 @@ paths:
         - sites.list
       summary: Update the ref of navigation property analytics in sites
       description: Analytics about the view activities that took place on this item.
-      operationId: sites.lists.items_SetGraphRefAnalytics
+      operationId: sites.lists.items_SetAnalyticsGraphBPreRef
       parameters:
         - name: site-id
           in: path
@@ -12216,7 +12216,7 @@ paths:
         - sites.list
       summary: Delete ref of navigation property analytics for sites
       description: Analytics about the view activities that took place on this item.
-      operationId: sites.lists.items_DeleteGraphRefAnalytics
+      operationId: sites.lists.items_DeleteAnalyticsGraphBPreRef
       parameters:
         - name: site-id
           in: path
@@ -12369,13 +12369,13 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.driveItem'
           links:
             createdByUser:
-              operationId: sites.lists.items.DriveItem.GetCreatedByUser
+              operationId: sites.lists.items.DriveItem.GetCreatedGraphBPreUser
               parameters:
                 site-id: $request.path.site-id
                 list-id: $request.path.list-id
                 listItem-id: $request.path.listItem-id
             lastModifiedByUser:
-              operationId: sites.lists.items.DriveItem.GetLastModifiedByUser
+              operationId: sites.lists.items.DriveItem.GetLastModifiedGraphBPreUser
               parameters:
                 site-id: $request.path.site-id
                 list-id: $request.path.list-id
@@ -12443,7 +12443,7 @@ paths:
         - sites.list
       summary: Get ref of driveItem from sites
       description: 'For document libraries, the driveItem relationship exposes the listItem as a [driveItem][]'
-      operationId: sites.lists.items_GetGraphRefDriveItem
+      operationId: sites.lists.items_GetDriveItemGraphBPreRef
       parameters:
         - name: site-id
           in: path
@@ -12475,13 +12475,13 @@ paths:
                 type: string
           links:
             createdByUser:
-              operationId: sites.lists.items.DriveItem.GetCreatedByUser
+              operationId: sites.lists.items.DriveItem.GetCreatedGraphBPreUser
               parameters:
                 site-id: $request.path.site-id
                 list-id: $request.path.list-id
                 listItem-id: $request.path.listItem-id
             lastModifiedByUser:
-              operationId: sites.lists.items.DriveItem.GetLastModifiedByUser
+              operationId: sites.lists.items.DriveItem.GetLastModifiedGraphBPreUser
               parameters:
                 site-id: $request.path.site-id
                 list-id: $request.path.list-id
@@ -12548,7 +12548,7 @@ paths:
         - sites.list
       summary: Update the ref of navigation property driveItem in sites
       description: 'For document libraries, the driveItem relationship exposes the listItem as a [driveItem][]'
-      operationId: sites.lists.items_SetGraphRefDriveItem
+      operationId: sites.lists.items_SetDriveItemGraphBPreRef
       parameters:
         - name: site-id
           in: path
@@ -12591,7 +12591,7 @@ paths:
         - sites.list
       summary: Delete ref of navigation property driveItem for sites
       description: 'For document libraries, the driveItem relationship exposes the listItem as a [driveItem][]'
-      operationId: sites.lists.items_DeleteGraphRefDriveItem
+      operationId: sites.lists.items_DeleteDriveItemGraphBPreRef
       parameters:
         - name: site-id
           in: path
@@ -12843,7 +12843,7 @@ paths:
       tags:
         - sites.Functions
       summary: Invoke function getActivitiesByInterval
-      operationId: sites.lists.items_getActivitiesByInterval
+      operationId: sites.lists.items_getActivitiesGraphBPreInterval
       parameters:
         - name: site-id
           in: path
@@ -14141,7 +14141,7 @@ paths:
       tags:
         - sites.Functions
       summary: Invoke function getActivitiesByInterval
-      operationId: sites_getActivitiesByInterval
+      operationId: sites_getActivitiesGraphBPreInterval
       parameters:
         - name: site-id
           in: path
@@ -14188,7 +14188,7 @@ paths:
       tags:
         - sites.Functions
       summary: Invoke function getApplicableContentTypesForList
-      operationId: sites_getApplicableContentTypesForList
+      operationId: sites_getApplicableContentTypesGraphFPreList
       parameters:
         - name: site-id
           in: path
@@ -14220,7 +14220,7 @@ paths:
       tags:
         - sites.Functions
       summary: Invoke function getByPath
-      operationId: sites_getByPath
+      operationId: sites_getGraphBPrePath
       parameters:
         - name: site-id
           in: path
@@ -17278,12 +17278,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.sitePage'
           links:
             createdByUser:
-              operationId: sites.Pages.GetCreatedByUser
+              operationId: sites.Pages.GetCreatedGraphBPreUser
               parameters:
                 site-id: $request.path.site-id
                 sitePage-id: $request.path.sitePage-id
             lastModifiedByUser:
-              operationId: sites.Pages.GetLastModifiedByUser
+              operationId: sites.Pages.GetLastModifiedGraphBPreUser
               parameters:
                 site-id: $request.path.site-id
                 sitePage-id: $request.path.sitePage-id
@@ -17920,7 +17920,7 @@ paths:
         - sites.site
       summary: Get ref of sites from sites
       description: The collection of the sub-sites under this site.
-      operationId: sites_ListGraphRefSites
+      operationId: sites_ListSitesGraphBPreRef
       parameters:
         - name: site-id
           in: path
@@ -18005,7 +18005,7 @@ paths:
         - sites.site
       summary: Create new navigation property ref to sites for sites
       description: The collection of the sub-sites under this site.
-      operationId: sites_CreateGraphRefSites
+      operationId: sites_CreateSitesGraphBPreRef
       parameters:
         - name: site-id
           in: path
@@ -18394,7 +18394,7 @@ paths:
       tags:
         - users.site
       summary: Get ref of followedSites from users
-      operationId: users_ListGraphRefFollowedSites
+      operationId: users_ListFollowedSitesGraphBPreRef
       parameters:
         - name: user-id
           in: path
@@ -18478,7 +18478,7 @@ paths:
       tags:
         - users.site
       summary: Create new navigation property ref to followedSites for users
-      operationId: users_CreateGraphRefFollowedSites
+      operationId: users_CreateFollowedSitesGraphBPreRef
       parameters:
         - name: user-id
           in: path
