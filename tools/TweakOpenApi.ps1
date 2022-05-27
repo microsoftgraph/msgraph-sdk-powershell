@@ -14,8 +14,7 @@ $prepositionReplacements = @{
     For  = "GraphFPre"
     Of   = "GraphOPre"
 }
-
-$targetOperationIdRegex = [Regex]::new(".*$($prepositionReplacements.Keys -join "|").*", "Compiled")
+$targetOperationIdRegex = [Regex]::new("([a-z*])($($prepositionReplacements.Keys -join "|"))([A-Z*]|$)", "Compiled")
 $stopwatch = [system.diagnostics.stopwatch]::StartNew()
 # Tweak prepositions in operationIds to byPass https://github.com/Azure/autorest.powershell/issues/795.
 Get-ChildItem -Path $OpenAPIFilesPath | ForEach-Object {
