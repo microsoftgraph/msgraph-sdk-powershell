@@ -24,10 +24,6 @@ directive:
       subject: ^GroupProperty$
       variant: Validate1|ValidateExpanded1
     remove: true
-  - where:
-      verb: Get
-      subject: (Group)AvailableExtensionProperty
-    remove: true
 # Rename cmdlets
   - where:
       subject: ^(GroupLifecyclePolicy)(\1)+
@@ -110,14 +106,14 @@ directive:
     set:
       subject: $1Content
 # Alias then rename cmdlets to avoid breaking change.
-  - where:
-      subject: ^(Group)(CreatedOnBehalf)$
-    set:
-      alias: ${verb}-Mg${subject}
-  - where:
-      subject: ^(Group)(CreatedOnBehalf)$
-    set:
-      subject: $1$2Of
+  # - where:
+  #     subject: ^(Group)(CreatedOnBehalf)$
+  #   set:
+  #     alias: ${verb}-Mg${subject}
+  # - where:
+  #     subject: ^(Group)(CreatedOnBehalf)$
+  #   set:
+  #     subject: $1$2Of
 ```
 
 ### Versioning

@@ -11,7 +11,7 @@ The name of the module to manage.
 Param(
     [Parameter(Mandatory = $true)][ValidateNotNullOrEmpty()][string]$ModuleName,
     [Parameter(Mandatory = $true)][ValidateNotNullOrEmpty()][string]$ModuleSrc,
-    [Parameter(Mandatory = $true)][ValidateNotNullOrEmpty()][string] $ApiVersion
+    [Parameter(Mandatory = $true)][ValidateNotNullOrEmpty()][string] $NamespacePrefix
 )
 $NugetPackagesToAdd = @("hyak.common")
 $NugetPackagesToRemove = @("Microsoft.CSharp")
@@ -31,7 +31,7 @@ $CustomCodePath = Join-Path $PSScriptRoot "\Custom\"
 # $GeneratedModuleSln = Join-Path $GeneratedModuleSlnDir "$Module.sln"
 
 # # Add generated module project to solution.
-# Write-Host -ForegroundColor Green "Executing: dotnet sln $GeneratedModuleSln add $GeneratedModuleProj"
+# Write-Debug "Executing: dotnet sln $GeneratedModuleSln add $GeneratedModuleProj"
 # dotnet sln $GeneratedModuleSln add $GeneratedModuleProj
 # if($LASTEXITCODE){
 #     Write-Error "Failed to execute: dotnet sln $GeneratedModuleSln add $GeneratedModuleProj"
@@ -41,32 +41,33 @@ $CustomCodePath = Join-Path $PSScriptRoot "\Custom\"
 # Add authentication project reference to generated module reference.
 Write-Debug "Executing: dotnet add $ModuleCsProj reference $AuthenticationProj"
 dotnet add $ModuleCsProj reference $AuthenticationProj | Out-Null
-if($LastExitCode){
+if ($LastExitCode) {
     Write-Error "Failed to execute: dotnet add $ModuleCsProj reference $AuthenticationProj"
 }
 
 # Copy custom code to generated module.
-foreach($CustomFile in (Get-ChildItem $CustomCodePath -Recurse)) {
-    Write-Debug "Copying $CustomFile to $ModuleSrc\custom"
-    Copy-Item -Path $CustomFile -Destination "$ModuleSrc\custom"
+foreach ($customFile in (Get-ChildItem $CustomCodePath -Recurse)) {
+    Write-Debug "Copying $customFile to $ModuleSrc\custom"
+    # Resolve namespaces.
+    $fileContent = Get-Content $customFile
+    $fileContent = $fileContent.Replace("NamespacePrefixPlaceholder", $NamespacePrefix);
+    $fileContent | Out-File (Join-Path $ModuleSrc "custom" $customFile.Name)
 }
 
 # Remove unnecessary packages from generate modules.
-foreach($Package in $NugetPackagesToRemove)
-{
+foreach ($Package in $NugetPackagesToRemove) {
     Write-Debug "Executing: dotnet remove $ModuleCsProj package $Package"
     dotnet remove $ModuleCsProj package $Package | Out-Null
-    if($LastExitCode){
+    if ($LastExitCode) {
         Write-Error "Failed to execute: dotnet remove $ModuleCsProj package $Package"
     }
 }
 
 # Add nuget packages from generate modules.
-foreach($Package in $NugetPackagesToAdd)
-{
+foreach ($Package in $NugetPackagesToAdd) {
     Write-Debug "Executing: dotnet add $ModuleCsProj package $Package"
     dotnet add $ModuleCsProj package $Package | Out-Null
-    if($LastExitCode){
+    if ($LastExitCode) {
         Write-Error "Failed to execute: dotnet add $ModuleCsProj package $Package"
     }
 }

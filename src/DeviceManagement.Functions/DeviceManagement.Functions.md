@@ -18,10 +18,10 @@ require:
 ``` yaml
 directive:
 # Rename cmdlets.
-  - where:
-      subject: ^(DeviceManagement(Condition|ConditionStatementManagementCondition|ConditionStatementManagementConditionStatement))$
-    set:
-      subject: $1ForPlatform
+  # - where:
+  #     subject: ^(DeviceManagement(Condition|ConditionStatementManagementCondition|ConditionStatementManagementConditionStatement))$
+  #   set:
+  #     subject: $1ForPlatform
 # TODO: Clean up
   # - where:
   #     subject: ^(DeviceManagementRoleScopeTag)$

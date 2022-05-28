@@ -30,26 +30,22 @@ directive:
       verb: Get
       subject: ^(UserOnlineMeeting)$
     remove: true
-  - where:
-      verb: Get
-      subject: (User)AvailableExtensionProperty
-    remove: true
 # Rename
-  - where:
-      verb: Clear
-      subject: ^(UserManagedAppRegistration)$
-    set:
-      subject: $1ByDeviceTag
-  - where:
-      verb: Get
-      subject: ^(User)$
-    set:
-      subject: $1ById
-  - where:
-      verb: Get
-      subject: ^(UserOwnedObject)$
-    set:
-      subject: $1ByType
+  # - where:
+  #     verb: Clear
+  #     subject: ^(UserManagedAppRegistration)$
+  #   set:
+  #     subject: $1ByDeviceTag
+  # - where:
+  #     verb: Get
+  #     subject: ^(User)$
+  #   set:
+  #     subject: $1ById
+  # - where:
+  #     verb: Get
+  #     subject: ^(UserOwnedObject)$
+  #   set:
+  #     subject: $1ByType
   - where:
       verb: New
       subject: ^(UserOnlineMeeting)$

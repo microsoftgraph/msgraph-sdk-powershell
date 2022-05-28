@@ -2,13 +2,13 @@
 //  Copyright (c) Microsoft Corporation.  All Rights Reserved.  Licensed under the MIT License.  See License in the project root for license information.
 // ------------------------------------------------------------------------------
 
-namespace Microsoft.Graph.PowerShell
+namespace NamespacePrefixPlaceholder.PowerShell
 {
     using System;
     using System.Text.RegularExpressions;
     using System.Threading;
     using System.Threading.Tasks;
-    using Microsoft.Graph.PowerShell.Runtime;
+    using NamespacePrefixPlaceholder.PowerShell.Runtime;
 
     public static class EventExtensions
     {

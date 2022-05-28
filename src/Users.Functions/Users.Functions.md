@@ -30,11 +30,11 @@ directive:
       subject: ^(CalendarUserEventCalendar|CalendarUserCalendar)$
     set:
       subject: $1AllowedCalendarSharingRoles
-  - where:
-      verb: Get
-      subject: ^(UserManagedDevice)$
-    set:
-      subject: $1WithAppFailure
+  # - where:
+  #     verb: Get
+  #     subject: ^(UserManagedDevice)$
+  #   set:
+  #     subject: $1WithAppFailure
 ```
 
 ### Versioning

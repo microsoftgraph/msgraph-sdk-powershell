@@ -25,14 +25,14 @@ directive:
       subject: ^UserLicenseDetail$
     remove: true
 # Alias then rename cmdlets to avoid breaking change.
-  - where:
-      subject: ^User(Member|TransitiveMember)$
-    set:
-      alias: ${verb}-Mg${subject}
-  - where:
-      subject: ^User(Member|TransitiveMember)$
-    set:
-      subject: User$1Of
+  # - where:
+  #     subject: ^User(Member|TransitiveMember)$
+  #   set:
+  #     alias: ${verb}-Mg${subject}
+  # - where:
+  #     subject: ^User(Member|TransitiveMember)$
+  #   set:
+  #     subject: User$1Of
 ```
 
 ### Versioning

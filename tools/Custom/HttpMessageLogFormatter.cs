@@ -1,8 +1,8 @@
-﻿// ------------------------------------------------------------------------------
+// ------------------------------------------------------------------------------
 //  Copyright (c) Microsoft Corporation.  All Rights Reserved.  Licensed under the MIT License.  See License in the project root for license information.
 // ------------------------------------------------------------------------------
 
-namespace Microsoft.Graph.PowerShell
+namespace NamespacePrefixPlaceholder.PowerShell
 {
     using Newtonsoft.Json;
     using System;
@@ -108,9 +108,9 @@ namespace Microsoft.Graph.PowerShell
                 return content;
             }
 
-            if (content.Length > Authentication.Constants.MaxContentLength)
+            if (content.Length > Microsoft.Graph.PowerShell.Authentication.Constants.MaxContentLength)
             {
-                return content.Substring(0, Authentication.Constants.MaxContentLength) + "\r\nDATA TRUNCATED DUE TO SIZE\r\n";
+                return content.Substring(0, Microsoft.Graph.PowerShell.Authentication.Constants.MaxContentLength) + "\r\nDATA TRUNCATED DUE TO SIZE\r\n";
             }
 
             return content;

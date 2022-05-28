@@ -17,28 +17,23 @@ require:
 
 ``` yaml
 directive:
-# Remove cmdlets.
-  - where:
-      verb: Get
-      subject: (Contact|Contract|Device|DirectoryRole|DirectoryRoleTemplate|Organization)AvailableExtensionProperty
-    remove: true
 # Alias then rename cmdlets to avoid breaking change.
-  - where:
-      subject: ^UserScopedRoleMember$
-    set:
-      alias: ${verb}-Mg${subject}
-  - where:
-      subject: ^UserScopedRoleMember$
-    set:
-      subject: UserScopedRoleMemberOf
-  - where:
-      subject: ^(Contact|Device)(Member|TransitiveMember)$
-    set:
-      alias: ${verb}-Mg${subject}
-  - where:
-      subject: ^(Contact|Device)(Member|TransitiveMember)$
-    set:
-      subject: $1$2Of
+  # - where:
+  #     subject: ^UserScopedRoleMember$
+  #   set:
+  #     alias: ${verb}-Mg${subject}
+  # - where:
+  #     subject: ^UserScopedRoleMember$
+  #   set:
+  #     subject: UserScopedRoleMemberOf
+  # - where:
+  #     subject: ^(Contact|Device)(Member|TransitiveMember)$
+  #   set:
+  #     alias: ${verb}-Mg${subject}
+  # - where:
+  #     subject: ^(Contact|Device)(Member|TransitiveMember)$
+  #   set:
+  #     subject: $1$2Of
 # Rename cmdlets
 # TODO: Clean up
   # - where:
@@ -67,11 +62,11 @@ directive:
   #     variant: Get1|GetExpanded
   #   set:
   #     subject: $1ById
-  - where:
-      verb: Get
-      subject: (^Contact$)
-    set:
-      subject: $1ById
+  # - where:
+  #     verb: Get
+  #     subject: (^Contact$)
+  #   set:
+  #     subject: $1ById
   - where:
       subject: (^Contact)(OrgContact$)
     set:

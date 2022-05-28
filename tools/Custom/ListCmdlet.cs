@@ -1,50 +1,50 @@
 // ------------------------------------------------------------------------------
 //  Copyright (c) Microsoft Corporation.  All Rights Reserved.  Licensed under the MIT License.  See License in the project root for license information.
 // ------------------------------------------------------------------------------
-namespace Microsoft.Graph.PowerShell.Cmdlets.Custom
+namespace NamespacePrefixPlaceholder.PowerShell.Cmdlets.Custom
 {
     using System;
     using System.Management.Automation;
 
-    public partial class ListCmdlet : global::System.Management.Automation.PSCmdlet
+    public partial class ListCmdlet : PSCmdlet
     {
         /// <summary>Backing field for <see cref="PageSize" /> property.</summary>
         private int _pageSize;
         
         /// <summary>Sets the page size of results.</summary>
-        [global::System.Management.Automation.Parameter(Mandatory = false, HelpMessage = "Sets the page size of results.")]
-        [Microsoft.Graph.PowerShell.Runtime.Info(
+        [Parameter(Mandatory = false, HelpMessage = "Sets the page size of results.")]
+        [Runtime.Info(
         Required = false,
         ReadOnly = false,
         Description = @"The page size of results.",
         PossibleTypes = new[] { typeof(int) })]
-        [global::Microsoft.Graph.PowerShell.Category(global::Microsoft.Graph.PowerShell.ParameterCategory.Runtime)]
+        [Category(ParameterCategory.Runtime)]
         public int PageSize { get => this._pageSize; set => this._pageSize = value; }
 
         /// <summary>Backing field for <see cref="All" /> property.</summary>
         private global::System.Management.Automation.SwitchParameter _all;
 
         /// <summary>List All pages</summary>
-        [global::System.Management.Automation.Parameter(Mandatory = false, HelpMessage = "List all pages.")]
-        [Microsoft.Graph.PowerShell.Runtime.Info(
+        [Parameter(Mandatory = false, HelpMessage = "List all pages.")]
+        [Runtime.Info(
         Required = false,
         ReadOnly = false,
         Description = @"List all pages.",
         PossibleTypes = new[] { typeof(global::System.Management.Automation.SwitchParameter) })]
-        [global::Microsoft.Graph.PowerShell.Category(global::Microsoft.Graph.PowerShell.ParameterCategory.Runtime)]
+        [Category(ParameterCategory.Runtime)]
         public global::System.Management.Automation.SwitchParameter All { get => this._all; set => this._all = value; }
 
         // <summary>Backing field for <see cref="CountVariable" /> property.</summary>
         private string _countVariable;
 
         /// <summary>Specifies a count of the total number of items in a collection. </summary>
-        [global::System.Management.Automation.Parameter(Mandatory = false, HelpMessage = "Specifies a count of the total number of items in a collection. By default, this variable will be set in the global scope.")]
-        [Microsoft.Graph.PowerShell.Runtime.Info(
+        [Parameter(Mandatory = false, HelpMessage = "Specifies a count of the total number of items in a collection. By default, this variable will be set in the global scope.")]
+        [Runtime.Info(
         Required = false,
         ReadOnly = false,
         Description = @"Specifies a count of the total number of items in a collection. By default, this variable will be set in the global scope.",
         PossibleTypes = new[] { typeof(string) })]
-        [global::Microsoft.Graph.PowerShell.Category(global::Microsoft.Graph.PowerShell.ParameterCategory.Runtime)]
+        [Category(ParameterCategory.Runtime)]
         [global::System.Management.Automation.Alias("CV")]
         public string CountVariable { get => this._countVariable; set => this._countVariable = value; }
 

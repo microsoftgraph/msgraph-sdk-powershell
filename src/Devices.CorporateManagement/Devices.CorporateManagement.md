@@ -44,20 +44,20 @@ directive:
   #     variant: ^Update1$|^UpdateExpanded1$|^UpdateViaIdentity1$|^UpdateViaIdentityExpanded1$
   #   set:
   #     subject: $1Multiple$2
-  - where:
-      subject: Io(Lob|Managed)
-    set:
-      subject: iOS$1
+  # - where:
+  #     subject: Io(Lob|Managed)
+  #   set:
+  #     subject: iOS$1
 # Rename DeviceAppManagement* cmdlets to DeviceAppMgt*. Alias DeviceAppMgt* to DeviceAppManagement*.
 # This should always be the last directive.
-  - where:
-      subject: ^DeviceAppManagement.*
-    set:
-      alias: ${verb}-Mg${subject}
-  - where:
-      subject: (.*)(DeviceAppManagement)(.*)
-    set:
-      subject: $1DeviceAppMgt$3
+  # - where:
+  #     subject: ^DeviceAppManagement.*
+  #   set:
+  #     alias: ${verb}-Mg${subject}
+  # - where:
+  #     subject: (.*)(DeviceAppManagement)(.*)
+  #   set:
+  #     subject: $1DeviceAppMgt$3
 # Rename cmdlets.
   - where:
       subject: ^(Office)(Configuration)(ClientConfiguration.*)

@@ -24,7 +24,6 @@ $ModuleCsProj = Join-Path $ModuleSrc "$ModuleFullName.csproj"
 $ModuleManifest = Join-Path $ModuleSrc "$ModuleFullName.psd1"
 $ModuleNuspec = Join-Path $ModuleSrc "$ModuleFullName.nuspec"
 [HashTable] $NuspecMetadata = Get-Content (Join-Path $PSScriptRoot "..\config\ModuleMetadata.json") | ConvertFrom-Json -AsHashTable
-
 # Import scripts
 . $NuspecHelperPS1
 . $CSProjHelperPS1
@@ -43,7 +42,7 @@ else {
 
 # Build module
 Write-Debug "Building '$ModuleFullName' module..."
-. $BuildModulePS1 -Docs -Release -ExcludeExampleTemplates:$ExcludeExampleTemplates -ExcludeNotesSection:$ExcludeNotesSection | Out-Null
+. $BuildModulePS1 -Docs -Release -ExcludeExampleTemplates:$ExcludeExampleTemplates -ExcludeNotesSection:$ExcludeNotesSection
 if ($lastexitcode -ne 0) {
     Write-Debug "Failed to build '$ModuleFullName' module."
     exit $lastexitcode

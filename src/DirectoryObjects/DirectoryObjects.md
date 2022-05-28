@@ -26,10 +26,10 @@ directive:
   #   set:
   #     verb: Get
   #     subject: $1ById
-  - where:
-      subject: (^DirectoryObject)MicrosoftGraph(AdministrativeUnitDelta$)
-    set:
-      subject: $1$2
+  # - where:
+  #     subject: (^DirectoryObject)MicrosoftGraph(AdministrativeUnitDelta$)
+  #   set:
+  #     subject: $1$2
 ```
 
 ### Versioning

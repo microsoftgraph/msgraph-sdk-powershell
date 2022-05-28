@@ -24,8 +24,8 @@ metadata:
 
 ``` yaml
 prefix: Mg
-module-name: Microsoft.Graph.$(service-name)
-subject-prefix: $(service-name)
+module-name: $(service-name)
+subject-prefix: ''
 sanitize-names: false
 ```
 
@@ -434,6 +434,10 @@ directive:
       subject: ^(\w*[a-z])GraphOPre(\w*)$
     set:
       subject: $1Of$2
+# Remove *AvailableExtensionProperty commands except that bound to DirectoryObject.
+  - where:
+      subject: ^(?!DirectoryObject).*AvailableExtensionProperty$
+    remove: true
 # Remove *ByRef commands
   # - where:
   #     verb: Get|Remove|New
@@ -489,17 +493,17 @@ directive:
         return $;
       } else {
         // Add AfterToJson
-        let afterJsonDeclarationRegex = /(^\s*)(partial\s*void\s*AfterFromJson\s*\(Microsoft.Graph.PowerShell.Runtime.Json.JsonObject\s*json\s*\);$)/gm
-        $ = $.replace(afterJsonDeclarationRegex, '$1$2\n$1partial void AfterToJson(ref Microsoft.Graph.PowerShell.Runtime.Json.JsonObject container, Microsoft.Graph.PowerShell.Runtime.SerializationMode serializationMode);\n');
+        let afterJsonDeclarationRegex = /(^\s*)(partial\s*void\s*AfterFromJson\s*\(Microsoft.(Graph|Graph.Beta).PowerShell.Runtime.Json.JsonObject\s*json\s*\);$)/gm
+        $ = $.replace(afterJsonDeclarationRegex, '$1$2\n$1partial void AfterToJson(ref Microsoft.$3.PowerShell.Runtime.Json.JsonObject container, Microsoft.$3.PowerShell.Runtime.SerializationMode serializationMode);\n');
         let afterJsonRegex = /(^\s*)(AfterToJson\(ref\s*container\s*\);$)/gm
         $ = $.replace(afterJsonRegex, '$1$2\n$1AfterToJson(ref container, serializationMode);\n');
 
         // Pass exclusion properties to base classes during serialization.
-        let baseClassInitializerRegex = /(new\s*Microsoft.Graph.PowerShell.Models.MicrosoftGraph\w*\(\s*json\s*,\s*new\s*global::System.Collections.Generic.HashSet<string>\()(\){\W.*}\);)/gm
-        $ = $.replace(baseClassInitializerRegex, '$1(exclusions ?? new System.Collections.Generic.HashSet<string>())$2');
+        let baseClassInitializerRegex = /(new\s*Microsoft.(Graph|Graph.Beta).PowerShell.Models.MicrosoftGraph\w*\(\s*json\s*,\s*new\s*global::System.Collections.Generic.HashSet<string>\()(\){\W.*}\);)/gm
+        $ = $.replace(baseClassInitializerRegex, '$1(exclusions ?? new System.Collections.Generic.HashSet<string>())$3');
 
         // Fix additional properties deserialization in Complex Types.
-        let complexTypeHintRegex = /(\s*)(Microsoft\.Graph\.PowerShell\.Runtime\.JsonSerializable\.FromJson)/gm
+        let complexTypeHintRegex = /(\s*)(Microsoft\.(Graph|Graph\.Beta)\.PowerShell\.Runtime\.JsonSerializable\.FromJson)/gm
         if($.match(complexTypeHintRegex)) {
           let classNameRegex = /partial\s*class\s*(\w*)\s*{/gm
           let match = classNameRegex.exec($);
@@ -524,7 +528,7 @@ directive:
         return $;
       } else {
         // Remove Count, Keys, and Values properties from implementations of an IAssociativeArray in models.
-        let propertiesToRemoveRegex = /^.*Microsoft\.Graph\.PowerShell\.Runtime\.IAssociativeArray<global::System\.Object>\.(Count|Keys|Values).*$/gm
+        let propertiesToRemoveRegex = /^.*Microsoft\.(Graph|Graph\.Beta)\.PowerShell\.Runtime\.IAssociativeArray<global::System\.Object>\.(Count|Keys|Values).*$/gm
         $ = $.replace(propertiesToRemoveRegex, '');
 
         return $;
@@ -572,17 +576,12 @@ directive:
         let newAdditionalPropertiesProp = "System.Collections.Hashtable AdditionalProperties { get; set; } = new System.Collections.Hashtable();"
         $ = $.replace(additionalPropertiesPropRegex, newAdditionalPropertiesProp);
 
-        // Override OnDefault to handle all success, 2xx responses, as success and not error.
-        let overrideOnDefaultRegex = /(\s*)(partial\s*void\s*overrideOnDefault)/gmi
-        let overrideOnDefaultImplementation = "$1partial void overrideOnDefault(global::System.Net.Http.HttpResponseMessage responseMessage, global::System.Threading.Tasks.Task<Microsoft.Graph.PowerShell.Models.IOdataError> response, ref global::System.Threading.Tasks.Task<bool> returnNow) => this.OverrideOnDefault(responseMessage,ref returnNow);$1$2"
-        $ = $.replace(overrideOnDefaultRegex, overrideOnDefaultImplementation);
-
         // Remove noisy log messages.
         let duplicateDebugRegex = /^(\s*)(WriteDebug\(\$"{id}:.*)/gmi
         $ = $.replace(duplicateDebugRegex, "");
 
         // catch all exceptions in ProcessRecordAsync.
-        let processAsyncFinallyRegex = /(finally\s*{\s*await \(\(Microsoft\.Graph\.PowerShell\.Runtime\.IEventListener\)this\)\.Signal\(Microsoft\.Graph\.PowerShell\.Runtime\.Events\.CmdletProcessRecordAsyncEnd\);)/gmi
+        let processAsyncFinallyRegex = /(finally\s*{\s*await \(\(Microsoft\.(Graph|Graph\.Beta)\.PowerShell\.Runtime\.IEventListener\)this\)\.Signal\(Microsoft\.(Graph|Graph\.Beta)\.PowerShell\.Runtime\.Events\.CmdletProcessRecordAsyncEnd\);)/gmi
         let catchAllExceptionImplementation = '((Runtime.IEventListener)this).Signal(Runtime.Events.CmdletException, $"{ex.GetType().Name} - {ex.Message} : {ex.StackTrace}").Wait(); if (((Runtime.IEventListener)this).Token.IsCancellationRequested) { return; } WriteError(new global::System.Management.Automation.ErrorRecord(ex, string.Empty, global::System.Management.Automation.ErrorCategory.NotSpecified, null));'
         $ = $.replace(processAsyncFinallyRegex, `catch (System.Exception ex){${catchAllExceptionImplementation}}\n$1`);
 
@@ -603,7 +602,7 @@ directive:
           $ = $.replace(odataNextLinkRegex, '$1while (_nextLink != null && this.ShouldIteratePages(this.InvocationInformation.BoundParameters, result.Value.Length))\n$1');
 
           let psBaseClassImplementationRegex = /(\s*:\s*)(global::System.Management.Automation.PSCmdlet)/gmi
-          $ = $.replace(psBaseClassImplementationRegex, '$1Microsoft.Graph.PowerShell.Cmdlets.Custom.ListCmdlet');
+          $ = $.replace(psBaseClassImplementationRegex, '$1PowerShell.Cmdlets.Custom.ListCmdlet');
 
           let beginProcessingRegex = /(^\s*)(protected\s*override\s*void\s*BeginProcessing\(\)\s*{)/gmi
           let topPlaceholder = (!$.includes("private int _top;")) ? 'int _top = default;': ''
@@ -658,7 +657,7 @@ directive:
         if($.match(streamBodyParameterRegex)) {
           // Replace base class with FileUploadCmdlet.
           let psBaseClassImplementationRegex = /(\s*:\s*)(global::System.Management.Automation.PSCmdlet)/gmi
-          $ = $.replace(psBaseClassImplementationRegex, '$1Microsoft.Graph.PowerShell.Cmdlets.Custom.FileUploadCmdlet');
+          $ = $.replace(psBaseClassImplementationRegex, '$1PowerShell.Cmdlets.Custom.FileUploadCmdlet');
 
           // Set bodyParameter to required to false.
           let streamBodyParameterAnnotation = /(global::System\.IO\.Stream _bodyParameter;\s*\[global::System\.Management\.Automation\.Parameter\(Mandatory\s*=\s*)(true)/gmi

@@ -38,16 +38,16 @@ directive:
   #     variant: ^Get$|^GetViaIdentity$|^Get2$|^GetViaIdentity2$
   #   set:
   #     subject: $1ByPath
-  - where:
-      verb: Get
-      subject: (^SiteActivity$)
-    set:
-      subject: $1ByInterval
-  - where:
-      verb: Get
-      subject: (^SiteListItemActivity$)
-    set:
-      subject: $1ByInterval
+  # - where:
+  #     verb: Get
+  #     subject: (^SiteActivity$)
+  #   set:
+  #     subject: $1ByInterval
+  # - where:
+  #     verb: Get
+  #     subject: (^SiteListItemActivity$)
+  #   set:
+  #     subject: $1ByInterval
   - where:
       verb: Get
       subject: ^(Site)OnenoteNotebook(RecentNotebook$)
