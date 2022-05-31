@@ -24,19 +24,6 @@ directive:
       verb: Get
       subject: ReportTenantSecureScore
     remove: true
-# Rename cmdlets
-  # - where:
-  #     verb: Get
-  #     subject: (^ReportDailyPrintUsageSummary$|^ReportMonthlyPrintUsageSummary$)
-  #     variant: ^Get$|^GetViaIdentity$|^List$
-  #   set:
-  #     subject: $1ByPrinter
-  # - where:
-  #     verb: Get
-  #     subject: (^ReportDailyPrintUsageSummary$|^ReportMonthlyPrintUsageSummary$)
-  #     variant: ^Get1$|^GetViaIdentity1$|^List1$
-  #   set:
-  #     subject: $1ByUser
   - where:
       verb: Invoke
       subject: ^TopReport$

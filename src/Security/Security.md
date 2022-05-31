@@ -29,31 +29,18 @@ directive:
       subject: ^SecurityAttackSimulation$
     remove: true
 # Rename cmdlets
-# TODO: Clean up
-  # - where:
-  #     verb: Remove
-  #     subject: ^(SecurityTiIndicator)$
-  #     variant: Delete2|DeleteExpanded1
-  #   set:
-  #     subject: $1ByExternalId
-  # - where:
-  #     verb: Remove
-  #     subject: ^(SecurityTiIndicator)$
-  #     variant: Delete1|DeleteExpanded
-  #   set:
-  #     subject: $1Multiple
-  # - where:
-  #     verb: Update
-  #     subject: ^(SecurityAlert)$
-  #     variant: Update2|UpdateExpanded2
-  #   set:
-  #     subject: $1Multiple
-  # - where:
-  #     verb: Update
-  #     subject: ^(SecurityTiIndicator)$
-  #     variant: Update1|UpdateExpanded1
-  #   set:
-  #     subject: $1Multiple
+  - where:
+      verb: Remove
+      subject: ^(SecurityTiIndicator)$
+      variant: Delete1|^DeleteExpanded$
+    set:
+      subject: $1Multiple
+  - where:
+      verb: Update
+      subject: ^(SecurityAlert|SecurityTiIndicator)$
+      variant: Update1|UpdateExpanded1
+    set:
+      subject: $1Multiple
 ```
 
 ### Versioning

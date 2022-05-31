@@ -17,11 +17,6 @@ require:
 
 ``` yaml
 directive:
-# Pluralize
-  # - where:
-  #     subject: (.*)OnPremisConnection(.*)
-  #   set:
-  #     subject: $1OnPremisesConnection$2
 # Remove cmdlets.
   - where:
       verb: New

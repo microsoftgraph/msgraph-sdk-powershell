@@ -32,10 +32,15 @@ $TweakOpenApiPs1 = Join-Path $PSScriptRoot ".\TweakOpenApi.ps1" -Resolve
 if (-not (Test-Path $ModuleMappingConfigPath)) {
     Write-Error "Module mapping file not be found: $ModuleMappingConfigPath."
 }
+$v1Excludes = @("WindowsUpdates")
 $Stopwatch = [system.diagnostics.stopwatch]::StartNew()
 [HashTable] $ModuleMapping = Get-Content $ModuleMappingConfigPath | ConvertFrom-Json -AsHashTable
 $ModuleMapping.Keys | ForEach-Object -Begin { $RequestCount = 0 } -End { Write-Debug "Requests: $RequestCount" } -Process {
     $ModuleName = $_
+    if ($v1Excludes -contains $ModuleName -and $GraphVersion -eq "v1.0") {
+        # Skip v1.0 excludes.
+        continue
+    }
     $ForceRefresh = $false
     # Check whether ForceRefresh is required, Only required for the First Request.
     if ($RequestCount -eq 0) {

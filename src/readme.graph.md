@@ -434,9 +434,14 @@ directive:
       subject: ^(\w*[a-z])GraphOPre(\w*)$
     set:
       subject: $1Of$2
-# Remove *AvailableExtensionProperty commands except that bound to DirectoryObject.
+# Remove *AvailableExtensionProperty commands except those bound to DirectoryObject.
   - where:
       subject: ^(?!DirectoryObject).*AvailableExtensionProperty$
+    remove: true
+  - where:
+      verb: Clear
+      subject: ^UserManagedAppRegistrationByDeviceTag$
+      variant: ^Wipe1$|^WipeExpanded1$|^WipeViaIdentity1$|^WipeViaIdentityExpanded1$
     remove: true
 # Remove *ByRef commands
   # - where:

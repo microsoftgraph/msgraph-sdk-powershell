@@ -24,30 +24,12 @@ directive:
       verb: Remove|New
       subject: ^Site$
     remove: true
-# Rename cmdlets
-# TODO: Clean up
-  # - where:
-  #     verb: Get
-  #     subject: ^Site$
-  #     variant: ^List$|^List2$
-  #   set:
-  #     subject: SubSite
-  # - where:
-  #     verb: Get
-  #     subject: (^Site$)
-  #     variant: ^Get$|^GetViaIdentity$|^Get2$|^GetViaIdentity2$
-  #   set:
-  #     subject: $1ByPath
-  # - where:
-  #     verb: Get
-  #     subject: (^SiteActivity$)
-  #   set:
-  #     subject: $1ByInterval
-  # - where:
-  #     verb: Get
-  #     subject: (^SiteListItemActivity$)
-  #   set:
-  #     subject: $1ByInterval
+  - where:
+      verb: Get
+      subject: ^Site$
+      variant: ^List1$
+    set:
+      subject: SubSite
   - where:
       verb: Get
       subject: ^(Site)OnenoteNotebook(RecentNotebook$)

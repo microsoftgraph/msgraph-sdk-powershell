@@ -149,6 +149,10 @@ $ModulesToGenerate | ForEach-Object {
                     & $BuildModulePS1 -ModuleFullName $ModuleFullName -ModuleSrc $ModuleProjectPath -ModuleVersion $ModuleVersion -ModulePreviewNumber $ModulePreviewNumber -RequiredModules $RequiredGraphModules -ReleaseNotes $ModuleReleaseNotes -ExcludeExampleTemplates:$ExcludeExampleTemplates -ExcludeNotesSection:$ExcludeNotesSection
                 }
                 & $CleanUpPsm1 -ModuleProjectPath $ModuleProjectPath -FullyQualifiedModuleName $ModuleFullName
+                if ($lastexitcode -ne 0) {
+                    Write-Host -ForegroundColor Red "Failed to build '$ModuleFullName' module."
+                    exit $lastexitcode
+                }
             }
 
             if ($Test) {

@@ -20,32 +20,10 @@ directive:
 # Remove invalid paths.
   - remove-path-by-operation: .*exceptionOccurrences.*|users\.onenote\..*.parent.*|users.*\.calendarView.*|.*\.notebooks\.section.*|.*\.sectionGroups\.section.*|.*\.sections\.pages.*|users\.calendar\.events.*|users\.calendarGroups\.calendars.*|users\.calendars\.events.*|users\.events\.calendar\.events.*|users\.pendingAccessReviewInstances\.stages\.decisions.*
 # Remove cmdlets.
-# TODO: Clean up
-  # - where:
-  #     verb: Clear
-  #     subject: ^UserManagedAppRegistration$
-  #     variant: ^Wipe(1|2)$|^WipeExpanded(1|2)$|^WipeViaIdentity(1|2)$|^WipeViaIdentityExpanded(1|2)$
-  #   remove: true
   - where:
       verb: Get
       subject: ^(UserOnlineMeeting)$
     remove: true
-# Rename
-  # - where:
-  #     verb: Clear
-  #     subject: ^(UserManagedAppRegistration)$
-  #   set:
-  #     subject: $1ByDeviceTag
-  # - where:
-  #     verb: Get
-  #     subject: ^(User)$
-  #   set:
-  #     subject: $1ById
-  # - where:
-  #     verb: Get
-  #     subject: ^(UserOwnedObject)$
-  #   set:
-  #     subject: $1ByType
   - where:
       verb: New
       subject: ^(UserOnlineMeeting)$
@@ -63,31 +41,24 @@ directive:
     set:
       verb: Update
       subject: $1
-# TODO: Clean up
-  # - where:
-  #     verb: Get
-  #     subject: ^(User)(CalendarSchedule)$
-  #     variant: ^Get$|^GetExpanded$|^GetViaIdentity$|^GetViaIdentityExpanded$|Get2$|^GetExpanded2$|^GetViaIdentity2$|^GetViaIdentityExpanded2$
-  #   set:
-  #     subject: $1Default$2
-  # - where:
-  #     verb: Invoke
-  #     subject: ^(DismissUser)(CalendarEventInstanceReminder)$
-  #     variant: ^Dismiss$|^DismissViaIdentity$|Dismiss3$|^DismissViaIdentity3$
-  #   set:
-  #     subject: $1Default$2
-  # - where:
-  #     verb: Invoke
-  #     subject: ^(Reply)(UserMessage|UserMailFolderMessage)$
-  #     variant: ^Reply1$|^ReplyExpanded1$|^ReplyViaIdentity1$|^ReplyViaIdentityExpanded1$|^Reply3$|^ReplyExpanded3$|^ReplyViaIdentity3$|^ReplyViaIdentityExpanded3$
-  #   set:
-  #     subject: $1All$2
-  # - where:
-  #     verb: New
-  #     subject: ^(User)(MessageReply|MailFolderMessageReply)$
-  #     variant: ^Create1$|^CreateExpanded1$|^CreateViaIdentity1$|^CreateViaIdentityExpanded1$|^Create3$|^CreateExpanded3$|^CreateViaIdentity3$|^CreateViaIdentityExpanded3$
-  #   set:
-  #     subject: $1$2All
+  - where:
+      verb: Get
+      subject: ^(User)(CalendarSchedule)$
+      variant: ^Get$|^GetExpanded$|^GetViaIdentity$|^GetViaIdentityExpanded$
+    set:
+      subject: $1Default$2
+  - where:
+      verb: Invoke
+      subject: ^(Reply)(UserMessage|UserMailFolderMessage)$
+      variant: ^Reply1$|^ReplyExpanded1$|^ReplyViaIdentity1$|^ReplyViaIdentityExpanded1$
+    set:
+      subject: $1All$2
+  - where:
+      verb: New
+      subject: ^(User)(MessageReply|MailFolderMessageReply)$
+      variant: ^Create1$|^CreateExpanded1$|^CreateViaIdentity1$|^CreateViaIdentityExpanded1$
+    set:
+      subject: $1$2All
   # https://docs.microsoft.com/en-us/graph/api/resources/intune-devices-devicelogcollectionresponse?view=graph-rest-beta
   - where:
       verb: New

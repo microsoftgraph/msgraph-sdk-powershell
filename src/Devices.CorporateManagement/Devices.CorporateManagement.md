@@ -25,39 +25,23 @@ directive:
     set:
       subject: $1
 # Rename cmdlets.
-# TODO: Clean up
-  # - where:
-  #     verb: Update
-  #     subject: ^(DeviceAppManagement)(MobileAppRelationship)$
-  #     variant: ^Update$|^UpdateExpanded$|^UpdateViaIdentity$|^UpdateViaIdentityExpanded$
-  #   set:
-  #     subject: $1Multiple$2
+  - where:
+      verb: Update
+      subject: ^(DeviceAppManagement)(MobileAppRelationship)$
+      variant: ^Update$|^UpdateExpanded$|^UpdateViaIdentity$|^UpdateViaIdentityExpanded$
+    set:
+      subject: $1Multiple$2
   # https://docs.microsoft.com/en-us/graph/api/resources/intune-devices-devicelogcollectionresponse?view=graph-rest-beta
   - where:
       subject: ^(UserManagedDeviceLogCollection)(Request)$
     set:
       subject: $1Response
-# TODO: Clean up
-  # - where:
-  #     verb: Update
-  #     subject: ^(DeviceAppManagement)(PolicySet)$
-  #     variant: ^Update1$|^UpdateExpanded1$|^UpdateViaIdentity1$|^UpdateViaIdentityExpanded1$
-  #   set:
-  #     subject: $1Multiple$2
-  # - where:
-  #     subject: Io(Lob|Managed)
-  #   set:
-  #     subject: iOS$1
-# Rename DeviceAppManagement* cmdlets to DeviceAppMgt*. Alias DeviceAppMgt* to DeviceAppManagement*.
-# This should always be the last directive.
-  # - where:
-  #     subject: ^DeviceAppManagement.*
-  #   set:
-  #     alias: ${verb}-Mg${subject}
-  # - where:
-  #     subject: (.*)(DeviceAppManagement)(.*)
-  #   set:
-  #     subject: $1DeviceAppMgt$3
+  - where:
+      verb: Update
+      subject: ^(DeviceAppManagement)(PolicySet)$
+      variant: ^Update1$|^UpdateExpanded1$|^UpdateViaIdentity1$|^UpdateViaIdentityExpanded1$
+    set:
+      subject: $1Multiple$2
 # Rename cmdlets.
   - where:
       subject: ^(Office)(Configuration)(ClientConfiguration.*)

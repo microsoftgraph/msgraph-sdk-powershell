@@ -16,14 +16,12 @@ require:
 > see https://github.com/Azure/autorest/blob/master/docs/powershell/directives.md
 
 ``` yaml
-# directive:
-# Remove cmdlets
-# TODO: Clean up
-  # - where:
-  #     verb: New
-  #     subject: PrintPrinter
-  #     variant: Create|CreateExpanded
-  #   remove: true
+directive:
+  - where:
+      verb: New
+      subject: PrintPrinter
+      variant: ^Create$|^CreateExpanded$
+    remove: true
 ```
 
 ### Versioning

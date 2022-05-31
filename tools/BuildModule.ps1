@@ -42,7 +42,7 @@ else {
 
 # Build module
 Write-Debug "Building '$ModuleFullName' module..."
-. $BuildModulePS1 -Docs -Release -ExcludeExampleTemplates:$ExcludeExampleTemplates -ExcludeNotesSection:$ExcludeNotesSection
+& $BuildModulePS1 -Docs -Release -ExcludeExampleTemplates:$ExcludeExampleTemplates -ExcludeNotesSection:$ExcludeNotesSection
 if ($lastexitcode -ne 0) {
     Write-Debug "Failed to build '$ModuleFullName' module."
     exit $lastexitcode
