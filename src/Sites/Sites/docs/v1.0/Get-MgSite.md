@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgSite
 
 ## SYNOPSIS
-Invoke function getByPath
+Get entity from sites by key
 
 ## SYNTAX
 
@@ -19,18 +19,19 @@ Get-MgSite [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>
  [<CommonParameters>]
 ```
 
-### Get2
+### Get1
 ```
-Get-MgSite -Path <String> -SiteId <String> [<CommonParameters>]
+Get-MgSite -SiteId <String> [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
-### GetViaIdentity2
+### GetViaIdentity1
 ```
-Get-MgSite -InputObject <ISitesIdentity> [<CommonParameters>]
+Get-MgSite -InputObject <ISitesIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Invoke function getByPath
+Get entity from sites by key
 
 ## EXAMPLES
 
@@ -72,7 +73,7 @@ Expand related entities
 
 ```yaml
 Type: System.String[]
-Parameter Sets: List1
+Parameter Sets: (All)
 Aliases: Expand
 
 Required: False
@@ -103,7 +104,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.ISitesIdentity
-Parameter Sets: GetViaIdentity2
+Parameter Sets: GetViaIdentity1
 Aliases:
 
 Required: True
@@ -128,27 +129,12 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Path
-Usage: path={path}
-
-```yaml
-Type: System.String
-Parameter Sets: Get2
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Property
 Select properties to be returned
 
 ```yaml
 Type: System.String[]
-Parameter Sets: List1
+Parameter Sets: (All)
 Aliases: Select
 
 Required: False
@@ -178,7 +164,7 @@ key: id of site
 
 ```yaml
 Type: System.String
-Parameter Sets: Get2
+Parameter Sets: Get1
 Aliases:
 
 Required: True
