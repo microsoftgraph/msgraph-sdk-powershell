@@ -54,12 +54,7 @@ UserPrincipalName : AdeleV@contoso.com
 
 This command returns a list of all users.
 
-One of the following permissions is required to run this cmdlet;
-
-|Permission type| Recommended Permissions| Other Permissions|
-|-----|------|------|
-|Delegated (work or school account)|User.ReadBasic.All, User.Read.All| User.ReadWrite.All, Directory.Read.All|
-|Application|User.Read.All|User.ReadWrite.All, Directory.Read.All|
+To learn about other permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 To consent to any of these permissions run `Connect-MgGraph -Scopes Permission`.
 For example, `Connect-MgGraph -Scopes User.ReadBasic.All, User.Read.All`.
@@ -78,12 +73,7 @@ UserPrincipalName : Adams@contoso.com
 
 This command gets the specified user.
 
-One of the following permissions is required to run this cmdlet;
-
-|Permission type| Recommended Permissions| Other Permissions|
-|-----|------|------|
-|Delegated (work or school account)|User.ReadBasic.All, User.Read.All| User.ReadWrite.All, Directory.Read.All|
-|Application|User.Read.All|User.ReadWrite.All, Directory.Read.All|
+To learn about other permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 To consent to any of these permissions run `Connect-MgGraph -Scopes Permission`.
 For example, `Connect-MgGraph -Scopes User.ReadBasic.All, User.Read.All`.
@@ -109,12 +99,7 @@ The $userCount variable contains the count of the objects in the result.
 Advanced query requires the ConsistencyLevel parameter set to `eventual` and the Count parameter in the command.
 For more information about *ConsistencyLevel* and *Count*, see [Advanced query capabilities on Azure AD directory objects](/graph/aad-advanced-queries).
 
-One of the following permissions is required to run this cmdlet;
-
-|Permission type| Recommended Permissions| Other Permissions|
-|-----|------|------|
-|Delegated (work or school account)|User.ReadBasic.All, User.Read.All| User.ReadWrite.All, Directory.Read.All|
-|Application|User.Read.All|User.ReadWrite.All, Directory.Read.All|
+To learn about other permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 To consent to any of these permissions run `Connect-MgGraph -Scopes Permission`.
 For example, `Connect-MgGraph -Scopes User.ReadBasic.All, User.Read.All`.
@@ -134,12 +119,7 @@ The $userCount variable contains the count of the objects in the result.
 Advanced query requires the ConsistencyLevel parameter set to `eventual` and the Count parameter in the command.
 For more information about *ConsistencyLevel* and *Count*, see [Advanced query capabilities on Azure AD directory objects](/graph/aad-advanced-queries).
 
-One of the following permissions is required to run this cmdlet;
-
-|Permission type| Recommended Permissions| Other Permissions|
-|-----|------|------|
-|Delegated (work or school account)|User.ReadBasic.All, User.Read.All| User.ReadWrite.All, Directory.Read.All|
-|Application|User.Read.All|User.ReadWrite.All, Directory.Read.All|
+To learn about other permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 To consent to any of these permissions run `Connect-MgGraph -Scopes Permission`.
 For example, `Connect-MgGraph -Scopes User.ReadBasic.All, User.Read.All`.
@@ -163,12 +143,7 @@ The $userCount variable contains the count of the objects in the result.
 Advanced query requires the ConsistencyLevel parameter set to `eventual` and the Count parameter in the command.
 For more information about *ConsistencyLevel* and *Count*, see [Advanced query capabilities on Azure AD directory objects](/graph/aad-advanced-queries).
 
-One of the following permissions is required to run this cmdlet;
-
-|Permission type| Recommended Permissions| Other Permissions|
-|-----|------|------|
-|Delegated (work or school account)|User.ReadBasic.All, User.Read.All| User.ReadWrite.All, Directory.Read.All|
-|Application|User.Read.All|User.ReadWrite.All, Directory.Read.All|
+To learn about other permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 To consent to any of these permissions run `Connect-MgGraph -Scopes Permission`.
 For example, `Connect-MgGraph -Scopes User.ReadBasic.All, User.Read.All`.
@@ -192,12 +167,7 @@ The $userCount variable contains the count of the objects in the result.
 Advanced query requires the ConsistencyLevel parameter set to `eventual` and the Count parameter in the command.
 For more information about *ConsistencyLevel* and *Count*, see [Advanced query capabilities on Azure AD directory objects](/graph/aad-advanced-queries).
 
-One of the following permissions is required to run this cmdlet;
-
-|Permission type| Recommended Permissions| Other Permissions|
-|-----|------|------|
-|Delegated (work or school account)|User.ReadBasic.All, User.Read.All| User.ReadWrite.All, Directory.Read.All|
-|Application|User.Read.All|User.ReadWrite.All, Directory.Read.All|
+To learn about other permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 To consent to any of these permissions run `Connect-MgGraph -Scopes Permission`.
 For example, `Connect-MgGraph -Scopes User.ReadBasic.All, User.Read.All`.

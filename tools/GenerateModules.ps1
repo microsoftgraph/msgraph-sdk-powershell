@@ -17,7 +17,7 @@ Param(
     [switch] $Isolated
 )
 $ErrorActionPreference = 'Stop'
-$MaxMemorySize = 16384
+$MaxMemorySize = 32768
 
 if ($PSEdition -ne 'Core') {
     Write-Error 'This script requires PowerShell Core to execute. [Note] Generated cmdlets will work in both PowerShell Core or Windows PowerShell.'
@@ -38,7 +38,7 @@ if (!(Get-Module -Name powershell-yaml -ListAvailable)) {
     Install-Module powershell-yaml -Repository PSGallery -Scope CurrentUser -Force
 }
 
-# Set NODE max memory to 8 Gb.
+# Set NODE max heap size to 32 Gb. This is assuming the VM has this memory.
 $ENV:NODE_OPTIONS = "--max-old-space-size=$MaxMemorySize"
 $ModulePrefix = "Microsoft.Graph"
 $ScriptRoot = $PSScriptRoot
