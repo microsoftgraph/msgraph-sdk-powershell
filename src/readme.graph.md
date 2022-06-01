@@ -24,7 +24,6 @@ metadata:
 
 ``` yaml
 prefix: Mg
-module-name: $(service-name)
 subject-prefix: ''
 sanitize-names: false
 ```
@@ -443,52 +442,6 @@ directive:
       subject: ^UserManagedAppRegistrationByDeviceTag$
       variant: ^Wipe1$|^WipeExpanded1$|^WipeViaIdentity1$|^WipeViaIdentityExpanded1$
     remove: true
-# Remove *ByRef commands
-  # - where:
-  #     verb: Get|Remove|New
-  #     subject: ^UserPlanner(FavoritePlanByRef|RecentPlanByRef|RosterPlanByRef)$
-  #   remove: true
-# Rename *ByRef commands
-#TODO: Clean-up.
-  # - where:
-  #     verb: Get|New
-  #     subject: ^GroupMemberByRef$
-  #     variant: ^List2$|^Create2$|^CreateExpanded2$|^CreateViaIdentity2$|^CreateViaIdentityExpanded2$|^List5$|^Create5$|^CreateExpanded5$|^CreateViaIdentity5$|^CreateViaIdentityExpanded5$
-  #   set:
-  #     subject: GroupMemberOfByRef
-  # - where:
-  #     verb: Get|New
-  #     subject: ^GroupMemberByRef$
-  #     variant: ^List1$|^Create1$|^CreateExpanded1$|^CreateViaIdentity1$|^CreateViaIdentityExpanded1$|^List4$|^Create4$|^CreateExpanded4$|^CreateViaIdentity4$|^CreateViaIdentityExpanded4$
-  #   set:
-  #     subject: GroupMemberWithLicenseErrorByRef
-  # - where:
-  #     verb: Get|New
-  #     subject: ^GroupTransitiveMemberByRef$
-  #     variant: ^List$|^List2$|^Create$|^Create2$|^CreateExpanded$|^CreateExpanded2$|^CreateViaIdentity$|^CreateViaIdentity2$|^CreateViaIdentityExpanded$|^CreateViaIdentityExpanded2$
-  #   set:
-  #     subject: GroupTransitiveMemberOfByRef
-#   - where:
-#       subject: ^SiteSite(ByRef)$
-#     set:
-#       subject: SubSite$1
-# # Alias then rename cmdlets to avoid breaking change.
-#   - where:
-#       subject: ^(User|ServicePrincipal|Contact|Device)(Member|TransitiveMember)ByRef$
-#     set:
-#       alias: ${verb}-Mg${subject}
-#   - where:
-#       subject: ^(User|ServicePrincipal|Contact|Device)(Member|TransitiveMember)ByRef$
-#     set:
-#       subject: $1$2OfByRef
-#   - where:
-#       subject: ^(Application|Group)(CreatedOnBehalf)ByRef$
-#     set:
-#       alias: ${verb}-Mg${subject}
-#   - where:
-#       subject: ^(Application|Group)(CreatedOnBehalf)ByRef$
-#     set:
-#       subject: $1$2OfByRef
 # Modify generated .json.cs model classes.
   - from: source-file-csharp
     where: $

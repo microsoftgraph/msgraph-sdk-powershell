@@ -21,13 +21,13 @@ directive:
   - from: source-file-csharp
     where: $
     transform: >
-      if (!$documentPath.match(/generated%2Fcmdlets%2F(NewMgUserProfileProject_Create(Expanded|ViaIdentityExpanded)|UpdateMgUserProfileProject_Update(Expanded|ViaIdentityExpanded))\d*.cs/gm))
+      if (!$documentPath.match(/generated%2Fcmdlets%2F(New(Mg|MgBeta)UserProfileProject_Create(Expanded|ViaIdentityExpanded)|Update(Mg|MgBeta)UserProfileProject_Update(Expanded|ViaIdentityExpanded))\d*.cs/gm))
       {
         return $;
       } else {
         // Rename Client to ServiceClient to avoid conflict with "Client" property in "People" entity.
-        let serviceClientRegex = /(public\s*Microsoft.Graph.PowerShell.People\s*)(Client\s*=>)/gmi
-        $ = $.replace(serviceClientRegex, "$1Service$2");
+        let serviceClientRegex = /(public\s*Microsoft.(Graph|Graph.Beta).PowerShell.People\s*)(Client\s*=>)/gmi
+        $ = $.replace(serviceClientRegex, "$1Service$3");
 
         let serviceClientCallRegex = /(this.)(Client.UsersProfile(Create|Update)Projects)/gmi
         $ = $.replace(serviceClientCallRegex, "$1Service$2");

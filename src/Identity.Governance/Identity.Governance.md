@@ -19,22 +19,10 @@ require:
 directive:
   - remove-path-by-operation: ^identityGovernance_(Get|Create|Update|Set|Delete)EntitlementManagement$|^identityGovernance\.entitlementManagement(_.*AccessPackageResourceRoleScopes|\.accessPackageResourceRoleScopes.*|\.accessPackageAssignmentPolicies\..*|\.accessPackageAssignmentRequests\..*|\.accessPackageAssignmentResourceRoles\..*|\.accessPackageAssignments\..*|\.accessPackageCatalogs\..*|\.accessPackageResourceRequests\..*|\.accessPackageResources\..*|\.accessPackages\..*)|^identityGovernance\.accessReviews\.definitions\.instances\.decisions\.(instance_.*)|^identityGovernance\.accessReviews\.definitions\.instances\.stages\.decisions.*$
 # Remove cmdlets
-# TODO: Clean up
-  # - where:
-  #     verb: Get
-  #     subject: ^AgreementFile$
-  #     variant: ^Get1|Get3|GetViaIdentity1|GetViaIdentity3$
-  #   remove: true
-  # - where:
-  #     verb: Update
-  #     subject: ^AgreementFile$
-  #     variant: ^Update1|Update3|UpdateExpanded1|UpdateExpanded3|UpdateViaIdentity1|UpdateViaIdentity3|UpdateViaIdentityExpanded1|UpdateViaIdentityExpanded3$
-  #   remove: true
-  # - where:
-  #     verb: Remove
-  #     subject: ^AgreementFile$
-  #     variant: ^Delete1|Delete3|DeleteViaIdentity1|DeleteViaIdentity3$
-  #   remove: true
+  - where:
+      subject: ^AgreementFile$
+      variant: ^Get1$|^GetViaIdentity1$|^Update1$|^UpdateExpanded1$|^UpdateViaIdentity1$|^UpdateViaIdentityExpanded1$|^Delete1$|^DeleteViaIdentity1$
+    remove: true
   - where:
       verb: Get|Remove|Set
       subject: (.*)(EntitlementManagement)AccessPackageRefAccessPackageCatalog$
@@ -219,17 +207,16 @@ directive:
       verb: New|Invoke|Remove|Update
       subject: (.*)(EntitlementManagement)AccessPackageAssignmentResourceRole$
     remove: true
-# TODO: Clean up
-  # - where:
-  #     verb: New|Remove|Update|Get
-  #     subject: (.*)(EntitlementManagement)AccessPackageCatalogAccessPackageResourceRole$
-  #     variant: (Create.*|Delete.*|Update.*|Get.*) # Removes all variants except List.*
-  #   remove: true
-  # - where:
-  #     verb: New|Remove|Update|Get
-  #     subject: (.*)(EntitlementManagement)AccessPackageCatalogAccessPackageResourceScope$
-  #     variant: (Create.*|Delete.*|Update.*|Get.*)
-  #   remove: true
+  - where:
+      verb: New|Remove|Update|Get
+      subject: (.*)(EntitlementManagement)AccessPackageCatalogAccessPackageResourceRole$
+      variant: (Create.*|Delete.*|Update.*|Get.*) # Removes all variants except List.*
+    remove: true
+  - where:
+      verb: New|Remove|Update|Get
+      subject: (.*)(EntitlementManagement)AccessPackageCatalogAccessPackageResourceScope$
+      variant: (Create.*|Delete.*|Update.*|Get.*)
+    remove: true
   - where:
       verb: New|Remove|Update
       subject: (.*)(EntitlementManagement)AccessPackageResource$
@@ -242,22 +229,21 @@ directive:
       verb: Search
       subject: (.*)(EntitlementManagement)AccessPackage$
     remove: true
-# TODO: Clean up
-  # - where:
-  #     verb: Search|Get|New|Remove|Update
-  #     subject: (.*)(EntitlementManagement)AccessPackageCatalog$
-  #     variant: ^(Search.*|Get1|List1|GetViaIdentity1|Create1|CreateExpanded1|CreateViaIdentity|CreateViaIdentityExpanded|Update1|UpdateExpanded1|UpdateViaIdentity1|UpdateViaIdentityExpanded1|Delete1|DeleteViaIdentity1)$
-  #   remove: true
-  # - where:
-  #     verb: New|Remove|Update|Get
-  #     subject: (.*)(EntitlementManagement)AccessPackageCatalogAccessPackageResource$
-  #     variant: (Create.*|Delete.*|Update.*|Get.*)
-  #   remove: true
-  # - where:
-  #     verb: Get|New|Remove|Update
-  #     subject: (.*)(EntitlementManagement)AccessPackageAssignmentPolicy$
-  #     variant: ^(Get1|List1|GetViaIdentity1|Create1|CreateExpanded1|CreateViaIdentity|CreateViaIdentityExpanded|Update1|UpdateExpanded1|UpdateViaIdentity1|UpdateViaIdentityExpanded1|Delete1|DeleteViaIdentity1)$
-  #   remove: true
+  - where:
+      verb: Search|Get|New|Remove|Update
+      subject: (.*)(EntitlementManagement)AccessPackageCatalog$
+      variant: ^(Search.*|Get1|List1|GetViaIdentity1|Create1|CreateExpanded1|CreateViaIdentity|CreateViaIdentityExpanded|Update1|UpdateExpanded1|UpdateViaIdentity1|UpdateViaIdentityExpanded1|Delete1|DeleteViaIdentity1)$
+    remove: true
+  - where:
+      verb: New|Remove|Update|Get
+      subject: (.*)(EntitlementManagement)AccessPackageCatalogAccessPackageResource$
+      variant: (Create.*|Delete.*|Update.*|Get.*)
+    remove: true
+  - where:
+      verb: Get|New|Remove|Update
+      subject: (.*)(EntitlementManagement)AccessPackageAssignmentPolicy$
+      variant: ^(Get1|List1|GetViaIdentity1|Create1|CreateExpanded1|CreateViaIdentity|CreateViaIdentityExpanded|Update1|UpdateExpanded1|UpdateViaIdentity1|UpdateViaIdentityExpanded1|Delete1|DeleteViaIdentity1)$
+    remove: true
   - where:
       verb: Remove
       subject: (.*)(EntitlementManagement)Setting$

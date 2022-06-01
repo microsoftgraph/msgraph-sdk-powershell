@@ -68,8 +68,6 @@ if ($ModulePreviewNumber -eq -1) {
     $AllowPreRelease = $false
 }
 $RequiredGraphModules = @()
-
-# TODO: Consider extracting auth module version from ~/src/Authentication/Authentication/Microsoft.Graph.Authentication.psd1. $RepositoryName won't be needed in this case.
 # Install module locally in order to specify it as a dependency for other modules down the generation pipeline.
 # https://stackoverflow.com/questions/46216038/how-do-i-define-requiredmodules-in-a-powershell-module-manifest-psd1.
 $ExistingAuthModule = Find-Module "Microsoft.Graph.Authentication" -Repository $RepositoryName -AllowPrerelease:$AllowPreRelease
@@ -126,13 +124,13 @@ $ModulesToGenerate | ForEach-Object {
             }
 
             if ($SkipGeneration) {
-                Write-Warning "Skipping generation of '$ModuleFullName' module."
+                Write-Warning "Skipping generation of '$ModuleFullName - $ApiVersion' module."
             }
             else {
-                npx autorest --max-memory-size=$MaxMemorySize --module-version:$ModuleVersion --service-name:$ModuleFullName --input-file:$OpenApiFile $AutoRestModuleConfig
-                if ($lastexitcode -ne 0) {
+                npx autorest --max-memory-size=$MaxMemorySize --module-version:$ModuleVersion --module-name:$ModuleFullName --service-name:$Module --input-file:$OpenApiFile $AutoRestModuleConfig
+                if ($LastExitCode -ne 0) {
                     Write-Host -ForegroundColor Red "AutoREST failed to generate '$ModuleFullName' module."
-                    exit $lastexitcode
+                    exit $LastExitCode
                 }
                 Write-Debug "AutoRest generated '$ModuleFullName' successfully."
 
@@ -140,6 +138,7 @@ $ModulesToGenerate | ForEach-Object {
                 Write-Debug "Managing '$ModuleFullName' module..."
                 & $ManageGeneratedModulePS1 -ModuleName $ModuleFullName -ModuleSrc $ModuleProjectPath -NamespacePrefix $NamespacePrefix
             }
+
             if ($Build) {
                 # Build generated module.
                 if ($EnableSigning) {
@@ -149,9 +148,9 @@ $ModulesToGenerate | ForEach-Object {
                     & $BuildModulePS1 -ModuleFullName $ModuleFullName -ModuleSrc $ModuleProjectPath -ModuleVersion $ModuleVersion -ModulePreviewNumber $ModulePreviewNumber -RequiredModules $RequiredGraphModules -ReleaseNotes $ModuleReleaseNotes -ExcludeExampleTemplates:$ExcludeExampleTemplates -ExcludeNotesSection:$ExcludeNotesSection
                 }
                 & $CleanUpPsm1 -ModuleProjectPath $ModuleProjectPath -FullyQualifiedModuleName $ModuleFullName
-                if ($lastexitcode -ne 0) {
+                if ($LastExitCode -ne 0) {
                     Write-Host -ForegroundColor Red "Failed to build '$ModuleFullName' module."
-                    exit $lastexitcode
+                    exit $LastExitCode
                 }
             }
 
@@ -160,9 +159,7 @@ $ModulesToGenerate | ForEach-Object {
             }
 
             if ($Pack) {
-                # TODO: Update PackModule script to use new project structure.
-                # Pack generated module.
-                #. $PackModulePS1 -Module $Module -ArtifactsLocation $ArtifactsLocation -ExcludeMarkdownDocsFromNugetPackage
+                & $PackModulePS1 -ModuleFullName $ModuleFullName -ModuleSrc $ModuleProjectPath -Module $Module -ArtifactsLocation $ArtifactsLocation -ExcludeMarkdownDocsFromNugetPackage
             }
         }
     }

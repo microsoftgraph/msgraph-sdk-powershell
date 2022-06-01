@@ -82,7 +82,7 @@ elseif ($VersionState.Equals([VersionState]::Valid) -or $VersionState.Equals([Ve
   }
 
   if ($Pack -or $Run) {
-    & $PackModulePS1 -Module $ModuleName -ArtifactsLocation $ArtifactsLocation
+    & $PackModulePS1 -ModuleFullName $ModuleFullName -ModuleSrc $AuthModulePath -Module $ModuleName -ArtifactsLocation $ArtifactsLocation
   }
 
   if ($Run) {

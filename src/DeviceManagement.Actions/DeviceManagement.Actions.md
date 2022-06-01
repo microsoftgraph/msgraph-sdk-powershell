@@ -40,21 +40,20 @@ directive:
     remove: true
 
 # Rename cmdlets.
-# TODO: Clean up
-  # - where:
-  #     verb: Get
-  #     subject: ^(DeviceManagementDeviceConfiguration)$
-  #     variant: ^Access$|^AccessExpanded$|^AccessViaIdentity$|^AccessViaIdentityExpanded$
-  #   set:
-  #     verb: Invoke
-  #     subject: $1AssignedAccessMultiModeProfile
-  # - where:
-  #     verb: Get
-  #     subject: ^(DeviceManagementDeviceConfiguration)$
-  #     variant: ^Access1$|^AccessExpanded1$|^AccessViaIdentity1$|^AccessViaIdentityExpanded1$
-  #   set:
-  #     verb: Invoke
-  #     subject: $1WindowsPrivacyAccessControl
+  - where:
+      verb: Get
+      subject: ^(DeviceManagementDeviceConfiguration)$
+      variant: ^Access$|^AccessExpanded$|^AccessViaIdentity$|^AccessViaIdentityExpanded$
+    set:
+      verb: Invoke
+      subject: $1AssignedAccessMultiModeProfile
+  - where:
+      verb: Get
+      subject: ^(DeviceManagementDeviceConfiguration)$
+      variant: ^Access1$|^AccessExpanded1$|^AccessViaIdentity1$|^AccessViaIdentityExpanded1$
+    set:
+      verb: Invoke
+      subject: $1WindowsPrivacyAccessControl
   - where:
       verb: Update
       subject: ^(DeviceManagementGroupPolicyConfiguration)(DefinitionValue)$
