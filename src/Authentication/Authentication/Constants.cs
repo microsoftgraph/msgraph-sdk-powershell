@@ -14,6 +14,5 @@ namespace Microsoft.Graph.PowerShell.Authentication
         internal const string AppParameterSet = "AppParameterSet";
         internal const string AccessTokenParameterSet = "AccessTokenParameterSet";
         internal static readonly string SettingFilePath = Path.Combine(Core.Constants.GraphDirectoryPath, "GraphContext.json");
-        internal const string ProfileDescription = "A snapshot of the Microsoft Graph {0} API for {1} cloud.";
     }
 }

@@ -54,12 +54,6 @@ namespace Microsoft.Graph.PowerShell.Authentication
         public SecureString UserProvidedToken { get; set; }
 
         /// <summary>
-        /// The name of the selected Microsoft Graph profile.
-        /// This defaults to v1.0-beta.
-        /// </summary>
-        public string SelectedProfile { get; set; } = Constants.DefaultProfile;
-
-        /// <summary>
         /// The selected national cloud environment.
         /// </summary>
         public IGraphEnvironment Environment { get; set; }
