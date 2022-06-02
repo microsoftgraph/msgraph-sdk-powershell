@@ -19,25 +19,6 @@ $AuthenticationProj = Join-Path $PSScriptRoot "..\src\Authentication\Authenticat
 $ModuleCsProj = Join-Path $ModuleSrc "$ModuleName.csproj"
 $CustomCodePath = Join-Path $PSScriptRoot "\Custom\"
 
-# if(-not (Test-Path "$GeneratedModuleSlnDir\$Module.sln")) {
-#     # Create new solution for generated module project.
-#     Write-Host -ForegroundColor Green "Executing: dotnet new sln -n $Module -o $GeneratedModuleSlnDir --force"
-#     dotnet new sln -n $Module -o $GeneratedModuleSlnDir --force
-#     if($LASTEXITCODE){
-#         Write-Error "Failed to create or update $Module solution."
-#         return
-#     }
-# }
-# $GeneratedModuleSln = Join-Path $GeneratedModuleSlnDir "$Module.sln"
-
-# # Add generated module project to solution.
-# Write-Debug "Executing: dotnet sln $GeneratedModuleSln add $GeneratedModuleProj"
-# dotnet sln $GeneratedModuleSln add $GeneratedModuleProj
-# if($LASTEXITCODE){
-#     Write-Error "Failed to execute: dotnet sln $GeneratedModuleSln add $GeneratedModuleProj"
-#     return
-# }
-
 # Add authentication project reference to generated module reference.
 Write-Debug "Executing: dotnet add $ModuleCsProj reference $AuthenticationProj"
 dotnet add $ModuleCsProj reference $AuthenticationProj | Out-Null
@@ -71,11 +52,3 @@ foreach ($Package in $NugetPackagesToAdd) {
         Write-Error "Failed to execute: dotnet add $ModuleCsProj package $Package"
     }
 }
-
-# Restore packages.
-# Write-Host -ForegroundColor Green "Executing: dotnet restore $GeneratedModuleSln"
-# dotnet restore $GeneratedModuleSln
-# if($LASTEXITCODE){
-#     Write-Error "Failed to execute: dotnet restore $GeneratedModuleSln"
-#     return
-# }
