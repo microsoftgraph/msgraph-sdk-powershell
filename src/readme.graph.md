@@ -509,6 +509,16 @@ directive:
         let propertiesToRemoveRegex = /^.*Microsoft\.Graph\.PowerShell\.Runtime\.IAssociativeArray<global::System\.Object>\.(Count|Keys|Values).*$/gm
         $ = $.replace(propertiesToRemoveRegex, '');
 
+        let classRegex = /((\s*)public\s*partial\s*class\s*MicrosoftGraph(NamedLocation).*\s.*\s*\{)/gm
+        if($.match(classRegex)) {
+          $ = $.replace(classRegex, `$1$2${toFirstUpperImplementation}`)
+
+          let toFirstUpperImplementation = 'internal string ToFirstCharacterLowerCase(string text) => System.String.IsNullOrEmpty(text) ? text : $"{char.ToLowerInvariant(text[0])}{text.Substring(1)}";'
+          
+          let directoryKeyRegex = /\.Add\((\s*property\.Key\.ToString\(\))/gm
+          $ = $.replace(directoryKeyRegex, '$1(ToFirstCharacterLowerCase($2)')
+        }
+
         return $;
       }
 # Modify generated .PowerShell.cs model classes.
