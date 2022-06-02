@@ -1,13 +1,13 @@
-﻿namespace Microsoft.Graph.Authentication.Test.Common
-{
-    using Microsoft.Graph.Authentication.Test.Mocks;
-    using Microsoft.Graph.PowerShell.Authentication;
-    using Microsoft.Graph.PowerShell.Authentication.Common;
-    using Microsoft.Graph.PowerShell.Authentication.Interfaces;
-    using Microsoft.Graph.PowerShell.Authentication.Models;
-    using System.Linq;
-    using Xunit;
+﻿using Microsoft.Graph.Authentication.Test.Mocks;
+using Microsoft.Graph.PowerShell.Authentication;
+using Microsoft.Graph.PowerShell.Authentication.Common;
+using Microsoft.Graph.PowerShell.Authentication.Interfaces;
+using Microsoft.Graph.PowerShell.Authentication.Models;
+using System.Linq;
+using Xunit;
 
+namespace Microsoft.Graph.Authentication.Test.Common
+{
     public class GraphSettingsTests
     {
         [Fact]
@@ -17,7 +17,7 @@
 
             // Arrange
             GraphSession.Instance.DataStore = new MockDataStore();
-            GraphSettings settings = new GraphSettings(ProtectedFileProvider.CreateFileProvider(Constants.SettingFilePath, FileProtection.SharedRead));
+            GraphSettings settings = new GraphSettings(ProtectedFileProvider.CreateFileProvider(Constants.ContextSettingsPath, FileProtection.SharedRead));
 
             GraphEnvironment userDefinedEnv = new GraphEnvironment
             {
@@ -50,7 +50,7 @@
 
             // Arrange
             GraphSession.Instance.DataStore = new MockDataStore();
-            GraphSettings settings = new GraphSettings(ProtectedFileProvider.CreateFileProvider(Constants.SettingFilePath, FileProtection.SharedRead));
+            GraphSettings settings = new GraphSettings(ProtectedFileProvider.CreateFileProvider(Constants.ContextSettingsPath, FileProtection.SharedRead));
 
             GraphEnvironment userDefinedEnv = new GraphEnvironment
             {
@@ -73,7 +73,7 @@
             // Act
             // Saves settings to disk store.
             settings.TrySetEnvironment(userDefinedEnv, out IGraphEnvironment savedEnvironment);
-            string settingsContent = GraphSession.Instance.DataStore.ReadFileAsText(Constants.SettingFilePath).Substring(1).TrimEnd(new[] { '\0' });
+            string settingsContent = GraphSession.Instance.DataStore.ReadFileAsText(Constants.ContextSettingsPath).Substring(1).TrimEnd(new[] { '\0' });
 
             // Assert
             Assert.NotEmpty(settingsContent);
@@ -105,11 +105,11 @@
     }
   }
 }";
-            GraphSession.Instance.DataStore.WriteFile(Constants.SettingFilePath, settingsContent);
+            GraphSession.Instance.DataStore.WriteFile(Constants.ContextSettingsPath, settingsContent);
 
             // Act
             // Loads settings from disk store.
-            GraphSettings settings = new GraphSettings(ProtectedFileProvider.CreateFileProvider(Constants.SettingFilePath, FileProtection.SharedRead));
+            GraphSettings settings = new GraphSettings(ProtectedFileProvider.CreateFileProvider(Constants.ContextSettingsPath, FileProtection.SharedRead));
 
             settings.TryGetEnvironment("MyNewCloud", out IGraphEnvironment loadedEnvironment);
 
@@ -131,7 +131,7 @@
 
             // Arrange
             GraphSession.Instance.DataStore = new MockDataStore();
-            GraphSettings settings = new GraphSettings(ProtectedFileProvider.CreateFileProvider(Constants.SettingFilePath, FileProtection.SharedRead));
+            GraphSettings settings = new GraphSettings(ProtectedFileProvider.CreateFileProvider(Constants.ContextSettingsPath, FileProtection.SharedRead));
             GraphEnvironment myNewCloudEnv = new GraphEnvironment
             {
                 Name = "MyNewCloud",
@@ -151,7 +151,7 @@
 
             // Act
             settings.RemoveEnvironment(trialCloudEnv.Name);
-            string settingsContent = GraphSession.Instance.DataStore.ReadFileAsText(Constants.SettingFilePath);
+            string settingsContent = GraphSession.Instance.DataStore.ReadFileAsText(Constants.ContextSettingsPath);
 
             // Assert
             Assert.NotEmpty(settingsContent);

@@ -2,17 +2,16 @@
 //  Copyright (c) Microsoft Corporation.  All Rights Reserved.  Licensed under the MIT License.  See License in the project root for license information.
 // ------------------------------------------------------------------------------
 
+using Microsoft.Graph.PowerShell.Authentication.Core;
+using Microsoft.Graph.PowerShell.Authentication.Core.TokenCache;
+using Microsoft.Graph.PowerShell.Authentication.Interfaces;
+using System;
+using System.Collections;
+using System.Net.Http;
+using System.Threading;
+
 namespace Microsoft.Graph.PowerShell.Authentication
 {
-    using Microsoft.Graph.PowerShell.Authentication.Core;
-    using Microsoft.Graph.PowerShell.Authentication.Interfaces;
-
-    using System;
-    using System.Collections;
-    using System.Net.Http;
-    using System.Security;
-    using System.Threading;
-
     /// <summary>
     /// Contains methods to create, modify or obtain a thread safe static instance of <see cref="GraphSession"/>.
     /// </summary>
@@ -20,7 +19,7 @@ namespace Microsoft.Graph.PowerShell.Authentication
     {
         static GraphSession _instance;
         static bool _initialized = false;
-        static ReaderWriterLockSlim sessionLock = new ReaderWriterLockSlim(LockRecursionPolicy.SupportsRecursion);
+        static readonly ReaderWriterLockSlim _sessionLock = new ReaderWriterLockSlim(LockRecursionPolicy.SupportsRecursion);
         internal Guid _graphSessionId;
 
         // Checks if an instance of <see cref="GraphSession"/> exists.
@@ -36,22 +35,10 @@ namespace Microsoft.Graph.PowerShell.Authentication
         /// </summary>
         public IDataStore DataStore { get; set; }
 
-        private byte[] msalToken;
-
         /// <summary>
-        /// Gets or Sets a session based token.
-        /// This returns an empty byte[] when token is not present.
+        /// Holds in-memory token cache from Azure.Identity for the lifetime of a precess.
         /// </summary>
-        public byte[] MSALToken
-        {
-            get { return msalToken ?? new byte[0]; }
-            set { msalToken = value; }
-        }
-
-        /// <summary>
-        /// Gets or Sets a user provided access token for calling Microsoft Graph service.
-        /// </summary>
-        public SecureString UserProvidedToken { get; set; }
+        public InMemoryTokenCache InMemoryTokenCache { get; set; }
 
         /// <summary>
         /// The selected national cloud environment.
@@ -74,7 +61,7 @@ namespace Microsoft.Graph.PowerShell.Authentication
             {
                 try
                 {
-                    sessionLock.EnterReadLock();
+                    _sessionLock.EnterReadLock();
                     try
                     {
                         if (null == _instance)
@@ -85,7 +72,7 @@ namespace Microsoft.Graph.PowerShell.Authentication
                     }
                     finally
                     {
-                        sessionLock.ExitReadLock();
+                        _sessionLock.ExitReadLock();
                     }
                 }
                 catch (LockRecursionException lockException)
@@ -116,7 +103,7 @@ namespace Microsoft.Graph.PowerShell.Authentication
         {
             try
             {
-                sessionLock.EnterWriteLock();
+                _sessionLock.EnterWriteLock();
                 try
                 {
                     if (overwrite || !_initialized)
@@ -127,7 +114,7 @@ namespace Microsoft.Graph.PowerShell.Authentication
                 }
                 finally
                 {
-                    sessionLock.ExitWriteLock();
+                    _sessionLock.ExitWriteLock();
                 }
             }
             catch (LockRecursionException lockException)
@@ -146,7 +133,7 @@ namespace Microsoft.Graph.PowerShell.Authentication
         /// <param name="instanceCreator">A func to create an instance.</param>
         public static void Initialize(Func<GraphSession> instanceCreator)
         {
-            Initialize(instanceCreator, false);
+            Initialize(instanceCreator, overwrite: false);
         }
 
         /// <summary>
@@ -157,14 +144,14 @@ namespace Microsoft.Graph.PowerShell.Authentication
         {
             try
             {
-                sessionLock.EnterWriteLock();
+                _sessionLock.EnterWriteLock();
                 try
                 {
                     modifier(_instance);
                 }
                 finally
                 {
-                    sessionLock.ExitWriteLock();
+                    _sessionLock.ExitWriteLock();
                 }
             }
             catch (LockRecursionException lockException)
@@ -184,7 +171,7 @@ namespace Microsoft.Graph.PowerShell.Authentication
         {
             try
             {
-                sessionLock.EnterWriteLock();
+                _sessionLock.EnterWriteLock();
                 try
                 {
                     _instance = null;
@@ -192,7 +179,7 @@ namespace Microsoft.Graph.PowerShell.Authentication
                 }
                 finally
                 {
-                    sessionLock.ExitWriteLock();
+                    _sessionLock.ExitWriteLock();
                 }
             }
             catch (LockRecursionException lockException)

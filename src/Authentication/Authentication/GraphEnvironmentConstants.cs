@@ -2,18 +2,13 @@
 //  Copyright (c) Microsoft Corporation.  All Rights Reserved.  Licensed under the MIT License.  See License in the project root for license information.
 // ------------------------------------------------------------------------------
 
+using Microsoft.Graph.PowerShell.Authentication.Models;
+using System.Collections.Generic;
+
 namespace Microsoft.Graph.PowerShell.Authentication
 {
-    using Microsoft.Graph.PowerShell.Authentication.Models;
-    using System.Collections.Generic;
-
     internal static class GraphEnvironmentConstants
     {
-        /// <summary>
-        /// The default AD Tenant value
-        /// </summary>
-        public const string CommonAdTenant = "common";
-
         /// <summary>
         /// Collection of predefined environment/cloud names for Microsoft Graph.
         /// </summary>

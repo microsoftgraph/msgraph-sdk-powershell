@@ -3,15 +3,13 @@
 // ------------------------------------------------------------------------------
 
 using System;
-using System.IO;
 
-namespace Microsoft.Graph.PowerShell.Authentication.Interfaces
+namespace Microsoft.Graph.PowerShell
 {
-    public interface IFileProvider : IDisposable
+    public class AuthenticationException : Exception
     {
-        string FilePath { get; }
-        Stream Stream { get; }
-        StreamReader CreateReader();
-        StreamWriter CreateWriter();
+        public AuthenticationException(string message, Exception innerException = null) : base(message, innerException)
+        {
+        }
     }
 }

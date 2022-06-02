@@ -2,16 +2,21 @@
 //  Copyright (c) Microsoft Corporation.  All Rights Reserved.  Licensed under the MIT License.  See License in the project root for license information.
 // ------------------------------------------------------------------------------
 
+using System.IO;
+
 namespace Microsoft.Graph.PowerShell.Authentication.Core
 {
-    using System.IO;
     public static class Constants
     {
-        public const int MaxDeviceCodeTimeOut = 120; // 2 mins timeout.
-        public static readonly string GraphDirectoryPath = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.UserProfile), ".graph");
-        internal const string TokenCacheServiceName = "com.microsoft.graph.powershell.sdkcache";
+        public const int MaxAuthenticationTimeOutInSeconds = 120;
+        public const string DefaultTenant = "common";
+        public static readonly string GraphDirectoryPath = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.UserProfile), ".mg");
         internal const int TokenExpirationBufferInMinutes = 5;
-        internal const string DefaulAdTenant = "common";
         internal const string DefaultAzureADEndpoint = "https://login.microsoftonline.com";
+        internal static readonly string DefaultGraphEndpoint = "https://graph.microsoft.com";
+        internal const string CacheName = "mg.msal.cache";
+        internal const string AuthRecordName = "mg.authrecord.json";
+        internal const int MaxAuthRetry = 2;
+        internal static readonly string AuthRecordPath = Path.Combine(GraphDirectoryPath, AuthRecordName);
     }
 }

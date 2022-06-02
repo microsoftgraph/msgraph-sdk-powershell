@@ -1,16 +1,21 @@
 ﻿// ------------------------------------------------------------------------------
 //  Copyright (c) Microsoft Corporation.  All Rights Reserved.  Licensed under the MIT License.  See License in the project root for license information.
 // ------------------------------------------------------------------------------
+using Microsoft.Graph.PowerShell.Authentication.Core.Utilities;
+using Microsoft.Graph.PowerShell.Authentication.Helpers;
+using System;
+using System.Management.Automation;
+using System.Threading;
+using System.Threading.Tasks;
+
 namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
 {
-    using Microsoft.Graph.Authentication.Core;
-    using Microsoft.Graph.PowerShell.Authentication.Helpers;
-    using System;
-    using System.Management.Automation;
     [Cmdlet(VerbsCommunications.Disconnect, "MgGraph")]
     [Alias("Disconnect-Graph")]
     public class DisconnectMgGraph : PSCmdlet
     {
+        private readonly CancellationTokenSource _cancellationTokenSource = new CancellationTokenSource();
+
         protected override void BeginProcessing()
         {
             base.BeginProcessing();
@@ -24,17 +29,24 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
         protected override void ProcessRecord()
         {
             base.ProcessRecord();
+            try
+            {
+                using (var asyncCommandRuntime = new CustomAsyncCommandRuntime(this, _cancellationTokenSource.Token))
+                    asyncCommandRuntime.Wait(ProcessRecordAsync());
+            }
+            catch (Exception exception)
+            {
+                WriteError(new ErrorRecord(exception, string.Empty, ErrorCategory.NotSpecified, null));
+            }
+        }
 
-            IAuthContext authContext = GraphSession.Instance.AuthContext;
-
-            if (authContext == null)
+        private async Task ProcessRecordAsync()
+        {
+            if (GraphSession.Instance.AuthContext is null)
                 ThrowTerminatingError(
                     new ErrorRecord(new Exception("No application to sign out from."), Guid.NewGuid().ToString(), ErrorCategory.InvalidArgument, null));
 
-            Authenticator.LogOut(authContext);
-
-            GraphSession.Instance.AuthContext = null;
-            GraphSession.Instance.GraphHttpClient = null;
+            await AuthenticationHelpers.LogoutAsync();
         }
 
         protected override void StopProcessing()
