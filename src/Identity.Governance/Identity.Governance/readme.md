@@ -300,6 +300,10 @@ directive:
       verb: New|Remove|Update|Get|Invoke
       subject: (.*)(IdentityGovernance)AppConsent
     remove: true
+  - where:
+      verb: New|Remove|Update
+      subject: ^(.*)EntitlementManagementConnectedOrganization(Internal|External)Sponsor$
+    remove: true
 # Rename cmdlets with duplicates in their name.
   - where:
       subject: ^(BusinessFlowTemplate)(\1)+
