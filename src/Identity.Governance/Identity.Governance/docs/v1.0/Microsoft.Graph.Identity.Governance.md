@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Identity.Governance
-Module Guid: 3562c685-ac24-4455-b8b2-9c5e76dfa3b7
+Module Guid: 9d264349-3572-484f-a7dd-c406110e009e
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance
 Help Version: 1.0.0.0
 Locale: en-US
@@ -122,9 +122,6 @@ Invoke function filterByCurrentUser
 Invoke function filterByCurrentUser
 
 ### [Invoke-MgFilterEntitlementManagementAssignmentRequest](Invoke-MgFilterEntitlementManagementAssignmentRequest.md)
-Invoke function filterByCurrentUser
-
-### [Invoke-MgFilterEntitlementManagementCatalogAccessPackage](Invoke-MgFilterEntitlementManagementCatalogAccessPackage.md)
 Invoke function filterByCurrentUser
 
 ### [New-MgAgreement](New-MgAgreement.md)
@@ -275,9 +272,6 @@ Supports $expand.
 
 ### [Set-MgEntitlementManagementAssignmentPolicyCatalogByRef](Set-MgEntitlementManagementAssignmentPolicyCatalogByRef.md)
 Update the ref of navigation property catalog in identityGovernance
-
-### [Split-MgEntitlementManagementConnectedOrganization](Split-MgEntitlementManagementConnectedOrganization.md)
-Split elements of one or more Azure AD entitlement management connected organizations, returned by Get-MgEntitlementManagementConnectedOrganization, to simplify reporting.
 
 ### [Stop-MgEntitlementManagementAssignmentRequest](Stop-MgEntitlementManagementAssignmentRequest.md)
 Invoke action cancel

@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Bookings
-Module Guid: 2b613087-2170-4e01-be6c-e859d3d8db7e
+Module Guid: bd26a712-22a2-4fea-bdba-5446365ad748
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.bookings
 Help Version: 1.0.0.0
 Locale: en-US

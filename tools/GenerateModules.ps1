@@ -46,8 +46,8 @@ if (!(Get-Module -Name powershell-yaml -ListAvailable)) {
     Install-Module powershell-yaml -Repository PSGallery -Scope CurrentUser -Force
 }
 
-# Set NODE max memory to 8 Gb.
-$ENV:NODE_OPTIONS='--max-old-space-size=8192'
+# Set NODE max heap size to 32 Gb. This is assuming the VM has this memory.
+$ENV:NODE_OPTIONS='--max-old-space-size=32768'
 $ModulePrefix = "Microsoft.Graph"
 $ScriptRoot = $PSScriptRoot
 $ModulesOutputDir = Join-Path $ScriptRoot "..\src\"
