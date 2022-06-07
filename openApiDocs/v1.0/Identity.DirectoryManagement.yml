@@ -420,245 +420,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-  '/contacts/{orgContact-id}/directReports/{directoryObject-id}/microsoft.graph.orgContact/microsoft.graph.checkMemberGroups':
-    post:
-      tags:
-        - contacts.Actions
-      summary: Invoke action checkMemberGroups
-      operationId: contacts.directReports.microsoft.graph.orgContact_checkMemberGroups
-      parameters:
-        - name: orgContact-id
-          in: path
-          description: 'key: id of orgContact'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: orgContact
-        - name: directoryObject-id
-          in: path
-          description: 'key: id of directoryObject'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: directoryObject
-      requestBody:
-        description: Action parameters
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                groupIds:
-                  type: array
-                  items:
-                    type: string
-              additionalProperties:
-                type: object
-        required: true
-      responses:
-        '200':
-          description: Success
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      type: string
-                additionalProperties:
-                  type: object
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: action
-  '/contacts/{orgContact-id}/directReports/{directoryObject-id}/microsoft.graph.orgContact/microsoft.graph.checkMemberObjects':
-    post:
-      tags:
-        - contacts.Actions
-      summary: Invoke action checkMemberObjects
-      operationId: contacts.directReports.microsoft.graph.orgContact_checkMemberObjects
-      parameters:
-        - name: orgContact-id
-          in: path
-          description: 'key: id of orgContact'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: orgContact
-        - name: directoryObject-id
-          in: path
-          description: 'key: id of directoryObject'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: directoryObject
-      requestBody:
-        description: Action parameters
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                ids:
-                  type: array
-                  items:
-                    type: string
-              additionalProperties:
-                type: object
-        required: true
-      responses:
-        '200':
-          description: Success
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      type: string
-                additionalProperties:
-                  type: object
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: action
-  '/contacts/{orgContact-id}/directReports/{directoryObject-id}/microsoft.graph.orgContact/microsoft.graph.getMemberGroups':
-    post:
-      tags:
-        - contacts.Actions
-      summary: Invoke action getMemberGroups
-      operationId: contacts.directReports.microsoft.graph.orgContact_getMemberGroups
-      parameters:
-        - name: orgContact-id
-          in: path
-          description: 'key: id of orgContact'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: orgContact
-        - name: directoryObject-id
-          in: path
-          description: 'key: id of directoryObject'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: directoryObject
-      requestBody:
-        description: Action parameters
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                securityEnabledOnly:
-                  type: boolean
-                  default: false
-                  nullable: true
-              additionalProperties:
-                type: object
-        required: true
-      responses:
-        '200':
-          description: Success
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      type: string
-                additionalProperties:
-                  type: object
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: action
-  '/contacts/{orgContact-id}/directReports/{directoryObject-id}/microsoft.graph.orgContact/microsoft.graph.getMemberObjects':
-    post:
-      tags:
-        - contacts.Actions
-      summary: Invoke action getMemberObjects
-      operationId: contacts.directReports.microsoft.graph.orgContact_getMemberObjects
-      parameters:
-        - name: orgContact-id
-          in: path
-          description: 'key: id of orgContact'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: orgContact
-        - name: directoryObject-id
-          in: path
-          description: 'key: id of directoryObject'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: directoryObject
-      requestBody:
-        description: Action parameters
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                securityEnabledOnly:
-                  type: boolean
-                  default: false
-                  nullable: true
-              additionalProperties:
-                type: object
-        required: true
-      responses:
-        '200':
-          description: Success
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      type: string
-                additionalProperties:
-                  type: object
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: action
-  '/contacts/{orgContact-id}/directReports/{directoryObject-id}/microsoft.graph.orgContact/microsoft.graph.restore':
-    post:
-      tags:
-        - contacts.Actions
-      summary: Invoke action restore
-      operationId: contacts.directReports.microsoft.graph.orgContact_restore
-      parameters:
-        - name: orgContact-id
-          in: path
-          description: 'key: id of orgContact'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: orgContact
-        - name: directoryObject-id
-          in: path
-          description: 'key: id of directoryObject'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: directoryObject
-      responses:
-        '200':
-          description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.directoryObject'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: action
   '/contacts/{orgContact-id}/manager':
     get:
       tags:
@@ -832,245 +593,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-  '/contacts/{orgContact-id}/memberOf/{directoryObject-id}/microsoft.graph.orgContact/microsoft.graph.checkMemberGroups':
-    post:
-      tags:
-        - contacts.Actions
-      summary: Invoke action checkMemberGroups
-      operationId: contacts.memberOf.microsoft.graph.orgContact_checkMemberGroups
-      parameters:
-        - name: orgContact-id
-          in: path
-          description: 'key: id of orgContact'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: orgContact
-        - name: directoryObject-id
-          in: path
-          description: 'key: id of directoryObject'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: directoryObject
-      requestBody:
-        description: Action parameters
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                groupIds:
-                  type: array
-                  items:
-                    type: string
-              additionalProperties:
-                type: object
-        required: true
-      responses:
-        '200':
-          description: Success
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      type: string
-                additionalProperties:
-                  type: object
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: action
-  '/contacts/{orgContact-id}/memberOf/{directoryObject-id}/microsoft.graph.orgContact/microsoft.graph.checkMemberObjects':
-    post:
-      tags:
-        - contacts.Actions
-      summary: Invoke action checkMemberObjects
-      operationId: contacts.memberOf.microsoft.graph.orgContact_checkMemberObjects
-      parameters:
-        - name: orgContact-id
-          in: path
-          description: 'key: id of orgContact'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: orgContact
-        - name: directoryObject-id
-          in: path
-          description: 'key: id of directoryObject'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: directoryObject
-      requestBody:
-        description: Action parameters
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                ids:
-                  type: array
-                  items:
-                    type: string
-              additionalProperties:
-                type: object
-        required: true
-      responses:
-        '200':
-          description: Success
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      type: string
-                additionalProperties:
-                  type: object
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: action
-  '/contacts/{orgContact-id}/memberOf/{directoryObject-id}/microsoft.graph.orgContact/microsoft.graph.getMemberGroups':
-    post:
-      tags:
-        - contacts.Actions
-      summary: Invoke action getMemberGroups
-      operationId: contacts.memberOf.microsoft.graph.orgContact_getMemberGroups
-      parameters:
-        - name: orgContact-id
-          in: path
-          description: 'key: id of orgContact'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: orgContact
-        - name: directoryObject-id
-          in: path
-          description: 'key: id of directoryObject'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: directoryObject
-      requestBody:
-        description: Action parameters
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                securityEnabledOnly:
-                  type: boolean
-                  default: false
-                  nullable: true
-              additionalProperties:
-                type: object
-        required: true
-      responses:
-        '200':
-          description: Success
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      type: string
-                additionalProperties:
-                  type: object
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: action
-  '/contacts/{orgContact-id}/memberOf/{directoryObject-id}/microsoft.graph.orgContact/microsoft.graph.getMemberObjects':
-    post:
-      tags:
-        - contacts.Actions
-      summary: Invoke action getMemberObjects
-      operationId: contacts.memberOf.microsoft.graph.orgContact_getMemberObjects
-      parameters:
-        - name: orgContact-id
-          in: path
-          description: 'key: id of orgContact'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: orgContact
-        - name: directoryObject-id
-          in: path
-          description: 'key: id of directoryObject'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: directoryObject
-      requestBody:
-        description: Action parameters
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                securityEnabledOnly:
-                  type: boolean
-                  default: false
-                  nullable: true
-              additionalProperties:
-                type: object
-        required: true
-      responses:
-        '200':
-          description: Success
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      type: string
-                additionalProperties:
-                  type: object
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: action
-  '/contacts/{orgContact-id}/memberOf/{directoryObject-id}/microsoft.graph.orgContact/microsoft.graph.restore':
-    post:
-      tags:
-        - contacts.Actions
-      summary: Invoke action restore
-      operationId: contacts.memberOf.microsoft.graph.orgContact_restore
-      parameters:
-        - name: orgContact-id
-          in: path
-          description: 'key: id of orgContact'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: orgContact
-        - name: directoryObject-id
-          in: path
-          description: 'key: id of directoryObject'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: directoryObject
-      responses:
-        '200':
-          description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.directoryObject'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: action
   '/contacts/{orgContact-id}/microsoft.graph.checkMemberGroups':
     post:
       tags:
@@ -1403,245 +925,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-  '/contacts/{orgContact-id}/transitiveMemberOf/{directoryObject-id}/microsoft.graph.orgContact/microsoft.graph.checkMemberGroups':
-    post:
-      tags:
-        - contacts.Actions
-      summary: Invoke action checkMemberGroups
-      operationId: contacts.transitiveMemberOf.microsoft.graph.orgContact_checkMemberGroups
-      parameters:
-        - name: orgContact-id
-          in: path
-          description: 'key: id of orgContact'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: orgContact
-        - name: directoryObject-id
-          in: path
-          description: 'key: id of directoryObject'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: directoryObject
-      requestBody:
-        description: Action parameters
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                groupIds:
-                  type: array
-                  items:
-                    type: string
-              additionalProperties:
-                type: object
-        required: true
-      responses:
-        '200':
-          description: Success
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      type: string
-                additionalProperties:
-                  type: object
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: action
-  '/contacts/{orgContact-id}/transitiveMemberOf/{directoryObject-id}/microsoft.graph.orgContact/microsoft.graph.checkMemberObjects':
-    post:
-      tags:
-        - contacts.Actions
-      summary: Invoke action checkMemberObjects
-      operationId: contacts.transitiveMemberOf.microsoft.graph.orgContact_checkMemberObjects
-      parameters:
-        - name: orgContact-id
-          in: path
-          description: 'key: id of orgContact'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: orgContact
-        - name: directoryObject-id
-          in: path
-          description: 'key: id of directoryObject'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: directoryObject
-      requestBody:
-        description: Action parameters
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                ids:
-                  type: array
-                  items:
-                    type: string
-              additionalProperties:
-                type: object
-        required: true
-      responses:
-        '200':
-          description: Success
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      type: string
-                additionalProperties:
-                  type: object
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: action
-  '/contacts/{orgContact-id}/transitiveMemberOf/{directoryObject-id}/microsoft.graph.orgContact/microsoft.graph.getMemberGroups':
-    post:
-      tags:
-        - contacts.Actions
-      summary: Invoke action getMemberGroups
-      operationId: contacts.transitiveMemberOf.microsoft.graph.orgContact_getMemberGroups
-      parameters:
-        - name: orgContact-id
-          in: path
-          description: 'key: id of orgContact'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: orgContact
-        - name: directoryObject-id
-          in: path
-          description: 'key: id of directoryObject'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: directoryObject
-      requestBody:
-        description: Action parameters
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                securityEnabledOnly:
-                  type: boolean
-                  default: false
-                  nullable: true
-              additionalProperties:
-                type: object
-        required: true
-      responses:
-        '200':
-          description: Success
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      type: string
-                additionalProperties:
-                  type: object
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: action
-  '/contacts/{orgContact-id}/transitiveMemberOf/{directoryObject-id}/microsoft.graph.orgContact/microsoft.graph.getMemberObjects':
-    post:
-      tags:
-        - contacts.Actions
-      summary: Invoke action getMemberObjects
-      operationId: contacts.transitiveMemberOf.microsoft.graph.orgContact_getMemberObjects
-      parameters:
-        - name: orgContact-id
-          in: path
-          description: 'key: id of orgContact'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: orgContact
-        - name: directoryObject-id
-          in: path
-          description: 'key: id of directoryObject'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: directoryObject
-      requestBody:
-        description: Action parameters
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                securityEnabledOnly:
-                  type: boolean
-                  default: false
-                  nullable: true
-              additionalProperties:
-                type: object
-        required: true
-      responses:
-        '200':
-          description: Success
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      type: string
-                additionalProperties:
-                  type: object
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: action
-  '/contacts/{orgContact-id}/transitiveMemberOf/{directoryObject-id}/microsoft.graph.orgContact/microsoft.graph.restore':
-    post:
-      tags:
-        - contacts.Actions
-      summary: Invoke action restore
-      operationId: contacts.transitiveMemberOf.microsoft.graph.orgContact_restore
-      parameters:
-        - name: orgContact-id
-          in: path
-          description: 'key: id of orgContact'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: orgContact
-        - name: directoryObject-id
-          in: path
-          description: 'key: id of directoryObject'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: directoryObject
-      responses:
-        '200':
-          description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.directoryObject'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: action
   /contacts/microsoft.graph.delta():
     get:
       tags:
@@ -2973,245 +2256,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-  '/devices/{device-id}/memberOf/{directoryObject-id}/microsoft.graph.device/microsoft.graph.checkMemberGroups':
-    post:
-      tags:
-        - devices.Actions
-      summary: Invoke action checkMemberGroups
-      operationId: devices.memberOf.microsoft.graph.device_checkMemberGroups
-      parameters:
-        - name: device-id
-          in: path
-          description: 'key: id of device'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: device
-        - name: directoryObject-id
-          in: path
-          description: 'key: id of directoryObject'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: directoryObject
-      requestBody:
-        description: Action parameters
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                groupIds:
-                  type: array
-                  items:
-                    type: string
-              additionalProperties:
-                type: object
-        required: true
-      responses:
-        '200':
-          description: Success
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      type: string
-                additionalProperties:
-                  type: object
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: action
-  '/devices/{device-id}/memberOf/{directoryObject-id}/microsoft.graph.device/microsoft.graph.checkMemberObjects':
-    post:
-      tags:
-        - devices.Actions
-      summary: Invoke action checkMemberObjects
-      operationId: devices.memberOf.microsoft.graph.device_checkMemberObjects
-      parameters:
-        - name: device-id
-          in: path
-          description: 'key: id of device'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: device
-        - name: directoryObject-id
-          in: path
-          description: 'key: id of directoryObject'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: directoryObject
-      requestBody:
-        description: Action parameters
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                ids:
-                  type: array
-                  items:
-                    type: string
-              additionalProperties:
-                type: object
-        required: true
-      responses:
-        '200':
-          description: Success
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      type: string
-                additionalProperties:
-                  type: object
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: action
-  '/devices/{device-id}/memberOf/{directoryObject-id}/microsoft.graph.device/microsoft.graph.getMemberGroups':
-    post:
-      tags:
-        - devices.Actions
-      summary: Invoke action getMemberGroups
-      operationId: devices.memberOf.microsoft.graph.device_getMemberGroups
-      parameters:
-        - name: device-id
-          in: path
-          description: 'key: id of device'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: device
-        - name: directoryObject-id
-          in: path
-          description: 'key: id of directoryObject'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: directoryObject
-      requestBody:
-        description: Action parameters
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                securityEnabledOnly:
-                  type: boolean
-                  default: false
-                  nullable: true
-              additionalProperties:
-                type: object
-        required: true
-      responses:
-        '200':
-          description: Success
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      type: string
-                additionalProperties:
-                  type: object
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: action
-  '/devices/{device-id}/memberOf/{directoryObject-id}/microsoft.graph.device/microsoft.graph.getMemberObjects':
-    post:
-      tags:
-        - devices.Actions
-      summary: Invoke action getMemberObjects
-      operationId: devices.memberOf.microsoft.graph.device_getMemberObjects
-      parameters:
-        - name: device-id
-          in: path
-          description: 'key: id of device'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: device
-        - name: directoryObject-id
-          in: path
-          description: 'key: id of directoryObject'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: directoryObject
-      requestBody:
-        description: Action parameters
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                securityEnabledOnly:
-                  type: boolean
-                  default: false
-                  nullable: true
-              additionalProperties:
-                type: object
-        required: true
-      responses:
-        '200':
-          description: Success
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      type: string
-                additionalProperties:
-                  type: object
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: action
-  '/devices/{device-id}/memberOf/{directoryObject-id}/microsoft.graph.device/microsoft.graph.restore':
-    post:
-      tags:
-        - devices.Actions
-      summary: Invoke action restore
-      operationId: devices.memberOf.microsoft.graph.device_restore
-      parameters:
-        - name: device-id
-          in: path
-          description: 'key: id of device'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: device
-        - name: directoryObject-id
-          in: path
-          description: 'key: id of directoryObject'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: directoryObject
-      responses:
-        '200':
-          description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.directoryObject'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: action
   '/devices/{device-id}/microsoft.graph.checkMemberGroups':
     post:
       tags:
@@ -3850,245 +2894,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-  '/devices/{device-id}/transitiveMemberOf/{directoryObject-id}/microsoft.graph.device/microsoft.graph.checkMemberGroups':
-    post:
-      tags:
-        - devices.Actions
-      summary: Invoke action checkMemberGroups
-      operationId: devices.transitiveMemberOf.microsoft.graph.device_checkMemberGroups
-      parameters:
-        - name: device-id
-          in: path
-          description: 'key: id of device'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: device
-        - name: directoryObject-id
-          in: path
-          description: 'key: id of directoryObject'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: directoryObject
-      requestBody:
-        description: Action parameters
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                groupIds:
-                  type: array
-                  items:
-                    type: string
-              additionalProperties:
-                type: object
-        required: true
-      responses:
-        '200':
-          description: Success
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      type: string
-                additionalProperties:
-                  type: object
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: action
-  '/devices/{device-id}/transitiveMemberOf/{directoryObject-id}/microsoft.graph.device/microsoft.graph.checkMemberObjects':
-    post:
-      tags:
-        - devices.Actions
-      summary: Invoke action checkMemberObjects
-      operationId: devices.transitiveMemberOf.microsoft.graph.device_checkMemberObjects
-      parameters:
-        - name: device-id
-          in: path
-          description: 'key: id of device'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: device
-        - name: directoryObject-id
-          in: path
-          description: 'key: id of directoryObject'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: directoryObject
-      requestBody:
-        description: Action parameters
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                ids:
-                  type: array
-                  items:
-                    type: string
-              additionalProperties:
-                type: object
-        required: true
-      responses:
-        '200':
-          description: Success
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      type: string
-                additionalProperties:
-                  type: object
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: action
-  '/devices/{device-id}/transitiveMemberOf/{directoryObject-id}/microsoft.graph.device/microsoft.graph.getMemberGroups':
-    post:
-      tags:
-        - devices.Actions
-      summary: Invoke action getMemberGroups
-      operationId: devices.transitiveMemberOf.microsoft.graph.device_getMemberGroups
-      parameters:
-        - name: device-id
-          in: path
-          description: 'key: id of device'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: device
-        - name: directoryObject-id
-          in: path
-          description: 'key: id of directoryObject'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: directoryObject
-      requestBody:
-        description: Action parameters
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                securityEnabledOnly:
-                  type: boolean
-                  default: false
-                  nullable: true
-              additionalProperties:
-                type: object
-        required: true
-      responses:
-        '200':
-          description: Success
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      type: string
-                additionalProperties:
-                  type: object
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: action
-  '/devices/{device-id}/transitiveMemberOf/{directoryObject-id}/microsoft.graph.device/microsoft.graph.getMemberObjects':
-    post:
-      tags:
-        - devices.Actions
-      summary: Invoke action getMemberObjects
-      operationId: devices.transitiveMemberOf.microsoft.graph.device_getMemberObjects
-      parameters:
-        - name: device-id
-          in: path
-          description: 'key: id of device'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: device
-        - name: directoryObject-id
-          in: path
-          description: 'key: id of directoryObject'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: directoryObject
-      requestBody:
-        description: Action parameters
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                securityEnabledOnly:
-                  type: boolean
-                  default: false
-                  nullable: true
-              additionalProperties:
-                type: object
-        required: true
-      responses:
-        '200':
-          description: Success
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      type: string
-                additionalProperties:
-                  type: object
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: action
-  '/devices/{device-id}/transitiveMemberOf/{directoryObject-id}/microsoft.graph.device/microsoft.graph.restore':
-    post:
-      tags:
-        - devices.Actions
-      summary: Invoke action restore
-      operationId: devices.transitiveMemberOf.microsoft.graph.device_restore
-      parameters:
-        - name: device-id
-          in: path
-          description: 'key: id of device'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: device
-        - name: directoryObject-id
-          in: path
-          description: 'key: id of directoryObject'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: directoryObject
-      responses:
-        '200':
-          description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.directoryObject'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: action
   /devices/microsoft.graph.getAvailableExtensionProperties:
     post:
       tags:
@@ -5272,6 +4077,17 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
+          links:
+            checkMemberGroups:
+              operationId: directory.deletedItems.directoryObject.checkMemberGroups
+            checkMemberObjects:
+              operationId: directory.deletedItems.directoryObject.checkMemberObjects
+            getMemberGroups:
+              operationId: directory.deletedItems.directoryObject.getMemberGroups
+            getMemberObjects:
+              operationId: directory.deletedItems.directoryObject.getMemberObjects
+            restore:
+              operationId: directory.deletedItems.directoryObject.restore
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5325,6 +4141,331 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/directory/deletedItems/{directoryObject-id}/microsoft.graph.checkMemberGroups':
+    post:
+      tags:
+        - directory.Actions
+      summary: Invoke action checkMemberGroups
+      operationId: directory.deletedItems_checkMemberGroups
+      parameters:
+        - name: directoryObject-id
+          in: path
+          description: 'key: id of directoryObject'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: directoryObject
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                groupIds:
+                  type: array
+                  items:
+                    type: string
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of directoryObject
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/directory/deletedItems/{directoryObject-id}/microsoft.graph.checkMemberObjects':
+    post:
+      tags:
+        - directory.Actions
+      summary: Invoke action checkMemberObjects
+      operationId: directory.deletedItems_checkMemberObjects
+      parameters:
+        - name: directoryObject-id
+          in: path
+          description: 'key: id of directoryObject'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: directoryObject
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                ids:
+                  type: array
+                  items:
+                    type: string
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of directoryObject
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/directory/deletedItems/{directoryObject-id}/microsoft.graph.getMemberGroups':
+    post:
+      tags:
+        - directory.Actions
+      summary: Invoke action getMemberGroups
+      operationId: directory.deletedItems_getMemberGroups
+      parameters:
+        - name: directoryObject-id
+          in: path
+          description: 'key: id of directoryObject'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: directoryObject
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                securityEnabledOnly:
+                  type: boolean
+                  default: false
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of directoryObject
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/directory/deletedItems/{directoryObject-id}/microsoft.graph.getMemberObjects':
+    post:
+      tags:
+        - directory.Actions
+      summary: Invoke action getMemberObjects
+      operationId: directory.deletedItems_getMemberObjects
+      parameters:
+        - name: directoryObject-id
+          in: path
+          description: 'key: id of directoryObject'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: directoryObject
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                securityEnabledOnly:
+                  type: boolean
+                  default: false
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of directoryObject
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/directory/deletedItems/{directoryObject-id}/microsoft.graph.restore':
+    post:
+      tags:
+        - directory.Actions
+      summary: Invoke action restore
+      operationId: directory.deletedItems_restore
+      parameters:
+        - name: directoryObject-id
+          in: path
+          description: 'key: id of directoryObject'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: directoryObject
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.directoryObject'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  /directory/deletedItems/microsoft.graph.getAvailableExtensionProperties:
+    post:
+      tags:
+        - directory.Actions
+      summary: Invoke action getAvailableExtensionProperties
+      operationId: directory.deletedItems_getAvailableExtensionProperties
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                isSyncedFromOnPremises:
+                  type: boolean
+                  default: false
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of directoryObject
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.extensionProperty'
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  /directory/deletedItems/microsoft.graph.getByIds:
+    post:
+      tags:
+        - directory.Actions
+      summary: Invoke action getByIds
+      operationId: directory.deletedItems_getByIds
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                ids:
+                  type: array
+                  items:
+                    type: string
+                types:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of directoryObject
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.directoryObject'
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  /directory/deletedItems/microsoft.graph.validateProperties:
+    post:
+      tags:
+        - directory.Actions
+      summary: Invoke action validateProperties
+      operationId: directory.deletedItems_validateProperties
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                entityType:
+                  type: string
+                  nullable: true
+                displayName:
+                  type: string
+                  nullable: true
+                mailNickname:
+                  type: string
+                  nullable: true
+                onBehalfOfUserId:
+                  pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
+                  type: string
+                  format: uuid
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   /directory/federationConfigurations:
     get:
       tags:
@@ -11053,11 +10194,11 @@ components:
       properties:
         displayName:
           type: string
-          description: 'The identity''s display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
+          description: The display name of the identity. This property is read-only.
           nullable: true
         id:
           type: string
-          description: Unique identifier for the identity.
+          description: The identifier of the identity. This property is read-only.
           nullable: true
       additionalProperties:
         type: object

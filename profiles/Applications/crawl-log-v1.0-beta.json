@@ -489,46 +489,6 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Applications.yml"
     },
-    "/servicePrincipals/{servicePrincipal-id}/createdObjects/{directoryObject-id}/microsoft.graph.servicePrincipal/microsoft.graph.addTokenSigningCertificate": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Applications.yml"
-    },
-    "/servicePrincipals/{servicePrincipal-id}/createdObjects/{directoryObject-id}/microsoft.graph.servicePrincipal/microsoft.graph.checkMemberGroups": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Applications.yml"
-    },
-    "/servicePrincipals/{servicePrincipal-id}/createdObjects/{directoryObject-id}/microsoft.graph.servicePrincipal/microsoft.graph.checkMemberObjects": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Applications.yml"
-    },
-    "/servicePrincipals/{servicePrincipal-id}/createdObjects/{directoryObject-id}/microsoft.graph.servicePrincipal/microsoft.graph.createPasswordSingleSignOnCredentials": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Applications.yml"
-    },
-    "/servicePrincipals/{servicePrincipal-id}/createdObjects/{directoryObject-id}/microsoft.graph.servicePrincipal/microsoft.graph.deletePasswordSingleSignOnCredentials": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Applications.yml"
-    },
-    "/servicePrincipals/{servicePrincipal-id}/createdObjects/{directoryObject-id}/microsoft.graph.servicePrincipal/microsoft.graph.getMemberGroups": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Applications.yml"
-    },
-    "/servicePrincipals/{servicePrincipal-id}/createdObjects/{directoryObject-id}/microsoft.graph.servicePrincipal/microsoft.graph.getMemberObjects": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Applications.yml"
-    },
-    "/servicePrincipals/{servicePrincipal-id}/createdObjects/{directoryObject-id}/microsoft.graph.servicePrincipal/microsoft.graph.getPasswordSingleSignOnCredentials": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Applications.yml"
-    },
-    "/servicePrincipals/{servicePrincipal-id}/createdObjects/{directoryObject-id}/microsoft.graph.servicePrincipal/microsoft.graph.restore": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Applications.yml"
-    },
-    "/servicePrincipals/{servicePrincipal-id}/createdObjects/{directoryObject-id}/microsoft.graph.servicePrincipal/microsoft.graph.updatePasswordSingleSignOnCredentials": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Applications.yml"
-    },
     "/servicePrincipals/{servicePrincipal-id}/delegatedPermissionClassifications": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Applications.yml"
@@ -578,46 +538,6 @@
       "originalLocation": "/openApiDocs/beta/Applications.yml"
     },
     "/servicePrincipals/{servicePrincipal-id}/memberOf/{directoryObject-id}": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Applications.yml"
-    },
-    "/servicePrincipals/{servicePrincipal-id}/memberOf/{directoryObject-id}/microsoft.graph.servicePrincipal/microsoft.graph.addTokenSigningCertificate": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Applications.yml"
-    },
-    "/servicePrincipals/{servicePrincipal-id}/memberOf/{directoryObject-id}/microsoft.graph.servicePrincipal/microsoft.graph.checkMemberGroups": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Applications.yml"
-    },
-    "/servicePrincipals/{servicePrincipal-id}/memberOf/{directoryObject-id}/microsoft.graph.servicePrincipal/microsoft.graph.checkMemberObjects": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Applications.yml"
-    },
-    "/servicePrincipals/{servicePrincipal-id}/memberOf/{directoryObject-id}/microsoft.graph.servicePrincipal/microsoft.graph.createPasswordSingleSignOnCredentials": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Applications.yml"
-    },
-    "/servicePrincipals/{servicePrincipal-id}/memberOf/{directoryObject-id}/microsoft.graph.servicePrincipal/microsoft.graph.deletePasswordSingleSignOnCredentials": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Applications.yml"
-    },
-    "/servicePrincipals/{servicePrincipal-id}/memberOf/{directoryObject-id}/microsoft.graph.servicePrincipal/microsoft.graph.getMemberGroups": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Applications.yml"
-    },
-    "/servicePrincipals/{servicePrincipal-id}/memberOf/{directoryObject-id}/microsoft.graph.servicePrincipal/microsoft.graph.getMemberObjects": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Applications.yml"
-    },
-    "/servicePrincipals/{servicePrincipal-id}/memberOf/{directoryObject-id}/microsoft.graph.servicePrincipal/microsoft.graph.getPasswordSingleSignOnCredentials": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Applications.yml"
-    },
-    "/servicePrincipals/{servicePrincipal-id}/memberOf/{directoryObject-id}/microsoft.graph.servicePrincipal/microsoft.graph.restore": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Applications.yml"
-    },
-    "/servicePrincipals/{servicePrincipal-id}/memberOf/{directoryObject-id}/microsoft.graph.servicePrincipal/microsoft.graph.updatePasswordSingleSignOnCredentials": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Applications.yml"
     },
@@ -674,46 +594,6 @@
       "originalLocation": "/openApiDocs/beta/Applications.yml"
     },
     "/servicePrincipals/{servicePrincipal-id}/ownedObjects/{directoryObject-id}": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Applications.yml"
-    },
-    "/servicePrincipals/{servicePrincipal-id}/ownedObjects/{directoryObject-id}/microsoft.graph.servicePrincipal/microsoft.graph.addTokenSigningCertificate": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Applications.yml"
-    },
-    "/servicePrincipals/{servicePrincipal-id}/ownedObjects/{directoryObject-id}/microsoft.graph.servicePrincipal/microsoft.graph.checkMemberGroups": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Applications.yml"
-    },
-    "/servicePrincipals/{servicePrincipal-id}/ownedObjects/{directoryObject-id}/microsoft.graph.servicePrincipal/microsoft.graph.checkMemberObjects": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Applications.yml"
-    },
-    "/servicePrincipals/{servicePrincipal-id}/ownedObjects/{directoryObject-id}/microsoft.graph.servicePrincipal/microsoft.graph.createPasswordSingleSignOnCredentials": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Applications.yml"
-    },
-    "/servicePrincipals/{servicePrincipal-id}/ownedObjects/{directoryObject-id}/microsoft.graph.servicePrincipal/microsoft.graph.deletePasswordSingleSignOnCredentials": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Applications.yml"
-    },
-    "/servicePrincipals/{servicePrincipal-id}/ownedObjects/{directoryObject-id}/microsoft.graph.servicePrincipal/microsoft.graph.getMemberGroups": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Applications.yml"
-    },
-    "/servicePrincipals/{servicePrincipal-id}/ownedObjects/{directoryObject-id}/microsoft.graph.servicePrincipal/microsoft.graph.getMemberObjects": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Applications.yml"
-    },
-    "/servicePrincipals/{servicePrincipal-id}/ownedObjects/{directoryObject-id}/microsoft.graph.servicePrincipal/microsoft.graph.getPasswordSingleSignOnCredentials": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Applications.yml"
-    },
-    "/servicePrincipals/{servicePrincipal-id}/ownedObjects/{directoryObject-id}/microsoft.graph.servicePrincipal/microsoft.graph.restore": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Applications.yml"
-    },
-    "/servicePrincipals/{servicePrincipal-id}/ownedObjects/{directoryObject-id}/microsoft.graph.servicePrincipal/microsoft.graph.updatePasswordSingleSignOnCredentials": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Applications.yml"
     },
@@ -862,46 +742,6 @@
       "originalLocation": "/openApiDocs/beta/Applications.yml"
     },
     "/servicePrincipals/{servicePrincipal-id}/transitiveMemberOf/{directoryObject-id}": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Applications.yml"
-    },
-    "/servicePrincipals/{servicePrincipal-id}/transitiveMemberOf/{directoryObject-id}/microsoft.graph.servicePrincipal/microsoft.graph.addTokenSigningCertificate": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Applications.yml"
-    },
-    "/servicePrincipals/{servicePrincipal-id}/transitiveMemberOf/{directoryObject-id}/microsoft.graph.servicePrincipal/microsoft.graph.checkMemberGroups": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Applications.yml"
-    },
-    "/servicePrincipals/{servicePrincipal-id}/transitiveMemberOf/{directoryObject-id}/microsoft.graph.servicePrincipal/microsoft.graph.checkMemberObjects": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Applications.yml"
-    },
-    "/servicePrincipals/{servicePrincipal-id}/transitiveMemberOf/{directoryObject-id}/microsoft.graph.servicePrincipal/microsoft.graph.createPasswordSingleSignOnCredentials": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Applications.yml"
-    },
-    "/servicePrincipals/{servicePrincipal-id}/transitiveMemberOf/{directoryObject-id}/microsoft.graph.servicePrincipal/microsoft.graph.deletePasswordSingleSignOnCredentials": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Applications.yml"
-    },
-    "/servicePrincipals/{servicePrincipal-id}/transitiveMemberOf/{directoryObject-id}/microsoft.graph.servicePrincipal/microsoft.graph.getMemberGroups": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Applications.yml"
-    },
-    "/servicePrincipals/{servicePrincipal-id}/transitiveMemberOf/{directoryObject-id}/microsoft.graph.servicePrincipal/microsoft.graph.getMemberObjects": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Applications.yml"
-    },
-    "/servicePrincipals/{servicePrincipal-id}/transitiveMemberOf/{directoryObject-id}/microsoft.graph.servicePrincipal/microsoft.graph.getPasswordSingleSignOnCredentials": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Applications.yml"
-    },
-    "/servicePrincipals/{servicePrincipal-id}/transitiveMemberOf/{directoryObject-id}/microsoft.graph.servicePrincipal/microsoft.graph.restore": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Applications.yml"
-    },
-    "/servicePrincipals/{servicePrincipal-id}/transitiveMemberOf/{directoryObject-id}/microsoft.graph.servicePrincipal/microsoft.graph.updatePasswordSingleSignOnCredentials": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Applications.yml"
     },

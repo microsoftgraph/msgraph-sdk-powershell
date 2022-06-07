@@ -785,6 +785,8 @@ paths:
                 - displayName desc
                 - dueDateTime
                 - dueDateTime desc
+                - feedbackResourcesFolderUrl
+                - feedbackResourcesFolderUrl desc
                 - grading
                 - grading desc
                 - instructions
@@ -826,6 +828,7 @@ paths:
                 - createdDateTime
                 - displayName
                 - dueDateTime
+                - feedbackResourcesFolderUrl
                 - grading
                 - instructions
                 - lastModifiedBy
@@ -939,6 +942,7 @@ paths:
                 - createdDateTime
                 - displayName
                 - dueDateTime
+                - feedbackResourcesFolderUrl
                 - grading
                 - instructions
                 - lastModifiedBy
@@ -998,6 +1002,8 @@ paths:
                 educationAssignment-id: $request.path.educationAssignment-id
             publish:
               operationId: education.classes.educationClass.assignments.educationAssignment.publish
+            setUpFeedbackResourcesFolder:
+              operationId: education.classes.educationClass.assignments.educationAssignment.setUpFeedbackResourcesFolder
             setUpResourcesFolder:
               operationId: education.classes.educationClass.assignments.educationAssignment.setUpResourcesFolder
         default:
@@ -1359,6 +1365,37 @@ paths:
         - education.Actions
       summary: Invoke action publish
       operationId: education.classes.assignments_publish
+      parameters:
+        - name: educationClass-id
+          in: path
+          description: 'key: id of educationClass'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: educationClass
+        - name: educationAssignment-id
+          in: path
+          description: 'key: id of educationAssignment'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: educationAssignment
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.educationAssignment'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/education/classes/{educationClass-id}/assignments/{educationAssignment-id}/microsoft.graph.setUpFeedbackResourcesFolder':
+    post:
+      tags:
+        - education.Actions
+      summary: Invoke action setUpFeedbackResourcesFolder
+      operationId: education.classes.assignments_setUpFeedbackResourcesFolder
       parameters:
         - name: educationClass-id
           in: path
@@ -3490,6 +3527,7 @@ paths:
                 - securityIdentifier
                 - theme
                 - visibility
+                - writebackConfiguration
                 - accessType
                 - allowExternalSenders
                 - autoSubscribeNewMembers
@@ -4807,6 +4845,8 @@ paths:
                 - displayName desc
                 - dueDateTime
                 - dueDateTime desc
+                - feedbackResourcesFolderUrl
+                - feedbackResourcesFolderUrl desc
                 - grading
                 - grading desc
                 - instructions
@@ -4848,6 +4888,7 @@ paths:
                 - createdDateTime
                 - displayName
                 - dueDateTime
+                - feedbackResourcesFolderUrl
                 - grading
                 - instructions
                 - lastModifiedBy
@@ -4946,6 +4987,7 @@ paths:
                 - createdDateTime
                 - displayName
                 - dueDateTime
+                - feedbackResourcesFolderUrl
                 - grading
                 - instructions
                 - lastModifiedBy
@@ -5001,6 +5043,8 @@ paths:
                 educationAssignment-id: $request.path.educationAssignment-id
             publish:
               operationId: education.me.assignments.educationAssignment.publish
+            setUpFeedbackResourcesFolder:
+              operationId: education.me.assignments.educationAssignment.setUpFeedbackResourcesFolder
             setUpResourcesFolder:
               operationId: education.me.assignments.educationAssignment.setUpResourcesFolder
         default:
@@ -5306,6 +5350,30 @@ paths:
         - education.Actions
       summary: Invoke action publish
       operationId: education.me.assignments_publish
+      parameters:
+        - name: educationAssignment-id
+          in: path
+          description: 'key: id of educationAssignment'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: educationAssignment
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.educationAssignment'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/education/me/assignments/{educationAssignment-id}/microsoft.graph.setUpFeedbackResourcesFolder':
+    post:
+      tags:
+        - education.Actions
+      summary: Invoke action setUpFeedbackResourcesFolder
+      operationId: education.me.assignments_setUpFeedbackResourcesFolder
       parameters:
         - name: educationAssignment-id
           in: path
@@ -10285,6 +10353,8 @@ paths:
                 - displayName desc
                 - dueDateTime
                 - dueDateTime desc
+                - feedbackResourcesFolderUrl
+                - feedbackResourcesFolderUrl desc
                 - grading
                 - grading desc
                 - instructions
@@ -10326,6 +10396,7 @@ paths:
                 - createdDateTime
                 - displayName
                 - dueDateTime
+                - feedbackResourcesFolderUrl
                 - grading
                 - instructions
                 - lastModifiedBy
@@ -10439,6 +10510,7 @@ paths:
                 - createdDateTime
                 - displayName
                 - dueDateTime
+                - feedbackResourcesFolderUrl
                 - grading
                 - instructions
                 - lastModifiedBy
@@ -10498,6 +10570,8 @@ paths:
                 educationAssignment-id: $request.path.educationAssignment-id
             publish:
               operationId: education.users.educationUser.assignments.educationAssignment.publish
+            setUpFeedbackResourcesFolder:
+              operationId: education.users.educationUser.assignments.educationAssignment.setUpFeedbackResourcesFolder
             setUpResourcesFolder:
               operationId: education.users.educationUser.assignments.educationAssignment.setUpResourcesFolder
         default:
@@ -10859,6 +10933,37 @@ paths:
         - education.Actions
       summary: Invoke action publish
       operationId: education.users.assignments_publish
+      parameters:
+        - name: educationUser-id
+          in: path
+          description: 'key: id of educationUser'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: educationUser
+        - name: educationAssignment-id
+          in: path
+          description: 'key: id of educationAssignment'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: educationAssignment
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.educationAssignment'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/education/users/{educationUser-id}/assignments/{educationAssignment-id}/microsoft.graph.setUpFeedbackResourcesFolder':
+    post:
+      tags:
+        - education.Actions
+      summary: Invoke action setUpFeedbackResourcesFolder
+      operationId: education.users.assignments_setUpFeedbackResourcesFolder
       parameters:
         - name: educationUser-id
           in: path
@@ -14499,6 +14604,10 @@ components:
               description: 'Date when the students assignment is due.  The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
               format: date-time
               nullable: true
+            feedbackResourcesFolderUrl:
+              type: string
+              description: Folder URL where all the feedback file resources for this assignment are stored.
+              nullable: true
             grading:
               $ref: '#/components/schemas/microsoft.graph.educationAssignmentGradeType'
             instructions:
@@ -14684,7 +14793,7 @@ components:
             lastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Moment in time when the resource was last modified.  The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2021 is 2021-01-01T00:00:00Z.'
+              description: 'Moment in time when the resource was last modified. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2021 is 2021-01-01T00:00:00Z.'
               format: date-time
               nullable: true
           additionalProperties:
@@ -14884,6 +14993,8 @@ components:
               type: string
               description: 'Specifies the group join policy and group content visibility for groups. Possible values are: Private, Public, or Hiddenmembership. Hiddenmembership can be set only for Microsoft 365 groups, when the groups are created. It can''t be updated later. Other values of visibility can be updated after group creation. If visibility value is not specified during group creation on Microsoft Graph, a security group is created as Private by default and Microsoft 365 group is Public. Groups assignable to roles are always Private. See group visibility options to learn more. Returned by default. Nullable.'
               nullable: true
+            writebackConfiguration:
+              $ref: '#/components/schemas/microsoft.graph.groupWritebackConfiguration'
             accessType:
               $ref: '#/components/schemas/microsoft.graph.groupAccessType'
             allowExternalSenders:
@@ -15507,7 +15618,7 @@ components:
               nullable: true
             showInAddressList:
               type: boolean
-              description: 'true if the Outlook global address list should contain this user, otherwise false. If not set, this will be treated as true. For users invited through the invitation manager, this property will be set to false. Supports $filter (eq, ne, not, in).'
+              description: Do not use in Microsoft Graph. Manage this property through the Microsoft 365 admin center instead. Represents whether the user should be included in the Outlook global address list. See Known issue.
               nullable: true
             signInSessionsValidFromDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -16304,6 +16415,17 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.groupWritebackConfiguration:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.writebackConfiguration'
+        - title: groupWritebackConfiguration
+          type: object
+          properties:
+            onPremisesGroupType:
+              type: string
+              nullable: true
+          additionalProperties:
+            type: object
     microsoft.graph.groupAccessType:
       title: groupAccessType
       enum:
@@ -19829,6 +19951,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.pinnedChatMessageInfo'
+              description: A collection of all the pinned messages in the chat. Nullable.
             tabs:
               type: array
               items:
@@ -20085,11 +20208,11 @@ components:
       properties:
         displayName:
           type: string
-          description: 'The identity''s display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
+          description: The display name of the identity. This property is read-only.
           nullable: true
         id:
           type: string
-          description: Unique identifier for the identity.
+          description: The identifier of the identity. This property is read-only.
           nullable: true
       additionalProperties:
         type: object
@@ -20105,6 +20228,15 @@ components:
       properties:
         description:
           $ref: '#/components/schemas/microsoft.graph.educationItemBody'
+      additionalProperties:
+        type: object
+    microsoft.graph.writebackConfiguration:
+      title: writebackConfiguration
+      type: object
+      properties:
+        isEnabled:
+          type: boolean
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.MembershipRuleProcessingStatusDetails:
@@ -26182,7 +26314,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.checklistItem'
-              description: A collection of checklistItems linked to a task.
+              description: A collection of smaller subtasks linked to the more complex parent task.
             extensions:
               type: array
               items:
@@ -31242,6 +31374,7 @@ components:
               items:
                 type: string
                 nullable: true
+              description: The categories associated with the task. Each category corresponds to the displayName property of an outlookCategory that the user has defined.
             completedDateTime:
               $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
             createdDateTime:
@@ -31251,6 +31384,9 @@ components:
               format: date-time
             dueDateTime:
               $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
+            hasAttachments:
+              type: boolean
+              nullable: true
             importance:
               $ref: '#/components/schemas/microsoft.graph.importance'
             isReminderOn:
@@ -31271,10 +31407,19 @@ components:
               type: string
               description: A brief description of the task.
               nullable: true
+            attachments:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.attachment_v2'
+            attachmentSessions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.attachmentSession'
             checklistItems:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.checklistItem'
+              description: A collection of smaller subtasks linked to the more complex parent task.
             extensions:
               type: array
               items:
@@ -32009,11 +32154,11 @@ components:
       properties:
         key:
           type: string
-          description: Key.
+          description: 'Contains the name of the field that a value is associated with. When a sign in or domain hint is included in the sign-in request, corresponding fields are included as key-value pairs. Possible keys: Login hint present, Domain hint present.'
           nullable: true
         value:
           type: string
-          description: Value.
+          description: Contains the corresponding value for the specified key. The value is true if a sign in hint was included in the sign-in request; otherwise false. The value is true if a domain hint was included in the sign-in request; otherwise false.
           nullable: true
       additionalProperties:
         type: object
@@ -33833,6 +33978,52 @@ components:
               type: string
               description: 'Write only. Content type, such as image/png, image/jpg.'
               nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.attachment_v2:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: attachment_v2
+          type: object
+          properties:
+            contentType:
+              type: string
+              nullable: true
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            name:
+              type: string
+              nullable: true
+            size:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              format: int32
+          additionalProperties:
+            type: object
+    microsoft.graph.attachmentSession:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: attachmentSession
+          type: object
+          properties:
+            content:
+              type: string
+              format: base64url
+              nullable: true
+            expirationDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            nextExpectedRange:
+              type: array
+              items:
+                type: string
+                nullable: true
           additionalProperties:
             type: object
     microsoft.graph.linkedResource:

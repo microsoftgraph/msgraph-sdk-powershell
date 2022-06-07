@@ -53,7 +53,7 @@ paths:
     post:
       tags:
         - subscriptions.subscription
-      summary: Change notifications for Outlook resources in Microsoft Graph
+      summary: Create subscription
       operationId: subscriptions.subscription_CreateSubscription
       requestBody:
         description: New entity

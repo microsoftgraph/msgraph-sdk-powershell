@@ -10,7 +10,7 @@ paths:
     get:
       tags:
         - accessReviews.accessReview
-      summary: List accessReviews
+      summary: List accessReviews (deprecated)
       operationId: accessReviews.accessReview_ListAccessReview
       parameters:
         - $ref: '#/components/parameters/top'
@@ -105,7 +105,7 @@ paths:
     post:
       tags:
         - accessReviews.accessReview
-      summary: Create accessReview
+      summary: Create accessReview (deprecated)
       operationId: accessReviews.accessReview_CreateAccessReview
       requestBody:
         description: New entity
@@ -128,7 +128,7 @@ paths:
     get:
       tags:
         - accessReviews.accessReview
-      summary: Get accessReview
+      summary: Get accessReview (deprecated)
       operationId: accessReviews.accessReview_GetAccessReview
       parameters:
         - name: accessReview-id
@@ -218,7 +218,7 @@ paths:
     patch:
       tags:
         - accessReviews.accessReview
-      summary: Update accessReview
+      summary: Update accessReview (deprecated)
       operationId: accessReviews.accessReview_UpdateAccessReview
       parameters:
         - name: accessReview-id
@@ -244,7 +244,7 @@ paths:
     delete:
       tags:
         - accessReviews.accessReview
-      summary: Delete accessReview
+      summary: Delete accessReview (deprecated)
       operationId: accessReviews.accessReview_DeleteAccessReview
       parameters:
         - name: accessReview-id
@@ -739,6 +739,14 @@ paths:
               parameters:
                 accessReview-id: $request.path.accessReview-id
                 accessReview-id1: $request.path.accessReview-id1
+            applyDecisions:
+              operationId: accessReviews.accessReview.instances.accessReview.applyDecisions
+            resetDecisions:
+              operationId: accessReviews.accessReview.instances.accessReview.resetDecisions
+            sendReminder:
+              operationId: accessReviews.accessReview.instances.accessReview.sendReminder
+            stop:
+              operationId: accessReviews.accessReview.instances.accessReview.stop
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1091,6 +1099,114 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/accessReviews/{accessReview-id}/instances/{accessReview-id1}/microsoft.graph.applyDecisions':
+    post:
+      tags:
+        - accessReviews.Actions
+      summary: Invoke action applyDecisions
+      operationId: accessReviews.instances_applyDecisions
+      parameters:
+        - name: accessReview-id
+          in: path
+          description: 'key: id of accessReview'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessReview
+        - name: accessReview-id1
+          in: path
+          description: 'key: id of accessReview'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessReview
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/accessReviews/{accessReview-id}/instances/{accessReview-id1}/microsoft.graph.resetDecisions':
+    post:
+      tags:
+        - accessReviews.Actions
+      summary: Invoke action resetDecisions
+      operationId: accessReviews.instances_resetDecisions
+      parameters:
+        - name: accessReview-id
+          in: path
+          description: 'key: id of accessReview'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessReview
+        - name: accessReview-id1
+          in: path
+          description: 'key: id of accessReview'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessReview
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/accessReviews/{accessReview-id}/instances/{accessReview-id1}/microsoft.graph.sendReminder':
+    post:
+      tags:
+        - accessReviews.Actions
+      summary: Invoke action sendReminder
+      operationId: accessReviews.instances_sendReminder
+      parameters:
+        - name: accessReview-id
+          in: path
+          description: 'key: id of accessReview'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessReview
+        - name: accessReview-id1
+          in: path
+          description: 'key: id of accessReview'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessReview
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/accessReviews/{accessReview-id}/instances/{accessReview-id1}/microsoft.graph.stop':
+    post:
+      tags:
+        - accessReviews.Actions
+      summary: Invoke action stop
+      operationId: accessReviews.instances_stop
+      parameters:
+        - name: accessReview-id
+          in: path
+          description: 'key: id of accessReview'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessReview
+        - name: accessReview-id1
+          in: path
+          description: 'key: id of accessReview'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessReview
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/accessReviews/{accessReview-id}/instances/{accessReview-id1}/myDecisions':
     get:
       tags:
@@ -3799,7 +3915,7 @@ paths:
     get:
       tags:
         - businessFlowTemplates.businessFlowTemplate
-      summary: List businessFlowTemplates
+      summary: List businessFlowTemplates (deprecated)
       operationId: businessFlowTemplates.businessFlowTemplate_ListBusinessFlowTemplate
       parameters:
         - $ref: '#/components/parameters/top'
@@ -25778,6 +25894,8 @@ paths:
                 - theme desc
                 - visibility
                 - visibility desc
+                - writebackConfiguration
+                - writebackConfiguration desc
                 - accessType
                 - accessType desc
                 - allowExternalSenders
@@ -25853,6 +25971,7 @@ paths:
                 - securityIdentifier
                 - theme
                 - visibility
+                - writebackConfiguration
                 - accessType
                 - allowExternalSenders
                 - autoSubscribeNewMembers
@@ -26089,6 +26208,8 @@ paths:
                 - theme desc
                 - visibility
                 - visibility desc
+                - writebackConfiguration
+                - writebackConfiguration desc
                 - accessType
                 - accessType desc
                 - allowExternalSenders
@@ -43345,6 +43466,8 @@ paths:
                 - theme desc
                 - visibility
                 - visibility desc
+                - writebackConfiguration
+                - writebackConfiguration desc
                 - accessType
                 - accessType desc
                 - allowExternalSenders
@@ -43420,6 +43543,7 @@ paths:
                 - securityIdentifier
                 - theme
                 - visibility
+                - writebackConfiguration
                 - accessType
                 - allowExternalSenders
                 - autoSubscribeNewMembers
@@ -43670,6 +43794,8 @@ paths:
                 - theme desc
                 - visibility
                 - visibility desc
+                - writebackConfiguration
+                - writebackConfiguration desc
                 - accessType
                 - accessType desc
                 - allowExternalSenders
@@ -55140,6 +55266,8 @@ paths:
                 - theme desc
                 - visibility
                 - visibility desc
+                - writebackConfiguration
+                - writebackConfiguration desc
                 - accessType
                 - accessType desc
                 - allowExternalSenders
@@ -55215,6 +55343,7 @@ paths:
                 - securityIdentifier
                 - theme
                 - visibility
+                - writebackConfiguration
                 - accessType
                 - allowExternalSenders
                 - autoSubscribeNewMembers
@@ -55451,6 +55580,8 @@ paths:
                 - theme desc
                 - visibility
                 - visibility desc
+                - writebackConfiguration
+                - writebackConfiguration desc
                 - accessType
                 - accessType desc
                 - allowExternalSenders
@@ -56045,6 +56176,141 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/identityGovernance/entitlementManagement/connectedOrganizations/{connectedOrganization-id}/externalSponsors/microsoft.graph.getByIds':
+    post:
+      tags:
+        - identityGovernance.Actions
+      summary: Invoke action getByIds
+      operationId: identityGovernance.entitlementManagement.connectedOrganizations.externalSponsors_getByIds
+      parameters:
+        - name: connectedOrganization-id
+          in: path
+          description: 'key: id of connectedOrganization'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: connectedOrganization
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                ids:
+                  type: array
+                  items:
+                    type: string
+                types:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of directoryObject
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.directoryObject'
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/identityGovernance/entitlementManagement/connectedOrganizations/{connectedOrganization-id}/externalSponsors/microsoft.graph.getUserOwnedObjects':
+    post:
+      tags:
+        - identityGovernance.Actions
+      summary: Invoke action getUserOwnedObjects
+      operationId: identityGovernance.entitlementManagement.connectedOrganizations.externalSponsors_getUserOwnedObjects
+      parameters:
+        - name: connectedOrganization-id
+          in: path
+          description: 'key: id of connectedOrganization'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: connectedOrganization
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                userId:
+                  type: string
+                  nullable: true
+                type:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.directoryObject'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/identityGovernance/entitlementManagement/connectedOrganizations/{connectedOrganization-id}/externalSponsors/microsoft.graph.validateProperties':
+    post:
+      tags:
+        - identityGovernance.Actions
+      summary: Invoke action validateProperties
+      operationId: identityGovernance.entitlementManagement.connectedOrganizations.externalSponsors_validateProperties
+      parameters:
+        - name: connectedOrganization-id
+          in: path
+          description: 'key: id of connectedOrganization'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: connectedOrganization
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                entityType:
+                  type: string
+                  nullable: true
+                displayName:
+                  type: string
+                  nullable: true
+                mailNickname:
+                  type: string
+                  nullable: true
+                onBehalfOfUserId:
+                  pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
+                  type: string
+                  format: uuid
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/identityGovernance/entitlementManagement/connectedOrganizations/{connectedOrganization-id}/internalSponsors':
     get:
       tags:
@@ -56196,6 +56462,17 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
+          links:
+            checkMemberGroups:
+              operationId: identityGovernance.entitlementManagement.connectedOrganizations.connectedOrganization.internalSponsors.directoryObject.checkMemberGroups
+            checkMemberObjects:
+              operationId: identityGovernance.entitlementManagement.connectedOrganizations.connectedOrganization.internalSponsors.directoryObject.checkMemberObjects
+            getMemberGroups:
+              operationId: identityGovernance.entitlementManagement.connectedOrganizations.connectedOrganization.internalSponsors.directoryObject.getMemberGroups
+            getMemberObjects:
+              operationId: identityGovernance.entitlementManagement.connectedOrganizations.connectedOrganization.internalSponsors.directoryObject.getMemberObjects
+            restore:
+              operationId: identityGovernance.entitlementManagement.connectedOrganizations.connectedOrganization.internalSponsors.directoryObject.restore
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -56263,6 +56540,384 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/identityGovernance/entitlementManagement/connectedOrganizations/{connectedOrganization-id}/internalSponsors/{directoryObject-id}/microsoft.graph.checkMemberGroups':
+    post:
+      tags:
+        - identityGovernance.Actions
+      summary: Invoke action checkMemberGroups
+      operationId: identityGovernance.entitlementManagement.connectedOrganizations.internalSponsors_checkMemberGroups
+      parameters:
+        - name: connectedOrganization-id
+          in: path
+          description: 'key: id of connectedOrganization'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: connectedOrganization
+        - name: directoryObject-id
+          in: path
+          description: 'key: id of directoryObject'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: directoryObject
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                groupIds:
+                  type: array
+                  items:
+                    type: string
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of directoryObject
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/identityGovernance/entitlementManagement/connectedOrganizations/{connectedOrganization-id}/internalSponsors/{directoryObject-id}/microsoft.graph.checkMemberObjects':
+    post:
+      tags:
+        - identityGovernance.Actions
+      summary: Invoke action checkMemberObjects
+      operationId: identityGovernance.entitlementManagement.connectedOrganizations.internalSponsors_checkMemberObjects
+      parameters:
+        - name: connectedOrganization-id
+          in: path
+          description: 'key: id of connectedOrganization'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: connectedOrganization
+        - name: directoryObject-id
+          in: path
+          description: 'key: id of directoryObject'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: directoryObject
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                ids:
+                  type: array
+                  items:
+                    type: string
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of directoryObject
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/identityGovernance/entitlementManagement/connectedOrganizations/{connectedOrganization-id}/internalSponsors/{directoryObject-id}/microsoft.graph.getMemberGroups':
+    post:
+      tags:
+        - identityGovernance.Actions
+      summary: Invoke action getMemberGroups
+      operationId: identityGovernance.entitlementManagement.connectedOrganizations.internalSponsors_getMemberGroups
+      parameters:
+        - name: connectedOrganization-id
+          in: path
+          description: 'key: id of connectedOrganization'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: connectedOrganization
+        - name: directoryObject-id
+          in: path
+          description: 'key: id of directoryObject'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: directoryObject
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                securityEnabledOnly:
+                  type: boolean
+                  default: false
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of directoryObject
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/identityGovernance/entitlementManagement/connectedOrganizations/{connectedOrganization-id}/internalSponsors/{directoryObject-id}/microsoft.graph.getMemberObjects':
+    post:
+      tags:
+        - identityGovernance.Actions
+      summary: Invoke action getMemberObjects
+      operationId: identityGovernance.entitlementManagement.connectedOrganizations.internalSponsors_getMemberObjects
+      parameters:
+        - name: connectedOrganization-id
+          in: path
+          description: 'key: id of connectedOrganization'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: connectedOrganization
+        - name: directoryObject-id
+          in: path
+          description: 'key: id of directoryObject'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: directoryObject
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                securityEnabledOnly:
+                  type: boolean
+                  default: false
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of directoryObject
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/identityGovernance/entitlementManagement/connectedOrganizations/{connectedOrganization-id}/internalSponsors/{directoryObject-id}/microsoft.graph.restore':
+    post:
+      tags:
+        - identityGovernance.Actions
+      summary: Invoke action restore
+      operationId: identityGovernance.entitlementManagement.connectedOrganizations.internalSponsors_restore
+      parameters:
+        - name: connectedOrganization-id
+          in: path
+          description: 'key: id of connectedOrganization'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: connectedOrganization
+        - name: directoryObject-id
+          in: path
+          description: 'key: id of directoryObject'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: directoryObject
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.directoryObject'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/identityGovernance/entitlementManagement/connectedOrganizations/{connectedOrganization-id}/internalSponsors/microsoft.graph.getByIds':
+    post:
+      tags:
+        - identityGovernance.Actions
+      summary: Invoke action getByIds
+      operationId: identityGovernance.entitlementManagement.connectedOrganizations.internalSponsors_getByIds
+      parameters:
+        - name: connectedOrganization-id
+          in: path
+          description: 'key: id of connectedOrganization'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: connectedOrganization
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                ids:
+                  type: array
+                  items:
+                    type: string
+                types:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of directoryObject
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.directoryObject'
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/identityGovernance/entitlementManagement/connectedOrganizations/{connectedOrganization-id}/internalSponsors/microsoft.graph.getUserOwnedObjects':
+    post:
+      tags:
+        - identityGovernance.Actions
+      summary: Invoke action getUserOwnedObjects
+      operationId: identityGovernance.entitlementManagement.connectedOrganizations.internalSponsors_getUserOwnedObjects
+      parameters:
+        - name: connectedOrganization-id
+          in: path
+          description: 'key: id of connectedOrganization'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: connectedOrganization
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                userId:
+                  type: string
+                  nullable: true
+                type:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.directoryObject'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/identityGovernance/entitlementManagement/connectedOrganizations/{connectedOrganization-id}/internalSponsors/microsoft.graph.validateProperties':
+    post:
+      tags:
+        - identityGovernance.Actions
+      summary: Invoke action validateProperties
+      operationId: identityGovernance.entitlementManagement.connectedOrganizations.internalSponsors_validateProperties
+      parameters:
+        - name: connectedOrganization-id
+          in: path
+          description: 'key: id of connectedOrganization'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: connectedOrganization
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                entityType:
+                  type: string
+                  nullable: true
+                displayName:
+                  type: string
+                  nullable: true
+                mailNickname:
+                  type: string
+                  nullable: true
+                onBehalfOfUserId:
+                  pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
+                  type: string
+                  format: uuid
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   /identityGovernance/entitlementManagement/settings:
     get:
       tags:
@@ -59158,6 +59813,10 @@ paths:
                 privilegedAccess-id: $request.path.privilegedAccess-id
                 governanceResource-id: $request.path.governanceResource-id
                 governanceRoleAssignmentRequest-id: $request.path.governanceRoleAssignmentRequest-id
+            cancel:
+              operationId: privilegedAccess.privilegedAccess.resources.governanceResource.roleAssignmentRequests.governanceRoleAssignmentRequest.cancel
+            updateRequest:
+              operationId: privilegedAccess.privilegedAccess.resources.governanceResource.roleAssignmentRequests.governanceRoleAssignmentRequest.updateRequest
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -59239,6 +59898,99 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/privilegedAccess/{privilegedAccess-id}/resources/{governanceResource-id}/roleAssignmentRequests/{governanceRoleAssignmentRequest-id}/microsoft.graph.cancel':
+    post:
+      tags:
+        - privilegedAccess.Actions
+      summary: Invoke action cancel
+      operationId: privilegedAccess.resources.roleAssignmentRequests_cancel
+      parameters:
+        - name: privilegedAccess-id
+          in: path
+          description: 'key: id of privilegedAccess'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: privilegedAccess
+        - name: governanceResource-id
+          in: path
+          description: 'key: id of governanceResource'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: governanceResource
+        - name: governanceRoleAssignmentRequest-id
+          in: path
+          description: 'key: id of governanceRoleAssignmentRequest'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: governanceRoleAssignmentRequest
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/privilegedAccess/{privilegedAccess-id}/resources/{governanceResource-id}/roleAssignmentRequests/{governanceRoleAssignmentRequest-id}/microsoft.graph.updateRequest':
+    post:
+      tags:
+        - privilegedAccess.Actions
+      summary: Invoke action updateRequest
+      operationId: privilegedAccess.resources.roleAssignmentRequests_updateRequest
+      parameters:
+        - name: privilegedAccess-id
+          in: path
+          description: 'key: id of privilegedAccess'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: privilegedAccess
+        - name: governanceResource-id
+          in: path
+          description: 'key: id of governanceResource'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: governanceResource
+        - name: governanceRoleAssignmentRequest-id
+          in: path
+          description: 'key: id of governanceRoleAssignmentRequest'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: governanceRoleAssignmentRequest
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                decision:
+                  type: string
+                  nullable: true
+                assignmentState:
+                  type: string
+                  nullable: true
+                schedule:
+                  $ref: '#/components/schemas/microsoft.graph.governanceSchedule'
+                reason:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.governanceRoleAssignmentRequest'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/privilegedAccess/{privilegedAccess-id}/resources/{governanceResource-id}/roleAssignmentRequests/{governanceRoleAssignmentRequest-id}/resource':
     get:
       tags:
@@ -60896,6 +61648,46 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/privilegedAccess/{privilegedAccess-id}/resources/{governanceResource-id}/roleAssignments/microsoft.graph.export()':
+    get:
+      tags:
+        - privilegedAccess.Functions
+      summary: Invoke function export
+      operationId: privilegedAccess.resources.roleAssignments_export
+      parameters:
+        - name: privilegedAccess-id
+          in: path
+          description: 'key: id of privilegedAccess'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: privilegedAccess
+        - name: governanceResource-id
+          in: path
+          description: 'key: id of governanceResource'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: governanceResource
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of governanceRoleAssignment
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      type: string
+                      nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
   '/privilegedAccess/{privilegedAccess-id}/resources/{governanceResource-id}/roleDefinitions':
     get:
       tags:
@@ -62152,6 +62944,39 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/privilegedAccess/{privilegedAccess-id}/resources/microsoft.graph.register':
+    post:
+      tags:
+        - privilegedAccess.Actions
+      summary: Invoke action register
+      operationId: privilegedAccess.resources_register
+      parameters:
+        - name: privilegedAccess-id
+          in: path
+          description: 'key: id of privilegedAccess'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: privilegedAccess
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                externalId:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/privilegedAccess/{privilegedAccess-id}/roleAssignmentRequests':
     get:
       tags:
@@ -62367,6 +63192,10 @@ paths:
               parameters:
                 privilegedAccess-id: $request.path.privilegedAccess-id
                 governanceRoleAssignmentRequest-id: $request.path.governanceRoleAssignmentRequest-id
+            cancel:
+              operationId: privilegedAccess.privilegedAccess.roleAssignmentRequests.governanceRoleAssignmentRequest.cancel
+            updateRequest:
+              operationId: privilegedAccess.privilegedAccess.roleAssignmentRequests.governanceRoleAssignmentRequest.updateRequest
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -62434,6 +63263,85 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/privilegedAccess/{privilegedAccess-id}/roleAssignmentRequests/{governanceRoleAssignmentRequest-id}/microsoft.graph.cancel':
+    post:
+      tags:
+        - privilegedAccess.Actions
+      summary: Invoke action cancel
+      operationId: privilegedAccess.roleAssignmentRequests_cancel
+      parameters:
+        - name: privilegedAccess-id
+          in: path
+          description: 'key: id of privilegedAccess'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: privilegedAccess
+        - name: governanceRoleAssignmentRequest-id
+          in: path
+          description: 'key: id of governanceRoleAssignmentRequest'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: governanceRoleAssignmentRequest
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/privilegedAccess/{privilegedAccess-id}/roleAssignmentRequests/{governanceRoleAssignmentRequest-id}/microsoft.graph.updateRequest':
+    post:
+      tags:
+        - privilegedAccess.Actions
+      summary: Invoke action updateRequest
+      operationId: privilegedAccess.roleAssignmentRequests_updateRequest
+      parameters:
+        - name: privilegedAccess-id
+          in: path
+          description: 'key: id of privilegedAccess'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: privilegedAccess
+        - name: governanceRoleAssignmentRequest-id
+          in: path
+          description: 'key: id of governanceRoleAssignmentRequest'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: governanceRoleAssignmentRequest
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                decision:
+                  type: string
+                  nullable: true
+                assignmentState:
+                  type: string
+                  nullable: true
+                schedule:
+                  $ref: '#/components/schemas/microsoft.graph.governanceSchedule'
+                reason:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.governanceRoleAssignmentRequest'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/privilegedAccess/{privilegedAccess-id}/roleAssignmentRequests/{governanceRoleAssignmentRequest-id}/resource':
     get:
       tags:
@@ -63887,6 +64795,39 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/privilegedAccess/{privilegedAccess-id}/roleAssignments/microsoft.graph.export()':
+    get:
+      tags:
+        - privilegedAccess.Functions
+      summary: Invoke function export
+      operationId: privilegedAccess.roleAssignments_export
+      parameters:
+        - name: privilegedAccess-id
+          in: path
+          description: 'key: id of privilegedAccess'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: privilegedAccess
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of governanceRoleAssignment
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      type: string
+                      nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
   '/privilegedAccess/{privilegedAccess-id}/roleDefinitions':
     get:
       tags:
@@ -65354,6 +66295,10 @@ paths:
               operationId: privilegedApproval.RoleInfo.GetSummary
               parameters:
                 privilegedApproval-id: $request.path.privilegedApproval-id
+            selfActivate:
+              operationId: privilegedApproval.privilegedApproval.roleInfo.selfActivate
+            selfDeactivate:
+              operationId: privilegedApproval.privilegedApproval.roleInfo.selfDeactivate
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -65557,6 +66502,76 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/privilegedApproval/{privilegedApproval-id}/roleInfo/microsoft.graph.selfActivate':
+    post:
+      tags:
+        - privilegedApproval.Actions
+      summary: Invoke action selfActivate
+      operationId: privilegedApproval.roleInfo_selfActivate
+      parameters:
+        - name: privilegedApproval-id
+          in: path
+          description: 'key: id of privilegedApproval'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: privilegedApproval
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                reason:
+                  type: string
+                  nullable: true
+                duration:
+                  type: string
+                  nullable: true
+                ticketNumber:
+                  type: string
+                  nullable: true
+                ticketSystem:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.privilegedRoleAssignment'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/privilegedApproval/{privilegedApproval-id}/roleInfo/microsoft.graph.selfDeactivate':
+    post:
+      tags:
+        - privilegedApproval.Actions
+      summary: Invoke action selfDeactivate
+      operationId: privilegedApproval.roleInfo_selfDeactivate
+      parameters:
+        - name: privilegedApproval-id
+          in: path
+          description: 'key: id of privilegedApproval'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: privilegedApproval
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.privilegedRoleAssignment'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/privilegedApproval/{privilegedApproval-id}/roleInfo/settings':
     get:
       tags:
@@ -66348,6 +67363,10 @@ paths:
               operationId: privilegedRoleAssignmentRequests.RoleInfo.GetSummary
               parameters:
                 privilegedRoleAssignmentRequest-id: $request.path.privilegedRoleAssignmentRequest-id
+            selfActivate:
+              operationId: privilegedRoleAssignmentRequests.privilegedRoleAssignmentRequest.roleInfo.selfActivate
+            selfDeactivate:
+              operationId: privilegedRoleAssignmentRequests.privilegedRoleAssignmentRequest.roleInfo.selfDeactivate
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -66551,6 +67570,76 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/privilegedRoleAssignmentRequests/{privilegedRoleAssignmentRequest-id}/roleInfo/microsoft.graph.selfActivate':
+    post:
+      tags:
+        - privilegedRoleAssignmentRequests.Actions
+      summary: Invoke action selfActivate
+      operationId: privilegedRoleAssignmentRequests.roleInfo_selfActivate
+      parameters:
+        - name: privilegedRoleAssignmentRequest-id
+          in: path
+          description: 'key: id of privilegedRoleAssignmentRequest'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: privilegedRoleAssignmentRequest
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                reason:
+                  type: string
+                  nullable: true
+                duration:
+                  type: string
+                  nullable: true
+                ticketNumber:
+                  type: string
+                  nullable: true
+                ticketSystem:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.privilegedRoleAssignment'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/privilegedRoleAssignmentRequests/{privilegedRoleAssignmentRequest-id}/roleInfo/microsoft.graph.selfDeactivate':
+    post:
+      tags:
+        - privilegedRoleAssignmentRequests.Actions
+      summary: Invoke action selfDeactivate
+      operationId: privilegedRoleAssignmentRequests.roleInfo_selfDeactivate
+      parameters:
+        - name: privilegedRoleAssignmentRequest-id
+          in: path
+          description: 'key: id of privilegedRoleAssignmentRequest'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: privilegedRoleAssignmentRequest
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.privilegedRoleAssignment'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/privilegedRoleAssignmentRequests/{privilegedRoleAssignmentRequest-id}/roleInfo/settings':
     get:
       tags:
@@ -67129,6 +68218,10 @@ paths:
               operationId: privilegedRoleAssignments.RoleInfo.GetSummary
               parameters:
                 privilegedRoleAssignment-id: $request.path.privilegedRoleAssignment-id
+            selfActivate:
+              operationId: privilegedRoleAssignments.privilegedRoleAssignment.roleInfo.selfActivate
+            selfDeactivate:
+              operationId: privilegedRoleAssignments.privilegedRoleAssignment.roleInfo.selfDeactivate
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -67332,6 +68425,76 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/privilegedRoleAssignments/{privilegedRoleAssignment-id}/roleInfo/microsoft.graph.selfActivate':
+    post:
+      tags:
+        - privilegedRoleAssignments.Actions
+      summary: Invoke action selfActivate
+      operationId: privilegedRoleAssignments.roleInfo_selfActivate
+      parameters:
+        - name: privilegedRoleAssignment-id
+          in: path
+          description: 'key: id of privilegedRoleAssignment'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: privilegedRoleAssignment
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                reason:
+                  type: string
+                  nullable: true
+                duration:
+                  type: string
+                  nullable: true
+                ticketNumber:
+                  type: string
+                  nullable: true
+                ticketSystem:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.privilegedRoleAssignment'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/privilegedRoleAssignments/{privilegedRoleAssignment-id}/roleInfo/microsoft.graph.selfDeactivate':
+    post:
+      tags:
+        - privilegedRoleAssignments.Actions
+      summary: Invoke action selfDeactivate
+      operationId: privilegedRoleAssignments.roleInfo_selfDeactivate
+      parameters:
+        - name: privilegedRoleAssignment-id
+          in: path
+          description: 'key: id of privilegedRoleAssignment'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: privilegedRoleAssignment
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.privilegedRoleAssignment'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/privilegedRoleAssignments/{privilegedRoleAssignment-id}/roleInfo/settings':
     get:
       tags:
@@ -68213,7 +69376,7 @@ paths:
     get:
       tags:
         - programControls.programControl
-      summary: List programControls
+      summary: List programControls (deprecated)
       operationId: programControls.programControl_ListProgramControl
       parameters:
         - $ref: '#/components/parameters/top'
@@ -68296,7 +69459,7 @@ paths:
     post:
       tags:
         - programControls.programControl
-      summary: Create programControl
+      summary: Create programControl (deprecated)
       operationId: programControls.programControl_CreateProgramControl
       requestBody:
         description: New entity
@@ -68407,7 +69570,7 @@ paths:
     delete:
       tags:
         - programControls.programControl
-      summary: Delete programControl
+      summary: Delete programControl (deprecated)
       operationId: programControls.programControl_DeleteProgramControl
       parameters:
         - name: programControl-id
@@ -68795,7 +69958,7 @@ paths:
     get:
       tags:
         - programControlTypes.programControlType
-      summary: List programControlTypes
+      summary: List programControlTypes (deprecated)
       operationId: programControlTypes.programControlType_ListProgramControlType
       parameters:
         - $ref: '#/components/parameters/top'
@@ -68981,7 +70144,7 @@ paths:
     get:
       tags:
         - programs.program
-      summary: List programs
+      summary: List programs (deprecated)
       operationId: programs.program_ListProgram
       parameters:
         - $ref: '#/components/parameters/top'
@@ -69046,7 +70209,7 @@ paths:
     post:
       tags:
         - programs.program
-      summary: Create program
+      summary: Create program (deprecated)
       operationId: programs.program_CreateProgram
       requestBody:
         description: New entity
@@ -69125,7 +70288,7 @@ paths:
     patch:
       tags:
         - programs.program
-      summary: Update program
+      summary: Update program (deprecated)
       operationId: programs.program_UpdateProgram
       parameters:
         - name: program-id
@@ -69151,7 +70314,7 @@ paths:
     delete:
       tags:
         - programs.program
-      summary: Delete program
+      summary: Delete program (deprecated)
       operationId: programs.program_DeleteProgram
       parameters:
         - name: program-id
@@ -70553,7 +71716,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.approval'
-              description: Approval stages for assignment requests.
+              description: Approval stages for decisions associated with access package assignment requests.
             accessPackageAssignmentPolicies:
               type: array
               items:
@@ -70573,12 +71736,12 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.accessPackageAssignment'
-              description: Represents the grant of an access package to a subject (user or group).
+              description: The assignment of an access package to a subject for a period of time.
             accessPackageCatalogs:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.accessPackageCatalog'
-              description: Represents a group of access packages.
+              description: A container of access packages.
             accessPackageResourceEnvironments:
               type: array
               items:
@@ -71068,7 +72231,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.identitySource'
-              description: 'The identity sources in this connected organization, one of azureActiveDirectoryTenant, domainIdentitySource or externalDomainFederation. Read-only. Nullable. Supports $select and $filter(eq). To filter by the derived types, you must declare the resource using its full OData cast, for example, $filter=identitySources/any(is:is/microsoft.graph.azureActiveDirectoryTenant/tenantId eq ''bcfdfff4-cbc3-43f2-9000-ba7b7515054f'').'
+              description: 'The identity sources in this connected organization, one of azureActiveDirectoryTenant, crossCloudAzureActiveDirectoryTenant, domainIdentitySource or externalDomainFederation. Read-only. Nullable. Supports $select and $filter(eq). To filter by the derived types, you must declare the resource using its full OData cast, for example, $filter=identitySources/any(is:is/microsoft.graph.azureActiveDirectoryTenant/tenantId eq ''bcfdfff4-cbc3-43f2-9000-ba7b7515054f'').'
             modifiedBy:
               type: string
               description: UPN of the user who last modified this resource. Read-only.
@@ -71642,6 +72805,34 @@ components:
               $ref: '#/components/schemas/microsoft.graph.governanceSubject'
           additionalProperties:
             type: object
+    microsoft.graph.governanceSchedule:
+      title: governanceSchedule
+      type: object
+      properties:
+        duration:
+          pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
+          type: string
+          description: The duration of a role assignment. It is in format of a TimeSpan.
+          format: duration
+          nullable: true
+        endDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: 'The end time of the role assignment. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Note: if the value is null, it indicates a permanent assignment.'
+          format: date-time
+          nullable: true
+        startDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: 'The start time of the role assignment. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
+          format: date-time
+          nullable: true
+        type:
+          type: string
+          description: The role assignment schedule type. Only Once is supported for now.
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.governanceRoleDefinition:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -72214,11 +73405,11 @@ components:
       properties:
         displayName:
           type: string
-          description: 'The identity''s display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
+          description: The display name of the identity. This property is read-only.
           nullable: true
         id:
           type: string
-          description: Unique identifier for the identity.
+          description: The identifier of the identity. This property is read-only.
           nullable: true
       additionalProperties:
         type: object
@@ -72649,7 +73840,7 @@ components:
       properties:
         approvalMode:
           type: string
-          description: 'One of NoApproval, SingleStage or Serial. The NoApproval is used when isApprovalRequired is false.'
+          description: 'One of SingleStage, Serial, Parallel, NoApproval (default). NoApproval is used when isApprovalRequired is false.'
           nullable: true
         approvalStages:
           type: array
@@ -72658,11 +73849,11 @@ components:
           description: 'If approval is required, the one or two elements of this collection define each of the stages of approval. An empty array if no approval is required.'
         isApprovalRequired:
           type: boolean
-          description: 'If false, then approval is not required for requests in this policy.'
+          description: Indicates whether approval is required for requests in this policy.
           nullable: true
         isApprovalRequiredForExtension:
           type: boolean
-          description: 'If false, then approval is not required for a user who already has an assignment to extend their assignment.'
+          description: Indicates whether approval is required for a user to extend their assignment.
           nullable: true
         isRequestorJustificationRequired:
           type: boolean
@@ -72858,6 +74049,8 @@ components:
               type: string
               description: 'Specifies the group join policy and group content visibility for groups. Possible values are: Private, Public, or Hiddenmembership. Hiddenmembership can be set only for Microsoft 365 groups, when the groups are created. It can''t be updated later. Other values of visibility can be updated after group creation. If visibility value is not specified during group creation on Microsoft Graph, a security group is created as Private by default and Microsoft 365 group is Public. Groups assignable to roles are always Private. See group visibility options to learn more. Returned by default. Nullable.'
               nullable: true
+            writebackConfiguration:
+              $ref: '#/components/schemas/microsoft.graph.groupWritebackConfiguration'
             accessType:
               $ref: '#/components/schemas/microsoft.graph.groupAccessType'
             allowExternalSenders:
@@ -73103,7 +74296,7 @@ components:
         startDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
-          description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
+          description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. In PIM, when the  eligible or active assignment becomes active.'
           format: date-time
           nullable: true
       additionalProperties:
@@ -73153,34 +74346,6 @@ components:
         url:
           type: string
           description: The endpoint that is used by Entitlement Management to communicate with the access package resource.
-          nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.governanceSchedule:
-      title: governanceSchedule
-      type: object
-      properties:
-        duration:
-          pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
-          type: string
-          description: The duration of a role assignment. It is in format of a TimeSpan.
-          format: duration
-          nullable: true
-        endDateTime:
-          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-          type: string
-          description: 'The end time of the role assignment. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Note: if the value is null, it indicates a permanent assignment.'
-          format: date-time
-          nullable: true
-        startDateTime:
-          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-          type: string
-          description: 'The start time of the role assignment. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
-          format: date-time
-          nullable: true
-        type:
-          type: string
-          description: The role assignment schedule type. Only Once is supported for now.
           nullable: true
       additionalProperties:
         type: object
@@ -74107,6 +75272,17 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.groupWritebackConfiguration:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.writebackConfiguration'
+        - title: groupWritebackConfiguration
+          type: object
+          properties:
+            onPremisesGroupType:
+              type: string
+              nullable: true
+          additionalProperties:
+            type: object
     microsoft.graph.groupAccessType:
       title: groupAccessType
       enum:
@@ -74988,11 +76164,11 @@ components:
       properties:
         key:
           type: string
-          description: Key.
+          description: 'Contains the name of the field that a value is associated with. When a sign in or domain hint is included in the sign-in request, corresponding fields are included as key-value pairs. Possible keys: Login hint present, Domain hint present.'
           nullable: true
         value:
           type: string
-          description: Value.
+          description: Contains the corresponding value for the specified key. The value is true if a sign in hint was included in the sign-in request; otherwise false. The value is true if a domain hint was included in the sign-in request; otherwise false.
           nullable: true
       additionalProperties:
         type: object
@@ -75093,6 +76269,15 @@ components:
         text:
           type: string
           description: The text in the specific language. Required.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.writebackConfiguration:
+      title: writebackConfiguration
+      type: object
+      properties:
+        isEnabled:
+          type: boolean
           nullable: true
       additionalProperties:
         type: object
@@ -76889,7 +78074,7 @@ components:
               nullable: true
             showInAddressList:
               type: boolean
-              description: 'true if the Outlook global address list should contain this user, otherwise false. If not set, this will be treated as true. For users invited through the invitation manager, this property will be set to false. Supports $filter (eq, ne, not, in).'
+              description: Do not use in Microsoft Graph. Manage this property through the Microsoft 365 admin center instead. Represents whether the user should be included in the Outlook global address list. See Known issue.
               nullable: true
             signInSessionsValidFromDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -81993,6 +83178,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.pinnedChatMessageInfo'
+              description: A collection of all the pinned messages in the chat. Nullable.
             tabs:
               type: array
               items:
@@ -87298,7 +88484,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.checklistItem'
-              description: A collection of checklistItems linked to a task.
+              description: A collection of smaller subtasks linked to the more complex parent task.
             extensions:
               type: array
               items:
@@ -90129,6 +91315,7 @@ components:
               items:
                 type: string
                 nullable: true
+              description: The categories associated with the task. Each category corresponds to the displayName property of an outlookCategory that the user has defined.
             completedDateTime:
               $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
             createdDateTime:
@@ -90138,6 +91325,9 @@ components:
               format: date-time
             dueDateTime:
               $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
+            hasAttachments:
+              type: boolean
+              nullable: true
             importance:
               $ref: '#/components/schemas/microsoft.graph.importance'
             isReminderOn:
@@ -90158,10 +91348,19 @@ components:
               type: string
               description: A brief description of the task.
               nullable: true
+            attachments:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.attachment_v2'
+            attachmentSessions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.attachmentSession'
             checklistItems:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.checklistItem'
+              description: A collection of smaller subtasks linked to the more complex parent task.
             extensions:
               type: array
               items:
@@ -91757,6 +92956,52 @@ components:
         - unknownFutureValue
         - emailUser
       type: string
+    microsoft.graph.attachment_v2:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: attachment_v2
+          type: object
+          properties:
+            contentType:
+              type: string
+              nullable: true
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            name:
+              type: string
+              nullable: true
+            size:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              format: int32
+          additionalProperties:
+            type: object
+    microsoft.graph.attachmentSession:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: attachmentSession
+          type: object
+          properties:
+            content:
+              type: string
+              format: base64url
+              nullable: true
+            expirationDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            nextExpectedRange:
+              type: array
+              items:
+                type: string
+                nullable: true
+          additionalProperties:
+            type: object
     microsoft.graph.linkedResource:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'

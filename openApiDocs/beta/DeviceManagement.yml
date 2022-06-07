@@ -2850,6 +2850,8 @@ paths:
               operationId: deviceManagement.comanagedDevices.managedDevice.reenable
             remoteLock:
               operationId: deviceManagement.comanagedDevices.managedDevice.remoteLock
+            removeDeviceFirmwareConfigurationInterfaceManagement:
+              operationId: deviceManagement.comanagedDevices.managedDevice.removeDeviceFirmwareConfigurationInterfaceManagement
             reprovisionCloudPc:
               operationId: deviceManagement.comanagedDevices.managedDevice.reprovisionCloudPc
             requestRemoteAssistance:
@@ -5957,6 +5959,8 @@ paths:
                 - issuer desc
                 - notificationType
                 - notificationType desc
+                - renewalThresholdPercentage
+                - renewalThresholdPercentage desc
               type: string
         - name: $select
           in: query
@@ -5973,6 +5977,7 @@ paths:
                 - helpUrl
                 - issuer
                 - notificationType
+                - renewalThresholdPercentage
               type: string
         - name: $expand
           in: query
@@ -6046,6 +6051,7 @@ paths:
                 - helpUrl
                 - issuer
                 - notificationType
+                - renewalThresholdPercentage
               type: string
         - name: $expand
           in: query
@@ -22292,6 +22298,8 @@ paths:
               operationId: deviceManagement.managedDevices.managedDevice.reenable
             remoteLock:
               operationId: deviceManagement.managedDevices.managedDevice.remoteLock
+            removeDeviceFirmwareConfigurationInterfaceManagement:
+              operationId: deviceManagement.managedDevices.managedDevice.removeDeviceFirmwareConfigurationInterfaceManagement
             reprovisionCloudPc:
               operationId: deviceManagement.managedDevices.managedDevice.reprovisionCloudPc
             requestRemoteAssistance:
@@ -34214,6 +34222,8 @@ paths:
                 - manufacturer desc
                 - model
                 - model desc
+                - modelBatteryHealthScore
+                - modelBatteryHealthScore desc
               type: string
         - name: $select
           in: query
@@ -34232,6 +34242,7 @@ paths:
                 - averageMaxCapacityPercentage
                 - manufacturer
                 - model
+                - modelBatteryHealthScore
               type: string
         - name: $expand
           in: query
@@ -34307,6 +34318,7 @@ paths:
                 - averageMaxCapacityPercentage
                 - manufacturer
                 - model
+                - modelBatteryHealthScore
               type: string
         - name: $expand
           in: query
@@ -35865,6 +35877,8 @@ paths:
                 - id desc
                 - appReliabilityScore
                 - appReliabilityScore desc
+                - batteryHealthScore
+                - batteryHealthScore desc
                 - deviceName
                 - deviceName desc
                 - endpointAnalyticsScore
@@ -35892,6 +35906,7 @@ paths:
               enum:
                 - id
                 - appReliabilityScore
+                - batteryHealthScore
                 - deviceName
                 - endpointAnalyticsScore
                 - healthStatus
@@ -35969,6 +35984,7 @@ paths:
               enum:
                 - id
                 - appReliabilityScore
+                - batteryHealthScore
                 - deviceName
                 - endpointAnalyticsScore
                 - healthStatus
@@ -37303,6 +37319,8 @@ paths:
                 - id desc
                 - appReliabilityScore
                 - appReliabilityScore desc
+                - batteryHealthScore
+                - batteryHealthScore desc
                 - endpointAnalyticsScore
                 - endpointAnalyticsScore desc
                 - healthStatus
@@ -37330,6 +37348,7 @@ paths:
               enum:
                 - id
                 - appReliabilityScore
+                - batteryHealthScore
                 - endpointAnalyticsScore
                 - healthStatus
                 - manufacturer
@@ -37407,6 +37426,7 @@ paths:
               enum:
                 - id
                 - appReliabilityScore
+                - batteryHealthScore
                 - endpointAnalyticsScore
                 - healthStatus
                 - manufacturer
@@ -42705,6 +42725,12 @@ components:
               $ref: '#/components/schemas/microsoft.graph.deviceManagementDerivedCredentialIssuer'
             notificationType:
               $ref: '#/components/schemas/microsoft.graph.deviceManagementDerivedCredentialNotificationType'
+            renewalThresholdPercentage:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              description: The nominal percentage of time before certificate renewal is initiated by the client.
+              format: int32
           additionalProperties:
             type: object
           description: Entity that describes tenant level settings for derived credentials
@@ -46371,6 +46397,12 @@ components:
               type: string
               description: The model name of the device.
               nullable: true
+            modelBatteryHealthScore:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              description: A weighted average of a model’s maximum capacity score and runtime estimate score. Values range from 0-100. Valid values -2147483648 to 2147483647
+              format: int32
           additionalProperties:
             type: object
           description: The user experience analytics battery health model performance entity contains battery related information for all unique device models in their organization.
@@ -46635,6 +46667,10 @@ components:
               type: number
               description: The user experience analytics device app reliability score. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
               format: double
+            batteryHealthScore:
+              type: number
+              description: The user experience analytics device battery health score. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+              format: double
             deviceName:
               type: string
               description: The user experience analytics device name.
@@ -46885,6 +46921,10 @@ components:
             appReliabilityScore:
               type: number
               description: The user experience analytics model app reliability score. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+              format: double
+            batteryHealthScore:
+              type: number
+              description: The user experience analytics model battery health score. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
               format: double
             endpointAnalyticsScore:
               type: number
@@ -52643,7 +52683,7 @@ components:
               nullable: true
             showInAddressList:
               type: boolean
-              description: 'true if the Outlook global address list should contain this user, otherwise false. If not set, this will be treated as true. For users invited through the invitation manager, this property will be set to false. Supports $filter (eq, ne, not, in).'
+              description: Do not use in Microsoft Graph. Manage this property through the Microsoft 365 admin center instead. Represents whether the user should be included in the Outlook global address list. See Known issue.
               nullable: true
             signInSessionsValidFromDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -61473,6 +61513,8 @@ components:
               type: string
               description: 'Specifies the group join policy and group content visibility for groups. Possible values are: Private, Public, or Hiddenmembership. Hiddenmembership can be set only for Microsoft 365 groups, when the groups are created. It can''t be updated later. Other values of visibility can be updated after group creation. If visibility value is not specified during group creation on Microsoft Graph, a security group is created as Private by default and Microsoft 365 group is Public. Groups assignable to roles are always Private. See group visibility options to learn more. Returned by default. Nullable.'
               nullable: true
+            writebackConfiguration:
+              $ref: '#/components/schemas/microsoft.graph.groupWritebackConfiguration'
             accessType:
               $ref: '#/components/schemas/microsoft.graph.groupAccessType'
             allowExternalSenders:
@@ -63225,6 +63267,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.pinnedChatMessageInfo'
+              description: A collection of all the pinned messages in the chat. Nullable.
             tabs:
               type: array
               items:
@@ -65084,11 +65127,11 @@ components:
       properties:
         displayName:
           type: string
-          description: 'The identity''s display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
+          description: The display name of the identity. This property is read-only.
           nullable: true
         id:
           type: string
-          description: Unique identifier for the identity.
+          description: The identifier of the identity. This property is read-only.
           nullable: true
       additionalProperties:
         type: object
@@ -65529,6 +65572,17 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.groupWritebackConfiguration:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.writebackConfiguration'
+        - title: groupWritebackConfiguration
+          type: object
+          properties:
+            onPremisesGroupType:
+              type: string
+              nullable: true
+          additionalProperties:
+            type: object
     microsoft.graph.groupAccessType:
       title: groupAccessType
       enum:
@@ -68844,7 +68898,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.checklistItem'
-              description: A collection of checklistItems linked to a task.
+              description: A collection of smaller subtasks linked to the more complex parent task.
             extensions:
               type: array
               items:
@@ -70218,6 +70272,15 @@ components:
         - blog
         - profile
       type: string
+    microsoft.graph.writebackConfiguration:
+      title: writebackConfiguration
+      type: object
+      properties:
+        isEnabled:
+          type: boolean
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.MembershipRuleProcessingStatusDetails:
       title: MembershipRuleProcessingStatusDetails
       enum:
@@ -73823,6 +73886,7 @@ components:
               items:
                 type: string
                 nullable: true
+              description: The categories associated with the task. Each category corresponds to the displayName property of an outlookCategory that the user has defined.
             completedDateTime:
               $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
             createdDateTime:
@@ -73832,6 +73896,9 @@ components:
               format: date-time
             dueDateTime:
               $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
+            hasAttachments:
+              type: boolean
+              nullable: true
             importance:
               $ref: '#/components/schemas/microsoft.graph.importance'
             isReminderOn:
@@ -73852,10 +73919,19 @@ components:
               type: string
               description: A brief description of the task.
               nullable: true
+            attachments:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.attachment_v2'
+            attachmentSessions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.attachmentSession'
             checklistItems:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.checklistItem'
+              description: A collection of smaller subtasks linked to the more complex parent task.
             extensions:
               type: array
               items:
@@ -75222,11 +75298,11 @@ components:
       properties:
         key:
           type: string
-          description: Key.
+          description: 'Contains the name of the field that a value is associated with. When a sign in or domain hint is included in the sign-in request, corresponding fields are included as key-value pairs. Possible keys: Login hint present, Domain hint present.'
           nullable: true
         value:
           type: string
-          description: Value.
+          description: Contains the corresponding value for the specified key. The value is true if a sign in hint was included in the sign-in request; otherwise false. The value is true if a domain hint was included in the sign-in request; otherwise false.
           nullable: true
       additionalProperties:
         type: object
@@ -76017,6 +76093,52 @@ components:
               type: string
               description: ID of the timeOffReason for this timeOffItem. Required.
               nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.attachment_v2:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: attachment_v2
+          type: object
+          properties:
+            contentType:
+              type: string
+              nullable: true
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            name:
+              type: string
+              nullable: true
+            size:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              format: int32
+          additionalProperties:
+            type: object
+    microsoft.graph.attachmentSession:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: attachmentSession
+          type: object
+          properties:
+            content:
+              type: string
+              format: base64url
+              nullable: true
+            expirationDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            nextExpectedRange:
+              type: array
+              items:
+                type: string
+                nullable: true
           additionalProperties:
             type: object
     microsoft.graph.linkedResource:

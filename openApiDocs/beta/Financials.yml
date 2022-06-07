@@ -494,56 +494,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-    patch:
-      tags:
-        - financials.company
-      summary: Update the navigation property companies in financials
-      operationId: financials_UpdateCompanies
-      parameters:
-        - name: company-id
-          in: path
-          description: 'key: id of company'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: company
-      requestBody:
-        description: New navigation property values
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.company'
-        required: true
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - financials.company
-      summary: Delete navigation property companies for financials
-      operationId: financials_DeleteCompanies
-      parameters:
-        - name: company-id
-          in: path
-          description: 'key: id of company'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: company
-        - name: If-Match
-          in: header
-          description: ETag
-          schema:
-            type: string
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   '/financials/companies/{company-id}/accounts':
     get:
       tags:
@@ -715,70 +665,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.account'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    patch:
-      tags:
-        - financials.company
-      summary: Update the navigation property accounts in financials
-      operationId: financials.companies_UpdateAccounts
-      parameters:
-        - name: company-id
-          in: path
-          description: 'key: id of company'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: company
-        - name: account-id
-          in: path
-          description: 'key: id of account'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: account
-      requestBody:
-        description: New navigation property values
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.account'
-        required: true
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - financials.company
-      summary: Delete navigation property accounts for financials
-      operationId: financials.companies_DeleteAccounts
-      parameters:
-        - name: company-id
-          in: path
-          description: 'key: id of company'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: company
-        - name: account-id
-          in: path
-          description: 'key: id of account'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: account
-        - name: If-Match
-          in: header
-          description: ETag
-          schema:
-            type: string
-      responses:
-        '204':
-          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -972,70 +858,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-    patch:
-      tags:
-        - financials.company
-      summary: Update the navigation property agedAccountsPayable in financials
-      operationId: financials.companies_UpdateAgedAccountsPayable
-      parameters:
-        - name: company-id
-          in: path
-          description: 'key: id of company'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: company
-        - name: agedAccountsPayable-id
-          in: path
-          description: 'key: id of agedAccountsPayable'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: agedAccountsPayable
-      requestBody:
-        description: New navigation property values
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.agedAccountsPayable'
-        required: true
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - financials.company
-      summary: Delete navigation property agedAccountsPayable for financials
-      operationId: financials.companies_DeleteAgedAccountsPayable
-      parameters:
-        - name: company-id
-          in: path
-          description: 'key: id of company'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: company
-        - name: agedAccountsPayable-id
-          in: path
-          description: 'key: id of agedAccountsPayable'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: agedAccountsPayable
-        - name: If-Match
-          in: header
-          description: ETag
-          schema:
-            type: string
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   '/financials/companies/{company-id}/agedAccountsReceivable':
     get:
       tags:
@@ -1223,70 +1045,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.agedAccountsReceivable'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    patch:
-      tags:
-        - financials.company
-      summary: Update the navigation property agedAccountsReceivable in financials
-      operationId: financials.companies_UpdateAgedAccountsReceivable
-      parameters:
-        - name: company-id
-          in: path
-          description: 'key: id of company'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: company
-        - name: agedAccountsReceivable-id
-          in: path
-          description: 'key: id of agedAccountsReceivable'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: agedAccountsReceivable
-      requestBody:
-        description: New navigation property values
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.agedAccountsReceivable'
-        required: true
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - financials.company
-      summary: Delete navigation property agedAccountsReceivable for financials
-      operationId: financials.companies_DeleteAgedAccountsReceivable
-      parameters:
-        - name: company-id
-          in: path
-          description: 'key: id of company'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: company
-        - name: agedAccountsReceivable-id
-          in: path
-          description: 'key: id of agedAccountsReceivable'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: agedAccountsReceivable
-        - name: If-Match
-          in: header
-          description: ETag
-          schema:
-            type: string
-      responses:
-        '204':
-          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1515,37 +1273,6 @@ paths:
             schema:
               $ref: '#/components/schemas/microsoft.graph.companyInformation'
         required: true
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - financials.company
-      summary: Delete navigation property companyInformation for financials
-      operationId: financials.companies_DeleteCompanyInformation
-      parameters:
-        - name: company-id
-          in: path
-          description: 'key: id of company'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: company
-        - name: companyInformation-id
-          in: path
-          description: 'key: id of companyInformation'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: companyInformation
-        - name: If-Match
-          in: header
-          description: ETag
-          schema:
-            type: string
       responses:
         '204':
           description: Success
@@ -2427,37 +2154,6 @@ paths:
             schema:
               $ref: '#/components/schemas/microsoft.graph.account'
         required: true
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - financials.company
-      summary: Delete navigation property account for financials
-      operationId: financials.companies.customerPaymentJournals_DeleteAccount
-      parameters:
-        - name: company-id
-          in: path
-          description: 'key: id of company'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: company
-        - name: customerPaymentJournal-id
-          in: path
-          description: 'key: id of customerPaymentJournal'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: customerPaymentJournal
-        - name: If-Match
-          in: header
-          description: ETag
-          schema:
-            type: string
       responses:
         '204':
           description: Success
@@ -6589,70 +6285,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-    patch:
-      tags:
-        - financials.company
-      summary: Update the navigation property dimensions in financials
-      operationId: financials.companies_UpdateDimensions
-      parameters:
-        - name: company-id
-          in: path
-          description: 'key: id of company'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: company
-        - name: dimension-id
-          in: path
-          description: 'key: id of dimension'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: dimension
-      requestBody:
-        description: New navigation property values
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.dimension'
-        required: true
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - financials.company
-      summary: Delete navigation property dimensions for financials
-      operationId: financials.companies_DeleteDimensions
-      parameters:
-        - name: company-id
-          in: path
-          description: 'key: id of company'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: company
-        - name: dimension-id
-          in: path
-          description: 'key: id of dimension'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: dimension
-        - name: If-Match
-          in: header
-          description: ETag
-          schema:
-            type: string
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   '/financials/companies/{company-id}/dimensions/{dimension-id}/dimensionValues':
     get:
       tags:
@@ -6836,84 +6468,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-    patch:
-      tags:
-        - financials.company
-      summary: Update the navigation property dimensionValues in financials
-      operationId: financials.companies.dimensions_UpdateDimensionValues
-      parameters:
-        - name: company-id
-          in: path
-          description: 'key: id of company'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: company
-        - name: dimension-id
-          in: path
-          description: 'key: id of dimension'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: dimension
-        - name: dimensionValue-id
-          in: path
-          description: 'key: id of dimensionValue'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: dimensionValue
-      requestBody:
-        description: New navigation property values
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.dimensionValue'
-        required: true
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - financials.company
-      summary: Delete navigation property dimensionValues for financials
-      operationId: financials.companies.dimensions_DeleteDimensionValues
-      parameters:
-        - name: company-id
-          in: path
-          description: 'key: id of company'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: company
-        - name: dimension-id
-          in: path
-          description: 'key: id of dimension'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: dimension
-        - name: dimensionValue-id
-          in: path
-          description: 'key: id of dimensionValue'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: dimensionValue
-        - name: If-Match
-          in: header
-          description: ETag
-          schema:
-            type: string
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   '/financials/companies/{company-id}/dimensionValues':
     get:
       tags:
@@ -7073,70 +6627,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.dimensionValue'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    patch:
-      tags:
-        - financials.company
-      summary: Update the navigation property dimensionValues in financials
-      operationId: financials.companies_UpdateDimensionValues
-      parameters:
-        - name: company-id
-          in: path
-          description: 'key: id of company'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: company
-        - name: dimensionValue-id
-          in: path
-          description: 'key: id of dimensionValue'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: dimensionValue
-      requestBody:
-        description: New navigation property values
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.dimensionValue'
-        required: true
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - financials.company
-      summary: Delete navigation property dimensionValues for financials
-      operationId: financials.companies_DeleteDimensionValues
-      parameters:
-        - name: company-id
-          in: path
-          description: 'key: id of company'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: company
-        - name: dimensionValue-id
-          in: path
-          description: 'key: id of dimensionValue'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: dimensionValue
-        - name: If-Match
-          in: header
-          description: ETag
-          schema:
-            type: string
-      responses:
-        '204':
-          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -7973,70 +7463,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-    patch:
-      tags:
-        - financials.company
-      summary: Update the navigation property generalLedgerEntries in financials
-      operationId: financials.companies_UpdateGeneralLedgerEntries
-      parameters:
-        - name: company-id
-          in: path
-          description: 'key: id of company'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: company
-        - name: generalLedgerEntry-id
-          in: path
-          description: 'key: id of generalLedgerEntry'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: generalLedgerEntry
-      requestBody:
-        description: New navigation property values
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.generalLedgerEntry'
-        required: true
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - financials.company
-      summary: Delete navigation property generalLedgerEntries for financials
-      operationId: financials.companies_DeleteGeneralLedgerEntries
-      parameters:
-        - name: company-id
-          in: path
-          description: 'key: id of company'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: company
-        - name: generalLedgerEntry-id
-          in: path
-          description: 'key: id of generalLedgerEntry'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: generalLedgerEntry
-        - name: If-Match
-          in: header
-          description: ETag
-          schema:
-            type: string
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   '/financials/companies/{company-id}/generalLedgerEntries/{generalLedgerEntry-id}/account':
     get:
       tags:
@@ -8125,37 +7551,6 @@ paths:
             schema:
               $ref: '#/components/schemas/microsoft.graph.account'
         required: true
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - financials.company
-      summary: Delete navigation property account for financials
-      operationId: financials.companies.generalLedgerEntries_DeleteAccount
-      parameters:
-        - name: company-id
-          in: path
-          description: 'key: id of company'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: company
-        - name: generalLedgerEntry-id
-          in: path
-          description: 'key: id of generalLedgerEntry'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: generalLedgerEntry
-        - name: If-Match
-          in: header
-          description: ETag
-          schema:
-            type: string
       responses:
         '204':
           description: Success
@@ -9510,37 +8905,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - financials.company
-      summary: Delete navigation property account for financials
-      operationId: financials.companies.journalLines_DeleteAccount
-      parameters:
-        - name: company-id
-          in: path
-          description: 'key: id of company'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: company
-        - name: journalLine-id
-          in: path
-          description: 'key: id of journalLine'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: journalLine
-        - name: If-Match
-          in: header
-          description: ETag
-          schema:
-            type: string
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   '/financials/companies/{company-id}/journals':
     get:
       tags:
@@ -9884,37 +9248,6 @@ paths:
             schema:
               $ref: '#/components/schemas/microsoft.graph.account'
         required: true
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - financials.company
-      summary: Delete navigation property account for financials
-      operationId: financials.companies.journals_DeleteAccount
-      parameters:
-        - name: company-id
-          in: path
-          description: 'key: id of company'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: company
-        - name: journal-id
-          in: path
-          description: 'key: id of journal'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: journal
-        - name: If-Match
-          in: header
-          description: ETag
-          schema:
-            type: string
       responses:
         '204':
           description: Success
@@ -10327,44 +9660,6 @@ paths:
             schema:
               $ref: '#/components/schemas/microsoft.graph.account'
         required: true
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - financials.company
-      summary: Delete navigation property account for financials
-      operationId: financials.companies.journals.journalLines_DeleteAccount
-      parameters:
-        - name: company-id
-          in: path
-          description: 'key: id of company'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: company
-        - name: journal-id
-          in: path
-          description: 'key: id of journal'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: journal
-        - name: journalLine-id
-          in: path
-          description: 'key: id of journalLine'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: journalLine
-        - name: If-Match
-          in: header
-          description: ETag
-          schema:
-            type: string
       responses:
         '204':
           description: Success
@@ -11448,37 +10743,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - financials.company
-      summary: Delete navigation property purchaseInvoiceLines for financials
-      operationId: financials.companies_DeletePurchaseInvoiceLines
-      parameters:
-        - name: company-id
-          in: path
-          description: 'key: id of company'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: company
-        - name: purchaseInvoiceLine-id
-          in: path
-          description: 'key: id of purchaseInvoiceLine'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: purchaseInvoiceLine
-        - name: If-Match
-          in: header
-          description: ETag
-          schema:
-            type: string
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   '/financials/companies/{company-id}/purchaseInvoiceLines/{purchaseInvoiceLine-id}/account':
     get:
       tags:
@@ -11567,37 +10831,6 @@ paths:
             schema:
               $ref: '#/components/schemas/microsoft.graph.account'
         required: true
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - financials.company
-      summary: Delete navigation property account for financials
-      operationId: financials.companies.purchaseInvoiceLines_DeleteAccount
-      parameters:
-        - name: company-id
-          in: path
-          description: 'key: id of company'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: company
-        - name: purchaseInvoiceLine-id
-          in: path
-          description: 'key: id of purchaseInvoiceLine'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: purchaseInvoiceLine
-        - name: If-Match
-          in: header
-          description: ETag
-          schema:
-            type: string
       responses:
         '204':
           description: Success
@@ -12537,37 +11770,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - financials.company
-      summary: Delete navigation property purchaseInvoices for financials
-      operationId: financials.companies_DeletePurchaseInvoices
-      parameters:
-        - name: company-id
-          in: path
-          description: 'key: id of company'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: company
-        - name: purchaseInvoice-id
-          in: path
-          description: 'key: id of purchaseInvoice'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: purchaseInvoice
-        - name: If-Match
-          in: header
-          description: ETag
-          schema:
-            type: string
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   '/financials/companies/{company-id}/purchaseInvoices/{purchaseInvoice-id}/currency':
     get:
       tags:
@@ -13036,44 +12238,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - financials.company
-      summary: Delete navigation property purchaseInvoiceLines for financials
-      operationId: financials.companies.purchaseInvoices_DeletePurchaseInvoiceLines
-      parameters:
-        - name: company-id
-          in: path
-          description: 'key: id of company'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: company
-        - name: purchaseInvoice-id
-          in: path
-          description: 'key: id of purchaseInvoice'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: purchaseInvoice
-        - name: purchaseInvoiceLine-id
-          in: path
-          description: 'key: id of purchaseInvoiceLine'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: purchaseInvoiceLine
-        - name: If-Match
-          in: header
-          description: ETag
-          schema:
-            type: string
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   '/financials/companies/{company-id}/purchaseInvoices/{purchaseInvoice-id}/purchaseInvoiceLines/{purchaseInvoiceLine-id}/account':
     get:
       tags:
@@ -13176,44 +12340,6 @@ paths:
             schema:
               $ref: '#/components/schemas/microsoft.graph.account'
         required: true
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - financials.company
-      summary: Delete navigation property account for financials
-      operationId: financials.companies.purchaseInvoices.purchaseInvoiceLines_DeleteAccount
-      parameters:
-        - name: company-id
-          in: path
-          description: 'key: id of company'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: company
-        - name: purchaseInvoice-id
-          in: path
-          description: 'key: id of purchaseInvoice'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: purchaseInvoice
-        - name: purchaseInvoiceLine-id
-          in: path
-          description: 'key: id of purchaseInvoiceLine'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: purchaseInvoiceLine
-        - name: If-Match
-          in: header
-          description: ETag
-          schema:
-            type: string
       responses:
         '204':
           description: Success
@@ -15100,37 +14226,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - financials.company
-      summary: Delete navigation property salesCreditMemoLines for financials
-      operationId: financials.companies_DeleteSalesCreditMemoLines
-      parameters:
-        - name: company-id
-          in: path
-          description: 'key: id of company'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: company
-        - name: salesCreditMemoLine-id
-          in: path
-          description: 'key: id of salesCreditMemoLine'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: salesCreditMemoLine
-        - name: If-Match
-          in: header
-          description: ETag
-          schema:
-            type: string
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   '/financials/companies/{company-id}/salesCreditMemoLines/{salesCreditMemoLine-id}/account':
     get:
       tags:
@@ -15219,37 +14314,6 @@ paths:
             schema:
               $ref: '#/components/schemas/microsoft.graph.account'
         required: true
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - financials.company
-      summary: Delete navigation property account for financials
-      operationId: financials.companies.salesCreditMemoLines_DeleteAccount
-      parameters:
-        - name: company-id
-          in: path
-          description: 'key: id of company'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: company
-        - name: salesCreditMemoLine-id
-          in: path
-          description: 'key: id of salesCreditMemoLine'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: salesCreditMemoLine
-        - name: If-Match
-          in: header
-          description: ETag
-          schema:
-            type: string
       responses:
         '204':
           description: Success
@@ -16198,37 +15262,6 @@ paths:
             schema:
               $ref: '#/components/schemas/microsoft.graph.salesCreditMemo'
         required: true
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - financials.company
-      summary: Delete navigation property salesCreditMemos for financials
-      operationId: financials.companies_DeleteSalesCreditMemos
-      parameters:
-        - name: company-id
-          in: path
-          description: 'key: id of company'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: company
-        - name: salesCreditMemo-id
-          in: path
-          description: 'key: id of salesCreditMemo'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: salesCreditMemo
-        - name: If-Match
-          in: header
-          description: ETag
-          schema:
-            type: string
       responses:
         '204':
           description: Success
@@ -17819,44 +16852,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - financials.company
-      summary: Delete navigation property salesCreditMemoLines for financials
-      operationId: financials.companies.salesCreditMemos_DeleteSalesCreditMemoLines
-      parameters:
-        - name: company-id
-          in: path
-          description: 'key: id of company'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: company
-        - name: salesCreditMemo-id
-          in: path
-          description: 'key: id of salesCreditMemo'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: salesCreditMemo
-        - name: salesCreditMemoLine-id
-          in: path
-          description: 'key: id of salesCreditMemoLine'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: salesCreditMemoLine
-        - name: If-Match
-          in: header
-          description: ETag
-          schema:
-            type: string
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   '/financials/companies/{company-id}/salesCreditMemos/{salesCreditMemo-id}/salesCreditMemoLines/{salesCreditMemoLine-id}/account':
     get:
       tags:
@@ -17959,44 +16954,6 @@ paths:
             schema:
               $ref: '#/components/schemas/microsoft.graph.account'
         required: true
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - financials.company
-      summary: Delete navigation property account for financials
-      operationId: financials.companies.salesCreditMemos.salesCreditMemoLines_DeleteAccount
-      parameters:
-        - name: company-id
-          in: path
-          description: 'key: id of company'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: company
-        - name: salesCreditMemo-id
-          in: path
-          description: 'key: id of salesCreditMemo'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: salesCreditMemo
-        - name: salesCreditMemoLine-id
-          in: path
-          description: 'key: id of salesCreditMemoLine'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: salesCreditMemoLine
-        - name: If-Match
-          in: header
-          description: ETag
-          schema:
-            type: string
       responses:
         '204':
           description: Success
@@ -19002,37 +17959,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - financials.company
-      summary: Delete navigation property salesInvoiceLines for financials
-      operationId: financials.companies_DeleteSalesInvoiceLines
-      parameters:
-        - name: company-id
-          in: path
-          description: 'key: id of company'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: company
-        - name: salesInvoiceLine-id
-          in: path
-          description: 'key: id of salesInvoiceLine'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: salesInvoiceLine
-        - name: If-Match
-          in: header
-          description: ETag
-          schema:
-            type: string
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   '/financials/companies/{company-id}/salesInvoiceLines/{salesInvoiceLine-id}/account':
     get:
       tags:
@@ -19121,37 +18047,6 @@ paths:
             schema:
               $ref: '#/components/schemas/microsoft.graph.account'
         required: true
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - financials.company
-      summary: Delete navigation property account for financials
-      operationId: financials.companies.salesInvoiceLines_DeleteAccount
-      parameters:
-        - name: company-id
-          in: path
-          description: 'key: id of company'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: company
-        - name: salesInvoiceLine-id
-          in: path
-          description: 'key: id of salesInvoiceLine'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: salesInvoiceLine
-        - name: If-Match
-          in: header
-          description: ETag
-          schema:
-            type: string
       responses:
         '204':
           description: Success
@@ -20139,37 +19034,6 @@ paths:
             schema:
               $ref: '#/components/schemas/microsoft.graph.salesInvoice'
         required: true
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - financials.company
-      summary: Delete navigation property salesInvoices for financials
-      operationId: financials.companies_DeleteSalesInvoices
-      parameters:
-        - name: company-id
-          in: path
-          description: 'key: id of company'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: company
-        - name: salesInvoice-id
-          in: path
-          description: 'key: id of salesInvoice'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: salesInvoice
-        - name: If-Match
-          in: header
-          description: ETag
-          schema:
-            type: string
       responses:
         '204':
           description: Success
@@ -21895,44 +20759,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - financials.company
-      summary: Delete navigation property salesInvoiceLines for financials
-      operationId: financials.companies.salesInvoices_DeleteSalesInvoiceLines
-      parameters:
-        - name: company-id
-          in: path
-          description: 'key: id of company'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: company
-        - name: salesInvoice-id
-          in: path
-          description: 'key: id of salesInvoice'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: salesInvoice
-        - name: salesInvoiceLine-id
-          in: path
-          description: 'key: id of salesInvoiceLine'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: salesInvoiceLine
-        - name: If-Match
-          in: header
-          description: ETag
-          schema:
-            type: string
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   '/financials/companies/{company-id}/salesInvoices/{salesInvoice-id}/salesInvoiceLines/{salesInvoiceLine-id}/account':
     get:
       tags:
@@ -22035,44 +20861,6 @@ paths:
             schema:
               $ref: '#/components/schemas/microsoft.graph.account'
         required: true
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - financials.company
-      summary: Delete navigation property account for financials
-      operationId: financials.companies.salesInvoices.salesInvoiceLines_DeleteAccount
-      parameters:
-        - name: company-id
-          in: path
-          description: 'key: id of company'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: company
-        - name: salesInvoice-id
-          in: path
-          description: 'key: id of salesInvoice'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: salesInvoice
-        - name: salesInvoiceLine-id
-          in: path
-          description: 'key: id of salesInvoiceLine'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: salesInvoiceLine
-        - name: If-Match
-          in: header
-          description: ETag
-          schema:
-            type: string
       responses:
         '204':
           description: Success
@@ -23216,37 +22004,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - financials.company
-      summary: Delete navigation property salesOrderLines for financials
-      operationId: financials.companies_DeleteSalesOrderLines
-      parameters:
-        - name: company-id
-          in: path
-          description: 'key: id of company'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: company
-        - name: salesOrderLine-id
-          in: path
-          description: 'key: id of salesOrderLine'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: salesOrderLine
-        - name: If-Match
-          in: header
-          description: ETag
-          schema:
-            type: string
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   '/financials/companies/{company-id}/salesOrderLines/{salesOrderLine-id}/account':
     get:
       tags:
@@ -23335,37 +22092,6 @@ paths:
             schema:
               $ref: '#/components/schemas/microsoft.graph.account'
         required: true
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - financials.company
-      summary: Delete navigation property account for financials
-      operationId: financials.companies.salesOrderLines_DeleteAccount
-      parameters:
-        - name: company-id
-          in: path
-          description: 'key: id of company'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: company
-        - name: salesOrderLine-id
-          in: path
-          description: 'key: id of salesOrderLine'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: salesOrderLine
-        - name: If-Match
-          in: header
-          description: ETag
-          schema:
-            type: string
       responses:
         '204':
           description: Success
@@ -24326,37 +23052,6 @@ paths:
             schema:
               $ref: '#/components/schemas/microsoft.graph.salesOrder'
         required: true
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - financials.company
-      summary: Delete navigation property salesOrders for financials
-      operationId: financials.companies_DeleteSalesOrders
-      parameters:
-        - name: company-id
-          in: path
-          description: 'key: id of company'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: company
-        - name: salesOrder-id
-          in: path
-          description: 'key: id of salesOrder'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: salesOrder
-        - name: If-Match
-          in: header
-          description: ETag
-          schema:
-            type: string
       responses:
         '204':
           description: Success
@@ -25963,44 +24658,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - financials.company
-      summary: Delete navigation property salesOrderLines for financials
-      operationId: financials.companies.salesOrders_DeleteSalesOrderLines
-      parameters:
-        - name: company-id
-          in: path
-          description: 'key: id of company'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: company
-        - name: salesOrder-id
-          in: path
-          description: 'key: id of salesOrder'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: salesOrder
-        - name: salesOrderLine-id
-          in: path
-          description: 'key: id of salesOrderLine'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: salesOrderLine
-        - name: If-Match
-          in: header
-          description: ETag
-          schema:
-            type: string
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   '/financials/companies/{company-id}/salesOrders/{salesOrder-id}/salesOrderLines/{salesOrderLine-id}/account':
     get:
       tags:
@@ -26103,44 +24760,6 @@ paths:
             schema:
               $ref: '#/components/schemas/microsoft.graph.account'
         required: true
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - financials.company
-      summary: Delete navigation property account for financials
-      operationId: financials.companies.salesOrders.salesOrderLines_DeleteAccount
-      parameters:
-        - name: company-id
-          in: path
-          description: 'key: id of company'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: company
-        - name: salesOrder-id
-          in: path
-          description: 'key: id of salesOrder'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: salesOrder
-        - name: salesOrderLine-id
-          in: path
-          description: 'key: id of salesOrderLine'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: salesOrderLine
-        - name: If-Match
-          in: header
-          description: ETag
-          schema:
-            type: string
       responses:
         '204':
           description: Success
@@ -27138,37 +25757,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - financials.company
-      summary: Delete navigation property salesQuoteLines for financials
-      operationId: financials.companies_DeleteSalesQuoteLines
-      parameters:
-        - name: company-id
-          in: path
-          description: 'key: id of company'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: company
-        - name: salesQuoteLine-id
-          in: path
-          description: 'key: id of salesQuoteLine'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: salesQuoteLine
-        - name: If-Match
-          in: header
-          description: ETag
-          schema:
-            type: string
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   '/financials/companies/{company-id}/salesQuoteLines/{salesQuoteLine-id}/account':
     get:
       tags:
@@ -27257,37 +25845,6 @@ paths:
             schema:
               $ref: '#/components/schemas/microsoft.graph.account'
         required: true
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - financials.company
-      summary: Delete navigation property account for financials
-      operationId: financials.companies.salesQuoteLines_DeleteAccount
-      parameters:
-        - name: company-id
-          in: path
-          description: 'key: id of company'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: company
-        - name: salesQuoteLine-id
-          in: path
-          description: 'key: id of salesQuoteLine'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: salesQuoteLine
-        - name: If-Match
-          in: header
-          description: ETag
-          schema:
-            type: string
       responses:
         '204':
           description: Success
@@ -28261,37 +26818,6 @@ paths:
             schema:
               $ref: '#/components/schemas/microsoft.graph.salesQuote'
         required: true
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - financials.company
-      summary: Delete navigation property salesQuotes for financials
-      operationId: financials.companies_DeleteSalesQuotes
-      parameters:
-        - name: company-id
-          in: path
-          description: 'key: id of company'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: company
-        - name: salesQuote-id
-          in: path
-          description: 'key: id of salesQuote'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: salesQuote
-        - name: If-Match
-          in: header
-          description: ETag
-          schema:
-            type: string
       responses:
         '204':
           description: Success
@@ -29928,44 +28454,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - financials.company
-      summary: Delete navigation property salesQuoteLines for financials
-      operationId: financials.companies.salesQuotes_DeleteSalesQuoteLines
-      parameters:
-        - name: company-id
-          in: path
-          description: 'key: id of company'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: company
-        - name: salesQuote-id
-          in: path
-          description: 'key: id of salesQuote'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: salesQuote
-        - name: salesQuoteLine-id
-          in: path
-          description: 'key: id of salesQuoteLine'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: salesQuoteLine
-        - name: If-Match
-          in: header
-          description: ETag
-          schema:
-            type: string
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   '/financials/companies/{company-id}/salesQuotes/{salesQuote-id}/salesQuoteLines/{salesQuoteLine-id}/account':
     get:
       tags:
@@ -30068,44 +28556,6 @@ paths:
             schema:
               $ref: '#/components/schemas/microsoft.graph.account'
         required: true
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - financials.company
-      summary: Delete navigation property account for financials
-      operationId: financials.companies.salesQuotes.salesQuoteLines_DeleteAccount
-      parameters:
-        - name: company-id
-          in: path
-          description: 'key: id of company'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: company
-        - name: salesQuote-id
-          in: path
-          description: 'key: id of salesQuote'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: salesQuote
-        - name: salesQuoteLine-id
-          in: path
-          description: 'key: id of salesQuoteLine'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: salesQuoteLine
-        - name: If-Match
-          in: header
-          description: ETag
-          schema:
-            type: string
       responses:
         '204':
           description: Success

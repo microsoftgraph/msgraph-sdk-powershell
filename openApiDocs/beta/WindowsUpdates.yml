@@ -404,6 +404,7 @@ paths:
                 - id
                 - catalog
                 - deployments
+                - resourceConnections
                 - updatableAssets
               type: string
         - name: $expand
@@ -419,6 +420,7 @@ paths:
                 - '*'
                 - catalog
                 - deployments
+                - resourceConnections
                 - updatableAssets
               type: string
       responses:
@@ -433,6 +435,8 @@ paths:
               operationId: admin.windows.Updates.GetCatalog
             deployments:
               operationId: admin.windows.Updates.ListDeployments
+            resourceConnections:
+              operationId: admin.windows.Updates.ListResourceConnections
             updatableAssets:
               operationId: admin.windows.Updates.ListUpdatableAssets
         default:
@@ -2259,6 +2263,188 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  /admin/windows/updates/resourceConnections:
+    get:
+      tags:
+        - admin.windows
+      summary: Get resourceConnections from admin
+      operationId: admin.windows.updates_ListResourceConnections
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - state
+                - state desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - state
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/microsoft.graph.windowsUpdates.resourceConnectionCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - admin.windows
+      summary: Create new navigation property to resourceConnections for admin
+      operationId: admin.windows.updates_CreateResourceConnections
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.windowsUpdates.resourceConnection'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.windowsUpdates.resourceConnection'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/admin/windows/updates/resourceConnections/{resourceConnection-id}':
+    get:
+      tags:
+        - admin.windows
+      summary: Get resourceConnections from admin
+      operationId: admin.windows.updates_GetResourceConnections
+      parameters:
+        - name: resourceConnection-id
+          in: path
+          description: 'key: id of resourceConnection'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: resourceConnection
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - state
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.windowsUpdates.resourceConnection'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - admin.windows
+      summary: Update the navigation property resourceConnections in admin
+      operationId: admin.windows.updates_UpdateResourceConnections
+      parameters:
+        - name: resourceConnection-id
+          in: path
+          description: 'key: id of resourceConnection'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: resourceConnection
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.windowsUpdates.resourceConnection'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - admin.windows
+      summary: Delete navigation property resourceConnections for admin
+      operationId: admin.windows.updates_DeleteResourceConnections
+      parameters:
+        - name: resourceConnection-id
+          in: path
+          description: 'key: id of resourceConnection'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: resourceConnection
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   /admin/windows/updates/updatableAssets:
     get:
       tags:
@@ -2735,6 +2921,10 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.windowsUpdates.deployment'
               description: Deployments created using the deployment service. Read-only.
+            resourceConnections:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.windowsUpdates.resourceConnection'
             updatableAssets:
               type: array
               items:
@@ -2836,6 +3026,16 @@ components:
         - quality
         - unknownFutureValue
       type: string
+    microsoft.graph.windowsUpdates.resourceConnection:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: resourceConnection
+          type: object
+          properties:
+            state:
+              $ref: '#/components/schemas/microsoft.graph.windowsUpdates.resourceConnectionState'
+          additionalProperties:
+            type: object
     microsoft.graph.entity:
       title: entity
       type: object
@@ -2877,6 +3077,14 @@ components:
           $ref: '#/components/schemas/microsoft.graph.windowsUpdates.deploymentStateValue'
       additionalProperties:
         type: object
+    microsoft.graph.windowsUpdates.resourceConnectionState:
+      title: resourceConnectionState
+      enum:
+        - connected
+        - notAuthorized
+        - notFound
+        - unknownFutureValue
+      type: string
     microsoft.graph.ODataErrors.ODataError:
       required:
         - error
@@ -2918,6 +3126,18 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.windowsUpdates.updatableAsset'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.windowsUpdates.resourceConnectionCollectionResponse:
+      title: Collection of resourceConnection
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.windowsUpdates.resourceConnection'
         '@odata.nextLink':
           type: string
       additionalProperties:
@@ -3117,6 +3337,12 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.windowsUpdates.updatableAssetCollectionResponse'
+    microsoft.graph.windowsUpdates.resourceConnectionCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.windowsUpdates.resourceConnectionCollectionResponse'
   parameters:
     top:
       name: $top

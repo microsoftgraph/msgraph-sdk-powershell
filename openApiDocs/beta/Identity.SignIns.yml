@@ -1514,23 +1514,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - informationProtection.bitlocker
-      summary: Delete navigation property bitlocker for informationProtection
-      operationId: informationProtection_DeleteBitlocker
-      parameters:
-        - name: If-Match
-          in: header
-          description: ETag
-          schema:
-            type: string
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   /informationProtection/bitlocker/recoveryKeys:
     get:
       tags:
@@ -1672,56 +1655,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.bitlockerRecoveryKey'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    patch:
-      tags:
-        - informationProtection.bitlocker
-      summary: Update the navigation property recoveryKeys in informationProtection
-      operationId: informationProtection.bitlocker_UpdateRecoveryKeys
-      parameters:
-        - name: bitlockerRecoveryKey-id
-          in: path
-          description: 'key: id of bitlockerRecoveryKey'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: bitlockerRecoveryKey
-      requestBody:
-        description: New navigation property values
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.bitlockerRecoveryKey'
-        required: true
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - informationProtection.bitlocker
-      summary: Delete navigation property recoveryKeys for informationProtection
-      operationId: informationProtection.bitlocker_DeleteRecoveryKeys
-      parameters:
-        - name: bitlockerRecoveryKey-id
-          in: path
-          description: 'key: id of bitlockerRecoveryKey'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: bitlockerRecoveryKey
-        - name: If-Match
-          in: header
-          description: ETag
-          schema:
-            type: string
-      responses:
-        '204':
-          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3785,7 +3718,7 @@ paths:
     post:
       tags:
         - invitations.invitation
-      summary: 'Tutorial: Use the access reviews API to review guest access to your Microsoft 365 groups'
+      summary: Create invitation
       operationId: invitations.invitation_CreateInvitation
       requestBody:
         description: New entity
@@ -6968,6 +6901,7 @@ paths:
                 - description
                 - displayName
                 - definition
+                - allowedCloudEndpoints
                 - default
                 - partners
               type: string
@@ -7475,23 +7409,6 @@ paths:
             schema:
               $ref: '#/components/schemas/microsoft.graph.deviceRegistrationPolicy'
         required: true
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - policies.deviceRegistrationPolicy
-      summary: Delete navigation property deviceRegistrationPolicy for policies
-      operationId: policies_DeleteDeviceRegistrationPolicy
-      parameters:
-        - name: If-Match
-          in: header
-          description: ETag
-          schema:
-            type: string
       responses:
         '204':
           description: Success
@@ -8075,6 +7992,141 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/policies/featureRolloutPolicies/{featureRolloutPolicy-id}/appliesTo/microsoft.graph.getByIds':
+    post:
+      tags:
+        - policies.Actions
+      summary: Invoke action getByIds
+      operationId: policies.featureRolloutPolicies.appliesTo_getByIds
+      parameters:
+        - name: featureRolloutPolicy-id
+          in: path
+          description: 'key: id of featureRolloutPolicy'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: featureRolloutPolicy
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                ids:
+                  type: array
+                  items:
+                    type: string
+                types:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of directoryObject
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.directoryObject'
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/policies/featureRolloutPolicies/{featureRolloutPolicy-id}/appliesTo/microsoft.graph.getUserOwnedObjects':
+    post:
+      tags:
+        - policies.Actions
+      summary: Invoke action getUserOwnedObjects
+      operationId: policies.featureRolloutPolicies.appliesTo_getUserOwnedObjects
+      parameters:
+        - name: featureRolloutPolicy-id
+          in: path
+          description: 'key: id of featureRolloutPolicy'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: featureRolloutPolicy
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                userId:
+                  type: string
+                  nullable: true
+                type:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.directoryObject'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/policies/featureRolloutPolicies/{featureRolloutPolicy-id}/appliesTo/microsoft.graph.validateProperties':
+    post:
+      tags:
+        - policies.Actions
+      summary: Invoke action validateProperties
+      operationId: policies.featureRolloutPolicies.appliesTo_validateProperties
+      parameters:
+        - name: featureRolloutPolicy-id
+          in: path
+          description: 'key: id of featureRolloutPolicy'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: featureRolloutPolicy
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                entityType:
+                  type: string
+                  nullable: true
+                displayName:
+                  type: string
+                  nullable: true
+                mailNickname:
+                  type: string
+                  nullable: true
+                onBehalfOfUserId:
+                  pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
+                  type: string
+                  format: uuid
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   /policies/homeRealmDiscoveryPolicies:
     get:
       tags:
@@ -8686,6 +8738,8 @@ paths:
                 - theme desc
                 - visibility
                 - visibility desc
+                - writebackConfiguration
+                - writebackConfiguration desc
                 - accessType
                 - accessType desc
                 - allowExternalSenders
@@ -8761,6 +8815,7 @@ paths:
                 - securityIdentifier
                 - theme
                 - visibility
+                - writebackConfiguration
                 - accessType
                 - allowExternalSenders
                 - autoSubscribeNewMembers
@@ -8997,6 +9052,8 @@ paths:
                 - theme desc
                 - visibility
                 - visibility desc
+                - writebackConfiguration
+                - writebackConfiguration desc
                 - accessType
                 - accessType desc
                 - allowExternalSenders
@@ -9389,6 +9446,8 @@ paths:
                 - theme desc
                 - visibility
                 - visibility desc
+                - writebackConfiguration
+                - writebackConfiguration desc
                 - accessType
                 - accessType desc
                 - allowExternalSenders
@@ -9464,6 +9523,7 @@ paths:
                 - securityIdentifier
                 - theme
                 - visibility
+                - writebackConfiguration
                 - accessType
                 - allowExternalSenders
                 - autoSubscribeNewMembers
@@ -9700,6 +9760,8 @@ paths:
                 - theme desc
                 - visibility
                 - visibility desc
+                - writebackConfiguration
+                - writebackConfiguration desc
                 - accessType
                 - accessType desc
                 - allowExternalSenders
@@ -15232,6 +15294,16 @@ paths:
               parameters:
                 user-id: $request.path.user-id
                 microsoftAuthenticatorAuthenticationMethod-id: $request.path.microsoftAuthenticatorAuthenticationMethod-id
+            checkMemberGroups:
+              operationId: users.user.authentication.microsoftAuthenticatorMethods.microsoftAuthenticatorAuthenticationMethod.device.checkMemberGroups
+            checkMemberObjects:
+              operationId: users.user.authentication.microsoftAuthenticatorMethods.microsoftAuthenticatorAuthenticationMethod.device.checkMemberObjects
+            getMemberGroups:
+              operationId: users.user.authentication.microsoftAuthenticatorMethods.microsoftAuthenticatorAuthenticationMethod.device.getMemberGroups
+            getMemberObjects:
+              operationId: users.user.authentication.microsoftAuthenticatorMethods.microsoftAuthenticatorAuthenticationMethod.device.getMemberObjects
+            restore:
+              operationId: users.user.authentication.microsoftAuthenticatorMethods.microsoftAuthenticatorAuthenticationMethod.device.restore
         default:
           $ref: '#/components/responses/error'
       deprecated: true
@@ -17541,6 +17613,16 @@ paths:
               parameters:
                 user-id: $request.path.user-id
                 passwordlessMicrosoftAuthenticatorAuthenticationMethod-id: $request.path.passwordlessMicrosoftAuthenticatorAuthenticationMethod-id
+            checkMemberGroups:
+              operationId: users.user.authentication.passwordlessMicrosoftAuthenticatorMethods.passwordlessMicrosoftAuthenticatorAuthenticationMethod.device.checkMemberGroups
+            checkMemberObjects:
+              operationId: users.user.authentication.passwordlessMicrosoftAuthenticatorMethods.passwordlessMicrosoftAuthenticatorAuthenticationMethod.device.checkMemberObjects
+            getMemberGroups:
+              operationId: users.user.authentication.passwordlessMicrosoftAuthenticatorMethods.passwordlessMicrosoftAuthenticatorAuthenticationMethod.device.getMemberGroups
+            getMemberObjects:
+              operationId: users.user.authentication.passwordlessMicrosoftAuthenticatorMethods.passwordlessMicrosoftAuthenticatorAuthenticationMethod.device.getMemberObjects
+            restore:
+              operationId: users.user.authentication.passwordlessMicrosoftAuthenticatorMethods.passwordlessMicrosoftAuthenticatorAuthenticationMethod.device.restore
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -20383,6 +20465,16 @@ paths:
               parameters:
                 user-id: $request.path.user-id
                 windowsHelloForBusinessAuthenticationMethod-id: $request.path.windowsHelloForBusinessAuthenticationMethod-id
+            checkMemberGroups:
+              operationId: users.user.authentication.windowsHelloForBusinessMethods.windowsHelloForBusinessAuthenticationMethod.device.checkMemberGroups
+            checkMemberObjects:
+              operationId: users.user.authentication.windowsHelloForBusinessMethods.windowsHelloForBusinessAuthenticationMethod.device.checkMemberObjects
+            getMemberGroups:
+              operationId: users.user.authentication.windowsHelloForBusinessMethods.windowsHelloForBusinessAuthenticationMethod.device.getMemberGroups
+            getMemberObjects:
+              operationId: users.user.authentication.windowsHelloForBusinessMethods.windowsHelloForBusinessAuthenticationMethod.device.getMemberObjects
+            restore:
+              operationId: users.user.authentication.windowsHelloForBusinessMethods.windowsHelloForBusinessAuthenticationMethod.device.restore
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -22020,6 +22112,14 @@ paths:
               operationId: users.InformationProtection.ListThreatAssessmentRequests
               parameters:
                 user-id: $request.path.user-id
+            decryptBuffer:
+              operationId: users.user.informationProtection.decryptBuffer
+            encryptBuffer:
+              operationId: users.user.informationProtection.encryptBuffer
+            signDigest:
+              operationId: users.user.informationProtection.signDigest
+            verifySignature:
+              operationId: users.user.informationProtection.verifySignature
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -22148,30 +22248,6 @@ paths:
             schema:
               $ref: '#/components/schemas/microsoft.graph.bitlocker'
         required: true
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - users.informationProtection
-      summary: Delete navigation property bitlocker for users
-      operationId: users.informationProtection_DeleteBitlocker
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: If-Match
-          in: header
-          description: ETag
-          schema:
-            type: string
       responses:
         '204':
           description: Success
@@ -22341,70 +22417,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.bitlockerRecoveryKey'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    patch:
-      tags:
-        - users.informationProtection
-      summary: Update the navigation property recoveryKeys in users
-      operationId: users.informationProtection.bitlocker_UpdateRecoveryKeys
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: bitlockerRecoveryKey-id
-          in: path
-          description: 'key: id of bitlockerRecoveryKey'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: bitlockerRecoveryKey
-      requestBody:
-        description: New navigation property values
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.bitlockerRecoveryKey'
-        required: true
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - users.informationProtection
-      summary: Delete navigation property recoveryKeys for users
-      operationId: users.informationProtection.bitlocker_DeleteRecoveryKeys
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: bitlockerRecoveryKey-id
-          in: path
-          description: 'key: id of bitlockerRecoveryKey'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: bitlockerRecoveryKey
-        - name: If-Match
-          in: header
-          description: ETag
-          schema:
-            type: string
-      responses:
-        '204':
-          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -24599,7 +24611,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.keyValuePair'
-          description: 'Existing Microsoft Information Protection metadata is passed as key/value pairs, where the key is the MSIP_Label_GUID_PropName.'
+          description: 'Existing Microsoft Purview Information Protection metadata is passed as key/value pairs, where the key is the MSIP_Label_GUID_PropName.'
         state:
           $ref: '#/components/schemas/microsoft.graph.contentState'
       additionalProperties:
@@ -25129,7 +25141,7 @@ components:
               nullable: true
             showInAddressList:
               type: boolean
-              description: 'true if the Outlook global address list should contain this user, otherwise false. If not set, this will be treated as true. For users invited through the invitation manager, this property will be set to false. Supports $filter (eq, ne, not, in).'
+              description: Do not use in Microsoft Graph. Manage this property through the Microsoft 365 admin center instead. Represents whether the user should be included in the Outlook global address list. See Known issue.
               nullable: true
             signInSessionsValidFromDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -25878,6 +25890,11 @@ components:
         - title: crossTenantAccessPolicy
           type: object
           properties:
+            allowedCloudEndpoints:
+              type: array
+              items:
+                type: string
+              description: 'Used to specify which Microsoft clouds an organization would like to collaborate with. By default, this value is empty. Supported values for this field are: microsoftonline.com, microsoftonline.us, and partner.microsoftonline.cn.'
             default:
               $ref: '#/components/schemas/microsoft.graph.crossTenantAccessPolicyConfigurationDefault'
             partners:
@@ -26164,7 +26181,7 @@ components:
               description: Display name for the policy.
             isOrganizationDefault:
               type: boolean
-              description: This can only be set to true for a single tenant wide policy which will apply to all scopes and roles. Set the scopeId to '/' and scopeType to Directory.
+              description: 'This can only be set to true for a single tenant-wide policy which will apply to all scopes and roles. Set the scopeId to / and scopeType to Directory. Supports $filter (eq, ne).'
               nullable: true
             lastModifiedBy:
               $ref: '#/components/schemas/microsoft.graph.identity'
@@ -26176,7 +26193,7 @@ components:
               nullable: true
             scopeId:
               type: string
-              description: The id of the scope where the policy is created. Can be / for the tenant or a group ID. Required.
+              description: The identifier of the scope where the policy is created. Can be / for the tenant or a group ID. Required.
             scopeType:
               type: string
               description: 'The type of the scope where the policy is created. One of Directory, DirectoryRole. Required.'
@@ -26184,12 +26201,12 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicyRule'
-              description: 'Not implemented. The list of effective rules like approval rules and expiration rules evaluated based on inherited referenced rules. For example, if there is a tenant-wide policy to enforce enabling an approval rule, the effective rule will be to enable approval even if the policy has a rule to disable approval.'
+              description: 'The list of effective rules like approval rules and expiration rules evaluated based on inherited referenced rules. For example, if there is a tenant-wide policy to enforce enabling an approval rule, the effective rule will be to enable approval even if the policy has a rule to disable approval. Supports $expand.'
             rules:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicyRule'
-              description: The collection of rules like approval rules and expiration rules.
+              description: The collection of rules like approval rules and expiration rules. Supports $expand.
           additionalProperties:
             type: object
     microsoft.graph.unifiedRoleManagementPolicyRule:
@@ -28674,6 +28691,8 @@ components:
               type: string
               description: 'Specifies the group join policy and group content visibility for groups. Possible values are: Private, Public, or Hiddenmembership. Hiddenmembership can be set only for Microsoft 365 groups, when the groups are created. It can''t be updated later. Other values of visibility can be updated after group creation. If visibility value is not specified during group creation on Microsoft Graph, a security group is created as Private by default and Microsoft 365 group is Public. Groups assignable to roles are always Private. See group visibility options to learn more. Returned by default. Nullable.'
               nullable: true
+            writebackConfiguration:
+              $ref: '#/components/schemas/microsoft.graph.groupWritebackConfiguration'
             accessType:
               $ref: '#/components/schemas/microsoft.graph.groupAccessType'
             allowExternalSenders:
@@ -30612,6 +30631,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.pinnedChatMessageInfo'
+              description: A collection of all the pinned messages in the chat. Nullable.
             tabs:
               type: array
               items:
@@ -31114,11 +31134,11 @@ components:
       properties:
         displayName:
           type: string
-          description: 'The identity''s display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
+          description: The display name of the identity. This property is read-only.
           nullable: true
         id:
           type: string
-          description: Unique identifier for the identity.
+          description: The identifier of the identity. This property is read-only.
           nullable: true
       additionalProperties:
         type: object
@@ -31128,30 +31148,30 @@ components:
       properties:
         caller:
           type: string
-          description: 'The caller for the policy rule target. Allowed values are: None, Admin, EndUser.'
+          description: 'The type of caller that''s the target of the policy rule. Allowed values are: None, Admin, EndUser.'
           nullable: true
         enforcedSettings:
           type: array
           items:
             type: string
             nullable: true
-          description: The list of settings which are enforced and cannot be overridden by child scopes. Use All for all settings.
+          description: The list of role settings that are enforced and cannot be overridden by child scopes. Use All for all settings.
         inheritableSettings:
           type: array
           items:
             type: string
             nullable: true
-          description: The list of settings which can be inherited by child scopes. Use All for all settings.
+          description: The list of role settings that can be inherited by child scopes. Use All for all settings.
         level:
           type: string
-          description: 'The level for the policy rule target. Allowed values are: Eligibility, Assignment.'
+          description: 'The role assignment type that''s the target of policy rule. Allowed values are: Eligibility, Assignment.'
           nullable: true
         operations:
           type: array
           items:
             type: string
             nullable: true
-          description: 'The operations for policy rule target. Allowed values are: All, Activate, Deactivate, Assign, Update, Remove, Extend, Renew.'
+          description: 'The role management operations that are the target of the policy rule. Allowed values are: All, Activate, Deactivate, Assign, Update, Remove, Extend, Renew.'
         targetObjects:
           type: array
           items:
@@ -33057,6 +33077,17 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.groupWritebackConfiguration:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.writebackConfiguration'
+        - title: groupWritebackConfiguration
+          type: object
+          properties:
+            onPremisesGroupType:
+              type: string
+              nullable: true
+          additionalProperties:
+            type: object
     microsoft.graph.groupAccessType:
       title: groupAccessType
       enum:
@@ -37656,7 +37687,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.checklistItem'
-              description: A collection of checklistItems linked to a task.
+              description: A collection of smaller subtasks linked to the more complex parent task.
             extensions:
               type: array
               items:
@@ -39039,6 +39070,15 @@ components:
         - blog
         - profile
       type: string
+    microsoft.graph.writebackConfiguration:
+      title: writebackConfiguration
+      type: object
+      properties:
+        isEnabled:
+          type: boolean
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.MembershipRuleProcessingStatusDetails:
       title: MembershipRuleProcessingStatusDetails
       enum:
@@ -43230,6 +43270,7 @@ components:
               items:
                 type: string
                 nullable: true
+              description: The categories associated with the task. Each category corresponds to the displayName property of an outlookCategory that the user has defined.
             completedDateTime:
               $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
             createdDateTime:
@@ -43239,6 +43280,9 @@ components:
               format: date-time
             dueDateTime:
               $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
+            hasAttachments:
+              type: boolean
+              nullable: true
             importance:
               $ref: '#/components/schemas/microsoft.graph.importance'
             isReminderOn:
@@ -43259,10 +43303,19 @@ components:
               type: string
               description: A brief description of the task.
               nullable: true
+            attachments:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.attachment_v2'
+            attachmentSessions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.attachmentSession'
             checklistItems:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.checklistItem'
+              description: A collection of smaller subtasks linked to the more complex parent task.
             extensions:
               type: array
               items:
@@ -44641,11 +44694,11 @@ components:
       properties:
         key:
           type: string
-          description: Key.
+          description: 'Contains the name of the field that a value is associated with. When a sign in or domain hint is included in the sign-in request, corresponding fields are included as key-value pairs. Possible keys: Login hint present, Domain hint present.'
           nullable: true
         value:
           type: string
-          description: Value.
+          description: Contains the corresponding value for the specified key. The value is true if a sign in hint was included in the sign-in request; otherwise false. The value is true if a domain hint was included in the sign-in request; otherwise false.
           nullable: true
       additionalProperties:
         type: object
@@ -45861,6 +45914,52 @@ components:
               type: string
               description: ID of the timeOffReason for this timeOffItem. Required.
               nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.attachment_v2:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: attachment_v2
+          type: object
+          properties:
+            contentType:
+              type: string
+              nullable: true
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            name:
+              type: string
+              nullable: true
+            size:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              format: int32
+          additionalProperties:
+            type: object
+    microsoft.graph.attachmentSession:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: attachmentSession
+          type: object
+          properties:
+            content:
+              type: string
+              format: base64url
+              nullable: true
+            expirationDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            nextExpectedRange:
+              type: array
+              items:
+                type: string
+                nullable: true
           additionalProperties:
             type: object
     microsoft.graph.linkedResource:

@@ -10,7 +10,7 @@ paths:
     get:
       tags:
         - drives.drive
-      summary: Helpers (examples that aren't included in the docs)
+      summary: Get Drive
       operationId: drives.drive_ListDrive
       parameters:
         - $ref: '#/components/parameters/top'
@@ -150,7 +150,7 @@ paths:
     get:
       tags:
         - drives.drive
-      summary: Helpers (examples that aren't included in the docs)
+      summary: Get Drive
       operationId: drives.drive_GetDrive
       parameters:
         - name: drive-id
@@ -2161,6 +2161,36 @@ paths:
               parameters:
                 drive-id: $request.path.drive-id
                 driveItem-id: $request.path.driveItem-id
+            checkin:
+              operationId: drives.drive.items.driveItem.checkin
+            checkout:
+              operationId: drives.drive.items.driveItem.checkout
+            copy:
+              operationId: drives.drive.items.driveItem.copy
+            createLink:
+              operationId: drives.drive.items.driveItem.createLink
+            createUploadSession:
+              operationId: drives.drive.items.driveItem.createUploadSession
+            delta:
+              operationId: drives.drive.items.driveItem.delta
+            extractSensitivityLabels:
+              operationId: drives.drive.items.driveItem.extractSensitivityLabels
+            follow:
+              operationId: drives.drive.items.driveItem.follow
+            getActivitiesByInterval:
+              operationId: drives.drive.items.driveItem.getActivitiesByInterval
+            invite:
+              operationId: drives.drive.items.driveItem.invite
+            preview:
+              operationId: drives.drive.items.driveItem.preview
+            restore:
+              operationId: drives.drive.items.driveItem.restore
+            search:
+              operationId: drives.drive.items.driveItem.search
+            unfollow:
+              operationId: drives.drive.items.driveItem.unfollow
+            validatePermission:
+              operationId: drives.drive.items.driveItem.validatePermission
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5211,6 +5241,737 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/drives/{drive-id}/items/{driveItem-id}/microsoft.graph.checkin':
+    post:
+      tags:
+        - drives.Actions
+      summary: Invoke action checkin
+      operationId: drives.items_checkin
+      parameters:
+        - name: drive-id
+          in: path
+          description: 'key: id of drive'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - name: driveItem-id
+          in: path
+          description: 'key: id of driveItem'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: driveItem
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                checkInAs:
+                  type: string
+                  nullable: true
+                comment:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/drives/{drive-id}/items/{driveItem-id}/microsoft.graph.checkout':
+    post:
+      tags:
+        - drives.Actions
+      summary: Invoke action checkout
+      operationId: drives.items_checkout
+      parameters:
+        - name: drive-id
+          in: path
+          description: 'key: id of drive'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - name: driveItem-id
+          in: path
+          description: 'key: id of driveItem'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: driveItem
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/drives/{drive-id}/items/{driveItem-id}/microsoft.graph.copy':
+    post:
+      tags:
+        - drives.Actions
+      summary: Invoke action copy
+      operationId: drives.items_copy
+      parameters:
+        - name: drive-id
+          in: path
+          description: 'key: id of drive'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - name: driveItem-id
+          in: path
+          description: 'key: id of driveItem'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: driveItem
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  nullable: true
+                parentReference:
+                  $ref: '#/components/schemas/microsoft.graph.itemReference'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.driveItem'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/drives/{drive-id}/items/{driveItem-id}/microsoft.graph.createLink':
+    post:
+      tags:
+        - drives.Actions
+      summary: Invoke action createLink
+      operationId: drives.items_createLink
+      parameters:
+        - name: drive-id
+          in: path
+          description: 'key: id of drive'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - name: driveItem-id
+          in: path
+          description: 'key: id of driveItem'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: driveItem
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                type:
+                  type: string
+                  nullable: true
+                scope:
+                  type: string
+                  nullable: true
+                expirationDateTime:
+                  pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+                  type: string
+                  format: date-time
+                  nullable: true
+                password:
+                  type: string
+                  nullable: true
+                message:
+                  type: string
+                  nullable: true
+                recipients:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/microsoft.graph.driveRecipient'
+                retainInheritedPermissions:
+                  type: boolean
+                  default: false
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.permission'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/drives/{drive-id}/items/{driveItem-id}/microsoft.graph.createUploadSession':
+    post:
+      tags:
+        - drives.Actions
+      summary: Invoke action createUploadSession
+      operationId: drives.items_createUploadSession
+      parameters:
+        - name: drive-id
+          in: path
+          description: 'key: id of drive'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - name: driveItem-id
+          in: path
+          description: 'key: id of driveItem'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: driveItem
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                item:
+                  $ref: '#/components/schemas/microsoft.graph.driveItemUploadableProperties'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.uploadSession'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/drives/{drive-id}/items/{driveItem-id}/microsoft.graph.delta()':
+    get:
+      tags:
+        - drives.Functions
+      summary: Invoke function delta
+      operationId: drives.items_delta
+      parameters:
+        - name: drive-id
+          in: path
+          description: 'key: id of drive'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - name: driveItem-id
+          in: path
+          description: 'key: id of driveItem'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: driveItem
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of driveItem
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.driveItem'
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/drives/{drive-id}/items/{driveItem-id}/microsoft.graph.delta(token=''{token}'')':
+    get:
+      tags:
+        - drives.Functions
+      summary: Invoke function delta
+      operationId: drives.items_delta
+      parameters:
+        - name: drive-id
+          in: path
+          description: 'key: id of drive'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - name: driveItem-id
+          in: path
+          description: 'key: id of driveItem'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: driveItem
+        - name: token
+          in: path
+          description: 'Usage: token=''{token}'''
+          required: true
+          schema:
+            type: string
+            nullable: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of driveItem
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.driveItem'
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/drives/{drive-id}/items/{driveItem-id}/microsoft.graph.extractSensitivityLabels':
+    post:
+      tags:
+        - drives.Actions
+      summary: Invoke action extractSensitivityLabels
+      operationId: drives.items_extractSensitivityLabels
+      parameters:
+        - name: drive-id
+          in: path
+          description: 'key: id of drive'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - name: driveItem-id
+          in: path
+          description: 'key: id of driveItem'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: driveItem
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.extractSensitivityLabelsResult'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/drives/{drive-id}/items/{driveItem-id}/microsoft.graph.follow':
+    post:
+      tags:
+        - drives.Actions
+      summary: Invoke action follow
+      operationId: drives.items_follow
+      parameters:
+        - name: drive-id
+          in: path
+          description: 'key: id of drive'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - name: driveItem-id
+          in: path
+          description: 'key: id of driveItem'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: driveItem
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.driveItem'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/drives/{drive-id}/items/{driveItem-id}/microsoft.graph.getActivitiesByInterval(startDateTime=''{startDateTime}'',endDateTime=''{endDateTime}'',interval=''{interval}'')':
+    get:
+      tags:
+        - drives.Functions
+      summary: Invoke function getActivitiesByInterval
+      operationId: drives.items_getActivitiesByInterval
+      parameters:
+        - name: drive-id
+          in: path
+          description: 'key: id of drive'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - name: driveItem-id
+          in: path
+          description: 'key: id of driveItem'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: driveItem
+        - name: startDateTime
+          in: path
+          description: 'Usage: startDateTime=''{startDateTime}'''
+          required: true
+          schema:
+            type: string
+            nullable: true
+        - name: endDateTime
+          in: path
+          description: 'Usage: endDateTime=''{endDateTime}'''
+          required: true
+          schema:
+            type: string
+            nullable: true
+        - name: interval
+          in: path
+          description: 'Usage: interval=''{interval}'''
+          required: true
+          schema:
+            type: string
+            nullable: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of driveItem
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.itemActivityStat'
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/drives/{drive-id}/items/{driveItem-id}/microsoft.graph.invite':
+    post:
+      tags:
+        - drives.Actions
+      summary: Invoke action invite
+      operationId: drives.items_invite
+      parameters:
+        - name: drive-id
+          in: path
+          description: 'key: id of drive'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - name: driveItem-id
+          in: path
+          description: 'key: id of driveItem'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: driveItem
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                requireSignIn:
+                  type: boolean
+                  default: false
+                  nullable: true
+                roles:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                sendInvitation:
+                  type: boolean
+                  default: false
+                  nullable: true
+                message:
+                  type: string
+                  nullable: true
+                recipients:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/microsoft.graph.driveRecipient'
+                retainInheritedPermissions:
+                  type: boolean
+                  default: false
+                  nullable: true
+                expirationDateTime:
+                  type: string
+                  nullable: true
+                password:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of driveItem
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.permission'
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/drives/{drive-id}/items/{driveItem-id}/microsoft.graph.preview':
+    post:
+      tags:
+        - drives.Actions
+      summary: Invoke action preview
+      operationId: drives.items_preview
+      parameters:
+        - name: drive-id
+          in: path
+          description: 'key: id of drive'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - name: driveItem-id
+          in: path
+          description: 'key: id of driveItem'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: driveItem
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                viewer:
+                  type: string
+                  nullable: true
+                chromeless:
+                  type: boolean
+                  default: false
+                  nullable: true
+                allowEdit:
+                  type: boolean
+                  default: false
+                  nullable: true
+                page:
+                  type: string
+                  nullable: true
+                zoom:
+                  type: number
+                  format: double
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.itemPreviewInfo'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/drives/{drive-id}/items/{driveItem-id}/microsoft.graph.restore':
+    post:
+      tags:
+        - drives.Actions
+      summary: Invoke action restore
+      operationId: drives.items_restore
+      parameters:
+        - name: drive-id
+          in: path
+          description: 'key: id of drive'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - name: driveItem-id
+          in: path
+          description: 'key: id of driveItem'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: driveItem
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                parentReference:
+                  $ref: '#/components/schemas/microsoft.graph.itemReference'
+                name:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.driveItem'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/drives/{drive-id}/items/{driveItem-id}/microsoft.graph.search(q=''{q}'')':
+    get:
+      tags:
+        - drives.Functions
+      summary: Invoke function search
+      operationId: drives.items_search
+      parameters:
+        - name: drive-id
+          in: path
+          description: 'key: id of drive'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - name: driveItem-id
+          in: path
+          description: 'key: id of driveItem'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: driveItem
+        - name: q
+          in: path
+          description: 'Usage: q=''{q}'''
+          required: true
+          schema:
+            type: string
+            nullable: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of driveItem
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.driveItem'
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/drives/{drive-id}/items/{driveItem-id}/microsoft.graph.unfollow':
+    post:
+      tags:
+        - drives.Actions
+      summary: Invoke action unfollow
+      operationId: drives.items_unfollow
+      parameters:
+        - name: drive-id
+          in: path
+          description: 'key: id of drive'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - name: driveItem-id
+          in: path
+          description: 'key: id of driveItem'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: driveItem
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/drives/{drive-id}/items/{driveItem-id}/microsoft.graph.validatePermission':
+    post:
+      tags:
+        - drives.Actions
+      summary: Invoke action validatePermission
+      operationId: drives.items_validatePermission
+      parameters:
+        - name: drive-id
+          in: path
+          description: 'key: id of drive'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - name: driveItem-id
+          in: path
+          description: 'key: id of driveItem'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: driveItem
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                challengeToken:
+                  type: string
+                  nullable: true
+                password:
+                  type: string
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/drives/{drive-id}/items/{driveItem-id}/permissions':
     get:
       tags:
@@ -5854,6 +6615,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.subscription'
+          links:
+            reauthorize:
+              operationId: drives.drive.items.driveItem.subscriptions.subscription.reauthorize
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5935,6 +6699,40 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/drives/{drive-id}/items/{driveItem-id}/subscriptions/{subscription-id}/microsoft.graph.reauthorize':
+    post:
+      tags:
+        - drives.Actions
+      summary: Invoke action reauthorize
+      operationId: drives.items.subscriptions_reauthorize
+      parameters:
+        - name: drive-id
+          in: path
+          description: 'key: id of drive'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - name: driveItem-id
+          in: path
+          description: 'key: id of driveItem'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: driveItem
+        - name: subscription-id
+          in: path
+          description: 'key: id of subscription'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: subscription
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/drives/{drive-id}/items/{driveItem-id}/thumbnails':
     get:
       tags:
@@ -12264,6 +13062,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.subscription'
+          links:
+            reauthorize:
+              operationId: drives.drive.list.subscriptions.subscription.reauthorize
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -12331,6 +13132,33 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/drives/{drive-id}/list/subscriptions/{subscription-id}/microsoft.graph.reauthorize':
+    post:
+      tags:
+        - drives.Actions
+      summary: Invoke action reauthorize
+      operationId: drives.list.subscriptions_reauthorize
+      parameters:
+        - name: drive-id
+          in: path
+          description: 'key: id of drive'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - name: subscription-id
+          in: path
+          description: 'key: id of subscription'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: subscription
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/drives/{drive-id}/microsoft.graph.recent()':
     get:
       tags:
@@ -12581,6 +13409,36 @@ paths:
               operationId: drives.Root.ListVersions
               parameters:
                 drive-id: $request.path.drive-id
+            checkin:
+              operationId: drives.drive.root.checkin
+            checkout:
+              operationId: drives.drive.root.checkout
+            copy:
+              operationId: drives.drive.root.copy
+            createLink:
+              operationId: drives.drive.root.createLink
+            createUploadSession:
+              operationId: drives.drive.root.createUploadSession
+            delta:
+              operationId: drives.drive.root.delta
+            extractSensitivityLabels:
+              operationId: drives.drive.root.extractSensitivityLabels
+            follow:
+              operationId: drives.drive.root.follow
+            getActivitiesByInterval:
+              operationId: drives.drive.root.getActivitiesByInterval
+            invite:
+              operationId: drives.drive.root.invite
+            preview:
+              operationId: drives.drive.root.preview
+            restore:
+              operationId: drives.drive.root.restore
+            search:
+              operationId: drives.drive.root.search
+            unfollow:
+              operationId: drives.drive.root.unfollow
+            validatePermission:
+              operationId: drives.drive.root.validatePermission
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -15241,6 +16099,625 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/drives/{drive-id}/root/microsoft.graph.checkin':
+    post:
+      tags:
+        - drives.Actions
+      summary: Invoke action checkin
+      operationId: drives.root_checkin
+      parameters:
+        - name: drive-id
+          in: path
+          description: 'key: id of drive'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                checkInAs:
+                  type: string
+                  nullable: true
+                comment:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/drives/{drive-id}/root/microsoft.graph.checkout':
+    post:
+      tags:
+        - drives.Actions
+      summary: Invoke action checkout
+      operationId: drives.root_checkout
+      parameters:
+        - name: drive-id
+          in: path
+          description: 'key: id of drive'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/drives/{drive-id}/root/microsoft.graph.copy':
+    post:
+      tags:
+        - drives.Actions
+      summary: Invoke action copy
+      operationId: drives.root_copy
+      parameters:
+        - name: drive-id
+          in: path
+          description: 'key: id of drive'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  nullable: true
+                parentReference:
+                  $ref: '#/components/schemas/microsoft.graph.itemReference'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.driveItem'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/drives/{drive-id}/root/microsoft.graph.createLink':
+    post:
+      tags:
+        - drives.Actions
+      summary: Invoke action createLink
+      operationId: drives.root_createLink
+      parameters:
+        - name: drive-id
+          in: path
+          description: 'key: id of drive'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                type:
+                  type: string
+                  nullable: true
+                scope:
+                  type: string
+                  nullable: true
+                expirationDateTime:
+                  pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+                  type: string
+                  format: date-time
+                  nullable: true
+                password:
+                  type: string
+                  nullable: true
+                message:
+                  type: string
+                  nullable: true
+                recipients:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/microsoft.graph.driveRecipient'
+                retainInheritedPermissions:
+                  type: boolean
+                  default: false
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.permission'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/drives/{drive-id}/root/microsoft.graph.createUploadSession':
+    post:
+      tags:
+        - drives.Actions
+      summary: Invoke action createUploadSession
+      operationId: drives.root_createUploadSession
+      parameters:
+        - name: drive-id
+          in: path
+          description: 'key: id of drive'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                item:
+                  $ref: '#/components/schemas/microsoft.graph.driveItemUploadableProperties'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.uploadSession'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/drives/{drive-id}/root/microsoft.graph.delta()':
+    get:
+      tags:
+        - drives.Functions
+      summary: Invoke function delta
+      operationId: drives.root_delta
+      parameters:
+        - name: drive-id
+          in: path
+          description: 'key: id of drive'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of driveItem
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.driveItem'
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/drives/{drive-id}/root/microsoft.graph.delta(token=''{token}'')':
+    get:
+      tags:
+        - drives.Functions
+      summary: Invoke function delta
+      operationId: drives.root_delta
+      parameters:
+        - name: drive-id
+          in: path
+          description: 'key: id of drive'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - name: token
+          in: path
+          description: 'Usage: token=''{token}'''
+          required: true
+          schema:
+            type: string
+            nullable: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of driveItem
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.driveItem'
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/drives/{drive-id}/root/microsoft.graph.extractSensitivityLabels':
+    post:
+      tags:
+        - drives.Actions
+      summary: Invoke action extractSensitivityLabels
+      operationId: drives.root_extractSensitivityLabels
+      parameters:
+        - name: drive-id
+          in: path
+          description: 'key: id of drive'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.extractSensitivityLabelsResult'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/drives/{drive-id}/root/microsoft.graph.follow':
+    post:
+      tags:
+        - drives.Actions
+      summary: Invoke action follow
+      operationId: drives.root_follow
+      parameters:
+        - name: drive-id
+          in: path
+          description: 'key: id of drive'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.driveItem'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/drives/{drive-id}/root/microsoft.graph.getActivitiesByInterval(startDateTime=''{startDateTime}'',endDateTime=''{endDateTime}'',interval=''{interval}'')':
+    get:
+      tags:
+        - drives.Functions
+      summary: Invoke function getActivitiesByInterval
+      operationId: drives.root_getActivitiesByInterval
+      parameters:
+        - name: drive-id
+          in: path
+          description: 'key: id of drive'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - name: startDateTime
+          in: path
+          description: 'Usage: startDateTime=''{startDateTime}'''
+          required: true
+          schema:
+            type: string
+            nullable: true
+        - name: endDateTime
+          in: path
+          description: 'Usage: endDateTime=''{endDateTime}'''
+          required: true
+          schema:
+            type: string
+            nullable: true
+        - name: interval
+          in: path
+          description: 'Usage: interval=''{interval}'''
+          required: true
+          schema:
+            type: string
+            nullable: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of driveItem
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.itemActivityStat'
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/drives/{drive-id}/root/microsoft.graph.invite':
+    post:
+      tags:
+        - drives.Actions
+      summary: Invoke action invite
+      operationId: drives.root_invite
+      parameters:
+        - name: drive-id
+          in: path
+          description: 'key: id of drive'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                requireSignIn:
+                  type: boolean
+                  default: false
+                  nullable: true
+                roles:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                sendInvitation:
+                  type: boolean
+                  default: false
+                  nullable: true
+                message:
+                  type: string
+                  nullable: true
+                recipients:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/microsoft.graph.driveRecipient'
+                retainInheritedPermissions:
+                  type: boolean
+                  default: false
+                  nullable: true
+                expirationDateTime:
+                  type: string
+                  nullable: true
+                password:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of driveItem
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.permission'
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/drives/{drive-id}/root/microsoft.graph.preview':
+    post:
+      tags:
+        - drives.Actions
+      summary: Invoke action preview
+      operationId: drives.root_preview
+      parameters:
+        - name: drive-id
+          in: path
+          description: 'key: id of drive'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                viewer:
+                  type: string
+                  nullable: true
+                chromeless:
+                  type: boolean
+                  default: false
+                  nullable: true
+                allowEdit:
+                  type: boolean
+                  default: false
+                  nullable: true
+                page:
+                  type: string
+                  nullable: true
+                zoom:
+                  type: number
+                  format: double
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.itemPreviewInfo'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/drives/{drive-id}/root/microsoft.graph.restore':
+    post:
+      tags:
+        - drives.Actions
+      summary: Invoke action restore
+      operationId: drives.root_restore
+      parameters:
+        - name: drive-id
+          in: path
+          description: 'key: id of drive'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                parentReference:
+                  $ref: '#/components/schemas/microsoft.graph.itemReference'
+                name:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.driveItem'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/drives/{drive-id}/root/microsoft.graph.search(q=''{q}'')':
+    get:
+      tags:
+        - drives.Functions
+      summary: Invoke function search
+      operationId: drives.root_search
+      parameters:
+        - name: drive-id
+          in: path
+          description: 'key: id of drive'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - name: q
+          in: path
+          description: 'Usage: q=''{q}'''
+          required: true
+          schema:
+            type: string
+            nullable: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of driveItem
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.driveItem'
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/drives/{drive-id}/root/microsoft.graph.unfollow':
+    post:
+      tags:
+        - drives.Actions
+      summary: Invoke action unfollow
+      operationId: drives.root_unfollow
+      parameters:
+        - name: drive-id
+          in: path
+          description: 'key: id of drive'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/drives/{drive-id}/root/microsoft.graph.validatePermission':
+    post:
+      tags:
+        - drives.Actions
+      summary: Invoke action validatePermission
+      operationId: drives.root_validatePermission
+      parameters:
+        - name: drive-id
+          in: path
+          description: 'key: id of drive'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                challengeToken:
+                  type: string
+                  nullable: true
+                password:
+                  type: string
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/drives/{drive-id}/root/permissions':
     get:
       tags:
@@ -15814,6 +17291,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.subscription'
+          links:
+            reauthorize:
+              operationId: drives.drive.root.subscriptions.subscription.reauthorize
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -15881,6 +17361,33 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/drives/{drive-id}/root/subscriptions/{subscription-id}/microsoft.graph.reauthorize':
+    post:
+      tags:
+        - drives.Actions
+      summary: Invoke action reauthorize
+      operationId: drives.root.subscriptions_reauthorize
+      parameters:
+        - name: drive-id
+          in: path
+          description: 'key: id of drive'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - name: subscription-id
+          in: path
+          description: 'key: id of subscription'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: subscription
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/drives/{drive-id}/root/thumbnails':
     get:
       tags:
@@ -17269,6 +18776,12 @@ paths:
               parameters:
                 group-id: $request.path.group-id
                 drive-id: $request.path.drive-id
+            recent:
+              operationId: groups.group.drives.drive.recent
+            search:
+              operationId: groups.group.drives.drive.search
+            sharedWithMe:
+              operationId: groups.group.drives.drive.sharedWithMe
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -19372,6 +20885,36 @@ paths:
                 group-id: $request.path.group-id
                 drive-id: $request.path.drive-id
                 driveItem-id: $request.path.driveItem-id
+            checkin:
+              operationId: groups.group.drives.drive.items.driveItem.checkin
+            checkout:
+              operationId: groups.group.drives.drive.items.driveItem.checkout
+            copy:
+              operationId: groups.group.drives.drive.items.driveItem.copy
+            createLink:
+              operationId: groups.group.drives.drive.items.driveItem.createLink
+            createUploadSession:
+              operationId: groups.group.drives.drive.items.driveItem.createUploadSession
+            delta:
+              operationId: groups.group.drives.drive.items.driveItem.delta
+            extractSensitivityLabels:
+              operationId: groups.group.drives.drive.items.driveItem.extractSensitivityLabels
+            follow:
+              operationId: groups.group.drives.drive.items.driveItem.follow
+            getActivitiesByInterval:
+              operationId: groups.group.drives.drive.items.driveItem.getActivitiesByInterval
+            invite:
+              operationId: groups.group.drives.drive.items.driveItem.invite
+            preview:
+              operationId: groups.group.drives.drive.items.driveItem.preview
+            restore:
+              operationId: groups.group.drives.drive.items.driveItem.restore
+            search:
+              operationId: groups.group.drives.drive.items.driveItem.search
+            unfollow:
+              operationId: groups.group.drives.drive.items.driveItem.unfollow
+            validatePermission:
+              operationId: groups.group.drives.drive.items.driveItem.validatePermission
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -23175,6 +24718,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.subscription'
+          links:
+            reauthorize:
+              operationId: groups.group.drives.drive.items.driveItem.subscriptions.subscription.reauthorize
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -29713,6 +31259,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.subscription'
+          links:
+            reauthorize:
+              operationId: groups.group.drives.drive.list.subscriptions.subscription.reauthorize
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -29959,6 +31508,36 @@ paths:
               parameters:
                 group-id: $request.path.group-id
                 drive-id: $request.path.drive-id
+            checkin:
+              operationId: groups.group.drives.drive.root.checkin
+            checkout:
+              operationId: groups.group.drives.drive.root.checkout
+            copy:
+              operationId: groups.group.drives.drive.root.copy
+            createLink:
+              operationId: groups.group.drives.drive.root.createLink
+            createUploadSession:
+              operationId: groups.group.drives.drive.root.createUploadSession
+            delta:
+              operationId: groups.group.drives.drive.root.delta
+            extractSensitivityLabels:
+              operationId: groups.group.drives.drive.root.extractSensitivityLabels
+            follow:
+              operationId: groups.group.drives.drive.root.follow
+            getActivitiesByInterval:
+              operationId: groups.group.drives.drive.root.getActivitiesByInterval
+            invite:
+              operationId: groups.group.drives.drive.root.invite
+            preview:
+              operationId: groups.group.drives.drive.root.preview
+            restore:
+              operationId: groups.group.drives.drive.root.restore
+            search:
+              operationId: groups.group.drives.drive.root.search
+            unfollow:
+              operationId: groups.group.drives.drive.root.unfollow
+            validatePermission:
+              operationId: groups.group.drives.drive.root.validatePermission
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -33344,6 +34923,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.subscription'
+          links:
+            reauthorize:
+              operationId: groups.group.drives.drive.root.subscriptions.subscription.reauthorize
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -41104,6 +42686,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.subscription'
+          links:
+            reauthorize:
+              operationId: shares.sharedDriveItem.list.subscriptions.subscription.reauthorize
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -41171,6 +42756,33 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/shares/{sharedDriveItem-id}/list/subscriptions/{subscription-id}/microsoft.graph.reauthorize':
+    post:
+      tags:
+        - shares.Actions
+      summary: Invoke action reauthorize
+      operationId: shares.list.subscriptions_reauthorize
+      parameters:
+        - name: sharedDriveItem-id
+          in: path
+          description: 'key: id of sharedDriveItem'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: sharedDriveItem
+        - name: subscription-id
+          in: path
+          description: 'key: id of subscription'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: subscription
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/shares/{sharedDriveItem-id}/listItem':
     get:
       tags:
@@ -44049,6 +45661,12 @@ paths:
               parameters:
                 user-id: $request.path.user-id
                 drive-id: $request.path.drive-id
+            recent:
+              operationId: users.user.drives.drive.recent
+            search:
+              operationId: users.user.drives.drive.search
+            sharedWithMe:
+              operationId: users.user.drives.drive.sharedWithMe
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -46152,6 +47770,36 @@ paths:
                 user-id: $request.path.user-id
                 drive-id: $request.path.drive-id
                 driveItem-id: $request.path.driveItem-id
+            checkin:
+              operationId: users.user.drives.drive.items.driveItem.checkin
+            checkout:
+              operationId: users.user.drives.drive.items.driveItem.checkout
+            copy:
+              operationId: users.user.drives.drive.items.driveItem.copy
+            createLink:
+              operationId: users.user.drives.drive.items.driveItem.createLink
+            createUploadSession:
+              operationId: users.user.drives.drive.items.driveItem.createUploadSession
+            delta:
+              operationId: users.user.drives.drive.items.driveItem.delta
+            extractSensitivityLabels:
+              operationId: users.user.drives.drive.items.driveItem.extractSensitivityLabels
+            follow:
+              operationId: users.user.drives.drive.items.driveItem.follow
+            getActivitiesByInterval:
+              operationId: users.user.drives.drive.items.driveItem.getActivitiesByInterval
+            invite:
+              operationId: users.user.drives.drive.items.driveItem.invite
+            preview:
+              operationId: users.user.drives.drive.items.driveItem.preview
+            restore:
+              operationId: users.user.drives.drive.items.driveItem.restore
+            search:
+              operationId: users.user.drives.drive.items.driveItem.search
+            unfollow:
+              operationId: users.user.drives.drive.items.driveItem.unfollow
+            validatePermission:
+              operationId: users.user.drives.drive.items.driveItem.validatePermission
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -49955,6 +51603,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.subscription'
+          links:
+            reauthorize:
+              operationId: users.user.drives.drive.items.driveItem.subscriptions.subscription.reauthorize
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -56493,6 +58144,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.subscription'
+          links:
+            reauthorize:
+              operationId: users.user.drives.drive.list.subscriptions.subscription.reauthorize
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -56739,6 +58393,36 @@ paths:
               parameters:
                 user-id: $request.path.user-id
                 drive-id: $request.path.drive-id
+            checkin:
+              operationId: users.user.drives.drive.root.checkin
+            checkout:
+              operationId: users.user.drives.drive.root.checkout
+            copy:
+              operationId: users.user.drives.drive.root.copy
+            createLink:
+              operationId: users.user.drives.drive.root.createLink
+            createUploadSession:
+              operationId: users.user.drives.drive.root.createUploadSession
+            delta:
+              operationId: users.user.drives.drive.root.delta
+            extractSensitivityLabels:
+              operationId: users.user.drives.drive.root.extractSensitivityLabels
+            follow:
+              operationId: users.user.drives.drive.root.follow
+            getActivitiesByInterval:
+              operationId: users.user.drives.drive.root.getActivitiesByInterval
+            invite:
+              operationId: users.user.drives.drive.root.invite
+            preview:
+              operationId: users.user.drives.drive.root.preview
+            restore:
+              operationId: users.user.drives.drive.root.restore
+            search:
+              operationId: users.user.drives.drive.root.search
+            unfollow:
+              operationId: users.user.drives.drive.root.unfollow
+            validatePermission:
+              operationId: users.user.drives.drive.root.validatePermission
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -60124,6 +61808,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.subscription'
+          links:
+            reauthorize:
+              operationId: users.user.drives.drive.root.subscriptions.subscription.reauthorize
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -61665,6 +63352,111 @@ components:
               $ref: '#/components/schemas/microsoft.graph.fieldValueSet'
           additionalProperties:
             type: object
+    microsoft.graph.itemReference:
+      title: itemReference
+      type: object
+      properties:
+        driveId:
+          type: string
+          description: Unique identifier of the drive instance that contains the item. Read-only.
+          nullable: true
+        driveType:
+          type: string
+          description: 'Identifies the type of drive. See [drive][] resource for values.'
+          nullable: true
+        id:
+          type: string
+          description: Unique identifier of the item in the drive. Read-only.
+          nullable: true
+        name:
+          type: string
+          description: The name of the item being referenced. Read-only.
+          nullable: true
+        path:
+          type: string
+          description: Path that can be used to navigate to the item. Read-only.
+          nullable: true
+        shareId:
+          type: string
+          description: 'A unique identifier for a shared resource that can be accessed via the [Shares][] API.'
+          nullable: true
+        sharepointIds:
+          $ref: '#/components/schemas/microsoft.graph.sharepointIds'
+        siteId:
+          type: string
+          description: 'For OneDrive for Business and SharePoint, this property represents the ID of the site that contains the parent document library of the driveItem resource. The value is the same as the id property of that [site][] resource. It is an opaque string that consists of three identifiers of the site. For OneDrive, this property is not populated.'
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.driveItemUploadableProperties:
+      title: driveItemUploadableProperties
+      type: object
+      properties:
+        description:
+          type: string
+          description: Provides a user-visible description of the item. Read-write. Only on OneDrive Personal.
+          nullable: true
+        fileSize:
+          type: integer
+          description: Provides an expected file size to perform a quota check prior to upload. Only on OneDrive Personal.
+          format: int64
+          nullable: true
+        fileSystemInfo:
+          $ref: '#/components/schemas/microsoft.graph.fileSystemInfo'
+        name:
+          type: string
+          description: The name of the item (filename and extension). Read-write.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.uploadSession:
+      title: uploadSession
+      type: object
+      properties:
+        expirationDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: The date and time in UTC that the upload session will expire. The complete file must be uploaded before this expiration time is reached.
+          format: date-time
+          nullable: true
+        nextExpectedRanges:
+          type: array
+          items:
+            type: string
+            nullable: true
+          description: 'When uploading files to document libraries, this is a collection of byte ranges that the server is missing for the file. These ranges are zero-indexed and of the format, ''{start}-{end}'' (e.g. ''0-26'' to indicate the first 27 bytes of the file). When uploading files as Outlook attachments, instead of a collection of ranges, this property always indicates a single value ''{start}'', the location in the file where the next upload should begin.'
+        uploadUrl:
+          type: string
+          description: The URL endpoint that accepts PUT requests for byte ranges of the file.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.extractSensitivityLabelsResult:
+      title: extractSensitivityLabelsResult
+      type: object
+      properties:
+        labels:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.sensitivityLabelAssignment'
+          description: List of sensitivity labels assigned to a file.
+      additionalProperties:
+        type: object
+    microsoft.graph.itemPreviewInfo:
+      title: itemPreviewInfo
+      type: object
+      properties:
+        getUrl:
+          type: string
+          nullable: true
+        postParameters:
+          type: string
+          nullable: true
+        postUrl:
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.subscription:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -62004,42 +63796,6 @@ components:
               nullable: true
           additionalProperties:
             type: object
-    microsoft.graph.itemReference:
-      title: itemReference
-      type: object
-      properties:
-        driveId:
-          type: string
-          description: Unique identifier of the drive instance that contains the item. Read-only.
-          nullable: true
-        driveType:
-          type: string
-          description: 'Identifies the type of drive. See [drive][] resource for values.'
-          nullable: true
-        id:
-          type: string
-          description: Unique identifier of the item in the drive. Read-only.
-          nullable: true
-        name:
-          type: string
-          description: The name of the item being referenced. Read-only.
-          nullable: true
-        path:
-          type: string
-          description: Path that can be used to navigate to the item. Read-only.
-          nullable: true
-        shareId:
-          type: string
-          description: 'A unique identifier for a shared resource that can be accessed via the [Shares][] API.'
-          nullable: true
-        sharepointIds:
-          $ref: '#/components/schemas/microsoft.graph.sharepointIds'
-        siteId:
-          type: string
-          description: 'For OneDrive for Business and SharePoint, this property represents the ID of the site that contains the parent document library of the driveItem resource. The value is the same as the id property of that [site][] resource. It is an opaque string that consists of three identifiers of the site. For OneDrive, this property is not populated.'
-          nullable: true
-      additionalProperties:
-        type: object
     microsoft.graph.richLongRunningOperation:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.longRunningOperation'
@@ -63064,6 +64820,20 @@ components:
               $ref: '#/components/schemas/microsoft.graph.publicationFacet'
           additionalProperties:
             type: object
+    microsoft.graph.sensitivityLabelAssignment:
+      title: sensitivityLabelAssignment
+      type: object
+      properties:
+        assignmentMethod:
+          $ref: '#/components/schemas/microsoft.graph.sensitivityLabelAssignmentMethod'
+        sensitivityLabelId:
+          type: string
+          description: The unique identifier for the sensitivity label assigned to the file.
+        tenantId:
+          type: string
+          description: The unique identifier for the tenant that hosts the file when this label is applied.
+      additionalProperties:
+        type: object
     microsoft.graph.thumbnail:
       title: thumbnail
       type: object
@@ -64049,7 +65819,7 @@ components:
               nullable: true
             showInAddressList:
               type: boolean
-              description: 'true if the Outlook global address list should contain this user, otherwise false. If not set, this will be treated as true. For users invited through the invitation manager, this property will be set to false. Supports $filter (eq, ne, not, in).'
+              description: Do not use in Microsoft Graph. Manage this property through the Microsoft 365 admin center instead. Represents whether the user should be included in the Outlook global address list. See Known issue.
               nullable: true
             signInSessionsValidFromDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -64404,11 +66174,11 @@ components:
       properties:
         displayName:
           type: string
-          description: 'The identity''s display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
+          description: The display name of the identity. This property is read-only.
           nullable: true
         id:
           type: string
-          description: Unique identifier for the identity.
+          description: The identifier of the identity. This property is read-only.
           nullable: true
       additionalProperties:
         type: object
@@ -64809,6 +66579,14 @@ components:
       type: object
       additionalProperties:
         type: object
+    microsoft.graph.sensitivityLabelAssignmentMethod:
+      title: sensitivityLabelAssignmentMethod
+      enum:
+        - standard
+        - privileged
+        - auto
+        - unknownFutureValue
+      type: string
     microsoft.graph.termStore.term:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -66465,6 +68243,8 @@ components:
               type: string
               description: 'Specifies the group join policy and group content visibility for groups. Possible values are: Private, Public, or Hiddenmembership. Hiddenmembership can be set only for Microsoft 365 groups, when the groups are created. It can''t be updated later. Other values of visibility can be updated after group creation. If visibility value is not specified during group creation on Microsoft Graph, a security group is created as Private by default and Microsoft 365 group is Public. Groups assignable to roles are always Private. See group visibility options to learn more. Returned by default. Nullable.'
               nullable: true
+            writebackConfiguration:
+              $ref: '#/components/schemas/microsoft.graph.groupWritebackConfiguration'
             accessType:
               $ref: '#/components/schemas/microsoft.graph.groupAccessType'
             allowExternalSenders:
@@ -68504,6 +70284,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.pinnedChatMessageInfo'
+              description: A collection of all the pinned messages in the chat. Nullable.
             tabs:
               type: array
               items:
@@ -68878,11 +70659,11 @@ components:
       properties:
         key:
           type: string
-          description: Key.
+          description: 'Contains the name of the field that a value is associated with. When a sign in or domain hint is included in the sign-in request, corresponding fields are included as key-value pairs. Possible keys: Login hint present, Domain hint present.'
           nullable: true
         value:
           type: string
-          description: Value.
+          description: Contains the corresponding value for the specified key. The value is true if a sign in hint was included in the sign-in request; otherwise false. The value is true if a domain hint was included in the sign-in request; otherwise false.
           nullable: true
       additionalProperties:
         type: object
@@ -69942,6 +71723,17 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.groupWritebackConfiguration:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.writebackConfiguration'
+        - title: groupWritebackConfiguration
+          type: object
+          properties:
+            onPremisesGroupType:
+              type: string
+              nullable: true
+          additionalProperties:
+            type: object
     microsoft.graph.groupAccessType:
       title: groupAccessType
       enum:
@@ -74013,7 +75805,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.checklistItem'
-              description: A collection of checklistItems linked to a task.
+              description: A collection of smaller subtasks linked to the more complex parent task.
             extensions:
               type: array
               items:
@@ -75477,6 +77269,15 @@ components:
         - blog
         - profile
       type: string
+    microsoft.graph.writebackConfiguration:
+      title: writebackConfiguration
+      type: object
+      properties:
+        isEnabled:
+          type: boolean
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.MembershipRuleProcessingStatusDetails:
       title: MembershipRuleProcessingStatusDetails
       enum:
@@ -78310,6 +80111,7 @@ components:
               items:
                 type: string
                 nullable: true
+              description: The categories associated with the task. Each category corresponds to the displayName property of an outlookCategory that the user has defined.
             completedDateTime:
               $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
             createdDateTime:
@@ -78319,6 +80121,9 @@ components:
               format: date-time
             dueDateTime:
               $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
+            hasAttachments:
+              type: boolean
+              nullable: true
             importance:
               $ref: '#/components/schemas/microsoft.graph.importance'
             isReminderOn:
@@ -78339,10 +80144,19 @@ components:
               type: string
               description: A brief description of the task.
               nullable: true
+            attachments:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.attachment_v2'
+            attachmentSessions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.attachmentSession'
             checklistItems:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.checklistItem'
+              description: A collection of smaller subtasks linked to the more complex parent task.
             extensions:
               type: array
               items:
@@ -80342,6 +82156,52 @@ components:
               type: string
               description: ID of the timeOffReason for this timeOffItem. Required.
               nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.attachment_v2:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: attachment_v2
+          type: object
+          properties:
+            contentType:
+              type: string
+              nullable: true
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            name:
+              type: string
+              nullable: true
+            size:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              format: int32
+          additionalProperties:
+            type: object
+    microsoft.graph.attachmentSession:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: attachmentSession
+          type: object
+          properties:
+            content:
+              type: string
+              format: base64url
+              nullable: true
+            expirationDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            nextExpectedRange:
+              type: array
+              items:
+                type: string
+                nullable: true
           additionalProperties:
             type: object
     microsoft.graph.linkedResource:

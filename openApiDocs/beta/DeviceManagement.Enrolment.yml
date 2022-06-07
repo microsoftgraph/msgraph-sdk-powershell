@@ -2662,8 +2662,6 @@ paths:
                 deviceEnrollmentConfiguration-id: $request.path.deviceEnrollmentConfiguration-id
             assign:
               operationId: deviceManagement.deviceEnrollmentConfigurations.deviceEnrollmentConfiguration.assign
-            createEnrollmentNotificationConfiguration:
-              operationId: deviceManagement.deviceEnrollmentConfigurations.deviceEnrollmentConfiguration.createEnrollmentNotificationConfiguration
             setPriority:
               operationId: deviceManagement.deviceEnrollmentConfigurations.deviceEnrollmentConfiguration.setPriority
         default:
@@ -21748,19 +21746,19 @@ components:
           properties:
             appScopeId:
               type: string
-              description: 'Identifier of the app-specific scope when the assignment scope is app-specific. The scope of an assignment determines the set of resources for which the principal has been granted access. App scopes are scopes that are defined and understood by this application only. Use / for tenant-wide app scopes. Use directoryScopeId to limit the scope to particular directory objects, for example, administrative units.'
+              description: 'Identifier of the app-specific scope when the assignment or role eligibility is scoped to an app. The scope of an assignment or role eligibility determines the set of resources for which the principal has been granted access. App scopes are scopes that are defined and understood by this application only. Use / for tenant-wide app scopes. Use directoryScopeId to limit the scope to particular directory objects, for example, administrative units.'
               nullable: true
             directoryScopeId:
               type: string
-              description: Identifier of the directory object representing the scope of the assignment. The scope of an assignment determines the set of resources for which the principal has been granted access. Directory scopes are shared scopes stored in the directory that are understood by multiple applications. Use / for tenant-wide scope. Use appScopeId to limit the scope to an application only.
+              description: Identifier of the directory object representing the scope of the assignment or role eligibility. The scope of an assignment or role eligibility determines the set of resources for which the principal has been granted access. Directory scopes are shared scopes stored in the directory that are understood by multiple applications. Use / for tenant-wide scope. Use appScopeId to limit the scope to an application only.
               nullable: true
             principalId:
               type: string
-              description: Identifier of the principal to which the assignment is being granted to. Can be a group or a user.
+              description: Identifier of the principal that has been granted the role assignment or that's eligible for a role.
               nullable: true
             roleDefinitionId:
               type: string
-              description: Identifier of the unifiedRoleDefinition the assignment is for. Read only.  Supports $filter (eq).
+              description: Identifier of the unifiedRoleDefinition object that is being assigned to the principal or that the principal is eligible for.
               nullable: true
             appScope:
               $ref: '#/components/schemas/microsoft.graph.appScope'
@@ -21780,39 +21778,39 @@ components:
           properties:
             appScopeId:
               type: string
-              description: 'Identifier of the app-specific scope when the assignment scope is app-specific. The scope of an assignment determines the set of resources for which the principal has been granted access. App scopes are scopes that are defined and understood by this application only. Use / for tenant-wide app scopes. Use directoryScopeId to limit the scope to particular directory objects, for example, administrative units or all users.'
+              description: 'Identifier of the app-specific scope when the assignment or eligibility is scoped to an app. The scope of an assignment or eligibility determines the set of resources for which the principal has been granted access. App scopes are scopes that are defined and understood by this application only. Use / for tenant-wide app scopes. Use directoryScopeId to limit the scope to particular directory objects, for example, administrative units.'
               nullable: true
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Time that the schedule was created.
+              description: When the schedule was created.
               format: date-time
               nullable: true
             createdUsing:
               type: string
-              description: Identifier of the roleAssignmentScheduleRequest that created this schedule.
+              description: Identifier of the object through which this schedule was created.
               nullable: true
             directoryScopeId:
               type: string
-              description: Identifier of the directory object representing the scope of the assignment. The scope of an assignment determines the set of resources for which the principal has been granted access. Directory scopes are shared scopes stored in the directory that are understood by multiple applications. Use / for tenant-wide scope. Use appScopeId to limit the scope to an application only.
+              description: Identifier of the directory object representing the scope of the assignment or eligibility. The scope of an assignment or eligibility determines the set of resources for which the principal has been granted access. Directory scopes are shared scopes stored in the directory that are understood by multiple applications. Use / for tenant-wide scope. Use appScopeId to limit the scope to an application only.
               nullable: true
             modifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Last time the schedule was updated.
+              description: When the schedule was last modified.
               format: date-time
               nullable: true
             principalId:
               type: string
-              description: Identifier of the principal to which the assignment is being granted to. Supports $filter (eq).
+              description: Identifier of the principal that has been granted the role assignment or eligibility.
               nullable: true
             roleDefinitionId:
               type: string
-              description: Identifier of the unifiedRoleDefinition the assignment is for. Read only. Supports $filter (eq).
+              description: Identifier of the unifiedRoleDefinition object that is being assigned to the principal or that a principal is eligible for.
               nullable: true
             status:
               type: string
-              description: 'Status for the roleAssignmentSchedule. It can include state related messages like Provisioned, Revoked, Pending Provisioning, and Pending Approval. Supports $filter (eq).'
+              description: The status of the role assignment or eligibility request.
               nullable: true
             appScope:
               $ref: '#/components/schemas/microsoft.graph.appScope'
@@ -21930,30 +21928,30 @@ components:
           properties:
             assignmentType:
               type: string
-              description: Type of the assignment. It can either be Assigned or Activated.
+              description: 'Type of the assignment which can either be Assigned or Activated. Supports $filter (eq, ne).'
               nullable: true
             endDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Time that the roleAssignmentInstance will expire
+              description: The end date of the schedule instance.
               format: date-time
               nullable: true
             memberType:
               type: string
-              description: 'Membership type of the assignment. It can either be Inherited, Direct, or Group.'
+              description: 'How the assignments is inherited. It can either be Inherited, Direct, or Group. It can further imply whether the unifiedRoleAssignmentSchedule can be managed by the caller. Supports $filter (eq, ne).'
               nullable: true
             roleAssignmentOriginId:
               type: string
-              description: ID of the roleAssignment in the directory
+              description: The identifier of the role assignment in Azure AD.
               nullable: true
             roleAssignmentScheduleId:
               type: string
-              description: ID of the parent roleAssignmentSchedule for this instance
+              description: The identifier of the unifiedRoleAssignmentSchedule object from which this instance was created.
               nullable: true
             startDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Time that the roleAssignmentInstance will start
+              description: When this instance starts.
               format: date-time
               nullable: true
             activatedUsing:
@@ -22002,37 +22000,37 @@ components:
           properties:
             action:
               type: string
-              description: 'Represents the type of the operation on the role assignment. The possible values are: AdminAssign: For administrators to assign roles to users or groups.AdminRemove: For administrators to remove users or groups from roles. AdminUpdate: For administrators to change existing role assignments.AdminExtend: For administrators to extend expiring assignments.AdminRenew: For administrators to renew expired assignments.SelfActivate: For users to activate their assignments.SelfDeactivate: For users to deactivate their active assignments.SelfExtend: For users to request to extend their expiring assignments.SelfRenew: For users to request to renew their expired assignments.'
+              description: 'Represents the type of the operation on the role assignment request. The possible values are: adminAssign, adminUpdate, adminRemove, selfActivate, selfDeactivate, adminExtend, adminRenew, selfExtend, selfRenew, unknownFutureValue. adminAssign: For administrators to assign roles to principals.adminRemove: For administrators to remove principals from roles. adminUpdate: For administrators to change existing role assignments.adminExtend: For administrators to extend expiring assignments.adminRenew: For administrators to renew expired assignments.selfActivate: For principals to activate their assignments.selfDeactivate: For principals to deactivate their active assignments.selfExtend: For principals to request to extend their expiring assignments.selfRenew: For principals to request to renew their expired assignments.'
               nullable: true
             appScopeId:
               type: string
-              description: 'Identifier of the app-specific scope when the assignment scope is app-specific. The scope of an assignment determines the set of resources for which the principal has been granted access. App scopes are scopes that are defined and understood by this application only. Use / for tenant-wide app scopes. Use directoryScopeId to limit the scope to particular directory objects, for example, administrative units.'
+              description: 'Identifier of the app-specific scope when the assignment is scoped to an app. The scope of an assignment determines the set of resources for which the principal has been granted access. App scopes are scopes that are defined and understood by this application only. Use / for tenant-wide app scopes. Use directoryScopeId to limit the scope to particular directory objects, for example, administrative units. Supports $filter (eq, ne, and on null values).'
               nullable: true
             directoryScopeId:
               type: string
-              description: Identifier of the directory object representing the scope of the assignment. The scope of an assignment determines the set of resources for which the principal has been granted access. Directory scopes are shared scopes stored in the directory that are understood by multiple applications. Use / for tenant-wide scope. Use appScopeId to limit the scope to an application only.
+              description: 'Identifier of the directory object representing the scope of the assignment. The scope of an assignment determines the set of resources for which the principal has been granted access. Directory scopes are shared scopes stored in the directory that are understood by multiple applications. Use / for tenant-wide scope. Use appScopeId to limit the scope to an application only. Supports $filter (eq, ne, and on null values).'
               nullable: true
             isValidationOnly:
               type: boolean
-              description: A boolean that determines whether the call is a validation or an actual call. Only set this property if you want to check whether an activation is subject to additional rules like MFA before actually submitting the request.
+              description: Determines whether the call is a validation or an actual call. Only set this property if you want to check whether an activation is subject to additional rules like MFA before actually submitting the request.
               nullable: true
             justification:
               type: string
-              description: A message provided by users and administrators when create the request about why it is needed.
+              description: A message provided by users and administrators when create they create the unifiedRoleAssignmentScheduleRequest object.
               nullable: true
             principalId:
               type: string
-              description: Identifier of the principal to which the assignment is being granted to.
+              description: 'Identifier of the principal that has been granted the assignment. Supports $filter (eq, ne).'
               nullable: true
             roleDefinitionId:
               type: string
-              description: Identifier of the unifiedRoleDefinition the assignment is for. Read only.
+              description: 'Identifier of the unifiedRoleDefinition object that is being assigned to the principal. Supports $filter (eq, ne).'
               nullable: true
             scheduleInfo:
               $ref: '#/components/schemas/microsoft.graph.requestSchedule'
             targetScheduleId:
               type: string
-              description: Identifier of the schedule object attached to the assignment.
+              description: 'Identifier of the schedule object that''s linked to the assignment request. Supports $filter (eq, ne).'
               nullable: true
             ticketInfo:
               $ref: '#/components/schemas/microsoft.graph.ticketInfo'
@@ -22072,11 +22070,11 @@ components:
           properties:
             assignmentType:
               type: string
-              description: Type of the assignment. It can either be Assigned or Activated.
+              description: 'Type of the assignment which can either be Assigned or Activated. Supports $filter (eq, ne).'
               nullable: true
             memberType:
               type: string
-              description: 'Membership type of the assignment. It can either be Inherited, Direct, or Group.'
+              description: 'How the assignments is inherited. It can either be Inherited, Direct, or Group. It can further imply whether the unifiedRoleAssignmentSchedule can be managed by the caller. Supports $filter (eq, ne).'
               nullable: true
             scheduleInfo:
               $ref: '#/components/schemas/microsoft.graph.requestSchedule'
@@ -22982,11 +22980,11 @@ components:
       properties:
         displayName:
           type: string
-          description: 'The identity''s display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
+          description: The display name of the identity. This property is read-only.
           nullable: true
         id:
           type: string
-          description: Unique identifier for the identity.
+          description: The identifier of the identity. This property is read-only.
           nullable: true
       additionalProperties:
         type: object
@@ -23034,7 +23032,7 @@ components:
         startDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
-          description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
+          description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. In PIM, when the  eligible or active assignment becomes active.'
           format: date-time
           nullable: true
       additionalProperties:
@@ -23045,11 +23043,11 @@ components:
       properties:
         ticketNumber:
           type: string
-          description: Ticket number meta data
+          description: The ticket number.
           nullable: true
         ticketSystem:
           type: string
-          description: Ticket system meta data
+          description: The description of the ticket system.
           nullable: true
       additionalProperties:
         type: object

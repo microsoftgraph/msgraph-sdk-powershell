@@ -10,7 +10,7 @@ paths:
     get:
       tags:
         - security.security
-      summary: security resource type
+      summary: Get security
       operationId: security.security_GetSecurity
       parameters:
         - name: $select

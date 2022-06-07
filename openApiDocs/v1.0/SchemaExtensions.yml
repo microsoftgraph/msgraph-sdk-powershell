@@ -10,7 +10,7 @@ paths:
     get:
       tags:
         - schemaExtensions.schemaExtension
-      summary: Add custom data to groups using schema extensions
+      summary: List schemaExtensions
       operationId: schemaExtensions.schemaExtension_ListSchemaExtension
       parameters:
         - $ref: '#/components/parameters/top'

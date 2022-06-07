@@ -1114,6 +1114,26 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/deviceManagement/comanagedDevices/{managedDevice-id}/microsoft.graph.removeDeviceFirmwareConfigurationInterfaceManagement':
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action removeDeviceFirmwareConfigurationInterfaceManagement
+      operationId: deviceManagement.comanagedDevices_removeDeviceFirmwareConfigurationInterfaceManagement
+      parameters:
+        - name: managedDevice-id
+          in: path
+          description: 'key: id of managedDevice'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: managedDevice
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/deviceManagement/comanagedDevices/{managedDevice-id}/microsoft.graph.reprovisionCloudPc':
     post:
       tags:
@@ -2607,46 +2627,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
-  '/deviceManagement/deviceConfigurations/{deviceConfiguration-id}/microsoft.graph.windowsUpdateForBusinessConfiguration/microsoft.graph.extendFeatureUpdatesPause':
-    post:
-      tags:
-        - deviceManagement.Actions
-      summary: Invoke action extendFeatureUpdatesPause
-      operationId: deviceManagement.deviceConfigurations.microsoft.graph.windowsUpdateForBusinessConfiguration_extendFeatureUpdatesPause
-      parameters:
-        - name: deviceConfiguration-id
-          in: path
-          description: 'key: id of deviceConfiguration'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: deviceConfiguration
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: action
-  '/deviceManagement/deviceConfigurations/{deviceConfiguration-id}/microsoft.graph.windowsUpdateForBusinessConfiguration/microsoft.graph.extendQualityUpdatesPause':
-    post:
-      tags:
-        - deviceManagement.Actions
-      summary: Invoke action extendQualityUpdatesPause
-      operationId: deviceManagement.deviceConfigurations.microsoft.graph.windowsUpdateForBusinessConfiguration_extendQualityUpdatesPause
-      parameters:
-        - name: deviceConfiguration-id
-          in: path
-          description: 'key: id of deviceConfiguration'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: deviceConfiguration
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: action
   /deviceManagement/deviceConfigurations/microsoft.graph.getTargetedUsersAndDevices:
     post:
       tags:
@@ -2797,26 +2777,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
-  '/deviceManagement/deviceEnrollmentConfigurations/{deviceEnrollmentConfiguration-id}/microsoft.graph.createEnrollmentNotificationConfiguration':
-    post:
-      tags:
-        - deviceManagement.Actions
-      summary: Invoke action createEnrollmentNotificationConfiguration
-      operationId: deviceManagement.deviceEnrollmentConfigurations_createEnrollmentNotificationConfiguration
-      parameters:
-        - name: deviceEnrollmentConfiguration-id
-          in: path
-          description: 'key: id of deviceEnrollmentConfiguration'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: deviceEnrollmentConfiguration
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: action
   '/deviceManagement/deviceEnrollmentConfigurations/{deviceEnrollmentConfiguration-id}/microsoft.graph.setPriority':
     post:
       tags:
@@ -2843,6 +2803,32 @@ paths:
                   minimum: -2147483648
                   type: integer
                   format: int32
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  /deviceManagement/deviceEnrollmentConfigurations/microsoft.graph.createEnrollmentNotificationConfiguration:
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action createEnrollmentNotificationConfiguration
+      operationId: deviceManagement.deviceEnrollmentConfigurations_createEnrollmentNotificationConfiguration
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                deviceEnrollmentNotificationConfigurations:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/microsoft.graph.deviceEnrollmentConfiguration'
               additionalProperties:
                 type: object
         required: true
@@ -4257,6 +4243,26 @@ paths:
         - deviceManagement.Actions
       summary: Invoke action remoteLock
       operationId: deviceManagement.managedDevices_remoteLock
+      parameters:
+        - name: managedDevice-id
+          in: path
+          description: 'key: id of managedDevice'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: managedDevice
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/deviceManagement/managedDevices/{managedDevice-id}/microsoft.graph.removeDeviceFirmwareConfigurationInterfaceManagement':
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action removeDeviceFirmwareConfigurationInterfaceManagement
+      operationId: deviceManagement.managedDevices_removeDeviceFirmwareConfigurationInterfaceManagement
       parameters:
         - name: managedDevice-id
           in: path
@@ -9357,6 +9363,78 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  /deviceManagement/reports/microsoft.graph.getZebraFotaDeploymentReport:
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action getZebraFotaDeploymentReport
+      operationId: deviceManagement.reports_getZebraFotaDeploymentReport
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  nullable: true
+                select:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                search:
+                  type: string
+                  nullable: true
+                groupBy:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                orderBy:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                skip:
+                  maximum: 2147483647
+                  minimum: -2147483648
+                  type: integer
+                  format: int32
+                top:
+                  maximum: 2147483647
+                  minimum: -2147483648
+                  type: integer
+                  format: int32
+                sessionId:
+                  maximum: 2147483647
+                  minimum: -2147483648
+                  type: integer
+                  format: int32
+                filter:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/octet-stream:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/deviceManagement/resourceAccessProfiles/{deviceManagementResourceAccessProfileBase-id}/microsoft.graph.assign':
     post:
       tags:
@@ -11163,27 +11241,34 @@ components:
       properties:
         azureStorageAccountId:
           type: string
+          description: The resource ID of the Azure Storage account in which the Cloud PC snapshot is being saved.
           nullable: true
         azureStorageAccountName:
           type: string
+          description: The name of the Azure Storage account in which the Cloud PC snapshot is being saved.
           nullable: true
         inReview:
           type: boolean
+          description: True if the Cloud PC is set to in review by the administrator.
         restorePointDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: 'The specific date and time of the Cloud PC snapshot that was taken and saved automatically, when the Cloud PC is set to in review. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 appears as 2014-01-01T00:00:00Z.'
           format: date-time
           nullable: true
         reviewStartDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: 'The specific date and time when the Cloud PC was set to in review. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 appears as 2014-01-01T00:00:00Z.'
           format: date-time
           nullable: true
         subscriptionId:
           type: string
+          description: 'The ID of the Azure subscription in which the Cloud PC snapshot is being saved, in GUID format.'
           nullable: true
         subscriptionName:
           type: string
+          description: The name of the Azure subscription in which the Cloud PC snapshot is being saved.
           nullable: true
         userAccessLevel:
           $ref: '#/components/schemas/microsoft.graph.cloudPcUserAccessLevel'
@@ -11824,6 +11909,58 @@ components:
           additionalProperties:
             type: object
           description: Enrollment Configuration Assignment
+    microsoft.graph.deviceEnrollmentConfiguration:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: deviceEnrollmentConfiguration
+          type: object
+          properties:
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Created date time in UTC of the device enrollment configuration
+              format: date-time
+            description:
+              type: string
+              description: The description of the device enrollment configuration
+              nullable: true
+            deviceEnrollmentConfigurationType:
+              $ref: '#/components/schemas/microsoft.graph.deviceEnrollmentConfigurationType'
+            displayName:
+              type: string
+              description: The display name of the device enrollment configuration
+              nullable: true
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Last modified date time in UTC of the device enrollment configuration
+              format: date-time
+            priority:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              description: Priority is used when a user exists in multiple groups that are assigned enrollment configuration. Users are subject only to the configuration with the lowest priority value.
+              format: int32
+            roleScopeTagIds:
+              type: array
+              items:
+                type: string
+                nullable: true
+              description: Optional role scope tags for the enrollment restrictions.
+            version:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              description: The version of the device enrollment configuration
+              format: int32
+            assignments:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.enrollmentConfigurationAssignment'
+              description: The list of group assignments for the device configuration profile
+          additionalProperties:
+            type: object
+          description: The Base Class of Device Enrollment Configuration
     microsoft.graph.embeddedSIMActivationCodePoolAssignment:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -13302,6 +13439,67 @@ components:
           - value: trustedDevices
             description: 'Let apps access trusted devices. Added in Windows 10, version 1607.'
             name: trustedDevices
+    microsoft.graph.deviceEnrollmentConfigurationType:
+      title: deviceEnrollmentConfigurationType
+      enum:
+        - unknown
+        - limit
+        - platformRestrictions
+        - windowsHelloForBusiness
+        - defaultLimit
+        - defaultPlatformRestrictions
+        - defaultWindowsHelloForBusiness
+        - defaultWindows10EnrollmentCompletionPageConfiguration
+        - windows10EnrollmentCompletionPageConfiguration
+        - deviceComanagementAuthorityConfiguration
+        - singlePlatformRestriction
+        - unknownFutureValue
+        - enrollmentNotificationsConfiguration
+      type: string
+      description: Describes the TemplateFamily for the Template entity
+      x-ms-enum:
+        name: deviceEnrollmentConfigurationType
+        modelAsString: false
+        values:
+          - value: unknown
+            description: Default. Set to unknown if the configuration type cannot be determined.
+            name: unknown
+          - value: limit
+            description: Indicates that configuration is of type limit which refers to number of devices a user is allowed to enroll.
+            name: limit
+          - value: platformRestrictions
+            description: Indicates that configuration is of type platform restriction which refers to types of devices a user is allowed to enroll.
+            name: platformRestrictions
+          - value: windowsHelloForBusiness
+            description: Indicates that configuration is of type Windows Hello which refers to authentication method devices would use.
+            name: windowsHelloForBusiness
+          - value: defaultLimit
+            description: Indicates that configuration is of type default limit which refers to types of devices a user is allowed to enroll by default.
+            name: defaultLimit
+          - value: defaultPlatformRestrictions
+            description: Indicates that configuration is of type default platform restriction which refers to types of devices a user is allowed to enroll by default.
+            name: defaultPlatformRestrictions
+          - value: defaultWindowsHelloForBusiness
+            description: Indicates that configuration is of type default Windows Hello which refers to authentication method devices would use by default.
+            name: defaultWindowsHelloForBusiness
+          - value: defaultWindows10EnrollmentCompletionPageConfiguration
+            description: Indicates that configuration is of type default Enrollment status page which refers to startup page displayed during OOBE in Autopilot devices by default.
+            name: defaultWindows10EnrollmentCompletionPageConfiguration
+          - value: windows10EnrollmentCompletionPageConfiguration
+            description: Indicates that configuration is of type Enrollment status page which refers to startup page displayed during OOBE in Autopilot devices.
+            name: windows10EnrollmentCompletionPageConfiguration
+          - value: deviceComanagementAuthorityConfiguration
+            description: Indicates that configuration is of type Comanagement Authority which refers to policies applied to Co-Managed devices.
+            name: deviceComanagementAuthorityConfiguration
+          - value: singlePlatformRestriction
+            description: Indicates that configuration is of type single platform restriction which refers to types of devices a user is allowed to enroll.
+            name: singlePlatformRestriction
+          - value: unknownFutureValue
+            description: Unknown future value
+            name: unknownFutureValue
+          - value: enrollmentNotificationsConfiguration
+            description: Indicates that configuration is of type Enrollment Notification which refers to types of notification a user receives during enrollment.
+            name: enrollmentNotificationsConfiguration
     microsoft.graph.groupPolicyConfigurationType:
       title: groupPolicyConfigurationType
       enum:

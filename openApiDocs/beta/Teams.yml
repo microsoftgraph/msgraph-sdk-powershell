@@ -4350,6 +4350,17 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.resourceSpecificPermissionGrant'
+          links:
+            checkMemberGroups:
+              operationId: chats.chat.permissionGrants.resourceSpecificPermissionGrant.checkMemberGroups
+            checkMemberObjects:
+              operationId: chats.chat.permissionGrants.resourceSpecificPermissionGrant.checkMemberObjects
+            getMemberGroups:
+              operationId: chats.chat.permissionGrants.resourceSpecificPermissionGrant.getMemberGroups
+            getMemberObjects:
+              operationId: chats.chat.permissionGrants.resourceSpecificPermissionGrant.getMemberObjects
+            restore:
+              operationId: chats.chat.permissionGrants.resourceSpecificPermissionGrant.restore
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4417,6 +4428,384 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/chats/{chat-id}/permissionGrants/{resourceSpecificPermissionGrant-id}/microsoft.graph.checkMemberGroups':
+    post:
+      tags:
+        - chats.Actions
+      summary: Invoke action checkMemberGroups
+      operationId: chats.permissionGrants_checkMemberGroups
+      parameters:
+        - name: chat-id
+          in: path
+          description: 'key: id of chat'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+        - name: resourceSpecificPermissionGrant-id
+          in: path
+          description: 'key: id of resourceSpecificPermissionGrant'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: resourceSpecificPermissionGrant
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                groupIds:
+                  type: array
+                  items:
+                    type: string
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of resourceSpecificPermissionGrant
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/chats/{chat-id}/permissionGrants/{resourceSpecificPermissionGrant-id}/microsoft.graph.checkMemberObjects':
+    post:
+      tags:
+        - chats.Actions
+      summary: Invoke action checkMemberObjects
+      operationId: chats.permissionGrants_checkMemberObjects
+      parameters:
+        - name: chat-id
+          in: path
+          description: 'key: id of chat'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+        - name: resourceSpecificPermissionGrant-id
+          in: path
+          description: 'key: id of resourceSpecificPermissionGrant'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: resourceSpecificPermissionGrant
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                ids:
+                  type: array
+                  items:
+                    type: string
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of resourceSpecificPermissionGrant
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/chats/{chat-id}/permissionGrants/{resourceSpecificPermissionGrant-id}/microsoft.graph.getMemberGroups':
+    post:
+      tags:
+        - chats.Actions
+      summary: Invoke action getMemberGroups
+      operationId: chats.permissionGrants_getMemberGroups
+      parameters:
+        - name: chat-id
+          in: path
+          description: 'key: id of chat'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+        - name: resourceSpecificPermissionGrant-id
+          in: path
+          description: 'key: id of resourceSpecificPermissionGrant'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: resourceSpecificPermissionGrant
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                securityEnabledOnly:
+                  type: boolean
+                  default: false
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of resourceSpecificPermissionGrant
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/chats/{chat-id}/permissionGrants/{resourceSpecificPermissionGrant-id}/microsoft.graph.getMemberObjects':
+    post:
+      tags:
+        - chats.Actions
+      summary: Invoke action getMemberObjects
+      operationId: chats.permissionGrants_getMemberObjects
+      parameters:
+        - name: chat-id
+          in: path
+          description: 'key: id of chat'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+        - name: resourceSpecificPermissionGrant-id
+          in: path
+          description: 'key: id of resourceSpecificPermissionGrant'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: resourceSpecificPermissionGrant
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                securityEnabledOnly:
+                  type: boolean
+                  default: false
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of resourceSpecificPermissionGrant
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/chats/{chat-id}/permissionGrants/{resourceSpecificPermissionGrant-id}/microsoft.graph.restore':
+    post:
+      tags:
+        - chats.Actions
+      summary: Invoke action restore
+      operationId: chats.permissionGrants_restore
+      parameters:
+        - name: chat-id
+          in: path
+          description: 'key: id of chat'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+        - name: resourceSpecificPermissionGrant-id
+          in: path
+          description: 'key: id of resourceSpecificPermissionGrant'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: resourceSpecificPermissionGrant
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.directoryObject'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/chats/{chat-id}/permissionGrants/microsoft.graph.getByIds':
+    post:
+      tags:
+        - chats.Actions
+      summary: Invoke action getByIds
+      operationId: chats.permissionGrants_getByIds
+      parameters:
+        - name: chat-id
+          in: path
+          description: 'key: id of chat'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                ids:
+                  type: array
+                  items:
+                    type: string
+                types:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of resourceSpecificPermissionGrant
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.directoryObject'
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/chats/{chat-id}/permissionGrants/microsoft.graph.getUserOwnedObjects':
+    post:
+      tags:
+        - chats.Actions
+      summary: Invoke action getUserOwnedObjects
+      operationId: chats.permissionGrants_getUserOwnedObjects
+      parameters:
+        - name: chat-id
+          in: path
+          description: 'key: id of chat'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                userId:
+                  type: string
+                  nullable: true
+                type:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.directoryObject'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/chats/{chat-id}/permissionGrants/microsoft.graph.validateProperties':
+    post:
+      tags:
+        - chats.Actions
+      summary: Invoke action validateProperties
+      operationId: chats.permissionGrants_validateProperties
+      parameters:
+        - name: chat-id
+          in: path
+          description: 'key: id of chat'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                entityType:
+                  type: string
+                  nullable: true
+                displayName:
+                  type: string
+                  nullable: true
+                mailNickname:
+                  type: string
+                  nullable: true
+                onBehalfOfUserId:
+                  pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
+                  type: string
+                  format: uuid
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/chats/{chat-id}/pinnedMessages':
     get:
       tags:
@@ -5242,6 +5631,16 @@ paths:
               operationId: groups.Team.GetSchedule
               parameters:
                 group-id: $request.path.group-id
+            archive:
+              operationId: groups.group.team.archive
+            clone:
+              operationId: groups.group.team.clone
+            completeMigration:
+              operationId: groups.group.team.completeMigration
+            sendActivityNotification:
+              operationId: groups.group.team.sendActivityNotification
+            unarchive:
+              operationId: groups.group.team.unarchive
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -8540,6 +8939,7 @@ paths:
                 - securityIdentifier
                 - theme
                 - visibility
+                - writebackConfiguration
                 - accessType
                 - allowExternalSenders
                 - autoSubscribeNewMembers
@@ -10986,6 +11386,17 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.resourceSpecificPermissionGrant'
+          links:
+            checkMemberGroups:
+              operationId: groups.group.team.permissionGrants.resourceSpecificPermissionGrant.checkMemberGroups
+            checkMemberObjects:
+              operationId: groups.group.team.permissionGrants.resourceSpecificPermissionGrant.checkMemberObjects
+            getMemberGroups:
+              operationId: groups.group.team.permissionGrants.resourceSpecificPermissionGrant.getMemberGroups
+            getMemberObjects:
+              operationId: groups.group.team.permissionGrants.resourceSpecificPermissionGrant.getMemberObjects
+            restore:
+              operationId: groups.group.team.permissionGrants.resourceSpecificPermissionGrant.restore
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -21028,6 +21439,7 @@ paths:
                 - securityIdentifier
                 - theme
                 - visibility
+                - writebackConfiguration
                 - accessType
                 - allowExternalSenders
                 - autoSubscribeNewMembers
@@ -23714,6 +24126,17 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.resourceSpecificPermissionGrant'
+          links:
+            checkMemberGroups:
+              operationId: teams.team.permissionGrants.resourceSpecificPermissionGrant.checkMemberGroups
+            checkMemberObjects:
+              operationId: teams.team.permissionGrants.resourceSpecificPermissionGrant.checkMemberObjects
+            getMemberGroups:
+              operationId: teams.team.permissionGrants.resourceSpecificPermissionGrant.getMemberGroups
+            getMemberObjects:
+              operationId: teams.team.permissionGrants.resourceSpecificPermissionGrant.getMemberObjects
+            restore:
+              operationId: teams.team.permissionGrants.resourceSpecificPermissionGrant.restore
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -23781,6 +24204,384 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/teams/{team-id}/permissionGrants/{resourceSpecificPermissionGrant-id}/microsoft.graph.checkMemberGroups':
+    post:
+      tags:
+        - teams.Actions
+      summary: Invoke action checkMemberGroups
+      operationId: teams.permissionGrants_checkMemberGroups
+      parameters:
+        - name: team-id
+          in: path
+          description: 'key: id of team'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - name: resourceSpecificPermissionGrant-id
+          in: path
+          description: 'key: id of resourceSpecificPermissionGrant'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: resourceSpecificPermissionGrant
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                groupIds:
+                  type: array
+                  items:
+                    type: string
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of resourceSpecificPermissionGrant
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/teams/{team-id}/permissionGrants/{resourceSpecificPermissionGrant-id}/microsoft.graph.checkMemberObjects':
+    post:
+      tags:
+        - teams.Actions
+      summary: Invoke action checkMemberObjects
+      operationId: teams.permissionGrants_checkMemberObjects
+      parameters:
+        - name: team-id
+          in: path
+          description: 'key: id of team'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - name: resourceSpecificPermissionGrant-id
+          in: path
+          description: 'key: id of resourceSpecificPermissionGrant'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: resourceSpecificPermissionGrant
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                ids:
+                  type: array
+                  items:
+                    type: string
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of resourceSpecificPermissionGrant
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/teams/{team-id}/permissionGrants/{resourceSpecificPermissionGrant-id}/microsoft.graph.getMemberGroups':
+    post:
+      tags:
+        - teams.Actions
+      summary: Invoke action getMemberGroups
+      operationId: teams.permissionGrants_getMemberGroups
+      parameters:
+        - name: team-id
+          in: path
+          description: 'key: id of team'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - name: resourceSpecificPermissionGrant-id
+          in: path
+          description: 'key: id of resourceSpecificPermissionGrant'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: resourceSpecificPermissionGrant
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                securityEnabledOnly:
+                  type: boolean
+                  default: false
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of resourceSpecificPermissionGrant
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/teams/{team-id}/permissionGrants/{resourceSpecificPermissionGrant-id}/microsoft.graph.getMemberObjects':
+    post:
+      tags:
+        - teams.Actions
+      summary: Invoke action getMemberObjects
+      operationId: teams.permissionGrants_getMemberObjects
+      parameters:
+        - name: team-id
+          in: path
+          description: 'key: id of team'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - name: resourceSpecificPermissionGrant-id
+          in: path
+          description: 'key: id of resourceSpecificPermissionGrant'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: resourceSpecificPermissionGrant
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                securityEnabledOnly:
+                  type: boolean
+                  default: false
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of resourceSpecificPermissionGrant
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/teams/{team-id}/permissionGrants/{resourceSpecificPermissionGrant-id}/microsoft.graph.restore':
+    post:
+      tags:
+        - teams.Actions
+      summary: Invoke action restore
+      operationId: teams.permissionGrants_restore
+      parameters:
+        - name: team-id
+          in: path
+          description: 'key: id of team'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - name: resourceSpecificPermissionGrant-id
+          in: path
+          description: 'key: id of resourceSpecificPermissionGrant'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: resourceSpecificPermissionGrant
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.directoryObject'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/teams/{team-id}/permissionGrants/microsoft.graph.getByIds':
+    post:
+      tags:
+        - teams.Actions
+      summary: Invoke action getByIds
+      operationId: teams.permissionGrants_getByIds
+      parameters:
+        - name: team-id
+          in: path
+          description: 'key: id of team'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                ids:
+                  type: array
+                  items:
+                    type: string
+                types:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of resourceSpecificPermissionGrant
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.directoryObject'
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/teams/{team-id}/permissionGrants/microsoft.graph.getUserOwnedObjects':
+    post:
+      tags:
+        - teams.Actions
+      summary: Invoke action getUserOwnedObjects
+      operationId: teams.permissionGrants_getUserOwnedObjects
+      parameters:
+        - name: team-id
+          in: path
+          description: 'key: id of team'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                userId:
+                  type: string
+                  nullable: true
+                type:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.directoryObject'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/teams/{team-id}/permissionGrants/microsoft.graph.validateProperties':
+    post:
+      tags:
+        - teams.Actions
+      summary: Invoke action validateProperties
+      operationId: teams.permissionGrants_validateProperties
+      parameters:
+        - name: team-id
+          in: path
+          description: 'key: id of team'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                entityType:
+                  type: string
+                  nullable: true
+                displayName:
+                  type: string
+                  nullable: true
+                mailNickname:
+                  type: string
+                  nullable: true
+                onBehalfOfUserId:
+                  pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
+                  type: string
+                  format: uuid
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/teams/{team-id}/photo':
     get:
       tags:
@@ -30327,6 +31128,7 @@ paths:
               enum:
                 - id
                 - workforceIntegrations
+                - deletedTeams
                 - devices
               type: string
         - name: $expand
@@ -30341,6 +31143,7 @@ paths:
               enum:
                 - '*'
                 - workforceIntegrations
+                - deletedTeams
                 - devices
               type: string
       responses:
@@ -30353,8 +31156,12 @@ paths:
           links:
             workforceIntegrations:
               operationId: teamwork.ListWorkforceIntegrations
+            deletedTeams:
+              operationId: teamwork.ListDeletedTeams
             devices:
               operationId: teamwork.ListDevices
+            sendActivityNotificationToRecipients:
+              operationId: teamwork.sendActivityNotificationToRecipients
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -30376,6 +31183,3688 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /teamwork/deletedTeams:
+    get:
+      tags:
+        - teamwork.deletedTeam
+      summary: Get deletedTeams from teamwork
+      operationId: teamwork_ListDeletedTeams
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - channels
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - channels
+              type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/microsoft.graph.deletedTeamCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - teamwork.deletedTeam
+      summary: Create new navigation property to deletedTeams for teamwork
+      operationId: teamwork_CreateDeletedTeams
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.deletedTeam'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.deletedTeam'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/teamwork/deletedTeams/{deletedTeam-id}':
+    get:
+      tags:
+        - teamwork.deletedTeam
+      summary: Get deletedTeams from teamwork
+      operationId: teamwork_GetDeletedTeams
+      parameters:
+        - name: deletedTeam-id
+          in: path
+          description: 'key: id of deletedTeam'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deletedTeam
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - channels
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - channels
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.deletedTeam'
+          links:
+            channels:
+              operationId: teamwork.DeletedTeams.ListChannels
+              parameters:
+                deletedTeam-id: $request.path.deletedTeam-id
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - teamwork.deletedTeam
+      summary: Update the navigation property deletedTeams in teamwork
+      operationId: teamwork_UpdateDeletedTeams
+      parameters:
+        - name: deletedTeam-id
+          in: path
+          description: 'key: id of deletedTeam'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deletedTeam
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.deletedTeam'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - teamwork.deletedTeam
+      summary: Delete navigation property deletedTeams for teamwork
+      operationId: teamwork_DeleteDeletedTeams
+      parameters:
+        - name: deletedTeam-id
+          in: path
+          description: 'key: id of deletedTeam'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deletedTeam
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/teamwork/deletedTeams/{deletedTeam-id}/channels':
+    get:
+      tags:
+        - teamwork.deletedTeam
+      summary: Get channels from teamwork
+      operationId: teamwork.deletedTeams_ListChannels
+      parameters:
+        - name: deletedTeam-id
+          in: path
+          description: 'key: id of deletedTeam'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deletedTeam
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - createdDateTime
+                - createdDateTime desc
+                - description
+                - description desc
+                - displayName
+                - displayName desc
+                - email
+                - email desc
+                - isFavoriteByDefault
+                - isFavoriteByDefault desc
+                - membershipType
+                - membershipType desc
+                - moderationSettings
+                - moderationSettings desc
+                - tenantId
+                - tenantId desc
+                - webUrl
+                - webUrl desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - createdDateTime
+                - description
+                - displayName
+                - email
+                - isFavoriteByDefault
+                - membershipType
+                - moderationSettings
+                - tenantId
+                - webUrl
+                - filesFolder
+                - members
+                - messages
+                - sharedWithTeams
+                - tabs
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - filesFolder
+                - members
+                - messages
+                - sharedWithTeams
+                - tabs
+              type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/microsoft.graph.channelCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - teamwork.deletedTeam
+      summary: Create new navigation property to channels for teamwork
+      operationId: teamwork.deletedTeams_CreateChannels
+      parameters:
+        - name: deletedTeam-id
+          in: path
+          description: 'key: id of deletedTeam'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deletedTeam
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.channel'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.channel'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/teamwork/deletedTeams/{deletedTeam-id}/channels/{channel-id}':
+    get:
+      tags:
+        - teamwork.deletedTeam
+      summary: Get channels from teamwork
+      operationId: teamwork.deletedTeams_GetChannels
+      parameters:
+        - name: deletedTeam-id
+          in: path
+          description: 'key: id of deletedTeam'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deletedTeam
+        - name: channel-id
+          in: path
+          description: 'key: id of channel'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: channel
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - createdDateTime
+                - description
+                - displayName
+                - email
+                - isFavoriteByDefault
+                - membershipType
+                - moderationSettings
+                - tenantId
+                - webUrl
+                - filesFolder
+                - members
+                - messages
+                - sharedWithTeams
+                - tabs
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - filesFolder
+                - members
+                - messages
+                - sharedWithTeams
+                - tabs
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.channel'
+          links:
+            filesFolder:
+              operationId: teamwork.deletedTeams.Channels.GetFilesFolder
+              parameters:
+                deletedTeam-id: $request.path.deletedTeam-id
+                channel-id: $request.path.channel-id
+            members:
+              operationId: teamwork.deletedTeams.Channels.ListMembers
+              parameters:
+                deletedTeam-id: $request.path.deletedTeam-id
+                channel-id: $request.path.channel-id
+            messages:
+              operationId: teamwork.deletedTeams.Channels.ListMessages
+              parameters:
+                deletedTeam-id: $request.path.deletedTeam-id
+                channel-id: $request.path.channel-id
+            sharedWithTeams:
+              operationId: teamwork.deletedTeams.Channels.ListSharedWithTeams
+              parameters:
+                deletedTeam-id: $request.path.deletedTeam-id
+                channel-id: $request.path.channel-id
+            tabs:
+              operationId: teamwork.deletedTeams.Channels.ListTabs
+              parameters:
+                deletedTeam-id: $request.path.deletedTeam-id
+                channel-id: $request.path.channel-id
+            completeMigration:
+              operationId: teamwork.deletedTeams.deletedTeam.channels.channel.completeMigration
+            doesUserHaveAccess:
+              operationId: teamwork.deletedTeams.deletedTeam.channels.channel.doesUserHaveAccess
+            provisionEmail:
+              operationId: teamwork.deletedTeams.deletedTeam.channels.channel.provisionEmail
+            removeEmail:
+              operationId: teamwork.deletedTeams.deletedTeam.channels.channel.removeEmail
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - teamwork.deletedTeam
+      summary: Update the navigation property channels in teamwork
+      operationId: teamwork.deletedTeams_UpdateChannels
+      parameters:
+        - name: deletedTeam-id
+          in: path
+          description: 'key: id of deletedTeam'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deletedTeam
+        - name: channel-id
+          in: path
+          description: 'key: id of channel'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: channel
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.channel'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - teamwork.deletedTeam
+      summary: Delete navigation property channels for teamwork
+      operationId: teamwork.deletedTeams_DeleteChannels
+      parameters:
+        - name: deletedTeam-id
+          in: path
+          description: 'key: id of deletedTeam'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deletedTeam
+        - name: channel-id
+          in: path
+          description: 'key: id of channel'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: channel
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/teamwork/deletedTeams/{deletedTeam-id}/channels/{channel-id}/filesFolder':
+    get:
+      tags:
+        - teamwork.deletedTeam
+      summary: Get filesFolder from teamwork
+      operationId: teamwork.deletedTeams.channels_GetFilesFolder
+      parameters:
+        - name: deletedTeam-id
+          in: path
+          description: 'key: id of deletedTeam'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deletedTeam
+        - name: channel-id
+          in: path
+          description: 'key: id of channel'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: channel
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - createdBy
+                - createdDateTime
+                - description
+                - eTag
+                - lastModifiedBy
+                - lastModifiedDateTime
+                - name
+                - parentReference
+                - webUrl
+                - audio
+                - bundle
+                - content
+                - cTag
+                - deleted
+                - file
+                - fileSystemInfo
+                - folder
+                - image
+                - location
+                - malware
+                - media
+                - package
+                - pendingOperations
+                - photo
+                - publication
+                - remoteItem
+                - root
+                - searchResult
+                - shared
+                - sharepointIds
+                - size
+                - source
+                - specialFolder
+                - video
+                - webDavUrl
+                - createdByUser
+                - lastModifiedByUser
+                - workbook
+                - activities
+                - analytics
+                - children
+                - listItem
+                - permissions
+                - subscriptions
+                - thumbnails
+                - versions
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - createdByUser
+                - lastModifiedByUser
+                - workbook
+                - activities
+                - analytics
+                - children
+                - listItem
+                - permissions
+                - subscriptions
+                - thumbnails
+                - versions
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.driveItem'
+          links:
+            createdByUser:
+              operationId: teamwork.deletedTeams.channels.FilesFolder.GetCreatedByUser
+              parameters:
+                deletedTeam-id: $request.path.deletedTeam-id
+                channel-id: $request.path.channel-id
+            lastModifiedByUser:
+              operationId: teamwork.deletedTeams.channels.FilesFolder.GetLastModifiedByUser
+              parameters:
+                deletedTeam-id: $request.path.deletedTeam-id
+                channel-id: $request.path.channel-id
+            workbook:
+              operationId: teamwork.deletedTeams.channels.FilesFolder.GetWorkbook
+              parameters:
+                deletedTeam-id: $request.path.deletedTeam-id
+                channel-id: $request.path.channel-id
+            activities:
+              operationId: teamwork.deletedTeams.channels.FilesFolder.ListActivities
+              parameters:
+                deletedTeam-id: $request.path.deletedTeam-id
+                channel-id: $request.path.channel-id
+            analytics:
+              operationId: teamwork.deletedTeams.channels.FilesFolder.GetAnalytics
+              parameters:
+                deletedTeam-id: $request.path.deletedTeam-id
+                channel-id: $request.path.channel-id
+            children:
+              operationId: teamwork.deletedTeams.channels.FilesFolder.ListChildren
+              parameters:
+                deletedTeam-id: $request.path.deletedTeam-id
+                channel-id: $request.path.channel-id
+            listItem:
+              operationId: teamwork.deletedTeams.channels.FilesFolder.GetListItem
+              parameters:
+                deletedTeam-id: $request.path.deletedTeam-id
+                channel-id: $request.path.channel-id
+            permissions:
+              operationId: teamwork.deletedTeams.channels.FilesFolder.ListPermissions
+              parameters:
+                deletedTeam-id: $request.path.deletedTeam-id
+                channel-id: $request.path.channel-id
+            subscriptions:
+              operationId: teamwork.deletedTeams.channels.FilesFolder.ListSubscriptions
+              parameters:
+                deletedTeam-id: $request.path.deletedTeam-id
+                channel-id: $request.path.channel-id
+            thumbnails:
+              operationId: teamwork.deletedTeams.channels.FilesFolder.ListThumbnails
+              parameters:
+                deletedTeam-id: $request.path.deletedTeam-id
+                channel-id: $request.path.channel-id
+            versions:
+              operationId: teamwork.deletedTeams.channels.FilesFolder.ListVersions
+              parameters:
+                deletedTeam-id: $request.path.deletedTeam-id
+                channel-id: $request.path.channel-id
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/teamwork/deletedTeams/{deletedTeam-id}/channels/{channel-id}/filesFolder/content':
+    get:
+      tags:
+        - teamwork.deletedTeam
+      summary: Get content for the navigation property filesFolder from teamwork
+      operationId: teamwork.deletedTeams.channels_GetFilesFolderContent
+      parameters:
+        - name: deletedTeam-id
+          in: path
+          description: 'key: id of deletedTeam'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deletedTeam
+        - name: channel-id
+          in: path
+          description: 'key: id of channel'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: channel
+      responses:
+        '200':
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - teamwork.deletedTeam
+      summary: Update content for the navigation property filesFolder in teamwork
+      operationId: teamwork.deletedTeams.channels_SetFilesFolderContent
+      parameters:
+        - name: deletedTeam-id
+          in: path
+          description: 'key: id of deletedTeam'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deletedTeam
+        - name: channel-id
+          in: path
+          description: 'key: id of channel'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: channel
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/teamwork/deletedTeams/{deletedTeam-id}/channels/{channel-id}/members':
+    get:
+      tags:
+        - teamwork.deletedTeam
+      summary: Get members from teamwork
+      operationId: teamwork.deletedTeams.channels_ListMembers
+      parameters:
+        - name: deletedTeam-id
+          in: path
+          description: 'key: id of deletedTeam'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deletedTeam
+        - name: channel-id
+          in: path
+          description: 'key: id of channel'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: channel
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - displayName
+                - displayName desc
+                - roles
+                - roles desc
+                - visibleHistoryStartDateTime
+                - visibleHistoryStartDateTime desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - displayName
+                - roles
+                - visibleHistoryStartDateTime
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/microsoft.graph.conversationMemberCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - teamwork.deletedTeam
+      summary: Create new navigation property to members for teamwork
+      operationId: teamwork.deletedTeams.channels_CreateMembers
+      parameters:
+        - name: deletedTeam-id
+          in: path
+          description: 'key: id of deletedTeam'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deletedTeam
+        - name: channel-id
+          in: path
+          description: 'key: id of channel'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: channel
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.conversationMember'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.conversationMember'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/teamwork/deletedTeams/{deletedTeam-id}/channels/{channel-id}/members/{conversationMember-id}':
+    get:
+      tags:
+        - teamwork.deletedTeam
+      summary: Get members from teamwork
+      operationId: teamwork.deletedTeams.channels_GetMembers
+      parameters:
+        - name: deletedTeam-id
+          in: path
+          description: 'key: id of deletedTeam'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deletedTeam
+        - name: channel-id
+          in: path
+          description: 'key: id of channel'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: channel
+        - name: conversationMember-id
+          in: path
+          description: 'key: id of conversationMember'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: conversationMember
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - displayName
+                - roles
+                - visibleHistoryStartDateTime
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.conversationMember'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - teamwork.deletedTeam
+      summary: Update the navigation property members in teamwork
+      operationId: teamwork.deletedTeams.channels_UpdateMembers
+      parameters:
+        - name: deletedTeam-id
+          in: path
+          description: 'key: id of deletedTeam'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deletedTeam
+        - name: channel-id
+          in: path
+          description: 'key: id of channel'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: channel
+        - name: conversationMember-id
+          in: path
+          description: 'key: id of conversationMember'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: conversationMember
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.conversationMember'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - teamwork.deletedTeam
+      summary: Delete navigation property members for teamwork
+      operationId: teamwork.deletedTeams.channels_DeleteMembers
+      parameters:
+        - name: deletedTeam-id
+          in: path
+          description: 'key: id of deletedTeam'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deletedTeam
+        - name: channel-id
+          in: path
+          description: 'key: id of channel'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: channel
+        - name: conversationMember-id
+          in: path
+          description: 'key: id of conversationMember'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: conversationMember
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/teamwork/deletedTeams/{deletedTeam-id}/channels/{channel-id}/members/microsoft.graph.add':
+    post:
+      tags:
+        - teamwork.Actions
+      summary: Invoke action add
+      operationId: teamwork.deletedTeams.channels.members_add
+      parameters:
+        - name: deletedTeam-id
+          in: path
+          description: 'key: id of deletedTeam'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deletedTeam
+        - name: channel-id
+          in: path
+          description: 'key: id of channel'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: channel
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                values:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/microsoft.graph.conversationMember'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of conversationMember
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.actionResultPart'
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/teamwork/deletedTeams/{deletedTeam-id}/channels/{channel-id}/messages':
+    get:
+      tags:
+        - teamwork.deletedTeam
+      summary: Get messages from teamwork
+      operationId: teamwork.deletedTeams.channels_ListMessages
+      parameters:
+        - name: deletedTeam-id
+          in: path
+          description: 'key: id of deletedTeam'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deletedTeam
+        - name: channel-id
+          in: path
+          description: 'key: id of channel'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: channel
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - attachments
+                - attachments desc
+                - body
+                - body desc
+                - channelIdentity
+                - channelIdentity desc
+                - chatId
+                - chatId desc
+                - createdDateTime
+                - createdDateTime desc
+                - deletedDateTime
+                - deletedDateTime desc
+                - etag
+                - etag desc
+                - eventDetail
+                - eventDetail desc
+                - from
+                - from desc
+                - importance
+                - importance desc
+                - lastEditedDateTime
+                - lastEditedDateTime desc
+                - lastModifiedDateTime
+                - lastModifiedDateTime desc
+                - locale
+                - locale desc
+                - mentions
+                - mentions desc
+                - messageType
+                - messageType desc
+                - onBehalfOf
+                - onBehalfOf desc
+                - policyViolation
+                - policyViolation desc
+                - reactions
+                - reactions desc
+                - replyToId
+                - replyToId desc
+                - subject
+                - subject desc
+                - summary
+                - summary desc
+                - webUrl
+                - webUrl desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - attachments
+                - body
+                - channelIdentity
+                - chatId
+                - createdDateTime
+                - deletedDateTime
+                - etag
+                - eventDetail
+                - from
+                - importance
+                - lastEditedDateTime
+                - lastModifiedDateTime
+                - locale
+                - mentions
+                - messageType
+                - onBehalfOf
+                - policyViolation
+                - reactions
+                - replyToId
+                - subject
+                - summary
+                - webUrl
+                - hostedContents
+                - replies
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - hostedContents
+                - replies
+              type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/microsoft.graph.chatMessageCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - teamwork.deletedTeam
+      summary: Create new navigation property to messages for teamwork
+      operationId: teamwork.deletedTeams.channels_CreateMessages
+      parameters:
+        - name: deletedTeam-id
+          in: path
+          description: 'key: id of deletedTeam'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deletedTeam
+        - name: channel-id
+          in: path
+          description: 'key: id of channel'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: channel
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.chatMessage'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.chatMessage'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/teamwork/deletedTeams/{deletedTeam-id}/channels/{channel-id}/messages/{chatMessage-id}':
+    get:
+      tags:
+        - teamwork.deletedTeam
+      summary: Get messages from teamwork
+      operationId: teamwork.deletedTeams.channels_GetMessages
+      parameters:
+        - name: deletedTeam-id
+          in: path
+          description: 'key: id of deletedTeam'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deletedTeam
+        - name: channel-id
+          in: path
+          description: 'key: id of channel'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: channel
+        - name: chatMessage-id
+          in: path
+          description: 'key: id of chatMessage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - attachments
+                - body
+                - channelIdentity
+                - chatId
+                - createdDateTime
+                - deletedDateTime
+                - etag
+                - eventDetail
+                - from
+                - importance
+                - lastEditedDateTime
+                - lastModifiedDateTime
+                - locale
+                - mentions
+                - messageType
+                - onBehalfOf
+                - policyViolation
+                - reactions
+                - replyToId
+                - subject
+                - summary
+                - webUrl
+                - hostedContents
+                - replies
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - hostedContents
+                - replies
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.chatMessage'
+          links:
+            hostedContents:
+              operationId: teamwork.deletedTeams.channels.Messages.ListHostedContents
+              parameters:
+                deletedTeam-id: $request.path.deletedTeam-id
+                channel-id: $request.path.channel-id
+                chatMessage-id: $request.path.chatMessage-id
+            replies:
+              operationId: teamwork.deletedTeams.channels.Messages.ListReplies
+              parameters:
+                deletedTeam-id: $request.path.deletedTeam-id
+                channel-id: $request.path.channel-id
+                chatMessage-id: $request.path.chatMessage-id
+            softDelete:
+              operationId: teamwork.deletedTeams.deletedTeam.channels.channel.messages.chatMessage.softDelete
+            undoSoftDelete:
+              operationId: teamwork.deletedTeams.deletedTeam.channels.channel.messages.chatMessage.undoSoftDelete
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - teamwork.deletedTeam
+      summary: Update the navigation property messages in teamwork
+      operationId: teamwork.deletedTeams.channels_UpdateMessages
+      parameters:
+        - name: deletedTeam-id
+          in: path
+          description: 'key: id of deletedTeam'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deletedTeam
+        - name: channel-id
+          in: path
+          description: 'key: id of channel'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: channel
+        - name: chatMessage-id
+          in: path
+          description: 'key: id of chatMessage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.chatMessage'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - teamwork.deletedTeam
+      summary: Delete navigation property messages for teamwork
+      operationId: teamwork.deletedTeams.channels_DeleteMessages
+      parameters:
+        - name: deletedTeam-id
+          in: path
+          description: 'key: id of deletedTeam'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deletedTeam
+        - name: channel-id
+          in: path
+          description: 'key: id of channel'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: channel
+        - name: chatMessage-id
+          in: path
+          description: 'key: id of chatMessage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/teamwork/deletedTeams/{deletedTeam-id}/channels/{channel-id}/messages/{chatMessage-id}/hostedContents':
+    get:
+      tags:
+        - teamwork.deletedTeam
+      summary: Get hostedContents from teamwork
+      operationId: teamwork.deletedTeams.channels.messages_ListHostedContents
+      parameters:
+        - name: deletedTeam-id
+          in: path
+          description: 'key: id of deletedTeam'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deletedTeam
+        - name: channel-id
+          in: path
+          description: 'key: id of channel'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: channel
+        - name: chatMessage-id
+          in: path
+          description: 'key: id of chatMessage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - contentBytes
+                - contentBytes desc
+                - contentType
+                - contentType desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - contentBytes
+                - contentType
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/microsoft.graph.chatMessageHostedContentCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - teamwork.deletedTeam
+      summary: Create new navigation property to hostedContents for teamwork
+      operationId: teamwork.deletedTeams.channels.messages_CreateHostedContents
+      parameters:
+        - name: deletedTeam-id
+          in: path
+          description: 'key: id of deletedTeam'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deletedTeam
+        - name: channel-id
+          in: path
+          description: 'key: id of channel'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: channel
+        - name: chatMessage-id
+          in: path
+          description: 'key: id of chatMessage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.chatMessageHostedContent'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.chatMessageHostedContent'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/teamwork/deletedTeams/{deletedTeam-id}/channels/{channel-id}/messages/{chatMessage-id}/hostedContents/{chatMessageHostedContent-id}':
+    get:
+      tags:
+        - teamwork.deletedTeam
+      summary: Get hostedContents from teamwork
+      operationId: teamwork.deletedTeams.channels.messages_GetHostedContents
+      parameters:
+        - name: deletedTeam-id
+          in: path
+          description: 'key: id of deletedTeam'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deletedTeam
+        - name: channel-id
+          in: path
+          description: 'key: id of channel'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: channel
+        - name: chatMessage-id
+          in: path
+          description: 'key: id of chatMessage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+        - name: chatMessageHostedContent-id
+          in: path
+          description: 'key: id of chatMessageHostedContent'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessageHostedContent
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - contentBytes
+                - contentType
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.chatMessageHostedContent'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - teamwork.deletedTeam
+      summary: Update the navigation property hostedContents in teamwork
+      operationId: teamwork.deletedTeams.channels.messages_UpdateHostedContents
+      parameters:
+        - name: deletedTeam-id
+          in: path
+          description: 'key: id of deletedTeam'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deletedTeam
+        - name: channel-id
+          in: path
+          description: 'key: id of channel'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: channel
+        - name: chatMessage-id
+          in: path
+          description: 'key: id of chatMessage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+        - name: chatMessageHostedContent-id
+          in: path
+          description: 'key: id of chatMessageHostedContent'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessageHostedContent
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.chatMessageHostedContent'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - teamwork.deletedTeam
+      summary: Delete navigation property hostedContents for teamwork
+      operationId: teamwork.deletedTeams.channels.messages_DeleteHostedContents
+      parameters:
+        - name: deletedTeam-id
+          in: path
+          description: 'key: id of deletedTeam'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deletedTeam
+        - name: channel-id
+          in: path
+          description: 'key: id of channel'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: channel
+        - name: chatMessage-id
+          in: path
+          description: 'key: id of chatMessage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+        - name: chatMessageHostedContent-id
+          in: path
+          description: 'key: id of chatMessageHostedContent'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessageHostedContent
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/teamwork/deletedTeams/{deletedTeam-id}/channels/{channel-id}/messages/{chatMessage-id}/microsoft.graph.softDelete':
+    post:
+      tags:
+        - teamwork.Actions
+      summary: Invoke action softDelete
+      operationId: teamwork.deletedTeams.channels.messages_softDelete
+      parameters:
+        - name: deletedTeam-id
+          in: path
+          description: 'key: id of deletedTeam'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deletedTeam
+        - name: channel-id
+          in: path
+          description: 'key: id of channel'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: channel
+        - name: chatMessage-id
+          in: path
+          description: 'key: id of chatMessage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/teamwork/deletedTeams/{deletedTeam-id}/channels/{channel-id}/messages/{chatMessage-id}/microsoft.graph.undoSoftDelete':
+    post:
+      tags:
+        - teamwork.Actions
+      summary: Invoke action undoSoftDelete
+      operationId: teamwork.deletedTeams.channels.messages_undoSoftDelete
+      parameters:
+        - name: deletedTeam-id
+          in: path
+          description: 'key: id of deletedTeam'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deletedTeam
+        - name: channel-id
+          in: path
+          description: 'key: id of channel'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: channel
+        - name: chatMessage-id
+          in: path
+          description: 'key: id of chatMessage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/teamwork/deletedTeams/{deletedTeam-id}/channels/{channel-id}/messages/{chatMessage-id}/replies':
+    get:
+      tags:
+        - teamwork.deletedTeam
+      summary: Get replies from teamwork
+      operationId: teamwork.deletedTeams.channels.messages_ListReplies
+      parameters:
+        - name: deletedTeam-id
+          in: path
+          description: 'key: id of deletedTeam'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deletedTeam
+        - name: channel-id
+          in: path
+          description: 'key: id of channel'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: channel
+        - name: chatMessage-id
+          in: path
+          description: 'key: id of chatMessage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - attachments
+                - attachments desc
+                - body
+                - body desc
+                - channelIdentity
+                - channelIdentity desc
+                - chatId
+                - chatId desc
+                - createdDateTime
+                - createdDateTime desc
+                - deletedDateTime
+                - deletedDateTime desc
+                - etag
+                - etag desc
+                - eventDetail
+                - eventDetail desc
+                - from
+                - from desc
+                - importance
+                - importance desc
+                - lastEditedDateTime
+                - lastEditedDateTime desc
+                - lastModifiedDateTime
+                - lastModifiedDateTime desc
+                - locale
+                - locale desc
+                - mentions
+                - mentions desc
+                - messageType
+                - messageType desc
+                - onBehalfOf
+                - onBehalfOf desc
+                - policyViolation
+                - policyViolation desc
+                - reactions
+                - reactions desc
+                - replyToId
+                - replyToId desc
+                - subject
+                - subject desc
+                - summary
+                - summary desc
+                - webUrl
+                - webUrl desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - attachments
+                - body
+                - channelIdentity
+                - chatId
+                - createdDateTime
+                - deletedDateTime
+                - etag
+                - eventDetail
+                - from
+                - importance
+                - lastEditedDateTime
+                - lastModifiedDateTime
+                - locale
+                - mentions
+                - messageType
+                - onBehalfOf
+                - policyViolation
+                - reactions
+                - replyToId
+                - subject
+                - summary
+                - webUrl
+                - hostedContents
+                - replies
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - hostedContents
+                - replies
+              type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/microsoft.graph.chatMessageCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - teamwork.deletedTeam
+      summary: Create new navigation property to replies for teamwork
+      operationId: teamwork.deletedTeams.channels.messages_CreateReplies
+      parameters:
+        - name: deletedTeam-id
+          in: path
+          description: 'key: id of deletedTeam'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deletedTeam
+        - name: channel-id
+          in: path
+          description: 'key: id of channel'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: channel
+        - name: chatMessage-id
+          in: path
+          description: 'key: id of chatMessage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.chatMessage'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.chatMessage'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/teamwork/deletedTeams/{deletedTeam-id}/channels/{channel-id}/messages/{chatMessage-id}/replies/{chatMessage-id1}':
+    get:
+      tags:
+        - teamwork.deletedTeam
+      summary: Get replies from teamwork
+      operationId: teamwork.deletedTeams.channels.messages_GetReplies
+      parameters:
+        - name: deletedTeam-id
+          in: path
+          description: 'key: id of deletedTeam'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deletedTeam
+        - name: channel-id
+          in: path
+          description: 'key: id of channel'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: channel
+        - name: chatMessage-id
+          in: path
+          description: 'key: id of chatMessage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+        - name: chatMessage-id1
+          in: path
+          description: 'key: id of chatMessage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - attachments
+                - body
+                - channelIdentity
+                - chatId
+                - createdDateTime
+                - deletedDateTime
+                - etag
+                - eventDetail
+                - from
+                - importance
+                - lastEditedDateTime
+                - lastModifiedDateTime
+                - locale
+                - mentions
+                - messageType
+                - onBehalfOf
+                - policyViolation
+                - reactions
+                - replyToId
+                - subject
+                - summary
+                - webUrl
+                - hostedContents
+                - replies
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - hostedContents
+                - replies
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.chatMessage'
+          links:
+            hostedContents:
+              operationId: teamwork.deletedTeams.channels.messages.Replies.ListHostedContents
+              parameters:
+                deletedTeam-id: $request.path.deletedTeam-id
+                channel-id: $request.path.channel-id
+                chatMessage-id: $request.path.chatMessage-id
+                chatMessage-id1: $request.path.chatMessage-id1
+            replies:
+              operationId: teamwork.deletedTeams.channels.messages.Replies.ListReplies
+              parameters:
+                deletedTeam-id: $request.path.deletedTeam-id
+                channel-id: $request.path.channel-id
+                chatMessage-id: $request.path.chatMessage-id
+                chatMessage-id1: $request.path.chatMessage-id1
+            softDelete:
+              operationId: teamwork.deletedTeams.deletedTeam.channels.channel.messages.chatMessage.replies.chatMessage.softDelete
+            undoSoftDelete:
+              operationId: teamwork.deletedTeams.deletedTeam.channels.channel.messages.chatMessage.replies.chatMessage.undoSoftDelete
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - teamwork.deletedTeam
+      summary: Update the navigation property replies in teamwork
+      operationId: teamwork.deletedTeams.channels.messages_UpdateReplies
+      parameters:
+        - name: deletedTeam-id
+          in: path
+          description: 'key: id of deletedTeam'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deletedTeam
+        - name: channel-id
+          in: path
+          description: 'key: id of channel'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: channel
+        - name: chatMessage-id
+          in: path
+          description: 'key: id of chatMessage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+        - name: chatMessage-id1
+          in: path
+          description: 'key: id of chatMessage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.chatMessage'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - teamwork.deletedTeam
+      summary: Delete navigation property replies for teamwork
+      operationId: teamwork.deletedTeams.channels.messages_DeleteReplies
+      parameters:
+        - name: deletedTeam-id
+          in: path
+          description: 'key: id of deletedTeam'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deletedTeam
+        - name: channel-id
+          in: path
+          description: 'key: id of channel'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: channel
+        - name: chatMessage-id
+          in: path
+          description: 'key: id of chatMessage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+        - name: chatMessage-id1
+          in: path
+          description: 'key: id of chatMessage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/teamwork/deletedTeams/{deletedTeam-id}/channels/{channel-id}/messages/{chatMessage-id}/replies/{chatMessage-id1}/hostedContents':
+    get:
+      tags:
+        - teamwork.deletedTeam
+      summary: Get hostedContents from teamwork
+      operationId: teamwork.deletedTeams.channels.messages.replies_ListHostedContents
+      parameters:
+        - name: deletedTeam-id
+          in: path
+          description: 'key: id of deletedTeam'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deletedTeam
+        - name: channel-id
+          in: path
+          description: 'key: id of channel'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: channel
+        - name: chatMessage-id
+          in: path
+          description: 'key: id of chatMessage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+        - name: chatMessage-id1
+          in: path
+          description: 'key: id of chatMessage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - contentBytes
+                - contentBytes desc
+                - contentType
+                - contentType desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - contentBytes
+                - contentType
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/microsoft.graph.chatMessageHostedContentCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - teamwork.deletedTeam
+      summary: Create new navigation property to hostedContents for teamwork
+      operationId: teamwork.deletedTeams.channels.messages.replies_CreateHostedContents
+      parameters:
+        - name: deletedTeam-id
+          in: path
+          description: 'key: id of deletedTeam'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deletedTeam
+        - name: channel-id
+          in: path
+          description: 'key: id of channel'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: channel
+        - name: chatMessage-id
+          in: path
+          description: 'key: id of chatMessage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+        - name: chatMessage-id1
+          in: path
+          description: 'key: id of chatMessage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.chatMessageHostedContent'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.chatMessageHostedContent'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/teamwork/deletedTeams/{deletedTeam-id}/channels/{channel-id}/messages/{chatMessage-id}/replies/{chatMessage-id1}/hostedContents/{chatMessageHostedContent-id}':
+    get:
+      tags:
+        - teamwork.deletedTeam
+      summary: Get hostedContents from teamwork
+      operationId: teamwork.deletedTeams.channels.messages.replies_GetHostedContents
+      parameters:
+        - name: deletedTeam-id
+          in: path
+          description: 'key: id of deletedTeam'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deletedTeam
+        - name: channel-id
+          in: path
+          description: 'key: id of channel'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: channel
+        - name: chatMessage-id
+          in: path
+          description: 'key: id of chatMessage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+        - name: chatMessage-id1
+          in: path
+          description: 'key: id of chatMessage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+        - name: chatMessageHostedContent-id
+          in: path
+          description: 'key: id of chatMessageHostedContent'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessageHostedContent
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - contentBytes
+                - contentType
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.chatMessageHostedContent'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - teamwork.deletedTeam
+      summary: Update the navigation property hostedContents in teamwork
+      operationId: teamwork.deletedTeams.channels.messages.replies_UpdateHostedContents
+      parameters:
+        - name: deletedTeam-id
+          in: path
+          description: 'key: id of deletedTeam'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deletedTeam
+        - name: channel-id
+          in: path
+          description: 'key: id of channel'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: channel
+        - name: chatMessage-id
+          in: path
+          description: 'key: id of chatMessage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+        - name: chatMessage-id1
+          in: path
+          description: 'key: id of chatMessage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+        - name: chatMessageHostedContent-id
+          in: path
+          description: 'key: id of chatMessageHostedContent'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessageHostedContent
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.chatMessageHostedContent'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - teamwork.deletedTeam
+      summary: Delete navigation property hostedContents for teamwork
+      operationId: teamwork.deletedTeams.channels.messages.replies_DeleteHostedContents
+      parameters:
+        - name: deletedTeam-id
+          in: path
+          description: 'key: id of deletedTeam'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deletedTeam
+        - name: channel-id
+          in: path
+          description: 'key: id of channel'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: channel
+        - name: chatMessage-id
+          in: path
+          description: 'key: id of chatMessage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+        - name: chatMessage-id1
+          in: path
+          description: 'key: id of chatMessage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+        - name: chatMessageHostedContent-id
+          in: path
+          description: 'key: id of chatMessageHostedContent'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessageHostedContent
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/teamwork/deletedTeams/{deletedTeam-id}/channels/{channel-id}/messages/{chatMessage-id}/replies/{chatMessage-id1}/microsoft.graph.softDelete':
+    post:
+      tags:
+        - teamwork.Actions
+      summary: Invoke action softDelete
+      operationId: teamwork.deletedTeams.channels.messages.replies_softDelete
+      parameters:
+        - name: deletedTeam-id
+          in: path
+          description: 'key: id of deletedTeam'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deletedTeam
+        - name: channel-id
+          in: path
+          description: 'key: id of channel'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: channel
+        - name: chatMessage-id
+          in: path
+          description: 'key: id of chatMessage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+        - name: chatMessage-id1
+          in: path
+          description: 'key: id of chatMessage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/teamwork/deletedTeams/{deletedTeam-id}/channels/{channel-id}/messages/{chatMessage-id}/replies/{chatMessage-id1}/microsoft.graph.undoSoftDelete':
+    post:
+      tags:
+        - teamwork.Actions
+      summary: Invoke action undoSoftDelete
+      operationId: teamwork.deletedTeams.channels.messages.replies_undoSoftDelete
+      parameters:
+        - name: deletedTeam-id
+          in: path
+          description: 'key: id of deletedTeam'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deletedTeam
+        - name: channel-id
+          in: path
+          description: 'key: id of channel'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: channel
+        - name: chatMessage-id
+          in: path
+          description: 'key: id of chatMessage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+        - name: chatMessage-id1
+          in: path
+          description: 'key: id of chatMessage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/teamwork/deletedTeams/{deletedTeam-id}/channels/{channel-id}/messages/{chatMessage-id}/replies/microsoft.graph.delta()':
+    get:
+      tags:
+        - teamwork.Functions
+      summary: Invoke function delta
+      operationId: teamwork.deletedTeams.channels.messages.replies_delta
+      parameters:
+        - name: deletedTeam-id
+          in: path
+          description: 'key: id of deletedTeam'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deletedTeam
+        - name: channel-id
+          in: path
+          description: 'key: id of channel'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: channel
+        - name: chatMessage-id
+          in: path
+          description: 'key: id of chatMessage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of chatMessage
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.chatMessage'
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/teamwork/deletedTeams/{deletedTeam-id}/channels/{channel-id}/messages/microsoft.graph.delta()':
+    get:
+      tags:
+        - teamwork.Functions
+      summary: Invoke function delta
+      operationId: teamwork.deletedTeams.channels.messages_delta
+      parameters:
+        - name: deletedTeam-id
+          in: path
+          description: 'key: id of deletedTeam'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deletedTeam
+        - name: channel-id
+          in: path
+          description: 'key: id of channel'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: channel
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of chatMessage
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.chatMessage'
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/teamwork/deletedTeams/{deletedTeam-id}/channels/{channel-id}/microsoft.graph.completeMigration':
+    post:
+      tags:
+        - teamwork.Actions
+      summary: Invoke action completeMigration
+      operationId: teamwork.deletedTeams.channels_completeMigration
+      parameters:
+        - name: deletedTeam-id
+          in: path
+          description: 'key: id of deletedTeam'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deletedTeam
+        - name: channel-id
+          in: path
+          description: 'key: id of channel'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: channel
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/teamwork/deletedTeams/{deletedTeam-id}/channels/{channel-id}/microsoft.graph.doesUserHaveAccess(userId=''{userId}'',tenantId=''{tenantId}'',userPrincipalName=''{userPrincipalName}'')':
+    get:
+      tags:
+        - teamwork.Functions
+      summary: Invoke function doesUserHaveAccess
+      operationId: teamwork.deletedTeams.channels_doesUserHaveAccess
+      parameters:
+        - name: deletedTeam-id
+          in: path
+          description: 'key: id of deletedTeam'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deletedTeam
+        - name: channel-id
+          in: path
+          description: 'key: id of channel'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: channel
+        - name: userId
+          in: query
+          description: 'Usage: userId=''{userId}'''
+          schema:
+            type: string
+            nullable: true
+        - name: tenantId
+          in: query
+          description: 'Usage: tenantId=''{tenantId}'''
+          schema:
+            type: string
+            nullable: true
+        - name: userPrincipalName
+          in: query
+          description: 'Usage: userPrincipalName=''{userPrincipalName}'''
+          schema:
+            type: string
+            nullable: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: boolean
+                    default: false
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/teamwork/deletedTeams/{deletedTeam-id}/channels/{channel-id}/microsoft.graph.provisionEmail':
+    post:
+      tags:
+        - teamwork.Actions
+      summary: Invoke action provisionEmail
+      operationId: teamwork.deletedTeams.channels_provisionEmail
+      parameters:
+        - name: deletedTeam-id
+          in: path
+          description: 'key: id of deletedTeam'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deletedTeam
+        - name: channel-id
+          in: path
+          description: 'key: id of channel'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: channel
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.provisionChannelEmailResult'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/teamwork/deletedTeams/{deletedTeam-id}/channels/{channel-id}/microsoft.graph.removeEmail':
+    post:
+      tags:
+        - teamwork.Actions
+      summary: Invoke action removeEmail
+      operationId: teamwork.deletedTeams.channels_removeEmail
+      parameters:
+        - name: deletedTeam-id
+          in: path
+          description: 'key: id of deletedTeam'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deletedTeam
+        - name: channel-id
+          in: path
+          description: 'key: id of channel'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: channel
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/teamwork/deletedTeams/{deletedTeam-id}/channels/{channel-id}/sharedWithTeams':
+    get:
+      tags:
+        - teamwork.deletedTeam
+      summary: Get sharedWithTeams from teamwork
+      operationId: teamwork.deletedTeams.channels_ListSharedWithTeams
+      parameters:
+        - name: deletedTeam-id
+          in: path
+          description: 'key: id of deletedTeam'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deletedTeam
+        - name: channel-id
+          in: path
+          description: 'key: id of channel'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: channel
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - displayName
+                - displayName desc
+                - tenantId
+                - tenantId desc
+                - isHostTeam
+                - isHostTeam desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - displayName
+                - tenantId
+                - isHostTeam
+                - team
+                - allowedMembers
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - team
+                - allowedMembers
+              type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/microsoft.graph.sharedWithChannelTeamInfoCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - teamwork.deletedTeam
+      summary: Create new navigation property to sharedWithTeams for teamwork
+      operationId: teamwork.deletedTeams.channels_CreateSharedWithTeams
+      parameters:
+        - name: deletedTeam-id
+          in: path
+          description: 'key: id of deletedTeam'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deletedTeam
+        - name: channel-id
+          in: path
+          description: 'key: id of channel'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: channel
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.sharedWithChannelTeamInfo'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.sharedWithChannelTeamInfo'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/teamwork/deletedTeams/{deletedTeam-id}/channels/{channel-id}/sharedWithTeams/{sharedWithChannelTeamInfo-id}':
+    get:
+      tags:
+        - teamwork.deletedTeam
+      summary: Get sharedWithTeams from teamwork
+      operationId: teamwork.deletedTeams.channels_GetSharedWithTeams
+      parameters:
+        - name: deletedTeam-id
+          in: path
+          description: 'key: id of deletedTeam'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deletedTeam
+        - name: channel-id
+          in: path
+          description: 'key: id of channel'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: channel
+        - name: sharedWithChannelTeamInfo-id
+          in: path
+          description: 'key: id of sharedWithChannelTeamInfo'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: sharedWithChannelTeamInfo
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - displayName
+                - tenantId
+                - isHostTeam
+                - team
+                - allowedMembers
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - team
+                - allowedMembers
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.sharedWithChannelTeamInfo'
+          links:
+            team:
+              operationId: teamwork.deletedTeams.channels.SharedWithTeams.GetTeam
+              parameters:
+                deletedTeam-id: $request.path.deletedTeam-id
+                channel-id: $request.path.channel-id
+                sharedWithChannelTeamInfo-id: $request.path.sharedWithChannelTeamInfo-id
+            allowedMembers:
+              operationId: teamwork.deletedTeams.channels.SharedWithTeams.ListAllowedMembers
+              parameters:
+                deletedTeam-id: $request.path.deletedTeam-id
+                channel-id: $request.path.channel-id
+                sharedWithChannelTeamInfo-id: $request.path.sharedWithChannelTeamInfo-id
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - teamwork.deletedTeam
+      summary: Update the navigation property sharedWithTeams in teamwork
+      operationId: teamwork.deletedTeams.channels_UpdateSharedWithTeams
+      parameters:
+        - name: deletedTeam-id
+          in: path
+          description: 'key: id of deletedTeam'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deletedTeam
+        - name: channel-id
+          in: path
+          description: 'key: id of channel'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: channel
+        - name: sharedWithChannelTeamInfo-id
+          in: path
+          description: 'key: id of sharedWithChannelTeamInfo'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: sharedWithChannelTeamInfo
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.sharedWithChannelTeamInfo'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - teamwork.deletedTeam
+      summary: Delete navigation property sharedWithTeams for teamwork
+      operationId: teamwork.deletedTeams.channels_DeleteSharedWithTeams
+      parameters:
+        - name: deletedTeam-id
+          in: path
+          description: 'key: id of deletedTeam'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deletedTeam
+        - name: channel-id
+          in: path
+          description: 'key: id of channel'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: channel
+        - name: sharedWithChannelTeamInfo-id
+          in: path
+          description: 'key: id of sharedWithChannelTeamInfo'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: sharedWithChannelTeamInfo
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/teamwork/deletedTeams/{deletedTeam-id}/channels/{channel-id}/sharedWithTeams/{sharedWithChannelTeamInfo-id}/allowedMembers':
+    get:
+      tags:
+        - teamwork.deletedTeam
+      summary: Get allowedMembers from teamwork
+      operationId: teamwork.deletedTeams.channels.sharedWithTeams_ListAllowedMembers
+      parameters:
+        - name: deletedTeam-id
+          in: path
+          description: 'key: id of deletedTeam'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deletedTeam
+        - name: channel-id
+          in: path
+          description: 'key: id of channel'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: channel
+        - name: sharedWithChannelTeamInfo-id
+          in: path
+          description: 'key: id of sharedWithChannelTeamInfo'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: sharedWithChannelTeamInfo
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - displayName
+                - displayName desc
+                - roles
+                - roles desc
+                - visibleHistoryStartDateTime
+                - visibleHistoryStartDateTime desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - displayName
+                - roles
+                - visibleHistoryStartDateTime
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/microsoft.graph.conversationMemberCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+  '/teamwork/deletedTeams/{deletedTeam-id}/channels/{channel-id}/sharedWithTeams/{sharedWithChannelTeamInfo-id}/allowedMembers/{conversationMember-id}':
+    get:
+      tags:
+        - teamwork.deletedTeam
+      summary: Get allowedMembers from teamwork
+      operationId: teamwork.deletedTeams.channels.sharedWithTeams_GetAllowedMembers
+      parameters:
+        - name: deletedTeam-id
+          in: path
+          description: 'key: id of deletedTeam'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deletedTeam
+        - name: channel-id
+          in: path
+          description: 'key: id of channel'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: channel
+        - name: sharedWithChannelTeamInfo-id
+          in: path
+          description: 'key: id of sharedWithChannelTeamInfo'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: sharedWithChannelTeamInfo
+        - name: conversationMember-id
+          in: path
+          description: 'key: id of conversationMember'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: conversationMember
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - displayName
+                - roles
+                - visibleHistoryStartDateTime
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.conversationMember'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/teamwork/deletedTeams/{deletedTeam-id}/channels/{channel-id}/tabs':
+    get:
+      tags:
+        - teamwork.deletedTeam
+      summary: Get tabs from teamwork
+      operationId: teamwork.deletedTeams.channels_ListTabs
+      parameters:
+        - name: deletedTeam-id
+          in: path
+          description: 'key: id of deletedTeam'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deletedTeam
+        - name: channel-id
+          in: path
+          description: 'key: id of channel'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: channel
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - configuration
+                - configuration desc
+                - displayName
+                - displayName desc
+                - messageId
+                - messageId desc
+                - sortOrderIndex
+                - sortOrderIndex desc
+                - teamsAppId
+                - teamsAppId desc
+                - webUrl
+                - webUrl desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - configuration
+                - displayName
+                - messageId
+                - sortOrderIndex
+                - teamsAppId
+                - webUrl
+                - teamsApp
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - teamsApp
+              type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/microsoft.graph.teamsTabCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - teamwork.deletedTeam
+      summary: Create new navigation property to tabs for teamwork
+      operationId: teamwork.deletedTeams.channels_CreateTabs
+      parameters:
+        - name: deletedTeam-id
+          in: path
+          description: 'key: id of deletedTeam'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deletedTeam
+        - name: channel-id
+          in: path
+          description: 'key: id of channel'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: channel
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.teamsTab'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.teamsTab'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/teamwork/deletedTeams/{deletedTeam-id}/channels/{channel-id}/tabs/{teamsTab-id}':
+    get:
+      tags:
+        - teamwork.deletedTeam
+      summary: Get tabs from teamwork
+      operationId: teamwork.deletedTeams.channels_GetTabs
+      parameters:
+        - name: deletedTeam-id
+          in: path
+          description: 'key: id of deletedTeam'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deletedTeam
+        - name: channel-id
+          in: path
+          description: 'key: id of channel'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: channel
+        - name: teamsTab-id
+          in: path
+          description: 'key: id of teamsTab'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: teamsTab
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - configuration
+                - displayName
+                - messageId
+                - sortOrderIndex
+                - teamsAppId
+                - webUrl
+                - teamsApp
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - teamsApp
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.teamsTab'
+          links:
+            teamsApp:
+              operationId: teamwork.deletedTeams.channels.Tabs.GetTeamsApp
+              parameters:
+                deletedTeam-id: $request.path.deletedTeam-id
+                channel-id: $request.path.channel-id
+                teamsTab-id: $request.path.teamsTab-id
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - teamwork.deletedTeam
+      summary: Update the navigation property tabs in teamwork
+      operationId: teamwork.deletedTeams.channels_UpdateTabs
+      parameters:
+        - name: deletedTeam-id
+          in: path
+          description: 'key: id of deletedTeam'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deletedTeam
+        - name: channel-id
+          in: path
+          description: 'key: id of channel'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: channel
+        - name: teamsTab-id
+          in: path
+          description: 'key: id of teamsTab'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: teamsTab
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.teamsTab'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - teamwork.deletedTeam
+      summary: Delete navigation property tabs for teamwork
+      operationId: teamwork.deletedTeams.channels_DeleteTabs
+      parameters:
+        - name: deletedTeam-id
+          in: path
+          description: 'key: id of deletedTeam'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deletedTeam
+        - name: channel-id
+          in: path
+          description: 'key: id of channel'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: channel
+        - name: teamsTab-id
+          in: path
+          description: 'key: id of teamsTab'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: teamsTab
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/teamwork/deletedTeams/{deletedTeam-id}/channels/{channel-id}/tabs/{teamsTab-id}/teamsApp':
+    get:
+      tags:
+        - teamwork.deletedTeam
+      summary: Get teamsApp from teamwork
+      operationId: teamwork.deletedTeams.channels.tabs_GetTeamsApp
+      parameters:
+        - name: deletedTeam-id
+          in: path
+          description: 'key: id of deletedTeam'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deletedTeam
+        - name: channel-id
+          in: path
+          description: 'key: id of channel'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: channel
+        - name: teamsTab-id
+          in: path
+          description: 'key: id of teamsTab'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: teamsTab
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - displayName
+                - distributionMethod
+                - externalId
+                - appDefinitions
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - appDefinitions
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.teamsApp'
+          links:
+            appDefinitions:
+              operationId: teamwork.deletedTeams.channels.tabs.TeamsApp.ListAppDefinitions
+              parameters:
+                deletedTeam-id: $request.path.deletedTeam-id
+                channel-id: $request.path.channel-id
+                teamsTab-id: $request.path.teamsTab-id
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/teamwork/deletedTeams/{deletedTeam-id}/channels/microsoft.graph.allMessages()':
+    get:
+      tags:
+        - teamwork.Functions
+      summary: Invoke function allMessages
+      operationId: teamwork.deletedTeams.channels_allMessages
+      parameters:
+        - name: deletedTeam-id
+          in: path
+          description: 'key: id of deletedTeam'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deletedTeam
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of channel
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.chatMessage'
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/teamwork/deletedTeams/{deletedTeam-id}/channels/microsoft.graph.getAllMessages()':
+    get:
+      tags:
+        - teamwork.Functions
+      summary: Invoke function getAllMessages
+      operationId: teamwork.deletedTeams.channels_getAllMessages
+      parameters:
+        - name: deletedTeam-id
+          in: path
+          description: 'key: id of deletedTeam'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deletedTeam
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of channel
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.chatMessage'
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  /teamwork/deletedTeams/microsoft.graph.getAllMessages():
+    get:
+      tags:
+        - teamwork.Functions
+      summary: Invoke function getAllMessages
+      operationId: teamwork.deletedTeams_getAllMessages
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of deletedTeam
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.chatMessage'
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
   /teamwork/devices:
     get:
       tags:
@@ -31282,6 +35771,50 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /teamwork/microsoft.graph.sendActivityNotificationToRecipients:
+    post:
+      tags:
+        - teamwork.Actions
+      summary: Invoke action sendActivityNotificationToRecipients
+      operationId: teamwork_sendActivityNotificationToRecipients
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                topic:
+                  $ref: '#/components/schemas/microsoft.graph.teamworkActivityTopic'
+                activityType:
+                  type: string
+                  nullable: true
+                chainId:
+                  type: integer
+                  format: int64
+                  nullable: true
+                previewText:
+                  $ref: '#/components/schemas/microsoft.graph.itemBody'
+                teamsAppId:
+                  type: string
+                  nullable: true
+                templateParameters:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/microsoft.graph.keyValuePair'
+                recipients:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/microsoft.graph.teamworkNotificationRecipient'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   /teamwork/workforceIntegrations:
     get:
       tags:
@@ -31760,6 +36293,16 @@ paths:
               parameters:
                 user-id: $request.path.user-id
                 chat-id: $request.path.chat-id
+            hideForUser:
+              operationId: users.user.chats.chat.hideForUser
+            markChatReadForUser:
+              operationId: users.user.chats.chat.markChatReadForUser
+            markChatUnreadForUser:
+              operationId: users.user.chats.chat.markChatUnreadForUser
+            sendActivityNotification:
+              operationId: users.user.chats.chat.sendActivityNotification
+            unhideForUser:
+              operationId: users.user.chats.chat.unhideForUser
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -34509,6 +39052,17 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.resourceSpecificPermissionGrant'
+          links:
+            checkMemberGroups:
+              operationId: users.user.chats.chat.permissionGrants.resourceSpecificPermissionGrant.checkMemberGroups
+            checkMemberObjects:
+              operationId: users.user.chats.chat.permissionGrants.resourceSpecificPermissionGrant.checkMemberObjects
+            getMemberGroups:
+              operationId: users.user.chats.chat.permissionGrants.resourceSpecificPermissionGrant.getMemberGroups
+            getMemberObjects:
+              operationId: users.user.chats.chat.permissionGrants.resourceSpecificPermissionGrant.getMemberObjects
+            restore:
+              operationId: users.user.chats.chat.permissionGrants.resourceSpecificPermissionGrant.restore
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -36509,6 +41063,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.pinnedChatMessageInfo'
+              description: A collection of all the pinned messages in the chat. Nullable.
             tabs:
               type: array
               items:
@@ -36811,6 +41366,20 @@ components:
             resourceAppId:
               type: string
               description: ID of the Azure AD app that is hosting the resource. Read-only.
+              nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.directoryObject:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: directoryObject
+          type: object
+          properties:
+            deletedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Date and time when this object was deleted. Always null when the object hasn't been deleted.
+              format: date-time
               nullable: true
           additionalProperties:
             type: object
@@ -37325,6 +41894,8 @@ components:
               type: string
               description: 'Specifies the group join policy and group content visibility for groups. Possible values are: Private, Public, or Hiddenmembership. Hiddenmembership can be set only for Microsoft 365 groups, when the groups are created. It can''t be updated later. Other values of visibility can be updated after group creation. If visibility value is not specified during group creation on Microsoft Graph, a security group is created as Private by default and Microsoft 365 group is Public. Groups assignable to roles are always Private. See group visibility options to learn more. Returned by default. Nullable.'
               nullable: true
+            writebackConfiguration:
+              $ref: '#/components/schemas/microsoft.graph.groupWritebackConfiguration'
             accessType:
               $ref: '#/components/schemas/microsoft.graph.groupAccessType'
             allowExternalSenders:
@@ -37739,7 +42310,7 @@ components:
               nullable: true
             showInAddressList:
               type: boolean
-              description: 'true if the Outlook global address list should contain this user, otherwise false. If not set, this will be treated as true. For users invited through the invitation manager, this property will be set to false. Supports $filter (eq, ne, not, in).'
+              description: Do not use in Microsoft Graph. Manage this property through the Microsoft 365 admin center instead. Represents whether the user should be included in the Outlook global address list. See Known issue.
               nullable: true
             signInSessionsValidFromDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -38504,11 +43075,27 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.workforceIntegration'
               description: A workforce integration with shifts.
+            deletedTeams:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.deletedTeam'
             devices:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.teamworkDevice'
               description: The Teams devices provisioned for the tenant.
+          additionalProperties:
+            type: object
+    microsoft.graph.deletedTeam:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: deletedTeam
+          type: object
+          properties:
+            channels:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.channel'
           additionalProperties:
             type: object
     microsoft.graph.teamworkDevice:
@@ -39033,11 +43620,11 @@ components:
       properties:
         displayName:
           type: string
-          description: 'The identity''s display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
+          description: The display name of the identity. This property is read-only.
           nullable: true
         id:
           type: string
-          description: Unique identifier for the identity.
+          description: The identifier of the identity. This property is read-only.
           nullable: true
       additionalProperties:
         type: object
@@ -39103,20 +43690,6 @@ components:
         - failed
         - unknownFutureValue
       type: string
-    microsoft.graph.directoryObject:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: directoryObject
-          type: object
-          properties:
-            deletedDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: Date and time when this object was deleted. Always null when the object hasn't been deleted.
-              format: date-time
-              nullable: true
-          additionalProperties:
-            type: object
     microsoft.graph.teamsTabConfiguration:
       title: teamsTabConfiguration
       type: object
@@ -40218,6 +44791,17 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.groupWritebackConfiguration:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.writebackConfiguration'
+        - title: groupWritebackConfiguration
+          type: object
+          properties:
+            onPremisesGroupType:
+              type: string
+              nullable: true
+          additionalProperties:
+            type: object
     microsoft.graph.groupAccessType:
       title: groupAccessType
       enum:
@@ -44313,6 +48897,18 @@ components:
           type: string
       additionalProperties:
         type: object
+    microsoft.graph.deletedTeamCollectionResponse:
+      title: Collection of deletedTeam
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.deletedTeam'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
     microsoft.graph.teamworkDeviceCollectionResponse:
       title: Collection of teamworkDevice
       type: object
@@ -45063,6 +49659,15 @@ components:
               $ref: '#/components/schemas/microsoft.graph.publicationFacet'
           additionalProperties:
             type: object
+    microsoft.graph.writebackConfiguration:
+      title: writebackConfiguration
+      type: object
+      properties:
+        isEnabled:
+          type: boolean
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.MembershipRuleProcessingStatusDetails:
       title: MembershipRuleProcessingStatusDetails
       enum:
@@ -50419,7 +55024,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.checklistItem'
-              description: A collection of checklistItems linked to a task.
+              description: A collection of smaller subtasks linked to the more complex parent task.
             extensions:
               type: array
               items:
@@ -54456,6 +59061,7 @@ components:
               items:
                 type: string
                 nullable: true
+              description: The categories associated with the task. Each category corresponds to the displayName property of an outlookCategory that the user has defined.
             completedDateTime:
               $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
             createdDateTime:
@@ -54465,6 +59071,9 @@ components:
               format: date-time
             dueDateTime:
               $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
+            hasAttachments:
+              type: boolean
+              nullable: true
             importance:
               $ref: '#/components/schemas/microsoft.graph.importance'
             isReminderOn:
@@ -54485,10 +59094,19 @@ components:
               type: string
               description: A brief description of the task.
               nullable: true
+            attachments:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.attachment_v2'
+            attachmentSessions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.attachmentSession'
             checklistItems:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.checklistItem'
+              description: A collection of smaller subtasks linked to the more complex parent task.
             extensions:
               type: array
               items:
@@ -54918,11 +59536,11 @@ components:
       properties:
         key:
           type: string
-          description: Key.
+          description: 'Contains the name of the field that a value is associated with. When a sign in or domain hint is included in the sign-in request, corresponding fields are included as key-value pairs. Possible keys: Login hint present, Domain hint present.'
           nullable: true
         value:
           type: string
-          description: Value.
+          description: Contains the corresponding value for the specified key. The value is true if a sign in hint was included in the sign-in request; otherwise false. The value is true if a domain hint was included in the sign-in request; otherwise false.
           nullable: true
       additionalProperties:
         type: object
@@ -56421,6 +61039,52 @@ components:
         - radioButton
         - unknownFutureValue
       type: string
+    microsoft.graph.attachment_v2:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: attachment_v2
+          type: object
+          properties:
+            contentType:
+              type: string
+              nullable: true
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            name:
+              type: string
+              nullable: true
+            size:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              format: int32
+          additionalProperties:
+            type: object
+    microsoft.graph.attachmentSession:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: attachmentSession
+          type: object
+          properties:
+            content:
+              type: string
+              format: base64url
+              nullable: true
+            expirationDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            nextExpectedRange:
+              type: array
+              items:
+                type: string
+                nullable: true
+          additionalProperties:
+            type: object
     microsoft.graph.linkedResource:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -58311,6 +62975,12 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.teamCollectionResponse'
+    microsoft.graph.deletedTeamCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.deletedTeamCollectionResponse'
     microsoft.graph.teamworkDeviceCollectionResponse:
       description: Retrieved collection
       content:

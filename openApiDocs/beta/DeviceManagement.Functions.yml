@@ -1589,27 +1589,34 @@ components:
       properties:
         azureStorageAccountId:
           type: string
+          description: The resource ID of the Azure Storage account in which the Cloud PC snapshot is being saved.
           nullable: true
         azureStorageAccountName:
           type: string
+          description: The name of the Azure Storage account in which the Cloud PC snapshot is being saved.
           nullable: true
         inReview:
           type: boolean
+          description: True if the Cloud PC is set to in review by the administrator.
         restorePointDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: 'The specific date and time of the Cloud PC snapshot that was taken and saved automatically, when the Cloud PC is set to in review. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 appears as 2014-01-01T00:00:00Z.'
           format: date-time
           nullable: true
         reviewStartDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: 'The specific date and time when the Cloud PC was set to in review. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 appears as 2014-01-01T00:00:00Z.'
           format: date-time
           nullable: true
         subscriptionId:
           type: string
+          description: 'The ID of the Azure subscription in which the Cloud PC snapshot is being saved, in GUID format.'
           nullable: true
         subscriptionName:
           type: string
+          description: The name of the Azure subscription in which the Cloud PC snapshot is being saved.
           nullable: true
         userAccessLevel:
           $ref: '#/components/schemas/microsoft.graph.cloudPcUserAccessLevel'

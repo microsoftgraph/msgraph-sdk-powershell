@@ -1017,6 +1017,16 @@ paths:
               parameters:
                 user-id: $request.path.user-id
                 device-id: $request.path.device-id
+            checkMemberGroups:
+              operationId: users.user.devices.device.checkMemberGroups
+            checkMemberObjects:
+              operationId: users.user.devices.device.checkMemberObjects
+            getMemberGroups:
+              operationId: users.user.devices.device.getMemberGroups
+            getMemberObjects:
+              operationId: users.user.devices.device.getMemberObjects
+            restore:
+              operationId: users.user.devices.device.restore
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation

@@ -165,6 +165,10 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/DeviceManagement.Actions.yml"
     },
+    "/deviceManagement/comanagedDevices/{managedDevice-id}/microsoft.graph.removeDeviceFirmwareConfigurationInterfaceManagement": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Actions.yml"
+    },
     "/deviceManagement/comanagedDevices/{managedDevice-id}/microsoft.graph.reprovisionCloudPc": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/DeviceManagement.Actions.yml"
@@ -353,14 +357,6 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/DeviceManagement.Actions.yml"
     },
-    "/deviceManagement/deviceConfigurations/{deviceConfiguration-id}/microsoft.graph.windowsUpdateForBusinessConfiguration/microsoft.graph.extendFeatureUpdatesPause": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/DeviceManagement.Actions.yml"
-    },
-    "/deviceManagement/deviceConfigurations/{deviceConfiguration-id}/microsoft.graph.windowsUpdateForBusinessConfiguration/microsoft.graph.extendQualityUpdatesPause": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/DeviceManagement.Actions.yml"
-    },
     "/deviceManagement/deviceConfigurations/microsoft.graph.getTargetedUsersAndDevices": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/DeviceManagement.Actions.yml"
@@ -377,11 +373,11 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/DeviceManagement.Actions.yml"
     },
-    "/deviceManagement/deviceEnrollmentConfigurations/{deviceEnrollmentConfiguration-id}/microsoft.graph.createEnrollmentNotificationConfiguration": {
+    "/deviceManagement/deviceEnrollmentConfigurations/{deviceEnrollmentConfiguration-id}/microsoft.graph.setPriority": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/DeviceManagement.Actions.yml"
     },
-    "/deviceManagement/deviceEnrollmentConfigurations/{deviceEnrollmentConfiguration-id}/microsoft.graph.setPriority": {
+    "/deviceManagement/deviceEnrollmentConfigurations/microsoft.graph.createEnrollmentNotificationConfiguration": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/DeviceManagement.Actions.yml"
     },
@@ -558,6 +554,10 @@
       "originalLocation": "/openApiDocs/beta/DeviceManagement.Actions.yml"
     },
     "/deviceManagement/managedDevices/{managedDevice-id}/microsoft.graph.remoteLock": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Actions.yml"
+    },
+    "/deviceManagement/managedDevices/{managedDevice-id}/microsoft.graph.removeDeviceFirmwareConfigurationInterfaceManagement": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/DeviceManagement.Actions.yml"
     },
@@ -938,6 +938,10 @@
       "originalLocation": "/openApiDocs/beta/DeviceManagement.Actions.yml"
     },
     "/deviceManagement/reports/microsoft.graph.getWindowsUpdateAlertSummaryReport": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Actions.yml"
+    },
+    "/deviceManagement/reports/microsoft.graph.getZebraFotaDeploymentReport": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/DeviceManagement.Actions.yml"
     },
