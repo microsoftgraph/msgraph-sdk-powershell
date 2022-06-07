@@ -8,10 +8,9 @@ schema: 2.0.0
 # New-MgUserPerson
 
 ## SYNOPSIS
+People that are relevant to the user.
 Read-only.
-The most relevant people to the user.
-The collection is ordered by their relevance to the user, which is determined by the user's communication, collaboration and business relationships.
-A person is an aggregation of information from across mail, contacts and social networks.
+Nullable.
 
 ## SYNTAX
 
@@ -52,10 +51,9 @@ New-MgUserPerson -InputObject <IPeopleIdentity> [-AdditionalProperties <Hashtabl
 ```
 
 ## DESCRIPTION
+People that are relevant to the user.
 Read-only.
-The most relevant people to the user.
-The collection is ordered by their relevance to the user, which is determined by the user's communication, collaboration and business relationships.
-A person is an aggregation of information from across mail, contacts and social networks.
+Nullable.
 
 ## EXAMPLES
 
@@ -275,7 +273,7 @@ Accept wildcard characters: False
 ```
 
 ### -PersonType
-The type of person, for example distribution list.
+The type of person.
 
 ```yaml
 Type: System.String
@@ -514,7 +512,7 @@ BODYPARAMETER <IMicrosoftGraphPerson1>: person
   - `[MailboxType <String>]`: The type of mailbox that is represented by the person's email address.
   - `[OfficeLocation <String>]`: The location of the person's office.
   - `[PersonNotes <String>]`: Free-form notes that the user has taken about this person.
-  - `[PersonType <String>]`: The type of person, for example distribution list.
+  - `[PersonType <String>]`: The type of person.
   - `[Phones <IMicrosoftGraphPhone1[]>]`: The person's phone numbers.
     - `[Number <String>]`: The phone number.
     - `[Type <String>]`: phoneType

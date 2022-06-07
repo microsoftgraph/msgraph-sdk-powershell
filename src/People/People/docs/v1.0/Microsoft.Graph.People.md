@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.People
-Module Guid: 56d5ba0b-9c44-4378-96b1-40356e2cc6a0
+Module Guid: 98b3b6fb-78ad-4965-98ff-cac9f30d1737
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.people
 Help Version: 1.0.0.0
 Locale: en-US
@@ -15,13 +15,15 @@ Microsoft Graph PowerShell Cmdlets
 Get lastSharedMethod from users
 
 ### [Get-MgUserPerson](Get-MgUserPerson.md)
+People that are relevant to the user.
 Read-only.
-The most relevant people to the user.
-The collection is ordered by their relevance to the user, which is determined by the user's communication, collaboration and business relationships.
-A person is an aggregation of information from across mail, contacts and social networks.
+Nullable.
 
 ### [Get-MgUserSharedInsight](Get-MgUserSharedInsight.md)
-Access this property from the derived type itemInsights.
+Calculated relationship identifying documents shared with or by the user.
+This includes URLs, file attachments, and reference attachments to OneDrive for Business and SharePoint files found in Outlook messages and meetings.
+This also includes URLs and reference attachments to Teams conversations.
+Ordered by recency of share.
 
 ### [Get-MgUserSharedLastSharedMethodInsightByRef](Get-MgUserSharedLastSharedMethodInsightByRef.md)
 Get ref of lastSharedMethod from users
@@ -37,7 +39,9 @@ For file attachments, the type is fileAttachment.
 For linked attachments, the type is driveItem.
 
 ### [Get-MgUserTrendingInsight](Get-MgUserTrendingInsight.md)
-Access this property from the derived type itemInsights.
+Calculated relationship identifying documents trending around a user.
+Trending documents are calculated based on activity of the user's closest network of people and include files stored in OneDrive for Business and SharePoint.
+Trending insights help the user to discover potentially useful content that the user has access to, but has never viewed before.
 
 ### [Get-MgUserTrendingResourceInsight](Get-MgUserTrendingResourceInsight.md)
 Used for navigating to the trending document.
@@ -46,7 +50,7 @@ Used for navigating to the trending document.
 Used for navigating to the trending document.
 
 ### [Get-MgUserUsedInsight](Get-MgUserUsedInsight.md)
-Access this property from the derived type itemInsights.
+Calculated relationship identifying the latest documents viewed or modified by a user, including OneDrive for Business and SharePoint documents, ranked by recency of use.
 
 ### [Get-MgUserUsedResourceInsight](Get-MgUserUsedResourceInsight.md)
 Used for navigating to the item that was used.
@@ -59,16 +63,14 @@ For file attachments, the type is fileAttachment.
 For linked attachments, the type is driveItem.
 
 ### [New-MgUserPerson](New-MgUserPerson.md)
+People that are relevant to the user.
 Read-only.
-The most relevant people to the user.
-The collection is ordered by their relevance to the user, which is determined by the user's communication, collaboration and business relationships.
-A person is an aggregation of information from across mail, contacts and social networks.
+Nullable.
 
 ### [Remove-MgUserPerson](Remove-MgUserPerson.md)
+People that are relevant to the user.
 Read-only.
-The most relevant people to the user.
-The collection is ordered by their relevance to the user, which is determined by the user's communication, collaboration and business relationships.
-A person is an aggregation of information from across mail, contacts and social networks.
+Nullable.
 
 ### [Remove-MgUserSharedLastSharedMethodInsightByRef](Remove-MgUserSharedLastSharedMethodInsightByRef.md)
 Delete ref of navigation property lastSharedMethod for users
@@ -103,8 +105,7 @@ For file attachments, the type is fileAttachment.
 For linked attachments, the type is driveItem.
 
 ### [Update-MgUserPerson](Update-MgUserPerson.md)
+People that are relevant to the user.
 Read-only.
-The most relevant people to the user.
-The collection is ordered by their relevance to the user, which is determined by the user's communication, collaboration and business relationships.
-A person is an aggregation of information from across mail, contacts and social networks.
+Nullable.
 
