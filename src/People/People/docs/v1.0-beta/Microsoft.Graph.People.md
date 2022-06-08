@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.People
-Module Guid: 56d5ba0b-9c44-4378-96b1-40356e2cc6a0
+Module Guid: 98b3b6fb-78ad-4965-98ff-cac9f30d1737
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.people
 Help Version: 1.0.0.0
 Locale: en-US
@@ -17,10 +17,9 @@ Read-only.
 Nullable.
 
 ### [Get-MgUserPerson](Get-MgUserPerson.md)
+People that are relevant to the user.
 Read-only.
-The most relevant people to the user.
-The collection is ordered by their relevance to the user, which is determined by the user's communication, collaboration and business relationships.
-A person is an aggregation of information from across mail, contacts and social networks.
+Nullable.
 
 ### [Get-MgUserProfile](Get-MgUserProfile.md)
 Represents properties that are descriptive of a user in a tenant.
@@ -83,10 +82,9 @@ Represents web accounts the user has indicated they use or has added to their us
 Represents detailed information about websites associated with a user in various services.
 
 ### [New-MgUserPerson](New-MgUserPerson.md)
+People that are relevant to the user.
 Read-only.
-The most relevant people to the user.
-The collection is ordered by their relevance to the user, which is determined by the user's communication, collaboration and business relationships.
-A person is an aggregation of information from across mail, contacts and social networks.
+Nullable.
 
 ### [New-MgUserProfileAccount](New-MgUserProfileAccount.md)
 Create new navigation property to account for users
@@ -146,10 +144,9 @@ Represents web accounts the user has indicated they use or has added to their us
 Represents detailed information about websites associated with a user in various services.
 
 ### [Remove-MgUserPerson](Remove-MgUserPerson.md)
+People that are relevant to the user.
 Read-only.
-The most relevant people to the user.
-The collection is ordered by their relevance to the user, which is determined by the user's communication, collaboration and business relationships.
-A person is an aggregation of information from across mail, contacts and social networks.
+Nullable.
 
 ### [Remove-MgUserProfile](Remove-MgUserProfile.md)
 Represents properties that are descriptive of a user in a tenant.
@@ -212,10 +209,9 @@ Represents web accounts the user has indicated they use or has added to their us
 Represents detailed information about websites associated with a user in various services.
 
 ### [Update-MgUserPerson](Update-MgUserPerson.md)
+People that are relevant to the user.
 Read-only.
-The most relevant people to the user.
-The collection is ordered by their relevance to the user, which is determined by the user's communication, collaboration and business relationships.
-A person is an aggregation of information from across mail, contacts and social networks.
+Nullable.
 
 ### [Update-MgUserProfile](Update-MgUserProfile.md)
 Represents properties that are descriptive of a user in a tenant.

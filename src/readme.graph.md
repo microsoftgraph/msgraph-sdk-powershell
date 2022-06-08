@@ -511,6 +511,15 @@ directive:
         let propertiesToRemoveRegex = /^.*Microsoft\.Graph\.PowerShell\.Runtime\.IAssociativeArray<global::System\.Object>\.(Count|Keys|Values).*$/gm
         $ = $.replace(propertiesToRemoveRegex, '');
 
+        let classRegex = /((\s*)public\s*partial\s*class\s*MicrosoftGraph(NamedLocation).*\s.*\s*\{)/gm
+        if($.match(classRegex)) {
+          let toFirstUpperImplementation = 'internal string ToFirstCharacterLowerCase(string text) => System.String.IsNullOrEmpty(text) ? text : $"{char.ToLowerInvariant(text[0])}{text.Substring(1)}";'
+          $ = $.replace(classRegex, `$1$2${toFirstUpperImplementation}`)
+          
+          let directoryKeyRegex = /\.Add\((\s*property\.Key\.ToString\(\))/gm
+          $ = $.replace(directoryKeyRegex, '.Add(ToFirstCharacterLowerCase($1)')
+        }
+
         return $;
       }
 # Modify generated .PowerShell.cs model classes.
@@ -683,13 +692,6 @@ directive:
         // Changes excludes hashset to a case-insensitive hashset.
         let fromJsonRegex = /(\s*FromJson<\w*>\s*\(JsonObject\s*json\s*,\s*System\.Collections\.Generic\.IDictionary.*)(\s*)({)/gm
         $ = $.replace(fromJsonRegex, '$1$2$3\n$2 if (excludes != null){ excludes = new System.Collections.Generic.HashSet<string>(excludes, global::System.StringComparer.OrdinalIgnoreCase);}');
-
-        let toFirstUpperImplementation = 'internal static string ToFirstCharacterLowerCase(this string text) => String.IsNullOrEmpty(text) ? text : $"{char.ToLowerInvariant(text[0])}{text.Substring(1)}";'
-        let classRegex = /(internal\sstatic\sclass\sJsonSerializable(\s*){)/gm
-        $ = $.replace(classRegex, `$1$2${toFirstUpperImplementation}`)
-
-        let directoryKeyRegex = /(container\.Add\(key\.Key)(,)/gm
-        $ = $.replace(directoryKeyRegex, '$1.ToFirstCharacterLowerCase()$2')
 
         return $;
       }

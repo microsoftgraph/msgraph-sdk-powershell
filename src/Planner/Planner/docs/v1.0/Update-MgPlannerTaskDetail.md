@@ -96,7 +96,7 @@ Accept wildcard characters: False
 ```
 
 ### -Description
-Description of the task
+Description of the task.
 
 ```yaml
 Type: System.String
@@ -259,7 +259,7 @@ BODYPARAMETER <IMicrosoftGraphPlannerTaskDetails>: plannerTaskDetails
   - `[Id <String>]`: Read-only.
   - `[Checklist <IMicrosoftGraphPlannerChecklistItems>]`: plannerChecklistItems
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Description <String>]`: Description of the task
+  - `[Description <String>]`: Description of the task.
   - `[PreviewType <String>]`: plannerPreviewType
   - `[References <IMicrosoftGraphPlannerExternalReferences>]`: plannerExternalReferences
     - `[(Any) <Object>]`: This indicates any property can be added to this object.

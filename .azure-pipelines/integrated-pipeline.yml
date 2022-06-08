@@ -3,7 +3,7 @@
 
 parameters:
   - name: BuildAgent
-    default: MsGraphBuildAgentsWindowsPsSDK
+    default: 1es-windows-ps-compute
     displayName: Build Agent
 
   - name: AzureSubscription
@@ -101,8 +101,8 @@ stages:
       KEYVAULT: $(KEYVAULT)
       AZURESUBSCRIPTION: $(AZURESUBSCRIPTION)
 
-- stage: GenerateBetaModules
-  displayName: 'Generate Beta Modules (Microsoft.Graph.*)'
+- stage: GenerateModules
+  displayName: 'Generate Modules (Microsoft.Graph.*)'
   jobs:
   - template: ./generate-modules-template.yml
     parameters:
