@@ -249,11 +249,11 @@ paths:
               parameters:
                 orgContact-id: $request.path.orgContact-id
             memberOf:
-              operationId: contacts.ListMemberOf
+              operationId: contacts.ListMemberGraphOPre
               parameters:
                 orgContact-id: $request.path.orgContact-id
             transitiveMemberOf:
-              operationId: contacts.ListTransitiveMemberOf
+              operationId: contacts.ListTransitiveMemberGraphOPre
               parameters:
                 orgContact-id: $request.path.orgContact-id
         default:
@@ -398,7 +398,7 @@ paths:
         - contacts.directoryObject
       summary: Get ref of directReports from contacts
       description: The contact's direct reports. (The users and contacts that have their manager property set to this contact.) Read-only. Nullable. Supports $expand.
-      operationId: contacts_ListGraphRefDirectReports
+      operationId: contacts_ListDirectReportsGraphBPreRef
       parameters:
         - name: orgContact-id
           in: path
@@ -455,7 +455,7 @@ paths:
         - contacts.directoryObject
       summary: Create new navigation property ref to directReports for contacts
       description: The contact's direct reports. (The users and contacts that have their manager property set to this contact.) Read-only. Nullable. Supports $expand.
-      operationId: contacts_CreateGraphRefDirectReports
+      operationId: contacts_CreateDirectReportsGraphBPreRef
       parameters:
         - name: orgContact-id
           in: path
@@ -541,7 +541,7 @@ paths:
         - contacts.directoryObject
       summary: Get ref of manager from contacts
       description: The user or contact that is this contact's manager. Read-only. Supports $expand.
-      operationId: contacts_GetGraphRefManager
+      operationId: contacts_GetManagerGraphBPreRef
       parameters:
         - name: orgContact-id
           in: path
@@ -565,7 +565,7 @@ paths:
         - contacts.directoryObject
       summary: Update the ref of navigation property manager in contacts
       description: The user or contact that is this contact's manager. Read-only. Supports $expand.
-      operationId: contacts_SetGraphRefManager
+      operationId: contacts_SetManagerGraphBPreRef
       parameters:
         - name: orgContact-id
           in: path
@@ -594,7 +594,7 @@ paths:
         - contacts.directoryObject
       summary: Delete ref of navigation property manager for contacts
       description: The user or contact that is this contact's manager. Read-only. Supports $expand.
-      operationId: contacts_DeleteGraphRefManager
+      operationId: contacts_DeleteManagerGraphBPreRef
       parameters:
         - name: orgContact-id
           in: path
@@ -620,7 +620,7 @@ paths:
         - contacts.directoryObject
       summary: Get memberOf from contacts
       description: Groups that this contact is a member of. Read-only. Nullable. Supports $expand.
-      operationId: contacts_ListMemberOf
+      operationId: contacts_ListMemberGraphOPre
       parameters:
         - name: orgContact-id
           in: path
@@ -703,7 +703,7 @@ paths:
         - contacts.directoryObject
       summary: Get ref of memberOf from contacts
       description: Groups that this contact is a member of. Read-only. Nullable. Supports $expand.
-      operationId: contacts_ListGraphRefMemberOf
+      operationId: contacts_ListMemberGraphOPreGraphBPreRef
       parameters:
         - name: orgContact-id
           in: path
@@ -760,7 +760,7 @@ paths:
         - contacts.directoryObject
       summary: Create new navigation property ref to memberOf for contacts
       description: Groups that this contact is a member of. Read-only. Nullable. Supports $expand.
-      operationId: contacts_CreateGraphRefMemberOf
+      operationId: contacts_CreateMemberGraphOPreGraphBPreRef
       parameters:
         - name: orgContact-id
           in: path
@@ -979,7 +979,7 @@ paths:
       tags:
         - contacts.directoryObject
       summary: Get transitiveMemberOf from contacts
-      operationId: contacts_ListTransitiveMemberOf
+      operationId: contacts_ListTransitiveMemberGraphOPre
       parameters:
         - name: orgContact-id
           in: path
@@ -1061,7 +1061,7 @@ paths:
       tags:
         - contacts.directoryObject
       summary: Get ref of transitiveMemberOf from contacts
-      operationId: contacts_ListGraphRefTransitiveMemberOf
+      operationId: contacts_ListTransitiveMemberGraphOPreGraphBPreRef
       parameters:
         - name: orgContact-id
           in: path
@@ -1117,7 +1117,7 @@ paths:
       tags:
         - contacts.directoryObject
       summary: Create new navigation property ref to transitiveMemberOf for contacts
-      operationId: contacts_CreateGraphRefTransitiveMemberOf
+      operationId: contacts_CreateTransitiveMemberGraphOPreGraphBPreRef
       parameters:
         - name: orgContact-id
           in: path
@@ -1202,7 +1202,7 @@ paths:
       tags:
         - contacts.Actions
       summary: Invoke action getByIds
-      operationId: contacts_getByIds
+      operationId: contacts_getGraphBPreIds
       requestBody:
         description: Action parameters
         content:
@@ -1703,7 +1703,7 @@ paths:
       tags:
         - contracts.Actions
       summary: Invoke action getByIds
-      operationId: contracts_getByIds
+      operationId: contracts_getGraphBPreIds
       requestBody:
         description: Action parameters
         content:
@@ -2030,7 +2030,7 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.device'
           links:
             memberOf:
-              operationId: devices.ListMemberOf
+              operationId: devices.ListMemberGraphOPre
               parameters:
                 device-id: $request.path.device-id
             registeredOwners:
@@ -2042,7 +2042,7 @@ paths:
               parameters:
                 device-id: $request.path.device-id
             transitiveMemberOf:
-              operationId: devices.ListTransitiveMemberOf
+              operationId: devices.ListTransitiveMemberGraphOPre
               parameters:
                 device-id: $request.path.device-id
             extensions:
@@ -2341,7 +2341,7 @@ paths:
         - devices.directoryObject
       summary: Get memberOf from devices
       description: Groups that this device is a member of. Read-only. Nullable. Supports $expand.
-      operationId: devices_ListMemberOf
+      operationId: devices_ListMemberGraphOPre
       parameters:
         - name: device-id
           in: path
@@ -2424,7 +2424,7 @@ paths:
         - devices.directoryObject
       summary: Get ref of memberOf from devices
       description: Groups that this device is a member of. Read-only. Nullable. Supports $expand.
-      operationId: devices_ListGraphRefMemberOf
+      operationId: devices_ListMemberGraphOPreGraphBPreRef
       parameters:
         - name: device-id
           in: path
@@ -2481,7 +2481,7 @@ paths:
         - devices.directoryObject
       summary: Create new navigation property ref to memberOf for devices
       description: Groups that this device is a member of. Read-only. Nullable. Supports $expand.
-      operationId: devices_CreateGraphRefMemberOf
+      operationId: devices_CreateMemberGraphOPreGraphBPreRef
       parameters:
         - name: device-id
           in: path
@@ -2784,7 +2784,7 @@ paths:
         - devices.directoryObject
       summary: Get ref of registeredOwners from devices
       description: 'The user that cloud joined the device or registered their personal device. The registered owner is set at the time of registration. Currently, there can be only one owner. Read-only. Nullable. Supports $expand.'
-      operationId: devices_ListGraphRefRegisteredOwners
+      operationId: devices_ListRegisteredOwnersGraphBPreRef
       parameters:
         - name: device-id
           in: path
@@ -2841,7 +2841,7 @@ paths:
         - devices.directoryObject
       summary: Create new navigation property ref to registeredOwners for devices
       description: 'The user that cloud joined the device or registered their personal device. The registered owner is set at the time of registration. Currently, there can be only one owner. Read-only. Nullable. Supports $expand.'
-      operationId: devices_CreateGraphRefRegisteredOwners
+      operationId: devices_CreateRegisteredOwnersGraphBPreRef
       parameters:
         - name: device-id
           in: path
@@ -2960,7 +2960,7 @@ paths:
         - devices.directoryObject
       summary: Get ref of registeredUsers from devices
       description: 'Collection of registered users of the device. For cloud joined devices and registered personal devices, registered users are set to the same value as registered owners at the time of registration. Read-only. Nullable. Supports $expand.'
-      operationId: devices_ListGraphRefRegisteredUsers
+      operationId: devices_ListRegisteredUsersGraphBPreRef
       parameters:
         - name: device-id
           in: path
@@ -3017,7 +3017,7 @@ paths:
         - devices.directoryObject
       summary: Create new navigation property ref to registeredUsers for devices
       description: 'Collection of registered users of the device. For cloud joined devices and registered personal devices, registered users are set to the same value as registered owners at the time of registration. Read-only. Nullable. Supports $expand.'
-      operationId: devices_CreateGraphRefRegisteredUsers
+      operationId: devices_CreateRegisteredUsersGraphBPreRef
       parameters:
         - name: device-id
           in: path
@@ -3053,7 +3053,7 @@ paths:
         - devices.directoryObject
       summary: Get transitiveMemberOf from devices
       description: Groups that the device is a member of. This operation is transitive. Supports $expand.
-      operationId: devices_ListTransitiveMemberOf
+      operationId: devices_ListTransitiveMemberGraphOPre
       parameters:
         - name: device-id
           in: path
@@ -3136,7 +3136,7 @@ paths:
         - devices.directoryObject
       summary: Get ref of transitiveMemberOf from devices
       description: Groups that the device is a member of. This operation is transitive. Supports $expand.
-      operationId: devices_ListGraphRefTransitiveMemberOf
+      operationId: devices_ListTransitiveMemberGraphOPreGraphBPreRef
       parameters:
         - name: device-id
           in: path
@@ -3193,7 +3193,7 @@ paths:
         - devices.directoryObject
       summary: Create new navigation property ref to transitiveMemberOf for devices
       description: Groups that the device is a member of. This operation is transitive. Supports $expand.
-      operationId: devices_CreateGraphRefTransitiveMemberOf
+      operationId: devices_CreateTransitiveMemberGraphOPreGraphBPreRef
       parameters:
         - name: device-id
           in: path
@@ -3260,7 +3260,7 @@ paths:
       tags:
         - devices.Actions
       summary: Invoke action getByIds
-      operationId: devices_getByIds
+      operationId: devices_getGraphBPreIds
       requestBody:
         description: Action parameters
         content:
@@ -3956,7 +3956,7 @@ paths:
         - directory.administrativeUnit
       summary: Get ref of members from directory
       description: Users and groups that are members of this administrative unit. Supports $expand.
-      operationId: directory.administrativeUnits_ListGraphRefMembers
+      operationId: directory.administrativeUnits_ListMembersGraphBPreRef
       parameters:
         - name: administrativeUnit-id
           in: path
@@ -4013,7 +4013,7 @@ paths:
         - directory.administrativeUnit
       summary: Create new navigation property ref to members for directory
       description: Users and groups that are members of this administrative unit. Supports $expand.
-      operationId: directory.administrativeUnits_CreateGraphRefMembers
+      operationId: directory.administrativeUnits_CreateMembersGraphBPreRef
       parameters:
         - name: administrativeUnit-id
           in: path
@@ -4820,7 +4820,7 @@ paths:
         - directoryRoles.directoryObject
       summary: Get ref of members from directoryRoles
       description: 'Users that are members of this directory role. HTTP Methods: GET, POST, DELETE. Read-only. Nullable. Supports $expand.'
-      operationId: directoryRoles_ListGraphRefMembers
+      operationId: directoryRoles_ListMembersGraphBPreRef
       parameters:
         - name: directoryRole-id
           in: path
@@ -4877,7 +4877,7 @@ paths:
         - directoryRoles.directoryObject
       summary: Create new navigation property ref to members for directoryRoles
       description: 'Users that are members of this directory role. HTTP Methods: GET, POST, DELETE. Read-only. Nullable. Supports $expand.'
-      operationId: directoryRoles_CreateGraphRefMembers
+      operationId: directoryRoles_CreateMembersGraphBPreRef
       parameters:
         - name: directoryRole-id
           in: path
@@ -5391,7 +5391,7 @@ paths:
       tags:
         - directoryRoles.Actions
       summary: Invoke action getByIds
-      operationId: directoryRoles_getByIds
+      operationId: directoryRoles_getGraphBPreIds
       requestBody:
         description: Action parameters
         content:
@@ -5883,7 +5883,7 @@ paths:
       tags:
         - directoryRoleTemplates.Actions
       summary: Invoke action getByIds
-      operationId: directoryRoleTemplates_getByIds
+      operationId: directoryRoleTemplates_getGraphBPreIds
       requestBody:
         description: Action parameters
         content:
@@ -6309,7 +6309,7 @@ paths:
         - domains.directoryObject
       summary: Get ref of domainNameReferences from domains
       description: 'Read-only, Nullable'
-      operationId: domains_ListGraphRefDomainNameReferences
+      operationId: domains_ListDomainNameReferencesGraphBPreRef
       parameters:
         - name: domain-id
           in: path
@@ -6366,7 +6366,7 @@ paths:
         - domains.directoryObject
       summary: Create new navigation property ref to domainNameReferences for domains
       description: 'Read-only, Nullable'
-      operationId: domains_CreateGraphRefDomainNameReferences
+      operationId: domains_CreateDomainNameReferencesGraphBPreRef
       parameters:
         - name: domain-id
           in: path
@@ -7866,7 +7866,7 @@ paths:
       tags:
         - organization.Actions
       summary: Invoke action getByIds
-      operationId: organization_getByIds
+      operationId: organization_getGraphBPreIds
       requestBody:
         description: Action parameters
         content:
@@ -8132,7 +8132,7 @@ paths:
         - users.scopedRoleMembership
       summary: Get scopedRoleMemberOf from users
       description: The scoped-role administrative unit memberships for this user. Read-only. Nullable.
-      operationId: users_ListScopedRoleMemberOf
+      operationId: users_ListScopedRoleMemberGraphOPre
       parameters:
         - name: user-id
           in: path
@@ -8220,7 +8220,7 @@ paths:
         - users.scopedRoleMembership
       summary: Create new navigation property to scopedRoleMemberOf for users
       description: The scoped-role administrative unit memberships for this user. Read-only. Nullable.
-      operationId: users_CreateScopedRoleMemberOf
+      operationId: users_CreateScopedRoleMemberGraphOPre
       parameters:
         - name: user-id
           in: path
@@ -8252,7 +8252,7 @@ paths:
         - users.scopedRoleMembership
       summary: Get scopedRoleMemberOf from users
       description: The scoped-role administrative unit memberships for this user. Read-only. Nullable.
-      operationId: users_GetScopedRoleMemberOf
+      operationId: users_GetScopedRoleMemberGraphOPre
       parameters:
         - name: user-id
           in: path
@@ -8310,7 +8310,7 @@ paths:
         - users.scopedRoleMembership
       summary: Update the navigation property scopedRoleMemberOf in users
       description: The scoped-role administrative unit memberships for this user. Read-only. Nullable.
-      operationId: users_UpdateScopedRoleMemberOf
+      operationId: users_UpdateScopedRoleMemberGraphOPre
       parameters:
         - name: user-id
           in: path
@@ -8344,7 +8344,7 @@ paths:
         - users.scopedRoleMembership
       summary: Delete navigation property scopedRoleMemberOf for users
       description: The scoped-role administrative unit memberships for this user. Read-only. Nullable.
-      operationId: users_DeleteScopedRoleMemberOf
+      operationId: users_DeleteScopedRoleMemberGraphOPre
       parameters:
         - name: user-id
           in: path

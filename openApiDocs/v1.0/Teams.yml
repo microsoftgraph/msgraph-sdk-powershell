@@ -1221,7 +1221,7 @@ paths:
         - chats.teamsAppInstallation
       summary: Get ref of teamsApp from chats
       description: The app that is installed.
-      operationId: chats.installedApps_GetGraphRefTeamsApp
+      operationId: chats.installedApps_GetTeamsAppGraphBPreRef
       parameters:
         - name: chat-id
           in: path
@@ -1258,7 +1258,7 @@ paths:
         - chats.teamsAppInstallation
       summary: Update the ref of navigation property teamsApp in chats
       description: The app that is installed.
-      operationId: chats.installedApps_SetGraphRefTeamsApp
+      operationId: chats.installedApps_SetTeamsAppGraphBPreRef
       parameters:
         - name: chat-id
           in: path
@@ -1294,7 +1294,7 @@ paths:
         - chats.teamsAppInstallation
       summary: Delete ref of navigation property teamsApp for chats
       description: The app that is installed.
-      operationId: chats.installedApps_DeleteGraphRefTeamsApp
+      operationId: chats.installedApps_DeleteTeamsAppGraphBPreRef
       parameters:
         - name: chat-id
           in: path
@@ -1399,7 +1399,7 @@ paths:
         - chats.teamsAppInstallation
       summary: Get ref of teamsAppDefinition from chats
       description: The details of this version of the app.
-      operationId: chats.installedApps_GetGraphRefTeamsAppDefinition
+      operationId: chats.installedApps_GetTeamsAppDefinitionGraphBPreRef
       parameters:
         - name: chat-id
           in: path
@@ -1436,7 +1436,7 @@ paths:
         - chats.teamsAppInstallation
       summary: Update the ref of navigation property teamsAppDefinition in chats
       description: The details of this version of the app.
-      operationId: chats.installedApps_SetGraphRefTeamsAppDefinition
+      operationId: chats.installedApps_SetTeamsAppDefinitionGraphBPreRef
       parameters:
         - name: chat-id
           in: path
@@ -1472,7 +1472,7 @@ paths:
         - chats.teamsAppInstallation
       summary: Delete ref of navigation property teamsAppDefinition for chats
       description: The details of this version of the app.
-      operationId: chats.installedApps_DeleteGraphRefTeamsAppDefinition
+      operationId: chats.installedApps_DeleteTeamsAppDefinitionGraphBPreRef
       parameters:
         - name: chat-id
           in: path
@@ -3203,7 +3203,7 @@ paths:
         - chats.teamsTab
       summary: Get ref of teamsApp from chats
       description: The application that is linked to the tab. This cannot be changed after tab creation.
-      operationId: chats.tabs_GetGraphRefTeamsApp
+      operationId: chats.tabs_GetTeamsAppGraphBPreRef
       parameters:
         - name: chat-id
           in: path
@@ -3240,7 +3240,7 @@ paths:
         - chats.teamsTab
       summary: Update the ref of navigation property teamsApp in chats
       description: The application that is linked to the tab. This cannot be changed after tab creation.
-      operationId: chats.tabs_SetGraphRefTeamsApp
+      operationId: chats.tabs_SetTeamsAppGraphBPreRef
       parameters:
         - name: chat-id
           in: path
@@ -3276,7 +3276,7 @@ paths:
         - chats.teamsTab
       summary: Delete ref of navigation property teamsApp for chats
       description: The application that is linked to the tab. This cannot be changed after tab creation.
-      operationId: chats.tabs_DeleteGraphRefTeamsApp
+      operationId: chats.tabs_DeleteTeamsAppGraphBPreRef
       parameters:
         - name: chat-id
           in: path
@@ -4196,12 +4196,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.driveItem'
           links:
             createdByUser:
-              operationId: teams.channels.FilesFolder.GetCreatedByUser
+              operationId: teams.channels.FilesFolder.GetCreatedGraphBPreUser
               parameters:
                 team-id: $request.path.team-id
                 channel-id: $request.path.channel-id
             lastModifiedByUser:
-              operationId: teams.channels.FilesFolder.GetLastModifiedByUser
+              operationId: teams.channels.FilesFolder.GetLastModifiedGraphBPreUser
               parameters:
                 team-id: $request.path.team-id
                 channel-id: $request.path.channel-id
@@ -4254,7 +4254,7 @@ paths:
         - teams.channel
       summary: Get ref of filesFolder from teams
       description: Metadata for the location where the channel's files are stored.
-      operationId: teams.channels_GetGraphRefFilesFolder
+      operationId: teams.channels_GetFilesFolderGraphBPreRef
       parameters:
         - name: team-id
           in: path
@@ -4279,12 +4279,12 @@ paths:
                 type: string
           links:
             createdByUser:
-              operationId: teams.channels.FilesFolder.GetCreatedByUser
+              operationId: teams.channels.FilesFolder.GetCreatedGraphBPreUser
               parameters:
                 team-id: $request.path.team-id
                 channel-id: $request.path.channel-id
             lastModifiedByUser:
-              operationId: teams.channels.FilesFolder.GetLastModifiedByUser
+              operationId: teams.channels.FilesFolder.GetLastModifiedGraphBPreUser
               parameters:
                 team-id: $request.path.team-id
                 channel-id: $request.path.channel-id
@@ -4336,7 +4336,7 @@ paths:
         - teams.channel
       summary: Update the ref of navigation property filesFolder in teams
       description: Metadata for the location where the channel's files are stored.
-      operationId: teams.channels_SetGraphRefFilesFolder
+      operationId: teams.channels_SetFilesFolderGraphBPreRef
       parameters:
         - name: team-id
           in: path
@@ -4372,7 +4372,7 @@ paths:
         - teams.channel
       summary: Delete ref of navigation property filesFolder for teams
       description: Metadata for the location where the channel's files are stored.
-      operationId: teams.channels_DeleteGraphRefFilesFolder
+      operationId: teams.channels_DeleteFilesFolderGraphBPreRef
       parameters:
         - name: team-id
           in: path
@@ -6350,7 +6350,7 @@ paths:
         - teams.channel
       summary: Get ref of teamsApp from teams
       description: The application that is linked to the tab. This cannot be changed after tab creation.
-      operationId: teams.channels.tabs_GetGraphRefTeamsApp
+      operationId: teams.channels.tabs_GetTeamsAppGraphBPreRef
       parameters:
         - name: team-id
           in: path
@@ -6395,7 +6395,7 @@ paths:
         - teams.channel
       summary: Update the ref of navigation property teamsApp in teams
       description: The application that is linked to the tab. This cannot be changed after tab creation.
-      operationId: teams.channels.tabs_SetGraphRefTeamsApp
+      operationId: teams.channels.tabs_SetTeamsAppGraphBPreRef
       parameters:
         - name: team-id
           in: path
@@ -6438,7 +6438,7 @@ paths:
         - teams.channel
       summary: Delete ref of navigation property teamsApp for teams
       description: The application that is linked to the tab. This cannot be changed after tab creation.
-      operationId: teams.channels.tabs_DeleteGraphRefTeamsApp
+      operationId: teams.channels.tabs_DeleteTeamsAppGraphBPreRef
       parameters:
         - name: team-id
           in: path
@@ -6642,11 +6642,11 @@ paths:
               parameters:
                 team-id: $request.path.team-id
             createdOnBehalfOf:
-              operationId: teams.Group.GetCreatedOnBehalfOf
+              operationId: teams.Group.GetCreatedOnBehalfGraphOPre
               parameters:
                 team-id: $request.path.team-id
             memberOf:
-              operationId: teams.Group.ListMemberOf
+              operationId: teams.Group.ListMemberGraphOPre
               parameters:
                 team-id: $request.path.team-id
             members:
@@ -6654,7 +6654,7 @@ paths:
               parameters:
                 team-id: $request.path.team-id
             membersWithLicenseErrors:
-              operationId: teams.Group.ListMembersWithLicenseErrors
+              operationId: teams.Group.ListMembersGraphWPreLicenseErrors
               parameters:
                 team-id: $request.path.team-id
             owners:
@@ -6670,7 +6670,7 @@ paths:
               parameters:
                 team-id: $request.path.team-id
             transitiveMemberOf:
-              operationId: teams.Group.ListTransitiveMemberOf
+              operationId: teams.Group.ListTransitiveMemberGraphOPre
               parameters:
                 team-id: $request.path.team-id
             transitiveMembers:
@@ -6753,7 +6753,7 @@ paths:
       tags:
         - teams.group
       summary: Get ref of group from teams
-      operationId: teams_GetGraphRefGroup
+      operationId: teams_GetGroupGraphBPreRef
       parameters:
         - name: team-id
           in: path
@@ -6775,11 +6775,11 @@ paths:
               parameters:
                 team-id: $request.path.team-id
             createdOnBehalfOf:
-              operationId: teams.Group.GetCreatedOnBehalfOf
+              operationId: teams.Group.GetCreatedOnBehalfGraphOPre
               parameters:
                 team-id: $request.path.team-id
             memberOf:
-              operationId: teams.Group.ListMemberOf
+              operationId: teams.Group.ListMemberGraphOPre
               parameters:
                 team-id: $request.path.team-id
             members:
@@ -6787,7 +6787,7 @@ paths:
               parameters:
                 team-id: $request.path.team-id
             membersWithLicenseErrors:
-              operationId: teams.Group.ListMembersWithLicenseErrors
+              operationId: teams.Group.ListMembersGraphWPreLicenseErrors
               parameters:
                 team-id: $request.path.team-id
             owners:
@@ -6803,7 +6803,7 @@ paths:
               parameters:
                 team-id: $request.path.team-id
             transitiveMemberOf:
-              operationId: teams.Group.ListTransitiveMemberOf
+              operationId: teams.Group.ListTransitiveMemberGraphOPre
               parameters:
                 team-id: $request.path.team-id
             transitiveMembers:
@@ -6885,7 +6885,7 @@ paths:
       tags:
         - teams.group
       summary: Update the ref of navigation property group in teams
-      operationId: teams_SetGraphRefGroup
+      operationId: teams_SetGroupGraphBPreRef
       parameters:
         - name: team-id
           in: path
@@ -6913,7 +6913,7 @@ paths:
       tags:
         - teams.group
       summary: Delete ref of navigation property group for teams
-      operationId: teams_DeleteGraphRefGroup
+      operationId: teams_DeleteGroupGraphBPreRef
       parameters:
         - name: team-id
           in: path
@@ -7285,7 +7285,7 @@ paths:
         - teams.teamsAppInstallation
       summary: Get ref of teamsApp from teams
       description: The app that is installed.
-      operationId: teams.installedApps_GetGraphRefTeamsApp
+      operationId: teams.installedApps_GetTeamsAppGraphBPreRef
       parameters:
         - name: team-id
           in: path
@@ -7322,7 +7322,7 @@ paths:
         - teams.teamsAppInstallation
       summary: Update the ref of navigation property teamsApp in teams
       description: The app that is installed.
-      operationId: teams.installedApps_SetGraphRefTeamsApp
+      operationId: teams.installedApps_SetTeamsAppGraphBPreRef
       parameters:
         - name: team-id
           in: path
@@ -7358,7 +7358,7 @@ paths:
         - teams.teamsAppInstallation
       summary: Delete ref of navigation property teamsApp for teams
       description: The app that is installed.
-      operationId: teams.installedApps_DeleteGraphRefTeamsApp
+      operationId: teams.installedApps_DeleteTeamsAppGraphBPreRef
       parameters:
         - name: team-id
           in: path
@@ -7463,7 +7463,7 @@ paths:
         - teams.teamsAppInstallation
       summary: Get ref of teamsAppDefinition from teams
       description: The details of this version of the app.
-      operationId: teams.installedApps_GetGraphRefTeamsAppDefinition
+      operationId: teams.installedApps_GetTeamsAppDefinitionGraphBPreRef
       parameters:
         - name: team-id
           in: path
@@ -7500,7 +7500,7 @@ paths:
         - teams.teamsAppInstallation
       summary: Update the ref of navigation property teamsAppDefinition in teams
       description: The details of this version of the app.
-      operationId: teams.installedApps_SetGraphRefTeamsAppDefinition
+      operationId: teams.installedApps_SetTeamsAppDefinitionGraphBPreRef
       parameters:
         - name: team-id
           in: path
@@ -7536,7 +7536,7 @@ paths:
         - teams.teamsAppInstallation
       summary: Delete ref of navigation property teamsAppDefinition for teams
       description: The details of this version of the app.
-      operationId: teams.installedApps_DeleteGraphRefTeamsAppDefinition
+      operationId: teams.installedApps_DeleteTeamsAppDefinitionGraphBPreRef
       parameters:
         - name: team-id
           in: path
@@ -8514,11 +8514,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.driveItem'
           links:
             createdByUser:
-              operationId: teams.primaryChannel.FilesFolder.GetCreatedByUser
+              operationId: teams.primaryChannel.FilesFolder.GetCreatedGraphBPreUser
               parameters:
                 team-id: $request.path.team-id
             lastModifiedByUser:
-              operationId: teams.primaryChannel.FilesFolder.GetLastModifiedByUser
+              operationId: teams.primaryChannel.FilesFolder.GetLastModifiedGraphBPreUser
               parameters:
                 team-id: $request.path.team-id
             workbook:
@@ -8562,7 +8562,7 @@ paths:
         - teams.channel
       summary: Get ref of filesFolder from teams
       description: Metadata for the location where the channel's files are stored.
-      operationId: teams.primaryChannel_GetGraphRefFilesFolder
+      operationId: teams.primaryChannel_GetFilesFolderGraphBPreRef
       parameters:
         - name: team-id
           in: path
@@ -8580,11 +8580,11 @@ paths:
                 type: string
           links:
             createdByUser:
-              operationId: teams.primaryChannel.FilesFolder.GetCreatedByUser
+              operationId: teams.primaryChannel.FilesFolder.GetCreatedGraphBPreUser
               parameters:
                 team-id: $request.path.team-id
             lastModifiedByUser:
-              operationId: teams.primaryChannel.FilesFolder.GetLastModifiedByUser
+              operationId: teams.primaryChannel.FilesFolder.GetLastModifiedGraphBPreUser
               parameters:
                 team-id: $request.path.team-id
             workbook:
@@ -8627,7 +8627,7 @@ paths:
         - teams.channel
       summary: Update the ref of navigation property filesFolder in teams
       description: Metadata for the location where the channel's files are stored.
-      operationId: teams.primaryChannel_SetGraphRefFilesFolder
+      operationId: teams.primaryChannel_SetFilesFolderGraphBPreRef
       parameters:
         - name: team-id
           in: path
@@ -8656,7 +8656,7 @@ paths:
         - teams.channel
       summary: Delete ref of navigation property filesFolder for teams
       description: Metadata for the location where the channel's files are stored.
-      operationId: teams.primaryChannel_DeleteGraphRefFilesFolder
+      operationId: teams.primaryChannel_DeleteFilesFolderGraphBPreRef
       parameters:
         - name: team-id
           in: path
@@ -10397,7 +10397,7 @@ paths:
         - teams.channel
       summary: Get ref of teamsApp from teams
       description: The application that is linked to the tab. This cannot be changed after tab creation.
-      operationId: teams.primaryChannel.tabs_GetGraphRefTeamsApp
+      operationId: teams.primaryChannel.tabs_GetTeamsAppGraphBPreRef
       parameters:
         - name: team-id
           in: path
@@ -10434,7 +10434,7 @@ paths:
         - teams.channel
       summary: Update the ref of navigation property teamsApp in teams
       description: The application that is linked to the tab. This cannot be changed after tab creation.
-      operationId: teams.primaryChannel.tabs_SetGraphRefTeamsApp
+      operationId: teams.primaryChannel.tabs_SetTeamsAppGraphBPreRef
       parameters:
         - name: team-id
           in: path
@@ -10470,7 +10470,7 @@ paths:
         - teams.channel
       summary: Delete ref of navigation property teamsApp for teams
       description: The application that is linked to the tab. This cannot be changed after tab creation.
-      operationId: teams.primaryChannel.tabs_DeleteGraphRefTeamsApp
+      operationId: teams.primaryChannel.tabs_DeleteTeamsAppGraphBPreRef
       parameters:
         - name: team-id
           in: path
@@ -13066,7 +13066,7 @@ paths:
         - teams.teamsTemplate
       summary: Get ref of template from teams
       description: The template this team was created from. See available templates.
-      operationId: teams_GetGraphRefTemplate
+      operationId: teams_GetTemplateGraphBPreRef
       parameters:
         - name: team-id
           in: path
@@ -13090,7 +13090,7 @@ paths:
         - teams.teamsTemplate
       summary: Update the ref of navigation property template in teams
       description: The template this team was created from. See available templates.
-      operationId: teams_SetGraphRefTemplate
+      operationId: teams_SetTemplateGraphBPreRef
       parameters:
         - name: team-id
           in: path
@@ -13119,7 +13119,7 @@ paths:
         - teams.teamsTemplate
       summary: Delete ref of navigation property template for teams
       description: The template this team was created from. See available templates.
-      operationId: teams_DeleteGraphRefTemplate
+      operationId: teams_DeleteTemplateGraphBPreRef
       parameters:
         - name: team-id
           in: path
@@ -14572,7 +14572,7 @@ paths:
         - users.userTeamwork
       summary: Get ref of chat from users
       description: The chat between the user and Teams app.
-      operationId: users.teamwork.installedApps_GetGraphRefChat
+      operationId: users.teamwork.installedApps_GetChatGraphBPreRef
       parameters:
         - name: user-id
           in: path
@@ -14624,7 +14624,7 @@ paths:
         - users.userTeamwork
       summary: Update the ref of navigation property chat in users
       description: The chat between the user and Teams app.
-      operationId: users.teamwork.installedApps_SetGraphRefChat
+      operationId: users.teamwork.installedApps_SetChatGraphBPreRef
       parameters:
         - name: user-id
           in: path
@@ -14660,7 +14660,7 @@ paths:
         - users.userTeamwork
       summary: Delete ref of navigation property chat for users
       description: The chat between the user and Teams app.
-      operationId: users.teamwork.installedApps_DeleteGraphRefChat
+      operationId: users.teamwork.installedApps_DeleteChatGraphBPreRef
       parameters:
         - name: user-id
           in: path

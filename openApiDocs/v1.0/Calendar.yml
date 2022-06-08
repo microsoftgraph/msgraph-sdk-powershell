@@ -1178,7 +1178,7 @@ paths:
         - groups.calendar
       summary: Get ref of calendar from groups
       description: The calendar that contains the event. Navigation property. Read-only.
-      operationId: groups.calendar.calendarView_GetGraphRefCalendar
+      operationId: groups.calendar.calendarView_GetCalendarGraphBPreRef
       parameters:
         - name: group-id
           in: path
@@ -1235,7 +1235,7 @@ paths:
         - groups.calendar
       summary: Update the ref of navigation property calendar in groups
       description: The calendar that contains the event. Navigation property. Read-only.
-      operationId: groups.calendar.calendarView_SetGraphRefCalendar
+      operationId: groups.calendar.calendarView_SetCalendarGraphBPreRef
       parameters:
         - name: group-id
           in: path
@@ -1271,7 +1271,7 @@ paths:
         - groups.calendar
       summary: Delete ref of navigation property calendar for groups
       description: The calendar that contains the event. Navigation property. Read-only.
-      operationId: groups.calendar.calendarView_DeleteGraphRefCalendar
+      operationId: groups.calendar.calendarView_DeleteCalendarGraphBPreRef
       parameters:
         - name: group-id
           in: path
@@ -3353,7 +3353,7 @@ paths:
         - groups.calendar
       summary: Get ref of calendar from groups
       description: The calendar that contains the event. Navigation property. Read-only.
-      operationId: groups.calendar.events_GetGraphRefCalendar
+      operationId: groups.calendar.events_GetCalendarGraphBPreRef
       parameters:
         - name: group-id
           in: path
@@ -3410,7 +3410,7 @@ paths:
         - groups.calendar
       summary: Update the ref of navigation property calendar in groups
       description: The calendar that contains the event. Navigation property. Read-only.
-      operationId: groups.calendar.events_SetGraphRefCalendar
+      operationId: groups.calendar.events_SetCalendarGraphBPreRef
       parameters:
         - name: group-id
           in: path
@@ -3446,7 +3446,7 @@ paths:
         - groups.calendar
       summary: Delete ref of navigation property calendar for groups
       description: The calendar that contains the event. Navigation property. Read-only.
-      operationId: groups.calendar.events_DeleteGraphRefCalendar
+      operationId: groups.calendar.events_DeleteCalendarGraphBPreRef
       parameters:
         - name: group-id
           in: path
@@ -6026,7 +6026,7 @@ paths:
         - groups.event
       summary: Get ref of calendar from groups
       description: The calendar that contains the event. Navigation property. Read-only.
-      operationId: groups.calendarView_GetGraphRefCalendar
+      operationId: groups.calendarView_GetCalendarGraphBPreRef
       parameters:
         - name: group-id
           in: path
@@ -6083,7 +6083,7 @@ paths:
         - groups.event
       summary: Update the ref of navigation property calendar in groups
       description: The calendar that contains the event. Navigation property. Read-only.
-      operationId: groups.calendarView_SetGraphRefCalendar
+      operationId: groups.calendarView_SetCalendarGraphBPreRef
       parameters:
         - name: group-id
           in: path
@@ -6119,7 +6119,7 @@ paths:
         - groups.event
       summary: Delete ref of navigation property calendar for groups
       description: The calendar that contains the event. Navigation property. Read-only.
-      operationId: groups.calendarView_DeleteGraphRefCalendar
+      operationId: groups.calendarView_DeleteCalendarGraphBPreRef
       parameters:
         - name: group-id
           in: path
@@ -8201,7 +8201,7 @@ paths:
         - groups.event
       summary: Get ref of calendar from groups
       description: The calendar that contains the event. Navigation property. Read-only.
-      operationId: groups.events_GetGraphRefCalendar
+      operationId: groups.events_GetCalendarGraphBPreRef
       parameters:
         - name: group-id
           in: path
@@ -8258,7 +8258,7 @@ paths:
         - groups.event
       summary: Update the ref of navigation property calendar in groups
       description: The calendar that contains the event. Navigation property. Read-only.
-      operationId: groups.events_SetGraphRefCalendar
+      operationId: groups.events_SetCalendarGraphBPreRef
       parameters:
         - name: group-id
           in: path
@@ -8294,7 +8294,7 @@ paths:
         - groups.event
       summary: Delete ref of navigation property calendar for groups
       description: The calendar that contains the event. Navigation property. Read-only.
-      operationId: groups.events_DeleteGraphRefCalendar
+      operationId: groups.events_DeleteCalendarGraphBPreRef
       parameters:
         - name: group-id
           in: path
@@ -10964,7 +10964,7 @@ paths:
         - users.calendar
       summary: Get ref of calendar from users
       description: The calendar that contains the event. Navigation property. Read-only.
-      operationId: users.calendar.calendarView_GetGraphRefCalendar
+      operationId: users.calendar.calendarView_GetCalendarGraphBPreRef
       parameters:
         - name: user-id
           in: path
@@ -11021,7 +11021,7 @@ paths:
         - users.calendar
       summary: Update the ref of navigation property calendar in users
       description: The calendar that contains the event. Navigation property. Read-only.
-      operationId: users.calendar.calendarView_SetGraphRefCalendar
+      operationId: users.calendar.calendarView_SetCalendarGraphBPreRef
       parameters:
         - name: user-id
           in: path
@@ -11057,7 +11057,7 @@ paths:
         - users.calendar
       summary: Delete ref of navigation property calendar for users
       description: The calendar that contains the event. Navigation property. Read-only.
-      operationId: users.calendar.calendarView_DeleteGraphRefCalendar
+      operationId: users.calendar.calendarView_DeleteCalendarGraphBPreRef
       parameters:
         - name: user-id
           in: path
@@ -13139,7 +13139,7 @@ paths:
         - users.calendar
       summary: Get ref of calendar from users
       description: The calendar that contains the event. Navigation property. Read-only.
-      operationId: users.calendar.events_GetGraphRefCalendar
+      operationId: users.calendar.events_GetCalendarGraphBPreRef
       parameters:
         - name: user-id
           in: path
@@ -13196,7 +13196,7 @@ paths:
         - users.calendar
       summary: Update the ref of navigation property calendar in users
       description: The calendar that contains the event. Navigation property. Read-only.
-      operationId: users.calendar.events_SetGraphRefCalendar
+      operationId: users.calendar.events_SetCalendarGraphBPreRef
       parameters:
         - name: user-id
           in: path
@@ -13232,7 +13232,7 @@ paths:
         - users.calendar
       summary: Delete ref of navigation property calendar for users
       description: The calendar that contains the event. Navigation property. Read-only.
-      operationId: users.calendar.events_DeleteGraphRefCalendar
+      operationId: users.calendar.events_DeleteCalendarGraphBPreRef
       parameters:
         - name: user-id
           in: path
@@ -16826,7 +16826,7 @@ paths:
         - users.calendarGroup
       summary: Get ref of calendar from users
       description: The calendar that contains the event. Navigation property. Read-only.
-      operationId: users.calendarGroups.calendars.calendarView_GetGraphRefCalendar
+      operationId: users.calendarGroups.calendars.calendarView_GetCalendarGraphBPreRef
       parameters:
         - name: user-id
           in: path
@@ -16907,7 +16907,7 @@ paths:
         - users.calendarGroup
       summary: Update the ref of navigation property calendar in users
       description: The calendar that contains the event. Navigation property. Read-only.
-      operationId: users.calendarGroups.calendars.calendarView_SetGraphRefCalendar
+      operationId: users.calendarGroups.calendars.calendarView_SetCalendarGraphBPreRef
       parameters:
         - name: user-id
           in: path
@@ -16957,7 +16957,7 @@ paths:
         - users.calendarGroup
       summary: Delete ref of navigation property calendar for users
       description: The calendar that contains the event. Navigation property. Read-only.
-      operationId: users.calendarGroups.calendars.calendarView_DeleteGraphRefCalendar
+      operationId: users.calendarGroups.calendars.calendarView_DeleteCalendarGraphBPreRef
       parameters:
         - name: user-id
           in: path
@@ -19521,7 +19521,7 @@ paths:
         - users.calendarGroup
       summary: Get ref of calendar from users
       description: The calendar that contains the event. Navigation property. Read-only.
-      operationId: users.calendarGroups.calendars.events_GetGraphRefCalendar
+      operationId: users.calendarGroups.calendars.events_GetCalendarGraphBPreRef
       parameters:
         - name: user-id
           in: path
@@ -19602,7 +19602,7 @@ paths:
         - users.calendarGroup
       summary: Update the ref of navigation property calendar in users
       description: The calendar that contains the event. Navigation property. Read-only.
-      operationId: users.calendarGroups.calendars.events_SetGraphRefCalendar
+      operationId: users.calendarGroups.calendars.events_SetCalendarGraphBPreRef
       parameters:
         - name: user-id
           in: path
@@ -19652,7 +19652,7 @@ paths:
         - users.calendarGroup
       summary: Delete ref of navigation property calendar for users
       description: The calendar that contains the event. Navigation property. Read-only.
-      operationId: users.calendarGroups.calendars.events_DeleteGraphRefCalendar
+      operationId: users.calendarGroups.calendars.events_DeleteCalendarGraphBPreRef
       parameters:
         - name: user-id
           in: path
@@ -23325,7 +23325,7 @@ paths:
         - users.calendar
       summary: Get ref of calendar from users
       description: The calendar that contains the event. Navigation property. Read-only.
-      operationId: users.calendars.calendarView_GetGraphRefCalendar
+      operationId: users.calendars.calendarView_GetCalendarGraphBPreRef
       parameters:
         - name: user-id
           in: path
@@ -23394,7 +23394,7 @@ paths:
         - users.calendar
       summary: Update the ref of navigation property calendar in users
       description: The calendar that contains the event. Navigation property. Read-only.
-      operationId: users.calendars.calendarView_SetGraphRefCalendar
+      operationId: users.calendars.calendarView_SetCalendarGraphBPreRef
       parameters:
         - name: user-id
           in: path
@@ -23437,7 +23437,7 @@ paths:
         - users.calendar
       summary: Delete ref of navigation property calendar for users
       description: The calendar that contains the event. Navigation property. Read-only.
-      operationId: users.calendars.calendarView_DeleteGraphRefCalendar
+      operationId: users.calendars.calendarView_DeleteCalendarGraphBPreRef
       parameters:
         - name: user-id
           in: path
@@ -25760,7 +25760,7 @@ paths:
         - users.calendar
       summary: Get ref of calendar from users
       description: The calendar that contains the event. Navigation property. Read-only.
-      operationId: users.calendars.events_GetGraphRefCalendar
+      operationId: users.calendars.events_GetCalendarGraphBPreRef
       parameters:
         - name: user-id
           in: path
@@ -25829,7 +25829,7 @@ paths:
         - users.calendar
       summary: Update the ref of navigation property calendar in users
       description: The calendar that contains the event. Navigation property. Read-only.
-      operationId: users.calendars.events_SetGraphRefCalendar
+      operationId: users.calendars.events_SetCalendarGraphBPreRef
       parameters:
         - name: user-id
           in: path
@@ -25872,7 +25872,7 @@ paths:
         - users.calendar
       summary: Delete ref of navigation property calendar for users
       description: The calendar that contains the event. Navigation property. Read-only.
-      operationId: users.calendars.events_DeleteGraphRefCalendar
+      operationId: users.calendars.events_DeleteCalendarGraphBPreRef
       parameters:
         - name: user-id
           in: path
@@ -28675,7 +28675,7 @@ paths:
         - users.event
       summary: Get ref of calendar from users
       description: The calendar that contains the event. Navigation property. Read-only.
-      operationId: users.calendarView_GetGraphRefCalendar
+      operationId: users.calendarView_GetCalendarGraphBPreRef
       parameters:
         - name: user-id
           in: path
@@ -28732,7 +28732,7 @@ paths:
         - users.event
       summary: Update the ref of navigation property calendar in users
       description: The calendar that contains the event. Navigation property. Read-only.
-      operationId: users.calendarView_SetGraphRefCalendar
+      operationId: users.calendarView_SetCalendarGraphBPreRef
       parameters:
         - name: user-id
           in: path
@@ -28768,7 +28768,7 @@ paths:
         - users.event
       summary: Delete ref of navigation property calendar for users
       description: The calendar that contains the event. Navigation property. Read-only.
-      operationId: users.calendarView_DeleteGraphRefCalendar
+      operationId: users.calendarView_DeleteCalendarGraphBPreRef
       parameters:
         - name: user-id
           in: path
@@ -30850,7 +30850,7 @@ paths:
         - users.event
       summary: Get ref of calendar from users
       description: The calendar that contains the event. Navigation property. Read-only.
-      operationId: users.events_GetGraphRefCalendar
+      operationId: users.events_GetCalendarGraphBPreRef
       parameters:
         - name: user-id
           in: path
@@ -30907,7 +30907,7 @@ paths:
         - users.event
       summary: Update the ref of navigation property calendar in users
       description: The calendar that contains the event. Navigation property. Read-only.
-      operationId: users.events_SetGraphRefCalendar
+      operationId: users.events_SetCalendarGraphBPreRef
       parameters:
         - name: user-id
           in: path
@@ -30943,7 +30943,7 @@ paths:
         - users.event
       summary: Delete ref of navigation property calendar for users
       description: The calendar that contains the event. Navigation property. Read-only.
-      operationId: users.events_DeleteGraphRefCalendar
+      operationId: users.events_DeleteCalendarGraphBPreRef
       parameters:
         - name: user-id
           in: path

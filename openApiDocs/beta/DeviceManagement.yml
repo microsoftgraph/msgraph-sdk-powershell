@@ -368,11 +368,11 @@ paths:
             virtualEndpoint:
               operationId: deviceManagement.GetVirtualEndpoint
             androidForWorkAppConfigurationSchemas:
-              operationId: deviceManagement.ListAndroidForWorkAppConfigurationSchemas
+              operationId: deviceManagement.ListAndroidGraphFPreWorkAppConfigurationSchemas
             androidForWorkEnrollmentProfiles:
-              operationId: deviceManagement.ListAndroidForWorkEnrollmentProfiles
+              operationId: deviceManagement.ListAndroidGraphFPreWorkEnrollmentProfiles
             androidForWorkSettings:
-              operationId: deviceManagement.GetAndroidForWorkSettings
+              operationId: deviceManagement.GetAndroidGraphFPreWorkSettings
             androidManagedStoreAccountEnterpriseSettings:
               operationId: deviceManagement.GetAndroidManagedStoreAccountEnterpriseSettings
             androidManagedStoreAppConfigurationSchemas:
@@ -498,13 +498,13 @@ paths:
             userExperienceAnalyticsAppHealthApplicationPerformance:
               operationId: deviceManagement.ListUserExperienceAnalyticsAppHealthApplicationPerformance
             userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersion:
-              operationId: deviceManagement.ListUserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersion
+              operationId: deviceManagement.ListUserExperienceAnalyticsAppHealthApplicationPerformanceGraphBPreAppVersion
             userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDetails:
-              operationId: deviceManagement.ListUserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDetails
+              operationId: deviceManagement.ListUserExperienceAnalyticsAppHealthApplicationPerformanceGraphBPreAppVersionDetails
             userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDeviceId:
-              operationId: deviceManagement.ListUserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDeviceId
+              operationId: deviceManagement.ListUserExperienceAnalyticsAppHealthApplicationPerformanceGraphBPreAppVersionDeviceId
             userExperienceAnalyticsAppHealthApplicationPerformanceByOSVersion:
-              operationId: deviceManagement.ListUserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersion
+              operationId: deviceManagement.ListUserExperienceAnalyticsAppHealthApplicationPerformanceGraphBPreOSVersion
             userExperienceAnalyticsAppHealthDeviceModelPerformance:
               operationId: deviceManagement.ListUserExperienceAnalyticsAppHealthDeviceModelPerformance
             userExperienceAnalyticsAppHealthDevicePerformance:
@@ -1029,7 +1029,7 @@ paths:
         - deviceManagement.androidForWorkAppConfigurationSchema
       summary: Get androidForWorkAppConfigurationSchemas from deviceManagement
       description: Android for Work app configuration schema entities.
-      operationId: deviceManagement_ListAndroidForWorkAppConfigurationSchemas
+      operationId: deviceManagement_ListAndroidGraphFPreWorkAppConfigurationSchemas
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -1107,7 +1107,7 @@ paths:
         - deviceManagement.androidForWorkAppConfigurationSchema
       summary: Create new navigation property to androidForWorkAppConfigurationSchemas for deviceManagement
       description: Android for Work app configuration schema entities.
-      operationId: deviceManagement_CreateAndroidForWorkAppConfigurationSchemas
+      operationId: deviceManagement_CreateAndroidGraphFPreWorkAppConfigurationSchemas
       requestBody:
         description: New navigation property
         content:
@@ -1131,7 +1131,7 @@ paths:
         - deviceManagement.androidForWorkAppConfigurationSchema
       summary: Get androidForWorkAppConfigurationSchemas from deviceManagement
       description: Android for Work app configuration schema entities.
-      operationId: deviceManagement_GetAndroidForWorkAppConfigurationSchemas
+      operationId: deviceManagement_GetAndroidGraphFPreWorkAppConfigurationSchemas
       parameters:
         - name: androidForWorkAppConfigurationSchema-id
           in: path
@@ -1181,7 +1181,7 @@ paths:
         - deviceManagement.androidForWorkAppConfigurationSchema
       summary: Update the navigation property androidForWorkAppConfigurationSchemas in deviceManagement
       description: Android for Work app configuration schema entities.
-      operationId: deviceManagement_UpdateAndroidForWorkAppConfigurationSchemas
+      operationId: deviceManagement_UpdateAndroidGraphFPreWorkAppConfigurationSchemas
       parameters:
         - name: androidForWorkAppConfigurationSchema-id
           in: path
@@ -1208,7 +1208,7 @@ paths:
         - deviceManagement.androidForWorkAppConfigurationSchema
       summary: Delete navigation property androidForWorkAppConfigurationSchemas for deviceManagement
       description: Android for Work app configuration schema entities.
-      operationId: deviceManagement_DeleteAndroidForWorkAppConfigurationSchemas
+      operationId: deviceManagement_DeleteAndroidGraphFPreWorkAppConfigurationSchemas
       parameters:
         - name: androidForWorkAppConfigurationSchema-id
           in: path
@@ -1234,7 +1234,7 @@ paths:
         - deviceManagement.androidForWorkSettings
       summary: Get androidForWorkSettings from deviceManagement
       description: The singleton Android for Work settings entity.
-      operationId: deviceManagement_GetAndroidForWorkSettings
+      operationId: deviceManagement_GetAndroidGraphFPreWorkSettings
       parameters:
         - name: $select
           in: query
@@ -1284,7 +1284,7 @@ paths:
         - deviceManagement.androidForWorkSettings
       summary: Update the navigation property androidForWorkSettings in deviceManagement
       description: The singleton Android for Work settings entity.
-      operationId: deviceManagement_UpdateAndroidForWorkSettings
+      operationId: deviceManagement_UpdateAndroidGraphFPreWorkSettings
       requestBody:
         description: New navigation property values
         content:
@@ -1303,7 +1303,7 @@ paths:
         - deviceManagement.androidForWorkSettings
       summary: Delete navigation property androidForWorkSettings for deviceManagement
       description: The singleton Android for Work settings entity.
-      operationId: deviceManagement_DeleteAndroidForWorkSettings
+      operationId: deviceManagement_DeleteAndroidGraphFPreWorkSettings
       parameters:
         - name: If-Match
           in: header
@@ -3263,7 +3263,7 @@ paths:
         - deviceManagement.managedDevice
       summary: Get ref of detectedApps from deviceManagement
       description: All applications currently installed on the device
-      operationId: deviceManagement.comanagedDevices_ListGraphRefDetectedApps
+      operationId: deviceManagement.comanagedDevices_ListDetectedAppsGraphBPreRef
       parameters:
         - name: managedDevice-id
           in: path
@@ -3326,7 +3326,7 @@ paths:
         - deviceManagement.managedDevice
       summary: Create new navigation property ref to detectedApps for deviceManagement
       description: All applications currently installed on the device
-      operationId: deviceManagement.comanagedDevices_CreateGraphRefDetectedApps
+      operationId: deviceManagement.comanagedDevices_CreateDetectedAppsGraphBPreRef
       parameters:
         - name: managedDevice-id
           in: path
@@ -5524,7 +5524,7 @@ paths:
         - deviceManagement.managedDevice
       summary: Get ref of users from deviceManagement
       description: The primary users associated with the managed device.
-      operationId: deviceManagement.comanagedDevices_ListGraphRefUsers
+      operationId: deviceManagement.comanagedDevices_ListUsersGraphBPreRef
       parameters:
         - name: managedDevice-id
           in: path
@@ -5733,7 +5733,7 @@ paths:
         - deviceManagement.managedDevice
       summary: Create new navigation property ref to users for deviceManagement
       description: The primary users associated with the managed device.
-      operationId: deviceManagement.comanagedDevices_CreateGraphRefUsers
+      operationId: deviceManagement.comanagedDevices_CreateUsersGraphBPreRef
       parameters:
         - name: managedDevice-id
           in: path
@@ -7163,7 +7163,7 @@ paths:
         - deviceManagement.detectedApp
       summary: Get ref of managedDevices from deviceManagement
       description: The devices that have the discovered application installed
-      operationId: deviceManagement.detectedApps_ListGraphRefManagedDevices
+      operationId: deviceManagement.detectedApps_ListManagedDevicesGraphBPreRef
       parameters:
         - name: detectedApp-id
           in: path
@@ -7376,7 +7376,7 @@ paths:
         - deviceManagement.detectedApp
       summary: Create new navigation property ref to managedDevices for deviceManagement
       description: The devices that have the discovered application installed
-      operationId: deviceManagement.detectedApps_CreateGraphRefManagedDevices
+      operationId: deviceManagement.detectedApps_CreateManagedDevicesGraphBPreRef
       parameters:
         - name: detectedApp-id
           in: path
@@ -7827,7 +7827,7 @@ paths:
               parameters:
                 deviceCompliancePolicy-id: $request.path.deviceCompliancePolicy-id
             scheduledActionsForRule:
-              operationId: deviceManagement.DeviceCompliancePolicies.ListScheduledActionsForRule
+              operationId: deviceManagement.DeviceCompliancePolicies.ListScheduledActionsGraphFPreRule
               parameters:
                 deviceCompliancePolicy-id: $request.path.deviceCompliancePolicy-id
             userStatuses:
@@ -8788,7 +8788,7 @@ paths:
         - deviceManagement.deviceCompliancePolicy
       summary: Get scheduledActionsForRule from deviceManagement
       description: The list of scheduled action per rule for this compliance policy. This is a required property when creating any individual per-platform compliance policies.
-      operationId: deviceManagement.deviceCompliancePolicies_ListScheduledActionsForRule
+      operationId: deviceManagement.deviceCompliancePolicies_ListScheduledActionsGraphFPreRule
       parameters:
         - name: deviceCompliancePolicy-id
           in: path
@@ -8872,7 +8872,7 @@ paths:
         - deviceManagement.deviceCompliancePolicy
       summary: Create new navigation property to scheduledActionsForRule for deviceManagement
       description: The list of scheduled action per rule for this compliance policy. This is a required property when creating any individual per-platform compliance policies.
-      operationId: deviceManagement.deviceCompliancePolicies_CreateScheduledActionsForRule
+      operationId: deviceManagement.deviceCompliancePolicies_CreateScheduledActionsGraphFPreRule
       parameters:
         - name: deviceCompliancePolicy-id
           in: path
@@ -8904,7 +8904,7 @@ paths:
         - deviceManagement.deviceCompliancePolicy
       summary: Get scheduledActionsForRule from deviceManagement
       description: The list of scheduled action per rule for this compliance policy. This is a required property when creating any individual per-platform compliance policies.
-      operationId: deviceManagement.deviceCompliancePolicies_GetScheduledActionsForRule
+      operationId: deviceManagement.deviceCompliancePolicies_GetScheduledActionsGraphFPreRule
       parameters:
         - name: deviceCompliancePolicy-id
           in: path
@@ -8956,7 +8956,7 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.deviceComplianceScheduledActionForRule'
           links:
             scheduledActionConfigurations:
-              operationId: deviceManagement.deviceCompliancePolicies.ScheduledActionsForRule.ListScheduledActionConfigurations
+              operationId: deviceManagement.deviceCompliancePolicies.ScheduledActionsGraphFPreRule.ListScheduledActionConfigurations
               parameters:
                 deviceCompliancePolicy-id: $request.path.deviceCompliancePolicy-id
                 deviceComplianceScheduledActionForRule-id: $request.path.deviceComplianceScheduledActionForRule-id
@@ -8968,7 +8968,7 @@ paths:
         - deviceManagement.deviceCompliancePolicy
       summary: Update the navigation property scheduledActionsForRule in deviceManagement
       description: The list of scheduled action per rule for this compliance policy. This is a required property when creating any individual per-platform compliance policies.
-      operationId: deviceManagement.deviceCompliancePolicies_UpdateScheduledActionsForRule
+      operationId: deviceManagement.deviceCompliancePolicies_UpdateScheduledActionsGraphFPreRule
       parameters:
         - name: deviceCompliancePolicy-id
           in: path
@@ -9002,7 +9002,7 @@ paths:
         - deviceManagement.deviceCompliancePolicy
       summary: Delete navigation property scheduledActionsForRule for deviceManagement
       description: The list of scheduled action per rule for this compliance policy. This is a required property when creating any individual per-platform compliance policies.
-      operationId: deviceManagement.deviceCompliancePolicies_DeleteScheduledActionsForRule
+      operationId: deviceManagement.deviceCompliancePolicies_DeleteScheduledActionsGraphFPreRule
       parameters:
         - name: deviceCompliancePolicy-id
           in: path
@@ -9035,7 +9035,7 @@ paths:
         - deviceManagement.deviceCompliancePolicy
       summary: Get scheduledActionConfigurations from deviceManagement
       description: The list of scheduled action configurations for this compliance policy. Compliance policy must have one and only one block scheduled action.
-      operationId: deviceManagement.deviceCompliancePolicies.scheduledActionsForRule_ListScheduledActionConfigurations
+      operationId: deviceManagement.deviceCompliancePolicies.scheduledActionsGraphFPreRule_ListScheduledActionConfigurations
       parameters:
         - name: deviceCompliancePolicy-id
           in: path
@@ -9133,7 +9133,7 @@ paths:
         - deviceManagement.deviceCompliancePolicy
       summary: Create new navigation property to scheduledActionConfigurations for deviceManagement
       description: The list of scheduled action configurations for this compliance policy. Compliance policy must have one and only one block scheduled action.
-      operationId: deviceManagement.deviceCompliancePolicies.scheduledActionsForRule_CreateScheduledActionConfigurations
+      operationId: deviceManagement.deviceCompliancePolicies.scheduledActionsGraphFPreRule_CreateScheduledActionConfigurations
       parameters:
         - name: deviceCompliancePolicy-id
           in: path
@@ -9172,7 +9172,7 @@ paths:
         - deviceManagement.deviceCompliancePolicy
       summary: Get scheduledActionConfigurations from deviceManagement
       description: The list of scheduled action configurations for this compliance policy. Compliance policy must have one and only one block scheduled action.
-      operationId: deviceManagement.deviceCompliancePolicies.scheduledActionsForRule_GetScheduledActionConfigurations
+      operationId: deviceManagement.deviceCompliancePolicies.scheduledActionsGraphFPreRule_GetScheduledActionConfigurations
       parameters:
         - name: deviceCompliancePolicy-id
           in: path
@@ -9238,7 +9238,7 @@ paths:
         - deviceManagement.deviceCompliancePolicy
       summary: Update the navigation property scheduledActionConfigurations in deviceManagement
       description: The list of scheduled action configurations for this compliance policy. Compliance policy must have one and only one block scheduled action.
-      operationId: deviceManagement.deviceCompliancePolicies.scheduledActionsForRule_UpdateScheduledActionConfigurations
+      operationId: deviceManagement.deviceCompliancePolicies.scheduledActionsGraphFPreRule_UpdateScheduledActionConfigurations
       parameters:
         - name: deviceCompliancePolicy-id
           in: path
@@ -9279,7 +9279,7 @@ paths:
         - deviceManagement.deviceCompliancePolicy
       summary: Delete navigation property scheduledActionConfigurations for deviceManagement
       description: The list of scheduled action configurations for this compliance policy. Compliance policy must have one and only one block scheduled action.
-      operationId: deviceManagement.deviceCompliancePolicies.scheduledActionsForRule_DeleteScheduledActionConfigurations
+      operationId: deviceManagement.deviceCompliancePolicies.scheduledActionsGraphFPreRule_DeleteScheduledActionConfigurations
       parameters:
         - name: deviceCompliancePolicy-id
           in: path
@@ -12145,7 +12145,7 @@ paths:
         - deviceManagement.deviceConfiguration
       summary: Get ref of deviceConfiguration from deviceManagement
       description: The navigation link to the Device Configuration being targeted.
-      operationId: deviceManagement.deviceConfigurations.groupAssignments_GetGraphRefDeviceConfiguration
+      operationId: deviceManagement.deviceConfigurations.groupAssignments_GetDeviceConfigurationGraphBPreRef
       parameters:
         - name: deviceConfiguration-id
           in: path
@@ -12212,7 +12212,7 @@ paths:
         - deviceManagement.deviceConfiguration
       summary: Update the ref of navigation property deviceConfiguration in deviceManagement
       description: The navigation link to the Device Configuration being targeted.
-      operationId: deviceManagement.deviceConfigurations.groupAssignments_SetGraphRefDeviceConfiguration
+      operationId: deviceManagement.deviceConfigurations.groupAssignments_SetDeviceConfigurationGraphBPreRef
       parameters:
         - name: deviceConfiguration-id
           in: path
@@ -12248,7 +12248,7 @@ paths:
         - deviceManagement.deviceConfiguration
       summary: Delete ref of navigation property deviceConfiguration for deviceManagement
       description: The navigation link to the Device Configuration being targeted.
-      operationId: deviceManagement.deviceConfigurations.groupAssignments_DeleteGraphRefDeviceConfiguration
+      operationId: deviceManagement.deviceConfigurations.groupAssignments_DeleteDeviceConfigurationGraphBPreRef
       parameters:
         - name: deviceConfiguration-id
           in: path
@@ -13753,7 +13753,7 @@ paths:
         - deviceManagement.deviceHealthScript
       summary: Get ref of managedDevice from deviceManagement
       description: The managed device on which the device health script executed
-      operationId: deviceManagement.deviceHealthScripts.deviceRunStates_GetGraphRefManagedDevice
+      operationId: deviceManagement.deviceHealthScripts.deviceRunStates_GetManagedDeviceGraphBPreRef
       parameters:
         - name: deviceHealthScript-id
           in: path
@@ -13835,7 +13835,7 @@ paths:
         - deviceManagement.deviceHealthScript
       summary: Update the ref of navigation property managedDevice in deviceManagement
       description: The managed device on which the device health script executed
-      operationId: deviceManagement.deviceHealthScripts.deviceRunStates_SetGraphRefManagedDevice
+      operationId: deviceManagement.deviceHealthScripts.deviceRunStates_SetManagedDeviceGraphBPreRef
       parameters:
         - name: deviceHealthScript-id
           in: path
@@ -13871,7 +13871,7 @@ paths:
         - deviceManagement.deviceHealthScript
       summary: Delete ref of navigation property managedDevice for deviceManagement
       description: The managed device on which the device health script executed
-      operationId: deviceManagement.deviceHealthScripts.deviceRunStates_DeleteGraphRefManagedDevice
+      operationId: deviceManagement.deviceHealthScripts.deviceRunStates_DeleteManagedDeviceGraphBPreRef
       parameters:
         - name: deviceHealthScript-id
           in: path
@@ -15000,7 +15000,7 @@ paths:
         - deviceManagement.deviceManagementScript
       summary: Get ref of managedDevice from deviceManagement
       description: The managed devices that executes the device management script.
-      operationId: deviceManagement.deviceManagementScripts.deviceRunStates_GetGraphRefManagedDevice
+      operationId: deviceManagement.deviceManagementScripts.deviceRunStates_GetManagedDeviceGraphBPreRef
       parameters:
         - name: deviceManagementScript-id
           in: path
@@ -15082,7 +15082,7 @@ paths:
         - deviceManagement.deviceManagementScript
       summary: Update the ref of navigation property managedDevice in deviceManagement
       description: The managed devices that executes the device management script.
-      operationId: deviceManagement.deviceManagementScripts.deviceRunStates_SetGraphRefManagedDevice
+      operationId: deviceManagement.deviceManagementScripts.deviceRunStates_SetManagedDeviceGraphBPreRef
       parameters:
         - name: deviceManagementScript-id
           in: path
@@ -15118,7 +15118,7 @@ paths:
         - deviceManagement.deviceManagementScript
       summary: Delete ref of navigation property managedDevice for deviceManagement
       description: The managed devices that executes the device management script.
-      operationId: deviceManagement.deviceManagementScripts.deviceRunStates_DeleteGraphRefManagedDevice
+      operationId: deviceManagement.deviceManagementScripts.deviceRunStates_DeleteManagedDeviceGraphBPreRef
       parameters:
         - name: deviceManagementScript-id
           in: path
@@ -15441,7 +15441,7 @@ paths:
         - deviceManagement.deviceManagementScript
       summary: Get ref of runSummary from deviceManagement
       description: Run summary for device management script.
-      operationId: deviceManagement.deviceManagementScripts_GetGraphRefRunSummary
+      operationId: deviceManagement.deviceManagementScripts_GetRunSummaryGraphBPreRef
       parameters:
         - name: deviceManagementScript-id
           in: path
@@ -15465,7 +15465,7 @@ paths:
         - deviceManagement.deviceManagementScript
       summary: Update the ref of navigation property runSummary in deviceManagement
       description: Run summary for device management script.
-      operationId: deviceManagement.deviceManagementScripts_SetGraphRefRunSummary
+      operationId: deviceManagement.deviceManagementScripts_SetRunSummaryGraphBPreRef
       parameters:
         - name: deviceManagementScript-id
           in: path
@@ -15494,7 +15494,7 @@ paths:
         - deviceManagement.deviceManagementScript
       summary: Delete ref of navigation property runSummary for deviceManagement
       description: Run summary for device management script.
-      operationId: deviceManagement.deviceManagementScripts_DeleteGraphRefRunSummary
+      operationId: deviceManagement.deviceManagementScripts_DeleteRunSummaryGraphBPreRef
       parameters:
         - name: deviceManagementScript-id
           in: path
@@ -16297,7 +16297,7 @@ paths:
         - deviceManagement.deviceManagementScript
       summary: Get ref of managedDevice from deviceManagement
       description: The managed devices that executes the device management script.
-      operationId: deviceManagement.deviceManagementScripts.userRunStates.deviceRunStates_GetGraphRefManagedDevice
+      operationId: deviceManagement.deviceManagementScripts.userRunStates.deviceRunStates_GetManagedDeviceGraphBPreRef
       parameters:
         - name: deviceManagementScript-id
           in: path
@@ -16396,7 +16396,7 @@ paths:
         - deviceManagement.deviceManagementScript
       summary: Update the ref of navigation property managedDevice in deviceManagement
       description: The managed devices that executes the device management script.
-      operationId: deviceManagement.deviceManagementScripts.userRunStates.deviceRunStates_SetGraphRefManagedDevice
+      operationId: deviceManagement.deviceManagementScripts.userRunStates.deviceRunStates_SetManagedDeviceGraphBPreRef
       parameters:
         - name: deviceManagementScript-id
           in: path
@@ -16439,7 +16439,7 @@ paths:
         - deviceManagement.deviceManagementScript
       summary: Delete ref of navigation property managedDevice for deviceManagement
       description: The managed devices that executes the device management script.
-      operationId: deviceManagement.deviceManagementScripts.userRunStates.deviceRunStates_DeleteGraphRefManagedDevice
+      operationId: deviceManagement.deviceManagementScripts.userRunStates.deviceRunStates_DeleteManagedDeviceGraphBPreRef
       parameters:
         - name: deviceManagementScript-id
           in: path
@@ -17467,7 +17467,7 @@ paths:
         - deviceManagement.deviceShellScript
       summary: Get ref of managedDevice from deviceManagement
       description: The managed devices that executes the device management script.
-      operationId: deviceManagement.deviceShellScripts.deviceRunStates_GetGraphRefManagedDevice
+      operationId: deviceManagement.deviceShellScripts.deviceRunStates_GetManagedDeviceGraphBPreRef
       parameters:
         - name: deviceShellScript-id
           in: path
@@ -17549,7 +17549,7 @@ paths:
         - deviceManagement.deviceShellScript
       summary: Update the ref of navigation property managedDevice in deviceManagement
       description: The managed devices that executes the device management script.
-      operationId: deviceManagement.deviceShellScripts.deviceRunStates_SetGraphRefManagedDevice
+      operationId: deviceManagement.deviceShellScripts.deviceRunStates_SetManagedDeviceGraphBPreRef
       parameters:
         - name: deviceShellScript-id
           in: path
@@ -17585,7 +17585,7 @@ paths:
         - deviceManagement.deviceShellScript
       summary: Delete ref of navigation property managedDevice for deviceManagement
       description: The managed devices that executes the device management script.
-      operationId: deviceManagement.deviceShellScripts.deviceRunStates_DeleteGraphRefManagedDevice
+      operationId: deviceManagement.deviceShellScripts.deviceRunStates_DeleteManagedDeviceGraphBPreRef
       parameters:
         - name: deviceShellScript-id
           in: path
@@ -17908,7 +17908,7 @@ paths:
         - deviceManagement.deviceShellScript
       summary: Get ref of runSummary from deviceManagement
       description: Run summary for device management script.
-      operationId: deviceManagement.deviceShellScripts_GetGraphRefRunSummary
+      operationId: deviceManagement.deviceShellScripts_GetRunSummaryGraphBPreRef
       parameters:
         - name: deviceShellScript-id
           in: path
@@ -17932,7 +17932,7 @@ paths:
         - deviceManagement.deviceShellScript
       summary: Update the ref of navigation property runSummary in deviceManagement
       description: Run summary for device management script.
-      operationId: deviceManagement.deviceShellScripts_SetGraphRefRunSummary
+      operationId: deviceManagement.deviceShellScripts_SetRunSummaryGraphBPreRef
       parameters:
         - name: deviceShellScript-id
           in: path
@@ -17961,7 +17961,7 @@ paths:
         - deviceManagement.deviceShellScript
       summary: Delete ref of navigation property runSummary for deviceManagement
       description: Run summary for device management script.
-      operationId: deviceManagement.deviceShellScripts_DeleteGraphRefRunSummary
+      operationId: deviceManagement.deviceShellScripts_DeleteRunSummaryGraphBPreRef
       parameters:
         - name: deviceShellScript-id
           in: path
@@ -18764,7 +18764,7 @@ paths:
         - deviceManagement.deviceShellScript
       summary: Get ref of managedDevice from deviceManagement
       description: The managed devices that executes the device management script.
-      operationId: deviceManagement.deviceShellScripts.userRunStates.deviceRunStates_GetGraphRefManagedDevice
+      operationId: deviceManagement.deviceShellScripts.userRunStates.deviceRunStates_GetManagedDeviceGraphBPreRef
       parameters:
         - name: deviceShellScript-id
           in: path
@@ -18863,7 +18863,7 @@ paths:
         - deviceManagement.deviceShellScript
       summary: Update the ref of navigation property managedDevice in deviceManagement
       description: The managed devices that executes the device management script.
-      operationId: deviceManagement.deviceShellScripts.userRunStates.deviceRunStates_SetGraphRefManagedDevice
+      operationId: deviceManagement.deviceShellScripts.userRunStates.deviceRunStates_SetManagedDeviceGraphBPreRef
       parameters:
         - name: deviceShellScript-id
           in: path
@@ -18906,7 +18906,7 @@ paths:
         - deviceManagement.deviceShellScript
       summary: Delete ref of navigation property managedDevice for deviceManagement
       description: The managed devices that executes the device management script.
-      operationId: deviceManagement.deviceShellScripts.userRunStates.deviceRunStates_DeleteGraphRefManagedDevice
+      operationId: deviceManagement.deviceShellScripts.userRunStates.deviceRunStates_DeleteManagedDeviceGraphBPreRef
       parameters:
         - name: deviceShellScript-id
           in: path
@@ -20529,7 +20529,7 @@ paths:
         - deviceManagement.groupPolicyConfiguration
       summary: Get ref of definition from deviceManagement
       description: The associated group policy definition with the value.
-      operationId: deviceManagement.groupPolicyConfigurations.definitionValues_GetGraphRefDefinition
+      operationId: deviceManagement.groupPolicyConfigurations.definitionValues_GetDefinitionGraphBPreRef
       parameters:
         - name: groupPolicyConfiguration-id
           in: path
@@ -20586,7 +20586,7 @@ paths:
         - deviceManagement.groupPolicyConfiguration
       summary: Update the ref of navigation property definition in deviceManagement
       description: The associated group policy definition with the value.
-      operationId: deviceManagement.groupPolicyConfigurations.definitionValues_SetGraphRefDefinition
+      operationId: deviceManagement.groupPolicyConfigurations.definitionValues_SetDefinitionGraphBPreRef
       parameters:
         - name: groupPolicyConfiguration-id
           in: path
@@ -20622,7 +20622,7 @@ paths:
         - deviceManagement.groupPolicyConfiguration
       summary: Delete ref of navigation property definition for deviceManagement
       description: The associated group policy definition with the value.
-      operationId: deviceManagement.groupPolicyConfigurations.definitionValues_DeleteGraphRefDefinition
+      operationId: deviceManagement.groupPolicyConfigurations.definitionValues_DeleteDefinitionGraphBPreRef
       parameters:
         - name: groupPolicyConfiguration-id
           in: path
@@ -21036,7 +21036,7 @@ paths:
         - deviceManagement.groupPolicyConfiguration
       summary: Get ref of definitionValue from deviceManagement
       description: The group policy definition value associated with the presentation value.
-      operationId: deviceManagement.groupPolicyConfigurations.definitionValues.presentationValues_GetGraphRefDefinitionValue
+      operationId: deviceManagement.groupPolicyConfigurations.definitionValues.presentationValues_GetDefinitionValueGraphBPreRef
       parameters:
         - name: groupPolicyConfiguration-id
           in: path
@@ -21087,7 +21087,7 @@ paths:
         - deviceManagement.groupPolicyConfiguration
       summary: Update the ref of navigation property definitionValue in deviceManagement
       description: The group policy definition value associated with the presentation value.
-      operationId: deviceManagement.groupPolicyConfigurations.definitionValues.presentationValues_SetGraphRefDefinitionValue
+      operationId: deviceManagement.groupPolicyConfigurations.definitionValues.presentationValues_SetDefinitionValueGraphBPreRef
       parameters:
         - name: groupPolicyConfiguration-id
           in: path
@@ -21130,7 +21130,7 @@ paths:
         - deviceManagement.groupPolicyConfiguration
       summary: Delete ref of navigation property definitionValue for deviceManagement
       description: The group policy definition value associated with the presentation value.
-      operationId: deviceManagement.groupPolicyConfigurations.definitionValues.presentationValues_DeleteGraphRefDefinitionValue
+      operationId: deviceManagement.groupPolicyConfigurations.definitionValues.presentationValues_DeleteDefinitionValueGraphBPreRef
       parameters:
         - name: groupPolicyConfiguration-id
           in: path
@@ -21244,7 +21244,7 @@ paths:
         - deviceManagement.groupPolicyConfiguration
       summary: Get ref of presentation from deviceManagement
       description: The group policy presentation associated with the presentation value.
-      operationId: deviceManagement.groupPolicyConfigurations.definitionValues.presentationValues_GetGraphRefPresentation
+      operationId: deviceManagement.groupPolicyConfigurations.definitionValues.presentationValues_GetPresentationGraphBPreRef
       parameters:
         - name: groupPolicyConfiguration-id
           in: path
@@ -21289,7 +21289,7 @@ paths:
         - deviceManagement.groupPolicyConfiguration
       summary: Update the ref of navigation property presentation in deviceManagement
       description: The group policy presentation associated with the presentation value.
-      operationId: deviceManagement.groupPolicyConfigurations.definitionValues.presentationValues_SetGraphRefPresentation
+      operationId: deviceManagement.groupPolicyConfigurations.definitionValues.presentationValues_SetPresentationGraphBPreRef
       parameters:
         - name: groupPolicyConfiguration-id
           in: path
@@ -21332,7 +21332,7 @@ paths:
         - deviceManagement.groupPolicyConfiguration
       summary: Delete ref of navigation property presentation for deviceManagement
       description: The group policy presentation associated with the presentation value.
-      operationId: deviceManagement.groupPolicyConfigurations.definitionValues.presentationValues_DeleteGraphRefPresentation
+      operationId: deviceManagement.groupPolicyConfigurations.definitionValues.presentationValues_DeletePresentationGraphBPreRef
       parameters:
         - name: groupPolicyConfiguration-id
           in: path
@@ -24759,7 +24759,7 @@ paths:
         - deviceManagement.managedDeviceOverview
       summary: Get ref of managedDeviceOverview from deviceManagement
       description: Device overview
-      operationId: deviceManagement_GetGraphRefManagedDeviceOverview
+      operationId: deviceManagement_GetManagedDeviceOverviewGraphBPreRef
       responses:
         '200':
           description: Retrieved navigation property link
@@ -24775,7 +24775,7 @@ paths:
         - deviceManagement.managedDeviceOverview
       summary: Update the ref of navigation property managedDeviceOverview in deviceManagement
       description: Device overview
-      operationId: deviceManagement_SetGraphRefManagedDeviceOverview
+      operationId: deviceManagement_SetManagedDeviceOverviewGraphBPreRef
       requestBody:
         description: New navigation property ref values
         content:
@@ -24796,7 +24796,7 @@ paths:
         - deviceManagement.managedDeviceOverview
       summary: Delete ref of navigation property managedDeviceOverview for deviceManagement
       description: Device overview
-      operationId: deviceManagement_DeleteGraphRefManagedDeviceOverview
+      operationId: deviceManagement_DeleteManagedDeviceOverviewGraphBPreRef
       parameters:
         - name: If-Match
           in: header
@@ -25740,7 +25740,7 @@ paths:
         - deviceManagement.managedDevice
       summary: Get ref of detectedApps from deviceManagement
       description: All applications currently installed on the device
-      operationId: deviceManagement.managedDevices_ListGraphRefDetectedApps
+      operationId: deviceManagement.managedDevices_ListDetectedAppsGraphBPreRef
       parameters:
         - name: managedDevice-id
           in: path
@@ -25803,7 +25803,7 @@ paths:
         - deviceManagement.managedDevice
       summary: Create new navigation property ref to detectedApps for deviceManagement
       description: All applications currently installed on the device
-      operationId: deviceManagement.managedDevices_CreateGraphRefDetectedApps
+      operationId: deviceManagement.managedDevices_CreateDetectedAppsGraphBPreRef
       parameters:
         - name: managedDevice-id
           in: path
@@ -28001,7 +28001,7 @@ paths:
         - deviceManagement.managedDevice
       summary: Get ref of users from deviceManagement
       description: The primary users associated with the managed device.
-      operationId: deviceManagement.managedDevices_ListGraphRefUsers
+      operationId: deviceManagement.managedDevices_ListUsersGraphBPreRef
       parameters:
         - name: managedDevice-id
           in: path
@@ -28210,7 +28210,7 @@ paths:
         - deviceManagement.managedDevice
       summary: Create new navigation property ref to users for deviceManagement
       description: The primary users associated with the managed device.
-      operationId: deviceManagement.managedDevices_CreateGraphRefUsers
+      operationId: deviceManagement.managedDevices_CreateUsersGraphBPreRef
       parameters:
         - name: managedDevice-id
           in: path
@@ -28984,7 +28984,7 @@ paths:
         - deviceManagement.managementCondition
       summary: Get ref of managementConditionStatements from deviceManagement
       description: The management condition statements associated to the management condition.
-      operationId: deviceManagement.managementConditions_ListGraphRefManagementConditionStatements
+      operationId: deviceManagement.managementConditions_ListManagementConditionStatementsGraphBPreRef
       parameters:
         - name: managementCondition-id
           in: path
@@ -29053,7 +29053,7 @@ paths:
         - deviceManagement.managementCondition
       summary: Create new navigation property ref to managementConditionStatements for deviceManagement
       description: The management condition statements associated to the management condition.
-      operationId: deviceManagement.managementConditions_CreateGraphRefManagementConditionStatements
+      operationId: deviceManagement.managementConditions_CreateManagementConditionStatementsGraphBPreRef
       parameters:
         - name: managementCondition-id
           in: path
@@ -29426,7 +29426,7 @@ paths:
         - deviceManagement.managementConditionStatement
       summary: Get ref of managementConditions from deviceManagement
       description: The management conditions associated to the management condition statement.
-      operationId: deviceManagement.managementConditionStatements_ListGraphRefManagementConditions
+      operationId: deviceManagement.managementConditionStatements_ListManagementConditionsGraphBPreRef
       parameters:
         - name: managementConditionStatement-id
           in: path
@@ -29495,7 +29495,7 @@ paths:
         - deviceManagement.managementConditionStatement
       summary: Create new navigation property ref to managementConditions for deviceManagement
       description: The management conditions associated to the management condition statement.
-      operationId: deviceManagement.managementConditionStatements_CreateGraphRefManagementConditions
+      operationId: deviceManagement.managementConditionStatements_CreateManagementConditionsGraphBPreRef
       parameters:
         - name: managementConditionStatement-id
           in: path
@@ -32815,7 +32815,7 @@ paths:
         - deviceManagement.softwareUpdateStatusSummary
       summary: Get ref of softwareUpdateStatusSummary from deviceManagement
       description: The software update status summary.
-      operationId: deviceManagement_GetGraphRefSoftwareUpdateStatusSummary
+      operationId: deviceManagement_GetSoftwareUpdateStatusSummaryGraphBPreRef
       responses:
         '200':
           description: Retrieved navigation property link
@@ -32831,7 +32831,7 @@ paths:
         - deviceManagement.softwareUpdateStatusSummary
       summary: Update the ref of navigation property softwareUpdateStatusSummary in deviceManagement
       description: The software update status summary.
-      operationId: deviceManagement_SetGraphRefSoftwareUpdateStatusSummary
+      operationId: deviceManagement_SetSoftwareUpdateStatusSummaryGraphBPreRef
       requestBody:
         description: New navigation property ref values
         content:
@@ -32852,7 +32852,7 @@ paths:
         - deviceManagement.softwareUpdateStatusSummary
       summary: Delete ref of navigation property softwareUpdateStatusSummary for deviceManagement
       description: The software update status summary.
-      operationId: deviceManagement_DeleteGraphRefSoftwareUpdateStatusSummary
+      operationId: deviceManagement_DeleteSoftwareUpdateStatusSummaryGraphBPreRef
       parameters:
         - name: If-Match
           in: header
@@ -34657,7 +34657,7 @@ paths:
         - deviceManagement.userExperienceAnalyticsAppHealthAppPerformanceByAppVersion
       summary: Get userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersion from deviceManagement
       description: User experience analytics appHealth Application Performance by App Version
-      operationId: deviceManagement_ListUserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersion
+      operationId: deviceManagement_ListUserExperienceAnalyticsAppHealthApplicationPerformanceGraphBPreAppVersion
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -34750,7 +34750,7 @@ paths:
         - deviceManagement.userExperienceAnalyticsAppHealthAppPerformanceByAppVersion
       summary: Create new navigation property to userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersion for deviceManagement
       description: User experience analytics appHealth Application Performance by App Version
-      operationId: deviceManagement_CreateUserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersion
+      operationId: deviceManagement_CreateUserExperienceAnalyticsAppHealthApplicationPerformanceGraphBPreAppVersion
       requestBody:
         description: New navigation property
         content:
@@ -34774,7 +34774,7 @@ paths:
         - deviceManagement.userExperienceAnalyticsAppHealthAppPerformanceByAppVersion
       summary: Get userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersion from deviceManagement
       description: User experience analytics appHealth Application Performance by App Version
-      operationId: deviceManagement_GetUserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersion
+      operationId: deviceManagement_GetUserExperienceAnalyticsAppHealthApplicationPerformanceGraphBPreAppVersion
       parameters:
         - name: userExperienceAnalyticsAppHealthAppPerformanceByAppVersion-id
           in: path
@@ -34829,7 +34829,7 @@ paths:
         - deviceManagement.userExperienceAnalyticsAppHealthAppPerformanceByAppVersion
       summary: Update the navigation property userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersion in deviceManagement
       description: User experience analytics appHealth Application Performance by App Version
-      operationId: deviceManagement_UpdateUserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersion
+      operationId: deviceManagement_UpdateUserExperienceAnalyticsAppHealthApplicationPerformanceGraphBPreAppVersion
       parameters:
         - name: userExperienceAnalyticsAppHealthAppPerformanceByAppVersion-id
           in: path
@@ -34856,7 +34856,7 @@ paths:
         - deviceManagement.userExperienceAnalyticsAppHealthAppPerformanceByAppVersion
       summary: Delete navigation property userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersion for deviceManagement
       description: User experience analytics appHealth Application Performance by App Version
-      operationId: deviceManagement_DeleteUserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersion
+      operationId: deviceManagement_DeleteUserExperienceAnalyticsAppHealthApplicationPerformanceGraphBPreAppVersion
       parameters:
         - name: userExperienceAnalyticsAppHealthAppPerformanceByAppVersion-id
           in: path
@@ -34882,7 +34882,7 @@ paths:
         - deviceManagement.userExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails
       summary: Get userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDetails from deviceManagement
       description: User experience analytics appHealth Application Performance by App Version details
-      operationId: deviceManagement_ListUserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDetails
+      operationId: deviceManagement_ListUserExperienceAnalyticsAppHealthApplicationPerformanceGraphBPreAppVersionDetails
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -34978,7 +34978,7 @@ paths:
         - deviceManagement.userExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails
       summary: Create new navigation property to userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDetails for deviceManagement
       description: User experience analytics appHealth Application Performance by App Version details
-      operationId: deviceManagement_CreateUserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDetails
+      operationId: deviceManagement_CreateUserExperienceAnalyticsAppHealthApplicationPerformanceGraphBPreAppVersionDetails
       requestBody:
         description: New navigation property
         content:
@@ -35002,7 +35002,7 @@ paths:
         - deviceManagement.userExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails
       summary: Get userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDetails from deviceManagement
       description: User experience analytics appHealth Application Performance by App Version details
-      operationId: deviceManagement_GetUserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDetails
+      operationId: deviceManagement_GetUserExperienceAnalyticsAppHealthApplicationPerformanceGraphBPreAppVersionDetails
       parameters:
         - name: userExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails-id
           in: path
@@ -35058,7 +35058,7 @@ paths:
         - deviceManagement.userExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails
       summary: Update the navigation property userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDetails in deviceManagement
       description: User experience analytics appHealth Application Performance by App Version details
-      operationId: deviceManagement_UpdateUserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDetails
+      operationId: deviceManagement_UpdateUserExperienceAnalyticsAppHealthApplicationPerformanceGraphBPreAppVersionDetails
       parameters:
         - name: userExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails-id
           in: path
@@ -35085,7 +35085,7 @@ paths:
         - deviceManagement.userExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails
       summary: Delete navigation property userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDetails for deviceManagement
       description: User experience analytics appHealth Application Performance by App Version details
-      operationId: deviceManagement_DeleteUserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDetails
+      operationId: deviceManagement_DeleteUserExperienceAnalyticsAppHealthApplicationPerformanceGraphBPreAppVersionDetails
       parameters:
         - name: userExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails-id
           in: path
@@ -35111,7 +35111,7 @@ paths:
         - deviceManagement.userExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId
       summary: Get userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDeviceId from deviceManagement
       description: User experience analytics appHealth Application Performance by App Version Device Id
-      operationId: deviceManagement_ListUserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDeviceId
+      operationId: deviceManagement_ListUserExperienceAnalyticsAppHealthApplicationPerformanceGraphBPreAppVersionDeviceId
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -35207,7 +35207,7 @@ paths:
         - deviceManagement.userExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId
       summary: Create new navigation property to userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDeviceId for deviceManagement
       description: User experience analytics appHealth Application Performance by App Version Device Id
-      operationId: deviceManagement_CreateUserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDeviceId
+      operationId: deviceManagement_CreateUserExperienceAnalyticsAppHealthApplicationPerformanceGraphBPreAppVersionDeviceId
       requestBody:
         description: New navigation property
         content:
@@ -35231,7 +35231,7 @@ paths:
         - deviceManagement.userExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId
       summary: Get userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDeviceId from deviceManagement
       description: User experience analytics appHealth Application Performance by App Version Device Id
-      operationId: deviceManagement_GetUserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDeviceId
+      operationId: deviceManagement_GetUserExperienceAnalyticsAppHealthApplicationPerformanceGraphBPreAppVersionDeviceId
       parameters:
         - name: userExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId-id
           in: path
@@ -35287,7 +35287,7 @@ paths:
         - deviceManagement.userExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId
       summary: Update the navigation property userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDeviceId in deviceManagement
       description: User experience analytics appHealth Application Performance by App Version Device Id
-      operationId: deviceManagement_UpdateUserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDeviceId
+      operationId: deviceManagement_UpdateUserExperienceAnalyticsAppHealthApplicationPerformanceGraphBPreAppVersionDeviceId
       parameters:
         - name: userExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId-id
           in: path
@@ -35314,7 +35314,7 @@ paths:
         - deviceManagement.userExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId
       summary: Delete navigation property userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDeviceId for deviceManagement
       description: User experience analytics appHealth Application Performance by App Version Device Id
-      operationId: deviceManagement_DeleteUserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDeviceId
+      operationId: deviceManagement_DeleteUserExperienceAnalyticsAppHealthApplicationPerformanceGraphBPreAppVersionDeviceId
       parameters:
         - name: userExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId-id
           in: path
@@ -35340,7 +35340,7 @@ paths:
         - deviceManagement.userExperienceAnalyticsAppHealthAppPerformanceByOSVersion
       summary: Get userExperienceAnalyticsAppHealthApplicationPerformanceByOSVersion from deviceManagement
       description: User experience analytics appHealth Application Performance by OS Version
-      operationId: deviceManagement_ListUserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersion
+      operationId: deviceManagement_ListUserExperienceAnalyticsAppHealthApplicationPerformanceGraphBPreOSVersion
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -35439,7 +35439,7 @@ paths:
         - deviceManagement.userExperienceAnalyticsAppHealthAppPerformanceByOSVersion
       summary: Create new navigation property to userExperienceAnalyticsAppHealthApplicationPerformanceByOSVersion for deviceManagement
       description: User experience analytics appHealth Application Performance by OS Version
-      operationId: deviceManagement_CreateUserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersion
+      operationId: deviceManagement_CreateUserExperienceAnalyticsAppHealthApplicationPerformanceGraphBPreOSVersion
       requestBody:
         description: New navigation property
         content:
@@ -35463,7 +35463,7 @@ paths:
         - deviceManagement.userExperienceAnalyticsAppHealthAppPerformanceByOSVersion
       summary: Get userExperienceAnalyticsAppHealthApplicationPerformanceByOSVersion from deviceManagement
       description: User experience analytics appHealth Application Performance by OS Version
-      operationId: deviceManagement_GetUserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersion
+      operationId: deviceManagement_GetUserExperienceAnalyticsAppHealthApplicationPerformanceGraphBPreOSVersion
       parameters:
         - name: userExperienceAnalyticsAppHealthAppPerformanceByOSVersion-id
           in: path
@@ -35520,7 +35520,7 @@ paths:
         - deviceManagement.userExperienceAnalyticsAppHealthAppPerformanceByOSVersion
       summary: Update the navigation property userExperienceAnalyticsAppHealthApplicationPerformanceByOSVersion in deviceManagement
       description: User experience analytics appHealth Application Performance by OS Version
-      operationId: deviceManagement_UpdateUserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersion
+      operationId: deviceManagement_UpdateUserExperienceAnalyticsAppHealthApplicationPerformanceGraphBPreOSVersion
       parameters:
         - name: userExperienceAnalyticsAppHealthAppPerformanceByOSVersion-id
           in: path
@@ -35547,7 +35547,7 @@ paths:
         - deviceManagement.userExperienceAnalyticsAppHealthAppPerformanceByOSVersion
       summary: Delete navigation property userExperienceAnalyticsAppHealthApplicationPerformanceByOSVersion for deviceManagement
       description: User experience analytics appHealth Application Performance by OS Version
-      operationId: deviceManagement_DeleteUserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersion
+      operationId: deviceManagement_DeleteUserExperienceAnalyticsAppHealthApplicationPerformanceGraphBPreOSVersion
       parameters:
         - name: userExperienceAnalyticsAppHealthAppPerformanceByOSVersion-id
           in: path
@@ -37102,7 +37102,7 @@ paths:
         - deviceManagement.userExperienceAnalyticsBaseline
       summary: Get ref of appHealthMetrics from deviceManagement
       description: The user experience analytics app health metrics.
-      operationId: deviceManagement.userExperienceAnalyticsBaselines_GetGraphRefAppHealthMetrics
+      operationId: deviceManagement.userExperienceAnalyticsBaselines_GetAppHealthMetricsGraphBPreRef
       parameters:
         - name: userExperienceAnalyticsBaseline-id
           in: path
@@ -37131,7 +37131,7 @@ paths:
         - deviceManagement.userExperienceAnalyticsBaseline
       summary: Update the ref of navigation property appHealthMetrics in deviceManagement
       description: The user experience analytics app health metrics.
-      operationId: deviceManagement.userExperienceAnalyticsBaselines_SetGraphRefAppHealthMetrics
+      operationId: deviceManagement.userExperienceAnalyticsBaselines_SetAppHealthMetricsGraphBPreRef
       parameters:
         - name: userExperienceAnalyticsBaseline-id
           in: path
@@ -37160,7 +37160,7 @@ paths:
         - deviceManagement.userExperienceAnalyticsBaseline
       summary: Delete ref of navigation property appHealthMetrics for deviceManagement
       description: The user experience analytics app health metrics.
-      operationId: deviceManagement.userExperienceAnalyticsBaselines_DeleteGraphRefAppHealthMetrics
+      operationId: deviceManagement.userExperienceAnalyticsBaselines_DeleteAppHealthMetricsGraphBPreRef
       parameters:
         - name: userExperienceAnalyticsBaseline-id
           in: path
@@ -37243,7 +37243,7 @@ paths:
         - deviceManagement.userExperienceAnalyticsBaseline
       summary: Get ref of batteryHealthMetrics from deviceManagement
       description: The user experience analytics battery health metrics.
-      operationId: deviceManagement.userExperienceAnalyticsBaselines_GetGraphRefBatteryHealthMetrics
+      operationId: deviceManagement.userExperienceAnalyticsBaselines_GetBatteryHealthMetricsGraphBPreRef
       parameters:
         - name: userExperienceAnalyticsBaseline-id
           in: path
@@ -37272,7 +37272,7 @@ paths:
         - deviceManagement.userExperienceAnalyticsBaseline
       summary: Update the ref of navigation property batteryHealthMetrics in deviceManagement
       description: The user experience analytics battery health metrics.
-      operationId: deviceManagement.userExperienceAnalyticsBaselines_SetGraphRefBatteryHealthMetrics
+      operationId: deviceManagement.userExperienceAnalyticsBaselines_SetBatteryHealthMetricsGraphBPreRef
       parameters:
         - name: userExperienceAnalyticsBaseline-id
           in: path
@@ -37301,7 +37301,7 @@ paths:
         - deviceManagement.userExperienceAnalyticsBaseline
       summary: Delete ref of navigation property batteryHealthMetrics for deviceManagement
       description: The user experience analytics battery health metrics.
-      operationId: deviceManagement.userExperienceAnalyticsBaselines_DeleteGraphRefBatteryHealthMetrics
+      operationId: deviceManagement.userExperienceAnalyticsBaselines_DeleteBatteryHealthMetricsGraphBPreRef
       parameters:
         - name: userExperienceAnalyticsBaseline-id
           in: path
@@ -37384,7 +37384,7 @@ paths:
         - deviceManagement.userExperienceAnalyticsBaseline
       summary: Get ref of bestPracticesMetrics from deviceManagement
       description: The user experience analytics best practices metrics.
-      operationId: deviceManagement.userExperienceAnalyticsBaselines_GetGraphRefBestPracticesMetrics
+      operationId: deviceManagement.userExperienceAnalyticsBaselines_GetBestPracticesMetricsGraphBPreRef
       parameters:
         - name: userExperienceAnalyticsBaseline-id
           in: path
@@ -37413,7 +37413,7 @@ paths:
         - deviceManagement.userExperienceAnalyticsBaseline
       summary: Update the ref of navigation property bestPracticesMetrics in deviceManagement
       description: The user experience analytics best practices metrics.
-      operationId: deviceManagement.userExperienceAnalyticsBaselines_SetGraphRefBestPracticesMetrics
+      operationId: deviceManagement.userExperienceAnalyticsBaselines_SetBestPracticesMetricsGraphBPreRef
       parameters:
         - name: userExperienceAnalyticsBaseline-id
           in: path
@@ -37442,7 +37442,7 @@ paths:
         - deviceManagement.userExperienceAnalyticsBaseline
       summary: Delete ref of navigation property bestPracticesMetrics for deviceManagement
       description: The user experience analytics best practices metrics.
-      operationId: deviceManagement.userExperienceAnalyticsBaselines_DeleteGraphRefBestPracticesMetrics
+      operationId: deviceManagement.userExperienceAnalyticsBaselines_DeleteBestPracticesMetricsGraphBPreRef
       parameters:
         - name: userExperienceAnalyticsBaseline-id
           in: path
@@ -37525,7 +37525,7 @@ paths:
         - deviceManagement.userExperienceAnalyticsBaseline
       summary: Get ref of deviceBootPerformanceMetrics from deviceManagement
       description: The user experience analytics device boot performance metrics.
-      operationId: deviceManagement.userExperienceAnalyticsBaselines_GetGraphRefDeviceBootPerformanceMetrics
+      operationId: deviceManagement.userExperienceAnalyticsBaselines_GetDeviceBootPerformanceMetricsGraphBPreRef
       parameters:
         - name: userExperienceAnalyticsBaseline-id
           in: path
@@ -37554,7 +37554,7 @@ paths:
         - deviceManagement.userExperienceAnalyticsBaseline
       summary: Update the ref of navigation property deviceBootPerformanceMetrics in deviceManagement
       description: The user experience analytics device boot performance metrics.
-      operationId: deviceManagement.userExperienceAnalyticsBaselines_SetGraphRefDeviceBootPerformanceMetrics
+      operationId: deviceManagement.userExperienceAnalyticsBaselines_SetDeviceBootPerformanceMetricsGraphBPreRef
       parameters:
         - name: userExperienceAnalyticsBaseline-id
           in: path
@@ -37583,7 +37583,7 @@ paths:
         - deviceManagement.userExperienceAnalyticsBaseline
       summary: Delete ref of navigation property deviceBootPerformanceMetrics for deviceManagement
       description: The user experience analytics device boot performance metrics.
-      operationId: deviceManagement.userExperienceAnalyticsBaselines_DeleteGraphRefDeviceBootPerformanceMetrics
+      operationId: deviceManagement.userExperienceAnalyticsBaselines_DeleteDeviceBootPerformanceMetricsGraphBPreRef
       parameters:
         - name: userExperienceAnalyticsBaseline-id
           in: path
@@ -37666,7 +37666,7 @@ paths:
         - deviceManagement.userExperienceAnalyticsBaseline
       summary: Get ref of rebootAnalyticsMetrics from deviceManagement
       description: The user experience analytics reboot analytics metrics.
-      operationId: deviceManagement.userExperienceAnalyticsBaselines_GetGraphRefRebootAnalyticsMetrics
+      operationId: deviceManagement.userExperienceAnalyticsBaselines_GetRebootAnalyticsMetricsGraphBPreRef
       parameters:
         - name: userExperienceAnalyticsBaseline-id
           in: path
@@ -37695,7 +37695,7 @@ paths:
         - deviceManagement.userExperienceAnalyticsBaseline
       summary: Update the ref of navigation property rebootAnalyticsMetrics in deviceManagement
       description: The user experience analytics reboot analytics metrics.
-      operationId: deviceManagement.userExperienceAnalyticsBaselines_SetGraphRefRebootAnalyticsMetrics
+      operationId: deviceManagement.userExperienceAnalyticsBaselines_SetRebootAnalyticsMetricsGraphBPreRef
       parameters:
         - name: userExperienceAnalyticsBaseline-id
           in: path
@@ -37724,7 +37724,7 @@ paths:
         - deviceManagement.userExperienceAnalyticsBaseline
       summary: Delete ref of navigation property rebootAnalyticsMetrics for deviceManagement
       description: The user experience analytics reboot analytics metrics.
-      operationId: deviceManagement.userExperienceAnalyticsBaselines_DeleteGraphRefRebootAnalyticsMetrics
+      operationId: deviceManagement.userExperienceAnalyticsBaselines_DeleteRebootAnalyticsMetricsGraphBPreRef
       parameters:
         - name: userExperienceAnalyticsBaseline-id
           in: path
@@ -37807,7 +37807,7 @@ paths:
         - deviceManagement.userExperienceAnalyticsBaseline
       summary: Get ref of resourcePerformanceMetrics from deviceManagement
       description: The user experience analytics resource performance metrics.
-      operationId: deviceManagement.userExperienceAnalyticsBaselines_GetGraphRefResourcePerformanceMetrics
+      operationId: deviceManagement.userExperienceAnalyticsBaselines_GetResourcePerformanceMetricsGraphBPreRef
       parameters:
         - name: userExperienceAnalyticsBaseline-id
           in: path
@@ -37836,7 +37836,7 @@ paths:
         - deviceManagement.userExperienceAnalyticsBaseline
       summary: Update the ref of navigation property resourcePerformanceMetrics in deviceManagement
       description: The user experience analytics resource performance metrics.
-      operationId: deviceManagement.userExperienceAnalyticsBaselines_SetGraphRefResourcePerformanceMetrics
+      operationId: deviceManagement.userExperienceAnalyticsBaselines_SetResourcePerformanceMetricsGraphBPreRef
       parameters:
         - name: userExperienceAnalyticsBaseline-id
           in: path
@@ -37865,7 +37865,7 @@ paths:
         - deviceManagement.userExperienceAnalyticsBaseline
       summary: Delete ref of navigation property resourcePerformanceMetrics for deviceManagement
       description: The user experience analytics resource performance metrics.
-      operationId: deviceManagement.userExperienceAnalyticsBaselines_DeleteGraphRefResourcePerformanceMetrics
+      operationId: deviceManagement.userExperienceAnalyticsBaselines_DeleteResourcePerformanceMetricsGraphBPreRef
       parameters:
         - name: userExperienceAnalyticsBaseline-id
           in: path
@@ -37948,7 +37948,7 @@ paths:
         - deviceManagement.userExperienceAnalyticsBaseline
       summary: Get ref of workFromAnywhereMetrics from deviceManagement
       description: The user experience analytics work from anywhere metrics.
-      operationId: deviceManagement.userExperienceAnalyticsBaselines_GetGraphRefWorkFromAnywhereMetrics
+      operationId: deviceManagement.userExperienceAnalyticsBaselines_GetWorkFromAnywhereMetricsGraphBPreRef
       parameters:
         - name: userExperienceAnalyticsBaseline-id
           in: path
@@ -37977,7 +37977,7 @@ paths:
         - deviceManagement.userExperienceAnalyticsBaseline
       summary: Update the ref of navigation property workFromAnywhereMetrics in deviceManagement
       description: The user experience analytics work from anywhere metrics.
-      operationId: deviceManagement.userExperienceAnalyticsBaselines_SetGraphRefWorkFromAnywhereMetrics
+      operationId: deviceManagement.userExperienceAnalyticsBaselines_SetWorkFromAnywhereMetricsGraphBPreRef
       parameters:
         - name: userExperienceAnalyticsBaseline-id
           in: path
@@ -38006,7 +38006,7 @@ paths:
         - deviceManagement.userExperienceAnalyticsBaseline
       summary: Delete ref of navigation property workFromAnywhereMetrics for deviceManagement
       description: The user experience analytics work from anywhere metrics.
-      operationId: deviceManagement.userExperienceAnalyticsBaselines_DeleteGraphRefWorkFromAnywhereMetrics
+      operationId: deviceManagement.userExperienceAnalyticsBaselines_DeleteWorkFromAnywhereMetricsGraphBPreRef
       parameters:
         - name: userExperienceAnalyticsBaseline-id
           in: path

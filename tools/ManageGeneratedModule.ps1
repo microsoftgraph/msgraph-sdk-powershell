@@ -7,77 +7,48 @@ Manages generated modules by managing dependencies and configuring authenticatio
 .PARAMETER Module
 The name of the module to manage.
 #>
+[CmdletBinding()]
 Param(
-    [Parameter(Mandatory = $true)][ValidateNotNullOrEmpty()][string]$Module,
-    [Parameter(Mandatory = $true)][ValidateNotNullOrEmpty()][string] $ModulePrefix
+    [Parameter(Mandatory = $true)][ValidateNotNullOrEmpty()][string]$ModuleName,
+    [Parameter(Mandatory = $true)][ValidateNotNullOrEmpty()][string]$ModuleSrc,
+    [Parameter(Mandatory = $true)][ValidateNotNullOrEmpty()][string] $NamespacePrefix
 )
-$LASTEXITCODE = $null
 $NugetPackagesToAdd = @("hyak.common")
 $NugetPackagesToRemove = @("Microsoft.CSharp")
 $AuthenticationProj = Join-Path $PSScriptRoot "..\src\Authentication\Authentication\Microsoft.Graph.Authentication.csproj"
-$GeneratedModuleSlnDir = Join-Path $PSScriptRoot "..\src\$Module"
-$GeneratedModuleProj = Join-Path $GeneratedModuleSlnDir "$Module\$ModulePrefix.$Module.csproj"
-$CustomCodeDir = Join-Path $PSScriptRoot "\Custom\"
-
-if(-not (Test-Path "$GeneratedModuleSlnDir\$Module.sln")) {
-    # Create new solution for generated module project.
-    Write-Host -ForegroundColor Green "Executing: dotnet new sln -n $Module -o $GeneratedModuleSlnDir --force"
-    dotnet new sln -n $Module -o $GeneratedModuleSlnDir --force
-    if($LASTEXITCODE){
-        Write-Error "Failed to create or update $Module solution."
-        return
-    }
-}
-$GeneratedModuleSln = Join-Path $GeneratedModuleSlnDir "$Module.sln"
-
-# Add generated module project to solution.
-Write-Host -ForegroundColor Green "Executing: dotnet sln $GeneratedModuleSln add $GeneratedModuleProj"
-dotnet sln $GeneratedModuleSln add $GeneratedModuleProj
-if($LASTEXITCODE){
-    Write-Error "Failed to execute: dotnet sln $GeneratedModuleSln add $GeneratedModuleProj"
-    return
-}
+$ModuleCsProj = Join-Path $ModuleSrc "$ModuleName.csproj"
+$CustomCodePath = Join-Path $PSScriptRoot "\Custom\"
 
 # Add authentication project reference to generated module reference.
-Write-Host -ForegroundColor Green "Executing: dotnet add $GeneratedModuleProj reference $AuthenticationProj"
-dotnet add $GeneratedModuleProj reference $AuthenticationProj
-if($LASTEXITCODE){
-    Write-Error "Failed to execute: dotnet add $GeneratedModuleProj reference $AuthenticationProj"
-    return
+Write-Debug "Executing: dotnet add $ModuleCsProj reference $AuthenticationProj"
+dotnet add $ModuleCsProj reference $AuthenticationProj | Out-Null
+if ($LastExitCode) {
+    Write-Error "Failed to execute: dotnet add $ModuleCsProj reference $AuthenticationProj"
 }
 
 # Copy custom code to generated module.
-$CustomFiles = Get-ChildItem $CustomCodeDir -Recurse
-foreach($CustomFile in $CustomFiles) {
-    Write-Host -ForegroundColor Green "Copying $CustomFile to $GeneratedModuleSlnDir\$Module\custom"
-    Copy-Item -Path $CustomFile -Destination "$GeneratedModuleSlnDir\$Module\custom"
+foreach ($customFile in (Get-ChildItem $CustomCodePath -Recurse)) {
+    Write-Debug "Copying $customFile to $ModuleSrc\custom"
+    # Resolve namespaces.
+    $fileContent = Get-Content $customFile
+    $fileContent = $fileContent.Replace("NamespacePrefixPlaceholder", $NamespacePrefix);
+    $fileContent | Out-File (Join-Path $ModuleSrc "custom" $customFile.Name)
 }
 
 # Remove unnecessary packages from generate modules.
-foreach($Package in $NugetPackagesToRemove)
-{
-    Write-Host -ForegroundColor Green "Executing: dotnet remove $GeneratedModuleProj package $Package"
-    dotnet remove $GeneratedModuleProj package $Package
-    if($LASTEXITCODE){
-        Write-Warning "Failed to execute: dotnet remove $GeneratedModuleProj package $Package"
+foreach ($Package in $NugetPackagesToRemove) {
+    Write-Debug "Executing: dotnet remove $ModuleCsProj package $Package"
+    dotnet remove $ModuleCsProj package $Package | Out-Null
+    if ($LastExitCode) {
+        Write-Error "Failed to execute: dotnet remove $ModuleCsProj package $Package"
     }
 }
 
 # Add nuget packages from generate modules.
-foreach($Package in $NugetPackagesToAdd)
-{
-    Write-Host -ForegroundColor Green "Executing: dotnet add $GeneratedModuleProj package $Package"
-    dotnet add $GeneratedModuleProj package $Package
-    if($LASTEXITCODE){
-        Write-Warning "Failed to execute: dotnet add $GeneratedModuleProj package $Package"
+foreach ($Package in $NugetPackagesToAdd) {
+    Write-Debug "Executing: dotnet add $ModuleCsProj package $Package"
+    dotnet add $ModuleCsProj package $Package | Out-Null
+    if ($LastExitCode) {
+        Write-Error "Failed to execute: dotnet add $ModuleCsProj package $Package"
     }
 }
-
-# Restore packages.
-Write-Host -ForegroundColor Green "Executing: dotnet restore $GeneratedModuleSln"
-dotnet restore $GeneratedModuleSln
-if($LASTEXITCODE){
-    Write-Error "Failed to execute: dotnet restore $GeneratedModuleSln"
-    return
-}
-Write-Host -ForegroundColor Green "-------------Done-------------"

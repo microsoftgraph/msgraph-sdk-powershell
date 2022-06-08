@@ -11,7 +11,6 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core
         public const int MaxAuthenticationTimeOutInSeconds = 120;
         public const string DefaultTenant = "common";
         public static readonly string GraphDirectoryPath = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.UserProfile), ".mg");
-        internal const string DefaultProfile = "v1.0";
         internal const int TokenExpirationBufferInMinutes = 5;
         internal const string DefaultAzureADEndpoint = "https://login.microsoftonline.com";
         internal static readonly string DefaultGraphEndpoint = "https://graph.microsoft.com";

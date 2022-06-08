@@ -1,8 +1,9 @@
 # Copyright (c) Microsoft Corporation. All rights reserved.
 # Licensed under the MIT License.
+[CmdletBinding()]
 Param(
-    [Parameter(Mandatory = $true)] [ValidateNotNullOrEmpty()][string] $Module,
-    [Parameter(Mandatory = $true)] [ValidateNotNullOrEmpty()][string] $ModulePrefix,
+    [Parameter(Mandatory = $true)] [ValidateNotNullOrEmpty()][string] $ModuleSrc,
+    [Parameter(Mandatory = $true)] [ValidateNotNullOrEmpty()][string] $ModuleFullName,
     [Parameter(Mandatory = $true)] [ValidateNotNullOrEmpty()][string] $ModuleVersion,
     [Parameter(Mandatory = $true)] [ValidateNotNullOrEmpty()][string[]] $ReleaseNotes,
     [int] $ModulePreviewNumber = -1,
@@ -12,26 +13,23 @@ Param(
     [switch] $ExcludeNotesSection
 )
 $ErrorActionPreference = "Stop"
-$LASTEXITCODE = $null
 if ($PSEdition -ne "Core") {
     Write-Error "This script requires PowerShell Core to execute. [Note] Generated cmdlets will work in both PowerShell Core or Windows PowerShell."
 }
 
 $NuspecHelperPS1 = Join-Path $PSScriptRoot "./NuspecHelper.ps1"
 $CSProjHelperPS1 = Join-Path $PSScriptRoot "./CSProjHelper.ps1"
-$ModuleProjLocation = Join-Path $PSScriptRoot "../src/$Module/$Module"
-$BuildModulePS1 = Join-Path $ModuleProjLocation "/build-module.ps1"
-$ModuleCsProj = Join-Path $ModuleProjLocation "$ModulePrefix.$Module.csproj"
-$ModuleManifest = Join-Path $ModuleProjLocation "$ModulePrefix.$Module.psd1"
-$ModuleNuspec = Join-Path $ModuleProjLocation "$ModulePrefix.$Module.nuspec"
+$BuildModulePS1 = Join-Path $ModuleSrc "/build-module.ps1"
+$ModuleCsProj = Join-Path $ModuleSrc "$ModuleFullName.csproj"
+$ModuleManifest = Join-Path $ModuleSrc "$ModuleFullName.psd1"
+$ModuleNuspec = Join-Path $ModuleSrc "$ModuleFullName.nuspec"
 [HashTable] $NuspecMetadata = Get-Content (Join-Path $PSScriptRoot "..\config\ModuleMetadata.json") | ConvertFrom-Json -AsHashTable
-
 # Import scripts
 . $NuspecHelperPS1
 . $CSProjHelperPS1
 
 if (-not (Test-Path -Path $BuildModulePS1)) {
-    Write-Error "Build script file '$BuildModulePS1' not found for '$Module' module."
+    Write-Error "Build script file '$BuildModulePS1' not found for '$ModuleFullName' module."
 }
 
 # Set delay sign to true.
@@ -43,10 +41,11 @@ else {
 }
 
 # Build module
-Write-Host -ForegroundColor Green "Building '$Module' module..."
+Write-Debug "Building '$ModuleFullName' module..."
 & $BuildModulePS1 -Docs -Release -ExcludeExampleTemplates:$ExcludeExampleTemplates -ExcludeNotesSection:$ExcludeNotesSection
-if ($LASTEXITCODE) {
-    Write-Error "Failed to build '$Module' module."
+if ($lastexitcode -ne 0) {
+    Write-Debug "Failed to build '$ModuleFullName' module."
+    exit $lastexitcode
 }
 
 [HashTable]$ModuleManifestSettings = @{
@@ -74,8 +73,6 @@ else {
     }
 }
 
-Write-Host -ForegroundColor Green "Updating '$Module' module manifest and nuspec..."
+Write-Debug "Updating '$ModuleFullName' module manifest and nuspec..."
 Update-ModuleManifest @ModuleManifestSettings
 Set-NuSpecValues -NuSpecFilePath $ModuleNuspec -VersionNumber $FullVersionNumber -Dependencies $RequiredModules -IconUrl $NuspecMetadata["iconUri"] -ReleaseNotes $ReleaseNotes
-
-Write-Host -ForegroundColor Green "-------------Done-------------"

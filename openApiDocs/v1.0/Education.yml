@@ -3525,11 +3525,11 @@ paths:
               parameters:
                 educationClass-id: $request.path.educationClass-id
             createdOnBehalfOf:
-              operationId: education.classes.Group.GetCreatedOnBehalfOf
+              operationId: education.classes.Group.GetCreatedOnBehalfGraphOPre
               parameters:
                 educationClass-id: $request.path.educationClass-id
             memberOf:
-              operationId: education.classes.Group.ListMemberOf
+              operationId: education.classes.Group.ListMemberGraphOPre
               parameters:
                 educationClass-id: $request.path.educationClass-id
             members:
@@ -3537,7 +3537,7 @@ paths:
               parameters:
                 educationClass-id: $request.path.educationClass-id
             membersWithLicenseErrors:
-              operationId: education.classes.Group.ListMembersWithLicenseErrors
+              operationId: education.classes.Group.ListMembersGraphWPreLicenseErrors
               parameters:
                 educationClass-id: $request.path.educationClass-id
             owners:
@@ -3553,7 +3553,7 @@ paths:
               parameters:
                 educationClass-id: $request.path.educationClass-id
             transitiveMemberOf:
-              operationId: education.classes.Group.ListTransitiveMemberOf
+              operationId: education.classes.Group.ListTransitiveMemberGraphOPre
               parameters:
                 educationClass-id: $request.path.educationClass-id
             transitiveMembers:
@@ -3637,7 +3637,7 @@ paths:
         - education.educationClass
       summary: Get ref of group from education
       description: The underlying Microsoft 365 group object.
-      operationId: education.classes_GetGraphRefGroup
+      operationId: education.classes_GetGroupGraphBPreRef
       parameters:
         - name: educationClass-id
           in: path
@@ -3659,11 +3659,11 @@ paths:
               parameters:
                 educationClass-id: $request.path.educationClass-id
             createdOnBehalfOf:
-              operationId: education.classes.Group.GetCreatedOnBehalfOf
+              operationId: education.classes.Group.GetCreatedOnBehalfGraphOPre
               parameters:
                 educationClass-id: $request.path.educationClass-id
             memberOf:
-              operationId: education.classes.Group.ListMemberOf
+              operationId: education.classes.Group.ListMemberGraphOPre
               parameters:
                 educationClass-id: $request.path.educationClass-id
             members:
@@ -3671,7 +3671,7 @@ paths:
               parameters:
                 educationClass-id: $request.path.educationClass-id
             membersWithLicenseErrors:
-              operationId: education.classes.Group.ListMembersWithLicenseErrors
+              operationId: education.classes.Group.ListMembersGraphWPreLicenseErrors
               parameters:
                 educationClass-id: $request.path.educationClass-id
             owners:
@@ -3687,7 +3687,7 @@ paths:
               parameters:
                 educationClass-id: $request.path.educationClass-id
             transitiveMemberOf:
-              operationId: education.classes.Group.ListTransitiveMemberOf
+              operationId: education.classes.Group.ListTransitiveMemberGraphOPre
               parameters:
                 educationClass-id: $request.path.educationClass-id
             transitiveMembers:
@@ -3770,7 +3770,7 @@ paths:
         - education.educationClass
       summary: Update the ref of navigation property group in education
       description: The underlying Microsoft 365 group object.
-      operationId: education.classes_SetGraphRefGroup
+      operationId: education.classes_SetGroupGraphBPreRef
       parameters:
         - name: educationClass-id
           in: path
@@ -3799,7 +3799,7 @@ paths:
         - education.educationClass
       summary: Delete ref of navigation property group for education
       description: The underlying Microsoft 365 group object.
-      operationId: education.classes_DeleteGraphRefGroup
+      operationId: education.classes_DeleteGroupGraphBPreRef
       parameters:
         - name: educationClass-id
           in: path
@@ -4013,7 +4013,7 @@ paths:
         - education.educationClass
       summary: Get ref of members from education
       description: All users in the class. Nullable.
-      operationId: education.classes_ListGraphRefMembers
+      operationId: education.classes_ListMembersGraphBPreRef
       parameters:
         - name: educationClass-id
           in: path
@@ -4132,7 +4132,7 @@ paths:
         - education.educationClass
       summary: Create new navigation property ref to members for education
       description: All users in the class. Nullable.
-      operationId: education.classes_CreateGraphRefMembers
+      operationId: education.classes_CreateMembersGraphBPreRef
       parameters:
         - name: educationClass-id
           in: path
@@ -4325,7 +4325,7 @@ paths:
         - education.educationClass
       summary: Get ref of schools from education
       description: All schools that this class is associated with. Nullable.
-      operationId: education.classes_ListGraphRefSchools
+      operationId: education.classes_ListSchoolsGraphBPreRef
       parameters:
         - name: educationClass-id
           in: path
@@ -4410,7 +4410,7 @@ paths:
         - education.educationClass
       summary: Create new navigation property ref to schools for education
       description: All schools that this class is associated with. Nullable.
-      operationId: education.classes_CreateGraphRefSchools
+      operationId: education.classes_CreateSchoolsGraphBPreRef
       parameters:
         - name: educationClass-id
           in: path
@@ -4660,7 +4660,7 @@ paths:
         - education.educationClass
       summary: Get ref of teachers from education
       description: All teachers in the class. Nullable.
-      operationId: education.classes_ListGraphRefTeachers
+      operationId: education.classes_ListTeachersGraphBPreRef
       parameters:
         - name: educationClass-id
           in: path
@@ -4779,7 +4779,7 @@ paths:
         - education.educationClass
       summary: Create new navigation property ref to teachers for education
       description: All teachers in the class. Nullable.
-      operationId: education.classes_CreateGraphRefTeachers
+      operationId: education.classes_CreateTeachersGraphBPreRef
       parameters:
         - name: educationClass-id
           in: path
@@ -7355,7 +7355,7 @@ paths:
         - education.educationUser
       summary: Get ref of classes from education
       description: Classes to which the user belongs. Nullable.
-      operationId: education.me_ListGraphRefClasses
+      operationId: education.me_ListClassesGraphBPreRef
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -7427,7 +7427,7 @@ paths:
         - education.educationUser
       summary: Create new navigation property ref to classes for education
       description: Classes to which the user belongs. Nullable.
-      operationId: education.me_CreateGraphRefClasses
+      operationId: education.me_CreateClassesGraphBPreRef
       requestBody:
         description: New navigation property ref value
         content:
@@ -7825,7 +7825,7 @@ paths:
         - education.educationUser
       summary: Get ref of schools from education
       description: Schools to which the user belongs. Nullable.
-      operationId: education.me_ListGraphRefSchools
+      operationId: education.me_ListSchoolsGraphBPreRef
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -7903,7 +7903,7 @@ paths:
         - education.educationUser
       summary: Create new navigation property ref to schools for education
       description: Schools to which the user belongs. Nullable.
-      operationId: education.me_CreateGraphRefSchools
+      operationId: education.me_CreateSchoolsGraphBPreRef
       requestBody:
         description: New navigation property ref value
         content:
@@ -8074,7 +8074,7 @@ paths:
         - education.educationUser
       summary: Get ref of taughtClasses from education
       description: Classes for which the user is a teacher.
-      operationId: education.me_ListGraphRefTaughtClasses
+      operationId: education.me_ListTaughtClassesGraphBPreRef
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -8146,7 +8146,7 @@ paths:
         - education.educationUser
       summary: Create new navigation property ref to taughtClasses for education
       description: Classes for which the user is a teacher.
-      operationId: education.me_CreateGraphRefTaughtClasses
+      operationId: education.me_CreateTaughtClassesGraphBPreRef
       requestBody:
         description: New navigation property ref value
         content:
@@ -8399,7 +8399,7 @@ paths:
             manager:
               operationId: education.me.User.GetManager
             memberOf:
-              operationId: education.me.User.ListMemberOf
+              operationId: education.me.User.ListMemberGraphOPre
             oauth2PermissionGrants:
               operationId: education.me.User.ListOauth2PermissionGrants
             ownedDevices:
@@ -8409,9 +8409,9 @@ paths:
             registeredDevices:
               operationId: education.me.User.ListRegisteredDevices
             scopedRoleMemberOf:
-              operationId: education.me.User.ListScopedRoleMemberOf
+              operationId: education.me.User.ListScopedRoleMemberGraphOPre
             transitiveMemberOf:
-              operationId: education.me.User.ListTransitiveMemberOf
+              operationId: education.me.User.ListTransitiveMemberGraphOPre
             calendar:
               operationId: education.me.User.GetCalendar
             calendarGroups:
@@ -8489,7 +8489,7 @@ paths:
         - education.educationUser
       summary: Get ref of user from education
       description: The directory user corresponding to this user.
-      operationId: education.me_GetGraphRefUser
+      operationId: education.me_GetUserGraphBPreRef
       responses:
         '200':
           description: Retrieved navigation property link
@@ -8509,7 +8509,7 @@ paths:
             manager:
               operationId: education.me.User.GetManager
             memberOf:
-              operationId: education.me.User.ListMemberOf
+              operationId: education.me.User.ListMemberGraphOPre
             oauth2PermissionGrants:
               operationId: education.me.User.ListOauth2PermissionGrants
             ownedDevices:
@@ -8519,9 +8519,9 @@ paths:
             registeredDevices:
               operationId: education.me.User.ListRegisteredDevices
             scopedRoleMemberOf:
-              operationId: education.me.User.ListScopedRoleMemberOf
+              operationId: education.me.User.ListScopedRoleMemberGraphOPre
             transitiveMemberOf:
-              operationId: education.me.User.ListTransitiveMemberOf
+              operationId: education.me.User.ListTransitiveMemberGraphOPre
             calendar:
               operationId: education.me.User.GetCalendar
             calendarGroups:
@@ -8598,7 +8598,7 @@ paths:
         - education.educationUser
       summary: Update the ref of navigation property user in education
       description: The directory user corresponding to this user.
-      operationId: education.me_SetGraphRefUser
+      operationId: education.me_SetUserGraphBPreRef
       requestBody:
         description: New navigation property ref values
         content:
@@ -8619,7 +8619,7 @@ paths:
         - education.educationUser
       summary: Delete ref of navigation property user for education
       description: The directory user corresponding to this user.
-      operationId: education.me_DeleteGraphRefUser
+      operationId: education.me_DeleteUserGraphBPreRef
       parameters:
         - name: If-Match
           in: header
@@ -8987,7 +8987,7 @@ paths:
         - education.educationSchool
       summary: Get ref of administrativeUnit from education
       description: The underlying administrativeUnit for this school.
-      operationId: education.schools_GetGraphRefAdministrativeUnit
+      operationId: education.schools_GetAdministrativeUnitGraphBPreRef
       parameters:
         - name: educationSchool-id
           in: path
@@ -9024,7 +9024,7 @@ paths:
         - education.educationSchool
       summary: Update the ref of navigation property administrativeUnit in education
       description: The underlying administrativeUnit for this school.
-      operationId: education.schools_SetGraphRefAdministrativeUnit
+      operationId: education.schools_SetAdministrativeUnitGraphBPreRef
       parameters:
         - name: educationSchool-id
           in: path
@@ -9053,7 +9053,7 @@ paths:
         - education.educationSchool
       summary: Delete ref of navigation property administrativeUnit for education
       description: The underlying administrativeUnit for this school.
-      operationId: education.schools_DeleteGraphRefAdministrativeUnit
+      operationId: education.schools_DeleteAdministrativeUnitGraphBPreRef
       parameters:
         - name: educationSchool-id
           in: path
@@ -9211,7 +9211,7 @@ paths:
         - education.educationSchool
       summary: Get ref of classes from education
       description: Classes taught at the school. Nullable.
-      operationId: education.schools_ListGraphRefClasses
+      operationId: education.schools_ListClassesGraphBPreRef
       parameters:
         - name: educationSchool-id
           in: path
@@ -9290,7 +9290,7 @@ paths:
         - education.educationSchool
       summary: Create new navigation property ref to classes for education
       description: Classes taught at the school. Nullable.
-      operationId: education.schools_CreateGraphRefClasses
+      operationId: education.schools_CreateClassesGraphBPreRef
       parameters:
         - name: educationSchool-id
           in: path
@@ -9540,7 +9540,7 @@ paths:
         - education.educationSchool
       summary: Get ref of users from education
       description: Users in the school. Nullable.
-      operationId: education.schools_ListGraphRefUsers
+      operationId: education.schools_ListUsersGraphBPreRef
       parameters:
         - name: educationSchool-id
           in: path
@@ -9659,7 +9659,7 @@ paths:
         - education.educationSchool
       summary: Create new navigation property ref to users for education
       description: Users in the school. Nullable.
-      operationId: education.schools_CreateGraphRefUsers
+      operationId: education.schools_CreateUsersGraphBPreRef
       parameters:
         - name: educationSchool-id
           in: path
@@ -12801,7 +12801,7 @@ paths:
         - education.educationUser
       summary: Get ref of classes from education
       description: Classes to which the user belongs. Nullable.
-      operationId: education.users_ListGraphRefClasses
+      operationId: education.users_ListClassesGraphBPreRef
       parameters:
         - name: educationUser-id
           in: path
@@ -12880,7 +12880,7 @@ paths:
         - education.educationUser
       summary: Create new navigation property ref to classes for education
       description: Classes to which the user belongs. Nullable.
-      operationId: education.users_CreateGraphRefClasses
+      operationId: education.users_CreateClassesGraphBPreRef
       parameters:
         - name: educationUser-id
           in: path
@@ -13337,7 +13337,7 @@ paths:
         - education.educationUser
       summary: Get ref of schools from education
       description: Schools to which the user belongs. Nullable.
-      operationId: education.users_ListGraphRefSchools
+      operationId: education.users_ListSchoolsGraphBPreRef
       parameters:
         - name: educationUser-id
           in: path
@@ -13422,7 +13422,7 @@ paths:
         - education.educationUser
       summary: Create new navigation property ref to schools for education
       description: Schools to which the user belongs. Nullable.
-      operationId: education.users_CreateGraphRefSchools
+      operationId: education.users_CreateSchoolsGraphBPreRef
       parameters:
         - name: educationUser-id
           in: path
@@ -13616,7 +13616,7 @@ paths:
         - education.educationUser
       summary: Get ref of taughtClasses from education
       description: Classes for which the user is a teacher.
-      operationId: education.users_ListGraphRefTaughtClasses
+      operationId: education.users_ListTaughtClassesGraphBPreRef
       parameters:
         - name: educationUser-id
           in: path
@@ -13695,7 +13695,7 @@ paths:
         - education.educationUser
       summary: Create new navigation property ref to taughtClasses for education
       description: Classes for which the user is a teacher.
-      operationId: education.users_CreateGraphRefTaughtClasses
+      operationId: education.users_CreateTaughtClassesGraphBPreRef
       parameters:
         - name: educationUser-id
           in: path
@@ -13981,7 +13981,7 @@ paths:
               parameters:
                 educationUser-id: $request.path.educationUser-id
             memberOf:
-              operationId: education.users.User.ListMemberOf
+              operationId: education.users.User.ListMemberGraphOPre
               parameters:
                 educationUser-id: $request.path.educationUser-id
             oauth2PermissionGrants:
@@ -14001,11 +14001,11 @@ paths:
               parameters:
                 educationUser-id: $request.path.educationUser-id
             scopedRoleMemberOf:
-              operationId: education.users.User.ListScopedRoleMemberOf
+              operationId: education.users.User.ListScopedRoleMemberGraphOPre
               parameters:
                 educationUser-id: $request.path.educationUser-id
             transitiveMemberOf:
-              operationId: education.users.User.ListTransitiveMemberOf
+              operationId: education.users.User.ListTransitiveMemberGraphOPre
               parameters:
                 educationUser-id: $request.path.educationUser-id
             calendar:
@@ -14153,7 +14153,7 @@ paths:
         - education.educationUser
       summary: Get ref of user from education
       description: The directory user corresponding to this user.
-      operationId: education.users_GetGraphRefUser
+      operationId: education.users_GetUserGraphBPreRef
       parameters:
         - name: educationUser-id
           in: path
@@ -14191,7 +14191,7 @@ paths:
               parameters:
                 educationUser-id: $request.path.educationUser-id
             memberOf:
-              operationId: education.users.User.ListMemberOf
+              operationId: education.users.User.ListMemberGraphOPre
               parameters:
                 educationUser-id: $request.path.educationUser-id
             oauth2PermissionGrants:
@@ -14211,11 +14211,11 @@ paths:
               parameters:
                 educationUser-id: $request.path.educationUser-id
             scopedRoleMemberOf:
-              operationId: education.users.User.ListScopedRoleMemberOf
+              operationId: education.users.User.ListScopedRoleMemberGraphOPre
               parameters:
                 educationUser-id: $request.path.educationUser-id
             transitiveMemberOf:
-              operationId: education.users.User.ListTransitiveMemberOf
+              operationId: education.users.User.ListTransitiveMemberGraphOPre
               parameters:
                 educationUser-id: $request.path.educationUser-id
             calendar:
@@ -14362,7 +14362,7 @@ paths:
         - education.educationUser
       summary: Update the ref of navigation property user in education
       description: The directory user corresponding to this user.
-      operationId: education.users_SetGraphRefUser
+      operationId: education.users_SetUserGraphBPreRef
       parameters:
         - name: educationUser-id
           in: path
@@ -14391,7 +14391,7 @@ paths:
         - education.educationUser
       summary: Delete ref of navigation property user for education
       description: The directory user corresponding to this user.
-      operationId: education.users_DeleteGraphRefUser
+      operationId: education.users_DeleteUserGraphBPreRef
       parameters:
         - name: educationUser-id
           in: path

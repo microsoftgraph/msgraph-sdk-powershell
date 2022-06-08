@@ -883,7 +883,7 @@ paths:
         - groups.onenote
       summary: Get ref of parentNotebook from groups
       description: The notebook that contains the section group. Read-only.
-      operationId: groups.onenote.notebooks.sectionGroups_GetGraphRefParentNotebook
+      operationId: groups.onenote.notebooks.sectionGroups_GetParentNotebookGraphBPreRef
       parameters:
         - name: group-id
           in: path
@@ -934,7 +934,7 @@ paths:
         - groups.onenote
       summary: Update the ref of navigation property parentNotebook in groups
       description: The notebook that contains the section group. Read-only.
-      operationId: groups.onenote.notebooks.sectionGroups_SetGraphRefParentNotebook
+      operationId: groups.onenote.notebooks.sectionGroups_SetParentNotebookGraphBPreRef
       parameters:
         - name: group-id
           in: path
@@ -977,7 +977,7 @@ paths:
         - groups.onenote
       summary: Delete ref of navigation property parentNotebook for groups
       description: The notebook that contains the section group. Read-only.
-      operationId: groups.onenote.notebooks.sectionGroups_DeleteGraphRefParentNotebook
+      operationId: groups.onenote.notebooks.sectionGroups_DeleteParentNotebookGraphBPreRef
       parameters:
         - name: group-id
           in: path
@@ -1121,7 +1121,7 @@ paths:
         - groups.onenote
       summary: Get ref of parentSectionGroup from groups
       description: The section group that contains the section group. Read-only.
-      operationId: groups.onenote.notebooks.sectionGroups_GetGraphRefParentSectionGroup
+      operationId: groups.onenote.notebooks.sectionGroups_GetParentSectionGroupGraphBPreRef
       parameters:
         - name: group-id
           in: path
@@ -1184,7 +1184,7 @@ paths:
         - groups.onenote
       summary: Update the ref of navigation property parentSectionGroup in groups
       description: The section group that contains the section group. Read-only.
-      operationId: groups.onenote.notebooks.sectionGroups_SetGraphRefParentSectionGroup
+      operationId: groups.onenote.notebooks.sectionGroups_SetParentSectionGroupGraphBPreRef
       parameters:
         - name: group-id
           in: path
@@ -1227,7 +1227,7 @@ paths:
         - groups.onenote
       summary: Delete ref of navigation property parentSectionGroup for groups
       description: The section group that contains the section group. Read-only.
-      operationId: groups.onenote.notebooks.sectionGroups_DeleteGraphRefParentSectionGroup
+      operationId: groups.onenote.notebooks.sectionGroups_DeleteParentSectionGroupGraphBPreRef
       parameters:
         - name: group-id
           in: path
@@ -1393,7 +1393,7 @@ paths:
         - groups.onenote
       summary: Get ref of sectionGroups from groups
       description: The section groups in the section. Read-only. Nullable.
-      operationId: groups.onenote.notebooks.sectionGroups_ListGraphRefSectionGroups
+      operationId: groups.onenote.notebooks.sectionGroups_ListSectionGroupsGraphBPreRef
       parameters:
         - name: group-id
           in: path
@@ -1478,7 +1478,7 @@ paths:
         - groups.onenote
       summary: Create new navigation property ref to sectionGroups for groups
       description: The section groups in the section. Read-only. Nullable.
-      operationId: groups.onenote.notebooks.sectionGroups_CreateGraphRefSectionGroups
+      operationId: groups.onenote.notebooks.sectionGroups_CreateSectionGroupsGraphBPreRef
       parameters:
         - name: group-id
           in: path
@@ -2526,7 +2526,7 @@ paths:
         - groups.onenote
       summary: Get ref of parentNotebook from groups
       description: The notebook that contains the page.  Read-only.
-      operationId: groups.onenote.notebooks.sectionGroups.sections.pages_GetGraphRefParentNotebook
+      operationId: groups.onenote.notebooks.sectionGroups.sections.pages_GetParentNotebookGraphBPreRef
       parameters:
         - name: group-id
           in: path
@@ -2595,7 +2595,7 @@ paths:
         - groups.onenote
       summary: Update the ref of navigation property parentNotebook in groups
       description: The notebook that contains the page.  Read-only.
-      operationId: groups.onenote.notebooks.sectionGroups.sections.pages_SetGraphRefParentNotebook
+      operationId: groups.onenote.notebooks.sectionGroups.sections.pages_SetParentNotebookGraphBPreRef
       parameters:
         - name: group-id
           in: path
@@ -2652,7 +2652,7 @@ paths:
         - groups.onenote
       summary: Delete ref of navigation property parentNotebook for groups
       description: The notebook that contains the page.  Read-only.
-      operationId: groups.onenote.notebooks.sectionGroups.sections.pages_DeleteGraphRefParentNotebook
+      operationId: groups.onenote.notebooks.sectionGroups.sections.pages_DeleteParentNotebookGraphBPreRef
       parameters:
         - name: group-id
           in: path
@@ -2823,7 +2823,7 @@ paths:
         - groups.onenote
       summary: Get ref of parentSection from groups
       description: The section that contains the page. Read-only.
-      operationId: groups.onenote.notebooks.sectionGroups.sections.pages_GetGraphRefParentSection
+      operationId: groups.onenote.notebooks.sectionGroups.sections.pages_GetParentSectionGraphBPreRef
       parameters:
         - name: group-id
           in: path
@@ -2900,7 +2900,7 @@ paths:
         - groups.onenote
       summary: Update the ref of navigation property parentSection in groups
       description: The section that contains the page. Read-only.
-      operationId: groups.onenote.notebooks.sectionGroups.sections.pages_SetGraphRefParentSection
+      operationId: groups.onenote.notebooks.sectionGroups.sections.pages_SetParentSectionGraphBPreRef
       parameters:
         - name: group-id
           in: path
@@ -2957,7 +2957,7 @@ paths:
         - groups.onenote
       summary: Delete ref of navigation property parentSection for groups
       description: The section that contains the page. Read-only.
-      operationId: groups.onenote.notebooks.sectionGroups.sections.pages_DeleteGraphRefParentSection
+      operationId: groups.onenote.notebooks.sectionGroups.sections.pages_DeleteParentSectionGraphBPreRef
       parameters:
         - name: group-id
           in: path
@@ -3112,7 +3112,7 @@ paths:
         - groups.onenote
       summary: Get ref of parentNotebook from groups
       description: The notebook that contains the section.  Read-only.
-      operationId: groups.onenote.notebooks.sectionGroups.sections_GetGraphRefParentNotebook
+      operationId: groups.onenote.notebooks.sectionGroups.sections_GetParentNotebookGraphBPreRef
       parameters:
         - name: group-id
           in: path
@@ -3172,7 +3172,7 @@ paths:
         - groups.onenote
       summary: Update the ref of navigation property parentNotebook in groups
       description: The notebook that contains the section.  Read-only.
-      operationId: groups.onenote.notebooks.sectionGroups.sections_SetGraphRefParentNotebook
+      operationId: groups.onenote.notebooks.sectionGroups.sections_SetParentNotebookGraphBPreRef
       parameters:
         - name: group-id
           in: path
@@ -3222,7 +3222,7 @@ paths:
         - groups.onenote
       summary: Delete ref of navigation property parentNotebook for groups
       description: The notebook that contains the section.  Read-only.
-      operationId: groups.onenote.notebooks.sectionGroups.sections_DeleteGraphRefParentNotebook
+      operationId: groups.onenote.notebooks.sectionGroups.sections_DeleteParentNotebookGraphBPreRef
       parameters:
         - name: group-id
           in: path
@@ -3384,7 +3384,7 @@ paths:
         - groups.onenote
       summary: Get ref of parentSectionGroup from groups
       description: The section group that contains the section.  Read-only.
-      operationId: groups.onenote.notebooks.sectionGroups.sections_GetGraphRefParentSectionGroup
+      operationId: groups.onenote.notebooks.sectionGroups.sections_GetParentSectionGroupGraphBPreRef
       parameters:
         - name: group-id
           in: path
@@ -3458,7 +3458,7 @@ paths:
         - groups.onenote
       summary: Update the ref of navigation property parentSectionGroup in groups
       description: The section group that contains the section.  Read-only.
-      operationId: groups.onenote.notebooks.sectionGroups.sections_SetGraphRefParentSectionGroup
+      operationId: groups.onenote.notebooks.sectionGroups.sections_SetParentSectionGroupGraphBPreRef
       parameters:
         - name: group-id
           in: path
@@ -3508,7 +3508,7 @@ paths:
         - groups.onenote
       summary: Delete ref of navigation property parentSectionGroup for groups
       description: The section group that contains the section.  Read-only.
-      operationId: groups.onenote.notebooks.sectionGroups.sections_DeleteGraphRefParentSectionGroup
+      operationId: groups.onenote.notebooks.sectionGroups.sections_DeleteParentSectionGroupGraphBPreRef
       parameters:
         - name: group-id
           in: path
@@ -4455,7 +4455,7 @@ paths:
         - groups.onenote
       summary: Get ref of parentNotebook from groups
       description: The notebook that contains the page.  Read-only.
-      operationId: groups.onenote.notebooks.sections.pages_GetGraphRefParentNotebook
+      operationId: groups.onenote.notebooks.sections.pages_GetParentNotebookGraphBPreRef
       parameters:
         - name: group-id
           in: path
@@ -4515,7 +4515,7 @@ paths:
         - groups.onenote
       summary: Update the ref of navigation property parentNotebook in groups
       description: The notebook that contains the page.  Read-only.
-      operationId: groups.onenote.notebooks.sections.pages_SetGraphRefParentNotebook
+      operationId: groups.onenote.notebooks.sections.pages_SetParentNotebookGraphBPreRef
       parameters:
         - name: group-id
           in: path
@@ -4565,7 +4565,7 @@ paths:
         - groups.onenote
       summary: Delete ref of navigation property parentNotebook for groups
       description: The notebook that contains the page.  Read-only.
-      operationId: groups.onenote.notebooks.sections.pages_DeleteGraphRefParentNotebook
+      operationId: groups.onenote.notebooks.sections.pages_DeleteParentNotebookGraphBPreRef
       parameters:
         - name: group-id
           in: path
@@ -4719,7 +4719,7 @@ paths:
         - groups.onenote
       summary: Get ref of parentSection from groups
       description: The section that contains the page. Read-only.
-      operationId: groups.onenote.notebooks.sections.pages_GetGraphRefParentSection
+      operationId: groups.onenote.notebooks.sections.pages_GetParentSectionGraphBPreRef
       parameters:
         - name: group-id
           in: path
@@ -4786,7 +4786,7 @@ paths:
         - groups.onenote
       summary: Update the ref of navigation property parentSection in groups
       description: The section that contains the page. Read-only.
-      operationId: groups.onenote.notebooks.sections.pages_SetGraphRefParentSection
+      operationId: groups.onenote.notebooks.sections.pages_SetParentSectionGraphBPreRef
       parameters:
         - name: group-id
           in: path
@@ -4836,7 +4836,7 @@ paths:
         - groups.onenote
       summary: Delete ref of navigation property parentSection for groups
       description: The section that contains the page. Read-only.
-      operationId: groups.onenote.notebooks.sections.pages_DeleteGraphRefParentSection
+      operationId: groups.onenote.notebooks.sections.pages_DeleteParentSectionGraphBPreRef
       parameters:
         - name: group-id
           in: path
@@ -4975,7 +4975,7 @@ paths:
         - groups.onenote
       summary: Get ref of parentNotebook from groups
       description: The notebook that contains the section.  Read-only.
-      operationId: groups.onenote.notebooks.sections_GetGraphRefParentNotebook
+      operationId: groups.onenote.notebooks.sections_GetParentNotebookGraphBPreRef
       parameters:
         - name: group-id
           in: path
@@ -5026,7 +5026,7 @@ paths:
         - groups.onenote
       summary: Update the ref of navigation property parentNotebook in groups
       description: The notebook that contains the section.  Read-only.
-      operationId: groups.onenote.notebooks.sections_SetGraphRefParentNotebook
+      operationId: groups.onenote.notebooks.sections_SetParentNotebookGraphBPreRef
       parameters:
         - name: group-id
           in: path
@@ -5069,7 +5069,7 @@ paths:
         - groups.onenote
       summary: Delete ref of navigation property parentNotebook for groups
       description: The notebook that contains the section.  Read-only.
-      operationId: groups.onenote.notebooks.sections_DeleteGraphRefParentNotebook
+      operationId: groups.onenote.notebooks.sections_DeleteParentNotebookGraphBPreRef
       parameters:
         - name: group-id
           in: path
@@ -5213,7 +5213,7 @@ paths:
         - groups.onenote
       summary: Get ref of parentSectionGroup from groups
       description: The section group that contains the section.  Read-only.
-      operationId: groups.onenote.notebooks.sections_GetGraphRefParentSectionGroup
+      operationId: groups.onenote.notebooks.sections_GetParentSectionGroupGraphBPreRef
       parameters:
         - name: group-id
           in: path
@@ -5276,7 +5276,7 @@ paths:
         - groups.onenote
       summary: Update the ref of navigation property parentSectionGroup in groups
       description: The section group that contains the section.  Read-only.
-      operationId: groups.onenote.notebooks.sections_SetGraphRefParentSectionGroup
+      operationId: groups.onenote.notebooks.sections_SetParentSectionGroupGraphBPreRef
       parameters:
         - name: group-id
           in: path
@@ -5319,7 +5319,7 @@ paths:
         - groups.onenote
       summary: Delete ref of navigation property parentSectionGroup for groups
       description: The section group that contains the section.  Read-only.
-      operationId: groups.onenote.notebooks.sections_DeleteGraphRefParentSectionGroup
+      operationId: groups.onenote.notebooks.sections_DeleteParentSectionGroupGraphBPreRef
       parameters:
         - name: group-id
           in: path
@@ -6065,7 +6065,7 @@ paths:
         - groups.onenote
       summary: Get ref of parentNotebook from groups
       description: The notebook that contains the page.  Read-only.
-      operationId: groups.onenote.pages_GetGraphRefParentNotebook
+      operationId: groups.onenote.pages_GetParentNotebookGraphBPreRef
       parameters:
         - name: group-id
           in: path
@@ -6107,7 +6107,7 @@ paths:
         - groups.onenote
       summary: Update the ref of navigation property parentNotebook in groups
       description: The notebook that contains the page.  Read-only.
-      operationId: groups.onenote.pages_SetGraphRefParentNotebook
+      operationId: groups.onenote.pages_SetParentNotebookGraphBPreRef
       parameters:
         - name: group-id
           in: path
@@ -6143,7 +6143,7 @@ paths:
         - groups.onenote
       summary: Delete ref of navigation property parentNotebook for groups
       description: The notebook that contains the page.  Read-only.
-      operationId: groups.onenote.pages_DeleteGraphRefParentNotebook
+      operationId: groups.onenote.pages_DeleteParentNotebookGraphBPreRef
       parameters:
         - name: group-id
           in: path
@@ -6263,7 +6263,7 @@ paths:
         - groups.onenote
       summary: Get ref of parentSection from groups
       description: The section that contains the page. Read-only.
-      operationId: groups.onenote.pages_GetGraphRefParentSection
+      operationId: groups.onenote.pages_GetParentSectionGraphBPreRef
       parameters:
         - name: group-id
           in: path
@@ -6310,7 +6310,7 @@ paths:
         - groups.onenote
       summary: Update the ref of navigation property parentSection in groups
       description: The section that contains the page. Read-only.
-      operationId: groups.onenote.pages_SetGraphRefParentSection
+      operationId: groups.onenote.pages_SetParentSectionGraphBPreRef
       parameters:
         - name: group-id
           in: path
@@ -6346,7 +6346,7 @@ paths:
         - groups.onenote
       summary: Delete ref of navigation property parentSection for groups
       description: The section that contains the page. Read-only.
-      operationId: groups.onenote.pages_DeleteGraphRefParentSection
+      operationId: groups.onenote.pages_DeleteParentSectionGraphBPreRef
       parameters:
         - name: group-id
           in: path
@@ -7075,7 +7075,7 @@ paths:
         - groups.onenote
       summary: Get ref of parentNotebook from groups
       description: The notebook that contains the section group. Read-only.
-      operationId: groups.onenote.sectionGroups_GetGraphRefParentNotebook
+      operationId: groups.onenote.sectionGroups_GetParentNotebookGraphBPreRef
       parameters:
         - name: group-id
           in: path
@@ -7117,7 +7117,7 @@ paths:
         - groups.onenote
       summary: Update the ref of navigation property parentNotebook in groups
       description: The notebook that contains the section group. Read-only.
-      operationId: groups.onenote.sectionGroups_SetGraphRefParentNotebook
+      operationId: groups.onenote.sectionGroups_SetParentNotebookGraphBPreRef
       parameters:
         - name: group-id
           in: path
@@ -7153,7 +7153,7 @@ paths:
         - groups.onenote
       summary: Delete ref of navigation property parentNotebook for groups
       description: The notebook that contains the section group. Read-only.
-      operationId: groups.onenote.sectionGroups_DeleteGraphRefParentNotebook
+      operationId: groups.onenote.sectionGroups_DeleteParentNotebookGraphBPreRef
       parameters:
         - name: group-id
           in: path
@@ -7279,7 +7279,7 @@ paths:
         - groups.onenote
       summary: Get ref of parentSectionGroup from groups
       description: The section group that contains the section group. Read-only.
-      operationId: groups.onenote.sectionGroups_GetGraphRefParentSectionGroup
+      operationId: groups.onenote.sectionGroups_GetParentSectionGroupGraphBPreRef
       parameters:
         - name: group-id
           in: path
@@ -7331,7 +7331,7 @@ paths:
         - groups.onenote
       summary: Update the ref of navigation property parentSectionGroup in groups
       description: The section group that contains the section group. Read-only.
-      operationId: groups.onenote.sectionGroups_SetGraphRefParentSectionGroup
+      operationId: groups.onenote.sectionGroups_SetParentSectionGroupGraphBPreRef
       parameters:
         - name: group-id
           in: path
@@ -7367,7 +7367,7 @@ paths:
         - groups.onenote
       summary: Delete ref of navigation property parentSectionGroup for groups
       description: The section group that contains the section group. Read-only.
-      operationId: groups.onenote.sectionGroups_DeleteGraphRefParentSectionGroup
+      operationId: groups.onenote.sectionGroups_DeleteParentSectionGroupGraphBPreRef
       parameters:
         - name: group-id
           in: path
@@ -7519,7 +7519,7 @@ paths:
         - groups.onenote
       summary: Get ref of sectionGroups from groups
       description: The section groups in the section. Read-only. Nullable.
-      operationId: groups.onenote.sectionGroups_ListGraphRefSectionGroups
+      operationId: groups.onenote.sectionGroups_ListSectionGroupsGraphBPreRef
       parameters:
         - name: group-id
           in: path
@@ -7597,7 +7597,7 @@ paths:
         - groups.onenote
       summary: Create new navigation property ref to sectionGroups for groups
       description: The section groups in the section. Read-only. Nullable.
-      operationId: groups.onenote.sectionGroups_CreateGraphRefSectionGroups
+      operationId: groups.onenote.sectionGroups_CreateSectionGroupsGraphBPreRef
       parameters:
         - name: group-id
           in: path
@@ -8540,7 +8540,7 @@ paths:
         - groups.onenote
       summary: Get ref of parentNotebook from groups
       description: The notebook that contains the page.  Read-only.
-      operationId: groups.onenote.sectionGroups.sections.pages_GetGraphRefParentNotebook
+      operationId: groups.onenote.sectionGroups.sections.pages_GetParentNotebookGraphBPreRef
       parameters:
         - name: group-id
           in: path
@@ -8600,7 +8600,7 @@ paths:
         - groups.onenote
       summary: Update the ref of navigation property parentNotebook in groups
       description: The notebook that contains the page.  Read-only.
-      operationId: groups.onenote.sectionGroups.sections.pages_SetGraphRefParentNotebook
+      operationId: groups.onenote.sectionGroups.sections.pages_SetParentNotebookGraphBPreRef
       parameters:
         - name: group-id
           in: path
@@ -8650,7 +8650,7 @@ paths:
         - groups.onenote
       summary: Delete ref of navigation property parentNotebook for groups
       description: The notebook that contains the page.  Read-only.
-      operationId: groups.onenote.sectionGroups.sections.pages_DeleteGraphRefParentNotebook
+      operationId: groups.onenote.sectionGroups.sections.pages_DeleteParentNotebookGraphBPreRef
       parameters:
         - name: group-id
           in: path
@@ -8804,7 +8804,7 @@ paths:
         - groups.onenote
       summary: Get ref of parentSection from groups
       description: The section that contains the page. Read-only.
-      operationId: groups.onenote.sectionGroups.sections.pages_GetGraphRefParentSection
+      operationId: groups.onenote.sectionGroups.sections.pages_GetParentSectionGraphBPreRef
       parameters:
         - name: group-id
           in: path
@@ -8871,7 +8871,7 @@ paths:
         - groups.onenote
       summary: Update the ref of navigation property parentSection in groups
       description: The section that contains the page. Read-only.
-      operationId: groups.onenote.sectionGroups.sections.pages_SetGraphRefParentSection
+      operationId: groups.onenote.sectionGroups.sections.pages_SetParentSectionGraphBPreRef
       parameters:
         - name: group-id
           in: path
@@ -8921,7 +8921,7 @@ paths:
         - groups.onenote
       summary: Delete ref of navigation property parentSection for groups
       description: The section that contains the page. Read-only.
-      operationId: groups.onenote.sectionGroups.sections.pages_DeleteGraphRefParentSection
+      operationId: groups.onenote.sectionGroups.sections.pages_DeleteParentSectionGraphBPreRef
       parameters:
         - name: group-id
           in: path
@@ -9060,7 +9060,7 @@ paths:
         - groups.onenote
       summary: Get ref of parentNotebook from groups
       description: The notebook that contains the section.  Read-only.
-      operationId: groups.onenote.sectionGroups.sections_GetGraphRefParentNotebook
+      operationId: groups.onenote.sectionGroups.sections_GetParentNotebookGraphBPreRef
       parameters:
         - name: group-id
           in: path
@@ -9111,7 +9111,7 @@ paths:
         - groups.onenote
       summary: Update the ref of navigation property parentNotebook in groups
       description: The notebook that contains the section.  Read-only.
-      operationId: groups.onenote.sectionGroups.sections_SetGraphRefParentNotebook
+      operationId: groups.onenote.sectionGroups.sections_SetParentNotebookGraphBPreRef
       parameters:
         - name: group-id
           in: path
@@ -9154,7 +9154,7 @@ paths:
         - groups.onenote
       summary: Delete ref of navigation property parentNotebook for groups
       description: The notebook that contains the section.  Read-only.
-      operationId: groups.onenote.sectionGroups.sections_DeleteGraphRefParentNotebook
+      operationId: groups.onenote.sectionGroups.sections_DeleteParentNotebookGraphBPreRef
       parameters:
         - name: group-id
           in: path
@@ -9298,7 +9298,7 @@ paths:
         - groups.onenote
       summary: Get ref of parentSectionGroup from groups
       description: The section group that contains the section.  Read-only.
-      operationId: groups.onenote.sectionGroups.sections_GetGraphRefParentSectionGroup
+      operationId: groups.onenote.sectionGroups.sections_GetParentSectionGroupGraphBPreRef
       parameters:
         - name: group-id
           in: path
@@ -9361,7 +9361,7 @@ paths:
         - groups.onenote
       summary: Update the ref of navigation property parentSectionGroup in groups
       description: The section group that contains the section.  Read-only.
-      operationId: groups.onenote.sectionGroups.sections_SetGraphRefParentSectionGroup
+      operationId: groups.onenote.sectionGroups.sections_SetParentSectionGroupGraphBPreRef
       parameters:
         - name: group-id
           in: path
@@ -9404,7 +9404,7 @@ paths:
         - groups.onenote
       summary: Delete ref of navigation property parentSectionGroup for groups
       description: The section group that contains the section.  Read-only.
-      operationId: groups.onenote.sectionGroups.sections_DeleteGraphRefParentSectionGroup
+      operationId: groups.onenote.sectionGroups.sections_DeleteParentSectionGroupGraphBPreRef
       parameters:
         - name: group-id
           in: path
@@ -10246,7 +10246,7 @@ paths:
         - groups.onenote
       summary: Get ref of parentNotebook from groups
       description: The notebook that contains the page.  Read-only.
-      operationId: groups.onenote.sections.pages_GetGraphRefParentNotebook
+      operationId: groups.onenote.sections.pages_GetParentNotebookGraphBPreRef
       parameters:
         - name: group-id
           in: path
@@ -10297,7 +10297,7 @@ paths:
         - groups.onenote
       summary: Update the ref of navigation property parentNotebook in groups
       description: The notebook that contains the page.  Read-only.
-      operationId: groups.onenote.sections.pages_SetGraphRefParentNotebook
+      operationId: groups.onenote.sections.pages_SetParentNotebookGraphBPreRef
       parameters:
         - name: group-id
           in: path
@@ -10340,7 +10340,7 @@ paths:
         - groups.onenote
       summary: Delete ref of navigation property parentNotebook for groups
       description: The notebook that contains the page.  Read-only.
-      operationId: groups.onenote.sections.pages_DeleteGraphRefParentNotebook
+      operationId: groups.onenote.sections.pages_DeleteParentNotebookGraphBPreRef
       parameters:
         - name: group-id
           in: path
@@ -10477,7 +10477,7 @@ paths:
         - groups.onenote
       summary: Get ref of parentSection from groups
       description: The section that contains the page. Read-only.
-      operationId: groups.onenote.sections.pages_GetGraphRefParentSection
+      operationId: groups.onenote.sections.pages_GetParentSectionGraphBPreRef
       parameters:
         - name: group-id
           in: path
@@ -10534,7 +10534,7 @@ paths:
         - groups.onenote
       summary: Update the ref of navigation property parentSection in groups
       description: The section that contains the page. Read-only.
-      operationId: groups.onenote.sections.pages_SetGraphRefParentSection
+      operationId: groups.onenote.sections.pages_SetParentSectionGraphBPreRef
       parameters:
         - name: group-id
           in: path
@@ -10577,7 +10577,7 @@ paths:
         - groups.onenote
       summary: Delete ref of navigation property parentSection for groups
       description: The section that contains the page. Read-only.
-      operationId: groups.onenote.sections.pages_DeleteGraphRefParentSection
+      operationId: groups.onenote.sections.pages_DeleteParentSectionGraphBPreRef
       parameters:
         - name: group-id
           in: path
@@ -10700,7 +10700,7 @@ paths:
         - groups.onenote
       summary: Get ref of parentNotebook from groups
       description: The notebook that contains the section.  Read-only.
-      operationId: groups.onenote.sections_GetGraphRefParentNotebook
+      operationId: groups.onenote.sections_GetParentNotebookGraphBPreRef
       parameters:
         - name: group-id
           in: path
@@ -10742,7 +10742,7 @@ paths:
         - groups.onenote
       summary: Update the ref of navigation property parentNotebook in groups
       description: The notebook that contains the section.  Read-only.
-      operationId: groups.onenote.sections_SetGraphRefParentNotebook
+      operationId: groups.onenote.sections_SetParentNotebookGraphBPreRef
       parameters:
         - name: group-id
           in: path
@@ -10778,7 +10778,7 @@ paths:
         - groups.onenote
       summary: Delete ref of navigation property parentNotebook for groups
       description: The notebook that contains the section.  Read-only.
-      operationId: groups.onenote.sections_DeleteGraphRefParentNotebook
+      operationId: groups.onenote.sections_DeleteParentNotebookGraphBPreRef
       parameters:
         - name: group-id
           in: path
@@ -10904,7 +10904,7 @@ paths:
         - groups.onenote
       summary: Get ref of parentSectionGroup from groups
       description: The section group that contains the section.  Read-only.
-      operationId: groups.onenote.sections_GetGraphRefParentSectionGroup
+      operationId: groups.onenote.sections_GetParentSectionGroupGraphBPreRef
       parameters:
         - name: group-id
           in: path
@@ -10956,7 +10956,7 @@ paths:
         - groups.onenote
       summary: Update the ref of navigation property parentSectionGroup in groups
       description: The section group that contains the section.  Read-only.
-      operationId: groups.onenote.sections_SetGraphRefParentSectionGroup
+      operationId: groups.onenote.sections_SetParentSectionGroupGraphBPreRef
       parameters:
         - name: group-id
           in: path
@@ -10992,7 +10992,7 @@ paths:
         - groups.onenote
       summary: Delete ref of navigation property parentSectionGroup for groups
       description: The section group that contains the section.  Read-only.
-      operationId: groups.onenote.sections_DeleteGraphRefParentSectionGroup
+      operationId: groups.onenote.sections_DeleteParentSectionGroupGraphBPreRef
       parameters:
         - name: group-id
           in: path
@@ -11896,7 +11896,7 @@ paths:
         - sites.onenote
       summary: Get ref of parentNotebook from sites
       description: The notebook that contains the section group. Read-only.
-      operationId: sites.onenote.notebooks.sectionGroups_GetGraphRefParentNotebook
+      operationId: sites.onenote.notebooks.sectionGroups_GetParentNotebookGraphBPreRef
       parameters:
         - name: site-id
           in: path
@@ -11947,7 +11947,7 @@ paths:
         - sites.onenote
       summary: Update the ref of navigation property parentNotebook in sites
       description: The notebook that contains the section group. Read-only.
-      operationId: sites.onenote.notebooks.sectionGroups_SetGraphRefParentNotebook
+      operationId: sites.onenote.notebooks.sectionGroups_SetParentNotebookGraphBPreRef
       parameters:
         - name: site-id
           in: path
@@ -11990,7 +11990,7 @@ paths:
         - sites.onenote
       summary: Delete ref of navigation property parentNotebook for sites
       description: The notebook that contains the section group. Read-only.
-      operationId: sites.onenote.notebooks.sectionGroups_DeleteGraphRefParentNotebook
+      operationId: sites.onenote.notebooks.sectionGroups_DeleteParentNotebookGraphBPreRef
       parameters:
         - name: site-id
           in: path
@@ -12134,7 +12134,7 @@ paths:
         - sites.onenote
       summary: Get ref of parentSectionGroup from sites
       description: The section group that contains the section group. Read-only.
-      operationId: sites.onenote.notebooks.sectionGroups_GetGraphRefParentSectionGroup
+      operationId: sites.onenote.notebooks.sectionGroups_GetParentSectionGroupGraphBPreRef
       parameters:
         - name: site-id
           in: path
@@ -12197,7 +12197,7 @@ paths:
         - sites.onenote
       summary: Update the ref of navigation property parentSectionGroup in sites
       description: The section group that contains the section group. Read-only.
-      operationId: sites.onenote.notebooks.sectionGroups_SetGraphRefParentSectionGroup
+      operationId: sites.onenote.notebooks.sectionGroups_SetParentSectionGroupGraphBPreRef
       parameters:
         - name: site-id
           in: path
@@ -12240,7 +12240,7 @@ paths:
         - sites.onenote
       summary: Delete ref of navigation property parentSectionGroup for sites
       description: The section group that contains the section group. Read-only.
-      operationId: sites.onenote.notebooks.sectionGroups_DeleteGraphRefParentSectionGroup
+      operationId: sites.onenote.notebooks.sectionGroups_DeleteParentSectionGroupGraphBPreRef
       parameters:
         - name: site-id
           in: path
@@ -12406,7 +12406,7 @@ paths:
         - sites.onenote
       summary: Get ref of sectionGroups from sites
       description: The section groups in the section. Read-only. Nullable.
-      operationId: sites.onenote.notebooks.sectionGroups_ListGraphRefSectionGroups
+      operationId: sites.onenote.notebooks.sectionGroups_ListSectionGroupsGraphBPreRef
       parameters:
         - name: site-id
           in: path
@@ -12491,7 +12491,7 @@ paths:
         - sites.onenote
       summary: Create new navigation property ref to sectionGroups for sites
       description: The section groups in the section. Read-only. Nullable.
-      operationId: sites.onenote.notebooks.sectionGroups_CreateGraphRefSectionGroups
+      operationId: sites.onenote.notebooks.sectionGroups_CreateSectionGroupsGraphBPreRef
       parameters:
         - name: site-id
           in: path
@@ -13539,7 +13539,7 @@ paths:
         - sites.onenote
       summary: Get ref of parentNotebook from sites
       description: The notebook that contains the page.  Read-only.
-      operationId: sites.onenote.notebooks.sectionGroups.sections.pages_GetGraphRefParentNotebook
+      operationId: sites.onenote.notebooks.sectionGroups.sections.pages_GetParentNotebookGraphBPreRef
       parameters:
         - name: site-id
           in: path
@@ -13608,7 +13608,7 @@ paths:
         - sites.onenote
       summary: Update the ref of navigation property parentNotebook in sites
       description: The notebook that contains the page.  Read-only.
-      operationId: sites.onenote.notebooks.sectionGroups.sections.pages_SetGraphRefParentNotebook
+      operationId: sites.onenote.notebooks.sectionGroups.sections.pages_SetParentNotebookGraphBPreRef
       parameters:
         - name: site-id
           in: path
@@ -13665,7 +13665,7 @@ paths:
         - sites.onenote
       summary: Delete ref of navigation property parentNotebook for sites
       description: The notebook that contains the page.  Read-only.
-      operationId: sites.onenote.notebooks.sectionGroups.sections.pages_DeleteGraphRefParentNotebook
+      operationId: sites.onenote.notebooks.sectionGroups.sections.pages_DeleteParentNotebookGraphBPreRef
       parameters:
         - name: site-id
           in: path
@@ -13836,7 +13836,7 @@ paths:
         - sites.onenote
       summary: Get ref of parentSection from sites
       description: The section that contains the page. Read-only.
-      operationId: sites.onenote.notebooks.sectionGroups.sections.pages_GetGraphRefParentSection
+      operationId: sites.onenote.notebooks.sectionGroups.sections.pages_GetParentSectionGraphBPreRef
       parameters:
         - name: site-id
           in: path
@@ -13913,7 +13913,7 @@ paths:
         - sites.onenote
       summary: Update the ref of navigation property parentSection in sites
       description: The section that contains the page. Read-only.
-      operationId: sites.onenote.notebooks.sectionGroups.sections.pages_SetGraphRefParentSection
+      operationId: sites.onenote.notebooks.sectionGroups.sections.pages_SetParentSectionGraphBPreRef
       parameters:
         - name: site-id
           in: path
@@ -13970,7 +13970,7 @@ paths:
         - sites.onenote
       summary: Delete ref of navigation property parentSection for sites
       description: The section that contains the page. Read-only.
-      operationId: sites.onenote.notebooks.sectionGroups.sections.pages_DeleteGraphRefParentSection
+      operationId: sites.onenote.notebooks.sectionGroups.sections.pages_DeleteParentSectionGraphBPreRef
       parameters:
         - name: site-id
           in: path
@@ -14125,7 +14125,7 @@ paths:
         - sites.onenote
       summary: Get ref of parentNotebook from sites
       description: The notebook that contains the section.  Read-only.
-      operationId: sites.onenote.notebooks.sectionGroups.sections_GetGraphRefParentNotebook
+      operationId: sites.onenote.notebooks.sectionGroups.sections_GetParentNotebookGraphBPreRef
       parameters:
         - name: site-id
           in: path
@@ -14185,7 +14185,7 @@ paths:
         - sites.onenote
       summary: Update the ref of navigation property parentNotebook in sites
       description: The notebook that contains the section.  Read-only.
-      operationId: sites.onenote.notebooks.sectionGroups.sections_SetGraphRefParentNotebook
+      operationId: sites.onenote.notebooks.sectionGroups.sections_SetParentNotebookGraphBPreRef
       parameters:
         - name: site-id
           in: path
@@ -14235,7 +14235,7 @@ paths:
         - sites.onenote
       summary: Delete ref of navigation property parentNotebook for sites
       description: The notebook that contains the section.  Read-only.
-      operationId: sites.onenote.notebooks.sectionGroups.sections_DeleteGraphRefParentNotebook
+      operationId: sites.onenote.notebooks.sectionGroups.sections_DeleteParentNotebookGraphBPreRef
       parameters:
         - name: site-id
           in: path
@@ -14397,7 +14397,7 @@ paths:
         - sites.onenote
       summary: Get ref of parentSectionGroup from sites
       description: The section group that contains the section.  Read-only.
-      operationId: sites.onenote.notebooks.sectionGroups.sections_GetGraphRefParentSectionGroup
+      operationId: sites.onenote.notebooks.sectionGroups.sections_GetParentSectionGroupGraphBPreRef
       parameters:
         - name: site-id
           in: path
@@ -14471,7 +14471,7 @@ paths:
         - sites.onenote
       summary: Update the ref of navigation property parentSectionGroup in sites
       description: The section group that contains the section.  Read-only.
-      operationId: sites.onenote.notebooks.sectionGroups.sections_SetGraphRefParentSectionGroup
+      operationId: sites.onenote.notebooks.sectionGroups.sections_SetParentSectionGroupGraphBPreRef
       parameters:
         - name: site-id
           in: path
@@ -14521,7 +14521,7 @@ paths:
         - sites.onenote
       summary: Delete ref of navigation property parentSectionGroup for sites
       description: The section group that contains the section.  Read-only.
-      operationId: sites.onenote.notebooks.sectionGroups.sections_DeleteGraphRefParentSectionGroup
+      operationId: sites.onenote.notebooks.sectionGroups.sections_DeleteParentSectionGroupGraphBPreRef
       parameters:
         - name: site-id
           in: path
@@ -15468,7 +15468,7 @@ paths:
         - sites.onenote
       summary: Get ref of parentNotebook from sites
       description: The notebook that contains the page.  Read-only.
-      operationId: sites.onenote.notebooks.sections.pages_GetGraphRefParentNotebook
+      operationId: sites.onenote.notebooks.sections.pages_GetParentNotebookGraphBPreRef
       parameters:
         - name: site-id
           in: path
@@ -15528,7 +15528,7 @@ paths:
         - sites.onenote
       summary: Update the ref of navigation property parentNotebook in sites
       description: The notebook that contains the page.  Read-only.
-      operationId: sites.onenote.notebooks.sections.pages_SetGraphRefParentNotebook
+      operationId: sites.onenote.notebooks.sections.pages_SetParentNotebookGraphBPreRef
       parameters:
         - name: site-id
           in: path
@@ -15578,7 +15578,7 @@ paths:
         - sites.onenote
       summary: Delete ref of navigation property parentNotebook for sites
       description: The notebook that contains the page.  Read-only.
-      operationId: sites.onenote.notebooks.sections.pages_DeleteGraphRefParentNotebook
+      operationId: sites.onenote.notebooks.sections.pages_DeleteParentNotebookGraphBPreRef
       parameters:
         - name: site-id
           in: path
@@ -15732,7 +15732,7 @@ paths:
         - sites.onenote
       summary: Get ref of parentSection from sites
       description: The section that contains the page. Read-only.
-      operationId: sites.onenote.notebooks.sections.pages_GetGraphRefParentSection
+      operationId: sites.onenote.notebooks.sections.pages_GetParentSectionGraphBPreRef
       parameters:
         - name: site-id
           in: path
@@ -15799,7 +15799,7 @@ paths:
         - sites.onenote
       summary: Update the ref of navigation property parentSection in sites
       description: The section that contains the page. Read-only.
-      operationId: sites.onenote.notebooks.sections.pages_SetGraphRefParentSection
+      operationId: sites.onenote.notebooks.sections.pages_SetParentSectionGraphBPreRef
       parameters:
         - name: site-id
           in: path
@@ -15849,7 +15849,7 @@ paths:
         - sites.onenote
       summary: Delete ref of navigation property parentSection for sites
       description: The section that contains the page. Read-only.
-      operationId: sites.onenote.notebooks.sections.pages_DeleteGraphRefParentSection
+      operationId: sites.onenote.notebooks.sections.pages_DeleteParentSectionGraphBPreRef
       parameters:
         - name: site-id
           in: path
@@ -15988,7 +15988,7 @@ paths:
         - sites.onenote
       summary: Get ref of parentNotebook from sites
       description: The notebook that contains the section.  Read-only.
-      operationId: sites.onenote.notebooks.sections_GetGraphRefParentNotebook
+      operationId: sites.onenote.notebooks.sections_GetParentNotebookGraphBPreRef
       parameters:
         - name: site-id
           in: path
@@ -16039,7 +16039,7 @@ paths:
         - sites.onenote
       summary: Update the ref of navigation property parentNotebook in sites
       description: The notebook that contains the section.  Read-only.
-      operationId: sites.onenote.notebooks.sections_SetGraphRefParentNotebook
+      operationId: sites.onenote.notebooks.sections_SetParentNotebookGraphBPreRef
       parameters:
         - name: site-id
           in: path
@@ -16082,7 +16082,7 @@ paths:
         - sites.onenote
       summary: Delete ref of navigation property parentNotebook for sites
       description: The notebook that contains the section.  Read-only.
-      operationId: sites.onenote.notebooks.sections_DeleteGraphRefParentNotebook
+      operationId: sites.onenote.notebooks.sections_DeleteParentNotebookGraphBPreRef
       parameters:
         - name: site-id
           in: path
@@ -16226,7 +16226,7 @@ paths:
         - sites.onenote
       summary: Get ref of parentSectionGroup from sites
       description: The section group that contains the section.  Read-only.
-      operationId: sites.onenote.notebooks.sections_GetGraphRefParentSectionGroup
+      operationId: sites.onenote.notebooks.sections_GetParentSectionGroupGraphBPreRef
       parameters:
         - name: site-id
           in: path
@@ -16289,7 +16289,7 @@ paths:
         - sites.onenote
       summary: Update the ref of navigation property parentSectionGroup in sites
       description: The section group that contains the section.  Read-only.
-      operationId: sites.onenote.notebooks.sections_SetGraphRefParentSectionGroup
+      operationId: sites.onenote.notebooks.sections_SetParentSectionGroupGraphBPreRef
       parameters:
         - name: site-id
           in: path
@@ -16332,7 +16332,7 @@ paths:
         - sites.onenote
       summary: Delete ref of navigation property parentSectionGroup for sites
       description: The section group that contains the section.  Read-only.
-      operationId: sites.onenote.notebooks.sections_DeleteGraphRefParentSectionGroup
+      operationId: sites.onenote.notebooks.sections_DeleteParentSectionGroupGraphBPreRef
       parameters:
         - name: site-id
           in: path
@@ -17078,7 +17078,7 @@ paths:
         - sites.onenote
       summary: Get ref of parentNotebook from sites
       description: The notebook that contains the page.  Read-only.
-      operationId: sites.onenote.pages_GetGraphRefParentNotebook
+      operationId: sites.onenote.pages_GetParentNotebookGraphBPreRef
       parameters:
         - name: site-id
           in: path
@@ -17120,7 +17120,7 @@ paths:
         - sites.onenote
       summary: Update the ref of navigation property parentNotebook in sites
       description: The notebook that contains the page.  Read-only.
-      operationId: sites.onenote.pages_SetGraphRefParentNotebook
+      operationId: sites.onenote.pages_SetParentNotebookGraphBPreRef
       parameters:
         - name: site-id
           in: path
@@ -17156,7 +17156,7 @@ paths:
         - sites.onenote
       summary: Delete ref of navigation property parentNotebook for sites
       description: The notebook that contains the page.  Read-only.
-      operationId: sites.onenote.pages_DeleteGraphRefParentNotebook
+      operationId: sites.onenote.pages_DeleteParentNotebookGraphBPreRef
       parameters:
         - name: site-id
           in: path
@@ -17276,7 +17276,7 @@ paths:
         - sites.onenote
       summary: Get ref of parentSection from sites
       description: The section that contains the page. Read-only.
-      operationId: sites.onenote.pages_GetGraphRefParentSection
+      operationId: sites.onenote.pages_GetParentSectionGraphBPreRef
       parameters:
         - name: site-id
           in: path
@@ -17323,7 +17323,7 @@ paths:
         - sites.onenote
       summary: Update the ref of navigation property parentSection in sites
       description: The section that contains the page. Read-only.
-      operationId: sites.onenote.pages_SetGraphRefParentSection
+      operationId: sites.onenote.pages_SetParentSectionGraphBPreRef
       parameters:
         - name: site-id
           in: path
@@ -17359,7 +17359,7 @@ paths:
         - sites.onenote
       summary: Delete ref of navigation property parentSection for sites
       description: The section that contains the page. Read-only.
-      operationId: sites.onenote.pages_DeleteGraphRefParentSection
+      operationId: sites.onenote.pages_DeleteParentSectionGraphBPreRef
       parameters:
         - name: site-id
           in: path
@@ -18088,7 +18088,7 @@ paths:
         - sites.onenote
       summary: Get ref of parentNotebook from sites
       description: The notebook that contains the section group. Read-only.
-      operationId: sites.onenote.sectionGroups_GetGraphRefParentNotebook
+      operationId: sites.onenote.sectionGroups_GetParentNotebookGraphBPreRef
       parameters:
         - name: site-id
           in: path
@@ -18130,7 +18130,7 @@ paths:
         - sites.onenote
       summary: Update the ref of navigation property parentNotebook in sites
       description: The notebook that contains the section group. Read-only.
-      operationId: sites.onenote.sectionGroups_SetGraphRefParentNotebook
+      operationId: sites.onenote.sectionGroups_SetParentNotebookGraphBPreRef
       parameters:
         - name: site-id
           in: path
@@ -18166,7 +18166,7 @@ paths:
         - sites.onenote
       summary: Delete ref of navigation property parentNotebook for sites
       description: The notebook that contains the section group. Read-only.
-      operationId: sites.onenote.sectionGroups_DeleteGraphRefParentNotebook
+      operationId: sites.onenote.sectionGroups_DeleteParentNotebookGraphBPreRef
       parameters:
         - name: site-id
           in: path
@@ -18292,7 +18292,7 @@ paths:
         - sites.onenote
       summary: Get ref of parentSectionGroup from sites
       description: The section group that contains the section group. Read-only.
-      operationId: sites.onenote.sectionGroups_GetGraphRefParentSectionGroup
+      operationId: sites.onenote.sectionGroups_GetParentSectionGroupGraphBPreRef
       parameters:
         - name: site-id
           in: path
@@ -18344,7 +18344,7 @@ paths:
         - sites.onenote
       summary: Update the ref of navigation property parentSectionGroup in sites
       description: The section group that contains the section group. Read-only.
-      operationId: sites.onenote.sectionGroups_SetGraphRefParentSectionGroup
+      operationId: sites.onenote.sectionGroups_SetParentSectionGroupGraphBPreRef
       parameters:
         - name: site-id
           in: path
@@ -18380,7 +18380,7 @@ paths:
         - sites.onenote
       summary: Delete ref of navigation property parentSectionGroup for sites
       description: The section group that contains the section group. Read-only.
-      operationId: sites.onenote.sectionGroups_DeleteGraphRefParentSectionGroup
+      operationId: sites.onenote.sectionGroups_DeleteParentSectionGroupGraphBPreRef
       parameters:
         - name: site-id
           in: path
@@ -18532,7 +18532,7 @@ paths:
         - sites.onenote
       summary: Get ref of sectionGroups from sites
       description: The section groups in the section. Read-only. Nullable.
-      operationId: sites.onenote.sectionGroups_ListGraphRefSectionGroups
+      operationId: sites.onenote.sectionGroups_ListSectionGroupsGraphBPreRef
       parameters:
         - name: site-id
           in: path
@@ -18610,7 +18610,7 @@ paths:
         - sites.onenote
       summary: Create new navigation property ref to sectionGroups for sites
       description: The section groups in the section. Read-only. Nullable.
-      operationId: sites.onenote.sectionGroups_CreateGraphRefSectionGroups
+      operationId: sites.onenote.sectionGroups_CreateSectionGroupsGraphBPreRef
       parameters:
         - name: site-id
           in: path
@@ -19553,7 +19553,7 @@ paths:
         - sites.onenote
       summary: Get ref of parentNotebook from sites
       description: The notebook that contains the page.  Read-only.
-      operationId: sites.onenote.sectionGroups.sections.pages_GetGraphRefParentNotebook
+      operationId: sites.onenote.sectionGroups.sections.pages_GetParentNotebookGraphBPreRef
       parameters:
         - name: site-id
           in: path
@@ -19613,7 +19613,7 @@ paths:
         - sites.onenote
       summary: Update the ref of navigation property parentNotebook in sites
       description: The notebook that contains the page.  Read-only.
-      operationId: sites.onenote.sectionGroups.sections.pages_SetGraphRefParentNotebook
+      operationId: sites.onenote.sectionGroups.sections.pages_SetParentNotebookGraphBPreRef
       parameters:
         - name: site-id
           in: path
@@ -19663,7 +19663,7 @@ paths:
         - sites.onenote
       summary: Delete ref of navigation property parentNotebook for sites
       description: The notebook that contains the page.  Read-only.
-      operationId: sites.onenote.sectionGroups.sections.pages_DeleteGraphRefParentNotebook
+      operationId: sites.onenote.sectionGroups.sections.pages_DeleteParentNotebookGraphBPreRef
       parameters:
         - name: site-id
           in: path
@@ -19817,7 +19817,7 @@ paths:
         - sites.onenote
       summary: Get ref of parentSection from sites
       description: The section that contains the page. Read-only.
-      operationId: sites.onenote.sectionGroups.sections.pages_GetGraphRefParentSection
+      operationId: sites.onenote.sectionGroups.sections.pages_GetParentSectionGraphBPreRef
       parameters:
         - name: site-id
           in: path
@@ -19884,7 +19884,7 @@ paths:
         - sites.onenote
       summary: Update the ref of navigation property parentSection in sites
       description: The section that contains the page. Read-only.
-      operationId: sites.onenote.sectionGroups.sections.pages_SetGraphRefParentSection
+      operationId: sites.onenote.sectionGroups.sections.pages_SetParentSectionGraphBPreRef
       parameters:
         - name: site-id
           in: path
@@ -19934,7 +19934,7 @@ paths:
         - sites.onenote
       summary: Delete ref of navigation property parentSection for sites
       description: The section that contains the page. Read-only.
-      operationId: sites.onenote.sectionGroups.sections.pages_DeleteGraphRefParentSection
+      operationId: sites.onenote.sectionGroups.sections.pages_DeleteParentSectionGraphBPreRef
       parameters:
         - name: site-id
           in: path
@@ -20073,7 +20073,7 @@ paths:
         - sites.onenote
       summary: Get ref of parentNotebook from sites
       description: The notebook that contains the section.  Read-only.
-      operationId: sites.onenote.sectionGroups.sections_GetGraphRefParentNotebook
+      operationId: sites.onenote.sectionGroups.sections_GetParentNotebookGraphBPreRef
       parameters:
         - name: site-id
           in: path
@@ -20124,7 +20124,7 @@ paths:
         - sites.onenote
       summary: Update the ref of navigation property parentNotebook in sites
       description: The notebook that contains the section.  Read-only.
-      operationId: sites.onenote.sectionGroups.sections_SetGraphRefParentNotebook
+      operationId: sites.onenote.sectionGroups.sections_SetParentNotebookGraphBPreRef
       parameters:
         - name: site-id
           in: path
@@ -20167,7 +20167,7 @@ paths:
         - sites.onenote
       summary: Delete ref of navigation property parentNotebook for sites
       description: The notebook that contains the section.  Read-only.
-      operationId: sites.onenote.sectionGroups.sections_DeleteGraphRefParentNotebook
+      operationId: sites.onenote.sectionGroups.sections_DeleteParentNotebookGraphBPreRef
       parameters:
         - name: site-id
           in: path
@@ -20311,7 +20311,7 @@ paths:
         - sites.onenote
       summary: Get ref of parentSectionGroup from sites
       description: The section group that contains the section.  Read-only.
-      operationId: sites.onenote.sectionGroups.sections_GetGraphRefParentSectionGroup
+      operationId: sites.onenote.sectionGroups.sections_GetParentSectionGroupGraphBPreRef
       parameters:
         - name: site-id
           in: path
@@ -20374,7 +20374,7 @@ paths:
         - sites.onenote
       summary: Update the ref of navigation property parentSectionGroup in sites
       description: The section group that contains the section.  Read-only.
-      operationId: sites.onenote.sectionGroups.sections_SetGraphRefParentSectionGroup
+      operationId: sites.onenote.sectionGroups.sections_SetParentSectionGroupGraphBPreRef
       parameters:
         - name: site-id
           in: path
@@ -20417,7 +20417,7 @@ paths:
         - sites.onenote
       summary: Delete ref of navigation property parentSectionGroup for sites
       description: The section group that contains the section.  Read-only.
-      operationId: sites.onenote.sectionGroups.sections_DeleteGraphRefParentSectionGroup
+      operationId: sites.onenote.sectionGroups.sections_DeleteParentSectionGroupGraphBPreRef
       parameters:
         - name: site-id
           in: path
@@ -21259,7 +21259,7 @@ paths:
         - sites.onenote
       summary: Get ref of parentNotebook from sites
       description: The notebook that contains the page.  Read-only.
-      operationId: sites.onenote.sections.pages_GetGraphRefParentNotebook
+      operationId: sites.onenote.sections.pages_GetParentNotebookGraphBPreRef
       parameters:
         - name: site-id
           in: path
@@ -21310,7 +21310,7 @@ paths:
         - sites.onenote
       summary: Update the ref of navigation property parentNotebook in sites
       description: The notebook that contains the page.  Read-only.
-      operationId: sites.onenote.sections.pages_SetGraphRefParentNotebook
+      operationId: sites.onenote.sections.pages_SetParentNotebookGraphBPreRef
       parameters:
         - name: site-id
           in: path
@@ -21353,7 +21353,7 @@ paths:
         - sites.onenote
       summary: Delete ref of navigation property parentNotebook for sites
       description: The notebook that contains the page.  Read-only.
-      operationId: sites.onenote.sections.pages_DeleteGraphRefParentNotebook
+      operationId: sites.onenote.sections.pages_DeleteParentNotebookGraphBPreRef
       parameters:
         - name: site-id
           in: path
@@ -21490,7 +21490,7 @@ paths:
         - sites.onenote
       summary: Get ref of parentSection from sites
       description: The section that contains the page. Read-only.
-      operationId: sites.onenote.sections.pages_GetGraphRefParentSection
+      operationId: sites.onenote.sections.pages_GetParentSectionGraphBPreRef
       parameters:
         - name: site-id
           in: path
@@ -21547,7 +21547,7 @@ paths:
         - sites.onenote
       summary: Update the ref of navigation property parentSection in sites
       description: The section that contains the page. Read-only.
-      operationId: sites.onenote.sections.pages_SetGraphRefParentSection
+      operationId: sites.onenote.sections.pages_SetParentSectionGraphBPreRef
       parameters:
         - name: site-id
           in: path
@@ -21590,7 +21590,7 @@ paths:
         - sites.onenote
       summary: Delete ref of navigation property parentSection for sites
       description: The section that contains the page. Read-only.
-      operationId: sites.onenote.sections.pages_DeleteGraphRefParentSection
+      operationId: sites.onenote.sections.pages_DeleteParentSectionGraphBPreRef
       parameters:
         - name: site-id
           in: path
@@ -21713,7 +21713,7 @@ paths:
         - sites.onenote
       summary: Get ref of parentNotebook from sites
       description: The notebook that contains the section.  Read-only.
-      operationId: sites.onenote.sections_GetGraphRefParentNotebook
+      operationId: sites.onenote.sections_GetParentNotebookGraphBPreRef
       parameters:
         - name: site-id
           in: path
@@ -21755,7 +21755,7 @@ paths:
         - sites.onenote
       summary: Update the ref of navigation property parentNotebook in sites
       description: The notebook that contains the section.  Read-only.
-      operationId: sites.onenote.sections_SetGraphRefParentNotebook
+      operationId: sites.onenote.sections_SetParentNotebookGraphBPreRef
       parameters:
         - name: site-id
           in: path
@@ -21791,7 +21791,7 @@ paths:
         - sites.onenote
       summary: Delete ref of navigation property parentNotebook for sites
       description: The notebook that contains the section.  Read-only.
-      operationId: sites.onenote.sections_DeleteGraphRefParentNotebook
+      operationId: sites.onenote.sections_DeleteParentNotebookGraphBPreRef
       parameters:
         - name: site-id
           in: path
@@ -21917,7 +21917,7 @@ paths:
         - sites.onenote
       summary: Get ref of parentSectionGroup from sites
       description: The section group that contains the section.  Read-only.
-      operationId: sites.onenote.sections_GetGraphRefParentSectionGroup
+      operationId: sites.onenote.sections_GetParentSectionGroupGraphBPreRef
       parameters:
         - name: site-id
           in: path
@@ -21969,7 +21969,7 @@ paths:
         - sites.onenote
       summary: Update the ref of navigation property parentSectionGroup in sites
       description: The section group that contains the section.  Read-only.
-      operationId: sites.onenote.sections_SetGraphRefParentSectionGroup
+      operationId: sites.onenote.sections_SetParentSectionGroupGraphBPreRef
       parameters:
         - name: site-id
           in: path
@@ -22005,7 +22005,7 @@ paths:
         - sites.onenote
       summary: Delete ref of navigation property parentSectionGroup for sites
       description: The section group that contains the section.  Read-only.
-      operationId: sites.onenote.sections_DeleteGraphRefParentSectionGroup
+      operationId: sites.onenote.sections_DeleteParentSectionGroupGraphBPreRef
       parameters:
         - name: site-id
           in: path
@@ -22909,7 +22909,7 @@ paths:
         - users.onenote
       summary: Get ref of parentNotebook from users
       description: The notebook that contains the section group. Read-only.
-      operationId: users.onenote.notebooks.sectionGroups_GetGraphRefParentNotebook
+      operationId: users.onenote.notebooks.sectionGroups_GetParentNotebookGraphBPreRef
       parameters:
         - name: user-id
           in: path
@@ -22960,7 +22960,7 @@ paths:
         - users.onenote
       summary: Update the ref of navigation property parentNotebook in users
       description: The notebook that contains the section group. Read-only.
-      operationId: users.onenote.notebooks.sectionGroups_SetGraphRefParentNotebook
+      operationId: users.onenote.notebooks.sectionGroups_SetParentNotebookGraphBPreRef
       parameters:
         - name: user-id
           in: path
@@ -23003,7 +23003,7 @@ paths:
         - users.onenote
       summary: Delete ref of navigation property parentNotebook for users
       description: The notebook that contains the section group. Read-only.
-      operationId: users.onenote.notebooks.sectionGroups_DeleteGraphRefParentNotebook
+      operationId: users.onenote.notebooks.sectionGroups_DeleteParentNotebookGraphBPreRef
       parameters:
         - name: user-id
           in: path
@@ -23147,7 +23147,7 @@ paths:
         - users.onenote
       summary: Get ref of parentSectionGroup from users
       description: The section group that contains the section group. Read-only.
-      operationId: users.onenote.notebooks.sectionGroups_GetGraphRefParentSectionGroup
+      operationId: users.onenote.notebooks.sectionGroups_GetParentSectionGroupGraphBPreRef
       parameters:
         - name: user-id
           in: path
@@ -23210,7 +23210,7 @@ paths:
         - users.onenote
       summary: Update the ref of navigation property parentSectionGroup in users
       description: The section group that contains the section group. Read-only.
-      operationId: users.onenote.notebooks.sectionGroups_SetGraphRefParentSectionGroup
+      operationId: users.onenote.notebooks.sectionGroups_SetParentSectionGroupGraphBPreRef
       parameters:
         - name: user-id
           in: path
@@ -23253,7 +23253,7 @@ paths:
         - users.onenote
       summary: Delete ref of navigation property parentSectionGroup for users
       description: The section group that contains the section group. Read-only.
-      operationId: users.onenote.notebooks.sectionGroups_DeleteGraphRefParentSectionGroup
+      operationId: users.onenote.notebooks.sectionGroups_DeleteParentSectionGroupGraphBPreRef
       parameters:
         - name: user-id
           in: path
@@ -23419,7 +23419,7 @@ paths:
         - users.onenote
       summary: Get ref of sectionGroups from users
       description: The section groups in the section. Read-only. Nullable.
-      operationId: users.onenote.notebooks.sectionGroups_ListGraphRefSectionGroups
+      operationId: users.onenote.notebooks.sectionGroups_ListSectionGroupsGraphBPreRef
       parameters:
         - name: user-id
           in: path
@@ -23504,7 +23504,7 @@ paths:
         - users.onenote
       summary: Create new navigation property ref to sectionGroups for users
       description: The section groups in the section. Read-only. Nullable.
-      operationId: users.onenote.notebooks.sectionGroups_CreateGraphRefSectionGroups
+      operationId: users.onenote.notebooks.sectionGroups_CreateSectionGroupsGraphBPreRef
       parameters:
         - name: user-id
           in: path
@@ -24552,7 +24552,7 @@ paths:
         - users.onenote
       summary: Get ref of parentNotebook from users
       description: The notebook that contains the page.  Read-only.
-      operationId: users.onenote.notebooks.sectionGroups.sections.pages_GetGraphRefParentNotebook
+      operationId: users.onenote.notebooks.sectionGroups.sections.pages_GetParentNotebookGraphBPreRef
       parameters:
         - name: user-id
           in: path
@@ -24621,7 +24621,7 @@ paths:
         - users.onenote
       summary: Update the ref of navigation property parentNotebook in users
       description: The notebook that contains the page.  Read-only.
-      operationId: users.onenote.notebooks.sectionGroups.sections.pages_SetGraphRefParentNotebook
+      operationId: users.onenote.notebooks.sectionGroups.sections.pages_SetParentNotebookGraphBPreRef
       parameters:
         - name: user-id
           in: path
@@ -24678,7 +24678,7 @@ paths:
         - users.onenote
       summary: Delete ref of navigation property parentNotebook for users
       description: The notebook that contains the page.  Read-only.
-      operationId: users.onenote.notebooks.sectionGroups.sections.pages_DeleteGraphRefParentNotebook
+      operationId: users.onenote.notebooks.sectionGroups.sections.pages_DeleteParentNotebookGraphBPreRef
       parameters:
         - name: user-id
           in: path
@@ -24849,7 +24849,7 @@ paths:
         - users.onenote
       summary: Get ref of parentSection from users
       description: The section that contains the page. Read-only.
-      operationId: users.onenote.notebooks.sectionGroups.sections.pages_GetGraphRefParentSection
+      operationId: users.onenote.notebooks.sectionGroups.sections.pages_GetParentSectionGraphBPreRef
       parameters:
         - name: user-id
           in: path
@@ -24926,7 +24926,7 @@ paths:
         - users.onenote
       summary: Update the ref of navigation property parentSection in users
       description: The section that contains the page. Read-only.
-      operationId: users.onenote.notebooks.sectionGroups.sections.pages_SetGraphRefParentSection
+      operationId: users.onenote.notebooks.sectionGroups.sections.pages_SetParentSectionGraphBPreRef
       parameters:
         - name: user-id
           in: path
@@ -24983,7 +24983,7 @@ paths:
         - users.onenote
       summary: Delete ref of navigation property parentSection for users
       description: The section that contains the page. Read-only.
-      operationId: users.onenote.notebooks.sectionGroups.sections.pages_DeleteGraphRefParentSection
+      operationId: users.onenote.notebooks.sectionGroups.sections.pages_DeleteParentSectionGraphBPreRef
       parameters:
         - name: user-id
           in: path
@@ -25138,7 +25138,7 @@ paths:
         - users.onenote
       summary: Get ref of parentNotebook from users
       description: The notebook that contains the section.  Read-only.
-      operationId: users.onenote.notebooks.sectionGroups.sections_GetGraphRefParentNotebook
+      operationId: users.onenote.notebooks.sectionGroups.sections_GetParentNotebookGraphBPreRef
       parameters:
         - name: user-id
           in: path
@@ -25198,7 +25198,7 @@ paths:
         - users.onenote
       summary: Update the ref of navigation property parentNotebook in users
       description: The notebook that contains the section.  Read-only.
-      operationId: users.onenote.notebooks.sectionGroups.sections_SetGraphRefParentNotebook
+      operationId: users.onenote.notebooks.sectionGroups.sections_SetParentNotebookGraphBPreRef
       parameters:
         - name: user-id
           in: path
@@ -25248,7 +25248,7 @@ paths:
         - users.onenote
       summary: Delete ref of navigation property parentNotebook for users
       description: The notebook that contains the section.  Read-only.
-      operationId: users.onenote.notebooks.sectionGroups.sections_DeleteGraphRefParentNotebook
+      operationId: users.onenote.notebooks.sectionGroups.sections_DeleteParentNotebookGraphBPreRef
       parameters:
         - name: user-id
           in: path
@@ -25410,7 +25410,7 @@ paths:
         - users.onenote
       summary: Get ref of parentSectionGroup from users
       description: The section group that contains the section.  Read-only.
-      operationId: users.onenote.notebooks.sectionGroups.sections_GetGraphRefParentSectionGroup
+      operationId: users.onenote.notebooks.sectionGroups.sections_GetParentSectionGroupGraphBPreRef
       parameters:
         - name: user-id
           in: path
@@ -25484,7 +25484,7 @@ paths:
         - users.onenote
       summary: Update the ref of navigation property parentSectionGroup in users
       description: The section group that contains the section.  Read-only.
-      operationId: users.onenote.notebooks.sectionGroups.sections_SetGraphRefParentSectionGroup
+      operationId: users.onenote.notebooks.sectionGroups.sections_SetParentSectionGroupGraphBPreRef
       parameters:
         - name: user-id
           in: path
@@ -25534,7 +25534,7 @@ paths:
         - users.onenote
       summary: Delete ref of navigation property parentSectionGroup for users
       description: The section group that contains the section.  Read-only.
-      operationId: users.onenote.notebooks.sectionGroups.sections_DeleteGraphRefParentSectionGroup
+      operationId: users.onenote.notebooks.sectionGroups.sections_DeleteParentSectionGroupGraphBPreRef
       parameters:
         - name: user-id
           in: path
@@ -26481,7 +26481,7 @@ paths:
         - users.onenote
       summary: Get ref of parentNotebook from users
       description: The notebook that contains the page.  Read-only.
-      operationId: users.onenote.notebooks.sections.pages_GetGraphRefParentNotebook
+      operationId: users.onenote.notebooks.sections.pages_GetParentNotebookGraphBPreRef
       parameters:
         - name: user-id
           in: path
@@ -26541,7 +26541,7 @@ paths:
         - users.onenote
       summary: Update the ref of navigation property parentNotebook in users
       description: The notebook that contains the page.  Read-only.
-      operationId: users.onenote.notebooks.sections.pages_SetGraphRefParentNotebook
+      operationId: users.onenote.notebooks.sections.pages_SetParentNotebookGraphBPreRef
       parameters:
         - name: user-id
           in: path
@@ -26591,7 +26591,7 @@ paths:
         - users.onenote
       summary: Delete ref of navigation property parentNotebook for users
       description: The notebook that contains the page.  Read-only.
-      operationId: users.onenote.notebooks.sections.pages_DeleteGraphRefParentNotebook
+      operationId: users.onenote.notebooks.sections.pages_DeleteParentNotebookGraphBPreRef
       parameters:
         - name: user-id
           in: path
@@ -26745,7 +26745,7 @@ paths:
         - users.onenote
       summary: Get ref of parentSection from users
       description: The section that contains the page. Read-only.
-      operationId: users.onenote.notebooks.sections.pages_GetGraphRefParentSection
+      operationId: users.onenote.notebooks.sections.pages_GetParentSectionGraphBPreRef
       parameters:
         - name: user-id
           in: path
@@ -26812,7 +26812,7 @@ paths:
         - users.onenote
       summary: Update the ref of navigation property parentSection in users
       description: The section that contains the page. Read-only.
-      operationId: users.onenote.notebooks.sections.pages_SetGraphRefParentSection
+      operationId: users.onenote.notebooks.sections.pages_SetParentSectionGraphBPreRef
       parameters:
         - name: user-id
           in: path
@@ -26862,7 +26862,7 @@ paths:
         - users.onenote
       summary: Delete ref of navigation property parentSection for users
       description: The section that contains the page. Read-only.
-      operationId: users.onenote.notebooks.sections.pages_DeleteGraphRefParentSection
+      operationId: users.onenote.notebooks.sections.pages_DeleteParentSectionGraphBPreRef
       parameters:
         - name: user-id
           in: path
@@ -27001,7 +27001,7 @@ paths:
         - users.onenote
       summary: Get ref of parentNotebook from users
       description: The notebook that contains the section.  Read-only.
-      operationId: users.onenote.notebooks.sections_GetGraphRefParentNotebook
+      operationId: users.onenote.notebooks.sections_GetParentNotebookGraphBPreRef
       parameters:
         - name: user-id
           in: path
@@ -27052,7 +27052,7 @@ paths:
         - users.onenote
       summary: Update the ref of navigation property parentNotebook in users
       description: The notebook that contains the section.  Read-only.
-      operationId: users.onenote.notebooks.sections_SetGraphRefParentNotebook
+      operationId: users.onenote.notebooks.sections_SetParentNotebookGraphBPreRef
       parameters:
         - name: user-id
           in: path
@@ -27095,7 +27095,7 @@ paths:
         - users.onenote
       summary: Delete ref of navigation property parentNotebook for users
       description: The notebook that contains the section.  Read-only.
-      operationId: users.onenote.notebooks.sections_DeleteGraphRefParentNotebook
+      operationId: users.onenote.notebooks.sections_DeleteParentNotebookGraphBPreRef
       parameters:
         - name: user-id
           in: path
@@ -27239,7 +27239,7 @@ paths:
         - users.onenote
       summary: Get ref of parentSectionGroup from users
       description: The section group that contains the section.  Read-only.
-      operationId: users.onenote.notebooks.sections_GetGraphRefParentSectionGroup
+      operationId: users.onenote.notebooks.sections_GetParentSectionGroupGraphBPreRef
       parameters:
         - name: user-id
           in: path
@@ -27302,7 +27302,7 @@ paths:
         - users.onenote
       summary: Update the ref of navigation property parentSectionGroup in users
       description: The section group that contains the section.  Read-only.
-      operationId: users.onenote.notebooks.sections_SetGraphRefParentSectionGroup
+      operationId: users.onenote.notebooks.sections_SetParentSectionGroupGraphBPreRef
       parameters:
         - name: user-id
           in: path
@@ -27345,7 +27345,7 @@ paths:
         - users.onenote
       summary: Delete ref of navigation property parentSectionGroup for users
       description: The section group that contains the section.  Read-only.
-      operationId: users.onenote.notebooks.sections_DeleteGraphRefParentSectionGroup
+      operationId: users.onenote.notebooks.sections_DeleteParentSectionGroupGraphBPreRef
       parameters:
         - name: user-id
           in: path
@@ -28091,7 +28091,7 @@ paths:
         - users.onenote
       summary: Get ref of parentNotebook from users
       description: The notebook that contains the page.  Read-only.
-      operationId: users.onenote.pages_GetGraphRefParentNotebook
+      operationId: users.onenote.pages_GetParentNotebookGraphBPreRef
       parameters:
         - name: user-id
           in: path
@@ -28133,7 +28133,7 @@ paths:
         - users.onenote
       summary: Update the ref of navigation property parentNotebook in users
       description: The notebook that contains the page.  Read-only.
-      operationId: users.onenote.pages_SetGraphRefParentNotebook
+      operationId: users.onenote.pages_SetParentNotebookGraphBPreRef
       parameters:
         - name: user-id
           in: path
@@ -28169,7 +28169,7 @@ paths:
         - users.onenote
       summary: Delete ref of navigation property parentNotebook for users
       description: The notebook that contains the page.  Read-only.
-      operationId: users.onenote.pages_DeleteGraphRefParentNotebook
+      operationId: users.onenote.pages_DeleteParentNotebookGraphBPreRef
       parameters:
         - name: user-id
           in: path
@@ -28289,7 +28289,7 @@ paths:
         - users.onenote
       summary: Get ref of parentSection from users
       description: The section that contains the page. Read-only.
-      operationId: users.onenote.pages_GetGraphRefParentSection
+      operationId: users.onenote.pages_GetParentSectionGraphBPreRef
       parameters:
         - name: user-id
           in: path
@@ -28336,7 +28336,7 @@ paths:
         - users.onenote
       summary: Update the ref of navigation property parentSection in users
       description: The section that contains the page. Read-only.
-      operationId: users.onenote.pages_SetGraphRefParentSection
+      operationId: users.onenote.pages_SetParentSectionGraphBPreRef
       parameters:
         - name: user-id
           in: path
@@ -28372,7 +28372,7 @@ paths:
         - users.onenote
       summary: Delete ref of navigation property parentSection for users
       description: The section that contains the page. Read-only.
-      operationId: users.onenote.pages_DeleteGraphRefParentSection
+      operationId: users.onenote.pages_DeleteParentSectionGraphBPreRef
       parameters:
         - name: user-id
           in: path
@@ -29101,7 +29101,7 @@ paths:
         - users.onenote
       summary: Get ref of parentNotebook from users
       description: The notebook that contains the section group. Read-only.
-      operationId: users.onenote.sectionGroups_GetGraphRefParentNotebook
+      operationId: users.onenote.sectionGroups_GetParentNotebookGraphBPreRef
       parameters:
         - name: user-id
           in: path
@@ -29143,7 +29143,7 @@ paths:
         - users.onenote
       summary: Update the ref of navigation property parentNotebook in users
       description: The notebook that contains the section group. Read-only.
-      operationId: users.onenote.sectionGroups_SetGraphRefParentNotebook
+      operationId: users.onenote.sectionGroups_SetParentNotebookGraphBPreRef
       parameters:
         - name: user-id
           in: path
@@ -29179,7 +29179,7 @@ paths:
         - users.onenote
       summary: Delete ref of navigation property parentNotebook for users
       description: The notebook that contains the section group. Read-only.
-      operationId: users.onenote.sectionGroups_DeleteGraphRefParentNotebook
+      operationId: users.onenote.sectionGroups_DeleteParentNotebookGraphBPreRef
       parameters:
         - name: user-id
           in: path
@@ -29305,7 +29305,7 @@ paths:
         - users.onenote
       summary: Get ref of parentSectionGroup from users
       description: The section group that contains the section group. Read-only.
-      operationId: users.onenote.sectionGroups_GetGraphRefParentSectionGroup
+      operationId: users.onenote.sectionGroups_GetParentSectionGroupGraphBPreRef
       parameters:
         - name: user-id
           in: path
@@ -29357,7 +29357,7 @@ paths:
         - users.onenote
       summary: Update the ref of navigation property parentSectionGroup in users
       description: The section group that contains the section group. Read-only.
-      operationId: users.onenote.sectionGroups_SetGraphRefParentSectionGroup
+      operationId: users.onenote.sectionGroups_SetParentSectionGroupGraphBPreRef
       parameters:
         - name: user-id
           in: path
@@ -29393,7 +29393,7 @@ paths:
         - users.onenote
       summary: Delete ref of navigation property parentSectionGroup for users
       description: The section group that contains the section group. Read-only.
-      operationId: users.onenote.sectionGroups_DeleteGraphRefParentSectionGroup
+      operationId: users.onenote.sectionGroups_DeleteParentSectionGroupGraphBPreRef
       parameters:
         - name: user-id
           in: path
@@ -29545,7 +29545,7 @@ paths:
         - users.onenote
       summary: Get ref of sectionGroups from users
       description: The section groups in the section. Read-only. Nullable.
-      operationId: users.onenote.sectionGroups_ListGraphRefSectionGroups
+      operationId: users.onenote.sectionGroups_ListSectionGroupsGraphBPreRef
       parameters:
         - name: user-id
           in: path
@@ -29623,7 +29623,7 @@ paths:
         - users.onenote
       summary: Create new navigation property ref to sectionGroups for users
       description: The section groups in the section. Read-only. Nullable.
-      operationId: users.onenote.sectionGroups_CreateGraphRefSectionGroups
+      operationId: users.onenote.sectionGroups_CreateSectionGroupsGraphBPreRef
       parameters:
         - name: user-id
           in: path
@@ -30566,7 +30566,7 @@ paths:
         - users.onenote
       summary: Get ref of parentNotebook from users
       description: The notebook that contains the page.  Read-only.
-      operationId: users.onenote.sectionGroups.sections.pages_GetGraphRefParentNotebook
+      operationId: users.onenote.sectionGroups.sections.pages_GetParentNotebookGraphBPreRef
       parameters:
         - name: user-id
           in: path
@@ -30626,7 +30626,7 @@ paths:
         - users.onenote
       summary: Update the ref of navigation property parentNotebook in users
       description: The notebook that contains the page.  Read-only.
-      operationId: users.onenote.sectionGroups.sections.pages_SetGraphRefParentNotebook
+      operationId: users.onenote.sectionGroups.sections.pages_SetParentNotebookGraphBPreRef
       parameters:
         - name: user-id
           in: path
@@ -30676,7 +30676,7 @@ paths:
         - users.onenote
       summary: Delete ref of navigation property parentNotebook for users
       description: The notebook that contains the page.  Read-only.
-      operationId: users.onenote.sectionGroups.sections.pages_DeleteGraphRefParentNotebook
+      operationId: users.onenote.sectionGroups.sections.pages_DeleteParentNotebookGraphBPreRef
       parameters:
         - name: user-id
           in: path
@@ -30830,7 +30830,7 @@ paths:
         - users.onenote
       summary: Get ref of parentSection from users
       description: The section that contains the page. Read-only.
-      operationId: users.onenote.sectionGroups.sections.pages_GetGraphRefParentSection
+      operationId: users.onenote.sectionGroups.sections.pages_GetParentSectionGraphBPreRef
       parameters:
         - name: user-id
           in: path
@@ -30897,7 +30897,7 @@ paths:
         - users.onenote
       summary: Update the ref of navigation property parentSection in users
       description: The section that contains the page. Read-only.
-      operationId: users.onenote.sectionGroups.sections.pages_SetGraphRefParentSection
+      operationId: users.onenote.sectionGroups.sections.pages_SetParentSectionGraphBPreRef
       parameters:
         - name: user-id
           in: path
@@ -30947,7 +30947,7 @@ paths:
         - users.onenote
       summary: Delete ref of navigation property parentSection for users
       description: The section that contains the page. Read-only.
-      operationId: users.onenote.sectionGroups.sections.pages_DeleteGraphRefParentSection
+      operationId: users.onenote.sectionGroups.sections.pages_DeleteParentSectionGraphBPreRef
       parameters:
         - name: user-id
           in: path
@@ -31086,7 +31086,7 @@ paths:
         - users.onenote
       summary: Get ref of parentNotebook from users
       description: The notebook that contains the section.  Read-only.
-      operationId: users.onenote.sectionGroups.sections_GetGraphRefParentNotebook
+      operationId: users.onenote.sectionGroups.sections_GetParentNotebookGraphBPreRef
       parameters:
         - name: user-id
           in: path
@@ -31137,7 +31137,7 @@ paths:
         - users.onenote
       summary: Update the ref of navigation property parentNotebook in users
       description: The notebook that contains the section.  Read-only.
-      operationId: users.onenote.sectionGroups.sections_SetGraphRefParentNotebook
+      operationId: users.onenote.sectionGroups.sections_SetParentNotebookGraphBPreRef
       parameters:
         - name: user-id
           in: path
@@ -31180,7 +31180,7 @@ paths:
         - users.onenote
       summary: Delete ref of navigation property parentNotebook for users
       description: The notebook that contains the section.  Read-only.
-      operationId: users.onenote.sectionGroups.sections_DeleteGraphRefParentNotebook
+      operationId: users.onenote.sectionGroups.sections_DeleteParentNotebookGraphBPreRef
       parameters:
         - name: user-id
           in: path
@@ -31324,7 +31324,7 @@ paths:
         - users.onenote
       summary: Get ref of parentSectionGroup from users
       description: The section group that contains the section.  Read-only.
-      operationId: users.onenote.sectionGroups.sections_GetGraphRefParentSectionGroup
+      operationId: users.onenote.sectionGroups.sections_GetParentSectionGroupGraphBPreRef
       parameters:
         - name: user-id
           in: path
@@ -31387,7 +31387,7 @@ paths:
         - users.onenote
       summary: Update the ref of navigation property parentSectionGroup in users
       description: The section group that contains the section.  Read-only.
-      operationId: users.onenote.sectionGroups.sections_SetGraphRefParentSectionGroup
+      operationId: users.onenote.sectionGroups.sections_SetParentSectionGroupGraphBPreRef
       parameters:
         - name: user-id
           in: path
@@ -31430,7 +31430,7 @@ paths:
         - users.onenote
       summary: Delete ref of navigation property parentSectionGroup for users
       description: The section group that contains the section.  Read-only.
-      operationId: users.onenote.sectionGroups.sections_DeleteGraphRefParentSectionGroup
+      operationId: users.onenote.sectionGroups.sections_DeleteParentSectionGroupGraphBPreRef
       parameters:
         - name: user-id
           in: path
@@ -32272,7 +32272,7 @@ paths:
         - users.onenote
       summary: Get ref of parentNotebook from users
       description: The notebook that contains the page.  Read-only.
-      operationId: users.onenote.sections.pages_GetGraphRefParentNotebook
+      operationId: users.onenote.sections.pages_GetParentNotebookGraphBPreRef
       parameters:
         - name: user-id
           in: path
@@ -32323,7 +32323,7 @@ paths:
         - users.onenote
       summary: Update the ref of navigation property parentNotebook in users
       description: The notebook that contains the page.  Read-only.
-      operationId: users.onenote.sections.pages_SetGraphRefParentNotebook
+      operationId: users.onenote.sections.pages_SetParentNotebookGraphBPreRef
       parameters:
         - name: user-id
           in: path
@@ -32366,7 +32366,7 @@ paths:
         - users.onenote
       summary: Delete ref of navigation property parentNotebook for users
       description: The notebook that contains the page.  Read-only.
-      operationId: users.onenote.sections.pages_DeleteGraphRefParentNotebook
+      operationId: users.onenote.sections.pages_DeleteParentNotebookGraphBPreRef
       parameters:
         - name: user-id
           in: path
@@ -32503,7 +32503,7 @@ paths:
         - users.onenote
       summary: Get ref of parentSection from users
       description: The section that contains the page. Read-only.
-      operationId: users.onenote.sections.pages_GetGraphRefParentSection
+      operationId: users.onenote.sections.pages_GetParentSectionGraphBPreRef
       parameters:
         - name: user-id
           in: path
@@ -32560,7 +32560,7 @@ paths:
         - users.onenote
       summary: Update the ref of navigation property parentSection in users
       description: The section that contains the page. Read-only.
-      operationId: users.onenote.sections.pages_SetGraphRefParentSection
+      operationId: users.onenote.sections.pages_SetParentSectionGraphBPreRef
       parameters:
         - name: user-id
           in: path
@@ -32603,7 +32603,7 @@ paths:
         - users.onenote
       summary: Delete ref of navigation property parentSection for users
       description: The section that contains the page. Read-only.
-      operationId: users.onenote.sections.pages_DeleteGraphRefParentSection
+      operationId: users.onenote.sections.pages_DeleteParentSectionGraphBPreRef
       parameters:
         - name: user-id
           in: path
@@ -32726,7 +32726,7 @@ paths:
         - users.onenote
       summary: Get ref of parentNotebook from users
       description: The notebook that contains the section.  Read-only.
-      operationId: users.onenote.sections_GetGraphRefParentNotebook
+      operationId: users.onenote.sections_GetParentNotebookGraphBPreRef
       parameters:
         - name: user-id
           in: path
@@ -32768,7 +32768,7 @@ paths:
         - users.onenote
       summary: Update the ref of navigation property parentNotebook in users
       description: The notebook that contains the section.  Read-only.
-      operationId: users.onenote.sections_SetGraphRefParentNotebook
+      operationId: users.onenote.sections_SetParentNotebookGraphBPreRef
       parameters:
         - name: user-id
           in: path
@@ -32804,7 +32804,7 @@ paths:
         - users.onenote
       summary: Delete ref of navigation property parentNotebook for users
       description: The notebook that contains the section.  Read-only.
-      operationId: users.onenote.sections_DeleteGraphRefParentNotebook
+      operationId: users.onenote.sections_DeleteParentNotebookGraphBPreRef
       parameters:
         - name: user-id
           in: path
@@ -32930,7 +32930,7 @@ paths:
         - users.onenote
       summary: Get ref of parentSectionGroup from users
       description: The section group that contains the section.  Read-only.
-      operationId: users.onenote.sections_GetGraphRefParentSectionGroup
+      operationId: users.onenote.sections_GetParentSectionGroupGraphBPreRef
       parameters:
         - name: user-id
           in: path
@@ -32982,7 +32982,7 @@ paths:
         - users.onenote
       summary: Update the ref of navigation property parentSectionGroup in users
       description: The section group that contains the section.  Read-only.
-      operationId: users.onenote.sections_SetGraphRefParentSectionGroup
+      operationId: users.onenote.sections_SetParentSectionGroupGraphBPreRef
       parameters:
         - name: user-id
           in: path
@@ -33018,7 +33018,7 @@ paths:
         - users.onenote
       summary: Delete ref of navigation property parentSectionGroup for users
       description: The section group that contains the section.  Read-only.
-      operationId: users.onenote.sections_DeleteGraphRefParentSectionGroup
+      operationId: users.onenote.sections_DeleteParentSectionGroupGraphBPreRef
       parameters:
         - name: user-id
           in: path

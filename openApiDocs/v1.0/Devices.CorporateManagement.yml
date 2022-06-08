@@ -4142,7 +4142,7 @@ paths:
       tags:
         - deviceAppManagement.Functions
       summary: Invoke function getUserIdsWithFlaggedAppRegistration
-      operationId: deviceAppManagement.managedAppRegistrations_getUserIdsWithFlaggedAppRegistration
+      operationId: deviceAppManagement.managedAppRegistrations_getUserIdsGraphWPreFlaggedAppRegistration
       responses:
         '200':
           description: Success
@@ -6169,7 +6169,7 @@ paths:
         - deviceAppManagement.Actions
       summary: Invoke action syncMicrosoftStoreForBusinessApps
       description: Syncs Intune account with Microsoft Store For Business
-      operationId: deviceAppManagement_syncMicrosoftStoreForBusinessApps
+      operationId: deviceAppManagement_syncMicrosoftStoreGraphFPreBusinessApps
       responses:
         '204':
           description: Success
@@ -8247,7 +8247,7 @@ paths:
         - deviceAppManagement.mobileApp
       summary: Get ref of categories from deviceAppManagement
       description: The list of categories for this app.
-      operationId: deviceAppManagement.mobileApps_ListGraphRefCategories
+      operationId: deviceAppManagement.mobileApps_ListCategoriesGraphBPreRef
       parameters:
         - name: mobileApp-id
           in: path
@@ -8306,7 +8306,7 @@ paths:
         - deviceAppManagement.mobileApp
       summary: Create new navigation property ref to categories for deviceAppManagement
       description: The list of categories for this app.
-      operationId: deviceAppManagement.mobileApps_CreateGraphRefCategories
+      operationId: deviceAppManagement.mobileApps_CreateCategoriesGraphBPreRef
       parameters:
         - name: mobileApp-id
           in: path
@@ -10291,7 +10291,7 @@ paths:
         - users.managedAppRegistration
       summary: Get ref of managedAppRegistrations from users
       description: Zero or more managed app registrations that belong to the user.
-      operationId: users_ListGraphRefManagedAppRegistrations
+      operationId: users_ListManagedAppRegistrationsGraphBPreRef
       parameters:
         - name: user-id
           in: path
@@ -10370,7 +10370,7 @@ paths:
         - users.managedAppRegistration
       summary: Create new navigation property ref to managedAppRegistrations for users
       description: Zero or more managed app registrations that belong to the user.
-      operationId: users_CreateGraphRefManagedAppRegistrations
+      operationId: users_CreateManagedAppRegistrationsGraphBPreRef
       parameters:
         - name: user-id
           in: path

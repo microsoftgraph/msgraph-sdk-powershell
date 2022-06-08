@@ -4,11 +4,10 @@
 
 using System;
 using System.Text.RegularExpressions;
-using System.Threading;
 using System.Threading.Tasks;
-using Microsoft.Graph.PowerShell.Runtime;
+using NamespacePrefixPlaceholder.PowerShell.Runtime;
 
-namespace Microsoft.Graph.PowerShell
+namespace NamespacePrefixPlaceholder.PowerShell
 {
     public static class EventFactory
     {

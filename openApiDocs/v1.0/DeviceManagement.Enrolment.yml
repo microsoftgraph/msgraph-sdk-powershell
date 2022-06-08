@@ -1606,7 +1606,7 @@ paths:
         - roleManagement.rbacApplication
       summary: Get ref of directoryScope from roleManagement
       description: The directory object that is the scope of the assignment. Read-only. Supports $expand.
-      operationId: roleManagement.directory.roleAssignments_GetGraphRefDirectoryScope
+      operationId: roleManagement.directory.roleAssignments_GetDirectoryScopeGraphBPreRef
       parameters:
         - name: unifiedRoleAssignment-id
           in: path
@@ -1630,7 +1630,7 @@ paths:
         - roleManagement.rbacApplication
       summary: Update the ref of navigation property directoryScope in roleManagement
       description: The directory object that is the scope of the assignment. Read-only. Supports $expand.
-      operationId: roleManagement.directory.roleAssignments_SetGraphRefDirectoryScope
+      operationId: roleManagement.directory.roleAssignments_SetDirectoryScopeGraphBPreRef
       parameters:
         - name: unifiedRoleAssignment-id
           in: path
@@ -1659,7 +1659,7 @@ paths:
         - roleManagement.rbacApplication
       summary: Delete ref of navigation property directoryScope for roleManagement
       description: The directory object that is the scope of the assignment. Read-only. Supports $expand.
-      operationId: roleManagement.directory.roleAssignments_DeleteGraphRefDirectoryScope
+      operationId: roleManagement.directory.roleAssignments_DeleteDirectoryScopeGraphBPreRef
       parameters:
         - name: unifiedRoleAssignment-id
           in: path
@@ -1735,7 +1735,7 @@ paths:
         - roleManagement.rbacApplication
       summary: Get ref of principal from roleManagement
       description: Referencing the assigned principal. Read-only. Supports $expand.
-      operationId: roleManagement.directory.roleAssignments_GetGraphRefPrincipal
+      operationId: roleManagement.directory.roleAssignments_GetPrincipalGraphBPreRef
       parameters:
         - name: unifiedRoleAssignment-id
           in: path
@@ -1759,7 +1759,7 @@ paths:
         - roleManagement.rbacApplication
       summary: Update the ref of navigation property principal in roleManagement
       description: Referencing the assigned principal. Read-only. Supports $expand.
-      operationId: roleManagement.directory.roleAssignments_SetGraphRefPrincipal
+      operationId: roleManagement.directory.roleAssignments_SetPrincipalGraphBPreRef
       parameters:
         - name: unifiedRoleAssignment-id
           in: path
@@ -1788,7 +1788,7 @@ paths:
         - roleManagement.rbacApplication
       summary: Delete ref of navigation property principal for roleManagement
       description: Referencing the assigned principal. Read-only. Supports $expand.
-      operationId: roleManagement.directory.roleAssignments_DeleteGraphRefPrincipal
+      operationId: roleManagement.directory.roleAssignments_DeletePrincipalGraphBPreRef
       parameters:
         - name: unifiedRoleAssignment-id
           in: path
@@ -1878,7 +1878,7 @@ paths:
         - roleManagement.rbacApplication
       summary: Get ref of roleDefinition from roleManagement
       description: The roleDefinition the assignment is for.  Supports $expand. roleDefinition.Id will be auto expanded.
-      operationId: roleManagement.directory.roleAssignments_GetGraphRefRoleDefinition
+      operationId: roleManagement.directory.roleAssignments_GetRoleDefinitionGraphBPreRef
       parameters:
         - name: unifiedRoleAssignment-id
           in: path
@@ -1907,7 +1907,7 @@ paths:
         - roleManagement.rbacApplication
       summary: Update the ref of navigation property roleDefinition in roleManagement
       description: The roleDefinition the assignment is for.  Supports $expand. roleDefinition.Id will be auto expanded.
-      operationId: roleManagement.directory.roleAssignments_SetGraphRefRoleDefinition
+      operationId: roleManagement.directory.roleAssignments_SetRoleDefinitionGraphBPreRef
       parameters:
         - name: unifiedRoleAssignment-id
           in: path
@@ -1936,7 +1936,7 @@ paths:
         - roleManagement.rbacApplication
       summary: Delete ref of navigation property roleDefinition for roleManagement
       description: The roleDefinition the assignment is for.  Supports $expand. roleDefinition.Id will be auto expanded.
-      operationId: roleManagement.directory.roleAssignments_DeleteGraphRefRoleDefinition
+      operationId: roleManagement.directory.roleAssignments_DeleteRoleDefinitionGraphBPreRef
       parameters:
         - name: unifiedRoleAssignment-id
           in: path
@@ -2966,7 +2966,7 @@ paths:
         - roleManagement.rbacApplication
       summary: Get ref of directoryScope from roleManagement
       description: The directory object that is the scope of the assignment. Read-only. Supports $expand.
-      operationId: roleManagement.entitlementManagement.roleAssignments_GetGraphRefDirectoryScope
+      operationId: roleManagement.entitlementManagement.roleAssignments_GetDirectoryScopeGraphBPreRef
       parameters:
         - name: unifiedRoleAssignment-id
           in: path
@@ -2990,7 +2990,7 @@ paths:
         - roleManagement.rbacApplication
       summary: Update the ref of navigation property directoryScope in roleManagement
       description: The directory object that is the scope of the assignment. Read-only. Supports $expand.
-      operationId: roleManagement.entitlementManagement.roleAssignments_SetGraphRefDirectoryScope
+      operationId: roleManagement.entitlementManagement.roleAssignments_SetDirectoryScopeGraphBPreRef
       parameters:
         - name: unifiedRoleAssignment-id
           in: path
@@ -3019,7 +3019,7 @@ paths:
         - roleManagement.rbacApplication
       summary: Delete ref of navigation property directoryScope for roleManagement
       description: The directory object that is the scope of the assignment. Read-only. Supports $expand.
-      operationId: roleManagement.entitlementManagement.roleAssignments_DeleteGraphRefDirectoryScope
+      operationId: roleManagement.entitlementManagement.roleAssignments_DeleteDirectoryScopeGraphBPreRef
       parameters:
         - name: unifiedRoleAssignment-id
           in: path
@@ -3095,7 +3095,7 @@ paths:
         - roleManagement.rbacApplication
       summary: Get ref of principal from roleManagement
       description: Referencing the assigned principal. Read-only. Supports $expand.
-      operationId: roleManagement.entitlementManagement.roleAssignments_GetGraphRefPrincipal
+      operationId: roleManagement.entitlementManagement.roleAssignments_GetPrincipalGraphBPreRef
       parameters:
         - name: unifiedRoleAssignment-id
           in: path
@@ -3119,7 +3119,7 @@ paths:
         - roleManagement.rbacApplication
       summary: Update the ref of navigation property principal in roleManagement
       description: Referencing the assigned principal. Read-only. Supports $expand.
-      operationId: roleManagement.entitlementManagement.roleAssignments_SetGraphRefPrincipal
+      operationId: roleManagement.entitlementManagement.roleAssignments_SetPrincipalGraphBPreRef
       parameters:
         - name: unifiedRoleAssignment-id
           in: path
@@ -3148,7 +3148,7 @@ paths:
         - roleManagement.rbacApplication
       summary: Delete ref of navigation property principal for roleManagement
       description: Referencing the assigned principal. Read-only. Supports $expand.
-      operationId: roleManagement.entitlementManagement.roleAssignments_DeleteGraphRefPrincipal
+      operationId: roleManagement.entitlementManagement.roleAssignments_DeletePrincipalGraphBPreRef
       parameters:
         - name: unifiedRoleAssignment-id
           in: path
@@ -3238,7 +3238,7 @@ paths:
         - roleManagement.rbacApplication
       summary: Get ref of roleDefinition from roleManagement
       description: The roleDefinition the assignment is for.  Supports $expand. roleDefinition.Id will be auto expanded.
-      operationId: roleManagement.entitlementManagement.roleAssignments_GetGraphRefRoleDefinition
+      operationId: roleManagement.entitlementManagement.roleAssignments_GetRoleDefinitionGraphBPreRef
       parameters:
         - name: unifiedRoleAssignment-id
           in: path
@@ -3267,7 +3267,7 @@ paths:
         - roleManagement.rbacApplication
       summary: Update the ref of navigation property roleDefinition in roleManagement
       description: The roleDefinition the assignment is for.  Supports $expand. roleDefinition.Id will be auto expanded.
-      operationId: roleManagement.entitlementManagement.roleAssignments_SetGraphRefRoleDefinition
+      operationId: roleManagement.entitlementManagement.roleAssignments_SetRoleDefinitionGraphBPreRef
       parameters:
         - name: unifiedRoleAssignment-id
           in: path
@@ -3296,7 +3296,7 @@ paths:
         - roleManagement.rbacApplication
       summary: Delete ref of navigation property roleDefinition for roleManagement
       description: The roleDefinition the assignment is for.  Supports $expand. roleDefinition.Id will be auto expanded.
-      operationId: roleManagement.entitlementManagement.roleAssignments_DeleteGraphRefRoleDefinition
+      operationId: roleManagement.entitlementManagement.roleAssignments_DeleteRoleDefinitionGraphBPreRef
       parameters:
         - name: unifiedRoleAssignment-id
           in: path

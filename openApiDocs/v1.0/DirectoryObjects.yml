@@ -441,7 +441,7 @@ paths:
       tags:
         - directoryObjects.Actions
       summary: Invoke action getByIds
-      operationId: directoryObjects_getByIds
+      operationId: directoryObjects_getGraphBPreIds
       requestBody:
         description: Action parameters
         content:

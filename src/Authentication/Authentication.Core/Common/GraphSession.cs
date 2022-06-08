@@ -41,12 +41,6 @@ namespace Microsoft.Graph.PowerShell.Authentication
         public InMemoryTokenCache InMemoryTokenCache { get; set; }
 
         /// <summary>
-        /// The name of the selected Microsoft Graph profile.
-        /// This defaults to v1.0-beta.
-        /// </summary>
-        public string SelectedProfile { get; set; } = Constants.DefaultProfile;
-
-        /// <summary>
         /// The selected national cloud environment.
         /// </summary>
         public IGraphEnvironment Environment { get; set; }

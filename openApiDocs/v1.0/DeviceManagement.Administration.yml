@@ -2451,7 +2451,7 @@ paths:
         - deviceManagement.roleDefinition
       summary: Get ref of roleDefinition from deviceManagement
       description: Role definition this assignment is part of.
-      operationId: deviceManagement.roleDefinitions.roleAssignments_GetGraphRefRoleDefinition
+      operationId: deviceManagement.roleDefinitions.roleAssignments_GetRoleDefinitionGraphBPreRef
       parameters:
         - name: roleDefinition-id
           in: path
@@ -2488,7 +2488,7 @@ paths:
         - deviceManagement.roleDefinition
       summary: Update the ref of navigation property roleDefinition in deviceManagement
       description: Role definition this assignment is part of.
-      operationId: deviceManagement.roleDefinitions.roleAssignments_SetGraphRefRoleDefinition
+      operationId: deviceManagement.roleDefinitions.roleAssignments_SetRoleDefinitionGraphBPreRef
       parameters:
         - name: roleDefinition-id
           in: path
@@ -2524,7 +2524,7 @@ paths:
         - deviceManagement.roleDefinition
       summary: Delete ref of navigation property roleDefinition for deviceManagement
       description: Role definition this assignment is part of.
-      operationId: deviceManagement.roleDefinitions.roleAssignments_DeleteGraphRefRoleDefinition
+      operationId: deviceManagement.roleDefinitions.roleAssignments_DeleteRoleDefinitionGraphBPreRef
       parameters:
         - name: roleDefinition-id
           in: path
@@ -3358,7 +3358,7 @@ paths:
         - deviceManagement.termsAndConditions
       summary: Get ref of termsAndConditions from deviceManagement
       description: Navigation link to the terms and conditions that are assigned.
-      operationId: deviceManagement.termsAndConditions.acceptanceStatuses_GetGraphRefTermsAndConditions
+      operationId: deviceManagement.termsAndConditions.acceptanceStatuses_GetTermsAndConditionsGraphBPreRef
       parameters:
         - name: termsAndConditions-id
           in: path
@@ -3400,7 +3400,7 @@ paths:
         - deviceManagement.termsAndConditions
       summary: Update the ref of navigation property termsAndConditions in deviceManagement
       description: Navigation link to the terms and conditions that are assigned.
-      operationId: deviceManagement.termsAndConditions.acceptanceStatuses_SetGraphRefTermsAndConditions
+      operationId: deviceManagement.termsAndConditions.acceptanceStatuses_SetTermsAndConditionsGraphBPreRef
       parameters:
         - name: termsAndConditions-id
           in: path
@@ -3436,7 +3436,7 @@ paths:
         - deviceManagement.termsAndConditions
       summary: Delete ref of navigation property termsAndConditions for deviceManagement
       description: Navigation link to the terms and conditions that are assigned.
-      operationId: deviceManagement.termsAndConditions.acceptanceStatuses_DeleteGraphRefTermsAndConditions
+      operationId: deviceManagement.termsAndConditions.acceptanceStatuses_DeleteTermsAndConditionsGraphBPreRef
       parameters:
         - name: termsAndConditions-id
           in: path

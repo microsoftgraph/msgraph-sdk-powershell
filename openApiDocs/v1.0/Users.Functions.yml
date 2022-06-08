@@ -4782,7 +4782,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function getUserIdsWithFlaggedAppRegistration
-      operationId: users.managedAppRegistrations_getUserIdsWithFlaggedAppRegistration
+      operationId: users.managedAppRegistrations_getUserIdsGraphWPreFlaggedAppRegistration
       parameters:
         - name: user-id
           in: path

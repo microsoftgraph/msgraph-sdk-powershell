@@ -711,11 +711,11 @@ paths:
               parameters:
                 group-id: $request.path.group-id
             createdOnBehalfOf:
-              operationId: groups.GetCreatedOnBehalfOf
+              operationId: groups.GetCreatedOnBehalfGraphOPre
               parameters:
                 group-id: $request.path.group-id
             memberOf:
-              operationId: groups.ListMemberOf
+              operationId: groups.ListMemberGraphOPre
               parameters:
                 group-id: $request.path.group-id
             members:
@@ -723,7 +723,7 @@ paths:
               parameters:
                 group-id: $request.path.group-id
             membersWithLicenseErrors:
-              operationId: groups.ListMembersWithLicenseErrors
+              operationId: groups.ListMembersGraphWPreLicenseErrors
               parameters:
                 group-id: $request.path.group-id
             owners:
@@ -739,7 +739,7 @@ paths:
               parameters:
                 group-id: $request.path.group-id
             transitiveMemberOf:
-              operationId: groups.ListTransitiveMemberOf
+              operationId: groups.ListTransitiveMemberGraphOPre
               parameters:
                 group-id: $request.path.group-id
             transitiveMembers:
@@ -943,7 +943,7 @@ paths:
         - groups.directoryObject
       summary: Get ref of acceptedSenders from groups
       description: The list of users or groups that are allowed to create post's or calendar events in this group. If this list is non-empty then only users or groups listed here are allowed to post.
-      operationId: groups_ListGraphRefAcceptedSenders
+      operationId: groups_ListAcceptedSendersGraphBPreRef
       parameters:
         - name: group-id
           in: path
@@ -999,7 +999,7 @@ paths:
         - groups.directoryObject
       summary: Create new navigation property ref to acceptedSenders for groups
       description: The list of users or groups that are allowed to create post's or calendar events in this group. If this list is non-empty then only users or groups listed here are allowed to post.
-      operationId: groups_CreateGraphRefAcceptedSenders
+      operationId: groups_CreateAcceptedSendersGraphBPreRef
       parameters:
         - name: group-id
           in: path
@@ -6456,7 +6456,7 @@ paths:
         - groups.directoryObject
       summary: Get createdOnBehalfOf from groups
       description: 'The user (or application) that created the group. NOTE: This is not set if the user is an administrator. Read-only.'
-      operationId: groups_GetCreatedOnBehalfOf
+      operationId: groups_GetCreatedOnBehalfGraphOPre
       parameters:
         - name: group-id
           in: path
@@ -6506,7 +6506,7 @@ paths:
         - groups.directoryObject
       summary: Get ref of createdOnBehalfOf from groups
       description: 'The user (or application) that created the group. NOTE: This is not set if the user is an administrator. Read-only.'
-      operationId: groups_GetGraphRefCreatedOnBehalfOf
+      operationId: groups_GetCreatedOnBehalfGraphOPreGraphBPreRef
       parameters:
         - name: group-id
           in: path
@@ -6530,7 +6530,7 @@ paths:
         - groups.directoryObject
       summary: Update the ref of navigation property createdOnBehalfOf in groups
       description: 'The user (or application) that created the group. NOTE: This is not set if the user is an administrator. Read-only.'
-      operationId: groups_SetGraphRefCreatedOnBehalfOf
+      operationId: groups_SetCreatedOnBehalfGraphOPreGraphBPreRef
       parameters:
         - name: group-id
           in: path
@@ -6559,7 +6559,7 @@ paths:
         - groups.directoryObject
       summary: Delete ref of navigation property createdOnBehalfOf for groups
       description: 'The user (or application) that created the group. NOTE: This is not set if the user is an administrator. Read-only.'
-      operationId: groups_DeleteGraphRefCreatedOnBehalfOf
+      operationId: groups_DeleteCreatedOnBehalfGraphOPreGraphBPreRef
       parameters:
         - name: group-id
           in: path
@@ -7638,7 +7638,7 @@ paths:
         - groups.directoryObject
       summary: Get memberOf from groups
       description: 'Groups that this group is a member of. HTTP Methods: GET (supported for all groups). Read-only. Nullable. Supports $expand.'
-      operationId: groups_ListMemberOf
+      operationId: groups_ListMemberGraphOPre
       parameters:
         - name: group-id
           in: path
@@ -7721,7 +7721,7 @@ paths:
         - groups.directoryObject
       summary: Get ref of memberOf from groups
       description: 'Groups that this group is a member of. HTTP Methods: GET (supported for all groups). Read-only. Nullable. Supports $expand.'
-      operationId: groups_ListGraphRefMemberOf
+      operationId: groups_ListMemberGraphOPreGraphBPreRef
       parameters:
         - name: group-id
           in: path
@@ -7778,7 +7778,7 @@ paths:
         - groups.directoryObject
       summary: Create new navigation property ref to memberOf for groups
       description: 'Groups that this group is a member of. HTTP Methods: GET (supported for all groups). Read-only. Nullable. Supports $expand.'
-      operationId: groups_CreateGraphRefMemberOf
+      operationId: groups_CreateMemberGraphOPreGraphBPreRef
       parameters:
         - name: group-id
           in: path
@@ -7897,7 +7897,7 @@ paths:
         - groups.directoryObject
       summary: Get ref of members from groups
       description: 'UMembers of this group, who can be users, devices, other groups, or service principals. Supports the List members, Add member, and Remove member operations. Nullable. Supports $expand including nested $select. For example, /groups?$filter=startsWith(displayName,''Role'')&$select=id,displayName&$expand=members($select=id,userPrincipalName,displayName).'
-      operationId: groups_ListGraphRefMembers
+      operationId: groups_ListMembersGraphBPreRef
       parameters:
         - name: group-id
           in: path
@@ -7954,7 +7954,7 @@ paths:
         - groups.directoryObject
       summary: Create new navigation property ref to members for groups
       description: 'UMembers of this group, who can be users, devices, other groups, or service principals. Supports the List members, Add member, and Remove member operations. Nullable. Supports $expand including nested $select. For example, /groups?$filter=startsWith(displayName,''Role'')&$select=id,displayName&$expand=members($select=id,userPrincipalName,displayName).'
-      operationId: groups_CreateGraphRefMembers
+      operationId: groups_CreateMembersGraphBPreRef
       parameters:
         - name: group-id
           in: path
@@ -7990,7 +7990,7 @@ paths:
         - groups.directoryObject
       summary: Get membersWithLicenseErrors from groups
       description: A list of group members with license errors from this group-based license assignment. Read-only.
-      operationId: groups_ListMembersWithLicenseErrors
+      operationId: groups_ListMembersGraphWPreLicenseErrors
       parameters:
         - name: group-id
           in: path
@@ -8073,7 +8073,7 @@ paths:
         - groups.directoryObject
       summary: Get ref of membersWithLicenseErrors from groups
       description: A list of group members with license errors from this group-based license assignment. Read-only.
-      operationId: groups_ListGraphRefMembersWithLicenseErrors
+      operationId: groups_ListMembersGraphWPreLicenseErrorsGraphBPreRef
       parameters:
         - name: group-id
           in: path
@@ -8130,7 +8130,7 @@ paths:
         - groups.directoryObject
       summary: Create new navigation property ref to membersWithLicenseErrors for groups
       description: A list of group members with license errors from this group-based license assignment. Read-only.
-      operationId: groups_CreateGraphRefMembersWithLicenseErrors
+      operationId: groups_CreateMembersGraphWPreLicenseErrorsGraphBPreRef
       parameters:
         - name: group-id
           in: path
@@ -8229,7 +8229,7 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action checkGrantedPermissionsForApp
-      operationId: groups_checkGrantedPermissionsForApp
+      operationId: groups_checkGrantedPermissionsGraphFPreApp
       parameters:
         - name: group-id
           in: path
@@ -8499,7 +8499,7 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action subscribeByMail
-      operationId: groups_subscribeByMail
+      operationId: groups_subscribeGraphBPreMail
       parameters:
         - name: group-id
           in: path
@@ -8519,7 +8519,7 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action unsubscribeByMail
-      operationId: groups_unsubscribeByMail
+      operationId: groups_unsubscribeGraphBPreMail
       parameters:
         - name: group-id
           in: path
@@ -11466,7 +11466,7 @@ paths:
         - groups.directoryObject
       summary: Get ref of owners from groups
       description: 'The owners of the group. Limited to 100 owners. Nullable. If this property is not specified when creating a Microsoft 365 group, the calling user is automatically assigned as the group owner. Supports $expand including nested $select. For example, /groups?$filter=startsWith(displayName,''Role'')&$select=id,displayName&$expand=owners($select=id,userPrincipalName,displayName).'
-      operationId: groups_ListGraphRefOwners
+      operationId: groups_ListOwnersGraphBPreRef
       parameters:
         - name: group-id
           in: path
@@ -11523,7 +11523,7 @@ paths:
         - groups.directoryObject
       summary: Create new navigation property ref to owners for groups
       description: 'The owners of the group. Limited to 100 owners. Nullable. If this property is not specified when creating a Microsoft 365 group, the calling user is automatically assigned as the group owner. Supports $expand including nested $select. For example, /groups?$filter=startsWith(displayName,''Role'')&$select=id,displayName&$expand=owners($select=id,userPrincipalName,displayName).'
-      operationId: groups_CreateGraphRefOwners
+      operationId: groups_CreateOwnersGraphBPreRef
       parameters:
         - name: group-id
           in: path
@@ -12313,7 +12313,7 @@ paths:
         - groups.directoryObject
       summary: Get ref of rejectedSenders from groups
       description: The list of users or groups that are not allowed to create posts or calendar events in this group. Nullable
-      operationId: groups_ListGraphRefRejectedSenders
+      operationId: groups_ListRejectedSendersGraphBPreRef
       parameters:
         - name: group-id
           in: path
@@ -12369,7 +12369,7 @@ paths:
         - groups.directoryObject
       summary: Create new navigation property ref to rejectedSenders for groups
       description: The list of users or groups that are not allowed to create posts or calendar events in this group. Nullable
-      operationId: groups_CreateGraphRefRejectedSenders
+      operationId: groups_CreateRejectedSendersGraphBPreRef
       parameters:
         - name: group-id
           in: path
@@ -14735,7 +14735,7 @@ paths:
       tags:
         - groups.directoryObject
       summary: Get transitiveMemberOf from groups
-      operationId: groups_ListTransitiveMemberOf
+      operationId: groups_ListTransitiveMemberGraphOPre
       parameters:
         - name: group-id
           in: path
@@ -14817,7 +14817,7 @@ paths:
       tags:
         - groups.directoryObject
       summary: Get ref of transitiveMemberOf from groups
-      operationId: groups_ListGraphRefTransitiveMemberOf
+      operationId: groups_ListTransitiveMemberGraphOPreGraphBPreRef
       parameters:
         - name: group-id
           in: path
@@ -14873,7 +14873,7 @@ paths:
       tags:
         - groups.directoryObject
       summary: Create new navigation property ref to transitiveMemberOf for groups
-      operationId: groups_CreateGraphRefTransitiveMemberOf
+      operationId: groups_CreateTransitiveMemberGraphOPreGraphBPreRef
       parameters:
         - name: group-id
           in: path
@@ -14990,7 +14990,7 @@ paths:
       tags:
         - groups.directoryObject
       summary: Get ref of transitiveMembers from groups
-      operationId: groups_ListGraphRefTransitiveMembers
+      operationId: groups_ListTransitiveMembersGraphBPreRef
       parameters:
         - name: group-id
           in: path
@@ -15046,7 +15046,7 @@ paths:
       tags:
         - groups.directoryObject
       summary: Create new navigation property ref to transitiveMembers for groups
-      operationId: groups_CreateGraphRefTransitiveMembers
+      operationId: groups_CreateTransitiveMembersGraphBPreRef
       parameters:
         - name: group-id
           in: path
@@ -15131,7 +15131,7 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action getByIds
-      operationId: groups_getByIds
+      operationId: groups_getGraphBPreIds
       requestBody:
         description: Action parameters
         content:

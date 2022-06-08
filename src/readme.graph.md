@@ -6,7 +6,7 @@
 azure: false
 powershell: true
 version: latest
-use: "$(this-folder)../autorest.powershell"
+use: "@autorest/powershell@latest"
 metadata:
     authors: Microsoft Corporation
     owners: Microsoft Corporation
@@ -24,9 +24,7 @@ metadata:
 
 ``` yaml
 prefix: Mg
-module-name: Microsoft.Graph.$(service-name)
-subject-prefix: $(service-name)
-namespace: Microsoft.Graph.PowerShell
+subject-prefix: ''
 sanitize-names: false
 ```
 
@@ -35,15 +33,6 @@ sanitize-names: false
 ``` yaml
 clear-output-folder: true
 output-folder: .
-```
-
-> Profiles
-
-``` yaml
-tag: all-api-versions
-profile:
-  - v1.0
-  - v1.0-beta
 ```
 
 > Custom Directives
@@ -67,38 +56,38 @@ declare-directive:
 ``` yaml
 directive:
   - no-inline:
-    - microsoft.graph.sharepointIds
-    - microsoft.graph.identitySet
-    - microsoft.graph.itemReference
-    - microsoft.graph.directoryObject
-    - microsoft.graph.user
-    - microsoft.graph.drive
-    - microsoft.graph.listItem
-    - microsoft.graph.post
-    - microsoft.graph.sectionGroup
-    - microsoft.graph.team
-    - microsoft.graph.recipient
-    - microsoft.graph.groupPolicyCategory
-    - microsoft.graph.printer
-    - microsoft.graph.printerShare
-    - microsoft.graph.governanceResource
-    - microsoft.graph.governanceRoleAssignment
-    - microsoft.graph.governanceRoleDefinition
-    - microsoft.graph.workbookOperationError
-    - microsoft.graph.parentLabelDetails
-    - microsoft.graph.ediscovery.tag
-    - microsoft.graph.ediscovery.sourceCollection
-    - microsoft.graph.contentType
-    - microsoft.graph.columnDefinition
-    - microsoft.graph.groupPolicyDefinition
-    - microsoft.graph.groupPolicyDefinitionValue
-    - microsoft.graph.synchronizationLinkedObjects
-    - microsoft.graph.security.security
-    - microsoft.graph.teamSummary
-    - microsoft.graph.security.informationProtection
-    - microsoft.graph.security.informationProtectionPolicySetting
-    - microsoft.graph.security.sensitivityLabel
-    - microsoft.graph.taskViewpoint
+    - MicrosoftGraphSharepointIds
+    - MicrosoftGraphIdentitySet
+    - MicrosoftGraphItemReference
+    - MicrosoftGraphDirectoryObject
+    - MicrosoftGraphUser
+    - MicrosoftGraphDrive
+    - MicrosoftGraphListItem
+    - MicrosoftGraphPost
+    - MicrosoftGraphSectionGroup
+    - MicrosoftGraphTeam
+    - MicrosoftGraphRecipient
+    - MicrosoftGraphGroupPolicyCategory
+    - MicrosoftGraphPrinter
+    - MicrosoftGraphPrinterShare
+    - MicrosoftGraphGovernanceResource
+    - MicrosoftGraphGovernanceRoleAssignment
+    - MicrosoftGraphGovernanceRoleDefinition
+    - MicrosoftGraphWorkbookOperationError
+    - MicrosoftGraphParentLabelDetails
+    - MicrosoftGraphEdiscoveryTag
+    - MicrosoftGraphEdiscoverySourceCollection
+    - MicrosoftGraphContentType
+    - MicrosoftGraphColumnDefinition
+    - MicrosoftGraphGroupPolicyDefinition
+    - MicrosoftGraphGroupPolicyDefinitionValue
+    - MicrosoftGraphSynchronizationLinkedObjects
+    - MicrosoftGraphSecuritySecurity
+    - MicrosoftGraphTeamSummary
+    - MicrosoftGraphSecurityInformationProtection
+    - MicrosoftGraphSecurityInformationProtectionPolicySetting
+    - MicrosoftGraphSecuritySensitivityLabel
+    - MicrosoftGraphTaskViewpoint
   # Set parameter alias
   - where:
       parameter-name: OrderBy
@@ -400,6 +389,17 @@ directive:
           - Body
           - DueDateTime
           - Importance
+# Rename parameters.
+  - where:
+      variant: ^(Add|Insert|Apply|Approve|Unset|Clear|Wipe|Check|Copy|Disable|Locate|Get|Delta|Abort|Accept|Answer|Autofit|Bounding|Cell|Clean|Column|Columns|Commit|Decline|Dismiss|Down|Entire|Filter|Forward|Intersection|Invite|Keep|Last|Logout|Mute|Offset|Play|Preview|Range|Reassign|Reauthorize|Record|Redirect|Reject|Renew|Reply|Retire|Return|Row|Rows|Scan|Schedule|Snooze|Subscribe|Supported|Target|Time|Unmerge|Unmute|Unsubmit|View|Associate|Lock|Merge|Transfer|Move|Create|Update|Publish|Delete|Remove|Change|Request|Reset|Reboot|Restore|Recover|Send|Set|Assign|Bypass|Start|Cancel|Stop|Submit|Sync|Is|Unpublish|Purge|Close|Compare|Complete|Verify|Confirm|Clone|Disconnect|Enable|Export|Discover|Find|Acquire|Managed|Top|Grant|Hide|Import|Activate|Account|Archive|As|Batch|Begin|Bulk|Calendar|Clock|Cloud|Consent|Custom|Deprovision|Access|Estimate|Execute|Extend|Extract|Post|Force|Functions|Has|Have|Instantiate|Invalidate|License|Mark|Messages|Override|Parse|Pending|Postpone|Reactivate|Recent|Reenable|Reopen|Report|Reprovision|Reupload|Role|Rotate|Scoped|Self|Shared|Share|Soft|Summarize|Translate|Troubleshoot|Unarchive|Unassign|Unhide|Unshare|Unsubscribe|Upload|Users|Migrate|Provision|Generate|Make|Ping|Release|Rename|Resize|Restart|Resume|Revoke|Search|Trigger|Run|End|Pause|Validate|Evaluate|Unblock|Undo|Upgrade|Reprocess|Patch)\d*$
+      parameter-name: Body
+    set:
+      parameter-name: BodyParameter
+  - where:
+      variant: ^(.*ViaIdentity)\d*$
+      parameter-name: Body
+    set:
+      parameter-name: BodyParameter
 # Rename cmdlets
   - where:
       verb: Invoke
@@ -412,56 +412,36 @@ directive:
       variant: ^(Check|Verify)(.*)
     set:
       verb: Confirm
-# Add ByRef suffix to /$ref cmdlets
+# Rename prepositions to bypass https://github.com/Azure/autorest.powershell/issues/795.
   - where:
-      subject: ^(\w*[a-z])GraphRef([A-Z]\w*)$
+      subject: ^(\w*[a-z])GraphBPre(\w*)$
     set:
-      subject: $1$2ByRef
-# Remove *ByRef commands
+      subject: $1By$2
   - where:
-      verb: Get|Remove|New
-      subject: ^UserPlanner(FavoritePlanByRef|RecentPlanByRef|RosterPlanByRef)$
+      subject: ^(\w*[a-z])GraphWPre(\w*)$
+    set:
+      subject: $1With$2
+  - where:
+      subject: ^(\w*[a-z])GraphAPre(\w*)$
+    set:
+      subject: $1At$2
+  - where:
+      subject: ^(\w*[a-z])GraphFPre(\w*)$
+    set:
+      subject: $1For$2
+  - where:
+      subject: ^(\w*[a-z])GraphOPre(\w*)$
+    set:
+      subject: $1Of$2
+# Remove *AvailableExtensionProperty commands except those bound to DirectoryObject.
+  - where:
+      subject: ^(?!DirectoryObject).*AvailableExtensionProperty$
     remove: true
-# Rename *ByRef commands
   - where:
-      verb: Get|New
-      subject: ^GroupMemberByRef$
-      variant: ^List2$|^Create2$|^CreateExpanded2$|^CreateViaIdentity2$|^CreateViaIdentityExpanded2$|^List5$|^Create5$|^CreateExpanded5$|^CreateViaIdentity5$|^CreateViaIdentityExpanded5$
-    set:
-      subject: GroupMemberOfByRef
-  - where:
-      verb: Get|New
-      subject: ^GroupMemberByRef$
-      variant: ^List1$|^Create1$|^CreateExpanded1$|^CreateViaIdentity1$|^CreateViaIdentityExpanded1$|^List4$|^Create4$|^CreateExpanded4$|^CreateViaIdentity4$|^CreateViaIdentityExpanded4$
-    set:
-      subject: GroupMemberWithLicenseErrorByRef
-  - where:
-      verb: Get|New
-      subject: ^GroupTransitiveMemberByRef$
-      variant: ^List$|^List2$|^Create$|^Create2$|^CreateExpanded$|^CreateExpanded2$|^CreateViaIdentity$|^CreateViaIdentity2$|^CreateViaIdentityExpanded$|^CreateViaIdentityExpanded2$
-    set:
-      subject: GroupTransitiveMemberOfByRef
-  - where:
-      subject: ^SiteSite(ByRef)$
-    set:
-      subject: SubSite$1
-# Alias then rename cmdlets to avoid breaking change.
-  - where:
-      subject: ^(User|ServicePrincipal|Contact|Device)(Member|TransitiveMember)ByRef$
-    set:
-      alias: ${verb}-Mg${subject}
-  - where:
-      subject: ^(User|ServicePrincipal|Contact|Device)(Member|TransitiveMember)ByRef$
-    set:
-      subject: $1$2OfByRef
-  - where:
-      subject: ^(Application|Group)(CreatedOnBehalf)ByRef$
-    set:
-      alias: ${verb}-Mg${subject}
-  - where:
-      subject: ^(Application|Group)(CreatedOnBehalf)ByRef$
-    set:
-      subject: $1$2OfByRef
+      verb: Clear
+      subject: ^UserManagedAppRegistrationByDeviceTag$
+      variant: ^Wipe1$|^WipeExpanded1$|^WipeViaIdentity1$|^WipeViaIdentityExpanded1$
+    remove: true
 # Modify generated .json.cs model classes.
   - from: source-file-csharp
     where: $
@@ -471,17 +451,17 @@ directive:
         return $;
       } else {
         // Add AfterToJson
-        let afterJsonDeclarationRegex = /(^\s*)(partial\s*void\s*AfterFromJson\s*\(Microsoft.Graph.PowerShell.Runtime.Json.JsonObject\s*json\s*\);$)/gm
-        $ = $.replace(afterJsonDeclarationRegex, '$1$2\n$1partial void AfterToJson(ref Microsoft.Graph.PowerShell.Runtime.Json.JsonObject container, Microsoft.Graph.PowerShell.Runtime.SerializationMode serializationMode);\n');
+        let afterJsonDeclarationRegex = /(^\s*)(partial\s*void\s*AfterFromJson\s*\(Microsoft.(Graph|Graph.Beta).PowerShell.Runtime.Json.JsonObject\s*json\s*\);$)/gm
+        $ = $.replace(afterJsonDeclarationRegex, '$1$2\n$1partial void AfterToJson(ref Microsoft.$3.PowerShell.Runtime.Json.JsonObject container, Microsoft.$3.PowerShell.Runtime.SerializationMode serializationMode);\n');
         let afterJsonRegex = /(^\s*)(AfterToJson\(ref\s*container\s*\);$)/gm
         $ = $.replace(afterJsonRegex, '$1$2\n$1AfterToJson(ref container, serializationMode);\n');
 
         // Pass exclusion properties to base classes during serialization.
-        let baseClassInitializerRegex = /(new\s*Microsoft.Graph.PowerShell.Models.MicrosoftGraph\w*\(\s*json\s*,\s*new\s*global::System.Collections.Generic.HashSet<string>\()(\){\W.*}\);)/gm
-        $ = $.replace(baseClassInitializerRegex, '$1(exclusions ?? new System.Collections.Generic.HashSet<string>())$2');
+        let baseClassInitializerRegex = /(new\s*Microsoft.(Graph|Graph.Beta).PowerShell.Models.MicrosoftGraph\w*\(\s*json\s*,\s*new\s*global::System.Collections.Generic.HashSet<string>\()(\){\W.*}\);)/gm
+        $ = $.replace(baseClassInitializerRegex, '$1(exclusions ?? new System.Collections.Generic.HashSet<string>())$3');
 
         // Fix additional properties deserialization in Complex Types.
-        let complexTypeHintRegex = /(\s*)(Microsoft\.Graph\.PowerShell\.Runtime\.JsonSerializable\.FromJson)/gm
+        let complexTypeHintRegex = /(\s*)(Microsoft\.(Graph|Graph\.Beta)\.PowerShell\.Runtime\.JsonSerializable\.FromJson)/gm
         if($.match(complexTypeHintRegex)) {
           let classNameRegex = /partial\s*class\s*(\w*)\s*{/gm
           let match = classNameRegex.exec($);
@@ -506,7 +486,7 @@ directive:
         return $;
       } else {
         // Remove Count, Keys, and Values properties from implementations of an IAssociativeArray in models.
-        let propertiesToRemoveRegex = /^.*Microsoft\.Graph\.PowerShell\.Runtime\.IAssociativeArray<global::System\.Object>\.(Count|Keys|Values).*$/gm
+        let propertiesToRemoveRegex = /^.*Microsoft\.(Graph|Graph\.Beta)\.PowerShell\.Runtime\.IAssociativeArray<global::System\.Object>\.(Count|Keys|Values).*$/gm
         $ = $.replace(propertiesToRemoveRegex, '');
 
         return $;
@@ -554,17 +534,12 @@ directive:
         let newAdditionalPropertiesProp = "System.Collections.Hashtable AdditionalProperties { get; set; } = new System.Collections.Hashtable();"
         $ = $.replace(additionalPropertiesPropRegex, newAdditionalPropertiesProp);
 
-        // Override OnDefault to handle all success, 2xx responses, as success and not error.
-        let overrideOnDefaultRegex = /(\s*)(partial\s*void\s*overrideOnDefault)/gmi
-        let overrideOnDefaultImplementation = "$1partial void overrideOnDefault(global::System.Net.Http.HttpResponseMessage responseMessage, global::System.Threading.Tasks.Task<Microsoft.Graph.PowerShell.Models.IOdataError> response, ref global::System.Threading.Tasks.Task<bool> returnNow) => this.OverrideOnDefault(responseMessage,ref returnNow);$1$2"
-        $ = $.replace(overrideOnDefaultRegex, overrideOnDefaultImplementation);
-
         // Remove noisy log messages.
         let duplicateDebugRegex = /^(\s*)(WriteDebug\(\$"{id}:.*)/gmi
         $ = $.replace(duplicateDebugRegex, "");
 
         // catch all exceptions in ProcessRecordAsync.
-        let processAsyncFinallyRegex = /(finally\s*{\s*await \(\(Microsoft\.Graph\.PowerShell\.Runtime\.IEventListener\)this\)\.Signal\(Microsoft\.Graph\.PowerShell\.Runtime\.Events\.CmdletProcessRecordAsyncEnd\);)/gmi
+        let processAsyncFinallyRegex = /(finally\s*{\s*await \(\(Microsoft\.(Graph|Graph\.Beta)\.PowerShell\.Runtime\.IEventListener\)this\)\.Signal\(Microsoft\.(Graph|Graph\.Beta)\.PowerShell\.Runtime\.Events\.CmdletProcessRecordAsyncEnd\);)/gmi
         let catchAllExceptionImplementation = '((Runtime.IEventListener)this).Signal(Runtime.Events.CmdletException, $"{ex.GetType().Name} - {ex.Message} : {ex.StackTrace}").Wait(); if (((Runtime.IEventListener)this).Token.IsCancellationRequested) { return; } WriteError(new global::System.Management.Automation.ErrorRecord(ex, string.Empty, global::System.Management.Automation.ErrorCategory.NotSpecified, null));'
         $ = $.replace(processAsyncFinallyRegex, `catch (System.Exception ex){${catchAllExceptionImplementation}}\n$1`);
 
@@ -585,7 +560,7 @@ directive:
           $ = $.replace(odataNextLinkRegex, '$1while (_nextLink != null && this.ShouldIteratePages(this.InvocationInformation.BoundParameters, result.Value.Length))\n$1');
 
           let psBaseClassImplementationRegex = /(\s*:\s*)(global::System.Management.Automation.PSCmdlet)/gmi
-          $ = $.replace(psBaseClassImplementationRegex, '$1Microsoft.Graph.PowerShell.Cmdlets.Custom.ListCmdlet');
+          $ = $.replace(psBaseClassImplementationRegex, '$1PowerShell.Cmdlets.Custom.ListCmdlet');
 
           let beginProcessingRegex = /(^\s*)(protected\s*override\s*void\s*BeginProcessing\(\)\s*{)/gmi
           let topPlaceholder = (!$.includes("private int _top;")) ? 'int _top = default;': ''
@@ -640,7 +615,7 @@ directive:
         if($.match(streamBodyParameterRegex)) {
           // Replace base class with FileUploadCmdlet.
           let psBaseClassImplementationRegex = /(\s*:\s*)(global::System.Management.Automation.PSCmdlet)/gmi
-          $ = $.replace(psBaseClassImplementationRegex, '$1Microsoft.Graph.PowerShell.Cmdlets.Custom.FileUploadCmdlet');
+          $ = $.replace(psBaseClassImplementationRegex, '$1PowerShell.Cmdlets.Custom.FileUploadCmdlet');
 
           // Set bodyParameter to required to false.
           let streamBodyParameterAnnotation = /(global::System\.IO\.Stream _bodyParameter;\s*\[global::System\.Management\.Automation\.Parameter\(Mandatory\s*=\s*)(true)/gmi
