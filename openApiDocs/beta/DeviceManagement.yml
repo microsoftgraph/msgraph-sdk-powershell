@@ -681,6 +681,38 @@ paths:
               operationId: deviceManagement.ListCertificateConnectorDetails
             userPfxCertificates:
               operationId: deviceManagement.ListUserPfxCertificates
+            enableAndroidDeviceAdministratorEnrollment:
+              operationId: deviceManagement.enableAndroidDeviceAdministratorEnrollment
+            enableLegacyPcManagement:
+              operationId: deviceManagement.enableLegacyPcManagement
+            enableUnlicensedAdminstrators:
+              operationId: deviceManagement.enableUnlicensedAdminstrators
+            evaluateAssignmentFilter:
+              operationId: deviceManagement.evaluateAssignmentFilter
+            getAssignedRoleDetails:
+              operationId: deviceManagement.getAssignedRoleDetails
+            getAssignmentFiltersStatusDetails:
+              operationId: deviceManagement.getAssignmentFiltersStatusDetails
+            getComanagedDevicesSummary:
+              operationId: deviceManagement.getComanagedDevicesSummary
+            getComanagementEligibleDevicesSummary:
+              operationId: deviceManagement.getComanagementEligibleDevicesSummary
+            getEffectivePermissions:
+              operationId: deviceManagement.getEffectivePermissions
+            getRoleScopeTagsByIds:
+              operationId: deviceManagement.getRoleScopeTagsByIds
+            getRoleScopeTagsByResource:
+              operationId: deviceManagement.getRoleScopeTagsByResource
+            getSuggestedEnrollmentLimit:
+              operationId: deviceManagement.getSuggestedEnrollmentLimit
+            scopedForResource:
+              operationId: deviceManagement.scopedForResource
+            sendCustomNotificationToCompanyPortal:
+              operationId: deviceManagement.sendCustomNotificationToCompanyPortal
+            userExperienceAnalyticsSummarizeWorkFromAnywhereDevices:
+              operationId: deviceManagement.userExperienceAnalyticsSummarizeWorkFromAnywhereDevices
+            verifyWindowsEnrollmentAutoDiscovery:
+              operationId: deviceManagement.verifyWindowsEnrollmentAutoDiscovery
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -707,7 +739,6 @@ paths:
       tags:
         - deviceManagement.advancedThreatProtectionOnboardingStateSummary
       summary: Get advancedThreatProtectionOnboardingStateSummary from deviceManagement
-      description: The summary state of ATP onboarding state for this account.
       operationId: deviceManagement_GetAdvancedThreatProtectionOnboardingStateSummary
       parameters:
         - name: $select
@@ -797,7 +828,6 @@ paths:
       tags:
         - deviceManagement.advancedThreatProtectionOnboardingStateSummary
       summary: Get advancedThreatProtectionOnboardingDeviceSettingStates from deviceManagement
-      description: Not yet documented
       operationId: deviceManagement.advancedThreatProtectionOnboardingStateSummary_ListAdvancedThreatProtectionOnboardingDeviceSettingStates
       parameters:
         - $ref: '#/components/parameters/top'
@@ -914,7 +944,6 @@ paths:
       tags:
         - deviceManagement.advancedThreatProtectionOnboardingStateSummary
       summary: Get advancedThreatProtectionOnboardingDeviceSettingStates from deviceManagement
-      description: Not yet documented
       operationId: deviceManagement.advancedThreatProtectionOnboardingStateSummary_GetAdvancedThreatProtectionOnboardingDeviceSettingStates
       parameters:
         - name: advancedThreatProtectionOnboardingDeviceSettingState-id
@@ -1025,7 +1054,6 @@ paths:
       tags:
         - deviceManagement.androidForWorkAppConfigurationSchema
       summary: Get androidForWorkAppConfigurationSchemas from deviceManagement
-      description: Android for Work app configuration schema entities.
       operationId: deviceManagement_ListAndroidForWorkAppConfigurationSchemas
       parameters:
         - $ref: '#/components/parameters/top'
@@ -1112,7 +1140,6 @@ paths:
       tags:
         - deviceManagement.androidForWorkAppConfigurationSchema
       summary: Get androidForWorkAppConfigurationSchemas from deviceManagement
-      description: Android for Work app configuration schema entities.
       operationId: deviceManagement_GetAndroidForWorkAppConfigurationSchemas
       parameters:
         - name: androidForWorkAppConfigurationSchema-id
@@ -1213,7 +1240,6 @@ paths:
       tags:
         - deviceManagement.androidForWorkSettings
       summary: Get androidForWorkSettings from deviceManagement
-      description: The singleton Android for Work settings entity.
       operationId: deviceManagement_GetAndroidForWorkSettings
       parameters:
         - name: $select
@@ -1256,6 +1282,15 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.androidForWorkSettings'
+          links:
+            completeSignup:
+              operationId: deviceManagement.androidForWorkSettings.completeSignup
+            requestSignupUrl:
+              operationId: deviceManagement.androidForWorkSettings.requestSignupUrl
+            syncApps:
+              operationId: deviceManagement.androidForWorkSettings.syncApps
+            unbind:
+              operationId: deviceManagement.androidForWorkSettings.unbind
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1299,7 +1334,6 @@ paths:
       tags:
         - deviceManagement.androidManagedStoreAccountEnterpriseSettings
       summary: Get androidManagedStoreAccountEnterpriseSettings from deviceManagement
-      description: The singleton Android managed store account enterprise settings entity.
       operationId: deviceManagement_GetAndroidManagedStoreAccountEnterpriseSettings
       parameters:
         - name: $select
@@ -1345,6 +1379,21 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.androidManagedStoreAccountEnterpriseSettings'
+          links:
+            approveApps:
+              operationId: deviceManagement.androidManagedStoreAccountEnterpriseSettings.approveApps
+            completeSignup:
+              operationId: deviceManagement.androidManagedStoreAccountEnterpriseSettings.completeSignup
+            createGooglePlayWebToken:
+              operationId: deviceManagement.androidManagedStoreAccountEnterpriseSettings.createGooglePlayWebToken
+            requestSignupUrl:
+              operationId: deviceManagement.androidManagedStoreAccountEnterpriseSettings.requestSignupUrl
+            setAndroidDeviceOwnerFullyManagedEnrollmentState:
+              operationId: deviceManagement.androidManagedStoreAccountEnterpriseSettings.setAndroidDeviceOwnerFullyManagedEnrollmentState
+            syncApps:
+              operationId: deviceManagement.androidManagedStoreAccountEnterpriseSettings.syncApps
+            unbind:
+              operationId: deviceManagement.androidManagedStoreAccountEnterpriseSettings.unbind
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1388,7 +1437,6 @@ paths:
       tags:
         - deviceManagement.androidManagedStoreAppConfigurationSchema
       summary: Get androidManagedStoreAppConfigurationSchemas from deviceManagement
-      description: Android Enterprise app configuration schema entities.
       operationId: deviceManagement_ListAndroidManagedStoreAppConfigurationSchemas
       parameters:
         - $ref: '#/components/parameters/top'
@@ -1478,7 +1526,6 @@ paths:
       tags:
         - deviceManagement.androidManagedStoreAppConfigurationSchema
       summary: Get androidManagedStoreAppConfigurationSchemas from deviceManagement
-      description: Android Enterprise app configuration schema entities.
       operationId: deviceManagement_GetAndroidManagedStoreAppConfigurationSchemas
       parameters:
         - name: androidManagedStoreAppConfigurationSchema-id
@@ -1580,7 +1627,6 @@ paths:
       tags:
         - deviceManagement.deviceAndAppManagementAssignmentFilter
       summary: Get assignmentFilters from deviceManagement
-      description: The list of assignment filters
       operationId: deviceManagement_ListAssignmentFilters
       parameters:
         - $ref: '#/components/parameters/top'
@@ -1682,7 +1728,6 @@ paths:
       tags:
         - deviceManagement.deviceAndAppManagementAssignmentFilter
       summary: Get assignmentFilters from deviceManagement
-      description: The list of assignment filters
       operationId: deviceManagement_GetAssignmentFilters
       parameters:
         - name: deviceAndAppManagementAssignmentFilter-id
@@ -1730,6 +1775,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.deviceAndAppManagementAssignmentFilter'
+          links:
+            getSupportedProperties:
+              operationId: deviceManagement.assignmentFilters.deviceAndAppManagementAssignmentFilter.getSupportedProperties
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1788,7 +1836,6 @@ paths:
       tags:
         - deviceManagement.deviceManagementSettingCategory
       summary: Get categories from deviceManagement
-      description: The available categories
       operationId: deviceManagement_ListCategories
       parameters:
         - $ref: '#/components/parameters/top'
@@ -1877,7 +1924,6 @@ paths:
       tags:
         - deviceManagement.deviceManagementSettingCategory
       summary: Get categories from deviceManagement
-      description: The available categories
       operationId: deviceManagement_GetCategories
       parameters:
         - name: deviceManagementSettingCategory-id
@@ -1985,7 +2031,6 @@ paths:
       tags:
         - deviceManagement.deviceManagementSettingCategory
       summary: Get settingDefinitions from deviceManagement
-      description: The setting definitions this category contains
       operationId: deviceManagement.categories_ListSettingDefinitions
       parameters:
         - name: deviceManagementSettingCategory-id
@@ -2114,7 +2159,6 @@ paths:
       tags:
         - deviceManagement.deviceManagementSettingCategory
       summary: Get settingDefinitions from deviceManagement
-      description: The setting definitions this category contains
       operationId: deviceManagement.categories_GetSettingDefinitions
       parameters:
         - name: deviceManagementSettingCategory-id
@@ -2245,7 +2289,6 @@ paths:
       tags:
         - deviceManagement.managedDevice
       summary: Get comanagedDevices from deviceManagement
-      description: The list of co-managed devices report
       operationId: deviceManagement_ListComanagedDevices
       parameters:
         - $ref: '#/components/parameters/top'
@@ -2583,7 +2626,6 @@ paths:
       tags:
         - deviceManagement.managedDevice
       summary: Get comanagedDevices from deviceManagement
-      description: The list of co-managed devices report
       operationId: deviceManagement_GetComanagedDevices
       parameters:
         - name: managedDevice-id
@@ -2764,6 +2806,90 @@ paths:
               operationId: deviceManagement.ComanagedDevices.GetWindowsProtectionState
               parameters:
                 managedDevice-id: $request.path.managedDevice-id
+            activateDeviceEsim:
+              operationId: deviceManagement.comanagedDevices.managedDevice.activateDeviceEsim
+            bypassActivationLock:
+              operationId: deviceManagement.comanagedDevices.managedDevice.bypassActivationLock
+            cleanWindowsDevice:
+              operationId: deviceManagement.comanagedDevices.managedDevice.cleanWindowsDevice
+            createDeviceLogCollectionRequest:
+              operationId: deviceManagement.comanagedDevices.managedDevice.createDeviceLogCollectionRequest
+            deleteUserFromSharedAppleDevice:
+              operationId: deviceManagement.comanagedDevices.managedDevice.deleteUserFromSharedAppleDevice
+            deprovision:
+              operationId: deviceManagement.comanagedDevices.managedDevice.deprovision
+            disable:
+              operationId: deviceManagement.comanagedDevices.managedDevice.disable
+            disableLostMode:
+              operationId: deviceManagement.comanagedDevices.managedDevice.disableLostMode
+            enableLostMode:
+              operationId: deviceManagement.comanagedDevices.managedDevice.enableLostMode
+            getCloudPcRemoteActionResults:
+              operationId: deviceManagement.comanagedDevices.managedDevice.getCloudPcRemoteActionResults
+            getCloudPcReviewStatus:
+              operationId: deviceManagement.comanagedDevices.managedDevice.getCloudPcReviewStatus
+            getFileVaultKey:
+              operationId: deviceManagement.comanagedDevices.managedDevice.getFileVaultKey
+            getNonCompliantSettings:
+              operationId: deviceManagement.comanagedDevices.managedDevice.getNonCompliantSettings
+            getOemWarranty:
+              operationId: deviceManagement.comanagedDevices.managedDevice.getOemWarranty
+            locateDevice:
+              operationId: deviceManagement.comanagedDevices.managedDevice.locateDevice
+            logoutSharedAppleDeviceActiveUser:
+              operationId: deviceManagement.comanagedDevices.managedDevice.logoutSharedAppleDeviceActiveUser
+            overrideComplianceState:
+              operationId: deviceManagement.comanagedDevices.managedDevice.overrideComplianceState
+            playLostModeSound:
+              operationId: deviceManagement.comanagedDevices.managedDevice.playLostModeSound
+            rebootNow:
+              operationId: deviceManagement.comanagedDevices.managedDevice.rebootNow
+            recoverPasscode:
+              operationId: deviceManagement.comanagedDevices.managedDevice.recoverPasscode
+            reenable:
+              operationId: deviceManagement.comanagedDevices.managedDevice.reenable
+            remoteLock:
+              operationId: deviceManagement.comanagedDevices.managedDevice.remoteLock
+            removeDeviceFirmwareConfigurationInterfaceManagement:
+              operationId: deviceManagement.comanagedDevices.managedDevice.removeDeviceFirmwareConfigurationInterfaceManagement
+            reprovisionCloudPc:
+              operationId: deviceManagement.comanagedDevices.managedDevice.reprovisionCloudPc
+            requestRemoteAssistance:
+              operationId: deviceManagement.comanagedDevices.managedDevice.requestRemoteAssistance
+            resetPasscode:
+              operationId: deviceManagement.comanagedDevices.managedDevice.resetPasscode
+            resizeCloudPc:
+              operationId: deviceManagement.comanagedDevices.managedDevice.resizeCloudPc
+            restoreCloudPc:
+              operationId: deviceManagement.comanagedDevices.managedDevice.restoreCloudPc
+            retire:
+              operationId: deviceManagement.comanagedDevices.managedDevice.retire
+            revokeAppleVppLicenses:
+              operationId: deviceManagement.comanagedDevices.managedDevice.revokeAppleVppLicenses
+            rotateBitLockerKeys:
+              operationId: deviceManagement.comanagedDevices.managedDevice.rotateBitLockerKeys
+            rotateFileVaultKey:
+              operationId: deviceManagement.comanagedDevices.managedDevice.rotateFileVaultKey
+            sendCustomNotificationToCompanyPortal:
+              operationId: deviceManagement.comanagedDevices.managedDevice.sendCustomNotificationToCompanyPortal
+            setCloudPcReviewStatus:
+              operationId: deviceManagement.comanagedDevices.managedDevice.setCloudPcReviewStatus
+            setDeviceName:
+              operationId: deviceManagement.comanagedDevices.managedDevice.setDeviceName
+            shutDown:
+              operationId: deviceManagement.comanagedDevices.managedDevice.shutDown
+            syncDevice:
+              operationId: deviceManagement.comanagedDevices.managedDevice.syncDevice
+            triggerConfigurationManagerAction:
+              operationId: deviceManagement.comanagedDevices.managedDevice.triggerConfigurationManagerAction
+            updateWindowsDeviceAccount:
+              operationId: deviceManagement.comanagedDevices.managedDevice.updateWindowsDeviceAccount
+            windowsDefenderScan:
+              operationId: deviceManagement.comanagedDevices.managedDevice.windowsDefenderScan
+            windowsDefenderUpdateSignatures:
+              operationId: deviceManagement.comanagedDevices.managedDevice.windowsDefenderUpdateSignatures
+            wipe:
+              operationId: deviceManagement.comanagedDevices.managedDevice.wipe
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2822,7 +2948,6 @@ paths:
       tags:
         - deviceManagement.managedDevice
       summary: Get assignmentFilterEvaluationStatusDetails from deviceManagement
-      description: Managed device mobile app configuration states for this device.
       operationId: deviceManagement.comanagedDevices_ListAssignmentFilterEvaluationStatusDetails
       parameters:
         - name: managedDevice-id
@@ -2921,7 +3046,6 @@ paths:
       tags:
         - deviceManagement.managedDevice
       summary: Get assignmentFilterEvaluationStatusDetails from deviceManagement
-      description: Managed device mobile app configuration states for this device.
       operationId: deviceManagement.comanagedDevices_GetAssignmentFilterEvaluationStatusDetails
       parameters:
         - name: managedDevice-id
@@ -3042,7 +3166,6 @@ paths:
       tags:
         - deviceManagement.managedDevice
       summary: Get detectedApps from deviceManagement
-      description: All applications currently installed on the device
       operationId: deviceManagement.comanagedDevices_ListDetectedApps
       parameters:
         - name: managedDevice-id
@@ -3122,7 +3245,6 @@ paths:
       tags:
         - deviceManagement.managedDevice
       summary: Get detectedApps from deviceManagement
-      description: All applications currently installed on the device
       operationId: deviceManagement.comanagedDevices_GetDetectedApps
       parameters:
         - name: managedDevice-id
@@ -3190,7 +3312,6 @@ paths:
       tags:
         - deviceManagement.managedDevice
       summary: Get deviceCategory from deviceManagement
-      description: Device category
       operationId: deviceManagement.comanagedDevices_GetDeviceCategory
       parameters:
         - name: managedDevice-id
@@ -3292,7 +3413,6 @@ paths:
       tags:
         - deviceManagement.managedDevice
       summary: Get deviceCompliancePolicyStates from deviceManagement
-      description: Device compliance policy states for this device.
       operationId: deviceManagement.comanagedDevices_ListDeviceCompliancePolicyStates
       parameters:
         - name: managedDevice-id
@@ -3412,7 +3532,6 @@ paths:
       tags:
         - deviceManagement.managedDevice
       summary: Get deviceCompliancePolicyStates from deviceManagement
-      description: Device compliance policy states for this device.
       operationId: deviceManagement.comanagedDevices_GetDeviceCompliancePolicyStates
       parameters:
         - name: managedDevice-id
@@ -3540,7 +3659,6 @@ paths:
       tags:
         - deviceManagement.managedDevice
       summary: Get deviceConfigurationStates from deviceManagement
-      description: Device configuration states for this device.
       operationId: deviceManagement.comanagedDevices_ListDeviceConfigurationStates
       parameters:
         - name: managedDevice-id
@@ -3660,7 +3778,6 @@ paths:
       tags:
         - deviceManagement.managedDevice
       summary: Get deviceConfigurationStates from deviceManagement
-      description: Device configuration states for this device.
       operationId: deviceManagement.comanagedDevices_GetDeviceConfigurationStates
       parameters:
         - name: managedDevice-id
@@ -3788,7 +3905,6 @@ paths:
       tags:
         - deviceManagement.managedDevice
       summary: Get logCollectionRequests from deviceManagement
-      description: List of log collection requests
       operationId: deviceManagement.comanagedDevices_ListLogCollectionRequests
       parameters:
         - name: managedDevice-id
@@ -3908,7 +4024,6 @@ paths:
       tags:
         - deviceManagement.managedDevice
       summary: Get logCollectionRequests from deviceManagement
-      description: List of log collection requests
       operationId: deviceManagement.comanagedDevices_GetLogCollectionRequests
       parameters:
         - name: managedDevice-id
@@ -3964,6 +4079,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.deviceLogCollectionResponse'
+          links:
+            createDownloadUrl:
+              operationId: deviceManagement.comanagedDevices.managedDevice.logCollectionRequests.deviceLogCollectionResponse.createDownloadUrl
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4036,7 +4154,6 @@ paths:
       tags:
         - deviceManagement.managedDevice
       summary: Get managedDeviceMobileAppConfigurationStates from deviceManagement
-      description: Managed device mobile app configuration states for this device.
       operationId: deviceManagement.comanagedDevices_ListManagedDeviceMobileAppConfigurationStates
       parameters:
         - name: managedDevice-id
@@ -4156,7 +4273,6 @@ paths:
       tags:
         - deviceManagement.managedDevice
       summary: Get managedDeviceMobileAppConfigurationStates from deviceManagement
-      description: Managed device mobile app configuration states for this device.
       operationId: deviceManagement.comanagedDevices_GetManagedDeviceMobileAppConfigurationStates
       parameters:
         - name: managedDevice-id
@@ -4284,7 +4400,6 @@ paths:
       tags:
         - deviceManagement.managedDevice
       summary: Get securityBaselineStates from deviceManagement
-      description: Security baseline states for this device.
       operationId: deviceManagement.comanagedDevices_ListSecurityBaselineStates
       parameters:
         - name: managedDevice-id
@@ -4394,7 +4509,6 @@ paths:
       tags:
         - deviceManagement.managedDevice
       summary: Get securityBaselineStates from deviceManagement
-      description: Security baseline states for this device.
       operationId: deviceManagement.comanagedDevices_GetSecurityBaselineStates
       parameters:
         - name: managedDevice-id
@@ -4526,7 +4640,6 @@ paths:
       tags:
         - deviceManagement.managedDevice
       summary: Get settingStates from deviceManagement
-      description: The security baseline state for different settings for a device
       operationId: deviceManagement.comanagedDevices.securityBaselineStates_ListSettingStates
       parameters:
         - name: managedDevice-id
@@ -4660,7 +4773,6 @@ paths:
       tags:
         - deviceManagement.managedDevice
       summary: Get settingStates from deviceManagement
-      description: The security baseline state for different settings for a device
       operationId: deviceManagement.comanagedDevices.securityBaselineStates_GetSettingStates
       parameters:
         - name: managedDevice-id
@@ -4809,7 +4921,6 @@ paths:
       tags:
         - deviceManagement.managedDevice
       summary: Get users from deviceManagement
-      description: The primary users associated with the managed device.
       operationId: deviceManagement.comanagedDevices_ListUsers
       parameters:
         - name: managedDevice-id
@@ -5237,7 +5348,6 @@ paths:
       tags:
         - deviceManagement.managedDevice
       summary: Get windowsProtectionState from deviceManagement
-      description: The device protection status. This property is read-only.
       operationId: deviceManagement.comanagedDevices_GetWindowsProtectionState
       parameters:
         - name: managedDevice-id
@@ -5363,7 +5473,6 @@ paths:
       tags:
         - deviceManagement.managedDevice
       summary: Get detectedMalwareState from deviceManagement
-      description: Device malware list
       operationId: deviceManagement.comanagedDevices.windowsProtectionState_ListDetectedMalwareState
       parameters:
         - name: managedDevice-id
@@ -5489,7 +5598,6 @@ paths:
       tags:
         - deviceManagement.managedDevice
       summary: Get detectedMalwareState from deviceManagement
-      description: Device malware list
       operationId: deviceManagement.comanagedDevices.windowsProtectionState_GetDetectedMalwareState
       parameters:
         - name: managedDevice-id
@@ -5619,7 +5727,6 @@ paths:
       tags:
         - deviceManagement.dataSharingConsent
       summary: Get dataSharingConsents from deviceManagement
-      description: Data sharing consents.
       operationId: deviceManagement_ListDataSharingConsents
       parameters:
         - $ref: '#/components/parameters/top'
@@ -5718,7 +5825,6 @@ paths:
       tags:
         - deviceManagement.dataSharingConsent
       summary: Get dataSharingConsents from deviceManagement
-      description: Data sharing consents.
       operationId: deviceManagement_GetDataSharingConsents
       parameters:
         - name: dataSharingConsent-id
@@ -5765,6 +5871,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.dataSharingConsent'
+          links:
+            consentToDataSharing:
+              operationId: deviceManagement.dataSharingConsents.dataSharingConsent.consentToDataSharing
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5823,7 +5932,6 @@ paths:
       tags:
         - deviceManagement.deviceManagementDerivedCredentialSettings
       summary: Get derivedCredentials from deviceManagement
-      description: Collection of Derived credential settings associated with account.
       operationId: deviceManagement_ListDerivedCredentials
       parameters:
         - $ref: '#/components/parameters/top'
@@ -5851,6 +5959,8 @@ paths:
                 - issuer desc
                 - notificationType
                 - notificationType desc
+                - renewalThresholdPercentage
+                - renewalThresholdPercentage desc
               type: string
         - name: $select
           in: query
@@ -5867,6 +5977,7 @@ paths:
                 - helpUrl
                 - issuer
                 - notificationType
+                - renewalThresholdPercentage
               type: string
         - name: $expand
           in: query
@@ -5916,7 +6027,6 @@ paths:
       tags:
         - deviceManagement.deviceManagementDerivedCredentialSettings
       summary: Get derivedCredentials from deviceManagement
-      description: Collection of Derived credential settings associated with account.
       operationId: deviceManagement_GetDerivedCredentials
       parameters:
         - name: deviceManagementDerivedCredentialSettings-id
@@ -5941,6 +6051,7 @@ paths:
                 - helpUrl
                 - issuer
                 - notificationType
+                - renewalThresholdPercentage
               type: string
         - name: $expand
           in: query
@@ -6019,7 +6130,6 @@ paths:
       tags:
         - deviceManagement.detectedApp
       summary: Get detectedApps from deviceManagement
-      description: The list of detected apps associated with a device.
       operationId: deviceManagement_ListDetectedApps
       parameters:
         - $ref: '#/components/parameters/top'
@@ -6114,7 +6224,6 @@ paths:
       tags:
         - deviceManagement.detectedApp
       summary: Get detectedApps from deviceManagement
-      description: The list of detected apps associated with a device.
       operationId: deviceManagement_GetDetectedApps
       parameters:
         - name: detectedApp-id
@@ -6224,7 +6333,6 @@ paths:
       tags:
         - deviceManagement.detectedApp
       summary: Get managedDevices from deviceManagement
-      description: The devices that have the discovered application installed
       operationId: deviceManagement.detectedApps_ListManagedDevices
       parameters:
         - name: detectedApp-id
@@ -6547,7 +6655,6 @@ paths:
       tags:
         - deviceManagement.detectedApp
       summary: Get managedDevices from deviceManagement
-      description: The devices that have the discovered application installed
       operationId: deviceManagement.detectedApps_GetManagedDevices
       parameters:
         - name: detectedApp-id
@@ -6753,7 +6860,6 @@ paths:
       tags:
         - deviceManagement.deviceCategory
       summary: Get deviceCategories from deviceManagement
-      description: The list of device categories with the tenant.
       operationId: deviceManagement_ListDeviceCategories
       parameters:
         - $ref: '#/components/parameters/top'
@@ -6843,7 +6949,6 @@ paths:
       tags:
         - deviceManagement.deviceCategory
       summary: Get deviceCategories from deviceManagement
-      description: The list of device categories with the tenant.
       operationId: deviceManagement_GetDeviceCategories
       parameters:
         - name: deviceCategory-id
@@ -6945,7 +7050,6 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicy
       summary: Get deviceCompliancePolicies from deviceManagement
-      description: The device compliance policies.
       operationId: deviceManagement_ListDeviceCompliancePolicies
       parameters:
         - $ref: '#/components/parameters/top'
@@ -7058,7 +7162,6 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicy
       summary: Get deviceCompliancePolicies from deviceManagement
-      description: The device compliance policies.
       operationId: deviceManagement_GetDeviceCompliancePolicies
       parameters:
         - name: deviceCompliancePolicy-id
@@ -7148,6 +7251,10 @@ paths:
               operationId: deviceManagement.DeviceCompliancePolicies.GetUserStatusOverview
               parameters:
                 deviceCompliancePolicy-id: $request.path.deviceCompliancePolicy-id
+            assign:
+              operationId: deviceManagement.deviceCompliancePolicies.deviceCompliancePolicy.assign
+            scheduleActionsForRules:
+              operationId: deviceManagement.deviceCompliancePolicies.deviceCompliancePolicy.scheduleActionsForRules
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -7206,7 +7313,6 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicy
       summary: Get assignments from deviceManagement
-      description: The collection of assignments for this compliance policy.
       operationId: deviceManagement.deviceCompliancePolicies_ListAssignments
       parameters:
         - name: deviceCompliancePolicy-id
@@ -7311,7 +7417,6 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicy
       summary: Get assignments from deviceManagement
-      description: The collection of assignments for this compliance policy.
       operationId: deviceManagement.deviceCompliancePolicies_GetAssignments
       parameters:
         - name: deviceCompliancePolicy-id
@@ -7434,7 +7539,6 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicy
       summary: Get deviceSettingStateSummaries from deviceManagement
-      description: Compliance Setting State Device Summary
       operationId: deviceManagement.deviceCompliancePolicies_ListDeviceSettingStateSummaries
       parameters:
         - name: deviceCompliancePolicy-id
@@ -7557,7 +7661,6 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicy
       summary: Get deviceSettingStateSummaries from deviceManagement
-      description: Compliance Setting State Device Summary
       operationId: deviceManagement.deviceCompliancePolicies_GetDeviceSettingStateSummaries
       parameters:
         - name: deviceCompliancePolicy-id
@@ -7686,7 +7789,6 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicy
       summary: Get deviceStatuses from deviceManagement
-      description: List of DeviceComplianceDeviceStatus.
       operationId: deviceManagement.deviceCompliancePolicies_ListDeviceStatuses
       parameters:
         - name: deviceCompliancePolicy-id
@@ -7806,7 +7908,6 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicy
       summary: Get deviceStatuses from deviceManagement
-      description: List of DeviceComplianceDeviceStatus.
       operationId: deviceManagement.deviceCompliancePolicies_GetDeviceStatuses
       parameters:
         - name: deviceCompliancePolicy-id
@@ -7934,7 +8035,6 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicy
       summary: Get deviceStatusOverview from deviceManagement
-      description: Device compliance devices status overview
       operationId: deviceManagement.deviceCompliancePolicies_GetDeviceStatusOverview
       parameters:
         - name: deviceCompliancePolicy-id
@@ -8042,7 +8142,6 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicy
       summary: Get scheduledActionsForRule from deviceManagement
-      description: The list of scheduled action for this rule
       operationId: deviceManagement.deviceCompliancePolicies_ListScheduledActionsForRule
       parameters:
         - name: deviceCompliancePolicy-id
@@ -8143,7 +8242,6 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicy
       summary: Get scheduledActionsForRule from deviceManagement
-      description: The list of scheduled action for this rule
       operationId: deviceManagement.deviceCompliancePolicies_GetScheduledActionsForRule
       parameters:
         - name: deviceCompliancePolicy-id
@@ -8272,7 +8370,6 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicy
       summary: Get scheduledActionConfigurations from deviceManagement
-      description: The list of scheduled action configurations for this compliance policy. Compliance policy must have one and only one block scheduled action.
       operationId: deviceManagement.deviceCompliancePolicies.scheduledActionsForRule_ListScheduledActionConfigurations
       parameters:
         - name: deviceCompliancePolicy-id
@@ -8394,7 +8491,6 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicy
       summary: Get scheduledActionConfigurations from deviceManagement
-      description: The list of scheduled action configurations for this compliance policy. Compliance policy must have one and only one block scheduled action.
       operationId: deviceManagement.deviceCompliancePolicies.scheduledActionsForRule_GetScheduledActionConfigurations
       parameters:
         - name: deviceCompliancePolicy-id
@@ -8539,7 +8635,6 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicy
       summary: Get userStatuses from deviceManagement
-      description: List of DeviceComplianceUserStatus.
       operationId: deviceManagement.deviceCompliancePolicies_ListUserStatuses
       parameters:
         - name: deviceCompliancePolicy-id
@@ -8650,7 +8745,6 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicy
       summary: Get userStatuses from deviceManagement
-      description: List of DeviceComplianceUserStatus.
       operationId: deviceManagement.deviceCompliancePolicies_GetUserStatuses
       parameters:
         - name: deviceCompliancePolicy-id
@@ -8775,7 +8869,6 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicy
       summary: Get userStatusOverview from deviceManagement
-      description: Device compliance users status overview
       operationId: deviceManagement.deviceCompliancePolicies_GetUserStatusOverview
       parameters:
         - name: deviceCompliancePolicy-id
@@ -8882,7 +8975,6 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicyDeviceStateSummary
       summary: Get deviceCompliancePolicyDeviceStateSummary from deviceManagement
-      description: The device compliance state summary for this account.
       operationId: deviceManagement_GetDeviceCompliancePolicyDeviceStateSummary
       parameters:
         - name: $select
@@ -8968,7 +9060,6 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicySettingStateSummary
       summary: Get deviceCompliancePolicySettingStateSummaries from deviceManagement
-      description: The summary states of compliance policy settings for this account.
       operationId: deviceManagement_ListDeviceCompliancePolicySettingStateSummaries
       parameters:
         - $ref: '#/components/parameters/top'
@@ -9081,7 +9172,6 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicySettingStateSummary
       summary: Get deviceCompliancePolicySettingStateSummaries from deviceManagement
-      description: The summary states of compliance policy settings for this account.
       operationId: deviceManagement_GetDeviceCompliancePolicySettingStateSummaries
       parameters:
         - name: deviceCompliancePolicySettingStateSummary-id
@@ -9197,7 +9287,6 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicySettingStateSummary
       summary: Get deviceComplianceSettingStates from deviceManagement
-      description: Not yet documented
       operationId: deviceManagement.deviceCompliancePolicySettingStateSummaries_ListDeviceComplianceSettingStates
       parameters:
         - name: deviceCompliancePolicySettingStateSummary-id
@@ -9329,7 +9418,6 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicySettingStateSummary
       summary: Get deviceComplianceSettingStates from deviceManagement
-      description: Not yet documented
       operationId: deviceManagement.deviceCompliancePolicySettingStateSummaries_GetDeviceComplianceSettingStates
       parameters:
         - name: deviceCompliancePolicySettingStateSummary-id
@@ -9461,7 +9549,6 @@ paths:
       tags:
         - deviceManagement.deviceConfigurationConflictSummary
       summary: Get deviceConfigurationConflictSummary from deviceManagement
-      description: Summary of policies in conflict state for this account.
       operationId: deviceManagement_ListDeviceConfigurationConflictSummary
       parameters:
         - $ref: '#/components/parameters/top'
@@ -9551,7 +9638,6 @@ paths:
       tags:
         - deviceManagement.deviceConfigurationConflictSummary
       summary: Get deviceConfigurationConflictSummary from deviceManagement
-      description: Summary of policies in conflict state for this account.
       operationId: deviceManagement_GetDeviceConfigurationConflictSummary
       parameters:
         - name: deviceConfigurationConflictSummary-id
@@ -9653,7 +9739,6 @@ paths:
       tags:
         - deviceManagement.deviceConfigurationDeviceStateSummary
       summary: Get deviceConfigurationDeviceStateSummaries from deviceManagement
-      description: The device configuration device state summary for this account.
       operationId: deviceManagement_GetDeviceConfigurationDeviceStateSummaries
       parameters:
         - name: $select
@@ -9737,7 +9822,6 @@ paths:
       tags:
         - deviceManagement.deviceConfiguration
       summary: Get deviceConfigurations from deviceManagement
-      description: The device configurations.
       operationId: deviceManagement_ListDeviceConfigurations
       parameters:
         - $ref: '#/components/parameters/top'
@@ -9862,7 +9946,6 @@ paths:
       tags:
         - deviceManagement.deviceConfiguration
       summary: Get deviceConfigurations from deviceManagement
-      description: The device configurations.
       operationId: deviceManagement_GetDeviceConfigurations
       parameters:
         - name: deviceConfiguration-id
@@ -9956,6 +10039,14 @@ paths:
               operationId: deviceManagement.DeviceConfigurations.GetUserStatusOverview
               parameters:
                 deviceConfiguration-id: $request.path.deviceConfiguration-id
+            assign:
+              operationId: deviceManagement.deviceConfigurations.deviceConfiguration.assign
+            assignedAccessMultiModeProfiles:
+              operationId: deviceManagement.deviceConfigurations.deviceConfiguration.assignedAccessMultiModeProfiles
+            getOmaSettingPlainTextValue:
+              operationId: deviceManagement.deviceConfigurations.deviceConfiguration.getOmaSettingPlainTextValue
+            windowsPrivacyAccessControls:
+              operationId: deviceManagement.deviceConfigurations.deviceConfiguration.windowsPrivacyAccessControls
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -10014,7 +10105,6 @@ paths:
       tags:
         - deviceManagement.deviceConfiguration
       summary: Get assignments from deviceManagement
-      description: The list of assignments for the device configuration profile.
       operationId: deviceManagement.deviceConfigurations_ListAssignments
       parameters:
         - name: deviceConfiguration-id
@@ -10122,7 +10212,6 @@ paths:
       tags:
         - deviceManagement.deviceConfiguration
       summary: Get assignments from deviceManagement
-      description: The list of assignments for the device configuration profile.
       operationId: deviceManagement.deviceConfigurations_GetAssignments
       parameters:
         - name: deviceConfiguration-id
@@ -10246,7 +10335,6 @@ paths:
       tags:
         - deviceManagement.deviceConfiguration
       summary: Get deviceSettingStateSummaries from deviceManagement
-      description: Device Configuration Setting State Device Summary
       operationId: deviceManagement.deviceConfigurations_ListDeviceSettingStateSummaries
       parameters:
         - name: deviceConfiguration-id
@@ -10369,7 +10457,6 @@ paths:
       tags:
         - deviceManagement.deviceConfiguration
       summary: Get deviceSettingStateSummaries from deviceManagement
-      description: Device Configuration Setting State Device Summary
       operationId: deviceManagement.deviceConfigurations_GetDeviceSettingStateSummaries
       parameters:
         - name: deviceConfiguration-id
@@ -10498,7 +10585,6 @@ paths:
       tags:
         - deviceManagement.deviceConfiguration
       summary: Get deviceStatuses from deviceManagement
-      description: Device configuration installation status by device.
       operationId: deviceManagement.deviceConfigurations_ListDeviceStatuses
       parameters:
         - name: deviceConfiguration-id
@@ -10618,7 +10704,6 @@ paths:
       tags:
         - deviceManagement.deviceConfiguration
       summary: Get deviceStatuses from deviceManagement
-      description: Device configuration installation status by device.
       operationId: deviceManagement.deviceConfigurations_GetDeviceStatuses
       parameters:
         - name: deviceConfiguration-id
@@ -10746,7 +10831,6 @@ paths:
       tags:
         - deviceManagement.deviceConfiguration
       summary: Get deviceStatusOverview from deviceManagement
-      description: Device Configuration devices status overview
       operationId: deviceManagement.deviceConfigurations_GetDeviceStatusOverview
       parameters:
         - name: deviceConfiguration-id
@@ -10854,7 +10938,6 @@ paths:
       tags:
         - deviceManagement.deviceConfiguration
       summary: Get groupAssignments from deviceManagement
-      description: The list of group assignments for the device configuration profile.
       operationId: deviceManagement.deviceConfigurations_ListGroupAssignments
       parameters:
         - name: deviceConfiguration-id
@@ -10958,7 +11041,6 @@ paths:
       tags:
         - deviceManagement.deviceConfiguration
       summary: Get groupAssignments from deviceManagement
-      description: The list of group assignments for the device configuration profile.
       operationId: deviceManagement.deviceConfigurations_GetGroupAssignments
       parameters:
         - name: deviceConfiguration-id
@@ -11088,7 +11170,6 @@ paths:
       tags:
         - deviceManagement.deviceConfiguration
       summary: Get deviceConfiguration from deviceManagement
-      description: The navigation link to the Device Configuration being targeted.
       operationId: deviceManagement.deviceConfigurations.groupAssignments_GetDeviceConfiguration
       parameters:
         - name: deviceConfiguration-id
@@ -11204,7 +11285,6 @@ paths:
       tags:
         - deviceManagement.deviceConfiguration
       summary: Get userStatuses from deviceManagement
-      description: Device configuration installation status by user.
       operationId: deviceManagement.deviceConfigurations_ListUserStatuses
       parameters:
         - name: deviceConfiguration-id
@@ -11315,7 +11395,6 @@ paths:
       tags:
         - deviceManagement.deviceConfiguration
       summary: Get userStatuses from deviceManagement
-      description: Device configuration installation status by user.
       operationId: deviceManagement.deviceConfigurations_GetUserStatuses
       parameters:
         - name: deviceConfiguration-id
@@ -11440,7 +11519,6 @@ paths:
       tags:
         - deviceManagement.deviceConfiguration
       summary: Get userStatusOverview from deviceManagement
-      description: Device Configuration users status overview
       operationId: deviceManagement.deviceConfigurations_GetUserStatusOverview
       parameters:
         - name: deviceConfiguration-id
@@ -11547,7 +11625,6 @@ paths:
       tags:
         - deviceManagement.deviceConfigurationUserStateSummary
       summary: Get deviceConfigurationUserStateSummaries from deviceManagement
-      description: The device configuration user state summary for this account.
       operationId: deviceManagement_GetDeviceConfigurationUserStateSummaries
       parameters:
         - name: $select
@@ -11631,7 +11708,6 @@ paths:
       tags:
         - deviceManagement.deviceHealthScript
       summary: Get deviceHealthScripts from deviceManagement
-      description: The list of device health scripts associated with the tenant.
       operationId: deviceManagement_ListDeviceHealthScripts
       parameters:
         - $ref: '#/components/parameters/top'
@@ -11766,7 +11842,6 @@ paths:
       tags:
         - deviceManagement.deviceHealthScript
       summary: Get deviceHealthScripts from deviceManagement
-      description: The list of device health scripts associated with the tenant.
       operationId: deviceManagement_GetDeviceHealthScripts
       parameters:
         - name: deviceHealthScript-id
@@ -11842,6 +11917,14 @@ paths:
               operationId: deviceManagement.DeviceHealthScripts.GetRunSummary
               parameters:
                 deviceHealthScript-id: $request.path.deviceHealthScript-id
+            assign:
+              operationId: deviceManagement.deviceHealthScripts.deviceHealthScript.assign
+            getGlobalScriptHighestAvailableVersion:
+              operationId: deviceManagement.deviceHealthScripts.deviceHealthScript.getGlobalScriptHighestAvailableVersion
+            getRemediationHistory:
+              operationId: deviceManagement.deviceHealthScripts.deviceHealthScript.getRemediationHistory
+            updateGlobalScript:
+              operationId: deviceManagement.deviceHealthScripts.deviceHealthScript.updateGlobalScript
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -11900,7 +11983,6 @@ paths:
       tags:
         - deviceManagement.deviceHealthScript
       summary: Get assignments from deviceManagement
-      description: The list of group assignments for the device health script
       operationId: deviceManagement.deviceHealthScripts_ListAssignments
       parameters:
         - name: deviceHealthScript-id
@@ -12005,7 +12087,6 @@ paths:
       tags:
         - deviceManagement.deviceHealthScript
       summary: Get assignments from deviceManagement
-      description: The list of group assignments for the device health script
       operationId: deviceManagement.deviceHealthScripts_GetAssignments
       parameters:
         - name: deviceHealthScript-id
@@ -12128,7 +12209,6 @@ paths:
       tags:
         - deviceManagement.deviceHealthScript
       summary: Get deviceRunStates from deviceManagement
-      description: List of run states for the device health script across all devices
       operationId: deviceManagement.deviceHealthScripts_ListDeviceRunStates
       parameters:
         - name: deviceHealthScript-id
@@ -12259,7 +12339,6 @@ paths:
       tags:
         - deviceManagement.deviceHealthScript
       summary: Get deviceRunStates from deviceManagement
-      description: List of run states for the device health script across all devices
       operationId: deviceManagement.deviceHealthScripts_GetDeviceRunStates
       parameters:
         - name: deviceHealthScript-id
@@ -12398,7 +12477,6 @@ paths:
       tags:
         - deviceManagement.deviceHealthScript
       summary: Get managedDevice from deviceManagement
-      description: The managed device on which the device health script executed
       operationId: deviceManagement.deviceHealthScripts.deviceRunStates_GetManagedDevice
       parameters:
         - name: deviceHealthScript-id
@@ -12604,7 +12682,6 @@ paths:
       tags:
         - deviceManagement.deviceHealthScript
       summary: Get runSummary from deviceManagement
-      description: High level run summary for device health script.
       operationId: deviceManagement.deviceHealthScripts_GetRunSummary
       parameters:
         - name: deviceHealthScript-id
@@ -12714,7 +12791,6 @@ paths:
       tags:
         - deviceManagement.deviceManagementScript
       summary: Get deviceManagementScripts from deviceManagement
-      description: The list of device management scripts associated with the tenant.
       operationId: deviceManagement_ListDeviceManagementScripts
       parameters:
         - $ref: '#/components/parameters/top'
@@ -12835,7 +12911,6 @@ paths:
       tags:
         - deviceManagement.deviceManagementScript
       summary: Get deviceManagementScripts from deviceManagement
-      description: The list of device management scripts associated with the tenant.
       operationId: deviceManagement_GetDeviceManagementScripts
       parameters:
         - name: deviceManagementScript-id
@@ -12917,6 +12992,8 @@ paths:
               operationId: deviceManagement.DeviceManagementScripts.ListUserRunStates
               parameters:
                 deviceManagementScript-id: $request.path.deviceManagementScript-id
+            assign:
+              operationId: deviceManagement.deviceManagementScripts.deviceManagementScript.assign
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -12975,7 +13052,6 @@ paths:
       tags:
         - deviceManagement.deviceManagementScript
       summary: Get assignments from deviceManagement
-      description: The list of group assignments for the device management script.
       operationId: deviceManagement.deviceManagementScripts_ListAssignments
       parameters:
         - name: deviceManagementScript-id
@@ -13074,7 +13150,6 @@ paths:
       tags:
         - deviceManagement.deviceManagementScript
       summary: Get assignments from deviceManagement
-      description: The list of group assignments for the device management script.
       operationId: deviceManagement.deviceManagementScripts_GetAssignments
       parameters:
         - name: deviceManagementScript-id
@@ -13195,7 +13270,6 @@ paths:
       tags:
         - deviceManagement.deviceManagementScript
       summary: Get deviceRunStates from deviceManagement
-      description: List of run states for this script across all devices.
       operationId: deviceManagement.deviceManagementScripts_ListDeviceRunStates
       parameters:
         - name: deviceManagementScript-id
@@ -13308,7 +13382,6 @@ paths:
       tags:
         - deviceManagement.deviceManagementScript
       summary: Get deviceRunStates from deviceManagement
-      description: List of run states for this script across all devices.
       operationId: deviceManagement.deviceManagementScripts_GetDeviceRunStates
       parameters:
         - name: deviceManagementScript-id
@@ -13441,7 +13514,6 @@ paths:
       tags:
         - deviceManagement.deviceManagementScript
       summary: Get managedDevice from deviceManagement
-      description: The managed devices that executes the device management script.
       operationId: deviceManagement.deviceManagementScripts.deviceRunStates_GetManagedDevice
       parameters:
         - name: deviceManagementScript-id
@@ -13647,7 +13719,6 @@ paths:
       tags:
         - deviceManagement.deviceManagementScript
       summary: Get groupAssignments from deviceManagement
-      description: The list of group assignments for the device management script.
       operationId: deviceManagement.deviceManagementScripts_ListGroupAssignments
       parameters:
         - name: deviceManagementScript-id
@@ -13746,7 +13817,6 @@ paths:
       tags:
         - deviceManagement.deviceManagementScript
       summary: Get groupAssignments from deviceManagement
-      description: The list of group assignments for the device management script.
       operationId: deviceManagement.deviceManagementScripts_GetGroupAssignments
       parameters:
         - name: deviceManagementScript-id
@@ -13867,7 +13937,6 @@ paths:
       tags:
         - deviceManagement.deviceManagementScript
       summary: Get runSummary from deviceManagement
-      description: Run summary for device management script.
       operationId: deviceManagement.deviceManagementScripts_GetRunSummary
       parameters:
         - name: deviceManagementScript-id
@@ -13920,7 +13989,6 @@ paths:
       tags:
         - deviceManagement.deviceManagementScript
       summary: Get userRunStates from deviceManagement
-      description: List of run states for this script across all users.
       operationId: deviceManagement.deviceManagementScripts_ListUserRunStates
       parameters:
         - name: deviceManagementScript-id
@@ -14027,7 +14095,6 @@ paths:
       tags:
         - deviceManagement.deviceManagementScript
       summary: Get userRunStates from deviceManagement
-      description: List of run states for this script across all users.
       operationId: deviceManagement.deviceManagementScripts_GetUserRunStates
       parameters:
         - name: deviceManagementScript-id
@@ -14158,7 +14225,6 @@ paths:
       tags:
         - deviceManagement.deviceManagementScript
       summary: Get deviceRunStates from deviceManagement
-      description: List of run states for this script across all devices of specific user.
       operationId: deviceManagement.deviceManagementScripts.userRunStates_ListDeviceRunStates
       parameters:
         - name: deviceManagementScript-id
@@ -14285,7 +14351,6 @@ paths:
       tags:
         - deviceManagement.deviceManagementScript
       summary: Get deviceRunStates from deviceManagement
-      description: List of run states for this script across all devices of specific user.
       operationId: deviceManagement.deviceManagementScripts.userRunStates_GetDeviceRunStates
       parameters:
         - name: deviceManagementScript-id
@@ -14440,7 +14505,6 @@ paths:
       tags:
         - deviceManagement.deviceManagementScript
       summary: Get managedDevice from deviceManagement
-      description: The managed devices that executes the device management script.
       operationId: deviceManagement.deviceManagementScripts.userRunStates.deviceRunStates_GetManagedDevice
       parameters:
         - name: deviceManagementScript-id
@@ -14663,7 +14727,6 @@ paths:
       tags:
         - deviceManagement.deviceShellScript
       summary: Get deviceShellScripts from deviceManagement
-      description: The list of device shell scripts associated with the tenant.
       operationId: deviceManagement_ListDeviceShellScripts
       parameters:
         - $ref: '#/components/parameters/top'
@@ -14787,7 +14850,6 @@ paths:
       tags:
         - deviceManagement.deviceShellScript
       summary: Get deviceShellScripts from deviceManagement
-      description: The list of device shell scripts associated with the tenant.
       operationId: deviceManagement_GetDeviceShellScripts
       parameters:
         - name: deviceShellScript-id
@@ -14870,6 +14932,8 @@ paths:
               operationId: deviceManagement.DeviceShellScripts.ListUserRunStates
               parameters:
                 deviceShellScript-id: $request.path.deviceShellScript-id
+            assign:
+              operationId: deviceManagement.deviceShellScripts.deviceShellScript.assign
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -14928,7 +14992,6 @@ paths:
       tags:
         - deviceManagement.deviceShellScript
       summary: Get assignments from deviceManagement
-      description: The list of group assignments for the device management script.
       operationId: deviceManagement.deviceShellScripts_ListAssignments
       parameters:
         - name: deviceShellScript-id
@@ -15027,7 +15090,6 @@ paths:
       tags:
         - deviceManagement.deviceShellScript
       summary: Get assignments from deviceManagement
-      description: The list of group assignments for the device management script.
       operationId: deviceManagement.deviceShellScripts_GetAssignments
       parameters:
         - name: deviceShellScript-id
@@ -15148,7 +15210,6 @@ paths:
       tags:
         - deviceManagement.deviceShellScript
       summary: Get deviceRunStates from deviceManagement
-      description: List of run states for this script across all devices.
       operationId: deviceManagement.deviceShellScripts_ListDeviceRunStates
       parameters:
         - name: deviceShellScript-id
@@ -15261,7 +15322,6 @@ paths:
       tags:
         - deviceManagement.deviceShellScript
       summary: Get deviceRunStates from deviceManagement
-      description: List of run states for this script across all devices.
       operationId: deviceManagement.deviceShellScripts_GetDeviceRunStates
       parameters:
         - name: deviceShellScript-id
@@ -15394,7 +15454,6 @@ paths:
       tags:
         - deviceManagement.deviceShellScript
       summary: Get managedDevice from deviceManagement
-      description: The managed devices that executes the device management script.
       operationId: deviceManagement.deviceShellScripts.deviceRunStates_GetManagedDevice
       parameters:
         - name: deviceShellScript-id
@@ -15600,7 +15659,6 @@ paths:
       tags:
         - deviceManagement.deviceShellScript
       summary: Get groupAssignments from deviceManagement
-      description: The list of group assignments for the device management script.
       operationId: deviceManagement.deviceShellScripts_ListGroupAssignments
       parameters:
         - name: deviceShellScript-id
@@ -15699,7 +15757,6 @@ paths:
       tags:
         - deviceManagement.deviceShellScript
       summary: Get groupAssignments from deviceManagement
-      description: The list of group assignments for the device management script.
       operationId: deviceManagement.deviceShellScripts_GetGroupAssignments
       parameters:
         - name: deviceShellScript-id
@@ -15820,7 +15877,6 @@ paths:
       tags:
         - deviceManagement.deviceShellScript
       summary: Get runSummary from deviceManagement
-      description: Run summary for device management script.
       operationId: deviceManagement.deviceShellScripts_GetRunSummary
       parameters:
         - name: deviceShellScript-id
@@ -15873,7 +15929,6 @@ paths:
       tags:
         - deviceManagement.deviceShellScript
       summary: Get userRunStates from deviceManagement
-      description: List of run states for this script across all users.
       operationId: deviceManagement.deviceShellScripts_ListUserRunStates
       parameters:
         - name: deviceShellScript-id
@@ -15980,7 +16035,6 @@ paths:
       tags:
         - deviceManagement.deviceShellScript
       summary: Get userRunStates from deviceManagement
-      description: List of run states for this script across all users.
       operationId: deviceManagement.deviceShellScripts_GetUserRunStates
       parameters:
         - name: deviceShellScript-id
@@ -16111,7 +16165,6 @@ paths:
       tags:
         - deviceManagement.deviceShellScript
       summary: Get deviceRunStates from deviceManagement
-      description: List of run states for this script across all devices of specific user.
       operationId: deviceManagement.deviceShellScripts.userRunStates_ListDeviceRunStates
       parameters:
         - name: deviceShellScript-id
@@ -16238,7 +16291,6 @@ paths:
       tags:
         - deviceManagement.deviceShellScript
       summary: Get deviceRunStates from deviceManagement
-      description: List of run states for this script across all devices of specific user.
       operationId: deviceManagement.deviceShellScripts.userRunStates_GetDeviceRunStates
       parameters:
         - name: deviceShellScript-id
@@ -16393,7 +16445,6 @@ paths:
       tags:
         - deviceManagement.deviceShellScript
       summary: Get managedDevice from deviceManagement
-      description: The managed devices that executes the device management script.
       operationId: deviceManagement.deviceShellScripts.userRunStates.deviceRunStates_GetManagedDevice
       parameters:
         - name: deviceShellScript-id
@@ -16616,7 +16667,6 @@ paths:
       tags:
         - deviceManagement.embeddedSIMActivationCodePool
       summary: Get embeddedSIMActivationCodePools from deviceManagement
-      description: The embedded SIM activation code pools created by this account.
       operationId: deviceManagement_ListEmbeddedSIMActivationCodePools
       parameters:
         - $ref: '#/components/parameters/top'
@@ -16716,7 +16766,6 @@ paths:
       tags:
         - deviceManagement.embeddedSIMActivationCodePool
       summary: Get embeddedSIMActivationCodePools from deviceManagement
-      description: The embedded SIM activation code pools created by this account.
       operationId: deviceManagement_GetEmbeddedSIMActivationCodePools
       parameters:
         - name: embeddedSIMActivationCodePool-id
@@ -16775,6 +16824,8 @@ paths:
               operationId: deviceManagement.EmbeddedSIMActivationCodePools.ListDeviceStates
               parameters:
                 embeddedSIMActivationCodePool-id: $request.path.embeddedSIMActivationCodePool-id
+            assign:
+              operationId: deviceManagement.embeddedSIMActivationCodePools.embeddedSIMActivationCodePool.assign
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -16833,7 +16884,6 @@ paths:
       tags:
         - deviceManagement.embeddedSIMActivationCodePool
       summary: Get assignments from deviceManagement
-      description: Navigational property to a list of targets to which this pool is assigned.
       operationId: deviceManagement.embeddedSIMActivationCodePools_ListAssignments
       parameters:
         - name: embeddedSIMActivationCodePool-id
@@ -16932,7 +16982,6 @@ paths:
       tags:
         - deviceManagement.embeddedSIMActivationCodePool
       summary: Get assignments from deviceManagement
-      description: Navigational property to a list of targets to which this pool is assigned.
       operationId: deviceManagement.embeddedSIMActivationCodePools_GetAssignments
       parameters:
         - name: embeddedSIMActivationCodePool-id
@@ -17053,7 +17102,6 @@ paths:
       tags:
         - deviceManagement.embeddedSIMActivationCodePool
       summary: Get deviceStates from deviceManagement
-      description: Navigational property to a list of device states for this pool.
       operationId: deviceManagement.embeddedSIMActivationCodePools_ListDeviceStates
       parameters:
         - name: embeddedSIMActivationCodePool-id
@@ -17173,7 +17221,6 @@ paths:
       tags:
         - deviceManagement.embeddedSIMActivationCodePool
       summary: Get deviceStates from deviceManagement
-      description: Navigational property to a list of device states for this pool.
       operationId: deviceManagement.embeddedSIMActivationCodePools_GetDeviceStates
       parameters:
         - name: embeddedSIMActivationCodePool-id
@@ -17301,7 +17348,6 @@ paths:
       tags:
         - deviceManagement.groupPolicyConfiguration
       summary: Get groupPolicyConfigurations from deviceManagement
-      description: The group policy configurations created by this account.
       operationId: deviceManagement_ListGroupPolicyConfigurations
       parameters:
         - $ref: '#/components/parameters/top'
@@ -17401,7 +17447,6 @@ paths:
       tags:
         - deviceManagement.groupPolicyConfiguration
       summary: Get groupPolicyConfigurations from deviceManagement
-      description: The group policy configurations created by this account.
       operationId: deviceManagement_GetGroupPolicyConfigurations
       parameters:
         - name: groupPolicyConfiguration-id
@@ -17460,6 +17505,10 @@ paths:
               operationId: deviceManagement.GroupPolicyConfigurations.ListDefinitionValues
               parameters:
                 groupPolicyConfiguration-id: $request.path.groupPolicyConfiguration-id
+            assign:
+              operationId: deviceManagement.groupPolicyConfigurations.groupPolicyConfiguration.assign
+            updateDefinitionValues:
+              operationId: deviceManagement.groupPolicyConfigurations.groupPolicyConfiguration.updateDefinitionValues
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -17518,7 +17567,6 @@ paths:
       tags:
         - deviceManagement.groupPolicyConfiguration
       summary: Get assignments from deviceManagement
-      description: The list of group assignments for the configuration.
       operationId: deviceManagement.groupPolicyConfigurations_ListAssignments
       parameters:
         - name: groupPolicyConfiguration-id
@@ -17620,7 +17668,6 @@ paths:
       tags:
         - deviceManagement.groupPolicyConfiguration
       summary: Get assignments from deviceManagement
-      description: The list of group assignments for the configuration.
       operationId: deviceManagement.groupPolicyConfigurations_GetAssignments
       parameters:
         - name: groupPolicyConfiguration-id
@@ -17742,7 +17789,6 @@ paths:
       tags:
         - deviceManagement.groupPolicyConfiguration
       summary: Get definitionValues from deviceManagement
-      description: The list of enabled or disabled group policy definition values for the configuration.
       operationId: deviceManagement.groupPolicyConfigurations_ListDefinitionValues
       parameters:
         - name: groupPolicyConfiguration-id
@@ -17854,7 +17900,6 @@ paths:
       tags:
         - deviceManagement.groupPolicyConfiguration
       summary: Get definitionValues from deviceManagement
-      description: The list of enabled or disabled group policy definition values for the configuration.
       operationId: deviceManagement.groupPolicyConfigurations_GetDefinitionValues
       parameters:
         - name: groupPolicyConfiguration-id
@@ -17993,7 +18038,6 @@ paths:
       tags:
         - deviceManagement.groupPolicyConfiguration
       summary: Get definition from deviceManagement
-      description: The associated group policy definition with the value.
       operationId: deviceManagement.groupPolicyConfigurations.definitionValues_GetDefinition
       parameters:
         - name: groupPolicyConfiguration-id
@@ -18097,7 +18141,6 @@ paths:
       tags:
         - deviceManagement.groupPolicyConfiguration
       summary: Get presentationValues from deviceManagement
-      description: The associated group policy presentation values with the definition value.
       operationId: deviceManagement.groupPolicyConfigurations.definitionValues_ListPresentationValues
       parameters:
         - name: groupPolicyConfiguration-id
@@ -18217,7 +18260,6 @@ paths:
       tags:
         - deviceManagement.groupPolicyConfiguration
       summary: Get presentationValues from deviceManagement
-      description: The associated group policy presentation values with the definition value.
       operationId: deviceManagement.groupPolicyConfigurations.definitionValues_GetPresentationValues
       parameters:
         - name: groupPolicyConfiguration-id
@@ -18377,7 +18419,6 @@ paths:
       tags:
         - deviceManagement.groupPolicyConfiguration
       summary: Get definitionValue from deviceManagement
-      description: The group policy definition value associated with the presentation value.
       operationId: deviceManagement.groupPolicyConfigurations.definitionValues.presentationValues_GetDefinitionValue
       parameters:
         - name: groupPolicyConfiguration-id
@@ -18461,7 +18502,6 @@ paths:
       tags:
         - deviceManagement.groupPolicyConfiguration
       summary: Get presentation from deviceManagement
-      description: The group policy presentation associated with the presentation value.
       operationId: deviceManagement.groupPolicyConfigurations.definitionValues.presentationValues_GetPresentation
       parameters:
         - name: groupPolicyConfiguration-id
@@ -18535,7 +18575,6 @@ paths:
       tags:
         - deviceManagement.deviceManagementIntent
       summary: Get intents from deviceManagement
-      description: The device management intents
       operationId: deviceManagement_ListIntents
       parameters:
         - $ref: '#/components/parameters/top'
@@ -18650,7 +18689,6 @@ paths:
       tags:
         - deviceManagement.deviceManagementIntent
       summary: Get intents from deviceManagement
-      description: The device management intents
       operationId: deviceManagement_GetIntents
       parameters:
         - name: deviceManagementIntent-id
@@ -18746,6 +18784,16 @@ paths:
               operationId: deviceManagement.Intents.GetUserStateSummary
               parameters:
                 deviceManagementIntent-id: $request.path.deviceManagementIntent-id
+            assign:
+              operationId: deviceManagement.intents.deviceManagementIntent.assign
+            compare:
+              operationId: deviceManagement.intents.deviceManagementIntent.compare
+            createCopy:
+              operationId: deviceManagement.intents.deviceManagementIntent.createCopy
+            migrateToTemplate:
+              operationId: deviceManagement.intents.deviceManagementIntent.migrateToTemplate
+            updateSettings:
+              operationId: deviceManagement.intents.deviceManagementIntent.updateSettings
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -18804,7 +18852,6 @@ paths:
       tags:
         - deviceManagement.deviceManagementIntent
       summary: Get assignments from deviceManagement
-      description: Collection of assignments
       operationId: deviceManagement.intents_ListAssignments
       parameters:
         - name: deviceManagementIntent-id
@@ -18903,7 +18950,6 @@ paths:
       tags:
         - deviceManagement.deviceManagementIntent
       summary: Get assignments from deviceManagement
-      description: Collection of assignments
       operationId: deviceManagement.intents_GetAssignments
       parameters:
         - name: deviceManagementIntent-id
@@ -19024,7 +19070,6 @@ paths:
       tags:
         - deviceManagement.deviceManagementIntent
       summary: Get categories from deviceManagement
-      description: Collection of setting categories within the intent
       operationId: deviceManagement.intents_ListCategories
       parameters:
         - name: deviceManagementIntent-id
@@ -19130,7 +19175,6 @@ paths:
       tags:
         - deviceManagement.deviceManagementIntent
       summary: Get categories from deviceManagement
-      description: Collection of setting categories within the intent
       operationId: deviceManagement.intents_GetCategories
       parameters:
         - name: deviceManagementIntent-id
@@ -19267,7 +19311,6 @@ paths:
       tags:
         - deviceManagement.deviceManagementIntent
       summary: Get settings from deviceManagement
-      description: The settings this category contains
       operationId: deviceManagement.intents.categories_ListSettings
       parameters:
         - name: deviceManagementIntent-id
@@ -19383,7 +19426,6 @@ paths:
       tags:
         - deviceManagement.deviceManagementIntent
       summary: Get settings from deviceManagement
-      description: The settings this category contains
       operationId: deviceManagement.intents.categories_GetSettings
       parameters:
         - name: deviceManagementIntent-id
@@ -19526,7 +19568,6 @@ paths:
       tags:
         - deviceManagement.deviceManagementIntent
       summary: Get deviceSettingStateSummaries from deviceManagement
-      description: Collection of settings and their states and counts of devices that belong to corresponding state for all settings within the intent
       operationId: deviceManagement.intents_ListDeviceSettingStateSummaries
       parameters:
         - name: deviceManagementIntent-id
@@ -19643,7 +19684,6 @@ paths:
       tags:
         - deviceManagement.deviceManagementIntent
       summary: Get deviceSettingStateSummaries from deviceManagement
-      description: Collection of settings and their states and counts of devices that belong to corresponding state for all settings within the intent
       operationId: deviceManagement.intents_GetDeviceSettingStateSummaries
       parameters:
         - name: deviceManagementIntent-id
@@ -19770,7 +19810,6 @@ paths:
       tags:
         - deviceManagement.deviceManagementIntent
       summary: Get deviceStates from deviceManagement
-      description: Collection of states of all devices that the intent is applied to
       operationId: deviceManagement.intents_ListDeviceStates
       parameters:
         - name: deviceManagementIntent-id
@@ -19884,7 +19923,6 @@ paths:
       tags:
         - deviceManagement.deviceManagementIntent
       summary: Get deviceStates from deviceManagement
-      description: Collection of states of all devices that the intent is applied to
       operationId: deviceManagement.intents_GetDeviceStates
       parameters:
         - name: deviceManagementIntent-id
@@ -20010,7 +20048,6 @@ paths:
       tags:
         - deviceManagement.deviceManagementIntent
       summary: Get deviceStateSummary from deviceManagement
-      description: A summary of device states and counts of devices that belong to corresponding state for all devices that the intent is applied to
       operationId: deviceManagement.intents_GetDeviceStateSummary
       parameters:
         - name: deviceManagementIntent-id
@@ -20115,7 +20152,6 @@ paths:
       tags:
         - deviceManagement.deviceManagementIntent
       summary: Get settings from deviceManagement
-      description: Collection of all settings to be applied
       operationId: deviceManagement.intents_ListSettings
       parameters:
         - name: deviceManagementIntent-id
@@ -20217,7 +20253,6 @@ paths:
       tags:
         - deviceManagement.deviceManagementIntent
       summary: Get settings from deviceManagement
-      description: Collection of all settings to be applied
       operationId: deviceManagement.intents_GetSettings
       parameters:
         - name: deviceManagementIntent-id
@@ -20339,7 +20374,6 @@ paths:
       tags:
         - deviceManagement.deviceManagementIntent
       summary: Get userStates from deviceManagement
-      description: Collection of states of all users that the intent is applied to
       operationId: deviceManagement.intents_ListUserStates
       parameters:
         - name: deviceManagementIntent-id
@@ -20450,7 +20484,6 @@ paths:
       tags:
         - deviceManagement.deviceManagementIntent
       summary: Get userStates from deviceManagement
-      description: Collection of states of all users that the intent is applied to
       operationId: deviceManagement.intents_GetUserStates
       parameters:
         - name: deviceManagementIntent-id
@@ -20575,7 +20608,6 @@ paths:
       tags:
         - deviceManagement.deviceManagementIntent
       summary: Get userStateSummary from deviceManagement
-      description: A summary of user states and counts of users that belong to corresponding state for all users that the intent is applied to
       operationId: deviceManagement.intents_GetUserStateSummary
       parameters:
         - name: deviceManagementIntent-id
@@ -20679,7 +20711,6 @@ paths:
       tags:
         - deviceManagement.macOSSoftwareUpdateAccountSummary
       summary: Get macOSSoftwareUpdateAccountSummaries from deviceManagement
-      description: The MacOS software update account summaries for this account.
       operationId: deviceManagement_ListMacOSSoftwareUpdateAccountSummaries
       parameters:
         - $ref: '#/components/parameters/top'
@@ -20792,7 +20823,6 @@ paths:
       tags:
         - deviceManagement.macOSSoftwareUpdateAccountSummary
       summary: Get macOSSoftwareUpdateAccountSummaries from deviceManagement
-      description: The MacOS software update account summaries for this account.
       operationId: deviceManagement_GetMacOSSoftwareUpdateAccountSummaries
       parameters:
         - name: macOSSoftwareUpdateAccountSummary-id
@@ -20908,7 +20938,6 @@ paths:
       tags:
         - deviceManagement.macOSSoftwareUpdateAccountSummary
       summary: Get categorySummaries from deviceManagement
-      description: Summary of the updates by category.
       operationId: deviceManagement.macOSSoftwareUpdateAccountSummaries_ListCategorySummaries
       parameters:
         - name: macOSSoftwareUpdateAccountSummary-id
@@ -21030,7 +21059,6 @@ paths:
       tags:
         - deviceManagement.macOSSoftwareUpdateAccountSummary
       summary: Get categorySummaries from deviceManagement
-      description: Summary of the updates by category.
       operationId: deviceManagement.macOSSoftwareUpdateAccountSummaries_GetCategorySummaries
       parameters:
         - name: macOSSoftwareUpdateAccountSummary-id
@@ -21166,7 +21194,6 @@ paths:
       tags:
         - deviceManagement.macOSSoftwareUpdateAccountSummary
       summary: Get updateStateSummaries from deviceManagement
-      description: Summary of the update states.
       operationId: deviceManagement.macOSSoftwareUpdateAccountSummaries.categorySummaries_ListUpdateStateSummaries
       parameters:
         - name: macOSSoftwareUpdateAccountSummary-id
@@ -21294,7 +21321,6 @@ paths:
       tags:
         - deviceManagement.macOSSoftwareUpdateAccountSummary
       summary: Get updateStateSummaries from deviceManagement
-      description: Summary of the update states.
       operationId: deviceManagement.macOSSoftwareUpdateAccountSummaries.categorySummaries_GetUpdateStateSummaries
       parameters:
         - name: macOSSoftwareUpdateAccountSummary-id
@@ -21441,7 +21467,6 @@ paths:
       tags:
         - deviceManagement.managedDeviceEncryptionState
       summary: Get managedDeviceEncryptionStates from deviceManagement
-      description: Encryption report for devices in this account
       operationId: deviceManagement_ListManagedDeviceEncryptionStates
       parameters:
         - $ref: '#/components/parameters/top'
@@ -21555,7 +21580,6 @@ paths:
       tags:
         - deviceManagement.managedDeviceEncryptionState
       summary: Get managedDeviceEncryptionStates from deviceManagement
-      description: Encryption report for devices in this account
       operationId: deviceManagement_GetManagedDeviceEncryptionStates
       parameters:
         - name: managedDeviceEncryptionState-id
@@ -21665,7 +21689,6 @@ paths:
       tags:
         - deviceManagement.managedDeviceOverview
       summary: Get managedDeviceOverview from deviceManagement
-      description: Device overview
       operationId: deviceManagement_GetManagedDeviceOverview
       parameters:
         - name: $select
@@ -21714,7 +21737,6 @@ paths:
       tags:
         - deviceManagement.managedDevice
       summary: Get managedDevices from deviceManagement
-      description: The list of managed devices.
       operationId: deviceManagement_ListManagedDevices
       parameters:
         - $ref: '#/components/parameters/top'
@@ -22052,7 +22074,6 @@ paths:
       tags:
         - deviceManagement.managedDevice
       summary: Get managedDevices from deviceManagement
-      description: The list of managed devices.
       operationId: deviceManagement_GetManagedDevices
       parameters:
         - name: managedDevice-id
@@ -22233,6 +22254,90 @@ paths:
               operationId: deviceManagement.ManagedDevices.GetWindowsProtectionState
               parameters:
                 managedDevice-id: $request.path.managedDevice-id
+            activateDeviceEsim:
+              operationId: deviceManagement.managedDevices.managedDevice.activateDeviceEsim
+            bypassActivationLock:
+              operationId: deviceManagement.managedDevices.managedDevice.bypassActivationLock
+            cleanWindowsDevice:
+              operationId: deviceManagement.managedDevices.managedDevice.cleanWindowsDevice
+            createDeviceLogCollectionRequest:
+              operationId: deviceManagement.managedDevices.managedDevice.createDeviceLogCollectionRequest
+            deleteUserFromSharedAppleDevice:
+              operationId: deviceManagement.managedDevices.managedDevice.deleteUserFromSharedAppleDevice
+            deprovision:
+              operationId: deviceManagement.managedDevices.managedDevice.deprovision
+            disable:
+              operationId: deviceManagement.managedDevices.managedDevice.disable
+            disableLostMode:
+              operationId: deviceManagement.managedDevices.managedDevice.disableLostMode
+            enableLostMode:
+              operationId: deviceManagement.managedDevices.managedDevice.enableLostMode
+            getCloudPcRemoteActionResults:
+              operationId: deviceManagement.managedDevices.managedDevice.getCloudPcRemoteActionResults
+            getCloudPcReviewStatus:
+              operationId: deviceManagement.managedDevices.managedDevice.getCloudPcReviewStatus
+            getFileVaultKey:
+              operationId: deviceManagement.managedDevices.managedDevice.getFileVaultKey
+            getNonCompliantSettings:
+              operationId: deviceManagement.managedDevices.managedDevice.getNonCompliantSettings
+            getOemWarranty:
+              operationId: deviceManagement.managedDevices.managedDevice.getOemWarranty
+            locateDevice:
+              operationId: deviceManagement.managedDevices.managedDevice.locateDevice
+            logoutSharedAppleDeviceActiveUser:
+              operationId: deviceManagement.managedDevices.managedDevice.logoutSharedAppleDeviceActiveUser
+            overrideComplianceState:
+              operationId: deviceManagement.managedDevices.managedDevice.overrideComplianceState
+            playLostModeSound:
+              operationId: deviceManagement.managedDevices.managedDevice.playLostModeSound
+            rebootNow:
+              operationId: deviceManagement.managedDevices.managedDevice.rebootNow
+            recoverPasscode:
+              operationId: deviceManagement.managedDevices.managedDevice.recoverPasscode
+            reenable:
+              operationId: deviceManagement.managedDevices.managedDevice.reenable
+            remoteLock:
+              operationId: deviceManagement.managedDevices.managedDevice.remoteLock
+            removeDeviceFirmwareConfigurationInterfaceManagement:
+              operationId: deviceManagement.managedDevices.managedDevice.removeDeviceFirmwareConfigurationInterfaceManagement
+            reprovisionCloudPc:
+              operationId: deviceManagement.managedDevices.managedDevice.reprovisionCloudPc
+            requestRemoteAssistance:
+              operationId: deviceManagement.managedDevices.managedDevice.requestRemoteAssistance
+            resetPasscode:
+              operationId: deviceManagement.managedDevices.managedDevice.resetPasscode
+            resizeCloudPc:
+              operationId: deviceManagement.managedDevices.managedDevice.resizeCloudPc
+            restoreCloudPc:
+              operationId: deviceManagement.managedDevices.managedDevice.restoreCloudPc
+            retire:
+              operationId: deviceManagement.managedDevices.managedDevice.retire
+            revokeAppleVppLicenses:
+              operationId: deviceManagement.managedDevices.managedDevice.revokeAppleVppLicenses
+            rotateBitLockerKeys:
+              operationId: deviceManagement.managedDevices.managedDevice.rotateBitLockerKeys
+            rotateFileVaultKey:
+              operationId: deviceManagement.managedDevices.managedDevice.rotateFileVaultKey
+            sendCustomNotificationToCompanyPortal:
+              operationId: deviceManagement.managedDevices.managedDevice.sendCustomNotificationToCompanyPortal
+            setCloudPcReviewStatus:
+              operationId: deviceManagement.managedDevices.managedDevice.setCloudPcReviewStatus
+            setDeviceName:
+              operationId: deviceManagement.managedDevices.managedDevice.setDeviceName
+            shutDown:
+              operationId: deviceManagement.managedDevices.managedDevice.shutDown
+            syncDevice:
+              operationId: deviceManagement.managedDevices.managedDevice.syncDevice
+            triggerConfigurationManagerAction:
+              operationId: deviceManagement.managedDevices.managedDevice.triggerConfigurationManagerAction
+            updateWindowsDeviceAccount:
+              operationId: deviceManagement.managedDevices.managedDevice.updateWindowsDeviceAccount
+            windowsDefenderScan:
+              operationId: deviceManagement.managedDevices.managedDevice.windowsDefenderScan
+            windowsDefenderUpdateSignatures:
+              operationId: deviceManagement.managedDevices.managedDevice.windowsDefenderUpdateSignatures
+            wipe:
+              operationId: deviceManagement.managedDevices.managedDevice.wipe
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -22291,7 +22396,6 @@ paths:
       tags:
         - deviceManagement.managedDevice
       summary: Get assignmentFilterEvaluationStatusDetails from deviceManagement
-      description: Managed device mobile app configuration states for this device.
       operationId: deviceManagement.managedDevices_ListAssignmentFilterEvaluationStatusDetails
       parameters:
         - name: managedDevice-id
@@ -22390,7 +22494,6 @@ paths:
       tags:
         - deviceManagement.managedDevice
       summary: Get assignmentFilterEvaluationStatusDetails from deviceManagement
-      description: Managed device mobile app configuration states for this device.
       operationId: deviceManagement.managedDevices_GetAssignmentFilterEvaluationStatusDetails
       parameters:
         - name: managedDevice-id
@@ -22511,7 +22614,6 @@ paths:
       tags:
         - deviceManagement.managedDevice
       summary: Get detectedApps from deviceManagement
-      description: All applications currently installed on the device
       operationId: deviceManagement.managedDevices_ListDetectedApps
       parameters:
         - name: managedDevice-id
@@ -22591,7 +22693,6 @@ paths:
       tags:
         - deviceManagement.managedDevice
       summary: Get detectedApps from deviceManagement
-      description: All applications currently installed on the device
       operationId: deviceManagement.managedDevices_GetDetectedApps
       parameters:
         - name: managedDevice-id
@@ -22659,7 +22760,6 @@ paths:
       tags:
         - deviceManagement.managedDevice
       summary: Get deviceCategory from deviceManagement
-      description: Device category
       operationId: deviceManagement.managedDevices_GetDeviceCategory
       parameters:
         - name: managedDevice-id
@@ -22761,7 +22861,6 @@ paths:
       tags:
         - deviceManagement.managedDevice
       summary: Get deviceCompliancePolicyStates from deviceManagement
-      description: Device compliance policy states for this device.
       operationId: deviceManagement.managedDevices_ListDeviceCompliancePolicyStates
       parameters:
         - name: managedDevice-id
@@ -22881,7 +22980,6 @@ paths:
       tags:
         - deviceManagement.managedDevice
       summary: Get deviceCompliancePolicyStates from deviceManagement
-      description: Device compliance policy states for this device.
       operationId: deviceManagement.managedDevices_GetDeviceCompliancePolicyStates
       parameters:
         - name: managedDevice-id
@@ -23009,7 +23107,6 @@ paths:
       tags:
         - deviceManagement.managedDevice
       summary: Get deviceConfigurationStates from deviceManagement
-      description: Device configuration states for this device.
       operationId: deviceManagement.managedDevices_ListDeviceConfigurationStates
       parameters:
         - name: managedDevice-id
@@ -23129,7 +23226,6 @@ paths:
       tags:
         - deviceManagement.managedDevice
       summary: Get deviceConfigurationStates from deviceManagement
-      description: Device configuration states for this device.
       operationId: deviceManagement.managedDevices_GetDeviceConfigurationStates
       parameters:
         - name: managedDevice-id
@@ -23257,7 +23353,6 @@ paths:
       tags:
         - deviceManagement.managedDevice
       summary: Get logCollectionRequests from deviceManagement
-      description: List of log collection requests
       operationId: deviceManagement.managedDevices_ListLogCollectionRequests
       parameters:
         - name: managedDevice-id
@@ -23377,7 +23472,6 @@ paths:
       tags:
         - deviceManagement.managedDevice
       summary: Get logCollectionRequests from deviceManagement
-      description: List of log collection requests
       operationId: deviceManagement.managedDevices_GetLogCollectionRequests
       parameters:
         - name: managedDevice-id
@@ -23433,6 +23527,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.deviceLogCollectionResponse'
+          links:
+            createDownloadUrl:
+              operationId: deviceManagement.managedDevices.managedDevice.logCollectionRequests.deviceLogCollectionResponse.createDownloadUrl
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -23505,7 +23602,6 @@ paths:
       tags:
         - deviceManagement.managedDevice
       summary: Get managedDeviceMobileAppConfigurationStates from deviceManagement
-      description: Managed device mobile app configuration states for this device.
       operationId: deviceManagement.managedDevices_ListManagedDeviceMobileAppConfigurationStates
       parameters:
         - name: managedDevice-id
@@ -23625,7 +23721,6 @@ paths:
       tags:
         - deviceManagement.managedDevice
       summary: Get managedDeviceMobileAppConfigurationStates from deviceManagement
-      description: Managed device mobile app configuration states for this device.
       operationId: deviceManagement.managedDevices_GetManagedDeviceMobileAppConfigurationStates
       parameters:
         - name: managedDevice-id
@@ -23753,7 +23848,6 @@ paths:
       tags:
         - deviceManagement.managedDevice
       summary: Get securityBaselineStates from deviceManagement
-      description: Security baseline states for this device.
       operationId: deviceManagement.managedDevices_ListSecurityBaselineStates
       parameters:
         - name: managedDevice-id
@@ -23863,7 +23957,6 @@ paths:
       tags:
         - deviceManagement.managedDevice
       summary: Get securityBaselineStates from deviceManagement
-      description: Security baseline states for this device.
       operationId: deviceManagement.managedDevices_GetSecurityBaselineStates
       parameters:
         - name: managedDevice-id
@@ -23995,7 +24088,6 @@ paths:
       tags:
         - deviceManagement.managedDevice
       summary: Get settingStates from deviceManagement
-      description: The security baseline state for different settings for a device
       operationId: deviceManagement.managedDevices.securityBaselineStates_ListSettingStates
       parameters:
         - name: managedDevice-id
@@ -24129,7 +24221,6 @@ paths:
       tags:
         - deviceManagement.managedDevice
       summary: Get settingStates from deviceManagement
-      description: The security baseline state for different settings for a device
       operationId: deviceManagement.managedDevices.securityBaselineStates_GetSettingStates
       parameters:
         - name: managedDevice-id
@@ -24278,7 +24369,6 @@ paths:
       tags:
         - deviceManagement.managedDevice
       summary: Get users from deviceManagement
-      description: The primary users associated with the managed device.
       operationId: deviceManagement.managedDevices_ListUsers
       parameters:
         - name: managedDevice-id
@@ -24706,7 +24796,6 @@ paths:
       tags:
         - deviceManagement.managedDevice
       summary: Get windowsProtectionState from deviceManagement
-      description: The device protection status. This property is read-only.
       operationId: deviceManagement.managedDevices_GetWindowsProtectionState
       parameters:
         - name: managedDevice-id
@@ -24832,7 +24921,6 @@ paths:
       tags:
         - deviceManagement.managedDevice
       summary: Get detectedMalwareState from deviceManagement
-      description: Device malware list
       operationId: deviceManagement.managedDevices.windowsProtectionState_ListDetectedMalwareState
       parameters:
         - name: managedDevice-id
@@ -24958,7 +25046,6 @@ paths:
       tags:
         - deviceManagement.managedDevice
       summary: Get detectedMalwareState from deviceManagement
-      description: Device malware list
       operationId: deviceManagement.managedDevices.windowsProtectionState_GetDetectedMalwareState
       parameters:
         - name: managedDevice-id
@@ -25088,7 +25175,6 @@ paths:
       tags:
         - deviceManagement.microsoftTunnelConfiguration
       summary: Get microsoftTunnelConfigurations from deviceManagement
-      description: Collection of MicrosoftTunnelConfiguration settings associated with account.
       operationId: deviceManagement_ListMicrosoftTunnelConfigurations
       parameters:
         - $ref: '#/components/parameters/top'
@@ -25208,7 +25294,6 @@ paths:
       tags:
         - deviceManagement.microsoftTunnelConfiguration
       summary: Get microsoftTunnelConfigurations from deviceManagement
-      description: Collection of MicrosoftTunnelConfiguration settings associated with account.
       operationId: deviceManagement_GetMicrosoftTunnelConfigurations
       parameters:
         - name: microsoftTunnelConfiguration-id
@@ -25320,7 +25405,6 @@ paths:
       tags:
         - deviceManagement.microsoftTunnelHealthThreshold
       summary: Get microsoftTunnelHealthThresholds from deviceManagement
-      description: Collection of MicrosoftTunnelHealthThreshold settings associated with account.
       operationId: deviceManagement_ListMicrosoftTunnelHealthThresholds
       parameters:
         - $ref: '#/components/parameters/top'
@@ -25413,7 +25497,6 @@ paths:
       tags:
         - deviceManagement.microsoftTunnelHealthThreshold
       summary: Get microsoftTunnelHealthThresholds from deviceManagement
-      description: Collection of MicrosoftTunnelHealthThreshold settings associated with account.
       operationId: deviceManagement_GetMicrosoftTunnelHealthThresholds
       parameters:
         - name: microsoftTunnelHealthThreshold-id
@@ -25516,7 +25599,6 @@ paths:
       tags:
         - deviceManagement.microsoftTunnelServerLogCollectionResponse
       summary: Get microsoftTunnelServerLogCollectionResponses from deviceManagement
-      description: Collection of MicrosoftTunnelServerLogCollectionResponse settings associated with account.
       operationId: deviceManagement_ListMicrosoftTunnelServerLogCollectionResponses
       parameters:
         - $ref: '#/components/parameters/top'
@@ -25618,7 +25700,6 @@ paths:
       tags:
         - deviceManagement.microsoftTunnelServerLogCollectionResponse
       summary: Get microsoftTunnelServerLogCollectionResponses from deviceManagement
-      description: Collection of MicrosoftTunnelServerLogCollectionResponse settings associated with account.
       operationId: deviceManagement_GetMicrosoftTunnelServerLogCollectionResponses
       parameters:
         - name: microsoftTunnelServerLogCollectionResponse-id
@@ -25666,6 +25747,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.microsoftTunnelServerLogCollectionResponse'
+          links:
+            createDownloadUrl:
+              operationId: deviceManagement.microsoftTunnelServerLogCollectionResponses.microsoftTunnelServerLogCollectionResponse.createDownloadUrl
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -25724,7 +25808,6 @@ paths:
       tags:
         - deviceManagement.microsoftTunnelSite
       summary: Get microsoftTunnelSites from deviceManagement
-      description: Collection of MicrosoftTunnelSite settings associated with account.
       operationId: deviceManagement_ListMicrosoftTunnelSites
       parameters:
         - $ref: '#/components/parameters/top'
@@ -25839,7 +25922,6 @@ paths:
       tags:
         - deviceManagement.microsoftTunnelSite
       summary: Get microsoftTunnelSites from deviceManagement
-      description: Collection of MicrosoftTunnelSite settings associated with account.
       operationId: deviceManagement_GetMicrosoftTunnelSites
       parameters:
         - name: microsoftTunnelSite-id
@@ -25903,6 +25985,8 @@ paths:
               operationId: deviceManagement.MicrosoftTunnelSites.ListMicrosoftTunnelServers
               parameters:
                 microsoftTunnelSite-id: $request.path.microsoftTunnelSite-id
+            requestUpgrade:
+              operationId: deviceManagement.microsoftTunnelSites.microsoftTunnelSite.requestUpgrade
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -25961,7 +26045,6 @@ paths:
       tags:
         - deviceManagement.microsoftTunnelSite
       summary: Get microsoftTunnelConfiguration from deviceManagement
-      description: The MicrosoftTunnelConfiguration that has been applied to this MicrosoftTunnelSite
       operationId: deviceManagement.microsoftTunnelSites_GetMicrosoftTunnelConfiguration
       parameters:
         - name: microsoftTunnelSite-id
@@ -26073,7 +26156,6 @@ paths:
       tags:
         - deviceManagement.microsoftTunnelSite
       summary: Get microsoftTunnelServers from deviceManagement
-      description: A list of MicrosoftTunnelServers that are registered to this MicrosoftTunnelSite
       operationId: deviceManagement.microsoftTunnelSites_ListMicrosoftTunnelServers
       parameters:
         - name: microsoftTunnelSite-id
@@ -26184,7 +26266,6 @@ paths:
       tags:
         - deviceManagement.microsoftTunnelSite
       summary: Get microsoftTunnelServers from deviceManagement
-      description: A list of MicrosoftTunnelServers that are registered to this MicrosoftTunnelSite
       operationId: deviceManagement.microsoftTunnelSites_GetMicrosoftTunnelServers
       parameters:
         - name: microsoftTunnelSite-id
@@ -26237,6 +26318,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.microsoftTunnelServer'
+          links:
+            createServerLogCollectionRequest:
+              operationId: deviceManagement.microsoftTunnelSites.microsoftTunnelSite.microsoftTunnelServers.microsoftTunnelServer.createServerLogCollectionRequest
+            getHealthMetrics:
+              operationId: deviceManagement.microsoftTunnelSites.microsoftTunnelSite.microsoftTunnelServers.microsoftTunnelServer.getHealthMetrics
+            getHealthMetricTimeSeries:
+              operationId: deviceManagement.microsoftTunnelSites.microsoftTunnelSite.microsoftTunnelServers.microsoftTunnelServer.getHealthMetricTimeSeries
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -26309,7 +26397,6 @@ paths:
       tags:
         - deviceManagement.mobileAppTroubleshootingEvent
       summary: Get mobileAppTroubleshootingEvents from deviceManagement
-      description: The collection property of MobileAppTroubleshootingEvent.
       operationId: deviceManagement_ListMobileAppTroubleshootingEvents
       parameters:
         - $ref: '#/components/parameters/top'
@@ -26419,7 +26506,6 @@ paths:
       tags:
         - deviceManagement.mobileAppTroubleshootingEvent
       summary: Get mobileAppTroubleshootingEvents from deviceManagement
-      description: The collection property of MobileAppTroubleshootingEvent.
       operationId: deviceManagement_GetMobileAppTroubleshootingEvents
       parameters:
         - name: mobileAppTroubleshootingEvent-id
@@ -26534,7 +26620,6 @@ paths:
       tags:
         - deviceManagement.mobileAppTroubleshootingEvent
       summary: Get appLogCollectionRequests from deviceManagement
-      description: The collection property of AppLogUploadRequest.
       operationId: deviceManagement.mobileAppTroubleshootingEvents_ListAppLogCollectionRequests
       parameters:
         - name: mobileAppTroubleshootingEvent-id
@@ -26642,7 +26727,6 @@ paths:
       tags:
         - deviceManagement.mobileAppTroubleshootingEvent
       summary: Get appLogCollectionRequests from deviceManagement
-      description: The collection property of AppLogUploadRequest.
       operationId: deviceManagement.mobileAppTroubleshootingEvents_GetAppLogCollectionRequests
       parameters:
         - name: mobileAppTroubleshootingEvent-id
@@ -26694,6 +26778,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.appLogCollectionRequest'
+          links:
+            createDownloadUrl:
+              operationId: deviceManagement.mobileAppTroubleshootingEvents.mobileAppTroubleshootingEvent.appLogCollectionRequests.appLogCollectionRequest.createDownloadUrl
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -26766,7 +26853,6 @@ paths:
       tags:
         - deviceManagement.notificationMessageTemplate
       summary: Get notificationMessageTemplates from deviceManagement
-      description: The Notification Message Templates.
       operationId: deviceManagement_ListNotificationMessageTemplates
       parameters:
         - $ref: '#/components/parameters/top'
@@ -26864,7 +26950,6 @@ paths:
       tags:
         - deviceManagement.notificationMessageTemplate
       summary: Get notificationMessageTemplates from deviceManagement
-      description: The Notification Message Templates.
       operationId: deviceManagement_GetNotificationMessageTemplates
       parameters:
         - name: notificationMessageTemplate-id
@@ -26917,6 +27002,8 @@ paths:
               operationId: deviceManagement.NotificationMessageTemplates.ListLocalizedNotificationMessages
               parameters:
                 notificationMessageTemplate-id: $request.path.notificationMessageTemplate-id
+            sendTestMessage:
+              operationId: deviceManagement.notificationMessageTemplates.notificationMessageTemplate.sendTestMessage
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -26975,7 +27062,6 @@ paths:
       tags:
         - deviceManagement.notificationMessageTemplate
       summary: Get localizedNotificationMessages from deviceManagement
-      description: The list of localized messages for this Notification Message Template.
       operationId: deviceManagement.notificationMessageTemplates_ListLocalizedNotificationMessages
       parameters:
         - name: notificationMessageTemplate-id
@@ -27086,7 +27172,6 @@ paths:
       tags:
         - deviceManagement.notificationMessageTemplate
       summary: Get localizedNotificationMessages from deviceManagement
-      description: The list of localized messages for this Notification Message Template.
       operationId: deviceManagement.notificationMessageTemplates_GetLocalizedNotificationMessages
       parameters:
         - name: notificationMessageTemplate-id
@@ -27211,7 +27296,6 @@ paths:
       tags:
         - deviceManagement.remoteActionAudit
       summary: Get remoteActionAudits from deviceManagement
-      description: The list of device remote action audits with the tenant.
       operationId: deviceManagement_ListRemoteActionAudits
       parameters:
         - $ref: '#/components/parameters/top'
@@ -27319,7 +27403,6 @@ paths:
       tags:
         - deviceManagement.remoteActionAudit
       summary: Get remoteActionAudits from deviceManagement
-      description: The list of device remote action audits with the tenant.
       operationId: deviceManagement_GetRemoteActionAudits
       parameters:
         - name: remoteActionAudit-id
@@ -27427,7 +27510,6 @@ paths:
       tags:
         - deviceManagement.deviceManagementResourceAccessProfileBase
       summary: Get resourceAccessProfiles from deviceManagement
-      description: Collection of resource access settings associated with account.
       operationId: deviceManagement_ListResourceAccessProfiles
       parameters:
         - $ref: '#/components/parameters/top'
@@ -27528,7 +27610,6 @@ paths:
       tags:
         - deviceManagement.deviceManagementResourceAccessProfileBase
       summary: Get resourceAccessProfiles from deviceManagement
-      description: Collection of resource access settings associated with account.
       operationId: deviceManagement_GetResourceAccessProfiles
       parameters:
         - name: deviceManagementResourceAccessProfileBase-id
@@ -27582,6 +27663,8 @@ paths:
               operationId: deviceManagement.ResourceAccessProfiles.ListAssignments
               parameters:
                 deviceManagementResourceAccessProfileBase-id: $request.path.deviceManagementResourceAccessProfileBase-id
+            assign:
+              operationId: deviceManagement.resourceAccessProfiles.deviceManagementResourceAccessProfileBase.assign
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -27640,7 +27723,6 @@ paths:
       tags:
         - deviceManagement.deviceManagementResourceAccessProfileBase
       summary: Get assignments from deviceManagement
-      description: The list of assignments for the device configuration profile.
       operationId: deviceManagement.resourceAccessProfiles_ListAssignments
       parameters:
         - name: deviceManagementResourceAccessProfileBase-id
@@ -27745,7 +27827,6 @@ paths:
       tags:
         - deviceManagement.deviceManagementResourceAccessProfileBase
       summary: Get assignments from deviceManagement
-      description: The list of assignments for the device configuration profile.
       operationId: deviceManagement.resourceAccessProfiles_GetAssignments
       parameters:
         - name: deviceManagementResourceAccessProfileBase-id
@@ -27868,7 +27949,6 @@ paths:
       tags:
         - deviceManagement.deviceManagementSettingDefinition
       summary: Get settingDefinitions from deviceManagement
-      description: The device management intent setting definitions
       operationId: deviceManagement_ListSettingDefinitions
       parameters:
         - $ref: '#/components/parameters/top'
@@ -27982,7 +28062,6 @@ paths:
       tags:
         - deviceManagement.deviceManagementSettingDefinition
       summary: Get settingDefinitions from deviceManagement
-      description: The device management intent setting definitions
       operationId: deviceManagement_GetSettingDefinitions
       parameters:
         - name: deviceManagementSettingDefinition-id
@@ -28092,7 +28171,6 @@ paths:
       tags:
         - deviceManagement.softwareUpdateStatusSummary
       summary: Get softwareUpdateStatusSummary from deviceManagement
-      description: The software update status summary.
       operationId: deviceManagement_GetSoftwareUpdateStatusSummary
       parameters:
         - name: $select
@@ -28149,7 +28227,6 @@ paths:
       tags:
         - deviceManagement.deviceManagementTemplate
       summary: Get templates from deviceManagement
-      description: The available templates
       operationId: deviceManagement_ListTemplates
       parameters:
         - $ref: '#/components/parameters/top'
@@ -28263,7 +28340,6 @@ paths:
       tags:
         - deviceManagement.deviceManagementTemplate
       summary: Get templates from deviceManagement
-      description: The available templates
       operationId: deviceManagement_GetTemplates
       parameters:
         - name: deviceManagementTemplate-id
@@ -28332,6 +28408,10 @@ paths:
               operationId: deviceManagement.Templates.ListSettings
               parameters:
                 deviceManagementTemplate-id: $request.path.deviceManagementTemplate-id
+            compare:
+              operationId: deviceManagement.templates.deviceManagementTemplate.compare
+            createInstance:
+              operationId: deviceManagement.templates.deviceManagementTemplate.createInstance
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -28390,7 +28470,6 @@ paths:
       tags:
         - deviceManagement.deviceManagementTemplate
       summary: Get categories from deviceManagement
-      description: Collection of setting categories within the template
       operationId: deviceManagement.templates_ListCategories
       parameters:
         - name: deviceManagementTemplate-id
@@ -28496,7 +28575,6 @@ paths:
       tags:
         - deviceManagement.deviceManagementTemplate
       summary: Get categories from deviceManagement
-      description: Collection of setting categories within the template
       operationId: deviceManagement.templates_GetCategories
       parameters:
         - name: deviceManagementTemplate-id
@@ -28633,7 +28711,6 @@ paths:
       tags:
         - deviceManagement.deviceManagementTemplate
       summary: Get recommendedSettings from deviceManagement
-      description: The settings this category contains
       operationId: deviceManagement.templates.categories_ListRecommendedSettings
       parameters:
         - name: deviceManagementTemplate-id
@@ -28749,7 +28826,6 @@ paths:
       tags:
         - deviceManagement.deviceManagementTemplate
       summary: Get recommendedSettings from deviceManagement
-      description: The settings this category contains
       operationId: deviceManagement.templates.categories_GetRecommendedSettings
       parameters:
         - name: deviceManagementTemplate-id
@@ -28892,7 +28968,6 @@ paths:
       tags:
         - deviceManagement.deviceManagementTemplate
       summary: Get migratableTo from deviceManagement
-      description: Collection of templates this template can migrate to
       operationId: deviceManagement.templates_ListMigratableTo
       parameters:
         - name: deviceManagementTemplate-id
@@ -29021,7 +29096,6 @@ paths:
       tags:
         - deviceManagement.deviceManagementTemplate
       summary: Get migratableTo from deviceManagement
-      description: Collection of templates this template can migrate to
       operationId: deviceManagement.templates_GetMigratableTo
       parameters:
         - name: deviceManagementTemplate-id
@@ -29100,6 +29174,10 @@ paths:
               parameters:
                 deviceManagementTemplate-id: $request.path.deviceManagementTemplate-id
                 deviceManagementTemplate-id1: $request.path.deviceManagementTemplate-id1
+            compare:
+              operationId: deviceManagement.templates.deviceManagementTemplate.migratableTo.deviceManagementTemplate.compare
+            createInstance:
+              operationId: deviceManagement.templates.deviceManagementTemplate.migratableTo.deviceManagementTemplate.createInstance
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -29172,7 +29250,6 @@ paths:
       tags:
         - deviceManagement.deviceManagementTemplate
       summary: Get categories from deviceManagement
-      description: Collection of setting categories within the template
       operationId: deviceManagement.templates.migratableTo_ListCategories
       parameters:
         - name: deviceManagementTemplate-id
@@ -29292,7 +29369,6 @@ paths:
       tags:
         - deviceManagement.deviceManagementTemplate
       summary: Get categories from deviceManagement
-      description: Collection of setting categories within the template
       operationId: deviceManagement.templates.migratableTo_GetCategories
       parameters:
         - name: deviceManagementTemplate-id
@@ -29452,7 +29528,6 @@ paths:
       tags:
         - deviceManagement.deviceManagementTemplate
       summary: Get recommendedSettings from deviceManagement
-      description: The settings this category contains
       operationId: deviceManagement.templates.migratableTo.categories_ListRecommendedSettings
       parameters:
         - name: deviceManagementTemplate-id
@@ -29582,7 +29657,6 @@ paths:
       tags:
         - deviceManagement.deviceManagementTemplate
       summary: Get recommendedSettings from deviceManagement
-      description: The settings this category contains
       operationId: deviceManagement.templates.migratableTo.categories_GetRecommendedSettings
       parameters:
         - name: deviceManagementTemplate-id
@@ -29746,7 +29820,6 @@ paths:
       tags:
         - deviceManagement.deviceManagementTemplate
       summary: Get settings from deviceManagement
-      description: Collection of all settings this template has
       operationId: deviceManagement.templates.migratableTo_ListSettings
       parameters:
         - name: deviceManagementTemplate-id
@@ -29862,7 +29935,6 @@ paths:
       tags:
         - deviceManagement.deviceManagementTemplate
       summary: Get settings from deviceManagement
-      description: Collection of all settings this template has
       operationId: deviceManagement.templates.migratableTo_GetSettings
       parameters:
         - name: deviceManagementTemplate-id
@@ -30005,7 +30077,6 @@ paths:
       tags:
         - deviceManagement.deviceManagementTemplate
       summary: Get settings from deviceManagement
-      description: Collection of all settings this template has
       operationId: deviceManagement.templates_ListSettings
       parameters:
         - name: deviceManagementTemplate-id
@@ -30107,7 +30178,6 @@ paths:
       tags:
         - deviceManagement.deviceManagementTemplate
       summary: Get settings from deviceManagement
-      description: Collection of all settings this template has
       operationId: deviceManagement.templates_GetSettings
       parameters:
         - name: deviceManagementTemplate-id
@@ -30229,7 +30299,6 @@ paths:
       tags:
         - deviceManagement.deviceManagementTroubleshootingEvent
       summary: Get troubleshootingEvents from deviceManagement
-      description: The list of troubleshooting events for the tenant.
       operationId: deviceManagement_ListTroubleshootingEvents
       parameters:
         - $ref: '#/components/parameters/top'
@@ -30325,7 +30394,6 @@ paths:
       tags:
         - deviceManagement.deviceManagementTroubleshootingEvent
       summary: Get troubleshootingEvents from deviceManagement
-      description: The list of troubleshooting events for the tenant.
       operationId: deviceManagement_GetTroubleshootingEvents
       parameters:
         - name: deviceManagementTroubleshootingEvent-id
@@ -30429,7 +30497,6 @@ paths:
       tags:
         - deviceManagement.userExperienceAnalyticsAppHealthApplicationPerformance
       summary: Get userExperienceAnalyticsAppHealthApplicationPerformance from deviceManagement
-      description: User experience analytics appHealth Application Performance
       operationId: deviceManagement_ListUserExperienceAnalyticsAppHealthApplicationPerformance
       parameters:
         - $ref: '#/components/parameters/top'
@@ -30540,7 +30607,6 @@ paths:
       tags:
         - deviceManagement.userExperienceAnalyticsAppHealthApplicationPerformance
       summary: Get userExperienceAnalyticsAppHealthApplicationPerformance from deviceManagement
-      description: User experience analytics appHealth Application Performance
       operationId: deviceManagement_GetUserExperienceAnalyticsAppHealthApplicationPerformance
       parameters:
         - name: userExperienceAnalyticsAppHealthApplicationPerformance-id
@@ -30649,7 +30715,6 @@ paths:
       tags:
         - deviceManagement.userExperienceAnalyticsAppHealthAppPerformanceByAppVersion
       summary: Get userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersion from deviceManagement
-      description: User experience analytics appHealth Application Performance by App Version
       operationId: deviceManagement_ListUserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersion
       parameters:
         - $ref: '#/components/parameters/top'
@@ -30751,7 +30816,6 @@ paths:
       tags:
         - deviceManagement.userExperienceAnalyticsAppHealthAppPerformanceByAppVersion
       summary: Get userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersion from deviceManagement
-      description: User experience analytics appHealth Application Performance by App Version
       operationId: deviceManagement_GetUserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersion
       parameters:
         - name: userExperienceAnalyticsAppHealthAppPerformanceByAppVersion-id
@@ -30857,7 +30921,6 @@ paths:
       tags:
         - deviceManagement.userExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails
       summary: Get userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDetails from deviceManagement
-      description: User experience analytics appHealth Application Performance by App Version details
       operationId: deviceManagement_ListUserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDetails
       parameters:
         - $ref: '#/components/parameters/top'
@@ -30962,7 +31025,6 @@ paths:
       tags:
         - deviceManagement.userExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails
       summary: Get userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDetails from deviceManagement
-      description: User experience analytics appHealth Application Performance by App Version details
       operationId: deviceManagement_GetUserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDetails
       parameters:
         - name: userExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails-id
@@ -31069,7 +31131,6 @@ paths:
       tags:
         - deviceManagement.userExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId
       summary: Get userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDeviceId from deviceManagement
-      description: User experience analytics appHealth Application Performance by App Version Device Id
       operationId: deviceManagement_ListUserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDeviceId
       parameters:
         - $ref: '#/components/parameters/top'
@@ -31174,7 +31235,6 @@ paths:
       tags:
         - deviceManagement.userExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId
       summary: Get userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDeviceId from deviceManagement
-      description: User experience analytics appHealth Application Performance by App Version Device Id
       operationId: deviceManagement_GetUserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDeviceId
       parameters:
         - name: userExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId-id
@@ -31281,7 +31341,6 @@ paths:
       tags:
         - deviceManagement.userExperienceAnalyticsAppHealthAppPerformanceByOSVersion
       summary: Get userExperienceAnalyticsAppHealthApplicationPerformanceByOSVersion from deviceManagement
-      description: User experience analytics appHealth Application Performance by OS Version
       operationId: deviceManagement_ListUserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersion
       parameters:
         - $ref: '#/components/parameters/top'
@@ -31389,7 +31448,6 @@ paths:
       tags:
         - deviceManagement.userExperienceAnalyticsAppHealthAppPerformanceByOSVersion
       summary: Get userExperienceAnalyticsAppHealthApplicationPerformanceByOSVersion from deviceManagement
-      description: User experience analytics appHealth Application Performance by OS Version
       operationId: deviceManagement_GetUserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersion
       parameters:
         - name: userExperienceAnalyticsAppHealthAppPerformanceByOSVersion-id
@@ -31497,7 +31555,6 @@ paths:
       tags:
         - deviceManagement.userExperienceAnalyticsAppHealthDeviceModelPerformance
       summary: Get userExperienceAnalyticsAppHealthDeviceModelPerformance from deviceManagement
-      description: User experience analytics appHealth Model Performance
       operationId: deviceManagement_ListUserExperienceAnalyticsAppHealthDeviceModelPerformance
       parameters:
         - $ref: '#/components/parameters/top'
@@ -31599,7 +31656,6 @@ paths:
       tags:
         - deviceManagement.userExperienceAnalyticsAppHealthDeviceModelPerformance
       summary: Get userExperienceAnalyticsAppHealthDeviceModelPerformance from deviceManagement
-      description: User experience analytics appHealth Model Performance
       operationId: deviceManagement_GetUserExperienceAnalyticsAppHealthDeviceModelPerformance
       parameters:
         - name: userExperienceAnalyticsAppHealthDeviceModelPerformance-id
@@ -31705,7 +31761,6 @@ paths:
       tags:
         - deviceManagement.userExperienceAnalyticsAppHealthDevicePerformance
       summary: Get userExperienceAnalyticsAppHealthDevicePerformance from deviceManagement
-      description: User experience analytics appHealth Device Performance
       operationId: deviceManagement_ListUserExperienceAnalyticsAppHealthDevicePerformance
       parameters:
         - $ref: '#/components/parameters/top'
@@ -31822,7 +31877,6 @@ paths:
       tags:
         - deviceManagement.userExperienceAnalyticsAppHealthDevicePerformance
       summary: Get userExperienceAnalyticsAppHealthDevicePerformance from deviceManagement
-      description: User experience analytics appHealth Device Performance
       operationId: deviceManagement_GetUserExperienceAnalyticsAppHealthDevicePerformance
       parameters:
         - name: userExperienceAnalyticsAppHealthDevicePerformance-id
@@ -31933,7 +31987,6 @@ paths:
       tags:
         - deviceManagement.userExperienceAnalyticsAppHealthDevicePerformanceDetails
       summary: Get userExperienceAnalyticsAppHealthDevicePerformanceDetails from deviceManagement
-      description: User experience analytics device performance details
       operationId: deviceManagement_ListUserExperienceAnalyticsAppHealthDevicePerformanceDetails
       parameters:
         - $ref: '#/components/parameters/top'
@@ -32035,7 +32088,6 @@ paths:
       tags:
         - deviceManagement.userExperienceAnalyticsAppHealthDevicePerformanceDetails
       summary: Get userExperienceAnalyticsAppHealthDevicePerformanceDetails from deviceManagement
-      description: User experience analytics device performance details
       operationId: deviceManagement_GetUserExperienceAnalyticsAppHealthDevicePerformanceDetails
       parameters:
         - name: userExperienceAnalyticsAppHealthDevicePerformanceDetails-id
@@ -32141,7 +32193,6 @@ paths:
       tags:
         - deviceManagement.userExperienceAnalyticsAppHealthOSVersionPerformance
       summary: Get userExperienceAnalyticsAppHealthOSVersionPerformance from deviceManagement
-      description: User experience analytics appHealth OS version Performance
       operationId: deviceManagement_ListUserExperienceAnalyticsAppHealthOSVersionPerformance
       parameters:
         - $ref: '#/components/parameters/top'
@@ -32240,7 +32291,6 @@ paths:
       tags:
         - deviceManagement.userExperienceAnalyticsAppHealthOSVersionPerformance
       summary: Get userExperienceAnalyticsAppHealthOSVersionPerformance from deviceManagement
-      description: User experience analytics appHealth OS version Performance
       operationId: deviceManagement_GetUserExperienceAnalyticsAppHealthOSVersionPerformance
       parameters:
         - name: userExperienceAnalyticsAppHealthOSVersionPerformance-id
@@ -32345,7 +32395,6 @@ paths:
       tags:
         - deviceManagement.userExperienceAnalyticsCategory
       summary: Get userExperienceAnalyticsAppHealthOverview from deviceManagement
-      description: User experience analytics appHealth overview
       operationId: deviceManagement_GetUserExperienceAnalyticsAppHealthOverview
       parameters:
         - name: $select
@@ -32428,7 +32477,6 @@ paths:
       tags:
         - deviceManagement.userExperienceAnalyticsCategory
       summary: Get metricValues from deviceManagement
-      description: The metric values for the user experience analytics category.
       operationId: deviceManagement.userExperienceAnalyticsAppHealthOverview_ListMetricValues
       parameters:
         - $ref: '#/components/parameters/top'
@@ -32515,7 +32563,6 @@ paths:
       tags:
         - deviceManagement.userExperienceAnalyticsCategory
       summary: Get metricValues from deviceManagement
-      description: The metric values for the user experience analytics category.
       operationId: deviceManagement.userExperienceAnalyticsAppHealthOverview_GetMetricValues
       parameters:
         - name: userExperienceAnalyticsMetric-id
@@ -32616,7 +32663,6 @@ paths:
       tags:
         - deviceManagement.userExperienceAnalyticsBaseline
       summary: Get userExperienceAnalyticsBaselines from deviceManagement
-      description: User experience analytics baselines
       operationId: deviceManagement_ListUserExperienceAnalyticsBaselines
       parameters:
         - $ref: '#/components/parameters/top'
@@ -32720,7 +32766,6 @@ paths:
       tags:
         - deviceManagement.userExperienceAnalyticsBaseline
       summary: Get userExperienceAnalyticsBaselines from deviceManagement
-      description: User experience analytics baselines
       operationId: deviceManagement_GetUserExperienceAnalyticsBaselines
       parameters:
         - name: userExperienceAnalyticsBaseline-id
@@ -32865,7 +32910,6 @@ paths:
       tags:
         - deviceManagement.userExperienceAnalyticsBaseline
       summary: Get appHealthMetrics from deviceManagement
-      description: The user experience analytics app health metrics.
       operationId: deviceManagement.userExperienceAnalyticsBaselines_GetAppHealthMetrics
       parameters:
         - name: userExperienceAnalyticsBaseline-id
@@ -32922,7 +32966,6 @@ paths:
       tags:
         - deviceManagement.userExperienceAnalyticsBaseline
       summary: Get batteryHealthMetrics from deviceManagement
-      description: The user experience analytics battery health metrics.
       operationId: deviceManagement.userExperienceAnalyticsBaselines_GetBatteryHealthMetrics
       parameters:
         - name: userExperienceAnalyticsBaseline-id
@@ -32979,7 +33022,6 @@ paths:
       tags:
         - deviceManagement.userExperienceAnalyticsBaseline
       summary: Get bestPracticesMetrics from deviceManagement
-      description: The user experience analytics best practices metrics.
       operationId: deviceManagement.userExperienceAnalyticsBaselines_GetBestPracticesMetrics
       parameters:
         - name: userExperienceAnalyticsBaseline-id
@@ -33036,7 +33078,6 @@ paths:
       tags:
         - deviceManagement.userExperienceAnalyticsBaseline
       summary: Get deviceBootPerformanceMetrics from deviceManagement
-      description: The user experience analytics device boot performance metrics.
       operationId: deviceManagement.userExperienceAnalyticsBaselines_GetDeviceBootPerformanceMetrics
       parameters:
         - name: userExperienceAnalyticsBaseline-id
@@ -33093,7 +33134,6 @@ paths:
       tags:
         - deviceManagement.userExperienceAnalyticsBaseline
       summary: Get rebootAnalyticsMetrics from deviceManagement
-      description: The user experience analytics reboot analytics metrics.
       operationId: deviceManagement.userExperienceAnalyticsBaselines_GetRebootAnalyticsMetrics
       parameters:
         - name: userExperienceAnalyticsBaseline-id
@@ -33150,7 +33190,6 @@ paths:
       tags:
         - deviceManagement.userExperienceAnalyticsBaseline
       summary: Get resourcePerformanceMetrics from deviceManagement
-      description: The user experience analytics resource performance metrics.
       operationId: deviceManagement.userExperienceAnalyticsBaselines_GetResourcePerformanceMetrics
       parameters:
         - name: userExperienceAnalyticsBaseline-id
@@ -33207,7 +33246,6 @@ paths:
       tags:
         - deviceManagement.userExperienceAnalyticsBaseline
       summary: Get workFromAnywhereMetrics from deviceManagement
-      description: The user experience analytics work from anywhere metrics.
       operationId: deviceManagement.userExperienceAnalyticsBaselines_GetWorkFromAnywhereMetrics
       parameters:
         - name: userExperienceAnalyticsBaseline-id
@@ -33264,7 +33302,6 @@ paths:
       tags:
         - deviceManagement.userExperienceAnalyticsBatteryHealthAppImpact
       summary: Get userExperienceAnalyticsBatteryHealthAppImpact from deviceManagement
-      description: User Experience Analytics Battery Health App Impact
       operationId: deviceManagement_ListUserExperienceAnalyticsBatteryHealthAppImpact
       parameters:
         - $ref: '#/components/parameters/top'
@@ -33363,7 +33400,6 @@ paths:
       tags:
         - deviceManagement.userExperienceAnalyticsBatteryHealthAppImpact
       summary: Get userExperienceAnalyticsBatteryHealthAppImpact from deviceManagement
-      description: User Experience Analytics Battery Health App Impact
       operationId: deviceManagement_GetUserExperienceAnalyticsBatteryHealthAppImpact
       parameters:
         - name: userExperienceAnalyticsBatteryHealthAppImpact-id
@@ -33468,7 +33504,6 @@ paths:
       tags:
         - deviceManagement.userExperienceAnalyticsBatteryHealthCapacityDetails
       summary: Get userExperienceAnalyticsBatteryHealthCapacityDetails from deviceManagement
-      description: User Experience Analytics Battery Health Capacity Details
       operationId: deviceManagement_GetUserExperienceAnalyticsBatteryHealthCapacityDetails
       parameters:
         - name: $select
@@ -33550,7 +33585,6 @@ paths:
       tags:
         - deviceManagement.userExperienceAnalyticsBatteryHealthDeviceAppImpact
       summary: Get userExperienceAnalyticsBatteryHealthDeviceAppImpact from deviceManagement
-      description: User Experience Analytics Battery Health Device App Impact
       operationId: deviceManagement_ListUserExperienceAnalyticsBatteryHealthDeviceAppImpact
       parameters:
         - $ref: '#/components/parameters/top'
@@ -33649,7 +33683,6 @@ paths:
       tags:
         - deviceManagement.userExperienceAnalyticsBatteryHealthDeviceAppImpact
       summary: Get userExperienceAnalyticsBatteryHealthDeviceAppImpact from deviceManagement
-      description: User Experience Analytics Battery Health Device App Impact
       operationId: deviceManagement_GetUserExperienceAnalyticsBatteryHealthDeviceAppImpact
       parameters:
         - name: userExperienceAnalyticsBatteryHealthDeviceAppImpact-id
@@ -33754,7 +33787,6 @@ paths:
       tags:
         - deviceManagement.userExperienceAnalyticsBatteryHealthDevicePerformance
       summary: Get userExperienceAnalyticsBatteryHealthDevicePerformance from deviceManagement
-      description: User Experience Analytics Battery Health Device Performance
       operationId: deviceManagement_ListUserExperienceAnalyticsBatteryHealthDevicePerformance
       parameters:
         - $ref: '#/components/parameters/top'
@@ -33862,7 +33894,6 @@ paths:
       tags:
         - deviceManagement.userExperienceAnalyticsBatteryHealthDevicePerformance
       summary: Get userExperienceAnalyticsBatteryHealthDevicePerformance from deviceManagement
-      description: User Experience Analytics Battery Health Device Performance
       operationId: deviceManagement_GetUserExperienceAnalyticsBatteryHealthDevicePerformance
       parameters:
         - name: userExperienceAnalyticsBatteryHealthDevicePerformance-id
@@ -33970,7 +34001,6 @@ paths:
       tags:
         - deviceManagement.userExperienceAnalyticsBatteryHealthDeviceRuntimeHistory
       summary: Get userExperienceAnalyticsBatteryHealthDeviceRuntimeHistory from deviceManagement
-      description: User Experience Analytics Battery Health Device Runtime History
       operationId: deviceManagement_ListUserExperienceAnalyticsBatteryHealthDeviceRuntimeHistory
       parameters:
         - $ref: '#/components/parameters/top'
@@ -34060,7 +34090,6 @@ paths:
       tags:
         - deviceManagement.userExperienceAnalyticsBatteryHealthDeviceRuntimeHistory
       summary: Get userExperienceAnalyticsBatteryHealthDeviceRuntimeHistory from deviceManagement
-      description: User Experience Analytics Battery Health Device Runtime History
       operationId: deviceManagement_GetUserExperienceAnalyticsBatteryHealthDeviceRuntimeHistory
       parameters:
         - name: userExperienceAnalyticsBatteryHealthDeviceRuntimeHistory-id
@@ -34162,7 +34191,6 @@ paths:
       tags:
         - deviceManagement.userExperienceAnalyticsBatteryHealthModelPerformance
       summary: Get userExperienceAnalyticsBatteryHealthModelPerformance from deviceManagement
-      description: User Experience Analytics Battery Health Model Performance
       operationId: deviceManagement_ListUserExperienceAnalyticsBatteryHealthModelPerformance
       parameters:
         - $ref: '#/components/parameters/top'
@@ -34194,6 +34222,8 @@ paths:
                 - manufacturer desc
                 - model
                 - model desc
+                - modelBatteryHealthScore
+                - modelBatteryHealthScore desc
               type: string
         - name: $select
           in: query
@@ -34212,6 +34242,7 @@ paths:
                 - averageMaxCapacityPercentage
                 - manufacturer
                 - model
+                - modelBatteryHealthScore
               type: string
         - name: $expand
           in: query
@@ -34261,7 +34292,6 @@ paths:
       tags:
         - deviceManagement.userExperienceAnalyticsBatteryHealthModelPerformance
       summary: Get userExperienceAnalyticsBatteryHealthModelPerformance from deviceManagement
-      description: User Experience Analytics Battery Health Model Performance
       operationId: deviceManagement_GetUserExperienceAnalyticsBatteryHealthModelPerformance
       parameters:
         - name: userExperienceAnalyticsBatteryHealthModelPerformance-id
@@ -34288,6 +34318,7 @@ paths:
                 - averageMaxCapacityPercentage
                 - manufacturer
                 - model
+                - modelBatteryHealthScore
               type: string
         - name: $expand
           in: query
@@ -34366,7 +34397,6 @@ paths:
       tags:
         - deviceManagement.userExperienceAnalyticsBatteryHealthOsPerformance
       summary: Get userExperienceAnalyticsBatteryHealthOsPerformance from deviceManagement
-      description: User Experience Analytics Battery Health Os Performance
       operationId: deviceManagement_ListUserExperienceAnalyticsBatteryHealthOsPerformance
       parameters:
         - $ref: '#/components/parameters/top'
@@ -34465,7 +34495,6 @@ paths:
       tags:
         - deviceManagement.userExperienceAnalyticsBatteryHealthOsPerformance
       summary: Get userExperienceAnalyticsBatteryHealthOsPerformance from deviceManagement
-      description: User Experience Analytics Battery Health Os Performance
       operationId: deviceManagement_GetUserExperienceAnalyticsBatteryHealthOsPerformance
       parameters:
         - name: userExperienceAnalyticsBatteryHealthOsPerformance-id
@@ -34570,7 +34599,6 @@ paths:
       tags:
         - deviceManagement.userExperienceAnalyticsBatteryHealthRuntimeDetails
       summary: Get userExperienceAnalyticsBatteryHealthRuntimeDetails from deviceManagement
-      description: User Experience Analytics Battery Health Runtime Details
       operationId: deviceManagement_GetUserExperienceAnalyticsBatteryHealthRuntimeDetails
       parameters:
         - name: $select
@@ -34652,7 +34680,6 @@ paths:
       tags:
         - deviceManagement.userExperienceAnalyticsCategory
       summary: Get userExperienceAnalyticsCategories from deviceManagement
-      description: User experience analytics categories
       operationId: deviceManagement_ListUserExperienceAnalyticsCategories
       parameters:
         - $ref: '#/components/parameters/top'
@@ -34738,7 +34765,6 @@ paths:
       tags:
         - deviceManagement.userExperienceAnalyticsCategory
       summary: Get userExperienceAnalyticsCategories from deviceManagement
-      description: User experience analytics categories
       operationId: deviceManagement_GetUserExperienceAnalyticsCategories
       parameters:
         - name: userExperienceAnalyticsCategory-id
@@ -34845,7 +34871,6 @@ paths:
       tags:
         - deviceManagement.userExperienceAnalyticsCategory
       summary: Get metricValues from deviceManagement
-      description: The metric values for the user experience analytics category.
       operationId: deviceManagement.userExperienceAnalyticsCategories_ListMetricValues
       parameters:
         - name: userExperienceAnalyticsCategory-id
@@ -34947,7 +34972,6 @@ paths:
       tags:
         - deviceManagement.userExperienceAnalyticsCategory
       summary: Get metricValues from deviceManagement
-      description: The metric values for the user experience analytics category.
       operationId: deviceManagement.userExperienceAnalyticsCategories_GetMetricValues
       parameters:
         - name: userExperienceAnalyticsCategory-id
@@ -35069,7 +35093,6 @@ paths:
       tags:
         - deviceManagement.userExperienceAnalyticsMetricHistory
       summary: Get userExperienceAnalyticsDeviceMetricHistory from deviceManagement
-      description: User experience analytics device metric history
       operationId: deviceManagement_ListUserExperienceAnalyticsDeviceMetricHistory
       parameters:
         - $ref: '#/components/parameters/top'
@@ -35159,7 +35182,6 @@ paths:
       tags:
         - deviceManagement.userExperienceAnalyticsMetricHistory
       summary: Get userExperienceAnalyticsDeviceMetricHistory from deviceManagement
-      description: User experience analytics device metric history
       operationId: deviceManagement_GetUserExperienceAnalyticsDeviceMetricHistory
       parameters:
         - name: userExperienceAnalyticsMetricHistory-id
@@ -35261,7 +35283,6 @@ paths:
       tags:
         - deviceManagement.userExperienceAnalyticsDevicePerformance
       summary: Get userExperienceAnalyticsDevicePerformance from deviceManagement
-      description: User experience analytics device performance
       operationId: deviceManagement_ListUserExperienceAnalyticsDevicePerformance
       parameters:
         - $ref: '#/components/parameters/top'
@@ -35402,7 +35423,6 @@ paths:
       tags:
         - deviceManagement.userExperienceAnalyticsDevicePerformance
       summary: Get userExperienceAnalyticsDevicePerformance from deviceManagement
-      description: User experience analytics device performance
       operationId: deviceManagement_GetUserExperienceAnalyticsDevicePerformance
       parameters:
         - name: userExperienceAnalyticsDevicePerformance-id
@@ -35521,7 +35541,6 @@ paths:
       tags:
         - deviceManagement.userExperienceAnalyticsDeviceScope
       summary: Get userExperienceAnalyticsDeviceScope from deviceManagement
-      description: The user experience analytics device scope entity endpoint to trigger on the service to either START or STOP computing metrics data based on a device scope configuration.
       operationId: deviceManagement_GetUserExperienceAnalyticsDeviceScope
       parameters:
         - name: $select
@@ -35566,6 +35585,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.userExperienceAnalyticsDeviceScope'
+          links:
+            triggerDeviceScopeAction:
+              operationId: deviceManagement.userExperienceAnalyticsDeviceScope.triggerDeviceScopeAction
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -35609,7 +35631,6 @@ paths:
       tags:
         - deviceManagement.userExperienceAnalyticsDeviceScope
       summary: Get userExperienceAnalyticsDeviceScopes from deviceManagement
-      description: The user experience analytics device scope entity contains device scope configuration use to apply filtering on the endpoint analytics reports.
       operationId: deviceManagement_ListUserExperienceAnalyticsDeviceScopes
       parameters:
         - $ref: '#/components/parameters/top'
@@ -35723,7 +35744,6 @@ paths:
       tags:
         - deviceManagement.userExperienceAnalyticsDeviceScope
       summary: Get userExperienceAnalyticsDeviceScopes from deviceManagement
-      description: The user experience analytics device scope entity contains device scope configuration use to apply filtering on the endpoint analytics reports.
       operationId: deviceManagement_GetUserExperienceAnalyticsDeviceScopes
       parameters:
         - name: userExperienceAnalyticsDeviceScope-id
@@ -35775,6 +35795,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.userExperienceAnalyticsDeviceScope'
+          links:
+            triggerDeviceScopeAction:
+              operationId: deviceManagement.userExperienceAnalyticsDeviceScopes.userExperienceAnalyticsDeviceScope.triggerDeviceScopeAction
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -35833,7 +35856,6 @@ paths:
       tags:
         - deviceManagement.userExperienceAnalyticsDeviceScores
       summary: Get userExperienceAnalyticsDeviceScores from deviceManagement
-      description: User experience analytics device scores
       operationId: deviceManagement_ListUserExperienceAnalyticsDeviceScores
       parameters:
         - $ref: '#/components/parameters/top'
@@ -35855,6 +35877,8 @@ paths:
                 - id desc
                 - appReliabilityScore
                 - appReliabilityScore desc
+                - batteryHealthScore
+                - batteryHealthScore desc
                 - deviceName
                 - deviceName desc
                 - endpointAnalyticsScore
@@ -35882,6 +35906,7 @@ paths:
               enum:
                 - id
                 - appReliabilityScore
+                - batteryHealthScore
                 - deviceName
                 - endpointAnalyticsScore
                 - healthStatus
@@ -35938,7 +35963,6 @@ paths:
       tags:
         - deviceManagement.userExperienceAnalyticsDeviceScores
       summary: Get userExperienceAnalyticsDeviceScores from deviceManagement
-      description: User experience analytics device scores
       operationId: deviceManagement_GetUserExperienceAnalyticsDeviceScores
       parameters:
         - name: userExperienceAnalyticsDeviceScores-id
@@ -35960,6 +35984,7 @@ paths:
               enum:
                 - id
                 - appReliabilityScore
+                - batteryHealthScore
                 - deviceName
                 - endpointAnalyticsScore
                 - healthStatus
@@ -36045,7 +36070,6 @@ paths:
       tags:
         - deviceManagement.userExperienceAnalyticsDeviceStartupHistory
       summary: Get userExperienceAnalyticsDeviceStartupHistory from deviceManagement
-      description: User experience analytics device Startup History
       operationId: deviceManagement_ListUserExperienceAnalyticsDeviceStartupHistory
       parameters:
         - $ref: '#/components/parameters/top'
@@ -36174,7 +36198,6 @@ paths:
       tags:
         - deviceManagement.userExperienceAnalyticsDeviceStartupHistory
       summary: Get userExperienceAnalyticsDeviceStartupHistory from deviceManagement
-      description: User experience analytics device Startup History
       operationId: deviceManagement_GetUserExperienceAnalyticsDeviceStartupHistory
       parameters:
         - name: userExperienceAnalyticsDeviceStartupHistory-id
@@ -36289,7 +36312,6 @@ paths:
       tags:
         - deviceManagement.userExperienceAnalyticsDeviceStartupProcess
       summary: Get userExperienceAnalyticsDeviceStartupProcesses from deviceManagement
-      description: User experience analytics device Startup Processes
       operationId: deviceManagement_ListUserExperienceAnalyticsDeviceStartupProcesses
       parameters:
         - $ref: '#/components/parameters/top'
@@ -36385,7 +36407,6 @@ paths:
       tags:
         - deviceManagement.userExperienceAnalyticsDeviceStartupProcess
       summary: Get userExperienceAnalyticsDeviceStartupProcesses from deviceManagement
-      description: User experience analytics device Startup Processes
       operationId: deviceManagement_GetUserExperienceAnalyticsDeviceStartupProcesses
       parameters:
         - name: userExperienceAnalyticsDeviceStartupProcess-id
@@ -36489,7 +36510,6 @@ paths:
       tags:
         - deviceManagement.userExperienceAnalyticsDeviceStartupProcessPerformance
       summary: Get userExperienceAnalyticsDeviceStartupProcessPerformance from deviceManagement
-      description: User experience analytics device Startup Process Performance
       operationId: deviceManagement_ListUserExperienceAnalyticsDeviceStartupProcessPerformance
       parameters:
         - $ref: '#/components/parameters/top'
@@ -36594,7 +36614,6 @@ paths:
       tags:
         - deviceManagement.userExperienceAnalyticsDeviceStartupProcessPerformance
       summary: Get userExperienceAnalyticsDeviceStartupProcessPerformance from deviceManagement
-      description: User experience analytics device Startup Process Performance
       operationId: deviceManagement_GetUserExperienceAnalyticsDeviceStartupProcessPerformance
       parameters:
         - name: userExperienceAnalyticsDeviceStartupProcessPerformance-id
@@ -36701,7 +36720,6 @@ paths:
       tags:
         - deviceManagement.userExperienceAnalyticsDeviceWithoutCloudIdentity
       summary: Get userExperienceAnalyticsDevicesWithoutCloudIdentity from deviceManagement
-      description: User experience analytics devices without cloud identity.
       operationId: deviceManagement_ListUserExperienceAnalyticsDevicesWithoutCloudIdentity
       parameters:
         - $ref: '#/components/parameters/top'
@@ -36788,7 +36806,6 @@ paths:
       tags:
         - deviceManagement.userExperienceAnalyticsDeviceWithoutCloudIdentity
       summary: Get userExperienceAnalyticsDevicesWithoutCloudIdentity from deviceManagement
-      description: User experience analytics devices without cloud identity.
       operationId: deviceManagement_GetUserExperienceAnalyticsDevicesWithoutCloudIdentity
       parameters:
         - name: userExperienceAnalyticsDeviceWithoutCloudIdentity-id
@@ -36889,7 +36906,6 @@ paths:
       tags:
         - deviceManagement.userExperienceAnalyticsImpactingProcess
       summary: Get userExperienceAnalyticsImpactingProcess from deviceManagement
-      description: User experience analytics impacting process
       operationId: deviceManagement_ListUserExperienceAnalyticsImpactingProcess
       parameters:
         - $ref: '#/components/parameters/top'
@@ -36988,7 +37004,6 @@ paths:
       tags:
         - deviceManagement.userExperienceAnalyticsImpactingProcess
       summary: Get userExperienceAnalyticsImpactingProcess from deviceManagement
-      description: User experience analytics impacting process
       operationId: deviceManagement_GetUserExperienceAnalyticsImpactingProcess
       parameters:
         - name: userExperienceAnalyticsImpactingProcess-id
@@ -37093,7 +37108,6 @@ paths:
       tags:
         - deviceManagement.userExperienceAnalyticsMetricHistory
       summary: Get userExperienceAnalyticsMetricHistory from deviceManagement
-      description: User experience analytics metric history
       operationId: deviceManagement_ListUserExperienceAnalyticsMetricHistory
       parameters:
         - $ref: '#/components/parameters/top'
@@ -37183,7 +37197,6 @@ paths:
       tags:
         - deviceManagement.userExperienceAnalyticsMetricHistory
       summary: Get userExperienceAnalyticsMetricHistory from deviceManagement
-      description: User experience analytics metric history
       operationId: deviceManagement_GetUserExperienceAnalyticsMetricHistory
       parameters:
         - name: userExperienceAnalyticsMetricHistory-id
@@ -37285,7 +37298,6 @@ paths:
       tags:
         - deviceManagement.userExperienceAnalyticsModelScores
       summary: Get userExperienceAnalyticsModelScores from deviceManagement
-      description: User experience analytics model scores
       operationId: deviceManagement_ListUserExperienceAnalyticsModelScores
       parameters:
         - $ref: '#/components/parameters/top'
@@ -37307,6 +37319,8 @@ paths:
                 - id desc
                 - appReliabilityScore
                 - appReliabilityScore desc
+                - batteryHealthScore
+                - batteryHealthScore desc
                 - endpointAnalyticsScore
                 - endpointAnalyticsScore desc
                 - healthStatus
@@ -37334,6 +37348,7 @@ paths:
               enum:
                 - id
                 - appReliabilityScore
+                - batteryHealthScore
                 - endpointAnalyticsScore
                 - healthStatus
                 - manufacturer
@@ -37390,7 +37405,6 @@ paths:
       tags:
         - deviceManagement.userExperienceAnalyticsModelScores
       summary: Get userExperienceAnalyticsModelScores from deviceManagement
-      description: User experience analytics model scores
       operationId: deviceManagement_GetUserExperienceAnalyticsModelScores
       parameters:
         - name: userExperienceAnalyticsModelScores-id
@@ -37412,6 +37426,7 @@ paths:
               enum:
                 - id
                 - appReliabilityScore
+                - batteryHealthScore
                 - endpointAnalyticsScore
                 - healthStatus
                 - manufacturer
@@ -37497,7 +37512,6 @@ paths:
       tags:
         - deviceManagement.userExperienceAnalyticsNotAutopilotReadyDevice
       summary: Get userExperienceAnalyticsNotAutopilotReadyDevice from deviceManagement
-      description: User experience analytics devices not Windows Autopilot ready.
       operationId: deviceManagement_ListUserExperienceAnalyticsNotAutopilotReadyDevice
       parameters:
         - $ref: '#/components/parameters/top'
@@ -37605,7 +37619,6 @@ paths:
       tags:
         - deviceManagement.userExperienceAnalyticsNotAutopilotReadyDevice
       summary: Get userExperienceAnalyticsNotAutopilotReadyDevice from deviceManagement
-      description: User experience analytics devices not Windows Autopilot ready.
       operationId: deviceManagement_GetUserExperienceAnalyticsNotAutopilotReadyDevice
       parameters:
         - name: userExperienceAnalyticsNotAutopilotReadyDevice-id
@@ -37713,7 +37726,6 @@ paths:
       tags:
         - deviceManagement.userExperienceAnalyticsOverview
       summary: Get userExperienceAnalyticsOverview from deviceManagement
-      description: User experience analytics overview
       operationId: deviceManagement_GetUserExperienceAnalyticsOverview
       parameters:
         - name: $select
@@ -37791,7 +37803,6 @@ paths:
       tags:
         - deviceManagement.userExperienceAnalyticsRegressionSummary
       summary: Get userExperienceAnalyticsRegressionSummary from deviceManagement
-      description: User experience analytics regression summary
       operationId: deviceManagement_GetUserExperienceAnalyticsRegressionSummary
       parameters:
         - name: $select
@@ -37838,6 +37849,8 @@ paths:
               operationId: deviceManagement.UserExperienceAnalyticsRegressionSummary.ListModelRegression
             operatingSystemRegression:
               operationId: deviceManagement.UserExperienceAnalyticsRegressionSummary.ListOperatingSystemRegression
+            summarizeDeviceRegressionPerformance:
+              operationId: deviceManagement.userExperienceAnalyticsRegressionSummary.summarizeDeviceRegressionPerformance
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -37881,7 +37894,6 @@ paths:
       tags:
         - deviceManagement.userExperienceAnalyticsRegressionSummary
       summary: Get manufacturerRegression from deviceManagement
-      description: The metric values for the user experience analytics Manufacturer regression.
       operationId: deviceManagement.userExperienceAnalyticsRegressionSummary_ListManufacturerRegression
       parameters:
         - $ref: '#/components/parameters/top'
@@ -37968,7 +37980,6 @@ paths:
       tags:
         - deviceManagement.userExperienceAnalyticsRegressionSummary
       summary: Get manufacturerRegression from deviceManagement
-      description: The metric values for the user experience analytics Manufacturer regression.
       operationId: deviceManagement.userExperienceAnalyticsRegressionSummary_GetManufacturerRegression
       parameters:
         - name: userExperienceAnalyticsMetric-id
@@ -38069,7 +38080,6 @@ paths:
       tags:
         - deviceManagement.userExperienceAnalyticsRegressionSummary
       summary: Get modelRegression from deviceManagement
-      description: The metric values for the user experience analytics model regression.
       operationId: deviceManagement.userExperienceAnalyticsRegressionSummary_ListModelRegression
       parameters:
         - $ref: '#/components/parameters/top'
@@ -38156,7 +38166,6 @@ paths:
       tags:
         - deviceManagement.userExperienceAnalyticsRegressionSummary
       summary: Get modelRegression from deviceManagement
-      description: The metric values for the user experience analytics model regression.
       operationId: deviceManagement.userExperienceAnalyticsRegressionSummary_GetModelRegression
       parameters:
         - name: userExperienceAnalyticsMetric-id
@@ -38257,7 +38266,6 @@ paths:
       tags:
         - deviceManagement.userExperienceAnalyticsRegressionSummary
       summary: Get operatingSystemRegression from deviceManagement
-      description: The metric values for the user experience analytics operating system regression.
       operationId: deviceManagement.userExperienceAnalyticsRegressionSummary_ListOperatingSystemRegression
       parameters:
         - $ref: '#/components/parameters/top'
@@ -38344,7 +38352,6 @@ paths:
       tags:
         - deviceManagement.userExperienceAnalyticsRegressionSummary
       summary: Get operatingSystemRegression from deviceManagement
-      description: The metric values for the user experience analytics operating system regression.
       operationId: deviceManagement.userExperienceAnalyticsRegressionSummary_GetOperatingSystemRegression
       parameters:
         - name: userExperienceAnalyticsMetric-id
@@ -38445,7 +38452,6 @@ paths:
       tags:
         - deviceManagement.userExperienceAnalyticsRemoteConnection
       summary: Get userExperienceAnalyticsRemoteConnection from deviceManagement
-      description: User experience analytics remote connection
       operationId: deviceManagement_ListUserExperienceAnalyticsRemoteConnection
       parameters:
         - $ref: '#/components/parameters/top'
@@ -38565,7 +38571,6 @@ paths:
       tags:
         - deviceManagement.userExperienceAnalyticsRemoteConnection
       summary: Get userExperienceAnalyticsRemoteConnection from deviceManagement
-      description: User experience analytics remote connection
       operationId: deviceManagement_GetUserExperienceAnalyticsRemoteConnection
       parameters:
         - name: userExperienceAnalyticsRemoteConnection-id
@@ -38677,7 +38682,6 @@ paths:
       tags:
         - deviceManagement.userExperienceAnalyticsResourcePerformance
       summary: Get userExperienceAnalyticsResourcePerformance from deviceManagement
-      description: User experience analytics resource performance
       operationId: deviceManagement_ListUserExperienceAnalyticsResourcePerformance
       parameters:
         - $ref: '#/components/parameters/top'
@@ -38797,7 +38801,6 @@ paths:
       tags:
         - deviceManagement.userExperienceAnalyticsResourcePerformance
       summary: Get userExperienceAnalyticsResourcePerformance from deviceManagement
-      description: User experience analytics resource performance
       operationId: deviceManagement_GetUserExperienceAnalyticsResourcePerformance
       parameters:
         - name: userExperienceAnalyticsResourcePerformance-id
@@ -38909,7 +38912,6 @@ paths:
       tags:
         - deviceManagement.userExperienceAnalyticsScoreHistory
       summary: Get userExperienceAnalyticsScoreHistory from deviceManagement
-      description: User experience analytics device Startup Score History
       operationId: deviceManagement_ListUserExperienceAnalyticsScoreHistory
       parameters:
         - $ref: '#/components/parameters/top'
@@ -38993,7 +38995,6 @@ paths:
       tags:
         - deviceManagement.userExperienceAnalyticsScoreHistory
       summary: Get userExperienceAnalyticsScoreHistory from deviceManagement
-      description: User experience analytics device Startup Score History
       operationId: deviceManagement_GetUserExperienceAnalyticsScoreHistory
       parameters:
         - name: userExperienceAnalyticsScoreHistory-id
@@ -39093,7 +39094,6 @@ paths:
       tags:
         - deviceManagement.userExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric
       summary: Get userExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric from deviceManagement
-      description: User experience analytics work from anywhere hardware readiness metrics.
       operationId: deviceManagement_GetUserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric
       parameters:
         - name: $select
@@ -39181,7 +39181,6 @@ paths:
       tags:
         - deviceManagement.userExperienceAnalyticsWorkFromAnywhereMetric
       summary: Get userExperienceAnalyticsWorkFromAnywhereMetrics from deviceManagement
-      description: User experience analytics work from anywhere metrics.
       operationId: deviceManagement_ListUserExperienceAnalyticsWorkFromAnywhereMetrics
       parameters:
         - $ref: '#/components/parameters/top'
@@ -39264,7 +39263,6 @@ paths:
       tags:
         - deviceManagement.userExperienceAnalyticsWorkFromAnywhereMetric
       summary: Get userExperienceAnalyticsWorkFromAnywhereMetrics from deviceManagement
-      description: User experience analytics work from anywhere metrics.
       operationId: deviceManagement_GetUserExperienceAnalyticsWorkFromAnywhereMetrics
       parameters:
         - name: userExperienceAnalyticsWorkFromAnywhereMetric-id
@@ -39370,7 +39368,6 @@ paths:
       tags:
         - deviceManagement.userExperienceAnalyticsWorkFromAnywhereMetric
       summary: Get metricDevices from deviceManagement
-      description: The work from anywhere metric devices.
       operationId: deviceManagement.userExperienceAnalyticsWorkFromAnywhereMetrics_ListMetricDevices
       parameters:
         - name: userExperienceAnalyticsWorkFromAnywhereMetric-id
@@ -39568,7 +39565,6 @@ paths:
       tags:
         - deviceManagement.userExperienceAnalyticsWorkFromAnywhereMetric
       summary: Get metricDevices from deviceManagement
-      description: The work from anywhere metric devices.
       operationId: deviceManagement.userExperienceAnalyticsWorkFromAnywhereMetrics_GetMetricDevices
       parameters:
         - name: userExperienceAnalyticsWorkFromAnywhereMetric-id
@@ -39722,7 +39718,6 @@ paths:
       tags:
         - deviceManagement.userExperienceAnalyticsWorkFromAnywhereModelPerformance
       summary: Get userExperienceAnalyticsWorkFromAnywhereModelPerformance from deviceManagement
-      description: The user experience analytics work from anywhere model performance
       operationId: deviceManagement_ListUserExperienceAnalyticsWorkFromAnywhereModelPerformance
       parameters:
         - $ref: '#/components/parameters/top'
@@ -39830,7 +39825,6 @@ paths:
       tags:
         - deviceManagement.userExperienceAnalyticsWorkFromAnywhereModelPerformance
       summary: Get userExperienceAnalyticsWorkFromAnywhereModelPerformance from deviceManagement
-      description: The user experience analytics work from anywhere model performance
       operationId: deviceManagement_GetUserExperienceAnalyticsWorkFromAnywhereModelPerformance
       parameters:
         - name: userExperienceAnalyticsWorkFromAnywhereModelPerformance-id
@@ -39938,7 +39932,6 @@ paths:
       tags:
         - deviceManagement.windowsInformationProtectionAppLearningSummary
       summary: Get windowsInformationProtectionAppLearningSummaries from deviceManagement
-      description: The windows information protection app learning summaries.
       operationId: deviceManagement_ListWindowsInformationProtectionAppLearningSummaries
       parameters:
         - $ref: '#/components/parameters/top'
@@ -40028,7 +40021,6 @@ paths:
       tags:
         - deviceManagement.windowsInformationProtectionAppLearningSummary
       summary: Get windowsInformationProtectionAppLearningSummaries from deviceManagement
-      description: The windows information protection app learning summaries.
       operationId: deviceManagement_GetWindowsInformationProtectionAppLearningSummaries
       parameters:
         - name: windowsInformationProtectionAppLearningSummary-id
@@ -40130,7 +40122,6 @@ paths:
       tags:
         - deviceManagement.windowsInformationProtectionNetworkLearningSummary
       summary: Get windowsInformationProtectionNetworkLearningSummaries from deviceManagement
-      description: The windows information protection network learning summaries.
       operationId: deviceManagement_ListWindowsInformationProtectionNetworkLearningSummaries
       parameters:
         - $ref: '#/components/parameters/top'
@@ -40217,7 +40208,6 @@ paths:
       tags:
         - deviceManagement.windowsInformationProtectionNetworkLearningSummary
       summary: Get windowsInformationProtectionNetworkLearningSummaries from deviceManagement
-      description: The windows information protection network learning summaries.
       operationId: deviceManagement_GetWindowsInformationProtectionNetworkLearningSummaries
       parameters:
         - name: windowsInformationProtectionNetworkLearningSummary-id
@@ -40318,7 +40308,6 @@ paths:
       tags:
         - deviceManagement.windowsMalwareInformation
       summary: Get windowsMalwareInformation from deviceManagement
-      description: The list of affected malware in the tenant.
       operationId: deviceManagement_ListWindowsMalwareInformation
       parameters:
         - $ref: '#/components/parameters/top'
@@ -40416,7 +40405,6 @@ paths:
       tags:
         - deviceManagement.windowsMalwareInformation
       summary: Get windowsMalwareInformation from deviceManagement
-      description: The list of affected malware in the tenant.
       operationId: deviceManagement_GetWindowsMalwareInformation
       parameters:
         - name: windowsMalwareInformation-id
@@ -40527,7 +40515,6 @@ paths:
       tags:
         - deviceManagement.windowsMalwareInformation
       summary: Get deviceMalwareStates from deviceManagement
-      description: List of devices affected by current malware with the malware state on each device
       operationId: deviceManagement.windowsMalwareInformation_ListDeviceMalwareStates
       parameters:
         - name: windowsMalwareInformation-id
@@ -40641,7 +40628,6 @@ paths:
       tags:
         - deviceManagement.windowsMalwareInformation
       summary: Get deviceMalwareStates from deviceManagement
-      description: List of devices affected by current malware with the malware state on each device
       operationId: deviceManagement.windowsMalwareInformation_GetDeviceMalwareStates
       parameters:
         - name: windowsMalwareInformation-id
@@ -42739,6 +42725,12 @@ components:
               $ref: '#/components/schemas/microsoft.graph.deviceManagementDerivedCredentialIssuer'
             notificationType:
               $ref: '#/components/schemas/microsoft.graph.deviceManagementDerivedCredentialNotificationType'
+            renewalThresholdPercentage:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              description: The nominal percentage of time before certificate renewal is initiated by the client.
+              format: int32
           additionalProperties:
             type: object
           description: Entity that describes tenant level settings for derived credentials
@@ -46405,6 +46397,12 @@ components:
               type: string
               description: The model name of the device.
               nullable: true
+            modelBatteryHealthScore:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              description: A weighted average of a model’s maximum capacity score and runtime estimate score. Values range from 0-100. Valid values -2147483648 to 2147483647
+              format: int32
           additionalProperties:
             type: object
           description: The user experience analytics battery health model performance entity contains battery related information for all unique device models in their organization.
@@ -46669,6 +46667,10 @@ components:
               type: number
               description: The user experience analytics device app reliability score. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
               format: double
+            batteryHealthScore:
+              type: number
+              description: The user experience analytics device battery health score. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+              format: double
             deviceName:
               type: string
               description: The user experience analytics device name.
@@ -46919,6 +46921,10 @@ components:
             appReliabilityScore:
               type: number
               description: The user experience analytics model app reliability score. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+              format: double
+            batteryHealthScore:
+              type: number
+              description: The user experience analytics model battery health score. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
               format: double
             endpointAnalyticsScore:
               type: number
@@ -52677,7 +52683,7 @@ components:
               nullable: true
             showInAddressList:
               type: boolean
-              description: 'true if the Outlook global address list should contain this user, otherwise false. If not set, this will be treated as true. For users invited through the invitation manager, this property will be set to false. Supports $filter (eq, ne, not, in).'
+              description: Do not use in Microsoft Graph. Manage this property through the Microsoft 365 admin center instead. Represents whether the user should be included in the Outlook global address list. See Known issue.
               nullable: true
             signInSessionsValidFromDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -61507,6 +61513,8 @@ components:
               type: string
               description: 'Specifies the group join policy and group content visibility for groups. Possible values are: Private, Public, or Hiddenmembership. Hiddenmembership can be set only for Microsoft 365 groups, when the groups are created. It can''t be updated later. Other values of visibility can be updated after group creation. If visibility value is not specified during group creation on Microsoft Graph, a security group is created as Private by default and Microsoft 365 group is Public. Groups assignable to roles are always Private. See group visibility options to learn more. Returned by default. Nullable.'
               nullable: true
+            writebackConfiguration:
+              $ref: '#/components/schemas/microsoft.graph.groupWritebackConfiguration'
             accessType:
               $ref: '#/components/schemas/microsoft.graph.groupAccessType'
             allowExternalSenders:
@@ -63259,6 +63267,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.pinnedChatMessageInfo'
+              description: A collection of all the pinned messages in the chat. Nullable.
             tabs:
               type: array
               items:
@@ -65118,11 +65127,11 @@ components:
       properties:
         displayName:
           type: string
-          description: 'The identity''s display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
+          description: The display name of the identity. This property is read-only.
           nullable: true
         id:
           type: string
-          description: Unique identifier for the identity.
+          description: The identifier of the identity. This property is read-only.
           nullable: true
       additionalProperties:
         type: object
@@ -65563,6 +65572,17 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.groupWritebackConfiguration:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.writebackConfiguration'
+        - title: groupWritebackConfiguration
+          type: object
+          properties:
+            onPremisesGroupType:
+              type: string
+              nullable: true
+          additionalProperties:
+            type: object
     microsoft.graph.groupAccessType:
       title: groupAccessType
       enum:
@@ -68878,7 +68898,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.checklistItem'
-              description: A collection of checklistItems linked to a task.
+              description: A collection of smaller subtasks linked to the more complex parent task.
             extensions:
               type: array
               items:
@@ -70252,6 +70272,15 @@ components:
         - blog
         - profile
       type: string
+    microsoft.graph.writebackConfiguration:
+      title: writebackConfiguration
+      type: object
+      properties:
+        isEnabled:
+          type: boolean
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.MembershipRuleProcessingStatusDetails:
       title: MembershipRuleProcessingStatusDetails
       enum:
@@ -73857,6 +73886,7 @@ components:
               items:
                 type: string
                 nullable: true
+              description: The categories associated with the task. Each category corresponds to the displayName property of an outlookCategory that the user has defined.
             completedDateTime:
               $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
             createdDateTime:
@@ -73866,6 +73896,9 @@ components:
               format: date-time
             dueDateTime:
               $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
+            hasAttachments:
+              type: boolean
+              nullable: true
             importance:
               $ref: '#/components/schemas/microsoft.graph.importance'
             isReminderOn:
@@ -73886,10 +73919,19 @@ components:
               type: string
               description: A brief description of the task.
               nullable: true
+            attachments:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.attachment_v2'
+            attachmentSessions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.attachmentSession'
             checklistItems:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.checklistItem'
+              description: A collection of smaller subtasks linked to the more complex parent task.
             extensions:
               type: array
               items:
@@ -75256,11 +75298,11 @@ components:
       properties:
         key:
           type: string
-          description: Key.
+          description: 'Contains the name of the field that a value is associated with. When a sign in or domain hint is included in the sign-in request, corresponding fields are included as key-value pairs. Possible keys: Login hint present, Domain hint present.'
           nullable: true
         value:
           type: string
-          description: Value.
+          description: Contains the corresponding value for the specified key. The value is true if a sign in hint was included in the sign-in request; otherwise false. The value is true if a domain hint was included in the sign-in request; otherwise false.
           nullable: true
       additionalProperties:
         type: object
@@ -76051,6 +76093,52 @@ components:
               type: string
               description: ID of the timeOffReason for this timeOffItem. Required.
               nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.attachment_v2:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: attachment_v2
+          type: object
+          properties:
+            contentType:
+              type: string
+              nullable: true
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            name:
+              type: string
+              nullable: true
+            size:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              format: int32
+          additionalProperties:
+            type: object
+    microsoft.graph.attachmentSession:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: attachmentSession
+          type: object
+          properties:
+            content:
+              type: string
+              format: base64url
+              nullable: true
+            expirationDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            nextExpectedRange:
+              type: array
+              items:
+                type: string
+                nullable: true
           additionalProperties:
             type: object
     microsoft.graph.linkedResource:

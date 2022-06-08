@@ -10,8 +10,7 @@ paths:
     get:
       tags:
         - bookingBusinesses.bookingBusiness
-      summary: Get entities from bookingBusinesses
-      description: List bookingBusinesses
+      summary: List bookingBusinesses
       operationId: bookingBusinesses.bookingBusiness_ListBookingBusiness
       parameters:
         - $ref: '#/components/parameters/top'
@@ -45,6 +44,8 @@ paths:
                 - email desc
                 - isPublished
                 - isPublished desc
+                - languageTag
+                - languageTag desc
                 - phone
                 - phone desc
                 - publicUrl
@@ -72,6 +73,7 @@ paths:
                 - defaultCurrencyIso
                 - email
                 - isPublished
+                - languageTag
                 - phone
                 - publicUrl
                 - schedulingPolicy
@@ -113,8 +115,7 @@ paths:
     post:
       tags:
         - bookingBusinesses.bookingBusiness
-      summary: Add new entity to bookingBusinesses
-      description: Create bookingBusiness
+      summary: Create bookingBusiness
       operationId: bookingBusinesses.bookingBusiness_CreateBookingBusiness
       requestBody:
         description: New entity
@@ -138,7 +139,6 @@ paths:
       tags:
         - bookingBusinesses.bookingBusiness
       summary: Get entity from bookingBusinesses by key
-      description: Represents a Microsot Bookings Business.
       operationId: bookingBusinesses.bookingBusiness_GetBookingBusiness
       parameters:
         - name: bookingBusiness-id
@@ -166,6 +166,7 @@ paths:
                 - defaultCurrencyIso
                 - email
                 - isPublished
+                - languageTag
                 - phone
                 - publicUrl
                 - schedulingPolicy
@@ -227,6 +228,12 @@ paths:
               operationId: bookingBusinesses.ListStaffMembers
               parameters:
                 bookingBusiness-id: $request.path.bookingBusiness-id
+            getStaffAvailability:
+              operationId: bookingBusinesses.bookingBusiness.getStaffAvailability
+            publish:
+              operationId: bookingBusinesses.bookingBusiness.publish
+            unpublish:
+              operationId: bookingBusinesses.bookingBusiness.unpublish
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -285,7 +292,6 @@ paths:
       tags:
         - bookingBusinesses.bookingAppointment
       summary: Get appointments from bookingBusinesses
-      description: All the appointments of this business. Read-only. Nullable.
       operationId: bookingBusinesses_ListAppointments
       parameters:
         - name: bookingBusiness-id
@@ -314,6 +320,8 @@ paths:
                 - id desc
                 - additionalInformation
                 - additionalInformation desc
+                - anonymousJoinWebUrl
+                - anonymousJoinWebUrl desc
                 - customerEmailAddress
                 - customerEmailAddress desc
                 - customerId
@@ -395,6 +403,7 @@ paths:
               enum:
                 - id
                 - additionalInformation
+                - anonymousJoinWebUrl
                 - customerEmailAddress
                 - customerId
                 - customerLocation
@@ -486,7 +495,6 @@ paths:
       tags:
         - bookingBusinesses.bookingAppointment
       summary: Get appointments from bookingBusinesses
-      description: All the appointments of this business. Read-only. Nullable.
       operationId: bookingBusinesses_GetAppointments
       parameters:
         - name: bookingBusiness-id
@@ -515,6 +523,7 @@ paths:
               enum:
                 - id
                 - additionalInformation
+                - anonymousJoinWebUrl
                 - customerEmailAddress
                 - customerId
                 - customerLocation
@@ -569,6 +578,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.bookingAppointment'
+          links:
+            cancel:
+              operationId: bookingBusinesses.bookingBusiness.appointments.bookingAppointment.cancel
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -641,7 +653,6 @@ paths:
       tags:
         - bookingBusinesses.Actions
       summary: Invoke action cancel
-      description: 'Cancels the giving booking appointment, sending a message to the involved parties.'
       operationId: bookingBusinesses.appointments_cancel
       parameters:
         - name: bookingBusiness-id
@@ -682,7 +693,6 @@ paths:
       tags:
         - bookingBusinesses.bookingAppointment
       summary: Get calendarView from bookingBusinesses
-      description: The set of appointments of this business in a specified date range. Read-only. Nullable.
       operationId: bookingBusinesses_ListCalendarView
       parameters:
         - name: bookingBusiness-id
@@ -723,6 +733,8 @@ paths:
                 - id desc
                 - additionalInformation
                 - additionalInformation desc
+                - anonymousJoinWebUrl
+                - anonymousJoinWebUrl desc
                 - customerEmailAddress
                 - customerEmailAddress desc
                 - customerId
@@ -804,6 +816,7 @@ paths:
               enum:
                 - id
                 - additionalInformation
+                - anonymousJoinWebUrl
                 - customerEmailAddress
                 - customerId
                 - customerLocation
@@ -895,7 +908,6 @@ paths:
       tags:
         - bookingBusinesses.bookingAppointment
       summary: Get calendarView from bookingBusinesses
-      description: The set of appointments of this business in a specified date range. Read-only. Nullable.
       operationId: bookingBusinesses_GetCalendarView
       parameters:
         - name: bookingBusiness-id
@@ -936,6 +948,7 @@ paths:
               enum:
                 - id
                 - additionalInformation
+                - anonymousJoinWebUrl
                 - customerEmailAddress
                 - customerId
                 - customerLocation
@@ -990,6 +1003,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.bookingAppointment'
+          links:
+            cancel:
+              operationId: bookingBusinesses.bookingBusiness.calendarView.bookingAppointment.cancel
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1062,7 +1078,6 @@ paths:
       tags:
         - bookingBusinesses.Actions
       summary: Invoke action cancel
-      description: 'Cancels the giving booking appointment, sending a message to the involved parties.'
       operationId: bookingBusinesses.calendarView_cancel
       parameters:
         - name: bookingBusiness-id
@@ -1103,7 +1118,6 @@ paths:
       tags:
         - bookingBusinesses.bookingCustomer
       summary: Get customers from bookingBusinesses
-      description: All the customers of this business. Read-only. Nullable.
       operationId: bookingBusinesses_ListCustomers
       parameters:
         - name: bookingBusiness-id
@@ -1211,7 +1225,6 @@ paths:
       tags:
         - bookingBusinesses.bookingCustomer
       summary: Get customers from bookingBusinesses
-      description: All the customers of this business. Read-only. Nullable.
       operationId: bookingBusinesses_GetCustomers
       parameters:
         - name: bookingBusiness-id
@@ -1335,7 +1348,6 @@ paths:
       tags:
         - bookingBusinesses.bookingCustomQuestion
       summary: Get customQuestions from bookingBusinesses
-      description: All the custom questions of this business. Read-only. Nullable.
       operationId: bookingBusinesses_ListCustomQuestions
       parameters:
         - name: bookingBusiness-id
@@ -1440,7 +1452,6 @@ paths:
       tags:
         - bookingBusinesses.bookingCustomQuestion
       summary: Get customQuestions from bookingBusinesses
-      description: All the custom questions of this business. Read-only. Nullable.
       operationId: bookingBusinesses_GetCustomQuestions
       parameters:
         - name: bookingBusiness-id
@@ -1613,7 +1624,6 @@ paths:
       tags:
         - bookingBusinesses.Actions
       summary: Invoke action publish
-      description: Makes the scheduling page of this business available to the general public.
       operationId: bookingBusinesses_publish
       parameters:
         - name: bookingBusiness-id
@@ -1634,7 +1644,6 @@ paths:
       tags:
         - bookingBusinesses.Actions
       summary: Invoke action unpublish
-      description: Prevents the general public from seeing the scheduling page of this business.
       operationId: bookingBusinesses_unpublish
       parameters:
         - name: bookingBusiness-id
@@ -1655,7 +1664,6 @@ paths:
       tags:
         - bookingBusinesses.bookingService
       summary: Get services from bookingBusinesses
-      description: All the services offered by this business. Read-only. Nullable.
       operationId: bookingBusinesses_ListServices
       parameters:
         - name: bookingBusiness-id
@@ -1700,10 +1708,14 @@ paths:
                 - defaultReminders desc
                 - description
                 - description desc
+                - isAnonymousJoinEnabled
+                - isAnonymousJoinEnabled desc
                 - isHiddenFromCustomers
                 - isHiddenFromCustomers desc
                 - isLocationOnline
                 - isLocationOnline desc
+                - languageTag
+                - languageTag desc
                 - maximumAttendeesCount
                 - maximumAttendeesCount desc
                 - notes
@@ -1741,8 +1753,10 @@ paths:
                 - defaultPriceType
                 - defaultReminders
                 - description
+                - isAnonymousJoinEnabled
                 - isHiddenFromCustomers
                 - isLocationOnline
+                - languageTag
                 - maximumAttendeesCount
                 - notes
                 - postBuffer
@@ -1808,7 +1822,6 @@ paths:
       tags:
         - bookingBusinesses.bookingService
       summary: Get services from bookingBusinesses
-      description: All the services offered by this business. Read-only. Nullable.
       operationId: bookingBusinesses_GetServices
       parameters:
         - name: bookingBusiness-id
@@ -1845,8 +1858,10 @@ paths:
                 - defaultPriceType
                 - defaultReminders
                 - description
+                - isAnonymousJoinEnabled
                 - isHiddenFromCustomers
                 - isLocationOnline
+                - languageTag
                 - maximumAttendeesCount
                 - notes
                 - postBuffer
@@ -1947,7 +1962,6 @@ paths:
       tags:
         - bookingBusinesses.bookingStaffMember
       summary: Get staffMembers from bookingBusinesses
-      description: All the staff members that provide services in this business. Read-only. Nullable.
       operationId: bookingBusinesses_ListStaffMembers
       parameters:
         - name: bookingBusiness-id
@@ -1982,6 +1996,8 @@ paths:
                 - availabilityIsAffectedByPersonalCalendar desc
                 - colorIndex
                 - colorIndex desc
+                - isEmailNotificationEnabled
+                - isEmailNotificationEnabled desc
                 - role
                 - role desc
                 - timeZone
@@ -2006,6 +2022,7 @@ paths:
                 - emailAddress
                 - availabilityIsAffectedByPersonalCalendar
                 - colorIndex
+                - isEmailNotificationEnabled
                 - role
                 - timeZone
                 - useBusinessHours
@@ -2067,7 +2084,6 @@ paths:
       tags:
         - bookingBusinesses.bookingStaffMember
       summary: Get staffMembers from bookingBusinesses
-      description: All the staff members that provide services in this business. Read-only. Nullable.
       operationId: bookingBusinesses_GetStaffMembers
       parameters:
         - name: bookingBusiness-id
@@ -2099,6 +2115,7 @@ paths:
                 - emailAddress
                 - availabilityIsAffectedByPersonalCalendar
                 - colorIndex
+                - isEmailNotificationEnabled
                 - role
                 - timeZone
                 - useBusinessHours
@@ -2194,8 +2211,7 @@ paths:
     get:
       tags:
         - bookingCurrencies.bookingCurrency
-      summary: Get entities from bookingCurrencies
-      description: List bookingCurrencies
+      summary: List bookingCurrencies
       operationId: bookingCurrencies.bookingCurrency_ListBookingCurrency
       parameters:
         - $ref: '#/components/parameters/top'
@@ -2404,6 +2420,9 @@ components:
               type: boolean
               description: The scheduling page has been made available to external customers. Use the publish and unpublish actions to set this property. Read-only.
               nullable: true
+            languageTag:
+              type: string
+              nullable: true
             phone:
               type: string
               description: 'The telephone number for the business. The phone property, together with address and webSiteUrl, appear in the footer of a business scheduling page.'
@@ -2460,6 +2479,9 @@ components:
             additionalInformation:
               type: string
               description: Additional information that is sent to the customer when an appointment is confirmed.
+              nullable: true
+            anonymousJoinWebUrl:
+              type: string
               nullable: true
             customerEmailAddress:
               type: string
@@ -2696,12 +2718,16 @@ components:
               type: string
               description: A text description for the service.
               nullable: true
+            isAnonymousJoinEnabled:
+              type: boolean
             isHiddenFromCustomers:
               type: boolean
               description: True means this service is not available to customers for booking.
             isLocationOnline:
               type: boolean
               description: True indicates that the appointments for the service will be held online. Default value is false.
+            languageTag:
+              type: string
             maximumAttendeesCount:
               maximum: 2147483647
               minimum: -2147483648
@@ -2727,6 +2753,7 @@ components:
             smsNotificationsEnabled:
               type: boolean
               description: True indicates SMS notifications can be sent to the customers for the appointment of the service. Default value is false.
+              nullable: true
             staffMemberIds:
               type: array
               items:
@@ -2756,6 +2783,8 @@ components:
               description: Identifies a color to represent the staff member. The color corresponds to the color palette in the Staff details page in the Bookings app.
               format: int32
               nullable: true
+            isEmailNotificationEnabled:
+              type: boolean
             role:
               $ref: '#/components/schemas/microsoft.graph.bookingStaffRole'
             timeZone:
@@ -3049,6 +3078,9 @@ components:
         - administrator
         - viewer
         - externalGuest
+        - unknownFutureValue
+        - scheduler
+        - teamMember
       type: string
     microsoft.graph.bookingBusinessCollectionResponse:
       title: Collection of bookingBusiness

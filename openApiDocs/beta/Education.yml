@@ -381,7 +381,6 @@ paths:
       tags:
         - education.educationClass
       summary: Get assignmentCategories from education
-      description: All categories associated with this class. Nullable.
       operationId: education.classes_ListAssignmentCategories
       parameters:
         - name: educationClass-id
@@ -480,7 +479,6 @@ paths:
       tags:
         - education.educationClass
       summary: Get assignmentCategories from education
-      description: All categories associated with this class. Nullable.
       operationId: education.classes_GetAssignmentCategories
       parameters:
         - name: educationClass-id
@@ -633,7 +631,6 @@ paths:
       tags:
         - education.educationClass
       summary: Get assignmentDefaults from education
-      description: Specifies class-level defaults respected by new assignments created in the class.
       operationId: education.classes_GetAssignmentDefaults
       parameters:
         - name: educationClass-id
@@ -736,7 +733,6 @@ paths:
       tags:
         - education.educationClass
       summary: Get assignments from education
-      description: All assignments associated with this class. Nullable.
       operationId: education.classes_ListAssignments
       parameters:
         - name: educationClass-id
@@ -789,6 +785,8 @@ paths:
                 - displayName desc
                 - dueDateTime
                 - dueDateTime desc
+                - feedbackResourcesFolderUrl
+                - feedbackResourcesFolderUrl desc
                 - grading
                 - grading desc
                 - instructions
@@ -830,6 +828,7 @@ paths:
                 - createdDateTime
                 - displayName
                 - dueDateTime
+                - feedbackResourcesFolderUrl
                 - grading
                 - instructions
                 - lastModifiedBy
@@ -903,7 +902,6 @@ paths:
       tags:
         - education.educationClass
       summary: Get assignments from education
-      description: All assignments associated with this class. Nullable.
       operationId: education.classes_GetAssignments
       parameters:
         - name: educationClass-id
@@ -944,6 +942,7 @@ paths:
                 - createdDateTime
                 - displayName
                 - dueDateTime
+                - feedbackResourcesFolderUrl
                 - grading
                 - instructions
                 - lastModifiedBy
@@ -1001,6 +1000,12 @@ paths:
               parameters:
                 educationClass-id: $request.path.educationClass-id
                 educationAssignment-id: $request.path.educationAssignment-id
+            publish:
+              operationId: education.classes.educationClass.assignments.educationAssignment.publish
+            setUpFeedbackResourcesFolder:
+              operationId: education.classes.educationClass.assignments.educationAssignment.setUpFeedbackResourcesFolder
+            setUpResourcesFolder:
+              operationId: education.classes.educationClass.assignments.educationAssignment.setUpResourcesFolder
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1073,7 +1078,6 @@ paths:
       tags:
         - education.educationClass
       summary: Get categories from education
-      description: 'When set, enables users to easily find assignments of a given type.  Read-only. Nullable.'
       operationId: education.classes.assignments_ListCategories
       parameters:
         - name: educationClass-id
@@ -1230,7 +1234,6 @@ paths:
       tags:
         - education.educationClass
       summary: Get ref of categories from education
-      description: 'When set, enables users to easily find assignments of a given type.  Read-only. Nullable.'
       operationId: education.classes.assignments_ListGraphRefCategories
       parameters:
         - name: educationClass-id
@@ -1387,6 +1390,37 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/education/classes/{educationClass-id}/assignments/{educationAssignment-id}/microsoft.graph.setUpFeedbackResourcesFolder':
+    post:
+      tags:
+        - education.Actions
+      summary: Invoke action setUpFeedbackResourcesFolder
+      operationId: education.classes.assignments_setUpFeedbackResourcesFolder
+      parameters:
+        - name: educationClass-id
+          in: path
+          description: 'key: id of educationClass'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: educationClass
+        - name: educationAssignment-id
+          in: path
+          description: 'key: id of educationAssignment'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: educationAssignment
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.educationAssignment'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/education/classes/{educationClass-id}/assignments/{educationAssignment-id}/microsoft.graph.setUpResourcesFolder':
     post:
       tags:
@@ -1423,7 +1457,6 @@ paths:
       tags:
         - education.educationClass
       summary: Get resources from education
-      description: Learning objects that are associated with this assignment.  Only teachers can modify this list. Nullable.
       operationId: education.classes.assignments_ListResources
       parameters:
         - name: educationClass-id
@@ -1539,7 +1572,6 @@ paths:
       tags:
         - education.educationClass
       summary: Get resources from education
-      description: Learning objects that are associated with this assignment.  Only teachers can modify this list. Nullable.
       operationId: education.classes.assignments_GetResources
       parameters:
         - name: educationClass-id
@@ -1682,7 +1714,6 @@ paths:
       tags:
         - education.educationClass
       summary: Get rubric from education
-      description: 'When set, the grading rubric attached to this assignment.'
       operationId: education.classes.assignments_GetRubric
       parameters:
         - name: educationClass-id
@@ -1811,7 +1842,6 @@ paths:
       tags:
         - education.educationClass
       summary: Get ref of rubric from education
-      description: 'When set, the grading rubric attached to this assignment.'
       operationId: education.classes.assignments_GetGraphRefRubric
       parameters:
         - name: educationClass-id
@@ -1907,7 +1937,6 @@ paths:
       tags:
         - education.educationClass
       summary: Get submissions from education
-      description: 'Once published, there is a submission object for each student representing their work and grade.  Read-only. Nullable.'
       operationId: education.classes.assignments_ListSubmissions
       parameters:
         - name: educationClass-id
@@ -2056,7 +2085,6 @@ paths:
       tags:
         - education.educationClass
       summary: Get submissions from education
-      description: 'Once published, there is a submission object for each student representing their work and grade.  Read-only. Nullable.'
       operationId: education.classes.assignments_GetSubmissions
       parameters:
         - name: educationClass-id
@@ -2147,6 +2175,16 @@ paths:
                 educationClass-id: $request.path.educationClass-id
                 educationAssignment-id: $request.path.educationAssignment-id
                 educationSubmission-id: $request.path.educationSubmission-id
+            reassign:
+              operationId: education.classes.educationClass.assignments.educationAssignment.submissions.educationSubmission.reassign
+            return:
+              operationId: education.classes.educationClass.assignments.educationAssignment.submissions.educationSubmission.return
+            setUpResourcesFolder:
+              operationId: education.classes.educationClass.assignments.educationAssignment.submissions.educationSubmission.setUpResourcesFolder
+            submit:
+              operationId: education.classes.educationClass.assignments.educationAssignment.submissions.educationSubmission.submit
+            unsubmit:
+              operationId: education.classes.educationClass.assignments.educationAssignment.submissions.educationSubmission.unsubmit
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2423,7 +2461,6 @@ paths:
       tags:
         - education.educationClass
       summary: Get outcomes from education
-      description: Read-Write. Nullable.
       operationId: education.classes.assignments.submissions_ListOutcomes
       parameters:
         - name: educationClass-id
@@ -2553,7 +2590,6 @@ paths:
       tags:
         - education.educationClass
       summary: Get outcomes from education
-      description: Read-Write. Nullable.
       operationId: education.classes.assignments.submissions_GetOutcomes
       parameters:
         - name: educationClass-id
@@ -2717,7 +2753,6 @@ paths:
       tags:
         - education.educationClass
       summary: Get resources from education
-      description: Nullable.
       operationId: education.classes.assignments.submissions_ListResources
       parameters:
         - name: educationClass-id
@@ -2847,7 +2882,6 @@ paths:
       tags:
         - education.educationClass
       summary: Get resources from education
-      description: Nullable.
       operationId: education.classes.assignments.submissions_GetResources
       parameters:
         - name: educationClass-id
@@ -3011,7 +3045,6 @@ paths:
       tags:
         - education.educationClass
       summary: Get submittedResources from education
-      description: Read-only. Nullable.
       operationId: education.classes.assignments.submissions_ListSubmittedResources
       parameters:
         - name: educationClass-id
@@ -3141,7 +3174,6 @@ paths:
       tags:
         - education.educationClass
       summary: Get submittedResources from education
-      description: Read-only. Nullable.
       operationId: education.classes.assignments.submissions_GetSubmittedResources
       parameters:
         - name: educationClass-id
@@ -3337,7 +3369,6 @@ paths:
       tags:
         - education.educationClass
       summary: Get assignmentSettings from education
-      description: Specifies class-level assignments settings.
       operationId: education.classes_GetAssignmentSettings
       parameters:
         - name: educationClass-id
@@ -3437,7 +3468,6 @@ paths:
       tags:
         - education.educationClass
       summary: Get group from education
-      description: The underlying Microsoft 365 group object.
       operationId: education.classes_GetGroup
       parameters:
         - name: educationClass-id
@@ -3497,6 +3527,7 @@ paths:
                 - securityIdentifier
                 - theme
                 - visibility
+                - writebackConfiguration
                 - accessType
                 - allowExternalSenders
                 - autoSubscribeNewMembers
@@ -3706,7 +3737,6 @@ paths:
       tags:
         - education.educationClass
       summary: Get members from education
-      description: All users in the class. Nullable.
       operationId: education.classes_ListMembers
       parameters:
         - name: educationClass-id
@@ -3917,7 +3947,6 @@ paths:
       tags:
         - education.educationClass
       summary: Get ref of members from education
-      description: All users in the class. Nullable.
       operationId: education.classes_ListGraphRefMembers
       parameters:
         - name: educationClass-id
@@ -4057,7 +4086,6 @@ paths:
       tags:
         - education.educationClass
       summary: Get schools from education
-      description: All schools that this class is associated with. Nullable.
       operationId: education.classes_ListSchools
       parameters:
         - name: educationClass-id
@@ -4174,7 +4202,6 @@ paths:
       tags:
         - education.educationClass
       summary: Get schools from education
-      description: All schools that this class is associated with. Nullable.
       operationId: education.classes_GetSchools
       parameters:
         - name: educationClass-id
@@ -4267,7 +4294,6 @@ paths:
       tags:
         - education.educationClass
       summary: Get teachers from education
-      description: All teachers in the class. Nullable.
       operationId: education.classes_ListTeachers
       parameters:
         - name: educationClass-id
@@ -4478,7 +4504,6 @@ paths:
       tags:
         - education.educationClass
       summary: Get ref of teachers from education
-      description: All teachers in the class. Nullable.
       operationId: education.classes_ListGraphRefTeachers
       parameters:
         - name: educationClass-id
@@ -4775,7 +4800,6 @@ paths:
       tags:
         - education.educationUser
       summary: Get assignments from education
-      description: List of assignments for the user. Nullable.
       operationId: education.me_ListAssignments
       parameters:
         - $ref: '#/components/parameters/top'
@@ -4821,6 +4845,8 @@ paths:
                 - displayName desc
                 - dueDateTime
                 - dueDateTime desc
+                - feedbackResourcesFolderUrl
+                - feedbackResourcesFolderUrl desc
                 - grading
                 - grading desc
                 - instructions
@@ -4862,6 +4888,7 @@ paths:
                 - createdDateTime
                 - displayName
                 - dueDateTime
+                - feedbackResourcesFolderUrl
                 - grading
                 - instructions
                 - lastModifiedBy
@@ -4927,7 +4954,6 @@ paths:
       tags:
         - education.educationUser
       summary: Get assignments from education
-      description: List of assignments for the user. Nullable.
       operationId: education.me_GetAssignments
       parameters:
         - name: educationAssignment-id
@@ -4961,6 +4987,7 @@ paths:
                 - createdDateTime
                 - displayName
                 - dueDateTime
+                - feedbackResourcesFolderUrl
                 - grading
                 - instructions
                 - lastModifiedBy
@@ -5014,6 +5041,12 @@ paths:
               operationId: education.me.Assignments.ListSubmissions
               parameters:
                 educationAssignment-id: $request.path.educationAssignment-id
+            publish:
+              operationId: education.me.assignments.educationAssignment.publish
+            setUpFeedbackResourcesFolder:
+              operationId: education.me.assignments.educationAssignment.setUpFeedbackResourcesFolder
+            setUpResourcesFolder:
+              operationId: education.me.assignments.educationAssignment.setUpResourcesFolder
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5072,7 +5105,6 @@ paths:
       tags:
         - education.educationUser
       summary: Get categories from education
-      description: 'When set, enables users to easily find assignments of a given type.  Read-only. Nullable.'
       operationId: education.me.assignments_ListCategories
       parameters:
         - name: educationAssignment-id
@@ -5208,7 +5240,6 @@ paths:
       tags:
         - education.educationUser
       summary: Get ref of categories from education
-      description: 'When set, enables users to easily find assignments of a given type.  Read-only. Nullable.'
       operationId: education.me.assignments_ListGraphRefCategories
       parameters:
         - name: educationAssignment-id
@@ -5337,6 +5368,30 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/education/me/assignments/{educationAssignment-id}/microsoft.graph.setUpFeedbackResourcesFolder':
+    post:
+      tags:
+        - education.Actions
+      summary: Invoke action setUpFeedbackResourcesFolder
+      operationId: education.me.assignments_setUpFeedbackResourcesFolder
+      parameters:
+        - name: educationAssignment-id
+          in: path
+          description: 'key: id of educationAssignment'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: educationAssignment
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.educationAssignment'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/education/me/assignments/{educationAssignment-id}/microsoft.graph.setUpResourcesFolder':
     post:
       tags:
@@ -5366,7 +5421,6 @@ paths:
       tags:
         - education.educationUser
       summary: Get resources from education
-      description: Learning objects that are associated with this assignment.  Only teachers can modify this list. Nullable.
       operationId: education.me.assignments_ListResources
       parameters:
         - name: educationAssignment-id
@@ -5468,7 +5522,6 @@ paths:
       tags:
         - education.educationUser
       summary: Get resources from education
-      description: Learning objects that are associated with this assignment.  Only teachers can modify this list. Nullable.
       operationId: education.me.assignments_GetResources
       parameters:
         - name: educationAssignment-id
@@ -5590,7 +5643,6 @@ paths:
       tags:
         - education.educationUser
       summary: Get rubric from education
-      description: 'When set, the grading rubric attached to this assignment.'
       operationId: education.me.assignments_GetRubric
       parameters:
         - name: educationAssignment-id
@@ -5698,7 +5750,6 @@ paths:
       tags:
         - education.educationUser
       summary: Get ref of rubric from education
-      description: 'When set, the grading rubric attached to this assignment.'
       operationId: education.me.assignments_GetGraphRefRubric
       parameters:
         - name: educationAssignment-id
@@ -5773,7 +5824,6 @@ paths:
       tags:
         - education.educationUser
       summary: Get submissions from education
-      description: 'Once published, there is a submission object for each student representing their work and grade.  Read-only. Nullable.'
       operationId: education.me.assignments_ListSubmissions
       parameters:
         - name: educationAssignment-id
@@ -5908,7 +5958,6 @@ paths:
       tags:
         - education.educationUser
       summary: Get submissions from education
-      description: 'Once published, there is a submission object for each student representing their work and grade.  Read-only. Nullable.'
       operationId: education.me.assignments_GetSubmissions
       parameters:
         - name: educationAssignment-id
@@ -5989,6 +6038,16 @@ paths:
               parameters:
                 educationAssignment-id: $request.path.educationAssignment-id
                 educationSubmission-id: $request.path.educationSubmission-id
+            reassign:
+              operationId: education.me.assignments.educationAssignment.submissions.educationSubmission.reassign
+            return:
+              operationId: education.me.assignments.educationAssignment.submissions.educationSubmission.return
+            setUpResourcesFolder:
+              operationId: education.me.assignments.educationAssignment.submissions.educationSubmission.setUpResourcesFolder
+            submit:
+              operationId: education.me.assignments.educationAssignment.submissions.educationSubmission.submit
+            unsubmit:
+              operationId: education.me.assignments.educationAssignment.submissions.educationSubmission.unsubmit
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -6216,7 +6275,6 @@ paths:
       tags:
         - education.educationUser
       summary: Get outcomes from education
-      description: Read-Write. Nullable.
       operationId: education.me.assignments.submissions_ListOutcomes
       parameters:
         - name: educationAssignment-id
@@ -6332,7 +6390,6 @@ paths:
       tags:
         - education.educationUser
       summary: Get outcomes from education
-      description: Read-Write. Nullable.
       operationId: education.me.assignments.submissions_GetOutcomes
       parameters:
         - name: educationAssignment-id
@@ -6475,7 +6532,6 @@ paths:
       tags:
         - education.educationUser
       summary: Get resources from education
-      description: Nullable.
       operationId: education.me.assignments.submissions_ListResources
       parameters:
         - name: educationAssignment-id
@@ -6591,7 +6647,6 @@ paths:
       tags:
         - education.educationUser
       summary: Get resources from education
-      description: Nullable.
       operationId: education.me.assignments.submissions_GetResources
       parameters:
         - name: educationAssignment-id
@@ -6734,7 +6789,6 @@ paths:
       tags:
         - education.educationUser
       summary: Get submittedResources from education
-      description: Read-only. Nullable.
       operationId: education.me.assignments.submissions_ListSubmittedResources
       parameters:
         - name: educationAssignment-id
@@ -6850,7 +6904,6 @@ paths:
       tags:
         - education.educationUser
       summary: Get submittedResources from education
-      description: Read-only. Nullable.
       operationId: education.me.assignments.submissions_GetSubmittedResources
       parameters:
         - name: educationAssignment-id
@@ -7017,7 +7070,6 @@ paths:
       tags:
         - education.educationUser
       summary: Get classes from education
-      description: Classes to which the user belongs. Nullable.
       operationId: education.me_ListClasses
       parameters:
         - $ref: '#/components/parameters/top'
@@ -7128,7 +7180,6 @@ paths:
       tags:
         - education.educationUser
       summary: Get classes from education
-      description: Classes to which the user belongs. Nullable.
       operationId: education.me_GetClasses
       parameters:
         - name: educationClass-id
@@ -7238,7 +7289,6 @@ paths:
       tags:
         - education.educationUser
       summary: Get rubrics from education
-      description: 'When set, the grading rubric attached to the assignment.'
       operationId: education.me_ListRubrics
       parameters:
         - $ref: '#/components/parameters/top'
@@ -7346,7 +7396,6 @@ paths:
       tags:
         - education.educationUser
       summary: Get rubrics from education
-      description: 'When set, the grading rubric attached to the assignment.'
       operationId: education.me_GetRubrics
       parameters:
         - name: educationRubric-id
@@ -7454,7 +7503,6 @@ paths:
       tags:
         - education.educationUser
       summary: Get schools from education
-      description: Schools to which the user belongs. Nullable.
       operationId: education.me_ListSchools
       parameters:
         - $ref: '#/components/parameters/top'
@@ -7564,7 +7612,6 @@ paths:
       tags:
         - education.educationUser
       summary: Get schools from education
-      description: Schools to which the user belongs. Nullable.
       operationId: education.me_GetSchools
       parameters:
         - name: educationSchool-id
@@ -7647,7 +7694,6 @@ paths:
       tags:
         - education.educationUser
       summary: Get taughtClasses from education
-      description: Classes for which the user is a teacher.
       operationId: education.me_ListTaughtClasses
       parameters:
         - $ref: '#/components/parameters/top'
@@ -7758,7 +7804,6 @@ paths:
       tags:
         - education.educationUser
       summary: Get taughtClasses from education
-      description: Classes for which the user is a teacher.
       operationId: education.me_GetTaughtClasses
       parameters:
         - name: educationClass-id
@@ -7868,7 +7913,6 @@ paths:
       tags:
         - education.educationUser
       summary: Get user from education
-      description: The directory user that corresponds to this user.
       operationId: education.me_GetUser
       parameters:
         - name: $select
@@ -8508,7 +8552,6 @@ paths:
       tags:
         - education.educationSchool
       summary: Get administrativeUnit from education
-      description: The underlying administrativeUnit for this school.
       operationId: education.schools_GetAdministrativeUnit
       parameters:
         - name: educationSchool-id
@@ -8581,7 +8624,6 @@ paths:
       tags:
         - education.educationSchool
       summary: Get classes from education
-      description: Classes taught at the school. Nullable.
       operationId: education.schools_ListClasses
       parameters:
         - name: educationSchool-id
@@ -8736,7 +8778,6 @@ paths:
       tags:
         - education.educationSchool
       summary: Get ref of classes from education
-      description: Classes taught at the school. Nullable.
       operationId: education.schools_ListGraphRefClasses
       parameters:
         - name: educationSchool-id
@@ -8836,7 +8877,6 @@ paths:
       tags:
         - education.educationSchool
       summary: Get users from education
-      description: Users in the school. Nullable.
       operationId: education.schools_ListUsers
       parameters:
         - name: educationSchool-id
@@ -9047,7 +9087,6 @@ paths:
       tags:
         - education.educationSchool
       summary: Get ref of users from education
-      description: Users in the school. Nullable.
       operationId: education.schools_ListGraphRefUsers
       parameters:
         - name: educationSchool-id
@@ -9376,6 +9415,16 @@ paths:
               operationId: education.SynchronizationProfiles.GetProfileStatus
               parameters:
                 educationSynchronizationProfile-id: $request.path.educationSynchronizationProfile-id
+            pause:
+              operationId: education.synchronizationProfiles.educationSynchronizationProfile.pause
+            reset:
+              operationId: education.synchronizationProfiles.educationSynchronizationProfile.reset
+            resume:
+              operationId: education.synchronizationProfiles.educationSynchronizationProfile.resume
+            start:
+              operationId: education.synchronizationProfiles.educationSynchronizationProfile.start
+            uploadUrl:
+              operationId: education.synchronizationProfiles.educationSynchronizationProfile.uploadUrl
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -9434,7 +9483,6 @@ paths:
       tags:
         - education.educationSynchronizationProfile
       summary: Get errors from education
-      description: All errors associated with this synchronization profile.
       operationId: education.synchronizationProfiles_ListErrors
       parameters:
         - name: educationSynchronizationProfile-id
@@ -9548,7 +9596,6 @@ paths:
       tags:
         - education.educationSynchronizationProfile
       summary: Get errors from education
-      description: All errors associated with this synchronization profile.
       operationId: education.synchronizationProfiles_GetErrors
       parameters:
         - name: educationSynchronizationProfile-id
@@ -9796,7 +9843,6 @@ paths:
       tags:
         - education.educationSynchronizationProfile
       summary: Get profileStatus from education
-      description: The synchronization status.
       operationId: education.synchronizationProfiles_GetProfileStatus
       parameters:
         - name: educationSynchronizationProfile-id
@@ -10255,7 +10301,6 @@ paths:
       tags:
         - education.educationUser
       summary: Get assignments from education
-      description: List of assignments for the user. Nullable.
       operationId: education.users_ListAssignments
       parameters:
         - name: educationUser-id
@@ -10308,6 +10353,8 @@ paths:
                 - displayName desc
                 - dueDateTime
                 - dueDateTime desc
+                - feedbackResourcesFolderUrl
+                - feedbackResourcesFolderUrl desc
                 - grading
                 - grading desc
                 - instructions
@@ -10349,6 +10396,7 @@ paths:
                 - createdDateTime
                 - displayName
                 - dueDateTime
+                - feedbackResourcesFolderUrl
                 - grading
                 - instructions
                 - lastModifiedBy
@@ -10422,7 +10470,6 @@ paths:
       tags:
         - education.educationUser
       summary: Get assignments from education
-      description: List of assignments for the user. Nullable.
       operationId: education.users_GetAssignments
       parameters:
         - name: educationUser-id
@@ -10463,6 +10510,7 @@ paths:
                 - createdDateTime
                 - displayName
                 - dueDateTime
+                - feedbackResourcesFolderUrl
                 - grading
                 - instructions
                 - lastModifiedBy
@@ -10520,6 +10568,12 @@ paths:
               parameters:
                 educationUser-id: $request.path.educationUser-id
                 educationAssignment-id: $request.path.educationAssignment-id
+            publish:
+              operationId: education.users.educationUser.assignments.educationAssignment.publish
+            setUpFeedbackResourcesFolder:
+              operationId: education.users.educationUser.assignments.educationAssignment.setUpFeedbackResourcesFolder
+            setUpResourcesFolder:
+              operationId: education.users.educationUser.assignments.educationAssignment.setUpResourcesFolder
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -10592,7 +10646,6 @@ paths:
       tags:
         - education.educationUser
       summary: Get categories from education
-      description: 'When set, enables users to easily find assignments of a given type.  Read-only. Nullable.'
       operationId: education.users.assignments_ListCategories
       parameters:
         - name: educationUser-id
@@ -10749,7 +10802,6 @@ paths:
       tags:
         - education.educationUser
       summary: Get ref of categories from education
-      description: 'When set, enables users to easily find assignments of a given type.  Read-only. Nullable.'
       operationId: education.users.assignments_ListGraphRefCategories
       parameters:
         - name: educationUser-id
@@ -10906,6 +10958,37 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/education/users/{educationUser-id}/assignments/{educationAssignment-id}/microsoft.graph.setUpFeedbackResourcesFolder':
+    post:
+      tags:
+        - education.Actions
+      summary: Invoke action setUpFeedbackResourcesFolder
+      operationId: education.users.assignments_setUpFeedbackResourcesFolder
+      parameters:
+        - name: educationUser-id
+          in: path
+          description: 'key: id of educationUser'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: educationUser
+        - name: educationAssignment-id
+          in: path
+          description: 'key: id of educationAssignment'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: educationAssignment
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.educationAssignment'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/education/users/{educationUser-id}/assignments/{educationAssignment-id}/microsoft.graph.setUpResourcesFolder':
     post:
       tags:
@@ -10942,7 +11025,6 @@ paths:
       tags:
         - education.educationUser
       summary: Get resources from education
-      description: Learning objects that are associated with this assignment.  Only teachers can modify this list. Nullable.
       operationId: education.users.assignments_ListResources
       parameters:
         - name: educationUser-id
@@ -11058,7 +11140,6 @@ paths:
       tags:
         - education.educationUser
       summary: Get resources from education
-      description: Learning objects that are associated with this assignment.  Only teachers can modify this list. Nullable.
       operationId: education.users.assignments_GetResources
       parameters:
         - name: educationUser-id
@@ -11201,7 +11282,6 @@ paths:
       tags:
         - education.educationUser
       summary: Get rubric from education
-      description: 'When set, the grading rubric attached to this assignment.'
       operationId: education.users.assignments_GetRubric
       parameters:
         - name: educationUser-id
@@ -11330,7 +11410,6 @@ paths:
       tags:
         - education.educationUser
       summary: Get ref of rubric from education
-      description: 'When set, the grading rubric attached to this assignment.'
       operationId: education.users.assignments_GetGraphRefRubric
       parameters:
         - name: educationUser-id
@@ -11426,7 +11505,6 @@ paths:
       tags:
         - education.educationUser
       summary: Get submissions from education
-      description: 'Once published, there is a submission object for each student representing their work and grade.  Read-only. Nullable.'
       operationId: education.users.assignments_ListSubmissions
       parameters:
         - name: educationUser-id
@@ -11575,7 +11653,6 @@ paths:
       tags:
         - education.educationUser
       summary: Get submissions from education
-      description: 'Once published, there is a submission object for each student representing their work and grade.  Read-only. Nullable.'
       operationId: education.users.assignments_GetSubmissions
       parameters:
         - name: educationUser-id
@@ -11666,6 +11743,16 @@ paths:
                 educationUser-id: $request.path.educationUser-id
                 educationAssignment-id: $request.path.educationAssignment-id
                 educationSubmission-id: $request.path.educationSubmission-id
+            reassign:
+              operationId: education.users.educationUser.assignments.educationAssignment.submissions.educationSubmission.reassign
+            return:
+              operationId: education.users.educationUser.assignments.educationAssignment.submissions.educationSubmission.return
+            setUpResourcesFolder:
+              operationId: education.users.educationUser.assignments.educationAssignment.submissions.educationSubmission.setUpResourcesFolder
+            submit:
+              operationId: education.users.educationUser.assignments.educationAssignment.submissions.educationSubmission.submit
+            unsubmit:
+              operationId: education.users.educationUser.assignments.educationAssignment.submissions.educationSubmission.unsubmit
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -11942,7 +12029,6 @@ paths:
       tags:
         - education.educationUser
       summary: Get outcomes from education
-      description: Read-Write. Nullable.
       operationId: education.users.assignments.submissions_ListOutcomes
       parameters:
         - name: educationUser-id
@@ -12072,7 +12158,6 @@ paths:
       tags:
         - education.educationUser
       summary: Get outcomes from education
-      description: Read-Write. Nullable.
       operationId: education.users.assignments.submissions_GetOutcomes
       parameters:
         - name: educationUser-id
@@ -12236,7 +12321,6 @@ paths:
       tags:
         - education.educationUser
       summary: Get resources from education
-      description: Nullable.
       operationId: education.users.assignments.submissions_ListResources
       parameters:
         - name: educationUser-id
@@ -12366,7 +12450,6 @@ paths:
       tags:
         - education.educationUser
       summary: Get resources from education
-      description: Nullable.
       operationId: education.users.assignments.submissions_GetResources
       parameters:
         - name: educationUser-id
@@ -12530,7 +12613,6 @@ paths:
       tags:
         - education.educationUser
       summary: Get submittedResources from education
-      description: Read-only. Nullable.
       operationId: education.users.assignments.submissions_ListSubmittedResources
       parameters:
         - name: educationUser-id
@@ -12660,7 +12742,6 @@ paths:
       tags:
         - education.educationUser
       summary: Get submittedResources from education
-      description: Read-only. Nullable.
       operationId: education.users.assignments.submissions_GetSubmittedResources
       parameters:
         - name: educationUser-id
@@ -12856,7 +12937,6 @@ paths:
       tags:
         - education.educationUser
       summary: Get classes from education
-      description: Classes to which the user belongs. Nullable.
       operationId: education.users_ListClasses
       parameters:
         - name: educationUser-id
@@ -12974,7 +13054,6 @@ paths:
       tags:
         - education.educationUser
       summary: Get classes from education
-      description: Classes to which the user belongs. Nullable.
       operationId: education.users_GetClasses
       parameters:
         - name: educationUser-id
@@ -13099,7 +13178,6 @@ paths:
       tags:
         - education.educationUser
       summary: Get rubrics from education
-      description: 'When set, the grading rubric attached to the assignment.'
       operationId: education.users_ListRubrics
       parameters:
         - name: educationUser-id
@@ -13222,7 +13300,6 @@ paths:
       tags:
         - education.educationUser
       summary: Get rubrics from education
-      description: 'When set, the grading rubric attached to the assignment.'
       operationId: education.users_GetRubrics
       parameters:
         - name: educationUser-id
@@ -13351,7 +13428,6 @@ paths:
       tags:
         - education.educationUser
       summary: Get schools from education
-      description: Schools to which the user belongs. Nullable.
       operationId: education.users_ListSchools
       parameters:
         - name: educationUser-id
@@ -13468,7 +13544,6 @@ paths:
       tags:
         - education.educationUser
       summary: Get schools from education
-      description: Schools to which the user belongs. Nullable.
       operationId: education.users_GetSchools
       parameters:
         - name: educationUser-id
@@ -13561,7 +13636,6 @@ paths:
       tags:
         - education.educationUser
       summary: Get taughtClasses from education
-      description: Classes for which the user is a teacher.
       operationId: education.users_ListTaughtClasses
       parameters:
         - name: educationUser-id
@@ -13679,7 +13753,6 @@ paths:
       tags:
         - education.educationUser
       summary: Get taughtClasses from education
-      description: Classes for which the user is a teacher.
       operationId: education.users_GetTaughtClasses
       parameters:
         - name: educationUser-id
@@ -13804,7 +13877,6 @@ paths:
       tags:
         - education.educationUser
       summary: Get user from education
-      description: The directory user that corresponds to this user.
       operationId: education.users_GetUser
       parameters:
         - name: educationUser-id
@@ -14532,6 +14604,10 @@ components:
               description: 'Date when the students assignment is due.  The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
               format: date-time
               nullable: true
+            feedbackResourcesFolderUrl:
+              type: string
+              description: Folder URL where all the feedback file resources for this assignment are stored.
+              nullable: true
             grading:
               $ref: '#/components/schemas/microsoft.graph.educationAssignmentGradeType'
             instructions:
@@ -14717,7 +14793,7 @@ components:
             lastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Moment in time when the resource was last modified.  The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2021 is 2021-01-01T00:00:00Z.'
+              description: 'Moment in time when the resource was last modified. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2021 is 2021-01-01T00:00:00Z.'
               format: date-time
               nullable: true
           additionalProperties:
@@ -14917,6 +14993,8 @@ components:
               type: string
               description: 'Specifies the group join policy and group content visibility for groups. Possible values are: Private, Public, or Hiddenmembership. Hiddenmembership can be set only for Microsoft 365 groups, when the groups are created. It can''t be updated later. Other values of visibility can be updated after group creation. If visibility value is not specified during group creation on Microsoft Graph, a security group is created as Private by default and Microsoft 365 group is Public. Groups assignable to roles are always Private. See group visibility options to learn more. Returned by default. Nullable.'
               nullable: true
+            writebackConfiguration:
+              $ref: '#/components/schemas/microsoft.graph.groupWritebackConfiguration'
             accessType:
               $ref: '#/components/schemas/microsoft.graph.groupAccessType'
             allowExternalSenders:
@@ -15540,7 +15618,7 @@ components:
               nullable: true
             showInAddressList:
               type: boolean
-              description: 'true if the Outlook global address list should contain this user, otherwise false. If not set, this will be treated as true. For users invited through the invitation manager, this property will be set to false. Supports $filter (eq, ne, not, in).'
+              description: Do not use in Microsoft Graph. Manage this property through the Microsoft 365 admin center instead. Represents whether the user should be included in the Outlook global address list. See Known issue.
               nullable: true
             signInSessionsValidFromDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -16337,6 +16415,17 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.groupWritebackConfiguration:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.writebackConfiguration'
+        - title: groupWritebackConfiguration
+          type: object
+          properties:
+            onPremisesGroupType:
+              type: string
+              nullable: true
+          additionalProperties:
+            type: object
     microsoft.graph.groupAccessType:
       title: groupAccessType
       enum:
@@ -19862,6 +19951,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.pinnedChatMessageInfo'
+              description: A collection of all the pinned messages in the chat. Nullable.
             tabs:
               type: array
               items:
@@ -20118,11 +20208,11 @@ components:
       properties:
         displayName:
           type: string
-          description: 'The identity''s display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
+          description: The display name of the identity. This property is read-only.
           nullable: true
         id:
           type: string
-          description: Unique identifier for the identity.
+          description: The identifier of the identity. This property is read-only.
           nullable: true
       additionalProperties:
         type: object
@@ -20138,6 +20228,15 @@ components:
       properties:
         description:
           $ref: '#/components/schemas/microsoft.graph.educationItemBody'
+      additionalProperties:
+        type: object
+    microsoft.graph.writebackConfiguration:
+      title: writebackConfiguration
+      type: object
+      properties:
+        isEnabled:
+          type: boolean
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.MembershipRuleProcessingStatusDetails:
@@ -26215,7 +26314,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.checklistItem'
-              description: A collection of checklistItems linked to a task.
+              description: A collection of smaller subtasks linked to the more complex parent task.
             extensions:
               type: array
               items:
@@ -31275,6 +31374,7 @@ components:
               items:
                 type: string
                 nullable: true
+              description: The categories associated with the task. Each category corresponds to the displayName property of an outlookCategory that the user has defined.
             completedDateTime:
               $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
             createdDateTime:
@@ -31284,6 +31384,9 @@ components:
               format: date-time
             dueDateTime:
               $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
+            hasAttachments:
+              type: boolean
+              nullable: true
             importance:
               $ref: '#/components/schemas/microsoft.graph.importance'
             isReminderOn:
@@ -31304,10 +31407,19 @@ components:
               type: string
               description: A brief description of the task.
               nullable: true
+            attachments:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.attachment_v2'
+            attachmentSessions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.attachmentSession'
             checklistItems:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.checklistItem'
+              description: A collection of smaller subtasks linked to the more complex parent task.
             extensions:
               type: array
               items:
@@ -32042,11 +32154,11 @@ components:
       properties:
         key:
           type: string
-          description: Key.
+          description: 'Contains the name of the field that a value is associated with. When a sign in or domain hint is included in the sign-in request, corresponding fields are included as key-value pairs. Possible keys: Login hint present, Domain hint present.'
           nullable: true
         value:
           type: string
-          description: Value.
+          description: Contains the corresponding value for the specified key. The value is true if a sign in hint was included in the sign-in request; otherwise false. The value is true if a domain hint was included in the sign-in request; otherwise false.
           nullable: true
       additionalProperties:
         type: object
@@ -33866,6 +33978,52 @@ components:
               type: string
               description: 'Write only. Content type, such as image/png, image/jpg.'
               nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.attachment_v2:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: attachment_v2
+          type: object
+          properties:
+            contentType:
+              type: string
+              nullable: true
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            name:
+              type: string
+              nullable: true
+            size:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              format: int32
+          additionalProperties:
+            type: object
+    microsoft.graph.attachmentSession:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: attachmentSession
+          type: object
+          properties:
+            content:
+              type: string
+              format: base64url
+              nullable: true
+            expirationDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            nextExpectedRange:
+              type: array
+              items:
+                type: string
+                nullable: true
           additionalProperties:
             type: object
     microsoft.graph.linkedResource:

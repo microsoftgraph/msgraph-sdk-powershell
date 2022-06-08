@@ -95,7 +95,6 @@ paths:
       tags:
         - print.printConnector
       summary: Get connectors from print
-      description: The list of available print connectors.
       operationId: print_ListConnectors
       parameters:
         - $ref: '#/components/parameters/top'
@@ -194,7 +193,6 @@ paths:
       tags:
         - print.printConnector
       summary: Get connectors from print
-      description: The list of available print connectors.
       operationId: print_GetConnectors
       parameters:
         - name: printConnector-id
@@ -299,7 +297,6 @@ paths:
       tags:
         - print.printOperation
       summary: Get operations from print
-      description: The list of print long running operations.
       operationId: print_ListOperations
       parameters:
         - $ref: '#/components/parameters/top'
@@ -386,7 +383,6 @@ paths:
       tags:
         - print.printOperation
       summary: Get operations from print
-      description: The list of print long running operations.
       operationId: print_GetOperations
       parameters:
         - name: printOperation-id
@@ -487,7 +483,6 @@ paths:
       tags:
         - print.printer
       summary: Get printers from print
-      description: The list of printers registered in the tenant.
       operationId: print_ListPrinters
       parameters:
         - $ref: '#/components/parameters/top'
@@ -612,7 +607,6 @@ paths:
       tags:
         - print.printer
       summary: Get printers from print
-      description: The list of printers registered in the tenant.
       operationId: print_GetPrinters
       parameters:
         - name: printer-id
@@ -690,6 +684,8 @@ paths:
               operationId: print.Printers.ListTaskTriggers
               parameters:
                 printer-id: $request.path.printer-id
+            restoreFactoryDefaults:
+              operationId: print.printers.printer.restoreFactoryDefaults
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -748,7 +744,6 @@ paths:
       tags:
         - print.printer
       summary: Get connectors from print
-      description: The connectors that are associated with the printer.
       operationId: print.printers_ListConnectors
       parameters:
         - name: printer-id
@@ -832,7 +827,6 @@ paths:
       tags:
         - print.printer
       summary: Get connectors from print
-      description: The connectors that are associated with the printer.
       operationId: print.printers_GetConnectors
       parameters:
         - name: printer-id
@@ -914,7 +908,6 @@ paths:
       tags:
         - print.printer
       summary: Get shares from print
-      description: 'The list of printerShares that are associated with the printer. Currently, only one printerShare can be associated with the printer. Read-only. Nullable.'
       operationId: print.printers_ListShares
       parameters:
         - name: printer-id
@@ -1018,7 +1011,6 @@ paths:
       tags:
         - print.printer
       summary: Get shares from print
-      description: 'The list of printerShares that are associated with the printer. Currently, only one printerShare can be associated with the printer. Read-only. Nullable.'
       operationId: print.printers_GetShares
       parameters:
         - name: printer-id
@@ -1113,7 +1105,6 @@ paths:
       tags:
         - print.printer
       summary: Get taskTriggers from print
-      description: A list of task triggers that are associated with the printer.
       operationId: print.printers_ListTaskTriggers
       parameters:
         - name: printer-id
@@ -1214,7 +1205,6 @@ paths:
       tags:
         - print.printer
       summary: Get taskTriggers from print
-      description: A list of task triggers that are associated with the printer.
       operationId: print.printers_GetTaskTriggers
       parameters:
         - name: printer-id
@@ -1343,7 +1333,6 @@ paths:
       tags:
         - print.printer
       summary: Get definition from print
-      description: An abstract definition that will be used to create a printTask when triggered by a print event. Read-only.
       operationId: print.printers.taskTriggers_GetDefinition
       parameters:
         - name: printer-id
@@ -1449,7 +1438,6 @@ paths:
       tags:
         - print.printService
       summary: Get services from print
-      description: The list of available Universal Print service endpoints.
       operationId: print_ListServices
       parameters:
         - $ref: '#/components/parameters/top'
@@ -1532,7 +1520,6 @@ paths:
       tags:
         - print.printService
       summary: Get services from print
-      description: The list of available Universal Print service endpoints.
       operationId: print_GetServices
       parameters:
         - name: printService-id
@@ -1638,7 +1625,6 @@ paths:
       tags:
         - print.printService
       summary: Get endpoints from print
-      description: Endpoints that can be used to access the service. Read-only. Nullable.
       operationId: print.services_ListEndpoints
       parameters:
         - name: printService-id
@@ -1740,7 +1726,6 @@ paths:
       tags:
         - print.printService
       summary: Get endpoints from print
-      description: Endpoints that can be used to access the service. Read-only. Nullable.
       operationId: print.services_GetEndpoints
       parameters:
         - name: printService-id
@@ -1862,7 +1847,6 @@ paths:
       tags:
         - print.printerShare
       summary: Get shares from print
-      description: The list of printer shares registered in the tenant.
       operationId: print_ListShares
       parameters:
         - $ref: '#/components/parameters/top'
@@ -1981,7 +1965,6 @@ paths:
       tags:
         - print.printerShare
       summary: Get shares from print
-      description: The list of printer shares registered in the tenant.
       operationId: print_GetShares
       parameters:
         - name: printerShare-id
@@ -2115,7 +2098,6 @@ paths:
       tags:
         - print.printerShare
       summary: Get allowedGroups from print
-      description: The groups whose users have access to print using the printer.
       operationId: print.shares_ListAllowedGroups
       parameters:
         - name: printerShare-id
@@ -2286,8 +2268,6 @@ paths:
                 - calendarView
                 - conversations
                 - events
-                - photo
-                - photos
                 - rejectedSenders
                 - threads
                 - drive
@@ -2297,6 +2277,8 @@ paths:
                 - groupLifecyclePolicies
                 - planner
                 - onenote
+                - photo
+                - photos
                 - team
               type: string
         - name: $expand
@@ -2325,8 +2307,6 @@ paths:
                 - calendarView
                 - conversations
                 - events
-                - photo
-                - photos
                 - rejectedSenders
                 - threads
                 - drive
@@ -2336,6 +2316,8 @@ paths:
                 - groupLifecyclePolicies
                 - planner
                 - onenote
+                - photo
+                - photos
                 - team
               type: string
       responses:
@@ -2389,7 +2371,6 @@ paths:
       tags:
         - print.printerShare
       summary: Get ref of allowedGroups from print
-      description: The groups whose users have access to print using the printer.
       operationId: print.shares_ListGraphRefAllowedGroups
       parameters:
         - name: printerShare-id
@@ -2543,7 +2524,6 @@ paths:
       tags:
         - print.printerShare
       summary: Get allowedUsers from print
-      description: The users who have access to print using the printer.
       operationId: print.shares_ListAllowedUsers
       parameters:
         - name: printerShare-id
@@ -2951,7 +2931,6 @@ paths:
       tags:
         - print.printerShare
       summary: Get ref of allowedUsers from print
-      description: The users who have access to print using the printer.
       operationId: print.shares_ListGraphRefAllowedUsers
       parameters:
         - name: printerShare-id
@@ -3169,7 +3148,6 @@ paths:
       tags:
         - print.printerShare
       summary: Get printer from print
-      description: The printer that this printer share is related to.
       operationId: print.shares_GetPrinter
       parameters:
         - name: printerShare-id
@@ -3255,7 +3233,6 @@ paths:
       tags:
         - print.printTaskDefinition
       summary: Get taskDefinitions from print
-      description: List of abstract definition for a task that can be triggered when various events occur within Universal Print.
       operationId: print_ListTaskDefinitions
       parameters:
         - $ref: '#/components/parameters/top'
@@ -3344,7 +3321,6 @@ paths:
       tags:
         - print.printTaskDefinition
       summary: Get taskDefinitions from print
-      description: List of abstract definition for a task that can be triggered when various events occur within Universal Print.
       operationId: print_GetTaskDefinitions
       parameters:
         - name: printTaskDefinition-id
@@ -3452,7 +3428,6 @@ paths:
       tags:
         - print.printTaskDefinition
       summary: Get tasks from print
-      description: A list of tasks that have been created based on this definition. The list includes currently running tasks and recently completed tasks. Read-only.
       operationId: print.taskDefinitions_ListTasks
       parameters:
         - name: printTaskDefinition-id
@@ -3558,7 +3533,6 @@ paths:
       tags:
         - print.printTaskDefinition
       summary: Get tasks from print
-      description: A list of tasks that have been created based on this definition. The list includes currently running tasks and recently completed tasks. Read-only.
       operationId: print.taskDefinitions_GetTasks
       parameters:
         - name: printTaskDefinition-id
@@ -3695,7 +3669,6 @@ paths:
       tags:
         - print.printTaskDefinition
       summary: Get definition from print
-      description: The printTaskDefinition that was used to create this task. Read-only.
       operationId: print.taskDefinitions.tasks_GetDefinition
       parameters:
         - name: printTaskDefinition-id
@@ -3761,7 +3734,6 @@ paths:
       tags:
         - print.printTaskDefinition
       summary: Get trigger from print
-      description: The printTaskTrigger that triggered this task's execution. Read-only.
       operationId: print.taskDefinitions.tasks_GetTrigger
       parameters:
         - name: printTaskDefinition-id
@@ -4445,13 +4417,6 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.event'
               description: The group's events.
-            photo:
-              $ref: '#/components/schemas/microsoft.graph.profilePhoto'
-            photos:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.profilePhoto'
-              description: The profile photos owned by the group. Read-only. Nullable.
             rejectedSenders:
               type: array
               items:
@@ -4488,6 +4453,13 @@ components:
               $ref: '#/components/schemas/microsoft.graph.plannerGroup'
             onenote:
               $ref: '#/components/schemas/microsoft.graph.onenote'
+            photo:
+              $ref: '#/components/schemas/microsoft.graph.profilePhoto'
+            photos:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.profilePhoto'
+              description: The profile photos owned by the group. Read-only. Nullable.
             team:
               $ref: '#/components/schemas/microsoft.graph.team'
           additionalProperties:
@@ -4715,7 +4687,7 @@ components:
               description: 'For example: [''SMTP: bob@contoso.com'', ''smtp: bob@sales.contoso.com'']. Changes to the mail property will also update this collection to include the value as an SMTP address. For more information, see mail and proxyAddresses properties. The proxy address prefixed with SMTP (capitalized) is the primary proxy address while those prefixed with smtp are the secondary proxy addresses. For Azure AD B2C accounts, this property has a limit of ten unique addresses. Read-only in Microsoft Graph; you can update this property only through the Microsoft 365 admin center. Not nullable. Supports $filter (eq, not, ge, le, startsWith, endsWith, and counting empty collections).'
             showInAddressList:
               type: boolean
-              description: 'true if the Outlook global address list should contain this user, otherwise false. If not set, this will be treated as true. For users invited through the invitation manager, this property will be set to false. Supports $filter (eq, ne, not, in).'
+              description: Do not use in Microsoft Graph. Manage this property through the Microsoft 365 admin center instead. Represents whether the user should be included in the Outlook global address list. See Known issue.
               nullable: true
             signInSessionsValidFromDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -5903,28 +5875,6 @@ components:
               description: A collection of all the conversation threads in the conversation. A navigation property. Read-only. Nullable.
           additionalProperties:
             type: object
-    microsoft.graph.profilePhoto:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: profilePhoto
-          type: object
-          properties:
-            height:
-              maximum: 2147483647
-              minimum: -2147483648
-              type: integer
-              description: The height of the photo. Read-only.
-              format: int32
-              nullable: true
-            width:
-              maximum: 2147483647
-              minimum: -2147483648
-              type: integer
-              description: The width of the photo. Read-only.
-              format: int32
-              nullable: true
-          additionalProperties:
-            type: object
     microsoft.graph.conversationThread:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -6171,6 +6121,28 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.onenoteSection'
               description: The sections in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
+          additionalProperties:
+            type: object
+    microsoft.graph.profilePhoto:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: profilePhoto
+          type: object
+          properties:
+            height:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              description: The height of the photo. Read-only.
+              format: int32
+              nullable: true
+            width:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              description: The width of the photo. Read-only.
+              format: int32
+              nullable: true
           additionalProperties:
             type: object
     microsoft.graph.team:
@@ -7656,6 +7628,11 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.microsoftAuthenticatorAuthenticationMethod'
               description: The details of the Microsoft Authenticator app registered to a user for authentication.
+            temporaryAccessPassMethods:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.temporaryAccessPassAuthenticationMethod'
+              description: Represents a Temporary Access Pass registered to a user for authentication through time-limited passcodes.
             windowsHelloForBusinessMethods:
               type: array
               items:
@@ -10506,11 +10483,11 @@ components:
       properties:
         displayName:
           type: string
-          description: 'The identity''s display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
+          description: The display name of the identity. This property is read-only.
           nullable: true
         id:
           type: string
-          description: Unique identifier for the identity.
+          description: The identifier of the identity. This property is read-only.
           nullable: true
       additionalProperties:
         type: object
@@ -11913,6 +11890,49 @@ components:
               nullable: true
             device:
               $ref: '#/components/schemas/microsoft.graph.device'
+          additionalProperties:
+            type: object
+    microsoft.graph.temporaryAccessPassAuthenticationMethod:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
+        - title: temporaryAccessPassAuthenticationMethod
+          type: object
+          properties:
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The date and time when the temporaryAccessPass was created.
+              format: date-time
+              nullable: true
+            isUsable:
+              type: boolean
+              description: The state of the authentication method that indicates whether it's currently usable by the user.
+              nullable: true
+            isUsableOnce:
+              type: boolean
+              description: 'Determines whether the pass is limited to a one time use. If true, the pass can be used once; if false, the pass can be used multiple times within the temporaryAccessPass lifetime.'
+              nullable: true
+            lifetimeInMinutes:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              description: 'The lifetime of the temporaryAccessPass in minutes starting at startDateTime. Minimum 10, Maximum 43200 (equivalent to 30 days).'
+              format: int32
+              nullable: true
+            methodUsabilityReason:
+              type: string
+              description: 'Details about usability state (isUsable). Reasons can include: enabledByPolicy, disabledByPolicy, expired, notYetValid, oneTimeUsed.'
+              nullable: true
+            startDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The date and time when the temporaryAccessPass becomes available to use.
+              format: date-time
+              nullable: true
+            temporaryAccessPass:
+              type: string
+              description: The temporaryAccessPass used to authenticate. Returned only on creation of a new temporaryAccessPass; returned as NULL with GET.
+              nullable: true
           additionalProperties:
             type: object
     microsoft.graph.windowsHelloForBusinessAuthenticationMethod:
@@ -15227,6 +15247,7 @@ components:
               items:
                 type: string
                 nullable: true
+              description: The categories associated with the task. Each category corresponds to the displayName property of an outlookCategory that the user has defined.
             completedDateTime:
               $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
             createdDateTime:
@@ -15260,6 +15281,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.checklistItem'
+              description: A collection of smaller subtasks linked to the more complex parent task.
             extensions:
               type: array
               items:
@@ -15783,11 +15805,11 @@ components:
       properties:
         key:
           type: string
-          description: Key.
+          description: 'Contains the name of the field that a value is associated with. When a sign in or domain hint is included in the sign-in request, corresponding fields are included as key-value pairs. Possible keys: Login hint present, Domain hint present.'
           nullable: true
         value:
           type: string
-          description: Value.
+          description: Contains the corresponding value for the specified key. The value is true if a sign in hint was included in the sign-in request; otherwise false. The value is true if a domain hint was included in the sign-in request; otherwise false.
           nullable: true
       additionalProperties:
         type: object

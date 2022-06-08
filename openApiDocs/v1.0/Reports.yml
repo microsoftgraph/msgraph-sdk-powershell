@@ -11,7 +11,6 @@ paths:
       tags:
         - auditLogs.auditLogRoot
       summary: Get auditLogs
-      description: auditLogRoot resource type
       operationId: auditLogs.auditLogRoot_GetAuditLogRoot
       parameters:
         - name: $select
@@ -88,7 +87,6 @@ paths:
       tags:
         - auditLogs.directoryAudit
       summary: Get directoryAudits from auditLogs
-      description: Read-only. Nullable.
       operationId: auditLogs_ListDirectoryAudits
       parameters:
         - $ref: '#/components/parameters/top'
@@ -202,7 +200,6 @@ paths:
       tags:
         - auditLogs.directoryAudit
       summary: Get directoryAudits from auditLogs
-      description: Read-only. Nullable.
       operationId: auditLogs_GetDirectoryAudits
       parameters:
         - name: directoryAudit-id
@@ -828,7 +825,6 @@ paths:
       tags:
         - auditLogs.signIn
       summary: Get signIns from auditLogs
-      description: Read-only. Nullable.
       operationId: auditLogs_ListSignIns
       parameters:
         - $ref: '#/components/parameters/top'
@@ -978,7 +974,6 @@ paths:
       tags:
         - auditLogs.signIn
       summary: Get signIns from auditLogs
-      description: Read-only. Nullable.
       operationId: auditLogs_GetSignIns
       parameters:
         - name: signIn-id
@@ -1100,7 +1095,6 @@ paths:
       tags:
         - deviceManagement.deviceManagementReports
       summary: Get reports from deviceManagement
-      description: Reports singleton
       operationId: deviceManagement_GetReports
       parameters:
         - name: $select
@@ -1139,6 +1133,38 @@ paths:
           links:
             exportJobs:
               operationId: deviceManagement.Reports.ListExportJobs
+            getCachedReport:
+              operationId: deviceManagement.reports.getCachedReport
+            getCompliancePolicyNonComplianceReport:
+              operationId: deviceManagement.reports.getCompliancePolicyNonComplianceReport
+            getCompliancePolicyNonComplianceSummaryReport:
+              operationId: deviceManagement.reports.getCompliancePolicyNonComplianceSummaryReport
+            getComplianceSettingNonComplianceReport:
+              operationId: deviceManagement.reports.getComplianceSettingNonComplianceReport
+            getConfigurationPolicyNonComplianceReport:
+              operationId: deviceManagement.reports.getConfigurationPolicyNonComplianceReport
+            getConfigurationPolicyNonComplianceSummaryReport:
+              operationId: deviceManagement.reports.getConfigurationPolicyNonComplianceSummaryReport
+            getConfigurationSettingNonComplianceReport:
+              operationId: deviceManagement.reports.getConfigurationSettingNonComplianceReport
+            getDeviceManagementIntentPerSettingContributingProfiles:
+              operationId: deviceManagement.reports.getDeviceManagementIntentPerSettingContributingProfiles
+            getDeviceManagementIntentSettingsReport:
+              operationId: deviceManagement.reports.getDeviceManagementIntentSettingsReport
+            getDeviceNonComplianceReport:
+              operationId: deviceManagement.reports.getDeviceNonComplianceReport
+            getHistoricalReport:
+              operationId: deviceManagement.reports.getHistoricalReport
+            getPolicyNonComplianceMetadata:
+              operationId: deviceManagement.reports.getPolicyNonComplianceMetadata
+            getPolicyNonComplianceReport:
+              operationId: deviceManagement.reports.getPolicyNonComplianceReport
+            getPolicyNonComplianceSummaryReport:
+              operationId: deviceManagement.reports.getPolicyNonComplianceSummaryReport
+            getReportFilters:
+              operationId: deviceManagement.reports.getReportFilters
+            getSettingNonComplianceReport:
+              operationId: deviceManagement.reports.getSettingNonComplianceReport
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1182,7 +1208,6 @@ paths:
       tags:
         - deviceManagement.deviceManagementReports
       summary: Get exportJobs from deviceManagement
-      description: Entity representing a job to export a report
       operationId: deviceManagement.reports_ListExportJobs
       parameters:
         - $ref: '#/components/parameters/top'
@@ -1293,7 +1318,6 @@ paths:
       tags:
         - deviceManagement.deviceManagementReports
       summary: Get exportJobs from deviceManagement
-      description: Entity representing a job to export a report
       operationId: deviceManagement.reports_GetExportJobs
       parameters:
         - name: deviceManagementExportJob-id
@@ -1452,6 +1476,156 @@ paths:
               operationId: reports.ListMonthlyPrintUsageByPrinter
             monthlyPrintUsageByUser:
               operationId: reports.ListMonthlyPrintUsageByUser
+            deviceConfigurationDeviceActivity:
+              operationId: reports.deviceConfigurationDeviceActivity
+            deviceConfigurationUserActivity:
+              operationId: reports.deviceConfigurationUserActivity
+            getEmailActivityCounts:
+              operationId: reports.getEmailActivityCounts
+            getEmailActivityUserCounts:
+              operationId: reports.getEmailActivityUserCounts
+            getEmailActivityUserDetail:
+              operationId: reports.getEmailActivityUserDetail
+            getEmailAppUsageAppsUserCounts:
+              operationId: reports.getEmailAppUsageAppsUserCounts
+            getEmailAppUsageUserCounts:
+              operationId: reports.getEmailAppUsageUserCounts
+            getEmailAppUsageUserDetail:
+              operationId: reports.getEmailAppUsageUserDetail
+            getEmailAppUsageVersionsUserCounts:
+              operationId: reports.getEmailAppUsageVersionsUserCounts
+            getGroupArchivedPrintJobs:
+              operationId: reports.getGroupArchivedPrintJobs
+            getMailboxUsageDetail:
+              operationId: reports.getMailboxUsageDetail
+            getMailboxUsageMailboxCounts:
+              operationId: reports.getMailboxUsageMailboxCounts
+            getMailboxUsageQuotaStatusMailboxCounts:
+              operationId: reports.getMailboxUsageQuotaStatusMailboxCounts
+            getMailboxUsageStorage:
+              operationId: reports.getMailboxUsageStorage
+            getOffice365ActivationCounts:
+              operationId: reports.getOffice365ActivationCounts
+            getOffice365ActivationsUserCounts:
+              operationId: reports.getOffice365ActivationsUserCounts
+            getOffice365ActivationsUserDetail:
+              operationId: reports.getOffice365ActivationsUserDetail
+            getOffice365ActiveUserCounts:
+              operationId: reports.getOffice365ActiveUserCounts
+            getOffice365ActiveUserDetail:
+              operationId: reports.getOffice365ActiveUserDetail
+            getOffice365GroupsActivityCounts:
+              operationId: reports.getOffice365GroupsActivityCounts
+            getOffice365GroupsActivityDetail:
+              operationId: reports.getOffice365GroupsActivityDetail
+            getOffice365GroupsActivityFileCounts:
+              operationId: reports.getOffice365GroupsActivityFileCounts
+            getOffice365GroupsActivityGroupCounts:
+              operationId: reports.getOffice365GroupsActivityGroupCounts
+            getOffice365GroupsActivityStorage:
+              operationId: reports.getOffice365GroupsActivityStorage
+            getOffice365ServicesUserCounts:
+              operationId: reports.getOffice365ServicesUserCounts
+            getOneDriveActivityFileCounts:
+              operationId: reports.getOneDriveActivityFileCounts
+            getOneDriveActivityUserCounts:
+              operationId: reports.getOneDriveActivityUserCounts
+            getOneDriveActivityUserDetail:
+              operationId: reports.getOneDriveActivityUserDetail
+            getOneDriveUsageAccountCounts:
+              operationId: reports.getOneDriveUsageAccountCounts
+            getOneDriveUsageAccountDetail:
+              operationId: reports.getOneDriveUsageAccountDetail
+            getOneDriveUsageFileCounts:
+              operationId: reports.getOneDriveUsageFileCounts
+            getOneDriveUsageStorage:
+              operationId: reports.getOneDriveUsageStorage
+            getPrinterArchivedPrintJobs:
+              operationId: reports.getPrinterArchivedPrintJobs
+            getSharePointActivityFileCounts:
+              operationId: reports.getSharePointActivityFileCounts
+            getSharePointActivityPages:
+              operationId: reports.getSharePointActivityPages
+            getSharePointActivityUserCounts:
+              operationId: reports.getSharePointActivityUserCounts
+            getSharePointActivityUserDetail:
+              operationId: reports.getSharePointActivityUserDetail
+            getSharePointSiteUsageDetail:
+              operationId: reports.getSharePointSiteUsageDetail
+            getSharePointSiteUsageFileCounts:
+              operationId: reports.getSharePointSiteUsageFileCounts
+            getSharePointSiteUsagePages:
+              operationId: reports.getSharePointSiteUsagePages
+            getSharePointSiteUsageSiteCounts:
+              operationId: reports.getSharePointSiteUsageSiteCounts
+            getSharePointSiteUsageStorage:
+              operationId: reports.getSharePointSiteUsageStorage
+            getSkypeForBusinessActivityCounts:
+              operationId: reports.getSkypeForBusinessActivityCounts
+            getSkypeForBusinessActivityUserCounts:
+              operationId: reports.getSkypeForBusinessActivityUserCounts
+            getSkypeForBusinessActivityUserDetail:
+              operationId: reports.getSkypeForBusinessActivityUserDetail
+            getSkypeForBusinessDeviceUsageDistributionUserCounts:
+              operationId: reports.getSkypeForBusinessDeviceUsageDistributionUserCounts
+            getSkypeForBusinessDeviceUsageUserCounts:
+              operationId: reports.getSkypeForBusinessDeviceUsageUserCounts
+            getSkypeForBusinessDeviceUsageUserDetail:
+              operationId: reports.getSkypeForBusinessDeviceUsageUserDetail
+            getSkypeForBusinessOrganizerActivityCounts:
+              operationId: reports.getSkypeForBusinessOrganizerActivityCounts
+            getSkypeForBusinessOrganizerActivityMinuteCounts:
+              operationId: reports.getSkypeForBusinessOrganizerActivityMinuteCounts
+            getSkypeForBusinessOrganizerActivityUserCounts:
+              operationId: reports.getSkypeForBusinessOrganizerActivityUserCounts
+            getSkypeForBusinessParticipantActivityCounts:
+              operationId: reports.getSkypeForBusinessParticipantActivityCounts
+            getSkypeForBusinessParticipantActivityMinuteCounts:
+              operationId: reports.getSkypeForBusinessParticipantActivityMinuteCounts
+            getSkypeForBusinessParticipantActivityUserCounts:
+              operationId: reports.getSkypeForBusinessParticipantActivityUserCounts
+            getSkypeForBusinessPeerToPeerActivityCounts:
+              operationId: reports.getSkypeForBusinessPeerToPeerActivityCounts
+            getSkypeForBusinessPeerToPeerActivityMinuteCounts:
+              operationId: reports.getSkypeForBusinessPeerToPeerActivityMinuteCounts
+            getSkypeForBusinessPeerToPeerActivityUserCounts:
+              operationId: reports.getSkypeForBusinessPeerToPeerActivityUserCounts
+            getTeamsDeviceUsageDistributionUserCounts:
+              operationId: reports.getTeamsDeviceUsageDistributionUserCounts
+            getTeamsDeviceUsageUserCounts:
+              operationId: reports.getTeamsDeviceUsageUserCounts
+            getTeamsDeviceUsageUserDetail:
+              operationId: reports.getTeamsDeviceUsageUserDetail
+            getTeamsUserActivityCounts:
+              operationId: reports.getTeamsUserActivityCounts
+            getTeamsUserActivityUserCounts:
+              operationId: reports.getTeamsUserActivityUserCounts
+            getTeamsUserActivityUserDetail:
+              operationId: reports.getTeamsUserActivityUserDetail
+            getUserArchivedPrintJobs:
+              operationId: reports.getUserArchivedPrintJobs
+            getYammerActivityCounts:
+              operationId: reports.getYammerActivityCounts
+            getYammerActivityUserCounts:
+              operationId: reports.getYammerActivityUserCounts
+            getYammerActivityUserDetail:
+              operationId: reports.getYammerActivityUserDetail
+            getYammerDeviceUsageDistributionUserCounts:
+              operationId: reports.getYammerDeviceUsageDistributionUserCounts
+            getYammerDeviceUsageUserCounts:
+              operationId: reports.getYammerDeviceUsageUserCounts
+            getYammerDeviceUsageUserDetail:
+              operationId: reports.getYammerDeviceUsageUserDetail
+            getYammerGroupsActivityCounts:
+              operationId: reports.getYammerGroupsActivityCounts
+            getYammerGroupsActivityDetail:
+              operationId: reports.getYammerGroupsActivityDetail
+            getYammerGroupsActivityGroupCounts:
+              operationId: reports.getYammerGroupsActivityGroupCounts
+            managedDeviceEnrollmentFailureDetails:
+              operationId: reports.managedDeviceEnrollmentFailureDetails
+            managedDeviceEnrollmentTopFailures:
+              operationId: reports.managedDeviceEnrollmentTopFailures
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1874,7 +2048,6 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function deviceConfigurationDeviceActivity
-      description: Metadata for the device configuration device activity report
       operationId: reports_deviceConfigurationDeviceActivity
       responses:
         '200':
@@ -1891,7 +2064,6 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function deviceConfigurationUserActivity
-      description: Metadata for the device configuration user activity report
       operationId: reports_deviceConfigurationUserActivity
       responses:
         '200':
@@ -1920,7 +2092,7 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
                 type: object
                 properties:
@@ -1949,7 +2121,7 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
                 type: object
                 properties:
@@ -1980,7 +2152,7 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
                 type: object
                 properties:
@@ -2009,7 +2181,7 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
                 type: object
                 properties:
@@ -2038,7 +2210,7 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
                 type: object
                 properties:
@@ -2067,7 +2239,7 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
                 type: object
                 properties:
@@ -2098,7 +2270,7 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
                 type: object
                 properties:
@@ -2127,7 +2299,7 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
                 type: object
                 properties:
@@ -2156,7 +2328,7 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
                 type: object
                 properties:
@@ -2234,7 +2406,7 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
                 type: object
                 properties:
@@ -2263,7 +2435,7 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
                 type: object
                 properties:
@@ -2292,7 +2464,7 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
                 type: object
                 properties:
@@ -2321,7 +2493,7 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
                 type: object
                 properties:
@@ -3544,7 +3716,7 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
                 type: object
                 properties:
@@ -3573,7 +3745,7 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
                 type: object
                 properties:
@@ -3604,7 +3776,7 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
                 type: object
                 properties:
@@ -3633,7 +3805,7 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
                 type: object
                 properties:
@@ -3662,7 +3834,7 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
                 type: object
                 properties:
@@ -3691,7 +3863,7 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
                 type: object
                 properties:
@@ -3722,7 +3894,7 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
                 type: object
                 properties:
@@ -3751,7 +3923,7 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
                 type: object
                 properties:
@@ -5013,11 +5185,11 @@ components:
       properties:
         key:
           type: string
-          description: Key.
+          description: 'Contains the name of the field that a value is associated with. When a sign in or domain hint is included in the sign-in request, corresponding fields are included as key-value pairs. Possible keys: Login hint present, Domain hint present.'
           nullable: true
         value:
           type: string
-          description: Value.
+          description: Contains the corresponding value for the specified key. The value is true if a sign in hint was included in the sign-in request; otherwise false. The value is true if a domain hint was included in the sign-in request; otherwise false.
           nullable: true
       additionalProperties:
         type: object
@@ -5576,11 +5748,11 @@ components:
       properties:
         displayName:
           type: string
-          description: 'The identity''s display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
+          description: The display name of the identity. This property is read-only.
           nullable: true
         id:
           type: string
-          description: Unique identifier for the identity.
+          description: The identifier of the identity. This property is read-only.
           nullable: true
       additionalProperties:
         type: object

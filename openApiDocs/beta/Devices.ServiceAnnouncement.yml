@@ -11,7 +11,6 @@ paths:
       tags:
         - admin.serviceAnnouncement
       summary: Get serviceAnnouncement from admin
-      description: A container for service communications resources. Read-only.
       operationId: admin_GetServiceAnnouncement
       parameters:
         - name: $select
@@ -101,7 +100,6 @@ paths:
       tags:
         - admin.serviceAnnouncement
       summary: Get healthOverviews from admin
-      description: 'A collection of service health information for tenant. This property is a contained navigation property, it is nullable and readonly.'
       operationId: admin.serviceAnnouncement_ListHealthOverviews
       parameters:
         - $ref: '#/components/parameters/top'
@@ -190,7 +188,6 @@ paths:
       tags:
         - admin.serviceAnnouncement
       summary: Get healthOverviews from admin
-      description: 'A collection of service health information for tenant. This property is a contained navigation property, it is nullable and readonly.'
       operationId: admin.serviceAnnouncement_GetHealthOverviews
       parameters:
         - name: serviceHealth-id
@@ -298,7 +295,6 @@ paths:
       tags:
         - admin.serviceAnnouncement
       summary: Get issues from admin
-      description: 'A collection of issues that happened on the service, with detailed information for each issue.'
       operationId: admin.serviceAnnouncement.healthOverviews_ListIssues
       parameters:
         - name: serviceHealth-id
@@ -436,7 +432,6 @@ paths:
       tags:
         - admin.serviceAnnouncement
       summary: Get issues from admin
-      description: 'A collection of issues that happened on the service, with detailed information for each issue.'
       operationId: admin.serviceAnnouncement.healthOverviews_GetIssues
       parameters:
         - name: serviceHealth-id
@@ -498,6 +493,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.serviceHealthIssue'
+          links:
+            incidentReport:
+              operationId: admin.serviceAnnouncement.healthOverviews.serviceHealth.issues.serviceHealthIssue.incidentReport
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -590,7 +588,7 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
                 type: object
                 properties:
@@ -608,7 +606,6 @@ paths:
       tags:
         - admin.serviceAnnouncement
       summary: Get issues from admin
-      description: 'A collection of service issues for tenant. This property is a contained navigation property, it is nullable and readonly.'
       operationId: admin.serviceAnnouncement_ListIssues
       parameters:
         - $ref: '#/components/parameters/top'
@@ -731,7 +728,6 @@ paths:
       tags:
         - admin.serviceAnnouncement
       summary: Get issues from admin
-      description: 'A collection of service issues for tenant. This property is a contained navigation property, it is nullable and readonly.'
       operationId: admin.serviceAnnouncement_GetIssues
       parameters:
         - name: serviceHealthIssue-id
@@ -786,6 +782,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.serviceHealthIssue'
+          links:
+            incidentReport:
+              operationId: admin.serviceAnnouncement.issues.serviceHealthIssue.incidentReport
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -857,7 +856,7 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
                 type: object
                 properties:
@@ -875,7 +874,6 @@ paths:
       tags:
         - admin.serviceAnnouncement
       summary: Get messages from admin
-      description: 'A collection of service messages for tenant. This property is a contained navigation property, it is nullable and readonly.'
       operationId: admin.serviceAnnouncement_ListMessages
       parameters:
         - $ref: '#/components/parameters/top'
@@ -1003,7 +1001,6 @@ paths:
       tags:
         - admin.serviceAnnouncement
       summary: Get messages from admin
-      description: 'A collection of service messages for tenant. This property is a contained navigation property, it is nullable and readonly.'
       operationId: admin.serviceAnnouncement_GetMessages
       parameters:
         - name: serviceUpdateMessage-id
@@ -1124,7 +1121,6 @@ paths:
       tags:
         - admin.serviceAnnouncement
       summary: Get attachments from admin
-      description: A collection of serviceAnnouncementAttachments.
       operationId: admin.serviceAnnouncement.messages_ListAttachments
       parameters:
         - name: serviceUpdateMessage-id
@@ -1235,7 +1231,6 @@ paths:
       tags:
         - admin.serviceAnnouncement
       summary: Get attachments from admin
-      description: A collection of serviceAnnouncementAttachments.
       operationId: admin.serviceAnnouncement.messages_GetAttachments
       parameters:
         - name: serviceUpdateMessage-id
@@ -1360,7 +1355,6 @@ paths:
       tags:
         - admin.serviceAnnouncement
       summary: Get content for the navigation property attachments from admin
-      description: The attachment content.
       operationId: admin.serviceAnnouncement.messages_GetAttachmentsContent
       parameters:
         - name: serviceUpdateMessage-id
@@ -1392,7 +1386,6 @@ paths:
       tags:
         - admin.serviceAnnouncement
       summary: Update content for the navigation property attachments in admin
-      description: The attachment content.
       operationId: admin.serviceAnnouncement.messages_SetAttachmentsContent
       parameters:
         - name: serviceUpdateMessage-id
@@ -1428,7 +1421,6 @@ paths:
       tags:
         - admin.serviceAnnouncement
       summary: Get attachmentsArchive for the navigation property messages from admin
-      description: The zip file of all attachments for a message.
       operationId: admin.serviceAnnouncement_GetMessagesAttachmentsArchive
       parameters:
         - name: serviceUpdateMessage-id
@@ -1453,7 +1445,6 @@ paths:
       tags:
         - admin.serviceAnnouncement
       summary: Update attachmentsArchive for the navigation property messages in admin
-      description: The zip file of all attachments for a message.
       operationId: admin.serviceAnnouncement_SetMessagesAttachmentsArchive
       parameters:
         - name: serviceUpdateMessage-id

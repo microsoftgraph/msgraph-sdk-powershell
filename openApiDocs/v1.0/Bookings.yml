@@ -291,6 +291,10 @@ paths:
               operationId: solutions.BookingBusinesses.ListStaffMembers
               parameters:
                 bookingBusiness-id: $request.path.bookingBusiness-id
+            publish:
+              operationId: solutions.bookingBusinesses.bookingBusiness.publish
+            unpublish:
+              operationId: solutions.bookingBusinesses.bookingBusiness.unpublish
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -349,7 +353,6 @@ paths:
       tags:
         - solutions.bookingBusiness
       summary: Get appointments from solutions
-      description: All the appointments of this business. Read-only. Nullable.
       operationId: solutions.bookingBusinesses_ListAppointments
       parameters:
         - name: bookingBusiness-id
@@ -514,7 +517,6 @@ paths:
       tags:
         - solutions.bookingBusiness
       summary: Get appointments from solutions
-      description: All the appointments of this business. Read-only. Nullable.
       operationId: solutions.bookingBusinesses_GetAppointments
       parameters:
         - name: bookingBusiness-id
@@ -585,6 +587,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.bookingAppointment'
+          links:
+            cancel:
+              operationId: solutions.bookingBusinesses.bookingBusiness.appointments.bookingAppointment.cancel
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -657,7 +662,6 @@ paths:
       tags:
         - solutions.Actions
       summary: Invoke action cancel
-      description: 'Cancels the giving booking appointment, sending a message to the involved parties.'
       operationId: solutions.bookingBusinesses.appointments_cancel
       parameters:
         - name: bookingBusiness-id
@@ -698,7 +702,6 @@ paths:
       tags:
         - solutions.bookingBusiness
       summary: Get calendarView from solutions
-      description: The set of appointments of this business in a specified date range. Read-only. Nullable.
       operationId: solutions.bookingBusinesses_ListCalendarView
       parameters:
         - name: bookingBusiness-id
@@ -863,7 +866,6 @@ paths:
       tags:
         - solutions.bookingBusiness
       summary: Get calendarView from solutions
-      description: The set of appointments of this business in a specified date range. Read-only. Nullable.
       operationId: solutions.bookingBusinesses_GetCalendarView
       parameters:
         - name: bookingBusiness-id
@@ -934,6 +936,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.bookingAppointment'
+          links:
+            cancel:
+              operationId: solutions.bookingBusinesses.bookingBusiness.calendarView.bookingAppointment.cancel
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1006,7 +1011,6 @@ paths:
       tags:
         - solutions.Actions
       summary: Invoke action cancel
-      description: 'Cancels the giving booking appointment, sending a message to the involved parties.'
       operationId: solutions.bookingBusinesses.calendarView_cancel
       parameters:
         - name: bookingBusiness-id
@@ -1047,7 +1051,6 @@ paths:
       tags:
         - solutions.bookingBusiness
       summary: Get customers from solutions
-      description: All the customers of this business. Read-only. Nullable.
       operationId: solutions.bookingBusinesses_ListCustomers
       parameters:
         - name: bookingBusiness-id
@@ -1143,7 +1146,6 @@ paths:
       tags:
         - solutions.bookingBusiness
       summary: Get customers from solutions
-      description: All the customers of this business. Read-only. Nullable.
       operationId: solutions.bookingBusinesses_GetCustomers
       parameters:
         - name: bookingBusiness-id
@@ -1263,7 +1265,6 @@ paths:
       tags:
         - solutions.bookingBusiness
       summary: Get customQuestions from solutions
-      description: All the custom questions of this business. Read-only. Nullable.
       operationId: solutions.bookingBusinesses_ListCustomQuestions
       parameters:
         - name: bookingBusiness-id
@@ -1368,7 +1369,6 @@ paths:
       tags:
         - solutions.bookingBusiness
       summary: Get customQuestions from solutions
-      description: All the custom questions of this business. Read-only. Nullable.
       operationId: solutions.bookingBusinesses_GetCustomQuestions
       parameters:
         - name: bookingBusiness-id
@@ -1491,7 +1491,6 @@ paths:
       tags:
         - solutions.Actions
       summary: Invoke action publish
-      description: Makes the scheduling page of this business available to the general public.
       operationId: solutions.bookingBusinesses_publish
       parameters:
         - name: bookingBusiness-id
@@ -1512,7 +1511,6 @@ paths:
       tags:
         - solutions.Actions
       summary: Invoke action unpublish
-      description: Prevents the general public from seeing the scheduling page of this business.
       operationId: solutions.bookingBusinesses_unpublish
       parameters:
         - name: bookingBusiness-id
@@ -1533,7 +1531,6 @@ paths:
       tags:
         - solutions.bookingBusiness
       summary: Get services from solutions
-      description: All the services offered by this business. Read-only. Nullable.
       operationId: solutions.bookingBusinesses_ListServices
       parameters:
         - name: bookingBusiness-id
@@ -1686,7 +1683,6 @@ paths:
       tags:
         - solutions.bookingBusiness
       summary: Get services from solutions
-      description: All the services offered by this business. Read-only. Nullable.
       operationId: solutions.bookingBusinesses_GetServices
       parameters:
         - name: bookingBusiness-id
@@ -1825,7 +1821,6 @@ paths:
       tags:
         - solutions.bookingBusiness
       summary: Get staffMembers from solutions
-      description: All the staff members that provide services in this business. Read-only. Nullable.
       operationId: solutions.bookingBusinesses_ListStaffMembers
       parameters:
         - name: bookingBusiness-id
@@ -1921,7 +1916,6 @@ paths:
       tags:
         - solutions.bookingBusiness
       summary: Get staffMembers from solutions
-      description: All the staff members that provide services in this business. Read-only. Nullable.
       operationId: solutions.bookingBusinesses_GetStaffMembers
       parameters:
         - name: bookingBusiness-id

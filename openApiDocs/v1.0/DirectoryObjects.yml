@@ -102,8 +102,7 @@ paths:
     get:
       tags:
         - directoryObjects.directoryObject
-      summary: Get entity from directoryObjects by key
-      description: Get directoryObject
+      summary: Get directoryObject
       operationId: directoryObjects.directoryObject_GetDirectoryObject
       parameters:
         - name: directoryObject-id
@@ -145,6 +144,17 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
+          links:
+            checkMemberGroups:
+              operationId: directoryObjects.directoryObject.checkMemberGroups
+            checkMemberObjects:
+              operationId: directoryObjects.directoryObject.checkMemberObjects
+            getMemberGroups:
+              operationId: directoryObjects.directoryObject.getMemberGroups
+            getMemberObjects:
+              operationId: directoryObjects.directoryObject.getMemberObjects
+            restore:
+              operationId: directoryObjects.directoryObject.restore
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -177,8 +187,7 @@ paths:
     delete:
       tags:
         - directoryObjects.directoryObject
-      summary: Delete entity from directoryObjects
-      description: Delete directoryObject
+      summary: Delete directoryObject
       operationId: directoryObjects.directoryObject_DeleteDirectoryObject
       parameters:
         - name: directoryObject-id

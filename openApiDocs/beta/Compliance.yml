@@ -376,6 +376,10 @@ paths:
               operationId: compliance.ediscovery.Cases.ListTags
               parameters:
                 case-id: $request.path.case-id
+            close:
+              operationId: compliance.ediscovery.cases.case.close
+            reopen:
+              operationId: compliance.ediscovery.cases.case.reopen
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -434,7 +438,6 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Get custodians from compliance
-      description: Returns a list of case custodian objects for this case.  Nullable.
       operationId: compliance.ediscovery.cases_ListCustodians
       parameters:
         - name: case-id
@@ -565,7 +568,6 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Get custodians from compliance
-      description: Returns a list of case custodian objects for this case.  Nullable.
       operationId: compliance.ediscovery.cases_GetCustodians
       parameters:
         - name: case-id
@@ -651,6 +653,16 @@ paths:
               parameters:
                 case-id: $request.path.case-id
                 custodian-id: $request.path.custodian-id
+            activate:
+              operationId: compliance.ediscovery.cases.case.custodians.custodian.activate
+            applyHold:
+              operationId: compliance.ediscovery.cases.case.custodians.custodian.applyHold
+            release:
+              operationId: compliance.ediscovery.cases.case.custodians.custodian.release
+            removeHold:
+              operationId: compliance.ediscovery.cases.case.custodians.custodian.removeHold
+            updateIndex:
+              operationId: compliance.ediscovery.cases.case.custodians.custodian.updateIndex
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -858,7 +870,6 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Get siteSources from compliance
-      description: Data source entity for SharePoint sites associated with the custodian.
       operationId: compliance.ediscovery.cases.custodians_ListSiteSources
       parameters:
         - name: case-id
@@ -982,7 +993,6 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Get siteSources from compliance
-      description: Data source entity for SharePoint sites associated with the custodian.
       operationId: compliance.ediscovery.cases.custodians_GetSiteSources
       parameters:
         - name: case-id
@@ -1136,7 +1146,6 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Get site from compliance
-      description: The SharePoint site associated with the siteSource.
       operationId: compliance.ediscovery.cases.custodians.siteSources_GetSite
       parameters:
         - name: case-id
@@ -1343,7 +1352,6 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Get unifiedGroupSources from compliance
-      description: Data source entity for groups associated with the custodian.
       operationId: compliance.ediscovery.cases.custodians_ListUnifiedGroupSources
       parameters:
         - name: case-id
@@ -1470,7 +1478,6 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Get unifiedGroupSources from compliance
-      description: Data source entity for groups associated with the custodian.
       operationId: compliance.ediscovery.cases.custodians_GetUnifiedGroupSources
       parameters:
         - name: case-id
@@ -1625,7 +1632,6 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Get group from compliance
-      description: The group associated with the unifiedGroupSource.
       operationId: compliance.ediscovery.cases.custodians.unifiedGroupSources_GetGroup
       parameters:
         - name: case-id
@@ -1699,6 +1705,7 @@ paths:
                 - securityIdentifier
                 - theme
                 - visibility
+                - writebackConfiguration
                 - accessType
                 - allowExternalSenders
                 - autoSubscribeNewMembers
@@ -1964,7 +1971,6 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Get userSources from compliance
-      description: Data source entity for a the custodian. This is the container for a custodian's mailbox and OneDrive for Business site.
       operationId: compliance.ediscovery.cases.custodians_ListUserSources
       parameters:
         - name: case-id
@@ -2095,7 +2101,6 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Get userSources from compliance
-      description: Data source entity for a the custodian. This is the container for a custodian's mailbox and OneDrive for Business site.
       operationId: compliance.ediscovery.cases.custodians_GetUserSources
       parameters:
         - name: case-id
@@ -2313,7 +2318,6 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Get legalHolds from compliance
-      description: Returns a list of case legalHold objects for this case.  Nullable.
       operationId: compliance.ediscovery.cases_ListLegalHolds
       parameters:
         - name: case-id
@@ -2445,7 +2449,6 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Get legalHolds from compliance
-      description: Returns a list of case legalHold objects for this case.  Nullable.
       operationId: compliance.ediscovery.cases_GetLegalHolds
       parameters:
         - name: case-id
@@ -2597,7 +2600,6 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Get siteSources from compliance
-      description: Data source entity for SharePoint sites associated with the legal hold.
       operationId: compliance.ediscovery.cases.legalHolds_ListSiteSources
       parameters:
         - name: case-id
@@ -2721,7 +2723,6 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Get siteSources from compliance
-      description: Data source entity for SharePoint sites associated with the legal hold.
       operationId: compliance.ediscovery.cases.legalHolds_GetSiteSources
       parameters:
         - name: case-id
@@ -2875,7 +2876,6 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Get site from compliance
-      description: The SharePoint site associated with the siteSource.
       operationId: compliance.ediscovery.cases.legalHolds.siteSources_GetSite
       parameters:
         - name: case-id
@@ -3362,7 +3362,6 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Get group from compliance
-      description: The group associated with the unifiedGroupSource.
       operationId: compliance.ediscovery.cases.legalHolds.unifiedGroupSources_GetGroup
       parameters:
         - name: case-id
@@ -3436,6 +3435,7 @@ paths:
                 - securityIdentifier
                 - theme
                 - visibility
+                - writebackConfiguration
                 - accessType
                 - allowExternalSenders
                 - autoSubscribeNewMembers
@@ -3701,7 +3701,6 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Get userSources from compliance
-      description: Data source entity for a the legal hold. This is the container for a mailbox and OneDrive for Business site.
       operationId: compliance.ediscovery.cases.legalHolds_ListUserSources
       parameters:
         - name: case-id
@@ -3832,7 +3831,6 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Get userSources from compliance
-      description: Data source entity for a the legal hold. This is the container for a mailbox and OneDrive for Business site.
       operationId: compliance.ediscovery.cases.legalHolds_GetUserSources
       parameters:
         - name: case-id
@@ -4020,7 +4018,6 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Get noncustodialDataSources from compliance
-      description: Returns a list of case noncustodialDataSource objects for this case.  Nullable.
       operationId: compliance.ediscovery.cases_ListNoncustodialDataSources
       parameters:
         - name: case-id
@@ -4141,7 +4138,6 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Get noncustodialDataSources from compliance
-      description: Returns a list of case noncustodialDataSource objects for this case.  Nullable.
       operationId: compliance.ediscovery.cases_GetNoncustodialDataSources
       parameters:
         - name: case-id
@@ -4211,6 +4207,14 @@ paths:
               parameters:
                 case-id: $request.path.case-id
                 noncustodialDataSource-id: $request.path.noncustodialDataSource-id
+            applyHold:
+              operationId: compliance.ediscovery.cases.case.noncustodialDataSources.noncustodialDataSource.applyHold
+            release:
+              operationId: compliance.ediscovery.cases.case.noncustodialDataSources.noncustodialDataSource.release
+            removeHold:
+              operationId: compliance.ediscovery.cases.case.noncustodialDataSources.noncustodialDataSource.removeHold
+            updateIndex:
+              operationId: compliance.ediscovery.cases.case.noncustodialDataSources.noncustodialDataSource.updateIndex
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4283,7 +4287,6 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Get dataSource from compliance
-      description: User source or SharePoint site data source as non-custodial data source.
       operationId: compliance.ediscovery.cases.noncustodialDataSources_GetDataSource
       parameters:
         - name: case-id
@@ -4585,7 +4588,6 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Get operations from compliance
-      description: Returns a list of case operation objects for this case. Nullable.
       operationId: compliance.ediscovery.cases_ListOperations
       parameters:
         - name: case-id
@@ -4702,7 +4704,6 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Get operations from compliance
-      description: Returns a list of case operation objects for this case. Nullable.
       operationId: compliance.ediscovery.cases_GetOperations
       parameters:
         - name: case-id
@@ -4824,49 +4825,11 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-  '/compliance/ediscovery/cases/{case-id}/operations/{caseOperation-id}/microsoft.graph.ediscovery.caseExportOperation/microsoft.graph.ediscovery.getDownloadUrl()':
-    get:
-      tags:
-        - compliance.Functions
-      summary: Invoke function getDownloadUrl
-      operationId: compliance.ediscovery.cases.operations.microsoft.graph.ediscovery.caseExportOperation_getDownloadUrl
-      parameters:
-        - name: case-id
-          in: path
-          description: 'key: id of case'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: case
-        - name: caseOperation-id
-          in: path
-          description: 'key: id of caseOperation'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: caseOperation
-      responses:
-        '200':
-          description: Success
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  value:
-                    type: string
-                    nullable: true
-                additionalProperties:
-                  type: object
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: function
   '/compliance/ediscovery/cases/{case-id}/reviewSets':
     get:
       tags:
         - compliance.ediscoveryroot
       summary: Get reviewSets from compliance
-      description: Returns a list of reviewSet objects in the case. Read-only. Nullable.
       operationId: compliance.ediscovery.cases_ListReviewSets
       parameters:
         - name: case-id
@@ -4973,7 +4936,6 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Get reviewSets from compliance
-      description: Returns a list of reviewSet objects in the case. Read-only. Nullable.
       operationId: compliance.ediscovery.cases_GetReviewSets
       parameters:
         - name: case-id
@@ -5032,6 +4994,10 @@ paths:
               parameters:
                 case-id: $request.path.case-id
                 reviewSet-id: $request.path.reviewSet-id
+            addToReviewSet:
+              operationId: compliance.ediscovery.cases.case.reviewSets.reviewSet.addToReviewSet
+            export:
+              operationId: compliance.ediscovery.cases.case.reviewSets.reviewSet.export
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5198,7 +5164,6 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Get queries from compliance
-      description: Read-only. Nullable.
       operationId: compliance.ediscovery.cases.reviewSets_ListQueries
       parameters:
         - name: case-id
@@ -5326,7 +5291,6 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Get queries from compliance
-      description: Read-only. Nullable.
       operationId: compliance.ediscovery.cases.reviewSets_GetQueries
       parameters:
         - name: case-id
@@ -5387,6 +5351,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.ediscovery.reviewSetQuery'
+          links:
+            applyTags:
+              operationId: compliance.ediscovery.cases.case.reviewSets.reviewSet.queries.reviewSetQuery.applyTags
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5568,6 +5535,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.ediscovery.caseSettings'
+          links:
+            resetToDefault:
+              operationId: compliance.ediscovery.cases.case.settings.resetToDefault
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5646,7 +5616,6 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Get sourceCollections from compliance
-      description: Returns a list of sourceCollection objects associated with this case.
       operationId: compliance.ediscovery.cases_ListSourceCollections
       parameters:
         - name: case-id
@@ -5776,7 +5745,6 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Get sourceCollections from compliance
-      description: Returns a list of sourceCollection objects associated with this case.
       operationId: compliance.ediscovery.cases_GetSourceCollections
       parameters:
         - name: case-id
@@ -5868,6 +5836,10 @@ paths:
               parameters:
                 case-id: $request.path.case-id
                 sourceCollection-id: $request.path.sourceCollection-id
+            estimateStatistics:
+              operationId: compliance.ediscovery.cases.case.sourceCollections.sourceCollection.estimateStatistics
+            purgeData:
+              operationId: compliance.ediscovery.cases.case.sourceCollections.sourceCollection.purgeData
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5940,7 +5912,6 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Get additionalSources from compliance
-      description: Adds an additional source to the sourceCollection.
       operationId: compliance.ediscovery.cases.sourceCollections_ListAdditionalSources
       parameters:
         - name: case-id
@@ -6062,7 +6033,6 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Get additionalSources from compliance
-      description: Adds an additional source to the sourceCollection.
       operationId: compliance.ediscovery.cases.sourceCollections_GetAdditionalSources
       parameters:
         - name: case-id
@@ -6207,7 +6177,6 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Get addToReviewSetOperation from compliance
-      description: Adds the results of the sourceCollection to the specified reviewSet.
       operationId: compliance.ediscovery.cases.sourceCollections_GetAddToReviewSetOperation
       parameters:
         - name: case-id
@@ -6285,7 +6254,6 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Get custodianSources from compliance
-      description: Custodian sources that are included in the sourceCollection.
       operationId: compliance.ediscovery.cases.sourceCollections_ListCustodianSources
       parameters:
         - name: case-id
@@ -6370,7 +6338,6 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Get custodianSources from compliance
-      description: Custodian sources that are included in the sourceCollection.
       operationId: compliance.ediscovery.cases.sourceCollections_GetCustodianSources
       parameters:
         - name: case-id
@@ -6437,7 +6404,6 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Get lastEstimateStatisticsOperation from compliance
-      description: The last estimate operation associated with the sourceCollection.
       operationId: compliance.ediscovery.cases.sourceCollections_GetLastEstimateStatisticsOperation
       parameters:
         - name: case-id
@@ -6568,7 +6534,6 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Get noncustodialSources from compliance
-      description: noncustodialDataSource sources that are included in the sourceCollection
       operationId: compliance.ediscovery.cases.sourceCollections_ListNoncustodialSources
       parameters:
         - name: case-id
@@ -6666,7 +6631,6 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Get noncustodialSources from compliance
-      description: noncustodialDataSource sources that are included in the sourceCollection
       operationId: compliance.ediscovery.cases.sourceCollections_GetNoncustodialSources
       parameters:
         - name: case-id
@@ -6753,7 +6717,6 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Get tags from compliance
-      description: Returns a list of tag objects associated to this case.
       operationId: compliance.ediscovery.cases_ListTags
       parameters:
         - name: case-id
@@ -6868,7 +6831,6 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Get tags from compliance
-      description: Returns a list of tag objects associated to this case.
       operationId: compliance.ediscovery.cases_GetTags
       parameters:
         - name: case-id
@@ -7008,7 +6970,6 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Get childTags from compliance
-      description: Returns the tags that are a child of a tag.
       operationId: compliance.ediscovery.cases.tags_ListChildTags
       parameters:
         - name: case-id
@@ -7100,7 +7061,6 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Get childTags from compliance
-      description: Returns the tags that are a child of a tag.
       operationId: compliance.ediscovery.cases.tags_GetChildTags
       parameters:
         - name: case-id
@@ -7185,7 +7145,6 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Get parent from compliance
-      description: Returns the parent tag of the specified tag.
       operationId: compliance.ediscovery.cases.tags_GetParent
       parameters:
         - name: case-id
@@ -7698,6 +7657,8 @@ components:
               type: string
               description: 'Specifies the group join policy and group content visibility for groups. Possible values are: Private, Public, or Hiddenmembership. Hiddenmembership can be set only for Microsoft 365 groups, when the groups are created. It can''t be updated later. Other values of visibility can be updated after group creation. If visibility value is not specified during group creation on Microsoft Graph, a security group is created as Private by default and Microsoft 365 group is Public. Groups assignable to roles are always Private. See group visibility options to learn more. Returned by default. Nullable.'
               nullable: true
+            writebackConfiguration:
+              $ref: '#/components/schemas/microsoft.graph.groupWritebackConfiguration'
             accessType:
               $ref: '#/components/schemas/microsoft.graph.groupAccessType'
             allowExternalSenders:
@@ -8988,6 +8949,17 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.groupWritebackConfiguration:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.writebackConfiguration'
+        - title: groupWritebackConfiguration
+          type: object
+          properties:
+            onPremisesGroupType:
+              type: string
+              nullable: true
+          additionalProperties:
+            type: object
     microsoft.graph.groupAccessType:
       title: groupAccessType
       enum:
@@ -9966,11 +9938,11 @@ components:
       properties:
         displayName:
           type: string
-          description: 'The identity''s display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
+          description: The display name of the identity. This property is read-only.
           nullable: true
         id:
           type: string
-          description: Unique identifier for the identity.
+          description: The identifier of the identity. This property is read-only.
           nullable: true
       additionalProperties:
         type: object
@@ -10267,7 +10239,7 @@ components:
               nullable: true
             showInAddressList:
               type: boolean
-              description: 'true if the Outlook global address list should contain this user, otherwise false. If not set, this will be treated as true. For users invited through the invitation manager, this property will be set to false. Supports $filter (eq, ne, not, in).'
+              description: Do not use in Microsoft Graph. Manage this property through the Microsoft 365 admin center instead. Represents whether the user should be included in the Outlook global address list. See Known issue.
               nullable: true
             signInSessionsValidFromDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -11707,6 +11679,15 @@ components:
               $ref: '#/components/schemas/microsoft.graph.sectionGroup'
           additionalProperties:
             type: object
+    microsoft.graph.writebackConfiguration:
+      title: writebackConfiguration
+      type: object
+      properties:
+        isEnabled:
+          type: boolean
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.MembershipRuleProcessingStatusDetails:
       title: MembershipRuleProcessingStatusDetails
       enum:
@@ -15151,6 +15132,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.pinnedChatMessageInfo'
+              description: A collection of all the pinned messages in the chat. Nullable.
             tabs:
               type: array
               items:
@@ -16046,11 +16028,11 @@ components:
       properties:
         key:
           type: string
-          description: Key.
+          description: 'Contains the name of the field that a value is associated with. When a sign in or domain hint is included in the sign-in request, corresponding fields are included as key-value pairs. Possible keys: Login hint present, Domain hint present.'
           nullable: true
         value:
           type: string
-          description: Value.
+          description: Contains the corresponding value for the specified key. The value is true if a sign in hint was included in the sign-in request; otherwise false. The value is true if a domain hint was included in the sign-in request; otherwise false.
           nullable: true
       additionalProperties:
         type: object
@@ -21326,7 +21308,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.checklistItem'
-              description: A collection of checklistItems linked to a task.
+              description: A collection of smaller subtasks linked to the more complex parent task.
             extensions:
               type: array
               items:
@@ -25022,6 +25004,7 @@ components:
               items:
                 type: string
                 nullable: true
+              description: The categories associated with the task. Each category corresponds to the displayName property of an outlookCategory that the user has defined.
             completedDateTime:
               $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
             createdDateTime:
@@ -25031,6 +25014,9 @@ components:
               format: date-time
             dueDateTime:
               $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
+            hasAttachments:
+              type: boolean
+              nullable: true
             importance:
               $ref: '#/components/schemas/microsoft.graph.importance'
             isReminderOn:
@@ -25051,10 +25037,19 @@ components:
               type: string
               description: A brief description of the task.
               nullable: true
+            attachments:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.attachment_v2'
+            attachmentSessions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.attachmentSession'
             checklistItems:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.checklistItem'
+              description: A collection of smaller subtasks linked to the more complex parent task.
             extensions:
               type: array
               items:
@@ -26749,6 +26744,52 @@ components:
         - unknownFutureValue
         - emailUser
       type: string
+    microsoft.graph.attachment_v2:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: attachment_v2
+          type: object
+          properties:
+            contentType:
+              type: string
+              nullable: true
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            name:
+              type: string
+              nullable: true
+            size:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              format: int32
+          additionalProperties:
+            type: object
+    microsoft.graph.attachmentSession:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: attachmentSession
+          type: object
+          properties:
+            content:
+              type: string
+              format: base64url
+              nullable: true
+            expirationDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            nextExpectedRange:
+              type: array
+              items:
+                type: string
+                nullable: true
+          additionalProperties:
+            type: object
     microsoft.graph.linkedResource:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'

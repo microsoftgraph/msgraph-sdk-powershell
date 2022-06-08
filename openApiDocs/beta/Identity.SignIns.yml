@@ -10,8 +10,7 @@ paths:
     get:
       tags:
         - dataPolicyOperations.dataPolicyOperation
-      summary: Get entities from dataPolicyOperations
-      description: Get dataPolicyOperation
+      summary: Get dataPolicyOperation
       operationId: dataPolicyOperations.dataPolicyOperation_ListDataPolicyOperation
       parameters:
         - $ref: '#/components/parameters/top'
@@ -109,8 +108,7 @@ paths:
     get:
       tags:
         - dataPolicyOperations.dataPolicyOperation
-      summary: Get entity from dataPolicyOperations by key
-      description: Get dataPolicyOperation
+      summary: Get dataPolicyOperation
       operationId: dataPolicyOperations.dataPolicyOperation_GetDataPolicyOperation
       parameters:
         - name: dataPolicyOperation-id
@@ -215,7 +213,6 @@ paths:
       tags:
         - identity.conditionalAccessRoot
       summary: Get conditionalAccess from identity
-      description: the entry point for the Conditional Access (CA) object model.
       operationId: identity_GetConditionalAccess
       parameters:
         - name: $select
@@ -305,7 +302,6 @@ paths:
       tags:
         - identity.conditionalAccessRoot
       summary: Get authenticationContextClassReferences from identity
-      description: Read-only. Nullable. Returns a collection of the specified authentication context class references.
       operationId: identity.conditionalAccess_ListAuthenticationContextClassReferences
       parameters:
         - $ref: '#/components/parameters/top'
@@ -395,7 +391,6 @@ paths:
       tags:
         - identity.conditionalAccessRoot
       summary: Get authenticationContextClassReferences from identity
-      description: Read-only. Nullable. Returns a collection of the specified authentication context class references.
       operationId: identity.conditionalAccess_GetAuthenticationContextClassReferences
       parameters:
         - name: authenticationContextClassReference-id
@@ -497,7 +492,6 @@ paths:
       tags:
         - identity.conditionalAccessRoot
       summary: Get namedLocations from identity
-      description: Read-only. Nullable. Returns a collection of the specified named locations.
       operationId: identity.conditionalAccess_ListNamedLocations
       parameters:
         - $ref: '#/components/parameters/top'
@@ -587,7 +581,6 @@ paths:
       tags:
         - identity.conditionalAccessRoot
       summary: Get namedLocations from identity
-      description: Read-only. Nullable. Returns a collection of the specified named locations.
       operationId: identity.conditionalAccess_GetNamedLocations
       parameters:
         - name: namedLocation-id
@@ -689,7 +682,6 @@ paths:
       tags:
         - identity.conditionalAccessRoot
       summary: Get policies from identity
-      description: Read-only. Nullable. Returns a collection of the specified Conditional Access policies.
       operationId: identity.conditionalAccess_ListPolicies
       parameters:
         - $ref: '#/components/parameters/top'
@@ -794,7 +786,6 @@ paths:
       tags:
         - identity.conditionalAccessRoot
       summary: Get policies from identity
-      description: Read-only. Nullable. Returns a collection of the specified Conditional Access policies.
       operationId: identity.conditionalAccess_GetPolicies
       parameters:
         - name: conditionalAccessPolicy-id
@@ -1116,8 +1107,7 @@ paths:
     get:
       tags:
         - identityProviders.identityProvider
-      summary: Get entities from identityProviders
-      description: List identityProviders (deprecated)
+      summary: List identityProviders (deprecated)
       operationId: identityProviders.identityProvider_ListIdentityProvider
       parameters:
         - $ref: '#/components/parameters/top'
@@ -1192,8 +1182,7 @@ paths:
     post:
       tags:
         - identityProviders.identityProvider
-      summary: Add new entity to identityProviders
-      description: Create identityProvider (deprecated)
+      summary: Create identityProvider (deprecated)
       operationId: identityProviders.identityProvider_CreateIdentityProvider
       requestBody:
         description: New entity
@@ -1222,8 +1211,7 @@ paths:
     get:
       tags:
         - identityProviders.identityProvider
-      summary: Get entity from identityProviders by key
-      description: Get identityProvider (deprecated)
+      summary: Get identityProvider (deprecated)
       operationId: identityProviders.identityProvider_GetIdentityProvider
       parameters:
         - name: identityProvider-id
@@ -1312,8 +1300,7 @@ paths:
     delete:
       tags:
         - identityProviders.identityProvider
-      summary: Delete entity from identityProviders
-      description: Delete identityProvider (deprecated)
+      summary: Delete identityProvider (deprecated)
       operationId: identityProviders.identityProvider_DeleteIdentityProvider
       parameters:
         - name: identityProvider-id
@@ -1434,6 +1421,14 @@ paths:
               operationId: informationProtection.GetPolicy
             threatAssessmentRequests:
               operationId: informationProtection.ListThreatAssessmentRequests
+            decryptBuffer:
+              operationId: informationProtection.decryptBuffer
+            encryptBuffer:
+              operationId: informationProtection.encryptBuffer
+            signDigest:
+              operationId: informationProtection.signDigest
+            verifySignature:
+              operationId: informationProtection.verifySignature
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1519,29 +1514,11 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - informationProtection.bitlocker
-      summary: Delete navigation property bitlocker for informationProtection
-      operationId: informationProtection_DeleteBitlocker
-      parameters:
-        - name: If-Match
-          in: header
-          description: ETag
-          schema:
-            type: string
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   /informationProtection/bitlocker/recoveryKeys:
     get:
       tags:
         - informationProtection.bitlocker
       summary: Get recoveryKeys from informationProtection
-      description: The recovery keys associated with the bitlocker entity.
       operationId: informationProtection.bitlocker_ListRecoveryKeys
       parameters:
         - $ref: '#/components/parameters/top'
@@ -1634,7 +1611,6 @@ paths:
       tags:
         - informationProtection.bitlocker
       summary: Get recoveryKeys from informationProtection
-      description: The recovery keys associated with the bitlocker entity.
       operationId: informationProtection.bitlocker_GetRecoveryKeys
       parameters:
         - name: bitlockerRecoveryKey-id
@@ -1679,56 +1655,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.bitlockerRecoveryKey'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    patch:
-      tags:
-        - informationProtection.bitlocker
-      summary: Update the navigation property recoveryKeys in informationProtection
-      operationId: informationProtection.bitlocker_UpdateRecoveryKeys
-      parameters:
-        - name: bitlockerRecoveryKey-id
-          in: path
-          description: 'key: id of bitlockerRecoveryKey'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: bitlockerRecoveryKey
-      requestBody:
-        description: New navigation property values
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.bitlockerRecoveryKey'
-        required: true
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - informationProtection.bitlocker
-      summary: Delete navigation property recoveryKeys for informationProtection
-      operationId: informationProtection.bitlocker_DeleteRecoveryKeys
-      parameters:
-        - name: bitlockerRecoveryKey-id
-          in: path
-          description: 'key: id of bitlockerRecoveryKey'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: bitlockerRecoveryKey
-        - name: If-Match
-          in: header
-          description: ETag
-          schema:
-            type: string
-      responses:
-        '204':
-          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3481,7 +3407,6 @@ paths:
       tags:
         - informationProtection.threatAssessmentRequest
       summary: Get results from informationProtection
-      description: 'A collection of threat assessment results. Read-only. By default, a GET /threatAssessmentRequests/{id} does not return this property unless you apply $expand on it.'
       operationId: informationProtection.threatAssessmentRequests_ListResults
       parameters:
         - name: threatAssessmentRequest-id
@@ -3586,7 +3511,6 @@ paths:
       tags:
         - informationProtection.threatAssessmentRequest
       summary: Get results from informationProtection
-      description: 'A collection of threat assessment results. Read-only. By default, a GET /threatAssessmentRequests/{id} does not return this property unless you apply $expand on it.'
       operationId: informationProtection.threatAssessmentRequests_GetResults
       parameters:
         - name: threatAssessmentRequest-id
@@ -3794,8 +3718,7 @@ paths:
     post:
       tags:
         - invitations.invitation
-      summary: Add new entity to invitations
-      description: 'Tutorial: Use the access reviews API to review guest access to your Microsoft 365 groups'
+      summary: Create invitation
       operationId: invitations.invitation_CreateInvitation
       requestBody:
         description: New entity
@@ -3933,7 +3856,6 @@ paths:
       tags:
         - invitations.user
       summary: Get invitedUser from invitations
-      description: The user created as part of the invitation creation. Read-Only
       operationId: invitations_GetInvitedUser
       parameters:
         - name: invitation-id
@@ -4444,8 +4366,7 @@ paths:
     get:
       tags:
         - oauth2PermissionGrants.oAuth2PermissionGrant
-      summary: Get entities from oauth2PermissionGrants
-      description: List oauth2PermissionGrants (delegated permission grants)
+      summary: List oauth2PermissionGrants (delegated permission grants)
       operationId: oauth2PermissionGrants.oAuth2PermissionGrant_ListOAuth2PermissionGrant
       parameters:
         - $ref: '#/components/parameters/top'
@@ -4523,8 +4444,7 @@ paths:
     post:
       tags:
         - oauth2PermissionGrants.oAuth2PermissionGrant
-      summary: Add new entity to oauth2PermissionGrants
-      description: Create oAuth2PermissionGrant (a delegated permission grant)
+      summary: Create oAuth2PermissionGrant (a delegated permission grant)
       operationId: oauth2PermissionGrants.oAuth2PermissionGrant_CreateOAuth2PermissionGrant
       requestBody:
         description: New entity
@@ -4677,7 +4597,6 @@ paths:
       tags:
         - organization.certificateBasedAuthConfiguration
       summary: Get certificateBasedAuthConfiguration from organization
-      description: Navigation property to manage certificate-based authentication configuration. Only a single instance of certificateBasedAuthConfiguration can be created in the collection.
       operationId: organization_ListCertificateBasedAuthConfiguration
       parameters:
         - name: organization-id
@@ -4746,7 +4665,6 @@ paths:
       tags:
         - organization.certificateBasedAuthConfiguration
       summary: Get certificateBasedAuthConfiguration from organization
-      description: Navigation property to manage certificate-based authentication configuration. Only a single instance of certificateBasedAuthConfiguration can be created in the collection.
       operationId: organization_GetCertificateBasedAuthConfiguration
       parameters:
         - name: organization-id
@@ -4966,7 +4884,6 @@ paths:
       tags:
         - policies.accessReviewPolicy
       summary: Get accessReviewPolicy from policies
-      description: The policy that contains directory-level access review settings.
       operationId: policies_GetAccessReviewPolicy
       parameters:
         - name: $select
@@ -5046,7 +4963,6 @@ paths:
       tags:
         - policies.activityBasedTimeoutPolicy
       summary: Get activityBasedTimeoutPolicies from policies
-      description: The policy that controls the idle time out for web sessions for applications.
       operationId: policies_ListActivityBasedTimeoutPolicies
       parameters:
         - $ref: '#/components/parameters/top'
@@ -5144,7 +5060,6 @@ paths:
       tags:
         - policies.activityBasedTimeoutPolicy
       summary: Get activityBasedTimeoutPolicies from policies
-      description: The policy that controls the idle time out for web sessions for applications.
       operationId: policies_GetActivityBasedTimeoutPolicies
       parameters:
         - name: activityBasedTimeoutPolicy-id
@@ -5255,7 +5170,6 @@ paths:
       tags:
         - policies.adminConsentRequestPolicy
       summary: Get adminConsentRequestPolicy from policies
-      description: The policy by which consent requests are created and managed for the entire tenant.
       operationId: policies_GetAdminConsentRequestPolicy
       parameters:
         - name: $select
@@ -5338,7 +5252,6 @@ paths:
       tags:
         - policies.appManagementPolicy
       summary: Get appManagementPolicies from policies
-      description: 'The policies that enforce app management restrictions for specific applications and service principals, overriding the defaultAppManagementPolicy.'
       operationId: policies_ListAppManagementPolicies
       parameters:
         - $ref: '#/components/parameters/top'
@@ -5436,7 +5349,6 @@ paths:
       tags:
         - policies.appManagementPolicy
       summary: Get appManagementPolicies from policies
-      description: 'The policies that enforce app management restrictions for specific applications and service principals, overriding the defaultAppManagementPolicy.'
       operationId: policies_GetAppManagementPolicies
       parameters:
         - name: appManagementPolicy-id
@@ -5671,7 +5583,6 @@ paths:
       tags:
         - policies.authenticationFlowsPolicy
       summary: Get authenticationFlowsPolicy from policies
-      description: The policy configuration of the self-service sign-up experience of external users.
       operationId: policies_GetAuthenticationFlowsPolicy
       parameters:
         - name: $select
@@ -5751,7 +5662,6 @@ paths:
       tags:
         - policies.authenticationMethodsPolicy
       summary: Get authenticationMethodsPolicy from policies
-      description: The authentication methods and the users that are allowed to use them to sign in and perform multi-factor authentication (MFA) in Azure Active Directory (Azure AD).
       operationId: policies_GetAuthenticationMethodsPolicy
       parameters:
         - name: $select
@@ -5839,7 +5749,6 @@ paths:
       tags:
         - policies.authenticationMethodsPolicy
       summary: Get authenticationMethodConfigurations from policies
-      description: Represents the settings for each authentication method. Automatically expanded on GET /policies/authenticationMethodsPolicy.
       operationId: policies.authenticationMethodsPolicy_ListAuthenticationMethodConfigurations
       parameters:
         - $ref: '#/components/parameters/top'
@@ -5923,7 +5832,6 @@ paths:
       tags:
         - policies.authenticationMethodsPolicy
       summary: Get authenticationMethodConfigurations from policies
-      description: Represents the settings for each authentication method. Automatically expanded on GET /policies/authenticationMethodsPolicy.
       operationId: policies.authenticationMethodsPolicy_GetAuthenticationMethodConfigurations
       parameters:
         - name: authenticationMethodConfiguration-id
@@ -6023,7 +5931,6 @@ paths:
       tags:
         - policies.authorizationPolicy
       summary: Get authorizationPolicy from policies
-      description: The policy that controls Azure AD authorization settings.
       operationId: policies_ListAuthorizationPolicy
       parameters:
         - $ref: '#/components/parameters/top'
@@ -6142,7 +6049,6 @@ paths:
       tags:
         - policies.authorizationPolicy
       summary: Get authorizationPolicy from policies
-      description: The policy that controls Azure AD authorization settings.
       operationId: policies_GetAuthorizationPolicy
       parameters:
         - name: authorizationPolicy-id
@@ -6482,7 +6388,6 @@ paths:
       tags:
         - policies.b2cAuthenticationMethodsPolicy
       summary: Get b2cAuthenticationMethodsPolicy from policies
-      description: The Azure AD B2C policies that define how end users register via local accounts.
       operationId: policies_GetB2cAuthenticationMethodsPolicy
       parameters:
         - name: $select
@@ -6562,7 +6467,6 @@ paths:
       tags:
         - policies.claimsMappingPolicy
       summary: Get claimsMappingPolicies from policies
-      description: 'The claim-mapping policies for WS-Fed, SAML, OAuth 2.0, and OpenID Connect protocols, for tokens issued to a specific application.'
       operationId: policies_ListClaimsMappingPolicies
       parameters:
         - $ref: '#/components/parameters/top'
@@ -6660,7 +6564,6 @@ paths:
       tags:
         - policies.claimsMappingPolicy
       summary: Get claimsMappingPolicies from policies
-      description: 'The claim-mapping policies for WS-Fed, SAML, OAuth 2.0, and OpenID Connect protocols, for tokens issued to a specific application.'
       operationId: policies_GetClaimsMappingPolicies
       parameters:
         - name: claimsMappingPolicy-id
@@ -6771,7 +6674,6 @@ paths:
       tags:
         - policies.conditionalAccessPolicy
       summary: Get conditionalAccessPolicies from policies
-      description: The custom rules that define an access scenario.
       operationId: policies_ListConditionalAccessPolicies
       parameters:
         - $ref: '#/components/parameters/top'
@@ -6876,7 +6778,6 @@ paths:
       tags:
         - policies.conditionalAccessPolicy
       summary: Get conditionalAccessPolicies from policies
-      description: The custom rules that define an access scenario.
       operationId: policies_GetConditionalAccessPolicies
       parameters:
         - name: conditionalAccessPolicy-id
@@ -6983,7 +6884,6 @@ paths:
       tags:
         - policies.crossTenantAccessPolicy
       summary: Get crossTenantAccessPolicy from policies
-      description: The custom rules that define an access scenario when interacting with external Azure AD tenants.
       operationId: policies_GetCrossTenantAccessPolicy
       parameters:
         - name: $select
@@ -7001,6 +6901,7 @@ paths:
                 - description
                 - displayName
                 - definition
+                - allowedCloudEndpoints
                 - default
                 - partners
               type: string
@@ -7073,7 +6974,6 @@ paths:
       tags:
         - policies.crossTenantAccessPolicy
       summary: Get default from policies
-      description: Defines the default configuration for how your organization interacts with external Azure Active Directory organizations.
       operationId: policies.crossTenantAccessPolicy_GetDefault
       parameters:
         - name: $select
@@ -7113,6 +7013,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.crossTenantAccessPolicyConfigurationDefault'
+          links:
+            resetToSystemDefault:
+              operationId: policies.crossTenantAccessPolicy.default.resetToSystemDefault
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -7168,7 +7071,6 @@ paths:
       tags:
         - policies.crossTenantAccessPolicy
       summary: Get partners from policies
-      description: Defines partner-specific configurations for external Azure Active Directory organizations.
       operationId: policies.crossTenantAccessPolicy_ListPartners
       parameters:
         - $ref: '#/components/parameters/top'
@@ -7267,7 +7169,6 @@ paths:
       tags:
         - policies.crossTenantAccessPolicy
       summary: Get partners from policies
-      description: Defines partner-specific configurations for external Azure Active Directory organizations.
       operationId: policies.crossTenantAccessPolicy_GetPartners
       parameters:
         - name: crossTenantAccessPolicyConfigurationPartner-tenantId
@@ -7372,7 +7273,6 @@ paths:
       tags:
         - policies.tenantAppManagementPolicy
       summary: Get defaultAppManagementPolicy from policies
-      description: The tenant-wide policy that enforces app management restrictions for all applications and service principals.
       operationId: policies_GetDefaultAppManagementPolicy
       parameters:
         - name: $select
@@ -7509,23 +7409,6 @@ paths:
             schema:
               $ref: '#/components/schemas/microsoft.graph.deviceRegistrationPolicy'
         required: true
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - policies.deviceRegistrationPolicy
-      summary: Delete navigation property deviceRegistrationPolicy for policies
-      operationId: policies_DeleteDeviceRegistrationPolicy
-      parameters:
-        - name: If-Match
-          in: header
-          description: ETag
-          schema:
-            type: string
       responses:
         '204':
           description: Success
@@ -7695,7 +7578,6 @@ paths:
       tags:
         - policies.featureRolloutPolicy
       summary: Get featureRolloutPolicies from policies
-      description: The feature rollout policy associated with a directory object.
       operationId: policies_ListFeatureRolloutPolicies
       parameters:
         - $ref: '#/components/parameters/top'
@@ -7793,7 +7675,6 @@ paths:
       tags:
         - policies.featureRolloutPolicy
       summary: Get featureRolloutPolicies from policies
-      description: The feature rollout policy associated with a directory object.
       operationId: policies_GetFeatureRolloutPolicies
       parameters:
         - name: featureRolloutPolicy-id
@@ -7904,7 +7785,6 @@ paths:
       tags:
         - policies.featureRolloutPolicy
       summary: Get appliesTo from policies
-      description: Nullable. Specifies a list of directoryObjects that feature is enabled for.
       operationId: policies.featureRolloutPolicies_ListAppliesTo
       parameters:
         - name: featureRolloutPolicy-id
@@ -8040,7 +7920,6 @@ paths:
       tags:
         - policies.featureRolloutPolicy
       summary: Get ref of appliesTo from policies
-      description: Nullable. Specifies a list of directoryObjects that feature is enabled for.
       operationId: policies.featureRolloutPolicies_ListGraphRefAppliesTo
       parameters:
         - name: featureRolloutPolicy-id
@@ -8113,12 +7992,146 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/policies/featureRolloutPolicies/{featureRolloutPolicy-id}/appliesTo/microsoft.graph.getByIds':
+    post:
+      tags:
+        - policies.Actions
+      summary: Invoke action getByIds
+      operationId: policies.featureRolloutPolicies.appliesTo_getByIds
+      parameters:
+        - name: featureRolloutPolicy-id
+          in: path
+          description: 'key: id of featureRolloutPolicy'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: featureRolloutPolicy
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                ids:
+                  type: array
+                  items:
+                    type: string
+                types:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of directoryObject
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.directoryObject'
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/policies/featureRolloutPolicies/{featureRolloutPolicy-id}/appliesTo/microsoft.graph.getUserOwnedObjects':
+    post:
+      tags:
+        - policies.Actions
+      summary: Invoke action getUserOwnedObjects
+      operationId: policies.featureRolloutPolicies.appliesTo_getUserOwnedObjects
+      parameters:
+        - name: featureRolloutPolicy-id
+          in: path
+          description: 'key: id of featureRolloutPolicy'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: featureRolloutPolicy
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                userId:
+                  type: string
+                  nullable: true
+                type:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.directoryObject'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/policies/featureRolloutPolicies/{featureRolloutPolicy-id}/appliesTo/microsoft.graph.validateProperties':
+    post:
+      tags:
+        - policies.Actions
+      summary: Invoke action validateProperties
+      operationId: policies.featureRolloutPolicies.appliesTo_validateProperties
+      parameters:
+        - name: featureRolloutPolicy-id
+          in: path
+          description: 'key: id of featureRolloutPolicy'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: featureRolloutPolicy
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                entityType:
+                  type: string
+                  nullable: true
+                displayName:
+                  type: string
+                  nullable: true
+                mailNickname:
+                  type: string
+                  nullable: true
+                onBehalfOfUserId:
+                  pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
+                  type: string
+                  format: uuid
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   /policies/homeRealmDiscoveryPolicies:
     get:
       tags:
         - policies.homeRealmDiscoveryPolicy
       summary: Get homeRealmDiscoveryPolicies from policies
-      description: The policy to control Azure AD authentication behavior for federated users.
       operationId: policies_ListHomeRealmDiscoveryPolicies
       parameters:
         - $ref: '#/components/parameters/top'
@@ -8216,7 +8229,6 @@ paths:
       tags:
         - policies.homeRealmDiscoveryPolicy
       summary: Get homeRealmDiscoveryPolicies from policies
-      description: The policy to control Azure AD authentication behavior for federated users.
       operationId: policies_GetHomeRealmDiscoveryPolicies
       parameters:
         - name: homeRealmDiscoveryPolicy-id
@@ -8327,7 +8339,6 @@ paths:
       tags:
         - policies.identitySecurityDefaultsEnforcementPolicy
       summary: Get identitySecurityDefaultsEnforcementPolicy from policies
-      description: The policy that represents the security defaults that protect against common attacks.
       operationId: policies_GetIdentitySecurityDefaultsEnforcementPolicy
       parameters:
         - name: $select
@@ -8408,7 +8419,6 @@ paths:
       tags:
         - policies.mobilityManagementPolicy
       summary: Get mobileAppManagementPolicies from policies
-      description: The policy that defines auto-enrollment configuration for a mobility management (MDM or MAM) application.
       operationId: policies_ListMobileAppManagementPolicies
       parameters:
         - $ref: '#/components/parameters/top'
@@ -8512,7 +8522,6 @@ paths:
       tags:
         - policies.mobilityManagementPolicy
       summary: Get mobileAppManagementPolicies from policies
-      description: The policy that defines auto-enrollment configuration for a mobility management (MDM or MAM) application.
       operationId: policies_GetMobileAppManagementPolicies
       parameters:
         - name: mobilityManagementPolicy-id
@@ -8625,7 +8634,6 @@ paths:
       tags:
         - policies.mobilityManagementPolicy
       summary: Get includedGroups from policies
-      description: Azure AD groups under the scope of the mobility management application if appliesTo is selected
       operationId: policies.mobileAppManagementPolicies_ListIncludedGroups
       parameters:
         - name: mobilityManagementPolicy-id
@@ -8730,6 +8738,8 @@ paths:
                 - theme desc
                 - visibility
                 - visibility desc
+                - writebackConfiguration
+                - writebackConfiguration desc
                 - accessType
                 - accessType desc
                 - allowExternalSenders
@@ -8805,6 +8815,7 @@ paths:
                 - securityIdentifier
                 - theme
                 - visibility
+                - writebackConfiguration
                 - accessType
                 - allowExternalSenders
                 - autoSubscribeNewMembers
@@ -8937,7 +8948,6 @@ paths:
       tags:
         - policies.mobilityManagementPolicy
       summary: Get ref of includedGroups from policies
-      description: Azure AD groups under the scope of the mobility management application if appliesTo is selected
       operationId: policies.mobileAppManagementPolicies_ListGraphRefIncludedGroups
       parameters:
         - name: mobilityManagementPolicy-id
@@ -9042,6 +9052,8 @@ paths:
                 - theme desc
                 - visibility
                 - visibility desc
+                - writebackConfiguration
+                - writebackConfiguration desc
                 - accessType
                 - accessType desc
                 - allowExternalSenders
@@ -9330,7 +9342,6 @@ paths:
       tags:
         - policies.mobilityManagementPolicy
       summary: Get includedGroups from policies
-      description: Azure AD groups under the scope of the mobility management application if appliesTo is selected
       operationId: policies.mobileDeviceManagementPolicies_ListIncludedGroups
       parameters:
         - name: mobilityManagementPolicy-id
@@ -9435,6 +9446,8 @@ paths:
                 - theme desc
                 - visibility
                 - visibility desc
+                - writebackConfiguration
+                - writebackConfiguration desc
                 - accessType
                 - accessType desc
                 - allowExternalSenders
@@ -9510,6 +9523,7 @@ paths:
                 - securityIdentifier
                 - theme
                 - visibility
+                - writebackConfiguration
                 - accessType
                 - allowExternalSenders
                 - autoSubscribeNewMembers
@@ -9642,7 +9656,6 @@ paths:
       tags:
         - policies.mobilityManagementPolicy
       summary: Get ref of includedGroups from policies
-      description: Azure AD groups under the scope of the mobility management application if appliesTo is selected
       operationId: policies.mobileDeviceManagementPolicies_ListGraphRefIncludedGroups
       parameters:
         - name: mobilityManagementPolicy-id
@@ -9747,6 +9760,8 @@ paths:
                 - theme desc
                 - visibility
                 - visibility desc
+                - writebackConfiguration
+                - writebackConfiguration desc
                 - accessType
                 - accessType desc
                 - allowExternalSenders
@@ -9820,7 +9835,6 @@ paths:
       tags:
         - policies.permissionGrantPolicy
       summary: Get permissionGrantPolicies from policies
-      description: The policy that specifies the conditions under which consent can be granted.
       operationId: policies_ListPermissionGrantPolicies
       parameters:
         - $ref: '#/components/parameters/top'
@@ -9914,7 +9928,6 @@ paths:
       tags:
         - policies.permissionGrantPolicy
       summary: Get permissionGrantPolicies from policies
-      description: The policy that specifies the conditions under which consent can be granted.
       operationId: policies_GetPermissionGrantPolicies
       parameters:
         - name: permissionGrantPolicy-id
@@ -10029,7 +10042,6 @@ paths:
       tags:
         - policies.permissionGrantPolicy
       summary: Get excludes from policies
-      description: Condition sets which are excluded in this permission grant policy. Automatically expanded on GET.
       operationId: policies.permissionGrantPolicies_ListExcludes
       parameters:
         - name: permissionGrantPolicy-id
@@ -10152,7 +10164,6 @@ paths:
       tags:
         - policies.permissionGrantPolicy
       summary: Get excludes from policies
-      description: Condition sets which are excluded in this permission grant policy. Automatically expanded on GET.
       operationId: policies.permissionGrantPolicies_GetExcludes
       parameters:
         - name: permissionGrantPolicy-id
@@ -10281,7 +10292,6 @@ paths:
       tags:
         - policies.permissionGrantPolicy
       summary: Get includes from policies
-      description: Condition sets which are included in this permission grant policy. Automatically expanded on GET.
       operationId: policies.permissionGrantPolicies_ListIncludes
       parameters:
         - name: permissionGrantPolicy-id
@@ -10404,7 +10414,6 @@ paths:
       tags:
         - policies.permissionGrantPolicy
       summary: Get includes from policies
-      description: Condition sets which are included in this permission grant policy. Automatically expanded on GET.
       operationId: policies.permissionGrantPolicies_GetIncludes
       parameters:
         - name: permissionGrantPolicy-id
@@ -10533,7 +10542,6 @@ paths:
       tags:
         - policies.unifiedRoleManagementPolicy
       summary: Get roleManagementPolicies from policies
-      description: Represents the role management policies.
       operationId: policies_ListRoleManagementPolicies
       parameters:
         - $ref: '#/components/parameters/top'
@@ -10639,7 +10647,6 @@ paths:
       tags:
         - policies.unifiedRoleManagementPolicy
       summary: Get roleManagementPolicies from policies
-      description: Represents the role management policies.
       operationId: policies_GetRoleManagementPolicies
       parameters:
         - name: unifiedRoleManagementPolicy-id
@@ -10758,7 +10765,6 @@ paths:
       tags:
         - policies.unifiedRoleManagementPolicy
       summary: Get effectiveRules from policies
-      description: 'Not implemented. The list of effective rules like approval rules and expiration rules evaluated based on inherited referenced rules. For example, if there is a tenant-wide policy to enforce enabling an approval rule, the effective rule will be to enable approval even if the policy has a rule to disable approval.'
       operationId: policies.roleManagementPolicies_ListEffectiveRules
       parameters:
         - name: unifiedRoleManagementPolicy-id
@@ -10857,7 +10863,6 @@ paths:
       tags:
         - policies.unifiedRoleManagementPolicy
       summary: Get effectiveRules from policies
-      description: 'Not implemented. The list of effective rules like approval rules and expiration rules evaluated based on inherited referenced rules. For example, if there is a tenant-wide policy to enforce enabling an approval rule, the effective rule will be to enable approval even if the policy has a rule to disable approval.'
       operationId: policies.roleManagementPolicies_GetEffectiveRules
       parameters:
         - name: unifiedRoleManagementPolicy-id
@@ -10978,7 +10983,6 @@ paths:
       tags:
         - policies.unifiedRoleManagementPolicy
       summary: Get rules from policies
-      description: The collection of rules like approval rules and expiration rules.
       operationId: policies.roleManagementPolicies_ListRules
       parameters:
         - name: unifiedRoleManagementPolicy-id
@@ -11077,7 +11081,6 @@ paths:
       tags:
         - policies.unifiedRoleManagementPolicy
       summary: Get rules from policies
-      description: The collection of rules like approval rules and expiration rules.
       operationId: policies.roleManagementPolicies_GetRules
       parameters:
         - name: unifiedRoleManagementPolicy-id
@@ -11198,7 +11201,6 @@ paths:
       tags:
         - policies.unifiedRoleManagementPolicyAssignment
       summary: Get roleManagementPolicyAssignments from policies
-      description: Represents the role management policy assignments.
       operationId: policies_ListRoleManagementPolicyAssignments
       parameters:
         - $ref: '#/components/parameters/top'
@@ -11293,7 +11295,6 @@ paths:
       tags:
         - policies.unifiedRoleManagementPolicyAssignment
       summary: Get roleManagementPolicyAssignments from policies
-      description: Represents the role management policy assignments.
       operationId: policies_GetRoleManagementPolicyAssignments
       parameters:
         - name: unifiedRoleManagementPolicyAssignment-id
@@ -11403,7 +11404,6 @@ paths:
       tags:
         - policies.unifiedRoleManagementPolicyAssignment
       summary: Get policy from policies
-      description: The policy for the assignment.
       operationId: policies.roleManagementPolicyAssignments_GetPolicy
       parameters:
         - name: unifiedRoleManagementPolicyAssignment-id
@@ -12151,7 +12151,6 @@ paths:
       tags:
         - policies.tokenIssuancePolicy
       summary: Get tokenIssuancePolicies from policies
-      description: The policy that specifies the characteristics of SAML tokens issued by Azure AD.
       operationId: policies_ListTokenIssuancePolicies
       parameters:
         - $ref: '#/components/parameters/top'
@@ -12249,7 +12248,6 @@ paths:
       tags:
         - policies.tokenIssuancePolicy
       summary: Get tokenIssuancePolicies from policies
-      description: The policy that specifies the characteristics of SAML tokens issued by Azure AD.
       operationId: policies_GetTokenIssuancePolicies
       parameters:
         - name: tokenIssuancePolicy-id
@@ -12360,7 +12358,6 @@ paths:
       tags:
         - policies.tokenLifetimePolicy
       summary: Get tokenLifetimePolicies from policies
-      description: 'The policy that controls the lifetime of a JWT access token, an ID token, or a SAML 1.1/2.0 token issued by Azure AD.'
       operationId: policies_ListTokenLifetimePolicies
       parameters:
         - $ref: '#/components/parameters/top'
@@ -12458,7 +12455,6 @@ paths:
       tags:
         - policies.tokenLifetimePolicy
       summary: Get tokenLifetimePolicies from policies
-      description: 'The policy that controls the lifetime of a JWT access token, an ID token, or a SAML 1.1/2.0 token issued by Azure AD.'
       operationId: policies_GetTokenLifetimePolicies
       parameters:
         - name: tokenLifetimePolicy-id
@@ -12568,8 +12564,7 @@ paths:
     get:
       tags:
         - riskDetections.riskDetection
-      summary: Get entities from riskDetections
-      description: List riskDetection
+      summary: List riskDetection
       operationId: riskDetections.riskDetection_ListRiskDetection
       parameters:
         - $ref: '#/components/parameters/top'
@@ -12825,8 +12820,7 @@ paths:
     get:
       tags:
         - riskyUsers.riskyUser
-      summary: Get entities from riskyUsers
-      description: List riskyUsers
+      summary: List riskyUsers
       operationId: riskyUsers.riskyUser_ListRiskyUser
       parameters:
         - $ref: '#/components/parameters/top'
@@ -12932,8 +12926,7 @@ paths:
     get:
       tags:
         - riskyUsers.riskyUser
-      summary: Get entity from riskyUsers by key
-      description: Get riskyUser
+      summary: Get riskyUser
       operationId: riskyUsers.riskyUser_GetRiskyUser
       parameters:
         - name: riskyUser-id
@@ -13047,7 +13040,6 @@ paths:
       tags:
         - riskyUsers.riskyUserHistoryItem
       summary: Get history from riskyUsers
-      description: The activity related to user risk level change
       operationId: riskyUsers_ListHistory
       parameters:
         - name: riskyUser-id
@@ -13178,7 +13170,6 @@ paths:
       tags:
         - riskyUsers.riskyUserHistoryItem
       summary: Get history from riskyUsers
-      description: The activity related to user risk level change
       operationId: riskyUsers_GetHistory
       parameters:
         - name: riskyUser-id
@@ -13562,6 +13553,17 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.trustFrameworkKeySet'
+          links:
+            generateKey:
+              operationId: trustFramework.keySets.trustFrameworkKeySet.generateKey
+            getActiveKey:
+              operationId: trustFramework.keySets.trustFrameworkKeySet.getActiveKey
+            uploadCertificate:
+              operationId: trustFramework.keySets.trustFrameworkKeySet.uploadCertificate
+            uploadPkcs12:
+              operationId: trustFramework.keySets.trustFrameworkKeySet.uploadPkcs12
+            uploadSecret:
+              operationId: trustFramework.keySets.trustFrameworkKeySet.uploadSecret
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -14047,7 +14049,6 @@ paths:
       tags:
         - users.authentication
       summary: Get authentication from users
-      description: 'TODO: Add Description'
       operationId: users_GetAuthentication
       parameters:
         - name: user-id
@@ -14213,7 +14214,6 @@ paths:
       tags:
         - users.authentication
       summary: Get emailMethods from users
-      description: Represents the email addresses registered to a user for authentication.
       operationId: users.authentication_ListEmailMethods
       parameters:
         - name: user-id
@@ -14312,7 +14312,6 @@ paths:
       tags:
         - users.authentication
       summary: Get emailMethods from users
-      description: Represents the email addresses registered to a user for authentication.
       operationId: users.authentication_GetEmailMethods
       parameters:
         - name: user-id
@@ -14433,7 +14432,6 @@ paths:
       tags:
         - users.authentication
       summary: Get fido2Methods from users
-      description: Represents the FIDO2 security keys registered to a user for authentication.
       operationId: users.authentication_ListFido2Methods
       parameters:
         - name: user-id
@@ -14550,7 +14548,6 @@ paths:
       tags:
         - users.authentication
       summary: Get fido2Methods from users
-      description: Represents the FIDO2 security keys registered to a user for authentication.
       operationId: users.authentication_GetFido2Methods
       parameters:
         - name: user-id
@@ -14677,7 +14674,6 @@ paths:
       tags:
         - users.authentication
       summary: Get methods from users
-      description: Represents all authentication methods registered to a user.
       operationId: users.authentication_ListMethods
       parameters:
         - name: user-id
@@ -14773,7 +14769,6 @@ paths:
       tags:
         - users.authentication
       summary: Get methods from users
-      description: Represents all authentication methods registered to a user.
       operationId: users.authentication_GetMethods
       parameters:
         - name: user-id
@@ -14821,6 +14816,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
+          links:
+            disableSmsSignIn:
+              operationId: users.user.authentication.methods.authenticationMethod.disableSmsSignIn
+            enableSmsSignIn:
+              operationId: users.user.authentication.methods.authenticationMethod.enableSmsSignIn
+            resetPassword:
+              operationId: users.user.authentication.methods.authenticationMethod.resetPassword
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -14893,7 +14895,6 @@ paths:
       tags:
         - users.authentication
       summary: Get microsoftAuthenticatorMethods from users
-      description: The details of the Microsoft Authenticator app registered to a user for authentication.
       operationId: users.authentication_ListMicrosoftAuthenticatorMethods
       parameters:
         - name: user-id
@@ -15013,7 +15014,6 @@ paths:
       tags:
         - users.authentication
       summary: Get microsoftAuthenticatorMethods from users
-      description: The details of the Microsoft Authenticator app registered to a user for authentication.
       operationId: users.authentication_GetMicrosoftAuthenticatorMethods
       parameters:
         - name: user-id
@@ -15160,7 +15160,6 @@ paths:
       tags:
         - users.authentication
       summary: Get device from users
-      description: The registered device on which Microsoft Authenticator resides. This property is null if the device is not registered for passwordless Phone Sign-In.
       operationId: users.authentication.microsoftAuthenticatorMethods_GetDevice
       parameters:
         - name: user-id
@@ -15295,6 +15294,16 @@ paths:
               parameters:
                 user-id: $request.path.user-id
                 microsoftAuthenticatorAuthenticationMethod-id: $request.path.microsoftAuthenticatorAuthenticationMethod-id
+            checkMemberGroups:
+              operationId: users.user.authentication.microsoftAuthenticatorMethods.microsoftAuthenticatorAuthenticationMethod.device.checkMemberGroups
+            checkMemberObjects:
+              operationId: users.user.authentication.microsoftAuthenticatorMethods.microsoftAuthenticatorAuthenticationMethod.device.checkMemberObjects
+            getMemberGroups:
+              operationId: users.user.authentication.microsoftAuthenticatorMethods.microsoftAuthenticatorAuthenticationMethod.device.getMemberGroups
+            getMemberObjects:
+              operationId: users.user.authentication.microsoftAuthenticatorMethods.microsoftAuthenticatorAuthenticationMethod.device.getMemberObjects
+            restore:
+              operationId: users.user.authentication.microsoftAuthenticatorMethods.microsoftAuthenticatorAuthenticationMethod.device.restore
         default:
           $ref: '#/components/responses/error'
       deprecated: true
@@ -15382,7 +15391,6 @@ paths:
       tags:
         - users.authentication
       summary: Get commands from users
-      description: Set of commands sent to this device.
       operationId: users.authentication.microsoftAuthenticatorMethods.device_ListCommands
       parameters:
         - name: user-id
@@ -15528,7 +15536,6 @@ paths:
       tags:
         - users.authentication
       summary: Get commands from users
-      description: Set of commands sent to this device.
       operationId: users.authentication.microsoftAuthenticatorMethods.device_GetCommands
       parameters:
         - name: user-id
@@ -15768,7 +15775,6 @@ paths:
       tags:
         - users.authentication
       summary: Get extensions from users
-      description: The collection of open extensions defined for the device. Read-only. Nullable.
       operationId: users.authentication.microsoftAuthenticatorMethods.device_ListExtensions
       parameters:
         - name: user-id
@@ -15888,7 +15894,6 @@ paths:
       tags:
         - users.authentication
       summary: Get extensions from users
-      description: The collection of open extensions defined for the device. Read-only. Nullable.
       operationId: users.authentication.microsoftAuthenticatorMethods.device_GetExtensions
       parameters:
         - name: user-id
@@ -16044,7 +16049,6 @@ paths:
       tags:
         - users.authentication
       summary: Get memberOf from users
-      description: Groups and administrative units that this device is a member of. Read-only. Nullable. Supports $expand.
       operationId: users.authentication.microsoftAuthenticatorMethods.device_ListMemberOf
       parameters:
         - name: user-id
@@ -16125,7 +16129,6 @@ paths:
       tags:
         - users.authentication
       summary: Get memberOf from users
-      description: Groups and administrative units that this device is a member of. Read-only. Nullable. Supports $expand.
       operationId: users.authentication.microsoftAuthenticatorMethods.device_GetMemberOf
       parameters:
         - name: user-id
@@ -16194,7 +16197,6 @@ paths:
       tags:
         - users.authentication
       summary: Get registeredOwners from users
-      description: 'The user that cloud joined the device or registered their personal device. The registered owner is set at the time of registration. Currently, there can be only one owner. Read-only. Nullable. Supports $expand.'
       operationId: users.authentication.microsoftAuthenticatorMethods.device_ListRegisteredOwners
       parameters:
         - name: user-id
@@ -16324,7 +16326,6 @@ paths:
       tags:
         - users.authentication
       summary: Get ref of registeredOwners from users
-      description: 'The user that cloud joined the device or registered their personal device. The registered owner is set at the time of registration. Currently, there can be only one owner. Read-only. Nullable. Supports $expand.'
       operationId: users.authentication.microsoftAuthenticatorMethods.device_ListGraphRefRegisteredOwners
       parameters:
         - name: user-id
@@ -16426,7 +16427,6 @@ paths:
       tags:
         - users.authentication
       summary: Get registeredUsers from users
-      description: 'Collection of registered users of the device. For cloud joined devices and registered personal devices, registered users are set to the same value as registered owners at the time of registration. Read-only. Nullable. Supports $expand.'
       operationId: users.authentication.microsoftAuthenticatorMethods.device_ListRegisteredUsers
       parameters:
         - name: user-id
@@ -16507,7 +16507,6 @@ paths:
       tags:
         - users.authentication
       summary: Get registeredUsers from users
-      description: 'Collection of registered users of the device. For cloud joined devices and registered personal devices, registered users are set to the same value as registered owners at the time of registration. Read-only. Nullable. Supports $expand.'
       operationId: users.authentication.microsoftAuthenticatorMethods.device_GetRegisteredUsers
       parameters:
         - name: user-id
@@ -16576,7 +16575,6 @@ paths:
       tags:
         - users.authentication
       summary: Get transitiveMemberOf from users
-      description: Groups and administrative units that this device is a member of. This operation is transitive. Supports $expand.
       operationId: users.authentication.microsoftAuthenticatorMethods.device_ListTransitiveMemberOf
       parameters:
         - name: user-id
@@ -16657,7 +16655,6 @@ paths:
       tags:
         - users.authentication
       summary: Get transitiveMemberOf from users
-      description: Groups and administrative units that this device is a member of. This operation is transitive. Supports $expand.
       operationId: users.authentication.microsoftAuthenticatorMethods.device_GetTransitiveMemberOf
       parameters:
         - name: user-id
@@ -16726,7 +16723,6 @@ paths:
       tags:
         - users.authentication
       summary: Get usageRights from users
-      description: Represents the usage rights a device has been granted.
       operationId: users.authentication.microsoftAuthenticatorMethods.device_ListUsageRights
       parameters:
         - name: user-id
@@ -16855,7 +16851,6 @@ paths:
       tags:
         - users.authentication
       summary: Get usageRights from users
-      description: Represents the usage rights a device has been granted.
       operationId: users.authentication.microsoftAuthenticatorMethods.device_GetUsageRights
       parameters:
         - name: user-id
@@ -17248,7 +17243,6 @@ paths:
       tags:
         - users.authentication
       summary: Get passwordlessMicrosoftAuthenticatorMethods from users
-      description: Represents the Microsoft Authenticator Passwordless Phone Sign-in methods registered to a user for authentication.
       operationId: users.authentication_ListPasswordlessMicrosoftAuthenticatorMethods
       parameters:
         - name: user-id
@@ -17355,7 +17349,6 @@ paths:
       tags:
         - users.authentication
       summary: Get passwordlessMicrosoftAuthenticatorMethods from users
-      description: Represents the Microsoft Authenticator Passwordless Phone Sign-in methods registered to a user for authentication.
       operationId: users.authentication_GetPasswordlessMicrosoftAuthenticatorMethods
       parameters:
         - name: user-id
@@ -17620,6 +17613,16 @@ paths:
               parameters:
                 user-id: $request.path.user-id
                 passwordlessMicrosoftAuthenticatorAuthenticationMethod-id: $request.path.passwordlessMicrosoftAuthenticatorAuthenticationMethod-id
+            checkMemberGroups:
+              operationId: users.user.authentication.passwordlessMicrosoftAuthenticatorMethods.passwordlessMicrosoftAuthenticatorAuthenticationMethod.device.checkMemberGroups
+            checkMemberObjects:
+              operationId: users.user.authentication.passwordlessMicrosoftAuthenticatorMethods.passwordlessMicrosoftAuthenticatorAuthenticationMethod.device.checkMemberObjects
+            getMemberGroups:
+              operationId: users.user.authentication.passwordlessMicrosoftAuthenticatorMethods.passwordlessMicrosoftAuthenticatorAuthenticationMethod.device.getMemberGroups
+            getMemberObjects:
+              operationId: users.user.authentication.passwordlessMicrosoftAuthenticatorMethods.passwordlessMicrosoftAuthenticatorAuthenticationMethod.device.getMemberObjects
+            restore:
+              operationId: users.user.authentication.passwordlessMicrosoftAuthenticatorMethods.passwordlessMicrosoftAuthenticatorAuthenticationMethod.device.restore
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -17692,7 +17695,6 @@ paths:
       tags:
         - users.authentication
       summary: Get commands from users
-      description: Set of commands sent to this device.
       operationId: users.authentication.passwordlessMicrosoftAuthenticatorMethods.device_ListCommands
       parameters:
         - name: user-id
@@ -17828,7 +17830,6 @@ paths:
       tags:
         - users.authentication
       summary: Get commands from users
-      description: Set of commands sent to this device.
       operationId: users.authentication.passwordlessMicrosoftAuthenticatorMethods.device_GetCommands
       parameters:
         - name: user-id
@@ -18048,7 +18049,6 @@ paths:
       tags:
         - users.authentication
       summary: Get extensions from users
-      description: The collection of open extensions defined for the device. Read-only. Nullable.
       operationId: users.authentication.passwordlessMicrosoftAuthenticatorMethods.device_ListExtensions
       parameters:
         - name: user-id
@@ -18158,7 +18158,6 @@ paths:
       tags:
         - users.authentication
       summary: Get extensions from users
-      description: The collection of open extensions defined for the device. Read-only. Nullable.
       operationId: users.authentication.passwordlessMicrosoftAuthenticatorMethods.device_GetExtensions
       parameters:
         - name: user-id
@@ -18299,7 +18298,6 @@ paths:
       tags:
         - users.authentication
       summary: Get memberOf from users
-      description: Groups and administrative units that this device is a member of. Read-only. Nullable. Supports $expand.
       operationId: users.authentication.passwordlessMicrosoftAuthenticatorMethods.device_ListMemberOf
       parameters:
         - name: user-id
@@ -18375,7 +18373,6 @@ paths:
       tags:
         - users.authentication
       summary: Get memberOf from users
-      description: Groups and administrative units that this device is a member of. Read-only. Nullable. Supports $expand.
       operationId: users.authentication.passwordlessMicrosoftAuthenticatorMethods.device_GetMemberOf
       parameters:
         - name: user-id
@@ -18439,7 +18436,6 @@ paths:
       tags:
         - users.authentication
       summary: Get registeredOwners from users
-      description: 'The user that cloud joined the device or registered their personal device. The registered owner is set at the time of registration. Currently, there can be only one owner. Read-only. Nullable. Supports $expand.'
       operationId: users.authentication.passwordlessMicrosoftAuthenticatorMethods.device_ListRegisteredOwners
       parameters:
         - name: user-id
@@ -18559,7 +18555,6 @@ paths:
       tags:
         - users.authentication
       summary: Get ref of registeredOwners from users
-      description: 'The user that cloud joined the device or registered their personal device. The registered owner is set at the time of registration. Currently, there can be only one owner. Read-only. Nullable. Supports $expand.'
       operationId: users.authentication.passwordlessMicrosoftAuthenticatorMethods.device_ListGraphRefRegisteredOwners
       parameters:
         - name: user-id
@@ -18651,7 +18646,6 @@ paths:
       tags:
         - users.authentication
       summary: Get registeredUsers from users
-      description: 'Collection of registered users of the device. For cloud joined devices and registered personal devices, registered users are set to the same value as registered owners at the time of registration. Read-only. Nullable. Supports $expand.'
       operationId: users.authentication.passwordlessMicrosoftAuthenticatorMethods.device_ListRegisteredUsers
       parameters:
         - name: user-id
@@ -18727,7 +18721,6 @@ paths:
       tags:
         - users.authentication
       summary: Get registeredUsers from users
-      description: 'Collection of registered users of the device. For cloud joined devices and registered personal devices, registered users are set to the same value as registered owners at the time of registration. Read-only. Nullable. Supports $expand.'
       operationId: users.authentication.passwordlessMicrosoftAuthenticatorMethods.device_GetRegisteredUsers
       parameters:
         - name: user-id
@@ -18791,7 +18784,6 @@ paths:
       tags:
         - users.authentication
       summary: Get transitiveMemberOf from users
-      description: Groups and administrative units that this device is a member of. This operation is transitive. Supports $expand.
       operationId: users.authentication.passwordlessMicrosoftAuthenticatorMethods.device_ListTransitiveMemberOf
       parameters:
         - name: user-id
@@ -18867,7 +18859,6 @@ paths:
       tags:
         - users.authentication
       summary: Get transitiveMemberOf from users
-      description: Groups and administrative units that this device is a member of. This operation is transitive. Supports $expand.
       operationId: users.authentication.passwordlessMicrosoftAuthenticatorMethods.device_GetTransitiveMemberOf
       parameters:
         - name: user-id
@@ -18931,7 +18922,6 @@ paths:
       tags:
         - users.authentication
       summary: Get usageRights from users
-      description: Represents the usage rights a device has been granted.
       operationId: users.authentication.passwordlessMicrosoftAuthenticatorMethods.device_ListUsageRights
       parameters:
         - name: user-id
@@ -19050,7 +19040,6 @@ paths:
       tags:
         - users.authentication
       summary: Get usageRights from users
-      description: Represents the usage rights a device has been granted.
       operationId: users.authentication.passwordlessMicrosoftAuthenticatorMethods.device_GetUsageRights
       parameters:
         - name: user-id
@@ -19194,7 +19183,6 @@ paths:
       tags:
         - users.authentication
       summary: Get passwordMethods from users
-      description: Represents the details of the password authentication method registered to a user for authentication.
       operationId: users.authentication_ListPasswordMethods
       parameters:
         - name: user-id
@@ -19299,7 +19287,6 @@ paths:
       tags:
         - users.authentication
       summary: Get passwordMethods from users
-      description: Represents the details of the password authentication method registered to a user for authentication.
       operationId: users.authentication_GetPasswordMethods
       parameters:
         - name: user-id
@@ -19422,7 +19409,6 @@ paths:
       tags:
         - users.authentication
       summary: Get phoneMethods from users
-      description: Represents the phone registered to a user for authentication.
       operationId: users.authentication_ListPhoneMethods
       parameters:
         - name: user-id
@@ -19527,7 +19513,6 @@ paths:
       tags:
         - users.authentication
       summary: Get phoneMethods from users
-      description: Represents the phone registered to a user for authentication.
       operationId: users.authentication_GetPhoneMethods
       parameters:
         - name: user-id
@@ -19868,7 +19853,6 @@ paths:
       tags:
         - users.authentication
       summary: Get temporaryAccessPassMethods from users
-      description: Represents a Temporary Access Pass registered to a user for authentication through time-limited passcodes.
       operationId: users.authentication_ListTemporaryAccessPassMethods
       parameters:
         - name: user-id
@@ -19985,7 +19969,6 @@ paths:
       tags:
         - users.authentication
       summary: Get temporaryAccessPassMethods from users
-      description: Represents a Temporary Access Pass registered to a user for authentication through time-limited passcodes.
       operationId: users.authentication_GetTemporaryAccessPassMethods
       parameters:
         - name: user-id
@@ -20112,7 +20095,6 @@ paths:
       tags:
         - users.authentication
       summary: Get windowsHelloForBusinessMethods from users
-      description: Represents the Windows Hello for Business authentication method registered to a user for authentication.
       operationId: users.authentication_ListWindowsHelloForBusinessMethods
       parameters:
         - name: user-id
@@ -20219,7 +20201,6 @@ paths:
       tags:
         - users.authentication
       summary: Get windowsHelloForBusinessMethods from users
-      description: Represents the Windows Hello for Business authentication method registered to a user for authentication.
       operationId: users.authentication_GetWindowsHelloForBusinessMethods
       parameters:
         - name: user-id
@@ -20350,7 +20331,6 @@ paths:
       tags:
         - users.authentication
       summary: Get device from users
-      description: 'The registered device on which this Windows Hello for Business key resides. Supports $expand. When you get a user''s Windows Hello for Business registration information, this property is returned only on a single GET and when you specify ?$expand. For example, GET /users/admin@contoso.com/authentication/windowsHelloForBusinessMethods/_jpuR-TGZtk6aQCLF3BQjA2?$expand=device.'
       operationId: users.authentication.windowsHelloForBusinessMethods_GetDevice
       parameters:
         - name: user-id
@@ -20485,6 +20465,16 @@ paths:
               parameters:
                 user-id: $request.path.user-id
                 windowsHelloForBusinessAuthenticationMethod-id: $request.path.windowsHelloForBusinessAuthenticationMethod-id
+            checkMemberGroups:
+              operationId: users.user.authentication.windowsHelloForBusinessMethods.windowsHelloForBusinessAuthenticationMethod.device.checkMemberGroups
+            checkMemberObjects:
+              operationId: users.user.authentication.windowsHelloForBusinessMethods.windowsHelloForBusinessAuthenticationMethod.device.checkMemberObjects
+            getMemberGroups:
+              operationId: users.user.authentication.windowsHelloForBusinessMethods.windowsHelloForBusinessAuthenticationMethod.device.getMemberGroups
+            getMemberObjects:
+              operationId: users.user.authentication.windowsHelloForBusinessMethods.windowsHelloForBusinessAuthenticationMethod.device.getMemberObjects
+            restore:
+              operationId: users.user.authentication.windowsHelloForBusinessMethods.windowsHelloForBusinessAuthenticationMethod.device.restore
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -20557,7 +20547,6 @@ paths:
       tags:
         - users.authentication
       summary: Get commands from users
-      description: Set of commands sent to this device.
       operationId: users.authentication.windowsHelloForBusinessMethods.device_ListCommands
       parameters:
         - name: user-id
@@ -20693,7 +20682,6 @@ paths:
       tags:
         - users.authentication
       summary: Get commands from users
-      description: Set of commands sent to this device.
       operationId: users.authentication.windowsHelloForBusinessMethods.device_GetCommands
       parameters:
         - name: user-id
@@ -20913,7 +20901,6 @@ paths:
       tags:
         - users.authentication
       summary: Get extensions from users
-      description: The collection of open extensions defined for the device. Read-only. Nullable.
       operationId: users.authentication.windowsHelloForBusinessMethods.device_ListExtensions
       parameters:
         - name: user-id
@@ -21023,7 +21010,6 @@ paths:
       tags:
         - users.authentication
       summary: Get extensions from users
-      description: The collection of open extensions defined for the device. Read-only. Nullable.
       operationId: users.authentication.windowsHelloForBusinessMethods.device_GetExtensions
       parameters:
         - name: user-id
@@ -21164,7 +21150,6 @@ paths:
       tags:
         - users.authentication
       summary: Get memberOf from users
-      description: Groups and administrative units that this device is a member of. Read-only. Nullable. Supports $expand.
       operationId: users.authentication.windowsHelloForBusinessMethods.device_ListMemberOf
       parameters:
         - name: user-id
@@ -21240,7 +21225,6 @@ paths:
       tags:
         - users.authentication
       summary: Get memberOf from users
-      description: Groups and administrative units that this device is a member of. Read-only. Nullable. Supports $expand.
       operationId: users.authentication.windowsHelloForBusinessMethods.device_GetMemberOf
       parameters:
         - name: user-id
@@ -21304,7 +21288,6 @@ paths:
       tags:
         - users.authentication
       summary: Get registeredOwners from users
-      description: 'The user that cloud joined the device or registered their personal device. The registered owner is set at the time of registration. Currently, there can be only one owner. Read-only. Nullable. Supports $expand.'
       operationId: users.authentication.windowsHelloForBusinessMethods.device_ListRegisteredOwners
       parameters:
         - name: user-id
@@ -21424,7 +21407,6 @@ paths:
       tags:
         - users.authentication
       summary: Get ref of registeredOwners from users
-      description: 'The user that cloud joined the device or registered their personal device. The registered owner is set at the time of registration. Currently, there can be only one owner. Read-only. Nullable. Supports $expand.'
       operationId: users.authentication.windowsHelloForBusinessMethods.device_ListGraphRefRegisteredOwners
       parameters:
         - name: user-id
@@ -21516,7 +21498,6 @@ paths:
       tags:
         - users.authentication
       summary: Get registeredUsers from users
-      description: 'Collection of registered users of the device. For cloud joined devices and registered personal devices, registered users are set to the same value as registered owners at the time of registration. Read-only. Nullable. Supports $expand.'
       operationId: users.authentication.windowsHelloForBusinessMethods.device_ListRegisteredUsers
       parameters:
         - name: user-id
@@ -21592,7 +21573,6 @@ paths:
       tags:
         - users.authentication
       summary: Get registeredUsers from users
-      description: 'Collection of registered users of the device. For cloud joined devices and registered personal devices, registered users are set to the same value as registered owners at the time of registration. Read-only. Nullable. Supports $expand.'
       operationId: users.authentication.windowsHelloForBusinessMethods.device_GetRegisteredUsers
       parameters:
         - name: user-id
@@ -21656,7 +21636,6 @@ paths:
       tags:
         - users.authentication
       summary: Get transitiveMemberOf from users
-      description: Groups and administrative units that this device is a member of. This operation is transitive. Supports $expand.
       operationId: users.authentication.windowsHelloForBusinessMethods.device_ListTransitiveMemberOf
       parameters:
         - name: user-id
@@ -21732,7 +21711,6 @@ paths:
       tags:
         - users.authentication
       summary: Get transitiveMemberOf from users
-      description: Groups and administrative units that this device is a member of. This operation is transitive. Supports $expand.
       operationId: users.authentication.windowsHelloForBusinessMethods.device_GetTransitiveMemberOf
       parameters:
         - name: user-id
@@ -21796,7 +21774,6 @@ paths:
       tags:
         - users.authentication
       summary: Get usageRights from users
-      description: Represents the usage rights a device has been granted.
       operationId: users.authentication.windowsHelloForBusinessMethods.device_ListUsageRights
       parameters:
         - name: user-id
@@ -21915,7 +21892,6 @@ paths:
       tags:
         - users.authentication
       summary: Get usageRights from users
-      description: Represents the usage rights a device has been granted.
       operationId: users.authentication.windowsHelloForBusinessMethods.device_GetUsageRights
       parameters:
         - name: user-id
@@ -22136,6 +22112,14 @@ paths:
               operationId: users.InformationProtection.ListThreatAssessmentRequests
               parameters:
                 user-id: $request.path.user-id
+            decryptBuffer:
+              operationId: users.user.informationProtection.decryptBuffer
+            encryptBuffer:
+              operationId: users.user.informationProtection.encryptBuffer
+            signDigest:
+              operationId: users.user.informationProtection.signDigest
+            verifySignature:
+              operationId: users.user.informationProtection.verifySignature
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -22270,36 +22254,11 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - users.informationProtection
-      summary: Delete navigation property bitlocker for users
-      operationId: users.informationProtection_DeleteBitlocker
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: If-Match
-          in: header
-          description: ETag
-          schema:
-            type: string
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   '/users/{user-id}/informationProtection/bitlocker/recoveryKeys':
     get:
       tags:
         - users.informationProtection
       summary: Get recoveryKeys from users
-      description: The recovery keys associated with the bitlocker entity.
       operationId: users.informationProtection.bitlocker_ListRecoveryKeys
       parameters:
         - name: user-id
@@ -22407,7 +22366,6 @@ paths:
       tags:
         - users.informationProtection
       summary: Get recoveryKeys from users
-      description: The recovery keys associated with the bitlocker entity.
       operationId: users.informationProtection.bitlocker_GetRecoveryKeys
       parameters:
         - name: user-id
@@ -22459,70 +22417,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.bitlockerRecoveryKey'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    patch:
-      tags:
-        - users.informationProtection
-      summary: Update the navigation property recoveryKeys in users
-      operationId: users.informationProtection.bitlocker_UpdateRecoveryKeys
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: bitlockerRecoveryKey-id
-          in: path
-          description: 'key: id of bitlockerRecoveryKey'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: bitlockerRecoveryKey
-      requestBody:
-        description: New navigation property values
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.bitlockerRecoveryKey'
-        required: true
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - users.informationProtection
-      summary: Delete navigation property recoveryKeys for users
-      operationId: users.informationProtection.bitlocker_DeleteRecoveryKeys
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: bitlockerRecoveryKey-id
-          in: path
-          description: 'key: id of bitlockerRecoveryKey'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: bitlockerRecoveryKey
-        - name: If-Match
-          in: header
-          description: ETag
-          schema:
-            type: string
-      responses:
-        '204':
-          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -24078,7 +23972,6 @@ paths:
       tags:
         - users.informationProtection
       summary: Get results from users
-      description: 'A collection of threat assessment results. Read-only. By default, a GET /threatAssessmentRequests/{id} does not return this property unless you apply $expand on it.'
       operationId: users.informationProtection.threatAssessmentRequests_ListResults
       parameters:
         - name: user-id
@@ -24197,7 +24090,6 @@ paths:
       tags:
         - users.informationProtection
       summary: Get results from users
-      description: 'A collection of threat assessment results. Read-only. By default, a GET /threatAssessmentRequests/{id} does not return this property unless you apply $expand on it.'
       operationId: users.informationProtection.threatAssessmentRequests_GetResults
       parameters:
         - name: user-id
@@ -24719,7 +24611,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.keyValuePair'
-          description: 'Existing Microsoft Information Protection metadata is passed as key/value pairs, where the key is the MSIP_Label_GUID_PropName.'
+          description: 'Existing Microsoft Purview Information Protection metadata is passed as key/value pairs, where the key is the MSIP_Label_GUID_PropName.'
         state:
           $ref: '#/components/schemas/microsoft.graph.contentState'
       additionalProperties:
@@ -25249,7 +25141,7 @@ components:
               nullable: true
             showInAddressList:
               type: boolean
-              description: 'true if the Outlook global address list should contain this user, otherwise false. If not set, this will be treated as true. For users invited through the invitation manager, this property will be set to false. Supports $filter (eq, ne, not, in).'
+              description: Do not use in Microsoft Graph. Manage this property through the Microsoft 365 admin center instead. Represents whether the user should be included in the Outlook global address list. See Known issue.
               nullable: true
             signInSessionsValidFromDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -25998,6 +25890,11 @@ components:
         - title: crossTenantAccessPolicy
           type: object
           properties:
+            allowedCloudEndpoints:
+              type: array
+              items:
+                type: string
+              description: 'Used to specify which Microsoft clouds an organization would like to collaborate with. By default, this value is empty. Supported values for this field are: microsoftonline.com, microsoftonline.us, and partner.microsoftonline.cn.'
             default:
               $ref: '#/components/schemas/microsoft.graph.crossTenantAccessPolicyConfigurationDefault'
             partners:
@@ -26284,7 +26181,7 @@ components:
               description: Display name for the policy.
             isOrganizationDefault:
               type: boolean
-              description: This can only be set to true for a single tenant wide policy which will apply to all scopes and roles. Set the scopeId to '/' and scopeType to Directory.
+              description: 'This can only be set to true for a single tenant-wide policy which will apply to all scopes and roles. Set the scopeId to / and scopeType to Directory. Supports $filter (eq, ne).'
               nullable: true
             lastModifiedBy:
               $ref: '#/components/schemas/microsoft.graph.identity'
@@ -26296,7 +26193,7 @@ components:
               nullable: true
             scopeId:
               type: string
-              description: The id of the scope where the policy is created. Can be / for the tenant or a group ID. Required.
+              description: The identifier of the scope where the policy is created. Can be / for the tenant or a group ID. Required.
             scopeType:
               type: string
               description: 'The type of the scope where the policy is created. One of Directory, DirectoryRole. Required.'
@@ -26304,12 +26201,12 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicyRule'
-              description: 'Not implemented. The list of effective rules like approval rules and expiration rules evaluated based on inherited referenced rules. For example, if there is a tenant-wide policy to enforce enabling an approval rule, the effective rule will be to enable approval even if the policy has a rule to disable approval.'
+              description: 'The list of effective rules like approval rules and expiration rules evaluated based on inherited referenced rules. For example, if there is a tenant-wide policy to enforce enabling an approval rule, the effective rule will be to enable approval even if the policy has a rule to disable approval. Supports $expand.'
             rules:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicyRule'
-              description: The collection of rules like approval rules and expiration rules.
+              description: The collection of rules like approval rules and expiration rules. Supports $expand.
           additionalProperties:
             type: object
     microsoft.graph.unifiedRoleManagementPolicyRule:
@@ -28794,6 +28691,8 @@ components:
               type: string
               description: 'Specifies the group join policy and group content visibility for groups. Possible values are: Private, Public, or Hiddenmembership. Hiddenmembership can be set only for Microsoft 365 groups, when the groups are created. It can''t be updated later. Other values of visibility can be updated after group creation. If visibility value is not specified during group creation on Microsoft Graph, a security group is created as Private by default and Microsoft 365 group is Public. Groups assignable to roles are always Private. See group visibility options to learn more. Returned by default. Nullable.'
               nullable: true
+            writebackConfiguration:
+              $ref: '#/components/schemas/microsoft.graph.groupWritebackConfiguration'
             accessType:
               $ref: '#/components/schemas/microsoft.graph.groupAccessType'
             allowExternalSenders:
@@ -30732,6 +30631,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.pinnedChatMessageInfo'
+              description: A collection of all the pinned messages in the chat. Nullable.
             tabs:
               type: array
               items:
@@ -31234,11 +31134,11 @@ components:
       properties:
         displayName:
           type: string
-          description: 'The identity''s display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
+          description: The display name of the identity. This property is read-only.
           nullable: true
         id:
           type: string
-          description: Unique identifier for the identity.
+          description: The identifier of the identity. This property is read-only.
           nullable: true
       additionalProperties:
         type: object
@@ -31248,30 +31148,30 @@ components:
       properties:
         caller:
           type: string
-          description: 'The caller for the policy rule target. Allowed values are: None, Admin, EndUser.'
+          description: 'The type of caller that''s the target of the policy rule. Allowed values are: None, Admin, EndUser.'
           nullable: true
         enforcedSettings:
           type: array
           items:
             type: string
             nullable: true
-          description: The list of settings which are enforced and cannot be overridden by child scopes. Use All for all settings.
+          description: The list of role settings that are enforced and cannot be overridden by child scopes. Use All for all settings.
         inheritableSettings:
           type: array
           items:
             type: string
             nullable: true
-          description: The list of settings which can be inherited by child scopes. Use All for all settings.
+          description: The list of role settings that can be inherited by child scopes. Use All for all settings.
         level:
           type: string
-          description: 'The level for the policy rule target. Allowed values are: Eligibility, Assignment.'
+          description: 'The role assignment type that''s the target of policy rule. Allowed values are: Eligibility, Assignment.'
           nullable: true
         operations:
           type: array
           items:
             type: string
             nullable: true
-          description: 'The operations for policy rule target. Allowed values are: All, Activate, Deactivate, Assign, Update, Remove, Extend, Renew.'
+          description: 'The role management operations that are the target of the policy rule. Allowed values are: All, Activate, Deactivate, Assign, Update, Remove, Extend, Renew.'
         targetObjects:
           type: array
           items:
@@ -33177,6 +33077,17 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.groupWritebackConfiguration:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.writebackConfiguration'
+        - title: groupWritebackConfiguration
+          type: object
+          properties:
+            onPremisesGroupType:
+              type: string
+              nullable: true
+          additionalProperties:
+            type: object
     microsoft.graph.groupAccessType:
       title: groupAccessType
       enum:
@@ -37776,7 +37687,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.checklistItem'
-              description: A collection of checklistItems linked to a task.
+              description: A collection of smaller subtasks linked to the more complex parent task.
             extensions:
               type: array
               items:
@@ -39159,6 +39070,15 @@ components:
         - blog
         - profile
       type: string
+    microsoft.graph.writebackConfiguration:
+      title: writebackConfiguration
+      type: object
+      properties:
+        isEnabled:
+          type: boolean
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.MembershipRuleProcessingStatusDetails:
       title: MembershipRuleProcessingStatusDetails
       enum:
@@ -43350,6 +43270,7 @@ components:
               items:
                 type: string
                 nullable: true
+              description: The categories associated with the task. Each category corresponds to the displayName property of an outlookCategory that the user has defined.
             completedDateTime:
               $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
             createdDateTime:
@@ -43359,6 +43280,9 @@ components:
               format: date-time
             dueDateTime:
               $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
+            hasAttachments:
+              type: boolean
+              nullable: true
             importance:
               $ref: '#/components/schemas/microsoft.graph.importance'
             isReminderOn:
@@ -43379,10 +43303,19 @@ components:
               type: string
               description: A brief description of the task.
               nullable: true
+            attachments:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.attachment_v2'
+            attachmentSessions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.attachmentSession'
             checklistItems:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.checklistItem'
+              description: A collection of smaller subtasks linked to the more complex parent task.
             extensions:
               type: array
               items:
@@ -44761,11 +44694,11 @@ components:
       properties:
         key:
           type: string
-          description: Key.
+          description: 'Contains the name of the field that a value is associated with. When a sign in or domain hint is included in the sign-in request, corresponding fields are included as key-value pairs. Possible keys: Login hint present, Domain hint present.'
           nullable: true
         value:
           type: string
-          description: Value.
+          description: Contains the corresponding value for the specified key. The value is true if a sign in hint was included in the sign-in request; otherwise false. The value is true if a domain hint was included in the sign-in request; otherwise false.
           nullable: true
       additionalProperties:
         type: object
@@ -45981,6 +45914,52 @@ components:
               type: string
               description: ID of the timeOffReason for this timeOffItem. Required.
               nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.attachment_v2:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: attachment_v2
+          type: object
+          properties:
+            contentType:
+              type: string
+              nullable: true
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            name:
+              type: string
+              nullable: true
+            size:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              format: int32
+          additionalProperties:
+            type: object
+    microsoft.graph.attachmentSession:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: attachmentSession
+          type: object
+          properties:
+            content:
+              type: string
+              format: base64url
+              nullable: true
+            expirationDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            nextExpectedRange:
+              type: array
+              items:
+                type: string
+                nullable: true
           additionalProperties:
             type: object
     microsoft.graph.linkedResource:

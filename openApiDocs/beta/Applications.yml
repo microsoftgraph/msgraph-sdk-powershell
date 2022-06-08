@@ -10,8 +10,7 @@ paths:
     get:
       tags:
         - applications.application
-      summary: Get entities from applications
-      description: List applications
+      summary: List applications
       operationId: applications.application_ListApplication
       parameters:
         - name: ConsistencyLevel
@@ -199,8 +198,7 @@ paths:
     post:
       tags:
         - applications.application
-      summary: Add new entity to applications
-      description: Create application
+      summary: Create application
       operationId: applications.application_CreateApplication
       requestBody:
         description: New entity
@@ -223,8 +221,7 @@ paths:
     get:
       tags:
         - applications.application
-      summary: Get entity from applications by key
-      description: Get application
+      summary: Get application
       operationId: applications.application_GetApplication
       parameters:
         - name: application-id
@@ -360,14 +357,35 @@ paths:
               operationId: applications.GetSynchronization
               parameters:
                 application-id: $request.path.application-id
+            addKey:
+              operationId: applications.application.addKey
+            addPassword:
+              operationId: applications.application.addPassword
+            checkMemberGroups:
+              operationId: applications.application.checkMemberGroups
+            checkMemberObjects:
+              operationId: applications.application.checkMemberObjects
+            getMemberGroups:
+              operationId: applications.application.getMemberGroups
+            getMemberObjects:
+              operationId: applications.application.getMemberObjects
+            removeKey:
+              operationId: applications.application.removeKey
+            removePassword:
+              operationId: applications.application.removePassword
+            restore:
+              operationId: applications.application.restore
+            setVerifiedPublisher:
+              operationId: applications.application.setVerifiedPublisher
+            unsetVerifiedPublisher:
+              operationId: applications.application.unsetVerifiedPublisher
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     patch:
       tags:
         - applications.application
-      summary: Update entity in applications
-      description: Configure required Azure AD Graph permissions for an app registration
+      summary: Update application
       operationId: applications.application_UpdateApplication
       parameters:
         - name: application-id
@@ -393,8 +411,7 @@ paths:
     delete:
       tags:
         - applications.application
-      summary: Delete entity from applications
-      description: Delete application
+      summary: Delete application
       operationId: applications.application_DeleteApplication
       parameters:
         - name: application-id
@@ -420,7 +437,6 @@ paths:
       tags:
         - applications.appManagementPolicy
       summary: Get appManagementPolicies from applications
-      description: The appManagementPolicy applied to this application.
       operationId: applications_ListAppManagementPolicies
       parameters:
         - name: application-id
@@ -540,7 +556,6 @@ paths:
       tags:
         - applications.appManagementPolicy
       summary: Get ref of appManagementPolicies from applications
-      description: The appManagementPolicy applied to this application.
       operationId: applications_ListGraphRefAppManagementPolicies
       parameters:
         - name: application-id
@@ -626,7 +641,6 @@ paths:
       tags:
         - applications.connectorGroup
       summary: Get connectorGroup from applications
-      description: The connectorGroup the application is using with Azure AD Application Proxy. Nullable.
       operationId: applications_GetConnectorGroup
       parameters:
         - name: application-id
@@ -692,7 +706,6 @@ paths:
       tags:
         - applications.connectorGroup
       summary: Get ref of connectorGroup from applications
-      description: The connectorGroup the application is using with Azure AD Application Proxy. Nullable.
       operationId: applications_GetGraphRefConnectorGroup
       parameters:
         - name: application-id
@@ -776,7 +789,6 @@ paths:
       tags:
         - applications.directoryObject
       summary: Get createdOnBehalfOf from applications
-      description: Read-only.
       operationId: applications_GetCreatedOnBehalfOf
       parameters:
         - name: application-id
@@ -826,7 +838,6 @@ paths:
       tags:
         - applications.extensionProperty
       summary: Get extensionProperties from applications
-      description: Read-only. Nullable. Supports $expand and $filter (eq when counting empty collections).
       operationId: applications_ListExtensionProperties
       parameters:
         - name: application-id
@@ -940,7 +951,6 @@ paths:
       tags:
         - applications.extensionProperty
       summary: Get extensionProperties from applications
-      description: Read-only. Nullable. Supports $expand and $filter (eq when counting empty collections).
       operationId: applications_GetExtensionProperties
       parameters:
         - name: application-id
@@ -1066,7 +1076,6 @@ paths:
       tags:
         - applications.federatedIdentityCredential
       summary: Get federatedIdentityCredentials from applications
-      description: Federated identities for applications. Supports $expand and $filter (eq when counting empty collections).
       operationId: applications_ListFederatedIdentityCredentials
       parameters:
         - name: application-id
@@ -1177,7 +1186,6 @@ paths:
       tags:
         - applications.federatedIdentityCredential
       summary: Get federatedIdentityCredentials from applications
-      description: Federated identities for applications. Supports $expand and $filter (eq when counting empty collections).
       operationId: applications_GetFederatedIdentityCredentials
       parameters:
         - name: application-id
@@ -1452,7 +1460,6 @@ paths:
       tags:
         - applications.application
       summary: Get logo for application from applications
-      description: The main logo for the application. Not nullable.
       operationId: applications.application_GetLogo
       parameters:
         - name: application-id
@@ -1477,7 +1484,6 @@ paths:
       tags:
         - applications.application
       summary: Update logo for application in applications
-      description: The main logo for the application. Not nullable.
       operationId: applications.application_SetLogo
       parameters:
         - name: application-id
@@ -1912,7 +1918,6 @@ paths:
       tags:
         - applications.directoryObject
       summary: Get owners from applications
-      description: Directory objects that are owners of the application. Read-only. Nullable. Supports $expand.
       operationId: applications_ListOwners
       parameters:
         - name: application-id
@@ -2018,7 +2023,6 @@ paths:
       tags:
         - applications.directoryObject
       summary: Get ref of owners from applications
-      description: Directory objects that are owners of the application. Read-only. Nullable. Supports $expand.
       operationId: applications_ListGraphRefOwners
       parameters:
         - name: application-id
@@ -2150,6 +2154,10 @@ paths:
               operationId: applications.Synchronization.ListTemplates
               parameters:
                 application-id: $request.path.application-id
+            acquireAccessToken:
+              operationId: applications.application.synchronization.acquireAccessToken
+            Ping:
+              operationId: applications.application.synchronization.Ping
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2208,7 +2216,6 @@ paths:
       tags:
         - applications.synchronization
       summary: Get jobs from applications
-      description: 'Performs synchronization by periodically running in the background, polling for changes in one directory, and pushing them to another directory.'
       operationId: applications.synchronization_ListJobs
       parameters:
         - name: application-id
@@ -2318,7 +2325,6 @@ paths:
       tags:
         - applications.synchronization
       summary: Get jobs from applications
-      description: 'Performs synchronization by periodically running in the background, polling for changes in one directory, and pushing them to another directory.'
       operationId: applications.synchronization_GetJobs
       parameters:
         - name: application-id
@@ -2378,6 +2384,18 @@ paths:
               parameters:
                 application-id: $request.path.application-id
                 synchronizationJob-id: $request.path.synchronizationJob-id
+            pause:
+              operationId: applications.application.synchronization.jobs.synchronizationJob.pause
+            provisionOnDemand:
+              operationId: applications.application.synchronization.jobs.synchronizationJob.provisionOnDemand
+            restart:
+              operationId: applications.application.synchronization.jobs.synchronizationJob.restart
+            start:
+              operationId: applications.application.synchronization.jobs.synchronizationJob.start
+            stop:
+              operationId: applications.application.synchronization.jobs.synchronizationJob.stop
+            validateCredentials:
+              operationId: applications.application.synchronization.jobs.synchronizationJob.validateCredentials
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2666,7 +2684,6 @@ paths:
       tags:
         - applications.synchronization
       summary: Get schema from applications
-      description: The synchronization schema configured for the job.
       operationId: applications.synchronization.jobs_GetSchema
       parameters:
         - name: application-id
@@ -2724,6 +2741,12 @@ paths:
               parameters:
                 application-id: $request.path.application-id
                 synchronizationJob-id: $request.path.synchronizationJob-id
+            filterOperators:
+              operationId: applications.application.synchronization.jobs.synchronizationJob.schema.filterOperators
+            functions:
+              operationId: applications.application.synchronization.jobs.synchronizationJob.schema.functions
+            parseExpression:
+              operationId: applications.application.synchronization.jobs.synchronizationJob.schema.parseExpression
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2796,7 +2819,6 @@ paths:
       tags:
         - applications.synchronization
       summary: Get directories from applications
-      description: Contains the collection of directories and all of their objects.
       operationId: applications.synchronization.jobs.schema_ListDirectories
       parameters:
         - name: application-id
@@ -2924,7 +2946,6 @@ paths:
       tags:
         - applications.synchronization
       summary: Get directories from applications
-      description: Contains the collection of directories and all of their objects.
       operationId: applications.synchronization.jobs.schema_GetDirectories
       parameters:
         - name: application-id
@@ -2985,6 +3006,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.directoryDefinition'
+          links:
+            discover:
+              operationId: applications.application.synchronization.jobs.synchronizationJob.schema.directories.directoryDefinition.discover
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3343,7 +3367,6 @@ paths:
       tags:
         - applications.synchronization
       summary: Get templates from applications
-      description: Pre-configured synchronization settings for a particular application.
       operationId: applications.synchronization_ListTemplates
       parameters:
         - name: application-id
@@ -3459,7 +3482,6 @@ paths:
       tags:
         - applications.synchronization
       summary: Get templates from applications
-      description: Pre-configured synchronization settings for a particular application.
       operationId: applications.synchronization_GetTemplates
       parameters:
         - name: application-id
@@ -3593,7 +3615,6 @@ paths:
       tags:
         - applications.synchronization
       summary: Get schema from applications
-      description: Default synchronization schema for the jobs based on this template.
       operationId: applications.synchronization.templates_GetSchema
       parameters:
         - name: application-id
@@ -3651,6 +3672,12 @@ paths:
               parameters:
                 application-id: $request.path.application-id
                 synchronizationTemplate-id: $request.path.synchronizationTemplate-id
+            filterOperators:
+              operationId: applications.application.synchronization.templates.synchronizationTemplate.schema.filterOperators
+            functions:
+              operationId: applications.application.synchronization.templates.synchronizationTemplate.schema.functions
+            parseExpression:
+              operationId: applications.application.synchronization.templates.synchronizationTemplate.schema.parseExpression
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3723,7 +3750,6 @@ paths:
       tags:
         - applications.synchronization
       summary: Get directories from applications
-      description: Contains the collection of directories and all of their objects.
       operationId: applications.synchronization.templates.schema_ListDirectories
       parameters:
         - name: application-id
@@ -3851,7 +3877,6 @@ paths:
       tags:
         - applications.synchronization
       summary: Get directories from applications
-      description: Contains the collection of directories and all of their objects.
       operationId: applications.synchronization.templates.schema_GetDirectories
       parameters:
         - name: application-id
@@ -3912,6 +3937,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.directoryDefinition'
+          links:
+            discover:
+              operationId: applications.application.synchronization.templates.synchronizationTemplate.schema.directories.directoryDefinition.discover
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4366,7 +4394,6 @@ paths:
       tags:
         - applications.tokenLifetimePolicy
       summary: Get tokenLifetimePolicies from applications
-      description: The tokenLifetimePolicies assigned to this application. Supports $expand.
       operationId: applications_ListTokenLifetimePolicies
       parameters:
         - name: application-id
@@ -4486,7 +4513,6 @@ paths:
       tags:
         - applications.tokenLifetimePolicy
       summary: Get ref of tokenLifetimePolicies from applications
-      description: The tokenLifetimePolicies assigned to this application. Supports $expand.
       operationId: applications_ListGraphRefTokenLifetimePolicies
       parameters:
         - name: application-id
@@ -4706,8 +4732,7 @@ paths:
     get:
       tags:
         - applicationTemplates.applicationTemplate
-      summary: Get entities from applicationTemplates
-      description: List applicationTemplates
+      summary: List applicationTemplates
       operationId: applicationTemplates.applicationTemplate_ListApplicationTemplate
       parameters:
         - $ref: '#/components/parameters/top'
@@ -4814,8 +4839,7 @@ paths:
     get:
       tags:
         - applicationTemplates.applicationTemplate
-      summary: Get entity from applicationTemplates by key
-      description: Get applicationTemplate
+      summary: Get applicationTemplate
       operationId: applicationTemplates.applicationTemplate_GetApplicationTemplate
       parameters:
         - name: applicationTemplate-id
@@ -4865,6 +4889,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.applicationTemplate'
+          links:
+            instantiate:
+              operationId: applicationTemplates.applicationTemplate.instantiate
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4960,7 +4987,6 @@ paths:
       tags:
         - groups.appRoleAssignment
       summary: Get appRoleAssignments from groups
-      description: Represents the app roles a group has been granted for an application. Supports $expand.
       operationId: groups_ListAppRoleAssignments
       parameters:
         - name: group-id
@@ -5077,7 +5103,6 @@ paths:
       tags:
         - groups.appRoleAssignment
       summary: Get appRoleAssignments from groups
-      description: Represents the app roles a group has been granted for an application. Supports $expand.
       operationId: groups_GetAppRoleAssignments
       parameters:
         - name: group-id
@@ -5431,7 +5456,6 @@ paths:
       tags:
         - onPremisesPublishingProfiles.onPremisesAgentGroup
       summary: Get agentGroups from onPremisesPublishingProfiles
-      description: List of existing onPremisesAgentGroup objects. Read-only. Nullable.
       operationId: onPremisesPublishingProfiles_ListAgentGroups
       parameters:
         - name: onPremisesPublishingProfile-id
@@ -5540,7 +5564,6 @@ paths:
       tags:
         - onPremisesPublishingProfiles.onPremisesAgentGroup
       summary: Get agentGroups from onPremisesPublishingProfiles
-      description: List of existing onPremisesAgentGroup objects. Read-only. Nullable.
       operationId: onPremisesPublishingProfiles_GetAgentGroups
       parameters:
         - name: onPremisesPublishingProfile-id
@@ -5678,7 +5701,6 @@ paths:
       tags:
         - onPremisesPublishingProfiles.onPremisesAgentGroup
       summary: Get agents from onPremisesPublishingProfiles
-      description: List of onPremisesAgent that are assigned to an onPremisesAgentGroup. Read-only. Nullable.
       operationId: onPremisesPublishingProfiles.agentGroups_ListAgents
       parameters:
         - name: onPremisesPublishingProfile-id
@@ -5802,7 +5824,6 @@ paths:
       tags:
         - onPremisesPublishingProfiles.onPremisesAgentGroup
       summary: Get agents from onPremisesPublishingProfiles
-      description: List of onPremisesAgent that are assigned to an onPremisesAgentGroup. Read-only. Nullable.
       operationId: onPremisesPublishingProfiles.agentGroups_GetAgents
       parameters:
         - name: onPremisesPublishingProfile-id
@@ -5956,7 +5977,6 @@ paths:
       tags:
         - onPremisesPublishingProfiles.onPremisesAgentGroup
       summary: Get agentGroups from onPremisesPublishingProfiles
-      description: List of onPremisesAgentGroups that an onPremisesAgent is assigned to. Read-only. Nullable.
       operationId: onPremisesPublishingProfiles.agentGroups.agents_ListAgentGroups
       parameters:
         - name: onPremisesPublishingProfile-id
@@ -6100,7 +6120,6 @@ paths:
       tags:
         - onPremisesPublishingProfiles.onPremisesAgentGroup
       summary: Get ref of agentGroups from onPremisesPublishingProfiles
-      description: List of onPremisesAgentGroups that an onPremisesAgent is assigned to. Read-only. Nullable.
       operationId: onPremisesPublishingProfiles.agentGroups.agents_ListGraphRefAgentGroups
       parameters:
         - name: onPremisesPublishingProfile-id
@@ -6210,7 +6229,6 @@ paths:
       tags:
         - onPremisesPublishingProfiles.onPremisesAgentGroup
       summary: Get publishedResources from onPremisesPublishingProfiles
-      description: List of publishedResource that are assigned to an onPremisesAgentGroup. Read-only. Nullable.
       operationId: onPremisesPublishingProfiles.agentGroups_ListPublishedResources
       parameters:
         - name: onPremisesPublishingProfile-id
@@ -6331,7 +6349,6 @@ paths:
       tags:
         - onPremisesPublishingProfiles.onPremisesAgentGroup
       summary: Get publishedResources from onPremisesPublishingProfiles
-      description: List of publishedResource that are assigned to an onPremisesAgentGroup. Read-only. Nullable.
       operationId: onPremisesPublishingProfiles.agentGroups_GetPublishedResources
       parameters:
         - name: onPremisesPublishingProfile-id
@@ -6484,7 +6501,6 @@ paths:
       tags:
         - onPremisesPublishingProfiles.onPremisesAgentGroup
       summary: Get agentGroups from onPremisesPublishingProfiles
-      description: List of onPremisesAgentGroups that a publishedResource is assigned to. Read-only. Nullable.
       operationId: onPremisesPublishingProfiles.agentGroups.publishedResources_ListAgentGroups
       parameters:
         - name: onPremisesPublishingProfile-id
@@ -6672,7 +6688,6 @@ paths:
       tags:
         - onPremisesPublishingProfiles.onPremisesAgentGroup
       summary: Get ref of agentGroups from onPremisesPublishingProfiles
-      description: List of onPremisesAgentGroups that a publishedResource is assigned to. Read-only. Nullable.
       operationId: onPremisesPublishingProfiles.agentGroups.publishedResources_ListGraphRefAgentGroups
       parameters:
         - name: onPremisesPublishingProfile-id
@@ -6782,7 +6797,6 @@ paths:
       tags:
         - onPremisesPublishingProfiles.onPremisesAgent
       summary: Get agents from onPremisesPublishingProfiles
-      description: List of existing onPremisesAgent objects. Read-only. Nullable.
       operationId: onPremisesPublishingProfiles_ListAgents
       parameters:
         - name: onPremisesPublishingProfile-id
@@ -6892,7 +6906,6 @@ paths:
       tags:
         - onPremisesPublishingProfiles.onPremisesAgent
       summary: Get agents from onPremisesPublishingProfiles
-      description: List of existing onPremisesAgent objects. Read-only. Nullable.
       operationId: onPremisesPublishingProfiles_GetAgents
       parameters:
         - name: onPremisesPublishingProfile-id
@@ -7024,7 +7037,6 @@ paths:
       tags:
         - onPremisesPublishingProfiles.onPremisesAgent
       summary: Get agentGroups from onPremisesPublishingProfiles
-      description: List of onPremisesAgentGroups that an onPremisesAgent is assigned to. Read-only. Nullable.
       operationId: onPremisesPublishingProfiles.agents_ListAgentGroups
       parameters:
         - name: onPremisesPublishingProfile-id
@@ -7154,7 +7166,6 @@ paths:
       tags:
         - onPremisesPublishingProfiles.onPremisesAgent
       summary: Get ref of agentGroups from onPremisesPublishingProfiles
-      description: List of onPremisesAgentGroups that an onPremisesAgent is assigned to. Read-only. Nullable.
       operationId: onPremisesPublishingProfiles.agents_ListGraphRefAgentGroups
       parameters:
         - name: onPremisesPublishingProfile-id
@@ -7250,7 +7261,6 @@ paths:
       tags:
         - onPremisesPublishingProfiles.connectorGroup
       summary: Get connectorGroups from onPremisesPublishingProfiles
-      description: List of existing connectorGroup objects for applications published through Application Proxy. Read-only. Nullable.
       operationId: onPremisesPublishingProfiles_ListConnectorGroups
       parameters:
         - name: onPremisesPublishingProfile-id
@@ -7362,7 +7372,6 @@ paths:
       tags:
         - onPremisesPublishingProfiles.connectorGroup
       summary: Get connectorGroups from onPremisesPublishingProfiles
-      description: List of existing connectorGroup objects for applications published through Application Proxy. Read-only. Nullable.
       operationId: onPremisesPublishingProfiles_GetConnectorGroups
       parameters:
         - name: onPremisesPublishingProfile-id
@@ -7501,7 +7510,6 @@ paths:
       tags:
         - onPremisesPublishingProfiles.connectorGroup
       summary: Get applications from onPremisesPublishingProfiles
-      description: Read-only. Nullable.
       operationId: onPremisesPublishingProfiles.connectorGroups_ListApplications
       parameters:
         - name: onPremisesPublishingProfile-id
@@ -7696,7 +7704,6 @@ paths:
       tags:
         - onPremisesPublishingProfiles.connectorGroup
       summary: Get applications from onPremisesPublishingProfiles
-      description: Read-only. Nullable.
       operationId: onPremisesPublishingProfiles.connectorGroups_GetApplications
       parameters:
         - name: onPremisesPublishingProfile-id
@@ -7874,7 +7881,6 @@ paths:
       tags:
         - onPremisesPublishingProfiles.connectorGroup
       summary: Get logo for the navigation property applications from onPremisesPublishingProfiles
-      description: The main logo for the application. Not nullable.
       operationId: onPremisesPublishingProfiles.connectorGroups_GetApplicationsLogo
       parameters:
         - name: onPremisesPublishingProfile-id
@@ -7913,7 +7919,6 @@ paths:
       tags:
         - onPremisesPublishingProfiles.connectorGroup
       summary: Update logo for the navigation property applications in onPremisesPublishingProfiles
-      description: The main logo for the application. Not nullable.
       operationId: onPremisesPublishingProfiles.connectorGroups_SetApplicationsLogo
       parameters:
         - name: onPremisesPublishingProfile-id
@@ -7956,7 +7961,6 @@ paths:
       tags:
         - onPremisesPublishingProfiles.connectorGroup
       summary: Get members from onPremisesPublishingProfiles
-      description: Read-only. Nullable.
       operationId: onPremisesPublishingProfiles.connectorGroups_ListMembers
       parameters:
         - name: onPremisesPublishingProfile-id
@@ -8084,7 +8088,6 @@ paths:
       tags:
         - onPremisesPublishingProfiles.connectorGroup
       summary: Get ref of members from onPremisesPublishingProfiles
-      description: Read-only. Nullable.
       operationId: onPremisesPublishingProfiles.connectorGroups_ListGraphRefMembers
       parameters:
         - name: onPremisesPublishingProfile-id
@@ -8180,7 +8183,6 @@ paths:
       tags:
         - onPremisesPublishingProfiles.connector
       summary: Get connectors from onPremisesPublishingProfiles
-      description: List of existing connector objects for applications published through Application Proxy. Read-only. Nullable.
       operationId: onPremisesPublishingProfiles_ListConnectors
       parameters:
         - name: onPremisesPublishingProfile-id
@@ -8287,7 +8289,6 @@ paths:
       tags:
         - onPremisesPublishingProfiles.connector
       summary: Get connectors from onPremisesPublishingProfiles
-      description: List of existing connector objects for applications published through Application Proxy. Read-only. Nullable.
       operationId: onPremisesPublishingProfiles_GetConnectors
       parameters:
         - name: onPremisesPublishingProfile-id
@@ -8418,7 +8419,6 @@ paths:
       tags:
         - onPremisesPublishingProfiles.connector
       summary: Get memberOf from onPremisesPublishingProfiles
-      description: The connectorGroup that the connector is a member of. Read-only.
       operationId: onPremisesPublishingProfiles.connectors_ListMemberOf
       parameters:
         - name: onPremisesPublishingProfile-id
@@ -8551,7 +8551,6 @@ paths:
       tags:
         - onPremisesPublishingProfiles.connector
       summary: Get ref of memberOf from onPremisesPublishingProfiles
-      description: The connectorGroup that the connector is a member of. Read-only.
       operationId: onPremisesPublishingProfiles.connectors_ListGraphRefMemberOf
       parameters:
         - name: onPremisesPublishingProfile-id
@@ -8649,7 +8648,6 @@ paths:
       tags:
         - onPremisesPublishingProfiles.publishedResource
       summary: Get publishedResources from onPremisesPublishingProfiles
-      description: List of existing publishedResource objects. Read-only. Nullable.
       operationId: onPremisesPublishingProfiles_ListPublishedResources
       parameters:
         - name: onPremisesPublishingProfile-id
@@ -8756,7 +8754,6 @@ paths:
       tags:
         - onPremisesPublishingProfiles.publishedResource
       summary: Get publishedResources from onPremisesPublishingProfiles
-      description: List of existing publishedResource objects. Read-only. Nullable.
       operationId: onPremisesPublishingProfiles_GetPublishedResources
       parameters:
         - name: onPremisesPublishingProfile-id
@@ -8887,7 +8884,6 @@ paths:
       tags:
         - onPremisesPublishingProfiles.publishedResource
       summary: Get agentGroups from onPremisesPublishingProfiles
-      description: List of onPremisesAgentGroups that a publishedResource is assigned to. Read-only. Nullable.
       operationId: onPremisesPublishingProfiles.publishedResources_ListAgentGroups
       parameters:
         - name: onPremisesPublishingProfile-id
@@ -9054,7 +9050,6 @@ paths:
       tags:
         - onPremisesPublishingProfiles.publishedResource
       summary: Get ref of agentGroups from onPremisesPublishingProfiles
-      description: List of onPremisesAgentGroups that a publishedResource is assigned to. Read-only. Nullable.
       operationId: onPremisesPublishingProfiles.publishedResources_ListGraphRefAgentGroups
       parameters:
         - name: onPremisesPublishingProfile-id
@@ -9149,8 +9144,7 @@ paths:
     get:
       tags:
         - servicePrincipals.servicePrincipal
-      summary: Get entities from servicePrincipals
-      description: Configure required Azure AD Graph permissions for an app registration
+      summary: List servicePrincipals
       operationId: servicePrincipals.servicePrincipal_ListServicePrincipal
       parameters:
         - name: ConsistencyLevel
@@ -9366,8 +9360,7 @@ paths:
     post:
       tags:
         - servicePrincipals.servicePrincipal
-      summary: Add new entity to servicePrincipals
-      description: Create servicePrincipal
+      summary: Create servicePrincipal
       operationId: servicePrincipals.servicePrincipal_CreateServicePrincipal
       requestBody:
         description: New entity
@@ -9390,8 +9383,7 @@ paths:
     get:
       tags:
         - servicePrincipals.servicePrincipal
-      summary: Get entity from servicePrincipals by key
-      description: Get servicePrincipal
+      summary: Get servicePrincipal
       operationId: servicePrincipals.servicePrincipal_GetServicePrincipal
       parameters:
         - name: servicePrincipal-id
@@ -9579,14 +9571,33 @@ paths:
               operationId: servicePrincipals.GetSynchronization
               parameters:
                 servicePrincipal-id: $request.path.servicePrincipal-id
+            addTokenSigningCertificate:
+              operationId: servicePrincipals.servicePrincipal.addTokenSigningCertificate
+            checkMemberGroups:
+              operationId: servicePrincipals.servicePrincipal.checkMemberGroups
+            checkMemberObjects:
+              operationId: servicePrincipals.servicePrincipal.checkMemberObjects
+            createPasswordSingleSignOnCredentials:
+              operationId: servicePrincipals.servicePrincipal.createPasswordSingleSignOnCredentials
+            deletePasswordSingleSignOnCredentials:
+              operationId: servicePrincipals.servicePrincipal.deletePasswordSingleSignOnCredentials
+            getMemberGroups:
+              operationId: servicePrincipals.servicePrincipal.getMemberGroups
+            getMemberObjects:
+              operationId: servicePrincipals.servicePrincipal.getMemberObjects
+            getPasswordSingleSignOnCredentials:
+              operationId: servicePrincipals.servicePrincipal.getPasswordSingleSignOnCredentials
+            restore:
+              operationId: servicePrincipals.servicePrincipal.restore
+            updatePasswordSingleSignOnCredentials:
+              operationId: servicePrincipals.servicePrincipal.updatePasswordSingleSignOnCredentials
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     patch:
       tags:
         - servicePrincipals.servicePrincipal
-      summary: Update entity in servicePrincipals
-      description: 'Assign, update, or remove custom security attributes using the Microsoft Graph API (Preview)'
+      summary: Update servicePrincipal
       operationId: servicePrincipals.servicePrincipal_UpdateServicePrincipal
       parameters:
         - name: servicePrincipal-id
@@ -9612,8 +9623,7 @@ paths:
     delete:
       tags:
         - servicePrincipals.servicePrincipal
-      summary: Delete entity from servicePrincipals
-      description: Delete servicePrincipal
+      summary: Delete servicePrincipal
       operationId: servicePrincipals.servicePrincipal_DeleteServicePrincipal
       parameters:
         - name: servicePrincipal-id
@@ -9639,7 +9649,6 @@ paths:
       tags:
         - servicePrincipals.appManagementPolicy
       summary: Get appManagementPolicies from servicePrincipals
-      description: The appManagementPolicy applied to this service principal.
       operationId: servicePrincipals_ListAppManagementPolicies
       parameters:
         - name: servicePrincipal-id
@@ -9722,7 +9731,6 @@ paths:
       tags:
         - servicePrincipals.appManagementPolicy
       summary: Get appManagementPolicies from servicePrincipals
-      description: The appManagementPolicy applied to this service principal.
       operationId: servicePrincipals_GetAppManagementPolicies
       parameters:
         - name: servicePrincipal-id
@@ -9791,7 +9799,6 @@ paths:
       tags:
         - servicePrincipals.appRoleAssignment
       summary: Get appRoleAssignedTo from servicePrincipals
-      description: 'App role assignments for this app or service, granted to users, groups, and other service principals.Supports $expand.'
       operationId: servicePrincipals_ListAppRoleAssignedTo
       parameters:
         - name: servicePrincipal-id
@@ -9908,7 +9915,6 @@ paths:
       tags:
         - servicePrincipals.appRoleAssignment
       summary: Get appRoleAssignedTo from servicePrincipals
-      description: 'App role assignments for this app or service, granted to users, groups, and other service principals.Supports $expand.'
       operationId: servicePrincipals_GetAppRoleAssignedTo
       parameters:
         - name: servicePrincipal-id
@@ -10035,7 +10041,6 @@ paths:
       tags:
         - servicePrincipals.appRoleAssignment
       summary: Get appRoleAssignments from servicePrincipals
-      description: 'App role assignment for another app or service, granted to this service principal. Supports $expand.'
       operationId: servicePrincipals_ListAppRoleAssignments
       parameters:
         - name: servicePrincipal-id
@@ -10152,7 +10157,6 @@ paths:
       tags:
         - servicePrincipals.appRoleAssignment
       summary: Get appRoleAssignments from servicePrincipals
-      description: 'App role assignment for another app or service, granted to this service principal. Supports $expand.'
       operationId: servicePrincipals_GetAppRoleAssignments
       parameters:
         - name: servicePrincipal-id
@@ -10279,7 +10283,6 @@ paths:
       tags:
         - servicePrincipals.claimsMappingPolicy
       summary: Get claimsMappingPolicies from servicePrincipals
-      description: The claimsMappingPolicies assigned to this service principal. Supports $expand.
       operationId: servicePrincipals_ListClaimsMappingPolicies
       parameters:
         - name: servicePrincipal-id
@@ -10399,7 +10402,6 @@ paths:
       tags:
         - servicePrincipals.claimsMappingPolicy
       summary: Get ref of claimsMappingPolicies from servicePrincipals
-      description: The claimsMappingPolicies assigned to this service principal. Supports $expand.
       operationId: servicePrincipals_ListGraphRefClaimsMappingPolicies
       parameters:
         - name: servicePrincipal-id
@@ -10485,7 +10487,6 @@ paths:
       tags:
         - servicePrincipals.directoryObject
       summary: Get createdObjects from servicePrincipals
-      description: Directory objects created by this service principal. Read-only. Nullable.
       operationId: servicePrincipals_ListCreatedObjects
       parameters:
         - name: servicePrincipal-id
@@ -10554,7 +10555,6 @@ paths:
       tags:
         - servicePrincipals.directoryObject
       summary: Get createdObjects from servicePrincipals
-      description: Directory objects created by this service principal. Read-only. Nullable.
       operationId: servicePrincipals_GetCreatedObjects
       parameters:
         - name: servicePrincipal-id
@@ -10611,7 +10611,6 @@ paths:
       tags:
         - servicePrincipals.delegatedPermissionClassification
       summary: Get delegatedPermissionClassifications from servicePrincipals
-      description: The permission classifications for delegated permissions exposed by the app that this service principal represents. Supports $expand.
       operationId: servicePrincipals_ListDelegatedPermissionClassifications
       parameters:
         - name: servicePrincipal-id
@@ -10716,7 +10715,6 @@ paths:
       tags:
         - servicePrincipals.delegatedPermissionClassification
       summary: Get delegatedPermissionClassifications from servicePrincipals
-      description: The permission classifications for delegated permissions exposed by the app that this service principal represents. Supports $expand.
       operationId: servicePrincipals_GetDelegatedPermissionClassifications
       parameters:
         - name: servicePrincipal-id
@@ -10839,7 +10837,6 @@ paths:
       tags:
         - servicePrincipals.endpoint
       summary: Get endpoints from servicePrincipals
-      description: Endpoints available for discovery. Services like Sharepoint populate this property with a tenant specific SharePoint endpoints that other applications can discover and use in their experiences.
       operationId: servicePrincipals_ListEndpoints
       parameters:
         - name: servicePrincipal-id
@@ -10953,7 +10950,6 @@ paths:
       tags:
         - servicePrincipals.endpoint
       summary: Get endpoints from servicePrincipals
-      description: Endpoints available for discovery. Services like Sharepoint populate this property with a tenant specific SharePoint endpoints that other applications can discover and use in their experiences.
       operationId: servicePrincipals_GetEndpoints
       parameters:
         - name: servicePrincipal-id
@@ -11313,7 +11309,6 @@ paths:
       tags:
         - servicePrincipals.homeRealmDiscoveryPolicy
       summary: Get homeRealmDiscoveryPolicies from servicePrincipals
-      description: The homeRealmDiscoveryPolicies assigned to this service principal. Supports $expand.
       operationId: servicePrincipals_ListHomeRealmDiscoveryPolicies
       parameters:
         - name: servicePrincipal-id
@@ -11433,7 +11428,6 @@ paths:
       tags:
         - servicePrincipals.homeRealmDiscoveryPolicy
       summary: Get ref of homeRealmDiscoveryPolicies from servicePrincipals
-      description: The homeRealmDiscoveryPolicies assigned to this service principal. Supports $expand.
       operationId: servicePrincipals_ListGraphRefHomeRealmDiscoveryPolicies
       parameters:
         - name: servicePrincipal-id
@@ -11745,7 +11739,6 @@ paths:
       tags:
         - servicePrincipals.directoryObject
       summary: Get memberOf from servicePrincipals
-      description: 'Roles that this service principal is a member of. HTTP Methods: GET Read-only. Nullable. Supports $expand.'
       operationId: servicePrincipals_ListMemberOf
       parameters:
         - name: servicePrincipal-id
@@ -11814,7 +11807,6 @@ paths:
       tags:
         - servicePrincipals.directoryObject
       summary: Get memberOf from servicePrincipals
-      description: 'Roles that this service principal is a member of. HTTP Methods: GET Read-only. Nullable. Supports $expand.'
       operationId: servicePrincipals_GetMemberOf
       parameters:
         - name: servicePrincipal-id
@@ -12265,7 +12257,6 @@ paths:
       tags:
         - servicePrincipals.oAuth2PermissionGrant
       summary: Get oauth2PermissionGrants from servicePrincipals
-      description: Delegated permission grants authorizing this service principal to access an API on behalf of a signed-in user. Read-only. Nullable.
       operationId: servicePrincipals_ListOauth2PermissionGrants
       parameters:
         - name: servicePrincipal-id
@@ -12352,7 +12343,6 @@ paths:
       tags:
         - servicePrincipals.oAuth2PermissionGrant
       summary: Get oauth2PermissionGrants from servicePrincipals
-      description: Delegated permission grants authorizing this service principal to access an API on behalf of a signed-in user. Read-only. Nullable.
       operationId: servicePrincipals_GetOauth2PermissionGrants
       parameters:
         - name: servicePrincipal-id
@@ -12415,7 +12405,6 @@ paths:
       tags:
         - servicePrincipals.directoryObject
       summary: Get ownedObjects from servicePrincipals
-      description: Directory objects that are owned by this service principal. Read-only. Nullable. Supports $expand.
       operationId: servicePrincipals_ListOwnedObjects
       parameters:
         - name: servicePrincipal-id
@@ -12484,7 +12473,6 @@ paths:
       tags:
         - servicePrincipals.directoryObject
       summary: Get ownedObjects from servicePrincipals
-      description: Directory objects that are owned by this service principal. Read-only. Nullable. Supports $expand.
       operationId: servicePrincipals_GetOwnedObjects
       parameters:
         - name: servicePrincipal-id
@@ -12541,7 +12529,6 @@ paths:
       tags:
         - servicePrincipals.directoryObject
       summary: Get owners from servicePrincipals
-      description: Directory objects that are owners of this servicePrincipal. The owners are a set of non-admin users or servicePrincipals who are allowed to modify this object. Read-only. Nullable. Supports $expand.
       operationId: servicePrincipals_ListOwners
       parameters:
         - name: servicePrincipal-id
@@ -12647,7 +12634,6 @@ paths:
       tags:
         - servicePrincipals.directoryObject
       summary: Get ref of owners from servicePrincipals
-      description: Directory objects that are owners of this servicePrincipal. The owners are a set of non-admin users or servicePrincipals who are allowed to modify this object. Read-only. Nullable. Supports $expand.
       operationId: servicePrincipals_ListGraphRefOwners
       parameters:
         - name: servicePrincipal-id
@@ -12779,6 +12765,10 @@ paths:
               operationId: servicePrincipals.Synchronization.ListTemplates
               parameters:
                 servicePrincipal-id: $request.path.servicePrincipal-id
+            acquireAccessToken:
+              operationId: servicePrincipals.servicePrincipal.synchronization.acquireAccessToken
+            Ping:
+              operationId: servicePrincipals.servicePrincipal.synchronization.Ping
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -12837,7 +12827,6 @@ paths:
       tags:
         - servicePrincipals.synchronization
       summary: Get jobs from servicePrincipals
-      description: 'Performs synchronization by periodically running in the background, polling for changes in one directory, and pushing them to another directory.'
       operationId: servicePrincipals.synchronization_ListJobs
       parameters:
         - name: servicePrincipal-id
@@ -12947,7 +12936,6 @@ paths:
       tags:
         - servicePrincipals.synchronization
       summary: Get jobs from servicePrincipals
-      description: 'Performs synchronization by periodically running in the background, polling for changes in one directory, and pushing them to another directory.'
       operationId: servicePrincipals.synchronization_GetJobs
       parameters:
         - name: servicePrincipal-id
@@ -13007,6 +12995,18 @@ paths:
               parameters:
                 servicePrincipal-id: $request.path.servicePrincipal-id
                 synchronizationJob-id: $request.path.synchronizationJob-id
+            pause:
+              operationId: servicePrincipals.servicePrincipal.synchronization.jobs.synchronizationJob.pause
+            provisionOnDemand:
+              operationId: servicePrincipals.servicePrincipal.synchronization.jobs.synchronizationJob.provisionOnDemand
+            restart:
+              operationId: servicePrincipals.servicePrincipal.synchronization.jobs.synchronizationJob.restart
+            start:
+              operationId: servicePrincipals.servicePrincipal.synchronization.jobs.synchronizationJob.start
+            stop:
+              operationId: servicePrincipals.servicePrincipal.synchronization.jobs.synchronizationJob.stop
+            validateCredentials:
+              operationId: servicePrincipals.servicePrincipal.synchronization.jobs.synchronizationJob.validateCredentials
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -13295,7 +13295,6 @@ paths:
       tags:
         - servicePrincipals.synchronization
       summary: Get schema from servicePrincipals
-      description: The synchronization schema configured for the job.
       operationId: servicePrincipals.synchronization.jobs_GetSchema
       parameters:
         - name: servicePrincipal-id
@@ -13353,6 +13352,12 @@ paths:
               parameters:
                 servicePrincipal-id: $request.path.servicePrincipal-id
                 synchronizationJob-id: $request.path.synchronizationJob-id
+            filterOperators:
+              operationId: servicePrincipals.servicePrincipal.synchronization.jobs.synchronizationJob.schema.filterOperators
+            functions:
+              operationId: servicePrincipals.servicePrincipal.synchronization.jobs.synchronizationJob.schema.functions
+            parseExpression:
+              operationId: servicePrincipals.servicePrincipal.synchronization.jobs.synchronizationJob.schema.parseExpression
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -13425,7 +13430,6 @@ paths:
       tags:
         - servicePrincipals.synchronization
       summary: Get directories from servicePrincipals
-      description: Contains the collection of directories and all of their objects.
       operationId: servicePrincipals.synchronization.jobs.schema_ListDirectories
       parameters:
         - name: servicePrincipal-id
@@ -13553,7 +13557,6 @@ paths:
       tags:
         - servicePrincipals.synchronization
       summary: Get directories from servicePrincipals
-      description: Contains the collection of directories and all of their objects.
       operationId: servicePrincipals.synchronization.jobs.schema_GetDirectories
       parameters:
         - name: servicePrincipal-id
@@ -13614,6 +13617,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.directoryDefinition'
+          links:
+            discover:
+              operationId: servicePrincipals.servicePrincipal.synchronization.jobs.synchronizationJob.schema.directories.directoryDefinition.discover
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -13972,7 +13978,6 @@ paths:
       tags:
         - servicePrincipals.synchronization
       summary: Get templates from servicePrincipals
-      description: Pre-configured synchronization settings for a particular application.
       operationId: servicePrincipals.synchronization_ListTemplates
       parameters:
         - name: servicePrincipal-id
@@ -14088,7 +14093,6 @@ paths:
       tags:
         - servicePrincipals.synchronization
       summary: Get templates from servicePrincipals
-      description: Pre-configured synchronization settings for a particular application.
       operationId: servicePrincipals.synchronization_GetTemplates
       parameters:
         - name: servicePrincipal-id
@@ -14222,7 +14226,6 @@ paths:
       tags:
         - servicePrincipals.synchronization
       summary: Get schema from servicePrincipals
-      description: Default synchronization schema for the jobs based on this template.
       operationId: servicePrincipals.synchronization.templates_GetSchema
       parameters:
         - name: servicePrincipal-id
@@ -14280,6 +14283,12 @@ paths:
               parameters:
                 servicePrincipal-id: $request.path.servicePrincipal-id
                 synchronizationTemplate-id: $request.path.synchronizationTemplate-id
+            filterOperators:
+              operationId: servicePrincipals.servicePrincipal.synchronization.templates.synchronizationTemplate.schema.filterOperators
+            functions:
+              operationId: servicePrincipals.servicePrincipal.synchronization.templates.synchronizationTemplate.schema.functions
+            parseExpression:
+              operationId: servicePrincipals.servicePrincipal.synchronization.templates.synchronizationTemplate.schema.parseExpression
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -14352,7 +14361,6 @@ paths:
       tags:
         - servicePrincipals.synchronization
       summary: Get directories from servicePrincipals
-      description: Contains the collection of directories and all of their objects.
       operationId: servicePrincipals.synchronization.templates.schema_ListDirectories
       parameters:
         - name: servicePrincipal-id
@@ -14480,7 +14488,6 @@ paths:
       tags:
         - servicePrincipals.synchronization
       summary: Get directories from servicePrincipals
-      description: Contains the collection of directories and all of their objects.
       operationId: servicePrincipals.synchronization.templates.schema_GetDirectories
       parameters:
         - name: servicePrincipal-id
@@ -14541,6 +14548,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.directoryDefinition'
+          links:
+            discover:
+              operationId: servicePrincipals.servicePrincipal.synchronization.templates.synchronizationTemplate.schema.directories.directoryDefinition.discover
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -14791,7 +14801,6 @@ paths:
       tags:
         - servicePrincipals.tokenIssuancePolicy
       summary: Get tokenIssuancePolicies from servicePrincipals
-      description: The tokenIssuancePolicies assigned to this service principal. Supports $expand.
       operationId: servicePrincipals_ListTokenIssuancePolicies
       parameters:
         - name: servicePrincipal-id
@@ -14874,7 +14883,6 @@ paths:
       tags:
         - servicePrincipals.tokenIssuancePolicy
       summary: Get tokenIssuancePolicies from servicePrincipals
-      description: The tokenIssuancePolicies assigned to this service principal. Supports $expand.
       operationId: servicePrincipals_GetTokenIssuancePolicies
       parameters:
         - name: servicePrincipal-id
@@ -14943,7 +14951,6 @@ paths:
       tags:
         - servicePrincipals.tokenLifetimePolicy
       summary: Get tokenLifetimePolicies from servicePrincipals
-      description: The tokenLifetimePolicies assigned to this service principal. Supports $expand.
       operationId: servicePrincipals_ListTokenLifetimePolicies
       parameters:
         - name: servicePrincipal-id
@@ -15026,7 +15033,6 @@ paths:
       tags:
         - servicePrincipals.tokenLifetimePolicy
       summary: Get tokenLifetimePolicies from servicePrincipals
-      description: The tokenLifetimePolicies assigned to this service principal. Supports $expand.
       operationId: servicePrincipals_GetTokenLifetimePolicies
       parameters:
         - name: servicePrincipal-id
@@ -15354,7 +15360,6 @@ paths:
       tags:
         - users.appRoleAssignment
       summary: Get appRoleAssignments from users
-      description: Represents the app roles a user has been granted for an application. Supports $expand.
       operationId: users_ListAppRoleAssignments
       parameters:
         - name: user-id
@@ -15471,7 +15476,6 @@ paths:
       tags:
         - users.appRoleAssignment
       summary: Get appRoleAssignments from users
-      description: Represents the app roles a user has been granted for an application. Supports $expand.
       operationId: users_GetAppRoleAssignments
       parameters:
         - name: user-id
@@ -18664,11 +18668,11 @@ components:
       properties:
         key:
           type: string
-          description: Key.
+          description: 'Contains the name of the field that a value is associated with. When a sign in or domain hint is included in the sign-in request, corresponding fields are included as key-value pairs. Possible keys: Login hint present, Domain hint present.'
           nullable: true
         value:
           type: string
-          description: Value.
+          description: Contains the corresponding value for the specified key. The value is true if a sign in hint was included in the sign-in request; otherwise false. The value is true if a domain hint was included in the sign-in request; otherwise false.
           nullable: true
       additionalProperties:
         type: object

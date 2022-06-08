@@ -11,7 +11,6 @@ paths:
       tags:
         - users.inferenceClassification
       summary: Get inferenceClassification from users
-      description: Relevance classification of the user's messages based on explicit designations which override inferred relevance or importance.
       operationId: users_GetInferenceClassification
       parameters:
         - name: user-id
@@ -104,7 +103,6 @@ paths:
       tags:
         - users.inferenceClassification
       summary: Get overrides from users
-      description: 'A set of overrides for a user to always classify messages from specific senders in certain ways: focused, or other. Read-only. Nullable.'
       operationId: users.inferenceClassification_ListOverrides
       parameters:
         - name: user-id
@@ -193,7 +191,6 @@ paths:
       tags:
         - users.inferenceClassification
       summary: Get overrides from users
-      description: 'A set of overrides for a user to always classify messages from specific senders in certain ways: focused, or other. Read-only. Nullable.'
       operationId: users.inferenceClassification_GetOverrides
       parameters:
         - name: user-id
@@ -303,7 +300,6 @@ paths:
       tags:
         - users.mailFolder
       summary: Get mailFolders from users
-      description: The user's mail folders. Read-only. Nullable.
       operationId: users_ListMailFolders
       parameters:
         - name: user-id
@@ -413,7 +409,6 @@ paths:
       tags:
         - users.mailFolder
       summary: Get mailFolders from users
-      description: The user's mail folders. Read-only. Nullable.
       operationId: users_GetMailFolders
       parameters:
         - name: user-id
@@ -493,6 +488,10 @@ paths:
               parameters:
                 user-id: $request.path.user-id
                 mailFolder-id: $request.path.mailFolder-id
+            copy:
+              operationId: users.user.mailFolders.mailFolder.copy
+            move:
+              operationId: users.user.mailFolders.mailFolder.move
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -565,7 +564,6 @@ paths:
       tags:
         - users.mailFolder
       summary: Get childFolders from users
-      description: The collection of child folders in the mailFolder.
       operationId: users.mailFolders_ListChildFolders
       parameters:
         - name: user-id
@@ -707,7 +705,6 @@ paths:
       tags:
         - users.mailFolder
       summary: Get childFolders from users
-      description: The collection of child folders in the mailFolder.
       operationId: users.mailFolders_GetChildFolders
       parameters:
         - name: user-id
@@ -818,6 +815,10 @@ paths:
                 user-id: $request.path.user-id
                 mailFolder-id: $request.path.mailFolder-id
                 mailFolder-id1: $request.path.mailFolder-id1
+            copy:
+              operationId: users.user.mailFolders.mailFolder.childFolders.mailFolder.copy
+            move:
+              operationId: users.user.mailFolders.mailFolder.childFolders.mailFolder.move
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -904,7 +905,6 @@ paths:
       tags:
         - users.mailFolder
       summary: Get messageRules from users
-      description: The collection of rules that apply to the user's Inbox folder.
       operationId: users.mailFolders.childFolders_ListMessageRules
       parameters:
         - name: user-id
@@ -1039,7 +1039,6 @@ paths:
       tags:
         - users.mailFolder
       summary: Get messageRules from users
-      description: The collection of rules that apply to the user's Inbox folder.
       operationId: users.mailFolders.childFolders_GetMessageRules
       parameters:
         - name: user-id
@@ -1197,7 +1196,6 @@ paths:
       tags:
         - users.mailFolder
       summary: Get messages from users
-      description: The collection of messages in the mailFolder.
       operationId: users.mailFolders.childFolders_ListMessages
       parameters:
         - name: user-id
@@ -1430,7 +1428,6 @@ paths:
       tags:
         - users.mailFolder
       summary: Get messages from users
-      description: The collection of messages in the mailFolder.
       operationId: users.mailFolders.childFolders_GetMessages
       parameters:
         - name: user-id
@@ -1571,6 +1568,26 @@ paths:
                 mailFolder-id: $request.path.mailFolder-id
                 mailFolder-id1: $request.path.mailFolder-id1
                 message-id: $request.path.message-id
+            copy:
+              operationId: users.user.mailFolders.mailFolder.childFolders.mailFolder.messages.message.copy
+            createForward:
+              operationId: users.user.mailFolders.mailFolder.childFolders.mailFolder.messages.message.createForward
+            createReply:
+              operationId: users.user.mailFolders.mailFolder.childFolders.mailFolder.messages.message.createReply
+            createReplyAll:
+              operationId: users.user.mailFolders.mailFolder.childFolders.mailFolder.messages.message.createReplyAll
+            forward:
+              operationId: users.user.mailFolders.mailFolder.childFolders.mailFolder.messages.message.forward
+            move:
+              operationId: users.user.mailFolders.mailFolder.childFolders.mailFolder.messages.message.move
+            reply:
+              operationId: users.user.mailFolders.mailFolder.childFolders.mailFolder.messages.message.reply
+            replyAll:
+              operationId: users.user.mailFolders.mailFolder.childFolders.mailFolder.messages.message.replyAll
+            send:
+              operationId: users.user.mailFolders.mailFolder.childFolders.mailFolder.messages.message.send
+            unsubscribe:
+              operationId: users.user.mailFolders.mailFolder.childFolders.mailFolder.messages.message.unsubscribe
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1765,7 +1782,6 @@ paths:
       tags:
         - users.mailFolder
       summary: Get attachments from users
-      description: The fileAttachment and itemAttachment attachments for the message.
       operationId: users.mailFolders.childFolders.messages_ListAttachments
       parameters:
         - name: user-id
@@ -1917,7 +1933,6 @@ paths:
       tags:
         - users.mailFolder
       summary: Get attachments from users
-      description: The fileAttachment and itemAttachment attachments for the message.
       operationId: users.mailFolders.childFolders.messages_GetAttachments
       parameters:
         - name: user-id
@@ -2105,7 +2120,6 @@ paths:
       tags:
         - users.mailFolder
       summary: Get extensions from users
-      description: The collection of open extensions defined for the message. Nullable.
       operationId: users.mailFolders.childFolders.messages_ListExtensions
       parameters:
         - name: user-id
@@ -2242,7 +2256,6 @@ paths:
       tags:
         - users.mailFolder
       summary: Get extensions from users
-      description: The collection of open extensions defined for the message. Nullable.
       operationId: users.mailFolders.childFolders.messages_GetExtensions
       parameters:
         - name: user-id
@@ -2425,7 +2438,6 @@ paths:
       tags:
         - users.mailFolder
       summary: Get mentions from users
-      description: 'A collection of mentions in the message, ordered by the createdDateTime from the newest to the oldest. By default, a GET /messages does not return this property unless you apply $expand on the property.'
       operationId: users.mailFolders.childFolders.messages_ListMentions
       parameters:
         - name: user-id
@@ -2586,7 +2598,6 @@ paths:
       tags:
         - users.mailFolder
       summary: Get mentions from users
-      description: 'A collection of mentions in the message, ordered by the createdDateTime from the newest to the oldest. By default, a GET /messages does not return this property unless you apply $expand on the property.'
       operationId: users.mailFolders.childFolders.messages_GetMentions
       parameters:
         - name: user-id
@@ -2777,7 +2788,6 @@ paths:
       tags:
         - users.mailFolder
       summary: Get multiValueExtendedProperties from users
-      description: The collection of multi-value extended properties defined for the message. Nullable.
       operationId: users.mailFolders.childFolders.messages_ListMultiValueExtendedProperties
       parameters:
         - name: user-id
@@ -2918,7 +2928,6 @@ paths:
       tags:
         - users.mailFolder
       summary: Get multiValueExtendedProperties from users
-      description: The collection of multi-value extended properties defined for the message. Nullable.
       operationId: users.mailFolders.childFolders.messages_GetMultiValueExtendedProperties
       parameters:
         - name: user-id
@@ -3102,7 +3111,6 @@ paths:
       tags:
         - users.mailFolder
       summary: Get singleValueExtendedProperties from users
-      description: The collection of single-value extended properties defined for the message. Nullable.
       operationId: users.mailFolders.childFolders.messages_ListSingleValueExtendedProperties
       parameters:
         - name: user-id
@@ -3243,7 +3251,6 @@ paths:
       tags:
         - users.mailFolder
       summary: Get singleValueExtendedProperties from users
-      description: The collection of single-value extended properties defined for the message. Nullable.
       operationId: users.mailFolders.childFolders.messages_GetSingleValueExtendedProperties
       parameters:
         - name: user-id
@@ -3427,7 +3434,6 @@ paths:
       tags:
         - users.mailFolder
       summary: Get multiValueExtendedProperties from users
-      description: The collection of multi-value extended properties defined for the mailFolder. Read-only. Nullable.
       operationId: users.mailFolders.childFolders_ListMultiValueExtendedProperties
       parameters:
         - name: user-id
@@ -3554,7 +3560,6 @@ paths:
       tags:
         - users.mailFolder
       summary: Get multiValueExtendedProperties from users
-      description: The collection of multi-value extended properties defined for the mailFolder. Read-only. Nullable.
       operationId: users.mailFolders.childFolders_GetMultiValueExtendedProperties
       parameters:
         - name: user-id
@@ -3717,7 +3722,6 @@ paths:
       tags:
         - users.mailFolder
       summary: Get singleValueExtendedProperties from users
-      description: The collection of single-value extended properties defined for the mailFolder. Read-only. Nullable.
       operationId: users.mailFolders.childFolders_ListSingleValueExtendedProperties
       parameters:
         - name: user-id
@@ -3844,7 +3848,6 @@ paths:
       tags:
         - users.mailFolder
       summary: Get singleValueExtendedProperties from users
-      description: The collection of single-value extended properties defined for the mailFolder. Read-only. Nullable.
       operationId: users.mailFolders.childFolders_GetSingleValueExtendedProperties
       parameters:
         - name: user-id
@@ -4270,7 +4273,6 @@ paths:
       tags:
         - users.mailFolder
       summary: Get messageRules from users
-      description: The collection of rules that apply to the user's Inbox folder.
       operationId: users.mailFolders_ListMessageRules
       parameters:
         - name: user-id
@@ -4391,7 +4393,6 @@ paths:
       tags:
         - users.mailFolder
       summary: Get messageRules from users
-      description: The collection of rules that apply to the user's Inbox folder.
       operationId: users.mailFolders_GetMessageRules
       parameters:
         - name: user-id
@@ -4528,7 +4529,6 @@ paths:
       tags:
         - users.mailFolder
       summary: Get messages from users
-      description: The collection of messages in the mailFolder.
       operationId: users.mailFolders_ListMessages
       parameters:
         - name: user-id
@@ -4747,7 +4747,6 @@ paths:
       tags:
         - users.mailFolder
       summary: Get messages from users
-      description: The collection of messages in the mailFolder.
       operationId: users.mailFolders_GetMessages
       parameters:
         - name: user-id
@@ -4876,6 +4875,26 @@ paths:
                 user-id: $request.path.user-id
                 mailFolder-id: $request.path.mailFolder-id
                 message-id: $request.path.message-id
+            copy:
+              operationId: users.user.mailFolders.mailFolder.messages.message.copy
+            createForward:
+              operationId: users.user.mailFolders.mailFolder.messages.message.createForward
+            createReply:
+              operationId: users.user.mailFolders.mailFolder.messages.message.createReply
+            createReplyAll:
+              operationId: users.user.mailFolders.mailFolder.messages.message.createReplyAll
+            forward:
+              operationId: users.user.mailFolders.mailFolder.messages.message.forward
+            move:
+              operationId: users.user.mailFolders.mailFolder.messages.message.move
+            reply:
+              operationId: users.user.mailFolders.mailFolder.messages.message.reply
+            replyAll:
+              operationId: users.user.mailFolders.mailFolder.messages.message.replyAll
+            send:
+              operationId: users.user.mailFolders.mailFolder.messages.message.send
+            unsubscribe:
+              operationId: users.user.mailFolders.mailFolder.messages.message.unsubscribe
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5042,7 +5061,6 @@ paths:
       tags:
         - users.mailFolder
       summary: Get attachments from users
-      description: The fileAttachment and itemAttachment attachments for the message.
       operationId: users.mailFolders.messages_ListAttachments
       parameters:
         - name: user-id
@@ -5180,7 +5198,6 @@ paths:
       tags:
         - users.mailFolder
       summary: Get attachments from users
-      description: The fileAttachment and itemAttachment attachments for the message.
       operationId: users.mailFolders.messages_GetAttachments
       parameters:
         - name: user-id
@@ -5347,7 +5364,6 @@ paths:
       tags:
         - users.mailFolder
       summary: Get extensions from users
-      description: The collection of open extensions defined for the message. Nullable.
       operationId: users.mailFolders.messages_ListExtensions
       parameters:
         - name: user-id
@@ -5470,7 +5486,6 @@ paths:
       tags:
         - users.mailFolder
       summary: Get extensions from users
-      description: The collection of open extensions defined for the message. Nullable.
       operationId: users.mailFolders.messages_GetExtensions
       parameters:
         - name: user-id
@@ -5632,7 +5647,6 @@ paths:
       tags:
         - users.mailFolder
       summary: Get mentions from users
-      description: 'A collection of mentions in the message, ordered by the createdDateTime from the newest to the oldest. By default, a GET /messages does not return this property unless you apply $expand on the property.'
       operationId: users.mailFolders.messages_ListMentions
       parameters:
         - name: user-id
@@ -5779,7 +5793,6 @@ paths:
       tags:
         - users.mailFolder
       summary: Get mentions from users
-      description: 'A collection of mentions in the message, ordered by the createdDateTime from the newest to the oldest. By default, a GET /messages does not return this property unless you apply $expand on the property.'
       operationId: users.mailFolders.messages_GetMentions
       parameters:
         - name: user-id
@@ -5949,7 +5962,6 @@ paths:
       tags:
         - users.mailFolder
       summary: Get multiValueExtendedProperties from users
-      description: The collection of multi-value extended properties defined for the message. Nullable.
       operationId: users.mailFolders.messages_ListMultiValueExtendedProperties
       parameters:
         - name: user-id
@@ -6076,7 +6088,6 @@ paths:
       tags:
         - users.mailFolder
       summary: Get multiValueExtendedProperties from users
-      description: The collection of multi-value extended properties defined for the message. Nullable.
       operationId: users.mailFolders.messages_GetMultiValueExtendedProperties
       parameters:
         - name: user-id
@@ -6239,7 +6250,6 @@ paths:
       tags:
         - users.mailFolder
       summary: Get singleValueExtendedProperties from users
-      description: The collection of single-value extended properties defined for the message. Nullable.
       operationId: users.mailFolders.messages_ListSingleValueExtendedProperties
       parameters:
         - name: user-id
@@ -6366,7 +6376,6 @@ paths:
       tags:
         - users.mailFolder
       summary: Get singleValueExtendedProperties from users
-      description: The collection of single-value extended properties defined for the message. Nullable.
       operationId: users.mailFolders.messages_GetSingleValueExtendedProperties
       parameters:
         - name: user-id
@@ -6529,7 +6538,6 @@ paths:
       tags:
         - users.mailFolder
       summary: Get multiValueExtendedProperties from users
-      description: The collection of multi-value extended properties defined for the mailFolder. Read-only. Nullable.
       operationId: users.mailFolders_ListMultiValueExtendedProperties
       parameters:
         - name: user-id
@@ -6642,7 +6650,6 @@ paths:
       tags:
         - users.mailFolder
       summary: Get multiValueExtendedProperties from users
-      description: The collection of multi-value extended properties defined for the mailFolder. Read-only. Nullable.
       operationId: users.mailFolders_GetMultiValueExtendedProperties
       parameters:
         - name: user-id
@@ -6784,7 +6791,6 @@ paths:
       tags:
         - users.mailFolder
       summary: Get singleValueExtendedProperties from users
-      description: The collection of single-value extended properties defined for the mailFolder. Read-only. Nullable.
       operationId: users.mailFolders_ListSingleValueExtendedProperties
       parameters:
         - name: user-id
@@ -6897,7 +6903,6 @@ paths:
       tags:
         - users.mailFolder
       summary: Get singleValueExtendedProperties from users
-      description: The collection of single-value extended properties defined for the mailFolder. Read-only. Nullable.
       operationId: users.mailFolders_GetSingleValueExtendedProperties
       parameters:
         - name: user-id
@@ -7267,7 +7272,6 @@ paths:
       tags:
         - users.message
       summary: Get messages from users
-      description: The messages in a mailbox or folder. Read-only. Nullable.
       operationId: users_ListMessages
       parameters:
         - name: user-id
@@ -7455,7 +7459,6 @@ paths:
       tags:
         - users.message
       summary: Get messages from users
-      description: The messages in a mailbox or folder. Read-only. Nullable.
       operationId: users_GetMessages
       parameters:
         - name: user-id
@@ -7555,6 +7558,26 @@ paths:
               parameters:
                 user-id: $request.path.user-id
                 message-id: $request.path.message-id
+            copy:
+              operationId: users.user.messages.message.copy
+            createForward:
+              operationId: users.user.messages.message.createForward
+            createReply:
+              operationId: users.user.messages.message.createReply
+            createReplyAll:
+              operationId: users.user.messages.message.createReplyAll
+            forward:
+              operationId: users.user.messages.message.forward
+            move:
+              operationId: users.user.messages.message.move
+            reply:
+              operationId: users.user.messages.message.reply
+            replyAll:
+              operationId: users.user.messages.message.replyAll
+            send:
+              operationId: users.user.messages.message.send
+            unsubscribe:
+              operationId: users.user.messages.message.unsubscribe
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -7693,7 +7716,6 @@ paths:
       tags:
         - users.message
       summary: Get attachments from users
-      description: The fileAttachment and itemAttachment attachments for the message.
       operationId: users.messages_ListAttachments
       parameters:
         - name: user-id
@@ -7817,7 +7839,6 @@ paths:
       tags:
         - users.message
       summary: Get attachments from users
-      description: The fileAttachment and itemAttachment attachments for the message.
       operationId: users.messages_GetAttachments
       parameters:
         - name: user-id
@@ -7963,7 +7984,6 @@ paths:
       tags:
         - users.message
       summary: Get extensions from users
-      description: The collection of open extensions defined for the message. Nullable.
       operationId: users.messages_ListExtensions
       parameters:
         - name: user-id
@@ -8072,7 +8092,6 @@ paths:
       tags:
         - users.message
       summary: Get extensions from users
-      description: The collection of open extensions defined for the message. Nullable.
       operationId: users.messages_GetExtensions
       parameters:
         - name: user-id
@@ -8213,7 +8232,6 @@ paths:
       tags:
         - users.message
       summary: Get mentions from users
-      description: 'A collection of mentions in the message, ordered by the createdDateTime from the newest to the oldest. By default, a GET /messages does not return this property unless you apply $expand on the property.'
       operationId: users.messages_ListMentions
       parameters:
         - name: user-id
@@ -8346,7 +8364,6 @@ paths:
       tags:
         - users.message
       summary: Get mentions from users
-      description: 'A collection of mentions in the message, ordered by the createdDateTime from the newest to the oldest. By default, a GET /messages does not return this property unless you apply $expand on the property.'
       operationId: users.messages_GetMentions
       parameters:
         - name: user-id
@@ -8495,7 +8512,6 @@ paths:
       tags:
         - users.message
       summary: Get multiValueExtendedProperties from users
-      description: The collection of multi-value extended properties defined for the message. Nullable.
       operationId: users.messages_ListMultiValueExtendedProperties
       parameters:
         - name: user-id
@@ -8608,7 +8624,6 @@ paths:
       tags:
         - users.message
       summary: Get multiValueExtendedProperties from users
-      description: The collection of multi-value extended properties defined for the message. Nullable.
       operationId: users.messages_GetMultiValueExtendedProperties
       parameters:
         - name: user-id
@@ -8750,7 +8765,6 @@ paths:
       tags:
         - users.message
       summary: Get singleValueExtendedProperties from users
-      description: The collection of single-value extended properties defined for the message. Nullable.
       operationId: users.messages_ListSingleValueExtendedProperties
       parameters:
         - name: user-id
@@ -8863,7 +8877,6 @@ paths:
       tags:
         - users.message
       summary: Get singleValueExtendedProperties from users
-      description: The collection of single-value extended properties defined for the message. Nullable.
       operationId: users.messages_GetSingleValueExtendedProperties
       parameters:
         - name: user-id

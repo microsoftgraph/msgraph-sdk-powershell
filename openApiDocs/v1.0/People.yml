@@ -11,7 +11,6 @@ paths:
       tags:
         - users.officeGraphInsights
       summary: Get insights from users
-      description: Read-only. Nullable.
       operationId: users_GetInsights
       parameters:
         - name: user-id
@@ -129,7 +128,6 @@ paths:
       tags:
         - users.officeGraphInsights
       summary: Get shared from users
-      description: Access this property from the derived type itemInsights.
       operationId: users.insights_ListShared
       parameters:
         - name: user-id
@@ -241,7 +239,6 @@ paths:
       tags:
         - users.officeGraphInsights
       summary: Get shared from users
-      description: Access this property from the derived type itemInsights.
       operationId: users.insights_GetShared
       parameters:
         - name: user-id
@@ -435,7 +432,6 @@ paths:
       tags:
         - users.officeGraphInsights
       summary: Get resource from users
-      description: 'Used for navigating to the item that was shared. For file attachments, the type is fileAttachment. For linked attachments, the type is driveItem.'
       operationId: users.insights.shared_GetResource
       parameters:
         - name: user-id
@@ -491,7 +487,6 @@ paths:
       tags:
         - users.officeGraphInsights
       summary: Get trending from users
-      description: Access this property from the derived type itemInsights.
       operationId: users.insights_ListTrending
       parameters:
         - name: user-id
@@ -601,7 +596,6 @@ paths:
       tags:
         - users.officeGraphInsights
       summary: Get trending from users
-      description: Access this property from the derived type itemInsights.
       operationId: users.insights_GetTrending
       parameters:
         - name: user-id
@@ -733,7 +727,6 @@ paths:
       tags:
         - users.officeGraphInsights
       summary: Get resource from users
-      description: Used for navigating to the trending document.
       operationId: users.insights.trending_GetResource
       parameters:
         - name: user-id
@@ -789,7 +782,6 @@ paths:
       tags:
         - users.officeGraphInsights
       summary: Get used from users
-      description: Access this property from the derived type itemInsights.
       operationId: users.insights_ListUsed
       parameters:
         - name: user-id
@@ -896,7 +888,6 @@ paths:
       tags:
         - users.officeGraphInsights
       summary: Get used from users
-      description: Access this property from the derived type itemInsights.
       operationId: users.insights_GetUsed
       parameters:
         - name: user-id
@@ -1027,7 +1018,6 @@ paths:
       tags:
         - users.officeGraphInsights
       summary: Get resource from users
-      description: 'Used for navigating to the item that was used. For file attachments, the type is fileAttachment. For linked attachments, the type is driveItem.'
       operationId: users.insights.used_GetResource
       parameters:
         - name: user-id
@@ -1083,7 +1073,6 @@ paths:
       tags:
         - users.person
       summary: Get people from users
-      description: 'Read-only. The most relevant people to the user. The collection is ordered by their relevance to the user, which is determined by the user''s communication, collaboration and business relationships. A person is an aggregation of information from across mail, contacts and social networks.'
       operationId: users_ListPeople
       parameters:
         - name: user-id
@@ -1224,7 +1213,6 @@ paths:
       tags:
         - users.person
       summary: Get people from users
-      description: 'Read-only. The most relevant people to the user. The collection is ordered by their relevance to the user, which is determined by the user''s communication, collaboration and business relationships. A person is an aggregation of information from across mail, contacts and social networks.'
       operationId: users_GetPeople
       parameters:
         - name: user-id

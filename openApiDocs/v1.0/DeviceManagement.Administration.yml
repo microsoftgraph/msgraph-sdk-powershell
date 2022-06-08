@@ -11,7 +11,6 @@ paths:
       tags:
         - deviceManagement.applePushNotificationCertificate
       summary: Get applePushNotificationCertificate from deviceManagement
-      description: Apple push notification certificate.
       operationId: deviceManagement_GetApplePushNotificationCertificate
       parameters:
         - name: $select
@@ -51,6 +50,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.applePushNotificationCertificate'
+          links:
+            downloadApplePushNotificationCertificateSigningRequest:
+              operationId: deviceManagement.applePushNotificationCertificate.downloadApplePushNotificationCertificateSigningRequest
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -94,7 +96,6 @@ paths:
       tags:
         - deviceManagement.complianceManagementPartner
       summary: Get complianceManagementPartners from deviceManagement
-      description: The list of Compliance Management Partners configured by the tenant.
       operationId: deviceManagement_ListComplianceManagementPartners
       parameters:
         - $ref: '#/components/parameters/top'
@@ -202,7 +203,6 @@ paths:
       tags:
         - deviceManagement.complianceManagementPartner
       summary: Get complianceManagementPartners from deviceManagement
-      description: The list of Compliance Management Partners configured by the tenant.
       operationId: deviceManagement_GetComplianceManagementPartners
       parameters:
         - name: complianceManagementPartner-id
@@ -310,7 +310,6 @@ paths:
       tags:
         - deviceManagement.deviceManagementPartner
       summary: Get deviceManagementPartners from deviceManagement
-      description: The list of Device Management Partners configured by the tenant.
       operationId: deviceManagement_ListDeviceManagementPartners
       parameters:
         - $ref: '#/components/parameters/top'
@@ -415,7 +414,6 @@ paths:
       tags:
         - deviceManagement.deviceManagementPartner
       summary: Get deviceManagementPartners from deviceManagement
-      description: The list of Device Management Partners configured by the tenant.
       operationId: deviceManagement_GetDeviceManagementPartners
       parameters:
         - name: deviceManagementPartner-id
@@ -522,7 +520,6 @@ paths:
       tags:
         - deviceManagement.deviceManagementExchangeConnector
       summary: Get exchangeConnectors from deviceManagement
-      description: The list of Exchange Connectors configured by the tenant.
       operationId: deviceManagement_ListExchangeConnectors
       parameters:
         - $ref: '#/components/parameters/top'
@@ -630,7 +627,6 @@ paths:
       tags:
         - deviceManagement.deviceManagementExchangeConnector
       summary: Get exchangeConnectors from deviceManagement
-      description: The list of Exchange Connectors configured by the tenant.
       operationId: deviceManagement_GetExchangeConnectors
       parameters:
         - name: deviceManagementExchangeConnector-id
@@ -680,6 +676,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.deviceManagementExchangeConnector'
+          links:
+            sync:
+              operationId: deviceManagement.exchangeConnectors.deviceManagementExchangeConnector.sync
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -738,7 +737,6 @@ paths:
       tags:
         - deviceManagement.iosUpdateDeviceStatus
       summary: Get iosUpdateStatuses from deviceManagement
-      description: The IOS software update installation statuses for this account.
       operationId: deviceManagement_ListIosUpdateStatuses
       parameters:
         - $ref: '#/components/parameters/top'
@@ -852,7 +850,6 @@ paths:
       tags:
         - deviceManagement.iosUpdateDeviceStatus
       summary: Get iosUpdateStatuses from deviceManagement
-      description: The IOS software update installation statuses for this account.
       operationId: deviceManagement_GetIosUpdateStatuses
       parameters:
         - name: iosUpdateDeviceStatus-id
@@ -962,7 +959,6 @@ paths:
       tags:
         - deviceManagement.mobileThreatDefenseConnector
       summary: Get mobileThreatDefenseConnectors from deviceManagement
-      description: The list of Mobile threat Defense connectors configured by the tenant.
       operationId: deviceManagement_ListMobileThreatDefenseConnectors
       parameters:
         - $ref: '#/components/parameters/top'
@@ -1067,7 +1063,6 @@ paths:
       tags:
         - deviceManagement.mobileThreatDefenseConnector
       summary: Get mobileThreatDefenseConnectors from deviceManagement
-      description: The list of Mobile threat Defense connectors configured by the tenant.
       operationId: deviceManagement_GetMobileThreatDefenseConnectors
       parameters:
         - name: mobileThreatDefenseConnector-id
@@ -1174,7 +1169,6 @@ paths:
       tags:
         - deviceManagement.remoteAssistancePartner
       summary: Get remoteAssistancePartners from deviceManagement
-      description: The remote assist partners.
       operationId: deviceManagement_ListRemoteAssistancePartners
       parameters:
         - $ref: '#/components/parameters/top'
@@ -1267,7 +1261,6 @@ paths:
       tags:
         - deviceManagement.remoteAssistancePartner
       summary: Get remoteAssistancePartners from deviceManagement
-      description: The remote assist partners.
       operationId: deviceManagement_GetRemoteAssistancePartners
       parameters:
         - name: remoteAssistancePartner-id
@@ -1312,6 +1305,11 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.remoteAssistancePartner'
+          links:
+            beginOnboarding:
+              operationId: deviceManagement.remoteAssistancePartners.remoteAssistancePartner.beginOnboarding
+            disconnect:
+              operationId: deviceManagement.remoteAssistancePartners.remoteAssistancePartner.disconnect
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1370,7 +1368,6 @@ paths:
       tags:
         - deviceManagement.resourceOperation
       summary: Get resourceOperations from deviceManagement
-      description: The Resource Operations.
       operationId: deviceManagement_ListResourceOperations
       parameters:
         - $ref: '#/components/parameters/top'
@@ -1460,7 +1457,6 @@ paths:
       tags:
         - deviceManagement.resourceOperation
       summary: Get resourceOperations from deviceManagement
-      description: The Resource Operations.
       operationId: deviceManagement_GetResourceOperations
       parameters:
         - name: resourceOperation-id
@@ -1562,7 +1558,6 @@ paths:
       tags:
         - deviceManagement.deviceAndAppManagementRoleAssignment
       summary: Get roleAssignments from deviceManagement
-      description: The Role Assignments.
       operationId: deviceManagement_ListRoleAssignments
       parameters:
         - $ref: '#/components/parameters/top'
@@ -1657,7 +1652,6 @@ paths:
       tags:
         - deviceManagement.deviceAndAppManagementRoleAssignment
       summary: Get roleAssignments from deviceManagement
-      description: The Role Assignments.
       operationId: deviceManagement_GetRoleAssignments
       parameters:
         - name: deviceAndAppManagementRoleAssignment-id
@@ -1767,7 +1761,6 @@ paths:
       tags:
         - deviceManagement.roleDefinition
       summary: Get roleDefinitions from deviceManagement
-      description: The Role Definitions.
       operationId: deviceManagement_ListRoleDefinitions
       parameters:
         - $ref: '#/components/parameters/top'
@@ -1862,7 +1855,6 @@ paths:
       tags:
         - deviceManagement.roleDefinition
       summary: Get roleDefinitions from deviceManagement
-      description: The Role Definitions.
       operationId: deviceManagement_GetRoleDefinitions
       parameters:
         - name: roleDefinition-id
@@ -1972,7 +1964,6 @@ paths:
       tags:
         - deviceManagement.roleDefinition
       summary: Get roleAssignments from deviceManagement
-      description: List of Role assignments for this role definition.
       operationId: deviceManagement.roleDefinitions_ListRoleAssignments
       parameters:
         - name: roleDefinition-id
@@ -2079,7 +2070,6 @@ paths:
       tags:
         - deviceManagement.roleDefinition
       summary: Get roleAssignments from deviceManagement
-      description: List of Role assignments for this role definition.
       operationId: deviceManagement.roleDefinitions_GetRoleAssignments
       parameters:
         - name: roleDefinition-id
@@ -2210,7 +2200,6 @@ paths:
       tags:
         - deviceManagement.roleDefinition
       summary: Get roleDefinition from deviceManagement
-      description: Role definition this assignment is part of.
       operationId: deviceManagement.roleDefinitions.roleAssignments_GetRoleDefinition
       parameters:
         - name: roleDefinition-id
@@ -2278,7 +2267,6 @@ paths:
       tags:
         - deviceManagement.telecomExpenseManagementPartner
       summary: Get telecomExpenseManagementPartners from deviceManagement
-      description: The telecom expense management partners.
       operationId: deviceManagement_ListTelecomExpenseManagementPartners
       parameters:
         - $ref: '#/components/parameters/top'
@@ -2374,7 +2362,6 @@ paths:
       tags:
         - deviceManagement.telecomExpenseManagementPartner
       summary: Get telecomExpenseManagementPartners from deviceManagement
-      description: The telecom expense management partners.
       operationId: deviceManagement_GetTelecomExpenseManagementPartners
       parameters:
         - name: telecomExpenseManagementPartner-id
@@ -2478,7 +2465,6 @@ paths:
       tags:
         - deviceManagement.termsAndConditions
       summary: Get termsAndConditions from deviceManagement
-      description: The terms and conditions associated with device management of the company.
       operationId: deviceManagement_ListTermsAndConditions
       parameters:
         - $ref: '#/components/parameters/top'
@@ -2587,7 +2573,6 @@ paths:
       tags:
         - deviceManagement.termsAndConditions
       summary: Get termsAndConditions from deviceManagement
-      description: The terms and conditions associated with device management of the company.
       operationId: deviceManagement_GetTermsAndConditions
       parameters:
         - name: termsAndConditions-id
@@ -2707,7 +2692,6 @@ paths:
       tags:
         - deviceManagement.termsAndConditions
       summary: Get acceptanceStatuses from deviceManagement
-      description: The list of acceptance statuses for this T&C policy.
       operationId: deviceManagement.termsAndConditions_ListAcceptanceStatuses
       parameters:
         - name: termsAndConditions-id
@@ -2817,7 +2801,6 @@ paths:
       tags:
         - deviceManagement.termsAndConditions
       summary: Get acceptanceStatuses from deviceManagement
-      description: The list of acceptance statuses for this T&C policy.
       operationId: deviceManagement.termsAndConditions_GetAcceptanceStatuses
       parameters:
         - name: termsAndConditions-id
@@ -2949,7 +2932,6 @@ paths:
       tags:
         - deviceManagement.termsAndConditions
       summary: Get termsAndConditions from deviceManagement
-      description: Navigation link to the terms and conditions that are assigned.
       operationId: deviceManagement.termsAndConditions.acceptanceStatuses_GetTermsAndConditions
       parameters:
         - name: termsAndConditions-id
@@ -3028,7 +3010,6 @@ paths:
       tags:
         - deviceManagement.termsAndConditions
       summary: Get assignments from deviceManagement
-      description: The list of assignments for this T&C policy.
       operationId: deviceManagement.termsAndConditions_ListAssignments
       parameters:
         - name: termsAndConditions-id
@@ -3127,7 +3108,6 @@ paths:
       tags:
         - deviceManagement.termsAndConditions
       summary: Get assignments from deviceManagement
-      description: The list of assignments for this T&C policy.
       operationId: deviceManagement.termsAndConditions_GetAssignments
       parameters:
         - name: termsAndConditions-id

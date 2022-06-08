@@ -10,8 +10,7 @@ paths:
     get:
       tags:
         - subscriptions.subscription
-      summary: Get entities from subscriptions
-      description: List subscriptions
+      summary: List subscriptions
       operationId: subscriptions.subscription_ListSubscription
       parameters:
         - $ref: '#/components/parameters/search'
@@ -54,8 +53,7 @@ paths:
     post:
       tags:
         - subscriptions.subscription
-      summary: Add new entity to subscriptions
-      description: Change notifications for Outlook resources in Microsoft Graph
+      summary: Create subscription
       operationId: subscriptions.subscription_CreateSubscription
       requestBody:
         description: New entity
@@ -78,8 +76,7 @@ paths:
     get:
       tags:
         - subscriptions.subscription
-      summary: Get entity from subscriptions by key
-      description: Get subscription
+      summary: Get subscription
       operationId: subscriptions.subscription_GetSubscription
       parameters:
         - name: subscription-id
@@ -123,14 +120,16 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.subscription'
+          links:
+            reauthorize:
+              operationId: subscriptions.subscription.reauthorize
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     patch:
       tags:
         - subscriptions.subscription
-      summary: Update entity in subscriptions
-      description: Update subscription
+      summary: Update subscription
       operationId: subscriptions.subscription_UpdateSubscription
       parameters:
         - name: subscription-id
@@ -156,8 +155,7 @@ paths:
     delete:
       tags:
         - subscriptions.subscription
-      summary: Delete entity from subscriptions
-      description: Delete subscription
+      summary: Delete subscription
       operationId: subscriptions.subscription_DeleteSubscription
       parameters:
         - name: subscription-id

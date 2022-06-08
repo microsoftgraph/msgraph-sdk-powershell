@@ -510,6 +510,9 @@ directive:
         // Remove Count, Keys, and Values properties from implementations of an IAssociativeArray in models.
         let propertiesToRemoveRegex = /^.*Microsoft\.Graph\.PowerShell\.Runtime\.IAssociativeArray<global::System\.Object>\.(Count|Keys|Values).*$/gm
         $ = $.replace(propertiesToRemoveRegex, '');
+        
+        let indexerRegex = /^(\s*)(public\s*global::System\.Object\s*this\[global::System\.String\s*index\])/gm
+        $ = $.replace(indexerRegex, '$1[System.Runtime.CompilerServices.IndexerName("_Item")]\n$2')
 
         let classRegex = /((\s*)public\s*partial\s*class\s*MicrosoftGraph(NamedLocation).*\s.*\s*\{)/gm
         if($.match(classRegex)) {

@@ -177,7 +177,6 @@ paths:
       tags:
         - agreements.agreementAcceptance
       summary: Get acceptances from agreements
-      description: Read-only. Information about acceptances of this agreement.
       operationId: agreements_ListAcceptances
       parameters:
         - name: agreement-id
@@ -312,7 +311,6 @@ paths:
       tags:
         - agreements.agreementAcceptance
       summary: Get acceptances from agreements
-      description: Read-only. Information about acceptances of this agreement.
       operationId: agreements_GetAcceptances
       parameters:
         - name: agreement-id
@@ -445,7 +443,6 @@ paths:
       tags:
         - agreements.agreementFile
       summary: Get file from agreements
-      description: Default PDF linked to this agreement.
       operationId: agreements_GetFile
       parameters:
         - name: agreement-id
@@ -558,7 +555,6 @@ paths:
       tags:
         - agreements.agreementFile
       summary: Get localizations from agreements
-      description: The localized version of the terms of use agreement files attached to the agreement.
       operationId: agreements.file_ListLocalizations
       parameters:
         - name: agreement-id
@@ -677,7 +673,6 @@ paths:
       tags:
         - agreements.agreementFile
       summary: Get localizations from agreements
-      description: The localized version of the terms of use agreement files attached to the agreement.
       operationId: agreements.file_GetLocalizations
       parameters:
         - name: agreement-id
@@ -812,7 +807,6 @@ paths:
       tags:
         - agreements.agreementFile
       summary: Get versions from agreements
-      description: Read-only. Customized versions of the terms of use agreement in the Azure AD tenant.
       operationId: agreements.file.localizations_ListVersions
       parameters:
         - name: agreement-id
@@ -943,7 +937,6 @@ paths:
       tags:
         - agreements.agreementFile
       summary: Get versions from agreements
-      description: Read-only. Customized versions of the terms of use agreement in the Azure AD tenant.
       operationId: agreements.file.localizations_GetVersions
       parameters:
         - name: agreement-id
@@ -1091,7 +1084,6 @@ paths:
       tags:
         - agreements.agreementFileLocalization
       summary: Get files from agreements
-      description: 'PDFs linked to this agreement. Note: This property is in the process of being deprecated. Use the  file property instead.'
       operationId: agreements_ListFiles
       parameters:
         - name: agreement-id
@@ -1210,7 +1202,6 @@ paths:
       tags:
         - agreements.agreementFileLocalization
       summary: Get files from agreements
-      description: 'PDFs linked to this agreement. Note: This property is in the process of being deprecated. Use the  file property instead.'
       operationId: agreements_GetFiles
       parameters:
         - name: agreement-id
@@ -1345,7 +1336,6 @@ paths:
       tags:
         - agreements.agreementFileLocalization
       summary: Get versions from agreements
-      description: Read-only. Customized versions of the terms of use agreement in the Azure AD tenant.
       operationId: agreements.files_ListVersions
       parameters:
         - name: agreement-id
@@ -1476,7 +1466,6 @@ paths:
       tags:
         - agreements.agreementFileLocalization
       summary: Get versions from agreements
-      description: Read-only. Customized versions of the terms of use agreement in the Azure AD tenant.
       operationId: agreements.files_GetVersions
       parameters:
         - name: agreement-id
@@ -1784,7 +1773,6 @@ paths:
       tags:
         - identityGovernance.accessReviewSet
       summary: Get definitions from identityGovernance
-      description: Represents the template and scheduling for an access review.
       operationId: identityGovernance.accessReviews_ListDefinitions
       parameters:
         - $ref: '#/components/parameters/top'
@@ -1828,6 +1816,8 @@ paths:
                 - scope desc
                 - settings
                 - settings desc
+                - stageSettings
+                - stageSettings desc
                 - status
                 - status desc
               type: string
@@ -1854,6 +1844,7 @@ paths:
                 - reviewers
                 - scope
                 - settings
+                - stageSettings
                 - status
                 - instances
               type: string
@@ -1906,7 +1897,6 @@ paths:
       tags:
         - identityGovernance.accessReviewSet
       summary: Get definitions from identityGovernance
-      description: Represents the template and scheduling for an access review.
       operationId: identityGovernance.accessReviews_GetDefinitions
       parameters:
         - name: accessReviewScheduleDefinition-id
@@ -1939,6 +1929,7 @@ paths:
                 - reviewers
                 - scope
                 - settings
+                - stageSettings
                 - status
                 - instances
               type: string
@@ -1967,6 +1958,8 @@ paths:
               operationId: identityGovernance.accessReviews.Definitions.ListInstances
               parameters:
                 accessReviewScheduleDefinition-id: $request.path.accessReviewScheduleDefinition-id
+            stop:
+              operationId: identityGovernance.accessReviews.definitions.accessReviewScheduleDefinition.stop
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2025,7 +2018,6 @@ paths:
       tags:
         - identityGovernance.accessReviewSet
       summary: Get instances from identityGovernance
-      description: 'Set of access reviews instances for this access review series. Access reviews that do not recur will only have one instance; otherwise, there is an instance for each recurrence.'
       operationId: identityGovernance.accessReviews.definitions_ListInstances
       parameters:
         - name: accessReviewScheduleDefinition-id
@@ -2084,6 +2076,7 @@ paths:
                 - status
                 - contactedReviewers
                 - decisions
+                - stages
               type: string
         - name: $expand
           in: query
@@ -2098,6 +2091,7 @@ paths:
                 - '*'
                 - contactedReviewers
                 - decisions
+                - stages
               type: string
       responses:
         '200':
@@ -2143,7 +2137,6 @@ paths:
       tags:
         - identityGovernance.accessReviewSet
       summary: Get instances from identityGovernance
-      description: 'Set of access reviews instances for this access review series. Access reviews that do not recur will only have one instance; otherwise, there is an instance for each recurrence.'
       operationId: identityGovernance.accessReviews.definitions_GetInstances
       parameters:
         - name: accessReviewScheduleDefinition-id
@@ -2179,6 +2172,7 @@ paths:
                 - status
                 - contactedReviewers
                 - decisions
+                - stages
               type: string
         - name: $expand
           in: query
@@ -2193,6 +2187,7 @@ paths:
                 - '*'
                 - contactedReviewers
                 - decisions
+                - stages
               type: string
       responses:
         '200':
@@ -2212,6 +2207,23 @@ paths:
               parameters:
                 accessReviewScheduleDefinition-id: $request.path.accessReviewScheduleDefinition-id
                 accessReviewInstance-id: $request.path.accessReviewInstance-id
+            stages:
+              operationId: identityGovernance.accessReviews.definitions.Instances.ListStages
+              parameters:
+                accessReviewScheduleDefinition-id: $request.path.accessReviewScheduleDefinition-id
+                accessReviewInstance-id: $request.path.accessReviewInstance-id
+            acceptRecommendations:
+              operationId: identityGovernance.accessReviews.definitions.accessReviewScheduleDefinition.instances.accessReviewInstance.acceptRecommendations
+            applyDecisions:
+              operationId: identityGovernance.accessReviews.definitions.accessReviewScheduleDefinition.instances.accessReviewInstance.applyDecisions
+            batchRecordDecisions:
+              operationId: identityGovernance.accessReviews.definitions.accessReviewScheduleDefinition.instances.accessReviewInstance.batchRecordDecisions
+            resetDecisions:
+              operationId: identityGovernance.accessReviews.definitions.accessReviewScheduleDefinition.instances.accessReviewInstance.resetDecisions
+            sendReminder:
+              operationId: identityGovernance.accessReviews.definitions.accessReviewScheduleDefinition.instances.accessReviewInstance.sendReminder
+            stop:
+              operationId: identityGovernance.accessReviews.definitions.accessReviewScheduleDefinition.instances.accessReviewInstance.stop
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2284,7 +2296,6 @@ paths:
       tags:
         - identityGovernance.accessReviewSet
       summary: Get contactedReviewers from identityGovernance
-      description: 'Returns the collection of reviewers who were contacted to complete this review. While the reviewers and fallbackReviewers properties of the accessReviewScheduleDefinition might specify group owners or managers as reviewers, contactedReviewers returns their individual identities. Supports $select. Read-only.'
       operationId: identityGovernance.accessReviews.definitions.instances_ListContactedReviewers
       parameters:
         - name: accessReviewScheduleDefinition-id
@@ -2403,7 +2414,6 @@ paths:
       tags:
         - identityGovernance.accessReviewSet
       summary: Get contactedReviewers from identityGovernance
-      description: 'Returns the collection of reviewers who were contacted to complete this review. While the reviewers and fallbackReviewers properties of the accessReviewScheduleDefinition might specify group owners or managers as reviewers, contactedReviewers returns their individual identities. Supports $select. Read-only.'
       operationId: identityGovernance.accessReviews.definitions.instances_GetContactedReviewers
       parameters:
         - name: accessReviewScheduleDefinition-id
@@ -2547,7 +2557,6 @@ paths:
       tags:
         - identityGovernance.accessReviewSet
       summary: Get decisions from identityGovernance
-      description: 'Each user reviewed in an accessReviewInstance has a decision item representing if they were approved, denied, or not yet reviewed.'
       operationId: identityGovernance.accessReviews.definitions.instances_ListDecisions
       parameters:
         - name: accessReviewScheduleDefinition-id
@@ -2696,7 +2705,6 @@ paths:
       tags:
         - identityGovernance.accessReviewSet
       summary: Get decisions from identityGovernance
-      description: 'Each user reviewed in an accessReviewInstance has a decision item representing if they were approved, denied, or not yet reviewed.'
       operationId: identityGovernance.accessReviews.definitions.instances_GetDecisions
       parameters:
         - name: accessReviewScheduleDefinition-id
@@ -3074,6 +3082,755 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/identityGovernance/accessReviews/definitions/{accessReviewScheduleDefinition-id}/instances/{accessReviewInstance-id}/stages':
+    get:
+      tags:
+        - identityGovernance.accessReviewSet
+      summary: Get stages from identityGovernance
+      operationId: identityGovernance.accessReviews.definitions.instances_ListStages
+      parameters:
+        - name: accessReviewScheduleDefinition-id
+          in: path
+          description: 'key: id of accessReviewScheduleDefinition'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessReviewScheduleDefinition
+        - name: accessReviewInstance-id
+          in: path
+          description: 'key: id of accessReviewInstance'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessReviewInstance
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - endDateTime
+                - endDateTime desc
+                - fallbackReviewers
+                - fallbackReviewers desc
+                - reviewers
+                - reviewers desc
+                - startDateTime
+                - startDateTime desc
+                - status
+                - status desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - endDateTime
+                - fallbackReviewers
+                - reviewers
+                - startDateTime
+                - status
+                - decisions
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - decisions
+              type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/microsoft.graph.accessReviewStageCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - identityGovernance.accessReviewSet
+      summary: Create new navigation property to stages for identityGovernance
+      operationId: identityGovernance.accessReviews.definitions.instances_CreateStages
+      parameters:
+        - name: accessReviewScheduleDefinition-id
+          in: path
+          description: 'key: id of accessReviewScheduleDefinition'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessReviewScheduleDefinition
+        - name: accessReviewInstance-id
+          in: path
+          description: 'key: id of accessReviewInstance'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessReviewInstance
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.accessReviewStage'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.accessReviewStage'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/identityGovernance/accessReviews/definitions/{accessReviewScheduleDefinition-id}/instances/{accessReviewInstance-id}/stages/{accessReviewStage-id}':
+    get:
+      tags:
+        - identityGovernance.accessReviewSet
+      summary: Get stages from identityGovernance
+      operationId: identityGovernance.accessReviews.definitions.instances_GetStages
+      parameters:
+        - name: accessReviewScheduleDefinition-id
+          in: path
+          description: 'key: id of accessReviewScheduleDefinition'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessReviewScheduleDefinition
+        - name: accessReviewInstance-id
+          in: path
+          description: 'key: id of accessReviewInstance'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessReviewInstance
+        - name: accessReviewStage-id
+          in: path
+          description: 'key: id of accessReviewStage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessReviewStage
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - endDateTime
+                - fallbackReviewers
+                - reviewers
+                - startDateTime
+                - status
+                - decisions
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - decisions
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.accessReviewStage'
+          links:
+            decisions:
+              operationId: identityGovernance.accessReviews.definitions.instances.Stages.ListDecisions
+              parameters:
+                accessReviewScheduleDefinition-id: $request.path.accessReviewScheduleDefinition-id
+                accessReviewInstance-id: $request.path.accessReviewInstance-id
+                accessReviewStage-id: $request.path.accessReviewStage-id
+            stop:
+              operationId: identityGovernance.accessReviews.definitions.accessReviewScheduleDefinition.instances.accessReviewInstance.stages.accessReviewStage.stop
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - identityGovernance.accessReviewSet
+      summary: Update the navigation property stages in identityGovernance
+      operationId: identityGovernance.accessReviews.definitions.instances_UpdateStages
+      parameters:
+        - name: accessReviewScheduleDefinition-id
+          in: path
+          description: 'key: id of accessReviewScheduleDefinition'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessReviewScheduleDefinition
+        - name: accessReviewInstance-id
+          in: path
+          description: 'key: id of accessReviewInstance'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessReviewInstance
+        - name: accessReviewStage-id
+          in: path
+          description: 'key: id of accessReviewStage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessReviewStage
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.accessReviewStage'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - identityGovernance.accessReviewSet
+      summary: Delete navigation property stages for identityGovernance
+      operationId: identityGovernance.accessReviews.definitions.instances_DeleteStages
+      parameters:
+        - name: accessReviewScheduleDefinition-id
+          in: path
+          description: 'key: id of accessReviewScheduleDefinition'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessReviewScheduleDefinition
+        - name: accessReviewInstance-id
+          in: path
+          description: 'key: id of accessReviewInstance'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessReviewInstance
+        - name: accessReviewStage-id
+          in: path
+          description: 'key: id of accessReviewStage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessReviewStage
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/identityGovernance/accessReviews/definitions/{accessReviewScheduleDefinition-id}/instances/{accessReviewInstance-id}/stages/{accessReviewStage-id}/decisions':
+    get:
+      tags:
+        - identityGovernance.accessReviewSet
+      summary: Get decisions from identityGovernance
+      operationId: identityGovernance.accessReviews.definitions.instances.stages_ListDecisions
+      parameters:
+        - name: accessReviewScheduleDefinition-id
+          in: path
+          description: 'key: id of accessReviewScheduleDefinition'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessReviewScheduleDefinition
+        - name: accessReviewInstance-id
+          in: path
+          description: 'key: id of accessReviewInstance'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessReviewInstance
+        - name: accessReviewStage-id
+          in: path
+          description: 'key: id of accessReviewStage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessReviewStage
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - accessReviewId
+                - accessReviewId desc
+                - appliedBy
+                - appliedBy desc
+                - appliedDateTime
+                - appliedDateTime desc
+                - applyResult
+                - applyResult desc
+                - decision
+                - decision desc
+                - justification
+                - justification desc
+                - principal
+                - principal desc
+                - principalLink
+                - principalLink desc
+                - recommendation
+                - recommendation desc
+                - resource
+                - resource desc
+                - resourceLink
+                - resourceLink desc
+                - reviewedBy
+                - reviewedBy desc
+                - reviewedDateTime
+                - reviewedDateTime desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - accessReviewId
+                - appliedBy
+                - appliedDateTime
+                - applyResult
+                - decision
+                - justification
+                - principal
+                - principalLink
+                - recommendation
+                - resource
+                - resourceLink
+                - reviewedBy
+                - reviewedDateTime
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/microsoft.graph.accessReviewInstanceDecisionItemCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - identityGovernance.accessReviewSet
+      summary: Create new navigation property to decisions for identityGovernance
+      operationId: identityGovernance.accessReviews.definitions.instances.stages_CreateDecisions
+      parameters:
+        - name: accessReviewScheduleDefinition-id
+          in: path
+          description: 'key: id of accessReviewScheduleDefinition'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessReviewScheduleDefinition
+        - name: accessReviewInstance-id
+          in: path
+          description: 'key: id of accessReviewInstance'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessReviewInstance
+        - name: accessReviewStage-id
+          in: path
+          description: 'key: id of accessReviewStage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessReviewStage
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.accessReviewInstanceDecisionItem'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.accessReviewInstanceDecisionItem'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/identityGovernance/accessReviews/definitions/{accessReviewScheduleDefinition-id}/instances/{accessReviewInstance-id}/stages/{accessReviewStage-id}/decisions/{accessReviewInstanceDecisionItem-id}':
+    get:
+      tags:
+        - identityGovernance.accessReviewSet
+      summary: Get decisions from identityGovernance
+      operationId: identityGovernance.accessReviews.definitions.instances.stages_GetDecisions
+      parameters:
+        - name: accessReviewScheduleDefinition-id
+          in: path
+          description: 'key: id of accessReviewScheduleDefinition'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessReviewScheduleDefinition
+        - name: accessReviewInstance-id
+          in: path
+          description: 'key: id of accessReviewInstance'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessReviewInstance
+        - name: accessReviewStage-id
+          in: path
+          description: 'key: id of accessReviewStage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessReviewStage
+        - name: accessReviewInstanceDecisionItem-id
+          in: path
+          description: 'key: id of accessReviewInstanceDecisionItem'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessReviewInstanceDecisionItem
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - accessReviewId
+                - appliedBy
+                - appliedDateTime
+                - applyResult
+                - decision
+                - justification
+                - principal
+                - principalLink
+                - recommendation
+                - resource
+                - resourceLink
+                - reviewedBy
+                - reviewedDateTime
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.accessReviewInstanceDecisionItem'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - identityGovernance.accessReviewSet
+      summary: Update the navigation property decisions in identityGovernance
+      operationId: identityGovernance.accessReviews.definitions.instances.stages_UpdateDecisions
+      parameters:
+        - name: accessReviewScheduleDefinition-id
+          in: path
+          description: 'key: id of accessReviewScheduleDefinition'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessReviewScheduleDefinition
+        - name: accessReviewInstance-id
+          in: path
+          description: 'key: id of accessReviewInstance'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessReviewInstance
+        - name: accessReviewStage-id
+          in: path
+          description: 'key: id of accessReviewStage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessReviewStage
+        - name: accessReviewInstanceDecisionItem-id
+          in: path
+          description: 'key: id of accessReviewInstanceDecisionItem'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessReviewInstanceDecisionItem
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.accessReviewInstanceDecisionItem'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - identityGovernance.accessReviewSet
+      summary: Delete navigation property decisions for identityGovernance
+      operationId: identityGovernance.accessReviews.definitions.instances.stages_DeleteDecisions
+      parameters:
+        - name: accessReviewScheduleDefinition-id
+          in: path
+          description: 'key: id of accessReviewScheduleDefinition'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessReviewScheduleDefinition
+        - name: accessReviewInstance-id
+          in: path
+          description: 'key: id of accessReviewInstance'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessReviewInstance
+        - name: accessReviewStage-id
+          in: path
+          description: 'key: id of accessReviewStage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessReviewStage
+        - name: accessReviewInstanceDecisionItem-id
+          in: path
+          description: 'key: id of accessReviewInstanceDecisionItem'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessReviewInstanceDecisionItem
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/identityGovernance/accessReviews/definitions/{accessReviewScheduleDefinition-id}/instances/{accessReviewInstance-id}/stages/{accessReviewStage-id}/decisions/microsoft.graph.filterByCurrentUser(on=''{on}'')':
+    get:
+      tags:
+        - identityGovernance.Functions
+      summary: Invoke function filterByCurrentUser
+      operationId: identityGovernance.accessReviews.definitions.instances.stages.decisions_filterByCurrentUser
+      parameters:
+        - name: accessReviewScheduleDefinition-id
+          in: path
+          description: 'key: id of accessReviewScheduleDefinition'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessReviewScheduleDefinition
+        - name: accessReviewInstance-id
+          in: path
+          description: 'key: id of accessReviewInstance'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessReviewInstance
+        - name: accessReviewStage-id
+          in: path
+          description: 'key: id of accessReviewStage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessReviewStage
+        - name: on
+          in: path
+          description: 'Usage: on=''{on}'''
+          required: true
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.accessReviewInstanceDecisionItemFilterByCurrentUserOptions'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of accessReviewInstanceDecisionItem
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.accessReviewInstanceDecisionItem'
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/identityGovernance/accessReviews/definitions/{accessReviewScheduleDefinition-id}/instances/{accessReviewInstance-id}/stages/{accessReviewStage-id}/microsoft.graph.stop':
+    post:
+      tags:
+        - identityGovernance.Actions
+      summary: Invoke action stop
+      operationId: identityGovernance.accessReviews.definitions.instances.stages_stop
+      parameters:
+        - name: accessReviewScheduleDefinition-id
+          in: path
+          description: 'key: id of accessReviewScheduleDefinition'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessReviewScheduleDefinition
+        - name: accessReviewInstance-id
+          in: path
+          description: 'key: id of accessReviewInstance'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessReviewInstance
+        - name: accessReviewStage-id
+          in: path
+          description: 'key: id of accessReviewStage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessReviewStage
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/identityGovernance/accessReviews/definitions/{accessReviewScheduleDefinition-id}/instances/{accessReviewInstance-id}/stages/microsoft.graph.filterByCurrentUser(on=''{on}'')':
+    get:
+      tags:
+        - identityGovernance.Functions
+      summary: Invoke function filterByCurrentUser
+      operationId: identityGovernance.accessReviews.definitions.instances.stages_filterByCurrentUser
+      parameters:
+        - name: accessReviewScheduleDefinition-id
+          in: path
+          description: 'key: id of accessReviewScheduleDefinition'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessReviewScheduleDefinition
+        - name: accessReviewInstance-id
+          in: path
+          description: 'key: id of accessReviewInstance'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessReviewInstance
+        - name: on
+          in: path
+          description: 'Usage: on=''{on}'''
+          required: true
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.accessReviewStageFilterByCurrentUserOptions'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of accessReviewStage
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.accessReviewStage'
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
   '/identityGovernance/accessReviews/definitions/{accessReviewScheduleDefinition-id}/instances/microsoft.graph.filterByCurrentUser(on=''{on}'')':
     get:
       tags:
@@ -3168,7 +3925,6 @@ paths:
       tags:
         - identityGovernance.accessReviewSet
       summary: Get historyDefinitions from identityGovernance
-      description: Represents a collection of access review history data and the scopes used to collect that data.
       operationId: identityGovernance.accessReviews_ListHistoryDefinitions
       parameters:
         - $ref: '#/components/parameters/top'
@@ -3278,7 +4034,6 @@ paths:
       tags:
         - identityGovernance.accessReviewSet
       summary: Get historyDefinitions from identityGovernance
-      description: Represents a collection of access review history data and the scopes used to collect that data.
       operationId: identityGovernance.accessReviews_GetHistoryDefinitions
       parameters:
         - name: accessReviewHistoryDefinition-id
@@ -3393,7 +4148,6 @@ paths:
       tags:
         - identityGovernance.accessReviewSet
       summary: Get instances from identityGovernance
-      description: 'If the accessReviewHistoryDefinition is a recurring definition, instances represent each recurrence. A definition that does not recur will have exactly one instance.'
       operationId: identityGovernance.accessReviews.historyDefinitions_ListInstances
       parameters:
         - name: accessReviewHistoryDefinition-id
@@ -3510,7 +4264,6 @@ paths:
       tags:
         - identityGovernance.accessReviewSet
       summary: Get instances from identityGovernance
-      description: 'If the accessReviewHistoryDefinition is a recurring definition, instances represent each recurrence. A definition that does not recur will have exactly one instance.'
       operationId: identityGovernance.accessReviews.historyDefinitions_GetInstances
       parameters:
         - name: accessReviewHistoryDefinition-id
@@ -3565,6 +4318,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.accessReviewHistoryInstance'
+          links:
+            generateDownloadUri:
+              operationId: identityGovernance.accessReviews.historyDefinitions.accessReviewHistoryDefinition.instances.accessReviewHistoryInstance.generateDownloadUri
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3749,7 +4505,6 @@ paths:
       tags:
         - identityGovernance.appConsentApprovalRoute
       summary: Get appConsentRequests from identityGovernance
-      description: A collection of userConsentRequest objects for a specific application.
       operationId: identityGovernance.appConsent_ListAppConsentRequests
       parameters:
         - $ref: '#/components/parameters/top'
@@ -3841,7 +4596,6 @@ paths:
       tags:
         - identityGovernance.appConsentApprovalRoute
       summary: Get appConsentRequests from identityGovernance
-      description: A collection of userConsentRequest objects for a specific application.
       operationId: identityGovernance.appConsent_GetAppConsentRequests
       parameters:
         - name: appConsentRequest-id
@@ -3950,7 +4704,6 @@ paths:
       tags:
         - identityGovernance.appConsentApprovalRoute
       summary: Get userConsentRequests from identityGovernance
-      description: A list of pending user consent requests.
       operationId: identityGovernance.appConsent.appConsentRequests_ListUserConsentRequests
       parameters:
         - name: appConsentRequest-id
@@ -4069,7 +4822,6 @@ paths:
       tags:
         - identityGovernance.appConsentApprovalRoute
       summary: Get userConsentRequests from identityGovernance
-      description: A list of pending user consent requests.
       operationId: identityGovernance.appConsent.appConsentRequests_GetUserConsentRequests
       parameters:
         - name: appConsentRequest-id
@@ -4204,7 +4956,6 @@ paths:
       tags:
         - identityGovernance.appConsentApprovalRoute
       summary: Get approval from identityGovernance
-      description: Approval decisions associated with a request.
       operationId: identityGovernance.appConsent.appConsentRequests.userConsentRequests_GetApproval
       parameters:
         - name: appConsentRequest-id
@@ -4332,7 +5083,6 @@ paths:
       tags:
         - identityGovernance.appConsentApprovalRoute
       summary: Get stages from identityGovernance
-      description: 'Used for the approvalStages property of approval settings in the requestApprovalSettings property of an access package assignment policy. Specifies the primary, fallback, and escalation approvers of each stage.'
       operationId: identityGovernance.appConsent.appConsentRequests.userConsentRequests.approval_ListStages
       parameters:
         - name: appConsentRequest-id
@@ -4463,7 +5213,6 @@ paths:
       tags:
         - identityGovernance.appConsentApprovalRoute
       summary: Get stages from identityGovernance
-      description: 'Used for the approvalStages property of approval settings in the requestApprovalSettings property of an access package assignment policy. Specifies the primary, fallback, and escalation approvers of each stage.'
       operationId: identityGovernance.appConsent.appConsentRequests.userConsentRequests.approval_GetStages
       parameters:
         - name: appConsentRequest-id
@@ -4789,7 +5538,6 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get accessPackageAssignmentApprovals from identityGovernance
-      description: Approval stages for assignment requests.
       operationId: identityGovernance.entitlementManagement_ListAccessPackageAssignmentApprovals
       parameters:
         - $ref: '#/components/parameters/top'
@@ -4872,7 +5620,6 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get accessPackageAssignmentApprovals from identityGovernance
-      description: Approval stages for assignment requests.
       operationId: identityGovernance.entitlementManagement_GetAccessPackageAssignmentApprovals
       parameters:
         - name: approval-id
@@ -4978,7 +5725,6 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get stages from identityGovernance
-      description: 'Used for the approvalStages property of approval settings in the requestApprovalSettings property of an access package assignment policy. Specifies the primary, fallback, and escalation approvers of each stage.'
       operationId: identityGovernance.entitlementManagement.accessPackageAssignmentApprovals_ListStages
       parameters:
         - name: approval-id
@@ -5095,7 +5841,6 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get stages from identityGovernance
-      description: 'Used for the approvalStages property of approval settings in the requestApprovalSettings property of an access package assignment policy. Specifies the primary, fallback, and escalation approvers of each stage.'
       operationId: identityGovernance.entitlementManagement.accessPackageAssignmentApprovals_GetStages
       parameters:
         - name: approval-id
@@ -5253,7 +5998,6 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get accessPackages from identityGovernance
-      description: Represents access package objects.
       operationId: identityGovernance.entitlementManagement_ListAccessPackages
       parameters:
         - $ref: '#/components/parameters/top'
@@ -5353,7 +6097,6 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get accessPackages from identityGovernance
-      description: Represents access package objects.
       operationId: identityGovernance.entitlementManagement_GetAccessPackages
       parameters:
         - name: accessPackage-id
@@ -5412,6 +6155,8 @@ paths:
               operationId: identityGovernance.entitlementManagement.AccessPackages.GetCatalog
               parameters:
                 accessPackage-id: $request.path.accessPackage-id
+            getApplicablePolicyRequirements:
+              operationId: identityGovernance.entitlementManagement.accessPackages.accessPackage.getApplicablePolicyRequirements
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5470,7 +6215,6 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get assignmentPolicies from identityGovernance
-      description: Read-only. Nullable.
       operationId: identityGovernance.entitlementManagement.accessPackages_ListAssignmentPolicies
       parameters:
         - name: accessPackage-id
@@ -5600,7 +6344,6 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get assignmentPolicies from identityGovernance
-      description: Read-only. Nullable.
       operationId: identityGovernance.entitlementManagement.accessPackages_GetAssignmentPolicies
       parameters:
         - name: accessPackage-id
@@ -5745,7 +6488,6 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get accessPackage from identityGovernance
-      description: The access package with this policy. Read-only. Nullable. Supports $expand.
       operationId: identityGovernance.entitlementManagement.accessPackages.assignmentPolicies_GetAccessPackage
       parameters:
         - name: accessPackage-id
@@ -5821,7 +6563,6 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get catalog from identityGovernance
-      description: Catalog of the access package containing this policy. Read-only.
       operationId: identityGovernance.entitlementManagement.accessPackages.assignmentPolicies_GetCatalog
       parameters:
         - name: accessPackage-id
@@ -5892,7 +6633,6 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get catalog from identityGovernance
-      description: Read-only. Nullable.
       operationId: identityGovernance.entitlementManagement.accessPackages_GetCatalog
       parameters:
         - name: accessPackage-id
@@ -6018,7 +6758,6 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get assignmentPolicies from identityGovernance
-      description: Access package assignment policies.
       operationId: identityGovernance.entitlementManagement_ListAssignmentPolicies
       parameters:
         - $ref: '#/components/parameters/top'
@@ -6133,7 +6872,6 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get assignmentPolicies from identityGovernance
-      description: Access package assignment policies.
       operationId: identityGovernance.entitlementManagement_GetAssignmentPolicies
       parameters:
         - name: accessPackageAssignmentPolicy-id
@@ -6255,7 +6993,6 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get accessPackage from identityGovernance
-      description: The access package with this policy. Read-only. Nullable. Supports $expand.
       operationId: identityGovernance.entitlementManagement.assignmentPolicies_GetAccessPackage
       parameters:
         - name: accessPackageAssignmentPolicy-id
@@ -6322,7 +7059,6 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get catalog from identityGovernance
-      description: Catalog of the access package containing this policy. Read-only.
       operationId: identityGovernance.entitlementManagement.assignmentPolicies_GetCatalog
       parameters:
         - name: accessPackageAssignmentPolicy-id
@@ -6385,7 +7121,6 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get assignmentRequests from identityGovernance
-      description: Represents access package assignment requests created by or on behalf of a user.
       operationId: identityGovernance.entitlementManagement_ListAssignmentRequests
       parameters:
         - $ref: '#/components/parameters/top'
@@ -6490,7 +7225,6 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get assignmentRequests from identityGovernance
-      description: Represents access package assignment requests created by or on behalf of a user.
       operationId: identityGovernance.entitlementManagement_GetAssignmentRequests
       parameters:
         - name: accessPackageAssignmentRequest-id
@@ -6556,6 +7290,10 @@ paths:
               operationId: identityGovernance.entitlementManagement.AssignmentRequests.GetRequestor
               parameters:
                 accessPackageAssignmentRequest-id: $request.path.accessPackageAssignmentRequest-id
+            cancel:
+              operationId: identityGovernance.entitlementManagement.assignmentRequests.accessPackageAssignmentRequest.cancel
+            reprocess:
+              operationId: identityGovernance.entitlementManagement.assignmentRequests.accessPackageAssignmentRequest.reprocess
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -6614,7 +7352,6 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get accessPackage from identityGovernance
-      description: The access package associated with the accessPackageAssignmentRequest. An access package defines the collections of resource roles and the policies for how one or more users can get access to those resources. Read-only. Nullable. Supports $expand.
       operationId: identityGovernance.entitlementManagement.assignmentRequests_GetAccessPackage
       parameters:
         - name: accessPackageAssignmentRequest-id
@@ -6681,7 +7418,6 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get assignment from identityGovernance
-      description: 'For a requestType of UserAdd or AdminAdd, this is an access package assignment requested to be created.  For a requestType of UserRemove, AdminRemove or SystemRemove, this has the id property of an existing assignment to be removed.   Supports $expand.'
       operationId: identityGovernance.entitlementManagement.assignmentRequests_GetAssignment
       parameters:
         - name: accessPackageAssignmentRequest-id
@@ -6793,7 +7529,6 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get requestor from identityGovernance
-      description: 'The subject who requested or, if a direct assignment, was assigned. Read-only. Nullable. Supports $expand.'
       operationId: identityGovernance.entitlementManagement.assignmentRequests_GetRequestor
       parameters:
         - name: accessPackageAssignmentRequest-id
@@ -6886,7 +7621,6 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get assignments from identityGovernance
-      description: Represents the grant of an access package to a subject (user or group).
       operationId: identityGovernance.entitlementManagement_ListAssignments
       parameters:
         - $ref: '#/components/parameters/top'
@@ -6985,7 +7719,6 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get assignments from identityGovernance
-      description: Represents the grant of an access package to a subject (user or group).
       operationId: identityGovernance.entitlementManagement_GetAssignments
       parameters:
         - name: accessPackageAssignment-id
@@ -7049,6 +7782,8 @@ paths:
               operationId: identityGovernance.entitlementManagement.Assignments.GetTarget
               parameters:
                 accessPackageAssignment-id: $request.path.accessPackageAssignment-id
+            reprocess:
+              operationId: identityGovernance.entitlementManagement.assignments.accessPackageAssignment.reprocess
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -7107,7 +7842,6 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get accessPackage from identityGovernance
-      description: Read-only. Nullable. Supports $filter (eq) on the id property and $expand query parameters.
       operationId: identityGovernance.entitlementManagement.assignments_GetAccessPackage
       parameters:
         - name: accessPackageAssignment-id
@@ -7174,7 +7908,6 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get assignmentPolicy from identityGovernance
-      description: Read-only. Supports $filter (eq) on the id property and $expand query parameters.
       operationId: identityGovernance.entitlementManagement.assignments_GetAssignmentPolicy
       parameters:
         - name: accessPackageAssignment-id
@@ -7266,7 +7999,6 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get target from identityGovernance
-      description: The subject of the access package assignment. Read-only. Nullable. Supports $expand. Supports $filter (eq) on objectId.
       operationId: identityGovernance.entitlementManagement.assignments_GetTarget
       parameters:
         - name: accessPackageAssignment-id
@@ -7359,7 +8091,6 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get catalogs from identityGovernance
-      description: Represents a collection of access packages.
       operationId: identityGovernance.entitlementManagement_ListCatalogs
       parameters:
         - $ref: '#/components/parameters/top'
@@ -7463,7 +8194,6 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get catalogs from identityGovernance
-      description: Represents a collection of access packages.
       operationId: identityGovernance.entitlementManagement_GetCatalogs
       parameters:
         - name: accessPackageCatalog-id
@@ -7576,7 +8306,6 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get accessPackages from identityGovernance
-      description: The access packages in this catalog. Read-only. Nullable. Supports $expand.
       operationId: identityGovernance.entitlementManagement.catalogs_ListAccessPackages
       parameters:
         - name: accessPackageCatalog-id
@@ -7691,7 +8420,6 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get accessPackages from identityGovernance
-      description: The access packages in this catalog. Read-only. Nullable. Supports $expand.
       operationId: identityGovernance.entitlementManagement.catalogs_GetAccessPackages
       parameters:
         - name: accessPackageCatalog-id
@@ -7759,6 +8487,8 @@ paths:
               parameters:
                 accessPackageCatalog-id: $request.path.accessPackageCatalog-id
                 accessPackage-id: $request.path.accessPackage-id
+            getApplicablePolicyRequirements:
+              operationId: identityGovernance.entitlementManagement.catalogs.accessPackageCatalog.accessPackages.accessPackage.getApplicablePolicyRequirements
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -7831,7 +8561,6 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get assignmentPolicies from identityGovernance
-      description: Read-only. Nullable.
       operationId: identityGovernance.entitlementManagement.catalogs.accessPackages_ListAssignmentPolicies
       parameters:
         - name: accessPackageCatalog-id
@@ -7975,7 +8704,6 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get assignmentPolicies from identityGovernance
-      description: Read-only. Nullable.
       operationId: identityGovernance.entitlementManagement.catalogs.accessPackages_GetAssignmentPolicies
       parameters:
         - name: accessPackageCatalog-id
@@ -8143,7 +8871,6 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get accessPackage from identityGovernance
-      description: The access package with this policy. Read-only. Nullable. Supports $expand.
       operationId: identityGovernance.entitlementManagement.catalogs.accessPackages.assignmentPolicies_GetAccessPackage
       parameters:
         - name: accessPackageCatalog-id
@@ -8228,7 +8955,6 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get catalog from identityGovernance
-      description: Catalog of the access package containing this policy. Read-only.
       operationId: identityGovernance.entitlementManagement.catalogs.accessPackages.assignmentPolicies_GetCatalog
       parameters:
         - name: accessPackageCatalog-id
@@ -8307,7 +9033,6 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get catalog from identityGovernance
-      description: Read-only. Nullable.
       operationId: identityGovernance.entitlementManagement.catalogs.accessPackages_GetCatalog
       parameters:
         - name: accessPackageCatalog-id
@@ -8455,7 +9180,6 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get connectedOrganizations from identityGovernance
-      description: Represents references to a directory or domain of another organization whose users can request access.
       operationId: identityGovernance.entitlementManagement_ListConnectedOrganizations
       parameters:
         - $ref: '#/components/parameters/top'
@@ -8558,7 +9282,6 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get connectedOrganizations from identityGovernance
-      description: Represents references to a directory or domain of another organization whose users can request access.
       operationId: identityGovernance.entitlementManagement_GetConnectedOrganizations
       parameters:
         - name: connectedOrganization-id
@@ -8676,7 +9399,6 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get externalSponsors from identityGovernance
-      description: Nullable.
       operationId: identityGovernance.entitlementManagement.connectedOrganizations_ListExternalSponsors
       parameters:
         - name: connectedOrganization-id
@@ -8812,7 +9534,6 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get ref of externalSponsors from identityGovernance
-      description: Nullable.
       operationId: identityGovernance.entitlementManagement.connectedOrganizations_ListGraphRefExternalSponsors
       parameters:
         - name: connectedOrganization-id
@@ -8885,12 +9606,152 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/identityGovernance/entitlementManagement/connectedOrganizations/{connectedOrganization-id}/externalSponsors/microsoft.graph.getAvailableExtensionProperties':
+    post:
+      tags:
+        - identityGovernance.Actions
+      summary: Invoke action getAvailableExtensionProperties
+      operationId: identityGovernance.entitlementManagement.connectedOrganizations.externalSponsors_getAvailableExtensionProperties
+      parameters:
+        - name: connectedOrganization-id
+          in: path
+          description: 'key: id of connectedOrganization'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: connectedOrganization
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                isSyncedFromOnPremises:
+                  type: boolean
+                  default: false
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of directoryObject
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.extensionProperty'
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/identityGovernance/entitlementManagement/connectedOrganizations/{connectedOrganization-id}/externalSponsors/microsoft.graph.getByIds':
+    post:
+      tags:
+        - identityGovernance.Actions
+      summary: Invoke action getByIds
+      operationId: identityGovernance.entitlementManagement.connectedOrganizations.externalSponsors_getByIds
+      parameters:
+        - name: connectedOrganization-id
+          in: path
+          description: 'key: id of connectedOrganization'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: connectedOrganization
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                ids:
+                  type: array
+                  items:
+                    type: string
+                types:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of directoryObject
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.directoryObject'
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/identityGovernance/entitlementManagement/connectedOrganizations/{connectedOrganization-id}/externalSponsors/microsoft.graph.validateProperties':
+    post:
+      tags:
+        - identityGovernance.Actions
+      summary: Invoke action validateProperties
+      operationId: identityGovernance.entitlementManagement.connectedOrganizations.externalSponsors_validateProperties
+      parameters:
+        - name: connectedOrganization-id
+          in: path
+          description: 'key: id of connectedOrganization'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: connectedOrganization
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                entityType:
+                  type: string
+                  nullable: true
+                displayName:
+                  type: string
+                  nullable: true
+                mailNickname:
+                  type: string
+                  nullable: true
+                onBehalfOfUserId:
+                  pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
+                  type: string
+                  format: uuid
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/identityGovernance/entitlementManagement/connectedOrganizations/{connectedOrganization-id}/internalSponsors':
     get:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get internalSponsors from identityGovernance
-      description: Nullable.
       operationId: identityGovernance.entitlementManagement.connectedOrganizations_ListInternalSponsors
       parameters:
         - name: connectedOrganization-id
@@ -8989,7 +9850,6 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get internalSponsors from identityGovernance
-      description: Nullable.
       operationId: identityGovernance.entitlementManagement.connectedOrganizations_GetInternalSponsors
       parameters:
         - name: connectedOrganization-id
@@ -9038,6 +9898,17 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
+          links:
+            checkMemberGroups:
+              operationId: identityGovernance.entitlementManagement.connectedOrganizations.connectedOrganization.internalSponsors.directoryObject.checkMemberGroups
+            checkMemberObjects:
+              operationId: identityGovernance.entitlementManagement.connectedOrganizations.connectedOrganization.internalSponsors.directoryObject.checkMemberObjects
+            getMemberGroups:
+              operationId: identityGovernance.entitlementManagement.connectedOrganizations.connectedOrganization.internalSponsors.directoryObject.getMemberGroups
+            getMemberObjects:
+              operationId: identityGovernance.entitlementManagement.connectedOrganizations.connectedOrganization.internalSponsors.directoryObject.getMemberObjects
+            restore:
+              operationId: identityGovernance.entitlementManagement.connectedOrganizations.connectedOrganization.internalSponsors.directoryObject.restore
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -9105,12 +9976,395 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/identityGovernance/entitlementManagement/connectedOrganizations/{connectedOrganization-id}/internalSponsors/{directoryObject-id}/microsoft.graph.checkMemberGroups':
+    post:
+      tags:
+        - identityGovernance.Actions
+      summary: Invoke action checkMemberGroups
+      operationId: identityGovernance.entitlementManagement.connectedOrganizations.internalSponsors_checkMemberGroups
+      parameters:
+        - name: connectedOrganization-id
+          in: path
+          description: 'key: id of connectedOrganization'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: connectedOrganization
+        - name: directoryObject-id
+          in: path
+          description: 'key: id of directoryObject'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: directoryObject
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                groupIds:
+                  type: array
+                  items:
+                    type: string
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of directoryObject
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/identityGovernance/entitlementManagement/connectedOrganizations/{connectedOrganization-id}/internalSponsors/{directoryObject-id}/microsoft.graph.checkMemberObjects':
+    post:
+      tags:
+        - identityGovernance.Actions
+      summary: Invoke action checkMemberObjects
+      operationId: identityGovernance.entitlementManagement.connectedOrganizations.internalSponsors_checkMemberObjects
+      parameters:
+        - name: connectedOrganization-id
+          in: path
+          description: 'key: id of connectedOrganization'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: connectedOrganization
+        - name: directoryObject-id
+          in: path
+          description: 'key: id of directoryObject'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: directoryObject
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                ids:
+                  type: array
+                  items:
+                    type: string
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of directoryObject
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/identityGovernance/entitlementManagement/connectedOrganizations/{connectedOrganization-id}/internalSponsors/{directoryObject-id}/microsoft.graph.getMemberGroups':
+    post:
+      tags:
+        - identityGovernance.Actions
+      summary: Invoke action getMemberGroups
+      operationId: identityGovernance.entitlementManagement.connectedOrganizations.internalSponsors_getMemberGroups
+      parameters:
+        - name: connectedOrganization-id
+          in: path
+          description: 'key: id of connectedOrganization'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: connectedOrganization
+        - name: directoryObject-id
+          in: path
+          description: 'key: id of directoryObject'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: directoryObject
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                securityEnabledOnly:
+                  type: boolean
+                  default: false
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of directoryObject
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/identityGovernance/entitlementManagement/connectedOrganizations/{connectedOrganization-id}/internalSponsors/{directoryObject-id}/microsoft.graph.getMemberObjects':
+    post:
+      tags:
+        - identityGovernance.Actions
+      summary: Invoke action getMemberObjects
+      operationId: identityGovernance.entitlementManagement.connectedOrganizations.internalSponsors_getMemberObjects
+      parameters:
+        - name: connectedOrganization-id
+          in: path
+          description: 'key: id of connectedOrganization'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: connectedOrganization
+        - name: directoryObject-id
+          in: path
+          description: 'key: id of directoryObject'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: directoryObject
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                securityEnabledOnly:
+                  type: boolean
+                  default: false
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of directoryObject
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/identityGovernance/entitlementManagement/connectedOrganizations/{connectedOrganization-id}/internalSponsors/{directoryObject-id}/microsoft.graph.restore':
+    post:
+      tags:
+        - identityGovernance.Actions
+      summary: Invoke action restore
+      operationId: identityGovernance.entitlementManagement.connectedOrganizations.internalSponsors_restore
+      parameters:
+        - name: connectedOrganization-id
+          in: path
+          description: 'key: id of connectedOrganization'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: connectedOrganization
+        - name: directoryObject-id
+          in: path
+          description: 'key: id of directoryObject'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: directoryObject
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.directoryObject'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/identityGovernance/entitlementManagement/connectedOrganizations/{connectedOrganization-id}/internalSponsors/microsoft.graph.getAvailableExtensionProperties':
+    post:
+      tags:
+        - identityGovernance.Actions
+      summary: Invoke action getAvailableExtensionProperties
+      operationId: identityGovernance.entitlementManagement.connectedOrganizations.internalSponsors_getAvailableExtensionProperties
+      parameters:
+        - name: connectedOrganization-id
+          in: path
+          description: 'key: id of connectedOrganization'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: connectedOrganization
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                isSyncedFromOnPremises:
+                  type: boolean
+                  default: false
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of directoryObject
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.extensionProperty'
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/identityGovernance/entitlementManagement/connectedOrganizations/{connectedOrganization-id}/internalSponsors/microsoft.graph.getByIds':
+    post:
+      tags:
+        - identityGovernance.Actions
+      summary: Invoke action getByIds
+      operationId: identityGovernance.entitlementManagement.connectedOrganizations.internalSponsors_getByIds
+      parameters:
+        - name: connectedOrganization-id
+          in: path
+          description: 'key: id of connectedOrganization'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: connectedOrganization
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                ids:
+                  type: array
+                  items:
+                    type: string
+                types:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of directoryObject
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.directoryObject'
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/identityGovernance/entitlementManagement/connectedOrganizations/{connectedOrganization-id}/internalSponsors/microsoft.graph.validateProperties':
+    post:
+      tags:
+        - identityGovernance.Actions
+      summary: Invoke action validateProperties
+      operationId: identityGovernance.entitlementManagement.connectedOrganizations.internalSponsors_validateProperties
+      parameters:
+        - name: connectedOrganization-id
+          in: path
+          description: 'key: id of connectedOrganization'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: connectedOrganization
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                entityType:
+                  type: string
+                  nullable: true
+                displayName:
+                  type: string
+                  nullable: true
+                mailNickname:
+                  type: string
+                  nullable: true
+                onBehalfOfUserId:
+                  pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
+                  type: string
+                  format: uuid
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   /identityGovernance/entitlementManagement/settings:
     get:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get settings from identityGovernance
-      description: Represents the settings that control the behavior of Azure AD entitlement management.
       operationId: identityGovernance.entitlementManagement_GetSettings
       parameters:
         - name: $select
@@ -9274,7 +10528,6 @@ paths:
       tags:
         - identityGovernance.termsOfUseContainer
       summary: Get agreementAcceptances from identityGovernance
-      description: Represents the current status of a user's response to a company's customizable terms of use agreement.
       operationId: identityGovernance.termsOfUse_ListAgreementAcceptances
       parameters:
         - $ref: '#/components/parameters/top'
@@ -9394,7 +10647,6 @@ paths:
       tags:
         - identityGovernance.termsOfUseContainer
       summary: Get agreementAcceptances from identityGovernance
-      description: Represents the current status of a user's response to a company's customizable terms of use agreement.
       operationId: identityGovernance.termsOfUse_GetAgreementAcceptances
       parameters:
         - name: agreementAcceptance-id
@@ -9506,7 +10758,6 @@ paths:
       tags:
         - identityGovernance.termsOfUseContainer
       summary: Get agreements from identityGovernance
-      description: Represents a tenant's customizable terms of use agreement that's created and managed with Azure Active Directory (Azure AD).
       operationId: identityGovernance.termsOfUse_ListAgreements
       parameters:
         - $ref: '#/components/parameters/top'
@@ -9608,7 +10859,6 @@ paths:
       tags:
         - identityGovernance.termsOfUseContainer
       summary: Get agreements from identityGovernance
-      description: Represents a tenant's customizable terms of use agreement that's created and managed with Azure Active Directory (Azure AD).
       operationId: identityGovernance.termsOfUse_GetAgreements
       parameters:
         - name: agreement-id
@@ -9731,7 +10981,6 @@ paths:
       tags:
         - identityGovernance.termsOfUseContainer
       summary: Get acceptances from identityGovernance
-      description: Read-only. Information about acceptances of this agreement.
       operationId: identityGovernance.termsOfUse.agreements_ListAcceptances
       parameters:
         - name: agreement-id
@@ -9866,7 +11115,6 @@ paths:
       tags:
         - identityGovernance.termsOfUseContainer
       summary: Get acceptances from identityGovernance
-      description: Read-only. Information about acceptances of this agreement.
       operationId: identityGovernance.termsOfUse.agreements_GetAcceptances
       parameters:
         - name: agreement-id
@@ -9999,7 +11247,6 @@ paths:
       tags:
         - identityGovernance.termsOfUseContainer
       summary: Get file from identityGovernance
-      description: Default PDF linked to this agreement.
       operationId: identityGovernance.termsOfUse.agreements_GetFile
       parameters:
         - name: agreement-id
@@ -10112,7 +11359,6 @@ paths:
       tags:
         - identityGovernance.termsOfUseContainer
       summary: Get localizations from identityGovernance
-      description: The localized version of the terms of use agreement files attached to the agreement.
       operationId: identityGovernance.termsOfUse.agreements.file_ListLocalizations
       parameters:
         - name: agreement-id
@@ -10231,7 +11477,6 @@ paths:
       tags:
         - identityGovernance.termsOfUseContainer
       summary: Get localizations from identityGovernance
-      description: The localized version of the terms of use agreement files attached to the agreement.
       operationId: identityGovernance.termsOfUse.agreements.file_GetLocalizations
       parameters:
         - name: agreement-id
@@ -10366,7 +11611,6 @@ paths:
       tags:
         - identityGovernance.termsOfUseContainer
       summary: Get versions from identityGovernance
-      description: Read-only. Customized versions of the terms of use agreement in the Azure AD tenant.
       operationId: identityGovernance.termsOfUse.agreements.file.localizations_ListVersions
       parameters:
         - name: agreement-id
@@ -10497,7 +11741,6 @@ paths:
       tags:
         - identityGovernance.termsOfUseContainer
       summary: Get versions from identityGovernance
-      description: Read-only. Customized versions of the terms of use agreement in the Azure AD tenant.
       operationId: identityGovernance.termsOfUse.agreements.file.localizations_GetVersions
       parameters:
         - name: agreement-id
@@ -10645,7 +11888,6 @@ paths:
       tags:
         - identityGovernance.termsOfUseContainer
       summary: Get files from identityGovernance
-      description: 'PDFs linked to this agreement. Note: This property is in the process of being deprecated. Use the  file property instead.'
       operationId: identityGovernance.termsOfUse.agreements_ListFiles
       parameters:
         - name: agreement-id
@@ -10764,7 +12006,6 @@ paths:
       tags:
         - identityGovernance.termsOfUseContainer
       summary: Get files from identityGovernance
-      description: 'PDFs linked to this agreement. Note: This property is in the process of being deprecated. Use the  file property instead.'
       operationId: identityGovernance.termsOfUse.agreements_GetFiles
       parameters:
         - name: agreement-id
@@ -10899,7 +12140,6 @@ paths:
       tags:
         - identityGovernance.termsOfUseContainer
       summary: Get versions from identityGovernance
-      description: Read-only. Customized versions of the terms of use agreement in the Azure AD tenant.
       operationId: identityGovernance.termsOfUse.agreements.files_ListVersions
       parameters:
         - name: agreement-id
@@ -11030,7 +12270,6 @@ paths:
       tags:
         - identityGovernance.termsOfUseContainer
       summary: Get versions from identityGovernance
-      description: Read-only. Customized versions of the terms of use agreement in the Azure AD tenant.
       operationId: identityGovernance.termsOfUse.agreements.files_GetVersions
       parameters:
         - name: agreement-id
@@ -11178,7 +12417,6 @@ paths:
       tags:
         - users.agreementAcceptance
       summary: Get agreementAcceptances from users
-      description: The user's terms of use acceptance statuses. Read-only. Nullable.
       operationId: users_ListAgreementAcceptances
       parameters:
         - name: user-id
@@ -11283,7 +12521,6 @@ paths:
       tags:
         - users.agreementAcceptance
       summary: Get agreementAcceptances from users
-      description: The user's terms of use acceptance statuses. Read-only. Nullable.
       operationId: users_GetAgreementAcceptances
       parameters:
         - name: user-id
@@ -11569,6 +12806,11 @@ components:
               $ref: '#/components/schemas/microsoft.graph.accessReviewScope'
             settings:
               $ref: '#/components/schemas/microsoft.graph.accessReviewScheduleSettings'
+            stageSettings:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.accessReviewStageSettings'
+              description: 'Required only for a multi-stage access review to define the stages and their settings. You can break down each review instance into up to three sequential stages, where each stage can have a different set of reviewers, fallback reviewers, and settings. Stages will be created sequentially based on the dependsOn property. Optional.  When this property is defined, its settings are used instead of the corresponding settings in the accessReviewScheduleDefinition object and its settings, reviewers, and fallbackReviewers properties.'
             status:
               type: string
               description: 'This read-only field specifies the status of an access review. The typical states include Initializing, NotStarted, Starting, InProgress, Completing, Completed, AutoReviewing, and AutoReviewed.  Supports $select, $orderby, and $filter (eq only). Read-only.'
@@ -11624,6 +12866,11 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.accessReviewInstanceDecisionItem'
               description: 'Each user reviewed in an accessReviewInstance has a decision item representing if they were approved, denied, or not yet reviewed.'
+            stages:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.accessReviewStage'
+              description: 'If the instance has multiple stages, this returns the collection of stages. A new stage will only be created when the previous stage ends. The existence, number, and settings of stages on a review instance are created based on the accessReviewStageSettings on the parent accessReviewScheduleDefinition.'
           additionalProperties:
             type: object
     microsoft.graph.accessReviewReviewer:
@@ -11705,6 +12952,51 @@ components:
             type: object
     microsoft.graph.accessReviewInstanceDecisionItemFilterByCurrentUserOptions:
       title: accessReviewInstanceDecisionItemFilterByCurrentUserOptions
+      enum:
+        - reviewer
+        - unknownFutureValue
+      type: string
+    microsoft.graph.accessReviewStage:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: accessReviewStage
+          type: object
+          properties:
+            endDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'DateTime when review stage is scheduled to end. The DatetimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. This property is the cumulative total of the durationInDays for all stages. Read-only.'
+              format: date-time
+              nullable: true
+            fallbackReviewers:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.accessReviewReviewerScope'
+              description: 'This collection of reviewer scopes is used to define the list of fallback reviewers. These fallback reviewers will be notified to take action if no users are found from the list of reviewers specified. This could occur when either the group owner is specified as the reviewer but the group owner does not exist, or manager is specified as reviewer but a user''s manager does not exist.'
+            reviewers:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.accessReviewReviewerScope'
+              description: 'This collection of access review scopes is used to define who the reviewers are. For examples of options for assigning reviewers, see Assign reviewers to your access review definition using the Microsoft Graph API.'
+            startDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'DateTime when review stage is scheduled to start. May be in the future. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
+              format: date-time
+              nullable: true
+            status:
+              type: string
+              description: 'Specifies the status of an accessReviewStage. Possible values: Initializing, NotStarted, Starting, InProgress, Completing, Completed, AutoReviewing, and AutoReviewed. Supports $orderby, and $filter (eq only). Read-only.'
+              nullable: true
+            decisions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.accessReviewInstanceDecisionItem'
+              description: 'Each user reviewed in an accessReviewStage has a decision item representing if they were approved, denied, or not yet reviewed.'
+          additionalProperties:
+            type: object
+    microsoft.graph.accessReviewStageFilterByCurrentUserOptions:
+      title: accessReviewStageFilterByCurrentUserOptions
       enum:
         - reviewer
         - unknownFutureValue
@@ -11927,7 +13219,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.approval'
-              description: Approval stages for assignment requests.
+              description: Approval stages for decisions associated with access package assignment requests.
             accessPackages:
               type: array
               items:
@@ -11937,22 +13229,22 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.accessPackageAssignmentPolicy'
-              description: Access package assignment policies.
+              description: Access package assignment policies govern which subjects can request or be assigned an access package via an access package assignment.
             assignmentRequests:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.accessPackageAssignmentRequest'
-              description: Represents access package assignment requests created by or on behalf of a user.
+              description: Access package assignment requests created by or on behalf of a subject.
             assignments:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.accessPackageAssignment'
-              description: Represents the grant of an access package to a subject (user or group).
+              description: The assignment of an access package to a subject for a period of time.
             catalogs:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.accessPackageCatalog'
-              description: Represents a collection of access packages.
+              description: A container for access packages.
             connectedOrganizations:
               type: array
               items:
@@ -12270,7 +13562,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.identitySource'
-              description: 'The identity sources in this connected organization, one of azureActiveDirectoryTenant, domainIdentitySource or externalDomainFederation. Read-only. Nullable. Supports $select and $filter(eq). To filter by the derived types, you must declare the resource using its full OData cast, for example, $filter=identitySources/any(is:is/microsoft.graph.azureActiveDirectoryTenant/tenantId eq ''bcfdfff4-cbc3-43f2-9000-ba7b7515054f'').'
+              description: 'The identity sources in this connected organization, one of azureActiveDirectoryTenant, crossCloudAzureActiveDirectoryTenant, domainIdentitySource or externalDomainFederation. Read-only. Nullable. Supports $select and $filter(eq). To filter by the derived types, you must declare the resource using its full OData cast, for example, $filter=identitySources/any(is:is/microsoft.graph.azureActiveDirectoryTenant/tenantId eq ''bcfdfff4-cbc3-43f2-9000-ba7b7515054f'').'
             modifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -12303,6 +13595,33 @@ components:
               description: Date and time when this object was deleted. Always null when the object hasn't been deleted.
               format: date-time
               nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.extensionProperty:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.directoryObject'
+        - title: extensionProperty
+          type: object
+          properties:
+            appDisplayName:
+              type: string
+              description: Display name of the application object on which this extension property is defined. Read-only.
+              nullable: true
+            dataType:
+              type: string
+              description: Specifies the data type of the value the extension property can hold. Following values are supported. Not nullable. Binary - 256 bytes maximumBooleanDateTime - Must be specified in ISO 8601 format. Will be stored in UTC.Integer - 32-bit value.LargeInteger - 64-bit value.String - 256 characters maximum
+            isSyncedFromOnPremises:
+              type: boolean
+              description: Indicates if this extension property was synced from on-premises active directory using Azure AD Connect. Read-only.
+              nullable: true
+            name:
+              type: string
+              description: Name of the extension property. Not nullable.
+            targetObjects:
+              type: array
+              items:
+                type: string
+              description: Following values are supported. Not nullable. UserGroupOrganizationDeviceApplication
           additionalProperties:
             type: object
     microsoft.graph.entitlementManagementSettings:
@@ -12472,6 +13791,10 @@ components:
         autoApplyDecisionsEnabled:
           type: boolean
           description: 'Indicates whether decisions are automatically applied. When set to false, an admin must apply the decisions manually once the reviewer completes the access review. When set to true, decisions are applied automatically after the access review instance duration ends, whether or not the reviewers have responded. Default value is false.'
+        decisionHistoriesForReviewersEnabled:
+          type: boolean
+          description: 'Indicates whether decisions on previous access review stages are available for reviewers on an accessReviewInstance with multiple subsequent stages. If not provided, the default is disabled (false).'
+          nullable: true
         defaultDecision:
           type: string
           description: 'Decision chosen if defaultDecisionEnabled is enabled. Can be one of Approve, Deny, or Recommendation.'
@@ -12501,17 +13824,56 @@ components:
           description: Indicates whether reminders are enabled or disabled. Default value is false.
       additionalProperties:
         type: object
+    microsoft.graph.accessReviewStageSettings:
+      title: accessReviewStageSettings
+      type: object
+      properties:
+        decisionsThatWillMoveToNextStage:
+          type: array
+          items:
+            type: string
+            nullable: true
+          description: 'Indicate which decisions will go to the next stage. Can be a sub-set of Approve, Deny, Recommendation, or NotReviewed. If not provided, all decisions will go to the next stage. Optional.'
+        dependsOn:
+          type: array
+          items:
+            type: string
+          description: 'Defines the sequential or parallel order of the stages and depends on the stageId. Only sequential stages are currently supported. For example, if stageId is 2, then dependsOn must be 1. If stageId is 1, do not specify dependsOn. Required if stageId is not 1.'
+        durationInDays:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: 'The duration of the stage. Required.  NOTE: The cumulative value of this property across all stages  1. Will override the instanceDurationInDays setting on the accessReviewScheduleDefinition object. 2. Cannot exceed the length of one recurrence. That is, if the review recurs weekly, the cumulative durationInDays cannot exceed 7.'
+          format: int32
+        fallbackReviewers:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.accessReviewReviewerScope'
+          description: 'If provided, the fallback reviewers are asked to complete a review if the primary reviewers do not exist. For example, if managers are selected as reviewers and a principal under review does not have a manager in Azure AD, the fallback reviewers are asked to review that principal. NOTE: The value of this property will override the corresponding setting on the accessReviewScheduleDefinition object.'
+        recommendationsEnabled:
+          type: boolean
+          description: 'Indicates whether showing recommendations to reviewers is enabled. Required. NOTE: The value of this property will override override the corresponding setting on the accessReviewScheduleDefinition object.'
+        reviewers:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.accessReviewReviewerScope'
+          description: 'Defines who the reviewers are. If none are specified, the review is a self-review (users review their own access).  For examples of options for assigning reviewers, see Assign reviewers to your access review definition using the Microsoft Graph API. NOTE: The value of this property will override the corresponding setting on the accessReviewScheduleDefinition.'
+        stageId:
+          type: string
+          description: Unique identifier of the accessReviewStageSettings. The stageId will be used in dependsOn property to indicate the stage relationship. Required.
+      additionalProperties:
+        type: object
     microsoft.graph.identity:
       title: identity
       type: object
       properties:
         displayName:
           type: string
-          description: 'The identity''s display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
+          description: The display name of the identity. This property is read-only.
           nullable: true
         id:
           type: string
-          description: Unique identifier for the identity.
+          description: The identifier of the identity. This property is read-only.
           nullable: true
       additionalProperties:
         type: object
@@ -12939,6 +14301,18 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.accessReviewInstanceDecisionItem'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.accessReviewStageCollectionResponse:
+      title: Collection of accessReviewStage
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.accessReviewStage'
         '@odata.nextLink':
           type: string
       additionalProperties:
@@ -13414,6 +14788,12 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.accessReviewInstanceDecisionItemCollectionResponse'
+    microsoft.graph.accessReviewStageCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.accessReviewStageCollectionResponse'
     microsoft.graph.accessReviewHistoryDefinitionCollectionResponse:
       description: Retrieved collection
       content:

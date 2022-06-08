@@ -61,6 +61,8 @@ paths:
               operationId: communications.ListOnlineMeetings
             presences:
               operationId: communications.ListPresences
+            getPresencesByUserId:
+              operationId: communications.getPresencesByUserId
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -310,7 +312,6 @@ paths:
       tags:
         - communications.callRecord
       summary: Get sessions from communications
-      description: 'List of sessions involved in the call. Peer-to-peer calls typically only have one session, whereas group calls typically have at least one session per participant. Read-only. Nullable.'
       operationId: communications.callRecords_ListSessions
       parameters:
         - name: callRecord-id
@@ -426,7 +427,6 @@ paths:
       tags:
         - communications.callRecord
       summary: Get sessions from communications
-      description: 'List of sessions involved in the call. Peer-to-peer calls typically only have one session, whereas group calls typically have at least one session per participant. Read-only. Nullable.'
       operationId: communications.callRecords_GetSessions
       parameters:
         - name: callRecord-id
@@ -560,7 +560,6 @@ paths:
       tags:
         - communications.callRecord
       summary: Get segments from communications
-      description: The list of segments involved in the session. Read-only. Nullable.
       operationId: communications.callRecords.sessions_ListSegments
       parameters:
         - name: callRecord-id
@@ -688,7 +687,6 @@ paths:
       tags:
         - communications.callRecord
       summary: Get segments from communications
-      description: The list of segments involved in the session. Read-only. Nullable.
       operationId: communications.callRecords.sessions_GetSegments
       parameters:
         - name: callRecord-id
@@ -1060,6 +1058,32 @@ paths:
               operationId: communications.Calls.ListParticipants
               parameters:
                 call-id: $request.path.call-id
+            answer:
+              operationId: communications.calls.call.answer
+            cancelMediaProcessing:
+              operationId: communications.calls.call.cancelMediaProcessing
+            changeScreenSharingRole:
+              operationId: communications.calls.call.changeScreenSharingRole
+            keepAlive:
+              operationId: communications.calls.call.keepAlive
+            mute:
+              operationId: communications.calls.call.mute
+            playPrompt:
+              operationId: communications.calls.call.playPrompt
+            recordResponse:
+              operationId: communications.calls.call.recordResponse
+            redirect:
+              operationId: communications.calls.call.redirect
+            reject:
+              operationId: communications.calls.call.reject
+            subscribeToTone:
+              operationId: communications.calls.call.subscribeToTone
+            transfer:
+              operationId: communications.calls.call.transfer
+            unmute:
+              operationId: communications.calls.call.unmute
+            updateRecordingStatus:
+              operationId: communications.calls.call.updateRecordingStatus
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1118,7 +1142,6 @@ paths:
       tags:
         - communications.call
       summary: Get audioRoutingGroups from communications
-      description: Read-only. Nullable.
       operationId: communications.calls_ListAudioRoutingGroups
       parameters:
         - name: call-id
@@ -1223,7 +1246,6 @@ paths:
       tags:
         - communications.call
       summary: Get audioRoutingGroups from communications
-      description: Read-only. Nullable.
       operationId: communications.calls_GetAudioRoutingGroups
       parameters:
         - name: call-id
@@ -1856,7 +1878,6 @@ paths:
       tags:
         - communications.call
       summary: Get operations from communications
-      description: Read-only. Nullable.
       operationId: communications.calls_ListOperations
       parameters:
         - name: call-id
@@ -1961,7 +1982,6 @@ paths:
       tags:
         - communications.call
       summary: Get operations from communications
-      description: Read-only. Nullable.
       operationId: communications.calls_GetOperations
       parameters:
         - name: call-id
@@ -2084,7 +2104,6 @@ paths:
       tags:
         - communications.call
       summary: Get participants from communications
-      description: Read-only. Nullable.
       operationId: communications.calls_ListParticipants
       parameters:
         - name: call-id
@@ -2198,7 +2217,6 @@ paths:
       tags:
         - communications.call
       summary: Get participants from communications
-      description: Read-only. Nullable.
       operationId: communications.calls_GetParticipants
       parameters:
         - name: call-id
@@ -2252,6 +2270,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.participant'
+          links:
+            mute:
+              operationId: communications.calls.call.participants.participant.mute
+            startHoldMusic:
+              operationId: communications.calls.call.participants.participant.startHoldMusic
+            stopHoldMusic:
+              operationId: communications.calls.call.participants.participant.stopHoldMusic
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2836,7 +2861,6 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Get attendanceReports from communications
-      description: The attendance reports of an online meeting. Read-only.
       operationId: communications.onlineMeetings_ListAttendanceReports
       parameters:
         - name: onlineMeeting-id
@@ -2943,7 +2967,6 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Get attendanceReports from communications
-      description: The attendance reports of an online meeting. Read-only.
       operationId: communications.onlineMeetings_GetAttendanceReports
       parameters:
         - name: onlineMeeting-id
@@ -3074,7 +3097,6 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Get attendanceRecords from communications
-      description: List of attendance records of an attendance report. Read-only.
       operationId: communications.onlineMeetings.attendanceReports_ListAttendanceRecords
       parameters:
         - name: onlineMeeting-id
@@ -3199,7 +3221,6 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Get attendanceRecords from communications
-      description: List of attendance records of an attendance report. Read-only.
       operationId: communications.onlineMeetings.attendanceReports_GetAttendanceRecords
       parameters:
         - name: onlineMeeting-id
@@ -3345,7 +3366,6 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Get attendeeReport for the navigation property onlineMeetings from communications
-      description: The content stream of the attendee report of a Teams live event. Read-only.
       operationId: communications_GetOnlineMeetingsAttendeeReport
       parameters:
         - name: onlineMeeting-id
@@ -3370,7 +3390,6 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Update attendeeReport for the navigation property onlineMeetings in communications
-      description: The content stream of the attendee report of a Teams live event. Read-only.
       operationId: communications_SetOnlineMeetingsAttendeeReport
       parameters:
         - name: onlineMeeting-id
@@ -3572,6 +3591,11 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.presence'
+          links:
+            clearPresence:
+              operationId: communications.presences.presence.clearPresence
+            setPresence:
+              operationId: communications.presences.presence.setPresence
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4017,7 +4041,6 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Get attendanceReports from users
-      description: The attendance reports of an online meeting. Read-only.
       operationId: users.onlineMeetings_ListAttendanceReports
       parameters:
         - name: user-id
@@ -4138,7 +4161,6 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Get attendanceReports from users
-      description: The attendance reports of an online meeting. Read-only.
       operationId: users.onlineMeetings_GetAttendanceReports
       parameters:
         - name: user-id
@@ -4291,7 +4313,6 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Get attendanceRecords from users
-      description: List of attendance records of an attendance report. Read-only.
       operationId: users.onlineMeetings.attendanceReports_ListAttendanceRecords
       parameters:
         - name: user-id
@@ -4430,7 +4451,6 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Get attendanceRecords from users
-      description: List of attendance records of an attendance report. Read-only.
       operationId: users.onlineMeetings.attendanceReports_GetAttendanceRecords
       parameters:
         - name: user-id
@@ -4597,7 +4617,6 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Get attendeeReport for the navigation property onlineMeetings from users
-      description: The content stream of the attendee report of a Teams live event. Read-only.
       operationId: users_GetOnlineMeetingsAttendeeReport
       parameters:
         - name: user-id
@@ -4629,7 +4648,6 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Update attendeeReport for the navigation property onlineMeetings in users
-      description: The content stream of the attendee report of a Teams live event. Read-only.
       operationId: users_SetOnlineMeetingsAttendeeReport
       parameters:
         - name: user-id
@@ -4707,6 +4725,11 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.presence'
+          links:
+            clearPresence:
+              operationId: users.user.presence.clearPresence
+            setPresence:
+              operationId: users.user.presence.setPresence
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5978,11 +6001,11 @@ components:
       properties:
         displayName:
           type: string
-          description: 'The identity''s display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
+          description: The display name of the identity. This property is read-only.
           nullable: true
         id:
           type: string
-          description: Unique identifier for the identity.
+          description: The identifier of the identity. This property is read-only.
           nullable: true
       additionalProperties:
         type: object
@@ -6317,6 +6340,8 @@ components:
           type: string
           description: The media access control (MAC) address of the media endpoint's network device.
           nullable: true
+        networkTransportProtocol:
+          $ref: '#/components/schemas/microsoft.graph.callRecords.networkTransportProtocol'
         port:
           maximum: 2147483647
           minimum: -2147483648
@@ -6353,6 +6378,11 @@ components:
           type: string
           description: Subnet used for media stream by the media endpoint.
           nullable: true
+        traceRouteHops:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.callRecords.traceRouteHop'
+          description: List of network trace route hops collected for this media stream.
         wifiBand:
           $ref: '#/components/schemas/microsoft.graph.callRecords.wifiBand'
         wifiBatteryCharge:
@@ -6400,6 +6430,8 @@ components:
       title: mediaStream
       type: object
       properties:
+        audioCodec:
+          $ref: '#/components/schemas/microsoft.graph.callRecords.audioCodec'
         averageAudioDegradation:
           type: number
           description: Average Network Mean Opinion Score degradation for stream. Represents how much the network loss and jitter has impacted the quality of received audio.
@@ -6524,6 +6556,8 @@ components:
           type: string
           description: Unique identifier for the stream.
           nullable: true
+        videoCodec:
+          $ref: '#/components/schemas/microsoft.graph.callRecords.videoCodec'
         wasMediaBypassed:
           type: boolean
           description: 'True if the media stream bypassed the Mediation Server and went straight between client and PSTN Gateway/PBX, false otherwise.'
@@ -6646,6 +6680,37 @@ components:
         - tunnel
         - unknownFutureValue
       type: string
+    microsoft.graph.callRecords.networkTransportProtocol:
+      title: networkTransportProtocol
+      enum:
+        - unknown
+        - udp
+        - tcp
+        - unknownFutureValue
+      type: string
+    microsoft.graph.callRecords.traceRouteHop:
+      title: traceRouteHop
+      type: object
+      properties:
+        hopCount:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: The network path count of this hop that was used to compute the RTT.
+          format: int32
+          nullable: true
+        ipAddress:
+          type: string
+          description: IP address used for this hop in the network trace.
+          nullable: true
+        roundTripTime:
+          pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
+          type: string
+          description: 'The time from when the trace route packet was sent from the client to this hop and back to the client, denoted in [ISO 8601][] format. For example, 1 second is denoted as PT1S, where P is the duration designator, T is the time designator, and S is the second designator.'
+          format: duration
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.callRecords.wifiBand:
       title: wifiBand
       enum:
@@ -6667,11 +6732,54 @@ components:
         - wifi80211ax
         - unknownFutureValue
       type: string
+    microsoft.graph.callRecords.audioCodec:
+      title: audioCodec
+      enum:
+        - unknown
+        - invalid
+        - cn
+        - pcma
+        - pcmu
+        - amrWide
+        - g722
+        - g7221
+        - g7221c
+        - g729
+        - multiChannelAudio
+        - muchv2
+        - opus
+        - satin
+        - satinFullband
+        - rtAudio8
+        - rtAudio16
+        - silk
+        - silkNarrow
+        - silkWide
+        - siren
+        - xmsRta
+        - unknownFutureValue
+      type: string
     microsoft.graph.callRecords.mediaStreamDirection:
       title: mediaStreamDirection
       enum:
         - callerToCallee
         - calleeToCaller
+      type: string
+    microsoft.graph.callRecords.videoCodec:
+      title: videoCodec
+      enum:
+        - unknown
+        - invalid
+        - av1
+        - h263
+        - h264
+        - h264s
+        - h264uc
+        - h265
+        - rtvc1
+        - rtVideo
+        - xrtvc1
+        - unknownFutureValue
       type: string
     microsoft.graph.ODataErrors.ErrorDetails:
       required:

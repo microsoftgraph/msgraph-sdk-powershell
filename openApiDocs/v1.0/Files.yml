@@ -10,8 +10,7 @@ paths:
     get:
       tags:
         - drives.drive
-      summary: Get entities from drives
-      description: Helpers (examples that aren't included in the docs)
+      summary: Get Drive
       operationId: drives.drive_ListDrive
       parameters:
         - $ref: '#/components/parameters/top'
@@ -149,8 +148,7 @@ paths:
     get:
       tags:
         - drives.drive
-      summary: Get entity from drives by key
-      description: Helpers (examples that aren't included in the docs)
+      summary: Get Drive
       operationId: drives.drive_GetDrive
       parameters:
         - name: drive-id
@@ -254,6 +252,12 @@ paths:
               operationId: drives.ListSpecial
               parameters:
                 drive-id: $request.path.drive-id
+            recent:
+              operationId: drives.drive.recent
+            search:
+              operationId: drives.drive.search
+            sharedWithMe:
+              operationId: drives.drive.sharedWithMe
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -312,7 +316,6 @@ paths:
       tags:
         - drives.driveItem
       summary: Get bundles from drives
-      description: 'Collection of [bundles][bundle] (albums and multi-select-shared sets of items). Only in personal OneDrive.'
       operationId: drives_ListBundles
       parameters:
         - name: drive-id
@@ -497,7 +500,6 @@ paths:
       tags:
         - drives.driveItem
       summary: Get bundles from drives
-      description: 'Collection of [bundles][bundle] (albums and multi-select-shared sets of items). Only in personal OneDrive.'
       operationId: drives_GetBundles
       parameters:
         - name: drive-id
@@ -657,7 +659,6 @@ paths:
       tags:
         - drives.driveItem
       summary: Get content for the navigation property bundles from drives
-      description: 'The content stream, if the item represents a file.'
       operationId: drives_GetBundlesContent
       parameters:
         - name: drive-id
@@ -689,7 +690,6 @@ paths:
       tags:
         - drives.driveItem
       summary: Update content for the navigation property bundles in drives
-      description: 'The content stream, if the item represents a file.'
       operationId: drives_SetBundlesContent
       parameters:
         - name: drive-id
@@ -725,7 +725,6 @@ paths:
       tags:
         - drives.driveItem
       summary: Get following from drives
-      description: The list of items the user is following. Only in OneDrive for Business.
       operationId: drives_ListFollowing
       parameters:
         - name: drive-id
@@ -910,7 +909,6 @@ paths:
       tags:
         - drives.driveItem
       summary: Get following from drives
-      description: The list of items the user is following. Only in OneDrive for Business.
       operationId: drives_GetFollowing
       parameters:
         - name: drive-id
@@ -1070,7 +1068,6 @@ paths:
       tags:
         - drives.driveItem
       summary: Get content for the navigation property following from drives
-      description: 'The content stream, if the item represents a file.'
       operationId: drives_GetFollowingContent
       parameters:
         - name: drive-id
@@ -1102,7 +1099,6 @@ paths:
       tags:
         - drives.driveItem
       summary: Update content for the navigation property following in drives
-      description: 'The content stream, if the item represents a file.'
       operationId: drives_SetFollowingContent
       parameters:
         - name: drive-id
@@ -1138,7 +1134,6 @@ paths:
       tags:
         - drives.driveItem
       summary: Get items from drives
-      description: All items contained in the drive. Read-only. Nullable.
       operationId: drives_ListItems
       parameters:
         - name: drive-id
@@ -1353,7 +1348,6 @@ paths:
       tags:
         - drives.driveItem
       summary: Get items from drives
-      description: All items contained in the drive. Read-only. Nullable.
       operationId: drives_GetItems
       parameters:
         - name: drive-id
@@ -1505,6 +1499,34 @@ paths:
               parameters:
                 drive-id: $request.path.drive-id
                 driveItem-id: $request.path.driveItem-id
+            checkin:
+              operationId: drives.drive.items.driveItem.checkin
+            checkout:
+              operationId: drives.drive.items.driveItem.checkout
+            copy:
+              operationId: drives.drive.items.driveItem.copy
+            createLink:
+              operationId: drives.drive.items.driveItem.createLink
+            createUploadSession:
+              operationId: drives.drive.items.driveItem.createUploadSession
+            delta:
+              operationId: drives.drive.items.driveItem.delta
+            follow:
+              operationId: drives.drive.items.driveItem.follow
+            getActivitiesByInterval:
+              operationId: drives.drive.items.driveItem.getActivitiesByInterval
+            invite:
+              operationId: drives.drive.items.driveItem.invite
+            preview:
+              operationId: drives.drive.items.driveItem.preview
+            restore:
+              operationId: drives.drive.items.driveItem.restore
+            search:
+              operationId: drives.drive.items.driveItem.search
+            unfollow:
+              operationId: drives.drive.items.driveItem.unfollow
+            validatePermission:
+              operationId: drives.drive.items.driveItem.validatePermission
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1577,7 +1599,6 @@ paths:
       tags:
         - drives.driveItem
       summary: Get analytics from drives
-      description: Analytics about the view activities that took place on this item.
       operationId: drives.items_GetAnalytics
       parameters:
         - name: drive-id
@@ -1655,7 +1676,6 @@ paths:
       tags:
         - drives.driveItem
       summary: Get children from drives
-      description: Collection containing Item objects for the immediate children of Item. Only items representing folders have children. Read-only. Nullable.
       operationId: drives.items_ListChildren
       parameters:
         - name: drive-id
@@ -1847,7 +1867,6 @@ paths:
       tags:
         - drives.driveItem
       summary: Get children from drives
-      description: Collection containing Item objects for the immediate children of Item. Only items representing folders have children. Read-only. Nullable.
       operationId: drives.items_GetChildren
       parameters:
         - name: drive-id
@@ -2024,7 +2043,6 @@ paths:
       tags:
         - drives.driveItem
       summary: Get content for the navigation property children from drives
-      description: 'The content stream, if the item represents a file.'
       operationId: drives.items_GetChildrenContent
       parameters:
         - name: drive-id
@@ -2063,7 +2081,6 @@ paths:
       tags:
         - drives.driveItem
       summary: Update content for the navigation property children in drives
-      description: 'The content stream, if the item represents a file.'
       operationId: drives.items_SetChildrenContent
       parameters:
         - name: drive-id
@@ -2106,7 +2123,6 @@ paths:
       tags:
         - drives.driveItem
       summary: Get content for the navigation property items from drives
-      description: 'The content stream, if the item represents a file.'
       operationId: drives_GetItemsContent
       parameters:
         - name: drive-id
@@ -2138,7 +2154,6 @@ paths:
       tags:
         - drives.driveItem
       summary: Update content for the navigation property items in drives
-      description: 'The content stream, if the item represents a file.'
       operationId: drives_SetItemsContent
       parameters:
         - name: drive-id
@@ -2174,7 +2189,6 @@ paths:
       tags:
         - drives.driveItem
       summary: Get listItem from drives
-      description: 'For drives in SharePoint, the associated document library list item. Read-only. Nullable.'
       operationId: drives.items_GetListItem
       parameters:
         - name: drive-id
@@ -2276,6 +2290,8 @@ paths:
               parameters:
                 drive-id: $request.path.drive-id
                 driveItem-id: $request.path.driveItem-id
+            getActivitiesByInterval:
+              operationId: drives.drive.items.driveItem.listItem.getActivitiesByInterval
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2348,7 +2364,6 @@ paths:
       tags:
         - drives.driveItem
       summary: Get analytics from drives
-      description: Analytics about the view activities that took place on this item.
       operationId: drives.items.listItem_GetAnalytics
       parameters:
         - name: drive-id
@@ -2426,7 +2441,6 @@ paths:
       tags:
         - drives.driveItem
       summary: Get driveItem from drives
-      description: 'For document libraries, the driveItem relationship exposes the listItem as a [driveItem][]'
       operationId: drives.items.listItem_GetDriveItem
       parameters:
         - name: drive-id
@@ -2586,7 +2600,6 @@ paths:
       tags:
         - drives.driveItem
       summary: Get content for the navigation property driveItem from drives
-      description: 'The content stream, if the item represents a file.'
       operationId: drives.items.listItem_GetDriveItemContent
       parameters:
         - name: drive-id
@@ -2618,7 +2631,6 @@ paths:
       tags:
         - drives.driveItem
       summary: Update content for the navigation property driveItem in drives
-      description: 'The content stream, if the item represents a file.'
       operationId: drives.items.listItem_SetDriveItemContent
       parameters:
         - name: drive-id
@@ -2654,7 +2666,6 @@ paths:
       tags:
         - drives.driveItem
       summary: Get fields from drives
-      description: The values of the columns set on this list item.
       operationId: drives.items.listItem_GetFields
       parameters:
         - name: drive-id
@@ -2873,7 +2884,6 @@ paths:
       tags:
         - drives.driveItem
       summary: Get versions from drives
-      description: The list of previous versions of the list item.
       operationId: drives.items.listItem_ListVersions
       parameters:
         - name: drive-id
@@ -2994,7 +3004,6 @@ paths:
       tags:
         - drives.driveItem
       summary: Get versions from drives
-      description: The list of previous versions of the list item.
       operationId: drives.items.listItem_GetVersions
       parameters:
         - name: drive-id
@@ -3061,6 +3070,8 @@ paths:
                 drive-id: $request.path.drive-id
                 driveItem-id: $request.path.driveItem-id
                 listItemVersion-id: $request.path.listItemVersion-id
+            restoreVersion:
+              operationId: drives.drive.items.driveItem.listItem.versions.listItemVersion.restoreVersion
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3147,7 +3158,6 @@ paths:
       tags:
         - drives.driveItem
       summary: Get fields from drives
-      description: A collection of the fields and values for this version of the list item.
       operationId: drives.items.listItem.versions_GetFields
       parameters:
         - name: drive-id
@@ -3317,12 +3327,734 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/drives/{drive-id}/items/{driveItem-id}/microsoft.graph.checkin':
+    post:
+      tags:
+        - drives.Actions
+      summary: Invoke action checkin
+      operationId: drives.items_checkin
+      parameters:
+        - name: drive-id
+          in: path
+          description: 'key: id of drive'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - name: driveItem-id
+          in: path
+          description: 'key: id of driveItem'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: driveItem
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                checkInAs:
+                  type: string
+                  nullable: true
+                comment:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/drives/{drive-id}/items/{driveItem-id}/microsoft.graph.checkout':
+    post:
+      tags:
+        - drives.Actions
+      summary: Invoke action checkout
+      operationId: drives.items_checkout
+      parameters:
+        - name: drive-id
+          in: path
+          description: 'key: id of drive'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - name: driveItem-id
+          in: path
+          description: 'key: id of driveItem'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: driveItem
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/drives/{drive-id}/items/{driveItem-id}/microsoft.graph.copy':
+    post:
+      tags:
+        - drives.Actions
+      summary: Invoke action copy
+      operationId: drives.items_copy
+      parameters:
+        - name: drive-id
+          in: path
+          description: 'key: id of drive'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - name: driveItem-id
+          in: path
+          description: 'key: id of driveItem'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: driveItem
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  nullable: true
+                parentReference:
+                  $ref: '#/components/schemas/microsoft.graph.itemReference'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.driveItem'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/drives/{drive-id}/items/{driveItem-id}/microsoft.graph.createLink':
+    post:
+      tags:
+        - drives.Actions
+      summary: Invoke action createLink
+      operationId: drives.items_createLink
+      parameters:
+        - name: drive-id
+          in: path
+          description: 'key: id of drive'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - name: driveItem-id
+          in: path
+          description: 'key: id of driveItem'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: driveItem
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                type:
+                  type: string
+                scope:
+                  type: string
+                  nullable: true
+                expirationDateTime:
+                  pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+                  type: string
+                  format: date-time
+                  nullable: true
+                password:
+                  type: string
+                  nullable: true
+                message:
+                  type: string
+                  nullable: true
+                retainInheritedPermissions:
+                  type: boolean
+                  default: false
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.permission'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/drives/{drive-id}/items/{driveItem-id}/microsoft.graph.createUploadSession':
+    post:
+      tags:
+        - drives.Actions
+      summary: Invoke action createUploadSession
+      operationId: drives.items_createUploadSession
+      parameters:
+        - name: drive-id
+          in: path
+          description: 'key: id of drive'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - name: driveItem-id
+          in: path
+          description: 'key: id of driveItem'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: driveItem
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                item:
+                  $ref: '#/components/schemas/microsoft.graph.driveItemUploadableProperties'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.uploadSession'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/drives/{drive-id}/items/{driveItem-id}/microsoft.graph.delta()':
+    get:
+      tags:
+        - drives.Functions
+      summary: Invoke function delta
+      operationId: drives.items_delta
+      parameters:
+        - name: drive-id
+          in: path
+          description: 'key: id of drive'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - name: driveItem-id
+          in: path
+          description: 'key: id of driveItem'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: driveItem
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of driveItem
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.driveItem'
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/drives/{drive-id}/items/{driveItem-id}/microsoft.graph.delta(token=''{token}'')':
+    get:
+      tags:
+        - drives.Functions
+      summary: Invoke function delta
+      operationId: drives.items_delta
+      parameters:
+        - name: drive-id
+          in: path
+          description: 'key: id of drive'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - name: driveItem-id
+          in: path
+          description: 'key: id of driveItem'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: driveItem
+        - name: token
+          in: path
+          description: 'Usage: token=''{token}'''
+          required: true
+          schema:
+            type: string
+            nullable: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of driveItem
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.driveItem'
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/drives/{drive-id}/items/{driveItem-id}/microsoft.graph.follow':
+    post:
+      tags:
+        - drives.Actions
+      summary: Invoke action follow
+      operationId: drives.items_follow
+      parameters:
+        - name: drive-id
+          in: path
+          description: 'key: id of drive'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - name: driveItem-id
+          in: path
+          description: 'key: id of driveItem'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: driveItem
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.driveItem'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/drives/{drive-id}/items/{driveItem-id}/microsoft.graph.getActivitiesByInterval()':
+    get:
+      tags:
+        - drives.Functions
+      summary: Invoke function getActivitiesByInterval
+      operationId: drives.items_getActivitiesByInterval
+      parameters:
+        - name: drive-id
+          in: path
+          description: 'key: id of drive'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - name: driveItem-id
+          in: path
+          description: 'key: id of driveItem'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: driveItem
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of driveItem
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.itemActivityStat'
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/drives/{drive-id}/items/{driveItem-id}/microsoft.graph.getActivitiesByInterval(startDateTime=''{startDateTime}'',endDateTime=''{endDateTime}'',interval=''{interval}'')':
+    get:
+      tags:
+        - drives.Functions
+      summary: Invoke function getActivitiesByInterval
+      operationId: drives.items_getActivitiesByInterval
+      parameters:
+        - name: drive-id
+          in: path
+          description: 'key: id of drive'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - name: driveItem-id
+          in: path
+          description: 'key: id of driveItem'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: driveItem
+        - name: startDateTime
+          in: path
+          description: 'Usage: startDateTime=''{startDateTime}'''
+          required: true
+          schema:
+            type: string
+            nullable: true
+        - name: endDateTime
+          in: path
+          description: 'Usage: endDateTime=''{endDateTime}'''
+          required: true
+          schema:
+            type: string
+            nullable: true
+        - name: interval
+          in: path
+          description: 'Usage: interval=''{interval}'''
+          required: true
+          schema:
+            type: string
+            nullable: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of driveItem
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.itemActivityStat'
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/drives/{drive-id}/items/{driveItem-id}/microsoft.graph.invite':
+    post:
+      tags:
+        - drives.Actions
+      summary: Invoke action invite
+      operationId: drives.items_invite
+      parameters:
+        - name: drive-id
+          in: path
+          description: 'key: id of drive'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - name: driveItem-id
+          in: path
+          description: 'key: id of driveItem'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: driveItem
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                requireSignIn:
+                  type: boolean
+                  default: false
+                  nullable: true
+                roles:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                sendInvitation:
+                  type: boolean
+                  default: false
+                  nullable: true
+                message:
+                  type: string
+                  nullable: true
+                recipients:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/microsoft.graph.driveRecipient'
+                retainInheritedPermissions:
+                  type: boolean
+                  default: false
+                  nullable: true
+                expirationDateTime:
+                  type: string
+                  nullable: true
+                password:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of driveItem
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.permission'
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/drives/{drive-id}/items/{driveItem-id}/microsoft.graph.preview':
+    post:
+      tags:
+        - drives.Actions
+      summary: Invoke action preview
+      operationId: drives.items_preview
+      parameters:
+        - name: drive-id
+          in: path
+          description: 'key: id of drive'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - name: driveItem-id
+          in: path
+          description: 'key: id of driveItem'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: driveItem
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                page:
+                  type: string
+                  nullable: true
+                zoom:
+                  type: number
+                  format: double
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.itemPreviewInfo'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/drives/{drive-id}/items/{driveItem-id}/microsoft.graph.restore':
+    post:
+      tags:
+        - drives.Actions
+      summary: Invoke action restore
+      operationId: drives.items_restore
+      parameters:
+        - name: drive-id
+          in: path
+          description: 'key: id of drive'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - name: driveItem-id
+          in: path
+          description: 'key: id of driveItem'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: driveItem
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                parentReference:
+                  $ref: '#/components/schemas/microsoft.graph.itemReference'
+                name:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.driveItem'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/drives/{drive-id}/items/{driveItem-id}/microsoft.graph.search(q=''{q}'')':
+    get:
+      tags:
+        - drives.Functions
+      summary: Invoke function search
+      operationId: drives.items_search
+      parameters:
+        - name: drive-id
+          in: path
+          description: 'key: id of drive'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - name: driveItem-id
+          in: path
+          description: 'key: id of driveItem'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: driveItem
+        - name: q
+          in: path
+          description: 'Usage: q=''{q}'''
+          required: true
+          schema:
+            type: string
+            nullable: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of driveItem
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.driveItem'
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/drives/{drive-id}/items/{driveItem-id}/microsoft.graph.unfollow':
+    post:
+      tags:
+        - drives.Actions
+      summary: Invoke action unfollow
+      operationId: drives.items_unfollow
+      parameters:
+        - name: drive-id
+          in: path
+          description: 'key: id of drive'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - name: driveItem-id
+          in: path
+          description: 'key: id of driveItem'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: driveItem
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/drives/{drive-id}/items/{driveItem-id}/microsoft.graph.validatePermission':
+    post:
+      tags:
+        - drives.Actions
+      summary: Invoke action validatePermission
+      operationId: drives.items_validatePermission
+      parameters:
+        - name: drive-id
+          in: path
+          description: 'key: id of drive'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - name: driveItem-id
+          in: path
+          description: 'key: id of driveItem'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: driveItem
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                challengeToken:
+                  type: string
+                  nullable: true
+                password:
+                  type: string
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/drives/{drive-id}/items/{driveItem-id}/permissions':
     get:
       tags:
         - drives.driveItem
       summary: Get permissions from drives
-      description: The set of permissions for the item. Read-only. Nullable.
       operationId: drives.items_ListPermissions
       parameters:
         - name: drive-id
@@ -3465,7 +4197,6 @@ paths:
       tags:
         - drives.driveItem
       summary: Get permissions from drives
-      description: The set of permissions for the item. Read-only. Nullable.
       operationId: drives.items_GetPermissions
       parameters:
         - name: drive-id
@@ -3531,6 +4262,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.permission'
+          links:
+            grant:
+              operationId: drives.drive.items.driveItem.permissions.permission.grant
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3682,7 +4416,6 @@ paths:
       tags:
         - drives.driveItem
       summary: Get subscriptions from drives
-      description: The set of subscriptions on the item. Only supported on the root of a drive.
       operationId: drives.items_ListSubscriptions
       parameters:
         - name: drive-id
@@ -3834,7 +4567,6 @@ paths:
       tags:
         - drives.driveItem
       summary: Get subscriptions from drives
-      description: The set of subscriptions on the item. Only supported on the root of a drive.
       operationId: drives.items_GetSubscriptions
       parameters:
         - name: drive-id
@@ -3903,6 +4635,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.subscription'
+          links:
+            reauthorize:
+              operationId: drives.drive.items.driveItem.subscriptions.subscription.reauthorize
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3984,12 +4719,45 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/drives/{drive-id}/items/{driveItem-id}/subscriptions/{subscription-id}/microsoft.graph.reauthorize':
+    post:
+      tags:
+        - drives.Actions
+      summary: Invoke action reauthorize
+      operationId: drives.items.subscriptions_reauthorize
+      parameters:
+        - name: drive-id
+          in: path
+          description: 'key: id of drive'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - name: driveItem-id
+          in: path
+          description: 'key: id of driveItem'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: driveItem
+        - name: subscription-id
+          in: path
+          description: 'key: id of subscription'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: subscription
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/drives/{drive-id}/items/{driveItem-id}/thumbnails':
     get:
       tags:
         - drives.driveItem
       summary: Get thumbnails from drives
-      description: 'Collection containing [ThumbnailSet][] objects associated with the item. For more info, see [getting thumbnails][]. Read-only. Nullable.'
       operationId: drives.items_ListThumbnails
       parameters:
         - name: drive-id
@@ -4111,7 +4879,6 @@ paths:
       tags:
         - drives.driveItem
       summary: Get thumbnails from drives
-      description: 'Collection containing [ThumbnailSet][] objects associated with the item. For more info, see [getting thumbnails][]. Read-only. Nullable.'
       operationId: drives.items_GetThumbnails
       parameters:
         - name: drive-id
@@ -4256,7 +5023,6 @@ paths:
       tags:
         - drives.driveItem
       summary: Get versions from drives
-      description: 'The list of previous versions of the item. For more info, see [getting previous versions][]. Read-only. Nullable.'
       operationId: drives.items_ListVersions
       parameters:
         - name: drive-id
@@ -4381,7 +5147,6 @@ paths:
       tags:
         - drives.driveItem
       summary: Get versions from drives
-      description: 'The list of previous versions of the item. For more info, see [getting previous versions][]. Read-only. Nullable.'
       operationId: drives.items_GetVersions
       parameters:
         - name: drive-id
@@ -4441,6 +5206,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.driveItemVersion'
+          links:
+            restoreVersion:
+              operationId: drives.drive.items.driveItem.versions.driveItemVersion.restoreVersion
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4641,7 +5409,6 @@ paths:
       tags:
         - drives.list
       summary: Get list from drives
-      description: 'For drives in SharePoint, the underlying document library list. Read-only. Nullable.'
       operationId: drives_GetList
       parameters:
         - name: drive-id
@@ -4802,7 +5569,6 @@ paths:
       tags:
         - drives.list
       summary: Get columns from drives
-      description: The collection of field definitions for this list.
       operationId: drives.list_ListColumns
       parameters:
         - name: drive-id
@@ -4993,7 +5759,6 @@ paths:
       tags:
         - drives.list
       summary: Get columns from drives
-      description: The collection of field definitions for this list.
       operationId: drives.list_GetColumns
       parameters:
         - name: drive-id
@@ -5152,7 +5917,6 @@ paths:
       tags:
         - drives.list
       summary: Get sourceColumn from drives
-      description: The source column for content type column.
       operationId: drives.list.columns_GetSourceColumn
       parameters:
         - name: drive-id
@@ -5247,7 +6011,6 @@ paths:
       tags:
         - drives.list
       summary: Get contentTypes from drives
-      description: The collection of content types present in this list.
       operationId: drives.list_ListContentTypes
       parameters:
         - name: drive-id
@@ -5395,7 +6158,6 @@ paths:
       tags:
         - drives.list
       summary: Get contentTypes from drives
-      description: The collection of content types present in this list.
       operationId: drives.list_GetContentTypes
       parameters:
         - name: drive-id
@@ -5493,6 +6255,16 @@ paths:
               parameters:
                 drive-id: $request.path.drive-id
                 contentType-id: $request.path.contentType-id
+            associateWithHubSites:
+              operationId: drives.drive.list.contentTypes.contentType.associateWithHubSites
+            copyToDefaultContentLocation:
+              operationId: drives.drive.list.contentTypes.contentType.copyToDefaultContentLocation
+            isPublished:
+              operationId: drives.drive.list.contentTypes.contentType.isPublished
+            publish:
+              operationId: drives.drive.list.contentTypes.contentType.publish
+            unpublish:
+              operationId: drives.drive.list.contentTypes.contentType.unpublish
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5565,7 +6337,6 @@ paths:
       tags:
         - drives.list
       summary: Get base from drives
-      description: Parent contentType from which this content type is derived.
       operationId: drives.list.contentTypes_GetBase
       parameters:
         - name: drive-id
@@ -5671,7 +6442,6 @@ paths:
       tags:
         - drives.list
       summary: Get baseTypes from drives
-      description: The collection of content types that are ancestors of this content type.
       operationId: drives.list.contentTypes_ListBaseTypes
       parameters:
         - name: drive-id
@@ -5796,7 +6566,6 @@ paths:
       tags:
         - drives.list
       summary: Get baseTypes from drives
-      description: The collection of content types that are ancestors of this content type.
       operationId: drives.list.contentTypes_GetBaseTypes
       parameters:
         - name: drive-id
@@ -5914,7 +6683,6 @@ paths:
       tags:
         - drives.list
       summary: Get columnLinks from drives
-      description: The collection of columns that are required by this content type
       operationId: drives.list.contentTypes_ListColumnLinks
       parameters:
         - name: drive-id
@@ -6027,7 +6795,6 @@ paths:
       tags:
         - drives.list
       summary: Get columnLinks from drives
-      description: The collection of columns that are required by this content type
       operationId: drives.list.contentTypes_GetColumnLinks
       parameters:
         - name: drive-id
@@ -6169,7 +6936,6 @@ paths:
       tags:
         - drives.list
       summary: Get columnPositions from drives
-      description: Column order information in a content type.
       operationId: drives.list.contentTypes_ListColumnPositions
       parameters:
         - name: drive-id
@@ -6337,7 +7103,6 @@ paths:
       tags:
         - drives.list
       summary: Get columnPositions from drives
-      description: Column order information in a content type.
       operationId: drives.list.contentTypes_GetColumnPositions
       parameters:
         - name: drive-id
@@ -6440,7 +7205,6 @@ paths:
       tags:
         - drives.list
       summary: Get columns from drives
-      description: The collection of column definitions for this contentType.
       operationId: drives.list.contentTypes_ListColumns
       parameters:
         - name: drive-id
@@ -6645,7 +7409,6 @@ paths:
       tags:
         - drives.list
       summary: Get columns from drives
-      description: The collection of column definitions for this contentType.
       operationId: drives.list.contentTypes_GetColumns
       parameters:
         - name: drive-id
@@ -6826,7 +7589,6 @@ paths:
       tags:
         - drives.list
       summary: Get sourceColumn from drives
-      description: The source column for content type column.
       operationId: drives.list.contentTypes.columns_GetSourceColumn
       parameters:
         - name: drive-id
@@ -7211,7 +7973,6 @@ paths:
       tags:
         - drives.list
       summary: Get drive from drives
-      description: 'Only present on document libraries. Allows access to the list as a [drive][] resource with [driveItems][driveItem].'
       operationId: drives.list_GetDrive
       parameters:
         - name: drive-id
@@ -7323,7 +8084,6 @@ paths:
       tags:
         - drives.list
       summary: Get items from drives
-      description: All items contained in the list.
       operationId: drives.list_ListItems
       parameters:
         - name: drive-id
@@ -7464,7 +8224,6 @@ paths:
       tags:
         - drives.list
       summary: Get items from drives
-      description: All items contained in the list.
       operationId: drives.list_GetItems
       parameters:
         - name: drive-id
@@ -7566,6 +8325,8 @@ paths:
               parameters:
                 drive-id: $request.path.drive-id
                 listItem-id: $request.path.listItem-id
+            getActivitiesByInterval:
+              operationId: drives.drive.list.items.listItem.getActivitiesByInterval
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -7638,7 +8399,6 @@ paths:
       tags:
         - drives.list
       summary: Get analytics from drives
-      description: Analytics about the view activities that took place on this item.
       operationId: drives.list.items_GetAnalytics
       parameters:
         - name: drive-id
@@ -7716,7 +8476,6 @@ paths:
       tags:
         - drives.list
       summary: Get driveItem from drives
-      description: 'For document libraries, the driveItem relationship exposes the listItem as a [driveItem][]'
       operationId: drives.list.items_GetDriveItem
       parameters:
         - name: drive-id
@@ -7876,7 +8635,6 @@ paths:
       tags:
         - drives.list
       summary: Get content for the navigation property driveItem from drives
-      description: 'The content stream, if the item represents a file.'
       operationId: drives.list.items_GetDriveItemContent
       parameters:
         - name: drive-id
@@ -7908,7 +8666,6 @@ paths:
       tags:
         - drives.list
       summary: Update content for the navigation property driveItem in drives
-      description: 'The content stream, if the item represents a file.'
       operationId: drives.list.items_SetDriveItemContent
       parameters:
         - name: drive-id
@@ -7944,7 +8701,6 @@ paths:
       tags:
         - drives.list
       summary: Get fields from drives
-      description: The values of the columns set on this list item.
       operationId: drives.list.items_GetFields
       parameters:
         - name: drive-id
@@ -8163,7 +8919,6 @@ paths:
       tags:
         - drives.list
       summary: Get versions from drives
-      description: The list of previous versions of the list item.
       operationId: drives.list.items_ListVersions
       parameters:
         - name: drive-id
@@ -8284,7 +9039,6 @@ paths:
       tags:
         - drives.list
       summary: Get versions from drives
-      description: The list of previous versions of the list item.
       operationId: drives.list.items_GetVersions
       parameters:
         - name: drive-id
@@ -8351,6 +9105,8 @@ paths:
                 drive-id: $request.path.drive-id
                 listItem-id: $request.path.listItem-id
                 listItemVersion-id: $request.path.listItemVersion-id
+            restoreVersion:
+              operationId: drives.drive.list.items.listItem.versions.listItemVersion.restoreVersion
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -8437,7 +9193,6 @@ paths:
       tags:
         - drives.list
       summary: Get fields from drives
-      description: A collection of the fields and values for this version of the list item.
       operationId: drives.list.items.versions_GetFields
       parameters:
         - name: drive-id
@@ -8612,7 +9367,6 @@ paths:
       tags:
         - drives.list
       summary: Get operations from drives
-      description: The collection of long running operations for the list.
       operationId: drives.list_ListOperations
       parameters:
         - name: drive-id
@@ -8735,7 +9489,6 @@ paths:
       tags:
         - drives.list
       summary: Get operations from drives
-      description: The collection of long running operations for the list.
       operationId: drives.list_GetOperations
       parameters:
         - name: drive-id
@@ -8864,7 +9617,6 @@ paths:
       tags:
         - drives.list
       summary: Get subscriptions from drives
-      description: The set of subscriptions on the list.
       operationId: drives.list_ListSubscriptions
       parameters:
         - name: drive-id
@@ -9002,7 +9754,6 @@ paths:
       tags:
         - drives.list
       summary: Get subscriptions from drives
-      description: The set of subscriptions on the list.
       operationId: drives.list_GetSubscriptions
       parameters:
         - name: drive-id
@@ -9064,6 +9815,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.subscription'
+          links:
+            reauthorize:
+              operationId: drives.drive.list.subscriptions.subscription.reauthorize
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -9131,6 +9885,33 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/drives/{drive-id}/list/subscriptions/{subscription-id}/microsoft.graph.reauthorize':
+    post:
+      tags:
+        - drives.Actions
+      summary: Invoke action reauthorize
+      operationId: drives.list.subscriptions_reauthorize
+      parameters:
+        - name: drive-id
+          in: path
+          description: 'key: id of drive'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - name: subscription-id
+          in: path
+          description: 'key: id of subscription'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: subscription
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/drives/{drive-id}/microsoft.graph.recent()':
     get:
       tags:
@@ -9239,7 +10020,6 @@ paths:
       tags:
         - drives.driveItem
       summary: Get root from drives
-      description: The root folder of the drive. Read-only.
       operationId: drives_GetRoot
       parameters:
         - name: drive-id
@@ -9374,6 +10154,34 @@ paths:
               operationId: drives.Root.ListVersions
               parameters:
                 drive-id: $request.path.drive-id
+            checkin:
+              operationId: drives.drive.root.checkin
+            checkout:
+              operationId: drives.drive.root.checkout
+            copy:
+              operationId: drives.drive.root.copy
+            createLink:
+              operationId: drives.drive.root.createLink
+            createUploadSession:
+              operationId: drives.drive.root.createUploadSession
+            delta:
+              operationId: drives.drive.root.delta
+            follow:
+              operationId: drives.drive.root.follow
+            getActivitiesByInterval:
+              operationId: drives.drive.root.getActivitiesByInterval
+            invite:
+              operationId: drives.drive.root.invite
+            preview:
+              operationId: drives.drive.root.preview
+            restore:
+              operationId: drives.drive.root.restore
+            search:
+              operationId: drives.drive.root.search
+            unfollow:
+              operationId: drives.drive.root.unfollow
+            validatePermission:
+              operationId: drives.drive.root.validatePermission
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -9432,7 +10240,6 @@ paths:
       tags:
         - drives.driveItem
       summary: Get analytics from drives
-      description: Analytics about the view activities that took place on this item.
       operationId: drives.root_GetAnalytics
       parameters:
         - name: drive-id
@@ -9500,7 +10307,6 @@ paths:
       tags:
         - drives.driveItem
       summary: Get children from drives
-      description: Collection containing Item objects for the immediate children of Item. Only items representing folders have children. Read-only. Nullable.
       operationId: drives.root_ListChildren
       parameters:
         - name: drive-id
@@ -9685,7 +10491,6 @@ paths:
       tags:
         - drives.driveItem
       summary: Get children from drives
-      description: Collection containing Item objects for the immediate children of Item. Only items representing folders have children. Read-only. Nullable.
       operationId: drives.root_GetChildren
       parameters:
         - name: drive-id
@@ -9845,7 +10650,6 @@ paths:
       tags:
         - drives.driveItem
       summary: Get content for the navigation property children from drives
-      description: 'The content stream, if the item represents a file.'
       operationId: drives.root_GetChildrenContent
       parameters:
         - name: drive-id
@@ -9877,7 +10681,6 @@ paths:
       tags:
         - drives.driveItem
       summary: Update content for the navigation property children in drives
-      description: 'The content stream, if the item represents a file.'
       operationId: drives.root_SetChildrenContent
       parameters:
         - name: drive-id
@@ -9913,7 +10716,6 @@ paths:
       tags:
         - drives.driveItem
       summary: Get content for the navigation property root from drives
-      description: 'The content stream, if the item represents a file.'
       operationId: drives_GetRootContent
       parameters:
         - name: drive-id
@@ -9938,7 +10740,6 @@ paths:
       tags:
         - drives.driveItem
       summary: Update content for the navigation property root in drives
-      description: 'The content stream, if the item represents a file.'
       operationId: drives_SetRootContent
       parameters:
         - name: drive-id
@@ -9967,7 +10768,6 @@ paths:
       tags:
         - drives.driveItem
       summary: Get listItem from drives
-      description: 'For drives in SharePoint, the associated document library list item. Read-only. Nullable.'
       operationId: drives.root_GetListItem
       parameters:
         - name: drive-id
@@ -10056,6 +10856,8 @@ paths:
               operationId: drives.root.ListItem.ListVersions
               parameters:
                 drive-id: $request.path.drive-id
+            getActivitiesByInterval:
+              operationId: drives.drive.root.listItem.getActivitiesByInterval
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -10114,7 +10916,6 @@ paths:
       tags:
         - drives.driveItem
       summary: Get analytics from drives
-      description: Analytics about the view activities that took place on this item.
       operationId: drives.root.listItem_GetAnalytics
       parameters:
         - name: drive-id
@@ -10182,7 +10983,6 @@ paths:
       tags:
         - drives.driveItem
       summary: Get driveItem from drives
-      description: 'For document libraries, the driveItem relationship exposes the listItem as a [driveItem][]'
       operationId: drives.root.listItem_GetDriveItem
       parameters:
         - name: drive-id
@@ -10325,7 +11125,6 @@ paths:
       tags:
         - drives.driveItem
       summary: Get content for the navigation property driveItem from drives
-      description: 'The content stream, if the item represents a file.'
       operationId: drives.root.listItem_GetDriveItemContent
       parameters:
         - name: drive-id
@@ -10350,7 +11149,6 @@ paths:
       tags:
         - drives.driveItem
       summary: Update content for the navigation property driveItem in drives
-      description: 'The content stream, if the item represents a file.'
       operationId: drives.root.listItem_SetDriveItemContent
       parameters:
         - name: drive-id
@@ -10379,7 +11177,6 @@ paths:
       tags:
         - drives.driveItem
       summary: Get fields from drives
-      description: The values of the columns set on this list item.
       operationId: drives.root.listItem_GetFields
       parameters:
         - name: drive-id
@@ -10563,7 +11360,6 @@ paths:
       tags:
         - drives.driveItem
       summary: Get versions from drives
-      description: The list of previous versions of the list item.
       operationId: drives.root.listItem_ListVersions
       parameters:
         - name: drive-id
@@ -10670,7 +11466,6 @@ paths:
       tags:
         - drives.driveItem
       summary: Get versions from drives
-      description: The list of previous versions of the list item.
       operationId: drives.root.listItem_GetVersions
       parameters:
         - name: drive-id
@@ -10729,6 +11524,8 @@ paths:
               parameters:
                 drive-id: $request.path.drive-id
                 listItemVersion-id: $request.path.listItemVersion-id
+            restoreVersion:
+              operationId: drives.drive.root.listItem.versions.listItemVersion.restoreVersion
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -10801,7 +11598,6 @@ paths:
       tags:
         - drives.driveItem
       summary: Get fields from drives
-      description: A collection of the fields and values for this version of the list item.
       operationId: drives.root.listItem.versions_GetFields
       parameters:
         - name: drive-id
@@ -10943,12 +11739,622 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/drives/{drive-id}/root/microsoft.graph.checkin':
+    post:
+      tags:
+        - drives.Actions
+      summary: Invoke action checkin
+      operationId: drives.root_checkin
+      parameters:
+        - name: drive-id
+          in: path
+          description: 'key: id of drive'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                checkInAs:
+                  type: string
+                  nullable: true
+                comment:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/drives/{drive-id}/root/microsoft.graph.checkout':
+    post:
+      tags:
+        - drives.Actions
+      summary: Invoke action checkout
+      operationId: drives.root_checkout
+      parameters:
+        - name: drive-id
+          in: path
+          description: 'key: id of drive'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/drives/{drive-id}/root/microsoft.graph.copy':
+    post:
+      tags:
+        - drives.Actions
+      summary: Invoke action copy
+      operationId: drives.root_copy
+      parameters:
+        - name: drive-id
+          in: path
+          description: 'key: id of drive'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  nullable: true
+                parentReference:
+                  $ref: '#/components/schemas/microsoft.graph.itemReference'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.driveItem'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/drives/{drive-id}/root/microsoft.graph.createLink':
+    post:
+      tags:
+        - drives.Actions
+      summary: Invoke action createLink
+      operationId: drives.root_createLink
+      parameters:
+        - name: drive-id
+          in: path
+          description: 'key: id of drive'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                type:
+                  type: string
+                scope:
+                  type: string
+                  nullable: true
+                expirationDateTime:
+                  pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+                  type: string
+                  format: date-time
+                  nullable: true
+                password:
+                  type: string
+                  nullable: true
+                message:
+                  type: string
+                  nullable: true
+                retainInheritedPermissions:
+                  type: boolean
+                  default: false
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.permission'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/drives/{drive-id}/root/microsoft.graph.createUploadSession':
+    post:
+      tags:
+        - drives.Actions
+      summary: Invoke action createUploadSession
+      operationId: drives.root_createUploadSession
+      parameters:
+        - name: drive-id
+          in: path
+          description: 'key: id of drive'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                item:
+                  $ref: '#/components/schemas/microsoft.graph.driveItemUploadableProperties'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.uploadSession'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/drives/{drive-id}/root/microsoft.graph.delta()':
+    get:
+      tags:
+        - drives.Functions
+      summary: Invoke function delta
+      operationId: drives.root_delta
+      parameters:
+        - name: drive-id
+          in: path
+          description: 'key: id of drive'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of driveItem
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.driveItem'
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/drives/{drive-id}/root/microsoft.graph.delta(token=''{token}'')':
+    get:
+      tags:
+        - drives.Functions
+      summary: Invoke function delta
+      operationId: drives.root_delta
+      parameters:
+        - name: drive-id
+          in: path
+          description: 'key: id of drive'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - name: token
+          in: path
+          description: 'Usage: token=''{token}'''
+          required: true
+          schema:
+            type: string
+            nullable: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of driveItem
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.driveItem'
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/drives/{drive-id}/root/microsoft.graph.follow':
+    post:
+      tags:
+        - drives.Actions
+      summary: Invoke action follow
+      operationId: drives.root_follow
+      parameters:
+        - name: drive-id
+          in: path
+          description: 'key: id of drive'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.driveItem'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/drives/{drive-id}/root/microsoft.graph.getActivitiesByInterval()':
+    get:
+      tags:
+        - drives.Functions
+      summary: Invoke function getActivitiesByInterval
+      operationId: drives.root_getActivitiesByInterval
+      parameters:
+        - name: drive-id
+          in: path
+          description: 'key: id of drive'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of driveItem
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.itemActivityStat'
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/drives/{drive-id}/root/microsoft.graph.getActivitiesByInterval(startDateTime=''{startDateTime}'',endDateTime=''{endDateTime}'',interval=''{interval}'')':
+    get:
+      tags:
+        - drives.Functions
+      summary: Invoke function getActivitiesByInterval
+      operationId: drives.root_getActivitiesByInterval
+      parameters:
+        - name: drive-id
+          in: path
+          description: 'key: id of drive'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - name: startDateTime
+          in: path
+          description: 'Usage: startDateTime=''{startDateTime}'''
+          required: true
+          schema:
+            type: string
+            nullable: true
+        - name: endDateTime
+          in: path
+          description: 'Usage: endDateTime=''{endDateTime}'''
+          required: true
+          schema:
+            type: string
+            nullable: true
+        - name: interval
+          in: path
+          description: 'Usage: interval=''{interval}'''
+          required: true
+          schema:
+            type: string
+            nullable: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of driveItem
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.itemActivityStat'
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/drives/{drive-id}/root/microsoft.graph.invite':
+    post:
+      tags:
+        - drives.Actions
+      summary: Invoke action invite
+      operationId: drives.root_invite
+      parameters:
+        - name: drive-id
+          in: path
+          description: 'key: id of drive'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                requireSignIn:
+                  type: boolean
+                  default: false
+                  nullable: true
+                roles:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                sendInvitation:
+                  type: boolean
+                  default: false
+                  nullable: true
+                message:
+                  type: string
+                  nullable: true
+                recipients:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/microsoft.graph.driveRecipient'
+                retainInheritedPermissions:
+                  type: boolean
+                  default: false
+                  nullable: true
+                expirationDateTime:
+                  type: string
+                  nullable: true
+                password:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of driveItem
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.permission'
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/drives/{drive-id}/root/microsoft.graph.preview':
+    post:
+      tags:
+        - drives.Actions
+      summary: Invoke action preview
+      operationId: drives.root_preview
+      parameters:
+        - name: drive-id
+          in: path
+          description: 'key: id of drive'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                page:
+                  type: string
+                  nullable: true
+                zoom:
+                  type: number
+                  format: double
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.itemPreviewInfo'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/drives/{drive-id}/root/microsoft.graph.restore':
+    post:
+      tags:
+        - drives.Actions
+      summary: Invoke action restore
+      operationId: drives.root_restore
+      parameters:
+        - name: drive-id
+          in: path
+          description: 'key: id of drive'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                parentReference:
+                  $ref: '#/components/schemas/microsoft.graph.itemReference'
+                name:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.driveItem'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/drives/{drive-id}/root/microsoft.graph.search(q=''{q}'')':
+    get:
+      tags:
+        - drives.Functions
+      summary: Invoke function search
+      operationId: drives.root_search
+      parameters:
+        - name: drive-id
+          in: path
+          description: 'key: id of drive'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - name: q
+          in: path
+          description: 'Usage: q=''{q}'''
+          required: true
+          schema:
+            type: string
+            nullable: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of driveItem
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.driveItem'
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/drives/{drive-id}/root/microsoft.graph.unfollow':
+    post:
+      tags:
+        - drives.Actions
+      summary: Invoke action unfollow
+      operationId: drives.root_unfollow
+      parameters:
+        - name: drive-id
+          in: path
+          description: 'key: id of drive'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/drives/{drive-id}/root/microsoft.graph.validatePermission':
+    post:
+      tags:
+        - drives.Actions
+      summary: Invoke action validatePermission
+      operationId: drives.root_validatePermission
+      parameters:
+        - name: drive-id
+          in: path
+          description: 'key: id of drive'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                challengeToken:
+                  type: string
+                  nullable: true
+                password:
+                  type: string
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/drives/{drive-id}/root/permissions':
     get:
       tags:
         - drives.driveItem
       summary: Get permissions from drives
-      description: The set of permissions for the item. Read-only. Nullable.
       operationId: drives.root_ListPermissions
       parameters:
         - name: drive-id
@@ -11077,7 +12483,6 @@ paths:
       tags:
         - drives.driveItem
       summary: Get permissions from drives
-      description: The set of permissions for the item. Read-only. Nullable.
       operationId: drives.root_GetPermissions
       parameters:
         - name: drive-id
@@ -11136,6 +12541,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.permission'
+          links:
+            grant:
+              operationId: drives.drive.root.permissions.permission.grant
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -11266,7 +12674,6 @@ paths:
       tags:
         - drives.driveItem
       summary: Get subscriptions from drives
-      description: The set of subscriptions on the item. Only supported on the root of a drive.
       operationId: drives.root_ListSubscriptions
       parameters:
         - name: drive-id
@@ -11404,7 +12811,6 @@ paths:
       tags:
         - drives.driveItem
       summary: Get subscriptions from drives
-      description: The set of subscriptions on the item. Only supported on the root of a drive.
       operationId: drives.root_GetSubscriptions
       parameters:
         - name: drive-id
@@ -11466,6 +12872,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.subscription'
+          links:
+            reauthorize:
+              operationId: drives.drive.root.subscriptions.subscription.reauthorize
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -11533,12 +12942,38 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/drives/{drive-id}/root/subscriptions/{subscription-id}/microsoft.graph.reauthorize':
+    post:
+      tags:
+        - drives.Actions
+      summary: Invoke action reauthorize
+      operationId: drives.root.subscriptions_reauthorize
+      parameters:
+        - name: drive-id
+          in: path
+          description: 'key: id of drive'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - name: subscription-id
+          in: path
+          description: 'key: id of subscription'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: subscription
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/drives/{drive-id}/root/thumbnails':
     get:
       tags:
         - drives.driveItem
       summary: Get thumbnails from drives
-      description: 'Collection containing [ThumbnailSet][] objects associated with the item. For more info, see [getting thumbnails][]. Read-only. Nullable.'
       operationId: drives.root_ListThumbnails
       parameters:
         - name: drive-id
@@ -11646,7 +13081,6 @@ paths:
       tags:
         - drives.driveItem
       summary: Get thumbnails from drives
-      description: 'Collection containing [ThumbnailSet][] objects associated with the item. For more info, see [getting thumbnails][]. Read-only. Nullable.'
       operationId: drives.root_GetThumbnails
       parameters:
         - name: drive-id
@@ -11770,7 +13204,6 @@ paths:
       tags:
         - drives.driveItem
       summary: Get versions from drives
-      description: 'The list of previous versions of the item. For more info, see [getting previous versions][]. Read-only. Nullable.'
       operationId: drives.root_ListVersions
       parameters:
         - name: drive-id
@@ -11881,7 +13314,6 @@ paths:
       tags:
         - drives.driveItem
       summary: Get versions from drives
-      description: 'The list of previous versions of the item. For more info, see [getting previous versions][]. Read-only. Nullable.'
       operationId: drives.root_GetVersions
       parameters:
         - name: drive-id
@@ -11934,6 +13366,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.driveItemVersion'
+          links:
+            restoreVersion:
+              operationId: drives.drive.root.versions.driveItemVersion.restoreVersion
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -12099,7 +13534,6 @@ paths:
       tags:
         - drives.driveItem
       summary: Get special from drives
-      description: Collection of common folders available in OneDrive. Read-only. Nullable.
       operationId: drives_ListSpecial
       parameters:
         - name: drive-id
@@ -12284,7 +13718,6 @@ paths:
       tags:
         - drives.driveItem
       summary: Get special from drives
-      description: Collection of common folders available in OneDrive. Read-only. Nullable.
       operationId: drives_GetSpecial
       parameters:
         - name: drive-id
@@ -12444,7 +13877,6 @@ paths:
       tags:
         - drives.driveItem
       summary: Get content for the navigation property special from drives
-      description: 'The content stream, if the item represents a file.'
       operationId: drives_GetSpecialContent
       parameters:
         - name: drive-id
@@ -12476,7 +13908,6 @@ paths:
       tags:
         - drives.driveItem
       summary: Update content for the navigation property special in drives
-      description: 'The content stream, if the item represents a file.'
       operationId: drives_SetSpecialContent
       parameters:
         - name: drive-id
@@ -12512,7 +13943,6 @@ paths:
       tags:
         - groups.drive
       summary: Get drive from groups
-      description: The group's default drive. Read-only.
       operationId: groups_GetDrive
       parameters:
         - name: group-id
@@ -12624,7 +14054,6 @@ paths:
       tags:
         - groups.drive
       summary: Get drives from groups
-      description: The group's drives. Read-only.
       operationId: groups_ListDrives
       parameters:
         - name: group-id
@@ -12778,7 +14207,6 @@ paths:
       tags:
         - groups.drive
       summary: Get drives from groups
-      description: The group's drives. Read-only.
       operationId: groups_GetDrives
       parameters:
         - name: group-id
@@ -12897,6 +14325,12 @@ paths:
               parameters:
                 group-id: $request.path.group-id
                 drive-id: $request.path.drive-id
+            recent:
+              operationId: groups.group.drives.drive.recent
+            search:
+              operationId: groups.group.drives.drive.search
+            sharedWithMe:
+              operationId: groups.group.drives.drive.sharedWithMe
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -12969,7 +14403,6 @@ paths:
       tags:
         - groups.drive
       summary: Get bundles from groups
-      description: 'Collection of [bundles][bundle] (albums and multi-select-shared sets of items). Only in personal OneDrive.'
       operationId: groups.drives_ListBundles
       parameters:
         - name: group-id
@@ -13161,7 +14594,6 @@ paths:
       tags:
         - groups.drive
       summary: Get bundles from groups
-      description: 'Collection of [bundles][bundle] (albums and multi-select-shared sets of items). Only in personal OneDrive.'
       operationId: groups.drives_GetBundles
       parameters:
         - name: group-id
@@ -13338,7 +14770,6 @@ paths:
       tags:
         - groups.drive
       summary: Get content for the navigation property bundles from groups
-      description: 'The content stream, if the item represents a file.'
       operationId: groups.drives_GetBundlesContent
       parameters:
         - name: group-id
@@ -13377,7 +14808,6 @@ paths:
       tags:
         - groups.drive
       summary: Update content for the navigation property bundles in groups
-      description: 'The content stream, if the item represents a file.'
       operationId: groups.drives_SetBundlesContent
       parameters:
         - name: group-id
@@ -13420,7 +14850,6 @@ paths:
       tags:
         - groups.drive
       summary: Get following from groups
-      description: The list of items the user is following. Only in OneDrive for Business.
       operationId: groups.drives_ListFollowing
       parameters:
         - name: group-id
@@ -13612,7 +15041,6 @@ paths:
       tags:
         - groups.drive
       summary: Get following from groups
-      description: The list of items the user is following. Only in OneDrive for Business.
       operationId: groups.drives_GetFollowing
       parameters:
         - name: group-id
@@ -13789,7 +15217,6 @@ paths:
       tags:
         - groups.drive
       summary: Get content for the navigation property following from groups
-      description: 'The content stream, if the item represents a file.'
       operationId: groups.drives_GetFollowingContent
       parameters:
         - name: group-id
@@ -13828,7 +15255,6 @@ paths:
       tags:
         - groups.drive
       summary: Update content for the navigation property following in groups
-      description: 'The content stream, if the item represents a file.'
       operationId: groups.drives_SetFollowingContent
       parameters:
         - name: group-id
@@ -13871,7 +15297,6 @@ paths:
       tags:
         - groups.drive
       summary: Get items from groups
-      description: All items contained in the drive. Read-only. Nullable.
       operationId: groups.drives_ListItems
       parameters:
         - name: group-id
@@ -14100,7 +15525,6 @@ paths:
       tags:
         - groups.drive
       summary: Get items from groups
-      description: All items contained in the drive. Read-only. Nullable.
       operationId: groups.drives_GetItems
       parameters:
         - name: group-id
@@ -14269,6 +15693,34 @@ paths:
                 group-id: $request.path.group-id
                 drive-id: $request.path.drive-id
                 driveItem-id: $request.path.driveItem-id
+            checkin:
+              operationId: groups.group.drives.drive.items.driveItem.checkin
+            checkout:
+              operationId: groups.group.drives.drive.items.driveItem.checkout
+            copy:
+              operationId: groups.group.drives.drive.items.driveItem.copy
+            createLink:
+              operationId: groups.group.drives.drive.items.driveItem.createLink
+            createUploadSession:
+              operationId: groups.group.drives.drive.items.driveItem.createUploadSession
+            delta:
+              operationId: groups.group.drives.drive.items.driveItem.delta
+            follow:
+              operationId: groups.group.drives.drive.items.driveItem.follow
+            getActivitiesByInterval:
+              operationId: groups.group.drives.drive.items.driveItem.getActivitiesByInterval
+            invite:
+              operationId: groups.group.drives.drive.items.driveItem.invite
+            preview:
+              operationId: groups.group.drives.drive.items.driveItem.preview
+            restore:
+              operationId: groups.group.drives.drive.items.driveItem.restore
+            search:
+              operationId: groups.group.drives.drive.items.driveItem.search
+            unfollow:
+              operationId: groups.group.drives.drive.items.driveItem.unfollow
+            validatePermission:
+              operationId: groups.group.drives.drive.items.driveItem.validatePermission
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -14355,7 +15807,6 @@ paths:
       tags:
         - groups.drive
       summary: Get analytics from groups
-      description: Analytics about the view activities that took place on this item.
       operationId: groups.drives.items_GetAnalytics
       parameters:
         - name: group-id
@@ -14443,7 +15894,6 @@ paths:
       tags:
         - groups.drive
       summary: Get children from groups
-      description: Collection containing Item objects for the immediate children of Item. Only items representing folders have children. Read-only. Nullable.
       operationId: groups.drives.items_ListChildren
       parameters:
         - name: group-id
@@ -14642,7 +16092,6 @@ paths:
       tags:
         - groups.drive
       summary: Get children from groups
-      description: Collection containing Item objects for the immediate children of Item. Only items representing folders have children. Read-only. Nullable.
       operationId: groups.drives.items_GetChildren
       parameters:
         - name: group-id
@@ -14836,7 +16285,6 @@ paths:
       tags:
         - groups.drive
       summary: Get content for the navigation property children from groups
-      description: 'The content stream, if the item represents a file.'
       operationId: groups.drives.items_GetChildrenContent
       parameters:
         - name: group-id
@@ -14882,7 +16330,6 @@ paths:
       tags:
         - groups.drive
       summary: Update content for the navigation property children in groups
-      description: 'The content stream, if the item represents a file.'
       operationId: groups.drives.items_SetChildrenContent
       parameters:
         - name: group-id
@@ -14932,7 +16379,6 @@ paths:
       tags:
         - groups.drive
       summary: Get content for the navigation property items from groups
-      description: 'The content stream, if the item represents a file.'
       operationId: groups.drives_GetItemsContent
       parameters:
         - name: group-id
@@ -14971,7 +16417,6 @@ paths:
       tags:
         - groups.drive
       summary: Update content for the navigation property items in groups
-      description: 'The content stream, if the item represents a file.'
       operationId: groups.drives_SetItemsContent
       parameters:
         - name: group-id
@@ -15014,7 +16459,6 @@ paths:
       tags:
         - groups.drive
       summary: Get listItem from groups
-      description: 'For drives in SharePoint, the associated document library list item. Read-only. Nullable.'
       operationId: groups.drives.items_GetListItem
       parameters:
         - name: group-id
@@ -15129,6 +16573,8 @@ paths:
                 group-id: $request.path.group-id
                 drive-id: $request.path.drive-id
                 driveItem-id: $request.path.driveItem-id
+            getActivitiesByInterval:
+              operationId: groups.group.drives.drive.items.driveItem.listItem.getActivitiesByInterval
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -15215,7 +16661,6 @@ paths:
       tags:
         - groups.drive
       summary: Get analytics from groups
-      description: Analytics about the view activities that took place on this item.
       operationId: groups.drives.items.listItem_GetAnalytics
       parameters:
         - name: group-id
@@ -15303,7 +16748,6 @@ paths:
       tags:
         - groups.drive
       summary: Get driveItem from groups
-      description: 'For document libraries, the driveItem relationship exposes the listItem as a [driveItem][]'
       operationId: groups.drives.items.listItem_GetDriveItem
       parameters:
         - name: group-id
@@ -15480,7 +16924,6 @@ paths:
       tags:
         - groups.drive
       summary: Get content for the navigation property driveItem from groups
-      description: 'The content stream, if the item represents a file.'
       operationId: groups.drives.items.listItem_GetDriveItemContent
       parameters:
         - name: group-id
@@ -15519,7 +16962,6 @@ paths:
       tags:
         - groups.drive
       summary: Update content for the navigation property driveItem in groups
-      description: 'The content stream, if the item represents a file.'
       operationId: groups.drives.items.listItem_SetDriveItemContent
       parameters:
         - name: group-id
@@ -15562,7 +17004,6 @@ paths:
       tags:
         - groups.drive
       summary: Get fields from groups
-      description: The values of the columns set on this list item.
       operationId: groups.drives.items.listItem_GetFields
       parameters:
         - name: group-id
@@ -15703,7 +17144,6 @@ paths:
       tags:
         - groups.drive
       summary: Get versions from groups
-      description: The list of previous versions of the list item.
       operationId: groups.drives.items.listItem_ListVersions
       parameters:
         - name: group-id
@@ -15838,7 +17278,6 @@ paths:
       tags:
         - groups.drive
       summary: Get versions from groups
-      description: The list of previous versions of the list item.
       operationId: groups.drives.items.listItem_GetVersions
       parameters:
         - name: group-id
@@ -15913,6 +17352,8 @@ paths:
                 drive-id: $request.path.drive-id
                 driveItem-id: $request.path.driveItem-id
                 listItemVersion-id: $request.path.listItemVersion-id
+            restoreVersion:
+              operationId: groups.group.drives.drive.items.driveItem.listItem.versions.listItemVersion.restoreVersion
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -16013,7 +17454,6 @@ paths:
       tags:
         - groups.drive
       summary: Get fields from groups
-      description: A collection of the fields and values for this version of the list item.
       operationId: groups.drives.items.listItem.versions_GetFields
       parameters:
         - name: group-id
@@ -16175,7 +17615,6 @@ paths:
       tags:
         - groups.drive
       summary: Get permissions from groups
-      description: The set of permissions for the item. Read-only. Nullable.
       operationId: groups.drives.items_ListPermissions
       parameters:
         - name: group-id
@@ -16332,7 +17771,6 @@ paths:
       tags:
         - groups.drive
       summary: Get permissions from groups
-      description: The set of permissions for the item. Read-only. Nullable.
       operationId: groups.drives.items_GetPermissions
       parameters:
         - name: group-id
@@ -16405,6 +17843,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.permission'
+          links:
+            grant:
+              operationId: groups.group.drives.drive.items.driveItem.permissions.permission.grant
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -16505,7 +17946,6 @@ paths:
       tags:
         - groups.drive
       summary: Get subscriptions from groups
-      description: The set of subscriptions on the item. Only supported on the root of a drive.
       operationId: groups.drives.items_ListSubscriptions
       parameters:
         - name: group-id
@@ -16671,7 +18111,6 @@ paths:
       tags:
         - groups.drive
       summary: Get subscriptions from groups
-      description: The set of subscriptions on the item. Only supported on the root of a drive.
       operationId: groups.drives.items_GetSubscriptions
       parameters:
         - name: group-id
@@ -16747,6 +18186,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.subscription'
+          links:
+            reauthorize:
+              operationId: groups.group.drives.drive.items.driveItem.subscriptions.subscription.reauthorize
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -16847,7 +18289,6 @@ paths:
       tags:
         - groups.drive
       summary: Get thumbnails from groups
-      description: 'Collection containing [ThumbnailSet][] objects associated with the item. For more info, see [getting thumbnails][]. Read-only. Nullable.'
       operationId: groups.drives.items_ListThumbnails
       parameters:
         - name: group-id
@@ -16983,7 +18424,6 @@ paths:
       tags:
         - groups.drive
       summary: Get thumbnails from groups
-      description: 'Collection containing [ThumbnailSet][] objects associated with the item. For more info, see [getting thumbnails][]. Read-only. Nullable.'
       operationId: groups.drives.items_GetThumbnails
       parameters:
         - name: group-id
@@ -17149,7 +18589,6 @@ paths:
       tags:
         - groups.drive
       summary: Get versions from groups
-      description: 'The list of previous versions of the item. For more info, see [getting previous versions][]. Read-only. Nullable.'
       operationId: groups.drives.items_ListVersions
       parameters:
         - name: group-id
@@ -17288,7 +18727,6 @@ paths:
       tags:
         - groups.drive
       summary: Get versions from groups
-      description: 'The list of previous versions of the item. For more info, see [getting previous versions][]. Read-only. Nullable.'
       operationId: groups.drives.items_GetVersions
       parameters:
         - name: group-id
@@ -17355,6 +18793,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.driveItemVersion'
+          links:
+            restoreVersion:
+              operationId: groups.group.drives.drive.items.driveItem.versions.driveItemVersion.restoreVersion
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -17549,7 +18990,6 @@ paths:
       tags:
         - groups.drive
       summary: Get list from groups
-      description: 'For drives in SharePoint, the underlying document library list. Read-only. Nullable.'
       operationId: groups.drives_GetList
       parameters:
         - name: group-id
@@ -17739,7 +19179,6 @@ paths:
       tags:
         - groups.drive
       summary: Get columns from groups
-      description: The collection of field definitions for this list.
       operationId: groups.drives.list_ListColumns
       parameters:
         - name: group-id
@@ -17944,7 +19383,6 @@ paths:
       tags:
         - groups.drive
       summary: Get columns from groups
-      description: The collection of field definitions for this list.
       operationId: groups.drives.list_GetColumns
       parameters:
         - name: group-id
@@ -18125,7 +19563,6 @@ paths:
       tags:
         - groups.drive
       summary: Get sourceColumn from groups
-      description: The source column for content type column.
       operationId: groups.drives.list.columns_GetSourceColumn
       parameters:
         - name: group-id
@@ -18228,7 +19665,6 @@ paths:
       tags:
         - groups.drive
       summary: Get contentTypes from groups
-      description: The collection of content types present in this list.
       operationId: groups.drives.list_ListContentTypes
       parameters:
         - name: group-id
@@ -18390,7 +19826,6 @@ paths:
       tags:
         - groups.drive
       summary: Get contentTypes from groups
-      description: The collection of content types present in this list.
       operationId: groups.drives.list_GetContentTypes
       parameters:
         - name: group-id
@@ -18500,6 +19935,16 @@ paths:
                 group-id: $request.path.group-id
                 drive-id: $request.path.drive-id
                 contentType-id: $request.path.contentType-id
+            associateWithHubSites:
+              operationId: groups.group.drives.drive.list.contentTypes.contentType.associateWithHubSites
+            copyToDefaultContentLocation:
+              operationId: groups.group.drives.drive.list.contentTypes.contentType.copyToDefaultContentLocation
+            isPublished:
+              operationId: groups.group.drives.drive.list.contentTypes.contentType.isPublished
+            publish:
+              operationId: groups.group.drives.drive.list.contentTypes.contentType.publish
+            unpublish:
+              operationId: groups.group.drives.drive.list.contentTypes.contentType.unpublish
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -18586,7 +20031,6 @@ paths:
       tags:
         - groups.drive
       summary: Get base from groups
-      description: Parent contentType from which this content type is derived.
       operationId: groups.drives.list.contentTypes_GetBase
       parameters:
         - name: group-id
@@ -18704,7 +20148,6 @@ paths:
       tags:
         - groups.drive
       summary: Get baseTypes from groups
-      description: The collection of content types that are ancestors of this content type.
       operationId: groups.drives.list.contentTypes_ListBaseTypes
       parameters:
         - name: group-id
@@ -18836,7 +20279,6 @@ paths:
       tags:
         - groups.drive
       summary: Get baseTypes from groups
-      description: The collection of content types that are ancestors of this content type.
       operationId: groups.drives.list.contentTypes_GetBaseTypes
       parameters:
         - name: group-id
@@ -18966,7 +20408,6 @@ paths:
       tags:
         - groups.drive
       summary: Get columnLinks from groups
-      description: The collection of columns that are required by this content type
       operationId: groups.drives.list.contentTypes_ListColumnLinks
       parameters:
         - name: group-id
@@ -19093,7 +20534,6 @@ paths:
       tags:
         - groups.drive
       summary: Get columnLinks from groups
-      description: The collection of columns that are required by this content type
       operationId: groups.drives.list.contentTypes_GetColumnLinks
       parameters:
         - name: group-id
@@ -19256,7 +20696,6 @@ paths:
       tags:
         - groups.drive
       summary: Get columnPositions from groups
-      description: Column order information in a content type.
       operationId: groups.drives.list.contentTypes_ListColumnPositions
       parameters:
         - name: group-id
@@ -19431,7 +20870,6 @@ paths:
       tags:
         - groups.drive
       summary: Get columnPositions from groups
-      description: Column order information in a content type.
       operationId: groups.drives.list.contentTypes_GetColumnPositions
       parameters:
         - name: group-id
@@ -19542,7 +20980,6 @@ paths:
       tags:
         - groups.drive
       summary: Get columns from groups
-      description: The collection of column definitions for this contentType.
       operationId: groups.drives.list.contentTypes_ListColumns
       parameters:
         - name: group-id
@@ -19761,7 +21198,6 @@ paths:
       tags:
         - groups.drive
       summary: Get columns from groups
-      description: The collection of column definitions for this contentType.
       operationId: groups.drives.list.contentTypes_GetColumns
       parameters:
         - name: group-id
@@ -19964,7 +21400,6 @@ paths:
       tags:
         - groups.drive
       summary: Get sourceColumn from groups
-      description: The source column for content type column.
       operationId: groups.drives.list.contentTypes.columns_GetSourceColumn
       parameters:
         - name: group-id
@@ -20075,7 +21510,6 @@ paths:
       tags:
         - groups.drive
       summary: Get drive from groups
-      description: 'Only present on document libraries. Allows access to the list as a [drive][] resource with [driveItems][driveItem].'
       operationId: groups.drives.list_GetDrive
       parameters:
         - name: group-id
@@ -20202,7 +21636,6 @@ paths:
       tags:
         - groups.drive
       summary: Get items from groups
-      description: All items contained in the list.
       operationId: groups.drives.list_ListItems
       parameters:
         - name: group-id
@@ -20357,7 +21790,6 @@ paths:
       tags:
         - groups.drive
       summary: Get items from groups
-      description: All items contained in the list.
       operationId: groups.drives.list_GetItems
       parameters:
         - name: group-id
@@ -20472,6 +21904,8 @@ paths:
                 group-id: $request.path.group-id
                 drive-id: $request.path.drive-id
                 listItem-id: $request.path.listItem-id
+            getActivitiesByInterval:
+              operationId: groups.group.drives.drive.list.items.listItem.getActivitiesByInterval
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -20558,7 +21992,6 @@ paths:
       tags:
         - groups.drive
       summary: Get analytics from groups
-      description: Analytics about the view activities that took place on this item.
       operationId: groups.drives.list.items_GetAnalytics
       parameters:
         - name: group-id
@@ -20646,7 +22079,6 @@ paths:
       tags:
         - groups.drive
       summary: Get driveItem from groups
-      description: 'For document libraries, the driveItem relationship exposes the listItem as a [driveItem][]'
       operationId: groups.drives.list.items_GetDriveItem
       parameters:
         - name: group-id
@@ -20823,7 +22255,6 @@ paths:
       tags:
         - groups.drive
       summary: Get content for the navigation property driveItem from groups
-      description: 'The content stream, if the item represents a file.'
       operationId: groups.drives.list.items_GetDriveItemContent
       parameters:
         - name: group-id
@@ -20862,7 +22293,6 @@ paths:
       tags:
         - groups.drive
       summary: Update content for the navigation property driveItem in groups
-      description: 'The content stream, if the item represents a file.'
       operationId: groups.drives.list.items_SetDriveItemContent
       parameters:
         - name: group-id
@@ -20905,7 +22335,6 @@ paths:
       tags:
         - groups.drive
       summary: Get fields from groups
-      description: The values of the columns set on this list item.
       operationId: groups.drives.list.items_GetFields
       parameters:
         - name: group-id
@@ -21046,7 +22475,6 @@ paths:
       tags:
         - groups.drive
       summary: Get versions from groups
-      description: The list of previous versions of the list item.
       operationId: groups.drives.list.items_ListVersions
       parameters:
         - name: group-id
@@ -21181,7 +22609,6 @@ paths:
       tags:
         - groups.drive
       summary: Get versions from groups
-      description: The list of previous versions of the list item.
       operationId: groups.drives.list.items_GetVersions
       parameters:
         - name: group-id
@@ -21256,6 +22683,8 @@ paths:
                 drive-id: $request.path.drive-id
                 listItem-id: $request.path.listItem-id
                 listItemVersion-id: $request.path.listItemVersion-id
+            restoreVersion:
+              operationId: groups.group.drives.drive.list.items.listItem.versions.listItemVersion.restoreVersion
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -21356,7 +22785,6 @@ paths:
       tags:
         - groups.drive
       summary: Get fields from groups
-      description: A collection of the fields and values for this version of the list item.
       operationId: groups.drives.list.items.versions_GetFields
       parameters:
         - name: group-id
@@ -21518,7 +22946,6 @@ paths:
       tags:
         - groups.drive
       summary: Get operations from groups
-      description: The collection of long running operations for the list.
       operationId: groups.drives.list_ListOperations
       parameters:
         - name: group-id
@@ -21655,7 +23082,6 @@ paths:
       tags:
         - groups.drive
       summary: Get operations from groups
-      description: The collection of long running operations for the list.
       operationId: groups.drives.list_GetOperations
       parameters:
         - name: group-id
@@ -21805,7 +23231,6 @@ paths:
       tags:
         - groups.drive
       summary: Get subscriptions from groups
-      description: The set of subscriptions on the list.
       operationId: groups.drives.list_ListSubscriptions
       parameters:
         - name: group-id
@@ -21957,7 +23382,6 @@ paths:
       tags:
         - groups.drive
       summary: Get subscriptions from groups
-      description: The set of subscriptions on the list.
       operationId: groups.drives.list_GetSubscriptions
       parameters:
         - name: group-id
@@ -22026,6 +23450,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.subscription'
+          links:
+            reauthorize:
+              operationId: groups.group.drives.drive.list.subscriptions.subscription.reauthorize
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -22112,7 +23539,6 @@ paths:
       tags:
         - groups.drive
       summary: Get root from groups
-      description: The root folder of the drive. Read-only.
       operationId: groups.drives_GetRoot
       parameters:
         - name: group-id
@@ -22264,6 +23690,34 @@ paths:
               parameters:
                 group-id: $request.path.group-id
                 drive-id: $request.path.drive-id
+            checkin:
+              operationId: groups.group.drives.drive.root.checkin
+            checkout:
+              operationId: groups.group.drives.drive.root.checkout
+            copy:
+              operationId: groups.group.drives.drive.root.copy
+            createLink:
+              operationId: groups.group.drives.drive.root.createLink
+            createUploadSession:
+              operationId: groups.group.drives.drive.root.createUploadSession
+            delta:
+              operationId: groups.group.drives.drive.root.delta
+            follow:
+              operationId: groups.group.drives.drive.root.follow
+            getActivitiesByInterval:
+              operationId: groups.group.drives.drive.root.getActivitiesByInterval
+            invite:
+              operationId: groups.group.drives.drive.root.invite
+            preview:
+              operationId: groups.group.drives.drive.root.preview
+            restore:
+              operationId: groups.group.drives.drive.root.restore
+            search:
+              operationId: groups.group.drives.drive.root.search
+            unfollow:
+              operationId: groups.group.drives.drive.root.unfollow
+            validatePermission:
+              operationId: groups.group.drives.drive.root.validatePermission
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -22336,7 +23790,6 @@ paths:
       tags:
         - groups.drive
       summary: Get analytics from groups
-      description: Analytics about the view activities that took place on this item.
       operationId: groups.drives.root_GetAnalytics
       parameters:
         - name: group-id
@@ -22414,7 +23867,6 @@ paths:
       tags:
         - groups.drive
       summary: Get children from groups
-      description: Collection containing Item objects for the immediate children of Item. Only items representing folders have children. Read-only. Nullable.
       operationId: groups.drives.root_ListChildren
       parameters:
         - name: group-id
@@ -22606,7 +24058,6 @@ paths:
       tags:
         - groups.drive
       summary: Get children from groups
-      description: Collection containing Item objects for the immediate children of Item. Only items representing folders have children. Read-only. Nullable.
       operationId: groups.drives.root_GetChildren
       parameters:
         - name: group-id
@@ -22783,7 +24234,6 @@ paths:
       tags:
         - groups.drive
       summary: Get content for the navigation property children from groups
-      description: 'The content stream, if the item represents a file.'
       operationId: groups.drives.root_GetChildrenContent
       parameters:
         - name: group-id
@@ -22822,7 +24272,6 @@ paths:
       tags:
         - groups.drive
       summary: Update content for the navigation property children in groups
-      description: 'The content stream, if the item represents a file.'
       operationId: groups.drives.root_SetChildrenContent
       parameters:
         - name: group-id
@@ -22865,7 +24314,6 @@ paths:
       tags:
         - groups.drive
       summary: Get content for the navigation property root from groups
-      description: 'The content stream, if the item represents a file.'
       operationId: groups.drives_GetRootContent
       parameters:
         - name: group-id
@@ -22897,7 +24345,6 @@ paths:
       tags:
         - groups.drive
       summary: Update content for the navigation property root in groups
-      description: 'The content stream, if the item represents a file.'
       operationId: groups.drives_SetRootContent
       parameters:
         - name: group-id
@@ -22933,7 +24380,6 @@ paths:
       tags:
         - groups.drive
       summary: Get listItem from groups
-      description: 'For drives in SharePoint, the associated document library list item. Read-only. Nullable.'
       operationId: groups.drives.root_GetListItem
       parameters:
         - name: group-id
@@ -23035,6 +24481,8 @@ paths:
               parameters:
                 group-id: $request.path.group-id
                 drive-id: $request.path.drive-id
+            getActivitiesByInterval:
+              operationId: groups.group.drives.drive.root.listItem.getActivitiesByInterval
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -23107,7 +24555,6 @@ paths:
       tags:
         - groups.drive
       summary: Get analytics from groups
-      description: Analytics about the view activities that took place on this item.
       operationId: groups.drives.root.listItem_GetAnalytics
       parameters:
         - name: group-id
@@ -23185,7 +24632,6 @@ paths:
       tags:
         - groups.drive
       summary: Get driveItem from groups
-      description: 'For document libraries, the driveItem relationship exposes the listItem as a [driveItem][]'
       operationId: groups.drives.root.listItem_GetDriveItem
       parameters:
         - name: group-id
@@ -23345,7 +24791,6 @@ paths:
       tags:
         - groups.drive
       summary: Get content for the navigation property driveItem from groups
-      description: 'The content stream, if the item represents a file.'
       operationId: groups.drives.root.listItem_GetDriveItemContent
       parameters:
         - name: group-id
@@ -23377,7 +24822,6 @@ paths:
       tags:
         - groups.drive
       summary: Update content for the navigation property driveItem in groups
-      description: 'The content stream, if the item represents a file.'
       operationId: groups.drives.root.listItem_SetDriveItemContent
       parameters:
         - name: group-id
@@ -23413,7 +24857,6 @@ paths:
       tags:
         - groups.drive
       summary: Get fields from groups
-      description: The values of the columns set on this list item.
       operationId: groups.drives.root.listItem_GetFields
       parameters:
         - name: group-id
@@ -23533,7 +24976,6 @@ paths:
       tags:
         - groups.drive
       summary: Get versions from groups
-      description: The list of previous versions of the list item.
       operationId: groups.drives.root.listItem_ListVersions
       parameters:
         - name: group-id
@@ -23654,7 +25096,6 @@ paths:
       tags:
         - groups.drive
       summary: Get versions from groups
-      description: The list of previous versions of the list item.
       operationId: groups.drives.root.listItem_GetVersions
       parameters:
         - name: group-id
@@ -23721,6 +25162,8 @@ paths:
                 group-id: $request.path.group-id
                 drive-id: $request.path.drive-id
                 listItemVersion-id: $request.path.listItemVersion-id
+            restoreVersion:
+              operationId: groups.group.drives.drive.root.listItem.versions.listItemVersion.restoreVersion
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -23807,7 +25250,6 @@ paths:
       tags:
         - groups.drive
       summary: Get fields from groups
-      description: A collection of the fields and values for this version of the list item.
       operationId: groups.drives.root.listItem.versions_GetFields
       parameters:
         - name: group-id
@@ -23948,7 +25390,6 @@ paths:
       tags:
         - groups.drive
       summary: Get permissions from groups
-      description: The set of permissions for the item. Read-only. Nullable.
       operationId: groups.drives.root_ListPermissions
       parameters:
         - name: group-id
@@ -24091,7 +25532,6 @@ paths:
       tags:
         - groups.drive
       summary: Get permissions from groups
-      description: The set of permissions for the item. Read-only. Nullable.
       operationId: groups.drives.root_GetPermissions
       parameters:
         - name: group-id
@@ -24157,6 +25597,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.permission'
+          links:
+            grant:
+              operationId: groups.group.drives.drive.root.permissions.permission.grant
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -24243,7 +25686,6 @@ paths:
       tags:
         - groups.drive
       summary: Get subscriptions from groups
-      description: The set of subscriptions on the item. Only supported on the root of a drive.
       operationId: groups.drives.root_ListSubscriptions
       parameters:
         - name: group-id
@@ -24395,7 +25837,6 @@ paths:
       tags:
         - groups.drive
       summary: Get subscriptions from groups
-      description: The set of subscriptions on the item. Only supported on the root of a drive.
       operationId: groups.drives.root_GetSubscriptions
       parameters:
         - name: group-id
@@ -24464,6 +25905,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.subscription'
+          links:
+            reauthorize:
+              operationId: groups.group.drives.drive.root.subscriptions.subscription.reauthorize
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -24550,7 +25994,6 @@ paths:
       tags:
         - groups.drive
       summary: Get thumbnails from groups
-      description: 'Collection containing [ThumbnailSet][] objects associated with the item. For more info, see [getting thumbnails][]. Read-only. Nullable.'
       operationId: groups.drives.root_ListThumbnails
       parameters:
         - name: group-id
@@ -24672,7 +26115,6 @@ paths:
       tags:
         - groups.drive
       summary: Get thumbnails from groups
-      description: 'Collection containing [ThumbnailSet][] objects associated with the item. For more info, see [getting thumbnails][]. Read-only. Nullable.'
       operationId: groups.drives.root_GetThumbnails
       parameters:
         - name: group-id
@@ -24817,7 +26259,6 @@ paths:
       tags:
         - groups.drive
       summary: Get versions from groups
-      description: 'The list of previous versions of the item. For more info, see [getting previous versions][]. Read-only. Nullable.'
       operationId: groups.drives.root_ListVersions
       parameters:
         - name: group-id
@@ -24942,7 +26383,6 @@ paths:
       tags:
         - groups.drive
       summary: Get versions from groups
-      description: 'The list of previous versions of the item. For more info, see [getting previous versions][]. Read-only. Nullable.'
       operationId: groups.drives.root_GetVersions
       parameters:
         - name: group-id
@@ -25002,6 +26442,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.driveItemVersion'
+          links:
+            restoreVersion:
+              operationId: groups.group.drives.drive.root.versions.driveItemVersion.restoreVersion
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -25168,7 +26611,6 @@ paths:
       tags:
         - groups.drive
       summary: Get special from groups
-      description: Collection of common folders available in OneDrive. Read-only. Nullable.
       operationId: groups.drives_ListSpecial
       parameters:
         - name: group-id
@@ -25360,7 +26802,6 @@ paths:
       tags:
         - groups.drive
       summary: Get special from groups
-      description: Collection of common folders available in OneDrive. Read-only. Nullable.
       operationId: groups.drives_GetSpecial
       parameters:
         - name: group-id
@@ -25537,7 +26978,6 @@ paths:
       tags:
         - groups.drive
       summary: Get content for the navigation property special from groups
-      description: 'The content stream, if the item represents a file.'
       operationId: groups.drives_GetSpecialContent
       parameters:
         - name: group-id
@@ -25576,7 +27016,6 @@ paths:
       tags:
         - groups.drive
       summary: Update content for the navigation property special in groups
-      description: 'The content stream, if the item represents a file.'
       operationId: groups.drives_SetSpecialContent
       parameters:
         - name: group-id
@@ -25618,8 +27057,7 @@ paths:
     get:
       tags:
         - shares.sharedDriveItem
-      summary: Get entities from shares
-      description: Accessing shared DriveItems
+      summary: Accessing shared DriveItems
       operationId: shares.sharedDriveItem_ListSharedDriveItem
       parameters:
         - $ref: '#/components/parameters/top'
@@ -25747,8 +27185,7 @@ paths:
     get:
       tags:
         - shares.sharedDriveItem
-      summary: Get entity from shares by key
-      description: Accessing shared DriveItems
+      summary: Accessing shared DriveItems
       operationId: shares.sharedDriveItem_GetSharedDriveItem
       parameters:
         - name: sharedDriveItem-id
@@ -25912,7 +27349,6 @@ paths:
       tags:
         - shares.driveItem
       summary: Get driveItem from shares
-      description: Used to access the underlying driveItem
       operationId: shares_GetDriveItem
       parameters:
         - name: sharedDriveItem-id
@@ -26055,7 +27491,6 @@ paths:
       tags:
         - shares.driveItem
       summary: Get content for the navigation property driveItem from shares
-      description: 'The content stream, if the item represents a file.'
       operationId: shares_GetDriveItemContent
       parameters:
         - name: sharedDriveItem-id
@@ -26080,7 +27515,6 @@ paths:
       tags:
         - shares.driveItem
       summary: Update content for the navigation property driveItem in shares
-      description: 'The content stream, if the item represents a file.'
       operationId: shares_SetDriveItemContent
       parameters:
         - name: sharedDriveItem-id
@@ -26109,7 +27543,6 @@ paths:
       tags:
         - shares.driveItem
       summary: Get items from shares
-      description: All driveItems contained in the sharing root. This collection cannot be enumerated.
       operationId: shares_ListItems
       parameters:
         - name: sharedDriveItem-id
@@ -26294,7 +27727,6 @@ paths:
       tags:
         - shares.driveItem
       summary: Get items from shares
-      description: All driveItems contained in the sharing root. This collection cannot be enumerated.
       operationId: shares_GetItems
       parameters:
         - name: sharedDriveItem-id
@@ -26454,7 +27886,6 @@ paths:
       tags:
         - shares.driveItem
       summary: Get content for the navigation property items from shares
-      description: 'The content stream, if the item represents a file.'
       operationId: shares_GetItemsContent
       parameters:
         - name: sharedDriveItem-id
@@ -26486,7 +27917,6 @@ paths:
       tags:
         - shares.driveItem
       summary: Update content for the navigation property items in shares
-      description: 'The content stream, if the item represents a file.'
       operationId: shares_SetItemsContent
       parameters:
         - name: sharedDriveItem-id
@@ -26522,7 +27952,6 @@ paths:
       tags:
         - shares.list
       summary: Get list from shares
-      description: Used to access the underlying list
       operationId: shares_GetList
       parameters:
         - name: sharedDriveItem-id
@@ -26683,7 +28112,6 @@ paths:
       tags:
         - shares.list
       summary: Get columns from shares
-      description: The collection of field definitions for this list.
       operationId: shares.list_ListColumns
       parameters:
         - name: sharedDriveItem-id
@@ -26874,7 +28302,6 @@ paths:
       tags:
         - shares.list
       summary: Get columns from shares
-      description: The collection of field definitions for this list.
       operationId: shares.list_GetColumns
       parameters:
         - name: sharedDriveItem-id
@@ -27033,7 +28460,6 @@ paths:
       tags:
         - shares.list
       summary: Get sourceColumn from shares
-      description: The source column for content type column.
       operationId: shares.list.columns_GetSourceColumn
       parameters:
         - name: sharedDriveItem-id
@@ -27128,7 +28554,6 @@ paths:
       tags:
         - shares.list
       summary: Get contentTypes from shares
-      description: The collection of content types present in this list.
       operationId: shares.list_ListContentTypes
       parameters:
         - name: sharedDriveItem-id
@@ -27276,7 +28701,6 @@ paths:
       tags:
         - shares.list
       summary: Get contentTypes from shares
-      description: The collection of content types present in this list.
       operationId: shares.list_GetContentTypes
       parameters:
         - name: sharedDriveItem-id
@@ -27374,6 +28798,16 @@ paths:
               parameters:
                 sharedDriveItem-id: $request.path.sharedDriveItem-id
                 contentType-id: $request.path.contentType-id
+            associateWithHubSites:
+              operationId: shares.sharedDriveItem.list.contentTypes.contentType.associateWithHubSites
+            copyToDefaultContentLocation:
+              operationId: shares.sharedDriveItem.list.contentTypes.contentType.copyToDefaultContentLocation
+            isPublished:
+              operationId: shares.sharedDriveItem.list.contentTypes.contentType.isPublished
+            publish:
+              operationId: shares.sharedDriveItem.list.contentTypes.contentType.publish
+            unpublish:
+              operationId: shares.sharedDriveItem.list.contentTypes.contentType.unpublish
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -27446,7 +28880,6 @@ paths:
       tags:
         - shares.list
       summary: Get base from shares
-      description: Parent contentType from which this content type is derived.
       operationId: shares.list.contentTypes_GetBase
       parameters:
         - name: sharedDriveItem-id
@@ -27552,7 +28985,6 @@ paths:
       tags:
         - shares.list
       summary: Get baseTypes from shares
-      description: The collection of content types that are ancestors of this content type.
       operationId: shares.list.contentTypes_ListBaseTypes
       parameters:
         - name: sharedDriveItem-id
@@ -27677,7 +29109,6 @@ paths:
       tags:
         - shares.list
       summary: Get baseTypes from shares
-      description: The collection of content types that are ancestors of this content type.
       operationId: shares.list.contentTypes_GetBaseTypes
       parameters:
         - name: sharedDriveItem-id
@@ -27795,7 +29226,6 @@ paths:
       tags:
         - shares.list
       summary: Get columnLinks from shares
-      description: The collection of columns that are required by this content type
       operationId: shares.list.contentTypes_ListColumnLinks
       parameters:
         - name: sharedDriveItem-id
@@ -27908,7 +29338,6 @@ paths:
       tags:
         - shares.list
       summary: Get columnLinks from shares
-      description: The collection of columns that are required by this content type
       operationId: shares.list.contentTypes_GetColumnLinks
       parameters:
         - name: sharedDriveItem-id
@@ -28050,7 +29479,6 @@ paths:
       tags:
         - shares.list
       summary: Get columnPositions from shares
-      description: Column order information in a content type.
       operationId: shares.list.contentTypes_ListColumnPositions
       parameters:
         - name: sharedDriveItem-id
@@ -28218,7 +29646,6 @@ paths:
       tags:
         - shares.list
       summary: Get columnPositions from shares
-      description: Column order information in a content type.
       operationId: shares.list.contentTypes_GetColumnPositions
       parameters:
         - name: sharedDriveItem-id
@@ -28321,7 +29748,6 @@ paths:
       tags:
         - shares.list
       summary: Get columns from shares
-      description: The collection of column definitions for this contentType.
       operationId: shares.list.contentTypes_ListColumns
       parameters:
         - name: sharedDriveItem-id
@@ -28526,7 +29952,6 @@ paths:
       tags:
         - shares.list
       summary: Get columns from shares
-      description: The collection of column definitions for this contentType.
       operationId: shares.list.contentTypes_GetColumns
       parameters:
         - name: sharedDriveItem-id
@@ -28707,7 +30132,6 @@ paths:
       tags:
         - shares.list
       summary: Get sourceColumn from shares
-      description: The source column for content type column.
       operationId: shares.list.contentTypes.columns_GetSourceColumn
       parameters:
         - name: sharedDriveItem-id
@@ -29092,7 +30516,6 @@ paths:
       tags:
         - shares.list
       summary: Get drive from shares
-      description: 'Only present on document libraries. Allows access to the list as a [drive][] resource with [driveItems][driveItem].'
       operationId: shares.list_GetDrive
       parameters:
         - name: sharedDriveItem-id
@@ -29204,7 +30627,6 @@ paths:
       tags:
         - shares.list
       summary: Get items from shares
-      description: All items contained in the list.
       operationId: shares.list_ListItems
       parameters:
         - name: sharedDriveItem-id
@@ -29345,7 +30767,6 @@ paths:
       tags:
         - shares.list
       summary: Get items from shares
-      description: All items contained in the list.
       operationId: shares.list_GetItems
       parameters:
         - name: sharedDriveItem-id
@@ -29447,6 +30868,8 @@ paths:
               parameters:
                 sharedDriveItem-id: $request.path.sharedDriveItem-id
                 listItem-id: $request.path.listItem-id
+            getActivitiesByInterval:
+              operationId: shares.sharedDriveItem.list.items.listItem.getActivitiesByInterval
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -29519,7 +30942,6 @@ paths:
       tags:
         - shares.list
       summary: Get analytics from shares
-      description: Analytics about the view activities that took place on this item.
       operationId: shares.list.items_GetAnalytics
       parameters:
         - name: sharedDriveItem-id
@@ -29597,7 +31019,6 @@ paths:
       tags:
         - shares.list
       summary: Get driveItem from shares
-      description: 'For document libraries, the driveItem relationship exposes the listItem as a [driveItem][]'
       operationId: shares.list.items_GetDriveItem
       parameters:
         - name: sharedDriveItem-id
@@ -29757,7 +31178,6 @@ paths:
       tags:
         - shares.list
       summary: Get content for the navigation property driveItem from shares
-      description: 'The content stream, if the item represents a file.'
       operationId: shares.list.items_GetDriveItemContent
       parameters:
         - name: sharedDriveItem-id
@@ -29789,7 +31209,6 @@ paths:
       tags:
         - shares.list
       summary: Update content for the navigation property driveItem in shares
-      description: 'The content stream, if the item represents a file.'
       operationId: shares.list.items_SetDriveItemContent
       parameters:
         - name: sharedDriveItem-id
@@ -29825,7 +31244,6 @@ paths:
       tags:
         - shares.list
       summary: Get fields from shares
-      description: The values of the columns set on this list item.
       operationId: shares.list.items_GetFields
       parameters:
         - name: sharedDriveItem-id
@@ -30044,7 +31462,6 @@ paths:
       tags:
         - shares.list
       summary: Get versions from shares
-      description: The list of previous versions of the list item.
       operationId: shares.list.items_ListVersions
       parameters:
         - name: sharedDriveItem-id
@@ -30165,7 +31582,6 @@ paths:
       tags:
         - shares.list
       summary: Get versions from shares
-      description: The list of previous versions of the list item.
       operationId: shares.list.items_GetVersions
       parameters:
         - name: sharedDriveItem-id
@@ -30232,6 +31648,8 @@ paths:
                 sharedDriveItem-id: $request.path.sharedDriveItem-id
                 listItem-id: $request.path.listItem-id
                 listItemVersion-id: $request.path.listItemVersion-id
+            restoreVersion:
+              operationId: shares.sharedDriveItem.list.items.listItem.versions.listItemVersion.restoreVersion
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -30318,7 +31736,6 @@ paths:
       tags:
         - shares.list
       summary: Get fields from shares
-      description: A collection of the fields and values for this version of the list item.
       operationId: shares.list.items.versions_GetFields
       parameters:
         - name: sharedDriveItem-id
@@ -30493,7 +31910,6 @@ paths:
       tags:
         - shares.list
       summary: Get operations from shares
-      description: The collection of long running operations for the list.
       operationId: shares.list_ListOperations
       parameters:
         - name: sharedDriveItem-id
@@ -30616,7 +32032,6 @@ paths:
       tags:
         - shares.list
       summary: Get operations from shares
-      description: The collection of long running operations for the list.
       operationId: shares.list_GetOperations
       parameters:
         - name: sharedDriveItem-id
@@ -30745,7 +32160,6 @@ paths:
       tags:
         - shares.list
       summary: Get subscriptions from shares
-      description: The set of subscriptions on the list.
       operationId: shares.list_ListSubscriptions
       parameters:
         - name: sharedDriveItem-id
@@ -30883,7 +32297,6 @@ paths:
       tags:
         - shares.list
       summary: Get subscriptions from shares
-      description: The set of subscriptions on the list.
       operationId: shares.list_GetSubscriptions
       parameters:
         - name: sharedDriveItem-id
@@ -30945,6 +32358,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.subscription'
+          links:
+            reauthorize:
+              operationId: shares.sharedDriveItem.list.subscriptions.subscription.reauthorize
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -31012,12 +32428,38 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/shares/{sharedDriveItem-id}/list/subscriptions/{subscription-id}/microsoft.graph.reauthorize':
+    post:
+      tags:
+        - shares.Actions
+      summary: Invoke action reauthorize
+      operationId: shares.list.subscriptions_reauthorize
+      parameters:
+        - name: sharedDriveItem-id
+          in: path
+          description: 'key: id of sharedDriveItem'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: sharedDriveItem
+        - name: subscription-id
+          in: path
+          description: 'key: id of subscription'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: subscription
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/shares/{sharedDriveItem-id}/listItem':
     get:
       tags:
         - shares.listItem
       summary: Get listItem from shares
-      description: Used to access the underlying listItem
       operationId: shares_GetListItem
       parameters:
         - name: sharedDriveItem-id
@@ -31106,6 +32548,8 @@ paths:
               operationId: shares.ListItem.ListVersions
               parameters:
                 sharedDriveItem-id: $request.path.sharedDriveItem-id
+            getActivitiesByInterval:
+              operationId: shares.sharedDriveItem.listItem.getActivitiesByInterval
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -31164,7 +32608,6 @@ paths:
       tags:
         - shares.listItem
       summary: Get analytics from shares
-      description: Analytics about the view activities that took place on this item.
       operationId: shares.listItem_GetAnalytics
       parameters:
         - name: sharedDriveItem-id
@@ -31232,7 +32675,6 @@ paths:
       tags:
         - shares.listItem
       summary: Get driveItem from shares
-      description: 'For document libraries, the driveItem relationship exposes the listItem as a [driveItem][]'
       operationId: shares.listItem_GetDriveItem
       parameters:
         - name: sharedDriveItem-id
@@ -31375,7 +32817,6 @@ paths:
       tags:
         - shares.listItem
       summary: Get content for the navigation property driveItem from shares
-      description: 'The content stream, if the item represents a file.'
       operationId: shares.listItem_GetDriveItemContent
       parameters:
         - name: sharedDriveItem-id
@@ -31400,7 +32841,6 @@ paths:
       tags:
         - shares.listItem
       summary: Update content for the navigation property driveItem in shares
-      description: 'The content stream, if the item represents a file.'
       operationId: shares.listItem_SetDriveItemContent
       parameters:
         - name: sharedDriveItem-id
@@ -31429,7 +32869,6 @@ paths:
       tags:
         - shares.listItem
       summary: Get fields from shares
-      description: The values of the columns set on this list item.
       operationId: shares.listItem_GetFields
       parameters:
         - name: sharedDriveItem-id
@@ -31613,7 +33052,6 @@ paths:
       tags:
         - shares.listItem
       summary: Get versions from shares
-      description: The list of previous versions of the list item.
       operationId: shares.listItem_ListVersions
       parameters:
         - name: sharedDriveItem-id
@@ -31720,7 +33158,6 @@ paths:
       tags:
         - shares.listItem
       summary: Get versions from shares
-      description: The list of previous versions of the list item.
       operationId: shares.listItem_GetVersions
       parameters:
         - name: sharedDriveItem-id
@@ -31779,6 +33216,8 @@ paths:
               parameters:
                 sharedDriveItem-id: $request.path.sharedDriveItem-id
                 listItemVersion-id: $request.path.listItemVersion-id
+            restoreVersion:
+              operationId: shares.sharedDriveItem.listItem.versions.listItemVersion.restoreVersion
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -31851,7 +33290,6 @@ paths:
       tags:
         - shares.listItem
       summary: Get fields from shares
-      description: A collection of the fields and values for this version of the list item.
       operationId: shares.listItem.versions_GetFields
       parameters:
         - name: sharedDriveItem-id
@@ -31998,7 +33436,6 @@ paths:
       tags:
         - shares.permission
       summary: Get permission from shares
-      description: Used to access the permission representing the underlying sharing link
       operationId: shares_GetPermission
       parameters:
         - name: sharedDriveItem-id
@@ -32050,6 +33487,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.permission'
+          links:
+            grant:
+              operationId: shares.sharedDriveItem.permission.grant
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -32159,7 +33599,6 @@ paths:
       tags:
         - shares.driveItem
       summary: Get root from shares
-      description: Used to access the underlying driveItem. Deprecated -- use driveItem instead.
       operationId: shares_GetRoot
       parameters:
         - name: sharedDriveItem-id
@@ -32302,7 +33741,6 @@ paths:
       tags:
         - shares.driveItem
       summary: Get content for the navigation property root from shares
-      description: 'The content stream, if the item represents a file.'
       operationId: shares_GetRootContent
       parameters:
         - name: sharedDriveItem-id
@@ -32327,7 +33765,6 @@ paths:
       tags:
         - shares.driveItem
       summary: Update content for the navigation property root in shares
-      description: 'The content stream, if the item represents a file.'
       operationId: shares_SetRootContent
       parameters:
         - name: sharedDriveItem-id
@@ -32356,7 +33793,6 @@ paths:
       tags:
         - shares.site
       summary: Get site from shares
-      description: Used to access the underlying site
       operationId: shares_GetSite
       parameters:
         - name: sharedDriveItem-id
@@ -32516,7 +33952,6 @@ paths:
       tags:
         - users.drive
       summary: Get drive from users
-      description: The user's OneDrive. Read-only.
       operationId: users_GetDrive
       parameters:
         - name: user-id
@@ -32628,7 +34063,6 @@ paths:
       tags:
         - users.drive
       summary: Get drives from users
-      description: A collection of drives available for this user. Read-only.
       operationId: users_ListDrives
       parameters:
         - name: user-id
@@ -32782,7 +34216,6 @@ paths:
       tags:
         - users.drive
       summary: Get drives from users
-      description: A collection of drives available for this user. Read-only.
       operationId: users_GetDrives
       parameters:
         - name: user-id
@@ -32901,6 +34334,12 @@ paths:
               parameters:
                 user-id: $request.path.user-id
                 drive-id: $request.path.drive-id
+            recent:
+              operationId: users.user.drives.drive.recent
+            search:
+              operationId: users.user.drives.drive.search
+            sharedWithMe:
+              operationId: users.user.drives.drive.sharedWithMe
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -32973,7 +34412,6 @@ paths:
       tags:
         - users.drive
       summary: Get bundles from users
-      description: 'Collection of [bundles][bundle] (albums and multi-select-shared sets of items). Only in personal OneDrive.'
       operationId: users.drives_ListBundles
       parameters:
         - name: user-id
@@ -33165,7 +34603,6 @@ paths:
       tags:
         - users.drive
       summary: Get bundles from users
-      description: 'Collection of [bundles][bundle] (albums and multi-select-shared sets of items). Only in personal OneDrive.'
       operationId: users.drives_GetBundles
       parameters:
         - name: user-id
@@ -33342,7 +34779,6 @@ paths:
       tags:
         - users.drive
       summary: Get content for the navigation property bundles from users
-      description: 'The content stream, if the item represents a file.'
       operationId: users.drives_GetBundlesContent
       parameters:
         - name: user-id
@@ -33381,7 +34817,6 @@ paths:
       tags:
         - users.drive
       summary: Update content for the navigation property bundles in users
-      description: 'The content stream, if the item represents a file.'
       operationId: users.drives_SetBundlesContent
       parameters:
         - name: user-id
@@ -33424,7 +34859,6 @@ paths:
       tags:
         - users.drive
       summary: Get following from users
-      description: The list of items the user is following. Only in OneDrive for Business.
       operationId: users.drives_ListFollowing
       parameters:
         - name: user-id
@@ -33616,7 +35050,6 @@ paths:
       tags:
         - users.drive
       summary: Get following from users
-      description: The list of items the user is following. Only in OneDrive for Business.
       operationId: users.drives_GetFollowing
       parameters:
         - name: user-id
@@ -33793,7 +35226,6 @@ paths:
       tags:
         - users.drive
       summary: Get content for the navigation property following from users
-      description: 'The content stream, if the item represents a file.'
       operationId: users.drives_GetFollowingContent
       parameters:
         - name: user-id
@@ -33832,7 +35264,6 @@ paths:
       tags:
         - users.drive
       summary: Update content for the navigation property following in users
-      description: 'The content stream, if the item represents a file.'
       operationId: users.drives_SetFollowingContent
       parameters:
         - name: user-id
@@ -33875,7 +35306,6 @@ paths:
       tags:
         - users.drive
       summary: Get items from users
-      description: All items contained in the drive. Read-only. Nullable.
       operationId: users.drives_ListItems
       parameters:
         - name: user-id
@@ -34104,7 +35534,6 @@ paths:
       tags:
         - users.drive
       summary: Get items from users
-      description: All items contained in the drive. Read-only. Nullable.
       operationId: users.drives_GetItems
       parameters:
         - name: user-id
@@ -34273,6 +35702,34 @@ paths:
                 user-id: $request.path.user-id
                 drive-id: $request.path.drive-id
                 driveItem-id: $request.path.driveItem-id
+            checkin:
+              operationId: users.user.drives.drive.items.driveItem.checkin
+            checkout:
+              operationId: users.user.drives.drive.items.driveItem.checkout
+            copy:
+              operationId: users.user.drives.drive.items.driveItem.copy
+            createLink:
+              operationId: users.user.drives.drive.items.driveItem.createLink
+            createUploadSession:
+              operationId: users.user.drives.drive.items.driveItem.createUploadSession
+            delta:
+              operationId: users.user.drives.drive.items.driveItem.delta
+            follow:
+              operationId: users.user.drives.drive.items.driveItem.follow
+            getActivitiesByInterval:
+              operationId: users.user.drives.drive.items.driveItem.getActivitiesByInterval
+            invite:
+              operationId: users.user.drives.drive.items.driveItem.invite
+            preview:
+              operationId: users.user.drives.drive.items.driveItem.preview
+            restore:
+              operationId: users.user.drives.drive.items.driveItem.restore
+            search:
+              operationId: users.user.drives.drive.items.driveItem.search
+            unfollow:
+              operationId: users.user.drives.drive.items.driveItem.unfollow
+            validatePermission:
+              operationId: users.user.drives.drive.items.driveItem.validatePermission
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -34359,7 +35816,6 @@ paths:
       tags:
         - users.drive
       summary: Get analytics from users
-      description: Analytics about the view activities that took place on this item.
       operationId: users.drives.items_GetAnalytics
       parameters:
         - name: user-id
@@ -34447,7 +35903,6 @@ paths:
       tags:
         - users.drive
       summary: Get children from users
-      description: Collection containing Item objects for the immediate children of Item. Only items representing folders have children. Read-only. Nullable.
       operationId: users.drives.items_ListChildren
       parameters:
         - name: user-id
@@ -34646,7 +36101,6 @@ paths:
       tags:
         - users.drive
       summary: Get children from users
-      description: Collection containing Item objects for the immediate children of Item. Only items representing folders have children. Read-only. Nullable.
       operationId: users.drives.items_GetChildren
       parameters:
         - name: user-id
@@ -34840,7 +36294,6 @@ paths:
       tags:
         - users.drive
       summary: Get content for the navigation property children from users
-      description: 'The content stream, if the item represents a file.'
       operationId: users.drives.items_GetChildrenContent
       parameters:
         - name: user-id
@@ -34886,7 +36339,6 @@ paths:
       tags:
         - users.drive
       summary: Update content for the navigation property children in users
-      description: 'The content stream, if the item represents a file.'
       operationId: users.drives.items_SetChildrenContent
       parameters:
         - name: user-id
@@ -34936,7 +36388,6 @@ paths:
       tags:
         - users.drive
       summary: Get content for the navigation property items from users
-      description: 'The content stream, if the item represents a file.'
       operationId: users.drives_GetItemsContent
       parameters:
         - name: user-id
@@ -34975,7 +36426,6 @@ paths:
       tags:
         - users.drive
       summary: Update content for the navigation property items in users
-      description: 'The content stream, if the item represents a file.'
       operationId: users.drives_SetItemsContent
       parameters:
         - name: user-id
@@ -35018,7 +36468,6 @@ paths:
       tags:
         - users.drive
       summary: Get listItem from users
-      description: 'For drives in SharePoint, the associated document library list item. Read-only. Nullable.'
       operationId: users.drives.items_GetListItem
       parameters:
         - name: user-id
@@ -35133,6 +36582,8 @@ paths:
                 user-id: $request.path.user-id
                 drive-id: $request.path.drive-id
                 driveItem-id: $request.path.driveItem-id
+            getActivitiesByInterval:
+              operationId: users.user.drives.drive.items.driveItem.listItem.getActivitiesByInterval
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -35219,7 +36670,6 @@ paths:
       tags:
         - users.drive
       summary: Get analytics from users
-      description: Analytics about the view activities that took place on this item.
       operationId: users.drives.items.listItem_GetAnalytics
       parameters:
         - name: user-id
@@ -35307,7 +36757,6 @@ paths:
       tags:
         - users.drive
       summary: Get driveItem from users
-      description: 'For document libraries, the driveItem relationship exposes the listItem as a [driveItem][]'
       operationId: users.drives.items.listItem_GetDriveItem
       parameters:
         - name: user-id
@@ -35484,7 +36933,6 @@ paths:
       tags:
         - users.drive
       summary: Get content for the navigation property driveItem from users
-      description: 'The content stream, if the item represents a file.'
       operationId: users.drives.items.listItem_GetDriveItemContent
       parameters:
         - name: user-id
@@ -35523,7 +36971,6 @@ paths:
       tags:
         - users.drive
       summary: Update content for the navigation property driveItem in users
-      description: 'The content stream, if the item represents a file.'
       operationId: users.drives.items.listItem_SetDriveItemContent
       parameters:
         - name: user-id
@@ -35566,7 +37013,6 @@ paths:
       tags:
         - users.drive
       summary: Get fields from users
-      description: The values of the columns set on this list item.
       operationId: users.drives.items.listItem_GetFields
       parameters:
         - name: user-id
@@ -35707,7 +37153,6 @@ paths:
       tags:
         - users.drive
       summary: Get versions from users
-      description: The list of previous versions of the list item.
       operationId: users.drives.items.listItem_ListVersions
       parameters:
         - name: user-id
@@ -35842,7 +37287,6 @@ paths:
       tags:
         - users.drive
       summary: Get versions from users
-      description: The list of previous versions of the list item.
       operationId: users.drives.items.listItem_GetVersions
       parameters:
         - name: user-id
@@ -35917,6 +37361,8 @@ paths:
                 drive-id: $request.path.drive-id
                 driveItem-id: $request.path.driveItem-id
                 listItemVersion-id: $request.path.listItemVersion-id
+            restoreVersion:
+              operationId: users.user.drives.drive.items.driveItem.listItem.versions.listItemVersion.restoreVersion
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -36017,7 +37463,6 @@ paths:
       tags:
         - users.drive
       summary: Get fields from users
-      description: A collection of the fields and values for this version of the list item.
       operationId: users.drives.items.listItem.versions_GetFields
       parameters:
         - name: user-id
@@ -36179,7 +37624,6 @@ paths:
       tags:
         - users.drive
       summary: Get permissions from users
-      description: The set of permissions for the item. Read-only. Nullable.
       operationId: users.drives.items_ListPermissions
       parameters:
         - name: user-id
@@ -36336,7 +37780,6 @@ paths:
       tags:
         - users.drive
       summary: Get permissions from users
-      description: The set of permissions for the item. Read-only. Nullable.
       operationId: users.drives.items_GetPermissions
       parameters:
         - name: user-id
@@ -36409,6 +37852,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.permission'
+          links:
+            grant:
+              operationId: users.user.drives.drive.items.driveItem.permissions.permission.grant
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -36509,7 +37955,6 @@ paths:
       tags:
         - users.drive
       summary: Get subscriptions from users
-      description: The set of subscriptions on the item. Only supported on the root of a drive.
       operationId: users.drives.items_ListSubscriptions
       parameters:
         - name: user-id
@@ -36675,7 +38120,6 @@ paths:
       tags:
         - users.drive
       summary: Get subscriptions from users
-      description: The set of subscriptions on the item. Only supported on the root of a drive.
       operationId: users.drives.items_GetSubscriptions
       parameters:
         - name: user-id
@@ -36751,6 +38195,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.subscription'
+          links:
+            reauthorize:
+              operationId: users.user.drives.drive.items.driveItem.subscriptions.subscription.reauthorize
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -36851,7 +38298,6 @@ paths:
       tags:
         - users.drive
       summary: Get thumbnails from users
-      description: 'Collection containing [ThumbnailSet][] objects associated with the item. For more info, see [getting thumbnails][]. Read-only. Nullable.'
       operationId: users.drives.items_ListThumbnails
       parameters:
         - name: user-id
@@ -36987,7 +38433,6 @@ paths:
       tags:
         - users.drive
       summary: Get thumbnails from users
-      description: 'Collection containing [ThumbnailSet][] objects associated with the item. For more info, see [getting thumbnails][]. Read-only. Nullable.'
       operationId: users.drives.items_GetThumbnails
       parameters:
         - name: user-id
@@ -37153,7 +38598,6 @@ paths:
       tags:
         - users.drive
       summary: Get versions from users
-      description: 'The list of previous versions of the item. For more info, see [getting previous versions][]. Read-only. Nullable.'
       operationId: users.drives.items_ListVersions
       parameters:
         - name: user-id
@@ -37292,7 +38736,6 @@ paths:
       tags:
         - users.drive
       summary: Get versions from users
-      description: 'The list of previous versions of the item. For more info, see [getting previous versions][]. Read-only. Nullable.'
       operationId: users.drives.items_GetVersions
       parameters:
         - name: user-id
@@ -37359,6 +38802,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.driveItemVersion'
+          links:
+            restoreVersion:
+              operationId: users.user.drives.drive.items.driveItem.versions.driveItemVersion.restoreVersion
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -37553,7 +38999,6 @@ paths:
       tags:
         - users.drive
       summary: Get list from users
-      description: 'For drives in SharePoint, the underlying document library list. Read-only. Nullable.'
       operationId: users.drives_GetList
       parameters:
         - name: user-id
@@ -37743,7 +39188,6 @@ paths:
       tags:
         - users.drive
       summary: Get columns from users
-      description: The collection of field definitions for this list.
       operationId: users.drives.list_ListColumns
       parameters:
         - name: user-id
@@ -37948,7 +39392,6 @@ paths:
       tags:
         - users.drive
       summary: Get columns from users
-      description: The collection of field definitions for this list.
       operationId: users.drives.list_GetColumns
       parameters:
         - name: user-id
@@ -38129,7 +39572,6 @@ paths:
       tags:
         - users.drive
       summary: Get sourceColumn from users
-      description: The source column for content type column.
       operationId: users.drives.list.columns_GetSourceColumn
       parameters:
         - name: user-id
@@ -38232,7 +39674,6 @@ paths:
       tags:
         - users.drive
       summary: Get contentTypes from users
-      description: The collection of content types present in this list.
       operationId: users.drives.list_ListContentTypes
       parameters:
         - name: user-id
@@ -38394,7 +39835,6 @@ paths:
       tags:
         - users.drive
       summary: Get contentTypes from users
-      description: The collection of content types present in this list.
       operationId: users.drives.list_GetContentTypes
       parameters:
         - name: user-id
@@ -38504,6 +39944,16 @@ paths:
                 user-id: $request.path.user-id
                 drive-id: $request.path.drive-id
                 contentType-id: $request.path.contentType-id
+            associateWithHubSites:
+              operationId: users.user.drives.drive.list.contentTypes.contentType.associateWithHubSites
+            copyToDefaultContentLocation:
+              operationId: users.user.drives.drive.list.contentTypes.contentType.copyToDefaultContentLocation
+            isPublished:
+              operationId: users.user.drives.drive.list.contentTypes.contentType.isPublished
+            publish:
+              operationId: users.user.drives.drive.list.contentTypes.contentType.publish
+            unpublish:
+              operationId: users.user.drives.drive.list.contentTypes.contentType.unpublish
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -38590,7 +40040,6 @@ paths:
       tags:
         - users.drive
       summary: Get base from users
-      description: Parent contentType from which this content type is derived.
       operationId: users.drives.list.contentTypes_GetBase
       parameters:
         - name: user-id
@@ -38708,7 +40157,6 @@ paths:
       tags:
         - users.drive
       summary: Get baseTypes from users
-      description: The collection of content types that are ancestors of this content type.
       operationId: users.drives.list.contentTypes_ListBaseTypes
       parameters:
         - name: user-id
@@ -38840,7 +40288,6 @@ paths:
       tags:
         - users.drive
       summary: Get baseTypes from users
-      description: The collection of content types that are ancestors of this content type.
       operationId: users.drives.list.contentTypes_GetBaseTypes
       parameters:
         - name: user-id
@@ -38970,7 +40417,6 @@ paths:
       tags:
         - users.drive
       summary: Get columnLinks from users
-      description: The collection of columns that are required by this content type
       operationId: users.drives.list.contentTypes_ListColumnLinks
       parameters:
         - name: user-id
@@ -39097,7 +40543,6 @@ paths:
       tags:
         - users.drive
       summary: Get columnLinks from users
-      description: The collection of columns that are required by this content type
       operationId: users.drives.list.contentTypes_GetColumnLinks
       parameters:
         - name: user-id
@@ -39260,7 +40705,6 @@ paths:
       tags:
         - users.drive
       summary: Get columnPositions from users
-      description: Column order information in a content type.
       operationId: users.drives.list.contentTypes_ListColumnPositions
       parameters:
         - name: user-id
@@ -39435,7 +40879,6 @@ paths:
       tags:
         - users.drive
       summary: Get columnPositions from users
-      description: Column order information in a content type.
       operationId: users.drives.list.contentTypes_GetColumnPositions
       parameters:
         - name: user-id
@@ -39546,7 +40989,6 @@ paths:
       tags:
         - users.drive
       summary: Get columns from users
-      description: The collection of column definitions for this contentType.
       operationId: users.drives.list.contentTypes_ListColumns
       parameters:
         - name: user-id
@@ -39765,7 +41207,6 @@ paths:
       tags:
         - users.drive
       summary: Get columns from users
-      description: The collection of column definitions for this contentType.
       operationId: users.drives.list.contentTypes_GetColumns
       parameters:
         - name: user-id
@@ -39968,7 +41409,6 @@ paths:
       tags:
         - users.drive
       summary: Get sourceColumn from users
-      description: The source column for content type column.
       operationId: users.drives.list.contentTypes.columns_GetSourceColumn
       parameters:
         - name: user-id
@@ -40079,7 +41519,6 @@ paths:
       tags:
         - users.drive
       summary: Get drive from users
-      description: 'Only present on document libraries. Allows access to the list as a [drive][] resource with [driveItems][driveItem].'
       operationId: users.drives.list_GetDrive
       parameters:
         - name: user-id
@@ -40206,7 +41645,6 @@ paths:
       tags:
         - users.drive
       summary: Get items from users
-      description: All items contained in the list.
       operationId: users.drives.list_ListItems
       parameters:
         - name: user-id
@@ -40361,7 +41799,6 @@ paths:
       tags:
         - users.drive
       summary: Get items from users
-      description: All items contained in the list.
       operationId: users.drives.list_GetItems
       parameters:
         - name: user-id
@@ -40476,6 +41913,8 @@ paths:
                 user-id: $request.path.user-id
                 drive-id: $request.path.drive-id
                 listItem-id: $request.path.listItem-id
+            getActivitiesByInterval:
+              operationId: users.user.drives.drive.list.items.listItem.getActivitiesByInterval
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -40562,7 +42001,6 @@ paths:
       tags:
         - users.drive
       summary: Get analytics from users
-      description: Analytics about the view activities that took place on this item.
       operationId: users.drives.list.items_GetAnalytics
       parameters:
         - name: user-id
@@ -40650,7 +42088,6 @@ paths:
       tags:
         - users.drive
       summary: Get driveItem from users
-      description: 'For document libraries, the driveItem relationship exposes the listItem as a [driveItem][]'
       operationId: users.drives.list.items_GetDriveItem
       parameters:
         - name: user-id
@@ -40827,7 +42264,6 @@ paths:
       tags:
         - users.drive
       summary: Get content for the navigation property driveItem from users
-      description: 'The content stream, if the item represents a file.'
       operationId: users.drives.list.items_GetDriveItemContent
       parameters:
         - name: user-id
@@ -40866,7 +42302,6 @@ paths:
       tags:
         - users.drive
       summary: Update content for the navigation property driveItem in users
-      description: 'The content stream, if the item represents a file.'
       operationId: users.drives.list.items_SetDriveItemContent
       parameters:
         - name: user-id
@@ -40909,7 +42344,6 @@ paths:
       tags:
         - users.drive
       summary: Get fields from users
-      description: The values of the columns set on this list item.
       operationId: users.drives.list.items_GetFields
       parameters:
         - name: user-id
@@ -41050,7 +42484,6 @@ paths:
       tags:
         - users.drive
       summary: Get versions from users
-      description: The list of previous versions of the list item.
       operationId: users.drives.list.items_ListVersions
       parameters:
         - name: user-id
@@ -41185,7 +42618,6 @@ paths:
       tags:
         - users.drive
       summary: Get versions from users
-      description: The list of previous versions of the list item.
       operationId: users.drives.list.items_GetVersions
       parameters:
         - name: user-id
@@ -41260,6 +42692,8 @@ paths:
                 drive-id: $request.path.drive-id
                 listItem-id: $request.path.listItem-id
                 listItemVersion-id: $request.path.listItemVersion-id
+            restoreVersion:
+              operationId: users.user.drives.drive.list.items.listItem.versions.listItemVersion.restoreVersion
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -41360,7 +42794,6 @@ paths:
       tags:
         - users.drive
       summary: Get fields from users
-      description: A collection of the fields and values for this version of the list item.
       operationId: users.drives.list.items.versions_GetFields
       parameters:
         - name: user-id
@@ -41522,7 +42955,6 @@ paths:
       tags:
         - users.drive
       summary: Get operations from users
-      description: The collection of long running operations for the list.
       operationId: users.drives.list_ListOperations
       parameters:
         - name: user-id
@@ -41659,7 +43091,6 @@ paths:
       tags:
         - users.drive
       summary: Get operations from users
-      description: The collection of long running operations for the list.
       operationId: users.drives.list_GetOperations
       parameters:
         - name: user-id
@@ -41809,7 +43240,6 @@ paths:
       tags:
         - users.drive
       summary: Get subscriptions from users
-      description: The set of subscriptions on the list.
       operationId: users.drives.list_ListSubscriptions
       parameters:
         - name: user-id
@@ -41961,7 +43391,6 @@ paths:
       tags:
         - users.drive
       summary: Get subscriptions from users
-      description: The set of subscriptions on the list.
       operationId: users.drives.list_GetSubscriptions
       parameters:
         - name: user-id
@@ -42030,6 +43459,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.subscription'
+          links:
+            reauthorize:
+              operationId: users.user.drives.drive.list.subscriptions.subscription.reauthorize
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -42116,7 +43548,6 @@ paths:
       tags:
         - users.drive
       summary: Get root from users
-      description: The root folder of the drive. Read-only.
       operationId: users.drives_GetRoot
       parameters:
         - name: user-id
@@ -42268,6 +43699,34 @@ paths:
               parameters:
                 user-id: $request.path.user-id
                 drive-id: $request.path.drive-id
+            checkin:
+              operationId: users.user.drives.drive.root.checkin
+            checkout:
+              operationId: users.user.drives.drive.root.checkout
+            copy:
+              operationId: users.user.drives.drive.root.copy
+            createLink:
+              operationId: users.user.drives.drive.root.createLink
+            createUploadSession:
+              operationId: users.user.drives.drive.root.createUploadSession
+            delta:
+              operationId: users.user.drives.drive.root.delta
+            follow:
+              operationId: users.user.drives.drive.root.follow
+            getActivitiesByInterval:
+              operationId: users.user.drives.drive.root.getActivitiesByInterval
+            invite:
+              operationId: users.user.drives.drive.root.invite
+            preview:
+              operationId: users.user.drives.drive.root.preview
+            restore:
+              operationId: users.user.drives.drive.root.restore
+            search:
+              operationId: users.user.drives.drive.root.search
+            unfollow:
+              operationId: users.user.drives.drive.root.unfollow
+            validatePermission:
+              operationId: users.user.drives.drive.root.validatePermission
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -42340,7 +43799,6 @@ paths:
       tags:
         - users.drive
       summary: Get analytics from users
-      description: Analytics about the view activities that took place on this item.
       operationId: users.drives.root_GetAnalytics
       parameters:
         - name: user-id
@@ -42418,7 +43876,6 @@ paths:
       tags:
         - users.drive
       summary: Get children from users
-      description: Collection containing Item objects for the immediate children of Item. Only items representing folders have children. Read-only. Nullable.
       operationId: users.drives.root_ListChildren
       parameters:
         - name: user-id
@@ -42610,7 +44067,6 @@ paths:
       tags:
         - users.drive
       summary: Get children from users
-      description: Collection containing Item objects for the immediate children of Item. Only items representing folders have children. Read-only. Nullable.
       operationId: users.drives.root_GetChildren
       parameters:
         - name: user-id
@@ -42787,7 +44243,6 @@ paths:
       tags:
         - users.drive
       summary: Get content for the navigation property children from users
-      description: 'The content stream, if the item represents a file.'
       operationId: users.drives.root_GetChildrenContent
       parameters:
         - name: user-id
@@ -42826,7 +44281,6 @@ paths:
       tags:
         - users.drive
       summary: Update content for the navigation property children in users
-      description: 'The content stream, if the item represents a file.'
       operationId: users.drives.root_SetChildrenContent
       parameters:
         - name: user-id
@@ -42869,7 +44323,6 @@ paths:
       tags:
         - users.drive
       summary: Get content for the navigation property root from users
-      description: 'The content stream, if the item represents a file.'
       operationId: users.drives_GetRootContent
       parameters:
         - name: user-id
@@ -42901,7 +44354,6 @@ paths:
       tags:
         - users.drive
       summary: Update content for the navigation property root in users
-      description: 'The content stream, if the item represents a file.'
       operationId: users.drives_SetRootContent
       parameters:
         - name: user-id
@@ -42937,7 +44389,6 @@ paths:
       tags:
         - users.drive
       summary: Get listItem from users
-      description: 'For drives in SharePoint, the associated document library list item. Read-only. Nullable.'
       operationId: users.drives.root_GetListItem
       parameters:
         - name: user-id
@@ -43039,6 +44490,8 @@ paths:
               parameters:
                 user-id: $request.path.user-id
                 drive-id: $request.path.drive-id
+            getActivitiesByInterval:
+              operationId: users.user.drives.drive.root.listItem.getActivitiesByInterval
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -43111,7 +44564,6 @@ paths:
       tags:
         - users.drive
       summary: Get analytics from users
-      description: Analytics about the view activities that took place on this item.
       operationId: users.drives.root.listItem_GetAnalytics
       parameters:
         - name: user-id
@@ -43189,7 +44641,6 @@ paths:
       tags:
         - users.drive
       summary: Get driveItem from users
-      description: 'For document libraries, the driveItem relationship exposes the listItem as a [driveItem][]'
       operationId: users.drives.root.listItem_GetDriveItem
       parameters:
         - name: user-id
@@ -43349,7 +44800,6 @@ paths:
       tags:
         - users.drive
       summary: Get content for the navigation property driveItem from users
-      description: 'The content stream, if the item represents a file.'
       operationId: users.drives.root.listItem_GetDriveItemContent
       parameters:
         - name: user-id
@@ -43381,7 +44831,6 @@ paths:
       tags:
         - users.drive
       summary: Update content for the navigation property driveItem in users
-      description: 'The content stream, if the item represents a file.'
       operationId: users.drives.root.listItem_SetDriveItemContent
       parameters:
         - name: user-id
@@ -43417,7 +44866,6 @@ paths:
       tags:
         - users.drive
       summary: Get fields from users
-      description: The values of the columns set on this list item.
       operationId: users.drives.root.listItem_GetFields
       parameters:
         - name: user-id
@@ -43537,7 +44985,6 @@ paths:
       tags:
         - users.drive
       summary: Get versions from users
-      description: The list of previous versions of the list item.
       operationId: users.drives.root.listItem_ListVersions
       parameters:
         - name: user-id
@@ -43658,7 +45105,6 @@ paths:
       tags:
         - users.drive
       summary: Get versions from users
-      description: The list of previous versions of the list item.
       operationId: users.drives.root.listItem_GetVersions
       parameters:
         - name: user-id
@@ -43725,6 +45171,8 @@ paths:
                 user-id: $request.path.user-id
                 drive-id: $request.path.drive-id
                 listItemVersion-id: $request.path.listItemVersion-id
+            restoreVersion:
+              operationId: users.user.drives.drive.root.listItem.versions.listItemVersion.restoreVersion
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -43811,7 +45259,6 @@ paths:
       tags:
         - users.drive
       summary: Get fields from users
-      description: A collection of the fields and values for this version of the list item.
       operationId: users.drives.root.listItem.versions_GetFields
       parameters:
         - name: user-id
@@ -43952,7 +45399,6 @@ paths:
       tags:
         - users.drive
       summary: Get permissions from users
-      description: The set of permissions for the item. Read-only. Nullable.
       operationId: users.drives.root_ListPermissions
       parameters:
         - name: user-id
@@ -44095,7 +45541,6 @@ paths:
       tags:
         - users.drive
       summary: Get permissions from users
-      description: The set of permissions for the item. Read-only. Nullable.
       operationId: users.drives.root_GetPermissions
       parameters:
         - name: user-id
@@ -44161,6 +45606,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.permission'
+          links:
+            grant:
+              operationId: users.user.drives.drive.root.permissions.permission.grant
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -44247,7 +45695,6 @@ paths:
       tags:
         - users.drive
       summary: Get subscriptions from users
-      description: The set of subscriptions on the item. Only supported on the root of a drive.
       operationId: users.drives.root_ListSubscriptions
       parameters:
         - name: user-id
@@ -44399,7 +45846,6 @@ paths:
       tags:
         - users.drive
       summary: Get subscriptions from users
-      description: The set of subscriptions on the item. Only supported on the root of a drive.
       operationId: users.drives.root_GetSubscriptions
       parameters:
         - name: user-id
@@ -44468,6 +45914,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.subscription'
+          links:
+            reauthorize:
+              operationId: users.user.drives.drive.root.subscriptions.subscription.reauthorize
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -44554,7 +46003,6 @@ paths:
       tags:
         - users.drive
       summary: Get thumbnails from users
-      description: 'Collection containing [ThumbnailSet][] objects associated with the item. For more info, see [getting thumbnails][]. Read-only. Nullable.'
       operationId: users.drives.root_ListThumbnails
       parameters:
         - name: user-id
@@ -44676,7 +46124,6 @@ paths:
       tags:
         - users.drive
       summary: Get thumbnails from users
-      description: 'Collection containing [ThumbnailSet][] objects associated with the item. For more info, see [getting thumbnails][]. Read-only. Nullable.'
       operationId: users.drives.root_GetThumbnails
       parameters:
         - name: user-id
@@ -44821,7 +46268,6 @@ paths:
       tags:
         - users.drive
       summary: Get versions from users
-      description: 'The list of previous versions of the item. For more info, see [getting previous versions][]. Read-only. Nullable.'
       operationId: users.drives.root_ListVersions
       parameters:
         - name: user-id
@@ -44946,7 +46392,6 @@ paths:
       tags:
         - users.drive
       summary: Get versions from users
-      description: 'The list of previous versions of the item. For more info, see [getting previous versions][]. Read-only. Nullable.'
       operationId: users.drives.root_GetVersions
       parameters:
         - name: user-id
@@ -45006,6 +46451,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.driveItemVersion'
+          links:
+            restoreVersion:
+              operationId: users.user.drives.drive.root.versions.driveItemVersion.restoreVersion
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -45172,7 +46620,6 @@ paths:
       tags:
         - users.drive
       summary: Get special from users
-      description: Collection of common folders available in OneDrive. Read-only. Nullable.
       operationId: users.drives_ListSpecial
       parameters:
         - name: user-id
@@ -45364,7 +46811,6 @@ paths:
       tags:
         - users.drive
       summary: Get special from users
-      description: Collection of common folders available in OneDrive. Read-only. Nullable.
       operationId: users.drives_GetSpecial
       parameters:
         - name: user-id
@@ -45541,7 +46987,6 @@ paths:
       tags:
         - users.drive
       summary: Get content for the navigation property special from users
-      description: 'The content stream, if the item represents a file.'
       operationId: users.drives_GetSpecialContent
       parameters:
         - name: user-id
@@ -45580,7 +47025,6 @@ paths:
       tags:
         - users.drive
       summary: Update content for the navigation property special in users
-      description: 'The content stream, if the item represents a file.'
       operationId: users.drives_SetSpecialContent
       parameters:
         - name: user-id
@@ -45858,6 +47302,42 @@ components:
               $ref: '#/components/schemas/microsoft.graph.fieldValueSet'
           additionalProperties:
             type: object
+    microsoft.graph.itemReference:
+      title: itemReference
+      type: object
+      properties:
+        driveId:
+          type: string
+          description: Unique identifier of the drive instance that contains the item. Read-only.
+          nullable: true
+        driveType:
+          type: string
+          description: 'Identifies the type of drive. See [drive][] resource for values.'
+          nullable: true
+        id:
+          type: string
+          description: Unique identifier of the item in the drive. Read-only.
+          nullable: true
+        name:
+          type: string
+          description: The name of the item being referenced. Read-only.
+          nullable: true
+        path:
+          type: string
+          description: Path that can be used to navigate to the item. Read-only.
+          nullable: true
+        shareId:
+          type: string
+          description: 'A unique identifier for a shared resource that can be accessed via the [Shares][] API.'
+          nullable: true
+        sharepointIds:
+          $ref: '#/components/schemas/microsoft.graph.sharepointIds'
+        siteId:
+          type: string
+          description: 'For OneDrive for Business and SharePoint, this property represents the ID of the site that contains the parent document library of the driveItem resource. The value is the same as the id property of that [site][] resource. It is an opaque string that consists of three identifiers of the site. For OneDrive, this property is not populated.'
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.permission:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -45905,6 +47385,49 @@ components:
               nullable: true
           additionalProperties:
             type: object
+    microsoft.graph.driveItemUploadableProperties:
+      title: driveItemUploadableProperties
+      type: object
+      properties:
+        description:
+          type: string
+          description: Provides a user-visible description of the item. Read-write. Only on OneDrive Personal.
+          nullable: true
+        fileSize:
+          type: integer
+          description: Provides an expected file size to perform a quota check prior to upload. Only on OneDrive Personal.
+          format: int64
+          nullable: true
+        fileSystemInfo:
+          $ref: '#/components/schemas/microsoft.graph.fileSystemInfo'
+        name:
+          type: string
+          description: The name of the item (filename and extension). Read-write.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.uploadSession:
+      title: uploadSession
+      type: object
+      properties:
+        expirationDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: The date and time in UTC that the upload session will expire. The complete file must be uploaded before this expiration time is reached.
+          format: date-time
+          nullable: true
+        nextExpectedRanges:
+          type: array
+          items:
+            type: string
+            nullable: true
+          description: 'When uploading files to document libraries, this is a collection of byte ranges that the server is missing for the file. These ranges are zero-indexed and of the format, ''{start}-{end}'' (e.g. ''0-26'' to indicate the first 27 bytes of the file). When uploading files as Outlook attachments, instead of a collection of ranges, this property always indicates a single value ''{start}'', the location in the file where the next upload should begin.'
+        uploadUrl:
+          type: string
+          description: The URL endpoint that accepts PUT requests for byte ranges of the file.
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.driveRecipient:
       title: driveRecipient
       type: object
@@ -45920,6 +47443,21 @@ components:
         objectId:
           type: string
           description: The unique identifier for the recipient in the directory.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.itemPreviewInfo:
+      title: itemPreviewInfo
+      type: object
+      properties:
+        getUrl:
+          type: string
+          nullable: true
+        postParameters:
+          type: string
+          nullable: true
+        postUrl:
+          type: string
           nullable: true
       additionalProperties:
         type: object
@@ -46253,42 +47791,6 @@ components:
               nullable: true
           additionalProperties:
             type: object
-    microsoft.graph.itemReference:
-      title: itemReference
-      type: object
-      properties:
-        driveId:
-          type: string
-          description: Unique identifier of the drive instance that contains the item. Read-only.
-          nullable: true
-        driveType:
-          type: string
-          description: 'Identifies the type of drive. See [drive][] resource for values.'
-          nullable: true
-        id:
-          type: string
-          description: Unique identifier of the item in the drive. Read-only.
-          nullable: true
-        name:
-          type: string
-          description: The name of the item being referenced. Read-only.
-          nullable: true
-        path:
-          type: string
-          description: Path that can be used to navigate to the item. Read-only.
-          nullable: true
-        shareId:
-          type: string
-          description: 'A unique identifier for a shared resource that can be accessed via the [Shares][] API.'
-          nullable: true
-        sharepointIds:
-          $ref: '#/components/schemas/microsoft.graph.sharepointIds'
-        siteId:
-          type: string
-          description: 'For OneDrive for Business and SharePoint, this property represents the ID of the site that contains the parent document library of the driveItem resource. The value is the same as the id property of that [site][] resource. It is an opaque string that consists of three identifiers of the site. For OneDrive, this property is not populated.'
-          nullable: true
-      additionalProperties:
-        type: object
     microsoft.graph.richLongRunningOperation:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.longRunningOperation'
@@ -48122,7 +49624,7 @@ components:
               description: 'For example: [''SMTP: bob@contoso.com'', ''smtp: bob@sales.contoso.com'']. Changes to the mail property will also update this collection to include the value as an SMTP address. For more information, see mail and proxyAddresses properties. The proxy address prefixed with SMTP (capitalized) is the primary proxy address while those prefixed with smtp are the secondary proxy addresses. For Azure AD B2C accounts, this property has a limit of ten unique addresses. Read-only in Microsoft Graph; you can update this property only through the Microsoft 365 admin center. Not nullable. Supports $filter (eq, not, ge, le, startsWith, endsWith, and counting empty collections).'
             showInAddressList:
               type: boolean
-              description: 'true if the Outlook global address list should contain this user, otherwise false. If not set, this will be treated as true. For users invited through the invitation manager, this property will be set to false. Supports $filter (eq, ne, not, in).'
+              description: Do not use in Microsoft Graph. Manage this property through the Microsoft 365 admin center instead. Represents whether the user should be included in the Outlook global address list. See Known issue.
               nullable: true
             signInSessionsValidFromDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -48405,11 +49907,11 @@ components:
       properties:
         displayName:
           type: string
-          description: 'The identity''s display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
+          description: The display name of the identity. This property is read-only.
           nullable: true
         id:
           type: string
-          description: Unique identifier for the identity.
+          description: The identifier of the identity. This property is read-only.
           nullable: true
       additionalProperties:
         type: object
@@ -50841,6 +52343,11 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.microsoftAuthenticatorAuthenticationMethod'
               description: The details of the Microsoft Authenticator app registered to a user for authentication.
+            temporaryAccessPassMethods:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.temporaryAccessPassAuthenticationMethod'
+              description: Represents a Temporary Access Pass registered to a user for authentication through time-limited passcodes.
             windowsHelloForBusinessMethods:
               type: array
               items:
@@ -51219,11 +52726,11 @@ components:
       properties:
         key:
           type: string
-          description: Key.
+          description: 'Contains the name of the field that a value is associated with. When a sign in or domain hint is included in the sign-in request, corresponding fields are included as key-value pairs. Possible keys: Login hint present, Domain hint present.'
           nullable: true
         value:
           type: string
-          description: Value.
+          description: Contains the corresponding value for the specified key. The value is true if a sign in hint was included in the sign-in request; otherwise false. The value is true if a domain hint was included in the sign-in request; otherwise false.
           nullable: true
       additionalProperties:
         type: object
@@ -53256,6 +54763,49 @@ components:
               $ref: '#/components/schemas/microsoft.graph.device'
           additionalProperties:
             type: object
+    microsoft.graph.temporaryAccessPassAuthenticationMethod:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
+        - title: temporaryAccessPassAuthenticationMethod
+          type: object
+          properties:
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The date and time when the temporaryAccessPass was created.
+              format: date-time
+              nullable: true
+            isUsable:
+              type: boolean
+              description: The state of the authentication method that indicates whether it's currently usable by the user.
+              nullable: true
+            isUsableOnce:
+              type: boolean
+              description: 'Determines whether the pass is limited to a one time use. If true, the pass can be used once; if false, the pass can be used multiple times within the temporaryAccessPass lifetime.'
+              nullable: true
+            lifetimeInMinutes:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              description: 'The lifetime of the temporaryAccessPass in minutes starting at startDateTime. Minimum 10, Maximum 43200 (equivalent to 30 days).'
+              format: int32
+              nullable: true
+            methodUsabilityReason:
+              type: string
+              description: 'Details about usability state (isUsable). Reasons can include: enabledByPolicy, disabledByPolicy, expired, notYetValid, oneTimeUsed.'
+              nullable: true
+            startDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The date and time when the temporaryAccessPass becomes available to use.
+              format: date-time
+              nullable: true
+            temporaryAccessPass:
+              type: string
+              description: The temporaryAccessPass used to authenticate. Returned only on creation of a new temporaryAccessPass; returned as NULL with GET.
+              nullable: true
+          additionalProperties:
+            type: object
     microsoft.graph.windowsHelloForBusinessAuthenticationMethod:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
@@ -53857,13 +55407,6 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.event'
               description: The group's events.
-            photo:
-              $ref: '#/components/schemas/microsoft.graph.profilePhoto'
-            photos:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.profilePhoto'
-              description: The profile photos owned by the group. Read-only. Nullable.
             rejectedSenders:
               type: array
               items:
@@ -53900,6 +55443,13 @@ components:
               $ref: '#/components/schemas/microsoft.graph.plannerGroup'
             onenote:
               $ref: '#/components/schemas/microsoft.graph.onenote'
+            photo:
+              $ref: '#/components/schemas/microsoft.graph.profilePhoto'
+            photos:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.profilePhoto'
+              description: The profile photos owned by the group. Read-only. Nullable.
             team:
               $ref: '#/components/schemas/microsoft.graph.team'
           additionalProperties:
@@ -56092,6 +57642,7 @@ components:
               items:
                 type: string
                 nullable: true
+              description: The categories associated with the task. Each category corresponds to the displayName property of an outlookCategory that the user has defined.
             completedDateTime:
               $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
             createdDateTime:
@@ -56125,6 +57676,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.checklistItem'
+              description: A collection of smaller subtasks linked to the more complex parent task.
             extensions:
               type: array
               items:

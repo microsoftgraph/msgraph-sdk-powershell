@@ -260,7 +260,6 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action createGooglePlayWebToken
-      description: Generates a web token that is used in an embeddable component.
       operationId: deviceManagement.androidManagedStoreAccountEnterpriseSettings_createGooglePlayWebToken
       requestBody:
         description: Action parameters
@@ -331,7 +330,6 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action setAndroidDeviceOwnerFullyManagedEnrollmentState
-      description: Sets the AndroidManagedStoreAccountEnterpriseSettings AndroidDeviceOwnerFullyManagedEnrollmentEnabled to the given value.
       operationId: deviceManagement.androidManagedStoreAccountEnterpriseSettings_setAndroidDeviceOwnerFullyManagedEnrollmentState
       requestBody:
         description: Action parameters
@@ -381,7 +379,6 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action generateApplePushNotificationCertificateSigningRequest
-      description: Download Apple push notification certificate signing request
       operationId: deviceManagement.applePushNotificationCertificate_generateApplePushNotificationCertificateSigningRequest
       responses:
         '200':
@@ -668,7 +665,6 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action activateDeviceEsim
-      description: Activate eSIM on the device.
       operationId: deviceManagement.comanagedDevices_activateDeviceEsim
       parameters:
         - name: managedDevice-id
@@ -702,7 +698,6 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action bypassActivationLock
-      description: Bypass activation lock
       operationId: deviceManagement.comanagedDevices_bypassActivationLock
       parameters:
         - name: managedDevice-id
@@ -723,7 +718,6 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action cleanWindowsDevice
-      description: Clean Windows device
       operationId: deviceManagement.comanagedDevices_cleanWindowsDevice
       parameters:
         - name: managedDevice-id
@@ -793,7 +787,6 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action deleteUserFromSharedAppleDevice
-      description: Delete user from shared Apple device
       operationId: deviceManagement.comanagedDevices_deleteUserFromSharedAppleDevice
       parameters:
         - name: managedDevice-id
@@ -879,7 +872,6 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action disableLostMode
-      description: Disable lost mode
       operationId: deviceManagement.comanagedDevices_disableLostMode
       parameters:
         - name: managedDevice-id
@@ -900,7 +892,6 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action enableLostMode
-      description: Enable lost mode
       operationId: deviceManagement.comanagedDevices_enableLostMode
       parameters:
         - name: managedDevice-id
@@ -940,7 +931,6 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action locateDevice
-      description: Locate a device
       operationId: deviceManagement.comanagedDevices_locateDevice
       parameters:
         - name: managedDevice-id
@@ -961,7 +951,6 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action logoutSharedAppleDeviceActiveUser
-      description: Logout shared Apple device active user
       operationId: deviceManagement.comanagedDevices_logoutSharedAppleDeviceActiveUser
       parameters:
         - name: managedDevice-id
@@ -1017,7 +1006,6 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action playLostModeSound
-      description: Play lost mode sound
       operationId: deviceManagement.comanagedDevices_playLostModeSound
       parameters:
         - name: managedDevice-id
@@ -1051,7 +1039,6 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action rebootNow
-      description: Reboot device
       operationId: deviceManagement.comanagedDevices_rebootNow
       parameters:
         - name: managedDevice-id
@@ -1072,7 +1059,6 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action recoverPasscode
-      description: Recover passcode
       operationId: deviceManagement.comanagedDevices_recoverPasscode
       parameters:
         - name: managedDevice-id
@@ -1113,8 +1099,27 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action remoteLock
-      description: Remote lock
       operationId: deviceManagement.comanagedDevices_remoteLock
+      parameters:
+        - name: managedDevice-id
+          in: path
+          description: 'key: id of managedDevice'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: managedDevice
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/deviceManagement/comanagedDevices/{managedDevice-id}/microsoft.graph.removeDeviceFirmwareConfigurationInterfaceManagement':
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action removeDeviceFirmwareConfigurationInterfaceManagement
+      operationId: deviceManagement.comanagedDevices_removeDeviceFirmwareConfigurationInterfaceManagement
       parameters:
         - name: managedDevice-id
           in: path
@@ -1154,7 +1159,6 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action requestRemoteAssistance
-      description: Request remote assistance
       operationId: deviceManagement.comanagedDevices_requestRemoteAssistance
       parameters:
         - name: managedDevice-id
@@ -1175,7 +1179,6 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action resetPasscode
-      description: Reset passcode
       operationId: deviceManagement.comanagedDevices_resetPasscode
       parameters:
         - name: managedDevice-id
@@ -1262,7 +1265,6 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action retire
-      description: Retire a device
       operationId: deviceManagement.comanagedDevices_retire
       parameters:
         - name: managedDevice-id
@@ -1283,7 +1285,6 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action revokeAppleVppLicenses
-      description: Revoke all Apple Vpp licenses for a device
       operationId: deviceManagement.comanagedDevices_revokeAppleVppLicenses
       parameters:
         - name: managedDevice-id
@@ -1304,7 +1305,6 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action rotateBitLockerKeys
-      description: Rotate BitLockerKeys
       operationId: deviceManagement.comanagedDevices_rotateBitLockerKeys
       parameters:
         - name: managedDevice-id
@@ -1411,7 +1411,6 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action setDeviceName
-      description: Set device name of the device.
       operationId: deviceManagement.comanagedDevices_setDeviceName
       parameters:
         - name: managedDevice-id
@@ -1445,7 +1444,6 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action shutDown
-      description: Shut down device
       operationId: deviceManagement.comanagedDevices_shutDown
       parameters:
         - name: managedDevice-id
@@ -1486,7 +1484,6 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action triggerConfigurationManagerAction
-      description: Trigger action on ConfigurationManager client
       operationId: deviceManagement.comanagedDevices_triggerConfigurationManagerAction
       parameters:
         - name: managedDevice-id
@@ -1604,7 +1601,6 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action wipe
-      description: Wipe a device
       operationId: deviceManagement.comanagedDevices_wipe
       parameters:
         - name: managedDevice-id
@@ -2170,7 +2166,6 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action generateEncryptionPublicKey
-      description: Generate a public key to use to encrypt the Apple device enrollment program token
       operationId: deviceManagement.depOnboardingSettings_generateEncryptionPublicKey
       parameters:
         - name: depOnboardingSetting-id
@@ -2221,7 +2216,6 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action syncWithAppleDeviceEnrollmentProgram
-      description: Synchronizes between Apple Device Enrollment Program and Intune
       operationId: deviceManagement.depOnboardingSettings_syncWithAppleDeviceEnrollmentProgram
       parameters:
         - name: depOnboardingSetting-id
@@ -2262,7 +2256,6 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action uploadDepToken
-      description: Uploads a new Device Enrollment Program token
       operationId: deviceManagement.depOnboardingSettings_uploadDepToken
       parameters:
         - name: depOnboardingSetting-id
@@ -2634,48 +2627,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
-  '/deviceManagement/deviceConfigurations/{deviceConfiguration-id}/microsoft.graph.windowsUpdateForBusinessConfiguration/microsoft.graph.extendFeatureUpdatesPause':
-    post:
-      tags:
-        - deviceManagement.Actions
-      summary: Invoke action extendFeatureUpdatesPause
-      description: Extend Feature Updates Pause for a Windows Update for Business ring.
-      operationId: deviceManagement.deviceConfigurations.microsoft.graph.windowsUpdateForBusinessConfiguration_extendFeatureUpdatesPause
-      parameters:
-        - name: deviceConfiguration-id
-          in: path
-          description: 'key: id of deviceConfiguration'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: deviceConfiguration
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: action
-  '/deviceManagement/deviceConfigurations/{deviceConfiguration-id}/microsoft.graph.windowsUpdateForBusinessConfiguration/microsoft.graph.extendQualityUpdatesPause':
-    post:
-      tags:
-        - deviceManagement.Actions
-      summary: Invoke action extendQualityUpdatesPause
-      description: Extend Quality Updates Pause for a Windows Update for Business ring.
-      operationId: deviceManagement.deviceConfigurations.microsoft.graph.windowsUpdateForBusinessConfiguration_extendQualityUpdatesPause
-      parameters:
-        - name: deviceConfiguration-id
-          in: path
-          description: 'key: id of deviceConfiguration'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: deviceConfiguration
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: action
   /deviceManagement/deviceConfigurations/microsoft.graph.getTargetedUsersAndDevices:
     post:
       tags:
@@ -2826,26 +2777,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
-  '/deviceManagement/deviceEnrollmentConfigurations/{deviceEnrollmentConfiguration-id}/microsoft.graph.createEnrollmentNotificationConfiguration':
-    post:
-      tags:
-        - deviceManagement.Actions
-      summary: Invoke action createEnrollmentNotificationConfiguration
-      operationId: deviceManagement.deviceEnrollmentConfigurations_createEnrollmentNotificationConfiguration
-      parameters:
-        - name: deviceEnrollmentConfiguration-id
-          in: path
-          description: 'key: id of deviceEnrollmentConfiguration'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: deviceEnrollmentConfiguration
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: action
   '/deviceManagement/deviceEnrollmentConfigurations/{deviceEnrollmentConfiguration-id}/microsoft.graph.setPriority':
     post:
       tags:
@@ -2872,6 +2803,32 @@ paths:
                   minimum: -2147483648
                   type: integer
                   format: int32
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  /deviceManagement/deviceEnrollmentConfigurations/microsoft.graph.createEnrollmentNotificationConfiguration:
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action createEnrollmentNotificationConfiguration
+      operationId: deviceManagement.deviceEnrollmentConfigurations_createEnrollmentNotificationConfiguration
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                deviceEnrollmentNotificationConfigurations:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/microsoft.graph.deviceEnrollmentConfiguration'
               additionalProperties:
                 type: object
         required: true
@@ -2959,7 +2916,6 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action getGlobalScriptHighestAvailableVersion
-      description: Update the Proprietary Device Health Script
       operationId: deviceManagement.deviceHealthScripts_getGlobalScriptHighestAvailableVersion
       parameters:
         - name: deviceHealthScript-id
@@ -2990,7 +2946,6 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action updateGlobalScript
-      description: Update the Proprietary Device Health Script
       operationId: deviceManagement.deviceHealthScripts_updateGlobalScript
       parameters:
         - name: deviceHealthScript-id
@@ -3853,7 +3808,6 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action activateDeviceEsim
-      description: Activate eSIM on the device.
       operationId: deviceManagement.managedDevices_activateDeviceEsim
       parameters:
         - name: managedDevice-id
@@ -3887,7 +3841,6 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action bypassActivationLock
-      description: Bypass activation lock
       operationId: deviceManagement.managedDevices_bypassActivationLock
       parameters:
         - name: managedDevice-id
@@ -3908,7 +3861,6 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action cleanWindowsDevice
-      description: Clean Windows device
       operationId: deviceManagement.managedDevices_cleanWindowsDevice
       parameters:
         - name: managedDevice-id
@@ -3978,7 +3930,6 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action deleteUserFromSharedAppleDevice
-      description: Delete user from shared Apple device
       operationId: deviceManagement.managedDevices_deleteUserFromSharedAppleDevice
       parameters:
         - name: managedDevice-id
@@ -4064,7 +4015,6 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action disableLostMode
-      description: Disable lost mode
       operationId: deviceManagement.managedDevices_disableLostMode
       parameters:
         - name: managedDevice-id
@@ -4085,7 +4035,6 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action enableLostMode
-      description: Enable lost mode
       operationId: deviceManagement.managedDevices_enableLostMode
       parameters:
         - name: managedDevice-id
@@ -4125,7 +4074,6 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action locateDevice
-      description: Locate a device
       operationId: deviceManagement.managedDevices_locateDevice
       parameters:
         - name: managedDevice-id
@@ -4146,7 +4094,6 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action logoutSharedAppleDeviceActiveUser
-      description: Logout shared Apple device active user
       operationId: deviceManagement.managedDevices_logoutSharedAppleDeviceActiveUser
       parameters:
         - name: managedDevice-id
@@ -4202,7 +4149,6 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action playLostModeSound
-      description: Play lost mode sound
       operationId: deviceManagement.managedDevices_playLostModeSound
       parameters:
         - name: managedDevice-id
@@ -4236,7 +4182,6 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action rebootNow
-      description: Reboot device
       operationId: deviceManagement.managedDevices_rebootNow
       parameters:
         - name: managedDevice-id
@@ -4257,7 +4202,6 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action recoverPasscode
-      description: Recover passcode
       operationId: deviceManagement.managedDevices_recoverPasscode
       parameters:
         - name: managedDevice-id
@@ -4298,8 +4242,27 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action remoteLock
-      description: Remote lock
       operationId: deviceManagement.managedDevices_remoteLock
+      parameters:
+        - name: managedDevice-id
+          in: path
+          description: 'key: id of managedDevice'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: managedDevice
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/deviceManagement/managedDevices/{managedDevice-id}/microsoft.graph.removeDeviceFirmwareConfigurationInterfaceManagement':
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action removeDeviceFirmwareConfigurationInterfaceManagement
+      operationId: deviceManagement.managedDevices_removeDeviceFirmwareConfigurationInterfaceManagement
       parameters:
         - name: managedDevice-id
           in: path
@@ -4339,7 +4302,6 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action requestRemoteAssistance
-      description: Request remote assistance
       operationId: deviceManagement.managedDevices_requestRemoteAssistance
       parameters:
         - name: managedDevice-id
@@ -4360,7 +4322,6 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action resetPasscode
-      description: Reset passcode
       operationId: deviceManagement.managedDevices_resetPasscode
       parameters:
         - name: managedDevice-id
@@ -4447,7 +4408,6 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action retire
-      description: Retire a device
       operationId: deviceManagement.managedDevices_retire
       parameters:
         - name: managedDevice-id
@@ -4468,7 +4428,6 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action revokeAppleVppLicenses
-      description: Revoke all Apple Vpp licenses for a device
       operationId: deviceManagement.managedDevices_revokeAppleVppLicenses
       parameters:
         - name: managedDevice-id
@@ -4489,7 +4448,6 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action rotateBitLockerKeys
-      description: Rotate BitLockerKeys
       operationId: deviceManagement.managedDevices_rotateBitLockerKeys
       parameters:
         - name: managedDevice-id
@@ -4596,7 +4554,6 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action setDeviceName
-      description: Set device name of the device.
       operationId: deviceManagement.managedDevices_setDeviceName
       parameters:
         - name: managedDevice-id
@@ -4630,7 +4587,6 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action shutDown
-      description: Shut down device
       operationId: deviceManagement.managedDevices_shutDown
       parameters:
         - name: managedDevice-id
@@ -4671,7 +4627,6 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action triggerConfigurationManagerAction
-      description: Trigger action on ConfigurationManager client
       operationId: deviceManagement.managedDevices_triggerConfigurationManagerAction
       parameters:
         - name: managedDevice-id
@@ -4789,7 +4744,6 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action wipe
-      description: Wipe a device
       operationId: deviceManagement.managedDevices_wipe
       parameters:
         - name: managedDevice-id
@@ -5059,7 +5013,6 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action enableUnlicensedAdminstrators
-      description: 'Upon enabling, users assigned as administrators via Role Assignment Memberships will no longer require an assigned Intune license. You are limited to 350 unlicensed direct members for each AAD security group in a role assignment, but you can assign multiple AAD security groups to a role if you need to support more than 350 unlicensed administrators. Licensed administrators will continue to function as-is in that transitive memberships apply and are not subject to the 350 member limit.'
       operationId: deviceManagement_enableUnlicensedAdminstrators
       responses:
         '204':
@@ -5089,7 +5042,7 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
                 type: object
                 properties:
@@ -5436,7 +5389,6 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action sendTestMessage
-      description: Sends test message using the specified notificationMessageTemplate in the default locale
       operationId: deviceManagement.notificationMessageTemplates_sendTestMessage
       parameters:
         - name: notificationMessageTemplate-id
@@ -5497,7 +5449,6 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action beginOnboarding
-      description: A request to start onboarding.  Must be coupled with the appropriate TeamViewer account information
       operationId: deviceManagement.remoteAssistancePartners_beginOnboarding
       parameters:
         - name: remoteAssistancePartner-id
@@ -5518,7 +5469,6 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action disconnect
-      description: A request to remove the active TeamViewer connector
       operationId: deviceManagement.remoteAssistancePartners_disconnect
       parameters:
         - name: remoteAssistancePartner-id
@@ -5593,7 +5543,7 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
                 type: object
                 properties:
@@ -5665,7 +5615,7 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
                 type: object
                 properties:
@@ -5737,7 +5687,7 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
                 type: object
                 properties:
@@ -5809,7 +5759,7 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
                 type: object
                 properties:
@@ -5881,7 +5831,7 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
                 type: object
                 properties:
@@ -5947,7 +5897,7 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
                 type: object
                 properties:
@@ -6019,7 +5969,7 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
                 type: object
                 properties:
@@ -6091,7 +6041,7 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
                 type: object
                 properties:
@@ -6163,7 +6113,7 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
                 type: object
                 properties:
@@ -6235,7 +6185,7 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
                 type: object
                 properties:
@@ -6307,7 +6257,7 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
                 type: object
                 properties:
@@ -6379,7 +6329,7 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
                 type: object
                 properties:
@@ -6451,7 +6401,7 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
                 type: object
                 properties:
@@ -6523,7 +6473,7 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
                 type: object
                 properties:
@@ -6595,7 +6545,7 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
                 type: object
                 properties:
@@ -6667,7 +6617,7 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
                 type: object
                 properties:
@@ -6739,7 +6689,7 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
                 type: object
                 properties:
@@ -6811,7 +6761,7 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
                 type: object
                 properties:
@@ -6883,7 +6833,7 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
                 type: object
                 properties:
@@ -6955,7 +6905,7 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
                 type: object
                 properties:
@@ -7027,7 +6977,7 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
                 type: object
                 properties:
@@ -7099,7 +7049,7 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
                 type: object
                 properties:
@@ -7171,7 +7121,7 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
                 type: object
                 properties:
@@ -7243,7 +7193,7 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
                 type: object
                 properties:
@@ -7315,7 +7265,7 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
                 type: object
                 properties:
@@ -7387,7 +7337,7 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
                 type: object
                 properties:
@@ -7459,7 +7409,7 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
                 type: object
                 properties:
@@ -7531,7 +7481,7 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
                 type: object
                 properties:
@@ -7603,7 +7553,7 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
                 type: object
                 properties:
@@ -7675,7 +7625,7 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
                 type: object
                 properties:
@@ -7747,7 +7697,7 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
                 type: object
                 properties:
@@ -7816,7 +7766,7 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
                 type: object
                 properties:
@@ -7888,7 +7838,7 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
                 type: object
                 properties:
@@ -7960,7 +7910,7 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
                 type: object
                 properties:
@@ -8032,7 +7982,7 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
                 type: object
                 properties:
@@ -8101,7 +8051,7 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
                 type: object
                 properties:
@@ -8173,7 +8123,7 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
                 type: object
                 properties:
@@ -8245,7 +8195,7 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
                 type: object
                 properties:
@@ -8317,7 +8267,7 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
                 type: object
                 properties:
@@ -8389,7 +8339,7 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
                 type: object
                 properties:
@@ -8464,7 +8414,7 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
                 type: object
                 properties:
@@ -8536,7 +8486,7 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
                 type: object
                 properties:
@@ -8608,7 +8558,7 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
                 type: object
                 properties:
@@ -8680,7 +8630,7 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
                 type: object
                 properties:
@@ -8752,7 +8702,7 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
                 type: object
                 properties:
@@ -8824,7 +8774,7 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
                 type: object
                 properties:
@@ -8896,7 +8846,7 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
                 type: object
                 properties:
@@ -8968,7 +8918,7 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
                 type: object
                 properties:
@@ -9040,7 +8990,7 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
                 type: object
                 properties:
@@ -9112,7 +9062,7 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
                 type: object
                 properties:
@@ -9184,7 +9134,7 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
                 type: object
                 properties:
@@ -9256,7 +9206,7 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
                 type: object
                 properties:
@@ -9328,7 +9278,7 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
                 type: object
                 properties:
@@ -9400,7 +9350,79 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  /deviceManagement/reports/microsoft.graph.getZebraFotaDeploymentReport:
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action getZebraFotaDeploymentReport
+      operationId: deviceManagement.reports_getZebraFotaDeploymentReport
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  nullable: true
+                select:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                search:
+                  type: string
+                  nullable: true
+                groupBy:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                orderBy:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                skip:
+                  maximum: 2147483647
+                  minimum: -2147483648
+                  type: integer
+                  format: int32
+                top:
+                  maximum: 2147483647
+                  minimum: -2147483648
+                  type: integer
+                  format: int32
+                sessionId:
+                  maximum: 2147483647
+                  minimum: -2147483648
+                  type: integer
+                  format: int32
+                filter:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/octet-stream:
               schema:
                 type: object
                 properties:
@@ -10263,7 +10285,6 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action assignResourceAccountToDevice
-      description: Assigns resource account to Autopilot devices.
       operationId: deviceManagement.windowsAutopilotDeploymentProfiles.assignedDevices_assignResourceAccountToDevice
       parameters:
         - name: windowsAutopilotDeploymentProfile-id
@@ -10310,7 +10331,6 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action assignUserToDevice
-      description: Assigns user to Autopilot devices.
       operationId: deviceManagement.windowsAutopilotDeploymentProfiles.assignedDevices_assignUserToDevice
       parameters:
         - name: windowsAutopilotDeploymentProfile-id
@@ -10354,7 +10374,6 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action unassignResourceAccountFromDevice
-      description: Unassigns the resource account from an Autopilot device.
       operationId: deviceManagement.windowsAutopilotDeploymentProfiles.assignedDevices_unassignResourceAccountFromDevice
       parameters:
         - name: windowsAutopilotDeploymentProfile-id
@@ -10382,7 +10401,6 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action unassignUserFromDevice
-      description: Unassigns the user from an Autopilot device.
       operationId: deviceManagement.windowsAutopilotDeploymentProfiles.assignedDevices_unassignUserFromDevice
       parameters:
         - name: windowsAutopilotDeploymentProfile-id
@@ -10410,7 +10428,6 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action updateDeviceProperties
-      description: Updates properties on Autopilot devices.
       operationId: deviceManagement.windowsAutopilotDeploymentProfiles.assignedDevices_updateDeviceProperties
       parameters:
         - name: windowsAutopilotDeploymentProfile-id
@@ -10543,7 +10560,6 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action assignResourceAccountToDevice
-      description: Assigns resource account to Autopilot devices.
       operationId: deviceManagement.windowsAutopilotDeviceIdentities_assignResourceAccountToDevice
       parameters:
         - name: windowsAutopilotDeviceIdentity-id
@@ -10583,7 +10599,6 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action assignUserToDevice
-      description: Assigns user to Autopilot devices.
       operationId: deviceManagement.windowsAutopilotDeviceIdentities_assignUserToDevice
       parameters:
         - name: windowsAutopilotDeviceIdentity-id
@@ -10620,7 +10635,6 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action unassignResourceAccountFromDevice
-      description: Unassigns the resource account from an Autopilot device.
       operationId: deviceManagement.windowsAutopilotDeviceIdentities_unassignResourceAccountFromDevice
       parameters:
         - name: windowsAutopilotDeviceIdentity-id
@@ -10641,7 +10655,6 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action unassignUserFromDevice
-      description: Unassigns the user from an Autopilot device.
       operationId: deviceManagement.windowsAutopilotDeviceIdentities_unassignUserFromDevice
       parameters:
         - name: windowsAutopilotDeviceIdentity-id
@@ -10662,7 +10675,6 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action updateDeviceProperties
-      description: Updates properties on Autopilot devices.
       operationId: deviceManagement.windowsAutopilotDeviceIdentities_updateDeviceProperties
       parameters:
         - name: windowsAutopilotDeviceIdentity-id
@@ -10714,7 +10726,6 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action sync
-      description: 'Initiates a sync of all AutoPilot registered devices from Store for Business and other portals. If the sync successful, this action returns a 204 No Content response code. If a sync is already in progress, the action returns a 409 Conflict response code.  If this sync action is called within 10 minutes of the previous sync, the action returns a 429 Too Many Requests response code.'
       operationId: deviceManagement.windowsAutopilotSettings_sync
       responses:
         '204':
@@ -10807,7 +10818,6 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action syncInventory
-      description: Sync the driver inventory of a WindowsDriverUpdateProfile.
       operationId: deviceManagement.windowsDriverUpdateProfiles_syncInventory
       parameters:
         - name: windowsDriverUpdateProfile-id
@@ -11231,27 +11241,34 @@ components:
       properties:
         azureStorageAccountId:
           type: string
+          description: The resource ID of the Azure Storage account in which the Cloud PC snapshot is being saved.
           nullable: true
         azureStorageAccountName:
           type: string
+          description: The name of the Azure Storage account in which the Cloud PC snapshot is being saved.
           nullable: true
         inReview:
           type: boolean
+          description: True if the Cloud PC is set to in review by the administrator.
         restorePointDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: 'The specific date and time of the Cloud PC snapshot that was taken and saved automatically, when the Cloud PC is set to in review. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 appears as 2014-01-01T00:00:00Z.'
           format: date-time
           nullable: true
         reviewStartDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: 'The specific date and time when the Cloud PC was set to in review. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 appears as 2014-01-01T00:00:00Z.'
           format: date-time
           nullable: true
         subscriptionId:
           type: string
+          description: 'The ID of the Azure subscription in which the Cloud PC snapshot is being saved, in GUID format.'
           nullable: true
         subscriptionName:
           type: string
+          description: The name of the Azure subscription in which the Cloud PC snapshot is being saved.
           nullable: true
         userAccessLevel:
           $ref: '#/components/schemas/microsoft.graph.cloudPcUserAccessLevel'
@@ -11892,6 +11909,58 @@ components:
           additionalProperties:
             type: object
           description: Enrollment Configuration Assignment
+    microsoft.graph.deviceEnrollmentConfiguration:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: deviceEnrollmentConfiguration
+          type: object
+          properties:
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Created date time in UTC of the device enrollment configuration
+              format: date-time
+            description:
+              type: string
+              description: The description of the device enrollment configuration
+              nullable: true
+            deviceEnrollmentConfigurationType:
+              $ref: '#/components/schemas/microsoft.graph.deviceEnrollmentConfigurationType'
+            displayName:
+              type: string
+              description: The display name of the device enrollment configuration
+              nullable: true
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Last modified date time in UTC of the device enrollment configuration
+              format: date-time
+            priority:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              description: Priority is used when a user exists in multiple groups that are assigned enrollment configuration. Users are subject only to the configuration with the lowest priority value.
+              format: int32
+            roleScopeTagIds:
+              type: array
+              items:
+                type: string
+                nullable: true
+              description: Optional role scope tags for the enrollment restrictions.
+            version:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              description: The version of the device enrollment configuration
+              format: int32
+            assignments:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.enrollmentConfigurationAssignment'
+              description: The list of group assignments for the device configuration profile
+          additionalProperties:
+            type: object
+          description: The Base Class of Device Enrollment Configuration
     microsoft.graph.embeddedSIMActivationCodePoolAssignment:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -13370,6 +13439,67 @@ components:
           - value: trustedDevices
             description: 'Let apps access trusted devices. Added in Windows 10, version 1607.'
             name: trustedDevices
+    microsoft.graph.deviceEnrollmentConfigurationType:
+      title: deviceEnrollmentConfigurationType
+      enum:
+        - unknown
+        - limit
+        - platformRestrictions
+        - windowsHelloForBusiness
+        - defaultLimit
+        - defaultPlatformRestrictions
+        - defaultWindowsHelloForBusiness
+        - defaultWindows10EnrollmentCompletionPageConfiguration
+        - windows10EnrollmentCompletionPageConfiguration
+        - deviceComanagementAuthorityConfiguration
+        - singlePlatformRestriction
+        - unknownFutureValue
+        - enrollmentNotificationsConfiguration
+      type: string
+      description: Describes the TemplateFamily for the Template entity
+      x-ms-enum:
+        name: deviceEnrollmentConfigurationType
+        modelAsString: false
+        values:
+          - value: unknown
+            description: Default. Set to unknown if the configuration type cannot be determined.
+            name: unknown
+          - value: limit
+            description: Indicates that configuration is of type limit which refers to number of devices a user is allowed to enroll.
+            name: limit
+          - value: platformRestrictions
+            description: Indicates that configuration is of type platform restriction which refers to types of devices a user is allowed to enroll.
+            name: platformRestrictions
+          - value: windowsHelloForBusiness
+            description: Indicates that configuration is of type Windows Hello which refers to authentication method devices would use.
+            name: windowsHelloForBusiness
+          - value: defaultLimit
+            description: Indicates that configuration is of type default limit which refers to types of devices a user is allowed to enroll by default.
+            name: defaultLimit
+          - value: defaultPlatformRestrictions
+            description: Indicates that configuration is of type default platform restriction which refers to types of devices a user is allowed to enroll by default.
+            name: defaultPlatformRestrictions
+          - value: defaultWindowsHelloForBusiness
+            description: Indicates that configuration is of type default Windows Hello which refers to authentication method devices would use by default.
+            name: defaultWindowsHelloForBusiness
+          - value: defaultWindows10EnrollmentCompletionPageConfiguration
+            description: Indicates that configuration is of type default Enrollment status page which refers to startup page displayed during OOBE in Autopilot devices by default.
+            name: defaultWindows10EnrollmentCompletionPageConfiguration
+          - value: windows10EnrollmentCompletionPageConfiguration
+            description: Indicates that configuration is of type Enrollment status page which refers to startup page displayed during OOBE in Autopilot devices.
+            name: windows10EnrollmentCompletionPageConfiguration
+          - value: deviceComanagementAuthorityConfiguration
+            description: Indicates that configuration is of type Comanagement Authority which refers to policies applied to Co-Managed devices.
+            name: deviceComanagementAuthorityConfiguration
+          - value: singlePlatformRestriction
+            description: Indicates that configuration is of type single platform restriction which refers to types of devices a user is allowed to enroll.
+            name: singlePlatformRestriction
+          - value: unknownFutureValue
+            description: Unknown future value
+            name: unknownFutureValue
+          - value: enrollmentNotificationsConfiguration
+            description: Indicates that configuration is of type Enrollment Notification which refers to types of notification a user receives during enrollment.
+            name: enrollmentNotificationsConfiguration
     microsoft.graph.groupPolicyConfigurationType:
       title: groupPolicyConfigurationType
       enum:

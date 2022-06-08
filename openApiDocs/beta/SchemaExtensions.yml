@@ -10,8 +10,7 @@ paths:
     get:
       tags:
         - schemaExtensions.schemaExtension
-      summary: Get entities from schemaExtensions
-      description: Add custom data to groups using schema extensions
+      summary: List schemaExtensions
       operationId: schemaExtensions.schemaExtension_ListSchemaExtension
       parameters:
         - $ref: '#/components/parameters/top'
@@ -83,8 +82,7 @@ paths:
     post:
       tags:
         - schemaExtensions.schemaExtension
-      summary: Add new entity to schemaExtensions
-      description: Create schemaExtension
+      summary: Create schemaExtension
       operationId: schemaExtensions.schemaExtension_CreateSchemaExtension
       requestBody:
         description: New entity
@@ -185,8 +183,7 @@ paths:
     delete:
       tags:
         - schemaExtensions.schemaExtension
-      summary: Delete entity from schemaExtensions
-      description: Delete schemaExtension
+      summary: Delete schemaExtension
       operationId: schemaExtensions.schemaExtension_DeleteSchemaExtension
       parameters:
         - name: schemaExtension-id

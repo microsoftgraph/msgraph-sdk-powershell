@@ -262,6 +262,10 @@ directive:
       variant: ^(Get1|List1|GetViaIdentity1|Create1|CreateExpanded1|CreateViaIdentity|CreateViaIdentityExpanded|Update1|UpdateExpanded1|UpdateViaIdentity1|UpdateViaIdentityExpanded1|Delete1|DeleteViaIdentity1)$
     remove: true
   - where:
+      subject: (.*)Privileged(Access|AccessResource)RoleAssignmentRequest$
+      variant: ^(Update1|UpdateExpanded1|UpdateViaIdentity1|UpdateViaIdentityExpanded1)$
+    remove: true
+  - where:
       verb: Remove
       subject: (.*)(EntitlementManagement)Setting$
     remove: true
