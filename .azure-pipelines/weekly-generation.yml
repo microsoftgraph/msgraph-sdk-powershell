@@ -5,7 +5,7 @@ name: $(BuildDefinitionName)_$(SourceBranchName)_$(Date:yyyyMMdd)$(Rev:.r)
 
 parameters:
   - name: BuildAgent
-    default: MsGraphBuildAgentsWindowsPsSDK
+    default: 1es-windows-ps-compute
     displayName: Build Agent
 
 variables:
