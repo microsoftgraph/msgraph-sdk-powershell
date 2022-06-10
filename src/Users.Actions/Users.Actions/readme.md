@@ -39,20 +39,6 @@ subject-prefix: ''
 
 ``` yaml
 directive:
-# Modify generated .dictionary.cs model classes in Financials module.
-  - from: source-file-csharp
-    where: $
-    transform: >
-      if (!$documentPath.match(/generated%5Capi%5CModels%5C\w*\d*.dictionary.cs/gm))
-      {
-        return $;
-      } else {
-        // Rename additionalProperties indexer name in Users.Actions module from Item to EntityItem to avoid property name conflict.
-        // See https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/indexers/using-indexers
-        let indexerRegex = /^(\s*)(public\s*global::System\.Object\s*this\[global::System\.String\s*index\])/gm
-        $ = $.replace(indexerRegex, '$1[System.Runtime.CompilerServices.IndexerName("EntityItem")]\n$2')
-        return $;
-      }
 # Remove invalid paths.
   - remove-path-by-operation: .*exceptionOccurrences.*|users\.joinedTeams.*|users\.onenote\..*.parent.*|users.*\.calendarView.*|.*\.notebooks\.section.*|.*\.sectionGroups\.section.*|.*\.sections\.pages.*|users\.calendar\.events.*|users\.calendarGroups\.calendars.*|users\.calendars\.events.*|users\.events\.calendar\.events.*|users\.pendingAccessReviewInstances\.stages\.decisions.*|users\.pendingAccessReviewInstances(\.decisions|\.stages\.decisions)\.instance.*
 # Remove cmdlets.

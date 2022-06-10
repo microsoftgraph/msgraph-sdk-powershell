@@ -520,6 +520,11 @@ directive:
           $ = $.replace(directoryKeyRegex, '.Add(ToFirstCharacterLowerCase($1)')
         }
 
+        // Rename additionalProperties indexer name from Item to EntityItem to avoid property name conflict.
+        // See https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/indexers/using-indexers
+        let indexerRegex = /^(\s*)(public\s*global::System\.Object\s*this\[global::System\.String\s*index\])/gm
+        $ = $.replace(indexerRegex, '$1[System.Runtime.CompilerServices.IndexerName("EntityItem")]\n$2')
+        
         return $;
       }
 # Modify generated .PowerShell.cs model classes.
