@@ -59,9 +59,14 @@ directive:
       subject: $1WithAppFailure
   - where:
       verb: Get
-      subject: ^(.*ListItemActivity)$
+      subject: ^(.*(ListItem|DriveItem|Root|Site)Activity)$
     set:
       subject: $1ByInterval
+  - where:
+      verb: Get
+      subject: ^(UserChatMessage)$
+    set:
+      subject: All$1
 ```
 ### Versioning
 

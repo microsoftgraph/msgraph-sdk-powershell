@@ -63,7 +63,7 @@ directive:
       subject: $1ByDeviceTag
   - where:
       verb: Get
-      subject: ^(User)$
+      subject: ^(User|UserChatPermissionGrant|UserDevice|UserJoinedGroup)$
     set:
       subject: $1ById
   - where:

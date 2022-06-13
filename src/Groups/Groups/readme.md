@@ -69,13 +69,13 @@ directive:
   - where:
       verb: Get
       subject: ^GroupMember$
-      variant: ^Get$|^GetViaIdentity$|^List$|^Get3$|^GetViaIdentity3$|^List3$
+      variant: ^Get$|^GetViaIdentity$|^List$|^Get2$|^GetViaIdentity2$|^List3$
     set:
       subject: GroupMemberOf
   - where:
       verb: Get
       subject: ^GroupMember$
-      variant: ^Get2$|^GetViaIdentity2$|^List2$|^Get5$|^GetViaIdentity5$|^List5$
+      variant: ^Get1$|^GetViaIdentity1$|^List2$|^Get3$|^GetViaIdentity3$|^List5$
     set:
       subject: GroupMemberWithLicenseError
   - where:
@@ -131,9 +131,15 @@ directive:
       subject: $1Content
   - where:
       verb: Get
-      subject: ^(.*ListItemActivity)$
+      subject: ^(.*(ListItem|DriveItem|Root|Site)Activity)$
     set:
       subject: $1ByInterval
+  - where:
+      verb: Get
+      subject: (^GroupSite$)
+      variant: ^Get$|^GetViaIdentity$|^Get1$|^GetViaIdentity1$
+    set:
+      subject: $1ByPath
 # Alias then rename cmdlets to avoid breaking change.
   - where:
       subject: ^(Group)(CreatedOnBehalf)$
