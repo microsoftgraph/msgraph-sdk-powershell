@@ -116,12 +116,12 @@
         /// happens on that response. Implement this method in a partial class to enable this behavior
         /// </summary>
         /// <param name="responseMessage">the raw response message as an global::System.Net.Http.HttpResponseMessage.</param>
-        /// <param name="response">the body result as a <see cref="Models.IOdataError" /> from the remote
+        /// <param name="response">the body result as a <see cref="Models.IMicrosoftGraphODataErrorsOdataError" /> from the remote
         /// call</param>
         /// <param name="returnNow">/// Determines if the rest of the onDefault method should be processed, or if the method should
         /// return immediately (set to true to skip further processing )</param>
 
-        partial void overrideOnDefault(System.Net.Http.HttpResponseMessage responseMessage, System.Threading.Tasks.Task<Models.IOdataError> response, ref System.Threading.Tasks.Task<bool> returnNow);
+        partial void overrideOnDefault(System.Net.Http.HttpResponseMessage responseMessage, System.Threading.Tasks.Task<Models.IMicrosoftGraphODataErrorsOdataError> response, ref System.Threading.Tasks.Task<bool> returnNow);
 
         /// <summary>
         /// (overrides the default BeginProcessing method in global::System.Management.Automation.PSCmdlet)
@@ -316,12 +316,12 @@
         /// a delegate that is called when the remote service returns default (any response code not handled elsewhere).
         /// </summary>
         /// <param name="responseMessage">the raw response message as an global::System.Net.Http.HttpResponseMessage.</param>
-        /// <param name="response">the body result as a <see cref="Models.IOdataError" /> from the remote
+        /// <param name="response">the body result as a <see cref="Models.IMicrosoftGraphODataErrorsOdataError" /> from the remote
         /// call</param>
         /// <returns>
         /// A <see cref="System.Threading.Tasks.Task" /> that will be complete when handling of the method is completed.
         /// </returns>
-        private async System.Threading.Tasks.Task onDefault(System.Net.Http.HttpResponseMessage responseMessage, System.Threading.Tasks.Task<Models.IOdataError> response)
+        private async System.Threading.Tasks.Task onDefault(System.Net.Http.HttpResponseMessage responseMessage, System.Threading.Tasks.Task<Models.IMicrosoftGraphODataErrorsOdataError> response)
         {
             using (NoSynchronizationContext)
             {
@@ -338,7 +338,7 @@
                 if ((null == code || null == message))
                 {
                     // Unrecognized Response. Create an error record based on what we have.
-                    var ex = new Runtime.RestException<Models.IOdataError>(responseMessage, await response);
+                    var ex = new Runtime.RestException<Models.IMicrosoftGraphODataErrorsOdataError>(responseMessage, await response);
                     WriteError(new System.Management.Automation.ErrorRecord(ex, ex.Code, System.Management.Automation.ErrorCategory.InvalidOperation, new { body = BodyParameterBody })
                     {
                         ErrorDetails = new System.Management.Automation.ErrorDetails(ex.Message) { RecommendedAction = ex.Action }

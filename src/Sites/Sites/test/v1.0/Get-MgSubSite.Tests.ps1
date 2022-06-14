@@ -28,7 +28,7 @@ Describe 'Get-MgSubSite' {
 
             $SiteId = "root"
             $SubSites = Get-MgSubSite -SiteId $SiteId
-            $SubSites | Should -BeOfType -ExpectedType 'Microsoft.Graph.PowerShell.Models.MicrosoftGraphSite1'
+            $SubSites | Should -BeOfType -ExpectedType 'Microsoft.Graph.PowerShell.Models.MicrosoftGraphSite'
             $SubSites | Should -HaveCount 2
             $SubSites.AdditionalProperties | Should -HaveCount 2
         }
