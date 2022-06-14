@@ -44,7 +44,7 @@ directive:
   - where:
       verb: Get
       subject: ^(User)(Calendar)$
-      variant: Get1|Get3|GetViaIdentity1|GetViaIdentity3
+      variant: ^Get$|^Get2$|^GetViaIdentity$|^GetViaIdentity2$
     set:
       subject: $1Default$2
 

@@ -11,7 +11,6 @@ paths:
       tags:
         - deviceManagement.applePushNotificationCertificate
       summary: Get applePushNotificationCertificate from deviceManagement
-      description: Apple push notification certificate.
       operationId: deviceManagement_GetApplePushNotificationCertificate
       parameters:
         - name: $select
@@ -51,6 +50,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.applePushNotificationCertificate'
+          links:
+            downloadApplePushNotificationCertificateSigningRequest:
+              operationId: deviceManagement.applePushNotificationCertificate.downloadApplePushNotificationCertificateSigningRequest
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -58,7 +60,6 @@ paths:
       tags:
         - deviceManagement.applePushNotificationCertificate
       summary: Update the navigation property applePushNotificationCertificate in deviceManagement
-      description: Apple push notification certificate.
       operationId: deviceManagement_UpdateApplePushNotificationCertificate
       requestBody:
         description: New navigation property values
@@ -77,7 +78,6 @@ paths:
       tags:
         - deviceManagement.applePushNotificationCertificate
       summary: Delete navigation property applePushNotificationCertificate for deviceManagement
-      description: Apple push notification certificate.
       operationId: deviceManagement_DeleteApplePushNotificationCertificate
       parameters:
         - name: If-Match
@@ -96,7 +96,6 @@ paths:
       tags:
         - deviceManagement.complianceManagementPartner
       summary: Get complianceManagementPartners from deviceManagement
-      description: The list of Compliance Management Partners configured by the tenant.
       operationId: deviceManagement_ListComplianceManagementPartners
       parameters:
         - $ref: '#/components/parameters/top'
@@ -170,21 +169,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of complianceManagementPartner
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.complianceManagementPartner'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.complianceManagementPartnerCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -195,7 +180,6 @@ paths:
       tags:
         - deviceManagement.complianceManagementPartner
       summary: Create new navigation property to complianceManagementPartners for deviceManagement
-      description: The list of Compliance Management Partners configured by the tenant.
       operationId: deviceManagement_CreateComplianceManagementPartners
       requestBody:
         description: New navigation property
@@ -219,7 +203,6 @@ paths:
       tags:
         - deviceManagement.complianceManagementPartner
       summary: Get complianceManagementPartners from deviceManagement
-      description: The list of Compliance Management Partners configured by the tenant.
       operationId: deviceManagement_GetComplianceManagementPartners
       parameters:
         - name: complianceManagementPartner-id
@@ -276,7 +259,6 @@ paths:
       tags:
         - deviceManagement.complianceManagementPartner
       summary: Update the navigation property complianceManagementPartners in deviceManagement
-      description: The list of Compliance Management Partners configured by the tenant.
       operationId: deviceManagement_UpdateComplianceManagementPartners
       parameters:
         - name: complianceManagementPartner-id
@@ -303,7 +285,6 @@ paths:
       tags:
         - deviceManagement.complianceManagementPartner
       summary: Delete navigation property complianceManagementPartners for deviceManagement
-      description: The list of Compliance Management Partners configured by the tenant.
       operationId: deviceManagement_DeleteComplianceManagementPartners
       parameters:
         - name: complianceManagementPartner-id
@@ -329,7 +310,6 @@ paths:
       tags:
         - deviceManagement.deviceManagementPartner
       summary: Get deviceManagementPartners from deviceManagement
-      description: The list of Device Management Partners configured by the tenant.
       operationId: deviceManagement_ListDeviceManagementPartners
       parameters:
         - $ref: '#/components/parameters/top'
@@ -400,21 +380,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of deviceManagementPartner
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.deviceManagementPartner'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.deviceManagementPartnerCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -425,7 +391,6 @@ paths:
       tags:
         - deviceManagement.deviceManagementPartner
       summary: Create new navigation property to deviceManagementPartners for deviceManagement
-      description: The list of Device Management Partners configured by the tenant.
       operationId: deviceManagement_CreateDeviceManagementPartners
       requestBody:
         description: New navigation property
@@ -449,7 +414,6 @@ paths:
       tags:
         - deviceManagement.deviceManagementPartner
       summary: Get deviceManagementPartners from deviceManagement
-      description: The list of Device Management Partners configured by the tenant.
       operationId: deviceManagement_GetDeviceManagementPartners
       parameters:
         - name: deviceManagementPartner-id
@@ -505,7 +469,6 @@ paths:
       tags:
         - deviceManagement.deviceManagementPartner
       summary: Update the navigation property deviceManagementPartners in deviceManagement
-      description: The list of Device Management Partners configured by the tenant.
       operationId: deviceManagement_UpdateDeviceManagementPartners
       parameters:
         - name: deviceManagementPartner-id
@@ -532,7 +495,6 @@ paths:
       tags:
         - deviceManagement.deviceManagementPartner
       summary: Delete navigation property deviceManagementPartners for deviceManagement
-      description: The list of Device Management Partners configured by the tenant.
       operationId: deviceManagement_DeleteDeviceManagementPartners
       parameters:
         - name: deviceManagementPartner-id
@@ -558,7 +520,6 @@ paths:
       tags:
         - deviceManagement.deviceManagementExchangeConnector
       summary: Get exchangeConnectors from deviceManagement
-      description: The list of Exchange Connectors configured by the tenant.
       operationId: deviceManagement_ListExchangeConnectors
       parameters:
         - $ref: '#/components/parameters/top'
@@ -632,21 +593,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of deviceManagementExchangeConnector
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.deviceManagementExchangeConnector'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.deviceManagementExchangeConnectorCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -657,7 +604,6 @@ paths:
       tags:
         - deviceManagement.deviceManagementExchangeConnector
       summary: Create new navigation property to exchangeConnectors for deviceManagement
-      description: The list of Exchange Connectors configured by the tenant.
       operationId: deviceManagement_CreateExchangeConnectors
       requestBody:
         description: New navigation property
@@ -681,7 +627,6 @@ paths:
       tags:
         - deviceManagement.deviceManagementExchangeConnector
       summary: Get exchangeConnectors from deviceManagement
-      description: The list of Exchange Connectors configured by the tenant.
       operationId: deviceManagement_GetExchangeConnectors
       parameters:
         - name: deviceManagementExchangeConnector-id
@@ -731,6 +676,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.deviceManagementExchangeConnector'
+          links:
+            sync:
+              operationId: deviceManagement.exchangeConnectors.deviceManagementExchangeConnector.sync
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -738,7 +686,6 @@ paths:
       tags:
         - deviceManagement.deviceManagementExchangeConnector
       summary: Update the navigation property exchangeConnectors in deviceManagement
-      description: The list of Exchange Connectors configured by the tenant.
       operationId: deviceManagement_UpdateExchangeConnectors
       parameters:
         - name: deviceManagementExchangeConnector-id
@@ -765,7 +712,6 @@ paths:
       tags:
         - deviceManagement.deviceManagementExchangeConnector
       summary: Delete navigation property exchangeConnectors for deviceManagement
-      description: The list of Exchange Connectors configured by the tenant.
       operationId: deviceManagement_DeleteExchangeConnectors
       parameters:
         - name: deviceManagementExchangeConnector-id
@@ -791,7 +737,6 @@ paths:
       tags:
         - deviceManagement.iosUpdateDeviceStatus
       summary: Get iosUpdateStatuses from deviceManagement
-      description: The IOS software update installation statuses for this account.
       operationId: deviceManagement_ListIosUpdateStatuses
       parameters:
         - $ref: '#/components/parameters/top'
@@ -871,21 +816,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of iosUpdateDeviceStatus
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.iosUpdateDeviceStatus'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.iosUpdateDeviceStatusCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -896,7 +827,6 @@ paths:
       tags:
         - deviceManagement.iosUpdateDeviceStatus
       summary: Create new navigation property to iosUpdateStatuses for deviceManagement
-      description: The IOS software update installation statuses for this account.
       operationId: deviceManagement_CreateIosUpdateStatuses
       requestBody:
         description: New navigation property
@@ -920,7 +850,6 @@ paths:
       tags:
         - deviceManagement.iosUpdateDeviceStatus
       summary: Get iosUpdateStatuses from deviceManagement
-      description: The IOS software update installation statuses for this account.
       operationId: deviceManagement_GetIosUpdateStatuses
       parameters:
         - name: iosUpdateDeviceStatus-id
@@ -979,7 +908,6 @@ paths:
       tags:
         - deviceManagement.iosUpdateDeviceStatus
       summary: Update the navigation property iosUpdateStatuses in deviceManagement
-      description: The IOS software update installation statuses for this account.
       operationId: deviceManagement_UpdateIosUpdateStatuses
       parameters:
         - name: iosUpdateDeviceStatus-id
@@ -1006,7 +934,6 @@ paths:
       tags:
         - deviceManagement.iosUpdateDeviceStatus
       summary: Delete navigation property iosUpdateStatuses for deviceManagement
-      description: The IOS software update installation statuses for this account.
       operationId: deviceManagement_DeleteIosUpdateStatuses
       parameters:
         - name: iosUpdateDeviceStatus-id
@@ -1032,7 +959,6 @@ paths:
       tags:
         - deviceManagement.mobileThreatDefenseConnector
       summary: Get mobileThreatDefenseConnectors from deviceManagement
-      description: The list of Mobile threat Defense connectors configured by the tenant.
       operationId: deviceManagement_ListMobileThreatDefenseConnectors
       parameters:
         - $ref: '#/components/parameters/top'
@@ -1103,21 +1029,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of mobileThreatDefenseConnector
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.mobileThreatDefenseConnector'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.mobileThreatDefenseConnectorCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -1128,7 +1040,6 @@ paths:
       tags:
         - deviceManagement.mobileThreatDefenseConnector
       summary: Create new navigation property to mobileThreatDefenseConnectors for deviceManagement
-      description: The list of Mobile threat Defense connectors configured by the tenant.
       operationId: deviceManagement_CreateMobileThreatDefenseConnectors
       requestBody:
         description: New navigation property
@@ -1152,7 +1063,6 @@ paths:
       tags:
         - deviceManagement.mobileThreatDefenseConnector
       summary: Get mobileThreatDefenseConnectors from deviceManagement
-      description: The list of Mobile threat Defense connectors configured by the tenant.
       operationId: deviceManagement_GetMobileThreatDefenseConnectors
       parameters:
         - name: mobileThreatDefenseConnector-id
@@ -1208,7 +1118,6 @@ paths:
       tags:
         - deviceManagement.mobileThreatDefenseConnector
       summary: Update the navigation property mobileThreatDefenseConnectors in deviceManagement
-      description: The list of Mobile threat Defense connectors configured by the tenant.
       operationId: deviceManagement_UpdateMobileThreatDefenseConnectors
       parameters:
         - name: mobileThreatDefenseConnector-id
@@ -1235,7 +1144,6 @@ paths:
       tags:
         - deviceManagement.mobileThreatDefenseConnector
       summary: Delete navigation property mobileThreatDefenseConnectors for deviceManagement
-      description: The list of Mobile threat Defense connectors configured by the tenant.
       operationId: deviceManagement_DeleteMobileThreatDefenseConnectors
       parameters:
         - name: mobileThreatDefenseConnector-id
@@ -1261,7 +1169,6 @@ paths:
       tags:
         - deviceManagement.remoteAssistancePartner
       summary: Get remoteAssistancePartners from deviceManagement
-      description: The remote assist partners.
       operationId: deviceManagement_ListRemoteAssistancePartners
       parameters:
         - $ref: '#/components/parameters/top'
@@ -1320,21 +1227,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of remoteAssistancePartner
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.remoteAssistancePartner'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.remoteAssistancePartnerCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -1345,7 +1238,6 @@ paths:
       tags:
         - deviceManagement.remoteAssistancePartner
       summary: Create new navigation property to remoteAssistancePartners for deviceManagement
-      description: The remote assist partners.
       operationId: deviceManagement_CreateRemoteAssistancePartners
       requestBody:
         description: New navigation property
@@ -1369,7 +1261,6 @@ paths:
       tags:
         - deviceManagement.remoteAssistancePartner
       summary: Get remoteAssistancePartners from deviceManagement
-      description: The remote assist partners.
       operationId: deviceManagement_GetRemoteAssistancePartners
       parameters:
         - name: remoteAssistancePartner-id
@@ -1414,6 +1305,11 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.remoteAssistancePartner'
+          links:
+            beginOnboarding:
+              operationId: deviceManagement.remoteAssistancePartners.remoteAssistancePartner.beginOnboarding
+            disconnect:
+              operationId: deviceManagement.remoteAssistancePartners.remoteAssistancePartner.disconnect
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1421,7 +1317,6 @@ paths:
       tags:
         - deviceManagement.remoteAssistancePartner
       summary: Update the navigation property remoteAssistancePartners in deviceManagement
-      description: The remote assist partners.
       operationId: deviceManagement_UpdateRemoteAssistancePartners
       parameters:
         - name: remoteAssistancePartner-id
@@ -1448,7 +1343,6 @@ paths:
       tags:
         - deviceManagement.remoteAssistancePartner
       summary: Delete navigation property remoteAssistancePartners for deviceManagement
-      description: The remote assist partners.
       operationId: deviceManagement_DeleteRemoteAssistancePartners
       parameters:
         - name: remoteAssistancePartner-id
@@ -1474,7 +1368,6 @@ paths:
       tags:
         - deviceManagement.resourceOperation
       summary: Get resourceOperations from deviceManagement
-      description: The Resource Operations.
       operationId: deviceManagement_ListResourceOperations
       parameters:
         - $ref: '#/components/parameters/top'
@@ -1530,21 +1423,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of resourceOperation
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.resourceOperation'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.resourceOperationCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -1555,7 +1434,6 @@ paths:
       tags:
         - deviceManagement.resourceOperation
       summary: Create new navigation property to resourceOperations for deviceManagement
-      description: The Resource Operations.
       operationId: deviceManagement_CreateResourceOperations
       requestBody:
         description: New navigation property
@@ -1579,7 +1457,6 @@ paths:
       tags:
         - deviceManagement.resourceOperation
       summary: Get resourceOperations from deviceManagement
-      description: The Resource Operations.
       operationId: deviceManagement_GetResourceOperations
       parameters:
         - name: resourceOperation-id
@@ -1630,7 +1507,6 @@ paths:
       tags:
         - deviceManagement.resourceOperation
       summary: Update the navigation property resourceOperations in deviceManagement
-      description: The Resource Operations.
       operationId: deviceManagement_UpdateResourceOperations
       parameters:
         - name: resourceOperation-id
@@ -1657,7 +1533,6 @@ paths:
       tags:
         - deviceManagement.resourceOperation
       summary: Delete navigation property resourceOperations for deviceManagement
-      description: The Resource Operations.
       operationId: deviceManagement_DeleteResourceOperations
       parameters:
         - name: resourceOperation-id
@@ -1683,7 +1558,6 @@ paths:
       tags:
         - deviceManagement.deviceAndAppManagementRoleAssignment
       summary: Get roleAssignments from deviceManagement
-      description: The Role Assignments.
       operationId: deviceManagement_ListRoleAssignments
       parameters:
         - $ref: '#/components/parameters/top'
@@ -1744,21 +1618,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of deviceAndAppManagementRoleAssignment
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.deviceAndAppManagementRoleAssignment'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.deviceAndAppManagementRoleAssignmentCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -1769,7 +1629,6 @@ paths:
       tags:
         - deviceManagement.deviceAndAppManagementRoleAssignment
       summary: Create new navigation property to roleAssignments for deviceManagement
-      description: The Role Assignments.
       operationId: deviceManagement_CreateRoleAssignments
       requestBody:
         description: New navigation property
@@ -1793,7 +1652,6 @@ paths:
       tags:
         - deviceManagement.deviceAndAppManagementRoleAssignment
       summary: Get roleAssignments from deviceManagement
-      description: The Role Assignments.
       operationId: deviceManagement_GetRoleAssignments
       parameters:
         - name: deviceAndAppManagementRoleAssignment-id
@@ -1852,7 +1710,6 @@ paths:
       tags:
         - deviceManagement.deviceAndAppManagementRoleAssignment
       summary: Update the navigation property roleAssignments in deviceManagement
-      description: The Role Assignments.
       operationId: deviceManagement_UpdateRoleAssignments
       parameters:
         - name: deviceAndAppManagementRoleAssignment-id
@@ -1879,7 +1736,6 @@ paths:
       tags:
         - deviceManagement.deviceAndAppManagementRoleAssignment
       summary: Delete navigation property roleAssignments for deviceManagement
-      description: The Role Assignments.
       operationId: deviceManagement_DeleteRoleAssignments
       parameters:
         - name: deviceAndAppManagementRoleAssignment-id
@@ -1905,7 +1761,6 @@ paths:
       tags:
         - deviceManagement.roleDefinition
       summary: Get roleDefinitions from deviceManagement
-      description: The Role Definitions.
       operationId: deviceManagement_ListRoleDefinitions
       parameters:
         - $ref: '#/components/parameters/top'
@@ -1966,21 +1821,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of roleDefinition
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.roleDefinition'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.roleDefinitionCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -1991,7 +1832,6 @@ paths:
       tags:
         - deviceManagement.roleDefinition
       summary: Create new navigation property to roleDefinitions for deviceManagement
-      description: The Role Definitions.
       operationId: deviceManagement_CreateRoleDefinitions
       requestBody:
         description: New navigation property
@@ -2015,7 +1855,6 @@ paths:
       tags:
         - deviceManagement.roleDefinition
       summary: Get roleDefinitions from deviceManagement
-      description: The Role Definitions.
       operationId: deviceManagement_GetRoleDefinitions
       parameters:
         - name: roleDefinition-id
@@ -2074,7 +1913,6 @@ paths:
       tags:
         - deviceManagement.roleDefinition
       summary: Update the navigation property roleDefinitions in deviceManagement
-      description: The Role Definitions.
       operationId: deviceManagement_UpdateRoleDefinitions
       parameters:
         - name: roleDefinition-id
@@ -2101,7 +1939,6 @@ paths:
       tags:
         - deviceManagement.roleDefinition
       summary: Delete navigation property roleDefinitions for deviceManagement
-      description: The Role Definitions.
       operationId: deviceManagement_DeleteRoleDefinitions
       parameters:
         - name: roleDefinition-id
@@ -2127,7 +1964,6 @@ paths:
       tags:
         - deviceManagement.roleDefinition
       summary: Get roleAssignments from deviceManagement
-      description: List of Role assignments for this role definition.
       operationId: deviceManagement.roleDefinitions_ListRoleAssignments
       parameters:
         - name: roleDefinition-id
@@ -2192,21 +2028,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of roleAssignment
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.roleAssignment'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.roleAssignmentCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -2217,7 +2039,6 @@ paths:
       tags:
         - deviceManagement.roleDefinition
       summary: Create new navigation property to roleAssignments for deviceManagement
-      description: List of Role assignments for this role definition.
       operationId: deviceManagement.roleDefinitions_CreateRoleAssignments
       parameters:
         - name: roleDefinition-id
@@ -2249,7 +2070,6 @@ paths:
       tags:
         - deviceManagement.roleDefinition
       summary: Get roleAssignments from deviceManagement
-      description: List of Role assignments for this role definition.
       operationId: deviceManagement.roleDefinitions_GetRoleAssignments
       parameters:
         - name: roleDefinition-id
@@ -2315,7 +2135,6 @@ paths:
       tags:
         - deviceManagement.roleDefinition
       summary: Update the navigation property roleAssignments in deviceManagement
-      description: List of Role assignments for this role definition.
       operationId: deviceManagement.roleDefinitions_UpdateRoleAssignments
       parameters:
         - name: roleDefinition-id
@@ -2349,7 +2168,6 @@ paths:
       tags:
         - deviceManagement.roleDefinition
       summary: Delete navigation property roleAssignments for deviceManagement
-      description: List of Role assignments for this role definition.
       operationId: deviceManagement.roleDefinitions_DeleteRoleAssignments
       parameters:
         - name: roleDefinition-id
@@ -2382,7 +2200,6 @@ paths:
       tags:
         - deviceManagement.roleDefinition
       summary: Get roleDefinition from deviceManagement
-      description: Role definition this assignment is part of.
       operationId: deviceManagement.roleDefinitions.roleAssignments_GetRoleDefinition
       parameters:
         - name: roleDefinition-id
@@ -2445,118 +2262,11 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-  '/deviceManagement/roleDefinitions/{roleDefinition-id}/roleAssignments/{roleAssignment-id}/roleDefinition/$ref':
-    get:
-      tags:
-        - deviceManagement.roleDefinition
-      summary: Get ref of roleDefinition from deviceManagement
-      description: Role definition this assignment is part of.
-      operationId: deviceManagement.roleDefinitions.roleAssignments_GetGraphRefRoleDefinition
-      parameters:
-        - name: roleDefinition-id
-          in: path
-          description: 'key: id of roleDefinition'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: roleDefinition
-        - name: roleAssignment-id
-          in: path
-          description: 'key: id of roleAssignment'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: roleAssignment
-      responses:
-        '200':
-          description: Retrieved navigation property link
-          content:
-            application/json:
-              schema:
-                type: string
-          links:
-            roleAssignments:
-              operationId: deviceManagement.roleDefinitions.roleAssignments.RoleDefinition.ListRoleAssignments
-              parameters:
-                roleDefinition-id: $request.path.roleDefinition-id
-                roleAssignment-id: $request.path.roleAssignment-id
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    put:
-      tags:
-        - deviceManagement.roleDefinition
-      summary: Update the ref of navigation property roleDefinition in deviceManagement
-      description: Role definition this assignment is part of.
-      operationId: deviceManagement.roleDefinitions.roleAssignments_SetGraphRefRoleDefinition
-      parameters:
-        - name: roleDefinition-id
-          in: path
-          description: 'key: id of roleDefinition'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: roleDefinition
-        - name: roleAssignment-id
-          in: path
-          description: 'key: id of roleAssignment'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: roleAssignment
-      requestBody:
-        description: New navigation property ref values
-        content:
-          application/json:
-            schema:
-              type: object
-              additionalProperties:
-                type: object
-        required: true
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - deviceManagement.roleDefinition
-      summary: Delete ref of navigation property roleDefinition for deviceManagement
-      description: Role definition this assignment is part of.
-      operationId: deviceManagement.roleDefinitions.roleAssignments_DeleteGraphRefRoleDefinition
-      parameters:
-        - name: roleDefinition-id
-          in: path
-          description: 'key: id of roleDefinition'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: roleDefinition
-        - name: roleAssignment-id
-          in: path
-          description: 'key: id of roleAssignment'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: roleAssignment
-        - name: If-Match
-          in: header
-          description: ETag
-          schema:
-            type: string
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   /deviceManagement/telecomExpenseManagementPartners:
     get:
       tags:
         - deviceManagement.telecomExpenseManagementPartner
       summary: Get telecomExpenseManagementPartners from deviceManagement
-      description: The telecom expense management partners.
       operationId: deviceManagement_ListTelecomExpenseManagementPartners
       parameters:
         - $ref: '#/components/parameters/top'
@@ -2618,21 +2328,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of telecomExpenseManagementPartner
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.telecomExpenseManagementPartner'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.telecomExpenseManagementPartnerCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -2643,7 +2339,6 @@ paths:
       tags:
         - deviceManagement.telecomExpenseManagementPartner
       summary: Create new navigation property to telecomExpenseManagementPartners for deviceManagement
-      description: The telecom expense management partners.
       operationId: deviceManagement_CreateTelecomExpenseManagementPartners
       requestBody:
         description: New navigation property
@@ -2667,7 +2362,6 @@ paths:
       tags:
         - deviceManagement.telecomExpenseManagementPartner
       summary: Get telecomExpenseManagementPartners from deviceManagement
-      description: The telecom expense management partners.
       operationId: deviceManagement_GetTelecomExpenseManagementPartners
       parameters:
         - name: telecomExpenseManagementPartner-id
@@ -2720,7 +2414,6 @@ paths:
       tags:
         - deviceManagement.telecomExpenseManagementPartner
       summary: Update the navigation property telecomExpenseManagementPartners in deviceManagement
-      description: The telecom expense management partners.
       operationId: deviceManagement_UpdateTelecomExpenseManagementPartners
       parameters:
         - name: telecomExpenseManagementPartner-id
@@ -2747,7 +2440,6 @@ paths:
       tags:
         - deviceManagement.telecomExpenseManagementPartner
       summary: Delete navigation property telecomExpenseManagementPartners for deviceManagement
-      description: The telecom expense management partners.
       operationId: deviceManagement_DeleteTelecomExpenseManagementPartners
       parameters:
         - name: telecomExpenseManagementPartner-id
@@ -2773,7 +2465,6 @@ paths:
       tags:
         - deviceManagement.termsAndConditions
       summary: Get termsAndConditions from deviceManagement
-      description: The terms and conditions associated with device management of the company.
       operationId: deviceManagement_ListTermsAndConditions
       parameters:
         - $ref: '#/components/parameters/top'
@@ -2848,21 +2539,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of termsAndConditions
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.termsAndConditions'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.termsAndConditionsCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -2873,7 +2550,6 @@ paths:
       tags:
         - deviceManagement.termsAndConditions
       summary: Create new navigation property to termsAndConditions for deviceManagement
-      description: The terms and conditions associated with device management of the company.
       operationId: deviceManagement_CreateTermsAndConditions
       requestBody:
         description: New navigation property
@@ -2897,7 +2573,6 @@ paths:
       tags:
         - deviceManagement.termsAndConditions
       summary: Get termsAndConditions from deviceManagement
-      description: The terms and conditions associated with device management of the company.
       operationId: deviceManagement_GetTermsAndConditions
       parameters:
         - name: termsAndConditions-id
@@ -2966,7 +2641,6 @@ paths:
       tags:
         - deviceManagement.termsAndConditions
       summary: Update the navigation property termsAndConditions in deviceManagement
-      description: The terms and conditions associated with device management of the company.
       operationId: deviceManagement_UpdateTermsAndConditions
       parameters:
         - name: termsAndConditions-id
@@ -2993,7 +2667,6 @@ paths:
       tags:
         - deviceManagement.termsAndConditions
       summary: Delete navigation property termsAndConditions for deviceManagement
-      description: The terms and conditions associated with device management of the company.
       operationId: deviceManagement_DeleteTermsAndConditions
       parameters:
         - name: termsAndConditions-id
@@ -3019,7 +2692,6 @@ paths:
       tags:
         - deviceManagement.termsAndConditions
       summary: Get acceptanceStatuses from deviceManagement
-      description: The list of acceptance statuses for this T&C policy.
       operationId: deviceManagement.termsAndConditions_ListAcceptanceStatuses
       parameters:
         - name: termsAndConditions-id
@@ -3087,21 +2759,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of termsAndConditionsAcceptanceStatus
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.termsAndConditionsAcceptanceStatus'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.termsAndConditionsAcceptanceStatusCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -3112,7 +2770,6 @@ paths:
       tags:
         - deviceManagement.termsAndConditions
       summary: Create new navigation property to acceptanceStatuses for deviceManagement
-      description: The list of acceptance statuses for this T&C policy.
       operationId: deviceManagement.termsAndConditions_CreateAcceptanceStatuses
       parameters:
         - name: termsAndConditions-id
@@ -3144,7 +2801,6 @@ paths:
       tags:
         - deviceManagement.termsAndConditions
       summary: Get acceptanceStatuses from deviceManagement
-      description: The list of acceptance statuses for this T&C policy.
       operationId: deviceManagement.termsAndConditions_GetAcceptanceStatuses
       parameters:
         - name: termsAndConditions-id
@@ -3211,7 +2867,6 @@ paths:
       tags:
         - deviceManagement.termsAndConditions
       summary: Update the navigation property acceptanceStatuses in deviceManagement
-      description: The list of acceptance statuses for this T&C policy.
       operationId: deviceManagement.termsAndConditions_UpdateAcceptanceStatuses
       parameters:
         - name: termsAndConditions-id
@@ -3245,7 +2900,6 @@ paths:
       tags:
         - deviceManagement.termsAndConditions
       summary: Delete navigation property acceptanceStatuses for deviceManagement
-      description: The list of acceptance statuses for this T&C policy.
       operationId: deviceManagement.termsAndConditions_DeleteAcceptanceStatuses
       parameters:
         - name: termsAndConditions-id
@@ -3278,7 +2932,6 @@ paths:
       tags:
         - deviceManagement.termsAndConditions
       summary: Get termsAndConditions from deviceManagement
-      description: Navigation link to the terms and conditions that are assigned.
       operationId: deviceManagement.termsAndConditions.acceptanceStatuses_GetTermsAndConditions
       parameters:
         - name: termsAndConditions-id
@@ -3352,123 +3005,11 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-  '/deviceManagement/termsAndConditions/{termsAndConditions-id}/acceptanceStatuses/{termsAndConditionsAcceptanceStatus-id}/termsAndConditions/$ref':
-    get:
-      tags:
-        - deviceManagement.termsAndConditions
-      summary: Get ref of termsAndConditions from deviceManagement
-      description: Navigation link to the terms and conditions that are assigned.
-      operationId: deviceManagement.termsAndConditions.acceptanceStatuses_GetGraphRefTermsAndConditions
-      parameters:
-        - name: termsAndConditions-id
-          in: path
-          description: 'key: id of termsAndConditions'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: termsAndConditions
-        - name: termsAndConditionsAcceptanceStatus-id
-          in: path
-          description: 'key: id of termsAndConditionsAcceptanceStatus'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: termsAndConditionsAcceptanceStatus
-      responses:
-        '200':
-          description: Retrieved navigation property link
-          content:
-            application/json:
-              schema:
-                type: string
-          links:
-            acceptanceStatuses:
-              operationId: deviceManagement.termsAndConditions.acceptanceStatuses.TermsAndConditions.ListAcceptanceStatuses
-              parameters:
-                termsAndConditions-id: $request.path.termsAndConditions-id
-                termsAndConditionsAcceptanceStatus-id: $request.path.termsAndConditionsAcceptanceStatus-id
-            assignments:
-              operationId: deviceManagement.termsAndConditions.acceptanceStatuses.TermsAndConditions.ListAssignments
-              parameters:
-                termsAndConditions-id: $request.path.termsAndConditions-id
-                termsAndConditionsAcceptanceStatus-id: $request.path.termsAndConditionsAcceptanceStatus-id
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    put:
-      tags:
-        - deviceManagement.termsAndConditions
-      summary: Update the ref of navigation property termsAndConditions in deviceManagement
-      description: Navigation link to the terms and conditions that are assigned.
-      operationId: deviceManagement.termsAndConditions.acceptanceStatuses_SetGraphRefTermsAndConditions
-      parameters:
-        - name: termsAndConditions-id
-          in: path
-          description: 'key: id of termsAndConditions'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: termsAndConditions
-        - name: termsAndConditionsAcceptanceStatus-id
-          in: path
-          description: 'key: id of termsAndConditionsAcceptanceStatus'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: termsAndConditionsAcceptanceStatus
-      requestBody:
-        description: New navigation property ref values
-        content:
-          application/json:
-            schema:
-              type: object
-              additionalProperties:
-                type: object
-        required: true
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - deviceManagement.termsAndConditions
-      summary: Delete ref of navigation property termsAndConditions for deviceManagement
-      description: Navigation link to the terms and conditions that are assigned.
-      operationId: deviceManagement.termsAndConditions.acceptanceStatuses_DeleteGraphRefTermsAndConditions
-      parameters:
-        - name: termsAndConditions-id
-          in: path
-          description: 'key: id of termsAndConditions'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: termsAndConditions
-        - name: termsAndConditionsAcceptanceStatus-id
-          in: path
-          description: 'key: id of termsAndConditionsAcceptanceStatus'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: termsAndConditionsAcceptanceStatus
-        - name: If-Match
-          in: header
-          description: ETag
-          schema:
-            type: string
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   '/deviceManagement/termsAndConditions/{termsAndConditions-id}/assignments':
     get:
       tags:
         - deviceManagement.termsAndConditions
       summary: Get assignments from deviceManagement
-      description: The list of assignments for this T&C policy.
       operationId: deviceManagement.termsAndConditions_ListAssignments
       parameters:
         - name: termsAndConditions-id
@@ -3525,21 +3066,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of termsAndConditionsAssignment
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.termsAndConditionsAssignment'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.termsAndConditionsAssignmentCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -3550,7 +3077,6 @@ paths:
       tags:
         - deviceManagement.termsAndConditions
       summary: Create new navigation property to assignments for deviceManagement
-      description: The list of assignments for this T&C policy.
       operationId: deviceManagement.termsAndConditions_CreateAssignments
       parameters:
         - name: termsAndConditions-id
@@ -3582,7 +3108,6 @@ paths:
       tags:
         - deviceManagement.termsAndConditions
       summary: Get assignments from deviceManagement
-      description: The list of assignments for this T&C policy.
       operationId: deviceManagement.termsAndConditions_GetAssignments
       parameters:
         - name: termsAndConditions-id
@@ -3638,7 +3163,6 @@ paths:
       tags:
         - deviceManagement.termsAndConditions
       summary: Update the navigation property assignments in deviceManagement
-      description: The list of assignments for this T&C policy.
       operationId: deviceManagement.termsAndConditions_UpdateAssignments
       parameters:
         - name: termsAndConditions-id
@@ -3672,7 +3196,6 @@ paths:
       tags:
         - deviceManagement.termsAndConditions
       summary: Delete navigation property assignments for deviceManagement
-      description: The list of assignments for this T&C policy.
       operationId: deviceManagement.termsAndConditions_DeleteAssignments
       parameters:
         - name: termsAndConditions-id
@@ -4218,6 +3741,28 @@ components:
         - unresponsive
       type: string
       description: Partner state of this tenant.
+      x-ms-enum:
+        name: deviceManagementPartnerTenantState
+        modelAsString: false
+        values:
+          - value: unknown
+            description: Partner state is unknown.
+            name: unknown
+          - value: unavailable
+            description: Partner is unavailable.
+            name: unavailable
+          - value: enabled
+            description: Partner is enabled.
+            name: enabled
+          - value: terminated
+            description: Partner connection is terminated.
+            name: terminated
+          - value: rejected
+            description: Partner messages are rejected.
+            name: rejected
+          - value: unresponsive
+            description: Partner is unresponsive.
+            name: unresponsive
     microsoft.graph.deviceManagementPartnerAppType:
       title: deviceManagementPartnerAppType
       enum:
@@ -4226,6 +3771,19 @@ components:
         - multiTenantApp
       type: string
       description: Partner App Type.
+      x-ms-enum:
+        name: deviceManagementPartnerAppType
+        modelAsString: false
+        values:
+          - value: unknown
+            description: Partner App type is unknown.
+            name: unknown
+          - value: singleTenantApp
+            description: Partner App is Single tenant in AAD.
+            name: singleTenantApp
+          - value: multiTenantApp
+            description: Partner App is Multi tenant in AAD.
+            name: multiTenantApp
     microsoft.graph.deviceManagementExchangeConnectorType:
       title: deviceManagementExchangeConnectorType
       enum:
@@ -4235,6 +3793,22 @@ components:
         - dedicated
       type: string
       description: The type of Exchange Connector.
+      x-ms-enum:
+        name: deviceManagementExchangeConnectorType
+        modelAsString: false
+        values:
+          - value: onPremises
+            description: Connects to on-premises Exchange Environment.
+            name: onPremises
+          - value: hosted
+            description: Connects to O365 multi-tenant Exchange environment
+            name: hosted
+          - value: serviceToService
+            description: Intune Service connects directly to O365 multi-tenant Exchange environment
+            name: serviceToService
+          - value: dedicated
+            description: Connects to O365 Dedicated Exchange environment.
+            name: dedicated
     microsoft.graph.deviceManagementExchangeConnectorStatus:
       title: deviceManagementExchangeConnectorStatus
       enum:
@@ -4244,6 +3818,22 @@ components:
         - disconnected
       type: string
       description: The current status of the Exchange Connector.
+      x-ms-enum:
+        name: deviceManagementExchangeConnectorStatus
+        modelAsString: false
+        values:
+          - value: none
+            description: No Connector exists.
+            name: none
+          - value: connectionPending
+            description: Pending Connection to the Exchange Environment.
+            name: connectionPending
+          - value: connected
+            description: Connected to the Exchange Environment
+            name: connected
+          - value: disconnected
+            description: Disconnected from the Exchange Environment
+            name: disconnected
     microsoft.graph.iosUpdatesInstallStatus:
       title: iosUpdatesInstallStatus
       enum:
@@ -4287,6 +3877,22 @@ components:
         - unresponsive
       type: string
       description: Partner state of this tenant.
+      x-ms-enum:
+        name: mobileThreatPartnerTenantState
+        modelAsString: false
+        values:
+          - value: unavailable
+            description: Partner is unavailable.
+            name: unavailable
+          - value: available
+            description: Partner is available.
+            name: available
+          - value: enabled
+            description: Partner is enabled.
+            name: enabled
+          - value: unresponsive
+            description: Partner is unresponsive.
+            name: unresponsive
     microsoft.graph.remoteAssistanceOnboardingStatus:
       title: remoteAssistanceOnboardingStatus
       enum:
@@ -4295,6 +3901,19 @@ components:
         - onboarded
       type: string
       description: The current TeamViewer connector status
+      x-ms-enum:
+        name: remoteAssistanceOnboardingStatus
+        modelAsString: false
+        values:
+          - value: notOnboarded
+            description: The status reported when there is no active TeamViewer connector configured or active
+            name: notOnboarded
+          - value: onboarding
+            description: 'The status reported when the system has initiated a TeamViewer connection, but the service has not yet completed the confirmation of a connector'
+            name: onboarding
+          - value: onboarded
+            description: The status reported when the system has successfully exchanged account information with TeamViewer and can now initiate remote assistance sessions with clients
+            name: onboarded
     microsoft.graph.rolePermission:
       title: rolePermission
       type: object
@@ -4313,13 +3932,181 @@ components:
       additionalProperties:
         type: object
       description: Base type for assignment targets.
-    odata.error:
+    microsoft.graph.ODataErrors.ODataError:
       required:
         - error
       type: object
       properties:
         error:
-          $ref: '#/components/schemas/odata.error.main'
+          $ref: '#/components/schemas/microsoft.graph.ODataErrors.MainError'
+      additionalProperties:
+        type: object
+    microsoft.graph.complianceManagementPartnerCollectionResponse:
+      title: Collection of complianceManagementPartner
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.complianceManagementPartner'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.deviceManagementPartnerCollectionResponse:
+      title: Collection of deviceManagementPartner
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.deviceManagementPartner'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.deviceManagementExchangeConnectorCollectionResponse:
+      title: Collection of deviceManagementExchangeConnector
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.deviceManagementExchangeConnector'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.iosUpdateDeviceStatusCollectionResponse:
+      title: Collection of iosUpdateDeviceStatus
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.iosUpdateDeviceStatus'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.mobileThreatDefenseConnectorCollectionResponse:
+      title: Collection of mobileThreatDefenseConnector
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.mobileThreatDefenseConnector'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.remoteAssistancePartnerCollectionResponse:
+      title: Collection of remoteAssistancePartner
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.remoteAssistancePartner'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.resourceOperationCollectionResponse:
+      title: Collection of resourceOperation
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.resourceOperation'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.deviceAndAppManagementRoleAssignmentCollectionResponse:
+      title: Collection of deviceAndAppManagementRoleAssignment
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.deviceAndAppManagementRoleAssignment'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.roleDefinitionCollectionResponse:
+      title: Collection of roleDefinition
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.roleDefinition'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.roleAssignmentCollectionResponse:
+      title: Collection of roleAssignment
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.roleAssignment'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.telecomExpenseManagementPartnerCollectionResponse:
+      title: Collection of telecomExpenseManagementPartner
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.telecomExpenseManagementPartner'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.termsAndConditionsCollectionResponse:
+      title: Collection of termsAndConditions
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.termsAndConditions'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.termsAndConditionsAcceptanceStatusCollectionResponse:
+      title: Collection of termsAndConditionsAcceptanceStatus
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.termsAndConditionsAcceptanceStatus'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.termsAndConditionsAssignmentCollectionResponse:
+      title: Collection of termsAndConditionsAssignment
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.termsAndConditionsAssignment'
+        '@odata.nextLink':
+          type: string
       additionalProperties:
         type: object
     microsoft.graph.resourceAction:
@@ -4341,7 +4128,7 @@ components:
       additionalProperties:
         type: object
       description: Set of allowed and not allowed actions for a resource.
-    odata.error.main:
+    microsoft.graph.ODataErrors.MainError:
       required:
         - code
         - message
@@ -4353,18 +4140,16 @@ components:
           type: string
         target:
           type: string
+          nullable: true
         details:
           type: array
           items:
-            $ref: '#/components/schemas/odata.error.detail'
+            $ref: '#/components/schemas/microsoft.graph.ODataErrors.ErrorDetails'
         innererror:
-          type: object
-          additionalProperties:
-            type: object
-          description: The structure of this object is service-specific
+          $ref: '#/components/schemas/microsoft.graph.ODataErrors.InnerError'
       additionalProperties:
         type: object
-    odata.error.detail:
+    microsoft.graph.ODataErrors.ErrorDetails:
       required:
         - code
         - message
@@ -4376,15 +4161,105 @@ components:
           type: string
         target:
           type: string
+          nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.ODataErrors.InnerError:
+      type: object
+      additionalProperties:
+        type: object
+      description: The structure of this object is service-specific
   responses:
     error:
       description: error
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/odata.error'
+            $ref: '#/components/schemas/microsoft.graph.ODataErrors.ODataError'
+    microsoft.graph.complianceManagementPartnerCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.complianceManagementPartnerCollectionResponse'
+    microsoft.graph.deviceManagementPartnerCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.deviceManagementPartnerCollectionResponse'
+    microsoft.graph.deviceManagementExchangeConnectorCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.deviceManagementExchangeConnectorCollectionResponse'
+    microsoft.graph.iosUpdateDeviceStatusCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.iosUpdateDeviceStatusCollectionResponse'
+    microsoft.graph.mobileThreatDefenseConnectorCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.mobileThreatDefenseConnectorCollectionResponse'
+    microsoft.graph.remoteAssistancePartnerCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.remoteAssistancePartnerCollectionResponse'
+    microsoft.graph.resourceOperationCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.resourceOperationCollectionResponse'
+    microsoft.graph.deviceAndAppManagementRoleAssignmentCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.deviceAndAppManagementRoleAssignmentCollectionResponse'
+    microsoft.graph.roleDefinitionCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.roleDefinitionCollectionResponse'
+    microsoft.graph.roleAssignmentCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.roleAssignmentCollectionResponse'
+    microsoft.graph.telecomExpenseManagementPartnerCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.telecomExpenseManagementPartnerCollectionResponse'
+    microsoft.graph.termsAndConditionsCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.termsAndConditionsCollectionResponse'
+    microsoft.graph.termsAndConditionsAcceptanceStatusCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.termsAndConditionsAcceptanceStatusCollectionResponse'
+    microsoft.graph.termsAndConditionsAssignmentCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.termsAndConditionsAssignmentCollectionResponse'
   parameters:
     top:
       name: $top

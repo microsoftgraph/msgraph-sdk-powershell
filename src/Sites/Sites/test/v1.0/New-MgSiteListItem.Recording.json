@@ -1,0 +1,36 @@
+{
+  "New-MgSiteListItem+[NoContext]+ShouldCreateSiteListItemWithFields+$POST+https://graph.microsoft.com/v1.0/sites/root/lists/listId/items+1": {
+    "Request": {
+      "Method": "POST",
+      "RequestUri": "https://graph.microsoft.com/v1.0/sites/root/lists/listId/items",
+      "Content": "{\r\n  \"fields\": {\r\n    \"Title\": \"Test\"\r\n  }\r\n}",
+      "Headers": {
+      },
+      "ContentHeaders": {
+        "Content-Type": [ "application/json" ],
+        "Content-Length": [ "45" ]
+      }
+    },
+    "Response": {
+      "StatusCode": 201,
+      "Headers": {
+        "Cache-Control": [ "no-cache" ],
+        "Transfer-Encoding": [ "chunked" ],
+        "ETag": [ "\"63bf1e50-f2cb-4ba5-a313-b86b405691a9,1\"" ],
+        "Location": [ "https://contoso.sharepoint.com/_api/v2.0/sites/contoso.sharepoint.com,e21e7ea3-cd7c-4efd-a3cb-b0c93e9c79e7,ecfa5b05-fdf4-4595-9bad-26378ce9b7f2/lists/listId/items/13" ],
+        "Vary": [ "Accept-Encoding" ],
+        "Strict-Transport-Security": [ "max-age=31536000" ],
+        "request-id": [ "b5cb97c4-143a-406e-9acc-1e159d447cc3" ],
+        "client-request-id": [ "b5cb97c4-143a-406e-9acc-1e159d447cc3" ],
+        "x-ms-ags-diagnostic": [ "{\"ServerInfo\":{\"DataCenter\":\"West US 2\",\"Slice\":\"E\",\"Ring\":\"1\",\"ScaleUnit\":\"002\",\"RoleInstance\":\"MWH0EPF00070F96\"}}" ],
+        "OData-Version": [ "4.0" ],
+        "Date": [ "Fri, 03 Jun 2022 17:58:17 GMT" ]
+      },
+      "ContentHeaders": {
+        "Content-Type": [ "application/json; odata.metadata=minimal; odata.streaming=true; IEEE754Compatible=false; charset=utf-8" ],
+        "Content-Encoding": [ "gzip" ]
+      },
+      "Content": "{\"@odata.context\":\"https://graph.microsoft.com/v1.0/$metadata#sites(\u0027root\u0027)/lists(\u0027listId\u0027)/items/$entity\",\"@odata.etag\":\"\\\"63bf1e50-f2cb-4ba5-a313-b86b405691a9,1\\\"\",\"createdDateTime\":\"2022-06-03T17:58:18Z\",\"eTag\":\"\\\"63bf1e50-f2cb-4ba5-a313-b86b405691a9,1\\\"\",\"id\":\"13\",\"lastModifiedDateTime\":\"2022-06-03T17:58:18Z\",\"webUrl\":\"https://contoso.sharepoint.com/Lists/My%20List/13_.000\",\"createdBy\":{\"user\":{\"email\":\"user@contoso.onmicrosoft.com\",\"id\":\"222a4aff-966a-4a62-b3d3-1b6ae2f81f4a\",\"displayName\":\"User User\"}},\"lastModifiedBy\":{\"application\":{\"id\":\"14d82eec-204b-4c2f-b7e8-296a70dab67e\",\"displayName\":\"Microsoft Graph PowerShell (Preview)\"},\"user\":{\"email\":\"user@contoso.onmicrosoft.com\",\"id\":\"222a4aff-966a-4a62-b3d3-1b6ae2f81f4a\",\"displayName\":\"User User\"}},\"parentReference\":{\"siteId\":\"contoso.sharepoint.com,e21e7ea3-cd7c-4efd-a3cb-b0c93e9c79e7,ecfa5b05-fdf4-4595-9bad-26378ce9b7f2\"},\"contentType\":{\"id\":\"0x010009E05387C7C8AC4D8407A2E88DFF538F0001E8E4E2710BBC42A695BA82E1C3BBE3\",\"name\":\"Item\"},\"fields@odata.context\":\"https://graph.microsoft.com/v1.0/$metadata#sites(\u0027root\u0027)/lists(\u0027listId\u0027)/items(\u002713\u0027)/fields/$entity\",\"fields\":{\"@odata.etag\":\"\\\"63bf1e50-f2cb-4ba5-a313-b86b405691a9,1\\\"\",\"id\":\"13\",\"ContentType\":\"Item\",\"Title\":\"Test\",\"Modified\":\"2022-06-03T17:58:18Z\",\"Created\":\"2022-06-03T17:58:18Z\",\"AuthorLookupId\":\"11\",\"EditorLookupId\":\"11\",\"_UIVersionString\":\"1.0\",\"Attachments\":false,\"Edit\":\"\",\"LinkTitleNoMenu\":\"Test\",\"LinkTitle\":\"Test\",\"ItemChildCount\":\"0\",\"FolderChildCount\":\"0\",\"_ComplianceFlags\":\"\",\"_ComplianceTag\":\"\",\"_ComplianceTagWrittenTime\":\"\",\"_ComplianceTagUserId\":\"\",\"AppAuthorLookupId\":\"11\",\"AppEditorLookupId\":\"11\"}}"
+    }
+  }
+}

@@ -38,6 +38,8 @@ subject-prefix: ''
 
 ``` yaml
 directive:
+# Remove invalid paths.
+  - remove-path-by-operation: ^print(_.*Reports|\.reports.*)
 # Remove cmdlets
   - where:
       verb: New
