@@ -435,6 +435,11 @@ directive:
       subject: ^(\w*[a-z])GraphOPre(\w*)$
     set:
       subject: $1Of$2
+  - where:
+      verb: Clear
+      subject: ^UserManagedAppRegistrationByDeviceTag$
+      variant: ^Wipe$|^WipeExpanded$|^WipeViaIdentity$|^WipeViaIdentityExpanded$
+    remove: true
 # Modify generated .json.cs model classes.
   - from: source-file-csharp
     where: $
