@@ -53,28 +53,9 @@ directive:
     remove: true
 # Alias then rename cmdlets to avoid breaking change.
   - where:
-      subject: ^(ServicePrincipal|Application)(Member|TransitiveMember|CreatedOnBehalf)$
+      subject: ^((ServicePrincipal|Application)(Member|TransitiveMember|CreatedOnBehalf))Of$
     set:
-      alias: ${verb}-Mg${subject}
-  - where:
-      subject: ^(ServicePrincipal|Application)(Member|TransitiveMember|CreatedOnBehalf)$
-    set:
-      subject: $1$2Of
-# Rename wrongly named cmdlets
-  - where:
-      verb: Get
-      subject: (^Application$)
-      variant: Get2|Get3|GetExpanded|GetExpanded1
-    set:
-      verb: Get
-      subject: $1ById
-  - where:
-      verb: Get
-      subject: (^ServicePrincipal$)
-      variant: Get1|Get3|GetExpanded|GetExpanded1
-    set:
-      verb: Get
-      subject: $1ById
+      alias: ${verb}-Mg$1
 # Rename cmdlets with duplicates in their name.
   - where:
       subject: ^(OnPremisPublishingProfile)(\1)+
@@ -85,11 +66,6 @@ directive:
       subject: ^OnPremis(PublishingProfile.*)$
     set:
       subject: OnPremise$1
-# Fix cmdlet name
-  - where:
-      subject: (^OnPremisePublishingProfileConnectorMember$)
-    set:
-      subject: $1Of
 # Singularize credentials.
   - where:
       subject: (.*)(FederatedIdentityCredential)s(.*)

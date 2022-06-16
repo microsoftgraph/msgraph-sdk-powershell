@@ -988,7 +988,7 @@ paths:
                 user-id: $request.path.user-id
                 device-id: $request.path.device-id
             memberOf:
-              operationId: users.Devices.ListMemberOf
+              operationId: users.Devices.ListMemberGraphOPre
               parameters:
                 user-id: $request.path.user-id
                 device-id: $request.path.device-id
@@ -1003,7 +1003,7 @@ paths:
                 user-id: $request.path.user-id
                 device-id: $request.path.device-id
             transitiveMemberOf:
-              operationId: users.Devices.ListTransitiveMemberOf
+              operationId: users.Devices.ListTransitiveMemberGraphOPre
               parameters:
                 user-id: $request.path.user-id
                 device-id: $request.path.device-id
@@ -1702,7 +1702,7 @@ paths:
       tags:
         - users.device
       summary: Get memberOf from users
-      operationId: users.devices_ListMemberOf
+      operationId: users.devices_ListMemberGraphOPre
       parameters:
         - name: user-id
           in: path
@@ -1777,7 +1777,7 @@ paths:
       tags:
         - users.device
       summary: Get memberOf from users
-      operationId: users.devices_GetMemberOf
+      operationId: users.devices_GetMemberGraphOPre
       parameters:
         - name: user-id
           in: path
@@ -1915,7 +1915,7 @@ paths:
       tags:
         - users.device
       summary: Delete ref of navigation property registeredOwners for users
-      operationId: users.devices_DeleteGraphRefRegisteredOwners
+      operationId: users.devices_DeleteRegisteredOwnersGraphBPreRef
       parameters:
         - name: user-id
           in: path
@@ -1959,7 +1959,7 @@ paths:
       tags:
         - users.device
       summary: Get ref of registeredOwners from users
-      operationId: users.devices_ListGraphRefRegisteredOwners
+      operationId: users.devices_ListRegisteredOwnersGraphBPreRef
       parameters:
         - name: user-id
           in: path
@@ -2008,7 +2008,7 @@ paths:
       tags:
         - users.device
       summary: Create new navigation property ref to registeredOwners for users
-      operationId: users.devices_CreateGraphRefRegisteredOwners
+      operationId: users.devices_CreateRegisteredOwnersGraphBPreRef
       parameters:
         - name: user-id
           in: path
@@ -2188,7 +2188,7 @@ paths:
       tags:
         - users.device
       summary: Get transitiveMemberOf from users
-      operationId: users.devices_ListTransitiveMemberOf
+      operationId: users.devices_ListTransitiveMemberGraphOPre
       parameters:
         - name: user-id
           in: path
@@ -2263,7 +2263,7 @@ paths:
       tags:
         - users.device
       summary: Get transitiveMemberOf from users
-      operationId: users.devices_GetTransitiveMemberOf
+      operationId: users.devices_GetTransitiveMemberGraphOPre
       parameters:
         - name: user-id
           in: path

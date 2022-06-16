@@ -414,33 +414,27 @@ directive:
       variant: ^(Check|Verify)(.*)
     set:
       verb: Confirm
-# Add ByRef suffix to /$ref cmdlets
+# Rename prepositions to bypass https://github.com/Azure/autorest.powershell/issues/795.
   - where:
-      subject: ^(\w*[a-z])GraphRef([A-Z]\w*)$
+      subject: ^(\w*[a-z])GraphBPre(\w*)$
     set:
-      subject: $1$2ByRef
-# Remove *ByRef commands
+      subject: $1By$2
   - where:
-      verb: Get|Remove|New
-      subject: ^UserPlanner(FavoritePlanByRef|RecentPlanByRef|RosterPlanByRef)$
-    remove: true
-# Alias then rename cmdlets to avoid breaking change.
-  - where:
-      subject: ^(User|ServicePrincipal|Contact|Device)(Member|TransitiveMember)ByRef$
+      subject: ^(\w*[a-z])GraphWPre(\w*)$
     set:
-      alias: ${verb}-Mg${subject}
+      subject: $1With$2
   - where:
-      subject: ^(User|ServicePrincipal|Contact|Device)(Member|TransitiveMember)ByRef$
+      subject: ^(\w*[a-z])GraphAPre(\w*)$
     set:
-      subject: $1$2OfByRef
+      subject: $1At$2
   - where:
-      subject: ^(Application|Group)(CreatedOnBehalf)ByRef$
+      subject: ^(\w*[a-z])GraphFPre(\w*)$
     set:
-      alias: ${verb}-Mg${subject}
+      subject: $1For$2
   - where:
-      subject: ^(Application|Group)(CreatedOnBehalf)ByRef$
+      subject: ^(\w*[a-z])GraphOPre(\w*)$
     set:
-      subject: $1$2OfByRef
+      subject: $1Of$2
 # Modify generated .json.cs model classes.
   - from: source-file-csharp
     where: $

@@ -39,12 +39,6 @@ subject-prefix: ''
 ``` yaml
 directive:
   - remove-path-by-operation: .*_(Create|Get|Update|Set|Delete)Activities$|.*\.activities.*$|shares\..*_createLink
-  - where:
-      verb: Get
-      variant: (Get.*)
-      subject: ^(.*Activity)$
-    set:
-      subject: $1ByInterval
 ```
 ### Versioning
 

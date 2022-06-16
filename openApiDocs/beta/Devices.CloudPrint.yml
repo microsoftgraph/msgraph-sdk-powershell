@@ -2155,7 +2155,7 @@ paths:
       tags:
         - print.printerShare
       summary: Delete ref of navigation property allowedGroups for print
-      operationId: print.printerShares_DeleteGraphRefAllowedGroups
+      operationId: print.printerShares_DeleteAllowedGroupsGraphBPreRef
       parameters:
         - name: printerShare-id
           in: path
@@ -2192,7 +2192,7 @@ paths:
       tags:
         - print.printerShare
       summary: Get ref of allowedGroups from print
-      operationId: print.printerShares_ListGraphRefAllowedGroups
+      operationId: print.printerShares_ListAllowedGroupsGraphBPreRef
       parameters:
         - name: printerShare-id
           in: path
@@ -2336,7 +2336,7 @@ paths:
       tags:
         - print.printerShare
       summary: Create new navigation property ref to allowedGroups for print
-      operationId: print.printerShares_CreateGraphRefAllowedGroups
+      operationId: print.printerShares_CreateAllowedGroupsGraphBPreRef
       parameters:
         - name: printerShare-id
           in: path
@@ -2798,7 +2798,7 @@ paths:
       tags:
         - print.printerShare
       summary: Delete ref of navigation property allowedUsers for print
-      operationId: print.printerShares_DeleteGraphRefAllowedUsers
+      operationId: print.printerShares_DeleteAllowedUsersGraphBPreRef
       parameters:
         - name: printerShare-id
           in: path
@@ -2835,7 +2835,7 @@ paths:
       tags:
         - print.printerShare
       summary: Get ref of allowedUsers from print
-      operationId: print.printerShares_ListGraphRefAllowedUsers
+      operationId: print.printerShares_ListAllowedUsersGraphBPreRef
       parameters:
         - name: printerShare-id
           in: path
@@ -3031,7 +3031,7 @@ paths:
       tags:
         - print.printerShare
       summary: Create new navigation property ref to allowedUsers for print
-      operationId: print.printerShares_CreateGraphRefAllowedUsers
+      operationId: print.printerShares_CreateAllowedUsersGraphBPreRef
       parameters:
         - name: printerShare-id
           in: path
@@ -3226,21 +3226,21 @@ paths:
             userCredentialUsageDetails:
               operationId: print.Reports.ListUserCredentialUsageDetails
             dailyPrintUsageByPrinter:
-              operationId: print.Reports.ListDailyPrintUsageByPrinter
+              operationId: print.Reports.ListDailyPrintUsageGraphBPrePrinter
             dailyPrintUsageByUser:
-              operationId: print.Reports.ListDailyPrintUsageByUser
+              operationId: print.Reports.ListDailyPrintUsageGraphBPreUser
             dailyPrintUsageSummariesByPrinter:
-              operationId: print.Reports.ListDailyPrintUsageSummariesByPrinter
+              operationId: print.Reports.ListDailyPrintUsageSummariesGraphBPrePrinter
             dailyPrintUsageSummariesByUser:
-              operationId: print.Reports.ListDailyPrintUsageSummariesByUser
+              operationId: print.Reports.ListDailyPrintUsageSummariesGraphBPreUser
             monthlyPrintUsageByPrinter:
-              operationId: print.Reports.ListMonthlyPrintUsageByPrinter
+              operationId: print.Reports.ListMonthlyPrintUsageGraphBPrePrinter
             monthlyPrintUsageByUser:
-              operationId: print.Reports.ListMonthlyPrintUsageByUser
+              operationId: print.Reports.ListMonthlyPrintUsageGraphBPreUser
             monthlyPrintUsageSummariesByPrinter:
-              operationId: print.Reports.ListMonthlyPrintUsageSummariesByPrinter
+              operationId: print.Reports.ListMonthlyPrintUsageSummariesGraphBPrePrinter
             monthlyPrintUsageSummariesByUser:
-              operationId: print.Reports.ListMonthlyPrintUsageSummariesByUser
+              operationId: print.Reports.ListMonthlyPrintUsageSummariesGraphBPreUser
             deviceConfigurationDeviceActivity:
               operationId: print.reports.deviceConfigurationDeviceActivity
             deviceConfigurationUserActivity:
@@ -3358,35 +3358,35 @@ paths:
             getSharePointSiteUsageStorage:
               operationId: print.reports.getSharePointSiteUsageStorage
             getSkypeForBusinessActivityCounts:
-              operationId: print.reports.getSkypeForBusinessActivityCounts
+              operationId: print.reports.getSkypeGraphFPreBusinessActivityCounts
             getSkypeForBusinessActivityUserCounts:
-              operationId: print.reports.getSkypeForBusinessActivityUserCounts
+              operationId: print.reports.getSkypeGraphFPreBusinessActivityUserCounts
             getSkypeForBusinessActivityUserDetail:
-              operationId: print.reports.getSkypeForBusinessActivityUserDetail
+              operationId: print.reports.getSkypeGraphFPreBusinessActivityUserDetail
             getSkypeForBusinessDeviceUsageDistributionUserCounts:
-              operationId: print.reports.getSkypeForBusinessDeviceUsageDistributionUserCounts
+              operationId: print.reports.getSkypeGraphFPreBusinessDeviceUsageDistributionUserCounts
             getSkypeForBusinessDeviceUsageUserCounts:
-              operationId: print.reports.getSkypeForBusinessDeviceUsageUserCounts
+              operationId: print.reports.getSkypeGraphFPreBusinessDeviceUsageUserCounts
             getSkypeForBusinessDeviceUsageUserDetail:
-              operationId: print.reports.getSkypeForBusinessDeviceUsageUserDetail
+              operationId: print.reports.getSkypeGraphFPreBusinessDeviceUsageUserDetail
             getSkypeForBusinessOrganizerActivityCounts:
-              operationId: print.reports.getSkypeForBusinessOrganizerActivityCounts
+              operationId: print.reports.getSkypeGraphFPreBusinessOrganizerActivityCounts
             getSkypeForBusinessOrganizerActivityMinuteCounts:
-              operationId: print.reports.getSkypeForBusinessOrganizerActivityMinuteCounts
+              operationId: print.reports.getSkypeGraphFPreBusinessOrganizerActivityMinuteCounts
             getSkypeForBusinessOrganizerActivityUserCounts:
-              operationId: print.reports.getSkypeForBusinessOrganizerActivityUserCounts
+              operationId: print.reports.getSkypeGraphFPreBusinessOrganizerActivityUserCounts
             getSkypeForBusinessParticipantActivityCounts:
-              operationId: print.reports.getSkypeForBusinessParticipantActivityCounts
+              operationId: print.reports.getSkypeGraphFPreBusinessParticipantActivityCounts
             getSkypeForBusinessParticipantActivityMinuteCounts:
-              operationId: print.reports.getSkypeForBusinessParticipantActivityMinuteCounts
+              operationId: print.reports.getSkypeGraphFPreBusinessParticipantActivityMinuteCounts
             getSkypeForBusinessParticipantActivityUserCounts:
-              operationId: print.reports.getSkypeForBusinessParticipantActivityUserCounts
+              operationId: print.reports.getSkypeGraphFPreBusinessParticipantActivityUserCounts
             getSkypeForBusinessPeerToPeerActivityCounts:
-              operationId: print.reports.getSkypeForBusinessPeerToPeerActivityCounts
+              operationId: print.reports.getSkypeGraphFPreBusinessPeerToPeerActivityCounts
             getSkypeForBusinessPeerToPeerActivityMinuteCounts:
-              operationId: print.reports.getSkypeForBusinessPeerToPeerActivityMinuteCounts
+              operationId: print.reports.getSkypeGraphFPreBusinessPeerToPeerActivityMinuteCounts
             getSkypeForBusinessPeerToPeerActivityUserCounts:
-              operationId: print.reports.getSkypeForBusinessPeerToPeerActivityUserCounts
+              operationId: print.reports.getSkypeGraphFPreBusinessPeerToPeerActivityUserCounts
             getTeamsDeviceUsageDistributionTotalUserCounts:
               operationId: print.reports.getTeamsDeviceUsageDistributionTotalUserCounts
             getTeamsDeviceUsageDistributionUserCounts:
@@ -3729,9 +3729,9 @@ paths:
             userRegistrationDetails:
               operationId: print.reports.AuthenticationMethods.ListUserRegistrationDetails
             usersRegisteredByFeature:
-              operationId: print.reports.authenticationMethods.usersRegisteredByFeature
+              operationId: print.reports.authenticationMethods.usersRegisteredGraphBPreFeature
             usersRegisteredByMethod:
-              operationId: print.reports.authenticationMethods.usersRegisteredByMethod
+              operationId: print.reports.authenticationMethods.usersRegisteredGraphBPreMethod
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3775,7 +3775,7 @@ paths:
       tags:
         - print.Functions
       summary: Invoke function usersRegisteredByFeature
-      operationId: print.reports.authenticationMethods_usersRegisteredByFeature
+      operationId: print.reports.authenticationMethods_usersRegisteredGraphBPreFeature
       responses:
         '200':
           description: Success
@@ -3791,7 +3791,7 @@ paths:
       tags:
         - print.Functions
       summary: Invoke function usersRegisteredByFeature
-      operationId: print.reports.authenticationMethods_usersRegisteredByFeature
+      operationId: print.reports.authenticationMethods_usersRegisteredGraphBPreFeature
       parameters:
         - name: includedUserTypes
           in: path
@@ -3820,7 +3820,7 @@ paths:
       tags:
         - print.Functions
       summary: Invoke function usersRegisteredByMethod
-      operationId: print.reports.authenticationMethods_usersRegisteredByMethod
+      operationId: print.reports.authenticationMethods_usersRegisteredGraphBPreMethod
       responses:
         '200':
           description: Success
@@ -3836,7 +3836,7 @@ paths:
       tags:
         - print.Functions
       summary: Invoke function usersRegisteredByMethod
-      operationId: print.reports.authenticationMethods_usersRegisteredByMethod
+      operationId: print.reports.authenticationMethods_usersRegisteredGraphBPreMethod
       parameters:
         - name: includedUserTypes
           in: path
@@ -4289,7 +4289,7 @@ paths:
       tags:
         - print.reportRoot
       summary: Get dailyPrintUsageByPrinter from print
-      operationId: print.reports_ListDailyPrintUsageByPrinter
+      operationId: print.reports_ListDailyPrintUsageGraphBPrePrinter
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -4361,7 +4361,7 @@ paths:
       tags:
         - print.reportRoot
       summary: Create new navigation property to dailyPrintUsageByPrinter for print
-      operationId: print.reports_CreateDailyPrintUsageByPrinter
+      operationId: print.reports_CreateDailyPrintUsageGraphBPrePrinter
       requestBody:
         description: New navigation property
         content:
@@ -4384,7 +4384,7 @@ paths:
       tags:
         - print.reportRoot
       summary: Get dailyPrintUsageByPrinter from print
-      operationId: print.reports_GetDailyPrintUsageByPrinter
+      operationId: print.reports_GetDailyPrintUsageGraphBPrePrinter
       parameters:
         - name: printUsageByPrinter-id
           in: path
@@ -4436,7 +4436,7 @@ paths:
       tags:
         - print.reportRoot
       summary: Update the navigation property dailyPrintUsageByPrinter in print
-      operationId: print.reports_UpdateDailyPrintUsageByPrinter
+      operationId: print.reports_UpdateDailyPrintUsageGraphBPrePrinter
       parameters:
         - name: printUsageByPrinter-id
           in: path
@@ -4462,7 +4462,7 @@ paths:
       tags:
         - print.reportRoot
       summary: Delete navigation property dailyPrintUsageByPrinter for print
-      operationId: print.reports_DeleteDailyPrintUsageByPrinter
+      operationId: print.reports_DeleteDailyPrintUsageGraphBPrePrinter
       parameters:
         - name: printUsageByPrinter-id
           in: path
@@ -4487,7 +4487,7 @@ paths:
       tags:
         - print.reportRoot
       summary: Get dailyPrintUsageByUser from print
-      operationId: print.reports_ListDailyPrintUsageByUser
+      operationId: print.reports_ListDailyPrintUsageGraphBPreUser
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -4559,7 +4559,7 @@ paths:
       tags:
         - print.reportRoot
       summary: Create new navigation property to dailyPrintUsageByUser for print
-      operationId: print.reports_CreateDailyPrintUsageByUser
+      operationId: print.reports_CreateDailyPrintUsageGraphBPreUser
       requestBody:
         description: New navigation property
         content:
@@ -4582,7 +4582,7 @@ paths:
       tags:
         - print.reportRoot
       summary: Get dailyPrintUsageByUser from print
-      operationId: print.reports_GetDailyPrintUsageByUser
+      operationId: print.reports_GetDailyPrintUsageGraphBPreUser
       parameters:
         - name: printUsageByUser-id
           in: path
@@ -4634,7 +4634,7 @@ paths:
       tags:
         - print.reportRoot
       summary: Update the navigation property dailyPrintUsageByUser in print
-      operationId: print.reports_UpdateDailyPrintUsageByUser
+      operationId: print.reports_UpdateDailyPrintUsageGraphBPreUser
       parameters:
         - name: printUsageByUser-id
           in: path
@@ -4660,7 +4660,7 @@ paths:
       tags:
         - print.reportRoot
       summary: Delete navigation property dailyPrintUsageByUser for print
-      operationId: print.reports_DeleteDailyPrintUsageByUser
+      operationId: print.reports_DeleteDailyPrintUsageGraphBPreUser
       parameters:
         - name: printUsageByUser-id
           in: path
@@ -4685,7 +4685,7 @@ paths:
       tags:
         - print.reportRoot
       summary: Get dailyPrintUsageSummariesByPrinter from print
-      operationId: print.reports_ListDailyPrintUsageSummariesByPrinter
+      operationId: print.reports_ListDailyPrintUsageSummariesGraphBPrePrinter
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -4757,7 +4757,7 @@ paths:
       tags:
         - print.reportRoot
       summary: Create new navigation property to dailyPrintUsageSummariesByPrinter for print
-      operationId: print.reports_CreateDailyPrintUsageSummariesByPrinter
+      operationId: print.reports_CreateDailyPrintUsageSummariesGraphBPrePrinter
       requestBody:
         description: New navigation property
         content:
@@ -4780,7 +4780,7 @@ paths:
       tags:
         - print.reportRoot
       summary: Get dailyPrintUsageSummariesByPrinter from print
-      operationId: print.reports_GetDailyPrintUsageSummariesByPrinter
+      operationId: print.reports_GetDailyPrintUsageSummariesGraphBPrePrinter
       parameters:
         - name: printUsageByPrinter-id
           in: path
@@ -4832,7 +4832,7 @@ paths:
       tags:
         - print.reportRoot
       summary: Update the navigation property dailyPrintUsageSummariesByPrinter in print
-      operationId: print.reports_UpdateDailyPrintUsageSummariesByPrinter
+      operationId: print.reports_UpdateDailyPrintUsageSummariesGraphBPrePrinter
       parameters:
         - name: printUsageByPrinter-id
           in: path
@@ -4858,7 +4858,7 @@ paths:
       tags:
         - print.reportRoot
       summary: Delete navigation property dailyPrintUsageSummariesByPrinter for print
-      operationId: print.reports_DeleteDailyPrintUsageSummariesByPrinter
+      operationId: print.reports_DeleteDailyPrintUsageSummariesGraphBPrePrinter
       parameters:
         - name: printUsageByPrinter-id
           in: path
@@ -4883,7 +4883,7 @@ paths:
       tags:
         - print.reportRoot
       summary: Get dailyPrintUsageSummariesByUser from print
-      operationId: print.reports_ListDailyPrintUsageSummariesByUser
+      operationId: print.reports_ListDailyPrintUsageSummariesGraphBPreUser
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -4955,7 +4955,7 @@ paths:
       tags:
         - print.reportRoot
       summary: Create new navigation property to dailyPrintUsageSummariesByUser for print
-      operationId: print.reports_CreateDailyPrintUsageSummariesByUser
+      operationId: print.reports_CreateDailyPrintUsageSummariesGraphBPreUser
       requestBody:
         description: New navigation property
         content:
@@ -4978,7 +4978,7 @@ paths:
       tags:
         - print.reportRoot
       summary: Get dailyPrintUsageSummariesByUser from print
-      operationId: print.reports_GetDailyPrintUsageSummariesByUser
+      operationId: print.reports_GetDailyPrintUsageSummariesGraphBPreUser
       parameters:
         - name: printUsageByUser-id
           in: path
@@ -5030,7 +5030,7 @@ paths:
       tags:
         - print.reportRoot
       summary: Update the navigation property dailyPrintUsageSummariesByUser in print
-      operationId: print.reports_UpdateDailyPrintUsageSummariesByUser
+      operationId: print.reports_UpdateDailyPrintUsageSummariesGraphBPreUser
       parameters:
         - name: printUsageByUser-id
           in: path
@@ -5056,7 +5056,7 @@ paths:
       tags:
         - print.reportRoot
       summary: Delete navigation property dailyPrintUsageSummariesByUser for print
-      operationId: print.reports_DeleteDailyPrintUsageSummariesByUser
+      operationId: print.reports_DeleteDailyPrintUsageSummariesGraphBPreUser
       parameters:
         - name: printUsageByUser-id
           in: path
@@ -7018,7 +7018,7 @@ paths:
       tags:
         - print.Functions
       summary: Invoke function getSkypeForBusinessActivityCounts
-      operationId: print.reports_getSkypeForBusinessActivityCounts
+      operationId: print.reports_getSkypeGraphFPreBusinessActivityCounts
       parameters:
         - name: period
           in: path
@@ -7047,7 +7047,7 @@ paths:
       tags:
         - print.Functions
       summary: Invoke function getSkypeForBusinessActivityUserCounts
-      operationId: print.reports_getSkypeForBusinessActivityUserCounts
+      operationId: print.reports_getSkypeGraphFPreBusinessActivityUserCounts
       parameters:
         - name: period
           in: path
@@ -7076,7 +7076,7 @@ paths:
       tags:
         - print.Functions
       summary: Invoke function getSkypeForBusinessActivityUserDetail
-      operationId: print.reports_getSkypeForBusinessActivityUserDetail
+      operationId: print.reports_getSkypeGraphFPreBusinessActivityUserDetail
       parameters:
         - name: date
           in: path
@@ -7107,7 +7107,7 @@ paths:
       tags:
         - print.Functions
       summary: Invoke function getSkypeForBusinessActivityUserDetail
-      operationId: print.reports_getSkypeForBusinessActivityUserDetail
+      operationId: print.reports_getSkypeGraphFPreBusinessActivityUserDetail
       parameters:
         - name: period
           in: path
@@ -7136,7 +7136,7 @@ paths:
       tags:
         - print.Functions
       summary: Invoke function getSkypeForBusinessDeviceUsageDistributionUserCounts
-      operationId: print.reports_getSkypeForBusinessDeviceUsageDistributionUserCounts
+      operationId: print.reports_getSkypeGraphFPreBusinessDeviceUsageDistributionUserCounts
       parameters:
         - name: period
           in: path
@@ -7165,7 +7165,7 @@ paths:
       tags:
         - print.Functions
       summary: Invoke function getSkypeForBusinessDeviceUsageUserCounts
-      operationId: print.reports_getSkypeForBusinessDeviceUsageUserCounts
+      operationId: print.reports_getSkypeGraphFPreBusinessDeviceUsageUserCounts
       parameters:
         - name: period
           in: path
@@ -7194,7 +7194,7 @@ paths:
       tags:
         - print.Functions
       summary: Invoke function getSkypeForBusinessDeviceUsageUserDetail
-      operationId: print.reports_getSkypeForBusinessDeviceUsageUserDetail
+      operationId: print.reports_getSkypeGraphFPreBusinessDeviceUsageUserDetail
       parameters:
         - name: date
           in: path
@@ -7225,7 +7225,7 @@ paths:
       tags:
         - print.Functions
       summary: Invoke function getSkypeForBusinessDeviceUsageUserDetail
-      operationId: print.reports_getSkypeForBusinessDeviceUsageUserDetail
+      operationId: print.reports_getSkypeGraphFPreBusinessDeviceUsageUserDetail
       parameters:
         - name: period
           in: path
@@ -7254,7 +7254,7 @@ paths:
       tags:
         - print.Functions
       summary: Invoke function getSkypeForBusinessOrganizerActivityCounts
-      operationId: print.reports_getSkypeForBusinessOrganizerActivityCounts
+      operationId: print.reports_getSkypeGraphFPreBusinessOrganizerActivityCounts
       parameters:
         - name: period
           in: path
@@ -7283,7 +7283,7 @@ paths:
       tags:
         - print.Functions
       summary: Invoke function getSkypeForBusinessOrganizerActivityMinuteCounts
-      operationId: print.reports_getSkypeForBusinessOrganizerActivityMinuteCounts
+      operationId: print.reports_getSkypeGraphFPreBusinessOrganizerActivityMinuteCounts
       parameters:
         - name: period
           in: path
@@ -7312,7 +7312,7 @@ paths:
       tags:
         - print.Functions
       summary: Invoke function getSkypeForBusinessOrganizerActivityUserCounts
-      operationId: print.reports_getSkypeForBusinessOrganizerActivityUserCounts
+      operationId: print.reports_getSkypeGraphFPreBusinessOrganizerActivityUserCounts
       parameters:
         - name: period
           in: path
@@ -7341,7 +7341,7 @@ paths:
       tags:
         - print.Functions
       summary: Invoke function getSkypeForBusinessParticipantActivityCounts
-      operationId: print.reports_getSkypeForBusinessParticipantActivityCounts
+      operationId: print.reports_getSkypeGraphFPreBusinessParticipantActivityCounts
       parameters:
         - name: period
           in: path
@@ -7370,7 +7370,7 @@ paths:
       tags:
         - print.Functions
       summary: Invoke function getSkypeForBusinessParticipantActivityMinuteCounts
-      operationId: print.reports_getSkypeForBusinessParticipantActivityMinuteCounts
+      operationId: print.reports_getSkypeGraphFPreBusinessParticipantActivityMinuteCounts
       parameters:
         - name: period
           in: path
@@ -7399,7 +7399,7 @@ paths:
       tags:
         - print.Functions
       summary: Invoke function getSkypeForBusinessParticipantActivityUserCounts
-      operationId: print.reports_getSkypeForBusinessParticipantActivityUserCounts
+      operationId: print.reports_getSkypeGraphFPreBusinessParticipantActivityUserCounts
       parameters:
         - name: period
           in: path
@@ -7428,7 +7428,7 @@ paths:
       tags:
         - print.Functions
       summary: Invoke function getSkypeForBusinessPeerToPeerActivityCounts
-      operationId: print.reports_getSkypeForBusinessPeerToPeerActivityCounts
+      operationId: print.reports_getSkypeGraphFPreBusinessPeerToPeerActivityCounts
       parameters:
         - name: period
           in: path
@@ -7457,7 +7457,7 @@ paths:
       tags:
         - print.Functions
       summary: Invoke function getSkypeForBusinessPeerToPeerActivityMinuteCounts
-      operationId: print.reports_getSkypeForBusinessPeerToPeerActivityMinuteCounts
+      operationId: print.reports_getSkypeGraphFPreBusinessPeerToPeerActivityMinuteCounts
       parameters:
         - name: period
           in: path
@@ -7486,7 +7486,7 @@ paths:
       tags:
         - print.Functions
       summary: Invoke function getSkypeForBusinessPeerToPeerActivityUserCounts
-      operationId: print.reports_getSkypeForBusinessPeerToPeerActivityUserCounts
+      operationId: print.reports_getSkypeGraphFPreBusinessPeerToPeerActivityUserCounts
       parameters:
         - name: period
           in: path
@@ -8701,7 +8701,7 @@ paths:
       tags:
         - print.reportRoot
       summary: Get monthlyPrintUsageByPrinter from print
-      operationId: print.reports_ListMonthlyPrintUsageByPrinter
+      operationId: print.reports_ListMonthlyPrintUsageGraphBPrePrinter
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -8773,7 +8773,7 @@ paths:
       tags:
         - print.reportRoot
       summary: Create new navigation property to monthlyPrintUsageByPrinter for print
-      operationId: print.reports_CreateMonthlyPrintUsageByPrinter
+      operationId: print.reports_CreateMonthlyPrintUsageGraphBPrePrinter
       requestBody:
         description: New navigation property
         content:
@@ -8796,7 +8796,7 @@ paths:
       tags:
         - print.reportRoot
       summary: Get monthlyPrintUsageByPrinter from print
-      operationId: print.reports_GetMonthlyPrintUsageByPrinter
+      operationId: print.reports_GetMonthlyPrintUsageGraphBPrePrinter
       parameters:
         - name: printUsageByPrinter-id
           in: path
@@ -8848,7 +8848,7 @@ paths:
       tags:
         - print.reportRoot
       summary: Update the navigation property monthlyPrintUsageByPrinter in print
-      operationId: print.reports_UpdateMonthlyPrintUsageByPrinter
+      operationId: print.reports_UpdateMonthlyPrintUsageGraphBPrePrinter
       parameters:
         - name: printUsageByPrinter-id
           in: path
@@ -8874,7 +8874,7 @@ paths:
       tags:
         - print.reportRoot
       summary: Delete navigation property monthlyPrintUsageByPrinter for print
-      operationId: print.reports_DeleteMonthlyPrintUsageByPrinter
+      operationId: print.reports_DeleteMonthlyPrintUsageGraphBPrePrinter
       parameters:
         - name: printUsageByPrinter-id
           in: path
@@ -8899,7 +8899,7 @@ paths:
       tags:
         - print.reportRoot
       summary: Get monthlyPrintUsageByUser from print
-      operationId: print.reports_ListMonthlyPrintUsageByUser
+      operationId: print.reports_ListMonthlyPrintUsageGraphBPreUser
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -8971,7 +8971,7 @@ paths:
       tags:
         - print.reportRoot
       summary: Create new navigation property to monthlyPrintUsageByUser for print
-      operationId: print.reports_CreateMonthlyPrintUsageByUser
+      operationId: print.reports_CreateMonthlyPrintUsageGraphBPreUser
       requestBody:
         description: New navigation property
         content:
@@ -8994,7 +8994,7 @@ paths:
       tags:
         - print.reportRoot
       summary: Get monthlyPrintUsageByUser from print
-      operationId: print.reports_GetMonthlyPrintUsageByUser
+      operationId: print.reports_GetMonthlyPrintUsageGraphBPreUser
       parameters:
         - name: printUsageByUser-id
           in: path
@@ -9046,7 +9046,7 @@ paths:
       tags:
         - print.reportRoot
       summary: Update the navigation property monthlyPrintUsageByUser in print
-      operationId: print.reports_UpdateMonthlyPrintUsageByUser
+      operationId: print.reports_UpdateMonthlyPrintUsageGraphBPreUser
       parameters:
         - name: printUsageByUser-id
           in: path
@@ -9072,7 +9072,7 @@ paths:
       tags:
         - print.reportRoot
       summary: Delete navigation property monthlyPrintUsageByUser for print
-      operationId: print.reports_DeleteMonthlyPrintUsageByUser
+      operationId: print.reports_DeleteMonthlyPrintUsageGraphBPreUser
       parameters:
         - name: printUsageByUser-id
           in: path
@@ -9097,7 +9097,7 @@ paths:
       tags:
         - print.reportRoot
       summary: Get monthlyPrintUsageSummariesByPrinter from print
-      operationId: print.reports_ListMonthlyPrintUsageSummariesByPrinter
+      operationId: print.reports_ListMonthlyPrintUsageSummariesGraphBPrePrinter
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -9169,7 +9169,7 @@ paths:
       tags:
         - print.reportRoot
       summary: Create new navigation property to monthlyPrintUsageSummariesByPrinter for print
-      operationId: print.reports_CreateMonthlyPrintUsageSummariesByPrinter
+      operationId: print.reports_CreateMonthlyPrintUsageSummariesGraphBPrePrinter
       requestBody:
         description: New navigation property
         content:
@@ -9192,7 +9192,7 @@ paths:
       tags:
         - print.reportRoot
       summary: Get monthlyPrintUsageSummariesByPrinter from print
-      operationId: print.reports_GetMonthlyPrintUsageSummariesByPrinter
+      operationId: print.reports_GetMonthlyPrintUsageSummariesGraphBPrePrinter
       parameters:
         - name: printUsageByPrinter-id
           in: path
@@ -9244,7 +9244,7 @@ paths:
       tags:
         - print.reportRoot
       summary: Update the navigation property monthlyPrintUsageSummariesByPrinter in print
-      operationId: print.reports_UpdateMonthlyPrintUsageSummariesByPrinter
+      operationId: print.reports_UpdateMonthlyPrintUsageSummariesGraphBPrePrinter
       parameters:
         - name: printUsageByPrinter-id
           in: path
@@ -9270,7 +9270,7 @@ paths:
       tags:
         - print.reportRoot
       summary: Delete navigation property monthlyPrintUsageSummariesByPrinter for print
-      operationId: print.reports_DeleteMonthlyPrintUsageSummariesByPrinter
+      operationId: print.reports_DeleteMonthlyPrintUsageSummariesGraphBPrePrinter
       parameters:
         - name: printUsageByPrinter-id
           in: path
@@ -9295,7 +9295,7 @@ paths:
       tags:
         - print.reportRoot
       summary: Get monthlyPrintUsageSummariesByUser from print
-      operationId: print.reports_ListMonthlyPrintUsageSummariesByUser
+      operationId: print.reports_ListMonthlyPrintUsageSummariesGraphBPreUser
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -9367,7 +9367,7 @@ paths:
       tags:
         - print.reportRoot
       summary: Create new navigation property to monthlyPrintUsageSummariesByUser for print
-      operationId: print.reports_CreateMonthlyPrintUsageSummariesByUser
+      operationId: print.reports_CreateMonthlyPrintUsageSummariesGraphBPreUser
       requestBody:
         description: New navigation property
         content:
@@ -9390,7 +9390,7 @@ paths:
       tags:
         - print.reportRoot
       summary: Get monthlyPrintUsageSummariesByUser from print
-      operationId: print.reports_GetMonthlyPrintUsageSummariesByUser
+      operationId: print.reports_GetMonthlyPrintUsageSummariesGraphBPreUser
       parameters:
         - name: printUsageByUser-id
           in: path
@@ -9442,7 +9442,7 @@ paths:
       tags:
         - print.reportRoot
       summary: Update the navigation property monthlyPrintUsageSummariesByUser in print
-      operationId: print.reports_UpdateMonthlyPrintUsageSummariesByUser
+      operationId: print.reports_UpdateMonthlyPrintUsageSummariesGraphBPreUser
       parameters:
         - name: printUsageByUser-id
           in: path
@@ -9468,7 +9468,7 @@ paths:
       tags:
         - print.reportRoot
       summary: Delete navigation property monthlyPrintUsageSummariesByUser for print
-      operationId: print.reports_DeleteMonthlyPrintUsageSummariesByUser
+      operationId: print.reports_DeleteMonthlyPrintUsageSummariesGraphBPreUser
       parameters:
         - name: printUsageByUser-id
           in: path
@@ -10644,7 +10644,7 @@ paths:
       tags:
         - print.printerShare
       summary: Delete ref of navigation property allowedGroups for print
-      operationId: print.shares_DeleteGraphRefAllowedGroups
+      operationId: print.shares_DeleteAllowedGroupsGraphBPreRef
       parameters:
         - name: printerShare-id
           in: path
@@ -10681,7 +10681,7 @@ paths:
       tags:
         - print.printerShare
       summary: Get ref of allowedGroups from print
-      operationId: print.shares_ListGraphRefAllowedGroups
+      operationId: print.shares_ListAllowedGroupsGraphBPreRef
       parameters:
         - name: printerShare-id
           in: path
@@ -10825,7 +10825,7 @@ paths:
       tags:
         - print.printerShare
       summary: Create new navigation property ref to allowedGroups for print
-      operationId: print.shares_CreateGraphRefAllowedGroups
+      operationId: print.shares_CreateAllowedGroupsGraphBPreRef
       parameters:
         - name: printerShare-id
           in: path
@@ -11287,7 +11287,7 @@ paths:
       tags:
         - print.printerShare
       summary: Delete ref of navigation property allowedUsers for print
-      operationId: print.shares_DeleteGraphRefAllowedUsers
+      operationId: print.shares_DeleteAllowedUsersGraphBPreRef
       parameters:
         - name: printerShare-id
           in: path
@@ -11324,7 +11324,7 @@ paths:
       tags:
         - print.printerShare
       summary: Get ref of allowedUsers from print
-      operationId: print.shares_ListGraphRefAllowedUsers
+      operationId: print.shares_ListAllowedUsersGraphBPreRef
       parameters:
         - name: printerShare-id
           in: path
@@ -11520,7 +11520,7 @@ paths:
       tags:
         - print.printerShare
       summary: Create new navigation property ref to allowedUsers for print
-      operationId: print.shares_CreateGraphRefAllowedUsers
+      operationId: print.shares_CreateAllowedUsersGraphBPreRef
       parameters:
         - name: printerShare-id
           in: path

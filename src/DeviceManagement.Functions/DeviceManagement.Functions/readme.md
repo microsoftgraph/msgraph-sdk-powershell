@@ -43,16 +43,6 @@ directive:
       subject: ^(DeviceManagement(Condition|ConditionStatementManagementCondition|ConditionStatementManagementConditionStatement))$
     set:
       subject: $1ForPlatform
-  - where:
-      subject: ^(DeviceManagementRoleScopeTag)$
-      variant: ^Get$|^GetViaIdentity$
-    set:
-      subject: $1ById
-  - where:
-      subject: ^(DeviceManagementRoleScopeTag)$
-      variant: ^Get1$|^GetViaIdentity1$
-    set:
-      subject: $1ByResource
 ```
 ### Versioning
 

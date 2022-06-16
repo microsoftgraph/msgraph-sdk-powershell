@@ -62,7 +62,7 @@ paths:
             presences:
               operationId: communications.ListPresences
             getPresencesByUserId:
-              operationId: communications.getPresencesByUserId
+              operationId: communications.getPresencesGraphBPreUserId
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2971,7 +2971,7 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action getPresencesByUserId
-      operationId: communications_getPresencesByUserId
+      operationId: communications_getPresencesGraphBPreUserId
       requestBody:
         description: Action parameters
         content:

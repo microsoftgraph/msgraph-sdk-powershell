@@ -45,36 +45,13 @@ directive:
     remove: true
 # Alias then rename cmdlets to avoid breaking change.
   - where:
-      subject: ^UserScopedRoleMember$
+      subject: ^(UserScopedRoleMember)Of$
     set:
-      alias: ${verb}-Mg${subject}
+      alias: ${verb}-Mg$1
   - where:
-      subject: ^UserScopedRoleMember$
+      subject: ^((Contact|Device)(Member|TransitiveMember))Of$
     set:
-      subject: UserScopedRoleMemberOf
-  - where:
-      subject: ^(Contact|Device)(Member|TransitiveMember)$
-    set:
-      alias: ${verb}-Mg${subject}
-  - where:
-      subject: ^(Contact|Device)(Member|TransitiveMember)$
-    set:
-      subject: $1$2Of
-# Rename cmdlets
-  - where:
-      verb: Get
-      subject: (^DirectorySettingTemplate$)
-      variant: ^Get$|^GetExpanded$
-    set:
-      verb: Get
-      subject: $1ById
-  - where:
-      verb: Get
-      subject: (^DirectoryRoleTemplate$)
-      variant: ^Get$|^GetExpanded$|^Get1$|^GetExpanded1$
-    set:
-      verb: Get
-      subject: $1ById
+      alias: ${verb}-Mg$1
 # Rename cmdlets with duplicates in their name.
   - where:
       subject: ^(DirectorySettingTemplate|DirectoryRoleTemplate)(\1)+
@@ -82,52 +59,13 @@ directive:
       subject: $1
 # Rename cmdlets
   - where:
-      verb: Get
-      subject: (^AdministrativeUnit$)
-      variant: ^Get1$|^GetExpanded$
-    set:
-      subject: $1ById
-  - where:
-      verb: Get
-      subject: (^Contact$)
-    set:
-      subject: $1ById
-  - where:
       subject: (^Contact)(OrgContact$)
     set:
       subject: $1
   - where:
-      verb: Get
-      subject: (^Device$)
-      variant: ^Get1$|^GetExpanded$|^Get3$|^GetExpanded1$
-    set:
-      verb: Get
-      subject: $1ById
-  - where:
-      verb: Get
-      subject: (^DirectoryRole$)
-      variant: ^Get1$|^GetExpanded$|^Get3$|^GetExpanded1$
-    set:
-      verb: Get
-      subject: $1ById
-  - where:
       subject: ^(Setting)(DirectorySetting)$
     set:
       subject: $2
-  - where:
-      verb: Get
-      subject: (^Contract$)
-      variant: ^Get1$|^GetExpanded$|^Get3$|^GetExpanded1$
-    set:
-      verb: Get
-      subject: $1ById
-  - where:
-      verb: Get
-      subject: (^Organization$)
-      variant: ^Get1$|^GetExpanded$|^Get3$|^GetExpanded1$
-    set:
-      verb: Get
-      subject: $1ById
 ```
 ### Versioning
 

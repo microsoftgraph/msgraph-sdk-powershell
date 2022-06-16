@@ -54,22 +54,6 @@ directive:
       subject: SubSite
   - where:
       verb: Get
-      subject: (^Site$)
-      variant: ^Get1$|^GetViaIdentity1$|^Get4$|^GetViaIdentity4$
-    set:
-      subject: $1ByPath
-  - where:
-      verb: Get
-      subject: (^SiteActivity$)
-    set:
-      subject: $1ByInterval
-  - where:
-      verb: Get
-      subject: (^SiteListItemActivity$)
-    set:
-      subject: $1ByInterval
-  - where:
-      verb: Get
       subject: ^(Site)OnenoteNotebook(RecentNotebook$)
     set:
       subject: $1$2

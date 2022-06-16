@@ -54,16 +54,6 @@ directive:
       subject: $1AllowedCalendarSharingRoles
   - where:
       verb: Get
-      subject: ^(UserManagedDevice)$
-    set:
-      subject: $1WithAppFailure
-  - where:
-      verb: Get
-      subject: ^(.*(ListItem|DriveItem|Root|Site)Activity)$
-    set:
-      subject: $1ByInterval
-  - where:
-      verb: Get
       subject: ^(UserChatMessage)$
     set:
       subject: All$1

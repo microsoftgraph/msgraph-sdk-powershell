@@ -47,13 +47,9 @@ directive:
     remove: true
 # Alias then rename cmdlets to avoid breaking change.
   - where:
-      subject: ^User(Member|TransitiveMember)$
+      subject: ^User(Member|TransitiveMember)Of$
     set:
       alias: ${verb}-Mg${subject}
-  - where:
-      subject: ^User(Member|TransitiveMember)$
-    set:
-      subject: User$1Of
 ```
 ### Versioning
 

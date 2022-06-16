@@ -57,16 +57,6 @@ directive:
     remove: true
 # Rename
   - where:
-      verb: Clear
-      subject: ^(UserManagedAppRegistration)$
-    set:
-      subject: $1ByDeviceTag
-  - where:
-      verb: Get
-      subject: ^(User|UserChatPermissionGrant|UserDevice|UserJoinedGroup)$
-    set:
-      subject: $1ById
-  - where:
       verb: Get
       subject: ^(UserOwnedObject)$
     set:

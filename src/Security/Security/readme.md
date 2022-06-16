@@ -54,12 +54,6 @@ directive:
   - where:
       verb: Remove
       subject: ^(SecurityTiIndicator)$
-      variant: Delete2|DeleteExpanded1
-    set:
-      subject: $1ByExternalId
-  - where:
-      verb: Remove
-      subject: ^(SecurityTiIndicator)$
       variant: Delete1|DeleteExpanded
     set:
       subject: $1Multiple

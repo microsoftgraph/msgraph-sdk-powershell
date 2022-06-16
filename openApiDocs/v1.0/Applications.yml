@@ -294,7 +294,7 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.application'
           links:
             createdOnBehalfOf:
-              operationId: applications.GetCreatedOnBehalfOf
+              operationId: applications.GetCreatedOnBehalfGraphOPre
               parameters:
                 application-id: $request.path.application-id
             extensionProperties:
@@ -397,7 +397,7 @@ paths:
       tags:
         - applications.directoryObject
       summary: Get createdOnBehalfOf from applications
-      operationId: applications_GetCreatedOnBehalfOf
+      operationId: applications_GetCreatedOnBehalfGraphOPre
       parameters:
         - name: application-id
           in: path
@@ -1360,7 +1360,7 @@ paths:
       tags:
         - applications.directoryObject
       summary: Delete ref of navigation property owners for applications
-      operationId: applications_DeleteGraphRefOwners
+      operationId: applications_DeleteOwnersGraphBPreRef
       parameters:
         - name: application-id
           in: path
@@ -1397,7 +1397,7 @@ paths:
       tags:
         - applications.directoryObject
       summary: Get ref of owners from applications
-      operationId: applications_ListGraphRefOwners
+      operationId: applications_ListOwnersGraphBPreRef
       parameters:
         - name: application-id
           in: path
@@ -1439,7 +1439,7 @@ paths:
       tags:
         - applications.directoryObject
       summary: Create new navigation property ref to owners for applications
-      operationId: applications_CreateGraphRefOwners
+      operationId: applications_CreateOwnersGraphBPreRef
       parameters:
         - name: application-id
           in: path
@@ -1556,7 +1556,7 @@ paths:
       tags:
         - applications.tokenIssuancePolicy
       summary: Delete ref of navigation property tokenIssuancePolicies for applications
-      operationId: applications_DeleteGraphRefTokenIssuancePolicies
+      operationId: applications_DeleteTokenIssuancePoliciesGraphBPreRef
       parameters:
         - name: application-id
           in: path
@@ -1593,7 +1593,7 @@ paths:
       tags:
         - applications.tokenIssuancePolicy
       summary: Get ref of tokenIssuancePolicies from applications
-      operationId: applications_ListGraphRefTokenIssuancePolicies
+      operationId: applications_ListTokenIssuancePoliciesGraphBPreRef
       parameters:
         - name: application-id
           in: path
@@ -1643,7 +1643,7 @@ paths:
       tags:
         - applications.tokenIssuancePolicy
       summary: Create new navigation property ref to tokenIssuancePolicies for applications
-      operationId: applications_CreateGraphRefTokenIssuancePolicies
+      operationId: applications_CreateTokenIssuancePoliciesGraphBPreRef
       parameters:
         - name: application-id
           in: path
@@ -1760,7 +1760,7 @@ paths:
       tags:
         - applications.tokenLifetimePolicy
       summary: Delete ref of navigation property tokenLifetimePolicies for applications
-      operationId: applications_DeleteGraphRefTokenLifetimePolicies
+      operationId: applications_DeleteTokenLifetimePoliciesGraphBPreRef
       parameters:
         - name: application-id
           in: path
@@ -1797,7 +1797,7 @@ paths:
       tags:
         - applications.tokenLifetimePolicy
       summary: Get ref of tokenLifetimePolicies from applications
-      operationId: applications_ListGraphRefTokenLifetimePolicies
+      operationId: applications_ListTokenLifetimePoliciesGraphBPreRef
       parameters:
         - name: application-id
           in: path
@@ -1847,7 +1847,7 @@ paths:
       tags:
         - applications.tokenLifetimePolicy
       summary: Create new navigation property ref to tokenLifetimePolicies for applications
-      operationId: applications_CreateGraphRefTokenLifetimePolicies
+      operationId: applications_CreateTokenLifetimePoliciesGraphBPreRef
       parameters:
         - name: application-id
           in: path
@@ -1944,7 +1944,7 @@ paths:
       tags:
         - applications.Actions
       summary: Invoke action getByIds
-      operationId: applications_getByIds
+      operationId: applications_getGraphBPreIds
       requestBody:
         description: Action parameters
         content:
@@ -2866,7 +2866,7 @@ paths:
               parameters:
                 servicePrincipal-id: $request.path.servicePrincipal-id
             memberOf:
-              operationId: servicePrincipals.ListMemberOf
+              operationId: servicePrincipals.ListMemberGraphOPre
               parameters:
                 servicePrincipal-id: $request.path.servicePrincipal-id
             oauth2PermissionGrants:
@@ -2890,7 +2890,7 @@ paths:
               parameters:
                 servicePrincipal-id: $request.path.servicePrincipal-id
             transitiveMemberOf:
-              operationId: servicePrincipals.ListTransitiveMemberOf
+              operationId: servicePrincipals.ListTransitiveMemberGraphOPre
               parameters:
                 servicePrincipal-id: $request.path.servicePrincipal-id
             addKey:
@@ -3545,7 +3545,7 @@ paths:
       tags:
         - servicePrincipals.claimsMappingPolicy
       summary: Delete ref of navigation property claimsMappingPolicies for servicePrincipals
-      operationId: servicePrincipals_DeleteGraphRefClaimsMappingPolicies
+      operationId: servicePrincipals_DeleteClaimsMappingPoliciesGraphBPreRef
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -3582,7 +3582,7 @@ paths:
       tags:
         - servicePrincipals.claimsMappingPolicy
       summary: Get ref of claimsMappingPolicies from servicePrincipals
-      operationId: servicePrincipals_ListGraphRefClaimsMappingPolicies
+      operationId: servicePrincipals_ListClaimsMappingPoliciesGraphBPreRef
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -3632,7 +3632,7 @@ paths:
       tags:
         - servicePrincipals.claimsMappingPolicy
       summary: Create new navigation property ref to claimsMappingPolicies for servicePrincipals
-      operationId: servicePrincipals_CreateGraphRefClaimsMappingPolicies
+      operationId: servicePrincipals_CreateClaimsMappingPoliciesGraphBPreRef
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -4337,7 +4337,7 @@ paths:
       tags:
         - servicePrincipals.homeRealmDiscoveryPolicy
       summary: Delete ref of navigation property homeRealmDiscoveryPolicies for servicePrincipals
-      operationId: servicePrincipals_DeleteGraphRefHomeRealmDiscoveryPolicies
+      operationId: servicePrincipals_DeleteHomeRealmDiscoveryPoliciesGraphBPreRef
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -4374,7 +4374,7 @@ paths:
       tags:
         - servicePrincipals.homeRealmDiscoveryPolicy
       summary: Get ref of homeRealmDiscoveryPolicies from servicePrincipals
-      operationId: servicePrincipals_ListGraphRefHomeRealmDiscoveryPolicies
+      operationId: servicePrincipals_ListHomeRealmDiscoveryPoliciesGraphBPreRef
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -4424,7 +4424,7 @@ paths:
       tags:
         - servicePrincipals.homeRealmDiscoveryPolicy
       summary: Create new navigation property ref to homeRealmDiscoveryPolicies for servicePrincipals
-      operationId: servicePrincipals_CreateGraphRefHomeRealmDiscoveryPolicies
+      operationId: servicePrincipals_CreateHomeRealmDiscoveryPoliciesGraphBPreRef
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -4459,7 +4459,7 @@ paths:
       tags:
         - servicePrincipals.directoryObject
       summary: Get memberOf from servicePrincipals
-      operationId: servicePrincipals_ListMemberOf
+      operationId: servicePrincipals_ListMemberGraphOPre
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -4527,7 +4527,7 @@ paths:
       tags:
         - servicePrincipals.directoryObject
       summary: Get memberOf from servicePrincipals
-      operationId: servicePrincipals_GetMemberOf
+      operationId: servicePrincipals_GetMemberGraphOPre
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -5311,7 +5311,7 @@ paths:
       tags:
         - servicePrincipals.directoryObject
       summary: Delete ref of navigation property owners for servicePrincipals
-      operationId: servicePrincipals_DeleteGraphRefOwners
+      operationId: servicePrincipals_DeleteOwnersGraphBPreRef
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -5348,7 +5348,7 @@ paths:
       tags:
         - servicePrincipals.directoryObject
       summary: Get ref of owners from servicePrincipals
-      operationId: servicePrincipals_ListGraphRefOwners
+      operationId: servicePrincipals_ListOwnersGraphBPreRef
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -5390,7 +5390,7 @@ paths:
       tags:
         - servicePrincipals.directoryObject
       summary: Create new navigation property ref to owners for servicePrincipals
-      operationId: servicePrincipals_CreateGraphRefOwners
+      operationId: servicePrincipals_CreateOwnersGraphBPreRef
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -5725,7 +5725,7 @@ paths:
       tags:
         - servicePrincipals.directoryObject
       summary: Get transitiveMemberOf from servicePrincipals
-      operationId: servicePrincipals_ListTransitiveMemberOf
+      operationId: servicePrincipals_ListTransitiveMemberGraphOPre
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -5793,7 +5793,7 @@ paths:
       tags:
         - servicePrincipals.directoryObject
       summary: Get transitiveMemberOf from servicePrincipals
-      operationId: servicePrincipals_GetTransitiveMemberOf
+      operationId: servicePrincipals_GetTransitiveMemberGraphOPre
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -5911,7 +5911,7 @@ paths:
       tags:
         - servicePrincipals.Actions
       summary: Invoke action getByIds
-      operationId: servicePrincipals_getByIds
+      operationId: servicePrincipals_getGraphBPreIds
       requestBody:
         description: Action parameters
         content:
