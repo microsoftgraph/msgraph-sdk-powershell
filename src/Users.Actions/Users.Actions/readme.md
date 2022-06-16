@@ -142,6 +142,16 @@ directive:
     set:
       subject: Reprovision$1CloudPc
       alias: Invoke-MgCloudUserManagedDevice
+  - where:
+      subject: ^(UserAuthenticationMethod)SmSign$
+    set:
+      subject: $1SmsSignIn
+      alias: ${verb}-MgUserAuthenticationMethodSmSign
+  - where:
+      subject: ^(UserSign)$
+    set:
+      subject: $1InSession
+      alias: ${verb}-MgUserSign
 ```
 ### Versioning
 

@@ -77,6 +77,16 @@ directive:
     set:
       verb: Get
       subject: Report$1$2
+  - where:
+      subject: ^(ReportApplicationSign)$
+    set:
+      subject: $1InDetailedSummary
+      alias: ${verb}-MgReportApplicationSign
+  - where:
+      subject: ^(ReportAzureAdApplicationSign)$
+    set:
+      subject: $1InSummary
+      alias: ${verb}-MgReportAzureAdApplicationSign
 ```
 ### Versioning
 
