@@ -18,7 +18,7 @@ ModuleVersion = '1.9.6'
 CompatiblePSEditions = 'Core', 'Desktop'
 
 # ID used to uniquely identify this module
-GUID = '539883ba-63ef-4926-8a0f-5bbaf11b97aa'
+GUID = 'a33e9183-09bc-48a6-8db0-3fb9c9e97e69'
 
 # Author of this module
 Author = 'Microsoft Corporation'
@@ -235,12 +235,7 @@ FunctionsToExport = 'Add-MgUserChatMember', 'Add-MgUserDriveListContentTypeCopy'
                'Reset-MgUserManagedDevicePasscode', 
                'Reset-MgUserPendingAccessReviewInstanceDecision', 
                'Resize-MgUserManagedDeviceCloudPc', 'Restart-MgUserCloudPc', 
-               'Restart-MgUserManagedDeviceNow', 'Restore-MgUser', 
-               'Restore-MgUserAuthenticationMicrosoftAuthenticatorMethodDevice', 
-               'Restore-MgUserAuthenticationPasswordlessMicrosoftAuthenticatorMethodDevice', 
-               'Restore-MgUserAuthenticationWindowHelloForBusinessMethodDevice', 
-               'Restore-MgUserChatPermissionGrant', 'Restore-MgUserDevice', 
-               'Restore-MgUserDriveItem', 
+               'Restart-MgUserManagedDeviceNow', 'Restore-MgUserDriveItem', 
                'Restore-MgUserDriveItemListItemDocumentSetVersion', 
                'Restore-MgUserDriveItemListItemVersion', 
                'Restore-MgUserDriveItemVersion', 
