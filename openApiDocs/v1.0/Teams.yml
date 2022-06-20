@@ -3718,12 +3718,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.driveItem'
           links:
             createdByUser:
-              operationId: groups.team.channels.FilesFolder.GetCreatedByUser
+              operationId: groups.team.channels.FilesFolder.GetCreatedGraphBPreUser
               parameters:
                 group-id: $request.path.group-id
                 channel-id: $request.path.channel-id
             lastModifiedByUser:
-              operationId: groups.team.channels.FilesFolder.GetLastModifiedByUser
+              operationId: groups.team.channels.FilesFolder.GetLastModifiedGraphBPreUser
               parameters:
                 group-id: $request.path.group-id
                 channel-id: $request.path.channel-id
@@ -5951,11 +5951,11 @@ paths:
               parameters:
                 group-id: $request.path.group-id
             createdOnBehalfOf:
-              operationId: groups.team.Group.GetCreatedOnBehalfOf
+              operationId: groups.team.Group.GetCreatedOnBehalfGraphOPre
               parameters:
                 group-id: $request.path.group-id
             memberOf:
-              operationId: groups.team.Group.ListMemberOf
+              operationId: groups.team.Group.ListMemberGraphOPre
               parameters:
                 group-id: $request.path.group-id
             members:
@@ -5963,7 +5963,7 @@ paths:
               parameters:
                 group-id: $request.path.group-id
             membersWithLicenseErrors:
-              operationId: groups.team.Group.ListMembersWithLicenseErrors
+              operationId: groups.team.Group.ListMembersGraphWPreLicenseErrors
               parameters:
                 group-id: $request.path.group-id
             owners:
@@ -5979,7 +5979,7 @@ paths:
               parameters:
                 group-id: $request.path.group-id
             transitiveMemberOf:
-              operationId: groups.team.Group.ListTransitiveMemberOf
+              operationId: groups.team.Group.ListTransitiveMemberGraphOPre
               parameters:
                 group-id: $request.path.group-id
             transitiveMembers:
@@ -7137,11 +7137,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.driveItem'
           links:
             createdByUser:
-              operationId: groups.team.primaryChannel.FilesFolder.GetCreatedByUser
+              operationId: groups.team.primaryChannel.FilesFolder.GetCreatedGraphBPreUser
               parameters:
                 group-id: $request.path.group-id
             lastModifiedByUser:
-              operationId: groups.team.primaryChannel.FilesFolder.GetLastModifiedByUser
+              operationId: groups.team.primaryChannel.FilesFolder.GetLastModifiedGraphBPreUser
               parameters:
                 group-id: $request.path.group-id
             workbook:
@@ -12047,12 +12047,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.driveItem'
           links:
             createdByUser:
-              operationId: teams.channels.FilesFolder.GetCreatedByUser
+              operationId: teams.channels.FilesFolder.GetCreatedGraphBPreUser
               parameters:
                 team-id: $request.path.team-id
                 channel-id: $request.path.channel-id
             lastModifiedByUser:
-              operationId: teams.channels.FilesFolder.GetLastModifiedByUser
+              operationId: teams.channels.FilesFolder.GetLastModifiedGraphBPreUser
               parameters:
                 team-id: $request.path.team-id
                 channel-id: $request.path.channel-id
@@ -14535,11 +14535,11 @@ paths:
               parameters:
                 team-id: $request.path.team-id
             createdOnBehalfOf:
-              operationId: teams.Group.GetCreatedOnBehalfOf
+              operationId: teams.Group.GetCreatedOnBehalfGraphOPre
               parameters:
                 team-id: $request.path.team-id
             memberOf:
-              operationId: teams.Group.ListMemberOf
+              operationId: teams.Group.ListMemberGraphOPre
               parameters:
                 team-id: $request.path.team-id
             members:
@@ -14547,7 +14547,7 @@ paths:
               parameters:
                 team-id: $request.path.team-id
             membersWithLicenseErrors:
-              operationId: teams.Group.ListMembersWithLicenseErrors
+              operationId: teams.Group.ListMembersGraphWPreLicenseErrors
               parameters:
                 team-id: $request.path.team-id
             owners:
@@ -14563,7 +14563,7 @@ paths:
               parameters:
                 team-id: $request.path.team-id
             transitiveMemberOf:
-              operationId: teams.Group.ListTransitiveMemberOf
+              operationId: teams.Group.ListTransitiveMemberGraphOPre
               parameters:
                 team-id: $request.path.team-id
             transitiveMembers:
@@ -15961,11 +15961,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.driveItem'
           links:
             createdByUser:
-              operationId: teams.primaryChannel.FilesFolder.GetCreatedByUser
+              operationId: teams.primaryChannel.FilesFolder.GetCreatedGraphBPreUser
               parameters:
                 team-id: $request.path.team-id
             lastModifiedByUser:
-              operationId: teams.primaryChannel.FilesFolder.GetLastModifiedByUser
+              operationId: teams.primaryChannel.FilesFolder.GetLastModifiedGraphBPreUser
               parameters:
                 team-id: $request.path.team-id
             workbook:
@@ -24165,13 +24165,13 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.driveItem'
           links:
             createdByUser:
-              operationId: users.joinedTeams.channels.FilesFolder.GetCreatedByUser
+              operationId: users.joinedTeams.channels.FilesFolder.GetCreatedGraphBPreUser
               parameters:
                 user-id: $request.path.user-id
                 team-id: $request.path.team-id
                 channel-id: $request.path.channel-id
             lastModifiedByUser:
-              operationId: users.joinedTeams.channels.FilesFolder.GetLastModifiedByUser
+              operationId: users.joinedTeams.channels.FilesFolder.GetLastModifiedGraphBPreUser
               parameters:
                 user-id: $request.path.user-id
                 team-id: $request.path.team-id
@@ -26653,12 +26653,12 @@ paths:
                 user-id: $request.path.user-id
                 team-id: $request.path.team-id
             createdOnBehalfOf:
-              operationId: users.joinedTeams.Group.GetCreatedOnBehalfOf
+              operationId: users.joinedTeams.Group.GetCreatedOnBehalfGraphOPre
               parameters:
                 user-id: $request.path.user-id
                 team-id: $request.path.team-id
             memberOf:
-              operationId: users.joinedTeams.Group.ListMemberOf
+              operationId: users.joinedTeams.Group.ListMemberGraphOPre
               parameters:
                 user-id: $request.path.user-id
                 team-id: $request.path.team-id
@@ -26668,7 +26668,7 @@ paths:
                 user-id: $request.path.user-id
                 team-id: $request.path.team-id
             membersWithLicenseErrors:
-              operationId: users.joinedTeams.Group.ListMembersWithLicenseErrors
+              operationId: users.joinedTeams.Group.ListMembersGraphWPreLicenseErrors
               parameters:
                 user-id: $request.path.user-id
                 team-id: $request.path.team-id
@@ -26688,7 +26688,7 @@ paths:
                 user-id: $request.path.user-id
                 team-id: $request.path.team-id
             transitiveMemberOf:
-              operationId: users.joinedTeams.Group.ListTransitiveMemberOf
+              operationId: users.joinedTeams.Group.ListTransitiveMemberGraphOPre
               parameters:
                 user-id: $request.path.user-id
                 team-id: $request.path.team-id
@@ -28020,12 +28020,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.driveItem'
           links:
             createdByUser:
-              operationId: users.joinedTeams.primaryChannel.FilesFolder.GetCreatedByUser
+              operationId: users.joinedTeams.primaryChannel.FilesFolder.GetCreatedGraphBPreUser
               parameters:
                 user-id: $request.path.user-id
                 team-id: $request.path.team-id
             lastModifiedByUser:
-              operationId: users.joinedTeams.primaryChannel.FilesFolder.GetLastModifiedByUser
+              operationId: users.joinedTeams.primaryChannel.FilesFolder.GetLastModifiedGraphBPreUser
               parameters:
                 user-id: $request.path.user-id
                 team-id: $request.path.team-id

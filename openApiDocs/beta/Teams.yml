@@ -1459,15 +1459,15 @@ paths:
               parameters:
                 chat-id: $request.path.chat-id
             hideForUser:
-              operationId: chats.chat.hideForUser
+              operationId: chats.chat.hideGraphFPreUser
             markChatReadForUser:
-              operationId: chats.chat.markChatReadForUser
+              operationId: chats.chat.markChatReadGraphFPreUser
             markChatUnreadForUser:
-              operationId: chats.chat.markChatUnreadForUser
+              operationId: chats.chat.markChatUnreadGraphFPreUser
             sendActivityNotification:
               operationId: chats.chat.sendActivityNotification
             unhideForUser:
-              operationId: chats.chat.unhideForUser
+              operationId: chats.chat.unhideGraphFPreUser
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3746,7 +3746,7 @@ paths:
       tags:
         - chats.Actions
       summary: Invoke action hideForUser
-      operationId: chats_hideForUser
+      operationId: chats_hideGraphFPreUser
       parameters:
         - name: chat-id
           in: path
@@ -3781,7 +3781,7 @@ paths:
       tags:
         - chats.Actions
       summary: Invoke action markChatReadForUser
-      operationId: chats_markChatReadForUser
+      operationId: chats_markChatReadGraphFPreUser
       parameters:
         - name: chat-id
           in: path
@@ -3816,7 +3816,7 @@ paths:
       tags:
         - chats.Actions
       summary: Invoke action markChatUnreadForUser
-      operationId: chats_markChatUnreadForUser
+      operationId: chats_markChatUnreadGraphFPreUser
       parameters:
         - name: chat-id
           in: path
@@ -3903,7 +3903,7 @@ paths:
       tags:
         - chats.Actions
       summary: Invoke action unhideForUser
-      operationId: chats_unhideForUser
+      operationId: chats_unhideGraphFPreUser
       parameters:
         - name: chat-id
           in: path
@@ -4676,7 +4676,7 @@ paths:
       tags:
         - chats.Actions
       summary: Invoke action getByIds
-      operationId: chats.permissionGrants_getByIds
+      operationId: chats.permissionGrants_getGraphBPreIds
       parameters:
         - name: chat-id
           in: path
@@ -5884,7 +5884,7 @@ paths:
                 group-id: $request.path.group-id
                 channel-id: $request.path.channel-id
             sharedWithTeams:
-              operationId: groups.team.AllChannels.ListSharedWithTeams
+              operationId: groups.team.AllChannels.ListSharedGraphWPreTeams
               parameters:
                 group-id: $request.path.group-id
                 channel-id: $request.path.channel-id
@@ -6116,7 +6116,7 @@ paths:
                 group-id: $request.path.group-id
                 channel-id: $request.path.channel-id
             sharedWithTeams:
-              operationId: groups.team.Channels.ListSharedWithTeams
+              operationId: groups.team.Channels.ListSharedGraphWPreTeams
               parameters:
                 group-id: $request.path.group-id
                 channel-id: $request.path.channel-id
@@ -6311,12 +6311,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.driveItem'
           links:
             createdByUser:
-              operationId: groups.team.channels.FilesFolder.GetCreatedByUser
+              operationId: groups.team.channels.FilesFolder.GetCreatedGraphBPreUser
               parameters:
                 group-id: $request.path.group-id
                 channel-id: $request.path.channel-id
             lastModifiedByUser:
-              operationId: groups.team.channels.FilesFolder.GetLastModifiedByUser
+              operationId: groups.team.channels.FilesFolder.GetLastModifiedGraphBPreUser
               parameters:
                 group-id: $request.path.group-id
                 channel-id: $request.path.channel-id
@@ -8080,7 +8080,7 @@ paths:
       tags:
         - groups.team
       summary: Get sharedWithTeams from groups
-      operationId: groups.team.channels_ListSharedWithTeams
+      operationId: groups.team.channels_ListSharedGraphWPreTeams
       parameters:
         - name: group-id
           in: path
@@ -8164,7 +8164,7 @@ paths:
       tags:
         - groups.team
       summary: Create new navigation property to sharedWithTeams for groups
-      operationId: groups.team.channels_CreateSharedWithTeams
+      operationId: groups.team.channels_CreateSharedGraphWPreTeams
       parameters:
         - name: group-id
           in: path
@@ -8202,7 +8202,7 @@ paths:
       tags:
         - groups.team
       summary: Get sharedWithTeams from groups
-      operationId: groups.team.channels_GetSharedWithTeams
+      operationId: groups.team.channels_GetSharedGraphWPreTeams
       parameters:
         - name: group-id
           in: path
@@ -8265,13 +8265,13 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.sharedWithChannelTeamInfo'
           links:
             team:
-              operationId: groups.team.channels.SharedWithTeams.GetTeam
+              operationId: groups.team.channels.SharedGraphWPreTeams.GetTeam
               parameters:
                 group-id: $request.path.group-id
                 channel-id: $request.path.channel-id
                 sharedWithChannelTeamInfo-id: $request.path.sharedWithChannelTeamInfo-id
             allowedMembers:
-              operationId: groups.team.channels.SharedWithTeams.ListAllowedMembers
+              operationId: groups.team.channels.SharedGraphWPreTeams.ListAllowedMembers
               parameters:
                 group-id: $request.path.group-id
                 channel-id: $request.path.channel-id
@@ -8283,7 +8283,7 @@ paths:
       tags:
         - groups.team
       summary: Update the navigation property sharedWithTeams in groups
-      operationId: groups.team.channels_UpdateSharedWithTeams
+      operationId: groups.team.channels_UpdateSharedGraphWPreTeams
       parameters:
         - name: group-id
           in: path
@@ -8323,7 +8323,7 @@ paths:
       tags:
         - groups.team
       summary: Delete navigation property sharedWithTeams for groups
-      operationId: groups.team.channels_DeleteSharedWithTeams
+      operationId: groups.team.channels_DeleteSharedGraphWPreTeams
       parameters:
         - name: group-id
           in: path
@@ -8362,7 +8362,7 @@ paths:
       tags:
         - groups.team
       summary: Get allowedMembers from groups
-      operationId: groups.team.channels.sharedWithTeams_ListAllowedMembers
+      operationId: groups.team.channels.sharedGraphWPreTeams_ListAllowedMembers
       parameters:
         - name: group-id
           in: path
@@ -8450,7 +8450,7 @@ paths:
       tags:
         - groups.team
       summary: Get allowedMembers from groups
-      operationId: groups.team.channels.sharedWithTeams_GetAllowedMembers
+      operationId: groups.team.channels.sharedGraphWPreTeams_GetAllowedMembers
       parameters:
         - name: group-id
           in: path
@@ -9034,7 +9034,7 @@ paths:
               parameters:
                 group-id: $request.path.group-id
             createdOnBehalfOf:
-              operationId: groups.team.Group.GetCreatedOnBehalfOf
+              operationId: groups.team.Group.GetCreatedOnBehalfGraphOPre
               parameters:
                 group-id: $request.path.group-id
             endpoints:
@@ -9042,7 +9042,7 @@ paths:
               parameters:
                 group-id: $request.path.group-id
             memberOf:
-              operationId: groups.team.Group.ListMemberOf
+              operationId: groups.team.Group.ListMemberGraphOPre
               parameters:
                 group-id: $request.path.group-id
             members:
@@ -9050,7 +9050,7 @@ paths:
               parameters:
                 group-id: $request.path.group-id
             membersWithLicenseErrors:
-              operationId: groups.team.Group.ListMembersWithLicenseErrors
+              operationId: groups.team.Group.ListMembersGraphWPreLicenseErrors
               parameters:
                 group-id: $request.path.group-id
             owners:
@@ -9066,7 +9066,7 @@ paths:
               parameters:
                 group-id: $request.path.group-id
             transitiveMemberOf:
-              operationId: groups.team.Group.ListTransitiveMemberOf
+              operationId: groups.team.Group.ListTransitiveMemberGraphOPre
               parameters:
                 group-id: $request.path.group-id
             transitiveMembers:
@@ -9334,7 +9334,7 @@ paths:
                 group-id: $request.path.group-id
                 channel-id: $request.path.channel-id
             sharedWithTeams:
-              operationId: groups.team.IncomingChannels.ListSharedWithTeams
+              operationId: groups.team.IncomingChannels.ListSharedGraphWPreTeams
               parameters:
                 group-id: $request.path.group-id
                 channel-id: $request.path.channel-id
@@ -10938,7 +10938,7 @@ paths:
                 group-id: $request.path.group-id
                 user-id: $request.path.user-id
             memberOf:
-              operationId: groups.team.Owners.ListMemberOf
+              operationId: groups.team.Owners.ListMemberGraphOPre
               parameters:
                 group-id: $request.path.group-id
                 user-id: $request.path.user-id
@@ -10963,12 +10963,12 @@ paths:
                 group-id: $request.path.group-id
                 user-id: $request.path.user-id
             scopedRoleMemberOf:
-              operationId: groups.team.Owners.ListScopedRoleMemberOf
+              operationId: groups.team.Owners.ListScopedRoleMemberGraphOPre
               parameters:
                 group-id: $request.path.group-id
                 user-id: $request.path.user-id
             transitiveMemberOf:
-              operationId: groups.team.Owners.ListTransitiveMemberOf
+              operationId: groups.team.Owners.ListTransitiveMemberGraphOPre
               parameters:
                 group-id: $request.path.group-id
                 user-id: $request.path.user-id
@@ -11063,7 +11063,7 @@ paths:
                 group-id: $request.path.group-id
                 user-id: $request.path.user-id
             appConsentRequestsForApproval:
-              operationId: groups.team.Owners.ListAppConsentRequestsForApproval
+              operationId: groups.team.Owners.ListAppConsentRequestsGraphFPreApproval
               parameters:
                 group-id: $request.path.group-id
                 user-id: $request.path.user-id
@@ -11694,7 +11694,7 @@ paths:
               parameters:
                 group-id: $request.path.group-id
             sharedWithTeams:
-              operationId: groups.team.PrimaryChannel.ListSharedWithTeams
+              operationId: groups.team.PrimaryChannel.ListSharedGraphWPreTeams
               parameters:
                 group-id: $request.path.group-id
             tabs:
@@ -11866,11 +11866,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.driveItem'
           links:
             createdByUser:
-              operationId: groups.team.primaryChannel.FilesFolder.GetCreatedByUser
+              operationId: groups.team.primaryChannel.FilesFolder.GetCreatedGraphBPreUser
               parameters:
                 group-id: $request.path.group-id
             lastModifiedByUser:
-              operationId: groups.team.primaryChannel.FilesFolder.GetLastModifiedByUser
+              operationId: groups.team.primaryChannel.FilesFolder.GetLastModifiedGraphBPreUser
               parameters:
                 group-id: $request.path.group-id
             workbook:
@@ -13431,7 +13431,7 @@ paths:
       tags:
         - groups.team
       summary: Get sharedWithTeams from groups
-      operationId: groups.team.primaryChannel_ListSharedWithTeams
+      operationId: groups.team.primaryChannel_ListSharedGraphWPreTeams
       parameters:
         - name: group-id
           in: path
@@ -13508,7 +13508,7 @@ paths:
       tags:
         - groups.team
       summary: Create new navigation property to sharedWithTeams for groups
-      operationId: groups.team.primaryChannel_CreateSharedWithTeams
+      operationId: groups.team.primaryChannel_CreateSharedGraphWPreTeams
       parameters:
         - name: group-id
           in: path
@@ -13539,7 +13539,7 @@ paths:
       tags:
         - groups.team
       summary: Get sharedWithTeams from groups
-      operationId: groups.team.primaryChannel_GetSharedWithTeams
+      operationId: groups.team.primaryChannel_GetSharedGraphWPreTeams
       parameters:
         - name: group-id
           in: path
@@ -13595,12 +13595,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.sharedWithChannelTeamInfo'
           links:
             team:
-              operationId: groups.team.primaryChannel.SharedWithTeams.GetTeam
+              operationId: groups.team.primaryChannel.SharedGraphWPreTeams.GetTeam
               parameters:
                 group-id: $request.path.group-id
                 sharedWithChannelTeamInfo-id: $request.path.sharedWithChannelTeamInfo-id
             allowedMembers:
-              operationId: groups.team.primaryChannel.SharedWithTeams.ListAllowedMembers
+              operationId: groups.team.primaryChannel.SharedGraphWPreTeams.ListAllowedMembers
               parameters:
                 group-id: $request.path.group-id
                 sharedWithChannelTeamInfo-id: $request.path.sharedWithChannelTeamInfo-id
@@ -13611,7 +13611,7 @@ paths:
       tags:
         - groups.team
       summary: Update the navigation property sharedWithTeams in groups
-      operationId: groups.team.primaryChannel_UpdateSharedWithTeams
+      operationId: groups.team.primaryChannel_UpdateSharedGraphWPreTeams
       parameters:
         - name: group-id
           in: path
@@ -13644,7 +13644,7 @@ paths:
       tags:
         - groups.team
       summary: Delete navigation property sharedWithTeams for groups
-      operationId: groups.team.primaryChannel_DeleteSharedWithTeams
+      operationId: groups.team.primaryChannel_DeleteSharedGraphWPreTeams
       parameters:
         - name: group-id
           in: path
@@ -13676,7 +13676,7 @@ paths:
       tags:
         - groups.team
       summary: Get allowedMembers from groups
-      operationId: groups.team.primaryChannel.sharedWithTeams_ListAllowedMembers
+      operationId: groups.team.primaryChannel.sharedGraphWPreTeams_ListAllowedMembers
       parameters:
         - name: group-id
           in: path
@@ -13757,7 +13757,7 @@ paths:
       tags:
         - groups.team
       summary: Get allowedMembers from groups
-      operationId: groups.team.primaryChannel.sharedWithTeams_GetAllowedMembers
+      operationId: groups.team.primaryChannel.sharedGraphWPreTeams_GetAllowedMembers
       parameters:
         - name: group-id
           in: path
@@ -17892,7 +17892,7 @@ paths:
                 team-id: $request.path.team-id
                 channel-id: $request.path.channel-id
             sharedWithTeams:
-              operationId: teams.AllChannels.ListSharedWithTeams
+              operationId: teams.AllChannels.ListSharedGraphWPreTeams
               parameters:
                 team-id: $request.path.team-id
                 channel-id: $request.path.channel-id
@@ -18124,7 +18124,7 @@ paths:
                 team-id: $request.path.team-id
                 channel-id: $request.path.channel-id
             sharedWithTeams:
-              operationId: teams.Channels.ListSharedWithTeams
+              operationId: teams.Channels.ListSharedGraphWPreTeams
               parameters:
                 team-id: $request.path.team-id
                 channel-id: $request.path.channel-id
@@ -18319,12 +18319,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.driveItem'
           links:
             createdByUser:
-              operationId: teams.channels.FilesFolder.GetCreatedByUser
+              operationId: teams.channels.FilesFolder.GetCreatedGraphBPreUser
               parameters:
                 team-id: $request.path.team-id
                 channel-id: $request.path.channel-id
             lastModifiedByUser:
-              operationId: teams.channels.FilesFolder.GetLastModifiedByUser
+              operationId: teams.channels.FilesFolder.GetLastModifiedGraphBPreUser
               parameters:
                 team-id: $request.path.team-id
                 channel-id: $request.path.channel-id
@@ -20516,7 +20516,7 @@ paths:
       tags:
         - teams.channel
       summary: Get sharedWithTeams from teams
-      operationId: teams.channels_ListSharedWithTeams
+      operationId: teams.channels_ListSharedGraphWPreTeams
       parameters:
         - name: team-id
           in: path
@@ -20600,7 +20600,7 @@ paths:
       tags:
         - teams.channel
       summary: Create new navigation property to sharedWithTeams for teams
-      operationId: teams.channels_CreateSharedWithTeams
+      operationId: teams.channels_CreateSharedGraphWPreTeams
       parameters:
         - name: team-id
           in: path
@@ -20638,7 +20638,7 @@ paths:
       tags:
         - teams.channel
       summary: Get sharedWithTeams from teams
-      operationId: teams.channels_GetSharedWithTeams
+      operationId: teams.channels_GetSharedGraphWPreTeams
       parameters:
         - name: team-id
           in: path
@@ -20701,13 +20701,13 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.sharedWithChannelTeamInfo'
           links:
             team:
-              operationId: teams.channels.SharedWithTeams.GetTeam
+              operationId: teams.channels.SharedGraphWPreTeams.GetTeam
               parameters:
                 team-id: $request.path.team-id
                 channel-id: $request.path.channel-id
                 sharedWithChannelTeamInfo-id: $request.path.sharedWithChannelTeamInfo-id
             allowedMembers:
-              operationId: teams.channels.SharedWithTeams.ListAllowedMembers
+              operationId: teams.channels.SharedGraphWPreTeams.ListAllowedMembers
               parameters:
                 team-id: $request.path.team-id
                 channel-id: $request.path.channel-id
@@ -20719,7 +20719,7 @@ paths:
       tags:
         - teams.channel
       summary: Update the navigation property sharedWithTeams in teams
-      operationId: teams.channels_UpdateSharedWithTeams
+      operationId: teams.channels_UpdateSharedGraphWPreTeams
       parameters:
         - name: team-id
           in: path
@@ -20759,7 +20759,7 @@ paths:
       tags:
         - teams.channel
       summary: Delete navigation property sharedWithTeams for teams
-      operationId: teams.channels_DeleteSharedWithTeams
+      operationId: teams.channels_DeleteSharedGraphWPreTeams
       parameters:
         - name: team-id
           in: path
@@ -20798,7 +20798,7 @@ paths:
       tags:
         - teams.channel
       summary: Get allowedMembers from teams
-      operationId: teams.channels.sharedWithTeams_ListAllowedMembers
+      operationId: teams.channels.sharedGraphWPreTeams_ListAllowedMembers
       parameters:
         - name: team-id
           in: path
@@ -20886,7 +20886,7 @@ paths:
       tags:
         - teams.channel
       summary: Get allowedMembers from teams
-      operationId: teams.channels.sharedWithTeams_GetAllowedMembers
+      operationId: teams.channels.sharedGraphWPreTeams_GetAllowedMembers
       parameters:
         - name: team-id
           in: path
@@ -21534,7 +21534,7 @@ paths:
               parameters:
                 team-id: $request.path.team-id
             createdOnBehalfOf:
-              operationId: teams.Group.GetCreatedOnBehalfOf
+              operationId: teams.Group.GetCreatedOnBehalfGraphOPre
               parameters:
                 team-id: $request.path.team-id
             endpoints:
@@ -21542,7 +21542,7 @@ paths:
               parameters:
                 team-id: $request.path.team-id
             memberOf:
-              operationId: teams.Group.ListMemberOf
+              operationId: teams.Group.ListMemberGraphOPre
               parameters:
                 team-id: $request.path.team-id
             members:
@@ -21550,7 +21550,7 @@ paths:
               parameters:
                 team-id: $request.path.team-id
             membersWithLicenseErrors:
-              operationId: teams.Group.ListMembersWithLicenseErrors
+              operationId: teams.Group.ListMembersGraphWPreLicenseErrors
               parameters:
                 team-id: $request.path.team-id
             owners:
@@ -21566,7 +21566,7 @@ paths:
               parameters:
                 team-id: $request.path.team-id
             transitiveMemberOf:
-              operationId: teams.Group.ListTransitiveMemberOf
+              operationId: teams.Group.ListTransitiveMemberGraphOPre
               parameters:
                 team-id: $request.path.team-id
             transitiveMembers:
@@ -21834,7 +21834,7 @@ paths:
                 team-id: $request.path.team-id
                 channel-id: $request.path.channel-id
             sharedWithTeams:
-              operationId: teams.IncomingChannels.ListSharedWithTeams
+              operationId: teams.IncomingChannels.ListSharedGraphWPreTeams
               parameters:
                 team-id: $request.path.team-id
                 channel-id: $request.path.channel-id
@@ -23678,7 +23678,7 @@ paths:
                 team-id: $request.path.team-id
                 user-id: $request.path.user-id
             memberOf:
-              operationId: teams.Owners.ListMemberOf
+              operationId: teams.Owners.ListMemberGraphOPre
               parameters:
                 team-id: $request.path.team-id
                 user-id: $request.path.user-id
@@ -23703,12 +23703,12 @@ paths:
                 team-id: $request.path.team-id
                 user-id: $request.path.user-id
             scopedRoleMemberOf:
-              operationId: teams.Owners.ListScopedRoleMemberOf
+              operationId: teams.Owners.ListScopedRoleMemberGraphOPre
               parameters:
                 team-id: $request.path.team-id
                 user-id: $request.path.user-id
             transitiveMemberOf:
-              operationId: teams.Owners.ListTransitiveMemberOf
+              operationId: teams.Owners.ListTransitiveMemberGraphOPre
               parameters:
                 team-id: $request.path.team-id
                 user-id: $request.path.user-id
@@ -23803,7 +23803,7 @@ paths:
                 team-id: $request.path.team-id
                 user-id: $request.path.user-id
             appConsentRequestsForApproval:
-              operationId: teams.Owners.ListAppConsentRequestsForApproval
+              operationId: teams.Owners.ListAppConsentRequestsGraphFPreApproval
               parameters:
                 team-id: $request.path.team-id
                 user-id: $request.path.user-id
@@ -24452,7 +24452,7 @@ paths:
       tags:
         - teams.Actions
       summary: Invoke action getByIds
-      operationId: teams.permissionGrants_getByIds
+      operationId: teams.permissionGrants_getGraphBPreIds
       parameters:
         - name: team-id
           in: path
@@ -24812,7 +24812,7 @@ paths:
               parameters:
                 team-id: $request.path.team-id
             sharedWithTeams:
-              operationId: teams.PrimaryChannel.ListSharedWithTeams
+              operationId: teams.PrimaryChannel.ListSharedGraphWPreTeams
               parameters:
                 team-id: $request.path.team-id
             tabs:
@@ -24984,11 +24984,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.driveItem'
           links:
             createdByUser:
-              operationId: teams.primaryChannel.FilesFolder.GetCreatedByUser
+              operationId: teams.primaryChannel.FilesFolder.GetCreatedGraphBPreUser
               parameters:
                 team-id: $request.path.team-id
             lastModifiedByUser:
-              operationId: teams.primaryChannel.FilesFolder.GetLastModifiedByUser
+              operationId: teams.primaryChannel.FilesFolder.GetLastModifiedGraphBPreUser
               parameters:
                 team-id: $request.path.team-id
             workbook:
@@ -26900,7 +26900,7 @@ paths:
       tags:
         - teams.channel
       summary: Get sharedWithTeams from teams
-      operationId: teams.primaryChannel_ListSharedWithTeams
+      operationId: teams.primaryChannel_ListSharedGraphWPreTeams
       parameters:
         - name: team-id
           in: path
@@ -26977,7 +26977,7 @@ paths:
       tags:
         - teams.channel
       summary: Create new navigation property to sharedWithTeams for teams
-      operationId: teams.primaryChannel_CreateSharedWithTeams
+      operationId: teams.primaryChannel_CreateSharedGraphWPreTeams
       parameters:
         - name: team-id
           in: path
@@ -27008,7 +27008,7 @@ paths:
       tags:
         - teams.channel
       summary: Get sharedWithTeams from teams
-      operationId: teams.primaryChannel_GetSharedWithTeams
+      operationId: teams.primaryChannel_GetSharedGraphWPreTeams
       parameters:
         - name: team-id
           in: path
@@ -27064,12 +27064,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.sharedWithChannelTeamInfo'
           links:
             team:
-              operationId: teams.primaryChannel.SharedWithTeams.GetTeam
+              operationId: teams.primaryChannel.SharedGraphWPreTeams.GetTeam
               parameters:
                 team-id: $request.path.team-id
                 sharedWithChannelTeamInfo-id: $request.path.sharedWithChannelTeamInfo-id
             allowedMembers:
-              operationId: teams.primaryChannel.SharedWithTeams.ListAllowedMembers
+              operationId: teams.primaryChannel.SharedGraphWPreTeams.ListAllowedMembers
               parameters:
                 team-id: $request.path.team-id
                 sharedWithChannelTeamInfo-id: $request.path.sharedWithChannelTeamInfo-id
@@ -27080,7 +27080,7 @@ paths:
       tags:
         - teams.channel
       summary: Update the navigation property sharedWithTeams in teams
-      operationId: teams.primaryChannel_UpdateSharedWithTeams
+      operationId: teams.primaryChannel_UpdateSharedGraphWPreTeams
       parameters:
         - name: team-id
           in: path
@@ -27113,7 +27113,7 @@ paths:
       tags:
         - teams.channel
       summary: Delete navigation property sharedWithTeams for teams
-      operationId: teams.primaryChannel_DeleteSharedWithTeams
+      operationId: teams.primaryChannel_DeleteSharedGraphWPreTeams
       parameters:
         - name: team-id
           in: path
@@ -27145,7 +27145,7 @@ paths:
       tags:
         - teams.channel
       summary: Get allowedMembers from teams
-      operationId: teams.primaryChannel.sharedWithTeams_ListAllowedMembers
+      operationId: teams.primaryChannel.sharedGraphWPreTeams_ListAllowedMembers
       parameters:
         - name: team-id
           in: path
@@ -27226,7 +27226,7 @@ paths:
       tags:
         - teams.channel
       summary: Get allowedMembers from teams
-      operationId: teams.primaryChannel.sharedWithTeams_GetAllowedMembers
+      operationId: teams.primaryChannel.sharedGraphWPreTeams_GetAllowedMembers
       parameters:
         - name: team-id
           in: path
@@ -31590,7 +31590,7 @@ paths:
                 deletedTeam-id: $request.path.deletedTeam-id
                 channel-id: $request.path.channel-id
             sharedWithTeams:
-              operationId: teamwork.deletedTeams.Channels.ListSharedWithTeams
+              operationId: teamwork.deletedTeams.Channels.ListSharedGraphWPreTeams
               parameters:
                 deletedTeam-id: $request.path.deletedTeam-id
                 channel-id: $request.path.channel-id
@@ -31785,12 +31785,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.driveItem'
           links:
             createdByUser:
-              operationId: teamwork.deletedTeams.channels.FilesFolder.GetCreatedByUser
+              operationId: teamwork.deletedTeams.channels.FilesFolder.GetCreatedGraphBPreUser
               parameters:
                 deletedTeam-id: $request.path.deletedTeam-id
                 channel-id: $request.path.channel-id
             lastModifiedByUser:
-              operationId: teamwork.deletedTeams.channels.FilesFolder.GetLastModifiedByUser
+              operationId: teamwork.deletedTeams.channels.FilesFolder.GetLastModifiedGraphBPreUser
               parameters:
                 deletedTeam-id: $request.path.deletedTeam-id
                 channel-id: $request.path.channel-id
@@ -33982,7 +33982,7 @@ paths:
       tags:
         - teamwork.deletedTeam
       summary: Get sharedWithTeams from teamwork
-      operationId: teamwork.deletedTeams.channels_ListSharedWithTeams
+      operationId: teamwork.deletedTeams.channels_ListSharedGraphWPreTeams
       parameters:
         - name: deletedTeam-id
           in: path
@@ -34066,7 +34066,7 @@ paths:
       tags:
         - teamwork.deletedTeam
       summary: Create new navigation property to sharedWithTeams for teamwork
-      operationId: teamwork.deletedTeams.channels_CreateSharedWithTeams
+      operationId: teamwork.deletedTeams.channels_CreateSharedGraphWPreTeams
       parameters:
         - name: deletedTeam-id
           in: path
@@ -34104,7 +34104,7 @@ paths:
       tags:
         - teamwork.deletedTeam
       summary: Get sharedWithTeams from teamwork
-      operationId: teamwork.deletedTeams.channels_GetSharedWithTeams
+      operationId: teamwork.deletedTeams.channels_GetSharedGraphWPreTeams
       parameters:
         - name: deletedTeam-id
           in: path
@@ -34167,13 +34167,13 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.sharedWithChannelTeamInfo'
           links:
             team:
-              operationId: teamwork.deletedTeams.channels.SharedWithTeams.GetTeam
+              operationId: teamwork.deletedTeams.channels.SharedGraphWPreTeams.GetTeam
               parameters:
                 deletedTeam-id: $request.path.deletedTeam-id
                 channel-id: $request.path.channel-id
                 sharedWithChannelTeamInfo-id: $request.path.sharedWithChannelTeamInfo-id
             allowedMembers:
-              operationId: teamwork.deletedTeams.channels.SharedWithTeams.ListAllowedMembers
+              operationId: teamwork.deletedTeams.channels.SharedGraphWPreTeams.ListAllowedMembers
               parameters:
                 deletedTeam-id: $request.path.deletedTeam-id
                 channel-id: $request.path.channel-id
@@ -34185,7 +34185,7 @@ paths:
       tags:
         - teamwork.deletedTeam
       summary: Update the navigation property sharedWithTeams in teamwork
-      operationId: teamwork.deletedTeams.channels_UpdateSharedWithTeams
+      operationId: teamwork.deletedTeams.channels_UpdateSharedGraphWPreTeams
       parameters:
         - name: deletedTeam-id
           in: path
@@ -34225,7 +34225,7 @@ paths:
       tags:
         - teamwork.deletedTeam
       summary: Delete navigation property sharedWithTeams for teamwork
-      operationId: teamwork.deletedTeams.channels_DeleteSharedWithTeams
+      operationId: teamwork.deletedTeams.channels_DeleteSharedGraphWPreTeams
       parameters:
         - name: deletedTeam-id
           in: path
@@ -34264,7 +34264,7 @@ paths:
       tags:
         - teamwork.deletedTeam
       summary: Get allowedMembers from teamwork
-      operationId: teamwork.deletedTeams.channels.sharedWithTeams_ListAllowedMembers
+      operationId: teamwork.deletedTeams.channels.sharedGraphWPreTeams_ListAllowedMembers
       parameters:
         - name: deletedTeam-id
           in: path
@@ -34352,7 +34352,7 @@ paths:
       tags:
         - teamwork.deletedTeam
       summary: Get allowedMembers from teamwork
-      operationId: teamwork.deletedTeams.channels.sharedWithTeams_GetAllowedMembers
+      operationId: teamwork.deletedTeams.channels.sharedGraphWPreTeams_GetAllowedMembers
       parameters:
         - name: deletedTeam-id
           in: path
@@ -36294,15 +36294,15 @@ paths:
                 user-id: $request.path.user-id
                 chat-id: $request.path.chat-id
             hideForUser:
-              operationId: users.user.chats.chat.hideForUser
+              operationId: users.user.chats.chat.hideGraphFPreUser
             markChatReadForUser:
-              operationId: users.user.chats.chat.markChatReadForUser
+              operationId: users.user.chats.chat.markChatReadGraphFPreUser
             markChatUnreadForUser:
-              operationId: users.user.chats.chat.markChatUnreadForUser
+              operationId: users.user.chats.chat.markChatUnreadGraphFPreUser
             sendActivityNotification:
               operationId: users.user.chats.chat.sendActivityNotification
             unhideForUser:
-              operationId: users.user.chats.chat.unhideForUser
+              operationId: users.user.chats.chat.unhideGraphFPreUser
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation

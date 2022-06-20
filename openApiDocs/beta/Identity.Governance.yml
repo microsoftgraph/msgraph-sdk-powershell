@@ -4144,7 +4144,7 @@ paths:
             appConsent:
               operationId: identityGovernance.GetAppConsent
             termsOfUse:
-              operationId: identityGovernance.GetTermsOfUse
+              operationId: identityGovernance.GetTermsGraphOPreUse
             entitlementManagement:
               operationId: identityGovernance.GetEntitlementManagement
         default:
@@ -5653,7 +5653,7 @@ paths:
       tags:
         - identityGovernance.Functions
       summary: Invoke function filterByCurrentUser
-      operationId: identityGovernance.accessReviews.decisions.instance.decisions_filterByCurrentUser
+      operationId: identityGovernance.accessReviews.decisions.instance.decisions_filterGraphBPreCurrentUser
       parameters:
         - name: accessReviewInstanceDecisionItem-id
           in: path
@@ -6809,7 +6809,7 @@ paths:
       tags:
         - identityGovernance.Functions
       summary: Invoke function filterByCurrentUser
-      operationId: identityGovernance.accessReviews.decisions.instance.stages.decisions_filterByCurrentUser
+      operationId: identityGovernance.accessReviews.decisions.instance.stages.decisions_filterGraphBPreCurrentUser
       parameters:
         - name: accessReviewInstanceDecisionItem-id
           in: path
@@ -6930,7 +6930,7 @@ paths:
       tags:
         - identityGovernance.Functions
       summary: Invoke function filterByCurrentUser
-      operationId: identityGovernance.accessReviews.decisions.instance.stages_filterByCurrentUser
+      operationId: identityGovernance.accessReviews.decisions.instance.stages_filterGraphBPreCurrentUser
       parameters:
         - name: accessReviewInstanceDecisionItem-id
           in: path
@@ -6968,7 +6968,7 @@ paths:
       tags:
         - identityGovernance.Functions
       summary: Invoke function filterByCurrentUser
-      operationId: identityGovernance.accessReviews.decisions_filterByCurrentUser
+      operationId: identityGovernance.accessReviews.decisions_filterGraphBPreCurrentUser
       parameters:
         - name: on
           in: path
@@ -10332,7 +10332,7 @@ paths:
       tags:
         - identityGovernance.Functions
       summary: Invoke function filterByCurrentUser
-      operationId: identityGovernance.accessReviews.definitions.instances.decisions.instance.stages.decisions_filterByCurrentUser
+      operationId: identityGovernance.accessReviews.definitions.instances.decisions.instance.stages.decisions_filterGraphBPreCurrentUser
       parameters:
         - name: accessReviewScheduleDefinition-id
           in: path
@@ -10495,7 +10495,7 @@ paths:
       tags:
         - identityGovernance.Functions
       summary: Invoke function filterByCurrentUser
-      operationId: identityGovernance.accessReviews.definitions.instances.decisions.instance.stages_filterByCurrentUser
+      operationId: identityGovernance.accessReviews.definitions.instances.decisions.instance.stages_filterGraphBPreCurrentUser
       parameters:
         - name: accessReviewScheduleDefinition-id
           in: path
@@ -10547,7 +10547,7 @@ paths:
       tags:
         - identityGovernance.Functions
       summary: Invoke function filterByCurrentUser
-      operationId: identityGovernance.accessReviews.definitions.instances.decisions_filterByCurrentUser
+      operationId: identityGovernance.accessReviews.definitions.instances.decisions_filterGraphBPreCurrentUser
       parameters:
         - name: accessReviewScheduleDefinition-id
           in: path
@@ -13185,7 +13185,7 @@ paths:
       tags:
         - identityGovernance.Functions
       summary: Invoke function filterByCurrentUser
-      operationId: identityGovernance.accessReviews.definitions.instances.stages.decisions.instance.decisions_filterByCurrentUser
+      operationId: identityGovernance.accessReviews.definitions.instances.stages.decisions.instance.decisions_filterGraphBPreCurrentUser
       parameters:
         - name: accessReviewScheduleDefinition-id
           in: path
@@ -13669,7 +13669,7 @@ paths:
       tags:
         - identityGovernance.Functions
       summary: Invoke function filterByCurrentUser
-      operationId: identityGovernance.accessReviews.definitions.instances.stages.decisions_filterByCurrentUser
+      operationId: identityGovernance.accessReviews.definitions.instances.stages.decisions_filterGraphBPreCurrentUser
       parameters:
         - name: accessReviewScheduleDefinition-id
           in: path
@@ -13811,7 +13811,7 @@ paths:
       tags:
         - identityGovernance.Functions
       summary: Invoke function filterByCurrentUser
-      operationId: identityGovernance.accessReviews.definitions.instances.stages_filterByCurrentUser
+      operationId: identityGovernance.accessReviews.definitions.instances.stages_filterGraphBPreCurrentUser
       parameters:
         - name: accessReviewScheduleDefinition-id
           in: path
@@ -13856,7 +13856,7 @@ paths:
       tags:
         - identityGovernance.Functions
       summary: Invoke function filterByCurrentUser
-      operationId: identityGovernance.accessReviews.definitions.instances_filterByCurrentUser
+      operationId: identityGovernance.accessReviews.definitions.instances_filterGraphBPreCurrentUser
       parameters:
         - name: accessReviewScheduleDefinition-id
           in: path
@@ -13914,7 +13914,7 @@ paths:
       tags:
         - identityGovernance.Functions
       summary: Invoke function filterByCurrentUser
-      operationId: identityGovernance.accessReviews.definitions_filterByCurrentUser
+      operationId: identityGovernance.accessReviews.definitions_filterGraphBPreCurrentUser
       parameters:
         - name: on
           in: path
@@ -15471,7 +15471,7 @@ paths:
       tags:
         - identityGovernance.Functions
       summary: Invoke function filterByCurrentUser
-      operationId: identityGovernance.appConsent.appConsentRequests.userConsentRequests_filterByCurrentUser
+      operationId: identityGovernance.appConsent.appConsentRequests.userConsentRequests_filterGraphBPreCurrentUser
       parameters:
         - name: appConsentRequest-id
           in: path
@@ -15509,7 +15509,7 @@ paths:
       tags:
         - identityGovernance.Functions
       summary: Invoke function filterByCurrentUser
-      operationId: identityGovernance.appConsent.appConsentRequests_filterByCurrentUser
+      operationId: identityGovernance.appConsent.appConsentRequests_filterGraphBPreCurrentUser
       parameters:
         - name: on
           in: path
@@ -16098,7 +16098,7 @@ paths:
       tags:
         - identityGovernance.Functions
       summary: Invoke function filterByCurrentUser
-      operationId: identityGovernance.entitlementManagement.accessPackageAssignmentApprovals_filterByCurrentUser
+      operationId: identityGovernance.entitlementManagement.accessPackageAssignmentApprovals_filterGraphBPreCurrentUser
       parameters:
         - name: on
           in: path
@@ -16463,7 +16463,7 @@ paths:
               parameters:
                 accessPackageAssignmentPolicy-id: $request.path.accessPackageAssignmentPolicy-id
             accessPackagesIncompatibleWith:
-              operationId: identityGovernance.entitlementManagement.accessPackageAssignmentPolicies.AccessPackage.ListAccessPackagesIncompatibleWith
+              operationId: identityGovernance.entitlementManagement.accessPackageAssignmentPolicies.AccessPackage.ListAccessPackagesIncompatibleGraphWPre
               parameters:
                 accessPackageAssignmentPolicy-id: $request.path.accessPackageAssignmentPolicy-id
             incompatibleAccessPackages:
@@ -17186,7 +17186,7 @@ paths:
               parameters:
                 accessPackageAssignmentRequest-id: $request.path.accessPackageAssignmentRequest-id
             accessPackagesIncompatibleWith:
-              operationId: identityGovernance.entitlementManagement.accessPackageAssignmentRequests.AccessPackage.ListAccessPackagesIncompatibleWith
+              operationId: identityGovernance.entitlementManagement.accessPackageAssignmentRequests.AccessPackage.ListAccessPackagesIncompatibleGraphWPre
               parameters:
                 accessPackageAssignmentRequest-id: $request.path.accessPackageAssignmentRequest-id
             incompatibleAccessPackages:
@@ -17515,7 +17515,7 @@ paths:
       tags:
         - identityGovernance.Functions
       summary: Invoke function filterByCurrentUser
-      operationId: identityGovernance.entitlementManagement.accessPackageAssignmentRequests_filterByCurrentUser
+      operationId: identityGovernance.entitlementManagement.accessPackageAssignmentRequests_filterGraphBPreCurrentUser
       parameters:
         - name: on
           in: path
@@ -21110,7 +21110,7 @@ paths:
               parameters:
                 accessPackageAssignment-id: $request.path.accessPackageAssignment-id
             accessPackagesIncompatibleWith:
-              operationId: identityGovernance.entitlementManagement.accessPackageAssignments.AccessPackage.ListAccessPackagesIncompatibleWith
+              operationId: identityGovernance.entitlementManagement.accessPackageAssignments.AccessPackage.ListAccessPackagesIncompatibleGraphWPre
               parameters:
                 accessPackageAssignment-id: $request.path.accessPackageAssignment-id
             incompatibleAccessPackages:
@@ -21564,7 +21564,7 @@ paths:
                 accessPackageAssignment-id: $request.path.accessPackageAssignment-id
                 accessPackageAssignmentPolicy-id: $request.path.accessPackageAssignmentPolicy-id
             accessPackagesIncompatibleWith:
-              operationId: identityGovernance.entitlementManagement.accessPackageAssignments.accessPackage.accessPackageAssignmentPolicies.AccessPackage.ListAccessPackagesIncompatibleWith
+              operationId: identityGovernance.entitlementManagement.accessPackageAssignments.accessPackage.accessPackageAssignmentPolicies.AccessPackage.ListAccessPackagesIncompatibleGraphWPre
               parameters:
                 accessPackageAssignment-id: $request.path.accessPackageAssignment-id
                 accessPackageAssignmentPolicy-id: $request.path.accessPackageAssignmentPolicy-id
@@ -25345,7 +25345,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get accessPackagesIncompatibleWith from identityGovernance
-      operationId: identityGovernance.entitlementManagement.accessPackageAssignments.accessPackage_ListAccessPackagesIncompatibleWith
+      operationId: identityGovernance.entitlementManagement.accessPackageAssignments.accessPackage_ListAccessPackagesIncompatibleGraphWPre
       parameters:
         - name: accessPackageAssignment-id
           in: path
@@ -25449,7 +25449,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get accessPackagesIncompatibleWith from identityGovernance
-      operationId: identityGovernance.entitlementManagement.accessPackageAssignments.accessPackage_GetAccessPackagesIncompatibleWith
+      operationId: identityGovernance.entitlementManagement.accessPackageAssignments.accessPackage_GetAccessPackagesIncompatibleGraphWPre
       parameters:
         - name: accessPackageAssignment-id
           in: path
@@ -25534,7 +25534,7 @@ paths:
                 accessPackageAssignment-id: $request.path.accessPackageAssignment-id
                 accessPackage-id: $request.path.accessPackage-id
             accessPackagesIncompatibleWith:
-              operationId: identityGovernance.entitlementManagement.accessPackageAssignments.accessPackage.AccessPackagesIncompatibleWith.ListAccessPackagesIncompatibleWith
+              operationId: identityGovernance.entitlementManagement.accessPackageAssignments.accessPackage.AccessPackagesIncompatibleGraphWPre.ListAccessPackagesIncompatibleGraphWPre
               parameters:
                 accessPackageAssignment-id: $request.path.accessPackageAssignment-id
                 accessPackage-id: $request.path.accessPackage-id
@@ -25660,7 +25660,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Delete ref of navigation property incompatibleAccessPackages for identityGovernance
-      operationId: identityGovernance.entitlementManagement.accessPackageAssignments.accessPackage_DeleteGraphRefIncompatibleAccessPackages
+      operationId: identityGovernance.entitlementManagement.accessPackageAssignments.accessPackage_DeleteIncompatibleAccessPackagesGraphBPreRef
       parameters:
         - name: accessPackageAssignment-id
           in: path
@@ -25697,7 +25697,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get ref of incompatibleAccessPackages from identityGovernance
-      operationId: identityGovernance.entitlementManagement.accessPackageAssignments.accessPackage_ListGraphRefIncompatibleAccessPackages
+      operationId: identityGovernance.entitlementManagement.accessPackageAssignments.accessPackage_ListIncompatibleAccessPackagesGraphBPreRef
       parameters:
         - name: accessPackageAssignment-id
           in: path
@@ -25755,7 +25755,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Create new navigation property ref to incompatibleAccessPackages for identityGovernance
-      operationId: identityGovernance.entitlementManagement.accessPackageAssignments.accessPackage_CreateGraphRefIncompatibleAccessPackages
+      operationId: identityGovernance.entitlementManagement.accessPackageAssignments.accessPackage_CreateIncompatibleAccessPackagesGraphBPreRef
       parameters:
         - name: accessPackageAssignment-id
           in: path
@@ -26067,7 +26067,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Delete ref of navigation property incompatibleGroups for identityGovernance
-      operationId: identityGovernance.entitlementManagement.accessPackageAssignments.accessPackage_DeleteGraphRefIncompatibleGroups
+      operationId: identityGovernance.entitlementManagement.accessPackageAssignments.accessPackage_DeleteIncompatibleGroupsGraphBPreRef
       parameters:
         - name: accessPackageAssignment-id
           in: path
@@ -26104,7 +26104,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get ref of incompatibleGroups from identityGovernance
-      operationId: identityGovernance.entitlementManagement.accessPackageAssignments.accessPackage_ListGraphRefIncompatibleGroups
+      operationId: identityGovernance.entitlementManagement.accessPackageAssignments.accessPackage_ListIncompatibleGroupsGraphBPreRef
       parameters:
         - name: accessPackageAssignment-id
           in: path
@@ -26248,7 +26248,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Create new navigation property ref to incompatibleGroups for identityGovernance
-      operationId: identityGovernance.entitlementManagement.accessPackageAssignments.accessPackage_CreateGraphRefIncompatibleGroups
+      operationId: identityGovernance.entitlementManagement.accessPackageAssignments.accessPackage_CreateIncompatibleGroupsGraphBPreRef
       parameters:
         - name: accessPackageAssignment-id
           in: path
@@ -26521,7 +26521,7 @@ paths:
               parameters:
                 accessPackageAssignment-id: $request.path.accessPackageAssignment-id
             accessPackagesIncompatibleWith:
-              operationId: identityGovernance.entitlementManagement.accessPackageAssignments.accessPackageAssignmentPolicy.AccessPackage.ListAccessPackagesIncompatibleWith
+              operationId: identityGovernance.entitlementManagement.accessPackageAssignments.accessPackageAssignmentPolicy.AccessPackage.ListAccessPackagesIncompatibleGraphWPre
               parameters:
                 accessPackageAssignment-id: $request.path.accessPackageAssignment-id
             incompatibleAccessPackages:
@@ -27293,7 +27293,7 @@ paths:
                 accessPackageAssignment-id: $request.path.accessPackageAssignment-id
                 accessPackageAssignmentRequest-id: $request.path.accessPackageAssignmentRequest-id
             accessPackagesIncompatibleWith:
-              operationId: identityGovernance.entitlementManagement.accessPackageAssignments.accessPackageAssignmentRequests.AccessPackage.ListAccessPackagesIncompatibleWith
+              operationId: identityGovernance.entitlementManagement.accessPackageAssignments.accessPackageAssignmentRequests.AccessPackage.ListAccessPackagesIncompatibleGraphWPre
               parameters:
                 accessPackageAssignment-id: $request.path.accessPackageAssignment-id
                 accessPackageAssignmentRequest-id: $request.path.accessPackageAssignmentRequest-id
@@ -27682,7 +27682,7 @@ paths:
       tags:
         - identityGovernance.Functions
       summary: Invoke function filterByCurrentUser
-      operationId: identityGovernance.entitlementManagement.accessPackageAssignments.accessPackageAssignmentRequests_filterByCurrentUser
+      operationId: identityGovernance.entitlementManagement.accessPackageAssignments.accessPackageAssignmentRequests_filterGraphBPreCurrentUser
       parameters:
         - name: accessPackageAssignment-id
           in: path
@@ -31703,7 +31703,7 @@ paths:
       tags:
         - identityGovernance.Functions
       summary: Invoke function filterByCurrentUser
-      operationId: identityGovernance.entitlementManagement.accessPackageAssignments_filterByCurrentUser
+      operationId: identityGovernance.entitlementManagement.accessPackageAssignments_filterGraphBPreCurrentUser
       parameters:
         - name: on
           in: path
@@ -38067,7 +38067,7 @@ paths:
                 accessPackageCatalog-id: $request.path.accessPackageCatalog-id
                 accessPackage-id: $request.path.accessPackage-id
             accessPackagesIncompatibleWith:
-              operationId: identityGovernance.entitlementManagement.accessPackageCatalogs.AccessPackages.ListAccessPackagesIncompatibleWith
+              operationId: identityGovernance.entitlementManagement.accessPackageCatalogs.AccessPackages.ListAccessPackagesIncompatibleGraphWPre
               parameters:
                 accessPackageCatalog-id: $request.path.accessPackageCatalog-id
                 accessPackage-id: $request.path.accessPackage-id
@@ -38586,7 +38586,7 @@ paths:
                 accessPackage-id: $request.path.accessPackage-id
                 accessPackageAssignmentPolicy-id: $request.path.accessPackageAssignmentPolicy-id
             accessPackagesIncompatibleWith:
-              operationId: identityGovernance.entitlementManagement.accessPackageCatalogs.accessPackages.accessPackageAssignmentPolicies.AccessPackage.ListAccessPackagesIncompatibleWith
+              operationId: identityGovernance.entitlementManagement.accessPackageCatalogs.accessPackages.accessPackageAssignmentPolicies.AccessPackage.ListAccessPackagesIncompatibleGraphWPre
               parameters:
                 accessPackageCatalog-id: $request.path.accessPackageCatalog-id
                 accessPackage-id: $request.path.accessPackage-id
@@ -42862,7 +42862,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get accessPackagesIncompatibleWith from identityGovernance
-      operationId: identityGovernance.entitlementManagement.accessPackageCatalogs.accessPackages_ListAccessPackagesIncompatibleWith
+      operationId: identityGovernance.entitlementManagement.accessPackageCatalogs.accessPackages_ListAccessPackagesIncompatibleGraphWPre
       parameters:
         - name: accessPackageCatalog-id
           in: path
@@ -42973,7 +42973,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get accessPackagesIncompatibleWith from identityGovernance
-      operationId: identityGovernance.entitlementManagement.accessPackageCatalogs.accessPackages_GetAccessPackagesIncompatibleWith
+      operationId: identityGovernance.entitlementManagement.accessPackageCatalogs.accessPackages_GetAccessPackagesIncompatibleGraphWPre
       parameters:
         - name: accessPackageCatalog-id
           in: path
@@ -43068,7 +43068,7 @@ paths:
                 accessPackage-id: $request.path.accessPackage-id
                 accessPackage-id1: $request.path.accessPackage-id1
             accessPackagesIncompatibleWith:
-              operationId: identityGovernance.entitlementManagement.accessPackageCatalogs.accessPackages.AccessPackagesIncompatibleWith.ListAccessPackagesIncompatibleWith
+              operationId: identityGovernance.entitlementManagement.accessPackageCatalogs.accessPackages.AccessPackagesIncompatibleGraphWPre.ListAccessPackagesIncompatibleGraphWPre
               parameters:
                 accessPackageCatalog-id: $request.path.accessPackageCatalog-id
                 accessPackage-id: $request.path.accessPackage-id
@@ -43204,7 +43204,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Delete ref of navigation property incompatibleAccessPackages for identityGovernance
-      operationId: identityGovernance.entitlementManagement.accessPackageCatalogs.accessPackages_DeleteGraphRefIncompatibleAccessPackages
+      operationId: identityGovernance.entitlementManagement.accessPackageCatalogs.accessPackages_DeleteIncompatibleAccessPackagesGraphBPreRef
       parameters:
         - name: accessPackageCatalog-id
           in: path
@@ -43248,7 +43248,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get ref of incompatibleAccessPackages from identityGovernance
-      operationId: identityGovernance.entitlementManagement.accessPackageCatalogs.accessPackages_ListGraphRefIncompatibleAccessPackages
+      operationId: identityGovernance.entitlementManagement.accessPackageCatalogs.accessPackages_ListIncompatibleAccessPackagesGraphBPreRef
       parameters:
         - name: accessPackageCatalog-id
           in: path
@@ -43313,7 +43313,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Create new navigation property ref to incompatibleAccessPackages for identityGovernance
-      operationId: identityGovernance.entitlementManagement.accessPackageCatalogs.accessPackages_CreateGraphRefIncompatibleAccessPackages
+      operationId: identityGovernance.entitlementManagement.accessPackageCatalogs.accessPackages_CreateIncompatibleAccessPackagesGraphBPreRef
       parameters:
         - name: accessPackageCatalog-id
           in: path
@@ -43639,7 +43639,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Delete ref of navigation property incompatibleGroups for identityGovernance
-      operationId: identityGovernance.entitlementManagement.accessPackageCatalogs.accessPackages_DeleteGraphRefIncompatibleGroups
+      operationId: identityGovernance.entitlementManagement.accessPackageCatalogs.accessPackages_DeleteIncompatibleGroupsGraphBPreRef
       parameters:
         - name: accessPackageCatalog-id
           in: path
@@ -43683,7 +43683,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get ref of incompatibleGroups from identityGovernance
-      operationId: identityGovernance.entitlementManagement.accessPackageCatalogs.accessPackages_ListGraphRefIncompatibleGroups
+      operationId: identityGovernance.entitlementManagement.accessPackageCatalogs.accessPackages_ListIncompatibleGroupsGraphBPreRef
       parameters:
         - name: accessPackageCatalog-id
           in: path
@@ -43834,7 +43834,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Create new navigation property ref to incompatibleGroups for identityGovernance
-      operationId: identityGovernance.entitlementManagement.accessPackageCatalogs.accessPackages_CreateGraphRefIncompatibleGroups
+      operationId: identityGovernance.entitlementManagement.accessPackageCatalogs.accessPackages_CreateIncompatibleGroupsGraphBPreRef
       parameters:
         - name: accessPackageCatalog-id
           in: path
@@ -43915,7 +43915,7 @@ paths:
       tags:
         - identityGovernance.Functions
       summary: Invoke function filterByCurrentUser
-      operationId: identityGovernance.entitlementManagement.accessPackageCatalogs.accessPackages_filterByCurrentUser
+      operationId: identityGovernance.entitlementManagement.accessPackageCatalogs.accessPackages_filterGraphBPreCurrentUser
       parameters:
         - name: accessPackageCatalog-id
           in: path
@@ -50482,7 +50482,7 @@ paths:
               parameters:
                 accessPackage-id: $request.path.accessPackage-id
             accessPackagesIncompatibleWith:
-              operationId: identityGovernance.entitlementManagement.AccessPackages.ListAccessPackagesIncompatibleWith
+              operationId: identityGovernance.entitlementManagement.AccessPackages.ListAccessPackagesIncompatibleGraphWPre
               parameters:
                 accessPackage-id: $request.path.accessPackage-id
             incompatibleAccessPackages:
@@ -50936,7 +50936,7 @@ paths:
                 accessPackage-id: $request.path.accessPackage-id
                 accessPackageAssignmentPolicy-id: $request.path.accessPackageAssignmentPolicy-id
             accessPackagesIncompatibleWith:
-              operationId: identityGovernance.entitlementManagement.accessPackages.accessPackageAssignmentPolicies.AccessPackage.ListAccessPackagesIncompatibleWith
+              operationId: identityGovernance.entitlementManagement.accessPackages.accessPackageAssignmentPolicies.AccessPackage.ListAccessPackagesIncompatibleGraphWPre
               parameters:
                 accessPackage-id: $request.path.accessPackage-id
                 accessPackageAssignmentPolicy-id: $request.path.accessPackageAssignmentPolicy-id
@@ -54717,7 +54717,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get accessPackagesIncompatibleWith from identityGovernance
-      operationId: identityGovernance.entitlementManagement.accessPackages_ListAccessPackagesIncompatibleWith
+      operationId: identityGovernance.entitlementManagement.accessPackages_ListAccessPackagesIncompatibleGraphWPre
       parameters:
         - name: accessPackage-id
           in: path
@@ -54821,7 +54821,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get accessPackagesIncompatibleWith from identityGovernance
-      operationId: identityGovernance.entitlementManagement.accessPackages_GetAccessPackagesIncompatibleWith
+      operationId: identityGovernance.entitlementManagement.accessPackages_GetAccessPackagesIncompatibleGraphWPre
       parameters:
         - name: accessPackage-id
           in: path
@@ -54906,7 +54906,7 @@ paths:
                 accessPackage-id: $request.path.accessPackage-id
                 accessPackage-id1: $request.path.accessPackage-id1
             accessPackagesIncompatibleWith:
-              operationId: identityGovernance.entitlementManagement.accessPackages.AccessPackagesIncompatibleWith.ListAccessPackagesIncompatibleWith
+              operationId: identityGovernance.entitlementManagement.accessPackages.AccessPackagesIncompatibleGraphWPre.ListAccessPackagesIncompatibleGraphWPre
               parameters:
                 accessPackage-id: $request.path.accessPackage-id
                 accessPackage-id1: $request.path.accessPackage-id1
@@ -55032,7 +55032,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Delete ref of navigation property incompatibleAccessPackages for identityGovernance
-      operationId: identityGovernance.entitlementManagement.accessPackages_DeleteGraphRefIncompatibleAccessPackages
+      operationId: identityGovernance.entitlementManagement.accessPackages_DeleteIncompatibleAccessPackagesGraphBPreRef
       parameters:
         - name: accessPackage-id
           in: path
@@ -55069,7 +55069,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get ref of incompatibleAccessPackages from identityGovernance
-      operationId: identityGovernance.entitlementManagement.accessPackages_ListGraphRefIncompatibleAccessPackages
+      operationId: identityGovernance.entitlementManagement.accessPackages_ListIncompatibleAccessPackagesGraphBPreRef
       parameters:
         - name: accessPackage-id
           in: path
@@ -55127,7 +55127,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Create new navigation property ref to incompatibleAccessPackages for identityGovernance
-      operationId: identityGovernance.entitlementManagement.accessPackages_CreateGraphRefIncompatibleAccessPackages
+      operationId: identityGovernance.entitlementManagement.accessPackages_CreateIncompatibleAccessPackagesGraphBPreRef
       parameters:
         - name: accessPackage-id
           in: path
@@ -55439,7 +55439,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Delete ref of navigation property incompatibleGroups for identityGovernance
-      operationId: identityGovernance.entitlementManagement.accessPackages_DeleteGraphRefIncompatibleGroups
+      operationId: identityGovernance.entitlementManagement.accessPackages_DeleteIncompatibleGroupsGraphBPreRef
       parameters:
         - name: accessPackage-id
           in: path
@@ -55476,7 +55476,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get ref of incompatibleGroups from identityGovernance
-      operationId: identityGovernance.entitlementManagement.accessPackages_ListGraphRefIncompatibleGroups
+      operationId: identityGovernance.entitlementManagement.accessPackages_ListIncompatibleGroupsGraphBPreRef
       parameters:
         - name: accessPackage-id
           in: path
@@ -55620,7 +55620,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Create new navigation property ref to incompatibleGroups for identityGovernance
-      operationId: identityGovernance.entitlementManagement.accessPackages_CreateGraphRefIncompatibleGroups
+      operationId: identityGovernance.entitlementManagement.accessPackages_CreateIncompatibleGroupsGraphBPreRef
       parameters:
         - name: accessPackage-id
           in: path
@@ -55687,7 +55687,7 @@ paths:
       tags:
         - identityGovernance.Functions
       summary: Invoke function filterByCurrentUser
-      operationId: identityGovernance.entitlementManagement.accessPackages_filterByCurrentUser
+      operationId: identityGovernance.entitlementManagement.accessPackages_filterGraphBPreCurrentUser
       parameters:
         - name: on
           in: path
@@ -56067,7 +56067,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Delete ref of navigation property externalSponsors for identityGovernance
-      operationId: identityGovernance.entitlementManagement.connectedOrganizations_DeleteGraphRefExternalSponsors
+      operationId: identityGovernance.entitlementManagement.connectedOrganizations_DeleteExternalSponsorsGraphBPreRef
       parameters:
         - name: connectedOrganization-id
           in: path
@@ -56104,7 +56104,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get ref of externalSponsors from identityGovernance
-      operationId: identityGovernance.entitlementManagement.connectedOrganizations_ListGraphRefExternalSponsors
+      operationId: identityGovernance.entitlementManagement.connectedOrganizations_ListExternalSponsorsGraphBPreRef
       parameters:
         - name: connectedOrganization-id
           in: path
@@ -56146,7 +56146,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Create new navigation property ref to externalSponsors for identityGovernance
-      operationId: identityGovernance.entitlementManagement.connectedOrganizations_CreateGraphRefExternalSponsors
+      operationId: identityGovernance.entitlementManagement.connectedOrganizations_CreateExternalSponsorsGraphBPreRef
       parameters:
         - name: connectedOrganization-id
           in: path
@@ -56181,7 +56181,7 @@ paths:
       tags:
         - identityGovernance.Actions
       summary: Invoke action getByIds
-      operationId: identityGovernance.entitlementManagement.connectedOrganizations.externalSponsors_getByIds
+      operationId: identityGovernance.entitlementManagement.connectedOrganizations.externalSponsors_getGraphBPreIds
       parameters:
         - name: connectedOrganization-id
           in: path
@@ -56788,7 +56788,7 @@ paths:
       tags:
         - identityGovernance.Actions
       summary: Invoke action getByIds
-      operationId: identityGovernance.entitlementManagement.connectedOrganizations.internalSponsors_getByIds
+      operationId: identityGovernance.entitlementManagement.connectedOrganizations.internalSponsors_getGraphBPreIds
       parameters:
         - name: connectedOrganization-id
           in: path
@@ -57001,7 +57001,7 @@ paths:
       tags:
         - identityGovernance.termsOfUseContainer
       summary: Get termsOfUse from identityGovernance
-      operationId: identityGovernance_GetTermsOfUse
+      operationId: identityGovernance_GetTermsGraphOPreUse
       parameters:
         - name: $select
           in: query
@@ -57040,9 +57040,9 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.termsOfUseContainer'
           links:
             agreementAcceptances:
-              operationId: identityGovernance.TermsOfUse.ListAgreementAcceptances
+              operationId: identityGovernance.TermsGraphOPreUse.ListAgreementAcceptances
             agreements:
-              operationId: identityGovernance.TermsOfUse.ListAgreements
+              operationId: identityGovernance.TermsGraphOPreUse.ListAgreements
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -57050,7 +57050,7 @@ paths:
       tags:
         - identityGovernance.termsOfUseContainer
       summary: Update the navigation property termsOfUse in identityGovernance
-      operationId: identityGovernance_UpdateTermsOfUse
+      operationId: identityGovernance_UpdateTermsGraphOPreUse
       requestBody:
         description: New navigation property values
         content:
@@ -57068,7 +57068,7 @@ paths:
       tags:
         - identityGovernance.termsOfUseContainer
       summary: Delete navigation property termsOfUse for identityGovernance
-      operationId: identityGovernance_DeleteTermsOfUse
+      operationId: identityGovernance_DeleteTermsGraphOPreUse
       parameters:
         - name: If-Match
           in: header
@@ -57086,7 +57086,7 @@ paths:
       tags:
         - identityGovernance.termsOfUseContainer
       summary: Get agreementAcceptances from identityGovernance
-      operationId: identityGovernance.termsOfUse_ListAgreementAcceptances
+      operationId: identityGovernance.termsGraphOPreUse_ListAgreementAcceptances
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -57182,7 +57182,7 @@ paths:
       tags:
         - identityGovernance.termsOfUseContainer
       summary: Create new navigation property to agreementAcceptances for identityGovernance
-      operationId: identityGovernance.termsOfUse_CreateAgreementAcceptances
+      operationId: identityGovernance.termsGraphOPreUse_CreateAgreementAcceptances
       requestBody:
         description: New navigation property
         content:
@@ -57205,7 +57205,7 @@ paths:
       tags:
         - identityGovernance.termsOfUseContainer
       summary: Get agreementAcceptances from identityGovernance
-      operationId: identityGovernance.termsOfUse_GetAgreementAcceptances
+      operationId: identityGovernance.termsGraphOPreUse_GetAgreementAcceptances
       parameters:
         - name: agreementAcceptance-id
           in: path
@@ -57265,7 +57265,7 @@ paths:
       tags:
         - identityGovernance.termsOfUseContainer
       summary: Update the navigation property agreementAcceptances in identityGovernance
-      operationId: identityGovernance.termsOfUse_UpdateAgreementAcceptances
+      operationId: identityGovernance.termsGraphOPreUse_UpdateAgreementAcceptances
       parameters:
         - name: agreementAcceptance-id
           in: path
@@ -57291,7 +57291,7 @@ paths:
       tags:
         - identityGovernance.termsOfUseContainer
       summary: Delete navigation property agreementAcceptances for identityGovernance
-      operationId: identityGovernance.termsOfUse_DeleteAgreementAcceptances
+      operationId: identityGovernance.termsGraphOPreUse_DeleteAgreementAcceptances
       parameters:
         - name: agreementAcceptance-id
           in: path
@@ -57316,7 +57316,7 @@ paths:
       tags:
         - identityGovernance.termsOfUseContainer
       summary: Get agreements from identityGovernance
-      operationId: identityGovernance.termsOfUse_ListAgreements
+      operationId: identityGovernance.termsGraphOPreUse_ListAgreements
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -57394,7 +57394,7 @@ paths:
       tags:
         - identityGovernance.termsOfUseContainer
       summary: Create new navigation property to agreements for identityGovernance
-      operationId: identityGovernance.termsOfUse_CreateAgreements
+      operationId: identityGovernance.termsGraphOPreUse_CreateAgreements
       requestBody:
         description: New navigation property
         content:
@@ -57417,7 +57417,7 @@ paths:
       tags:
         - identityGovernance.termsOfUseContainer
       summary: Get agreements from identityGovernance
-      operationId: identityGovernance.termsOfUse_GetAgreements
+      operationId: identityGovernance.termsGraphOPreUse_GetAgreements
       parameters:
         - name: agreement-id
           in: path
@@ -57470,15 +57470,15 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.agreement'
           links:
             acceptances:
-              operationId: identityGovernance.termsOfUse.Agreements.ListAcceptances
+              operationId: identityGovernance.termsGraphOPreUse.Agreements.ListAcceptances
               parameters:
                 agreement-id: $request.path.agreement-id
             file:
-              operationId: identityGovernance.termsOfUse.Agreements.GetFile
+              operationId: identityGovernance.termsGraphOPreUse.Agreements.GetFile
               parameters:
                 agreement-id: $request.path.agreement-id
             files:
-              operationId: identityGovernance.termsOfUse.Agreements.ListFiles
+              operationId: identityGovernance.termsGraphOPreUse.Agreements.ListFiles
               parameters:
                 agreement-id: $request.path.agreement-id
         default:
@@ -57488,7 +57488,7 @@ paths:
       tags:
         - identityGovernance.termsOfUseContainer
       summary: Update the navigation property agreements in identityGovernance
-      operationId: identityGovernance.termsOfUse_UpdateAgreements
+      operationId: identityGovernance.termsGraphOPreUse_UpdateAgreements
       parameters:
         - name: agreement-id
           in: path
@@ -57514,7 +57514,7 @@ paths:
       tags:
         - identityGovernance.termsOfUseContainer
       summary: Delete navigation property agreements for identityGovernance
-      operationId: identityGovernance.termsOfUse_DeleteAgreements
+      operationId: identityGovernance.termsGraphOPreUse_DeleteAgreements
       parameters:
         - name: agreement-id
           in: path
@@ -57539,7 +57539,7 @@ paths:
       tags:
         - identityGovernance.termsOfUseContainer
       summary: Get acceptances from identityGovernance
-      operationId: identityGovernance.termsOfUse.agreements_ListAcceptances
+      operationId: identityGovernance.termsGraphOPreUse.agreements_ListAcceptances
       parameters:
         - name: agreement-id
           in: path
@@ -57642,7 +57642,7 @@ paths:
       tags:
         - identityGovernance.termsOfUseContainer
       summary: Create new navigation property to acceptances for identityGovernance
-      operationId: identityGovernance.termsOfUse.agreements_CreateAcceptances
+      operationId: identityGovernance.termsGraphOPreUse.agreements_CreateAcceptances
       parameters:
         - name: agreement-id
           in: path
@@ -57673,7 +57673,7 @@ paths:
       tags:
         - identityGovernance.termsOfUseContainer
       summary: Get acceptances from identityGovernance
-      operationId: identityGovernance.termsOfUse.agreements_GetAcceptances
+      operationId: identityGovernance.termsGraphOPreUse.agreements_GetAcceptances
       parameters:
         - name: agreement-id
           in: path
@@ -57740,7 +57740,7 @@ paths:
       tags:
         - identityGovernance.termsOfUseContainer
       summary: Update the navigation property acceptances in identityGovernance
-      operationId: identityGovernance.termsOfUse.agreements_UpdateAcceptances
+      operationId: identityGovernance.termsGraphOPreUse.agreements_UpdateAcceptances
       parameters:
         - name: agreement-id
           in: path
@@ -57773,7 +57773,7 @@ paths:
       tags:
         - identityGovernance.termsOfUseContainer
       summary: Delete navigation property acceptances for identityGovernance
-      operationId: identityGovernance.termsOfUse.agreements_DeleteAcceptances
+      operationId: identityGovernance.termsGraphOPreUse.agreements_DeleteAcceptances
       parameters:
         - name: agreement-id
           in: path
@@ -57805,7 +57805,7 @@ paths:
       tags:
         - identityGovernance.termsOfUseContainer
       summary: Get file from identityGovernance
-      operationId: identityGovernance.termsOfUse.agreements_GetFile
+      operationId: identityGovernance.termsGraphOPreUse.agreements_GetFile
       parameters:
         - name: agreement-id
           in: path
@@ -57856,7 +57856,7 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.agreementFile'
           links:
             localizations:
-              operationId: identityGovernance.termsOfUse.agreements.File.ListLocalizations
+              operationId: identityGovernance.termsGraphOPreUse.agreements.File.ListLocalizations
               parameters:
                 agreement-id: $request.path.agreement-id
         default:
@@ -57866,7 +57866,7 @@ paths:
       tags:
         - identityGovernance.termsOfUseContainer
       summary: Update the navigation property file in identityGovernance
-      operationId: identityGovernance.termsOfUse.agreements_UpdateFile
+      operationId: identityGovernance.termsGraphOPreUse.agreements_UpdateFile
       parameters:
         - name: agreement-id
           in: path
@@ -57892,7 +57892,7 @@ paths:
       tags:
         - identityGovernance.termsOfUseContainer
       summary: Delete navigation property file for identityGovernance
-      operationId: identityGovernance.termsOfUse.agreements_DeleteFile
+      operationId: identityGovernance.termsGraphOPreUse.agreements_DeleteFile
       parameters:
         - name: agreement-id
           in: path
@@ -57917,7 +57917,7 @@ paths:
       tags:
         - identityGovernance.termsOfUseContainer
       summary: Get localizations from identityGovernance
-      operationId: identityGovernance.termsOfUse.agreements.file_ListLocalizations
+      operationId: identityGovernance.termsGraphOPreUse.agreements.file_ListLocalizations
       parameters:
         - name: agreement-id
           in: path
@@ -58004,7 +58004,7 @@ paths:
       tags:
         - identityGovernance.termsOfUseContainer
       summary: Create new navigation property to localizations for identityGovernance
-      operationId: identityGovernance.termsOfUse.agreements.file_CreateLocalizations
+      operationId: identityGovernance.termsGraphOPreUse.agreements.file_CreateLocalizations
       parameters:
         - name: agreement-id
           in: path
@@ -58035,7 +58035,7 @@ paths:
       tags:
         - identityGovernance.termsOfUseContainer
       summary: Get localizations from identityGovernance
-      operationId: identityGovernance.termsOfUse.agreements.file_GetLocalizations
+      operationId: identityGovernance.termsGraphOPreUse.agreements.file_GetLocalizations
       parameters:
         - name: agreement-id
           in: path
@@ -58093,7 +58093,7 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.agreementFileLocalization'
           links:
             versions:
-              operationId: identityGovernance.termsOfUse.agreements.file.Localizations.ListVersions
+              operationId: identityGovernance.termsGraphOPreUse.agreements.file.Localizations.ListVersions
               parameters:
                 agreement-id: $request.path.agreement-id
                 agreementFileLocalization-id: $request.path.agreementFileLocalization-id
@@ -58104,7 +58104,7 @@ paths:
       tags:
         - identityGovernance.termsOfUseContainer
       summary: Update the navigation property localizations in identityGovernance
-      operationId: identityGovernance.termsOfUse.agreements.file_UpdateLocalizations
+      operationId: identityGovernance.termsGraphOPreUse.agreements.file_UpdateLocalizations
       parameters:
         - name: agreement-id
           in: path
@@ -58137,7 +58137,7 @@ paths:
       tags:
         - identityGovernance.termsOfUseContainer
       summary: Delete navigation property localizations for identityGovernance
-      operationId: identityGovernance.termsOfUse.agreements.file_DeleteLocalizations
+      operationId: identityGovernance.termsGraphOPreUse.agreements.file_DeleteLocalizations
       parameters:
         - name: agreement-id
           in: path
@@ -58169,7 +58169,7 @@ paths:
       tags:
         - identityGovernance.termsOfUseContainer
       summary: Get versions from identityGovernance
-      operationId: identityGovernance.termsOfUse.agreements.file.localizations_ListVersions
+      operationId: identityGovernance.termsGraphOPreUse.agreements.file.localizations_ListVersions
       parameters:
         - name: agreement-id
           in: path
@@ -58261,7 +58261,7 @@ paths:
       tags:
         - identityGovernance.termsOfUseContainer
       summary: Create new navigation property to versions for identityGovernance
-      operationId: identityGovernance.termsOfUse.agreements.file.localizations_CreateVersions
+      operationId: identityGovernance.termsGraphOPreUse.agreements.file.localizations_CreateVersions
       parameters:
         - name: agreement-id
           in: path
@@ -58299,7 +58299,7 @@ paths:
       tags:
         - identityGovernance.termsOfUseContainer
       summary: Get versions from identityGovernance
-      operationId: identityGovernance.termsOfUse.agreements.file.localizations_GetVersions
+      operationId: identityGovernance.termsGraphOPreUse.agreements.file.localizations_GetVersions
       parameters:
         - name: agreement-id
           in: path
@@ -58367,7 +58367,7 @@ paths:
       tags:
         - identityGovernance.termsOfUseContainer
       summary: Update the navigation property versions in identityGovernance
-      operationId: identityGovernance.termsOfUse.agreements.file.localizations_UpdateVersions
+      operationId: identityGovernance.termsGraphOPreUse.agreements.file.localizations_UpdateVersions
       parameters:
         - name: agreement-id
           in: path
@@ -58407,7 +58407,7 @@ paths:
       tags:
         - identityGovernance.termsOfUseContainer
       summary: Delete navigation property versions for identityGovernance
-      operationId: identityGovernance.termsOfUse.agreements.file.localizations_DeleteVersions
+      operationId: identityGovernance.termsGraphOPreUse.agreements.file.localizations_DeleteVersions
       parameters:
         - name: agreement-id
           in: path
@@ -58446,7 +58446,7 @@ paths:
       tags:
         - identityGovernance.termsOfUseContainer
       summary: Get files from identityGovernance
-      operationId: identityGovernance.termsOfUse.agreements_ListFiles
+      operationId: identityGovernance.termsGraphOPreUse.agreements_ListFiles
       parameters:
         - name: agreement-id
           in: path
@@ -58533,7 +58533,7 @@ paths:
       tags:
         - identityGovernance.termsOfUseContainer
       summary: Create new navigation property to files for identityGovernance
-      operationId: identityGovernance.termsOfUse.agreements_CreateFiles
+      operationId: identityGovernance.termsGraphOPreUse.agreements_CreateFiles
       parameters:
         - name: agreement-id
           in: path
@@ -58564,7 +58564,7 @@ paths:
       tags:
         - identityGovernance.termsOfUseContainer
       summary: Get files from identityGovernance
-      operationId: identityGovernance.termsOfUse.agreements_GetFiles
+      operationId: identityGovernance.termsGraphOPreUse.agreements_GetFiles
       parameters:
         - name: agreement-id
           in: path
@@ -58622,7 +58622,7 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.agreementFileLocalization'
           links:
             versions:
-              operationId: identityGovernance.termsOfUse.agreements.Files.ListVersions
+              operationId: identityGovernance.termsGraphOPreUse.agreements.Files.ListVersions
               parameters:
                 agreement-id: $request.path.agreement-id
                 agreementFileLocalization-id: $request.path.agreementFileLocalization-id
@@ -58633,7 +58633,7 @@ paths:
       tags:
         - identityGovernance.termsOfUseContainer
       summary: Update the navigation property files in identityGovernance
-      operationId: identityGovernance.termsOfUse.agreements_UpdateFiles
+      operationId: identityGovernance.termsGraphOPreUse.agreements_UpdateFiles
       parameters:
         - name: agreement-id
           in: path
@@ -58666,7 +58666,7 @@ paths:
       tags:
         - identityGovernance.termsOfUseContainer
       summary: Delete navigation property files for identityGovernance
-      operationId: identityGovernance.termsOfUse.agreements_DeleteFiles
+      operationId: identityGovernance.termsGraphOPreUse.agreements_DeleteFiles
       parameters:
         - name: agreement-id
           in: path
@@ -58698,7 +58698,7 @@ paths:
       tags:
         - identityGovernance.termsOfUseContainer
       summary: Get versions from identityGovernance
-      operationId: identityGovernance.termsOfUse.agreements.files_ListVersions
+      operationId: identityGovernance.termsGraphOPreUse.agreements.files_ListVersions
       parameters:
         - name: agreement-id
           in: path
@@ -58790,7 +58790,7 @@ paths:
       tags:
         - identityGovernance.termsOfUseContainer
       summary: Create new navigation property to versions for identityGovernance
-      operationId: identityGovernance.termsOfUse.agreements.files_CreateVersions
+      operationId: identityGovernance.termsGraphOPreUse.agreements.files_CreateVersions
       parameters:
         - name: agreement-id
           in: path
@@ -58828,7 +58828,7 @@ paths:
       tags:
         - identityGovernance.termsOfUseContainer
       summary: Get versions from identityGovernance
-      operationId: identityGovernance.termsOfUse.agreements.files_GetVersions
+      operationId: identityGovernance.termsGraphOPreUse.agreements.files_GetVersions
       parameters:
         - name: agreement-id
           in: path
@@ -58896,7 +58896,7 @@ paths:
       tags:
         - identityGovernance.termsOfUseContainer
       summary: Update the navigation property versions in identityGovernance
-      operationId: identityGovernance.termsOfUse.agreements.files_UpdateVersions
+      operationId: identityGovernance.termsGraphOPreUse.agreements.files_UpdateVersions
       parameters:
         - name: agreement-id
           in: path
@@ -58936,7 +58936,7 @@ paths:
       tags:
         - identityGovernance.termsOfUseContainer
       summary: Delete navigation property versions for identityGovernance
-      operationId: identityGovernance.termsOfUse.agreements.files_DeleteVersions
+      operationId: identityGovernance.termsGraphOPreUse.agreements.files_DeleteVersions
       parameters:
         - name: agreement-id
           in: path

@@ -54,12 +54,6 @@ directive:
   - where:
       verb: Remove
       subject: ^(SecurityTiIndicator)$
-      variant: Delete2|DeleteExpanded1
-    set:
-      subject: $1ByExternalId
-  - where:
-      verb: Remove
-      subject: ^(SecurityTiIndicator)$
       variant: Delete1|DeleteExpanded
     set:
       subject: $1Multiple
@@ -79,6 +73,6 @@ directive:
 ### Versioning
 
 ``` yaml
-module-version: 1.9.6
+module-version: 1.10.0
 release-notes: See https://aka.ms/GraphPowerShell-Release.
 ```

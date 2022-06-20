@@ -270,7 +270,7 @@ paths:
       tags:
         - deviceManagement.androidForWorkEnrollmentProfile
       summary: Get androidForWorkEnrollmentProfiles from deviceManagement
-      operationId: deviceManagement_ListAndroidForWorkEnrollmentProfiles
+      operationId: deviceManagement_ListAndroidGraphFPreWorkEnrollmentProfiles
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -357,7 +357,7 @@ paths:
       tags:
         - deviceManagement.androidForWorkEnrollmentProfile
       summary: Create new navigation property to androidForWorkEnrollmentProfiles for deviceManagement
-      operationId: deviceManagement_CreateAndroidForWorkEnrollmentProfiles
+      operationId: deviceManagement_CreateAndroidGraphFPreWorkEnrollmentProfiles
       requestBody:
         description: New navigation property
         content:
@@ -380,7 +380,7 @@ paths:
       tags:
         - deviceManagement.androidForWorkEnrollmentProfile
       summary: Get androidForWorkEnrollmentProfiles from deviceManagement
-      operationId: deviceManagement_GetAndroidForWorkEnrollmentProfiles
+      operationId: deviceManagement_GetAndroidGraphFPreWorkEnrollmentProfiles
       parameters:
         - name: androidForWorkEnrollmentProfile-id
           in: path
@@ -432,9 +432,9 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.androidForWorkEnrollmentProfile'
           links:
             createToken:
-              operationId: deviceManagement.androidForWorkEnrollmentProfiles.androidForWorkEnrollmentProfile.createToken
+              operationId: deviceManagement.androidGraphFPreWorkEnrollmentProfiles.androidGraphFPreWorkEnrollmentProfile.createToken
             revokeToken:
-              operationId: deviceManagement.androidForWorkEnrollmentProfiles.androidForWorkEnrollmentProfile.revokeToken
+              operationId: deviceManagement.androidGraphFPreWorkEnrollmentProfiles.androidGraphFPreWorkEnrollmentProfile.revokeToken
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -442,7 +442,7 @@ paths:
       tags:
         - deviceManagement.androidForWorkEnrollmentProfile
       summary: Update the navigation property androidForWorkEnrollmentProfiles in deviceManagement
-      operationId: deviceManagement_UpdateAndroidForWorkEnrollmentProfiles
+      operationId: deviceManagement_UpdateAndroidGraphFPreWorkEnrollmentProfiles
       parameters:
         - name: androidForWorkEnrollmentProfile-id
           in: path
@@ -468,7 +468,7 @@ paths:
       tags:
         - deviceManagement.androidForWorkEnrollmentProfile
       summary: Delete navigation property androidForWorkEnrollmentProfiles for deviceManagement
-      operationId: deviceManagement_DeleteAndroidForWorkEnrollmentProfiles
+      operationId: deviceManagement_DeleteAndroidGraphFPreWorkEnrollmentProfiles
       parameters:
         - name: androidForWorkEnrollmentProfile-id
           in: path
@@ -1747,11 +1747,11 @@ paths:
             getEncryptionPublicKey:
               operationId: deviceManagement.depOnboardingSettings.depOnboardingSetting.getEncryptionPublicKey
             shareForSchoolDataSyncService:
-              operationId: deviceManagement.depOnboardingSettings.depOnboardingSetting.shareForSchoolDataSyncService
+              operationId: deviceManagement.depOnboardingSettings.depOnboardingSetting.shareGraphFPreSchoolDataSyncService
             syncWithAppleDeviceEnrollmentProgram:
-              operationId: deviceManagement.depOnboardingSettings.depOnboardingSetting.syncWithAppleDeviceEnrollmentProgram
+              operationId: deviceManagement.depOnboardingSettings.depOnboardingSetting.syncGraphWPreAppleDeviceEnrollmentProgram
             unshareForSchoolDataSyncService:
-              operationId: deviceManagement.depOnboardingSettings.depOnboardingSetting.unshareForSchoolDataSyncService
+              operationId: deviceManagement.depOnboardingSettings.depOnboardingSetting.unshareGraphFPreSchoolDataSyncService
             uploadDepToken:
               operationId: deviceManagement.depOnboardingSettings.depOnboardingSetting.uploadDepToken
         default:
@@ -10727,7 +10727,7 @@ paths:
       tags:
         - roleManagement.Functions
       summary: Invoke function filterByCurrentUser
-      operationId: roleManagement.directory.roleAssignmentApprovals_filterByCurrentUser
+      operationId: roleManagement.directory.roleAssignmentApprovals_filterGraphBPreCurrentUser
       parameters:
         - name: on
           in: path
@@ -11598,7 +11598,7 @@ paths:
       tags:
         - roleManagement.Functions
       summary: Invoke function filterByCurrentUser
-      operationId: roleManagement.directory.roleAssignmentScheduleInstances_filterByCurrentUser
+      operationId: roleManagement.directory.roleAssignmentScheduleInstances_filterGraphBPreCurrentUser
       parameters:
         - name: on
           in: path
@@ -12326,7 +12326,7 @@ paths:
       tags:
         - roleManagement.Functions
       summary: Invoke function filterByCurrentUser
-      operationId: roleManagement.directory.roleAssignmentScheduleRequests_filterByCurrentUser
+      operationId: roleManagement.directory.roleAssignmentScheduleRequests_filterGraphBPreCurrentUser
       parameters:
         - name: on
           in: path
@@ -12703,7 +12703,7 @@ paths:
       tags:
         - roleManagement.Functions
       summary: Invoke function filterByCurrentUser
-      operationId: roleManagement.directory.roleAssignmentSchedules_filterByCurrentUser
+      operationId: roleManagement.directory.roleAssignmentSchedules_filterGraphBPreCurrentUser
       parameters:
         - name: on
           in: path
@@ -13452,7 +13452,7 @@ paths:
       tags:
         - roleManagement.Functions
       summary: Invoke function filterByCurrentUser
-      operationId: roleManagement.directory.roleEligibilityScheduleInstances_filterByCurrentUser
+      operationId: roleManagement.directory.roleEligibilityScheduleInstances_filterGraphBPreCurrentUser
       parameters:
         - name: on
           in: path
@@ -14082,7 +14082,7 @@ paths:
       tags:
         - roleManagement.Functions
       summary: Invoke function filterByCurrentUser
-      operationId: roleManagement.directory.roleEligibilityScheduleRequests_filterByCurrentUser
+      operationId: roleManagement.directory.roleEligibilityScheduleRequests_filterGraphBPreCurrentUser
       parameters:
         - name: on
           in: path
@@ -14364,7 +14364,7 @@ paths:
       tags:
         - roleManagement.Functions
       summary: Invoke function filterByCurrentUser
-      operationId: roleManagement.directory.roleEligibilitySchedules_filterByCurrentUser
+      operationId: roleManagement.directory.roleEligibilitySchedules_filterGraphBPreCurrentUser
       parameters:
         - name: on
           in: path
@@ -16143,7 +16143,7 @@ paths:
       tags:
         - roleManagement.Functions
       summary: Invoke function filterByCurrentUser
-      operationId: roleManagement.entitlementManagement.roleAssignmentApprovals_filterByCurrentUser
+      operationId: roleManagement.entitlementManagement.roleAssignmentApprovals_filterGraphBPreCurrentUser
       parameters:
         - name: on
           in: path
@@ -17014,7 +17014,7 @@ paths:
       tags:
         - roleManagement.Functions
       summary: Invoke function filterByCurrentUser
-      operationId: roleManagement.entitlementManagement.roleAssignmentScheduleInstances_filterByCurrentUser
+      operationId: roleManagement.entitlementManagement.roleAssignmentScheduleInstances_filterGraphBPreCurrentUser
       parameters:
         - name: on
           in: path
@@ -17742,7 +17742,7 @@ paths:
       tags:
         - roleManagement.Functions
       summary: Invoke function filterByCurrentUser
-      operationId: roleManagement.entitlementManagement.roleAssignmentScheduleRequests_filterByCurrentUser
+      operationId: roleManagement.entitlementManagement.roleAssignmentScheduleRequests_filterGraphBPreCurrentUser
       parameters:
         - name: on
           in: path
@@ -18119,7 +18119,7 @@ paths:
       tags:
         - roleManagement.Functions
       summary: Invoke function filterByCurrentUser
-      operationId: roleManagement.entitlementManagement.roleAssignmentSchedules_filterByCurrentUser
+      operationId: roleManagement.entitlementManagement.roleAssignmentSchedules_filterGraphBPreCurrentUser
       parameters:
         - name: on
           in: path
@@ -18868,7 +18868,7 @@ paths:
       tags:
         - roleManagement.Functions
       summary: Invoke function filterByCurrentUser
-      operationId: roleManagement.entitlementManagement.roleEligibilityScheduleInstances_filterByCurrentUser
+      operationId: roleManagement.entitlementManagement.roleEligibilityScheduleInstances_filterGraphBPreCurrentUser
       parameters:
         - name: on
           in: path
@@ -19498,7 +19498,7 @@ paths:
       tags:
         - roleManagement.Functions
       summary: Invoke function filterByCurrentUser
-      operationId: roleManagement.entitlementManagement.roleEligibilityScheduleRequests_filterByCurrentUser
+      operationId: roleManagement.entitlementManagement.roleEligibilityScheduleRequests_filterGraphBPreCurrentUser
       parameters:
         - name: on
           in: path
@@ -19780,7 +19780,7 @@ paths:
       tags:
         - roleManagement.Functions
       summary: Invoke function filterByCurrentUser
-      operationId: roleManagement.entitlementManagement.roleEligibilitySchedules_filterByCurrentUser
+      operationId: roleManagement.entitlementManagement.roleEligibilitySchedules_filterGraphBPreCurrentUser
       parameters:
         - name: on
           in: path

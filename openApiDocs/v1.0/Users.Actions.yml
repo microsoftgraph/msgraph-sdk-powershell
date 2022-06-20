@@ -254,7 +254,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action checkMemberGroups
-      operationId: users.authentication.windowsHelloForBusinessMethods.device_checkMemberGroups
+      operationId: users.authentication.windowsHelloGraphFPreBusinessMethods.device_checkMemberGroups
       parameters:
         - name: user-id
           in: path
@@ -307,7 +307,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action checkMemberObjects
-      operationId: users.authentication.windowsHelloForBusinessMethods.device_checkMemberObjects
+      operationId: users.authentication.windowsHelloGraphFPreBusinessMethods.device_checkMemberObjects
       parameters:
         - name: user-id
           in: path
@@ -360,7 +360,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action getMemberGroups
-      operationId: users.authentication.windowsHelloForBusinessMethods.device_getMemberGroups
+      operationId: users.authentication.windowsHelloGraphFPreBusinessMethods.device_getMemberGroups
       parameters:
         - name: user-id
           in: path
@@ -413,7 +413,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action getMemberObjects
-      operationId: users.authentication.windowsHelloForBusinessMethods.device_getMemberObjects
+      operationId: users.authentication.windowsHelloGraphFPreBusinessMethods.device_getMemberObjects
       parameters:
         - name: user-id
           in: path
@@ -466,7 +466,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action restore
-      operationId: users.authentication.windowsHelloForBusinessMethods.device_restore
+      operationId: users.authentication.windowsHelloGraphFPreBusinessMethods.device_restore
       parameters:
         - name: user-id
           in: path
@@ -7265,7 +7265,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action associateWithHubSites
-      operationId: users.drives.list.contentTypes_associateWithHubSites
+      operationId: users.drives.list.contentTypes_associateGraphWPreHubSites
       parameters:
         - name: user-id
           in: path
@@ -12450,7 +12450,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action wipeManagedAppRegistrationsByDeviceTag
-      operationId: users_wipeManagedAppRegistrationsByDeviceTag
+      operationId: users_wipeManagedAppRegistrationsGraphBPreDeviceTag
       parameters:
         - name: user-id
           in: path
@@ -13873,7 +13873,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action getByIds
-      operationId: users_getByIds
+      operationId: users_getGraphBPreIds
       requestBody:
         description: Action parameters
         content:

@@ -39,16 +39,10 @@ subject-prefix: ''
 ``` yaml
 directive:
   - remove-path-by-operation: .*_(Create|Get|Update|Set|Delete)Activities$|.*\.activities.*$|shares\..*_createLink
-  - where:
-      verb: Get
-      variant: (Get.*)
-      subject: ^(.*Activity)$
-    set:
-      subject: $1ByInterval
 ```
 ### Versioning
 
 ``` yaml
-module-version: 1.9.6
+module-version: 1.10.0
 release-notes: See https://aka.ms/GraphPowerShell-Release.
 ```

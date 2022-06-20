@@ -1190,7 +1190,7 @@ paths:
       tags:
         - education.educationClass
       summary: Delete ref of navigation property categories for education
-      operationId: education.classes.assignments_DeleteGraphRefCategories
+      operationId: education.classes.assignments_DeleteCategoriesGraphBPreRef
       parameters:
         - name: educationClass-id
           in: path
@@ -1234,7 +1234,7 @@ paths:
       tags:
         - education.educationClass
       summary: Get ref of categories from education
-      operationId: education.classes.assignments_ListGraphRefCategories
+      operationId: education.classes.assignments_ListCategoriesGraphBPreRef
       parameters:
         - name: educationClass-id
           in: path
@@ -1283,7 +1283,7 @@ paths:
       tags:
         - education.educationClass
       summary: Create new navigation property ref to categories for education
-      operationId: education.classes.assignments_CreateGraphRefCategories
+      operationId: education.classes.assignments_CreateCategoriesGraphBPreRef
       parameters:
         - name: educationClass-id
           in: path
@@ -1842,7 +1842,7 @@ paths:
       tags:
         - education.educationClass
       summary: Get ref of rubric from education
-      operationId: education.classes.assignments_GetGraphRefRubric
+      operationId: education.classes.assignments_GetRubricGraphBPreRef
       parameters:
         - name: educationClass-id
           in: path
@@ -1872,7 +1872,7 @@ paths:
       tags:
         - education.educationClass
       summary: Update the ref of navigation property rubric in education
-      operationId: education.classes.assignments_SetGraphRefRubric
+      operationId: education.classes.assignments_SetRubricGraphBPreRef
       parameters:
         - name: educationClass-id
           in: path
@@ -1905,7 +1905,7 @@ paths:
       tags:
         - education.educationClass
       summary: Delete ref of navigation property rubric for education
-      operationId: education.classes.assignments_DeleteGraphRefRubric
+      operationId: education.classes.assignments_DeleteRubricGraphBPreRef
       parameters:
         - name: educationClass-id
           in: path
@@ -3622,7 +3622,7 @@ paths:
               parameters:
                 educationClass-id: $request.path.educationClass-id
             createdOnBehalfOf:
-              operationId: education.classes.Group.GetCreatedOnBehalfOf
+              operationId: education.classes.Group.GetCreatedOnBehalfGraphOPre
               parameters:
                 educationClass-id: $request.path.educationClass-id
             endpoints:
@@ -3630,7 +3630,7 @@ paths:
               parameters:
                 educationClass-id: $request.path.educationClass-id
             memberOf:
-              operationId: education.classes.Group.ListMemberOf
+              operationId: education.classes.Group.ListMemberGraphOPre
               parameters:
                 educationClass-id: $request.path.educationClass-id
             members:
@@ -3638,7 +3638,7 @@ paths:
               parameters:
                 educationClass-id: $request.path.educationClass-id
             membersWithLicenseErrors:
-              operationId: education.classes.Group.ListMembersWithLicenseErrors
+              operationId: education.classes.Group.ListMembersGraphWPreLicenseErrors
               parameters:
                 educationClass-id: $request.path.educationClass-id
             owners:
@@ -3654,7 +3654,7 @@ paths:
               parameters:
                 educationClass-id: $request.path.educationClass-id
             transitiveMemberOf:
-              operationId: education.classes.Group.ListTransitiveMemberOf
+              operationId: education.classes.Group.ListTransitiveMemberGraphOPre
               parameters:
                 educationClass-id: $request.path.educationClass-id
             transitiveMembers:
@@ -3910,7 +3910,7 @@ paths:
       tags:
         - education.educationClass
       summary: Delete ref of navigation property members for education
-      operationId: education.classes_DeleteGraphRefMembers
+      operationId: education.classes_DeleteMembersGraphBPreRef
       parameters:
         - name: educationClass-id
           in: path
@@ -3947,7 +3947,7 @@ paths:
       tags:
         - education.educationClass
       summary: Get ref of members from education
-      operationId: education.classes_ListGraphRefMembers
+      operationId: education.classes_ListMembersGraphBPreRef
       parameters:
         - name: educationClass-id
           in: path
@@ -4051,7 +4051,7 @@ paths:
       tags:
         - education.educationClass
       summary: Create new navigation property ref to members for education
-      operationId: education.classes_CreateGraphRefMembers
+      operationId: education.classes_CreateMembersGraphBPreRef
       parameters:
         - name: educationClass-id
           in: path
@@ -4467,7 +4467,7 @@ paths:
       tags:
         - education.educationClass
       summary: Delete ref of navigation property teachers for education
-      operationId: education.classes_DeleteGraphRefTeachers
+      operationId: education.classes_DeleteTeachersGraphBPreRef
       parameters:
         - name: educationClass-id
           in: path
@@ -4504,7 +4504,7 @@ paths:
       tags:
         - education.educationClass
       summary: Get ref of teachers from education
-      operationId: education.classes_ListGraphRefTeachers
+      operationId: education.classes_ListTeachersGraphBPreRef
       parameters:
         - name: educationClass-id
           in: path
@@ -4608,7 +4608,7 @@ paths:
       tags:
         - education.educationClass
       summary: Create new navigation property ref to teachers for education
-      operationId: education.classes_CreateGraphRefTeachers
+      operationId: education.classes_CreateTeachersGraphBPreRef
       parameters:
         - name: educationClass-id
           in: path
@@ -5203,7 +5203,7 @@ paths:
       tags:
         - education.educationUser
       summary: Delete ref of navigation property categories for education
-      operationId: education.me.assignments_DeleteGraphRefCategories
+      operationId: education.me.assignments_DeleteCategoriesGraphBPreRef
       parameters:
         - name: educationAssignment-id
           in: path
@@ -5240,7 +5240,7 @@ paths:
       tags:
         - education.educationUser
       summary: Get ref of categories from education
-      operationId: education.me.assignments_ListGraphRefCategories
+      operationId: education.me.assignments_ListCategoriesGraphBPreRef
       parameters:
         - name: educationAssignment-id
           in: path
@@ -5282,7 +5282,7 @@ paths:
       tags:
         - education.educationUser
       summary: Create new navigation property ref to categories for education
-      operationId: education.me.assignments_CreateGraphRefCategories
+      operationId: education.me.assignments_CreateCategoriesGraphBPreRef
       parameters:
         - name: educationAssignment-id
           in: path
@@ -5750,7 +5750,7 @@ paths:
       tags:
         - education.educationUser
       summary: Get ref of rubric from education
-      operationId: education.me.assignments_GetGraphRefRubric
+      operationId: education.me.assignments_GetRubricGraphBPreRef
       parameters:
         - name: educationAssignment-id
           in: path
@@ -5773,7 +5773,7 @@ paths:
       tags:
         - education.educationUser
       summary: Update the ref of navigation property rubric in education
-      operationId: education.me.assignments_SetGraphRefRubric
+      operationId: education.me.assignments_SetRubricGraphBPreRef
       parameters:
         - name: educationAssignment-id
           in: path
@@ -5799,7 +5799,7 @@ paths:
       tags:
         - education.educationUser
       summary: Delete ref of navigation property rubric for education
-      operationId: education.me.assignments_DeleteGraphRefRubric
+      operationId: education.me.assignments_DeleteRubricGraphBPreRef
       parameters:
         - name: educationAssignment-id
           in: path
@@ -8172,7 +8172,7 @@ paths:
             manager:
               operationId: education.me.User.GetManager
             memberOf:
-              operationId: education.me.User.ListMemberOf
+              operationId: education.me.User.ListMemberGraphOPre
             oauth2PermissionGrants:
               operationId: education.me.User.ListOauth2PermissionGrants
             ownedDevices:
@@ -8182,9 +8182,9 @@ paths:
             registeredDevices:
               operationId: education.me.User.ListRegisteredDevices
             scopedRoleMemberOf:
-              operationId: education.me.User.ListScopedRoleMemberOf
+              operationId: education.me.User.ListScopedRoleMemberGraphOPre
             transitiveMemberOf:
-              operationId: education.me.User.ListTransitiveMemberOf
+              operationId: education.me.User.ListTransitiveMemberGraphOPre
             transitiveReports:
               operationId: education.me.User.ListTransitiveReports
             calendar:
@@ -8222,7 +8222,7 @@ paths:
             extensions:
               operationId: education.me.User.ListExtensions
             appConsentRequestsForApproval:
-              operationId: education.me.User.ListAppConsentRequestsForApproval
+              operationId: education.me.User.ListAppConsentRequestsGraphFPreApproval
             approvals:
               operationId: education.me.User.ListApprovals
             pendingAccessReviewInstances:
@@ -8741,7 +8741,7 @@ paths:
       tags:
         - education.educationSchool
       summary: Delete ref of navigation property classes for education
-      operationId: education.schools_DeleteGraphRefClasses
+      operationId: education.schools_DeleteClassesGraphBPreRef
       parameters:
         - name: educationSchool-id
           in: path
@@ -8778,7 +8778,7 @@ paths:
       tags:
         - education.educationSchool
       summary: Get ref of classes from education
-      operationId: education.schools_ListGraphRefClasses
+      operationId: education.schools_ListClassesGraphBPreRef
       parameters:
         - name: educationSchool-id
           in: path
@@ -8842,7 +8842,7 @@ paths:
       tags:
         - education.educationSchool
       summary: Create new navigation property ref to classes for education
-      operationId: education.schools_CreateGraphRefClasses
+      operationId: education.schools_CreateClassesGraphBPreRef
       parameters:
         - name: educationSchool-id
           in: path
@@ -9050,7 +9050,7 @@ paths:
       tags:
         - education.educationSchool
       summary: Delete ref of navigation property users for education
-      operationId: education.schools_DeleteGraphRefUsers
+      operationId: education.schools_DeleteUsersGraphBPreRef
       parameters:
         - name: educationSchool-id
           in: path
@@ -9087,7 +9087,7 @@ paths:
       tags:
         - education.educationSchool
       summary: Get ref of users from education
-      operationId: education.schools_ListGraphRefUsers
+      operationId: education.schools_ListUsersGraphBPreRef
       parameters:
         - name: educationSchool-id
           in: path
@@ -9191,7 +9191,7 @@ paths:
       tags:
         - education.educationSchool
       summary: Create new navigation property ref to users for education
-      operationId: education.schools_CreateGraphRefUsers
+      operationId: education.schools_CreateUsersGraphBPreRef
       parameters:
         - name: educationSchool-id
           in: path
@@ -10758,7 +10758,7 @@ paths:
       tags:
         - education.educationUser
       summary: Delete ref of navigation property categories for education
-      operationId: education.users.assignments_DeleteGraphRefCategories
+      operationId: education.users.assignments_DeleteCategoriesGraphBPreRef
       parameters:
         - name: educationUser-id
           in: path
@@ -10802,7 +10802,7 @@ paths:
       tags:
         - education.educationUser
       summary: Get ref of categories from education
-      operationId: education.users.assignments_ListGraphRefCategories
+      operationId: education.users.assignments_ListCategoriesGraphBPreRef
       parameters:
         - name: educationUser-id
           in: path
@@ -10851,7 +10851,7 @@ paths:
       tags:
         - education.educationUser
       summary: Create new navigation property ref to categories for education
-      operationId: education.users.assignments_CreateGraphRefCategories
+      operationId: education.users.assignments_CreateCategoriesGraphBPreRef
       parameters:
         - name: educationUser-id
           in: path
@@ -11410,7 +11410,7 @@ paths:
       tags:
         - education.educationUser
       summary: Get ref of rubric from education
-      operationId: education.users.assignments_GetGraphRefRubric
+      operationId: education.users.assignments_GetRubricGraphBPreRef
       parameters:
         - name: educationUser-id
           in: path
@@ -11440,7 +11440,7 @@ paths:
       tags:
         - education.educationUser
       summary: Update the ref of navigation property rubric in education
-      operationId: education.users.assignments_SetGraphRefRubric
+      operationId: education.users.assignments_SetRubricGraphBPreRef
       parameters:
         - name: educationUser-id
           in: path
@@ -11473,7 +11473,7 @@ paths:
       tags:
         - education.educationUser
       summary: Delete ref of navigation property rubric for education
-      operationId: education.users.assignments_DeleteGraphRefRubric
+      operationId: education.users.assignments_DeleteRubricGraphBPreRef
       parameters:
         - name: educationUser-id
           in: path
@@ -14161,7 +14161,7 @@ paths:
               parameters:
                 educationUser-id: $request.path.educationUser-id
             memberOf:
-              operationId: education.users.User.ListMemberOf
+              operationId: education.users.User.ListMemberGraphOPre
               parameters:
                 educationUser-id: $request.path.educationUser-id
             oauth2PermissionGrants:
@@ -14181,11 +14181,11 @@ paths:
               parameters:
                 educationUser-id: $request.path.educationUser-id
             scopedRoleMemberOf:
-              operationId: education.users.User.ListScopedRoleMemberOf
+              operationId: education.users.User.ListScopedRoleMemberGraphOPre
               parameters:
                 educationUser-id: $request.path.educationUser-id
             transitiveMemberOf:
-              operationId: education.users.User.ListTransitiveMemberOf
+              operationId: education.users.User.ListTransitiveMemberGraphOPre
               parameters:
                 educationUser-id: $request.path.educationUser-id
             transitiveReports:
@@ -14261,7 +14261,7 @@ paths:
               parameters:
                 educationUser-id: $request.path.educationUser-id
             appConsentRequestsForApproval:
-              operationId: education.users.User.ListAppConsentRequestsForApproval
+              operationId: education.users.User.ListAppConsentRequestsGraphFPreApproval
               parameters:
                 educationUser-id: $request.path.educationUser-id
             approvals:
