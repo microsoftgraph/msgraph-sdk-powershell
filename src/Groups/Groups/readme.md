@@ -61,30 +61,6 @@ directive:
     set:
       subject: $1Rule
   - where:
-      verb: Get
-      subject: ^Group$
-      variant: Get1|GetExpanded|Get3|GetExpanded1
-    set:
-      subject: GroupById
-  - where:
-      verb: Get
-      subject: ^GroupMember$
-      variant: ^Get$|^GetViaIdentity$|^List$|^Get2$|^GetViaIdentity2$|^List3$
-    set:
-      subject: GroupMemberOf
-  - where:
-      verb: Get
-      subject: ^GroupMember$
-      variant: ^Get1$|^GetViaIdentity1$|^List2$|^Get3$|^GetViaIdentity3$|^List5$
-    set:
-      subject: GroupMemberWithLicenseError
-  - where:
-      verb: Get
-      subject: ^GroupTransitiveMember$
-      variant: ^Get$|^List$|^GetViaIdentity$|^Get2$|^List2$|^GetViaIdentity2$
-    set:
-      subject: GroupTransitiveMemberOf
-  - where:
       verb: Remove
       subject: ^(Group)(LifecyclePolicy)Group$
     set:
@@ -129,30 +105,15 @@ directive:
       subject: ^(GroupOnenoteNotebookSectionGroupSectionPage)$
     set:
       subject: $1Content
-  - where:
-      verb: Get
-      subject: ^(.*(ListItem|DriveItem|Root|Site)Activity)$
-    set:
-      subject: $1ByInterval
-  - where:
-      verb: Get
-      subject: (^GroupSite$)
-      variant: ^Get$|^GetViaIdentity$|^Get1$|^GetViaIdentity1$
-    set:
-      subject: $1ByPath
 # Alias then rename cmdlets to avoid breaking change.
   - where:
-      subject: ^(Group)(CreatedOnBehalf)$
+      subject: ^((Group)(CreatedOnBehalf))Of$
     set:
-      alias: ${verb}-Mg${subject}
-  - where:
-      subject: ^(Group)(CreatedOnBehalf)$
-    set:
-      subject: $1$2Of
+      alias: ${verb}-Mg$1
 ```
 ### Versioning
 
 ``` yaml
-module-version: 1.9.6
+module-version: 1.10.0
 release-notes: See https://aka.ms/GraphPowerShell-Release.
 ```

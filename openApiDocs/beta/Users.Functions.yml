@@ -43,7 +43,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function filterByCurrentUser
-      operationId: users.appConsentRequestsForApproval.userConsentRequests_filterByCurrentUser
+      operationId: users.appConsentRequestsGraphFPreApproval.userConsentRequests_filterGraphBPreCurrentUser
       parameters:
         - name: user-id
           in: path
@@ -88,7 +88,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function filterByCurrentUser
-      operationId: users.appConsentRequestsForApproval_filterByCurrentUser
+      operationId: users.appConsentRequestsGraphFPreApproval_filterGraphBPreCurrentUser
       parameters:
         - name: user-id
           in: path
@@ -126,7 +126,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function filterByCurrentUser
-      operationId: users.approvals_filterByCurrentUser
+      operationId: users.approvals_filterGraphBPreCurrentUser
       parameters:
         - name: user-id
           in: path
@@ -2291,7 +2291,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function getActivitiesByInterval
-      operationId: users.drives.items.listItem_getActivitiesByInterval
+      operationId: users.drives.items.listItem_getActivitiesGraphBPreInterval
       parameters:
         - name: user-id
           in: path
@@ -2457,7 +2457,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function getActivitiesByInterval
-      operationId: users.drives.items_getActivitiesByInterval
+      operationId: users.drives.items_getActivitiesGraphBPreInterval
       parameters:
         - name: user-id
           in: path
@@ -2660,7 +2660,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function getActivitiesByInterval
-      operationId: users.drives.list.items_getActivitiesByInterval
+      operationId: users.drives.list.items_getActivitiesGraphBPreInterval
       parameters:
         - name: user-id
           in: path
@@ -2897,7 +2897,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function sharedWithMe
-      operationId: users.drives_sharedWithMe
+      operationId: users.drives_sharedGraphWPreMe
       parameters:
         - name: user-id
           in: path
@@ -2936,7 +2936,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function getActivitiesByInterval
-      operationId: users.drives.root.listItem_getActivitiesByInterval
+      operationId: users.drives.root.listItem_getActivitiesGraphBPreInterval
       parameters:
         - name: user-id
           in: path
@@ -3081,7 +3081,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function getActivitiesByInterval
-      operationId: users.drives.root_getActivitiesByInterval
+      operationId: users.drives.root_getActivitiesGraphBPreInterval
       parameters:
         - name: user-id
           in: path
@@ -4082,7 +4082,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function getManagedDevicesWithAppFailures
-      operationId: users_getManagedDevicesWithAppFailures
+      operationId: users_getManagedDevicesGraphWPreAppFailures
       parameters:
         - name: user-id
           in: path
@@ -4115,7 +4115,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function getManagedDevicesWithFailedOrPendingApps
-      operationId: users_getManagedDevicesWithFailedOrPendingApps
+      operationId: users_getManagedDevicesGraphWPreFailedOrPendingApps
       parameters:
         - name: user-id
           in: path
@@ -4574,7 +4574,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function filterByCurrentUser
-      operationId: users.pendingAccessReviewInstances.decisions.instance.stages.decisions_filterByCurrentUser
+      operationId: users.pendingAccessReviewInstances.decisions.instance.stages.decisions_filterGraphBPreCurrentUser
       parameters:
         - name: user-id
           in: path
@@ -4633,7 +4633,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function filterByCurrentUser
-      operationId: users.pendingAccessReviewInstances.decisions.instance.stages_filterByCurrentUser
+      operationId: users.pendingAccessReviewInstances.decisions.instance.stages_filterGraphBPreCurrentUser
       parameters:
         - name: user-id
           in: path
@@ -4685,7 +4685,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function filterByCurrentUser
-      operationId: users.pendingAccessReviewInstances.decisions_filterByCurrentUser
+      operationId: users.pendingAccessReviewInstances.decisions_filterGraphBPreCurrentUser
       parameters:
         - name: user-id
           in: path
@@ -4730,7 +4730,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function filterByCurrentUser
-      operationId: users.pendingAccessReviewInstances.stages.decisions.instance.decisions_filterByCurrentUser
+      operationId: users.pendingAccessReviewInstances.stages.decisions.instance.decisions_filterGraphBPreCurrentUser
       parameters:
         - name: user-id
           in: path
@@ -4789,7 +4789,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function filterByCurrentUser
-      operationId: users.pendingAccessReviewInstances.stages.decisions_filterByCurrentUser
+      operationId: users.pendingAccessReviewInstances.stages.decisions_filterGraphBPreCurrentUser
       parameters:
         - name: user-id
           in: path
@@ -4841,7 +4841,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function filterByCurrentUser
-      operationId: users.pendingAccessReviewInstances.stages_filterByCurrentUser
+      operationId: users.pendingAccessReviewInstances.stages_filterGraphBPreCurrentUser
       parameters:
         - name: user-id
           in: path
@@ -4886,7 +4886,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function filterByCurrentUser
-      operationId: users.pendingAccessReviewInstances_filterByCurrentUser
+      operationId: users.pendingAccessReviewInstances_filterGraphBPreCurrentUser
       parameters:
         - name: user-id
           in: path

@@ -4140,7 +4140,7 @@ paths:
               parameters:
                 invitation-id: $request.path.invitation-id
             memberOf:
-              operationId: invitations.InvitedUser.ListMemberOf
+              operationId: invitations.InvitedUser.ListMemberGraphOPre
               parameters:
                 invitation-id: $request.path.invitation-id
             oauth2PermissionGrants:
@@ -4160,11 +4160,11 @@ paths:
               parameters:
                 invitation-id: $request.path.invitation-id
             scopedRoleMemberOf:
-              operationId: invitations.InvitedUser.ListScopedRoleMemberOf
+              operationId: invitations.InvitedUser.ListScopedRoleMemberGraphOPre
               parameters:
                 invitation-id: $request.path.invitation-id
             transitiveMemberOf:
-              operationId: invitations.InvitedUser.ListTransitiveMemberOf
+              operationId: invitations.InvitedUser.ListTransitiveMemberGraphOPre
               parameters:
                 invitation-id: $request.path.invitation-id
             transitiveReports:
@@ -4240,7 +4240,7 @@ paths:
               parameters:
                 invitation-id: $request.path.invitation-id
             appConsentRequestsForApproval:
-              operationId: invitations.InvitedUser.ListAppConsentRequestsForApproval
+              operationId: invitations.InvitedUser.ListAppConsentRequestsGraphFPreApproval
               parameters:
                 invitation-id: $request.path.invitation-id
             approvals:
@@ -7883,7 +7883,7 @@ paths:
       tags:
         - policies.featureRolloutPolicy
       summary: Delete ref of navigation property appliesTo for policies
-      operationId: policies.featureRolloutPolicies_DeleteGraphRefAppliesTo
+      operationId: policies.featureRolloutPolicies_DeleteAppliesToGraphBPreRef
       parameters:
         - name: featureRolloutPolicy-id
           in: path
@@ -7920,7 +7920,7 @@ paths:
       tags:
         - policies.featureRolloutPolicy
       summary: Get ref of appliesTo from policies
-      operationId: policies.featureRolloutPolicies_ListGraphRefAppliesTo
+      operationId: policies.featureRolloutPolicies_ListAppliesToGraphBPreRef
       parameters:
         - name: featureRolloutPolicy-id
           in: path
@@ -7962,7 +7962,7 @@ paths:
       tags:
         - policies.featureRolloutPolicy
       summary: Create new navigation property ref to appliesTo for policies
-      operationId: policies.featureRolloutPolicies_CreateGraphRefAppliesTo
+      operationId: policies.featureRolloutPolicies_CreateAppliesToGraphBPreRef
       parameters:
         - name: featureRolloutPolicy-id
           in: path
@@ -7997,7 +7997,7 @@ paths:
       tags:
         - policies.Actions
       summary: Invoke action getByIds
-      operationId: policies.featureRolloutPolicies.appliesTo_getByIds
+      operationId: policies.featureRolloutPolicies.appliesTo_getGraphBPreIds
       parameters:
         - name: featureRolloutPolicy-id
           in: path
@@ -8911,7 +8911,7 @@ paths:
       tags:
         - policies.mobilityManagementPolicy
       summary: Delete ref of navigation property includedGroups for policies
-      operationId: policies.mobileAppManagementPolicies_DeleteGraphRefIncludedGroups
+      operationId: policies.mobileAppManagementPolicies_DeleteIncludedGroupsGraphBPreRef
       parameters:
         - name: mobilityManagementPolicy-id
           in: path
@@ -8948,7 +8948,7 @@ paths:
       tags:
         - policies.mobilityManagementPolicy
       summary: Get ref of includedGroups from policies
-      operationId: policies.mobileAppManagementPolicies_ListGraphRefIncludedGroups
+      operationId: policies.mobileAppManagementPolicies_ListIncludedGroupsGraphBPreRef
       parameters:
         - name: mobilityManagementPolicy-id
           in: path
@@ -9092,7 +9092,7 @@ paths:
       tags:
         - policies.mobilityManagementPolicy
       summary: Create new navigation property ref to includedGroups for policies
-      operationId: policies.mobileAppManagementPolicies_CreateGraphRefIncludedGroups
+      operationId: policies.mobileAppManagementPolicies_CreateIncludedGroupsGraphBPreRef
       parameters:
         - name: mobilityManagementPolicy-id
           in: path
@@ -9619,7 +9619,7 @@ paths:
       tags:
         - policies.mobilityManagementPolicy
       summary: Delete ref of navigation property includedGroups for policies
-      operationId: policies.mobileDeviceManagementPolicies_DeleteGraphRefIncludedGroups
+      operationId: policies.mobileDeviceManagementPolicies_DeleteIncludedGroupsGraphBPreRef
       parameters:
         - name: mobilityManagementPolicy-id
           in: path
@@ -9656,7 +9656,7 @@ paths:
       tags:
         - policies.mobilityManagementPolicy
       summary: Get ref of includedGroups from policies
-      operationId: policies.mobileDeviceManagementPolicies_ListGraphRefIncludedGroups
+      operationId: policies.mobileDeviceManagementPolicies_ListIncludedGroupsGraphBPreRef
       parameters:
         - name: mobilityManagementPolicy-id
           in: path
@@ -9800,7 +9800,7 @@ paths:
       tags:
         - policies.mobilityManagementPolicy
       summary: Create new navigation property ref to includedGroups for policies
-      operationId: policies.mobileDeviceManagementPolicies_CreateGraphRefIncludedGroups
+      operationId: policies.mobileDeviceManagementPolicies_CreateIncludedGroupsGraphBPreRef
       parameters:
         - name: mobilityManagementPolicy-id
           in: path
@@ -14153,7 +14153,7 @@ paths:
               parameters:
                 user-id: $request.path.user-id
             windowsHelloForBusinessMethods:
-              operationId: users.Authentication.ListWindowsHelloForBusinessMethods
+              operationId: users.Authentication.ListWindowsHelloGraphFPreBusinessMethods
               parameters:
                 user-id: $request.path.user-id
         default:
@@ -15265,7 +15265,7 @@ paths:
                 user-id: $request.path.user-id
                 microsoftAuthenticatorAuthenticationMethod-id: $request.path.microsoftAuthenticatorAuthenticationMethod-id
             memberOf:
-              operationId: users.authentication.microsoftAuthenticatorMethods.Device.ListMemberOf
+              operationId: users.authentication.microsoftAuthenticatorMethods.Device.ListMemberGraphOPre
               parameters:
                 user-id: $request.path.user-id
                 microsoftAuthenticatorAuthenticationMethod-id: $request.path.microsoftAuthenticatorAuthenticationMethod-id
@@ -15280,7 +15280,7 @@ paths:
                 user-id: $request.path.user-id
                 microsoftAuthenticatorAuthenticationMethod-id: $request.path.microsoftAuthenticatorAuthenticationMethod-id
             transitiveMemberOf:
-              operationId: users.authentication.microsoftAuthenticatorMethods.Device.ListTransitiveMemberOf
+              operationId: users.authentication.microsoftAuthenticatorMethods.Device.ListTransitiveMemberGraphOPre
               parameters:
                 user-id: $request.path.user-id
                 microsoftAuthenticatorAuthenticationMethod-id: $request.path.microsoftAuthenticatorAuthenticationMethod-id
@@ -16049,7 +16049,7 @@ paths:
       tags:
         - users.authentication
       summary: Get memberOf from users
-      operationId: users.authentication.microsoftAuthenticatorMethods.device_ListMemberOf
+      operationId: users.authentication.microsoftAuthenticatorMethods.device_ListMemberGraphOPre
       parameters:
         - name: user-id
           in: path
@@ -16129,7 +16129,7 @@ paths:
       tags:
         - users.authentication
       summary: Get memberOf from users
-      operationId: users.authentication.microsoftAuthenticatorMethods.device_GetMemberOf
+      operationId: users.authentication.microsoftAuthenticatorMethods.device_GetMemberGraphOPre
       parameters:
         - name: user-id
           in: path
@@ -16277,7 +16277,7 @@ paths:
       tags:
         - users.authentication
       summary: Delete ref of navigation property registeredOwners for users
-      operationId: users.authentication.microsoftAuthenticatorMethods.device_DeleteGraphRefRegisteredOwners
+      operationId: users.authentication.microsoftAuthenticatorMethods.device_DeleteRegisteredOwnersGraphBPreRef
       parameters:
         - name: user-id
           in: path
@@ -16326,7 +16326,7 @@ paths:
       tags:
         - users.authentication
       summary: Get ref of registeredOwners from users
-      operationId: users.authentication.microsoftAuthenticatorMethods.device_ListGraphRefRegisteredOwners
+      operationId: users.authentication.microsoftAuthenticatorMethods.device_ListRegisteredOwnersGraphBPreRef
       parameters:
         - name: user-id
           in: path
@@ -16380,7 +16380,7 @@ paths:
       tags:
         - users.authentication
       summary: Create new navigation property ref to registeredOwners for users
-      operationId: users.authentication.microsoftAuthenticatorMethods.device_CreateGraphRefRegisteredOwners
+      operationId: users.authentication.microsoftAuthenticatorMethods.device_CreateRegisteredOwnersGraphBPreRef
       parameters:
         - name: user-id
           in: path
@@ -16575,7 +16575,7 @@ paths:
       tags:
         - users.authentication
       summary: Get transitiveMemberOf from users
-      operationId: users.authentication.microsoftAuthenticatorMethods.device_ListTransitiveMemberOf
+      operationId: users.authentication.microsoftAuthenticatorMethods.device_ListTransitiveMemberGraphOPre
       parameters:
         - name: user-id
           in: path
@@ -16655,7 +16655,7 @@ paths:
       tags:
         - users.authentication
       summary: Get transitiveMemberOf from users
-      operationId: users.authentication.microsoftAuthenticatorMethods.device_GetTransitiveMemberOf
+      operationId: users.authentication.microsoftAuthenticatorMethods.device_GetTransitiveMemberGraphOPre
       parameters:
         - name: user-id
           in: path
@@ -17584,7 +17584,7 @@ paths:
                 user-id: $request.path.user-id
                 passwordlessMicrosoftAuthenticatorAuthenticationMethod-id: $request.path.passwordlessMicrosoftAuthenticatorAuthenticationMethod-id
             memberOf:
-              operationId: users.authentication.passwordlessMicrosoftAuthenticatorMethods.Device.ListMemberOf
+              operationId: users.authentication.passwordlessMicrosoftAuthenticatorMethods.Device.ListMemberGraphOPre
               parameters:
                 user-id: $request.path.user-id
                 passwordlessMicrosoftAuthenticatorAuthenticationMethod-id: $request.path.passwordlessMicrosoftAuthenticatorAuthenticationMethod-id
@@ -17599,7 +17599,7 @@ paths:
                 user-id: $request.path.user-id
                 passwordlessMicrosoftAuthenticatorAuthenticationMethod-id: $request.path.passwordlessMicrosoftAuthenticatorAuthenticationMethod-id
             transitiveMemberOf:
-              operationId: users.authentication.passwordlessMicrosoftAuthenticatorMethods.Device.ListTransitiveMemberOf
+              operationId: users.authentication.passwordlessMicrosoftAuthenticatorMethods.Device.ListTransitiveMemberGraphOPre
               parameters:
                 user-id: $request.path.user-id
                 passwordlessMicrosoftAuthenticatorAuthenticationMethod-id: $request.path.passwordlessMicrosoftAuthenticatorAuthenticationMethod-id
@@ -18298,7 +18298,7 @@ paths:
       tags:
         - users.authentication
       summary: Get memberOf from users
-      operationId: users.authentication.passwordlessMicrosoftAuthenticatorMethods.device_ListMemberOf
+      operationId: users.authentication.passwordlessMicrosoftAuthenticatorMethods.device_ListMemberGraphOPre
       parameters:
         - name: user-id
           in: path
@@ -18373,7 +18373,7 @@ paths:
       tags:
         - users.authentication
       summary: Get memberOf from users
-      operationId: users.authentication.passwordlessMicrosoftAuthenticatorMethods.device_GetMemberOf
+      operationId: users.authentication.passwordlessMicrosoftAuthenticatorMethods.device_GetMemberGraphOPre
       parameters:
         - name: user-id
           in: path
@@ -18511,7 +18511,7 @@ paths:
       tags:
         - users.authentication
       summary: Delete ref of navigation property registeredOwners for users
-      operationId: users.authentication.passwordlessMicrosoftAuthenticatorMethods.device_DeleteGraphRefRegisteredOwners
+      operationId: users.authentication.passwordlessMicrosoftAuthenticatorMethods.device_DeleteRegisteredOwnersGraphBPreRef
       parameters:
         - name: user-id
           in: path
@@ -18555,7 +18555,7 @@ paths:
       tags:
         - users.authentication
       summary: Get ref of registeredOwners from users
-      operationId: users.authentication.passwordlessMicrosoftAuthenticatorMethods.device_ListGraphRefRegisteredOwners
+      operationId: users.authentication.passwordlessMicrosoftAuthenticatorMethods.device_ListRegisteredOwnersGraphBPreRef
       parameters:
         - name: user-id
           in: path
@@ -18604,7 +18604,7 @@ paths:
       tags:
         - users.authentication
       summary: Create new navigation property ref to registeredOwners for users
-      operationId: users.authentication.passwordlessMicrosoftAuthenticatorMethods.device_CreateGraphRefRegisteredOwners
+      operationId: users.authentication.passwordlessMicrosoftAuthenticatorMethods.device_CreateRegisteredOwnersGraphBPreRef
       parameters:
         - name: user-id
           in: path
@@ -18784,7 +18784,7 @@ paths:
       tags:
         - users.authentication
       summary: Get transitiveMemberOf from users
-      operationId: users.authentication.passwordlessMicrosoftAuthenticatorMethods.device_ListTransitiveMemberOf
+      operationId: users.authentication.passwordlessMicrosoftAuthenticatorMethods.device_ListTransitiveMemberGraphOPre
       parameters:
         - name: user-id
           in: path
@@ -18859,7 +18859,7 @@ paths:
       tags:
         - users.authentication
       summary: Get transitiveMemberOf from users
-      operationId: users.authentication.passwordlessMicrosoftAuthenticatorMethods.device_GetTransitiveMemberOf
+      operationId: users.authentication.passwordlessMicrosoftAuthenticatorMethods.device_GetTransitiveMemberGraphOPre
       parameters:
         - name: user-id
           in: path
@@ -20095,7 +20095,7 @@ paths:
       tags:
         - users.authentication
       summary: Get windowsHelloForBusinessMethods from users
-      operationId: users.authentication_ListWindowsHelloForBusinessMethods
+      operationId: users.authentication_ListWindowsHelloGraphFPreBusinessMethods
       parameters:
         - name: user-id
           in: path
@@ -20170,7 +20170,7 @@ paths:
       tags:
         - users.authentication
       summary: Create new navigation property to windowsHelloForBusinessMethods for users
-      operationId: users.authentication_CreateWindowsHelloForBusinessMethods
+      operationId: users.authentication_CreateWindowsHelloGraphFPreBusinessMethods
       parameters:
         - name: user-id
           in: path
@@ -20201,7 +20201,7 @@ paths:
       tags:
         - users.authentication
       summary: Get windowsHelloForBusinessMethods from users
-      operationId: users.authentication_GetWindowsHelloForBusinessMethods
+      operationId: users.authentication_GetWindowsHelloGraphFPreBusinessMethods
       parameters:
         - name: user-id
           in: path
@@ -20255,7 +20255,7 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.windowsHelloForBusinessAuthenticationMethod'
           links:
             device:
-              operationId: users.authentication.WindowsHelloForBusinessMethods.GetDevice
+              operationId: users.authentication.WindowsHelloGraphFPreBusinessMethods.GetDevice
               parameters:
                 user-id: $request.path.user-id
                 windowsHelloForBusinessAuthenticationMethod-id: $request.path.windowsHelloForBusinessAuthenticationMethod-id
@@ -20266,7 +20266,7 @@ paths:
       tags:
         - users.authentication
       summary: Update the navigation property windowsHelloForBusinessMethods in users
-      operationId: users.authentication_UpdateWindowsHelloForBusinessMethods
+      operationId: users.authentication_UpdateWindowsHelloGraphFPreBusinessMethods
       parameters:
         - name: user-id
           in: path
@@ -20299,7 +20299,7 @@ paths:
       tags:
         - users.authentication
       summary: Delete navigation property windowsHelloForBusinessMethods for users
-      operationId: users.authentication_DeleteWindowsHelloForBusinessMethods
+      operationId: users.authentication_DeleteWindowsHelloGraphFPreBusinessMethods
       parameters:
         - name: user-id
           in: path
@@ -20331,7 +20331,7 @@ paths:
       tags:
         - users.authentication
       summary: Get device from users
-      operationId: users.authentication.windowsHelloForBusinessMethods_GetDevice
+      operationId: users.authentication.windowsHelloGraphFPreBusinessMethods_GetDevice
       parameters:
         - name: user-id
           in: path
@@ -20431,50 +20431,50 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.device'
           links:
             usageRights:
-              operationId: users.authentication.windowsHelloForBusinessMethods.Device.ListUsageRights
+              operationId: users.authentication.windowsHelloGraphFPreBusinessMethods.Device.ListUsageRights
               parameters:
                 user-id: $request.path.user-id
                 windowsHelloForBusinessAuthenticationMethod-id: $request.path.windowsHelloForBusinessAuthenticationMethod-id
             memberOf:
-              operationId: users.authentication.windowsHelloForBusinessMethods.Device.ListMemberOf
+              operationId: users.authentication.windowsHelloGraphFPreBusinessMethods.Device.ListMemberGraphOPre
               parameters:
                 user-id: $request.path.user-id
                 windowsHelloForBusinessAuthenticationMethod-id: $request.path.windowsHelloForBusinessAuthenticationMethod-id
             registeredOwners:
-              operationId: users.authentication.windowsHelloForBusinessMethods.Device.ListRegisteredOwners
+              operationId: users.authentication.windowsHelloGraphFPreBusinessMethods.Device.ListRegisteredOwners
               parameters:
                 user-id: $request.path.user-id
                 windowsHelloForBusinessAuthenticationMethod-id: $request.path.windowsHelloForBusinessAuthenticationMethod-id
             registeredUsers:
-              operationId: users.authentication.windowsHelloForBusinessMethods.Device.ListRegisteredUsers
+              operationId: users.authentication.windowsHelloGraphFPreBusinessMethods.Device.ListRegisteredUsers
               parameters:
                 user-id: $request.path.user-id
                 windowsHelloForBusinessAuthenticationMethod-id: $request.path.windowsHelloForBusinessAuthenticationMethod-id
             transitiveMemberOf:
-              operationId: users.authentication.windowsHelloForBusinessMethods.Device.ListTransitiveMemberOf
+              operationId: users.authentication.windowsHelloGraphFPreBusinessMethods.Device.ListTransitiveMemberGraphOPre
               parameters:
                 user-id: $request.path.user-id
                 windowsHelloForBusinessAuthenticationMethod-id: $request.path.windowsHelloForBusinessAuthenticationMethod-id
             extensions:
-              operationId: users.authentication.windowsHelloForBusinessMethods.Device.ListExtensions
+              operationId: users.authentication.windowsHelloGraphFPreBusinessMethods.Device.ListExtensions
               parameters:
                 user-id: $request.path.user-id
                 windowsHelloForBusinessAuthenticationMethod-id: $request.path.windowsHelloForBusinessAuthenticationMethod-id
             commands:
-              operationId: users.authentication.windowsHelloForBusinessMethods.Device.ListCommands
+              operationId: users.authentication.windowsHelloGraphFPreBusinessMethods.Device.ListCommands
               parameters:
                 user-id: $request.path.user-id
                 windowsHelloForBusinessAuthenticationMethod-id: $request.path.windowsHelloForBusinessAuthenticationMethod-id
             checkMemberGroups:
-              operationId: users.user.authentication.windowsHelloForBusinessMethods.windowsHelloForBusinessAuthenticationMethod.device.checkMemberGroups
+              operationId: users.user.authentication.windowsHelloGraphFPreBusinessMethods.windowsHelloGraphFPreBusinessAuthenticationMethod.device.checkMemberGroups
             checkMemberObjects:
-              operationId: users.user.authentication.windowsHelloForBusinessMethods.windowsHelloForBusinessAuthenticationMethod.device.checkMemberObjects
+              operationId: users.user.authentication.windowsHelloGraphFPreBusinessMethods.windowsHelloGraphFPreBusinessAuthenticationMethod.device.checkMemberObjects
             getMemberGroups:
-              operationId: users.user.authentication.windowsHelloForBusinessMethods.windowsHelloForBusinessAuthenticationMethod.device.getMemberGroups
+              operationId: users.user.authentication.windowsHelloGraphFPreBusinessMethods.windowsHelloGraphFPreBusinessAuthenticationMethod.device.getMemberGroups
             getMemberObjects:
-              operationId: users.user.authentication.windowsHelloForBusinessMethods.windowsHelloForBusinessAuthenticationMethod.device.getMemberObjects
+              operationId: users.user.authentication.windowsHelloGraphFPreBusinessMethods.windowsHelloGraphFPreBusinessAuthenticationMethod.device.getMemberObjects
             restore:
-              operationId: users.user.authentication.windowsHelloForBusinessMethods.windowsHelloForBusinessAuthenticationMethod.device.restore
+              operationId: users.user.authentication.windowsHelloGraphFPreBusinessMethods.windowsHelloGraphFPreBusinessAuthenticationMethod.device.restore
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -20482,7 +20482,7 @@ paths:
       tags:
         - users.authentication
       summary: Update the navigation property device in users
-      operationId: users.authentication.windowsHelloForBusinessMethods_UpdateDevice
+      operationId: users.authentication.windowsHelloGraphFPreBusinessMethods_UpdateDevice
       parameters:
         - name: user-id
           in: path
@@ -20515,7 +20515,7 @@ paths:
       tags:
         - users.authentication
       summary: Delete navigation property device for users
-      operationId: users.authentication.windowsHelloForBusinessMethods_DeleteDevice
+      operationId: users.authentication.windowsHelloGraphFPreBusinessMethods_DeleteDevice
       parameters:
         - name: user-id
           in: path
@@ -20547,7 +20547,7 @@ paths:
       tags:
         - users.authentication
       summary: Get commands from users
-      operationId: users.authentication.windowsHelloForBusinessMethods.device_ListCommands
+      operationId: users.authentication.windowsHelloGraphFPreBusinessMethods.device_ListCommands
       parameters:
         - name: user-id
           in: path
@@ -20644,7 +20644,7 @@ paths:
       tags:
         - users.authentication
       summary: Create new navigation property to commands for users
-      operationId: users.authentication.windowsHelloForBusinessMethods.device_CreateCommands
+      operationId: users.authentication.windowsHelloGraphFPreBusinessMethods.device_CreateCommands
       parameters:
         - name: user-id
           in: path
@@ -20682,7 +20682,7 @@ paths:
       tags:
         - users.authentication
       summary: Get commands from users
-      operationId: users.authentication.windowsHelloForBusinessMethods.device_GetCommands
+      operationId: users.authentication.windowsHelloGraphFPreBusinessMethods.device_GetCommands
       parameters:
         - name: user-id
           in: path
@@ -20748,7 +20748,7 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.command'
           links:
             responsepayload:
-              operationId: users.authentication.windowsHelloForBusinessMethods.device.Commands.GetResponsepayload
+              operationId: users.authentication.windowsHelloGraphFPreBusinessMethods.device.Commands.GetResponsepayload
               parameters:
                 user-id: $request.path.user-id
                 windowsHelloForBusinessAuthenticationMethod-id: $request.path.windowsHelloForBusinessAuthenticationMethod-id
@@ -20760,7 +20760,7 @@ paths:
       tags:
         - users.authentication
       summary: Update the navigation property commands in users
-      operationId: users.authentication.windowsHelloForBusinessMethods.device_UpdateCommands
+      operationId: users.authentication.windowsHelloGraphFPreBusinessMethods.device_UpdateCommands
       parameters:
         - name: user-id
           in: path
@@ -20800,7 +20800,7 @@ paths:
       tags:
         - users.authentication
       summary: Delete navigation property commands for users
-      operationId: users.authentication.windowsHelloForBusinessMethods.device_DeleteCommands
+      operationId: users.authentication.windowsHelloGraphFPreBusinessMethods.device_DeleteCommands
       parameters:
         - name: user-id
           in: path
@@ -20839,7 +20839,7 @@ paths:
       tags:
         - users.authentication
       summary: Get responsepayload from users
-      operationId: users.authentication.windowsHelloForBusinessMethods.device.commands_GetResponsepayload
+      operationId: users.authentication.windowsHelloGraphFPreBusinessMethods.device.commands_GetResponsepayload
       parameters:
         - name: user-id
           in: path
@@ -20901,7 +20901,7 @@ paths:
       tags:
         - users.authentication
       summary: Get extensions from users
-      operationId: users.authentication.windowsHelloForBusinessMethods.device_ListExtensions
+      operationId: users.authentication.windowsHelloGraphFPreBusinessMethods.device_ListExtensions
       parameters:
         - name: user-id
           in: path
@@ -20972,7 +20972,7 @@ paths:
       tags:
         - users.authentication
       summary: Create new navigation property to extensions for users
-      operationId: users.authentication.windowsHelloForBusinessMethods.device_CreateExtensions
+      operationId: users.authentication.windowsHelloGraphFPreBusinessMethods.device_CreateExtensions
       parameters:
         - name: user-id
           in: path
@@ -21010,7 +21010,7 @@ paths:
       tags:
         - users.authentication
       summary: Get extensions from users
-      operationId: users.authentication.windowsHelloForBusinessMethods.device_GetExtensions
+      operationId: users.authentication.windowsHelloGraphFPreBusinessMethods.device_GetExtensions
       parameters:
         - name: user-id
           in: path
@@ -21071,7 +21071,7 @@ paths:
       tags:
         - users.authentication
       summary: Update the navigation property extensions in users
-      operationId: users.authentication.windowsHelloForBusinessMethods.device_UpdateExtensions
+      operationId: users.authentication.windowsHelloGraphFPreBusinessMethods.device_UpdateExtensions
       parameters:
         - name: user-id
           in: path
@@ -21111,7 +21111,7 @@ paths:
       tags:
         - users.authentication
       summary: Delete navigation property extensions for users
-      operationId: users.authentication.windowsHelloForBusinessMethods.device_DeleteExtensions
+      operationId: users.authentication.windowsHelloGraphFPreBusinessMethods.device_DeleteExtensions
       parameters:
         - name: user-id
           in: path
@@ -21150,7 +21150,7 @@ paths:
       tags:
         - users.authentication
       summary: Get memberOf from users
-      operationId: users.authentication.windowsHelloForBusinessMethods.device_ListMemberOf
+      operationId: users.authentication.windowsHelloGraphFPreBusinessMethods.device_ListMemberGraphOPre
       parameters:
         - name: user-id
           in: path
@@ -21225,7 +21225,7 @@ paths:
       tags:
         - users.authentication
       summary: Get memberOf from users
-      operationId: users.authentication.windowsHelloForBusinessMethods.device_GetMemberOf
+      operationId: users.authentication.windowsHelloGraphFPreBusinessMethods.device_GetMemberGraphOPre
       parameters:
         - name: user-id
           in: path
@@ -21288,7 +21288,7 @@ paths:
       tags:
         - users.authentication
       summary: Get registeredOwners from users
-      operationId: users.authentication.windowsHelloForBusinessMethods.device_ListRegisteredOwners
+      operationId: users.authentication.windowsHelloGraphFPreBusinessMethods.device_ListRegisteredOwners
       parameters:
         - name: user-id
           in: path
@@ -21363,7 +21363,7 @@ paths:
       tags:
         - users.authentication
       summary: Delete ref of navigation property registeredOwners for users
-      operationId: users.authentication.windowsHelloForBusinessMethods.device_DeleteGraphRefRegisteredOwners
+      operationId: users.authentication.windowsHelloGraphFPreBusinessMethods.device_DeleteRegisteredOwnersGraphBPreRef
       parameters:
         - name: user-id
           in: path
@@ -21407,7 +21407,7 @@ paths:
       tags:
         - users.authentication
       summary: Get ref of registeredOwners from users
-      operationId: users.authentication.windowsHelloForBusinessMethods.device_ListGraphRefRegisteredOwners
+      operationId: users.authentication.windowsHelloGraphFPreBusinessMethods.device_ListRegisteredOwnersGraphBPreRef
       parameters:
         - name: user-id
           in: path
@@ -21456,7 +21456,7 @@ paths:
       tags:
         - users.authentication
       summary: Create new navigation property ref to registeredOwners for users
-      operationId: users.authentication.windowsHelloForBusinessMethods.device_CreateGraphRefRegisteredOwners
+      operationId: users.authentication.windowsHelloGraphFPreBusinessMethods.device_CreateRegisteredOwnersGraphBPreRef
       parameters:
         - name: user-id
           in: path
@@ -21498,7 +21498,7 @@ paths:
       tags:
         - users.authentication
       summary: Get registeredUsers from users
-      operationId: users.authentication.windowsHelloForBusinessMethods.device_ListRegisteredUsers
+      operationId: users.authentication.windowsHelloGraphFPreBusinessMethods.device_ListRegisteredUsers
       parameters:
         - name: user-id
           in: path
@@ -21573,7 +21573,7 @@ paths:
       tags:
         - users.authentication
       summary: Get registeredUsers from users
-      operationId: users.authentication.windowsHelloForBusinessMethods.device_GetRegisteredUsers
+      operationId: users.authentication.windowsHelloGraphFPreBusinessMethods.device_GetRegisteredUsers
       parameters:
         - name: user-id
           in: path
@@ -21636,7 +21636,7 @@ paths:
       tags:
         - users.authentication
       summary: Get transitiveMemberOf from users
-      operationId: users.authentication.windowsHelloForBusinessMethods.device_ListTransitiveMemberOf
+      operationId: users.authentication.windowsHelloGraphFPreBusinessMethods.device_ListTransitiveMemberGraphOPre
       parameters:
         - name: user-id
           in: path
@@ -21711,7 +21711,7 @@ paths:
       tags:
         - users.authentication
       summary: Get transitiveMemberOf from users
-      operationId: users.authentication.windowsHelloForBusinessMethods.device_GetTransitiveMemberOf
+      operationId: users.authentication.windowsHelloGraphFPreBusinessMethods.device_GetTransitiveMemberGraphOPre
       parameters:
         - name: user-id
           in: path
@@ -21774,7 +21774,7 @@ paths:
       tags:
         - users.authentication
       summary: Get usageRights from users
-      operationId: users.authentication.windowsHelloForBusinessMethods.device_ListUsageRights
+      operationId: users.authentication.windowsHelloGraphFPreBusinessMethods.device_ListUsageRights
       parameters:
         - name: user-id
           in: path
@@ -21854,7 +21854,7 @@ paths:
       tags:
         - users.authentication
       summary: Create new navigation property to usageRights for users
-      operationId: users.authentication.windowsHelloForBusinessMethods.device_CreateUsageRights
+      operationId: users.authentication.windowsHelloGraphFPreBusinessMethods.device_CreateUsageRights
       parameters:
         - name: user-id
           in: path
@@ -21892,7 +21892,7 @@ paths:
       tags:
         - users.authentication
       summary: Get usageRights from users
-      operationId: users.authentication.windowsHelloForBusinessMethods.device_GetUsageRights
+      operationId: users.authentication.windowsHelloGraphFPreBusinessMethods.device_GetUsageRights
       parameters:
         - name: user-id
           in: path
@@ -21956,7 +21956,7 @@ paths:
       tags:
         - users.authentication
       summary: Update the navigation property usageRights in users
-      operationId: users.authentication.windowsHelloForBusinessMethods.device_UpdateUsageRights
+      operationId: users.authentication.windowsHelloGraphFPreBusinessMethods.device_UpdateUsageRights
       parameters:
         - name: user-id
           in: path
@@ -21996,7 +21996,7 @@ paths:
       tags:
         - users.authentication
       summary: Delete navigation property usageRights for users
-      operationId: users.authentication.windowsHelloForBusinessMethods.device_DeleteUsageRights
+      operationId: users.authentication.windowsHelloGraphFPreBusinessMethods.device_DeleteUsageRights
       parameters:
         - name: user-id
           in: path

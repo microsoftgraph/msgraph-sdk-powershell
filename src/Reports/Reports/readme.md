@@ -48,18 +48,6 @@ directive:
     remove: true
 # Rename cmdlets
   - where:
-      verb: Get
-      subject: (^ReportDailyPrintUsageSummary$|^ReportMonthlyPrintUsageSummary$|^ReportDailyPrintUsage$)
-      variant: ^Get$|^GetViaIdentity$|^List$|^Get2$|^GetViaIdentity2$|^List2$
-    set:
-      subject: $1ByPrinter
-  - where:
-      verb: Get
-      subject: (^ReportDailyPrintUsageSummary$|^ReportMonthlyPrintUsageSummary$|^ReportDailyPrintUsage$)
-      variant: ^Get1$|^GetViaIdentity1$|^List1$|^Get3$|^GetViaIdentity3$|^List3$
-    set:
-      subject: $1ByUser
-  - where:
       verb: Invoke
       subject: ^TopReport$
     set:
@@ -91,6 +79,6 @@ directive:
 ### Versioning
 
 ``` yaml
-module-version: 1.9.6
+module-version: 1.10.0
 release-notes: See https://aka.ms/GraphPowerShell-Release.
 ```

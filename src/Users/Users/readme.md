@@ -47,17 +47,13 @@ directive:
     remove: true
 # Alias then rename cmdlets to avoid breaking change.
   - where:
-      subject: ^User(Member|TransitiveMember)$
+      subject: ^User(Member|TransitiveMember)Of$
     set:
       alias: ${verb}-Mg${subject}
-  - where:
-      subject: ^User(Member|TransitiveMember)$
-    set:
-      subject: User$1Of
 ```
 ### Versioning
 
 ``` yaml
-module-version: 1.9.6
+module-version: 1.10.0
 release-notes: See https://aka.ms/GraphPowerShell-Release.
 ```
