@@ -862,7 +862,7 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function getRoleScopeTagsByIds
-      operationId: deviceManagement_getRoleScopeTagsByIds
+      operationId: deviceManagement_getRoleScopeTagsGraphBPreIds
       parameters:
         - name: ids
           in: path
@@ -895,7 +895,7 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function getRoleScopeTagsByResource
-      operationId: deviceManagement_getRoleScopeTagsByResource
+      operationId: deviceManagement_getRoleScopeTagsGraphBPreResource
       parameters:
         - name: resource
           in: path
@@ -951,7 +951,7 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function scopedForResource
-      operationId: deviceManagement_scopedForResource
+      operationId: deviceManagement_scopedGraphFPreResource
       parameters:
         - name: resource
           in: path
@@ -1027,7 +1027,7 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function getScopesForUser
-      operationId: deviceManagement.resourceOperations_getScopesForUser
+      operationId: deviceManagement.resourceOperations_getScopesGraphFPreUser
       parameters:
         - name: resourceOperation-id
           in: path

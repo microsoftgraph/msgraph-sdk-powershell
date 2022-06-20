@@ -2334,7 +2334,7 @@ paths:
       tags:
         - print.printerShare
       summary: Delete ref of navigation property allowedGroups for print
-      operationId: print.shares_DeleteGraphRefAllowedGroups
+      operationId: print.shares_DeleteAllowedGroupsGraphBPreRef
       parameters:
         - name: printerShare-id
           in: path
@@ -2371,7 +2371,7 @@ paths:
       tags:
         - print.printerShare
       summary: Get ref of allowedGroups from print
-      operationId: print.shares_ListGraphRefAllowedGroups
+      operationId: print.shares_ListAllowedGroupsGraphBPreRef
       parameters:
         - name: printerShare-id
           in: path
@@ -2489,7 +2489,7 @@ paths:
       tags:
         - print.printerShare
       summary: Create new navigation property ref to allowedGroups for print
-      operationId: print.shares_CreateGraphRefAllowedGroups
+      operationId: print.shares_CreateAllowedGroupsGraphBPreRef
       parameters:
         - name: printerShare-id
           in: path
@@ -2894,7 +2894,7 @@ paths:
       tags:
         - print.printerShare
       summary: Delete ref of navigation property allowedUsers for print
-      operationId: print.shares_DeleteGraphRefAllowedUsers
+      operationId: print.shares_DeleteAllowedUsersGraphBPreRef
       parameters:
         - name: printerShare-id
           in: path
@@ -2931,7 +2931,7 @@ paths:
       tags:
         - print.printerShare
       summary: Get ref of allowedUsers from print
-      operationId: print.shares_ListGraphRefAllowedUsers
+      operationId: print.shares_ListAllowedUsersGraphBPreRef
       parameters:
         - name: printerShare-id
           in: path
@@ -3113,7 +3113,7 @@ paths:
       tags:
         - print.printerShare
       summary: Create new navigation property ref to allowedUsers for print
-      operationId: print.shares_CreateGraphRefAllowedUsers
+      operationId: print.shares_CreateAllowedUsersGraphBPreRef
       parameters:
         - name: printerShare-id
           in: path

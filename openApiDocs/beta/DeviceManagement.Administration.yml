@@ -9930,7 +9930,7 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.resourceOperation'
           links:
             getScopesForUser:
-              operationId: deviceManagement.resourceOperations.resourceOperation.getScopesForUser
+              operationId: deviceManagement.resourceOperations.resourceOperation.getScopesGraphFPreUser
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
