@@ -7,6 +7,7 @@ namespace Microsoft.Graph.PowerShell
     using System;
     using System.Collections.ObjectModel;
     using System.IO;
+    using System.Linq;
     using System.Management.Automation;
     using System.Net.Http;
     using System.Threading;
@@ -65,6 +66,12 @@ namespace Microsoft.Graph.PowerShell
         /// <param name="cancellationToken">A cancellation token that will be used to cancel the operation by the user.</param>
         internal static void WriteToFile(this PSCmdlet cmdlet, HttpResponseMessage response, Stream inputStream, string filePath, CancellationToken cancellationToken)
         {
+            if (IsPathDirectory(filePath))
+            {
+                // Get file name from content disposition header is presents; otherwise throw an exception for a file name to be provided.
+                var fileName = GetFileName(response);
+                filePath = Path.Combine(filePath, fileName);
+            }
             using (var fileProvider = ProtectedFileProvider.CreateFileProvider(filePath, FileProtection.ExclusiveWrite, new DiskDataStore()))
             {
                 string downloadUrl = response?.RequestMessage?.RequestUri.ToString();
@@ -103,6 +110,47 @@ namespace Microsoft.Graph.PowerShell
             catch (OperationCanceledException)
             {
             }
+        }
+
+        private static bool IsPathDirectory(string path)
+        {
+            if (path == null) throw new ArgumentNullException("path");
+            path = path.Trim();
+
+            if (Directory.Exists(path))
+                return true;
+
+            if (File.Exists(path))
+                return false;
+
+            // If path has a trailing slash then it's a directory.
+            if (new[] { Path.DirectorySeparatorChar, Path.AltDirectorySeparatorChar }.Any(x => path.EndsWith(x.ToString())))
+                return true;
+
+            // If path has an extension then its a file; directory otherwise.
+            return string.IsNullOrWhiteSpace(Path.GetExtension(path));
+        }
+
+        private static string GetFileName(HttpResponseMessage responseMessage)
+        {
+            if (responseMessage.Content.Headers.ContentDisposition != null
+                && !string.IsNullOrWhiteSpace(responseMessage.Content.Headers.ContentDisposition.FileName))
+            {
+                var fileName = responseMessage.Content.Headers.ContentDisposition.FileNameStar ?? responseMessage.Content.Headers.ContentDisposition.FileName;
+                if (!string.IsNullOrWhiteSpace(fileName))
+                    return SanitizeFileName(fileName);
+            }
+            throw new ArgumentException("Count not infer file name from the response. Please specify the file name in -OutFile explicitly.");
+        }
+
+        /// <summary>
+        /// When Inferring file names from Content disposition, ensure that only valid path characters are in the file name
+        /// </summary>
+        /// <param name="fileName"></param>
+        private static string SanitizeFileName(string fileName)
+        {
+            var illegalCharacters = Path.GetInvalidFileNameChars().Concat(Path.GetInvalidPathChars()).ToArray();
+            return string.Concat(fileName.Split(illegalCharacters));
         }
 
         /// <summary>
