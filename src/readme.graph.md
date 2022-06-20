@@ -414,6 +414,11 @@ directive:
       variant: ^(Check|Verify)(.*)
     set:
       verb: Confirm
+# Remove commands
+  - where:
+      verb: Restore
+      subject: ^(Application|Contact|Contract|Device|DirectoryObject|DirectoryRole|DirectoryRoleTemplate|EntitlementManagementConnectedOrganizationInternalSponsor|Group|GroupPermissionGrant|Organization|ServicePrincipal|User|UserAuthenticationMicrosoftAuthenticatorMethodDevice|UserAuthenticationWindowHelloForBusinessMethodDevice|AdministrativeUnit|ChatPermissionGrant|DirectoryAdministrativeUnit|DirectorySettingTemplate|TeamPermissionGrant|UserAuthenticationPasswordlessMicrosoftAuthenticatorMethodDevice|UserChatPermissionGrant|UserDevice)$
+    remove: true
 # Rename prepositions to bypass https://github.com/Azure/autorest.powershell/issues/795.
   - where:
       subject: ^(\w*[a-z])GraphBPre(\w*)$
