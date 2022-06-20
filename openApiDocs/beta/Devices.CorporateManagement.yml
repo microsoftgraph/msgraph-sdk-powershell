@@ -155,7 +155,7 @@ paths:
             wdacSupplementalPolicies:
               operationId: deviceAppManagement.ListWdacSupplementalPolicies
             syncMicrosoftStoreForBusinessApps:
-              operationId: deviceAppManagement.syncMicrosoftStoreForBusinessApps
+              operationId: deviceAppManagement.syncMicrosoftStoreGraphFPreBusinessApps
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5904,7 +5904,7 @@ paths:
       tags:
         - deviceAppManagement.Functions
       summary: Invoke function getUserIdsWithFlaggedAppRegistration
-      operationId: deviceAppManagement.managedAppRegistrations_getUserIdsWithFlaggedAppRegistration
+      operationId: deviceAppManagement.managedAppRegistrations_getUserIdsGraphWPreFlaggedAppRegistration
       responses:
         '200':
           description: Success
@@ -8167,7 +8167,7 @@ paths:
       tags:
         - deviceAppManagement.Actions
       summary: Invoke action syncMicrosoftStoreForBusinessApps
-      operationId: deviceAppManagement_syncMicrosoftStoreForBusinessApps
+      operationId: deviceAppManagement_syncMicrosoftStoreGraphFPreBusinessApps
       responses:
         '204':
           description: Success
@@ -14311,7 +14311,7 @@ paths:
       tags:
         - deviceAppManagement.Functions
       summary: Invoke function getLicensesForApp
-      operationId: deviceAppManagement.vppTokens_getLicensesForApp
+      operationId: deviceAppManagement.vppTokens_getLicensesGraphFPreApp
       parameters:
         - name: bundleId
           in: path
@@ -27033,7 +27033,6 @@ components:
       properties:
         id:
           type: string
-          description: Read-only.
       additionalProperties:
         type: object
     microsoft.graph.microsoftStoreForBusinessPortalSelectionOptions:
@@ -30005,7 +30004,6 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.group'
-              description: Read-only. Nullable.
             mailFolders:
               type: array
               items:
@@ -30112,7 +30110,6 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.profilePhoto'
-              description: Read-only. Nullable.
             profile:
               $ref: '#/components/schemas/microsoft.graph.profile'
             activities:
@@ -36494,7 +36491,6 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.post'
-              description: Read-only. Nullable.
           additionalProperties:
             type: object
     microsoft.graph.groupLifecyclePolicy:
@@ -44316,7 +44312,7 @@ components:
             attachments:
               type: array
               items:
-                $ref: '#/components/schemas/microsoft.graph.attachment_v2'
+                $ref: '#/components/schemas/microsoft.graph.attachmentBase'
             attachmentSessions:
               type: array
               items:
@@ -44789,7 +44785,6 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.printDocument'
-              description: Read-only.
             tasks:
               type: array
               items:
@@ -45227,7 +45222,6 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.workbookCommentReply'
-              description: Read-only. Nullable.
           additionalProperties:
             type: object
     microsoft.graph.workbookFunctions:
@@ -46431,10 +46425,10 @@ components:
               nullable: true
           additionalProperties:
             type: object
-    microsoft.graph.attachment_v2:
+    microsoft.graph.attachmentBase:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: attachment_v2
+        - title: attachmentBase
           type: object
           properties:
             contentType:

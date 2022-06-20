@@ -57,7 +57,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action scheduleActionsForRules
-      operationId: deviceManagement.deviceCompliancePolicies_scheduleActionsForRules
+      operationId: deviceManagement.deviceCompliancePolicies_scheduleActionsGraphFPreRules
       parameters:
         - name: deviceCompliancePolicy-id
           in: path
@@ -2148,7 +2148,6 @@ components:
       properties:
         id:
           type: string
-          description: Read-only.
       additionalProperties:
         type: object
     microsoft.graph.deviceAndAppManagementAssignmentTarget:

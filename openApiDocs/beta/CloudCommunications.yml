@@ -62,7 +62,7 @@ paths:
             presences:
               operationId: communications.ListPresences
             getPresencesByUserId:
-              operationId: communications.getPresencesByUserId
+              operationId: communications.getPresencesGraphBPreUserId
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2971,7 +2971,7 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action getPresencesByUserId
-      operationId: communications_getPresencesByUserId
+      operationId: communications_getPresencesGraphBPreUserId
       requestBody:
         description: Action parameters
         content:
@@ -7327,22 +7327,18 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.audioRoutingGroup'
-              description: Read-only. Nullable.
             contentSharingSessions:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.contentSharingSession'
-              description: Read-only. Nullable.
             operations:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.commsOperation'
-              description: Read-only. Nullable.
             participants:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.participant'
-              description: Read-only. Nullable.
           additionalProperties:
             type: object
     microsoft.graph.audioRoutingGroup:
@@ -8007,7 +8003,6 @@ components:
       properties:
         id:
           type: string
-          description: Read-only.
       additionalProperties:
         type: object
     microsoft.graph.callRecords.modality:

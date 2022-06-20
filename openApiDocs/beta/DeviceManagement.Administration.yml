@@ -9930,7 +9930,7 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.resourceOperation'
           links:
             getScopesForUser:
-              operationId: deviceManagement.resourceOperations.resourceOperation.getScopesForUser
+              operationId: deviceManagement.resourceOperations.resourceOperation.getScopesGraphFPreUser
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -13915,6 +13915,8 @@ paths:
                 - adDomainPassword desc
                 - adDomainUsername
                 - adDomainUsername desc
+                - alternateResourceUrl
+                - alternateResourceUrl desc
                 - displayName
                 - displayName desc
                 - healthCheckStatus
@@ -13954,6 +13956,7 @@ paths:
                 - adDomainName
                 - adDomainPassword
                 - adDomainUsername
+                - alternateResourceUrl
                 - displayName
                 - healthCheckStatus
                 - healthCheckStatusDetails
@@ -14038,6 +14041,7 @@ paths:
                 - adDomainName
                 - adDomainPassword
                 - adDomainUsername
+                - alternateResourceUrl
                 - displayName
                 - healthCheckStatus
                 - healthCheckStatusDetails
@@ -14231,18 +14235,28 @@ paths:
               enum:
                 - id
                 - id desc
+                - alternateResourceUrl
+                - alternateResourceUrl desc
+                - cloudPcGroupDisplayName
+                - cloudPcGroupDisplayName desc
                 - description
                 - description desc
                 - displayName
                 - displayName desc
                 - domainJoinConfiguration
                 - domainJoinConfiguration desc
+                - gracePeriodInHours
+                - gracePeriodInHours desc
                 - imageDisplayName
                 - imageDisplayName desc
                 - imageId
                 - imageId desc
                 - imageType
                 - imageType desc
+                - localAdminEnabled
+                - localAdminEnabled desc
+                - managedBy
+                - managedBy desc
                 - microsoftManagedDesktop
                 - microsoftManagedDesktop desc
                 - onPremisesConnectionId
@@ -14261,12 +14275,17 @@ paths:
             items:
               enum:
                 - id
+                - alternateResourceUrl
+                - cloudPcGroupDisplayName
                 - description
                 - displayName
                 - domainJoinConfiguration
+                - gracePeriodInHours
                 - imageDisplayName
                 - imageId
                 - imageType
+                - localAdminEnabled
+                - managedBy
                 - microsoftManagedDesktop
                 - onPremisesConnectionId
                 - windowsSettings
@@ -14341,12 +14360,17 @@ paths:
             items:
               enum:
                 - id
+                - alternateResourceUrl
+                - cloudPcGroupDisplayName
                 - description
                 - displayName
                 - domainJoinConfiguration
+                - gracePeriodInHours
                 - imageDisplayName
                 - imageId
                 - imageType
+                - localAdminEnabled
+                - managedBy
                 - microsoftManagedDesktop
                 - onPremisesConnectionId
                 - windowsSettings
@@ -17642,6 +17666,9 @@ components:
               type: string
               description: 'The username of an Active Directory account (user or service account) that has permissions to create computer objects in Active Directory. Required format: admin@contoso.com. Optional.'
               nullable: true
+            alternateResourceUrl:
+              type: string
+              nullable: true
             displayName:
               type: string
               description: The display name for the Azure network connection.
@@ -17699,6 +17726,12 @@ components:
         - title: cloudPcProvisioningPolicy
           type: object
           properties:
+            alternateResourceUrl:
+              type: string
+              nullable: true
+            cloudPcGroupDisplayName:
+              type: string
+              nullable: true
             description:
               type: string
               description: The provisioning policy description.
@@ -17709,6 +17742,12 @@ components:
               nullable: true
             domainJoinConfiguration:
               $ref: '#/components/schemas/microsoft.graph.cloudPcDomainJoinConfiguration'
+            gracePeriodInHours:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              format: int32
+              nullable: true
             imageDisplayName:
               type: string
               description: The display name for the OS image you’re provisioning.
@@ -17719,6 +17758,11 @@ components:
               nullable: true
             imageType:
               $ref: '#/components/schemas/microsoft.graph.cloudPcProvisioningPolicyImageType'
+            localAdminEnabled:
+              type: boolean
+              nullable: true
+            managedBy:
+              $ref: '#/components/schemas/microsoft.graph.cloudPcManagementService'
             microsoftManagedDesktop:
               $ref: '#/components/schemas/microsoft.graph.microsoftManagedDesktop'
             onPremisesConnectionId:
@@ -17879,7 +17923,6 @@ components:
       properties:
         id:
           type: string
-          description: Read-only.
       additionalProperties:
         type: object
     microsoft.graph.auditActor:

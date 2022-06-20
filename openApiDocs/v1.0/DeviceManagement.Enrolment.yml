@@ -1987,7 +1987,7 @@ paths:
       tags:
         - roleManagement.Functions
       summary: Invoke function filterByCurrentUser
-      operationId: roleManagement.directory.roleAssignmentScheduleInstances_filterByCurrentUser
+      operationId: roleManagement.directory.roleAssignmentScheduleInstances_filterGraphBPreCurrentUser
       parameters:
         - name: on
           in: path
@@ -2715,7 +2715,7 @@ paths:
       tags:
         - roleManagement.Functions
       summary: Invoke function filterByCurrentUser
-      operationId: roleManagement.directory.roleAssignmentScheduleRequests_filterByCurrentUser
+      operationId: roleManagement.directory.roleAssignmentScheduleRequests_filterGraphBPreCurrentUser
       parameters:
         - name: on
           in: path
@@ -3092,7 +3092,7 @@ paths:
       tags:
         - roleManagement.Functions
       summary: Invoke function filterByCurrentUser
-      operationId: roleManagement.directory.roleAssignmentSchedules_filterByCurrentUser
+      operationId: roleManagement.directory.roleAssignmentSchedules_filterGraphBPreCurrentUser
       parameters:
         - name: on
           in: path
@@ -3841,7 +3841,7 @@ paths:
       tags:
         - roleManagement.Functions
       summary: Invoke function filterByCurrentUser
-      operationId: roleManagement.directory.roleEligibilityScheduleInstances_filterByCurrentUser
+      operationId: roleManagement.directory.roleEligibilityScheduleInstances_filterGraphBPreCurrentUser
       parameters:
         - name: on
           in: path
@@ -4471,7 +4471,7 @@ paths:
       tags:
         - roleManagement.Functions
       summary: Invoke function filterByCurrentUser
-      operationId: roleManagement.directory.roleEligibilityScheduleRequests_filterByCurrentUser
+      operationId: roleManagement.directory.roleEligibilityScheduleRequests_filterGraphBPreCurrentUser
       parameters:
         - name: on
           in: path
@@ -4753,7 +4753,7 @@ paths:
       tags:
         - roleManagement.Functions
       summary: Invoke function filterByCurrentUser
-      operationId: roleManagement.directory.roleEligibilitySchedules_filterByCurrentUser
+      operationId: roleManagement.directory.roleEligibilitySchedules_filterGraphBPreCurrentUser
       parameters:
         - name: on
           in: path
@@ -5725,7 +5725,7 @@ paths:
       tags:
         - roleManagement.Functions
       summary: Invoke function filterByCurrentUser
-      operationId: roleManagement.entitlementManagement.roleAssignmentScheduleInstances_filterByCurrentUser
+      operationId: roleManagement.entitlementManagement.roleAssignmentScheduleInstances_filterGraphBPreCurrentUser
       parameters:
         - name: on
           in: path
@@ -6453,7 +6453,7 @@ paths:
       tags:
         - roleManagement.Functions
       summary: Invoke function filterByCurrentUser
-      operationId: roleManagement.entitlementManagement.roleAssignmentScheduleRequests_filterByCurrentUser
+      operationId: roleManagement.entitlementManagement.roleAssignmentScheduleRequests_filterGraphBPreCurrentUser
       parameters:
         - name: on
           in: path
@@ -6830,7 +6830,7 @@ paths:
       tags:
         - roleManagement.Functions
       summary: Invoke function filterByCurrentUser
-      operationId: roleManagement.entitlementManagement.roleAssignmentSchedules_filterByCurrentUser
+      operationId: roleManagement.entitlementManagement.roleAssignmentSchedules_filterGraphBPreCurrentUser
       parameters:
         - name: on
           in: path
@@ -7579,7 +7579,7 @@ paths:
       tags:
         - roleManagement.Functions
       summary: Invoke function filterByCurrentUser
-      operationId: roleManagement.entitlementManagement.roleEligibilityScheduleInstances_filterByCurrentUser
+      operationId: roleManagement.entitlementManagement.roleEligibilityScheduleInstances_filterGraphBPreCurrentUser
       parameters:
         - name: on
           in: path
@@ -8209,7 +8209,7 @@ paths:
       tags:
         - roleManagement.Functions
       summary: Invoke function filterByCurrentUser
-      operationId: roleManagement.entitlementManagement.roleEligibilityScheduleRequests_filterByCurrentUser
+      operationId: roleManagement.entitlementManagement.roleEligibilityScheduleRequests_filterGraphBPreCurrentUser
       parameters:
         - name: on
           in: path
@@ -8491,7 +8491,7 @@ paths:
       tags:
         - roleManagement.Functions
       summary: Invoke function filterByCurrentUser
-      operationId: roleManagement.entitlementManagement.roleEligibilitySchedules_filterByCurrentUser
+      operationId: roleManagement.entitlementManagement.roleEligibilitySchedules_filterGraphBPreCurrentUser
       parameters:
         - name: on
           in: path
@@ -9133,7 +9133,6 @@ components:
       properties:
         id:
           type: string
-          description: Read-only.
       additionalProperties:
         type: object
     microsoft.graph.deviceAndAppManagementAssignmentTarget:

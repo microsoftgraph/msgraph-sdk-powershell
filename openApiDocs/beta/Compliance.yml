@@ -1249,13 +1249,13 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.site'
           links:
             createdByUser:
-              operationId: compliance.ediscovery.cases.custodians.siteSources.Site.GetCreatedByUser
+              operationId: compliance.ediscovery.cases.custodians.siteSources.Site.GetCreatedGraphBPreUser
               parameters:
                 case-id: $request.path.case-id
                 custodian-id: $request.path.custodian-id
                 siteSource-id: $request.path.siteSource-id
             lastModifiedByUser:
-              operationId: compliance.ediscovery.cases.custodians.siteSources.Site.GetLastModifiedByUser
+              operationId: compliance.ediscovery.cases.custodians.siteSources.Site.GetLastModifiedGraphBPreUser
               parameters:
                 case-id: $request.path.case-id
                 custodian-id: $request.path.custodian-id
@@ -1802,7 +1802,7 @@ paths:
                 custodian-id: $request.path.custodian-id
                 unifiedGroupSource-id: $request.path.unifiedGroupSource-id
             createdOnBehalfOf:
-              operationId: compliance.ediscovery.cases.custodians.unifiedGroupSources.Group.GetCreatedOnBehalfOf
+              operationId: compliance.ediscovery.cases.custodians.unifiedGroupSources.Group.GetCreatedOnBehalfGraphOPre
               parameters:
                 case-id: $request.path.case-id
                 custodian-id: $request.path.custodian-id
@@ -1814,7 +1814,7 @@ paths:
                 custodian-id: $request.path.custodian-id
                 unifiedGroupSource-id: $request.path.unifiedGroupSource-id
             memberOf:
-              operationId: compliance.ediscovery.cases.custodians.unifiedGroupSources.Group.ListMemberOf
+              operationId: compliance.ediscovery.cases.custodians.unifiedGroupSources.Group.ListMemberGraphOPre
               parameters:
                 case-id: $request.path.case-id
                 custodian-id: $request.path.custodian-id
@@ -1826,7 +1826,7 @@ paths:
                 custodian-id: $request.path.custodian-id
                 unifiedGroupSource-id: $request.path.unifiedGroupSource-id
             membersWithLicenseErrors:
-              operationId: compliance.ediscovery.cases.custodians.unifiedGroupSources.Group.ListMembersWithLicenseErrors
+              operationId: compliance.ediscovery.cases.custodians.unifiedGroupSources.Group.ListMembersGraphWPreLicenseErrors
               parameters:
                 case-id: $request.path.case-id
                 custodian-id: $request.path.custodian-id
@@ -1850,7 +1850,7 @@ paths:
                 custodian-id: $request.path.custodian-id
                 unifiedGroupSource-id: $request.path.unifiedGroupSource-id
             transitiveMemberOf:
-              operationId: compliance.ediscovery.cases.custodians.unifiedGroupSources.Group.ListTransitiveMemberOf
+              operationId: compliance.ediscovery.cases.custodians.unifiedGroupSources.Group.ListTransitiveMemberGraphOPre
               parameters:
                 case-id: $request.path.case-id
                 custodian-id: $request.path.custodian-id
@@ -2979,13 +2979,13 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.site'
           links:
             createdByUser:
-              operationId: compliance.ediscovery.cases.legalHolds.siteSources.Site.GetCreatedByUser
+              operationId: compliance.ediscovery.cases.legalHolds.siteSources.Site.GetCreatedGraphBPreUser
               parameters:
                 case-id: $request.path.case-id
                 legalHold-id: $request.path.legalHold-id
                 siteSource-id: $request.path.siteSource-id
             lastModifiedByUser:
-              operationId: compliance.ediscovery.cases.legalHolds.siteSources.Site.GetLastModifiedByUser
+              operationId: compliance.ediscovery.cases.legalHolds.siteSources.Site.GetLastModifiedGraphBPreUser
               parameters:
                 case-id: $request.path.case-id
                 legalHold-id: $request.path.legalHold-id
@@ -3532,7 +3532,7 @@ paths:
                 legalHold-id: $request.path.legalHold-id
                 unifiedGroupSource-id: $request.path.unifiedGroupSource-id
             createdOnBehalfOf:
-              operationId: compliance.ediscovery.cases.legalHolds.unifiedGroupSources.Group.GetCreatedOnBehalfOf
+              operationId: compliance.ediscovery.cases.legalHolds.unifiedGroupSources.Group.GetCreatedOnBehalfGraphOPre
               parameters:
                 case-id: $request.path.case-id
                 legalHold-id: $request.path.legalHold-id
@@ -3544,7 +3544,7 @@ paths:
                 legalHold-id: $request.path.legalHold-id
                 unifiedGroupSource-id: $request.path.unifiedGroupSource-id
             memberOf:
-              operationId: compliance.ediscovery.cases.legalHolds.unifiedGroupSources.Group.ListMemberOf
+              operationId: compliance.ediscovery.cases.legalHolds.unifiedGroupSources.Group.ListMemberGraphOPre
               parameters:
                 case-id: $request.path.case-id
                 legalHold-id: $request.path.legalHold-id
@@ -3556,7 +3556,7 @@ paths:
                 legalHold-id: $request.path.legalHold-id
                 unifiedGroupSource-id: $request.path.unifiedGroupSource-id
             membersWithLicenseErrors:
-              operationId: compliance.ediscovery.cases.legalHolds.unifiedGroupSources.Group.ListMembersWithLicenseErrors
+              operationId: compliance.ediscovery.cases.legalHolds.unifiedGroupSources.Group.ListMembersGraphWPreLicenseErrors
               parameters:
                 case-id: $request.path.case-id
                 legalHold-id: $request.path.legalHold-id
@@ -3580,7 +3580,7 @@ paths:
                 legalHold-id: $request.path.legalHold-id
                 unifiedGroupSource-id: $request.path.unifiedGroupSource-id
             transitiveMemberOf:
-              operationId: compliance.ediscovery.cases.legalHolds.unifiedGroupSources.Group.ListTransitiveMemberOf
+              operationId: compliance.ediscovery.cases.legalHolds.unifiedGroupSources.Group.ListTransitiveMemberGraphOPre
               parameters:
                 case-id: $request.path.case-id
                 legalHold-id: $request.path.legalHold-id
@@ -8002,7 +8002,6 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.ediscovery.reviewSetQuery'
-              description: Read-only. Nullable.
           additionalProperties:
             type: object
     microsoft.graph.ediscovery.sourceCollection:
@@ -8228,7 +8227,6 @@ components:
       properties:
         id:
           type: string
-          description: Read-only.
       additionalProperties:
         type: object
     microsoft.graph.identitySet:
@@ -9425,7 +9423,6 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.post'
-              description: Read-only. Nullable.
           additionalProperties:
             type: object
     microsoft.graph.extension:
@@ -10444,7 +10441,6 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.group'
-              description: Read-only. Nullable.
             mailFolders:
               type: array
               items:
@@ -10551,7 +10547,6 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.profilePhoto'
-              description: Read-only. Nullable.
             profile:
               $ref: '#/components/schemas/microsoft.graph.profile'
             activities:
@@ -21721,7 +21716,6 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.workbookCommentReply'
-              description: Read-only. Nullable.
           additionalProperties:
             type: object
     microsoft.graph.workbookFunctions:
@@ -25040,7 +25034,7 @@ components:
             attachments:
               type: array
               items:
-                $ref: '#/components/schemas/microsoft.graph.attachment_v2'
+                $ref: '#/components/schemas/microsoft.graph.attachmentBase'
             attachmentSessions:
               type: array
               items:
@@ -25879,7 +25873,6 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.printDocument'
-              description: Read-only.
             tasks:
               type: array
               items:
@@ -26744,10 +26737,10 @@ components:
         - unknownFutureValue
         - emailUser
       type: string
-    microsoft.graph.attachment_v2:
+    microsoft.graph.attachmentBase:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: attachment_v2
+        - title: attachmentBase
           type: object
           properties:
             contentType:

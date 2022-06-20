@@ -15,7 +15,7 @@ paths:
       parameters:
         - name: ConsistencyLevel
           in: header
-          description: 'Indicates the requested consistency level. Documentation URL: https://developer.microsoft.com/en-us/office/blogs/microsoft-graph-advanced-queries-for-directory-objects-are-now-generally-available/'
+          description: 'Indicates the requested consistency level. Documentation URL: https://docs.microsoft.com/graph/aad-advanced-queries'
           schema:
             type: string
           examples:
@@ -87,6 +87,8 @@ paths:
                 - publisherDomain desc
                 - requiredResourceAccess
                 - requiredResourceAccess desc
+                - samlMetadataUrl
+                - samlMetadataUrl desc
                 - serviceManagementReference
                 - serviceManagementReference desc
                 - signInAudience
@@ -143,6 +145,7 @@ paths:
                 - publicClient
                 - publisherDomain
                 - requiredResourceAccess
+                - samlMetadataUrl
                 - serviceManagementReference
                 - signInAudience
                 - spa
@@ -266,6 +269,7 @@ paths:
                 - publicClient
                 - publisherDomain
                 - requiredResourceAccess
+                - samlMetadataUrl
                 - serviceManagementReference
                 - signInAudience
                 - spa
@@ -322,7 +326,7 @@ paths:
               parameters:
                 application-id: $request.path.application-id
             createdOnBehalfOf:
-              operationId: applications.GetCreatedOnBehalfOf
+              operationId: applications.GetCreatedOnBehalfGraphOPre
               parameters:
                 application-id: $request.path.application-id
             extensionProperties:
@@ -519,7 +523,7 @@ paths:
       tags:
         - applications.appManagementPolicy
       summary: Delete ref of navigation property appManagementPolicies for applications
-      operationId: applications_DeleteGraphRefAppManagementPolicies
+      operationId: applications_DeleteAppManagementPoliciesGraphBPreRef
       parameters:
         - name: application-id
           in: path
@@ -556,7 +560,7 @@ paths:
       tags:
         - applications.appManagementPolicy
       summary: Get ref of appManagementPolicies from applications
-      operationId: applications_ListGraphRefAppManagementPolicies
+      operationId: applications_ListAppManagementPoliciesGraphBPreRef
       parameters:
         - name: application-id
           in: path
@@ -606,7 +610,7 @@ paths:
       tags:
         - applications.appManagementPolicy
       summary: Create new navigation property ref to appManagementPolicies for applications
-      operationId: applications_CreateGraphRefAppManagementPolicies
+      operationId: applications_CreateAppManagementPoliciesGraphBPreRef
       parameters:
         - name: application-id
           in: path
@@ -706,7 +710,7 @@ paths:
       tags:
         - applications.connectorGroup
       summary: Get ref of connectorGroup from applications
-      operationId: applications_GetGraphRefConnectorGroup
+      operationId: applications_GetConnectorGroupGraphBPreRef
       parameters:
         - name: application-id
           in: path
@@ -738,7 +742,7 @@ paths:
       tags:
         - applications.connectorGroup
       summary: Update the ref of navigation property connectorGroup in applications
-      operationId: applications_SetGraphRefConnectorGroup
+      operationId: applications_SetConnectorGroupGraphBPreRef
       parameters:
         - name: application-id
           in: path
@@ -764,7 +768,7 @@ paths:
       tags:
         - applications.connectorGroup
       summary: Delete ref of navigation property connectorGroup for applications
-      operationId: applications_DeleteGraphRefConnectorGroup
+      operationId: applications_DeleteConnectorGroupGraphBPreRef
       parameters:
         - name: application-id
           in: path
@@ -789,7 +793,7 @@ paths:
       tags:
         - applications.directoryObject
       summary: Get createdOnBehalfOf from applications
-      operationId: applications_GetCreatedOnBehalfOf
+      operationId: applications_GetCreatedOnBehalfGraphOPre
       parameters:
         - name: application-id
           in: path
@@ -1986,7 +1990,7 @@ paths:
       tags:
         - applications.directoryObject
       summary: Delete ref of navigation property owners for applications
-      operationId: applications_DeleteGraphRefOwners
+      operationId: applications_DeleteOwnersGraphBPreRef
       parameters:
         - name: application-id
           in: path
@@ -2023,7 +2027,7 @@ paths:
       tags:
         - applications.directoryObject
       summary: Get ref of owners from applications
-      operationId: applications_ListGraphRefOwners
+      operationId: applications_ListOwnersGraphBPreRef
       parameters:
         - name: application-id
           in: path
@@ -2065,7 +2069,7 @@ paths:
       tags:
         - applications.directoryObject
       summary: Create new navigation property ref to owners for applications
-      operationId: applications_CreateGraphRefOwners
+      operationId: applications_CreateOwnersGraphBPreRef
       parameters:
         - name: application-id
           in: path
@@ -4272,7 +4276,7 @@ paths:
       tags:
         - applications.tokenIssuancePolicy
       summary: Delete ref of navigation property tokenIssuancePolicies for applications
-      operationId: applications_DeleteGraphRefTokenIssuancePolicies
+      operationId: applications_DeleteTokenIssuancePoliciesGraphBPreRef
       parameters:
         - name: application-id
           in: path
@@ -4309,7 +4313,7 @@ paths:
       tags:
         - applications.tokenIssuancePolicy
       summary: Get ref of tokenIssuancePolicies from applications
-      operationId: applications_ListGraphRefTokenIssuancePolicies
+      operationId: applications_ListTokenIssuancePoliciesGraphBPreRef
       parameters:
         - name: application-id
           in: path
@@ -4359,7 +4363,7 @@ paths:
       tags:
         - applications.tokenIssuancePolicy
       summary: Create new navigation property ref to tokenIssuancePolicies for applications
-      operationId: applications_CreateGraphRefTokenIssuancePolicies
+      operationId: applications_CreateTokenIssuancePoliciesGraphBPreRef
       parameters:
         - name: application-id
           in: path
@@ -4476,7 +4480,7 @@ paths:
       tags:
         - applications.tokenLifetimePolicy
       summary: Delete ref of navigation property tokenLifetimePolicies for applications
-      operationId: applications_DeleteGraphRefTokenLifetimePolicies
+      operationId: applications_DeleteTokenLifetimePoliciesGraphBPreRef
       parameters:
         - name: application-id
           in: path
@@ -4513,7 +4517,7 @@ paths:
       tags:
         - applications.tokenLifetimePolicy
       summary: Get ref of tokenLifetimePolicies from applications
-      operationId: applications_ListGraphRefTokenLifetimePolicies
+      operationId: applications_ListTokenLifetimePoliciesGraphBPreRef
       parameters:
         - name: application-id
           in: path
@@ -4563,7 +4567,7 @@ paths:
       tags:
         - applications.tokenLifetimePolicy
       summary: Create new navigation property ref to tokenLifetimePolicies for applications
-      operationId: applications_CreateGraphRefTokenLifetimePolicies
+      operationId: applications_CreateTokenLifetimePoliciesGraphBPreRef
       parameters:
         - name: application-id
           in: path
@@ -4622,7 +4626,7 @@ paths:
       tags:
         - applications.Actions
       summary: Invoke action getByIds
-      operationId: applications_getByIds
+      operationId: applications_getGraphBPreIds
       requestBody:
         description: Action parameters
         content:
@@ -6069,7 +6073,7 @@ paths:
       tags:
         - onPremisesPublishingProfiles.onPremisesAgentGroup
       summary: Delete ref of navigation property agentGroups for onPremisesPublishingProfiles
-      operationId: onPremisesPublishingProfiles.agentGroups.agents_DeleteGraphRefAgentGroups
+      operationId: onPremisesPublishingProfiles.agentGroups.agents_DeleteAgentGroupsGraphBPreRef
       parameters:
         - name: onPremisesPublishingProfile-id
           in: path
@@ -6120,7 +6124,7 @@ paths:
       tags:
         - onPremisesPublishingProfiles.onPremisesAgentGroup
       summary: Get ref of agentGroups from onPremisesPublishingProfiles
-      operationId: onPremisesPublishingProfiles.agentGroups.agents_ListGraphRefAgentGroups
+      operationId: onPremisesPublishingProfiles.agentGroups.agents_ListAgentGroupsGraphBPreRef
       parameters:
         - name: onPremisesPublishingProfile-id
           in: path
@@ -6180,7 +6184,7 @@ paths:
       tags:
         - onPremisesPublishingProfiles.onPremisesAgentGroup
       summary: Create new navigation property ref to agentGroups for onPremisesPublishingProfiles
-      operationId: onPremisesPublishingProfiles.agentGroups.agents_CreateGraphRefAgentGroups
+      operationId: onPremisesPublishingProfiles.agentGroups.agents_CreateAgentGroupsGraphBPreRef
       parameters:
         - name: onPremisesPublishingProfile-id
           in: path
@@ -6637,7 +6641,7 @@ paths:
       tags:
         - onPremisesPublishingProfiles.onPremisesAgentGroup
       summary: Delete ref of navigation property agentGroups for onPremisesPublishingProfiles
-      operationId: onPremisesPublishingProfiles.agentGroups.publishedResources_DeleteGraphRefAgentGroups
+      operationId: onPremisesPublishingProfiles.agentGroups.publishedResources_DeleteAgentGroupsGraphBPreRef
       parameters:
         - name: onPremisesPublishingProfile-id
           in: path
@@ -6688,7 +6692,7 @@ paths:
       tags:
         - onPremisesPublishingProfiles.onPremisesAgentGroup
       summary: Get ref of agentGroups from onPremisesPublishingProfiles
-      operationId: onPremisesPublishingProfiles.agentGroups.publishedResources_ListGraphRefAgentGroups
+      operationId: onPremisesPublishingProfiles.agentGroups.publishedResources_ListAgentGroupsGraphBPreRef
       parameters:
         - name: onPremisesPublishingProfile-id
           in: path
@@ -6748,7 +6752,7 @@ paths:
       tags:
         - onPremisesPublishingProfiles.onPremisesAgentGroup
       summary: Create new navigation property ref to agentGroups for onPremisesPublishingProfiles
-      operationId: onPremisesPublishingProfiles.agentGroups.publishedResources_CreateGraphRefAgentGroups
+      operationId: onPremisesPublishingProfiles.agentGroups.publishedResources_CreateAgentGroupsGraphBPreRef
       parameters:
         - name: onPremisesPublishingProfile-id
           in: path
@@ -7122,7 +7126,7 @@ paths:
       tags:
         - onPremisesPublishingProfiles.onPremisesAgent
       summary: Delete ref of navigation property agentGroups for onPremisesPublishingProfiles
-      operationId: onPremisesPublishingProfiles.agents_DeleteGraphRefAgentGroups
+      operationId: onPremisesPublishingProfiles.agents_DeleteAgentGroupsGraphBPreRef
       parameters:
         - name: onPremisesPublishingProfile-id
           in: path
@@ -7166,7 +7170,7 @@ paths:
       tags:
         - onPremisesPublishingProfiles.onPremisesAgent
       summary: Get ref of agentGroups from onPremisesPublishingProfiles
-      operationId: onPremisesPublishingProfiles.agents_ListGraphRefAgentGroups
+      operationId: onPremisesPublishingProfiles.agents_ListAgentGroupsGraphBPreRef
       parameters:
         - name: onPremisesPublishingProfile-id
           in: path
@@ -7219,7 +7223,7 @@ paths:
       tags:
         - onPremisesPublishingProfiles.onPremisesAgent
       summary: Create new navigation property ref to agentGroups for onPremisesPublishingProfiles
-      operationId: onPremisesPublishingProfiles.agents_CreateGraphRefAgentGroups
+      operationId: onPremisesPublishingProfiles.agents_CreateAgentGroupsGraphBPreRef
       parameters:
         - name: onPremisesPublishingProfile-id
           in: path
@@ -7591,6 +7595,8 @@ paths:
                 - publisherDomain desc
                 - requiredResourceAccess
                 - requiredResourceAccess desc
+                - samlMetadataUrl
+                - samlMetadataUrl desc
                 - serviceManagementReference
                 - serviceManagementReference desc
                 - signInAudience
@@ -7647,6 +7653,7 @@ paths:
                 - publicClient
                 - publisherDomain
                 - requiredResourceAccess
+                - samlMetadataUrl
                 - serviceManagementReference
                 - signInAudience
                 - spa
@@ -7762,6 +7769,7 @@ paths:
                 - publicClient
                 - publisherDomain
                 - requiredResourceAccess
+                - samlMetadataUrl
                 - serviceManagementReference
                 - signInAudience
                 - spa
@@ -7820,7 +7828,7 @@ paths:
                 connectorGroup-id: $request.path.connectorGroup-id
                 application-id: $request.path.application-id
             createdOnBehalfOf:
-              operationId: onPremisesPublishingProfiles.connectorGroups.Applications.GetCreatedOnBehalfOf
+              operationId: onPremisesPublishingProfiles.connectorGroups.Applications.GetCreatedOnBehalfGraphOPre
               parameters:
                 onPremisesPublishingProfile-id: $request.path.onPremisesPublishingProfile-id
                 connectorGroup-id: $request.path.connectorGroup-id
@@ -8044,7 +8052,7 @@ paths:
       tags:
         - onPremisesPublishingProfiles.connectorGroup
       summary: Delete ref of navigation property members for onPremisesPublishingProfiles
-      operationId: onPremisesPublishingProfiles.connectorGroups_DeleteGraphRefMembers
+      operationId: onPremisesPublishingProfiles.connectorGroups_DeleteMembersGraphBPreRef
       parameters:
         - name: onPremisesPublishingProfile-id
           in: path
@@ -8088,7 +8096,7 @@ paths:
       tags:
         - onPremisesPublishingProfiles.connectorGroup
       summary: Get ref of members from onPremisesPublishingProfiles
-      operationId: onPremisesPublishingProfiles.connectorGroups_ListGraphRefMembers
+      operationId: onPremisesPublishingProfiles.connectorGroups_ListMembersGraphBPreRef
       parameters:
         - name: onPremisesPublishingProfile-id
           in: path
@@ -8141,7 +8149,7 @@ paths:
       tags:
         - onPremisesPublishingProfiles.connectorGroup
       summary: Create new navigation property ref to members for onPremisesPublishingProfiles
-      operationId: onPremisesPublishingProfiles.connectorGroups_CreateGraphRefMembers
+      operationId: onPremisesPublishingProfiles.connectorGroups_CreateMembersGraphBPreRef
       parameters:
         - name: onPremisesPublishingProfile-id
           in: path
@@ -8343,7 +8351,7 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.connector'
           links:
             memberOf:
-              operationId: onPremisesPublishingProfiles.Connectors.ListMemberOf
+              operationId: onPremisesPublishingProfiles.Connectors.ListMemberGraphOPre
               parameters:
                 onPremisesPublishingProfile-id: $request.path.onPremisesPublishingProfile-id
                 connector-id: $request.path.connector-id
@@ -8419,7 +8427,7 @@ paths:
       tags:
         - onPremisesPublishingProfiles.connector
       summary: Get memberOf from onPremisesPublishingProfiles
-      operationId: onPremisesPublishingProfiles.connectors_ListMemberOf
+      operationId: onPremisesPublishingProfiles.connectors_ListMemberGraphOPre
       parameters:
         - name: onPremisesPublishingProfile-id
           in: path
@@ -8507,7 +8515,7 @@ paths:
       tags:
         - onPremisesPublishingProfiles.connector
       summary: Delete ref of navigation property memberOf for onPremisesPublishingProfiles
-      operationId: onPremisesPublishingProfiles.connectors_DeleteGraphRefMemberOf
+      operationId: onPremisesPublishingProfiles.connectors_DeleteMemberGraphOPreGraphBPreRef
       parameters:
         - name: onPremisesPublishingProfile-id
           in: path
@@ -8551,7 +8559,7 @@ paths:
       tags:
         - onPremisesPublishingProfiles.connector
       summary: Get ref of memberOf from onPremisesPublishingProfiles
-      operationId: onPremisesPublishingProfiles.connectors_ListGraphRefMemberOf
+      operationId: onPremisesPublishingProfiles.connectors_ListMemberGraphOPreGraphBPreRef
       parameters:
         - name: onPremisesPublishingProfile-id
           in: path
@@ -8606,7 +8614,7 @@ paths:
       tags:
         - onPremisesPublishingProfiles.connector
       summary: Create new navigation property ref to memberOf for onPremisesPublishingProfiles
-      operationId: onPremisesPublishingProfiles.connectors_CreateGraphRefMemberOf
+      operationId: onPremisesPublishingProfiles.connectors_CreateMemberGraphOPreGraphBPreRef
       parameters:
         - name: onPremisesPublishingProfile-id
           in: path
@@ -9006,7 +9014,7 @@ paths:
       tags:
         - onPremisesPublishingProfiles.publishedResource
       summary: Delete ref of navigation property agentGroups for onPremisesPublishingProfiles
-      operationId: onPremisesPublishingProfiles.publishedResources_DeleteGraphRefAgentGroups
+      operationId: onPremisesPublishingProfiles.publishedResources_DeleteAgentGroupsGraphBPreRef
       parameters:
         - name: onPremisesPublishingProfile-id
           in: path
@@ -9050,7 +9058,7 @@ paths:
       tags:
         - onPremisesPublishingProfiles.publishedResource
       summary: Get ref of agentGroups from onPremisesPublishingProfiles
-      operationId: onPremisesPublishingProfiles.publishedResources_ListGraphRefAgentGroups
+      operationId: onPremisesPublishingProfiles.publishedResources_ListAgentGroupsGraphBPreRef
       parameters:
         - name: onPremisesPublishingProfile-id
           in: path
@@ -9103,7 +9111,7 @@ paths:
       tags:
         - onPremisesPublishingProfiles.publishedResource
       summary: Create new navigation property ref to agentGroups for onPremisesPublishingProfiles
-      operationId: onPremisesPublishingProfiles.publishedResources_CreateGraphRefAgentGroups
+      operationId: onPremisesPublishingProfiles.publishedResources_CreateAgentGroupsGraphBPreRef
       parameters:
         - name: onPremisesPublishingProfile-id
           in: path
@@ -9149,7 +9157,7 @@ paths:
       parameters:
         - name: ConsistencyLevel
           in: header
-          description: 'Indicates the requested consistency level. Documentation URL: https://developer.microsoft.com/en-us/office/blogs/microsoft-graph-advanced-queries-for-directory-objects-are-now-generally-available/'
+          description: 'Indicates the requested consistency level. Documentation URL: https://docs.microsoft.com/graph/aad-advanced-queries'
           schema:
             type: string
           examples:
@@ -9540,7 +9548,7 @@ paths:
               parameters:
                 servicePrincipal-id: $request.path.servicePrincipal-id
             memberOf:
-              operationId: servicePrincipals.ListMemberOf
+              operationId: servicePrincipals.ListMemberGraphOPre
               parameters:
                 servicePrincipal-id: $request.path.servicePrincipal-id
             oauth2PermissionGrants:
@@ -9564,7 +9572,7 @@ paths:
               parameters:
                 servicePrincipal-id: $request.path.servicePrincipal-id
             transitiveMemberOf:
-              operationId: servicePrincipals.ListTransitiveMemberOf
+              operationId: servicePrincipals.ListTransitiveMemberGraphOPre
               parameters:
                 servicePrincipal-id: $request.path.servicePrincipal-id
             synchronization:
@@ -10365,7 +10373,7 @@ paths:
       tags:
         - servicePrincipals.claimsMappingPolicy
       summary: Delete ref of navigation property claimsMappingPolicies for servicePrincipals
-      operationId: servicePrincipals_DeleteGraphRefClaimsMappingPolicies
+      operationId: servicePrincipals_DeleteClaimsMappingPoliciesGraphBPreRef
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -10402,7 +10410,7 @@ paths:
       tags:
         - servicePrincipals.claimsMappingPolicy
       summary: Get ref of claimsMappingPolicies from servicePrincipals
-      operationId: servicePrincipals_ListGraphRefClaimsMappingPolicies
+      operationId: servicePrincipals_ListClaimsMappingPoliciesGraphBPreRef
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -10452,7 +10460,7 @@ paths:
       tags:
         - servicePrincipals.claimsMappingPolicy
       summary: Create new navigation property ref to claimsMappingPolicies for servicePrincipals
-      operationId: servicePrincipals_CreateGraphRefClaimsMappingPolicies
+      operationId: servicePrincipals_CreateClaimsMappingPoliciesGraphBPreRef
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -11391,7 +11399,7 @@ paths:
       tags:
         - servicePrincipals.homeRealmDiscoveryPolicy
       summary: Delete ref of navigation property homeRealmDiscoveryPolicies for servicePrincipals
-      operationId: servicePrincipals_DeleteGraphRefHomeRealmDiscoveryPolicies
+      operationId: servicePrincipals_DeleteHomeRealmDiscoveryPoliciesGraphBPreRef
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -11428,7 +11436,7 @@ paths:
       tags:
         - servicePrincipals.homeRealmDiscoveryPolicy
       summary: Get ref of homeRealmDiscoveryPolicies from servicePrincipals
-      operationId: servicePrincipals_ListGraphRefHomeRealmDiscoveryPolicies
+      operationId: servicePrincipals_ListHomeRealmDiscoveryPoliciesGraphBPreRef
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -11478,7 +11486,7 @@ paths:
       tags:
         - servicePrincipals.homeRealmDiscoveryPolicy
       summary: Create new navigation property ref to homeRealmDiscoveryPolicies for servicePrincipals
-      operationId: servicePrincipals_CreateGraphRefHomeRealmDiscoveryPolicies
+      operationId: servicePrincipals_CreateHomeRealmDiscoveryPoliciesGraphBPreRef
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -11739,7 +11747,7 @@ paths:
       tags:
         - servicePrincipals.directoryObject
       summary: Get memberOf from servicePrincipals
-      operationId: servicePrincipals_ListMemberOf
+      operationId: servicePrincipals_ListMemberGraphOPre
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -11807,7 +11815,7 @@ paths:
       tags:
         - servicePrincipals.directoryObject
       summary: Get memberOf from servicePrincipals
-      operationId: servicePrincipals_GetMemberOf
+      operationId: servicePrincipals_GetMemberGraphOPre
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -12597,7 +12605,7 @@ paths:
       tags:
         - servicePrincipals.directoryObject
       summary: Delete ref of navigation property owners for servicePrincipals
-      operationId: servicePrincipals_DeleteGraphRefOwners
+      operationId: servicePrincipals_DeleteOwnersGraphBPreRef
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -12634,7 +12642,7 @@ paths:
       tags:
         - servicePrincipals.directoryObject
       summary: Get ref of owners from servicePrincipals
-      operationId: servicePrincipals_ListGraphRefOwners
+      operationId: servicePrincipals_ListOwnersGraphBPreRef
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -12676,7 +12684,7 @@ paths:
       tags:
         - servicePrincipals.directoryObject
       summary: Create new navigation property ref to owners for servicePrincipals
-      operationId: servicePrincipals_CreateGraphRefOwners
+      operationId: servicePrincipals_CreateOwnersGraphBPreRef
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -15101,7 +15109,7 @@ paths:
       tags:
         - servicePrincipals.directoryObject
       summary: Get transitiveMemberOf from servicePrincipals
-      operationId: servicePrincipals_ListTransitiveMemberOf
+      operationId: servicePrincipals_ListTransitiveMemberGraphOPre
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -15169,7 +15177,7 @@ paths:
       tags:
         - servicePrincipals.directoryObject
       summary: Get transitiveMemberOf from servicePrincipals
-      operationId: servicePrincipals_GetTransitiveMemberOf
+      operationId: servicePrincipals_GetTransitiveMemberGraphOPre
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -15249,7 +15257,7 @@ paths:
       tags:
         - servicePrincipals.Actions
       summary: Invoke action getByIds
-      operationId: servicePrincipals_getByIds
+      operationId: servicePrincipals_getGraphBPreIds
       requestBody:
         description: Action parameters
         content:
@@ -15692,6 +15700,10 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.requiredResourceAccess'
               description: 'Specifies the resources that the application needs to access. This property also specifies the set of delegated permissions and application roles that it needs for each of those resources. This configuration of access to the required resources drives the consent experience. No more than 50 resource services (APIs) can be configured. Beginning mid-October 2021, the total number of required permissions must not exceed 400. Not nullable. Supports $filter (eq, not, ge, le).'
+            samlMetadataUrl:
+              type: string
+              description: The URL where the service exposes SAML metadata for federation. This property is valid only for single-tenant applications. Nullable.
+              nullable: true
             serviceManagementReference:
               type: string
               description: References application or service contact information from a Service or Asset Management database. Nullable.
@@ -15786,12 +15798,10 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.application'
-              description: Read-only. Nullable.
             members:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.connector'
-              description: Read-only. Nullable.
           additionalProperties:
             type: object
     ReferenceUpdateSchema:
@@ -17300,7 +17310,6 @@ components:
       properties:
         id:
           type: string
-          description: Read-only.
       additionalProperties:
         type: object
     microsoft.graph.connectorGroupType:

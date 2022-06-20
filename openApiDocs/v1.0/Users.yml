@@ -15,7 +15,7 @@ paths:
       parameters:
         - name: ConsistencyLevel
           in: header
-          description: 'Indicates the requested consistency level. Documentation URL: https://developer.microsoft.com/en-us/office/blogs/microsoft-graph-advanced-queries-for-directory-objects-are-now-generally-available/'
+          description: 'Indicates the requested consistency level. Documentation URL: https://docs.microsoft.com/graph/aad-advanced-queries'
           schema:
             type: string
           examples:
@@ -630,7 +630,7 @@ paths:
               parameters:
                 user-id: $request.path.user-id
             memberOf:
-              operationId: users.ListMemberOf
+              operationId: users.ListMemberGraphOPre
               parameters:
                 user-id: $request.path.user-id
             oauth2PermissionGrants:
@@ -650,11 +650,11 @@ paths:
               parameters:
                 user-id: $request.path.user-id
             scopedRoleMemberOf:
-              operationId: users.ListScopedRoleMemberOf
+              operationId: users.ListScopedRoleMemberGraphOPre
               parameters:
                 user-id: $request.path.user-id
             transitiveMemberOf:
-              operationId: users.ListTransitiveMemberOf
+              operationId: users.ListTransitiveMemberGraphOPre
               parameters:
                 user-id: $request.path.user-id
             calendar:
@@ -830,7 +830,7 @@ paths:
             translateExchangeIds:
               operationId: users.user.translateExchangeIds
             wipeManagedAppRegistrationsByDeviceTag:
-              operationId: users.user.wipeManagedAppRegistrationsByDeviceTag
+              operationId: users.user.wipeManagedAppRegistrationsGraphBPreDeviceTag
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1626,7 +1626,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Get ref of manager from users
-      operationId: users_GetGraphRefManager
+      operationId: users_GetManagerGraphBPreRef
       parameters:
         - name: user-id
           in: path
@@ -1649,7 +1649,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Update the ref of navigation property manager in users
-      operationId: users_SetGraphRefManager
+      operationId: users_SetManagerGraphBPreRef
       parameters:
         - name: user-id
           in: path
@@ -1675,7 +1675,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Delete ref of navigation property manager for users
-      operationId: users_DeleteGraphRefManager
+      operationId: users_DeleteManagerGraphBPreRef
       parameters:
         - name: user-id
           in: path
@@ -1700,7 +1700,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Get memberOf from users
-      operationId: users_ListMemberOf
+      operationId: users_ListMemberGraphOPre
       parameters:
         - name: user-id
           in: path
@@ -1768,7 +1768,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Get memberOf from users
-      operationId: users_GetMemberOf
+      operationId: users_GetMemberGraphOPre
       parameters:
         - name: user-id
           in: path
@@ -5060,7 +5060,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Get transitiveMemberOf from users
-      operationId: users_ListTransitiveMemberOf
+      operationId: users_ListTransitiveMemberGraphOPre
       parameters:
         - name: user-id
           in: path
@@ -5128,7 +5128,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Get transitiveMemberOf from users
-      operationId: users_GetTransitiveMemberOf
+      operationId: users_GetTransitiveMemberGraphOPre
       parameters:
         - name: user-id
           in: path
@@ -5652,7 +5652,6 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.profilePhoto'
-              description: Read-only. Nullable.
             activities:
               type: array
               items:
@@ -7959,7 +7958,6 @@ components:
       properties:
         id:
           type: string
-          description: Read-only.
       additionalProperties:
         type: object
     microsoft.graph.servicePlanInfo:
@@ -11471,6 +11469,13 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.event'
               description: The group's events.
+            photo:
+              $ref: '#/components/schemas/microsoft.graph.profilePhoto'
+            photos:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.profilePhoto'
+              description: The profile photos owned by the group. Read-only. Nullable.
             rejectedSenders:
               type: array
               items:
@@ -11507,13 +11512,6 @@ components:
               $ref: '#/components/schemas/microsoft.graph.plannerGroup'
             onenote:
               $ref: '#/components/schemas/microsoft.graph.onenote'
-            photo:
-              $ref: '#/components/schemas/microsoft.graph.profilePhoto'
-            photos:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.profilePhoto'
-              description: The profile photos owned by the group. Read-only. Nullable.
             team:
               $ref: '#/components/schemas/microsoft.graph.team'
           additionalProperties:
@@ -14571,7 +14569,6 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.post'
-              description: Read-only. Nullable.
           additionalProperties:
             type: object
     microsoft.graph.groupLifecyclePolicy:
@@ -14996,7 +14993,6 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.workbookCommentReply'
-              description: Read-only. Nullable.
           additionalProperties:
             type: object
     microsoft.graph.workbookFunctions:

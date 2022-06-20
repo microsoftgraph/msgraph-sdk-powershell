@@ -624,7 +624,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action checkMemberGroups
-      operationId: users.authentication.windowsHelloForBusinessMethods.device_checkMemberGroups
+      operationId: users.authentication.windowsHelloGraphFPreBusinessMethods.device_checkMemberGroups
       parameters:
         - name: user-id
           in: path
@@ -677,7 +677,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action checkMemberObjects
-      operationId: users.authentication.windowsHelloForBusinessMethods.device_checkMemberObjects
+      operationId: users.authentication.windowsHelloGraphFPreBusinessMethods.device_checkMemberObjects
       parameters:
         - name: user-id
           in: path
@@ -730,7 +730,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action getMemberGroups
-      operationId: users.authentication.windowsHelloForBusinessMethods.device_getMemberGroups
+      operationId: users.authentication.windowsHelloGraphFPreBusinessMethods.device_getMemberGroups
       parameters:
         - name: user-id
           in: path
@@ -783,7 +783,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action getMemberObjects
-      operationId: users.authentication.windowsHelloForBusinessMethods.device_getMemberObjects
+      operationId: users.authentication.windowsHelloGraphFPreBusinessMethods.device_getMemberObjects
       parameters:
         - name: user-id
           in: path
@@ -836,7 +836,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action restore
-      operationId: users.authentication.windowsHelloForBusinessMethods.device_restore
+      operationId: users.authentication.windowsHelloGraphFPreBusinessMethods.device_restore
       parameters:
         - name: user-id
           in: path
@@ -16843,7 +16843,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action hideForUser
-      operationId: users.chats_hideForUser
+      operationId: users.chats_hideGraphFPreUser
       parameters:
         - name: user-id
           in: path
@@ -16885,7 +16885,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action markChatReadForUser
-      operationId: users.chats_markChatReadForUser
+      operationId: users.chats_markChatReadGraphFPreUser
       parameters:
         - name: user-id
           in: path
@@ -16927,7 +16927,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action markChatUnreadForUser
-      operationId: users.chats_markChatUnreadForUser
+      operationId: users.chats_markChatUnreadGraphFPreUser
       parameters:
         - name: user-id
           in: path
@@ -17028,7 +17028,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action unhideForUser
-      operationId: users.chats_unhideForUser
+      operationId: users.chats_unhideGraphFPreUser
       parameters:
         - name: user-id
           in: path
@@ -17348,7 +17348,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action getByIds
-      operationId: users.chats.permissionGrants_getByIds
+      operationId: users.chats.permissionGrants_getGraphBPreIds
       parameters:
         - name: user-id
           in: path
@@ -18112,7 +18112,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action getByIds
-      operationId: users.devices_getByIds
+      operationId: users.devices_getGraphBPreIds
       parameters:
         - name: user-id
           in: path
@@ -19236,7 +19236,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action associateWithHubSites
-      operationId: users.drives.list.contentTypes_associateWithHubSites
+      operationId: users.drives.list.contentTypes_associateGraphWPreHubSites
       parameters:
         - name: user-id
           in: path
@@ -23066,7 +23066,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action getByIds
-      operationId: users.joinedGroups_getByIds
+      operationId: users.joinedGroups_getGraphBPreIds
       parameters:
         - name: user-id
           in: path
@@ -27217,7 +27217,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action wipeManagedAppRegistrationByDeviceTag
-      operationId: users_wipeManagedAppRegistrationByDeviceTag
+      operationId: users_wipeManagedAppRegistrationGraphBPreDeviceTag
       parameters:
         - name: user-id
           in: path
@@ -27250,7 +27250,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action wipeManagedAppRegistrationsByAzureAdDeviceId
-      operationId: users_wipeManagedAppRegistrationsByAzureAdDeviceId
+      operationId: users_wipeManagedAppRegistrationsGraphBPreAzureAdDeviceId
       parameters:
         - name: user-id
           in: path
@@ -27283,7 +27283,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action wipeManagedAppRegistrationsByDeviceTag
-      operationId: users_wipeManagedAppRegistrationsByDeviceTag
+      operationId: users_wipeManagedAppRegistrationsGraphBPreDeviceTag
       parameters:
         - name: user-id
           in: path
@@ -30358,7 +30358,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action getByIds
-      operationId: users_getByIds
+      operationId: users_getGraphBPreIds
       requestBody:
         description: Action parameters
         content:
@@ -32317,7 +32317,6 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.group'
-              description: Read-only. Nullable.
             mailFolders:
               type: array
               items:
@@ -32424,7 +32423,6 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.profilePhoto'
-              description: Read-only. Nullable.
             profile:
               $ref: '#/components/schemas/microsoft.graph.profile'
             activities:
@@ -33122,7 +33120,6 @@ components:
       properties:
         id:
           type: string
-          description: Read-only.
       additionalProperties:
         type: object
     microsoft.graph.attachmentType:
@@ -38835,7 +38832,6 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.workbookCommentReply'
-              description: Read-only. Nullable.
           additionalProperties:
             type: object
     microsoft.graph.workbookFunctions:
@@ -40604,7 +40600,6 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.post'
-              description: Read-only. Nullable.
           additionalProperties:
             type: object
     microsoft.graph.groupLifecyclePolicy:
@@ -48760,7 +48755,7 @@ components:
             attachments:
               type: array
               items:
-                $ref: '#/components/schemas/microsoft.graph.attachment_v2'
+                $ref: '#/components/schemas/microsoft.graph.attachmentBase'
             attachmentSessions:
               type: array
               items:
@@ -49643,7 +49638,6 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.printDocument'
-              description: Read-only.
             tasks:
               type: array
               items:
@@ -50830,10 +50824,10 @@ components:
               nullable: true
           additionalProperties:
             type: object
-    microsoft.graph.attachment_v2:
+    microsoft.graph.attachmentBase:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: attachment_v2
+        - title: attachmentBase
           type: object
           properties:
             contentType:

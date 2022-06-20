@@ -2268,6 +2268,8 @@ paths:
                 - calendarView
                 - conversations
                 - events
+                - photo
+                - photos
                 - rejectedSenders
                 - threads
                 - drive
@@ -2277,8 +2279,6 @@ paths:
                 - groupLifecyclePolicies
                 - planner
                 - onenote
-                - photo
-                - photos
                 - team
               type: string
         - name: $expand
@@ -2307,6 +2307,8 @@ paths:
                 - calendarView
                 - conversations
                 - events
+                - photo
+                - photos
                 - rejectedSenders
                 - threads
                 - drive
@@ -2316,8 +2318,6 @@ paths:
                 - groupLifecyclePolicies
                 - planner
                 - onenote
-                - photo
-                - photos
                 - team
               type: string
       responses:
@@ -2334,7 +2334,7 @@ paths:
       tags:
         - print.printerShare
       summary: Delete ref of navigation property allowedGroups for print
-      operationId: print.shares_DeleteGraphRefAllowedGroups
+      operationId: print.shares_DeleteAllowedGroupsGraphBPreRef
       parameters:
         - name: printerShare-id
           in: path
@@ -2371,7 +2371,7 @@ paths:
       tags:
         - print.printerShare
       summary: Get ref of allowedGroups from print
-      operationId: print.shares_ListGraphRefAllowedGroups
+      operationId: print.shares_ListAllowedGroupsGraphBPreRef
       parameters:
         - name: printerShare-id
           in: path
@@ -2489,7 +2489,7 @@ paths:
       tags:
         - print.printerShare
       summary: Create new navigation property ref to allowedGroups for print
-      operationId: print.shares_CreateGraphRefAllowedGroups
+      operationId: print.shares_CreateAllowedGroupsGraphBPreRef
       parameters:
         - name: printerShare-id
           in: path
@@ -2894,7 +2894,7 @@ paths:
       tags:
         - print.printerShare
       summary: Delete ref of navigation property allowedUsers for print
-      operationId: print.shares_DeleteGraphRefAllowedUsers
+      operationId: print.shares_DeleteAllowedUsersGraphBPreRef
       parameters:
         - name: printerShare-id
           in: path
@@ -2931,7 +2931,7 @@ paths:
       tags:
         - print.printerShare
       summary: Get ref of allowedUsers from print
-      operationId: print.shares_ListGraphRefAllowedUsers
+      operationId: print.shares_ListAllowedUsersGraphBPreRef
       parameters:
         - name: printerShare-id
           in: path
@@ -3113,7 +3113,7 @@ paths:
       tags:
         - print.printerShare
       summary: Create new navigation property ref to allowedUsers for print
-      operationId: print.shares_CreateGraphRefAllowedUsers
+      operationId: print.shares_CreateAllowedUsersGraphBPreRef
       parameters:
         - name: printerShare-id
           in: path
@@ -4044,7 +4044,6 @@ components:
       properties:
         id:
           type: string
-          description: Read-only.
       additionalProperties:
         type: object
     microsoft.graph.printerLocation:
@@ -4417,6 +4416,13 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.event'
               description: The group's events.
+            photo:
+              $ref: '#/components/schemas/microsoft.graph.profilePhoto'
+            photos:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.profilePhoto'
+              description: The profile photos owned by the group. Read-only. Nullable.
             rejectedSenders:
               type: array
               items:
@@ -4453,13 +4459,6 @@ components:
               $ref: '#/components/schemas/microsoft.graph.plannerGroup'
             onenote:
               $ref: '#/components/schemas/microsoft.graph.onenote'
-            photo:
-              $ref: '#/components/schemas/microsoft.graph.profilePhoto'
-            photos:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.profilePhoto'
-              description: The profile photos owned by the group. Read-only. Nullable.
             team:
               $ref: '#/components/schemas/microsoft.graph.team'
           additionalProperties:
@@ -4935,7 +4934,6 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.profilePhoto'
-              description: Read-only. Nullable.
             activities:
               type: array
               items:
@@ -5440,7 +5438,6 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.printDocument'
-              description: Read-only.
             tasks:
               type: array
               items:
@@ -5875,6 +5872,28 @@ components:
               description: A collection of all the conversation threads in the conversation. A navigation property. Read-only. Nullable.
           additionalProperties:
             type: object
+    microsoft.graph.profilePhoto:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: profilePhoto
+          type: object
+          properties:
+            height:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              description: The height of the photo. Read-only.
+              format: int32
+              nullable: true
+            width:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              description: The width of the photo. Read-only.
+              format: int32
+              nullable: true
+          additionalProperties:
+            type: object
     microsoft.graph.conversationThread:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -5917,7 +5936,6 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.post'
-              description: Read-only. Nullable.
           additionalProperties:
             type: object
     microsoft.graph.drive:
@@ -6121,28 +6139,6 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.onenoteSection'
               description: The sections in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
-          additionalProperties:
-            type: object
-    microsoft.graph.profilePhoto:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: profilePhoto
-          type: object
-          properties:
-            height:
-              maximum: 2147483647
-              minimum: -2147483648
-              type: integer
-              description: The height of the photo. Read-only.
-              format: int32
-              nullable: true
-            width:
-              maximum: 2147483647
-              minimum: -2147483648
-              type: integer
-              description: The width of the photo. Read-only.
-              format: int32
-              nullable: true
           additionalProperties:
             type: object
     microsoft.graph.team:
@@ -15417,7 +15413,6 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.workbookCommentReply'
-              description: Read-only. Nullable.
           additionalProperties:
             type: object
     microsoft.graph.workbookFunctions:

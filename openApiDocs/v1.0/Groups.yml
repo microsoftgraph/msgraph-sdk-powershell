@@ -294,7 +294,7 @@ paths:
       parameters:
         - name: ConsistencyLevel
           in: header
-          description: 'Indicates the requested consistency level. Documentation URL: https://developer.microsoft.com/en-us/office/blogs/microsoft-graph-advanced-queries-for-directory-objects-are-now-generally-available/'
+          description: 'Indicates the requested consistency level. Documentation URL: https://docs.microsoft.com/graph/aad-advanced-queries'
           schema:
             type: string
           examples:
@@ -462,6 +462,8 @@ paths:
                 - calendarView
                 - conversations
                 - events
+                - photo
+                - photos
                 - rejectedSenders
                 - threads
                 - drive
@@ -471,8 +473,6 @@ paths:
                 - groupLifecyclePolicies
                 - planner
                 - onenote
-                - photo
-                - photos
                 - team
               type: string
         - name: $expand
@@ -501,6 +501,8 @@ paths:
                 - calendarView
                 - conversations
                 - events
+                - photo
+                - photos
                 - rejectedSenders
                 - threads
                 - drive
@@ -510,8 +512,6 @@ paths:
                 - groupLifecyclePolicies
                 - planner
                 - onenote
-                - photo
-                - photos
                 - team
               type: string
       responses:
@@ -624,6 +624,8 @@ paths:
                 - calendarView
                 - conversations
                 - events
+                - photo
+                - photos
                 - rejectedSenders
                 - threads
                 - drive
@@ -633,8 +635,6 @@ paths:
                 - groupLifecyclePolicies
                 - planner
                 - onenote
-                - photo
-                - photos
                 - team
               type: string
         - name: $expand
@@ -663,6 +663,8 @@ paths:
                 - calendarView
                 - conversations
                 - events
+                - photo
+                - photos
                 - rejectedSenders
                 - threads
                 - drive
@@ -672,8 +674,6 @@ paths:
                 - groupLifecyclePolicies
                 - planner
                 - onenote
-                - photo
-                - photos
                 - team
               type: string
       responses:
@@ -689,11 +689,11 @@ paths:
               parameters:
                 group-id: $request.path.group-id
             createdOnBehalfOf:
-              operationId: groups.GetCreatedOnBehalfOf
+              operationId: groups.GetCreatedOnBehalfGraphOPre
               parameters:
                 group-id: $request.path.group-id
             memberOf:
-              operationId: groups.ListMemberOf
+              operationId: groups.ListMemberGraphOPre
               parameters:
                 group-id: $request.path.group-id
             members:
@@ -701,7 +701,7 @@ paths:
               parameters:
                 group-id: $request.path.group-id
             membersWithLicenseErrors:
-              operationId: groups.ListMembersWithLicenseErrors
+              operationId: groups.ListMembersGraphWPreLicenseErrors
               parameters:
                 group-id: $request.path.group-id
             owners:
@@ -717,7 +717,7 @@ paths:
               parameters:
                 group-id: $request.path.group-id
             transitiveMemberOf:
-              operationId: groups.ListTransitiveMemberOf
+              operationId: groups.ListTransitiveMemberGraphOPre
               parameters:
                 group-id: $request.path.group-id
             transitiveMembers:
@@ -742,6 +742,14 @@ paths:
                 group-id: $request.path.group-id
             events:
               operationId: groups.ListEvents
+              parameters:
+                group-id: $request.path.group-id
+            photo:
+              operationId: groups.GetPhoto
+              parameters:
+                group-id: $request.path.group-id
+            photos:
+              operationId: groups.ListPhotos
               parameters:
                 group-id: $request.path.group-id
             rejectedSenders:
@@ -780,14 +788,6 @@ paths:
               operationId: groups.GetOnenote
               parameters:
                 group-id: $request.path.group-id
-            photo:
-              operationId: groups.GetPhoto
-              parameters:
-                group-id: $request.path.group-id
-            photos:
-              operationId: groups.ListPhotos
-              parameters:
-                group-id: $request.path.group-id
             team:
               operationId: groups.GetTeam
               parameters:
@@ -797,7 +797,7 @@ paths:
             assignLicense:
               operationId: groups.group.assignLicense
             checkGrantedPermissionsForApp:
-              operationId: groups.group.checkGrantedPermissionsForApp
+              operationId: groups.group.checkGrantedPermissionsGraphFPreApp
             checkMemberGroups:
               operationId: groups.group.checkMemberGroups
             checkMemberObjects:
@@ -815,9 +815,9 @@ paths:
             restore:
               operationId: groups.group.restore
             subscribeByMail:
-              operationId: groups.group.subscribeByMail
+              operationId: groups.group.subscribeGraphBPreMail
             unsubscribeByMail:
-              operationId: groups.group.unsubscribeByMail
+              operationId: groups.group.unsubscribeGraphBPreMail
             validateProperties:
               operationId: groups.group.validateProperties
         default:
@@ -933,7 +933,7 @@ paths:
       tags:
         - groups.directoryObject
       summary: Delete ref of navigation property acceptedSenders for groups
-      operationId: groups_DeleteGraphRefAcceptedSenders
+      operationId: groups_DeleteAcceptedSendersGraphBPreRef
       parameters:
         - name: group-id
           in: path
@@ -970,7 +970,7 @@ paths:
       tags:
         - groups.directoryObject
       summary: Get ref of acceptedSenders from groups
-      operationId: groups_ListGraphRefAcceptedSenders
+      operationId: groups_ListAcceptedSendersGraphBPreRef
       parameters:
         - name: group-id
           in: path
@@ -1011,7 +1011,7 @@ paths:
       tags:
         - groups.directoryObject
       summary: Create new navigation property ref to acceptedSenders for groups
-      operationId: groups_CreateGraphRefAcceptedSenders
+      operationId: groups_CreateAcceptedSendersGraphBPreRef
       parameters:
         - name: group-id
           in: path
@@ -7607,7 +7607,7 @@ paths:
       tags:
         - groups.directoryObject
       summary: Get createdOnBehalfOf from groups
-      operationId: groups_GetCreatedOnBehalfOf
+      operationId: groups_GetCreatedOnBehalfGraphOPre
       parameters:
         - name: group-id
           in: path
@@ -7656,7 +7656,7 @@ paths:
       tags:
         - groups.Functions
       summary: Invoke function getActivitiesByInterval
-      operationId: groups.drives.items.listItem_getActivitiesByInterval
+      operationId: groups.drives.items.listItem_getActivitiesGraphBPreInterval
       parameters:
         - name: group-id
           in: path
@@ -7702,7 +7702,7 @@ paths:
       tags:
         - groups.Functions
       summary: Invoke function getActivitiesByInterval
-      operationId: groups.drives.items.listItem_getActivitiesByInterval
+      operationId: groups.drives.items.listItem_getActivitiesGraphBPreInterval
       parameters:
         - name: group-id
           in: path
@@ -8202,7 +8202,7 @@ paths:
       tags:
         - groups.Functions
       summary: Invoke function getActivitiesByInterval
-      operationId: groups.drives.items_getActivitiesByInterval
+      operationId: groups.drives.items_getActivitiesGraphBPreInterval
       parameters:
         - name: group-id
           in: path
@@ -8248,7 +8248,7 @@ paths:
       tags:
         - groups.Functions
       summary: Invoke function getActivitiesByInterval
-      operationId: groups.drives.items_getActivitiesByInterval
+      operationId: groups.drives.items_getActivitiesGraphBPreInterval
       parameters:
         - name: group-id
           in: path
@@ -8799,7 +8799,7 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action associateWithHubSites
-      operationId: groups.drives.list.contentTypes_associateWithHubSites
+      operationId: groups.drives.list.contentTypes_associateGraphWPreHubSites
       parameters:
         - name: group-id
           in: path
@@ -9137,7 +9137,7 @@ paths:
       tags:
         - groups.Functions
       summary: Invoke function getActivitiesByInterval
-      operationId: groups.drives.list.items_getActivitiesByInterval
+      operationId: groups.drives.list.items_getActivitiesGraphBPreInterval
       parameters:
         - name: group-id
           in: path
@@ -9183,7 +9183,7 @@ paths:
       tags:
         - groups.Functions
       summary: Invoke function getActivitiesByInterval
-      operationId: groups.drives.list.items_getActivitiesByInterval
+      operationId: groups.drives.list.items_getActivitiesGraphBPreInterval
       parameters:
         - name: group-id
           in: path
@@ -9410,7 +9410,7 @@ paths:
       tags:
         - groups.Functions
       summary: Invoke function sharedWithMe
-      operationId: groups.drives_sharedWithMe
+      operationId: groups.drives_sharedGraphWPreMe
       parameters:
         - name: group-id
           in: path
@@ -9449,7 +9449,7 @@ paths:
       tags:
         - groups.Functions
       summary: Invoke function getActivitiesByInterval
-      operationId: groups.drives.root.listItem_getActivitiesByInterval
+      operationId: groups.drives.root.listItem_getActivitiesGraphBPreInterval
       parameters:
         - name: group-id
           in: path
@@ -9488,7 +9488,7 @@ paths:
       tags:
         - groups.Functions
       summary: Invoke function getActivitiesByInterval
-      operationId: groups.drives.root.listItem_getActivitiesByInterval
+      operationId: groups.drives.root.listItem_getActivitiesGraphBPreInterval
       parameters:
         - name: group-id
           in: path
@@ -9918,7 +9918,7 @@ paths:
       tags:
         - groups.Functions
       summary: Invoke function getActivitiesByInterval
-      operationId: groups.drives.root_getActivitiesByInterval
+      operationId: groups.drives.root_getActivitiesGraphBPreInterval
       parameters:
         - name: group-id
           in: path
@@ -9957,7 +9957,7 @@ paths:
       tags:
         - groups.Functions
       summary: Invoke function getActivitiesByInterval
-      operationId: groups.drives.root_getActivitiesByInterval
+      operationId: groups.drives.root_getActivitiesGraphBPreInterval
       parameters:
         - name: group-id
           in: path
@@ -11535,7 +11535,7 @@ paths:
       tags:
         - groups.directoryObject
       summary: Get memberOf from groups
-      operationId: groups_ListMemberOf
+      operationId: groups_ListMemberGraphOPre
       parameters:
         - name: group-id
           in: path
@@ -11603,7 +11603,7 @@ paths:
       tags:
         - groups.directoryObject
       summary: Get memberOf from groups
-      operationId: groups_GetMemberOf
+      operationId: groups_GetMemberGraphOPre
       parameters:
         - name: group-id
           in: path
@@ -11727,7 +11727,7 @@ paths:
       tags:
         - groups.directoryObject
       summary: Delete ref of navigation property members for groups
-      operationId: groups_DeleteGraphRefMembers
+      operationId: groups_DeleteMembersGraphBPreRef
       parameters:
         - name: group-id
           in: path
@@ -11764,7 +11764,7 @@ paths:
       tags:
         - groups.directoryObject
       summary: Get ref of members from groups
-      operationId: groups_ListGraphRefMembers
+      operationId: groups_ListMembersGraphBPreRef
       parameters:
         - name: group-id
           in: path
@@ -11806,7 +11806,7 @@ paths:
       tags:
         - groups.directoryObject
       summary: Create new navigation property ref to members for groups
-      operationId: groups_CreateGraphRefMembers
+      operationId: groups_CreateMembersGraphBPreRef
       parameters:
         - name: group-id
           in: path
@@ -11841,7 +11841,7 @@ paths:
       tags:
         - groups.directoryObject
       summary: Get membersWithLicenseErrors from groups
-      operationId: groups_ListMembersWithLicenseErrors
+      operationId: groups_ListMembersGraphWPreLicenseErrors
       parameters:
         - name: group-id
           in: path
@@ -11909,7 +11909,7 @@ paths:
       tags:
         - groups.directoryObject
       summary: Get membersWithLicenseErrors from groups
-      operationId: groups_GetMembersWithLicenseErrors
+      operationId: groups_GetMembersGraphWPreLicenseErrors
       parameters:
         - name: group-id
           in: path
@@ -12029,7 +12029,7 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action checkGrantedPermissionsForApp
-      operationId: groups_checkGrantedPermissionsForApp
+      operationId: groups_checkGrantedPermissionsGraphFPreApp
       parameters:
         - name: group-id
           in: path
@@ -12329,7 +12329,7 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action subscribeByMail
-      operationId: groups_subscribeByMail
+      operationId: groups_subscribeGraphBPreMail
       parameters:
         - name: group-id
           in: path
@@ -12349,7 +12349,7 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action unsubscribeByMail
-      operationId: groups_unsubscribeByMail
+      operationId: groups_unsubscribeGraphBPreMail
       parameters:
         - name: group-id
           in: path
@@ -13907,7 +13907,7 @@ paths:
       tags:
         - groups.directoryObject
       summary: Delete ref of navigation property owners for groups
-      operationId: groups_DeleteGraphRefOwners
+      operationId: groups_DeleteOwnersGraphBPreRef
       parameters:
         - name: group-id
           in: path
@@ -13944,7 +13944,7 @@ paths:
       tags:
         - groups.directoryObject
       summary: Get ref of owners from groups
-      operationId: groups_ListGraphRefOwners
+      operationId: groups_ListOwnersGraphBPreRef
       parameters:
         - name: group-id
           in: path
@@ -13986,7 +13986,7 @@ paths:
       tags:
         - groups.directoryObject
       summary: Create new navigation property ref to owners for groups
-      operationId: groups_CreateGraphRefOwners
+      operationId: groups_CreateOwnersGraphBPreRef
       parameters:
         - name: group-id
           in: path
@@ -14559,7 +14559,7 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action getByIds
-      operationId: groups.permissionGrants_getByIds
+      operationId: groups.permissionGrants_getGraphBPreIds
       parameters:
         - name: group-id
           in: path
@@ -15112,7 +15112,7 @@ paths:
       tags:
         - groups.directoryObject
       summary: Delete ref of navigation property rejectedSenders for groups
-      operationId: groups_DeleteGraphRefRejectedSenders
+      operationId: groups_DeleteRejectedSendersGraphBPreRef
       parameters:
         - name: group-id
           in: path
@@ -15149,7 +15149,7 @@ paths:
       tags:
         - groups.directoryObject
       summary: Get ref of rejectedSenders from groups
-      operationId: groups_ListGraphRefRejectedSenders
+      operationId: groups_ListRejectedSendersGraphBPreRef
       parameters:
         - name: group-id
           in: path
@@ -15190,7 +15190,7 @@ paths:
       tags:
         - groups.directoryObject
       summary: Create new navigation property ref to rejectedSenders for groups
-      operationId: groups_CreateGraphRefRejectedSenders
+      operationId: groups_CreateRejectedSendersGraphBPreRef
       parameters:
         - name: group-id
           in: path
@@ -15225,7 +15225,7 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action associateWithHubSites
-      operationId: groups.sites.contentTypes_associateWithHubSites
+      operationId: groups.sites.contentTypes_associateGraphWPreHubSites
       parameters:
         - name: group-id
           in: path
@@ -15563,7 +15563,7 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action associateWithHubSites
-      operationId: groups.sites.lists.contentTypes_associateWithHubSites
+      operationId: groups.sites.lists.contentTypes_associateGraphWPreHubSites
       parameters:
         - name: group-id
           in: path
@@ -15957,7 +15957,7 @@ paths:
       tags:
         - groups.Functions
       summary: Invoke function getActivitiesByInterval
-      operationId: groups.sites.lists.items_getActivitiesByInterval
+      operationId: groups.sites.lists.items_getActivitiesGraphBPreInterval
       parameters:
         - name: group-id
           in: path
@@ -16010,7 +16010,7 @@ paths:
       tags:
         - groups.Functions
       summary: Invoke function getActivitiesByInterval
-      operationId: groups.sites.lists.items_getActivitiesByInterval
+      operationId: groups.sites.lists.items_getActivitiesGraphBPreInterval
       parameters:
         - name: group-id
           in: path
@@ -16173,7 +16173,7 @@ paths:
       tags:
         - groups.Functions
       summary: Invoke function getActivitiesByInterval
-      operationId: groups.sites_getActivitiesByInterval
+      operationId: groups.sites_getActivitiesGraphBPreInterval
       parameters:
         - name: group-id
           in: path
@@ -16212,7 +16212,7 @@ paths:
       tags:
         - groups.Functions
       summary: Invoke function getActivitiesByInterval
-      operationId: groups.sites_getActivitiesByInterval
+      operationId: groups.sites_getActivitiesGraphBPreInterval
       parameters:
         - name: group-id
           in: path
@@ -16272,7 +16272,7 @@ paths:
       tags:
         - groups.Functions
       summary: Invoke function getApplicableContentTypesForList
-      operationId: groups.sites_getApplicableContentTypesForList
+      operationId: groups.sites_getApplicableContentTypesGraphFPreList
       parameters:
         - name: group-id
           in: path
@@ -16317,7 +16317,7 @@ paths:
       tags:
         - groups.Functions
       summary: Invoke function getByPath
-      operationId: groups.sites_getByPath
+      operationId: groups.sites_getGraphBPrePath
       parameters:
         - name: group-id
           in: path
@@ -22279,7 +22279,7 @@ paths:
       tags:
         - groups.directoryObject
       summary: Get transitiveMemberOf from groups
-      operationId: groups_ListTransitiveMemberOf
+      operationId: groups_ListTransitiveMemberGraphOPre
       parameters:
         - name: group-id
           in: path
@@ -22347,7 +22347,7 @@ paths:
       tags:
         - groups.directoryObject
       summary: Get transitiveMemberOf from groups
-      operationId: groups_GetTransitiveMemberOf
+      operationId: groups_GetTransitiveMemberGraphOPre
       parameters:
         - name: group-id
           in: path
@@ -22589,7 +22589,7 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action getByIds
-      operationId: groups_getByIds
+      operationId: groups_getGraphBPreIds
       requestBody:
         description: Action parameters
         content:
@@ -22927,6 +22927,13 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.event'
               description: The group's events.
+            photo:
+              $ref: '#/components/schemas/microsoft.graph.profilePhoto'
+            photos:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.profilePhoto'
+              description: The profile photos owned by the group. Read-only. Nullable.
             rejectedSenders:
               type: array
               items:
@@ -22963,13 +22970,6 @@ components:
               $ref: '#/components/schemas/microsoft.graph.plannerGroup'
             onenote:
               $ref: '#/components/schemas/microsoft.graph.onenote'
-            photo:
-              $ref: '#/components/schemas/microsoft.graph.profilePhoto'
-            photos:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.profilePhoto'
-              description: The profile photos owned by the group. Read-only. Nullable.
             team:
               $ref: '#/components/schemas/microsoft.graph.team'
           additionalProperties:
@@ -23308,7 +23308,6 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.post'
-              description: Read-only. Nullable.
           additionalProperties:
             type: object
     microsoft.graph.post:
@@ -24304,7 +24303,6 @@ components:
       properties:
         id:
           type: string
-          description: Read-only.
       additionalProperties:
         type: object
     microsoft.graph.assignedLabel:
@@ -27773,7 +27771,6 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.profilePhoto'
-              description: Read-only. Nullable.
             activities:
               type: array
               items:
@@ -27892,7 +27889,6 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.workbookCommentReply'
-              description: Read-only. Nullable.
           additionalProperties:
             type: object
     microsoft.graph.workbookFunctions:
