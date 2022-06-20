@@ -5905,7 +5905,7 @@ paths:
               parameters:
                 deviceManagementCompliancePolicy-id: $request.path.deviceManagementCompliancePolicy-id
             scheduledActionsForRule:
-              operationId: deviceManagement.CompliancePolicies.ListScheduledActionsForRule
+              operationId: deviceManagement.CompliancePolicies.ListScheduledActionsGraphFPreRule
               parameters:
                 deviceManagementCompliancePolicy-id: $request.path.deviceManagementCompliancePolicy-id
             settings:
@@ -6200,7 +6200,7 @@ paths:
       tags:
         - deviceManagement.deviceManagementCompliancePolicy
       summary: Get scheduledActionsForRule from deviceManagement
-      operationId: deviceManagement.compliancePolicies_ListScheduledActionsForRule
+      operationId: deviceManagement.compliancePolicies_ListScheduledActionsGraphFPreRule
       parameters:
         - name: deviceManagementCompliancePolicy-id
           in: path
@@ -6269,7 +6269,7 @@ paths:
       tags:
         - deviceManagement.deviceManagementCompliancePolicy
       summary: Create new navigation property to scheduledActionsForRule for deviceManagement
-      operationId: deviceManagement.compliancePolicies_CreateScheduledActionsForRule
+      operationId: deviceManagement.compliancePolicies_CreateScheduledActionsGraphFPreRule
       parameters:
         - name: deviceManagementCompliancePolicy-id
           in: path
@@ -6300,7 +6300,7 @@ paths:
       tags:
         - deviceManagement.deviceManagementCompliancePolicy
       summary: Get scheduledActionsForRule from deviceManagement
-      operationId: deviceManagement.compliancePolicies_GetScheduledActionsForRule
+      operationId: deviceManagement.compliancePolicies_GetScheduledActionsGraphFPreRule
       parameters:
         - name: deviceManagementCompliancePolicy-id
           in: path
@@ -6352,7 +6352,7 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.deviceManagementComplianceScheduledActionForRule'
           links:
             scheduledActionConfigurations:
-              operationId: deviceManagement.compliancePolicies.ScheduledActionsForRule.ListScheduledActionConfigurations
+              operationId: deviceManagement.compliancePolicies.ScheduledActionsGraphFPreRule.ListScheduledActionConfigurations
               parameters:
                 deviceManagementCompliancePolicy-id: $request.path.deviceManagementCompliancePolicy-id
                 deviceManagementComplianceScheduledActionForRule-id: $request.path.deviceManagementComplianceScheduledActionForRule-id
@@ -6363,7 +6363,7 @@ paths:
       tags:
         - deviceManagement.deviceManagementCompliancePolicy
       summary: Update the navigation property scheduledActionsForRule in deviceManagement
-      operationId: deviceManagement.compliancePolicies_UpdateScheduledActionsForRule
+      operationId: deviceManagement.compliancePolicies_UpdateScheduledActionsGraphFPreRule
       parameters:
         - name: deviceManagementCompliancePolicy-id
           in: path
@@ -6396,7 +6396,7 @@ paths:
       tags:
         - deviceManagement.deviceManagementCompliancePolicy
       summary: Delete navigation property scheduledActionsForRule for deviceManagement
-      operationId: deviceManagement.compliancePolicies_DeleteScheduledActionsForRule
+      operationId: deviceManagement.compliancePolicies_DeleteScheduledActionsGraphFPreRule
       parameters:
         - name: deviceManagementCompliancePolicy-id
           in: path
@@ -6428,7 +6428,7 @@ paths:
       tags:
         - deviceManagement.deviceManagementCompliancePolicy
       summary: Get scheduledActionConfigurations from deviceManagement
-      operationId: deviceManagement.compliancePolicies.scheduledActionsForRule_ListScheduledActionConfigurations
+      operationId: deviceManagement.compliancePolicies.scheduledActionsGraphFPreRule_ListScheduledActionConfigurations
       parameters:
         - name: deviceManagementCompliancePolicy-id
           in: path
@@ -6511,7 +6511,7 @@ paths:
       tags:
         - deviceManagement.deviceManagementCompliancePolicy
       summary: Create new navigation property to scheduledActionConfigurations for deviceManagement
-      operationId: deviceManagement.compliancePolicies.scheduledActionsForRule_CreateScheduledActionConfigurations
+      operationId: deviceManagement.compliancePolicies.scheduledActionsGraphFPreRule_CreateScheduledActionConfigurations
       parameters:
         - name: deviceManagementCompliancePolicy-id
           in: path
@@ -6549,7 +6549,7 @@ paths:
       tags:
         - deviceManagement.deviceManagementCompliancePolicy
       summary: Get scheduledActionConfigurations from deviceManagement
-      operationId: deviceManagement.compliancePolicies.scheduledActionsForRule_GetScheduledActionConfigurations
+      operationId: deviceManagement.compliancePolicies.scheduledActionsGraphFPreRule_GetScheduledActionConfigurations
       parameters:
         - name: deviceManagementCompliancePolicy-id
           in: path
@@ -6614,7 +6614,7 @@ paths:
       tags:
         - deviceManagement.deviceManagementCompliancePolicy
       summary: Update the navigation property scheduledActionConfigurations in deviceManagement
-      operationId: deviceManagement.compliancePolicies.scheduledActionsForRule_UpdateScheduledActionConfigurations
+      operationId: deviceManagement.compliancePolicies.scheduledActionsGraphFPreRule_UpdateScheduledActionConfigurations
       parameters:
         - name: deviceManagementCompliancePolicy-id
           in: path
@@ -6654,7 +6654,7 @@ paths:
       tags:
         - deviceManagement.deviceManagementCompliancePolicy
       summary: Delete navigation property scheduledActionConfigurations for deviceManagement
-      operationId: deviceManagement.compliancePolicies.scheduledActionsForRule_DeleteScheduledActionConfigurations
+      operationId: deviceManagement.compliancePolicies.scheduledActionsGraphFPreRule_DeleteScheduledActionConfigurations
       parameters:
         - name: deviceManagementCompliancePolicy-id
           in: path

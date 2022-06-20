@@ -15,7 +15,7 @@ paths:
       parameters:
         - name: ConsistencyLevel
           in: header
-          description: 'Indicates the requested consistency level. Documentation URL: https://developer.microsoft.com/en-us/office/blogs/microsoft-graph-advanced-queries-for-directory-objects-are-now-generally-available/'
+          description: 'Indicates the requested consistency level. Documentation URL: https://docs.microsoft.com/graph/aad-advanced-queries'
           schema:
             type: string
           examples:
@@ -51,6 +51,8 @@ paths:
                 - applicationTemplateId desc
                 - appRoles
                 - appRoles desc
+                - certification
+                - certification desc
                 - createdDateTime
                 - createdDateTime desc
                 - description
@@ -121,6 +123,7 @@ paths:
                 - appId
                 - applicationTemplateId
                 - appRoles
+                - certification
                 - createdDateTime
                 - description
                 - disabledByMicrosoftStatus
@@ -234,6 +237,7 @@ paths:
                 - appId
                 - applicationTemplateId
                 - appRoles
+                - certification
                 - createdDateTime
                 - description
                 - disabledByMicrosoftStatus
@@ -2523,7 +2527,7 @@ paths:
       parameters:
         - name: ConsistencyLevel
           in: header
-          description: 'Indicates the requested consistency level. Documentation URL: https://developer.microsoft.com/en-us/office/blogs/microsoft-graph-advanced-queries-for-directory-objects-are-now-generally-available/'
+          description: 'Indicates the requested consistency level. Documentation URL: https://docs.microsoft.com/graph/aad-advanced-queries'
           schema:
             type: string
           examples:
@@ -6259,6 +6263,8 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.appRole'
               description: 'The collection of roles assigned to the application. With app role assignments, these roles can be assigned to users, groups, or service principals associated with other applications. Not nullable.'
+            certification:
+              $ref: '#/components/schemas/microsoft.graph.certification'
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -7053,6 +7059,36 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.certification:
+      title: certification
+      type: object
+      properties:
+        certificationDetailsUrl:
+          type: string
+          description: URL that shows certification details for the application.
+          nullable: true
+        certificationExpirationDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: The timestamp when the current certification for the application will expire.
+          format: date-time
+          nullable: true
+        isCertifiedByMicrosoft:
+          type: boolean
+          description: Indicates whether the application is certified by Microsoft.
+          nullable: true
+        isPublisherAttested:
+          type: boolean
+          description: Indicates whether the application has been self-attested by the application developer or the publisher.
+          nullable: true
+        lastCertificationDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: The timestamp when the certification for the application was most recently added or updated.
+          format: date-time
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.informationalUrl:
       title: informationalUrl
       type: object
@@ -7199,7 +7235,6 @@ components:
       properties:
         id:
           type: string
-          description: Read-only.
       additionalProperties:
         type: object
     microsoft.graph.stsPolicy:

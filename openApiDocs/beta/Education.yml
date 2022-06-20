@@ -14769,17 +14769,14 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.educationOutcome'
-              description: Read-Write. Nullable.
             resources:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.educationSubmissionResource'
-              description: Nullable.
             submittedResources:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.educationSubmissionResource'
-              description: Read-only. Nullable.
           additionalProperties:
             type: object
     microsoft.graph.educationOutcome:
@@ -15823,7 +15820,6 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.group'
-              description: Read-only. Nullable.
             mailFolders:
               type: array
               items:
@@ -15930,7 +15926,6 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.profilePhoto'
-              description: Read-only. Nullable.
             profile:
               $ref: '#/components/schemas/microsoft.graph.profile'
             activities:
@@ -16130,7 +16125,6 @@ components:
       properties:
         id:
           type: string
-          description: Read-only.
       additionalProperties:
         type: object
     microsoft.graph.educationCourse:
@@ -16891,7 +16885,6 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.post'
-              description: Read-only. Nullable.
           additionalProperties:
             type: object
     microsoft.graph.drive:
@@ -31410,7 +31403,7 @@ components:
             attachments:
               type: array
               items:
-                $ref: '#/components/schemas/microsoft.graph.attachment_v2'
+                $ref: '#/components/schemas/microsoft.graph.attachmentBase'
             attachmentSessions:
               type: array
               items:
@@ -31747,7 +31740,6 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.workbookCommentReply'
-              description: Read-only. Nullable.
           additionalProperties:
             type: object
     microsoft.graph.workbookFunctions:
@@ -32993,7 +32985,6 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.printDocument'
-              description: Read-only.
             tasks:
               type: array
               items:
@@ -33980,10 +33971,10 @@ components:
               nullable: true
           additionalProperties:
             type: object
-    microsoft.graph.attachment_v2:
+    microsoft.graph.attachmentBase:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: attachment_v2
+        - title: attachmentBase
           type: object
           properties:
             contentType:

@@ -15,7 +15,7 @@ paths:
       parameters:
         - name: ConsistencyLevel
           in: header
-          description: 'Indicates the requested consistency level. Documentation URL: https://developer.microsoft.com/en-us/office/blogs/microsoft-graph-advanced-queries-for-directory-objects-are-now-generally-available/'
+          description: 'Indicates the requested consistency level. Documentation URL: https://docs.microsoft.com/graph/aad-advanced-queries'
           schema:
             type: string
           examples:
@@ -1609,7 +1609,7 @@ paths:
       parameters:
         - name: ConsistencyLevel
           in: header
-          description: 'Indicates the requested consistency level. Documentation URL: https://developer.microsoft.com/en-us/office/blogs/microsoft-graph-advanced-queries-for-directory-objects-are-now-generally-available/'
+          description: 'Indicates the requested consistency level. Documentation URL: https://docs.microsoft.com/graph/aad-advanced-queries'
           schema:
             type: string
           examples:
@@ -10163,7 +10163,6 @@ components:
       properties:
         id:
           type: string
-          description: Read-only.
       additionalProperties:
         type: object
     microsoft.graph.alternativeSecurityId:

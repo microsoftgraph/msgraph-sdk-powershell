@@ -15,7 +15,7 @@ paths:
       parameters:
         - name: ConsistencyLevel
           in: header
-          description: 'Indicates the requested consistency level. Documentation URL: https://developer.microsoft.com/en-us/office/blogs/microsoft-graph-advanced-queries-for-directory-objects-are-now-generally-available/'
+          description: 'Indicates the requested consistency level. Documentation URL: https://docs.microsoft.com/graph/aad-advanced-queries'
           schema:
             type: string
           examples:
@@ -10458,7 +10458,7 @@ paths:
               type: string
       responses:
         '200':
-          $ref: '#/components/responses/microsoft.graph.attachment_v2CollectionResponse'
+          $ref: '#/components/responses/microsoft.graph.attachmentBaseCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -10497,7 +10497,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/microsoft.graph.attachment_v2'
+              $ref: '#/components/schemas/microsoft.graph.attachmentBase'
         required: true
       responses:
         '201':
@@ -10505,11 +10505,11 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/microsoft.graph.attachment_v2'
+                $ref: '#/components/schemas/microsoft.graph.attachmentBase'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-  '/users/{user-id}/todo/lists/{todoTaskList-id}/tasks/{todoTask-id}/attachments/{attachment_v2-id}':
+  '/users/{user-id}/todo/lists/{todoTaskList-id}/tasks/{todoTask-id}/attachments/{attachmentBase-id}':
     get:
       tags:
         - users.todo
@@ -10537,13 +10537,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: todoTask
-        - name: attachment_v2-id
+        - name: attachmentBase-id
           in: path
-          description: 'key: id of attachment_v2'
+          description: 'key: id of attachmentBase'
           required: true
           schema:
             type: string
-          x-ms-docs-key-type: attachment_v2
+          x-ms-docs-key-type: attachmentBase
         - name: $select
           in: query
           description: Select properties to be returned
@@ -10566,7 +10566,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/microsoft.graph.attachment_v2'
+                $ref: '#/components/schemas/microsoft.graph.attachmentBase'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -10597,19 +10597,19 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: todoTask
-        - name: attachment_v2-id
+        - name: attachmentBase-id
           in: path
-          description: 'key: id of attachment_v2'
+          description: 'key: id of attachmentBase'
           required: true
           schema:
             type: string
-          x-ms-docs-key-type: attachment_v2
+          x-ms-docs-key-type: attachmentBase
       requestBody:
         description: New navigation property values
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/microsoft.graph.attachment_v2'
+              $ref: '#/components/schemas/microsoft.graph.attachmentBase'
         required: true
       responses:
         '204':
@@ -10644,13 +10644,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: todoTask
-        - name: attachment_v2-id
+        - name: attachmentBase-id
           in: path
-          description: 'key: id of attachment_v2'
+          description: 'key: id of attachmentBase'
           required: true
           schema:
             type: string
-          x-ms-docs-key-type: attachment_v2
+          x-ms-docs-key-type: attachmentBase
         - name: If-Match
           in: header
           description: ETag
@@ -10662,7 +10662,7 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-  '/users/{user-id}/todo/lists/{todoTaskList-id}/tasks/{todoTask-id}/attachments/{attachment_v2-id}/$value':
+  '/users/{user-id}/todo/lists/{todoTaskList-id}/tasks/{todoTask-id}/attachments/{attachmentBase-id}/$value':
     get:
       tags:
         - users.todo
@@ -10690,13 +10690,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: todoTask
-        - name: attachment_v2-id
+        - name: attachmentBase-id
           in: path
-          description: 'key: id of attachment_v2'
+          description: 'key: id of attachmentBase'
           required: true
           schema:
             type: string
-          x-ms-docs-key-type: attachment_v2
+          x-ms-docs-key-type: attachmentBase
       responses:
         '200':
           description: Retrieved media content
@@ -10735,13 +10735,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: todoTask
-        - name: attachment_v2-id
+        - name: attachmentBase-id
           in: path
-          description: 'key: id of attachment_v2'
+          description: 'key: id of attachmentBase'
           required: true
           schema:
             type: string
-          x-ms-docs-key-type: attachment_v2
+          x-ms-docs-key-type: attachmentBase
       requestBody:
         description: New media content.
         content:
@@ -12703,7 +12703,6 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.group'
-              description: Read-only. Nullable.
             mailFolders:
               type: array
               items:
@@ -12810,7 +12809,6 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.profilePhoto'
-              description: Read-only. Nullable.
             profile:
               $ref: '#/components/schemas/microsoft.graph.profile'
             activities:
@@ -13404,7 +13402,7 @@ components:
             attachments:
               type: array
               items:
-                $ref: '#/components/schemas/microsoft.graph.attachment_v2'
+                $ref: '#/components/schemas/microsoft.graph.attachmentBase'
             attachmentSessions:
               type: array
               items:
@@ -13426,10 +13424,10 @@ components:
               description: A collection of resources linked to the task.
           additionalProperties:
             type: object
-    microsoft.graph.attachment_v2:
+    microsoft.graph.attachmentBase:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: attachment_v2
+        - title: attachmentBase
           type: object
           properties:
             contentType:
@@ -16938,7 +16936,6 @@ components:
       properties:
         id:
           type: string
-          description: Read-only.
       additionalProperties:
         type: object
     microsoft.graph.servicePlanInfo:
@@ -17432,14 +17429,14 @@ components:
           type: string
       additionalProperties:
         type: object
-    microsoft.graph.attachment_v2CollectionResponse:
-      title: Collection of attachment_v2
+    microsoft.graph.attachmentBaseCollectionResponse:
+      title: Collection of attachmentBase
       type: object
       properties:
         value:
           type: array
           items:
-            $ref: '#/components/schemas/microsoft.graph.attachment_v2'
+            $ref: '#/components/schemas/microsoft.graph.attachmentBase'
         '@odata.nextLink':
           type: string
       additionalProperties:
@@ -18377,7 +18374,6 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.post'
-              description: Read-only. Nullable.
           additionalProperties:
             type: object
     microsoft.graph.groupLifecyclePolicy:
@@ -28819,7 +28815,6 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.printDocument'
-              description: Read-only.
             tasks:
               type: array
               items:
@@ -29231,7 +29226,6 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.workbookCommentReply'
-              description: Read-only. Nullable.
           additionalProperties:
             type: object
     microsoft.graph.workbookFunctions:
@@ -33148,12 +33142,12 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.todoTaskCollectionResponse'
-    microsoft.graph.attachment_v2CollectionResponse:
+    microsoft.graph.attachmentBaseCollectionResponse:
       description: Retrieved collection
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/microsoft.graph.attachment_v2CollectionResponse'
+            $ref: '#/components/schemas/microsoft.graph.attachmentBaseCollectionResponse'
     microsoft.graph.attachmentSessionCollectionResponse:
       description: Retrieved collection
       content:

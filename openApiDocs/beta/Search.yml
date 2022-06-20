@@ -2237,17 +2237,14 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.externalConnectors.externalGroup'
-              description: Read-only. Nullable.
             items:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.externalConnectors.externalItem'
-              description: Read-only. Nullable.
             operations:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.externalConnectors.connectionOperation'
-              description: Read-only. Nullable.
             quota:
               $ref: '#/components/schemas/microsoft.graph.externalConnectors.connectionQuota'
             schema:
@@ -2592,7 +2589,6 @@ components:
       properties:
         id:
           type: string
-          description: Read-only.
       additionalProperties:
         type: object
     microsoft.graph.externalConnectors.configuration:

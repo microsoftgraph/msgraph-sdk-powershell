@@ -13570,41 +13570,50 @@ components:
             closedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The date and time when the case was closed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
               format: date-time
               nullable: true
             externalId:
               type: string
+              description: The external case number for customer reference.
               nullable: true
             custodians:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.security.ediscoveryCustodian'
+              description: Returns a list of case ediscoveryCustodian objects for this case.
             legalHolds:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.security.ediscoveryHoldPolicy'
+              description: Returns a list of case eDiscoveryHoldPolicy objects for this case.
             noncustodialDataSources:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.security.ediscoveryNoncustodialDataSource'
+              description: Returns a list of case ediscoveryNoncustodialDataSource objects for this case.
             operations:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.security.caseOperation'
+              description: Returns a list of case caseOperation objects for this case.
             reviewSets:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.security.ediscoveryReviewSet'
+              description: Returns a list of eDiscoveryReviewSet objects in the case.
             searches:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.security.ediscoverySearch'
+              description: Returns a list of eDiscoverySearch objects associated with this case.
             settings:
               $ref: '#/components/schemas/microsoft.graph.security.ediscoveryCaseSettings'
             tags:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.security.ediscoveryReviewTag'
+              description: Returns a list of ediscoveryReviewTag objects associated to this case.
           additionalProperties:
             type: object
     microsoft.graph.security.ediscoveryCustodian:
@@ -13616,10 +13625,12 @@ components:
             acknowledgedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: Date and time the custodian acknowledged a hold notification.
               format: date-time
               nullable: true
             email:
               type: string
+              description: Email address of the custodian.
               nullable: true
             lastIndexOperation:
               $ref: '#/components/schemas/microsoft.graph.security.ediscoveryIndexOperation'
@@ -13627,14 +13638,17 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.security.siteSource'
+              description: Data source entity for SharePoint sites associated with the custodian.
             unifiedGroupSources:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.security.unifiedGroupSource'
+              description: Data source entity for groups associated with the custodian.
             userSources:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.security.userSource'
+              description: Data source entity for a the custodian. This is the container for a custodian's mailbox and OneDrive for Business site.
           additionalProperties:
             type: object
     microsoft.graph.security.ediscoveryIndexOperation:
@@ -14096,10 +14110,12 @@ components:
           properties:
             email:
               type: string
+              description: Email address of the user's mailbox.
             includedSources:
               $ref: '#/components/schemas/microsoft.graph.security.sourceType'
             siteWebUrl:
               type: string
+              description: The URL of the user's OneDrive for Business site. Read-only.
               nullable: true
           additionalProperties:
             type: object
@@ -14111,14 +14127,17 @@ components:
           properties:
             contentQuery:
               type: string
+              description: 'KQL query that specifies content to be held in the specified locations. To learn more, see Keyword queries and search conditions for Content Search and eDiscovery.  To hold all content in the specified locations, leave contentQuery blank.'
               nullable: true
             errors:
               type: array
               items:
                 type: string
                 nullable: true
+              description: Lists any errors that happened while placing the hold.
             isEnabled:
               type: boolean
+              description: Indicates whether the hold is enabled and actively holding content.
               nullable: true
             siteSources:
               type: array
@@ -14153,10 +14172,12 @@ components:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: The date and time the dataSource was created.
               format: date-time
               nullable: true
             displayName:
               type: string
+              description: The display name of the dataSource. This will be the name of the SharePoint site.
               nullable: true
             holdStatus:
               $ref: '#/components/schemas/microsoft.graph.security.dataSourceHoldStatus'
@@ -14173,6 +14194,7 @@ components:
             completedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: The date and time the operation was completed.
               format: date-time
               nullable: true
             createdBy:
@@ -14180,12 +14202,14 @@ components:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: The date and time the operation was created.
               format: date-time
               nullable: true
             percentProgress:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
+              description: The progress of the operation.
               format: int32
               nullable: true
             resultInfo:
@@ -14204,10 +14228,12 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.security.ediscoveryFile'
+              description: Represents files within the review set.
             queries:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.security.ediscoveryReviewSetQuery'
+              description: Represents queries within the review set.
           additionalProperties:
             type: object
     microsoft.graph.security.ediscoveryFile:
@@ -14222,6 +14248,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.security.ediscoveryReviewTag'
+              description: Tags associated with the file.
           additionalProperties:
             type: object
     microsoft.graph.security.ediscoveryReviewTag:
@@ -14236,6 +14263,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.security.ediscoveryReviewTag'
+              description: Returns the tags that are a child of a tag.
             parent:
               $ref: '#/components/schemas/microsoft.graph.security.ediscoveryReviewTag'
           additionalProperties:
@@ -14252,18 +14280,21 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.security.dataSource'
+              description: Adds an additional source to the eDiscovery search.
             addToReviewSetOperation:
               $ref: '#/components/schemas/microsoft.graph.security.ediscoveryAddToReviewSetOperation'
             custodianSources:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.security.dataSource'
+              description: Custodian sources that are included in the eDiscovery search.
             lastEstimateStatisticsOperation:
               $ref: '#/components/schemas/microsoft.graph.security.ediscoveryEstimateOperation'
             noncustodialSources:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.security.ediscoveryNoncustodialDataSource'
+              description: noncustodialDataSource sources that are included in the eDiscovery search
           additionalProperties:
             type: object
     microsoft.graph.security.additionalDataOptions:
@@ -14318,30 +14349,36 @@ components:
           properties:
             indexedItemCount:
               type: integer
+              description: The estimated count of items for the search that matched the content query.
               format: int64
               nullable: true
             indexedItemsSize:
               type: integer
+              description: The estimated size of items for the search that matched the content query.
               format: int64
               nullable: true
             mailboxCount:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
+              description: The number of mailboxes that had search hits.
               format: int32
               nullable: true
             siteCount:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
+              description: The number of mailboxes that had search hits.
               format: int32
               nullable: true
             unindexedItemCount:
               type: integer
+              description: The estimated count of unindexed items for the collection.
               format: int64
               nullable: true
             unindexedItemsSize:
               type: integer
+              description: The estimated size of unindexed items for the collection.
               format: int64
               nullable: true
             search:
@@ -15001,7 +15038,7 @@ components:
               items:
                 type: string
                 nullable: true
-              description: 'Microsoft-provided services for the tenant (for example, Exchange online, Skype, Sharepoint).'
+              description: 'Microsoft-provided services for the tenant (for example, Exchange online, Skype, SharePoint).'
             licensedUserCount:
               maximum: 2147483647
               minimum: -2147483648
@@ -15625,7 +15662,6 @@ components:
       properties:
         id:
           type: string
-          description: Read-only.
       additionalProperties:
         type: object
     microsoft.graph.securityProviderStatus:
@@ -16353,21 +16389,25 @@ components:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: Created date and time of the dataSourceContainer entity.
               format: date-time
               nullable: true
             displayName:
               type: string
+              description: Display name of the dataSourceContainer entity.
               nullable: true
             holdStatus:
               $ref: '#/components/schemas/microsoft.graph.security.dataSourceHoldStatus'
             lastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: Last modified date and time of the dataSourceContainer.
               format: date-time
               nullable: true
             releasedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: Date and time that the dataSourceContainer was released from the case.
               format: date-time
               nullable: true
             status:
@@ -17511,7 +17551,6 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.post'
-              description: Read-only. Nullable.
           additionalProperties:
             type: object
     microsoft.graph.extension:
@@ -17784,16 +17823,19 @@ components:
       properties:
         isEnabled:
           type: boolean
+          description: Indicates whether or not OCR is enabled for the case.
           nullable: true
         maxImageSize:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
+          description: Maximum image size that will be processed in KB).
           format: int32
           nullable: true
         timeout:
           pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
           type: string
+          description: 'The timeout duration for the OCR engine. A longer timeout may increase success of OCR, but may add to the total processing time.'
           format: duration
           nullable: true
       additionalProperties:
@@ -17804,23 +17846,27 @@ components:
       properties:
         isEnabled:
           type: boolean
+          description: Indicates whether email threading and near duplicate detection are enabled.
           nullable: true
         maxWords:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
+          description: 'Specifies the maximum number of words used for email threading and near duplicate detection. To learn more, see Minimum/maximum number of words.'
           format: int32
           nullable: true
         minWords:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
+          description: 'Specifies the minimum number of words used for email threading and near duplicate detection. To learn more, see Minimum/maximum number of words.'
           format: int32
           nullable: true
         similarityThreshold:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
+          description: 'Specifies the similarity level for documents to be put in the same near duplicate set. To learn more, see Document and email similarity threshold.'
           format: int32
           nullable: true
       additionalProperties:
@@ -17831,17 +17877,21 @@ components:
       properties:
         dynamicallyAdjustTopicCount:
           type: boolean
+          description: 'To learn more, see Adjust maximum number of themes dynamically.'
           nullable: true
         ignoreNumbers:
           type: boolean
+          description: 'To learn more, see Include numbers in themes.'
           nullable: true
         isEnabled:
           type: boolean
+          description: Indicates whether themes is enabled for the case.
           nullable: true
         topicCount:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
+          description: 'To learn more, see Maximum number of themes.'
           format: int32
           nullable: true
       additionalProperties:
@@ -19048,7 +19098,6 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.group'
-              description: Read-only. Nullable.
             mailFolders:
               type: array
               items:
@@ -19155,7 +19204,6 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.profilePhoto'
-              description: Read-only. Nullable.
             profile:
               $ref: '#/components/schemas/microsoft.graph.profile'
             activities:
@@ -31424,7 +31472,6 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.workbookCommentReply'
-              description: Read-only. Nullable.
           additionalProperties:
             type: object
     microsoft.graph.workbookFunctions:
@@ -34335,7 +34382,7 @@ components:
             attachments:
               type: array
               items:
-                $ref: '#/components/schemas/microsoft.graph.attachment_v2'
+                $ref: '#/components/schemas/microsoft.graph.attachmentBase'
             attachmentSessions:
               type: array
               items:
@@ -35112,7 +35159,6 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.printDocument'
-              description: Read-only.
             tasks:
               type: array
               items:
@@ -35977,10 +36023,10 @@ components:
         - unknownFutureValue
         - emailUser
       type: string
-    microsoft.graph.attachment_v2:
+    microsoft.graph.attachmentBase:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: attachment_v2
+        - title: attachmentBase
           type: object
           properties:
             contentType:
