@@ -5886,6 +5886,8 @@ paths:
                 - calendarView
                 - conversations
                 - events
+                - photo
+                - photos
                 - rejectedSenders
                 - threads
                 - drive
@@ -5895,8 +5897,6 @@ paths:
                 - groupLifecyclePolicies
                 - planner
                 - onenote
-                - photo
-                - photos
                 - team
               type: string
         - name: $expand
@@ -5925,6 +5925,8 @@ paths:
                 - calendarView
                 - conversations
                 - events
+                - photo
+                - photos
                 - rejectedSenders
                 - threads
                 - drive
@@ -5934,8 +5936,6 @@ paths:
                 - groupLifecyclePolicies
                 - planner
                 - onenote
-                - photo
-                - photos
                 - team
               type: string
       responses:
@@ -6006,6 +6006,14 @@ paths:
               operationId: groups.team.Group.ListEvents
               parameters:
                 group-id: $request.path.group-id
+            photo:
+              operationId: groups.team.Group.GetPhoto
+              parameters:
+                group-id: $request.path.group-id
+            photos:
+              operationId: groups.team.Group.ListPhotos
+              parameters:
+                group-id: $request.path.group-id
             rejectedSenders:
               operationId: groups.team.Group.ListRejectedSenders
               parameters:
@@ -6040,14 +6048,6 @@ paths:
                 group-id: $request.path.group-id
             onenote:
               operationId: groups.team.Group.GetOnenote
-              parameters:
-                group-id: $request.path.group-id
-            photo:
-              operationId: groups.team.Group.GetPhoto
-              parameters:
-                group-id: $request.path.group-id
-            photos:
-              operationId: groups.team.Group.ListPhotos
               parameters:
                 group-id: $request.path.group-id
             team:
@@ -14470,6 +14470,8 @@ paths:
                 - calendarView
                 - conversations
                 - events
+                - photo
+                - photos
                 - rejectedSenders
                 - threads
                 - drive
@@ -14479,8 +14481,6 @@ paths:
                 - groupLifecyclePolicies
                 - planner
                 - onenote
-                - photo
-                - photos
                 - team
               type: string
         - name: $expand
@@ -14509,6 +14509,8 @@ paths:
                 - calendarView
                 - conversations
                 - events
+                - photo
+                - photos
                 - rejectedSenders
                 - threads
                 - drive
@@ -14518,8 +14520,6 @@ paths:
                 - groupLifecyclePolicies
                 - planner
                 - onenote
-                - photo
-                - photos
                 - team
               type: string
       responses:
@@ -14590,6 +14590,14 @@ paths:
               operationId: teams.Group.ListEvents
               parameters:
                 team-id: $request.path.team-id
+            photo:
+              operationId: teams.Group.GetPhoto
+              parameters:
+                team-id: $request.path.team-id
+            photos:
+              operationId: teams.Group.ListPhotos
+              parameters:
+                team-id: $request.path.team-id
             rejectedSenders:
               operationId: teams.Group.ListRejectedSenders
               parameters:
@@ -14624,14 +14632,6 @@ paths:
                 team-id: $request.path.team-id
             onenote:
               operationId: teams.Group.GetOnenote
-              parameters:
-                team-id: $request.path.team-id
-            photo:
-              operationId: teams.Group.GetPhoto
-              parameters:
-                team-id: $request.path.team-id
-            photos:
-              operationId: teams.Group.ListPhotos
               parameters:
                 team-id: $request.path.team-id
             team:
@@ -26587,6 +26587,8 @@ paths:
                 - calendarView
                 - conversations
                 - events
+                - photo
+                - photos
                 - rejectedSenders
                 - threads
                 - drive
@@ -26596,8 +26598,6 @@ paths:
                 - groupLifecyclePolicies
                 - planner
                 - onenote
-                - photo
-                - photos
                 - team
               type: string
         - name: $expand
@@ -26626,6 +26626,8 @@ paths:
                 - calendarView
                 - conversations
                 - events
+                - photo
+                - photos
                 - rejectedSenders
                 - threads
                 - drive
@@ -26635,8 +26637,6 @@ paths:
                 - groupLifecyclePolicies
                 - planner
                 - onenote
-                - photo
-                - photos
                 - team
               type: string
       responses:
@@ -26722,6 +26722,16 @@ paths:
               parameters:
                 user-id: $request.path.user-id
                 team-id: $request.path.team-id
+            photo:
+              operationId: users.joinedTeams.Group.GetPhoto
+              parameters:
+                user-id: $request.path.user-id
+                team-id: $request.path.team-id
+            photos:
+              operationId: users.joinedTeams.Group.ListPhotos
+              parameters:
+                user-id: $request.path.user-id
+                team-id: $request.path.team-id
             rejectedSenders:
               operationId: users.joinedTeams.Group.ListRejectedSenders
               parameters:
@@ -26764,16 +26774,6 @@ paths:
                 team-id: $request.path.team-id
             onenote:
               operationId: users.joinedTeams.Group.GetOnenote
-              parameters:
-                user-id: $request.path.user-id
-                team-id: $request.path.team-id
-            photo:
-              operationId: users.joinedTeams.Group.GetPhoto
-              parameters:
-                user-id: $request.path.user-id
-                team-id: $request.path.team-id
-            photos:
-              operationId: users.joinedTeams.Group.ListPhotos
               parameters:
                 user-id: $request.path.user-id
                 team-id: $request.path.team-id
@@ -34079,6 +34079,13 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.event'
               description: The group's events.
+            photo:
+              $ref: '#/components/schemas/microsoft.graph.profilePhoto'
+            photos:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.profilePhoto'
+              description: The profile photos owned by the group. Read-only. Nullable.
             rejectedSenders:
               type: array
               items:
@@ -34115,13 +34122,6 @@ components:
               $ref: '#/components/schemas/microsoft.graph.plannerGroup'
             onenote:
               $ref: '#/components/schemas/microsoft.graph.onenote'
-            photo:
-              $ref: '#/components/schemas/microsoft.graph.profilePhoto'
-            photos:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.profilePhoto'
-              description: The profile photos owned by the group. Read-only. Nullable.
             team:
               $ref: '#/components/schemas/microsoft.graph.team'
           additionalProperties:
@@ -34524,7 +34524,6 @@ components:
       properties:
         id:
           type: string
-          description: Read-only.
       additionalProperties:
         type: object
     microsoft.graph.teamsAppDistributionMethod:
@@ -36089,6 +36088,28 @@ components:
               description: A collection of all the conversation threads in the conversation. A navigation property. Read-only. Nullable.
           additionalProperties:
             type: object
+    microsoft.graph.profilePhoto:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: profilePhoto
+          type: object
+          properties:
+            height:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              description: The height of the photo. Read-only.
+              format: int32
+              nullable: true
+            width:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              description: The width of the photo. Read-only.
+              format: int32
+              nullable: true
+          additionalProperties:
+            type: object
     microsoft.graph.conversationThread:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -36131,7 +36152,6 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.post'
-              description: Read-only. Nullable.
           additionalProperties:
             type: object
     microsoft.graph.drive:
@@ -36335,28 +36355,6 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.onenoteSection'
               description: The sections in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
-          additionalProperties:
-            type: object
-    microsoft.graph.profilePhoto:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: profilePhoto
-          type: object
-          properties:
-            height:
-              maximum: 2147483647
-              minimum: -2147483648
-              type: integer
-              description: The height of the photo. Read-only.
-              format: int32
-              nullable: true
-            width:
-              maximum: 2147483647
-              minimum: -2147483648
-              type: integer
-              description: The width of the photo. Read-only.
-              format: int32
-              nullable: true
           additionalProperties:
             type: object
     microsoft.graph.operationError:
@@ -37466,7 +37464,6 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.profilePhoto'
-              description: Read-only. Nullable.
             activities:
               type: array
               items:
@@ -37585,7 +37582,6 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.workbookCommentReply'
-              description: Read-only. Nullable.
           additionalProperties:
             type: object
     microsoft.graph.workbookFunctions:

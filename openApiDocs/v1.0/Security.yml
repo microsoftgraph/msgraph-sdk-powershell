@@ -1231,7 +1231,7 @@ components:
               items:
                 type: string
                 nullable: true
-              description: 'Microsoft-provided services for the tenant (for example, Exchange online, Skype, Sharepoint).'
+              description: 'Microsoft-provided services for the tenant (for example, Exchange online, Skype, SharePoint).'
             licensedUserCount:
               maximum: 2147483647
               minimum: -2147483648
@@ -1254,7 +1254,6 @@ components:
       properties:
         id:
           type: string
-          description: Read-only.
       additionalProperties:
         type: object
     microsoft.graph.alertDetection:

@@ -15,7 +15,7 @@ paths:
       parameters:
         - name: ConsistencyLevel
           in: header
-          description: 'Indicates the requested consistency level. Documentation URL: https://developer.microsoft.com/en-us/office/blogs/microsoft-graph-advanced-queries-for-directory-objects-are-now-generally-available/'
+          description: 'Indicates the requested consistency level. Documentation URL: https://docs.microsoft.com/graph/aad-advanced-queries'
           schema:
             type: string
           examples:
@@ -87,6 +87,8 @@ paths:
                 - publisherDomain desc
                 - requiredResourceAccess
                 - requiredResourceAccess desc
+                - samlMetadataUrl
+                - samlMetadataUrl desc
                 - serviceManagementReference
                 - serviceManagementReference desc
                 - signInAudience
@@ -143,6 +145,7 @@ paths:
                 - publicClient
                 - publisherDomain
                 - requiredResourceAccess
+                - samlMetadataUrl
                 - serviceManagementReference
                 - signInAudience
                 - spa
@@ -266,6 +269,7 @@ paths:
                 - publicClient
                 - publisherDomain
                 - requiredResourceAccess
+                - samlMetadataUrl
                 - serviceManagementReference
                 - signInAudience
                 - spa
@@ -7591,6 +7595,8 @@ paths:
                 - publisherDomain desc
                 - requiredResourceAccess
                 - requiredResourceAccess desc
+                - samlMetadataUrl
+                - samlMetadataUrl desc
                 - serviceManagementReference
                 - serviceManagementReference desc
                 - signInAudience
@@ -7647,6 +7653,7 @@ paths:
                 - publicClient
                 - publisherDomain
                 - requiredResourceAccess
+                - samlMetadataUrl
                 - serviceManagementReference
                 - signInAudience
                 - spa
@@ -7762,6 +7769,7 @@ paths:
                 - publicClient
                 - publisherDomain
                 - requiredResourceAccess
+                - samlMetadataUrl
                 - serviceManagementReference
                 - signInAudience
                 - spa
@@ -9149,7 +9157,7 @@ paths:
       parameters:
         - name: ConsistencyLevel
           in: header
-          description: 'Indicates the requested consistency level. Documentation URL: https://developer.microsoft.com/en-us/office/blogs/microsoft-graph-advanced-queries-for-directory-objects-are-now-generally-available/'
+          description: 'Indicates the requested consistency level. Documentation URL: https://docs.microsoft.com/graph/aad-advanced-queries'
           schema:
             type: string
           examples:
@@ -15692,6 +15700,10 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.requiredResourceAccess'
               description: 'Specifies the resources that the application needs to access. This property also specifies the set of delegated permissions and application roles that it needs for each of those resources. This configuration of access to the required resources drives the consent experience. No more than 50 resource services (APIs) can be configured. Beginning mid-October 2021, the total number of required permissions must not exceed 400. Not nullable. Supports $filter (eq, not, ge, le).'
+            samlMetadataUrl:
+              type: string
+              description: The URL where the service exposes SAML metadata for federation. This property is valid only for single-tenant applications. Nullable.
+              nullable: true
             serviceManagementReference:
               type: string
               description: References application or service contact information from a Service or Asset Management database. Nullable.
@@ -15786,12 +15798,10 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.application'
-              description: Read-only. Nullable.
             members:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.connector'
-              description: Read-only. Nullable.
           additionalProperties:
             type: object
     ReferenceUpdateSchema:
@@ -17300,7 +17310,6 @@ components:
       properties:
         id:
           type: string
-          description: Read-only.
       additionalProperties:
         type: object
     microsoft.graph.connectorGroupType:

@@ -9133,7 +9133,6 @@ components:
       properties:
         id:
           type: string
-          description: Read-only.
       additionalProperties:
         type: object
     microsoft.graph.deviceAndAppManagementAssignmentTarget:

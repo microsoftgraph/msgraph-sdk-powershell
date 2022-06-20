@@ -294,7 +294,7 @@ paths:
       parameters:
         - name: ConsistencyLevel
           in: header
-          description: 'Indicates the requested consistency level. Documentation URL: https://developer.microsoft.com/en-us/office/blogs/microsoft-graph-advanced-queries-for-directory-objects-are-now-generally-available/'
+          description: 'Indicates the requested consistency level. Documentation URL: https://docs.microsoft.com/graph/aad-advanced-queries'
           schema:
             type: string
           examples:
@@ -462,6 +462,8 @@ paths:
                 - calendarView
                 - conversations
                 - events
+                - photo
+                - photos
                 - rejectedSenders
                 - threads
                 - drive
@@ -471,8 +473,6 @@ paths:
                 - groupLifecyclePolicies
                 - planner
                 - onenote
-                - photo
-                - photos
                 - team
               type: string
         - name: $expand
@@ -501,6 +501,8 @@ paths:
                 - calendarView
                 - conversations
                 - events
+                - photo
+                - photos
                 - rejectedSenders
                 - threads
                 - drive
@@ -510,8 +512,6 @@ paths:
                 - groupLifecyclePolicies
                 - planner
                 - onenote
-                - photo
-                - photos
                 - team
               type: string
       responses:
@@ -624,6 +624,8 @@ paths:
                 - calendarView
                 - conversations
                 - events
+                - photo
+                - photos
                 - rejectedSenders
                 - threads
                 - drive
@@ -633,8 +635,6 @@ paths:
                 - groupLifecyclePolicies
                 - planner
                 - onenote
-                - photo
-                - photos
                 - team
               type: string
         - name: $expand
@@ -663,6 +663,8 @@ paths:
                 - calendarView
                 - conversations
                 - events
+                - photo
+                - photos
                 - rejectedSenders
                 - threads
                 - drive
@@ -672,8 +674,6 @@ paths:
                 - groupLifecyclePolicies
                 - planner
                 - onenote
-                - photo
-                - photos
                 - team
               type: string
       responses:
@@ -744,6 +744,14 @@ paths:
               operationId: groups.ListEvents
               parameters:
                 group-id: $request.path.group-id
+            photo:
+              operationId: groups.GetPhoto
+              parameters:
+                group-id: $request.path.group-id
+            photos:
+              operationId: groups.ListPhotos
+              parameters:
+                group-id: $request.path.group-id
             rejectedSenders:
               operationId: groups.ListRejectedSenders
               parameters:
@@ -778,14 +786,6 @@ paths:
                 group-id: $request.path.group-id
             onenote:
               operationId: groups.GetOnenote
-              parameters:
-                group-id: $request.path.group-id
-            photo:
-              operationId: groups.GetPhoto
-              parameters:
-                group-id: $request.path.group-id
-            photos:
-              operationId: groups.ListPhotos
               parameters:
                 group-id: $request.path.group-id
             team:
@@ -22927,6 +22927,13 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.event'
               description: The group's events.
+            photo:
+              $ref: '#/components/schemas/microsoft.graph.profilePhoto'
+            photos:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.profilePhoto'
+              description: The profile photos owned by the group. Read-only. Nullable.
             rejectedSenders:
               type: array
               items:
@@ -22963,13 +22970,6 @@ components:
               $ref: '#/components/schemas/microsoft.graph.plannerGroup'
             onenote:
               $ref: '#/components/schemas/microsoft.graph.onenote'
-            photo:
-              $ref: '#/components/schemas/microsoft.graph.profilePhoto'
-            photos:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.profilePhoto'
-              description: The profile photos owned by the group. Read-only. Nullable.
             team:
               $ref: '#/components/schemas/microsoft.graph.team'
           additionalProperties:
@@ -23308,7 +23308,6 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.post'
-              description: Read-only. Nullable.
           additionalProperties:
             type: object
     microsoft.graph.post:
@@ -24304,7 +24303,6 @@ components:
       properties:
         id:
           type: string
-          description: Read-only.
       additionalProperties:
         type: object
     microsoft.graph.assignedLabel:
@@ -27773,7 +27771,6 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.profilePhoto'
-              description: Read-only. Nullable.
             activities:
               type: array
               items:
@@ -27892,7 +27889,6 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.workbookCommentReply'
-              description: Read-only. Nullable.
           additionalProperties:
             type: object
     microsoft.graph.workbookFunctions:

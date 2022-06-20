@@ -4781,7 +4781,6 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryAudit'
-              description: Read-only. Nullable.
             provisioning:
               type: array
               items:
@@ -4794,7 +4793,6 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.signIn'
-              description: Read-only. Nullable.
           additionalProperties:
             type: object
     microsoft.graph.directoryAudit:
@@ -5176,7 +5174,6 @@ components:
       properties:
         id:
           type: string
-          description: Read-only.
       additionalProperties:
         type: object
     microsoft.graph.keyValue:

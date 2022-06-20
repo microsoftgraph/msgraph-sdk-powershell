@@ -31130,6 +31130,7 @@ paths:
                 - workforceIntegrations
                 - deletedTeams
                 - devices
+                - teamsAppSettings
               type: string
         - name: $expand
           in: query
@@ -31145,6 +31146,7 @@ paths:
                 - workforceIntegrations
                 - deletedTeams
                 - devices
+                - teamsAppSettings
               type: string
       responses:
         '200':
@@ -31160,6 +31162,8 @@ paths:
               operationId: teamwork.ListDeletedTeams
             devices:
               operationId: teamwork.ListDevices
+            teamsAppSettings:
+              operationId: teamwork.GetTeamsAppSettings
             sendActivityNotificationToRecipients:
               operationId: teamwork.sendActivityNotificationToRecipients
         default:
@@ -35815,6 +35819,83 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  /teamwork/teamsAppSettings:
+    get:
+      tags:
+        - teamwork.teamsAppSettings
+      summary: Get teamsAppSettings from teamwork
+      operationId: teamwork_GetTeamsAppSettings
+      parameters:
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - isChatResourceSpecificConsentEnabled
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.teamsAppSettings'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - teamwork.teamsAppSettings
+      summary: Update the navigation property teamsAppSettings in teamwork
+      operationId: teamwork_UpdateTeamsAppSettings
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.teamsAppSettings'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - teamwork.teamsAppSettings
+      summary: Delete navigation property teamsAppSettings for teamwork
+      operationId: teamwork_DeleteTeamsAppSettings
+      parameters:
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   /teamwork/workforceIntegrations:
     get:
       tags:
@@ -42515,7 +42596,6 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.group'
-              description: Read-only. Nullable.
             mailFolders:
               type: array
               items:
@@ -42622,7 +42702,6 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.profilePhoto'
-              description: Read-only. Nullable.
             profile:
               $ref: '#/components/schemas/microsoft.graph.profile'
             activities:
@@ -43084,6 +43163,8 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.teamworkDevice'
               description: The Teams devices provisioned for the tenant.
+            teamsAppSettings:
+              $ref: '#/components/schemas/microsoft.graph.teamsAppSettings'
           additionalProperties:
             type: object
     microsoft.graph.deletedTeam:
@@ -43305,6 +43386,17 @@ components:
               description: 'The current status of the async operation, for example, Queued, Scheduled, InProgress,  Successful, Cancelled, and Failed.'
           additionalProperties:
             type: object
+    microsoft.graph.teamsAppSettings:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: teamsAppSettings
+          type: object
+          properties:
+            isChatResourceSpecificConsentEnabled:
+              type: boolean
+              nullable: true
+          additionalProperties:
+            type: object
     microsoft.graph.workforceIntegration:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.changeTrackedEntity'
@@ -43381,7 +43473,6 @@ components:
       properties:
         id:
           type: string
-          description: Read-only.
       additionalProperties:
         type: object
     microsoft.graph.teamsAppDistributionMethod:
@@ -45239,7 +45330,6 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.post'
-              description: Read-only. Nullable.
           additionalProperties:
             type: object
     microsoft.graph.drive:
@@ -49240,7 +49330,6 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.workbookCommentReply'
-              description: Read-only. Nullable.
           additionalProperties:
             type: object
     microsoft.graph.workbookFunctions:
@@ -59097,7 +59186,7 @@ components:
             attachments:
               type: array
               items:
-                $ref: '#/components/schemas/microsoft.graph.attachment_v2'
+                $ref: '#/components/schemas/microsoft.graph.attachmentBase'
             attachmentSessions:
               type: array
               items:
@@ -60144,7 +60233,6 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.printDocument'
-              description: Read-only.
             tasks:
               type: array
               items:
@@ -61039,10 +61127,10 @@ components:
         - radioButton
         - unknownFutureValue
       type: string
-    microsoft.graph.attachment_v2:
+    microsoft.graph.attachmentBase:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: attachment_v2
+        - title: attachmentBase
           type: object
           properties:
             contentType:
