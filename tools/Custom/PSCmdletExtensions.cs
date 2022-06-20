@@ -3,6 +3,7 @@
 // ------------------------------------------------------------------------------
 namespace Microsoft.Graph.PowerShell
 {
+    using Microsoft.Graph.PowerShell.Authentication;
     using Microsoft.Graph.PowerShell.Authentication.Common;
     using System;
     using System.Collections.ObjectModel;
@@ -68,9 +69,14 @@ namespace Microsoft.Graph.PowerShell
         {
             if (IsPathDirectory(filePath))
             {
-                // Get file name from content disposition header is presents; otherwise throw an exception for a file name to be provided.
+                // Get file name from content disposition header if present; otherwise throw an exception for a file name to be provided.
                 var fileName = GetFileName(response);
                 filePath = Path.Combine(filePath, fileName);
+            }
+            if (File.Exists(filePath))
+            {
+                cmdlet.WriteWarning($"{filePath} already exists. The file will be overridden.");
+                File.Delete(filePath);
             }
             using (var fileProvider = ProtectedFileProvider.CreateFileProvider(filePath, FileProtection.ExclusiveWrite, new DiskDataStore()))
             {
@@ -140,11 +146,11 @@ namespace Microsoft.Graph.PowerShell
                 if (!string.IsNullOrWhiteSpace(fileName))
                     return SanitizeFileName(fileName);
             }
-            throw new ArgumentException("Count not infer file name from the response. Please specify the file name in -OutFile explicitly.");
+            throw new ArgumentException(ErrorConstants.Message.CannotInferFileName, "-OutFile");
         }
 
         /// <summary>
-        /// When Inferring file names from Content disposition, ensure that only valid path characters are in the file name
+        /// When Inferring file names from content disposition header, ensure that only valid path characters are in the file name
         /// </summary>
         /// <param name="fileName"></param>
         private static string SanitizeFileName(string fileName)

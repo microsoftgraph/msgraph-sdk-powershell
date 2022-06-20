@@ -617,7 +617,7 @@ directive:
       } else {
         let outFileParameterRegex = /(^\s*)public\s*global::System\.String\s*OutFile\s*/gmi
         let streamResponseRegex = /global::System\.Threading\.Tasks\.Task<global::System\.IO\.Stream>\s*response/gmi
-        let octetStreamSchemaResponseRegex = /global::System\.Threading\.Tasks\.Task<.*OctetStreamSchema>\s*response/gmi
+        let octetStreamSchemaResponseRegex = /global::System\.Threading\.Tasks\.Task<.*(OctetStreamSchema|GraphReport)>\s*response/gmi
         let overrideOnOkCallRegex = /(^\s*)(overrideOnOk\(\s*responseMessage\s*,\s*response\s*,\s*ref\s*_returnNow\s*\);)/gmi
         if($.match(outFileParameterRegex) && $.match(streamResponseRegex)) {
           // Handle file download.
