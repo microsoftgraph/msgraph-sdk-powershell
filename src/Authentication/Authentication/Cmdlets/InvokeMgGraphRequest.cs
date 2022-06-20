@@ -1092,7 +1092,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
         ///     Resets GraphSession environment back to its original state.
         ///     Original state can remain to be the previous state defined by the user, 
         ///     or the default global state. User defined state can be removed by calling,
-        ///     Remove-MgGraph Command
+        ///     Remove-MgEnvironment Command
         /// </summary>
         private void ResetGraphSessionEnvironment()
         {
