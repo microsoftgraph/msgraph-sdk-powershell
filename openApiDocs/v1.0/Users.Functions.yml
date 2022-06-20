@@ -1064,7 +1064,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function getActivitiesByInterval
-      operationId: users.drives.items.listItem_getActivitiesByInterval
+      operationId: users.drives.items.listItem_getActivitiesGraphBPreInterval
       parameters:
         - name: user-id
           in: path
@@ -1110,7 +1110,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function getActivitiesByInterval
-      operationId: users.drives.items.listItem_getActivitiesByInterval
+      operationId: users.drives.items.listItem_getActivitiesGraphBPreInterval
       parameters:
         - name: user-id
           in: path
@@ -1276,7 +1276,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function getActivitiesByInterval
-      operationId: users.drives.items_getActivitiesByInterval
+      operationId: users.drives.items_getActivitiesGraphBPreInterval
       parameters:
         - name: user-id
           in: path
@@ -1322,7 +1322,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function getActivitiesByInterval
-      operationId: users.drives.items_getActivitiesByInterval
+      operationId: users.drives.items_getActivitiesGraphBPreInterval
       parameters:
         - name: user-id
           in: path
@@ -1525,7 +1525,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function getActivitiesByInterval
-      operationId: users.drives.list.items_getActivitiesByInterval
+      operationId: users.drives.list.items_getActivitiesGraphBPreInterval
       parameters:
         - name: user-id
           in: path
@@ -1571,7 +1571,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function getActivitiesByInterval
-      operationId: users.drives.list.items_getActivitiesByInterval
+      operationId: users.drives.list.items_getActivitiesGraphBPreInterval
       parameters:
         - name: user-id
           in: path
@@ -1723,7 +1723,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function sharedWithMe
-      operationId: users.drives_sharedWithMe
+      operationId: users.drives_sharedGraphWPreMe
       parameters:
         - name: user-id
           in: path
@@ -1762,7 +1762,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function getActivitiesByInterval
-      operationId: users.drives.root.listItem_getActivitiesByInterval
+      operationId: users.drives.root.listItem_getActivitiesGraphBPreInterval
       parameters:
         - name: user-id
           in: path
@@ -1801,7 +1801,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function getActivitiesByInterval
-      operationId: users.drives.root.listItem_getActivitiesByInterval
+      operationId: users.drives.root.listItem_getActivitiesGraphBPreInterval
       parameters:
         - name: user-id
           in: path
@@ -1946,7 +1946,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function getActivitiesByInterval
-      operationId: users.drives.root_getActivitiesByInterval
+      operationId: users.drives.root_getActivitiesGraphBPreInterval
       parameters:
         - name: user-id
           in: path
@@ -1985,7 +1985,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function getActivitiesByInterval
-      operationId: users.drives.root_getActivitiesByInterval
+      operationId: users.drives.root_getActivitiesGraphBPreInterval
       parameters:
         - name: user-id
           in: path

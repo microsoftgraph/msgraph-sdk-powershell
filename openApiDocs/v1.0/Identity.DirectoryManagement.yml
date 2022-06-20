@@ -226,11 +226,11 @@ paths:
               parameters:
                 orgContact-id: $request.path.orgContact-id
             memberOf:
-              operationId: contacts.ListMemberOf
+              operationId: contacts.ListMemberGraphOPre
               parameters:
                 orgContact-id: $request.path.orgContact-id
             transitiveMemberOf:
-              operationId: contacts.ListTransitiveMemberOf
+              operationId: contacts.ListTransitiveMemberGraphOPre
               parameters:
                 orgContact-id: $request.path.orgContact-id
             checkMemberGroups:
@@ -474,7 +474,7 @@ paths:
       tags:
         - contacts.directoryObject
       summary: Get memberOf from contacts
-      operationId: contacts_ListMemberOf
+      operationId: contacts_ListMemberGraphOPre
       parameters:
         - name: orgContact-id
           in: path
@@ -542,7 +542,7 @@ paths:
       tags:
         - contacts.directoryObject
       summary: Get memberOf from contacts
-      operationId: contacts_GetMemberOf
+      operationId: contacts_GetMemberGraphOPre
       parameters:
         - name: orgContact-id
           in: path
@@ -806,7 +806,7 @@ paths:
       tags:
         - contacts.directoryObject
       summary: Get transitiveMemberOf from contacts
-      operationId: contacts_ListTransitiveMemberOf
+      operationId: contacts_ListTransitiveMemberGraphOPre
       parameters:
         - name: orgContact-id
           in: path
@@ -874,7 +874,7 @@ paths:
       tags:
         - contacts.directoryObject
       summary: Get transitiveMemberOf from contacts
-      operationId: contacts_GetTransitiveMemberOf
+      operationId: contacts_GetTransitiveMemberGraphOPre
       parameters:
         - name: orgContact-id
           in: path
@@ -992,7 +992,7 @@ paths:
       tags:
         - contacts.Actions
       summary: Invoke action getByIds
-      operationId: contacts_getByIds
+      operationId: contacts_getGraphBPreIds
       requestBody:
         description: Action parameters
         content:
@@ -1526,7 +1526,7 @@ paths:
       tags:
         - contracts.Actions
       summary: Invoke action getByIds
-      operationId: contracts_getByIds
+      operationId: contracts_getGraphBPreIds
       requestBody:
         description: Action parameters
         content:
@@ -1836,7 +1836,7 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.device'
           links:
             memberOf:
-              operationId: devices.ListMemberOf
+              operationId: devices.ListMemberGraphOPre
               parameters:
                 device-id: $request.path.device-id
             registeredOwners:
@@ -1848,7 +1848,7 @@ paths:
               parameters:
                 device-id: $request.path.device-id
             transitiveMemberOf:
-              operationId: devices.ListTransitiveMemberOf
+              operationId: devices.ListTransitiveMemberGraphOPre
               parameters:
                 device-id: $request.path.device-id
             extensions:
@@ -2137,7 +2137,7 @@ paths:
       tags:
         - devices.directoryObject
       summary: Get memberOf from devices
-      operationId: devices_ListMemberOf
+      operationId: devices_ListMemberGraphOPre
       parameters:
         - name: device-id
           in: path
@@ -2205,7 +2205,7 @@ paths:
       tags:
         - devices.directoryObject
       summary: Get memberOf from devices
-      operationId: devices_GetMemberOf
+      operationId: devices_GetMemberGraphOPre
       parameters:
         - name: device-id
           in: path
@@ -2537,7 +2537,7 @@ paths:
       tags:
         - devices.directoryObject
       summary: Delete ref of navigation property registeredOwners for devices
-      operationId: devices_DeleteGraphRefRegisteredOwners
+      operationId: devices_DeleteRegisteredOwnersGraphBPreRef
       parameters:
         - name: device-id
           in: path
@@ -2574,7 +2574,7 @@ paths:
       tags:
         - devices.directoryObject
       summary: Get ref of registeredOwners from devices
-      operationId: devices_ListGraphRefRegisteredOwners
+      operationId: devices_ListRegisteredOwnersGraphBPreRef
       parameters:
         - name: device-id
           in: path
@@ -2616,7 +2616,7 @@ paths:
       tags:
         - devices.directoryObject
       summary: Create new navigation property ref to registeredOwners for devices
-      operationId: devices_CreateGraphRefRegisteredOwners
+      operationId: devices_CreateRegisteredOwnersGraphBPreRef
       parameters:
         - name: device-id
           in: path
@@ -2775,7 +2775,7 @@ paths:
       tags:
         - devices.directoryObject
       summary: Get transitiveMemberOf from devices
-      operationId: devices_ListTransitiveMemberOf
+      operationId: devices_ListTransitiveMemberGraphOPre
       parameters:
         - name: device-id
           in: path
@@ -2843,7 +2843,7 @@ paths:
       tags:
         - devices.directoryObject
       summary: Get transitiveMemberOf from devices
-      operationId: devices_GetTransitiveMemberOf
+      operationId: devices_GetTransitiveMemberGraphOPre
       parameters:
         - name: device-id
           in: path
@@ -2937,7 +2937,7 @@ paths:
       tags:
         - devices.Actions
       summary: Invoke action getByIds
-      operationId: devices_getByIds
+      operationId: devices_getGraphBPreIds
       requestBody:
         description: Action parameters
         content:
@@ -3589,7 +3589,7 @@ paths:
       tags:
         - directory.administrativeUnit
       summary: Delete ref of navigation property members for directory
-      operationId: directory.administrativeUnits_DeleteGraphRefMembers
+      operationId: directory.administrativeUnits_DeleteMembersGraphBPreRef
       parameters:
         - name: administrativeUnit-id
           in: path
@@ -3626,7 +3626,7 @@ paths:
       tags:
         - directory.administrativeUnit
       summary: Get ref of members from directory
-      operationId: directory.administrativeUnits_ListGraphRefMembers
+      operationId: directory.administrativeUnits_ListMembersGraphBPreRef
       parameters:
         - name: administrativeUnit-id
           in: path
@@ -3668,7 +3668,7 @@ paths:
       tags:
         - directory.administrativeUnit
       summary: Create new navigation property ref to members for directory
-      operationId: directory.administrativeUnits_CreateGraphRefMembers
+      operationId: directory.administrativeUnits_CreateMembersGraphBPreRef
       parameters:
         - name: administrativeUnit-id
           in: path
@@ -4392,7 +4392,7 @@ paths:
       tags:
         - directory.Actions
       summary: Invoke action getByIds
-      operationId: directory.deletedItems_getByIds
+      operationId: directory.deletedItems_getGraphBPreIds
       requestBody:
         description: Action parameters
         content:
@@ -4966,7 +4966,7 @@ paths:
       tags:
         - directoryRoles.directoryObject
       summary: Delete ref of navigation property members for directoryRoles
-      operationId: directoryRoles_DeleteGraphRefMembers
+      operationId: directoryRoles_DeleteMembersGraphBPreRef
       parameters:
         - name: directoryRole-id
           in: path
@@ -5003,7 +5003,7 @@ paths:
       tags:
         - directoryRoles.directoryObject
       summary: Get ref of members from directoryRoles
-      operationId: directoryRoles_ListGraphRefMembers
+      operationId: directoryRoles_ListMembersGraphBPreRef
       parameters:
         - name: directoryRole-id
           in: path
@@ -5045,7 +5045,7 @@ paths:
       tags:
         - directoryRoles.directoryObject
       summary: Create new navigation property ref to members for directoryRoles
-      operationId: directoryRoles_CreateGraphRefMembers
+      operationId: directoryRoles_CreateMembersGraphBPreRef
       parameters:
         - name: directoryRole-id
           in: path
@@ -5576,7 +5576,7 @@ paths:
       tags:
         - directoryRoles.Actions
       summary: Invoke action getByIds
-      operationId: directoryRoles_getByIds
+      operationId: directoryRoles_getGraphBPreIds
       requestBody:
         description: Action parameters
         content:
@@ -6101,7 +6101,7 @@ paths:
       tags:
         - directoryRoleTemplates.Actions
       summary: Invoke action getByIds
-      operationId: directoryRoleTemplates_getByIds
+      operationId: directoryRoleTemplates_getGraphBPreIds
       requestBody:
         description: Action parameters
         content:
@@ -8885,7 +8885,7 @@ paths:
       tags:
         - organization.Actions
       summary: Invoke action getByIds
-      operationId: organization_getByIds
+      operationId: organization_getGraphBPreIds
       requestBody:
         description: Action parameters
         content:
@@ -9142,7 +9142,7 @@ paths:
       tags:
         - users.scopedRoleMembership
       summary: Get scopedRoleMemberOf from users
-      operationId: users_ListScopedRoleMemberOf
+      operationId: users_ListScopedRoleMemberGraphOPre
       parameters:
         - name: user-id
           in: path
@@ -9215,7 +9215,7 @@ paths:
       tags:
         - users.scopedRoleMembership
       summary: Create new navigation property to scopedRoleMemberOf for users
-      operationId: users_CreateScopedRoleMemberOf
+      operationId: users_CreateScopedRoleMemberGraphOPre
       parameters:
         - name: user-id
           in: path
@@ -9246,7 +9246,7 @@ paths:
       tags:
         - users.scopedRoleMembership
       summary: Get scopedRoleMemberOf from users
-      operationId: users_GetScopedRoleMemberOf
+      operationId: users_GetScopedRoleMemberGraphOPre
       parameters:
         - name: user-id
           in: path
@@ -9303,7 +9303,7 @@ paths:
       tags:
         - users.scopedRoleMembership
       summary: Update the navigation property scopedRoleMemberOf in users
-      operationId: users_UpdateScopedRoleMemberOf
+      operationId: users_UpdateScopedRoleMemberGraphOPre
       parameters:
         - name: user-id
           in: path
@@ -9336,7 +9336,7 @@ paths:
       tags:
         - users.scopedRoleMembership
       summary: Delete navigation property scopedRoleMemberOf for users
-      operationId: users_DeleteScopedRoleMemberOf
+      operationId: users_DeleteScopedRoleMemberGraphOPre
       parameters:
         - name: user-id
           in: path

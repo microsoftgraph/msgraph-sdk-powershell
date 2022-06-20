@@ -106,7 +106,7 @@ paths:
             windowsInformationProtectionPolicies:
               operationId: deviceAppManagement.ListWindowsInformationProtectionPolicies
             syncMicrosoftStoreForBusinessApps:
-              operationId: deviceAppManagement.syncMicrosoftStoreForBusinessApps
+              operationId: deviceAppManagement.syncMicrosoftStoreGraphFPreBusinessApps
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3465,7 +3465,7 @@ paths:
       tags:
         - deviceAppManagement.Functions
       summary: Invoke function getUserIdsWithFlaggedAppRegistration
-      operationId: deviceAppManagement.managedAppRegistrations_getUserIdsWithFlaggedAppRegistration
+      operationId: deviceAppManagement.managedAppRegistrations_getUserIdsGraphWPreFlaggedAppRegistration
       responses:
         '200':
           description: Success
@@ -5363,7 +5363,7 @@ paths:
       tags:
         - deviceAppManagement.Actions
       summary: Invoke action syncMicrosoftStoreForBusinessApps
-      operationId: deviceAppManagement_syncMicrosoftStoreForBusinessApps
+      operationId: deviceAppManagement_syncMicrosoftStoreGraphFPreBusinessApps
       responses:
         '204':
           description: Success

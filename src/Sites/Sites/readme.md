@@ -49,25 +49,9 @@ directive:
   - where:
       verb: Get
       subject: ^Site$
-      variant: ^Get2$|^GetViaIdentity2$|^Get5$|^GetViaIdentity5$|^List1$|^List3$
+      variant: ^Get1$|^GetViaIdentity1$|^Get3$|^GetViaIdentity3$|^List1$|^List3$
     set:
       subject: SubSite
-  - where:
-      verb: Get
-      subject: (^Site$)
-      variant: ^Get1$|^GetViaIdentity1$|^Get4$|^GetViaIdentity4$
-    set:
-      subject: $1ByPath
-  - where:
-      verb: Get
-      subject: (^SiteActivity$)
-    set:
-      subject: $1ByInterval
-  - where:
-      verb: Get
-      subject: (^SiteListItemActivity$)
-    set:
-      subject: $1ByInterval
   - where:
       verb: Get
       subject: ^(Site)OnenoteNotebook(RecentNotebook$)
@@ -98,6 +82,6 @@ directive:
 ### Versioning
 
 ``` yaml
-module-version: 1.9.6
+module-version: 1.10.0
 release-notes: See https://aka.ms/GraphPowerShell-Release.
 ```
