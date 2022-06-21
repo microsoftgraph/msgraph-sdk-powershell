@@ -46,7 +46,7 @@ Describe 'New-MgInvitation' {
                 Mail = $env.Users[0].Mail
                 UserPrincipalName = $env.Users[0].Mail
             }
-            { New-MgInvitation -InvitedUser $MyUser -ErrorAction Stop } | Should -Throw -ErrorId 'BadRequest,Microsoft.Graph.PowerShell.Cmdlets.NewMgInvitation_CreateExpanded1' -ExpectedMessage 'Invalid Email Address' -ExceptionType 'Microsoft.Graph.PowerShell.Runtime.RestException<Microsoft.Graph.PowerShell.Models.IOdataError>' 
+            { New-MgInvitation -InvitedUser $MyUser -ErrorAction Stop } | Should -Throw -ErrorId 'BadRequest,Microsoft.Graph.PowerShell.Cmdlets.NewMgInvitation_CreateExpanded' -ExpectedMessage 'Invalid Email Address' -ExceptionType 'Microsoft.Graph.PowerShell.Runtime.RestException<Microsoft.Graph.PowerShell.Models.IOdataError>' 
         }
     }
 
@@ -74,7 +74,7 @@ Describe 'New-MgInvitation' {
                 Mail = $env.Users[0].Mail
                 UserPrincipalName = $env.Users[0].Mail
             }
-            { New-MgInvitation -BodyParameter @{ InvitedUser = $MyUser } -ErrorAction Stop } | Should -Throw -ErrorId 'BadRequest,Microsoft.Graph.PowerShell.Cmdlets.NewMgInvitation_Create1' -ExpectedMessage 'Invalid Email Address' -ExceptionType 'Microsoft.Graph.PowerShell.Runtime.RestException<Microsoft.Graph.PowerShell.Models.IOdataError>' 
+            { New-MgInvitation -BodyParameter @{ InvitedUser = $MyUser } -ErrorAction Stop } | Should -Throw -ErrorId 'BadRequest,Microsoft.Graph.PowerShell.Cmdlets.NewMgInvitation_Create' -ExpectedMessage 'Invalid Email Address' -ExceptionType 'Microsoft.Graph.PowerShell.Runtime.RestException<Microsoft.Graph.PowerShell.Models.IOdataError>' 
         }
     }
 }

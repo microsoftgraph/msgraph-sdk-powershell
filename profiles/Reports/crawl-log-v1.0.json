@@ -113,7 +113,7 @@
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Reports.yml"
     },
-    "/reports/microsoft.graph.getGroupArchivedPrintJobs(groupId='{groupId}',startDateTime={startDateTime},endDateTime={endDateTime})": {
+    "/reports/microsoft.graph.getGroupArchivedPrintJobs(groupId='{groupId}',startDateTime='{startDateTime}',endDateTime='{endDateTime}')": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Reports.yml"
     },
@@ -221,7 +221,7 @@
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Reports.yml"
     },
-    "/reports/microsoft.graph.getPrinterArchivedPrintJobs(printerId='{printerId}',startDateTime={startDateTime},endDateTime={endDateTime})": {
+    "/reports/microsoft.graph.getPrinterArchivedPrintJobs(printerId='{printerId}',startDateTime='{startDateTime}',endDateTime='{endDateTime}')": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Reports.yml"
     },
@@ -369,7 +369,7 @@
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Reports.yml"
     },
-    "/reports/microsoft.graph.getUserArchivedPrintJobs(userId='{userId}',startDateTime={startDateTime},endDateTime={endDateTime})": {
+    "/reports/microsoft.graph.getUserArchivedPrintJobs(userId='{userId}',startDateTime='{startDateTime}',endDateTime='{endDateTime}')": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Reports.yml"
     },

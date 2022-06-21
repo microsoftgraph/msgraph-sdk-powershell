@@ -173,6 +173,10 @@ paths:
               operationId: deviceManagement.ListWindowsInformationProtectionAppLearningSummaries
             windowsInformationProtectionNetworkLearningSummaries:
               operationId: deviceManagement.ListWindowsInformationProtectionNetworkLearningSummaries
+            getEffectivePermissions:
+              operationId: deviceManagement.getEffectivePermissions
+            verifyWindowsEnrollmentAutoDiscovery:
+              operationId: deviceManagement.verifyWindowsEnrollmentAutoDiscovery
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -199,7 +203,6 @@ paths:
       tags:
         - deviceManagement.detectedApp
       summary: Get detectedApps from deviceManagement
-      description: The list of detected apps associated with a device.
       operationId: deviceManagement_ListDetectedApps
       parameters:
         - $ref: '#/components/parameters/top'
@@ -260,21 +263,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of detectedApp
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.detectedApp'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.detectedAppCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -285,7 +274,6 @@ paths:
       tags:
         - deviceManagement.detectedApp
       summary: Create new navigation property to detectedApps for deviceManagement
-      description: The list of detected apps associated with a device.
       operationId: deviceManagement_CreateDetectedApps
       requestBody:
         description: New navigation property
@@ -309,7 +297,6 @@ paths:
       tags:
         - deviceManagement.detectedApp
       summary: Get detectedApps from deviceManagement
-      description: The list of detected apps associated with a device.
       operationId: deviceManagement_GetDetectedApps
       parameters:
         - name: detectedApp-id
@@ -368,7 +355,6 @@ paths:
       tags:
         - deviceManagement.detectedApp
       summary: Update the navigation property detectedApps in deviceManagement
-      description: The list of detected apps associated with a device.
       operationId: deviceManagement_UpdateDetectedApps
       parameters:
         - name: detectedApp-id
@@ -395,7 +381,6 @@ paths:
       tags:
         - deviceManagement.detectedApp
       summary: Delete navigation property detectedApps for deviceManagement
-      description: The list of detected apps associated with a device.
       operationId: deviceManagement_DeleteDetectedApps
       parameters:
         - name: detectedApp-id
@@ -421,7 +406,6 @@ paths:
       tags:
         - deviceManagement.detectedApp
       summary: Get managedDevices from deviceManagement
-      description: The devices that have the discovered application installed
       operationId: deviceManagement.detectedApps_ListManagedDevices
       parameters:
         - name: detectedApp-id
@@ -634,34 +618,19 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of managedDevice
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.managedDevice'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.managedDeviceCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
       x-ms-docs-operation-type: operation
-  '/deviceManagement/detectedApps/{detectedApp-id}/managedDevices/$ref':
+  '/deviceManagement/detectedApps/{detectedApp-id}/managedDevices/{managedDevice-id}':
     get:
       tags:
         - deviceManagement.detectedApp
-      summary: Get ref of managedDevices from deviceManagement
-      description: The devices that have the discovered application installed
-      operationId: deviceManagement.detectedApps_ListGraphRefManagedDevices
+      summary: Get managedDevices from deviceManagement
+      operationId: deviceManagement.detectedApps_GetManagedDevices
       parameters:
         - name: detectedApp-id
           in: path
@@ -670,14 +639,16 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: detectedApp
-        - $ref: '#/components/parameters/top'
-        - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
-        - $ref: '#/components/parameters/filter'
-        - $ref: '#/components/parameters/count'
-        - name: $orderby
+        - name: managedDevice-id
+          in: path
+          description: 'key: id of managedDevice'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: managedDevice
+        - name: $select
           in: query
-          description: Order items by property values
+          description: Select properties to be returned
           style: form
           explode: false
           schema:
@@ -686,165 +657,99 @@ paths:
             items:
               enum:
                 - id
-                - id desc
                 - activationLockBypassCode
-                - activationLockBypassCode desc
                 - androidSecurityPatchLevel
-                - androidSecurityPatchLevel desc
                 - azureADDeviceId
-                - azureADDeviceId desc
                 - azureADRegistered
-                - azureADRegistered desc
                 - complianceGracePeriodExpirationDateTime
-                - complianceGracePeriodExpirationDateTime desc
                 - complianceState
-                - complianceState desc
                 - configurationManagerClientEnabledFeatures
-                - configurationManagerClientEnabledFeatures desc
                 - deviceActionResults
-                - deviceActionResults desc
                 - deviceCategoryDisplayName
-                - deviceCategoryDisplayName desc
                 - deviceEnrollmentType
-                - deviceEnrollmentType desc
                 - deviceHealthAttestationState
-                - deviceHealthAttestationState desc
                 - deviceName
-                - deviceName desc
                 - deviceRegistrationState
-                - deviceRegistrationState desc
                 - easActivated
-                - easActivated desc
                 - easActivationDateTime
-                - easActivationDateTime desc
                 - easDeviceId
-                - easDeviceId desc
                 - emailAddress
-                - emailAddress desc
                 - enrolledDateTime
-                - enrolledDateTime desc
                 - ethernetMacAddress
-                - ethernetMacAddress desc
                 - exchangeAccessState
-                - exchangeAccessState desc
                 - exchangeAccessStateReason
-                - exchangeAccessStateReason desc
                 - exchangeLastSuccessfulSyncDateTime
-                - exchangeLastSuccessfulSyncDateTime desc
                 - freeStorageSpaceInBytes
-                - freeStorageSpaceInBytes desc
                 - iccid
-                - iccid desc
                 - imei
-                - imei desc
                 - isEncrypted
-                - isEncrypted desc
                 - isSupervised
-                - isSupervised desc
                 - jailBroken
-                - jailBroken desc
                 - lastSyncDateTime
-                - lastSyncDateTime desc
                 - managedDeviceName
-                - managedDeviceName desc
                 - managedDeviceOwnerType
-                - managedDeviceOwnerType desc
                 - managementAgent
-                - managementAgent desc
                 - manufacturer
-                - manufacturer desc
                 - meid
-                - meid desc
                 - model
-                - model desc
                 - notes
-                - notes desc
                 - operatingSystem
-                - operatingSystem desc
                 - osVersion
-                - osVersion desc
                 - partnerReportedThreatState
-                - partnerReportedThreatState desc
                 - phoneNumber
-                - phoneNumber desc
                 - physicalMemoryInBytes
-                - physicalMemoryInBytes desc
                 - remoteAssistanceSessionErrorDetails
-                - remoteAssistanceSessionErrorDetails desc
                 - remoteAssistanceSessionUrl
-                - remoteAssistanceSessionUrl desc
                 - serialNumber
-                - serialNumber desc
                 - subscriberCarrier
-                - subscriberCarrier desc
                 - totalStorageSpaceInBytes
-                - totalStorageSpaceInBytes desc
                 - udid
-                - udid desc
                 - userDisplayName
-                - userDisplayName desc
                 - userId
-                - userId desc
                 - userPrincipalName
-                - userPrincipalName desc
                 - wiFiMacAddress
-                - wiFiMacAddress desc
+                - deviceCompliancePolicyStates
+                - deviceConfigurationStates
+                - deviceCategory
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - deviceCompliancePolicyStates
+                - deviceConfigurationStates
+                - deviceCategory
               type: string
       responses:
         '200':
-          description: Retrieved navigation property links
+          description: Retrieved navigation property
           content:
             application/json:
               schema:
-                title: Collection of links of managedDevice
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      type: string
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
-      x-ms-docs-operation-type: operation
-    post:
-      tags:
-        - deviceManagement.detectedApp
-      summary: Create new navigation property ref to managedDevices for deviceManagement
-      description: The devices that have the discovered application installed
-      operationId: deviceManagement.detectedApps_CreateGraphRefManagedDevices
-      parameters:
-        - name: detectedApp-id
-          in: path
-          description: 'key: id of detectedApp'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: detectedApp
-      requestBody:
-        description: New navigation property ref value
-        content:
-          application/json:
-            schema:
-              type: object
-              additionalProperties:
-                type: object
-        required: true
-      responses:
-        '201':
-          description: Created navigation property link.
-          content:
-            application/json:
-              schema:
-                type: object
-                additionalProperties:
-                  type: object
+                $ref: '#/components/schemas/microsoft.graph.managedDevice'
+          links:
+            deviceCompliancePolicyStates:
+              operationId: deviceManagement.detectedApps.ManagedDevices.ListDeviceCompliancePolicyStates
+              parameters:
+                detectedApp-id: $request.path.detectedApp-id
+                managedDevice-id: $request.path.managedDevice-id
+            deviceConfigurationStates:
+              operationId: deviceManagement.detectedApps.ManagedDevices.ListDeviceConfigurationStates
+              parameters:
+                detectedApp-id: $request.path.detectedApp-id
+                managedDevice-id: $request.path.managedDevice-id
+            deviceCategory:
+              operationId: deviceManagement.detectedApps.ManagedDevices.GetDeviceCategory
+              parameters:
+                detectedApp-id: $request.path.detectedApp-id
+                managedDevice-id: $request.path.managedDevice-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -853,7 +758,6 @@ paths:
       tags:
         - deviceManagement.deviceCategory
       summary: Get deviceCategories from deviceManagement
-      description: The list of device categories with the tenant.
       operationId: deviceManagement_ListDeviceCategories
       parameters:
         - $ref: '#/components/parameters/top'
@@ -906,21 +810,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of deviceCategory
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.deviceCategory'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.deviceCategoryCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -931,7 +821,6 @@ paths:
       tags:
         - deviceManagement.deviceCategory
       summary: Create new navigation property to deviceCategories for deviceManagement
-      description: The list of device categories with the tenant.
       operationId: deviceManagement_CreateDeviceCategories
       requestBody:
         description: New navigation property
@@ -955,7 +844,6 @@ paths:
       tags:
         - deviceManagement.deviceCategory
       summary: Get deviceCategories from deviceManagement
-      description: The list of device categories with the tenant.
       operationId: deviceManagement_GetDeviceCategories
       parameters:
         - name: deviceCategory-id
@@ -1005,7 +893,6 @@ paths:
       tags:
         - deviceManagement.deviceCategory
       summary: Update the navigation property deviceCategories in deviceManagement
-      description: The list of device categories with the tenant.
       operationId: deviceManagement_UpdateDeviceCategories
       parameters:
         - name: deviceCategory-id
@@ -1032,7 +919,6 @@ paths:
       tags:
         - deviceManagement.deviceCategory
       summary: Delete navigation property deviceCategories for deviceManagement
-      description: The list of device categories with the tenant.
       operationId: deviceManagement_DeleteDeviceCategories
       parameters:
         - name: deviceCategory-id
@@ -1058,7 +944,6 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicy
       summary: Get deviceCompliancePolicies from deviceManagement
-      description: The device compliance policies.
       operationId: deviceManagement_ListDeviceCompliancePolicies
       parameters:
         - $ref: '#/components/parameters/top'
@@ -1134,21 +1019,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of deviceCompliancePolicy
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.deviceCompliancePolicy'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.deviceCompliancePolicyCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -1159,7 +1030,6 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicy
       summary: Create new navigation property to deviceCompliancePolicies for deviceManagement
-      description: The device compliance policies.
       operationId: deviceManagement_CreateDeviceCompliancePolicies
       requestBody:
         description: New navigation property
@@ -1183,7 +1053,6 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicy
       summary: Get deviceCompliancePolicies from deviceManagement
-      description: The device compliance policies.
       operationId: deviceManagement_GetDeviceCompliancePolicies
       parameters:
         - name: deviceCompliancePolicy-id
@@ -1261,7 +1130,7 @@ paths:
               parameters:
                 deviceCompliancePolicy-id: $request.path.deviceCompliancePolicy-id
             scheduledActionsForRule:
-              operationId: deviceManagement.DeviceCompliancePolicies.ListScheduledActionsForRule
+              operationId: deviceManagement.DeviceCompliancePolicies.ListScheduledActionsGraphFPreRule
               parameters:
                 deviceCompliancePolicy-id: $request.path.deviceCompliancePolicy-id
             userStatuses:
@@ -1272,6 +1141,10 @@ paths:
               operationId: deviceManagement.DeviceCompliancePolicies.GetUserStatusOverview
               parameters:
                 deviceCompliancePolicy-id: $request.path.deviceCompliancePolicy-id
+            assign:
+              operationId: deviceManagement.deviceCompliancePolicies.deviceCompliancePolicy.assign
+            scheduleActionsForRules:
+              operationId: deviceManagement.deviceCompliancePolicies.deviceCompliancePolicy.scheduleActionsGraphFPreRules
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1279,7 +1152,6 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicy
       summary: Update the navigation property deviceCompliancePolicies in deviceManagement
-      description: The device compliance policies.
       operationId: deviceManagement_UpdateDeviceCompliancePolicies
       parameters:
         - name: deviceCompliancePolicy-id
@@ -1306,7 +1178,6 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicy
       summary: Delete navigation property deviceCompliancePolicies for deviceManagement
-      description: The device compliance policies.
       operationId: deviceManagement_DeleteDeviceCompliancePolicies
       parameters:
         - name: deviceCompliancePolicy-id
@@ -1332,7 +1203,6 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicy
       summary: Get assignments from deviceManagement
-      description: The collection of assignments for this compliance policy.
       operationId: deviceManagement.deviceCompliancePolicies_ListAssignments
       parameters:
         - name: deviceCompliancePolicy-id
@@ -1389,21 +1259,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of deviceCompliancePolicyAssignment
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.deviceCompliancePolicyAssignment'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.deviceCompliancePolicyAssignmentCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -1414,7 +1270,6 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicy
       summary: Create new navigation property to assignments for deviceManagement
-      description: The collection of assignments for this compliance policy.
       operationId: deviceManagement.deviceCompliancePolicies_CreateAssignments
       parameters:
         - name: deviceCompliancePolicy-id
@@ -1446,7 +1301,6 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicy
       summary: Get assignments from deviceManagement
-      description: The collection of assignments for this compliance policy.
       operationId: deviceManagement.deviceCompliancePolicies_GetAssignments
       parameters:
         - name: deviceCompliancePolicy-id
@@ -1502,7 +1356,6 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicy
       summary: Update the navigation property assignments in deviceManagement
-      description: The collection of assignments for this compliance policy.
       operationId: deviceManagement.deviceCompliancePolicies_UpdateAssignments
       parameters:
         - name: deviceCompliancePolicy-id
@@ -1536,7 +1389,6 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicy
       summary: Delete navigation property assignments for deviceManagement
-      description: The collection of assignments for this compliance policy.
       operationId: deviceManagement.deviceCompliancePolicies_DeleteAssignments
       parameters:
         - name: deviceCompliancePolicy-id
@@ -1569,7 +1421,6 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicy
       summary: Get deviceSettingStateSummaries from deviceManagement
-      description: Compliance Setting State Device Summary
       operationId: deviceManagement.deviceCompliancePolicies_ListDeviceSettingStateSummaries
       parameters:
         - name: deviceCompliancePolicy-id
@@ -1650,21 +1501,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of settingStateDeviceSummary
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.settingStateDeviceSummary'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.settingStateDeviceSummaryCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -1675,7 +1512,6 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicy
       summary: Create new navigation property to deviceSettingStateSummaries for deviceManagement
-      description: Compliance Setting State Device Summary
       operationId: deviceManagement.deviceCompliancePolicies_CreateDeviceSettingStateSummaries
       parameters:
         - name: deviceCompliancePolicy-id
@@ -1707,7 +1543,6 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicy
       summary: Get deviceSettingStateSummaries from deviceManagement
-      description: Compliance Setting State Device Summary
       operationId: deviceManagement.deviceCompliancePolicies_GetDeviceSettingStateSummaries
       parameters:
         - name: deviceCompliancePolicy-id
@@ -1771,7 +1606,6 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicy
       summary: Update the navigation property deviceSettingStateSummaries in deviceManagement
-      description: Compliance Setting State Device Summary
       operationId: deviceManagement.deviceCompliancePolicies_UpdateDeviceSettingStateSummaries
       parameters:
         - name: deviceCompliancePolicy-id
@@ -1805,7 +1639,6 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicy
       summary: Delete navigation property deviceSettingStateSummaries for deviceManagement
-      description: Compliance Setting State Device Summary
       operationId: deviceManagement.deviceCompliancePolicies_DeleteDeviceSettingStateSummaries
       parameters:
         - name: deviceCompliancePolicy-id
@@ -1838,7 +1671,6 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicy
       summary: Get deviceStatuses from deviceManagement
-      description: List of DeviceComplianceDeviceStatus.
       operationId: deviceManagement.deviceCompliancePolicies_ListDeviceStatuses
       parameters:
         - name: deviceCompliancePolicy-id
@@ -1913,21 +1745,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of deviceComplianceDeviceStatus
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.deviceComplianceDeviceStatus'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.deviceComplianceDeviceStatusCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -1938,7 +1756,6 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicy
       summary: Create new navigation property to deviceStatuses for deviceManagement
-      description: List of DeviceComplianceDeviceStatus.
       operationId: deviceManagement.deviceCompliancePolicies_CreateDeviceStatuses
       parameters:
         - name: deviceCompliancePolicy-id
@@ -1970,7 +1787,6 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicy
       summary: Get deviceStatuses from deviceManagement
-      description: List of DeviceComplianceDeviceStatus.
       operationId: deviceManagement.deviceCompliancePolicies_GetDeviceStatuses
       parameters:
         - name: deviceCompliancePolicy-id
@@ -2032,7 +1848,6 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicy
       summary: Update the navigation property deviceStatuses in deviceManagement
-      description: List of DeviceComplianceDeviceStatus.
       operationId: deviceManagement.deviceCompliancePolicies_UpdateDeviceStatuses
       parameters:
         - name: deviceCompliancePolicy-id
@@ -2066,7 +1881,6 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicy
       summary: Delete navigation property deviceStatuses for deviceManagement
-      description: List of DeviceComplianceDeviceStatus.
       operationId: deviceManagement.deviceCompliancePolicies_DeleteDeviceStatuses
       parameters:
         - name: deviceCompliancePolicy-id
@@ -2099,7 +1913,6 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicy
       summary: Get deviceStatusOverview from deviceManagement
-      description: Device compliance devices status overview
       operationId: deviceManagement.deviceCompliancePolicies_GetDeviceStatusOverview
       parameters:
         - name: deviceCompliancePolicy-id
@@ -2154,7 +1967,6 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicy
       summary: Update the navigation property deviceStatusOverview in deviceManagement
-      description: Device compliance devices status overview
       operationId: deviceManagement.deviceCompliancePolicies_UpdateDeviceStatusOverview
       parameters:
         - name: deviceCompliancePolicy-id
@@ -2181,7 +1993,6 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicy
       summary: Delete navigation property deviceStatusOverview for deviceManagement
-      description: Device compliance devices status overview
       operationId: deviceManagement.deviceCompliancePolicies_DeleteDeviceStatusOverview
       parameters:
         - name: deviceCompliancePolicy-id
@@ -2207,8 +2018,7 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicy
       summary: Get scheduledActionsForRule from deviceManagement
-      description: The list of scheduled action per rule for this compliance policy. This is a required property when creating any individual per-platform compliance policies.
-      operationId: deviceManagement.deviceCompliancePolicies_ListScheduledActionsForRule
+      operationId: deviceManagement.deviceCompliancePolicies_ListScheduledActionsGraphFPreRule
       parameters:
         - name: deviceCompliancePolicy-id
           in: path
@@ -2266,21 +2076,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of deviceComplianceScheduledActionForRule
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.deviceComplianceScheduledActionForRule'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.deviceComplianceScheduledActionForRuleCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -2291,8 +2087,7 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicy
       summary: Create new navigation property to scheduledActionsForRule for deviceManagement
-      description: The list of scheduled action per rule for this compliance policy. This is a required property when creating any individual per-platform compliance policies.
-      operationId: deviceManagement.deviceCompliancePolicies_CreateScheduledActionsForRule
+      operationId: deviceManagement.deviceCompliancePolicies_CreateScheduledActionsGraphFPreRule
       parameters:
         - name: deviceCompliancePolicy-id
           in: path
@@ -2323,8 +2118,7 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicy
       summary: Get scheduledActionsForRule from deviceManagement
-      description: The list of scheduled action per rule for this compliance policy. This is a required property when creating any individual per-platform compliance policies.
-      operationId: deviceManagement.deviceCompliancePolicies_GetScheduledActionsForRule
+      operationId: deviceManagement.deviceCompliancePolicies_GetScheduledActionsGraphFPreRule
       parameters:
         - name: deviceCompliancePolicy-id
           in: path
@@ -2376,7 +2170,7 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.deviceComplianceScheduledActionForRule'
           links:
             scheduledActionConfigurations:
-              operationId: deviceManagement.deviceCompliancePolicies.ScheduledActionsForRule.ListScheduledActionConfigurations
+              operationId: deviceManagement.deviceCompliancePolicies.ScheduledActionsGraphFPreRule.ListScheduledActionConfigurations
               parameters:
                 deviceCompliancePolicy-id: $request.path.deviceCompliancePolicy-id
                 deviceComplianceScheduledActionForRule-id: $request.path.deviceComplianceScheduledActionForRule-id
@@ -2387,8 +2181,7 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicy
       summary: Update the navigation property scheduledActionsForRule in deviceManagement
-      description: The list of scheduled action per rule for this compliance policy. This is a required property when creating any individual per-platform compliance policies.
-      operationId: deviceManagement.deviceCompliancePolicies_UpdateScheduledActionsForRule
+      operationId: deviceManagement.deviceCompliancePolicies_UpdateScheduledActionsGraphFPreRule
       parameters:
         - name: deviceCompliancePolicy-id
           in: path
@@ -2421,8 +2214,7 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicy
       summary: Delete navigation property scheduledActionsForRule for deviceManagement
-      description: The list of scheduled action per rule for this compliance policy. This is a required property when creating any individual per-platform compliance policies.
-      operationId: deviceManagement.deviceCompliancePolicies_DeleteScheduledActionsForRule
+      operationId: deviceManagement.deviceCompliancePolicies_DeleteScheduledActionsGraphFPreRule
       parameters:
         - name: deviceCompliancePolicy-id
           in: path
@@ -2454,8 +2246,7 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicy
       summary: Get scheduledActionConfigurations from deviceManagement
-      description: The list of scheduled action configurations for this compliance policy. Compliance policy must have one and only one block scheduled action.
-      operationId: deviceManagement.deviceCompliancePolicies.scheduledActionsForRule_ListScheduledActionConfigurations
+      operationId: deviceManagement.deviceCompliancePolicies.scheduledActionsGraphFPreRule_ListScheduledActionConfigurations
       parameters:
         - name: deviceCompliancePolicy-id
           in: path
@@ -2527,21 +2318,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of deviceComplianceActionItem
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.deviceComplianceActionItem'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.deviceComplianceActionItemCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -2552,8 +2329,7 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicy
       summary: Create new navigation property to scheduledActionConfigurations for deviceManagement
-      description: The list of scheduled action configurations for this compliance policy. Compliance policy must have one and only one block scheduled action.
-      operationId: deviceManagement.deviceCompliancePolicies.scheduledActionsForRule_CreateScheduledActionConfigurations
+      operationId: deviceManagement.deviceCompliancePolicies.scheduledActionsGraphFPreRule_CreateScheduledActionConfigurations
       parameters:
         - name: deviceCompliancePolicy-id
           in: path
@@ -2591,8 +2367,7 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicy
       summary: Get scheduledActionConfigurations from deviceManagement
-      description: The list of scheduled action configurations for this compliance policy. Compliance policy must have one and only one block scheduled action.
-      operationId: deviceManagement.deviceCompliancePolicies.scheduledActionsForRule_GetScheduledActionConfigurations
+      operationId: deviceManagement.deviceCompliancePolicies.scheduledActionsGraphFPreRule_GetScheduledActionConfigurations
       parameters:
         - name: deviceCompliancePolicy-id
           in: path
@@ -2657,8 +2432,7 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicy
       summary: Update the navigation property scheduledActionConfigurations in deviceManagement
-      description: The list of scheduled action configurations for this compliance policy. Compliance policy must have one and only one block scheduled action.
-      operationId: deviceManagement.deviceCompliancePolicies.scheduledActionsForRule_UpdateScheduledActionConfigurations
+      operationId: deviceManagement.deviceCompliancePolicies.scheduledActionsGraphFPreRule_UpdateScheduledActionConfigurations
       parameters:
         - name: deviceCompliancePolicy-id
           in: path
@@ -2698,8 +2472,7 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicy
       summary: Delete navigation property scheduledActionConfigurations for deviceManagement
-      description: The list of scheduled action configurations for this compliance policy. Compliance policy must have one and only one block scheduled action.
-      operationId: deviceManagement.deviceCompliancePolicies.scheduledActionsForRule_DeleteScheduledActionConfigurations
+      operationId: deviceManagement.deviceCompliancePolicies.scheduledActionsGraphFPreRule_DeleteScheduledActionConfigurations
       parameters:
         - name: deviceCompliancePolicy-id
           in: path
@@ -2738,7 +2511,6 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicy
       summary: Get userStatuses from deviceManagement
-      description: List of DeviceComplianceUserStatus.
       operationId: deviceManagement.deviceCompliancePolicies_ListUserStatuses
       parameters:
         - name: deviceCompliancePolicy-id
@@ -2807,21 +2579,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of deviceComplianceUserStatus
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.deviceComplianceUserStatus'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.deviceComplianceUserStatusCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -2832,7 +2590,6 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicy
       summary: Create new navigation property to userStatuses for deviceManagement
-      description: List of DeviceComplianceUserStatus.
       operationId: deviceManagement.deviceCompliancePolicies_CreateUserStatuses
       parameters:
         - name: deviceCompliancePolicy-id
@@ -2864,7 +2621,6 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicy
       summary: Get userStatuses from deviceManagement
-      description: List of DeviceComplianceUserStatus.
       operationId: deviceManagement.deviceCompliancePolicies_GetUserStatuses
       parameters:
         - name: deviceCompliancePolicy-id
@@ -2924,7 +2680,6 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicy
       summary: Update the navigation property userStatuses in deviceManagement
-      description: List of DeviceComplianceUserStatus.
       operationId: deviceManagement.deviceCompliancePolicies_UpdateUserStatuses
       parameters:
         - name: deviceCompliancePolicy-id
@@ -2958,7 +2713,6 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicy
       summary: Delete navigation property userStatuses for deviceManagement
-      description: List of DeviceComplianceUserStatus.
       operationId: deviceManagement.deviceCompliancePolicies_DeleteUserStatuses
       parameters:
         - name: deviceCompliancePolicy-id
@@ -2991,7 +2745,6 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicy
       summary: Get userStatusOverview from deviceManagement
-      description: Device compliance users status overview
       operationId: deviceManagement.deviceCompliancePolicies_GetUserStatusOverview
       parameters:
         - name: deviceCompliancePolicy-id
@@ -3046,7 +2799,6 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicy
       summary: Update the navigation property userStatusOverview in deviceManagement
-      description: Device compliance users status overview
       operationId: deviceManagement.deviceCompliancePolicies_UpdateUserStatusOverview
       parameters:
         - name: deviceCompliancePolicy-id
@@ -3073,7 +2825,6 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicy
       summary: Delete navigation property userStatusOverview for deviceManagement
-      description: Device compliance users status overview
       operationId: deviceManagement.deviceCompliancePolicies_DeleteUserStatusOverview
       parameters:
         - name: deviceCompliancePolicy-id
@@ -3099,7 +2850,6 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicyDeviceStateSummary
       summary: Get deviceCompliancePolicyDeviceStateSummary from deviceManagement
-      description: The device compliance state summary for this account.
       operationId: deviceManagement_GetDeviceCompliancePolicyDeviceStateSummary
       parameters:
         - name: $select
@@ -3149,7 +2899,6 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicyDeviceStateSummary
       summary: Update the navigation property deviceCompliancePolicyDeviceStateSummary in deviceManagement
-      description: The device compliance state summary for this account.
       operationId: deviceManagement_UpdateDeviceCompliancePolicyDeviceStateSummary
       requestBody:
         description: New navigation property values
@@ -3168,7 +2917,6 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicyDeviceStateSummary
       summary: Delete navigation property deviceCompliancePolicyDeviceStateSummary for deviceManagement
-      description: The device compliance state summary for this account.
       operationId: deviceManagement_DeleteDeviceCompliancePolicyDeviceStateSummary
       parameters:
         - name: If-Match
@@ -3187,7 +2935,6 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicySettingStateSummary
       summary: Get deviceCompliancePolicySettingStateSummaries from deviceManagement
-      description: The summary states of compliance policy settings for this account.
       operationId: deviceManagement_ListDeviceCompliancePolicySettingStateSummaries
       parameters:
         - $ref: '#/components/parameters/top'
@@ -3266,21 +3013,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of deviceCompliancePolicySettingStateSummary
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.deviceCompliancePolicySettingStateSummary'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.deviceCompliancePolicySettingStateSummaryCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -3291,7 +3024,6 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicySettingStateSummary
       summary: Create new navigation property to deviceCompliancePolicySettingStateSummaries for deviceManagement
-      description: The summary states of compliance policy settings for this account.
       operationId: deviceManagement_CreateDeviceCompliancePolicySettingStateSummaries
       requestBody:
         description: New navigation property
@@ -3315,7 +3047,6 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicySettingStateSummary
       summary: Get deviceCompliancePolicySettingStateSummaries from deviceManagement
-      description: The summary states of compliance policy settings for this account.
       operationId: deviceManagement_GetDeviceCompliancePolicySettingStateSummaries
       parameters:
         - name: deviceCompliancePolicySettingStateSummary-id
@@ -3380,7 +3111,6 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicySettingStateSummary
       summary: Update the navigation property deviceCompliancePolicySettingStateSummaries in deviceManagement
-      description: The summary states of compliance policy settings for this account.
       operationId: deviceManagement_UpdateDeviceCompliancePolicySettingStateSummaries
       parameters:
         - name: deviceCompliancePolicySettingStateSummary-id
@@ -3407,7 +3137,6 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicySettingStateSummary
       summary: Delete navigation property deviceCompliancePolicySettingStateSummaries for deviceManagement
-      description: The summary states of compliance policy settings for this account.
       operationId: deviceManagement_DeleteDeviceCompliancePolicySettingStateSummaries
       parameters:
         - name: deviceCompliancePolicySettingStateSummary-id
@@ -3433,7 +3162,6 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicySettingStateSummary
       summary: Get deviceComplianceSettingStates from deviceManagement
-      description: Not yet documented
       operationId: deviceManagement.deviceCompliancePolicySettingStateSummaries_ListDeviceComplianceSettingStates
       parameters:
         - name: deviceCompliancePolicySettingStateSummary-id
@@ -3520,21 +3248,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of deviceComplianceSettingState
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.deviceComplianceSettingState'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.deviceComplianceSettingStateCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -3545,7 +3259,6 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicySettingStateSummary
       summary: Create new navigation property to deviceComplianceSettingStates for deviceManagement
-      description: Not yet documented
       operationId: deviceManagement.deviceCompliancePolicySettingStateSummaries_CreateDeviceComplianceSettingStates
       parameters:
         - name: deviceCompliancePolicySettingStateSummary-id
@@ -3577,7 +3290,6 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicySettingStateSummary
       summary: Get deviceComplianceSettingStates from deviceManagement
-      description: Not yet documented
       operationId: deviceManagement.deviceCompliancePolicySettingStateSummaries_GetDeviceComplianceSettingStates
       parameters:
         - name: deviceCompliancePolicySettingStateSummary-id
@@ -3643,7 +3355,6 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicySettingStateSummary
       summary: Update the navigation property deviceComplianceSettingStates in deviceManagement
-      description: Not yet documented
       operationId: deviceManagement.deviceCompliancePolicySettingStateSummaries_UpdateDeviceComplianceSettingStates
       parameters:
         - name: deviceCompliancePolicySettingStateSummary-id
@@ -3677,7 +3388,6 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicySettingStateSummary
       summary: Delete navigation property deviceComplianceSettingStates for deviceManagement
-      description: Not yet documented
       operationId: deviceManagement.deviceCompliancePolicySettingStateSummaries_DeleteDeviceComplianceSettingStates
       parameters:
         - name: deviceCompliancePolicySettingStateSummary-id
@@ -3710,7 +3420,6 @@ paths:
       tags:
         - deviceManagement.deviceConfigurationDeviceStateSummary
       summary: Get deviceConfigurationDeviceStateSummaries from deviceManagement
-      description: The device configuration device state summary for this account.
       operationId: deviceManagement_GetDeviceConfigurationDeviceStateSummaries
       parameters:
         - name: $select
@@ -3758,7 +3467,6 @@ paths:
       tags:
         - deviceManagement.deviceConfigurationDeviceStateSummary
       summary: Update the navigation property deviceConfigurationDeviceStateSummaries in deviceManagement
-      description: The device configuration device state summary for this account.
       operationId: deviceManagement_UpdateDeviceConfigurationDeviceStateSummaries
       requestBody:
         description: New navigation property values
@@ -3777,7 +3485,6 @@ paths:
       tags:
         - deviceManagement.deviceConfigurationDeviceStateSummary
       summary: Delete navigation property deviceConfigurationDeviceStateSummaries for deviceManagement
-      description: The device configuration device state summary for this account.
       operationId: deviceManagement_DeleteDeviceConfigurationDeviceStateSummaries
       parameters:
         - name: If-Match
@@ -3796,7 +3503,6 @@ paths:
       tags:
         - deviceManagement.deviceConfiguration
       summary: Get deviceConfigurations from deviceManagement
-      description: The device configurations.
       operationId: deviceManagement_ListDeviceConfigurations
       parameters:
         - $ref: '#/components/parameters/top'
@@ -3870,21 +3576,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of deviceConfiguration
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.deviceConfiguration'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.deviceConfigurationCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -3895,7 +3587,6 @@ paths:
       tags:
         - deviceManagement.deviceConfiguration
       summary: Create new navigation property to deviceConfigurations for deviceManagement
-      description: The device configurations.
       operationId: deviceManagement_CreateDeviceConfigurations
       requestBody:
         description: New navigation property
@@ -3919,7 +3610,6 @@ paths:
       tags:
         - deviceManagement.deviceConfiguration
       summary: Get deviceConfigurations from deviceManagement
-      description: The device configurations.
       operationId: deviceManagement_GetDeviceConfigurations
       parameters:
         - name: deviceConfiguration-id
@@ -4002,6 +3692,10 @@ paths:
               operationId: deviceManagement.DeviceConfigurations.GetUserStatusOverview
               parameters:
                 deviceConfiguration-id: $request.path.deviceConfiguration-id
+            assign:
+              operationId: deviceManagement.deviceConfigurations.deviceConfiguration.assign
+            getOmaSettingPlainTextValue:
+              operationId: deviceManagement.deviceConfigurations.deviceConfiguration.getOmaSettingPlainTextValue
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4009,7 +3703,6 @@ paths:
       tags:
         - deviceManagement.deviceConfiguration
       summary: Update the navigation property deviceConfigurations in deviceManagement
-      description: The device configurations.
       operationId: deviceManagement_UpdateDeviceConfigurations
       parameters:
         - name: deviceConfiguration-id
@@ -4036,7 +3729,6 @@ paths:
       tags:
         - deviceManagement.deviceConfiguration
       summary: Delete navigation property deviceConfigurations for deviceManagement
-      description: The device configurations.
       operationId: deviceManagement_DeleteDeviceConfigurations
       parameters:
         - name: deviceConfiguration-id
@@ -4062,7 +3754,6 @@ paths:
       tags:
         - deviceManagement.deviceConfiguration
       summary: Get assignments from deviceManagement
-      description: The list of assignments for the device configuration profile.
       operationId: deviceManagement.deviceConfigurations_ListAssignments
       parameters:
         - name: deviceConfiguration-id
@@ -4119,21 +3810,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of deviceConfigurationAssignment
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.deviceConfigurationAssignment'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.deviceConfigurationAssignmentCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -4144,7 +3821,6 @@ paths:
       tags:
         - deviceManagement.deviceConfiguration
       summary: Create new navigation property to assignments for deviceManagement
-      description: The list of assignments for the device configuration profile.
       operationId: deviceManagement.deviceConfigurations_CreateAssignments
       parameters:
         - name: deviceConfiguration-id
@@ -4176,7 +3852,6 @@ paths:
       tags:
         - deviceManagement.deviceConfiguration
       summary: Get assignments from deviceManagement
-      description: The list of assignments for the device configuration profile.
       operationId: deviceManagement.deviceConfigurations_GetAssignments
       parameters:
         - name: deviceConfiguration-id
@@ -4232,7 +3907,6 @@ paths:
       tags:
         - deviceManagement.deviceConfiguration
       summary: Update the navigation property assignments in deviceManagement
-      description: The list of assignments for the device configuration profile.
       operationId: deviceManagement.deviceConfigurations_UpdateAssignments
       parameters:
         - name: deviceConfiguration-id
@@ -4266,7 +3940,6 @@ paths:
       tags:
         - deviceManagement.deviceConfiguration
       summary: Delete navigation property assignments for deviceManagement
-      description: The list of assignments for the device configuration profile.
       operationId: deviceManagement.deviceConfigurations_DeleteAssignments
       parameters:
         - name: deviceConfiguration-id
@@ -4299,7 +3972,6 @@ paths:
       tags:
         - deviceManagement.deviceConfiguration
       summary: Get deviceSettingStateSummaries from deviceManagement
-      description: Device Configuration Setting State Device Summary
       operationId: deviceManagement.deviceConfigurations_ListDeviceSettingStateSummaries
       parameters:
         - name: deviceConfiguration-id
@@ -4380,21 +4052,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of settingStateDeviceSummary
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.settingStateDeviceSummary'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.settingStateDeviceSummaryCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -4405,7 +4063,6 @@ paths:
       tags:
         - deviceManagement.deviceConfiguration
       summary: Create new navigation property to deviceSettingStateSummaries for deviceManagement
-      description: Device Configuration Setting State Device Summary
       operationId: deviceManagement.deviceConfigurations_CreateDeviceSettingStateSummaries
       parameters:
         - name: deviceConfiguration-id
@@ -4437,7 +4094,6 @@ paths:
       tags:
         - deviceManagement.deviceConfiguration
       summary: Get deviceSettingStateSummaries from deviceManagement
-      description: Device Configuration Setting State Device Summary
       operationId: deviceManagement.deviceConfigurations_GetDeviceSettingStateSummaries
       parameters:
         - name: deviceConfiguration-id
@@ -4501,7 +4157,6 @@ paths:
       tags:
         - deviceManagement.deviceConfiguration
       summary: Update the navigation property deviceSettingStateSummaries in deviceManagement
-      description: Device Configuration Setting State Device Summary
       operationId: deviceManagement.deviceConfigurations_UpdateDeviceSettingStateSummaries
       parameters:
         - name: deviceConfiguration-id
@@ -4535,7 +4190,6 @@ paths:
       tags:
         - deviceManagement.deviceConfiguration
       summary: Delete navigation property deviceSettingStateSummaries for deviceManagement
-      description: Device Configuration Setting State Device Summary
       operationId: deviceManagement.deviceConfigurations_DeleteDeviceSettingStateSummaries
       parameters:
         - name: deviceConfiguration-id
@@ -4568,7 +4222,6 @@ paths:
       tags:
         - deviceManagement.deviceConfiguration
       summary: Get deviceStatuses from deviceManagement
-      description: Device configuration installation status by device.
       operationId: deviceManagement.deviceConfigurations_ListDeviceStatuses
       parameters:
         - name: deviceConfiguration-id
@@ -4643,21 +4296,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of deviceConfigurationDeviceStatus
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.deviceConfigurationDeviceStatus'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.deviceConfigurationDeviceStatusCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -4668,7 +4307,6 @@ paths:
       tags:
         - deviceManagement.deviceConfiguration
       summary: Create new navigation property to deviceStatuses for deviceManagement
-      description: Device configuration installation status by device.
       operationId: deviceManagement.deviceConfigurations_CreateDeviceStatuses
       parameters:
         - name: deviceConfiguration-id
@@ -4700,7 +4338,6 @@ paths:
       tags:
         - deviceManagement.deviceConfiguration
       summary: Get deviceStatuses from deviceManagement
-      description: Device configuration installation status by device.
       operationId: deviceManagement.deviceConfigurations_GetDeviceStatuses
       parameters:
         - name: deviceConfiguration-id
@@ -4762,7 +4399,6 @@ paths:
       tags:
         - deviceManagement.deviceConfiguration
       summary: Update the navigation property deviceStatuses in deviceManagement
-      description: Device configuration installation status by device.
       operationId: deviceManagement.deviceConfigurations_UpdateDeviceStatuses
       parameters:
         - name: deviceConfiguration-id
@@ -4796,7 +4432,6 @@ paths:
       tags:
         - deviceManagement.deviceConfiguration
       summary: Delete navigation property deviceStatuses for deviceManagement
-      description: Device configuration installation status by device.
       operationId: deviceManagement.deviceConfigurations_DeleteDeviceStatuses
       parameters:
         - name: deviceConfiguration-id
@@ -4829,7 +4464,6 @@ paths:
       tags:
         - deviceManagement.deviceConfiguration
       summary: Get deviceStatusOverview from deviceManagement
-      description: Device Configuration devices status overview
       operationId: deviceManagement.deviceConfigurations_GetDeviceStatusOverview
       parameters:
         - name: deviceConfiguration-id
@@ -4884,7 +4518,6 @@ paths:
       tags:
         - deviceManagement.deviceConfiguration
       summary: Update the navigation property deviceStatusOverview in deviceManagement
-      description: Device Configuration devices status overview
       operationId: deviceManagement.deviceConfigurations_UpdateDeviceStatusOverview
       parameters:
         - name: deviceConfiguration-id
@@ -4911,7 +4544,6 @@ paths:
       tags:
         - deviceManagement.deviceConfiguration
       summary: Delete navigation property deviceStatusOverview for deviceManagement
-      description: Device Configuration devices status overview
       operationId: deviceManagement.deviceConfigurations_DeleteDeviceStatusOverview
       parameters:
         - name: deviceConfiguration-id
@@ -4937,7 +4569,6 @@ paths:
       tags:
         - deviceManagement.deviceConfiguration
       summary: Get userStatuses from deviceManagement
-      description: Device configuration installation status by user.
       operationId: deviceManagement.deviceConfigurations_ListUserStatuses
       parameters:
         - name: deviceConfiguration-id
@@ -5006,21 +4637,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of deviceConfigurationUserStatus
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.deviceConfigurationUserStatus'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.deviceConfigurationUserStatusCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -5031,7 +4648,6 @@ paths:
       tags:
         - deviceManagement.deviceConfiguration
       summary: Create new navigation property to userStatuses for deviceManagement
-      description: Device configuration installation status by user.
       operationId: deviceManagement.deviceConfigurations_CreateUserStatuses
       parameters:
         - name: deviceConfiguration-id
@@ -5063,7 +4679,6 @@ paths:
       tags:
         - deviceManagement.deviceConfiguration
       summary: Get userStatuses from deviceManagement
-      description: Device configuration installation status by user.
       operationId: deviceManagement.deviceConfigurations_GetUserStatuses
       parameters:
         - name: deviceConfiguration-id
@@ -5123,7 +4738,6 @@ paths:
       tags:
         - deviceManagement.deviceConfiguration
       summary: Update the navigation property userStatuses in deviceManagement
-      description: Device configuration installation status by user.
       operationId: deviceManagement.deviceConfigurations_UpdateUserStatuses
       parameters:
         - name: deviceConfiguration-id
@@ -5157,7 +4771,6 @@ paths:
       tags:
         - deviceManagement.deviceConfiguration
       summary: Delete navigation property userStatuses for deviceManagement
-      description: Device configuration installation status by user.
       operationId: deviceManagement.deviceConfigurations_DeleteUserStatuses
       parameters:
         - name: deviceConfiguration-id
@@ -5190,7 +4803,6 @@ paths:
       tags:
         - deviceManagement.deviceConfiguration
       summary: Get userStatusOverview from deviceManagement
-      description: Device Configuration users status overview
       operationId: deviceManagement.deviceConfigurations_GetUserStatusOverview
       parameters:
         - name: deviceConfiguration-id
@@ -5245,7 +4857,6 @@ paths:
       tags:
         - deviceManagement.deviceConfiguration
       summary: Update the navigation property userStatusOverview in deviceManagement
-      description: Device Configuration users status overview
       operationId: deviceManagement.deviceConfigurations_UpdateUserStatusOverview
       parameters:
         - name: deviceConfiguration-id
@@ -5272,7 +4883,6 @@ paths:
       tags:
         - deviceManagement.deviceConfiguration
       summary: Delete navigation property userStatusOverview for deviceManagement
-      description: Device Configuration users status overview
       operationId: deviceManagement.deviceConfigurations_DeleteUserStatusOverview
       parameters:
         - name: deviceConfiguration-id
@@ -5298,7 +4908,6 @@ paths:
       tags:
         - deviceManagement.managedDeviceOverview
       summary: Get managedDeviceOverview from deviceManagement
-      description: Device overview
       operationId: deviceManagement_GetManagedDeviceOverview
       parameters:
         - name: $select
@@ -5340,68 +4949,11 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-  /deviceManagement/managedDeviceOverview/$ref:
-    get:
-      tags:
-        - deviceManagement.managedDeviceOverview
-      summary: Get ref of managedDeviceOverview from deviceManagement
-      description: Device overview
-      operationId: deviceManagement_GetGraphRefManagedDeviceOverview
-      responses:
-        '200':
-          description: Retrieved navigation property link
-          content:
-            application/json:
-              schema:
-                type: string
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    put:
-      tags:
-        - deviceManagement.managedDeviceOverview
-      summary: Update the ref of navigation property managedDeviceOverview in deviceManagement
-      description: Device overview
-      operationId: deviceManagement_SetGraphRefManagedDeviceOverview
-      requestBody:
-        description: New navigation property ref values
-        content:
-          application/json:
-            schema:
-              type: object
-              additionalProperties:
-                type: object
-        required: true
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - deviceManagement.managedDeviceOverview
-      summary: Delete ref of navigation property managedDeviceOverview for deviceManagement
-      description: Device overview
-      operationId: deviceManagement_DeleteGraphRefManagedDeviceOverview
-      parameters:
-        - name: If-Match
-          in: header
-          description: ETag
-          schema:
-            type: string
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   /deviceManagement/managedDevices:
     get:
       tags:
         - deviceManagement.managedDevice
       summary: Get managedDevices from deviceManagement
-      description: The list of managed devices.
       operationId: deviceManagement_ListManagedDevices
       parameters:
         - $ref: '#/components/parameters/top'
@@ -5607,21 +5159,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of managedDevice
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.managedDevice'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.managedDeviceCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -5632,7 +5170,6 @@ paths:
       tags:
         - deviceManagement.managedDevice
       summary: Create new navigation property to managedDevices for deviceManagement
-      description: The list of managed devices.
       operationId: deviceManagement_CreateManagedDevices
       requestBody:
         description: New navigation property
@@ -5656,7 +5193,6 @@ paths:
       tags:
         - deviceManagement.managedDevice
       summary: Get managedDevices from deviceManagement
-      description: The list of managed devices.
       operationId: deviceManagement_GetManagedDevices
       parameters:
         - name: managedDevice-id
@@ -5767,6 +5303,42 @@ paths:
               operationId: deviceManagement.ManagedDevices.GetDeviceCategory
               parameters:
                 managedDevice-id: $request.path.managedDevice-id
+            bypassActivationLock:
+              operationId: deviceManagement.managedDevices.managedDevice.bypassActivationLock
+            cleanWindowsDevice:
+              operationId: deviceManagement.managedDevices.managedDevice.cleanWindowsDevice
+            deleteUserFromSharedAppleDevice:
+              operationId: deviceManagement.managedDevices.managedDevice.deleteUserFromSharedAppleDevice
+            disableLostMode:
+              operationId: deviceManagement.managedDevices.managedDevice.disableLostMode
+            locateDevice:
+              operationId: deviceManagement.managedDevices.managedDevice.locateDevice
+            logoutSharedAppleDeviceActiveUser:
+              operationId: deviceManagement.managedDevices.managedDevice.logoutSharedAppleDeviceActiveUser
+            rebootNow:
+              operationId: deviceManagement.managedDevices.managedDevice.rebootNow
+            recoverPasscode:
+              operationId: deviceManagement.managedDevices.managedDevice.recoverPasscode
+            remoteLock:
+              operationId: deviceManagement.managedDevices.managedDevice.remoteLock
+            requestRemoteAssistance:
+              operationId: deviceManagement.managedDevices.managedDevice.requestRemoteAssistance
+            resetPasscode:
+              operationId: deviceManagement.managedDevices.managedDevice.resetPasscode
+            retire:
+              operationId: deviceManagement.managedDevices.managedDevice.retire
+            shutDown:
+              operationId: deviceManagement.managedDevices.managedDevice.shutDown
+            syncDevice:
+              operationId: deviceManagement.managedDevices.managedDevice.syncDevice
+            updateWindowsDeviceAccount:
+              operationId: deviceManagement.managedDevices.managedDevice.updateWindowsDeviceAccount
+            windowsDefenderScan:
+              operationId: deviceManagement.managedDevices.managedDevice.windowsDefenderScan
+            windowsDefenderUpdateSignatures:
+              operationId: deviceManagement.managedDevices.managedDevice.windowsDefenderUpdateSignatures
+            wipe:
+              operationId: deviceManagement.managedDevices.managedDevice.wipe
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5774,7 +5346,6 @@ paths:
       tags:
         - deviceManagement.managedDevice
       summary: Update the navigation property managedDevices in deviceManagement
-      description: The list of managed devices.
       operationId: deviceManagement_UpdateManagedDevices
       parameters:
         - name: managedDevice-id
@@ -5801,7 +5372,6 @@ paths:
       tags:
         - deviceManagement.managedDevice
       summary: Delete navigation property managedDevices for deviceManagement
-      description: The list of managed devices.
       operationId: deviceManagement_DeleteManagedDevices
       parameters:
         - name: managedDevice-id
@@ -5827,7 +5397,6 @@ paths:
       tags:
         - deviceManagement.managedDevice
       summary: Get deviceCategory from deviceManagement
-      description: Device category
       operationId: deviceManagement.managedDevices_GetDeviceCategory
       parameters:
         - name: managedDevice-id
@@ -5877,7 +5446,6 @@ paths:
       tags:
         - deviceManagement.managedDevice
       summary: Update the navigation property deviceCategory in deviceManagement
-      description: Device category
       operationId: deviceManagement.managedDevices_UpdateDeviceCategory
       parameters:
         - name: managedDevice-id
@@ -5904,7 +5472,6 @@ paths:
       tags:
         - deviceManagement.managedDevice
       summary: Delete navigation property deviceCategory for deviceManagement
-      description: Device category
       operationId: deviceManagement.managedDevices_DeleteDeviceCategory
       parameters:
         - name: managedDevice-id
@@ -5930,7 +5497,6 @@ paths:
       tags:
         - deviceManagement.managedDevice
       summary: Get deviceCompliancePolicyStates from deviceManagement
-      description: Device compliance policy states for this device.
       operationId: deviceManagement.managedDevices_ListDeviceCompliancePolicyStates
       parameters:
         - name: managedDevice-id
@@ -6002,21 +5568,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of deviceCompliancePolicyState
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.deviceCompliancePolicyState'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.deviceCompliancePolicyStateCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -6027,7 +5579,6 @@ paths:
       tags:
         - deviceManagement.managedDevice
       summary: Create new navigation property to deviceCompliancePolicyStates for deviceManagement
-      description: Device compliance policy states for this device.
       operationId: deviceManagement.managedDevices_CreateDeviceCompliancePolicyStates
       parameters:
         - name: managedDevice-id
@@ -6059,7 +5610,6 @@ paths:
       tags:
         - deviceManagement.managedDevice
       summary: Get deviceCompliancePolicyStates from deviceManagement
-      description: Device compliance policy states for this device.
       operationId: deviceManagement.managedDevices_GetDeviceCompliancePolicyStates
       parameters:
         - name: managedDevice-id
@@ -6120,7 +5670,6 @@ paths:
       tags:
         - deviceManagement.managedDevice
       summary: Update the navigation property deviceCompliancePolicyStates in deviceManagement
-      description: Device compliance policy states for this device.
       operationId: deviceManagement.managedDevices_UpdateDeviceCompliancePolicyStates
       parameters:
         - name: managedDevice-id
@@ -6154,7 +5703,6 @@ paths:
       tags:
         - deviceManagement.managedDevice
       summary: Delete navigation property deviceCompliancePolicyStates for deviceManagement
-      description: Device compliance policy states for this device.
       operationId: deviceManagement.managedDevices_DeleteDeviceCompliancePolicyStates
       parameters:
         - name: managedDevice-id
@@ -6187,7 +5735,6 @@ paths:
       tags:
         - deviceManagement.managedDevice
       summary: Get deviceConfigurationStates from deviceManagement
-      description: Device configuration states for this device.
       operationId: deviceManagement.managedDevices_ListDeviceConfigurationStates
       parameters:
         - name: managedDevice-id
@@ -6259,21 +5806,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of deviceConfigurationState
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.deviceConfigurationState'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.deviceConfigurationStateCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -6284,7 +5817,6 @@ paths:
       tags:
         - deviceManagement.managedDevice
       summary: Create new navigation property to deviceConfigurationStates for deviceManagement
-      description: Device configuration states for this device.
       operationId: deviceManagement.managedDevices_CreateDeviceConfigurationStates
       parameters:
         - name: managedDevice-id
@@ -6316,7 +5848,6 @@ paths:
       tags:
         - deviceManagement.managedDevice
       summary: Get deviceConfigurationStates from deviceManagement
-      description: Device configuration states for this device.
       operationId: deviceManagement.managedDevices_GetDeviceConfigurationStates
       parameters:
         - name: managedDevice-id
@@ -6377,7 +5908,6 @@ paths:
       tags:
         - deviceManagement.managedDevice
       summary: Update the navigation property deviceConfigurationStates in deviceManagement
-      description: Device configuration states for this device.
       operationId: deviceManagement.managedDevices_UpdateDeviceConfigurationStates
       parameters:
         - name: managedDevice-id
@@ -6411,7 +5941,6 @@ paths:
       tags:
         - deviceManagement.managedDevice
       summary: Delete navigation property deviceConfigurationStates for deviceManagement
-      description: Device configuration states for this device.
       operationId: deviceManagement.managedDevices_DeleteDeviceConfigurationStates
       parameters:
         - name: managedDevice-id
@@ -6444,7 +5973,6 @@ paths:
       tags:
         - deviceManagement.notificationMessageTemplate
       summary: Get notificationMessageTemplates from deviceManagement
-      description: The Notification Message Templates.
       operationId: deviceManagement_ListNotificationMessageTemplates
       parameters:
         - $ref: '#/components/parameters/top'
@@ -6505,21 +6033,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of notificationMessageTemplate
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.notificationMessageTemplate'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.notificationMessageTemplateCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -6530,7 +6044,6 @@ paths:
       tags:
         - deviceManagement.notificationMessageTemplate
       summary: Create new navigation property to notificationMessageTemplates for deviceManagement
-      description: The Notification Message Templates.
       operationId: deviceManagement_CreateNotificationMessageTemplates
       requestBody:
         description: New navigation property
@@ -6554,7 +6067,6 @@ paths:
       tags:
         - deviceManagement.notificationMessageTemplate
       summary: Get notificationMessageTemplates from deviceManagement
-      description: The Notification Message Templates.
       operationId: deviceManagement_GetNotificationMessageTemplates
       parameters:
         - name: notificationMessageTemplate-id
@@ -6606,6 +6118,8 @@ paths:
               operationId: deviceManagement.NotificationMessageTemplates.ListLocalizedNotificationMessages
               parameters:
                 notificationMessageTemplate-id: $request.path.notificationMessageTemplate-id
+            sendTestMessage:
+              operationId: deviceManagement.notificationMessageTemplates.notificationMessageTemplate.sendTestMessage
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -6613,7 +6127,6 @@ paths:
       tags:
         - deviceManagement.notificationMessageTemplate
       summary: Update the navigation property notificationMessageTemplates in deviceManagement
-      description: The Notification Message Templates.
       operationId: deviceManagement_UpdateNotificationMessageTemplates
       parameters:
         - name: notificationMessageTemplate-id
@@ -6640,7 +6153,6 @@ paths:
       tags:
         - deviceManagement.notificationMessageTemplate
       summary: Delete navigation property notificationMessageTemplates for deviceManagement
-      description: The Notification Message Templates.
       operationId: deviceManagement_DeleteNotificationMessageTemplates
       parameters:
         - name: notificationMessageTemplate-id
@@ -6666,7 +6178,6 @@ paths:
       tags:
         - deviceManagement.notificationMessageTemplate
       summary: Get localizedNotificationMessages from deviceManagement
-      description: The list of localized messages for this Notification Message Template.
       operationId: deviceManagement.notificationMessageTemplates_ListLocalizedNotificationMessages
       parameters:
         - name: notificationMessageTemplate-id
@@ -6735,21 +6246,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of localizedNotificationMessage
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.localizedNotificationMessage'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.localizedNotificationMessageCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -6760,7 +6257,6 @@ paths:
       tags:
         - deviceManagement.notificationMessageTemplate
       summary: Create new navigation property to localizedNotificationMessages for deviceManagement
-      description: The list of localized messages for this Notification Message Template.
       operationId: deviceManagement.notificationMessageTemplates_CreateLocalizedNotificationMessages
       parameters:
         - name: notificationMessageTemplate-id
@@ -6792,7 +6288,6 @@ paths:
       tags:
         - deviceManagement.notificationMessageTemplate
       summary: Get localizedNotificationMessages from deviceManagement
-      description: The list of localized messages for this Notification Message Template.
       operationId: deviceManagement.notificationMessageTemplates_GetLocalizedNotificationMessages
       parameters:
         - name: notificationMessageTemplate-id
@@ -6852,7 +6347,6 @@ paths:
       tags:
         - deviceManagement.notificationMessageTemplate
       summary: Update the navigation property localizedNotificationMessages in deviceManagement
-      description: The list of localized messages for this Notification Message Template.
       operationId: deviceManagement.notificationMessageTemplates_UpdateLocalizedNotificationMessages
       parameters:
         - name: notificationMessageTemplate-id
@@ -6886,7 +6380,6 @@ paths:
       tags:
         - deviceManagement.notificationMessageTemplate
       summary: Delete navigation property localizedNotificationMessages for deviceManagement
-      description: The list of localized messages for this Notification Message Template.
       operationId: deviceManagement.notificationMessageTemplates_DeleteLocalizedNotificationMessages
       parameters:
         - name: notificationMessageTemplate-id
@@ -6919,7 +6412,6 @@ paths:
       tags:
         - deviceManagement.softwareUpdateStatusSummary
       summary: Get softwareUpdateStatusSummary from deviceManagement
-      description: The software update status summary.
       operationId: deviceManagement_GetSoftwareUpdateStatusSummary
       parameters:
         - name: $select
@@ -6971,68 +6463,11 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-  /deviceManagement/softwareUpdateStatusSummary/$ref:
-    get:
-      tags:
-        - deviceManagement.softwareUpdateStatusSummary
-      summary: Get ref of softwareUpdateStatusSummary from deviceManagement
-      description: The software update status summary.
-      operationId: deviceManagement_GetGraphRefSoftwareUpdateStatusSummary
-      responses:
-        '200':
-          description: Retrieved navigation property link
-          content:
-            application/json:
-              schema:
-                type: string
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    put:
-      tags:
-        - deviceManagement.softwareUpdateStatusSummary
-      summary: Update the ref of navigation property softwareUpdateStatusSummary in deviceManagement
-      description: The software update status summary.
-      operationId: deviceManagement_SetGraphRefSoftwareUpdateStatusSummary
-      requestBody:
-        description: New navigation property ref values
-        content:
-          application/json:
-            schema:
-              type: object
-              additionalProperties:
-                type: object
-        required: true
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - deviceManagement.softwareUpdateStatusSummary
-      summary: Delete ref of navigation property softwareUpdateStatusSummary for deviceManagement
-      description: The software update status summary.
-      operationId: deviceManagement_DeleteGraphRefSoftwareUpdateStatusSummary
-      parameters:
-        - name: If-Match
-          in: header
-          description: ETag
-          schema:
-            type: string
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   /deviceManagement/troubleshootingEvents:
     get:
       tags:
         - deviceManagement.deviceManagementTroubleshootingEvent
       summary: Get troubleshootingEvents from deviceManagement
-      description: The list of troubleshooting events for the tenant.
       operationId: deviceManagement_ListTroubleshootingEvents
       parameters:
         - $ref: '#/components/parameters/top'
@@ -7085,21 +6520,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of deviceManagementTroubleshootingEvent
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.deviceManagementTroubleshootingEvent'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.deviceManagementTroubleshootingEventCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -7110,7 +6531,6 @@ paths:
       tags:
         - deviceManagement.deviceManagementTroubleshootingEvent
       summary: Create new navigation property to troubleshootingEvents for deviceManagement
-      description: The list of troubleshooting events for the tenant.
       operationId: deviceManagement_CreateTroubleshootingEvents
       requestBody:
         description: New navigation property
@@ -7134,7 +6554,6 @@ paths:
       tags:
         - deviceManagement.deviceManagementTroubleshootingEvent
       summary: Get troubleshootingEvents from deviceManagement
-      description: The list of troubleshooting events for the tenant.
       operationId: deviceManagement_GetTroubleshootingEvents
       parameters:
         - name: deviceManagementTroubleshootingEvent-id
@@ -7184,7 +6603,6 @@ paths:
       tags:
         - deviceManagement.deviceManagementTroubleshootingEvent
       summary: Update the navigation property troubleshootingEvents in deviceManagement
-      description: The list of troubleshooting events for the tenant.
       operationId: deviceManagement_UpdateTroubleshootingEvents
       parameters:
         - name: deviceManagementTroubleshootingEvent-id
@@ -7211,7 +6629,6 @@ paths:
       tags:
         - deviceManagement.deviceManagementTroubleshootingEvent
       summary: Delete navigation property troubleshootingEvents for deviceManagement
-      description: The list of troubleshooting events for the tenant.
       operationId: deviceManagement_DeleteTroubleshootingEvents
       parameters:
         - name: deviceManagementTroubleshootingEvent-id
@@ -7237,7 +6654,6 @@ paths:
       tags:
         - deviceManagement.windowsInformationProtectionAppLearningSummary
       summary: Get windowsInformationProtectionAppLearningSummaries from deviceManagement
-      description: The windows information protection app learning summaries.
       operationId: deviceManagement_ListWindowsInformationProtectionAppLearningSummaries
       parameters:
         - $ref: '#/components/parameters/top'
@@ -7293,21 +6709,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of windowsInformationProtectionAppLearningSummary
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.windowsInformationProtectionAppLearningSummary'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.windowsInformationProtectionAppLearningSummaryCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -7318,7 +6720,6 @@ paths:
       tags:
         - deviceManagement.windowsInformationProtectionAppLearningSummary
       summary: Create new navigation property to windowsInformationProtectionAppLearningSummaries for deviceManagement
-      description: The windows information protection app learning summaries.
       operationId: deviceManagement_CreateWindowsInformationProtectionAppLearningSummaries
       requestBody:
         description: New navigation property
@@ -7342,7 +6743,6 @@ paths:
       tags:
         - deviceManagement.windowsInformationProtectionAppLearningSummary
       summary: Get windowsInformationProtectionAppLearningSummaries from deviceManagement
-      description: The windows information protection app learning summaries.
       operationId: deviceManagement_GetWindowsInformationProtectionAppLearningSummaries
       parameters:
         - name: windowsInformationProtectionAppLearningSummary-id
@@ -7393,7 +6793,6 @@ paths:
       tags:
         - deviceManagement.windowsInformationProtectionAppLearningSummary
       summary: Update the navigation property windowsInformationProtectionAppLearningSummaries in deviceManagement
-      description: The windows information protection app learning summaries.
       operationId: deviceManagement_UpdateWindowsInformationProtectionAppLearningSummaries
       parameters:
         - name: windowsInformationProtectionAppLearningSummary-id
@@ -7420,7 +6819,6 @@ paths:
       tags:
         - deviceManagement.windowsInformationProtectionAppLearningSummary
       summary: Delete navigation property windowsInformationProtectionAppLearningSummaries for deviceManagement
-      description: The windows information protection app learning summaries.
       operationId: deviceManagement_DeleteWindowsInformationProtectionAppLearningSummaries
       parameters:
         - name: windowsInformationProtectionAppLearningSummary-id
@@ -7446,7 +6844,6 @@ paths:
       tags:
         - deviceManagement.windowsInformationProtectionNetworkLearningSummary
       summary: Get windowsInformationProtectionNetworkLearningSummaries from deviceManagement
-      description: The windows information protection network learning summaries.
       operationId: deviceManagement_ListWindowsInformationProtectionNetworkLearningSummaries
       parameters:
         - $ref: '#/components/parameters/top'
@@ -7499,21 +6896,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of windowsInformationProtectionNetworkLearningSummary
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.windowsInformationProtectionNetworkLearningSummary'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.windowsInformationProtectionNetworkLearningSummaryCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -7524,7 +6907,6 @@ paths:
       tags:
         - deviceManagement.windowsInformationProtectionNetworkLearningSummary
       summary: Create new navigation property to windowsInformationProtectionNetworkLearningSummaries for deviceManagement
-      description: The windows information protection network learning summaries.
       operationId: deviceManagement_CreateWindowsInformationProtectionNetworkLearningSummaries
       requestBody:
         description: New navigation property
@@ -7548,7 +6930,6 @@ paths:
       tags:
         - deviceManagement.windowsInformationProtectionNetworkLearningSummary
       summary: Get windowsInformationProtectionNetworkLearningSummaries from deviceManagement
-      description: The windows information protection network learning summaries.
       operationId: deviceManagement_GetWindowsInformationProtectionNetworkLearningSummaries
       parameters:
         - name: windowsInformationProtectionNetworkLearningSummary-id
@@ -7598,7 +6979,6 @@ paths:
       tags:
         - deviceManagement.windowsInformationProtectionNetworkLearningSummary
       summary: Update the navigation property windowsInformationProtectionNetworkLearningSummaries in deviceManagement
-      description: The windows information protection network learning summaries.
       operationId: deviceManagement_UpdateWindowsInformationProtectionNetworkLearningSummaries
       parameters:
         - name: windowsInformationProtectionNetworkLearningSummary-id
@@ -7625,7 +7005,6 @@ paths:
       tags:
         - deviceManagement.windowsInformationProtectionNetworkLearningSummary
       summary: Delete navigation property windowsInformationProtectionNetworkLearningSummaries for deviceManagement
-      description: The windows information protection network learning summaries.
       operationId: deviceManagement_DeleteWindowsInformationProtectionNetworkLearningSummaries
       parameters:
         - name: windowsInformationProtectionNetworkLearningSummary-id
@@ -7657,7 +7036,7 @@ components:
             intuneAccountId:
               pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
               type: string
-              description: Intune Account Id for given tenant
+              description: Intune Account ID for given tenant
               format: uuid
             settings:
               $ref: '#/components/schemas/microsoft.graph.deviceManagementSettings'
@@ -8109,7 +7488,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.deviceComplianceScheduledActionForRule'
-              description: The list of scheduled action per rule for this compliance policy. This is a required property when creating any individual per-platform compliance policies.
+              description: The list of scheduled action for this rule
             userStatuses:
               type: array
               items:
@@ -9169,7 +8548,6 @@ components:
       properties:
         id:
           type: string
-          description: Read-only.
       additionalProperties:
         type: object
     microsoft.graph.deviceManagementSettings:
@@ -9256,6 +8634,31 @@ components:
         - lockedOut
       type: string
       description: Tenant mobile device management subscription state.
+      x-ms-enum:
+        name: deviceManagementSubscriptionState
+        modelAsString: false
+        values:
+          - value: pending
+            description: Pending
+            name: pending
+          - value: active
+            description: Active
+            name: active
+          - value: warning
+            description: Warning
+            name: warning
+          - value: disabled
+            description: Disabled
+            name: disabled
+          - value: deleted
+            description: Deleted
+            name: deleted
+          - value: blocked
+            description: Blocked
+            name: blocked
+          - value: lockedOut
+            description: LockedOut
+            name: lockedOut
     microsoft.graph.termsAndConditions:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -9884,6 +9287,31 @@ components:
         - configManager
       type: string
       description: Compliance state.
+      x-ms-enum:
+        name: complianceState
+        modelAsString: false
+        values:
+          - value: unknown
+            description: Unknown.
+            name: unknown
+          - value: compliant
+            description: Compliant.
+            name: compliant
+          - value: noncompliant
+            description: Device is non-compliant and is blocked from corporate resources.
+            name: noncompliant
+          - value: conflict
+            description: Conflict with other rules.
+            name: conflict
+          - value: error
+            description: Error.
+            name: error
+          - value: inGracePeriod
+            description: Device is non-compliant but still has access to corporate resources
+            name: inGracePeriod
+          - value: configManager
+            description: Managed by Config Manager
+            name: configManager
     microsoft.graph.configurationManagerClientEnabledFeatures:
       title: configurationManagerClientEnabledFeatures
       type: object
@@ -9950,6 +9378,49 @@ components:
         - appleUserEnrollmentWithServiceAccount
       type: string
       description: Possible ways of adding a mobile device to management.
+      x-ms-enum:
+        name: deviceEnrollmentType
+        modelAsString: false
+        values:
+          - value: unknown
+            description: 'Default value, enrollment type was not collected.'
+            name: unknown
+          - value: userEnrollment
+            description: User driven enrollment through BYOD channel.
+            name: userEnrollment
+          - value: deviceEnrollmentManager
+            description: User enrollment with a device enrollment manager account.
+            name: deviceEnrollmentManager
+          - value: appleBulkWithUser
+            description: 'Apple bulk enrollment with user challenge. (DEP, Apple Configurator)'
+            name: appleBulkWithUser
+          - value: appleBulkWithoutUser
+            description: 'Apple bulk enrollment without user challenge. (DEP, Apple Configurator, Mobile Config)'
+            name: appleBulkWithoutUser
+          - value: windowsAzureADJoin
+            description: Windows 10 Azure AD Join.
+            name: windowsAzureADJoin
+          - value: windowsBulkUserless
+            description: Windows 10 Bulk enrollment through ICD with certificate.
+            name: windowsBulkUserless
+          - value: windowsAutoEnrollment
+            description: Windows 10 automatic enrollment. (Add work account)
+            name: windowsAutoEnrollment
+          - value: windowsBulkAzureDomainJoin
+            description: Windows 10 bulk Azure AD Join.
+            name: windowsBulkAzureDomainJoin
+          - value: windowsCoManagement
+            description: Windows 10 Co-Management triggered by AutoPilot or Group Policy.
+            name: windowsCoManagement
+          - value: windowsAzureADJoinUsingDeviceAuth
+            description: Windows 10 Azure AD Join using Device Auth.
+            name: windowsAzureADJoinUsingDeviceAuth
+          - value: appleUserEnrollment
+            description: Device managed by Apple user enrollment
+            name: appleUserEnrollment
+          - value: appleUserEnrollmentWithServiceAccount
+            description: Device managed by Apple user enrollment with service account
+            name: appleUserEnrollmentWithServiceAccount
     microsoft.graph.deviceHealthAttestationState:
       title: deviceHealthAttestationState
       type: object
@@ -10098,6 +9569,34 @@ components:
         - unknown
       type: string
       description: Device registration status.
+      x-ms-enum:
+        name: deviceRegistrationState
+        modelAsString: false
+        values:
+          - value: notRegistered
+            description: The device is not registered.
+            name: notRegistered
+          - value: registered
+            description: The device is registered.
+            name: registered
+          - value: revoked
+            description: 'The device has been blocked, wiped or retired.'
+            name: revoked
+          - value: keyConflict
+            description: The device has a key conflict.
+            name: keyConflict
+          - value: approvalPending
+            description: The device is pending approval.
+            name: approvalPending
+          - value: certificateReset
+            description: The device certificate has been reset.
+            name: certificateReset
+          - value: notRegisteredPendingEnrollment
+            description: The device is not registered and pending enrollment.
+            name: notRegisteredPendingEnrollment
+          - value: unknown
+            description: The device registration status is unknown.
+            name: unknown
     microsoft.graph.deviceManagementExchangeAccessState:
       title: deviceManagementExchangeAccessState
       enum:
@@ -10108,6 +9607,25 @@ components:
         - quarantined
       type: string
       description: Device Exchange Access State.
+      x-ms-enum:
+        name: deviceManagementExchangeAccessState
+        modelAsString: false
+        values:
+          - value: none
+            description: No access state discovered from Exchange
+            name: none
+          - value: unknown
+            description: Device access state to Exchange is unknown
+            name: unknown
+          - value: allowed
+            description: Device has access to Exchange
+            name: allowed
+          - value: blocked
+            description: Device is Blocked in Exchange
+            name: blocked
+          - value: quarantined
+            description: Device is Quarantined in Exchange
+            name: quarantined
     microsoft.graph.deviceManagementExchangeAccessStateReason:
       title: deviceManagementExchangeAccessStateReason
       enum:
@@ -10129,6 +9647,58 @@ components:
         - deviceNotKnownWithManagedApp
       type: string
       description: Device Exchange Access State Reason.
+      x-ms-enum:
+        name: deviceManagementExchangeAccessStateReason
+        modelAsString: false
+        values:
+          - value: none
+            description: No access state reason discovered from Exchange
+            name: none
+          - value: unknown
+            description: Unknown access state reason
+            name: unknown
+          - value: exchangeGlobalRule
+            description: Access state determined by Exchange Global rule
+            name: exchangeGlobalRule
+          - value: exchangeIndividualRule
+            description: Access state determined by Exchange Individual rule
+            name: exchangeIndividualRule
+          - value: exchangeDeviceRule
+            description: Access state determined by Exchange Device rule
+            name: exchangeDeviceRule
+          - value: exchangeUpgrade
+            description: Access state due to Exchange upgrade
+            name: exchangeUpgrade
+          - value: exchangeMailboxPolicy
+            description: Access state determined by Exchange Mailbox Policy
+            name: exchangeMailboxPolicy
+          - value: other
+            description: Access state determined by Exchange
+            name: other
+          - value: compliant
+            description: Access state granted by compliance challenge
+            name: compliant
+          - value: notCompliant
+            description: Access state revoked by compliance challenge
+            name: notCompliant
+          - value: notEnrolled
+            description: Access state revoked by management challenge
+            name: notEnrolled
+          - value: unknownLocation
+            description: Access state due to unknown location
+            name: unknownLocation
+          - value: mfaRequired
+            description: Access state due to MFA challenge
+            name: mfaRequired
+          - value: azureADBlockDueToAccessPolicy
+            description: Access State revoked by AAD Access Policy
+            name: azureADBlockDueToAccessPolicy
+          - value: compromisedPassword
+            description: Access State revoked by compromised password
+            name: compromisedPassword
+          - value: deviceNotKnownWithManagedApp
+            description: Access state revoked by managed application challenge
+            name: deviceNotKnownWithManagedApp
     microsoft.graph.managedDeviceOwnerType:
       title: managedDeviceOwnerType
       enum:
@@ -10137,6 +9707,19 @@ components:
         - personal
       type: string
       description: Owner type of device.
+      x-ms-enum:
+        name: managedDeviceOwnerType
+        modelAsString: false
+        values:
+          - value: unknown
+            description: Unknown.
+            name: unknown
+          - value: company
+            description: Owned by company.
+            name: company
+          - value: personal
+            description: Owned by person.
+            name: personal
     microsoft.graph.managementAgentType:
       title: managementAgentType
       enum:
@@ -10154,6 +9737,46 @@ components:
         - microsoft365ManagedMdm
         - msSense
       type: string
+      x-ms-enum:
+        name: managementAgentType
+        modelAsString: false
+        values:
+          - value: eas
+            description: The device is managed by Exchange server.
+            name: eas
+          - value: mdm
+            description: The device is managed by Intune MDM.
+            name: mdm
+          - value: easMdm
+            description: The device is managed by both Exchange server and Intune MDM.
+            name: easMdm
+          - value: intuneClient
+            description: Intune client managed.
+            name: intuneClient
+          - value: easIntuneClient
+            description: The device is EAS and Intune client dual managed.
+            name: easIntuneClient
+          - value: configurationManagerClient
+            description: The device is managed by Configuration Manager.
+            name: configurationManagerClient
+          - value: configurationManagerClientMdm
+            description: The device is managed by Configuration Manager and MDM.
+            name: configurationManagerClientMdm
+          - value: configurationManagerClientMdmEas
+            description: 'The device is managed by Configuration Manager, MDM and Eas.'
+            name: configurationManagerClientMdmEas
+          - value: unknown
+            description: Unknown management agent type.
+            name: unknown
+          - value: jamf
+            description: The device attributes are fetched from Jamf.
+            name: jamf
+          - value: googleCloudDevicePolicyController
+            description: The device is managed by Google's CloudDPC.
+            name: googleCloudDevicePolicyController
+          - value: microsoft365ManagedMdm
+            description: This device is managed by Microsoft 365 through Intune.
+            name: microsoft365ManagedMdm
     microsoft.graph.managedDevicePartnerReportedHealthState:
       title: managedDevicePartnerReportedHealthState
       enum:
@@ -10169,6 +9792,40 @@ components:
         - misconfigured
       type: string
       description: Available health states for the Device Health API
+      x-ms-enum:
+        name: managedDevicePartnerReportedHealthState
+        modelAsString: false
+        values:
+          - value: unknown
+            description: Device health state is not yet reported
+            name: unknown
+          - value: activated
+            description: 'Device has been activated by a mobile threat defense partner, but has not yet reported health.'
+            name: activated
+          - value: deactivated
+            description: Device has been deactivated by a mobile threat defense partner. The device health is not known.
+            name: deactivated
+          - value: secured
+            description: Device is considered secured by the mobile threat defense partner.
+            name: secured
+          - value: lowSeverity
+            description: Device is considered low threat by the mobile threat defense partner.
+            name: lowSeverity
+          - value: mediumSeverity
+            description: Device is considered medium threat by the mobile threat defense partner.
+            name: mediumSeverity
+          - value: highSeverity
+            description: Device is considered high threat by the mobile threat defense partner.
+            name: highSeverity
+          - value: unresponsive
+            description: Device is considered unresponsive by the mobile threat defense partner. The device health is not known.
+            name: unresponsive
+          - value: compromised
+            description: Device is considered compromised by the Threat Defense partner. This means the device has an active Threat or Risk which cannot be easily remediated by the end user and the user should contact their IT Admin.
+            name: compromised
+          - value: misconfigured
+            description: Device is considered misconfigured with the Threat Defense partner. This means the device is missing a required profile or configuration for the Threat Defense Partner to function properly and is thus threat or risk analysis is not able to complete.
+            name: misconfigured
     microsoft.graph.deviceAndAppManagementAssignmentTarget:
       title: deviceAndAppManagementAssignmentTarget
       type: object
@@ -10199,6 +9856,31 @@ components:
         - pushNotification
       type: string
       description: Scheduled Action Type Enum
+      x-ms-enum:
+        name: deviceComplianceActionType
+        modelAsString: false
+        values:
+          - value: noAction
+            description: No Action
+            name: noAction
+          - value: notification
+            description: Send Notification
+            name: notification
+          - value: block
+            description: Block the device in AAD
+            name: block
+          - value: retire
+            description: Retire the device
+            name: retire
+          - value: wipe
+            description: Wipe the device
+            name: wipe
+          - value: removeResourceAccessProfiles
+            description: Remove Resource Access Profiles from the device
+            name: removeResourceAccessProfiles
+          - value: pushNotification
+            description: Send push notification to device
+            name: pushNotification
     microsoft.graph.policyPlatformType:
       title: policyPlatformType
       enum:
@@ -10212,6 +9894,34 @@ components:
         - all
       type: string
       description: Supported platform types for policies.
+      x-ms-enum:
+        name: policyPlatformType
+        modelAsString: false
+        values:
+          - value: android
+            description: Android.
+            name: android
+          - value: androidForWork
+            description: AndroidForWork.
+            name: androidForWork
+          - value: iOS
+            description: iOS.
+            name: iOS
+          - value: macOS
+            description: MacOS.
+            name: macOS
+          - value: windowsPhone81
+            description: WindowsPhone 8.1.
+            name: windowsPhone81
+          - value: windows81AndLater
+            description: Windows 8.1 and later
+            name: windows81AndLater
+          - value: windows10AndLater
+            description: Windows 10 and later.
+            name: windows10AndLater
+          - value: all
+            description: All platforms.
+            name: all
     microsoft.graph.deviceExchangeAccessStateSummary:
       title: deviceExchangeAccessStateSummary
       type: object
@@ -10409,6 +10119,22 @@ components:
         - includeContactInformation
       type: string
       description: Branding Options for the Message Template. Branding is defined in the Intune Admin Console.
+      x-ms-enum:
+        name: notificationTemplateBrandingOptions
+        modelAsString: false
+        values:
+          - value: none
+            description: No Branding.
+            name: none
+          - value: includeCompanyLogo
+            description: Include Company Logo.
+            name: includeCompanyLogo
+          - value: includeCompanyName
+            description: Include Company Name.
+            name: includeCompanyName
+          - value: includeContactInformation
+            description: Include Contact Info.
+            name: includeContactInformation
     microsoft.graph.applicationType:
       title: applicationType
       enum:
@@ -10416,13 +10142,299 @@ components:
         - desktop
       type: string
       description: Possible types of Application
-    odata.error:
+      x-ms-enum:
+        name: applicationType
+        modelAsString: false
+        values:
+          - value: universal
+            description: The windows universal application
+            name: universal
+          - value: desktop
+            description: The windows desktop application
+            name: desktop
+    microsoft.graph.ODataErrors.ODataError:
       required:
         - error
       type: object
       properties:
         error:
-          $ref: '#/components/schemas/odata.error.main'
+          $ref: '#/components/schemas/microsoft.graph.ODataErrors.MainError'
+      additionalProperties:
+        type: object
+    microsoft.graph.detectedAppCollectionResponse:
+      title: Collection of detectedApp
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.detectedApp'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.managedDeviceCollectionResponse:
+      title: Collection of managedDevice
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.managedDevice'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.deviceCategoryCollectionResponse:
+      title: Collection of deviceCategory
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.deviceCategory'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.deviceCompliancePolicyCollectionResponse:
+      title: Collection of deviceCompliancePolicy
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.deviceCompliancePolicy'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.deviceCompliancePolicyAssignmentCollectionResponse:
+      title: Collection of deviceCompliancePolicyAssignment
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.deviceCompliancePolicyAssignment'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.settingStateDeviceSummaryCollectionResponse:
+      title: Collection of settingStateDeviceSummary
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.settingStateDeviceSummary'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.deviceComplianceDeviceStatusCollectionResponse:
+      title: Collection of deviceComplianceDeviceStatus
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.deviceComplianceDeviceStatus'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.deviceComplianceScheduledActionForRuleCollectionResponse:
+      title: Collection of deviceComplianceScheduledActionForRule
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.deviceComplianceScheduledActionForRule'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.deviceComplianceActionItemCollectionResponse:
+      title: Collection of deviceComplianceActionItem
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.deviceComplianceActionItem'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.deviceComplianceUserStatusCollectionResponse:
+      title: Collection of deviceComplianceUserStatus
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.deviceComplianceUserStatus'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.deviceCompliancePolicySettingStateSummaryCollectionResponse:
+      title: Collection of deviceCompliancePolicySettingStateSummary
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.deviceCompliancePolicySettingStateSummary'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.deviceComplianceSettingStateCollectionResponse:
+      title: Collection of deviceComplianceSettingState
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.deviceComplianceSettingState'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.deviceConfigurationCollectionResponse:
+      title: Collection of deviceConfiguration
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.deviceConfiguration'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.deviceConfigurationAssignmentCollectionResponse:
+      title: Collection of deviceConfigurationAssignment
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.deviceConfigurationAssignment'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.deviceConfigurationDeviceStatusCollectionResponse:
+      title: Collection of deviceConfigurationDeviceStatus
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.deviceConfigurationDeviceStatus'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.deviceConfigurationUserStatusCollectionResponse:
+      title: Collection of deviceConfigurationUserStatus
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.deviceConfigurationUserStatus'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.deviceCompliancePolicyStateCollectionResponse:
+      title: Collection of deviceCompliancePolicyState
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.deviceCompliancePolicyState'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.deviceConfigurationStateCollectionResponse:
+      title: Collection of deviceConfigurationState
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.deviceConfigurationState'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.notificationMessageTemplateCollectionResponse:
+      title: Collection of notificationMessageTemplate
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.notificationMessageTemplate'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.localizedNotificationMessageCollectionResponse:
+      title: Collection of localizedNotificationMessage
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.localizedNotificationMessage'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.deviceManagementTroubleshootingEventCollectionResponse:
+      title: Collection of deviceManagementTroubleshootingEvent
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.deviceManagementTroubleshootingEvent'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.windowsInformationProtectionAppLearningSummaryCollectionResponse:
+      title: Collection of windowsInformationProtectionAppLearningSummary
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.windowsInformationProtectionAppLearningSummary'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.windowsInformationProtectionNetworkLearningSummaryCollectionResponse:
+      title: Collection of windowsInformationProtectionNetworkLearningSummary
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.windowsInformationProtectionNetworkLearningSummary'
+        '@odata.nextLink':
+          type: string
       additionalProperties:
         type: object
     microsoft.graph.mimeContent:
@@ -10543,6 +10555,28 @@ components:
         - unresponsive
       type: string
       description: Partner state of this tenant.
+      x-ms-enum:
+        name: deviceManagementPartnerTenantState
+        modelAsString: false
+        values:
+          - value: unknown
+            description: Partner state is unknown.
+            name: unknown
+          - value: unavailable
+            description: Partner is unavailable.
+            name: unavailable
+          - value: enabled
+            description: Partner is enabled.
+            name: enabled
+          - value: terminated
+            description: Partner connection is terminated.
+            name: terminated
+          - value: rejected
+            description: Partner messages are rejected.
+            name: rejected
+          - value: unresponsive
+            description: Partner is unresponsive.
+            name: unresponsive
     microsoft.graph.enrollmentConfigurationAssignment:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -10562,6 +10596,19 @@ components:
         - multiTenantApp
       type: string
       description: Partner App Type.
+      x-ms-enum:
+        name: deviceManagementPartnerAppType
+        modelAsString: false
+        values:
+          - value: unknown
+            description: Partner App type is unknown.
+            name: unknown
+          - value: singleTenantApp
+            description: Partner App is Single tenant in AAD.
+            name: singleTenantApp
+          - value: multiTenantApp
+            description: Partner App is Multi tenant in AAD.
+            name: multiTenantApp
     microsoft.graph.deviceManagementExchangeConnectorType:
       title: deviceManagementExchangeConnectorType
       enum:
@@ -10571,6 +10618,22 @@ components:
         - dedicated
       type: string
       description: The type of Exchange Connector.
+      x-ms-enum:
+        name: deviceManagementExchangeConnectorType
+        modelAsString: false
+        values:
+          - value: onPremises
+            description: Connects to on-premises Exchange Environment.
+            name: onPremises
+          - value: hosted
+            description: Connects to O365 multi-tenant Exchange environment
+            name: hosted
+          - value: serviceToService
+            description: Intune Service connects directly to O365 multi-tenant Exchange environment
+            name: serviceToService
+          - value: dedicated
+            description: Connects to O365 Dedicated Exchange environment.
+            name: dedicated
     microsoft.graph.deviceManagementExchangeConnectorStatus:
       title: deviceManagementExchangeConnectorStatus
       enum:
@@ -10580,6 +10643,22 @@ components:
         - disconnected
       type: string
       description: The current status of the Exchange Connector.
+      x-ms-enum:
+        name: deviceManagementExchangeConnectorStatus
+        modelAsString: false
+        values:
+          - value: none
+            description: No Connector exists.
+            name: none
+          - value: connectionPending
+            description: Pending Connection to the Exchange Environment.
+            name: connectionPending
+          - value: connected
+            description: Connected to the Exchange Environment
+            name: connected
+          - value: disconnected
+            description: Disconnected from the Exchange Environment
+            name: disconnected
     microsoft.graph.mobileThreatPartnerTenantState:
       title: mobileThreatPartnerTenantState
       enum:
@@ -10589,6 +10668,22 @@ components:
         - unresponsive
       type: string
       description: Partner state of this tenant.
+      x-ms-enum:
+        name: mobileThreatPartnerTenantState
+        modelAsString: false
+        values:
+          - value: unavailable
+            description: Partner is unavailable.
+            name: unavailable
+          - value: available
+            description: Partner is available.
+            name: available
+          - value: enabled
+            description: Partner is enabled.
+            name: enabled
+          - value: unresponsive
+            description: Partner is unresponsive.
+            name: unresponsive
     microsoft.graph.importedWindowsAutopilotDeviceIdentityState:
       title: importedWindowsAutopilotDeviceIdentityState
       type: object
@@ -10620,6 +10715,25 @@ components:
         - failed
         - notContacted
       type: string
+      x-ms-enum:
+        name: enrollmentState
+        modelAsString: false
+        values:
+          - value: unknown
+            description: Device enrollment state is unknown
+            name: unknown
+          - value: enrolled
+            description: Device is Enrolled.
+            name: enrolled
+          - value: pendingReset
+            description: Enrolled but it's enrolled via enrollment profile and the enrolled profile is different from the assigned profile.
+            name: pendingReset
+          - value: failed
+            description: Not enrolled and there is enrollment failure record.
+            name: failed
+          - value: notContacted
+            description: Device is imported but not enrolled.
+            name: notContacted
     microsoft.graph.roleAssignment:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -10665,6 +10779,19 @@ components:
         - onboarded
       type: string
       description: The current TeamViewer connector status
+      x-ms-enum:
+        name: remoteAssistanceOnboardingStatus
+        modelAsString: false
+        values:
+          - value: notOnboarded
+            description: The status reported when there is no active TeamViewer connector configured or active
+            name: notOnboarded
+          - value: onboarding
+            description: 'The status reported when the system has initiated a TeamViewer connection, but the service has not yet completed the confirmation of a connector'
+            name: onboarding
+          - value: onboarded
+            description: The status reported when the system has successfully exchanged account information with TeamViewer and can now initiate remote assistance sessions with clients
+            name: onboarded
     microsoft.graph.deviceManagementExportJob:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -10723,6 +10850,31 @@ components:
         - notSupported
       type: string
       description: State of the action on the device
+      x-ms-enum:
+        name: actionState
+        modelAsString: false
+        values:
+          - value: none
+            description: Not a valid action state
+            name: none
+          - value: pending
+            description: Action is pending
+            name: pending
+          - value: canceled
+            description: Action has been cancelled.
+            name: canceled
+          - value: active
+            description: Action is active.
+            name: active
+          - value: done
+            description: Action completed without errors.
+            name: done
+          - value: failed
+            description: Action failed
+            name: failed
+          - value: notSupported
+            description: Action is not supported.
+            name: notSupported
     microsoft.graph.settingSource:
       title: settingSource
       type: object
@@ -10739,7 +10891,7 @@ components:
           $ref: '#/components/schemas/microsoft.graph.settingSourceType'
       additionalProperties:
         type: object
-    odata.error.main:
+    microsoft.graph.ODataErrors.MainError:
       required:
         - code
         - message
@@ -10751,15 +10903,13 @@ components:
           type: string
         target:
           type: string
+          nullable: true
         details:
           type: array
           items:
-            $ref: '#/components/schemas/odata.error.detail'
+            $ref: '#/components/schemas/microsoft.graph.ODataErrors.ErrorDetails'
         innererror:
-          type: object
-          additionalProperties:
-            type: object
-          description: The structure of this object is service-specific
+          $ref: '#/components/schemas/microsoft.graph.ODataErrors.InnerError'
       additionalProperties:
         type: object
     microsoft.graph.importedWindowsAutopilotDeviceIdentityImportStatus:
@@ -10771,6 +10921,25 @@ components:
         - complete
         - error
       type: string
+      x-ms-enum:
+        name: importedWindowsAutopilotDeviceIdentityImportStatus
+        modelAsString: false
+        values:
+          - value: unknown
+            description: Unknown status.
+            name: unknown
+          - value: pending
+            description: Pending status.
+            name: pending
+          - value: partial
+            description: Partial status.
+            name: partial
+          - value: complete
+            description: Complete status.
+            name: complete
+          - value: error
+            description: Error status.
+            name: error
     microsoft.graph.resourceAction:
       title: resourceAction
       type: object
@@ -10797,6 +10966,16 @@ components:
         - pdf
       type: string
       description: Possible values for the file format of a report
+      x-ms-enum:
+        name: deviceManagementReportFileFormat
+        modelAsString: false
+        values:
+          - value: csv
+            description: Comma-separated values
+            name: csv
+          - value: pdf
+            description: Portable Document Format
+            name: pdf
     microsoft.graph.deviceManagementExportJobLocalizationType:
       title: deviceManagementExportJobLocalizationType
       enum:
@@ -10804,6 +10983,16 @@ components:
         - replaceLocalizableValues
       type: string
       description: Configures how the requested export job is localized
+      x-ms-enum:
+        name: deviceManagementExportJobLocalizationType
+        modelAsString: false
+        values:
+          - value: localizedValuesAsAdditionalColumn
+            description: Configures the export job to expose localized values as an additional column
+            name: localizedValuesAsAdditionalColumn
+          - value: replaceLocalizableValues
+            description: Configures the export job to replace enumerable values with their localized values
+            name: replaceLocalizableValues
     microsoft.graph.deviceManagementReportStatus:
       title: deviceManagementReportStatus
       enum:
@@ -10814,13 +11003,32 @@ components:
         - failed
       type: string
       description: Possible statuses associated with a generated report
+      x-ms-enum:
+        name: deviceManagementReportStatus
+        modelAsString: false
+        values:
+          - value: unknown
+            description: Report generation status is unknown
+            name: unknown
+          - value: notStarted
+            description: Report generation has not started
+            name: notStarted
+          - value: inProgress
+            description: Report generation is in progress
+            name: inProgress
+          - value: completed
+            description: Report generation is completed
+            name: completed
+          - value: failed
+            description: Report generation has failed
+            name: failed
     microsoft.graph.settingSourceType:
       title: settingSourceType
       enum:
         - deviceConfiguration
         - deviceIntent
       type: string
-    odata.error.detail:
+    microsoft.graph.ODataErrors.ErrorDetails:
       required:
         - code
         - message
@@ -10832,15 +11040,159 @@ components:
           type: string
         target:
           type: string
+          nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.ODataErrors.InnerError:
+      type: object
+      additionalProperties:
+        type: object
+      description: The structure of this object is service-specific
   responses:
     error:
       description: error
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/odata.error'
+            $ref: '#/components/schemas/microsoft.graph.ODataErrors.ODataError'
+    microsoft.graph.detectedAppCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.detectedAppCollectionResponse'
+    microsoft.graph.managedDeviceCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.managedDeviceCollectionResponse'
+    microsoft.graph.deviceCategoryCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.deviceCategoryCollectionResponse'
+    microsoft.graph.deviceCompliancePolicyCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.deviceCompliancePolicyCollectionResponse'
+    microsoft.graph.deviceCompliancePolicyAssignmentCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.deviceCompliancePolicyAssignmentCollectionResponse'
+    microsoft.graph.settingStateDeviceSummaryCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.settingStateDeviceSummaryCollectionResponse'
+    microsoft.graph.deviceComplianceDeviceStatusCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.deviceComplianceDeviceStatusCollectionResponse'
+    microsoft.graph.deviceComplianceScheduledActionForRuleCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.deviceComplianceScheduledActionForRuleCollectionResponse'
+    microsoft.graph.deviceComplianceActionItemCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.deviceComplianceActionItemCollectionResponse'
+    microsoft.graph.deviceComplianceUserStatusCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.deviceComplianceUserStatusCollectionResponse'
+    microsoft.graph.deviceCompliancePolicySettingStateSummaryCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.deviceCompliancePolicySettingStateSummaryCollectionResponse'
+    microsoft.graph.deviceComplianceSettingStateCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.deviceComplianceSettingStateCollectionResponse'
+    microsoft.graph.deviceConfigurationCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.deviceConfigurationCollectionResponse'
+    microsoft.graph.deviceConfigurationAssignmentCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.deviceConfigurationAssignmentCollectionResponse'
+    microsoft.graph.deviceConfigurationDeviceStatusCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.deviceConfigurationDeviceStatusCollectionResponse'
+    microsoft.graph.deviceConfigurationUserStatusCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.deviceConfigurationUserStatusCollectionResponse'
+    microsoft.graph.deviceCompliancePolicyStateCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.deviceCompliancePolicyStateCollectionResponse'
+    microsoft.graph.deviceConfigurationStateCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.deviceConfigurationStateCollectionResponse'
+    microsoft.graph.notificationMessageTemplateCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.notificationMessageTemplateCollectionResponse'
+    microsoft.graph.localizedNotificationMessageCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.localizedNotificationMessageCollectionResponse'
+    microsoft.graph.deviceManagementTroubleshootingEventCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.deviceManagementTroubleshootingEventCollectionResponse'
+    microsoft.graph.windowsInformationProtectionAppLearningSummaryCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.windowsInformationProtectionAppLearningSummaryCollectionResponse'
+    microsoft.graph.windowsInformationProtectionNetworkLearningSummaryCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.windowsInformationProtectionNetworkLearningSummaryCollectionResponse'
   parameters:
     top:
       name: $top

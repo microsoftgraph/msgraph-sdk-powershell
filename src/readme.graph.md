@@ -99,6 +99,8 @@ directive:
     - microsoft.graph.security.informationProtectionPolicySetting
     - microsoft.graph.security.sensitivityLabel
     - microsoft.graph.taskViewpoint
+    - microsoft.graph.security.ediscoveryReviewTag
+    - microsoft.graph.security.ediscoverySearch
   # Set parameter alias
   - where:
       parameter-name: OrderBy
@@ -412,56 +414,37 @@ directive:
       variant: ^(Check|Verify)(.*)
     set:
       verb: Confirm
-# Add ByRef suffix to /$ref cmdlets
+# Remove commands
   - where:
-      subject: ^(\w*[a-z])GraphRef([A-Z]\w*)$
-    set:
-      subject: $1$2ByRef
-# Remove *ByRef commands
-  - where:
-      verb: Get|Remove|New
-      subject: ^UserPlanner(FavoritePlanByRef|RecentPlanByRef|RosterPlanByRef)$
+      verb: Restore
+      subject: ^(Application|Contact|Contract|Device|DirectoryObject|DirectoryRole|DirectoryRoleTemplate|EntitlementManagementConnectedOrganizationInternalSponsor|Group|GroupPermissionGrant|Organization|ServicePrincipal|User|UserAuthenticationMicrosoftAuthenticatorMethodDevice|UserAuthenticationWindowHelloForBusinessMethodDevice|AdministrativeUnit|ChatPermissionGrant|DirectoryAdministrativeUnit|DirectorySettingTemplate|TeamPermissionGrant|UserAuthenticationPasswordlessMicrosoftAuthenticatorMethodDevice|UserChatPermissionGrant|UserDevice)$
     remove: true
-# Rename *ByRef commands
+# Rename prepositions to bypass https://github.com/Azure/autorest.powershell/issues/795.
   - where:
-      verb: Get|New
-      subject: ^GroupMemberByRef$
-      variant: ^List2$|^Create2$|^CreateExpanded2$|^CreateViaIdentity2$|^CreateViaIdentityExpanded2$|^List5$|^Create5$|^CreateExpanded5$|^CreateViaIdentity5$|^CreateViaIdentityExpanded5$
+      subject: ^(\w*[a-z])GraphBPre(\w*)$
     set:
-      subject: GroupMemberOfByRef
+      subject: $1By$2
   - where:
-      verb: Get|New
-      subject: ^GroupMemberByRef$
-      variant: ^List1$|^Create1$|^CreateExpanded1$|^CreateViaIdentity1$|^CreateViaIdentityExpanded1$|^List4$|^Create4$|^CreateExpanded4$|^CreateViaIdentity4$|^CreateViaIdentityExpanded4$
+      subject: ^(\w*[a-z])GraphWPre(\w*)$
     set:
-      subject: GroupMemberWithLicenseErrorByRef
+      subject: $1With$2
   - where:
-      verb: Get|New
-      subject: ^GroupTransitiveMemberByRef$
-      variant: ^List$|^List2$|^Create$|^Create2$|^CreateExpanded$|^CreateExpanded2$|^CreateViaIdentity$|^CreateViaIdentity2$|^CreateViaIdentityExpanded$|^CreateViaIdentityExpanded2$
+      subject: ^(\w*[a-z])GraphAPre(\w*)$
     set:
-      subject: GroupTransitiveMemberOfByRef
+      subject: $1At$2
   - where:
-      subject: ^SiteSite(ByRef)$
+      subject: ^(\w*[a-z])GraphFPre(\w*)$
     set:
-      subject: SubSite$1
-# Alias then rename cmdlets to avoid breaking change.
+      subject: $1For$2
   - where:
-      subject: ^(User|ServicePrincipal|Contact|Device)(Member|TransitiveMember)ByRef$
+      subject: ^(\w*[a-z])GraphOPre(\w*)$
     set:
-      alias: ${verb}-Mg${subject}
+      subject: $1Of$2
   - where:
-      subject: ^(User|ServicePrincipal|Contact|Device)(Member|TransitiveMember)ByRef$
-    set:
-      subject: $1$2OfByRef
-  - where:
-      subject: ^(Application|Group)(CreatedOnBehalf)ByRef$
-    set:
-      alias: ${verb}-Mg${subject}
-  - where:
-      subject: ^(Application|Group)(CreatedOnBehalf)ByRef$
-    set:
-      subject: $1$2OfByRef
+      verb: Clear
+      subject: ^UserManagedAppRegistrationByDeviceTag$
+      variant: ^Wipe$|^WipeExpanded$|^WipeViaIdentity$|^WipeViaIdentityExpanded$
+    remove: true
 # Modify generated .json.cs model classes.
   - from: source-file-csharp
     where: $
@@ -509,6 +492,20 @@ directive:
         let propertiesToRemoveRegex = /^.*Microsoft\.Graph\.PowerShell\.Runtime\.IAssociativeArray<global::System\.Object>\.(Count|Keys|Values).*$/gm
         $ = $.replace(propertiesToRemoveRegex, '');
 
+        let classRegex = /((\s*)public\s*partial\s*class\s*MicrosoftGraph(NamedLocation).*\s.*\s*\{)/gm
+        if($.match(classRegex)) {
+          let toFirstUpperImplementation = 'internal string ToFirstCharacterLowerCase(string text) => System.String.IsNullOrEmpty(text) ? text : $"{char.ToLowerInvariant(text[0])}{text.Substring(1)}";'
+          $ = $.replace(classRegex, `$1$2${toFirstUpperImplementation}`)
+          
+          let directoryKeyRegex = /\.Add\((\s*property\.Key\.ToString\(\))/gm
+          $ = $.replace(directoryKeyRegex, '.Add(ToFirstCharacterLowerCase($1)')
+        }
+
+        // Rename additionalProperties indexer name from Item to EntityItem to avoid property name conflict.
+        // See https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/indexers/using-indexers
+        let indexerRegex = /^(\s*)(public\s*global::System\.Object\s*this\[global::System\.String\s*index\])/gm
+        $ = $.replace(indexerRegex, '$1[System.Runtime.CompilerServices.IndexerName("EntityItem")]\n$2')
+        
         return $;
       }
 # Modify generated .PowerShell.cs model classes.
@@ -556,7 +553,7 @@ directive:
 
         // Override OnDefault to handle all success, 2xx responses, as success and not error.
         let overrideOnDefaultRegex = /(\s*)(partial\s*void\s*overrideOnDefault)/gmi
-        let overrideOnDefaultImplementation = "$1partial void overrideOnDefault(global::System.Net.Http.HttpResponseMessage responseMessage, global::System.Threading.Tasks.Task<Microsoft.Graph.PowerShell.Models.IOdataError> response, ref global::System.Threading.Tasks.Task<bool> returnNow) => this.OverrideOnDefault(responseMessage,ref returnNow);$1$2"
+        let overrideOnDefaultImplementation = "$1partial void overrideOnDefault(global::System.Net.Http.HttpResponseMessage responseMessage, global::System.Threading.Tasks.Task<Microsoft.Graph.PowerShell.Models.IMicrosoftGraphODataErrorsOdataError> response, ref global::System.Threading.Tasks.Task<bool> returnNow) => this.OverrideOnDefault(responseMessage,ref returnNow);$1$2"
         $ = $.replace(overrideOnDefaultRegex, overrideOnDefaultImplementation);
 
         // Remove noisy log messages.
@@ -620,10 +617,13 @@ directive:
       } else {
         let outFileParameterRegex = /(^\s*)public\s*global::System\.String\s*OutFile\s*/gmi
         let streamResponseRegex = /global::System\.Threading\.Tasks\.Task<global::System\.IO\.Stream>\s*response/gmi
+        let octetStreamSchemaResponseRegex = /global::System\.Threading\.Tasks\.Task<.*(OctetStreamSchema|GraphReport)>\s*response/gmi
+        let overrideOnOkCallRegex = /(^\s*)(overrideOnOk\(\s*responseMessage\s*,\s*response\s*,\s*ref\s*_returnNow\s*\);)/gmi
         if($.match(outFileParameterRegex) && $.match(streamResponseRegex)) {
           // Handle file download.
-          let overrideOnOkCallRegex = /(^\s*)(overrideOnOk\(\s*responseMessage\s*,\s*response\s*,\s*ref\s*_returnNow\s*\);)/gmi
           $ = $.replace(overrideOnOkCallRegex, '$1$2\n$1using(var stream = await response){ this.WriteToFile(responseMessage, stream, this.GetProviderPath(OutFile, false), _cancellationTokenSource.Token); _returnNow = global::System.Threading.Tasks.Task<bool>.FromResult(true);}\n$1');
+        } else if ($.match(outFileParameterRegex) && $.match(octetStreamSchemaResponseRegex)){
+          $ = $.replace(overrideOnOkCallRegex, '$1$2\n$1using(var stream = await responseMessage.Content.ReadAsStreamAsync()){ this.WriteToFile(responseMessage, stream, this.GetProviderPath(OutFile, false), _cancellationTokenSource.Token); _returnNow = global::System.Threading.Tasks.Task<bool>.FromResult(true);}\n$1');
         }
         return $;
       }
@@ -682,13 +682,6 @@ directive:
         let fromJsonRegex = /(\s*FromJson<\w*>\s*\(JsonObject\s*json\s*,\s*System\.Collections\.Generic\.IDictionary.*)(\s*)({)/gm
         $ = $.replace(fromJsonRegex, '$1$2$3\n$2 if (excludes != null){ excludes = new System.Collections.Generic.HashSet<string>(excludes, global::System.StringComparer.OrdinalIgnoreCase);}');
 
-        let toFirstUpperImplementation = 'internal static string ToFirstCharacterLowerCase(this string text) => String.IsNullOrEmpty(text) ? text : $"{char.ToLowerInvariant(text[0])}{text.Substring(1)}";'
-        let classRegex = /(internal\sstatic\sclass\sJsonSerializable(\s*){)/gm
-        $ = $.replace(classRegex, `$1$2${toFirstUpperImplementation}`)
-
-        let directoryKeyRegex = /(container\.Add\(key\.Key)(,)/gm
-        $ = $.replace(directoryKeyRegex, '$1.ToFirstCharacterLowerCase()$2')
-
         return $;
       }
 
@@ -726,6 +719,26 @@ directive:
         // Add '.ToLower()' at the end of all 'Count.ToString()'
         let countRegex = /(Count\.ToString\(\))/gmi
         $ = $.replace(countRegex, '$1.ToLower()');
+        return $;
+      }
+
+# Fix enums with underscore.
+  - from: source-file-csharp
+    where: $
+    transform: >
+      if (!$documentPath.match(/generated%5Capi%5CSupport%5C(WindowsMalwareCategory|RunAsAccountType|(AssignmentFilter|DeviceScope)Operator).cs/gmi))
+      {
+        return $;
+      } else {
+        // Add underscore to enum properties that have underscore in their value to avoid duplicates.
+        let remoteControlSoftwareRegex = /RemoteControlSoftware(\s*=\s*@"remote_Control_Software")/gmi
+        $ = $.replace(remoteControlSoftwareRegex, 'Remote_Control_Software$1');
+
+        let equalsRegex = /Equals(\s*=\s*@"equals")/gmi
+        $ = $.replace(equalsRegex, '_Equals$1');
+
+        let systemRegex = /System(\s*=\s*@"system")/gmi
+        $ = $.replace(systemRegex, '_System$1');
         return $;
       }
 ```

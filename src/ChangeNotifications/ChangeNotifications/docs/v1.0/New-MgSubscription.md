@@ -24,7 +24,7 @@ New-MgSubscription [-AdditionalProperties <Hashtable>] [-ApplicationId <String>]
 
 ### Create1
 ```
-New-MgSubscription -BodyParameter <IMicrosoftGraphSubscription> [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgSubscription -BodyParameter <IMicrosoftGraphSubscription1> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -71,7 +71,7 @@ subscription
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSubscription
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSubscription1
 Parameter Sets: Create1
 Aliases:
 
@@ -366,11 +366,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSubscription
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSubscription1
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSubscription
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSubscription1
 
 ## NOTES
 
@@ -381,7 +381,7 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-BODYPARAMETER <IMicrosoftGraphSubscription>: subscription
+BODYPARAMETER <IMicrosoftGraphSubscription1>: subscription
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: Read-only.
   - `[ApplicationId <String>]`: Optional. Identifier of the application used to create the subscription. Read-only.

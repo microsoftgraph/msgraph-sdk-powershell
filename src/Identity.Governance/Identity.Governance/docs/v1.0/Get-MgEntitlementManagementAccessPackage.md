@@ -12,10 +12,11 @@ Represents access package objects.
 
 ## SYNTAX
 
-### ListAll (Default)
+### List1 (Default)
 ```
-Get-MgEntitlementManagementAccessPackage [-ExpandProperty <String[]>] [-Property <String[]>]
- [-Sort <String[]>] [-All] [<CommonParameters>]
+Get-MgEntitlementManagementAccessPackage [-ExpandProperty <String[]>] [-Filter <String>]
+ [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
+ [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get1
@@ -28,31 +29,6 @@ Get-MgEntitlementManagementAccessPackage -AccessPackageId <String> [-ExpandPrope
 ```
 Get-MgEntitlementManagementAccessPackage -InputObject <IIdentityGovernanceIdentity>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
-```
-
-### List1
-```
-Get-MgEntitlementManagementAccessPackage [-ExpandProperty <String[]>] [-Filter <String>]
- [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
- [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
-```
-
-### ListByCatalogId
-```
-Get-MgEntitlementManagementAccessPackage -CatalogId <String> [-ExpandProperty <String[]>]
- [-Property <String[]>] [-Sort <String[]>] [-Top <Int32>] [-All] [<CommonParameters>]
-```
-
-### ListByDisplayNameContains
-```
-Get-MgEntitlementManagementAccessPackage -DisplayNameContains <String> [-ExpandProperty <String[]>]
- [-Property <String[]>] [-Sort <String[]>] [-Top <Int32>] [-All] [<CommonParameters>]
-```
-
-### ListByDisplayNameEq
-```
-Get-MgEntitlementManagementAccessPackage -DisplayNameEq <String> [-ExpandProperty <String[]>]
- [-Property <String[]>] [-Sort <String[]>] [-Top <Int32>] [-All] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -82,25 +58,10 @@ List all pages.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
-Parameter Sets: List1, ListAll, ListByCatalogId, ListByDisplayNameContains, ListByDisplayNameEq
+Parameter Sets: List1
 Aliases:
 
 Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -CatalogId
-Filter items by property values
-
-```yaml
-Type: System.String
-Parameter Sets: ListByCatalogId
-Aliases:
-
-Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -117,36 +78,6 @@ Parameter Sets: List1
 Aliases: CV
 
 Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -DisplayNameContains
-Filter items by property values
-
-```yaml
-Type: System.String
-Parameter Sets: ListByDisplayNameContains
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -DisplayNameEq
-Filter items by property values
-
-```yaml
-Type: System.String
-Parameter Sets: ListByDisplayNameEq
-Aliases:
-
-Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -264,7 +195,7 @@ Order items by property values
 
 ```yaml
 Type: System.String[]
-Parameter Sets: List1, ListAll, ListByCatalogId, ListByDisplayNameContains, ListByDisplayNameEq
+Parameter Sets: List1
 Aliases: OrderBy
 
 Required: False
@@ -279,7 +210,7 @@ Show only the first n items
 
 ```yaml
 Type: System.Int32
-Parameter Sets: List1, ListByCatalogId, ListByDisplayNameContains, ListByDisplayNameEq
+Parameter Sets: List1
 Aliases: Limit
 
 Required: False
@@ -297,8 +228,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
 
 ## OUTPUTS
-
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessPackage
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessPackage1
 

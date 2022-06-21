@@ -5,19 +5,11 @@
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Users.Functions.yml"
     },
-    "/users/{user-id}/calendar/calendarView/{event-id}/calendar/microsoft.graph.allowedCalendarSharingRoles(User='{User}')": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Users.Functions.yml"
-    },
     "/users/{user-id}/calendar/calendarView/{event-id}/instances/microsoft.graph.delta()": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Users.Functions.yml"
     },
     "/users/{user-id}/calendar/calendarView/microsoft.graph.delta()": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Users.Functions.yml"
-    },
-    "/users/{user-id}/calendar/events/{event-id}/calendar/microsoft.graph.allowedCalendarSharingRoles(User='{User}')": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Users.Functions.yml"
     },
@@ -33,19 +25,11 @@
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Users.Functions.yml"
     },
-    "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/calendarView/{event-id}/calendar/microsoft.graph.allowedCalendarSharingRoles(User='{User}')": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Users.Functions.yml"
-    },
     "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/calendarView/{event-id}/instances/microsoft.graph.delta()": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Users.Functions.yml"
     },
     "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/calendarView/microsoft.graph.delta()": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Users.Functions.yml"
-    },
-    "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/events/{event-id}/calendar/microsoft.graph.allowedCalendarSharingRoles(User='{User}')": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Users.Functions.yml"
     },
@@ -61,19 +45,11 @@
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Users.Functions.yml"
     },
-    "/users/{user-id}/calendars/{calendar-id}/calendarView/{event-id}/calendar/microsoft.graph.allowedCalendarSharingRoles(User='{User}')": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Users.Functions.yml"
-    },
     "/users/{user-id}/calendars/{calendar-id}/calendarView/{event-id}/instances/microsoft.graph.delta()": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Users.Functions.yml"
     },
     "/users/{user-id}/calendars/{calendar-id}/calendarView/microsoft.graph.delta()": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Users.Functions.yml"
-    },
-    "/users/{user-id}/calendars/{calendar-id}/events/{event-id}/calendar/microsoft.graph.allowedCalendarSharingRoles(User='{User}')": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Users.Functions.yml"
     },
@@ -89,15 +65,27 @@
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Users.Functions.yml"
     },
-    "/users/{user-id}/calendarView/{event-id}/calendar/microsoft.graph.allowedCalendarSharingRoles(User='{User}')": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Users.Functions.yml"
-    },
     "/users/{user-id}/calendarView/{event-id}/instances/microsoft.graph.delta()": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Users.Functions.yml"
     },
     "/users/{user-id}/calendarView/microsoft.graph.delta()": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Users.Functions.yml"
+    },
+    "/users/{user-id}/chats/{chat-id}/messages/{chatMessage-id}/replies/microsoft.graph.delta()": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Users.Functions.yml"
+    },
+    "/users/{user-id}/chats/{chat-id}/messages/microsoft.graph.delta()": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Users.Functions.yml"
+    },
+    "/users/{user-id}/chats/microsoft.graph.getAllMessages()": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Users.Functions.yml"
+    },
+    "/users/{user-id}/contactFolders/{contactFolder-id}/childFolders/{contactFolder-id1}/contacts/microsoft.graph.delta()": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Users.Functions.yml"
     },
@@ -117,7 +105,87 @@
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Users.Functions.yml"
     },
-    "/users/{user-id}/events/{event-id}/calendar/microsoft.graph.allowedCalendarSharingRoles(User='{User}')": {
+    "/users/{user-id}/drives/{drive-id}/items/{driveItem-id}/listItem/microsoft.graph.getActivitiesByInterval()": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Users.Functions.yml"
+    },
+    "/users/{user-id}/drives/{drive-id}/items/{driveItem-id}/listItem/microsoft.graph.getActivitiesByInterval(startDateTime='{startDateTime}',endDateTime='{endDateTime}',interval='{interval}')": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Users.Functions.yml"
+    },
+    "/users/{user-id}/drives/{drive-id}/items/{driveItem-id}/microsoft.graph.delta()": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Users.Functions.yml"
+    },
+    "/users/{user-id}/drives/{drive-id}/items/{driveItem-id}/microsoft.graph.delta(token='{token}')": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Users.Functions.yml"
+    },
+    "/users/{user-id}/drives/{drive-id}/items/{driveItem-id}/microsoft.graph.getActivitiesByInterval()": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Users.Functions.yml"
+    },
+    "/users/{user-id}/drives/{drive-id}/items/{driveItem-id}/microsoft.graph.getActivitiesByInterval(startDateTime='{startDateTime}',endDateTime='{endDateTime}',interval='{interval}')": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Users.Functions.yml"
+    },
+    "/users/{user-id}/drives/{drive-id}/items/{driveItem-id}/microsoft.graph.search(q='{q}')": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Users.Functions.yml"
+    },
+    "/users/{user-id}/drives/{drive-id}/list/contentTypes/{contentType-id}/microsoft.graph.isPublished()": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Users.Functions.yml"
+    },
+    "/users/{user-id}/drives/{drive-id}/list/contentTypes/microsoft.graph.getCompatibleHubContentTypes()": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Users.Functions.yml"
+    },
+    "/users/{user-id}/drives/{drive-id}/list/items/{listItem-id}/microsoft.graph.getActivitiesByInterval()": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Users.Functions.yml"
+    },
+    "/users/{user-id}/drives/{drive-id}/list/items/{listItem-id}/microsoft.graph.getActivitiesByInterval(startDateTime='{startDateTime}',endDateTime='{endDateTime}',interval='{interval}')": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Users.Functions.yml"
+    },
+    "/users/{user-id}/drives/{drive-id}/microsoft.graph.recent()": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Users.Functions.yml"
+    },
+    "/users/{user-id}/drives/{drive-id}/microsoft.graph.search(q='{q}')": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Users.Functions.yml"
+    },
+    "/users/{user-id}/drives/{drive-id}/microsoft.graph.sharedWithMe()": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Users.Functions.yml"
+    },
+    "/users/{user-id}/drives/{drive-id}/root/listItem/microsoft.graph.getActivitiesByInterval()": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Users.Functions.yml"
+    },
+    "/users/{user-id}/drives/{drive-id}/root/listItem/microsoft.graph.getActivitiesByInterval(startDateTime='{startDateTime}',endDateTime='{endDateTime}',interval='{interval}')": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Users.Functions.yml"
+    },
+    "/users/{user-id}/drives/{drive-id}/root/microsoft.graph.delta()": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Users.Functions.yml"
+    },
+    "/users/{user-id}/drives/{drive-id}/root/microsoft.graph.delta(token='{token}')": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Users.Functions.yml"
+    },
+    "/users/{user-id}/drives/{drive-id}/root/microsoft.graph.getActivitiesByInterval()": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Users.Functions.yml"
+    },
+    "/users/{user-id}/drives/{drive-id}/root/microsoft.graph.getActivitiesByInterval(startDateTime='{startDateTime}',endDateTime='{endDateTime}',interval='{interval}')": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Users.Functions.yml"
+    },
+    "/users/{user-id}/drives/{drive-id}/root/microsoft.graph.search(q='{q}')": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Users.Functions.yml"
     },
@@ -129,387 +197,31 @@
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Users.Functions.yml"
     },
-    "/users/{user-id}/insights/shared/{sharedInsight-id}/lastSharedMethod/microsoft.graph.workbookRange/microsoft.graph.boundingRect(anotherRange='{anotherRange}')": {
+    "/users/{user-id}/joinedTeams/{team-id}/channels/{channel-id}/messages/{chatMessage-id}/replies/microsoft.graph.delta()": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Users.Functions.yml"
     },
-    "/users/{user-id}/insights/shared/{sharedInsight-id}/lastSharedMethod/microsoft.graph.workbookRange/microsoft.graph.cell(row={row},column={column})": {
+    "/users/{user-id}/joinedTeams/{team-id}/channels/{channel-id}/messages/microsoft.graph.delta()": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Users.Functions.yml"
     },
-    "/users/{user-id}/insights/shared/{sharedInsight-id}/lastSharedMethod/microsoft.graph.workbookRange/microsoft.graph.column(column={column})": {
+    "/users/{user-id}/joinedTeams/{team-id}/channels/microsoft.graph.getAllMessages()": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Users.Functions.yml"
     },
-    "/users/{user-id}/insights/shared/{sharedInsight-id}/lastSharedMethod/microsoft.graph.workbookRange/microsoft.graph.columnsAfter()": {
+    "/users/{user-id}/joinedTeams/{team-id}/primaryChannel/messages/{chatMessage-id}/replies/microsoft.graph.delta()": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Users.Functions.yml"
     },
-    "/users/{user-id}/insights/shared/{sharedInsight-id}/lastSharedMethod/microsoft.graph.workbookRange/microsoft.graph.columnsAfter(count={count})": {
+    "/users/{user-id}/joinedTeams/{team-id}/primaryChannel/messages/microsoft.graph.delta()": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Users.Functions.yml"
     },
-    "/users/{user-id}/insights/shared/{sharedInsight-id}/lastSharedMethod/microsoft.graph.workbookRange/microsoft.graph.columnsBefore()": {
+    "/users/{user-id}/joinedTeams/microsoft.graph.getAllMessages()": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Users.Functions.yml"
     },
-    "/users/{user-id}/insights/shared/{sharedInsight-id}/lastSharedMethod/microsoft.graph.workbookRange/microsoft.graph.columnsBefore(count={count})": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Users.Functions.yml"
-    },
-    "/users/{user-id}/insights/shared/{sharedInsight-id}/lastSharedMethod/microsoft.graph.workbookRange/microsoft.graph.entireColumn()": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Users.Functions.yml"
-    },
-    "/users/{user-id}/insights/shared/{sharedInsight-id}/lastSharedMethod/microsoft.graph.workbookRange/microsoft.graph.entireRow()": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Users.Functions.yml"
-    },
-    "/users/{user-id}/insights/shared/{sharedInsight-id}/lastSharedMethod/microsoft.graph.workbookRange/microsoft.graph.intersection(anotherRange='{anotherRange}')": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Users.Functions.yml"
-    },
-    "/users/{user-id}/insights/shared/{sharedInsight-id}/lastSharedMethod/microsoft.graph.workbookRange/microsoft.graph.lastCell()": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Users.Functions.yml"
-    },
-    "/users/{user-id}/insights/shared/{sharedInsight-id}/lastSharedMethod/microsoft.graph.workbookRange/microsoft.graph.lastColumn()": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Users.Functions.yml"
-    },
-    "/users/{user-id}/insights/shared/{sharedInsight-id}/lastSharedMethod/microsoft.graph.workbookRange/microsoft.graph.lastRow()": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Users.Functions.yml"
-    },
-    "/users/{user-id}/insights/shared/{sharedInsight-id}/lastSharedMethod/microsoft.graph.workbookRange/microsoft.graph.offsetRange(rowOffset={rowOffset},columnOffset={columnOffset})": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Users.Functions.yml"
-    },
-    "/users/{user-id}/insights/shared/{sharedInsight-id}/lastSharedMethod/microsoft.graph.workbookRange/microsoft.graph.resizedRange(deltaRows={deltaRows},deltaColumns={deltaColumns})": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Users.Functions.yml"
-    },
-    "/users/{user-id}/insights/shared/{sharedInsight-id}/lastSharedMethod/microsoft.graph.workbookRange/microsoft.graph.row(row={row})": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Users.Functions.yml"
-    },
-    "/users/{user-id}/insights/shared/{sharedInsight-id}/lastSharedMethod/microsoft.graph.workbookRange/microsoft.graph.rowsAbove()": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Users.Functions.yml"
-    },
-    "/users/{user-id}/insights/shared/{sharedInsight-id}/lastSharedMethod/microsoft.graph.workbookRange/microsoft.graph.rowsAbove(count={count})": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Users.Functions.yml"
-    },
-    "/users/{user-id}/insights/shared/{sharedInsight-id}/lastSharedMethod/microsoft.graph.workbookRange/microsoft.graph.rowsBelow()": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Users.Functions.yml"
-    },
-    "/users/{user-id}/insights/shared/{sharedInsight-id}/lastSharedMethod/microsoft.graph.workbookRange/microsoft.graph.rowsBelow(count={count})": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Users.Functions.yml"
-    },
-    "/users/{user-id}/insights/shared/{sharedInsight-id}/lastSharedMethod/microsoft.graph.workbookRange/microsoft.graph.usedRange()": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Users.Functions.yml"
-    },
-    "/users/{user-id}/insights/shared/{sharedInsight-id}/lastSharedMethod/microsoft.graph.workbookRange/microsoft.graph.usedRange(valuesOnly={valuesOnly})": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Users.Functions.yml"
-    },
-    "/users/{user-id}/insights/shared/{sharedInsight-id}/lastSharedMethod/microsoft.graph.workbookRange/microsoft.graph.visibleView()": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Users.Functions.yml"
-    },
-    "/users/{user-id}/insights/shared/{sharedInsight-id}/lastSharedMethod/microsoft.graph.workbookRangeView/microsoft.graph.range()": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Users.Functions.yml"
-    },
-    "/users/{user-id}/insights/shared/{sharedInsight-id}/resource/microsoft.graph.workbookRange/microsoft.graph.boundingRect(anotherRange='{anotherRange}')": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Users.Functions.yml"
-    },
-    "/users/{user-id}/insights/shared/{sharedInsight-id}/resource/microsoft.graph.workbookRange/microsoft.graph.cell(row={row},column={column})": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Users.Functions.yml"
-    },
-    "/users/{user-id}/insights/shared/{sharedInsight-id}/resource/microsoft.graph.workbookRange/microsoft.graph.column(column={column})": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Users.Functions.yml"
-    },
-    "/users/{user-id}/insights/shared/{sharedInsight-id}/resource/microsoft.graph.workbookRange/microsoft.graph.columnsAfter()": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Users.Functions.yml"
-    },
-    "/users/{user-id}/insights/shared/{sharedInsight-id}/resource/microsoft.graph.workbookRange/microsoft.graph.columnsAfter(count={count})": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Users.Functions.yml"
-    },
-    "/users/{user-id}/insights/shared/{sharedInsight-id}/resource/microsoft.graph.workbookRange/microsoft.graph.columnsBefore()": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Users.Functions.yml"
-    },
-    "/users/{user-id}/insights/shared/{sharedInsight-id}/resource/microsoft.graph.workbookRange/microsoft.graph.columnsBefore(count={count})": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Users.Functions.yml"
-    },
-    "/users/{user-id}/insights/shared/{sharedInsight-id}/resource/microsoft.graph.workbookRange/microsoft.graph.entireColumn()": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Users.Functions.yml"
-    },
-    "/users/{user-id}/insights/shared/{sharedInsight-id}/resource/microsoft.graph.workbookRange/microsoft.graph.entireRow()": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Users.Functions.yml"
-    },
-    "/users/{user-id}/insights/shared/{sharedInsight-id}/resource/microsoft.graph.workbookRange/microsoft.graph.intersection(anotherRange='{anotherRange}')": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Users.Functions.yml"
-    },
-    "/users/{user-id}/insights/shared/{sharedInsight-id}/resource/microsoft.graph.workbookRange/microsoft.graph.lastCell()": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Users.Functions.yml"
-    },
-    "/users/{user-id}/insights/shared/{sharedInsight-id}/resource/microsoft.graph.workbookRange/microsoft.graph.lastColumn()": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Users.Functions.yml"
-    },
-    "/users/{user-id}/insights/shared/{sharedInsight-id}/resource/microsoft.graph.workbookRange/microsoft.graph.lastRow()": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Users.Functions.yml"
-    },
-    "/users/{user-id}/insights/shared/{sharedInsight-id}/resource/microsoft.graph.workbookRange/microsoft.graph.offsetRange(rowOffset={rowOffset},columnOffset={columnOffset})": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Users.Functions.yml"
-    },
-    "/users/{user-id}/insights/shared/{sharedInsight-id}/resource/microsoft.graph.workbookRange/microsoft.graph.resizedRange(deltaRows={deltaRows},deltaColumns={deltaColumns})": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Users.Functions.yml"
-    },
-    "/users/{user-id}/insights/shared/{sharedInsight-id}/resource/microsoft.graph.workbookRange/microsoft.graph.row(row={row})": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Users.Functions.yml"
-    },
-    "/users/{user-id}/insights/shared/{sharedInsight-id}/resource/microsoft.graph.workbookRange/microsoft.graph.rowsAbove()": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Users.Functions.yml"
-    },
-    "/users/{user-id}/insights/shared/{sharedInsight-id}/resource/microsoft.graph.workbookRange/microsoft.graph.rowsAbove(count={count})": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Users.Functions.yml"
-    },
-    "/users/{user-id}/insights/shared/{sharedInsight-id}/resource/microsoft.graph.workbookRange/microsoft.graph.rowsBelow()": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Users.Functions.yml"
-    },
-    "/users/{user-id}/insights/shared/{sharedInsight-id}/resource/microsoft.graph.workbookRange/microsoft.graph.rowsBelow(count={count})": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Users.Functions.yml"
-    },
-    "/users/{user-id}/insights/shared/{sharedInsight-id}/resource/microsoft.graph.workbookRange/microsoft.graph.usedRange()": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Users.Functions.yml"
-    },
-    "/users/{user-id}/insights/shared/{sharedInsight-id}/resource/microsoft.graph.workbookRange/microsoft.graph.usedRange(valuesOnly={valuesOnly})": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Users.Functions.yml"
-    },
-    "/users/{user-id}/insights/shared/{sharedInsight-id}/resource/microsoft.graph.workbookRange/microsoft.graph.visibleView()": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Users.Functions.yml"
-    },
-    "/users/{user-id}/insights/shared/{sharedInsight-id}/resource/microsoft.graph.workbookRangeView/microsoft.graph.range()": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Users.Functions.yml"
-    },
-    "/users/{user-id}/insights/trending/{trending-id}/resource/microsoft.graph.workbookRange/microsoft.graph.boundingRect(anotherRange='{anotherRange}')": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Users.Functions.yml"
-    },
-    "/users/{user-id}/insights/trending/{trending-id}/resource/microsoft.graph.workbookRange/microsoft.graph.cell(row={row},column={column})": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Users.Functions.yml"
-    },
-    "/users/{user-id}/insights/trending/{trending-id}/resource/microsoft.graph.workbookRange/microsoft.graph.column(column={column})": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Users.Functions.yml"
-    },
-    "/users/{user-id}/insights/trending/{trending-id}/resource/microsoft.graph.workbookRange/microsoft.graph.columnsAfter()": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Users.Functions.yml"
-    },
-    "/users/{user-id}/insights/trending/{trending-id}/resource/microsoft.graph.workbookRange/microsoft.graph.columnsAfter(count={count})": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Users.Functions.yml"
-    },
-    "/users/{user-id}/insights/trending/{trending-id}/resource/microsoft.graph.workbookRange/microsoft.graph.columnsBefore()": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Users.Functions.yml"
-    },
-    "/users/{user-id}/insights/trending/{trending-id}/resource/microsoft.graph.workbookRange/microsoft.graph.columnsBefore(count={count})": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Users.Functions.yml"
-    },
-    "/users/{user-id}/insights/trending/{trending-id}/resource/microsoft.graph.workbookRange/microsoft.graph.entireColumn()": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Users.Functions.yml"
-    },
-    "/users/{user-id}/insights/trending/{trending-id}/resource/microsoft.graph.workbookRange/microsoft.graph.entireRow()": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Users.Functions.yml"
-    },
-    "/users/{user-id}/insights/trending/{trending-id}/resource/microsoft.graph.workbookRange/microsoft.graph.intersection(anotherRange='{anotherRange}')": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Users.Functions.yml"
-    },
-    "/users/{user-id}/insights/trending/{trending-id}/resource/microsoft.graph.workbookRange/microsoft.graph.lastCell()": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Users.Functions.yml"
-    },
-    "/users/{user-id}/insights/trending/{trending-id}/resource/microsoft.graph.workbookRange/microsoft.graph.lastColumn()": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Users.Functions.yml"
-    },
-    "/users/{user-id}/insights/trending/{trending-id}/resource/microsoft.graph.workbookRange/microsoft.graph.lastRow()": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Users.Functions.yml"
-    },
-    "/users/{user-id}/insights/trending/{trending-id}/resource/microsoft.graph.workbookRange/microsoft.graph.offsetRange(rowOffset={rowOffset},columnOffset={columnOffset})": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Users.Functions.yml"
-    },
-    "/users/{user-id}/insights/trending/{trending-id}/resource/microsoft.graph.workbookRange/microsoft.graph.resizedRange(deltaRows={deltaRows},deltaColumns={deltaColumns})": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Users.Functions.yml"
-    },
-    "/users/{user-id}/insights/trending/{trending-id}/resource/microsoft.graph.workbookRange/microsoft.graph.row(row={row})": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Users.Functions.yml"
-    },
-    "/users/{user-id}/insights/trending/{trending-id}/resource/microsoft.graph.workbookRange/microsoft.graph.rowsAbove()": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Users.Functions.yml"
-    },
-    "/users/{user-id}/insights/trending/{trending-id}/resource/microsoft.graph.workbookRange/microsoft.graph.rowsAbove(count={count})": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Users.Functions.yml"
-    },
-    "/users/{user-id}/insights/trending/{trending-id}/resource/microsoft.graph.workbookRange/microsoft.graph.rowsBelow()": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Users.Functions.yml"
-    },
-    "/users/{user-id}/insights/trending/{trending-id}/resource/microsoft.graph.workbookRange/microsoft.graph.rowsBelow(count={count})": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Users.Functions.yml"
-    },
-    "/users/{user-id}/insights/trending/{trending-id}/resource/microsoft.graph.workbookRange/microsoft.graph.usedRange()": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Users.Functions.yml"
-    },
-    "/users/{user-id}/insights/trending/{trending-id}/resource/microsoft.graph.workbookRange/microsoft.graph.usedRange(valuesOnly={valuesOnly})": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Users.Functions.yml"
-    },
-    "/users/{user-id}/insights/trending/{trending-id}/resource/microsoft.graph.workbookRange/microsoft.graph.visibleView()": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Users.Functions.yml"
-    },
-    "/users/{user-id}/insights/trending/{trending-id}/resource/microsoft.graph.workbookRangeView/microsoft.graph.range()": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Users.Functions.yml"
-    },
-    "/users/{user-id}/insights/used/{usedInsight-id}/resource/microsoft.graph.workbookRange/microsoft.graph.boundingRect(anotherRange='{anotherRange}')": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Users.Functions.yml"
-    },
-    "/users/{user-id}/insights/used/{usedInsight-id}/resource/microsoft.graph.workbookRange/microsoft.graph.cell(row={row},column={column})": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Users.Functions.yml"
-    },
-    "/users/{user-id}/insights/used/{usedInsight-id}/resource/microsoft.graph.workbookRange/microsoft.graph.column(column={column})": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Users.Functions.yml"
-    },
-    "/users/{user-id}/insights/used/{usedInsight-id}/resource/microsoft.graph.workbookRange/microsoft.graph.columnsAfter()": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Users.Functions.yml"
-    },
-    "/users/{user-id}/insights/used/{usedInsight-id}/resource/microsoft.graph.workbookRange/microsoft.graph.columnsAfter(count={count})": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Users.Functions.yml"
-    },
-    "/users/{user-id}/insights/used/{usedInsight-id}/resource/microsoft.graph.workbookRange/microsoft.graph.columnsBefore()": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Users.Functions.yml"
-    },
-    "/users/{user-id}/insights/used/{usedInsight-id}/resource/microsoft.graph.workbookRange/microsoft.graph.columnsBefore(count={count})": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Users.Functions.yml"
-    },
-    "/users/{user-id}/insights/used/{usedInsight-id}/resource/microsoft.graph.workbookRange/microsoft.graph.entireColumn()": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Users.Functions.yml"
-    },
-    "/users/{user-id}/insights/used/{usedInsight-id}/resource/microsoft.graph.workbookRange/microsoft.graph.entireRow()": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Users.Functions.yml"
-    },
-    "/users/{user-id}/insights/used/{usedInsight-id}/resource/microsoft.graph.workbookRange/microsoft.graph.intersection(anotherRange='{anotherRange}')": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Users.Functions.yml"
-    },
-    "/users/{user-id}/insights/used/{usedInsight-id}/resource/microsoft.graph.workbookRange/microsoft.graph.lastCell()": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Users.Functions.yml"
-    },
-    "/users/{user-id}/insights/used/{usedInsight-id}/resource/microsoft.graph.workbookRange/microsoft.graph.lastColumn()": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Users.Functions.yml"
-    },
-    "/users/{user-id}/insights/used/{usedInsight-id}/resource/microsoft.graph.workbookRange/microsoft.graph.lastRow()": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Users.Functions.yml"
-    },
-    "/users/{user-id}/insights/used/{usedInsight-id}/resource/microsoft.graph.workbookRange/microsoft.graph.offsetRange(rowOffset={rowOffset},columnOffset={columnOffset})": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Users.Functions.yml"
-    },
-    "/users/{user-id}/insights/used/{usedInsight-id}/resource/microsoft.graph.workbookRange/microsoft.graph.resizedRange(deltaRows={deltaRows},deltaColumns={deltaColumns})": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Users.Functions.yml"
-    },
-    "/users/{user-id}/insights/used/{usedInsight-id}/resource/microsoft.graph.workbookRange/microsoft.graph.row(row={row})": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Users.Functions.yml"
-    },
-    "/users/{user-id}/insights/used/{usedInsight-id}/resource/microsoft.graph.workbookRange/microsoft.graph.rowsAbove()": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Users.Functions.yml"
-    },
-    "/users/{user-id}/insights/used/{usedInsight-id}/resource/microsoft.graph.workbookRange/microsoft.graph.rowsAbove(count={count})": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Users.Functions.yml"
-    },
-    "/users/{user-id}/insights/used/{usedInsight-id}/resource/microsoft.graph.workbookRange/microsoft.graph.rowsBelow()": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Users.Functions.yml"
-    },
-    "/users/{user-id}/insights/used/{usedInsight-id}/resource/microsoft.graph.workbookRange/microsoft.graph.rowsBelow(count={count})": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Users.Functions.yml"
-    },
-    "/users/{user-id}/insights/used/{usedInsight-id}/resource/microsoft.graph.workbookRange/microsoft.graph.usedRange()": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Users.Functions.yml"
-    },
-    "/users/{user-id}/insights/used/{usedInsight-id}/resource/microsoft.graph.workbookRange/microsoft.graph.usedRange(valuesOnly={valuesOnly})": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Users.Functions.yml"
-    },
-    "/users/{user-id}/insights/used/{usedInsight-id}/resource/microsoft.graph.workbookRange/microsoft.graph.visibleView()": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Users.Functions.yml"
-    },
-    "/users/{user-id}/insights/used/{usedInsight-id}/resource/microsoft.graph.workbookRangeView/microsoft.graph.range()": {
+    "/users/{user-id}/mailFolders/{mailFolder-id}/childFolders/{mailFolder-id1}/messages/microsoft.graph.delta()": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Users.Functions.yml"
     },
@@ -522,10 +234,6 @@
       "originalLocation": "/openApiDocs/v1.0/Users.Functions.yml"
     },
     "/users/{user-id}/mailFolders/microsoft.graph.delta()": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Users.Functions.yml"
-    },
-    "/users/{user-id}/managedAppRegistrations/microsoft.graph.getUserIdsWithFlaggedAppRegistration()": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Users.Functions.yml"
     },
@@ -577,7 +285,7 @@
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Users.Functions.yml"
     },
-    "/users/{user-id}/outlook/microsoft.graph.supportedTimeZones(TimeZoneStandard={TimeZoneStandard})": {
+    "/users/{user-id}/outlook/microsoft.graph.supportedTimeZones(TimeZoneStandard='{TimeZoneStandard}')": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Users.Functions.yml"
     },

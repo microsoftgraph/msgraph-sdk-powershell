@@ -39,7 +39,7 @@ subject-prefix: ''
 ``` yaml
 directive:
 # Remove invalid paths.
-  - remove-path-by-operation: .*\.onenote\..*\.parent.*|.*\.notebooks\.section.*|.*\.sectionGroups\.section.*|.*\.sections\.pages.*|sites\..*_(Create|Get|Update|Delete)Activities$|sites\..*\.activities.*|^sites_(remove|add)$
+  - remove-path-by-operation: groups\.sites_.*Onenote$|groups\.sites\.onenote.*$|.*\.onenote\..*\.parent.*|.*\.notebooks\.section.*|.*\.sectionGroups\.section.*|.*\.sections\.pages.*|sites\..*_(Create|Get|Update|Delete)Activities$|sites\..*\.activities.*|^sites_(remove|add)$|^.*sites\.(.*_.*SourceColumn|contentTypes_.*(Base|BaseTypes|ColumnPositions)|.*_(Get|Create|Update|Delete)Activities|.*\.activities.*|termStore_ListSets|termStore\.groups\.sets(\.children.*|_.*ParentGroup|\.relations_.*|\.terms\.relations_.*|\.terms\.children.*|\.terms_.*Set)|termStore\.sets(\.children.*|_.*ParentGroup|\.parentGroup.*|\.relations.*|\.terms\.children.*|\.terms\.relations.*|\.terms_.*Set))$
 # Remove cmdlets
   - where:
       verb: Remove|New
@@ -49,30 +49,20 @@ directive:
   - where:
       verb: Get
       subject: ^Site$
-      variant: ^List$|^List2$
+      variant: ^Get1$|^GetViaIdentity1$|^Get3$|^GetViaIdentity3$|^List1$|^List3$
     set:
       subject: SubSite
-  - where:
-      verb: Get
-      subject: (^Site$)
-      variant: ^Get$|^GetViaIdentity$|^Get2$|^GetViaIdentity2$
-    set:
-      subject: $1ByPath
-  - where:
-      verb: Get
-      subject: (^SiteActivity$)
-    set:
-      subject: $1ByInterval
-  - where:
-      verb: Get
-      subject: (^SiteListItemActivity$)
-    set:
-      subject: $1ByInterval
   - where:
       verb: Get
       subject: ^(Site)OnenoteNotebook(RecentNotebook$)
     set:
       subject: $1$2
+  - where:
+      verb: Get
+      subject: ^GroupSite$
+      variant: ^Get$|^GetViaIdentity$|^Get3$|^GetViaIdentity3$|^List1$|^List3$
+    set:
+      subject: GroupSubSite
 # Rename cmdlets that call onenotePatchContent action.
   - where:
       verb: Update
@@ -92,6 +82,6 @@ directive:
 ### Versioning
 
 ``` yaml
-module-version: 1.9.6
+module-version: 1.10.0
 release-notes: See https://aka.ms/GraphPowerShell-Release.
 ```
