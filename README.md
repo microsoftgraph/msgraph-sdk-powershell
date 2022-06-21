@@ -35,7 +35,7 @@ There is a set of samples in the `samples` folder to help in getting started wit
 
 * [Users](./README.md#users)
 
-* [Cloud Environment](./README.md#environment)
+* [Cloud Environment](./README.md#cloud-environment)
 
 ## Authentication
 The SDK supports two types of authentication: delegated access and app-only access.
