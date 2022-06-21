@@ -35,7 +35,7 @@ There is a set of samples in the `samples` folder to help in getting started wit
 
 * [Users](./README.md#users)
 
-* [Environment](./README.md#environment)
+* [Cloud Environment](./README.md#environment)
 
 ## Authentication
 The SDK supports two types of authentication: delegated access and app-only access.
@@ -111,9 +111,9 @@ The SDK supports two types of authentication: delegated access and app-only acce
     Disconnect-MgGraph
     ```
 
-## Environment
+## Cloud Environment
 
-The SDK supports managing of cloud environments through `Get-MgEnvironment`, `Set-MgEnvironment`, `Add-MgEnvironment`, and `remove-MgEnvironment`.
+The SDK supports managing of cloud environments through `Get-MgEnvironment`, `Set-MgEnvironment`, `Add-MgEnvironment`, and `remove-MgEnvironment` commands
 - Add Microsoft Graph Environment.
 
     A `user-defined` environments type is added to microsoft graph and used to connect to graph. 
