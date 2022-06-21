@@ -83,9 +83,13 @@ The SDK supports two types of authentication: delegated access and app-only acce
     ``` powershell
     Disconnect-MgGraph
     ```
+## Documentation and Resources
+
 * [Applications](./CmdletsDescription/Applications/Application.md)
 
 * [Users](./CmdletsDescription/Users/Users.md)
+
+* [Profile](./CmdletsDescription/Profile/Profile.md)
 
 * [Cloud Environment](./CmdletsDescription/CloudEnvironment/CloudEnvironment.md)
     
