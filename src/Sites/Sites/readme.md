@@ -63,6 +63,12 @@ directive:
       variant: ^Get$|^GetViaIdentity$|^Get3$|^GetViaIdentity3$|^List1$|^List3$
     set:
       subject: GroupSubSite
+  - where:
+      verb: Get
+      subject: ^(Site)(Drive)$
+      variant: ^Get$|^GetViaIdentity$|^Get2$|^GetViaIdentity2$
+    set:
+      subject: $1Default$2
 # Rename cmdlets that call onenotePatchContent action.
   - where:
       verb: Update
