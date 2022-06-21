@@ -114,7 +114,7 @@ The SDK supports two types of authentication: delegated access and app-only acce
 ## Cloud Environment
 
 The SDK supports managing of cloud environments through `Get-MgEnvironment`, `Set-MgEnvironment`, `Add-MgEnvironment`, and `remove-MgEnvironment` commands
-- Add Microsoft Graph Environment.
+- Add Environment.
 
     A `user-defined` environment type is added and the name passed as `-Environment` parameter on the `Connect-Mgraph` command for user to be able to switch to a cloud of choice. 
     - Delegated access
@@ -160,7 +160,7 @@ The SDK supports managing of cloud environments through `Get-MgEnvironment`, `Se
         $Cert = Get-ChildItem Cert:\LocalMachine\My\$CertThumbprint
         Connect-MgGraph -ClientId "YOUR_APP_ID" -TenantId "YOUR_TENANT_ID" -Certificate $Cert -Environment $Env.Name
         ```
-     - Get Microsoft Graph Environment.
+     - Get Environment.
 
         A collection of environments will be returned by using the `Get-MgEnvironment` command.
 
@@ -174,7 +174,7 @@ The SDK supports managing of cloud environments through `Get-MgEnvironment`, `Se
         ``` powershell
         Set-MgEnvironment -Name 'YOUR_ENVIRONMENT_NAME' -AzureADEndpoint 'AZURE_ENDPOINT' -GraphEndpoint 'GRAPH_ENDPOINT
         ```
-    - Set Microsoft Graph Environment.
+    - Remove Environment.
 
         `Remove-MgEnvironment` command removes an environment initially set by a user, from the existing microsoft graph session. It eventually defaults to Global.
 
