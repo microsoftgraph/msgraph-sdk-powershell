@@ -31,12 +31,6 @@ There is a set of samples in the `samples` folder to help in getting started wit
 
 ## Usage
 
-* [Authentication](./README.md#authentication)
-
-* [Users](./README.md#users)
-
-* [Cloud Environment](./README.md#cloud-environment)
-
 ## Authentication
 The SDK supports two types of authentication: delegated access and app-only access.
 - Delegated access.
@@ -83,105 +77,17 @@ The SDK supports two types of authentication: delegated access and app-only acce
     $Cert = Get-ChildItem Cert:\LocalMachine\My\$CertThumbprint
     Connect-MgGraph -ClientId "YOUR_APP_ID" -TenantId "YOUR_TENANT_ID" -Certificate $Cert
     ```
-## Users
 
-1. List users in your tenant.
-
-    ``` powershell
-    Get-MgUser -Top 10 -Property Id, DisplayName, BusinessPhones | Format-Table Id, DisplayName, BusinessPhones
-    ```
-
-2. Filter a user in your tenant.
-
-    ``` powershell
-    $user = Get-MgUser -Filter "displayName eq 'Megan Bowen'"
-    ```
-
-3. Create a new app registration.
-
-    ``` powershell
-    New-MgApplication -DisplayName "ScriptedGraphPSApp" `
-                      -SignInAudience "AzureADMyOrg" `
-                      -Web @{ RedirectUris = "https://localhost"}
-    ```
-
-4. Sign out of the current logged-in context i.e. app only or delegated access.
+1. Sign out of the current logged-in context i.e. app only or delegated access.
 
     ``` powershell
     Disconnect-MgGraph
     ```
+* [Applications](./CmdletsDescription/Applications/Application.md)
 
-## Cloud Environment
+* [Users](./CmdletsDescription/Users/Users.md)
 
-The SDK supports managing of cloud environments through `Get-MgEnvironment`, `Set-MgEnvironment`, `Add-MgEnvironment`, and `remove-MgEnvironment` commands
-- Add Environment.
-
-    A `user-defined` environment type is added and the name passed as `-Environment` parameter on the `Connect-Mgraph` command for user to be able to switch to a cloud of choice. 
-    - Delegated access
-
-        ``` powershell
-        # Using interactive authentication.
-        $Env = Add-MgEnvironment -Name 'YOUR_ENVIRONMENT_NAME' -AzureADEndpoint 'AZURE_ENDPOINT' -GraphEndpoint 'GRAPH_ENDPOINT'
-        Connect-MgGraph -Scopes "User.Read.All", "Group.ReadWrite.All" -Environment $Env.Name
-        ```
-        or
-
-        ``` powershell
-        # Using device code flow.
-        $Env = Add-MgEnvironment -Name 'YOUR_ENVIRONMENT_NAME' -AzureADEndpoint 'AZURE_ENDPOINT' -GraphEndpoint 'GRAPH_ENDPOINT'
-        Connect-MgGraph -Scopes "User.Read.All", "Group.ReadWrite.All" -UseDeviceAuthentication -Environment $Env.Name
-        ```
-        or
-
-        ``` powershell   
-        # Using your own access token.
-        $Env = Add-MgEnvironment -Name 'YOUR_ENVIRONMENT_NAME' -AzureADEndpoint 'AZURE_ENDPOINT' -GraphEndpoint 'GRAPH_ENDPOINT'
-        Connect-MgGraph -AccessToken $AccessToken -Environment $Env.Name
-        ```
-    - App-only access via Client Credential with a certificate.
-  
-         ``` powershell
-        # Using -CertificateThumbprint.
-        $Env = Add-MgEnvironment -Name 'YOUR_ENVIRONMENT_NAME' -AzureADEndpoint 'AZURE_ENDPOINT' -GraphEndpoint 'GRAPH_ENDPOINT'
-        Connect-MgGraph -TenantId "YOUR_TENANT_ID" -CertificateThumbprint "YOUR_CERT_THUMBPRINT" -ClientId "YOUR_APP_ID" -Environment $Env.Name
-        ```
-        or
-
-        ``` powershell
-        # Using -CertificateName.
-        $Env = Add-MgEnvironment -Name 'YOUR_ENVIRONMENT_NAME' -AzureADEndpoint 'AZURE_ENDPOINT' -GraphEndpoint 'GRAPH_ENDPOINT'
-        Connect-MgGraph -ClientId "YOUR_APP_ID" -TenantId "YOUR_TENANT_ID" -CertificateName "YOUR_CERT_SUBJECT" -Environment $Env.Name
-        ```
-        or
-
-        ``` powershell
-        # Using -Certificate
-        $Env = Add-MgEnvironment -Name 'YOUR_ENVIRONMENT_NAME' -AzureADEndpoint 'AZURE_ENDPOINT' -GraphEndpoint 'GRAPH_ENDPOINT'
-        $Cert = Get-ChildItem Cert:\LocalMachine\My\$CertThumbprint
-        Connect-MgGraph -ClientId "YOUR_APP_ID" -TenantId "YOUR_TENANT_ID" -Certificate $Cert -Environment $Env.Name
-        ```
-     - Get Environment.
-
-        A collection of environments will be returned by using the `Get-MgEnvironment` command.
-
-        ``` powershell
-        Get-MgEnvironment
-        ```
-    - Set Microsoft Graph Environment.
-
-        `Set-MgEnvironment` command switches to a `user-defined` environment type using the existing microsoft graph session
-
-        ``` powershell
-        Set-MgEnvironment -Name 'YOUR_ENVIRONMENT_NAME' -AzureADEndpoint 'AZURE_ENDPOINT' -GraphEndpoint 'GRAPH_ENDPOINT
-        ```
-    - Remove Environment.
-
-        `Remove-MgEnvironment` command removes an environment initially set by a user, from the existing microsoft graph session. It eventually defaults to Global.
-
-        ``` powershell
-        Remove-MgEnvironment -Name 'YOUR_ENVIRONMENT_NAME'
-        ```
-
+* [Cloud Environment](./CmdletsDescription/CloudEnvironment/CloudEnvironment.md)
     
 
 ## API Version
