@@ -31,7 +31,11 @@ There is a set of samples in the `samples` folder to help in getting started wit
 
 ## Usage
 
-1. Authentication
+* [Authentication](./README.md#authentication)
+
+* [Environment](./README.md#environment)
+
+## Authentication
 
     The SDK supports two types of authentication: delegated access and app-only access.
     - Delegated access.
@@ -104,6 +108,65 @@ There is a set of samples in the `samples` folder to help in getting started wit
     ``` powershell
     Disconnect-MgGraph
     ```
+
+## Environment
+
+    The SDK supports addition, setting, querying and removal of microsoft graph environemnts.
+     - Add Microsoft Graph Environment.
+  
+        - Delegated access
+
+            ``` powershell
+            # Using interactive authentication.
+            $TestEnv = Add-MgEnvironment -Name 'YOUR_ENVIRONMENT_NAME' -AzureADEndpoint 'AZURE_ENDPOINT' -GraphEndpoint 'GRAPH_ENDPOINT'
+            Connect-MgGraph -Scopes "User.Read.All", "Group.ReadWrite.All" -Environment $TestEnv.Name
+            ```
+            or
+
+            ``` powershell
+            # Using device code flow.
+            $TestEnv = Add-MgEnvironment -Name 'YOUR_ENVIRONMENT_NAME' -AzureADEndpoint 'AZURE_ENDPOINT' -GraphEndpoint 'GRAPH_ENDPOINT'
+            Connect-MgGraph -Scopes "User.Read.All", "Group.ReadWrite.All" -UseDeviceAuthentication -Environment $TestEnv.Name
+            ```
+            or
+            
+            # Using your own access token.
+            $TestEnv = Add-MgEnvironment -Name 'YOUR_ENVIRONMENT_NAME' -AzureADEndpoint 'AZURE_ENDPOINT' -GraphEndpoint 'GRAPH_ENDPOINT'
+            Connect-MgGraph -AccessToken $AccessToken -Environment $TestEnv.Name
+            ```
+        - App-only access via Client Credential with a certificate.
+  
+            ``` powershell
+            # Using -CertificateThumbprint.
+            $TestEnv = Add-MgEnvironment -Name 'YOUR_ENVIRONMENT_NAME' -AzureADEndpoint 'AZURE_ENDPOINT' -GraphEndpoint 'GRAPH_ENDPOINT'
+            Connect-MgGraph -TenantId "YOUR_TENANT_ID" -CertificateThumbprint "YOUR_CERT_THUMBPRINT" -ClientId "YOUR_APP_ID" -Environment $TestEnv.Name
+            ```
+            or
+
+            ``` powershell
+            # Using -CertificateName.
+            $TestEnv = Add-MgEnvironment -Name 'YOUR_ENVIRONMENT_NAME' -AzureADEndpoint 'AZURE_ENDPOINT' -GraphEndpoint 'GRAPH_ENDPOINT'
+            Connect-MgGraph -ClientId "YOUR_APP_ID" -TenantId "YOUR_TENANT_ID" -CertificateName "YOUR_CERT_SUBJECT" -Environment $TestEnv.Name
+            ```
+            or
+
+            ``` powershell
+            # Using -Certificate
+            $TestEnv = Add-MgEnvironment -Name 'YOUR_ENVIRONMENT_NAME' -AzureADEndpoint 'AZURE_ENDPOINT' -GraphEndpoint 'GRAPH_ENDPOINT'
+            $Cert = Get-ChildItem Cert:\LocalMachine\My\$CertThumbprint
+            Connect-MgGraph -ClientId "YOUR_APP_ID" -TenantId "YOUR_TENANT_ID" -Certificate $Cert -Environment $TestEnv.Name
+            ```
+     - Get Microsoft Graph Environment.
+
+        A collection of environments will be returned by using the `Get-MgEnvironment` command. Display on the console will be inform of a table with the below details.
+
+        Name       | AzureADEndpoint       | GraphEndpoint |   Type
+        ----         ---------------         -------------     ----
+
+        ``` powershell
+        Get-MgEnvironment
+        ```
+    
 
 ## API Version
 
