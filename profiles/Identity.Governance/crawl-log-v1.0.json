@@ -437,27 +437,11 @@
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Identity.Governance.yml"
     },
-    "/identityGovernance/entitlementManagement/connectedOrganizations/{connectedOrganization-id}/internalSponsors/{directoryObject-id}": {
+    "/identityGovernance/entitlementManagement/connectedOrganizations/{connectedOrganization-id}/internalSponsors/{directoryObject-id}/$ref": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Identity.Governance.yml"
     },
-    "/identityGovernance/entitlementManagement/connectedOrganizations/{connectedOrganization-id}/internalSponsors/{directoryObject-id}/microsoft.graph.checkMemberGroups": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Identity.Governance.yml"
-    },
-    "/identityGovernance/entitlementManagement/connectedOrganizations/{connectedOrganization-id}/internalSponsors/{directoryObject-id}/microsoft.graph.checkMemberObjects": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Identity.Governance.yml"
-    },
-    "/identityGovernance/entitlementManagement/connectedOrganizations/{connectedOrganization-id}/internalSponsors/{directoryObject-id}/microsoft.graph.getMemberGroups": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Identity.Governance.yml"
-    },
-    "/identityGovernance/entitlementManagement/connectedOrganizations/{connectedOrganization-id}/internalSponsors/{directoryObject-id}/microsoft.graph.getMemberObjects": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Identity.Governance.yml"
-    },
-    "/identityGovernance/entitlementManagement/connectedOrganizations/{connectedOrganization-id}/internalSponsors/{directoryObject-id}/microsoft.graph.restore": {
+    "/identityGovernance/entitlementManagement/connectedOrganizations/{connectedOrganization-id}/internalSponsors/$ref": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Identity.Governance.yml"
     },

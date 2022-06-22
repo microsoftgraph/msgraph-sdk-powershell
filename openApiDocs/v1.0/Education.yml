@@ -15771,12 +15771,21 @@ components:
               $ref: '#/components/schemas/microsoft.graph.teamMessagingSettings'
             specialization:
               $ref: '#/components/schemas/microsoft.graph.teamSpecialization'
+            tenantId:
+              type: string
+              description: The ID of the Azure Active Directory tenant.
+              nullable: true
             visibility:
               $ref: '#/components/schemas/microsoft.graph.teamVisibilityType'
             webUrl:
               type: string
               description: 'A hyperlink that will go to the team in the Microsoft Teams client. This is the URL that you get when you right-click a team in the Microsoft Teams client and select Get link to team. This URL should be treated as an opaque blob, and not parsed.'
               nullable: true
+            allChannels:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.channel'
+              description: List of channels either hosted in or shared with the team (incoming channels).
             channels:
               type: array
               items:
@@ -15784,6 +15793,11 @@ components:
               description: The collection of channels and messages associated with the team.
             group:
               $ref: '#/components/schemas/microsoft.graph.group'
+            incomingChannels:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.channel'
+              description: List of channels shared with the team.
             installedApps:
               type: array
               items:
@@ -16206,11 +16220,11 @@ components:
               nullable: true
             principalId:
               type: string
-              description: 'The id of the user on behalf of whom the client is authorized to access the resource, when consentType is Principal. If consentType is AllPrincipals this value is null. Required when consentType is Principal.'
+              description: 'The id of the user on behalf of whom the client is authorized to access the resource, when consentType is Principal. If consentType is AllPrincipals this value is null. Required when consentType is Principal. Supports $filter (eq only).'
               nullable: true
             resourceId:
               type: string
-              description: The id of the resource service principal to which access is authorized. This identifies the API which the client is authorized to attempt to call on behalf of a signed-in user.
+              description: The id of the resource service principal to which access is authorized. This identifies the API which the client is authorized to attempt to call on behalf of a signed-in user. Supports $filter (eq only).
             scope:
               type: string
               description: 'A space-separated list of the claim values for delegated permissions which should be included in access tokens for the resource application (the API). For example, openid User.Read GroupMember.Read.All. Each claim value should match the value field of one of the delegated permissions defined by the API, listed in the publishedPermissionScopes property of the resource service principal.'
@@ -17417,6 +17431,11 @@ components:
         - title: userTeamwork
           type: object
           properties:
+            associatedTeams:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.associatedTeamInfo'
+              description: The list of associatedTeamInfo objects that a user is associated with.
             installedApps:
               type: array
               items:
@@ -18951,6 +18970,10 @@ components:
               nullable: true
             membershipType:
               $ref: '#/components/schemas/microsoft.graph.channelMembershipType'
+            tenantId:
+              type: string
+              description: The ID of the Azure Active Directory tenant.
+              nullable: true
             webUrl:
               type: string
               description: 'A hyperlink that will go to the channel in Microsoft Teams. This is the URL that you get when you right-click a channel in Microsoft Teams and select Get link to channel. This URL should be treated as an opaque blob, and not parsed. Read-only.'
@@ -18967,6 +18990,11 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.chatMessage'
               description: A collection of all the messages in the channel. A navigation property. Nullable.
+            sharedWithTeams:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.sharedWithChannelTeamInfo'
+              description: A collection of teams with which a channel is shared.
             tabs:
               type: array
               items:
@@ -19001,7 +19029,7 @@ components:
               items:
                 type: string
                 nullable: true
-              description: The roles for that user.
+              description: 'The roles for that user. This property only contains additional qualifiers when relevant - for example, if the member has owner privileges, the roles property contains owner as one of the values. Similarly, if the member is a guest, the roles property contains guest as one of the values. A basic member should not have any values specified in the roles property.'
             visibleHistoryStartDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -20649,7 +20677,7 @@ components:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: The date and time when the temporaryAccessPass was created.
+              description: The date and time when the Temporary Access Pass was created.
               format: date-time
               nullable: true
             isUsable:
@@ -20658,28 +20686,28 @@ components:
               nullable: true
             isUsableOnce:
               type: boolean
-              description: 'Determines whether the pass is limited to a one time use. If true, the pass can be used once; if false, the pass can be used multiple times within the temporaryAccessPass lifetime.'
+              description: 'Determines whether the pass is limited to a one-time use. If true, the pass can be used once; if false, the pass can be used multiple times within the Temporary Access Pass lifetime.'
               nullable: true
             lifetimeInMinutes:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
-              description: 'The lifetime of the temporaryAccessPass in minutes starting at startDateTime. Minimum 10, Maximum 43200 (equivalent to 30 days).'
+              description: The lifetime of the Temporary Access Pass in minutes starting at startDateTime. Must be between 10 and 43200 inclusive (equivalent to 30 days).
               format: int32
               nullable: true
             methodUsabilityReason:
               type: string
-              description: 'Details about usability state (isUsable). Reasons can include: enabledByPolicy, disabledByPolicy, expired, notYetValid, oneTimeUsed.'
+              description: 'Details about the usability state (isUsable). Reasons can include: EnabledByPolicy, DisabledByPolicy, Expired, NotYetValid, OneTimeUsed.'
               nullable: true
             startDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: The date and time when the temporaryAccessPass becomes available to use.
+              description: The date and time when the Temporary Access Pass becomes available to use and when isUsable is true is enforced.
               format: date-time
               nullable: true
             temporaryAccessPass:
               type: string
-              description: The temporaryAccessPass used to authenticate. Returned only on creation of a new temporaryAccessPass; returned as NULL with GET.
+              description: The Temporary Access Pass used to authenticate. Returned only on creation of a new temporaryAccessPassAuthenticationMethod object; Hidden in subsequent read operations and returned as null with GET.
               nullable: true
           additionalProperties:
             type: object
@@ -20845,6 +20873,13 @@ components:
               nullable: true
             teamsApp:
               $ref: '#/components/schemas/microsoft.graph.teamsApp'
+          additionalProperties:
+            type: object
+    microsoft.graph.associatedTeamInfo:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.teamInfo'
+        - title: associatedTeamInfo
+          type: object
           additionalProperties:
             type: object
     microsoft.graph.userScopeTeamsAppInstallation:
@@ -22552,7 +22587,25 @@ components:
         - standard
         - private
         - unknownFutureValue
+        - shared
       type: string
+    microsoft.graph.sharedWithChannelTeamInfo:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.teamInfo'
+        - title: sharedWithChannelTeamInfo
+          type: object
+          properties:
+            isHostTeam:
+              type: boolean
+              description: Indicates whether the team is the host of the channel.
+              nullable: true
+            allowedMembers:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.conversationMember'
+              description: A collection of team members who have access to the shared channel.
+          additionalProperties:
+            type: object
     microsoft.graph.teamsApp:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -23905,6 +23958,24 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.teamInfo:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: teamInfo
+          type: object
+          properties:
+            displayName:
+              type: string
+              description: The name of the team.
+              nullable: true
+            tenantId:
+              type: string
+              description: The ID of the Azure Active Directory tenant.
+              nullable: true
+            team:
+              $ref: '#/components/schemas/microsoft.graph.team'
+          additionalProperties:
+            type: object
     microsoft.graph.wellknownListName:
       title: wellknownListName
       enum:
