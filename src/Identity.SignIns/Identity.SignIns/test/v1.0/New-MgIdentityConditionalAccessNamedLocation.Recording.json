@@ -1,0 +1,68 @@
+{
+  "New-MgIdentityConditionalAccessNamedLocation+[NoContext]+ShouldCreateAnIpNamedLocation+$POST+https://graph.microsoft.com/v1.0/identity/conditionalAccess/namedLocations+1": {
+    "Request": {
+      "Method": "POST",
+      "RequestUri": "https://graph.microsoft.com/v1.0/identity/conditionalAccess/namedLocations",
+      "Content": "{\r\n  \"isTrusted\": false,\r\n  \"ipRanges\": [\r\n    {\r\n      \"CidrAddress\": \"12.34.221.11/22\",\r\n      \"@odata.type\": \"#microsoft.graph.iPv4CidrRange\"\r\n    },\r\n    {\r\n      \"CidrAddress\": \"2001:0:9d38:90d6:0:0:0:0/63\",\r\n      \"@odata.type\": \"#microsoft.graph.iPv6CidrRange\"\r\n    }\r\n  ],\r\n  \"@odata.type\": \"#microsoft.graph.ipNamedLocation\",\r\n  \"displayName\": \"Untrusted IP named location\"\r\n}",
+      "Headers": {
+      },
+      "ContentHeaders": {
+        "Content-Type": [ "application/json" ],
+        "Content-Length": [ "385" ]
+      }
+    },
+    "Response": {
+      "StatusCode": 201,
+      "Headers": {
+        "Cache-Control": [ "no-cache" ],
+        "Transfer-Encoding": [ "chunked" ],
+        "Location": [ "https://na.prod.graph.ipc.msidentity.com/conditionalAccess/namedLocations(\u002700eabbed-3856-479e-8de4-c2c4bd1768c1\u0027)" ],
+        "Vary": [ "Accept-Encoding" ],
+        "Strict-Transport-Security": [ "max-age=31536000" ],
+        "request-id": [ "17f9929b-59d6-480a-aaeb-c9e121e93c7b" ],
+        "client-request-id": [ "17f9929b-59d6-480a-aaeb-c9e121e93c7b" ],
+        "x-ms-ags-diagnostic": [ "{\"ServerInfo\":{\"DataCenter\":\"West US 2\",\"Slice\":\"E\",\"Ring\":\"1\",\"ScaleUnit\":\"001\",\"RoleInstance\":\"MW2PEPF00009119\"}}" ],
+        "OData-Version": [ "4.0" ],
+        "Date": [ "Fri, 03 Jun 2022 19:23:59 GMT" ]
+      },
+      "ContentHeaders": {
+        "Content-Type": [ "application/json; odata.metadata=minimal; odata.streaming=true; IEEE754Compatible=false; charset=utf-8" ],
+        "Content-Encoding": [ "gzip" ]
+      },
+      "Content": "{\"@odata.context\":\"https://graph.microsoft.com/v1.0/$metadata#identity/conditionalAccess/namedLocations/$entity\",\"@odata.type\":\"#microsoft.graph.ipNamedLocation\",\"id\":\"00eabbed-3856-479e-8de4-c2c4bd1768c1\",\"displayName\":\"Untrusted IP named location\",\"modifiedDateTime\":\"2022-06-03T19:23:59.6882138Z\",\"createdDateTime\":\"2022-06-03T19:23:59.6882138Z\",\"isTrusted\":false,\"ipRanges\":[{\"@odata.type\":\"#microsoft.graph.iPv4CidrRange\",\"cidrAddress\":\"12.34.221.11/22\"},{\"@odata.type\":\"#microsoft.graph.iPv6CidrRange\",\"cidrAddress\":\"2001:0:9d38:90d6:0:0:0:0/63\"}]}"
+    }
+  },
+  "New-MgIdentityConditionalAccessNamedLocation+[NoContext]+ShouldCreateACountryNamedLocation+$POST+https://graph.microsoft.com/v1.0/identity/conditionalAccess/namedLocations+1": {
+    "Request": {
+      "Method": "POST",
+      "RequestUri": "https://graph.microsoft.com/v1.0/identity/conditionalAccess/namedLocations",
+      "Content": "{\r\n  \"countriesAndRegions\": [ \"US\", \"GB\" ],\r\n  \"includeUnknownCountriesAndRegions\": true,\r\n  \"@odata.type\": \"#microsoft.graph.countryNamedLocation\",\r\n  \"displayName\": \"Named location with unknown countries and regions\"\r\n}",
+      "Headers": {
+      },
+      "ContentHeaders": {
+        "Content-Type": [ "application/json" ],
+        "Content-Length": [ "221" ]
+      }
+    },
+    "Response": {
+      "StatusCode": 201,
+      "Headers": {
+        "Cache-Control": [ "no-cache" ],
+        "Transfer-Encoding": [ "chunked" ],
+        "Location": [ "https://na.prod.graph.ipc.msidentity.com/conditionalAccess/namedLocations(\u00271c14a6aa-4e2a-44b4-8ba8-ada756528559\u0027)" ],
+        "Vary": [ "Accept-Encoding" ],
+        "Strict-Transport-Security": [ "max-age=31536000" ],
+        "request-id": [ "80c7c0c1-dce3-459c-94f1-2156fbd1540f" ],
+        "client-request-id": [ "80c7c0c1-dce3-459c-94f1-2156fbd1540f" ],
+        "x-ms-ags-diagnostic": [ "{\"ServerInfo\":{\"DataCenter\":\"West US 2\",\"Slice\":\"E\",\"Ring\":\"1\",\"ScaleUnit\":\"001\",\"RoleInstance\":\"MW2PEPF00009119\"}}" ],
+        "OData-Version": [ "4.0" ],
+        "Date": [ "Fri, 03 Jun 2022 19:24:01 GMT" ]
+      },
+      "ContentHeaders": {
+        "Content-Type": [ "application/json; odata.metadata=minimal; odata.streaming=true; IEEE754Compatible=false; charset=utf-8" ],
+        "Content-Encoding": [ "gzip" ]
+      },
+      "Content": "{\"@odata.context\":\"https://graph.microsoft.com/v1.0/$metadata#identity/conditionalAccess/namedLocations/$entity\",\"@odata.type\":\"#microsoft.graph.countryNamedLocation\",\"id\":\"1c14a6aa-4e2a-44b4-8ba8-ada756528559\",\"displayName\":\"Named location with unknown countries and regions\",\"modifiedDateTime\":\"2022-06-03T19:24:01.5082252Z\",\"createdDateTime\":\"2022-06-03T19:24:01.5082252Z\",\"countriesAndRegions\":[\"US\",\"GB\"],\"includeUnknownCountriesAndRegions\":true,\"countryLookupMethod\":\"clientIpAddress\"}"
+    }
+  }
+}

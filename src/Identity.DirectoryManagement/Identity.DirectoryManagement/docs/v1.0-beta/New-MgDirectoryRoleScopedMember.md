@@ -8,7 +8,9 @@ schema: 2.0.0
 # New-MgDirectoryRoleScopedMember
 
 ## SYNOPSIS
-Create new navigation property to scopedMembers for directoryRoles
+Members of this directory role that are scoped to administrative units.
+Read-only.
+Nullable.
 
 ## SYNTAX
 
@@ -39,27 +41,11 @@ New-MgDirectoryRoleScopedMember -InputObject <IIdentityDirectoryManagementIdenti
 ```
 
 ## DESCRIPTION
-Create new navigation property to scopedMembers for directoryRoles
+Members of this directory role that are scoped to administrative units.
+Read-only.
+Nullable.
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 
@@ -79,7 +65,7 @@ Accept wildcard characters: False
 ```
 
 ### -AdministrativeUnitId
-.
+Unique identifier for the administrative unit that the directory role is scoped to
 
 ```yaml
 Type: System.String
@@ -95,7 +81,7 @@ Accept wildcard characters: False
 
 ### -BodyParameter
 scopedRoleMembership
-To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphScopedRoleMembership
@@ -141,7 +127,7 @@ Accept wildcard characters: False
 
 ### -InputObject
 Identity Parameter
-To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
@@ -156,7 +142,7 @@ Accept wildcard characters: False
 ```
 
 ### -RoleId
-.
+Unique identifier for the directory role that the member is in.
 
 ```yaml
 Type: System.String
@@ -172,7 +158,7 @@ Accept wildcard characters: False
 
 ### -RoleMemberInfo
 identity
-To construct, see NOTES section for ROLEMEMBERINFO properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for ROLEMEMBERINFO properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentity
@@ -242,8 +228,8 @@ To create the parameters described below, construct a hash table containing the 
 BODYPARAMETER <IMicrosoftGraphScopedRoleMembership>: scopedRoleMembership
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: Read-only.
-  - `[AdministrativeUnitId <String>]`: 
-  - `[RoleId <String>]`: 
+  - `[AdministrativeUnitId <String>]`: Unique identifier for the administrative unit that the directory role is scoped to
+  - `[RoleId <String>]`: Unique identifier for the directory role that the member is in.
   - `[RoleMemberInfo <IMicrosoftGraphIdentity>]`: identity
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[DisplayName <String>]`: The identity's display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
@@ -251,8 +237,11 @@ BODYPARAMETER <IMicrosoftGraphScopedRoleMembership>: scopedRoleMembership
 
 INPUTOBJECT <IIdentityDirectoryManagementIdentity>: Identity Parameter
   - `[AdministrativeUnitId <String>]`: key: id of administrativeUnit
+  - `[AllowedValueId <String>]`: key: id of allowedValue
+  - `[AttributeSetId <String>]`: key: id of attributeSet
   - `[CommandId <String>]`: key: id of command
   - `[ContractId <String>]`: key: id of contract
+  - `[CustomSecurityAttributeDefinitionId <String>]`: key: id of customSecurityAttributeDefinition
   - `[DeviceId <String>]`: key: id of device
   - `[DirectoryObjectId <String>]`: key: id of directoryObject
   - `[DirectoryRoleId <String>]`: key: id of directoryRole
@@ -263,11 +252,21 @@ INPUTOBJECT <IIdentityDirectoryManagementIdentity>: Identity Parameter
   - `[DomainId <String>]`: key: id of domain
   - `[ExtensionId <String>]`: key: id of extension
   - `[FeatureRolloutPolicyId <String>]`: key: id of featureRolloutPolicy
+  - `[IdentityProviderBaseId <String>]`: key: id of identityProviderBase
+  - `[InboundSharedUserProfileUserId <String>]`: key: userId of inboundSharedUserProfile
+  - `[InternalDomainFederationId <String>]`: key: id of internalDomainFederation
   - `[OrgContactId <String>]`: key: id of orgContact
   - `[OrganizationId <String>]`: key: id of organization
-  - `[OrganizationalBrandingId <String>]`: key: id of organizationalBranding
+  - `[OutboundSharedUserProfileUserId <String>]`: key: userId of outboundSharedUserProfile
+  - `[ProfileCardPropertyId <String>]`: key: id of profileCardProperty
+  - `[RecommendationId <String>]`: key: id of recommendation
+  - `[RecommendationResourceId <String>]`: key: id of recommendationResource
   - `[ScopedRoleMembershipId <String>]`: key: id of scopedRoleMembership
+  - `[SharedEmailDomainId <String>]`: key: id of sharedEmailDomain
+  - `[SharedEmailDomainInvitationId <String>]`: key: id of sharedEmailDomainInvitation
   - `[SubscribedSkuId <String>]`: key: id of subscribedSku
+  - `[TenantReferenceTenantId <String>]`: key: tenantId of tenantReference
+  - `[UsageRightId <String>]`: key: id of usageRight
   - `[UserId <String>]`: key: id of user
 
 ROLEMEMBERINFO <IMicrosoftGraphIdentity>: identity

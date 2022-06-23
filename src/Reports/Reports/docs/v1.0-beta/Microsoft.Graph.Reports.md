@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Reports
-Module Guid: e3fe89f0-fa1c-41cf-ae9f-caee5a8fa2d9
+Module Guid: a4ccbcab-417c-44a5-889c-31ef892f3c6b
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.reports
 Help Version: 1.0.0.0
 Locale: en-US
@@ -12,7 +12,8 @@ Microsoft Graph PowerShell Cmdlets
 
 ## Microsoft.Graph.Reports Cmdlets
 ### [Get-MgAuditLogDirectoryAudit](Get-MgAuditLogDirectoryAudit.md)
-Get directoryAudits from auditLogs
+Read-only.
+Nullable.
 
 ### [Get-MgAuditLogDirectoryProvisioning](Get-MgAuditLogDirectoryProvisioning.md)
 Get directoryProvisioning from auditLogs
@@ -24,10 +25,35 @@ Get provisioning from auditLogs
 Get restrictedSignIns from auditLogs
 
 ### [Get-MgAuditLogSignIn](Get-MgAuditLogSignIn.md)
-Get signIns from auditLogs
+Read-only.
+Nullable.
+
+### [Get-MgDeviceManagementReport](Get-MgDeviceManagementReport.md)
+Reports singleton
+
+### [Get-MgDeviceManagementReportCachedReportConfiguration](Get-MgDeviceManagementReportCachedReportConfiguration.md)
+Entity representing the configuration of a cached report
+
+### [Get-MgDeviceManagementReportExportJob](Get-MgDeviceManagementReportExportJob.md)
+Entity representing a job to export a report
 
 ### [Get-MgReportApplicationSign](Get-MgReportApplicationSign.md)
-Get applicationSignInDetailedSummary from reports
+Represents a detailed summary of an application sign-in.
+
+### [Get-MgReportAttackSimulationRepeatOffender](Get-MgReportAttackSimulationRepeatOffender.md)
+Invoke function getAttackSimulationRepeatOffenders
+
+### [Get-MgReportAttackSimulationTrainingUserCoverage](Get-MgReportAttackSimulationTrainingUserCoverage.md)
+Invoke function getAttackSimulationTrainingUserCoverage
+
+### [Get-MgReportAttackSimulationUserCoverage](Get-MgReportAttackSimulationUserCoverage.md)
+Invoke function getAttackSimulationSimulationUserCoverage
+
+### [Get-MgReportAuthenticationMethod](Get-MgReportAuthenticationMethod.md)
+Container for navigation properties for Azure AD authentication methods resources.
+
+### [Get-MgReportAuthenticationMethodUserRegistrationDetail](Get-MgReportAuthenticationMethodUserRegistrationDetail.md)
+Represents the state of a user's authentication methods, including which methods are registered and which features the user is registered and capable of (such as multi-factor authentication, self-service password reset, and passwordless authentication).
 
 ### [Get-MgReportAzureAdApplicationSign](Get-MgReportAzureAdApplicationSign.md)
 Invoke function getAzureADApplicationSignInSummary
@@ -41,6 +67,15 @@ Invoke function getAzureADLicenseUsage
 ### [Get-MgReportAzureAdUserFeatureUsage](Get-MgReportAzureAdUserFeatureUsage.md)
 Invoke function getAzureADUserFeatureUsage
 
+### [Get-MgReportBrowserDistributionUserCount](Get-MgReportBrowserDistributionUserCount.md)
+Invoke function getBrowserDistributionUserCounts
+
+### [Get-MgReportBrowserUserCount](Get-MgReportBrowserUserCount.md)
+Invoke function getBrowserUserCounts
+
+### [Get-MgReportBrowserUserDetail](Get-MgReportBrowserUserDetail.md)
+Invoke function getBrowserUserDetail
+
 ### [Get-MgReportCredentialUsageSummary](Get-MgReportCredentialUsageSummary.md)
 Invoke function getCredentialUsageSummary
 
@@ -48,7 +83,10 @@ Invoke function getCredentialUsageSummary
 Invoke function getCredentialUserRegistrationCount
 
 ### [Get-MgReportCredentialUserRegistrationDetail](Get-MgReportCredentialUserRegistrationDetail.md)
-Get credentialUserRegistrationDetails from reports
+Details of the usage of self-service password reset and multi-factor authentication (MFA) for all registered users.
+
+### [Get-MgReportDailyPrintUsage](Get-MgReportDailyPrintUsage.md)
+Get dailyPrintUsageByPrinter from reports
 
 ### [Get-MgReportDailyPrintUsageSummaryByPrinter](Get-MgReportDailyPrintUsageSummaryByPrinter.md)
 Get dailyPrintUsageSummariesByPrinter from reports
@@ -57,10 +95,10 @@ Get dailyPrintUsageSummariesByPrinter from reports
 Get dailyPrintUsageSummariesByUser from reports
 
 ### [Get-MgReportDeviceConfigurationDeviceActivity](Get-MgReportDeviceConfigurationDeviceActivity.md)
-Invoke function deviceConfigurationDeviceActivity
+Metadata for the device configuration device activity report
 
 ### [Get-MgReportDeviceConfigurationUserActivity](Get-MgReportDeviceConfigurationUserActivity.md)
-Invoke function deviceConfigurationUserActivity
+Metadata for the device configuration user activity report
 
 ### [Get-MgReportEmailActivityCount](Get-MgReportEmailActivityCount.md)
 Invoke function getEmailActivityCounts
@@ -68,10 +106,7 @@ Invoke function getEmailActivityCounts
 ### [Get-MgReportEmailActivityUserCount](Get-MgReportEmailActivityUserCount.md)
 Invoke function getEmailActivityUserCounts
 
-### [Get-MgReportEmailActivityUserDetailDdb2](Get-MgReportEmailActivityUserDetailDdb2.md)
-Invoke function getEmailActivityUserDetail
-
-### [Get-MgReportEmailActivityUserDetailFe32](Get-MgReportEmailActivityUserDetailFe32.md)
+### [Get-MgReportEmailActivityUserDetail](Get-MgReportEmailActivityUserDetail.md)
 Invoke function getEmailActivityUserDetail
 
 ### [Get-MgReportEmailAppUsageAppUserCount](Get-MgReportEmailAppUsageAppUserCount.md)
@@ -80,14 +115,14 @@ Invoke function getEmailAppUsageAppsUserCounts
 ### [Get-MgReportEmailAppUsageUserCount](Get-MgReportEmailAppUsageUserCount.md)
 Invoke function getEmailAppUsageUserCounts
 
-### [Get-MgReportEmailAppUsageUserDetail546B](Get-MgReportEmailAppUsageUserDetail546B.md)
-Invoke function getEmailAppUsageUserDetail
-
-### [Get-MgReportEmailAppUsageUserDetail62Ec](Get-MgReportEmailAppUsageUserDetail62Ec.md)
+### [Get-MgReportEmailAppUsageUserDetail](Get-MgReportEmailAppUsageUserDetail.md)
 Invoke function getEmailAppUsageUserDetail
 
 ### [Get-MgReportEmailAppUsageVersionUserCount](Get-MgReportEmailAppUsageVersionUserCount.md)
 Invoke function getEmailAppUsageVersionsUserCounts
+
+### [Get-MgReportGroupArchivedPrintJob](Get-MgReportGroupArchivedPrintJob.md)
+Invoke function getGroupArchivedPrintJobs
 
 ### [Get-MgReportM365AppPlatformUserCount](Get-MgReportM365AppPlatformUserCount.md)
 Invoke function getM365AppPlatformUserCounts
@@ -95,10 +130,7 @@ Invoke function getM365AppPlatformUserCounts
 ### [Get-MgReportM365AppUserCount](Get-MgReportM365AppUserCount.md)
 Invoke function getM365AppUserCounts
 
-### [Get-MgReportM365AppUserDetail2B20](Get-MgReportM365AppUserDetail2B20.md)
-Invoke function getM365AppUserDetail
-
-### [Get-MgReportM365AppUserDetailC8Df](Get-MgReportM365AppUserDetailC8Df.md)
+### [Get-MgReportM365AppUserDetail](Get-MgReportM365AppUserDetail.md)
 Invoke function getM365AppUserDetail
 
 ### [Get-MgReportMailboxUsageDetail](Get-MgReportMailboxUsageDetail.md)
@@ -114,22 +146,22 @@ Invoke function getMailboxUsageQuotaStatusMailboxCounts
 Invoke function getMailboxUsageStorage
 
 ### [Get-MgReportManagedDeviceEnrollmentAbandonmentDetail](Get-MgReportManagedDeviceEnrollmentAbandonmentDetail.md)
-Invoke function managedDeviceEnrollmentAbandonmentDetails
+Metadata for Enrollment abandonment details report
 
 ### [Get-MgReportManagedDeviceEnrollmentAbandonmentSummary](Get-MgReportManagedDeviceEnrollmentAbandonmentSummary.md)
-Invoke function managedDeviceEnrollmentAbandonmentSummary
+Metadata for Enrollment abandonment summary report
 
-### [Get-MgReportManagedDeviceEnrollmentFailureDetail027E](Get-MgReportManagedDeviceEnrollmentFailureDetail027E.md)
-Invoke function managedDeviceEnrollmentFailureDetails
-
-### [Get-MgReportManagedDeviceEnrollmentFailureDetail2B3D](Get-MgReportManagedDeviceEnrollmentFailureDetail2B3D.md)
+### [Get-MgReportManagedDeviceEnrollmentFailureDetail](Get-MgReportManagedDeviceEnrollmentFailureDetail.md)
 Invoke function managedDeviceEnrollmentFailureDetails
 
 ### [Get-MgReportManagedDeviceEnrollmentFailureTrend](Get-MgReportManagedDeviceEnrollmentFailureTrend.md)
-Invoke function managedDeviceEnrollmentFailureTrends
+Metadata for the enrollment failure trends report
 
 ### [Get-MgReportManagedDeviceEnrollmentTopFailures](Get-MgReportManagedDeviceEnrollmentTopFailures.md)
 Invoke function managedDeviceEnrollmentTopFailures
+
+### [Get-MgReportMonthlyPrintUsage](Get-MgReportMonthlyPrintUsage.md)
+Get monthlyPrintUsageByPrinter from reports
 
 ### [Get-MgReportMonthlyPrintUsageSummaryByPrinter](Get-MgReportMonthlyPrintUsageSummaryByPrinter.md)
 Get monthlyPrintUsageSummariesByPrinter from reports
@@ -149,19 +181,13 @@ Invoke function getOffice365ActivationsUserDetail
 ### [Get-MgReportOffice365ActiveUserCount](Get-MgReportOffice365ActiveUserCount.md)
 Invoke function getOffice365ActiveUserCounts
 
-### [Get-MgReportOffice365ActiveUserDetail68Ad](Get-MgReportOffice365ActiveUserDetail68Ad.md)
-Invoke function getOffice365ActiveUserDetail
-
-### [Get-MgReportOffice365ActiveUserDetailD389](Get-MgReportOffice365ActiveUserDetailD389.md)
+### [Get-MgReportOffice365ActiveUserDetail](Get-MgReportOffice365ActiveUserDetail.md)
 Invoke function getOffice365ActiveUserDetail
 
 ### [Get-MgReportOffice365GroupActivityCount](Get-MgReportOffice365GroupActivityCount.md)
 Invoke function getOffice365GroupsActivityCounts
 
-### [Get-MgReportOffice365GroupActivityDetail38F6](Get-MgReportOffice365GroupActivityDetail38F6.md)
-Invoke function getOffice365GroupsActivityDetail
-
-### [Get-MgReportOffice365GroupActivityDetail81Cc](Get-MgReportOffice365GroupActivityDetail81Cc.md)
+### [Get-MgReportOffice365GroupActivityDetail](Get-MgReportOffice365GroupActivityDetail.md)
 Invoke function getOffice365GroupsActivityDetail
 
 ### [Get-MgReportOffice365GroupActivityFileCount](Get-MgReportOffice365GroupActivityFileCount.md)
@@ -182,19 +208,13 @@ Invoke function getOneDriveActivityFileCounts
 ### [Get-MgReportOneDriveActivityUserCount](Get-MgReportOneDriveActivityUserCount.md)
 Invoke function getOneDriveActivityUserCounts
 
-### [Get-MgReportOneDriveActivityUserDetail05F1](Get-MgReportOneDriveActivityUserDetail05F1.md)
-Invoke function getOneDriveActivityUserDetail
-
-### [Get-MgReportOneDriveActivityUserDetailC424](Get-MgReportOneDriveActivityUserDetailC424.md)
+### [Get-MgReportOneDriveActivityUserDetail](Get-MgReportOneDriveActivityUserDetail.md)
 Invoke function getOneDriveActivityUserDetail
 
 ### [Get-MgReportOneDriveUsageAccountCount](Get-MgReportOneDriveUsageAccountCount.md)
 Invoke function getOneDriveUsageAccountCounts
 
-### [Get-MgReportOneDriveUsageAccountDetailDd7F](Get-MgReportOneDriveUsageAccountDetailDd7F.md)
-Invoke function getOneDriveUsageAccountDetail
-
-### [Get-MgReportOneDriveUsageAccountDetailE827](Get-MgReportOneDriveUsageAccountDetailE827.md)
+### [Get-MgReportOneDriveUsageAccountDetail](Get-MgReportOneDriveUsageAccountDetail.md)
 Invoke function getOneDriveUsageAccountDetail
 
 ### [Get-MgReportOneDriveUsageFileCount](Get-MgReportOneDriveUsageFileCount.md)
@@ -202,6 +222,9 @@ Invoke function getOneDriveUsageFileCounts
 
 ### [Get-MgReportOneDriveUsageStorage](Get-MgReportOneDriveUsageStorage.md)
 Invoke function getOneDriveUsageStorage
+
+### [Get-MgReportPrinterArchivedPrintJob](Get-MgReportPrinterArchivedPrintJob.md)
+Invoke function getPrinterArchivedPrintJobs
 
 ### [Get-MgReportRelyingPartyDetailedSummary](Get-MgReportRelyingPartyDetailedSummary.md)
 Invoke function getRelyingPartyDetailedSummary
@@ -215,16 +238,10 @@ Invoke function getSharePointActivityPages
 ### [Get-MgReportSharePointActivityUserCount](Get-MgReportSharePointActivityUserCount.md)
 Invoke function getSharePointActivityUserCounts
 
-### [Get-MgReportSharePointActivityUserDetailB778](Get-MgReportSharePointActivityUserDetailB778.md)
+### [Get-MgReportSharePointActivityUserDetail](Get-MgReportSharePointActivityUserDetail.md)
 Invoke function getSharePointActivityUserDetail
 
-### [Get-MgReportSharePointActivityUserDetailF3Be](Get-MgReportSharePointActivityUserDetailF3Be.md)
-Invoke function getSharePointActivityUserDetail
-
-### [Get-MgReportSharePointSiteUsageDetail204B](Get-MgReportSharePointSiteUsageDetail204B.md)
-Invoke function getSharePointSiteUsageDetail
-
-### [Get-MgReportSharePointSiteUsageDetailD27A](Get-MgReportSharePointSiteUsageDetailD27A.md)
+### [Get-MgReportSharePointSiteUsageDetail](Get-MgReportSharePointSiteUsageDetail.md)
 Invoke function getSharePointSiteUsageDetail
 
 ### [Get-MgReportSharePointSiteUsageFileCount](Get-MgReportSharePointSiteUsageFileCount.md)
@@ -242,32 +259,59 @@ Invoke function getSharePointSiteUsageStorage
 ### [Get-MgReportSkype](Get-MgReportSkype.md)
 Invoke function getSkypeForBusinessActivityCounts
 
+### [Get-MgReportTeamActivityCount](Get-MgReportTeamActivityCount.md)
+Invoke function getTeamsTeamActivityCounts
+
+### [Get-MgReportTeamActivityDetail](Get-MgReportTeamActivityDetail.md)
+Invoke function getTeamsTeamActivityDetail
+
+### [Get-MgReportTeamActivityDistributionCount](Get-MgReportTeamActivityDistributionCount.md)
+Invoke function getTeamsTeamActivityDistributionCounts
+
+### [Get-MgReportTeamDeviceUsageDistributionTotalUserCount](Get-MgReportTeamDeviceUsageDistributionTotalUserCount.md)
+Invoke function getTeamsDeviceUsageDistributionTotalUserCounts
+
 ### [Get-MgReportTeamDeviceUsageDistributionUserCount](Get-MgReportTeamDeviceUsageDistributionUserCount.md)
 Invoke function getTeamsDeviceUsageDistributionUserCounts
+
+### [Get-MgReportTeamDeviceUsageTotalUserCount](Get-MgReportTeamDeviceUsageTotalUserCount.md)
+Invoke function getTeamsDeviceUsageTotalUserCounts
 
 ### [Get-MgReportTeamDeviceUsageUserCount](Get-MgReportTeamDeviceUsageUserCount.md)
 Invoke function getTeamsDeviceUsageUserCounts
 
-### [Get-MgReportTeamDeviceUsageUserDetail7148](Get-MgReportTeamDeviceUsageUserDetail7148.md)
-Invoke function getTeamsDeviceUsageUserDetail
-
-### [Get-MgReportTeamDeviceUsageUserDetail7565](Get-MgReportTeamDeviceUsageUserDetail7565.md)
+### [Get-MgReportTeamDeviceUsageUserDetail](Get-MgReportTeamDeviceUsageUserDetail.md)
 Invoke function getTeamsDeviceUsageUserDetail
 
 ### [Get-MgReportTeamUserActivityCount](Get-MgReportTeamUserActivityCount.md)
 Invoke function getTeamsUserActivityCounts
 
+### [Get-MgReportTeamUserActivityDistributionTotalUserCount](Get-MgReportTeamUserActivityDistributionTotalUserCount.md)
+Invoke function getTeamsUserActivityDistributionTotalUserCounts
+
+### [Get-MgReportTeamUserActivityDistributionUserCount](Get-MgReportTeamUserActivityDistributionUserCount.md)
+Invoke function getTeamsUserActivityDistributionUserCounts
+
+### [Get-MgReportTeamUserActivityTotalCount](Get-MgReportTeamUserActivityTotalCount.md)
+Invoke function getTeamsUserActivityTotalCounts
+
+### [Get-MgReportTeamUserActivityTotalDistributionCount](Get-MgReportTeamUserActivityTotalDistributionCount.md)
+Invoke function getTeamsUserActivityTotalDistributionCounts
+
+### [Get-MgReportTeamUserActivityTotalUserCount](Get-MgReportTeamUserActivityTotalUserCount.md)
+Invoke function getTeamsUserActivityTotalUserCounts
+
 ### [Get-MgReportTeamUserActivityUserCount](Get-MgReportTeamUserActivityUserCount.md)
 Invoke function getTeamsUserActivityUserCounts
 
-### [Get-MgReportTeamUserActivityUserDetailA3F1](Get-MgReportTeamUserActivityUserDetailA3F1.md)
+### [Get-MgReportTeamUserActivityUserDetail](Get-MgReportTeamUserActivityUserDetail.md)
 Invoke function getTeamsUserActivityUserDetail
 
-### [Get-MgReportTeamUserActivityUserDetailEb13](Get-MgReportTeamUserActivityUserDetailEb13.md)
-Invoke function getTeamsUserActivityUserDetail
+### [Get-MgReportUserArchivedPrintJob](Get-MgReportUserArchivedPrintJob.md)
+Invoke function getUserArchivedPrintJobs
 
 ### [Get-MgReportUserCredentialUsageDetail](Get-MgReportUserCredentialUsageDetail.md)
-Get userCredentialUsageDetails from reports
+Represents the self-service password reset (SSPR) usage for a given tenant.
 
 ### [Get-MgReportYammerActivityCount](Get-MgReportYammerActivityCount.md)
 Invoke function getYammerActivityCounts
@@ -275,10 +319,7 @@ Invoke function getYammerActivityCounts
 ### [Get-MgReportYammerActivityUserCount](Get-MgReportYammerActivityUserCount.md)
 Invoke function getYammerActivityUserCounts
 
-### [Get-MgReportYammerActivityUserDetail15A5](Get-MgReportYammerActivityUserDetail15A5.md)
-Invoke function getYammerActivityUserDetail
-
-### [Get-MgReportYammerActivityUserDetailAc30](Get-MgReportYammerActivityUserDetailAc30.md)
+### [Get-MgReportYammerActivityUserDetail](Get-MgReportYammerActivityUserDetail.md)
 Invoke function getYammerActivityUserDetail
 
 ### [Get-MgReportYammerDeviceUsageDistributionUserCount](Get-MgReportYammerDeviceUsageDistributionUserCount.md)
@@ -287,21 +328,33 @@ Invoke function getYammerDeviceUsageDistributionUserCounts
 ### [Get-MgReportYammerDeviceUsageUserCount](Get-MgReportYammerDeviceUsageUserCount.md)
 Invoke function getYammerDeviceUsageUserCounts
 
-### [Get-MgReportYammerDeviceUsageUserDetailCfad](Get-MgReportYammerDeviceUsageUserDetailCfad.md)
-Invoke function getYammerDeviceUsageUserDetail
-
-### [Get-MgReportYammerDeviceUsageUserDetailD0Ac](Get-MgReportYammerDeviceUsageUserDetailD0Ac.md)
+### [Get-MgReportYammerDeviceUsageUserDetail](Get-MgReportYammerDeviceUsageUserDetail.md)
 Invoke function getYammerDeviceUsageUserDetail
 
 ### [Get-MgReportYammerGroupActivityCount](Get-MgReportYammerGroupActivityCount.md)
 Invoke function getYammerGroupsActivityCounts
 
-### [Get-MgReportYammerGroupActivityDetail0D7D](Get-MgReportYammerGroupActivityDetail0D7D.md)
-Invoke function getYammerGroupsActivityDetail
-
-### [Get-MgReportYammerGroupActivityDetailDa9A](Get-MgReportYammerGroupActivityDetailDa9A.md)
+### [Get-MgReportYammerGroupActivityDetail](Get-MgReportYammerGroupActivityDetail.md)
 Invoke function getYammerGroupsActivityDetail
 
 ### [Get-MgReportYammerGroupActivityGroupCount](Get-MgReportYammerGroupActivityGroupCount.md)
 Invoke function getYammerGroupsActivityGroupCounts
+
+### [Invoke-MgUserReportAuthenticationMethodRegistered](Invoke-MgUserReportAuthenticationMethodRegistered.md)
+Invoke function usersRegisteredByFeature
+
+### [New-MgReportAuthenticationMethodUserRegistrationDetail](New-MgReportAuthenticationMethodUserRegistrationDetail.md)
+Represents the state of a user's authentication methods, including which methods are registered and which features the user is registered and capable of (such as multi-factor authentication, self-service password reset, and passwordless authentication).
+
+### [Remove-MgDeviceManagementReport](Remove-MgDeviceManagementReport.md)
+Reports singleton
+
+### [Remove-MgReportAuthenticationMethodUserRegistrationDetail](Remove-MgReportAuthenticationMethodUserRegistrationDetail.md)
+Represents the state of a user's authentication methods, including which methods are registered and which features the user is registered and capable of (such as multi-factor authentication, self-service password reset, and passwordless authentication).
+
+### [Update-MgDeviceManagementReport](Update-MgDeviceManagementReport.md)
+Reports singleton
+
+### [Update-MgReportAuthenticationMethodUserRegistrationDetail](Update-MgReportAuthenticationMethodUserRegistrationDetail.md)
+Represents the state of a user's authentication methods, including which methods are registered and which features the user is registered and capable of (such as multi-factor authentication, self-service password reset, and passwordless authentication).
 

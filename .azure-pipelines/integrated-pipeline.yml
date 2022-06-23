@@ -3,7 +3,7 @@
 
 parameters:
   - name: BuildAgent
-    default: MsGraphBuildAgentsWindows
+    default: 1es-windows-ps-compute
     displayName: Build Agent
 
   - name: AzureSubscription
@@ -37,11 +37,18 @@ pool: $(BUILDAGENT)
 trigger:
     branches:
       include:
-      - master
+      - main
       - dev
       - releases/*
       - bugfixes/*
       - features/*
+      exclude:
+      - DocsGeneration/*
+
+pr:
+  branches:
+    exclude:
+    - DocsGeneration/*
 
 stages:
 - stage: ComputeVersion
@@ -55,7 +62,7 @@ stages:
         targetType: 'inline'
         script: |
             printenv
-            if ('$(Build.SourceBranchName)' -eq "master"){
+            if ('$(Build.SourceBranchName)' -eq "main"){
                 Write-Host "##vso[task.setvariable variable=BUILDNUMBER;isOutput=true]-1"
             }
             Write-Host $(BUILDNUMBER)
@@ -72,24 +79,14 @@ stages:
         KeyVaultName: $(KEYVAULT)
         SecretsFilter: '*'
         RunAsPreJob: true
-    
-    - task: PowerShell@2
-      displayName: 'Install Test Certificate'
-      inputs:
-        targetType: 'inline'
-        script: |
-          $kvSecretBytes = [System.Convert]::FromBase64String('$(MsGraphPSSDKCertificate)')
-          $certCollection = New-Object System.Security.Cryptography.X509Certificates.X509Certificate2Collection
-          $certCollection.Import($kvSecretBytes,$null,[System.Security.Cryptography.X509Certificates.X509KeyStorageFlags]::Exportable)
-          $store = New-Object System.Security.Cryptography.X509Certificates.X509Store("My", "CurrentUser")
-          $store.Open([System.Security.Cryptography.X509Certificates.OpenFlags]::ReadWrite)
-          $store.AddRange($certCollection)
-          $store.Close()
 
 - stage: SecurityPreChecks
   displayName: 'Security Pre Checks'
   jobs:
-  - template: ./security-prechecks-template.yml
+  - job: MsGraphPSSDKSecurityPreChecks
+    displayName: Microsoft Graph PowerShell SDK Security Pre Checks
+    steps:
+      - template: ./common-templates/security-prechecks-template.yml
 
 - stage: GenerateAuthModule
   displayName: 'Generate Authentication Module (Microsoft.Graph.Authentication)'
@@ -104,8 +101,8 @@ stages:
       KEYVAULT: $(KEYVAULT)
       AZURESUBSCRIPTION: $(AZURESUBSCRIPTION)
 
-- stage: GenerateBetaModules
-  displayName: 'Generate Beta Modules (Microsoft.Graph.*)'
+- stage: GenerateModules
+  displayName: 'Generate Modules (Microsoft.Graph.*)'
   jobs:
   - template: ./generate-modules-template.yml
     parameters:
@@ -133,4 +130,7 @@ stages:
 - stage: SecurityPostChecks
   displayName: 'Security Post Checks'
   jobs:
-  - template: ./security-postchecks-template.yml
+  - job: MsGraphPSSDKSecurityPostChecks
+    displayName: Microsoft Graph PowerShell SDK Security Post Checks
+    steps:
+      - template: ./common-templates/security-postchecks-template.yml

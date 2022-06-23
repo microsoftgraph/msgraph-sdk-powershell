@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgDeviceAppMgtMdmWindowInformationProtectionPolicy
 
 ## SYNOPSIS
-Update the navigation property mdmWindowsInformationProtectionPolicies in deviceAppManagement
+Windows information protection for apps running on devices which are MDM enrolled.
 
 ## SYNTAX
 
@@ -77,27 +77,9 @@ Update-MgDeviceAppMgtMdmWindowInformationProtectionPolicy -InputObject <IDevices
 ```
 
 ## DESCRIPTION
-Update the navigation property mdmWindowsInformationProtectionPolicies in deviceAppManagement
+Windows information protection for apps running on devices which are MDM enrolled.
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 
@@ -118,7 +100,7 @@ Accept wildcard characters: False
 
 ### -Assignments
 Navigation property to list of security groups targeted for policy.
-To construct, see NOTES section for ASSIGNMENTS properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for ASSIGNMENTS properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTargetedManagedAppPolicyAssignment[]
@@ -179,7 +161,7 @@ Accept wildcard characters: False
 
 ### -DataRecoveryCertificate
 Windows Information Protection DataRecoveryCertificate
-To construct, see NOTES section for DATARECOVERYCERTIFICATE properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for DATARECOVERYCERTIFICATE properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphWindowsInformationProtectionDataRecoveryCertificate
@@ -224,7 +206,7 @@ Accept wildcard characters: False
 ```
 
 ### -EnforcementLevel
-windowsInformationProtectionEnforcementLevel
+Possible values for WIP Protection enforcement levels
 
 ```yaml
 Type: System.String
@@ -259,7 +241,7 @@ For example, '157.54.14.28, 157.54.11.118, 10.202.14.167, 157.53.14.163, 157.69.
 These proxies have been configured by the admin to connect to specific resources on the Internet.
 They are considered to be enterprise network locations.
 The proxies are only leveraged in configuring the EnterpriseProxiedDomains policy to force traffic to the matched domains through these proxies
-To construct, see NOTES section for ENTERPRISEINTERNALPROXYSERVERS properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for ENTERPRISEINTERNALPROXYSERVERS properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphWindowsInformationProtectionResourceCollection[]
@@ -277,7 +259,7 @@ Accept wildcard characters: False
 Sets the enterprise IP ranges that define the computers in the enterprise network.
 Data that comes from those computers will be considered part of the enterprise and protected.
 These locations will be considered a safe destination for enterprise data to be shared to
-To construct, see NOTES section for ENTERPRISEIPRANGES properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for ENTERPRISEIPRANGES properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphWindowsInformationProtectionIPRangeCollection[]
@@ -310,7 +292,7 @@ Accept wildcard characters: False
 ### -EnterpriseNetworkDomainNames
 This is the list of domains that comprise the boundaries of the enterprise.
 Data from one of these domains that is sent to a device will be considered enterprise data and protected These locations will be considered a safe destination for enterprise data to be shared to
-To construct, see NOTES section for ENTERPRISENETWORKDOMAINNAMES properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for ENTERPRISENETWORKDOMAINNAMES properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphWindowsInformationProtectionResourceCollection[]
@@ -326,7 +308,7 @@ Accept wildcard characters: False
 
 ### -EnterpriseProtectedDomainNames
 List of enterprise domains to be protected
-To construct, see NOTES section for ENTERPRISEPROTECTEDDOMAINNAMES properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for ENTERPRISEPROTECTEDDOMAINNAMES properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphWindowsInformationProtectionResourceCollection[]
@@ -345,7 +327,7 @@ Contains a list of Enterprise resource domains hosted in the cloud that need to 
 Connections to these resources are considered enterprise data.
 If a proxy is paired with a cloud resource, traffic to the cloud resource will be routed through the enterprise network via the denoted proxy server (on Port 80).
 A proxy server used for this purpose must also be configured using the EnterpriseInternalProxyServers policy
-To construct, see NOTES section for ENTERPRISEPROXIEDDOMAINS properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for ENTERPRISEPROXIEDDOMAINS properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphWindowsInformationProtectionProxiedDomainCollection[]
@@ -362,7 +344,7 @@ Accept wildcard characters: False
 ### -EnterpriseProxyServers
 This is a list of proxy servers.
 Any server not on this list is considered non-enterprise
-To construct, see NOTES section for ENTERPRISEPROXYSERVERS properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for ENTERPRISEPROXYSERVERS properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphWindowsInformationProtectionResourceCollection[]
@@ -394,7 +376,7 @@ Accept wildcard characters: False
 
 ### -ExemptAppLockerFiles
 Another way to input exempt apps through xml files
-To construct, see NOTES section for EXEMPTAPPLOCKERFILES properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for EXEMPTAPPLOCKERFILES properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphWindowsInformationProtectionAppLockerFile[]
@@ -411,7 +393,7 @@ Accept wildcard characters: False
 ### -ExemptApps
 Exempt applications can also access enterprise data, but the data handled by those applications are not protected.
 This is because some critical enterprise applications may have compatibility problems with encrypted data.
-To construct, see NOTES section for EXEMPTAPPS properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for EXEMPTAPPS properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphWindowsInformationProtectionApp[]
@@ -473,7 +455,7 @@ Accept wildcard characters: False
 
 ### -InputObject
 Identity Parameter
-To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
@@ -534,7 +516,7 @@ Accept wildcard characters: False
 
 ### -NeutralDomainResources
 List of domain names that can used for work or personal resource
-To construct, see NOTES section for NEUTRALDOMAINRESOURCES properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for NEUTRALDOMAINRESOURCES properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphWindowsInformationProtectionResourceCollection[]
@@ -565,7 +547,7 @@ Accept wildcard characters: False
 
 ### -ProtectedAppLockerFiles
 Another way to input protected apps through xml files
-To construct, see NOTES section for PROTECTEDAPPLOCKERFILES properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for PROTECTEDAPPLOCKERFILES properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphWindowsInformationProtectionAppLockerFile[]
@@ -581,7 +563,7 @@ Accept wildcard characters: False
 
 ### -ProtectedApps
 Protected applications can access enterprise data and the data handled by those applications are protected with encryption
-To construct, see NOTES section for PROTECTEDAPPS properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for PROTECTEDAPPS properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphWindowsInformationProtectionApp[]
@@ -660,7 +642,7 @@ Accept wildcard characters: False
 
 ### -SmbAutoEncryptedFileExtensions
 Specifies a list of file extensions, so that files with these extensions are encrypted when copying from an SMB share within the corporate boundary
-To construct, see NOTES section for SMBAUTOENCRYPTEDFILEEXTENSIONS properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for SMBAUTOENCRYPTEDFILEEXTENSIONS properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphWindowsInformationProtectionResourceCollection[]
@@ -746,12 +728,12 @@ To create the parameters described below, construct a hash table containing the 
 
 ASSIGNMENTS <IMicrosoftGraphTargetedManagedAppPolicyAssignment[]>: Navigation property to list of security groups targeted for policy.
   - `[Id <String>]`: Read-only.
-  - `[Source <String>]`: deviceAndAppManagementAssignmentSource
+  - `[Source <String>]`: Represents source of assignment.
   - `[SourceId <String>]`: Identifier for resource used for deployment to a group
   - `[Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget>]`: Base type for assignment targets.
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[DeviceAndAppManagementAssignmentFilterId <String>]`: The Id of the filter for the target assignment.
-    - `[DeviceAndAppManagementAssignmentFilterType <String>]`: deviceAndAppManagementAssignmentFilterType
+    - `[DeviceAndAppManagementAssignmentFilterType <String>]`: Represents type of the assignment filter.
 
 DATARECOVERYCERTIFICATE <IMicrosoftGraphWindowsInformationProtectionDataRecoveryCertificate>: Windows Information Protection DataRecoveryCertificate
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -766,7 +748,7 @@ ENTERPRISEINTERNALPROXYSERVERS <IMicrosoftGraphWindowsInformationProtectionResou
 
 ENTERPRISEIPRANGES <IMicrosoftGraphWindowsInformationProtectionIPRangeCollection[]>: Sets the enterprise IP ranges that define the computers in the enterprise network. Data that comes from those computers will be considered part of the enterprise and protected. These locations will be considered a safe destination for enterprise data to be shared to
   - `[DisplayName <String>]`: Display name
-  - `[Ranges <IMicrosoftGraphIPRange[]>]`: Collection of Internet protocol address ranges
+  - `[Ranges <IMicrosoftGraphIPRange[]>]`: Collection of ip ranges
 
 ENTERPRISENETWORKDOMAINNAMES <IMicrosoftGraphWindowsInformationProtectionResourceCollection[]>: This is the list of domains that comprise the boundaries of the enterprise. Data from one of these domains that is sent to a device will be considered enterprise data and protected These locations will be considered a safe destination for enterprise data to be shared to
   - `[DisplayName <String>]`: Display name
@@ -803,15 +785,15 @@ EXEMPTAPPS <IMicrosoftGraphWindowsInformationProtectionApp[]>: Exempt applicatio
 INPUTOBJECT <IDevicesCorporateManagementIdentity>: Identity Parameter
   - `[AndroidManagedAppProtectionId <String>]`: key: id of androidManagedAppProtection
   - `[AppLogCollectionRequestId <String>]`: key: id of appLogCollectionRequest
-  - `[BundleId <String>]`: 
-  - `[Count <Int64?>]`: 
+  - `[AssignmentFilterEvaluationStatusDetailsId <String>]`: key: id of assignmentFilterEvaluationStatusDetails
+  - `[BundleId <String>]`: Usage: bundleId={bundleId}
+  - `[Count <Int64?>]`: Usage: count={count}
   - `[DefaultManagedAppProtectionId <String>]`: key: id of defaultManagedAppProtection
-  - `[DetectedAppId <String>]`: key: id of detectedApp
   - `[DeviceAppManagementTaskId <String>]`: key: id of deviceAppManagementTask
   - `[DeviceCompliancePolicyStateId <String>]`: key: id of deviceCompliancePolicyState
   - `[DeviceConfigurationStateId <String>]`: key: id of deviceConfigurationState
   - `[DeviceEnrollmentConfigurationId <String>]`: key: id of deviceEnrollmentConfiguration
-  - `[DeviceId <String>]`: 
+  - `[DeviceId <String>]`: Usage: deviceId={deviceId}
   - `[DeviceInstallStateId <String>]`: key: id of deviceInstallState
   - `[DeviceLogCollectionResponseId <String>]`: key: id of deviceLogCollectionResponse
   - `[DeviceManagementTroubleshootingEventId <String>]`: key: id of deviceManagementTroubleshootingEvent
@@ -851,14 +833,13 @@ INPUTOBJECT <IDevicesCorporateManagementIdentity>: Identity Parameter
   - `[SecurityBaselineSettingStateId <String>]`: key: id of securityBaselineSettingState
   - `[SecurityBaselineStateId <String>]`: key: id of securityBaselineState
   - `[SideLoadingKeyId <String>]`: key: id of sideLoadingKey
-  - `[Status <String>]`: 
+  - `[Status <String>]`: Usage: status={status}
   - `[TargetedManagedAppConfigurationId <String>]`: key: id of targetedManagedAppConfiguration
   - `[TargetedManagedAppPolicyAssignmentId <String>]`: key: id of targetedManagedAppPolicyAssignment
   - `[UserAppInstallStatusId <String>]`: key: id of userAppInstallStatus
   - `[UserId <String>]`: key: id of user
-  - `[UserId1 <String>]`: key: id of user
   - `[UserInstallStateSummaryId <String>]`: key: id of userInstallStateSummary
-  - `[UserPrincipalName <String>]`: 
+  - `[UserPrincipalName <String>]`: Usage: userPrincipalName={userPrincipalName}
   - `[VppTokenId <String>]`: key: id of vppToken
   - `[WindowsDefenderApplicationControlSupplementalPolicyAssignmentId <String>]`: key: id of windowsDefenderApplicationControlSupplementalPolicyAssignment
   - `[WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusId <String>]`: key: id of windowsDefenderApplicationControlSupplementalPolicyDeploymentStatus

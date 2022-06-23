@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgSecurityDomainSecurityProfile
 
 ## SYNOPSIS
-Create new navigation property to domainSecurityProfiles for Security
+Create new navigation property to domainSecurityProfiles for security
 
 ## SYNTAX
 
@@ -29,27 +29,9 @@ New-MgSecurityDomainSecurityProfile -BodyParameter <IMicrosoftGraphDomainSecurit
 ```
 
 ## DESCRIPTION
-Create new navigation property to domainSecurityProfiles for Security
+Create new navigation property to domainSecurityProfiles for security
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 
@@ -115,7 +97,7 @@ Accept wildcard characters: False
 
 ### -BodyParameter
 domainSecurityProfile
-To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDomainSecurityProfile
@@ -161,7 +143,7 @@ Accept wildcard characters: False
 
 ### -DomainCategories
 .
-To construct, see NOTES section for DOMAINCATEGORIES properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for DOMAINCATEGORIES properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphReputationCategory[]
@@ -252,7 +234,7 @@ Accept wildcard characters: False
 
 ### -Registrant
 domainRegistrant
-To construct, see NOTES section for REGISTRANT properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for REGISTRANT properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDomainRegistrant
@@ -298,7 +280,7 @@ Accept wildcard characters: False
 
 ### -VendorInformation
 securityVendorInformation
-To construct, see NOTES section for VENDORINFORMATION properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for VENDORINFORMATION properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityVendorInformation

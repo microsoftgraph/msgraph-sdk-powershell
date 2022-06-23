@@ -45,6 +45,14 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Reports.yml"
     },
+    "/auditLogs/signIns/microsoft.graph.confirmCompromised": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Reports.yml"
+    },
+    "/auditLogs/signIns/microsoft.graph.confirmSafe": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Reports.yml"
+    },
     "/deviceManagement/reports": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Reports.yml"
@@ -62,14 +70,6 @@
       "originalLocation": "/openApiDocs/beta/Reports.yml"
     },
     "/deviceManagement/reports/exportJobs/{deviceManagementExportJob-id}": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Reports.yml"
-    },
-    "/deviceManagement/reports/reportSchedules": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Reports.yml"
-    },
-    "/deviceManagement/reports/reportSchedules/{deviceManagementReportSchedule-id}": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Reports.yml"
     },
@@ -93,7 +93,7 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Reports.yml"
     },
-    "/reports/authenticationMethods/microsoft.graph.usersRegisteredByFeature(includedUserTypes={includedUserTypes},includedUserRoles={includedUserRoles})": {
+    "/reports/authenticationMethods/microsoft.graph.usersRegisteredByFeature(includedUserTypes='{includedUserTypes}',includedUserRoles='{includedUserRoles}')": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Reports.yml"
     },
@@ -101,7 +101,15 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Reports.yml"
     },
-    "/reports/authenticationMethods/microsoft.graph.usersRegisteredByMethod(includedUserTypes={includedUserTypes},includedUserRoles={includedUserRoles})": {
+    "/reports/authenticationMethods/microsoft.graph.usersRegisteredByMethod(includedUserTypes='{includedUserTypes}',includedUserRoles='{includedUserRoles}')": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Reports.yml"
+    },
+    "/reports/authenticationMethods/userRegistrationDetails": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Reports.yml"
+    },
+    "/reports/authenticationMethods/userRegistrationDetails/{userRegistrationDetails-id}": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Reports.yml"
     },
@@ -153,6 +161,18 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Reports.yml"
     },
+    "/reports/microsoft.graph.getAttackSimulationRepeatOffenders()": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Reports.yml"
+    },
+    "/reports/microsoft.graph.getAttackSimulationSimulationUserCoverage()": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Reports.yml"
+    },
+    "/reports/microsoft.graph.getAttackSimulationTrainingUserCoverage()": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Reports.yml"
+    },
     "/reports/microsoft.graph.getAzureADApplicationSignInSummary(period='{period}')": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Reports.yml"
@@ -166,6 +186,18 @@
       "originalLocation": "/openApiDocs/beta/Reports.yml"
     },
     "/reports/microsoft.graph.getAzureADUserFeatureUsage()": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Reports.yml"
+    },
+    "/reports/microsoft.graph.getBrowserDistributionUserCounts(period='{period}')": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Reports.yml"
+    },
+    "/reports/microsoft.graph.getBrowserUserCounts(period='{period}')": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Reports.yml"
+    },
+    "/reports/microsoft.graph.getBrowserUserDetail(period='{period}')": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Reports.yml"
     },
@@ -213,7 +245,7 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Reports.yml"
     },
-    "/reports/microsoft.graph.getGroupArchivedPrintJobs(groupId='{groupId}',startDateTime={startDateTime},endDateTime={endDateTime})": {
+    "/reports/microsoft.graph.getGroupArchivedPrintJobs(groupId='{groupId}',startDateTime='{startDateTime}',endDateTime='{endDateTime}')": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Reports.yml"
     },
@@ -337,7 +369,7 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Reports.yml"
     },
-    "/reports/microsoft.graph.getPrinterArchivedPrintJobs(printerId='{printerId}',startDateTime={startDateTime},endDateTime={endDateTime})": {
+    "/reports/microsoft.graph.getPrinterArchivedPrintJobs(printerId='{printerId}',startDateTime='{startDateTime}',endDateTime='{endDateTime}')": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Reports.yml"
     },
@@ -481,6 +513,22 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Reports.yml"
     },
+    "/reports/microsoft.graph.getTeamsTeamActivityCounts(period='{period}')": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Reports.yml"
+    },
+    "/reports/microsoft.graph.getTeamsTeamActivityDetail(date={date})": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Reports.yml"
+    },
+    "/reports/microsoft.graph.getTeamsTeamActivityDetail(period='{period}')": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Reports.yml"
+    },
+    "/reports/microsoft.graph.getTeamsTeamActivityDistributionCounts(period='{period}')": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Reports.yml"
+    },
     "/reports/microsoft.graph.getTeamsUserActivityCounts(period='{period}')": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Reports.yml"
@@ -494,6 +542,10 @@
       "originalLocation": "/openApiDocs/beta/Reports.yml"
     },
     "/reports/microsoft.graph.getTeamsUserActivityTotalCounts(period='{period}')": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Reports.yml"
+    },
+    "/reports/microsoft.graph.getTeamsUserActivityTotalDistributionCounts(period='{period}')": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Reports.yml"
     },
@@ -513,11 +565,7 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Reports.yml"
     },
-    "/reports/microsoft.graph.getTenantSecureScores(period={period})": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Reports.yml"
-    },
-    "/reports/microsoft.graph.getUserArchivedPrintJobs(userId='{userId}',startDateTime={startDateTime},endDateTime={endDateTime})": {
+    "/reports/microsoft.graph.getUserArchivedPrintJobs(userId='{userId}',startDateTime='{startDateTime}',endDateTime='{endDateTime}')": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Reports.yml"
     },

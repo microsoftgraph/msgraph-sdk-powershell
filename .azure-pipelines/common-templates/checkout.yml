@@ -1,10 +1,16 @@
 # Copyright (c) Microsoft Corporation. All rights reserved.
 # Licensed under the MIT License.
 
+parameters:
+  - name: TargetBranch
+    type: string
+    default: ''
+
 steps:
   - checkout: self
     clean: true
     fetchDepth: 1
+    submodules: true
     persistCredentials: true
 
   - task: PowerShell@2
@@ -14,6 +20,19 @@ steps:
       script: |
         git config --global user.email "GraphTooling@service.microsoft.com"
         git config --global user.name "Microsoft Graph DevX Tooling"
+
+  - task: Bash@3
+    displayName: "Switch to target branch: ${{ parameters.TargetBranch }}"
+    condition: and(succeeded(), ne('${{ parameters.TargetBranch }}', ''))
+    inputs:
+      targetType: inline
+      script: |
+        git status
+        git fetch --all
+        git checkout ${{ parameters.TargetBranch }}
+        git pull
+        git status
+
 
   - task: securedevelopmentteam.vss-secure-development-tools.build-task-credscan.CredScan@2
     displayName: "Run CredScan"

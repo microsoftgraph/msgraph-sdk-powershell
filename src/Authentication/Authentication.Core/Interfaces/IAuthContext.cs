@@ -4,6 +4,7 @@
 
 namespace Microsoft.Graph.PowerShell.Authentication
 {
+    using System;
     using System.Security.Cryptography.X509Certificates;
 
     public enum AuthenticationType
@@ -41,5 +42,7 @@ namespace Microsoft.Graph.PowerShell.Authentication
         string AppName { get; set; }
         ContextScope ContextScope { get; set; }
         X509Certificate2 Certificate { get; set; }
+        Version PSHostVersion { get; set; }
+        TimeSpan ClientTimeout { get; set; }
     }
 }

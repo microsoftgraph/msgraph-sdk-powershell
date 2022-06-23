@@ -8,15 +8,14 @@ schema: 2.0.0
 # Get-MgEntitlementManagementAccessPackageAssignmentRequest
 
 ## SYNOPSIS
-Get accessPackageAssignmentRequests from identityGovernance
+Represents access package assignment requests created by or on behalf of a user.
 
 ## SYNTAX
 
-### List (Default)
+### ListAll (Default)
 ```
-Get-MgEntitlementManagementAccessPackageAssignmentRequest [-Count] [-ExpandProperty <String[]>]
- [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>]
- [-Top <Int32>] [-All] [-PageSize <Int32>] [<CommonParameters>]
+Get-MgEntitlementManagementAccessPackageAssignmentRequest [-ExpandProperty <String[]>] [-Property <String[]>]
+ [-Sort <String[]>] [-All] [<CommonParameters>]
 ```
 
 ### Get
@@ -31,28 +30,71 @@ Get-MgEntitlementManagementAccessPackageAssignmentRequest -InputObject <IIdentit
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
+### List
+```
+Get-MgEntitlementManagementAccessPackageAssignmentRequest [-ExpandProperty <String[]>] [-Filter <String>]
+ [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
+ [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
+```
+
+### ListByAccessPackageId
+```
+Get-MgEntitlementManagementAccessPackageAssignmentRequest -AccessPackageId <String>
+ [-ExpandProperty <String[]>] [-Property <String[]>] [-Sort <String[]>] [-Top <Int32>] [-All]
+ [<CommonParameters>]
+```
+
 ## DESCRIPTION
-Get accessPackageAssignmentRequests from identityGovernance
+Represents access package assignment requests created by or on behalf of a user.
 
 ## EXAMPLES
 
-### Example 1: {{ Add title here }}
+### Example 1: Get all access package assignment requests
 ```powershell
-PS C:\> {{ Add code here }}
+Get-MgEntitlementManagementAccessPackageAssignmentRequest | Format-List
 
-{{ Add output here }}
+AccessPackage           : Microsoft.Graph.PowerShell.Models.MicrosoftGraphAccessPackage
+AccessPackageAssignment : Microsoft.Graph.PowerShell.Models.MicrosoftGraphAccessPackageAssignment
+Answers                 : {}
+CompletedDate           : 11/8/2021 10:21:35 AM
+CreatedDateTime         : 11/8/2021 7:21:09 AM
+ExpirationDateTime      :
+Id                      : c82bc0cd-4fbc-4492-8c75-54c41dc74803
+IsValidationOnly        : False
+Justification           :
+RequestState            : Delivered
+RequestStatus           : FulfilledNotificationTriggered
+RequestType             : UserAdd
+Requestor               : Microsoft.Graph.PowerShell.Models.MicrosoftGraphAccessPackageSubject
+Schedule                : Microsoft.Graph.PowerShell.Models.MicrosoftGraphRequestSchedule
+AdditionalProperties    : {[@odata.context, https://graph.microsoft.com/beta/$metadata#identityGovernance/entitlementManagement/accessPackageAssignmentRequests/$entity]}
 ```
 
-{{ Add description here }}
+This example retrieves all access package assignment requests.
 
-### Example 2: {{ Add title here }}
+### Example 2: Get  access package assignment request using the request id
 ```powershell
-PS C:\> {{ Add code here }}
+Connect-MgGraph -Scopes 'EntitlementManagement.ReadWrite.All'
+Get-MgEntitlementManagementAccessPackageAssignmentRequest -AccessPackageAssignmentRequestId 'c82bc0cd-4fbc-4492-8c75-54c41dc74803'| Format-List
 
-{{ Add output here }}
+AccessPackage           : Microsoft.Graph.PowerShell.Models.MicrosoftGraphAccessPackage
+AccessPackageAssignment : Microsoft.Graph.PowerShell.Models.MicrosoftGraphAccessPackageAssignment
+Answers                 : {}
+CompletedDate           : 11/8/2021 10:21:35 AM
+CreatedDateTime         : 11/8/2021 7:21:09 AM
+ExpirationDateTime      :
+Id                      : c82bc0cd-4fbc-4492-8c75-54c41dc74803
+IsValidationOnly        : False
+Justification           :
+RequestState            : Delivered
+RequestStatus           : FulfilledNotificationTriggered
+RequestType             : UserAdd
+Requestor               : Microsoft.Graph.PowerShell.Models.MicrosoftGraphAccessPackageSubject
+Schedule                : Microsoft.Graph.PowerShell.Models.MicrosoftGraphRequestSchedule
+AdditionalProperties    : {[@odata.context, https://graph.microsoft.com/beta/$metadata#identityGovernance/entitlementManagement/accessPackageAssignmentRequests/$entity]}
 ```
 
-{{ Add description here }}
+This example returns the access package assignment request for the specified id.
 
 ## PARAMETERS
 
@@ -71,12 +113,27 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -AccessPackageId
+Filter items by property values
+
+```yaml
+Type: System.String
+Parameter Sets: ListByAccessPackageId
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -All
 List all pages.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
-Parameter Sets: List
+Parameter Sets: List, ListAll, ListByAccessPackageId
 Aliases:
 
 Required: False
@@ -86,13 +143,14 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Count
-Include count of items
+### -CountVariable
+Specifies a count of the total number of items in a collection.
+By default, this variable will be set in the global scope.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: System.String
 Parameter Sets: List
-Aliases:
+Aliases: CV
 
 Required: False
 Position: Named
@@ -133,7 +191,7 @@ Accept wildcard characters: False
 
 ### -InputObject
 Identity Parameter
-To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
@@ -212,7 +270,7 @@ Order items by property values
 
 ```yaml
 Type: System.String[]
-Parameter Sets: List
+Parameter Sets: List, ListAll, ListByAccessPackageId
 Aliases: OrderBy
 
 Required: False
@@ -227,7 +285,7 @@ Show only the first n items
 
 ```yaml
 Type: System.Int32
-Parameter Sets: List
+Parameter Sets: List, ListByAccessPackageId
 Aliases: Limit
 
 Required: False
@@ -264,28 +322,43 @@ INPUTOBJECT <IIdentityGovernanceIdentity>: Identity Parameter
   - `[AccessPackageAssignmentResourceRoleId <String>]`: key: id of accessPackageAssignmentResourceRole
   - `[AccessPackageCatalogId <String>]`: key: id of accessPackageCatalog
   - `[AccessPackageId <String>]`: key: id of accessPackage
+  - `[AccessPackageResourceEnvironmentId <String>]`: key: id of accessPackageResourceEnvironment
   - `[AccessPackageResourceId <String>]`: key: id of accessPackageResource
   - `[AccessPackageResourceRequestId <String>]`: key: id of accessPackageResourceRequest
   - `[AccessPackageResourceRoleId <String>]`: key: id of accessPackageResourceRole
   - `[AccessPackageResourceRoleScopeId <String>]`: key: id of accessPackageResourceRoleScope
   - `[AccessPackageResourceScopeId <String>]`: key: id of accessPackageResourceScope
   - `[AccessReviewDecisionId <String>]`: key: id of accessReviewDecision
+  - `[AccessReviewHistoryDefinitionId <String>]`: key: id of accessReviewHistoryDefinition
+  - `[AccessReviewHistoryInstanceId <String>]`: key: id of accessReviewHistoryInstance
   - `[AccessReviewId <String>]`: key: id of accessReview
   - `[AccessReviewId1 <String>]`: key: id of accessReview
+  - `[AccessReviewInstanceDecisionItemId <String>]`: key: id of accessReviewInstanceDecisionItem
+  - `[AccessReviewInstanceDecisionItemId1 <String>]`: key: id of accessReviewInstanceDecisionItem
   - `[AccessReviewInstanceId <String>]`: key: id of accessReviewInstance
   - `[AccessReviewReviewerId <String>]`: key: id of accessReviewReviewer
   - `[AccessReviewScheduleDefinitionId <String>]`: key: id of accessReviewScheduleDefinition
+  - `[AccessReviewStageId <String>]`: key: id of accessReviewStage
   - `[AgreementAcceptanceId <String>]`: key: id of agreementAcceptance
   - `[AgreementFileLocalizationId <String>]`: key: id of agreementFileLocalization
+  - `[AgreementFileVersionId <String>]`: key: id of agreementFileVersion
   - `[AgreementId <String>]`: key: id of agreement
+  - `[AppConsentRequestId <String>]`: key: id of appConsentRequest
+  - `[ApprovalId <String>]`: key: id of approval
+  - `[ApprovalStageId <String>]`: key: id of approvalStage
+  - `[ApprovalStepId <String>]`: key: id of approvalStep
   - `[BusinessFlowTemplateId <String>]`: key: id of businessFlowTemplate
   - `[ConnectedOrganizationId <String>]`: key: id of connectedOrganization
+  - `[CustomAccessPackageWorkflowExtensionId <String>]`: key: id of customAccessPackageWorkflowExtension
+  - `[CustomExtensionHandlerId <String>]`: key: id of customExtensionHandler
   - `[DirectoryObjectId <String>]`: key: id of directoryObject
+  - `[GovernanceInsightId <String>]`: key: id of governanceInsight
   - `[GovernanceResourceId <String>]`: key: id of governanceResource
   - `[GovernanceRoleAssignmentId <String>]`: key: id of governanceRoleAssignment
   - `[GovernanceRoleAssignmentRequestId <String>]`: key: id of governanceRoleAssignmentRequest
   - `[GovernanceRoleDefinitionId <String>]`: key: id of governanceRoleDefinition
   - `[GovernanceRoleSettingId <String>]`: key: id of governanceRoleSetting
+  - `[On <String>]`: Usage: on={on}
   - `[PrivilegedAccessId <String>]`: key: id of privilegedAccess
   - `[PrivilegedApprovalId <String>]`: key: id of privilegedApproval
   - `[PrivilegedOperationEventId <String>]`: key: id of privilegedOperationEvent
@@ -295,6 +368,7 @@ INPUTOBJECT <IIdentityGovernanceIdentity>: Identity Parameter
   - `[ProgramControlId <String>]`: key: id of programControl
   - `[ProgramControlTypeId <String>]`: key: id of programControlType
   - `[ProgramId <String>]`: key: id of program
+  - `[UserConsentRequestId <String>]`: key: id of userConsentRequest
   - `[UserId <String>]`: key: id of user
 
 ## RELATED LINKS

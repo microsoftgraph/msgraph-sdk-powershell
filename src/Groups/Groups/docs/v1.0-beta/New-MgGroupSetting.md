@@ -8,7 +8,8 @@ schema: 2.0.0
 # New-MgGroupSetting
 
 ## SYNOPSIS
-Create new navigation property to settings for groups
+Settings that can govern this group's behavior, like whether members can invite guest users to the group.
+Nullable.
 
 ## SYNTAX
 
@@ -39,27 +40,10 @@ New-MgGroupSetting -InputObject <IGroupsIdentity> [-AdditionalProperties <Hashta
 ```
 
 ## DESCRIPTION
-Create new navigation property to settings for groups
+Settings that can govern this group's behavior, like whether members can invite guest users to the group.
+Nullable.
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 
@@ -80,7 +64,7 @@ Accept wildcard characters: False
 
 ### -BodyParameter
 directorySetting
-To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDirectorySetting
@@ -95,7 +79,8 @@ Accept wildcard characters: False
 ```
 
 ### -DisplayName
-.
+Display name of this group of settings, which comes from the associated template.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -141,7 +126,7 @@ Accept wildcard characters: False
 
 ### -InputObject
 Identity Parameter
-To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IGroupsIdentity
@@ -156,7 +141,8 @@ Accept wildcard characters: False
 ```
 
 ### -TemplateId
-.
+Unique identifier for the template used to create this group of settings.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -171,8 +157,8 @@ Accept wildcard characters: False
 ```
 
 ### -Values
-.
-To construct, see NOTES section for VALUES properties and create a hash table.
+Collection of name-value pairs corresponding to the name and defaultValue properties in the referenced directorySettingTemplates object.
+To construct, please use Get-Help -Online and see NOTES section for VALUES properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSettingValue[]
@@ -242,9 +228,9 @@ To create the parameters described below, construct a hash table containing the 
 BODYPARAMETER <IMicrosoftGraphDirectorySetting>: directorySetting
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: Read-only.
-  - `[DisplayName <String>]`: 
-  - `[TemplateId <String>]`: 
-  - `[Values <IMicrosoftGraphSettingValue[]>]`: 
+  - `[DisplayName <String>]`: Display name of this group of settings, which comes from the associated template. Read-only.
+  - `[TemplateId <String>]`: Unique identifier for the template used to create this group of settings. Read-only.
+  - `[Values <IMicrosoftGraphSettingValue[]>]`: Collection of name-value pairs corresponding to the name and defaultValue properties in the referenced directorySettingTemplates object.
     - `[Name <String>]`: Name of the setting (as defined by the groupSettingTemplate).
     - `[Value <String>]`: Value of the setting.
 
@@ -252,14 +238,13 @@ INPUTOBJECT <IGroupsIdentity>: Identity Parameter
   - `[AttachmentId <String>]`: key: id of attachment
   - `[ConversationId <String>]`: key: id of conversation
   - `[ConversationThreadId <String>]`: key: id of conversationThread
-  - `[DirectoryObjectId <String>]`: key: id of directoryObject
   - `[DirectorySettingId <String>]`: key: id of directorySetting
   - `[EndpointId <String>]`: key: id of endpoint
   - `[EventId <String>]`: key: id of event
   - `[ExtensionId <String>]`: key: id of extension
   - `[GroupId <String>]`: key: id of group
   - `[GroupLifecyclePolicyId <String>]`: key: id of groupLifecyclePolicy
-  - `[IncludePersonalNotebooks <Boolean?>]`: 
+  - `[IncludePersonalNotebooks <Boolean?>]`: Usage: includePersonalNotebooks={includePersonalNotebooks}
   - `[MentionId <String>]`: key: id of mention
   - `[MultiValueLegacyExtendedPropertyId <String>]`: key: id of multiValueLegacyExtendedProperty
   - `[NotebookId <String>]`: key: id of notebook
@@ -269,10 +254,10 @@ INPUTOBJECT <IGroupsIdentity>: Identity Parameter
   - `[ProfilePhotoId <String>]`: key: id of profilePhoto
   - `[ResourceSpecificPermissionGrantId <String>]`: key: id of resourceSpecificPermissionGrant
   - `[SingleValueLegacyExtendedPropertyId <String>]`: key: id of singleValueLegacyExtendedProperty
-  - `[User <String>]`: 
+  - `[User <String>]`: Usage: User={User}
   - `[UserId <String>]`: key: id of user
 
-VALUES <IMicrosoftGraphSettingValue[]>: .
+VALUES <IMicrosoftGraphSettingValue[]>: Collection of name-value pairs corresponding to the name and defaultValue properties in the referenced directorySettingTemplates object.
   - `[Name <String>]`: Name of the setting (as defined by the groupSettingTemplate).
   - `[Value <String>]`: Value of the setting.
 

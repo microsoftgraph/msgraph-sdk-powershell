@@ -8,80 +8,62 @@ schema: 2.0.0
 # Set-MgShareListItemAnalyticByRef
 
 ## SYNOPSIS
-Update the ref of navigation property analytics in shares
+Analytics about the view activities that took place on this item.
 
 ## SYNTAX
 
-### UpdateExpanded3 (Default)
+### SetExpanded3 (Default)
 ```
 Set-MgShareListItemAnalyticByRef -SharedDriveItemId <String> [-AdditionalProperties <Hashtable>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### Update2
+### Set2
 ```
 Set-MgShareListItemAnalyticByRef -ListItemId <String> -SharedDriveItemId <String> -BodyParameter <Hashtable>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### Update3
+### Set3
 ```
 Set-MgShareListItemAnalyticByRef -SharedDriveItemId <String> -BodyParameter <Hashtable> [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
-### UpdateExpanded2
+### SetExpanded2
 ```
 Set-MgShareListItemAnalyticByRef -ListItemId <String> -SharedDriveItemId <String>
  [-AdditionalProperties <Hashtable>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### UpdateViaIdentity2
+### SetViaIdentity2
 ```
 Set-MgShareListItemAnalyticByRef -InputObject <IFilesIdentity> -BodyParameter <Hashtable> [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### UpdateViaIdentity3
+### SetViaIdentity3
 ```
 Set-MgShareListItemAnalyticByRef -InputObject <IFilesIdentity> -BodyParameter <Hashtable> [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### UpdateViaIdentityExpanded2
+### SetViaIdentityExpanded2
 ```
 Set-MgShareListItemAnalyticByRef -InputObject <IFilesIdentity> [-AdditionalProperties <Hashtable>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### UpdateViaIdentityExpanded3
+### SetViaIdentityExpanded3
 ```
 Set-MgShareListItemAnalyticByRef -InputObject <IFilesIdentity> [-AdditionalProperties <Hashtable>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Update the ref of navigation property analytics in shares
+Analytics about the view activities that took place on this item.
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 
@@ -90,7 +72,7 @@ Additional Parameters
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: UpdateExpanded2, UpdateExpanded3, UpdateViaIdentityExpanded2, UpdateViaIdentityExpanded3
+Parameter Sets: SetExpanded2, SetExpanded3, SetViaIdentityExpanded2, SetViaIdentityExpanded3
 Aliases:
 
 Required: False
@@ -105,7 +87,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: Update2, Update3, UpdateViaIdentity2, UpdateViaIdentity3
+Parameter Sets: Set2, Set3, SetViaIdentity2, SetViaIdentity3
 Aliases:
 
 Required: True
@@ -117,11 +99,11 @@ Accept wildcard characters: False
 
 ### -InputObject
 Identity Parameter
-To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IFilesIdentity
-Parameter Sets: UpdateViaIdentity2, UpdateViaIdentity3, UpdateViaIdentityExpanded2, UpdateViaIdentityExpanded3
+Parameter Sets: SetViaIdentity2, SetViaIdentity3, SetViaIdentityExpanded2, SetViaIdentityExpanded3
 Aliases:
 
 Required: True
@@ -136,7 +118,7 @@ key: id of listItem
 
 ```yaml
 Type: System.String
-Parameter Sets: Update2, UpdateExpanded2
+Parameter Sets: Set2, SetExpanded2
 Aliases:
 
 Required: True
@@ -166,7 +148,7 @@ key: id of sharedDriveItem
 
 ```yaml
 Type: System.String
-Parameter Sets: Update2, Update3, UpdateExpanded2, UpdateExpanded3
+Parameter Sets: Set2, Set3, SetExpanded2, SetExpanded3
 Aliases:
 
 Required: True
@@ -235,15 +217,17 @@ INPUTOBJECT <IFilesIdentity>: Identity Parameter
   - `[ContentTypeId <String>]`: key: id of contentType
   - `[DriveId <String>]`: key: id of drive
   - `[DriveItemId <String>]`: key: id of driveItem
-  - `[EndDateTime <String>]`: 
+  - `[EndDateTime <String>]`: Usage: endDateTime={endDateTime}
   - `[GroupId <String>]`: key: id of group
-  - `[Interval <String>]`: 
+  - `[Interval <String>]`: Usage: interval={interval}
   - `[ListItemId <String>]`: key: id of listItem
   - `[ListItemVersionId <String>]`: key: id of listItemVersion
-  - `[Q <String>]`: 
+  - `[Q <String>]`: Usage: q={q}
+  - `[RichLongRunningOperationId <String>]`: key: id of richLongRunningOperation
   - `[SharedDriveItemId <String>]`: key: id of sharedDriveItem
-  - `[StartDateTime <String>]`: 
+  - `[StartDateTime <String>]`: Usage: startDateTime={startDateTime}
   - `[SubscriptionId <String>]`: key: id of subscription
+  - `[Token <String>]`: Usage: token={token}
   - `[UserId <String>]`: key: id of user
 
 ## RELATED LINKS

@@ -12,55 +12,38 @@ Invoke action decline
 
 ## SYNTAX
 
-### DeclineExpanded (Default)
+### DeclineExpanded1 (Default)
 ```
 Invoke-MgDeclineUserEventInstance -EventId <String> -EventId1 <String> -UserId <String>
- [-AdditionalProperties <Hashtable>] [-Comment <String>] [-SendResponse] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-AdditionalProperties <Hashtable>] [-Comment <String>] [-ProposedNewTime <IMicrosoftGraphTimeSlot>]
+ [-SendResponse] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### Decline
+### Decline1
 ```
 Invoke-MgDeclineUserEventInstance -EventId <String> -EventId1 <String> -UserId <String>
  -BodyParameter <IPathsYv35ByUsersUserIdEventsEventIdInstancesEventId1MicrosoftGraphDeclinePostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### DeclineViaIdentity
+### DeclineViaIdentity1
 ```
 Invoke-MgDeclineUserEventInstance -InputObject <IUsersActionsIdentity>
  -BodyParameter <IPathsYv35ByUsersUserIdEventsEventIdInstancesEventId1MicrosoftGraphDeclinePostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### DeclineViaIdentityExpanded
+### DeclineViaIdentityExpanded1
 ```
 Invoke-MgDeclineUserEventInstance -InputObject <IUsersActionsIdentity> [-AdditionalProperties <Hashtable>]
- [-Comment <String>] [-SendResponse] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Comment <String>] [-ProposedNewTime <IMicrosoftGraphTimeSlot>] [-SendResponse] [-PassThru] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Invoke action decline
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 
@@ -69,7 +52,7 @@ Additional Parameters
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: DeclineExpanded, DeclineViaIdentityExpanded
+Parameter Sets: DeclineExpanded1, DeclineViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -81,11 +64,11 @@ Accept wildcard characters: False
 
 ### -BodyParameter
 .
-To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IPathsYv35ByUsersUserIdEventsEventIdInstancesEventId1MicrosoftGraphDeclinePostRequestbodyContentApplicationJsonSchema
-Parameter Sets: Decline, DeclineViaIdentity
+Parameter Sets: Decline1, DeclineViaIdentity1
 Aliases:
 
 Required: True
@@ -100,7 +83,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.String
-Parameter Sets: DeclineExpanded, DeclineViaIdentityExpanded
+Parameter Sets: DeclineExpanded1, DeclineViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -115,7 +98,7 @@ key: id of event
 
 ```yaml
 Type: System.String
-Parameter Sets: Decline, DeclineExpanded
+Parameter Sets: Decline1, DeclineExpanded1
 Aliases:
 
 Required: True
@@ -130,7 +113,7 @@ key: id of event
 
 ```yaml
 Type: System.String
-Parameter Sets: Decline, DeclineExpanded
+Parameter Sets: Decline1, DeclineExpanded1
 Aliases:
 
 Required: True
@@ -142,11 +125,11 @@ Accept wildcard characters: False
 
 ### -InputObject
 Identity Parameter
-To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
-Parameter Sets: DeclineViaIdentity, DeclineViaIdentityExpanded
+Parameter Sets: DeclineViaIdentity1, DeclineViaIdentityExpanded1
 Aliases:
 
 Required: True
@@ -171,12 +154,28 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -ProposedNewTime
+timeSlot
+To construct, please use Get-Help -Online and see NOTES section for PROPOSEDNEWTIME properties and create a hash table.
+
+```yaml
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTimeSlot
+Parameter Sets: DeclineExpanded1, DeclineViaIdentityExpanded1
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -SendResponse
 .
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
-Parameter Sets: DeclineExpanded, DeclineViaIdentityExpanded
+Parameter Sets: DeclineExpanded1, DeclineViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -191,7 +190,7 @@ key: id of user
 
 ```yaml
 Type: System.String
-Parameter Sets: Decline, DeclineExpanded
+Parameter Sets: Decline1, DeclineExpanded1
 Aliases:
 
 Required: True
@@ -257,13 +256,25 @@ To create the parameters described below, construct a hash table containing the 
 BODYPARAMETER <IPathsYv35ByUsersUserIdEventsEventIdInstancesEventId1MicrosoftGraphDeclinePostRequestbodyContentApplicationJsonSchema>: .
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Comment <String>]`: 
+  - `[ProposedNewTime <IMicrosoftGraphTimeSlot>]`: timeSlot
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+    - `[End <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
+      - `[(Any) <Object>]`: This indicates any property can be added to this object.
+      - `[DateTime <String>]`: A single point of time in a combined date and time representation ({date}T{time}; for example, 2017-08-29T04:00:00.0000000).
+      - `[TimeZone <String>]`: Represents a time zone, for example, 'Pacific Standard Time'. See below for more possible values.
+    - `[Start <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
   - `[SendResponse <Boolean?>]`: 
 
 INPUTOBJECT <IUsersActionsIdentity>: Identity Parameter
+  - `[AccessReviewInstanceDecisionItemId <String>]`: key: id of accessReviewInstanceDecisionItem
   - `[AccessReviewInstanceId <String>]`: key: id of accessReviewInstance
+  - `[AccessReviewStageId <String>]`: key: id of accessReviewStage
   - `[AppLogCollectionRequestId <String>]`: key: id of appLogCollectionRequest
   - `[AuthenticationMethodId <String>]`: key: id of authenticationMethod
+  - `[BaseTaskId <String>]`: key: id of baseTask
+  - `[BaseTaskListId <String>]`: key: id of baseTaskList
   - `[CalendarId <String>]`: key: id of calendar
+  - `[CloudPcId <String>]`: key: id of cloudPC
   - `[DeviceEnrollmentConfigurationId <String>]`: key: id of deviceEnrollmentConfiguration
   - `[DeviceLogCollectionResponseId <String>]`: key: id of deviceLogCollectionResponse
   - `[EventId <String>]`: key: id of event
@@ -279,8 +290,18 @@ INPUTOBJECT <IUsersActionsIdentity>: Identity Parameter
   - `[OutlookTaskFolderId <String>]`: key: id of outlookTaskFolder
   - `[OutlookTaskGroupId <String>]`: key: id of outlookTaskGroup
   - `[OutlookTaskId <String>]`: key: id of outlookTask
+  - `[SharedInsightId <String>]`: key: id of sharedInsight
+  - `[TrendingId <String>]`: key: id of trending
+  - `[UsedInsightId <String>]`: key: id of usedInsight
   - `[UserId <String>]`: key: id of user
-  - `[WindowsInformationProtectionDeviceRegistrationId <String>]`: key: id of windowsInformationProtectionDeviceRegistration
+
+PROPOSEDNEWTIME <IMicrosoftGraphTimeSlot>: timeSlot
+  - `[(Any) <Object>]`: This indicates any property can be added to this object.
+  - `[End <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+    - `[DateTime <String>]`: A single point of time in a combined date and time representation ({date}T{time}; for example, 2017-08-29T04:00:00.0000000).
+    - `[TimeZone <String>]`: Represents a time zone, for example, 'Pacific Standard Time'. See below for more possible values.
+  - `[Start <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
 
 ## RELATED LINKS
 

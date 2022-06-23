@@ -12,7 +12,11 @@ Param(
     [switch] $Pack,
     [switch] $Publish,
     [switch] $EnableSigning,
-    [switch] $SkipVersionCheck
+    [switch] $SkipVersionCheck,
+    [switch] $SkipGeneration,
+    [switch] $ExcludeExampleTemplates,
+    [switch] $ExcludeNotesSection,
+    [switch] $Isolated
 )
 enum VersionState {
     Invalid
@@ -21,20 +25,29 @@ enum VersionState {
     NotOnFeed
 }
 $Error.Clear()
-$ErrorActionPreference = 'Continue'
+$ErrorActionPreference = 'Stop'
+
 if ($PSEdition -ne 'Core') {
     Write-Error 'This script requires PowerShell Core to execute. [Note] Generated cmdlets will work in both PowerShell Core or Windows PowerShell.'
 }
+
+if (-not $Isolated) {
+    Write-Host -ForegroundColor Green 'Creating isolated process...'
+    $pwsh = [System.Diagnostics.Process]::GetCurrentProcess().Path
+    & "$pwsh" -NonInteractive -NoLogo -NoProfile -File $MyInvocation.MyCommand.Path @PSBoundParameters -Isolated
+    return
+}
+
 # Module import.
 Import-Module PowerShellGet
 
 # Install Powershell-yaml
 if (!(Get-Module -Name powershell-yaml -ListAvailable)) {
-    Install-Module powershell-yaml -Force   
+    Install-Module powershell-yaml -Repository PSGallery -Scope CurrentUser -Force
 }
 
-# Set NODE max memory to 8 Gb.
-$ENV:NODE_OPTIONS='--max-old-space-size=8192'
+# Set NODE max heap size to 32 Gb. This is assuming the VM has this memory.
+$ENV:NODE_OPTIONS='--max-old-space-size=32768'
 $ModulePrefix = "Microsoft.Graph"
 $ScriptRoot = $PSScriptRoot
 $ModulesOutputDir = Join-Path $ScriptRoot "..\src\"
@@ -61,6 +74,15 @@ $AllowPreRelease = $true
 if ($ModulePreviewNumber -eq -1) {
     $AllowPreRelease = $false
 }
+
+if (!$SkipGeneration)
+{
+    # Build AutoREST.PowerShell submodule.
+    Set-Location (Join-Path $ScriptRoot "../autorest.powershell")
+    rush update
+    rush build
+}
+
 # Install module locally in order to specify it as a dependency for other modules down the generation pipeline.
 # https://stackoverflow.com/questions/46216038/how-do-i-define-requiredmodules-in-a-powershell-module-manifest-psd1.
 $ExistingAuthModule = Find-Module "Microsoft.Graph.Authentication" -Repository $RepositoryName -AllowPrerelease:$AllowPreRelease
@@ -87,14 +109,18 @@ if ($ModulesToGenerate.Count -eq 0) {
     $ModulesToGenerate = $ModuleMapping.Keys
 }
 
-$ModulesToGenerate | ForEach-Object -ThrottleLimit $ModulesToGenerate.Count -Parallel {
+$NumberOfCores = ((Get-ComputerInfo -Property CsProcessors).CsProcessors.NumberOfCores)[0]
+Write-Host -ForegroundColor Green "Using '$NumberOfCores' cores in parallel."
+
+$Stopwatch = [system.diagnostics.stopwatch]::StartNew()
+$ModulesToGenerate | ForEach-Object -ThrottleLimit $NumberOfCores -Parallel {
     enum VersionState {
         Invalid
         Valid
         EqualToFeed
         NotOnFeed
     }
-    
+
     $ModuleName = $_
     $FullyQualifiedModuleName = "$using:ModulePrefix.$ModuleName"
     Write-Host -ForegroundColor Green "Generating '$FullyQualifiedModuleName' module..."
@@ -106,7 +132,7 @@ $ModulesToGenerate | ForEach-Object -ThrottleLimit $ModulesToGenerate.Count -Par
         Write-Warning "[Generation skipped] : Module '$ModuleName' not found at $ProfileReadmePath."
         break
     }
-    
+
     # Copy AutoRest readme.md config is none exists.
     if (-not (Test-Path "$ModuleProjectDir\readme.md")) {
         New-Item -Path $ModuleProjectDir -Type Directory -Force
@@ -141,12 +167,15 @@ $ModulesToGenerate | ForEach-Object -ThrottleLimit $ModulesToGenerate.Count -Par
 
         try {
             # Generate PowerShell modules.
-            & autorest --module-version:$ModuleVersion --service-name:$ModuleName $ModuleLevelReadMePath --version:"3.0.6306" --verbose
-            if ($LASTEXITCODE) {
-                Write-Error "AutoREST failed to generate '$ModuleName' module."
-                break;
+            if (!$using:SkipGeneration)
+            {
+                & autorest --module-version:$ModuleVersion --service-name:$ModuleName --version:"3.0.6306" $ModuleLevelReadMePath --verbose
+                if ($LASTEXITCODE) {
+                    Write-Error "AutoREST failed to generate '$ModuleName' module."
+                    break;
+                }
+                Write-Host -ForegroundColor Green "AutoRest generated '$FullyQualifiedModuleName' successfully."
             }
-            Write-Host -ForegroundColor Green "AutoRest generated '$FullyQualifiedModuleName' successfully."
 
             # Manage generated module.
             Write-Host -ForegroundColor Green "Managing '$FullyQualifiedModuleName' module..."
@@ -156,10 +185,10 @@ $ModulesToGenerate | ForEach-Object -ThrottleLimit $ModulesToGenerate.Count -Par
                 # Build generated module.
                 if ($Using:EnableSigning) {
                     # Sign generated module.
-                    & $Using:BuildModulePS1 -Module $ModuleName -ModulePrefix $Using:ModulePrefix -ModuleVersion $ModuleVersion -ModulePreviewNumber $Using:ModulePreviewNumber -RequiredModules $Using:RequiredGraphModules -ReleaseNotes $ModuleReleaseNotes -EnableSigning
+                    & $Using:BuildModulePS1 -Module $ModuleName -ModulePrefix $Using:ModulePrefix -ModuleVersion $ModuleVersion -ModulePreviewNumber $Using:ModulePreviewNumber -RequiredModules $Using:RequiredGraphModules -ReleaseNotes $ModuleReleaseNotes -EnableSigning -ExcludeExampleTemplates:$Using:ExcludeExampleTemplates -ExcludeNotesSection:$Using:ExcludeNotesSection
                 }
                 else {
-                    & $Using:BuildModulePS1 -Module $ModuleName -ModulePrefix $Using:ModulePrefix -ModuleVersion $ModuleVersion -ModulePreviewNumber $Using:ModulePreviewNumber -RequiredModules $Using:RequiredGraphModules -ReleaseNotes $ModuleReleaseNotes
+                    & $Using:BuildModulePS1 -Module $ModuleName -ModulePrefix $Using:ModulePrefix -ModuleVersion $ModuleVersion -ModulePreviewNumber $Using:ModulePreviewNumber -RequiredModules $Using:RequiredGraphModules -ReleaseNotes $ModuleReleaseNotes -ExcludeExampleTemplates:$Using:ExcludeExampleTemplates -ExcludeNotesSection:$Using:ExcludeNotesSection
                 }
 
                 # Get profiles for generated modules.
@@ -198,7 +227,7 @@ $ModulesToGenerate | ForEach-Object -ThrottleLimit $ModulesToGenerate.Count -Par
                     if ($_ -match '\$exportsPath = \$PSScriptRoot') {
                         $updatedLine = '  $exportsPath = Join-Path $PSScriptRoot "../exports"'
                     }
-                    
+
                     # Remove duplicate instance.Name declarations in internal.psm1
                     # Main .psm1 already handles this.
                     if ($_ -match '\$\(\$instance.Name\)') {
@@ -214,7 +243,7 @@ $ModulesToGenerate | ForEach-Object -ThrottleLimit $ModulesToGenerate.Count -Par
 
             if ($Using:Pack) {
                 # Pack generated module.
-                . $Using:PackModulePS1 -Module $ModuleName -ArtifactsLocation $Using:ArtifactsLocation
+                . $Using:PackModulePS1 -Module $ModuleName -ArtifactsLocation $Using:ArtifactsLocation -ExcludeMarkdownDocsFromNugetPackage
             }
 
             Write-Host -ForeGroundColor Green "Generating $ModuleName Completed"
@@ -224,12 +253,14 @@ $ModulesToGenerate | ForEach-Object -ThrottleLimit $ModulesToGenerate.Count -Par
         }
     }
 }
+$stopwatch.Stop()
 
 if ($Error.Count -ge 1) {
     # Write generation errors to pipeline.
     $Error
-    Write-Error "The SDK failed to build due to $($Error.Count) errors listed above." -ErrorAction "Stop"
+    Write-Error "The SDK failed to build due to $($Error.Count) errors listed above in '$($Stopwatch.Elapsed.TotalMinutes)` minutes." -ErrorAction "Stop"
 }
+Write-Host -ForegroundColor Green "Generated SDK in '$($Stopwatch.Elapsed.TotalMinutes)` minutes."
 
 if ($Publish) {
     # Publish generated modules.

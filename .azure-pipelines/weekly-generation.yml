@@ -1,25 +1,23 @@
 # Copyright (c) Microsoft Corporation. All rights reserved.
 # Licensed under the MIT License.
 
-
 name: $(BuildDefinitionName)_$(SourceBranchName)_$(Date:yyyyMMdd)$(Rev:.r)
 
 parameters:
   - name: BuildAgent
-    default: MsGraphBuildAgentsWindows
+    default: 1es-windows-ps-compute
     displayName: Build Agent
 
 variables:
   Branch: "WeeklyOpenApiDocsDownload"
   BaseBranch: "dev"
-  BUILDAGENT: ${{ parameters.BuildAgent }}
+  BuildAgent: ${{ parameters.BuildAgent }}
 
-pool: $(BUILDAGENT)
-
+pool: $(BuildAgent)
 trigger: none
 pr: none
 schedules:
-  - cron: "0 12 * * WED" # Run every wednesday at noon UTC
+  - cron: "0 12 * * WED" # Run every Wednesday at noon UTC
     displayName: "Weekly PS SDK generation"
     branches:
       include:
@@ -34,16 +32,20 @@ stages:
         parameters:
           Branch: $(Branch)
           BaseBranch: $(BaseBranch)
+          BuildAgent: $(BuildAgent)
 
   - stage: GenerateServiceModules
     displayName: Generate service modules
+    condition: succeeded()
     jobs:
       - template: generation-templates/generate-service-modules.yml
         parameters:
-          ModulesToGenerate: $[ stageDependencies.DownloadOpenAPIDocs.GetLatestDocs.outputs['OpenAPIDocDiff.ModulesWithChanges'] ]
           Branch: $[ stageDependencies.DownloadOpenAPIDocs.GetLatestDocs.outputs['ComputeBranch.WeeklyBranch'] ]
+          ModulesToGenerate: $[ stageDependencies.DownloadOpenAPIDocs.GetLatestDocs.outputs['OpenAPIDocDiff.ModulesWithChanges'] ]
           AuthModulePath: "src/Authentication/Authentication"
           ServiceModulePath: "src/"
           ModulePrefix: "Microsoft.Graph"
           EnableSigning: false
           PublishToFeed: false
+          GenerateCommandMetadata: true
+          GenerateHelpDocs: true

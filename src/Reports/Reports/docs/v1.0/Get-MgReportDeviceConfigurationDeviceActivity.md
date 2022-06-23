@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgReportDeviceConfigurationDeviceActivity
 
 ## SYNOPSIS
-Invoke function deviceConfigurationDeviceActivity
+Metadata for the device configuration device activity report
 
 ## SYNTAX
 
@@ -17,27 +17,9 @@ Get-MgReportDeviceConfigurationDeviceActivity -OutFile <String> [-PassThru] [<Co
 ```
 
 ## DESCRIPTION
-Invoke function deviceConfigurationDeviceActivity
+Metadata for the device configuration device activity report
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 

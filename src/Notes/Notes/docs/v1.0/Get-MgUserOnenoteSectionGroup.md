@@ -8,15 +8,17 @@ schema: 2.0.0
 # Get-MgUserOnenoteSectionGroup
 
 ## SYNOPSIS
-Get sectionGroups from users
+The section groups in all OneNote notebooks that are owned by the user or group.
+Read-only.
+Nullable.
 
 ## SYNTAX
 
-### List (Default)
+### List1 (Default)
 ```
-Get-MgUserOnenoteSectionGroup -UserId <String> [-Count] [-ExpandProperty <String[]>] [-Filter <String>]
+Get-MgUserOnenoteSectionGroup -UserId <String> [-ExpandProperty <String[]>] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
- [-PageSize <Int32>] [<CommonParameters>]
+ [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
@@ -31,35 +33,19 @@ Get-MgUserOnenoteSectionGroup -InputObject <INotesIdentity> [-ExpandProperty <St
  [-Property <String[]>] [<CommonParameters>]
 ```
 
-### List1
+### List2
 ```
-Get-MgUserOnenoteSectionGroup -SectionGroupId <String> -UserId <String> [-Count] [-ExpandProperty <String[]>]
+Get-MgUserOnenoteSectionGroup -SectionGroupId <String> -UserId <String> [-ExpandProperty <String[]>]
  [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>]
- [-Top <Int32>] [-All] [-PageSize <Int32>] [<CommonParameters>]
+ [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Get sectionGroups from users
+The section groups in all OneNote notebooks that are owned by the user or group.
+Read-only.
+Nullable.
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 
@@ -68,7 +54,7 @@ List all pages.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
-Parameter Sets: List, List1
+Parameter Sets: List1, List2
 Aliases:
 
 Required: False
@@ -78,13 +64,14 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Count
-Include count of items
+### -CountVariable
+Specifies a count of the total number of items in a collection.
+By default, this variable will be set in the global scope.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: List, List1
-Aliases:
+Type: System.String
+Parameter Sets: List1, List2
+Aliases: CV
 
 Required: False
 Position: Named
@@ -113,7 +100,7 @@ Filter items by property values
 
 ```yaml
 Type: System.String
-Parameter Sets: List, List1
+Parameter Sets: List1, List2
 Aliases:
 
 Required: False
@@ -125,7 +112,7 @@ Accept wildcard characters: False
 
 ### -InputObject
 Identity Parameter
-To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.INotesIdentity
@@ -144,7 +131,7 @@ Sets the page size of results.
 
 ```yaml
 Type: System.Int32
-Parameter Sets: List, List1
+Parameter Sets: List1, List2
 Aliases:
 
 Required: False
@@ -174,7 +161,7 @@ Search items by search phrases
 
 ```yaml
 Type: System.String
-Parameter Sets: List, List1
+Parameter Sets: List1, List2
 Aliases:
 
 Required: False
@@ -189,7 +176,7 @@ key: id of sectionGroup
 
 ```yaml
 Type: System.String
-Parameter Sets: Get, List1
+Parameter Sets: Get, List2
 Aliases:
 
 Required: True
@@ -204,7 +191,7 @@ Skip the first n items
 
 ```yaml
 Type: System.Int32
-Parameter Sets: List, List1
+Parameter Sets: List1, List2
 Aliases:
 
 Required: False
@@ -219,7 +206,7 @@ Order items by property values
 
 ```yaml
 Type: System.String[]
-Parameter Sets: List, List1
+Parameter Sets: List1, List2
 Aliases: OrderBy
 
 Required: False
@@ -234,7 +221,7 @@ Show only the first n items
 
 ```yaml
 Type: System.Int32
-Parameter Sets: List, List1
+Parameter Sets: List1, List2
 Aliases: Limit
 
 Required: False
@@ -249,7 +236,7 @@ key: id of user
 
 ```yaml
 Type: System.String
-Parameter Sets: Get, List, List1
+Parameter Sets: Get, List1, List2
 Aliases:
 
 Required: True

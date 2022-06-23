@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFrameworks>netstandard2.0;netcoreapp2.1;net461</TargetFrameworks>
     <RootNamespace>Microsoft.Graph.PowerShell.Authentication.Core</RootNamespace>
-    <Version>1.4.3</Version>
+    <Version>1.9.5</Version>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.Graph.Auth" Version="1.0.0-preview.7" />
@@ -16,7 +16,7 @@
     <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="5.6.0" />
     <!--Always ensure this version matches the versions of System.Security.Cryptography.* dependencies of Microsoft.Identity.Client when targeting PowerShell 6 and below.-->
     <PackageReference Include="System.Security.Cryptography.ProtectedData" Version="4.3.0" />
-    <PackageReference Include="Newtonsoft.Json" Version="10.0.3" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
   </ItemGroup>
   <ItemGroup>
     <PreLoadAssemblies Include="$(RepoTools)Lib\System.Security.Cryptography.ProtectedData.dll" />

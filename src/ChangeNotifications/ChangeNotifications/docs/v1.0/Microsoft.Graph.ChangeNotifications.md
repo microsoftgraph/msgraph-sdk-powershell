@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.ChangeNotifications
-Module Guid: a182f0d5-0a10-4678-9e50-b2d665ffad70
+Module Guid: 891a73c0-c15a-400d-8fd1-9c3d1bc071ec
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.changenotifications
 Help Version: 1.0.0.0
 Locale: en-US
@@ -13,6 +13,9 @@ Microsoft Graph PowerShell Cmdlets
 ## Microsoft.Graph.ChangeNotifications Cmdlets
 ### [Get-MgSubscription](Get-MgSubscription.md)
 Get entity from subscriptions by key
+
+### [Invoke-MgReauthorizeSubscription](Invoke-MgReauthorizeSubscription.md)
+Invoke action reauthorize
 
 ### [New-MgSubscription](New-MgSubscription.md)
 Add new entity to subscriptions

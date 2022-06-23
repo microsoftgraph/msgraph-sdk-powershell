@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgGroupPlanner
 
 ## SYNOPSIS
-Update the navigation property planner in groups
+Entry-point to Planner resource that might exist for a Unified Group.
 
 ## SYNTAX
 
@@ -20,14 +20,14 @@ Update-MgGroupPlanner -GroupId <String> [-AdditionalProperties <Hashtable>] [-Id
 
 ### Update
 ```
-Update-MgGroupPlanner -GroupId <String> -BodyParameter <IMicrosoftGraphPlannerGroup1> [-PassThru] [-Confirm]
+Update-MgGroupPlanner -GroupId <String> -BodyParameter <IMicrosoftGraphPlannerGroup> [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgGroupPlanner -InputObject <IPlannerIdentity> -BodyParameter <IMicrosoftGraphPlannerGroup1>
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Update-MgGroupPlanner -InputObject <IPlannerIdentity> -BodyParameter <IMicrosoftGraphPlannerGroup> [-PassThru]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -37,27 +37,9 @@ Update-MgGroupPlanner -InputObject <IPlannerIdentity> [-AdditionalProperties <Ha
 ```
 
 ## DESCRIPTION
-Update the navigation property planner in groups
+Entry-point to Planner resource that might exist for a Unified Group.
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 
@@ -78,10 +60,10 @@ Accept wildcard characters: False
 
 ### -BodyParameter
 plannerGroup
-To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPlannerGroup1
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPlannerGroup
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -124,7 +106,7 @@ Accept wildcard characters: False
 
 ### -InputObject
 Identity Parameter
-To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IPlannerIdentity
@@ -157,7 +139,7 @@ Accept wildcard characters: False
 Read-only.
 Nullable.
 Returns the plannerPlans owned by the group.
-To construct, see NOTES section for PLANS properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for PLANS properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPlannerPlan1[]
@@ -207,7 +189,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPlannerGroup1
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPlannerGroup
 
 ### Microsoft.Graph.PowerShell.Models.IPlannerIdentity
 
@@ -224,7 +206,7 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-BODYPARAMETER <IMicrosoftGraphPlannerGroup1>: plannerGroup
+BODYPARAMETER <IMicrosoftGraphPlannerGroup>: plannerGroup
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: Read-only.
   - `[Plans <IMicrosoftGraphPlannerPlan1[]>]`: Read-only. Nullable. Returns the plannerPlans owned by the group.
@@ -262,48 +244,81 @@ BODYPARAMETER <IMicrosoftGraphPlannerGroup1>: plannerGroup
             - `[Id <String>]`: Unique identifier for the identity.
           - `[Device <IMicrosoftGraphIdentity>]`: identity
           - `[User <IMicrosoftGraphIdentity>]`: identity
-        - `[CompletedDateTime <DateTime?>]`: Read-only. Date and time at which the 'percentComplete' of the task is set to '100'. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'
+        - `[CompletedDateTime <DateTime?>]`: Read-only. Date and time at which the 'percentComplete' of the task is set to '100'. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
         - `[ConversationThreadId <String>]`: Thread ID of the conversation on the task. This is the ID of the conversation thread object created in the group.
         - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-        - `[CreatedDateTime <DateTime?>]`: Read-only. Date and time at which the task is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'
+        - `[CreatedDateTime <DateTime?>]`: Read-only. Date and time at which the task is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+        - `[CreationSource <IMicrosoftGraphPlannerTaskCreation>]`: plannerTaskCreation
+          - `[(Any) <Object>]`: This indicates any property can be added to this object.
+          - `[TeamsPublicationInfo <IMicrosoftGraphPlannerTeamsPublicationInfo>]`: plannerTeamsPublicationInfo
+            - `[(Any) <Object>]`: This indicates any property can be added to this object.
+            - `[LastModifiedDateTime <DateTime?>]`: The date and time when this task was last modified by the publication process. Read-only.
+            - `[PublicationId <String>]`: The identifier of the publication. Read-only.
+            - `[PublishedToPlanId <String>]`: The identifier of the plannerPlan this task was originally placed in. Read-only.
+            - `[PublishingTeamId <String>]`: The identifier of the team that initiated the publication process. Read-only.
+            - `[PublishingTeamName <String>]`: The display name of the team that initiated the publication process. This display name is for reference only, and might not represent the most up-to-date name of the team. Read-only.
         - `[Details <IMicrosoftGraphPlannerTaskDetails1>]`: plannerTaskDetails
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[Id <String>]`: Read-only.
           - `[Checklist <IMicrosoftGraphPlannerChecklistItems>]`: plannerChecklistItems
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
-          - `[Description <String>]`: Description of the task
+          - `[Description <String>]`: Description of the task.
           - `[PreviewType <String>]`: plannerPreviewType
           - `[References <IMicrosoftGraphPlannerExternalReferences>]`: plannerExternalReferences
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
-        - `[DueDateTime <DateTime?>]`: Date and time at which the task is due. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'
+        - `[DueDateTime <DateTime?>]`: Date and time at which the task is due. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
         - `[HasDescription <Boolean?>]`: Read-only. Value is true if the details object of the task has a non-empty description and false otherwise.
         - `[OrderHint <String>]`: Hint used to order items of this type in a list view. The format is defined as outlined here.
         - `[PercentComplete <Int32?>]`: Percentage of task completion. When set to 100, the task is considered completed.
         - `[PlanId <String>]`: Plan ID to which the task belongs.
         - `[PreviewType <String>]`: plannerPreviewType
-        - `[Priority <Int32?>]`: 
+        - `[Priority <Int32?>]`: Priority of the task. Valid range of values is between 0 and 10 (inclusive), with increasing value being lower priority (0 has the highest priority and 10 has the lowest priority).  Currently, Planner interprets values 0 and 1 as 'urgent', 2 and 3 and 4 as 'important', 5, 6, and 7 as 'medium', and 8, 9, and 10 as 'low'.  Currently, Planner sets the value 1 for 'urgent', 3 for 'important', 5 for 'medium', and 9 for 'low'.
         - `[ProgressTaskBoardFormat <IMicrosoftGraphPlannerProgressTaskBoardTaskFormat1>]`: plannerProgressTaskBoardTaskFormat
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[Id <String>]`: Read-only.
           - `[OrderHint <String>]`: Hint value used to order the task on the Progress view of the Task Board. The format is defined as outlined here.
         - `[ReferenceCount <Int32?>]`: Number of external references that exist on the task.
-        - `[StartDateTime <DateTime?>]`: Date and time at which the task starts. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'
+        - `[StartDateTime <DateTime?>]`: Date and time at which the task starts. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
         - `[Title <String>]`: Title of the task.
+    - `[Container <IMicrosoftGraphPlannerPlanContainer>]`: plannerPlanContainer
+      - `[(Any) <Object>]`: This indicates any property can be added to this object.
+      - `[ContainerId <String>]`: The identifier of the resource that contains the plan.
+      - `[Type <String>]`: plannerContainerType
+      - `[Url <String>]`: The full canonical URL of the container.
     - `[Contexts <IMicrosoftGraphPlannerPlanContextCollection>]`: plannerPlanContextCollection
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-    - `[CreatedDateTime <DateTime?>]`: Read-only. Date and time at which the plan is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'
+    - `[CreatedDateTime <DateTime?>]`: Read-only. Date and time at which the plan is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
     - `[Details <IMicrosoftGraphPlannerPlanDetails1>]`: plannerPlanDetails
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Id <String>]`: Read-only.
-      - `[CategoryDescriptions <IMicrosoftGraphPlannerCategoryDescriptions>]`: plannerCategoryDescriptions
+      - `[CategoryDescriptions <IMicrosoftGraphPlannerCategoryDescriptions1>]`: plannerCategoryDescriptions
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[Category1 <String>]`: The label associated with Category 1
+        - `[Category10 <String>]`: The label associated with Category 10
+        - `[Category11 <String>]`: The label associated with Category 11
+        - `[Category12 <String>]`: The label associated with Category 12
+        - `[Category13 <String>]`: The label associated with Category 13
+        - `[Category14 <String>]`: The label associated with Category 14
+        - `[Category15 <String>]`: The label associated with Category 15
+        - `[Category16 <String>]`: The label associated with Category 16
+        - `[Category17 <String>]`: The label associated with Category 17
+        - `[Category18 <String>]`: The label associated with Category 18
+        - `[Category19 <String>]`: The label associated with Category 19
         - `[Category2 <String>]`: The label associated with Category 2
+        - `[Category20 <String>]`: The label associated with Category 20
+        - `[Category21 <String>]`: The label associated with Category 21
+        - `[Category22 <String>]`: The label associated with Category 22
+        - `[Category23 <String>]`: The label associated with Category 23
+        - `[Category24 <String>]`: The label associated with Category 24
+        - `[Category25 <String>]`: The label associated with Category 25
         - `[Category3 <String>]`: The label associated with Category 3
         - `[Category4 <String>]`: The label associated with Category 4
         - `[Category5 <String>]`: The label associated with Category 5
         - `[Category6 <String>]`: The label associated with Category 6
+        - `[Category7 <String>]`: The label associated with Category 7
+        - `[Category8 <String>]`: The label associated with Category 8
+        - `[Category9 <String>]`: The label associated with Category 9
       - `[ContextDetails <IMicrosoftGraphPlannerPlanContextDetailsCollection>]`: plannerPlanContextDetailsCollection
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[SharedWith <IMicrosoftGraphPlannerUserIds>]`: plannerUserIds
@@ -317,6 +332,8 @@ INPUTOBJECT <IPlannerIdentity>: Identity Parameter
   - `[PlannerBucketId <String>]`: key: id of plannerBucket
   - `[PlannerDeltaId <String>]`: key: id of plannerDelta
   - `[PlannerPlanId <String>]`: key: id of plannerPlan
+  - `[PlannerRosterId <String>]`: key: id of plannerRoster
+  - `[PlannerRosterMemberId <String>]`: key: id of plannerRosterMember
   - `[PlannerTaskId <String>]`: key: id of plannerTask
   - `[UserId <String>]`: key: id of user
 
@@ -355,48 +372,81 @@ PLANS <IMicrosoftGraphPlannerPlan1[]>: Read-only. Nullable. Returns the plannerP
           - `[Id <String>]`: Unique identifier for the identity.
         - `[Device <IMicrosoftGraphIdentity>]`: identity
         - `[User <IMicrosoftGraphIdentity>]`: identity
-      - `[CompletedDateTime <DateTime?>]`: Read-only. Date and time at which the 'percentComplete' of the task is set to '100'. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'
+      - `[CompletedDateTime <DateTime?>]`: Read-only. Date and time at which the 'percentComplete' of the task is set to '100'. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
       - `[ConversationThreadId <String>]`: Thread ID of the conversation on the task. This is the ID of the conversation thread object created in the group.
       - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-      - `[CreatedDateTime <DateTime?>]`: Read-only. Date and time at which the task is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'
+      - `[CreatedDateTime <DateTime?>]`: Read-only. Date and time at which the task is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+      - `[CreationSource <IMicrosoftGraphPlannerTaskCreation>]`: plannerTaskCreation
+        - `[(Any) <Object>]`: This indicates any property can be added to this object.
+        - `[TeamsPublicationInfo <IMicrosoftGraphPlannerTeamsPublicationInfo>]`: plannerTeamsPublicationInfo
+          - `[(Any) <Object>]`: This indicates any property can be added to this object.
+          - `[LastModifiedDateTime <DateTime?>]`: The date and time when this task was last modified by the publication process. Read-only.
+          - `[PublicationId <String>]`: The identifier of the publication. Read-only.
+          - `[PublishedToPlanId <String>]`: The identifier of the plannerPlan this task was originally placed in. Read-only.
+          - `[PublishingTeamId <String>]`: The identifier of the team that initiated the publication process. Read-only.
+          - `[PublishingTeamName <String>]`: The display name of the team that initiated the publication process. This display name is for reference only, and might not represent the most up-to-date name of the team. Read-only.
       - `[Details <IMicrosoftGraphPlannerTaskDetails1>]`: plannerTaskDetails
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[Id <String>]`: Read-only.
         - `[Checklist <IMicrosoftGraphPlannerChecklistItems>]`: plannerChecklistItems
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
-        - `[Description <String>]`: Description of the task
+        - `[Description <String>]`: Description of the task.
         - `[PreviewType <String>]`: plannerPreviewType
         - `[References <IMicrosoftGraphPlannerExternalReferences>]`: plannerExternalReferences
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[DueDateTime <DateTime?>]`: Date and time at which the task is due. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'
+      - `[DueDateTime <DateTime?>]`: Date and time at which the task is due. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
       - `[HasDescription <Boolean?>]`: Read-only. Value is true if the details object of the task has a non-empty description and false otherwise.
       - `[OrderHint <String>]`: Hint used to order items of this type in a list view. The format is defined as outlined here.
       - `[PercentComplete <Int32?>]`: Percentage of task completion. When set to 100, the task is considered completed.
       - `[PlanId <String>]`: Plan ID to which the task belongs.
       - `[PreviewType <String>]`: plannerPreviewType
-      - `[Priority <Int32?>]`: 
+      - `[Priority <Int32?>]`: Priority of the task. Valid range of values is between 0 and 10 (inclusive), with increasing value being lower priority (0 has the highest priority and 10 has the lowest priority).  Currently, Planner interprets values 0 and 1 as 'urgent', 2 and 3 and 4 as 'important', 5, 6, and 7 as 'medium', and 8, 9, and 10 as 'low'.  Currently, Planner sets the value 1 for 'urgent', 3 for 'important', 5 for 'medium', and 9 for 'low'.
       - `[ProgressTaskBoardFormat <IMicrosoftGraphPlannerProgressTaskBoardTaskFormat1>]`: plannerProgressTaskBoardTaskFormat
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[Id <String>]`: Read-only.
         - `[OrderHint <String>]`: Hint value used to order the task on the Progress view of the Task Board. The format is defined as outlined here.
       - `[ReferenceCount <Int32?>]`: Number of external references that exist on the task.
-      - `[StartDateTime <DateTime?>]`: Date and time at which the task starts. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'
+      - `[StartDateTime <DateTime?>]`: Date and time at which the task starts. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
       - `[Title <String>]`: Title of the task.
+  - `[Container <IMicrosoftGraphPlannerPlanContainer>]`: plannerPlanContainer
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+    - `[ContainerId <String>]`: The identifier of the resource that contains the plan.
+    - `[Type <String>]`: plannerContainerType
+    - `[Url <String>]`: The full canonical URL of the container.
   - `[Contexts <IMicrosoftGraphPlannerPlanContextCollection>]`: plannerPlanContextCollection
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-  - `[CreatedDateTime <DateTime?>]`: Read-only. Date and time at which the plan is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'
+  - `[CreatedDateTime <DateTime?>]`: Read-only. Date and time at which the plan is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
   - `[Details <IMicrosoftGraphPlannerPlanDetails1>]`: plannerPlanDetails
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Id <String>]`: Read-only.
-    - `[CategoryDescriptions <IMicrosoftGraphPlannerCategoryDescriptions>]`: plannerCategoryDescriptions
+    - `[CategoryDescriptions <IMicrosoftGraphPlannerCategoryDescriptions1>]`: plannerCategoryDescriptions
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Category1 <String>]`: The label associated with Category 1
+      - `[Category10 <String>]`: The label associated with Category 10
+      - `[Category11 <String>]`: The label associated with Category 11
+      - `[Category12 <String>]`: The label associated with Category 12
+      - `[Category13 <String>]`: The label associated with Category 13
+      - `[Category14 <String>]`: The label associated with Category 14
+      - `[Category15 <String>]`: The label associated with Category 15
+      - `[Category16 <String>]`: The label associated with Category 16
+      - `[Category17 <String>]`: The label associated with Category 17
+      - `[Category18 <String>]`: The label associated with Category 18
+      - `[Category19 <String>]`: The label associated with Category 19
       - `[Category2 <String>]`: The label associated with Category 2
+      - `[Category20 <String>]`: The label associated with Category 20
+      - `[Category21 <String>]`: The label associated with Category 21
+      - `[Category22 <String>]`: The label associated with Category 22
+      - `[Category23 <String>]`: The label associated with Category 23
+      - `[Category24 <String>]`: The label associated with Category 24
+      - `[Category25 <String>]`: The label associated with Category 25
       - `[Category3 <String>]`: The label associated with Category 3
       - `[Category4 <String>]`: The label associated with Category 4
       - `[Category5 <String>]`: The label associated with Category 5
       - `[Category6 <String>]`: The label associated with Category 6
+      - `[Category7 <String>]`: The label associated with Category 7
+      - `[Category8 <String>]`: The label associated with Category 8
+      - `[Category9 <String>]`: The label associated with Category 9
     - `[ContextDetails <IMicrosoftGraphPlannerPlanContextDetailsCollection>]`: plannerPlanContextDetailsCollection
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[SharedWith <IMicrosoftGraphPlannerUserIds>]`: plannerUserIds

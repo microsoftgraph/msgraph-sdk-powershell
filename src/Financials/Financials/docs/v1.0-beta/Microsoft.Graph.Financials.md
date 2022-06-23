@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Financials
-Module Guid: c28f7481-241d-4b09-89ab-52d9d583eaa6
+Module Guid: 07f17ff7-1f3c-4ea9-82f1-ab4b15a40d98
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.financials
 Help Version: 1.0.0.0
 Locale: en-US
@@ -50,6 +50,9 @@ Get currency from financials
 ### [Get-MgFinancialCompanyCustomerPaymentCustomerPicture](Get-MgFinancialCompanyCustomerPaymentCustomerPicture.md)
 Get picture from financials
 
+### [Get-MgFinancialCompanyCustomerPaymentCustomerPictureContent](Get-MgFinancialCompanyCustomerPaymentCustomerPictureContent.md)
+Get media content for the navigation property picture from financials
+
 ### [Get-MgFinancialCompanyCustomerPaymentCustomerShipmentMethod](Get-MgFinancialCompanyCustomerPaymentCustomerShipmentMethod.md)
 Get shipmentMethod from financials
 
@@ -71,6 +74,9 @@ Get currency from financials
 ### [Get-MgFinancialCompanyCustomerPaymentJournalCustomerPaymentCustomerPicture](Get-MgFinancialCompanyCustomerPaymentJournalCustomerPaymentCustomerPicture.md)
 Get picture from financials
 
+### [Get-MgFinancialCompanyCustomerPaymentJournalCustomerPaymentCustomerPictureContent](Get-MgFinancialCompanyCustomerPaymentJournalCustomerPaymentCustomerPictureContent.md)
+Get media content for the navigation property picture from financials
+
 ### [Get-MgFinancialCompanyCustomerPaymentJournalCustomerPaymentCustomerShipmentMethod](Get-MgFinancialCompanyCustomerPaymentJournalCustomerPaymentCustomerShipmentMethod.md)
 Get shipmentMethod from financials
 
@@ -89,6 +95,9 @@ Get paymentTerm from financials
 ### [Get-MgFinancialCompanyCustomerPicture](Get-MgFinancialCompanyCustomerPicture.md)
 Get picture from financials
 
+### [Get-MgFinancialCompanyCustomerPictureContent](Get-MgFinancialCompanyCustomerPictureContent.md)
+Get media content for the navigation property picture from financials
+
 ### [Get-MgFinancialCompanyCustomerShipmentMethod](Get-MgFinancialCompanyCustomerShipmentMethod.md)
 Get shipmentMethod from financials
 
@@ -104,6 +113,9 @@ Get employees from financials
 ### [Get-MgFinancialCompanyEmployeePicture](Get-MgFinancialCompanyEmployeePicture.md)
 Get picture from financials
 
+### [Get-MgFinancialCompanyEmployeePictureContent](Get-MgFinancialCompanyEmployeePictureContent.md)
+Get media content for the navigation property picture from financials
+
 ### [Get-MgFinancialCompanyGeneralLedgerEntry](Get-MgFinancialCompanyGeneralLedgerEntry.md)
 Get generalLedgerEntries from financials
 
@@ -113,6 +125,9 @@ Get account from financials
 ### [Get-MgFinancialCompanyInformation](Get-MgFinancialCompanyInformation.md)
 Get companyInformation from financials
 
+### [Get-MgFinancialCompanyInformationPicture](Get-MgFinancialCompanyInformationPicture.md)
+Get media content for the navigation property companyInformation from financials
+
 ### [Get-MgFinancialCompanyItem](Get-MgFinancialCompanyItem.md)
 Get items from financials
 
@@ -121,6 +136,9 @@ Get itemCategories from financials
 
 ### [Get-MgFinancialCompanyItemPicture](Get-MgFinancialCompanyItemPicture.md)
 Get picture from financials
+
+### [Get-MgFinancialCompanyItemPictureContent](Get-MgFinancialCompanyItemPictureContent.md)
+Get media content for the navigation property picture from financials
 
 ### [Get-MgFinancialCompanyJournal](Get-MgFinancialCompanyJournal.md)
 Get journals from financials
@@ -143,6 +161,9 @@ Get paymentTerms from financials
 ### [Get-MgFinancialCompanyPicture](Get-MgFinancialCompanyPicture.md)
 Get picture from financials
 
+### [Get-MgFinancialCompanyPictureContent](Get-MgFinancialCompanyPictureContent.md)
+Get media content for the navigation property picture from financials
+
 ### [Get-MgFinancialCompanyPurchaseInvoice](Get-MgFinancialCompanyPurchaseInvoice.md)
 Get purchaseInvoices from financials
 
@@ -164,6 +185,9 @@ Get itemCategory from financials
 ### [Get-MgFinancialCompanyPurchaseInvoiceLineItemPicture](Get-MgFinancialCompanyPurchaseInvoiceLineItemPicture.md)
 Get picture from financials
 
+### [Get-MgFinancialCompanyPurchaseInvoiceLineItemPictureContent](Get-MgFinancialCompanyPurchaseInvoiceLineItemPictureContent.md)
+Get media content for the navigation property picture from financials
+
 ### [Get-MgFinancialCompanyPurchaseInvoiceVendor](Get-MgFinancialCompanyPurchaseInvoiceVendor.md)
 Get vendor from financials
 
@@ -178,6 +202,9 @@ Get paymentTerm from financials
 
 ### [Get-MgFinancialCompanyPurchaseInvoiceVendorPicture](Get-MgFinancialCompanyPurchaseInvoiceVendorPicture.md)
 Get picture from financials
+
+### [Get-MgFinancialCompanyPurchaseInvoiceVendorPictureContent](Get-MgFinancialCompanyPurchaseInvoiceVendorPictureContent.md)
+Get media content for the navigation property picture from financials
 
 ### [Get-MgFinancialCompanySaleCreditMemo](Get-MgFinancialCompanySaleCreditMemo.md)
 Get salesCreditMemos from financials
@@ -200,6 +227,9 @@ Get paymentTerm from financials
 ### [Get-MgFinancialCompanySaleCreditMemoCustomerPicture](Get-MgFinancialCompanySaleCreditMemoCustomerPicture.md)
 Get picture from financials
 
+### [Get-MgFinancialCompanySaleCreditMemoCustomerPictureContent](Get-MgFinancialCompanySaleCreditMemoCustomerPictureContent.md)
+Get media content for the navigation property picture from financials
+
 ### [Get-MgFinancialCompanySaleCreditMemoCustomerShipmentMethod](Get-MgFinancialCompanySaleCreditMemoCustomerShipmentMethod.md)
 Get shipmentMethod from financials
 
@@ -218,6 +248,9 @@ Get itemCategory from financials
 ### [Get-MgFinancialCompanySaleCreditMemoLineItemPicture](Get-MgFinancialCompanySaleCreditMemoLineItemPicture.md)
 Get picture from financials
 
+### [Get-MgFinancialCompanySaleCreditMemoLineItemPictureContent](Get-MgFinancialCompanySaleCreditMemoLineItemPictureContent.md)
+Get media content for the navigation property picture from financials
+
 ### [Get-MgFinancialCompanySaleCreditMemoPaymentTerm](Get-MgFinancialCompanySaleCreditMemoPaymentTerm.md)
 Get paymentTerm from financials
 
@@ -235,6 +268,9 @@ Get itemCategory from financials
 
 ### [Get-MgFinancialCompanySaleCreditMemoSaleCreditMemoLineItemPicture](Get-MgFinancialCompanySaleCreditMemoSaleCreditMemoLineItemPicture.md)
 Get picture from financials
+
+### [Get-MgFinancialCompanySaleCreditMemoSaleCreditMemoLineItemPictureContent](Get-MgFinancialCompanySaleCreditMemoSaleCreditMemoLineItemPictureContent.md)
+Get media content for the navigation property picture from financials
 
 ### [Get-MgFinancialCompanySaleInvoice](Get-MgFinancialCompanySaleInvoice.md)
 Get salesInvoices from financials
@@ -257,6 +293,9 @@ Get paymentTerm from financials
 ### [Get-MgFinancialCompanySaleInvoiceCustomerPicture](Get-MgFinancialCompanySaleInvoiceCustomerPicture.md)
 Get picture from financials
 
+### [Get-MgFinancialCompanySaleInvoiceCustomerPictureContent](Get-MgFinancialCompanySaleInvoiceCustomerPictureContent.md)
+Get media content for the navigation property picture from financials
+
 ### [Get-MgFinancialCompanySaleInvoiceCustomerShipmentMethod](Get-MgFinancialCompanySaleInvoiceCustomerShipmentMethod.md)
 Get shipmentMethod from financials
 
@@ -274,6 +313,9 @@ Get itemCategory from financials
 
 ### [Get-MgFinancialCompanySaleInvoiceLineItemPicture](Get-MgFinancialCompanySaleInvoiceLineItemPicture.md)
 Get picture from financials
+
+### [Get-MgFinancialCompanySaleInvoiceLineItemPictureContent](Get-MgFinancialCompanySaleInvoiceLineItemPictureContent.md)
+Get media content for the navigation property picture from financials
 
 ### [Get-MgFinancialCompanySaleInvoicePaymentTerm](Get-MgFinancialCompanySaleInvoicePaymentTerm.md)
 Get paymentTerm from financials
@@ -302,6 +344,9 @@ Get paymentTerm from financials
 ### [Get-MgFinancialCompanySaleOrderCustomerPicture](Get-MgFinancialCompanySaleOrderCustomerPicture.md)
 Get picture from financials
 
+### [Get-MgFinancialCompanySaleOrderCustomerPictureContent](Get-MgFinancialCompanySaleOrderCustomerPictureContent.md)
+Get media content for the navigation property picture from financials
+
 ### [Get-MgFinancialCompanySaleOrderCustomerShipmentMethod](Get-MgFinancialCompanySaleOrderCustomerShipmentMethod.md)
 Get shipmentMethod from financials
 
@@ -319,6 +364,9 @@ Get itemCategory from financials
 
 ### [Get-MgFinancialCompanySaleOrderLineItemPicture](Get-MgFinancialCompanySaleOrderLineItemPicture.md)
 Get picture from financials
+
+### [Get-MgFinancialCompanySaleOrderLineItemPictureContent](Get-MgFinancialCompanySaleOrderLineItemPictureContent.md)
+Get media content for the navigation property picture from financials
 
 ### [Get-MgFinancialCompanySaleOrderPaymentTerm](Get-MgFinancialCompanySaleOrderPaymentTerm.md)
 Get paymentTerm from financials
@@ -344,6 +392,9 @@ Get paymentTerm from financials
 ### [Get-MgFinancialCompanySaleQuoteCustomerPicture](Get-MgFinancialCompanySaleQuoteCustomerPicture.md)
 Get picture from financials
 
+### [Get-MgFinancialCompanySaleQuoteCustomerPictureContent](Get-MgFinancialCompanySaleQuoteCustomerPictureContent.md)
+Get media content for the navigation property picture from financials
+
 ### [Get-MgFinancialCompanySaleQuoteCustomerShipmentMethod](Get-MgFinancialCompanySaleQuoteCustomerShipmentMethod.md)
 Get shipmentMethod from financials
 
@@ -361,6 +412,9 @@ Get itemCategory from financials
 
 ### [Get-MgFinancialCompanySaleQuoteLineItemPicture](Get-MgFinancialCompanySaleQuoteLineItemPicture.md)
 Get picture from financials
+
+### [Get-MgFinancialCompanySaleQuoteLineItemPictureContent](Get-MgFinancialCompanySaleQuoteLineItemPictureContent.md)
+Get media content for the navigation property picture from financials
 
 ### [Get-MgFinancialCompanySaleQuotePaymentTerm](Get-MgFinancialCompanySaleQuotePaymentTerm.md)
 Get paymentTerm from financials
@@ -394,6 +448,9 @@ Get paymentTerm from financials
 
 ### [Get-MgFinancialCompanyVendorPicture](Get-MgFinancialCompanyVendorPicture.md)
 Get picture from financials
+
+### [Get-MgFinancialCompanyVendorPictureContent](Get-MgFinancialCompanyVendorPictureContent.md)
+Get media content for the navigation property picture from financials
 
 ### [Invoke-MgFinancialCompanyJournal](Invoke-MgFinancialCompanyJournal.md)
 Invoke action post
@@ -961,6 +1018,63 @@ Invoke action send
 
 ### [Send-MgFinancialCompanySaleQuote](Send-MgFinancialCompanySaleQuote.md)
 Invoke action send
+
+### [Set-MgFinancialCompanyCustomerPaymentCustomerPictureContent](Set-MgFinancialCompanyCustomerPaymentCustomerPictureContent.md)
+Update media content for the navigation property picture in financials
+
+### [Set-MgFinancialCompanyCustomerPaymentJournalCustomerPaymentCustomerPictureContent](Set-MgFinancialCompanyCustomerPaymentJournalCustomerPaymentCustomerPictureContent.md)
+Update media content for the navigation property picture in financials
+
+### [Set-MgFinancialCompanyCustomerPictureContent](Set-MgFinancialCompanyCustomerPictureContent.md)
+Update media content for the navigation property picture in financials
+
+### [Set-MgFinancialCompanyEmployeePictureContent](Set-MgFinancialCompanyEmployeePictureContent.md)
+Update media content for the navigation property picture in financials
+
+### [Set-MgFinancialCompanyInformationPicture](Set-MgFinancialCompanyInformationPicture.md)
+Update media content for the navigation property companyInformation in financials
+
+### [Set-MgFinancialCompanyItemPictureContent](Set-MgFinancialCompanyItemPictureContent.md)
+Update media content for the navigation property picture in financials
+
+### [Set-MgFinancialCompanyPictureContent](Set-MgFinancialCompanyPictureContent.md)
+Update media content for the navigation property picture in financials
+
+### [Set-MgFinancialCompanyPurchaseInvoiceLineItemPictureContent](Set-MgFinancialCompanyPurchaseInvoiceLineItemPictureContent.md)
+Update media content for the navigation property picture in financials
+
+### [Set-MgFinancialCompanyPurchaseInvoiceVendorPictureContent](Set-MgFinancialCompanyPurchaseInvoiceVendorPictureContent.md)
+Update media content for the navigation property picture in financials
+
+### [Set-MgFinancialCompanySaleCreditMemoCustomerPictureContent](Set-MgFinancialCompanySaleCreditMemoCustomerPictureContent.md)
+Update media content for the navigation property picture in financials
+
+### [Set-MgFinancialCompanySaleCreditMemoLineItemPictureContent](Set-MgFinancialCompanySaleCreditMemoLineItemPictureContent.md)
+Update media content for the navigation property picture in financials
+
+### [Set-MgFinancialCompanySaleCreditMemoSaleCreditMemoLineItemPictureContent](Set-MgFinancialCompanySaleCreditMemoSaleCreditMemoLineItemPictureContent.md)
+Update media content for the navigation property picture in financials
+
+### [Set-MgFinancialCompanySaleInvoiceCustomerPictureContent](Set-MgFinancialCompanySaleInvoiceCustomerPictureContent.md)
+Update media content for the navigation property picture in financials
+
+### [Set-MgFinancialCompanySaleInvoiceLineItemPictureContent](Set-MgFinancialCompanySaleInvoiceLineItemPictureContent.md)
+Update media content for the navigation property picture in financials
+
+### [Set-MgFinancialCompanySaleOrderCustomerPictureContent](Set-MgFinancialCompanySaleOrderCustomerPictureContent.md)
+Update media content for the navigation property picture in financials
+
+### [Set-MgFinancialCompanySaleOrderLineItemPictureContent](Set-MgFinancialCompanySaleOrderLineItemPictureContent.md)
+Update media content for the navigation property picture in financials
+
+### [Set-MgFinancialCompanySaleQuoteCustomerPictureContent](Set-MgFinancialCompanySaleQuoteCustomerPictureContent.md)
+Update media content for the navigation property picture in financials
+
+### [Set-MgFinancialCompanySaleQuoteLineItemPictureContent](Set-MgFinancialCompanySaleQuoteLineItemPictureContent.md)
+Update media content for the navigation property picture in financials
+
+### [Set-MgFinancialCompanyVendorPictureContent](Set-MgFinancialCompanyVendorPictureContent.md)
+Update media content for the navigation property picture in financials
 
 ### [Stop-MgFinancialCompanySaleInvoice](Stop-MgFinancialCompanySaleInvoice.md)
 Invoke action cancel

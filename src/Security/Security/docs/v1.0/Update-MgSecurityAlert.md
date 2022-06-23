@@ -8,57 +8,65 @@ schema: 2.0.0
 # Update-MgSecurityAlert
 
 ## SYNOPSIS
-Update the navigation property alerts in Security
+Read-only.
+Nullable.
 
 ## SYNTAX
 
-### UpdateExpanded2 (Default)
+### UpdateExpanded (Default)
 ```
 Update-MgSecurityAlert -AlertId <String> [-ActivityGroupName <String>] [-AdditionalProperties <Hashtable>]
- [-AssignedTo <String>] [-AzureSubscriptionId <String>] [-AzureTenantId <String>] [-Category <String>]
- [-ClosedDateTime <DateTime>] [-CloudAppStates <IMicrosoftGraphCloudAppSecurityState[]>]
- [-Comments <String[]>] [-Confidence <Int32>] [-CreatedDateTime <DateTime>] [-Description <String>]
- [-DetectionIds <String[]>] [-EventDateTime <DateTime>] [-Feedback <String>]
- [-FileStates <IMicrosoftGraphFileSecurityState[]>] [-HistoryStates <IMicrosoftGraphAlertHistoryState[]>]
- [-HostStates <IMicrosoftGraphHostSecurityState[]>] [-Id <String>] [-IncidentIds <String[]>]
+ [-AlertDetections <IMicrosoftGraphAlertDetection[]>] [-AssignedTo <String>] [-AzureSubscriptionId <String>]
+ [-AzureTenantId <String>] [-Category <String>] [-ClosedDateTime <DateTime>]
+ [-CloudAppStates <IMicrosoftGraphCloudAppSecurityState[]>] [-Comments <String[]>] [-Confidence <Int32>]
+ [-CreatedDateTime <DateTime>] [-Description <String>] [-DetectionIds <String[]>] [-EventDateTime <DateTime>]
+ [-Feedback <String>] [-FileStates <IMicrosoftGraphFileSecurityState[]>]
+ [-HistoryStates <IMicrosoftGraphAlertHistoryState[]>] [-HostStates <IMicrosoftGraphHostSecurityState[]>]
+ [-Id <String>] [-IncidentIds <String[]>]
+ [-InvestigationSecurityStates <IMicrosoftGraphInvestigationSecurityState[]>] [-LastEventDateTime <DateTime>]
  [-LastModifiedDateTime <DateTime>] [-MalwareStates <IMicrosoftGraphMalwareState[]>]
+ [-MessageSecurityStates <IMicrosoftGraphMessageSecurityState[]>]
  [-NetworkConnections <IMicrosoftGraphNetworkConnection[]>] [-Processes <IMicrosoftGraphProcess[]>]
  [-RecommendedActions <String[]>] [-RegistryKeyStates <IMicrosoftGraphRegistryKeyState[]>]
  [-SecurityResources <IMicrosoftGraphSecurityResource[]>] [-Severity <String>] [-SourceMaterials <String[]>]
  [-Status <String>] [-Tags <String[]>] [-Title <String>] [-Triggers <IMicrosoftGraphAlertTrigger[]>]
+ [-UriClickSecurityStates <IMicrosoftGraphUriClickSecurityState[]>]
  [-UserStates <IMicrosoftGraphUserSecurityState[]>]
  [-VendorInformation <IMicrosoftGraphSecurityVendorInformation>]
  [-VulnerabilityStates <IMicrosoftGraphVulnerabilityState[]>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
-### Update2
+### Update
 ```
 Update-MgSecurityAlert -AlertId <String> -BodyParameter <IMicrosoftGraphAlert> [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
-### UpdateViaIdentity1
+### UpdateViaIdentity
 ```
 Update-MgSecurityAlert -InputObject <ISecurityIdentity> -BodyParameter <IMicrosoftGraphAlert> [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### UpdateViaIdentityExpanded1
+### UpdateViaIdentityExpanded
 ```
 Update-MgSecurityAlert -InputObject <ISecurityIdentity> [-ActivityGroupName <String>]
- [-AdditionalProperties <Hashtable>] [-AssignedTo <String>] [-AzureSubscriptionId <String>]
- [-AzureTenantId <String>] [-Category <String>] [-ClosedDateTime <DateTime>]
- [-CloudAppStates <IMicrosoftGraphCloudAppSecurityState[]>] [-Comments <String[]>] [-Confidence <Int32>]
- [-CreatedDateTime <DateTime>] [-Description <String>] [-DetectionIds <String[]>] [-EventDateTime <DateTime>]
- [-Feedback <String>] [-FileStates <IMicrosoftGraphFileSecurityState[]>]
- [-HistoryStates <IMicrosoftGraphAlertHistoryState[]>] [-HostStates <IMicrosoftGraphHostSecurityState[]>]
- [-Id <String>] [-IncidentIds <String[]>] [-LastModifiedDateTime <DateTime>]
- [-MalwareStates <IMicrosoftGraphMalwareState[]>] [-NetworkConnections <IMicrosoftGraphNetworkConnection[]>]
- [-Processes <IMicrosoftGraphProcess[]>] [-RecommendedActions <String[]>]
- [-RegistryKeyStates <IMicrosoftGraphRegistryKeyState[]>]
+ [-AdditionalProperties <Hashtable>] [-AlertDetections <IMicrosoftGraphAlertDetection[]>]
+ [-AssignedTo <String>] [-AzureSubscriptionId <String>] [-AzureTenantId <String>] [-Category <String>]
+ [-ClosedDateTime <DateTime>] [-CloudAppStates <IMicrosoftGraphCloudAppSecurityState[]>]
+ [-Comments <String[]>] [-Confidence <Int32>] [-CreatedDateTime <DateTime>] [-Description <String>]
+ [-DetectionIds <String[]>] [-EventDateTime <DateTime>] [-Feedback <String>]
+ [-FileStates <IMicrosoftGraphFileSecurityState[]>] [-HistoryStates <IMicrosoftGraphAlertHistoryState[]>]
+ [-HostStates <IMicrosoftGraphHostSecurityState[]>] [-Id <String>] [-IncidentIds <String[]>]
+ [-InvestigationSecurityStates <IMicrosoftGraphInvestigationSecurityState[]>] [-LastEventDateTime <DateTime>]
+ [-LastModifiedDateTime <DateTime>] [-MalwareStates <IMicrosoftGraphMalwareState[]>]
+ [-MessageSecurityStates <IMicrosoftGraphMessageSecurityState[]>]
+ [-NetworkConnections <IMicrosoftGraphNetworkConnection[]>] [-Processes <IMicrosoftGraphProcess[]>]
+ [-RecommendedActions <String[]>] [-RegistryKeyStates <IMicrosoftGraphRegistryKeyState[]>]
  [-SecurityResources <IMicrosoftGraphSecurityResource[]>] [-Severity <String>] [-SourceMaterials <String[]>]
  [-Status <String>] [-Tags <String[]>] [-Title <String>] [-Triggers <IMicrosoftGraphAlertTrigger[]>]
+ [-UriClickSecurityStates <IMicrosoftGraphUriClickSecurityState[]>]
  [-UserStates <IMicrosoftGraphUserSecurityState[]>]
  [-VendorInformation <IMicrosoftGraphSecurityVendorInformation>]
  [-VulnerabilityStates <IMicrosoftGraphVulnerabilityState[]>] [-PassThru] [-Confirm] [-WhatIf]
@@ -66,27 +74,10 @@ Update-MgSecurityAlert -InputObject <ISecurityIdentity> [-ActivityGroupName <Str
 ```
 
 ## DESCRIPTION
-Update the navigation property alerts in Security
+Read-only.
+Nullable.
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 
@@ -95,7 +86,7 @@ Name or alias of the activity group (attacker) this alert is attributed to.
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded2, UpdateViaIdentityExpanded1
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -110,7 +101,23 @@ Additional Parameters
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: UpdateExpanded2, UpdateViaIdentityExpanded1
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -AlertDetections
+.
+To construct, please use Get-Help -Online and see NOTES section for ALERTDETECTIONS properties and create a hash table.
+
+```yaml
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAlertDetection[]
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -125,7 +132,7 @@ key: id of alert
 
 ```yaml
 Type: System.String
-Parameter Sets: Update2, UpdateExpanded2
+Parameter Sets: Update, UpdateExpanded
 Aliases:
 
 Required: True
@@ -140,7 +147,7 @@ Name of the analyst the alert is assigned to for triage, investigation, or remed
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded2, UpdateViaIdentityExpanded1
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -155,7 +162,7 @@ Azure subscription ID, present if this alert is related to an Azure resource.
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded2, UpdateViaIdentityExpanded1
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -171,7 +178,7 @@ Required.
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded2, UpdateViaIdentityExpanded1
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -183,11 +190,11 @@ Accept wildcard characters: False
 
 ### -BodyParameter
 alert
-To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAlert
-Parameter Sets: Update2, UpdateViaIdentity1
+Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
 Required: True
@@ -202,7 +209,7 @@ Category of the alert (for example, credentialTheft, ransomware, etc.).
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded2, UpdateViaIdentityExpanded1
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -215,11 +222,11 @@ Accept wildcard characters: False
 ### -ClosedDateTime
 Time at which the alert was closed.
 The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time.
-For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z' (supports update).
+For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z (supports update).
 
 ```yaml
 Type: System.DateTime
-Parameter Sets: UpdateExpanded2, UpdateViaIdentityExpanded1
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -231,11 +238,11 @@ Accept wildcard characters: False
 
 ### -CloudAppStates
 Security-related stateful information generated by the provider about the cloud application/s related to this alert.
-To construct, see NOTES section for CLOUDAPPSTATES properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for CLOUDAPPSTATES properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCloudAppSecurityState[]
-Parameter Sets: UpdateExpanded2, UpdateViaIdentityExpanded1
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -250,7 +257,7 @@ Customer-provided comments on alert (for customer alert management) (supports up
 
 ```yaml
 Type: System.String[]
-Parameter Sets: UpdateExpanded2, UpdateViaIdentityExpanded1
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -265,7 +272,7 @@ Confidence of the detection logic (percentage between 1-100).
 
 ```yaml
 Type: System.Int32
-Parameter Sets: UpdateExpanded2, UpdateViaIdentityExpanded1
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -278,12 +285,12 @@ Accept wildcard characters: False
 ### -CreatedDateTime
 Time at which the alert was created by the alert provider.
 The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time.
-For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'.
+For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 Required.
 
 ```yaml
 Type: System.DateTime
-Parameter Sets: UpdateExpanded2, UpdateViaIdentityExpanded1
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -298,7 +305,7 @@ Alert description.
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded2, UpdateViaIdentityExpanded1
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -313,7 +320,7 @@ Set of alerts related to this alert entity (each alert is pushed to the SIEM as 
 
 ```yaml
 Type: System.String[]
-Parameter Sets: UpdateExpanded2, UpdateViaIdentityExpanded1
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -326,12 +333,12 @@ Accept wildcard characters: False
 ### -EventDateTime
 Time at which the event(s) that served as the trigger(s) to generate the alert occurred.
 The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time.
-For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'.
+For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 Required.
 
 ```yaml
 Type: System.DateTime
-Parameter Sets: UpdateExpanded2, UpdateViaIdentityExpanded1
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -346,7 +353,7 @@ alertFeedback
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded2, UpdateViaIdentityExpanded1
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -358,11 +365,11 @@ Accept wildcard characters: False
 
 ### -FileStates
 Security-related stateful information generated by the provider about the file(s) related to this alert.
-To construct, see NOTES section for FILESTATES properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for FILESTATES properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphFileSecurityState[]
-Parameter Sets: UpdateExpanded2, UpdateViaIdentityExpanded1
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -373,12 +380,12 @@ Accept wildcard characters: False
 ```
 
 ### -HistoryStates
-.
-To construct, see NOTES section for HISTORYSTATES properties and create a hash table.
+A collection of alertHistoryStates comprising an audit log of all updates made to an alert.
+To construct, please use Get-Help -Online and see NOTES section for HISTORYSTATES properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAlertHistoryState[]
-Parameter Sets: UpdateExpanded2, UpdateViaIdentityExpanded1
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -390,11 +397,11 @@ Accept wildcard characters: False
 
 ### -HostStates
 Security-related stateful information generated by the provider about the host(s) related to this alert.
-To construct, see NOTES section for HOSTSTATES properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for HOSTSTATES properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphHostSecurityState[]
-Parameter Sets: UpdateExpanded2, UpdateViaIdentityExpanded1
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -409,7 +416,7 @@ Read-only.
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded2, UpdateViaIdentityExpanded1
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -424,7 +431,7 @@ IDs of incidents related to current alert.
 
 ```yaml
 Type: System.String[]
-Parameter Sets: UpdateExpanded2, UpdateViaIdentityExpanded1
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -436,11 +443,11 @@ Accept wildcard characters: False
 
 ### -InputObject
 Identity Parameter
-To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.ISecurityIdentity
-Parameter Sets: UpdateViaIdentity1, UpdateViaIdentityExpanded1
+Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
 Required: True
@@ -450,14 +457,45 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -LastModifiedDateTime
-Time at which the alert entity was last modified.
-The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time.
-For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'.
+### -InvestigationSecurityStates
+.
+To construct, please use Get-Help -Online and see NOTES section for INVESTIGATIONSECURITYSTATES properties and create a hash table.
+
+```yaml
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphInvestigationSecurityState[]
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -LastEventDateTime
+.
 
 ```yaml
 Type: System.DateTime
-Parameter Sets: UpdateExpanded2, UpdateViaIdentityExpanded1
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -LastModifiedDateTime
+Time at which the alert entity was last modified.
+The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time.
+For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+
+```yaml
+Type: System.DateTime
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -469,11 +507,27 @@ Accept wildcard characters: False
 
 ### -MalwareStates
 Threat Intelligence pertaining to malware related to this alert.
-To construct, see NOTES section for MALWARESTATES properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for MALWARESTATES properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMalwareState[]
-Parameter Sets: UpdateExpanded2, UpdateViaIdentityExpanded1
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -MessageSecurityStates
+.
+To construct, please use Get-Help -Online and see NOTES section for MESSAGESECURITYSTATES properties and create a hash table.
+
+```yaml
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMessageSecurityState[]
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -485,11 +539,11 @@ Accept wildcard characters: False
 
 ### -NetworkConnections
 Security-related stateful information generated by the provider about the network connection(s) related to this alert.
-To construct, see NOTES section for NETWORKCONNECTIONS properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for NETWORKCONNECTIONS properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphNetworkConnection[]
-Parameter Sets: UpdateExpanded2, UpdateViaIdentityExpanded1
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -516,11 +570,11 @@ Accept wildcard characters: False
 
 ### -Processes
 Security-related stateful information generated by the provider about the process or processes related to this alert.
-To construct, see NOTES section for PROCESSES properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for PROCESSES properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphProcess[]
-Parameter Sets: UpdateExpanded2, UpdateViaIdentityExpanded1
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -535,7 +589,7 @@ Vendor/provider recommended action(s) to take as a result of the alert (for exam
 
 ```yaml
 Type: System.String[]
-Parameter Sets: UpdateExpanded2, UpdateViaIdentityExpanded1
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -547,11 +601,11 @@ Accept wildcard characters: False
 
 ### -RegistryKeyStates
 Security-related stateful information generated by the provider about the registry keys related to this alert.
-To construct, see NOTES section for REGISTRYKEYSTATES properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for REGISTRYKEYSTATES properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphRegistryKeyState[]
-Parameter Sets: UpdateExpanded2, UpdateViaIdentityExpanded1
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -564,11 +618,11 @@ Accept wildcard characters: False
 ### -SecurityResources
 Resources related to current alert.
 For example, for some alerts this can have the Azure Resource value.
-To construct, see NOTES section for SECURITYRESOURCES properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for SECURITYRESOURCES properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityResource[]
-Parameter Sets: UpdateExpanded2, UpdateViaIdentityExpanded1
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -583,7 +637,7 @@ alertSeverity
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded2, UpdateViaIdentityExpanded1
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -598,7 +652,7 @@ Hyperlinks (URIs) to the source material related to the alert, for example, prov
 
 ```yaml
 Type: System.String[]
-Parameter Sets: UpdateExpanded2, UpdateViaIdentityExpanded1
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -613,7 +667,7 @@ alertStatus
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded2, UpdateViaIdentityExpanded1
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -628,7 +682,7 @@ User-definable labels that can be applied to an alert and can serve as filter co
 
 ```yaml
 Type: System.String[]
-Parameter Sets: UpdateExpanded2, UpdateViaIdentityExpanded1
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -644,7 +698,7 @@ Required.
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded2, UpdateViaIdentityExpanded1
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -658,11 +712,27 @@ Accept wildcard characters: False
 Security-related information about the specific properties that triggered the alert (properties appearing in the alert).
 Alerts might contain information about multiple users, hosts, files, ip addresses.
 This field indicates which properties triggered the alert generation.
-To construct, see NOTES section for TRIGGERS properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for TRIGGERS properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAlertTrigger[]
-Parameter Sets: UpdateExpanded2, UpdateViaIdentityExpanded1
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -UriClickSecurityStates
+.
+To construct, please use Get-Help -Online and see NOTES section for URICLICKSECURITYSTATES properties and create a hash table.
+
+```yaml
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUriClickSecurityState[]
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -674,11 +744,11 @@ Accept wildcard characters: False
 
 ### -UserStates
 Security-related stateful information generated by the provider about the user accounts related to this alert.
-To construct, see NOTES section for USERSTATES properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for USERSTATES properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserSecurityState[]
-Parameter Sets: UpdateExpanded2, UpdateViaIdentityExpanded1
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -690,11 +760,11 @@ Accept wildcard characters: False
 
 ### -VendorInformation
 securityVendorInformation
-To construct, see NOTES section for VENDORINFORMATION properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for VENDORINFORMATION properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityVendorInformation
-Parameter Sets: UpdateExpanded2, UpdateViaIdentityExpanded1
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -706,11 +776,11 @@ Accept wildcard characters: False
 
 ### -VulnerabilityStates
 Threat intelligence pertaining to one or more vulnerabilities related to this alert.
-To construct, see NOTES section for VULNERABILITYSTATES properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for VULNERABILITYSTATES properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphVulnerabilityState[]
-Parameter Sets: UpdateExpanded2, UpdateViaIdentityExpanded1
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -773,25 +843,34 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
+ALERTDETECTIONS <IMicrosoftGraphAlertDetection[]>: .
+  - `[DetectionType <String>]`: 
+  - `[Method <String>]`: 
+  - `[Name <String>]`: 
+
 BODYPARAMETER <IMicrosoftGraphAlert>: alert
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: Read-only.
   - `[ActivityGroupName <String>]`: Name or alias of the activity group (attacker) this alert is attributed to.
+  - `[AlertDetections <IMicrosoftGraphAlertDetection[]>]`: 
+    - `[DetectionType <String>]`: 
+    - `[Method <String>]`: 
+    - `[Name <String>]`: 
   - `[AssignedTo <String>]`: Name of the analyst the alert is assigned to for triage, investigation, or remediation (supports update).
   - `[AzureSubscriptionId <String>]`: Azure subscription ID, present if this alert is related to an Azure resource.
   - `[AzureTenantId <String>]`: Azure Active Directory tenant ID. Required.
   - `[Category <String>]`: Category of the alert (for example, credentialTheft, ransomware, etc.).
-  - `[ClosedDateTime <DateTime?>]`: Time at which the alert was closed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z' (supports update).
+  - `[ClosedDateTime <DateTime?>]`: Time at which the alert was closed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z (supports update).
   - `[CloudAppStates <IMicrosoftGraphCloudAppSecurityState[]>]`: Security-related stateful information generated by the provider about the cloud application/s related to this alert.
     - `[DestinationServiceIP <String>]`: Destination IP Address of the connection to the cloud application/service.
     - `[DestinationServiceName <String>]`: Cloud application/service name (for example 'Salesforce', 'DropBox', etc.).
     - `[RiskScore <String>]`: Provider-generated/calculated risk score of the Cloud Application/Service. Recommended value range of 0-1, which equates to a percentage.
   - `[Comments <String[]>]`: Customer-provided comments on alert (for customer alert management) (supports update).
   - `[Confidence <Int32?>]`: Confidence of the detection logic (percentage between 1-100).
-  - `[CreatedDateTime <DateTime?>]`: Time at which the alert was created by the alert provider. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'. Required.
+  - `[CreatedDateTime <DateTime?>]`: Time at which the alert was created by the alert provider. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Required.
   - `[Description <String>]`: Alert description.
   - `[DetectionIds <String[]>]`: Set of alerts related to this alert entity (each alert is pushed to the SIEM as a separate record).
-  - `[EventDateTime <DateTime?>]`: Time at which the event(s) that served as the trigger(s) to generate the alert occurred. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'. Required.
+  - `[EventDateTime <DateTime?>]`: Time at which the event(s) that served as the trigger(s) to generate the alert occurred. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Required.
   - `[Feedback <String>]`: alertFeedback
   - `[FileStates <IMicrosoftGraphFileSecurityState[]>]`: Security-related stateful information generated by the provider about the file(s) related to this alert.
     - `[FileHash <IMicrosoftGraphFileHash>]`: fileHash
@@ -801,14 +880,14 @@ BODYPARAMETER <IMicrosoftGraphAlert>: alert
     - `[Name <String>]`: File name (without path).
     - `[Path <String>]`: Full file path of the file/imageFile.
     - `[RiskScore <String>]`: Provider generated/calculated risk score of the alert file. Recommended value range of 0-1, which equates to a percentage.
-  - `[HistoryStates <IMicrosoftGraphAlertHistoryState[]>]`: 
-    - `[AppId <String>]`: 
-    - `[AssignedTo <String>]`: 
-    - `[Comments <String[]>]`: 
+  - `[HistoryStates <IMicrosoftGraphAlertHistoryState[]>]`: A collection of alertHistoryStates comprising an audit log of all updates made to an alert.
+    - `[AppId <String>]`: The Application ID of the calling application that submitted an update (PATCH) to the alert. The appId should be extracted from the auth token and not entered manually by the calling application.
+    - `[AssignedTo <String>]`: UPN of user the alert was assigned to (note: alert.assignedTo only stores the last value/UPN).
+    - `[Comments <String[]>]`: Comment entered by signed-in user.
     - `[Feedback <String>]`: alertFeedback
     - `[Status <String>]`: alertStatus
-    - `[UpdatedDateTime <DateTime?>]`: 
-    - `[User <String>]`: 
+    - `[UpdatedDateTime <DateTime?>]`: Date and time of the alert update. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+    - `[User <String>]`: UPN of the signed-in user that updated the alert (taken from the bearer token - if in user/delegated auth mode).
   - `[HostStates <IMicrosoftGraphHostSecurityState[]>]`: Security-related stateful information generated by the provider about the host(s) related to this alert.
     - `[Fqdn <String>]`: Host FQDN (Fully Qualified Domain Name) (for example, machine.company.com).
     - `[IsAzureAdJoined <Boolean?>]`: 
@@ -820,13 +899,27 @@ BODYPARAMETER <IMicrosoftGraphAlert>: alert
     - `[PublicIPAddress <String>]`: Publicly routable IPv4 or IPv6 address (see RFC 1918) at time of the alert.
     - `[RiskScore <String>]`: Provider-generated/calculated risk score of the host.  Recommended value range of 0-1, which equates to a percentage.
   - `[IncidentIds <String[]>]`: IDs of incidents related to current alert.
-  - `[LastModifiedDateTime <DateTime?>]`: Time at which the alert entity was last modified. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'.
+  - `[InvestigationSecurityStates <IMicrosoftGraphInvestigationSecurityState[]>]`: 
+    - `[Name <String>]`: 
+    - `[Status <String>]`: 
+  - `[LastEventDateTime <DateTime?>]`: 
+  - `[LastModifiedDateTime <DateTime?>]`: Time at which the alert entity was last modified. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
   - `[MalwareStates <IMicrosoftGraphMalwareState[]>]`: Threat Intelligence pertaining to malware related to this alert.
     - `[Category <String>]`: Provider-generated malware category (for example, trojan, ransomware, etc.).
     - `[Family <String>]`: Provider-generated malware family (for example, 'wannacry', 'notpetya', etc.).
     - `[Name <String>]`: Provider-generated malware variant name (for example, Trojan:Win32/Powessere.H).
     - `[Severity <String>]`: Provider-determined severity of this malware.
     - `[WasRunning <Boolean?>]`: Indicates whether the detected file (malware/vulnerability) was running at the time of detection or was detected at rest on the disk.
+  - `[MessageSecurityStates <IMicrosoftGraphMessageSecurityState[]>]`: 
+    - `[ConnectingIP <String>]`: 
+    - `[DeliveryAction <String>]`: 
+    - `[DeliveryLocation <String>]`: 
+    - `[Directionality <String>]`: 
+    - `[InternetMessageId <String>]`: 
+    - `[MessageFingerprint <String>]`: 
+    - `[MessageReceivedDateTime <DateTime?>]`: 
+    - `[MessageSubject <String>]`: 
+    - `[NetworkMessageId <String>]`: 
   - `[NetworkConnections <IMicrosoftGraphNetworkConnection[]>]`: Security-related stateful information generated by the provider about the network connection(s) related to this alert.
     - `[ApplicationName <String>]`: Name of the application managing the network connection (for example, Facebook or SMTP).
     - `[DestinationAddress <String>]`: Destination IP address (of the network connection).
@@ -835,7 +928,7 @@ BODYPARAMETER <IMicrosoftGraphAlert>: alert
     - `[DestinationPort <String>]`: Destination port (of the network connection).
     - `[DestinationUrl <String>]`: Network connection URL/URI string - excluding parameters. (for example 'www.contoso.com/products/default.html')
     - `[Direction <String>]`: connectionDirection
-    - `[DomainRegisteredDateTime <DateTime?>]`: Date when the destination domain was registered. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'
+    - `[DomainRegisteredDateTime <DateTime?>]`: Date when the destination domain was registered. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
     - `[LocalDnsName <String>]`: The local DNS name resolution as it appears in the host's local DNS cache (for example, in case the 'hosts' file was tampered with).
     - `[NatDestinationAddress <String>]`: Network Address Translation destination IP address.
     - `[NatDestinationPort <String>]`: Network Address Translation destination port.
@@ -851,12 +944,12 @@ BODYPARAMETER <IMicrosoftGraphAlert>: alert
   - `[Processes <IMicrosoftGraphProcess[]>]`: Security-related stateful information generated by the provider about the process or processes related to this alert.
     - `[AccountName <String>]`: User account identifier (user account context the process ran under) for example, AccountName, SID, and so on.
     - `[CommandLine <String>]`: The full process invocation commandline including all parameters.
-    - `[CreatedDateTime <DateTime?>]`: Time at which the process was started. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'.
+    - `[CreatedDateTime <DateTime?>]`: Time at which the process was started. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
     - `[FileHash <IMicrosoftGraphFileHash>]`: fileHash
     - `[IntegrityLevel <String>]`: processIntegrityLevel
     - `[IsElevated <Boolean?>]`: True if the process is elevated.
     - `[Name <String>]`: The name of the process' Image file.
-    - `[ParentProcessCreatedDateTime <DateTime?>]`: DateTime at which the parent process was started. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'.
+    - `[ParentProcessCreatedDateTime <DateTime?>]`: DateTime at which the parent process was started. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
     - `[ParentProcessId <Int32?>]`: The Process ID (PID) of the parent process.
     - `[ParentProcessName <String>]`: The name of the image file of the parent process.
     - `[Path <String>]`: Full path, including filename.
@@ -883,15 +976,22 @@ BODYPARAMETER <IMicrosoftGraphAlert>: alert
   - `[Title <String>]`: Alert title. Required.
   - `[Triggers <IMicrosoftGraphAlertTrigger[]>]`: Security-related information about the specific properties that triggered the alert (properties appearing in the alert). Alerts might contain information about multiple users, hosts, files, ip addresses. This field indicates which properties triggered the alert generation.
     - `[Name <String>]`: Name of the property serving as a detection trigger.
-    - `[Type <String>]`: Type of the property in the key:value pair for interpretation. For example, String, Boolean, etc.
+    - `[Type <String>]`: Type of the property in the key:value pair for interpretation. For example, String, Boolean etc.
     - `[Value <String>]`: Value of the property serving as a detection trigger.
+  - `[UriClickSecurityStates <IMicrosoftGraphUriClickSecurityState[]>]`: 
+    - `[ClickAction <String>]`: 
+    - `[ClickDateTime <DateTime?>]`: 
+    - `[Id <String>]`: 
+    - `[SourceId <String>]`: 
+    - `[UriDomain <String>]`: 
+    - `[Verdict <String>]`: 
   - `[UserStates <IMicrosoftGraphUserSecurityState[]>]`: Security-related stateful information generated by the provider about the user accounts related to this alert.
     - `[AadUserId <String>]`: AAD User object identifier (GUID) - represents the physical/multi-account user entity.
     - `[AccountName <String>]`: Account name of user account (without Active Directory domain or DNS domain) - (also called mailNickName).
     - `[DomainName <String>]`: NetBIOS/Active Directory domain of user account (that is, domain/account format).
     - `[EmailRole <String>]`: emailRole
     - `[IsVpn <Boolean?>]`: Indicates whether the user logged on through a VPN.
-    - `[LogonDateTime <DateTime?>]`: Time at which the sign-in occurred. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'.
+    - `[LogonDateTime <DateTime?>]`: Time at which the sign-in occurred. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
     - `[LogonIP <String>]`: IP Address the sign-in request originated from.
     - `[LogonId <String>]`: User sign-in ID.
     - `[LogonLocation <String>]`: Location (by IP address mapping) associated with a user sign-in event by this user.
@@ -925,14 +1025,14 @@ FILESTATES <IMicrosoftGraphFileSecurityState[]>: Security-related stateful infor
   - `[Path <String>]`: Full file path of the file/imageFile.
   - `[RiskScore <String>]`: Provider generated/calculated risk score of the alert file. Recommended value range of 0-1, which equates to a percentage.
 
-HISTORYSTATES <IMicrosoftGraphAlertHistoryState[]>: .
-  - `[AppId <String>]`: 
-  - `[AssignedTo <String>]`: 
-  - `[Comments <String[]>]`: 
+HISTORYSTATES <IMicrosoftGraphAlertHistoryState[]>: A collection of alertHistoryStates comprising an audit log of all updates made to an alert.
+  - `[AppId <String>]`: The Application ID of the calling application that submitted an update (PATCH) to the alert. The appId should be extracted from the auth token and not entered manually by the calling application.
+  - `[AssignedTo <String>]`: UPN of user the alert was assigned to (note: alert.assignedTo only stores the last value/UPN).
+  - `[Comments <String[]>]`: Comment entered by signed-in user.
   - `[Feedback <String>]`: alertFeedback
   - `[Status <String>]`: alertStatus
-  - `[UpdatedDateTime <DateTime?>]`: 
-  - `[User <String>]`: 
+  - `[UpdatedDateTime <DateTime?>]`: Date and time of the alert update. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+  - `[User <String>]`: UPN of the signed-in user that updated the alert (taken from the bearer token - if in user/delegated auth mode).
 
 HOSTSTATES <IMicrosoftGraphHostSecurityState[]>: Security-related stateful information generated by the provider about the host(s) related to this alert.
   - `[Fqdn <String>]`: Host FQDN (Fully Qualified Domain Name) (for example, machine.company.com).
@@ -956,8 +1056,16 @@ INPUTOBJECT <ISecurityIdentity>: Identity Parameter
   - `[SecureScoreControlProfileId <String>]`: key: id of secureScoreControlProfile
   - `[SecureScoreId <String>]`: key: id of secureScore
   - `[SecurityActionId <String>]`: key: id of securityAction
+  - `[SensitivityLabelId <String>]`: key: id of sensitivityLabel
+  - `[SimulationAutomationId <String>]`: key: id of simulationAutomation
+  - `[SimulationAutomationRunId <String>]`: key: id of simulationAutomationRun
+  - `[SimulationId <String>]`: key: id of simulation
   - `[TiIndicatorId <String>]`: key: id of tiIndicator
   - `[UserSecurityProfileId <String>]`: key: id of userSecurityProfile
+
+INVESTIGATIONSECURITYSTATES <IMicrosoftGraphInvestigationSecurityState[]>: .
+  - `[Name <String>]`: 
+  - `[Status <String>]`: 
 
 MALWARESTATES <IMicrosoftGraphMalwareState[]>: Threat Intelligence pertaining to malware related to this alert.
   - `[Category <String>]`: Provider-generated malware category (for example, trojan, ransomware, etc.).
@@ -965,6 +1073,17 @@ MALWARESTATES <IMicrosoftGraphMalwareState[]>: Threat Intelligence pertaining to
   - `[Name <String>]`: Provider-generated malware variant name (for example, Trojan:Win32/Powessere.H).
   - `[Severity <String>]`: Provider-determined severity of this malware.
   - `[WasRunning <Boolean?>]`: Indicates whether the detected file (malware/vulnerability) was running at the time of detection or was detected at rest on the disk.
+
+MESSAGESECURITYSTATES <IMicrosoftGraphMessageSecurityState[]>: .
+  - `[ConnectingIP <String>]`: 
+  - `[DeliveryAction <String>]`: 
+  - `[DeliveryLocation <String>]`: 
+  - `[Directionality <String>]`: 
+  - `[InternetMessageId <String>]`: 
+  - `[MessageFingerprint <String>]`: 
+  - `[MessageReceivedDateTime <DateTime?>]`: 
+  - `[MessageSubject <String>]`: 
+  - `[NetworkMessageId <String>]`: 
 
 NETWORKCONNECTIONS <IMicrosoftGraphNetworkConnection[]>: Security-related stateful information generated by the provider about the network connection(s) related to this alert.
   - `[ApplicationName <String>]`: Name of the application managing the network connection (for example, Facebook or SMTP).
@@ -974,7 +1093,7 @@ NETWORKCONNECTIONS <IMicrosoftGraphNetworkConnection[]>: Security-related statef
   - `[DestinationPort <String>]`: Destination port (of the network connection).
   - `[DestinationUrl <String>]`: Network connection URL/URI string - excluding parameters. (for example 'www.contoso.com/products/default.html')
   - `[Direction <String>]`: connectionDirection
-  - `[DomainRegisteredDateTime <DateTime?>]`: Date when the destination domain was registered. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'
+  - `[DomainRegisteredDateTime <DateTime?>]`: Date when the destination domain was registered. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
   - `[LocalDnsName <String>]`: The local DNS name resolution as it appears in the host's local DNS cache (for example, in case the 'hosts' file was tampered with).
   - `[NatDestinationAddress <String>]`: Network Address Translation destination IP address.
   - `[NatDestinationPort <String>]`: Network Address Translation destination port.
@@ -991,7 +1110,7 @@ NETWORKCONNECTIONS <IMicrosoftGraphNetworkConnection[]>: Security-related statef
 PROCESSES <IMicrosoftGraphProcess[]>: Security-related stateful information generated by the provider about the process or processes related to this alert.
   - `[AccountName <String>]`: User account identifier (user account context the process ran under) for example, AccountName, SID, and so on.
   - `[CommandLine <String>]`: The full process invocation commandline including all parameters.
-  - `[CreatedDateTime <DateTime?>]`: Time at which the process was started. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'.
+  - `[CreatedDateTime <DateTime?>]`: Time at which the process was started. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
   - `[FileHash <IMicrosoftGraphFileHash>]`: fileHash
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[HashType <String>]`: fileHashType
@@ -999,7 +1118,7 @@ PROCESSES <IMicrosoftGraphProcess[]>: Security-related stateful information gene
   - `[IntegrityLevel <String>]`: processIntegrityLevel
   - `[IsElevated <Boolean?>]`: True if the process is elevated.
   - `[Name <String>]`: The name of the process' Image file.
-  - `[ParentProcessCreatedDateTime <DateTime?>]`: DateTime at which the parent process was started. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'.
+  - `[ParentProcessCreatedDateTime <DateTime?>]`: DateTime at which the parent process was started. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
   - `[ParentProcessId <Int32?>]`: The Process ID (PID) of the parent process.
   - `[ParentProcessName <String>]`: The name of the image file of the parent process.
   - `[Path <String>]`: Full path, including filename.
@@ -1023,8 +1142,16 @@ SECURITYRESOURCES <IMicrosoftGraphSecurityResource[]>: Resources related to curr
 
 TRIGGERS <IMicrosoftGraphAlertTrigger[]>: Security-related information about the specific properties that triggered the alert (properties appearing in the alert). Alerts might contain information about multiple users, hosts, files, ip addresses. This field indicates which properties triggered the alert generation.
   - `[Name <String>]`: Name of the property serving as a detection trigger.
-  - `[Type <String>]`: Type of the property in the key:value pair for interpretation. For example, String, Boolean, etc.
+  - `[Type <String>]`: Type of the property in the key:value pair for interpretation. For example, String, Boolean etc.
   - `[Value <String>]`: Value of the property serving as a detection trigger.
+
+URICLICKSECURITYSTATES <IMicrosoftGraphUriClickSecurityState[]>: .
+  - `[ClickAction <String>]`: 
+  - `[ClickDateTime <DateTime?>]`: 
+  - `[Id <String>]`: 
+  - `[SourceId <String>]`: 
+  - `[UriDomain <String>]`: 
+  - `[Verdict <String>]`: 
 
 USERSTATES <IMicrosoftGraphUserSecurityState[]>: Security-related stateful information generated by the provider about the user accounts related to this alert.
   - `[AadUserId <String>]`: AAD User object identifier (GUID) - represents the physical/multi-account user entity.
@@ -1032,7 +1159,7 @@ USERSTATES <IMicrosoftGraphUserSecurityState[]>: Security-related stateful infor
   - `[DomainName <String>]`: NetBIOS/Active Directory domain of user account (that is, domain/account format).
   - `[EmailRole <String>]`: emailRole
   - `[IsVpn <Boolean?>]`: Indicates whether the user logged on through a VPN.
-  - `[LogonDateTime <DateTime?>]`: Time at which the sign-in occurred. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'.
+  - `[LogonDateTime <DateTime?>]`: Time at which the sign-in occurred. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
   - `[LogonIP <String>]`: IP Address the sign-in request originated from.
   - `[LogonId <String>]`: User sign-in ID.
   - `[LogonLocation <String>]`: Location (by IP address mapping) associated with a user sign-in event by this user.

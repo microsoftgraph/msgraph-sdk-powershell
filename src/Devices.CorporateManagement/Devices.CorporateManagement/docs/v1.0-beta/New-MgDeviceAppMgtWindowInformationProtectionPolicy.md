@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgDeviceAppMgtWindowInformationProtectionPolicy
 
 ## SYNOPSIS
-Create new navigation property to windowsInformationProtectionPolicies for deviceAppManagement
+Windows information protection for apps running on devices which are not MDM enrolled.
 
 ## SYNTAX
 
@@ -51,27 +51,9 @@ New-MgDeviceAppMgtWindowInformationProtectionPolicy
 ```
 
 ## DESCRIPTION
-Create new navigation property to windowsInformationProtectionPolicies for deviceAppManagement
+Windows information protection for apps running on devices which are not MDM enrolled.
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 
@@ -92,7 +74,7 @@ Accept wildcard characters: False
 
 ### -Assignments
 Navigation property to list of security groups targeted for policy.
-To construct, see NOTES section for ASSIGNMENTS properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for ASSIGNMENTS properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTargetedManagedAppPolicyAssignment[]
@@ -123,7 +105,7 @@ Accept wildcard characters: False
 
 ### -BodyParameter
 Policy for Windows information protection without MDM
-To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphWindowsInformationProtectionPolicy
@@ -154,7 +136,7 @@ Accept wildcard characters: False
 
 ### -DataRecoveryCertificate
 Windows Information Protection DataRecoveryCertificate
-To construct, see NOTES section for DATARECOVERYCERTIFICATE properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for DATARECOVERYCERTIFICATE properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphWindowsInformationProtectionDataRecoveryCertificate
@@ -214,7 +196,7 @@ Accept wildcard characters: False
 ```
 
 ### -EnforcementLevel
-windowsInformationProtectionEnforcementLevel
+Possible values for WIP Protection enforcement levels
 
 ```yaml
 Type: System.String
@@ -249,7 +231,7 @@ For example, '157.54.14.28, 157.54.11.118, 10.202.14.167, 157.53.14.163, 157.69.
 These proxies have been configured by the admin to connect to specific resources on the Internet.
 They are considered to be enterprise network locations.
 The proxies are only leveraged in configuring the EnterpriseProxiedDomains policy to force traffic to the matched domains through these proxies
-To construct, see NOTES section for ENTERPRISEINTERNALPROXYSERVERS properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for ENTERPRISEINTERNALPROXYSERVERS properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphWindowsInformationProtectionResourceCollection[]
@@ -267,7 +249,7 @@ Accept wildcard characters: False
 Sets the enterprise IP ranges that define the computers in the enterprise network.
 Data that comes from those computers will be considered part of the enterprise and protected.
 These locations will be considered a safe destination for enterprise data to be shared to
-To construct, see NOTES section for ENTERPRISEIPRANGES properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for ENTERPRISEIPRANGES properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphWindowsInformationProtectionIPRangeCollection[]
@@ -300,7 +282,7 @@ Accept wildcard characters: False
 ### -EnterpriseNetworkDomainNames
 This is the list of domains that comprise the boundaries of the enterprise.
 Data from one of these domains that is sent to a device will be considered enterprise data and protected These locations will be considered a safe destination for enterprise data to be shared to
-To construct, see NOTES section for ENTERPRISENETWORKDOMAINNAMES properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for ENTERPRISENETWORKDOMAINNAMES properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphWindowsInformationProtectionResourceCollection[]
@@ -316,7 +298,7 @@ Accept wildcard characters: False
 
 ### -EnterpriseProtectedDomainNames
 List of enterprise domains to be protected
-To construct, see NOTES section for ENTERPRISEPROTECTEDDOMAINNAMES properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for ENTERPRISEPROTECTEDDOMAINNAMES properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphWindowsInformationProtectionResourceCollection[]
@@ -335,7 +317,7 @@ Contains a list of Enterprise resource domains hosted in the cloud that need to 
 Connections to these resources are considered enterprise data.
 If a proxy is paired with a cloud resource, traffic to the cloud resource will be routed through the enterprise network via the denoted proxy server (on Port 80).
 A proxy server used for this purpose must also be configured using the EnterpriseInternalProxyServers policy
-To construct, see NOTES section for ENTERPRISEPROXIEDDOMAINS properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for ENTERPRISEPROXIEDDOMAINS properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphWindowsInformationProtectionProxiedDomainCollection[]
@@ -352,7 +334,7 @@ Accept wildcard characters: False
 ### -EnterpriseProxyServers
 This is a list of proxy servers.
 Any server not on this list is considered non-enterprise
-To construct, see NOTES section for ENTERPRISEPROXYSERVERS properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for ENTERPRISEPROXYSERVERS properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphWindowsInformationProtectionResourceCollection[]
@@ -384,7 +366,7 @@ Accept wildcard characters: False
 
 ### -ExemptAppLockerFiles
 Another way to input exempt apps through xml files
-To construct, see NOTES section for EXEMPTAPPLOCKERFILES properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for EXEMPTAPPLOCKERFILES properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphWindowsInformationProtectionAppLockerFile[]
@@ -401,7 +383,7 @@ Accept wildcard characters: False
 ### -ExemptApps
 Exempt applications can also access enterprise data, but the data handled by those applications are not protected.
 This is because some critical enterprise applications may have compatibility problems with encrypted data.
-To construct, see NOTES section for EXEMPTAPPS properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for EXEMPTAPPS properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphWindowsInformationProtectionApp[]
@@ -524,7 +506,7 @@ Accept wildcard characters: False
 
 ### -NeutralDomainResources
 List of domain names that can used for work or personal resource
-To construct, see NOTES section for NEUTRALDOMAINRESOURCES properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for NEUTRALDOMAINRESOURCES properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphWindowsInformationProtectionResourceCollection[]
@@ -596,7 +578,7 @@ Accept wildcard characters: False
 ```
 
 ### -PinLowercaseLetters
-windowsInformationProtectionPinCharacterRequirements
+Pin Character Requirements
 
 ```yaml
 Type: System.String
@@ -629,7 +611,7 @@ Accept wildcard characters: False
 ```
 
 ### -PinSpecialCharacters
-windowsInformationProtectionPinCharacterRequirements
+Pin Character Requirements
 
 ```yaml
 Type: System.String
@@ -644,7 +626,7 @@ Accept wildcard characters: False
 ```
 
 ### -PinUppercaseLetters
-windowsInformationProtectionPinCharacterRequirements
+Pin Character Requirements
 
 ```yaml
 Type: System.String
@@ -660,7 +642,7 @@ Accept wildcard characters: False
 
 ### -ProtectedAppLockerFiles
 Another way to input protected apps through xml files
-To construct, see NOTES section for PROTECTEDAPPLOCKERFILES properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for PROTECTEDAPPLOCKERFILES properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphWindowsInformationProtectionAppLockerFile[]
@@ -676,7 +658,7 @@ Accept wildcard characters: False
 
 ### -ProtectedApps
 Protected applications can access enterprise data and the data handled by those applications are protected with encryption
-To construct, see NOTES section for PROTECTEDAPPS properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for PROTECTEDAPPS properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphWindowsInformationProtectionApp[]
@@ -770,7 +752,7 @@ Accept wildcard characters: False
 
 ### -SmbAutoEncryptedFileExtensions
 Specifies a list of file extensions, so that files with these extensions are encrypted when copying from an SMB share within the corporate boundary
-To construct, see NOTES section for SMBAUTOENCRYPTEDFILEEXTENSIONS properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for SMBAUTOENCRYPTEDFILEEXTENSIONS properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphWindowsInformationProtectionResourceCollection[]
@@ -869,23 +851,23 @@ To create the parameters described below, construct a hash table containing the 
 
 ASSIGNMENTS <IMicrosoftGraphTargetedManagedAppPolicyAssignment[]>: Navigation property to list of security groups targeted for policy.
   - `[Id <String>]`: Read-only.
-  - `[Source <String>]`: deviceAndAppManagementAssignmentSource
+  - `[Source <String>]`: Represents source of assignment.
   - `[SourceId <String>]`: Identifier for resource used for deployment to a group
   - `[Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget>]`: Base type for assignment targets.
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[DeviceAndAppManagementAssignmentFilterId <String>]`: The Id of the filter for the target assignment.
-    - `[DeviceAndAppManagementAssignmentFilterType <String>]`: deviceAndAppManagementAssignmentFilterType
+    - `[DeviceAndAppManagementAssignmentFilterType <String>]`: Represents type of the assignment filter.
 
 BODYPARAMETER <IMicrosoftGraphWindowsInformationProtectionPolicy>: Policy for Windows information protection without MDM
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Assignments <IMicrosoftGraphTargetedManagedAppPolicyAssignment[]>]`: Navigation property to list of security groups targeted for policy.
     - `[Id <String>]`: Read-only.
-    - `[Source <String>]`: deviceAndAppManagementAssignmentSource
+    - `[Source <String>]`: Represents source of assignment.
     - `[SourceId <String>]`: Identifier for resource used for deployment to a group
     - `[Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget>]`: Base type for assignment targets.
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[DeviceAndAppManagementAssignmentFilterId <String>]`: The Id of the filter for the target assignment.
-      - `[DeviceAndAppManagementAssignmentFilterType <String>]`: deviceAndAppManagementAssignmentFilterType
+      - `[DeviceAndAppManagementAssignmentFilterType <String>]`: Represents type of the assignment filter.
   - `[AzureRightsManagementServicesAllowed <Boolean?>]`: Specifies whether to allow Azure RMS encryption for WIP
   - `[DataRecoveryCertificate <IMicrosoftGraphWindowsInformationProtectionDataRecoveryCertificate>]`: Windows Information Protection DataRecoveryCertificate
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -893,11 +875,11 @@ BODYPARAMETER <IMicrosoftGraphWindowsInformationProtectionPolicy>: Policy for Wi
     - `[Description <String>]`: Data recovery Certificate description
     - `[ExpirationDateTime <DateTime?>]`: Data recovery Certificate expiration datetime
     - `[SubjectName <String>]`: Data recovery Certificate subject name
-  - `[EnforcementLevel <String>]`: windowsInformationProtectionEnforcementLevel
+  - `[EnforcementLevel <String>]`: Possible values for WIP Protection enforcement levels
   - `[EnterpriseDomain <String>]`: Primary enterprise domain
   - `[EnterpriseIPRanges <IMicrosoftGraphWindowsInformationProtectionIPRangeCollection[]>]`: Sets the enterprise IP ranges that define the computers in the enterprise network. Data that comes from those computers will be considered part of the enterprise and protected. These locations will be considered a safe destination for enterprise data to be shared to
     - `[DisplayName <String>]`: Display name
-    - `[Ranges <IMicrosoftGraphIPRange[]>]`: Collection of Internet protocol address ranges
+    - `[Ranges <IMicrosoftGraphIPRange[]>]`: Collection of ip ranges
   - `[EnterpriseIPRangesAreAuthoritative <Boolean?>]`: Boolean value that tells the client to accept the configured list and not to use heuristics to attempt to find other subnets. Default is false
   - `[EnterpriseInternalProxyServers <IMicrosoftGraphWindowsInformationProtectionResourceCollection[]>]`: This is the comma-separated list of internal proxy servers. For example, '157.54.14.28, 157.54.11.118, 10.202.14.167, 157.53.14.163, 157.69.210.59'. These proxies have been configured by the admin to connect to specific resources on the Internet. They are considered to be enterprise network locations. The proxies are only leveraged in configuring the EnterpriseProxiedDomains policy to force traffic to the matched domains through these proxies
     - `[DisplayName <String>]`: Display name
@@ -946,10 +928,10 @@ BODYPARAMETER <IMicrosoftGraphWindowsInformationProtectionPolicy>: Policy for Wi
   - `[NumberOfPastPinsRemembered <Int32?>]`: Integer value that specifies the number of past PINs that can be associated to a user account that can't be reused. The largest number you can configure for this policy setting is 50. The lowest number you can configure for this policy setting is 0. If this policy is set to 0, then storage of previous PINs is not required. This node was added in Windows 10, version 1511. Default is 0.
   - `[PasswordMaximumAttemptCount <Int32?>]`: The number of authentication failures allowed before the device will be wiped. A value of 0 disables device wipe functionality. Range is an integer X where 4 <= X <= 16 for desktop and 0 <= X <= 999 for mobile devices.
   - `[PinExpirationDays <Int32?>]`: Integer value specifies the period of time (in days) that a PIN can be used before the system requires the user to change it. The largest number you can configure for this policy setting is 730. The lowest number you can configure for this policy setting is 0. If this policy is set to 0, then the user's PIN will never expire. This node was added in Windows 10, version 1511. Default is 0.
-  - `[PinLowercaseLetters <String>]`: windowsInformationProtectionPinCharacterRequirements
+  - `[PinLowercaseLetters <String>]`: Pin Character Requirements
   - `[PinMinimumLength <Int32?>]`: Integer value that sets the minimum number of characters required for the PIN. Default value is 4. The lowest number you can configure for this policy setting is 4. The largest number you can configure must be less than the number configured in the Maximum PIN length policy setting or the number 127, whichever is the lowest.
-  - `[PinSpecialCharacters <String>]`: windowsInformationProtectionPinCharacterRequirements
-  - `[PinUppercaseLetters <String>]`: windowsInformationProtectionPinCharacterRequirements
+  - `[PinSpecialCharacters <String>]`: Pin Character Requirements
+  - `[PinUppercaseLetters <String>]`: Pin Character Requirements
   - `[RevokeOnMdmHandoffDisabled <Boolean?>]`: New property in RS2, pending documentation
   - `[WindowsHelloForBusinessBlocked <Boolean?>]`: Boolean value that sets Windows Hello for Business as a method for signing into Windows.
 
@@ -966,7 +948,7 @@ ENTERPRISEINTERNALPROXYSERVERS <IMicrosoftGraphWindowsInformationProtectionResou
 
 ENTERPRISEIPRANGES <IMicrosoftGraphWindowsInformationProtectionIPRangeCollection[]>: Sets the enterprise IP ranges that define the computers in the enterprise network. Data that comes from those computers will be considered part of the enterprise and protected. These locations will be considered a safe destination for enterprise data to be shared to
   - `[DisplayName <String>]`: Display name
-  - `[Ranges <IMicrosoftGraphIPRange[]>]`: Collection of Internet protocol address ranges
+  - `[Ranges <IMicrosoftGraphIPRange[]>]`: Collection of ip ranges
 
 ENTERPRISENETWORKDOMAINNAMES <IMicrosoftGraphWindowsInformationProtectionResourceCollection[]>: This is the list of domains that comprise the boundaries of the enterprise. Data from one of these domains that is sent to a device will be considered enterprise data and protected These locations will be considered a safe destination for enterprise data to be shared to
   - `[DisplayName <String>]`: Display name

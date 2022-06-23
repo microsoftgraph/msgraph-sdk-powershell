@@ -40,13 +40,6 @@ subject-prefix: ''
 directive:
 # Rename cmdlets
   - where:
-      verb: Get
-      subject: (^DirectoryObject$)
-      variant: ^(Get|Get3|GetExpanded|GetExpanded1)$
-    set:
-      verb: Get
-      subject: $1ById
-  - where:
       subject: (^DirectoryObject)MicrosoftGraph(AdministrativeUnitDelta$)
     set:
       subject: $1$2
@@ -54,6 +47,6 @@ directive:
 ### Versioning
 
 ``` yaml
-module-version: 1.6.0
+module-version: 1.10.0
 release-notes: See https://aka.ms/GraphPowerShell-Release.
 ```

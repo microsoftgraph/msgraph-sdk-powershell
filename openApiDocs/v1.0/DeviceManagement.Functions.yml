@@ -11,7 +11,6 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function downloadApplePushNotificationCertificateSigningRequest
-      description: Download Apple push notification certificate signing request
       operationId: deviceManagement.applePushNotificationCertificate_downloadApplePushNotificationCertificateSigningRequest
       responses:
         '200':
@@ -19,22 +18,33 @@ paths:
           content:
             application/json:
               schema:
-                type: string
-                nullable: true
+                type: object
+                properties:
+                  value:
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
-  '/deviceManagement/microsoft.graph.getEffectivePermissions(scope=''{scope}'')':
+  '/deviceManagement/deviceConfigurations/{deviceConfiguration-id}/microsoft.graph.getOmaSettingPlainTextValue(secretReferenceValueId=''{secretReferenceValueId}'')':
     get:
       tags:
         - deviceManagement.Functions
-      summary: Invoke function getEffectivePermissions
-      description: Retrieves the effective permissions of the currently authenticated user
-      operationId: deviceManagement_getEffectivePermissions
+      summary: Invoke function getOmaSettingPlainTextValue
+      operationId: deviceManagement.deviceConfigurations_getOmaSettingPlainTextValue
       parameters:
-        - name: scope
+        - name: deviceConfiguration-id
           in: path
-          description: 'Usage: scope={scope}'
+          description: 'key: id of deviceConfiguration'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceConfiguration
+        - name: secretReferenceValueId
+          in: path
+          description: 'Usage: secretReferenceValueId=''{secretReferenceValueId}'''
           required: true
           schema:
             type: string
@@ -45,9 +55,45 @@ paths:
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/microsoft.graph.rolePermission'
+                type: object
+                properties:
+                  value:
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/deviceManagement/microsoft.graph.getEffectivePermissions(scope=''{scope}'')':
+    get:
+      tags:
+        - deviceManagement.Functions
+      summary: Invoke function getEffectivePermissions
+      operationId: deviceManagement_getEffectivePermissions
+      parameters:
+        - name: scope
+          in: path
+          description: 'Usage: scope=''{scope}'''
+          required: true
+          schema:
+            type: string
+            nullable: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of deviceManagement
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.rolePermission'
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -60,7 +106,7 @@ paths:
       parameters:
         - name: domainName
           in: path
-          description: 'Usage: domainName={domainName}'
+          description: 'Usage: domainName=''{domainName}'''
           required: true
           schema:
             type: string
@@ -71,8 +117,13 @@ paths:
           content:
             application/json:
               schema:
-                type: boolean
-                default: false
+                type: object
+                properties:
+                  value:
+                    type: boolean
+                    default: false
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -109,16 +160,16 @@ components:
       additionalProperties:
         type: object
       description: Set of allowed and not allowed actions for a resource.
-    odata.error:
+    microsoft.graph.ODataErrors.ODataError:
       required:
         - error
       type: object
       properties:
         error:
-          $ref: '#/components/schemas/odata.error.main'
+          $ref: '#/components/schemas/microsoft.graph.ODataErrors.MainError'
       additionalProperties:
         type: object
-    odata.error.main:
+    microsoft.graph.ODataErrors.MainError:
       required:
         - code
         - message
@@ -130,18 +181,16 @@ components:
           type: string
         target:
           type: string
+          nullable: true
         details:
           type: array
           items:
-            $ref: '#/components/schemas/odata.error.detail'
+            $ref: '#/components/schemas/microsoft.graph.ODataErrors.ErrorDetails'
         innererror:
-          type: object
-          additionalProperties:
-            type: object
-          description: The structure of this object is service-specific
+          $ref: '#/components/schemas/microsoft.graph.ODataErrors.InnerError'
       additionalProperties:
         type: object
-    odata.error.detail:
+    microsoft.graph.ODataErrors.ErrorDetails:
       required:
         - code
         - message
@@ -153,15 +202,21 @@ components:
           type: string
         target:
           type: string
+          nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.ODataErrors.InnerError:
+      type: object
+      additionalProperties:
+        type: object
+      description: The structure of this object is service-specific
   responses:
     error:
       description: error
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/odata.error'
+            $ref: '#/components/schemas/microsoft.graph.ODataErrors.ODataError'
   securitySchemes:
     azureaadv2:
       type: oauth2

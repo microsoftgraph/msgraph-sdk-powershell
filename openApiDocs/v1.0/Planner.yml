@@ -11,7 +11,6 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Get planner from groups
-      description: Selective Planner services available to the group. Read-only. Nullable.
       operationId: groups_GetPlanner
       parameters:
         - name: group-id
@@ -66,7 +65,6 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Update the navigation property planner in groups
-      description: Selective Planner services available to the group. Read-only. Nullable.
       operationId: groups_UpdatePlanner
       parameters:
         - name: group-id
@@ -93,7 +91,6 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Delete navigation property planner for groups
-      description: Selective Planner services available to the group. Read-only. Nullable.
       operationId: groups_DeletePlanner
       parameters:
         - name: group-id
@@ -119,7 +116,6 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Get plans from groups
-      description: Read-only. Nullable. Returns the plannerPlans owned by the group.
       operationId: groups.planner_ListPlans
       parameters:
         - name: group-id
@@ -146,6 +142,8 @@ paths:
               enum:
                 - id
                 - id desc
+                - container
+                - container desc
                 - createdBy
                 - createdBy desc
                 - createdDateTime
@@ -166,6 +164,7 @@ paths:
             items:
               enum:
                 - id
+                - container
                 - createdBy
                 - createdDateTime
                 - owner
@@ -191,21 +190,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of plannerPlan
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.plannerPlan'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.plannerPlanCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -216,7 +201,6 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Create new navigation property to plans for groups
-      description: Read-only. Nullable. Returns the plannerPlans owned by the group.
       operationId: groups.planner_CreatePlans
       parameters:
         - name: group-id
@@ -248,7 +232,6 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Get plans from groups
-      description: Read-only. Nullable. Returns the plannerPlans owned by the group.
       operationId: groups.planner_GetPlans
       parameters:
         - name: group-id
@@ -276,6 +259,7 @@ paths:
             items:
               enum:
                 - id
+                - container
                 - createdBy
                 - createdDateTime
                 - owner
@@ -329,7 +313,6 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Update the navigation property plans in groups
-      description: Read-only. Nullable. Returns the plannerPlans owned by the group.
       operationId: groups.planner_UpdatePlans
       parameters:
         - name: group-id
@@ -363,7 +346,6 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Delete navigation property plans for groups
-      description: Read-only. Nullable. Returns the plannerPlans owned by the group.
       operationId: groups.planner_DeletePlans
       parameters:
         - name: group-id
@@ -396,7 +378,6 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Get buckets from groups
-      description: Collection of buckets in the plan. Read-only. Nullable.
       operationId: groups.planner.plans_ListBuckets
       parameters:
         - name: group-id
@@ -468,21 +449,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of plannerBucket
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.plannerBucket'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.plannerBucketCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -493,7 +460,6 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Create new navigation property to buckets for groups
-      description: Collection of buckets in the plan. Read-only. Nullable.
       operationId: groups.planner.plans_CreateBuckets
       parameters:
         - name: group-id
@@ -532,7 +498,6 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Get buckets from groups
-      description: Collection of buckets in the plan. Read-only. Nullable.
       operationId: groups.planner.plans_GetBuckets
       parameters:
         - name: group-id
@@ -606,7 +571,6 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Update the navigation property buckets in groups
-      description: Collection of buckets in the plan. Read-only. Nullable.
       operationId: groups.planner.plans_UpdateBuckets
       parameters:
         - name: group-id
@@ -647,7 +611,6 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Delete navigation property buckets for groups
-      description: Collection of buckets in the plan. Read-only. Nullable.
       operationId: groups.planner.plans_DeleteBuckets
       parameters:
         - name: group-id
@@ -687,7 +650,6 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Get tasks from groups
-      description: Read-only. Nullable. The collection of tasks in the bucket.
       operationId: groups.planner.plans.buckets_ListTasks
       parameters:
         - name: group-id
@@ -762,6 +724,8 @@ paths:
                 - planId desc
                 - previewType
                 - previewType desc
+                - priority
+                - priority desc
                 - referenceCount
                 - referenceCount desc
                 - startDateTime
@@ -797,6 +761,7 @@ paths:
                 - percentComplete
                 - planId
                 - previewType
+                - priority
                 - referenceCount
                 - startDateTime
                 - title
@@ -823,21 +788,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of plannerTask
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.plannerTask'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.plannerTaskCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -848,7 +799,6 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Create new navigation property to tasks for groups
-      description: Read-only. Nullable. The collection of tasks in the bucket.
       operationId: groups.planner.plans.buckets_CreateTasks
       parameters:
         - name: group-id
@@ -894,7 +844,6 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Get tasks from groups
-      description: Read-only. Nullable. The collection of tasks in the bucket.
       operationId: groups.planner.plans.buckets_GetTasks
       parameters:
         - name: group-id
@@ -953,6 +902,7 @@ paths:
                 - percentComplete
                 - planId
                 - previewType
+                - priority
                 - referenceCount
                 - startDateTime
                 - title
@@ -1020,7 +970,6 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Update the navigation property tasks in groups
-      description: Read-only. Nullable. The collection of tasks in the bucket.
       operationId: groups.planner.plans.buckets_UpdateTasks
       parameters:
         - name: group-id
@@ -1068,7 +1017,6 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Delete navigation property tasks for groups
-      description: Read-only. Nullable. The collection of tasks in the bucket.
       operationId: groups.planner.plans.buckets_DeleteTasks
       parameters:
         - name: group-id
@@ -1115,7 +1063,6 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Get assignedToTaskBoardFormat from groups
-      description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by assignedTo.
       operationId: groups.planner.plans.buckets.tasks_GetAssignedToTaskBoardFormat
       parameters:
         - name: group-id
@@ -1186,7 +1133,6 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Update the navigation property assignedToTaskBoardFormat in groups
-      description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by assignedTo.
       operationId: groups.planner.plans.buckets.tasks_UpdateAssignedToTaskBoardFormat
       parameters:
         - name: group-id
@@ -1234,7 +1180,6 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Delete navigation property assignedToTaskBoardFormat for groups
-      description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by assignedTo.
       operationId: groups.planner.plans.buckets.tasks_DeleteAssignedToTaskBoardFormat
       parameters:
         - name: group-id
@@ -1281,7 +1226,6 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Get bucketTaskBoardFormat from groups
-      description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by bucket.
       operationId: groups.planner.plans.buckets.tasks_GetBucketTaskBoardFormat
       parameters:
         - name: group-id
@@ -1351,7 +1295,6 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Update the navigation property bucketTaskBoardFormat in groups
-      description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by bucket.
       operationId: groups.planner.plans.buckets.tasks_UpdateBucketTaskBoardFormat
       parameters:
         - name: group-id
@@ -1399,7 +1342,6 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Delete navigation property bucketTaskBoardFormat for groups
-      description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by bucket.
       operationId: groups.planner.plans.buckets.tasks_DeleteBucketTaskBoardFormat
       parameters:
         - name: group-id
@@ -1446,7 +1388,6 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Get details from groups
-      description: Read-only. Nullable. Additional details about the task.
       operationId: groups.planner.plans.buckets.tasks_GetDetails
       parameters:
         - name: group-id
@@ -1519,7 +1460,6 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Update the navigation property details in groups
-      description: Read-only. Nullable. Additional details about the task.
       operationId: groups.planner.plans.buckets.tasks_UpdateDetails
       parameters:
         - name: group-id
@@ -1567,7 +1507,6 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Delete navigation property details for groups
-      description: Read-only. Nullable. Additional details about the task.
       operationId: groups.planner.plans.buckets.tasks_DeleteDetails
       parameters:
         - name: group-id
@@ -1614,7 +1553,6 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Get progressTaskBoardFormat from groups
-      description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by progress.
       operationId: groups.planner.plans.buckets.tasks_GetProgressTaskBoardFormat
       parameters:
         - name: group-id
@@ -1684,7 +1622,6 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Update the navigation property progressTaskBoardFormat in groups
-      description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by progress.
       operationId: groups.planner.plans.buckets.tasks_UpdateProgressTaskBoardFormat
       parameters:
         - name: group-id
@@ -1732,7 +1669,6 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Delete navigation property progressTaskBoardFormat for groups
-      description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by progress.
       operationId: groups.planner.plans.buckets.tasks_DeleteProgressTaskBoardFormat
       parameters:
         - name: group-id
@@ -1779,7 +1715,6 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Get details from groups
-      description: Additional details about the plan. Read-only. Nullable.
       operationId: groups.planner.plans_GetDetails
       parameters:
         - name: group-id
@@ -1836,7 +1771,6 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Update the navigation property details in groups
-      description: Additional details about the plan. Read-only. Nullable.
       operationId: groups.planner.plans_UpdateDetails
       parameters:
         - name: group-id
@@ -1870,7 +1804,6 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Delete navigation property details for groups
-      description: Additional details about the plan. Read-only. Nullable.
       operationId: groups.planner.plans_DeleteDetails
       parameters:
         - name: group-id
@@ -1903,7 +1836,6 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Get tasks from groups
-      description: Collection of tasks in the plan. Read-only. Nullable.
       operationId: groups.planner.plans_ListTasks
       parameters:
         - name: group-id
@@ -1971,6 +1903,8 @@ paths:
                 - planId desc
                 - previewType
                 - previewType desc
+                - priority
+                - priority desc
                 - referenceCount
                 - referenceCount desc
                 - startDateTime
@@ -2006,6 +1940,7 @@ paths:
                 - percentComplete
                 - planId
                 - previewType
+                - priority
                 - referenceCount
                 - startDateTime
                 - title
@@ -2032,21 +1967,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of plannerTask
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.plannerTask'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.plannerTaskCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -2057,7 +1978,6 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Create new navigation property to tasks for groups
-      description: Collection of tasks in the plan. Read-only. Nullable.
       operationId: groups.planner.plans_CreateTasks
       parameters:
         - name: group-id
@@ -2096,7 +2016,6 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Get tasks from groups
-      description: Collection of tasks in the plan. Read-only. Nullable.
       operationId: groups.planner.plans_GetTasks
       parameters:
         - name: group-id
@@ -2148,6 +2067,7 @@ paths:
                 - percentComplete
                 - planId
                 - previewType
+                - priority
                 - referenceCount
                 - startDateTime
                 - title
@@ -2211,7 +2131,6 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Update the navigation property tasks in groups
-      description: Collection of tasks in the plan. Read-only. Nullable.
       operationId: groups.planner.plans_UpdateTasks
       parameters:
         - name: group-id
@@ -2252,7 +2171,6 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Delete navigation property tasks for groups
-      description: Collection of tasks in the plan. Read-only. Nullable.
       operationId: groups.planner.plans_DeleteTasks
       parameters:
         - name: group-id
@@ -2292,7 +2210,6 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Get assignedToTaskBoardFormat from groups
-      description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by assignedTo.
       operationId: groups.planner.plans.tasks_GetAssignedToTaskBoardFormat
       parameters:
         - name: group-id
@@ -2356,7 +2273,6 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Update the navigation property assignedToTaskBoardFormat in groups
-      description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by assignedTo.
       operationId: groups.planner.plans.tasks_UpdateAssignedToTaskBoardFormat
       parameters:
         - name: group-id
@@ -2397,7 +2313,6 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Delete navigation property assignedToTaskBoardFormat for groups
-      description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by assignedTo.
       operationId: groups.planner.plans.tasks_DeleteAssignedToTaskBoardFormat
       parameters:
         - name: group-id
@@ -2437,7 +2352,6 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Get bucketTaskBoardFormat from groups
-      description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by bucket.
       operationId: groups.planner.plans.tasks_GetBucketTaskBoardFormat
       parameters:
         - name: group-id
@@ -2500,7 +2414,6 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Update the navigation property bucketTaskBoardFormat in groups
-      description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by bucket.
       operationId: groups.planner.plans.tasks_UpdateBucketTaskBoardFormat
       parameters:
         - name: group-id
@@ -2541,7 +2454,6 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Delete navigation property bucketTaskBoardFormat for groups
-      description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by bucket.
       operationId: groups.planner.plans.tasks_DeleteBucketTaskBoardFormat
       parameters:
         - name: group-id
@@ -2581,7 +2493,6 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Get details from groups
-      description: Read-only. Nullable. Additional details about the task.
       operationId: groups.planner.plans.tasks_GetDetails
       parameters:
         - name: group-id
@@ -2647,7 +2558,6 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Update the navigation property details in groups
-      description: Read-only. Nullable. Additional details about the task.
       operationId: groups.planner.plans.tasks_UpdateDetails
       parameters:
         - name: group-id
@@ -2688,7 +2598,6 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Delete navigation property details for groups
-      description: Read-only. Nullable. Additional details about the task.
       operationId: groups.planner.plans.tasks_DeleteDetails
       parameters:
         - name: group-id
@@ -2728,7 +2637,6 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Get progressTaskBoardFormat from groups
-      description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by progress.
       operationId: groups.planner.plans.tasks_GetProgressTaskBoardFormat
       parameters:
         - name: group-id
@@ -2791,7 +2699,6 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Update the navigation property progressTaskBoardFormat in groups
-      description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by progress.
       operationId: groups.planner.plans.tasks_UpdateProgressTaskBoardFormat
       parameters:
         - name: group-id
@@ -2832,7 +2739,6 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Delete navigation property progressTaskBoardFormat for groups
-      description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by progress.
       operationId: groups.planner.plans.tasks_DeleteProgressTaskBoardFormat
       parameters:
         - name: group-id
@@ -2944,7 +2850,6 @@ paths:
       tags:
         - planner.plannerBucket
       summary: Get buckets from planner
-      description: Read-only. Nullable. Returns a collection of the specified buckets
       operationId: planner_ListBuckets
       parameters:
         - $ref: '#/components/parameters/top'
@@ -3002,21 +2907,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of plannerBucket
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.plannerBucket'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.plannerBucketCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -3027,7 +2918,6 @@ paths:
       tags:
         - planner.plannerBucket
       summary: Create new navigation property to buckets for planner
-      description: Read-only. Nullable. Returns a collection of the specified buckets
       operationId: planner_CreateBuckets
       requestBody:
         description: New navigation property
@@ -3051,7 +2941,6 @@ paths:
       tags:
         - planner.plannerBucket
       summary: Get buckets from planner
-      description: Read-only. Nullable. Returns a collection of the specified buckets
       operationId: planner_GetBuckets
       parameters:
         - name: plannerBucket-id
@@ -3109,7 +2998,6 @@ paths:
       tags:
         - planner.plannerBucket
       summary: Update the navigation property buckets in planner
-      description: Read-only. Nullable. Returns a collection of the specified buckets
       operationId: planner_UpdateBuckets
       parameters:
         - name: plannerBucket-id
@@ -3136,7 +3024,6 @@ paths:
       tags:
         - planner.plannerBucket
       summary: Delete navigation property buckets for planner
-      description: Read-only. Nullable. Returns a collection of the specified buckets
       operationId: planner_DeleteBuckets
       parameters:
         - name: plannerBucket-id
@@ -3162,7 +3049,6 @@ paths:
       tags:
         - planner.plannerBucket
       summary: Get tasks from planner
-      description: Read-only. Nullable. The collection of tasks in the bucket.
       operationId: planner.buckets_ListTasks
       parameters:
         - name: plannerBucket-id
@@ -3223,6 +3109,8 @@ paths:
                 - planId desc
                 - previewType
                 - previewType desc
+                - priority
+                - priority desc
                 - referenceCount
                 - referenceCount desc
                 - startDateTime
@@ -3258,6 +3146,7 @@ paths:
                 - percentComplete
                 - planId
                 - previewType
+                - priority
                 - referenceCount
                 - startDateTime
                 - title
@@ -3284,21 +3173,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of plannerTask
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.plannerTask'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.plannerTaskCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -3309,7 +3184,6 @@ paths:
       tags:
         - planner.plannerBucket
       summary: Create new navigation property to tasks for planner
-      description: Read-only. Nullable. The collection of tasks in the bucket.
       operationId: planner.buckets_CreateTasks
       parameters:
         - name: plannerBucket-id
@@ -3341,7 +3215,6 @@ paths:
       tags:
         - planner.plannerBucket
       summary: Get tasks from planner
-      description: Read-only. Nullable. The collection of tasks in the bucket.
       operationId: planner.buckets_GetTasks
       parameters:
         - name: plannerBucket-id
@@ -3386,6 +3259,7 @@ paths:
                 - percentComplete
                 - planId
                 - previewType
+                - priority
                 - referenceCount
                 - startDateTime
                 - title
@@ -3445,7 +3319,6 @@ paths:
       tags:
         - planner.plannerBucket
       summary: Update the navigation property tasks in planner
-      description: Read-only. Nullable. The collection of tasks in the bucket.
       operationId: planner.buckets_UpdateTasks
       parameters:
         - name: plannerBucket-id
@@ -3479,7 +3352,6 @@ paths:
       tags:
         - planner.plannerBucket
       summary: Delete navigation property tasks for planner
-      description: Read-only. Nullable. The collection of tasks in the bucket.
       operationId: planner.buckets_DeleteTasks
       parameters:
         - name: plannerBucket-id
@@ -3512,7 +3384,6 @@ paths:
       tags:
         - planner.plannerBucket
       summary: Get assignedToTaskBoardFormat from planner
-      description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by assignedTo.
       operationId: planner.buckets.tasks_GetAssignedToTaskBoardFormat
       parameters:
         - name: plannerBucket-id
@@ -3569,7 +3440,6 @@ paths:
       tags:
         - planner.plannerBucket
       summary: Update the navigation property assignedToTaskBoardFormat in planner
-      description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by assignedTo.
       operationId: planner.buckets.tasks_UpdateAssignedToTaskBoardFormat
       parameters:
         - name: plannerBucket-id
@@ -3603,7 +3473,6 @@ paths:
       tags:
         - planner.plannerBucket
       summary: Delete navigation property assignedToTaskBoardFormat for planner
-      description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by assignedTo.
       operationId: planner.buckets.tasks_DeleteAssignedToTaskBoardFormat
       parameters:
         - name: plannerBucket-id
@@ -3636,7 +3505,6 @@ paths:
       tags:
         - planner.plannerBucket
       summary: Get bucketTaskBoardFormat from planner
-      description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by bucket.
       operationId: planner.buckets.tasks_GetBucketTaskBoardFormat
       parameters:
         - name: plannerBucket-id
@@ -3692,7 +3560,6 @@ paths:
       tags:
         - planner.plannerBucket
       summary: Update the navigation property bucketTaskBoardFormat in planner
-      description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by bucket.
       operationId: planner.buckets.tasks_UpdateBucketTaskBoardFormat
       parameters:
         - name: plannerBucket-id
@@ -3726,7 +3593,6 @@ paths:
       tags:
         - planner.plannerBucket
       summary: Delete navigation property bucketTaskBoardFormat for planner
-      description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by bucket.
       operationId: planner.buckets.tasks_DeleteBucketTaskBoardFormat
       parameters:
         - name: plannerBucket-id
@@ -3759,7 +3625,6 @@ paths:
       tags:
         - planner.plannerBucket
       summary: Get details from planner
-      description: Read-only. Nullable. Additional details about the task.
       operationId: planner.buckets.tasks_GetDetails
       parameters:
         - name: plannerBucket-id
@@ -3818,7 +3683,6 @@ paths:
       tags:
         - planner.plannerBucket
       summary: Update the navigation property details in planner
-      description: Read-only. Nullable. Additional details about the task.
       operationId: planner.buckets.tasks_UpdateDetails
       parameters:
         - name: plannerBucket-id
@@ -3852,7 +3716,6 @@ paths:
       tags:
         - planner.plannerBucket
       summary: Delete navigation property details for planner
-      description: Read-only. Nullable. Additional details about the task.
       operationId: planner.buckets.tasks_DeleteDetails
       parameters:
         - name: plannerBucket-id
@@ -3885,7 +3748,6 @@ paths:
       tags:
         - planner.plannerBucket
       summary: Get progressTaskBoardFormat from planner
-      description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by progress.
       operationId: planner.buckets.tasks_GetProgressTaskBoardFormat
       parameters:
         - name: plannerBucket-id
@@ -3941,7 +3803,6 @@ paths:
       tags:
         - planner.plannerBucket
       summary: Update the navigation property progressTaskBoardFormat in planner
-      description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by progress.
       operationId: planner.buckets.tasks_UpdateProgressTaskBoardFormat
       parameters:
         - name: plannerBucket-id
@@ -3975,7 +3836,6 @@ paths:
       tags:
         - planner.plannerBucket
       summary: Delete navigation property progressTaskBoardFormat for planner
-      description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by progress.
       operationId: planner.buckets.tasks_DeleteProgressTaskBoardFormat
       parameters:
         - name: plannerBucket-id
@@ -4008,7 +3868,6 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Get plans from planner
-      description: Read-only. Nullable. Returns a collection of the specified plans
       operationId: planner_ListPlans
       parameters:
         - $ref: '#/components/parameters/top'
@@ -4028,6 +3887,8 @@ paths:
               enum:
                 - id
                 - id desc
+                - container
+                - container desc
                 - createdBy
                 - createdBy desc
                 - createdDateTime
@@ -4048,6 +3909,7 @@ paths:
             items:
               enum:
                 - id
+                - container
                 - createdBy
                 - createdDateTime
                 - owner
@@ -4073,21 +3935,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of plannerPlan
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.plannerPlan'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.plannerPlanCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -4098,7 +3946,6 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Create new navigation property to plans for planner
-      description: Read-only. Nullable. Returns a collection of the specified plans
       operationId: planner_CreatePlans
       requestBody:
         description: New navigation property
@@ -4122,7 +3969,6 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Get plans from planner
-      description: Read-only. Nullable. Returns a collection of the specified plans
       operationId: planner_GetPlans
       parameters:
         - name: plannerPlan-id
@@ -4143,6 +3989,7 @@ paths:
             items:
               enum:
                 - id
+                - container
                 - createdBy
                 - createdDateTime
                 - owner
@@ -4193,7 +4040,6 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Update the navigation property plans in planner
-      description: Read-only. Nullable. Returns a collection of the specified plans
       operationId: planner_UpdatePlans
       parameters:
         - name: plannerPlan-id
@@ -4220,7 +4066,6 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Delete navigation property plans for planner
-      description: Read-only. Nullable. Returns a collection of the specified plans
       operationId: planner_DeletePlans
       parameters:
         - name: plannerPlan-id
@@ -4246,7 +4091,6 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Get buckets from planner
-      description: Collection of buckets in the plan. Read-only. Nullable.
       operationId: planner.plans_ListBuckets
       parameters:
         - name: plannerPlan-id
@@ -4311,21 +4155,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of plannerBucket
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.plannerBucket'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.plannerBucketCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -4336,7 +4166,6 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Create new navigation property to buckets for planner
-      description: Collection of buckets in the plan. Read-only. Nullable.
       operationId: planner.plans_CreateBuckets
       parameters:
         - name: plannerPlan-id
@@ -4368,7 +4197,6 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Get buckets from planner
-      description: Collection of buckets in the plan. Read-only. Nullable.
       operationId: planner.plans_GetBuckets
       parameters:
         - name: plannerPlan-id
@@ -4434,7 +4262,6 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Update the navigation property buckets in planner
-      description: Collection of buckets in the plan. Read-only. Nullable.
       operationId: planner.plans_UpdateBuckets
       parameters:
         - name: plannerPlan-id
@@ -4468,7 +4295,6 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Delete navigation property buckets for planner
-      description: Collection of buckets in the plan. Read-only. Nullable.
       operationId: planner.plans_DeleteBuckets
       parameters:
         - name: plannerPlan-id
@@ -4501,7 +4327,6 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Get tasks from planner
-      description: Read-only. Nullable. The collection of tasks in the bucket.
       operationId: planner.plans.buckets_ListTasks
       parameters:
         - name: plannerPlan-id
@@ -4569,6 +4394,8 @@ paths:
                 - planId desc
                 - previewType
                 - previewType desc
+                - priority
+                - priority desc
                 - referenceCount
                 - referenceCount desc
                 - startDateTime
@@ -4604,6 +4431,7 @@ paths:
                 - percentComplete
                 - planId
                 - previewType
+                - priority
                 - referenceCount
                 - startDateTime
                 - title
@@ -4630,21 +4458,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of plannerTask
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.plannerTask'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.plannerTaskCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -4655,7 +4469,6 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Create new navigation property to tasks for planner
-      description: Read-only. Nullable. The collection of tasks in the bucket.
       operationId: planner.plans.buckets_CreateTasks
       parameters:
         - name: plannerPlan-id
@@ -4694,7 +4507,6 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Get tasks from planner
-      description: Read-only. Nullable. The collection of tasks in the bucket.
       operationId: planner.plans.buckets_GetTasks
       parameters:
         - name: plannerPlan-id
@@ -4746,6 +4558,7 @@ paths:
                 - percentComplete
                 - planId
                 - previewType
+                - priority
                 - referenceCount
                 - startDateTime
                 - title
@@ -4809,7 +4622,6 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Update the navigation property tasks in planner
-      description: Read-only. Nullable. The collection of tasks in the bucket.
       operationId: planner.plans.buckets_UpdateTasks
       parameters:
         - name: plannerPlan-id
@@ -4850,7 +4662,6 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Delete navigation property tasks for planner
-      description: Read-only. Nullable. The collection of tasks in the bucket.
       operationId: planner.plans.buckets_DeleteTasks
       parameters:
         - name: plannerPlan-id
@@ -4890,7 +4701,6 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Get assignedToTaskBoardFormat from planner
-      description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by assignedTo.
       operationId: planner.plans.buckets.tasks_GetAssignedToTaskBoardFormat
       parameters:
         - name: plannerPlan-id
@@ -4954,7 +4764,6 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Update the navigation property assignedToTaskBoardFormat in planner
-      description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by assignedTo.
       operationId: planner.plans.buckets.tasks_UpdateAssignedToTaskBoardFormat
       parameters:
         - name: plannerPlan-id
@@ -4995,7 +4804,6 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Delete navigation property assignedToTaskBoardFormat for planner
-      description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by assignedTo.
       operationId: planner.plans.buckets.tasks_DeleteAssignedToTaskBoardFormat
       parameters:
         - name: plannerPlan-id
@@ -5035,7 +4843,6 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Get bucketTaskBoardFormat from planner
-      description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by bucket.
       operationId: planner.plans.buckets.tasks_GetBucketTaskBoardFormat
       parameters:
         - name: plannerPlan-id
@@ -5098,7 +4905,6 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Update the navigation property bucketTaskBoardFormat in planner
-      description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by bucket.
       operationId: planner.plans.buckets.tasks_UpdateBucketTaskBoardFormat
       parameters:
         - name: plannerPlan-id
@@ -5139,7 +4945,6 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Delete navigation property bucketTaskBoardFormat for planner
-      description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by bucket.
       operationId: planner.plans.buckets.tasks_DeleteBucketTaskBoardFormat
       parameters:
         - name: plannerPlan-id
@@ -5179,7 +4984,6 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Get details from planner
-      description: Read-only. Nullable. Additional details about the task.
       operationId: planner.plans.buckets.tasks_GetDetails
       parameters:
         - name: plannerPlan-id
@@ -5245,7 +5049,6 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Update the navigation property details in planner
-      description: Read-only. Nullable. Additional details about the task.
       operationId: planner.plans.buckets.tasks_UpdateDetails
       parameters:
         - name: plannerPlan-id
@@ -5286,7 +5089,6 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Delete navigation property details for planner
-      description: Read-only. Nullable. Additional details about the task.
       operationId: planner.plans.buckets.tasks_DeleteDetails
       parameters:
         - name: plannerPlan-id
@@ -5326,7 +5128,6 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Get progressTaskBoardFormat from planner
-      description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by progress.
       operationId: planner.plans.buckets.tasks_GetProgressTaskBoardFormat
       parameters:
         - name: plannerPlan-id
@@ -5389,7 +5190,6 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Update the navigation property progressTaskBoardFormat in planner
-      description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by progress.
       operationId: planner.plans.buckets.tasks_UpdateProgressTaskBoardFormat
       parameters:
         - name: plannerPlan-id
@@ -5430,7 +5230,6 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Delete navigation property progressTaskBoardFormat for planner
-      description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by progress.
       operationId: planner.plans.buckets.tasks_DeleteProgressTaskBoardFormat
       parameters:
         - name: plannerPlan-id
@@ -5470,7 +5269,6 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Get details from planner
-      description: Additional details about the plan. Read-only. Nullable.
       operationId: planner.plans_GetDetails
       parameters:
         - name: plannerPlan-id
@@ -5520,7 +5318,6 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Update the navigation property details in planner
-      description: Additional details about the plan. Read-only. Nullable.
       operationId: planner.plans_UpdateDetails
       parameters:
         - name: plannerPlan-id
@@ -5547,7 +5344,6 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Delete navigation property details for planner
-      description: Additional details about the plan. Read-only. Nullable.
       operationId: planner.plans_DeleteDetails
       parameters:
         - name: plannerPlan-id
@@ -5573,7 +5369,6 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Get tasks from planner
-      description: Collection of tasks in the plan. Read-only. Nullable.
       operationId: planner.plans_ListTasks
       parameters:
         - name: plannerPlan-id
@@ -5634,6 +5429,8 @@ paths:
                 - planId desc
                 - previewType
                 - previewType desc
+                - priority
+                - priority desc
                 - referenceCount
                 - referenceCount desc
                 - startDateTime
@@ -5669,6 +5466,7 @@ paths:
                 - percentComplete
                 - planId
                 - previewType
+                - priority
                 - referenceCount
                 - startDateTime
                 - title
@@ -5695,21 +5493,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of plannerTask
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.plannerTask'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.plannerTaskCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -5720,7 +5504,6 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Create new navigation property to tasks for planner
-      description: Collection of tasks in the plan. Read-only. Nullable.
       operationId: planner.plans_CreateTasks
       parameters:
         - name: plannerPlan-id
@@ -5752,7 +5535,6 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Get tasks from planner
-      description: Collection of tasks in the plan. Read-only. Nullable.
       operationId: planner.plans_GetTasks
       parameters:
         - name: plannerPlan-id
@@ -5797,6 +5579,7 @@ paths:
                 - percentComplete
                 - planId
                 - previewType
+                - priority
                 - referenceCount
                 - startDateTime
                 - title
@@ -5856,7 +5639,6 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Update the navigation property tasks in planner
-      description: Collection of tasks in the plan. Read-only. Nullable.
       operationId: planner.plans_UpdateTasks
       parameters:
         - name: plannerPlan-id
@@ -5890,7 +5672,6 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Delete navigation property tasks for planner
-      description: Collection of tasks in the plan. Read-only. Nullable.
       operationId: planner.plans_DeleteTasks
       parameters:
         - name: plannerPlan-id
@@ -5923,7 +5704,6 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Get assignedToTaskBoardFormat from planner
-      description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by assignedTo.
       operationId: planner.plans.tasks_GetAssignedToTaskBoardFormat
       parameters:
         - name: plannerPlan-id
@@ -5980,7 +5760,6 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Update the navigation property assignedToTaskBoardFormat in planner
-      description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by assignedTo.
       operationId: planner.plans.tasks_UpdateAssignedToTaskBoardFormat
       parameters:
         - name: plannerPlan-id
@@ -6014,7 +5793,6 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Delete navigation property assignedToTaskBoardFormat for planner
-      description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by assignedTo.
       operationId: planner.plans.tasks_DeleteAssignedToTaskBoardFormat
       parameters:
         - name: plannerPlan-id
@@ -6047,7 +5825,6 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Get bucketTaskBoardFormat from planner
-      description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by bucket.
       operationId: planner.plans.tasks_GetBucketTaskBoardFormat
       parameters:
         - name: plannerPlan-id
@@ -6103,7 +5880,6 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Update the navigation property bucketTaskBoardFormat in planner
-      description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by bucket.
       operationId: planner.plans.tasks_UpdateBucketTaskBoardFormat
       parameters:
         - name: plannerPlan-id
@@ -6137,7 +5913,6 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Delete navigation property bucketTaskBoardFormat for planner
-      description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by bucket.
       operationId: planner.plans.tasks_DeleteBucketTaskBoardFormat
       parameters:
         - name: plannerPlan-id
@@ -6170,7 +5945,6 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Get details from planner
-      description: Read-only. Nullable. Additional details about the task.
       operationId: planner.plans.tasks_GetDetails
       parameters:
         - name: plannerPlan-id
@@ -6229,7 +6003,6 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Update the navigation property details in planner
-      description: Read-only. Nullable. Additional details about the task.
       operationId: planner.plans.tasks_UpdateDetails
       parameters:
         - name: plannerPlan-id
@@ -6263,7 +6036,6 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Delete navigation property details for planner
-      description: Read-only. Nullable. Additional details about the task.
       operationId: planner.plans.tasks_DeleteDetails
       parameters:
         - name: plannerPlan-id
@@ -6296,7 +6068,6 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Get progressTaskBoardFormat from planner
-      description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by progress.
       operationId: planner.plans.tasks_GetProgressTaskBoardFormat
       parameters:
         - name: plannerPlan-id
@@ -6352,7 +6123,6 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Update the navigation property progressTaskBoardFormat in planner
-      description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by progress.
       operationId: planner.plans.tasks_UpdateProgressTaskBoardFormat
       parameters:
         - name: plannerPlan-id
@@ -6386,7 +6156,6 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Delete navigation property progressTaskBoardFormat for planner
-      description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by progress.
       operationId: planner.plans.tasks_DeleteProgressTaskBoardFormat
       parameters:
         - name: plannerPlan-id
@@ -6419,7 +6188,6 @@ paths:
       tags:
         - planner.plannerTask
       summary: Get tasks from planner
-      description: Read-only. Nullable. Returns a collection of the specified tasks
       operationId: planner_ListTasks
       parameters:
         - $ref: '#/components/parameters/top'
@@ -6473,6 +6241,8 @@ paths:
                 - planId desc
                 - previewType
                 - previewType desc
+                - priority
+                - priority desc
                 - referenceCount
                 - referenceCount desc
                 - startDateTime
@@ -6508,6 +6278,7 @@ paths:
                 - percentComplete
                 - planId
                 - previewType
+                - priority
                 - referenceCount
                 - startDateTime
                 - title
@@ -6534,21 +6305,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of plannerTask
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.plannerTask'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.plannerTaskCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -6559,7 +6316,6 @@ paths:
       tags:
         - planner.plannerTask
       summary: Create new navigation property to tasks for planner
-      description: Read-only. Nullable. Returns a collection of the specified tasks
       operationId: planner_CreateTasks
       requestBody:
         description: New navigation property
@@ -6583,7 +6339,6 @@ paths:
       tags:
         - planner.plannerTask
       summary: Get tasks from planner
-      description: Read-only. Nullable. Returns a collection of the specified tasks
       operationId: planner_GetTasks
       parameters:
         - name: plannerTask-id
@@ -6621,6 +6376,7 @@ paths:
                 - percentComplete
                 - planId
                 - previewType
+                - priority
                 - referenceCount
                 - startDateTime
                 - title
@@ -6676,7 +6432,6 @@ paths:
       tags:
         - planner.plannerTask
       summary: Update the navigation property tasks in planner
-      description: Read-only. Nullable. Returns a collection of the specified tasks
       operationId: planner_UpdateTasks
       parameters:
         - name: plannerTask-id
@@ -6703,7 +6458,6 @@ paths:
       tags:
         - planner.plannerTask
       summary: Delete navigation property tasks for planner
-      description: Read-only. Nullable. Returns a collection of the specified tasks
       operationId: planner_DeleteTasks
       parameters:
         - name: plannerTask-id
@@ -6729,7 +6483,6 @@ paths:
       tags:
         - planner.plannerTask
       summary: Get assignedToTaskBoardFormat from planner
-      description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by assignedTo.
       operationId: planner.tasks_GetAssignedToTaskBoardFormat
       parameters:
         - name: plannerTask-id
@@ -6779,7 +6532,6 @@ paths:
       tags:
         - planner.plannerTask
       summary: Update the navigation property assignedToTaskBoardFormat in planner
-      description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by assignedTo.
       operationId: planner.tasks_UpdateAssignedToTaskBoardFormat
       parameters:
         - name: plannerTask-id
@@ -6806,7 +6558,6 @@ paths:
       tags:
         - planner.plannerTask
       summary: Delete navigation property assignedToTaskBoardFormat for planner
-      description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by assignedTo.
       operationId: planner.tasks_DeleteAssignedToTaskBoardFormat
       parameters:
         - name: plannerTask-id
@@ -6832,7 +6583,6 @@ paths:
       tags:
         - planner.plannerTask
       summary: Get bucketTaskBoardFormat from planner
-      description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by bucket.
       operationId: planner.tasks_GetBucketTaskBoardFormat
       parameters:
         - name: plannerTask-id
@@ -6881,7 +6631,6 @@ paths:
       tags:
         - planner.plannerTask
       summary: Update the navigation property bucketTaskBoardFormat in planner
-      description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by bucket.
       operationId: planner.tasks_UpdateBucketTaskBoardFormat
       parameters:
         - name: plannerTask-id
@@ -6908,7 +6657,6 @@ paths:
       tags:
         - planner.plannerTask
       summary: Delete navigation property bucketTaskBoardFormat for planner
-      description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by bucket.
       operationId: planner.tasks_DeleteBucketTaskBoardFormat
       parameters:
         - name: plannerTask-id
@@ -6934,7 +6682,6 @@ paths:
       tags:
         - planner.plannerTask
       summary: Get details from planner
-      description: Read-only. Nullable. Additional details about the task.
       operationId: planner.tasks_GetDetails
       parameters:
         - name: plannerTask-id
@@ -6986,7 +6733,6 @@ paths:
       tags:
         - planner.plannerTask
       summary: Update the navigation property details in planner
-      description: Read-only. Nullable. Additional details about the task.
       operationId: planner.tasks_UpdateDetails
       parameters:
         - name: plannerTask-id
@@ -7013,7 +6759,6 @@ paths:
       tags:
         - planner.plannerTask
       summary: Delete navigation property details for planner
-      description: Read-only. Nullable. Additional details about the task.
       operationId: planner.tasks_DeleteDetails
       parameters:
         - name: plannerTask-id
@@ -7039,7 +6784,6 @@ paths:
       tags:
         - planner.plannerTask
       summary: Get progressTaskBoardFormat from planner
-      description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by progress.
       operationId: planner.tasks_GetProgressTaskBoardFormat
       parameters:
         - name: plannerTask-id
@@ -7088,7 +6832,6 @@ paths:
       tags:
         - planner.plannerTask
       summary: Update the navigation property progressTaskBoardFormat in planner
-      description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by progress.
       operationId: planner.tasks_UpdateProgressTaskBoardFormat
       parameters:
         - name: plannerTask-id
@@ -7115,7 +6858,6 @@ paths:
       tags:
         - planner.plannerTask
       summary: Delete navigation property progressTaskBoardFormat for planner
-      description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by progress.
       operationId: planner.tasks_DeleteProgressTaskBoardFormat
       parameters:
         - name: plannerTask-id
@@ -7141,7 +6883,6 @@ paths:
       tags:
         - users.plannerUser
       summary: Get planner from users
-      description: Selective Planner services available to the user. Read-only. Nullable.
       operationId: users_GetPlanner
       parameters:
         - name: user-id
@@ -7202,7 +6943,6 @@ paths:
       tags:
         - users.plannerUser
       summary: Update the navigation property planner in users
-      description: Selective Planner services available to the user. Read-only. Nullable.
       operationId: users_UpdatePlanner
       parameters:
         - name: user-id
@@ -7229,7 +6969,6 @@ paths:
       tags:
         - users.plannerUser
       summary: Delete navigation property planner for users
-      description: Selective Planner services available to the user. Read-only. Nullable.
       operationId: users_DeletePlanner
       parameters:
         - name: user-id
@@ -7255,7 +6994,6 @@ paths:
       tags:
         - users.plannerUser
       summary: Get plans from users
-      description: Read-only. Nullable. Returns the plannerTasks assigned to the user.
       operationId: users.planner_ListPlans
       parameters:
         - name: user-id
@@ -7282,6 +7020,8 @@ paths:
               enum:
                 - id
                 - id desc
+                - container
+                - container desc
                 - createdBy
                 - createdBy desc
                 - createdDateTime
@@ -7302,6 +7042,7 @@ paths:
             items:
               enum:
                 - id
+                - container
                 - createdBy
                 - createdDateTime
                 - owner
@@ -7327,21 +7068,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of plannerPlan
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.plannerPlan'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.plannerPlanCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -7352,7 +7079,6 @@ paths:
       tags:
         - users.plannerUser
       summary: Create new navigation property to plans for users
-      description: Read-only. Nullable. Returns the plannerTasks assigned to the user.
       operationId: users.planner_CreatePlans
       parameters:
         - name: user-id
@@ -7384,7 +7110,6 @@ paths:
       tags:
         - users.plannerUser
       summary: Get plans from users
-      description: Read-only. Nullable. Returns the plannerTasks assigned to the user.
       operationId: users.planner_GetPlans
       parameters:
         - name: user-id
@@ -7412,6 +7137,7 @@ paths:
             items:
               enum:
                 - id
+                - container
                 - createdBy
                 - createdDateTime
                 - owner
@@ -7465,7 +7191,6 @@ paths:
       tags:
         - users.plannerUser
       summary: Update the navigation property plans in users
-      description: Read-only. Nullable. Returns the plannerTasks assigned to the user.
       operationId: users.planner_UpdatePlans
       parameters:
         - name: user-id
@@ -7499,7 +7224,6 @@ paths:
       tags:
         - users.plannerUser
       summary: Delete navigation property plans for users
-      description: Read-only. Nullable. Returns the plannerTasks assigned to the user.
       operationId: users.planner_DeletePlans
       parameters:
         - name: user-id
@@ -7532,7 +7256,6 @@ paths:
       tags:
         - users.plannerUser
       summary: Get buckets from users
-      description: Collection of buckets in the plan. Read-only. Nullable.
       operationId: users.planner.plans_ListBuckets
       parameters:
         - name: user-id
@@ -7604,21 +7327,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of plannerBucket
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.plannerBucket'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.plannerBucketCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -7629,7 +7338,6 @@ paths:
       tags:
         - users.plannerUser
       summary: Create new navigation property to buckets for users
-      description: Collection of buckets in the plan. Read-only. Nullable.
       operationId: users.planner.plans_CreateBuckets
       parameters:
         - name: user-id
@@ -7668,7 +7376,6 @@ paths:
       tags:
         - users.plannerUser
       summary: Get buckets from users
-      description: Collection of buckets in the plan. Read-only. Nullable.
       operationId: users.planner.plans_GetBuckets
       parameters:
         - name: user-id
@@ -7742,7 +7449,6 @@ paths:
       tags:
         - users.plannerUser
       summary: Update the navigation property buckets in users
-      description: Collection of buckets in the plan. Read-only. Nullable.
       operationId: users.planner.plans_UpdateBuckets
       parameters:
         - name: user-id
@@ -7783,7 +7489,6 @@ paths:
       tags:
         - users.plannerUser
       summary: Delete navigation property buckets for users
-      description: Collection of buckets in the plan. Read-only. Nullable.
       operationId: users.planner.plans_DeleteBuckets
       parameters:
         - name: user-id
@@ -7823,7 +7528,6 @@ paths:
       tags:
         - users.plannerUser
       summary: Get tasks from users
-      description: Read-only. Nullable. The collection of tasks in the bucket.
       operationId: users.planner.plans.buckets_ListTasks
       parameters:
         - name: user-id
@@ -7898,6 +7602,8 @@ paths:
                 - planId desc
                 - previewType
                 - previewType desc
+                - priority
+                - priority desc
                 - referenceCount
                 - referenceCount desc
                 - startDateTime
@@ -7933,6 +7639,7 @@ paths:
                 - percentComplete
                 - planId
                 - previewType
+                - priority
                 - referenceCount
                 - startDateTime
                 - title
@@ -7959,21 +7666,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of plannerTask
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.plannerTask'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.plannerTaskCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -7984,7 +7677,6 @@ paths:
       tags:
         - users.plannerUser
       summary: Create new navigation property to tasks for users
-      description: Read-only. Nullable. The collection of tasks in the bucket.
       operationId: users.planner.plans.buckets_CreateTasks
       parameters:
         - name: user-id
@@ -8030,7 +7722,6 @@ paths:
       tags:
         - users.plannerUser
       summary: Get tasks from users
-      description: Read-only. Nullable. The collection of tasks in the bucket.
       operationId: users.planner.plans.buckets_GetTasks
       parameters:
         - name: user-id
@@ -8089,6 +7780,7 @@ paths:
                 - percentComplete
                 - planId
                 - previewType
+                - priority
                 - referenceCount
                 - startDateTime
                 - title
@@ -8156,7 +7848,6 @@ paths:
       tags:
         - users.plannerUser
       summary: Update the navigation property tasks in users
-      description: Read-only. Nullable. The collection of tasks in the bucket.
       operationId: users.planner.plans.buckets_UpdateTasks
       parameters:
         - name: user-id
@@ -8204,7 +7895,6 @@ paths:
       tags:
         - users.plannerUser
       summary: Delete navigation property tasks for users
-      description: Read-only. Nullable. The collection of tasks in the bucket.
       operationId: users.planner.plans.buckets_DeleteTasks
       parameters:
         - name: user-id
@@ -8251,7 +7941,6 @@ paths:
       tags:
         - users.plannerUser
       summary: Get assignedToTaskBoardFormat from users
-      description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by assignedTo.
       operationId: users.planner.plans.buckets.tasks_GetAssignedToTaskBoardFormat
       parameters:
         - name: user-id
@@ -8322,7 +8011,6 @@ paths:
       tags:
         - users.plannerUser
       summary: Update the navigation property assignedToTaskBoardFormat in users
-      description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by assignedTo.
       operationId: users.planner.plans.buckets.tasks_UpdateAssignedToTaskBoardFormat
       parameters:
         - name: user-id
@@ -8370,7 +8058,6 @@ paths:
       tags:
         - users.plannerUser
       summary: Delete navigation property assignedToTaskBoardFormat for users
-      description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by assignedTo.
       operationId: users.planner.plans.buckets.tasks_DeleteAssignedToTaskBoardFormat
       parameters:
         - name: user-id
@@ -8417,7 +8104,6 @@ paths:
       tags:
         - users.plannerUser
       summary: Get bucketTaskBoardFormat from users
-      description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by bucket.
       operationId: users.planner.plans.buckets.tasks_GetBucketTaskBoardFormat
       parameters:
         - name: user-id
@@ -8487,7 +8173,6 @@ paths:
       tags:
         - users.plannerUser
       summary: Update the navigation property bucketTaskBoardFormat in users
-      description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by bucket.
       operationId: users.planner.plans.buckets.tasks_UpdateBucketTaskBoardFormat
       parameters:
         - name: user-id
@@ -8535,7 +8220,6 @@ paths:
       tags:
         - users.plannerUser
       summary: Delete navigation property bucketTaskBoardFormat for users
-      description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by bucket.
       operationId: users.planner.plans.buckets.tasks_DeleteBucketTaskBoardFormat
       parameters:
         - name: user-id
@@ -8582,7 +8266,6 @@ paths:
       tags:
         - users.plannerUser
       summary: Get details from users
-      description: Read-only. Nullable. Additional details about the task.
       operationId: users.planner.plans.buckets.tasks_GetDetails
       parameters:
         - name: user-id
@@ -8655,7 +8338,6 @@ paths:
       tags:
         - users.plannerUser
       summary: Update the navigation property details in users
-      description: Read-only. Nullable. Additional details about the task.
       operationId: users.planner.plans.buckets.tasks_UpdateDetails
       parameters:
         - name: user-id
@@ -8703,7 +8385,6 @@ paths:
       tags:
         - users.plannerUser
       summary: Delete navigation property details for users
-      description: Read-only. Nullable. Additional details about the task.
       operationId: users.planner.plans.buckets.tasks_DeleteDetails
       parameters:
         - name: user-id
@@ -8750,7 +8431,6 @@ paths:
       tags:
         - users.plannerUser
       summary: Get progressTaskBoardFormat from users
-      description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by progress.
       operationId: users.planner.plans.buckets.tasks_GetProgressTaskBoardFormat
       parameters:
         - name: user-id
@@ -8820,7 +8500,6 @@ paths:
       tags:
         - users.plannerUser
       summary: Update the navigation property progressTaskBoardFormat in users
-      description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by progress.
       operationId: users.planner.plans.buckets.tasks_UpdateProgressTaskBoardFormat
       parameters:
         - name: user-id
@@ -8868,7 +8547,6 @@ paths:
       tags:
         - users.plannerUser
       summary: Delete navigation property progressTaskBoardFormat for users
-      description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by progress.
       operationId: users.planner.plans.buckets.tasks_DeleteProgressTaskBoardFormat
       parameters:
         - name: user-id
@@ -8915,7 +8593,6 @@ paths:
       tags:
         - users.plannerUser
       summary: Get details from users
-      description: Additional details about the plan. Read-only. Nullable.
       operationId: users.planner.plans_GetDetails
       parameters:
         - name: user-id
@@ -8972,7 +8649,6 @@ paths:
       tags:
         - users.plannerUser
       summary: Update the navigation property details in users
-      description: Additional details about the plan. Read-only. Nullable.
       operationId: users.planner.plans_UpdateDetails
       parameters:
         - name: user-id
@@ -9006,7 +8682,6 @@ paths:
       tags:
         - users.plannerUser
       summary: Delete navigation property details for users
-      description: Additional details about the plan. Read-only. Nullable.
       operationId: users.planner.plans_DeleteDetails
       parameters:
         - name: user-id
@@ -9039,7 +8714,6 @@ paths:
       tags:
         - users.plannerUser
       summary: Get tasks from users
-      description: Collection of tasks in the plan. Read-only. Nullable.
       operationId: users.planner.plans_ListTasks
       parameters:
         - name: user-id
@@ -9107,6 +8781,8 @@ paths:
                 - planId desc
                 - previewType
                 - previewType desc
+                - priority
+                - priority desc
                 - referenceCount
                 - referenceCount desc
                 - startDateTime
@@ -9142,6 +8818,7 @@ paths:
                 - percentComplete
                 - planId
                 - previewType
+                - priority
                 - referenceCount
                 - startDateTime
                 - title
@@ -9168,21 +8845,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of plannerTask
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.plannerTask'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.plannerTaskCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -9193,7 +8856,6 @@ paths:
       tags:
         - users.plannerUser
       summary: Create new navigation property to tasks for users
-      description: Collection of tasks in the plan. Read-only. Nullable.
       operationId: users.planner.plans_CreateTasks
       parameters:
         - name: user-id
@@ -9232,7 +8894,6 @@ paths:
       tags:
         - users.plannerUser
       summary: Get tasks from users
-      description: Collection of tasks in the plan. Read-only. Nullable.
       operationId: users.planner.plans_GetTasks
       parameters:
         - name: user-id
@@ -9284,6 +8945,7 @@ paths:
                 - percentComplete
                 - planId
                 - previewType
+                - priority
                 - referenceCount
                 - startDateTime
                 - title
@@ -9347,7 +9009,6 @@ paths:
       tags:
         - users.plannerUser
       summary: Update the navigation property tasks in users
-      description: Collection of tasks in the plan. Read-only. Nullable.
       operationId: users.planner.plans_UpdateTasks
       parameters:
         - name: user-id
@@ -9388,7 +9049,6 @@ paths:
       tags:
         - users.plannerUser
       summary: Delete navigation property tasks for users
-      description: Collection of tasks in the plan. Read-only. Nullable.
       operationId: users.planner.plans_DeleteTasks
       parameters:
         - name: user-id
@@ -9428,7 +9088,6 @@ paths:
       tags:
         - users.plannerUser
       summary: Get assignedToTaskBoardFormat from users
-      description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by assignedTo.
       operationId: users.planner.plans.tasks_GetAssignedToTaskBoardFormat
       parameters:
         - name: user-id
@@ -9492,7 +9151,6 @@ paths:
       tags:
         - users.plannerUser
       summary: Update the navigation property assignedToTaskBoardFormat in users
-      description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by assignedTo.
       operationId: users.planner.plans.tasks_UpdateAssignedToTaskBoardFormat
       parameters:
         - name: user-id
@@ -9533,7 +9191,6 @@ paths:
       tags:
         - users.plannerUser
       summary: Delete navigation property assignedToTaskBoardFormat for users
-      description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by assignedTo.
       operationId: users.planner.plans.tasks_DeleteAssignedToTaskBoardFormat
       parameters:
         - name: user-id
@@ -9573,7 +9230,6 @@ paths:
       tags:
         - users.plannerUser
       summary: Get bucketTaskBoardFormat from users
-      description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by bucket.
       operationId: users.planner.plans.tasks_GetBucketTaskBoardFormat
       parameters:
         - name: user-id
@@ -9636,7 +9292,6 @@ paths:
       tags:
         - users.plannerUser
       summary: Update the navigation property bucketTaskBoardFormat in users
-      description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by bucket.
       operationId: users.planner.plans.tasks_UpdateBucketTaskBoardFormat
       parameters:
         - name: user-id
@@ -9677,7 +9332,6 @@ paths:
       tags:
         - users.plannerUser
       summary: Delete navigation property bucketTaskBoardFormat for users
-      description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by bucket.
       operationId: users.planner.plans.tasks_DeleteBucketTaskBoardFormat
       parameters:
         - name: user-id
@@ -9717,7 +9371,6 @@ paths:
       tags:
         - users.plannerUser
       summary: Get details from users
-      description: Read-only. Nullable. Additional details about the task.
       operationId: users.planner.plans.tasks_GetDetails
       parameters:
         - name: user-id
@@ -9783,7 +9436,6 @@ paths:
       tags:
         - users.plannerUser
       summary: Update the navigation property details in users
-      description: Read-only. Nullable. Additional details about the task.
       operationId: users.planner.plans.tasks_UpdateDetails
       parameters:
         - name: user-id
@@ -9824,7 +9476,6 @@ paths:
       tags:
         - users.plannerUser
       summary: Delete navigation property details for users
-      description: Read-only. Nullable. Additional details about the task.
       operationId: users.planner.plans.tasks_DeleteDetails
       parameters:
         - name: user-id
@@ -9864,7 +9515,6 @@ paths:
       tags:
         - users.plannerUser
       summary: Get progressTaskBoardFormat from users
-      description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by progress.
       operationId: users.planner.plans.tasks_GetProgressTaskBoardFormat
       parameters:
         - name: user-id
@@ -9927,7 +9577,6 @@ paths:
       tags:
         - users.plannerUser
       summary: Update the navigation property progressTaskBoardFormat in users
-      description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by progress.
       operationId: users.planner.plans.tasks_UpdateProgressTaskBoardFormat
       parameters:
         - name: user-id
@@ -9968,7 +9617,6 @@ paths:
       tags:
         - users.plannerUser
       summary: Delete navigation property progressTaskBoardFormat for users
-      description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by progress.
       operationId: users.planner.plans.tasks_DeleteProgressTaskBoardFormat
       parameters:
         - name: user-id
@@ -10008,7 +9656,6 @@ paths:
       tags:
         - users.plannerUser
       summary: Get tasks from users
-      description: Read-only. Nullable. Returns the plannerTasks assigned to the user.
       operationId: users.planner_ListTasks
       parameters:
         - name: user-id
@@ -10069,6 +9716,8 @@ paths:
                 - planId desc
                 - previewType
                 - previewType desc
+                - priority
+                - priority desc
                 - referenceCount
                 - referenceCount desc
                 - startDateTime
@@ -10104,6 +9753,7 @@ paths:
                 - percentComplete
                 - planId
                 - previewType
+                - priority
                 - referenceCount
                 - startDateTime
                 - title
@@ -10130,21 +9780,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of plannerTask
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.plannerTask'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.plannerTaskCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -10155,7 +9791,6 @@ paths:
       tags:
         - users.plannerUser
       summary: Create new navigation property to tasks for users
-      description: Read-only. Nullable. Returns the plannerTasks assigned to the user.
       operationId: users.planner_CreateTasks
       parameters:
         - name: user-id
@@ -10187,7 +9822,6 @@ paths:
       tags:
         - users.plannerUser
       summary: Get tasks from users
-      description: Read-only. Nullable. Returns the plannerTasks assigned to the user.
       operationId: users.planner_GetTasks
       parameters:
         - name: user-id
@@ -10232,6 +9866,7 @@ paths:
                 - percentComplete
                 - planId
                 - previewType
+                - priority
                 - referenceCount
                 - startDateTime
                 - title
@@ -10291,7 +9926,6 @@ paths:
       tags:
         - users.plannerUser
       summary: Update the navigation property tasks in users
-      description: Read-only. Nullable. Returns the plannerTasks assigned to the user.
       operationId: users.planner_UpdateTasks
       parameters:
         - name: user-id
@@ -10325,7 +9959,6 @@ paths:
       tags:
         - users.plannerUser
       summary: Delete navigation property tasks for users
-      description: Read-only. Nullable. Returns the plannerTasks assigned to the user.
       operationId: users.planner_DeleteTasks
       parameters:
         - name: user-id
@@ -10358,7 +9991,6 @@ paths:
       tags:
         - users.plannerUser
       summary: Get assignedToTaskBoardFormat from users
-      description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by assignedTo.
       operationId: users.planner.tasks_GetAssignedToTaskBoardFormat
       parameters:
         - name: user-id
@@ -10415,7 +10047,6 @@ paths:
       tags:
         - users.plannerUser
       summary: Update the navigation property assignedToTaskBoardFormat in users
-      description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by assignedTo.
       operationId: users.planner.tasks_UpdateAssignedToTaskBoardFormat
       parameters:
         - name: user-id
@@ -10449,7 +10080,6 @@ paths:
       tags:
         - users.plannerUser
       summary: Delete navigation property assignedToTaskBoardFormat for users
-      description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by assignedTo.
       operationId: users.planner.tasks_DeleteAssignedToTaskBoardFormat
       parameters:
         - name: user-id
@@ -10482,7 +10112,6 @@ paths:
       tags:
         - users.plannerUser
       summary: Get bucketTaskBoardFormat from users
-      description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by bucket.
       operationId: users.planner.tasks_GetBucketTaskBoardFormat
       parameters:
         - name: user-id
@@ -10538,7 +10167,6 @@ paths:
       tags:
         - users.plannerUser
       summary: Update the navigation property bucketTaskBoardFormat in users
-      description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by bucket.
       operationId: users.planner.tasks_UpdateBucketTaskBoardFormat
       parameters:
         - name: user-id
@@ -10572,7 +10200,6 @@ paths:
       tags:
         - users.plannerUser
       summary: Delete navigation property bucketTaskBoardFormat for users
-      description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by bucket.
       operationId: users.planner.tasks_DeleteBucketTaskBoardFormat
       parameters:
         - name: user-id
@@ -10605,7 +10232,6 @@ paths:
       tags:
         - users.plannerUser
       summary: Get details from users
-      description: Read-only. Nullable. Additional details about the task.
       operationId: users.planner.tasks_GetDetails
       parameters:
         - name: user-id
@@ -10664,7 +10290,6 @@ paths:
       tags:
         - users.plannerUser
       summary: Update the navigation property details in users
-      description: Read-only. Nullable. Additional details about the task.
       operationId: users.planner.tasks_UpdateDetails
       parameters:
         - name: user-id
@@ -10698,7 +10323,6 @@ paths:
       tags:
         - users.plannerUser
       summary: Delete navigation property details for users
-      description: Read-only. Nullable. Additional details about the task.
       operationId: users.planner.tasks_DeleteDetails
       parameters:
         - name: user-id
@@ -10731,7 +10355,6 @@ paths:
       tags:
         - users.plannerUser
       summary: Get progressTaskBoardFormat from users
-      description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by progress.
       operationId: users.planner.tasks_GetProgressTaskBoardFormat
       parameters:
         - name: user-id
@@ -10787,7 +10410,6 @@ paths:
       tags:
         - users.plannerUser
       summary: Update the navigation property progressTaskBoardFormat in users
-      description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by progress.
       operationId: users.planner.tasks_UpdateProgressTaskBoardFormat
       parameters:
         - name: user-id
@@ -10821,7 +10443,6 @@ paths:
       tags:
         - users.plannerUser
       summary: Delete navigation property progressTaskBoardFormat for users
-      description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by progress.
       operationId: users.planner.tasks_DeleteProgressTaskBoardFormat
       parameters:
         - name: user-id
@@ -10870,6 +10491,8 @@ components:
         - title: plannerPlan
           type: object
           properties:
+            container:
+              $ref: '#/components/schemas/microsoft.graph.plannerPlanContainer'
             createdBy:
               $ref: '#/components/schemas/microsoft.graph.identitySet'
             createdDateTime:
@@ -10880,7 +10503,6 @@ components:
               nullable: true
             owner:
               type: string
-              description: 'ID of the Group that owns the plan. A valid group must exist before this field can be set. After it is set, this property can’t be updated.'
               nullable: true
             title:
               type: string
@@ -11002,6 +10624,13 @@ components:
               nullable: true
             previewType:
               $ref: '#/components/schemas/microsoft.graph.plannerPreviewType'
+            priority:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              description: 'Priority of the task. Valid range of values is between 0 and 10 (inclusive), with increasing value being lower priority (0 has the highest priority and 10 has the lowest priority).  Currently, Planner interprets values 0 and 1 as ''urgent'', 2 and 3 and 4 as ''important'', 5, 6, and 7 as ''medium'', and 8, 9, and 10 as ''low''.  Currently, Planner sets the value 1 for ''urgent'', 3 for ''important'', 5 for ''medium'', and 9 for ''low''.'
+              format: int32
+              nullable: true
             referenceCount:
               maximum: 2147483647
               minimum: -2147483648
@@ -11064,7 +10693,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.plannerChecklistItems'
             description:
               type: string
-              description: Description of the task
+              description: Description of the task.
               nullable: true
             previewType:
               $ref: '#/components/schemas/microsoft.graph.plannerPreviewType'
@@ -11143,7 +10772,20 @@ components:
       properties:
         id:
           type: string
-          description: Read-only.
+      additionalProperties:
+        type: object
+    microsoft.graph.plannerPlanContainer:
+      title: plannerPlanContainer
+      type: object
+      properties:
+        containerId:
+          type: string
+          description: The identifier of the resource that contains the plan.
+        type:
+          $ref: '#/components/schemas/microsoft.graph.plannerContainerType'
+        url:
+          type: string
+          description: The full canonical URL of the container.
       additionalProperties:
         type: object
     microsoft.graph.identitySet:
@@ -11200,9 +10842,73 @@ components:
           type: string
           description: The label associated with Category 1
           nullable: true
+        category10:
+          type: string
+          description: The label associated with Category 10
+          nullable: true
+        category11:
+          type: string
+          description: The label associated with Category 11
+          nullable: true
+        category12:
+          type: string
+          description: The label associated with Category 12
+          nullable: true
+        category13:
+          type: string
+          description: The label associated with Category 13
+          nullable: true
+        category14:
+          type: string
+          description: The label associated with Category 14
+          nullable: true
+        category15:
+          type: string
+          description: The label associated with Category 15
+          nullable: true
+        category16:
+          type: string
+          description: The label associated with Category 16
+          nullable: true
+        category17:
+          type: string
+          description: The label associated with Category 17
+          nullable: true
+        category18:
+          type: string
+          description: The label associated with Category 18
+          nullable: true
+        category19:
+          type: string
+          description: The label associated with Category 19
+          nullable: true
         category2:
           type: string
           description: The label associated with Category 2
+          nullable: true
+        category20:
+          type: string
+          description: The label associated with Category 20
+          nullable: true
+        category21:
+          type: string
+          description: The label associated with Category 21
+          nullable: true
+        category22:
+          type: string
+          description: The label associated with Category 22
+          nullable: true
+        category23:
+          type: string
+          description: The label associated with Category 23
+          nullable: true
+        category24:
+          type: string
+          description: The label associated with Category 24
+          nullable: true
+        category25:
+          type: string
+          description: The label associated with Category 25
           nullable: true
         category3:
           type: string
@@ -11220,6 +10926,18 @@ components:
           type: string
           description: The label associated with Category 6
           nullable: true
+        category7:
+          type: string
+          description: The label associated with Category 7
+          nullable: true
+        category8:
+          type: string
+          description: The label associated with Category 8
+          nullable: true
+        category9:
+          type: string
+          description: The label associated with Category 9
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.plannerUserIds:
@@ -11227,30 +10945,73 @@ components:
       type: object
       additionalProperties:
         type: object
-    odata.error:
+    microsoft.graph.ODataErrors.ODataError:
       required:
         - error
       type: object
       properties:
         error:
-          $ref: '#/components/schemas/odata.error.main'
+          $ref: '#/components/schemas/microsoft.graph.ODataErrors.MainError'
       additionalProperties:
         type: object
+    microsoft.graph.plannerPlanCollectionResponse:
+      title: Collection of plannerPlan
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.plannerPlan'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.plannerBucketCollectionResponse:
+      title: Collection of plannerBucket
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.plannerBucket'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.plannerTaskCollectionResponse:
+      title: Collection of plannerTask
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.plannerTask'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.plannerContainerType:
+      title: plannerContainerType
+      enum:
+        - group
+        - unknownFutureValue
+        - roster
+      type: string
     microsoft.graph.identity:
       title: identity
       type: object
       properties:
         displayName:
           type: string
-          description: 'The identity''s display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
+          description: The display name of the identity. This property is read-only.
           nullable: true
         id:
           type: string
-          description: Unique identifier for the identity.
+          description: The identifier of the identity. This property is read-only.
           nullable: true
       additionalProperties:
         type: object
-    odata.error.main:
+    microsoft.graph.ODataErrors.MainError:
       required:
         - code
         - message
@@ -11262,18 +11023,16 @@ components:
           type: string
         target:
           type: string
+          nullable: true
         details:
           type: array
           items:
-            $ref: '#/components/schemas/odata.error.detail'
+            $ref: '#/components/schemas/microsoft.graph.ODataErrors.ErrorDetails'
         innererror:
-          type: object
-          additionalProperties:
-            type: object
-          description: The structure of this object is service-specific
+          $ref: '#/components/schemas/microsoft.graph.ODataErrors.InnerError'
       additionalProperties:
         type: object
-    odata.error.detail:
+    microsoft.graph.ODataErrors.ErrorDetails:
       required:
         - code
         - message
@@ -11285,15 +11044,39 @@ components:
           type: string
         target:
           type: string
+          nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.ODataErrors.InnerError:
+      type: object
+      additionalProperties:
+        type: object
+      description: The structure of this object is service-specific
   responses:
     error:
       description: error
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/odata.error'
+            $ref: '#/components/schemas/microsoft.graph.ODataErrors.ODataError'
+    microsoft.graph.plannerPlanCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.plannerPlanCollectionResponse'
+    microsoft.graph.plannerBucketCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.plannerBucketCollectionResponse'
+    microsoft.graph.plannerTaskCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.plannerTaskCollectionResponse'
   parameters:
     top:
       name: $top

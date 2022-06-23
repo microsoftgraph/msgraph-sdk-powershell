@@ -33,6 +33,7 @@ function New-MgEntitlementManagementAccessPackageAssignmentRequest {
 param(
 
     [Parameter(ParameterSetName='CreateRequestAdminAdd')]
+    [Parameter(ParameterSetName='CreateRequestAdminAddExternal')]
     [Microsoft.Graph.PowerShell.Category('Body')]
     [Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessPackageAnswer[]]
     # Answers provided by the requestor to accessPackageQuestions asked of them at the time of request.
@@ -40,6 +41,7 @@ param(
     ${Answers},
 
     [Parameter(ParameterSetName='CreateRequestAdminAdd')]
+    [Parameter(ParameterSetName='CreateRequestAdminAddExternal')]
     [Parameter(ParameterSetName='CreateRequestAdminRemove')]
     [Microsoft.Graph.PowerShell.Category('Body')]
     [System.String]
@@ -47,6 +49,7 @@ param(
     ${Justification},
 
     [Parameter(ParameterSetName='CreateRequestAdminAdd')]
+    [Parameter(ParameterSetName='CreateRequestAdminAddExternal')]
     [Parameter(ParameterSetName='CreateRequestAdminRemove')]
     [Microsoft.Graph.PowerShell.Category('Body')]
     [System.String]
@@ -55,6 +58,7 @@ param(
     ${RequestType},
 
     [Parameter(ParameterSetName='CreateRequestAdminAdd')]
+    [Parameter(ParameterSetName='CreateRequestAdminAddExternal')]
     [Microsoft.Graph.PowerShell.Category('Body')]
     [string]
     ${StartDate},
@@ -76,6 +80,8 @@ param(
 
     [Parameter(Mandatory = $True,
         ParameterSetName='CreateRequestAdminAdd')]
+    [Parameter(Mandatory = $True,
+        ParameterSetName='CreateRequestAdminAddExternal')]
     [Microsoft.Graph.PowerShell.Category('Body')]
     [ValidateScript( {
             try {
@@ -91,6 +97,8 @@ param(
 
     [Parameter(Mandatory = $True,
         ParameterSetName='CreateRequestAdminAdd')]
+    [Parameter(Mandatory = $True,
+        ParameterSetName='CreateRequestAdminAddExternal')]
     [Microsoft.Graph.PowerShell.Category('Body')]
     [ValidateScript( {
             try {
@@ -118,6 +126,12 @@ param(
         })]
     [string]
     ${TargetId},
+
+    [Parameter(Mandatory = $True,
+    ParameterSetName='CreateRequestAdminAddExternal')]
+    [Microsoft.Graph.PowerShell.Category('Body')]
+    [string]
+    ${TargetEmail},
 
     [Parameter(DontShow)]
     [Microsoft.Graph.PowerShell.Category('Runtime')]
@@ -179,10 +193,8 @@ process {
     }
 
     if ($RequestType -ne "AdminRemove") {
-       if ($null -ne $StartDate -or $StartDate.Length -eq 0) {
-            $now = Get-Date
-            $ts = Get-Date $now.ToUniversalTime() -format "s"
-            $StartDate = $ts + "Z"
+       if ($null -eq $StartDate -or $StartDate.Length -eq 0) {
+           # allow for a package policy to have a default start date
         }
     }
 
@@ -192,7 +204,11 @@ process {
     }
     if ($TargetId -ne $null -and $TargetId.Length -ne 0) {
         $AccessPackageAssignmentRequestBodyAccessPackageAssignment.TargetId = $TargetId
+    } elseif ($TargetEmail -ne $null -and $TargetEmail.Length -ne 0) {
+        $AccessPackageAssignmentRequestBodyAccessPackageAssignment.Target = new-object microsoft.graph.powershell.models.MicrosoftGraphAccessPackageSubject
+        $AccessPackageAssignmentRequestBodyAccessPackageAssignment.Target.Email = $TargetEmail
     }
+
     if ($AssignmentPolicyId -ne $null -and $AssignmentPolicyId.Length -ne 0) {
         $AccessPackageAssignmentRequestBodyAccessPackageAssignment.AssignmentPolicyId = $AssignmentPolicyId
     }
@@ -201,14 +217,22 @@ process {
     }
 
     if ($null -ne $StartDate -and $StartDate.Length -ne 0) {
+        # ensure DateTime.Kind of StartDateTime is Utc
+        $dtin = [System.DateTime]::Parse($StartDate,[System.Globalization.CultureInfo]::InvariantCulture,[System.Globalization.DateTimeStyles]::AdjustToUniversal)
+        if ($dtin.Kind -ne "Utc") {
+            $dtu = [System.DateTime]::SpecifyKind($dtin.ToUniversalTime(),[System.DateTimeKind]::Utc)
+        } else {
+            $dtu = $dtin
+        }
         $AccessPackageAssignmentRequestBodyAccessPackageAssignment.Schedule = new-object Microsoft.Graph.PowerShell.Models.MicrosoftGraphRequestSchedule
-        $AccessPackageAssignmentRequestBodyAccessPackageAssignment.Schedule.StartDateTime = $StartDate
+        $AccessPackageAssignmentRequestBodyAccessPackageAssignment.Schedule.StartDateTime = $dtu
     }
 
     $null = $PSBoundParameters.Remove("AccessPackageAssignmentId")
     $null = $PSBoundParameters.Remove("AccessPackageId")
     $null = $PSBoundParameters.Remove("AssignmentPolicyId")
     $null = $PSBoundParameters.Remove("TargetId")
+    $null = $PSBoundParameters.Remove("TargetEmail")
     $null = $PSBoundParameters.Remove("StartDate")
 
     $PSBoundParameters['AccessPackageAssignment'] = $AccessPackageAssignmentRequestBodyAccessPackageAssignment

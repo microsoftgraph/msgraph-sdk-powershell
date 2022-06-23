@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgDeviceAppMgtVppToken
 
 ## SYNOPSIS
-Update the navigation property vppTokens in deviceAppManagement
+List of Vpp tokens for this organization.
 
 ## SYNTAX
 
@@ -44,27 +44,9 @@ Update-MgDeviceAppMgtVppToken -InputObject <IDevicesCorporateManagementIdentity>
 ```
 
 ## DESCRIPTION
-Update the navigation property vppTokens in deviceAppManagement
+List of Vpp tokens for this organization.
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 
@@ -118,7 +100,7 @@ You purchase multiple licenses for iOS apps through the Apple Volume Purchase Pr
 This involves setting up an Apple VPP account from the Apple website and uploading the Apple VPP Business or Education token to Intune.
 You can then synchronize your volume purchase information with Intune and track your volume-purchased app use.
 You can upload multiple Apple VPP Business or Education tokens.
-To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphVppToken1
@@ -179,7 +161,7 @@ Accept wildcard characters: False
 
 ### -InputObject
 Identity Parameter
-To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
@@ -209,7 +191,7 @@ Accept wildcard characters: False
 ```
 
 ### -LastSyncDateTime
-The last time when an application sync was done with the Apple volume purchase program service using the Apple Volume Purchase Program Token.
+The last time when an application sync was done with the Apple volume purchase program service using the the Apple Volume Purchase Program Token.
 
 ```yaml
 Type: System.DateTime
@@ -224,7 +206,7 @@ Accept wildcard characters: False
 ```
 
 ### -LastSyncStatus
-vppTokenSyncStatus
+Possible sync statuses associated with an Apple Volume Purchase Program token.
 
 ```yaml
 Type: System.String
@@ -269,7 +251,7 @@ Accept wildcard characters: False
 ```
 
 ### -State
-.
+Possible states associated with an Apple Volume Purchase Program token.
 
 ```yaml
 Type: System.String
@@ -299,7 +281,7 @@ Accept wildcard characters: False
 ```
 
 ### -VppTokenAccountType
-vppTokenAccountType
+Possible types of an Apple Volume Purchase Program token.
 
 ```yaml
 Type: System.String
@@ -391,25 +373,25 @@ BODYPARAMETER <IMicrosoftGraphVppToken1>: You purchase multiple licenses for iOS
   - `[CountryOrRegion <String>]`: Whether or not apps for the VPP token will be automatically updated.
   - `[ExpirationDateTime <DateTime?>]`: The expiration date time of the Apple Volume Purchase Program Token.
   - `[LastModifiedDateTime <DateTime?>]`: Last modification date time associated with the Apple Volume Purchase Program Token.
-  - `[LastSyncDateTime <DateTime?>]`: The last time when an application sync was done with the Apple volume purchase program service using the Apple Volume Purchase Program Token.
-  - `[LastSyncStatus <String>]`: vppTokenSyncStatus
+  - `[LastSyncDateTime <DateTime?>]`: The last time when an application sync was done with the Apple volume purchase program service using the the Apple Volume Purchase Program Token.
+  - `[LastSyncStatus <String>]`: Possible sync statuses associated with an Apple Volume Purchase Program token.
   - `[OrganizationName <String>]`: The organization associated with the Apple Volume Purchase Program Token
-  - `[State <String>]`: 
+  - `[State <String>]`: Possible states associated with an Apple Volume Purchase Program token.
   - `[Token <String>]`: The Apple Volume Purchase Program Token string downloaded from the Apple Volume Purchase Program.
-  - `[VppTokenAccountType <String>]`: vppTokenAccountType
+  - `[VppTokenAccountType <String>]`: Possible types of an Apple Volume Purchase Program token.
 
 INPUTOBJECT <IDevicesCorporateManagementIdentity>: Identity Parameter
   - `[AndroidManagedAppProtectionId <String>]`: key: id of androidManagedAppProtection
   - `[AppLogCollectionRequestId <String>]`: key: id of appLogCollectionRequest
-  - `[BundleId <String>]`: 
-  - `[Count <Int64?>]`: 
+  - `[AssignmentFilterEvaluationStatusDetailsId <String>]`: key: id of assignmentFilterEvaluationStatusDetails
+  - `[BundleId <String>]`: Usage: bundleId={bundleId}
+  - `[Count <Int64?>]`: Usage: count={count}
   - `[DefaultManagedAppProtectionId <String>]`: key: id of defaultManagedAppProtection
-  - `[DetectedAppId <String>]`: key: id of detectedApp
   - `[DeviceAppManagementTaskId <String>]`: key: id of deviceAppManagementTask
   - `[DeviceCompliancePolicyStateId <String>]`: key: id of deviceCompliancePolicyState
   - `[DeviceConfigurationStateId <String>]`: key: id of deviceConfigurationState
   - `[DeviceEnrollmentConfigurationId <String>]`: key: id of deviceEnrollmentConfiguration
-  - `[DeviceId <String>]`: 
+  - `[DeviceId <String>]`: Usage: deviceId={deviceId}
   - `[DeviceInstallStateId <String>]`: key: id of deviceInstallState
   - `[DeviceLogCollectionResponseId <String>]`: key: id of deviceLogCollectionResponse
   - `[DeviceManagementTroubleshootingEventId <String>]`: key: id of deviceManagementTroubleshootingEvent
@@ -449,14 +431,13 @@ INPUTOBJECT <IDevicesCorporateManagementIdentity>: Identity Parameter
   - `[SecurityBaselineSettingStateId <String>]`: key: id of securityBaselineSettingState
   - `[SecurityBaselineStateId <String>]`: key: id of securityBaselineState
   - `[SideLoadingKeyId <String>]`: key: id of sideLoadingKey
-  - `[Status <String>]`: 
+  - `[Status <String>]`: Usage: status={status}
   - `[TargetedManagedAppConfigurationId <String>]`: key: id of targetedManagedAppConfiguration
   - `[TargetedManagedAppPolicyAssignmentId <String>]`: key: id of targetedManagedAppPolicyAssignment
   - `[UserAppInstallStatusId <String>]`: key: id of userAppInstallStatus
   - `[UserId <String>]`: key: id of user
-  - `[UserId1 <String>]`: key: id of user
   - `[UserInstallStateSummaryId <String>]`: key: id of userInstallStateSummary
-  - `[UserPrincipalName <String>]`: 
+  - `[UserPrincipalName <String>]`: Usage: userPrincipalName={userPrincipalName}
   - `[VppTokenId <String>]`: key: id of vppToken
   - `[WindowsDefenderApplicationControlSupplementalPolicyAssignmentId <String>]`: key: id of windowsDefenderApplicationControlSupplementalPolicyAssignment
   - `[WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusId <String>]`: key: id of windowsDefenderApplicationControlSupplementalPolicyDeploymentStatus

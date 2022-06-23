@@ -39,7 +39,7 @@ subject-prefix: ''
 ``` yaml
 directive:
 # Remove invalid paths that exceed Windows file name limit.
-  - remove-path-by-operation: ^deviceManagement.(reusablePolicySettings.referencingConfigurationPolicies_(assign|createCopy)|deviceShellScripts.userRunStates.deviceRunStates.managedDevice_.*|windowsAutopilotDeploymentProfiles.(assignedDevices_updateDeviceProperties|assignedDevices.deploymentProfile_assign|assignedDevices.intendedDeploymentProfile_assign|assignedDevices_assignResourceAccountToDevice|assignedDevices_unassignResourceAccountFromDevice)|deviceComplianceScripts.deviceRunStates.managedDevice_.*|deviceCustomAttributeShellScripts.(deviceRunStates.managedDevice_.*|userRunStates.deviceRunStates.managedDevice_.*)|deviceManagementScripts.deviceRunStates.managedDevice(_updateWindowsDeviceAccount|_logoutSharedAppleDeviceActiveUser|_deleteUserFromSharedAppleDevice|_createDeviceLogCollectionRequest|_sendCustomNotificationToCompanyPortal|_triggerConfigurationManagerAction|_windowsDefenderUpdateSignatures)|deviceManagementScripts.userRunStates.deviceRunStates.managedDevice_.*|deviceConfigurations.groupAssignments.deviceConfiguration(_assignedAccessMultiModeProfiles|_windowsPrivacyAccessControls)|deviceHealthScripts.deviceRunStates.managedDevice(_sendCustomNotificationToCompanyPortal|_createDeviceLogCollectionRequest)|deviceShellScripts.deviceRunStates.managedDevice_sendCustomNotificationToCompanyPortal)$
+  - remove-path-by-operation: ^deviceManagement.(userExperienceAnalyticsDeviceScopes_.*|reusablePolicySettings.referencingConfigurationPolicies_(assign|createCopy)|deviceShellScripts.userRunStates.deviceRunStates.managedDevice_.*|windowsAutopilotDeploymentProfiles.(assignedDevices_updateDeviceProperties|assignedDevices.deploymentProfile_assign|assignedDevices.intendedDeploymentProfile_assign|assignedDevices_assignResourceAccountToDevice|assignedDevices_unassignResourceAccountFromDevice)|deviceComplianceScripts.deviceRunStates.managedDevice_.*|deviceCustomAttributeShellScripts.(deviceRunStates.managedDevice_.*|userRunStates.deviceRunStates.managedDevice_.*)|deviceManagementScripts.deviceRunStates.managedDevice(_updateWindowsDeviceAccount|_logoutSharedAppleDeviceActiveUser|_deleteUserFromSharedAppleDevice|_createDeviceLogCollectionRequest|_sendCustomNotificationToCompanyPortal|_triggerConfigurationManagerAction|_windowsDefenderUpdateSignatures)|deviceManagementScripts.userRunStates.deviceRunStates.managedDevice_.*|deviceConfigurations.groupAssignments.deviceConfiguration(_assignedAccessMultiModeProfiles|_windowsPrivacyAccessControls)|deviceHealthScripts.deviceRunStates.managedDevice(_sendCustomNotificationToCompanyPortal|_createDeviceLogCollectionRequest)|deviceShellScripts.deviceRunStates.managedDevice_sendCustomNotificationToCompanyPortal)$
 
 # Remove cmdlets.
   - where:
@@ -53,6 +53,11 @@ directive:
   - where:
       verb: Update
       subject: ^DeviceManagementComanagedDevice.*
+    remove: true
+  - where:
+      verb: Test
+      subject: ^DeviceManagementAssignmentFilter$
+      variant: ^Evaluate.*
     remove: true
 
 # Rename cmdlets.
@@ -91,10 +96,76 @@ directive:
     set:
       verb: New
       subject: $1WindowsDefenderUpdateSignature
+  - where:
+      verb: Invoke
+      subject: ^Bulk(DeviceManagementManagedDevice)RestoreCloudPc$
+    set:
+      subject: BulkRestore$1CloudPc
+      alias: Invoke-MgBulkDeviceManagementManagedDeviceRestoreCloudPc
+  - where:
+      verb: Invoke
+      subject: ^Bulk(DeviceManagementComanagedDevice)RestoreCloudPc$
+    set:
+      subject: BulkRestore$1CloudPc
+      alias: Invoke-MgBulkDeviceManagementComanagedDeviceRestoreCloudPc
+  - where:
+      verb: Invoke
+      subject: ^Bulk(DeviceManagementDetectedAppManagedDevice)RestoreCloudPc$
+    set:
+      subject: BulkRestore$1CloudPc
+      alias: Invoke-MgBulkDeviceManagementDetectedAppManagedDeviceRestoreCloudPc
+  - where:
+      verb: Invoke
+      subject: ^Bulk(DeviceManagementComanagedDevice)ReprovisionCloudPc$
+    set:
+      subject: BulkReprovision$1CloudPc
+      alias: Invoke-MgBulkDeviceManagementComanagedDeviceReprovisionCloudPc
+  - where:
+      verb: Invoke
+      subject: ^Bulk(DeviceManagementDetectedAppManagedDevice)ReprovisionCloudPc$
+    set:
+      subject: BulkReprovision$1CloudPc
+      alias: Invoke-MgBulkDeviceManagementDetectedAppManagedDeviceReprovisionCloudPc
+  - where:
+      verb: Invoke
+      subject: ^Bulk(DeviceManagementManagedDevice)ReprovisionCloudPc$
+    set:
+      subject: BulkReprovision$1CloudPc
+      alias: Invoke-MgBulkDeviceManagementManagedDeviceReprovisionCloudPc
+  - where:
+      verb: Invoke
+      subject: ^Cloud(DeviceManagementDeviceHealthScriptDeviceRunStateManagedDevice)$
+    set:
+      subject: Reprovision$1CloudPc
+      alias: Invoke-MgCloudDeviceManagementDeviceHealthScriptDeviceRunStateManagedDevice
+  - where:
+      verb: Invoke
+      subject: ^Cloud(DeviceManagementDeviceShellScriptDeviceRunStateManagedDevice)$
+    set:
+      subject: Reprovision$1CloudPc
+      alias: Invoke-MgCloudDeviceManagementDeviceShellScriptDeviceRunStateManagedDevice
+  - where:
+      verb: Invoke
+      subject: ^Cloud(DeviceManagementScriptDeviceRunStateManagedDevice)$
+    set:
+      subject: Reprovision$1CloudPc
+      alias: Invoke-MgCloudDeviceManagementScriptDeviceRunStateManagedDevice
+  - where:
+      verb: Invoke
+      subject: ^Cloud(DeviceManagementComanagedDevice)$
+    set:
+      subject: Reprovision$1CloudPc
+      alias: Invoke-MgCloudDeviceManagementComanagedDevice
+  - where:
+      verb: Invoke
+      subject: ^Cloud(DeviceManagementManagedDevice)$
+    set:
+      subject: Reprovision$1CloudPc
+      alias: Invoke-MgCloudDeviceManagementManagedDevice
 ```
 ### Versioning
 
 ``` yaml
-module-version: 1.6.0
+module-version: 1.10.0
 release-notes: See https://aka.ms/GraphPowerShell-Release.
 ```

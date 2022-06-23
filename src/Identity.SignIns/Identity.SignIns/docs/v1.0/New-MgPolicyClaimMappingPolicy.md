@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgPolicyClaimMappingPolicy
 
 ## SYNOPSIS
-Create new navigation property to claimsMappingPolicies for policies
+The claim-mapping policies for WS-Fed, SAML, OAuth 2.0, and OpenID Connect protocols, for tokens issued to a specific application.
 
 ## SYNTAX
 
@@ -26,27 +26,9 @@ New-MgPolicyClaimMappingPolicy -BodyParameter <Hashtable> [-Confirm] [-WhatIf] [
 ```
 
 ## DESCRIPTION
-Create new navigation property to claimsMappingPolicies for policies
+The claim-mapping policies for WS-Fed, SAML, OAuth 2.0, and OpenID Connect protocols, for tokens issued to a specific application.
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 
@@ -67,7 +49,7 @@ Accept wildcard characters: False
 
 ### -AppliesTo
 .
-To construct, see NOTES section for APPLIESTO properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for APPLIESTO properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDirectoryObject[]
@@ -82,8 +64,7 @@ Accept wildcard characters: False
 ```
 
 ### -BodyParameter
-Represents an Azure Active Directory object.
-The directoryObject type is the base type for many other directory entity types.
+claimsMappingPolicy
 
 ```yaml
 Type: System.Collections.Hashtable
@@ -115,7 +96,8 @@ Accept wildcard characters: False
 ```
 
 ### -DeletedDateTime
-.
+Date and time when this object was deleted.
+Always null when the object hasn't been deleted.
 
 ```yaml
 Type: System.DateTime
@@ -131,6 +113,7 @@ Accept wildcard characters: False
 
 ### -Description
 Description for this policy.
+Required.
 
 ```yaml
 Type: System.String
@@ -146,6 +129,7 @@ Accept wildcard characters: False
 
 ### -DisplayName
 Display name for this policy.
+Required.
 
 ```yaml
 Type: System.String
@@ -231,7 +215,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphClaimsMappingPolicy
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphClaimsMappingPolicy1
 
 ## NOTES
 
@@ -244,7 +228,7 @@ To create the parameters described below, construct a hash table containing the 
 
 APPLIESTO <IMicrosoftGraphDirectoryObject[]>: .
   - `[Id <String>]`: Read-only.
-  - `[DeletedDateTime <DateTime?>]`: 
+  - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
 
 ## RELATED LINKS
 

@@ -12,54 +12,38 @@ Invoke action reply
 
 ## SYNTAX
 
-### ReplyExpanded (Default)
+### ReplyExpanded2 (Default)
 ```
 Invoke-MgReplyUserMessage -MessageId <String> -UserId <String> [-AdditionalProperties <Hashtable>]
- [-Comment <String>] [-Message <IMicrosoftGraphMessage>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Comment <String>] [-Message <IMicrosoftGraphMessage1>] [-PassThru] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
-### Reply
+### Reply2
 ```
 Invoke-MgReplyUserMessage -MessageId <String> -UserId <String>
  -BodyParameter <IPaths1Inq4EUsersUserIdMessagesMessageIdMicrosoftGraphReplyPostRequestbodyContentApplicationJsonSchema1>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### ReplyViaIdentity
+### ReplyViaIdentity2
 ```
 Invoke-MgReplyUserMessage -InputObject <IUsersActionsIdentity>
  -BodyParameter <IPaths1Inq4EUsersUserIdMessagesMessageIdMicrosoftGraphReplyPostRequestbodyContentApplicationJsonSchema1>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### ReplyViaIdentityExpanded
+### ReplyViaIdentityExpanded2
 ```
 Invoke-MgReplyUserMessage -InputObject <IUsersActionsIdentity> [-AdditionalProperties <Hashtable>]
- [-Comment <String>] [-Message <IMicrosoftGraphMessage>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Comment <String>] [-Message <IMicrosoftGraphMessage1>] [-PassThru] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Invoke action reply
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 
@@ -68,7 +52,7 @@ Additional Parameters
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: ReplyExpanded, ReplyViaIdentityExpanded
+Parameter Sets: ReplyExpanded2, ReplyViaIdentityExpanded2
 Aliases:
 
 Required: False
@@ -80,11 +64,11 @@ Accept wildcard characters: False
 
 ### -BodyParameter
 .
-To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IPaths1Inq4EUsersUserIdMessagesMessageIdMicrosoftGraphReplyPostRequestbodyContentApplicationJsonSchema1
-Parameter Sets: Reply, ReplyViaIdentity
+Parameter Sets: Reply2, ReplyViaIdentity2
 Aliases:
 
 Required: True
@@ -99,7 +83,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.String
-Parameter Sets: ReplyExpanded, ReplyViaIdentityExpanded
+Parameter Sets: ReplyExpanded2, ReplyViaIdentityExpanded2
 Aliases:
 
 Required: False
@@ -111,11 +95,11 @@ Accept wildcard characters: False
 
 ### -InputObject
 Identity Parameter
-To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
-Parameter Sets: ReplyViaIdentity, ReplyViaIdentityExpanded
+Parameter Sets: ReplyViaIdentity2, ReplyViaIdentityExpanded2
 Aliases:
 
 Required: True
@@ -127,11 +111,11 @@ Accept wildcard characters: False
 
 ### -Message
 message
-To construct, see NOTES section for MESSAGE properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for MESSAGE properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMessage
-Parameter Sets: ReplyExpanded, ReplyViaIdentityExpanded
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMessage1
+Parameter Sets: ReplyExpanded2, ReplyViaIdentityExpanded2
 Aliases:
 
 Required: False
@@ -146,7 +130,7 @@ key: id of message
 
 ```yaml
 Type: System.String
-Parameter Sets: Reply, ReplyExpanded
+Parameter Sets: Reply2, ReplyExpanded2
 Aliases:
 
 Required: True
@@ -176,7 +160,7 @@ key: id of user
 
 ```yaml
 Type: System.String
-Parameter Sets: Reply, ReplyExpanded
+Parameter Sets: Reply2, ReplyExpanded2
 Aliases:
 
 Required: True
@@ -242,18 +226,18 @@ To create the parameters described below, construct a hash table containing the 
 BODYPARAMETER <IPaths1Inq4EUsersUserIdMessagesMessageIdMicrosoftGraphReplyPostRequestbodyContentApplicationJsonSchema1>: .
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Comment <String>]`: 
-  - `[Message <IMicrosoftGraphMessage>]`: message
+  - `[Message <IMicrosoftGraphMessage1>]`: message
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Categories <String[]>]`: The categories associated with the item
     - `[ChangeKey <String>]`: Identifies the version of the item. Every time the item is changed, changeKey changes as well. This allows Exchange to apply changes to the correct version of the object. Read-only.
-    - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'
-    - `[LastModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'
+    - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+    - `[LastModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
     - `[Id <String>]`: Read-only.
     - `[Attachments <IMicrosoftGraphAttachment[]>]`: The fileAttachment and itemAttachment attachments for the message.
       - `[Id <String>]`: Read-only.
       - `[ContentType <String>]`: The MIME type.
       - `[IsInline <Boolean?>]`: true if the attachment is an inline attachment; otherwise, false.
-      - `[LastModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'
+      - `[LastModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
       - `[Name <String>]`: The attachment's file name.
       - `[Size <Int32?>]`: The length of the attachment in bytes.
     - `[BccRecipients <IMicrosoftGraphRecipient[]>]`: The Bcc: recipients for the message.
@@ -284,35 +268,40 @@ BODYPARAMETER <IPaths1Inq4EUsersUserIdMessagesMessageIdMicrosoftGraphReplyPostRe
     - `[HasAttachments <Boolean?>]`: Indicates whether the message has attachments. This property doesn't include inline attachments, so if a message contains only inline attachments, this property is false. To verify the existence of inline attachments, parse the body property to look for a src attribute, such as <IMG src='cid:image001.jpg@01D26CD8.6C05F070'>.
     - `[Importance <String>]`: importance
     - `[InferenceClassification <String>]`: inferenceClassificationType
-    - `[InternetMessageHeaders <IMicrosoftGraphInternetMessageHeader[]>]`: A collection of message headers defined by RFC5322. The set includes message headers indicating the network path taken by a message from the sender to the recipient. It can also contain custom message headers that hold app data for the message.  Returned only on applying a $select query option. Read-only.
+    - `[InternetMessageHeaders <IMicrosoftGraphInternetMessageHeader[]>]`: 
       - `[Name <String>]`: Represents the key in a key-value pair.
       - `[Value <String>]`: The value in a key-value pair.
-    - `[InternetMessageId <String>]`: The message ID in the format specified by RFC2822.
-    - `[IsDeliveryReceiptRequested <Boolean?>]`: Indicates whether a read receipt is requested for the message.
-    - `[IsDraft <Boolean?>]`: Indicates whether the message is a draft. A message is a draft if it hasn't been sent yet.
-    - `[IsRead <Boolean?>]`: Indicates whether the message has been read.
-    - `[IsReadReceiptRequested <Boolean?>]`: Indicates whether a read receipt is requested for the message.
+    - `[InternetMessageId <String>]`: 
+    - `[IsDeliveryReceiptRequested <Boolean?>]`: 
+    - `[IsDraft <Boolean?>]`: 
+    - `[IsRead <Boolean?>]`: 
+    - `[IsReadReceiptRequested <Boolean?>]`: 
     - `[MultiValueExtendedProperties <IMicrosoftGraphMultiValueLegacyExtendedProperty[]>]`: The collection of multi-value extended properties defined for the message. Nullable.
       - `[Id <String>]`: Read-only.
       - `[Value <String[]>]`: A collection of property values.
-    - `[ParentFolderId <String>]`: The unique identifier for the message's parent mailFolder.
-    - `[ReceivedDateTime <DateTime?>]`: The date and time the message was received.
-    - `[ReplyTo <IMicrosoftGraphRecipient[]>]`: The email addresses to use when replying.
+    - `[ParentFolderId <String>]`: 
+    - `[ReceivedDateTime <DateTime?>]`: 
+    - `[ReplyTo <IMicrosoftGraphRecipient[]>]`: 
     - `[Sender <IMicrosoftGraphRecipient>]`: recipient
-    - `[SentDateTime <DateTime?>]`: The date and time the message was sent.
+    - `[SentDateTime <DateTime?>]`: 
     - `[SingleValueExtendedProperties <IMicrosoftGraphSingleValueLegacyExtendedProperty[]>]`: The collection of single-value extended properties defined for the message. Nullable.
       - `[Id <String>]`: Read-only.
       - `[Value <String>]`: A property value.
-    - `[Subject <String>]`: The subject of the message.
-    - `[ToRecipients <IMicrosoftGraphRecipient[]>]`: The To: recipients for the message.
+    - `[Subject <String>]`: 
+    - `[ToRecipients <IMicrosoftGraphRecipient[]>]`: 
     - `[UniqueBody <IMicrosoftGraphItemBody>]`: itemBody
-    - `[WebLink <String>]`: The URL to open the message in Outlook Web App.You can append an ispopout argument to the end of the URL to change how the message is displayed. If ispopout is not present or if it is set to 1, then the message is shown in a popout window. If ispopout is set to 0, then the browser will show the message in the Outlook Web App review pane.The message will open in the browser if you are logged in to your mailbox via Outlook Web App. You will be prompted to login if you are not already logged in with the browser.This URL can be accessed from within an iFrame.
+    - `[WebLink <String>]`: 
 
 INPUTOBJECT <IUsersActionsIdentity>: Identity Parameter
+  - `[AccessReviewInstanceDecisionItemId <String>]`: key: id of accessReviewInstanceDecisionItem
   - `[AccessReviewInstanceId <String>]`: key: id of accessReviewInstance
+  - `[AccessReviewStageId <String>]`: key: id of accessReviewStage
   - `[AppLogCollectionRequestId <String>]`: key: id of appLogCollectionRequest
   - `[AuthenticationMethodId <String>]`: key: id of authenticationMethod
+  - `[BaseTaskId <String>]`: key: id of baseTask
+  - `[BaseTaskListId <String>]`: key: id of baseTaskList
   - `[CalendarId <String>]`: key: id of calendar
+  - `[CloudPcId <String>]`: key: id of cloudPC
   - `[DeviceEnrollmentConfigurationId <String>]`: key: id of deviceEnrollmentConfiguration
   - `[DeviceLogCollectionResponseId <String>]`: key: id of deviceLogCollectionResponse
   - `[EventId <String>]`: key: id of event
@@ -328,21 +317,23 @@ INPUTOBJECT <IUsersActionsIdentity>: Identity Parameter
   - `[OutlookTaskFolderId <String>]`: key: id of outlookTaskFolder
   - `[OutlookTaskGroupId <String>]`: key: id of outlookTaskGroup
   - `[OutlookTaskId <String>]`: key: id of outlookTask
+  - `[SharedInsightId <String>]`: key: id of sharedInsight
+  - `[TrendingId <String>]`: key: id of trending
+  - `[UsedInsightId <String>]`: key: id of usedInsight
   - `[UserId <String>]`: key: id of user
-  - `[WindowsInformationProtectionDeviceRegistrationId <String>]`: key: id of windowsInformationProtectionDeviceRegistration
 
-MESSAGE <IMicrosoftGraphMessage>: message
+MESSAGE <IMicrosoftGraphMessage1>: message
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Categories <String[]>]`: The categories associated with the item
   - `[ChangeKey <String>]`: Identifies the version of the item. Every time the item is changed, changeKey changes as well. This allows Exchange to apply changes to the correct version of the object. Read-only.
-  - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'
-  - `[LastModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'
+  - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+  - `[LastModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
   - `[Id <String>]`: Read-only.
   - `[Attachments <IMicrosoftGraphAttachment[]>]`: The fileAttachment and itemAttachment attachments for the message.
     - `[Id <String>]`: Read-only.
     - `[ContentType <String>]`: The MIME type.
     - `[IsInline <Boolean?>]`: true if the attachment is an inline attachment; otherwise, false.
-    - `[LastModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'
+    - `[LastModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
     - `[Name <String>]`: The attachment's file name.
     - `[Size <Int32?>]`: The length of the attachment in bytes.
   - `[BccRecipients <IMicrosoftGraphRecipient[]>]`: The Bcc: recipients for the message.
@@ -373,29 +364,29 @@ MESSAGE <IMicrosoftGraphMessage>: message
   - `[HasAttachments <Boolean?>]`: Indicates whether the message has attachments. This property doesn't include inline attachments, so if a message contains only inline attachments, this property is false. To verify the existence of inline attachments, parse the body property to look for a src attribute, such as <IMG src='cid:image001.jpg@01D26CD8.6C05F070'>.
   - `[Importance <String>]`: importance
   - `[InferenceClassification <String>]`: inferenceClassificationType
-  - `[InternetMessageHeaders <IMicrosoftGraphInternetMessageHeader[]>]`: A collection of message headers defined by RFC5322. The set includes message headers indicating the network path taken by a message from the sender to the recipient. It can also contain custom message headers that hold app data for the message.  Returned only on applying a $select query option. Read-only.
+  - `[InternetMessageHeaders <IMicrosoftGraphInternetMessageHeader[]>]`: 
     - `[Name <String>]`: Represents the key in a key-value pair.
     - `[Value <String>]`: The value in a key-value pair.
-  - `[InternetMessageId <String>]`: The message ID in the format specified by RFC2822.
-  - `[IsDeliveryReceiptRequested <Boolean?>]`: Indicates whether a read receipt is requested for the message.
-  - `[IsDraft <Boolean?>]`: Indicates whether the message is a draft. A message is a draft if it hasn't been sent yet.
-  - `[IsRead <Boolean?>]`: Indicates whether the message has been read.
-  - `[IsReadReceiptRequested <Boolean?>]`: Indicates whether a read receipt is requested for the message.
+  - `[InternetMessageId <String>]`: 
+  - `[IsDeliveryReceiptRequested <Boolean?>]`: 
+  - `[IsDraft <Boolean?>]`: 
+  - `[IsRead <Boolean?>]`: 
+  - `[IsReadReceiptRequested <Boolean?>]`: 
   - `[MultiValueExtendedProperties <IMicrosoftGraphMultiValueLegacyExtendedProperty[]>]`: The collection of multi-value extended properties defined for the message. Nullable.
     - `[Id <String>]`: Read-only.
     - `[Value <String[]>]`: A collection of property values.
-  - `[ParentFolderId <String>]`: The unique identifier for the message's parent mailFolder.
-  - `[ReceivedDateTime <DateTime?>]`: The date and time the message was received.
-  - `[ReplyTo <IMicrosoftGraphRecipient[]>]`: The email addresses to use when replying.
+  - `[ParentFolderId <String>]`: 
+  - `[ReceivedDateTime <DateTime?>]`: 
+  - `[ReplyTo <IMicrosoftGraphRecipient[]>]`: 
   - `[Sender <IMicrosoftGraphRecipient>]`: recipient
-  - `[SentDateTime <DateTime?>]`: The date and time the message was sent.
+  - `[SentDateTime <DateTime?>]`: 
   - `[SingleValueExtendedProperties <IMicrosoftGraphSingleValueLegacyExtendedProperty[]>]`: The collection of single-value extended properties defined for the message. Nullable.
     - `[Id <String>]`: Read-only.
     - `[Value <String>]`: A property value.
-  - `[Subject <String>]`: The subject of the message.
-  - `[ToRecipients <IMicrosoftGraphRecipient[]>]`: The To: recipients for the message.
+  - `[Subject <String>]`: 
+  - `[ToRecipients <IMicrosoftGraphRecipient[]>]`: 
   - `[UniqueBody <IMicrosoftGraphItemBody>]`: itemBody
-  - `[WebLink <String>]`: The URL to open the message in Outlook Web App.You can append an ispopout argument to the end of the URL to change how the message is displayed. If ispopout is not present or if it is set to 1, then the message is shown in a popout window. If ispopout is set to 0, then the browser will show the message in the Outlook Web App review pane.The message will open in the browser if you are logged in to your mailbox via Outlook Web App. You will be prompted to login if you are not already logged in with the browser.This URL can be accessed from within an iFrame.
+  - `[WebLink <String>]`: 
 
 ## RELATED LINKS
 

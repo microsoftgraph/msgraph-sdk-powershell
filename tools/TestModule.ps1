@@ -24,21 +24,17 @@ Import-Module -Name Pester
 Import-Module $AuthModulePSd1
 Import-Module -Name $modulePsd1.FullName
 
-# Replace AutoREST loadEnv.ps1 with our local scipt.
+# Replace AutoREST loadEnv.ps1 with our local script.
 Copy-Item -Path $LocalLoadEnvPS1 -Destination $ModuleTestsPath
 
 $PesterConfiguration = [PesterConfiguration]::Default
 $PesterConfiguration.Run.Path =  $ModuleTestsPath
-$PesterConfiguration.Run.Exit =  $true
+$PesterConfiguration.Run.PassThru =  $true
 $PesterConfiguration.CodeCoverage.Enabled  =  $true
 $PesterConfiguration.TestResult.Enabled = $true
 $PesterConfiguration.TestResult.OutputPath = (Join-Path $ModuleTestsPath "$moduleName-TestResults.xml")
-  
-try {
-    Invoke-Pester -Configuration $PesterConfiguration
-}
-catch {
-    throw $_
-}
+
+$TestResults = Invoke-Pester -Configuration $PesterConfiguration
+If ($TestResults.FailedCount -gt 0) { Write-Error "$($TestResults.FailedCount) tests failed." }
 
 Write-Host -ForegroundColor Green '-------------Done-------------'

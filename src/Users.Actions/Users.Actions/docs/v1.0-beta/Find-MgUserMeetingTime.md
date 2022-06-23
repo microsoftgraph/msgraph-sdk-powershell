@@ -12,34 +12,34 @@ Invoke action findMeetingTimes
 
 ## SYNTAX
 
-### FindExpanded1 (Default)
+### FindExpanded (Default)
 ```
 Find-MgUserMeetingTime -UserId <String> [-AdditionalProperties <Hashtable>]
  [-Attendees <IMicrosoftGraphAttendeeBase[]>] [-IsOrganizerOptional]
- [-LocationConstraint <IMicrosoftGraphLocationConstraint1>] [-MaxCandidates <Int32>]
+ [-LocationConstraint <IMicrosoftGraphLocationConstraint>] [-MaxCandidates <Int32>]
  [-MeetingDuration <TimeSpan>] [-MinimumAttendeePercentage <Double>] [-ReturnSuggestionReasons]
  [-TimeConstraint <IMicrosoftGraphTimeConstraint>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### Find1
+### Find
 ```
 Find-MgUserMeetingTime -UserId <String>
- -BodyParameter <IPathsSzpbzfUsersUserIdMicrosoftGraphFindmeetingtimesPostRequestbodyContentApplicationJsonSchema1>
+ -BodyParameter <IPathsSzpbzfUsersUserIdMicrosoftGraphFindmeetingtimesPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### FindViaIdentity1
+### FindViaIdentity
 ```
 Find-MgUserMeetingTime -InputObject <IUsersActionsIdentity>
- -BodyParameter <IPathsSzpbzfUsersUserIdMicrosoftGraphFindmeetingtimesPostRequestbodyContentApplicationJsonSchema1>
+ -BodyParameter <IPathsSzpbzfUsersUserIdMicrosoftGraphFindmeetingtimesPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### FindViaIdentityExpanded1
+### FindViaIdentityExpanded
 ```
 Find-MgUserMeetingTime -InputObject <IUsersActionsIdentity> [-AdditionalProperties <Hashtable>]
  [-Attendees <IMicrosoftGraphAttendeeBase[]>] [-IsOrganizerOptional]
- [-LocationConstraint <IMicrosoftGraphLocationConstraint1>] [-MaxCandidates <Int32>]
+ [-LocationConstraint <IMicrosoftGraphLocationConstraint>] [-MaxCandidates <Int32>]
  [-MeetingDuration <TimeSpan>] [-MinimumAttendeePercentage <Double>] [-ReturnSuggestionReasons]
  [-TimeConstraint <IMicrosoftGraphTimeConstraint>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -49,24 +49,6 @@ Invoke action findMeetingTimes
 
 ## EXAMPLES
 
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
 ## PARAMETERS
 
 ### -AdditionalProperties
@@ -74,7 +56,7 @@ Additional Parameters
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: FindExpanded1, FindViaIdentityExpanded1
+Parameter Sets: FindExpanded, FindViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -86,11 +68,11 @@ Accept wildcard characters: False
 
 ### -Attendees
 .
-To construct, see NOTES section for ATTENDEES properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for ATTENDEES properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAttendeeBase[]
-Parameter Sets: FindExpanded1, FindViaIdentityExpanded1
+Parameter Sets: FindExpanded, FindViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -102,11 +84,11 @@ Accept wildcard characters: False
 
 ### -BodyParameter
 .
-To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPathsSzpbzfUsersUserIdMicrosoftGraphFindmeetingtimesPostRequestbodyContentApplicationJsonSchema1
-Parameter Sets: Find1, FindViaIdentity1
+Type: Microsoft.Graph.PowerShell.Models.IPathsSzpbzfUsersUserIdMicrosoftGraphFindmeetingtimesPostRequestbodyContentApplicationJsonSchema
+Parameter Sets: Find, FindViaIdentity
 Aliases:
 
 Required: True
@@ -118,11 +100,11 @@ Accept wildcard characters: False
 
 ### -InputObject
 Identity Parameter
-To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
-Parameter Sets: FindViaIdentity1, FindViaIdentityExpanded1
+Parameter Sets: FindViaIdentity, FindViaIdentityExpanded
 Aliases:
 
 Required: True
@@ -137,7 +119,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
-Parameter Sets: FindExpanded1, FindViaIdentityExpanded1
+Parameter Sets: FindExpanded, FindViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -149,11 +131,11 @@ Accept wildcard characters: False
 
 ### -LocationConstraint
 locationConstraint
-To construct, see NOTES section for LOCATIONCONSTRAINT properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for LOCATIONCONSTRAINT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphLocationConstraint1
-Parameter Sets: FindExpanded1, FindViaIdentityExpanded1
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphLocationConstraint
+Parameter Sets: FindExpanded, FindViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -168,7 +150,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.Int32
-Parameter Sets: FindExpanded1, FindViaIdentityExpanded1
+Parameter Sets: FindExpanded, FindViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -183,7 +165,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.TimeSpan
-Parameter Sets: FindExpanded1, FindViaIdentityExpanded1
+Parameter Sets: FindExpanded, FindViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -198,7 +180,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.Double
-Parameter Sets: FindExpanded1, FindViaIdentityExpanded1
+Parameter Sets: FindExpanded, FindViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -213,7 +195,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
-Parameter Sets: FindExpanded1, FindViaIdentityExpanded1
+Parameter Sets: FindExpanded, FindViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -225,11 +207,11 @@ Accept wildcard characters: False
 
 ### -TimeConstraint
 timeConstraint
-To construct, see NOTES section for TIMECONSTRAINT properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for TIMECONSTRAINT properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTimeConstraint
-Parameter Sets: FindExpanded1, FindViaIdentityExpanded1
+Parameter Sets: FindExpanded, FindViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -244,7 +226,7 @@ key: id of user
 
 ```yaml
 Type: System.String
-Parameter Sets: Find1, FindExpanded1
+Parameter Sets: Find, FindExpanded
 Aliases:
 
 Required: True
@@ -290,13 +272,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPathsSzpbzfUsersUserIdMicrosoftGraphFindmeetingtimesPostRequestbodyContentApplicationJsonSchema1
+### Microsoft.Graph.PowerShell.Models.IPathsSzpbzfUsersUserIdMicrosoftGraphFindmeetingtimesPostRequestbodyContentApplicationJsonSchema
 
 ### Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMeetingTimeSuggestionsResult1
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMeetingTimeSuggestionsResult
 
 ## NOTES
 
@@ -314,7 +296,7 @@ ATTENDEES <IMicrosoftGraphAttendeeBase[]>: .
     - `[Name <String>]`: The display name of the person or entity.
   - `[Type <String>]`: attendeeType
 
-BODYPARAMETER <IPathsSzpbzfUsersUserIdMicrosoftGraphFindmeetingtimesPostRequestbodyContentApplicationJsonSchema1>: .
+BODYPARAMETER <IPathsSzpbzfUsersUserIdMicrosoftGraphFindmeetingtimesPostRequestbodyContentApplicationJsonSchema>: .
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Attendees <IMicrosoftGraphAttendeeBase[]>]`: 
     - `[EmailAddress <IMicrosoftGraphEmailAddress>]`: emailAddress
@@ -323,15 +305,15 @@ BODYPARAMETER <IPathsSzpbzfUsersUserIdMicrosoftGraphFindmeetingtimesPostRequestb
       - `[Name <String>]`: The display name of the person or entity.
     - `[Type <String>]`: attendeeType
   - `[IsOrganizerOptional <Boolean?>]`: 
-  - `[LocationConstraint <IMicrosoftGraphLocationConstraint1>]`: locationConstraint
+  - `[LocationConstraint <IMicrosoftGraphLocationConstraint>]`: locationConstraint
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[IsRequired <Boolean?>]`: The client requests the service to include in the response a meeting location for the meeting. If this is true and all the resources are busy, findMeetingTimes will not return any meeting time suggestions. If this is false and all the resources are busy, findMeetingTimes would still look for meeting times without locations.
-    - `[Locations <IMicrosoftGraphLocationConstraintItem1[]>]`: Constraint information for one or more locations that the client requests for the meeting.
-      - `[Address <IMicrosoftGraphPhysicalAddress1>]`: physicalAddress
+    - `[Locations <IMicrosoftGraphLocationConstraintItem[]>]`: Constraint information for one or more locations that the client requests for the meeting.
+      - `[Address <IMicrosoftGraphPhysicalAddress>]`: physicalAddress
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[City <String>]`: The city.
         - `[CountryOrRegion <String>]`: The country or region. It's a free-format string value, for example, 'United States'.
-        - `[PostOfficeBox <String>]`: 
+        - `[PostOfficeBox <String>]`: The post office box number.
         - `[PostalCode <String>]`: The postal code.
         - `[State <String>]`: The state.
         - `[Street <String>]`: The street.
@@ -366,10 +348,15 @@ BODYPARAMETER <IPathsSzpbzfUsersUserIdMicrosoftGraphFindmeetingtimesPostRequestb
       - `[Start <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
 
 INPUTOBJECT <IUsersActionsIdentity>: Identity Parameter
+  - `[AccessReviewInstanceDecisionItemId <String>]`: key: id of accessReviewInstanceDecisionItem
   - `[AccessReviewInstanceId <String>]`: key: id of accessReviewInstance
+  - `[AccessReviewStageId <String>]`: key: id of accessReviewStage
   - `[AppLogCollectionRequestId <String>]`: key: id of appLogCollectionRequest
   - `[AuthenticationMethodId <String>]`: key: id of authenticationMethod
+  - `[BaseTaskId <String>]`: key: id of baseTask
+  - `[BaseTaskListId <String>]`: key: id of baseTaskList
   - `[CalendarId <String>]`: key: id of calendar
+  - `[CloudPcId <String>]`: key: id of cloudPC
   - `[DeviceEnrollmentConfigurationId <String>]`: key: id of deviceEnrollmentConfiguration
   - `[DeviceLogCollectionResponseId <String>]`: key: id of deviceLogCollectionResponse
   - `[EventId <String>]`: key: id of event
@@ -385,18 +372,20 @@ INPUTOBJECT <IUsersActionsIdentity>: Identity Parameter
   - `[OutlookTaskFolderId <String>]`: key: id of outlookTaskFolder
   - `[OutlookTaskGroupId <String>]`: key: id of outlookTaskGroup
   - `[OutlookTaskId <String>]`: key: id of outlookTask
+  - `[SharedInsightId <String>]`: key: id of sharedInsight
+  - `[TrendingId <String>]`: key: id of trending
+  - `[UsedInsightId <String>]`: key: id of usedInsight
   - `[UserId <String>]`: key: id of user
-  - `[WindowsInformationProtectionDeviceRegistrationId <String>]`: key: id of windowsInformationProtectionDeviceRegistration
 
-LOCATIONCONSTRAINT <IMicrosoftGraphLocationConstraint1>: locationConstraint
+LOCATIONCONSTRAINT <IMicrosoftGraphLocationConstraint>: locationConstraint
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[IsRequired <Boolean?>]`: The client requests the service to include in the response a meeting location for the meeting. If this is true and all the resources are busy, findMeetingTimes will not return any meeting time suggestions. If this is false and all the resources are busy, findMeetingTimes would still look for meeting times without locations.
-  - `[Locations <IMicrosoftGraphLocationConstraintItem1[]>]`: Constraint information for one or more locations that the client requests for the meeting.
-    - `[Address <IMicrosoftGraphPhysicalAddress1>]`: physicalAddress
+  - `[Locations <IMicrosoftGraphLocationConstraintItem[]>]`: Constraint information for one or more locations that the client requests for the meeting.
+    - `[Address <IMicrosoftGraphPhysicalAddress>]`: physicalAddress
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[City <String>]`: The city.
       - `[CountryOrRegion <String>]`: The country or region. It's a free-format string value, for example, 'United States'.
-      - `[PostOfficeBox <String>]`: 
+      - `[PostOfficeBox <String>]`: The post office box number.
       - `[PostalCode <String>]`: The postal code.
       - `[State <String>]`: The state.
       - `[Street <String>]`: The street.

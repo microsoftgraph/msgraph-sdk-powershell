@@ -109,7 +109,7 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/DeviceManagement.Administration.yml"
     },
-    "/deviceManagement/groupPolicyCategories/{groupPolicyCategory-id}/children/$ref": {
+    "/deviceManagement/groupPolicyCategories/{groupPolicyCategory-id}/children/{groupPolicyCategory-id1}": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/DeviceManagement.Administration.yml"
     },
@@ -117,23 +117,15 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/DeviceManagement.Administration.yml"
     },
-    "/deviceManagement/groupPolicyCategories/{groupPolicyCategory-id}/definitionFile/$ref": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/DeviceManagement.Administration.yml"
-    },
     "/deviceManagement/groupPolicyCategories/{groupPolicyCategory-id}/definitions": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/DeviceManagement.Administration.yml"
     },
-    "/deviceManagement/groupPolicyCategories/{groupPolicyCategory-id}/definitions/$ref": {
+    "/deviceManagement/groupPolicyCategories/{groupPolicyCategory-id}/definitions/{groupPolicyDefinition-id}": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/DeviceManagement.Administration.yml"
     },
     "/deviceManagement/groupPolicyCategories/{groupPolicyCategory-id}/parent": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/DeviceManagement.Administration.yml"
-    },
-    "/deviceManagement/groupPolicyCategories/{groupPolicyCategory-id}/parent/$ref": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/DeviceManagement.Administration.yml"
     },
@@ -149,7 +141,7 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/DeviceManagement.Administration.yml"
     },
-    "/deviceManagement/groupPolicyDefinitionFiles/{groupPolicyDefinitionFile-id}/definitions/$ref": {
+    "/deviceManagement/groupPolicyDefinitionFiles/{groupPolicyDefinitionFile-id}/definitions/{groupPolicyDefinition-id}": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/DeviceManagement.Administration.yml"
     },
@@ -165,15 +157,55 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/DeviceManagement.Administration.yml"
     },
-    "/deviceManagement/groupPolicyDefinitions/{groupPolicyDefinition-id}/category/$ref": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/DeviceManagement.Administration.yml"
-    },
     "/deviceManagement/groupPolicyDefinitions/{groupPolicyDefinition-id}/definitionFile": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/DeviceManagement.Administration.yml"
     },
-    "/deviceManagement/groupPolicyDefinitions/{groupPolicyDefinition-id}/definitionFile/$ref": {
+    "/deviceManagement/groupPolicyDefinitions/{groupPolicyDefinition-id}/nextVersionDefinition": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Administration.yml"
+    },
+    "/deviceManagement/groupPolicyDefinitions/{groupPolicyDefinition-id}/nextVersionDefinition/category": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Administration.yml"
+    },
+    "/deviceManagement/groupPolicyDefinitions/{groupPolicyDefinition-id}/nextVersionDefinition/definitionFile": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Administration.yml"
+    },
+    "/deviceManagement/groupPolicyDefinitions/{groupPolicyDefinition-id}/nextVersionDefinition/presentations": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Administration.yml"
+    },
+    "/deviceManagement/groupPolicyDefinitions/{groupPolicyDefinition-id}/nextVersionDefinition/presentations/{groupPolicyPresentation-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Administration.yml"
+    },
+    "/deviceManagement/groupPolicyDefinitions/{groupPolicyDefinition-id}/nextVersionDefinition/presentations/{groupPolicyPresentation-id}/definition": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Administration.yml"
+    },
+    "/deviceManagement/groupPolicyDefinitions/{groupPolicyDefinition-id}/nextVersionDefinition/previousVersionDefinition": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Administration.yml"
+    },
+    "/deviceManagement/groupPolicyDefinitions/{groupPolicyDefinition-id}/nextVersionDefinition/previousVersionDefinition/category": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Administration.yml"
+    },
+    "/deviceManagement/groupPolicyDefinitions/{groupPolicyDefinition-id}/nextVersionDefinition/previousVersionDefinition/definitionFile": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Administration.yml"
+    },
+    "/deviceManagement/groupPolicyDefinitions/{groupPolicyDefinition-id}/nextVersionDefinition/previousVersionDefinition/presentations": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Administration.yml"
+    },
+    "/deviceManagement/groupPolicyDefinitions/{groupPolicyDefinition-id}/nextVersionDefinition/previousVersionDefinition/presentations/{groupPolicyPresentation-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Administration.yml"
+    },
+    "/deviceManagement/groupPolicyDefinitions/{groupPolicyDefinition-id}/nextVersionDefinition/previousVersionDefinition/presentations/{groupPolicyPresentation-id}/definition": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/DeviceManagement.Administration.yml"
     },
@@ -189,7 +221,51 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/DeviceManagement.Administration.yml"
     },
-    "/deviceManagement/groupPolicyDefinitions/{groupPolicyDefinition-id}/presentations/{groupPolicyPresentation-id}/definition/$ref": {
+    "/deviceManagement/groupPolicyDefinitions/{groupPolicyDefinition-id}/previousVersionDefinition": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Administration.yml"
+    },
+    "/deviceManagement/groupPolicyDefinitions/{groupPolicyDefinition-id}/previousVersionDefinition/category": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Administration.yml"
+    },
+    "/deviceManagement/groupPolicyDefinitions/{groupPolicyDefinition-id}/previousVersionDefinition/definitionFile": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Administration.yml"
+    },
+    "/deviceManagement/groupPolicyDefinitions/{groupPolicyDefinition-id}/previousVersionDefinition/nextVersionDefinition": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Administration.yml"
+    },
+    "/deviceManagement/groupPolicyDefinitions/{groupPolicyDefinition-id}/previousVersionDefinition/nextVersionDefinition/category": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Administration.yml"
+    },
+    "/deviceManagement/groupPolicyDefinitions/{groupPolicyDefinition-id}/previousVersionDefinition/nextVersionDefinition/definitionFile": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Administration.yml"
+    },
+    "/deviceManagement/groupPolicyDefinitions/{groupPolicyDefinition-id}/previousVersionDefinition/nextVersionDefinition/presentations": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Administration.yml"
+    },
+    "/deviceManagement/groupPolicyDefinitions/{groupPolicyDefinition-id}/previousVersionDefinition/nextVersionDefinition/presentations/{groupPolicyPresentation-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Administration.yml"
+    },
+    "/deviceManagement/groupPolicyDefinitions/{groupPolicyDefinition-id}/previousVersionDefinition/nextVersionDefinition/presentations/{groupPolicyPresentation-id}/definition": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Administration.yml"
+    },
+    "/deviceManagement/groupPolicyDefinitions/{groupPolicyDefinition-id}/previousVersionDefinition/presentations": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Administration.yml"
+    },
+    "/deviceManagement/groupPolicyDefinitions/{groupPolicyDefinition-id}/previousVersionDefinition/presentations/{groupPolicyPresentation-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Administration.yml"
+    },
+    "/deviceManagement/groupPolicyDefinitions/{groupPolicyDefinition-id}/previousVersionDefinition/presentations/{groupPolicyPresentation-id}/definition": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/DeviceManagement.Administration.yml"
     },
@@ -309,7 +385,7 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/DeviceManagement.Administration.yml"
     },
-    "/deviceManagement/roleAssignments/{deviceAndAppManagementRoleAssignment-id}/roleScopeTags/$ref": {
+    "/deviceManagement/roleAssignments/{deviceAndAppManagementRoleAssignment-id}/roleScopeTags/{roleScopeTag-id}": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/DeviceManagement.Administration.yml"
     },
@@ -330,10 +406,6 @@
       "originalLocation": "/openApiDocs/beta/DeviceManagement.Administration.yml"
     },
     "/deviceManagement/roleDefinitions/{roleDefinition-id}/roleAssignments/{roleAssignment-id}/roleDefinition": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/DeviceManagement.Administration.yml"
-    },
-    "/deviceManagement/roleDefinitions/{roleDefinition-id}/roleAssignments/{roleAssignment-id}/roleDefinition/$ref": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/DeviceManagement.Administration.yml"
     },
@@ -381,10 +453,6 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/DeviceManagement.Administration.yml"
     },
-    "/deviceManagement/termsAndConditions/{termsAndConditions-id}/acceptanceStatuses/{termsAndConditionsAcceptanceStatus-id}/termsAndConditions/$ref": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/DeviceManagement.Administration.yml"
-    },
     "/deviceManagement/termsAndConditions/{termsAndConditions-id}/assignments": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/DeviceManagement.Administration.yml"
@@ -405,15 +473,115 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/DeviceManagement.Administration.yml"
     },
-    "/deviceManagement/termsAndConditions/{termsAndConditions-id}/groupAssignments/{termsAndConditionsGroupAssignment-id}/termsAndConditions/$ref": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/DeviceManagement.Administration.yml"
-    },
     "/deviceManagement/userPfxCertificates": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/DeviceManagement.Administration.yml"
     },
     "/deviceManagement/userPfxCertificates/{userPFXCertificate-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Administration.yml"
+    },
+    "/deviceManagement/virtualEndpoint": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Administration.yml"
+    },
+    "/deviceManagement/virtualEndpoint/auditEvents": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Administration.yml"
+    },
+    "/deviceManagement/virtualEndpoint/auditEvents/{cloudPcAuditEvent-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Administration.yml"
+    },
+    "/deviceManagement/virtualEndpoint/cloudPCs": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Administration.yml"
+    },
+    "/deviceManagement/virtualEndpoint/cloudPCs/{cloudPC-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Administration.yml"
+    },
+    "/deviceManagement/virtualEndpoint/deviceImages": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Administration.yml"
+    },
+    "/deviceManagement/virtualEndpoint/deviceImages/{cloudPcDeviceImage-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Administration.yml"
+    },
+    "/deviceManagement/virtualEndpoint/galleryImages": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Administration.yml"
+    },
+    "/deviceManagement/virtualEndpoint/galleryImages/{cloudPcGalleryImage-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Administration.yml"
+    },
+    "/deviceManagement/virtualEndpoint/onPremisesConnections": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Administration.yml"
+    },
+    "/deviceManagement/virtualEndpoint/onPremisesConnections/{cloudPcOnPremisesConnection-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Administration.yml"
+    },
+    "/deviceManagement/virtualEndpoint/organizationSettings": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Administration.yml"
+    },
+    "/deviceManagement/virtualEndpoint/provisioningPolicies": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Administration.yml"
+    },
+    "/deviceManagement/virtualEndpoint/provisioningPolicies/{cloudPcProvisioningPolicy-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Administration.yml"
+    },
+    "/deviceManagement/virtualEndpoint/provisioningPolicies/{cloudPcProvisioningPolicy-id}/assignments": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Administration.yml"
+    },
+    "/deviceManagement/virtualEndpoint/provisioningPolicies/{cloudPcProvisioningPolicy-id}/assignments/{cloudPcProvisioningPolicyAssignment-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Administration.yml"
+    },
+    "/deviceManagement/virtualEndpoint/servicePlans": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Administration.yml"
+    },
+    "/deviceManagement/virtualEndpoint/servicePlans/{cloudPcServicePlan-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Administration.yml"
+    },
+    "/deviceManagement/virtualEndpoint/snapshots": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Administration.yml"
+    },
+    "/deviceManagement/virtualEndpoint/snapshots/{cloudPcSnapshot-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Administration.yml"
+    },
+    "/deviceManagement/virtualEndpoint/supportedRegions": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Administration.yml"
+    },
+    "/deviceManagement/virtualEndpoint/supportedRegions/{cloudPcSupportedRegion-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Administration.yml"
+    },
+    "/deviceManagement/virtualEndpoint/userSettings": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Administration.yml"
+    },
+    "/deviceManagement/virtualEndpoint/userSettings/{cloudPcUserSetting-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Administration.yml"
+    },
+    "/deviceManagement/virtualEndpoint/userSettings/{cloudPcUserSetting-id}/assignments": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Administration.yml"
+    },
+    "/deviceManagement/virtualEndpoint/userSettings/{cloudPcUserSetting-id}/assignments/{cloudPcUserSettingAssignment-id}": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/DeviceManagement.Administration.yml"
     }

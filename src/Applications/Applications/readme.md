@@ -47,30 +47,15 @@ directive:
       subject: (Application|ServicePrincipal)SynchronizationJobCredentials
       variant: Validate1|ValidateExpanded1|ValidateViaIdentity1|ValidateViaIdentityExpanded1
     remove: true
+  - where:
+      verb: Get
+      subject: (Application|ServicePrincipal)AvailableExtensionProperty
+    remove: true
 # Alias then rename cmdlets to avoid breaking change.
   - where:
-      subject: ^(ServicePrincipal|Application)(Member|TransitiveMember|CreatedOnBehalf)$
+      subject: ^((ServicePrincipal|Application)(Member|TransitiveMember|CreatedOnBehalf))Of$
     set:
-      alias: ${verb}-Mg${subject}
-  - where:
-      subject: ^(ServicePrincipal|Application)(Member|TransitiveMember|CreatedOnBehalf)$
-    set:
-      subject: $1$2Of
-# Rename wrongly named cmdlets
-  - where:
-      verb: Get
-      subject: (^Application$)
-      variant: Get2|Get3|GetExpanded|GetExpanded1
-    set:
-      verb: Get
-      subject: $1ById
-  - where:
-      verb: Get
-      subject: (^ServicePrincipal$)
-      variant: Get1|Get3|GetExpanded|GetExpanded1
-    set:
-      verb: Get
-      subject: $1ById
+      alias: ${verb}-Mg$1
 # Rename cmdlets with duplicates in their name.
   - where:
       subject: ^(OnPremisPublishingProfile)(\1)+
@@ -81,15 +66,15 @@ directive:
       subject: ^OnPremis(PublishingProfile.*)$
     set:
       subject: OnPremise$1
-# Fix cmdlet name
+# Singularize credentials.
   - where:
-      subject: (^OnPremisePublishingProfileConnectorMember$)
+      subject: (.*)(FederatedIdentityCredential)s(.*)
     set:
-      subject: $1Of
+      subject: $1$2$3
 ```
 ### Versioning
 
 ``` yaml
-module-version: 1.6.0
+module-version: 1.10.0
 release-notes: See https://aka.ms/GraphPowerShell-Release.
 ```

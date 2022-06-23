@@ -1,0 +1,70 @@
+{
+  "Invoke-MgQuerySearch+[NoContext]+[NoScenario]+$POST+https://graph.microsoft.com/v1.0/search/microsoft.graph.query+1": {
+    "Request": {
+      "Method": "POST",
+      "RequestUri": "https://graph.microsoft.com/v1.0/search/microsoft.graph.query",
+      "Content": "{\r\n  \"requests\": [\r\n    {\r\n      \"contentSources\": [ \"/external/connections/connectionfriendlyname\" ],\r\n      \"entityTypes\": [ \"externalItem\" ],\r\n      \"fields\": [ \"title\", \"description\" ],\r\n      \"from\": 0,\r\n      \"size\": 25,\r\n      \"query\": {\r\n        \"queryString\": \"contoso product\"\r\n      }\r\n    }\r\n  ]\r\n}",
+      "Headers": {},
+      "ContentHeaders": {
+        "Content-Type": ["application/json"],
+        "Content-Length": ["310"]
+      }
+    },
+    "Response": {
+      "StatusCode": 200,
+      "Headers": {
+        "Transfer-Encoding": ["chunked"],
+        "Vary": ["Accept-Encoding"],
+        "Strict-Transport-Security": ["max-age=31536000"],
+        "request-id": ["08340636-e3fd-401f-b79f-8fd69bf15378"],
+        "client-request-id": ["08340636-e3fd-401f-b79f-8fd69bf15378"],
+        "x-ms-ags-diagnostic": [
+          "{\"ServerInfo\":{\"DataCenter\":\"West US 2\",\"Slice\":\"E\",\"Ring\":\"1\",\"ScaleUnit\":\"000\",\"RoleInstance\":\"CO1PEPF00000107\"}}"
+        ],
+        "WWW-Authenticate": [
+          "Bearer realm=\"\", authorization_uri=\"https://login.microsoftonline.com/common/oauth2/authorize\", client_id=\"00000003-0000-0000-c000-000000000000\""
+        ],
+        "Date": ["Tue, 29 Mar 2022 22:50:20 GMT"]
+      },
+      "ContentHeaders": {
+        "Content-Type": ["application/json"],
+        "Content-Encoding": ["gzip"]
+      },
+      "Content": "{\r\"value\":[\r{\r\"searchTerms\":[\r\"searchTerms-value\"\r],\r\"hitsContainers\":[\r{\r\"hits\":[\r{\r\"hitId\":\"1\",\r\"rank\":1,\r\"summary\":\"_summary-value\",\r\"resource\":\"Thesourcefieldwillcontaintheunderlyinggraphentitypartoftheresponse\"\r}\r],\r\"total\":47,\r\"moreResultsAvailable\":true\r}\r]\r}\r]\r}"
+    }
+  },
+  "Invoke-MgQuerySearch+[NoContext]+[NoScenario]+$POST+https://graph.microsoft.com/v1.0/search/microsoft.graph.query+2": {
+    "Request": {
+      "Method": "POST",
+      "RequestUri": "https://graph.microsoft.com/v1.0/search/microsoft.graph.query",
+      "Content": "{\r\n  \"requests\": [\r\n    {\r\n      \"contentSources\": [ \"/external/connections/connectionfriendlyname\" ],\r\n      \"entityTypes\": [ \"externalItem\" ],\r\n      \"fields\": [ \"title\", \"description\" ],\r\n      \"from\": 0,\r\n      \"size\": 25,\r\n      \"query\": {\r\n        \"queryString\": \"contoso product\"\r\n      }\r\n    }\r\n  ]\r\n}",
+      "Headers": {},
+      "ContentHeaders": {
+        "Content-Type": ["application/json"],
+        "Content-Length": ["310"]
+      }
+    },
+    "Response": {
+      "StatusCode": 200,
+      "Headers": {
+        "Transfer-Encoding": ["chunked"],
+        "Vary": ["Accept-Encoding"],
+        "Strict-Transport-Security": ["max-age=31536000"],
+        "request-id": ["4db8f8df-c8d5-4117-bc7f-10bc3cb66c8b"],
+        "client-request-id": ["4db8f8df-c8d5-4117-bc7f-10bc3cb66c8b"],
+        "x-ms-ags-diagnostic": [
+          "{\"ServerInfo\":{\"DataCenter\":\"West US 2\",\"Slice\":\"E\",\"Ring\":\"1\",\"ScaleUnit\":\"000\",\"RoleInstance\":\"CO1PEPF00001821\"}}"
+        ],
+        "WWW-Authenticate": [
+          "Bearer realm=\"\", authorization_uri=\"https://login.microsoftonline.com/common/oauth2/authorize\", client_id=\"00000003-0000-0000-c000-000000000000\""
+        ],
+        "Date": ["Tue, 29 Mar 2022 22:50:20 GMT"]
+      },
+      "ContentHeaders": {
+        "Content-Type": ["application/json"],
+        "Content-Encoding": ["gzip"]
+      },
+      "Content": "{\r\"value\":[\r{\r\"searchTerms\":[\r\"searchTerms-value\"\r],\r\"hitsContainers\":[\r{\r\"hits\":[\r{\r\"hitId\":\"1\",\r\"rank\":1,\r\"summary\":\"_summary-value\",\r\"resource\":\"Thesourcefieldwillcontaintheunderlyinggraphentitypartoftheresponse\"\r}\r],\r\"total\":47,\r\"moreResultsAvailable\":true\r}\r]\r}\r]\r}"
+    }
+  }
+}

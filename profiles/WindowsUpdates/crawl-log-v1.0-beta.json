@@ -153,6 +153,14 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/WindowsUpdates.yml"
     },
+    "/admin/windows/updates/resourceConnections": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/WindowsUpdates.yml"
+    },
+    "/admin/windows/updates/resourceConnections/{resourceConnection-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/WindowsUpdates.yml"
+    },
     "/admin/windows/updates/updatableAssets": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/WindowsUpdates.yml"

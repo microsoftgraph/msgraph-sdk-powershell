@@ -77,24 +77,6 @@ Update entity in programControls
 
 ## EXAMPLES
 
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
 ## PARAMETERS
 
 ### -AdditionalProperties
@@ -114,7 +96,7 @@ Accept wildcard characters: False
 
 ### -BodyParameter
 programControl
-To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphProgramControl
@@ -129,7 +111,8 @@ Accept wildcard characters: False
 ```
 
 ### -ControlId
-.
+The controlId of the control, in particular the identifier of an access review.
+Required on create.
 
 ```yaml
 Type: System.String
@@ -144,7 +127,8 @@ Accept wildcard characters: False
 ```
 
 ### -ControlTypeId
-.
+The programControlType identifies the type of program control - for example, a control linking to guest access reviews.
+Required on create.
 
 ```yaml
 Type: System.String
@@ -159,7 +143,7 @@ Accept wildcard characters: False
 ```
 
 ### -CreatedDateTime
-.
+The creation date and time of the program control.
 
 ```yaml
 Type: System.DateTime
@@ -174,7 +158,7 @@ Accept wildcard characters: False
 ```
 
 ### -DisplayName
-.
+The name of the control.
 
 ```yaml
 Type: System.String
@@ -205,7 +189,7 @@ Accept wildcard characters: False
 
 ### -InputObject
 Identity Parameter
-To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
@@ -221,7 +205,7 @@ Accept wildcard characters: False
 
 ### -Owner
 userIdentity
-To construct, see NOTES section for OWNER properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for OWNER properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserIdentity
@@ -252,7 +236,7 @@ Accept wildcard characters: False
 
 ### -Program
 program
-To construct, see NOTES section for PROGRAM properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for PROGRAM properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphProgram
@@ -297,7 +281,8 @@ Accept wildcard characters: False
 ```
 
 ### -ProgramId1
-.
+The programId of the program this control is a part of.
+Required on create.
 
 ```yaml
 Type: System.String
@@ -313,7 +298,7 @@ Accept wildcard characters: False
 
 ### -Resource
 programResource
-To construct, see NOTES section for RESOURCE properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for RESOURCE properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphProgramResource
@@ -328,7 +313,7 @@ Accept wildcard characters: False
 ```
 
 ### -Status
-.
+The life cycle status of the control.
 
 ```yaml
 Type: System.String
@@ -398,10 +383,10 @@ To create the parameters described below, construct a hash table containing the 
 BODYPARAMETER <IMicrosoftGraphProgramControl>: programControl
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: Read-only.
-  - `[ControlId <String>]`: 
-  - `[ControlTypeId <String>]`: 
-  - `[CreatedDateTime <DateTime?>]`: 
-  - `[DisplayName <String>]`: 
+  - `[ControlId <String>]`: The controlId of the control, in particular the identifier of an access review. Required on create.
+  - `[ControlTypeId <String>]`: The programControlType identifies the type of program control - for example, a control linking to guest access reviews. Required on create.
+  - `[CreatedDateTime <DateTime?>]`: The creation date and time of the program control.
+  - `[DisplayName <String>]`: The name of the control.
   - `[Owner <IMicrosoftGraphUserIdentity>]`: userIdentity
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[DisplayName <String>]`: The identity's display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
@@ -411,16 +396,16 @@ BODYPARAMETER <IMicrosoftGraphProgramControl>: programControl
   - `[Program <IMicrosoftGraphProgram>]`: program
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Id <String>]`: Read-only.
-    - `[Controls <IMicrosoftGraphProgramControl[]>]`: 
-    - `[Description <String>]`: 
-    - `[DisplayName <String>]`: 
-  - `[ProgramId <String>]`: 
+    - `[Controls <IMicrosoftGraphProgramControl[]>]`: Controls associated with the program.
+    - `[Description <String>]`: The description of the program.
+    - `[DisplayName <String>]`: The name of the program.  Required on create.
+  - `[ProgramId <String>]`: The programId of the program this control is a part of. Required on create.
   - `[Resource <IMicrosoftGraphProgramResource>]`: programResource
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[DisplayName <String>]`: The identity's display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
     - `[Id <String>]`: Unique identifier for the identity.
-    - `[Type <String>]`: 
-  - `[Status <String>]`: 
+    - `[Type <String>]`: Type of the resource, indicating whether it is a group or an app.
+  - `[Status <String>]`: The life cycle status of the control.
 
 INPUTOBJECT <IIdentityGovernanceIdentity>: Identity Parameter
   - `[AccessPackageAssignmentId <String>]`: key: id of accessPackageAssignment
@@ -429,28 +414,43 @@ INPUTOBJECT <IIdentityGovernanceIdentity>: Identity Parameter
   - `[AccessPackageAssignmentResourceRoleId <String>]`: key: id of accessPackageAssignmentResourceRole
   - `[AccessPackageCatalogId <String>]`: key: id of accessPackageCatalog
   - `[AccessPackageId <String>]`: key: id of accessPackage
+  - `[AccessPackageResourceEnvironmentId <String>]`: key: id of accessPackageResourceEnvironment
   - `[AccessPackageResourceId <String>]`: key: id of accessPackageResource
   - `[AccessPackageResourceRequestId <String>]`: key: id of accessPackageResourceRequest
   - `[AccessPackageResourceRoleId <String>]`: key: id of accessPackageResourceRole
   - `[AccessPackageResourceRoleScopeId <String>]`: key: id of accessPackageResourceRoleScope
   - `[AccessPackageResourceScopeId <String>]`: key: id of accessPackageResourceScope
   - `[AccessReviewDecisionId <String>]`: key: id of accessReviewDecision
+  - `[AccessReviewHistoryDefinitionId <String>]`: key: id of accessReviewHistoryDefinition
+  - `[AccessReviewHistoryInstanceId <String>]`: key: id of accessReviewHistoryInstance
   - `[AccessReviewId <String>]`: key: id of accessReview
   - `[AccessReviewId1 <String>]`: key: id of accessReview
+  - `[AccessReviewInstanceDecisionItemId <String>]`: key: id of accessReviewInstanceDecisionItem
+  - `[AccessReviewInstanceDecisionItemId1 <String>]`: key: id of accessReviewInstanceDecisionItem
   - `[AccessReviewInstanceId <String>]`: key: id of accessReviewInstance
   - `[AccessReviewReviewerId <String>]`: key: id of accessReviewReviewer
   - `[AccessReviewScheduleDefinitionId <String>]`: key: id of accessReviewScheduleDefinition
+  - `[AccessReviewStageId <String>]`: key: id of accessReviewStage
   - `[AgreementAcceptanceId <String>]`: key: id of agreementAcceptance
   - `[AgreementFileLocalizationId <String>]`: key: id of agreementFileLocalization
+  - `[AgreementFileVersionId <String>]`: key: id of agreementFileVersion
   - `[AgreementId <String>]`: key: id of agreement
+  - `[AppConsentRequestId <String>]`: key: id of appConsentRequest
+  - `[ApprovalId <String>]`: key: id of approval
+  - `[ApprovalStageId <String>]`: key: id of approvalStage
+  - `[ApprovalStepId <String>]`: key: id of approvalStep
   - `[BusinessFlowTemplateId <String>]`: key: id of businessFlowTemplate
   - `[ConnectedOrganizationId <String>]`: key: id of connectedOrganization
+  - `[CustomAccessPackageWorkflowExtensionId <String>]`: key: id of customAccessPackageWorkflowExtension
+  - `[CustomExtensionHandlerId <String>]`: key: id of customExtensionHandler
   - `[DirectoryObjectId <String>]`: key: id of directoryObject
+  - `[GovernanceInsightId <String>]`: key: id of governanceInsight
   - `[GovernanceResourceId <String>]`: key: id of governanceResource
   - `[GovernanceRoleAssignmentId <String>]`: key: id of governanceRoleAssignment
   - `[GovernanceRoleAssignmentRequestId <String>]`: key: id of governanceRoleAssignmentRequest
   - `[GovernanceRoleDefinitionId <String>]`: key: id of governanceRoleDefinition
   - `[GovernanceRoleSettingId <String>]`: key: id of governanceRoleSetting
+  - `[On <String>]`: Usage: on={on}
   - `[PrivilegedAccessId <String>]`: key: id of privilegedAccess
   - `[PrivilegedApprovalId <String>]`: key: id of privilegedApproval
   - `[PrivilegedOperationEventId <String>]`: key: id of privilegedOperationEvent
@@ -460,6 +460,7 @@ INPUTOBJECT <IIdentityGovernanceIdentity>: Identity Parameter
   - `[ProgramControlId <String>]`: key: id of programControl
   - `[ProgramControlTypeId <String>]`: key: id of programControlType
   - `[ProgramId <String>]`: key: id of program
+  - `[UserConsentRequestId <String>]`: key: id of userConsentRequest
   - `[UserId <String>]`: key: id of user
 
 OWNER <IMicrosoftGraphUserIdentity>: userIdentity
@@ -472,12 +473,12 @@ OWNER <IMicrosoftGraphUserIdentity>: userIdentity
 PROGRAM <IMicrosoftGraphProgram>: program
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: Read-only.
-  - `[Controls <IMicrosoftGraphProgramControl[]>]`: 
+  - `[Controls <IMicrosoftGraphProgramControl[]>]`: Controls associated with the program.
     - `[Id <String>]`: Read-only.
-    - `[ControlId <String>]`: 
-    - `[ControlTypeId <String>]`: 
-    - `[CreatedDateTime <DateTime?>]`: 
-    - `[DisplayName <String>]`: 
+    - `[ControlId <String>]`: The controlId of the control, in particular the identifier of an access review. Required on create.
+    - `[ControlTypeId <String>]`: The programControlType identifies the type of program control - for example, a control linking to guest access reviews. Required on create.
+    - `[CreatedDateTime <DateTime?>]`: The creation date and time of the program control.
+    - `[DisplayName <String>]`: The name of the control.
     - `[Owner <IMicrosoftGraphUserIdentity>]`: userIdentity
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[DisplayName <String>]`: The identity's display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
@@ -485,21 +486,21 @@ PROGRAM <IMicrosoftGraphProgram>: program
       - `[IPAddress <String>]`: Indicates the client IP address used by user performing the activity (audit log only).
       - `[UserPrincipalName <String>]`: The userPrincipalName attribute of the user.
     - `[Program <IMicrosoftGraphProgram>]`: program
-    - `[ProgramId <String>]`: 
+    - `[ProgramId <String>]`: The programId of the program this control is a part of. Required on create.
     - `[Resource <IMicrosoftGraphProgramResource>]`: programResource
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[DisplayName <String>]`: The identity's display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
       - `[Id <String>]`: Unique identifier for the identity.
-      - `[Type <String>]`: 
-    - `[Status <String>]`: 
-  - `[Description <String>]`: 
-  - `[DisplayName <String>]`: 
+      - `[Type <String>]`: Type of the resource, indicating whether it is a group or an app.
+    - `[Status <String>]`: The life cycle status of the control.
+  - `[Description <String>]`: The description of the program.
+  - `[DisplayName <String>]`: The name of the program.  Required on create.
 
 RESOURCE <IMicrosoftGraphProgramResource>: programResource
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[DisplayName <String>]`: The identity's display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
   - `[Id <String>]`: Unique identifier for the identity.
-  - `[Type <String>]`: 
+  - `[Type <String>]`: Type of the resource, indicating whether it is a group or an app.
 
 ## RELATED LINKS
 

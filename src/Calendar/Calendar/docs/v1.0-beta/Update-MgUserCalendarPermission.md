@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgUserCalendarPermission
 
 ## SYNOPSIS
-Update the navigation property calendarPermissions in users
+The permissions of the users with whom the calendar is shared.
 
 ## SYNTAX
 
@@ -67,27 +67,9 @@ Update-MgUserCalendarPermission -InputObject <ICalendarIdentity> [-AdditionalPro
 ```
 
 ## DESCRIPTION
-Update the navigation property calendarPermissions in users
+The permissions of the users with whom the calendar is shared.
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 
@@ -124,7 +106,7 @@ Accept wildcard characters: False
 
 ### -BodyParameter
 calendarPermission
-To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCalendarPermission
@@ -170,7 +152,7 @@ Accept wildcard characters: False
 
 ### -EmailAddress
 emailAddress
-To construct, see NOTES section for EMAILADDRESS properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for EMAILADDRESS properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEmailAddress
@@ -201,7 +183,7 @@ Accept wildcard characters: False
 
 ### -InputObject
 Identity Parameter
-To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.ICalendarIdentity

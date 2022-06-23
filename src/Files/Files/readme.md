@@ -39,10 +39,17 @@ subject-prefix: ''
 ``` yaml
 directive:
   - remove-path-by-operation: .*_(Create|Get|Update|Set|Delete)Activities$|.*\.activities.*$|shares\..*_createLink
+# Rename cmdlets
+  - where:
+      verb: Get
+      subject: ^(Group|User)(Drive)$
+      variant: ^Get$|^GetViaIdentity$|^Get2$|^GetViaIdentity2$
+    set:
+      subject: $1Default$2
 ```
 ### Versioning
 
 ``` yaml
-module-version: 1.6.0
+module-version: 1.10.0
 release-notes: See https://aka.ms/GraphPowerShell-Release.
 ```

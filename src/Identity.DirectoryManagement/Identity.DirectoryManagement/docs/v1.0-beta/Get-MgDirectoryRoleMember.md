@@ -8,51 +8,43 @@ schema: 2.0.0
 # Get-MgDirectoryRoleMember
 
 ## SYNOPSIS
-Get members from directoryRoles
+Users that are members of this directory role.
+HTTP Methods: GET, POST, DELETE.
+Read-only.
+Nullable.
+Supports $expand.
 
 ## SYNTAX
 
-### List (Default)
 ```
-Get-MgDirectoryRoleMember -DirectoryRoleId <String> [-Count] [-ExpandProperty <String[]>] [-Filter <String>]
+Get-MgDirectoryRoleMember -DirectoryRoleId <String> [-ExpandProperty <String[]>] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
- [-PageSize <Int32>] [<CommonParameters>]
-```
-
-### Get
-```
-Get-MgDirectoryRoleMember -DirectoryObjectId <String> -DirectoryRoleId <String> [-ExpandProperty <String[]>]
- [-Property <String[]>] [<CommonParameters>]
-```
-
-### GetViaIdentity
-```
-Get-MgDirectoryRoleMember -InputObject <IIdentityDirectoryManagementIdentity> [-ExpandProperty <String[]>]
- [-Property <String[]>] [<CommonParameters>]
+ [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Get members from directoryRoles
+Users that are members of this directory role.
+HTTP Methods: GET, POST, DELETE.
+Read-only.
+Nullable.
+Supports $expand.
 
 ## EXAMPLES
 
-### Example 1: {{ Add title here }}
+### Example 1: Get member from directory roles
 ```powershell
-PS C:\> {{ Add code here }}
+Get-MgDirectoryRoleMember -DirectoryRoleId 'c6bb44c1-73cc-48a1-a73c-b6a977084948'
 
-{{ Add output here }}
+Id                                   DeletedDateTime
+--                                   ---------------
+68550c41-18a3-495e-aa1d-cf628c171b48
+f890ceed-822a-4647-8748-73d88013ae9d
+5d5dff7a-d9cd-4bd3-a585-3d0ebbd58b69
+5fc5c052-8774-4258-8705-0b4ab3e9a2df
+7425a698-2aa8-4333-9352-04f52e3a4c9d
 ```
 
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
+This example gets the members of a directory role.
 
 ## PARAMETERS
 
@@ -61,7 +53,7 @@ List all pages.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
-Parameter Sets: List
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -71,30 +63,16 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Count
-Include count of items
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: List
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -DirectoryObjectId
-key: id of directoryObject
+### -CountVariable
+Specifies a count of the total number of items in a collection.
+By default, this variable will be set in the global scope.
 
 ```yaml
 Type: System.String
-Parameter Sets: Get
-Aliases:
+Parameter Sets: (All)
+Aliases: CV
 
-Required: True
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -106,7 +84,7 @@ key: id of directoryRole
 
 ```yaml
 Type: System.String
-Parameter Sets: Get, List
+Parameter Sets: (All)
 Aliases:
 
 Required: True
@@ -136,7 +114,7 @@ Filter items by property values
 
 ```yaml
 Type: System.String
-Parameter Sets: List
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -146,28 +124,12 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -InputObject
-Identity Parameter
-To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
-
-```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
-Parameter Sets: GetViaIdentity
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -PageSize
 Sets the page size of results.
 
 ```yaml
 Type: System.Int32
-Parameter Sets: List
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -197,7 +159,7 @@ Search items by search phrases
 
 ```yaml
 Type: System.String
-Parameter Sets: List
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -212,7 +174,7 @@ Skip the first n items
 
 ```yaml
 Type: System.Int32
-Parameter Sets: List
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -227,7 +189,7 @@ Order items by property values
 
 ```yaml
 Type: System.String[]
-Parameter Sets: List
+Parameter Sets: (All)
 Aliases: OrderBy
 
 Required: False
@@ -242,7 +204,7 @@ Show only the first n items
 
 ```yaml
 Type: System.Int32
-Parameter Sets: List
+Parameter Sets: (All)
 Aliases: Limit
 
 Required: False
@@ -257,8 +219,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDirectoryObject
@@ -266,32 +226,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## NOTES
 
 ALIASES
-
-COMPLEX PARAMETER PROPERTIES
-
-To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
-
-
-INPUTOBJECT <IIdentityDirectoryManagementIdentity>: Identity Parameter
-  - `[AdministrativeUnitId <String>]`: key: id of administrativeUnit
-  - `[CommandId <String>]`: key: id of command
-  - `[ContractId <String>]`: key: id of contract
-  - `[DeviceId <String>]`: key: id of device
-  - `[DirectoryObjectId <String>]`: key: id of directoryObject
-  - `[DirectoryRoleId <String>]`: key: id of directoryRole
-  - `[DirectoryRoleTemplateId <String>]`: key: id of directoryRoleTemplate
-  - `[DirectorySettingId <String>]`: key: id of directorySetting
-  - `[DirectorySettingTemplateId <String>]`: key: id of directorySettingTemplate
-  - `[DomainDnsRecordId <String>]`: key: id of domainDnsRecord
-  - `[DomainId <String>]`: key: id of domain
-  - `[ExtensionId <String>]`: key: id of extension
-  - `[FeatureRolloutPolicyId <String>]`: key: id of featureRolloutPolicy
-  - `[OrgContactId <String>]`: key: id of orgContact
-  - `[OrganizationId <String>]`: key: id of organization
-  - `[OrganizationalBrandingId <String>]`: key: id of organizationalBranding
-  - `[ScopedRoleMembershipId <String>]`: key: id of scopedRoleMembership
-  - `[SubscribedSkuId <String>]`: key: id of subscribedSku
-  - `[UserId <String>]`: key: id of user
 
 ## RELATED LINKS
 

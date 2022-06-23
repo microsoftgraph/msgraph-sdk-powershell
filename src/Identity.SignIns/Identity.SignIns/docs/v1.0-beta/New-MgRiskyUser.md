@@ -30,24 +30,6 @@ Add new entity to riskyUsers
 
 ## EXAMPLES
 
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
 ## PARAMETERS
 
 ### -AdditionalProperties
@@ -67,7 +49,7 @@ Accept wildcard characters: False
 
 ### -BodyParameter
 riskyUser
-To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphRiskyUser
@@ -83,7 +65,7 @@ Accept wildcard characters: False
 
 ### -History
 The activity related to user risk level change
-To construct, see NOTES section for HISTORY properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for HISTORY properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphRiskyUserHistoryItem[]
@@ -114,7 +96,7 @@ Accept wildcard characters: False
 
 ### -IsDeleted
 Indicates whether the user is deleted.
-Possible values are: true, false
+Possible values are: true, false.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -129,7 +111,7 @@ Accept wildcard characters: False
 ```
 
 ### -IsProcessing
-Indicates wehther a user's risky state is being processed by the backend
+Indicates whether a user's risky state is being processed by the backend.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -160,6 +142,8 @@ Accept wildcard characters: False
 
 ### -RiskLastUpdatedDateTime
 The date and time that the risky user was last updated.
+The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time.
+For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 
 ```yaml
 Type: System.DateTime
@@ -289,10 +273,10 @@ BODYPARAMETER <IMicrosoftGraphRiskyUser>: riskyUser
   - `[Id <String>]`: Read-only.
   - `[History <IMicrosoftGraphRiskyUserHistoryItem[]>]`: The activity related to user risk level change
     - `[History <IMicrosoftGraphRiskyUserHistoryItem[]>]`: The activity related to user risk level change
-    - `[IsDeleted <Boolean?>]`: Indicates whether the user is deleted. Possible values are: true, false
-    - `[IsProcessing <Boolean?>]`: Indicates wehther a user's risky state is being processed by the backend
+    - `[IsDeleted <Boolean?>]`: Indicates whether the user is deleted. Possible values are: true, false.
+    - `[IsProcessing <Boolean?>]`: Indicates whether a user's risky state is being processed by the backend.
     - `[RiskDetail <String>]`: riskDetail
-    - `[RiskLastUpdatedDateTime <DateTime?>]`: The date and time that the risky user was last updated.
+    - `[RiskLastUpdatedDateTime <DateTime?>]`: The date and time that the risky user was last updated.  The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
     - `[RiskLevel <String>]`: riskLevel
     - `[RiskState <String>]`: riskState
     - `[UserDisplayName <String>]`: Risky user display name.
@@ -305,10 +289,10 @@ BODYPARAMETER <IMicrosoftGraphRiskyUser>: riskyUser
       - `[RiskEventTypes <String[]>]`: The type of risk event detected.
     - `[InitiatedBy <String>]`: The id of actor that does the operation.
     - `[UserId <String>]`: The id of the user.
-  - `[IsDeleted <Boolean?>]`: Indicates whether the user is deleted. Possible values are: true, false
-  - `[IsProcessing <Boolean?>]`: Indicates wehther a user's risky state is being processed by the backend
+  - `[IsDeleted <Boolean?>]`: Indicates whether the user is deleted. Possible values are: true, false.
+  - `[IsProcessing <Boolean?>]`: Indicates whether a user's risky state is being processed by the backend.
   - `[RiskDetail <String>]`: riskDetail
-  - `[RiskLastUpdatedDateTime <DateTime?>]`: The date and time that the risky user was last updated.
+  - `[RiskLastUpdatedDateTime <DateTime?>]`: The date and time that the risky user was last updated.  The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
   - `[RiskLevel <String>]`: riskLevel
   - `[RiskState <String>]`: riskState
   - `[UserDisplayName <String>]`: Risky user display name.
@@ -316,10 +300,10 @@ BODYPARAMETER <IMicrosoftGraphRiskyUser>: riskyUser
 
 HISTORY <IMicrosoftGraphRiskyUserHistoryItem[]>: The activity related to user risk level change
   - `[History <IMicrosoftGraphRiskyUserHistoryItem[]>]`: The activity related to user risk level change
-  - `[IsDeleted <Boolean?>]`: Indicates whether the user is deleted. Possible values are: true, false
-  - `[IsProcessing <Boolean?>]`: Indicates wehther a user's risky state is being processed by the backend
+  - `[IsDeleted <Boolean?>]`: Indicates whether the user is deleted. Possible values are: true, false.
+  - `[IsProcessing <Boolean?>]`: Indicates whether a user's risky state is being processed by the backend.
   - `[RiskDetail <String>]`: riskDetail
-  - `[RiskLastUpdatedDateTime <DateTime?>]`: The date and time that the risky user was last updated.
+  - `[RiskLastUpdatedDateTime <DateTime?>]`: The date and time that the risky user was last updated.  The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
   - `[RiskLevel <String>]`: riskLevel
   - `[RiskState <String>]`: riskState
   - `[UserDisplayName <String>]`: Risky user display name.

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgPolicyIdentitySecurityDefaultEnforcementPolicy
 
 ## SYNOPSIS
-Update the navigation property identitySecurityDefaultsEnforcementPolicy in policies
+The policy that represents the security defaults that protect against common attacks.
 
 ## SYNTAX
 
@@ -22,32 +22,14 @@ Update-MgPolicyIdentitySecurityDefaultEnforcementPolicy [-AdditionalProperties <
 ### Update1
 ```
 Update-MgPolicyIdentitySecurityDefaultEnforcementPolicy
- -BodyParameter <IMicrosoftGraphIdentitySecurityDefaultsEnforcementPolicy> [-PassThru] [-Confirm] [-WhatIf]
+ -BodyParameter <IMicrosoftGraphIdentitySecurityDefaultsEnforcementPolicy1> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Update the navigation property identitySecurityDefaultsEnforcementPolicy in policies
+The policy that represents the security defaults that protect against common attacks.
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 
@@ -67,12 +49,11 @@ Accept wildcard characters: False
 ```
 
 ### -BodyParameter
-Represents an Azure Active Directory object.
-The directoryObject type is the base type for many other directory entity types.
-To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
+identitySecurityDefaultsEnforcementPolicy
+To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentitySecurityDefaultsEnforcementPolicy
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentitySecurityDefaultsEnforcementPolicy1
 Parameter Sets: Update1
 Aliases:
 
@@ -84,7 +65,8 @@ Accept wildcard characters: False
 ```
 
 ### -DeletedDateTime
-.
+Date and time when this object was deleted.
+Always null when the object hasn't been deleted.
 
 ```yaml
 Type: System.DateTime
@@ -100,6 +82,7 @@ Accept wildcard characters: False
 
 ### -Description
 Description for this policy.
+Required.
 
 ```yaml
 Type: System.String
@@ -115,6 +98,7 @@ Accept wildcard characters: False
 
 ### -DisplayName
 Display name for this policy.
+Required.
 
 ```yaml
 Type: System.String
@@ -209,7 +193,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentitySecurityDefaultsEnforcementPolicy
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentitySecurityDefaultsEnforcementPolicy1
 
 ## OUTPUTS
 
@@ -224,11 +208,11 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-BODYPARAMETER <IMicrosoftGraphIdentitySecurityDefaultsEnforcementPolicy>: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
+BODYPARAMETER <IMicrosoftGraphIdentitySecurityDefaultsEnforcementPolicy1>: identitySecurityDefaultsEnforcementPolicy
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Description <String>]`: Description for this policy.
-  - `[DisplayName <String>]`: Display name for this policy.
-  - `[DeletedDateTime <DateTime?>]`: 
+  - `[Description <String>]`: Description for this policy. Required.
+  - `[DisplayName <String>]`: Display name for this policy. Required.
+  - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
   - `[Id <String>]`: Read-only.
   - `[IsEnabled <Boolean?>]`: If set to true, Azure Active Directory security defaults is enabled for the tenant.
 

@@ -38,7 +38,7 @@ subject-prefix: ''
 
 ``` yaml
 directive:
-  - remove-path-by-operation: .*\.onenote\..*parent.*|.*\.calendarView.*|.*\.notebooks\.section.*|.*\.sectionGroups\.section.*|.*\.sections\.pages.*|.*\.calendar\.events\..*$|.*\.events\..*$
+  - remove-path-by-operation: groups\.groupLifecyclePolicies_.*$|groups\.team.*$|users\.joinedGroups.*$|groups\.sites\.onenote.*$|.*\.onenote\..*parent.*|.*\.calendarView.*|.*\.notebooks\.section.*|.*\.sectionGroups\.section.*|.*\.sections\.pages.*|.*\.calendar\.events\..*$|.*\.events\..*$
 # Remove cmdlets
   - where:
       verb: Test
@@ -46,9 +46,8 @@ directive:
       variant: Validate1|ValidateExpanded1|Validate3|ValidateExpanded3
     remove: true
   - where:
-      verb: Test
-      subject: ^GroupDynamicMembership$
-      variant: Evaluate1|EvaluateExpanded1
+      verb: Get
+      subject: (Group)AvailableExtensionProperty
     remove: true
 # Rename cmdlets
   - where:
@@ -56,29 +55,11 @@ directive:
     set:
       subject: $1
   - where:
-      verb: Get
-      subject: ^Group$
-      variant: Get1|GetExpanded|Get3|GetExpanded1
+      verb: Test
+      subject: ^(GroupDynamicMembership)$
+      variant: Evaluate1|EvaluateExpanded1
     set:
-      subject: GroupById
-  - where:
-      verb: Get
-      subject: ^GroupMember$
-      variant: ^Get$|^GetViaIdentity$|^List2$|^Get3$|^GetViaIdentity3$|^List5$
-    set:
-      subject: GroupMemberOf
-  - where:
-      verb: Get
-      subject: ^GroupMember$
-      variant: ^Get2$|^GetViaIdentity2$|^List1$|^Get5$|^GetViaIdentity5$|^List4$
-    set:
-      subject: GroupMemberWithLicenseError
-  - where:
-      verb: Get
-      subject: ^GroupTransitiveMember$
-      variant: ^Get$|^List$|^GetViaIdentity$|^Get2$|^List2$|^GetViaIdentity2$
-    set:
-      subject: GroupTransitiveMemberOf
+      subject: $1Rule
   - where:
       verb: Remove
       subject: ^(Group)(LifecyclePolicy)Group$
@@ -126,17 +107,13 @@ directive:
       subject: $1Content
 # Alias then rename cmdlets to avoid breaking change.
   - where:
-      subject: ^(Group)(CreatedOnBehalf)$
+      subject: ^((Group)(CreatedOnBehalf))Of$
     set:
-      alias: ${verb}-Mg${subject}
-  - where:
-      subject: ^(Group)(CreatedOnBehalf)$
-    set:
-      subject: $1$2Of
+      alias: ${verb}-Mg$1
 ```
 ### Versioning
 
 ``` yaml
-module-version: 1.6.0
+module-version: 1.10.0
 release-notes: See https://aka.ms/GraphPowerShell-Release.
 ```

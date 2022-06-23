@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgUserMailFolderMessageRule
 
 ## SYNOPSIS
-Update the navigation property messageRules in users
+The collection of rules that apply to the user's Inbox folder.
 
 ## SYNTAX
 
@@ -42,33 +42,15 @@ Update-MgUserMailFolderMessageRule -InputObject <IMailIdentity> [-Actions <IMicr
 ```
 
 ## DESCRIPTION
-Update the navigation property messageRules in users
+The collection of rules that apply to the user's Inbox folder.
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 
 ### -Actions
 messageRuleActions
-To construct, see NOTES section for ACTIONS properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for ACTIONS properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMessageRuleActions
@@ -99,7 +81,7 @@ Accept wildcard characters: False
 
 ### -BodyParameter
 messageRule
-To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMessageRule
@@ -115,7 +97,7 @@ Accept wildcard characters: False
 
 ### -Conditions
 messageRulePredicates
-To construct, see NOTES section for CONDITIONS properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for CONDITIONS properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMessageRulePredicates
@@ -146,7 +128,7 @@ Accept wildcard characters: False
 
 ### -Exceptions
 messageRulePredicates
-To construct, see NOTES section for EXCEPTIONS properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for EXCEPTIONS properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMessageRulePredicates
@@ -193,7 +175,7 @@ Accept wildcard characters: False
 
 ### -InputObject
 Identity Parameter
-To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMailIdentity

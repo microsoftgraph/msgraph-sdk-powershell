@@ -173,8 +173,13 @@ process {
         $PSBoundParameters['Filter'] = $Filter
         $null = $PSBoundParameters.Remove('DisplayNameContains')
     } elseif ($parameterSet -eq "ListByCatalogId") {
-
-        $Filter = "accessPackageCatalog/Id eq '{0}'" -f $CatalogId
+        # use "accessPackageCatalog/Id" for beta, "catalog/Id" for v1.0
+        $mgp = Get-MgProfile
+        if ($null -ne $mgp -and $mgp.Name -eq "beta") {
+            $Filter = "accessPackageCatalog/Id eq '{0}'" -f $CatalogId
+        } else {
+            $Filter = "catalog/Id eq '{0}'" -f $CatalogId
+        }
         $PSBoundParameters['Filter'] = $Filter
         $null = $PSBoundParameters.Remove('CatalogId')
     }

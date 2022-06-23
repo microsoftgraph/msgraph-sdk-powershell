@@ -12,27 +12,27 @@ Invoke action cancel
 
 ## SYNTAX
 
-### CancelExpanded (Default)
+### CancelExpanded1 (Default)
 ```
 Stop-MgUserEvent -EventId <String> -UserId <String> [-AdditionalProperties <Hashtable>] [-Comment <String>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### Cancel
+### Cancel1
 ```
 Stop-MgUserEvent -EventId <String> -UserId <String>
  -BodyParameter <IPaths1F7X6GlUsersUserIdEventsEventIdMicrosoftGraphCancelPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### CancelViaIdentity
+### CancelViaIdentity1
 ```
 Stop-MgUserEvent -InputObject <IUsersActionsIdentity>
  -BodyParameter <IPaths1F7X6GlUsersUserIdEventsEventIdMicrosoftGraphCancelPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### CancelViaIdentityExpanded
+### CancelViaIdentityExpanded1
 ```
 Stop-MgUserEvent -InputObject <IUsersActionsIdentity> [-AdditionalProperties <Hashtable>] [-Comment <String>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -43,24 +43,6 @@ Invoke action cancel
 
 ## EXAMPLES
 
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
 ## PARAMETERS
 
 ### -AdditionalProperties
@@ -68,7 +50,7 @@ Additional Parameters
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: CancelExpanded, CancelViaIdentityExpanded
+Parameter Sets: CancelExpanded1, CancelViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -80,11 +62,11 @@ Accept wildcard characters: False
 
 ### -BodyParameter
 .
-To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IPaths1F7X6GlUsersUserIdEventsEventIdMicrosoftGraphCancelPostRequestbodyContentApplicationJsonSchema
-Parameter Sets: Cancel, CancelViaIdentity
+Parameter Sets: Cancel1, CancelViaIdentity1
 Aliases:
 
 Required: True
@@ -99,7 +81,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.String
-Parameter Sets: CancelExpanded, CancelViaIdentityExpanded
+Parameter Sets: CancelExpanded1, CancelViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -114,7 +96,7 @@ key: id of event
 
 ```yaml
 Type: System.String
-Parameter Sets: Cancel, CancelExpanded
+Parameter Sets: Cancel1, CancelExpanded1
 Aliases:
 
 Required: True
@@ -126,11 +108,11 @@ Accept wildcard characters: False
 
 ### -InputObject
 Identity Parameter
-To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
-Parameter Sets: CancelViaIdentity, CancelViaIdentityExpanded
+Parameter Sets: CancelViaIdentity1, CancelViaIdentityExpanded1
 Aliases:
 
 Required: True
@@ -160,7 +142,7 @@ key: id of user
 
 ```yaml
 Type: System.String
-Parameter Sets: Cancel, CancelExpanded
+Parameter Sets: Cancel1, CancelExpanded1
 Aliases:
 
 Required: True
@@ -228,10 +210,15 @@ BODYPARAMETER <IPaths1F7X6GlUsersUserIdEventsEventIdMicrosoftGraphCancelPostRequ
   - `[Comment <String>]`: 
 
 INPUTOBJECT <IUsersActionsIdentity>: Identity Parameter
+  - `[AccessReviewInstanceDecisionItemId <String>]`: key: id of accessReviewInstanceDecisionItem
   - `[AccessReviewInstanceId <String>]`: key: id of accessReviewInstance
+  - `[AccessReviewStageId <String>]`: key: id of accessReviewStage
   - `[AppLogCollectionRequestId <String>]`: key: id of appLogCollectionRequest
   - `[AuthenticationMethodId <String>]`: key: id of authenticationMethod
+  - `[BaseTaskId <String>]`: key: id of baseTask
+  - `[BaseTaskListId <String>]`: key: id of baseTaskList
   - `[CalendarId <String>]`: key: id of calendar
+  - `[CloudPcId <String>]`: key: id of cloudPC
   - `[DeviceEnrollmentConfigurationId <String>]`: key: id of deviceEnrollmentConfiguration
   - `[DeviceLogCollectionResponseId <String>]`: key: id of deviceLogCollectionResponse
   - `[EventId <String>]`: key: id of event
@@ -247,8 +234,10 @@ INPUTOBJECT <IUsersActionsIdentity>: Identity Parameter
   - `[OutlookTaskFolderId <String>]`: key: id of outlookTaskFolder
   - `[OutlookTaskGroupId <String>]`: key: id of outlookTaskGroup
   - `[OutlookTaskId <String>]`: key: id of outlookTask
+  - `[SharedInsightId <String>]`: key: id of sharedInsight
+  - `[TrendingId <String>]`: key: id of trending
+  - `[UsedInsightId <String>]`: key: id of usedInsight
   - `[UserId <String>]`: key: id of user
-  - `[WindowsInformationProtectionDeviceRegistrationId <String>]`: key: id of windowsInformationProtectionDeviceRegistration
 
 ## RELATED LINKS
 

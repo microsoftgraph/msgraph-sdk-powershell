@@ -1,6 +1,54 @@
 {
   "resources": [],
   "operations": {
+    "/external": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Search.yml"
+    },
+    "/external/connections": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Search.yml"
+    },
+    "/external/connections/{externalConnection-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Search.yml"
+    },
+    "/external/connections/{externalConnection-id}/groups": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Search.yml"
+    },
+    "/external/connections/{externalConnection-id}/groups/{externalGroup-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Search.yml"
+    },
+    "/external/connections/{externalConnection-id}/groups/{externalGroup-id}/members": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Search.yml"
+    },
+    "/external/connections/{externalConnection-id}/groups/{externalGroup-id}/members/{identity-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Search.yml"
+    },
+    "/external/connections/{externalConnection-id}/items": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Search.yml"
+    },
+    "/external/connections/{externalConnection-id}/items/{externalItem-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Search.yml"
+    },
+    "/external/connections/{externalConnection-id}/operations": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Search.yml"
+    },
+    "/external/connections/{externalConnection-id}/operations/{connectionOperation-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Search.yml"
+    },
+    "/external/connections/{externalConnection-id}/schema": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Search.yml"
+    },
     "/search": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Search.yml"

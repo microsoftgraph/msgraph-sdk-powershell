@@ -10,6 +10,8 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
     using System.Reflection;
     using System.Security.Authentication;
     using Microsoft.Graph.PowerShell.Authentication.Handlers;
+    using System.Management.Automation;
+    using System;
 
     /// <summary>
     /// A HTTP helper class.
@@ -22,10 +24,44 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
         /// The value for the Auth module version header.
         private static string AuthModuleVersionHeaderValue =
             string.Format(Constants.SDKHeaderValue,
-                AssemblyInfo.Name,
                 AssemblyInfo.Version.Major,
                 AssemblyInfo.Version.Minor,
                 AssemblyInfo.Version.Build);
+
+        /// <summary>
+        /// Prepends SDK header to an HTTP client.
+        /// </summary>
+        /// <param name="httpClient"></param>
+        private static void PrependSDKHeader(HttpClient httpClient, string headerName, string headerValue)
+        {
+            httpClient.DefaultRequestHeaders.TryGetValues(headerName, out IEnumerable<string> previousSDKHeaders);
+            if (previousSDKHeaders == null) {
+                httpClient.DefaultRequestHeaders.Add(headerName, headerValue);
+            } else {
+                httpClient.DefaultRequestHeaders.Remove(headerName);
+                httpClient.DefaultRequestHeaders.Add(headerName, previousSDKHeaders.Prepend(headerValue));
+            }
+        }
+        
+        private static void ReplaceSDKHeader(HttpClient httpClient, string headerName, string headerValue)
+        {
+            if (!httpClient.DefaultRequestHeaders.Contains(headerName)) {
+                httpClient.DefaultRequestHeaders.Add(headerName, headerValue);
+            } else {
+                httpClient.DefaultRequestHeaders.Remove(headerName);
+                httpClient.DefaultRequestHeaders.Add(headerName, headerValue);
+            }
+        }
+
+        public static HttpClient GetGraphHttpClient(InvocationInfo invocationInfo, IAuthContext authContext = null)
+        {
+            authContext = authContext ?? GraphSession.Instance.AuthContext;
+            if (authContext is null) { throw new AuthenticationException(Core.ErrorConstants.Message.MissingAuthContext); }
+            var httpClient = GetGraphHttpClient(authContext);
+            var requestUserAgent = new RequestUserAgent(authContext.PSHostVersion, invocationInfo);
+            ReplaceSDKHeader(httpClient, HttpKnownHeaderNames.UserAgent, requestUserAgent.UserAgent);
+            return httpClient;
+        }
 
         /// <summary>
         /// Creates a pre-configured Microsoft Graph <see cref="HttpClient"/>.
@@ -34,6 +70,8 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
         /// <returns></returns>
         public static HttpClient GetGraphHttpClient(IAuthContext authContext = null)
         {
+            if (GraphSession.Instance?.GraphHttpClient != null)
+                return GraphSession.Instance.GraphHttpClient;
             authContext = authContext ?? GraphSession.Instance.AuthContext;
             if (authContext is null)
             {
@@ -41,20 +79,9 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
             }
 
             IAuthenticationProvider authProvider = AuthenticationHelpers.GetAuthProvider(authContext);
-            return GetGraphHttpClient(authProvider);
-        }
-
-        /// <summary>
-        /// Prepend new SDKVersionHeaders
-        /// </summary>
-        /// <param name="httpClient"></param>
-        private static void PrependNewSDKVersionHeaders(HttpClient httpClient)
-        {
-            IEnumerable<string> previousSDKHeaders = httpClient.DefaultRequestHeaders.GetValues(CoreConstants.Headers.SdkVersionHeaderName);
-            httpClient.DefaultRequestHeaders.Remove(CoreConstants.Headers.SdkVersionHeaderName);
-            httpClient.DefaultRequestHeaders.Add(
-                CoreConstants.Headers.SdkVersionHeaderName,
-                previousSDKHeaders.Prepend(AuthModuleVersionHeaderValue));
+            var newHttpClient = GetGraphHttpClient(authProvider, authContext.ClientTimeout);
+            GraphSession.Instance.GraphHttpClient = newHttpClient;
+            return newHttpClient;
         }
 
         /// <summary>
@@ -63,7 +90,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
         /// </summary>
         /// <param name="authProvider">Custom AuthProvider</param>
         /// <returns></returns>
-        public static HttpClient GetGraphHttpClient(IAuthenticationProvider authProvider)
+        public static HttpClient GetGraphHttpClient(IAuthenticationProvider authProvider, TimeSpan clientTimeout)
         {
             IList<DelegatingHandler> defaultHandlers = GraphClientFactory.CreateDefaultHandlers(authProvider);
 
@@ -73,9 +100,10 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
             defaultHandlers.Insert(2, new ODataQueryOptionsHandler());
 
             HttpClient httpClient = GraphClientFactory.Create(defaultHandlers);
+            httpClient.Timeout = clientTimeout;
 
-            // Prepend new SDKVersionHeaders
-            PrependNewSDKVersionHeaders(httpClient);
+            // Prepend SDKVersion header
+            PrependSDKHeader(httpClient, CoreConstants.Headers.SdkVersionHeaderName, AuthModuleVersionHeaderValue);
             return httpClient;
         }
     }

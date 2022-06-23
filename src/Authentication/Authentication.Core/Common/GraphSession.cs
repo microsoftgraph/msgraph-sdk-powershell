@@ -8,6 +8,8 @@ namespace Microsoft.Graph.PowerShell.Authentication
     using Microsoft.Graph.PowerShell.Authentication.Interfaces;
 
     using System;
+    using System.Collections;
+    using System.Net.Http;
     using System.Security;
     using System.Threading;
 
@@ -61,6 +63,13 @@ namespace Microsoft.Graph.PowerShell.Authentication
         /// The selected national cloud environment.
         /// </summary>
         public IGraphEnvironment Environment { get; set; }
+
+        /// <summary>
+        /// Represents a collection of Microsoft Graph PowerShell meta-info.
+        /// </summary>
+        public Hashtable[] MgCommandMetadata { get; set; }
+
+        public HttpClient GraphHttpClient { get; set; }
 
         /// <summary>
         /// Gets an instance of <see cref="GraphSession"/>.

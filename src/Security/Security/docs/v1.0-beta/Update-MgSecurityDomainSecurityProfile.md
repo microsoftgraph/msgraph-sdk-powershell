@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgSecurityDomainSecurityProfile
 
 ## SYNOPSIS
-Update the navigation property domainSecurityProfiles in Security
+Update the navigation property domainSecurityProfiles in security
 
 ## SYNTAX
 
@@ -47,27 +47,9 @@ Update-MgSecurityDomainSecurityProfile -InputObject <ISecurityIdentity> [-Activi
 ```
 
 ## DESCRIPTION
-Update the navigation property domainSecurityProfiles in Security
+Update the navigation property domainSecurityProfiles in security
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 
@@ -133,7 +115,7 @@ Accept wildcard characters: False
 
 ### -BodyParameter
 domainSecurityProfile
-To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDomainSecurityProfile
@@ -179,7 +161,7 @@ Accept wildcard characters: False
 
 ### -DomainCategories
 .
-To construct, see NOTES section for DOMAINCATEGORIES properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for DOMAINCATEGORIES properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphReputationCategory[]
@@ -255,7 +237,7 @@ Accept wildcard characters: False
 
 ### -InputObject
 Identity Parameter
-To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.ISecurityIdentity
@@ -316,7 +298,7 @@ Accept wildcard characters: False
 
 ### -Registrant
 domainRegistrant
-To construct, see NOTES section for REGISTRANT properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for REGISTRANT properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDomainRegistrant
@@ -362,7 +344,7 @@ Accept wildcard characters: False
 
 ### -VendorInformation
 securityVendorInformation
-To construct, see NOTES section for VENDORINFORMATION properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for VENDORINFORMATION properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityVendorInformation
@@ -476,6 +458,10 @@ INPUTOBJECT <ISecurityIdentity>: Identity Parameter
   - `[SecureScoreControlProfileId <String>]`: key: id of secureScoreControlProfile
   - `[SecureScoreId <String>]`: key: id of secureScore
   - `[SecurityActionId <String>]`: key: id of securityAction
+  - `[SensitivityLabelId <String>]`: key: id of sensitivityLabel
+  - `[SimulationAutomationId <String>]`: key: id of simulationAutomation
+  - `[SimulationAutomationRunId <String>]`: key: id of simulationAutomationRun
+  - `[SimulationId <String>]`: key: id of simulation
   - `[TiIndicatorId <String>]`: key: id of tiIndicator
   - `[UserSecurityProfileId <String>]`: key: id of userSecurityProfile
 

@@ -31,24 +31,6 @@ Invoke action evaluateApplication
 
 ## EXAMPLES
 
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
 ## PARAMETERS
 
 ### -AdditionalProperties
@@ -68,7 +50,7 @@ Accept wildcard characters: False
 
 ### -BodyParameter
 .
-To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IPaths1Aushj1InformationprotectionPolicyLabelsMicrosoftGraphEvaluateapplicationPostRequestbodyContentApplicationJsonSchema
@@ -84,7 +66,7 @@ Accept wildcard characters: False
 
 ### -ContentInfo
 contentInfo
-To construct, see NOTES section for CONTENTINFO properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for CONTENTINFO properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphContentInfo
@@ -100,7 +82,7 @@ Accept wildcard characters: False
 
 ### -LabelingOptions
 labelingOptions
-To construct, see NOTES section for LABELINGOPTIONS properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for LABELINGOPTIONS properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphLabelingOptions
@@ -170,8 +152,8 @@ BODYPARAMETER <IPaths1Aushj1InformationprotectionPolicyLabelsMicrosoftGraphEvalu
   - `[ContentInfo <IMicrosoftGraphContentInfo>]`: contentInfo
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Format <String>]`: contentFormat
-    - `[Identifier <String>]`: 
-    - `[Metadata <IMicrosoftGraphKeyValuePair[]>]`: 
+    - `[Identifier <String>]`: Identifier used for Azure Information Protection Analytics.
+    - `[Metadata <IMicrosoftGraphKeyValuePair[]>]`: Existing Microsoft Information Protection metadata is passed as key/value pairs, where the key is the MSIP_Label_GUID_PropName.
       - `[Name <String>]`: Name for this key-value pair
       - `[Value <String>]`: Value for this key-value pair
     - `[State <String>]`: contentState
@@ -180,16 +162,16 @@ BODYPARAMETER <IPaths1Aushj1InformationprotectionPolicyLabelsMicrosoftGraphEvalu
     - `[AssignmentMethod <String>]`: assignmentMethod
     - `[DowngradeJustification <IMicrosoftGraphDowngradeJustification>]`: downgradeJustification
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[IsDowngradeJustified <Boolean?>]`: 
-      - `[JustificationMessage <String>]`: 
-    - `[ExtendedProperties <IMicrosoftGraphKeyValuePair[]>]`: 
-    - `[LabelId <String>]`: 
+      - `[IsDowngradeJustified <Boolean?>]`: Indicates whether the downgrade is or is not justified.
+      - `[JustificationMessage <String>]`: Message that indicates why a downgrade is justified. The message will appear in administrative logs.
+    - `[ExtendedProperties <IMicrosoftGraphKeyValuePair[]>]`: Extended properties will be parsed and returned in the standard MIP labeled metadata format as part of the label information.
+    - `[LabelId <String>]`: The GUID of the label that should be applied to the information.
 
 CONTENTINFO <IMicrosoftGraphContentInfo>: contentInfo
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Format <String>]`: contentFormat
-  - `[Identifier <String>]`: 
-  - `[Metadata <IMicrosoftGraphKeyValuePair[]>]`: 
+  - `[Identifier <String>]`: Identifier used for Azure Information Protection Analytics.
+  - `[Metadata <IMicrosoftGraphKeyValuePair[]>]`: Existing Microsoft Information Protection metadata is passed as key/value pairs, where the key is the MSIP_Label_GUID_PropName.
     - `[Name <String>]`: Name for this key-value pair
     - `[Value <String>]`: Value for this key-value pair
   - `[State <String>]`: contentState
@@ -199,12 +181,12 @@ LABELINGOPTIONS <IMicrosoftGraphLabelingOptions>: labelingOptions
   - `[AssignmentMethod <String>]`: assignmentMethod
   - `[DowngradeJustification <IMicrosoftGraphDowngradeJustification>]`: downgradeJustification
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[IsDowngradeJustified <Boolean?>]`: 
-    - `[JustificationMessage <String>]`: 
-  - `[ExtendedProperties <IMicrosoftGraphKeyValuePair[]>]`: 
+    - `[IsDowngradeJustified <Boolean?>]`: Indicates whether the downgrade is or is not justified.
+    - `[JustificationMessage <String>]`: Message that indicates why a downgrade is justified. The message will appear in administrative logs.
+  - `[ExtendedProperties <IMicrosoftGraphKeyValuePair[]>]`: Extended properties will be parsed and returned in the standard MIP labeled metadata format as part of the label information.
     - `[Name <String>]`: Name for this key-value pair
     - `[Value <String>]`: Value for this key-value pair
-  - `[LabelId <String>]`: 
+  - `[LabelId <String>]`: The GUID of the label that should be applied to the information.
 
 ## RELATED LINKS
 

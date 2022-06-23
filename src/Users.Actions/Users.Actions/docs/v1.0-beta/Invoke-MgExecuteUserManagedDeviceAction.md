@@ -15,9 +15,10 @@ Invoke action executeAction
 ### ExecuteExpanded (Default)
 ```
 Invoke-MgExecuteUserManagedDeviceAction -UserId <String> [-ActionName <String>]
- [-AdditionalProperties <Hashtable>] [-DeviceIds <String[]>] [-DeviceName <String>] [-KeepEnrollmentData]
- [-KeepUserData] [-NotificationBody <String>] [-NotificationTitle <String>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-AdditionalProperties <Hashtable>] [-CarrierUrl <String>] [-DeprovisionReason <String>]
+ [-DeviceIds <String[]>] [-DeviceName <String>] [-KeepEnrollmentData] [-KeepUserData]
+ [-NotificationBody <String>] [-NotificationTitle <String>] [-OrganizationalUnitPath <String>]
+ [-PersistEsimDataPlan] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Execute
@@ -37,33 +38,16 @@ Invoke-MgExecuteUserManagedDeviceAction -InputObject <IUsersActionsIdentity>
 ### ExecuteViaIdentityExpanded
 ```
 Invoke-MgExecuteUserManagedDeviceAction -InputObject <IUsersActionsIdentity> [-ActionName <String>]
- [-AdditionalProperties <Hashtable>] [-DeviceIds <String[]>] [-DeviceName <String>] [-KeepEnrollmentData]
- [-KeepUserData] [-NotificationBody <String>] [-NotificationTitle <String>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-AdditionalProperties <Hashtable>] [-CarrierUrl <String>] [-DeprovisionReason <String>]
+ [-DeviceIds <String[]>] [-DeviceName <String>] [-KeepEnrollmentData] [-KeepUserData]
+ [-NotificationBody <String>] [-NotificationTitle <String>] [-OrganizationalUnitPath <String>]
+ [-PersistEsimDataPlan] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Invoke action executeAction
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 
@@ -99,7 +83,7 @@ Accept wildcard characters: False
 
 ### -BodyParameter
 .
-To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IPaths1V92H65UsersUserIdManageddevicesMicrosoftGraphExecuteactionPostRequestbodyContentApplicationJsonSchema
@@ -110,6 +94,36 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### -CarrierUrl
+.
+
+```yaml
+Type: System.String
+Parameter Sets: ExecuteExpanded, ExecuteViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -DeprovisionReason
+.
+
+```yaml
+Type: System.String
+Parameter Sets: ExecuteExpanded, ExecuteViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -145,7 +159,7 @@ Accept wildcard characters: False
 
 ### -InputObject
 Identity Parameter
-To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
@@ -209,6 +223,36 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.String
+Parameter Sets: ExecuteExpanded, ExecuteViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -OrganizationalUnitPath
+.
+
+```yaml
+Type: System.String
+Parameter Sets: ExecuteExpanded, ExecuteViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -PersistEsimDataPlan
+.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: ExecuteExpanded, ExecuteViaIdentityExpanded
 Aliases:
 
@@ -290,18 +334,27 @@ To create the parameters described below, construct a hash table containing the 
 BODYPARAMETER <IPaths1V92H65UsersUserIdManageddevicesMicrosoftGraphExecuteactionPostRequestbodyContentApplicationJsonSchema>: .
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[ActionName <String>]`: managedDeviceRemoteAction
+  - `[CarrierUrl <String>]`: 
+  - `[DeprovisionReason <String>]`: 
   - `[DeviceIds <String[]>]`: 
   - `[DeviceName <String>]`: 
   - `[KeepEnrollmentData <Boolean?>]`: 
   - `[KeepUserData <Boolean?>]`: 
   - `[NotificationBody <String>]`: 
   - `[NotificationTitle <String>]`: 
+  - `[OrganizationalUnitPath <String>]`: 
+  - `[PersistEsimDataPlan <Boolean?>]`: 
 
 INPUTOBJECT <IUsersActionsIdentity>: Identity Parameter
+  - `[AccessReviewInstanceDecisionItemId <String>]`: key: id of accessReviewInstanceDecisionItem
   - `[AccessReviewInstanceId <String>]`: key: id of accessReviewInstance
+  - `[AccessReviewStageId <String>]`: key: id of accessReviewStage
   - `[AppLogCollectionRequestId <String>]`: key: id of appLogCollectionRequest
   - `[AuthenticationMethodId <String>]`: key: id of authenticationMethod
+  - `[BaseTaskId <String>]`: key: id of baseTask
+  - `[BaseTaskListId <String>]`: key: id of baseTaskList
   - `[CalendarId <String>]`: key: id of calendar
+  - `[CloudPcId <String>]`: key: id of cloudPC
   - `[DeviceEnrollmentConfigurationId <String>]`: key: id of deviceEnrollmentConfiguration
   - `[DeviceLogCollectionResponseId <String>]`: key: id of deviceLogCollectionResponse
   - `[EventId <String>]`: key: id of event
@@ -317,8 +370,10 @@ INPUTOBJECT <IUsersActionsIdentity>: Identity Parameter
   - `[OutlookTaskFolderId <String>]`: key: id of outlookTaskFolder
   - `[OutlookTaskGroupId <String>]`: key: id of outlookTaskGroup
   - `[OutlookTaskId <String>]`: key: id of outlookTask
+  - `[SharedInsightId <String>]`: key: id of sharedInsight
+  - `[TrendingId <String>]`: key: id of trending
+  - `[UsedInsightId <String>]`: key: id of usedInsight
   - `[UserId <String>]`: key: id of user
-  - `[WindowsInformationProtectionDeviceRegistrationId <String>]`: key: id of windowsInformationProtectionDeviceRegistration
 
 ## RELATED LINKS
 

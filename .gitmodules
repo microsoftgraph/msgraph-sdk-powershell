@@ -1,0 +1,4 @@
+[submodule "autorest.powershell"]
+	path = autorest.powershell
+	url = https://github.com/Azure/autorest.powershell.git
+	branch = msgraph

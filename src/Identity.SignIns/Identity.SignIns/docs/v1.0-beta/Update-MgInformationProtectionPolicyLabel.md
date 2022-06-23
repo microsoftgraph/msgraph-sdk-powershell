@@ -16,8 +16,8 @@ Update the navigation property labels in informationProtection
 ```
 Update-MgInformationProtectionPolicyLabel -InformationProtectionLabelId <String>
  [-AdditionalProperties <Hashtable>] [-Color <String>] [-Description <String>] [-Id <String>] [-IsActive]
- [-Name <String>] [-Sensitivity <Int32>] [-Tooltip <String>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-Name <String>] [-Parent <IMicrosoftGraphParentLabelDetails>] [-Sensitivity <Int32>] [-Tooltip <String>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
@@ -38,32 +38,14 @@ Update-MgInformationProtectionPolicyLabel -InputObject <IIdentitySignInsIdentity
 ```
 Update-MgInformationProtectionPolicyLabel -InputObject <IIdentitySignInsIdentity>
  [-AdditionalProperties <Hashtable>] [-Color <String>] [-Description <String>] [-Id <String>] [-IsActive]
- [-Name <String>] [-Sensitivity <Int32>] [-Tooltip <String>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-Name <String>] [-Parent <IMicrosoftGraphParentLabelDetails>] [-Sensitivity <Int32>] [-Tooltip <String>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Update the navigation property labels in informationProtection
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 
@@ -84,7 +66,7 @@ Accept wildcard characters: False
 
 ### -BodyParameter
 informationProtectionLabel
-To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphInformationProtectionLabel
@@ -99,7 +81,7 @@ Accept wildcard characters: False
 ```
 
 ### -Color
-.
+The color that the UI should display for the label, if configured.
 
 ```yaml
 Type: System.String
@@ -114,7 +96,7 @@ Accept wildcard characters: False
 ```
 
 ### -Description
-.
+The admin-defined description for the label.
 
 ```yaml
 Type: System.String
@@ -160,7 +142,7 @@ Accept wildcard characters: False
 
 ### -InputObject
 Identity Parameter
-To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
@@ -175,7 +157,8 @@ Accept wildcard characters: False
 ```
 
 ### -IsActive
-.
+Indicates whether the label is active or not.
+Active labels should be hidden or disabled in UI.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -190,10 +173,26 @@ Accept wildcard characters: False
 ```
 
 ### -Name
-.
+The plaintext name of the label.
 
 ```yaml
 Type: System.String
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Parent
+parentLabelDetails
+To construct, please use Get-Help -Online and see NOTES section for PARENT properties and create a hash table.
+
+```yaml
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphParentLabelDetails
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -220,7 +219,7 @@ Accept wildcard characters: False
 ```
 
 ### -Sensitivity
-.
+The sensitivity value of the label, where lower is less sensitive.
 
 ```yaml
 Type: System.Int32
@@ -235,7 +234,7 @@ Accept wildcard characters: False
 ```
 
 ### -Tooltip
-.
+The tooltip that should be displayed for the label in a UI.
 
 ```yaml
 Type: System.String
@@ -305,31 +304,47 @@ To create the parameters described below, construct a hash table containing the 
 BODYPARAMETER <IMicrosoftGraphInformationProtectionLabel>: informationProtectionLabel
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: Read-only.
-  - `[Color <String>]`: 
-  - `[Description <String>]`: 
-  - `[IsActive <Boolean?>]`: 
-  - `[Name <String>]`: 
-  - `[Sensitivity <Int32?>]`: 
-  - `[Tooltip <String>]`: 
+  - `[Color <String>]`: The color that the UI should display for the label, if configured.
+  - `[Description <String>]`: The admin-defined description for the label.
+  - `[IsActive <Boolean?>]`: Indicates whether the label is active or not. Active labels should be hidden or disabled in UI.
+  - `[Name <String>]`: The plaintext name of the label.
+  - `[Parent <IMicrosoftGraphParentLabelDetails>]`: parentLabelDetails
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+    - `[Color <String>]`: The color that the user interface should display for the label, if configured.
+    - `[Description <String>]`: The admin-defined description for the label.
+    - `[Id <String>]`: The label ID is a globally unique identifier (GUID).
+    - `[IsActive <Boolean?>]`: Indicates whether the label is active or not. Active labels should be hidden or disabled in user interfaces.
+    - `[Name <String>]`: The plaintext name of the label.
+    - `[Parent <IMicrosoftGraphParentLabelDetails>]`: parentLabelDetails
+    - `[Sensitivity <Int32?>]`: The sensitivity value of the label, where lower is less sensitive.
+    - `[Tooltip <String>]`: The tooltip that should be displayed for the label in a user interface.
+  - `[Sensitivity <Int32?>]`: The sensitivity value of the label, where lower is less sensitive.
+  - `[Tooltip <String>]`: The tooltip that should be displayed for the label in a UI.
 
 INPUTOBJECT <IIdentitySignInsIdentity>: Identity Parameter
   - `[ActivityBasedTimeoutPolicyId <String>]`: key: id of activityBasedTimeoutPolicy
+  - `[AppManagementPolicyId <String>]`: key: id of appManagementPolicy
+  - `[AuthenticationContextClassReferenceId <String>]`: key: id of authenticationContextClassReference
   - `[AuthenticationMethodId <String>]`: key: id of authenticationMethod
   - `[AuthorizationPolicyId <String>]`: key: id of authorizationPolicy
-  - `[CertificateBasedAuthConfigurationId <String>]`: key: id of certificateBasedAuthConfiguration
+  - `[BitlockerRecoveryKeyId <String>]`: key: id of bitlockerRecoveryKey
   - `[ClaimsMappingPolicyId <String>]`: key: id of claimsMappingPolicy
   - `[ConditionalAccessPolicyId <String>]`: key: id of conditionalAccessPolicy
+  - `[CrossTenantAccessPolicyConfigurationPartnerTenantId <String>]`: key: tenantId of crossTenantAccessPolicyConfigurationPartner
   - `[DataLossPreventionPolicyId <String>]`: key: id of dataLossPreventionPolicy
   - `[DataPolicyOperationId <String>]`: key: id of dataPolicyOperation
+  - `[DefaultUserRoleOverrideId <String>]`: key: id of defaultUserRoleOverride
+  - `[DirectoryObjectId <String>]`: key: id of directoryObject
   - `[EmailAuthenticationMethodId <String>]`: key: id of emailAuthenticationMethod
+  - `[FeatureRolloutPolicyId <String>]`: key: id of featureRolloutPolicy
   - `[Fido2AuthenticationMethodId <String>]`: key: id of fido2AuthenticationMethod
   - `[HomeRealmDiscoveryPolicyId <String>]`: key: id of homeRealmDiscoveryPolicy
   - `[IdentityProviderId <String>]`: key: id of identityProvider
   - `[IdentityUserFlowId <String>]`: key: id of identityUserFlow
   - `[InformationProtectionLabelId <String>]`: key: id of informationProtectionLabel
-  - `[InvitationId <String>]`: key: id of invitation
   - `[LongRunningOperationId <String>]`: key: id of longRunningOperation
   - `[MicrosoftAuthenticatorAuthenticationMethodId <String>]`: key: id of microsoftAuthenticatorAuthenticationMethod
+  - `[MobilityManagementPolicyId <String>]`: key: id of mobilityManagementPolicy
   - `[NamedLocationId <String>]`: key: id of namedLocation
   - `[OAuth2PermissionGrantId <String>]`: key: id of oAuth2PermissionGrant
   - `[OrganizationId <String>]`: key: id of organization
@@ -341,9 +356,10 @@ INPUTOBJECT <IIdentitySignInsIdentity>: Identity Parameter
   - `[RiskDetectionId <String>]`: key: id of riskDetection
   - `[RiskyUserHistoryItemId <String>]`: key: id of riskyUserHistoryItem
   - `[RiskyUserId <String>]`: key: id of riskyUser
-  - `[SecurityQuestionAuthenticationMethodId <String>]`: key: id of securityQuestionAuthenticationMethod
   - `[SensitivityLabelId <String>]`: key: id of sensitivityLabel
   - `[SensitivityLabelId1 <String>]`: key: id of sensitivityLabel
+  - `[ServicePrincipalCreationConditionSetId <String>]`: key: id of servicePrincipalCreationConditionSet
+  - `[ServicePrincipalCreationPolicyId <String>]`: key: id of servicePrincipalCreationPolicy
   - `[SoftwareOathAuthenticationMethodId <String>]`: key: id of softwareOathAuthenticationMethod
   - `[TemporaryAccessPassAuthenticationMethodId <String>]`: key: id of temporaryAccessPassAuthenticationMethod
   - `[ThreatAssessmentRequestId <String>]`: key: id of threatAssessmentRequest
@@ -352,7 +368,22 @@ INPUTOBJECT <IIdentitySignInsIdentity>: Identity Parameter
   - `[TokenLifetimePolicyId <String>]`: key: id of tokenLifetimePolicy
   - `[TrustFrameworkKeySetId <String>]`: key: id of trustFrameworkKeySet
   - `[TrustFrameworkPolicyId <String>]`: key: id of trustFrameworkPolicy
+  - `[UnifiedRoleManagementPolicyAssignmentId <String>]`: key: id of unifiedRoleManagementPolicyAssignment
+  - `[UnifiedRoleManagementPolicyId <String>]`: key: id of unifiedRoleManagementPolicy
+  - `[UnifiedRoleManagementPolicyRuleId <String>]`: key: id of unifiedRoleManagementPolicyRule
   - `[UserId <String>]`: key: id of user
+  - `[WindowsHelloForBusinessAuthenticationMethodId <String>]`: key: id of windowsHelloForBusinessAuthenticationMethod
+
+PARENT <IMicrosoftGraphParentLabelDetails>: parentLabelDetails
+  - `[(Any) <Object>]`: This indicates any property can be added to this object.
+  - `[Color <String>]`: The color that the user interface should display for the label, if configured.
+  - `[Description <String>]`: The admin-defined description for the label.
+  - `[Id <String>]`: The label ID is a globally unique identifier (GUID).
+  - `[IsActive <Boolean?>]`: Indicates whether the label is active or not. Active labels should be hidden or disabled in user interfaces.
+  - `[Name <String>]`: The plaintext name of the label.
+  - `[Parent <IMicrosoftGraphParentLabelDetails>]`: parentLabelDetails
+  - `[Sensitivity <Int32?>]`: The sensitivity value of the label, where lower is less sensitive.
+  - `[Tooltip <String>]`: The tooltip that should be displayed for the label in a user interface.
 
 ## RELATED LINKS
 

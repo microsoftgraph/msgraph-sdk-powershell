@@ -30,24 +30,6 @@ Add new entity to directorySettingTemplates
 
 ## EXAMPLES
 
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
 ## PARAMETERS
 
 ### -AdditionalProperties
@@ -66,9 +48,8 @@ Accept wildcard characters: False
 ```
 
 ### -BodyParameter
-Represents an Azure Active Directory object.
-The directoryObject type is the base type for many other directory entity types.
-To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
+directorySettingTemplate
+To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDirectorySettingTemplate
@@ -83,7 +64,8 @@ Accept wildcard characters: False
 ```
 
 ### -DeletedDateTime
-.
+Date and time when this object was deleted.
+Always null when the object hasn't been deleted.
 
 ```yaml
 Type: System.DateTime
@@ -98,7 +80,8 @@ Accept wildcard characters: False
 ```
 
 ### -Description
-.
+Description of the template.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -113,7 +96,8 @@ Accept wildcard characters: False
 ```
 
 ### -DisplayName
-.
+Display name of the template.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -143,8 +127,9 @@ Accept wildcard characters: False
 ```
 
 ### -Values
-.
-To construct, see NOTES section for VALUES properties and create a hash table.
+Collection of settingTemplateValues that list the set of available settings, defaults and types that make up this template.
+Read-only.
+To construct, please use Get-Help -Online and see NOTES section for VALUES properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSettingTemplateValue[]
@@ -209,19 +194,19 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-BODYPARAMETER <IMicrosoftGraphDirectorySettingTemplate>: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
+BODYPARAMETER <IMicrosoftGraphDirectorySettingTemplate>: directorySettingTemplate
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[DeletedDateTime <DateTime?>]`: 
+  - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
   - `[Id <String>]`: Read-only.
-  - `[Description <String>]`: 
-  - `[DisplayName <String>]`: 
-  - `[Values <IMicrosoftGraphSettingTemplateValue[]>]`: 
+  - `[Description <String>]`: Description of the template. Read-only.
+  - `[DisplayName <String>]`: Display name of the template. Read-only.
+  - `[Values <IMicrosoftGraphSettingTemplateValue[]>]`: Collection of settingTemplateValues that list the set of available settings, defaults and types that make up this template.  Read-only.
     - `[DefaultValue <String>]`: Default value for the setting.
     - `[Description <String>]`: Description of the setting.
     - `[Name <String>]`: Name of the setting.
     - `[Type <String>]`: Type of the setting.
 
-VALUES <IMicrosoftGraphSettingTemplateValue[]>: .
+VALUES <IMicrosoftGraphSettingTemplateValue[]>: Collection of settingTemplateValues that list the set of available settings, defaults and types that make up this template. Read-only.
   - `[DefaultValue <String>]`: Default value for the setting.
   - `[Description <String>]`: Description of the setting.
   - `[Name <String>]`: Name of the setting.

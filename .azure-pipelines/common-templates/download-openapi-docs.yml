@@ -4,22 +4,22 @@
 parameters:
   - name: Branch
     type: string
-    default: "WeeklyOpenApiDocsDownload"
   - name: BaseBranch
     type: string
-    default: "dev"
   - name: BuildAgent
-    default: MsGraphBuildAgentsWindows
     displayName: Build Agent
 
 jobs:
   - job: GetLatestDocs
     displayName: Download OpenApiDocs
+    timeoutInMinutes: 240
     pool: $(BuildAgent)
     steps:
       - template: ./checkout.yml
+        parameters:
+          TargetBranch: ${{ parameters.BaseBranch }}
 
-      - template: ./install-tools.yml
+      - template: ./install-tools-template.yml
 
       - task: PowerShell@2
         name: "ComputeBranch"
@@ -36,8 +36,6 @@ jobs:
           targetType: inline
           script: |
             git status
-            git fetch --all
-            git checkout $(BaseBranch)
             git branch $(ComputeBranch.WeeklyBranch)
             git checkout $(ComputeBranch.WeeklyBranch)
             git status
@@ -99,6 +97,7 @@ jobs:
             # Bump meta-module minor version
             Write-Host "Bumping Microsoft.Graph to $NewMetaModuleVersion."
             & "$(System.DefaultWorkingDirectory)\tools\SetMetaModuleVersion.ps1" -VersionNumber $NewMetaModuleVersion
+            & "$(System.DefaultWorkingDirectory)\tools\SetServiceModuleVersion.ps1" -VersionNumber $NewMetaModuleVersion -SetAuthModule
 
             # Calculate existing service module version
             "$(OpenAPIDocDiff.ModulesWithChanges)" -split " " | ForEach-Object {
@@ -107,10 +106,9 @@ jobs:
                 $ModuleVersion = [System.Version]($Module.Version)
                 $NewModuleVersion = "$($ModuleVersion.Major).$($ModuleVersion.Minor).$($ModuleVersion.Build + 1)"
                 Write-Host "Bumping $_ to $NewModuleVersion."
-                . "$(System.DefaultWorkingDirectory)\tools\SetServiceModuleVersion.ps1" -VersionNumber $NewModuleVersion -Modules $_
               } catch {
                 if ($_.Exception.Message -like "No match*") {
-                  Write-Warning "$_. Version will be set to $NewMetaModuleVersion."      
+                  Write-Warning "$_. Version will be set to $NewMetaModuleVersion."
                 }
               }
             }
@@ -129,9 +127,9 @@ jobs:
           script: |
             git status
             git add .
-            git commit -m 'Weekly OpenApiDocs Download'
+            git commit -m 'Weekly OpenApiDocs Download. [run ci]'
             git status
-            git push --set-upstream origin $(ComputeBranch.WeeklyBranch)
+            git push --set-upstream "https://$(GITHUB_TOKEN)@github.com/microsoftgraph/msgraph-sdk-powershell.git" $(ComputeBranch.WeeklyBranch)
             git status
 
 # References

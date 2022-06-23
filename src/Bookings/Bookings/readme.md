@@ -32,9 +32,24 @@ title: $(service-name)
 subject-prefix: ''
 
 ```
+
+### Directives
+
+> see https://github.com/Azure/autorest/blob/master/docs/powershell/directives.md
+
+``` yaml
+directive:
+# Remove invalid paths.
+  - remove-path-by-operation: ^solutions.solutionsRoot.*$
+# Rename cmdlets
+  - where:
+      subject: ^Solution(.*)$
+    set:
+      subject: $1
+```
 ### Versioning
 
 ``` yaml
-module-version: 1.6.0
+module-version: 1.10.0
 release-notes: See https://aka.ms/GraphPowerShell-Release.
 ```

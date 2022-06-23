@@ -49,7 +49,7 @@ namespace Microsoft.Graph.Authentication.Core
                         {
                             authContext.AuthProviderType = AuthProviderType.DeviceCodeProviderFallBack;
                             fallBackWarning?.Invoke();
-                            var fallBackAuthContext= await AuthenticateAsync(authContext, forceRefresh, cancellationToken, fallBackWarning);
+                            var fallBackAuthContext = await AuthenticateAsync(authContext, forceRefresh, cancellationToken, fallBackWarning);
                             return fallBackAuthContext;
                         }
                         break;
@@ -111,12 +111,23 @@ namespace Microsoft.Graph.Authentication.Core
                     }
                     return fallBackAuthContext;
                 }
-                // DeviceCode Authentication Failure: Timeout
+
                 if (authEx.InnerException is TaskCanceledException && cancellationToken.IsCancellationRequested)
                 {
-                    // DeviceCodeTimeout
+                    // Authentication requets timeout.
                     throw new Exception(string.Format(CultureInfo.CurrentCulture, ErrorConstants.Message.DeviceCodeTimeout, Constants.MaxDeviceCodeTimeOut));
                 }
+                else if (authEx.InnerException is MsalServiceException msalServiceEx
+                      && msalServiceEx.StatusCode == 400
+                      && msalServiceEx.ErrorCode == "invalid_scope"
+                      && string.IsNullOrWhiteSpace(authContext.TenantId)
+                      && (authContext.AuthProviderType == AuthProviderType.DeviceCodeProvider
+                      || authContext.AuthProviderType == AuthProviderType.DeviceCodeProviderFallBack))
+                {
+                    // MSAL scope validation error. Ask customer to specify sign-in audience or tenant Id.
+                    throw new MsalClientException(msalServiceEx.ErrorCode, $"{msalServiceEx.Message}.\r\n{ErrorConstants.Message.InvalidScope}", msalServiceEx);
+                }
+
                 //Something Unknown Went Wrong
                 throw authEx.InnerException ?? authEx;
             }

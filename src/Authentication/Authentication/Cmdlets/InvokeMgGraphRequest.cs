@@ -31,13 +31,12 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
     public class InvokeMgGraphRequest : PSCmdlet
     {
         private readonly CancellationTokenSource _cancellationTokenSource = new CancellationTokenSource();
-        private readonly InvokeGraphRequestUserAgent _graphRequestUserAgent;
+        private RequestUserAgent _graphRequestUserAgent;
         private IGraphEnvironment _originalEnvironment;
         private string _originalFilePath;
 
         public InvokeMgGraphRequest()
         {
-            _graphRequestUserAgent = new InvokeGraphRequestUserAgent(this);
             Authentication = GraphRequestAuthenticationType.Default;
         }
 
@@ -383,29 +382,25 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
         /// <returns></returns>
         private Uri PrepareUri(HttpClient httpClient, Uri uri)
         {
+            UriBuilder uriBuilder;
+            // For AbsoluteUri such as /beta/groups?$count=true, Get the scheme and host from httpClient
+            // Then use them to compose a new Url with the URL fragment. 
+            if (!uri.IsAbsoluteUri)
+            {
+                uriBuilder = new UriBuilder
+                {
+                    Scheme = httpClient.BaseAddress.Scheme,
+                    Host = httpClient.BaseAddress.Host
+                };
+                uri = new Uri(uriBuilder.Uri, uri);
+            }
+            uriBuilder = new UriBuilder(uri);
+
             // before creating the web request,
             // preprocess Body if content is a dictionary and method is GET (set as query)
             if (Method == GraphRequestMethod.GET &&
                 LanguagePrimitives.TryConvertTo(Body, out IDictionary bodyAsDictionary))
             {
-                UriBuilder uriBuilder;
-                // For AbsoluteUri such as /beta/groups$count=true, Get the scheme and host from httpClient
-                // Then use them to compose a new Url with the URL fragment. 
-                if (!uri.IsAbsoluteUri)
-                {
-                    uriBuilder = new UriBuilder
-                    {
-                        Scheme = httpClient.BaseAddress.Scheme,
-                        Host = httpClient.BaseAddress.Host
-                    };
-                    var newAbsoluteUri = new Uri(uriBuilder.Uri, uri);
-                    uriBuilder = new UriBuilder(newAbsoluteUri);
-                }
-                else
-                {
-                    uriBuilder = new UriBuilder(uri);
-                }
-
                 var bodyQueryParameters = bodyAsDictionary?.FormatDictionary();
                 if (uriBuilder.Query != null && uriBuilder.Query.Length > 1 &&
                     !string.IsNullOrWhiteSpace(bodyQueryParameters))
@@ -416,13 +411,12 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                 {
                     uriBuilder.Query = bodyQueryParameters;
                 }
-
-                uri = uriBuilder.Uri;
+                
                 // set body to null to prevent later FillRequestStream
                 Body = null;
             }
 
-            return uri;
+            return uriBuilder.Uri;
         }
 
         private void ThrowIfError(ErrorRecord error)
@@ -574,7 +568,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
         private HttpClient GetHttpClient()
         {
             var provider = GetAuthProvider();
-            var client = HttpHelpers.GetGraphHttpClient(provider);
+            var client = HttpHelpers.GetGraphHttpClient(provider, GraphSession.Instance.AuthContext.ClientTimeout);
             return client;
         }
 
@@ -937,17 +931,6 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                 ThrowTerminatingError(error);
             }
 
-            // When PATCH or POST is specified, ensure a body is present
-            if ((Method == GraphRequestMethod.PATCH || Method == GraphRequestMethod.POST) && Body == null &&
-                string.IsNullOrWhiteSpace(InputFilePath))
-            {
-                var error = GetValidationError(
-                    Resources.BodyMissingWhenMethodIsSpecified,
-                    ErrorConstants.Codes.InvokeGraphRequestBodyMissingWhenMethodIsSpecified,
-                    nameof(Body), Method);
-                ThrowTerminatingError(error);
-            }
-
             if (PassThru && OutputFilePath == null)
             {
                 var error = GetValidationError(
@@ -1107,9 +1090,13 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
 
         /// <summary>
         ///     Resets GraphSession environment back to its original state.
+        ///     Original state can remain to be the previous state defined by the user, 
+        ///     or the default global state. User defined state can be removed by calling,
+        ///     Remove-MgEnvironment Command
         /// </summary>
         private void ResetGraphSessionEnvironment()
         {
+            _originalEnvironment = GraphSession.Instance.Environment;
             GraphSession.Instance.Environment = _originalEnvironment;
         }
 
@@ -1121,7 +1108,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
             {
                 this.Break();
             }
-
+            _graphRequestUserAgent = new RequestUserAgent(this.Host.Version, this.MyInvocation);
             ValidateParameters();
             base.BeginProcessing();
         }
@@ -1176,15 +1163,13 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                 {
                     var errorRecord = new ErrorRecord(httpRequestException, ErrorCategory.ConnectionError.ToString(),
                         ErrorCategory.InvalidResult, null);
-                    httpRequestException.Data.Add(ErrorCategory.ConnectionError.ToString(), errorRecord);
-                    throw;
+                    ThrowTerminatingError(errorRecord);
                 }
                 catch (Exception exception)
                 {
                     var errorRecord = new ErrorRecord(exception, ErrorCategory.NotSpecified.ToString(),
                         ErrorCategory.InvalidOperation, null);
-                    exception.Data.Add(ErrorCategory.NotSpecified.ToString(), errorRecord);
-                    throw;
+                    ThrowTerminatingError(errorRecord);
                 }
             }
         }

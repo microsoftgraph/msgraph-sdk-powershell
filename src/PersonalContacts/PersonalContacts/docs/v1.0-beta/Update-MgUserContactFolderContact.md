@@ -8,7 +8,10 @@ schema: 2.0.0
 # Update-MgUserContactFolderContact
 
 ## SYNOPSIS
-Update the navigation property contacts in users
+The contacts in the folder.
+Navigation property.
+Read-only.
+Nullable.
 
 ## SYNTAX
 
@@ -65,27 +68,12 @@ Update-MgUserContactFolderContact -InputObject <IPersonalContactsIdentity> [-Add
 ```
 
 ## DESCRIPTION
-Update the navigation property contacts in users
+The contacts in the folder.
+Navigation property.
+Read-only.
+Nullable.
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 
@@ -122,7 +110,7 @@ Accept wildcard characters: False
 ### -Birthday
 The contact's birthday.
 The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time.
-For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'
+For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 
 ```yaml
 Type: System.DateTime
@@ -138,7 +126,7 @@ Accept wildcard characters: False
 
 ### -BodyParameter
 contact
-To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphContact1
@@ -247,7 +235,7 @@ Accept wildcard characters: False
 
 ### -CreatedDateTime
 The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time.
-For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'
+For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 
 ```yaml
 Type: System.DateTime
@@ -296,7 +284,7 @@ Accept wildcard characters: False
 
 ### -EmailAddresses
 The contact's email addresses.
-To construct, see NOTES section for EMAILADDRESSES properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for EMAILADDRESSES properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTypedEmailAddress[]
@@ -314,7 +302,7 @@ Accept wildcard characters: False
 The collection of open extensions defined for the contact.
 Read-only.
 Nullable.
-To construct, see NOTES section for EXTENSIONS properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for EXTENSIONS properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphExtension[]
@@ -345,7 +333,7 @@ Accept wildcard characters: False
 
 ### -Flag
 followupFlag
-To construct, see NOTES section for FLAG properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for FLAG properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphFollowupFlag
@@ -360,7 +348,7 @@ Accept wildcard characters: False
 ```
 
 ### -Gender
-.
+The contact's gender.
 
 ```yaml
 Type: System.String
@@ -420,7 +408,7 @@ Accept wildcard characters: False
 ```
 
 ### -ImAddresses
-The contact's instant messaging (IM) addresses.
+.
 
 ```yaml
 Type: System.String[]
@@ -435,7 +423,7 @@ Accept wildcard characters: False
 ```
 
 ### -Initials
-The contact's initials.
+.
 
 ```yaml
 Type: System.String
@@ -451,7 +439,7 @@ Accept wildcard characters: False
 
 ### -InputObject
 Identity Parameter
-To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IPersonalContactsIdentity
@@ -481,7 +469,7 @@ Accept wildcard characters: False
 ```
 
 ### -JobTitle
-The contact’s job title.
+.
 
 ```yaml
 Type: System.String
@@ -497,7 +485,7 @@ Accept wildcard characters: False
 
 ### -LastModifiedDateTime
 The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time.
-For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'
+For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 
 ```yaml
 Type: System.DateTime
@@ -512,7 +500,7 @@ Accept wildcard characters: False
 ```
 
 ### -Manager
-The name of the contact's manager.
+.
 
 ```yaml
 Type: System.String
@@ -527,7 +515,7 @@ Accept wildcard characters: False
 ```
 
 ### -MiddleName
-The contact's middle name.
+.
 
 ```yaml
 Type: System.String
@@ -545,7 +533,7 @@ Accept wildcard characters: False
 The collection of multi-value extended properties defined for the contact.
 Read-only.
 Nullable.
-To construct, see NOTES section for MULTIVALUEEXTENDEDPROPERTIES properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for MULTIVALUEEXTENDEDPROPERTIES properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMultiValueLegacyExtendedProperty[]
@@ -560,7 +548,7 @@ Accept wildcard characters: False
 ```
 
 ### -NickName
-The contact's nickname.
+.
 
 ```yaml
 Type: System.String
@@ -575,7 +563,7 @@ Accept wildcard characters: False
 ```
 
 ### -OfficeLocation
-The location of the contact's office.
+.
 
 ```yaml
 Type: System.String
@@ -590,7 +578,7 @@ Accept wildcard characters: False
 ```
 
 ### -ParentFolderId
-The ID of the contact's parent folder.
+.
 
 ```yaml
 Type: System.String
@@ -620,7 +608,7 @@ Accept wildcard characters: False
 ```
 
 ### -PersonalNotes
-The user's notes about the contact.
+.
 
 ```yaml
 Type: System.String
@@ -636,7 +624,7 @@ Accept wildcard characters: False
 
 ### -Phones
 .
-To construct, see NOTES section for PHONES properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for PHONES properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPhone[]
@@ -652,7 +640,7 @@ Accept wildcard characters: False
 
 ### -Photo
 profilePhoto
-To construct, see NOTES section for PHOTO properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for PHOTO properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphProfilePhoto
@@ -668,7 +656,7 @@ Accept wildcard characters: False
 
 ### -PostalAddresses
 .
-To construct, see NOTES section for POSTALADDRESSES properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for POSTALADDRESSES properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPhysicalAddress1[]
@@ -683,7 +671,7 @@ Accept wildcard characters: False
 ```
 
 ### -Profession
-The contact's profession.
+.
 
 ```yaml
 Type: System.String
@@ -701,7 +689,7 @@ Accept wildcard characters: False
 The collection of single-value extended properties defined for the contact.
 Read-only.
 Nullable.
-To construct, see NOTES section for SINGLEVALUEEXTENDEDPROPERTIES properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for SINGLEVALUEEXTENDEDPROPERTIES properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSingleValueLegacyExtendedProperty[]
@@ -716,7 +704,7 @@ Accept wildcard characters: False
 ```
 
 ### -SpouseName
-The name of the contact's spouse/partner.
+.
 
 ```yaml
 Type: System.String
@@ -731,7 +719,7 @@ Accept wildcard characters: False
 ```
 
 ### -Surname
-The contact's surname.
+.
 
 ```yaml
 Type: System.String
@@ -746,7 +734,7 @@ Accept wildcard characters: False
 ```
 
 ### -Title
-The contact's title.
+.
 
 ```yaml
 Type: System.String
@@ -777,7 +765,7 @@ Accept wildcard characters: False
 
 ### -Websites
 .
-To construct, see NOTES section for WEBSITES properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for WEBSITES properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphWebsite[]
@@ -807,7 +795,7 @@ Accept wildcard characters: False
 ```
 
 ### -YomiCompanyName
-The phonetic Japanese company name of the contact.
+.
 
 ```yaml
 Type: System.String
@@ -822,7 +810,7 @@ Accept wildcard characters: False
 ```
 
 ### -YomiGivenName
-The phonetic Japanese given name (first name) of the contact.
+.
 
 ```yaml
 Type: System.String
@@ -837,7 +825,7 @@ Accept wildcard characters: False
 ```
 
 ### -YomiSurname
-The phonetic Japanese surname (last name) of the contact.
+.
 
 ```yaml
 Type: System.String
@@ -908,11 +896,11 @@ BODYPARAMETER <IMicrosoftGraphContact1>: contact
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Categories <String[]>]`: The categories associated with the item
   - `[ChangeKey <String>]`: Identifies the version of the item. Every time the item is changed, changeKey changes as well. This allows Exchange to apply changes to the correct version of the object. Read-only.
-  - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'
-  - `[LastModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'
+  - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+  - `[LastModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
   - `[Id <String>]`: Read-only.
   - `[AssistantName <String>]`: The name of the contact's assistant.
-  - `[Birthday <DateTime?>]`: The contact's birthday. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'
+  - `[Birthday <DateTime?>]`: The contact's birthday. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
   - `[Children <String[]>]`: The names of the contact's children.
   - `[CompanyName <String>]`: The name of the contact's company.
   - `[Department <String>]`: The contact's department.
@@ -920,7 +908,7 @@ BODYPARAMETER <IMicrosoftGraphContact1>: contact
   - `[EmailAddresses <IMicrosoftGraphTypedEmailAddress[]>]`: The contact's email addresses.
     - `[Address <String>]`: The email address of the person or entity.
     - `[Name <String>]`: The display name of the person or entity.
-    - `[OtherLabel <String>]`: 
+    - `[OtherLabel <String>]`: To specify a custom type of email address, set type to other, and assign otherLabel to a custom string. For example, you may use a specific email address for your volunteer activities. Set type to other, and set otherLabel to a custom string such as Volunteer work.
     - `[Type <String>]`: emailType
   - `[Extensions <IMicrosoftGraphExtension[]>]`: The collection of open extensions defined for the contact. Read-only. Nullable.
     - `[Id <String>]`: Read-only.
@@ -934,22 +922,22 @@ BODYPARAMETER <IMicrosoftGraphContact1>: contact
     - `[DueDateTime <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
     - `[FlagStatus <String>]`: followupFlagStatus
     - `[StartDateTime <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
-  - `[Gender <String>]`: 
+  - `[Gender <String>]`: The contact's gender.
   - `[Generation <String>]`: The contact's generation.
   - `[GivenName <String>]`: The contact's given name.
-  - `[ImAddresses <String[]>]`: The contact's instant messaging (IM) addresses.
-  - `[Initials <String>]`: The contact's initials.
+  - `[ImAddresses <String[]>]`: 
+  - `[Initials <String>]`: 
   - `[IsFavorite <Boolean?>]`: 
-  - `[JobTitle <String>]`: The contact’s job title.
-  - `[Manager <String>]`: The name of the contact's manager.
-  - `[MiddleName <String>]`: The contact's middle name.
+  - `[JobTitle <String>]`: 
+  - `[Manager <String>]`: 
+  - `[MiddleName <String>]`: 
   - `[MultiValueExtendedProperties <IMicrosoftGraphMultiValueLegacyExtendedProperty[]>]`: The collection of multi-value extended properties defined for the contact. Read-only. Nullable.
     - `[Id <String>]`: Read-only.
     - `[Value <String[]>]`: A collection of property values.
-  - `[NickName <String>]`: The contact's nickname.
-  - `[OfficeLocation <String>]`: The location of the contact's office.
-  - `[ParentFolderId <String>]`: The ID of the contact's parent folder.
-  - `[PersonalNotes <String>]`: The user's notes about the contact.
+  - `[NickName <String>]`: 
+  - `[OfficeLocation <String>]`: 
+  - `[ParentFolderId <String>]`: 
+  - `[PersonalNotes <String>]`: 
   - `[Phones <IMicrosoftGraphPhone[]>]`: 
     - `[Number <String>]`: The phone number.
     - `[Type <String>]`: phoneType
@@ -961,31 +949,31 @@ BODYPARAMETER <IMicrosoftGraphContact1>: contact
   - `[PostalAddresses <IMicrosoftGraphPhysicalAddress1[]>]`: 
     - `[City <String>]`: The city.
     - `[CountryOrRegion <String>]`: The country or region. It's a free-format string value, for example, 'United States'.
-    - `[PostOfficeBox <String>]`: 
+    - `[PostOfficeBox <String>]`: The post office box number.
     - `[PostalCode <String>]`: The postal code.
     - `[State <String>]`: The state.
     - `[Street <String>]`: The street.
     - `[Type <String>]`: physicalAddressType
-  - `[Profession <String>]`: The contact's profession.
+  - `[Profession <String>]`: 
   - `[SingleValueExtendedProperties <IMicrosoftGraphSingleValueLegacyExtendedProperty[]>]`: The collection of single-value extended properties defined for the contact. Read-only. Nullable.
     - `[Id <String>]`: Read-only.
     - `[Value <String>]`: A property value.
-  - `[SpouseName <String>]`: The name of the contact's spouse/partner.
-  - `[Surname <String>]`: The contact's surname.
-  - `[Title <String>]`: The contact's title.
+  - `[SpouseName <String>]`: 
+  - `[Surname <String>]`: 
+  - `[Title <String>]`: 
   - `[Websites <IMicrosoftGraphWebsite[]>]`: 
     - `[Address <String>]`: The URL of the website.
     - `[DisplayName <String>]`: The display name of the web site.
     - `[Type <String>]`: websiteType
   - `[WeddingAnniversary <DateTime?>]`: 
-  - `[YomiCompanyName <String>]`: The phonetic Japanese company name of the contact.
-  - `[YomiGivenName <String>]`: The phonetic Japanese given name (first name) of the contact.
-  - `[YomiSurname <String>]`: The phonetic Japanese surname (last name)  of the contact.
+  - `[YomiCompanyName <String>]`: 
+  - `[YomiGivenName <String>]`: 
+  - `[YomiSurname <String>]`: 
 
 EMAILADDRESSES <IMicrosoftGraphTypedEmailAddress[]>: The contact's email addresses.
   - `[Address <String>]`: The email address of the person or entity.
   - `[Name <String>]`: The display name of the person or entity.
-  - `[OtherLabel <String>]`: 
+  - `[OtherLabel <String>]`: To specify a custom type of email address, set type to other, and assign otherLabel to a custom string. For example, you may use a specific email address for your volunteer activities. Set type to other, and set otherLabel to a custom string such as Volunteer work.
   - `[Type <String>]`: emailType
 
 EXTENSIONS <IMicrosoftGraphExtension[]>: The collection of open extensions defined for the contact. Read-only. Nullable.
@@ -1027,7 +1015,7 @@ PHOTO <IMicrosoftGraphProfilePhoto>: profilePhoto
 POSTALADDRESSES <IMicrosoftGraphPhysicalAddress1[]>: .
   - `[City <String>]`: The city.
   - `[CountryOrRegion <String>]`: The country or region. It's a free-format string value, for example, 'United States'.
-  - `[PostOfficeBox <String>]`: 
+  - `[PostOfficeBox <String>]`: The post office box number.
   - `[PostalCode <String>]`: The postal code.
   - `[State <String>]`: The state.
   - `[Street <String>]`: The street.

@@ -13,11 +13,75 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Search.yml"
     },
+    "/external/connections/{externalConnection-id}/groups": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Search.yml"
+    },
+    "/external/connections/{externalConnection-id}/groups/{externalGroup-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Search.yml"
+    },
+    "/external/connections/{externalConnection-id}/groups/{externalGroup-id}/members": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Search.yml"
+    },
+    "/external/connections/{externalConnection-id}/groups/{externalGroup-id}/members/{identity-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Search.yml"
+    },
+    "/external/connections/{externalConnection-id}/items": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Search.yml"
+    },
+    "/external/connections/{externalConnection-id}/items/{externalItem-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Search.yml"
+    },
+    "/external/connections/{externalConnection-id}/operations": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Search.yml"
+    },
+    "/external/connections/{externalConnection-id}/operations/{connectionOperation-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Search.yml"
+    },
+    "/external/connections/{externalConnection-id}/quota": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Search.yml"
+    },
+    "/external/connections/{externalConnection-id}/schema": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Search.yml"
+    },
     "/search": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Search.yml"
     },
+    "/search/acronyms": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Search.yml"
+    },
+    "/search/acronyms/{acronym-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Search.yml"
+    },
+    "/search/bookmarks": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Search.yml"
+    },
+    "/search/bookmarks/{bookmark-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Search.yml"
+    },
     "/search/microsoft.graph.query": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Search.yml"
+    },
+    "/search/qnas": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Search.yml"
+    },
+    "/search/qnas/{qna-id}": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Search.yml"
     }

@@ -16,52 +16,36 @@ Update entity in applicationTemplates
 ```
 Update-MgApplicationTemplate -ApplicationTemplateId <String> [-AdditionalProperties <Hashtable>]
  [-Categories <String[]>] [-Description <String>] [-DisplayName <String>] [-HomePageUrl <String>]
- [-Id <String>] [-LogoUrl <String>] [-Publisher <String>] [-SupportedProvisioningTypes <String[]>]
- [-SupportedSingleSignOnModes <String[]>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Id <String>] [-InformationalUrls <IMicrosoftGraphInformationalUrls>] [-LogoUrl <String>]
+ [-Publisher <String>] [-SupportedProvisioningTypes <String[]>] [-SupportedSingleSignOnModes <String[]>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgApplicationTemplate -ApplicationTemplateId <String>
- -BodyParameter <IMicrosoftGraphApplicationTemplate> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphApplicationTemplate1> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgApplicationTemplate -InputObject <IApplicationsIdentity>
- -BodyParameter <IMicrosoftGraphApplicationTemplate> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphApplicationTemplate1> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
 Update-MgApplicationTemplate -InputObject <IApplicationsIdentity> [-AdditionalProperties <Hashtable>]
  [-Categories <String[]>] [-Description <String>] [-DisplayName <String>] [-HomePageUrl <String>]
- [-Id <String>] [-LogoUrl <String>] [-Publisher <String>] [-SupportedProvisioningTypes <String[]>]
- [-SupportedSingleSignOnModes <String[]>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Id <String>] [-InformationalUrls <IMicrosoftGraphInformationalUrls>] [-LogoUrl <String>]
+ [-Publisher <String>] [-SupportedProvisioningTypes <String[]>] [-SupportedSingleSignOnModes <String[]>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Update entity in applicationTemplates
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 
@@ -97,10 +81,10 @@ Accept wildcard characters: False
 
 ### -BodyParameter
 applicationTemplate
-To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphApplicationTemplate
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphApplicationTemplate1
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -112,7 +96,8 @@ Accept wildcard characters: False
 ```
 
 ### -Categories
-.
+The list of categories for the application.
+Supported values can be: Collaboration, Business Management, Consumer, Content management, CRM, Data services, Developer services, E-commerce, Education, ERP, Finance, Health, Human resources, IT infrastructure, Mail, Management, Marketing, Media, Productivity, Project management, Telecommunications, Tools, Travel, and Web design & hosting.
 
 ```yaml
 Type: System.String[]
@@ -127,7 +112,7 @@ Accept wildcard characters: False
 ```
 
 ### -Description
-.
+A description of the application.
 
 ```yaml
 Type: System.String
@@ -142,7 +127,7 @@ Accept wildcard characters: False
 ```
 
 ### -DisplayName
-.
+The name of the application.
 
 ```yaml
 Type: System.String
@@ -157,7 +142,7 @@ Accept wildcard characters: False
 ```
 
 ### -HomePageUrl
-.
+The home page URL of the application.
 
 ```yaml
 Type: System.String
@@ -186,9 +171,25 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -InformationalUrls
+informationalUrls
+To construct, please use Get-Help -Online and see NOTES section for INFORMATIONALURLS properties and create a hash table.
+
+```yaml
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphInformationalUrls
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -InputObject
 Identity Parameter
-To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
@@ -203,7 +204,7 @@ Accept wildcard characters: False
 ```
 
 ### -LogoUrl
-.
+The URL to get the logo for this application.
 
 ```yaml
 Type: System.String
@@ -233,7 +234,7 @@ Accept wildcard characters: False
 ```
 
 ### -Publisher
-.
+The name of the publisher for this application.
 
 ```yaml
 Type: System.String
@@ -248,7 +249,8 @@ Accept wildcard characters: False
 ```
 
 ### -SupportedProvisioningTypes
-.
+The list of provisioning modes supported by this application.
+The only valid value is sync.
 
 ```yaml
 Type: System.String[]
@@ -263,7 +265,8 @@ Accept wildcard characters: False
 ```
 
 ### -SupportedSingleSignOnModes
-.
+The list of single sign-on modes supported by this application.
+The supported values are oidc, password, saml, and notSupported.
 
 ```yaml
 Type: System.String[]
@@ -315,7 +318,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphApplicationTemplate
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphApplicationTemplate1
 
 ## OUTPUTS
 
@@ -330,33 +333,40 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-BODYPARAMETER <IMicrosoftGraphApplicationTemplate>: applicationTemplate
+BODYPARAMETER <IMicrosoftGraphApplicationTemplate1>: applicationTemplate
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: Read-only.
-  - `[Categories <String[]>]`: 
-  - `[Description <String>]`: 
-  - `[DisplayName <String>]`: 
-  - `[HomePageUrl <String>]`: 
-  - `[LogoUrl <String>]`: 
-  - `[Publisher <String>]`: 
-  - `[SupportedProvisioningTypes <String[]>]`: 
-  - `[SupportedSingleSignOnModes <String[]>]`: 
+  - `[Categories <String[]>]`: The list of categories for the application. Supported values can be: Collaboration, Business Management, Consumer, Content management, CRM, Data services, Developer services, E-commerce, Education, ERP, Finance, Health, Human resources, IT infrastructure, Mail, Management, Marketing, Media, Productivity, Project management, Telecommunications, Tools, Travel, and Web design & hosting.
+  - `[Description <String>]`: A description of the application.
+  - `[DisplayName <String>]`: The name of the application.
+  - `[HomePageUrl <String>]`: The home page URL of the application.
+  - `[InformationalUrls <IMicrosoftGraphInformationalUrls>]`: informationalUrls
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+    - `[AppSignUpUrl <String>]`: 
+    - `[SingleSignOnDocumentationUrl <String>]`: 
+  - `[LogoUrl <String>]`: The URL to get the logo for this application.
+  - `[Publisher <String>]`: The name of the publisher for this application.
+  - `[SupportedProvisioningTypes <String[]>]`: The list of provisioning modes supported by this application. The only valid value is sync.
+  - `[SupportedSingleSignOnModes <String[]>]`: The list of single sign-on modes supported by this application. The supported values are oidc, password, saml, and notSupported.
+
+INFORMATIONALURLS <IMicrosoftGraphInformationalUrls>: informationalUrls
+  - `[(Any) <Object>]`: This indicates any property can be added to this object.
+  - `[AppSignUpUrl <String>]`: 
+  - `[SingleSignOnDocumentationUrl <String>]`: 
 
 INPUTOBJECT <IApplicationsIdentity>: Identity Parameter
   - `[AppRoleAssignmentId <String>]`: key: id of appRoleAssignment
   - `[ApplicationId <String>]`: key: id of application
   - `[ApplicationTemplateId <String>]`: key: id of applicationTemplate
-  - `[ClaimsMappingPolicyId <String>]`: key: id of claimsMappingPolicy
   - `[ConnectorGroupId <String>]`: key: id of connectorGroup
   - `[ConnectorId <String>]`: key: id of connector
+  - `[DelegatedPermissionClassificationId <String>]`: key: id of delegatedPermissionClassification
   - `[DirectoryDefinitionId <String>]`: key: id of directoryDefinition
-  - `[DirectoryObjectId <String>]`: key: id of directoryObject
   - `[EndpointId <String>]`: key: id of endpoint
   - `[ExtensionPropertyId <String>]`: key: id of extensionProperty
+  - `[FederatedIdentityCredentialId <String>]`: key: id of federatedIdentityCredential
   - `[GroupId <String>]`: key: id of group
-  - `[HomeRealmDiscoveryPolicyId <String>]`: key: id of homeRealmDiscoveryPolicy
   - `[LicenseDetailsId <String>]`: key: id of licenseDetails
-  - `[OAuth2PermissionGrantId <String>]`: key: id of oAuth2PermissionGrant
   - `[OnPremisesAgentGroupId <String>]`: key: id of onPremisesAgentGroup
   - `[OnPremisesAgentGroupId1 <String>]`: key: id of onPremisesAgentGroup
   - `[OnPremisesAgentId <String>]`: key: id of onPremisesAgent
@@ -367,8 +377,6 @@ INPUTOBJECT <IApplicationsIdentity>: Identity Parameter
   - `[ServicePrincipalId <String>]`: key: id of servicePrincipal
   - `[SynchronizationJobId <String>]`: key: id of synchronizationJob
   - `[SynchronizationTemplateId <String>]`: key: id of synchronizationTemplate
-  - `[TokenIssuancePolicyId <String>]`: key: id of tokenIssuancePolicy
-  - `[TokenLifetimePolicyId <String>]`: key: id of tokenLifetimePolicy
   - `[UserId <String>]`: key: id of user
 
 ## RELATED LINKS

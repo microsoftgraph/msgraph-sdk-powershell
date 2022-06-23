@@ -8,7 +8,9 @@ schema: 2.0.0
 # New-MgUserInferenceClassificationOverride
 
 ## SYNOPSIS
-Create new navigation property to overrides for users
+A set of overrides for a user to always classify messages from specific senders in certain ways: focused, or other.
+Read-only.
+Nullable.
 
 ## SYNTAX
 
@@ -39,27 +41,11 @@ New-MgUserInferenceClassificationOverride -InputObject <IMailIdentity> [-Additio
 ```
 
 ## DESCRIPTION
-Create new navigation property to overrides for users
+A set of overrides for a user to always classify messages from specific senders in certain ways: focused, or other.
+Read-only.
+Nullable.
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 
@@ -80,7 +66,7 @@ Accept wildcard characters: False
 
 ### -BodyParameter
 inferenceClassificationOverride
-To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphInferenceClassificationOverride
@@ -126,7 +112,7 @@ Accept wildcard characters: False
 
 ### -InputObject
 Identity Parameter
-To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMailIdentity
@@ -142,7 +128,7 @@ Accept wildcard characters: False
 
 ### -SenderEmailAddress
 emailAddress
-To construct, see NOTES section for SENDEREMAILADDRESS properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for SENDEREMAILADDRESS properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEmailAddress

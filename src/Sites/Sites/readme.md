@@ -39,58 +39,36 @@ subject-prefix: ''
 ``` yaml
 directive:
 # Remove invalid paths.
-  - remove-path-by-operation: .*\.onenote\..*\.parent.*|.*\.notebooks\.section.*|.*\.sectionGroups\.section.*|.*\.sections\.pages.*|sites\..*_(Create|Get|Update|Delete)Activities$|sites\..*\.activities.*|^sites_(remove|add)$
+  - remove-path-by-operation: groups\.sites_.*Onenote$|groups\.sites\.onenote.*$|.*\.onenote\..*\.parent.*|.*\.notebooks\.section.*|.*\.sectionGroups\.section.*|.*\.sections\.pages.*|sites\..*_(Create|Get|Update|Delete)Activities$|sites\..*\.activities.*|^sites_(remove|add)$|^.*sites\.(.*_.*SourceColumn|contentTypes_.*(Base|BaseTypes|ColumnPositions)|.*_(Get|Create|Update|Delete)Activities|.*\.activities.*|termStore_ListSets|termStore\.groups\.sets(\.children.*|_.*ParentGroup|\.relations_.*|\.terms\.relations_.*|\.terms\.children.*|\.terms_.*Set)|termStore\.sets(\.children.*|_.*ParentGroup|\.parentGroup.*|\.relations.*|\.terms\.children.*|\.terms\.relations.*|\.terms_.*Set))$
 # Remove cmdlets
   - where:
-      verb: Remove
+      verb: Remove|New
       subject: ^Site$
-    hide: true
+    remove: true
 # Rename cmdlets
   - where:
       verb: Get
       subject: ^Site$
-      variant: ^Get1$|^Get4$|^GetViaIdentity1$|^GetViaIdentity4$|^List$|^List2$
+      variant: ^Get1$|^GetViaIdentity1$|^Get3$|^GetViaIdentity3$|^List1$|^List3$
     set:
       subject: SubSite
-  - where:
-      verb: Update
-      subject: ^Site$
-      variant: ^Update$|^UpdateExpanded$|^UpdateViaIdentity$|^UpdateViaIdentityExpanded$|^Update2$|^UpdateExpanded2$|^UpdateViaIdentity2$|^UpdateViaIdentityExpanded2$
-    set:
-      subject: SubSite
-  - where:
-      verb: New
-      subject: ^Site$
-      variant: ^Create$|^CreateExpanded$|^CreateViaIdentity$|^CreateViaIdentityExpanded$|^Create2$|^CreateExpanded2$|^CreateViaIdentity1$|^CreateViaIdentityExpanded1$
-    set:
-      subject: SubSite
-  - where:
-      verb: Remove
-      subject: ^Site$
-      variant: ^Delete$|^DeleteViaIdentity$|^Delete2$|^DeleteViaIdentity2$
-    set:
-      subject: SubSite
-  - where:
-      verb: Get
-      subject: (^Site$)
-      variant: ^Get$|^GetViaIdentity$|^Get3$|^GetViaIdentity3$
-    set:
-      subject: $1ByPath
-  - where:
-      verb: Get
-      subject: (^SiteActivity$)
-    set:
-      subject: $1ByInterval
-  - where:
-      verb: Get
-      subject: (^SiteListItemActivity$)
-    set:
-      subject: $1ByInterval
   - where:
       verb: Get
       subject: ^(Site)OnenoteNotebook(RecentNotebook$)
     set:
       subject: $1$2
+  - where:
+      verb: Get
+      subject: ^GroupSite$
+      variant: ^Get$|^GetViaIdentity$|^Get3$|^GetViaIdentity3$|^List1$|^List3$
+    set:
+      subject: GroupSubSite
+  - where:
+      verb: Get
+      subject: ^(Site)(Drive)$
+      variant: ^Get$|^GetViaIdentity$|^Get2$|^GetViaIdentity2$
+    set:
+      subject: $1Default$2
 # Rename cmdlets that call onenotePatchContent action.
   - where:
       verb: Update
@@ -110,6 +88,6 @@ directive:
 ### Versioning
 
 ``` yaml
-module-version: 1.6.0
+module-version: 1.10.0
 release-notes: See https://aka.ms/GraphPowerShell-Release.
 ```

@@ -39,7 +39,7 @@ subject-prefix: ''
 ``` yaml
 directive:
 # Remove invalid paths.
-  - remove-path-by-operation: ^deviceManagement.(deviceManagementScripts.userRunStates.deviceRunStates_SetRefManagedDevice|groupPolicyConfigurations.definitionValues.presentationValues_SetRefDefinitionValue|groupPolicyConfigurations.definitionValues.presentationValues_SetRefPresentation|deviceShellScripts.userRunStates.deviceRunStates_SetRefManagedDevice)$
+  - remove-path-by-operation: ^deviceManagement.(deviceManagementScripts.userRunStates.deviceRunStates_.*|groupPolicyConfigurations.definitionValues.presentationValues_.*|deviceShellScripts.userRunStates.deviceRunStates_.*)$
 
 # Remove cmdlets.
   - where:
@@ -50,33 +50,10 @@ directive:
       verb: Update
       subject: ^DeviceManagementComanagedDevice$
     remove: true
-
-# Rename cmdlets.
-  - where:
-      subject: ^(DeviceManagementUserExperienceAnalyticAppHealthApplicationPerformance)$
-      variant: ^Create1$|^CreateExpanded1$|^Get1$|^GetViaIdentity1$|^List1$|^Delete1$|^DeleteViaIdentity1$|^Update1$|^UpdateExpanded1$|^UpdateViaIdentity1$|^UpdateViaIdentityExpanded1$
-    set:
-      subject: $1ByAppVersion
-  - where:
-      subject: ^(DeviceManagementUserExperienceAnalyticAppHealthApplicationPerformance)$
-      variant: ^Create2$|^CreateExpanded2$|^Get2$|^GetViaIdentity2$|^List2$|^Delete2$|^DeleteViaIdentity2$|^Update2$|^UpdateExpanded2$|^UpdateViaIdentity2$|^UpdateViaIdentityExpanded2$
-    set:
-      subject: $1ByOSVersion
-
-  - where:
-      subject: ^(DeviceManagementAndroid)$
-      variant: ^Create$|^CreateExpanded$|^Get$|^GetViaIdentity$|^List$|^Delete$|^DeleteViaIdentity$|^Update$|^UpdateExpanded$|^UpdateViaIdentity$|^UpdateViaIdentityExpanded$
-    set:
-      subject: $1ForWorkAppConfigurationSchema
-  - where:
-      subject: ^(DeviceManagementAndroid)$
-      variant: ^Get1$|^Delete1$|^Update1$|^UpdateExpanded1$
-    set:
-      subject: $1ForWorkSetting
 ```
 ### Versioning
 
 ``` yaml
-module-version: 1.6.0
+module-version: 1.10.0
 release-notes: See https://aka.ms/GraphPowerShell-Release.
 ```

@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgDeviceAppMgtMobileAppConfiguration
 
 ## SYNOPSIS
-Create new navigation property to mobileAppConfigurations for deviceAppManagement
+The Managed Device Mobile Application Configurations.
 
 ## SYNTAX
 
@@ -17,7 +17,7 @@ Create new navigation property to mobileAppConfigurations for deviceAppManagemen
 New-MgDeviceAppMgtMobileAppConfiguration [-AdditionalProperties <Hashtable>]
  [-Assignments <IMicrosoftGraphManagedDeviceMobileAppConfigurationAssignment1[]>]
  [-CreatedDateTime <DateTime>] [-Description <String>]
- [-DeviceStatuses <IMicrosoftGraphManagedDeviceMobileAppConfigurationDeviceStatus[]>]
+ [-DeviceStatuses <IMicrosoftGraphManagedDeviceMobileAppConfigurationDeviceStatus1[]>]
  [-DeviceStatusSummary <IMicrosoftGraphManagedDeviceMobileAppConfigurationDeviceSummary1>]
  [-DisplayName <String>] [-Id <String>] [-LastModifiedDateTime <DateTime>] [-TargetedMobileApps <String[]>]
  [-UserStatuses <IMicrosoftGraphManagedDeviceMobileAppConfigurationUserStatus[]>]
@@ -32,27 +32,9 @@ New-MgDeviceAppMgtMobileAppConfiguration -BodyParameter <IMicrosoftGraphManagedD
 ```
 
 ## DESCRIPTION
-Create new navigation property to mobileAppConfigurations for deviceAppManagement
+The Managed Device Mobile Application Configurations.
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 
@@ -73,7 +55,7 @@ Accept wildcard characters: False
 
 ### -Assignments
 The list of group assignemenets for app configration.
-To construct, see NOTES section for ASSIGNMENTS properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for ASSIGNMENTS properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedDeviceMobileAppConfigurationAssignment1[]
@@ -89,7 +71,7 @@ Accept wildcard characters: False
 
 ### -BodyParameter
 An abstract class for Mobile app configuration for enrolled devices.
-To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedDeviceMobileAppConfiguration1
@@ -135,10 +117,10 @@ Accept wildcard characters: False
 
 ### -DeviceStatuses
 List of ManagedDeviceMobileAppConfigurationDeviceStatus.
-To construct, see NOTES section for DEVICESTATUSES properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for DEVICESTATUSES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedDeviceMobileAppConfigurationDeviceStatus[]
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedDeviceMobileAppConfigurationDeviceStatus1[]
 Parameter Sets: CreateExpanded1
 Aliases:
 
@@ -151,7 +133,7 @@ Accept wildcard characters: False
 
 ### -DeviceStatusSummary
 Contains properties, inherited properties and actions for an MDM mobile app configuration device status summary.
-To construct, see NOTES section for DEVICESTATUSSUMMARY properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for DEVICESTATUSSUMMARY properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedDeviceMobileAppConfigurationDeviceSummary1
@@ -227,7 +209,7 @@ Accept wildcard characters: False
 
 ### -UserStatuses
 List of ManagedDeviceMobileAppConfigurationUserStatus.
-To construct, see NOTES section for USERSTATUSES properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for USERSTATUSES properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedDeviceMobileAppConfigurationUserStatus[]
@@ -243,7 +225,7 @@ Accept wildcard characters: False
 
 ### -UserStatusSummary
 Contains properties, inherited properties and actions for an MDM mobile app configuration user status summary.
-To construct, see NOTES section for USERSTATUSSUMMARY properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for USERSTATUSSUMMARY properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedDeviceMobileAppConfigurationUserSummary1
@@ -349,7 +331,7 @@ BODYPARAMETER <IMicrosoftGraphManagedDeviceMobileAppConfiguration1>: An abstract
     - `[NotApplicableCount <Int32?>]`: Number of not applicable devices
     - `[PendingCount <Int32?>]`: Number of pending devices
     - `[SuccessCount <Int32?>]`: Number of succeeded devices
-  - `[DeviceStatuses <IMicrosoftGraphManagedDeviceMobileAppConfigurationDeviceStatus[]>]`: List of ManagedDeviceMobileAppConfigurationDeviceStatus.
+  - `[DeviceStatuses <IMicrosoftGraphManagedDeviceMobileAppConfigurationDeviceStatus1[]>]`: List of ManagedDeviceMobileAppConfigurationDeviceStatus.
     - `[Id <String>]`: Read-only.
     - `[ComplianceGracePeriodExpirationDateTime <DateTime?>]`: The DateTime when device compliance grace period expires
     - `[DeviceDisplayName <String>]`: Device name of the DevicePolicyStatus.
@@ -380,7 +362,7 @@ BODYPARAMETER <IMicrosoftGraphManagedDeviceMobileAppConfiguration1>: An abstract
     - `[UserPrincipalName <String>]`: UserPrincipalName.
   - `[Version <Int32?>]`: Version of the device configuration.
 
-DEVICESTATUSES <IMicrosoftGraphManagedDeviceMobileAppConfigurationDeviceStatus[]>: List of ManagedDeviceMobileAppConfigurationDeviceStatus.
+DEVICESTATUSES <IMicrosoftGraphManagedDeviceMobileAppConfigurationDeviceStatus1[]>: List of ManagedDeviceMobileAppConfigurationDeviceStatus.
   - `[Id <String>]`: Read-only.
   - `[ComplianceGracePeriodExpirationDateTime <DateTime?>]`: The DateTime when device compliance grace period expires
   - `[DeviceDisplayName <String>]`: Device name of the DevicePolicyStatus.
