@@ -39,7 +39,7 @@ $ModuleMapping.Keys | ForEach-Object -Begin { $RequestCount = 0 } -End { Write-D
     $ForceRefresh = $false
     # Check whether ForceRefresh is required, Only required for the First Request.
     if ($RequestCount -eq 0) {
-        $ForceRefresh = $true
+        $ForceRefresh = $false
     }
 
     try {
