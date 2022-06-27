@@ -39,6 +39,13 @@ subject-prefix: ''
 ``` yaml
 directive:
   - remove-path-by-operation: .*_(Create|Get|Update|Set|Delete)Activities$|.*\.activities.*$|shares\..*_createLink
+# Rename cmdlets
+  - where:
+      verb: Get
+      subject: ^(Group|User)(Drive)$
+      variant: ^Get$|^GetViaIdentity$|^Get2$|^GetViaIdentity2$
+    set:
+      subject: $1Default$2
 ```
 ### Versioning
 
