@@ -33,7 +33,7 @@ jobs:
   - job: GenerateServiceModules
     displayName: Service module generation
     timeoutInMinutes: 840
-    condition: and(succeeded(), ne(stageDependencies.DownloadOpenAPIDocs.GetLatestDocs.outputs['OpenAPIDocDiff.ModulesWithChanges'], ''))
+    #condition: and(succeeded(), ne(stageDependencies.DownloadOpenAPIDocs.GetLatestDocs.outputs['OpenAPIDocDiff.ModulesWithChanges'], ''))
     variables:
       Branch: ${{ parameters.Branch }}
       ModulesToGenerate: ${{ parameters.ModulesToGenerate }}
