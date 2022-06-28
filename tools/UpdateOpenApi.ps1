@@ -38,8 +38,8 @@ $ModuleMapping.Keys | ForEach-Object -Begin { $RequestCount = 0 } -End { Write-D
     $ModuleName = $_
     $ForceRefresh = $false
     # Check whether ForceRefresh is required, Only required for the First Request.
-    if ($RequestCount -eq 0) {
-        $ForceRefresh = $false
+    if ($RequestCount -eq 0 -and $GraphVersion -eq "v1.0") {
+        $ForceRefresh = $true
     }
 
     try {
