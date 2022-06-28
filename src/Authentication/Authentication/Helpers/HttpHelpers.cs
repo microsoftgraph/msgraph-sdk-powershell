@@ -94,10 +94,10 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
         {
             IList<DelegatingHandler> defaultHandlers = GraphClientFactory.CreateDefaultHandlers(authProvider);
 
-            // Register NationalCloudHandler after AuthHandler.
+            // Register custom HTTP handlers after AuthHandler.
             defaultHandlers.Insert(1, new NationalCloudHandler());
-            // Register ODataQueryOptionsHandler after NationalCloudHandler.
             defaultHandlers.Insert(2, new ODataQueryOptionsHandler());
+            defaultHandlers.Insert(3, new HttpVersionHandler());
 
             HttpClient httpClient = GraphClientFactory.Create(defaultHandlers);
             httpClient.Timeout = clientTimeout;
