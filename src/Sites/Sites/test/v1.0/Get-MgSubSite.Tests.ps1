@@ -28,37 +28,9 @@ Describe 'Get-MgSubSite' {
 
             $SiteId = "root"
             $SubSites = Get-MgSubSite -SiteId $SiteId
-            $SubSites | Should -BeOfType -ExpectedType 'Microsoft.Graph.PowerShell.Models.MicrosoftGraphSite1'
+            $SubSites | Should -BeOfType -ExpectedType 'Microsoft.Graph.PowerShell.Models.MicrosoftGraphSite'
             $SubSites | Should -HaveCount 2
             $SubSites.AdditionalProperties | Should -HaveCount 2
-        }
-    }
-
-    Context 'Get4' {
-        It 'ShouldGetASingleSubSite' {
-            $Mock.PushScenario('ShouldGetASingleSubSite')
-
-            $SiteId = "root"
-            $SubSite = Get-MgSubSite -SiteId $SiteId -SiteId1 "randomId"
-            $SubSite | Should -BeOfType -ExpectedType 'Microsoft.Graph.PowerShell.Models.MicrosoftGraphSite1'
-            $SubSite | Should -HaveCount 1
-            $SubSite.Id | Should -Be 'randomId'
-            $SubSite.WebUrl | Should -Be 'https://contoso.sharepoint.com/sites/site/subsiteA'
-            $SubSite.AdditionalProperties | Should -HaveCount 1
-        }
-    }
-
-    Context 'GetViaIdentity4' {
-        It 'ShouldGetASingleSubSiteViaInputObject' {
-            $Mock.PushScenario('ShouldGetASingleSubSiteViaInputObject')
-
-            $SiteId = "root"
-            $SubSite = Get-MgSubSite -InputObject @{ SiteId = $SiteId; SiteId1 = "randomId" }
-            $SubSite | Should -BeOfType -ExpectedType 'Microsoft.Graph.PowerShell.Models.MicrosoftGraphSite1'
-            $SubSite | Should -HaveCount 1
-            $SubSite.Id | Should -Be 'randomId'
-            $SubSite.WebUrl | Should -Be 'https://contoso.sharepoint.com/sites/site/subsiteA'
-            $SubSite.AdditionalProperties | Should -HaveCount 1
         }
     }
 }

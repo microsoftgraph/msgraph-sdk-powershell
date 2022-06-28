@@ -11,7 +11,6 @@ paths:
       tags:
         - admin.serviceAnnouncement
       summary: Get serviceAnnouncement from admin
-      description: A container for service communications resources. Read-only.
       operationId: admin_GetServiceAnnouncement
       parameters:
         - name: $select
@@ -65,7 +64,6 @@ paths:
       tags:
         - admin.serviceAnnouncement
       summary: Update the navigation property serviceAnnouncement in admin
-      description: A container for service communications resources. Read-only.
       operationId: admin_UpdateServiceAnnouncement
       requestBody:
         description: New navigation property values
@@ -84,7 +82,6 @@ paths:
       tags:
         - admin.serviceAnnouncement
       summary: Delete navigation property serviceAnnouncement for admin
-      description: A container for service communications resources. Read-only.
       operationId: admin_DeleteServiceAnnouncement
       parameters:
         - name: If-Match
@@ -103,7 +100,6 @@ paths:
       tags:
         - admin.serviceAnnouncement
       summary: Get healthOverviews from admin
-      description: 'A collection of service health information for tenant. This property is a contained navigation property, it is nullable and readonly.'
       operationId: admin.serviceAnnouncement_ListHealthOverviews
       parameters:
         - $ref: '#/components/parameters/top'
@@ -158,21 +154,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of serviceHealth
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.serviceHealth'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.serviceHealthCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -183,7 +165,6 @@ paths:
       tags:
         - admin.serviceAnnouncement
       summary: Create new navigation property to healthOverviews for admin
-      description: 'A collection of service health information for tenant. This property is a contained navigation property, it is nullable and readonly.'
       operationId: admin.serviceAnnouncement_CreateHealthOverviews
       requestBody:
         description: New navigation property
@@ -207,7 +188,6 @@ paths:
       tags:
         - admin.serviceAnnouncement
       summary: Get healthOverviews from admin
-      description: 'A collection of service health information for tenant. This property is a contained navigation property, it is nullable and readonly.'
       operationId: admin.serviceAnnouncement_GetHealthOverviews
       parameters:
         - name: serviceHealth-id
@@ -264,7 +244,6 @@ paths:
       tags:
         - admin.serviceAnnouncement
       summary: Update the navigation property healthOverviews in admin
-      description: 'A collection of service health information for tenant. This property is a contained navigation property, it is nullable and readonly.'
       operationId: admin.serviceAnnouncement_UpdateHealthOverviews
       parameters:
         - name: serviceHealth-id
@@ -291,7 +270,6 @@ paths:
       tags:
         - admin.serviceAnnouncement
       summary: Delete navigation property healthOverviews for admin
-      description: 'A collection of service health information for tenant. This property is a contained navigation property, it is nullable and readonly.'
       operationId: admin.serviceAnnouncement_DeleteHealthOverviews
       parameters:
         - name: serviceHealth-id
@@ -317,7 +295,6 @@ paths:
       tags:
         - admin.serviceAnnouncement
       summary: Get issues from admin
-      description: 'A collection of issues that happened on the service, with detailed information for each issue.'
       operationId: admin.serviceAnnouncement.healthOverviews_ListIssues
       parameters:
         - name: serviceHealth-id
@@ -413,21 +390,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of serviceHealthIssue
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.serviceHealthIssue'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.serviceHealthIssueCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -438,7 +401,6 @@ paths:
       tags:
         - admin.serviceAnnouncement
       summary: Create new navigation property to issues for admin
-      description: 'A collection of issues that happened on the service, with detailed information for each issue.'
       operationId: admin.serviceAnnouncement.healthOverviews_CreateIssues
       parameters:
         - name: serviceHealth-id
@@ -470,7 +432,6 @@ paths:
       tags:
         - admin.serviceAnnouncement
       summary: Get issues from admin
-      description: 'A collection of issues that happened on the service, with detailed information for each issue.'
       operationId: admin.serviceAnnouncement.healthOverviews_GetIssues
       parameters:
         - name: serviceHealth-id
@@ -532,6 +493,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.serviceHealthIssue'
+          links:
+            incidentReport:
+              operationId: admin.serviceAnnouncement.healthOverviews.serviceHealth.issues.serviceHealthIssue.incidentReport
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -539,7 +503,6 @@ paths:
       tags:
         - admin.serviceAnnouncement
       summary: Update the navigation property issues in admin
-      description: 'A collection of issues that happened on the service, with detailed information for each issue.'
       operationId: admin.serviceAnnouncement.healthOverviews_UpdateIssues
       parameters:
         - name: serviceHealth-id
@@ -573,7 +536,6 @@ paths:
       tags:
         - admin.serviceAnnouncement
       summary: Delete navigation property issues for admin
-      description: 'A collection of issues that happened on the service, with detailed information for each issue.'
       operationId: admin.serviceAnnouncement.healthOverviews_DeleteIssues
       parameters:
         - name: serviceHealth-id
@@ -626,11 +588,16 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
-                type: string
-                format: base64url
-                nullable: true
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                    nullable: true
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -639,7 +606,6 @@ paths:
       tags:
         - admin.serviceAnnouncement
       summary: Get issues from admin
-      description: 'A collection of service issues for tenant. This property is a contained navigation property, it is nullable and readonly.'
       operationId: admin.serviceAnnouncement_ListIssues
       parameters:
         - $ref: '#/components/parameters/top'
@@ -728,21 +694,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of serviceHealthIssue
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.serviceHealthIssue'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.serviceHealthIssueCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -753,7 +705,6 @@ paths:
       tags:
         - admin.serviceAnnouncement
       summary: Create new navigation property to issues for admin
-      description: 'A collection of service issues for tenant. This property is a contained navigation property, it is nullable and readonly.'
       operationId: admin.serviceAnnouncement_CreateIssues
       requestBody:
         description: New navigation property
@@ -777,7 +728,6 @@ paths:
       tags:
         - admin.serviceAnnouncement
       summary: Get issues from admin
-      description: 'A collection of service issues for tenant. This property is a contained navigation property, it is nullable and readonly.'
       operationId: admin.serviceAnnouncement_GetIssues
       parameters:
         - name: serviceHealthIssue-id
@@ -832,6 +782,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.serviceHealthIssue'
+          links:
+            incidentReport:
+              operationId: admin.serviceAnnouncement.issues.serviceHealthIssue.incidentReport
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -839,7 +792,6 @@ paths:
       tags:
         - admin.serviceAnnouncement
       summary: Update the navigation property issues in admin
-      description: 'A collection of service issues for tenant. This property is a contained navigation property, it is nullable and readonly.'
       operationId: admin.serviceAnnouncement_UpdateIssues
       parameters:
         - name: serviceHealthIssue-id
@@ -866,7 +818,6 @@ paths:
       tags:
         - admin.serviceAnnouncement
       summary: Delete navigation property issues for admin
-      description: 'A collection of service issues for tenant. This property is a contained navigation property, it is nullable and readonly.'
       operationId: admin.serviceAnnouncement_DeleteIssues
       parameters:
         - name: serviceHealthIssue-id
@@ -905,11 +856,16 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
-                type: string
-                format: base64url
-                nullable: true
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                    nullable: true
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -918,7 +874,6 @@ paths:
       tags:
         - admin.serviceAnnouncement
       summary: Get messages from admin
-      description: 'A collection of service messages for tenant. This property is a contained navigation property, it is nullable and readonly.'
       operationId: admin.serviceAnnouncement_ListMessages
       parameters:
         - $ref: '#/components/parameters/top'
@@ -1012,21 +967,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of serviceUpdateMessage
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.serviceUpdateMessage'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.serviceUpdateMessageCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -1037,7 +978,6 @@ paths:
       tags:
         - admin.serviceAnnouncement
       summary: Create new navigation property to messages for admin
-      description: 'A collection of service messages for tenant. This property is a contained navigation property, it is nullable and readonly.'
       operationId: admin.serviceAnnouncement_CreateMessages
       requestBody:
         description: New navigation property
@@ -1061,7 +1001,6 @@ paths:
       tags:
         - admin.serviceAnnouncement
       summary: Get messages from admin
-      description: 'A collection of service messages for tenant. This property is a contained navigation property, it is nullable and readonly.'
       operationId: admin.serviceAnnouncement_GetMessages
       parameters:
         - name: serviceUpdateMessage-id
@@ -1131,7 +1070,6 @@ paths:
       tags:
         - admin.serviceAnnouncement
       summary: Update the navigation property messages in admin
-      description: 'A collection of service messages for tenant. This property is a contained navigation property, it is nullable and readonly.'
       operationId: admin.serviceAnnouncement_UpdateMessages
       parameters:
         - name: serviceUpdateMessage-id
@@ -1158,7 +1096,6 @@ paths:
       tags:
         - admin.serviceAnnouncement
       summary: Delete navigation property messages for admin
-      description: 'A collection of service messages for tenant. This property is a contained navigation property, it is nullable and readonly.'
       operationId: admin.serviceAnnouncement_DeleteMessages
       parameters:
         - name: serviceUpdateMessage-id
@@ -1184,7 +1121,6 @@ paths:
       tags:
         - admin.serviceAnnouncement
       summary: Get attachments from admin
-      description: A collection of serviceAnnouncementAttachments.
       operationId: admin.serviceAnnouncement.messages_ListAttachments
       parameters:
         - name: serviceUpdateMessage-id
@@ -1253,21 +1189,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of serviceAnnouncementAttachment
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.serviceAnnouncementAttachment'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.serviceAnnouncementAttachmentCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -1278,7 +1200,6 @@ paths:
       tags:
         - admin.serviceAnnouncement
       summary: Create new navigation property to attachments for admin
-      description: A collection of serviceAnnouncementAttachments.
       operationId: admin.serviceAnnouncement.messages_CreateAttachments
       parameters:
         - name: serviceUpdateMessage-id
@@ -1310,7 +1231,6 @@ paths:
       tags:
         - admin.serviceAnnouncement
       summary: Get attachments from admin
-      description: A collection of serviceAnnouncementAttachments.
       operationId: admin.serviceAnnouncement.messages_GetAttachments
       parameters:
         - name: serviceUpdateMessage-id
@@ -1370,7 +1290,6 @@ paths:
       tags:
         - admin.serviceAnnouncement
       summary: Update the navigation property attachments in admin
-      description: A collection of serviceAnnouncementAttachments.
       operationId: admin.serviceAnnouncement.messages_UpdateAttachments
       parameters:
         - name: serviceUpdateMessage-id
@@ -1404,7 +1323,6 @@ paths:
       tags:
         - admin.serviceAnnouncement
       summary: Delete navigation property attachments for admin
-      description: A collection of serviceAnnouncementAttachments.
       operationId: admin.serviceAnnouncement.messages_DeleteAttachments
       parameters:
         - name: serviceUpdateMessage-id
@@ -1436,7 +1354,7 @@ paths:
     get:
       tags:
         - admin.serviceAnnouncement
-      summary: Get media content for the navigation property attachments from admin
+      summary: Get content for the navigation property attachments from admin
       operationId: admin.serviceAnnouncement.messages_GetAttachmentsContent
       parameters:
         - name: serviceUpdateMessage-id
@@ -1467,7 +1385,7 @@ paths:
     put:
       tags:
         - admin.serviceAnnouncement
-      summary: Update media content for the navigation property attachments in admin
+      summary: Update content for the navigation property attachments in admin
       operationId: admin.serviceAnnouncement.messages_SetAttachmentsContent
       parameters:
         - name: serviceUpdateMessage-id
@@ -1502,7 +1420,7 @@ paths:
     get:
       tags:
         - admin.serviceAnnouncement
-      summary: Get media content for the navigation property messages from admin
+      summary: Get attachmentsArchive for the navigation property messages from admin
       operationId: admin.serviceAnnouncement_GetMessagesAttachmentsArchive
       parameters:
         - name: serviceUpdateMessage-id
@@ -1526,7 +1444,7 @@ paths:
     put:
       tags:
         - admin.serviceAnnouncement
-      summary: Update media content for the navigation property messages in admin
+      summary: Update attachmentsArchive for the navigation property messages in admin
       operationId: admin.serviceAnnouncement_SetMessagesAttachmentsArchive
       parameters:
         - name: serviceUpdateMessage-id
@@ -1577,9 +1495,14 @@ paths:
           content:
             application/json:
               schema:
-                type: boolean
-                default: false
-                nullable: true
+                type: object
+                properties:
+                  value:
+                    type: boolean
+                    default: false
+                    nullable: true
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
@@ -1610,9 +1533,14 @@ paths:
           content:
             application/json:
               schema:
-                type: boolean
-                default: false
-                nullable: true
+                type: object
+                properties:
+                  value:
+                    type: boolean
+                    default: false
+                    nullable: true
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
@@ -1643,9 +1571,14 @@ paths:
           content:
             application/json:
               schema:
-                type: boolean
-                default: false
-                nullable: true
+                type: object
+                properties:
+                  value:
+                    type: boolean
+                    default: false
+                    nullable: true
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
@@ -1676,9 +1609,14 @@ paths:
           content:
             application/json:
               schema:
-                type: boolean
-                default: false
-                nullable: true
+                type: object
+                properties:
+                  value:
+                    type: boolean
+                    default: false
+                    nullable: true
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
@@ -1709,9 +1647,14 @@ paths:
           content:
             application/json:
               schema:
-                type: boolean
-                default: false
-                nullable: true
+                type: object
+                properties:
+                  value:
+                    type: boolean
+                    default: false
+                    nullable: true
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
@@ -1742,9 +1685,14 @@ paths:
           content:
             application/json:
               schema:
-                type: boolean
-                default: false
-                nullable: true
+                type: object
+                properties:
+                  value:
+                    type: boolean
+                    default: false
+                    nullable: true
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
@@ -1841,7 +1789,7 @@ components:
               nullable: true
             attachmentsArchive:
               type: string
-              description: The zip file that contains all attachments for a message.
+              description: The zip file of all attachments for a message.
               format: base64url
               nullable: true
             body:
@@ -1913,7 +1861,6 @@ components:
       properties:
         id:
           type: string
-          description: Read-only.
       additionalProperties:
         type: object
     microsoft.graph.serviceHealthStatus:
@@ -2046,13 +1993,61 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    odata.error:
+    microsoft.graph.ODataErrors.ODataError:
       required:
         - error
       type: object
       properties:
         error:
-          $ref: '#/components/schemas/odata.error.main'
+          $ref: '#/components/schemas/microsoft.graph.ODataErrors.MainError'
+      additionalProperties:
+        type: object
+    microsoft.graph.serviceHealthCollectionResponse:
+      title: Collection of serviceHealth
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.serviceHealth'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.serviceHealthIssueCollectionResponse:
+      title: Collection of serviceHealthIssue
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.serviceHealthIssue'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.serviceUpdateMessageCollectionResponse:
+      title: Collection of serviceUpdateMessage
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.serviceUpdateMessage'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.serviceAnnouncementAttachmentCollectionResponse:
+      title: Collection of serviceAnnouncementAttachment
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.serviceAnnouncementAttachment'
+        '@odata.nextLink':
+          type: string
       additionalProperties:
         type: object
     microsoft.graph.keyValuePair:
@@ -2082,7 +2077,7 @@ components:
         - text
         - html
       type: string
-    odata.error.main:
+    microsoft.graph.ODataErrors.MainError:
       required:
         - code
         - message
@@ -2094,18 +2089,16 @@ components:
           type: string
         target:
           type: string
+          nullable: true
         details:
           type: array
           items:
-            $ref: '#/components/schemas/odata.error.detail'
+            $ref: '#/components/schemas/microsoft.graph.ODataErrors.ErrorDetails'
         innererror:
-          type: object
-          additionalProperties:
-            type: object
-          description: The structure of this object is service-specific
+          $ref: '#/components/schemas/microsoft.graph.ODataErrors.InnerError'
       additionalProperties:
         type: object
-    odata.error.detail:
+    microsoft.graph.ODataErrors.ErrorDetails:
       required:
         - code
         - message
@@ -2117,15 +2110,45 @@ components:
           type: string
         target:
           type: string
+          nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.ODataErrors.InnerError:
+      type: object
+      additionalProperties:
+        type: object
+      description: The structure of this object is service-specific
   responses:
     error:
       description: error
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/odata.error'
+            $ref: '#/components/schemas/microsoft.graph.ODataErrors.ODataError'
+    microsoft.graph.serviceHealthCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.serviceHealthCollectionResponse'
+    microsoft.graph.serviceHealthIssueCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.serviceHealthIssueCollectionResponse'
+    microsoft.graph.serviceUpdateMessageCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.serviceUpdateMessageCollectionResponse'
+    microsoft.graph.serviceAnnouncementAttachmentCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.serviceAnnouncementAttachmentCollectionResponse'
   parameters:
     top:
       name: $top

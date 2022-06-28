@@ -91,7 +91,6 @@ paths:
       tags:
         - auditLogs.directoryAudit
       summary: Get directoryAudits from auditLogs
-      description: Read-only. Nullable.
       operationId: auditLogs_ListDirectoryAudits
       parameters:
         - $ref: '#/components/parameters/top'
@@ -174,21 +173,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of directoryAudit
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.directoryAudit'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.directoryAuditCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -199,7 +184,6 @@ paths:
       tags:
         - auditLogs.directoryAudit
       summary: Create new navigation property to directoryAudits for auditLogs
-      description: Read-only. Nullable.
       operationId: auditLogs_CreateDirectoryAudits
       requestBody:
         description: New navigation property
@@ -223,7 +207,6 @@ paths:
       tags:
         - auditLogs.directoryAudit
       summary: Get directoryAudits from auditLogs
-      description: Read-only. Nullable.
       operationId: auditLogs_GetDirectoryAudits
       parameters:
         - name: directoryAudit-id
@@ -283,7 +266,6 @@ paths:
       tags:
         - auditLogs.directoryAudit
       summary: Update the navigation property directoryAudits in auditLogs
-      description: Read-only. Nullable.
       operationId: auditLogs_UpdateDirectoryAudits
       parameters:
         - name: directoryAudit-id
@@ -310,7 +292,6 @@ paths:
       tags:
         - auditLogs.directoryAudit
       summary: Delete navigation property directoryAudits for auditLogs
-      description: Read-only. Nullable.
       operationId: auditLogs_DeleteDirectoryAudits
       parameters:
         - name: directoryAudit-id
@@ -436,21 +417,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of provisioningObjectSummary
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.provisioningObjectSummary'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.provisioningObjectSummaryCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -700,21 +667,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of provisioningObjectSummary
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.provisioningObjectSummary'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.provisioningObjectSummaryCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -909,6 +862,8 @@ paths:
                 - azureResourceId desc
                 - clientAppUsed
                 - clientAppUsed desc
+                - clientCredentialType
+                - clientCredentialType desc
                 - conditionalAccessStatus
                 - conditionalAccessStatus desc
                 - correlationId
@@ -1028,6 +983,7 @@ paths:
                 - autonomousSystemNumber
                 - azureResourceId
                 - clientAppUsed
+                - clientCredentialType
                 - conditionalAccessStatus
                 - correlationId
                 - createdDateTime
@@ -1090,21 +1046,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of restrictedSignIn
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.restrictedSignIn'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.restrictedSignInCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -1171,6 +1113,7 @@ paths:
                 - autonomousSystemNumber
                 - azureResourceId
                 - clientAppUsed
+                - clientCredentialType
                 - conditionalAccessStatus
                 - correlationId
                 - createdDateTime
@@ -1296,7 +1239,6 @@ paths:
       tags:
         - auditLogs.signIn
       summary: Get signIns from auditLogs
-      description: Read-only. Nullable.
       operationId: auditLogs_ListSignIns
       parameters:
         - $ref: '#/components/parameters/top'
@@ -1342,6 +1284,8 @@ paths:
                 - azureResourceId desc
                 - clientAppUsed
                 - clientAppUsed desc
+                - clientCredentialType
+                - clientCredentialType desc
                 - conditionalAccessStatus
                 - conditionalAccessStatus desc
                 - correlationId
@@ -1459,6 +1403,7 @@ paths:
                 - autonomousSystemNumber
                 - azureResourceId
                 - clientAppUsed
+                - clientCredentialType
                 - conditionalAccessStatus
                 - correlationId
                 - createdDateTime
@@ -1520,21 +1465,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of signIn
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.signIn'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.signInCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -1545,7 +1476,6 @@ paths:
       tags:
         - auditLogs.signIn
       summary: Create new navigation property to signIns for auditLogs
-      description: Read-only. Nullable.
       operationId: auditLogs_CreateSignIns
       requestBody:
         description: New navigation property
@@ -1569,7 +1499,6 @@ paths:
       tags:
         - auditLogs.signIn
       summary: Get signIns from auditLogs
-      description: Read-only. Nullable.
       operationId: auditLogs_GetSignIns
       parameters:
         - name: signIn-id
@@ -1603,6 +1532,7 @@ paths:
                 - autonomousSystemNumber
                 - azureResourceId
                 - clientAppUsed
+                - clientCredentialType
                 - conditionalAccessStatus
                 - correlationId
                 - createdDateTime
@@ -1676,7 +1606,6 @@ paths:
       tags:
         - auditLogs.signIn
       summary: Update the navigation property signIns in auditLogs
-      description: Read-only. Nullable.
       operationId: auditLogs_UpdateSignIns
       parameters:
         - name: signIn-id
@@ -1703,7 +1632,6 @@ paths:
       tags:
         - auditLogs.signIn
       summary: Delete navigation property signIns for auditLogs
-      description: Read-only. Nullable.
       operationId: auditLogs_DeleteSignIns
       parameters:
         - name: signIn-id
@@ -1724,12 +1652,65 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /auditLogs/signIns/microsoft.graph.confirmCompromised:
+    post:
+      tags:
+        - auditLogs.Actions
+      summary: Invoke action confirmCompromised
+      operationId: auditLogs.signIns_confirmCompromised
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                requestIds:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  /auditLogs/signIns/microsoft.graph.confirmSafe:
+    post:
+      tags:
+        - auditLogs.Actions
+      summary: Invoke action confirmSafe
+      operationId: auditLogs.signIns_confirmSafe
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                requestIds:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   /deviceManagement/reports:
     get:
       tags:
         - deviceManagement.deviceManagementReports
       summary: Get reports from deviceManagement
-      description: Reports singleton
       operationId: deviceManagement_GetReports
       parameters:
         - name: $select
@@ -1772,6 +1753,116 @@ paths:
               operationId: deviceManagement.Reports.ListCachedReportConfigurations
             exportJobs:
               operationId: deviceManagement.Reports.ListExportJobs
+            getActiveMalwareReport:
+              operationId: deviceManagement.reports.getActiveMalwareReport
+            getActiveMalwareSummaryReport:
+              operationId: deviceManagement.reports.getActiveMalwareSummaryReport
+            getAllCertificatesReport:
+              operationId: deviceManagement.reports.getAllCertificatesReport
+            getAppsInstallSummaryReport:
+              operationId: deviceManagement.reports.getAppsInstallSummaryReport
+            getAppStatusOverviewReport:
+              operationId: deviceManagement.reports.getAppStatusOverviewReport
+            getCachedReport:
+              operationId: deviceManagement.reports.getCachedReport
+            getCertificatesReport:
+              operationId: deviceManagement.reports.getCertificatesReport
+            getCompliancePoliciesReportForDevice:
+              operationId: deviceManagement.reports.getCompliancePoliciesReportGraphFPreDevice
+            getCompliancePolicyDevicesReport:
+              operationId: deviceManagement.reports.getCompliancePolicyDevicesReport
+            getCompliancePolicyDeviceSummaryReport:
+              operationId: deviceManagement.reports.getCompliancePolicyDeviceSummaryReport
+            getCompliancePolicyNonComplianceReport:
+              operationId: deviceManagement.reports.getCompliancePolicyNonComplianceReport
+            getCompliancePolicyNonComplianceSummaryReport:
+              operationId: deviceManagement.reports.getCompliancePolicyNonComplianceSummaryReport
+            getComplianceSettingDetailsReport:
+              operationId: deviceManagement.reports.getComplianceSettingDetailsReport
+            getComplianceSettingNonComplianceReport:
+              operationId: deviceManagement.reports.getComplianceSettingNonComplianceReport
+            getComplianceSettingsReport:
+              operationId: deviceManagement.reports.getComplianceSettingsReport
+            getConfigManagerDevicePolicyStatusReport:
+              operationId: deviceManagement.reports.getConfigManagerDevicePolicyStatusReport
+            getConfigurationPoliciesReportForDevice:
+              operationId: deviceManagement.reports.getConfigurationPoliciesReportGraphFPreDevice
+            getConfigurationPolicyDevicesReport:
+              operationId: deviceManagement.reports.getConfigurationPolicyDevicesReport
+            getConfigurationPolicyDeviceSummaryReport:
+              operationId: deviceManagement.reports.getConfigurationPolicyDeviceSummaryReport
+            getConfigurationPolicyNonComplianceReport:
+              operationId: deviceManagement.reports.getConfigurationPolicyNonComplianceReport
+            getConfigurationPolicyNonComplianceSummaryReport:
+              operationId: deviceManagement.reports.getConfigurationPolicyNonComplianceSummaryReport
+            getConfigurationPolicySettingsDeviceSummaryReport:
+              operationId: deviceManagement.reports.getConfigurationPolicySettingsDeviceSummaryReport
+            getConfigurationSettingDetailsReport:
+              operationId: deviceManagement.reports.getConfigurationSettingDetailsReport
+            getConfigurationSettingNonComplianceReport:
+              operationId: deviceManagement.reports.getConfigurationSettingNonComplianceReport
+            getConfigurationSettingsReport:
+              operationId: deviceManagement.reports.getConfigurationSettingsReport
+            getDeviceConfigurationPolicySettingsSummaryReport:
+              operationId: deviceManagement.reports.getDeviceConfigurationPolicySettingsSummaryReport
+            getDeviceConfigurationPolicyStatusSummary:
+              operationId: deviceManagement.reports.getDeviceConfigurationPolicyStatusSummary
+            getDeviceInstallStatusReport:
+              operationId: deviceManagement.reports.getDeviceInstallStatusReport
+            getDeviceManagementIntentPerSettingContributingProfiles:
+              operationId: deviceManagement.reports.getDeviceManagementIntentPerSettingContributingProfiles
+            getDeviceManagementIntentSettingsReport:
+              operationId: deviceManagement.reports.getDeviceManagementIntentSettingsReport
+            getDeviceNonComplianceReport:
+              operationId: deviceManagement.reports.getDeviceNonComplianceReport
+            getEnrollmentConfigurationPoliciesByDevice:
+              operationId: deviceManagement.reports.getEnrollmentConfigurationPoliciesGraphBPreDevice
+            getFailedMobileAppsReport:
+              operationId: deviceManagement.reports.getFailedMobileAppsReport
+            getFailedMobileAppsSummaryReport:
+              operationId: deviceManagement.reports.getFailedMobileAppsSummaryReport
+            getGroupPolicySettingsDeviceSettingsReport:
+              operationId: deviceManagement.reports.getGroupPolicySettingsDeviceSettingsReport
+            getHistoricalReport:
+              operationId: deviceManagement.reports.getHistoricalReport
+            getMalwareSummaryReport:
+              operationId: deviceManagement.reports.getMalwareSummaryReport
+            getPolicyNonComplianceMetadata:
+              operationId: deviceManagement.reports.getPolicyNonComplianceMetadata
+            getPolicyNonComplianceReport:
+              operationId: deviceManagement.reports.getPolicyNonComplianceReport
+            getPolicyNonComplianceSummaryReport:
+              operationId: deviceManagement.reports.getPolicyNonComplianceSummaryReport
+            getQuietTimePolicyUsersReport:
+              operationId: deviceManagement.reports.getQuietTimePolicyUsersReport
+            getQuietTimePolicyUserSummaryReport:
+              operationId: deviceManagement.reports.getQuietTimePolicyUserSummaryReport
+            getRelatedAppsStatusReport:
+              operationId: deviceManagement.reports.getRelatedAppsStatusReport
+            getRemoteAssistanceSessionsReport:
+              operationId: deviceManagement.reports.getRemoteAssistanceSessionsReport
+            getReportFilters:
+              operationId: deviceManagement.reports.getReportFilters
+            getSettingNonComplianceReport:
+              operationId: deviceManagement.reports.getSettingNonComplianceReport
+            getUnhealthyDefenderAgentsReport:
+              operationId: deviceManagement.reports.getUnhealthyDefenderAgentsReport
+            getUnhealthyFirewallReport:
+              operationId: deviceManagement.reports.getUnhealthyFirewallReport
+            getUnhealthyFirewallSummaryReport:
+              operationId: deviceManagement.reports.getUnhealthyFirewallSummaryReport
+            getUserInstallStatusReport:
+              operationId: deviceManagement.reports.getUserInstallStatusReport
+            getWindowsQualityUpdateAlertsPerPolicyPerDeviceReport:
+              operationId: deviceManagement.reports.getWindowsQualityUpdateAlertsPerPolicyPerDeviceReport
+            getWindowsQualityUpdateAlertSummaryReport:
+              operationId: deviceManagement.reports.getWindowsQualityUpdateAlertSummaryReport
+            getWindowsUpdateAlertsPerPolicyPerDeviceReport:
+              operationId: deviceManagement.reports.getWindowsUpdateAlertsPerPolicyPerDeviceReport
+            getWindowsUpdateAlertSummaryReport:
+              operationId: deviceManagement.reports.getWindowsUpdateAlertSummaryReport
+            getZebraFotaDeploymentReport:
+              operationId: deviceManagement.reports.getZebraFotaDeploymentReport
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1779,7 +1870,6 @@ paths:
       tags:
         - deviceManagement.deviceManagementReports
       summary: Update the navigation property reports in deviceManagement
-      description: Reports singleton
       operationId: deviceManagement_UpdateReports
       requestBody:
         description: New navigation property values
@@ -1798,7 +1888,6 @@ paths:
       tags:
         - deviceManagement.deviceManagementReports
       summary: Delete navigation property reports for deviceManagement
-      description: Reports singleton
       operationId: deviceManagement_DeleteReports
       parameters:
         - name: If-Match
@@ -1817,7 +1906,6 @@ paths:
       tags:
         - deviceManagement.deviceManagementReports
       summary: Get cachedReportConfigurations from deviceManagement
-      description: Entity representing the configuration of a cached report
       operationId: deviceManagement.reports_ListCachedReportConfigurations
       parameters:
         - $ref: '#/components/parameters/top'
@@ -1888,21 +1976,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of deviceManagementCachedReportConfiguration
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.deviceManagementCachedReportConfiguration'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.deviceManagementCachedReportConfigurationCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -1913,7 +1987,6 @@ paths:
       tags:
         - deviceManagement.deviceManagementReports
       summary: Create new navigation property to cachedReportConfigurations for deviceManagement
-      description: Entity representing the configuration of a cached report
       operationId: deviceManagement.reports_CreateCachedReportConfigurations
       requestBody:
         description: New navigation property
@@ -1937,7 +2010,6 @@ paths:
       tags:
         - deviceManagement.deviceManagementReports
       summary: Get cachedReportConfigurations from deviceManagement
-      description: Entity representing the configuration of a cached report
       operationId: deviceManagement.reports_GetCachedReportConfigurations
       parameters:
         - name: deviceManagementCachedReportConfiguration-id
@@ -1993,7 +2065,6 @@ paths:
       tags:
         - deviceManagement.deviceManagementReports
       summary: Update the navigation property cachedReportConfigurations in deviceManagement
-      description: Entity representing the configuration of a cached report
       operationId: deviceManagement.reports_UpdateCachedReportConfigurations
       parameters:
         - name: deviceManagementCachedReportConfiguration-id
@@ -2020,7 +2091,6 @@ paths:
       tags:
         - deviceManagement.deviceManagementReports
       summary: Delete navigation property cachedReportConfigurations for deviceManagement
-      description: Entity representing the configuration of a cached report
       operationId: deviceManagement.reports_DeleteCachedReportConfigurations
       parameters:
         - name: deviceManagementCachedReportConfiguration-id
@@ -2046,7 +2116,6 @@ paths:
       tags:
         - deviceManagement.deviceManagementReports
       summary: Get exportJobs from deviceManagement
-      description: Entity representing a job to export a report
       operationId: deviceManagement.reports_ListExportJobs
       parameters:
         - $ref: '#/components/parameters/top'
@@ -2123,21 +2192,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of deviceManagementExportJob
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.deviceManagementExportJob'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.deviceManagementExportJobCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -2148,7 +2203,6 @@ paths:
       tags:
         - deviceManagement.deviceManagementReports
       summary: Create new navigation property to exportJobs for deviceManagement
-      description: Entity representing a job to export a report
       operationId: deviceManagement.reports_CreateExportJobs
       requestBody:
         description: New navigation property
@@ -2172,7 +2226,6 @@ paths:
       tags:
         - deviceManagement.deviceManagementReports
       summary: Get exportJobs from deviceManagement
-      description: Entity representing a job to export a report
       operationId: deviceManagement.reports_GetExportJobs
       parameters:
         - name: deviceManagementExportJob-id
@@ -2230,7 +2283,6 @@ paths:
       tags:
         - deviceManagement.deviceManagementReports
       summary: Update the navigation property exportJobs in deviceManagement
-      description: Entity representing a job to export a report
       operationId: deviceManagement.reports_UpdateExportJobs
       parameters:
         - name: deviceManagementExportJob-id
@@ -2257,7 +2309,6 @@ paths:
       tags:
         - deviceManagement.deviceManagementReports
       summary: Delete navigation property exportJobs for deviceManagement
-      description: Entity representing a job to export a report
       operationId: deviceManagement.reports_DeleteExportJobs
       parameters:
         - name: deviceManagementExportJob-id
@@ -2365,6 +2416,214 @@ paths:
               operationId: reports.ListMonthlyPrintUsageSummariesGraphBPrePrinter
             monthlyPrintUsageSummariesByUser:
               operationId: reports.ListMonthlyPrintUsageSummariesGraphBPreUser
+            deviceConfigurationDeviceActivity:
+              operationId: reports.deviceConfigurationDeviceActivity
+            deviceConfigurationUserActivity:
+              operationId: reports.deviceConfigurationUserActivity
+            getAttackSimulationRepeatOffenders:
+              operationId: reports.getAttackSimulationRepeatOffenders
+            getAttackSimulationSimulationUserCoverage:
+              operationId: reports.getAttackSimulationSimulationUserCoverage
+            getAttackSimulationTrainingUserCoverage:
+              operationId: reports.getAttackSimulationTrainingUserCoverage
+            getAzureADApplicationSignInSummary:
+              operationId: reports.getAzureADApplicationSignInSummary
+            getAzureADFeatureUsage:
+              operationId: reports.getAzureADFeatureUsage
+            getAzureADLicenseUsage:
+              operationId: reports.getAzureADLicenseUsage
+            getAzureADUserFeatureUsage:
+              operationId: reports.getAzureADUserFeatureUsage
+            getBrowserDistributionUserCounts:
+              operationId: reports.getBrowserDistributionUserCounts
+            getBrowserUserCounts:
+              operationId: reports.getBrowserUserCounts
+            getBrowserUserDetail:
+              operationId: reports.getBrowserUserDetail
+            getCredentialUsageSummary:
+              operationId: reports.getCredentialUsageSummary
+            getCredentialUserRegistrationCount:
+              operationId: reports.getCredentialUserRegistrationCount
+            getEmailActivityCounts:
+              operationId: reports.getEmailActivityCounts
+            getEmailActivityUserCounts:
+              operationId: reports.getEmailActivityUserCounts
+            getEmailActivityUserDetail:
+              operationId: reports.getEmailActivityUserDetail
+            getEmailAppUsageAppsUserCounts:
+              operationId: reports.getEmailAppUsageAppsUserCounts
+            getEmailAppUsageUserCounts:
+              operationId: reports.getEmailAppUsageUserCounts
+            getEmailAppUsageUserDetail:
+              operationId: reports.getEmailAppUsageUserDetail
+            getEmailAppUsageVersionsUserCounts:
+              operationId: reports.getEmailAppUsageVersionsUserCounts
+            getGroupArchivedPrintJobs:
+              operationId: reports.getGroupArchivedPrintJobs
+            getM365AppPlatformUserCounts:
+              operationId: reports.getM365AppPlatformUserCounts
+            getM365AppUserCounts:
+              operationId: reports.getM365AppUserCounts
+            getM365AppUserDetail:
+              operationId: reports.getM365AppUserDetail
+            getMailboxUsageDetail:
+              operationId: reports.getMailboxUsageDetail
+            getMailboxUsageMailboxCounts:
+              operationId: reports.getMailboxUsageMailboxCounts
+            getMailboxUsageQuotaStatusMailboxCounts:
+              operationId: reports.getMailboxUsageQuotaStatusMailboxCounts
+            getMailboxUsageStorage:
+              operationId: reports.getMailboxUsageStorage
+            getOffice365ActivationCounts:
+              operationId: reports.getOffice365ActivationCounts
+            getOffice365ActivationsUserCounts:
+              operationId: reports.getOffice365ActivationsUserCounts
+            getOffice365ActivationsUserDetail:
+              operationId: reports.getOffice365ActivationsUserDetail
+            getOffice365ActiveUserCounts:
+              operationId: reports.getOffice365ActiveUserCounts
+            getOffice365ActiveUserDetail:
+              operationId: reports.getOffice365ActiveUserDetail
+            getOffice365GroupsActivityCounts:
+              operationId: reports.getOffice365GroupsActivityCounts
+            getOffice365GroupsActivityDetail:
+              operationId: reports.getOffice365GroupsActivityDetail
+            getOffice365GroupsActivityFileCounts:
+              operationId: reports.getOffice365GroupsActivityFileCounts
+            getOffice365GroupsActivityGroupCounts:
+              operationId: reports.getOffice365GroupsActivityGroupCounts
+            getOffice365GroupsActivityStorage:
+              operationId: reports.getOffice365GroupsActivityStorage
+            getOffice365ServicesUserCounts:
+              operationId: reports.getOffice365ServicesUserCounts
+            getOneDriveActivityFileCounts:
+              operationId: reports.getOneDriveActivityFileCounts
+            getOneDriveActivityUserCounts:
+              operationId: reports.getOneDriveActivityUserCounts
+            getOneDriveActivityUserDetail:
+              operationId: reports.getOneDriveActivityUserDetail
+            getOneDriveUsageAccountCounts:
+              operationId: reports.getOneDriveUsageAccountCounts
+            getOneDriveUsageAccountDetail:
+              operationId: reports.getOneDriveUsageAccountDetail
+            getOneDriveUsageFileCounts:
+              operationId: reports.getOneDriveUsageFileCounts
+            getOneDriveUsageStorage:
+              operationId: reports.getOneDriveUsageStorage
+            getPrinterArchivedPrintJobs:
+              operationId: reports.getPrinterArchivedPrintJobs
+            getRelyingPartyDetailedSummary:
+              operationId: reports.getRelyingPartyDetailedSummary
+            getSharePointActivityFileCounts:
+              operationId: reports.getSharePointActivityFileCounts
+            getSharePointActivityPages:
+              operationId: reports.getSharePointActivityPages
+            getSharePointActivityUserCounts:
+              operationId: reports.getSharePointActivityUserCounts
+            getSharePointActivityUserDetail:
+              operationId: reports.getSharePointActivityUserDetail
+            getSharePointSiteUsageDetail:
+              operationId: reports.getSharePointSiteUsageDetail
+            getSharePointSiteUsageFileCounts:
+              operationId: reports.getSharePointSiteUsageFileCounts
+            getSharePointSiteUsagePages:
+              operationId: reports.getSharePointSiteUsagePages
+            getSharePointSiteUsageSiteCounts:
+              operationId: reports.getSharePointSiteUsageSiteCounts
+            getSharePointSiteUsageStorage:
+              operationId: reports.getSharePointSiteUsageStorage
+            getSkypeForBusinessActivityCounts:
+              operationId: reports.getSkypeGraphFPreBusinessActivityCounts
+            getSkypeForBusinessActivityUserCounts:
+              operationId: reports.getSkypeGraphFPreBusinessActivityUserCounts
+            getSkypeForBusinessActivityUserDetail:
+              operationId: reports.getSkypeGraphFPreBusinessActivityUserDetail
+            getSkypeForBusinessDeviceUsageDistributionUserCounts:
+              operationId: reports.getSkypeGraphFPreBusinessDeviceUsageDistributionUserCounts
+            getSkypeForBusinessDeviceUsageUserCounts:
+              operationId: reports.getSkypeGraphFPreBusinessDeviceUsageUserCounts
+            getSkypeForBusinessDeviceUsageUserDetail:
+              operationId: reports.getSkypeGraphFPreBusinessDeviceUsageUserDetail
+            getSkypeForBusinessOrganizerActivityCounts:
+              operationId: reports.getSkypeGraphFPreBusinessOrganizerActivityCounts
+            getSkypeForBusinessOrganizerActivityMinuteCounts:
+              operationId: reports.getSkypeGraphFPreBusinessOrganizerActivityMinuteCounts
+            getSkypeForBusinessOrganizerActivityUserCounts:
+              operationId: reports.getSkypeGraphFPreBusinessOrganizerActivityUserCounts
+            getSkypeForBusinessParticipantActivityCounts:
+              operationId: reports.getSkypeGraphFPreBusinessParticipantActivityCounts
+            getSkypeForBusinessParticipantActivityMinuteCounts:
+              operationId: reports.getSkypeGraphFPreBusinessParticipantActivityMinuteCounts
+            getSkypeForBusinessParticipantActivityUserCounts:
+              operationId: reports.getSkypeGraphFPreBusinessParticipantActivityUserCounts
+            getSkypeForBusinessPeerToPeerActivityCounts:
+              operationId: reports.getSkypeGraphFPreBusinessPeerToPeerActivityCounts
+            getSkypeForBusinessPeerToPeerActivityMinuteCounts:
+              operationId: reports.getSkypeGraphFPreBusinessPeerToPeerActivityMinuteCounts
+            getSkypeForBusinessPeerToPeerActivityUserCounts:
+              operationId: reports.getSkypeGraphFPreBusinessPeerToPeerActivityUserCounts
+            getTeamsDeviceUsageDistributionTotalUserCounts:
+              operationId: reports.getTeamsDeviceUsageDistributionTotalUserCounts
+            getTeamsDeviceUsageDistributionUserCounts:
+              operationId: reports.getTeamsDeviceUsageDistributionUserCounts
+            getTeamsDeviceUsageTotalUserCounts:
+              operationId: reports.getTeamsDeviceUsageTotalUserCounts
+            getTeamsDeviceUsageUserCounts:
+              operationId: reports.getTeamsDeviceUsageUserCounts
+            getTeamsDeviceUsageUserDetail:
+              operationId: reports.getTeamsDeviceUsageUserDetail
+            getTeamsTeamActivityCounts:
+              operationId: reports.getTeamsTeamActivityCounts
+            getTeamsTeamActivityDetail:
+              operationId: reports.getTeamsTeamActivityDetail
+            getTeamsTeamActivityDistributionCounts:
+              operationId: reports.getTeamsTeamActivityDistributionCounts
+            getTeamsUserActivityCounts:
+              operationId: reports.getTeamsUserActivityCounts
+            getTeamsUserActivityDistributionTotalUserCounts:
+              operationId: reports.getTeamsUserActivityDistributionTotalUserCounts
+            getTeamsUserActivityDistributionUserCounts:
+              operationId: reports.getTeamsUserActivityDistributionUserCounts
+            getTeamsUserActivityTotalCounts:
+              operationId: reports.getTeamsUserActivityTotalCounts
+            getTeamsUserActivityTotalDistributionCounts:
+              operationId: reports.getTeamsUserActivityTotalDistributionCounts
+            getTeamsUserActivityTotalUserCounts:
+              operationId: reports.getTeamsUserActivityTotalUserCounts
+            getTeamsUserActivityUserCounts:
+              operationId: reports.getTeamsUserActivityUserCounts
+            getTeamsUserActivityUserDetail:
+              operationId: reports.getTeamsUserActivityUserDetail
+            getUserArchivedPrintJobs:
+              operationId: reports.getUserArchivedPrintJobs
+            getYammerActivityCounts:
+              operationId: reports.getYammerActivityCounts
+            getYammerActivityUserCounts:
+              operationId: reports.getYammerActivityUserCounts
+            getYammerActivityUserDetail:
+              operationId: reports.getYammerActivityUserDetail
+            getYammerDeviceUsageDistributionUserCounts:
+              operationId: reports.getYammerDeviceUsageDistributionUserCounts
+            getYammerDeviceUsageUserCounts:
+              operationId: reports.getYammerDeviceUsageUserCounts
+            getYammerDeviceUsageUserDetail:
+              operationId: reports.getYammerDeviceUsageUserDetail
+            getYammerGroupsActivityCounts:
+              operationId: reports.getYammerGroupsActivityCounts
+            getYammerGroupsActivityDetail:
+              operationId: reports.getYammerGroupsActivityDetail
+            getYammerGroupsActivityGroupCounts:
+              operationId: reports.getYammerGroupsActivityGroupCounts
+            managedDeviceEnrollmentAbandonmentDetails:
+              operationId: reports.managedDeviceEnrollmentAbandonmentDetails
+            managedDeviceEnrollmentAbandonmentSummary:
+              operationId: reports.managedDeviceEnrollmentAbandonmentSummary
+            managedDeviceEnrollmentFailureDetails:
+              operationId: reports.managedDeviceEnrollmentFailureDetails
+            managedDeviceEnrollmentFailureTrends:
+              operationId: reports.managedDeviceEnrollmentFailureTrends
+            managedDeviceEnrollmentTopFailures:
+              operationId: reports.managedDeviceEnrollmentTopFailures
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2391,7 +2650,6 @@ paths:
       tags:
         - reports.applicationSignInDetailedSummary
       summary: Get applicationSignInDetailedSummary from reports
-      description: Represents a detailed summary of an application sign-in.
       operationId: reports_ListApplicationSignInDetailedSummary
       parameters:
         - $ref: '#/components/parameters/top'
@@ -2453,21 +2711,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of applicationSignInDetailedSummary
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.applicationSignInDetailedSummary'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.applicationSignInDetailedSummaryCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -2478,7 +2722,6 @@ paths:
       tags:
         - reports.applicationSignInDetailedSummary
       summary: Create new navigation property to applicationSignInDetailedSummary for reports
-      description: Represents a detailed summary of an application sign-in.
       operationId: reports_CreateApplicationSignInDetailedSummary
       requestBody:
         description: New navigation property
@@ -2502,7 +2745,6 @@ paths:
       tags:
         - reports.applicationSignInDetailedSummary
       summary: Get applicationSignInDetailedSummary from reports
-      description: Represents a detailed summary of an application sign-in.
       operationId: reports_GetApplicationSignInDetailedSummary
       parameters:
         - name: applicationSignInDetailedSummary-id
@@ -2555,7 +2797,6 @@ paths:
       tags:
         - reports.applicationSignInDetailedSummary
       summary: Update the navigation property applicationSignInDetailedSummary in reports
-      description: Represents a detailed summary of an application sign-in.
       operationId: reports_UpdateApplicationSignInDetailedSummary
       parameters:
         - name: applicationSignInDetailedSummary-id
@@ -2582,7 +2823,6 @@ paths:
       tags:
         - reports.applicationSignInDetailedSummary
       summary: Delete navigation property applicationSignInDetailedSummary for reports
-      description: Represents a detailed summary of an application sign-in.
       operationId: reports_DeleteApplicationSignInDetailedSummary
       parameters:
         - name: applicationSignInDetailedSummary-id
@@ -2608,7 +2848,6 @@ paths:
       tags:
         - reports.authenticationMethodsRoot
       summary: Get authenticationMethods from reports
-      description: Container for navigation properties for Azure AD authentication methods resources.
       operationId: reports_GetAuthenticationMethods
       parameters:
         - name: $select
@@ -2647,6 +2886,10 @@ paths:
           links:
             userRegistrationDetails:
               operationId: reports.AuthenticationMethods.ListUserRegistrationDetails
+            usersRegisteredByFeature:
+              operationId: reports.authenticationMethods.usersRegisteredGraphBPreFeature
+            usersRegisteredByMethod:
+              operationId: reports.authenticationMethods.usersRegisteredGraphBPreMethod
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2654,7 +2897,6 @@ paths:
       tags:
         - reports.authenticationMethodsRoot
       summary: Update the navigation property authenticationMethods in reports
-      description: Container for navigation properties for Azure AD authentication methods resources.
       operationId: reports_UpdateAuthenticationMethods
       requestBody:
         description: New navigation property values
@@ -2673,7 +2915,6 @@ paths:
       tags:
         - reports.authenticationMethodsRoot
       summary: Delete navigation property authenticationMethods for reports
-      description: Container for navigation properties for Azure AD authentication methods resources.
       operationId: reports_DeleteAuthenticationMethods
       parameters:
         - name: If-Match
@@ -2703,7 +2944,7 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
-  '/reports/authenticationMethods/microsoft.graph.usersRegisteredByFeature(includedUserTypes={includedUserTypes},includedUserRoles={includedUserRoles})':
+  '/reports/authenticationMethods/microsoft.graph.usersRegisteredByFeature(includedUserTypes=''{includedUserTypes}'',includedUserRoles=''{includedUserRoles}'')':
     get:
       tags:
         - reports.Functions
@@ -2712,13 +2953,13 @@ paths:
       parameters:
         - name: includedUserTypes
           in: path
-          description: 'Usage: includedUserTypes={includedUserTypes}'
+          description: 'Usage: includedUserTypes=''{includedUserTypes}'''
           required: true
           schema:
             $ref: '#/components/schemas/microsoft.graph.includedUserTypes'
         - name: includedUserRoles
           in: path
-          description: 'Usage: includedUserRoles={includedUserRoles}'
+          description: 'Usage: includedUserRoles=''{includedUserRoles}'''
           required: true
           schema:
             $ref: '#/components/schemas/microsoft.graph.includedUserRoles'
@@ -2748,7 +2989,7 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
-  '/reports/authenticationMethods/microsoft.graph.usersRegisteredByMethod(includedUserTypes={includedUserTypes},includedUserRoles={includedUserRoles})':
+  '/reports/authenticationMethods/microsoft.graph.usersRegisteredByMethod(includedUserTypes=''{includedUserTypes}'',includedUserRoles=''{includedUserRoles}'')':
     get:
       tags:
         - reports.Functions
@@ -2757,13 +2998,13 @@ paths:
       parameters:
         - name: includedUserTypes
           in: path
-          description: 'Usage: includedUserTypes={includedUserTypes}'
+          description: 'Usage: includedUserTypes=''{includedUserTypes}'''
           required: true
           schema:
             $ref: '#/components/schemas/microsoft.graph.includedUserTypes'
         - name: includedUserRoles
           in: path
-          description: 'Usage: includedUserRoles={includedUserRoles}'
+          description: 'Usage: includedUserRoles=''{includedUserRoles}'''
           required: true
           schema:
             $ref: '#/components/schemas/microsoft.graph.includedUserRoles'
@@ -2782,7 +3023,6 @@ paths:
       tags:
         - reports.authenticationMethodsRoot
       summary: Get userRegistrationDetails from reports
-      description: 'Represents the state of a user''s authentication methods, including which methods are registered and which features the user is registered and capable of (such as multi-factor authentication, self-service password reset, and passwordless authentication).'
       operationId: reports.authenticationMethods_ListUserRegistrationDetails
       parameters:
         - $ref: '#/components/parameters/top'
@@ -2802,6 +3042,8 @@ paths:
               enum:
                 - id
                 - id desc
+                - defaultMfaMethod
+                - defaultMfaMethod desc
                 - isMfaCapable
                 - isMfaCapable desc
                 - isMfaRegistered
@@ -2832,6 +3074,7 @@ paths:
             items:
               enum:
                 - id
+                - defaultMfaMethod
                 - isMfaCapable
                 - isMfaRegistered
                 - isPasswordlessCapable
@@ -2856,21 +3099,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of userRegistrationDetails
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.userRegistrationDetails'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.userRegistrationDetailsCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -2881,7 +3110,6 @@ paths:
       tags:
         - reports.authenticationMethodsRoot
       summary: Create new navigation property to userRegistrationDetails for reports
-      description: 'Represents the state of a user''s authentication methods, including which methods are registered and which features the user is registered and capable of (such as multi-factor authentication, self-service password reset, and passwordless authentication).'
       operationId: reports.authenticationMethods_CreateUserRegistrationDetails
       requestBody:
         description: New navigation property
@@ -2905,7 +3133,6 @@ paths:
       tags:
         - reports.authenticationMethodsRoot
       summary: Get userRegistrationDetails from reports
-      description: 'Represents the state of a user''s authentication methods, including which methods are registered and which features the user is registered and capable of (such as multi-factor authentication, self-service password reset, and passwordless authentication).'
       operationId: reports.authenticationMethods_GetUserRegistrationDetails
       parameters:
         - name: userRegistrationDetails-id
@@ -2926,6 +3153,7 @@ paths:
             items:
               enum:
                 - id
+                - defaultMfaMethod
                 - isMfaCapable
                 - isMfaRegistered
                 - isPasswordlessCapable
@@ -2962,7 +3190,6 @@ paths:
       tags:
         - reports.authenticationMethodsRoot
       summary: Update the navigation property userRegistrationDetails in reports
-      description: 'Represents the state of a user''s authentication methods, including which methods are registered and which features the user is registered and capable of (such as multi-factor authentication, self-service password reset, and passwordless authentication).'
       operationId: reports.authenticationMethods_UpdateUserRegistrationDetails
       parameters:
         - name: userRegistrationDetails-id
@@ -2989,7 +3216,6 @@ paths:
       tags:
         - reports.authenticationMethodsRoot
       summary: Delete navigation property userRegistrationDetails for reports
-      description: 'Represents the state of a user''s authentication methods, including which methods are registered and which features the user is registered and capable of (such as multi-factor authentication, self-service password reset, and passwordless authentication).'
       operationId: reports.authenticationMethods_DeleteUserRegistrationDetails
       parameters:
         - name: userRegistrationDetails-id
@@ -3015,7 +3241,6 @@ paths:
       tags:
         - reports.credentialUserRegistrationDetails
       summary: Get credentialUserRegistrationDetails from reports
-      description: Details of the usage of self-service password reset and multi-factor authentication (MFA) for all registered users.
       operationId: reports_ListCredentialUserRegistrationDetails
       parameters:
         - $ref: '#/components/parameters/top'
@@ -3083,21 +3308,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of credentialUserRegistrationDetails
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.credentialUserRegistrationDetails'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.credentialUserRegistrationDetailsCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -3108,7 +3319,6 @@ paths:
       tags:
         - reports.credentialUserRegistrationDetails
       summary: Create new navigation property to credentialUserRegistrationDetails for reports
-      description: Details of the usage of self-service password reset and multi-factor authentication (MFA) for all registered users.
       operationId: reports_CreateCredentialUserRegistrationDetails
       requestBody:
         description: New navigation property
@@ -3132,7 +3342,6 @@ paths:
       tags:
         - reports.credentialUserRegistrationDetails
       summary: Get credentialUserRegistrationDetails from reports
-      description: Details of the usage of self-service password reset and multi-factor authentication (MFA) for all registered users.
       operationId: reports_GetCredentialUserRegistrationDetails
       parameters:
         - name: credentialUserRegistrationDetails-id
@@ -3187,7 +3396,6 @@ paths:
       tags:
         - reports.credentialUserRegistrationDetails
       summary: Update the navigation property credentialUserRegistrationDetails in reports
-      description: Details of the usage of self-service password reset and multi-factor authentication (MFA) for all registered users.
       operationId: reports_UpdateCredentialUserRegistrationDetails
       parameters:
         - name: credentialUserRegistrationDetails-id
@@ -3214,7 +3422,6 @@ paths:
       tags:
         - reports.credentialUserRegistrationDetails
       summary: Delete navigation property credentialUserRegistrationDetails for reports
-      description: Details of the usage of self-service password reset and multi-factor authentication (MFA) for all registered users.
       operationId: reports_DeleteCredentialUserRegistrationDetails
       parameters:
         - name: credentialUserRegistrationDetails-id
@@ -3301,21 +3508,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of printUsageByPrinter
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.printUsageByPrinter'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.printUsageByPrinterCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -3513,21 +3706,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of printUsageByUser
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.printUsageByUser'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.printUsageByUserCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -3725,21 +3904,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of printUsageByPrinter
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.printUsageByPrinter'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.printUsageByPrinterCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -3937,21 +4102,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of printUsageByUser
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.printUsageByUser'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.printUsageByUserCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -4088,7 +4239,6 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function deviceConfigurationDeviceActivity
-      description: Metadata for the device configuration device activity report
       operationId: reports_deviceConfigurationDeviceActivity
       responses:
         '200':
@@ -4105,7 +4255,6 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function deviceConfigurationUserActivity
-      description: Metadata for the device configuration user activity report
       operationId: reports_deviceConfigurationUserActivity
       responses:
         '200':
@@ -4129,9 +4278,15 @@ paths:
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/microsoft.graph.attackSimulationRepeatOffender'
+                title: Collection of reportRoot
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.attackSimulationRepeatOffender'
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -4147,9 +4302,15 @@ paths:
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/microsoft.graph.attackSimulationSimulationUserCoverage'
+                title: Collection of reportRoot
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.attackSimulationSimulationUserCoverage'
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -4165,9 +4326,15 @@ paths:
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/microsoft.graph.attackSimulationTrainingUserCoverage'
+                title: Collection of reportRoot
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.attackSimulationTrainingUserCoverage'
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -4180,7 +4347,7 @@ paths:
       parameters:
         - name: period
           in: path
-          description: 'Usage: period={period}'
+          description: 'Usage: period=''{period}'''
           required: true
           schema:
             type: string
@@ -4190,9 +4357,15 @@ paths:
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/microsoft.graph.applicationSignInSummary'
+                title: Collection of reportRoot
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.applicationSignInSummary'
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -4205,7 +4378,7 @@ paths:
       parameters:
         - name: period
           in: path
-          description: 'Usage: period={period}'
+          description: 'Usage: period=''{period}'''
           required: true
           schema:
             type: string
@@ -4215,9 +4388,15 @@ paths:
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/microsoft.graph.azureADFeatureUsage'
+                title: Collection of reportRoot
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.azureADFeatureUsage'
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -4230,7 +4409,7 @@ paths:
       parameters:
         - name: period
           in: path
-          description: 'Usage: period={period}'
+          description: 'Usage: period=''{period}'''
           required: true
           schema:
             type: string
@@ -4240,9 +4419,15 @@ paths:
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/microsoft.graph.azureADLicenseUsage'
+                title: Collection of reportRoot
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.azureADLicenseUsage'
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -4258,9 +4443,15 @@ paths:
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/microsoft.graph.azureADUserFeatureUsage'
+                title: Collection of reportRoot
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.azureADUserFeatureUsage'
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -4273,7 +4464,7 @@ paths:
       parameters:
         - name: period
           in: path
-          description: 'Usage: period={period}'
+          description: 'Usage: period=''{period}'''
           required: true
           schema:
             type: string
@@ -4281,10 +4472,15 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
-                type: string
-                format: base64url
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -4297,7 +4493,7 @@ paths:
       parameters:
         - name: period
           in: path
-          description: 'Usage: period={period}'
+          description: 'Usage: period=''{period}'''
           required: true
           schema:
             type: string
@@ -4305,10 +4501,15 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
-                type: string
-                format: base64url
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -4321,7 +4522,7 @@ paths:
       parameters:
         - name: period
           in: path
-          description: 'Usage: period={period}'
+          description: 'Usage: period=''{period}'''
           required: true
           schema:
             type: string
@@ -4329,10 +4530,15 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
-                type: string
-                format: base64url
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -4345,7 +4551,7 @@ paths:
       parameters:
         - name: period
           in: path
-          description: 'Usage: period={period}'
+          description: 'Usage: period=''{period}'''
           required: true
           schema:
             type: string
@@ -4355,9 +4561,15 @@ paths:
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/microsoft.graph.credentialUsageSummary'
+                title: Collection of reportRoot
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.credentialUsageSummary'
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -4373,9 +4585,15 @@ paths:
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/microsoft.graph.credentialUserRegistrationCount'
+                title: Collection of reportRoot
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.credentialUserRegistrationCount'
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -4388,7 +4606,7 @@ paths:
       parameters:
         - name: period
           in: path
-          description: 'Usage: period={period}'
+          description: 'Usage: period=''{period}'''
           required: true
           schema:
             type: string
@@ -4396,10 +4614,15 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
-                type: string
-                format: base64url
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -4412,7 +4635,7 @@ paths:
       parameters:
         - name: period
           in: path
-          description: 'Usage: period={period}'
+          description: 'Usage: period=''{period}'''
           required: true
           schema:
             type: string
@@ -4420,10 +4643,15 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
-                type: string
-                format: base64url
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -4446,10 +4674,15 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
-                type: string
-                format: base64url
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -4462,7 +4695,7 @@ paths:
       parameters:
         - name: period
           in: path
-          description: 'Usage: period={period}'
+          description: 'Usage: period=''{period}'''
           required: true
           schema:
             type: string
@@ -4470,10 +4703,15 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
-                type: string
-                format: base64url
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -4486,7 +4724,7 @@ paths:
       parameters:
         - name: period
           in: path
-          description: 'Usage: period={period}'
+          description: 'Usage: period=''{period}'''
           required: true
           schema:
             type: string
@@ -4494,10 +4732,15 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
-                type: string
-                format: base64url
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -4510,7 +4753,7 @@ paths:
       parameters:
         - name: period
           in: path
-          description: 'Usage: period={period}'
+          description: 'Usage: period=''{period}'''
           required: true
           schema:
             type: string
@@ -4518,10 +4761,15 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
-                type: string
-                format: base64url
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -4544,10 +4792,15 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
-                type: string
-                format: base64url
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -4560,7 +4813,7 @@ paths:
       parameters:
         - name: period
           in: path
-          description: 'Usage: period={period}'
+          description: 'Usage: period=''{period}'''
           required: true
           schema:
             type: string
@@ -4568,10 +4821,15 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
-                type: string
-                format: base64url
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -4584,7 +4842,7 @@ paths:
       parameters:
         - name: period
           in: path
-          description: 'Usage: period={period}'
+          description: 'Usage: period=''{period}'''
           required: true
           schema:
             type: string
@@ -4592,14 +4850,19 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
-                type: string
-                format: base64url
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
-  '/reports/microsoft.graph.getGroupArchivedPrintJobs(groupId=''{groupId}'',startDateTime={startDateTime},endDateTime={endDateTime})':
+  '/reports/microsoft.graph.getGroupArchivedPrintJobs(groupId=''{groupId}'',startDateTime=''{startDateTime}'',endDateTime=''{endDateTime}'')':
     get:
       tags:
         - reports.Functions
@@ -4608,14 +4871,14 @@ paths:
       parameters:
         - name: groupId
           in: path
-          description: 'Usage: groupId={groupId}'
+          description: 'Usage: groupId=''{groupId}'''
           required: true
           schema:
             type: string
             nullable: true
         - name: startDateTime
           in: path
-          description: 'Usage: startDateTime={startDateTime}'
+          description: 'Usage: startDateTime=''{startDateTime}'''
           required: true
           schema:
             pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -4624,7 +4887,7 @@ paths:
             nullable: true
         - name: endDateTime
           in: path
-          description: 'Usage: endDateTime={endDateTime}'
+          description: 'Usage: endDateTime=''{endDateTime}'''
           required: true
           schema:
             pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -4637,9 +4900,15 @@ paths:
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/microsoft.graph.archivedPrintJob'
+                title: Collection of reportRoot
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.archivedPrintJob'
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -4652,7 +4921,7 @@ paths:
       parameters:
         - name: period
           in: path
-          description: 'Usage: period={period}'
+          description: 'Usage: period=''{period}'''
           required: true
           schema:
             type: string
@@ -4675,7 +4944,7 @@ paths:
       parameters:
         - name: period
           in: path
-          description: 'Usage: period={period}'
+          description: 'Usage: period=''{period}'''
           required: true
           schema:
             type: string
@@ -4723,7 +4992,7 @@ paths:
       parameters:
         - name: period
           in: path
-          description: 'Usage: period={period}'
+          description: 'Usage: period=''{period}'''
           required: true
           schema:
             type: string
@@ -4746,7 +5015,7 @@ paths:
       parameters:
         - name: period
           in: path
-          description: 'Usage: period={period}'
+          description: 'Usage: period=''{period}'''
           required: true
           schema:
             type: string
@@ -4754,10 +5023,15 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
-                type: string
-                format: base64url
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -4770,7 +5044,7 @@ paths:
       parameters:
         - name: period
           in: path
-          description: 'Usage: period={period}'
+          description: 'Usage: period=''{period}'''
           required: true
           schema:
             type: string
@@ -4778,10 +5052,15 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
-                type: string
-                format: base64url
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -4794,7 +5073,7 @@ paths:
       parameters:
         - name: period
           in: path
-          description: 'Usage: period={period}'
+          description: 'Usage: period=''{period}'''
           required: true
           schema:
             type: string
@@ -4802,10 +5081,15 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
-                type: string
-                format: base64url
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -4818,7 +5102,7 @@ paths:
       parameters:
         - name: period
           in: path
-          description: 'Usage: period={period}'
+          description: 'Usage: period=''{period}'''
           required: true
           schema:
             type: string
@@ -4826,10 +5110,15 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
-                type: string
-                format: base64url
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -4843,10 +5132,15 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
-                type: string
-                format: base64url
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -4860,10 +5154,15 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
-                type: string
-                format: base64url
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -4877,10 +5176,15 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
-                type: string
-                format: base64url
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -4893,7 +5197,7 @@ paths:
       parameters:
         - name: period
           in: path
-          description: 'Usage: period={period}'
+          description: 'Usage: period=''{period}'''
           required: true
           schema:
             type: string
@@ -4903,9 +5207,15 @@ paths:
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/microsoft.graph.office365ActiveUserCounts'
+                title: Collection of reportRoot
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.office365ActiveUserCounts'
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -4930,9 +5240,15 @@ paths:
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/microsoft.graph.office365ActiveUserDetail'
+                title: Collection of reportRoot
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.office365ActiveUserDetail'
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -4945,7 +5261,7 @@ paths:
       parameters:
         - name: period
           in: path
-          description: 'Usage: period={period}'
+          description: 'Usage: period=''{period}'''
           required: true
           schema:
             type: string
@@ -4955,9 +5271,15 @@ paths:
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/microsoft.graph.office365ActiveUserDetail'
+                title: Collection of reportRoot
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.office365ActiveUserDetail'
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -4970,7 +5292,7 @@ paths:
       parameters:
         - name: period
           in: path
-          description: 'Usage: period={period}'
+          description: 'Usage: period=''{period}'''
           required: true
           schema:
             type: string
@@ -4980,9 +5302,15 @@ paths:
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/microsoft.graph.office365GroupsActivityCounts'
+                title: Collection of reportRoot
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.office365GroupsActivityCounts'
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -5007,9 +5335,15 @@ paths:
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/microsoft.graph.office365GroupsActivityDetail'
+                title: Collection of reportRoot
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.office365GroupsActivityDetail'
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -5022,7 +5356,7 @@ paths:
       parameters:
         - name: period
           in: path
-          description: 'Usage: period={period}'
+          description: 'Usage: period=''{period}'''
           required: true
           schema:
             type: string
@@ -5032,9 +5366,15 @@ paths:
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/microsoft.graph.office365GroupsActivityDetail'
+                title: Collection of reportRoot
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.office365GroupsActivityDetail'
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -5047,7 +5387,7 @@ paths:
       parameters:
         - name: period
           in: path
-          description: 'Usage: period={period}'
+          description: 'Usage: period=''{period}'''
           required: true
           schema:
             type: string
@@ -5057,9 +5397,15 @@ paths:
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/microsoft.graph.office365GroupsActivityFileCounts'
+                title: Collection of reportRoot
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.office365GroupsActivityFileCounts'
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -5072,7 +5418,7 @@ paths:
       parameters:
         - name: period
           in: path
-          description: 'Usage: period={period}'
+          description: 'Usage: period=''{period}'''
           required: true
           schema:
             type: string
@@ -5082,9 +5428,15 @@ paths:
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/microsoft.graph.office365GroupsActivityGroupCounts'
+                title: Collection of reportRoot
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.office365GroupsActivityGroupCounts'
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -5097,7 +5449,7 @@ paths:
       parameters:
         - name: period
           in: path
-          description: 'Usage: period={period}'
+          description: 'Usage: period=''{period}'''
           required: true
           schema:
             type: string
@@ -5107,9 +5459,15 @@ paths:
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/microsoft.graph.office365GroupsActivityStorage'
+                title: Collection of reportRoot
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.office365GroupsActivityStorage'
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -5122,7 +5480,7 @@ paths:
       parameters:
         - name: period
           in: path
-          description: 'Usage: period={period}'
+          description: 'Usage: period=''{period}'''
           required: true
           schema:
             type: string
@@ -5132,9 +5490,15 @@ paths:
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/microsoft.graph.office365ServicesUserCounts'
+                title: Collection of reportRoot
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.office365ServicesUserCounts'
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -5147,7 +5511,7 @@ paths:
       parameters:
         - name: period
           in: path
-          description: 'Usage: period={period}'
+          description: 'Usage: period=''{period}'''
           required: true
           schema:
             type: string
@@ -5155,10 +5519,15 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
-                type: string
-                format: base64url
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -5171,7 +5540,7 @@ paths:
       parameters:
         - name: period
           in: path
-          description: 'Usage: period={period}'
+          description: 'Usage: period=''{period}'''
           required: true
           schema:
             type: string
@@ -5179,10 +5548,15 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
-                type: string
-                format: base64url
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -5205,10 +5579,15 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
-                type: string
-                format: base64url
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -5221,7 +5600,7 @@ paths:
       parameters:
         - name: period
           in: path
-          description: 'Usage: period={period}'
+          description: 'Usage: period=''{period}'''
           required: true
           schema:
             type: string
@@ -5229,10 +5608,15 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
-                type: string
-                format: base64url
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -5245,7 +5629,7 @@ paths:
       parameters:
         - name: period
           in: path
-          description: 'Usage: period={period}'
+          description: 'Usage: period=''{period}'''
           required: true
           schema:
             type: string
@@ -5253,10 +5637,15 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
-                type: string
-                format: base64url
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -5279,10 +5668,15 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
-                type: string
-                format: base64url
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -5295,7 +5689,7 @@ paths:
       parameters:
         - name: period
           in: path
-          description: 'Usage: period={period}'
+          description: 'Usage: period=''{period}'''
           required: true
           schema:
             type: string
@@ -5303,10 +5697,15 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
-                type: string
-                format: base64url
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -5319,7 +5718,7 @@ paths:
       parameters:
         - name: period
           in: path
-          description: 'Usage: period={period}'
+          description: 'Usage: period=''{period}'''
           required: true
           schema:
             type: string
@@ -5327,10 +5726,15 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
-                type: string
-                format: base64url
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -5343,7 +5747,7 @@ paths:
       parameters:
         - name: period
           in: path
-          description: 'Usage: period={period}'
+          description: 'Usage: period=''{period}'''
           required: true
           schema:
             type: string
@@ -5351,14 +5755,19 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
-                type: string
-                format: base64url
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
-  '/reports/microsoft.graph.getPrinterArchivedPrintJobs(printerId=''{printerId}'',startDateTime={startDateTime},endDateTime={endDateTime})':
+  '/reports/microsoft.graph.getPrinterArchivedPrintJobs(printerId=''{printerId}'',startDateTime=''{startDateTime}'',endDateTime=''{endDateTime}'')':
     get:
       tags:
         - reports.Functions
@@ -5367,14 +5776,14 @@ paths:
       parameters:
         - name: printerId
           in: path
-          description: 'Usage: printerId={printerId}'
+          description: 'Usage: printerId=''{printerId}'''
           required: true
           schema:
             type: string
             nullable: true
         - name: startDateTime
           in: path
-          description: 'Usage: startDateTime={startDateTime}'
+          description: 'Usage: startDateTime=''{startDateTime}'''
           required: true
           schema:
             pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -5383,7 +5792,7 @@ paths:
             nullable: true
         - name: endDateTime
           in: path
-          description: 'Usage: endDateTime={endDateTime}'
+          description: 'Usage: endDateTime=''{endDateTime}'''
           required: true
           schema:
             pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -5396,9 +5805,15 @@ paths:
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/microsoft.graph.archivedPrintJob'
+                title: Collection of reportRoot
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.archivedPrintJob'
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -5411,7 +5826,7 @@ paths:
       parameters:
         - name: period
           in: path
-          description: 'Usage: period={period}'
+          description: 'Usage: period=''{period}'''
           required: true
           schema:
             type: string
@@ -5421,9 +5836,15 @@ paths:
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/microsoft.graph.relyingPartyDetailedSummary'
+                title: Collection of reportRoot
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.relyingPartyDetailedSummary'
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -5436,7 +5857,7 @@ paths:
       parameters:
         - name: period
           in: path
-          description: 'Usage: period={period}'
+          description: 'Usage: period=''{period}'''
           required: true
           schema:
             type: string
@@ -5444,10 +5865,15 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
-                type: string
-                format: base64url
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -5460,7 +5886,7 @@ paths:
       parameters:
         - name: period
           in: path
-          description: 'Usage: period={period}'
+          description: 'Usage: period=''{period}'''
           required: true
           schema:
             type: string
@@ -5468,10 +5894,15 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
-                type: string
-                format: base64url
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -5484,7 +5915,7 @@ paths:
       parameters:
         - name: period
           in: path
-          description: 'Usage: period={period}'
+          description: 'Usage: period=''{period}'''
           required: true
           schema:
             type: string
@@ -5492,10 +5923,15 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
-                type: string
-                format: base64url
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -5518,10 +5954,15 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
-                type: string
-                format: base64url
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -5534,7 +5975,7 @@ paths:
       parameters:
         - name: period
           in: path
-          description: 'Usage: period={period}'
+          description: 'Usage: period=''{period}'''
           required: true
           schema:
             type: string
@@ -5542,10 +5983,15 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
-                type: string
-                format: base64url
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -5568,10 +6014,15 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
-                type: string
-                format: base64url
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -5584,7 +6035,7 @@ paths:
       parameters:
         - name: period
           in: path
-          description: 'Usage: period={period}'
+          description: 'Usage: period=''{period}'''
           required: true
           schema:
             type: string
@@ -5592,10 +6043,15 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
-                type: string
-                format: base64url
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -5608,7 +6064,7 @@ paths:
       parameters:
         - name: period
           in: path
-          description: 'Usage: period={period}'
+          description: 'Usage: period=''{period}'''
           required: true
           schema:
             type: string
@@ -5616,10 +6072,15 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
-                type: string
-                format: base64url
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -5632,7 +6093,7 @@ paths:
       parameters:
         - name: period
           in: path
-          description: 'Usage: period={period}'
+          description: 'Usage: period=''{period}'''
           required: true
           schema:
             type: string
@@ -5640,10 +6101,15 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
-                type: string
-                format: base64url
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -5656,7 +6122,7 @@ paths:
       parameters:
         - name: period
           in: path
-          description: 'Usage: period={period}'
+          description: 'Usage: period=''{period}'''
           required: true
           schema:
             type: string
@@ -5664,10 +6130,15 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
-                type: string
-                format: base64url
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -5680,7 +6151,7 @@ paths:
       parameters:
         - name: period
           in: path
-          description: 'Usage: period={period}'
+          description: 'Usage: period=''{period}'''
           required: true
           schema:
             type: string
@@ -5688,10 +6159,15 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
-                type: string
-                format: base64url
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -5704,7 +6180,7 @@ paths:
       parameters:
         - name: period
           in: path
-          description: 'Usage: period={period}'
+          description: 'Usage: period=''{period}'''
           required: true
           schema:
             type: string
@@ -5712,10 +6188,15 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
-                type: string
-                format: base64url
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -5728,7 +6209,7 @@ paths:
       parameters:
         - name: period
           in: path
-          description: 'Usage: period={period}'
+          description: 'Usage: period=''{period}'''
           required: true
           schema:
             type: string
@@ -5736,10 +6217,15 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
-                type: string
-                format: base64url
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -5762,10 +6248,15 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
-                type: string
-                format: base64url
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -5778,7 +6269,7 @@ paths:
       parameters:
         - name: period
           in: path
-          description: 'Usage: period={period}'
+          description: 'Usage: period=''{period}'''
           required: true
           schema:
             type: string
@@ -5786,10 +6277,15 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
-                type: string
-                format: base64url
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -5802,7 +6298,7 @@ paths:
       parameters:
         - name: period
           in: path
-          description: 'Usage: period={period}'
+          description: 'Usage: period=''{period}'''
           required: true
           schema:
             type: string
@@ -5810,10 +6306,15 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
-                type: string
-                format: base64url
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -5826,7 +6327,7 @@ paths:
       parameters:
         - name: period
           in: path
-          description: 'Usage: period={period}'
+          description: 'Usage: period=''{period}'''
           required: true
           schema:
             type: string
@@ -5834,10 +6335,15 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
-                type: string
-                format: base64url
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -5860,10 +6366,15 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
-                type: string
-                format: base64url
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -5876,7 +6387,7 @@ paths:
       parameters:
         - name: period
           in: path
-          description: 'Usage: period={period}'
+          description: 'Usage: period=''{period}'''
           required: true
           schema:
             type: string
@@ -5884,10 +6395,15 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
-                type: string
-                format: base64url
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -5900,7 +6416,7 @@ paths:
       parameters:
         - name: period
           in: path
-          description: 'Usage: period={period}'
+          description: 'Usage: period=''{period}'''
           required: true
           schema:
             type: string
@@ -5908,10 +6424,15 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
-                type: string
-                format: base64url
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -5924,7 +6445,7 @@ paths:
       parameters:
         - name: period
           in: path
-          description: 'Usage: period={period}'
+          description: 'Usage: period=''{period}'''
           required: true
           schema:
             type: string
@@ -5932,10 +6453,15 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
-                type: string
-                format: base64url
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -5948,7 +6474,7 @@ paths:
       parameters:
         - name: period
           in: path
-          description: 'Usage: period={period}'
+          description: 'Usage: period=''{period}'''
           required: true
           schema:
             type: string
@@ -5956,10 +6482,15 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
-                type: string
-                format: base64url
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -5972,7 +6503,7 @@ paths:
       parameters:
         - name: period
           in: path
-          description: 'Usage: period={period}'
+          description: 'Usage: period=''{period}'''
           required: true
           schema:
             type: string
@@ -5980,10 +6511,15 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
-                type: string
-                format: base64url
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -5996,7 +6532,7 @@ paths:
       parameters:
         - name: period
           in: path
-          description: 'Usage: period={period}'
+          description: 'Usage: period=''{period}'''
           required: true
           schema:
             type: string
@@ -6004,10 +6540,15 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
-                type: string
-                format: base64url
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -6020,7 +6561,7 @@ paths:
       parameters:
         - name: period
           in: path
-          description: 'Usage: period={period}'
+          description: 'Usage: period=''{period}'''
           required: true
           schema:
             type: string
@@ -6028,10 +6569,15 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
-                type: string
-                format: base64url
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -6044,7 +6590,7 @@ paths:
       parameters:
         - name: period
           in: path
-          description: 'Usage: period={period}'
+          description: 'Usage: period=''{period}'''
           required: true
           schema:
             type: string
@@ -6052,10 +6598,15 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
-                type: string
-                format: base64url
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -6068,7 +6619,7 @@ paths:
       parameters:
         - name: period
           in: path
-          description: 'Usage: period={period}'
+          description: 'Usage: period=''{period}'''
           required: true
           schema:
             type: string
@@ -6076,10 +6627,15 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
-                type: string
-                format: base64url
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -6092,7 +6648,7 @@ paths:
       parameters:
         - name: period
           in: path
-          description: 'Usage: period={period}'
+          description: 'Usage: period=''{period}'''
           required: true
           schema:
             type: string
@@ -6100,10 +6656,15 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
-                type: string
-                format: base64url
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -6116,7 +6677,7 @@ paths:
       parameters:
         - name: period
           in: path
-          description: 'Usage: period={period}'
+          description: 'Usage: period=''{period}'''
           required: true
           schema:
             type: string
@@ -6124,10 +6685,15 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
-                type: string
-                format: base64url
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -6140,7 +6706,7 @@ paths:
       parameters:
         - name: period
           in: path
-          description: 'Usage: period={period}'
+          description: 'Usage: period=''{period}'''
           required: true
           schema:
             type: string
@@ -6148,10 +6714,15 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
-                type: string
-                format: base64url
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -6164,7 +6735,7 @@ paths:
       parameters:
         - name: period
           in: path
-          description: 'Usage: period={period}'
+          description: 'Usage: period=''{period}'''
           required: true
           schema:
             type: string
@@ -6172,10 +6743,15 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
-                type: string
-                format: base64url
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -6188,7 +6764,7 @@ paths:
       parameters:
         - name: period
           in: path
-          description: 'Usage: period={period}'
+          description: 'Usage: period=''{period}'''
           required: true
           schema:
             type: string
@@ -6196,10 +6772,15 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
-                type: string
-                format: base64url
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -6222,10 +6803,15 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
-                type: string
-                format: base64url
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -6238,7 +6824,7 @@ paths:
       parameters:
         - name: period
           in: path
-          description: 'Usage: period={period}'
+          description: 'Usage: period=''{period}'''
           required: true
           schema:
             type: string
@@ -6246,10 +6832,15 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
-                type: string
-                format: base64url
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -6262,7 +6853,7 @@ paths:
       parameters:
         - name: period
           in: path
-          description: 'Usage: period={period}'
+          description: 'Usage: period=''{period}'''
           required: true
           schema:
             type: string
@@ -6270,10 +6861,15 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
-                type: string
-                format: base64url
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -6296,10 +6892,15 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
-                type: string
-                format: base64url
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -6312,7 +6913,7 @@ paths:
       parameters:
         - name: period
           in: path
-          description: 'Usage: period={period}'
+          description: 'Usage: period=''{period}'''
           required: true
           schema:
             type: string
@@ -6320,10 +6921,15 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
-                type: string
-                format: base64url
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -6336,7 +6942,7 @@ paths:
       parameters:
         - name: period
           in: path
-          description: 'Usage: period={period}'
+          description: 'Usage: period=''{period}'''
           required: true
           schema:
             type: string
@@ -6344,10 +6950,15 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
-                type: string
-                format: base64url
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -6360,7 +6971,7 @@ paths:
       parameters:
         - name: period
           in: path
-          description: 'Usage: period={period}'
+          description: 'Usage: period=''{period}'''
           required: true
           schema:
             type: string
@@ -6368,10 +6979,15 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
-                type: string
-                format: base64url
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -6384,7 +7000,7 @@ paths:
       parameters:
         - name: period
           in: path
-          description: 'Usage: period={period}'
+          description: 'Usage: period=''{period}'''
           required: true
           schema:
             type: string
@@ -6392,10 +7008,15 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
-                type: string
-                format: base64url
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -6408,7 +7029,7 @@ paths:
       parameters:
         - name: period
           in: path
-          description: 'Usage: period={period}'
+          description: 'Usage: period=''{period}'''
           required: true
           schema:
             type: string
@@ -6416,10 +7037,15 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
-                type: string
-                format: base64url
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -6432,7 +7058,7 @@ paths:
       parameters:
         - name: period
           in: path
-          description: 'Usage: period={period}'
+          description: 'Usage: period=''{period}'''
           required: true
           schema:
             type: string
@@ -6440,10 +7066,15 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
-                type: string
-                format: base64url
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -6456,7 +7087,7 @@ paths:
       parameters:
         - name: period
           in: path
-          description: 'Usage: period={period}'
+          description: 'Usage: period=''{period}'''
           required: true
           schema:
             type: string
@@ -6464,10 +7095,15 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
-                type: string
-                format: base64url
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -6480,7 +7116,7 @@ paths:
       parameters:
         - name: period
           in: path
-          description: 'Usage: period={period}'
+          description: 'Usage: period=''{period}'''
           required: true
           schema:
             type: string
@@ -6488,10 +7124,15 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
-                type: string
-                format: base64url
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -6504,7 +7145,7 @@ paths:
       parameters:
         - name: period
           in: path
-          description: 'Usage: period={period}'
+          description: 'Usage: period=''{period}'''
           required: true
           schema:
             type: string
@@ -6512,10 +7153,15 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
-                type: string
-                format: base64url
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -6538,10 +7184,15 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
-                type: string
-                format: base64url
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -6554,7 +7205,7 @@ paths:
       parameters:
         - name: period
           in: path
-          description: 'Usage: period={period}'
+          description: 'Usage: period=''{period}'''
           required: true
           schema:
             type: string
@@ -6562,14 +7213,19 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
-                type: string
-                format: base64url
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
-  '/reports/microsoft.graph.getUserArchivedPrintJobs(userId=''{userId}'',startDateTime={startDateTime},endDateTime={endDateTime})':
+  '/reports/microsoft.graph.getUserArchivedPrintJobs(userId=''{userId}'',startDateTime=''{startDateTime}'',endDateTime=''{endDateTime}'')':
     get:
       tags:
         - reports.Functions
@@ -6578,14 +7234,14 @@ paths:
       parameters:
         - name: userId
           in: path
-          description: 'Usage: userId={userId}'
+          description: 'Usage: userId=''{userId}'''
           required: true
           schema:
             type: string
             nullable: true
         - name: startDateTime
           in: path
-          description: 'Usage: startDateTime={startDateTime}'
+          description: 'Usage: startDateTime=''{startDateTime}'''
           required: true
           schema:
             pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -6594,7 +7250,7 @@ paths:
             nullable: true
         - name: endDateTime
           in: path
-          description: 'Usage: endDateTime={endDateTime}'
+          description: 'Usage: endDateTime=''{endDateTime}'''
           required: true
           schema:
             pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -6607,9 +7263,15 @@ paths:
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/microsoft.graph.archivedPrintJob'
+                title: Collection of reportRoot
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.archivedPrintJob'
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -6622,7 +7284,7 @@ paths:
       parameters:
         - name: period
           in: path
-          description: 'Usage: period={period}'
+          description: 'Usage: period=''{period}'''
           required: true
           schema:
             type: string
@@ -6630,10 +7292,15 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
-                type: string
-                format: base64url
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -6646,7 +7313,7 @@ paths:
       parameters:
         - name: period
           in: path
-          description: 'Usage: period={period}'
+          description: 'Usage: period=''{period}'''
           required: true
           schema:
             type: string
@@ -6654,10 +7321,15 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
-                type: string
-                format: base64url
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -6680,10 +7352,15 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
-                type: string
-                format: base64url
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -6696,7 +7373,7 @@ paths:
       parameters:
         - name: period
           in: path
-          description: 'Usage: period={period}'
+          description: 'Usage: period=''{period}'''
           required: true
           schema:
             type: string
@@ -6704,10 +7381,15 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
-                type: string
-                format: base64url
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -6720,7 +7402,7 @@ paths:
       parameters:
         - name: period
           in: path
-          description: 'Usage: period={period}'
+          description: 'Usage: period=''{period}'''
           required: true
           schema:
             type: string
@@ -6728,10 +7410,15 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
-                type: string
-                format: base64url
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -6744,7 +7431,7 @@ paths:
       parameters:
         - name: period
           in: path
-          description: 'Usage: period={period}'
+          description: 'Usage: period=''{period}'''
           required: true
           schema:
             type: string
@@ -6752,10 +7439,15 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
-                type: string
-                format: base64url
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -6778,10 +7470,15 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
-                type: string
-                format: base64url
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -6794,7 +7491,7 @@ paths:
       parameters:
         - name: period
           in: path
-          description: 'Usage: period={period}'
+          description: 'Usage: period=''{period}'''
           required: true
           schema:
             type: string
@@ -6802,10 +7499,15 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
-                type: string
-                format: base64url
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -6818,7 +7520,7 @@ paths:
       parameters:
         - name: period
           in: path
-          description: 'Usage: period={period}'
+          description: 'Usage: period=''{period}'''
           required: true
           schema:
             type: string
@@ -6826,10 +7528,15 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
-                type: string
-                format: base64url
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -6852,10 +7559,15 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
-                type: string
-                format: base64url
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -6868,7 +7580,7 @@ paths:
       parameters:
         - name: period
           in: path
-          description: 'Usage: period={period}'
+          description: 'Usage: period=''{period}'''
           required: true
           schema:
             type: string
@@ -6876,10 +7588,15 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
-                type: string
-                format: base64url
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -6892,7 +7609,7 @@ paths:
       parameters:
         - name: period
           in: path
-          description: 'Usage: period={period}'
+          description: 'Usage: period=''{period}'''
           required: true
           schema:
             type: string
@@ -6900,10 +7617,15 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
-                type: string
-                format: base64url
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -6912,7 +7634,6 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function managedDeviceEnrollmentAbandonmentDetails
-      description: Metadata for Enrollment abandonment details report
       operationId: reports_managedDeviceEnrollmentAbandonmentDetails
       parameters:
         - name: skip
@@ -6937,14 +7658,14 @@ paths:
             nullable: true
         - name: filter
           in: path
-          description: 'Usage: filter={filter}'
+          description: 'Usage: filter=''{filter}'''
           required: true
           schema:
             type: string
             nullable: true
         - name: skipToken
           in: path
-          description: 'Usage: skipToken={skipToken}'
+          description: 'Usage: skipToken=''{skipToken}'''
           required: true
           schema:
             type: string
@@ -6964,7 +7685,6 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function managedDeviceEnrollmentAbandonmentSummary
-      description: Metadata for Enrollment abandonment summary report
       operationId: reports_managedDeviceEnrollmentAbandonmentSummary
       parameters:
         - name: skip
@@ -6989,14 +7709,14 @@ paths:
             nullable: true
         - name: filter
           in: path
-          description: 'Usage: filter={filter}'
+          description: 'Usage: filter=''{filter}'''
           required: true
           schema:
             type: string
             nullable: true
         - name: skipToken
           in: path
-          description: 'Usage: skipToken={skipToken}'
+          description: 'Usage: skipToken=''{skipToken}'''
           required: true
           schema:
             type: string
@@ -7056,14 +7776,14 @@ paths:
             nullable: true
         - name: filter
           in: path
-          description: 'Usage: filter={filter}'
+          description: 'Usage: filter=''{filter}'''
           required: true
           schema:
             type: string
             nullable: true
         - name: skipToken
           in: path
-          description: 'Usage: skipToken={skipToken}'
+          description: 'Usage: skipToken=''{skipToken}'''
           required: true
           schema:
             type: string
@@ -7083,7 +7803,6 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function managedDeviceEnrollmentFailureTrends
-      description: Metadata for the enrollment failure trends report
       operationId: reports_managedDeviceEnrollmentFailureTrends
       responses:
         '200':
@@ -7120,7 +7839,7 @@ paths:
       parameters:
         - name: period
           in: path
-          description: 'Usage: period={period}'
+          description: 'Usage: period=''{period}'''
           required: true
           schema:
             type: string
@@ -7201,21 +7920,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of printUsageByPrinter
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.printUsageByPrinter'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.printUsageByPrinterCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -7413,21 +8118,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of printUsageByUser
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.printUsageByUser'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.printUsageByUserCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -7625,21 +8316,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of printUsageByPrinter
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.printUsageByPrinter'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.printUsageByPrinterCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -7837,21 +8514,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of printUsageByUser
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.printUsageByUser'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.printUsageByUserCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -7988,7 +8651,6 @@ paths:
       tags:
         - reports.userCredentialUsageDetails
       summary: Get userCredentialUsageDetails from reports
-      description: Represents the self-service password reset (SSPR) usage for a given tenant.
       operationId: reports_ListUserCredentialUsageDetails
       parameters:
         - $ref: '#/components/parameters/top'
@@ -8056,21 +8718,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of userCredentialUsageDetails
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.userCredentialUsageDetails'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.userCredentialUsageDetailsCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -8081,7 +8729,6 @@ paths:
       tags:
         - reports.userCredentialUsageDetails
       summary: Create new navigation property to userCredentialUsageDetails for reports
-      description: Represents the self-service password reset (SSPR) usage for a given tenant.
       operationId: reports_CreateUserCredentialUsageDetails
       requestBody:
         description: New navigation property
@@ -8105,7 +8752,6 @@ paths:
       tags:
         - reports.userCredentialUsageDetails
       summary: Get userCredentialUsageDetails from reports
-      description: Represents the self-service password reset (SSPR) usage for a given tenant.
       operationId: reports_GetUserCredentialUsageDetails
       parameters:
         - name: userCredentialUsageDetails-id
@@ -8160,7 +8806,6 @@ paths:
       tags:
         - reports.userCredentialUsageDetails
       summary: Update the navigation property userCredentialUsageDetails in reports
-      description: Represents the self-service password reset (SSPR) usage for a given tenant.
       operationId: reports_UpdateUserCredentialUsageDetails
       parameters:
         - name: userCredentialUsageDetails-id
@@ -8187,7 +8832,6 @@ paths:
       tags:
         - reports.userCredentialUsageDetails
       summary: Delete navigation property userCredentialUsageDetails for reports
-      description: Represents the self-service password reset (SSPR) usage for a given tenant.
       operationId: reports_DeleteUserCredentialUsageDetails
       parameters:
         - name: userCredentialUsageDetails-id
@@ -8220,7 +8864,6 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryAudit'
-              description: Read-only. Nullable.
             directoryProvisioning:
               type: array
               items:
@@ -8237,7 +8880,6 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.signIn'
-              description: Read-only. Nullable.
           additionalProperties:
             type: object
     microsoft.graph.directoryAudit:
@@ -8253,7 +8895,7 @@ components:
               format: date-time
             activityDisplayName:
               type: string
-              description: 'Indicates the activity name or the operation name (examples: ''Create User'' and ''Add member to group''). For full list, see Azure AD activity list.'
+              description: 'Indicates the activity name or the operation name (E.g. ''Create User'', ''Add member to group''). For a list of activities logged, refer to Azure Ad activity list.'
             additionalDetails:
               type: array
               items:
@@ -8274,6 +8916,7 @@ components:
               nullable: true
             operationType:
               type: string
+              description: 'Indicates the type of operation that was performed. The possible values include but are not limited to the following: Add, Assign, Update, Unassign, and Delete.'
               nullable: true
             result:
               $ref: '#/components/schemas/microsoft.graph.operationResult'
@@ -8285,7 +8928,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.targetResource'
-              description: 'Indicates information on which resource was changed due to the activity. Target Resource Type can be User, Device, Directory, App, Role, Group, Policy or Other.'
+              description: Information about the resource that changed due to the activity.
             userAgent:
               type: string
               description: Type of user agent used by a user in the activity.
@@ -8380,11 +9023,11 @@ components:
           properties:
             appDisplayName:
               type: string
-              description: App name displayed in the Azure Portal. Supports $filter (eq and startsWith operators only).
+              description: The application name displayed in the Azure Portal. Supports $filter (eq and startsWith operators only).
               nullable: true
             appId:
               type: string
-              description: Unique GUID representing the app ID in the Azure Active Directory. Supports $filter (eq operator only).
+              description: The application identifier in Azure Active Directory. Supports $filter (eq operator only).
               nullable: true
             appliedConditionalAccessPolicies:
               type: array
@@ -8436,18 +9079,20 @@ components:
               nullable: true
             clientAppUsed:
               type: string
-              description: 'Identifies the client used for the sign-in activity. Modern authentication clients include Browser and modern clients. Legacy authentication clients include Exchange ActiveSync, IMAP, MAPI, SMTP, POP, and other clients. Supports $filter (eq operator only).'
+              description: 'The legacy client used for sign-in activity. For example: Browser, Exchange ActiveSync, Modern clients, IMAP, MAPI, SMTP, or POP. Supports $filter (eq operator only).'
               nullable: true
+            clientCredentialType:
+              $ref: '#/components/schemas/microsoft.graph.clientCredentialType'
             conditionalAccessStatus:
               $ref: '#/components/schemas/microsoft.graph.conditionalAccessStatus'
             correlationId:
               type: string
-              description: The request ID sent from the client when the sign-in is initiated; used to troubleshoot sign-in activity. Supports $filter (eq operator only).
+              description: The identifier that's sent from the client when sign-in is initiated. This is used for troubleshooting the corresponding sign-in activity when calling for support. Supports $filter (eq operator only).
               nullable: true
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Date and time (UTC) the sign-in was initiated. Example: midnight on Jan 1, 2014 is reported as 2014-01-01T00:00:00Z. Supports $orderby and $filter (eq, le, and ge operators only).'
+              description: 'The date and time the sign-in was initiated. The Timestamp type is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Supports $orderby and $filter (eq, le, and ge operators only).'
               format: date-time
             crossTenantAccessType:
               $ref: '#/components/schemas/microsoft.graph.signInAccessType'
@@ -8473,7 +9118,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.incomingTokenType'
             ipAddress:
               type: string
-              description: IP address of the client used to sign in. Supports $filter (eq and startsWith operators only).
+              description: The IP address of the client from where the sign-in occurred. Supports $filter (eq and startsWith operators only).
               nullable: true
             ipAddressFromResourceProvider:
               type: string
@@ -8481,7 +9126,7 @@ components:
               nullable: true
             isInteractive:
               type: boolean
-              description: Indicates if a sign-in is interactive or not.
+              description: 'Indicates whether a user sign in is interactive. In interactive sign in, the user provides an authentication factor to Azure AD. These factors include passwords, responses to MFA challenges, biometric factors, or QR codes that a user provides to Azure AD or an associated app. In non-interactive sign in, the user doesn''t provide an authentication factor. Instead, the client app uses a token or code to authenticate or access a resource on behalf of a user. Non-interactive sign ins are commonly used for a client to sign in on a user''s behalf in a process transparent to the user.'
               nullable: true
             isTenantRestricted:
               type: boolean
@@ -8511,11 +9156,11 @@ components:
               nullable: true
             resourceDisplayName:
               type: string
-              description: Name of the resource the user signed into. Supports $filter (eq operator only).
+              description: The name of the resource that the user signed in to. Supports $filter (eq operator only).
               nullable: true
             resourceId:
               type: string
-              description: ID of the resource that the user signed into. Supports $filter (eq operator only).
+              description: The identifier of the resource that the user signed in to. Supports $filter (eq operator only).
               nullable: true
             resourceServicePrincipalId:
               type: string
@@ -8589,14 +9234,14 @@ components:
               nullable: true
             userDisplayName:
               type: string
-              description: Display name of the user that initiated the sign-in. Supports $filter (eq and startsWith operators only).
+              description: The display name of the user. Supports $filter (eq and startsWith operators only).
               nullable: true
             userId:
               type: string
-              description: ID of the user that initiated the sign-in. Supports $filter (eq operator only).
+              description: The identifier of the user. Supports $filter (eq operator only).
             userPrincipalName:
               type: string
-              description: User principal name of the user that initiated the sign-in. Supports $filter (eq and startsWith operators only).
+              description: The UPN of the user. Supports $filter (eq and startsWith operators only).
               nullable: true
             userType:
               $ref: '#/components/schemas/microsoft.graph.signInUserType'
@@ -8870,6 +9515,8 @@ components:
         - title: userRegistrationDetails
           type: object
           properties:
+            defaultMfaMethod:
+              $ref: '#/components/schemas/microsoft.graph.defaultMfaMethodType'
             isMfaCapable:
               type: boolean
               description: Whether the user has registered a strong authentication method for multi-factor authentication. The method must be allowed by the authentication methods policy. Supports $filter (eq).
@@ -8962,7 +9609,7 @@ components:
       properties:
         content:
           type: string
-          description: Not yet documented
+          description: Report content; details vary by report type.
           format: base64url
           nullable: true
       additionalProperties:
@@ -9841,7 +10488,6 @@ components:
       properties:
         id:
           type: string
-          description: Read-only.
       additionalProperties:
         type: object
     microsoft.graph.keyValue:
@@ -9850,11 +10496,11 @@ components:
       properties:
         key:
           type: string
-          description: Key for the key-value pair.
+          description: 'Contains the name of the field that a value is associated with. When a sign in or domain hint is included in the sign-in request, corresponding fields are included as key-value pairs. Possible keys: Login hint present, Domain hint present.'
           nullable: true
         value:
           type: string
-          description: Value for the key-value pair.
+          description: Contains the corresponding value for the specified key. The value is true if a sign in hint was included in the sign-in request; otherwise false. The value is true if a domain hint was included in the sign-in request; otherwise false.
           nullable: true
       additionalProperties:
         type: object
@@ -9921,15 +10567,15 @@ components:
       properties:
         displayName:
           type: string
-          description: Indicates the property name of the target attribute that was changed.
+          description: Name of property that was modified.
           nullable: true
         newValue:
           type: string
-          description: Indicates the updated value for the propery.
+          description: New property value.
           nullable: true
         oldValue:
           type: string
-          description: Indicates the previous value (before the update) for the property.
+          description: Old property value.
           nullable: true
       additionalProperties:
         type: object
@@ -10025,7 +10671,7 @@ components:
           $ref: '#/components/schemas/microsoft.graph.conditionalAccessConditions'
         displayName:
           type: string
-          description: 'Refers to the Name of the conditional access policy (example: ''Require MFA for Salesforce'').'
+          description: Name of the conditional access policy.
           nullable: true
         enforcedGrantControls:
           type: array
@@ -10046,7 +10692,7 @@ components:
           description: 'List of key-value pairs containing each matched exclude condition in the conditional access policy. Example: [{''devicePlatform'' : ''DevicePlatform''}] means the policy didn’t apply, because the DevicePlatform condition was a match.'
         id:
           type: string
-          description: An identifier of the conditional access policy.
+          description: Identifier of the conditional access policy.
           nullable: true
         includeRulesSatisfied:
           type: array
@@ -10055,6 +10701,12 @@ components:
           description: 'List of key-value pairs containing each matched include condition in the conditional access policy. Example: [{ ''application'' : ''AllApps''}, {''users'': ''Group''}], meaning Application condition was a match because AllApps are included and Users condition was a match because the user was part of the included Group rule.'
         result:
           $ref: '#/components/schemas/microsoft.graph.appliedConditionalAccessPolicyResult'
+        sessionControlsNotSatisfied:
+          type: array
+          items:
+            type: string
+            nullable: true
+          description: 'Refers to the session controls that a sign-in activity did not satisfy. (Example: Application enforced Restrictions).'
       additionalProperties:
         type: object
     microsoft.graph.authenticationContext:
@@ -10124,6 +10776,17 @@ components:
           $ref: '#/components/schemas/microsoft.graph.requirementProvider'
       additionalProperties:
         type: object
+    microsoft.graph.clientCredentialType:
+      title: clientCredentialType
+      enum:
+        - none
+        - clientSecret
+        - clientAssertion
+        - federatedIdentityCredential
+        - managedIdentity
+        - certificate
+        - unknownFutureValue
+      type: string
     microsoft.graph.conditionalAccessStatus:
       title: conditionalAccessStatus
       enum:
@@ -10148,34 +10811,34 @@ components:
       properties:
         browser:
           type: string
-          description: Indicates the browser information of the used for signing in.
+          description: Indicates the browser information of the used for signing-in.
           nullable: true
         browserId:
           type: string
           nullable: true
         deviceId:
           type: string
-          description: Refers to the UniqueID of the device used for signing in.
+          description: Refers to the UniqueID of the device used for signing-in.
           nullable: true
         displayName:
           type: string
-          description: Refers to the name of the device used for signing in.
+          description: Refers to the name of the device used for signing-in.
           nullable: true
         isCompliant:
           type: boolean
-          description: Indicates whether the device is compliant.
+          description: Indicates whether the device is compliant or not.
           nullable: true
         isManaged:
           type: boolean
-          description: Indicates whether the device is managed.
+          description: Indicates if the device is managed or not.
           nullable: true
         operatingSystem:
           type: string
-          description: Indicates the operating system name and version used for signing in.
+          description: Indicates the OS name and version used for signing-in.
           nullable: true
         trustType:
           type: string
-          description: 'Provides information about whether the signed-in device is Workplace Joined, AzureAD Joined, Domain Joined.'
+          description: 'Indicates information on whether the signed-in device is Workplace Joined, AzureAD Joined, Domain Joined.'
           nullable: true
       additionalProperties:
         type: object
@@ -10187,6 +10850,7 @@ components:
         - saml11
         - saml20
         - unknownFutureValue
+        - remoteDesktopToken
       type: string
     microsoft.graph.signInLocation:
       title: signInLocation
@@ -10367,6 +11031,25 @@ components:
         - failed
       type: string
       description: Possible statuses associated with a generated report
+      x-ms-enum:
+        name: deviceManagementReportStatus
+        modelAsString: false
+        values:
+          - value: unknown
+            description: Report generation status is unknown
+            name: unknown
+          - value: notStarted
+            description: Report generation has not started
+            name: notStarted
+          - value: inProgress
+            description: Report generation is in progress
+            name: inProgress
+          - value: completed
+            description: Report generation is completed
+            name: completed
+          - value: failed
+            description: Report generation has failed
+            name: failed
     microsoft.graph.deviceManagementReportFileFormat:
       title: deviceManagementReportFileFormat
       enum:
@@ -10374,6 +11057,16 @@ components:
         - pdf
       type: string
       description: Possible values for the file format of a report
+      x-ms-enum:
+        name: deviceManagementReportFileFormat
+        modelAsString: false
+        values:
+          - value: csv
+            description: Comma-separated values
+            name: csv
+          - value: pdf
+            description: Portable Document Format
+            name: pdf
     microsoft.graph.deviceManagementExportJobLocalizationType:
       title: deviceManagementExportJobLocalizationType
       enum:
@@ -10381,6 +11074,16 @@ components:
         - replaceLocalizableValues
       type: string
       description: Configures how the requested export job is localized
+      x-ms-enum:
+        name: deviceManagementExportJobLocalizationType
+        modelAsString: false
+        values:
+          - value: localizedValuesAsAdditionalColumn
+            description: Configures the export job to expose localized values as an additional column
+            name: localizedValuesAsAdditionalColumn
+          - value: replaceLocalizableValues
+            description: Configures the export job to replace enumerable values with their localized values
+            name: replaceLocalizableValues
     microsoft.graph.userRegistrationFeatureCount:
       title: userRegistrationFeatureCount
       type: object
@@ -10406,6 +11109,17 @@ components:
           format: int64
       additionalProperties:
         type: object
+    microsoft.graph.defaultMfaMethodType:
+      title: defaultMfaMethodType
+      enum:
+        - none
+        - mobilePhone
+        - alternateMobilePhone
+        - officePhone
+        - microsoftAuthenticatorPush
+        - softwareOneTimePasscode
+        - unknownFutureValue
+      type: string
     microsoft.graph.registrationAuthMethod:
       title: registrationAuthMethod
       enum:
@@ -10625,13 +11339,157 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    odata.error:
+    microsoft.graph.ODataErrors.ODataError:
       required:
         - error
       type: object
       properties:
         error:
-          $ref: '#/components/schemas/odata.error.main'
+          $ref: '#/components/schemas/microsoft.graph.ODataErrors.MainError'
+      additionalProperties:
+        type: object
+    microsoft.graph.directoryAuditCollectionResponse:
+      title: Collection of directoryAudit
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.directoryAudit'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.provisioningObjectSummaryCollectionResponse:
+      title: Collection of provisioningObjectSummary
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.provisioningObjectSummary'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.restrictedSignInCollectionResponse:
+      title: Collection of restrictedSignIn
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.restrictedSignIn'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.signInCollectionResponse:
+      title: Collection of signIn
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.signIn'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.deviceManagementCachedReportConfigurationCollectionResponse:
+      title: Collection of deviceManagementCachedReportConfiguration
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.deviceManagementCachedReportConfiguration'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.deviceManagementExportJobCollectionResponse:
+      title: Collection of deviceManagementExportJob
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.deviceManagementExportJob'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.applicationSignInDetailedSummaryCollectionResponse:
+      title: Collection of applicationSignInDetailedSummary
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.applicationSignInDetailedSummary'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.userRegistrationDetailsCollectionResponse:
+      title: Collection of userRegistrationDetails
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.userRegistrationDetails'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.credentialUserRegistrationDetailsCollectionResponse:
+      title: Collection of credentialUserRegistrationDetails
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.credentialUserRegistrationDetails'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.printUsageByPrinterCollectionResponse:
+      title: Collection of printUsageByPrinter
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.printUsageByPrinter'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.printUsageByUserCollectionResponse:
+      title: Collection of printUsageByUser
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.printUsageByUser'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.userCredentialUsageDetailsCollectionResponse:
+      title: Collection of userCredentialUsageDetails
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.userCredentialUsageDetails'
+        '@odata.nextLink':
+          type: string
       additionalProperties:
         type: object
     microsoft.graph.appIdentity:
@@ -10640,7 +11498,7 @@ components:
       properties:
         appId:
           type: string
-          description: Refers to the Unique GUID representing Application Id in the Azure Active Directory.
+          description: Refers to the unique identifier representing Application Id in the Azure Active Directory.
           nullable: true
         displayName:
           type: string
@@ -10648,7 +11506,7 @@ components:
           nullable: true
         servicePrincipalId:
           type: string
-          description: Refers to the Unique GUID indicating Service Principal Id in Azure Active Directory for the corresponding App.
+          description: Refers to the unique identifier indicating Service Principal Id in Azure Active Directory for the corresponding App.
           nullable: true
         servicePrincipalName:
           type: string
@@ -10685,11 +11543,11 @@ components:
       properties:
         displayName:
           type: string
-          description: 'The identity''s display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
+          description: The display name of the identity. This property is read-only.
           nullable: true
         id:
           type: string
-          description: Unique identifier for the identity.
+          description: The identifier of the identity. This property is read-only.
           nullable: true
       additionalProperties:
         type: object
@@ -10852,12 +11710,12 @@ components:
           nullable: true
         latitude:
           type: number
-          description: 'Optional. The latitude, in decimal, for the item. Read-only.'
+          description: 'Optional. The latitude, in decimal, for the item. Writable on OneDrive Personal.'
           format: double
           nullable: true
         longitude:
           type: number
-          description: 'Optional. The longitude, in decimal, for the item. Read-only.'
+          description: 'Optional. The longitude, in decimal, for the item. Writable on OneDrive Personal.'
           format: double
           nullable: true
       additionalProperties:
@@ -10911,7 +11769,7 @@ components:
         - mfaRegistered
         - unknownFutureValue
       type: string
-    odata.error.main:
+    microsoft.graph.ODataErrors.MainError:
       required:
         - code
         - message
@@ -10923,15 +11781,13 @@ components:
           type: string
         target:
           type: string
+          nullable: true
         details:
           type: array
           items:
-            $ref: '#/components/schemas/odata.error.detail'
+            $ref: '#/components/schemas/microsoft.graph.ODataErrors.ErrorDetails'
         innererror:
-          type: object
-          additionalProperties:
-            type: object
-          description: The structure of this object is service-specific
+          $ref: '#/components/schemas/microsoft.graph.ODataErrors.InnerError'
       additionalProperties:
         type: object
     microsoft.graph.provisioningStatusErrorCategory:
@@ -10969,7 +11825,7 @@ components:
         - deviceFilterIncludeRuleNotMatched
         - allDeviceStates
       type: string
-    odata.error.detail:
+    microsoft.graph.ODataErrors.ErrorDetails:
       required:
         - code
         - message
@@ -10981,15 +11837,93 @@ components:
           type: string
         target:
           type: string
+          nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.ODataErrors.InnerError:
+      type: object
+      additionalProperties:
+        type: object
+      description: The structure of this object is service-specific
   responses:
     error:
       description: error
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/odata.error'
+            $ref: '#/components/schemas/microsoft.graph.ODataErrors.ODataError'
+    microsoft.graph.directoryAuditCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.directoryAuditCollectionResponse'
+    microsoft.graph.provisioningObjectSummaryCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.provisioningObjectSummaryCollectionResponse'
+    microsoft.graph.restrictedSignInCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.restrictedSignInCollectionResponse'
+    microsoft.graph.signInCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.signInCollectionResponse'
+    microsoft.graph.deviceManagementCachedReportConfigurationCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.deviceManagementCachedReportConfigurationCollectionResponse'
+    microsoft.graph.deviceManagementExportJobCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.deviceManagementExportJobCollectionResponse'
+    microsoft.graph.applicationSignInDetailedSummaryCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.applicationSignInDetailedSummaryCollectionResponse'
+    microsoft.graph.userRegistrationDetailsCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.userRegistrationDetailsCollectionResponse'
+    microsoft.graph.credentialUserRegistrationDetailsCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.credentialUserRegistrationDetailsCollectionResponse'
+    microsoft.graph.printUsageByPrinterCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.printUsageByPrinterCollectionResponse'
+    microsoft.graph.printUsageByUserCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.printUsageByUserCollectionResponse'
+    microsoft.graph.userCredentialUsageDetailsCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.userCredentialUsageDetailsCollectionResponse'
   parameters:
     top:
       name: $top

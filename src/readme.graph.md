@@ -88,6 +88,8 @@ directive:
     - MicrosoftGraphSecurityInformationProtectionPolicySetting
     - MicrosoftGraphSecuritySensitivityLabel
     - MicrosoftGraphTaskViewpoint
+    - MicrosoftGraphSecurityEdiscoveryReviewTag
+    - microsoftGraphSecurityEdiscoverySearch
   # Set parameter alias
   - where:
       parameter-name: OrderBy
@@ -412,6 +414,19 @@ directive:
       variant: ^(Check|Verify)(.*)
     set:
       verb: Confirm
+# Remove *AvailableExtensionProperty commands except those bound to DirectoryObject.
+  - where:
+      subject: ^(?!DirectoryObject).*AvailableExtensionProperty$
+    remove: true
+  - where:
+      verb: Clear
+      subject: ^UserManagedAppRegistrationByDeviceTag$
+      variant: ^Wipe1$|^WipeExpanded1$|^WipeViaIdentity1$|^WipeViaIdentityExpanded1$
+# Remove commands
+  - where:
+      verb: Restore
+      subject: ^(Application|Contact|Contract|Device|DirectoryObject|DirectoryRole|DirectoryRoleTemplate|EntitlementManagementConnectedOrganizationInternalSponsor|Group|GroupPermissionGrant|Organization|ServicePrincipal|User|UserAuthenticationMicrosoftAuthenticatorMethodDevice|UserAuthenticationWindowHelloForBusinessMethodDevice|AdministrativeUnit|ChatPermissionGrant|DirectoryAdministrativeUnit|DirectorySettingTemplate|TeamPermissionGrant|UserAuthenticationPasswordlessMicrosoftAuthenticatorMethodDevice|UserChatPermissionGrant|UserDevice)$
+    remove: true
 # Rename prepositions to bypass https://github.com/Azure/autorest.powershell/issues/795.
   - where:
       subject: ^(\w*[a-z])GraphBPre(\w*)$
@@ -433,14 +448,10 @@ directive:
       subject: ^(\w*[a-z])GraphOPre(\w*)$
     set:
       subject: $1Of$2
-# Remove *AvailableExtensionProperty commands except those bound to DirectoryObject.
-  - where:
-      subject: ^(?!DirectoryObject).*AvailableExtensionProperty$
-    remove: true
   - where:
       verb: Clear
       subject: ^UserManagedAppRegistrationByDeviceTag$
-      variant: ^Wipe1$|^WipeExpanded1$|^WipeViaIdentity1$|^WipeViaIdentityExpanded1$
+      variant: ^Wipe$|^WipeExpanded$|^WipeViaIdentity$|^WipeViaIdentityExpanded$
     remove: true
 # Modify generated .json.cs model classes.
   - from: source-file-csharp
@@ -489,6 +500,20 @@ directive:
         let propertiesToRemoveRegex = /^.*Microsoft\.(Graph|Graph\.Beta)\.PowerShell\.Runtime\.IAssociativeArray<global::System\.Object>\.(Count|Keys|Values).*$/gm
         $ = $.replace(propertiesToRemoveRegex, '');
 
+        let classRegex = /((\s*)public\s*partial\s*class\s*MicrosoftGraph(NamedLocation).*\s.*\s*\{)/gm
+        if($.match(classRegex)) {
+          let toFirstUpperImplementation = 'internal string ToFirstCharacterLowerCase(string text) => System.String.IsNullOrEmpty(text) ? text : $"{char.ToLowerInvariant(text[0])}{text.Substring(1)}";'
+          $ = $.replace(classRegex, `$1$2${toFirstUpperImplementation}`)
+          
+          let directoryKeyRegex = /\.Add\((\s*property\.Key\.ToString\(\))/gm
+          $ = $.replace(directoryKeyRegex, '.Add(ToFirstCharacterLowerCase($1)')
+        }
+
+        // Rename additionalProperties indexer name from Item to EntityItem to avoid property name conflict.
+        // See https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/indexers/using-indexers
+        let indexerRegex = /^(\s*)(public\s*global::System\.Object\s*this\[global::System\.String\s*index\])/gm
+        $ = $.replace(indexerRegex, '$1[System.Runtime.CompilerServices.IndexerName("EntityItem")]\n$2')
+        
         return $;
       }
 # Modify generated .PowerShell.cs model classes.
@@ -595,10 +620,13 @@ directive:
       } else {
         let outFileParameterRegex = /(^\s*)public\s*global::System\.String\s*OutFile\s*/gmi
         let streamResponseRegex = /global::System\.Threading\.Tasks\.Task<global::System\.IO\.Stream>\s*response/gmi
+        let octetStreamSchemaResponseRegex = /global::System\.Threading\.Tasks\.Task<.*(OctetStreamSchema|GraphReport)>\s*response/gmi
+        let overrideOnOkCallRegex = /(^\s*)(overrideOnOk\(\s*responseMessage\s*,\s*response\s*,\s*ref\s*_returnNow\s*\);)/gmi
         if($.match(outFileParameterRegex) && $.match(streamResponseRegex)) {
           // Handle file download.
-          let overrideOnOkCallRegex = /(^\s*)(overrideOnOk\(\s*responseMessage\s*,\s*response\s*,\s*ref\s*_returnNow\s*\);)/gmi
           $ = $.replace(overrideOnOkCallRegex, '$1$2\n$1using(var stream = await response){ this.WriteToFile(responseMessage, stream, this.GetProviderPath(OutFile, false), _cancellationTokenSource.Token); _returnNow = global::System.Threading.Tasks.Task<bool>.FromResult(true);}\n$1');
+        } else if ($.match(outFileParameterRegex) && $.match(octetStreamSchemaResponseRegex)){
+          $ = $.replace(overrideOnOkCallRegex, '$1$2\n$1using(var stream = await responseMessage.Content.ReadAsStreamAsync()){ this.WriteToFile(responseMessage, stream, this.GetProviderPath(OutFile, false), _cancellationTokenSource.Token); _returnNow = global::System.Threading.Tasks.Task<bool>.FromResult(true);}\n$1');
         }
         return $;
       }
@@ -657,13 +685,6 @@ directive:
         let fromJsonRegex = /(\s*FromJson<\w*>\s*\(JsonObject\s*json\s*,\s*System\.Collections\.Generic\.IDictionary.*)(\s*)({)/gm
         $ = $.replace(fromJsonRegex, '$1$2$3\n$2 if (excludes != null){ excludes = new System.Collections.Generic.HashSet<string>(excludes, global::System.StringComparer.OrdinalIgnoreCase);}');
 
-        let toFirstUpperImplementation = 'internal static string ToFirstCharacterLowerCase(this string text) => String.IsNullOrEmpty(text) ? text : $"{char.ToLowerInvariant(text[0])}{text.Substring(1)}";'
-        let classRegex = /(internal\sstatic\sclass\sJsonSerializable(\s*){)/gm
-        $ = $.replace(classRegex, `$1$2${toFirstUpperImplementation}`)
-
-        let directoryKeyRegex = /(container\.Add\(key\.Key)(,)/gm
-        $ = $.replace(directoryKeyRegex, '$1.ToFirstCharacterLowerCase()$2')
-
         return $;
       }
 
@@ -701,6 +722,26 @@ directive:
         // Add '.ToLower()' at the end of all 'Count.ToString()'
         let countRegex = /(Count\.ToString\(\))/gmi
         $ = $.replace(countRegex, '$1.ToLower()');
+        return $;
+      }
+
+# Fix enums with underscore.
+  - from: source-file-csharp
+    where: $
+    transform: >
+      if (!$documentPath.match(/generated%5Capi%5CSupport%5C(WindowsMalwareCategory|RunAsAccountType|(AssignmentFilter|DeviceScope)Operator).cs/gmi))
+      {
+        return $;
+      } else {
+        // Add underscore to enum properties that have underscore in their value to avoid duplicates.
+        let remoteControlSoftwareRegex = /RemoteControlSoftware(\s*=\s*@"remote_Control_Software")/gmi
+        $ = $.replace(remoteControlSoftwareRegex, 'Remote_Control_Software$1');
+
+        let equalsRegex = /Equals(\s*=\s*@"equals")/gmi
+        $ = $.replace(equalsRegex, '_Equals$1');
+
+        let systemRegex = /System(\s*=\s*@"system")/gmi
+        $ = $.replace(systemRegex, '_System$1');
         return $;
       }
 ```

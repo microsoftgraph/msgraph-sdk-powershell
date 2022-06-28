@@ -11,7 +11,6 @@ paths:
       tags:
         - users.userActivity
       summary: Get activities from users
-      description: The user's activities across devices. Read-only. Nullable.
       operationId: users_ListActivities
       parameters:
         - name: user-id
@@ -106,21 +105,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of userActivity
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.userActivity'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.userActivityCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -131,7 +116,6 @@ paths:
       tags:
         - users.userActivity
       summary: Create new navigation property to activities for users
-      description: The user's activities across devices. Read-only. Nullable.
       operationId: users_CreateActivities
       parameters:
         - name: user-id
@@ -163,7 +147,6 @@ paths:
       tags:
         - users.userActivity
       summary: Get activities from users
-      description: The user's activities across devices. Read-only. Nullable.
       operationId: users_GetActivities
       parameters:
         - name: user-id
@@ -239,7 +222,6 @@ paths:
       tags:
         - users.userActivity
       summary: Update the navigation property activities in users
-      description: The user's activities across devices. Read-only. Nullable.
       operationId: users_UpdateActivities
       parameters:
         - name: user-id
@@ -273,7 +255,6 @@ paths:
       tags:
         - users.userActivity
       summary: Delete navigation property activities for users
-      description: The user's activities across devices. Read-only. Nullable.
       operationId: users_DeleteActivities
       parameters:
         - name: user-id
@@ -306,7 +287,6 @@ paths:
       tags:
         - users.userActivity
       summary: Get historyItems from users
-      description: Optional. NavigationProperty/Containment; navigation property to the activity's historyItems.
       operationId: users.activities_ListHistoryItems
       parameters:
         - name: user-id
@@ -393,21 +373,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of activityHistoryItem
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.activityHistoryItem'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.activityHistoryItemCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -418,7 +384,6 @@ paths:
       tags:
         - users.userActivity
       summary: Create new navigation property to historyItems for users
-      description: Optional. NavigationProperty/Containment; navigation property to the activity's historyItems.
       operationId: users.activities_CreateHistoryItems
       parameters:
         - name: user-id
@@ -457,7 +422,6 @@ paths:
       tags:
         - users.userActivity
       summary: Get historyItems from users
-      description: Optional. NavigationProperty/Containment; navigation property to the activity's historyItems.
       operationId: users.activities_GetHistoryItems
       parameters:
         - name: user-id
@@ -536,7 +500,6 @@ paths:
       tags:
         - users.userActivity
       summary: Update the navigation property historyItems in users
-      description: Optional. NavigationProperty/Containment; navigation property to the activity's historyItems.
       operationId: users.activities_UpdateHistoryItems
       parameters:
         - name: user-id
@@ -577,7 +540,6 @@ paths:
       tags:
         - users.userActivity
       summary: Delete navigation property historyItems for users
-      description: Optional. NavigationProperty/Containment; navigation property to the activity's historyItems.
       operationId: users.activities_DeleteHistoryItems
       parameters:
         - name: user-id
@@ -617,7 +579,6 @@ paths:
       tags:
         - users.userActivity
       summary: Get activity from users
-      description: Optional. NavigationProperty/Containment; navigation property to the associated activity.
       operationId: users.activities.historyItems_GetActivity
       parameters:
         - name: user-id
@@ -694,134 +655,6 @@ paths:
                 user-id: $request.path.user-id
                 userActivity-id: $request.path.userActivity-id
                 activityHistoryItem-id: $request.path.activityHistoryItem-id
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-  '/users/{user-id}/activities/{userActivity-id}/historyItems/{activityHistoryItem-id}/activity/$ref':
-    get:
-      tags:
-        - users.userActivity
-      summary: Get ref of activity from users
-      description: Optional. NavigationProperty/Containment; navigation property to the associated activity.
-      operationId: users.activities.historyItems_GetActivityGraphBPreRef
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: userActivity-id
-          in: path
-          description: 'key: id of userActivity'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: userActivity
-        - name: activityHistoryItem-id
-          in: path
-          description: 'key: id of activityHistoryItem'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: activityHistoryItem
-      responses:
-        '200':
-          description: Retrieved navigation property link
-          content:
-            application/json:
-              schema:
-                type: string
-          links:
-            historyItems:
-              operationId: users.activities.historyItems.Activity.ListHistoryItems
-              parameters:
-                user-id: $request.path.user-id
-                userActivity-id: $request.path.userActivity-id
-                activityHistoryItem-id: $request.path.activityHistoryItem-id
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    put:
-      tags:
-        - users.userActivity
-      summary: Update the ref of navigation property activity in users
-      description: Optional. NavigationProperty/Containment; navigation property to the associated activity.
-      operationId: users.activities.historyItems_SetActivityGraphBPreRef
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: userActivity-id
-          in: path
-          description: 'key: id of userActivity'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: userActivity
-        - name: activityHistoryItem-id
-          in: path
-          description: 'key: id of activityHistoryItem'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: activityHistoryItem
-      requestBody:
-        description: New navigation property ref values
-        content:
-          application/json:
-            schema:
-              type: object
-              additionalProperties:
-                type: object
-        required: true
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - users.userActivity
-      summary: Delete ref of navigation property activity for users
-      description: Optional. NavigationProperty/Containment; navigation property to the associated activity.
-      operationId: users.activities.historyItems_DeleteActivityGraphBPreRef
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: userActivity-id
-          in: path
-          description: 'key: id of userActivity'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: userActivity
-        - name: activityHistoryItem-id
-          in: path
-          description: 'key: id of activityHistoryItem'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: activityHistoryItem
-        - name: If-Match
-          in: header
-          description: ETag
-          schema:
-            type: string
-      responses:
-        '204':
-          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -947,7 +780,6 @@ components:
       properties:
         id:
           type: string
-          description: Read-only.
       additionalProperties:
         type: object
     microsoft.graph.Json:
@@ -985,13 +817,37 @@ components:
           description: 'Required. Short text description of the user''s unique activity (for example, document name in cases where an activity refers to document creation)'
       additionalProperties:
         type: object
-    odata.error:
+    microsoft.graph.userActivityCollectionResponse:
+      title: Collection of userActivity
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.userActivity'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.ODataErrors.ODataError:
       required:
         - error
       type: object
       properties:
         error:
-          $ref: '#/components/schemas/odata.error.main'
+          $ref: '#/components/schemas/microsoft.graph.ODataErrors.MainError'
+      additionalProperties:
+        type: object
+    microsoft.graph.activityHistoryItemCollectionResponse:
+      title: Collection of activityHistoryItem
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.activityHistoryItem'
+        '@odata.nextLink':
+          type: string
       additionalProperties:
         type: object
     microsoft.graph.imageInfo:
@@ -1015,7 +871,7 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    odata.error.main:
+    microsoft.graph.ODataErrors.MainError:
       required:
         - code
         - message
@@ -1027,18 +883,16 @@ components:
           type: string
         target:
           type: string
+          nullable: true
         details:
           type: array
           items:
-            $ref: '#/components/schemas/odata.error.detail'
+            $ref: '#/components/schemas/microsoft.graph.ODataErrors.ErrorDetails'
         innererror:
-          type: object
-          additionalProperties:
-            type: object
-          description: The structure of this object is service-specific
+          $ref: '#/components/schemas/microsoft.graph.ODataErrors.InnerError'
       additionalProperties:
         type: object
-    odata.error.detail:
+    microsoft.graph.ODataErrors.ErrorDetails:
       required:
         - code
         - message
@@ -1050,15 +904,33 @@ components:
           type: string
         target:
           type: string
+          nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.ODataErrors.InnerError:
+      type: object
+      additionalProperties:
+        type: object
+      description: The structure of this object is service-specific
   responses:
+    microsoft.graph.userActivityCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.userActivityCollectionResponse'
     error:
       description: error
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/odata.error'
+            $ref: '#/components/schemas/microsoft.graph.ODataErrors.ODataError'
+    microsoft.graph.activityHistoryItemCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.activityHistoryItemCollectionResponse'
   parameters:
     top:
       name: $top

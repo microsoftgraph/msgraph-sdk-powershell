@@ -44,7 +44,7 @@ directive:
   - where:
       verb: Get
       subject: ^(User)(Calendar)$
-      variant: Get1|Get3|GetViaIdentity1|GetViaIdentity3
+      variant: ^Get$|^Get2$|^GetViaIdentity$|^GetViaIdentity2$
     set:
       subject: $1Default$2
 
@@ -52,6 +52,6 @@ directive:
 ### Versioning
 
 ``` yaml
-module-version: 1.9.6
+module-version: 1.10.0
 release-notes: See https://aka.ms/GraphPowerShell-Release.
 ```

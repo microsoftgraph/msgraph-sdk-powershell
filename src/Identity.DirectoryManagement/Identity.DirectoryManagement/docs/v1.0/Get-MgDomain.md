@@ -35,7 +35,7 @@ Get entity from domains by key
 
 ## EXAMPLES
 
-### Example 1: Get a list of domaim objects
+### Example 1: Get a list of domain objects
 ```powershell
 Get-MgDomain | Format-List
 

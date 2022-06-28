@@ -29,7 +29,7 @@ Describe 'Get-MgSiteByPath' {
             $Mock.PushScenario('ShouldFailToGetSiteByPath')
             
             $SiteId = "root"
-            { Get-MgSiteByPath -SiteId $SiteId -Path "randomPath" -ErrorAction Stop } | Should -Throw -ErrorId 'invalidRequest,Microsoft.Graph.PowerShell.Cmdlets.GetMgSiteByPath_Get' -ExpectedMessage 'Invalid request' -ExceptionType 'Microsoft.Graph.PowerShell.Runtime.RestException<Microsoft.Graph.PowerShell.Models.IOdataError>'
+            { Get-MgSiteByPath -SiteId $SiteId -Path "randomPath" -ErrorAction Stop } | Should -Throw -ErrorId 'invalidRequest,Microsoft.Graph.PowerShell.Cmdlets.GetMgSiteByPath_Get' -ExpectedMessage 'Invalid request' -ExceptionType 'Microsoft.Graph.PowerShell.Runtime.RestException<Microsoft.Graph.PowerShell.Models.IMicrosoftGraphODataErrorsOdataError>'
         }
     }
 
@@ -38,7 +38,7 @@ Describe 'Get-MgSiteByPath' {
             $Mock.PushScenario('ShouldFailToGetSiteByPathViaInputObject')
             
             $SiteId = "root"
-            { Get-MgSiteByPath -InputObject @{ SiteId = $SiteId; Path = "randomPath" } -ErrorAction Stop } | Should -Throw -ErrorId 'invalidRequest,Microsoft.Graph.PowerShell.Cmdlets.GetMgSiteByPath_GetViaIdentity' -ExpectedMessage 'Invalid request' -ExceptionType 'Microsoft.Graph.PowerShell.Runtime.RestException<Microsoft.Graph.PowerShell.Models.IOdataError>'
+            { Get-MgSiteByPath -InputObject @{ SiteId = $SiteId; Path = "randomPath" } -ErrorAction Stop } | Should -Throw -ErrorId 'invalidRequest,Microsoft.Graph.PowerShell.Cmdlets.GetMgSiteByPath_GetViaIdentity' -ExpectedMessage 'Invalid request' -ExceptionType 'Microsoft.Graph.PowerShell.Runtime.RestException<Microsoft.Graph.PowerShell.Models.IMicrosoftGraphODataErrorsOdataError>'
 
         }
     }

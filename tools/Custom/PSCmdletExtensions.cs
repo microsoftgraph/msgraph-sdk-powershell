@@ -3,10 +3,12 @@
 // ------------------------------------------------------------------------------
 namespace NamespacePrefixPlaceholder.PowerShell
 {
+    using Microsoft.Graph.PowerShell.Authentication;
     using Microsoft.Graph.PowerShell.Authentication.Common;
     using System;
     using System.Collections.ObjectModel;
     using System.IO;
+    using System.Linq;
     using System.Management.Automation;
     using System.Net.Http;
     using System.Threading;
@@ -65,6 +67,17 @@ namespace NamespacePrefixPlaceholder.PowerShell
         /// <param name="cancellationToken">A cancellation token that will be used to cancel the operation by the user.</param>
         internal static void WriteToFile(this PSCmdlet cmdlet, HttpResponseMessage response, Stream inputStream, string filePath, CancellationToken cancellationToken)
         {
+            if (IsPathDirectory(filePath))
+            {
+                // Get file name from content disposition header if present; otherwise throw an exception for a file name to be provided.
+                var fileName = GetFileName(response);
+                filePath = Path.Combine(filePath, fileName);
+            }
+            if (File.Exists(filePath))
+            {
+                cmdlet.WriteWarning($"{filePath} already exists. The file will be overridden.");
+                File.Delete(filePath);
+            }
             using (var fileProvider = ProtectedFileProvider.CreateFileProvider(filePath, FileProtection.ExclusiveWrite, new DiskDataStore()))
             {
                 string downloadUrl = response?.RequestMessage?.RequestUri.ToString();
@@ -103,6 +116,47 @@ namespace NamespacePrefixPlaceholder.PowerShell
             catch (OperationCanceledException)
             {
             }
+        }
+
+        private static bool IsPathDirectory(string path)
+        {
+            if (path == null) throw new ArgumentNullException("path");
+            path = path.Trim();
+
+            if (Directory.Exists(path))
+                return true;
+
+            if (File.Exists(path))
+                return false;
+
+            // If path has a trailing slash then it's a directory.
+            if (new[] { Path.DirectorySeparatorChar, Path.AltDirectorySeparatorChar }.Any(x => path.EndsWith(x.ToString())))
+                return true;
+
+            // If path has an extension then its a file; directory otherwise.
+            return string.IsNullOrWhiteSpace(Path.GetExtension(path));
+        }
+
+        private static string GetFileName(HttpResponseMessage responseMessage)
+        {
+            if (responseMessage.Content.Headers.ContentDisposition != null
+                && !string.IsNullOrWhiteSpace(responseMessage.Content.Headers.ContentDisposition.FileName))
+            {
+                var fileName = responseMessage.Content.Headers.ContentDisposition.FileNameStar ?? responseMessage.Content.Headers.ContentDisposition.FileName;
+                if (!string.IsNullOrWhiteSpace(fileName))
+                    return SanitizeFileName(fileName);
+            }
+            throw new ArgumentException(ErrorConstants.Message.CannotInferFileName, "-OutFile");
+        }
+
+        /// <summary>
+        /// When Inferring file names from content disposition header, ensure that only valid path characters are in the file name
+        /// </summary>
+        /// <param name="fileName"></param>
+        private static string SanitizeFileName(string fileName)
+        {
+            var illegalCharacters = Path.GetInvalidFileNameChars().Concat(Path.GetInvalidPathChars()).ToArray();
+            return string.Concat(fileName.Split(illegalCharacters));
         }
 
         /// <summary>
