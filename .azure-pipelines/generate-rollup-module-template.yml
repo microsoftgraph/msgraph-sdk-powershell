@@ -140,6 +140,12 @@ jobs:
       publishVstsFeed: '0985d294-5762-4bc2-a565-161ef349ca3e/edc337b9-e5ea-49dd-a2cb-e8d66668ca57'
       allowPackageConflicts: true
 
+  - task: CopyFiles@2
+    displayName: 'Copy DockerImage to artifact staging directory'
+    inputs:
+      contents: '$(System.DefaultWorkingDirectory)/Dockerfile'
+      targetFolder: $(Build.ArtifactStagingDirectory)
+ 
   - task: PublishBuildArtifacts@1
     displayName: 'Publish Artifact Microsoft.Graph.nupkg'
     inputs:
