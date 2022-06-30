@@ -18,7 +18,9 @@
     "AzureAD",
     "SharePoint",
     "Intune",
-    "AzureAutomationNotSupported"
+    "AzureAutomationNotSupported",
+    "PSModule",
+    "PSIncludes_Cmdlet"
   ],
   "releaseNotes": "See https://aka.ms/GraphPowerShell-Release.",
   "assemblyOriginatorKeyFile": "35MSSharedLib1024.snk",

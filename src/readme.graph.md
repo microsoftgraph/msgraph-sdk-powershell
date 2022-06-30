@@ -13,7 +13,7 @@ metadata:
     companyName: Microsoft Corporation
     description: 'Microsoft Graph PowerShell Cmdlets'
     copyright: &copy; Microsoft Corporation. All rights reserved.
-    tags: Microsoft Office365 Graph PowerShell
+    tags: Microsoft Office365 Graph PowerShell PSModule PSIncludes_Cmdlet
     requireLicenseAcceptance: true
     licenseUri: https://aka.ms/devservicesagreement
     projectUri: https://github.com/microsoftgraph/msgraph-sdk-powershell
