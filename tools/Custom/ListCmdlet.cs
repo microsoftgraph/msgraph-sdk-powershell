@@ -49,11 +49,6 @@ namespace Microsoft.Graph.PowerShell.Cmdlets.Custom
         public string CountVariable { get => this._countVariable; set => this._countVariable = value; }
 
         /// <summary>
-        /// Default number of items per page.
-        /// </summary>
-        internal const int DefaultPageSize = 100;
-
-        /// <summary>
         /// Maximum number of items per page.
         /// </summary>
         internal const int MaxPageSize = 999;
@@ -101,28 +96,16 @@ namespace Microsoft.Graph.PowerShell.Cmdlets.Custom
                     null));
             }
 
-            // Move `-Top` parameter to `limit`.
-            if (invocationInfo.BoundParameters.ContainsKey("Top"))
+            if (invocationInfo.BoundParameters.ContainsKey("Top") && top > MaxPageSize)
             {
                 limit = top;
             }
 
-            int currentPageSize = invocationInfo.BoundParameters.ContainsKey("PageSize") ? PageSize : DefaultPageSize;
-            if (invocationInfo.BoundParameters.ContainsKey("Top") && limit < currentPageSize)
+            if (invocationInfo.BoundParameters.ContainsKey("PageSize") && invocationInfo.BoundParameters.ContainsKey("Top"))
             {
-                currentPageSize = limit;
-            }
-
-            if (invocationInfo.BoundParameters.ContainsKey("PageSize") || invocationInfo.BoundParameters.ContainsKey("Top") || invocationInfo.BoundParameters.ContainsKey("All")){
-                // Explicitly set `-Top` parameter to currentPageSize in order for the generated cmdlets to construct a URL with a `$top` query parameter.
-                invocationInfo.BoundParameters["Top"] = currentPageSize;
-                top = currentPageSize;
-            }
-
-            if (limit != default)
-            {
-                requiredPages = limit / currentPageSize;
-                overflowItemsCount = limit % currentPageSize;
+                limit = top;
+                invocationInfo.BoundParameters["Top"] = PageSize;
+                top = PageSize;
             }
 
             if ((!invocationInfo.BoundParameters.ContainsKey("Count")) && invocationInfo.BoundParameters.ContainsKey("CountVariable"))
@@ -130,6 +113,15 @@ namespace Microsoft.Graph.PowerShell.Cmdlets.Custom
                 // Set Count to true when CountVariable is set.
                 invocationInfo.BoundParameters["Count"] = true;
                 count = true;
+            }
+        }
+
+        public void InitializePageCount(int initialPageSize)
+        {
+            if (limit != default && initialPageSize != default)
+            {
+                requiredPages = limit / initialPageSize;
+                overflowItemsCount = limit % initialPageSize;
             }
         }
 
