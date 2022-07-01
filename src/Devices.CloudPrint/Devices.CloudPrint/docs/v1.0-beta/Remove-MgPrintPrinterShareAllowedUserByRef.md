@@ -1,56 +1,42 @@
 ---
 external help file:
 Module Name: Microsoft.Graph.Devices.CloudPrint
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.cloudprint/set-mgprinttaskdefinitiontasktriggerbyref
+online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.cloudprint/remove-mgprintprintersharealloweduserbyref
 schema: 2.0.0
 ---
 
-# Set-MgPrintTaskDefinitionTaskTriggerByRef
+# Remove-MgPrintPrinterShareAllowedUserByRef
 
 ## SYNOPSIS
-The printTaskTrigger that triggered this task's execution.
-Read-only.
+Delete ref of navigation property allowedUsers for print
 
 ## SYNTAX
 
-### SetExpanded (Default)
+### Delete (Default)
 ```
-Set-MgPrintTaskDefinitionTaskTriggerByRef -PrintTaskDefinitionId <String> -PrintTaskId <String>
- [-AdditionalProperties <Hashtable>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### Set
-```
-Set-MgPrintTaskDefinitionTaskTriggerByRef -PrintTaskDefinitionId <String> -PrintTaskId <String>
- -BodyParameter <Hashtable> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Remove-MgPrintPrinterShareAllowedUserByRef -PrinterShareId <String> -UserId <String> [-Id <String>]
+ [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### SetViaIdentity
+### DeleteViaIdentity
 ```
-Set-MgPrintTaskDefinitionTaskTriggerByRef -InputObject <IDevicesCloudPrintIdentity> -BodyParameter <Hashtable>
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### SetViaIdentityExpanded
-```
-Set-MgPrintTaskDefinitionTaskTriggerByRef -InputObject <IDevicesCloudPrintIdentity>
- [-AdditionalProperties <Hashtable>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Remove-MgPrintPrinterShareAllowedUserByRef -InputObject <IDevicesCloudPrintIdentity> [-Id <String>]
+ [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-The printTaskTrigger that triggered this task's execution.
-Read-only.
+Delete ref of navigation property allowedUsers for print
 
 ## EXAMPLES
 
 ## PARAMETERS
 
-### -AdditionalProperties
-Additional Parameters
+### -Id
+Delete Uri
 
 ```yaml
-Type: System.Collections.Hashtable
-Parameter Sets: SetExpanded, SetViaIdentityExpanded
+Type: System.String
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -60,18 +46,18 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -BodyParameter
-.
+### -IfMatch
+ETag
 
 ```yaml
-Type: System.Collections.Hashtable
-Parameter Sets: Set, SetViaIdentity
+Type: System.String
+Parameter Sets: (All)
 Aliases:
 
-Required: True
+Required: False
 Position: Named
 Default value: None
-Accept pipeline input: True (ByValue)
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -81,7 +67,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IDevicesCloudPrintIdentity
-Parameter Sets: SetViaIdentity, SetViaIdentityExpanded
+Parameter Sets: DeleteViaIdentity
 Aliases:
 
 Required: True
@@ -106,12 +92,12 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -PrintTaskDefinitionId
-key: id of printTaskDefinition
+### -PrinterShareId
+key: id of printerShare
 
 ```yaml
 Type: System.String
-Parameter Sets: Set, SetExpanded
+Parameter Sets: Delete
 Aliases:
 
 Required: True
@@ -121,12 +107,12 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -PrintTaskId
-key: id of printTask
+### -UserId
+key: id of user
 
 ```yaml
 Type: System.String
-Parameter Sets: Set, SetExpanded
+Parameter Sets: Delete
 Aliases:
 
 Required: True
@@ -174,8 +160,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IDevicesCloudPrintIdentity
 
-### System.Collections.Hashtable
-
 ## OUTPUTS
 
 ### System.Boolean
@@ -190,6 +174,7 @@ To create the parameters described below, construct a hash table containing the 
 
 
 INPUTOBJECT <IDevicesCloudPrintIdentity>: Identity Parameter
+  - `[GroupId <String>]`: key: id of group
   - `[PrintConnectorId <String>]`: key: id of printConnector
   - `[PrintOperationId <String>]`: key: id of printOperation
   - `[PrintServiceEndpointId <String>]`: key: id of printServiceEndpoint
@@ -199,6 +184,7 @@ INPUTOBJECT <IDevicesCloudPrintIdentity>: Identity Parameter
   - `[PrintTaskTriggerId <String>]`: key: id of printTaskTrigger
   - `[PrinterId <String>]`: key: id of printer
   - `[PrinterShareId <String>]`: key: id of printerShare
+  - `[UserId <String>]`: key: id of user
 
 ## RELATED LINKS
 

@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgPrintShareAllowedUserByRef
 
 ## SYNOPSIS
-The users who have access to print using the printer.
+Create new navigation property ref to allowedUsers for print
 
 ## SYNTAX
 
@@ -37,7 +37,7 @@ New-MgPrintShareAllowedUserByRef -InputObject <IDevicesCloudPrintIdentity> [-Add
 ```
 
 ## DESCRIPTION
-The users who have access to print using the printer.
+Create new navigation property ref to allowedUsers for print
 
 ## EXAMPLES
 
@@ -158,6 +158,7 @@ To create the parameters described below, construct a hash table containing the 
 
 
 INPUTOBJECT <IDevicesCloudPrintIdentity>: Identity Parameter
+  - `[GroupId <String>]`: key: id of group
   - `[PrintConnectorId <String>]`: key: id of printConnector
   - `[PrintOperationId <String>]`: key: id of printOperation
   - `[PrintServiceEndpointId <String>]`: key: id of printServiceEndpoint
@@ -167,6 +168,7 @@ INPUTOBJECT <IDevicesCloudPrintIdentity>: Identity Parameter
   - `[PrintTaskTriggerId <String>]`: key: id of printTaskTrigger
   - `[PrinterId <String>]`: key: id of printer
   - `[PrinterShareId <String>]`: key: id of printerShare
+  - `[UserId <String>]`: key: id of user
 
 ## RELATED LINKS
 

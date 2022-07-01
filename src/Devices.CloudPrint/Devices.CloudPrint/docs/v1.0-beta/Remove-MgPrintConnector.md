@@ -8,24 +8,24 @@ schema: 2.0.0
 # Remove-MgPrintConnector
 
 ## SYNOPSIS
-The list of available print connectors.
+Delete navigation property connectors for print
 
 ## SYNTAX
 
-### Delete1 (Default)
+### Delete (Default)
 ```
 Remove-MgPrintConnector -PrintConnectorId <String> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
-### DeleteViaIdentity1
+### DeleteViaIdentity
 ```
 Remove-MgPrintConnector -InputObject <IDevicesCloudPrintIdentity> [-IfMatch <String>] [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-The list of available print connectors.
+Delete navigation property connectors for print
 
 ## EXAMPLES
 
@@ -52,7 +52,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IDevicesCloudPrintIdentity
-Parameter Sets: DeleteViaIdentity1
+Parameter Sets: DeleteViaIdentity
 Aliases:
 
 Required: True
@@ -82,7 +82,7 @@ key: id of printConnector
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete1
+Parameter Sets: Delete
 Aliases:
 
 Required: True
@@ -144,6 +144,7 @@ To create the parameters described below, construct a hash table containing the 
 
 
 INPUTOBJECT <IDevicesCloudPrintIdentity>: Identity Parameter
+  - `[GroupId <String>]`: key: id of group
   - `[PrintConnectorId <String>]`: key: id of printConnector
   - `[PrintOperationId <String>]`: key: id of printOperation
   - `[PrintServiceEndpointId <String>]`: key: id of printServiceEndpoint
@@ -153,6 +154,7 @@ INPUTOBJECT <IDevicesCloudPrintIdentity>: Identity Parameter
   - `[PrintTaskTriggerId <String>]`: key: id of printTaskTrigger
   - `[PrinterId <String>]`: key: id of printer
   - `[PrinterShareId <String>]`: key: id of printerShare
+  - `[UserId <String>]`: key: id of user
 
 ## RELATED LINKS
 

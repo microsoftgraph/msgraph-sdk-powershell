@@ -1,54 +1,57 @@
 ---
 external help file:
 Module Name: Microsoft.Graph.Devices.CloudPrint
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.cloudprint/new-mgprintprinterconnectorbyref
+online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.cloudprint/remove-mgprintprintershareallowedgroupbyref
 schema: 2.0.0
 ---
 
-# New-MgPrintPrinterConnectorByRef
+# Remove-MgPrintPrinterShareAllowedGroupByRef
 
 ## SYNOPSIS
-The connectors that are associated with the printer.
+Delete ref of navigation property allowedGroups for print
 
 ## SYNTAX
 
-### CreateExpanded1 (Default)
+### Delete (Default)
 ```
-New-MgPrintPrinterConnectorByRef -PrinterId <String> [-AdditionalProperties <Hashtable>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
-```
-
-### Create1
-```
-New-MgPrintPrinterConnectorByRef -PrinterId <String> -BodyParameter <Hashtable> [-Confirm] [-WhatIf]
- [<CommonParameters>]
+Remove-MgPrintPrinterShareAllowedGroupByRef -GroupId <String> -PrinterShareId <String> [-Id <String>]
+ [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### CreateViaIdentity1
+### DeleteViaIdentity
 ```
-New-MgPrintPrinterConnectorByRef -InputObject <IDevicesCloudPrintIdentity> -BodyParameter <Hashtable>
- [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### CreateViaIdentityExpanded1
-```
-New-MgPrintPrinterConnectorByRef -InputObject <IDevicesCloudPrintIdentity> [-AdditionalProperties <Hashtable>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+Remove-MgPrintPrinterShareAllowedGroupByRef -InputObject <IDevicesCloudPrintIdentity> [-Id <String>]
+ [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-The connectors that are associated with the printer.
+Delete ref of navigation property allowedGroups for print
 
 ## EXAMPLES
 
 ## PARAMETERS
 
-### -AdditionalProperties
-Additional Parameters
+### -GroupId
+key: id of group
 
 ```yaml
-Type: System.Collections.Hashtable
-Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
+Type: System.String
+Parameter Sets: Delete
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Id
+Delete Uri
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -58,18 +61,18 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -BodyParameter
-.
+### -IfMatch
+ETag
 
 ```yaml
-Type: System.Collections.Hashtable
-Parameter Sets: Create1, CreateViaIdentity1
+Type: System.String
+Parameter Sets: (All)
 Aliases:
 
-Required: True
+Required: False
 Position: Named
 Default value: None
-Accept pipeline input: True (ByValue)
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -79,7 +82,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IDevicesCloudPrintIdentity
-Parameter Sets: CreateViaIdentity1, CreateViaIdentityExpanded1
+Parameter Sets: DeleteViaIdentity
 Aliases:
 
 Required: True
@@ -89,12 +92,27 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -PrinterId
-key: id of printer
+### -PassThru
+Returns true when the command succeeds
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -PrinterShareId
+key: id of printerShare
 
 ```yaml
 Type: System.String
-Parameter Sets: Create1, CreateExpanded1
+Parameter Sets: Delete
 Aliases:
 
 Required: True
@@ -142,11 +160,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IDevicesCloudPrintIdentity
 
-### System.Collections.Hashtable
-
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPaths1Vqtzl6PrintPrintersPrinterIdConnectorsRefPostResponses201ContentApplicationJsonSchema
+### System.Boolean
 
 ## NOTES
 
@@ -158,6 +174,7 @@ To create the parameters described below, construct a hash table containing the 
 
 
 INPUTOBJECT <IDevicesCloudPrintIdentity>: Identity Parameter
+  - `[GroupId <String>]`: key: id of group
   - `[PrintConnectorId <String>]`: key: id of printConnector
   - `[PrintOperationId <String>]`: key: id of printOperation
   - `[PrintServiceEndpointId <String>]`: key: id of printServiceEndpoint
@@ -167,6 +184,7 @@ INPUTOBJECT <IDevicesCloudPrintIdentity>: Identity Parameter
   - `[PrintTaskTriggerId <String>]`: key: id of printTaskTrigger
   - `[PrinterId <String>]`: key: id of printer
   - `[PrinterShareId <String>]`: key: id of printerShare
+  - `[UserId <String>]`: key: id of user
 
 ## RELATED LINKS
 

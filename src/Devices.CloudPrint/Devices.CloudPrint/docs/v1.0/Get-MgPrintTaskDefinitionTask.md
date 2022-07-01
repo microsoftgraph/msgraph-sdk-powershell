@@ -8,9 +8,7 @@ schema: 2.0.0
 # Get-MgPrintTaskDefinitionTask
 
 ## SYNOPSIS
-A list of tasks that have been created based on this definition.
-The list includes currently running tasks and recently completed tasks.
-Read-only.
+Get tasks from print
 
 ## SYNTAX
 
@@ -34,9 +32,7 @@ Get-MgPrintTaskDefinitionTask -InputObject <IDevicesCloudPrintIdentity> [-Expand
 ```
 
 ## DESCRIPTION
-A list of tasks that have been created based on this definition.
-The list includes currently running tasks and recently completed tasks.
-Read-only.
+Get tasks from print
 
 ## EXAMPLES
 
@@ -248,7 +244,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPrintTask
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPrintTask1
 
 ## NOTES
 
@@ -260,6 +256,7 @@ To create the parameters described below, construct a hash table containing the 
 
 
 INPUTOBJECT <IDevicesCloudPrintIdentity>: Identity Parameter
+  - `[GroupId <String>]`: key: id of group
   - `[PrintConnectorId <String>]`: key: id of printConnector
   - `[PrintOperationId <String>]`: key: id of printOperation
   - `[PrintServiceEndpointId <String>]`: key: id of printServiceEndpoint
@@ -269,6 +266,7 @@ INPUTOBJECT <IDevicesCloudPrintIdentity>: Identity Parameter
   - `[PrintTaskTriggerId <String>]`: key: id of printTaskTrigger
   - `[PrinterId <String>]`: key: id of printer
   - `[PrinterShareId <String>]`: key: id of printerShare
+  - `[UserId <String>]`: key: id of user
 
 ## RELATED LINKS
 

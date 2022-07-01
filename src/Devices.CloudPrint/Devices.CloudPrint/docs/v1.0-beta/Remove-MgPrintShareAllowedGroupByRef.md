@@ -1,46 +1,57 @@
 ---
 external help file:
 Module Name: Microsoft.Graph.Devices.CloudPrint
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.cloudprint/get-mgprintprintersharebyref
+online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.cloudprint/remove-mgprintshareallowedgroupbyref
 schema: 2.0.0
 ---
 
-# Get-MgPrintPrinterShareByRef
+# Remove-MgPrintShareAllowedGroupByRef
 
 ## SYNOPSIS
-Get ref of share from print
+Delete ref of navigation property allowedGroups for print
 
 ## SYNTAX
 
-### Get (Default)
+### Delete1 (Default)
 ```
-Get-MgPrintPrinterShareByRef -PrinterId <String> [<CommonParameters>]
-```
-
-### GetViaIdentity
-```
-Get-MgPrintPrinterShareByRef -InputObject <IDevicesCloudPrintIdentity> [<CommonParameters>]
+Remove-MgPrintShareAllowedGroupByRef -GroupId <String> -PrinterShareId <String> [-Id <String>]
+ [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### List1
+### DeleteViaIdentity1
 ```
-Get-MgPrintPrinterShareByRef -PrinterId <String> [-Filter <String>] [-Search <String>] [-Skip <Int32>]
- [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
+Remove-MgPrintShareAllowedGroupByRef -InputObject <IDevicesCloudPrintIdentity> [-Id <String>]
+ [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Get ref of share from print
+Delete ref of navigation property allowedGroups for print
 
 ## EXAMPLES
 
 ## PARAMETERS
 
-### -All
-List all pages.
+### -GroupId
+key: id of group
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: List1
+Type: System.String
+Parameter Sets: Delete1
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Id
+Delete Uri
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -50,28 +61,12 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -CountVariable
-Specifies a count of the total number of items in a collection.
-By default, this variable will be set in the global scope.
+### -IfMatch
+ETag
 
 ```yaml
 Type: System.String
-Parameter Sets: List1
-Aliases: CV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Filter
-Filter items by property values
-
-```yaml
-Type: System.String
-Parameter Sets: List1
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -87,7 +82,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IDevicesCloudPrintIdentity
-Parameter Sets: GetViaIdentity
+Parameter Sets: DeleteViaIdentity1
 Aliases:
 
 Required: True
@@ -97,12 +92,12 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -PageSize
-Sets the page size of results.
+### -PassThru
+Returns true when the command succeeds
 
 ```yaml
-Type: System.Int32
-Parameter Sets: List1
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -112,12 +107,12 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -PrinterId
-key: id of printer
+### -PrinterShareId
+key: id of printerShare
 
 ```yaml
 Type: System.String
-Parameter Sets: Get, List1
+Parameter Sets: Delete1
 Aliases:
 
 Required: True
@@ -127,13 +122,13 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Search
-Search items by search phrases
+### -Confirm
+Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: System.String
-Parameter Sets: List1
-Aliases:
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
 
 Required: False
 Position: Named
@@ -142,43 +137,14 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Skip
-Skip the first n items
+### -WhatIf
+Shows what would happen if the cmdlet runs.
+The cmdlet is not run.
 
 ```yaml
-Type: System.Int32
-Parameter Sets: List1
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Sort
-Order items by property values
-
-```yaml
-Type: System.String[]
-Parameter Sets: List1
-Aliases: OrderBy
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Top
-Show only the first n items
-
-```yaml
-Type: System.Int32
-Parameter Sets: List1
-Aliases: Limit
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
 
 Required: False
 Position: Named
@@ -196,7 +162,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### System.String
+### System.Boolean
 
 ## NOTES
 
@@ -208,6 +174,7 @@ To create the parameters described below, construct a hash table containing the 
 
 
 INPUTOBJECT <IDevicesCloudPrintIdentity>: Identity Parameter
+  - `[GroupId <String>]`: key: id of group
   - `[PrintConnectorId <String>]`: key: id of printConnector
   - `[PrintOperationId <String>]`: key: id of printOperation
   - `[PrintServiceEndpointId <String>]`: key: id of printServiceEndpoint
@@ -217,6 +184,7 @@ INPUTOBJECT <IDevicesCloudPrintIdentity>: Identity Parameter
   - `[PrintTaskTriggerId <String>]`: key: id of printTaskTrigger
   - `[PrinterId <String>]`: key: id of printer
   - `[PrinterShareId <String>]`: key: id of printerShare
+  - `[UserId <String>]`: key: id of user
 
 ## RELATED LINKS
 
