@@ -8,9 +8,7 @@ schema: 2.0.0
 # Get-MgGroupPlannerPlanDetail
 
 ## SYNOPSIS
-Read-only.
-Nullable.
-Additional details about the plan.
+Get details from groups
 
 ## SYNTAX
 
@@ -27,9 +25,7 @@ Get-MgGroupPlannerPlanDetail -InputObject <IPlannerIdentity> [-ExpandProperty <S
 ```
 
 ## DESCRIPTION
-Read-only.
-Nullable.
-Additional details about the plan.
+Get details from groups
 
 ## EXAMPLES
 

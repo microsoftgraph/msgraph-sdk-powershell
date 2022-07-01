@@ -8,9 +8,7 @@ schema: 2.0.0
 # Get-MgGroupPlannerPlanTask
 
 ## SYNOPSIS
-Read-only.
-Nullable.
-Collection of tasks in the plan.
+Get tasks from groups
 
 ## SYNTAX
 
@@ -21,9 +19,7 @@ Get-MgGroupPlannerPlanTask -GroupId <String> -PlannerPlanId <String> [-ExpandPro
 ```
 
 ## DESCRIPTION
-Read-only.
-Nullable.
-Collection of tasks in the plan.
+Get tasks from groups
 
 ## EXAMPLES
 
