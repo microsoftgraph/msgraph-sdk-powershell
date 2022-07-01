@@ -1,62 +1,46 @@
 ---
 external help file:
 Module Name: Microsoft.Graph.Users
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users/new-mgusermemberofbyref
+online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users/set-mgusertodolisttaskattachmentcontent
 schema: 2.0.0
 ---
 
-# New-MgUserMemberOfByRef
+# Set-MgUserTodoListTaskAttachmentContent
 
 ## SYNOPSIS
-The groups and directory roles that the user is a member of.
-Read-only.
-Nullable.
-Supports $expand.
+Update media content for the navigation property attachments in users
 
 ## SYNTAX
 
-### CreateExpanded (Default)
+### Set (Default)
 ```
-New-MgUserMemberOfByRef -UserId <String> [-AdditionalProperties <Hashtable>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
-```
-
-### Create
-```
-New-MgUserMemberOfByRef -UserId <String> -BodyParameter <Hashtable> [-Confirm] [-WhatIf] [<CommonParameters>]
+Set-MgUserTodoListTaskAttachmentContent -AttachmentBaseId <String> -TodoTaskId <String>
+ -TodoTaskListId <String> -UserId <String> -InFile <String> [-BodyParameter <Stream>] [-PassThru] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
-### CreateViaIdentity
+### SetViaIdentity
 ```
-New-MgUserMemberOfByRef -InputObject <IUsersIdentity> -BodyParameter <Hashtable> [-Confirm] [-WhatIf]
- [<CommonParameters>]
-```
-
-### CreateViaIdentityExpanded
-```
-New-MgUserMemberOfByRef -InputObject <IUsersIdentity> [-AdditionalProperties <Hashtable>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+Set-MgUserTodoListTaskAttachmentContent -InputObject <IUsersIdentity> -InFile <String>
+ [-BodyParameter <Stream>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-The groups and directory roles that the user is a member of.
-Read-only.
-Nullable.
-Supports $expand.
+Update media content for the navigation property attachments in users
 
 ## EXAMPLES
 
 ## PARAMETERS
 
-### -AdditionalProperties
-Additional Parameters
+### -AttachmentBaseId
+key: id of attachmentBase
 
 ```yaml
-Type: System.Collections.Hashtable
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Type: System.String
+Parameter Sets: Set
 Aliases:
 
-Required: False
+Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -67,14 +51,31 @@ Accept wildcard characters: False
 .
 
 ```yaml
-Type: System.Collections.Hashtable
-Parameter Sets: Create, CreateViaIdentity
+Type: System.IO.Stream
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### -InFile
+The path to the file to upload.
+This should include a path and file name.
+If you omit the path, the current location will be used.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
 Aliases:
 
 Required: True
 Position: Named
 Default value: None
-Accept pipeline input: True (ByValue)
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -84,7 +85,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IUsersIdentity
-Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
+Parameter Sets: SetViaIdentity
 Aliases:
 
 Required: True
@@ -94,12 +95,57 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
+### -PassThru
+Returns true when the command succeeds
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -TodoTaskId
+key: id of todoTask
+
+```yaml
+Type: System.String
+Parameter Sets: Set
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -TodoTaskListId
+key: id of todoTaskList
+
+```yaml
+Type: System.String
+Parameter Sets: Set
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -UserId
 key: id of user
 
 ```yaml
 Type: System.String
-Parameter Sets: Create, CreateExpanded
+Parameter Sets: Set
 Aliases:
 
 Required: True
@@ -147,17 +193,15 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IUsersIdentity
 
-### System.Collections.Hashtable
+### System.IO.Stream
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPathsU8Jh5VUsersUserIdMemberofRefPostResponses201ContentApplicationJsonSchema
+### System.Boolean
 
 ## NOTES
 
 ALIASES
-
-### New-MgUserMemberByRef
 
 COMPLEX PARAMETER PROPERTIES
 
@@ -165,12 +209,17 @@ To create the parameters described below, construct a hash table containing the 
 
 
 INPUTOBJECT <IUsersIdentity>: Identity Parameter
+  - `[AttachmentBaseId <String>]`: key: id of attachmentBase
   - `[AttachmentId <String>]`: key: id of attachment
+  - `[AttachmentSessionId <String>]`: key: id of attachmentSession
+  - `[ChecklistItemId <String>]`: key: id of checklistItem
+  - `[DirectoryObjectId <String>]`: key: id of directoryObject
   - `[ExtensionId <String>]`: key: id of extension
   - `[LicenseDetailsId <String>]`: key: id of licenseDetails
   - `[LinkedResourceId <String>]`: key: id of linkedResource
   - `[MultiValueLegacyExtendedPropertyId <String>]`: key: id of multiValueLegacyExtendedProperty
   - `[NotificationId <String>]`: key: id of notification
+  - `[OAuth2PermissionGrantId <String>]`: key: id of oAuth2PermissionGrant
   - `[OutlookCategoryId <String>]`: key: id of outlookCategory
   - `[OutlookTaskFolderId <String>]`: key: id of outlookTaskFolder
   - `[OutlookTaskGroupId <String>]`: key: id of outlookTaskGroup

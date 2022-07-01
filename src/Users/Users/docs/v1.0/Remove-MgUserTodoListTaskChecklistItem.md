@@ -1,60 +1,57 @@
 ---
 external help file:
 Module Name: Microsoft.Graph.Users
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users/new-mguserowneddevicebyref
+online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users/remove-mgusertodolisttaskchecklistitem
 schema: 2.0.0
 ---
 
-# New-MgUserOwnedDeviceByRef
+# Remove-MgUserTodoListTaskChecklistItem
 
 ## SYNOPSIS
-Devices that are owned by the user.
-Read-only.
-Nullable.
-Supports $expand.
+Delete navigation property checklistItems for users
 
 ## SYNTAX
 
-### CreateExpanded1 (Default)
+### Delete1 (Default)
 ```
-New-MgUserOwnedDeviceByRef -UserId <String> [-AdditionalProperties <Hashtable>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
-```
-
-### Create1
-```
-New-MgUserOwnedDeviceByRef -UserId <String> -BodyParameter <Hashtable> [-Confirm] [-WhatIf]
- [<CommonParameters>]
+Remove-MgUserTodoListTaskChecklistItem -ChecklistItemId <String> -TodoTaskId <String> -TodoTaskListId <String>
+ -UserId <String> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### CreateViaIdentity1
+### DeleteViaIdentity1
 ```
-New-MgUserOwnedDeviceByRef -InputObject <IUsersIdentity> -BodyParameter <Hashtable> [-Confirm] [-WhatIf]
- [<CommonParameters>]
-```
-
-### CreateViaIdentityExpanded1
-```
-New-MgUserOwnedDeviceByRef -InputObject <IUsersIdentity> [-AdditionalProperties <Hashtable>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+Remove-MgUserTodoListTaskChecklistItem -InputObject <IUsersIdentity> [-IfMatch <String>] [-PassThru]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Devices that are owned by the user.
-Read-only.
-Nullable.
-Supports $expand.
+Delete navigation property checklistItems for users
 
 ## EXAMPLES
 
 ## PARAMETERS
 
-### -AdditionalProperties
-Additional Parameters
+### -ChecklistItemId
+key: id of checklistItem
 
 ```yaml
-Type: System.Collections.Hashtable
-Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
+Type: System.String
+Parameter Sets: Delete1
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -IfMatch
+ETag
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -64,12 +61,13 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -BodyParameter
-.
+### -InputObject
+Identity Parameter
+To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: System.Collections.Hashtable
-Parameter Sets: Create1, CreateViaIdentity1
+Type: Microsoft.Graph.PowerShell.Models.IUsersIdentity
+Parameter Sets: DeleteViaIdentity1
 Aliases:
 
 Required: True
@@ -79,19 +77,48 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -InputObject
-Identity Parameter
-To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
+### -PassThru
+Returns true when the command succeeds
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersIdentity
-Parameter Sets: CreateViaIdentity1, CreateViaIdentityExpanded1
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -TodoTaskId
+key: id of todoTask
+
+```yaml
+Type: System.String
+Parameter Sets: Delete1
 Aliases:
 
 Required: True
 Position: Named
 Default value: None
-Accept pipeline input: True (ByValue)
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -TodoTaskListId
+key: id of todoTaskList
+
+```yaml
+Type: System.String
+Parameter Sets: Delete1
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -100,7 +127,7 @@ key: id of user
 
 ```yaml
 Type: System.String
-Parameter Sets: Create1, CreateExpanded1
+Parameter Sets: Delete1
 Aliases:
 
 Required: True
@@ -148,11 +175,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IUsersIdentity
 
-### System.Collections.Hashtable
-
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPathsV0VjysUsersUserIdOwneddevicesRefPostResponses201ContentApplicationJsonSchema
+### System.Boolean
 
 ## NOTES
 
@@ -164,12 +189,17 @@ To create the parameters described below, construct a hash table containing the 
 
 
 INPUTOBJECT <IUsersIdentity>: Identity Parameter
+  - `[AttachmentBaseId <String>]`: key: id of attachmentBase
   - `[AttachmentId <String>]`: key: id of attachment
+  - `[AttachmentSessionId <String>]`: key: id of attachmentSession
+  - `[ChecklistItemId <String>]`: key: id of checklistItem
+  - `[DirectoryObjectId <String>]`: key: id of directoryObject
   - `[ExtensionId <String>]`: key: id of extension
   - `[LicenseDetailsId <String>]`: key: id of licenseDetails
   - `[LinkedResourceId <String>]`: key: id of linkedResource
   - `[MultiValueLegacyExtendedPropertyId <String>]`: key: id of multiValueLegacyExtendedProperty
   - `[NotificationId <String>]`: key: id of notification
+  - `[OAuth2PermissionGrantId <String>]`: key: id of oAuth2PermissionGrant
   - `[OutlookCategoryId <String>]`: key: id of outlookCategory
   - `[OutlookTaskFolderId <String>]`: key: id of outlookTaskFolder
   - `[OutlookTaskGroupId <String>]`: key: id of outlookTaskGroup

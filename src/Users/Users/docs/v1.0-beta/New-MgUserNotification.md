@@ -128,7 +128,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -291,7 +291,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphNotification>: notification
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[DisplayTimeToLive <Int32?>]`: Sets how long (in seconds) this notification content will stay in each platform's notification viewer. For example, when the notification is delivered to a Windows device, the value of this property is passed on to ToastNotification.ExpirationTime, which determines how long the toast notification will stay in the user's Windows Action Center.
   - `[ExpirationDateTime <DateTime?>]`: Sets a UTC expiration date and time on a user notification using ISO 8601 format (for example, midnight UTC on Jan 1, 2019 would look like this: '2019-01-01T00:00:00Z'). When time is up, the notification is removed from the Microsoft Graph notification feed store completely and is no longer part of notification history. Max value is 30 days.
   - `[GroupName <String>]`: The name of the group that this notification belongs to. It is set by the developer for the purpose of grouping notifications together.
@@ -309,12 +309,17 @@ BODYPARAMETER <IMicrosoftGraphNotification>: notification
     - `[PlatformTypes <String[]>]`: Use to filter the notification distribution to a specific platform or platforms. Valid values are Windows, iOS, Android and WebPush. By default, all push endpoint types (Windows, iOS, Android and WebPush) are enabled.
 
 INPUTOBJECT <IUsersIdentity>: Identity Parameter
+  - `[AttachmentBaseId <String>]`: key: id of attachmentBase
   - `[AttachmentId <String>]`: key: id of attachment
+  - `[AttachmentSessionId <String>]`: key: id of attachmentSession
+  - `[ChecklistItemId <String>]`: key: id of checklistItem
+  - `[DirectoryObjectId <String>]`: key: id of directoryObject
   - `[ExtensionId <String>]`: key: id of extension
   - `[LicenseDetailsId <String>]`: key: id of licenseDetails
   - `[LinkedResourceId <String>]`: key: id of linkedResource
   - `[MultiValueLegacyExtendedPropertyId <String>]`: key: id of multiValueLegacyExtendedProperty
   - `[NotificationId <String>]`: key: id of notification
+  - `[OAuth2PermissionGrantId <String>]`: key: id of oAuth2PermissionGrant
   - `[OutlookCategoryId <String>]`: key: id of outlookCategory
   - `[OutlookTaskFolderId <String>]`: key: id of outlookTaskFolder
   - `[OutlookTaskGroupId <String>]`: key: id of outlookTaskGroup
