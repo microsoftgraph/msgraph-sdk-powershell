@@ -1,38 +1,38 @@
 ---
 external help file:
 Module Name: Microsoft.Graph.Reports
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.reports/get-mgreportapplicationsign
+online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.reports/get-mgreportdailyprintusagebyuser
 schema: 2.0.0
 ---
 
-# Get-MgReportApplicationSign
+# Get-MgReportDailyPrintUsageByUser
 
 ## SYNOPSIS
-Represents a detailed summary of an application sign-in.
+Get dailyPrintUsageByUser from reports
 
 ## SYNTAX
 
 ### List (Default)
 ```
-Get-MgReportApplicationSign [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
+Get-MgReportDailyPrintUsageByUser [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
  [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>]
  [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgReportApplicationSign -ApplicationSignInDetailedSummaryId <String> [-ExpandProperty <String[]>]
+Get-MgReportDailyPrintUsageByUser -PrintUsageByUserId <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgReportApplicationSign -InputObject <IReportsIdentity> [-ExpandProperty <String[]>]
+Get-MgReportDailyPrintUsageByUser -InputObject <IReportsIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Represents a detailed summary of an application sign-in.
+Get dailyPrintUsageByUser from reports
 
 ## EXAMPLES
 
@@ -47,21 +47,6 @@ Parameter Sets: List
 Aliases:
 
 Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ApplicationSignInDetailedSummaryId
-key: id of applicationSignInDetailedSummary
-
-```yaml
-Type: System.String
-Parameter Sets: Get
-Aliases:
-
-Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -139,6 +124,21 @@ Parameter Sets: List
 Aliases:
 
 Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -PrintUsageByUserId
+key: id of printUsageByUser
+
+```yaml
+Type: System.String
+Parameter Sets: Get
+Aliases:
+
+Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -229,7 +229,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphApplicationSignInDetailedSummary
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPrintUsageByUser
 
 ## NOTES
 
@@ -247,24 +247,24 @@ INPUTOBJECT <IReportsIdentity>: Identity Parameter
   - `[DeviceManagementCachedReportConfigurationId <String>]`: key: id of deviceManagementCachedReportConfiguration
   - `[DeviceManagementExportJobId <String>]`: key: id of deviceManagementExportJob
   - `[DirectoryAuditId <String>]`: key: id of directoryAudit
-  - `[EndDateTime <DateTime?>]`: Usage: endDateTime={endDateTime}
-  - `[Filter <String>]`: Usage: filter={filter}
-  - `[GroupId <String>]`: Usage: groupId={groupId}
-  - `[IncludedUserRoles <String>]`: Usage: includedUserRoles={includedUserRoles}
-  - `[IncludedUserTypes <String>]`: Usage: includedUserTypes={includedUserTypes}
-  - `[Period <String>]`: Usage: period={period}
+  - `[EndDateTime <DateTime?>]`: Usage: endDateTime='{endDateTime}'
+  - `[Filter <String>]`: Usage: filter='{filter}'
+  - `[GroupId <String>]`: Usage: groupId='{groupId}'
+  - `[IncludedUserRoles <String>]`: Usage: includedUserRoles='{includedUserRoles}'
+  - `[IncludedUserTypes <String>]`: Usage: includedUserTypes='{includedUserTypes}'
+  - `[Period <String>]`: Usage: period='{period}'
   - `[PrintUsageByPrinterId <String>]`: key: id of printUsageByPrinter
   - `[PrintUsageByUserId <String>]`: key: id of printUsageByUser
-  - `[PrinterId <String>]`: Usage: printerId={printerId}
+  - `[PrinterId <String>]`: Usage: printerId='{printerId}'
   - `[ProvisioningObjectSummaryId <String>]`: key: id of provisioningObjectSummary
   - `[RestrictedSignInId <String>]`: key: id of restrictedSignIn
   - `[SignInId <String>]`: key: id of signIn
   - `[Skip <Int32?>]`: Usage: skip={skip}
-  - `[SkipToken <String>]`: Usage: skipToken={skipToken}
-  - `[StartDateTime <DateTime?>]`: Usage: startDateTime={startDateTime}
+  - `[SkipToken <String>]`: Usage: skipToken='{skipToken}'
+  - `[StartDateTime <DateTime?>]`: Usage: startDateTime='{startDateTime}'
   - `[Top <Int32?>]`: Usage: top={top}
   - `[UserCredentialUsageDetailsId <String>]`: key: id of userCredentialUsageDetails
-  - `[UserId <String>]`: Usage: userId={userId}
+  - `[UserId <String>]`: Usage: userId='{userId}'
   - `[UserRegistrationDetailsId <String>]`: key: id of userRegistrationDetails
 
 ## RELATED LINKS
