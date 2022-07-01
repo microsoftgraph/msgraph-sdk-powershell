@@ -8,8 +8,7 @@ schema: 2.0.0
 # Remove-MgUserOnlineMeetingAttendanceReportAttendanceRecord
 
 ## SYNOPSIS
-List of attendance records of an attendance report.
-Read-only.
+Delete navigation property attendanceRecords for users
 
 ## SYNTAX
 
@@ -40,8 +39,7 @@ Remove-MgUserOnlineMeetingAttendanceReportAttendanceRecord -InputObject <ICloudC
 ```
 
 ## DESCRIPTION
-List of attendance records of an attendance report.
-Read-only.
+Delete navigation property attendanceRecords for users
 
 ## EXAMPLES
 

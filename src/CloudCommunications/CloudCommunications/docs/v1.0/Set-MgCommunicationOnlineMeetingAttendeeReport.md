@@ -8,7 +8,7 @@ schema: 2.0.0
 # Set-MgCommunicationOnlineMeetingAttendeeReport
 
 ## SYNOPSIS
-Update media content for the navigation property onlineMeetings in communications
+Update attendeeReport for the navigation property onlineMeetings in communications
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Set-MgCommunicationOnlineMeetingAttendeeReport -InputObject <ICloudCommunication
 ```
 
 ## DESCRIPTION
-Update media content for the navigation property onlineMeetings in communications
+Update attendeeReport for the navigation property onlineMeetings in communications
 
 ## EXAMPLES
 

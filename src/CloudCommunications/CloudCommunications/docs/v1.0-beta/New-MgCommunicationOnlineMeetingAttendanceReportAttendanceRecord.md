@@ -8,8 +8,7 @@ schema: 2.0.0
 # New-MgCommunicationOnlineMeetingAttendanceReportAttendanceRecord
 
 ## SYNOPSIS
-List of attendance records of an attendance report.
-Read-only.
+Create new navigation property to attendanceRecords for communications
 
 ## SYNTAX
 
@@ -72,8 +71,7 @@ New-MgCommunicationOnlineMeetingAttendanceReportAttendanceRecord -InputObject <I
 ```
 
 ## DESCRIPTION
-List of attendance records of an attendance report.
-Read-only.
+Create new navigation property to attendanceRecords for communications
 
 ## EXAMPLES
 
@@ -142,7 +140,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -325,7 +323,7 @@ ATTENDANCEINTERVALS <IMicrosoftGraphAttendanceInterval[]>: List of time periods 
 
 BODYPARAMETER <IMicrosoftGraphAttendanceRecord1>: attendanceRecord
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[AttendanceIntervals <IMicrosoftGraphAttendanceInterval[]>]`: List of time periods between joining and leaving a meeting.
     - `[DurationInSeconds <Int32?>]`: Duration of the meeting interval in seconds; that is, the difference between joinDateTime and leaveDateTime.
     - `[JoinDateTime <DateTime?>]`: The time the attendee joined in UTC.

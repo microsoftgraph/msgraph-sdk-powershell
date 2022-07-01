@@ -8,8 +8,7 @@ schema: 2.0.0
 # Get-MgUserOnlineMeetingAttendanceReport
 
 ## SYNOPSIS
-The attendance reports of an online meeting.
-Read-only.
+Get attendanceReports from users
 
 ## SYNTAX
 
@@ -33,8 +32,7 @@ Get-MgUserOnlineMeetingAttendanceReport -InputObject <ICloudCommunicationsIdenti
 ```
 
 ## DESCRIPTION
-The attendance reports of an online meeting.
-Read-only.
+Get attendanceReports from users
 
 ## EXAMPLES
 

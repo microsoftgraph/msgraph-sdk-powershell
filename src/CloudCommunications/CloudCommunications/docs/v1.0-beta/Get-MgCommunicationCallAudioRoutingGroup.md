@@ -8,8 +8,7 @@ schema: 2.0.0
 # Get-MgCommunicationCallAudioRoutingGroup
 
 ## SYNOPSIS
-Read-only.
-Nullable.
+Get audioRoutingGroups from communications
 
 ## SYNTAX
 
@@ -33,8 +32,7 @@ Get-MgCommunicationCallAudioRoutingGroup -InputObject <ICloudCommunicationsIdent
 ```
 
 ## DESCRIPTION
-Read-only.
-Nullable.
+Get audioRoutingGroups from communications
 
 ## EXAMPLES
 

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Set-MgUserOnlineMeetingAlternativeRecording
 
 ## SYNOPSIS
-Update media content for the navigation property onlineMeetings in users
+Update alternativeRecording for the navigation property onlineMeetings in users
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Set-MgUserOnlineMeetingAlternativeRecording -InputObject <ICloudCommunicationsId
 ```
 
 ## DESCRIPTION
-Update media content for the navigation property onlineMeetings in users
+Update alternativeRecording for the navigation property onlineMeetings in users
 
 ## EXAMPLES
 
