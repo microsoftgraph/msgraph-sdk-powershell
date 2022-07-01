@@ -18,7 +18,7 @@ Get-MgApplicationById [-AdditionalProperties <Hashtable>] [-Ids <String[]>] [-Ty
  [-WhatIf] [<CommonParameters>]
 ```
 
-### Get3
+### Get1
 ```
 Get-MgApplicationById
  -BodyParameter <IPaths1Hl8AmeApplicationsMicrosoftGraphGetbyidsPostRequestbodyContentApplicationJsonSchema>
@@ -53,7 +53,7 @@ To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETE
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IPaths1Hl8AmeApplicationsMicrosoftGraphGetbyidsPostRequestbodyContentApplicationJsonSchema
-Parameter Sets: Get3
+Parameter Sets: Get1
 Aliases:
 
 Required: True
