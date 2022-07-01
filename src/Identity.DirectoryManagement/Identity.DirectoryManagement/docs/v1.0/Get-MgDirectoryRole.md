@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDirectoryRole
 
 ## SYNOPSIS
-Get entity from directoryRoles by key
+Get directoryRole
 
 ## SYNTAX
 
@@ -18,7 +18,7 @@ Get-MgDirectoryRole [-ExpandProperty <String[]>] [-Filter <String>] [-Property <
  [-Skip <Int32>] [-Sort <String[]>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
-### Get2
+### Get1
 ```
 Get-MgDirectoryRole -DirectoryRoleId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
@@ -31,7 +31,7 @@ Get-MgDirectoryRole -InputObject <IIdentityDirectoryManagementIdentity> [-Expand
 ```
 
 ## DESCRIPTION
-Get entity from directoryRoles by key
+Get directoryRole
 
 ## EXAMPLES
 
@@ -106,7 +106,7 @@ key: id of directoryRole
 
 ```yaml
 Type: System.String
-Parameter Sets: Get2
+Parameter Sets: Get1
 Aliases:
 
 Required: True
@@ -279,6 +279,7 @@ INPUTOBJECT <IIdentityDirectoryManagementIdentity>: Identity Parameter
   - `[InternalDomainFederationId <String>]`: key: id of internalDomainFederation
   - `[OrgContactId <String>]`: key: id of orgContact
   - `[OrganizationId <String>]`: key: id of organization
+  - `[OrganizationalBrandingLocalizationId <String>]`: key: id of organizationalBrandingLocalization
   - `[OutboundSharedUserProfileUserId <String>]`: key: userId of outboundSharedUserProfile
   - `[ProfileCardPropertyId <String>]`: key: id of profileCardProperty
   - `[RecommendationId <String>]`: key: id of recommendation

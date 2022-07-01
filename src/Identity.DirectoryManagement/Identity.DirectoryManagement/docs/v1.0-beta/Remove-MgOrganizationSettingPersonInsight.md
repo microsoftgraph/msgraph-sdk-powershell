@@ -8,8 +8,7 @@ schema: 2.0.0
 # Remove-MgOrganizationSettingPersonInsight
 
 ## SYNOPSIS
-Contains the properties that are configured by an administrator for the visibility of a list of people relevant and working with a user in Microsoft 365.
-List peopleInsights returns the settings to display or return people insights in an organization.
+Delete navigation property peopleInsights for organization
 
 ## SYNTAX
 
@@ -26,8 +25,7 @@ Remove-MgOrganizationSettingPersonInsight -InputObject <IIdentityDirectoryManage
 ```
 
 ## DESCRIPTION
-Contains the properties that are configured by an administrator for the visibility of a list of people relevant and working with a user in Microsoft 365.
-List peopleInsights returns the settings to display or return people insights in an organization.
+Delete navigation property peopleInsights for organization
 
 ## EXAMPLES
 
@@ -167,6 +165,7 @@ INPUTOBJECT <IIdentityDirectoryManagementIdentity>: Identity Parameter
   - `[InternalDomainFederationId <String>]`: key: id of internalDomainFederation
   - `[OrgContactId <String>]`: key: id of orgContact
   - `[OrganizationId <String>]`: key: id of organization
+  - `[OrganizationalBrandingLocalizationId <String>]`: key: id of organizationalBrandingLocalization
   - `[OutboundSharedUserProfileUserId <String>]`: key: userId of outboundSharedUserProfile
   - `[ProfileCardPropertyId <String>]`: key: id of profileCardProperty
   - `[RecommendationId <String>]`: key: id of recommendation

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgDeviceCommand
 
 ## SYNOPSIS
-Set of commands sent to this device.
+Update the navigation property commands in devices
 
 ## SYNTAX
 
@@ -41,7 +41,7 @@ Update-MgDeviceCommand -InputObject <IIdentityDirectoryManagementIdentity> [-Add
 ```
 
 ## DESCRIPTION
-Set of commands sent to this device.
+Update the navigation property commands in devices
 
 ## EXAMPLES
 
@@ -139,7 +139,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -344,7 +344,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphCommand>: command
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[AppServiceName <String>]`: 
   - `[Error <String>]`: 
   - `[PackageFamilyName <String>]`: 
@@ -354,7 +354,7 @@ BODYPARAMETER <IMicrosoftGraphCommand>: command
   - `[PostBackUri <String>]`: 
   - `[Responsepayload <IMicrosoftGraphPayloadResponse>]`: payloadResponse
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Id <String>]`: Read-only.
+    - `[Id <String>]`: 
   - `[Status <String>]`: 
   - `[Type <String>]`: 
 
@@ -380,6 +380,7 @@ INPUTOBJECT <IIdentityDirectoryManagementIdentity>: Identity Parameter
   - `[InternalDomainFederationId <String>]`: key: id of internalDomainFederation
   - `[OrgContactId <String>]`: key: id of orgContact
   - `[OrganizationId <String>]`: key: id of organization
+  - `[OrganizationalBrandingLocalizationId <String>]`: key: id of organizationalBrandingLocalization
   - `[OutboundSharedUserProfileUserId <String>]`: key: userId of outboundSharedUserProfile
   - `[ProfileCardPropertyId <String>]`: key: id of profileCardProperty
   - `[RecommendationId <String>]`: key: id of recommendation

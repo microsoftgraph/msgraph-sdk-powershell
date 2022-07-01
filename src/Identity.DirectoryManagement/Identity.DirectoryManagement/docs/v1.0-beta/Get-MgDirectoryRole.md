@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDirectoryRole
 
 ## SYNOPSIS
-Get entity from directoryRoles by key
+Get directoryRole
 
 ## SYNTAX
 
@@ -31,7 +31,7 @@ Get-MgDirectoryRole -InputObject <IIdentityDirectoryManagementIdentity> [-Expand
 ```
 
 ## DESCRIPTION
-Get entity from directoryRoles by key
+Get directoryRole
 
 ## EXAMPLES
 
@@ -279,6 +279,7 @@ INPUTOBJECT <IIdentityDirectoryManagementIdentity>: Identity Parameter
   - `[InternalDomainFederationId <String>]`: key: id of internalDomainFederation
   - `[OrgContactId <String>]`: key: id of orgContact
   - `[OrganizationId <String>]`: key: id of organization
+  - `[OrganizationalBrandingLocalizationId <String>]`: key: id of organizationalBrandingLocalization
   - `[OutboundSharedUserProfileUserId <String>]`: key: userId of outboundSharedUserProfile
   - `[ProfileCardPropertyId <String>]`: key: id of profileCardProperty
   - `[RecommendationId <String>]`: key: id of recommendation

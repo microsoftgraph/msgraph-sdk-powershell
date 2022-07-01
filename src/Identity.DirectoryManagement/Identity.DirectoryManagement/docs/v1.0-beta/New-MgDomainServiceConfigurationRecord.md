@@ -8,8 +8,7 @@ schema: 2.0.0
 # New-MgDomainServiceConfigurationRecord
 
 ## SYNOPSIS
-DNS records the customer adds to the DNS zone file of the domain before the domain can be used by Microsoft Online services.
-Read-only, Nullable
+Create new navigation property to serviceConfigurationRecords for domains
 
 ## SYNTAX
 
@@ -40,8 +39,7 @@ New-MgDomainServiceConfigurationRecord -InputObject <IIdentityDirectoryManagemen
 ```
 
 ## DESCRIPTION
-DNS records the customer adds to the DNS zone file of the domain before the domain can be used by Microsoft Online services.
-Read-only, Nullable
+Create new navigation property to serviceConfigurationRecords for domains
 
 ## EXAMPLES
 
@@ -94,7 +92,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -155,7 +153,7 @@ Accept wildcard characters: False
 ```
 
 ### -RecordType
-Indicates what type of DNS record this entity represents.The value can be one of the following: CName, Mx, Srv, TxtKey
+Indicates what type of DNS record this entity represents.The value can be one of the following: CName, Mx, Srv, Txt.
 
 ```yaml
 Type: System.String
@@ -170,7 +168,7 @@ Accept wildcard characters: False
 ```
 
 ### -SupportedService
-Microsoft Online Service or feature that has a dependency on this DNS record.Can be one of the following values: null, Email, Sharepoint, EmailInternalRelayOnly, OfficeCommunicationsOnline, SharePointDefaultDomain, FullRedelegation, SharePointPublic, OrgIdAuthentication, Yammer, Intune
+Microsoft Online Service or feature that has a dependency on this DNS record.Can be one of the following values: null, Email, Sharepoint, EmailInternalRelayOnly, OfficeCommunicationsOnline, SharePointDefaultDomain, FullRedelegation, SharePointPublic, OrgIdAuthentication, Yammer, Intune.
 
 ```yaml
 Type: System.String
@@ -186,7 +184,7 @@ Accept wildcard characters: False
 
 ### -Ttl
 Value to use when configuring the time-to-live (ttl) property of the DNS record at the DNS host.
-Not nullable
+Not nullable.
 
 ```yaml
 Type: System.Int32
@@ -255,12 +253,12 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphDomainDnsRecord>: domainDnsRecord
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[IsOptional <Boolean?>]`: If false, this record must be configured by the customer at the DNS host for Microsoft Online Services to operate correctly with the domain.
   - `[Label <String>]`: Value used when configuring the name of the DNS record at the DNS host.
-  - `[RecordType <String>]`: Indicates what type of DNS record this entity represents.The value can be one of the following: CName, Mx, Srv, TxtKey
-  - `[SupportedService <String>]`: Microsoft Online Service or feature that has a dependency on this DNS record.Can be one of the following values: null, Email, Sharepoint, EmailInternalRelayOnly, OfficeCommunicationsOnline, SharePointDefaultDomain, FullRedelegation, SharePointPublic, OrgIdAuthentication, Yammer, Intune
-  - `[Ttl <Int32?>]`: Value to use when configuring the time-to-live (ttl) property of the DNS record at the DNS host. Not nullable
+  - `[RecordType <String>]`: Indicates what type of DNS record this entity represents.The value can be one of the following: CName, Mx, Srv, Txt.
+  - `[SupportedService <String>]`: Microsoft Online Service or feature that has a dependency on this DNS record.Can be one of the following values: null, Email, Sharepoint, EmailInternalRelayOnly, OfficeCommunicationsOnline, SharePointDefaultDomain, FullRedelegation, SharePointPublic, OrgIdAuthentication, Yammer, Intune.
+  - `[Ttl <Int32?>]`: Value to use when configuring the time-to-live (ttl) property of the DNS record at the DNS host. Not nullable.
 
 INPUTOBJECT <IIdentityDirectoryManagementIdentity>: Identity Parameter
   - `[AdministrativeUnitId <String>]`: key: id of administrativeUnit
@@ -284,6 +282,7 @@ INPUTOBJECT <IIdentityDirectoryManagementIdentity>: Identity Parameter
   - `[InternalDomainFederationId <String>]`: key: id of internalDomainFederation
   - `[OrgContactId <String>]`: key: id of orgContact
   - `[OrganizationId <String>]`: key: id of organization
+  - `[OrganizationalBrandingLocalizationId <String>]`: key: id of organizationalBrandingLocalization
   - `[OutboundSharedUserProfileUserId <String>]`: key: userId of outboundSharedUserProfile
   - `[ProfileCardPropertyId <String>]`: key: id of profileCardProperty
   - `[RecommendationId <String>]`: key: id of recommendation

@@ -8,8 +8,7 @@ schema: 2.0.0
 # Update-MgOrganizationSettingPersonInsight
 
 ## SYNOPSIS
-Contains the properties that are configured by an administrator for the visibility of a list of people relevant and working with a user in Microsoft 365.
-List peopleInsights returns the settings to display or return people insights in an organization.
+Update the navigation property peopleInsights in organization
 
 ## SYNTAX
 
@@ -40,8 +39,7 @@ Update-MgOrganizationSettingPersonInsight -InputObject <IIdentityDirectoryManage
 ```
 
 ## DESCRIPTION
-Contains the properties that are configured by an administrator for the visibility of a list of people relevant and working with a user in Microsoft 365.
-List peopleInsights returns the settings to display or return people insights in an organization.
+Update the navigation property peopleInsights in organization
 
 ## EXAMPLES
 
@@ -96,7 +94,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -228,7 +226,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphInsightsSettings>: insightsSettings
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[DisabledForGroup <String>]`: The ID of an Azure Active Directory group, of which the specified type of insights are disabled for its members. Default is empty. Optional.
   - `[IsEnabledInOrganization <Boolean?>]`: true if the specified type of insights are enabled for the organization; false if the specified type of insights are disabled for all users without exceptions. Default is true. Optional.
 
@@ -254,6 +252,7 @@ INPUTOBJECT <IIdentityDirectoryManagementIdentity>: Identity Parameter
   - `[InternalDomainFederationId <String>]`: key: id of internalDomainFederation
   - `[OrgContactId <String>]`: key: id of orgContact
   - `[OrganizationId <String>]`: key: id of organization
+  - `[OrganizationalBrandingLocalizationId <String>]`: key: id of organizationalBrandingLocalization
   - `[OutboundSharedUserProfileUserId <String>]`: key: userId of outboundSharedUserProfile
   - `[ProfileCardPropertyId <String>]`: key: id of profileCardProperty
   - `[RecommendationId <String>]`: key: id of recommendation
