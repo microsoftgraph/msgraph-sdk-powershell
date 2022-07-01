@@ -18,7 +18,7 @@ Get-MgGroupById [-AdditionalProperties <Hashtable>] [-Ids <String[]>] [-Types <S
  [<CommonParameters>]
 ```
 
-### Get3
+### Get1
 ```
 Get-MgGroupById
  -BodyParameter <IPaths1E1O4BoGroupsMicrosoftGraphGetbyidsPostRequestbodyContentApplicationJsonSchema>
@@ -53,7 +53,7 @@ To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETE
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IPaths1E1O4BoGroupsMicrosoftGraphGetbyidsPostRequestbodyContentApplicationJsonSchema
-Parameter Sets: Get3
+Parameter Sets: Get1
 Aliases:
 
 Required: True
