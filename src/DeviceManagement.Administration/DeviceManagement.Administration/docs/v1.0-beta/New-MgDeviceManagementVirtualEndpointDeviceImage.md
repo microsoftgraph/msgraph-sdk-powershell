@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgDeviceManagementVirtualEndpointDeviceImage
 
 ## SYNOPSIS
-The image resource on Cloud PC.
+Create new navigation property to deviceImages for deviceManagement
 
 ## SYNTAX
 
@@ -27,7 +27,7 @@ New-MgDeviceManagementVirtualEndpointDeviceImage -BodyParameter <IMicrosoftGraph
 ```
 
 ## DESCRIPTION
-The image resource on Cloud PC.
+Create new navigation property to deviceImages for deviceManagement
 
 ## EXAMPLES
 
@@ -95,7 +95,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -288,7 +288,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphCloudPcDeviceImage>: cloudPcDeviceImage
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[DisplayName <String>]`: The image's display name.
   - `[ExpirationDate <DateTime?>]`: The date the image became unavailable.
   - `[LastModifiedDateTime <DateTime?>]`: The data and time that the image was last modified. The time is shown in ISO 8601 format and  Coordinated Universal Time (UTC) time. For example, midnight UTC on Jan 1, 2014 appears as '2014-01-01T00:00:00Z'.

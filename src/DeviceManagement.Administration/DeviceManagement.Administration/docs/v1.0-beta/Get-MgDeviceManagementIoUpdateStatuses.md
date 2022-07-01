@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceManagementIoUpdateStatuses
 
 ## SYNOPSIS
-The IOS software update installation statuses for this account.
+Get iosUpdateStatuses from deviceManagement
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgDeviceManagementIoUpdateStatuses -InputObject <IDeviceManagementAdministra
 ```
 
 ## DESCRIPTION
-The IOS software update installation statuses for this account.
+Get iosUpdateStatuses from deviceManagement
 
 ## EXAMPLES
 
@@ -229,7 +229,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIosUpdateDeviceStatus1
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIosUpdateDeviceStatus
 
 ## NOTES
 
@@ -263,6 +263,7 @@ INPUTOBJECT <IDeviceManagementAdministrationIdentity>: Identity Parameter
   - `[DeviceManagementExchangeOnPremisesPolicyId <String>]`: key: id of deviceManagementExchangeOnPremisesPolicy
   - `[DeviceManagementPartnerId <String>]`: key: id of deviceManagementPartner
   - `[GroupPolicyCategoryId <String>]`: key: id of groupPolicyCategory
+  - `[GroupPolicyCategoryId1 <String>]`: key: id of groupPolicyCategory
   - `[GroupPolicyDefinitionFileId <String>]`: key: id of groupPolicyDefinitionFile
   - `[GroupPolicyDefinitionId <String>]`: key: id of groupPolicyDefinition
   - `[GroupPolicyMigrationReportId <String>]`: key: id of groupPolicyMigrationReport

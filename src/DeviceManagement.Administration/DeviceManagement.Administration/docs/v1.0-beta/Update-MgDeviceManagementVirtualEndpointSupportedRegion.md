@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgDeviceManagementVirtualEndpointSupportedRegion
 
 ## SYNOPSIS
-Cloud PC supported regions.
+Update the navigation property supportedRegions in deviceManagement
 
 ## SYNTAX
 
@@ -39,7 +39,7 @@ Update-MgDeviceManagementVirtualEndpointSupportedRegion -InputObject <IDeviceMan
 ```
 
 ## DESCRIPTION
-Cloud PC supported regions.
+Update the navigation property supportedRegions in deviceManagement
 
 ## EXAMPLES
 
@@ -108,7 +108,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -208,7 +208,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphCloudPcSupportedRegion>: cloudPcSupportedRegion
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[DisplayName <String>]`: The name for the supported region. Read-only.
 
 INPUTOBJECT <IDeviceManagementAdministrationIdentity>: Identity Parameter
@@ -234,6 +234,7 @@ INPUTOBJECT <IDeviceManagementAdministrationIdentity>: Identity Parameter
   - `[DeviceManagementExchangeOnPremisesPolicyId <String>]`: key: id of deviceManagementExchangeOnPremisesPolicy
   - `[DeviceManagementPartnerId <String>]`: key: id of deviceManagementPartner
   - `[GroupPolicyCategoryId <String>]`: key: id of groupPolicyCategory
+  - `[GroupPolicyCategoryId1 <String>]`: key: id of groupPolicyCategory
   - `[GroupPolicyDefinitionFileId <String>]`: key: id of groupPolicyDefinitionFile
   - `[GroupPolicyDefinitionId <String>]`: key: id of groupPolicyDefinition
   - `[GroupPolicyMigrationReportId <String>]`: key: id of groupPolicyMigrationReport
