@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgUserProfileName
 
 ## SYNOPSIS
-Represents the names a user has added to their profile.
+Get names from users
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgUserProfileName -InputObject <IPeopleIdentity> [-ExpandProperty <String[]>
 ```
 
 ## DESCRIPTION
-Represents the names a user has added to their profile.
+Get names from users
 
 ## EXAMPLES
 

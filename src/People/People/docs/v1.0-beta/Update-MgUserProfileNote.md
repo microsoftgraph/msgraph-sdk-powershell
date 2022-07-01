@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgUserProfileNote
 
 ## SYNOPSIS
-Represents notes that a user has added to their profile.
+Update the navigation property notes in users
 
 ## SYNTAX
 
@@ -45,7 +45,7 @@ Update-MgUserProfileNote -InputObject <IPeopleIdentity> [-AdditionalProperties <
 ```
 
 ## DESCRIPTION
-Represents notes that a user has added to their profile.
+Update the navigation property notes in users
 
 ## EXAMPLES
 
@@ -160,7 +160,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -403,7 +403,7 @@ BODYPARAMETER <IMicrosoftGraphPersonAnnotation>: personAnnotation
   - `[Source <IMicrosoftGraphPersonDataSources>]`: personDataSources
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Type <String[]>]`: 
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[Detail <IMicrosoftGraphItemBody>]`: itemBody
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Content <String>]`: The content of the item.

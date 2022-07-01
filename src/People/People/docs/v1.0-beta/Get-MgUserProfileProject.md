@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgUserProfileProject
 
 ## SYNOPSIS
-Represents detailed information about projects associated with a user.
+Get projects from users
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgUserProfileProject -InputObject <IPeopleIdentity> [-ExpandProperty <String
 ```
 
 ## DESCRIPTION
-Represents detailed information about projects associated with a user.
+Get projects from users
 
 ## EXAMPLES
 

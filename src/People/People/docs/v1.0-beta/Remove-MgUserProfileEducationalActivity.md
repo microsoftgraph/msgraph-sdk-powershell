@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgUserProfileEducationalActivity
 
 ## SYNOPSIS
-Represents data that a user has supplied related to undergraduate, graduate, postgraduate or other educational activities.
+Delete navigation property educationalActivities for users
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Remove-MgUserProfileEducationalActivity -InputObject <IPeopleIdentity> [-IfMatch
 ```
 
 ## DESCRIPTION
-Represents data that a user has supplied related to undergraduate, graduate, postgraduate or other educational activities.
+Delete navigation property educationalActivities for users
 
 ## EXAMPLES
 

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgUserProfilePhone
 
 ## SYNOPSIS
-Represents detailed information about phone numbers associated with a user in various services.
+Update the navigation property phones in users
 
 ## SYNTAX
 
@@ -45,7 +45,7 @@ Update-MgUserProfilePhone -InputObject <IPeopleIdentity> [-AdditionalProperties 
 ```
 
 ## DESCRIPTION
-Represents detailed information about phone numbers associated with a user in various services.
+Update the navigation property phones in users
 
 ## EXAMPLES
 
@@ -144,7 +144,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -402,7 +402,7 @@ BODYPARAMETER <IMicrosoftGraphItemPhone>: itemPhone
   - `[Source <IMicrosoftGraphPersonDataSources>]`: personDataSources
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Type <String[]>]`: 
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[DisplayName <String>]`: Friendly name the user has assigned this phone number.
   - `[Number <String>]`: Phone number provided by the user.
   - `[Type <String>]`: phoneType

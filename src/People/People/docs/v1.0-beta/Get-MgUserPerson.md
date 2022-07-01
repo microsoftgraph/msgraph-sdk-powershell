@@ -8,9 +8,7 @@ schema: 2.0.0
 # Get-MgUserPerson
 
 ## SYNOPSIS
-People that are relevant to the user.
-Read-only.
-Nullable.
+Get people from users
 
 ## SYNTAX
 
@@ -31,9 +29,7 @@ Get-MgUserPerson -InputObject <IPeopleIdentity> [-Property <String[]>] [<CommonP
 ```
 
 ## DESCRIPTION
-People that are relevant to the user.
-Read-only.
-Nullable.
+Get people from users
 
 ## EXAMPLES
 
@@ -230,7 +226,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPerson1
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPerson
 
 ## NOTES
 

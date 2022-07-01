@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgUserProfileAnniversary
 
 ## SYNOPSIS
-Represents the details of meaningful dates associated with a person.
+Update the navigation property anniversaries in users
 
 ## SYNTAX
 
@@ -45,7 +45,7 @@ Update-MgUserProfileAnniversary -InputObject <IPeopleIdentity> [-AdditionalPrope
 ```
 
 ## DESCRIPTION
-Represents the details of meaningful dates associated with a person.
+Update the navigation property anniversaries in users
 
 ## EXAMPLES
 
@@ -159,7 +159,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -402,7 +402,7 @@ BODYPARAMETER <IMicrosoftGraphPersonAnnualEvent>: personAnnualEvent
   - `[Source <IMicrosoftGraphPersonDataSources>]`: personDataSources
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Type <String[]>]`: 
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[Date <DateTime?>]`: 
   - `[DisplayName <String>]`: 
   - `[Type <String>]`: personAnnualEventType

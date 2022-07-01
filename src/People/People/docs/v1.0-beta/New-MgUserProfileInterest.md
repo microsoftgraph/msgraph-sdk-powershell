@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgUserProfileInterest
 
 ## SYNOPSIS
-Provides detailed information about interests the user has associated with themselves in various services.
+Create new navigation property to interests for users
 
 ## SYNTAX
 
@@ -46,7 +46,7 @@ New-MgUserProfileInterest -InputObject <IPeopleIdentity> [-AdditionalProperties 
 ```
 
 ## DESCRIPTION
-Provides detailed information about interests the user has associated with themselves in various services.
+Create new navigation property to interests for users
 
 ## EXAMPLES
 
@@ -191,7 +191,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -419,7 +419,7 @@ BODYPARAMETER <IMicrosoftGraphPersonInterest>: personInterest
   - `[Source <IMicrosoftGraphPersonDataSources>]`: personDataSources
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Type <String[]>]`: 
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[Categories <String[]>]`: Contains categories a user has associated with the interest (for example, personal, recipies).
   - `[CollaborationTags <String[]>]`: Contains experience scenario tags a user has associated with the interest. Allowed values in the collection are: askMeAbout, ableToMentor, wantsToLearn, wantsToImprove.
   - `[Description <String>]`: Contains a description of the interest.
