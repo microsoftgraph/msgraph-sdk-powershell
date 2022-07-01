@@ -12,13 +12,13 @@ Invoke action publish
 
 ## SYNTAX
 
-### Publish1 (Default)
+### Publish (Default)
 ```
 Publish-MgShareListContentType -ContentTypeId <String> -SharedDriveItemId <String> [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
-### PublishViaIdentity1
+### PublishViaIdentity
 ```
 Publish-MgShareListContentType -InputObject <IFilesIdentity> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -36,7 +36,7 @@ key: id of contentType
 
 ```yaml
 Type: System.String
-Parameter Sets: Publish1
+Parameter Sets: Publish
 Aliases:
 
 Required: True
@@ -52,7 +52,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IFilesIdentity
-Parameter Sets: PublishViaIdentity1
+Parameter Sets: PublishViaIdentity
 Aliases:
 
 Required: True
@@ -82,7 +82,7 @@ key: id of sharedDriveItem
 
 ```yaml
 Type: System.String
-Parameter Sets: Publish1
+Parameter Sets: Publish
 Aliases:
 
 Required: True
@@ -147,19 +147,25 @@ INPUTOBJECT <IFilesIdentity>: Identity Parameter
   - `[ColumnDefinitionId <String>]`: key: id of columnDefinition
   - `[ColumnLinkId <String>]`: key: id of columnLink
   - `[ContentTypeId <String>]`: key: id of contentType
+  - `[ContentTypeId1 <String>]`: key: id of contentType
+  - `[DocumentSetVersionId <String>]`: key: id of documentSetVersion
   - `[DriveId <String>]`: key: id of drive
   - `[DriveItemId <String>]`: key: id of driveItem
-  - `[EndDateTime <String>]`: Usage: endDateTime={endDateTime}
+  - `[DriveItemId1 <String>]`: key: id of driveItem
+  - `[DriveItemVersionId <String>]`: key: id of driveItemVersion
+  - `[EndDateTime <String>]`: Usage: endDateTime='{endDateTime}'
   - `[GroupId <String>]`: key: id of group
-  - `[Interval <String>]`: Usage: interval={interval}
+  - `[Interval <String>]`: Usage: interval='{interval}'
   - `[ListItemId <String>]`: key: id of listItem
   - `[ListItemVersionId <String>]`: key: id of listItemVersion
-  - `[Q <String>]`: Usage: q={q}
+  - `[PermissionId <String>]`: key: id of permission
+  - `[Q <String>]`: Usage: q='{q}'
   - `[RichLongRunningOperationId <String>]`: key: id of richLongRunningOperation
   - `[SharedDriveItemId <String>]`: key: id of sharedDriveItem
-  - `[StartDateTime <String>]`: Usage: startDateTime={startDateTime}
+  - `[StartDateTime <String>]`: Usage: startDateTime='{startDateTime}'
   - `[SubscriptionId <String>]`: key: id of subscription
-  - `[Token <String>]`: Usage: token={token}
+  - `[ThumbnailSetId <String>]`: key: id of thumbnailSet
+  - `[Token <String>]`: Usage: token='{token}'
   - `[UserId <String>]`: key: id of user
 
 ## RELATED LINKS
