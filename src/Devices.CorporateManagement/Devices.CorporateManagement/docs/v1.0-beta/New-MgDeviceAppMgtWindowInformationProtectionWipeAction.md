@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgDeviceAppMgtWindowInformationProtectionWipeAction
 
 ## SYNOPSIS
-Windows information protection wipe actions.
+Create new navigation property to windowsInformationProtectionWipeActions for deviceAppManagement
 
 ## SYNTAX
 
@@ -28,7 +28,7 @@ New-MgDeviceAppMgtWindowInformationProtectionWipeAction
 ```
 
 ## DESCRIPTION
-Windows information protection wipe actions.
+Create new navigation property to windowsInformationProtectionWipeActions for deviceAppManagement
 
 ## EXAMPLES
 
@@ -66,7 +66,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -96,7 +96,7 @@ Accept wildcard characters: False
 ```
 
 ### -Status
-State of the action on the device
+actionState
 
 ```yaml
 Type: System.String
@@ -225,9 +225,9 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphWindowsInformationProtectionWipeAction>: Represents wipe requests issued by tenant admin for Bring-Your-Own-Device(BYOD) Windows devices.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[LastCheckInDateTime <DateTime?>]`: Last checkin time of the device that was targeted by this wipe action.
-  - `[Status <String>]`: State of the action on the device
+  - `[Status <String>]`: actionState
   - `[TargetedDeviceMacAddress <String>]`: Targeted device Mac address.
   - `[TargetedDeviceName <String>]`: Targeted device name.
   - `[TargetedDeviceRegistrationId <String>]`: The DeviceRegistrationId being targeted by this wipe action.

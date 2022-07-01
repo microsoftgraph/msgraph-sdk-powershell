@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgDeviceAppMgtWindowInformationProtectionPolicy
 
 ## SYNOPSIS
-Windows information protection for apps running on devices which are not MDM enrolled.
+Create new navigation property to windowsInformationProtectionPolicies for deviceAppManagement
 
 ## SYNTAX
 
@@ -19,7 +19,7 @@ New-MgDeviceAppMgtWindowInformationProtectionPolicy [-AdditionalProperties <Hash
  [-CreatedDateTime <DateTime>]
  [-DataRecoveryCertificate <IMicrosoftGraphWindowsInformationProtectionDataRecoveryCertificate>]
  [-DaysWithoutContactBeforeUnenroll <Int32>] [-Description <String>] [-DisplayName <String>]
- [-EnforcementLevel <String>] [-EnterpriseDomain <String>]
+ [-EnforcementLevel <WindowsInformationProtectionEnforcementLevel>] [-EnterpriseDomain <String>]
  [-EnterpriseInternalProxyServers <IMicrosoftGraphWindowsInformationProtectionResourceCollection[]>]
  [-EnterpriseIPRanges <IMicrosoftGraphWindowsInformationProtectionIPRangeCollection[]>]
  [-EnterpriseIPRangesAreAuthoritative]
@@ -34,8 +34,9 @@ New-MgDeviceAppMgtWindowInformationProtectionPolicy [-AdditionalProperties <Hash
  [-MdmEnrollmentUrl <String>] [-MinutesOfInactivityBeforeDeviceLock <Int32>]
  [-NeutralDomainResources <IMicrosoftGraphWindowsInformationProtectionResourceCollection[]>]
  [-NumberOfPastPinsRemembered <Int32>] [-PasswordMaximumAttemptCount <Int32>] [-PinExpirationDays <Int32>]
- [-PinLowercaseLetters <String>] [-PinMinimumLength <Int32>] [-PinSpecialCharacters <String>]
- [-PinUppercaseLetters <String>]
+ [-PinLowercaseLetters <WindowsInformationProtectionPinCharacterRequirements>] [-PinMinimumLength <Int32>]
+ [-PinSpecialCharacters <WindowsInformationProtectionPinCharacterRequirements>]
+ [-PinUppercaseLetters <WindowsInformationProtectionPinCharacterRequirements>]
  [-ProtectedAppLockerFiles <IMicrosoftGraphWindowsInformationProtectionAppLockerFile[]>]
  [-ProtectedApps <IMicrosoftGraphWindowsInformationProtectionApp[]>] [-ProtectionUnderLockConfigRequired]
  [-RevokeOnMdmHandoffDisabled] [-RevokeOnUnenrollDisabled] [-RightsManagementServicesTemplateId <String>]
@@ -50,7 +51,7 @@ New-MgDeviceAppMgtWindowInformationProtectionPolicy
 ```
 
 ## DESCRIPTION
-Windows information protection for apps running on devices which are not MDM enrolled.
+Create new navigation property to windowsInformationProtectionPolicies for deviceAppManagement
 
 ## EXAMPLES
 
@@ -198,7 +199,7 @@ Accept wildcard characters: False
 Possible values for WIP Protection enforcement levels
 
 ```yaml
-Type: System.String
+Type: Microsoft.Graph.PowerShell.Support.WindowsInformationProtectionEnforcementLevel
 Parameter Sets: CreateExpanded1
 Aliases:
 
@@ -413,7 +414,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -580,7 +581,7 @@ Accept wildcard characters: False
 Pin Character Requirements
 
 ```yaml
-Type: System.String
+Type: Microsoft.Graph.PowerShell.Support.WindowsInformationProtectionPinCharacterRequirements
 Parameter Sets: CreateExpanded1
 Aliases:
 
@@ -613,7 +614,7 @@ Accept wildcard characters: False
 Pin Character Requirements
 
 ```yaml
-Type: System.String
+Type: Microsoft.Graph.PowerShell.Support.WindowsInformationProtectionPinCharacterRequirements
 Parameter Sets: CreateExpanded1
 Aliases:
 
@@ -628,7 +629,7 @@ Accept wildcard characters: False
 Pin Character Requirements
 
 ```yaml
-Type: System.String
+Type: Microsoft.Graph.PowerShell.Support.WindowsInformationProtectionPinCharacterRequirements
 Parameter Sets: CreateExpanded1
 Aliases:
 
@@ -834,14 +835,14 @@ To create the parameters described below, construct a hash table containing the 
 
 
 ASSIGNMENTS <IMicrosoftGraphTargetedManagedAppPolicyAssignment1[]>: Navigation property to list of security groups targeted for policy.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget1>]`: Base type for assignment targets.
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
 
 BODYPARAMETER <IMicrosoftGraphWindowsInformationProtectionPolicy1>: Policy for Windows information protection without MDM
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Assignments <IMicrosoftGraphTargetedManagedAppPolicyAssignment1[]>]`: Navigation property to list of security groups targeted for policy.
-    - `[Id <String>]`: Read-only.
+    - `[Id <String>]`: 
     - `[Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget1>]`: Base type for assignment targets.
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[AzureRightsManagementServicesAllowed <Boolean?>]`: Specifies whether to allow Azure RMS encryption for WIP
@@ -851,7 +852,7 @@ BODYPARAMETER <IMicrosoftGraphWindowsInformationProtectionPolicy1>: Policy for W
     - `[Description <String>]`: Data recovery Certificate description
     - `[ExpirationDateTime <DateTime?>]`: Data recovery Certificate expiration datetime
     - `[SubjectName <String>]`: Data recovery Certificate subject name
-  - `[EnforcementLevel <String>]`: Possible values for WIP Protection enforcement levels
+  - `[EnforcementLevel <WindowsInformationProtectionEnforcementLevel?>]`: Possible values for WIP Protection enforcement levels
   - `[EnterpriseDomain <String>]`: Primary enterprise domain
   - `[EnterpriseIPRanges <IMicrosoftGraphWindowsInformationProtectionIPRangeCollection[]>]`: Sets the enterprise IP ranges that define the computers in the enterprise network. Data that comes from those computers will be considered part of the enterprise and protected. These locations will be considered a safe destination for enterprise data to be shared to
     - `[DisplayName <String>]`: Display name
@@ -870,7 +871,7 @@ BODYPARAMETER <IMicrosoftGraphWindowsInformationProtectionPolicy1>: Policy for W
   - `[EnterpriseProxyServers <IMicrosoftGraphWindowsInformationProtectionResourceCollection[]>]`: This is a list of proxy servers. Any server not on this list is considered non-enterprise
   - `[EnterpriseProxyServersAreAuthoritative <Boolean?>]`: Boolean value that tells the client to accept the configured list of proxies and not try to detect other work proxies. Default is false
   - `[ExemptAppLockerFiles <IMicrosoftGraphWindowsInformationProtectionAppLockerFile[]>]`: Another way to input exempt apps through xml files
-    - `[Id <String>]`: Read-only.
+    - `[Id <String>]`: 
     - `[DisplayName <String>]`: The friendly name
     - `[File <Byte[]>]`: File as a byte array
     - `[FileHash <String>]`: SHA256 hash of the file
@@ -896,17 +897,17 @@ BODYPARAMETER <IMicrosoftGraphWindowsInformationProtectionPolicy1>: Policy for W
   - `[DisplayName <String>]`: Policy display name.
   - `[LastModifiedDateTime <DateTime?>]`: Last time the policy was modified.
   - `[Version <String>]`: Version of the entity.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[DaysWithoutContactBeforeUnenroll <Int32?>]`: Offline interval before app data is wiped (days)
   - `[MdmEnrollmentUrl <String>]`: Enrollment url for the MDM
   - `[MinutesOfInactivityBeforeDeviceLock <Int32?>]`: Specifies the maximum amount of time (in minutes) allowed after the device is idle that will cause the device to become PIN or password locked.   Range is an integer X where 0 <= X <= 999.
   - `[NumberOfPastPinsRemembered <Int32?>]`: Integer value that specifies the number of past PINs that can be associated to a user account that can't be reused. The largest number you can configure for this policy setting is 50. The lowest number you can configure for this policy setting is 0. If this policy is set to 0, then storage of previous PINs is not required. This node was added in Windows 10, version 1511. Default is 0.
   - `[PasswordMaximumAttemptCount <Int32?>]`: The number of authentication failures allowed before the device will be wiped. A value of 0 disables device wipe functionality. Range is an integer X where 4 <= X <= 16 for desktop and 0 <= X <= 999 for mobile devices.
   - `[PinExpirationDays <Int32?>]`: Integer value specifies the period of time (in days) that a PIN can be used before the system requires the user to change it. The largest number you can configure for this policy setting is 730. The lowest number you can configure for this policy setting is 0. If this policy is set to 0, then the user's PIN will never expire. This node was added in Windows 10, version 1511. Default is 0.
-  - `[PinLowercaseLetters <String>]`: Pin Character Requirements
+  - `[PinLowercaseLetters <WindowsInformationProtectionPinCharacterRequirements?>]`: Pin Character Requirements
   - `[PinMinimumLength <Int32?>]`: Integer value that sets the minimum number of characters required for the PIN. Default value is 4. The lowest number you can configure for this policy setting is 4. The largest number you can configure must be less than the number configured in the Maximum PIN length policy setting or the number 127, whichever is the lowest.
-  - `[PinSpecialCharacters <String>]`: Pin Character Requirements
-  - `[PinUppercaseLetters <String>]`: Pin Character Requirements
+  - `[PinSpecialCharacters <WindowsInformationProtectionPinCharacterRequirements?>]`: Pin Character Requirements
+  - `[PinUppercaseLetters <WindowsInformationProtectionPinCharacterRequirements?>]`: Pin Character Requirements
   - `[RevokeOnMdmHandoffDisabled <Boolean?>]`: New property in RS2, pending documentation
   - `[WindowsHelloForBusinessBlocked <Boolean?>]`: Boolean value that sets Windows Hello for Business as a method for signing into Windows.
 
@@ -944,7 +945,7 @@ ENTERPRISEPROXYSERVERS <IMicrosoftGraphWindowsInformationProtectionResourceColle
   - `[Resources <String[]>]`: Collection of resources
 
 EXEMPTAPPLOCKERFILES <IMicrosoftGraphWindowsInformationProtectionAppLockerFile[]>: Another way to input exempt apps through xml files
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[DisplayName <String>]`: The friendly name
   - `[File <Byte[]>]`: File as a byte array
   - `[FileHash <String>]`: SHA256 hash of the file
@@ -962,7 +963,7 @@ NEUTRALDOMAINRESOURCES <IMicrosoftGraphWindowsInformationProtectionResourceColle
   - `[Resources <String[]>]`: Collection of resources
 
 PROTECTEDAPPLOCKERFILES <IMicrosoftGraphWindowsInformationProtectionAppLockerFile[]>: Another way to input protected apps through xml files
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[DisplayName <String>]`: The friendly name
   - `[File <Byte[]>]`: File as a byte array
   - `[FileHash <String>]`: SHA256 hash of the file

@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgDeviceAppMgtMdmWindowInformationProtectionPolicy
 
 ## SYNOPSIS
-Windows information protection for apps running on devices which are MDM enrolled.
+Create new navigation property to mdmWindowsInformationProtectionPolicies for deviceAppManagement
 
 ## SYNTAX
 
@@ -18,7 +18,8 @@ New-MgDeviceAppMgtMdmWindowInformationProtectionPolicy [-AdditionalProperties <H
  [-Assignments <IMicrosoftGraphTargetedManagedAppPolicyAssignment[]>] [-AzureRightsManagementServicesAllowed]
  [-CreatedDateTime <DateTime>]
  [-DataRecoveryCertificate <IMicrosoftGraphWindowsInformationProtectionDataRecoveryCertificate>]
- [-Description <String>] [-DisplayName <String>] [-EnforcementLevel <String>] [-EnterpriseDomain <String>]
+ [-Description <String>] [-DisplayName <String>]
+ [-EnforcementLevel <WindowsInformationProtectionEnforcementLevel>] [-EnterpriseDomain <String>]
  [-EnterpriseInternalProxyServers <IMicrosoftGraphWindowsInformationProtectionResourceCollection[]>]
  [-EnterpriseIPRanges <IMicrosoftGraphWindowsInformationProtectionIPRangeCollection[]>]
  [-EnterpriseIPRangesAreAuthoritative]
@@ -45,7 +46,7 @@ New-MgDeviceAppMgtMdmWindowInformationProtectionPolicy -BodyParameter <Hashtable
 ```
 
 ## DESCRIPTION
-Windows information protection for apps running on devices which are MDM enrolled.
+Create new navigation property to mdmWindowsInformationProtectionPolicies for deviceAppManagement
 
 ## EXAMPLES
 
@@ -177,7 +178,7 @@ Accept wildcard characters: False
 Possible values for WIP Protection enforcement levels
 
 ```yaml
-Type: System.String
+Type: Microsoft.Graph.PowerShell.Support.WindowsInformationProtectionEnforcementLevel
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -392,7 +393,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -647,13 +648,13 @@ To create the parameters described below, construct a hash table containing the 
 
 
 ASSIGNMENTS <IMicrosoftGraphTargetedManagedAppPolicyAssignment[]>: Navigation property to list of security groups targeted for policy.
-  - `[Id <String>]`: Read-only.
-  - `[Source <String>]`: Represents source of assignment.
+  - `[Id <String>]`: 
+  - `[Source <DeviceAndAppManagementAssignmentSource?>]`: Represents source of assignment.
   - `[SourceId <String>]`: Identifier for resource used for deployment to a group
   - `[Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget>]`: Base type for assignment targets.
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[DeviceAndAppManagementAssignmentFilterId <String>]`: The Id of the filter for the target assignment.
-    - `[DeviceAndAppManagementAssignmentFilterType <String>]`: Represents type of the assignment filter.
+    - `[DeviceAndAppManagementAssignmentFilterType <DeviceAndAppManagementAssignmentFilterType?>]`: Represents type of the assignment filter.
 
 DATARECOVERYCERTIFICATE <IMicrosoftGraphWindowsInformationProtectionDataRecoveryCertificate>: Windows Information Protection DataRecoveryCertificate
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -689,7 +690,7 @@ ENTERPRISEPROXYSERVERS <IMicrosoftGraphWindowsInformationProtectionResourceColle
   - `[Resources <String[]>]`: Collection of resources
 
 EXEMPTAPPLOCKERFILES <IMicrosoftGraphWindowsInformationProtectionAppLockerFile[]>: Another way to input exempt apps through xml files
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[DisplayName <String>]`: The friendly name
   - `[File <Byte[]>]`: File as a byte array
   - `[FileHash <String>]`: SHA256 hash of the file
@@ -707,7 +708,7 @@ NEUTRALDOMAINRESOURCES <IMicrosoftGraphWindowsInformationProtectionResourceColle
   - `[Resources <String[]>]`: Collection of resources
 
 PROTECTEDAPPLOCKERFILES <IMicrosoftGraphWindowsInformationProtectionAppLockerFile[]>: Another way to input protected apps through xml files
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[DisplayName <String>]`: The friendly name
   - `[File <Byte[]>]`: File as a byte array
   - `[FileHash <String>]`: SHA256 hash of the file
