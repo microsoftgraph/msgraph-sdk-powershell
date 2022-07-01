@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgDeviceManagementAutopilotEvent
 
 ## SYNOPSIS
-The list of autopilot events for the tenant.
+Create new navigation property to autopilotEvents for deviceManagement
 
 ## SYNTAX
 
@@ -19,9 +19,10 @@ New-MgDeviceManagementAutopilotEvent [-AccountSetupDuration <TimeSpan>] [-Accoun
  [-DeploymentStartDateTime <DateTime>] [-DeploymentState <String>] [-DeploymentTotalDuration <TimeSpan>]
  [-DeviceId <String>] [-DevicePreparationDuration <TimeSpan>] [-DeviceRegisteredDateTime <DateTime>]
  [-DeviceSerialNumber <String>] [-DeviceSetupDuration <TimeSpan>] [-DeviceSetupStatus <String>]
- [-EnrollmentFailureDetails <String>] [-EnrollmentStartDateTime <DateTime>] [-EnrollmentState <String>]
- [-EnrollmentType <String>] [-EventDateTime <DateTime>] [-Id <String>] [-ManagedDeviceName <String>]
- [-OSVersion <String>] [-PolicyStatusDetails <IMicrosoftGraphDeviceManagementAutopilotPolicyStatusDetail[]>]
+ [-EnrollmentFailureDetails <String>] [-EnrollmentStartDateTime <DateTime>]
+ [-EnrollmentState <EnrollmentState>] [-EnrollmentType <String>] [-EventDateTime <DateTime>] [-Id <String>]
+ [-ManagedDeviceName <String>] [-OSVersion <String>]
+ [-PolicyStatusDetails <IMicrosoftGraphDeviceManagementAutopilotPolicyStatusDetail[]>]
  [-TargetedAppCount <Int32>] [-TargetedPolicyCount <Int32>] [-UserPrincipalName <String>]
  [-Windows10EnrollmentCompletionPageConfigurationDisplayName <String>]
  [-Windows10EnrollmentCompletionPageConfigurationId <String>]
@@ -35,7 +36,7 @@ New-MgDeviceManagementAutopilotEvent -BodyParameter <IMicrosoftGraphDeviceManage
 ```
 
 ## DESCRIPTION
-The list of autopilot events for the tenant.
+Create new navigation property to autopilotEvents for deviceManagement
 
 ## EXAMPLES
 
@@ -301,7 +302,7 @@ Accept wildcard characters: False
 .
 
 ```yaml
-Type: System.String
+Type: Microsoft.Graph.PowerShell.Support.EnrollmentState
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -343,7 +344,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -546,7 +547,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphDeviceManagementAutopilotEvent>: Represents an Autopilot flow event.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[AccountSetupDuration <TimeSpan?>]`: Time spent in user ESP.
   - `[AccountSetupStatus <String>]`: windowsAutopilotDeploymentState
   - `[DeploymentDuration <TimeSpan?>]`: Autopilot deployment duration including enrollment.
@@ -562,13 +563,13 @@ BODYPARAMETER <IMicrosoftGraphDeviceManagementAutopilotEvent>: Represents an Aut
   - `[DeviceSetupStatus <String>]`: windowsAutopilotDeploymentState
   - `[EnrollmentFailureDetails <String>]`: Enrollment failure details.
   - `[EnrollmentStartDateTime <DateTime?>]`: Device enrollment start date.
-  - `[EnrollmentState <String>]`: 
+  - `[EnrollmentState <EnrollmentState?>]`: 
   - `[EnrollmentType <String>]`: windowsAutopilotEnrollmentType
   - `[EventDateTime <DateTime?>]`: Time when the event occurred .
   - `[ManagedDeviceName <String>]`: Managed device name.
   - `[OSVersion <String>]`: Device operating system version.
   - `[PolicyStatusDetails <IMicrosoftGraphDeviceManagementAutopilotPolicyStatusDetail[]>]`: Policy and application status details for this device.
-    - `[Id <String>]`: Read-only.
+    - `[Id <String>]`: 
     - `[ComplianceStatus <String>]`: deviceManagementAutopilotPolicyComplianceStatus
     - `[DisplayName <String>]`: The friendly name of the policy.
     - `[ErrorCode <Int32?>]`: The errorode associated with the compliance or enforcement status of the policy. Error code for enforcement status takes precedence if it exists.
@@ -583,7 +584,7 @@ BODYPARAMETER <IMicrosoftGraphDeviceManagementAutopilotEvent>: Represents an Aut
   - `[WindowsAutopilotDeploymentProfileDisplayName <String>]`: Autopilot profile name.
 
 POLICYSTATUSDETAILS <IMicrosoftGraphDeviceManagementAutopilotPolicyStatusDetail[]>: Policy and application status details for this device.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[ComplianceStatus <String>]`: deviceManagementAutopilotPolicyComplianceStatus
   - `[DisplayName <String>]`: The friendly name of the policy.
   - `[ErrorCode <Int32?>]`: The errorode associated with the compliance or enforcement status of the policy. Error code for enforcement status takes precedence if it exists.

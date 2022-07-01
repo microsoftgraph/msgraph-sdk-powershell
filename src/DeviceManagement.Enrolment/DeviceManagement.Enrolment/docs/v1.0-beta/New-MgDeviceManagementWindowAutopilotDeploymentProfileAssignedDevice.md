@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgDeviceManagementWindowAutopilotDeploymentProfileAssignedDevice
 
 ## SYNOPSIS
-The list of assigned devices for the profile.
+Create new navigation property to assignedDevices for deviceManagement
 
 ## SYNTAX
 
@@ -18,12 +18,16 @@ New-MgDeviceManagementWindowAutopilotDeploymentProfileAssignedDevice
  -WindowsAutopilotDeploymentProfileId <String> [-AdditionalProperties <Hashtable>]
  [-AddressableUserName <String>] [-AzureActiveDirectoryDeviceId <String>] [-AzureAdDeviceId <String>]
  [-DeploymentProfile <IMicrosoftGraphWindowsAutopilotDeploymentProfile>]
- [-DeploymentProfileAssignedDateTime <DateTime>] [-DeploymentProfileAssignmentDetailedStatus <String>]
- [-DeploymentProfileAssignmentStatus <String>] [-DisplayName <String>] [-EnrollmentState <String>]
- [-GroupTag <String>] [-Id <String>]
+ [-DeploymentProfileAssignedDateTime <DateTime>]
+ [-DeploymentProfileAssignmentDetailedStatus <WindowsAutopilotProfileAssignmentDetailedStatus>]
+ [-DeploymentProfileAssignmentStatus <WindowsAutopilotProfileAssignmentStatus>]
+ [-DeviceAccountPassword <String>] [-DeviceAccountUpn <String>] [-DeviceFriendlyName <String>]
+ [-DisplayName <String>] [-EnrollmentState <EnrollmentState>] [-GroupTag <String>] [-Id <String>]
  [-IntendedDeploymentProfile <IMicrosoftGraphWindowsAutopilotDeploymentProfile>]
  [-LastContactedDateTime <DateTime>] [-ManagedDeviceId <String>] [-Manufacturer <String>] [-Model <String>]
- [-ProductKey <String>] [-PurchaseOrderIdentifier <String>] [-ResourceName <String>] [-SerialNumber <String>]
+ [-ProductKey <String>] [-PurchaseOrderIdentifier <String>]
+ [-RemediationState <WindowsAutopilotDeviceRemediationState>]
+ [-RemediationStateLastModifiedDateTime <DateTime>] [-ResourceName <String>] [-SerialNumber <String>]
  [-SkuNumber <String>] [-SystemFamily <String>] [-UserPrincipalName <String>] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
@@ -31,7 +35,7 @@ New-MgDeviceManagementWindowAutopilotDeploymentProfileAssignedDevice
 ### Create
 ```
 New-MgDeviceManagementWindowAutopilotDeploymentProfileAssignedDevice
- -WindowsAutopilotDeploymentProfileId <String> -BodyParameter <IMicrosoftGraphWindowsAutopilotDeviceIdentity1>
+ -WindowsAutopilotDeploymentProfileId <String> -BodyParameter <IMicrosoftGraphWindowsAutopilotDeviceIdentity>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -39,7 +43,7 @@ New-MgDeviceManagementWindowAutopilotDeploymentProfileAssignedDevice
 ```
 New-MgDeviceManagementWindowAutopilotDeploymentProfileAssignedDevice
  -InputObject <IDeviceManagementEnrolmentIdentity>
- -BodyParameter <IMicrosoftGraphWindowsAutopilotDeviceIdentity1> [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphWindowsAutopilotDeviceIdentity> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
@@ -48,18 +52,22 @@ New-MgDeviceManagementWindowAutopilotDeploymentProfileAssignedDevice
  -InputObject <IDeviceManagementEnrolmentIdentity> [-AdditionalProperties <Hashtable>]
  [-AddressableUserName <String>] [-AzureActiveDirectoryDeviceId <String>] [-AzureAdDeviceId <String>]
  [-DeploymentProfile <IMicrosoftGraphWindowsAutopilotDeploymentProfile>]
- [-DeploymentProfileAssignedDateTime <DateTime>] [-DeploymentProfileAssignmentDetailedStatus <String>]
- [-DeploymentProfileAssignmentStatus <String>] [-DisplayName <String>] [-EnrollmentState <String>]
- [-GroupTag <String>] [-Id <String>]
+ [-DeploymentProfileAssignedDateTime <DateTime>]
+ [-DeploymentProfileAssignmentDetailedStatus <WindowsAutopilotProfileAssignmentDetailedStatus>]
+ [-DeploymentProfileAssignmentStatus <WindowsAutopilotProfileAssignmentStatus>]
+ [-DeviceAccountPassword <String>] [-DeviceAccountUpn <String>] [-DeviceFriendlyName <String>]
+ [-DisplayName <String>] [-EnrollmentState <EnrollmentState>] [-GroupTag <String>] [-Id <String>]
  [-IntendedDeploymentProfile <IMicrosoftGraphWindowsAutopilotDeploymentProfile>]
  [-LastContactedDateTime <DateTime>] [-ManagedDeviceId <String>] [-Manufacturer <String>] [-Model <String>]
- [-ProductKey <String>] [-PurchaseOrderIdentifier <String>] [-ResourceName <String>] [-SerialNumber <String>]
+ [-ProductKey <String>] [-PurchaseOrderIdentifier <String>]
+ [-RemediationState <WindowsAutopilotDeviceRemediationState>]
+ [-RemediationStateLastModifiedDateTime <DateTime>] [-ResourceName <String>] [-SerialNumber <String>]
  [-SkuNumber <String>] [-SystemFamily <String>] [-UserPrincipalName <String>] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-The list of assigned devices for the profile.
+Create new navigation property to assignedDevices for deviceManagement
 
 ## EXAMPLES
 
@@ -130,7 +138,7 @@ The windowsAutopilotDeviceIdentity resource represents a Windows Autopilot Devic
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphWindowsAutopilotDeviceIdentity1
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphWindowsAutopilotDeviceIdentity
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -176,7 +184,7 @@ Accept wildcard characters: False
 windowsAutopilotProfileAssignmentDetailedStatus
 
 ```yaml
-Type: System.String
+Type: Microsoft.Graph.PowerShell.Support.WindowsAutopilotProfileAssignmentDetailedStatus
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -189,6 +197,51 @@ Accept wildcard characters: False
 
 ### -DeploymentProfileAssignmentStatus
 windowsAutopilotProfileAssignmentStatus
+
+```yaml
+Type: Microsoft.Graph.PowerShell.Support.WindowsAutopilotProfileAssignmentStatus
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -DeviceAccountPassword
+Surface Hub Device Account Password
+
+```yaml
+Type: System.String
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -DeviceAccountUpn
+Surface Hub Device Account Upn
+
+```yaml
+Type: System.String
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -DeviceFriendlyName
+Surface Hub Device Friendly Name
 
 ```yaml
 Type: System.String
@@ -221,7 +274,7 @@ Accept wildcard characters: False
 .
 
 ```yaml
-Type: System.String
+Type: Microsoft.Graph.PowerShell.Support.EnrollmentState
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -248,7 +301,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -374,6 +427,36 @@ Purchase Order Identifier of the Windows autopilot device.
 
 ```yaml
 Type: System.String
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -RemediationState
+Device remediation status, indicating whether or not hardware has been changed for an Autopilot-registered device.
+
+```yaml
+Type: Microsoft.Graph.PowerShell.Support.WindowsAutopilotDeviceRemediationState
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -RemediationStateLastModifiedDateTime
+RemediationState set time of Autopilot device.
+
+```yaml
+Type: System.DateTime
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -512,11 +595,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IDeviceManagementEnrolmentIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphWindowsAutopilotDeviceIdentity1
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphWindowsAutopilotDeviceIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphWindowsAutopilotDeviceIdentity1
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphWindowsAutopilotDeviceIdentity
 
 ## NOTES
 
@@ -527,28 +610,28 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-BODYPARAMETER <IMicrosoftGraphWindowsAutopilotDeviceIdentity1>: The windowsAutopilotDeviceIdentity resource represents a Windows Autopilot Device.
+BODYPARAMETER <IMicrosoftGraphWindowsAutopilotDeviceIdentity>: The windowsAutopilotDeviceIdentity resource represents a Windows Autopilot Device.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[AddressableUserName <String>]`: Addressable user name.
   - `[AzureActiveDirectoryDeviceId <String>]`: AAD Device ID - to be deprecated
   - `[AzureAdDeviceId <String>]`: AAD Device ID
   - `[DeploymentProfile <IMicrosoftGraphWindowsAutopilotDeploymentProfile>]`: Windows Autopilot Deployment Profile
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Id <String>]`: Read-only.
-    - `[AssignedDevices <IMicrosoftGraphWindowsAutopilotDeviceIdentity1[]>]`: The list of assigned devices for the profile.
+    - `[Id <String>]`: 
+    - `[AssignedDevices <IMicrosoftGraphWindowsAutopilotDeviceIdentity[]>]`: The list of assigned devices for the profile.
     - `[Assignments <IMicrosoftGraphWindowsAutopilotDeploymentProfileAssignment[]>]`: The list of group assignments for the profile.
-      - `[Id <String>]`: Read-only.
-      - `[Source <String>]`: Represents source of assignment.
+      - `[Id <String>]`: 
+      - `[Source <DeviceAndAppManagementAssignmentSource?>]`: Represents source of assignment.
       - `[SourceId <String>]`: Identifier for resource used for deployment to a group
       - `[Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget1>]`: Base type for assignment targets.
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[DeviceAndAppManagementAssignmentFilterId <String>]`: The Id of the filter for the target assignment.
-        - `[DeviceAndAppManagementAssignmentFilterType <String>]`: Represents type of the assignment filter.
+        - `[DeviceAndAppManagementAssignmentFilterType <DeviceAndAppManagementAssignmentFilterType?>]`: Represents type of the assignment filter.
     - `[CreatedDateTime <DateTime?>]`: Profile creation time
     - `[Description <String>]`: Description of the profile
     - `[DeviceNameTemplate <String>]`: The template used to name the AutoPilot Device. This can be a custom text and can also contain either the serial number of the device, or a randomly generated number. The total length of the text generated by the template can be no more than 15 characters.
-    - `[DeviceType <String>]`: windowsAutopilotDeviceType
+    - `[DeviceType <WindowsAutopilotDeviceType?>]`: windowsAutopilotDeviceType
     - `[DisplayName <String>]`: Name of the profile
     - `[EnableWhiteGlove <Boolean?>]`: Enable Autopilot White Glove for the profile.
     - `[EnrollmentStatusScreenSettings <IMicrosoftGraphWindowsEnrollmentStatusScreenSettings>]`: Enrollment status screen setting
@@ -566,7 +649,7 @@ BODYPARAMETER <IMicrosoftGraphWindowsAutopilotDeviceIdentity1>: The windowsAutop
     - `[ManagementServiceAppId <String>]`: AzureAD management app ID used during client device-based enrollment discovery
     - `[OutOfBoxExperienceSettings <IMicrosoftGraphOutOfBoxExperienceSettings>]`: Out of box experience setting
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[DeviceUsageType <String>]`: windowsDeviceUsageType
+      - `[DeviceUsageType <WindowsDeviceUsageType?>]`: windowsDeviceUsageType
       - `[HideEscapeLink <Boolean?>]`: If set to true, then the user can't start over with different account, on company sign-in
       - `[HideEula <Boolean?>]`: Show or hide EULA to user
       - `[HidePrivacySettings <Boolean?>]`: Show or hide privacy settings to user
@@ -574,10 +657,13 @@ BODYPARAMETER <IMicrosoftGraphWindowsAutopilotDeviceIdentity1>: The windowsAutop
       - `[UserType <String>]`: windowsUserType
     - `[RoleScopeTagIds <String[]>]`: Scope tags for the profile.
   - `[DeploymentProfileAssignedDateTime <DateTime?>]`: Profile set time of the Windows autopilot device.
-  - `[DeploymentProfileAssignmentDetailedStatus <String>]`: windowsAutopilotProfileAssignmentDetailedStatus
-  - `[DeploymentProfileAssignmentStatus <String>]`: windowsAutopilotProfileAssignmentStatus
+  - `[DeploymentProfileAssignmentDetailedStatus <WindowsAutopilotProfileAssignmentDetailedStatus?>]`: windowsAutopilotProfileAssignmentDetailedStatus
+  - `[DeploymentProfileAssignmentStatus <WindowsAutopilotProfileAssignmentStatus?>]`: windowsAutopilotProfileAssignmentStatus
+  - `[DeviceAccountPassword <String>]`: Surface Hub Device Account Password
+  - `[DeviceAccountUpn <String>]`: Surface Hub Device Account Upn
+  - `[DeviceFriendlyName <String>]`: Surface Hub Device Friendly Name
   - `[DisplayName <String>]`: Display Name
-  - `[EnrollmentState <String>]`: 
+  - `[EnrollmentState <EnrollmentState?>]`: 
   - `[GroupTag <String>]`: Group Tag of the Windows autopilot device.
   - `[IntendedDeploymentProfile <IMicrosoftGraphWindowsAutopilotDeploymentProfile>]`: Windows Autopilot Deployment Profile
   - `[LastContactedDateTime <DateTime?>]`: Intune Last Contacted Date Time of the Windows autopilot device.
@@ -586,6 +672,8 @@ BODYPARAMETER <IMicrosoftGraphWindowsAutopilotDeviceIdentity1>: The windowsAutop
   - `[Model <String>]`: Model name of the Windows autopilot device.
   - `[ProductKey <String>]`: Product Key of the Windows autopilot device.
   - `[PurchaseOrderIdentifier <String>]`: Purchase Order Identifier of the Windows autopilot device.
+  - `[RemediationState <WindowsAutopilotDeviceRemediationState?>]`: Device remediation status, indicating whether or not hardware has been changed for an Autopilot-registered device.
+  - `[RemediationStateLastModifiedDateTime <DateTime?>]`: RemediationState set time of Autopilot device.
   - `[ResourceName <String>]`: Resource Name.
   - `[SerialNumber <String>]`: Serial number of the Windows autopilot device.
   - `[SkuNumber <String>]`: SKU Number
@@ -594,18 +682,21 @@ BODYPARAMETER <IMicrosoftGraphWindowsAutopilotDeviceIdentity1>: The windowsAutop
 
 DEPLOYMENTPROFILE <IMicrosoftGraphWindowsAutopilotDeploymentProfile>: Windows Autopilot Deployment Profile
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
-  - `[AssignedDevices <IMicrosoftGraphWindowsAutopilotDeviceIdentity1[]>]`: The list of assigned devices for the profile.
-    - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
+  - `[AssignedDevices <IMicrosoftGraphWindowsAutopilotDeviceIdentity[]>]`: The list of assigned devices for the profile.
+    - `[Id <String>]`: 
     - `[AddressableUserName <String>]`: Addressable user name.
     - `[AzureActiveDirectoryDeviceId <String>]`: AAD Device ID - to be deprecated
     - `[AzureAdDeviceId <String>]`: AAD Device ID
     - `[DeploymentProfile <IMicrosoftGraphWindowsAutopilotDeploymentProfile>]`: Windows Autopilot Deployment Profile
     - `[DeploymentProfileAssignedDateTime <DateTime?>]`: Profile set time of the Windows autopilot device.
-    - `[DeploymentProfileAssignmentDetailedStatus <String>]`: windowsAutopilotProfileAssignmentDetailedStatus
-    - `[DeploymentProfileAssignmentStatus <String>]`: windowsAutopilotProfileAssignmentStatus
+    - `[DeploymentProfileAssignmentDetailedStatus <WindowsAutopilotProfileAssignmentDetailedStatus?>]`: windowsAutopilotProfileAssignmentDetailedStatus
+    - `[DeploymentProfileAssignmentStatus <WindowsAutopilotProfileAssignmentStatus?>]`: windowsAutopilotProfileAssignmentStatus
+    - `[DeviceAccountPassword <String>]`: Surface Hub Device Account Password
+    - `[DeviceAccountUpn <String>]`: Surface Hub Device Account Upn
+    - `[DeviceFriendlyName <String>]`: Surface Hub Device Friendly Name
     - `[DisplayName <String>]`: Display Name
-    - `[EnrollmentState <String>]`: 
+    - `[EnrollmentState <EnrollmentState?>]`: 
     - `[GroupTag <String>]`: Group Tag of the Windows autopilot device.
     - `[IntendedDeploymentProfile <IMicrosoftGraphWindowsAutopilotDeploymentProfile>]`: Windows Autopilot Deployment Profile
     - `[LastContactedDateTime <DateTime?>]`: Intune Last Contacted Date Time of the Windows autopilot device.
@@ -614,23 +705,25 @@ DEPLOYMENTPROFILE <IMicrosoftGraphWindowsAutopilotDeploymentProfile>: Windows Au
     - `[Model <String>]`: Model name of the Windows autopilot device.
     - `[ProductKey <String>]`: Product Key of the Windows autopilot device.
     - `[PurchaseOrderIdentifier <String>]`: Purchase Order Identifier of the Windows autopilot device.
+    - `[RemediationState <WindowsAutopilotDeviceRemediationState?>]`: Device remediation status, indicating whether or not hardware has been changed for an Autopilot-registered device.
+    - `[RemediationStateLastModifiedDateTime <DateTime?>]`: RemediationState set time of Autopilot device.
     - `[ResourceName <String>]`: Resource Name.
     - `[SerialNumber <String>]`: Serial number of the Windows autopilot device.
     - `[SkuNumber <String>]`: SKU Number
     - `[SystemFamily <String>]`: System Family
     - `[UserPrincipalName <String>]`: User Principal Name.
   - `[Assignments <IMicrosoftGraphWindowsAutopilotDeploymentProfileAssignment[]>]`: The list of group assignments for the profile.
-    - `[Id <String>]`: Read-only.
-    - `[Source <String>]`: Represents source of assignment.
+    - `[Id <String>]`: 
+    - `[Source <DeviceAndAppManagementAssignmentSource?>]`: Represents source of assignment.
     - `[SourceId <String>]`: Identifier for resource used for deployment to a group
     - `[Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget1>]`: Base type for assignment targets.
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[DeviceAndAppManagementAssignmentFilterId <String>]`: The Id of the filter for the target assignment.
-      - `[DeviceAndAppManagementAssignmentFilterType <String>]`: Represents type of the assignment filter.
+      - `[DeviceAndAppManagementAssignmentFilterType <DeviceAndAppManagementAssignmentFilterType?>]`: Represents type of the assignment filter.
   - `[CreatedDateTime <DateTime?>]`: Profile creation time
   - `[Description <String>]`: Description of the profile
   - `[DeviceNameTemplate <String>]`: The template used to name the AutoPilot Device. This can be a custom text and can also contain either the serial number of the device, or a randomly generated number. The total length of the text generated by the template can be no more than 15 characters.
-  - `[DeviceType <String>]`: windowsAutopilotDeviceType
+  - `[DeviceType <WindowsAutopilotDeviceType?>]`: windowsAutopilotDeviceType
   - `[DisplayName <String>]`: Name of the profile
   - `[EnableWhiteGlove <Boolean?>]`: Enable Autopilot White Glove for the profile.
   - `[EnrollmentStatusScreenSettings <IMicrosoftGraphWindowsEnrollmentStatusScreenSettings>]`: Enrollment status screen setting
@@ -648,7 +741,7 @@ DEPLOYMENTPROFILE <IMicrosoftGraphWindowsAutopilotDeploymentProfile>: Windows Au
   - `[ManagementServiceAppId <String>]`: AzureAD management app ID used during client device-based enrollment discovery
   - `[OutOfBoxExperienceSettings <IMicrosoftGraphOutOfBoxExperienceSettings>]`: Out of box experience setting
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[DeviceUsageType <String>]`: windowsDeviceUsageType
+    - `[DeviceUsageType <WindowsDeviceUsageType?>]`: windowsDeviceUsageType
     - `[HideEscapeLink <Boolean?>]`: If set to true, then the user can't start over with different account, on company sign-in
     - `[HideEula <Boolean?>]`: Show or hide EULA to user
     - `[HidePrivacySettings <Boolean?>]`: Show or hide privacy settings to user
@@ -660,7 +753,6 @@ INPUTOBJECT <IDeviceManagementEnrolmentIdentity>: Identity Parameter
   - `[AndroidDeviceOwnerEnrollmentProfileId <String>]`: key: id of androidDeviceOwnerEnrollmentProfile
   - `[AndroidForWorkEnrollmentProfileId <String>]`: key: id of androidForWorkEnrollmentProfile
   - `[AppScopeId <String>]`: key: id of appScope
-  - `[AppScopeId1 <String>]`: Usage: appScopeId={appScopeId}
   - `[AppleEnrollmentProfileAssignmentId <String>]`: key: id of appleEnrollmentProfileAssignment
   - `[AppleUserInitiatedEnrollmentProfileId <String>]`: key: id of appleUserInitiatedEnrollmentProfile
   - `[ApprovalId <String>]`: key: id of approval
@@ -669,15 +761,13 @@ INPUTOBJECT <IDeviceManagementEnrolmentIdentity>: Identity Parameter
   - `[DeviceEnrollmentConfigurationId <String>]`: key: id of deviceEnrollmentConfiguration
   - `[DeviceManagementAutopilotEventId <String>]`: key: id of deviceManagementAutopilotEvent
   - `[DeviceManagementAutopilotPolicyStatusDetailId <String>]`: key: id of deviceManagementAutopilotPolicyStatusDetail
-  - `[DirectoryScopeId <String>]`: Usage: directoryScopeId={directoryScopeId}
+  - `[DirectoryObjectId <String>]`: key: id of directoryObject
   - `[EnrollmentConfigurationAssignmentId <String>]`: key: id of enrollmentConfigurationAssignment
   - `[EnrollmentProfileId <String>]`: key: id of enrollmentProfile
   - `[ImportedAppleDeviceIdentityId <String>]`: key: id of importedAppleDeviceIdentity
   - `[ImportedDeviceIdentityId <String>]`: key: id of importedDeviceIdentity
   - `[ImportedWindowsAutopilotDeviceIdentityId <String>]`: key: id of importedWindowsAutopilotDeviceIdentity
-  - `[On <String>]`: Usage: on={on}
-  - `[PrincipalId <String>]`: Usage: principalId={principalId}
-  - `[RoleDefinitionId <String>]`: Usage: roleDefinitionId={roleDefinitionId}
+  - `[On <String>]`: Usage: on='{on}'
   - `[UnifiedRbacResourceActionId <String>]`: key: id of unifiedRbacResourceAction
   - `[UnifiedRbacResourceNamespaceId <String>]`: key: id of unifiedRbacResourceNamespace
   - `[UnifiedRoleAssignmentId <String>]`: key: id of unifiedRoleAssignment
@@ -698,18 +788,21 @@ INPUTOBJECT <IDeviceManagementEnrolmentIdentity>: Identity Parameter
 
 INTENDEDDEPLOYMENTPROFILE <IMicrosoftGraphWindowsAutopilotDeploymentProfile>: Windows Autopilot Deployment Profile
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
-  - `[AssignedDevices <IMicrosoftGraphWindowsAutopilotDeviceIdentity1[]>]`: The list of assigned devices for the profile.
-    - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
+  - `[AssignedDevices <IMicrosoftGraphWindowsAutopilotDeviceIdentity[]>]`: The list of assigned devices for the profile.
+    - `[Id <String>]`: 
     - `[AddressableUserName <String>]`: Addressable user name.
     - `[AzureActiveDirectoryDeviceId <String>]`: AAD Device ID - to be deprecated
     - `[AzureAdDeviceId <String>]`: AAD Device ID
     - `[DeploymentProfile <IMicrosoftGraphWindowsAutopilotDeploymentProfile>]`: Windows Autopilot Deployment Profile
     - `[DeploymentProfileAssignedDateTime <DateTime?>]`: Profile set time of the Windows autopilot device.
-    - `[DeploymentProfileAssignmentDetailedStatus <String>]`: windowsAutopilotProfileAssignmentDetailedStatus
-    - `[DeploymentProfileAssignmentStatus <String>]`: windowsAutopilotProfileAssignmentStatus
+    - `[DeploymentProfileAssignmentDetailedStatus <WindowsAutopilotProfileAssignmentDetailedStatus?>]`: windowsAutopilotProfileAssignmentDetailedStatus
+    - `[DeploymentProfileAssignmentStatus <WindowsAutopilotProfileAssignmentStatus?>]`: windowsAutopilotProfileAssignmentStatus
+    - `[DeviceAccountPassword <String>]`: Surface Hub Device Account Password
+    - `[DeviceAccountUpn <String>]`: Surface Hub Device Account Upn
+    - `[DeviceFriendlyName <String>]`: Surface Hub Device Friendly Name
     - `[DisplayName <String>]`: Display Name
-    - `[EnrollmentState <String>]`: 
+    - `[EnrollmentState <EnrollmentState?>]`: 
     - `[GroupTag <String>]`: Group Tag of the Windows autopilot device.
     - `[IntendedDeploymentProfile <IMicrosoftGraphWindowsAutopilotDeploymentProfile>]`: Windows Autopilot Deployment Profile
     - `[LastContactedDateTime <DateTime?>]`: Intune Last Contacted Date Time of the Windows autopilot device.
@@ -718,23 +811,25 @@ INTENDEDDEPLOYMENTPROFILE <IMicrosoftGraphWindowsAutopilotDeploymentProfile>: Wi
     - `[Model <String>]`: Model name of the Windows autopilot device.
     - `[ProductKey <String>]`: Product Key of the Windows autopilot device.
     - `[PurchaseOrderIdentifier <String>]`: Purchase Order Identifier of the Windows autopilot device.
+    - `[RemediationState <WindowsAutopilotDeviceRemediationState?>]`: Device remediation status, indicating whether or not hardware has been changed for an Autopilot-registered device.
+    - `[RemediationStateLastModifiedDateTime <DateTime?>]`: RemediationState set time of Autopilot device.
     - `[ResourceName <String>]`: Resource Name.
     - `[SerialNumber <String>]`: Serial number of the Windows autopilot device.
     - `[SkuNumber <String>]`: SKU Number
     - `[SystemFamily <String>]`: System Family
     - `[UserPrincipalName <String>]`: User Principal Name.
   - `[Assignments <IMicrosoftGraphWindowsAutopilotDeploymentProfileAssignment[]>]`: The list of group assignments for the profile.
-    - `[Id <String>]`: Read-only.
-    - `[Source <String>]`: Represents source of assignment.
+    - `[Id <String>]`: 
+    - `[Source <DeviceAndAppManagementAssignmentSource?>]`: Represents source of assignment.
     - `[SourceId <String>]`: Identifier for resource used for deployment to a group
     - `[Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget1>]`: Base type for assignment targets.
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[DeviceAndAppManagementAssignmentFilterId <String>]`: The Id of the filter for the target assignment.
-      - `[DeviceAndAppManagementAssignmentFilterType <String>]`: Represents type of the assignment filter.
+      - `[DeviceAndAppManagementAssignmentFilterType <DeviceAndAppManagementAssignmentFilterType?>]`: Represents type of the assignment filter.
   - `[CreatedDateTime <DateTime?>]`: Profile creation time
   - `[Description <String>]`: Description of the profile
   - `[DeviceNameTemplate <String>]`: The template used to name the AutoPilot Device. This can be a custom text and can also contain either the serial number of the device, or a randomly generated number. The total length of the text generated by the template can be no more than 15 characters.
-  - `[DeviceType <String>]`: windowsAutopilotDeviceType
+  - `[DeviceType <WindowsAutopilotDeviceType?>]`: windowsAutopilotDeviceType
   - `[DisplayName <String>]`: Name of the profile
   - `[EnableWhiteGlove <Boolean?>]`: Enable Autopilot White Glove for the profile.
   - `[EnrollmentStatusScreenSettings <IMicrosoftGraphWindowsEnrollmentStatusScreenSettings>]`: Enrollment status screen setting
@@ -752,7 +847,7 @@ INTENDEDDEPLOYMENTPROFILE <IMicrosoftGraphWindowsAutopilotDeploymentProfile>: Wi
   - `[ManagementServiceAppId <String>]`: AzureAD management app ID used during client device-based enrollment discovery
   - `[OutOfBoxExperienceSettings <IMicrosoftGraphOutOfBoxExperienceSettings>]`: Out of box experience setting
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[DeviceUsageType <String>]`: windowsDeviceUsageType
+    - `[DeviceUsageType <WindowsDeviceUsageType?>]`: windowsDeviceUsageType
     - `[HideEscapeLink <Boolean?>]`: If set to true, then the user can't start over with different account, on company sign-in
     - `[HideEula <Boolean?>]`: Show or hide EULA to user
     - `[HidePrivacySettings <Boolean?>]`: Show or hide privacy settings to user

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgRoleManagementEntitlementManagement
 
 ## SYNOPSIS
-Container for roles and assignments for entitlement management resources.
+Delete navigation property entitlementManagement for roleManagement
 
 ## SYNTAX
 
@@ -18,7 +18,7 @@ Remove-MgRoleManagementEntitlementManagement [-IfMatch <String>] [-PassThru] [-C
 ```
 
 ## DESCRIPTION
-Container for roles and assignments for entitlement management resources.
+Delete navigation property entitlementManagement for roleManagement
 
 ## EXAMPLES
 

@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgDeviceManagementImportedWindowAutopilotDeviceIdentity
 
 ## SYNOPSIS
-Collection of imported Windows autopilot devices.
+Create new navigation property to importedWindowsAutopilotDeviceIdentities for deviceManagement
 
 ## SYNTAX
 
@@ -29,7 +29,7 @@ New-MgDeviceManagementImportedWindowAutopilotDeviceIdentity
 ```
 
 ## DESCRIPTION
-Collection of imported Windows autopilot devices.
+Create new navigation property to importedWindowsAutopilotDeviceIdentities for deviceManagement
 
 ## EXAMPLES
 
@@ -112,7 +112,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -240,7 +240,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphImportedWindowsAutopilotDeviceIdentity>: Imported windows autopilot devices.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[AssignedUserPrincipalName <String>]`: UPN of the user the device will be assigned
   - `[GroupTag <String>]`: Group Tag of the Windows autopilot device.
   - `[HardwareIdentifier <Byte[]>]`: Hardware Blob of the Windows autopilot device.
@@ -251,14 +251,14 @@ BODYPARAMETER <IMicrosoftGraphImportedWindowsAutopilotDeviceIdentity>: Imported 
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[DeviceErrorCode <Int32?>]`: Device error code reported by Device Directory Service(DDS).
     - `[DeviceErrorName <String>]`: Device error name reported by Device Directory Service(DDS).
-    - `[DeviceImportStatus <String>]`: importedWindowsAutopilotDeviceIdentityImportStatus
+    - `[DeviceImportStatus <ImportedWindowsAutopilotDeviceIdentityImportStatus?>]`: importedWindowsAutopilotDeviceIdentityImportStatus
     - `[DeviceRegistrationId <String>]`: Device Registration ID for successfully added device reported by Device Directory Service(DDS).
 
 STATE <IMicrosoftGraphImportedWindowsAutopilotDeviceIdentityState>: importedWindowsAutopilotDeviceIdentityState
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[DeviceErrorCode <Int32?>]`: Device error code reported by Device Directory Service(DDS).
   - `[DeviceErrorName <String>]`: Device error name reported by Device Directory Service(DDS).
-  - `[DeviceImportStatus <String>]`: importedWindowsAutopilotDeviceIdentityImportStatus
+  - `[DeviceImportStatus <ImportedWindowsAutopilotDeviceIdentityImportStatus?>]`: importedWindowsAutopilotDeviceIdentityImportStatus
   - `[DeviceRegistrationId <String>]`: Device Registration ID for successfully added device reported by Device Directory Service(DDS).
 
 ## RELATED LINKS
