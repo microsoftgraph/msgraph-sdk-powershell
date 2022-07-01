@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgBookingBusiness
 
 ## SYNOPSIS
-Represents a Microsot Bookings Business.
+Delete entity from bookingBusinesses
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Remove-MgBookingBusiness -InputObject <IBookingsIdentity> [-IfMatch <String>] [-
 ```
 
 ## DESCRIPTION
-Represents a Microsot Bookings Business.
+Delete entity from bookingBusinesses
 
 ## EXAMPLES
 

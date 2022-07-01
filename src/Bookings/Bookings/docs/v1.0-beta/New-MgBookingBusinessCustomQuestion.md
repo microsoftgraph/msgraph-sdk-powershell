@@ -8,9 +8,7 @@ schema: 2.0.0
 # New-MgBookingBusinessCustomQuestion
 
 ## SYNOPSIS
-All the custom questions of this business.
-Read-only.
-Nullable.
+Create new navigation property to customQuestions for bookingBusinesses
 
 ## SYNTAX
 
@@ -41,9 +39,7 @@ New-MgBookingBusinessCustomQuestion -InputObject <IBookingsIdentity> [-Additiona
 ```
 
 ## DESCRIPTION
-All the custom questions of this business.
-Read-only.
-Nullable.
+Create new navigation property to customQuestions for bookingBusinesses
 
 ## EXAMPLES
 
@@ -141,7 +137,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -226,7 +222,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphBookingCustomQuestion>: Represents a custom question of the business.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[AnswerInputType <String>]`: answerInputType
   - `[AnswerOptions <String[]>]`: List of possible answer values.
   - `[DisplayName <String>]`: Display name of this entity.
