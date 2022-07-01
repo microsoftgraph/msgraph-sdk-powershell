@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Security
-Module Guid: 37c028d9-39dd-4b7b-8d75-cee29f2ab723
+Module Guid: 26e5ba38-d996-4acc-bba1-73c2ad00413a
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.security
 Help Version: 1.0.0.0
 Locale: en-US
@@ -12,8 +12,7 @@ Microsoft Graph PowerShell Cmdlets
 
 ## Microsoft.Graph.Security Cmdlets
 ### [Get-MgSecurityAlert](Get-MgSecurityAlert.md)
-Read-only.
-Nullable.
+Get alerts from security
 
 ### [Get-MgSecuritySecureScore](Get-MgSecuritySecureScore.md)
 Get secureScores from security
@@ -22,8 +21,7 @@ Get secureScores from security
 Get secureScoreControlProfiles from security
 
 ### [New-MgSecurityAlert](New-MgSecurityAlert.md)
-Read-only.
-Nullable.
+Create new navigation property to alerts for security
 
 ### [New-MgSecuritySecureScore](New-MgSecuritySecureScore.md)
 Create new navigation property to secureScores for security
@@ -32,8 +30,7 @@ Create new navigation property to secureScores for security
 Create new navigation property to secureScoreControlProfiles for security
 
 ### [Remove-MgSecurityAlert](Remove-MgSecurityAlert.md)
-Read-only.
-Nullable.
+Delete navigation property alerts for security
 
 ### [Remove-MgSecuritySecureScore](Remove-MgSecuritySecureScore.md)
 Delete navigation property secureScores for security
@@ -42,8 +39,7 @@ Delete navigation property secureScores for security
 Delete navigation property secureScoreControlProfiles for security
 
 ### [Update-MgSecurityAlert](Update-MgSecurityAlert.md)
-Read-only.
-Nullable.
+Update the navigation property alerts in security
 
 ### [Update-MgSecuritySecureScore](Update-MgSecuritySecureScore.md)
 Update the navigation property secureScores in security
