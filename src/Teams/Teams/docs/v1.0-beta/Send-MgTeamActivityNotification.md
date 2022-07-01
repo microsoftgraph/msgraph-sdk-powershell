@@ -12,7 +12,7 @@ Invoke action sendActivityNotification
 
 ## SYNTAX
 
-### SendExpanded (Default)
+### SendExpanded1 (Default)
 ```
 Send-MgTeamActivityNotification -TeamId <String> [-ActivityType <String>] [-AdditionalProperties <Hashtable>]
  [-ChainId <Int64>] [-PreviewText <IMicrosoftGraphItemBody>] [-Recipient <Hashtable>]
@@ -20,21 +20,21 @@ Send-MgTeamActivityNotification -TeamId <String> [-ActivityType <String>] [-Addi
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### Send
+### Send1
 ```
 Send-MgTeamActivityNotification -TeamId <String>
  -BodyParameter <IPaths1Bflym4TeamsTeamIdMicrosoftGraphSendactivitynotificationPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### SendViaIdentity
+### SendViaIdentity1
 ```
 Send-MgTeamActivityNotification -InputObject <ITeamsIdentity>
  -BodyParameter <IPaths1Bflym4TeamsTeamIdMicrosoftGraphSendactivitynotificationPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### SendViaIdentityExpanded
+### SendViaIdentityExpanded1
 ```
 Send-MgTeamActivityNotification -InputObject <ITeamsIdentity> [-ActivityType <String>]
  [-AdditionalProperties <Hashtable>] [-ChainId <Int64>] [-PreviewText <IMicrosoftGraphItemBody>]
@@ -54,7 +54,7 @@ Invoke action sendActivityNotification
 
 ```yaml
 Type: System.String
-Parameter Sets: SendExpanded, SendViaIdentityExpanded
+Parameter Sets: SendExpanded1, SendViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -69,7 +69,7 @@ Additional Parameters
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: SendExpanded, SendViaIdentityExpanded
+Parameter Sets: SendExpanded1, SendViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -85,7 +85,7 @@ To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETE
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IPaths1Bflym4TeamsTeamIdMicrosoftGraphSendactivitynotificationPostRequestbodyContentApplicationJsonSchema
-Parameter Sets: Send, SendViaIdentity
+Parameter Sets: Send1, SendViaIdentity1
 Aliases:
 
 Required: True
@@ -100,7 +100,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.Int64
-Parameter Sets: SendExpanded, SendViaIdentityExpanded
+Parameter Sets: SendExpanded1, SendViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -116,7 +116,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.ITeamsIdentity
-Parameter Sets: SendViaIdentity, SendViaIdentityExpanded
+Parameter Sets: SendViaIdentity1, SendViaIdentityExpanded1
 Aliases:
 
 Required: True
@@ -147,7 +147,7 @@ To construct, please use Get-Help -Online and see NOTES section for PREVIEWTEXT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphItemBody
-Parameter Sets: SendExpanded, SendViaIdentityExpanded
+Parameter Sets: SendExpanded1, SendViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -162,7 +162,7 @@ teamworkNotificationRecipient
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: SendExpanded, SendViaIdentityExpanded
+Parameter Sets: SendExpanded1, SendViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -177,7 +177,7 @@ key: id of team
 
 ```yaml
 Type: System.String
-Parameter Sets: Send, SendExpanded
+Parameter Sets: Send1, SendExpanded1
 Aliases:
 
 Required: True
@@ -193,7 +193,7 @@ To construct, please use Get-Help -Online and see NOTES section for TEMPLATEPARA
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphKeyValuePair[]
-Parameter Sets: SendExpanded, SendViaIdentityExpanded
+Parameter Sets: SendExpanded1, SendViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -209,7 +209,7 @@ To construct, please use Get-Help -Online and see NOTES section for TOPIC proper
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTeamworkActivityTopic
-Parameter Sets: SendExpanded, SendViaIdentityExpanded
+Parameter Sets: SendExpanded1, SendViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -299,10 +299,12 @@ INPUTOBJECT <ITeamsIdentity>: Identity Parameter
   - `[ChatMessageId <String>]`: key: id of chatMessage
   - `[ChatMessageId1 <String>]`: key: id of chatMessage
   - `[ConversationMemberId <String>]`: key: id of conversationMember
+  - `[DeletedTeamId <String>]`: key: id of deletedTeam
   - `[GroupId <String>]`: key: id of group
   - `[OfferShiftRequestId <String>]`: key: id of offerShiftRequest
   - `[OpenShiftChangeRequestId <String>]`: key: id of openShiftChangeRequest
   - `[OpenShiftId <String>]`: key: id of openShift
+  - `[PinnedChatMessageInfoId <String>]`: key: id of pinnedChatMessageInfo
   - `[ResourceSpecificPermissionGrantId <String>]`: key: id of resourceSpecificPermissionGrant
   - `[SchedulingGroupId <String>]`: key: id of schedulingGroup
   - `[SharedWithChannelTeamInfoId <String>]`: key: id of sharedWithChannelTeamInfo
@@ -318,14 +320,11 @@ INPUTOBJECT <ITeamsIdentity>: Identity Parameter
   - `[TeamworkDeviceOperationId <String>]`: key: id of teamworkDeviceOperation
   - `[TeamworkTagId <String>]`: key: id of teamworkTag
   - `[TeamworkTagMemberId <String>]`: key: id of teamworkTagMember
-  - `[TenantId <String>]`: Usage: tenantId={tenantId}
   - `[TimeCardId <String>]`: key: id of timeCard
   - `[TimeOffId <String>]`: key: id of timeOff
   - `[TimeOffReasonId <String>]`: key: id of timeOffReason
   - `[TimeOffRequestId <String>]`: key: id of timeOffRequest
   - `[UserId <String>]`: key: id of user
-  - `[UserId1 <String>]`: Usage: userId={userId}
-  - `[UserPrincipalName <String>]`: Usage: userPrincipalName={userPrincipalName}
   - `[UserScopeTeamsAppInstallationId <String>]`: key: id of userScopeTeamsAppInstallation
   - `[WorkforceIntegrationId <String>]`: key: id of workforceIntegration
 
