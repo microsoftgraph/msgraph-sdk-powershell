@@ -19,25 +19,13 @@ Get-MgEducationClassAssignmentCategory -EducationClassId <String> [-ExpandProper
  [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
-### Get1
+### Get
 ```
 Get-MgEducationClassAssignmentCategory -EducationCategoryId <String> -EducationClassId <String>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
-### Get2
-```
-Get-MgEducationClassAssignmentCategory -EducationAssignmentId <String> -EducationCategoryId <String>
- -EducationClassId <String> [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
-```
-
-### GetViaIdentity1
-```
-Get-MgEducationClassAssignmentCategory -InputObject <IEducationIdentity> [-ExpandProperty <String[]>]
- [-Property <String[]>] [<CommonParameters>]
-```
-
-### GetViaIdentity2
+### GetViaIdentity
 ```
 Get-MgEducationClassAssignmentCategory -InputObject <IEducationIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
@@ -93,7 +81,7 @@ key: id of educationAssignment
 
 ```yaml
 Type: System.String
-Parameter Sets: Get2, List2
+Parameter Sets: List2
 Aliases:
 
 Required: True
@@ -108,7 +96,7 @@ key: id of educationCategory
 
 ```yaml
 Type: System.String
-Parameter Sets: Get1, Get2
+Parameter Sets: Get
 Aliases:
 
 Required: True
@@ -123,7 +111,7 @@ key: id of educationClass
 
 ```yaml
 Type: System.String
-Parameter Sets: Get1, Get2, List1, List2
+Parameter Sets: Get, List1, List2
 Aliases:
 
 Required: True
@@ -169,7 +157,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IEducationIdentity
-Parameter Sets: GetViaIdentity1, GetViaIdentity2
+Parameter Sets: GetViaIdentity
 Aliases:
 
 Required: True

@@ -8,8 +8,7 @@ schema: 2.0.0
 # Remove-MgEducationClassAssignment
 
 ## SYNOPSIS
-All assignments associated with this class.
-Nullable.
+Delete navigation property assignments for education
 
 ## SYNTAX
 
@@ -26,8 +25,7 @@ Remove-MgEducationClassAssignment -InputObject <IEducationIdentity> [-IfMatch <S
 ```
 
 ## DESCRIPTION
-All assignments associated with this class.
-Nullable.
+Delete navigation property assignments for education
 
 ## EXAMPLES
 

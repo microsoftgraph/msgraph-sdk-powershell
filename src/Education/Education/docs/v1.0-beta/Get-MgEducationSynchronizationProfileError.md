@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgEducationSynchronizationProfileError
 
 ## SYNOPSIS
-All errors associated with this synchronization profile.
+Get errors from education
 
 ## SYNTAX
 
@@ -33,7 +33,7 @@ Get-MgEducationSynchronizationProfileError -InputObject <IEducationIdentity> [-E
 ```
 
 ## DESCRIPTION
-All errors associated with this synchronization profile.
+Get errors from education
 
 ## EXAMPLES
 
