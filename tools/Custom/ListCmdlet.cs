@@ -96,16 +96,25 @@ namespace Microsoft.Graph.PowerShell.Cmdlets.Custom
                     null));
             }
 
-            if (invocationInfo.BoundParameters.ContainsKey("Top") && top > MaxPageSize)
+            if (invocationInfo.BoundParameters.ContainsKey("Top"))
             {
-                limit = top;
-            }
+                if ((top > MaxPageSize) || invocationInfo.BoundParameters.ContainsKey("All") || invocationInfo.BoundParameters.ContainsKey("PageSize"))
+                {
+                    limit = top;
+                }
 
-            if (invocationInfo.BoundParameters.ContainsKey("PageSize") && invocationInfo.BoundParameters.ContainsKey("Top"))
-            {
-                limit = top;
-                invocationInfo.BoundParameters["Top"] = PageSize;
-                top = PageSize;
+                if (top > MaxPageSize)
+                {
+                    // Remove $top from query parameters, we will handle paging. 
+                    top = default;
+                    invocationInfo.BoundParameters.Remove("Top");
+                }
+
+                if (invocationInfo.BoundParameters.ContainsKey("PageSize"))
+                {
+                    invocationInfo.BoundParameters["Top"] = PageSize;
+                    top = PageSize;
+                }
             }
 
             if ((!invocationInfo.BoundParameters.ContainsKey("Count")) && invocationInfo.BoundParameters.ContainsKey("CountVariable"))
@@ -158,7 +167,7 @@ namespace Microsoft.Graph.PowerShell.Cmdlets.Custom
                 }
                 else
                 {
-                    nextLinkUri.Query += $"$top=" + global::System.Uri.EscapeDataString(overflowItemsCount.ToString());
+                    nextLinkUri.Query += $"&$top={System.Uri.EscapeDataString(overflowItemsCount.ToString())}";
                 }
             }
             return nextLinkUri.Uri;
