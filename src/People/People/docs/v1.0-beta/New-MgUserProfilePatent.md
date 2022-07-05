@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgUserProfilePatent
 
 ## SYNOPSIS
-Represents patents that a user has added to their profile.
+Create new navigation property to patents for users
 
 ## SYNTAX
 
@@ -45,7 +45,7 @@ New-MgUserProfilePatent -InputObject <IPeopleIdentity> [-AdditionalProperties <H
 ```
 
 ## DESCRIPTION
-Represents patents that a user has added to their profile.
+Create new navigation property to patents for users
 
 ## EXAMPLES
 
@@ -159,7 +159,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -432,7 +432,7 @@ BODYPARAMETER <IMicrosoftGraphItemPatent>: itemPatent
   - `[Source <IMicrosoftGraphPersonDataSources>]`: personDataSources
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Type <String[]>]`: 
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[Description <String>]`: Descpription of the patent or filing.
   - `[DisplayName <String>]`: Title of the patent or filing.
   - `[IsPending <Boolean?>]`: Indicates the patent is pending.

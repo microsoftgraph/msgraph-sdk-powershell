@@ -8,36 +8,36 @@ schema: 2.0.0
 # Remove-MgShareListItemVersionField
 
 ## SYNOPSIS
-A collection of the fields and values for this version of the list item.
+Delete navigation property fields for shares
 
 ## SYNTAX
 
-### Delete3 (Default)
+### Delete1 (Default)
 ```
 Remove-MgShareListItemVersionField -ListItemVersionId <String> -SharedDriveItemId <String> [-IfMatch <String>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### Delete2
+### Delete
 ```
 Remove-MgShareListItemVersionField -ListItemId <String> -ListItemVersionId <String>
  -SharedDriveItemId <String> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### DeleteViaIdentity2
+### DeleteViaIdentity
 ```
 Remove-MgShareListItemVersionField -InputObject <IFilesIdentity> [-IfMatch <String>] [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
-### DeleteViaIdentity3
+### DeleteViaIdentity1
 ```
 Remove-MgShareListItemVersionField -InputObject <IFilesIdentity> [-IfMatch <String>] [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-A collection of the fields and values for this version of the list item.
+Delete navigation property fields for shares
 
 ## EXAMPLES
 
@@ -64,7 +64,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IFilesIdentity
-Parameter Sets: DeleteViaIdentity2, DeleteViaIdentity3
+Parameter Sets: DeleteViaIdentity, DeleteViaIdentity1
 Aliases:
 
 Required: True
@@ -79,7 +79,7 @@ key: id of listItem
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete2
+Parameter Sets: Delete
 Aliases:
 
 Required: True
@@ -94,7 +94,7 @@ key: id of listItemVersion
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete2, Delete3
+Parameter Sets: Delete, Delete1
 Aliases:
 
 Required: True
@@ -124,7 +124,7 @@ key: id of sharedDriveItem
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete2, Delete3
+Parameter Sets: Delete, Delete1
 Aliases:
 
 Required: True
@@ -189,19 +189,25 @@ INPUTOBJECT <IFilesIdentity>: Identity Parameter
   - `[ColumnDefinitionId <String>]`: key: id of columnDefinition
   - `[ColumnLinkId <String>]`: key: id of columnLink
   - `[ContentTypeId <String>]`: key: id of contentType
+  - `[ContentTypeId1 <String>]`: key: id of contentType
+  - `[DocumentSetVersionId <String>]`: key: id of documentSetVersion
   - `[DriveId <String>]`: key: id of drive
   - `[DriveItemId <String>]`: key: id of driveItem
-  - `[EndDateTime <String>]`: Usage: endDateTime={endDateTime}
+  - `[DriveItemId1 <String>]`: key: id of driveItem
+  - `[DriveItemVersionId <String>]`: key: id of driveItemVersion
+  - `[EndDateTime <String>]`: Usage: endDateTime='{endDateTime}'
   - `[GroupId <String>]`: key: id of group
-  - `[Interval <String>]`: Usage: interval={interval}
+  - `[Interval <String>]`: Usage: interval='{interval}'
   - `[ListItemId <String>]`: key: id of listItem
   - `[ListItemVersionId <String>]`: key: id of listItemVersion
-  - `[Q <String>]`: Usage: q={q}
+  - `[PermissionId <String>]`: key: id of permission
+  - `[Q <String>]`: Usage: q='{q}'
   - `[RichLongRunningOperationId <String>]`: key: id of richLongRunningOperation
   - `[SharedDriveItemId <String>]`: key: id of sharedDriveItem
-  - `[StartDateTime <String>]`: Usage: startDateTime={startDateTime}
+  - `[StartDateTime <String>]`: Usage: startDateTime='{startDateTime}'
   - `[SubscriptionId <String>]`: key: id of subscription
-  - `[Token <String>]`: Usage: token={token}
+  - `[ThumbnailSetId <String>]`: key: id of thumbnailSet
+  - `[Token <String>]`: Usage: token='{token}'
   - `[UserId <String>]`: key: id of user
 
 ## RELATED LINKS

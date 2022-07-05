@@ -8,8 +8,7 @@ schema: 2.0.0
 # Get-MgCommunicationCallOperation
 
 ## SYNOPSIS
-Read-only.
-Nullable.
+Get operations from communications
 
 ## SYNTAX
 
@@ -33,8 +32,7 @@ Get-MgCommunicationCallOperation -InputObject <ICloudCommunicationsIdentity> [-E
 ```
 
 ## DESCRIPTION
-Read-only.
-Nullable.
+Get operations from communications
 
 ## EXAMPLES
 

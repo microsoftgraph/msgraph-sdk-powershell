@@ -8,15 +8,16 @@ schema: 2.0.0
 # New-MgDeviceManagementDeviceEnrollmentConfigurationAssignment
 
 ## SYNOPSIS
-The list of group assignments for the device configuration profile
+Create new navigation property to assignments for deviceManagement
 
 ## SYNTAX
 
 ### CreateExpanded1 (Default)
 ```
 New-MgDeviceManagementDeviceEnrollmentConfigurationAssignment -DeviceEnrollmentConfigurationId <String>
- [-AdditionalProperties <Hashtable>] [-Id <String>] [-Source <String>] [-SourceId <String>]
- [-Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget1>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-AdditionalProperties <Hashtable>] [-Id <String>] [-Source <DeviceAndAppManagementAssignmentSource>]
+ [-SourceId <String>] [-Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget1>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Create1
@@ -36,12 +37,12 @@ New-MgDeviceManagementDeviceEnrollmentConfigurationAssignment
 ```
 New-MgDeviceManagementDeviceEnrollmentConfigurationAssignment
  -InputObject <IDeviceManagementEnrolmentIdentity> [-AdditionalProperties <Hashtable>] [-Id <String>]
- [-Source <String>] [-SourceId <String>] [-Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget1>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Source <DeviceAndAppManagementAssignmentSource>] [-SourceId <String>]
+ [-Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget1>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-The list of group assignments for the device configuration profile
+Create new navigation property to assignments for deviceManagement
 
 ## EXAMPLES
 
@@ -94,7 +95,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -128,7 +129,7 @@ Accept wildcard characters: False
 Represents source of assignment.
 
 ```yaml
-Type: System.String
+Type: Microsoft.Graph.PowerShell.Support.DeviceAndAppManagementAssignmentSource
 Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
@@ -225,19 +226,18 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphEnrollmentConfigurationAssignment1>: Enrollment Configuration Assignment
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
-  - `[Source <String>]`: Represents source of assignment.
+  - `[Id <String>]`: 
+  - `[Source <DeviceAndAppManagementAssignmentSource?>]`: Represents source of assignment.
   - `[SourceId <String>]`: Identifier for resource used for deployment to a group
   - `[Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget1>]`: Base type for assignment targets.
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[DeviceAndAppManagementAssignmentFilterId <String>]`: The Id of the filter for the target assignment.
-    - `[DeviceAndAppManagementAssignmentFilterType <String>]`: Represents type of the assignment filter.
+    - `[DeviceAndAppManagementAssignmentFilterType <DeviceAndAppManagementAssignmentFilterType?>]`: Represents type of the assignment filter.
 
 INPUTOBJECT <IDeviceManagementEnrolmentIdentity>: Identity Parameter
   - `[AndroidDeviceOwnerEnrollmentProfileId <String>]`: key: id of androidDeviceOwnerEnrollmentProfile
   - `[AndroidForWorkEnrollmentProfileId <String>]`: key: id of androidForWorkEnrollmentProfile
   - `[AppScopeId <String>]`: key: id of appScope
-  - `[AppScopeId1 <String>]`: Usage: appScopeId={appScopeId}
   - `[AppleEnrollmentProfileAssignmentId <String>]`: key: id of appleEnrollmentProfileAssignment
   - `[AppleUserInitiatedEnrollmentProfileId <String>]`: key: id of appleUserInitiatedEnrollmentProfile
   - `[ApprovalId <String>]`: key: id of approval
@@ -246,15 +246,13 @@ INPUTOBJECT <IDeviceManagementEnrolmentIdentity>: Identity Parameter
   - `[DeviceEnrollmentConfigurationId <String>]`: key: id of deviceEnrollmentConfiguration
   - `[DeviceManagementAutopilotEventId <String>]`: key: id of deviceManagementAutopilotEvent
   - `[DeviceManagementAutopilotPolicyStatusDetailId <String>]`: key: id of deviceManagementAutopilotPolicyStatusDetail
-  - `[DirectoryScopeId <String>]`: Usage: directoryScopeId={directoryScopeId}
+  - `[DirectoryObjectId <String>]`: key: id of directoryObject
   - `[EnrollmentConfigurationAssignmentId <String>]`: key: id of enrollmentConfigurationAssignment
   - `[EnrollmentProfileId <String>]`: key: id of enrollmentProfile
   - `[ImportedAppleDeviceIdentityId <String>]`: key: id of importedAppleDeviceIdentity
   - `[ImportedDeviceIdentityId <String>]`: key: id of importedDeviceIdentity
   - `[ImportedWindowsAutopilotDeviceIdentityId <String>]`: key: id of importedWindowsAutopilotDeviceIdentity
-  - `[On <String>]`: Usage: on={on}
-  - `[PrincipalId <String>]`: Usage: principalId={principalId}
-  - `[RoleDefinitionId <String>]`: Usage: roleDefinitionId={roleDefinitionId}
+  - `[On <String>]`: Usage: on='{on}'
   - `[UnifiedRbacResourceActionId <String>]`: key: id of unifiedRbacResourceAction
   - `[UnifiedRbacResourceNamespaceId <String>]`: key: id of unifiedRbacResourceNamespace
   - `[UnifiedRoleAssignmentId <String>]`: key: id of unifiedRoleAssignment
@@ -276,7 +274,7 @@ INPUTOBJECT <IDeviceManagementEnrolmentIdentity>: Identity Parameter
 TARGET <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget1>: Base type for assignment targets.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[DeviceAndAppManagementAssignmentFilterId <String>]`: The Id of the filter for the target assignment.
-  - `[DeviceAndAppManagementAssignmentFilterType <String>]`: Represents type of the assignment filter.
+  - `[DeviceAndAppManagementAssignmentFilterType <DeviceAndAppManagementAssignmentFilterType?>]`: Represents type of the assignment filter.
 
 ## RELATED LINKS
 

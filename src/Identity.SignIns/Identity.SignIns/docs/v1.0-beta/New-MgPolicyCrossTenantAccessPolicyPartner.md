@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgPolicyCrossTenantAccessPolicyPartner
 
 ## SYNOPSIS
-Defines partner-specific configurations for external Azure Active Directory organizations.
+Create new navigation property to partners for policies
 
 ## SYNTAX
 
@@ -18,7 +18,7 @@ New-MgPolicyCrossTenantAccessPolicyPartner [-AdditionalProperties <Hashtable>]
  [-B2BCollaborationInbound <IMicrosoftGraphCrossTenantAccessPolicyB2BSetting>]
  [-B2BCollaborationOutbound <IMicrosoftGraphCrossTenantAccessPolicyB2BSetting>]
  [-B2BDirectConnectInbound <IMicrosoftGraphCrossTenantAccessPolicyB2BSetting>]
- [-B2BDirectConnectOutbound <IMicrosoftGraphCrossTenantAccessPolicyB2BSetting>] [-Id <String>]
+ [-B2BDirectConnectOutbound <IMicrosoftGraphCrossTenantAccessPolicyB2BSetting>]
  [-InboundTrust <IMicrosoftGraphCrossTenantAccessPolicyInboundTrust>] [-IsServiceProvider]
  [-TenantId <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -31,7 +31,7 @@ New-MgPolicyCrossTenantAccessPolicyPartner
 ```
 
 ## DESCRIPTION
-Defines partner-specific configurations for external Azure Active Directory organizations.
+Create new navigation property to partners for policies
 
 ## EXAMPLES
 
@@ -129,21 +129,6 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -Id
-Read-only.
-
-```yaml
-Type: System.String
-Parameter Sets: CreateExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -305,7 +290,6 @@ BODYPARAMETER <IMicrosoftGraphCrossTenantAccessPolicyConfigurationPartner>: cros
     - `[IsCompliantDeviceAccepted <Boolean?>]`: Specifies whether compliant devices from external Azure AD organizations are trusted.
     - `[IsHybridAzureAdJoinedDeviceAccepted <Boolean?>]`: Specifies whether hybrid Azure AD joined devices from external Azure AD organizations are trusted.
     - `[IsMfaAccepted <Boolean?>]`: Specifies whether MFA from external Azure AD organizations is trusted.
-  - `[Id <String>]`: Read-only.
   - `[IsServiceProvider <Boolean?>]`: Identifies whether the partner-specific configuration is a Cloud Service Provider for your organization.
   - `[TenantId <String>]`: The tenant identifier for the partner Azure AD organization. Read-only. Key.
 

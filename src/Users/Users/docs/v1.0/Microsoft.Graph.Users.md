@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Users
-Module Guid: 9d45897a-80c2-4583-b513-697f04e4991e
+Module Guid: be7325b9-bc53-4f5d-8467-ef030e5fb73c
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users
 Help Version: 1.0.0.0
 Locale: en-US
@@ -12,326 +12,191 @@ Microsoft Graph PowerShell Cmdlets
 
 ## Microsoft.Graph.Users Cmdlets
 ### [Get-MgUser](Get-MgUser.md)
-Get entity from users by key
+Get a user
 
 ### [Get-MgUserCreatedObject](Get-MgUserCreatedObject.md)
-Directory objects that were created by the user.
-Read-only.
-Nullable.
-
-### [Get-MgUserCreatedObjectByRef](Get-MgUserCreatedObjectByRef.md)
-Directory objects that were created by the user.
-Read-only.
-Nullable.
+Get createdObjects from users
 
 ### [Get-MgUserDirectReport](Get-MgUserDirectReport.md)
-The users and contacts that report to the user.
-(The users and contacts that have their manager property set to this user.) Read-only.
-Nullable.
-Supports $expand.
-
-### [Get-MgUserDirectReportByRef](Get-MgUserDirectReportByRef.md)
-The users and contacts that report to the user.
-(The users and contacts that have their manager property set to this user.) Read-only.
-Nullable.
-Supports $expand.
+Get directReports from users
 
 ### [Get-MgUserExtension](Get-MgUserExtension.md)
-The collection of open extensions defined for the user.
-Read-only.
-Nullable.
+Get extensions from users
 
 ### [Get-MgUserLicenseDetail](Get-MgUserLicenseDetail.md)
-A collection of this user's license details.
-Read-only.
+Get licenseDetails from users
 
 ### [Get-MgUserManager](Get-MgUserManager.md)
-The user or contact that is this user's manager.
-Read-only.
-(HTTP Methods: GET, PUT, DELETE.).
-Supports $expand.
+Get manager from users
 
 ### [Get-MgUserManagerByRef](Get-MgUserManagerByRef.md)
-The user or contact that is this user's manager.
-Read-only.
-(HTTP Methods: GET, PUT, DELETE.).
-Supports $expand.
+Get ref of manager from users
 
 ### [Get-MgUserMemberOf](Get-MgUserMemberOf.md)
-The groups and directory roles that the user is a member of.
-Read-only.
-Nullable.
-Supports $expand.
-
-### [Get-MgUserMemberOfByRef](Get-MgUserMemberOfByRef.md)
-The groups and directory roles that the user is a member of.
-Read-only.
-Nullable.
-Supports $expand.
+Get memberOf from users
 
 ### [Get-MgUserOauth2PermissionGrant](Get-MgUserOauth2PermissionGrant.md)
 Get oauth2PermissionGrants from users
 
-### [Get-MgUserOauth2PermissionGrantByRef](Get-MgUserOauth2PermissionGrantByRef.md)
-Get ref of oauth2PermissionGrants from users
-
 ### [Get-MgUserOutlookMasterCategory](Get-MgUserOutlookMasterCategory.md)
-A list of categories defined for the user.
+Get masterCategories from users
 
 ### [Get-MgUserOwnedDevice](Get-MgUserOwnedDevice.md)
-Devices that are owned by the user.
-Read-only.
-Nullable.
-Supports $expand.
-
-### [Get-MgUserOwnedDeviceByRef](Get-MgUserOwnedDeviceByRef.md)
-Devices that are owned by the user.
-Read-only.
-Nullable.
-Supports $expand.
+Get ownedDevices from users
 
 ### [Get-MgUserOwnedObject](Get-MgUserOwnedObject.md)
-Directory objects that are owned by the user.
-Read-only.
-Nullable.
-Supports $expand.
-
-### [Get-MgUserOwnedObjectByRef](Get-MgUserOwnedObjectByRef.md)
-Directory objects that are owned by the user.
-Read-only.
-Nullable.
-Supports $expand.
+Get ownedObjects from users
 
 ### [Get-MgUserPhoto](Get-MgUserPhoto.md)
-The user's profile photo.
-Read-only.
+Get photo from users
 
 ### [Get-MgUserPhotoContent](Get-MgUserPhotoContent.md)
-The user's profile photo.
-Read-only.
+Get media content for the navigation property photo from users
 
 ### [Get-MgUserRegisteredDevice](Get-MgUserRegisteredDevice.md)
-Devices that are registered for the user.
-Read-only.
-Nullable.
-Supports $expand.
-
-### [Get-MgUserRegisteredDeviceByRef](Get-MgUserRegisteredDeviceByRef.md)
-Devices that are registered for the user.
-Read-only.
-Nullable.
-Supports $expand.
+Get registeredDevices from users
 
 ### [Get-MgUserSetting](Get-MgUserSetting.md)
-Read-only.
-Nullable.
+Get settings from users
 
 ### [Get-MgUserSettingShiftPreference](Get-MgUserSettingShiftPreference.md)
-The shift preferences for the user.
+Get shiftPreferences from users
 
 ### [Get-MgUserTodoList](Get-MgUserTodoList.md)
-The task lists in the users mailbox.
+Get lists from users
 
 ### [Get-MgUserTodoListExtension](Get-MgUserTodoListExtension.md)
-The collection of open extensions defined for the task list.
-Nullable.
+Get extensions from users
 
 ### [Get-MgUserTodoListTask](Get-MgUserTodoListTask.md)
-The tasks in this task list.
-Read-only.
-Nullable.
+Get tasks from users
+
+### [Get-MgUserTodoListTaskChecklistItem](Get-MgUserTodoListTaskChecklistItem.md)
+Get checklistItems from users
 
 ### [Get-MgUserTodoListTaskExtension](Get-MgUserTodoListTaskExtension.md)
-The collection of open extensions defined for the task.
-Nullable.
+Get extensions from users
 
 ### [Get-MgUserTodoListTaskLinkedResource](Get-MgUserTodoListTaskLinkedResource.md)
-A collection of resources linked to the task.
+Get linkedResources from users
 
 ### [Get-MgUserTransitiveMemberOf](Get-MgUserTransitiveMemberOf.md)
 Get transitiveMemberOf from users
 
-### [Get-MgUserTransitiveMemberOfByRef](Get-MgUserTransitiveMemberOfByRef.md)
-Get ref of transitiveMemberOf from users
-
 ### [New-MgUser](New-MgUser.md)
-Add new entity to users
-
-### [New-MgUserCreatedObjectByRef](New-MgUserCreatedObjectByRef.md)
-Directory objects that were created by the user.
-Read-only.
-Nullable.
-
-### [New-MgUserDirectReportByRef](New-MgUserDirectReportByRef.md)
-The users and contacts that report to the user.
-(The users and contacts that have their manager property set to this user.) Read-only.
-Nullable.
-Supports $expand.
+Create user
 
 ### [New-MgUserExtension](New-MgUserExtension.md)
-The collection of open extensions defined for the user.
-Read-only.
-Nullable.
-
-### [New-MgUserMemberOfByRef](New-MgUserMemberOfByRef.md)
-The groups and directory roles that the user is a member of.
-Read-only.
-Nullable.
-Supports $expand.
-
-### [New-MgUserOauth2PermissionGrantByRef](New-MgUserOauth2PermissionGrantByRef.md)
-Create new navigation property ref to oauth2PermissionGrants for users
+Create new navigation property to extensions for users
 
 ### [New-MgUserOutlookMasterCategory](New-MgUserOutlookMasterCategory.md)
-A list of categories defined for the user.
-
-### [New-MgUserOwnedDeviceByRef](New-MgUserOwnedDeviceByRef.md)
-Devices that are owned by the user.
-Read-only.
-Nullable.
-Supports $expand.
-
-### [New-MgUserOwnedObjectByRef](New-MgUserOwnedObjectByRef.md)
-Directory objects that are owned by the user.
-Read-only.
-Nullable.
-Supports $expand.
+Create new navigation property to masterCategories for users
 
 ### [New-MgUserPhoto](New-MgUserPhoto.md)
-Read-only.
-Nullable.
-
-### [New-MgUserRegisteredDeviceByRef](New-MgUserRegisteredDeviceByRef.md)
-Devices that are registered for the user.
-Read-only.
-Nullable.
-Supports $expand.
+Create new navigation property to photos for users
 
 ### [New-MgUserTodoList](New-MgUserTodoList.md)
-The task lists in the users mailbox.
+Create new navigation property to lists for users
 
 ### [New-MgUserTodoListExtension](New-MgUserTodoListExtension.md)
-The collection of open extensions defined for the task list.
-Nullable.
+Create new navigation property to extensions for users
 
 ### [New-MgUserTodoListTask](New-MgUserTodoListTask.md)
-The tasks in this task list.
-Read-only.
-Nullable.
+Create new navigation property to tasks for users
+
+### [New-MgUserTodoListTaskChecklistItem](New-MgUserTodoListTaskChecklistItem.md)
+Create new navigation property to checklistItems for users
 
 ### [New-MgUserTodoListTaskExtension](New-MgUserTodoListTaskExtension.md)
-The collection of open extensions defined for the task.
-Nullable.
+Create new navigation property to extensions for users
 
 ### [New-MgUserTodoListTaskLinkedResource](New-MgUserTodoListTaskLinkedResource.md)
-A collection of resources linked to the task.
-
-### [New-MgUserTransitiveMemberOfByRef](New-MgUserTransitiveMemberOfByRef.md)
-Create new navigation property ref to transitiveMemberOf for users
+Create new navigation property to linkedResources for users
 
 ### [Remove-MgUser](Remove-MgUser.md)
-Delete entity from users
+Delete a user
 
 ### [Remove-MgUserExtension](Remove-MgUserExtension.md)
-The collection of open extensions defined for the user.
-Read-only.
-Nullable.
+Delete navigation property extensions for users
 
 ### [Remove-MgUserLicenseDetail](Remove-MgUserLicenseDetail.md)
-A collection of this user's license details.
-Read-only.
+Delete navigation property licenseDetails for users
 
 ### [Remove-MgUserManagerByRef](Remove-MgUserManagerByRef.md)
-The user or contact that is this user's manager.
-Read-only.
-(HTTP Methods: GET, PUT, DELETE.).
-Supports $expand.
+Delete ref of navigation property manager for users
 
 ### [Remove-MgUserOutlookMasterCategory](Remove-MgUserOutlookMasterCategory.md)
-A list of categories defined for the user.
+Delete navigation property masterCategories for users
 
 ### [Remove-MgUserPhoto](Remove-MgUserPhoto.md)
-The user's profile photo.
-Read-only.
+Delete navigation property photo for users
 
 ### [Remove-MgUserSetting](Remove-MgUserSetting.md)
-Read-only.
-Nullable.
+Delete navigation property settings for users
 
 ### [Remove-MgUserSettingShiftPreference](Remove-MgUserSettingShiftPreference.md)
-The shift preferences for the user.
+Delete navigation property shiftPreferences for users
 
 ### [Remove-MgUserTodoList](Remove-MgUserTodoList.md)
-The task lists in the users mailbox.
+Delete navigation property lists for users
 
 ### [Remove-MgUserTodoListExtension](Remove-MgUserTodoListExtension.md)
-The collection of open extensions defined for the task list.
-Nullable.
+Delete navigation property extensions for users
 
 ### [Remove-MgUserTodoListTask](Remove-MgUserTodoListTask.md)
-The tasks in this task list.
-Read-only.
-Nullable.
+Delete navigation property tasks for users
+
+### [Remove-MgUserTodoListTaskChecklistItem](Remove-MgUserTodoListTaskChecklistItem.md)
+Delete navigation property checklistItems for users
 
 ### [Remove-MgUserTodoListTaskExtension](Remove-MgUserTodoListTaskExtension.md)
-The collection of open extensions defined for the task.
-Nullable.
+Delete navigation property extensions for users
 
 ### [Remove-MgUserTodoListTaskLinkedResource](Remove-MgUserTodoListTaskLinkedResource.md)
-A collection of resources linked to the task.
+Delete navigation property linkedResources for users
 
 ### [Set-MgUserManagerByRef](Set-MgUserManagerByRef.md)
-The user or contact that is this user's manager.
-Read-only.
-(HTTP Methods: GET, PUT, DELETE.).
-Supports $expand.
+Update the ref of navigation property manager in users
 
 ### [Set-MgUserPhotoContent](Set-MgUserPhotoContent.md)
-The user's profile photo.
-Read-only.
+Update media content for the navigation property photo in users
 
 ### [Update-MgUser](Update-MgUser.md)
-Update entity in users
+Update user
 
 ### [Update-MgUserExtension](Update-MgUserExtension.md)
-The collection of open extensions defined for the user.
-Read-only.
-Nullable.
+Update the navigation property extensions in users
 
 ### [Update-MgUserLicenseDetail](Update-MgUserLicenseDetail.md)
-A collection of this user's license details.
-Read-only.
+Update the navigation property licenseDetails in users
 
 ### [Update-MgUserOutlookMasterCategory](Update-MgUserOutlookMasterCategory.md)
-A list of categories defined for the user.
+Update the navigation property masterCategories in users
 
 ### [Update-MgUserPhoto](Update-MgUserPhoto.md)
-The user's profile photo.
-Read-only.
+Update the navigation property photo in users
 
 ### [Update-MgUserSetting](Update-MgUserSetting.md)
-Read-only.
-Nullable.
+Update the navigation property settings in users
 
 ### [Update-MgUserSettingShiftPreference](Update-MgUserSettingShiftPreference.md)
-The shift preferences for the user.
+Update the navigation property shiftPreferences in users
 
 ### [Update-MgUserTodoList](Update-MgUserTodoList.md)
-The task lists in the users mailbox.
+Update the navigation property lists in users
 
 ### [Update-MgUserTodoListExtension](Update-MgUserTodoListExtension.md)
-The collection of open extensions defined for the task list.
-Nullable.
+Update the navigation property extensions in users
 
 ### [Update-MgUserTodoListTask](Update-MgUserTodoListTask.md)
-The tasks in this task list.
-Read-only.
-Nullable.
+Update the navigation property tasks in users
+
+### [Update-MgUserTodoListTaskChecklistItem](Update-MgUserTodoListTaskChecklistItem.md)
+Update the navigation property checklistItems in users
 
 ### [Update-MgUserTodoListTaskExtension](Update-MgUserTodoListTaskExtension.md)
-The collection of open extensions defined for the task.
-Nullable.
+Update the navigation property extensions in users
 
 ### [Update-MgUserTodoListTaskLinkedResource](Update-MgUserTodoListTaskLinkedResource.md)
-A collection of resources linked to the task.
+Update the navigation property linkedResources in users
 

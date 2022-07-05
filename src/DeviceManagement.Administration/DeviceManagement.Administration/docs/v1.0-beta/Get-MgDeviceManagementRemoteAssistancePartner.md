@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceManagementRemoteAssistancePartner
 
 ## SYNOPSIS
-The remote assist partners.
+Get remoteAssistancePartners from deviceManagement
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgDeviceManagementRemoteAssistancePartner -InputObject <IDeviceManagementAdm
 ```
 
 ## DESCRIPTION
-The remote assist partners.
+Get remoteAssistancePartners from deviceManagement
 
 ## EXAMPLES
 
@@ -229,7 +229,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphRemoteAssistancePartner1
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphRemoteAssistancePartner
 
 ## NOTES
 
@@ -263,6 +263,7 @@ INPUTOBJECT <IDeviceManagementAdministrationIdentity>: Identity Parameter
   - `[DeviceManagementExchangeOnPremisesPolicyId <String>]`: key: id of deviceManagementExchangeOnPremisesPolicy
   - `[DeviceManagementPartnerId <String>]`: key: id of deviceManagementPartner
   - `[GroupPolicyCategoryId <String>]`: key: id of groupPolicyCategory
+  - `[GroupPolicyCategoryId1 <String>]`: key: id of groupPolicyCategory
   - `[GroupPolicyDefinitionFileId <String>]`: key: id of groupPolicyDefinitionFile
   - `[GroupPolicyDefinitionId <String>]`: key: id of groupPolicyDefinition
   - `[GroupPolicyMigrationReportId <String>]`: key: id of groupPolicyMigrationReport

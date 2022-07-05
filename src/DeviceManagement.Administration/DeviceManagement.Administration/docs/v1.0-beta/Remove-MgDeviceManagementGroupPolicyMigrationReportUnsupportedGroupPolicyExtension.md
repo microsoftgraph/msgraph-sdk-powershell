@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgDeviceManagementGroupPolicyMigrationReportUnsupportedGroupPolicyExtension
 
 ## SYNOPSIS
-A list of unsupported group policy extensions inside the Group Policy Object.
+Delete navigation property unsupportedGroupPolicyExtensions for deviceManagement
 
 ## SYNTAX
 
@@ -27,7 +27,7 @@ Remove-MgDeviceManagementGroupPolicyMigrationReportUnsupportedGroupPolicyExtensi
 ```
 
 ## DESCRIPTION
-A list of unsupported group policy extensions inside the Group Policy Object.
+Delete navigation property unsupportedGroupPolicyExtensions for deviceManagement
 
 ## EXAMPLES
 
@@ -183,6 +183,7 @@ INPUTOBJECT <IDeviceManagementAdministrationIdentity>: Identity Parameter
   - `[DeviceManagementExchangeOnPremisesPolicyId <String>]`: key: id of deviceManagementExchangeOnPremisesPolicy
   - `[DeviceManagementPartnerId <String>]`: key: id of deviceManagementPartner
   - `[GroupPolicyCategoryId <String>]`: key: id of groupPolicyCategory
+  - `[GroupPolicyCategoryId1 <String>]`: key: id of groupPolicyCategory
   - `[GroupPolicyDefinitionFileId <String>]`: key: id of groupPolicyDefinitionFile
   - `[GroupPolicyDefinitionId <String>]`: key: id of groupPolicyDefinition
   - `[GroupPolicyMigrationReportId <String>]`: key: id of groupPolicyMigrationReport

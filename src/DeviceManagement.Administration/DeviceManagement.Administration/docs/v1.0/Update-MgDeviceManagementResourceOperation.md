@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgDeviceManagementResourceOperation
 
 ## SYNOPSIS
-The Resource Operations.
+Update the navigation property resourceOperations in deviceManagement
 
 ## SYNTAX
 
@@ -22,13 +22,13 @@ Update-MgDeviceManagementResourceOperation -ResourceOperationId <String> [-Actio
 ### Update1
 ```
 Update-MgDeviceManagementResourceOperation -ResourceOperationId <String>
- -BodyParameter <IMicrosoftGraphResourceOperation> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphResourceOperation1> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity1
 ```
 Update-MgDeviceManagementResourceOperation -InputObject <IDeviceManagementAdministrationIdentity>
- -BodyParameter <IMicrosoftGraphResourceOperation> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphResourceOperation1> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded1
@@ -39,7 +39,7 @@ Update-MgDeviceManagementResourceOperation -InputObject <IDeviceManagementAdmini
 ```
 
 ## DESCRIPTION
-The Resource Operations.
+Update the navigation property resourceOperations in deviceManagement
 
 ## EXAMPLES
 
@@ -81,7 +81,7 @@ Describes the resourceOperation resource (entity) of the Microsoft Graph API (RE
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphResourceOperation
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphResourceOperation1
 Parameter Sets: Update1, UpdateViaIdentity1
 Aliases:
 
@@ -109,7 +109,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -222,7 +222,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IDeviceManagementAdministrationIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphResourceOperation
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphResourceOperation1
 
 ## OUTPUTS
 
@@ -237,9 +237,9 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-BODYPARAMETER <IMicrosoftGraphResourceOperation>: Describes the resourceOperation resource (entity) of the Microsoft Graph API (REST), which supports Intune workflows related to role-based access control (RBAC).
+BODYPARAMETER <IMicrosoftGraphResourceOperation1>: Describes the resourceOperation resource (entity) of the Microsoft Graph API (REST), which supports Intune workflows related to role-based access control (RBAC).
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[ActionName <String>]`: Type of action this operation is going to perform. The actionName should be concise and limited to as few words as possible.
   - `[Description <String>]`: Description of the resource operation. The description is used in mouse-over text for the operation when shown in the Azure Portal.
   - `[ResourceName <String>]`: Name of the Resource this operation is performed on.
@@ -267,6 +267,7 @@ INPUTOBJECT <IDeviceManagementAdministrationIdentity>: Identity Parameter
   - `[DeviceManagementExchangeOnPremisesPolicyId <String>]`: key: id of deviceManagementExchangeOnPremisesPolicy
   - `[DeviceManagementPartnerId <String>]`: key: id of deviceManagementPartner
   - `[GroupPolicyCategoryId <String>]`: key: id of groupPolicyCategory
+  - `[GroupPolicyCategoryId1 <String>]`: key: id of groupPolicyCategory
   - `[GroupPolicyDefinitionFileId <String>]`: key: id of groupPolicyDefinitionFile
   - `[GroupPolicyDefinitionId <String>]`: key: id of groupPolicyDefinition
   - `[GroupPolicyMigrationReportId <String>]`: key: id of groupPolicyMigrationReport

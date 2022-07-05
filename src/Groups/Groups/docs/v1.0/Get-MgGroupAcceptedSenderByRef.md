@@ -8,8 +8,7 @@ schema: 2.0.0
 # Get-MgGroupAcceptedSenderByRef
 
 ## SYNOPSIS
-The list of users or groups that are allowed to create post's or calendar events in this group.
-If this list is non-empty then only users or groups listed here are allowed to post.
+Get ref of acceptedSenders from groups
 
 ## SYNTAX
 
@@ -19,8 +18,7 @@ Get-MgGroupAcceptedSenderByRef -GroupId <String> [-Filter <String>] [-Skip <Int3
 ```
 
 ## DESCRIPTION
-The list of users or groups that are allowed to create post's or calendar events in this group.
-If this list is non-empty then only users or groups listed here are allowed to post.
+Get ref of acceptedSenders from groups
 
 ## EXAMPLES
 

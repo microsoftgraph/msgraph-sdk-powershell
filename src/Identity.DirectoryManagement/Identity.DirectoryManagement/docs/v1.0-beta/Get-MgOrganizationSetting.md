@@ -8,8 +8,7 @@ schema: 2.0.0
 # Get-MgOrganizationSetting
 
 ## SYNOPSIS
-Retrieve the properties and relationships of organizationSettings object.
-Nullable.
+Get settings from organization
 
 ## SYNTAX
 
@@ -26,8 +25,7 @@ Get-MgOrganizationSetting -InputObject <IIdentityDirectoryManagementIdentity> [-
 ```
 
 ## DESCRIPTION
-Retrieve the properties and relationships of organizationSettings object.
-Nullable.
+Get settings from organization
 
 ## EXAMPLES
 
@@ -136,6 +134,7 @@ INPUTOBJECT <IIdentityDirectoryManagementIdentity>: Identity Parameter
   - `[InternalDomainFederationId <String>]`: key: id of internalDomainFederation
   - `[OrgContactId <String>]`: key: id of orgContact
   - `[OrganizationId <String>]`: key: id of organization
+  - `[OrganizationalBrandingLocalizationId <String>]`: key: id of organizationalBrandingLocalization
   - `[OutboundSharedUserProfileUserId <String>]`: key: userId of outboundSharedUserProfile
   - `[ProfileCardPropertyId <String>]`: key: id of profileCardProperty
   - `[RecommendationId <String>]`: key: id of recommendation

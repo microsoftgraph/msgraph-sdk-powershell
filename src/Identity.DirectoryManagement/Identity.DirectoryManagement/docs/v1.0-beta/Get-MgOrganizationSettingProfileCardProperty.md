@@ -8,8 +8,7 @@ schema: 2.0.0
 # Get-MgOrganizationSettingProfileCardProperty
 
 ## SYNOPSIS
-Contains a collection of the properties an administrator has defined as visible on the Microsoft 365 profile card.
-Get organization settings returns the properties configured for profile cards for the organization.
+Get profileCardProperties from organization
 
 ## SYNTAX
 
@@ -33,8 +32,7 @@ Get-MgOrganizationSettingProfileCardProperty -InputObject <IIdentityDirectoryMan
 ```
 
 ## DESCRIPTION
-Contains a collection of the properties an administrator has defined as visible on the Microsoft 365 profile card.
-Get organization settings returns the properties configured for profile cards for the organization.
+Get profileCardProperties from organization
 
 ## EXAMPLES
 
@@ -279,6 +277,7 @@ INPUTOBJECT <IIdentityDirectoryManagementIdentity>: Identity Parameter
   - `[InternalDomainFederationId <String>]`: key: id of internalDomainFederation
   - `[OrgContactId <String>]`: key: id of orgContact
   - `[OrganizationId <String>]`: key: id of organization
+  - `[OrganizationalBrandingLocalizationId <String>]`: key: id of organizationalBrandingLocalization
   - `[OutboundSharedUserProfileUserId <String>]`: key: userId of outboundSharedUserProfile
   - `[ProfileCardPropertyId <String>]`: key: id of profileCardProperty
   - `[RecommendationId <String>]`: key: id of recommendation

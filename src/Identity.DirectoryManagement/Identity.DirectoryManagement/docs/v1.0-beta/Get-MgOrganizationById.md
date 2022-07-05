@@ -18,7 +18,7 @@ Get-MgOrganizationById [-AdditionalProperties <Hashtable>] [-Ids <String[]>] [-T
  [-WhatIf] [<CommonParameters>]
 ```
 
-### Get1
+### Get
 ```
 Get-MgOrganizationById
  -BodyParameter <IPaths11G1VgqOrganizationMicrosoftGraphGetbyidsPostRequestbodyContentApplicationJsonSchema>
@@ -53,7 +53,7 @@ To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETE
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IPaths11G1VgqOrganizationMicrosoftGraphGetbyidsPostRequestbodyContentApplicationJsonSchema
-Parameter Sets: Get1
+Parameter Sets: Get
 Aliases:
 
 Required: True

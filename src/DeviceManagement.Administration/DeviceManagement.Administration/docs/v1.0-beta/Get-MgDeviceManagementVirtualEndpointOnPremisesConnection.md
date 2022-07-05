@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceManagementVirtualEndpointOnPremisesConnection
 
 ## SYNOPSIS
-A defined collection of Azure resource information that can be used to establish on-premises network connectivity for Cloud PCs.
+Get onPremisesConnections from deviceManagement
 
 ## SYNTAX
 
@@ -33,7 +33,7 @@ Get-MgDeviceManagementVirtualEndpointOnPremisesConnection
 ```
 
 ## DESCRIPTION
-A defined collection of Azure resource information that can be used to establish on-premises network connectivity for Cloud PCs.
+Get onPremisesConnections from deviceManagement
 
 ## EXAMPLES
 
@@ -264,6 +264,7 @@ INPUTOBJECT <IDeviceManagementAdministrationIdentity>: Identity Parameter
   - `[DeviceManagementExchangeOnPremisesPolicyId <String>]`: key: id of deviceManagementExchangeOnPremisesPolicy
   - `[DeviceManagementPartnerId <String>]`: key: id of deviceManagementPartner
   - `[GroupPolicyCategoryId <String>]`: key: id of groupPolicyCategory
+  - `[GroupPolicyCategoryId1 <String>]`: key: id of groupPolicyCategory
   - `[GroupPolicyDefinitionFileId <String>]`: key: id of groupPolicyDefinitionFile
   - `[GroupPolicyDefinitionId <String>]`: key: id of groupPolicyDefinition
   - `[GroupPolicyMigrationReportId <String>]`: key: id of groupPolicyMigrationReport

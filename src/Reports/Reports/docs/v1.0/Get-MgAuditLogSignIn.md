@@ -8,8 +8,7 @@ schema: 2.0.0
 # Get-MgAuditLogSignIn
 
 ## SYNOPSIS
-Read-only.
-Nullable.
+Get signIns from auditLogs
 
 ## SYNTAX
 
@@ -33,8 +32,7 @@ Get-MgAuditLogSignIn -InputObject <IReportsIdentity> [-ExpandProperty <String[]>
 ```
 
 ## DESCRIPTION
-Read-only.
-Nullable.
+Get signIns from auditLogs
 
 ## EXAMPLES
 
@@ -249,24 +247,24 @@ INPUTOBJECT <IReportsIdentity>: Identity Parameter
   - `[DeviceManagementCachedReportConfigurationId <String>]`: key: id of deviceManagementCachedReportConfiguration
   - `[DeviceManagementExportJobId <String>]`: key: id of deviceManagementExportJob
   - `[DirectoryAuditId <String>]`: key: id of directoryAudit
-  - `[EndDateTime <DateTime?>]`: Usage: endDateTime={endDateTime}
-  - `[Filter <String>]`: Usage: filter={filter}
-  - `[GroupId <String>]`: Usage: groupId={groupId}
-  - `[IncludedUserRoles <String>]`: Usage: includedUserRoles={includedUserRoles}
-  - `[IncludedUserTypes <String>]`: Usage: includedUserTypes={includedUserTypes}
-  - `[Period <String>]`: Usage: period={period}
+  - `[EndDateTime <DateTime?>]`: Usage: endDateTime='{endDateTime}'
+  - `[Filter <String>]`: Usage: filter='{filter}'
+  - `[GroupId <String>]`: Usage: groupId='{groupId}'
+  - `[IncludedUserRoles <String>]`: Usage: includedUserRoles='{includedUserRoles}'
+  - `[IncludedUserTypes <String>]`: Usage: includedUserTypes='{includedUserTypes}'
+  - `[Period <String>]`: Usage: period='{period}'
   - `[PrintUsageByPrinterId <String>]`: key: id of printUsageByPrinter
   - `[PrintUsageByUserId <String>]`: key: id of printUsageByUser
-  - `[PrinterId <String>]`: Usage: printerId={printerId}
+  - `[PrinterId <String>]`: Usage: printerId='{printerId}'
   - `[ProvisioningObjectSummaryId <String>]`: key: id of provisioningObjectSummary
   - `[RestrictedSignInId <String>]`: key: id of restrictedSignIn
   - `[SignInId <String>]`: key: id of signIn
   - `[Skip <Int32?>]`: Usage: skip={skip}
-  - `[SkipToken <String>]`: Usage: skipToken={skipToken}
-  - `[StartDateTime <DateTime?>]`: Usage: startDateTime={startDateTime}
+  - `[SkipToken <String>]`: Usage: skipToken='{skipToken}'
+  - `[StartDateTime <DateTime?>]`: Usage: startDateTime='{startDateTime}'
   - `[Top <Int32?>]`: Usage: top={top}
   - `[UserCredentialUsageDetailsId <String>]`: key: id of userCredentialUsageDetails
-  - `[UserId <String>]`: Usage: userId={userId}
+  - `[UserId <String>]`: Usage: userId='{userId}'
   - `[UserRegistrationDetailsId <String>]`: key: id of userRegistrationDetails
 
 ## RELATED LINKS

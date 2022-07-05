@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgPrintPrinterShareAllowedUserByRef
 
 ## SYNOPSIS
-The users who have access to print using the printer.
+Get ref of allowedUsers from print
 
 ## SYNTAX
 
@@ -19,7 +19,7 @@ Get-MgPrintPrinterShareAllowedUserByRef -PrinterShareId <String> [-Filter <Strin
 ```
 
 ## DESCRIPTION
-The users who have access to print using the printer.
+Get ref of allowedUsers from print
 
 ## EXAMPLES
 

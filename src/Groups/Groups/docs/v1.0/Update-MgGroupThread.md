@@ -8,8 +8,7 @@ schema: 2.0.0
 # Update-MgGroupThread
 
 ## SYNOPSIS
-The group's conversation threads.
-Nullable.
+Update the navigation property threads in groups
 
 ## SYNTAX
 
@@ -17,7 +16,7 @@ Nullable.
 ```
 Update-MgGroupThread -ConversationThreadId <String> -GroupId <String> [-AdditionalProperties <Hashtable>]
  [-CcRecipients <IMicrosoftGraphRecipient[]>] [-HasAttachments] [-Id <String>] [-IsLocked]
- [-LastDeliveredDateTime <DateTime>] [-Posts <IMicrosoftGraphPost1[]>] [-Preview <String>] [-Topic <String>]
+ [-LastDeliveredDateTime <DateTime>] [-Posts <IMicrosoftGraphPost[]>] [-Preview <String>] [-Topic <String>]
  [-ToRecipients <IMicrosoftGraphRecipient[]>] [-UniqueSenders <String[]>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
@@ -25,12 +24,12 @@ Update-MgGroupThread -ConversationThreadId <String> -GroupId <String> [-Addition
 ### Update1
 ```
 Update-MgGroupThread -ConversationThreadId <String> -GroupId <String>
- -BodyParameter <IMicrosoftGraphConversationThread1> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphConversationThread> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity1
 ```
-Update-MgGroupThread -InputObject <IGroupsIdentity> -BodyParameter <IMicrosoftGraphConversationThread1>
+Update-MgGroupThread -InputObject <IGroupsIdentity> -BodyParameter <IMicrosoftGraphConversationThread>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -38,14 +37,13 @@ Update-MgGroupThread -InputObject <IGroupsIdentity> -BodyParameter <IMicrosoftGr
 ```
 Update-MgGroupThread -InputObject <IGroupsIdentity> [-AdditionalProperties <Hashtable>]
  [-CcRecipients <IMicrosoftGraphRecipient[]>] [-HasAttachments] [-Id <String>] [-IsLocked]
- [-LastDeliveredDateTime <DateTime>] [-Posts <IMicrosoftGraphPost1[]>] [-Preview <String>] [-Topic <String>]
+ [-LastDeliveredDateTime <DateTime>] [-Posts <IMicrosoftGraphPost[]>] [-Preview <String>] [-Topic <String>]
  [-ToRecipients <IMicrosoftGraphRecipient[]>] [-UniqueSenders <String[]>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-The group's conversation threads.
-Nullable.
+Update the navigation property threads in groups
 
 ## EXAMPLES
 
@@ -71,7 +69,7 @@ conversationThread
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphConversationThread1
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphConversationThread
 Parameter Sets: Update1, UpdateViaIdentity1
 Aliases:
 
@@ -146,7 +144,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -194,7 +192,8 @@ Accept wildcard characters: False
 
 ### -LastDeliveredDateTime
 The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time.
-For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.Returned by default.
+For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+Returned by default.
 
 ```yaml
 Type: System.DateTime
@@ -224,12 +223,11 @@ Accept wildcard characters: False
 ```
 
 ### -Posts
-Read-only.
-Nullable.
+.
 To construct, please use Get-Help -Online and see NOTES section for POSTS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPost1[]
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPost[]
 Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -344,7 +342,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IGroupsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphConversationThread1
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphConversationThread
 
 ## OUTPUTS
 
@@ -359,29 +357,29 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-BODYPARAMETER <IMicrosoftGraphConversationThread1>: conversationThread
+BODYPARAMETER <IMicrosoftGraphConversationThread>: conversationThread
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[CcRecipients <IMicrosoftGraphRecipient[]>]`: The Cc: recipients for the thread. Returned only on $select.
     - `[EmailAddress <IMicrosoftGraphEmailAddress>]`: emailAddress
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[Address <String>]`: The email address of the person or entity.
-      - `[Name <String>]`: The display name of the person or entity.
+      - `[Address <String>]`: The email address of an entity instance.
+      - `[Name <String>]`: The display name of an entity instance.
   - `[HasAttachments <Boolean?>]`: Indicates whether any of the posts within this thread has at least one attachment. Returned by default.
   - `[IsLocked <Boolean?>]`: Indicates if the thread is locked. Returned by default.
-  - `[LastDeliveredDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.Returned by default.
-  - `[Posts <IMicrosoftGraphPost1[]>]`: Read-only. Nullable.
+  - `[LastDeliveredDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default.
+  - `[Posts <IMicrosoftGraphPost[]>]`: 
     - `[Categories <String[]>]`: The categories associated with the item
     - `[ChangeKey <String>]`: Identifies the version of the item. Every time the item is changed, changeKey changes as well. This allows Exchange to apply changes to the correct version of the object. Read-only.
     - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
     - `[LastModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-    - `[Id <String>]`: Read-only.
-    - `[Attachments <IMicrosoftGraphAttachment[]>]`: Read-only. Nullable. Supports $expand.
-      - `[Id <String>]`: Read-only.
+    - `[Id <String>]`: 
+    - `[Attachments <IMicrosoftGraphAttachment[]>]`: The collection of fileAttachment, itemAttachment, and referenceAttachment attachments for the post. Read-only. Nullable. Supports $expand.
+      - `[Id <String>]`: 
       - `[ContentType <String>]`: The MIME type.
       - `[IsInline <Boolean?>]`: true if the attachment is an inline attachment; otherwise, false.
       - `[LastModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-      - `[Name <String>]`: The attachment's file name.
+      - `[Name <String>]`: The display name of the attachment. This does not need to be the actual file name.
       - `[Size <Int32?>]`: The length of the attachment in bytes.
     - `[Body <IMicrosoftGraphItemBody>]`: itemBody
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -390,18 +388,18 @@ BODYPARAMETER <IMicrosoftGraphConversationThread1>: conversationThread
     - `[ConversationId <String>]`: Unique ID of the conversation. Read-only.
     - `[ConversationThreadId <String>]`: Unique ID of the conversation thread. Read-only.
     - `[Extensions <IMicrosoftGraphExtension[]>]`: The collection of open extensions defined for the post. Read-only. Nullable. Supports $expand.
-      - `[Id <String>]`: Read-only.
+      - `[Id <String>]`: 
     - `[From <IMicrosoftGraphRecipient>]`: recipient
     - `[HasAttachments <Boolean?>]`: Indicates whether the post has at least one attachment. This is a default property.
-    - `[InReplyTo <IMicrosoftGraphPost1>]`: post
+    - `[InReplyTo <IMicrosoftGraphPost>]`: post
     - `[MultiValueExtendedProperties <IMicrosoftGraphMultiValueLegacyExtendedProperty[]>]`: The collection of multi-value extended properties defined for the post. Read-only. Nullable.
-      - `[Id <String>]`: Read-only.
+      - `[Id <String>]`: 
       - `[Value <String[]>]`: A collection of property values.
     - `[NewParticipants <IMicrosoftGraphRecipient[]>]`: Conversation participants that were added to the thread as part of this post.
     - `[ReceivedDateTime <DateTime?>]`: Specifies when the post was received. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
     - `[Sender <IMicrosoftGraphRecipient>]`: recipient
     - `[SingleValueExtendedProperties <IMicrosoftGraphSingleValueLegacyExtendedProperty[]>]`: The collection of single-value extended properties defined for the post. Read-only. Nullable.
-      - `[Id <String>]`: Read-only.
+      - `[Id <String>]`: 
       - `[Value <String>]`: A property value.
   - `[Preview <String>]`: A short summary from the body of the latest post in this conversation. Returned by default.
   - `[ToRecipients <IMicrosoftGraphRecipient[]>]`: The To: recipients for the thread. Returned only on $select.
@@ -411,44 +409,64 @@ BODYPARAMETER <IMicrosoftGraphConversationThread1>: conversationThread
 CCRECIPIENTS <IMicrosoftGraphRecipient[]>: The Cc: recipients for the thread. Returned only on $select.
   - `[EmailAddress <IMicrosoftGraphEmailAddress>]`: emailAddress
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Address <String>]`: The email address of the person or entity.
-    - `[Name <String>]`: The display name of the person or entity.
+    - `[Address <String>]`: The email address of an entity instance.
+    - `[Name <String>]`: The display name of an entity instance.
 
 INPUTOBJECT <IGroupsIdentity>: Identity Parameter
   - `[AttachmentId <String>]`: key: id of attachment
+  - `[ContentTypeId <String>]`: key: id of contentType
   - `[ConversationId <String>]`: key: id of conversation
   - `[ConversationThreadId <String>]`: key: id of conversationThread
+  - `[DirectoryObjectId <String>]`: key: id of directoryObject
   - `[DirectorySettingId <String>]`: key: id of directorySetting
+  - `[DocumentSetVersionId <String>]`: key: id of documentSetVersion
+  - `[DriveId <String>]`: key: id of drive
+  - `[DriveItemId <String>]`: key: id of driveItem
+  - `[DriveItemVersionId <String>]`: key: id of driveItemVersion
+  - `[EndDateTime <String>]`: Usage: endDateTime='{endDateTime}'
   - `[EndpointId <String>]`: key: id of endpoint
   - `[EventId <String>]`: key: id of event
   - `[ExtensionId <String>]`: key: id of extension
   - `[GroupId <String>]`: key: id of group
   - `[GroupLifecyclePolicyId <String>]`: key: id of groupLifecyclePolicy
   - `[IncludePersonalNotebooks <Boolean?>]`: Usage: includePersonalNotebooks={includePersonalNotebooks}
+  - `[Interval <String>]`: Usage: interval='{interval}'
+  - `[ListId <String>]`: key: id of list
+  - `[ListId1 <String>]`: Usage: listId='{listId}'
+  - `[ListItemId <String>]`: key: id of listItem
+  - `[ListItemVersionId <String>]`: key: id of listItemVersion
   - `[MentionId <String>]`: key: id of mention
   - `[MultiValueLegacyExtendedPropertyId <String>]`: key: id of multiValueLegacyExtendedProperty
   - `[NotebookId <String>]`: key: id of notebook
   - `[OnenotePageId <String>]`: key: id of onenotePage
   - `[OnenoteSectionId <String>]`: key: id of onenoteSection
+  - `[Path <String>]`: Usage: path='{path}'
+  - `[PermissionId <String>]`: key: id of permission
   - `[PostId <String>]`: key: id of post
   - `[ProfilePhotoId <String>]`: key: id of profilePhoto
+  - `[Q <String>]`: Usage: q='{q}'
   - `[ResourceSpecificPermissionGrantId <String>]`: key: id of resourceSpecificPermissionGrant
   - `[SingleValueLegacyExtendedPropertyId <String>]`: key: id of singleValueLegacyExtendedProperty
-  - `[User <String>]`: Usage: User={User}
+  - `[SiteId <String>]`: key: id of site
+  - `[SitePageId <String>]`: key: id of sitePage
+  - `[StartDateTime <String>]`: Usage: startDateTime='{startDateTime}'
+  - `[SubscriptionId <String>]`: key: id of subscription
+  - `[Token <String>]`: Usage: token='{token}'
+  - `[User <String>]`: Usage: User='{User}'
   - `[UserId <String>]`: key: id of user
 
-POSTS <IMicrosoftGraphPost1[]>: Read-only. Nullable.
+POSTS <IMicrosoftGraphPost[]>: .
   - `[Categories <String[]>]`: The categories associated with the item
   - `[ChangeKey <String>]`: Identifies the version of the item. Every time the item is changed, changeKey changes as well. This allows Exchange to apply changes to the correct version of the object. Read-only.
   - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
   - `[LastModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-  - `[Id <String>]`: Read-only.
-  - `[Attachments <IMicrosoftGraphAttachment[]>]`: Read-only. Nullable. Supports $expand.
-    - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
+  - `[Attachments <IMicrosoftGraphAttachment[]>]`: The collection of fileAttachment, itemAttachment, and referenceAttachment attachments for the post. Read-only. Nullable. Supports $expand.
+    - `[Id <String>]`: 
     - `[ContentType <String>]`: The MIME type.
     - `[IsInline <Boolean?>]`: true if the attachment is an inline attachment; otherwise, false.
     - `[LastModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-    - `[Name <String>]`: The attachment's file name.
+    - `[Name <String>]`: The display name of the attachment. This does not need to be the actual file name.
     - `[Size <Int32?>]`: The length of the attachment in bytes.
   - `[Body <IMicrosoftGraphItemBody>]`: itemBody
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -457,30 +475,30 @@ POSTS <IMicrosoftGraphPost1[]>: Read-only. Nullable.
   - `[ConversationId <String>]`: Unique ID of the conversation. Read-only.
   - `[ConversationThreadId <String>]`: Unique ID of the conversation thread. Read-only.
   - `[Extensions <IMicrosoftGraphExtension[]>]`: The collection of open extensions defined for the post. Read-only. Nullable. Supports $expand.
-    - `[Id <String>]`: Read-only.
+    - `[Id <String>]`: 
   - `[From <IMicrosoftGraphRecipient>]`: recipient
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[EmailAddress <IMicrosoftGraphEmailAddress>]`: emailAddress
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[Address <String>]`: The email address of the person or entity.
-      - `[Name <String>]`: The display name of the person or entity.
+      - `[Address <String>]`: The email address of an entity instance.
+      - `[Name <String>]`: The display name of an entity instance.
   - `[HasAttachments <Boolean?>]`: Indicates whether the post has at least one attachment. This is a default property.
-  - `[InReplyTo <IMicrosoftGraphPost1>]`: post
+  - `[InReplyTo <IMicrosoftGraphPost>]`: post
   - `[MultiValueExtendedProperties <IMicrosoftGraphMultiValueLegacyExtendedProperty[]>]`: The collection of multi-value extended properties defined for the post. Read-only. Nullable.
-    - `[Id <String>]`: Read-only.
+    - `[Id <String>]`: 
     - `[Value <String[]>]`: A collection of property values.
   - `[NewParticipants <IMicrosoftGraphRecipient[]>]`: Conversation participants that were added to the thread as part of this post.
   - `[ReceivedDateTime <DateTime?>]`: Specifies when the post was received. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
   - `[Sender <IMicrosoftGraphRecipient>]`: recipient
   - `[SingleValueExtendedProperties <IMicrosoftGraphSingleValueLegacyExtendedProperty[]>]`: The collection of single-value extended properties defined for the post. Read-only. Nullable.
-    - `[Id <String>]`: Read-only.
+    - `[Id <String>]`: 
     - `[Value <String>]`: A property value.
 
 TORECIPIENTS <IMicrosoftGraphRecipient[]>: The To: recipients for the thread. Returned only on $select.
   - `[EmailAddress <IMicrosoftGraphEmailAddress>]`: emailAddress
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Address <String>]`: The email address of the person or entity.
-    - `[Name <String>]`: The display name of the person or entity.
+    - `[Address <String>]`: The email address of an entity instance.
+    - `[Name <String>]`: The display name of an entity instance.
 
 ## RELATED LINKS
 

@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgDeviceManagementMicrosoftTunnelServerLogCollectionResponse
 
 ## SYNOPSIS
-Collection of MicrosoftTunnelServerLogCollectionResponse settings associated with account.
+Create new navigation property to microsoftTunnelServerLogCollectionResponses for deviceManagement
 
 ## SYNTAX
 
@@ -16,8 +16,8 @@ Collection of MicrosoftTunnelServerLogCollectionResponse settings associated wit
 ```
 New-MgDeviceManagementMicrosoftTunnelServerLogCollectionResponse [-AdditionalProperties <Hashtable>]
  [-EndDateTime <DateTime>] [-ExpiryDateTime <DateTime>] [-Id <String>] [-RequestDateTime <DateTime>]
- [-ServerId <String>] [-SizeInBytes <Int64>] [-StartDateTime <DateTime>] [-Status <String>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-ServerId <String>] [-SizeInBytes <Int64>] [-StartDateTime <DateTime>]
+ [-Status <MicrosoftTunnelLogCollectionStatus>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
@@ -28,7 +28,7 @@ New-MgDeviceManagementMicrosoftTunnelServerLogCollectionResponse
 ```
 
 ## DESCRIPTION
-Collection of MicrosoftTunnelServerLogCollectionResponse settings associated with account.
+Create new navigation property to microsoftTunnelServerLogCollectionResponses for deviceManagement
 
 ## EXAMPLES
 
@@ -96,7 +96,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -174,7 +174,7 @@ Accept wildcard characters: False
 Enum type that represent the status of log collection.
 
 ```yaml
-Type: System.String
+Type: Microsoft.Graph.PowerShell.Support.MicrosoftTunnelLogCollectionStatus
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -238,14 +238,14 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphMicrosoftTunnelServerLogCollectionResponse>: Entity that stores the server log collection status.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[EndDateTime <DateTime?>]`: The end time of the logs collected
   - `[ExpiryDateTime <DateTime?>]`: The time when the log collection is expired
   - `[RequestDateTime <DateTime?>]`: The time when the log collection was requested
   - `[ServerId <String>]`: ID of the server the log collection is requested upon
   - `[SizeInBytes <Int64?>]`: The size of the logs in bytes
   - `[StartDateTime <DateTime?>]`: The start time of the logs collected
-  - `[Status <String>]`: Enum type that represent the status of log collection.
+  - `[Status <MicrosoftTunnelLogCollectionStatus?>]`: Enum type that represent the status of log collection.
 
 ## RELATED LINKS
 

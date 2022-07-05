@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgDeviceManagementMicrosoftTunnelConfiguration
 
 ## SYNOPSIS
-Collection of MicrosoftTunnelConfiguration settings associated with account.
+Create new navigation property to microsoftTunnelConfigurations for deviceManagement
 
 ## SYNTAX
 
@@ -29,7 +29,7 @@ New-MgDeviceManagementMicrosoftTunnelConfiguration
 ```
 
 ## DESCRIPTION
-Collection of MicrosoftTunnelConfiguration settings associated with account.
+Create new navigation property to microsoftTunnelConfigurations for deviceManagement
 
 ## EXAMPLES
 
@@ -158,7 +158,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -334,7 +334,7 @@ ADVANCEDSETTINGS <IMicrosoftGraphKeyValuePair[]>: Additional settings that may b
 
 BODYPARAMETER <IMicrosoftGraphMicrosoftTunnelConfiguration>: Entity that represents a collection of Microsoft Tunnel settings
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[AdvancedSettings <IMicrosoftGraphKeyValuePair[]>]`: Additional settings that may be applied to the server
     - `[Name <String>]`: Name for this key-value pair
     - `[Value <String>]`: Value for this key-value pair

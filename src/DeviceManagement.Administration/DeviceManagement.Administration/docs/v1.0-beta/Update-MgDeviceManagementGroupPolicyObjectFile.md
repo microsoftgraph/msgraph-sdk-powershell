@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgDeviceManagementGroupPolicyObjectFile
 
 ## SYNOPSIS
-A list of Group Policy Object files uploaded.
+Update the navigation property groupPolicyObjectFiles in deviceManagement
 
 ## SYNTAX
 
@@ -41,7 +41,7 @@ Update-MgDeviceManagementGroupPolicyObjectFile -InputObject <IDeviceManagementAd
 ```
 
 ## DESCRIPTION
-A list of Group Policy Object files uploaded.
+Update the navigation property groupPolicyObjectFiles in deviceManagement
 
 ## EXAMPLES
 
@@ -139,7 +139,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -269,7 +269,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphGroupPolicyObjectFile>: The Group Policy Object file uploaded by admin.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[Content <String>]`: The Group Policy Object file content.
   - `[CreatedDateTime <DateTime?>]`: The date and time at which the GroupPolicy was first uploaded.
   - `[GroupPolicyObjectId <String>]`: The Group Policy Object GUID from GPO Xml content
@@ -299,6 +299,7 @@ INPUTOBJECT <IDeviceManagementAdministrationIdentity>: Identity Parameter
   - `[DeviceManagementExchangeOnPremisesPolicyId <String>]`: key: id of deviceManagementExchangeOnPremisesPolicy
   - `[DeviceManagementPartnerId <String>]`: key: id of deviceManagementPartner
   - `[GroupPolicyCategoryId <String>]`: key: id of groupPolicyCategory
+  - `[GroupPolicyCategoryId1 <String>]`: key: id of groupPolicyCategory
   - `[GroupPolicyDefinitionFileId <String>]`: key: id of groupPolicyDefinitionFile
   - `[GroupPolicyDefinitionId <String>]`: key: id of groupPolicyDefinition
   - `[GroupPolicyMigrationReportId <String>]`: key: id of groupPolicyMigrationReport

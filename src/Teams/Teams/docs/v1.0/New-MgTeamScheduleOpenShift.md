@@ -12,7 +12,7 @@ Create new navigation property to openShifts for teams
 
 ## SYNTAX
 
-### CreateExpanded1 (Default)
+### CreateExpanded (Default)
 ```
 New-MgTeamScheduleOpenShift -TeamId <String> [-AdditionalProperties <Hashtable>] [-CreatedDateTime <DateTime>]
  [-DraftOpenShift <IMicrosoftGraphOpenShiftItem>] [-Id <String>]
@@ -21,19 +21,19 @@ New-MgTeamScheduleOpenShift -TeamId <String> [-AdditionalProperties <Hashtable>]
  [<CommonParameters>]
 ```
 
-### Create1
+### Create
 ```
-New-MgTeamScheduleOpenShift -TeamId <String> -BodyParameter <IMicrosoftGraphOpenShift1> [-Confirm] [-WhatIf]
+New-MgTeamScheduleOpenShift -TeamId <String> -BodyParameter <IMicrosoftGraphOpenShift> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
-### CreateViaIdentity1
+### CreateViaIdentity
 ```
-New-MgTeamScheduleOpenShift -InputObject <ITeamsIdentity> -BodyParameter <IMicrosoftGraphOpenShift1>
- [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgTeamScheduleOpenShift -InputObject <ITeamsIdentity> -BodyParameter <IMicrosoftGraphOpenShift> [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
-### CreateViaIdentityExpanded1
+### CreateViaIdentityExpanded
 ```
 New-MgTeamScheduleOpenShift -InputObject <ITeamsIdentity> [-AdditionalProperties <Hashtable>]
  [-CreatedDateTime <DateTime>] [-DraftOpenShift <IMicrosoftGraphOpenShiftItem>] [-Id <String>]
@@ -54,7 +54,7 @@ Additional Parameters
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -69,8 +69,8 @@ openShift
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOpenShift1
-Parameter Sets: Create1, CreateViaIdentity1
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOpenShift
+Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
 Required: True
@@ -86,7 +86,7 @@ For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 
 ```yaml
 Type: System.DateTime
-Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -102,7 +102,7 @@ To construct, please use Get-Help -Online and see NOTES section for DRAFTOPENSHI
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOpenShiftItem
-Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -113,11 +113,11 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -133,7 +133,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.ITeamsIdentity
-Parameter Sets: CreateViaIdentity1, CreateViaIdentityExpanded1
+Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
 Required: True
@@ -149,7 +149,7 @@ To construct, please use Get-Help -Online and see NOTES section for LASTMODIFIED
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentitySet
-Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -165,7 +165,7 @@ For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 
 ```yaml
 Type: System.DateTime
-Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -180,7 +180,7 @@ ID for the scheduling group that the open shift belongs to.
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -196,7 +196,7 @@ To construct, please use Get-Help -Online and see NOTES section for SHAREDOPENSH
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOpenShiftItem
-Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -211,7 +211,7 @@ key: id of team
 
 ```yaml
 Type: System.String
-Parameter Sets: Create1, CreateExpanded1
+Parameter Sets: Create, CreateExpanded
 Aliases:
 
 Required: True
@@ -257,13 +257,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOpenShift1
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOpenShift
 
 ### Microsoft.Graph.PowerShell.Models.ITeamsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOpenShift1
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOpenShift
 
 ## NOTES
 
@@ -274,7 +274,7 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-BODYPARAMETER <IMicrosoftGraphOpenShift1>: openShift
+BODYPARAMETER <IMicrosoftGraphOpenShift>: openShift
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
   - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
@@ -286,7 +286,7 @@ BODYPARAMETER <IMicrosoftGraphOpenShift1>: openShift
     - `[Device <IMicrosoftGraphIdentity>]`: identity
     - `[User <IMicrosoftGraphIdentity>]`: identity
   - `[LastModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[DraftOpenShift <IMicrosoftGraphOpenShiftItem>]`: openShiftItem
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Activities <IMicrosoftGraphShiftActivity[]>]`: An incremental part of a shift which can cover details of when and where an employee is during their shift. For example, an assignment or a scheduled break or lunch. Required.
@@ -329,10 +329,12 @@ INPUTOBJECT <ITeamsIdentity>: Identity Parameter
   - `[ChatMessageId <String>]`: key: id of chatMessage
   - `[ChatMessageId1 <String>]`: key: id of chatMessage
   - `[ConversationMemberId <String>]`: key: id of conversationMember
+  - `[DeletedTeamId <String>]`: key: id of deletedTeam
   - `[GroupId <String>]`: key: id of group
   - `[OfferShiftRequestId <String>]`: key: id of offerShiftRequest
   - `[OpenShiftChangeRequestId <String>]`: key: id of openShiftChangeRequest
   - `[OpenShiftId <String>]`: key: id of openShift
+  - `[PinnedChatMessageInfoId <String>]`: key: id of pinnedChatMessageInfo
   - `[ResourceSpecificPermissionGrantId <String>]`: key: id of resourceSpecificPermissionGrant
   - `[SchedulingGroupId <String>]`: key: id of schedulingGroup
   - `[SharedWithChannelTeamInfoId <String>]`: key: id of sharedWithChannelTeamInfo
@@ -348,14 +350,11 @@ INPUTOBJECT <ITeamsIdentity>: Identity Parameter
   - `[TeamworkDeviceOperationId <String>]`: key: id of teamworkDeviceOperation
   - `[TeamworkTagId <String>]`: key: id of teamworkTag
   - `[TeamworkTagMemberId <String>]`: key: id of teamworkTagMember
-  - `[TenantId <String>]`: Usage: tenantId={tenantId}
   - `[TimeCardId <String>]`: key: id of timeCard
   - `[TimeOffId <String>]`: key: id of timeOff
   - `[TimeOffReasonId <String>]`: key: id of timeOffReason
   - `[TimeOffRequestId <String>]`: key: id of timeOffRequest
   - `[UserId <String>]`: key: id of user
-  - `[UserId1 <String>]`: Usage: userId={userId}
-  - `[UserPrincipalName <String>]`: Usage: userPrincipalName={userPrincipalName}
   - `[UserScopeTeamsAppInstallationId <String>]`: key: id of userScopeTeamsAppInstallation
   - `[WorkforceIntegrationId <String>]`: key: id of workforceIntegration
 

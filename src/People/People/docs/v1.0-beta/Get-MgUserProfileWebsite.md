@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgUserProfileWebsite
 
 ## SYNOPSIS
-Represents detailed information about websites associated with a user in various services.
+Get websites from users
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgUserProfileWebsite -InputObject <IPeopleIdentity> [-ExpandProperty <String
 ```
 
 ## DESCRIPTION
-Represents detailed information about websites associated with a user in various services.
+Get websites from users
 
 ## EXAMPLES
 

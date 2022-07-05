@@ -8,17 +8,17 @@ schema: 2.0.0
 # Update-MgDeviceManagementUserExperienceAnalyticDeviceScore
 
 ## SYNOPSIS
-User experience analytics device scores
+Update the navigation property userExperienceAnalyticsDeviceScores in deviceManagement
 
 ## SYNTAX
 
 ### UpdateExpanded (Default)
 ```
 Update-MgDeviceManagementUserExperienceAnalyticDeviceScore -UserExperienceAnalyticsDeviceScoresId <String>
- [-AdditionalProperties <Hashtable>] [-AppReliabilityScore <Double>] [-DeviceName <String>]
- [-EndpointAnalyticsScore <Double>] [-HealthStatus <String>] [-Id <String>] [-Manufacturer <String>]
- [-Model <String>] [-StartupPerformanceScore <Double>] [-WorkFromAnywhereScore <Double>] [-PassThru]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-AdditionalProperties <Hashtable>] [-AppReliabilityScore <Double>] [-BatteryHealthScore <Double>]
+ [-DeviceName <String>] [-EndpointAnalyticsScore <Double>] [-HealthStatus <String>] [-Id <String>]
+ [-Manufacturer <String>] [-Model <String>] [-StartupPerformanceScore <Double>]
+ [-WorkFromAnywhereScore <Double>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
@@ -38,14 +38,14 @@ Update-MgDeviceManagementUserExperienceAnalyticDeviceScore -InputObject <IDevice
 ### UpdateViaIdentityExpanded
 ```
 Update-MgDeviceManagementUserExperienceAnalyticDeviceScore -InputObject <IDeviceManagementIdentity>
- [-AdditionalProperties <Hashtable>] [-AppReliabilityScore <Double>] [-DeviceName <String>]
- [-EndpointAnalyticsScore <Double>] [-HealthStatus <String>] [-Id <String>] [-Manufacturer <String>]
- [-Model <String>] [-StartupPerformanceScore <Double>] [-WorkFromAnywhereScore <Double>] [-PassThru]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-AdditionalProperties <Hashtable>] [-AppReliabilityScore <Double>] [-BatteryHealthScore <Double>]
+ [-DeviceName <String>] [-EndpointAnalyticsScore <Double>] [-HealthStatus <String>] [-Id <String>]
+ [-Manufacturer <String>] [-Model <String>] [-StartupPerformanceScore <Double>]
+ [-WorkFromAnywhereScore <Double>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-User experience analytics device scores
+Update the navigation property userExperienceAnalyticsDeviceScores in deviceManagement
 
 ## EXAMPLES
 
@@ -68,6 +68,22 @@ Accept wildcard characters: False
 
 ### -AppReliabilityScore
 The user experience analytics device app reliability score.
+Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+
+```yaml
+Type: System.Double
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -BatteryHealthScore
+The user experience analytics device battery health score.
 Valid values -1.79769313486232E+308 to 1.79769313486232E+308
 
 ```yaml
@@ -145,7 +161,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -322,8 +338,9 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphUserExperienceAnalyticsDeviceScores>: The user experience analytics device scores entity consolidates the various endpoint analytics scores.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[AppReliabilityScore <Double?>]`: The user experience analytics device app reliability score. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+  - `[BatteryHealthScore <Double?>]`: The user experience analytics device battery health score. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
   - `[DeviceName <String>]`: The user experience analytics device name.
   - `[EndpointAnalyticsScore <Double?>]`: The user experience analytics device score. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
   - `[HealthStatus <String>]`: userExperienceAnalyticsHealthState
@@ -362,6 +379,15 @@ INPUTOBJECT <IDeviceManagementIdentity>: Identity Parameter
   - `[DeviceHealthScriptDeviceStateId <String>]`: key: id of deviceHealthScriptDeviceState
   - `[DeviceHealthScriptId <String>]`: key: id of deviceHealthScript
   - `[DeviceLogCollectionResponseId <String>]`: key: id of deviceLogCollectionResponse
+  - `[DeviceManagementComplianceActionItemId <String>]`: key: id of deviceManagementComplianceActionItem
+  - `[DeviceManagementCompliancePolicyId <String>]`: key: id of deviceManagementCompliancePolicy
+  - `[DeviceManagementComplianceScheduledActionForRuleId <String>]`: key: id of deviceManagementComplianceScheduledActionForRule
+  - `[DeviceManagementConfigurationPolicyAssignmentId <String>]`: key: id of deviceManagementConfigurationPolicyAssignment
+  - `[DeviceManagementConfigurationPolicyId <String>]`: key: id of deviceManagementConfigurationPolicy
+  - `[DeviceManagementConfigurationPolicyTemplateId <String>]`: key: id of deviceManagementConfigurationPolicyTemplate
+  - `[DeviceManagementConfigurationSettingDefinitionId <String>]`: key: id of deviceManagementConfigurationSettingDefinition
+  - `[DeviceManagementConfigurationSettingId <String>]`: key: id of deviceManagementConfigurationSetting
+  - `[DeviceManagementConfigurationSettingTemplateId <String>]`: key: id of deviceManagementConfigurationSettingTemplate
   - `[DeviceManagementDerivedCredentialSettingsId <String>]`: key: id of deviceManagementDerivedCredentialSettings
   - `[DeviceManagementIntentAssignmentId <String>]`: key: id of deviceManagementIntentAssignment
   - `[DeviceManagementIntentDeviceSettingStateSummaryId <String>]`: key: id of deviceManagementIntentDeviceSettingStateSummary
@@ -399,8 +425,6 @@ INPUTOBJECT <IDeviceManagementIdentity>: Identity Parameter
   - `[ManagedDeviceEncryptionStateId <String>]`: key: id of managedDeviceEncryptionState
   - `[ManagedDeviceId <String>]`: key: id of managedDevice
   - `[ManagedDeviceMobileAppConfigurationStateId <String>]`: key: id of managedDeviceMobileAppConfigurationState
-  - `[ManagementConditionId <String>]`: key: id of managementCondition
-  - `[ManagementConditionStatementId <String>]`: key: id of managementConditionStatement
   - `[MicrosoftTunnelConfigurationId <String>]`: key: id of microsoftTunnelConfiguration
   - `[MicrosoftTunnelHealthThresholdId <String>]`: key: id of microsoftTunnelHealthThreshold
   - `[MicrosoftTunnelServerId <String>]`: key: id of microsoftTunnelServer
@@ -430,6 +454,7 @@ INPUTOBJECT <IDeviceManagementIdentity>: Identity Parameter
   - `[UserExperienceAnalyticsBatteryHealthOSPerformanceId <String>]`: key: id of userExperienceAnalyticsBatteryHealthOsPerformance
   - `[UserExperienceAnalyticsCategoryId <String>]`: key: id of userExperienceAnalyticsCategory
   - `[UserExperienceAnalyticsDevicePerformanceId <String>]`: key: id of userExperienceAnalyticsDevicePerformance
+  - `[UserExperienceAnalyticsDeviceScopeId <String>]`: key: id of userExperienceAnalyticsDeviceScope
   - `[UserExperienceAnalyticsDeviceScoresId <String>]`: key: id of userExperienceAnalyticsDeviceScores
   - `[UserExperienceAnalyticsDeviceStartupHistoryId <String>]`: key: id of userExperienceAnalyticsDeviceStartupHistory
   - `[UserExperienceAnalyticsDeviceStartupProcessId <String>]`: key: id of userExperienceAnalyticsDeviceStartupProcess

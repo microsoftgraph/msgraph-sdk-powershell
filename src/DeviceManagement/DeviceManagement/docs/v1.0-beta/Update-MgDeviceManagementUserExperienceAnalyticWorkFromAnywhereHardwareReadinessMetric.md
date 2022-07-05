@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgDeviceManagementUserExperienceAnalyticWorkFromAnywhereHardwareReadinessMetric
 
 ## SYNOPSIS
-User experience analytics work from anywhere hardware readiness metrics.
+Update the navigation property userExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric in deviceManagement
 
 ## SYNTAX
 
@@ -31,7 +31,7 @@ Update-MgDeviceManagementUserExperienceAnalyticWorkFromAnywhereHardwareReadiness
 ```
 
 ## DESCRIPTION
-User experience analytics work from anywhere hardware readiness metrics.
+Update the navigation property userExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric in deviceManagement
 
 ## EXAMPLES
 
@@ -69,7 +69,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -327,7 +327,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphUserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric>: The user experience analytics hardware readiness entity contains account level information about hardware blockers for windows upgrade.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[OSCheckFailedPercentage <Double?>]`: The percentage of devices for which OS check has failed. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
   - `[Processor64BitCheckFailedPercentage <Double?>]`: The percentage of devices for which processor hardware 64-bit architecture check has failed. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
   - `[ProcessorCoreCountCheckFailedPercentage <Double?>]`: The percentage of devices for which processor hardware core count check has failed. Valid values -1.79769313486232E+308 to 1.79769313486232E+308

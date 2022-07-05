@@ -8,8 +8,7 @@ schema: 2.0.0
 # Update-MgGroupSetting
 
 ## SYNOPSIS
-Settings that can govern this group's behavior, like whether members can invite guest users to the group.
-Nullable.
+Update the navigation property settings in groups
 
 ## SYNTAX
 
@@ -40,8 +39,7 @@ Update-MgGroupSetting -InputObject <IGroupsIdentity> [-AdditionalProperties <Has
 ```
 
 ## DESCRIPTION
-Settings that can govern this group's behavior, like whether members can invite guest users to the group.
-Nullable.
+Update the navigation property settings in groups
 
 ## EXAMPLES
 
@@ -125,7 +123,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -257,38 +255,58 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphDirectorySetting>: directorySetting
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[DisplayName <String>]`: Display name of this group of settings, which comes from the associated template. Read-only.
   - `[TemplateId <String>]`: Unique identifier for the template used to create this group of settings. Read-only.
   - `[Values <IMicrosoftGraphSettingValue[]>]`: Collection of name-value pairs corresponding to the name and defaultValue properties in the referenced directorySettingTemplates object.
-    - `[Name <String>]`: Name of the setting (as defined by the groupSettingTemplate).
+    - `[Name <String>]`: Name of the setting (as defined by the directorySettingTemplate).
     - `[Value <String>]`: Value of the setting.
 
 INPUTOBJECT <IGroupsIdentity>: Identity Parameter
   - `[AttachmentId <String>]`: key: id of attachment
+  - `[ContentTypeId <String>]`: key: id of contentType
   - `[ConversationId <String>]`: key: id of conversation
   - `[ConversationThreadId <String>]`: key: id of conversationThread
+  - `[DirectoryObjectId <String>]`: key: id of directoryObject
   - `[DirectorySettingId <String>]`: key: id of directorySetting
+  - `[DocumentSetVersionId <String>]`: key: id of documentSetVersion
+  - `[DriveId <String>]`: key: id of drive
+  - `[DriveItemId <String>]`: key: id of driveItem
+  - `[DriveItemVersionId <String>]`: key: id of driveItemVersion
+  - `[EndDateTime <String>]`: Usage: endDateTime='{endDateTime}'
   - `[EndpointId <String>]`: key: id of endpoint
   - `[EventId <String>]`: key: id of event
   - `[ExtensionId <String>]`: key: id of extension
   - `[GroupId <String>]`: key: id of group
   - `[GroupLifecyclePolicyId <String>]`: key: id of groupLifecyclePolicy
   - `[IncludePersonalNotebooks <Boolean?>]`: Usage: includePersonalNotebooks={includePersonalNotebooks}
+  - `[Interval <String>]`: Usage: interval='{interval}'
+  - `[ListId <String>]`: key: id of list
+  - `[ListId1 <String>]`: Usage: listId='{listId}'
+  - `[ListItemId <String>]`: key: id of listItem
+  - `[ListItemVersionId <String>]`: key: id of listItemVersion
   - `[MentionId <String>]`: key: id of mention
   - `[MultiValueLegacyExtendedPropertyId <String>]`: key: id of multiValueLegacyExtendedProperty
   - `[NotebookId <String>]`: key: id of notebook
   - `[OnenotePageId <String>]`: key: id of onenotePage
   - `[OnenoteSectionId <String>]`: key: id of onenoteSection
+  - `[Path <String>]`: Usage: path='{path}'
+  - `[PermissionId <String>]`: key: id of permission
   - `[PostId <String>]`: key: id of post
   - `[ProfilePhotoId <String>]`: key: id of profilePhoto
+  - `[Q <String>]`: Usage: q='{q}'
   - `[ResourceSpecificPermissionGrantId <String>]`: key: id of resourceSpecificPermissionGrant
   - `[SingleValueLegacyExtendedPropertyId <String>]`: key: id of singleValueLegacyExtendedProperty
-  - `[User <String>]`: Usage: User={User}
+  - `[SiteId <String>]`: key: id of site
+  - `[SitePageId <String>]`: key: id of sitePage
+  - `[StartDateTime <String>]`: Usage: startDateTime='{startDateTime}'
+  - `[SubscriptionId <String>]`: key: id of subscription
+  - `[Token <String>]`: Usage: token='{token}'
+  - `[User <String>]`: Usage: User='{User}'
   - `[UserId <String>]`: key: id of user
 
 VALUES <IMicrosoftGraphSettingValue[]>: Collection of name-value pairs corresponding to the name and defaultValue properties in the referenced directorySettingTemplates object.
-  - `[Name <String>]`: Name of the setting (as defined by the groupSettingTemplate).
+  - `[Name <String>]`: Name of the setting (as defined by the directorySettingTemplate).
   - `[Value <String>]`: Value of the setting.
 
 ## RELATED LINKS

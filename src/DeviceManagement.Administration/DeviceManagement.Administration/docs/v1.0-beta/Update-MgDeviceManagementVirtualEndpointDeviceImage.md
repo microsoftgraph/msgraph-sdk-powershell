@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgDeviceManagementVirtualEndpointDeviceImage
 
 ## SYNOPSIS
-The image resource on Cloud PC.
+Update the navigation property deviceImages in deviceManagement
 
 ## SYNTAX
 
@@ -43,7 +43,7 @@ Update-MgDeviceManagementVirtualEndpointDeviceImage -InputObject <IDeviceManagem
 ```
 
 ## DESCRIPTION
-The image resource on Cloud PC.
+Update the navigation property deviceImages in deviceManagement
 
 ## EXAMPLES
 
@@ -126,7 +126,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -352,7 +352,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphCloudPcDeviceImage>: cloudPcDeviceImage
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[DisplayName <String>]`: The image's display name.
   - `[ExpirationDate <DateTime?>]`: The date the image became unavailable.
   - `[LastModifiedDateTime <DateTime?>]`: The data and time that the image was last modified. The time is shown in ISO 8601 format and  Coordinated Universal Time (UTC) time. For example, midnight UTC on Jan 1, 2014 appears as '2014-01-01T00:00:00Z'.
@@ -387,6 +387,7 @@ INPUTOBJECT <IDeviceManagementAdministrationIdentity>: Identity Parameter
   - `[DeviceManagementExchangeOnPremisesPolicyId <String>]`: key: id of deviceManagementExchangeOnPremisesPolicy
   - `[DeviceManagementPartnerId <String>]`: key: id of deviceManagementPartner
   - `[GroupPolicyCategoryId <String>]`: key: id of groupPolicyCategory
+  - `[GroupPolicyCategoryId1 <String>]`: key: id of groupPolicyCategory
   - `[GroupPolicyDefinitionFileId <String>]`: key: id of groupPolicyDefinitionFile
   - `[GroupPolicyDefinitionId <String>]`: key: id of groupPolicyDefinition
   - `[GroupPolicyMigrationReportId <String>]`: key: id of groupPolicyMigrationReport

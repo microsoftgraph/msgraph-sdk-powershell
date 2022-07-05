@@ -8,8 +8,7 @@ schema: 2.0.0
 # Remove-MgCommunicationCallOperation
 
 ## SYNOPSIS
-Read-only.
-Nullable.
+Delete navigation property operations for communications
 
 ## SYNTAX
 
@@ -26,8 +25,7 @@ Remove-MgCommunicationCallOperation -InputObject <ICloudCommunicationsIdentity> 
 ```
 
 ## DESCRIPTION
-Read-only.
-Nullable.
+Delete navigation property operations for communications
 
 ## EXAMPLES
 

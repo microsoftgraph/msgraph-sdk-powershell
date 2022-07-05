@@ -8,9 +8,7 @@ schema: 2.0.0
 # Update-MgBookingBusinessCustomer
 
 ## SYNOPSIS
-All the customers of this business.
-Read-only.
-Nullable.
+Update the navigation property customers in solutions
 
 ## SYNTAX
 
@@ -39,9 +37,7 @@ Update-MgBookingBusinessCustomer -InputObject <IBookingsIdentity> [-AdditionalPr
 ```
 
 ## DESCRIPTION
-All the customers of this business.
-Read-only.
-Nullable.
+Update the navigation property customers in solutions
 
 ## EXAMPLES
 
@@ -108,7 +104,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String

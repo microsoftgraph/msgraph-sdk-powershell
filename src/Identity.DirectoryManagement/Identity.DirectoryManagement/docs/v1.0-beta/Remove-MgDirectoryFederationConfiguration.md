@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgDirectoryFederationConfiguration
 
 ## SYNOPSIS
-Configure domain federation with organizations whose identity provider (IdP) supports either the SAML or WS-Fed protocol.
+Delete navigation property federationConfigurations for directory
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Remove-MgDirectoryFederationConfiguration -InputObject <IIdentityDirectoryManage
 ```
 
 ## DESCRIPTION
-Configure domain federation with organizations whose identity provider (IdP) supports either the SAML or WS-Fed protocol.
+Delete navigation property federationConfigurations for directory
 
 ## EXAMPLES
 
@@ -165,6 +165,7 @@ INPUTOBJECT <IIdentityDirectoryManagementIdentity>: Identity Parameter
   - `[InternalDomainFederationId <String>]`: key: id of internalDomainFederation
   - `[OrgContactId <String>]`: key: id of orgContact
   - `[OrganizationId <String>]`: key: id of organization
+  - `[OrganizationalBrandingLocalizationId <String>]`: key: id of organizationalBrandingLocalization
   - `[OutboundSharedUserProfileUserId <String>]`: key: userId of outboundSharedUserProfile
   - `[ProfileCardPropertyId <String>]`: key: id of profileCardProperty
   - `[RecommendationId <String>]`: key: id of recommendation

@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgDeviceAppMgtEnterpriseCodeSigningCertificate
 
 ## SYNOPSIS
-The Windows Enterprise Code Signing Certificate.
+Create new navigation property to enterpriseCodeSigningCertificates for deviceAppManagement
 
 ## SYNTAX
 
@@ -27,7 +27,7 @@ New-MgDeviceAppMgtEnterpriseCodeSigningCertificate
 ```
 
 ## DESCRIPTION
-The Windows Enterprise Code Signing Certificate.
+Create new navigation property to enterpriseCodeSigningCertificates for deviceAppManagement
 
 ## EXAMPLES
 
@@ -95,7 +95,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -254,7 +254,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphEnterpriseCodeSigningCertificate>: enterpriseCodeSigningCertificate
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[Content <Byte[]>]`: The Windows Enterprise Code-Signing Certificate in the raw data format.
   - `[ExpirationDateTime <DateTime?>]`: The Cert Expiration Date.
   - `[Issuer <String>]`: The Issuer value for the cert.

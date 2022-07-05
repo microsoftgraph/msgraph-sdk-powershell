@@ -8,12 +8,7 @@ schema: 2.0.0
 # New-MgDeviceRegisteredOwnerByRef
 
 ## SYNOPSIS
-The user that cloud joined the device or registered their personal device.
-The registered owner is set at the time of registration.
-Currently, there can be only one owner.
-Read-only.
-Nullable.
-Supports $expand.
+Create new navigation property ref to registeredOwners for devices
 
 ## SYNTAX
 
@@ -42,12 +37,7 @@ New-MgDeviceRegisteredOwnerByRef -InputObject <IIdentityDirectoryManagementIdent
 ```
 
 ## DESCRIPTION
-The user that cloud joined the device or registered their personal device.
-The registered owner is set at the time of registration.
-Currently, there can be only one owner.
-Read-only.
-Nullable.
-Supports $expand.
+Create new navigation property ref to registeredOwners for devices
 
 ## EXAMPLES
 
@@ -189,6 +179,7 @@ INPUTOBJECT <IIdentityDirectoryManagementIdentity>: Identity Parameter
   - `[InternalDomainFederationId <String>]`: key: id of internalDomainFederation
   - `[OrgContactId <String>]`: key: id of orgContact
   - `[OrganizationId <String>]`: key: id of organization
+  - `[OrganizationalBrandingLocalizationId <String>]`: key: id of organizationalBrandingLocalization
   - `[OutboundSharedUserProfileUserId <String>]`: key: userId of outboundSharedUserProfile
   - `[ProfileCardPropertyId <String>]`: key: id of profileCardProperty
   - `[RecommendationId <String>]`: key: id of recommendation

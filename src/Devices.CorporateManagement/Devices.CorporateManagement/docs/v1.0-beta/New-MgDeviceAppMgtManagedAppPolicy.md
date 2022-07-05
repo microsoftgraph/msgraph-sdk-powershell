@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgDeviceAppMgtManagedAppPolicy
 
 ## SYNOPSIS
-Managed app policies.
+Create new navigation property to managedAppPolicies for deviceAppManagement
 
 ## SYNTAX
 
@@ -26,7 +26,7 @@ New-MgDeviceAppMgtManagedAppPolicy -BodyParameter <IMicrosoftGraphManagedAppPoli
 ```
 
 ## DESCRIPTION
-Managed app policies.
+Create new navigation property to managedAppPolicies for deviceAppManagement
 
 ## EXAMPLES
 
@@ -109,7 +109,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -223,7 +223,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphManagedAppPolicy>: The ManagedAppPolicy resource represents a base type for platform specific policies.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[CreatedDateTime <DateTime?>]`: The date and time the policy was created.
   - `[Description <String>]`: The policy's description.
   - `[DisplayName <String>]`: Policy display name.

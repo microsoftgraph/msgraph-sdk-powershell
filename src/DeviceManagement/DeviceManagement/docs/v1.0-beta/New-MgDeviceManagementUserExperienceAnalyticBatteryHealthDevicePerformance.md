@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgDeviceManagementUserExperienceAnalyticBatteryHealthDevicePerformance
 
 ## SYNOPSIS
-User Experience Analytics Battery Health Device Performance
+Create new navigation property to userExperienceAnalyticsBatteryHealthDevicePerformance for deviceManagement
 
 ## SYNTAX
 
@@ -28,7 +28,7 @@ New-MgDeviceManagementUserExperienceAnalyticBatteryHealthDevicePerformance
 ```
 
 ## DESCRIPTION
-User Experience Analytics Battery Health Device Performance
+Create new navigation property to userExperienceAnalyticsBatteryHealthDevicePerformance for deviceManagement
 
 ## EXAMPLES
 
@@ -162,7 +162,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -276,7 +276,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphUserExperienceAnalyticsBatteryHealthDevicePerformance>: The user experience analytics battery health device performance entity contains device level battery information.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[BatteryAgeInDays <Int32?>]`: Estimated battery age. Unit in days. Valid values -2147483648 to 2147483647
   - `[DeviceBatteryHealthScore <Int32?>]`: A weighted average of a device’s maximum capacity score and runtime estimate score. Values range from 0-100. Valid values -2147483648 to 2147483647
   - `[DeviceId <String>]`: The unique identifier of the device, Intune DeviceID.

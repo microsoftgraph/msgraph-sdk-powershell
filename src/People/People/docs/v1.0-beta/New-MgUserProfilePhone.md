@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgUserProfilePhone
 
 ## SYNOPSIS
-Represents detailed information about phone numbers associated with a user in various services.
+Create new navigation property to phones for users
 
 ## SYNTAX
 
@@ -43,7 +43,7 @@ New-MgUserProfilePhone -InputObject <IPeopleIdentity> [-AdditionalProperties <Ha
 ```
 
 ## DESCRIPTION
-Represents detailed information about phone numbers associated with a user in various services.
+Create new navigation property to phones for users
 
 ## EXAMPLES
 
@@ -142,7 +142,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -370,7 +370,7 @@ BODYPARAMETER <IMicrosoftGraphItemPhone>: itemPhone
   - `[Source <IMicrosoftGraphPersonDataSources>]`: personDataSources
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Type <String[]>]`: 
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[DisplayName <String>]`: Friendly name the user has assigned this phone number.
   - `[Number <String>]`: Phone number provided by the user.
   - `[Type <String>]`: phoneType

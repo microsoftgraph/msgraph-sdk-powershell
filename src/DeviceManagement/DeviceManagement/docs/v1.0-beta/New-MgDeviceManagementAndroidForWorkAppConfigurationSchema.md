@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgDeviceManagementAndroidForWorkAppConfigurationSchema
 
 ## SYNOPSIS
-Android for Work app configuration schema entities.
+Create new navigation property to androidForWorkAppConfigurationSchemas for deviceManagement
 
 ## SYNTAX
 
@@ -28,7 +28,7 @@ New-MgDeviceManagementAndroidForWorkAppConfigurationSchema
 ```
 
 ## DESCRIPTION
-Android for Work app configuration schema entities.
+Create new navigation property to androidForWorkAppConfigurationSchemas for deviceManagement
 
 ## EXAMPLES
 
@@ -81,7 +81,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -164,7 +164,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphAndroidForWorkAppConfigurationSchema>: Schema describing an Android for Work application's custom configurations.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[ExampleJson <Byte[]>]`: UTF8 encoded byte array containing example JSON string conforming to this schema that demonstrates how to set the configuration for this app
   - `[SchemaItems <IMicrosoftGraphAndroidForWorkAppConfigurationSchemaItem[]>]`: Collection of items each representing a named configuration option in the schema
     - `[DataType <String>]`: Data type for a configuration item inside an Android for Work application's custom configuration schema

@@ -8,25 +8,25 @@ schema: 2.0.0
 # New-MgInformationProtectionBitlockerRecoveryKey
 
 ## SYNOPSIS
-The recovery keys associated with the bitlocker entity.
+Create new navigation property to recoveryKeys for informationProtection
 
 ## SYNTAX
 
-### CreateExpanded1 (Default)
+### CreateExpanded (Default)
 ```
 New-MgInformationProtectionBitlockerRecoveryKey [-AdditionalProperties <Hashtable>]
  [-CreatedDateTime <DateTime>] [-DeviceId <String>] [-Id <String>] [-Key <String>] [-VolumeType <String>]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### Create1
+### Create
 ```
 New-MgInformationProtectionBitlockerRecoveryKey -BodyParameter <IMicrosoftGraphBitlockerRecoveryKey>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-The recovery keys associated with the bitlocker entity.
+Create new navigation property to recoveryKeys for informationProtection
 
 ## EXAMPLES
 
@@ -37,7 +37,7 @@ Additional Parameters
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: CreateExpanded1
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -53,7 +53,7 @@ To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETE
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphBitlockerRecoveryKey
-Parameter Sets: Create1
+Parameter Sets: Create
 Aliases:
 
 Required: True
@@ -65,11 +65,10 @@ Accept wildcard characters: False
 
 ### -CreatedDateTime
 The date and time when the key was originally backed up to Azure Active Directory.
-Not nullable.
 
 ```yaml
 Type: System.DateTime
-Parameter Sets: CreateExpanded1
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -80,12 +79,11 @@ Accept wildcard characters: False
 ```
 
 ### -DeviceId
-Identifier of the device the BitLocker key is originally backed up from.
-Supports $filter (eq).
+ID of the device the BitLocker key is originally backed up from.
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded1
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -96,11 +94,11 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded1
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -112,12 +110,10 @@ Accept wildcard characters: False
 
 ### -Key
 The BitLocker recovery key.
-Returned only on $select.
-Not nullable.
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded1
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -132,7 +128,7 @@ volumeType
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded1
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -195,10 +191,10 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphBitlockerRecoveryKey>: bitlockerRecoveryKey
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
-  - `[CreatedDateTime <DateTime?>]`: The date and time when the key was originally backed up to Azure Active Directory. Not nullable.
-  - `[DeviceId <String>]`: Identifier of the device the BitLocker key is originally backed up from. Supports $filter (eq).
-  - `[Key <String>]`: The BitLocker recovery key. Returned only on $select. Not nullable.
+  - `[Id <String>]`: 
+  - `[CreatedDateTime <DateTime?>]`: The date and time when the key was originally backed up to Azure Active Directory.
+  - `[DeviceId <String>]`: ID of the device the BitLocker key is originally backed up from.
+  - `[Key <String>]`: The BitLocker recovery key.
   - `[VolumeType <String>]`: volumeType
 
 ## RELATED LINKS

@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgDeviceManagementUserPfxCertificate
 
 ## SYNOPSIS
-Collection of PFX certificates associated with a user.
+Create new navigation property to userPfxCertificates for deviceManagement
 
 ## SYNTAX
 
@@ -16,9 +16,10 @@ Collection of PFX certificates associated with a user.
 ```
 New-MgDeviceManagementUserPfxCertificate [-AdditionalProperties <Hashtable>] [-CreatedDateTime <DateTime>]
  [-EncryptedPfxBlobInputFile <String>] [-EncryptedPfxPassword <String>] [-ExpirationDateTime <DateTime>]
- [-Id <String>] [-IntendedPurpose <String>] [-KeyName <String>] [-LastModifiedDateTime <DateTime>]
- [-PaddingScheme <String>] [-ProviderName <String>] [-StartDateTime <DateTime>] [-Thumbprint <String>]
- [-UserPrincipalName <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Id <String>] [-IntendedPurpose <UserPfxIntendedPurpose>] [-KeyName <String>]
+ [-LastModifiedDateTime <DateTime>] [-PaddingScheme <UserPfxPaddingScheme>] [-ProviderName <String>]
+ [-StartDateTime <DateTime>] [-Thumbprint <String>] [-UserPrincipalName <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Create
@@ -28,7 +29,7 @@ New-MgDeviceManagementUserPfxCertificate -BodyParameter <IMicrosoftGraphUserPfxC
 ```
 
 ## DESCRIPTION
-Collection of PFX certificates associated with a user.
+Create new navigation property to userPfxCertificates for deviceManagement
 
 ## EXAMPLES
 
@@ -126,7 +127,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -144,7 +145,7 @@ Accept wildcard characters: False
 Supported values for the intended purpose of a user PFX certificate.
 
 ```yaml
-Type: System.String
+Type: Microsoft.Graph.PowerShell.Support.UserPfxIntendedPurpose
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -189,7 +190,7 @@ Accept wildcard characters: False
 Supported values for the padding scheme used by encryption provider.
 
 ```yaml
-Type: System.String
+Type: Microsoft.Graph.PowerShell.Support.UserPfxPaddingScheme
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -313,15 +314,15 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphUserPfxCertificate>: Entity that encapsulates all information required for a user's PFX certificates.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[CreatedDateTime <DateTime?>]`: Date/time when this PFX certificate was imported.
   - `[EncryptedPfxBlob <Byte[]>]`: Encrypted PFX blob.
   - `[EncryptedPfxPassword <String>]`: Encrypted PFX password.
   - `[ExpirationDateTime <DateTime?>]`: Certificate's validity expiration date/time.
-  - `[IntendedPurpose <String>]`: Supported values for the intended purpose of a user PFX certificate.
+  - `[IntendedPurpose <UserPfxIntendedPurpose?>]`: Supported values for the intended purpose of a user PFX certificate.
   - `[KeyName <String>]`: Name of the key (within the provider) used to encrypt the blob.
   - `[LastModifiedDateTime <DateTime?>]`: Date/time when this PFX certificate was last modified.
-  - `[PaddingScheme <String>]`: Supported values for the padding scheme used by encryption provider.
+  - `[PaddingScheme <UserPfxPaddingScheme?>]`: Supported values for the padding scheme used by encryption provider.
   - `[ProviderName <String>]`: Crypto provider used to encrypt this blob.
   - `[StartDateTime <DateTime?>]`: Certificate's validity start date/time.
   - `[Thumbprint <String>]`: SHA-1 thumbprint of the PFX certificate.

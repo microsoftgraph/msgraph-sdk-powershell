@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgDeviceManagementUserExperienceAnalyticBatteryHealthRuntimeDetail
 
 ## SYNOPSIS
-User Experience Analytics Battery Health Runtime Details
+Update the navigation property userExperienceAnalyticsBatteryHealthRuntimeDetails in deviceManagement
 
 ## SYNTAX
 
@@ -28,7 +28,7 @@ Update-MgDeviceManagementUserExperienceAnalyticBatteryHealthRuntimeDetail
 ```
 
 ## DESCRIPTION
-User Experience Analytics Battery Health Runtime Details
+Update the navigation property userExperienceAnalyticsBatteryHealthRuntimeDetails in deviceManagement
 
 ## EXAMPLES
 
@@ -130,7 +130,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -227,7 +227,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphUserExperienceAnalyticsBatteryHealthRuntimeDetails>: The user experience analytics battery health runtime entity contains count of devices broken down into 3 categories - devices with runtime > 5 hours, devices with runtime 3-5 hours and devices with runtime < 3 hours.This API provides the count of devices in these 3 categories.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[ActiveDevices <Int32?>]`: Number of active devices within the tenant. Valid values -2147483648 to 2147483647
   - `[BatteryRuntimeFair <Int32?>]`: Number of devices whose active runtime is greater than 3 hours but lesser than 5 hours. Valid values -2147483648 to 2147483647
   - `[BatteryRuntimeGood <Int32?>]`: Number of devices  whose active runtime is greater than 5 hours. Valid values -2147483648 to 2147483647

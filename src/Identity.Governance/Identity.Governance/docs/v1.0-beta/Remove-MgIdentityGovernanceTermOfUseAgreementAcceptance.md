@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgIdentityGovernanceTermOfUseAgreementAcceptance
 
 ## SYNOPSIS
-Represents the current status of a user's response to a company's customizable terms of use agreement.
+Delete navigation property agreementAcceptances for identityGovernance
 
 ## SYNTAX
 
@@ -18,14 +18,26 @@ Remove-MgIdentityGovernanceTermOfUseAgreementAcceptance -AgreementAcceptanceId <
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
+### Delete1
+```
+Remove-MgIdentityGovernanceTermOfUseAgreementAcceptance -AgreementAcceptanceId <String> -AgreementId <String>
+ [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+```
+
 ### DeleteViaIdentity
 ```
 Remove-MgIdentityGovernanceTermOfUseAgreementAcceptance -InputObject <IIdentityGovernanceIdentity>
  [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
+### DeleteViaIdentity1
+```
+Remove-MgIdentityGovernanceTermOfUseAgreementAcceptance -InputObject <IIdentityGovernanceIdentity>
+ [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+```
+
 ## DESCRIPTION
-Represents the current status of a user's response to a company's customizable terms of use agreement.
+Delete navigation property agreementAcceptances for identityGovernance
 
 ## EXAMPLES
 
@@ -36,7 +48,22 @@ key: id of agreementAcceptance
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete
+Parameter Sets: Delete, Delete1
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -AgreementId
+key: id of agreement
+
+```yaml
+Type: System.String
+Parameter Sets: Delete1
 Aliases:
 
 Required: True
@@ -67,7 +94,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
-Parameter Sets: DeleteViaIdentity
+Parameter Sets: DeleteViaIdentity, DeleteViaIdentity1
 Aliases:
 
 Required: True
@@ -150,6 +177,8 @@ INPUTOBJECT <IIdentityGovernanceIdentity>: Identity Parameter
   - `[AccessPackageAssignmentResourceRoleId <String>]`: key: id of accessPackageAssignmentResourceRole
   - `[AccessPackageCatalogId <String>]`: key: id of accessPackageCatalog
   - `[AccessPackageId <String>]`: key: id of accessPackage
+  - `[AccessPackageId1 <String>]`: key: id of accessPackage
+  - `[AccessPackageId2 <String>]`: Usage: accessPackageId='{accessPackageId}'
   - `[AccessPackageResourceEnvironmentId <String>]`: key: id of accessPackageResourceEnvironment
   - `[AccessPackageResourceId <String>]`: key: id of accessPackageResource
   - `[AccessPackageResourceRequestId <String>]`: key: id of accessPackageResourceRequest
@@ -186,14 +215,18 @@ INPUTOBJECT <IIdentityGovernanceIdentity>: Identity Parameter
   - `[GovernanceRoleAssignmentRequestId <String>]`: key: id of governanceRoleAssignmentRequest
   - `[GovernanceRoleDefinitionId <String>]`: key: id of governanceRoleDefinition
   - `[GovernanceRoleSettingId <String>]`: key: id of governanceRoleSetting
-  - `[On <String>]`: Usage: on={on}
+  - `[GroupId <String>]`: key: id of group
+  - `[IncompatibleAccessPackageId <String>]`: Usage: incompatibleAccessPackageId='{incompatibleAccessPackageId}'
+  - `[On <String>]`: Usage: on='{on}'
   - `[PrivilegedAccessId <String>]`: key: id of privilegedAccess
   - `[PrivilegedApprovalId <String>]`: key: id of privilegedApproval
   - `[PrivilegedOperationEventId <String>]`: key: id of privilegedOperationEvent
   - `[PrivilegedRoleAssignmentId <String>]`: key: id of privilegedRoleAssignment
+  - `[PrivilegedRoleAssignmentId1 <String>]`: key: id of privilegedRoleAssignment
   - `[PrivilegedRoleAssignmentRequestId <String>]`: key: id of privilegedRoleAssignmentRequest
   - `[PrivilegedRoleId <String>]`: key: id of privilegedRole
   - `[ProgramControlId <String>]`: key: id of programControl
+  - `[ProgramControlId1 <String>]`: key: id of programControl
   - `[ProgramControlTypeId <String>]`: key: id of programControlType
   - `[ProgramId <String>]`: key: id of program
   - `[UserConsentRequestId <String>]`: key: id of userConsentRequest

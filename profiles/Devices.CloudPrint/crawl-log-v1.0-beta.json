@@ -717,6 +717,22 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Devices.CloudPrint.yml"
     },
+    "/print/reports/security": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Devices.CloudPrint.yml"
+    },
+    "/print/reports/security/microsoft.graph.getAttackSimulationRepeatOffenders()": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Devices.CloudPrint.yml"
+    },
+    "/print/reports/security/microsoft.graph.getAttackSimulationSimulationUserCoverage()": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Devices.CloudPrint.yml"
+    },
+    "/print/reports/security/microsoft.graph.getAttackSimulationTrainingUserCoverage()": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Devices.CloudPrint.yml"
+    },
     "/print/reports/userCredentialUsageDetails": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Devices.CloudPrint.yml"

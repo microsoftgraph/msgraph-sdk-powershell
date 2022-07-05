@@ -8,12 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceRegisteredOwnerByRef
 
 ## SYNOPSIS
-The user that cloud joined the device or registered their personal device.
-The registered owner is set at the time of registration.
-Currently, there can be only one owner.
-Read-only.
-Nullable.
-Supports $expand.
+Get ref of registeredOwners from devices
 
 ## SYNTAX
 
@@ -23,12 +18,7 @@ Get-MgDeviceRegisteredOwnerByRef -DeviceId <String> [-Filter <String>] [-Search 
 ```
 
 ## DESCRIPTION
-The user that cloud joined the device or registered their personal device.
-The registered owner is set at the time of registration.
-Currently, there can be only one owner.
-Read-only.
-Nullable.
-Supports $expand.
+Get ref of registeredOwners from devices
 
 ## EXAMPLES
 

@@ -216,8 +216,8 @@ BODYPARAMETER <IPaths17CrvdcApplicationsApplicationIdMicrosoftGraphAddkeyPostReq
     - `[CustomKeyIdentifier <Byte[]>]`: Custom key identifier
     - `[DisplayName <String>]`: Friendly name for the key. Optional.
     - `[EndDateTime <DateTime?>]`: The date and time at which the credential expires. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-    - `[Key <Byte[]>]`: The certificate's raw data in byte array converted to Base64 string. Returned only on $select for a single object, that is, GET applications/{applicationId}?$select=keyCredentials or GET servicePrincipals/{servicePrincipalId}?$select=keyCredentials; otherwise, it is always null.
-    - `[KeyId <String>]`: The unique identifier (GUID) for the key.
+    - `[Key <Byte[]>]`: Value for the key credential. Should be a Base64 encoded value. Returned only on $select for a single object, that is, GET applications/{applicationId}?$select=keyCredentials or GET servicePrincipals/{servicePrincipalId}?$select=keyCredentials; otherwise, it is always null.
+    - `[KeyId <String>]`: The unique identifier for the key.
     - `[StartDateTime <DateTime?>]`: The date and time at which the credential becomes valid.The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
     - `[Type <String>]`: The type of key credential; for example, Symmetric, AsymmetricX509Cert.
     - `[Usage <String>]`: A string that describes the purpose for which the key can be used; for example, Verify.
@@ -233,28 +233,33 @@ BODYPARAMETER <IPaths17CrvdcApplicationsApplicationIdMicrosoftGraphAddkeyPostReq
   - `[Proof <String>]`: 
 
 INPUTOBJECT <IApplicationsIdentity>: Identity Parameter
+  - `[AppManagementPolicyId <String>]`: key: id of appManagementPolicy
   - `[AppRoleAssignmentId <String>]`: key: id of appRoleAssignment
   - `[ApplicationId <String>]`: key: id of application
   - `[ApplicationTemplateId <String>]`: key: id of applicationTemplate
+  - `[ClaimsMappingPolicyId <String>]`: key: id of claimsMappingPolicy
   - `[ConnectorGroupId <String>]`: key: id of connectorGroup
   - `[ConnectorId <String>]`: key: id of connector
   - `[DelegatedPermissionClassificationId <String>]`: key: id of delegatedPermissionClassification
   - `[DirectoryDefinitionId <String>]`: key: id of directoryDefinition
+  - `[DirectoryObjectId <String>]`: key: id of directoryObject
   - `[EndpointId <String>]`: key: id of endpoint
   - `[ExtensionPropertyId <String>]`: key: id of extensionProperty
   - `[FederatedIdentityCredentialId <String>]`: key: id of federatedIdentityCredential
   - `[GroupId <String>]`: key: id of group
+  - `[HomeRealmDiscoveryPolicyId <String>]`: key: id of homeRealmDiscoveryPolicy
   - `[LicenseDetailsId <String>]`: key: id of licenseDetails
+  - `[OAuth2PermissionGrantId <String>]`: key: id of oAuth2PermissionGrant
   - `[OnPremisesAgentGroupId <String>]`: key: id of onPremisesAgentGroup
   - `[OnPremisesAgentGroupId1 <String>]`: key: id of onPremisesAgentGroup
   - `[OnPremisesAgentId <String>]`: key: id of onPremisesAgent
-  - `[OnPremisesAgentId1 <String>]`: key: id of onPremisesAgent
   - `[OnPremisesPublishingProfileId <String>]`: key: id of onPremisesPublishingProfile
   - `[PublishedResourceId <String>]`: key: id of publishedResource
-  - `[PublishedResourceId1 <String>]`: key: id of publishedResource
   - `[ServicePrincipalId <String>]`: key: id of servicePrincipal
   - `[SynchronizationJobId <String>]`: key: id of synchronizationJob
   - `[SynchronizationTemplateId <String>]`: key: id of synchronizationTemplate
+  - `[TokenIssuancePolicyId <String>]`: key: id of tokenIssuancePolicy
+  - `[TokenLifetimePolicyId <String>]`: key: id of tokenLifetimePolicy
   - `[UserId <String>]`: key: id of user
 
 KEYCREDENTIAL <IMicrosoftGraphKeyCredential>: keyCredential
@@ -262,8 +267,8 @@ KEYCREDENTIAL <IMicrosoftGraphKeyCredential>: keyCredential
   - `[CustomKeyIdentifier <Byte[]>]`: Custom key identifier
   - `[DisplayName <String>]`: Friendly name for the key. Optional.
   - `[EndDateTime <DateTime?>]`: The date and time at which the credential expires. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-  - `[Key <Byte[]>]`: The certificate's raw data in byte array converted to Base64 string. Returned only on $select for a single object, that is, GET applications/{applicationId}?$select=keyCredentials or GET servicePrincipals/{servicePrincipalId}?$select=keyCredentials; otherwise, it is always null.
-  - `[KeyId <String>]`: The unique identifier (GUID) for the key.
+  - `[Key <Byte[]>]`: Value for the key credential. Should be a Base64 encoded value. Returned only on $select for a single object, that is, GET applications/{applicationId}?$select=keyCredentials or GET servicePrincipals/{servicePrincipalId}?$select=keyCredentials; otherwise, it is always null.
+  - `[KeyId <String>]`: The unique identifier for the key.
   - `[StartDateTime <DateTime?>]`: The date and time at which the credential becomes valid.The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
   - `[Type <String>]`: The type of key credential; for example, Symmetric, AsymmetricX509Cert.
   - `[Usage <String>]`: A string that describes the purpose for which the key can be used; for example, Verify.

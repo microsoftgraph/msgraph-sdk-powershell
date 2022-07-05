@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgPolicyB2CAuthenticationMethodPolicy
 
 ## SYNOPSIS
-The Azure AD B2C policies that define how end users register via local accounts.
+Update the navigation property b2cAuthenticationMethodsPolicy in policies
 
 ## SYNTAX
 
@@ -26,7 +26,7 @@ Update-MgPolicyB2CAuthenticationMethodPolicy -BodyParameter <IMicrosoftGraphB2CA
 ```
 
 ## DESCRIPTION
-The Azure AD B2C policies that define how end users register via local accounts.
+Update the navigation property b2cAuthenticationMethodsPolicy in policies
 
 ## EXAMPLES
 
@@ -64,7 +64,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -191,7 +191,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphB2CAuthenticationMethodsPolicy>: b2cAuthenticationMethodsPolicy
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[IsEmailPasswordAuthenticationEnabled <Boolean?>]`: The tenant admin can configure local accounts using email if the email and password authentication method is enabled.
   - `[IsPhoneOneTimePasswordAuthenticationEnabled <Boolean?>]`: The tenant admin can configure local accounts using phone number if the phone number and one-time password authentication method is enabled.
   - `[IsUserNameAuthenticationEnabled <Boolean?>]`: The tenant admin can configure local accounts using username if the username and password authentication method is enabled.

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgPolicyCrossTenantAccessPolicy
 
 ## SYNOPSIS
-The custom rules that define an access scenario when interacting with external Azure AD tenants.
+Delete navigation property crossTenantAccessPolicy for policies
 
 ## SYNTAX
 
@@ -18,7 +18,7 @@ Remove-MgPolicyCrossTenantAccessPolicy [-IfMatch <String>] [-PassThru] [-Confirm
 ```
 
 ## DESCRIPTION
-The custom rules that define an access scenario when interacting with external Azure AD tenants.
+Delete navigation property crossTenantAccessPolicy for policies
 
 ## EXAMPLES
 

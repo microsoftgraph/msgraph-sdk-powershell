@@ -8,9 +8,7 @@ schema: 2.0.0
 # Remove-MgUserOutlookTaskGroupTaskFolderSingleValueExtendedProperty
 
 ## SYNOPSIS
-The collection of single-value extended properties defined for the task folder.
-Read-only.
-Nullable.
+Delete navigation property singleValueExtendedProperties for users
 
 ## SYNTAX
 
@@ -28,9 +26,7 @@ Remove-MgUserOutlookTaskGroupTaskFolderSingleValueExtendedProperty -InputObject 
 ```
 
 ## DESCRIPTION
-The collection of single-value extended properties defined for the task folder.
-Read-only.
-Nullable.
+Delete navigation property singleValueExtendedProperties for users
 
 ## EXAMPLES
 
@@ -194,12 +190,17 @@ To create the parameters described below, construct a hash table containing the 
 
 
 INPUTOBJECT <IUsersIdentity>: Identity Parameter
+  - `[AttachmentBaseId <String>]`: key: id of attachmentBase
   - `[AttachmentId <String>]`: key: id of attachment
+  - `[AttachmentSessionId <String>]`: key: id of attachmentSession
+  - `[ChecklistItemId <String>]`: key: id of checklistItem
+  - `[DirectoryObjectId <String>]`: key: id of directoryObject
   - `[ExtensionId <String>]`: key: id of extension
   - `[LicenseDetailsId <String>]`: key: id of licenseDetails
   - `[LinkedResourceId <String>]`: key: id of linkedResource
   - `[MultiValueLegacyExtendedPropertyId <String>]`: key: id of multiValueLegacyExtendedProperty
   - `[NotificationId <String>]`: key: id of notification
+  - `[OAuth2PermissionGrantId <String>]`: key: id of oAuth2PermissionGrant
   - `[OutlookCategoryId <String>]`: key: id of outlookCategory
   - `[OutlookTaskFolderId <String>]`: key: id of outlookTaskFolder
   - `[OutlookTaskGroupId <String>]`: key: id of outlookTaskGroup

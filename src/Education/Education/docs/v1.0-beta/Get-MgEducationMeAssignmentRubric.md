@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgEducationMeAssignmentRubric
 
 ## SYNOPSIS
-When set, the grading rubric attached to this assignment.
+Get rubric from education
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Get-MgEducationMeAssignmentRubric -InputObject <IEducationIdentity> [-ExpandProp
 ```
 
 ## DESCRIPTION
-When set, the grading rubric attached to this assignment.
+Get rubric from education
 
 ## EXAMPLES
 

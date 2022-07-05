@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgBookingBusiness
 
 ## SYNOPSIS
-Represents a Microsot Bookings Business.
+Get entity from bookingBusinesses by key
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgBookingBusiness -InputObject <IBookingsIdentity> [-ExpandProperty <String[
 ```
 
 ## DESCRIPTION
-Represents a Microsot Bookings Business.
+Get entity from bookingBusinesses by key
 
 ## EXAMPLES
 
