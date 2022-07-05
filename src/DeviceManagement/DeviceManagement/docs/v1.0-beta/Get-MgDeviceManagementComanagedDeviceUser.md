@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceManagementComanagedDeviceUser
 
 ## SYNOPSIS
-The primary users associated with the managed device.
+Get users from deviceManagement
 
 ## SYNTAX
 
@@ -19,7 +19,7 @@ Get-MgDeviceManagementComanagedDeviceUser -ManagedDeviceId <String> [-ExpandProp
 ```
 
 ## DESCRIPTION
-The primary users associated with the managed device.
+Get users from deviceManagement
 
 ## EXAMPLES
 

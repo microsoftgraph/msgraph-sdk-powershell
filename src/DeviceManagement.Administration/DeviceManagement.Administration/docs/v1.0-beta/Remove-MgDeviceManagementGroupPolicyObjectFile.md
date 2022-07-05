@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgDeviceManagementGroupPolicyObjectFile
 
 ## SYNOPSIS
-A list of Group Policy Object files uploaded.
+Delete navigation property groupPolicyObjectFiles for deviceManagement
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Remove-MgDeviceManagementGroupPolicyObjectFile -InputObject <IDeviceManagementAd
 ```
 
 ## DESCRIPTION
-A list of Group Policy Object files uploaded.
+Delete navigation property groupPolicyObjectFiles for deviceManagement
 
 ## EXAMPLES
 
@@ -166,6 +166,7 @@ INPUTOBJECT <IDeviceManagementAdministrationIdentity>: Identity Parameter
   - `[DeviceManagementExchangeOnPremisesPolicyId <String>]`: key: id of deviceManagementExchangeOnPremisesPolicy
   - `[DeviceManagementPartnerId <String>]`: key: id of deviceManagementPartner
   - `[GroupPolicyCategoryId <String>]`: key: id of groupPolicyCategory
+  - `[GroupPolicyCategoryId1 <String>]`: key: id of groupPolicyCategory
   - `[GroupPolicyDefinitionFileId <String>]`: key: id of groupPolicyDefinitionFile
   - `[GroupPolicyDefinitionId <String>]`: key: id of groupPolicyDefinition
   - `[GroupPolicyMigrationReportId <String>]`: key: id of groupPolicyMigrationReport

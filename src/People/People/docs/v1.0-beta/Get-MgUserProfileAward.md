@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgUserProfileAward
 
 ## SYNOPSIS
-Represents the details of awards or honors associated with a person.
+Get awards from users
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgUserProfileAward -InputObject <IPeopleIdentity> [-ExpandProperty <String[]
 ```
 
 ## DESCRIPTION
-Represents the details of awards or honors associated with a person.
+Get awards from users
 
 ## EXAMPLES
 

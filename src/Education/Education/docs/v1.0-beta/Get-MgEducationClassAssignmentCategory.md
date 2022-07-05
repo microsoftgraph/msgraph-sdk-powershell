@@ -8,9 +8,7 @@ schema: 2.0.0
 # Get-MgEducationClassAssignmentCategory
 
 ## SYNOPSIS
-When set, enables users to easily find assignments of a given type.
-Read-only.
-Nullable.
+Get assignmentCategories from education
 
 ## SYNTAX
 
@@ -21,25 +19,13 @@ Get-MgEducationClassAssignmentCategory -EducationClassId <String> [-ExpandProper
  [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
-### Get
-```
-Get-MgEducationClassAssignmentCategory -EducationAssignmentId <String> -EducationCategoryId <String>
- -EducationClassId <String> [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
-```
-
-### Get3
+### Get1
 ```
 Get-MgEducationClassAssignmentCategory -EducationCategoryId <String> -EducationClassId <String>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
-### GetViaIdentity
-```
-Get-MgEducationClassAssignmentCategory -InputObject <IEducationIdentity> [-ExpandProperty <String[]>]
- [-Property <String[]>] [<CommonParameters>]
-```
-
-### GetViaIdentity3
+### GetViaIdentity1
 ```
 Get-MgEducationClassAssignmentCategory -InputObject <IEducationIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
@@ -53,9 +39,7 @@ Get-MgEducationClassAssignmentCategory -EducationAssignmentId <String> -Educatio
 ```
 
 ## DESCRIPTION
-When set, enables users to easily find assignments of a given type.
-Read-only.
-Nullable.
+Get assignmentCategories from education
 
 ## EXAMPLES
 
@@ -97,7 +81,7 @@ key: id of educationAssignment
 
 ```yaml
 Type: System.String
-Parameter Sets: Get, List
+Parameter Sets: List
 Aliases:
 
 Required: True
@@ -112,7 +96,7 @@ key: id of educationCategory
 
 ```yaml
 Type: System.String
-Parameter Sets: Get, Get3
+Parameter Sets: Get1
 Aliases:
 
 Required: True
@@ -127,7 +111,7 @@ key: id of educationClass
 
 ```yaml
 Type: System.String
-Parameter Sets: Get, Get3, List, List3
+Parameter Sets: Get1, List, List3
 Aliases:
 
 Required: True
@@ -173,7 +157,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IEducationIdentity
-Parameter Sets: GetViaIdentity, GetViaIdentity3
+Parameter Sets: GetViaIdentity1
 Aliases:
 
 Required: True

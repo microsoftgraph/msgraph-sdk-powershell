@@ -5997,11 +5997,11 @@ components:
       properties:
         displayName:
           type: string
-          description: The display name of the identity. This property is read-only.
+          description: 'The identity''s display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
           nullable: true
         id:
           type: string
-          description: The identifier of the identity. This property is read-only.
+          description: Unique identifier for the identity.
           nullable: true
       additionalProperties:
         type: object
@@ -6378,7 +6378,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.callRecords.traceRouteHop'
-          description: List of network trace route hops collected for this media stream.
+          description: List of network trace route hops collected for this media stream.*
         wifiBand:
           $ref: '#/components/schemas/microsoft.graph.callRecords.wifiBand'
         wifiBatteryCharge:
@@ -6692,7 +6692,7 @@ components:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
-          description: The network path count of this hop that was used to compute the RTT.
+          description: The network path count of this hop that was used to compute the round-trip time.
           format: int32
           nullable: true
         ipAddress:

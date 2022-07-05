@@ -12,25 +12,13 @@ Delete navigation property assignmentCategories for education
 
 ## SYNTAX
 
-### Delete2 (Default)
+### Delete1 (Default)
 ```
 Remove-MgEducationClassAssignmentCategory -EducationCategoryId <String> -EducationClassId <String>
  [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### Delete3
-```
-Remove-MgEducationClassAssignmentCategory -EducationAssignmentId <String> -EducationCategoryId <String>
- -EducationClassId <String> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### DeleteViaIdentity2
-```
-Remove-MgEducationClassAssignmentCategory -InputObject <IEducationIdentity> [-IfMatch <String>] [-PassThru]
- [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### DeleteViaIdentity3
+### DeleteViaIdentity1
 ```
 Remove-MgEducationClassAssignmentCategory -InputObject <IEducationIdentity> [-IfMatch <String>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -43,27 +31,12 @@ Delete navigation property assignmentCategories for education
 
 ## PARAMETERS
 
-### -EducationAssignmentId
-key: id of educationAssignment
-
-```yaml
-Type: System.String
-Parameter Sets: Delete3
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -EducationCategoryId
 key: id of educationCategory
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete2, Delete3
+Parameter Sets: Delete1
 Aliases:
 
 Required: True
@@ -78,7 +51,7 @@ key: id of educationClass
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete2, Delete3
+Parameter Sets: Delete1
 Aliases:
 
 Required: True
@@ -109,7 +82,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IEducationIdentity
-Parameter Sets: DeleteViaIdentity2, DeleteViaIdentity3
+Parameter Sets: DeleteViaIdentity1
 Aliases:
 
 Required: True

@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgUserProfileEducationalActivity
 
 ## SYNOPSIS
-Represents data that a user has supplied related to undergraduate, graduate, postgraduate or other educational activities.
+Create new navigation property to educationalActivities for users
 
 ## SYNTAX
 
@@ -47,7 +47,7 @@ New-MgUserProfileEducationalActivity -InputObject <IPeopleIdentity> [-Additional
 ```
 
 ## DESCRIPTION
-Represents data that a user has supplied related to undergraduate, graduate, postgraduate or other educational activities.
+Create new navigation property to educationalActivities for users
 
 ## EXAMPLES
 
@@ -161,7 +161,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -406,7 +406,7 @@ BODYPARAMETER <IMicrosoftGraphEducationalActivity>: educationalActivity
   - `[Source <IMicrosoftGraphPersonDataSources>]`: personDataSources
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Type <String[]>]`: 
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[CompletionMonthYear <DateTime?>]`: The month and year the user graduated or completed the activity.
   - `[EndMonthYear <DateTime?>]`: The month and year the user completed the educational activity referenced.
   - `[Institution <IMicrosoftGraphInstitutionData>]`: institutionData

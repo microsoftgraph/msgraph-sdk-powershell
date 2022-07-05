@@ -8,9 +8,7 @@ schema: 2.0.0
 # Remove-MgBookingBusinessCustomQuestion
 
 ## SYNOPSIS
-All the custom questions of this business.
-Read-only.
-Nullable.
+Delete navigation property customQuestions for solutions
 
 ## SYNTAX
 
@@ -27,9 +25,7 @@ Remove-MgBookingBusinessCustomQuestion -InputObject <IBookingsIdentity> [-IfMatc
 ```
 
 ## DESCRIPTION
-All the custom questions of this business.
-Read-only.
-Nullable.
+Delete navigation property customQuestions for solutions
 
 ## EXAMPLES
 

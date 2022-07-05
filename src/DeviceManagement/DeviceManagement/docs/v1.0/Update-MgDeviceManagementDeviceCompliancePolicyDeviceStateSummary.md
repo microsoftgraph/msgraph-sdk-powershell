@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgDeviceManagementDeviceCompliancePolicyDeviceStateSummary
 
 ## SYNOPSIS
-The device compliance state summary for this account.
+Update the navigation property deviceCompliancePolicyDeviceStateSummary in deviceManagement
 
 ## SYNTAX
 
@@ -29,7 +29,7 @@ Update-MgDeviceManagementDeviceCompliancePolicyDeviceStateSummary
 ```
 
 ## DESCRIPTION
-The device compliance state summary for this account.
+Update the navigation property deviceCompliancePolicyDeviceStateSummary in deviceManagement
 
 ## EXAMPLES
 
@@ -127,7 +127,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -284,7 +284,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphDeviceCompliancePolicyDeviceStateSummary>: deviceCompliancePolicyDeviceStateSummary
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[CompliantDeviceCount <Int32?>]`: Number of compliant devices
   - `[ConfigManagerCount <Int32?>]`: Number of devices that have compliance managed by System Center Configuration Manager
   - `[ConflictDeviceCount <Int32?>]`: Number of conflict devices

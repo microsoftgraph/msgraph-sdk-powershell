@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgDeviceManagementUserExperienceAnalyticRegressionSummaryOperatingSystemRegression
 
 ## SYNOPSIS
-The metric values for the user experience analytics operating system regression.
+Create new navigation property to operatingSystemRegression for deviceManagement
 
 ## SYNTAX
 
@@ -26,7 +26,7 @@ New-MgDeviceManagementUserExperienceAnalyticRegressionSummaryOperatingSystemRegr
 ```
 
 ## DESCRIPTION
-The metric values for the user experience analytics operating system regression.
+Create new navigation property to operatingSystemRegression for deviceManagement
 
 ## EXAMPLES
 
@@ -64,7 +64,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -161,7 +161,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphUserExperienceAnalyticsMetric>: The user experience analytics metric contains the score and units of a metric of a user experience anlaytics category.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[Unit <String>]`: The unit of the user experience analytics metric.
   - `[Value <Double?>]`: The value of the user experience analytics metric.
 

@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgDeviceAppMgtWindowInformationProtectionDeviceRegistration
 
 ## SYNOPSIS
-Windows information protection device registrations that are not MDM enrolled.
+Create new navigation property to windowsInformationProtectionDeviceRegistrations for deviceAppManagement
 
 ## SYNTAX
 
@@ -27,7 +27,7 @@ New-MgDeviceAppMgtWindowInformationProtectionDeviceRegistration
 ```
 
 ## DESCRIPTION
-Windows information protection device registrations that are not MDM enrolled.
+Create new navigation property to windowsInformationProtectionDeviceRegistrations for deviceAppManagement
 
 ## EXAMPLES
 
@@ -125,7 +125,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -224,7 +224,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphWindowsInformationProtectionDeviceRegistration>: Represents device registration records for Bring-Your-Own-Device(BYOD) Windows devices.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[DeviceMacAddress <String>]`: Device Mac address.
   - `[DeviceName <String>]`: Device name.
   - `[DeviceRegistrationId <String>]`: Device identifier for this device registration record.

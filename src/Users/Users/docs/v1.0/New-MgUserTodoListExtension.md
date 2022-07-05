@@ -8,8 +8,7 @@ schema: 2.0.0
 # New-MgUserTodoListExtension
 
 ## SYNOPSIS
-The collection of open extensions defined for the task list.
-Nullable.
+Create new navigation property to extensions for users
 
 ## SYNTAX
 
@@ -38,8 +37,7 @@ New-MgUserTodoListExtension -InputObject <IUsersIdentity> [-AdditionalProperties
 ```
 
 ## DESCRIPTION
-The collection of open extensions defined for the task list.
-Nullable.
+Create new navigation property to extensions for users
 
 ## EXAMPLES
 
@@ -76,7 +74,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -190,12 +188,17 @@ To create the parameters described below, construct a hash table containing the 
 
 
 INPUTOBJECT <IUsersIdentity>: Identity Parameter
+  - `[AttachmentBaseId <String>]`: key: id of attachmentBase
   - `[AttachmentId <String>]`: key: id of attachment
+  - `[AttachmentSessionId <String>]`: key: id of attachmentSession
+  - `[ChecklistItemId <String>]`: key: id of checklistItem
+  - `[DirectoryObjectId <String>]`: key: id of directoryObject
   - `[ExtensionId <String>]`: key: id of extension
   - `[LicenseDetailsId <String>]`: key: id of licenseDetails
   - `[LinkedResourceId <String>]`: key: id of linkedResource
   - `[MultiValueLegacyExtendedPropertyId <String>]`: key: id of multiValueLegacyExtendedProperty
   - `[NotificationId <String>]`: key: id of notification
+  - `[OAuth2PermissionGrantId <String>]`: key: id of oAuth2PermissionGrant
   - `[OutlookCategoryId <String>]`: key: id of outlookCategory
   - `[OutlookTaskFolderId <String>]`: key: id of outlookTaskFolder
   - `[OutlookTaskGroupId <String>]`: key: id of outlookTaskGroup

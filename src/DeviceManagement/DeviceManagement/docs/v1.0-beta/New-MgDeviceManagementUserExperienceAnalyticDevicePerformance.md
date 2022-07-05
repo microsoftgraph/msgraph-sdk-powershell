@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgDeviceManagementUserExperienceAnalyticDevicePerformance
 
 ## SYNOPSIS
-User experience analytics device performance
+Create new navigation property to userExperienceAnalyticsDevicePerformance for deviceManagement
 
 ## SYNTAX
 
@@ -17,7 +17,7 @@ User experience analytics device performance
 New-MgDeviceManagementUserExperienceAnalyticDevicePerformance [-AdditionalProperties <Hashtable>]
  [-AverageBlueScreens <Double>] [-AverageRestarts <Double>] [-BlueScreenCount <Int32>] [-BootScore <Int32>]
  [-CoreBootTimeInMS <Int32>] [-CoreLoginTimeInMS <Int32>] [-DeviceCount <Int64>] [-DeviceName <String>]
- [-DiskType <String>] [-GroupPolicyBootTimeInMS <Int32>] [-GroupPolicyLoginTimeInMS <Int32>]
+ [-DiskType <DiskType>] [-GroupPolicyBootTimeInMS <Int32>] [-GroupPolicyLoginTimeInMS <Int32>]
  [-HealthStatus <String>] [-Id <String>] [-LoginScore <Int32>] [-Manufacturer <String>] [-Model <String>]
  [-ModelStartupPerformanceScore <Double>] [-OperatingSystemVersion <String>]
  [-ResponsiveDesktopTimeInMS <Int32>] [-RestartCount <Int32>] [-StartupPerformanceScore <Double>] [-Confirm]
@@ -32,7 +32,7 @@ New-MgDeviceManagementUserExperienceAnalyticDevicePerformance
 ```
 
 ## DESCRIPTION
-User experience analytics device performance
+Create new navigation property to userExperienceAnalyticsDevicePerformance for deviceManagement
 
 ## EXAMPLES
 
@@ -196,7 +196,7 @@ Accept wildcard characters: False
 diskType
 
 ```yaml
-Type: System.String
+Type: Microsoft.Graph.PowerShell.Support.DiskType
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -253,7 +253,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -443,7 +443,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphUserExperienceAnalyticsDevicePerformance>: The user experience analytics device performance entity contains device boot performance details.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[AverageBlueScreens <Double?>]`: Average (mean) number of Blue Screens per device in the last 14 days. Valid values 0 to 9999999
   - `[AverageRestarts <Double?>]`: Average (mean) number of Restarts per device in the last 14 days. Valid values 0 to 9999999
   - `[BlueScreenCount <Int32?>]`: Number of Blue Screens in the last 14 days. Valid values 0 to 9999999
@@ -452,7 +452,7 @@ BODYPARAMETER <IMicrosoftGraphUserExperienceAnalyticsDevicePerformance>: The use
   - `[CoreLoginTimeInMS <Int32?>]`: The user experience analytics device core login time in milliseconds.
   - `[DeviceCount <Int64?>]`: User experience analytics summarized device count.
   - `[DeviceName <String>]`: The user experience analytics device name.
-  - `[DiskType <String>]`: diskType
+  - `[DiskType <DiskType?>]`: diskType
   - `[GroupPolicyBootTimeInMS <Int32?>]`: The user experience analytics device group policy boot time in milliseconds.
   - `[GroupPolicyLoginTimeInMS <Int32?>]`: The user experience analytics device group policy login time in milliseconds.
   - `[HealthStatus <String>]`: userExperienceAnalyticsHealthState

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgPlannerRosterMember
 
 ## SYNOPSIS
-Retrieves the members of the plannerRoster.
+Delete navigation property members for planner
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Remove-MgPlannerRosterMember -InputObject <IPlannerIdentity> [-IfMatch <String>]
 ```
 
 ## DESCRIPTION
-Retrieves the members of the plannerRoster.
+Delete navigation property members for planner
 
 ## EXAMPLES
 

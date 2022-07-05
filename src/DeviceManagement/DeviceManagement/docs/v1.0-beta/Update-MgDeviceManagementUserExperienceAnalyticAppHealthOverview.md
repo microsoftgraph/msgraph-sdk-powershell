@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgDeviceManagementUserExperienceAnalyticAppHealthOverview
 
 ## SYNOPSIS
-User experience analytics appHealth overview
+Update the navigation property userExperienceAnalyticsAppHealthOverview in deviceManagement
 
 ## SYNTAX
 
@@ -28,7 +28,7 @@ Update-MgDeviceManagementUserExperienceAnalyticAppHealthOverview
 ```
 
 ## DESCRIPTION
-User experience analytics appHealth overview
+Update the navigation property userExperienceAnalyticsAppHealthOverview in deviceManagement
 
 ## EXAMPLES
 
@@ -66,7 +66,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -180,14 +180,14 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphUserExperienceAnalyticsCategory>: The user experience analytics category entity contains the scores and insights for the various metrics of a category.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[Insights <IMicrosoftGraphUserExperienceAnalyticsInsight[]>]`: The insights for the user experience analytics category.
     - `[InsightId <String>]`: The unique identifier of the user experience analytics insight.
     - `[Severity <String>]`: userExperienceAnalyticsInsightSeverity
     - `[UserExperienceAnalyticsMetricId <String>]`: The unique identifier of the user experience analytics insight.
     - `[Values <IMicrosoftGraphUserExperienceAnalyticsInsightValue[]>]`: The value of the user experience analytics insight.
   - `[MetricValues <IMicrosoftGraphUserExperienceAnalyticsMetric[]>]`: The metric values for the user experience analytics category.
-    - `[Id <String>]`: Read-only.
+    - `[Id <String>]`: 
     - `[Unit <String>]`: The unit of the user experience analytics metric.
     - `[Value <Double?>]`: The value of the user experience analytics metric.
 
@@ -198,7 +198,7 @@ INSIGHTS <IMicrosoftGraphUserExperienceAnalyticsInsight[]>: The insights for the
   - `[Values <IMicrosoftGraphUserExperienceAnalyticsInsightValue[]>]`: The value of the user experience analytics insight.
 
 METRICVALUES <IMicrosoftGraphUserExperienceAnalyticsMetric[]>: The metric values for the user experience analytics category.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[Unit <String>]`: The unit of the user experience analytics metric.
   - `[Value <Double?>]`: The value of the user experience analytics metric.
 

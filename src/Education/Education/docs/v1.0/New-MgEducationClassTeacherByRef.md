@@ -8,8 +8,7 @@ schema: 2.0.0
 # New-MgEducationClassTeacherByRef
 
 ## SYNOPSIS
-All teachers in the class.
-Nullable.
+Create new navigation property ref to teachers for education
 
 ## SYNTAX
 
@@ -38,8 +37,7 @@ New-MgEducationClassTeacherByRef -InputObject <IEducationIdentity> [-AdditionalP
 ```
 
 ## DESCRIPTION
-All teachers in the class.
-Nullable.
+Create new navigation property ref to teachers for education
 
 ## EXAMPLES
 

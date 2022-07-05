@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgUserOnlineMeetingRegistrationCustomQuestion
 
 ## SYNOPSIS
-Custom registration questions.
+Create new navigation property to customQuestions for users
 
 ## SYNTAX
 
@@ -39,7 +39,7 @@ New-MgUserOnlineMeetingRegistrationCustomQuestion -InputObject <ICloudCommunicat
 ```
 
 ## DESCRIPTION
-Custom registration questions.
+Create new navigation property to customQuestions for users
 
 ## EXAMPLES
 
@@ -122,7 +122,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -253,7 +253,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphMeetingRegistrationQuestion>: meetingRegistrationQuestion
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[AnswerInputType <String>]`: answerInputType
   - `[AnswerOptions <String[]>]`: Answer options when answerInputType is radioButton.
   - `[DisplayName <String>]`: Display name of the custom registration question.

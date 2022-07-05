@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgPolicyCrossTenantAccessPolicyDefault
 
 ## SYNOPSIS
-Defines the default configuration for how your organization interacts with external Azure Active Directory organizations.
+Delete navigation property default for policies
 
 ## SYNTAX
 
@@ -18,7 +18,7 @@ Remove-MgPolicyCrossTenantAccessPolicyDefault [-IfMatch <String>] [-PassThru] [-
 ```
 
 ## DESCRIPTION
-Defines the default configuration for how your organization interacts with external Azure Active Directory organizations.
+Delete navigation property default for policies
 
 ## EXAMPLES
 

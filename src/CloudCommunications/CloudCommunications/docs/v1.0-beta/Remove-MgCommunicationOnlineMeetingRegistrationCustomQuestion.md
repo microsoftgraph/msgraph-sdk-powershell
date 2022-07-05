@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgCommunicationOnlineMeetingRegistrationCustomQuestion
 
 ## SYNOPSIS
-Custom registration questions.
+Delete navigation property customQuestions for communications
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Remove-MgCommunicationOnlineMeetingRegistrationCustomQuestion -InputObject <IClo
 ```
 
 ## DESCRIPTION
-Custom registration questions.
+Delete navigation property customQuestions for communications
 
 ## EXAMPLES
 

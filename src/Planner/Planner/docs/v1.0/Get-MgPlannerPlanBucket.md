@@ -8,9 +8,7 @@ schema: 2.0.0
 # Get-MgPlannerPlanBucket
 
 ## SYNOPSIS
-Read-only.
-Nullable.
-Collection of buckets in the plan.
+Get buckets from planner
 
 ## SYNTAX
 
@@ -21,9 +19,7 @@ Get-MgPlannerPlanBucket -PlannerPlanId <String> [-ExpandProperty <String[]>] [-F
 ```
 
 ## DESCRIPTION
-Read-only.
-Nullable.
-Collection of buckets in the plan.
+Get buckets from planner
 
 ## EXAMPLES
 

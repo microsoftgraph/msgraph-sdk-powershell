@@ -8,9 +8,7 @@ schema: 2.0.0
 # Get-MgBookingBusinessStaffMember
 
 ## SYNOPSIS
-All the staff members that provide services in this business.
-Read-only.
-Nullable.
+Get staffMembers from bookingBusinesses
 
 ## SYNTAX
 
@@ -34,9 +32,7 @@ Get-MgBookingBusinessStaffMember -InputObject <IBookingsIdentity> [-ExpandProper
 ```
 
 ## DESCRIPTION
-All the staff members that provide services in this business.
-Read-only.
-Nullable.
+Get staffMembers from bookingBusinesses
 
 ## EXAMPLES
 

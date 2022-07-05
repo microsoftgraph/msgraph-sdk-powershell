@@ -8,9 +8,7 @@ schema: 2.0.0
 # Get-MgUserScopedRoleMemberOf
 
 ## SYNOPSIS
-The scoped-role administrative unit memberships for this user.
-Read-only.
-Nullable.
+Get scopedRoleMemberOf from users
 
 ## SYNTAX
 
@@ -34,9 +32,7 @@ Get-MgUserScopedRoleMemberOf -InputObject <IIdentityDirectoryManagementIdentity>
 ```
 
 ## DESCRIPTION
-The scoped-role administrative unit memberships for this user.
-Read-only.
-Nullable.
+Get scopedRoleMemberOf from users
 
 ## EXAMPLES
 
@@ -254,8 +250,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ALIASES
 
-### Get-MgUserScopedRoleMember
-
 COMPLEX PARAMETER PROPERTIES
 
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
@@ -283,6 +277,7 @@ INPUTOBJECT <IIdentityDirectoryManagementIdentity>: Identity Parameter
   - `[InternalDomainFederationId <String>]`: key: id of internalDomainFederation
   - `[OrgContactId <String>]`: key: id of orgContact
   - `[OrganizationId <String>]`: key: id of organization
+  - `[OrganizationalBrandingLocalizationId <String>]`: key: id of organizationalBrandingLocalization
   - `[OutboundSharedUserProfileUserId <String>]`: key: userId of outboundSharedUserProfile
   - `[ProfileCardPropertyId <String>]`: key: id of profileCardProperty
   - `[RecommendationId <String>]`: key: id of recommendation

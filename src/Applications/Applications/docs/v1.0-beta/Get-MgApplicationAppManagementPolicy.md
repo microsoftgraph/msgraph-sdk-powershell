@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgApplicationAppManagementPolicy
 
 ## SYNOPSIS
-The appManagementPolicy applied to this application.
+Get appManagementPolicies from applications
 
 ## SYNTAX
 
@@ -19,7 +19,7 @@ Get-MgApplicationAppManagementPolicy -ApplicationId <String> [-ExpandProperty <S
 ```
 
 ## DESCRIPTION
-The appManagementPolicy applied to this application.
+Get appManagementPolicies from applications
 
 ## EXAMPLES
 

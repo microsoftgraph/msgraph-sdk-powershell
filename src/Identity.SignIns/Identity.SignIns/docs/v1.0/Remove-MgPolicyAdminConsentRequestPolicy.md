@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgPolicyAdminConsentRequestPolicy
 
 ## SYNOPSIS
-The policy by which consent requests are created and managed for the entire tenant.
+Delete navigation property adminConsentRequestPolicy for policies
 
 ## SYNTAX
 
@@ -18,7 +18,7 @@ Remove-MgPolicyAdminConsentRequestPolicy [-IfMatch <String>] [-PassThru] [-Confi
 ```
 
 ## DESCRIPTION
-The policy by which consent requests are created and managed for the entire tenant.
+Delete navigation property adminConsentRequestPolicy for policies
 
 ## EXAMPLES
 

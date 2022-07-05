@@ -462,8 +462,6 @@ paths:
                 - calendarView
                 - conversations
                 - events
-                - photo
-                - photos
                 - rejectedSenders
                 - threads
                 - drive
@@ -473,6 +471,8 @@ paths:
                 - groupLifecyclePolicies
                 - planner
                 - onenote
+                - photo
+                - photos
                 - team
               type: string
         - name: $expand
@@ -501,8 +501,6 @@ paths:
                 - calendarView
                 - conversations
                 - events
-                - photo
-                - photos
                 - rejectedSenders
                 - threads
                 - drive
@@ -512,6 +510,8 @@ paths:
                 - groupLifecyclePolicies
                 - planner
                 - onenote
+                - photo
+                - photos
                 - team
               type: string
       responses:
@@ -624,8 +624,6 @@ paths:
                 - calendarView
                 - conversations
                 - events
-                - photo
-                - photos
                 - rejectedSenders
                 - threads
                 - drive
@@ -635,6 +633,8 @@ paths:
                 - groupLifecyclePolicies
                 - planner
                 - onenote
+                - photo
+                - photos
                 - team
               type: string
         - name: $expand
@@ -663,8 +663,6 @@ paths:
                 - calendarView
                 - conversations
                 - events
-                - photo
-                - photos
                 - rejectedSenders
                 - threads
                 - drive
@@ -674,6 +672,8 @@ paths:
                 - groupLifecyclePolicies
                 - planner
                 - onenote
+                - photo
+                - photos
                 - team
               type: string
       responses:
@@ -744,14 +744,6 @@ paths:
               operationId: groups.ListEvents
               parameters:
                 group-id: $request.path.group-id
-            photo:
-              operationId: groups.GetPhoto
-              parameters:
-                group-id: $request.path.group-id
-            photos:
-              operationId: groups.ListPhotos
-              parameters:
-                group-id: $request.path.group-id
             rejectedSenders:
               operationId: groups.ListRejectedSenders
               parameters:
@@ -786,6 +778,14 @@ paths:
                 group-id: $request.path.group-id
             onenote:
               operationId: groups.GetOnenote
+              parameters:
+                group-id: $request.path.group-id
+            photo:
+              operationId: groups.GetPhoto
+              parameters:
+                group-id: $request.path.group-id
+            photos:
+              operationId: groups.ListPhotos
               parameters:
                 group-id: $request.path.group-id
             team:
@@ -23261,13 +23261,6 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.event'
               description: The group's events.
-            photo:
-              $ref: '#/components/schemas/microsoft.graph.profilePhoto'
-            photos:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.profilePhoto'
-              description: The profile photos owned by the group. Read-only. Nullable.
             rejectedSenders:
               type: array
               items:
@@ -23304,6 +23297,13 @@ components:
               $ref: '#/components/schemas/microsoft.graph.plannerGroup'
             onenote:
               $ref: '#/components/schemas/microsoft.graph.onenote'
+            photo:
+              $ref: '#/components/schemas/microsoft.graph.profilePhoto'
+            photos:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.profilePhoto'
+              description: The profile photos owned by the group. Read-only. Nullable.
             team:
               $ref: '#/components/schemas/microsoft.graph.team'
           additionalProperties:
@@ -27790,7 +27790,7 @@ components:
               description: State of license assignments for this user. Read-only. Returned only on $select.
             mail:
               type: string
-              description: 'The SMTP address for the user, for example, admin@contoso.com. Changes to this property will also update the user''s proxyAddresses collection to include the value as an SMTP address. For Azure AD B2C accounts, this property can be updated up to only ten times with unique SMTP addresses. This property cannot contain accent characters.  Supports $filter (eq, ne, not, ge, le, in, startsWith, endsWith, and eq on null values).'
+              description: 'The SMTP address for the user, for example, admin@contoso.com. Changes to this property will also update the user''s proxyAddresses collection to include the value as an SMTP address. This property cannot contain accent characters.  NOTE: We do not recommend updating this property for Azure AD B2C user profiles. Use the otherMails property instead.  Supports $filter (eq, ne, not, ge, le, in, startsWith, endsWith, and eq on null values).'
               nullable: true
             mailNickname:
               type: string
@@ -28487,11 +28487,11 @@ components:
       properties:
         displayName:
           type: string
-          description: The display name of the identity. This property is read-only.
+          description: 'The identity''s display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
           nullable: true
         id:
           type: string
-          description: The identifier of the identity. This property is read-only.
+          description: Unique identifier for the identity.
           nullable: true
       additionalProperties:
         type: object
@@ -29429,6 +29429,8 @@ components:
         - unarchiveTeam
         - createTeam
         - unknownFutureValue
+        - teamifyGroup
+        - createChannel
       type: string
     microsoft.graph.teamsAsyncOperationStatus:
       title: teamsAsyncOperationStatus

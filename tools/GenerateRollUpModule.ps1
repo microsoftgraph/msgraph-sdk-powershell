@@ -89,7 +89,8 @@ elseif ($VersionState.Equals([VersionState]::Valid) -or $VersionState.Equals([Ve
     }
 
     foreach ($RequiredModule in $ModuleMapping.Keys) {
-        # Install module locally in order to specify it as a dependency of the roll-up module down the generation pipeline.
+        # Install module locally in order to specify it as a dependency of the roll-up module down.
+        # New-ModuleManifest expects all required modules to be installed locally.
         # https://stackoverflow.com/questions/46216038/how-do-i-define-requiredmodules-in-a-powershell-module-manifest-psd1.
         $ExistingWorkloadModule = Find-Module "$ModulePrefix.$RequiredModule" -Repository $RepositoryName -AllowPrerelease:$AllowPreRelease -ErrorAction SilentlyContinue
         if ($null -ne $ExistingWorkloadModule) {
@@ -128,6 +129,7 @@ elseif ($VersionState.Equals([VersionState]::Valid) -or $VersionState.Equals([Ve
         AliasesToExport        = @()
         CmdletsToExport        = @()
         FunctionsToExport      = @()
+        GUID                   = $NuspecMetadata["guid"]
     }
 
     Write-Host -ForegroundColor Green "Creating '$ModulePrefix' module manifest and nuspec..."
@@ -145,6 +147,7 @@ elseif ($VersionState.Equals([VersionState]::Valid) -or $VersionState.Equals([Ve
         Copy-Item (Join-Path $PSScriptRoot "\Templates\$ModulePrefix.nuspec") -Destination $GraphModuleLocation
     }
 
+    $NuspecMetadata.Remove("guid")
     Set-NuSpecValuesFromManifest -NuSpecFilePath "$RollUpModuleNuspec.nuspec" -Manifest $NuspecMetadata
 
     if ($Pack) {

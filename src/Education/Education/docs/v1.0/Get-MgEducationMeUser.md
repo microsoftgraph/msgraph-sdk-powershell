@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgEducationMeUser
 
 ## SYNOPSIS
-The directory user corresponding to this user.
+Get user from education
 
 ## SYNTAX
 
@@ -17,7 +17,7 @@ Get-MgEducationMeUser [-ExpandProperty <String[]>] [-Property <String[]>] [<Comm
 ```
 
 ## DESCRIPTION
-The directory user corresponding to this user.
+Get user from education
 
 ## EXAMPLES
 

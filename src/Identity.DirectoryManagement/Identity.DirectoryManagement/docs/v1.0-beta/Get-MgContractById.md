@@ -18,7 +18,7 @@ Get-MgContractById [-AdditionalProperties <Hashtable>] [-Ids <String[]>] [-Types
  [-WhatIf] [<CommonParameters>]
 ```
 
-### Get3
+### Get1
 ```
 Get-MgContractById
  -BodyParameter <IPaths1T6Lra6ContractsMicrosoftGraphGetbyidsPostRequestbodyContentApplicationJsonSchema>
@@ -53,7 +53,7 @@ To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETE
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IPaths1T6Lra6ContractsMicrosoftGraphGetbyidsPostRequestbodyContentApplicationJsonSchema
-Parameter Sets: Get3
+Parameter Sets: Get1
 Aliases:
 
 Required: True

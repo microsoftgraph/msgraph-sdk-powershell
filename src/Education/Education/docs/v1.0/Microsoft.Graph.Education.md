@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Education
-Module Guid: 454554db-fad9-4fae-834d-66c008e14d48
+Module Guid: 4b3f0239-2756-4c38-bcb7-1dca45bcf1b9
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.education
 Help Version: 1.0.0.0
 Locale: en-US
@@ -15,158 +15,121 @@ Microsoft Graph PowerShell Cmdlets
 Get classes from education
 
 ### [Get-MgEducationClassAssignment](Get-MgEducationClassAssignment.md)
-All assignments associated with this class.
-Nullable.
+Get assignments from education
 
 ### [Get-MgEducationClassAssignmentCategory](Get-MgEducationClassAssignmentCategory.md)
 Get assignmentCategories from education
 
+### [Get-MgEducationClassAssignmentCategoryByRef](Get-MgEducationClassAssignmentCategoryByRef.md)
+Get ref of categories from education
+
+### [Get-MgEducationClassAssignmentCategoryDelta](Get-MgEducationClassAssignmentCategoryDelta.md)
+Invoke function delta
+
 ### [Get-MgEducationClassAssignmentDefault](Get-MgEducationClassAssignmentDefault.md)
 Get assignmentDefaults from education
 
+### [Get-MgEducationClassAssignmentDelta](Get-MgEducationClassAssignmentDelta.md)
+Invoke function delta
+
 ### [Get-MgEducationClassAssignmentResource](Get-MgEducationClassAssignmentResource.md)
-Learning objects that are associated with this assignment.
-Only teachers can modify this list.
-Nullable.
+Get resources from education
 
 ### [Get-MgEducationClassAssignmentRubric](Get-MgEducationClassAssignmentRubric.md)
-When set, the grading rubric attached to this assignment.
+Get rubric from education
+
+### [Get-MgEducationClassAssignmentRubricByRef](Get-MgEducationClassAssignmentRubricByRef.md)
+Get ref of rubric from education
 
 ### [Get-MgEducationClassAssignmentSetting](Get-MgEducationClassAssignmentSetting.md)
 Get assignmentSettings from education
 
 ### [Get-MgEducationClassAssignmentSubmission](Get-MgEducationClassAssignmentSubmission.md)
-Once published, there is a submission object for each student representing their work and grade.
-Read-only.
-Nullable.
+Get submissions from education
 
 ### [Get-MgEducationClassAssignmentSubmissionOutcome](Get-MgEducationClassAssignmentSubmissionOutcome.md)
-Read-Write.
-Nullable.
+Get outcomes from education
 
 ### [Get-MgEducationClassAssignmentSubmissionResource](Get-MgEducationClassAssignmentSubmissionResource.md)
-Nullable.
+Get resources from education
 
 ### [Get-MgEducationClassAssignmentSubmissionSubmittedResource](Get-MgEducationClassAssignmentSubmissionSubmittedResource.md)
-Read-only.
-Nullable.
+Get submittedResources from education
 
 ### [Get-MgEducationClassDelta](Get-MgEducationClassDelta.md)
 Invoke function delta
 
 ### [Get-MgEducationClassGroup](Get-MgEducationClassGroup.md)
-The underlying Microsoft 365 group object.
-
-### [Get-MgEducationClassGroupByRef](Get-MgEducationClassGroupByRef.md)
-The underlying Microsoft 365 group object.
+Get group from education
 
 ### [Get-MgEducationClassMember](Get-MgEducationClassMember.md)
-All users in the class.
-Nullable.
+Get members from education
 
 ### [Get-MgEducationClassMemberByRef](Get-MgEducationClassMemberByRef.md)
-All users in the class.
-Nullable.
-
-### [Get-MgEducationClassMemberDelta](Get-MgEducationClassMemberDelta.md)
-Invoke function delta
+Get ref of members from education
 
 ### [Get-MgEducationClassSchool](Get-MgEducationClassSchool.md)
-All schools that this class is associated with.
-Nullable.
-
-### [Get-MgEducationClassSchoolByRef](Get-MgEducationClassSchoolByRef.md)
-All schools that this class is associated with.
-Nullable.
-
-### [Get-MgEducationClassSchoolDelta](Get-MgEducationClassSchoolDelta.md)
-Invoke function delta
+Get schools from education
 
 ### [Get-MgEducationClassTeacher](Get-MgEducationClassTeacher.md)
-All teachers in the class.
-Nullable.
+Get teachers from education
 
 ### [Get-MgEducationClassTeacherByRef](Get-MgEducationClassTeacherByRef.md)
-All teachers in the class.
-Nullable.
-
-### [Get-MgEducationClassTeacherDelta](Get-MgEducationClassTeacherDelta.md)
-Invoke function delta
+Get ref of teachers from education
 
 ### [Get-MgEducationMe](Get-MgEducationMe.md)
 Get me from education
 
 ### [Get-MgEducationMeAssignment](Get-MgEducationMeAssignment.md)
-Assignments belonging to the user.
+Get assignments from education
 
 ### [Get-MgEducationMeAssignmentCategory](Get-MgEducationMeAssignmentCategory.md)
-When set, enables users to easily find assignments of a given type.
-Read-only.
-Nullable.
+Get categories from education
+
+### [Get-MgEducationMeAssignmentCategoryByRef](Get-MgEducationMeAssignmentCategoryByRef.md)
+Get ref of categories from education
+
+### [Get-MgEducationMeAssignmentCategoryDelta](Get-MgEducationMeAssignmentCategoryDelta.md)
+Invoke function delta
+
+### [Get-MgEducationMeAssignmentDelta](Get-MgEducationMeAssignmentDelta.md)
+Invoke function delta
 
 ### [Get-MgEducationMeAssignmentResource](Get-MgEducationMeAssignmentResource.md)
-Learning objects that are associated with this assignment.
-Only teachers can modify this list.
-Nullable.
+Get resources from education
 
 ### [Get-MgEducationMeAssignmentRubric](Get-MgEducationMeAssignmentRubric.md)
-When set, the grading rubric attached to this assignment.
+Get rubric from education
+
+### [Get-MgEducationMeAssignmentRubricByRef](Get-MgEducationMeAssignmentRubricByRef.md)
+Get ref of rubric from education
 
 ### [Get-MgEducationMeAssignmentSubmission](Get-MgEducationMeAssignmentSubmission.md)
-Once published, there is a submission object for each student representing their work and grade.
-Read-only.
-Nullable.
+Get submissions from education
 
 ### [Get-MgEducationMeAssignmentSubmissionOutcome](Get-MgEducationMeAssignmentSubmissionOutcome.md)
-Read-Write.
-Nullable.
+Get outcomes from education
 
 ### [Get-MgEducationMeAssignmentSubmissionResource](Get-MgEducationMeAssignmentSubmissionResource.md)
-Nullable.
+Get resources from education
 
 ### [Get-MgEducationMeAssignmentSubmissionSubmittedResource](Get-MgEducationMeAssignmentSubmissionSubmittedResource.md)
-Read-only.
-Nullable.
+Get submittedResources from education
 
 ### [Get-MgEducationMeClass](Get-MgEducationMeClass.md)
-Classes to which the user belongs.
-Nullable.
-
-### [Get-MgEducationMeClassByRef](Get-MgEducationMeClassByRef.md)
-Classes to which the user belongs.
-Nullable.
-
-### [Get-MgEducationMeClassDelta](Get-MgEducationMeClassDelta.md)
-Invoke function delta
+Get classes from education
 
 ### [Get-MgEducationMeRubric](Get-MgEducationMeRubric.md)
 Get rubrics from education
 
 ### [Get-MgEducationMeSchool](Get-MgEducationMeSchool.md)
-Schools to which the user belongs.
-Nullable.
-
-### [Get-MgEducationMeSchoolByRef](Get-MgEducationMeSchoolByRef.md)
-Schools to which the user belongs.
-Nullable.
-
-### [Get-MgEducationMeSchoolDelta](Get-MgEducationMeSchoolDelta.md)
-Invoke function delta
+Get schools from education
 
 ### [Get-MgEducationMeTaughtClass](Get-MgEducationMeTaughtClass.md)
-Classes for which the user is a teacher.
-
-### [Get-MgEducationMeTaughtClassByRef](Get-MgEducationMeTaughtClassByRef.md)
-Classes for which the user is a teacher.
-
-### [Get-MgEducationMeTaughtClassDelta](Get-MgEducationMeTaughtClassDelta.md)
-Invoke function delta
+Get taughtClasses from education
 
 ### [Get-MgEducationMeUser](Get-MgEducationMeUser.md)
-The directory user corresponding to this user.
-
-### [Get-MgEducationMeUserByRef](Get-MgEducationMeUserByRef.md)
-The directory user corresponding to this user.
+Get user from education
 
 ### [Get-MgEducationRoot](Get-MgEducationRoot.md)
 Get education
@@ -175,81 +138,64 @@ Get education
 Get schools from education
 
 ### [Get-MgEducationSchoolAdministrativeUnit](Get-MgEducationSchoolAdministrativeUnit.md)
-The underlying administrativeUnit for this school.
-
-### [Get-MgEducationSchoolAdministrativeUnitByRef](Get-MgEducationSchoolAdministrativeUnitByRef.md)
-The underlying administrativeUnit for this school.
+Get administrativeUnit from education
 
 ### [Get-MgEducationSchoolClass](Get-MgEducationSchoolClass.md)
-Classes taught at the school.
-Nullable.
+Get classes from education
 
 ### [Get-MgEducationSchoolClassByRef](Get-MgEducationSchoolClassByRef.md)
-Classes taught at the school.
-Nullable.
-
-### [Get-MgEducationSchoolClassDelta](Get-MgEducationSchoolClassDelta.md)
-Invoke function delta
+Get ref of classes from education
 
 ### [Get-MgEducationSchoolDelta](Get-MgEducationSchoolDelta.md)
 Invoke function delta
 
 ### [Get-MgEducationSchoolUser](Get-MgEducationSchoolUser.md)
-Users in the school.
-Nullable.
+Get users from education
 
 ### [Get-MgEducationSchoolUserByRef](Get-MgEducationSchoolUserByRef.md)
-Users in the school.
-Nullable.
-
-### [Get-MgEducationSchoolUserDelta](Get-MgEducationSchoolUserDelta.md)
-Invoke function delta
+Get ref of users from education
 
 ### [Get-MgEducationUser](Get-MgEducationUser.md)
 Get users from education
 
 ### [Get-MgEducationUserAssignment](Get-MgEducationUserAssignment.md)
-Assignments belonging to the user.
+Get assignments from education
 
 ### [Get-MgEducationUserAssignmentCategory](Get-MgEducationUserAssignmentCategory.md)
-When set, enables users to easily find assignments of a given type.
-Read-only.
-Nullable.
+Get categories from education
+
+### [Get-MgEducationUserAssignmentCategoryByRef](Get-MgEducationUserAssignmentCategoryByRef.md)
+Get ref of categories from education
+
+### [Get-MgEducationUserAssignmentCategoryDelta](Get-MgEducationUserAssignmentCategoryDelta.md)
+Invoke function delta
+
+### [Get-MgEducationUserAssignmentDelta](Get-MgEducationUserAssignmentDelta.md)
+Invoke function delta
 
 ### [Get-MgEducationUserAssignmentResource](Get-MgEducationUserAssignmentResource.md)
-Learning objects that are associated with this assignment.
-Only teachers can modify this list.
-Nullable.
+Get resources from education
 
 ### [Get-MgEducationUserAssignmentRubric](Get-MgEducationUserAssignmentRubric.md)
-When set, the grading rubric attached to this assignment.
+Get rubric from education
+
+### [Get-MgEducationUserAssignmentRubricByRef](Get-MgEducationUserAssignmentRubricByRef.md)
+Get ref of rubric from education
 
 ### [Get-MgEducationUserAssignmentSubmission](Get-MgEducationUserAssignmentSubmission.md)
-Once published, there is a submission object for each student representing their work and grade.
-Read-only.
-Nullable.
+Get submissions from education
 
 ### [Get-MgEducationUserAssignmentSubmissionOutcome](Get-MgEducationUserAssignmentSubmissionOutcome.md)
-Read-Write.
-Nullable.
+Get outcomes from education
 
 ### [Get-MgEducationUserAssignmentSubmissionResource](Get-MgEducationUserAssignmentSubmissionResource.md)
-Nullable.
+Get resources from education
 
 ### [Get-MgEducationUserAssignmentSubmissionSubmittedResource](Get-MgEducationUserAssignmentSubmissionSubmittedResource.md)
-Read-only.
-Nullable.
+Get submittedResources from education
 
 ### [Get-MgEducationUserClass](Get-MgEducationUserClass.md)
-Classes to which the user belongs.
-Nullable.
-
-### [Get-MgEducationUserClassByRef](Get-MgEducationUserClassByRef.md)
-Classes to which the user belongs.
-Nullable.
-
-### [Get-MgEducationUserClassDelta](Get-MgEducationUserClassDelta.md)
-Invoke function delta
+Get classes from education
 
 ### [Get-MgEducationUserDelta](Get-MgEducationUserDelta.md)
 Invoke function delta
@@ -258,27 +204,10 @@ Invoke function delta
 Get rubrics from education
 
 ### [Get-MgEducationUserSchool](Get-MgEducationUserSchool.md)
-Schools to which the user belongs.
-Nullable.
-
-### [Get-MgEducationUserSchoolByRef](Get-MgEducationUserSchoolByRef.md)
-Schools to which the user belongs.
-Nullable.
-
-### [Get-MgEducationUserSchoolDelta](Get-MgEducationUserSchoolDelta.md)
-Invoke function delta
+Get schools from education
 
 ### [Get-MgEducationUserTaughtClass](Get-MgEducationUserTaughtClass.md)
-Classes for which the user is a teacher.
-
-### [Get-MgEducationUserTaughtClassByRef](Get-MgEducationUserTaughtClassByRef.md)
-Classes for which the user is a teacher.
-
-### [Get-MgEducationUserTaughtClassDelta](Get-MgEducationUserTaughtClassDelta.md)
-Invoke function delta
-
-### [Get-MgEducationUserUserByRef](Get-MgEducationUserUserByRef.md)
-The directory user corresponding to this user.
+Get taughtClasses from education
 
 ### [Invoke-MgReassignEducationClassAssignmentSubmission](Invoke-MgReassignEducationClassAssignmentSubmission.md)
 Invoke action reassign
@@ -311,144 +240,100 @@ Invoke action unsubmit
 Create new navigation property to classes for education
 
 ### [New-MgEducationClassAssignment](New-MgEducationClassAssignment.md)
-All assignments associated with this class.
-Nullable.
+Create new navigation property to assignments for education
 
 ### [New-MgEducationClassAssignmentCategory](New-MgEducationClassAssignmentCategory.md)
 Create new navigation property to assignmentCategories for education
 
+### [New-MgEducationClassAssignmentCategoryByRef](New-MgEducationClassAssignmentCategoryByRef.md)
+Create new navigation property ref to categories for education
+
 ### [New-MgEducationClassAssignmentResource](New-MgEducationClassAssignmentResource.md)
-Learning objects that are associated with this assignment.
-Only teachers can modify this list.
-Nullable.
+Create new navigation property to resources for education
 
 ### [New-MgEducationClassAssignmentSubmission](New-MgEducationClassAssignmentSubmission.md)
-Once published, there is a submission object for each student representing their work and grade.
-Read-only.
-Nullable.
+Create new navigation property to submissions for education
 
 ### [New-MgEducationClassAssignmentSubmissionOutcome](New-MgEducationClassAssignmentSubmissionOutcome.md)
-Read-Write.
-Nullable.
+Create new navigation property to outcomes for education
 
 ### [New-MgEducationClassAssignmentSubmissionResource](New-MgEducationClassAssignmentSubmissionResource.md)
-Nullable.
+Create new navigation property to resources for education
 
 ### [New-MgEducationClassAssignmentSubmissionSubmittedResource](New-MgEducationClassAssignmentSubmissionSubmittedResource.md)
-Read-only.
-Nullable.
+Create new navigation property to submittedResources for education
 
 ### [New-MgEducationClassMemberByRef](New-MgEducationClassMemberByRef.md)
-All users in the class.
-Nullable.
-
-### [New-MgEducationClassSchoolByRef](New-MgEducationClassSchoolByRef.md)
-All schools that this class is associated with.
-Nullable.
+Create new navigation property ref to members for education
 
 ### [New-MgEducationClassTeacherByRef](New-MgEducationClassTeacherByRef.md)
-All teachers in the class.
-Nullable.
+Create new navigation property ref to teachers for education
 
 ### [New-MgEducationMeAssignment](New-MgEducationMeAssignment.md)
-Assignments belonging to the user.
+Create new navigation property to assignments for education
 
 ### [New-MgEducationMeAssignmentCategory](New-MgEducationMeAssignmentCategory.md)
-When set, enables users to easily find assignments of a given type.
-Read-only.
-Nullable.
+Create new navigation property to categories for education
+
+### [New-MgEducationMeAssignmentCategoryByRef](New-MgEducationMeAssignmentCategoryByRef.md)
+Create new navigation property ref to categories for education
 
 ### [New-MgEducationMeAssignmentResource](New-MgEducationMeAssignmentResource.md)
-Learning objects that are associated with this assignment.
-Only teachers can modify this list.
-Nullable.
+Create new navigation property to resources for education
 
 ### [New-MgEducationMeAssignmentSubmission](New-MgEducationMeAssignmentSubmission.md)
-Once published, there is a submission object for each student representing their work and grade.
-Read-only.
-Nullable.
+Create new navigation property to submissions for education
 
 ### [New-MgEducationMeAssignmentSubmissionOutcome](New-MgEducationMeAssignmentSubmissionOutcome.md)
-Read-Write.
-Nullable.
+Create new navigation property to outcomes for education
 
 ### [New-MgEducationMeAssignmentSubmissionResource](New-MgEducationMeAssignmentSubmissionResource.md)
-Nullable.
+Create new navigation property to resources for education
 
 ### [New-MgEducationMeAssignmentSubmissionSubmittedResource](New-MgEducationMeAssignmentSubmissionSubmittedResource.md)
-Read-only.
-Nullable.
-
-### [New-MgEducationMeClassByRef](New-MgEducationMeClassByRef.md)
-Classes to which the user belongs.
-Nullable.
+Create new navigation property to submittedResources for education
 
 ### [New-MgEducationMeRubric](New-MgEducationMeRubric.md)
 Create new navigation property to rubrics for education
-
-### [New-MgEducationMeSchoolByRef](New-MgEducationMeSchoolByRef.md)
-Schools to which the user belongs.
-Nullable.
-
-### [New-MgEducationMeTaughtClassByRef](New-MgEducationMeTaughtClassByRef.md)
-Classes for which the user is a teacher.
 
 ### [New-MgEducationSchool](New-MgEducationSchool.md)
 Create new navigation property to schools for education
 
 ### [New-MgEducationSchoolClassByRef](New-MgEducationSchoolClassByRef.md)
-Classes taught at the school.
-Nullable.
+Create new navigation property ref to classes for education
 
 ### [New-MgEducationSchoolUserByRef](New-MgEducationSchoolUserByRef.md)
-Users in the school.
-Nullable.
+Create new navigation property ref to users for education
 
 ### [New-MgEducationUser](New-MgEducationUser.md)
 Create new navigation property to users for education
 
 ### [New-MgEducationUserAssignment](New-MgEducationUserAssignment.md)
-Assignments belonging to the user.
+Create new navigation property to assignments for education
 
 ### [New-MgEducationUserAssignmentCategory](New-MgEducationUserAssignmentCategory.md)
-When set, enables users to easily find assignments of a given type.
-Read-only.
-Nullable.
+Create new navigation property to categories for education
+
+### [New-MgEducationUserAssignmentCategoryByRef](New-MgEducationUserAssignmentCategoryByRef.md)
+Create new navigation property ref to categories for education
 
 ### [New-MgEducationUserAssignmentResource](New-MgEducationUserAssignmentResource.md)
-Learning objects that are associated with this assignment.
-Only teachers can modify this list.
-Nullable.
+Create new navigation property to resources for education
 
 ### [New-MgEducationUserAssignmentSubmission](New-MgEducationUserAssignmentSubmission.md)
-Once published, there is a submission object for each student representing their work and grade.
-Read-only.
-Nullable.
+Create new navigation property to submissions for education
 
 ### [New-MgEducationUserAssignmentSubmissionOutcome](New-MgEducationUserAssignmentSubmissionOutcome.md)
-Read-Write.
-Nullable.
+Create new navigation property to outcomes for education
 
 ### [New-MgEducationUserAssignmentSubmissionResource](New-MgEducationUserAssignmentSubmissionResource.md)
-Nullable.
+Create new navigation property to resources for education
 
 ### [New-MgEducationUserAssignmentSubmissionSubmittedResource](New-MgEducationUserAssignmentSubmissionSubmittedResource.md)
-Read-only.
-Nullable.
-
-### [New-MgEducationUserClassByRef](New-MgEducationUserClassByRef.md)
-Classes to which the user belongs.
-Nullable.
+Create new navigation property to submittedResources for education
 
 ### [New-MgEducationUserRubric](New-MgEducationUserRubric.md)
 Create new navigation property to rubrics for education
-
-### [New-MgEducationUserSchoolByRef](New-MgEducationUserSchoolByRef.md)
-Schools to which the user belongs.
-Nullable.
-
-### [New-MgEducationUserTaughtClassByRef](New-MgEducationUserTaughtClassByRef.md)
-Classes for which the user is a teacher.
 
 ### [Publish-MgEducationClassAssignment](Publish-MgEducationClassAssignment.md)
 Invoke action publish
@@ -463,132 +348,124 @@ Invoke action publish
 Delete navigation property classes for education
 
 ### [Remove-MgEducationClassAssignment](Remove-MgEducationClassAssignment.md)
-All assignments associated with this class.
-Nullable.
+Delete navigation property assignments for education
 
 ### [Remove-MgEducationClassAssignmentCategory](Remove-MgEducationClassAssignmentCategory.md)
 Delete navigation property assignmentCategories for education
+
+### [Remove-MgEducationClassAssignmentCategoryByRef](Remove-MgEducationClassAssignmentCategoryByRef.md)
+Delete ref of navigation property categories for education
 
 ### [Remove-MgEducationClassAssignmentDefault](Remove-MgEducationClassAssignmentDefault.md)
 Delete navigation property assignmentDefaults for education
 
 ### [Remove-MgEducationClassAssignmentResource](Remove-MgEducationClassAssignmentResource.md)
-Learning objects that are associated with this assignment.
-Only teachers can modify this list.
-Nullable.
+Delete navigation property resources for education
 
 ### [Remove-MgEducationClassAssignmentRubric](Remove-MgEducationClassAssignmentRubric.md)
-When set, the grading rubric attached to this assignment.
+Delete navigation property rubric for education
+
+### [Remove-MgEducationClassAssignmentRubricByRef](Remove-MgEducationClassAssignmentRubricByRef.md)
+Delete ref of navigation property rubric for education
 
 ### [Remove-MgEducationClassAssignmentSetting](Remove-MgEducationClassAssignmentSetting.md)
 Delete navigation property assignmentSettings for education
 
 ### [Remove-MgEducationClassAssignmentSubmission](Remove-MgEducationClassAssignmentSubmission.md)
-Once published, there is a submission object for each student representing their work and grade.
-Read-only.
-Nullable.
+Delete navigation property submissions for education
 
 ### [Remove-MgEducationClassAssignmentSubmissionOutcome](Remove-MgEducationClassAssignmentSubmissionOutcome.md)
-Read-Write.
-Nullable.
+Delete navigation property outcomes for education
 
 ### [Remove-MgEducationClassAssignmentSubmissionResource](Remove-MgEducationClassAssignmentSubmissionResource.md)
-Nullable.
+Delete navigation property resources for education
 
 ### [Remove-MgEducationClassAssignmentSubmissionSubmittedResource](Remove-MgEducationClassAssignmentSubmissionSubmittedResource.md)
-Read-only.
-Nullable.
+Delete navigation property submittedResources for education
 
-### [Remove-MgEducationClassGroupByRef](Remove-MgEducationClassGroupByRef.md)
-The underlying Microsoft 365 group object.
+### [Remove-MgEducationClassMemberByRef](Remove-MgEducationClassMemberByRef.md)
+Delete ref of navigation property members for education
+
+### [Remove-MgEducationClassTeacherByRef](Remove-MgEducationClassTeacherByRef.md)
+Delete ref of navigation property teachers for education
 
 ### [Remove-MgEducationMe](Remove-MgEducationMe.md)
 Delete navigation property me for education
 
 ### [Remove-MgEducationMeAssignment](Remove-MgEducationMeAssignment.md)
-Assignments belonging to the user.
+Delete navigation property assignments for education
 
-### [Remove-MgEducationMeAssignmentCategory](Remove-MgEducationMeAssignmentCategory.md)
-When set, enables users to easily find assignments of a given type.
-Read-only.
-Nullable.
+### [Remove-MgEducationMeAssignmentCategoryByRef](Remove-MgEducationMeAssignmentCategoryByRef.md)
+Delete ref of navigation property categories for education
 
 ### [Remove-MgEducationMeAssignmentResource](Remove-MgEducationMeAssignmentResource.md)
-Learning objects that are associated with this assignment.
-Only teachers can modify this list.
-Nullable.
+Delete navigation property resources for education
 
 ### [Remove-MgEducationMeAssignmentRubric](Remove-MgEducationMeAssignmentRubric.md)
-When set, the grading rubric attached to this assignment.
+Delete navigation property rubric for education
+
+### [Remove-MgEducationMeAssignmentRubricByRef](Remove-MgEducationMeAssignmentRubricByRef.md)
+Delete ref of navigation property rubric for education
 
 ### [Remove-MgEducationMeAssignmentSubmission](Remove-MgEducationMeAssignmentSubmission.md)
-Once published, there is a submission object for each student representing their work and grade.
-Read-only.
-Nullable.
+Delete navigation property submissions for education
 
 ### [Remove-MgEducationMeAssignmentSubmissionOutcome](Remove-MgEducationMeAssignmentSubmissionOutcome.md)
-Read-Write.
-Nullable.
+Delete navigation property outcomes for education
 
 ### [Remove-MgEducationMeAssignmentSubmissionResource](Remove-MgEducationMeAssignmentSubmissionResource.md)
-Nullable.
+Delete navigation property resources for education
 
 ### [Remove-MgEducationMeAssignmentSubmissionSubmittedResource](Remove-MgEducationMeAssignmentSubmissionSubmittedResource.md)
-Read-only.
-Nullable.
+Delete navigation property submittedResources for education
 
 ### [Remove-MgEducationMeRubric](Remove-MgEducationMeRubric.md)
 Delete navigation property rubrics for education
 
-### [Remove-MgEducationMeUserByRef](Remove-MgEducationMeUserByRef.md)
-The directory user corresponding to this user.
-
 ### [Remove-MgEducationSchool](Remove-MgEducationSchool.md)
 Delete navigation property schools for education
 
-### [Remove-MgEducationSchoolAdministrativeUnitByRef](Remove-MgEducationSchoolAdministrativeUnitByRef.md)
-The underlying administrativeUnit for this school.
+### [Remove-MgEducationSchoolClassByRef](Remove-MgEducationSchoolClassByRef.md)
+Delete ref of navigation property classes for education
+
+### [Remove-MgEducationSchoolUserByRef](Remove-MgEducationSchoolUserByRef.md)
+Delete ref of navigation property users for education
 
 ### [Remove-MgEducationUser](Remove-MgEducationUser.md)
 Delete navigation property users for education
 
 ### [Remove-MgEducationUserAssignment](Remove-MgEducationUserAssignment.md)
-Assignments belonging to the user.
+Delete navigation property assignments for education
 
-### [Remove-MgEducationUserAssignmentCategory](Remove-MgEducationUserAssignmentCategory.md)
-When set, enables users to easily find assignments of a given type.
-Read-only.
-Nullable.
+### [Remove-MgEducationUserAssignmentCategoryByRef](Remove-MgEducationUserAssignmentCategoryByRef.md)
+Delete ref of navigation property categories for education
 
 ### [Remove-MgEducationUserAssignmentResource](Remove-MgEducationUserAssignmentResource.md)
-Learning objects that are associated with this assignment.
-Only teachers can modify this list.
-Nullable.
+Delete navigation property resources for education
 
 ### [Remove-MgEducationUserAssignmentRubric](Remove-MgEducationUserAssignmentRubric.md)
-When set, the grading rubric attached to this assignment.
+Delete navigation property rubric for education
+
+### [Remove-MgEducationUserAssignmentRubricByRef](Remove-MgEducationUserAssignmentRubricByRef.md)
+Delete ref of navigation property rubric for education
 
 ### [Remove-MgEducationUserAssignmentSubmission](Remove-MgEducationUserAssignmentSubmission.md)
-Once published, there is a submission object for each student representing their work and grade.
-Read-only.
-Nullable.
+Delete navigation property submissions for education
 
 ### [Remove-MgEducationUserAssignmentSubmissionOutcome](Remove-MgEducationUserAssignmentSubmissionOutcome.md)
-Read-Write.
-Nullable.
+Delete navigation property outcomes for education
 
 ### [Remove-MgEducationUserAssignmentSubmissionResource](Remove-MgEducationUserAssignmentSubmissionResource.md)
-Nullable.
+Delete navigation property resources for education
 
 ### [Remove-MgEducationUserAssignmentSubmissionSubmittedResource](Remove-MgEducationUserAssignmentSubmissionSubmittedResource.md)
-Read-only.
-Nullable.
+Delete navigation property submittedResources for education
 
 ### [Remove-MgEducationUserRubric](Remove-MgEducationUserRubric.md)
 Delete navigation property rubrics for education
 
-### [Remove-MgEducationUserUserByRef](Remove-MgEducationUserUserByRef.md)
-The directory user corresponding to this user.
+### [Set-MgEducationClassAssignmentRubricByRef](Set-MgEducationClassAssignmentRubricByRef.md)
+Update the ref of navigation property rubric in education
 
 ### [Set-MgEducationClassAssignmentSubmissionUpResourceFolder](Set-MgEducationClassAssignmentSubmissionUpResourceFolder.md)
 Invoke action setUpResourcesFolder
@@ -596,8 +473,8 @@ Invoke action setUpResourcesFolder
 ### [Set-MgEducationClassAssignmentUpResourceFolder](Set-MgEducationClassAssignmentUpResourceFolder.md)
 Invoke action setUpResourcesFolder
 
-### [Set-MgEducationClassGroupByRef](Set-MgEducationClassGroupByRef.md)
-The underlying Microsoft 365 group object.
+### [Set-MgEducationMeAssignmentRubricByRef](Set-MgEducationMeAssignmentRubricByRef.md)
+Update the ref of navigation property rubric in education
 
 ### [Set-MgEducationMeAssignmentSubmissionUpResourceFolder](Set-MgEducationMeAssignmentSubmissionUpResourceFolder.md)
 Invoke action setUpResourcesFolder
@@ -605,20 +482,14 @@ Invoke action setUpResourcesFolder
 ### [Set-MgEducationMeAssignmentUpResourceFolder](Set-MgEducationMeAssignmentUpResourceFolder.md)
 Invoke action setUpResourcesFolder
 
-### [Set-MgEducationMeUserByRef](Set-MgEducationMeUserByRef.md)
-The directory user corresponding to this user.
-
-### [Set-MgEducationSchoolAdministrativeUnitByRef](Set-MgEducationSchoolAdministrativeUnitByRef.md)
-The underlying administrativeUnit for this school.
+### [Set-MgEducationUserAssignmentRubricByRef](Set-MgEducationUserAssignmentRubricByRef.md)
+Update the ref of navigation property rubric in education
 
 ### [Set-MgEducationUserAssignmentSubmissionUpResourceFolder](Set-MgEducationUserAssignmentSubmissionUpResourceFolder.md)
 Invoke action setUpResourcesFolder
 
 ### [Set-MgEducationUserAssignmentUpResourceFolder](Set-MgEducationUserAssignmentUpResourceFolder.md)
 Invoke action setUpResourcesFolder
-
-### [Set-MgEducationUserUserByRef](Set-MgEducationUserUserByRef.md)
-The directory user corresponding to this user.
 
 ### [Submit-MgEducationClassAssignmentSubmission](Submit-MgEducationClassAssignmentSubmission.md)
 Invoke action submit
@@ -633,8 +504,7 @@ Invoke action submit
 Update the navigation property classes in education
 
 ### [Update-MgEducationClassAssignment](Update-MgEducationClassAssignment.md)
-All assignments associated with this class.
-Nullable.
+Update the navigation property assignments in education
 
 ### [Update-MgEducationClassAssignmentCategory](Update-MgEducationClassAssignmentCategory.md)
 Update the navigation property assignmentCategories in education
@@ -643,66 +513,49 @@ Update the navigation property assignmentCategories in education
 Update the navigation property assignmentDefaults in education
 
 ### [Update-MgEducationClassAssignmentResource](Update-MgEducationClassAssignmentResource.md)
-Learning objects that are associated with this assignment.
-Only teachers can modify this list.
-Nullable.
+Update the navigation property resources in education
 
 ### [Update-MgEducationClassAssignmentRubric](Update-MgEducationClassAssignmentRubric.md)
-When set, the grading rubric attached to this assignment.
+Update the navigation property rubric in education
 
 ### [Update-MgEducationClassAssignmentSetting](Update-MgEducationClassAssignmentSetting.md)
 Update the navigation property assignmentSettings in education
 
 ### [Update-MgEducationClassAssignmentSubmission](Update-MgEducationClassAssignmentSubmission.md)
-Once published, there is a submission object for each student representing their work and grade.
-Read-only.
-Nullable.
+Update the navigation property submissions in education
 
 ### [Update-MgEducationClassAssignmentSubmissionOutcome](Update-MgEducationClassAssignmentSubmissionOutcome.md)
-Read-Write.
-Nullable.
+Update the navigation property outcomes in education
 
 ### [Update-MgEducationClassAssignmentSubmissionResource](Update-MgEducationClassAssignmentSubmissionResource.md)
-Nullable.
+Update the navigation property resources in education
 
 ### [Update-MgEducationClassAssignmentSubmissionSubmittedResource](Update-MgEducationClassAssignmentSubmissionSubmittedResource.md)
-Read-only.
-Nullable.
+Update the navigation property submittedResources in education
 
 ### [Update-MgEducationMe](Update-MgEducationMe.md)
 Update the navigation property me in education
 
 ### [Update-MgEducationMeAssignment](Update-MgEducationMeAssignment.md)
-Assignments belonging to the user.
-
-### [Update-MgEducationMeAssignmentCategory](Update-MgEducationMeAssignmentCategory.md)
-When set, enables users to easily find assignments of a given type.
-Read-only.
-Nullable.
+Update the navigation property assignments in education
 
 ### [Update-MgEducationMeAssignmentResource](Update-MgEducationMeAssignmentResource.md)
-Learning objects that are associated with this assignment.
-Only teachers can modify this list.
-Nullable.
+Update the navigation property resources in education
 
 ### [Update-MgEducationMeAssignmentRubric](Update-MgEducationMeAssignmentRubric.md)
-When set, the grading rubric attached to this assignment.
+Update the navigation property rubric in education
 
 ### [Update-MgEducationMeAssignmentSubmission](Update-MgEducationMeAssignmentSubmission.md)
-Once published, there is a submission object for each student representing their work and grade.
-Read-only.
-Nullable.
+Update the navigation property submissions in education
 
 ### [Update-MgEducationMeAssignmentSubmissionOutcome](Update-MgEducationMeAssignmentSubmissionOutcome.md)
-Read-Write.
-Nullable.
+Update the navigation property outcomes in education
 
 ### [Update-MgEducationMeAssignmentSubmissionResource](Update-MgEducationMeAssignmentSubmissionResource.md)
-Nullable.
+Update the navigation property resources in education
 
 ### [Update-MgEducationMeAssignmentSubmissionSubmittedResource](Update-MgEducationMeAssignmentSubmissionSubmittedResource.md)
-Read-only.
-Nullable.
+Update the navigation property submittedResources in education
 
 ### [Update-MgEducationMeRubric](Update-MgEducationMeRubric.md)
 Update the navigation property rubrics in education
@@ -717,36 +570,25 @@ Update the navigation property schools in education
 Update the navigation property users in education
 
 ### [Update-MgEducationUserAssignment](Update-MgEducationUserAssignment.md)
-Assignments belonging to the user.
-
-### [Update-MgEducationUserAssignmentCategory](Update-MgEducationUserAssignmentCategory.md)
-When set, enables users to easily find assignments of a given type.
-Read-only.
-Nullable.
+Update the navigation property assignments in education
 
 ### [Update-MgEducationUserAssignmentResource](Update-MgEducationUserAssignmentResource.md)
-Learning objects that are associated with this assignment.
-Only teachers can modify this list.
-Nullable.
+Update the navigation property resources in education
 
 ### [Update-MgEducationUserAssignmentRubric](Update-MgEducationUserAssignmentRubric.md)
-When set, the grading rubric attached to this assignment.
+Update the navigation property rubric in education
 
 ### [Update-MgEducationUserAssignmentSubmission](Update-MgEducationUserAssignmentSubmission.md)
-Once published, there is a submission object for each student representing their work and grade.
-Read-only.
-Nullable.
+Update the navigation property submissions in education
 
 ### [Update-MgEducationUserAssignmentSubmissionOutcome](Update-MgEducationUserAssignmentSubmissionOutcome.md)
-Read-Write.
-Nullable.
+Update the navigation property outcomes in education
 
 ### [Update-MgEducationUserAssignmentSubmissionResource](Update-MgEducationUserAssignmentSubmissionResource.md)
-Nullable.
+Update the navigation property resources in education
 
 ### [Update-MgEducationUserAssignmentSubmissionSubmittedResource](Update-MgEducationUserAssignmentSubmissionSubmittedResource.md)
-Read-only.
-Nullable.
+Update the navigation property submittedResources in education
 
 ### [Update-MgEducationUserRubric](Update-MgEducationUserRubric.md)
 Update the navigation property rubrics in education

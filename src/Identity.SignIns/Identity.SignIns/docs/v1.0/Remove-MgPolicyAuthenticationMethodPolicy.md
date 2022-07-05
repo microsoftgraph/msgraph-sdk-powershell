@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgPolicyAuthenticationMethodPolicy
 
 ## SYNOPSIS
-The authentication methods and the users that are allowed to use them to sign in and perform multi-factor authentication (MFA) in Azure Active Directory (Azure AD).
+Delete navigation property authenticationMethodsPolicy for policies
 
 ## SYNTAX
 
@@ -18,7 +18,7 @@ Remove-MgPolicyAuthenticationMethodPolicy [-IfMatch <String>] [-PassThru] [-Conf
 ```
 
 ## DESCRIPTION
-The authentication methods and the users that are allowed to use them to sign in and perform multi-factor authentication (MFA) in Azure Active Directory (Azure AD).
+Delete navigation property authenticationMethodsPolicy for policies
 
 ## EXAMPLES
 

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgPolicyCrossTenantAccessPolicy
 
 ## SYNOPSIS
-The custom rules that define an access scenario when interacting with external Azure AD tenants.
+Get crossTenantAccessPolicy from policies
 
 ## SYNTAX
 
@@ -17,7 +17,7 @@ Get-MgPolicyCrossTenantAccessPolicy [-ExpandProperty <String[]>] [-Property <Str
 ```
 
 ## DESCRIPTION
-The custom rules that define an access scenario when interacting with external Azure AD tenants.
+Get crossTenantAccessPolicy from policies
 
 ## EXAMPLES
 

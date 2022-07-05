@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgUserOnlineMeetingRegistrationCustomQuestion
 
 ## SYNOPSIS
-Custom registration questions.
+Delete navigation property customQuestions for users
 
 ## SYNTAX
 
@@ -26,7 +26,7 @@ Remove-MgUserOnlineMeetingRegistrationCustomQuestion -InputObject <ICloudCommuni
 ```
 
 ## DESCRIPTION
-Custom registration questions.
+Delete navigation property customQuestions for users
 
 ## EXAMPLES
 

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceManagementMobileThreatDefenseConnector
 
 ## SYNOPSIS
-The list of Mobile threat Defense connectors configured by the tenant.
+Get mobileThreatDefenseConnectors from deviceManagement
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgDeviceManagementMobileThreatDefenseConnector -InputObject <IDeviceManageme
 ```
 
 ## DESCRIPTION
-The list of Mobile threat Defense connectors configured by the tenant.
+Get mobileThreatDefenseConnectors from deviceManagement
 
 ## EXAMPLES
 
@@ -229,7 +229,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMobileThreatDefenseConnector
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMobileThreatDefenseConnector1
 
 ## NOTES
 
@@ -263,6 +263,7 @@ INPUTOBJECT <IDeviceManagementAdministrationIdentity>: Identity Parameter
   - `[DeviceManagementExchangeOnPremisesPolicyId <String>]`: key: id of deviceManagementExchangeOnPremisesPolicy
   - `[DeviceManagementPartnerId <String>]`: key: id of deviceManagementPartner
   - `[GroupPolicyCategoryId <String>]`: key: id of groupPolicyCategory
+  - `[GroupPolicyCategoryId1 <String>]`: key: id of groupPolicyCategory
   - `[GroupPolicyDefinitionFileId <String>]`: key: id of groupPolicyDefinitionFile
   - `[GroupPolicyDefinitionId <String>]`: key: id of groupPolicyDefinition
   - `[GroupPolicyMigrationReportId <String>]`: key: id of groupPolicyMigrationReport

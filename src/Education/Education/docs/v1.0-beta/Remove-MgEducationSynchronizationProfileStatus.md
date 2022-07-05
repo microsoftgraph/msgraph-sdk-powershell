@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgEducationSynchronizationProfileStatus
 
 ## SYNOPSIS
-The synchronization status.
+Delete navigation property profileStatus for education
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Remove-MgEducationSynchronizationProfileStatus -InputObject <IEducationIdentity>
 ```
 
 ## DESCRIPTION
-The synchronization status.
+Delete navigation property profileStatus for education
 
 ## EXAMPLES
 

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgUserProfilePublication
 
 ## SYNOPSIS
-Represents details of any publications a user has added to their profile.
+Delete navigation property publications for users
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Remove-MgUserProfilePublication -InputObject <IPeopleIdentity> [-IfMatch <String
 ```
 
 ## DESCRIPTION
-Represents details of any publications a user has added to their profile.
+Delete navigation property publications for users
 
 ## EXAMPLES
 

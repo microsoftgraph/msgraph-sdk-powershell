@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgDeviceAppMgtManagedEBookCategory
 
 ## SYNOPSIS
-The mobile eBook categories.
+Create new navigation property to managedEBookCategories for deviceAppManagement
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ New-MgDeviceAppMgtManagedEBookCategory -BodyParameter <IMicrosoftGraphManagedEBo
 ```
 
 ## DESCRIPTION
-The mobile eBook categories.
+Create new navigation property to managedEBookCategories for deviceAppManagement
 
 ## EXAMPLES
 
@@ -78,7 +78,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -162,7 +162,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphManagedEBookCategory>: Contains properties for a single Intune eBook category.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[DisplayName <String>]`: The name of the eBook category.
   - `[LastModifiedDateTime <DateTime?>]`: The date and time the ManagedEBookCategory was last modified.
 

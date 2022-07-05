@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgDeviceManagementComplianceManagementPartner
 
 ## SYNOPSIS
-The list of Compliance Management Partners configured by the tenant.
+Create new navigation property to complianceManagementPartners for deviceManagement
 
 ## SYNTAX
 
@@ -20,17 +20,17 @@ New-MgDeviceManagementComplianceManagementPartner [-AdditionalProperties <Hashta
  [-IosEnrollmentAssignments <IMicrosoftGraphComplianceManagementPartnerAssignment[]>] [-IosOnboarded]
  [-LastHeartbeatDateTime <DateTime>]
  [-MacOSEnrollmentAssignments <IMicrosoftGraphComplianceManagementPartnerAssignment[]>] [-MacOSOnboarded]
- [-PartnerState <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-PartnerState <DeviceManagementPartnerTenantState>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create1
 ```
-New-MgDeviceManagementComplianceManagementPartner -BodyParameter <IMicrosoftGraphComplianceManagementPartner>
+New-MgDeviceManagementComplianceManagementPartner -BodyParameter <IMicrosoftGraphComplianceManagementPartner1>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-The list of Compliance Management Partners configured by the tenant.
+Create new navigation property to complianceManagementPartners for deviceManagement
 
 ## EXAMPLES
 
@@ -87,7 +87,7 @@ Compliance management partner for all platforms
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphComplianceManagementPartner
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphComplianceManagementPartner1
 Parameter Sets: Create1
 Aliases:
 
@@ -114,7 +114,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -209,7 +209,7 @@ Accept wildcard characters: False
 Partner state of this tenant.
 
 ```yaml
-Type: System.String
+Type: Microsoft.Graph.PowerShell.Support.DeviceManagementPartnerTenantState
 Parameter Sets: CreateExpanded1
 Aliases:
 
@@ -256,11 +256,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphComplianceManagementPartner
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphComplianceManagementPartner1
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphComplianceManagementPartner
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphComplianceManagementPartner1
 
 ## NOTES
 
@@ -275,9 +275,9 @@ ANDROIDENROLLMENTASSIGNMENTS <IMicrosoftGraphComplianceManagementPartnerAssignme
   - `[Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget>]`: Base type for assignment targets.
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
 
-BODYPARAMETER <IMicrosoftGraphComplianceManagementPartner>: Compliance management partner for all platforms
+BODYPARAMETER <IMicrosoftGraphComplianceManagementPartner1>: Compliance management partner for all platforms
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[AndroidEnrollmentAssignments <IMicrosoftGraphComplianceManagementPartnerAssignment[]>]`: User groups which enroll Android devices through partner.
     - `[Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget>]`: Base type for assignment targets.
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -288,7 +288,7 @@ BODYPARAMETER <IMicrosoftGraphComplianceManagementPartner>: Compliance managemen
   - `[LastHeartbeatDateTime <DateTime?>]`: Timestamp of last heartbeat after admin onboarded to the compliance management partner
   - `[MacOSEnrollmentAssignments <IMicrosoftGraphComplianceManagementPartnerAssignment[]>]`: User groups which enroll Mac devices through partner.
   - `[MacOSOnboarded <Boolean?>]`: Partner onboarded for Mac devices.
-  - `[PartnerState <String>]`: Partner state of this tenant.
+  - `[PartnerState <DeviceManagementPartnerTenantState?>]`: Partner state of this tenant.
 
 IOSENROLLMENTASSIGNMENTS <IMicrosoftGraphComplianceManagementPartnerAssignment[]>: User groups which enroll ios devices through partner.
   - `[Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget>]`: Base type for assignment targets.

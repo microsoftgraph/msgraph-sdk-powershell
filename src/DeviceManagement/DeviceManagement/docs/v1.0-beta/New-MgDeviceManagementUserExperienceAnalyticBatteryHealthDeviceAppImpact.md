@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgDeviceManagementUserExperienceAnalyticBatteryHealthDeviceAppImpact
 
 ## SYNOPSIS
-User Experience Analytics Battery Health Device App Impact
+Create new navigation property to userExperienceAnalyticsBatteryHealthDeviceAppImpact for deviceManagement
 
 ## SYNTAX
 
@@ -27,7 +27,7 @@ New-MgDeviceManagementUserExperienceAnalyticBatteryHealthDeviceAppImpact
 ```
 
 ## DESCRIPTION
-User Experience Analytics Battery Health Device App Impact
+Create new navigation property to userExperienceAnalyticsBatteryHealthDeviceAppImpact for deviceManagement
 
 ## EXAMPLES
 
@@ -145,7 +145,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -227,7 +227,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphUserExperienceAnalyticsBatteryHealthDeviceAppImpact>: The user experience analytics battery health device app impact entity contains battery usage related information at an app level for a given device.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[AppDisplayName <String>]`: User friendly display name for the app. Eg: Outlook
   - `[AppName <String>]`: App name. Eg: oltk.exe
   - `[AppPublisher <String>]`: App publisher. Eg: Microsoft Corporation

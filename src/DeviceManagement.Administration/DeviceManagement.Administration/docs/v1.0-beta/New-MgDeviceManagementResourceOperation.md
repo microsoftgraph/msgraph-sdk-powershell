@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgDeviceManagementResourceOperation
 
 ## SYNOPSIS
-The Resource Operations.
+Create new navigation property to resourceOperations for deviceManagement
 
 ## SYNTAX
 
@@ -21,12 +21,12 @@ New-MgDeviceManagementResourceOperation [-ActionName <String>] [-AdditionalPrope
 
 ### Create
 ```
-New-MgDeviceManagementResourceOperation -BodyParameter <IMicrosoftGraphResourceOperation1> [-Confirm]
- [-WhatIf] [<CommonParameters>]
+New-MgDeviceManagementResourceOperation -BodyParameter <IMicrosoftGraphResourceOperation> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-The Resource Operations.
+Create new navigation property to resourceOperations for deviceManagement
 
 ## EXAMPLES
 
@@ -68,7 +68,7 @@ Describes the resourceOperation resource (entity) of the Microsoft Graph API (RE
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphResourceOperation1
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphResourceOperation
 Parameter Sets: Create
 Aliases:
 
@@ -112,7 +112,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -193,11 +193,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphResourceOperation1
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphResourceOperation
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphResourceOperation1
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphResourceOperation
 
 ## NOTES
 
@@ -208,9 +208,9 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-BODYPARAMETER <IMicrosoftGraphResourceOperation1>: Describes the resourceOperation resource (entity) of the Microsoft Graph API (REST), which supports Intune workflows related to role-based access control (RBAC).
+BODYPARAMETER <IMicrosoftGraphResourceOperation>: Describes the resourceOperation resource (entity) of the Microsoft Graph API (REST), which supports Intune workflows related to role-based access control (RBAC).
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[ActionName <String>]`: Type of action this operation is going to perform. The actionName should be concise and limited to as few words as possible.
   - `[Description <String>]`: Description of the resource operation. The description is used in mouse-over text for the operation when shown in the Azure Portal.
   - `[EnabledForScopeValidation <Boolean?>]`: Determines whether the Permission is validated for Scopes defined per Role Assignment. This property is read-only.

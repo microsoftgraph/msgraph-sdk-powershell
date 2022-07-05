@@ -8,9 +8,7 @@ schema: 2.0.0
 # Remove-MgPlannerBucket
 
 ## SYNOPSIS
-Read-only.
-Nullable.
-Returns a collection of the specified buckets
+Delete navigation property buckets for planner
 
 ## SYNTAX
 
@@ -27,9 +25,7 @@ Remove-MgPlannerBucket -InputObject <IPlannerIdentity> [-IfMatch <String>] [-Pas
 ```
 
 ## DESCRIPTION
-Read-only.
-Nullable.
-Returns a collection of the specified buckets
+Delete navigation property buckets for planner
 
 ## EXAMPLES
 

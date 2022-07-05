@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgUserProfileLanguage
 
 ## SYNOPSIS
-Represents detailed information about languages that a user has added to their profile.
+Update the navigation property languages in users
 
 ## SYNTAX
 
@@ -46,7 +46,7 @@ Update-MgUserProfileLanguage -InputObject <IPeopleIdentity> [-AdditionalProperti
 ```
 
 ## DESCRIPTION
-Represents detailed information about languages that a user has added to their profile.
+Update the navigation property languages in users
 
 ## EXAMPLES
 
@@ -145,7 +145,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -463,7 +463,7 @@ BODYPARAMETER <IMicrosoftGraphLanguageProficiency>: languageProficiency
   - `[Source <IMicrosoftGraphPersonDataSources>]`: personDataSources
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Type <String[]>]`: 
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[DisplayName <String>]`: Contains the long-form name for the language.
   - `[Proficiency <String>]`: languageProficiencyLevel
   - `[Reading <String>]`: languageProficiencyLevel

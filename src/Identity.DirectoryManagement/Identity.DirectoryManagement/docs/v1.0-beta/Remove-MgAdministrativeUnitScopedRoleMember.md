@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgAdministrativeUnitScopedRoleMember
 
 ## SYNOPSIS
-Scoped-role members of this administrative unit.
+Delete navigation property scopedRoleMembers for administrativeUnits
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Remove-MgAdministrativeUnitScopedRoleMember -InputObject <IIdentityDirectoryMana
 ```
 
 ## DESCRIPTION
-Scoped-role members of this administrative unit.
+Delete navigation property scopedRoleMembers for administrativeUnits
 
 ## EXAMPLES
 
@@ -180,6 +180,7 @@ INPUTOBJECT <IIdentityDirectoryManagementIdentity>: Identity Parameter
   - `[InternalDomainFederationId <String>]`: key: id of internalDomainFederation
   - `[OrgContactId <String>]`: key: id of orgContact
   - `[OrganizationId <String>]`: key: id of organization
+  - `[OrganizationalBrandingLocalizationId <String>]`: key: id of organizationalBrandingLocalization
   - `[OutboundSharedUserProfileUserId <String>]`: key: userId of outboundSharedUserProfile
   - `[ProfileCardPropertyId <String>]`: key: id of profileCardProperty
   - `[RecommendationId <String>]`: key: id of recommendation

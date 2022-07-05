@@ -8,8 +8,7 @@ schema: 2.0.0
 # Get-MgEducationClassTeacherByRef
 
 ## SYNOPSIS
-All teachers in the class.
-Nullable.
+Get ref of teachers from education
 
 ## SYNTAX
 
@@ -20,8 +19,7 @@ Get-MgEducationClassTeacherByRef -EducationClassId <String> [-Filter <String>] [
 ```
 
 ## DESCRIPTION
-All teachers in the class.
-Nullable.
+Get ref of teachers from education
 
 ## EXAMPLES
 

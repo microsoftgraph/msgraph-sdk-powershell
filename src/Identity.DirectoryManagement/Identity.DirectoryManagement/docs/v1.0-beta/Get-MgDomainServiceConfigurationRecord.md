@@ -8,8 +8,7 @@ schema: 2.0.0
 # Get-MgDomainServiceConfigurationRecord
 
 ## SYNOPSIS
-DNS records the customer adds to the DNS zone file of the domain before the domain can be used by Microsoft Online services.
-Read-only, Nullable
+Get serviceConfigurationRecords from domains
 
 ## SYNTAX
 
@@ -33,8 +32,7 @@ Get-MgDomainServiceConfigurationRecord -InputObject <IIdentityDirectoryManagemen
 ```
 
 ## DESCRIPTION
-DNS records the customer adds to the DNS zone file of the domain before the domain can be used by Microsoft Online services.
-Read-only, Nullable
+Get serviceConfigurationRecords from domains
 
 ## EXAMPLES
 
@@ -279,6 +277,7 @@ INPUTOBJECT <IIdentityDirectoryManagementIdentity>: Identity Parameter
   - `[InternalDomainFederationId <String>]`: key: id of internalDomainFederation
   - `[OrgContactId <String>]`: key: id of orgContact
   - `[OrganizationId <String>]`: key: id of organization
+  - `[OrganizationalBrandingLocalizationId <String>]`: key: id of organizationalBrandingLocalization
   - `[OutboundSharedUserProfileUserId <String>]`: key: userId of outboundSharedUserProfile
   - `[ProfileCardPropertyId <String>]`: key: id of profileCardProperty
   - `[RecommendationId <String>]`: key: id of recommendation

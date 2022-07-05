@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceManagementSoftwareUpdateStatusSummary
 
 ## SYNOPSIS
-The software update status summary.
+Get softwareUpdateStatusSummary from deviceManagement
 
 ## SYNTAX
 
@@ -18,7 +18,7 @@ Get-MgDeviceManagementSoftwareUpdateStatusSummary [-ExpandProperty <String[]>] [
 ```
 
 ## DESCRIPTION
-The software update status summary.
+Get softwareUpdateStatusSummary from deviceManagement
 
 ## EXAMPLES
 

@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgDeviceAppMgtManagedAppRegistration
 
 ## SYNOPSIS
-The managed app registrations.
+Create new navigation property to managedAppRegistrations for deviceAppManagement
 
 ## SYNTAX
 
@@ -17,10 +17,10 @@ The managed app registrations.
 New-MgDeviceAppMgtManagedAppRegistration [-AdditionalProperties <Hashtable>] [-AppIdentifier <Hashtable>]
  [-ApplicationVersion <String>] [-AppliedPolicies <IMicrosoftGraphManagedAppPolicy1[]>]
  [-CreatedDateTime <DateTime>] [-DeviceName <String>] [-DeviceTag <String>] [-DeviceType <String>]
- [-FlaggedReasons <String[]>] [-Id <String>] [-IntendedPolicies <IMicrosoftGraphManagedAppPolicy1[]>]
- [-LastSyncDateTime <DateTime>] [-ManagementSdkVersion <String>]
- [-Operations <IMicrosoftGraphManagedAppOperation[]>] [-PlatformVersion <String>] [-UserId <String>]
- [-Version <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-FlaggedReasons <ManagedAppFlaggedReason[]>] [-Id <String>]
+ [-IntendedPolicies <IMicrosoftGraphManagedAppPolicy1[]>] [-LastSyncDateTime <DateTime>]
+ [-ManagementSdkVersion <String>] [-Operations <IMicrosoftGraphManagedAppOperation[]>]
+ [-PlatformVersion <String>] [-UserId <String>] [-Version <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
@@ -30,7 +30,7 @@ New-MgDeviceAppMgtManagedAppRegistration -BodyParameter <IMicrosoftGraphManagedA
 ```
 
 ## DESCRIPTION
-The managed app registrations.
+Create new navigation property to managedAppRegistrations for deviceAppManagement
 
 ## EXAMPLES
 
@@ -180,7 +180,7 @@ E.g.
 app running on rooted device
 
 ```yaml
-Type: System.String[]
+Type: Microsoft.Graph.PowerShell.Support.ManagedAppFlaggedReason[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -192,7 +192,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -367,7 +367,7 @@ To create the parameters described below, construct a hash table containing the 
 
 
 APPLIEDPOLICIES <IMicrosoftGraphManagedAppPolicy1[]>: Zero or more policys already applied on the registered app when it last synchronized with managment service.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[CreatedDateTime <DateTime?>]`: The date and time the policy was created.
   - `[Description <String>]`: The policy's description.
   - `[DisplayName <String>]`: Policy display name.
@@ -376,12 +376,12 @@ APPLIEDPOLICIES <IMicrosoftGraphManagedAppPolicy1[]>: Zero or more policys alrea
 
 BODYPARAMETER <IMicrosoftGraphManagedAppRegistration1>: The ManagedAppEntity is the base entity type for all other entity types under app management workflow.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[AppIdentifier <IMicrosoftGraphMobileAppIdentifier>]`: The identifier for a mobile app.
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[ApplicationVersion <String>]`: App version
   - `[AppliedPolicies <IMicrosoftGraphManagedAppPolicy1[]>]`: Zero or more policys already applied on the registered app when it last synchronized with managment service.
-    - `[Id <String>]`: Read-only.
+    - `[Id <String>]`: 
     - `[CreatedDateTime <DateTime?>]`: The date and time the policy was created.
     - `[Description <String>]`: The policy's description.
     - `[DisplayName <String>]`: Policy display name.
@@ -391,12 +391,12 @@ BODYPARAMETER <IMicrosoftGraphManagedAppRegistration1>: The ManagedAppEntity is 
   - `[DeviceName <String>]`: Host device name
   - `[DeviceTag <String>]`: App management SDK generated tag, which helps relate apps hosted on the same device. Not guaranteed to relate apps in all conditions.
   - `[DeviceType <String>]`: Host device type
-  - `[FlaggedReasons <String[]>]`: Zero or more reasons an app registration is flagged. E.g. app running on rooted device
+  - `[FlaggedReasons <ManagedAppFlaggedReason[]>]`: Zero or more reasons an app registration is flagged. E.g. app running on rooted device
   - `[IntendedPolicies <IMicrosoftGraphManagedAppPolicy1[]>]`: Zero or more policies admin intended for the app as of now.
   - `[LastSyncDateTime <DateTime?>]`: Date and time of last the app synced with management service.
   - `[ManagementSdkVersion <String>]`: App management SDK version
   - `[Operations <IMicrosoftGraphManagedAppOperation[]>]`: Zero or more long running operations triggered on the app registration.
-    - `[Id <String>]`: Read-only.
+    - `[Id <String>]`: 
     - `[DisplayName <String>]`: The operation name.
     - `[LastModifiedDateTime <DateTime?>]`: The last time the app operation was modified.
     - `[State <String>]`: The current state of the operation
@@ -406,7 +406,7 @@ BODYPARAMETER <IMicrosoftGraphManagedAppRegistration1>: The ManagedAppEntity is 
   - `[Version <String>]`: Version of the entity.
 
 INTENDEDPOLICIES <IMicrosoftGraphManagedAppPolicy1[]>: Zero or more policies admin intended for the app as of now.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[CreatedDateTime <DateTime?>]`: The date and time the policy was created.
   - `[Description <String>]`: The policy's description.
   - `[DisplayName <String>]`: Policy display name.
@@ -414,7 +414,7 @@ INTENDEDPOLICIES <IMicrosoftGraphManagedAppPolicy1[]>: Zero or more policies adm
   - `[Version <String>]`: Version of the entity.
 
 OPERATIONS <IMicrosoftGraphManagedAppOperation[]>: Zero or more long running operations triggered on the app registration.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[DisplayName <String>]`: The operation name.
   - `[LastModifiedDateTime <DateTime?>]`: The last time the app operation was modified.
   - `[State <String>]`: The current state of the operation

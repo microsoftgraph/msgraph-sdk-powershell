@@ -8,9 +8,7 @@ schema: 2.0.0
 # Get-MgSiteOnenoteNotebook
 
 ## SYNOPSIS
-The collection of OneNote notebooks that are owned by the user or group.
-Read-only.
-Nullable.
+Get notebooks from sites
 
 ## SYNTAX
 
@@ -34,9 +32,7 @@ Get-MgSiteOnenoteNotebook -InputObject <INotesIdentity> [-ExpandProperty <String
 ```
 
 ## DESCRIPTION
-The collection of OneNote notebooks that are owned by the user or group.
-Read-only.
-Nullable.
+Get notebooks from sites
 
 ## EXAMPLES
 

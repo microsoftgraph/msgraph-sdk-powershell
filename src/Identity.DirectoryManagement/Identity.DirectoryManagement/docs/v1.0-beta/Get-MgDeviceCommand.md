@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceCommand
 
 ## SYNOPSIS
-Set of commands sent to this device.
+Get commands from devices
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgDeviceCommand -InputObject <IIdentityDirectoryManagementIdentity> [-Expand
 ```
 
 ## DESCRIPTION
-Set of commands sent to this device.
+Get commands from devices
 
 ## EXAMPLES
 
@@ -277,6 +277,7 @@ INPUTOBJECT <IIdentityDirectoryManagementIdentity>: Identity Parameter
   - `[InternalDomainFederationId <String>]`: key: id of internalDomainFederation
   - `[OrgContactId <String>]`: key: id of orgContact
   - `[OrganizationId <String>]`: key: id of organization
+  - `[OrganizationalBrandingLocalizationId <String>]`: key: id of organizationalBrandingLocalization
   - `[OutboundSharedUserProfileUserId <String>]`: key: userId of outboundSharedUserProfile
   - `[ProfileCardPropertyId <String>]`: key: id of profileCardProperty
   - `[RecommendationId <String>]`: key: id of recommendation

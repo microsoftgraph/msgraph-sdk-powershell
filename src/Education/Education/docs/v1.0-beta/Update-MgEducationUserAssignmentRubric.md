@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgEducationUserAssignmentRubric
 
 ## SYNOPSIS
-When set, the grading rubric attached to this assignment.
+Update the navigation property rubric in education
 
 ## SYNTAX
 
@@ -45,7 +45,7 @@ Update-MgEducationUserAssignmentRubric -InputObject <IEducationIdentity> [-Addit
 ```
 
 ## DESCRIPTION
-When set, the grading rubric attached to this assignment.
+Update the navigation property rubric in education
 
 ## EXAMPLES
 
@@ -191,7 +191,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -356,7 +356,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphEducationRubric>: educationRubric
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Application <IMicrosoftGraphIdentity>]`: identity
