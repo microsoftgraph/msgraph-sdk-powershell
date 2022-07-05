@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgDeviceManagementAdvancedThreatProtectionOnboardingStateSummary
 
 ## SYNOPSIS
-The summary state of ATP onboarding state for this account.
+Update the navigation property advancedThreatProtectionOnboardingStateSummary in deviceManagement
 
 ## SYNTAX
 
@@ -30,7 +30,7 @@ Update-MgDeviceManagementAdvancedThreatProtectionOnboardingStateSummary
 ```
 
 ## DESCRIPTION
-The summary state of ATP onboarding state for this account.
+Update the navigation property advancedThreatProtectionOnboardingStateSummary in deviceManagement
 
 ## EXAMPLES
 
@@ -129,7 +129,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -285,12 +285,12 @@ To create the parameters described below, construct a hash table containing the 
 
 
 ADVANCEDTHREATPROTECTIONONBOARDINGDEVICESETTINGSTATES <IMicrosoftGraphAdvancedThreatProtectionOnboardingDeviceSettingState[]>: Not yet documented
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[ComplianceGracePeriodExpirationDateTime <DateTime?>]`: The DateTime when device compliance grace period expires
   - `[DeviceId <String>]`: The Device Id that is being reported
   - `[DeviceModel <String>]`: The device model that is being reported
   - `[DeviceName <String>]`: The Device Name that is being reported
-  - `[PlatformType <String>]`: Device type.
+  - `[PlatformType <DeviceType?>]`: Device type.
   - `[Setting <String>]`: The setting class name and property name.
   - `[SettingName <String>]`: The Setting Name that is being reported
   - `[State <String>]`: complianceStatus
@@ -301,14 +301,14 @@ ADVANCEDTHREATPROTECTIONONBOARDINGDEVICESETTINGSTATES <IMicrosoftGraphAdvancedTh
 
 BODYPARAMETER <IMicrosoftGraphAdvancedThreatProtectionOnboardingStateSummary>: Windows defender advanced threat protection onboarding state summary across the account.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[AdvancedThreatProtectionOnboardingDeviceSettingStates <IMicrosoftGraphAdvancedThreatProtectionOnboardingDeviceSettingState[]>]`: Not yet documented
-    - `[Id <String>]`: Read-only.
+    - `[Id <String>]`: 
     - `[ComplianceGracePeriodExpirationDateTime <DateTime?>]`: The DateTime when device compliance grace period expires
     - `[DeviceId <String>]`: The Device Id that is being reported
     - `[DeviceModel <String>]`: The device model that is being reported
     - `[DeviceName <String>]`: The Device Name that is being reported
-    - `[PlatformType <String>]`: Device type.
+    - `[PlatformType <DeviceType?>]`: Device type.
     - `[Setting <String>]`: The setting class name and property name.
     - `[SettingName <String>]`: The Setting Name that is being reported
     - `[State <String>]`: complianceStatus

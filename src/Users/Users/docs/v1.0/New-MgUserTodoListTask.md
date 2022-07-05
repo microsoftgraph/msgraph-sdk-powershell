@@ -8,52 +8,48 @@ schema: 2.0.0
 # New-MgUserTodoListTask
 
 ## SYNOPSIS
-The tasks in this task list.
-Read-only.
-Nullable.
+Create new navigation property to tasks for users
 
 ## SYNTAX
 
 ### CreateExpanded1 (Default)
 ```
 New-MgUserTodoListTask -TodoTaskListId <String> -UserId <String> [-AdditionalProperties <Hashtable>]
- [-Body <IMicrosoftGraphItemBody>] [-BodyLastModifiedDateTime <DateTime>]
- [-CompletedDateTime <IMicrosoftGraphDateTimeZone>] [-CreatedDateTime <DateTime>]
- [-DueDateTime <IMicrosoftGraphDateTimeZone>] [-Extensions <IMicrosoftGraphExtension[]>] [-Id <String>]
- [-Importance <String>] [-IsReminderOn] [-LastModifiedDateTime <DateTime>]
- [-LinkedResources <IMicrosoftGraphLinkedResource[]>] [-Recurrence <IMicrosoftGraphPatternedRecurrence>]
- [-ReminderDateTime <IMicrosoftGraphDateTimeZone>] [-Status <String>] [-Title <String>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-Body <IMicrosoftGraphItemBody>] [-BodyLastModifiedDateTime <DateTime>] [-Categories <String[]>]
+ [-ChecklistItems <IMicrosoftGraphChecklistItem[]>] [-CompletedDateTime <IMicrosoftGraphDateTimeZone>]
+ [-CreatedDateTime <DateTime>] [-DueDateTime <IMicrosoftGraphDateTimeZone>]
+ [-Extensions <IMicrosoftGraphExtension[]>] [-Id <String>] [-Importance <String>] [-IsReminderOn]
+ [-LastModifiedDateTime <DateTime>] [-LinkedResources <IMicrosoftGraphLinkedResource[]>]
+ [-Recurrence <IMicrosoftGraphPatternedRecurrence>] [-ReminderDateTime <IMicrosoftGraphDateTimeZone>]
+ [-Status <String>] [-Title <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create1
 ```
-New-MgUserTodoListTask -TodoTaskListId <String> -UserId <String> -BodyParameter <IMicrosoftGraphTodoTask>
+New-MgUserTodoListTask -TodoTaskListId <String> -UserId <String> -BodyParameter <IMicrosoftGraphTodoTask1>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity1
 ```
-New-MgUserTodoListTask -InputObject <IUsersIdentity> -BodyParameter <IMicrosoftGraphTodoTask> [-Confirm]
+New-MgUserTodoListTask -InputObject <IUsersIdentity> -BodyParameter <IMicrosoftGraphTodoTask1> [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded1
 ```
 New-MgUserTodoListTask -InputObject <IUsersIdentity> [-AdditionalProperties <Hashtable>]
- [-Body <IMicrosoftGraphItemBody>] [-BodyLastModifiedDateTime <DateTime>]
- [-CompletedDateTime <IMicrosoftGraphDateTimeZone>] [-CreatedDateTime <DateTime>]
- [-DueDateTime <IMicrosoftGraphDateTimeZone>] [-Extensions <IMicrosoftGraphExtension[]>] [-Id <String>]
- [-Importance <String>] [-IsReminderOn] [-LastModifiedDateTime <DateTime>]
- [-LinkedResources <IMicrosoftGraphLinkedResource[]>] [-Recurrence <IMicrosoftGraphPatternedRecurrence>]
- [-ReminderDateTime <IMicrosoftGraphDateTimeZone>] [-Status <String>] [-Title <String>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-Body <IMicrosoftGraphItemBody>] [-BodyLastModifiedDateTime <DateTime>] [-Categories <String[]>]
+ [-ChecklistItems <IMicrosoftGraphChecklistItem[]>] [-CompletedDateTime <IMicrosoftGraphDateTimeZone>]
+ [-CreatedDateTime <DateTime>] [-DueDateTime <IMicrosoftGraphDateTimeZone>]
+ [-Extensions <IMicrosoftGraphExtension[]>] [-Id <String>] [-Importance <String>] [-IsReminderOn]
+ [-LastModifiedDateTime <DateTime>] [-LinkedResources <IMicrosoftGraphLinkedResource[]>]
+ [-Recurrence <IMicrosoftGraphPatternedRecurrence>] [-ReminderDateTime <IMicrosoftGraphDateTimeZone>]
+ [-Status <String>] [-Title <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-The tasks in this task list.
-Read-only.
-Nullable.
+Create new navigation property to tasks for users
 
 ## EXAMPLES
 
@@ -114,7 +110,7 @@ todoTask
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTodoTask
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTodoTask1
 Parameter Sets: Create1, CreateViaIdentity1
 Aliases:
 
@@ -122,6 +118,38 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### -Categories
+The categories associated with the task.
+Each category corresponds to the displayName property of an outlookCategory that the user has defined.
+
+```yaml
+Type: System.String[]
+Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ChecklistItems
+A collection of smaller subtasks linked to the more complex parent task.
+To construct, please use Get-Help -Online and see NOTES section for CHECKLISTITEMS properties and create a hash table.
+
+```yaml
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphChecklistItem[]
+Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -194,7 +222,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -417,13 +445,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTodoTask
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTodoTask1
 
 ### Microsoft.Graph.PowerShell.Models.IUsersIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTodoTask
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTodoTask1
 
 ## NOTES
 
@@ -439,27 +467,34 @@ BODY <IMicrosoftGraphItemBody>: itemBody
   - `[Content <String>]`: The content of the item.
   - `[ContentType <String>]`: bodyType
 
-BODYPARAMETER <IMicrosoftGraphTodoTask>: todoTask
+BODYPARAMETER <IMicrosoftGraphTodoTask1>: todoTask
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[Body <IMicrosoftGraphItemBody>]`: itemBody
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Content <String>]`: The content of the item.
     - `[ContentType <String>]`: bodyType
   - `[BodyLastModifiedDateTime <DateTime?>]`: The date and time when the task was last modified. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2020 would look like this: '2020-01-01T00:00:00Z'.
+  - `[Categories <String[]>]`: The categories associated with the task. Each category corresponds to the displayName property of an outlookCategory that the user has defined.
+  - `[ChecklistItems <IMicrosoftGraphChecklistItem[]>]`: A collection of smaller subtasks linked to the more complex parent task.
+    - `[Id <String>]`: 
+    - `[CheckedDateTime <DateTime?>]`: The date and time when the checklistItem was finished.
+    - `[CreatedDateTime <DateTime?>]`: The date and time when the checklistItem was created.
+    - `[DisplayName <String>]`: Field indicating the title of checklistItem.
+    - `[IsChecked <Boolean?>]`: State indicating whether the item is checked off or not.
   - `[CompletedDateTime <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[DateTime <String>]`: A single point of time in a combined date and time representation ({date}T{time}; for example, 2017-08-29T04:00:00.0000000).
-    - `[TimeZone <String>]`: Represents a time zone, for example, 'Pacific Standard Time'. See below for more possible values.
+    - `[DateTime <String>]`: A single point of time in a combined date and time representation ({date}T{time}). For example, '2019-04-16T09:00:00'.
+    - `[TimeZone <String>]`: Represents a time zone, for example, 'Pacific Standard Time'. See below for possible values.
   - `[CreatedDateTime <DateTime?>]`: The date and time when the task was created. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format. For example, midnight UTC on Jan 1, 2020 would look like this: '2020-01-01T00:00:00Z'.
   - `[DueDateTime <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
   - `[Extensions <IMicrosoftGraphExtension[]>]`: The collection of open extensions defined for the task. Nullable.
-    - `[Id <String>]`: Read-only.
+    - `[Id <String>]`: 
   - `[Importance <String>]`: importance
   - `[IsReminderOn <Boolean?>]`: Set to true if an alert is set to remind the user of the task.
   - `[LastModifiedDateTime <DateTime?>]`: The date and time when the task was last modified. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2020 would look like this: '2020-01-01T00:00:00Z'.
   - `[LinkedResources <IMicrosoftGraphLinkedResource[]>]`: A collection of resources linked to the task.
-    - `[Id <String>]`: Read-only.
+    - `[Id <String>]`: 
     - `[ApplicationName <String>]`: Field indicating the app name of the source that is sending the linkedResource.
     - `[DisplayName <String>]`: Field indicating the title of the linkedResource.
     - `[ExternalId <String>]`: Id of the object that is associated with this task on the third-party/partner system.
@@ -486,26 +521,38 @@ BODYPARAMETER <IMicrosoftGraphTodoTask>: todoTask
   - `[Status <String>]`: taskStatus
   - `[Title <String>]`: A brief description of the task.
 
+CHECKLISTITEMS <IMicrosoftGraphChecklistItem[]>: A collection of smaller subtasks linked to the more complex parent task.
+  - `[Id <String>]`: 
+  - `[CheckedDateTime <DateTime?>]`: The date and time when the checklistItem was finished.
+  - `[CreatedDateTime <DateTime?>]`: The date and time when the checklistItem was created.
+  - `[DisplayName <String>]`: Field indicating the title of checklistItem.
+  - `[IsChecked <Boolean?>]`: State indicating whether the item is checked off or not.
+
 COMPLETEDDATETIME <IMicrosoftGraphDateTimeZone>: dateTimeTimeZone
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[DateTime <String>]`: A single point of time in a combined date and time representation ({date}T{time}; for example, 2017-08-29T04:00:00.0000000).
-  - `[TimeZone <String>]`: Represents a time zone, for example, 'Pacific Standard Time'. See below for more possible values.
+  - `[DateTime <String>]`: A single point of time in a combined date and time representation ({date}T{time}). For example, '2019-04-16T09:00:00'.
+  - `[TimeZone <String>]`: Represents a time zone, for example, 'Pacific Standard Time'. See below for possible values.
 
 DUEDATETIME <IMicrosoftGraphDateTimeZone>: dateTimeTimeZone
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[DateTime <String>]`: A single point of time in a combined date and time representation ({date}T{time}; for example, 2017-08-29T04:00:00.0000000).
-  - `[TimeZone <String>]`: Represents a time zone, for example, 'Pacific Standard Time'. See below for more possible values.
+  - `[DateTime <String>]`: A single point of time in a combined date and time representation ({date}T{time}). For example, '2019-04-16T09:00:00'.
+  - `[TimeZone <String>]`: Represents a time zone, for example, 'Pacific Standard Time'. See below for possible values.
 
 EXTENSIONS <IMicrosoftGraphExtension[]>: The collection of open extensions defined for the task. Nullable.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
 
 INPUTOBJECT <IUsersIdentity>: Identity Parameter
+  - `[AttachmentBaseId <String>]`: key: id of attachmentBase
   - `[AttachmentId <String>]`: key: id of attachment
+  - `[AttachmentSessionId <String>]`: key: id of attachmentSession
+  - `[ChecklistItemId <String>]`: key: id of checklistItem
+  - `[DirectoryObjectId <String>]`: key: id of directoryObject
   - `[ExtensionId <String>]`: key: id of extension
   - `[LicenseDetailsId <String>]`: key: id of licenseDetails
   - `[LinkedResourceId <String>]`: key: id of linkedResource
   - `[MultiValueLegacyExtendedPropertyId <String>]`: key: id of multiValueLegacyExtendedProperty
   - `[NotificationId <String>]`: key: id of notification
+  - `[OAuth2PermissionGrantId <String>]`: key: id of oAuth2PermissionGrant
   - `[OutlookCategoryId <String>]`: key: id of outlookCategory
   - `[OutlookTaskFolderId <String>]`: key: id of outlookTaskFolder
   - `[OutlookTaskGroupId <String>]`: key: id of outlookTaskGroup
@@ -517,7 +564,7 @@ INPUTOBJECT <IUsersIdentity>: Identity Parameter
   - `[UserId <String>]`: key: id of user
 
 LINKEDRESOURCES <IMicrosoftGraphLinkedResource[]>: A collection of resources linked to the task.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[ApplicationName <String>]`: Field indicating the app name of the source that is sending the linkedResource.
   - `[DisplayName <String>]`: Field indicating the title of the linkedResource.
   - `[ExternalId <String>]`: Id of the object that is associated with this task on the third-party/partner system.
@@ -544,8 +591,8 @@ RECURRENCE <IMicrosoftGraphPatternedRecurrence>: patternedRecurrence
 
 REMINDERDATETIME <IMicrosoftGraphDateTimeZone>: dateTimeTimeZone
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[DateTime <String>]`: A single point of time in a combined date and time representation ({date}T{time}; for example, 2017-08-29T04:00:00.0000000).
-  - `[TimeZone <String>]`: Represents a time zone, for example, 'Pacific Standard Time'. See below for more possible values.
+  - `[DateTime <String>]`: A single point of time in a combined date and time representation ({date}T{time}). For example, '2019-04-16T09:00:00'.
+  - `[TimeZone <String>]`: Represents a time zone, for example, 'Pacific Standard Time'. See below for possible values.
 
 ## RELATED LINKS
 

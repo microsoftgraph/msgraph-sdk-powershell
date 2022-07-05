@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgUserProfileAddress
 
 ## SYNOPSIS
-Represents details of addresses associated with the user.
+Get addresses from users
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgUserProfileAddress -InputObject <IPeopleIdentity> [-ExpandProperty <String
 ```
 
 ## DESCRIPTION
-Represents details of addresses associated with the user.
+Get addresses from users
 
 ## EXAMPLES
 

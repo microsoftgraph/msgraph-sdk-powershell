@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgDeviceManagementWindowFeatureUpdateProfile
 
 ## SYNOPSIS
-A collection of windows feature update profiles
+Create new navigation property to windowsFeatureUpdateProfiles for deviceManagement
 
 ## SYNTAX
 
@@ -29,7 +29,7 @@ New-MgDeviceManagementWindowFeatureUpdateProfile -BodyParameter <IMicrosoftGraph
 ```
 
 ## DESCRIPTION
-A collection of windows feature update profiles
+Create new navigation property to windowsFeatureUpdateProfiles for deviceManagement
 
 ## EXAMPLES
 
@@ -174,7 +174,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -286,21 +286,21 @@ To create the parameters described below, construct a hash table containing the 
 
 
 ASSIGNMENTS <IMicrosoftGraphWindowsFeatureUpdateProfileAssignment[]>: The list of group assignments of the profile.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget1>]`: Base type for assignment targets.
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[DeviceAndAppManagementAssignmentFilterId <String>]`: The Id of the filter for the target assignment.
-    - `[DeviceAndAppManagementAssignmentFilterType <String>]`: Represents type of the assignment filter.
+    - `[DeviceAndAppManagementAssignmentFilterType <DeviceAndAppManagementAssignmentFilterType?>]`: Represents type of the assignment filter.
 
 BODYPARAMETER <IMicrosoftGraphWindowsFeatureUpdateProfile>: Windows Feature Update Profile
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[Assignments <IMicrosoftGraphWindowsFeatureUpdateProfileAssignment[]>]`: The list of group assignments of the profile.
-    - `[Id <String>]`: Read-only.
+    - `[Id <String>]`: 
     - `[Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget1>]`: Base type for assignment targets.
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[DeviceAndAppManagementAssignmentFilterId <String>]`: The Id of the filter for the target assignment.
-      - `[DeviceAndAppManagementAssignmentFilterType <String>]`: Represents type of the assignment filter.
+      - `[DeviceAndAppManagementAssignmentFilterType <DeviceAndAppManagementAssignmentFilterType?>]`: Represents type of the assignment filter.
   - `[CreatedDateTime <DateTime?>]`: The date time that the profile was created.
   - `[DeployableContentDisplayName <String>]`: Friendly display name of the quality update profile deployable content
   - `[Description <String>]`: The description of the profile which is specified by the user.

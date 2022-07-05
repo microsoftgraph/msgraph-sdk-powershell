@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgDeviceManagementRoleAssignment
 
 ## SYNOPSIS
-The Role Assignments.
+Update the navigation property roleAssignments in deviceManagement
 
 ## SYNTAX
 
@@ -23,14 +23,14 @@ Update-MgDeviceManagementRoleAssignment -DeviceAndAppManagementRoleAssignmentId 
 ### Update1
 ```
 Update-MgDeviceManagementRoleAssignment -DeviceAndAppManagementRoleAssignmentId <String>
- -BodyParameter <IMicrosoftGraphDeviceAndAppManagementRoleAssignment> [-PassThru] [-Confirm] [-WhatIf]
+ -BodyParameter <IMicrosoftGraphDeviceAndAppManagementRoleAssignment1> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity1
 ```
 Update-MgDeviceManagementRoleAssignment -InputObject <IDeviceManagementAdministrationIdentity>
- -BodyParameter <IMicrosoftGraphDeviceAndAppManagementRoleAssignment> [-PassThru] [-Confirm] [-WhatIf]
+ -BodyParameter <IMicrosoftGraphDeviceAndAppManagementRoleAssignment1> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -43,7 +43,7 @@ Update-MgDeviceManagementRoleAssignment -InputObject <IDeviceManagementAdministr
 ```
 
 ## DESCRIPTION
-The Role Assignments.
+Update the navigation property roleAssignments in deviceManagement
 
 ## EXAMPLES
 
@@ -72,7 +72,7 @@ This applies to custom and built-in roles.
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceAndAppManagementRoleAssignment
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceAndAppManagementRoleAssignment1
 Parameter Sets: Update1, UpdateViaIdentity1
 Aliases:
 
@@ -129,7 +129,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -266,7 +266,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IDeviceManagementAdministrationIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceAndAppManagementRoleAssignment
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceAndAppManagementRoleAssignment1
 
 ## OUTPUTS
 
@@ -281,19 +281,19 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-BODYPARAMETER <IMicrosoftGraphDeviceAndAppManagementRoleAssignment>: The Role Assignment resource. Role assignments tie together a role definition with members and scopes. There can be one or more role assignments per role. This applies to custom and built-in roles.
+BODYPARAMETER <IMicrosoftGraphDeviceAndAppManagementRoleAssignment1>: The Role Assignment resource. Role assignments tie together a role definition with members and scopes. There can be one or more role assignments per role. This applies to custom and built-in roles.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Description <String>]`: Description of the Role Assignment.
   - `[DisplayName <String>]`: The display or friendly name of the role Assignment.
   - `[ResourceScopes <String[]>]`: List of ids of role scope member security groups.  These are IDs from Azure Active Directory.
   - `[RoleDefinition <IMicrosoftGraphRoleDefinition>]`: The Role Definition resource. The role definition is the foundation of role based access in Intune. The role combines an Intune resource such as a Mobile App and associated role permissions such as Create or Read for the resource. There are two types of roles, built-in and custom. Built-in roles cannot be modified. Both built-in roles and custom roles must have assignments to be enforced. Create custom roles if you want to define a role that allows any of the available resources and role permissions to be combined into a single role.
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Id <String>]`: Read-only.
+    - `[Id <String>]`: 
     - `[Description <String>]`: Description of the Role definition.
     - `[DisplayName <String>]`: Display Name of the Role definition.
     - `[IsBuiltIn <Boolean?>]`: Type of Role. Set to True if it is built-in, or set to False if it is a custom role definition.
     - `[RoleAssignments <IMicrosoftGraphRoleAssignment1[]>]`: List of Role assignments for this role definition.
-      - `[Id <String>]`: Read-only.
+      - `[Id <String>]`: 
       - `[Description <String>]`: Description of the Role Assignment.
       - `[DisplayName <String>]`: The display or friendly name of the role Assignment.
       - `[ResourceScopes <String[]>]`: List of ids of role scope member security groups.  These are IDs from Azure Active Directory.
@@ -302,7 +302,7 @@ BODYPARAMETER <IMicrosoftGraphDeviceAndAppManagementRoleAssignment>: The Role As
       - `[ResourceActions <IMicrosoftGraphResourceAction[]>]`: Resource Actions each containing a set of allowed and not allowed permissions.
         - `[AllowedResourceActions <String[]>]`: Allowed Actions
         - `[NotAllowedResourceActions <String[]>]`: Not Allowed Actions.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[Members <String[]>]`: The list of ids of role member security groups. These are IDs from Azure Active Directory.
 
 INPUTOBJECT <IDeviceManagementAdministrationIdentity>: Identity Parameter
@@ -328,6 +328,7 @@ INPUTOBJECT <IDeviceManagementAdministrationIdentity>: Identity Parameter
   - `[DeviceManagementExchangeOnPremisesPolicyId <String>]`: key: id of deviceManagementExchangeOnPremisesPolicy
   - `[DeviceManagementPartnerId <String>]`: key: id of deviceManagementPartner
   - `[GroupPolicyCategoryId <String>]`: key: id of groupPolicyCategory
+  - `[GroupPolicyCategoryId1 <String>]`: key: id of groupPolicyCategory
   - `[GroupPolicyDefinitionFileId <String>]`: key: id of groupPolicyDefinitionFile
   - `[GroupPolicyDefinitionId <String>]`: key: id of groupPolicyDefinition
   - `[GroupPolicyMigrationReportId <String>]`: key: id of groupPolicyMigrationReport
@@ -359,12 +360,12 @@ INPUTOBJECT <IDeviceManagementAdministrationIdentity>: Identity Parameter
 
 ROLEDEFINITION <IMicrosoftGraphRoleDefinition>: The Role Definition resource. The role definition is the foundation of role based access in Intune. The role combines an Intune resource such as a Mobile App and associated role permissions such as Create or Read for the resource. There are two types of roles, built-in and custom. Built-in roles cannot be modified. Both built-in roles and custom roles must have assignments to be enforced. Create custom roles if you want to define a role that allows any of the available resources and role permissions to be combined into a single role.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[Description <String>]`: Description of the Role definition.
   - `[DisplayName <String>]`: Display Name of the Role definition.
   - `[IsBuiltIn <Boolean?>]`: Type of Role. Set to True if it is built-in, or set to False if it is a custom role definition.
   - `[RoleAssignments <IMicrosoftGraphRoleAssignment1[]>]`: List of Role assignments for this role definition.
-    - `[Id <String>]`: Read-only.
+    - `[Id <String>]`: 
     - `[Description <String>]`: Description of the Role Assignment.
     - `[DisplayName <String>]`: The display or friendly name of the role Assignment.
     - `[ResourceScopes <String[]>]`: List of ids of role scope member security groups.  These are IDs from Azure Active Directory.

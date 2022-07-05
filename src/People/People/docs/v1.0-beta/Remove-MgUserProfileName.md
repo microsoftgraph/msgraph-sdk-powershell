@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgUserProfileName
 
 ## SYNOPSIS
-Represents the names a user has added to their profile.
+Delete navigation property names for users
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Remove-MgUserProfileName -InputObject <IPeopleIdentity> [-IfMatch <String>] [-Pa
 ```
 
 ## DESCRIPTION
-Represents the names a user has added to their profile.
+Delete navigation property names for users
 
 ## EXAMPLES
 

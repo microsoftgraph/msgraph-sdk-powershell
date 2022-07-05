@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgDeviceManagementUserExperienceAnalyticBatteryHealthModelPerformance
 
 ## SYNOPSIS
-User Experience Analytics Battery Health Model Performance
+Update the navigation property userExperienceAnalyticsBatteryHealthModelPerformance in deviceManagement
 
 ## SYNTAX
 
@@ -18,7 +18,8 @@ Update-MgDeviceManagementUserExperienceAnalyticBatteryHealthModelPerformance
  -UserExperienceAnalyticsBatteryHealthModelPerformanceId <String> [-ActiveDevices <Int32>]
  [-AdditionalProperties <Hashtable>] [-AverageBatteryAgeInDays <Int32>]
  [-AverageEstimatedRuntimeInMinutes <Int32>] [-AverageMaxCapacityPercentage <Int32>] [-Id <String>]
- [-Manufacturer <String>] [-Model <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Manufacturer <String>] [-Model <String>] [-ModelBatteryHealthScore <Int32>] [-PassThru] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
@@ -42,12 +43,12 @@ Update-MgDeviceManagementUserExperienceAnalyticBatteryHealthModelPerformance
 Update-MgDeviceManagementUserExperienceAnalyticBatteryHealthModelPerformance
  -InputObject <IDeviceManagementIdentity> [-ActiveDevices <Int32>] [-AdditionalProperties <Hashtable>]
  [-AverageBatteryAgeInDays <Int32>] [-AverageEstimatedRuntimeInMinutes <Int32>]
- [-AverageMaxCapacityPercentage <Int32>] [-Id <String>] [-Manufacturer <String>] [-Model <String>] [-PassThru]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-AverageMaxCapacityPercentage <Int32>] [-Id <String>] [-Manufacturer <String>] [-Model <String>]
+ [-ModelBatteryHealthScore <Int32>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-User Experience Analytics Battery Health Model Performance
+Update the navigation property userExperienceAnalyticsBatteryHealthModelPerformance in deviceManagement
 
 ## EXAMPLES
 
@@ -153,7 +154,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -203,6 +204,23 @@ The model name of the device.
 
 ```yaml
 Type: System.String
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ModelBatteryHealthScore
+A weighted average of a model’s maximum capacity score and runtime estimate score.
+Values range from 0-100.
+Valid values -2147483648 to 2147483647
+
+```yaml
+Type: System.Int32
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -298,13 +316,14 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphUserExperienceAnalyticsBatteryHealthModelPerformance>: The user experience analytics battery health model performance entity contains battery related information for all unique device models in their organization.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[ActiveDevices <Int32?>]`: Number of active devices for that model. Valid values -2147483648 to 2147483647
   - `[AverageBatteryAgeInDays <Int32?>]`: The mean of the battery age for all devices of a given model in a tenant. Unit in days. Valid values -2147483648 to 2147483647
   - `[AverageEstimatedRuntimeInMinutes <Int32?>]`: The mean of the estimated runtimes on full charge for all devices of a given model. Unit in minutes. Valid values -2147483648 to 2147483647
   - `[AverageMaxCapacityPercentage <Int32?>]`: The mean of the maximum capacity for all devices of a given model. Maximum capacity measures the full charge vs. design capacity for a device’s batteries.. Valid values -2147483648 to 2147483647
   - `[Manufacturer <String>]`: Name of the device manufacturer.
   - `[Model <String>]`: The model name of the device.
+  - `[ModelBatteryHealthScore <Int32?>]`: A weighted average of a model’s maximum capacity score and runtime estimate score. Values range from 0-100. Valid values -2147483648 to 2147483647
 
 INPUTOBJECT <IDeviceManagementIdentity>: Identity Parameter
   - `[AdvancedThreatProtectionOnboardingDeviceSettingStateId <String>]`: key: id of advancedThreatProtectionOnboardingDeviceSettingState
@@ -336,6 +355,15 @@ INPUTOBJECT <IDeviceManagementIdentity>: Identity Parameter
   - `[DeviceHealthScriptDeviceStateId <String>]`: key: id of deviceHealthScriptDeviceState
   - `[DeviceHealthScriptId <String>]`: key: id of deviceHealthScript
   - `[DeviceLogCollectionResponseId <String>]`: key: id of deviceLogCollectionResponse
+  - `[DeviceManagementComplianceActionItemId <String>]`: key: id of deviceManagementComplianceActionItem
+  - `[DeviceManagementCompliancePolicyId <String>]`: key: id of deviceManagementCompliancePolicy
+  - `[DeviceManagementComplianceScheduledActionForRuleId <String>]`: key: id of deviceManagementComplianceScheduledActionForRule
+  - `[DeviceManagementConfigurationPolicyAssignmentId <String>]`: key: id of deviceManagementConfigurationPolicyAssignment
+  - `[DeviceManagementConfigurationPolicyId <String>]`: key: id of deviceManagementConfigurationPolicy
+  - `[DeviceManagementConfigurationPolicyTemplateId <String>]`: key: id of deviceManagementConfigurationPolicyTemplate
+  - `[DeviceManagementConfigurationSettingDefinitionId <String>]`: key: id of deviceManagementConfigurationSettingDefinition
+  - `[DeviceManagementConfigurationSettingId <String>]`: key: id of deviceManagementConfigurationSetting
+  - `[DeviceManagementConfigurationSettingTemplateId <String>]`: key: id of deviceManagementConfigurationSettingTemplate
   - `[DeviceManagementDerivedCredentialSettingsId <String>]`: key: id of deviceManagementDerivedCredentialSettings
   - `[DeviceManagementIntentAssignmentId <String>]`: key: id of deviceManagementIntentAssignment
   - `[DeviceManagementIntentDeviceSettingStateSummaryId <String>]`: key: id of deviceManagementIntentDeviceSettingStateSummary
@@ -373,8 +401,6 @@ INPUTOBJECT <IDeviceManagementIdentity>: Identity Parameter
   - `[ManagedDeviceEncryptionStateId <String>]`: key: id of managedDeviceEncryptionState
   - `[ManagedDeviceId <String>]`: key: id of managedDevice
   - `[ManagedDeviceMobileAppConfigurationStateId <String>]`: key: id of managedDeviceMobileAppConfigurationState
-  - `[ManagementConditionId <String>]`: key: id of managementCondition
-  - `[ManagementConditionStatementId <String>]`: key: id of managementConditionStatement
   - `[MicrosoftTunnelConfigurationId <String>]`: key: id of microsoftTunnelConfiguration
   - `[MicrosoftTunnelHealthThresholdId <String>]`: key: id of microsoftTunnelHealthThreshold
   - `[MicrosoftTunnelServerId <String>]`: key: id of microsoftTunnelServer
@@ -404,6 +430,7 @@ INPUTOBJECT <IDeviceManagementIdentity>: Identity Parameter
   - `[UserExperienceAnalyticsBatteryHealthOSPerformanceId <String>]`: key: id of userExperienceAnalyticsBatteryHealthOsPerformance
   - `[UserExperienceAnalyticsCategoryId <String>]`: key: id of userExperienceAnalyticsCategory
   - `[UserExperienceAnalyticsDevicePerformanceId <String>]`: key: id of userExperienceAnalyticsDevicePerformance
+  - `[UserExperienceAnalyticsDeviceScopeId <String>]`: key: id of userExperienceAnalyticsDeviceScope
   - `[UserExperienceAnalyticsDeviceScoresId <String>]`: key: id of userExperienceAnalyticsDeviceScores
   - `[UserExperienceAnalyticsDeviceStartupHistoryId <String>]`: key: id of userExperienceAnalyticsDeviceStartupHistory
   - `[UserExperienceAnalyticsDeviceStartupProcessId <String>]`: key: id of userExperienceAnalyticsDeviceStartupProcess

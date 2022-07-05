@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgDeviceManagementUserExperienceAnalyticBatteryHealthCapacityDetail
 
 ## SYNOPSIS
-User Experience Analytics Battery Health Capacity Details
+Delete navigation property userExperienceAnalyticsBatteryHealthCapacityDetails for deviceManagement
 
 ## SYNTAX
 
@@ -18,7 +18,7 @@ Remove-MgDeviceManagementUserExperienceAnalyticBatteryHealthCapacityDetail [-IfM
 ```
 
 ## DESCRIPTION
-User Experience Analytics Battery Health Capacity Details
+Delete navigation property userExperienceAnalyticsBatteryHealthCapacityDetails for deviceManagement
 
 ## EXAMPLES
 

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgEntitlementManagementAccessPackageCatalogAccessPackageResourceScope
 
 ## SYNOPSIS
-Read-only.
+Get accessPackageResourceScopes from identityGovernance
 
 ## SYNTAX
 
@@ -19,7 +19,7 @@ Get-MgEntitlementManagementAccessPackageCatalogAccessPackageResourceScope -Acces
 ```
 
 ## DESCRIPTION
-Read-only.
+Get accessPackageResourceScopes from identityGovernance
 
 ## EXAMPLES
 

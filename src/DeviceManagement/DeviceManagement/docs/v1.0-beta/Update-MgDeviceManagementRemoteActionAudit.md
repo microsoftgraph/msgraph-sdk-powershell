@@ -8,13 +8,13 @@ schema: 2.0.0
 # Update-MgDeviceManagementRemoteActionAudit
 
 ## SYNOPSIS
-The list of device remote action audits with the tenant.
+Update the navigation property remoteActionAudits in deviceManagement
 
 ## SYNTAX
 
 ### UpdateExpanded (Default)
 ```
-Update-MgDeviceManagementRemoteActionAudit -RemoteActionAuditId <String> [-Action <String>]
+Update-MgDeviceManagementRemoteActionAudit -RemoteActionAuditId <String> [-Action <RemoteAction>]
  [-ActionState <String>] [-AdditionalProperties <Hashtable>] [-DeviceDisplayName <String>]
  [-DeviceImei <String>] [-DeviceOwnerUserPrincipalName <String>] [-Id <String>]
  [-InitiatedByUserPrincipalName <String>] [-ManagedDeviceId <String>] [-RequestDateTime <DateTime>]
@@ -35,7 +35,7 @@ Update-MgDeviceManagementRemoteActionAudit -InputObject <IDeviceManagementIdenti
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgDeviceManagementRemoteActionAudit -InputObject <IDeviceManagementIdentity> [-Action <String>]
+Update-MgDeviceManagementRemoteActionAudit -InputObject <IDeviceManagementIdentity> [-Action <RemoteAction>]
  [-ActionState <String>] [-AdditionalProperties <Hashtable>] [-DeviceDisplayName <String>]
  [-DeviceImei <String>] [-DeviceOwnerUserPrincipalName <String>] [-Id <String>]
  [-InitiatedByUserPrincipalName <String>] [-ManagedDeviceId <String>] [-RequestDateTime <DateTime>]
@@ -43,7 +43,7 @@ Update-MgDeviceManagementRemoteActionAudit -InputObject <IDeviceManagementIdenti
 ```
 
 ## DESCRIPTION
-The list of device remote action audits with the tenant.
+Update the navigation property remoteActionAudits in deviceManagement
 
 ## EXAMPLES
 
@@ -53,7 +53,7 @@ The list of device remote action audits with the tenant.
 Remote actions Intune supports.
 
 ```yaml
-Type: System.String
+Type: Microsoft.Graph.PowerShell.Support.RemoteAction
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -65,7 +65,7 @@ Accept wildcard characters: False
 ```
 
 ### -ActionState
-State of the action on the device
+actionState
 
 ```yaml
 Type: System.String
@@ -156,7 +156,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -331,9 +331,9 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphRemoteActionAudit>: Report of remote actions initiated on the devices belonging to a certain tenant.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
-  - `[Action <String>]`: Remote actions Intune supports.
-  - `[ActionState <String>]`: State of the action on the device
+  - `[Id <String>]`: 
+  - `[Action <RemoteAction?>]`: Remote actions Intune supports.
+  - `[ActionState <String>]`: actionState
   - `[DeviceDisplayName <String>]`: Intune device name.
   - `[DeviceImei <String>]`: IMEI of the device.
   - `[DeviceOwnerUserPrincipalName <String>]`: Upn of the device owner.
@@ -372,6 +372,15 @@ INPUTOBJECT <IDeviceManagementIdentity>: Identity Parameter
   - `[DeviceHealthScriptDeviceStateId <String>]`: key: id of deviceHealthScriptDeviceState
   - `[DeviceHealthScriptId <String>]`: key: id of deviceHealthScript
   - `[DeviceLogCollectionResponseId <String>]`: key: id of deviceLogCollectionResponse
+  - `[DeviceManagementComplianceActionItemId <String>]`: key: id of deviceManagementComplianceActionItem
+  - `[DeviceManagementCompliancePolicyId <String>]`: key: id of deviceManagementCompliancePolicy
+  - `[DeviceManagementComplianceScheduledActionForRuleId <String>]`: key: id of deviceManagementComplianceScheduledActionForRule
+  - `[DeviceManagementConfigurationPolicyAssignmentId <String>]`: key: id of deviceManagementConfigurationPolicyAssignment
+  - `[DeviceManagementConfigurationPolicyId <String>]`: key: id of deviceManagementConfigurationPolicy
+  - `[DeviceManagementConfigurationPolicyTemplateId <String>]`: key: id of deviceManagementConfigurationPolicyTemplate
+  - `[DeviceManagementConfigurationSettingDefinitionId <String>]`: key: id of deviceManagementConfigurationSettingDefinition
+  - `[DeviceManagementConfigurationSettingId <String>]`: key: id of deviceManagementConfigurationSetting
+  - `[DeviceManagementConfigurationSettingTemplateId <String>]`: key: id of deviceManagementConfigurationSettingTemplate
   - `[DeviceManagementDerivedCredentialSettingsId <String>]`: key: id of deviceManagementDerivedCredentialSettings
   - `[DeviceManagementIntentAssignmentId <String>]`: key: id of deviceManagementIntentAssignment
   - `[DeviceManagementIntentDeviceSettingStateSummaryId <String>]`: key: id of deviceManagementIntentDeviceSettingStateSummary
@@ -409,8 +418,6 @@ INPUTOBJECT <IDeviceManagementIdentity>: Identity Parameter
   - `[ManagedDeviceEncryptionStateId <String>]`: key: id of managedDeviceEncryptionState
   - `[ManagedDeviceId <String>]`: key: id of managedDevice
   - `[ManagedDeviceMobileAppConfigurationStateId <String>]`: key: id of managedDeviceMobileAppConfigurationState
-  - `[ManagementConditionId <String>]`: key: id of managementCondition
-  - `[ManagementConditionStatementId <String>]`: key: id of managementConditionStatement
   - `[MicrosoftTunnelConfigurationId <String>]`: key: id of microsoftTunnelConfiguration
   - `[MicrosoftTunnelHealthThresholdId <String>]`: key: id of microsoftTunnelHealthThreshold
   - `[MicrosoftTunnelServerId <String>]`: key: id of microsoftTunnelServer
@@ -440,6 +447,7 @@ INPUTOBJECT <IDeviceManagementIdentity>: Identity Parameter
   - `[UserExperienceAnalyticsBatteryHealthOSPerformanceId <String>]`: key: id of userExperienceAnalyticsBatteryHealthOsPerformance
   - `[UserExperienceAnalyticsCategoryId <String>]`: key: id of userExperienceAnalyticsCategory
   - `[UserExperienceAnalyticsDevicePerformanceId <String>]`: key: id of userExperienceAnalyticsDevicePerformance
+  - `[UserExperienceAnalyticsDeviceScopeId <String>]`: key: id of userExperienceAnalyticsDeviceScope
   - `[UserExperienceAnalyticsDeviceScoresId <String>]`: key: id of userExperienceAnalyticsDeviceScores
   - `[UserExperienceAnalyticsDeviceStartupHistoryId <String>]`: key: id of userExperienceAnalyticsDeviceStartupHistory
   - `[UserExperienceAnalyticsDeviceStartupProcessId <String>]`: key: id of userExperienceAnalyticsDeviceStartupProcess

@@ -8,8 +8,7 @@ schema: 2.0.0
 # Remove-MgCommunicationCallParticipant
 
 ## SYNOPSIS
-Read-only.
-Nullable.
+Delete navigation property participants for communications
 
 ## SYNTAX
 
@@ -26,8 +25,7 @@ Remove-MgCommunicationCallParticipant -InputObject <ICloudCommunicationsIdentity
 ```
 
 ## DESCRIPTION
-Read-only.
-Nullable.
+Delete navigation property participants for communications
 
 ## EXAMPLES
 

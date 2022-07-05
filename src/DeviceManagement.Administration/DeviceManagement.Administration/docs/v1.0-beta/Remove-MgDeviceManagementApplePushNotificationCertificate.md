@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgDeviceManagementApplePushNotificationCertificate
 
 ## SYNOPSIS
-Apple push notification certificate.
+Delete navigation property applePushNotificationCertificate for deviceManagement
 
 ## SYNTAX
 
@@ -18,7 +18,7 @@ Remove-MgDeviceManagementApplePushNotificationCertificate [-IfMatch <String>] [-
 ```
 
 ## DESCRIPTION
-Apple push notification certificate.
+Delete navigation property applePushNotificationCertificate for deviceManagement
 
 ## EXAMPLES
 

@@ -8,8 +8,7 @@ schema: 2.0.0
 # Update-MgDeviceManagementConditionalAccessSetting
 
 ## SYNOPSIS
-The Exchange on premises conditional access settings.
-On premises conditional access will require devices to be both enrolled and compliant for mail access
+Update the navigation property conditionalAccessSettings in deviceManagement
 
 ## SYNTAX
 
@@ -28,8 +27,7 @@ Update-MgDeviceManagementConditionalAccessSetting
 ```
 
 ## DESCRIPTION
-The Exchange on premises conditional access settings.
-On premises conditional access will require devices to be both enrolled and compliant for mail access
+Update the navigation property conditionalAccessSettings in deviceManagement
 
 ## EXAMPLES
 
@@ -98,7 +96,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -211,7 +209,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphOnPremisesConditionalAccessSettings>: Singleton entity which represents the Exchange OnPremises Conditional Access Settings for a tenant.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[Enabled <Boolean?>]`: Indicates if on premises conditional access is enabled for this organization
   - `[ExcludedGroups <String[]>]`: User groups that will be exempt by on premises conditional access. All users in these groups will be exempt from the conditional access policy.
   - `[IncludedGroups <String[]>]`: User groups that will be targeted by on premises conditional access. All users in these groups will be required to have mobile device managed and compliant for mail access.

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgUserProfilePatent
 
 ## SYNOPSIS
-Represents patents that a user has added to their profile.
+Update the navigation property patents in users
 
 ## SYNTAX
 
@@ -47,7 +47,7 @@ Update-MgUserProfilePatent -InputObject <IPeopleIdentity> [-AdditionalProperties
 ```
 
 ## DESCRIPTION
-Represents patents that a user has added to their profile.
+Update the navigation property patents in users
 
 ## EXAMPLES
 
@@ -161,7 +161,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -464,7 +464,7 @@ BODYPARAMETER <IMicrosoftGraphItemPatent>: itemPatent
   - `[Source <IMicrosoftGraphPersonDataSources>]`: personDataSources
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Type <String[]>]`: 
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[Description <String>]`: Descpription of the patent or filing.
   - `[DisplayName <String>]`: Title of the patent or filing.
   - `[IsPending <Boolean?>]`: Indicates the patent is pending.

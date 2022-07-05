@@ -8,8 +8,7 @@ schema: 2.0.0
 # Remove-MgUserOnlineMeetingAttendanceReport
 
 ## SYNOPSIS
-The attendance reports of an online meeting.
-Read-only.
+Delete navigation property attendanceReports for users
 
 ## SYNTAX
 
@@ -26,8 +25,7 @@ Remove-MgUserOnlineMeetingAttendanceReport -InputObject <ICloudCommunicationsIde
 ```
 
 ## DESCRIPTION
-The attendance reports of an online meeting.
-Read-only.
+Delete navigation property attendanceReports for users
 
 ## EXAMPLES
 

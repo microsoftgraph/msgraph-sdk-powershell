@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgDeviceManagementUserExperienceAnalyticImpactingProcess
 
 ## SYNOPSIS
-User experience analytics impacting process
+Create new navigation property to userExperienceAnalyticsImpactingProcess for deviceManagement
 
 ## SYNTAX
 
@@ -27,7 +27,7 @@ New-MgDeviceManagementUserExperienceAnalyticImpactingProcess
 ```
 
 ## DESCRIPTION
-User experience analytics impacting process
+Create new navigation property to userExperienceAnalyticsImpactingProcess for deviceManagement
 
 ## EXAMPLES
 
@@ -110,7 +110,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -223,7 +223,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphUserExperienceAnalyticsImpactingProcess>: The user experience analytics top impacting process entity.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[Category <String>]`: The category of impacting process.
   - `[Description <String>]`: The description of process.
   - `[DeviceId <String>]`: The unique identifier of the impacted device.

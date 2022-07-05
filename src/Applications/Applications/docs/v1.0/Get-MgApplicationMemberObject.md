@@ -12,27 +12,27 @@ Invoke action getMemberObjects
 
 ## SYNTAX
 
-### GetExpanded1 (Default)
+### GetExpanded (Default)
 ```
 Get-MgApplicationMemberObject -ApplicationId <String> [-AdditionalProperties <Hashtable>]
  [-SecurityEnabledOnly] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### Get1
+### Get
 ```
 Get-MgApplicationMemberObject -ApplicationId <String>
  -BodyParameter <IPathsLcqfowApplicationsApplicationIdMicrosoftGraphGetmemberobjectsPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### GetViaIdentity1
+### GetViaIdentity
 ```
 Get-MgApplicationMemberObject -InputObject <IApplicationsIdentity>
  -BodyParameter <IPathsLcqfowApplicationsApplicationIdMicrosoftGraphGetmemberobjectsPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### GetViaIdentityExpanded1
+### GetViaIdentityExpanded
 ```
 Get-MgApplicationMemberObject -InputObject <IApplicationsIdentity> [-AdditionalProperties <Hashtable>]
  [-SecurityEnabledOnly] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -50,7 +50,7 @@ Additional Parameters
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: GetExpanded1, GetViaIdentityExpanded1
+Parameter Sets: GetExpanded, GetViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -65,7 +65,7 @@ key: id of application
 
 ```yaml
 Type: System.String
-Parameter Sets: Get1, GetExpanded1
+Parameter Sets: Get, GetExpanded
 Aliases:
 
 Required: True
@@ -81,7 +81,7 @@ To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETE
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IPathsLcqfowApplicationsApplicationIdMicrosoftGraphGetmemberobjectsPostRequestbodyContentApplicationJsonSchema
-Parameter Sets: Get1, GetViaIdentity1
+Parameter Sets: Get, GetViaIdentity
 Aliases:
 
 Required: True
@@ -97,7 +97,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
-Parameter Sets: GetViaIdentity1, GetViaIdentityExpanded1
+Parameter Sets: GetViaIdentity, GetViaIdentityExpanded
 Aliases:
 
 Required: True
@@ -112,7 +112,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
-Parameter Sets: GetExpanded1, GetViaIdentityExpanded1
+Parameter Sets: GetExpanded, GetViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -180,28 +180,33 @@ BODYPARAMETER <IPathsLcqfowApplicationsApplicationIdMicrosoftGraphGetmemberobjec
   - `[SecurityEnabledOnly <Boolean?>]`: 
 
 INPUTOBJECT <IApplicationsIdentity>: Identity Parameter
+  - `[AppManagementPolicyId <String>]`: key: id of appManagementPolicy
   - `[AppRoleAssignmentId <String>]`: key: id of appRoleAssignment
   - `[ApplicationId <String>]`: key: id of application
   - `[ApplicationTemplateId <String>]`: key: id of applicationTemplate
+  - `[ClaimsMappingPolicyId <String>]`: key: id of claimsMappingPolicy
   - `[ConnectorGroupId <String>]`: key: id of connectorGroup
   - `[ConnectorId <String>]`: key: id of connector
   - `[DelegatedPermissionClassificationId <String>]`: key: id of delegatedPermissionClassification
   - `[DirectoryDefinitionId <String>]`: key: id of directoryDefinition
+  - `[DirectoryObjectId <String>]`: key: id of directoryObject
   - `[EndpointId <String>]`: key: id of endpoint
   - `[ExtensionPropertyId <String>]`: key: id of extensionProperty
   - `[FederatedIdentityCredentialId <String>]`: key: id of federatedIdentityCredential
   - `[GroupId <String>]`: key: id of group
+  - `[HomeRealmDiscoveryPolicyId <String>]`: key: id of homeRealmDiscoveryPolicy
   - `[LicenseDetailsId <String>]`: key: id of licenseDetails
+  - `[OAuth2PermissionGrantId <String>]`: key: id of oAuth2PermissionGrant
   - `[OnPremisesAgentGroupId <String>]`: key: id of onPremisesAgentGroup
   - `[OnPremisesAgentGroupId1 <String>]`: key: id of onPremisesAgentGroup
   - `[OnPremisesAgentId <String>]`: key: id of onPremisesAgent
-  - `[OnPremisesAgentId1 <String>]`: key: id of onPremisesAgent
   - `[OnPremisesPublishingProfileId <String>]`: key: id of onPremisesPublishingProfile
   - `[PublishedResourceId <String>]`: key: id of publishedResource
-  - `[PublishedResourceId1 <String>]`: key: id of publishedResource
   - `[ServicePrincipalId <String>]`: key: id of servicePrincipal
   - `[SynchronizationJobId <String>]`: key: id of synchronizationJob
   - `[SynchronizationTemplateId <String>]`: key: id of synchronizationTemplate
+  - `[TokenIssuancePolicyId <String>]`: key: id of tokenIssuancePolicy
+  - `[TokenLifetimePolicyId <String>]`: key: id of tokenLifetimePolicy
   - `[UserId <String>]`: key: id of user
 
 ## RELATED LINKS

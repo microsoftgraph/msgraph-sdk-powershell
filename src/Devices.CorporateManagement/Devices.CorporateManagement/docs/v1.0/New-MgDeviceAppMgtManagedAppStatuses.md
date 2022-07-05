@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgDeviceAppMgtManagedAppStatuses
 
 ## SYNOPSIS
-The managed app statuses.
+Create new navigation property to managedAppStatuses for deviceAppManagement
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ New-MgDeviceAppMgtManagedAppStatuses -BodyParameter <IMicrosoftGraphManagedAppSt
 ```
 
 ## DESCRIPTION
-The managed app statuses.
+Create new navigation property to managedAppStatuses for deviceAppManagement
 
 ## EXAMPLES
 
@@ -78,7 +78,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -162,7 +162,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphManagedAppStatus>: Represents app protection and configuration status for the organization.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[DisplayName <String>]`: Friendly name of the status report.
   - `[Version <String>]`: Version of the entity.
 

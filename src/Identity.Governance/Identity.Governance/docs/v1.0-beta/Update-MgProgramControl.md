@@ -29,11 +29,26 @@ Update-MgProgramControl -ProgramControlId <String> -BodyParameter <IMicrosoftGra
 
 ### Update1
 ```
+Update-MgProgramControl -ProgramControlId <String> -ProgramControlId1 <String>
+ -BodyParameter <IMicrosoftGraphProgramControl> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+```
+
+### Update2
+```
 Update-MgProgramControl -ProgramControlId <String> -ProgramId <String>
  -BodyParameter <IMicrosoftGraphProgramControl> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateExpanded1
+```
+Update-MgProgramControl -ProgramControlId <String> -ProgramControlId1 <String> [-ProgramId <String>]
+ [-AdditionalProperties <Hashtable>] [-ControlId <String>] [-ControlTypeId <String>]
+ [-CreatedDateTime <DateTime>] [-DisplayName <String>] [-Id <String>] [-Owner <IMicrosoftGraphUserIdentity>]
+ [-Program <IMicrosoftGraphProgram>] [-Resource <IMicrosoftGraphProgramResource>] [-Status <String>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+```
+
+### UpdateExpanded2
 ```
 Update-MgProgramControl -ProgramControlId <String> -ProgramId <String> [-AdditionalProperties <Hashtable>]
  [-ControlId <String>] [-ControlTypeId <String>] [-CreatedDateTime <DateTime>] [-DisplayName <String>]
@@ -49,6 +64,12 @@ Update-MgProgramControl -InputObject <IIdentityGovernanceIdentity>
 ```
 
 ### UpdateViaIdentity1
+```
+Update-MgProgramControl -InputObject <IIdentityGovernanceIdentity>
+ -BodyParameter <IMicrosoftGraphProgramControl> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+```
+
+### UpdateViaIdentity2
 ```
 Update-MgProgramControl -InputObject <IIdentityGovernanceIdentity>
  -BodyParameter <IMicrosoftGraphProgramControl> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -72,6 +93,15 @@ Update-MgProgramControl -InputObject <IIdentityGovernanceIdentity> [-ProgramId <
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
+### UpdateViaIdentityExpanded2
+```
+Update-MgProgramControl -InputObject <IIdentityGovernanceIdentity> [-ProgramId <String>]
+ [-AdditionalProperties <Hashtable>] [-ControlId <String>] [-ControlTypeId <String>]
+ [-CreatedDateTime <DateTime>] [-DisplayName <String>] [-Id <String>] [-Owner <IMicrosoftGraphUserIdentity>]
+ [-Program <IMicrosoftGraphProgram>] [-Resource <IMicrosoftGraphProgramResource>] [-Status <String>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+```
+
 ## DESCRIPTION
 Update entity in programControls
 
@@ -84,7 +114,7 @@ Additional Parameters
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: UpdateExpanded, UpdateExpanded1, UpdateViaIdentityExpanded, UpdateViaIdentityExpanded1
+Parameter Sets: UpdateExpanded, UpdateExpanded1, UpdateExpanded2, UpdateViaIdentityExpanded, UpdateViaIdentityExpanded1, UpdateViaIdentityExpanded2
 Aliases:
 
 Required: False
@@ -100,7 +130,7 @@ To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETE
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphProgramControl
-Parameter Sets: Update, Update1, UpdateViaIdentity, UpdateViaIdentity1
+Parameter Sets: Update, Update1, Update2, UpdateViaIdentity, UpdateViaIdentity1, UpdateViaIdentity2
 Aliases:
 
 Required: True
@@ -116,7 +146,7 @@ Required on create.
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded, UpdateExpanded1, UpdateViaIdentityExpanded, UpdateViaIdentityExpanded1
+Parameter Sets: UpdateExpanded, UpdateExpanded1, UpdateExpanded2, UpdateViaIdentityExpanded, UpdateViaIdentityExpanded1, UpdateViaIdentityExpanded2
 Aliases:
 
 Required: False
@@ -132,7 +162,7 @@ Required on create.
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded, UpdateExpanded1, UpdateViaIdentityExpanded, UpdateViaIdentityExpanded1
+Parameter Sets: UpdateExpanded, UpdateExpanded1, UpdateExpanded2, UpdateViaIdentityExpanded, UpdateViaIdentityExpanded1, UpdateViaIdentityExpanded2
 Aliases:
 
 Required: False
@@ -147,7 +177,7 @@ The creation date and time of the program control.
 
 ```yaml
 Type: System.DateTime
-Parameter Sets: UpdateExpanded, UpdateExpanded1, UpdateViaIdentityExpanded, UpdateViaIdentityExpanded1
+Parameter Sets: UpdateExpanded, UpdateExpanded1, UpdateExpanded2, UpdateViaIdentityExpanded, UpdateViaIdentityExpanded1, UpdateViaIdentityExpanded2
 Aliases:
 
 Required: False
@@ -162,7 +192,7 @@ The name of the control.
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded, UpdateExpanded1, UpdateViaIdentityExpanded, UpdateViaIdentityExpanded1
+Parameter Sets: UpdateExpanded, UpdateExpanded1, UpdateExpanded2, UpdateViaIdentityExpanded, UpdateViaIdentityExpanded1, UpdateViaIdentityExpanded2
 Aliases:
 
 Required: False
@@ -173,11 +203,11 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded, UpdateExpanded1, UpdateViaIdentityExpanded, UpdateViaIdentityExpanded1
+Parameter Sets: UpdateExpanded, UpdateExpanded1, UpdateExpanded2, UpdateViaIdentityExpanded, UpdateViaIdentityExpanded1, UpdateViaIdentityExpanded2
 Aliases:
 
 Required: False
@@ -193,7 +223,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
-Parameter Sets: UpdateViaIdentity, UpdateViaIdentity1, UpdateViaIdentityExpanded, UpdateViaIdentityExpanded1
+Parameter Sets: UpdateViaIdentity, UpdateViaIdentity1, UpdateViaIdentity2, UpdateViaIdentityExpanded, UpdateViaIdentityExpanded1, UpdateViaIdentityExpanded2
 Aliases:
 
 Required: True
@@ -209,7 +239,7 @@ To construct, please use Get-Help -Online and see NOTES section for OWNER proper
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserIdentity
-Parameter Sets: UpdateExpanded, UpdateExpanded1, UpdateViaIdentityExpanded, UpdateViaIdentityExpanded1
+Parameter Sets: UpdateExpanded, UpdateExpanded1, UpdateExpanded2, UpdateViaIdentityExpanded, UpdateViaIdentityExpanded1, UpdateViaIdentityExpanded2
 Aliases:
 
 Required: False
@@ -240,7 +270,7 @@ To construct, please use Get-Help -Online and see NOTES section for PROGRAM prop
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphProgram
-Parameter Sets: UpdateExpanded, UpdateExpanded1, UpdateViaIdentityExpanded, UpdateViaIdentityExpanded1
+Parameter Sets: UpdateExpanded, UpdateExpanded1, UpdateExpanded2, UpdateViaIdentityExpanded, UpdateViaIdentityExpanded1, UpdateViaIdentityExpanded2
 Aliases:
 
 Required: False
@@ -255,7 +285,22 @@ key: id of programControl
 
 ```yaml
 Type: System.String
-Parameter Sets: Update, Update1, UpdateExpanded, UpdateExpanded1
+Parameter Sets: Update, Update1, Update2, UpdateExpanded, UpdateExpanded1, UpdateExpanded2
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ProgramControlId1
+key: id of programControl
+
+```yaml
+Type: System.String
+Parameter Sets: Update1, UpdateExpanded1
 Aliases:
 
 Required: True
@@ -270,7 +315,7 @@ key: id of program
 
 ```yaml
 Type: System.String
-Parameter Sets: Update1, UpdateExpanded, UpdateExpanded1, UpdateViaIdentityExpanded, UpdateViaIdentityExpanded1
+Parameter Sets: Update2, UpdateExpanded, UpdateExpanded1, UpdateExpanded2, UpdateViaIdentityExpanded, UpdateViaIdentityExpanded1, UpdateViaIdentityExpanded2
 Aliases:
 
 Required: True
@@ -286,7 +331,7 @@ Required on create.
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded1
+Parameter Sets: UpdateExpanded2
 Aliases:
 
 Required: False
@@ -302,7 +347,7 @@ To construct, please use Get-Help -Online and see NOTES section for RESOURCE pro
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphProgramResource
-Parameter Sets: UpdateExpanded, UpdateExpanded1, UpdateViaIdentityExpanded, UpdateViaIdentityExpanded1
+Parameter Sets: UpdateExpanded, UpdateExpanded1, UpdateExpanded2, UpdateViaIdentityExpanded, UpdateViaIdentityExpanded1, UpdateViaIdentityExpanded2
 Aliases:
 
 Required: False
@@ -317,7 +362,7 @@ The life cycle status of the control.
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded, UpdateExpanded1, UpdateViaIdentityExpanded, UpdateViaIdentityExpanded1
+Parameter Sets: UpdateExpanded, UpdateExpanded1, UpdateExpanded2, UpdateViaIdentityExpanded, UpdateViaIdentityExpanded1, UpdateViaIdentityExpanded2
 Aliases:
 
 Required: False
@@ -382,7 +427,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphProgramControl>: programControl
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[ControlId <String>]`: The controlId of the control, in particular the identifier of an access review. Required on create.
   - `[ControlTypeId <String>]`: The programControlType identifies the type of program control - for example, a control linking to guest access reviews. Required on create.
   - `[CreatedDateTime <DateTime?>]`: The creation date and time of the program control.
@@ -395,7 +440,7 @@ BODYPARAMETER <IMicrosoftGraphProgramControl>: programControl
     - `[UserPrincipalName <String>]`: The userPrincipalName attribute of the user.
   - `[Program <IMicrosoftGraphProgram>]`: program
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Id <String>]`: Read-only.
+    - `[Id <String>]`: 
     - `[Controls <IMicrosoftGraphProgramControl[]>]`: Controls associated with the program.
     - `[Description <String>]`: The description of the program.
     - `[DisplayName <String>]`: The name of the program.  Required on create.
@@ -414,6 +459,8 @@ INPUTOBJECT <IIdentityGovernanceIdentity>: Identity Parameter
   - `[AccessPackageAssignmentResourceRoleId <String>]`: key: id of accessPackageAssignmentResourceRole
   - `[AccessPackageCatalogId <String>]`: key: id of accessPackageCatalog
   - `[AccessPackageId <String>]`: key: id of accessPackage
+  - `[AccessPackageId1 <String>]`: key: id of accessPackage
+  - `[AccessPackageId2 <String>]`: Usage: accessPackageId='{accessPackageId}'
   - `[AccessPackageResourceEnvironmentId <String>]`: key: id of accessPackageResourceEnvironment
   - `[AccessPackageResourceId <String>]`: key: id of accessPackageResource
   - `[AccessPackageResourceRequestId <String>]`: key: id of accessPackageResourceRequest
@@ -450,14 +497,18 @@ INPUTOBJECT <IIdentityGovernanceIdentity>: Identity Parameter
   - `[GovernanceRoleAssignmentRequestId <String>]`: key: id of governanceRoleAssignmentRequest
   - `[GovernanceRoleDefinitionId <String>]`: key: id of governanceRoleDefinition
   - `[GovernanceRoleSettingId <String>]`: key: id of governanceRoleSetting
-  - `[On <String>]`: Usage: on={on}
+  - `[GroupId <String>]`: key: id of group
+  - `[IncompatibleAccessPackageId <String>]`: Usage: incompatibleAccessPackageId='{incompatibleAccessPackageId}'
+  - `[On <String>]`: Usage: on='{on}'
   - `[PrivilegedAccessId <String>]`: key: id of privilegedAccess
   - `[PrivilegedApprovalId <String>]`: key: id of privilegedApproval
   - `[PrivilegedOperationEventId <String>]`: key: id of privilegedOperationEvent
   - `[PrivilegedRoleAssignmentId <String>]`: key: id of privilegedRoleAssignment
+  - `[PrivilegedRoleAssignmentId1 <String>]`: key: id of privilegedRoleAssignment
   - `[PrivilegedRoleAssignmentRequestId <String>]`: key: id of privilegedRoleAssignmentRequest
   - `[PrivilegedRoleId <String>]`: key: id of privilegedRole
   - `[ProgramControlId <String>]`: key: id of programControl
+  - `[ProgramControlId1 <String>]`: key: id of programControl
   - `[ProgramControlTypeId <String>]`: key: id of programControlType
   - `[ProgramId <String>]`: key: id of program
   - `[UserConsentRequestId <String>]`: key: id of userConsentRequest
@@ -472,9 +523,9 @@ OWNER <IMicrosoftGraphUserIdentity>: userIdentity
 
 PROGRAM <IMicrosoftGraphProgram>: program
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[Controls <IMicrosoftGraphProgramControl[]>]`: Controls associated with the program.
-    - `[Id <String>]`: Read-only.
+    - `[Id <String>]`: 
     - `[ControlId <String>]`: The controlId of the control, in particular the identifier of an access review. Required on create.
     - `[ControlTypeId <String>]`: The programControlType identifies the type of program control - for example, a control linking to guest access reviews. Required on create.
     - `[CreatedDateTime <DateTime?>]`: The creation date and time of the program control.

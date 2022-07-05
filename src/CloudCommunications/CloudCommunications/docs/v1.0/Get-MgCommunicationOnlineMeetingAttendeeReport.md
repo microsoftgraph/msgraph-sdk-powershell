@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgCommunicationOnlineMeetingAttendeeReport
 
 ## SYNOPSIS
-Get media content for the navigation property onlineMeetings from communications
+Get attendeeReport for the navigation property onlineMeetings from communications
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Get-MgCommunicationOnlineMeetingAttendeeReport -InputObject <ICloudCommunication
 ```
 
 ## DESCRIPTION
-Get media content for the navigation property onlineMeetings from communications
+Get attendeeReport for the navigation property onlineMeetings from communications
 
 ## EXAMPLES
 

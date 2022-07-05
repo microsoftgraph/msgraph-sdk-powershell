@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgUserProfileEmail
 
 ## SYNOPSIS
-Represents detailed information about email addresses associated with the user.
+Update the navigation property emails in users
 
 ## SYNTAX
 
@@ -45,7 +45,7 @@ Update-MgUserProfileEmail -InputObject <IPeopleIdentity> [-AdditionalProperties 
 ```
 
 ## DESCRIPTION
-Represents detailed information about email addresses associated with the user.
+Update the navigation property emails in users
 
 ## EXAMPLES
 
@@ -159,7 +159,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -402,7 +402,7 @@ BODYPARAMETER <IMicrosoftGraphItemEmail>: itemEmail
   - `[Source <IMicrosoftGraphPersonDataSources>]`: personDataSources
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Type <String[]>]`: 
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[Address <String>]`: The email address itself.
   - `[DisplayName <String>]`: The name or label a user has associated with a particular email address.
   - `[Type <String>]`: emailType

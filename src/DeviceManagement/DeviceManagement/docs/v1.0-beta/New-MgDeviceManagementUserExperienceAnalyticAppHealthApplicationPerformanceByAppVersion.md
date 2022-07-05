@@ -8,11 +8,11 @@ schema: 2.0.0
 # New-MgDeviceManagementUserExperienceAnalyticAppHealthApplicationPerformanceByAppVersion
 
 ## SYNOPSIS
-User experience analytics appHealth Application Performance by App Version
+Create new navigation property to userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersion for deviceManagement
 
 ## SYNTAX
 
-### CreateExpanded1 (Default)
+### CreateExpanded (Default)
 ```
 New-MgDeviceManagementUserExperienceAnalyticAppHealthApplicationPerformanceByAppVersion
  [-AdditionalProperties <Hashtable>] [-AppCrashCount <Int32>] [-AppDisplayName <String>] [-AppName <String>]
@@ -20,7 +20,7 @@ New-MgDeviceManagementUserExperienceAnalyticAppHealthApplicationPerformanceByApp
  [-MeanTimeToFailureInMinutes <Int32>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### Create1
+### Create
 ```
 New-MgDeviceManagementUserExperienceAnalyticAppHealthApplicationPerformanceByAppVersion
  -BodyParameter <IMicrosoftGraphUserExperienceAnalyticsAppHealthAppPerformanceByAppVersion> [-Confirm]
@@ -28,7 +28,7 @@ New-MgDeviceManagementUserExperienceAnalyticAppHealthApplicationPerformanceByApp
 ```
 
 ## DESCRIPTION
-User experience analytics appHealth Application Performance by App Version
+Create new navigation property to userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersion for deviceManagement
 
 ## EXAMPLES
 
@@ -39,7 +39,7 @@ Additional Parameters
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: CreateExpanded1
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -55,7 +55,7 @@ Valid values -2147483648 to 2147483647
 
 ```yaml
 Type: System.Int32
-Parameter Sets: CreateExpanded1
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -70,7 +70,7 @@ The friendly name of the application.
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded1
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -85,7 +85,7 @@ The name of the application.
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded1
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -100,7 +100,7 @@ The publisher of the application.
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded1
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -116,7 +116,7 @@ Valid values -2147483648 to 2147483647
 
 ```yaml
 Type: System.Int32
-Parameter Sets: CreateExpanded1
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -131,7 +131,7 @@ The version of the application.
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded1
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -147,7 +147,7 @@ To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETE
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsAppHealthAppPerformanceByAppVersion
-Parameter Sets: Create1
+Parameter Sets: Create
 Aliases:
 
 Required: True
@@ -158,11 +158,11 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded1
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -178,7 +178,7 @@ Valid values -2147483648 to 2147483647
 
 ```yaml
 Type: System.Int32
-Parameter Sets: CreateExpanded1
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -241,7 +241,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphUserExperienceAnalyticsAppHealthAppPerformanceByAppVersion>: The user experience analytics application performance entity contains app performance details by app version.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[AppCrashCount <Int32?>]`: The number of crashes for the app. Valid values -2147483648 to 2147483647
   - `[AppDisplayName <String>]`: The friendly name of the application.
   - `[AppName <String>]`: The name of the application.

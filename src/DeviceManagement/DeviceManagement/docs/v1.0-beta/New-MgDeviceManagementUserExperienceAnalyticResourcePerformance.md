@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgDeviceManagementUserExperienceAnalyticResourcePerformance
 
 ## SYNOPSIS
-User experience analytics resource performance
+Create new navigation property to userExperienceAnalyticsResourcePerformance for deviceManagement
 
 ## SYNTAX
 
@@ -31,7 +31,7 @@ New-MgDeviceManagementUserExperienceAnalyticResourcePerformance
 ```
 
 ## DESCRIPTION
-User experience analytics resource performance
+Create new navigation property to userExperienceAnalyticsResourcePerformance for deviceManagement
 
 ## EXAMPLES
 
@@ -194,7 +194,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -339,7 +339,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphUserExperienceAnalyticsResourcePerformance>: The user experience analytics resource performance entity.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[AverageSpikeTimeScore <Int32?>]`: AverageSpikeTimeScore of a device or a model type. Valid values 0 to 100
   - `[CpuSpikeTimePercentage <Double?>]`: CPU spike time in percentage. Valid values 0 to 100
   - `[CpuSpikeTimePercentageThreshold <Double?>]`: Threshold of cpuSpikeTimeScore. Valid values 0 to 100

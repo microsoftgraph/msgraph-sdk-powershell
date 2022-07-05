@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgUserProfilePosition
 
 ## SYNOPSIS
-Represents detailed information about work positions associated with a user's profile.
+Create new navigation property to positions for users
 
 ## SYNTAX
 
@@ -47,7 +47,7 @@ New-MgUserProfilePosition -InputObject <IPeopleIdentity> [-AdditionalProperties 
 ```
 
 ## DESCRIPTION
-Represents detailed information about work positions associated with a user's profile.
+Create new navigation property to positions for users
 
 ## EXAMPLES
 
@@ -178,7 +178,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -407,7 +407,7 @@ BODYPARAMETER <IMicrosoftGraphWorkPosition>: workPosition
   - `[Source <IMicrosoftGraphPersonDataSources>]`: personDataSources
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Type <String[]>]`: 
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[Categories <String[]>]`: Categories that the user has associated with this position.
   - `[Colleagues <IMicrosoftGraphRelatedPerson[]>]`: Colleagues that are associated with this position.
     - `[DisplayName <String>]`: Name of the person.

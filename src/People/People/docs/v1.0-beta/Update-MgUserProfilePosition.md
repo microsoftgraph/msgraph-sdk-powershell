@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgUserProfilePosition
 
 ## SYNOPSIS
-Represents detailed information about work positions associated with a user's profile.
+Update the navigation property positions in users
 
 ## SYNTAX
 
@@ -47,7 +47,7 @@ Update-MgUserProfilePosition -InputObject <IPeopleIdentity> [-AdditionalProperti
 ```
 
 ## DESCRIPTION
-Represents detailed information about work positions associated with a user's profile.
+Update the navigation property positions in users
 
 ## EXAMPLES
 
@@ -178,7 +178,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -437,7 +437,7 @@ BODYPARAMETER <IMicrosoftGraphWorkPosition>: workPosition
   - `[Source <IMicrosoftGraphPersonDataSources>]`: personDataSources
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Type <String[]>]`: 
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[Categories <String[]>]`: Categories that the user has associated with this position.
   - `[Colleagues <IMicrosoftGraphRelatedPerson[]>]`: Colleagues that are associated with this position.
     - `[DisplayName <String>]`: Name of the person.

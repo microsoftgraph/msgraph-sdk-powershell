@@ -8,13 +8,11 @@ schema: 2.0.0
 # New-MgUserOnenoteSectionGroupSection
 
 ## SYNOPSIS
-The sections in the section group.
-Read-only.
-Nullable.
+Create new navigation property to sections for users
 
 ## SYNTAX
 
-### CreateExpanded (Default)
+### CreateExpanded1 (Default)
 ```
 New-MgUserOnenoteSectionGroupSection -SectionGroupId <String> -UserId <String>
  [-AdditionalProperties <Hashtable>] [-CreatedBy <IMicrosoftGraphIdentitySet>] [-CreatedDateTime <DateTime>]
@@ -25,19 +23,19 @@ New-MgUserOnenoteSectionGroupSection -SectionGroupId <String> -UserId <String>
  [<CommonParameters>]
 ```
 
-### Create
+### Create1
 ```
 New-MgUserOnenoteSectionGroupSection -SectionGroupId <String> -UserId <String>
  -BodyParameter <IMicrosoftGraphOnenoteSection1> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### CreateViaIdentity
+### CreateViaIdentity1
 ```
 New-MgUserOnenoteSectionGroupSection -InputObject <INotesIdentity>
  -BodyParameter <IMicrosoftGraphOnenoteSection1> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### CreateViaIdentityExpanded
+### CreateViaIdentityExpanded1
 ```
 New-MgUserOnenoteSectionGroupSection -InputObject <INotesIdentity> [-AdditionalProperties <Hashtable>]
  [-CreatedBy <IMicrosoftGraphIdentitySet>] [-CreatedDateTime <DateTime>] [-DisplayName <String>]
@@ -48,9 +46,7 @@ New-MgUserOnenoteSectionGroupSection -InputObject <INotesIdentity> [-AdditionalP
 ```
 
 ## DESCRIPTION
-The sections in the section group.
-Read-only.
-Nullable.
+Create new navigation property to sections for users
 
 ## EXAMPLES
 
@@ -61,7 +57,7 @@ Additional Parameters
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -77,7 +73,7 @@ To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETE
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOnenoteSection1
-Parameter Sets: Create, CreateViaIdentity
+Parameter Sets: Create1, CreateViaIdentity1
 Aliases:
 
 Required: True
@@ -93,7 +89,7 @@ To construct, please use Get-Help -Online and see NOTES section for CREATEDBY pr
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentitySet
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -111,7 +107,7 @@ Read-only.
 
 ```yaml
 Type: System.DateTime
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -126,7 +122,7 @@ The name of the notebook.
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -137,11 +133,11 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -157,7 +153,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.INotesIdentity
-Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
+Parameter Sets: CreateViaIdentity1, CreateViaIdentityExpanded1
 Aliases:
 
 Required: True
@@ -173,7 +169,7 @@ Read-only.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -189,7 +185,7 @@ To construct, please use Get-Help -Online and see NOTES section for LASTMODIFIED
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentitySet
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -207,7 +203,7 @@ Read-only.
 
 ```yaml
 Type: System.DateTime
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -223,7 +219,7 @@ To construct, please use Get-Help -Online and see NOTES section for LINKS proper
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSectionLinks
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -241,7 +237,7 @@ To construct, please use Get-Help -Online and see NOTES section for PAGES proper
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOnenotePage[]
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -257,7 +253,7 @@ Read-only.
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -273,7 +269,7 @@ To construct, please use Get-Help -Online and see NOTES section for PARENTNOTEBO
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphNotebook1
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -289,7 +285,7 @@ To construct, please use Get-Help -Online and see NOTES section for PARENTSECTIO
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSectionGroup1
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -304,7 +300,7 @@ key: id of sectionGroup
 
 ```yaml
 Type: System.String
-Parameter Sets: Create, CreateExpanded
+Parameter Sets: Create1, CreateExpanded1
 Aliases:
 
 Required: True
@@ -320,7 +316,7 @@ Read-only.
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -335,7 +331,7 @@ key: id of user
 
 ```yaml
 Type: System.String
-Parameter Sets: Create, CreateExpanded
+Parameter Sets: Create1, CreateExpanded1
 Aliases:
 
 Required: True
@@ -413,7 +409,7 @@ BODYPARAMETER <IMicrosoftGraphOnenoteSection1>: onenoteSection
   - `[LastModifiedDateTime <DateTime?>]`: The date and time when the notebook was last modified. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
   - `[CreatedDateTime <DateTime?>]`: The date and time when the page was created. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
   - `[Self <String>]`: The endpoint where you can get details about the page. Read-only.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[IsDefault <Boolean?>]`: Indicates whether this is the user's default section. Read-only.
   - `[Links <IMicrosoftGraphSectionLinks>]`: sectionLinks
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -424,7 +420,7 @@ BODYPARAMETER <IMicrosoftGraphOnenoteSection1>: onenoteSection
   - `[Pages <IMicrosoftGraphOnenotePage[]>]`: The collection of pages in the section.  Read-only. Nullable.
     - `[CreatedDateTime <DateTime?>]`: The date and time when the page was created. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
     - `[Self <String>]`: The endpoint where you can get details about the page. Read-only.
-    - `[Id <String>]`: Read-only.
+    - `[Id <String>]`: 
     - `[Content <Byte[]>]`: The page's HTML content.
     - `[ContentUrl <String>]`: The URL for the page's HTML content.  Read-only.
     - `[CreatedByAppId <String>]`: The unique identifier of the application that created the page. Read-only.
@@ -443,7 +439,7 @@ BODYPARAMETER <IMicrosoftGraphOnenoteSection1>: onenoteSection
       - `[LastModifiedDateTime <DateTime?>]`: The date and time when the notebook was last modified. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
       - `[CreatedDateTime <DateTime?>]`: The date and time when the page was created. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
       - `[Self <String>]`: The endpoint where you can get details about the page. Read-only.
-      - `[Id <String>]`: Read-only.
+      - `[Id <String>]`: 
       - `[IsDefault <Boolean?>]`: Indicates whether this is the user's default notebook. Read-only.
       - `[IsShared <Boolean?>]`: Indicates whether the notebook is shared. If true, the contents of the notebook can be seen by people other than the owner. Read-only.
       - `[Links <IMicrosoftGraphNotebookLinks>]`: notebookLinks
@@ -457,7 +453,7 @@ BODYPARAMETER <IMicrosoftGraphOnenoteSection1>: onenoteSection
         - `[LastModifiedDateTime <DateTime?>]`: The date and time when the notebook was last modified. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
         - `[CreatedDateTime <DateTime?>]`: The date and time when the page was created. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
         - `[Self <String>]`: The endpoint where you can get details about the page. Read-only.
-        - `[Id <String>]`: Read-only.
+        - `[Id <String>]`: 
         - `[ParentNotebook <IMicrosoftGraphNotebook1>]`: notebook
         - `[ParentSectionGroup <IMicrosoftGraphSectionGroup1>]`: sectionGroup
         - `[SectionGroups <IMicrosoftGraphSectionGroup1[]>]`: The section groups in the section. Read-only. Nullable.
@@ -514,7 +510,7 @@ LINKS <IMicrosoftGraphSectionLinks>: sectionLinks
 PAGES <IMicrosoftGraphOnenotePage[]>: The collection of pages in the section. Read-only. Nullable.
   - `[CreatedDateTime <DateTime?>]`: The date and time when the page was created. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
   - `[Self <String>]`: The endpoint where you can get details about the page. Read-only.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[Content <Byte[]>]`: The page's HTML content.
   - `[ContentUrl <String>]`: The URL for the page's HTML content.  Read-only.
   - `[CreatedByAppId <String>]`: The unique identifier of the application that created the page. Read-only.
@@ -542,7 +538,7 @@ PAGES <IMicrosoftGraphOnenotePage[]>: The collection of pages in the section. Re
     - `[LastModifiedDateTime <DateTime?>]`: The date and time when the notebook was last modified. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
     - `[CreatedDateTime <DateTime?>]`: The date and time when the page was created. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
     - `[Self <String>]`: The endpoint where you can get details about the page. Read-only.
-    - `[Id <String>]`: Read-only.
+    - `[Id <String>]`: 
     - `[IsDefault <Boolean?>]`: Indicates whether this is the user's default notebook. Read-only.
     - `[IsShared <Boolean?>]`: Indicates whether the notebook is shared. If true, the contents of the notebook can be seen by people other than the owner. Read-only.
     - `[Links <IMicrosoftGraphNotebookLinks>]`: notebookLinks
@@ -556,7 +552,7 @@ PAGES <IMicrosoftGraphOnenotePage[]>: The collection of pages in the section. Re
       - `[LastModifiedDateTime <DateTime?>]`: The date and time when the notebook was last modified. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
       - `[CreatedDateTime <DateTime?>]`: The date and time when the page was created. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
       - `[Self <String>]`: The endpoint where you can get details about the page. Read-only.
-      - `[Id <String>]`: Read-only.
+      - `[Id <String>]`: 
       - `[ParentNotebook <IMicrosoftGraphNotebook1>]`: notebook
       - `[ParentSectionGroup <IMicrosoftGraphSectionGroup1>]`: sectionGroup
       - `[SectionGroups <IMicrosoftGraphSectionGroup1[]>]`: The section groups in the section. Read-only. Nullable.
@@ -568,7 +564,7 @@ PAGES <IMicrosoftGraphOnenotePage[]>: The collection of pages in the section. Re
         - `[LastModifiedDateTime <DateTime?>]`: The date and time when the notebook was last modified. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
         - `[CreatedDateTime <DateTime?>]`: The date and time when the page was created. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
         - `[Self <String>]`: The endpoint where you can get details about the page. Read-only.
-        - `[Id <String>]`: Read-only.
+        - `[Id <String>]`: 
         - `[IsDefault <Boolean?>]`: Indicates whether this is the user's default section. Read-only.
         - `[Links <IMicrosoftGraphSectionLinks>]`: sectionLinks
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -602,7 +598,7 @@ PARENTNOTEBOOK <IMicrosoftGraphNotebook1>: notebook
   - `[LastModifiedDateTime <DateTime?>]`: The date and time when the notebook was last modified. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
   - `[CreatedDateTime <DateTime?>]`: The date and time when the page was created. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
   - `[Self <String>]`: The endpoint where you can get details about the page. Read-only.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[IsDefault <Boolean?>]`: Indicates whether this is the user's default notebook. Read-only.
   - `[IsShared <Boolean?>]`: Indicates whether the notebook is shared. If true, the contents of the notebook can be seen by people other than the owner. Read-only.
   - `[Links <IMicrosoftGraphNotebookLinks>]`: notebookLinks
@@ -618,7 +614,7 @@ PARENTNOTEBOOK <IMicrosoftGraphNotebook1>: notebook
     - `[LastModifiedDateTime <DateTime?>]`: The date and time when the notebook was last modified. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
     - `[CreatedDateTime <DateTime?>]`: The date and time when the page was created. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
     - `[Self <String>]`: The endpoint where you can get details about the page. Read-only.
-    - `[Id <String>]`: Read-only.
+    - `[Id <String>]`: 
     - `[ParentNotebook <IMicrosoftGraphNotebook1>]`: notebook
     - `[ParentSectionGroup <IMicrosoftGraphSectionGroup1>]`: sectionGroup
     - `[SectionGroups <IMicrosoftGraphSectionGroup1[]>]`: The section groups in the section. Read-only. Nullable.
@@ -630,7 +626,7 @@ PARENTNOTEBOOK <IMicrosoftGraphNotebook1>: notebook
       - `[LastModifiedDateTime <DateTime?>]`: The date and time when the notebook was last modified. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
       - `[CreatedDateTime <DateTime?>]`: The date and time when the page was created. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
       - `[Self <String>]`: The endpoint where you can get details about the page. Read-only.
-      - `[Id <String>]`: Read-only.
+      - `[Id <String>]`: 
       - `[IsDefault <Boolean?>]`: Indicates whether this is the user's default section. Read-only.
       - `[Links <IMicrosoftGraphSectionLinks>]`: sectionLinks
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -639,7 +635,7 @@ PARENTNOTEBOOK <IMicrosoftGraphNotebook1>: notebook
       - `[Pages <IMicrosoftGraphOnenotePage[]>]`: The collection of pages in the section.  Read-only. Nullable.
         - `[CreatedDateTime <DateTime?>]`: The date and time when the page was created. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
         - `[Self <String>]`: The endpoint where you can get details about the page. Read-only.
-        - `[Id <String>]`: Read-only.
+        - `[Id <String>]`: 
         - `[Content <Byte[]>]`: The page's HTML content.
         - `[ContentUrl <String>]`: The URL for the page's HTML content.  Read-only.
         - `[CreatedByAppId <String>]`: The unique identifier of the application that created the page. Read-only.
@@ -678,7 +674,7 @@ PARENTSECTIONGROUP <IMicrosoftGraphSectionGroup1>: sectionGroup
   - `[LastModifiedDateTime <DateTime?>]`: The date and time when the notebook was last modified. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
   - `[CreatedDateTime <DateTime?>]`: The date and time when the page was created. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
   - `[Self <String>]`: The endpoint where you can get details about the page. Read-only.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[ParentNotebook <IMicrosoftGraphNotebook1>]`: notebook
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
@@ -687,7 +683,7 @@ PARENTSECTIONGROUP <IMicrosoftGraphSectionGroup1>: sectionGroup
     - `[LastModifiedDateTime <DateTime?>]`: The date and time when the notebook was last modified. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
     - `[CreatedDateTime <DateTime?>]`: The date and time when the page was created. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
     - `[Self <String>]`: The endpoint where you can get details about the page. Read-only.
-    - `[Id <String>]`: Read-only.
+    - `[Id <String>]`: 
     - `[IsDefault <Boolean?>]`: Indicates whether this is the user's default notebook. Read-only.
     - `[IsShared <Boolean?>]`: Indicates whether the notebook is shared. If true, the contents of the notebook can be seen by people other than the owner. Read-only.
     - `[Links <IMicrosoftGraphNotebookLinks>]`: notebookLinks
@@ -705,7 +701,7 @@ PARENTSECTIONGROUP <IMicrosoftGraphSectionGroup1>: sectionGroup
       - `[LastModifiedDateTime <DateTime?>]`: The date and time when the notebook was last modified. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
       - `[CreatedDateTime <DateTime?>]`: The date and time when the page was created. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
       - `[Self <String>]`: The endpoint where you can get details about the page. Read-only.
-      - `[Id <String>]`: Read-only.
+      - `[Id <String>]`: 
       - `[IsDefault <Boolean?>]`: Indicates whether this is the user's default section. Read-only.
       - `[Links <IMicrosoftGraphSectionLinks>]`: sectionLinks
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -714,7 +710,7 @@ PARENTSECTIONGROUP <IMicrosoftGraphSectionGroup1>: sectionGroup
       - `[Pages <IMicrosoftGraphOnenotePage[]>]`: The collection of pages in the section.  Read-only. Nullable.
         - `[CreatedDateTime <DateTime?>]`: The date and time when the page was created. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
         - `[Self <String>]`: The endpoint where you can get details about the page. Read-only.
-        - `[Id <String>]`: Read-only.
+        - `[Id <String>]`: 
         - `[Content <Byte[]>]`: The page's HTML content.
         - `[ContentUrl <String>]`: The URL for the page's HTML content.  Read-only.
         - `[CreatedByAppId <String>]`: The unique identifier of the application that created the page. Read-only.

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceManagementAndroidManagedStoreAccountEnterpriseSetting
 
 ## SYNOPSIS
-The singleton Android managed store account enterprise settings entity.
+Get androidManagedStoreAccountEnterpriseSettings from deviceManagement
 
 ## SYNTAX
 
@@ -18,7 +18,7 @@ Get-MgDeviceManagementAndroidManagedStoreAccountEnterpriseSetting [-ExpandProper
 ```
 
 ## DESCRIPTION
-The singleton Android managed store account enterprise settings entity.
+Get androidManagedStoreAccountEnterpriseSettings from deviceManagement
 
 ## EXAMPLES
 

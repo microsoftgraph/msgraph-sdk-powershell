@@ -8,24 +8,24 @@ schema: 2.0.0
 # New-MgIdentityProvider
 
 ## SYNOPSIS
-Add new entity to identityProviders
+Create identityProvider (deprecated)
 
 ## SYNTAX
 
-### CreateExpanded (Default)
+### CreateExpanded1 (Default)
 ```
 New-MgIdentityProvider [-AdditionalProperties <Hashtable>] [-ClientId <String>] [-ClientSecret <String>]
  [-Id <String>] [-Name <String>] [-Type <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### Create
+### Create1
 ```
 New-MgIdentityProvider -BodyParameter <IMicrosoftGraphIdentityProvider> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Add new entity to identityProviders
+Create identityProvider (deprecated)
 
 ## EXAMPLES
 
@@ -36,7 +36,7 @@ Additional Parameters
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: CreateExpanded
+Parameter Sets: CreateExpanded1
 Aliases:
 
 Required: False
@@ -52,7 +52,7 @@ To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETE
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentityProvider
-Parameter Sets: Create
+Parameter Sets: Create1
 Aliases:
 
 Required: True
@@ -63,14 +63,14 @@ Accept wildcard characters: False
 ```
 
 ### -ClientId
-The client ID for the application.
-This is the client ID obtained when registering the application with the identity provider.
+The client ID for the application obtained when registering the application with the identity provider.
+This is a required field.
 Required.
 Not nullable.
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded
+Parameter Sets: CreateExpanded1
 Aliases:
 
 Required: False
@@ -81,16 +81,16 @@ Accept wildcard characters: False
 ```
 
 ### -ClientSecret
-The client secret for the application.
-This is the client secret obtained when registering the application with the identity provider.
+The client secret for the application obtained when registering the application with the identity provider.
 This is write-only.
 A read operation will return ****.
+This is a required field.
 Required.
 Not nullable.
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded
+Parameter Sets: CreateExpanded1
 Aliases:
 
 Required: False
@@ -101,11 +101,11 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded
+Parameter Sets: CreateExpanded1
 Aliases:
 
 Required: False
@@ -121,7 +121,7 @@ Not nullable.
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded
+Parameter Sets: CreateExpanded1
 Aliases:
 
 Required: False
@@ -134,12 +134,12 @@ Accept wildcard characters: False
 ### -Type
 The identity provider type is a required field.
 For B2B scenario: Google, Facebook.
-For B2C scenario: Microsoft, Google, Amazon, LinkedIn, Facebook, GitHub, Twitter, Weibo, QQ, WeChat, OpenIDConnect.
+For B2C scenario: Microsoft, Google, Amazon, LinkedIn, Facebook, GitHub, Twitter, Weibo,QQ, WeChat, OpenIDConnect.
 Not nullable.
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded
+Parameter Sets: CreateExpanded1
 Aliases:
 
 Required: False
@@ -202,11 +202,11 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphIdentityProvider>: identityProvider
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
-  - `[ClientId <String>]`: The client ID for the application. This is the client ID obtained when registering the application with the identity provider. Required. Not nullable.
-  - `[ClientSecret <String>]`: The client secret for the application. This is the client secret obtained when registering the application with the identity provider. This is write-only. A read operation will return ****.  Required. Not nullable.
+  - `[Id <String>]`: 
+  - `[ClientId <String>]`: The client ID for the application obtained when registering the application with the identity provider. This is a required field.  Required. Not nullable.
+  - `[ClientSecret <String>]`: The client secret for the application obtained when registering the application with the identity provider. This is write-only. A read operation will return ****. This is a required field. Required. Not nullable.
   - `[Name <String>]`: The display name of the identity provider. Not nullable.
-  - `[Type <String>]`: The identity provider type is a required field. For B2B scenario: Google, Facebook. For B2C scenario: Microsoft, Google, Amazon, LinkedIn, Facebook, GitHub, Twitter, Weibo, QQ, WeChat, OpenIDConnect. Not nullable.
+  - `[Type <String>]`: The identity provider type is a required field. For B2B scenario: Google, Facebook. For B2C scenario: Microsoft, Google, Amazon, LinkedIn, Facebook, GitHub, Twitter, Weibo,QQ, WeChat, OpenIDConnect. Not nullable.
 
 ## RELATED LINKS
 

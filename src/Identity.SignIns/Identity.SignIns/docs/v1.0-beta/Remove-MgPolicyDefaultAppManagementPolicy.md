@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgPolicyDefaultAppManagementPolicy
 
 ## SYNOPSIS
-The tenant-wide policy that enforces app management restrictions for all applications and service principals.
+Delete navigation property defaultAppManagementPolicy for policies
 
 ## SYNTAX
 
@@ -18,7 +18,7 @@ Remove-MgPolicyDefaultAppManagementPolicy [-IfMatch <String>] [-PassThru] [-Conf
 ```
 
 ## DESCRIPTION
-The tenant-wide policy that enforces app management restrictions for all applications and service principals.
+Delete navigation property defaultAppManagementPolicy for policies
 
 ## EXAMPLES
 

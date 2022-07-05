@@ -27,6 +27,12 @@ Get-MgProgramControl -ProgramControlId <String> [-ExpandProperty <String[]>] [-P
 
 ### Get1
 ```
+Get-MgProgramControl -ProgramControlId <String> -ProgramControlId1 <String> [-ExpandProperty <String[]>]
+ [-Property <String[]>] [<CommonParameters>]
+```
+
+### Get2
+```
 Get-MgProgramControl -ProgramControlId <String> -ProgramId <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
@@ -43,7 +49,20 @@ Get-MgProgramControl -InputObject <IIdentityGovernanceIdentity> [-ExpandProperty
  [-Property <String[]>] [<CommonParameters>]
 ```
 
+### GetViaIdentity2
+```
+Get-MgProgramControl -InputObject <IIdentityGovernanceIdentity> [-ExpandProperty <String[]>]
+ [-Property <String[]>] [<CommonParameters>]
+```
+
 ### List1
+```
+Get-MgProgramControl -ProgramControlId <String> [-ExpandProperty <String[]>] [-Filter <String>]
+ [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
+ [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
+```
+
+### List2
 ```
 Get-MgProgramControl -ProgramId <String> [-ExpandProperty <String[]>] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
@@ -62,7 +81,7 @@ List all pages.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
-Parameter Sets: List, List1
+Parameter Sets: List, List1, List2
 Aliases:
 
 Required: False
@@ -78,7 +97,7 @@ By default, this variable will be set in the global scope.
 
 ```yaml
 Type: System.String
-Parameter Sets: List, List1
+Parameter Sets: List, List1, List2
 Aliases: CV
 
 Required: False
@@ -108,7 +127,7 @@ Filter items by property values
 
 ```yaml
 Type: System.String
-Parameter Sets: List, List1
+Parameter Sets: List, List1, List2
 Aliases:
 
 Required: False
@@ -124,7 +143,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
-Parameter Sets: GetViaIdentity, GetViaIdentity1
+Parameter Sets: GetViaIdentity, GetViaIdentity1, GetViaIdentity2
 Aliases:
 
 Required: True
@@ -139,7 +158,7 @@ Sets the page size of results.
 
 ```yaml
 Type: System.Int32
-Parameter Sets: List, List1
+Parameter Sets: List, List1, List2
 Aliases:
 
 Required: False
@@ -154,7 +173,22 @@ key: id of programControl
 
 ```yaml
 Type: System.String
-Parameter Sets: Get, Get1
+Parameter Sets: Get, Get1, Get2, List1
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ProgramControlId1
+key: id of programControl
+
+```yaml
+Type: System.String
+Parameter Sets: Get1
 Aliases:
 
 Required: True
@@ -169,7 +203,7 @@ key: id of program
 
 ```yaml
 Type: System.String
-Parameter Sets: Get1, List1
+Parameter Sets: Get2, List2
 Aliases:
 
 Required: True
@@ -199,7 +233,7 @@ Search items by search phrases
 
 ```yaml
 Type: System.String
-Parameter Sets: List, List1
+Parameter Sets: List, List1, List2
 Aliases:
 
 Required: False
@@ -214,7 +248,7 @@ Skip the first n items
 
 ```yaml
 Type: System.Int32
-Parameter Sets: List, List1
+Parameter Sets: List, List1, List2
 Aliases:
 
 Required: False
@@ -229,7 +263,7 @@ Order items by property values
 
 ```yaml
 Type: System.String[]
-Parameter Sets: List, List1
+Parameter Sets: List, List1, List2
 Aliases: OrderBy
 
 Required: False
@@ -244,7 +278,7 @@ Show only the first n items
 
 ```yaml
 Type: System.Int32
-Parameter Sets: List, List1
+Parameter Sets: List, List1, List2
 Aliases: Limit
 
 Required: False
@@ -281,6 +315,8 @@ INPUTOBJECT <IIdentityGovernanceIdentity>: Identity Parameter
   - `[AccessPackageAssignmentResourceRoleId <String>]`: key: id of accessPackageAssignmentResourceRole
   - `[AccessPackageCatalogId <String>]`: key: id of accessPackageCatalog
   - `[AccessPackageId <String>]`: key: id of accessPackage
+  - `[AccessPackageId1 <String>]`: key: id of accessPackage
+  - `[AccessPackageId2 <String>]`: Usage: accessPackageId='{accessPackageId}'
   - `[AccessPackageResourceEnvironmentId <String>]`: key: id of accessPackageResourceEnvironment
   - `[AccessPackageResourceId <String>]`: key: id of accessPackageResource
   - `[AccessPackageResourceRequestId <String>]`: key: id of accessPackageResourceRequest
@@ -317,14 +353,18 @@ INPUTOBJECT <IIdentityGovernanceIdentity>: Identity Parameter
   - `[GovernanceRoleAssignmentRequestId <String>]`: key: id of governanceRoleAssignmentRequest
   - `[GovernanceRoleDefinitionId <String>]`: key: id of governanceRoleDefinition
   - `[GovernanceRoleSettingId <String>]`: key: id of governanceRoleSetting
-  - `[On <String>]`: Usage: on={on}
+  - `[GroupId <String>]`: key: id of group
+  - `[IncompatibleAccessPackageId <String>]`: Usage: incompatibleAccessPackageId='{incompatibleAccessPackageId}'
+  - `[On <String>]`: Usage: on='{on}'
   - `[PrivilegedAccessId <String>]`: key: id of privilegedAccess
   - `[PrivilegedApprovalId <String>]`: key: id of privilegedApproval
   - `[PrivilegedOperationEventId <String>]`: key: id of privilegedOperationEvent
   - `[PrivilegedRoleAssignmentId <String>]`: key: id of privilegedRoleAssignment
+  - `[PrivilegedRoleAssignmentId1 <String>]`: key: id of privilegedRoleAssignment
   - `[PrivilegedRoleAssignmentRequestId <String>]`: key: id of privilegedRoleAssignmentRequest
   - `[PrivilegedRoleId <String>]`: key: id of privilegedRole
   - `[ProgramControlId <String>]`: key: id of programControl
+  - `[ProgramControlId1 <String>]`: key: id of programControl
   - `[ProgramControlTypeId <String>]`: key: id of programControlType
   - `[ProgramId <String>]`: key: id of program
   - `[UserConsentRequestId <String>]`: key: id of userConsentRequest

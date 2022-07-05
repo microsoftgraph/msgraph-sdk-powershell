@@ -8,9 +8,7 @@ schema: 2.0.0
 # Get-MgBookingBusinessCustomQuestion
 
 ## SYNOPSIS
-All the custom questions of this business.
-Read-only.
-Nullable.
+Get customQuestions from bookingBusinesses
 
 ## SYNTAX
 
@@ -34,9 +32,7 @@ Get-MgBookingBusinessCustomQuestion -InputObject <IBookingsIdentity> [-ExpandPro
 ```
 
 ## DESCRIPTION
-All the custom questions of this business.
-Read-only.
-Nullable.
+Get customQuestions from bookingBusinesses
 
 ## EXAMPLES
 

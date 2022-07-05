@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgDeviceManagementDeviceCategory
 
 ## SYNOPSIS
-The list of device categories with the tenant.
+Create new navigation property to deviceCategories for deviceManagement
 
 ## SYNTAX
 
@@ -26,7 +26,7 @@ New-MgDeviceManagementDeviceCategory -BodyParameter <IMicrosoftGraphDeviceCatego
 ```
 
 ## DESCRIPTION
-The list of device categories with the tenant.
+Create new navigation property to deviceCategories for deviceManagement
 
 ## EXAMPLES
 
@@ -97,7 +97,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -179,7 +179,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphDeviceCategory1>: Device categories provides a way to organize your devices. Using device categories, company administrators can define their own categories that make sense to their company. These categories can then be applied to a device in the Intune Azure console or selected by a user during device enrollment. You can filter reports and create dynamic Azure Active Directory device groups based on device categories.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[Description <String>]`: Optional description for the device category.
   - `[DisplayName <String>]`: Display name for the device category.
   - `[RoleScopeTagIds <String[]>]`: Optional role scope tags for the device category.

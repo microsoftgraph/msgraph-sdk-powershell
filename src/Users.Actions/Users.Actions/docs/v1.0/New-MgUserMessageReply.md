@@ -12,27 +12,27 @@ Invoke action createReply
 
 ## SYNTAX
 
-### CreateExpanded (Default)
+### CreateExpanded2 (Default)
 ```
 New-MgUserMessageReply -MessageId <String> -UserId <String> [-AdditionalProperties <Hashtable>]
  [-Comment <String>] [-Message <IMicrosoftGraphMessage1>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### Create
+### Create2
 ```
 New-MgUserMessageReply -MessageId <String> -UserId <String>
  -BodyParameter <IPaths1BibiieUsersUserIdMessagesMessageIdMicrosoftGraphCreatereplyPostRequestbodyContentApplicationJsonSchema1>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### CreateViaIdentity
+### CreateViaIdentity2
 ```
 New-MgUserMessageReply -InputObject <IUsersActionsIdentity>
  -BodyParameter <IPaths1BibiieUsersUserIdMessagesMessageIdMicrosoftGraphCreatereplyPostRequestbodyContentApplicationJsonSchema1>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### CreateViaIdentityExpanded
+### CreateViaIdentityExpanded2
 ```
 New-MgUserMessageReply -InputObject <IUsersActionsIdentity> [-AdditionalProperties <Hashtable>]
  [-Comment <String>] [-Message <IMicrosoftGraphMessage1>] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -50,7 +50,7 @@ Additional Parameters
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Parameter Sets: CreateExpanded2, CreateViaIdentityExpanded2
 Aliases:
 
 Required: False
@@ -66,7 +66,7 @@ To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETE
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IPaths1BibiieUsersUserIdMessagesMessageIdMicrosoftGraphCreatereplyPostRequestbodyContentApplicationJsonSchema1
-Parameter Sets: Create, CreateViaIdentity
+Parameter Sets: Create2, CreateViaIdentity2
 Aliases:
 
 Required: True
@@ -81,7 +81,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Parameter Sets: CreateExpanded2, CreateViaIdentityExpanded2
 Aliases:
 
 Required: False
@@ -97,7 +97,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
-Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
+Parameter Sets: CreateViaIdentity2, CreateViaIdentityExpanded2
 Aliases:
 
 Required: True
@@ -113,7 +113,7 @@ To construct, please use Get-Help -Online and see NOTES section for MESSAGE prop
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMessage1
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Parameter Sets: CreateExpanded2, CreateViaIdentityExpanded2
 Aliases:
 
 Required: False
@@ -128,7 +128,7 @@ key: id of message
 
 ```yaml
 Type: System.String
-Parameter Sets: Create, CreateExpanded
+Parameter Sets: Create2, CreateExpanded2
 Aliases:
 
 Required: True
@@ -143,7 +143,7 @@ key: id of user
 
 ```yaml
 Type: System.String
-Parameter Sets: Create, CreateExpanded
+Parameter Sets: Create2, CreateExpanded2
 Aliases:
 
 Required: True
@@ -215,35 +215,35 @@ BODYPARAMETER <IPaths1BibiieUsersUserIdMessagesMessageIdMicrosoftGraphCreaterepl
     - `[ChangeKey <String>]`: Identifies the version of the item. Every time the item is changed, changeKey changes as well. This allows Exchange to apply changes to the correct version of the object. Read-only.
     - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
     - `[LastModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-    - `[Id <String>]`: Read-only.
+    - `[Id <String>]`: 
     - `[Attachments <IMicrosoftGraphAttachment[]>]`: The fileAttachment and itemAttachment attachments for the message.
-      - `[Id <String>]`: Read-only.
+      - `[Id <String>]`: 
       - `[ContentType <String>]`: The MIME type.
       - `[IsInline <Boolean?>]`: true if the attachment is an inline attachment; otherwise, false.
       - `[LastModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-      - `[Name <String>]`: The attachment's file name.
+      - `[Name <String>]`: The display name of the attachment. This does not need to be the actual file name.
       - `[Size <Int32?>]`: The length of the attachment in bytes.
     - `[BccRecipients <IMicrosoftGraphRecipient[]>]`: The Bcc: recipients for the message.
       - `[EmailAddress <IMicrosoftGraphEmailAddress>]`: emailAddress
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
-        - `[Address <String>]`: The email address of the person or entity.
-        - `[Name <String>]`: The display name of the person or entity.
+        - `[Address <String>]`: The email address of an entity instance.
+        - `[Name <String>]`: The display name of an entity instance.
     - `[Body <IMicrosoftGraphItemBody>]`: itemBody
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Content <String>]`: The content of the item.
       - `[ContentType <String>]`: bodyType
-    - `[BodyPreview <String>]`: The first 255 characters of the message body. It is in text format.
+    - `[BodyPreview <String>]`: The first 255 characters of the message body. It is in text format. If the message contains instances of mention, this property would contain a concatenation of these mentions as well.
     - `[CcRecipients <IMicrosoftGraphRecipient[]>]`: The Cc: recipients for the message.
     - `[ConversationId <String>]`: The ID of the conversation the email belongs to.
     - `[ConversationIndex <Byte[]>]`: Indicates the position of the message within the conversation.
     - `[Extensions <IMicrosoftGraphExtension[]>]`: The collection of open extensions defined for the message. Nullable.
-      - `[Id <String>]`: Read-only.
+      - `[Id <String>]`: 
     - `[Flag <IMicrosoftGraphFollowupFlag>]`: followupFlag
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[CompletedDateTime <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
-        - `[DateTime <String>]`: A single point of time in a combined date and time representation ({date}T{time}; for example, 2017-08-29T04:00:00.0000000).
-        - `[TimeZone <String>]`: Represents a time zone, for example, 'Pacific Standard Time'. See below for more possible values.
+        - `[DateTime <String>]`: A single point of time in a combined date and time representation ({date}T{time}). For example, '2019-04-16T09:00:00'.
+        - `[TimeZone <String>]`: Represents a time zone, for example, 'Pacific Standard Time'. See below for possible values.
       - `[DueDateTime <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
       - `[FlagStatus <String>]`: followupFlagStatus
       - `[StartDateTime <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
@@ -260,7 +260,7 @@ BODYPARAMETER <IPaths1BibiieUsersUserIdMessagesMessageIdMicrosoftGraphCreaterepl
     - `[IsRead <Boolean?>]`: 
     - `[IsReadReceiptRequested <Boolean?>]`: 
     - `[MultiValueExtendedProperties <IMicrosoftGraphMultiValueLegacyExtendedProperty[]>]`: The collection of multi-value extended properties defined for the message. Nullable.
-      - `[Id <String>]`: Read-only.
+      - `[Id <String>]`: 
       - `[Value <String[]>]`: A collection of property values.
     - `[ParentFolderId <String>]`: 
     - `[ReceivedDateTime <DateTime?>]`: 
@@ -268,7 +268,7 @@ BODYPARAMETER <IPaths1BibiieUsersUserIdMessagesMessageIdMicrosoftGraphCreaterepl
     - `[Sender <IMicrosoftGraphRecipient>]`: recipient
     - `[SentDateTime <DateTime?>]`: 
     - `[SingleValueExtendedProperties <IMicrosoftGraphSingleValueLegacyExtendedProperty[]>]`: The collection of single-value extended properties defined for the message. Nullable.
-      - `[Id <String>]`: Read-only.
+      - `[Id <String>]`: 
       - `[Value <String>]`: A property value.
     - `[Subject <String>]`: 
     - `[ToRecipients <IMicrosoftGraphRecipient[]>]`: 
@@ -276,7 +276,6 @@ BODYPARAMETER <IPaths1BibiieUsersUserIdMessagesMessageIdMicrosoftGraphCreaterepl
     - `[WebLink <String>]`: 
 
 INPUTOBJECT <IUsersActionsIdentity>: Identity Parameter
-  - `[AccessReviewInstanceDecisionItemId <String>]`: key: id of accessReviewInstanceDecisionItem
   - `[AccessReviewInstanceId <String>]`: key: id of accessReviewInstance
   - `[AccessReviewStageId <String>]`: key: id of accessReviewStage
   - `[AppLogCollectionRequestId <String>]`: key: id of appLogCollectionRequest
@@ -284,15 +283,27 @@ INPUTOBJECT <IUsersActionsIdentity>: Identity Parameter
   - `[BaseTaskId <String>]`: key: id of baseTask
   - `[BaseTaskListId <String>]`: key: id of baseTaskList
   - `[CalendarId <String>]`: key: id of calendar
+  - `[ChatId <String>]`: key: id of chat
+  - `[ChatMessageId <String>]`: key: id of chatMessage
+  - `[ChatMessageId1 <String>]`: key: id of chatMessage
   - `[CloudPcId <String>]`: key: id of cloudPC
+  - `[ContentTypeId <String>]`: key: id of contentType
   - `[DeviceEnrollmentConfigurationId <String>]`: key: id of deviceEnrollmentConfiguration
+  - `[DeviceId <String>]`: key: id of device
   - `[DeviceLogCollectionResponseId <String>]`: key: id of deviceLogCollectionResponse
+  - `[DocumentSetVersionId <String>]`: key: id of documentSetVersion
+  - `[DriveId <String>]`: key: id of drive
+  - `[DriveItemId <String>]`: key: id of driveItem
+  - `[DriveItemVersionId <String>]`: key: id of driveItemVersion
   - `[EventId <String>]`: key: id of event
   - `[EventId1 <String>]`: key: id of event
+  - `[ListItemId <String>]`: key: id of listItem
+  - `[ListItemVersionId <String>]`: key: id of listItemVersion
   - `[MailFolderId <String>]`: key: id of mailFolder
   - `[MailFolderId1 <String>]`: key: id of mailFolder
   - `[ManagedDeviceId <String>]`: key: id of managedDevice
   - `[MessageId <String>]`: key: id of message
+  - `[MicrosoftAuthenticatorAuthenticationMethodId <String>]`: key: id of microsoftAuthenticatorAuthenticationMethod
   - `[MobileAppTroubleshootingEventId <String>]`: key: id of mobileAppTroubleshootingEvent
   - `[NotebookId <String>]`: key: id of notebook
   - `[OnenotePageId <String>]`: key: id of onenotePage
@@ -300,10 +311,16 @@ INPUTOBJECT <IUsersActionsIdentity>: Identity Parameter
   - `[OutlookTaskFolderId <String>]`: key: id of outlookTaskFolder
   - `[OutlookTaskGroupId <String>]`: key: id of outlookTaskGroup
   - `[OutlookTaskId <String>]`: key: id of outlookTask
-  - `[SharedInsightId <String>]`: key: id of sharedInsight
-  - `[TrendingId <String>]`: key: id of trending
-  - `[UsedInsightId <String>]`: key: id of usedInsight
+  - `[PasswordlessMicrosoftAuthenticatorAuthenticationMethodId <String>]`: key: id of passwordlessMicrosoftAuthenticatorAuthenticationMethod
+  - `[PermissionId <String>]`: key: id of permission
+  - `[ResourceSpecificPermissionGrantId <String>]`: key: id of resourceSpecificPermissionGrant
+  - `[SensitivityLabelId <String>]`: key: id of sensitivityLabel
+  - `[SubscriptionId <String>]`: key: id of subscription
+  - `[TeamsAppInstallationId <String>]`: key: id of teamsAppInstallation
+  - `[TodoTaskId <String>]`: key: id of todoTask
+  - `[TodoTaskListId <String>]`: key: id of todoTaskList
   - `[UserId <String>]`: key: id of user
+  - `[WindowsHelloForBusinessAuthenticationMethodId <String>]`: key: id of windowsHelloForBusinessAuthenticationMethod
 
 MESSAGE <IMicrosoftGraphMessage1>: message
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -311,35 +328,35 @@ MESSAGE <IMicrosoftGraphMessage1>: message
   - `[ChangeKey <String>]`: Identifies the version of the item. Every time the item is changed, changeKey changes as well. This allows Exchange to apply changes to the correct version of the object. Read-only.
   - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
   - `[LastModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[Attachments <IMicrosoftGraphAttachment[]>]`: The fileAttachment and itemAttachment attachments for the message.
-    - `[Id <String>]`: Read-only.
+    - `[Id <String>]`: 
     - `[ContentType <String>]`: The MIME type.
     - `[IsInline <Boolean?>]`: true if the attachment is an inline attachment; otherwise, false.
     - `[LastModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-    - `[Name <String>]`: The attachment's file name.
+    - `[Name <String>]`: The display name of the attachment. This does not need to be the actual file name.
     - `[Size <Int32?>]`: The length of the attachment in bytes.
   - `[BccRecipients <IMicrosoftGraphRecipient[]>]`: The Bcc: recipients for the message.
     - `[EmailAddress <IMicrosoftGraphEmailAddress>]`: emailAddress
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[Address <String>]`: The email address of the person or entity.
-      - `[Name <String>]`: The display name of the person or entity.
+      - `[Address <String>]`: The email address of an entity instance.
+      - `[Name <String>]`: The display name of an entity instance.
   - `[Body <IMicrosoftGraphItemBody>]`: itemBody
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Content <String>]`: The content of the item.
     - `[ContentType <String>]`: bodyType
-  - `[BodyPreview <String>]`: The first 255 characters of the message body. It is in text format.
+  - `[BodyPreview <String>]`: The first 255 characters of the message body. It is in text format. If the message contains instances of mention, this property would contain a concatenation of these mentions as well.
   - `[CcRecipients <IMicrosoftGraphRecipient[]>]`: The Cc: recipients for the message.
   - `[ConversationId <String>]`: The ID of the conversation the email belongs to.
   - `[ConversationIndex <Byte[]>]`: Indicates the position of the message within the conversation.
   - `[Extensions <IMicrosoftGraphExtension[]>]`: The collection of open extensions defined for the message. Nullable.
-    - `[Id <String>]`: Read-only.
+    - `[Id <String>]`: 
   - `[Flag <IMicrosoftGraphFollowupFlag>]`: followupFlag
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[CompletedDateTime <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[DateTime <String>]`: A single point of time in a combined date and time representation ({date}T{time}; for example, 2017-08-29T04:00:00.0000000).
-      - `[TimeZone <String>]`: Represents a time zone, for example, 'Pacific Standard Time'. See below for more possible values.
+      - `[DateTime <String>]`: A single point of time in a combined date and time representation ({date}T{time}). For example, '2019-04-16T09:00:00'.
+      - `[TimeZone <String>]`: Represents a time zone, for example, 'Pacific Standard Time'. See below for possible values.
     - `[DueDateTime <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
     - `[FlagStatus <String>]`: followupFlagStatus
     - `[StartDateTime <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
@@ -356,7 +373,7 @@ MESSAGE <IMicrosoftGraphMessage1>: message
   - `[IsRead <Boolean?>]`: 
   - `[IsReadReceiptRequested <Boolean?>]`: 
   - `[MultiValueExtendedProperties <IMicrosoftGraphMultiValueLegacyExtendedProperty[]>]`: The collection of multi-value extended properties defined for the message. Nullable.
-    - `[Id <String>]`: Read-only.
+    - `[Id <String>]`: 
     - `[Value <String[]>]`: A collection of property values.
   - `[ParentFolderId <String>]`: 
   - `[ReceivedDateTime <DateTime?>]`: 
@@ -364,7 +381,7 @@ MESSAGE <IMicrosoftGraphMessage1>: message
   - `[Sender <IMicrosoftGraphRecipient>]`: recipient
   - `[SentDateTime <DateTime?>]`: 
   - `[SingleValueExtendedProperties <IMicrosoftGraphSingleValueLegacyExtendedProperty[]>]`: The collection of single-value extended properties defined for the message. Nullable.
-    - `[Id <String>]`: Read-only.
+    - `[Id <String>]`: 
     - `[Value <String>]`: A property value.
   - `[Subject <String>]`: 
   - `[ToRecipients <IMicrosoftGraphRecipient[]>]`: 

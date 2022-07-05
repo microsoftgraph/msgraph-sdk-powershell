@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.DeviceManagement.Enrolment
-Module Guid: da2f16b9-a329-46b8-8d61-5b8e72949e6b
+Module Guid: 9aed61f9-6a13-4e7c-a853-e4ceae0538bc
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.enrolment
 Help Version: 1.0.0.0
 Locale: en-US
@@ -12,324 +12,458 @@ Microsoft Graph PowerShell Cmdlets
 
 ## Microsoft.Graph.DeviceManagement.Enrolment Cmdlets
 ### [Get-MgDeviceManagementConditionalAccessSetting](Get-MgDeviceManagementConditionalAccessSetting.md)
-The Exchange on premises conditional access settings.
-On premises conditional access will require devices to be both enrolled and compliant for mail access
+Get conditionalAccessSettings from deviceManagement
 
 ### [Get-MgDeviceManagementDeviceEnrollmentConfiguration](Get-MgDeviceManagementDeviceEnrollmentConfiguration.md)
-The list of device enrollment configurations
+Get deviceEnrollmentConfigurations from deviceManagement
 
 ### [Get-MgDeviceManagementDeviceEnrollmentConfigurationAssignment](Get-MgDeviceManagementDeviceEnrollmentConfigurationAssignment.md)
-The list of group assignments for the device configuration profile
+Get assignments from deviceManagement
 
 ### [Get-MgDeviceManagementImportedWindowAutopilotDeviceIdentity](Get-MgDeviceManagementImportedWindowAutopilotDeviceIdentity.md)
-Collection of imported Windows autopilot devices.
+Get importedWindowsAutopilotDeviceIdentities from deviceManagement
 
 ### [Get-MgDeviceManagementWindowAutopilotDeviceIdentity](Get-MgDeviceManagementWindowAutopilotDeviceIdentity.md)
-The Windows autopilot device identities contained collection.
+Get windowsAutopilotDeviceIdentities from deviceManagement
 
 ### [Get-MgRoleManagement](Get-MgRoleManagement.md)
 Get roleManagement
 
 ### [Get-MgRoleManagementDirectory](Get-MgRoleManagementDirectory.md)
-Read-only.
-Nullable.
+Get directory from roleManagement
 
 ### [Get-MgRoleManagementDirectoryRoleAssignment](Get-MgRoleManagementDirectoryRoleAssignment.md)
-Resource to grant access to users or groups.
+Get roleAssignments from roleManagement
 
 ### [Get-MgRoleManagementDirectoryRoleAssignmentAppScope](Get-MgRoleManagementDirectoryRoleAssignmentAppScope.md)
-Read-only property with details of the app specific scope when the assignment scope is app specific.
-Containment entity.
-Supports $expand.
+Get appScope from roleManagement
 
 ### [Get-MgRoleManagementDirectoryRoleAssignmentDirectoryScope](Get-MgRoleManagementDirectoryRoleAssignmentDirectoryScope.md)
-The directory object that is the scope of the assignment.
-Read-only.
-Supports $expand.
-
-### [Get-MgRoleManagementDirectoryRoleAssignmentDirectoryScopeByRef](Get-MgRoleManagementDirectoryRoleAssignmentDirectoryScopeByRef.md)
-The directory object that is the scope of the assignment.
-Read-only.
-Supports $expand.
+Get directoryScope from roleManagement
 
 ### [Get-MgRoleManagementDirectoryRoleAssignmentPrincipal](Get-MgRoleManagementDirectoryRoleAssignmentPrincipal.md)
-Referencing the assigned principal.
-Read-only.
-Supports $expand.
-
-### [Get-MgRoleManagementDirectoryRoleAssignmentPrincipalByRef](Get-MgRoleManagementDirectoryRoleAssignmentPrincipalByRef.md)
-Referencing the assigned principal.
-Read-only.
-Supports $expand.
+Get principal from roleManagement
 
 ### [Get-MgRoleManagementDirectoryRoleAssignmentRoleDefinition](Get-MgRoleManagementDirectoryRoleAssignmentRoleDefinition.md)
-The roleDefinition the assignment is for.
-Supports $expand.
-roleDefinition.Id will be auto expanded.
+Get roleDefinition from roleManagement
 
-### [Get-MgRoleManagementDirectoryRoleAssignmentRoleDefinitionByRef](Get-MgRoleManagementDirectoryRoleAssignmentRoleDefinitionByRef.md)
-The roleDefinition the assignment is for.
-Supports $expand.
-roleDefinition.Id will be auto expanded.
+### [Get-MgRoleManagementDirectoryRoleAssignmentSchedule](Get-MgRoleManagementDirectoryRoleAssignmentSchedule.md)
+Get roleAssignmentSchedules from roleManagement
+
+### [Get-MgRoleManagementDirectoryRoleAssignmentScheduleActivatedUsing](Get-MgRoleManagementDirectoryRoleAssignmentScheduleActivatedUsing.md)
+Get activatedUsing from roleManagement
+
+### [Get-MgRoleManagementDirectoryRoleAssignmentScheduleInstance](Get-MgRoleManagementDirectoryRoleAssignmentScheduleInstance.md)
+Get roleAssignmentScheduleInstances from roleManagement
+
+### [Get-MgRoleManagementDirectoryRoleAssignmentScheduleInstanceActivatedUsing](Get-MgRoleManagementDirectoryRoleAssignmentScheduleInstanceActivatedUsing.md)
+Get activatedUsing from roleManagement
+
+### [Get-MgRoleManagementDirectoryRoleAssignmentScheduleRequest](Get-MgRoleManagementDirectoryRoleAssignmentScheduleRequest.md)
+Get roleAssignmentScheduleRequests from roleManagement
+
+### [Get-MgRoleManagementDirectoryRoleAssignmentScheduleRequestActivatedUsing](Get-MgRoleManagementDirectoryRoleAssignmentScheduleRequestActivatedUsing.md)
+Get activatedUsing from roleManagement
+
+### [Get-MgRoleManagementDirectoryRoleAssignmentScheduleRequestAppScope](Get-MgRoleManagementDirectoryRoleAssignmentScheduleRequestAppScope.md)
+Get appScope from roleManagement
+
+### [Get-MgRoleManagementDirectoryRoleAssignmentScheduleRequestDirectoryScope](Get-MgRoleManagementDirectoryRoleAssignmentScheduleRequestDirectoryScope.md)
+Get directoryScope from roleManagement
+
+### [Get-MgRoleManagementDirectoryRoleAssignmentScheduleRequestPrincipal](Get-MgRoleManagementDirectoryRoleAssignmentScheduleRequestPrincipal.md)
+Get principal from roleManagement
+
+### [Get-MgRoleManagementDirectoryRoleAssignmentScheduleRequestRoleDefinition](Get-MgRoleManagementDirectoryRoleAssignmentScheduleRequestRoleDefinition.md)
+Get roleDefinition from roleManagement
+
+### [Get-MgRoleManagementDirectoryRoleAssignmentScheduleRequestTargetSchedule](Get-MgRoleManagementDirectoryRoleAssignmentScheduleRequestTargetSchedule.md)
+Get targetSchedule from roleManagement
 
 ### [Get-MgRoleManagementDirectoryRoleDefinition](Get-MgRoleManagementDirectoryRoleDefinition.md)
-Resource representing the roles allowed by RBAC providers and the permissions assigned to the roles.
+Get roleDefinitions from roleManagement
 
 ### [Get-MgRoleManagementDirectoryRoleDefinitionInheritPermissionFrom](Get-MgRoleManagementDirectoryRoleDefinitionInheritPermissionFrom.md)
-Read-only collection of role definitions that the given role definition inherits from.
-Only Azure AD built-in roles (isBuiltIn is true) support this attribute.
-Supports $expand.
+Get inheritsPermissionsFrom from roleManagement
+
+### [Get-MgRoleManagementDirectoryRoleEligibilitySchedule](Get-MgRoleManagementDirectoryRoleEligibilitySchedule.md)
+Get roleEligibilitySchedules from roleManagement
+
+### [Get-MgRoleManagementDirectoryRoleEligibilityScheduleInstance](Get-MgRoleManagementDirectoryRoleEligibilityScheduleInstance.md)
+Get roleEligibilityScheduleInstances from roleManagement
+
+### [Get-MgRoleManagementDirectoryRoleEligibilityScheduleRequest](Get-MgRoleManagementDirectoryRoleEligibilityScheduleRequest.md)
+Get roleEligibilityScheduleRequests from roleManagement
+
+### [Get-MgRoleManagementDirectoryRoleEligibilityScheduleRequestAppScope](Get-MgRoleManagementDirectoryRoleEligibilityScheduleRequestAppScope.md)
+Get appScope from roleManagement
+
+### [Get-MgRoleManagementDirectoryRoleEligibilityScheduleRequestDirectoryScope](Get-MgRoleManagementDirectoryRoleEligibilityScheduleRequestDirectoryScope.md)
+Get directoryScope from roleManagement
+
+### [Get-MgRoleManagementDirectoryRoleEligibilityScheduleRequestPrincipal](Get-MgRoleManagementDirectoryRoleEligibilityScheduleRequestPrincipal.md)
+Get principal from roleManagement
+
+### [Get-MgRoleManagementDirectoryRoleEligibilityScheduleRequestRoleDefinition](Get-MgRoleManagementDirectoryRoleEligibilityScheduleRequestRoleDefinition.md)
+Get roleDefinition from roleManagement
+
+### [Get-MgRoleManagementDirectoryRoleEligibilityScheduleRequestTargetSchedule](Get-MgRoleManagementDirectoryRoleEligibilityScheduleRequestTargetSchedule.md)
+Get targetSchedule from roleManagement
 
 ### [Get-MgRoleManagementEntitlementManagement](Get-MgRoleManagementEntitlementManagement.md)
-Container for roles and assignments for entitlement management resources.
+Get entitlementManagement from roleManagement
 
 ### [Get-MgRoleManagementEntitlementManagementRoleAssignment](Get-MgRoleManagementEntitlementManagementRoleAssignment.md)
-Resource to grant access to users or groups.
+Get roleAssignments from roleManagement
 
 ### [Get-MgRoleManagementEntitlementManagementRoleAssignmentAppScope](Get-MgRoleManagementEntitlementManagementRoleAssignmentAppScope.md)
-Read-only property with details of the app specific scope when the assignment scope is app specific.
-Containment entity.
-Supports $expand.
+Get appScope from roleManagement
 
 ### [Get-MgRoleManagementEntitlementManagementRoleAssignmentDirectoryScope](Get-MgRoleManagementEntitlementManagementRoleAssignmentDirectoryScope.md)
-The directory object that is the scope of the assignment.
-Read-only.
-Supports $expand.
-
-### [Get-MgRoleManagementEntitlementManagementRoleAssignmentDirectoryScopeByRef](Get-MgRoleManagementEntitlementManagementRoleAssignmentDirectoryScopeByRef.md)
-The directory object that is the scope of the assignment.
-Read-only.
-Supports $expand.
+Get directoryScope from roleManagement
 
 ### [Get-MgRoleManagementEntitlementManagementRoleAssignmentPrincipal](Get-MgRoleManagementEntitlementManagementRoleAssignmentPrincipal.md)
-Referencing the assigned principal.
-Read-only.
-Supports $expand.
-
-### [Get-MgRoleManagementEntitlementManagementRoleAssignmentPrincipalByRef](Get-MgRoleManagementEntitlementManagementRoleAssignmentPrincipalByRef.md)
-Referencing the assigned principal.
-Read-only.
-Supports $expand.
+Get principal from roleManagement
 
 ### [Get-MgRoleManagementEntitlementManagementRoleAssignmentRoleDefinition](Get-MgRoleManagementEntitlementManagementRoleAssignmentRoleDefinition.md)
-The roleDefinition the assignment is for.
-Supports $expand.
-roleDefinition.Id will be auto expanded.
+Get roleDefinition from roleManagement
 
-### [Get-MgRoleManagementEntitlementManagementRoleAssignmentRoleDefinitionByRef](Get-MgRoleManagementEntitlementManagementRoleAssignmentRoleDefinitionByRef.md)
-The roleDefinition the assignment is for.
-Supports $expand.
-roleDefinition.Id will be auto expanded.
+### [Get-MgRoleManagementEntitlementManagementRoleAssignmentSchedule](Get-MgRoleManagementEntitlementManagementRoleAssignmentSchedule.md)
+Get roleAssignmentSchedules from roleManagement
+
+### [Get-MgRoleManagementEntitlementManagementRoleAssignmentScheduleActivatedUsing](Get-MgRoleManagementEntitlementManagementRoleAssignmentScheduleActivatedUsing.md)
+Get activatedUsing from roleManagement
+
+### [Get-MgRoleManagementEntitlementManagementRoleAssignmentScheduleInstance](Get-MgRoleManagementEntitlementManagementRoleAssignmentScheduleInstance.md)
+Get roleAssignmentScheduleInstances from roleManagement
+
+### [Get-MgRoleManagementEntitlementManagementRoleAssignmentScheduleInstanceActivatedUsing](Get-MgRoleManagementEntitlementManagementRoleAssignmentScheduleInstanceActivatedUsing.md)
+Get activatedUsing from roleManagement
+
+### [Get-MgRoleManagementEntitlementManagementRoleAssignmentScheduleRequest](Get-MgRoleManagementEntitlementManagementRoleAssignmentScheduleRequest.md)
+Get roleAssignmentScheduleRequests from roleManagement
+
+### [Get-MgRoleManagementEntitlementManagementRoleAssignmentScheduleRequestActivatedUsing](Get-MgRoleManagementEntitlementManagementRoleAssignmentScheduleRequestActivatedUsing.md)
+Get activatedUsing from roleManagement
+
+### [Get-MgRoleManagementEntitlementManagementRoleAssignmentScheduleRequestAppScope](Get-MgRoleManagementEntitlementManagementRoleAssignmentScheduleRequestAppScope.md)
+Get appScope from roleManagement
+
+### [Get-MgRoleManagementEntitlementManagementRoleAssignmentScheduleRequestDirectoryScope](Get-MgRoleManagementEntitlementManagementRoleAssignmentScheduleRequestDirectoryScope.md)
+Get directoryScope from roleManagement
+
+### [Get-MgRoleManagementEntitlementManagementRoleAssignmentScheduleRequestPrincipal](Get-MgRoleManagementEntitlementManagementRoleAssignmentScheduleRequestPrincipal.md)
+Get principal from roleManagement
+
+### [Get-MgRoleManagementEntitlementManagementRoleAssignmentScheduleRequestRoleDefinition](Get-MgRoleManagementEntitlementManagementRoleAssignmentScheduleRequestRoleDefinition.md)
+Get roleDefinition from roleManagement
+
+### [Get-MgRoleManagementEntitlementManagementRoleAssignmentScheduleRequestTargetSchedule](Get-MgRoleManagementEntitlementManagementRoleAssignmentScheduleRequestTargetSchedule.md)
+Get targetSchedule from roleManagement
 
 ### [Get-MgRoleManagementEntitlementManagementRoleDefinition](Get-MgRoleManagementEntitlementManagementRoleDefinition.md)
-Resource representing the roles allowed by RBAC providers and the permissions assigned to the roles.
+Get roleDefinitions from roleManagement
 
 ### [Get-MgRoleManagementEntitlementManagementRoleDefinitionInheritPermissionFrom](Get-MgRoleManagementEntitlementManagementRoleDefinitionInheritPermissionFrom.md)
-Read-only collection of role definitions that the given role definition inherits from.
-Only Azure AD built-in roles (isBuiltIn is true) support this attribute.
-Supports $expand.
+Get inheritsPermissionsFrom from roleManagement
+
+### [Get-MgRoleManagementEntitlementManagementRoleEligibilitySchedule](Get-MgRoleManagementEntitlementManagementRoleEligibilitySchedule.md)
+Get roleEligibilitySchedules from roleManagement
+
+### [Get-MgRoleManagementEntitlementManagementRoleEligibilityScheduleInstance](Get-MgRoleManagementEntitlementManagementRoleEligibilityScheduleInstance.md)
+Get roleEligibilityScheduleInstances from roleManagement
+
+### [Get-MgRoleManagementEntitlementManagementRoleEligibilityScheduleRequest](Get-MgRoleManagementEntitlementManagementRoleEligibilityScheduleRequest.md)
+Get roleEligibilityScheduleRequests from roleManagement
+
+### [Get-MgRoleManagementEntitlementManagementRoleEligibilityScheduleRequestAppScope](Get-MgRoleManagementEntitlementManagementRoleEligibilityScheduleRequestAppScope.md)
+Get appScope from roleManagement
+
+### [Get-MgRoleManagementEntitlementManagementRoleEligibilityScheduleRequestDirectoryScope](Get-MgRoleManagementEntitlementManagementRoleEligibilityScheduleRequestDirectoryScope.md)
+Get directoryScope from roleManagement
+
+### [Get-MgRoleManagementEntitlementManagementRoleEligibilityScheduleRequestPrincipal](Get-MgRoleManagementEntitlementManagementRoleEligibilityScheduleRequestPrincipal.md)
+Get principal from roleManagement
+
+### [Get-MgRoleManagementEntitlementManagementRoleEligibilityScheduleRequestRoleDefinition](Get-MgRoleManagementEntitlementManagementRoleEligibilityScheduleRequestRoleDefinition.md)
+Get roleDefinition from roleManagement
+
+### [Get-MgRoleManagementEntitlementManagementRoleEligibilityScheduleRequestTargetSchedule](Get-MgRoleManagementEntitlementManagementRoleEligibilityScheduleRequestTargetSchedule.md)
+Get targetSchedule from roleManagement
+
+### [Invoke-MgFilterRoleManagementDirectoryRoleAssignmentScheduleByCurrentUser](Invoke-MgFilterRoleManagementDirectoryRoleAssignmentScheduleByCurrentUser.md)
+Invoke function filterByCurrentUser
+
+### [Invoke-MgFilterRoleManagementDirectoryRoleAssignmentScheduleInstanceByCurrentUser](Invoke-MgFilterRoleManagementDirectoryRoleAssignmentScheduleInstanceByCurrentUser.md)
+Invoke function filterByCurrentUser
+
+### [Invoke-MgFilterRoleManagementDirectoryRoleAssignmentScheduleRequestByCurrentUser](Invoke-MgFilterRoleManagementDirectoryRoleAssignmentScheduleRequestByCurrentUser.md)
+Invoke function filterByCurrentUser
+
+### [Invoke-MgFilterRoleManagementDirectoryRoleEligibilityScheduleByCurrentUser](Invoke-MgFilterRoleManagementDirectoryRoleEligibilityScheduleByCurrentUser.md)
+Invoke function filterByCurrentUser
+
+### [Invoke-MgFilterRoleManagementDirectoryRoleEligibilityScheduleInstanceByCurrentUser](Invoke-MgFilterRoleManagementDirectoryRoleEligibilityScheduleInstanceByCurrentUser.md)
+Invoke function filterByCurrentUser
+
+### [Invoke-MgFilterRoleManagementDirectoryRoleEligibilityScheduleRequestByCurrentUser](Invoke-MgFilterRoleManagementDirectoryRoleEligibilityScheduleRequestByCurrentUser.md)
+Invoke function filterByCurrentUser
+
+### [Invoke-MgFilterRoleManagementEntitlementManagementRoleAssignmentScheduleByCurrentUser](Invoke-MgFilterRoleManagementEntitlementManagementRoleAssignmentScheduleByCurrentUser.md)
+Invoke function filterByCurrentUser
+
+### [Invoke-MgFilterRoleManagementEntitlementManagementRoleAssignmentScheduleInstanceByCurrentUser](Invoke-MgFilterRoleManagementEntitlementManagementRoleAssignmentScheduleInstanceByCurrentUser.md)
+Invoke function filterByCurrentUser
+
+### [Invoke-MgFilterRoleManagementEntitlementManagementRoleAssignmentScheduleRequestByCurrentUser](Invoke-MgFilterRoleManagementEntitlementManagementRoleAssignmentScheduleRequestByCurrentUser.md)
+Invoke function filterByCurrentUser
+
+### [Invoke-MgFilterRoleManagementEntitlementManagementRoleEligibilityScheduleByCurrentUser](Invoke-MgFilterRoleManagementEntitlementManagementRoleEligibilityScheduleByCurrentUser.md)
+Invoke function filterByCurrentUser
+
+### [Invoke-MgFilterRoleManagementEntitlementManagementRoleEligibilityScheduleInstanceByCurrentUser](Invoke-MgFilterRoleManagementEntitlementManagementRoleEligibilityScheduleInstanceByCurrentUser.md)
+Invoke function filterByCurrentUser
+
+### [Invoke-MgFilterRoleManagementEntitlementManagementRoleEligibilityScheduleRequestByCurrentUser](Invoke-MgFilterRoleManagementEntitlementManagementRoleEligibilityScheduleRequestByCurrentUser.md)
+Invoke function filterByCurrentUser
 
 ### [New-MgDeviceManagementDeviceEnrollmentConfiguration](New-MgDeviceManagementDeviceEnrollmentConfiguration.md)
-The list of device enrollment configurations
+Create new navigation property to deviceEnrollmentConfigurations for deviceManagement
 
 ### [New-MgDeviceManagementDeviceEnrollmentConfigurationAssignment](New-MgDeviceManagementDeviceEnrollmentConfigurationAssignment.md)
-The list of group assignments for the device configuration profile
+Create new navigation property to assignments for deviceManagement
 
 ### [New-MgDeviceManagementImportedWindowAutopilotDeviceIdentity](New-MgDeviceManagementImportedWindowAutopilotDeviceIdentity.md)
-Collection of imported Windows autopilot devices.
+Create new navigation property to importedWindowsAutopilotDeviceIdentities for deviceManagement
 
 ### [New-MgDeviceManagementWindowAutopilotDeviceIdentity](New-MgDeviceManagementWindowAutopilotDeviceIdentity.md)
-The Windows autopilot device identities contained collection.
+Create new navigation property to windowsAutopilotDeviceIdentities for deviceManagement
 
 ### [New-MgRoleManagementDirectoryRoleAssignment](New-MgRoleManagementDirectoryRoleAssignment.md)
-Resource to grant access to users or groups.
+Create new navigation property to roleAssignments for roleManagement
+
+### [New-MgRoleManagementDirectoryRoleAssignmentSchedule](New-MgRoleManagementDirectoryRoleAssignmentSchedule.md)
+Create new navigation property to roleAssignmentSchedules for roleManagement
+
+### [New-MgRoleManagementDirectoryRoleAssignmentScheduleInstance](New-MgRoleManagementDirectoryRoleAssignmentScheduleInstance.md)
+Create new navigation property to roleAssignmentScheduleInstances for roleManagement
+
+### [New-MgRoleManagementDirectoryRoleAssignmentScheduleRequest](New-MgRoleManagementDirectoryRoleAssignmentScheduleRequest.md)
+Create new navigation property to roleAssignmentScheduleRequests for roleManagement
 
 ### [New-MgRoleManagementDirectoryRoleDefinition](New-MgRoleManagementDirectoryRoleDefinition.md)
-Resource representing the roles allowed by RBAC providers and the permissions assigned to the roles.
+Create new navigation property to roleDefinitions for roleManagement
 
 ### [New-MgRoleManagementDirectoryRoleDefinitionInheritPermissionFrom](New-MgRoleManagementDirectoryRoleDefinitionInheritPermissionFrom.md)
-Read-only collection of role definitions that the given role definition inherits from.
-Only Azure AD built-in roles (isBuiltIn is true) support this attribute.
-Supports $expand.
+Create new navigation property to inheritsPermissionsFrom for roleManagement
+
+### [New-MgRoleManagementDirectoryRoleEligibilitySchedule](New-MgRoleManagementDirectoryRoleEligibilitySchedule.md)
+Create new navigation property to roleEligibilitySchedules for roleManagement
+
+### [New-MgRoleManagementDirectoryRoleEligibilityScheduleInstance](New-MgRoleManagementDirectoryRoleEligibilityScheduleInstance.md)
+Create new navigation property to roleEligibilityScheduleInstances for roleManagement
+
+### [New-MgRoleManagementDirectoryRoleEligibilityScheduleRequest](New-MgRoleManagementDirectoryRoleEligibilityScheduleRequest.md)
+Create new navigation property to roleEligibilityScheduleRequests for roleManagement
 
 ### [New-MgRoleManagementEntitlementManagementRoleAssignment](New-MgRoleManagementEntitlementManagementRoleAssignment.md)
-Resource to grant access to users or groups.
+Create new navigation property to roleAssignments for roleManagement
+
+### [New-MgRoleManagementEntitlementManagementRoleAssignmentSchedule](New-MgRoleManagementEntitlementManagementRoleAssignmentSchedule.md)
+Create new navigation property to roleAssignmentSchedules for roleManagement
+
+### [New-MgRoleManagementEntitlementManagementRoleAssignmentScheduleInstance](New-MgRoleManagementEntitlementManagementRoleAssignmentScheduleInstance.md)
+Create new navigation property to roleAssignmentScheduleInstances for roleManagement
+
+### [New-MgRoleManagementEntitlementManagementRoleAssignmentScheduleRequest](New-MgRoleManagementEntitlementManagementRoleAssignmentScheduleRequest.md)
+Create new navigation property to roleAssignmentScheduleRequests for roleManagement
 
 ### [New-MgRoleManagementEntitlementManagementRoleDefinition](New-MgRoleManagementEntitlementManagementRoleDefinition.md)
-Resource representing the roles allowed by RBAC providers and the permissions assigned to the roles.
+Create new navigation property to roleDefinitions for roleManagement
 
 ### [New-MgRoleManagementEntitlementManagementRoleDefinitionInheritPermissionFrom](New-MgRoleManagementEntitlementManagementRoleDefinitionInheritPermissionFrom.md)
-Read-only collection of role definitions that the given role definition inherits from.
-Only Azure AD built-in roles (isBuiltIn is true) support this attribute.
-Supports $expand.
+Create new navigation property to inheritsPermissionsFrom for roleManagement
+
+### [New-MgRoleManagementEntitlementManagementRoleEligibilitySchedule](New-MgRoleManagementEntitlementManagementRoleEligibilitySchedule.md)
+Create new navigation property to roleEligibilitySchedules for roleManagement
+
+### [New-MgRoleManagementEntitlementManagementRoleEligibilityScheduleInstance](New-MgRoleManagementEntitlementManagementRoleEligibilityScheduleInstance.md)
+Create new navigation property to roleEligibilityScheduleInstances for roleManagement
+
+### [New-MgRoleManagementEntitlementManagementRoleEligibilityScheduleRequest](New-MgRoleManagementEntitlementManagementRoleEligibilityScheduleRequest.md)
+Create new navigation property to roleEligibilityScheduleRequests for roleManagement
 
 ### [Remove-MgDeviceManagementConditionalAccessSetting](Remove-MgDeviceManagementConditionalAccessSetting.md)
-The Exchange on premises conditional access settings.
-On premises conditional access will require devices to be both enrolled and compliant for mail access
+Delete navigation property conditionalAccessSettings for deviceManagement
 
 ### [Remove-MgDeviceManagementDeviceEnrollmentConfiguration](Remove-MgDeviceManagementDeviceEnrollmentConfiguration.md)
-The list of device enrollment configurations
+Delete navigation property deviceEnrollmentConfigurations for deviceManagement
 
 ### [Remove-MgDeviceManagementDeviceEnrollmentConfigurationAssignment](Remove-MgDeviceManagementDeviceEnrollmentConfigurationAssignment.md)
-The list of group assignments for the device configuration profile
+Delete navigation property assignments for deviceManagement
 
 ### [Remove-MgDeviceManagementImportedWindowAutopilotDeviceIdentity](Remove-MgDeviceManagementImportedWindowAutopilotDeviceIdentity.md)
-Collection of imported Windows autopilot devices.
+Delete navigation property importedWindowsAutopilotDeviceIdentities for deviceManagement
 
 ### [Remove-MgDeviceManagementWindowAutopilotDeviceIdentity](Remove-MgDeviceManagementWindowAutopilotDeviceIdentity.md)
-The Windows autopilot device identities contained collection.
+Delete navigation property windowsAutopilotDeviceIdentities for deviceManagement
 
 ### [Remove-MgRoleManagementDirectory](Remove-MgRoleManagementDirectory.md)
-Read-only.
-Nullable.
+Delete navigation property directory for roleManagement
 
 ### [Remove-MgRoleManagementDirectoryRoleAssignment](Remove-MgRoleManagementDirectoryRoleAssignment.md)
-Resource to grant access to users or groups.
+Delete navigation property roleAssignments for roleManagement
 
 ### [Remove-MgRoleManagementDirectoryRoleAssignmentAppScope](Remove-MgRoleManagementDirectoryRoleAssignmentAppScope.md)
-Read-only property with details of the app specific scope when the assignment scope is app specific.
-Containment entity.
-Supports $expand.
+Delete navigation property appScope for roleManagement
 
-### [Remove-MgRoleManagementDirectoryRoleAssignmentDirectoryScopeByRef](Remove-MgRoleManagementDirectoryRoleAssignmentDirectoryScopeByRef.md)
-The directory object that is the scope of the assignment.
-Read-only.
-Supports $expand.
+### [Remove-MgRoleManagementDirectoryRoleAssignmentSchedule](Remove-MgRoleManagementDirectoryRoleAssignmentSchedule.md)
+Delete navigation property roleAssignmentSchedules for roleManagement
 
-### [Remove-MgRoleManagementDirectoryRoleAssignmentPrincipalByRef](Remove-MgRoleManagementDirectoryRoleAssignmentPrincipalByRef.md)
-Referencing the assigned principal.
-Read-only.
-Supports $expand.
+### [Remove-MgRoleManagementDirectoryRoleAssignmentScheduleInstance](Remove-MgRoleManagementDirectoryRoleAssignmentScheduleInstance.md)
+Delete navigation property roleAssignmentScheduleInstances for roleManagement
 
-### [Remove-MgRoleManagementDirectoryRoleAssignmentRoleDefinitionByRef](Remove-MgRoleManagementDirectoryRoleAssignmentRoleDefinitionByRef.md)
-The roleDefinition the assignment is for.
-Supports $expand.
-roleDefinition.Id will be auto expanded.
+### [Remove-MgRoleManagementDirectoryRoleAssignmentScheduleRequest](Remove-MgRoleManagementDirectoryRoleAssignmentScheduleRequest.md)
+Delete navigation property roleAssignmentScheduleRequests for roleManagement
 
 ### [Remove-MgRoleManagementDirectoryRoleDefinition](Remove-MgRoleManagementDirectoryRoleDefinition.md)
-Resource representing the roles allowed by RBAC providers and the permissions assigned to the roles.
+Delete navigation property roleDefinitions for roleManagement
 
 ### [Remove-MgRoleManagementDirectoryRoleDefinitionInheritPermissionFrom](Remove-MgRoleManagementDirectoryRoleDefinitionInheritPermissionFrom.md)
-Read-only collection of role definitions that the given role definition inherits from.
-Only Azure AD built-in roles (isBuiltIn is true) support this attribute.
-Supports $expand.
+Delete navigation property inheritsPermissionsFrom for roleManagement
+
+### [Remove-MgRoleManagementDirectoryRoleEligibilitySchedule](Remove-MgRoleManagementDirectoryRoleEligibilitySchedule.md)
+Delete navigation property roleEligibilitySchedules for roleManagement
+
+### [Remove-MgRoleManagementDirectoryRoleEligibilityScheduleInstance](Remove-MgRoleManagementDirectoryRoleEligibilityScheduleInstance.md)
+Delete navigation property roleEligibilityScheduleInstances for roleManagement
+
+### [Remove-MgRoleManagementDirectoryRoleEligibilityScheduleRequest](Remove-MgRoleManagementDirectoryRoleEligibilityScheduleRequest.md)
+Delete navigation property roleEligibilityScheduleRequests for roleManagement
 
 ### [Remove-MgRoleManagementEntitlementManagement](Remove-MgRoleManagementEntitlementManagement.md)
-Container for roles and assignments for entitlement management resources.
+Delete navigation property entitlementManagement for roleManagement
 
 ### [Remove-MgRoleManagementEntitlementManagementRoleAssignment](Remove-MgRoleManagementEntitlementManagementRoleAssignment.md)
-Resource to grant access to users or groups.
+Delete navigation property roleAssignments for roleManagement
 
 ### [Remove-MgRoleManagementEntitlementManagementRoleAssignmentAppScope](Remove-MgRoleManagementEntitlementManagementRoleAssignmentAppScope.md)
-Read-only property with details of the app specific scope when the assignment scope is app specific.
-Containment entity.
-Supports $expand.
+Delete navigation property appScope for roleManagement
 
-### [Remove-MgRoleManagementEntitlementManagementRoleAssignmentDirectoryScopeByRef](Remove-MgRoleManagementEntitlementManagementRoleAssignmentDirectoryScopeByRef.md)
-The directory object that is the scope of the assignment.
-Read-only.
-Supports $expand.
+### [Remove-MgRoleManagementEntitlementManagementRoleAssignmentSchedule](Remove-MgRoleManagementEntitlementManagementRoleAssignmentSchedule.md)
+Delete navigation property roleAssignmentSchedules for roleManagement
 
-### [Remove-MgRoleManagementEntitlementManagementRoleAssignmentPrincipalByRef](Remove-MgRoleManagementEntitlementManagementRoleAssignmentPrincipalByRef.md)
-Referencing the assigned principal.
-Read-only.
-Supports $expand.
+### [Remove-MgRoleManagementEntitlementManagementRoleAssignmentScheduleInstance](Remove-MgRoleManagementEntitlementManagementRoleAssignmentScheduleInstance.md)
+Delete navigation property roleAssignmentScheduleInstances for roleManagement
 
-### [Remove-MgRoleManagementEntitlementManagementRoleAssignmentRoleDefinitionByRef](Remove-MgRoleManagementEntitlementManagementRoleAssignmentRoleDefinitionByRef.md)
-The roleDefinition the assignment is for.
-Supports $expand.
-roleDefinition.Id will be auto expanded.
+### [Remove-MgRoleManagementEntitlementManagementRoleAssignmentScheduleRequest](Remove-MgRoleManagementEntitlementManagementRoleAssignmentScheduleRequest.md)
+Delete navigation property roleAssignmentScheduleRequests for roleManagement
 
 ### [Remove-MgRoleManagementEntitlementManagementRoleDefinition](Remove-MgRoleManagementEntitlementManagementRoleDefinition.md)
-Resource representing the roles allowed by RBAC providers and the permissions assigned to the roles.
+Delete navigation property roleDefinitions for roleManagement
 
 ### [Remove-MgRoleManagementEntitlementManagementRoleDefinitionInheritPermissionFrom](Remove-MgRoleManagementEntitlementManagementRoleDefinitionInheritPermissionFrom.md)
-Read-only collection of role definitions that the given role definition inherits from.
-Only Azure AD built-in roles (isBuiltIn is true) support this attribute.
-Supports $expand.
+Delete navigation property inheritsPermissionsFrom for roleManagement
 
-### [Set-MgRoleManagementDirectoryRoleAssignmentDirectoryScopeByRef](Set-MgRoleManagementDirectoryRoleAssignmentDirectoryScopeByRef.md)
-The directory object that is the scope of the assignment.
-Read-only.
-Supports $expand.
+### [Remove-MgRoleManagementEntitlementManagementRoleEligibilitySchedule](Remove-MgRoleManagementEntitlementManagementRoleEligibilitySchedule.md)
+Delete navigation property roleEligibilitySchedules for roleManagement
 
-### [Set-MgRoleManagementDirectoryRoleAssignmentPrincipalByRef](Set-MgRoleManagementDirectoryRoleAssignmentPrincipalByRef.md)
-Referencing the assigned principal.
-Read-only.
-Supports $expand.
+### [Remove-MgRoleManagementEntitlementManagementRoleEligibilityScheduleInstance](Remove-MgRoleManagementEntitlementManagementRoleEligibilityScheduleInstance.md)
+Delete navigation property roleEligibilityScheduleInstances for roleManagement
 
-### [Set-MgRoleManagementDirectoryRoleAssignmentRoleDefinitionByRef](Set-MgRoleManagementDirectoryRoleAssignmentRoleDefinitionByRef.md)
-The roleDefinition the assignment is for.
-Supports $expand.
-roleDefinition.Id will be auto expanded.
+### [Remove-MgRoleManagementEntitlementManagementRoleEligibilityScheduleRequest](Remove-MgRoleManagementEntitlementManagementRoleEligibilityScheduleRequest.md)
+Delete navigation property roleEligibilityScheduleRequests for roleManagement
 
-### [Set-MgRoleManagementEntitlementManagementRoleAssignmentDirectoryScopeByRef](Set-MgRoleManagementEntitlementManagementRoleAssignmentDirectoryScopeByRef.md)
-The directory object that is the scope of the assignment.
-Read-only.
-Supports $expand.
+### [Stop-MgRoleManagementDirectoryRoleAssignmentScheduleRequest](Stop-MgRoleManagementDirectoryRoleAssignmentScheduleRequest.md)
+Invoke action cancel
 
-### [Set-MgRoleManagementEntitlementManagementRoleAssignmentPrincipalByRef](Set-MgRoleManagementEntitlementManagementRoleAssignmentPrincipalByRef.md)
-Referencing the assigned principal.
-Read-only.
-Supports $expand.
+### [Stop-MgRoleManagementDirectoryRoleEligibilityScheduleRequest](Stop-MgRoleManagementDirectoryRoleEligibilityScheduleRequest.md)
+Invoke action cancel
 
-### [Set-MgRoleManagementEntitlementManagementRoleAssignmentRoleDefinitionByRef](Set-MgRoleManagementEntitlementManagementRoleAssignmentRoleDefinitionByRef.md)
-The roleDefinition the assignment is for.
-Supports $expand.
-roleDefinition.Id will be auto expanded.
+### [Stop-MgRoleManagementEntitlementManagementRoleAssignmentScheduleRequest](Stop-MgRoleManagementEntitlementManagementRoleAssignmentScheduleRequest.md)
+Invoke action cancel
+
+### [Stop-MgRoleManagementEntitlementManagementRoleEligibilityScheduleRequest](Stop-MgRoleManagementEntitlementManagementRoleEligibilityScheduleRequest.md)
+Invoke action cancel
 
 ### [Update-MgDeviceManagementConditionalAccessSetting](Update-MgDeviceManagementConditionalAccessSetting.md)
-The Exchange on premises conditional access settings.
-On premises conditional access will require devices to be both enrolled and compliant for mail access
+Update the navigation property conditionalAccessSettings in deviceManagement
 
 ### [Update-MgDeviceManagementDeviceEnrollmentConfiguration](Update-MgDeviceManagementDeviceEnrollmentConfiguration.md)
-The list of device enrollment configurations
+Update the navigation property deviceEnrollmentConfigurations in deviceManagement
 
 ### [Update-MgDeviceManagementDeviceEnrollmentConfigurationAssignment](Update-MgDeviceManagementDeviceEnrollmentConfigurationAssignment.md)
-The list of group assignments for the device configuration profile
+Update the navigation property assignments in deviceManagement
 
 ### [Update-MgDeviceManagementImportedWindowAutopilotDeviceIdentity](Update-MgDeviceManagementImportedWindowAutopilotDeviceIdentity.md)
-Collection of imported Windows autopilot devices.
+Update the navigation property importedWindowsAutopilotDeviceIdentities in deviceManagement
 
 ### [Update-MgRoleManagement](Update-MgRoleManagement.md)
 Update roleManagement
 
 ### [Update-MgRoleManagementDirectory](Update-MgRoleManagementDirectory.md)
-Read-only.
-Nullable.
+Update the navigation property directory in roleManagement
 
 ### [Update-MgRoleManagementDirectoryRoleAssignment](Update-MgRoleManagementDirectoryRoleAssignment.md)
-Resource to grant access to users or groups.
+Update the navigation property roleAssignments in roleManagement
 
 ### [Update-MgRoleManagementDirectoryRoleAssignmentAppScope](Update-MgRoleManagementDirectoryRoleAssignmentAppScope.md)
-Read-only property with details of the app specific scope when the assignment scope is app specific.
-Containment entity.
-Supports $expand.
+Update the navigation property appScope in roleManagement
+
+### [Update-MgRoleManagementDirectoryRoleAssignmentSchedule](Update-MgRoleManagementDirectoryRoleAssignmentSchedule.md)
+Update the navigation property roleAssignmentSchedules in roleManagement
+
+### [Update-MgRoleManagementDirectoryRoleAssignmentScheduleInstance](Update-MgRoleManagementDirectoryRoleAssignmentScheduleInstance.md)
+Update the navigation property roleAssignmentScheduleInstances in roleManagement
+
+### [Update-MgRoleManagementDirectoryRoleAssignmentScheduleRequest](Update-MgRoleManagementDirectoryRoleAssignmentScheduleRequest.md)
+Update the navigation property roleAssignmentScheduleRequests in roleManagement
 
 ### [Update-MgRoleManagementDirectoryRoleDefinition](Update-MgRoleManagementDirectoryRoleDefinition.md)
-Resource representing the roles allowed by RBAC providers and the permissions assigned to the roles.
+Update the navigation property roleDefinitions in roleManagement
 
 ### [Update-MgRoleManagementDirectoryRoleDefinitionInheritPermissionFrom](Update-MgRoleManagementDirectoryRoleDefinitionInheritPermissionFrom.md)
-Read-only collection of role definitions that the given role definition inherits from.
-Only Azure AD built-in roles (isBuiltIn is true) support this attribute.
-Supports $expand.
+Update the navigation property inheritsPermissionsFrom in roleManagement
+
+### [Update-MgRoleManagementDirectoryRoleEligibilitySchedule](Update-MgRoleManagementDirectoryRoleEligibilitySchedule.md)
+Update the navigation property roleEligibilitySchedules in roleManagement
+
+### [Update-MgRoleManagementDirectoryRoleEligibilityScheduleInstance](Update-MgRoleManagementDirectoryRoleEligibilityScheduleInstance.md)
+Update the navigation property roleEligibilityScheduleInstances in roleManagement
+
+### [Update-MgRoleManagementDirectoryRoleEligibilityScheduleRequest](Update-MgRoleManagementDirectoryRoleEligibilityScheduleRequest.md)
+Update the navigation property roleEligibilityScheduleRequests in roleManagement
 
 ### [Update-MgRoleManagementEntitlementManagement](Update-MgRoleManagementEntitlementManagement.md)
-Container for roles and assignments for entitlement management resources.
+Update the navigation property entitlementManagement in roleManagement
 
 ### [Update-MgRoleManagementEntitlementManagementRoleAssignment](Update-MgRoleManagementEntitlementManagementRoleAssignment.md)
-Resource to grant access to users or groups.
+Update the navigation property roleAssignments in roleManagement
 
 ### [Update-MgRoleManagementEntitlementManagementRoleAssignmentAppScope](Update-MgRoleManagementEntitlementManagementRoleAssignmentAppScope.md)
-Read-only property with details of the app specific scope when the assignment scope is app specific.
-Containment entity.
-Supports $expand.
+Update the navigation property appScope in roleManagement
+
+### [Update-MgRoleManagementEntitlementManagementRoleAssignmentSchedule](Update-MgRoleManagementEntitlementManagementRoleAssignmentSchedule.md)
+Update the navigation property roleAssignmentSchedules in roleManagement
+
+### [Update-MgRoleManagementEntitlementManagementRoleAssignmentScheduleInstance](Update-MgRoleManagementEntitlementManagementRoleAssignmentScheduleInstance.md)
+Update the navigation property roleAssignmentScheduleInstances in roleManagement
+
+### [Update-MgRoleManagementEntitlementManagementRoleAssignmentScheduleRequest](Update-MgRoleManagementEntitlementManagementRoleAssignmentScheduleRequest.md)
+Update the navigation property roleAssignmentScheduleRequests in roleManagement
 
 ### [Update-MgRoleManagementEntitlementManagementRoleDefinition](Update-MgRoleManagementEntitlementManagementRoleDefinition.md)
-Resource representing the roles allowed by RBAC providers and the permissions assigned to the roles.
+Update the navigation property roleDefinitions in roleManagement
 
 ### [Update-MgRoleManagementEntitlementManagementRoleDefinitionInheritPermissionFrom](Update-MgRoleManagementEntitlementManagementRoleDefinitionInheritPermissionFrom.md)
-Read-only collection of role definitions that the given role definition inherits from.
-Only Azure AD built-in roles (isBuiltIn is true) support this attribute.
-Supports $expand.
+Update the navigation property inheritsPermissionsFrom in roleManagement
+
+### [Update-MgRoleManagementEntitlementManagementRoleEligibilitySchedule](Update-MgRoleManagementEntitlementManagementRoleEligibilitySchedule.md)
+Update the navigation property roleEligibilitySchedules in roleManagement
+
+### [Update-MgRoleManagementEntitlementManagementRoleEligibilityScheduleInstance](Update-MgRoleManagementEntitlementManagementRoleEligibilityScheduleInstance.md)
+Update the navigation property roleEligibilityScheduleInstances in roleManagement
+
+### [Update-MgRoleManagementEntitlementManagementRoleEligibilityScheduleRequest](Update-MgRoleManagementEntitlementManagementRoleEligibilityScheduleRequest.md)
+Update the navigation property roleEligibilityScheduleRequests in roleManagement
 

@@ -8,32 +8,32 @@ schema: 2.0.0
 # Remove-MgUserManagedDeviceUserFromSharedAppleDevice
 
 ## SYNOPSIS
-Delete user from shared Apple device
+Invoke action deleteUserFromSharedAppleDevice
 
 ## SYNTAX
 
-### DeleteExpanded1 (Default)
+### DeleteExpanded (Default)
 ```
 Remove-MgUserManagedDeviceUserFromSharedAppleDevice -ManagedDeviceId <String> -UserId <String>
  [-AdditionalProperties <Hashtable>] [-UserPrincipalName <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
-### Delete1
+### Delete
 ```
 Remove-MgUserManagedDeviceUserFromSharedAppleDevice -ManagedDeviceId <String> -UserId <String>
  -BodyParameter <IPathsWbtl2JUsersUserIdManageddevicesManageddeviceIdMicrosoftGraphDeleteuserfromsharedappledevicePostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### DeleteViaIdentity1
+### DeleteViaIdentity
 ```
 Remove-MgUserManagedDeviceUserFromSharedAppleDevice -InputObject <IUsersActionsIdentity>
  -BodyParameter <IPathsWbtl2JUsersUserIdManageddevicesManageddeviceIdMicrosoftGraphDeleteuserfromsharedappledevicePostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### DeleteViaIdentityExpanded1
+### DeleteViaIdentityExpanded
 ```
 Remove-MgUserManagedDeviceUserFromSharedAppleDevice -InputObject <IUsersActionsIdentity>
  [-AdditionalProperties <Hashtable>] [-UserPrincipalName <String>] [-PassThru] [-Confirm] [-WhatIf]
@@ -41,7 +41,7 @@ Remove-MgUserManagedDeviceUserFromSharedAppleDevice -InputObject <IUsersActionsI
 ```
 
 ## DESCRIPTION
-Delete user from shared Apple device
+Invoke action deleteUserFromSharedAppleDevice
 
 ## EXAMPLES
 
@@ -52,7 +52,7 @@ Additional Parameters
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: DeleteExpanded1, DeleteViaIdentityExpanded1
+Parameter Sets: DeleteExpanded, DeleteViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -68,7 +68,7 @@ To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETE
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IPathsWbtl2JUsersUserIdManageddevicesManageddeviceIdMicrosoftGraphDeleteuserfromsharedappledevicePostRequestbodyContentApplicationJsonSchema
-Parameter Sets: Delete1, DeleteViaIdentity1
+Parameter Sets: Delete, DeleteViaIdentity
 Aliases:
 
 Required: True
@@ -84,7 +84,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
-Parameter Sets: DeleteViaIdentity1, DeleteViaIdentityExpanded1
+Parameter Sets: DeleteViaIdentity, DeleteViaIdentityExpanded
 Aliases:
 
 Required: True
@@ -99,7 +99,7 @@ key: id of managedDevice
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete1, DeleteExpanded1
+Parameter Sets: Delete, DeleteExpanded
 Aliases:
 
 Required: True
@@ -129,7 +129,7 @@ key: id of user
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete1, DeleteExpanded1
+Parameter Sets: Delete, DeleteExpanded
 Aliases:
 
 Required: True
@@ -144,7 +144,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.String
-Parameter Sets: DeleteExpanded1, DeleteViaIdentityExpanded1
+Parameter Sets: DeleteExpanded, DeleteViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -212,7 +212,6 @@ BODYPARAMETER <IPathsWbtl2JUsersUserIdManageddevicesManageddeviceIdMicrosoftGrap
   - `[UserPrincipalName <String>]`: 
 
 INPUTOBJECT <IUsersActionsIdentity>: Identity Parameter
-  - `[AccessReviewInstanceDecisionItemId <String>]`: key: id of accessReviewInstanceDecisionItem
   - `[AccessReviewInstanceId <String>]`: key: id of accessReviewInstance
   - `[AccessReviewStageId <String>]`: key: id of accessReviewStage
   - `[AppLogCollectionRequestId <String>]`: key: id of appLogCollectionRequest
@@ -220,15 +219,27 @@ INPUTOBJECT <IUsersActionsIdentity>: Identity Parameter
   - `[BaseTaskId <String>]`: key: id of baseTask
   - `[BaseTaskListId <String>]`: key: id of baseTaskList
   - `[CalendarId <String>]`: key: id of calendar
+  - `[ChatId <String>]`: key: id of chat
+  - `[ChatMessageId <String>]`: key: id of chatMessage
+  - `[ChatMessageId1 <String>]`: key: id of chatMessage
   - `[CloudPcId <String>]`: key: id of cloudPC
+  - `[ContentTypeId <String>]`: key: id of contentType
   - `[DeviceEnrollmentConfigurationId <String>]`: key: id of deviceEnrollmentConfiguration
+  - `[DeviceId <String>]`: key: id of device
   - `[DeviceLogCollectionResponseId <String>]`: key: id of deviceLogCollectionResponse
+  - `[DocumentSetVersionId <String>]`: key: id of documentSetVersion
+  - `[DriveId <String>]`: key: id of drive
+  - `[DriveItemId <String>]`: key: id of driveItem
+  - `[DriveItemVersionId <String>]`: key: id of driveItemVersion
   - `[EventId <String>]`: key: id of event
   - `[EventId1 <String>]`: key: id of event
+  - `[ListItemId <String>]`: key: id of listItem
+  - `[ListItemVersionId <String>]`: key: id of listItemVersion
   - `[MailFolderId <String>]`: key: id of mailFolder
   - `[MailFolderId1 <String>]`: key: id of mailFolder
   - `[ManagedDeviceId <String>]`: key: id of managedDevice
   - `[MessageId <String>]`: key: id of message
+  - `[MicrosoftAuthenticatorAuthenticationMethodId <String>]`: key: id of microsoftAuthenticatorAuthenticationMethod
   - `[MobileAppTroubleshootingEventId <String>]`: key: id of mobileAppTroubleshootingEvent
   - `[NotebookId <String>]`: key: id of notebook
   - `[OnenotePageId <String>]`: key: id of onenotePage
@@ -236,10 +247,16 @@ INPUTOBJECT <IUsersActionsIdentity>: Identity Parameter
   - `[OutlookTaskFolderId <String>]`: key: id of outlookTaskFolder
   - `[OutlookTaskGroupId <String>]`: key: id of outlookTaskGroup
   - `[OutlookTaskId <String>]`: key: id of outlookTask
-  - `[SharedInsightId <String>]`: key: id of sharedInsight
-  - `[TrendingId <String>]`: key: id of trending
-  - `[UsedInsightId <String>]`: key: id of usedInsight
+  - `[PasswordlessMicrosoftAuthenticatorAuthenticationMethodId <String>]`: key: id of passwordlessMicrosoftAuthenticatorAuthenticationMethod
+  - `[PermissionId <String>]`: key: id of permission
+  - `[ResourceSpecificPermissionGrantId <String>]`: key: id of resourceSpecificPermissionGrant
+  - `[SensitivityLabelId <String>]`: key: id of sensitivityLabel
+  - `[SubscriptionId <String>]`: key: id of subscription
+  - `[TeamsAppInstallationId <String>]`: key: id of teamsAppInstallation
+  - `[TodoTaskId <String>]`: key: id of todoTask
+  - `[TodoTaskListId <String>]`: key: id of todoTaskList
   - `[UserId <String>]`: key: id of user
+  - `[WindowsHelloForBusinessAuthenticationMethodId <String>]`: key: id of windowsHelloForBusinessAuthenticationMethod
 
 ## RELATED LINKS
 

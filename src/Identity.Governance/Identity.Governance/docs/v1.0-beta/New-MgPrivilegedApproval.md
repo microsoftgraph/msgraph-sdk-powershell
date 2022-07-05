@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgPrivilegedApproval
 
 ## SYNOPSIS
-Add new entity to privilegedApproval
+Create privilegedApproval
 
 ## SYNTAX
 
@@ -28,7 +28,7 @@ New-MgPrivilegedApproval -BodyParameter <IMicrosoftGraphPrivilegedApproval> [-Co
 ```
 
 ## DESCRIPTION
-Add new entity to privilegedApproval
+Create privilegedApproval
 
 ## EXAMPLES
 
@@ -142,7 +142,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -302,7 +302,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphPrivilegedApproval>: privilegedApproval
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[ApprovalDuration <TimeSpan?>]`: 
   - `[ApprovalState <String>]`: approvalState
   - `[ApprovalType <String>]`: 
@@ -310,7 +310,7 @@ BODYPARAMETER <IMicrosoftGraphPrivilegedApproval>: privilegedApproval
   - `[EndDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
   - `[Request <IMicrosoftGraphPrivilegedRoleAssignmentRequest>]`: privilegedRoleAssignmentRequest
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Id <String>]`: Read-only.
+    - `[Id <String>]`: 
     - `[AssignmentState <String>]`: The state of the assignment. The value can be Eligible for eligible assignment Active - if it is directly assigned Active by administrators, or activated on an eligible assignment by the users.
     - `[Duration <String>]`: The duration of a role assignment.
     - `[Reason <String>]`: The reason for the role assignment.
@@ -318,9 +318,9 @@ BODYPARAMETER <IMicrosoftGraphPrivilegedApproval>: privilegedApproval
     - `[RoleId <String>]`: The id of the role.
     - `[RoleInfo <IMicrosoftGraphPrivilegedRole>]`: privilegedRole
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[Id <String>]`: Read-only.
+      - `[Id <String>]`: 
       - `[Assignments <IMicrosoftGraphPrivilegedRoleAssignment[]>]`: The assignments for this role. Read-only. Nullable.
-        - `[Id <String>]`: Read-only.
+        - `[Id <String>]`: 
         - `[ExpirationDateTime <DateTime?>]`: The UTC DateTime when the temporary privileged role assignment will be expired. For permanent role assignment, the value is null.
         - `[IsElevated <Boolean?>]`: true if the role assignment is activated. false if the role assignment is deactivated.
         - `[ResultMessage <String>]`: Result message set by the service.
@@ -330,7 +330,7 @@ BODYPARAMETER <IMicrosoftGraphPrivilegedApproval>: privilegedApproval
       - `[Name <String>]`: Role name.
       - `[Settings <IMicrosoftGraphPrivilegedRoleSettings>]`: privilegedRoleSettings
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
-        - `[Id <String>]`: Read-only.
+        - `[Id <String>]`: 
         - `[ApprovalOnElevation <Boolean?>]`: true if the approval is required when activate the role. false if the approval is not required when activate the role.
         - `[ApproverIds <String[]>]`: List of Approval ids, if approval is required for activation.
         - `[ElevationDuration <TimeSpan?>]`: The duration when the role is activated.
@@ -343,7 +343,7 @@ BODYPARAMETER <IMicrosoftGraphPrivilegedApproval>: privilegedApproval
         - `[TicketingInfoOnElevation <Boolean?>]`: true if the ticketing information is required when activate the role. false if the ticketing information is not required when activate the role.
       - `[Summary <IMicrosoftGraphPrivilegedRoleSummary>]`: privilegedRoleSummary
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
-        - `[Id <String>]`: Read-only.
+        - `[Id <String>]`: 
         - `[ElevatedCount <Int32?>]`: The number of users that have the role assigned and the role is activated.
         - `[ManagedCount <Int32?>]`: The number of users that have the role assigned but the role is deactivated.
         - `[MfaEnabled <Boolean?>]`: true if the role activation requires MFA. false if the role activation doesn't require MFA.
@@ -368,7 +368,7 @@ BODYPARAMETER <IMicrosoftGraphPrivilegedApproval>: privilegedApproval
 
 REQUEST <IMicrosoftGraphPrivilegedRoleAssignmentRequest>: privilegedRoleAssignmentRequest
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[AssignmentState <String>]`: The state of the assignment. The value can be Eligible for eligible assignment Active - if it is directly assigned Active by administrators, or activated on an eligible assignment by the users.
   - `[Duration <String>]`: The duration of a role assignment.
   - `[Reason <String>]`: The reason for the role assignment.
@@ -376,9 +376,9 @@ REQUEST <IMicrosoftGraphPrivilegedRoleAssignmentRequest>: privilegedRoleAssignme
   - `[RoleId <String>]`: The id of the role.
   - `[RoleInfo <IMicrosoftGraphPrivilegedRole>]`: privilegedRole
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Id <String>]`: Read-only.
+    - `[Id <String>]`: 
     - `[Assignments <IMicrosoftGraphPrivilegedRoleAssignment[]>]`: The assignments for this role. Read-only. Nullable.
-      - `[Id <String>]`: Read-only.
+      - `[Id <String>]`: 
       - `[ExpirationDateTime <DateTime?>]`: The UTC DateTime when the temporary privileged role assignment will be expired. For permanent role assignment, the value is null.
       - `[IsElevated <Boolean?>]`: true if the role assignment is activated. false if the role assignment is deactivated.
       - `[ResultMessage <String>]`: Result message set by the service.
@@ -388,7 +388,7 @@ REQUEST <IMicrosoftGraphPrivilegedRoleAssignmentRequest>: privilegedRoleAssignme
     - `[Name <String>]`: Role name.
     - `[Settings <IMicrosoftGraphPrivilegedRoleSettings>]`: privilegedRoleSettings
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[Id <String>]`: Read-only.
+      - `[Id <String>]`: 
       - `[ApprovalOnElevation <Boolean?>]`: true if the approval is required when activate the role. false if the approval is not required when activate the role.
       - `[ApproverIds <String[]>]`: List of Approval ids, if approval is required for activation.
       - `[ElevationDuration <TimeSpan?>]`: The duration when the role is activated.
@@ -401,7 +401,7 @@ REQUEST <IMicrosoftGraphPrivilegedRoleAssignmentRequest>: privilegedRoleAssignme
       - `[TicketingInfoOnElevation <Boolean?>]`: true if the ticketing information is required when activate the role. false if the ticketing information is not required when activate the role.
     - `[Summary <IMicrosoftGraphPrivilegedRoleSummary>]`: privilegedRoleSummary
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[Id <String>]`: Read-only.
+      - `[Id <String>]`: 
       - `[ElevatedCount <Int32?>]`: The number of users that have the role assigned and the role is activated.
       - `[ManagedCount <Int32?>]`: The number of users that have the role assigned but the role is deactivated.
       - `[MfaEnabled <Boolean?>]`: true if the role activation requires MFA. false if the role activation doesn't require MFA.
@@ -421,9 +421,9 @@ REQUEST <IMicrosoftGraphPrivilegedRoleAssignmentRequest>: privilegedRoleAssignme
 
 ROLEINFO <IMicrosoftGraphPrivilegedRole>: privilegedRole
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[Assignments <IMicrosoftGraphPrivilegedRoleAssignment[]>]`: The assignments for this role. Read-only. Nullable.
-    - `[Id <String>]`: Read-only.
+    - `[Id <String>]`: 
     - `[ExpirationDateTime <DateTime?>]`: The UTC DateTime when the temporary privileged role assignment will be expired. For permanent role assignment, the value is null.
     - `[IsElevated <Boolean?>]`: true if the role assignment is activated. false if the role assignment is deactivated.
     - `[ResultMessage <String>]`: Result message set by the service.
@@ -433,7 +433,7 @@ ROLEINFO <IMicrosoftGraphPrivilegedRole>: privilegedRole
   - `[Name <String>]`: Role name.
   - `[Settings <IMicrosoftGraphPrivilegedRoleSettings>]`: privilegedRoleSettings
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Id <String>]`: Read-only.
+    - `[Id <String>]`: 
     - `[ApprovalOnElevation <Boolean?>]`: true if the approval is required when activate the role. false if the approval is not required when activate the role.
     - `[ApproverIds <String[]>]`: List of Approval ids, if approval is required for activation.
     - `[ElevationDuration <TimeSpan?>]`: The duration when the role is activated.
@@ -446,7 +446,7 @@ ROLEINFO <IMicrosoftGraphPrivilegedRole>: privilegedRole
     - `[TicketingInfoOnElevation <Boolean?>]`: true if the ticketing information is required when activate the role. false if the ticketing information is not required when activate the role.
   - `[Summary <IMicrosoftGraphPrivilegedRoleSummary>]`: privilegedRoleSummary
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Id <String>]`: Read-only.
+    - `[Id <String>]`: 
     - `[ElevatedCount <Int32?>]`: The number of users that have the role assigned and the role is activated.
     - `[ManagedCount <Int32?>]`: The number of users that have the role assigned but the role is deactivated.
     - `[MfaEnabled <Boolean?>]`: true if the role activation requires MFA. false if the role activation doesn't require MFA.

@@ -8,14 +8,14 @@ schema: 2.0.0
 # New-MgDeviceAppMgtTargetedManagedAppConfiguration
 
 ## SYNOPSIS
-Targeted managed app configurations.
+Create new navigation property to targetedManagedAppConfigurations for deviceAppManagement
 
 ## SYNTAX
 
 ### CreateExpanded (Default)
 ```
-New-MgDeviceAppMgtTargetedManagedAppConfiguration [-AdditionalProperties <Hashtable>] [-AppGroupType <String>]
- [-Apps <IMicrosoftGraphManagedMobileApp[]>]
+New-MgDeviceAppMgtTargetedManagedAppConfiguration [-AdditionalProperties <Hashtable>]
+ [-AppGroupType <TargetedManagedAppGroupType>] [-Apps <IMicrosoftGraphManagedMobileApp[]>]
  [-Assignments <IMicrosoftGraphTargetedManagedAppPolicyAssignment[]>] [-CreatedDateTime <DateTime>]
  [-CustomSettings <IMicrosoftGraphKeyValuePair[]>] [-DeployedAppCount <Int32>]
  [-DeploymentSummary <IMicrosoftGraphManagedAppPolicyDeploymentSummary>] [-Description <String>]
@@ -30,7 +30,7 @@ New-MgDeviceAppMgtTargetedManagedAppConfiguration
 ```
 
 ## DESCRIPTION
-Targeted managed app configurations.
+Create new navigation property to targetedManagedAppConfigurations for deviceAppManagement
 
 ## EXAMPLES
 
@@ -55,7 +55,7 @@ Accept wildcard characters: False
 Indicates a collection of apps to target which can be one of several pre-defined lists of apps or a manually selected list of apps
 
 ```yaml
-Type: System.String
+Type: Microsoft.Graph.PowerShell.Support.TargetedManagedAppGroupType
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -207,7 +207,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -335,19 +335,19 @@ To create the parameters described below, construct a hash table containing the 
 
 
 APPS <IMicrosoftGraphManagedMobileApp[]>: List of apps to which the policy is deployed.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[MobileAppIdentifier <IMicrosoftGraphMobileAppIdentifier>]`: The identifier for a mobile app.
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Version <String>]`: Version of the entity.
 
 ASSIGNMENTS <IMicrosoftGraphTargetedManagedAppPolicyAssignment[]>: Navigation property to list of inclusion and exclusion groups to which the policy is deployed.
-  - `[Id <String>]`: Read-only.
-  - `[Source <String>]`: Represents source of assignment.
+  - `[Id <String>]`: 
+  - `[Source <DeviceAndAppManagementAssignmentSource?>]`: Represents source of assignment.
   - `[SourceId <String>]`: Identifier for resource used for deployment to a group
   - `[Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget>]`: Base type for assignment targets.
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[DeviceAndAppManagementAssignmentFilterId <String>]`: The Id of the filter for the target assignment.
-    - `[DeviceAndAppManagementAssignmentFilterType <String>]`: Represents type of the assignment filter.
+    - `[DeviceAndAppManagementAssignmentFilterType <DeviceAndAppManagementAssignmentFilterType?>]`: Represents type of the assignment filter.
 
 BODYPARAMETER <IMicrosoftGraphTargetedManagedAppConfiguration>: Configuration used to deliver a set of custom settings as-is to all users in the targeted security group
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -360,25 +360,25 @@ BODYPARAMETER <IMicrosoftGraphTargetedManagedAppConfiguration>: Configuration us
   - `[LastModifiedDateTime <DateTime?>]`: Last time the policy was modified.
   - `[RoleScopeTagIds <String[]>]`: List of Scope Tags for this Entity instance.
   - `[Version <String>]`: Version of the entity.
-  - `[Id <String>]`: Read-only.
-  - `[AppGroupType <String>]`: Indicates a collection of apps to target which can be one of several pre-defined lists of apps or a manually selected list of apps
+  - `[Id <String>]`: 
+  - `[AppGroupType <TargetedManagedAppGroupType?>]`: Indicates a collection of apps to target which can be one of several pre-defined lists of apps or a manually selected list of apps
   - `[Apps <IMicrosoftGraphManagedMobileApp[]>]`: List of apps to which the policy is deployed.
-    - `[Id <String>]`: Read-only.
+    - `[Id <String>]`: 
     - `[MobileAppIdentifier <IMicrosoftGraphMobileAppIdentifier>]`: The identifier for a mobile app.
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Version <String>]`: Version of the entity.
   - `[Assignments <IMicrosoftGraphTargetedManagedAppPolicyAssignment[]>]`: Navigation property to list of inclusion and exclusion groups to which the policy is deployed.
-    - `[Id <String>]`: Read-only.
-    - `[Source <String>]`: Represents source of assignment.
+    - `[Id <String>]`: 
+    - `[Source <DeviceAndAppManagementAssignmentSource?>]`: Represents source of assignment.
     - `[SourceId <String>]`: Identifier for resource used for deployment to a group
     - `[Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget>]`: Base type for assignment targets.
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[DeviceAndAppManagementAssignmentFilterId <String>]`: The Id of the filter for the target assignment.
-      - `[DeviceAndAppManagementAssignmentFilterType <String>]`: Represents type of the assignment filter.
+      - `[DeviceAndAppManagementAssignmentFilterType <DeviceAndAppManagementAssignmentFilterType?>]`: Represents type of the assignment filter.
   - `[DeployedAppCount <Int32?>]`: Count of apps to which the current policy is deployed.
   - `[DeploymentSummary <IMicrosoftGraphManagedAppPolicyDeploymentSummary>]`: The ManagedAppEntity is the base entity type for all other entity types under app management workflow.
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Id <String>]`: Read-only.
+    - `[Id <String>]`: 
     - `[ConfigurationDeployedUserCount <Int32?>]`: Not yet documented
     - `[ConfigurationDeploymentSummaryPerApp <IMicrosoftGraphManagedAppPolicyDeploymentSummaryPerApp[]>]`: Not yet documented
       - `[ConfigurationAppliedUserCount <Int32?>]`: Number of users the policy is applied.
@@ -394,7 +394,7 @@ CUSTOMSETTINGS <IMicrosoftGraphKeyValuePair[]>: A set of string key and string v
 
 DEPLOYMENTSUMMARY <IMicrosoftGraphManagedAppPolicyDeploymentSummary>: The ManagedAppEntity is the base entity type for all other entity types under app management workflow.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[ConfigurationDeployedUserCount <Int32?>]`: Not yet documented
   - `[ConfigurationDeploymentSummaryPerApp <IMicrosoftGraphManagedAppPolicyDeploymentSummaryPerApp[]>]`: Not yet documented
     - `[ConfigurationAppliedUserCount <Int32?>]`: Number of users the policy is applied.

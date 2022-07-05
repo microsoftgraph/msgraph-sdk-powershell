@@ -12,13 +12,13 @@ Invoke action setUpResourcesFolder
 
 ## SYNTAX
 
-### Set1 (Default)
+### Set (Default)
 ```
 Set-MgEducationClassAssignmentUpResourceFolder -EducationAssignmentId <String> -EducationClassId <String>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### SetViaIdentity1
+### SetViaIdentity
 ```
 Set-MgEducationClassAssignmentUpResourceFolder -InputObject <IEducationIdentity> [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -36,7 +36,7 @@ key: id of educationAssignment
 
 ```yaml
 Type: System.String
-Parameter Sets: Set1
+Parameter Sets: Set
 Aliases:
 
 Required: True
@@ -51,7 +51,7 @@ key: id of educationClass
 
 ```yaml
 Type: System.String
-Parameter Sets: Set1
+Parameter Sets: Set
 Aliases:
 
 Required: True
@@ -67,7 +67,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IEducationIdentity
-Parameter Sets: SetViaIdentity1
+Parameter Sets: SetViaIdentity
 Aliases:
 
 Required: True
@@ -117,7 +117,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEducationAssignment
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEducationAssignment1
 
 ## NOTES
 

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDirectoryAdministrativeUnit
 
 ## SYNOPSIS
-Conceptual container for user and group directory objects.
+Get administrativeUnits from directory
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgDirectoryAdministrativeUnit -InputObject <IIdentityDirectoryManagementIden
 ```
 
 ## DESCRIPTION
-Conceptual container for user and group directory objects.
+Get administrativeUnits from directory
 
 ## EXAMPLES
 
@@ -229,7 +229,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAdministrativeUnit
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAdministrativeUnit1
 
 ## NOTES
 
@@ -262,6 +262,7 @@ INPUTOBJECT <IIdentityDirectoryManagementIdentity>: Identity Parameter
   - `[InternalDomainFederationId <String>]`: key: id of internalDomainFederation
   - `[OrgContactId <String>]`: key: id of orgContact
   - `[OrganizationId <String>]`: key: id of organization
+  - `[OrganizationalBrandingLocalizationId <String>]`: key: id of organizationalBrandingLocalization
   - `[OutboundSharedUserProfileUserId <String>]`: key: userId of outboundSharedUserProfile
   - `[ProfileCardPropertyId <String>]`: key: id of profileCardProperty
   - `[RecommendationId <String>]`: key: id of recommendation

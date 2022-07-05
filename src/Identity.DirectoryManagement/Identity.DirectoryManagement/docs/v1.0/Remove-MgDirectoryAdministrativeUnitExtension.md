@@ -8,26 +8,24 @@ schema: 2.0.0
 # Remove-MgDirectoryAdministrativeUnitExtension
 
 ## SYNOPSIS
-The collection of open extensions defined for this administrative unit.
-Nullable.
+Delete navigation property extensions for directory
 
 ## SYNTAX
 
-### Delete (Default)
+### Delete1 (Default)
 ```
 Remove-MgDirectoryAdministrativeUnitExtension -AdministrativeUnitId <String> -ExtensionId <String>
  [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### DeleteViaIdentity
+### DeleteViaIdentity1
 ```
 Remove-MgDirectoryAdministrativeUnitExtension -InputObject <IIdentityDirectoryManagementIdentity>
  [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-The collection of open extensions defined for this administrative unit.
-Nullable.
+Delete navigation property extensions for directory
 
 ## EXAMPLES
 
@@ -38,7 +36,7 @@ key: id of administrativeUnit
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete
+Parameter Sets: Delete1
 Aliases:
 
 Required: True
@@ -53,7 +51,7 @@ key: id of extension
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete
+Parameter Sets: Delete1
 Aliases:
 
 Required: True
@@ -84,7 +82,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
-Parameter Sets: DeleteViaIdentity
+Parameter Sets: DeleteViaIdentity1
 Aliases:
 
 Required: True
@@ -182,6 +180,7 @@ INPUTOBJECT <IIdentityDirectoryManagementIdentity>: Identity Parameter
   - `[InternalDomainFederationId <String>]`: key: id of internalDomainFederation
   - `[OrgContactId <String>]`: key: id of orgContact
   - `[OrganizationId <String>]`: key: id of organization
+  - `[OrganizationalBrandingLocalizationId <String>]`: key: id of organizationalBrandingLocalization
   - `[OutboundSharedUserProfileUserId <String>]`: key: userId of outboundSharedUserProfile
   - `[ProfileCardPropertyId <String>]`: key: id of profileCardProperty
   - `[RecommendationId <String>]`: key: id of recommendation

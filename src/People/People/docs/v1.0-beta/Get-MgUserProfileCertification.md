@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgUserProfileCertification
 
 ## SYNOPSIS
-Represents the details of certifications associated with a person.
+Get certifications from users
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgUserProfileCertification -InputObject <IPeopleIdentity> [-ExpandProperty <
 ```
 
 ## DESCRIPTION
-Represents the details of certifications associated with a person.
+Get certifications from users
 
 ## EXAMPLES
 

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgUserProfileWebsite
 
 ## SYNOPSIS
-Represents detailed information about websites associated with a user in various services.
+Update the navigation property websites in users
 
 ## SYNTAX
 
@@ -45,7 +45,7 @@ Update-MgUserProfileWebsite -InputObject <IPeopleIdentity> [-AdditionalPropertie
 ```
 
 ## DESCRIPTION
-Represents detailed information about websites associated with a user in various services.
+Update the navigation property websites in users
 
 ## EXAMPLES
 
@@ -174,7 +174,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -432,7 +432,7 @@ BODYPARAMETER <IMicrosoftGraphPersonWebsite>: personWebsite
   - `[Source <IMicrosoftGraphPersonDataSources>]`: personDataSources
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Type <String[]>]`: 
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[Categories <String[]>]`: Contains categories a user has associated with the website (for example, personal, recipes).
   - `[Description <String>]`: Contains a description of the website.
   - `[DisplayName <String>]`: Contains a friendly name for the website.

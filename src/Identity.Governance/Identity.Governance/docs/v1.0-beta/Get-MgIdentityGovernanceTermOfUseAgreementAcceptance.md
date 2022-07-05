@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgIdentityGovernanceTermOfUseAgreementAcceptance
 
 ## SYNOPSIS
-Represents the current status of a user's response to a company's customizable terms of use agreement.
+Get agreementAcceptances from identityGovernance
 
 ## SYNTAX
 
@@ -25,14 +25,33 @@ Get-MgIdentityGovernanceTermOfUseAgreementAcceptance -AgreementAcceptanceId <Str
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
+### Get1
+```
+Get-MgIdentityGovernanceTermOfUseAgreementAcceptance -AgreementAcceptanceId <String> -AgreementId <String>
+ [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
+```
+
 ### GetViaIdentity
 ```
 Get-MgIdentityGovernanceTermOfUseAgreementAcceptance -InputObject <IIdentityGovernanceIdentity>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
+### GetViaIdentity1
+```
+Get-MgIdentityGovernanceTermOfUseAgreementAcceptance -InputObject <IIdentityGovernanceIdentity>
+ [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
+```
+
+### List1
+```
+Get-MgIdentityGovernanceTermOfUseAgreementAcceptance -AgreementId <String> [-ExpandProperty <String[]>]
+ [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>]
+ [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
+```
+
 ## DESCRIPTION
-Represents the current status of a user's response to a company's customizable terms of use agreement.
+Get agreementAcceptances from identityGovernance
 
 ## EXAMPLES
 
@@ -43,7 +62,22 @@ key: id of agreementAcceptance
 
 ```yaml
 Type: System.String
-Parameter Sets: Get
+Parameter Sets: Get, Get1
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -AgreementId
+key: id of agreement
+
+```yaml
+Type: System.String
+Parameter Sets: Get1, List1
 Aliases:
 
 Required: True
@@ -58,7 +92,7 @@ List all pages.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
-Parameter Sets: List
+Parameter Sets: List, List1
 Aliases:
 
 Required: False
@@ -74,7 +108,7 @@ By default, this variable will be set in the global scope.
 
 ```yaml
 Type: System.String
-Parameter Sets: List
+Parameter Sets: List, List1
 Aliases: CV
 
 Required: False
@@ -104,7 +138,7 @@ Filter items by property values
 
 ```yaml
 Type: System.String
-Parameter Sets: List
+Parameter Sets: List, List1
 Aliases:
 
 Required: False
@@ -120,7 +154,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
-Parameter Sets: GetViaIdentity
+Parameter Sets: GetViaIdentity, GetViaIdentity1
 Aliases:
 
 Required: True
@@ -135,7 +169,7 @@ Sets the page size of results.
 
 ```yaml
 Type: System.Int32
-Parameter Sets: List
+Parameter Sets: List, List1
 Aliases:
 
 Required: False
@@ -165,7 +199,7 @@ Search items by search phrases
 
 ```yaml
 Type: System.String
-Parameter Sets: List
+Parameter Sets: List, List1
 Aliases:
 
 Required: False
@@ -180,7 +214,7 @@ Skip the first n items
 
 ```yaml
 Type: System.Int32
-Parameter Sets: List
+Parameter Sets: List, List1
 Aliases:
 
 Required: False
@@ -195,7 +229,7 @@ Order items by property values
 
 ```yaml
 Type: System.String[]
-Parameter Sets: List
+Parameter Sets: List, List1
 Aliases: OrderBy
 
 Required: False
@@ -210,7 +244,7 @@ Show only the first n items
 
 ```yaml
 Type: System.Int32
-Parameter Sets: List
+Parameter Sets: List, List1
 Aliases: Limit
 
 Required: False
@@ -247,6 +281,8 @@ INPUTOBJECT <IIdentityGovernanceIdentity>: Identity Parameter
   - `[AccessPackageAssignmentResourceRoleId <String>]`: key: id of accessPackageAssignmentResourceRole
   - `[AccessPackageCatalogId <String>]`: key: id of accessPackageCatalog
   - `[AccessPackageId <String>]`: key: id of accessPackage
+  - `[AccessPackageId1 <String>]`: key: id of accessPackage
+  - `[AccessPackageId2 <String>]`: Usage: accessPackageId='{accessPackageId}'
   - `[AccessPackageResourceEnvironmentId <String>]`: key: id of accessPackageResourceEnvironment
   - `[AccessPackageResourceId <String>]`: key: id of accessPackageResource
   - `[AccessPackageResourceRequestId <String>]`: key: id of accessPackageResourceRequest
@@ -283,14 +319,18 @@ INPUTOBJECT <IIdentityGovernanceIdentity>: Identity Parameter
   - `[GovernanceRoleAssignmentRequestId <String>]`: key: id of governanceRoleAssignmentRequest
   - `[GovernanceRoleDefinitionId <String>]`: key: id of governanceRoleDefinition
   - `[GovernanceRoleSettingId <String>]`: key: id of governanceRoleSetting
-  - `[On <String>]`: Usage: on={on}
+  - `[GroupId <String>]`: key: id of group
+  - `[IncompatibleAccessPackageId <String>]`: Usage: incompatibleAccessPackageId='{incompatibleAccessPackageId}'
+  - `[On <String>]`: Usage: on='{on}'
   - `[PrivilegedAccessId <String>]`: key: id of privilegedAccess
   - `[PrivilegedApprovalId <String>]`: key: id of privilegedApproval
   - `[PrivilegedOperationEventId <String>]`: key: id of privilegedOperationEvent
   - `[PrivilegedRoleAssignmentId <String>]`: key: id of privilegedRoleAssignment
+  - `[PrivilegedRoleAssignmentId1 <String>]`: key: id of privilegedRoleAssignment
   - `[PrivilegedRoleAssignmentRequestId <String>]`: key: id of privilegedRoleAssignmentRequest
   - `[PrivilegedRoleId <String>]`: key: id of privilegedRole
   - `[ProgramControlId <String>]`: key: id of programControl
+  - `[ProgramControlId1 <String>]`: key: id of programControl
   - `[ProgramControlTypeId <String>]`: key: id of programControlType
   - `[ProgramId <String>]`: key: id of program
   - `[UserConsentRequestId <String>]`: key: id of userConsentRequest

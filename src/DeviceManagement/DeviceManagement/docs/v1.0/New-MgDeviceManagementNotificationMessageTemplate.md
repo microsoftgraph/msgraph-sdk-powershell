@@ -8,27 +8,27 @@ schema: 2.0.0
 # New-MgDeviceManagementNotificationMessageTemplate
 
 ## SYNOPSIS
-The Notification Message Templates.
+Create new navigation property to notificationMessageTemplates for deviceManagement
 
 ## SYNTAX
 
-### CreateExpanded1 (Default)
+### CreateExpanded (Default)
 ```
 New-MgDeviceManagementNotificationMessageTemplate [-AdditionalProperties <Hashtable>]
- [-BrandingOptions <String>] [-DefaultLocale <String>] [-DisplayName <String>] [-Id <String>]
- [-LastModifiedDateTime <DateTime>]
+ [-BrandingOptions <NotificationTemplateBrandingOptions>] [-DefaultLocale <String>] [-DisplayName <String>]
+ [-Id <String>] [-LastModifiedDateTime <DateTime>]
  [-LocalizedNotificationMessages <IMicrosoftGraphLocalizedNotificationMessage[]>] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
-### Create1
+### Create
 ```
 New-MgDeviceManagementNotificationMessageTemplate -BodyParameter <IMicrosoftGraphNotificationMessageTemplate>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-The Notification Message Templates.
+Create new navigation property to notificationMessageTemplates for deviceManagement
 
 ## EXAMPLES
 
@@ -39,7 +39,7 @@ Additional Parameters
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: CreateExpanded1
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -57,7 +57,7 @@ To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETE
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphNotificationMessageTemplate
-Parameter Sets: Create1
+Parameter Sets: Create
 Aliases:
 
 Required: True
@@ -72,8 +72,8 @@ Branding Options for the Message Template.
 Branding is defined in the Intune Admin Console.
 
 ```yaml
-Type: System.String
-Parameter Sets: CreateExpanded1
+Type: Microsoft.Graph.PowerShell.Support.NotificationTemplateBrandingOptions
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -88,7 +88,7 @@ The default locale to fallback onto when the requested locale is not available.
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded1
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -103,7 +103,7 @@ Display name for the Notification Message Template.
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded1
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -114,11 +114,11 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded1
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -133,7 +133,7 @@ DateTime the object was last modified.
 
 ```yaml
 Type: System.DateTime
-Parameter Sets: CreateExpanded1
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -149,7 +149,7 @@ To construct, please use Get-Help -Online and see NOTES section for LOCALIZEDNOT
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphLocalizedNotificationMessage[]
-Parameter Sets: CreateExpanded1
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -212,13 +212,13 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphNotificationMessageTemplate>: Notification messages are messages that are sent to end users who are determined to be not-compliant with the compliance policies defined by the administrator. Administrators choose notifications and configure them in the Intune Admin Console using the compliance policy creation page under the “Actions for non-compliance” section. Use the notificationMessageTemplate object to create your own custom notifications for administrators to choose while configuring actions for non-compliance.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
-  - `[BrandingOptions <String>]`: Branding Options for the Message Template. Branding is defined in the Intune Admin Console.
+  - `[Id <String>]`: 
+  - `[BrandingOptions <NotificationTemplateBrandingOptions?>]`: Branding Options for the Message Template. Branding is defined in the Intune Admin Console.
   - `[DefaultLocale <String>]`: The default locale to fallback onto when the requested locale is not available.
   - `[DisplayName <String>]`: Display name for the Notification Message Template.
   - `[LastModifiedDateTime <DateTime?>]`: DateTime the object was last modified.
   - `[LocalizedNotificationMessages <IMicrosoftGraphLocalizedNotificationMessage[]>]`: The list of localized messages for this Notification Message Template.
-    - `[Id <String>]`: Read-only.
+    - `[Id <String>]`: 
     - `[IsDefault <Boolean?>]`: Flag to indicate whether or not this is the default locale for language fallback. This flag can only be set. To unset, set this property to true on another Localized Notification Message.
     - `[LastModifiedDateTime <DateTime?>]`: DateTime the object was last modified.
     - `[Locale <String>]`: The Locale for which this message is destined.
@@ -226,7 +226,7 @@ BODYPARAMETER <IMicrosoftGraphNotificationMessageTemplate>: Notification message
     - `[Subject <String>]`: The Message Template Subject.
 
 LOCALIZEDNOTIFICATIONMESSAGES <IMicrosoftGraphLocalizedNotificationMessage[]>: The list of localized messages for this Notification Message Template.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[IsDefault <Boolean?>]`: Flag to indicate whether or not this is the default locale for language fallback. This flag can only be set. To unset, set this property to true on another Localized Notification Message.
   - `[LastModifiedDateTime <DateTime?>]`: DateTime the object was last modified.
   - `[Locale <String>]`: The Locale for which this message is destined.

@@ -12,12 +12,12 @@ Invoke function delta
 
 ## SYNTAX
 
-### Delta (Default)
+### Delta1 (Default)
 ```
 Get-MgEducationMeAssignmentCategoryDelta -EducationAssignmentId <String> [<CommonParameters>]
 ```
 
-### DeltaViaIdentity
+### DeltaViaIdentity1
 ```
 Get-MgEducationMeAssignmentCategoryDelta -InputObject <IEducationIdentity> [<CommonParameters>]
 ```
@@ -34,7 +34,7 @@ key: id of educationAssignment
 
 ```yaml
 Type: System.String
-Parameter Sets: Delta
+Parameter Sets: Delta1
 Aliases:
 
 Required: True
@@ -50,7 +50,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IEducationIdentity
-Parameter Sets: DeltaViaIdentity
+Parameter Sets: DeltaViaIdentity1
 Aliases:
 
 Required: True

@@ -8,9 +8,7 @@ schema: 2.0.0
 # Remove-MgBookingBusinessStaffMember
 
 ## SYNOPSIS
-All the staff members that provide services in this business.
-Read-only.
-Nullable.
+Delete navigation property staffMembers for solutions
 
 ## SYNTAX
 
@@ -27,9 +25,7 @@ Remove-MgBookingBusinessStaffMember -InputObject <IBookingsIdentity> [-IfMatch <
 ```
 
 ## DESCRIPTION
-All the staff members that provide services in this business.
-Read-only.
-Nullable.
+Delete navigation property staffMembers for solutions
 
 ## EXAMPLES
 

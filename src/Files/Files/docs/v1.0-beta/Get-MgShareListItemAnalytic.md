@@ -8,36 +8,36 @@ schema: 2.0.0
 # Get-MgShareListItemAnalytic
 
 ## SYNOPSIS
-Analytics about the view activities that took place on this item.
+Get analytics from shares
 
 ## SYNTAX
 
-### Get1 (Default)
+### Get3 (Default)
 ```
 Get-MgShareListItemAnalytic -SharedDriveItemId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
-### Get
+### Get2
 ```
 Get-MgShareListItemAnalytic -ListItemId <String> -SharedDriveItemId <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
-### GetViaIdentity
+### GetViaIdentity2
 ```
 Get-MgShareListItemAnalytic -InputObject <IFilesIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
-### GetViaIdentity1
+### GetViaIdentity3
 ```
 Get-MgShareListItemAnalytic -InputObject <IFilesIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Analytics about the view activities that took place on this item.
+Get analytics from shares
 
 ## EXAMPLES
 
@@ -64,7 +64,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IFilesIdentity
-Parameter Sets: GetViaIdentity, GetViaIdentity1
+Parameter Sets: GetViaIdentity2, GetViaIdentity3
 Aliases:
 
 Required: True
@@ -79,7 +79,7 @@ key: id of listItem
 
 ```yaml
 Type: System.String
-Parameter Sets: Get
+Parameter Sets: Get2
 Aliases:
 
 Required: True
@@ -109,7 +109,7 @@ key: id of sharedDriveItem
 
 ```yaml
 Type: System.String
-Parameter Sets: Get, Get1
+Parameter Sets: Get2, Get3
 Aliases:
 
 Required: True
@@ -128,7 +128,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphItemAnalytics
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphItemAnalytics1
 
 ## NOTES
 
@@ -143,19 +143,25 @@ INPUTOBJECT <IFilesIdentity>: Identity Parameter
   - `[ColumnDefinitionId <String>]`: key: id of columnDefinition
   - `[ColumnLinkId <String>]`: key: id of columnLink
   - `[ContentTypeId <String>]`: key: id of contentType
+  - `[ContentTypeId1 <String>]`: key: id of contentType
+  - `[DocumentSetVersionId <String>]`: key: id of documentSetVersion
   - `[DriveId <String>]`: key: id of drive
   - `[DriveItemId <String>]`: key: id of driveItem
-  - `[EndDateTime <String>]`: Usage: endDateTime={endDateTime}
+  - `[DriveItemId1 <String>]`: key: id of driveItem
+  - `[DriveItemVersionId <String>]`: key: id of driveItemVersion
+  - `[EndDateTime <String>]`: Usage: endDateTime='{endDateTime}'
   - `[GroupId <String>]`: key: id of group
-  - `[Interval <String>]`: Usage: interval={interval}
+  - `[Interval <String>]`: Usage: interval='{interval}'
   - `[ListItemId <String>]`: key: id of listItem
   - `[ListItemVersionId <String>]`: key: id of listItemVersion
-  - `[Q <String>]`: Usage: q={q}
+  - `[PermissionId <String>]`: key: id of permission
+  - `[Q <String>]`: Usage: q='{q}'
   - `[RichLongRunningOperationId <String>]`: key: id of richLongRunningOperation
   - `[SharedDriveItemId <String>]`: key: id of sharedDriveItem
-  - `[StartDateTime <String>]`: Usage: startDateTime={startDateTime}
+  - `[StartDateTime <String>]`: Usage: startDateTime='{startDateTime}'
   - `[SubscriptionId <String>]`: key: id of subscription
-  - `[Token <String>]`: Usage: token={token}
+  - `[ThumbnailSetId <String>]`: key: id of thumbnailSet
+  - `[Token <String>]`: Usage: token='{token}'
   - `[UserId <String>]`: key: id of user
 
 ## RELATED LINKS

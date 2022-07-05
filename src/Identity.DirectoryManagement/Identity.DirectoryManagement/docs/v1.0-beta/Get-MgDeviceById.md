@@ -25,18 +25,6 @@ Get-MgDeviceById
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### Get3
-```
-Get-MgDeviceById -DeviceId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
- [-ConsistencyLevel <String>] [<CommonParameters>]
-```
-
-### GetViaIdentity1
-```
-Get-MgDeviceById -InputObject <IIdentityDirectoryManagementIdentity> [-ExpandProperty <String[]>]
- [-Property <String[]>] [-ConsistencyLevel <String>] [<CommonParameters>]
-```
-
 ## DESCRIPTION
 Invoke action getByIds
 
@@ -75,52 +63,6 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -ConsistencyLevel
-Indicates the requested consistency level.
-Documentation URL: https://developer.microsoft.com/en-us/office/blogs/microsoft-graph-advanced-queries-for-directory-objects-are-now-generally-available/
-
-```yaml
-Type: System.String
-Parameter Sets: Get3, GetViaIdentity1
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -DeviceId
-key: id of device
-
-```yaml
-Type: System.String
-Parameter Sets: Get3
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ExpandProperty
-Expand related entities
-
-```yaml
-Type: System.String[]
-Parameter Sets: Get3, GetViaIdentity1
-Aliases: Expand
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Ids
 .
 
@@ -128,37 +70,6 @@ Accept wildcard characters: False
 Type: System.String[]
 Parameter Sets: GetExpanded
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -InputObject
-Identity Parameter
-To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
-
-```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
-Parameter Sets: GetViaIdentity1
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -Property
-Select properties to be returned
-
-```yaml
-Type: System.String[]
-Parameter Sets: Get3, GetViaIdentity1
-Aliases: Select
 
 Required: False
 Position: Named
@@ -218,13 +129,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
-
 ### Microsoft.Graph.PowerShell.Models.IPaths1545W8NDevicesMicrosoftGraphGetbyidsPostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
-
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDevice1
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDirectoryObject
 
@@ -241,40 +148,6 @@ BODYPARAMETER <IPaths1545W8NDevicesMicrosoftGraphGetbyidsPostRequestbodyContentA
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Ids <String[]>]`: 
   - `[Types <String[]>]`: 
-
-INPUTOBJECT <IIdentityDirectoryManagementIdentity>: Identity Parameter
-  - `[AdministrativeUnitId <String>]`: key: id of administrativeUnit
-  - `[AllowedValueId <String>]`: key: id of allowedValue
-  - `[AttributeSetId <String>]`: key: id of attributeSet
-  - `[CommandId <String>]`: key: id of command
-  - `[ContractId <String>]`: key: id of contract
-  - `[CustomSecurityAttributeDefinitionId <String>]`: key: id of customSecurityAttributeDefinition
-  - `[DeviceId <String>]`: key: id of device
-  - `[DirectoryObjectId <String>]`: key: id of directoryObject
-  - `[DirectoryRoleId <String>]`: key: id of directoryRole
-  - `[DirectoryRoleTemplateId <String>]`: key: id of directoryRoleTemplate
-  - `[DirectorySettingId <String>]`: key: id of directorySetting
-  - `[DirectorySettingTemplateId <String>]`: key: id of directorySettingTemplate
-  - `[DomainDnsRecordId <String>]`: key: id of domainDnsRecord
-  - `[DomainId <String>]`: key: id of domain
-  - `[ExtensionId <String>]`: key: id of extension
-  - `[FeatureRolloutPolicyId <String>]`: key: id of featureRolloutPolicy
-  - `[IdentityProviderBaseId <String>]`: key: id of identityProviderBase
-  - `[InboundSharedUserProfileUserId <String>]`: key: userId of inboundSharedUserProfile
-  - `[InternalDomainFederationId <String>]`: key: id of internalDomainFederation
-  - `[OrgContactId <String>]`: key: id of orgContact
-  - `[OrganizationId <String>]`: key: id of organization
-  - `[OutboundSharedUserProfileUserId <String>]`: key: userId of outboundSharedUserProfile
-  - `[ProfileCardPropertyId <String>]`: key: id of profileCardProperty
-  - `[RecommendationId <String>]`: key: id of recommendation
-  - `[RecommendationResourceId <String>]`: key: id of recommendationResource
-  - `[ScopedRoleMembershipId <String>]`: key: id of scopedRoleMembership
-  - `[SharedEmailDomainId <String>]`: key: id of sharedEmailDomain
-  - `[SharedEmailDomainInvitationId <String>]`: key: id of sharedEmailDomainInvitation
-  - `[SubscribedSkuId <String>]`: key: id of subscribedSku
-  - `[TenantReferenceTenantId <String>]`: key: tenantId of tenantReference
-  - `[UsageRightId <String>]`: key: id of usageRight
-  - `[UserId <String>]`: key: id of user
 
 ## RELATED LINKS
 

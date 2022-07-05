@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgPolicyAuthenticationFlowPolicy
 
 ## SYNOPSIS
-The policy configuration of the self-service sign-up experience of external users.
+Get authenticationFlowsPolicy from policies
 
 ## SYNTAX
 
@@ -17,7 +17,7 @@ Get-MgPolicyAuthenticationFlowPolicy [-ExpandProperty <String[]>] [-Property <St
 ```
 
 ## DESCRIPTION
-The policy configuration of the self-service sign-up experience of external users.
+Get authenticationFlowsPolicy from policies
 
 ## EXAMPLES
 

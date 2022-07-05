@@ -12,7 +12,7 @@ Create new navigation property to swapShiftsChangeRequests for teams
 
 ## SYNTAX
 
-### CreateExpanded1 (Default)
+### CreateExpanded (Default)
 ```
 New-MgTeamScheduleSwapShiftChangeRequest -TeamId <String> [-AdditionalProperties <Hashtable>]
  [-AssignedTo <String>] [-CreatedDateTime <DateTime>] [-Id <String>]
@@ -23,19 +23,19 @@ New-MgTeamScheduleSwapShiftChangeRequest -TeamId <String> [-AdditionalProperties
  [-SenderUserId <String>] [-State <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### Create1
+### Create
 ```
 New-MgTeamScheduleSwapShiftChangeRequest -TeamId <String>
- -BodyParameter <IMicrosoftGraphSwapShiftsChangeRequest1> [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphSwapShiftsChangeRequest> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### CreateViaIdentity1
+### CreateViaIdentity
 ```
 New-MgTeamScheduleSwapShiftChangeRequest -InputObject <ITeamsIdentity>
- -BodyParameter <IMicrosoftGraphSwapShiftsChangeRequest1> [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphSwapShiftsChangeRequest> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### CreateViaIdentityExpanded1
+### CreateViaIdentityExpanded
 ```
 New-MgTeamScheduleSwapShiftChangeRequest -InputObject <ITeamsIdentity> [-AdditionalProperties <Hashtable>]
  [-AssignedTo <String>] [-CreatedDateTime <DateTime>] [-Id <String>]
@@ -58,7 +58,7 @@ Additional Parameters
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -73,7 +73,7 @@ scheduleChangeRequestActor
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -88,8 +88,8 @@ swapShiftsChangeRequest
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSwapShiftsChangeRequest1
-Parameter Sets: Create1, CreateViaIdentity1
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSwapShiftsChangeRequest
+Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
 Required: True
@@ -105,7 +105,7 @@ For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 
 ```yaml
 Type: System.DateTime
-Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -116,11 +116,11 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -136,7 +136,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.ITeamsIdentity
-Parameter Sets: CreateViaIdentity1, CreateViaIdentityExpanded1
+Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
 Required: True
@@ -152,7 +152,7 @@ To construct, please use Get-Help -Online and see NOTES section for LASTMODIFIED
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentitySet
-Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -168,7 +168,7 @@ For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 
 ```yaml
 Type: System.DateTime
-Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -183,7 +183,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.DateTime
-Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -198,7 +198,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -213,7 +213,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -229,7 +229,7 @@ For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 
 ```yaml
 Type: System.DateTime
-Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -244,7 +244,7 @@ Custom message sent by recipient of the offer shift request.
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -255,11 +255,11 @@ Accept wildcard characters: False
 ```
 
 ### -RecipientShiftId
-ShiftId for the recipient user with whom the request is to swap.
+Shift ID for the recipient user with whom the request is to swap.
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -270,11 +270,11 @@ Accept wildcard characters: False
 ```
 
 ### -RecipientUserId
-User ID of the recipient of the offer shift request.
+User id of the recipient of the offer shift request.
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -289,7 +289,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.DateTime
-Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -304,7 +304,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -315,11 +315,11 @@ Accept wildcard characters: False
 ```
 
 ### -SenderShiftId
-User ID of the sender of the offer shift request.
+User id of the sender of the offer shift request.
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -334,7 +334,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -349,7 +349,7 @@ scheduleChangeState
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -364,7 +364,7 @@ key: id of team
 
 ```yaml
 Type: System.String
-Parameter Sets: Create1, CreateExpanded1
+Parameter Sets: Create, CreateExpanded
 Aliases:
 
 Required: True
@@ -410,13 +410,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSwapShiftsChangeRequest1
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSwapShiftsChangeRequest
 
 ### Microsoft.Graph.PowerShell.Models.ITeamsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSwapShiftsChangeRequest1
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSwapShiftsChangeRequest
 
 ## NOTES
 
@@ -427,12 +427,12 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-BODYPARAMETER <IMicrosoftGraphSwapShiftsChangeRequest1>: swapShiftsChangeRequest
+BODYPARAMETER <IMicrosoftGraphSwapShiftsChangeRequest>: swapShiftsChangeRequest
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[RecipientActionDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
   - `[RecipientActionMessage <String>]`: Custom message sent by recipient of the offer shift request.
-  - `[RecipientUserId <String>]`: User ID of the recipient of the offer shift request.
-  - `[SenderShiftId <String>]`: User ID of the sender of the offer shift request.
+  - `[RecipientUserId <String>]`: User id of the recipient of the offer shift request.
+  - `[SenderShiftId <String>]`: User id of the sender of the offer shift request.
   - `[AssignedTo <String>]`: scheduleChangeRequestActor
   - `[ManagerActionDateTime <DateTime?>]`: 
   - `[ManagerActionMessage <String>]`: 
@@ -451,8 +451,8 @@ BODYPARAMETER <IMicrosoftGraphSwapShiftsChangeRequest1>: swapShiftsChangeRequest
     - `[Device <IMicrosoftGraphIdentity>]`: identity
     - `[User <IMicrosoftGraphIdentity>]`: identity
   - `[LastModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-  - `[Id <String>]`: Read-only.
-  - `[RecipientShiftId <String>]`: ShiftId for the recipient user with whom the request is to swap.
+  - `[Id <String>]`: 
+  - `[RecipientShiftId <String>]`: Shift ID for the recipient user with whom the request is to swap.
 
 INPUTOBJECT <ITeamsIdentity>: Identity Parameter
   - `[AssociatedTeamInfoId <String>]`: key: id of associatedTeamInfo
@@ -462,10 +462,12 @@ INPUTOBJECT <ITeamsIdentity>: Identity Parameter
   - `[ChatMessageId <String>]`: key: id of chatMessage
   - `[ChatMessageId1 <String>]`: key: id of chatMessage
   - `[ConversationMemberId <String>]`: key: id of conversationMember
+  - `[DeletedTeamId <String>]`: key: id of deletedTeam
   - `[GroupId <String>]`: key: id of group
   - `[OfferShiftRequestId <String>]`: key: id of offerShiftRequest
   - `[OpenShiftChangeRequestId <String>]`: key: id of openShiftChangeRequest
   - `[OpenShiftId <String>]`: key: id of openShift
+  - `[PinnedChatMessageInfoId <String>]`: key: id of pinnedChatMessageInfo
   - `[ResourceSpecificPermissionGrantId <String>]`: key: id of resourceSpecificPermissionGrant
   - `[SchedulingGroupId <String>]`: key: id of schedulingGroup
   - `[SharedWithChannelTeamInfoId <String>]`: key: id of sharedWithChannelTeamInfo
@@ -481,14 +483,11 @@ INPUTOBJECT <ITeamsIdentity>: Identity Parameter
   - `[TeamworkDeviceOperationId <String>]`: key: id of teamworkDeviceOperation
   - `[TeamworkTagId <String>]`: key: id of teamworkTag
   - `[TeamworkTagMemberId <String>]`: key: id of teamworkTagMember
-  - `[TenantId <String>]`: Usage: tenantId={tenantId}
   - `[TimeCardId <String>]`: key: id of timeCard
   - `[TimeOffId <String>]`: key: id of timeOff
   - `[TimeOffReasonId <String>]`: key: id of timeOffReason
   - `[TimeOffRequestId <String>]`: key: id of timeOffRequest
   - `[UserId <String>]`: key: id of user
-  - `[UserId1 <String>]`: Usage: userId={userId}
-  - `[UserPrincipalName <String>]`: Usage: userPrincipalName={userPrincipalName}
   - `[UserScopeTeamsAppInstallationId <String>]`: key: id of userScopeTeamsAppInstallation
   - `[WorkforceIntegrationId <String>]`: key: id of workforceIntegration
 

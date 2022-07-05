@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgComplianceEdiscoveryCaseSourceCollectionAdditionalSource
 
 ## SYNOPSIS
-Adds an additional source to the sourceCollection.
+Delete navigation property additionalSources for compliance
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Remove-MgComplianceEdiscoveryCaseSourceCollectionAdditionalSource -InputObject <
 ```
 
 ## DESCRIPTION
-Adds an additional source to the sourceCollection.
+Delete navigation property additionalSources for compliance
 
 ## EXAMPLES
 
@@ -185,6 +185,7 @@ INPUTOBJECT <IComplianceIdentity>: Identity Parameter
   - `[SiteSourceId <String>]`: key: id of siteSource
   - `[SourceCollectionId <String>]`: key: id of sourceCollection
   - `[TagId <String>]`: key: id of tag
+  - `[TagId1 <String>]`: key: id of tag
   - `[UnifiedGroupSourceId <String>]`: key: id of unifiedGroupSource
   - `[UserSourceId <String>]`: key: id of userSource
 

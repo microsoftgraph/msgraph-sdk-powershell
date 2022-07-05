@@ -8,42 +8,36 @@ schema: 2.0.0
 # Set-MgUserManagerByRef
 
 ## SYNOPSIS
-The user or contact that is this user's manager.
-Read-only.
-(HTTP Methods: GET, PUT, DELETE.).
-Supports $expand.
+Update the ref of navigation property manager in users
 
 ## SYNTAX
 
-### SetExpanded (Default)
+### SetExpanded1 (Default)
 ```
-Set-MgUserManagerByRef -UserId <String> [-AdditionalProperties <Hashtable>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
-```
-
-### Set
-```
-Set-MgUserManagerByRef -UserId <String> -BodyParameter <Hashtable> [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+Set-MgUserManagerByRef -UserId <String> [-AdditionalProperties <Hashtable>] [-OdataId <String>]
+ [-OdataType <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### SetViaIdentity
+### Set1
 ```
-Set-MgUserManagerByRef -InputObject <IUsersIdentity> -BodyParameter <Hashtable> [-PassThru] [-Confirm]
+Set-MgUserManagerByRef -UserId <String> -BodyParameter <IReferenceUpdateSchema> [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
-### SetViaIdentityExpanded
+### SetViaIdentity1
 ```
-Set-MgUserManagerByRef -InputObject <IUsersIdentity> [-AdditionalProperties <Hashtable>] [-PassThru]
+Set-MgUserManagerByRef -InputObject <IUsersIdentity> -BodyParameter <IReferenceUpdateSchema> [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
+### SetViaIdentityExpanded1
+```
+Set-MgUserManagerByRef -InputObject <IUsersIdentity> [-AdditionalProperties <Hashtable>] [-OdataId <String>]
+ [-OdataType <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+```
+
 ## DESCRIPTION
-The user or contact that is this user's manager.
-Read-only.
-(HTTP Methods: GET, PUT, DELETE.).
-Supports $expand.
+Update the ref of navigation property manager in users
 
 ## EXAMPLES
 
@@ -66,7 +60,7 @@ Additional Parameters
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: SetExpanded, SetViaIdentityExpanded
+Parameter Sets: SetExpanded1, SetViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -78,10 +72,11 @@ Accept wildcard characters: False
 
 ### -BodyParameter
 .
+To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: System.Collections.Hashtable
-Parameter Sets: Set, SetViaIdentity
+Type: Microsoft.Graph.PowerShell.Models.IReferenceUpdateSchema
+Parameter Sets: Set1, SetViaIdentity1
 Aliases:
 
 Required: True
@@ -97,13 +92,43 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IUsersIdentity
-Parameter Sets: SetViaIdentity, SetViaIdentityExpanded
+Parameter Sets: SetViaIdentity1, SetViaIdentityExpanded1
 Aliases:
 
 Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### -OdataId
+.
+
+```yaml
+Type: System.String
+Parameter Sets: SetExpanded1, SetViaIdentityExpanded1
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -OdataType
+.
+
+```yaml
+Type: System.String
+Parameter Sets: SetExpanded1, SetViaIdentityExpanded1
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -127,7 +152,7 @@ key: id of user
 
 ```yaml
 Type: System.String
-Parameter Sets: Set, SetExpanded
+Parameter Sets: Set1, SetExpanded1
 Aliases:
 
 Required: True
@@ -173,9 +198,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IUsersIdentity
+### Microsoft.Graph.PowerShell.Models.IReferenceUpdateSchema
 
-### System.Collections.Hashtable
+### Microsoft.Graph.PowerShell.Models.IUsersIdentity
 
 ## OUTPUTS
 
@@ -190,13 +215,23 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
+BODYPARAMETER <IReferenceUpdateSchema>: .
+  - `[(Any) <Object>]`: This indicates any property can be added to this object.
+  - `[OdataId <String>]`: 
+  - `[OdataType <String>]`: 
+
 INPUTOBJECT <IUsersIdentity>: Identity Parameter
+  - `[AttachmentBaseId <String>]`: key: id of attachmentBase
   - `[AttachmentId <String>]`: key: id of attachment
+  - `[AttachmentSessionId <String>]`: key: id of attachmentSession
+  - `[ChecklistItemId <String>]`: key: id of checklistItem
+  - `[DirectoryObjectId <String>]`: key: id of directoryObject
   - `[ExtensionId <String>]`: key: id of extension
   - `[LicenseDetailsId <String>]`: key: id of licenseDetails
   - `[LinkedResourceId <String>]`: key: id of linkedResource
   - `[MultiValueLegacyExtendedPropertyId <String>]`: key: id of multiValueLegacyExtendedProperty
   - `[NotificationId <String>]`: key: id of notification
+  - `[OAuth2PermissionGrantId <String>]`: key: id of oAuth2PermissionGrant
   - `[OutlookCategoryId <String>]`: key: id of outlookCategory
   - `[OutlookTaskFolderId <String>]`: key: id of outlookTaskFolder
   - `[OutlookTaskGroupId <String>]`: key: id of outlookTaskGroup

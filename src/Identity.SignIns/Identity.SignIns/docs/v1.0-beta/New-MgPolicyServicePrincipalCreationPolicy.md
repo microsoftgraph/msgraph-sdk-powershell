@@ -130,7 +130,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -231,9 +231,9 @@ BODYPARAMETER <IMicrosoftGraphServicePrincipalCreationPolicy>: servicePrincipalC
   - `[Description <String>]`: Description for this policy. Required.
   - `[DisplayName <String>]`: Display name for this policy. Required.
   - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[Excludes <IMicrosoftGraphServicePrincipalCreationConditionSet[]>]`: 
-    - `[Id <String>]`: Read-only.
+    - `[Id <String>]`: 
     - `[ApplicationIds <String[]>]`: 
     - `[ApplicationPublisherIds <String[]>]`: 
     - `[ApplicationTenantIds <String[]>]`: 
@@ -243,7 +243,7 @@ BODYPARAMETER <IMicrosoftGraphServicePrincipalCreationPolicy>: servicePrincipalC
   - `[IsBuiltIn <Boolean?>]`: 
 
 EXCLUDES <IMicrosoftGraphServicePrincipalCreationConditionSet[]>: .
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[ApplicationIds <String[]>]`: 
   - `[ApplicationPublisherIds <String[]>]`: 
   - `[ApplicationTenantIds <String[]>]`: 
@@ -251,7 +251,7 @@ EXCLUDES <IMicrosoftGraphServicePrincipalCreationConditionSet[]>: .
   - `[CertifiedApplicationsOnly <Boolean?>]`: 
 
 INCLUDES <IMicrosoftGraphServicePrincipalCreationConditionSet[]>: .
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[ApplicationIds <String[]>]`: 
   - `[ApplicationPublisherIds <String[]>]`: 
   - `[ApplicationTenantIds <String[]>]`: 

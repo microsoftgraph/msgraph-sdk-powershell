@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgUserProfileLanguage
 
 ## SYNOPSIS
-Represents detailed information about languages that a user has added to their profile.
+Delete navigation property languages for users
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Remove-MgUserProfileLanguage -InputObject <IPeopleIdentity> [-IfMatch <String>] 
 ```
 
 ## DESCRIPTION
-Represents detailed information about languages that a user has added to their profile.
+Delete navigation property languages for users
 
 ## EXAMPLES
 

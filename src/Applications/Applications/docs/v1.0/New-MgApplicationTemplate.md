@@ -22,7 +22,7 @@ New-MgApplicationTemplate [-AdditionalProperties <Hashtable>] [-Categories <Stri
 
 ### Create1
 ```
-New-MgApplicationTemplate -BodyParameter <IMicrosoftGraphApplicationTemplate> [-Confirm] [-WhatIf]
+New-MgApplicationTemplate -BodyParameter <IMicrosoftGraphApplicationTemplate1> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -53,7 +53,7 @@ applicationTemplate
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphApplicationTemplate
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphApplicationTemplate1
 Parameter Sets: Create1
 Aliases:
 
@@ -126,7 +126,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -238,11 +238,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphApplicationTemplate
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphApplicationTemplate1
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphApplicationTemplate
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphApplicationTemplate1
 
 ## NOTES
 
@@ -253,9 +253,9 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-BODYPARAMETER <IMicrosoftGraphApplicationTemplate>: applicationTemplate
+BODYPARAMETER <IMicrosoftGraphApplicationTemplate1>: applicationTemplate
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[Categories <String[]>]`: The list of categories for the application. Supported values can be: Collaboration, Business Management, Consumer, Content management, CRM, Data services, Developer services, E-commerce, Education, ERP, Finance, Health, Human resources, IT infrastructure, Mail, Management, Marketing, Media, Productivity, Project management, Telecommunications, Tools, Travel, and Web design & hosting.
   - `[Description <String>]`: A description of the application.
   - `[DisplayName <String>]`: The name of the application.

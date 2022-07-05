@@ -8,15 +8,15 @@ schema: 2.0.0
 # New-MgDeviceManagementVirtualEndpointOnPremisesConnection
 
 ## SYNOPSIS
-A defined collection of Azure resource information that can be used to establish on-premises network connectivity for Cloud PCs.
+Create new navigation property to onPremisesConnections for deviceManagement
 
 ## SYNTAX
 
 ### CreateExpanded (Default)
 ```
 New-MgDeviceManagementVirtualEndpointOnPremisesConnection [-AdditionalProperties <Hashtable>]
- [-AdDomainName <String>] [-AdDomainPassword <String>] [-AdDomainUsername <String>] [-DisplayName <String>]
- [-HealthCheckStatus <String>]
+ [-AdDomainName <String>] [-AdDomainPassword <String>] [-AdDomainUsername <String>]
+ [-AlternateResourceUrl <String>] [-DisplayName <String>] [-HealthCheckStatus <String>]
  [-HealthCheckStatusDetails <IMicrosoftGraphCloudPcOnPremisesConnectionStatusDetails>] [-Id <String>] [-InUse]
  [-ManagedBy <String>] [-OrganizationalUnit <String>] [-ResourceGroupId <String>] [-SubnetId <String>]
  [-SubscriptionId <String>] [-SubscriptionName <String>] [-Type <String>] [-VirtualNetworkId <String>]
@@ -30,7 +30,7 @@ New-MgDeviceManagementVirtualEndpointOnPremisesConnection
 ```
 
 ## DESCRIPTION
-A defined collection of Azure resource information that can be used to establish on-premises network connectivity for Cloud PCs.
+Create new navigation property to onPremisesConnections for deviceManagement
 
 ## EXAMPLES
 
@@ -99,6 +99,22 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -AlternateResourceUrl
+The interface URL of the partner service's resource that links to this Azure network connection.
+Returned only on $select.
+
+```yaml
+Type: System.String
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -BodyParameter
 cloudPcOnPremisesConnection
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
@@ -116,7 +132,7 @@ Accept wildcard characters: False
 ```
 
 ### -DisplayName
-The display name for the on-premises connection.
+The display name for the Azure network connection.
 
 ```yaml
 Type: System.String
@@ -162,7 +178,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -177,11 +193,11 @@ Accept wildcard characters: False
 ```
 
 ### -InUse
-When true, the on-premises connection is in use.
+When true, the Azure network connection is in use.
 When false, the connection is not in use.
 You cannot delete a connection that’s in use.
 Returned only on $select.
-For an example that shows how to get the inUse property, see Example 2: Get the selected properties of an on-premises connection, including healthCheckStatusDetails.
+For an example that shows how to get the inUse property, see Example 2: Get the selected properties of an Azure network connection, including healthCheckStatusDetails.
 Read-only.
 
 ```yaml
@@ -230,7 +246,7 @@ Accept wildcard characters: False
 
 ### -ResourceGroupId
 The ID of the target resource group.
-Required format: '/subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}'.
+Required format: /subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}.
 
 ```yaml
 Type: System.String
@@ -246,7 +262,7 @@ Accept wildcard characters: False
 
 ### -SubnetId
 The ID of the target subnet.
-Required format: '/subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{virtualNetworkId}/subnets/{subnetName}'.
+Required format: /subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{virtualNetworkId}/subnets/{subnetName}.
 
 ```yaml
 Type: System.String
@@ -308,7 +324,7 @@ Accept wildcard characters: False
 
 ### -VirtualNetworkId
 The ID of the target virtual network.
-Required format: '/subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{virtualNetworkName}'.
+Required format: /subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{virtualNetworkName}.
 
 ```yaml
 Type: System.String
@@ -375,11 +391,12 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphCloudPcOnPremisesConnection>: cloudPcOnPremisesConnection
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[AdDomainName <String>]`: The fully qualified domain name (FQDN) of the Active Directory domain you want to join. Optional.
   - `[AdDomainPassword <String>]`: The password associated with adDomainUsername.
   - `[AdDomainUsername <String>]`: The username of an Active Directory account (user or service account) that has permissions to create computer objects in Active Directory. Required format: admin@contoso.com. Optional.
-  - `[DisplayName <String>]`: The display name for the on-premises connection.
+  - `[AlternateResourceUrl <String>]`: The interface URL of the partner service's resource that links to this Azure network connection. Returned only on $select.
+  - `[DisplayName <String>]`: The display name for the Azure network connection.
   - `[HealthCheckStatus <String>]`: cloudPcOnPremisesConnectionStatus
   - `[HealthCheckStatusDetails <IMicrosoftGraphCloudPcOnPremisesConnectionStatusDetails>]`: cloudPcOnPremisesConnectionStatusDetails
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -393,15 +410,15 @@ BODYPARAMETER <IMicrosoftGraphCloudPcOnPremisesConnection>: cloudPcOnPremisesCon
       - `[StartDateTime <DateTime?>]`: The start time of the health check item. Read-only.
       - `[Status <String>]`: cloudPcOnPremisesConnectionStatus
     - `[StartDateTime <DateTime?>]`: The start time of the connection health check. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-  - `[InUse <Boolean?>]`: When true, the on-premises connection is in use. When false, the connection is not in use. You cannot delete a connection that’s in use. Returned only on $select. For an example that shows how to get the inUse property, see Example 2: Get the selected properties of an on-premises connection, including healthCheckStatusDetails. Read-only.
+  - `[InUse <Boolean?>]`: When true, the Azure network connection is in use. When false, the connection is not in use. You cannot delete a connection that’s in use. Returned only on $select. For an example that shows how to get the inUse property, see Example 2: Get the selected properties of an Azure network connection, including healthCheckStatusDetails. Read-only.
   - `[ManagedBy <String>]`: cloudPcManagementService
   - `[OrganizationalUnit <String>]`: The organizational unit (OU) in which the computer account is created. If left null, the OU that’s configured as the default (a well-known computer object container) in your Active Directory domain (OU) is used. Optional.
-  - `[ResourceGroupId <String>]`: The ID of the target resource group. Required format: '/subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}'.
-  - `[SubnetId <String>]`: The ID of the target subnet. Required format: '/subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{virtualNetworkId}/subnets/{subnetName}'.
+  - `[ResourceGroupId <String>]`: The ID of the target resource group. Required format: /subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}.
+  - `[SubnetId <String>]`: The ID of the target subnet. Required format: /subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{virtualNetworkId}/subnets/{subnetName}.
   - `[SubscriptionId <String>]`: The ID of the target Azure subscription that’s associated with your tenant.
   - `[SubscriptionName <String>]`: The name of the target Azure subscription. Read-only.
   - `[Type <String>]`: cloudPcOnPremisesConnectionType
-  - `[VirtualNetworkId <String>]`: The ID of the target virtual network. Required format: '/subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{virtualNetworkName}'.
+  - `[VirtualNetworkId <String>]`: The ID of the target virtual network. Required format: /subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{virtualNetworkName}.
 
 HEALTHCHECKSTATUSDETAILS <IMicrosoftGraphCloudPcOnPremisesConnectionStatusDetails>: cloudPcOnPremisesConnectionStatusDetails
   - `[(Any) <Object>]`: This indicates any property can be added to this object.

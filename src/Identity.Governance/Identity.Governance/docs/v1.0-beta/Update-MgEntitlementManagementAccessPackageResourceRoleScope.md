@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgEntitlementManagementAccessPackageResourceRoleScope
 
 ## SYNOPSIS
-Nullable.
+Update the navigation property accessPackageResourceRoleScopes in identityGovernance
 
 ## SYNTAX
 
@@ -46,7 +46,7 @@ Update-MgEntitlementManagementAccessPackageResourceRoleScope -InputObject <IIden
 ```
 
 ## DESCRIPTION
-Nullable.
+Update the navigation property accessPackageResourceRoleScopes in identityGovernance
 
 ## EXAMPLES
 
@@ -146,7 +146,7 @@ Accept wildcard characters: False
 ```
 
 ### -CreatedBy
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -177,7 +177,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -208,7 +208,7 @@ Accept wildcard characters: False
 ```
 
 ### -ModifiedBy
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -308,13 +308,13 @@ To create the parameters described below, construct a hash table containing the 
 
 ACCESSPACKAGERESOURCEROLE <IMicrosoftGraphAccessPackageResourceRole>: accessPackageResourceRole
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[AccessPackageResource <IMicrosoftGraphAccessPackageResource>]`: accessPackageResource
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Id <String>]`: Read-only.
+    - `[Id <String>]`: 
     - `[AccessPackageResourceEnvironment <IMicrosoftGraphAccessPackageResourceEnvironment>]`: accessPackageResourceEnvironment
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[Id <String>]`: Read-only.
+      - `[Id <String>]`: 
       - `[AccessPackageResources <IMicrosoftGraphAccessPackageResource[]>]`: Read-only. Required.
       - `[ConnectionInfo <IMicrosoftGraphConnectionInfo>]`: connectionInfo
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -330,7 +330,7 @@ ACCESSPACKAGERESOURCEROLE <IMicrosoftGraphAccessPackageResourceRole>: accessPack
       - `[OriginSystem <String>]`: The type of the resource in the origin system, that is, SharePointOnline. Requires $filter (eq).
     - `[AccessPackageResourceRoles <IMicrosoftGraphAccessPackageResourceRole[]>]`: Read-only. Nullable. Supports $expand.
     - `[AccessPackageResourceScopes <IMicrosoftGraphAccessPackageResourceScope[]>]`: Read-only. Nullable. Supports $expand.
-      - `[Id <String>]`: Read-only.
+      - `[Id <String>]`: 
       - `[AccessPackageResource <IMicrosoftGraphAccessPackageResource>]`: accessPackageResource
       - `[Description <String>]`: The description of the scope.
       - `[DisplayName <String>]`: The display name of the scope.
@@ -364,13 +364,13 @@ ACCESSPACKAGERESOURCEROLE <IMicrosoftGraphAccessPackageResourceRole>: accessPack
 
 ACCESSPACKAGERESOURCESCOPE <IMicrosoftGraphAccessPackageResourceScope>: accessPackageResourceScope
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[AccessPackageResource <IMicrosoftGraphAccessPackageResource>]`: accessPackageResource
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Id <String>]`: Read-only.
+    - `[Id <String>]`: 
     - `[AccessPackageResourceEnvironment <IMicrosoftGraphAccessPackageResourceEnvironment>]`: accessPackageResourceEnvironment
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[Id <String>]`: Read-only.
+      - `[Id <String>]`: 
       - `[AccessPackageResources <IMicrosoftGraphAccessPackageResource[]>]`: Read-only. Required.
       - `[ConnectionInfo <IMicrosoftGraphConnectionInfo>]`: connectionInfo
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -385,7 +385,7 @@ ACCESSPACKAGERESOURCESCOPE <IMicrosoftGraphAccessPackageResourceScope>: accessPa
       - `[OriginId <String>]`: The unique identifier of this environment in the origin system.
       - `[OriginSystem <String>]`: The type of the resource in the origin system, that is, SharePointOnline. Requires $filter (eq).
     - `[AccessPackageResourceRoles <IMicrosoftGraphAccessPackageResourceRole[]>]`: Read-only. Nullable. Supports $expand.
-      - `[Id <String>]`: Read-only.
+      - `[Id <String>]`: 
       - `[AccessPackageResource <IMicrosoftGraphAccessPackageResource>]`: accessPackageResource
       - `[Description <String>]`: A description for the resource role.
       - `[DisplayName <String>]`: The display name of the resource role such as the role defined by the application.
@@ -420,16 +420,16 @@ ACCESSPACKAGERESOURCESCOPE <IMicrosoftGraphAccessPackageResourceScope>: accessPa
 
 BODYPARAMETER <IMicrosoftGraphAccessPackageResourceRoleScope>: accessPackageResourceRoleScope
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[AccessPackageResourceRole <IMicrosoftGraphAccessPackageResourceRole>]`: accessPackageResourceRole
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Id <String>]`: Read-only.
+    - `[Id <String>]`: 
     - `[AccessPackageResource <IMicrosoftGraphAccessPackageResource>]`: accessPackageResource
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[Id <String>]`: Read-only.
+      - `[Id <String>]`: 
       - `[AccessPackageResourceEnvironment <IMicrosoftGraphAccessPackageResourceEnvironment>]`: accessPackageResourceEnvironment
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
-        - `[Id <String>]`: Read-only.
+        - `[Id <String>]`: 
         - `[AccessPackageResources <IMicrosoftGraphAccessPackageResource[]>]`: Read-only. Required.
         - `[ConnectionInfo <IMicrosoftGraphConnectionInfo>]`: connectionInfo
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -445,7 +445,7 @@ BODYPARAMETER <IMicrosoftGraphAccessPackageResourceRoleScope>: accessPackageReso
         - `[OriginSystem <String>]`: The type of the resource in the origin system, that is, SharePointOnline. Requires $filter (eq).
       - `[AccessPackageResourceRoles <IMicrosoftGraphAccessPackageResourceRole[]>]`: Read-only. Nullable. Supports $expand.
       - `[AccessPackageResourceScopes <IMicrosoftGraphAccessPackageResourceScope[]>]`: Read-only. Nullable. Supports $expand.
-        - `[Id <String>]`: Read-only.
+        - `[Id <String>]`: 
         - `[AccessPackageResource <IMicrosoftGraphAccessPackageResource>]`: accessPackageResource
         - `[Description <String>]`: The description of the scope.
         - `[DisplayName <String>]`: The display name of the scope.
@@ -477,9 +477,9 @@ BODYPARAMETER <IMicrosoftGraphAccessPackageResourceRoleScope>: accessPackageReso
     - `[OriginId <String>]`: The unique identifier of the resource role in the origin system. For a SharePoint Online site, the originId will be the sequence number of the role in the site.
     - `[OriginSystem <String>]`: The type of the resource in the origin system, such as SharePointOnline, AadApplication or AadGroup.
   - `[AccessPackageResourceScope <IMicrosoftGraphAccessPackageResourceScope>]`: accessPackageResourceScope
-  - `[CreatedBy <String>]`: Read-only.
+  - `[CreatedBy <String>]`: 
   - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-  - `[ModifiedBy <String>]`: Read-only.
+  - `[ModifiedBy <String>]`: 
   - `[ModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 
 INPUTOBJECT <IIdentityGovernanceIdentity>: Identity Parameter
@@ -489,6 +489,8 @@ INPUTOBJECT <IIdentityGovernanceIdentity>: Identity Parameter
   - `[AccessPackageAssignmentResourceRoleId <String>]`: key: id of accessPackageAssignmentResourceRole
   - `[AccessPackageCatalogId <String>]`: key: id of accessPackageCatalog
   - `[AccessPackageId <String>]`: key: id of accessPackage
+  - `[AccessPackageId1 <String>]`: key: id of accessPackage
+  - `[AccessPackageId2 <String>]`: Usage: accessPackageId='{accessPackageId}'
   - `[AccessPackageResourceEnvironmentId <String>]`: key: id of accessPackageResourceEnvironment
   - `[AccessPackageResourceId <String>]`: key: id of accessPackageResource
   - `[AccessPackageResourceRequestId <String>]`: key: id of accessPackageResourceRequest
@@ -525,14 +527,18 @@ INPUTOBJECT <IIdentityGovernanceIdentity>: Identity Parameter
   - `[GovernanceRoleAssignmentRequestId <String>]`: key: id of governanceRoleAssignmentRequest
   - `[GovernanceRoleDefinitionId <String>]`: key: id of governanceRoleDefinition
   - `[GovernanceRoleSettingId <String>]`: key: id of governanceRoleSetting
-  - `[On <String>]`: Usage: on={on}
+  - `[GroupId <String>]`: key: id of group
+  - `[IncompatibleAccessPackageId <String>]`: Usage: incompatibleAccessPackageId='{incompatibleAccessPackageId}'
+  - `[On <String>]`: Usage: on='{on}'
   - `[PrivilegedAccessId <String>]`: key: id of privilegedAccess
   - `[PrivilegedApprovalId <String>]`: key: id of privilegedApproval
   - `[PrivilegedOperationEventId <String>]`: key: id of privilegedOperationEvent
   - `[PrivilegedRoleAssignmentId <String>]`: key: id of privilegedRoleAssignment
+  - `[PrivilegedRoleAssignmentId1 <String>]`: key: id of privilegedRoleAssignment
   - `[PrivilegedRoleAssignmentRequestId <String>]`: key: id of privilegedRoleAssignmentRequest
   - `[PrivilegedRoleId <String>]`: key: id of privilegedRole
   - `[ProgramControlId <String>]`: key: id of programControl
+  - `[ProgramControlId1 <String>]`: key: id of programControl
   - `[ProgramControlTypeId <String>]`: key: id of programControlType
   - `[ProgramId <String>]`: key: id of program
   - `[UserConsentRequestId <String>]`: key: id of userConsentRequest

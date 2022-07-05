@@ -142,7 +142,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -293,7 +293,7 @@ ACCOUNTS <IMicrosoftGraphUserAccount[]>: .
 
 BODYPARAMETER <IMicrosoftGraphUserSecurityProfile>: userSecurityProfile
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[Accounts <IMicrosoftGraphUserAccount[]>]`: 
     - `[DisplayName <String>]`: 
     - `[LastSeenDateTime <DateTime?>]`: 
