@@ -11432,6 +11432,237 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/groups/{group-id}/groupLifecyclePolicies':
+    get:
+      tags:
+        - groups.groupLifecyclePolicy
+      summary: Get groupLifecyclePolicies from groups
+      operationId: groups_ListGroupLifecyclePolicies
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - alternateNotificationEmails
+                - alternateNotificationEmails desc
+                - groupLifetimeInDays
+                - groupLifetimeInDays desc
+                - managedGroupTypes
+                - managedGroupTypes desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - alternateNotificationEmails
+                - groupLifetimeInDays
+                - managedGroupTypes
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/microsoft.graph.groupLifecyclePolicyCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - groups.groupLifecyclePolicy
+      summary: Create new navigation property to groupLifecyclePolicies for groups
+      operationId: groups_CreateGroupLifecyclePolicies
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.groupLifecyclePolicy'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.groupLifecyclePolicy'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/groups/{group-id}/groupLifecyclePolicies/{groupLifecyclePolicy-id}':
+    get:
+      tags:
+        - groups.groupLifecyclePolicy
+      summary: Get groupLifecyclePolicies from groups
+      operationId: groups_GetGroupLifecyclePolicies
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: groupLifecyclePolicy-id
+          in: path
+          description: 'key: id of groupLifecyclePolicy'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: groupLifecyclePolicy
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - alternateNotificationEmails
+                - groupLifetimeInDays
+                - managedGroupTypes
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.groupLifecyclePolicy'
+          links:
+            addGroup:
+              operationId: groups.group.groupLifecyclePolicies.groupLifecyclePolicy.addGroup
+            removeGroup:
+              operationId: groups.group.groupLifecyclePolicies.groupLifecyclePolicy.removeGroup
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - groups.groupLifecyclePolicy
+      summary: Update the navigation property groupLifecyclePolicies in groups
+      operationId: groups_UpdateGroupLifecyclePolicies
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: groupLifecyclePolicy-id
+          in: path
+          description: 'key: id of groupLifecyclePolicy'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: groupLifecyclePolicy
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.groupLifecyclePolicy'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - groups.groupLifecyclePolicy
+      summary: Delete navigation property groupLifecyclePolicies for groups
+      operationId: groups_DeleteGroupLifecyclePolicies
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: groupLifecyclePolicy-id
+          in: path
+          description: 'key: id of groupLifecyclePolicy'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: groupLifecyclePolicy
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/groups/{group-id}/groupLifecyclePolicies/{groupLifecyclePolicy-id}/microsoft.graph.addGroup':
     post:
       tags:
