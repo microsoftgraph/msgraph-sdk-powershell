@@ -8,8 +8,7 @@ schema: 2.0.0
 # Get-MgCommunicationOnlineMeetingAttendanceReport
 
 ## SYNOPSIS
-The attendance reports of an online meeting.
-Read-only.
+Get attendanceReports from communications
 
 ## SYNTAX
 
@@ -45,8 +44,7 @@ Get-MgCommunicationOnlineMeetingAttendanceReport -OnlineMeetingId <String> [-Exp
 ```
 
 ## DESCRIPTION
-The attendance reports of an online meeting.
-Read-only.
+Get attendanceReports from communications
 
 ## EXAMPLES
 

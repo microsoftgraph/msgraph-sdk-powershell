@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgDeviceAppMgtMobileAppCategory
 
 ## SYNOPSIS
-The mobile app categories.
+Create new navigation property to mobileAppCategories for deviceAppManagement
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ New-MgDeviceAppMgtMobileAppCategory -BodyParameter <IMicrosoftGraphMobileAppCate
 ```
 
 ## DESCRIPTION
-The mobile app categories.
+Create new navigation property to mobileAppCategories for deviceAppManagement
 
 ## EXAMPLES
 
@@ -78,7 +78,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -162,7 +162,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphMobileAppCategory>: Contains properties for a single Intune app category.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[DisplayName <String>]`: The name of the app category.
   - `[LastModifiedDateTime <DateTime?>]`: The date and time the mobileAppCategory was last modified.
 

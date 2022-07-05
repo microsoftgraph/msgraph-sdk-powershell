@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgPolicyAuthorizationPolicy
 
 ## SYNOPSIS
-The policy that controls Azure AD authorization settings.
+Delete navigation property authorizationPolicy for policies
 
 ## SYNTAX
 
@@ -17,7 +17,7 @@ Remove-MgPolicyAuthorizationPolicy [-IfMatch <String>] [-PassThru] [-Confirm] [-
 ```
 
 ## DESCRIPTION
-The policy that controls Azure AD authorization settings.
+Delete navigation property authorizationPolicy for policies
 
 ## EXAMPLES
 

@@ -8,9 +8,7 @@ schema: 2.0.0
 # Get-MgSiteOnenoteSectionPage
 
 ## SYNOPSIS
-The collection of pages in the section.
-Read-only.
-Nullable.
+Get pages from sites
 
 ## SYNTAX
 
@@ -21,9 +19,7 @@ Get-MgSiteOnenoteSectionPage -OnenoteSectionId <String> -SiteId <String> [-Expan
 ```
 
 ## DESCRIPTION
-The collection of pages in the section.
-Read-only.
-Nullable.
+Get pages from sites
 
 ## EXAMPLES
 

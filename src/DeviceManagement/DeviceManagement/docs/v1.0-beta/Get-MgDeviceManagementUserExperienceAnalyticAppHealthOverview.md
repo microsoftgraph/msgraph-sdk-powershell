@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceManagementUserExperienceAnalyticAppHealthOverview
 
 ## SYNOPSIS
-User experience analytics appHealth overview
+Get userExperienceAnalyticsAppHealthOverview from deviceManagement
 
 ## SYNTAX
 
@@ -18,7 +18,7 @@ Get-MgDeviceManagementUserExperienceAnalyticAppHealthOverview [-ExpandProperty <
 ```
 
 ## DESCRIPTION
-User experience analytics appHealth overview
+Get userExperienceAnalyticsAppHealthOverview from deviceManagement
 
 ## EXAMPLES
 

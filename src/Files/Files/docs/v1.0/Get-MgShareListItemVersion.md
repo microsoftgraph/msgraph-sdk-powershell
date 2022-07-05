@@ -8,42 +8,42 @@ schema: 2.0.0
 # Get-MgShareListItemVersion
 
 ## SYNOPSIS
-The list of previous versions of the list item.
+Get versions from shares
 
 ## SYNTAX
 
-### List3 (Default)
+### List1 (Default)
 ```
 Get-MgShareListItemVersion -SharedDriveItemId <String> [-ExpandProperty <String[]>] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
  [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
-### Get2
+### Get
 ```
 Get-MgShareListItemVersion -ListItemId <String> -ListItemVersionId <String> -SharedDriveItemId <String>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
-### Get3
+### Get1
 ```
 Get-MgShareListItemVersion -ListItemVersionId <String> -SharedDriveItemId <String>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
-### GetViaIdentity2
+### GetViaIdentity
 ```
 Get-MgShareListItemVersion -InputObject <IFilesIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
-### GetViaIdentity3
+### GetViaIdentity1
 ```
 Get-MgShareListItemVersion -InputObject <IFilesIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
-### List2
+### List
 ```
 Get-MgShareListItemVersion -ListItemId <String> -SharedDriveItemId <String> [-ExpandProperty <String[]>]
  [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>]
@@ -51,7 +51,7 @@ Get-MgShareListItemVersion -ListItemId <String> -SharedDriveItemId <String> [-Ex
 ```
 
 ## DESCRIPTION
-The list of previous versions of the list item.
+Get versions from shares
 
 ## EXAMPLES
 
@@ -62,7 +62,7 @@ List all pages.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
-Parameter Sets: List2, List3
+Parameter Sets: List, List1
 Aliases:
 
 Required: False
@@ -78,7 +78,7 @@ By default, this variable will be set in the global scope.
 
 ```yaml
 Type: System.String
-Parameter Sets: List2, List3
+Parameter Sets: List, List1
 Aliases: CV
 
 Required: False
@@ -108,7 +108,7 @@ Filter items by property values
 
 ```yaml
 Type: System.String
-Parameter Sets: List2, List3
+Parameter Sets: List, List1
 Aliases:
 
 Required: False
@@ -124,7 +124,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IFilesIdentity
-Parameter Sets: GetViaIdentity2, GetViaIdentity3
+Parameter Sets: GetViaIdentity, GetViaIdentity1
 Aliases:
 
 Required: True
@@ -139,7 +139,7 @@ key: id of listItem
 
 ```yaml
 Type: System.String
-Parameter Sets: Get2, List2
+Parameter Sets: Get, List
 Aliases:
 
 Required: True
@@ -154,7 +154,7 @@ key: id of listItemVersion
 
 ```yaml
 Type: System.String
-Parameter Sets: Get2, Get3
+Parameter Sets: Get, Get1
 Aliases:
 
 Required: True
@@ -169,7 +169,7 @@ Sets the page size of results.
 
 ```yaml
 Type: System.Int32
-Parameter Sets: List2, List3
+Parameter Sets: List, List1
 Aliases:
 
 Required: False
@@ -199,7 +199,7 @@ Search items by search phrases
 
 ```yaml
 Type: System.String
-Parameter Sets: List2, List3
+Parameter Sets: List, List1
 Aliases:
 
 Required: False
@@ -214,7 +214,7 @@ key: id of sharedDriveItem
 
 ```yaml
 Type: System.String
-Parameter Sets: Get2, Get3, List2, List3
+Parameter Sets: Get, Get1, List, List1
 Aliases:
 
 Required: True
@@ -229,7 +229,7 @@ Skip the first n items
 
 ```yaml
 Type: System.Int32
-Parameter Sets: List2, List3
+Parameter Sets: List, List1
 Aliases:
 
 Required: False
@@ -244,7 +244,7 @@ Order items by property values
 
 ```yaml
 Type: System.String[]
-Parameter Sets: List2, List3
+Parameter Sets: List, List1
 Aliases: OrderBy
 
 Required: False
@@ -259,7 +259,7 @@ Show only the first n items
 
 ```yaml
 Type: System.Int32
-Parameter Sets: List2, List3
+Parameter Sets: List, List1
 Aliases: Limit
 
 Required: False
@@ -293,19 +293,25 @@ INPUTOBJECT <IFilesIdentity>: Identity Parameter
   - `[ColumnDefinitionId <String>]`: key: id of columnDefinition
   - `[ColumnLinkId <String>]`: key: id of columnLink
   - `[ContentTypeId <String>]`: key: id of contentType
+  - `[ContentTypeId1 <String>]`: key: id of contentType
+  - `[DocumentSetVersionId <String>]`: key: id of documentSetVersion
   - `[DriveId <String>]`: key: id of drive
   - `[DriveItemId <String>]`: key: id of driveItem
-  - `[EndDateTime <String>]`: Usage: endDateTime={endDateTime}
+  - `[DriveItemId1 <String>]`: key: id of driveItem
+  - `[DriveItemVersionId <String>]`: key: id of driveItemVersion
+  - `[EndDateTime <String>]`: Usage: endDateTime='{endDateTime}'
   - `[GroupId <String>]`: key: id of group
-  - `[Interval <String>]`: Usage: interval={interval}
+  - `[Interval <String>]`: Usage: interval='{interval}'
   - `[ListItemId <String>]`: key: id of listItem
   - `[ListItemVersionId <String>]`: key: id of listItemVersion
-  - `[Q <String>]`: Usage: q={q}
+  - `[PermissionId <String>]`: key: id of permission
+  - `[Q <String>]`: Usage: q='{q}'
   - `[RichLongRunningOperationId <String>]`: key: id of richLongRunningOperation
   - `[SharedDriveItemId <String>]`: key: id of sharedDriveItem
-  - `[StartDateTime <String>]`: Usage: startDateTime={startDateTime}
+  - `[StartDateTime <String>]`: Usage: startDateTime='{startDateTime}'
   - `[SubscriptionId <String>]`: key: id of subscription
-  - `[Token <String>]`: Usage: token={token}
+  - `[ThumbnailSetId <String>]`: key: id of thumbnailSet
+  - `[Token <String>]`: Usage: token='{token}'
   - `[UserId <String>]`: key: id of user
 
 ## RELATED LINKS

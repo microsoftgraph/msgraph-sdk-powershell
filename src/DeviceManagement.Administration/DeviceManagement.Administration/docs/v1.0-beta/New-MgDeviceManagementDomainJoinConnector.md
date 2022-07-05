@@ -8,15 +8,15 @@ schema: 2.0.0
 # New-MgDeviceManagementDomainJoinConnector
 
 ## SYNOPSIS
-A list of connector objects.
+Create new navigation property to domainJoinConnectors for deviceManagement
 
 ## SYNTAX
 
 ### CreateExpanded (Default)
 ```
 New-MgDeviceManagementDomainJoinConnector [-AdditionalProperties <Hashtable>] [-DisplayName <String>]
- [-Id <String>] [-LastConnectionDateTime <DateTime>] [-State <String>] [-Version <String>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-Id <String>] [-LastConnectionDateTime <DateTime>] [-State <DeviceManagementDomainJoinConnectorState>]
+ [-Version <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
@@ -26,7 +26,7 @@ New-MgDeviceManagementDomainJoinConnector -BodyParameter <IMicrosoftGraphDeviceM
 ```
 
 ## DESCRIPTION
-A list of connector objects.
+Create new navigation property to domainJoinConnectors for deviceManagement
 
 ## EXAMPLES
 
@@ -79,7 +79,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -112,7 +112,7 @@ Accept wildcard characters: False
 The ODJ request states.
 
 ```yaml
-Type: System.String
+Type: Microsoft.Graph.PowerShell.Support.DeviceManagementDomainJoinConnectorState
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -191,10 +191,10 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphDeviceManagementDomainJoinConnector>: A Domain Join Connector is a connector that is responsible to allocate (and delete) machine account blobs
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[DisplayName <String>]`: The connector display name.
   - `[LastConnectionDateTime <DateTime?>]`: Last time connector contacted Intune.
-  - `[State <String>]`: The ODJ request states.
+  - `[State <DeviceManagementDomainJoinConnectorState?>]`: The ODJ request states.
   - `[Version <String>]`: The version of the connector.
 
 ## RELATED LINKS

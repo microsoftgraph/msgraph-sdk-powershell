@@ -17668,6 +17668,7 @@ components:
               nullable: true
             alternateResourceUrl:
               type: string
+              description: The interface URL of the partner service's resource that links to this Azure network connection. Returned only on $select.
               nullable: true
             displayName:
               type: string
@@ -17688,10 +17689,10 @@ components:
               nullable: true
             resourceGroupId:
               type: string
-              description: 'The ID of the target resource group. Required format: ''/subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}''.'
+              description: 'The ID of the target resource group. Required format: /subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}.'
             subnetId:
               type: string
-              description: 'The ID of the target subnet. Required format: ''/subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{virtualNetworkId}/subnets/{subnetName}''.'
+              description: 'The ID of the target subnet. Required format: /subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{virtualNetworkId}/subnets/{subnetName}.'
             subscriptionId:
               type: string
               description: The ID of the target Azure subscription that’s associated with your tenant.
@@ -17703,7 +17704,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.cloudPcOnPremisesConnectionType'
             virtualNetworkId:
               type: string
-              description: 'The ID of the target virtual network. Required format: ''/subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{virtualNetworkName}''.'
+              description: 'The ID of the target virtual network. Required format: /subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{virtualNetworkName}.'
           additionalProperties:
             type: object
     microsoft.graph.cloudPcOrganizationSettings:
@@ -17728,9 +17729,11 @@ components:
           properties:
             alternateResourceUrl:
               type: string
+              description: The URL of the alternate resource that links to this provisioning policy. Read-only.
               nullable: true
             cloudPcGroupDisplayName:
               type: string
+              description: The display name of the Cloud PC group that the Cloud PCs reside in. Read-only.
               nullable: true
             description:
               type: string
@@ -17746,6 +17749,7 @@ components:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
+              description: The number of hours to wait before reprovisioning/deprovisioning happens. Read-only.
               format: int32
               nullable: true
             imageDisplayName:
@@ -17760,6 +17764,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.cloudPcProvisioningPolicyImageType'
             localAdminEnabled:
               type: boolean
+              description: 'Indicates whether the local admin option is enabled. If the local admin option is enabled, the end user can be an admin of the Cloud PC device. Read-only.'
               nullable: true
             managedBy:
               $ref: '#/components/schemas/microsoft.graph.cloudPcManagementService'

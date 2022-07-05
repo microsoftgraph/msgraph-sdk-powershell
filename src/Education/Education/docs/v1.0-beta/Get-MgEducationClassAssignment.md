@@ -8,8 +8,7 @@ schema: 2.0.0
 # Get-MgEducationClassAssignment
 
 ## SYNOPSIS
-All assignments associated with this class.
-Nullable.
+Get assignments from education
 
 ## SYNTAX
 
@@ -33,8 +32,7 @@ Get-MgEducationClassAssignment -InputObject <IEducationIdentity> [-ExpandPropert
 ```
 
 ## DESCRIPTION
-All assignments associated with this class.
-Nullable.
+Get assignments from education
 
 ## EXAMPLES
 

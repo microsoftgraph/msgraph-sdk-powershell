@@ -2409,6 +2409,8 @@ paths:
                 - assignedLicenses desc
                 - assignedPlans
                 - assignedPlans desc
+                - authorizationInfo
+                - authorizationInfo desc
                 - businessPhones
                 - businessPhones desc
                 - city
@@ -2511,6 +2513,8 @@ paths:
                 - proxyAddresses desc
                 - refreshTokensValidFromDateTime
                 - refreshTokensValidFromDateTime desc
+                - securityIdentifier
+                - securityIdentifier desc
                 - showInAddressList
                 - showInAddressList desc
                 - signInSessionsValidFromDateTime
@@ -2571,6 +2575,7 @@ paths:
                 - ageGroup
                 - assignedLicenses
                 - assignedPlans
+                - authorizationInfo
                 - businessPhones
                 - city
                 - companyName
@@ -2622,6 +2627,7 @@ paths:
                 - provisionedPlans
                 - proxyAddresses
                 - refreshTokensValidFromDateTime
+                - securityIdentifier
                 - showInAddressList
                 - signInSessionsValidFromDateTime
                 - state
@@ -2873,6 +2879,8 @@ paths:
                 - assignedLicenses desc
                 - assignedPlans
                 - assignedPlans desc
+                - authorizationInfo
+                - authorizationInfo desc
                 - businessPhones
                 - businessPhones desc
                 - city
@@ -2975,6 +2983,8 @@ paths:
                 - proxyAddresses desc
                 - refreshTokensValidFromDateTime
                 - refreshTokensValidFromDateTime desc
+                - securityIdentifier
+                - securityIdentifier desc
                 - showInAddressList
                 - showInAddressList desc
                 - signInSessionsValidFromDateTime
@@ -3184,6 +3194,7 @@ paths:
                 - monthlyPrintUsageByUser
                 - monthlyPrintUsageSummariesByPrinter
                 - monthlyPrintUsageSummariesByUser
+                - security
               type: string
         - name: $expand
           in: query
@@ -3208,6 +3219,7 @@ paths:
                 - monthlyPrintUsageByUser
                 - monthlyPrintUsageSummariesByPrinter
                 - monthlyPrintUsageSummariesByUser
+                - security
               type: string
       responses:
         '200':
@@ -3241,6 +3253,8 @@ paths:
               operationId: print.Reports.ListMonthlyPrintUsageSummariesGraphBPrePrinter
             monthlyPrintUsageSummariesByUser:
               operationId: print.Reports.ListMonthlyPrintUsageSummariesGraphBPreUser
+            security:
+              operationId: print.Reports.GetSecurity
             deviceConfigurationDeviceActivity:
               operationId: print.reports.deviceConfigurationDeviceActivity
             deviceConfigurationUserActivity:
@@ -5131,6 +5145,12 @@ paths:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2022-08-20T00:00:00.0000000+00:00'
+        date: '2022-05-24T00:00:00.0000000+00:00'
+        version: 2022-05/Tasks_And_Plans
+        description: 'This report function api is deprecated and will stop returning data on August 20, 2022. Api is now moved to /reports/security. Please use the new API.'
       x-ms-docs-operation-type: function
   /print/reports/microsoft.graph.getAttackSimulationSimulationUserCoverage():
     get:
@@ -5155,6 +5175,12 @@ paths:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2022-08-20T00:00:00.0000000+00:00'
+        date: '2022-05-24T00:00:00.0000000+00:00'
+        version: 2022-05/Tasks_And_Plans
+        description: 'This report function api is deprecated and will stop returning data on August 20, 2022. Api is now moved to /reports/security. Please use the new API.'
       x-ms-docs-operation-type: function
   /print/reports/microsoft.graph.getAttackSimulationTrainingUserCoverage():
     get:
@@ -5179,6 +5205,12 @@ paths:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2022-08-20T00:00:00.0000000+00:00'
+        date: '2022-05-24T00:00:00.0000000+00:00'
+        version: 2022-05/Tasks_And_Plans
+        description: 'This report function api is deprecated and will stop returning data on August 20, 2022. Api is now moved to /reports/security. Please use the new API.'
       x-ms-docs-operation-type: function
   '/print/reports/microsoft.graph.getAzureADApplicationSignInSummary(period=''{period}'')':
     get:
@@ -9488,6 +9520,161 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /print/reports/security:
+    get:
+      tags:
+        - print.reportRoot
+      summary: Get security from print
+      operationId: print.reports_GetSecurity
+      parameters:
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.securityReportsRoot'
+          links:
+            getAttackSimulationRepeatOffenders:
+              operationId: print.reports.security.getAttackSimulationRepeatOffenders
+            getAttackSimulationSimulationUserCoverage:
+              operationId: print.reports.security.getAttackSimulationSimulationUserCoverage
+            getAttackSimulationTrainingUserCoverage:
+              operationId: print.reports.security.getAttackSimulationTrainingUserCoverage
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - print.reportRoot
+      summary: Update the navigation property security in print
+      operationId: print.reports_UpdateSecurity
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.securityReportsRoot'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - print.reportRoot
+      summary: Delete navigation property security for print
+      operationId: print.reports_DeleteSecurity
+      parameters:
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /print/reports/security/microsoft.graph.getAttackSimulationRepeatOffenders():
+    get:
+      tags:
+        - print.Functions
+      summary: Invoke function getAttackSimulationRepeatOffenders
+      operationId: print.reports.security_getAttackSimulationRepeatOffenders
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of securityReportsRoot
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.attackSimulationRepeatOffender'
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  /print/reports/security/microsoft.graph.getAttackSimulationSimulationUserCoverage():
+    get:
+      tags:
+        - print.Functions
+      summary: Invoke function getAttackSimulationSimulationUserCoverage
+      operationId: print.reports.security_getAttackSimulationSimulationUserCoverage
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of securityReportsRoot
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.attackSimulationSimulationUserCoverage'
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  /print/reports/security/microsoft.graph.getAttackSimulationTrainingUserCoverage():
+    get:
+      tags:
+        - print.Functions
+      summary: Invoke function getAttackSimulationTrainingUserCoverage
+      operationId: print.reports.security_getAttackSimulationTrainingUserCoverage
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of securityReportsRoot
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.attackSimulationTrainingUserCoverage'
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
   /print/reports/userCredentialUsageDetails:
     get:
       tags:
@@ -10898,6 +11085,8 @@ paths:
                 - assignedLicenses desc
                 - assignedPlans
                 - assignedPlans desc
+                - authorizationInfo
+                - authorizationInfo desc
                 - businessPhones
                 - businessPhones desc
                 - city
@@ -11000,6 +11189,8 @@ paths:
                 - proxyAddresses desc
                 - refreshTokensValidFromDateTime
                 - refreshTokensValidFromDateTime desc
+                - securityIdentifier
+                - securityIdentifier desc
                 - showInAddressList
                 - showInAddressList desc
                 - signInSessionsValidFromDateTime
@@ -11060,6 +11251,7 @@ paths:
                 - ageGroup
                 - assignedLicenses
                 - assignedPlans
+                - authorizationInfo
                 - businessPhones
                 - city
                 - companyName
@@ -11111,6 +11303,7 @@ paths:
                 - provisionedPlans
                 - proxyAddresses
                 - refreshTokensValidFromDateTime
+                - securityIdentifier
                 - showInAddressList
                 - signInSessionsValidFromDateTime
                 - state
@@ -11362,6 +11555,8 @@ paths:
                 - assignedLicenses desc
                 - assignedPlans
                 - assignedPlans desc
+                - authorizationInfo
+                - authorizationInfo desc
                 - businessPhones
                 - businessPhones desc
                 - city
@@ -11464,6 +11659,8 @@ paths:
                 - proxyAddresses desc
                 - refreshTokensValidFromDateTime
                 - refreshTokensValidFromDateTime desc
+                - securityIdentifier
+                - securityIdentifier desc
                 - showInAddressList
                 - showInAddressList desc
                 - signInSessionsValidFromDateTime
@@ -12687,6 +12884,8 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.printUsageByUser'
+            security:
+              $ref: '#/components/schemas/microsoft.graph.securityReportsRoot'
           additionalProperties:
             type: object
     microsoft.graph.applicationSignInDetailedSummary:
@@ -13728,6 +13927,13 @@ components:
               format: int64
           additionalProperties:
             type: object
+    microsoft.graph.securityReportsRoot:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: securityReportsRoot
+          type: object
+          additionalProperties:
+            type: object
     microsoft.graph.userCredentialUsageDetails:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -14514,6 +14720,8 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.assignedPlan'
               description: The plans that are assigned to the user. Read-only. Not nullable.Supports $filter (eq and not).
+            authorizationInfo:
+              $ref: '#/components/schemas/microsoft.graph.authorizationInfo'
             businessPhones:
               type: array
               items:
@@ -14635,7 +14843,7 @@ components:
               description: State of license assignments for this user. Read-only. Returned only on $select.
             mail:
               type: string
-              description: 'The SMTP address for the user, for example, admin@contoso.com. Changes to this property will also update the user''s proxyAddresses collection to include the value as an SMTP address. For Azure AD B2C accounts, this property can be updated up to only ten times with unique SMTP addresses. This property cannot contain accent characters.  Supports $filter (eq, ne, not, ge, le, in, startsWith, endsWith, and eq on null values).'
+              description: 'The SMTP address for the user, for example, admin@contoso.com. Changes to this property will also update the user''s proxyAddresses collection to include the value as an SMTP address. This property cannot contain accent characters.  NOTE: We do not recommend updating this property for Azure AD B2C user profiles. Use the otherMails property instead.  Supports $filter (eq, ne, not, ge, le, in, startsWith, endsWith, and eq on null values).'
               nullable: true
             mailNickname:
               type: string
@@ -14728,6 +14936,9 @@ components:
               type: string
               description: 'Any refresh tokens or sessions tokens (session cookies) issued before this time are invalid, and applications will get an error when using an invalid refresh or sessions token to acquire a delegated access token (to access APIs such as Microsoft Graph).  If this happens, the application will need to acquire a new refresh token by making a request to the authorize endpoint. Read-only. Use invalidateAllRefreshTokens to reset.'
               format: date-time
+              nullable: true
+            securityIdentifier:
+              type: string
               nullable: true
             showInAddressList:
               type: boolean
@@ -16645,6 +16856,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.channel'
+              description: List of channels shared with the team.
             installedApps:
               type: array
               items:
@@ -16735,6 +16947,17 @@ components:
           description: 'A GUID that identifies the service plan. For a complete list of GUIDs and their equivalent friendly service names, see Product names and service plan identifiers for licensing.'
           format: uuid
           nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.authorizationInfo:
+      title: authorizationInfo
+      type: object
+      properties:
+        certificateUserIds:
+          type: array
+          items:
+            type: string
+            nullable: true
       additionalProperties:
         type: object
     microsoft.graph.customSecurityAttributeValue:
@@ -17154,11 +17377,11 @@ components:
               nullable: true
             principalId:
               type: string
-              description: 'The id of the user on behalf of whom the client is authorized to access the resource, when consentType is Principal. If consentType is AllPrincipals this value is null. Required when consentType is Principal.'
+              description: 'The id of the user on behalf of whom the client is authorized to access the resource, when consentType is Principal. If consentType is AllPrincipals this value is null. Required when consentType is Principal. Supports $filter (eq only).'
               nullable: true
             resourceId:
               type: string
-              description: The id of the resource service principal to which access is authorized. This identifies the API which the client is authorized to attempt to call on behalf of a signed-in user.
+              description: The id of the resource service principal to which access is authorized. This identifies the API which the client is authorized to attempt to call on behalf of a signed-in user. Supports $filter (eq only).
             scope:
               type: string
               description: 'A space-separated list of the claim values for delegated permissions which should be included in access tokens for the resource application (the API). For example, openid User.Read GroupMember.Read.All. Each claim value should match the value field of one of the delegated permissions defined by the API, listed in the publishedPermissionScopes property of the resource service principal.'
@@ -19325,11 +19548,11 @@ components:
       properties:
         displayName:
           type: string
-          description: The display name of the identity. This property is read-only.
+          description: 'The identity''s display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
           nullable: true
         id:
           type: string
-          description: The identifier of the identity. This property is read-only.
+          description: Unique identifier for the identity.
           nullable: true
       additionalProperties:
         type: object
@@ -21900,7 +22123,7 @@ components:
               items:
                 type: string
                 nullable: true
-              description: The roles for that user.
+              description: 'The roles for that user. This property only contains additional qualifiers when relevant - for example, if the member has owner privileges, the roles property contains owner as one of the values. Similarly, if the member is a guest, the roles property contains guest as one of the values. A basic member should not have any values specified in the roles property.'
             visibleHistoryStartDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -26316,7 +26539,7 @@ components:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: The date and time when the temporaryAccessPass was created.
+              description: The date and time when the Temporary Access Pass was created.
               format: date-time
               nullable: true
             isUsable:
@@ -26325,28 +26548,28 @@ components:
               nullable: true
             isUsableOnce:
               type: boolean
-              description: 'Determines whether the pass is limited to a one time use. If true, the pass can be used once; if false, the pass can be used multiple times within the temporaryAccessPass lifetime.'
+              description: 'Determines whether the pass is limited to a one-time use. If true, the pass can be used once; if false, the pass can be used multiple times within the Temporary Access Pass lifetime.'
               nullable: true
             lifetimeInMinutes:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
-              description: 'The lifetime of the temporaryAccessPass in minutes starting at startDateTime. Minimum 10, Maximum 43200 (equivalent to 30 days).'
+              description: The lifetime of the Temporary Access Pass in minutes starting at startDateTime. Must be between 10 and 43200 inclusive (equivalent to 30 days).
               format: int32
               nullable: true
             methodUsabilityReason:
               type: string
-              description: 'Details about usability state (isUsable). Reasons can include: enabledByPolicy, disabledByPolicy, expired, notYetValid, oneTimeUsed.'
+              description: 'Details about the usability state (isUsable). Reasons can include: EnabledByPolicy, DisabledByPolicy, Expired, NotYetValid, OneTimeUsed.'
               nullable: true
             startDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: The date and time when the temporaryAccessPass becomes available to use.
+              description: The date and time when the Temporary Access Pass becomes available to use and when isUsable is true is enforced.
               format: date-time
               nullable: true
             temporaryAccessPass:
               type: string
-              description: The temporaryAccessPass used to authenticate. Returned only on creation of a new temporaryAccessPass; returned as NULL with GET.
+              description: The Temporary Access Pass used to authenticate. Returned only on creation of a new temporaryAccessPassAuthenticationMethod object; Hidden in subsequent read operations and returned as null with GET.
               nullable: true
           additionalProperties:
             type: object
@@ -33615,7 +33838,7 @@ components:
               type: string
               format: date-time
               nullable: true
-            nextExpectedRange:
+            nextExpectedRanges:
               type: array
               items:
                 type: string

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgEducationSynchronizationProfileError
 
 ## SYNOPSIS
-All errors associated with this synchronization profile.
+Update the navigation property errors in education
 
 ## SYNTAX
 
@@ -44,7 +44,7 @@ Update-MgEducationSynchronizationProfileError -InputObject <IEducationIdentity>
 ```
 
 ## DESCRIPTION
-All errors associated with this synchronization profile.
+Update the navigation property errors in education
 
 ## EXAMPLES
 
@@ -157,7 +157,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -302,7 +302,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphEducationSynchronizationError>: educationSynchronizationError
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[EntryType <String>]`: Represents the sync entity (school, section, student, teacher).
   - `[ErrorCode <String>]`: Represents the error code for this error.
   - `[ErrorMessage <String>]`: Contains a description of the error.

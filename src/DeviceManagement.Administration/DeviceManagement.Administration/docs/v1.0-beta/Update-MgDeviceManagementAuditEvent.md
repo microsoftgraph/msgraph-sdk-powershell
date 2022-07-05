@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgDeviceManagementAuditEvent
 
 ## SYNOPSIS
-The Audit Events
+Update the navigation property auditEvents in deviceManagement
 
 ## SYNTAX
 
@@ -44,7 +44,7 @@ Update-MgDeviceManagementAuditEvent -InputObject <IDeviceManagementAdministratio
 ```
 
 ## DESCRIPTION
-The Audit Events
+Update the navigation property auditEvents in deviceManagement
 
 ## EXAMPLES
 
@@ -248,7 +248,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -380,7 +380,7 @@ ACTOR <IMicrosoftGraphAuditActor>: A class containing the properties for Audit A
 
 BODYPARAMETER <IMicrosoftGraphAuditEvent>: A class containing the properties for Audit Event.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[Activity <String>]`: Friendly name of the activity.
   - `[ActivityDateTime <DateTime?>]`: The date time in UTC when the activity was performed.
   - `[ActivityOperationType <String>]`: The HTTP operation type of the activity.
@@ -437,6 +437,7 @@ INPUTOBJECT <IDeviceManagementAdministrationIdentity>: Identity Parameter
   - `[DeviceManagementExchangeOnPremisesPolicyId <String>]`: key: id of deviceManagementExchangeOnPremisesPolicy
   - `[DeviceManagementPartnerId <String>]`: key: id of deviceManagementPartner
   - `[GroupPolicyCategoryId <String>]`: key: id of groupPolicyCategory
+  - `[GroupPolicyCategoryId1 <String>]`: key: id of groupPolicyCategory
   - `[GroupPolicyDefinitionFileId <String>]`: key: id of groupPolicyDefinitionFile
   - `[GroupPolicyDefinitionId <String>]`: key: id of groupPolicyDefinition
   - `[GroupPolicyMigrationReportId <String>]`: key: id of groupPolicyMigrationReport

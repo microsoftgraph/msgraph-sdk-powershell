@@ -3192,10 +3192,13 @@ paths:
                 - memberSettings
                 - messagingSettings
                 - specialization
+                - tenantId
                 - visibility
                 - webUrl
+                - allChannels
                 - channels
                 - group
+                - incomingChannels
                 - installedApps
                 - members
                 - operations
@@ -3214,8 +3217,10 @@ paths:
             items:
               enum:
                 - '*'
+                - allChannels
                 - channels
                 - group
+                - incomingChannels
                 - installedApps
                 - members
                 - operations
@@ -3231,12 +3236,20 @@ paths:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.team'
           links:
+            allChannels:
+              operationId: groups.Team.ListAllChannels
+              parameters:
+                group-id: $request.path.group-id
             channels:
               operationId: groups.Team.ListChannels
               parameters:
                 group-id: $request.path.group-id
             group:
               operationId: groups.Team.GetGroup
+              parameters:
+                group-id: $request.path.group-id
+            incomingChannels:
+              operationId: groups.Team.ListIncomingChannels
               parameters:
                 group-id: $request.path.group-id
             installedApps:
@@ -3326,6 +3339,204 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/groups/{group-id}/team/allChannels':
+    get:
+      tags:
+        - groups.team
+      summary: Get allChannels from groups
+      operationId: groups.team_ListAllChannels
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - createdDateTime
+                - createdDateTime desc
+                - description
+                - description desc
+                - displayName
+                - displayName desc
+                - email
+                - email desc
+                - isFavoriteByDefault
+                - isFavoriteByDefault desc
+                - membershipType
+                - membershipType desc
+                - tenantId
+                - tenantId desc
+                - webUrl
+                - webUrl desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - createdDateTime
+                - description
+                - displayName
+                - email
+                - isFavoriteByDefault
+                - membershipType
+                - tenantId
+                - webUrl
+                - filesFolder
+                - members
+                - messages
+                - sharedWithTeams
+                - tabs
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - filesFolder
+                - members
+                - messages
+                - sharedWithTeams
+                - tabs
+              type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/microsoft.graph.channelCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+  '/groups/{group-id}/team/allChannels/{channel-id}':
+    get:
+      tags:
+        - groups.team
+      summary: Get allChannels from groups
+      operationId: groups.team_GetAllChannels
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: channel-id
+          in: path
+          description: 'key: id of channel'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: channel
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - createdDateTime
+                - description
+                - displayName
+                - email
+                - isFavoriteByDefault
+                - membershipType
+                - tenantId
+                - webUrl
+                - filesFolder
+                - members
+                - messages
+                - sharedWithTeams
+                - tabs
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - filesFolder
+                - members
+                - messages
+                - sharedWithTeams
+                - tabs
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.channel'
+          links:
+            filesFolder:
+              operationId: groups.team.AllChannels.GetFilesFolder
+              parameters:
+                group-id: $request.path.group-id
+                channel-id: $request.path.channel-id
+            members:
+              operationId: groups.team.AllChannels.ListMembers
+              parameters:
+                group-id: $request.path.group-id
+                channel-id: $request.path.channel-id
+            messages:
+              operationId: groups.team.AllChannels.ListMessages
+              parameters:
+                group-id: $request.path.group-id
+                channel-id: $request.path.channel-id
+            sharedWithTeams:
+              operationId: groups.team.AllChannels.ListSharedGraphWPreTeams
+              parameters:
+                group-id: $request.path.group-id
+                channel-id: $request.path.channel-id
+            tabs:
+              operationId: groups.team.AllChannels.ListTabs
+              parameters:
+                group-id: $request.path.group-id
+                channel-id: $request.path.channel-id
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/groups/{group-id}/team/channels':
     get:
       tags:
@@ -3369,6 +3580,8 @@ paths:
                 - isFavoriteByDefault desc
                 - membershipType
                 - membershipType desc
+                - tenantId
+                - tenantId desc
                 - webUrl
                 - webUrl desc
               type: string
@@ -3389,10 +3602,12 @@ paths:
                 - email
                 - isFavoriteByDefault
                 - membershipType
+                - tenantId
                 - webUrl
                 - filesFolder
                 - members
                 - messages
+                - sharedWithTeams
                 - tabs
               type: string
         - name: $expand
@@ -3409,6 +3624,7 @@ paths:
                 - filesFolder
                 - members
                 - messages
+                - sharedWithTeams
                 - tabs
               type: string
       responses:
@@ -3488,10 +3704,12 @@ paths:
                 - email
                 - isFavoriteByDefault
                 - membershipType
+                - tenantId
                 - webUrl
                 - filesFolder
                 - members
                 - messages
+                - sharedWithTeams
                 - tabs
               type: string
         - name: $expand
@@ -3508,6 +3726,7 @@ paths:
                 - filesFolder
                 - members
                 - messages
+                - sharedWithTeams
                 - tabs
               type: string
       responses:
@@ -3533,6 +3752,11 @@ paths:
               parameters:
                 group-id: $request.path.group-id
                 channel-id: $request.path.channel-id
+            sharedWithTeams:
+              operationId: groups.team.Channels.ListSharedGraphWPreTeams
+              parameters:
+                group-id: $request.path.group-id
+                channel-id: $request.path.channel-id
             tabs:
               operationId: groups.team.Channels.ListTabs
               parameters:
@@ -3540,6 +3764,8 @@ paths:
                 channel-id: $request.path.channel-id
             completeMigration:
               operationId: groups.group.team.channels.channel.completeMigration
+            doesUserHaveAccess:
+              operationId: groups.group.team.channels.channel.doesUserHaveAccess
             provisionEmail:
               operationId: groups.group.team.channels.channel.provisionEmail
             removeEmail:
@@ -5461,6 +5687,448 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/groups/{group-id}/team/channels/{channel-id}/sharedWithTeams':
+    get:
+      tags:
+        - groups.team
+      summary: Get sharedWithTeams from groups
+      operationId: groups.team.channels_ListSharedGraphWPreTeams
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: channel-id
+          in: path
+          description: 'key: id of channel'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: channel
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - displayName
+                - displayName desc
+                - tenantId
+                - tenantId desc
+                - isHostTeam
+                - isHostTeam desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - displayName
+                - tenantId
+                - isHostTeam
+                - team
+                - allowedMembers
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - team
+                - allowedMembers
+              type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/microsoft.graph.sharedWithChannelTeamInfoCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - groups.team
+      summary: Create new navigation property to sharedWithTeams for groups
+      operationId: groups.team.channels_CreateSharedGraphWPreTeams
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: channel-id
+          in: path
+          description: 'key: id of channel'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: channel
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.sharedWithChannelTeamInfo'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.sharedWithChannelTeamInfo'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/groups/{group-id}/team/channels/{channel-id}/sharedWithTeams/{sharedWithChannelTeamInfo-id}':
+    get:
+      tags:
+        - groups.team
+      summary: Get sharedWithTeams from groups
+      operationId: groups.team.channels_GetSharedGraphWPreTeams
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: channel-id
+          in: path
+          description: 'key: id of channel'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: channel
+        - name: sharedWithChannelTeamInfo-id
+          in: path
+          description: 'key: id of sharedWithChannelTeamInfo'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: sharedWithChannelTeamInfo
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - displayName
+                - tenantId
+                - isHostTeam
+                - team
+                - allowedMembers
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - team
+                - allowedMembers
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.sharedWithChannelTeamInfo'
+          links:
+            team:
+              operationId: groups.team.channels.SharedGraphWPreTeams.GetTeam
+              parameters:
+                group-id: $request.path.group-id
+                channel-id: $request.path.channel-id
+                sharedWithChannelTeamInfo-id: $request.path.sharedWithChannelTeamInfo-id
+            allowedMembers:
+              operationId: groups.team.channels.SharedGraphWPreTeams.ListAllowedMembers
+              parameters:
+                group-id: $request.path.group-id
+                channel-id: $request.path.channel-id
+                sharedWithChannelTeamInfo-id: $request.path.sharedWithChannelTeamInfo-id
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - groups.team
+      summary: Update the navigation property sharedWithTeams in groups
+      operationId: groups.team.channels_UpdateSharedGraphWPreTeams
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: channel-id
+          in: path
+          description: 'key: id of channel'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: channel
+        - name: sharedWithChannelTeamInfo-id
+          in: path
+          description: 'key: id of sharedWithChannelTeamInfo'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: sharedWithChannelTeamInfo
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.sharedWithChannelTeamInfo'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - groups.team
+      summary: Delete navigation property sharedWithTeams for groups
+      operationId: groups.team.channels_DeleteSharedGraphWPreTeams
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: channel-id
+          in: path
+          description: 'key: id of channel'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: channel
+        - name: sharedWithChannelTeamInfo-id
+          in: path
+          description: 'key: id of sharedWithChannelTeamInfo'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: sharedWithChannelTeamInfo
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/groups/{group-id}/team/channels/{channel-id}/sharedWithTeams/{sharedWithChannelTeamInfo-id}/allowedMembers':
+    get:
+      tags:
+        - groups.team
+      summary: Get allowedMembers from groups
+      operationId: groups.team.channels.sharedGraphWPreTeams_ListAllowedMembers
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: channel-id
+          in: path
+          description: 'key: id of channel'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: channel
+        - name: sharedWithChannelTeamInfo-id
+          in: path
+          description: 'key: id of sharedWithChannelTeamInfo'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: sharedWithChannelTeamInfo
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - displayName
+                - displayName desc
+                - roles
+                - roles desc
+                - visibleHistoryStartDateTime
+                - visibleHistoryStartDateTime desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - displayName
+                - roles
+                - visibleHistoryStartDateTime
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/microsoft.graph.conversationMemberCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+  '/groups/{group-id}/team/channels/{channel-id}/sharedWithTeams/{sharedWithChannelTeamInfo-id}/allowedMembers/{conversationMember-id}':
+    get:
+      tags:
+        - groups.team
+      summary: Get allowedMembers from groups
+      operationId: groups.team.channels.sharedGraphWPreTeams_GetAllowedMembers
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: channel-id
+          in: path
+          description: 'key: id of channel'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: channel
+        - name: sharedWithChannelTeamInfo-id
+          in: path
+          description: 'key: id of sharedWithChannelTeamInfo'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: sharedWithChannelTeamInfo
+        - name: conversationMember-id
+          in: path
+          description: 'key: id of conversationMember'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: conversationMember
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - displayName
+                - roles
+                - visibleHistoryStartDateTime
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.conversationMember'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/groups/{group-id}/team/channels/{channel-id}/tabs':
     get:
       tags:
@@ -5886,8 +6554,6 @@ paths:
                 - calendarView
                 - conversations
                 - events
-                - photo
-                - photos
                 - rejectedSenders
                 - threads
                 - drive
@@ -5897,6 +6563,8 @@ paths:
                 - groupLifecyclePolicies
                 - planner
                 - onenote
+                - photo
+                - photos
                 - team
               type: string
         - name: $expand
@@ -5925,8 +6593,6 @@ paths:
                 - calendarView
                 - conversations
                 - events
-                - photo
-                - photos
                 - rejectedSenders
                 - threads
                 - drive
@@ -5936,6 +6602,8 @@ paths:
                 - groupLifecyclePolicies
                 - planner
                 - onenote
+                - photo
+                - photos
                 - team
               type: string
       responses:
@@ -6006,14 +6674,6 @@ paths:
               operationId: groups.team.Group.ListEvents
               parameters:
                 group-id: $request.path.group-id
-            photo:
-              operationId: groups.team.Group.GetPhoto
-              parameters:
-                group-id: $request.path.group-id
-            photos:
-              operationId: groups.team.Group.ListPhotos
-              parameters:
-                group-id: $request.path.group-id
             rejectedSenders:
               operationId: groups.team.Group.ListRejectedSenders
               parameters:
@@ -6050,10 +6710,216 @@ paths:
               operationId: groups.team.Group.GetOnenote
               parameters:
                 group-id: $request.path.group-id
+            photo:
+              operationId: groups.team.Group.GetPhoto
+              parameters:
+                group-id: $request.path.group-id
+            photos:
+              operationId: groups.team.Group.ListPhotos
+              parameters:
+                group-id: $request.path.group-id
             team:
               operationId: groups.team.Group.GetTeam
               parameters:
                 group-id: $request.path.group-id
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/groups/{group-id}/team/incomingChannels':
+    get:
+      tags:
+        - groups.team
+      summary: Get incomingChannels from groups
+      operationId: groups.team_ListIncomingChannels
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - createdDateTime
+                - createdDateTime desc
+                - description
+                - description desc
+                - displayName
+                - displayName desc
+                - email
+                - email desc
+                - isFavoriteByDefault
+                - isFavoriteByDefault desc
+                - membershipType
+                - membershipType desc
+                - tenantId
+                - tenantId desc
+                - webUrl
+                - webUrl desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - createdDateTime
+                - description
+                - displayName
+                - email
+                - isFavoriteByDefault
+                - membershipType
+                - tenantId
+                - webUrl
+                - filesFolder
+                - members
+                - messages
+                - sharedWithTeams
+                - tabs
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - filesFolder
+                - members
+                - messages
+                - sharedWithTeams
+                - tabs
+              type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/microsoft.graph.channelCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+  '/groups/{group-id}/team/incomingChannels/{channel-id}':
+    get:
+      tags:
+        - groups.team
+      summary: Get incomingChannels from groups
+      operationId: groups.team_GetIncomingChannels
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: channel-id
+          in: path
+          description: 'key: id of channel'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: channel
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - createdDateTime
+                - description
+                - displayName
+                - email
+                - isFavoriteByDefault
+                - membershipType
+                - tenantId
+                - webUrl
+                - filesFolder
+                - members
+                - messages
+                - sharedWithTeams
+                - tabs
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - filesFolder
+                - members
+                - messages
+                - sharedWithTeams
+                - tabs
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.channel'
+          links:
+            filesFolder:
+              operationId: groups.team.IncomingChannels.GetFilesFolder
+              parameters:
+                group-id: $request.path.group-id
+                channel-id: $request.path.channel-id
+            members:
+              operationId: groups.team.IncomingChannels.ListMembers
+              parameters:
+                group-id: $request.path.group-id
+                channel-id: $request.path.channel-id
+            messages:
+              operationId: groups.team.IncomingChannels.ListMessages
+              parameters:
+                group-id: $request.path.group-id
+                channel-id: $request.path.channel-id
+            sharedWithTeams:
+              operationId: groups.team.IncomingChannels.ListSharedGraphWPreTeams
+              parameters:
+                group-id: $request.path.group-id
+                channel-id: $request.path.channel-id
+            tabs:
+              operationId: groups.team.IncomingChannels.ListTabs
+              parameters:
+                group-id: $request.path.group-id
+                channel-id: $request.path.channel-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -6932,10 +7798,12 @@ paths:
                 - email
                 - isFavoriteByDefault
                 - membershipType
+                - tenantId
                 - webUrl
                 - filesFolder
                 - members
                 - messages
+                - sharedWithTeams
                 - tabs
               type: string
         - name: $expand
@@ -6952,6 +7820,7 @@ paths:
                 - filesFolder
                 - members
                 - messages
+                - sharedWithTeams
                 - tabs
               type: string
       responses:
@@ -6974,12 +7843,18 @@ paths:
               operationId: groups.team.PrimaryChannel.ListMessages
               parameters:
                 group-id: $request.path.group-id
+            sharedWithTeams:
+              operationId: groups.team.PrimaryChannel.ListSharedGraphWPreTeams
+              parameters:
+                group-id: $request.path.group-id
             tabs:
               operationId: groups.team.PrimaryChannel.ListTabs
               parameters:
                 group-id: $request.path.group-id
             completeMigration:
               operationId: groups.group.team.primaryChannel.completeMigration
+            doesUserHaveAccess:
+              operationId: groups.group.team.primaryChannel.doesUserHaveAccess
             provisionEmail:
               operationId: groups.group.team.primaryChannel.provisionEmail
             removeEmail:
@@ -8674,6 +9549,397 @@ paths:
       responses:
         '204':
           description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/groups/{group-id}/team/primaryChannel/sharedWithTeams':
+    get:
+      tags:
+        - groups.team
+      summary: Get sharedWithTeams from groups
+      operationId: groups.team.primaryChannel_ListSharedGraphWPreTeams
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - displayName
+                - displayName desc
+                - tenantId
+                - tenantId desc
+                - isHostTeam
+                - isHostTeam desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - displayName
+                - tenantId
+                - isHostTeam
+                - team
+                - allowedMembers
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - team
+                - allowedMembers
+              type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/microsoft.graph.sharedWithChannelTeamInfoCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - groups.team
+      summary: Create new navigation property to sharedWithTeams for groups
+      operationId: groups.team.primaryChannel_CreateSharedGraphWPreTeams
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.sharedWithChannelTeamInfo'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.sharedWithChannelTeamInfo'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/groups/{group-id}/team/primaryChannel/sharedWithTeams/{sharedWithChannelTeamInfo-id}':
+    get:
+      tags:
+        - groups.team
+      summary: Get sharedWithTeams from groups
+      operationId: groups.team.primaryChannel_GetSharedGraphWPreTeams
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: sharedWithChannelTeamInfo-id
+          in: path
+          description: 'key: id of sharedWithChannelTeamInfo'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: sharedWithChannelTeamInfo
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - displayName
+                - tenantId
+                - isHostTeam
+                - team
+                - allowedMembers
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - team
+                - allowedMembers
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.sharedWithChannelTeamInfo'
+          links:
+            team:
+              operationId: groups.team.primaryChannel.SharedGraphWPreTeams.GetTeam
+              parameters:
+                group-id: $request.path.group-id
+                sharedWithChannelTeamInfo-id: $request.path.sharedWithChannelTeamInfo-id
+            allowedMembers:
+              operationId: groups.team.primaryChannel.SharedGraphWPreTeams.ListAllowedMembers
+              parameters:
+                group-id: $request.path.group-id
+                sharedWithChannelTeamInfo-id: $request.path.sharedWithChannelTeamInfo-id
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - groups.team
+      summary: Update the navigation property sharedWithTeams in groups
+      operationId: groups.team.primaryChannel_UpdateSharedGraphWPreTeams
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: sharedWithChannelTeamInfo-id
+          in: path
+          description: 'key: id of sharedWithChannelTeamInfo'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: sharedWithChannelTeamInfo
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.sharedWithChannelTeamInfo'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - groups.team
+      summary: Delete navigation property sharedWithTeams for groups
+      operationId: groups.team.primaryChannel_DeleteSharedGraphWPreTeams
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: sharedWithChannelTeamInfo-id
+          in: path
+          description: 'key: id of sharedWithChannelTeamInfo'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: sharedWithChannelTeamInfo
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/groups/{group-id}/team/primaryChannel/sharedWithTeams/{sharedWithChannelTeamInfo-id}/allowedMembers':
+    get:
+      tags:
+        - groups.team
+      summary: Get allowedMembers from groups
+      operationId: groups.team.primaryChannel.sharedGraphWPreTeams_ListAllowedMembers
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: sharedWithChannelTeamInfo-id
+          in: path
+          description: 'key: id of sharedWithChannelTeamInfo'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: sharedWithChannelTeamInfo
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - displayName
+                - displayName desc
+                - roles
+                - roles desc
+                - visibleHistoryStartDateTime
+                - visibleHistoryStartDateTime desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - displayName
+                - roles
+                - visibleHistoryStartDateTime
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/microsoft.graph.conversationMemberCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+  '/groups/{group-id}/team/primaryChannel/sharedWithTeams/{sharedWithChannelTeamInfo-id}/allowedMembers/{conversationMember-id}':
+    get:
+      tags:
+        - groups.team
+      summary: Get allowedMembers from groups
+      operationId: groups.team.primaryChannel.sharedGraphWPreTeams_GetAllowedMembers
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: sharedWithChannelTeamInfo-id
+          in: path
+          description: 'key: id of sharedWithChannelTeamInfo'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: sharedWithChannelTeamInfo
+        - name: conversationMember-id
+          in: path
+          description: 'key: id of conversationMember'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: conversationMember
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - displayName
+                - roles
+                - visibleHistoryStartDateTime
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.conversationMember'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -11396,6 +12662,8 @@ paths:
                 - messagingSettings desc
                 - specialization
                 - specialization desc
+                - tenantId
+                - tenantId desc
                 - visibility
                 - visibility desc
                 - webUrl
@@ -11423,10 +12691,13 @@ paths:
                 - memberSettings
                 - messagingSettings
                 - specialization
+                - tenantId
                 - visibility
                 - webUrl
+                - allChannels
                 - channels
                 - group
+                - incomingChannels
                 - installedApps
                 - members
                 - operations
@@ -11445,8 +12716,10 @@ paths:
             items:
               enum:
                 - '*'
+                - allChannels
                 - channels
                 - group
+                - incomingChannels
                 - installedApps
                 - members
                 - operations
@@ -11521,10 +12794,13 @@ paths:
                 - memberSettings
                 - messagingSettings
                 - specialization
+                - tenantId
                 - visibility
                 - webUrl
+                - allChannels
                 - channels
                 - group
+                - incomingChannels
                 - installedApps
                 - members
                 - operations
@@ -11543,8 +12819,10 @@ paths:
             items:
               enum:
                 - '*'
+                - allChannels
                 - channels
                 - group
+                - incomingChannels
                 - installedApps
                 - members
                 - operations
@@ -11560,12 +12838,20 @@ paths:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.team'
           links:
+            allChannels:
+              operationId: teams.ListAllChannels
+              parameters:
+                team-id: $request.path.team-id
             channels:
               operationId: teams.ListChannels
               parameters:
                 team-id: $request.path.team-id
             group:
               operationId: teams.GetGroup
+              parameters:
+                team-id: $request.path.team-id
+            incomingChannels:
+              operationId: teams.ListIncomingChannels
               parameters:
                 team-id: $request.path.team-id
             installedApps:
@@ -11655,6 +12941,204 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/teams/{team-id}/allChannels':
+    get:
+      tags:
+        - teams.channel
+      summary: Get allChannels from teams
+      operationId: teams_ListAllChannels
+      parameters:
+        - name: team-id
+          in: path
+          description: 'key: id of team'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - createdDateTime
+                - createdDateTime desc
+                - description
+                - description desc
+                - displayName
+                - displayName desc
+                - email
+                - email desc
+                - isFavoriteByDefault
+                - isFavoriteByDefault desc
+                - membershipType
+                - membershipType desc
+                - tenantId
+                - tenantId desc
+                - webUrl
+                - webUrl desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - createdDateTime
+                - description
+                - displayName
+                - email
+                - isFavoriteByDefault
+                - membershipType
+                - tenantId
+                - webUrl
+                - filesFolder
+                - members
+                - messages
+                - sharedWithTeams
+                - tabs
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - filesFolder
+                - members
+                - messages
+                - sharedWithTeams
+                - tabs
+              type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/microsoft.graph.channelCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+  '/teams/{team-id}/allChannels/{channel-id}':
+    get:
+      tags:
+        - teams.channel
+      summary: Get allChannels from teams
+      operationId: teams_GetAllChannels
+      parameters:
+        - name: team-id
+          in: path
+          description: 'key: id of team'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - name: channel-id
+          in: path
+          description: 'key: id of channel'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: channel
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - createdDateTime
+                - description
+                - displayName
+                - email
+                - isFavoriteByDefault
+                - membershipType
+                - tenantId
+                - webUrl
+                - filesFolder
+                - members
+                - messages
+                - sharedWithTeams
+                - tabs
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - filesFolder
+                - members
+                - messages
+                - sharedWithTeams
+                - tabs
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.channel'
+          links:
+            filesFolder:
+              operationId: teams.AllChannels.GetFilesFolder
+              parameters:
+                team-id: $request.path.team-id
+                channel-id: $request.path.channel-id
+            members:
+              operationId: teams.AllChannels.ListMembers
+              parameters:
+                team-id: $request.path.team-id
+                channel-id: $request.path.channel-id
+            messages:
+              operationId: teams.AllChannels.ListMessages
+              parameters:
+                team-id: $request.path.team-id
+                channel-id: $request.path.channel-id
+            sharedWithTeams:
+              operationId: teams.AllChannels.ListSharedGraphWPreTeams
+              parameters:
+                team-id: $request.path.team-id
+                channel-id: $request.path.channel-id
+            tabs:
+              operationId: teams.AllChannels.ListTabs
+              parameters:
+                team-id: $request.path.team-id
+                channel-id: $request.path.channel-id
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/teams/{team-id}/channels':
     get:
       tags:
@@ -11698,6 +13182,8 @@ paths:
                 - isFavoriteByDefault desc
                 - membershipType
                 - membershipType desc
+                - tenantId
+                - tenantId desc
                 - webUrl
                 - webUrl desc
               type: string
@@ -11718,10 +13204,12 @@ paths:
                 - email
                 - isFavoriteByDefault
                 - membershipType
+                - tenantId
                 - webUrl
                 - filesFolder
                 - members
                 - messages
+                - sharedWithTeams
                 - tabs
               type: string
         - name: $expand
@@ -11738,6 +13226,7 @@ paths:
                 - filesFolder
                 - members
                 - messages
+                - sharedWithTeams
                 - tabs
               type: string
       responses:
@@ -11817,10 +13306,12 @@ paths:
                 - email
                 - isFavoriteByDefault
                 - membershipType
+                - tenantId
                 - webUrl
                 - filesFolder
                 - members
                 - messages
+                - sharedWithTeams
                 - tabs
               type: string
         - name: $expand
@@ -11837,6 +13328,7 @@ paths:
                 - filesFolder
                 - members
                 - messages
+                - sharedWithTeams
                 - tabs
               type: string
       responses:
@@ -11862,6 +13354,11 @@ paths:
               parameters:
                 team-id: $request.path.team-id
                 channel-id: $request.path.channel-id
+            sharedWithTeams:
+              operationId: teams.Channels.ListSharedGraphWPreTeams
+              parameters:
+                team-id: $request.path.team-id
+                channel-id: $request.path.channel-id
             tabs:
               operationId: teams.Channels.ListTabs
               parameters:
@@ -11869,6 +13366,8 @@ paths:
                 channel-id: $request.path.channel-id
             completeMigration:
               operationId: teams.team.channels.channel.completeMigration
+            doesUserHaveAccess:
+              operationId: teams.team.channels.channel.doesUserHaveAccess
             provisionEmail:
               operationId: teams.team.channels.channel.provisionEmail
             removeEmail:
@@ -13955,6 +15454,61 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/teams/{team-id}/channels/{channel-id}/microsoft.graph.doesUserHaveAccess(userId=''{userId}'',tenantId=''{tenantId}'',userPrincipalName=''{userPrincipalName}'')':
+    get:
+      tags:
+        - teams.Functions
+      summary: Invoke function doesUserHaveAccess
+      operationId: teams.channels_doesUserHaveAccess
+      parameters:
+        - name: team-id
+          in: path
+          description: 'key: id of team'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - name: channel-id
+          in: path
+          description: 'key: id of channel'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: channel
+        - name: userId
+          in: query
+          description: 'Usage: userId=''{userId}'''
+          schema:
+            type: string
+            nullable: true
+        - name: tenantId
+          in: query
+          description: 'Usage: tenantId=''{tenantId}'''
+          schema:
+            type: string
+            nullable: true
+        - name: userPrincipalName
+          in: query
+          description: 'Usage: userPrincipalName=''{userPrincipalName}'''
+          schema:
+            type: string
+            nullable: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: boolean
+                    default: false
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
   '/teams/{team-id}/channels/{channel-id}/microsoft.graph.provisionEmail':
     post:
       tags:
@@ -14013,6 +15567,448 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/teams/{team-id}/channels/{channel-id}/sharedWithTeams':
+    get:
+      tags:
+        - teams.channel
+      summary: Get sharedWithTeams from teams
+      operationId: teams.channels_ListSharedGraphWPreTeams
+      parameters:
+        - name: team-id
+          in: path
+          description: 'key: id of team'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - name: channel-id
+          in: path
+          description: 'key: id of channel'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: channel
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - displayName
+                - displayName desc
+                - tenantId
+                - tenantId desc
+                - isHostTeam
+                - isHostTeam desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - displayName
+                - tenantId
+                - isHostTeam
+                - team
+                - allowedMembers
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - team
+                - allowedMembers
+              type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/microsoft.graph.sharedWithChannelTeamInfoCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - teams.channel
+      summary: Create new navigation property to sharedWithTeams for teams
+      operationId: teams.channels_CreateSharedGraphWPreTeams
+      parameters:
+        - name: team-id
+          in: path
+          description: 'key: id of team'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - name: channel-id
+          in: path
+          description: 'key: id of channel'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: channel
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.sharedWithChannelTeamInfo'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.sharedWithChannelTeamInfo'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/teams/{team-id}/channels/{channel-id}/sharedWithTeams/{sharedWithChannelTeamInfo-id}':
+    get:
+      tags:
+        - teams.channel
+      summary: Get sharedWithTeams from teams
+      operationId: teams.channels_GetSharedGraphWPreTeams
+      parameters:
+        - name: team-id
+          in: path
+          description: 'key: id of team'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - name: channel-id
+          in: path
+          description: 'key: id of channel'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: channel
+        - name: sharedWithChannelTeamInfo-id
+          in: path
+          description: 'key: id of sharedWithChannelTeamInfo'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: sharedWithChannelTeamInfo
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - displayName
+                - tenantId
+                - isHostTeam
+                - team
+                - allowedMembers
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - team
+                - allowedMembers
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.sharedWithChannelTeamInfo'
+          links:
+            team:
+              operationId: teams.channels.SharedGraphWPreTeams.GetTeam
+              parameters:
+                team-id: $request.path.team-id
+                channel-id: $request.path.channel-id
+                sharedWithChannelTeamInfo-id: $request.path.sharedWithChannelTeamInfo-id
+            allowedMembers:
+              operationId: teams.channels.SharedGraphWPreTeams.ListAllowedMembers
+              parameters:
+                team-id: $request.path.team-id
+                channel-id: $request.path.channel-id
+                sharedWithChannelTeamInfo-id: $request.path.sharedWithChannelTeamInfo-id
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - teams.channel
+      summary: Update the navigation property sharedWithTeams in teams
+      operationId: teams.channels_UpdateSharedGraphWPreTeams
+      parameters:
+        - name: team-id
+          in: path
+          description: 'key: id of team'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - name: channel-id
+          in: path
+          description: 'key: id of channel'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: channel
+        - name: sharedWithChannelTeamInfo-id
+          in: path
+          description: 'key: id of sharedWithChannelTeamInfo'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: sharedWithChannelTeamInfo
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.sharedWithChannelTeamInfo'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - teams.channel
+      summary: Delete navigation property sharedWithTeams for teams
+      operationId: teams.channels_DeleteSharedGraphWPreTeams
+      parameters:
+        - name: team-id
+          in: path
+          description: 'key: id of team'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - name: channel-id
+          in: path
+          description: 'key: id of channel'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: channel
+        - name: sharedWithChannelTeamInfo-id
+          in: path
+          description: 'key: id of sharedWithChannelTeamInfo'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: sharedWithChannelTeamInfo
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/teams/{team-id}/channels/{channel-id}/sharedWithTeams/{sharedWithChannelTeamInfo-id}/allowedMembers':
+    get:
+      tags:
+        - teams.channel
+      summary: Get allowedMembers from teams
+      operationId: teams.channels.sharedGraphWPreTeams_ListAllowedMembers
+      parameters:
+        - name: team-id
+          in: path
+          description: 'key: id of team'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - name: channel-id
+          in: path
+          description: 'key: id of channel'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: channel
+        - name: sharedWithChannelTeamInfo-id
+          in: path
+          description: 'key: id of sharedWithChannelTeamInfo'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: sharedWithChannelTeamInfo
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - displayName
+                - displayName desc
+                - roles
+                - roles desc
+                - visibleHistoryStartDateTime
+                - visibleHistoryStartDateTime desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - displayName
+                - roles
+                - visibleHistoryStartDateTime
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/microsoft.graph.conversationMemberCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+  '/teams/{team-id}/channels/{channel-id}/sharedWithTeams/{sharedWithChannelTeamInfo-id}/allowedMembers/{conversationMember-id}':
+    get:
+      tags:
+        - teams.channel
+      summary: Get allowedMembers from teams
+      operationId: teams.channels.sharedGraphWPreTeams_GetAllowedMembers
+      parameters:
+        - name: team-id
+          in: path
+          description: 'key: id of team'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - name: channel-id
+          in: path
+          description: 'key: id of channel'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: channel
+        - name: sharedWithChannelTeamInfo-id
+          in: path
+          description: 'key: id of sharedWithChannelTeamInfo'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: sharedWithChannelTeamInfo
+        - name: conversationMember-id
+          in: path
+          description: 'key: id of conversationMember'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: conversationMember
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - displayName
+                - roles
+                - visibleHistoryStartDateTime
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.conversationMember'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/teams/{team-id}/channels/{channel-id}/tabs':
     get:
       tags:
@@ -14470,8 +16466,6 @@ paths:
                 - calendarView
                 - conversations
                 - events
-                - photo
-                - photos
                 - rejectedSenders
                 - threads
                 - drive
@@ -14481,6 +16475,8 @@ paths:
                 - groupLifecyclePolicies
                 - planner
                 - onenote
+                - photo
+                - photos
                 - team
               type: string
         - name: $expand
@@ -14509,8 +16505,6 @@ paths:
                 - calendarView
                 - conversations
                 - events
-                - photo
-                - photos
                 - rejectedSenders
                 - threads
                 - drive
@@ -14520,6 +16514,8 @@ paths:
                 - groupLifecyclePolicies
                 - planner
                 - onenote
+                - photo
+                - photos
                 - team
               type: string
       responses:
@@ -14590,14 +16586,6 @@ paths:
               operationId: teams.Group.ListEvents
               parameters:
                 team-id: $request.path.team-id
-            photo:
-              operationId: teams.Group.GetPhoto
-              parameters:
-                team-id: $request.path.team-id
-            photos:
-              operationId: teams.Group.ListPhotos
-              parameters:
-                team-id: $request.path.team-id
             rejectedSenders:
               operationId: teams.Group.ListRejectedSenders
               parameters:
@@ -14634,10 +16622,216 @@ paths:
               operationId: teams.Group.GetOnenote
               parameters:
                 team-id: $request.path.team-id
+            photo:
+              operationId: teams.Group.GetPhoto
+              parameters:
+                team-id: $request.path.team-id
+            photos:
+              operationId: teams.Group.ListPhotos
+              parameters:
+                team-id: $request.path.team-id
             team:
               operationId: teams.Group.GetTeam
               parameters:
                 team-id: $request.path.team-id
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/teams/{team-id}/incomingChannels':
+    get:
+      tags:
+        - teams.channel
+      summary: Get incomingChannels from teams
+      operationId: teams_ListIncomingChannels
+      parameters:
+        - name: team-id
+          in: path
+          description: 'key: id of team'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - createdDateTime
+                - createdDateTime desc
+                - description
+                - description desc
+                - displayName
+                - displayName desc
+                - email
+                - email desc
+                - isFavoriteByDefault
+                - isFavoriteByDefault desc
+                - membershipType
+                - membershipType desc
+                - tenantId
+                - tenantId desc
+                - webUrl
+                - webUrl desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - createdDateTime
+                - description
+                - displayName
+                - email
+                - isFavoriteByDefault
+                - membershipType
+                - tenantId
+                - webUrl
+                - filesFolder
+                - members
+                - messages
+                - sharedWithTeams
+                - tabs
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - filesFolder
+                - members
+                - messages
+                - sharedWithTeams
+                - tabs
+              type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/microsoft.graph.channelCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+  '/teams/{team-id}/incomingChannels/{channel-id}':
+    get:
+      tags:
+        - teams.channel
+      summary: Get incomingChannels from teams
+      operationId: teams_GetIncomingChannels
+      parameters:
+        - name: team-id
+          in: path
+          description: 'key: id of team'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - name: channel-id
+          in: path
+          description: 'key: id of channel'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: channel
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - createdDateTime
+                - description
+                - displayName
+                - email
+                - isFavoriteByDefault
+                - membershipType
+                - tenantId
+                - webUrl
+                - filesFolder
+                - members
+                - messages
+                - sharedWithTeams
+                - tabs
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - filesFolder
+                - members
+                - messages
+                - sharedWithTeams
+                - tabs
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.channel'
+          links:
+            filesFolder:
+              operationId: teams.IncomingChannels.GetFilesFolder
+              parameters:
+                team-id: $request.path.team-id
+                channel-id: $request.path.channel-id
+            members:
+              operationId: teams.IncomingChannels.ListMembers
+              parameters:
+                team-id: $request.path.team-id
+                channel-id: $request.path.channel-id
+            messages:
+              operationId: teams.IncomingChannels.ListMessages
+              parameters:
+                team-id: $request.path.team-id
+                channel-id: $request.path.channel-id
+            sharedWithTeams:
+              operationId: teams.IncomingChannels.ListSharedGraphWPreTeams
+              parameters:
+                team-id: $request.path.team-id
+                channel-id: $request.path.channel-id
+            tabs:
+              operationId: teams.IncomingChannels.ListTabs
+              parameters:
+                team-id: $request.path.team-id
+                channel-id: $request.path.channel-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -15756,10 +17950,12 @@ paths:
                 - email
                 - isFavoriteByDefault
                 - membershipType
+                - tenantId
                 - webUrl
                 - filesFolder
                 - members
                 - messages
+                - sharedWithTeams
                 - tabs
               type: string
         - name: $expand
@@ -15776,6 +17972,7 @@ paths:
                 - filesFolder
                 - members
                 - messages
+                - sharedWithTeams
                 - tabs
               type: string
       responses:
@@ -15798,12 +17995,18 @@ paths:
               operationId: teams.PrimaryChannel.ListMessages
               parameters:
                 team-id: $request.path.team-id
+            sharedWithTeams:
+              operationId: teams.PrimaryChannel.ListSharedGraphWPreTeams
+              parameters:
+                team-id: $request.path.team-id
             tabs:
               operationId: teams.PrimaryChannel.ListTabs
               parameters:
                 team-id: $request.path.team-id
             completeMigration:
               operationId: teams.team.primaryChannel.completeMigration
+            doesUserHaveAccess:
+              operationId: teams.team.primaryChannel.doesUserHaveAccess
             provisionEmail:
               operationId: teams.team.primaryChannel.provisionEmail
             removeEmail:
@@ -17638,6 +19841,54 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/teams/{team-id}/primaryChannel/microsoft.graph.doesUserHaveAccess(userId=''{userId}'',tenantId=''{tenantId}'',userPrincipalName=''{userPrincipalName}'')':
+    get:
+      tags:
+        - teams.Functions
+      summary: Invoke function doesUserHaveAccess
+      operationId: teams.primaryChannel_doesUserHaveAccess
+      parameters:
+        - name: team-id
+          in: path
+          description: 'key: id of team'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - name: userId
+          in: query
+          description: 'Usage: userId=''{userId}'''
+          schema:
+            type: string
+            nullable: true
+        - name: tenantId
+          in: query
+          description: 'Usage: tenantId=''{tenantId}'''
+          schema:
+            type: string
+            nullable: true
+        - name: userPrincipalName
+          in: query
+          description: 'Usage: userPrincipalName=''{userPrincipalName}'''
+          schema:
+            type: string
+            nullable: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: boolean
+                    default: false
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
   '/teams/{team-id}/primaryChannel/microsoft.graph.provisionEmail':
     post:
       tags:
@@ -17682,6 +19933,397 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/teams/{team-id}/primaryChannel/sharedWithTeams':
+    get:
+      tags:
+        - teams.channel
+      summary: Get sharedWithTeams from teams
+      operationId: teams.primaryChannel_ListSharedGraphWPreTeams
+      parameters:
+        - name: team-id
+          in: path
+          description: 'key: id of team'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - displayName
+                - displayName desc
+                - tenantId
+                - tenantId desc
+                - isHostTeam
+                - isHostTeam desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - displayName
+                - tenantId
+                - isHostTeam
+                - team
+                - allowedMembers
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - team
+                - allowedMembers
+              type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/microsoft.graph.sharedWithChannelTeamInfoCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - teams.channel
+      summary: Create new navigation property to sharedWithTeams for teams
+      operationId: teams.primaryChannel_CreateSharedGraphWPreTeams
+      parameters:
+        - name: team-id
+          in: path
+          description: 'key: id of team'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.sharedWithChannelTeamInfo'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.sharedWithChannelTeamInfo'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/teams/{team-id}/primaryChannel/sharedWithTeams/{sharedWithChannelTeamInfo-id}':
+    get:
+      tags:
+        - teams.channel
+      summary: Get sharedWithTeams from teams
+      operationId: teams.primaryChannel_GetSharedGraphWPreTeams
+      parameters:
+        - name: team-id
+          in: path
+          description: 'key: id of team'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - name: sharedWithChannelTeamInfo-id
+          in: path
+          description: 'key: id of sharedWithChannelTeamInfo'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: sharedWithChannelTeamInfo
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - displayName
+                - tenantId
+                - isHostTeam
+                - team
+                - allowedMembers
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - team
+                - allowedMembers
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.sharedWithChannelTeamInfo'
+          links:
+            team:
+              operationId: teams.primaryChannel.SharedGraphWPreTeams.GetTeam
+              parameters:
+                team-id: $request.path.team-id
+                sharedWithChannelTeamInfo-id: $request.path.sharedWithChannelTeamInfo-id
+            allowedMembers:
+              operationId: teams.primaryChannel.SharedGraphWPreTeams.ListAllowedMembers
+              parameters:
+                team-id: $request.path.team-id
+                sharedWithChannelTeamInfo-id: $request.path.sharedWithChannelTeamInfo-id
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - teams.channel
+      summary: Update the navigation property sharedWithTeams in teams
+      operationId: teams.primaryChannel_UpdateSharedGraphWPreTeams
+      parameters:
+        - name: team-id
+          in: path
+          description: 'key: id of team'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - name: sharedWithChannelTeamInfo-id
+          in: path
+          description: 'key: id of sharedWithChannelTeamInfo'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: sharedWithChannelTeamInfo
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.sharedWithChannelTeamInfo'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - teams.channel
+      summary: Delete navigation property sharedWithTeams for teams
+      operationId: teams.primaryChannel_DeleteSharedGraphWPreTeams
+      parameters:
+        - name: team-id
+          in: path
+          description: 'key: id of team'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - name: sharedWithChannelTeamInfo-id
+          in: path
+          description: 'key: id of sharedWithChannelTeamInfo'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: sharedWithChannelTeamInfo
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/teams/{team-id}/primaryChannel/sharedWithTeams/{sharedWithChannelTeamInfo-id}/allowedMembers':
+    get:
+      tags:
+        - teams.channel
+      summary: Get allowedMembers from teams
+      operationId: teams.primaryChannel.sharedGraphWPreTeams_ListAllowedMembers
+      parameters:
+        - name: team-id
+          in: path
+          description: 'key: id of team'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - name: sharedWithChannelTeamInfo-id
+          in: path
+          description: 'key: id of sharedWithChannelTeamInfo'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: sharedWithChannelTeamInfo
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - displayName
+                - displayName desc
+                - roles
+                - roles desc
+                - visibleHistoryStartDateTime
+                - visibleHistoryStartDateTime desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - displayName
+                - roles
+                - visibleHistoryStartDateTime
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/microsoft.graph.conversationMemberCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+  '/teams/{team-id}/primaryChannel/sharedWithTeams/{sharedWithChannelTeamInfo-id}/allowedMembers/{conversationMember-id}':
+    get:
+      tags:
+        - teams.channel
+      summary: Get allowedMembers from teams
+      operationId: teams.primaryChannel.sharedGraphWPreTeams_GetAllowedMembers
+      parameters:
+        - name: team-id
+          in: path
+          description: 'key: id of team'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - name: sharedWithChannelTeamInfo-id
+          in: path
+          description: 'key: id of sharedWithChannelTeamInfo'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: sharedWithChannelTeamInfo
+        - name: conversationMember-id
+          in: path
+          description: 'key: id of conversationMember'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: conversationMember
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - displayName
+                - roles
+                - visibleHistoryStartDateTime
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.conversationMember'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/teams/{team-id}/primaryChannel/tabs':
     get:
       tags:
@@ -23431,6 +26073,8 @@ paths:
                 - messagingSettings desc
                 - specialization
                 - specialization desc
+                - tenantId
+                - tenantId desc
                 - visibility
                 - visibility desc
                 - webUrl
@@ -23458,10 +26102,13 @@ paths:
                 - memberSettings
                 - messagingSettings
                 - specialization
+                - tenantId
                 - visibility
                 - webUrl
+                - allChannels
                 - channels
                 - group
+                - incomingChannels
                 - installedApps
                 - members
                 - operations
@@ -23480,8 +26127,10 @@ paths:
             items:
               enum:
                 - '*'
+                - allChannels
                 - channels
                 - group
+                - incomingChannels
                 - installedApps
                 - members
                 - operations
@@ -23571,10 +26220,13 @@ paths:
                 - memberSettings
                 - messagingSettings
                 - specialization
+                - tenantId
                 - visibility
                 - webUrl
+                - allChannels
                 - channels
                 - group
+                - incomingChannels
                 - installedApps
                 - members
                 - operations
@@ -23593,8 +26245,10 @@ paths:
             items:
               enum:
                 - '*'
+                - allChannels
                 - channels
                 - group
+                - incomingChannels
                 - installedApps
                 - members
                 - operations
@@ -23610,6 +26264,11 @@ paths:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.team'
           links:
+            allChannels:
+              operationId: users.JoinedTeams.ListAllChannels
+              parameters:
+                user-id: $request.path.user-id
+                team-id: $request.path.team-id
             channels:
               operationId: users.JoinedTeams.ListChannels
               parameters:
@@ -23617,6 +26276,11 @@ paths:
                 team-id: $request.path.team-id
             group:
               operationId: users.JoinedTeams.GetGroup
+              parameters:
+                user-id: $request.path.user-id
+                team-id: $request.path.team-id
+            incomingChannels:
+              operationId: users.JoinedTeams.ListIncomingChannels
               parameters:
                 user-id: $request.path.user-id
                 team-id: $request.path.team-id
@@ -23727,6 +26391,223 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/users/{user-id}/joinedTeams/{team-id}/allChannels':
+    get:
+      tags:
+        - users.team
+      summary: Get allChannels from users
+      operationId: users.joinedTeams_ListAllChannels
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: team-id
+          in: path
+          description: 'key: id of team'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - createdDateTime
+                - createdDateTime desc
+                - description
+                - description desc
+                - displayName
+                - displayName desc
+                - email
+                - email desc
+                - isFavoriteByDefault
+                - isFavoriteByDefault desc
+                - membershipType
+                - membershipType desc
+                - tenantId
+                - tenantId desc
+                - webUrl
+                - webUrl desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - createdDateTime
+                - description
+                - displayName
+                - email
+                - isFavoriteByDefault
+                - membershipType
+                - tenantId
+                - webUrl
+                - filesFolder
+                - members
+                - messages
+                - sharedWithTeams
+                - tabs
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - filesFolder
+                - members
+                - messages
+                - sharedWithTeams
+                - tabs
+              type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/microsoft.graph.channelCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+  '/users/{user-id}/joinedTeams/{team-id}/allChannels/{channel-id}':
+    get:
+      tags:
+        - users.team
+      summary: Get allChannels from users
+      operationId: users.joinedTeams_GetAllChannels
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: team-id
+          in: path
+          description: 'key: id of team'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - name: channel-id
+          in: path
+          description: 'key: id of channel'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: channel
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - createdDateTime
+                - description
+                - displayName
+                - email
+                - isFavoriteByDefault
+                - membershipType
+                - tenantId
+                - webUrl
+                - filesFolder
+                - members
+                - messages
+                - sharedWithTeams
+                - tabs
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - filesFolder
+                - members
+                - messages
+                - sharedWithTeams
+                - tabs
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.channel'
+          links:
+            filesFolder:
+              operationId: users.joinedTeams.AllChannels.GetFilesFolder
+              parameters:
+                user-id: $request.path.user-id
+                team-id: $request.path.team-id
+                channel-id: $request.path.channel-id
+            members:
+              operationId: users.joinedTeams.AllChannels.ListMembers
+              parameters:
+                user-id: $request.path.user-id
+                team-id: $request.path.team-id
+                channel-id: $request.path.channel-id
+            messages:
+              operationId: users.joinedTeams.AllChannels.ListMessages
+              parameters:
+                user-id: $request.path.user-id
+                team-id: $request.path.team-id
+                channel-id: $request.path.channel-id
+            sharedWithTeams:
+              operationId: users.joinedTeams.AllChannels.ListSharedGraphWPreTeams
+              parameters:
+                user-id: $request.path.user-id
+                team-id: $request.path.team-id
+                channel-id: $request.path.channel-id
+            tabs:
+              operationId: users.joinedTeams.AllChannels.ListTabs
+              parameters:
+                user-id: $request.path.user-id
+                team-id: $request.path.team-id
+                channel-id: $request.path.channel-id
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/users/{user-id}/joinedTeams/{team-id}/channels':
     get:
       tags:
@@ -23777,6 +26658,8 @@ paths:
                 - isFavoriteByDefault desc
                 - membershipType
                 - membershipType desc
+                - tenantId
+                - tenantId desc
                 - webUrl
                 - webUrl desc
               type: string
@@ -23797,10 +26680,12 @@ paths:
                 - email
                 - isFavoriteByDefault
                 - membershipType
+                - tenantId
                 - webUrl
                 - filesFolder
                 - members
                 - messages
+                - sharedWithTeams
                 - tabs
               type: string
         - name: $expand
@@ -23817,6 +26702,7 @@ paths:
                 - filesFolder
                 - members
                 - messages
+                - sharedWithTeams
                 - tabs
               type: string
       responses:
@@ -23910,10 +26796,12 @@ paths:
                 - email
                 - isFavoriteByDefault
                 - membershipType
+                - tenantId
                 - webUrl
                 - filesFolder
                 - members
                 - messages
+                - sharedWithTeams
                 - tabs
               type: string
         - name: $expand
@@ -23930,6 +26818,7 @@ paths:
                 - filesFolder
                 - members
                 - messages
+                - sharedWithTeams
                 - tabs
               type: string
       responses:
@@ -23958,6 +26847,12 @@ paths:
                 user-id: $request.path.user-id
                 team-id: $request.path.team-id
                 channel-id: $request.path.channel-id
+            sharedWithTeams:
+              operationId: users.joinedTeams.Channels.ListSharedGraphWPreTeams
+              parameters:
+                user-id: $request.path.user-id
+                team-id: $request.path.team-id
+                channel-id: $request.path.channel-id
             tabs:
               operationId: users.joinedTeams.Channels.ListTabs
               parameters:
@@ -23966,6 +26861,8 @@ paths:
                 channel-id: $request.path.channel-id
             completeMigration:
               operationId: users.user.joinedTeams.team.channels.channel.completeMigration
+            doesUserHaveAccess:
+              operationId: users.user.joinedTeams.team.channels.channel.doesUserHaveAccess
             provisionEmail:
               operationId: users.user.joinedTeams.team.channels.channel.provisionEmail
             removeEmail:
@@ -26111,6 +29008,499 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/users/{user-id}/joinedTeams/{team-id}/channels/{channel-id}/sharedWithTeams':
+    get:
+      tags:
+        - users.team
+      summary: Get sharedWithTeams from users
+      operationId: users.joinedTeams.channels_ListSharedGraphWPreTeams
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: team-id
+          in: path
+          description: 'key: id of team'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - name: channel-id
+          in: path
+          description: 'key: id of channel'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: channel
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - displayName
+                - displayName desc
+                - tenantId
+                - tenantId desc
+                - isHostTeam
+                - isHostTeam desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - displayName
+                - tenantId
+                - isHostTeam
+                - team
+                - allowedMembers
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - team
+                - allowedMembers
+              type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/microsoft.graph.sharedWithChannelTeamInfoCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - users.team
+      summary: Create new navigation property to sharedWithTeams for users
+      operationId: users.joinedTeams.channels_CreateSharedGraphWPreTeams
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: team-id
+          in: path
+          description: 'key: id of team'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - name: channel-id
+          in: path
+          description: 'key: id of channel'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: channel
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.sharedWithChannelTeamInfo'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.sharedWithChannelTeamInfo'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/users/{user-id}/joinedTeams/{team-id}/channels/{channel-id}/sharedWithTeams/{sharedWithChannelTeamInfo-id}':
+    get:
+      tags:
+        - users.team
+      summary: Get sharedWithTeams from users
+      operationId: users.joinedTeams.channels_GetSharedGraphWPreTeams
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: team-id
+          in: path
+          description: 'key: id of team'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - name: channel-id
+          in: path
+          description: 'key: id of channel'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: channel
+        - name: sharedWithChannelTeamInfo-id
+          in: path
+          description: 'key: id of sharedWithChannelTeamInfo'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: sharedWithChannelTeamInfo
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - displayName
+                - tenantId
+                - isHostTeam
+                - team
+                - allowedMembers
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - team
+                - allowedMembers
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.sharedWithChannelTeamInfo'
+          links:
+            team:
+              operationId: users.joinedTeams.channels.SharedGraphWPreTeams.GetTeam
+              parameters:
+                user-id: $request.path.user-id
+                team-id: $request.path.team-id
+                channel-id: $request.path.channel-id
+                sharedWithChannelTeamInfo-id: $request.path.sharedWithChannelTeamInfo-id
+            allowedMembers:
+              operationId: users.joinedTeams.channels.SharedGraphWPreTeams.ListAllowedMembers
+              parameters:
+                user-id: $request.path.user-id
+                team-id: $request.path.team-id
+                channel-id: $request.path.channel-id
+                sharedWithChannelTeamInfo-id: $request.path.sharedWithChannelTeamInfo-id
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - users.team
+      summary: Update the navigation property sharedWithTeams in users
+      operationId: users.joinedTeams.channels_UpdateSharedGraphWPreTeams
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: team-id
+          in: path
+          description: 'key: id of team'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - name: channel-id
+          in: path
+          description: 'key: id of channel'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: channel
+        - name: sharedWithChannelTeamInfo-id
+          in: path
+          description: 'key: id of sharedWithChannelTeamInfo'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: sharedWithChannelTeamInfo
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.sharedWithChannelTeamInfo'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.team
+      summary: Delete navigation property sharedWithTeams for users
+      operationId: users.joinedTeams.channels_DeleteSharedGraphWPreTeams
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: team-id
+          in: path
+          description: 'key: id of team'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - name: channel-id
+          in: path
+          description: 'key: id of channel'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: channel
+        - name: sharedWithChannelTeamInfo-id
+          in: path
+          description: 'key: id of sharedWithChannelTeamInfo'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: sharedWithChannelTeamInfo
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/users/{user-id}/joinedTeams/{team-id}/channels/{channel-id}/sharedWithTeams/{sharedWithChannelTeamInfo-id}/allowedMembers':
+    get:
+      tags:
+        - users.team
+      summary: Get allowedMembers from users
+      operationId: users.joinedTeams.channels.sharedGraphWPreTeams_ListAllowedMembers
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: team-id
+          in: path
+          description: 'key: id of team'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - name: channel-id
+          in: path
+          description: 'key: id of channel'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: channel
+        - name: sharedWithChannelTeamInfo-id
+          in: path
+          description: 'key: id of sharedWithChannelTeamInfo'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: sharedWithChannelTeamInfo
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - displayName
+                - displayName desc
+                - roles
+                - roles desc
+                - visibleHistoryStartDateTime
+                - visibleHistoryStartDateTime desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - displayName
+                - roles
+                - visibleHistoryStartDateTime
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/microsoft.graph.conversationMemberCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+  '/users/{user-id}/joinedTeams/{team-id}/channels/{channel-id}/sharedWithTeams/{sharedWithChannelTeamInfo-id}/allowedMembers/{conversationMember-id}':
+    get:
+      tags:
+        - users.team
+      summary: Get allowedMembers from users
+      operationId: users.joinedTeams.channels.sharedGraphWPreTeams_GetAllowedMembers
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: team-id
+          in: path
+          description: 'key: id of team'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - name: channel-id
+          in: path
+          description: 'key: id of channel'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: channel
+        - name: sharedWithChannelTeamInfo-id
+          in: path
+          description: 'key: id of sharedWithChannelTeamInfo'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: sharedWithChannelTeamInfo
+        - name: conversationMember-id
+          in: path
+          description: 'key: id of conversationMember'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: conversationMember
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - displayName
+                - roles
+                - visibleHistoryStartDateTime
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.conversationMember'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/users/{user-id}/joinedTeams/{team-id}/channels/{channel-id}/tabs':
     get:
       tags:
@@ -26587,8 +29977,6 @@ paths:
                 - calendarView
                 - conversations
                 - events
-                - photo
-                - photos
                 - rejectedSenders
                 - threads
                 - drive
@@ -26598,6 +29986,8 @@ paths:
                 - groupLifecyclePolicies
                 - planner
                 - onenote
+                - photo
+                - photos
                 - team
               type: string
         - name: $expand
@@ -26626,8 +30016,6 @@ paths:
                 - calendarView
                 - conversations
                 - events
-                - photo
-                - photos
                 - rejectedSenders
                 - threads
                 - drive
@@ -26637,6 +30025,8 @@ paths:
                 - groupLifecyclePolicies
                 - planner
                 - onenote
+                - photo
+                - photos
                 - team
               type: string
       responses:
@@ -26722,16 +30112,6 @@ paths:
               parameters:
                 user-id: $request.path.user-id
                 team-id: $request.path.team-id
-            photo:
-              operationId: users.joinedTeams.Group.GetPhoto
-              parameters:
-                user-id: $request.path.user-id
-                team-id: $request.path.team-id
-            photos:
-              operationId: users.joinedTeams.Group.ListPhotos
-              parameters:
-                user-id: $request.path.user-id
-                team-id: $request.path.team-id
             rejectedSenders:
               operationId: users.joinedTeams.Group.ListRejectedSenders
               parameters:
@@ -26777,11 +30157,238 @@ paths:
               parameters:
                 user-id: $request.path.user-id
                 team-id: $request.path.team-id
+            photo:
+              operationId: users.joinedTeams.Group.GetPhoto
+              parameters:
+                user-id: $request.path.user-id
+                team-id: $request.path.team-id
+            photos:
+              operationId: users.joinedTeams.Group.ListPhotos
+              parameters:
+                user-id: $request.path.user-id
+                team-id: $request.path.team-id
             team:
               operationId: users.joinedTeams.Group.GetTeam
               parameters:
                 user-id: $request.path.user-id
                 team-id: $request.path.team-id
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/users/{user-id}/joinedTeams/{team-id}/incomingChannels':
+    get:
+      tags:
+        - users.team
+      summary: Get incomingChannels from users
+      operationId: users.joinedTeams_ListIncomingChannels
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: team-id
+          in: path
+          description: 'key: id of team'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - createdDateTime
+                - createdDateTime desc
+                - description
+                - description desc
+                - displayName
+                - displayName desc
+                - email
+                - email desc
+                - isFavoriteByDefault
+                - isFavoriteByDefault desc
+                - membershipType
+                - membershipType desc
+                - tenantId
+                - tenantId desc
+                - webUrl
+                - webUrl desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - createdDateTime
+                - description
+                - displayName
+                - email
+                - isFavoriteByDefault
+                - membershipType
+                - tenantId
+                - webUrl
+                - filesFolder
+                - members
+                - messages
+                - sharedWithTeams
+                - tabs
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - filesFolder
+                - members
+                - messages
+                - sharedWithTeams
+                - tabs
+              type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/microsoft.graph.channelCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+  '/users/{user-id}/joinedTeams/{team-id}/incomingChannels/{channel-id}':
+    get:
+      tags:
+        - users.team
+      summary: Get incomingChannels from users
+      operationId: users.joinedTeams_GetIncomingChannels
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: team-id
+          in: path
+          description: 'key: id of team'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - name: channel-id
+          in: path
+          description: 'key: id of channel'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: channel
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - createdDateTime
+                - description
+                - displayName
+                - email
+                - isFavoriteByDefault
+                - membershipType
+                - tenantId
+                - webUrl
+                - filesFolder
+                - members
+                - messages
+                - sharedWithTeams
+                - tabs
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - filesFolder
+                - members
+                - messages
+                - sharedWithTeams
+                - tabs
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.channel'
+          links:
+            filesFolder:
+              operationId: users.joinedTeams.IncomingChannels.GetFilesFolder
+              parameters:
+                user-id: $request.path.user-id
+                team-id: $request.path.team-id
+                channel-id: $request.path.channel-id
+            members:
+              operationId: users.joinedTeams.IncomingChannels.ListMembers
+              parameters:
+                user-id: $request.path.user-id
+                team-id: $request.path.team-id
+                channel-id: $request.path.channel-id
+            messages:
+              operationId: users.joinedTeams.IncomingChannels.ListMessages
+              parameters:
+                user-id: $request.path.user-id
+                team-id: $request.path.team-id
+                channel-id: $request.path.channel-id
+            sharedWithTeams:
+              operationId: users.joinedTeams.IncomingChannels.ListSharedGraphWPreTeams
+              parameters:
+                user-id: $request.path.user-id
+                team-id: $request.path.team-id
+                channel-id: $request.path.channel-id
+            tabs:
+              operationId: users.joinedTeams.IncomingChannels.ListTabs
+              parameters:
+                user-id: $request.path.user-id
+                team-id: $request.path.team-id
+                channel-id: $request.path.channel-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -27790,10 +31397,12 @@ paths:
                 - email
                 - isFavoriteByDefault
                 - membershipType
+                - tenantId
                 - webUrl
                 - filesFolder
                 - members
                 - messages
+                - sharedWithTeams
                 - tabs
               type: string
         - name: $expand
@@ -27810,6 +31419,7 @@ paths:
                 - filesFolder
                 - members
                 - messages
+                - sharedWithTeams
                 - tabs
               type: string
       responses:
@@ -27835,6 +31445,11 @@ paths:
               parameters:
                 user-id: $request.path.user-id
                 team-id: $request.path.team-id
+            sharedWithTeams:
+              operationId: users.joinedTeams.PrimaryChannel.ListSharedGraphWPreTeams
+              parameters:
+                user-id: $request.path.user-id
+                team-id: $request.path.team-id
             tabs:
               operationId: users.joinedTeams.PrimaryChannel.ListTabs
               parameters:
@@ -27842,6 +31457,8 @@ paths:
                 team-id: $request.path.team-id
             completeMigration:
               operationId: users.user.joinedTeams.team.primaryChannel.completeMigration
+            doesUserHaveAccess:
+              operationId: users.user.joinedTeams.team.primaryChannel.doesUserHaveAccess
             provisionEmail:
               operationId: users.user.joinedTeams.team.primaryChannel.provisionEmail
             removeEmail:
@@ -29760,6 +33377,448 @@ paths:
       responses:
         '204':
           description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/users/{user-id}/joinedTeams/{team-id}/primaryChannel/sharedWithTeams':
+    get:
+      tags:
+        - users.team
+      summary: Get sharedWithTeams from users
+      operationId: users.joinedTeams.primaryChannel_ListSharedGraphWPreTeams
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: team-id
+          in: path
+          description: 'key: id of team'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - displayName
+                - displayName desc
+                - tenantId
+                - tenantId desc
+                - isHostTeam
+                - isHostTeam desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - displayName
+                - tenantId
+                - isHostTeam
+                - team
+                - allowedMembers
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - team
+                - allowedMembers
+              type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/microsoft.graph.sharedWithChannelTeamInfoCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - users.team
+      summary: Create new navigation property to sharedWithTeams for users
+      operationId: users.joinedTeams.primaryChannel_CreateSharedGraphWPreTeams
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: team-id
+          in: path
+          description: 'key: id of team'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.sharedWithChannelTeamInfo'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.sharedWithChannelTeamInfo'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/users/{user-id}/joinedTeams/{team-id}/primaryChannel/sharedWithTeams/{sharedWithChannelTeamInfo-id}':
+    get:
+      tags:
+        - users.team
+      summary: Get sharedWithTeams from users
+      operationId: users.joinedTeams.primaryChannel_GetSharedGraphWPreTeams
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: team-id
+          in: path
+          description: 'key: id of team'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - name: sharedWithChannelTeamInfo-id
+          in: path
+          description: 'key: id of sharedWithChannelTeamInfo'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: sharedWithChannelTeamInfo
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - displayName
+                - tenantId
+                - isHostTeam
+                - team
+                - allowedMembers
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - team
+                - allowedMembers
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.sharedWithChannelTeamInfo'
+          links:
+            team:
+              operationId: users.joinedTeams.primaryChannel.SharedGraphWPreTeams.GetTeam
+              parameters:
+                user-id: $request.path.user-id
+                team-id: $request.path.team-id
+                sharedWithChannelTeamInfo-id: $request.path.sharedWithChannelTeamInfo-id
+            allowedMembers:
+              operationId: users.joinedTeams.primaryChannel.SharedGraphWPreTeams.ListAllowedMembers
+              parameters:
+                user-id: $request.path.user-id
+                team-id: $request.path.team-id
+                sharedWithChannelTeamInfo-id: $request.path.sharedWithChannelTeamInfo-id
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - users.team
+      summary: Update the navigation property sharedWithTeams in users
+      operationId: users.joinedTeams.primaryChannel_UpdateSharedGraphWPreTeams
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: team-id
+          in: path
+          description: 'key: id of team'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - name: sharedWithChannelTeamInfo-id
+          in: path
+          description: 'key: id of sharedWithChannelTeamInfo'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: sharedWithChannelTeamInfo
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.sharedWithChannelTeamInfo'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.team
+      summary: Delete navigation property sharedWithTeams for users
+      operationId: users.joinedTeams.primaryChannel_DeleteSharedGraphWPreTeams
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: team-id
+          in: path
+          description: 'key: id of team'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - name: sharedWithChannelTeamInfo-id
+          in: path
+          description: 'key: id of sharedWithChannelTeamInfo'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: sharedWithChannelTeamInfo
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/users/{user-id}/joinedTeams/{team-id}/primaryChannel/sharedWithTeams/{sharedWithChannelTeamInfo-id}/allowedMembers':
+    get:
+      tags:
+        - users.team
+      summary: Get allowedMembers from users
+      operationId: users.joinedTeams.primaryChannel.sharedGraphWPreTeams_ListAllowedMembers
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: team-id
+          in: path
+          description: 'key: id of team'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - name: sharedWithChannelTeamInfo-id
+          in: path
+          description: 'key: id of sharedWithChannelTeamInfo'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: sharedWithChannelTeamInfo
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - displayName
+                - displayName desc
+                - roles
+                - roles desc
+                - visibleHistoryStartDateTime
+                - visibleHistoryStartDateTime desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - displayName
+                - roles
+                - visibleHistoryStartDateTime
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/microsoft.graph.conversationMemberCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+  '/users/{user-id}/joinedTeams/{team-id}/primaryChannel/sharedWithTeams/{sharedWithChannelTeamInfo-id}/allowedMembers/{conversationMember-id}':
+    get:
+      tags:
+        - users.team
+      summary: Get allowedMembers from users
+      operationId: users.joinedTeams.primaryChannel.sharedGraphWPreTeams_GetAllowedMembers
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: team-id
+          in: path
+          description: 'key: id of team'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - name: sharedWithChannelTeamInfo-id
+          in: path
+          description: 'key: id of sharedWithChannelTeamInfo'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: sharedWithChannelTeamInfo
+        - name: conversationMember-id
+          in: path
+          description: 'key: id of conversationMember'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: conversationMember
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - displayName
+                - roles
+                - visibleHistoryStartDateTime
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.conversationMember'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -32857,6 +36916,7 @@ paths:
             items:
               enum:
                 - id
+                - associatedTeams
                 - installedApps
               type: string
         - name: $expand
@@ -32870,6 +36930,7 @@ paths:
             items:
               enum:
                 - '*'
+                - associatedTeams
                 - installedApps
               type: string
       responses:
@@ -32880,6 +36941,10 @@ paths:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.userTeamwork'
           links:
+            associatedTeams:
+              operationId: users.Teamwork.ListAssociatedTeams
+              parameters:
+                user-id: $request.path.user-id
             installedApps:
               operationId: users.Teamwork.ListInstalledApps
               parameters:
@@ -32928,6 +36993,238 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: user
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/users/{user-id}/teamwork/associatedTeams':
+    get:
+      tags:
+        - users.userTeamwork
+      summary: Get associatedTeams from users
+      operationId: users.teamwork_ListAssociatedTeams
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - displayName
+                - displayName desc
+                - tenantId
+                - tenantId desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - displayName
+                - tenantId
+                - team
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - team
+              type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/microsoft.graph.associatedTeamInfoCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - users.userTeamwork
+      summary: Create new navigation property to associatedTeams for users
+      operationId: users.teamwork_CreateAssociatedTeams
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.associatedTeamInfo'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.associatedTeamInfo'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/users/{user-id}/teamwork/associatedTeams/{associatedTeamInfo-id}':
+    get:
+      tags:
+        - users.userTeamwork
+      summary: Get associatedTeams from users
+      operationId: users.teamwork_GetAssociatedTeams
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: associatedTeamInfo-id
+          in: path
+          description: 'key: id of associatedTeamInfo'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: associatedTeamInfo
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - displayName
+                - tenantId
+                - team
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - team
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.associatedTeamInfo'
+          links:
+            team:
+              operationId: users.teamwork.AssociatedTeams.GetTeam
+              parameters:
+                user-id: $request.path.user-id
+                associatedTeamInfo-id: $request.path.associatedTeamInfo-id
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - users.userTeamwork
+      summary: Update the navigation property associatedTeams in users
+      operationId: users.teamwork_UpdateAssociatedTeams
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: associatedTeamInfo-id
+          in: path
+          description: 'key: id of associatedTeamInfo'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: associatedTeamInfo
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.associatedTeamInfo'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.userTeamwork
+      summary: Delete navigation property associatedTeams for users
+      operationId: users.teamwork_DeleteAssociatedTeams
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: associatedTeamInfo-id
+          in: path
+          description: 'key: id of associatedTeamInfo'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: associatedTeamInfo
         - name: If-Match
           in: header
           description: ETag
@@ -33426,7 +37723,7 @@ components:
               items:
                 type: string
                 nullable: true
-              description: The roles for that user.
+              description: 'The roles for that user. This property only contains additional qualifiers when relevant - for example, if the member has owner privileges, the roles property contains owner as one of the values. Similarly, if the member is a guest, the roles property contains guest as one of the values. A basic member should not have any values specified in the roles property.'
             visibleHistoryStartDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -33655,12 +37952,21 @@ components:
               $ref: '#/components/schemas/microsoft.graph.teamMessagingSettings'
             specialization:
               $ref: '#/components/schemas/microsoft.graph.teamSpecialization'
+            tenantId:
+              type: string
+              description: The ID of the Azure Active Directory tenant.
+              nullable: true
             visibility:
               $ref: '#/components/schemas/microsoft.graph.teamVisibilityType'
             webUrl:
               type: string
               description: 'A hyperlink that will go to the team in the Microsoft Teams client. This is the URL that you get when you right-click a team in the Microsoft Teams client and select Get link to team. This URL should be treated as an opaque blob, and not parsed.'
               nullable: true
+            allChannels:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.channel'
+              description: List of channels either hosted in or shared with the team (incoming channels).
             channels:
               type: array
               items:
@@ -33668,6 +37974,11 @@ components:
               description: The collection of channels and messages associated with the team.
             group:
               $ref: '#/components/schemas/microsoft.graph.group'
+            incomingChannels:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.channel'
+              description: List of channels shared with the team.
             installedApps:
               type: array
               items:
@@ -33720,6 +38031,10 @@ components:
               nullable: true
             membershipType:
               $ref: '#/components/schemas/microsoft.graph.channelMembershipType'
+            tenantId:
+              type: string
+              description: The ID of the Azure Active Directory tenant.
+              nullable: true
             webUrl:
               type: string
               description: 'A hyperlink that will go to the channel in Microsoft Teams. This is the URL that you get when you right-click a channel in Microsoft Teams and select Get link to channel. This URL should be treated as an opaque blob, and not parsed. Read-only.'
@@ -33736,6 +38051,11 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.chatMessage'
               description: A collection of all the messages in the channel. A navigation property. Nullable.
+            sharedWithTeams:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.sharedWithChannelTeamInfo'
+              description: A collection of teams with which a channel is shared.
             tabs:
               type: array
               items:
@@ -33838,6 +38158,23 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.driveItemVersion'
               description: 'The list of previous versions of the item. For more info, see [getting previous versions][]. Read-only. Nullable.'
+          additionalProperties:
+            type: object
+    microsoft.graph.sharedWithChannelTeamInfo:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.teamInfo'
+        - title: sharedWithChannelTeamInfo
+          type: object
+          properties:
+            isHostTeam:
+              type: boolean
+              description: Indicates whether the team is the host of the channel.
+              nullable: true
+            allowedMembers:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.conversationMember'
+              description: A collection of team members who have access to the shared channel.
           additionalProperties:
             type: object
     microsoft.graph.group:
@@ -34079,13 +38416,6 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.event'
               description: The group's events.
-            photo:
-              $ref: '#/components/schemas/microsoft.graph.profilePhoto'
-            photos:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.profilePhoto'
-              description: The profile photos owned by the group. Read-only. Nullable.
             rejectedSenders:
               type: array
               items:
@@ -34122,6 +38452,13 @@ components:
               $ref: '#/components/schemas/microsoft.graph.plannerGroup'
             onenote:
               $ref: '#/components/schemas/microsoft.graph.onenote'
+            photo:
+              $ref: '#/components/schemas/microsoft.graph.profilePhoto'
+            photos:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.profilePhoto'
+              description: The profile photos owned by the group. Read-only. Nullable.
             team:
               $ref: '#/components/schemas/microsoft.graph.team'
           additionalProperties:
@@ -34501,11 +38838,23 @@ components:
         - title: userTeamwork
           type: object
           properties:
+            associatedTeams:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.associatedTeamInfo'
+              description: The list of associatedTeamInfo objects that a user is associated with.
             installedApps:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.userScopeTeamsAppInstallation'
               description: The apps installed in the personal scope of this user.
+          additionalProperties:
+            type: object
+    microsoft.graph.associatedTeamInfo:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.teamInfo'
+        - title: associatedTeamInfo
+          type: object
           additionalProperties:
             type: object
     microsoft.graph.userScopeTeamsAppInstallation:
@@ -34888,6 +39237,7 @@ components:
         - standard
         - private
         - unknownFutureValue
+        - shared
       type: string
     microsoft.graph.baseItem:
       allOf:
@@ -35661,6 +40011,24 @@ components:
               nullable: true
           additionalProperties:
             type: object
+    microsoft.graph.teamInfo:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: teamInfo
+          type: object
+          properties:
+            displayName:
+              type: string
+              description: The name of the team.
+              nullable: true
+            tenantId:
+              type: string
+              description: The ID of the Azure Active Directory tenant.
+              nullable: true
+            team:
+              $ref: '#/components/schemas/microsoft.graph.team'
+          additionalProperties:
+            type: object
     microsoft.graph.directoryObject:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -36088,28 +40456,6 @@ components:
               description: A collection of all the conversation threads in the conversation. A navigation property. Read-only. Nullable.
           additionalProperties:
             type: object
-    microsoft.graph.profilePhoto:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: profilePhoto
-          type: object
-          properties:
-            height:
-              maximum: 2147483647
-              minimum: -2147483648
-              type: integer
-              description: The height of the photo. Read-only.
-              format: int32
-              nullable: true
-            width:
-              maximum: 2147483647
-              minimum: -2147483648
-              type: integer
-              description: The width of the photo. Read-only.
-              format: int32
-              nullable: true
-          additionalProperties:
-            type: object
     microsoft.graph.conversationThread:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -36357,6 +40703,28 @@ components:
               description: The sections in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
           additionalProperties:
             type: object
+    microsoft.graph.profilePhoto:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: profilePhoto
+          type: object
+          properties:
+            height:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              description: The height of the photo. Read-only.
+              format: int32
+              nullable: true
+            width:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              description: The width of the photo. Read-only.
+              format: int32
+              nullable: true
+          additionalProperties:
+            type: object
     microsoft.graph.operationError:
       title: operationError
       type: object
@@ -36380,6 +40748,8 @@ components:
         - unarchiveTeam
         - createTeam
         - unknownFutureValue
+        - teamifyGroup
+        - createChannel
       type: string
     microsoft.graph.teamsAsyncOperationStatus:
       title: teamsAsyncOperationStatus
@@ -36669,6 +41039,18 @@ components:
           type: string
       additionalProperties:
         type: object
+    microsoft.graph.sharedWithChannelTeamInfoCollectionResponse:
+      title: Collection of sharedWithChannelTeamInfo
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.sharedWithChannelTeamInfo'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
     microsoft.graph.teamsAsyncOperationCollectionResponse:
       title: Collection of teamsAsyncOperation
       type: object
@@ -36813,6 +41195,18 @@ components:
           type: string
       additionalProperties:
         type: object
+    microsoft.graph.associatedTeamInfoCollectionResponse:
+      title: Collection of associatedTeamInfo
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.associatedTeamInfo'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
     microsoft.graph.userScopeTeamsAppInstallationCollectionResponse:
       title: Collection of userScopeTeamsAppInstallation
       type: object
@@ -36831,11 +41225,11 @@ components:
       properties:
         displayName:
           type: string
-          description: The display name of the identity. This property is read-only.
+          description: 'The identity''s display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
           nullable: true
         id:
           type: string
-          description: The identifier of the identity. This property is read-only.
+          description: Unique identifier for the identity.
           nullable: true
       additionalProperties:
         type: object
@@ -37126,7 +41520,7 @@ components:
               description: State of license assignments for this user. Read-only. Returned only on $select.
             mail:
               type: string
-              description: 'The SMTP address for the user, for example, admin@contoso.com. Changes to this property will also update the user''s proxyAddresses collection to include the value as an SMTP address. For Azure AD B2C accounts, this property can be updated up to only ten times with unique SMTP addresses. This property cannot contain accent characters.  Supports $filter (eq, ne, not, ge, le, in, startsWith, endsWith, and eq on null values).'
+              description: 'The SMTP address for the user, for example, admin@contoso.com. Changes to this property will also update the user''s proxyAddresses collection to include the value as an SMTP address. This property cannot contain accent characters.  NOTE: We do not recommend updating this property for Azure AD B2C user profiles. Use the otherMails property instead.  Supports $filter (eq, ne, not, ge, le, in, startsWith, endsWith, and eq on null values).'
               nullable: true
             mailNickname:
               type: string
@@ -39230,11 +43624,11 @@ components:
               nullable: true
             principalId:
               type: string
-              description: 'The id of the user on behalf of whom the client is authorized to access the resource, when consentType is Principal. If consentType is AllPrincipals this value is null. Required when consentType is Principal.'
+              description: 'The id of the user on behalf of whom the client is authorized to access the resource, when consentType is Principal. If consentType is AllPrincipals this value is null. Required when consentType is Principal. Supports $filter (eq only).'
               nullable: true
             resourceId:
               type: string
-              description: The id of the resource service principal to which access is authorized. This identifies the API which the client is authorized to attempt to call on behalf of a signed-in user.
+              description: The id of the resource service principal to which access is authorized. This identifies the API which the client is authorized to attempt to call on behalf of a signed-in user. Supports $filter (eq only).
             scope:
               type: string
               description: 'A space-separated list of the claim values for delegated permissions which should be included in access tokens for the resource application (the API). For example, openid User.Read GroupMember.Read.All. Each claim value should match the value field of one of the delegated permissions defined by the API, listed in the publishedPermissionScopes property of the resource service principal.'
@@ -42998,7 +47392,7 @@ components:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: The date and time when the temporaryAccessPass was created.
+              description: The date and time when the Temporary Access Pass was created.
               format: date-time
               nullable: true
             isUsable:
@@ -43007,28 +47401,28 @@ components:
               nullable: true
             isUsableOnce:
               type: boolean
-              description: 'Determines whether the pass is limited to a one time use. If true, the pass can be used once; if false, the pass can be used multiple times within the temporaryAccessPass lifetime.'
+              description: 'Determines whether the pass is limited to a one-time use. If true, the pass can be used once; if false, the pass can be used multiple times within the Temporary Access Pass lifetime.'
               nullable: true
             lifetimeInMinutes:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
-              description: 'The lifetime of the temporaryAccessPass in minutes starting at startDateTime. Minimum 10, Maximum 43200 (equivalent to 30 days).'
+              description: The lifetime of the Temporary Access Pass in minutes starting at startDateTime. Must be between 10 and 43200 inclusive (equivalent to 30 days).
               format: int32
               nullable: true
             methodUsabilityReason:
               type: string
-              description: 'Details about usability state (isUsable). Reasons can include: enabledByPolicy, disabledByPolicy, expired, notYetValid, oneTimeUsed.'
+              description: 'Details about the usability state (isUsable). Reasons can include: EnabledByPolicy, DisabledByPolicy, Expired, NotYetValid, OneTimeUsed.'
               nullable: true
             startDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: The date and time when the temporaryAccessPass becomes available to use.
+              description: The date and time when the Temporary Access Pass becomes available to use and when isUsable is true is enforced.
               format: date-time
               nullable: true
             temporaryAccessPass:
               type: string
-              description: The temporaryAccessPass used to authenticate. Returned only on creation of a new temporaryAccessPass; returned as NULL with GET.
+              description: The Temporary Access Pass used to authenticate. Returned only on creation of a new temporaryAccessPassAuthenticationMethod object; Hidden in subsequent read operations and returned as null with GET.
               nullable: true
           additionalProperties:
             type: object
@@ -45116,6 +49510,12 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.channelCollectionResponse'
+    microsoft.graph.sharedWithChannelTeamInfoCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.sharedWithChannelTeamInfoCollectionResponse'
     microsoft.graph.teamsAsyncOperationCollectionResponse:
       description: Retrieved collection
       content:
@@ -45188,6 +49588,12 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.workforceIntegrationCollectionResponse'
+    microsoft.graph.associatedTeamInfoCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.associatedTeamInfoCollectionResponse'
     microsoft.graph.userScopeTeamsAppInstallationCollectionResponse:
       description: Retrieved collection
       content:

@@ -8,9 +8,7 @@ schema: 2.0.0
 # Update-MgGroupPlannerPlanDetail
 
 ## SYNOPSIS
-Read-only.
-Nullable.
-Additional details about the plan.
+Update the navigation property details in groups
 
 ## SYNTAX
 
@@ -41,9 +39,7 @@ Update-MgGroupPlannerPlanDetail -InputObject <IPlannerIdentity> [-AdditionalProp
 ```
 
 ## DESCRIPTION
-Read-only.
-Nullable.
-Additional details about the plan.
+Update the navigation property details in groups
 
 ## EXAMPLES
 
@@ -112,7 +108,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -242,26 +238,64 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphPlannerPlanDetails>: plannerPlanDetails
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[CategoryDescriptions <IMicrosoftGraphPlannerCategoryDescriptions>]`: plannerCategoryDescriptions
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Category1 <String>]`: The label associated with Category 1
+    - `[Category10 <String>]`: The label associated with Category 10
+    - `[Category11 <String>]`: The label associated with Category 11
+    - `[Category12 <String>]`: The label associated with Category 12
+    - `[Category13 <String>]`: The label associated with Category 13
+    - `[Category14 <String>]`: The label associated with Category 14
+    - `[Category15 <String>]`: The label associated with Category 15
+    - `[Category16 <String>]`: The label associated with Category 16
+    - `[Category17 <String>]`: The label associated with Category 17
+    - `[Category18 <String>]`: The label associated with Category 18
+    - `[Category19 <String>]`: The label associated with Category 19
     - `[Category2 <String>]`: The label associated with Category 2
+    - `[Category20 <String>]`: The label associated with Category 20
+    - `[Category21 <String>]`: The label associated with Category 21
+    - `[Category22 <String>]`: The label associated with Category 22
+    - `[Category23 <String>]`: The label associated with Category 23
+    - `[Category24 <String>]`: The label associated with Category 24
+    - `[Category25 <String>]`: The label associated with Category 25
     - `[Category3 <String>]`: The label associated with Category 3
     - `[Category4 <String>]`: The label associated with Category 4
     - `[Category5 <String>]`: The label associated with Category 5
     - `[Category6 <String>]`: The label associated with Category 6
+    - `[Category7 <String>]`: The label associated with Category 7
+    - `[Category8 <String>]`: The label associated with Category 8
+    - `[Category9 <String>]`: The label associated with Category 9
   - `[SharedWith <IMicrosoftGraphPlannerUserIds>]`: plannerUserIds
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
 
 CATEGORYDESCRIPTIONS <IMicrosoftGraphPlannerCategoryDescriptions>: plannerCategoryDescriptions
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Category1 <String>]`: The label associated with Category 1
+  - `[Category10 <String>]`: The label associated with Category 10
+  - `[Category11 <String>]`: The label associated with Category 11
+  - `[Category12 <String>]`: The label associated with Category 12
+  - `[Category13 <String>]`: The label associated with Category 13
+  - `[Category14 <String>]`: The label associated with Category 14
+  - `[Category15 <String>]`: The label associated with Category 15
+  - `[Category16 <String>]`: The label associated with Category 16
+  - `[Category17 <String>]`: The label associated with Category 17
+  - `[Category18 <String>]`: The label associated with Category 18
+  - `[Category19 <String>]`: The label associated with Category 19
   - `[Category2 <String>]`: The label associated with Category 2
+  - `[Category20 <String>]`: The label associated with Category 20
+  - `[Category21 <String>]`: The label associated with Category 21
+  - `[Category22 <String>]`: The label associated with Category 22
+  - `[Category23 <String>]`: The label associated with Category 23
+  - `[Category24 <String>]`: The label associated with Category 24
+  - `[Category25 <String>]`: The label associated with Category 25
   - `[Category3 <String>]`: The label associated with Category 3
   - `[Category4 <String>]`: The label associated with Category 4
   - `[Category5 <String>]`: The label associated with Category 5
   - `[Category6 <String>]`: The label associated with Category 6
+  - `[Category7 <String>]`: The label associated with Category 7
+  - `[Category8 <String>]`: The label associated with Category 8
+  - `[Category9 <String>]`: The label associated with Category 9
 
 INPUTOBJECT <IPlannerIdentity>: Identity Parameter
   - `[GroupId <String>]`: key: id of group

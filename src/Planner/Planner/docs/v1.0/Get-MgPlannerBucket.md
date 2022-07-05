@@ -8,9 +8,7 @@ schema: 2.0.0
 # Get-MgPlannerBucket
 
 ## SYNOPSIS
-Read-only.
-Nullable.
-Returns a collection of the specified buckets
+Get buckets from planner
 
 ## SYNTAX
 
@@ -34,9 +32,7 @@ Get-MgPlannerBucket -InputObject <IPlannerIdentity> [-ExpandProperty <String[]>]
 ```
 
 ## DESCRIPTION
-Read-only.
-Nullable.
-Returns a collection of the specified buckets
+Get buckets from planner
 
 ## EXAMPLES
 

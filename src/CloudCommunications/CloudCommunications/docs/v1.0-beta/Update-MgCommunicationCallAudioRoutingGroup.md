@@ -8,8 +8,7 @@ schema: 2.0.0
 # Update-MgCommunicationCallAudioRoutingGroup
 
 ## SYNOPSIS
-Read-only.
-Nullable.
+Update the navigation property audioRoutingGroups in communications
 
 ## SYNTAX
 
@@ -40,8 +39,7 @@ Update-MgCommunicationCallAudioRoutingGroup -InputObject <ICloudCommunicationsId
 ```
 
 ## DESCRIPTION
-Read-only.
-Nullable.
+Update the navigation property audioRoutingGroups in communications
 
 ## EXAMPLES
 
@@ -109,7 +107,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -254,7 +252,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphAudioRoutingGroup1>: audioRoutingGroup
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[Receivers <String[]>]`: List of receiving participant ids.
   - `[RoutingMode <String>]`: 
   - `[Sources <String[]>]`: List of source participant ids.

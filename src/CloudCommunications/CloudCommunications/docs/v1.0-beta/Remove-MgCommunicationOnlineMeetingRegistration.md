@@ -8,8 +8,7 @@ schema: 2.0.0
 # Remove-MgCommunicationOnlineMeetingRegistration
 
 ## SYNOPSIS
-The registration that has been enabled for an online meeting.
-One online meeting can only have one registration enabled.
+Delete navigation property registration for communications
 
 ## SYNTAX
 
@@ -26,8 +25,7 @@ Remove-MgCommunicationOnlineMeetingRegistration -InputObject <ICloudCommunicatio
 ```
 
 ## DESCRIPTION
-The registration that has been enabled for an online meeting.
-One online meeting can only have one registration enabled.
+Delete navigation property registration for communications
 
 ## EXAMPLES
 

@@ -8,8 +8,7 @@ schema: 2.0.0
 # Get-MgEducationSchoolClassByRef
 
 ## SYNOPSIS
-Classes taught at the school.
-Nullable.
+Get ref of classes from education
 
 ## SYNTAX
 
@@ -20,8 +19,7 @@ Get-MgEducationSchoolClassByRef -EducationSchoolId <String> [-Filter <String>] [
 ```
 
 ## DESCRIPTION
-Classes taught at the school.
-Nullable.
+Get ref of classes from education
 
 ## EXAMPLES
 

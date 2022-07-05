@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgDeviceManagementGroupPolicyMigrationReportGroupPolicySettingMapping
 
 ## SYNOPSIS
-A list of group policy settings to MDM/Intune mappings.
+Create new navigation property to groupPolicySettingMappings for deviceManagement
 
 ## SYNTAX
 
@@ -18,11 +18,12 @@ New-MgDeviceManagementGroupPolicyMigrationReportGroupPolicySettingMapping
  -GroupPolicyMigrationReportId <String> [-AdditionalProperties <Hashtable>]
  [-AdmxSettingDefinitionId <String>] [-ChildIdList <String[]>] [-Id <String>]
  [-IntuneSettingDefinitionId <String>] [-IntuneSettingUriList <String[]>] [-IsMdmSupported]
- [-MdmCspName <String>] [-MdmMinimumOSVersion <Int32>] [-MdmSettingUri <String>] [-MdmSupportedState <String>]
- [-ParentId <String>] [-SettingCategory <String>] [-SettingDisplayName <String>]
- [-SettingDisplayValue <String>] [-SettingDisplayValueType <String>] [-SettingName <String>]
- [-SettingScope <String>] [-SettingType <String>] [-SettingValue <String>]
- [-SettingValueDisplayUnits <String>] [-SettingValueType <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-MdmCspName <String>] [-MdmMinimumOSVersion <Int32>] [-MdmSettingUri <String>]
+ [-MdmSupportedState <MdmSupportedState>] [-ParentId <String>] [-SettingCategory <String>]
+ [-SettingDisplayName <String>] [-SettingDisplayValue <String>] [-SettingDisplayValueType <String>]
+ [-SettingName <String>] [-SettingScope <GroupPolicySettingScope>] [-SettingType <GroupPolicySettingType>]
+ [-SettingValue <String>] [-SettingValueDisplayUnits <String>] [-SettingValueType <String>] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
@@ -45,15 +46,16 @@ New-MgDeviceManagementGroupPolicyMigrationReportGroupPolicySettingMapping
  -InputObject <IDeviceManagementAdministrationIdentity> [-AdditionalProperties <Hashtable>]
  [-AdmxSettingDefinitionId <String>] [-ChildIdList <String[]>] [-Id <String>]
  [-IntuneSettingDefinitionId <String>] [-IntuneSettingUriList <String[]>] [-IsMdmSupported]
- [-MdmCspName <String>] [-MdmMinimumOSVersion <Int32>] [-MdmSettingUri <String>] [-MdmSupportedState <String>]
- [-ParentId <String>] [-SettingCategory <String>] [-SettingDisplayName <String>]
- [-SettingDisplayValue <String>] [-SettingDisplayValueType <String>] [-SettingName <String>]
- [-SettingScope <String>] [-SettingType <String>] [-SettingValue <String>]
- [-SettingValueDisplayUnits <String>] [-SettingValueType <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-MdmCspName <String>] [-MdmMinimumOSVersion <Int32>] [-MdmSettingUri <String>]
+ [-MdmSupportedState <MdmSupportedState>] [-ParentId <String>] [-SettingCategory <String>]
+ [-SettingDisplayName <String>] [-SettingDisplayValue <String>] [-SettingDisplayValueType <String>]
+ [-SettingName <String>] [-SettingScope <GroupPolicySettingScope>] [-SettingType <GroupPolicySettingType>]
+ [-SettingValue <String>] [-SettingValueDisplayUnits <String>] [-SettingValueType <String>] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-A list of group policy settings to MDM/Intune mappings.
+Create new navigation property to groupPolicySettingMappings for deviceManagement
 
 ## EXAMPLES
 
@@ -136,7 +138,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -260,7 +262,7 @@ Accept wildcard characters: False
 Mdm Support Status of the setting.
 
 ```yaml
-Type: System.String
+Type: Microsoft.Graph.PowerShell.Support.MdmSupportedState
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -365,7 +367,7 @@ Accept wildcard characters: False
 Scope of the group policy setting.
 
 ```yaml
-Type: System.String
+Type: Microsoft.Graph.PowerShell.Support.GroupPolicySettingScope
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -380,7 +382,7 @@ Accept wildcard characters: False
 Setting type of the group policy.
 
 ```yaml
-Type: System.String
+Type: Microsoft.Graph.PowerShell.Support.GroupPolicySettingType
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -491,7 +493,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphGroupPolicySettingMapping>: The Group Policy setting to MDM/Intune mapping.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[AdmxSettingDefinitionId <String>]`: Admx Group Policy Id
   - `[ChildIdList <String[]>]`: List of Child Ids of the group policy setting.
   - `[IntuneSettingDefinitionId <String>]`: The Intune Setting Definition Id
@@ -500,15 +502,15 @@ BODYPARAMETER <IMicrosoftGraphGroupPolicySettingMapping>: The Group Policy setti
   - `[MdmCspName <String>]`: The CSP name this group policy setting maps to.
   - `[MdmMinimumOSVersion <Int32?>]`: The minimum OS version this mdm setting supports.
   - `[MdmSettingUri <String>]`: The MDM CSP URI this group policy setting maps to.
-  - `[MdmSupportedState <String>]`: Mdm Support Status of the setting.
+  - `[MdmSupportedState <MdmSupportedState?>]`: Mdm Support Status of the setting.
   - `[ParentId <String>]`: Parent Id of the group policy setting.
   - `[SettingCategory <String>]`: The category the group policy setting is in.
   - `[SettingDisplayName <String>]`: The display name of this group policy setting.
   - `[SettingDisplayValue <String>]`: The display value of this group policy setting.
   - `[SettingDisplayValueType <String>]`: The display value type of this group policy setting.
   - `[SettingName <String>]`: The name of this group policy setting.
-  - `[SettingScope <String>]`: Scope of the group policy setting.
-  - `[SettingType <String>]`: Setting type of the group policy.
+  - `[SettingScope <GroupPolicySettingScope?>]`: Scope of the group policy setting.
+  - `[SettingType <GroupPolicySettingType?>]`: Setting type of the group policy.
   - `[SettingValue <String>]`: The value of this group policy setting.
   - `[SettingValueDisplayUnits <String>]`: The display units of this group policy setting value
   - `[SettingValueType <String>]`: The value type of this group policy setting.
@@ -536,6 +538,7 @@ INPUTOBJECT <IDeviceManagementAdministrationIdentity>: Identity Parameter
   - `[DeviceManagementExchangeOnPremisesPolicyId <String>]`: key: id of deviceManagementExchangeOnPremisesPolicy
   - `[DeviceManagementPartnerId <String>]`: key: id of deviceManagementPartner
   - `[GroupPolicyCategoryId <String>]`: key: id of groupPolicyCategory
+  - `[GroupPolicyCategoryId1 <String>]`: key: id of groupPolicyCategory
   - `[GroupPolicyDefinitionFileId <String>]`: key: id of groupPolicyDefinitionFile
   - `[GroupPolicyDefinitionId <String>]`: key: id of groupPolicyDefinition
   - `[GroupPolicyMigrationReportId <String>]`: key: id of groupPolicyMigrationReport

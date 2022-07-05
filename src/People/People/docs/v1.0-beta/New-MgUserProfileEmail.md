@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgUserProfileEmail
 
 ## SYNOPSIS
-Represents detailed information about email addresses associated with the user.
+Create new navigation property to emails for users
 
 ## SYNTAX
 
@@ -43,7 +43,7 @@ New-MgUserProfileEmail -InputObject <IPeopleIdentity> [-AdditionalProperties <Ha
 ```
 
 ## DESCRIPTION
-Represents detailed information about email addresses associated with the user.
+Create new navigation property to emails for users
 
 ## EXAMPLES
 
@@ -157,7 +157,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -370,7 +370,7 @@ BODYPARAMETER <IMicrosoftGraphItemEmail>: itemEmail
   - `[Source <IMicrosoftGraphPersonDataSources>]`: personDataSources
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Type <String[]>]`: 
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[Address <String>]`: The email address itself.
   - `[DisplayName <String>]`: The name or label a user has associated with a particular email address.
   - `[Type <String>]`: emailType

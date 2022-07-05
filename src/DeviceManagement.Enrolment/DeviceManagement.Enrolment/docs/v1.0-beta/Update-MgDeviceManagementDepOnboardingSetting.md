@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgDeviceManagementDepOnboardingSetting
 
 ## SYNOPSIS
-This collections of multiple DEP tokens per-tenant.
+Update the navigation property depOnboardingSettings in deviceManagement
 
 ## SYNTAX
 
@@ -23,7 +23,7 @@ Update-MgDeviceManagementDepOnboardingSetting -DepOnboardingSettingId <String>
  [-LastModifiedDateTime <DateTime>] [-LastSuccessfulSyncDateTime <DateTime>] [-LastSyncErrorCode <Int32>]
  [-LastSyncTriggeredDateTime <DateTime>] [-RoleScopeTagIds <String[]>] [-ShareTokenWithSchoolDataSyncService]
  [-SyncedDeviceCount <Int32>] [-TokenExpirationDateTime <DateTime>] [-TokenName <String>]
- [-TokenType <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-TokenType <DepTokenType>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
@@ -49,11 +49,11 @@ Update-MgDeviceManagementDepOnboardingSetting -InputObject <IDeviceManagementEnr
  [-LastModifiedDateTime <DateTime>] [-LastSuccessfulSyncDateTime <DateTime>] [-LastSyncErrorCode <Int32>]
  [-LastSyncTriggeredDateTime <DateTime>] [-RoleScopeTagIds <String[]>] [-ShareTokenWithSchoolDataSyncService]
  [-SyncedDeviceCount <Int32>] [-TokenExpirationDateTime <DateTime>] [-TokenName <String>]
- [-TokenType <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-TokenType <DepTokenType>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-This collections of multiple DEP tokens per-tenant.
+Update the navigation property depOnboardingSettings in deviceManagement
 
 ## EXAMPLES
 
@@ -187,7 +187,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -387,7 +387,7 @@ Accept wildcard characters: False
 depTokenType
 
 ```yaml
-Type: System.String
+Type: Microsoft.Graph.PowerShell.Support.DepTokenType
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -453,7 +453,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphDepOnboardingSetting>: The depOnboardingSetting represents an instance of the Apple DEP service being onboarded to Intune. The onboarded service instance manages an Apple Token used to synchronize data between Apple and Intune.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[AppleIdentifier <String>]`: The Apple ID used to obtain the current token.
   - `[DataSharingConsentGranted <Boolean?>]`: Consent granted for data sharing with Apple Dep Service
   - `[DefaultIosEnrollmentProfile <IMicrosoftGraphDepIosEnrollmentProfile>]`: The DepIOSEnrollmentProfile resource represents an Apple Device Enrollment Program (DEP) enrollment profile specific to iOS configuration. This type of profile must be assigned to Apple DEP serial numbers before the corresponding devices can enroll via DEP.
@@ -483,7 +483,7 @@ BODYPARAMETER <IMicrosoftGraphDepOnboardingSetting>: The depOnboardingSetting re
     - `[EnableAuthenticationViaCompanyPortal <Boolean?>]`: Indicates to authenticate with Apple Setup Assistant instead of Company Portal.
     - `[RequireCompanyPortalOnSetupAssistantEnrolledDevices <Boolean?>]`: Indicates that Company Portal is required on setup assistant enrolled devices
     - `[RequiresUserAuthentication <Boolean?>]`: Indicates if the profile requires user authentication
-    - `[Id <String>]`: Read-only.
+    - `[Id <String>]`: 
     - `[AppearanceScreenDisabled <Boolean?>]`: Indicates if Apperance screen is disabled
     - `[AwaitDeviceConfiguredConfirmation <Boolean?>]`: Indicates if the device will need to wait for configured confirmation
     - `[CarrierActivationUrl <String>]`: Carrier URL for activating device eSIM.
@@ -495,7 +495,7 @@ BODYPARAMETER <IMicrosoftGraphDepOnboardingSetting>: The depOnboardingSetting re
     - `[ForceTemporarySession <Boolean?>]`: Indicates if temporary sessions is enabled
     - `[HomeButtonScreenDisabled <Boolean?>]`: Indicates if home button sensitivity screen is disabled
     - `[IMessageAndFaceTimeScreenDisabled <Boolean?>]`: Indicates if iMessage and FaceTime screen is disabled
-    - `[ITunesPairingMode <String>]`: iTunesPairingMode
+    - `[ITunesPairingMode <ITunesPairingMode?>]`: iTunesPairingMode
     - `[ManagementCertificates <IMicrosoftGraphManagementCertificateWithThumbprint[]>]`: Management certificates for Apple Configurator
       - `[Certificate <String>]`: The Base 64 encoded management certificate
       - `[Thumbprint <String>]`: The thumbprint of the management certificate
@@ -511,7 +511,7 @@ BODYPARAMETER <IMicrosoftGraphDepOnboardingSetting>: The depOnboardingSetting re
     - `[TemporarySessionTimeoutInSeconds <Int32?>]`: Indicates timeout of temporary session
     - `[UpdateCompleteScreenDisabled <Boolean?>]`: Indicates if Weclome screen is disabled
     - `[UserSessionTimeoutInSeconds <Int32?>]`: Indicates timeout of temporary session
-    - `[UserlessSharedAadModeEnabled <Boolean?>]`: Indicates that this apple device is designated to support 'shared device mode' scenarios. This is distinct from the 'shared iPad' scenario. See Shared iOS and iPadOS devices
+    - `[UserlessSharedAadModeEnabled <Boolean?>]`: Indicates that this apple device is designated to support 'shared device mode' scenarios. This is distinct from the 'shared iPad' scenario. See https://docs.microsoft.com/mem/intune/enrollment/device-enrollment-shared-ios
     - `[WatchMigrationScreenDisabled <Boolean?>]`: Indicates if the watch migration screen is disabled
     - `[WelcomeScreenDisabled <Boolean?>]`: Indicates if Weclome screen is disabled
     - `[ZoomDisabled <Boolean?>]`: Indicates if zoom setup pane is disabled
@@ -542,8 +542,9 @@ BODYPARAMETER <IMicrosoftGraphDepOnboardingSetting>: The depOnboardingSetting re
     - `[EnableAuthenticationViaCompanyPortal <Boolean?>]`: Indicates to authenticate with Apple Setup Assistant instead of Company Portal.
     - `[RequireCompanyPortalOnSetupAssistantEnrolledDevices <Boolean?>]`: Indicates that Company Portal is required on setup assistant enrolled devices
     - `[RequiresUserAuthentication <Boolean?>]`: Indicates if the profile requires user authentication
-    - `[Id <String>]`: Read-only.
+    - `[Id <String>]`: 
     - `[AccessibilityScreenDisabled <Boolean?>]`: Indicates if Accessibility screen is disabled
+    - `[AutoUnlockWithWatchDisabled <Boolean?>]`: Indicates if UnlockWithWatch screen is disabled
     - `[ChooseYourLockScreenDisabled <Boolean?>]`: Indicates if iCloud Documents and Desktop screen is disabled
     - `[FileVaultDisabled <Boolean?>]`: Indicates if file vault is disabled
     - `[ICloudDiagnosticsDisabled <Boolean?>]`: Indicates if iCloud Analytics screen is disabled
@@ -552,7 +553,7 @@ BODYPARAMETER <IMicrosoftGraphDepOnboardingSetting>: The depOnboardingSetting re
     - `[RegistrationDisabled <Boolean?>]`: Indicates if registration is disabled
     - `[ZoomDisabled <Boolean?>]`: Indicates if zoom setup pane is disabled
   - `[EnrollmentProfiles <IMicrosoftGraphEnrollmentProfile[]>]`: The enrollment profiles.
-    - `[Id <String>]`: Read-only.
+    - `[Id <String>]`: 
     - `[ConfigurationEndpointUrl <String>]`: Configuration endpoint url to use for Enrollment
     - `[Description <String>]`: Description of the profile
     - `[DisplayName <String>]`: Name of the profile
@@ -560,15 +561,15 @@ BODYPARAMETER <IMicrosoftGraphDepOnboardingSetting>: The depOnboardingSetting re
     - `[RequireCompanyPortalOnSetupAssistantEnrolledDevices <Boolean?>]`: Indicates that Company Portal is required on setup assistant enrolled devices
     - `[RequiresUserAuthentication <Boolean?>]`: Indicates if the profile requires user authentication
   - `[ImportedAppleDeviceIdentities <IMicrosoftGraphImportedAppleDeviceIdentity[]>]`: The imported Apple device identities.
-    - `[Id <String>]`: Read-only.
+    - `[Id <String>]`: 
     - `[CreatedDateTime <DateTime?>]`: Created Date Time of the device
     - `[Description <String>]`: The description of the device
-    - `[DiscoverySource <String>]`: discoverySource
-    - `[EnrollmentState <String>]`: 
+    - `[DiscoverySource <DiscoverySource?>]`: discoverySource
+    - `[EnrollmentState <EnrollmentState?>]`: 
     - `[IsDeleted <Boolean?>]`: Indicates if the device is deleted from Apple Business Manager
     - `[IsSupervised <Boolean?>]`: Indicates if the Apple device is supervised. More information is at: https://support.apple.com/en-us/HT202837
     - `[LastContactedDateTime <DateTime?>]`: Last Contacted Date Time of the device
-    - `[Platform <String>]`: platform
+    - `[Platform <Platform?>]`: platform
     - `[RequestedEnrollmentProfileAssignmentDateTime <DateTime?>]`: The time enrollment profile was assigned to the device
     - `[RequestedEnrollmentProfileId <String>]`: Enrollment profile Id admin intends to apply to the device during next enrollment
     - `[SerialNumber <String>]`: Device serial number
@@ -581,7 +582,7 @@ BODYPARAMETER <IMicrosoftGraphDepOnboardingSetting>: The depOnboardingSetting re
   - `[SyncedDeviceCount <Int32?>]`: Gets synced device count
   - `[TokenExpirationDateTime <DateTime?>]`: When the token will expire.
   - `[TokenName <String>]`: Friendly Name for Dep Token
-  - `[TokenType <String>]`: depTokenType
+  - `[TokenType <DepTokenType?>]`: depTokenType
 
 DEFAULTIOSENROLLMENTPROFILE <IMicrosoftGraphDepIosEnrollmentProfile>: The DepIOSEnrollmentProfile resource represents an Apple Device Enrollment Program (DEP) enrollment profile specific to iOS configuration. This type of profile must be assigned to Apple DEP serial numbers before the corresponding devices can enroll via DEP.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -610,7 +611,7 @@ DEFAULTIOSENROLLMENTPROFILE <IMicrosoftGraphDepIosEnrollmentProfile>: The DepIOS
   - `[EnableAuthenticationViaCompanyPortal <Boolean?>]`: Indicates to authenticate with Apple Setup Assistant instead of Company Portal.
   - `[RequireCompanyPortalOnSetupAssistantEnrolledDevices <Boolean?>]`: Indicates that Company Portal is required on setup assistant enrolled devices
   - `[RequiresUserAuthentication <Boolean?>]`: Indicates if the profile requires user authentication
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[AppearanceScreenDisabled <Boolean?>]`: Indicates if Apperance screen is disabled
   - `[AwaitDeviceConfiguredConfirmation <Boolean?>]`: Indicates if the device will need to wait for configured confirmation
   - `[CarrierActivationUrl <String>]`: Carrier URL for activating device eSIM.
@@ -622,7 +623,7 @@ DEFAULTIOSENROLLMENTPROFILE <IMicrosoftGraphDepIosEnrollmentProfile>: The DepIOS
   - `[ForceTemporarySession <Boolean?>]`: Indicates if temporary sessions is enabled
   - `[HomeButtonScreenDisabled <Boolean?>]`: Indicates if home button sensitivity screen is disabled
   - `[IMessageAndFaceTimeScreenDisabled <Boolean?>]`: Indicates if iMessage and FaceTime screen is disabled
-  - `[ITunesPairingMode <String>]`: iTunesPairingMode
+  - `[ITunesPairingMode <ITunesPairingMode?>]`: iTunesPairingMode
   - `[ManagementCertificates <IMicrosoftGraphManagementCertificateWithThumbprint[]>]`: Management certificates for Apple Configurator
     - `[Certificate <String>]`: The Base 64 encoded management certificate
     - `[Thumbprint <String>]`: The thumbprint of the management certificate
@@ -638,7 +639,7 @@ DEFAULTIOSENROLLMENTPROFILE <IMicrosoftGraphDepIosEnrollmentProfile>: The DepIOS
   - `[TemporarySessionTimeoutInSeconds <Int32?>]`: Indicates timeout of temporary session
   - `[UpdateCompleteScreenDisabled <Boolean?>]`: Indicates if Weclome screen is disabled
   - `[UserSessionTimeoutInSeconds <Int32?>]`: Indicates timeout of temporary session
-  - `[UserlessSharedAadModeEnabled <Boolean?>]`: Indicates that this apple device is designated to support 'shared device mode' scenarios. This is distinct from the 'shared iPad' scenario. See Shared iOS and iPadOS devices
+  - `[UserlessSharedAadModeEnabled <Boolean?>]`: Indicates that this apple device is designated to support 'shared device mode' scenarios. This is distinct from the 'shared iPad' scenario. See https://docs.microsoft.com/mem/intune/enrollment/device-enrollment-shared-ios
   - `[WatchMigrationScreenDisabled <Boolean?>]`: Indicates if the watch migration screen is disabled
   - `[WelcomeScreenDisabled <Boolean?>]`: Indicates if Weclome screen is disabled
   - `[ZoomDisabled <Boolean?>]`: Indicates if zoom setup pane is disabled
@@ -670,8 +671,9 @@ DEFAULTMACOSENROLLMENTPROFILE <IMicrosoftGraphDepMacOSEnrollmentProfile>: The De
   - `[EnableAuthenticationViaCompanyPortal <Boolean?>]`: Indicates to authenticate with Apple Setup Assistant instead of Company Portal.
   - `[RequireCompanyPortalOnSetupAssistantEnrolledDevices <Boolean?>]`: Indicates that Company Portal is required on setup assistant enrolled devices
   - `[RequiresUserAuthentication <Boolean?>]`: Indicates if the profile requires user authentication
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[AccessibilityScreenDisabled <Boolean?>]`: Indicates if Accessibility screen is disabled
+  - `[AutoUnlockWithWatchDisabled <Boolean?>]`: Indicates if UnlockWithWatch screen is disabled
   - `[ChooseYourLockScreenDisabled <Boolean?>]`: Indicates if iCloud Documents and Desktop screen is disabled
   - `[FileVaultDisabled <Boolean?>]`: Indicates if file vault is disabled
   - `[ICloudDiagnosticsDisabled <Boolean?>]`: Indicates if iCloud Analytics screen is disabled
@@ -681,7 +683,7 @@ DEFAULTMACOSENROLLMENTPROFILE <IMicrosoftGraphDepMacOSEnrollmentProfile>: The De
   - `[ZoomDisabled <Boolean?>]`: Indicates if zoom setup pane is disabled
 
 ENROLLMENTPROFILES <IMicrosoftGraphEnrollmentProfile[]>: The enrollment profiles.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[ConfigurationEndpointUrl <String>]`: Configuration endpoint url to use for Enrollment
   - `[Description <String>]`: Description of the profile
   - `[DisplayName <String>]`: Name of the profile
@@ -690,15 +692,15 @@ ENROLLMENTPROFILES <IMicrosoftGraphEnrollmentProfile[]>: The enrollment profiles
   - `[RequiresUserAuthentication <Boolean?>]`: Indicates if the profile requires user authentication
 
 IMPORTEDAPPLEDEVICEIDENTITIES <IMicrosoftGraphImportedAppleDeviceIdentity[]>: The imported Apple device identities.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[CreatedDateTime <DateTime?>]`: Created Date Time of the device
   - `[Description <String>]`: The description of the device
-  - `[DiscoverySource <String>]`: discoverySource
-  - `[EnrollmentState <String>]`: 
+  - `[DiscoverySource <DiscoverySource?>]`: discoverySource
+  - `[EnrollmentState <EnrollmentState?>]`: 
   - `[IsDeleted <Boolean?>]`: Indicates if the device is deleted from Apple Business Manager
   - `[IsSupervised <Boolean?>]`: Indicates if the Apple device is supervised. More information is at: https://support.apple.com/en-us/HT202837
   - `[LastContactedDateTime <DateTime?>]`: Last Contacted Date Time of the device
-  - `[Platform <String>]`: platform
+  - `[Platform <Platform?>]`: platform
   - `[RequestedEnrollmentProfileAssignmentDateTime <DateTime?>]`: The time enrollment profile was assigned to the device
   - `[RequestedEnrollmentProfileId <String>]`: Enrollment profile Id admin intends to apply to the device during next enrollment
   - `[SerialNumber <String>]`: Device serial number
@@ -707,7 +709,6 @@ INPUTOBJECT <IDeviceManagementEnrolmentIdentity>: Identity Parameter
   - `[AndroidDeviceOwnerEnrollmentProfileId <String>]`: key: id of androidDeviceOwnerEnrollmentProfile
   - `[AndroidForWorkEnrollmentProfileId <String>]`: key: id of androidForWorkEnrollmentProfile
   - `[AppScopeId <String>]`: key: id of appScope
-  - `[AppScopeId1 <String>]`: Usage: appScopeId={appScopeId}
   - `[AppleEnrollmentProfileAssignmentId <String>]`: key: id of appleEnrollmentProfileAssignment
   - `[AppleUserInitiatedEnrollmentProfileId <String>]`: key: id of appleUserInitiatedEnrollmentProfile
   - `[ApprovalId <String>]`: key: id of approval
@@ -716,15 +717,13 @@ INPUTOBJECT <IDeviceManagementEnrolmentIdentity>: Identity Parameter
   - `[DeviceEnrollmentConfigurationId <String>]`: key: id of deviceEnrollmentConfiguration
   - `[DeviceManagementAutopilotEventId <String>]`: key: id of deviceManagementAutopilotEvent
   - `[DeviceManagementAutopilotPolicyStatusDetailId <String>]`: key: id of deviceManagementAutopilotPolicyStatusDetail
-  - `[DirectoryScopeId <String>]`: Usage: directoryScopeId={directoryScopeId}
+  - `[DirectoryObjectId <String>]`: key: id of directoryObject
   - `[EnrollmentConfigurationAssignmentId <String>]`: key: id of enrollmentConfigurationAssignment
   - `[EnrollmentProfileId <String>]`: key: id of enrollmentProfile
   - `[ImportedAppleDeviceIdentityId <String>]`: key: id of importedAppleDeviceIdentity
   - `[ImportedDeviceIdentityId <String>]`: key: id of importedDeviceIdentity
   - `[ImportedWindowsAutopilotDeviceIdentityId <String>]`: key: id of importedWindowsAutopilotDeviceIdentity
-  - `[On <String>]`: Usage: on={on}
-  - `[PrincipalId <String>]`: Usage: principalId={principalId}
-  - `[RoleDefinitionId <String>]`: Usage: roleDefinitionId={roleDefinitionId}
+  - `[On <String>]`: Usage: on='{on}'
   - `[UnifiedRbacResourceActionId <String>]`: key: id of unifiedRbacResourceAction
   - `[UnifiedRbacResourceNamespaceId <String>]`: key: id of unifiedRbacResourceNamespace
   - `[UnifiedRoleAssignmentId <String>]`: key: id of unifiedRoleAssignment

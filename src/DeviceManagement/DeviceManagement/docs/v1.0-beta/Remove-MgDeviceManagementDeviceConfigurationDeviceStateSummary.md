@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgDeviceManagementDeviceConfigurationDeviceStateSummary
 
 ## SYNOPSIS
-The device configuration device state summary for this account.
+Delete navigation property deviceConfigurationDeviceStateSummaries for deviceManagement
 
 ## SYNTAX
 
@@ -18,7 +18,7 @@ Remove-MgDeviceManagementDeviceConfigurationDeviceStateSummary [-IfMatch <String
 ```
 
 ## DESCRIPTION
-The device configuration device state summary for this account.
+Delete navigation property deviceConfigurationDeviceStateSummaries for deviceManagement
 
 ## EXAMPLES
 

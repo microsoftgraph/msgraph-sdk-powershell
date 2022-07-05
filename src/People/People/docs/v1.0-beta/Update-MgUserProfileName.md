@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgUserProfileName
 
 ## SYNOPSIS
-Represents the names a user has added to their profile.
+Update the navigation property names in users
 
 ## SYNTAX
 
@@ -49,7 +49,7 @@ Update-MgUserProfileName -InputObject <IPeopleIdentity> [-AdditionalProperties <
 ```
 
 ## DESCRIPTION
-Represents the names a user has added to their profile.
+Update the navigation property names in users
 
 ## EXAMPLES
 
@@ -163,7 +163,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -527,7 +527,7 @@ BODYPARAMETER <IMicrosoftGraphPersonName>: personName
   - `[Source <IMicrosoftGraphPersonDataSources>]`: personDataSources
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Type <String[]>]`: 
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[DisplayName <String>]`: Provides an ordered rendering of firstName and lastName depending on the locale of the user or their device.
   - `[First <String>]`: First name of the user.
   - `[Initials <String>]`: Initials of the user.

@@ -8,11 +8,11 @@ schema: 2.0.0
 # New-MgDeviceManagementUserExperienceAnalyticAppHealthApplicationPerformanceByAppVersionDeviceId
 
 ## SYNOPSIS
-User experience analytics appHealth Application Performance by App Version Device Id
+Create new navigation property to userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDeviceId for deviceManagement
 
 ## SYNTAX
 
-### CreateExpanded3 (Default)
+### CreateExpanded (Default)
 ```
 New-MgDeviceManagementUserExperienceAnalyticAppHealthApplicationPerformanceByAppVersionDeviceId
  [-AdditionalProperties <Hashtable>] [-AppCrashCount <Int32>] [-AppDisplayName <String>] [-AppName <String>]
@@ -20,7 +20,7 @@ New-MgDeviceManagementUserExperienceAnalyticAppHealthApplicationPerformanceByApp
  [-Id <String>] [-ProcessedDateTime <DateTime>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### Create3
+### Create
 ```
 New-MgDeviceManagementUserExperienceAnalyticAppHealthApplicationPerformanceByAppVersionDeviceId
  -BodyParameter <IMicrosoftGraphUserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId> [-Confirm]
@@ -28,7 +28,7 @@ New-MgDeviceManagementUserExperienceAnalyticAppHealthApplicationPerformanceByApp
 ```
 
 ## DESCRIPTION
-User experience analytics appHealth Application Performance by App Version Device Id
+Create new navigation property to userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDeviceId for deviceManagement
 
 ## EXAMPLES
 
@@ -39,7 +39,7 @@ Additional Parameters
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: CreateExpanded3
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -55,7 +55,7 @@ Valid values -2147483648 to 2147483647
 
 ```yaml
 Type: System.Int32
-Parameter Sets: CreateExpanded3
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -70,7 +70,7 @@ The friendly name of the application.
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded3
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -85,7 +85,7 @@ The name of the application.
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded3
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -100,7 +100,7 @@ The publisher of the application.
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded3
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -115,7 +115,7 @@ The version of the application.
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded3
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -131,7 +131,7 @@ To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETE
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId
-Parameter Sets: Create3
+Parameter Sets: Create
 Aliases:
 
 Required: True
@@ -146,7 +146,7 @@ The name of the device.
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded3
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -161,7 +161,7 @@ The id of the device.
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded3
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -172,11 +172,11 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded3
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -191,7 +191,7 @@ The date and time when the statistics were last computed.
 
 ```yaml
 Type: System.DateTime
-Parameter Sets: CreateExpanded3
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -254,7 +254,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphUserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId>: The user experience analytics application performance entity contains app performance by app version device id.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[AppCrashCount <Int32?>]`: The number of crashes for the app. Valid values -2147483648 to 2147483647
   - `[AppDisplayName <String>]`: The friendly name of the application.
   - `[AppName <String>]`: The name of the application.

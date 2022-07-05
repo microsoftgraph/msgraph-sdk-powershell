@@ -8,16 +8,17 @@ schema: 2.0.0
 # New-MgDeviceManagementImportedDeviceIdentity
 
 ## SYNOPSIS
-The imported device identities.
+Create new navigation property to importedDeviceIdentities for deviceManagement
 
 ## SYNTAX
 
 ### CreateExpanded (Default)
 ```
 New-MgDeviceManagementImportedDeviceIdentity [-AdditionalProperties <Hashtable>] [-CreatedDateTime <DateTime>]
- [-Description <String>] [-EnrollmentState <String>] [-Id <String>] [-ImportedDeviceIdentifier <String>]
- [-ImportedDeviceIdentityType <String>] [-LastContactedDateTime <DateTime>] [-LastModifiedDateTime <DateTime>]
- [-Platform <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Description <String>] [-EnrollmentState <EnrollmentState>] [-Id <String>]
+ [-ImportedDeviceIdentifier <String>] [-ImportedDeviceIdentityType <ImportedDeviceIdentityType>]
+ [-LastContactedDateTime <DateTime>] [-LastModifiedDateTime <DateTime>] [-Platform <Platform>] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
@@ -27,7 +28,7 @@ New-MgDeviceManagementImportedDeviceIdentity -BodyParameter <IMicrosoftGraphImpo
 ```
 
 ## DESCRIPTION
-The imported device identities.
+Create new navigation property to importedDeviceIdentities for deviceManagement
 
 ## EXAMPLES
 
@@ -98,7 +99,7 @@ Accept wildcard characters: False
 .
 
 ```yaml
-Type: System.String
+Type: Microsoft.Graph.PowerShell.Support.EnrollmentState
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -110,7 +111,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -143,7 +144,7 @@ Accept wildcard characters: False
 importedDeviceIdentityType
 
 ```yaml
-Type: System.String
+Type: Microsoft.Graph.PowerShell.Support.ImportedDeviceIdentityType
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -188,7 +189,7 @@ Accept wildcard characters: False
 platform
 
 ```yaml
-Type: System.String
+Type: Microsoft.Graph.PowerShell.Support.Platform
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -252,15 +253,15 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphImportedDeviceIdentity>: The importedDeviceIdentity resource represents a unique hardware identity of a device that has been pre-staged for pre-enrollment configuration.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[CreatedDateTime <DateTime?>]`: Created Date Time of the device
   - `[Description <String>]`: The description of the device
-  - `[EnrollmentState <String>]`: 
+  - `[EnrollmentState <EnrollmentState?>]`: 
   - `[ImportedDeviceIdentifier <String>]`: Imported Device Identifier
-  - `[ImportedDeviceIdentityType <String>]`: importedDeviceIdentityType
+  - `[ImportedDeviceIdentityType <ImportedDeviceIdentityType?>]`: importedDeviceIdentityType
   - `[LastContactedDateTime <DateTime?>]`: Last Contacted Date Time of the device
   - `[LastModifiedDateTime <DateTime?>]`: Last Modified DateTime of the description
-  - `[Platform <String>]`: platform
+  - `[Platform <Platform?>]`: platform
 
 ## RELATED LINKS
 

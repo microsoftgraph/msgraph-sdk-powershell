@@ -8,9 +8,7 @@ schema: 2.0.0
 # Remove-MgBookingBusinessCustomer
 
 ## SYNOPSIS
-All the customers of this business.
-Read-only.
-Nullable.
+Delete navigation property customers for solutions
 
 ## SYNTAX
 
@@ -27,9 +25,7 @@ Remove-MgBookingBusinessCustomer -InputObject <IBookingsIdentity> [-IfMatch <Str
 ```
 
 ## DESCRIPTION
-All the customers of this business.
-Read-only.
-Nullable.
+Delete navigation property customers for solutions
 
 ## EXAMPLES
 

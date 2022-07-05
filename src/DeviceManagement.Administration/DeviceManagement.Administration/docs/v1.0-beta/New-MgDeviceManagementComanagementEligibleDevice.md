@@ -8,18 +8,19 @@ schema: 2.0.0
 # New-MgDeviceManagementComanagementEligibleDevice
 
 ## SYNOPSIS
-The list of co-management eligible devices report
+Create new navigation property to comanagementEligibleDevices for deviceManagement
 
 ## SYNTAX
 
 ### CreateExpanded (Default)
 ```
 New-MgDeviceManagementComanagementEligibleDevice [-AdditionalProperties <Hashtable>]
- [-ClientRegistrationStatus <String>] [-DeviceName <String>] [-DeviceType <String>] [-EntitySource <Int32>]
- [-Id <String>] [-ManagementAgents <String>] [-ManagementState <String>] [-Manufacturer <String>]
- [-MdmStatus <String>] [-Model <String>] [-OSDescription <String>] [-OSVersion <String>] [-OwnerType <String>]
- [-ReferenceId <String>] [-SerialNumber <String>] [-Status <String>] [-Upn <String>] [-UserEmail <String>]
- [-UserId <String>] [-UserName <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-ClientRegistrationStatus <DeviceRegistrationState>] [-DeviceName <String>] [-DeviceType <DeviceType>]
+ [-EntitySource <Int32>] [-Id <String>] [-ManagementAgents <ManagementAgentType>]
+ [-ManagementState <ManagementState>] [-Manufacturer <String>] [-MdmStatus <String>] [-Model <String>]
+ [-OSDescription <String>] [-OSVersion <String>] [-OwnerType <OwnerType>] [-ReferenceId <String>]
+ [-SerialNumber <String>] [-Status <String>] [-Upn <String>] [-UserEmail <String>] [-UserId <String>]
+ [-UserName <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
@@ -29,7 +30,7 @@ New-MgDeviceManagementComanagementEligibleDevice -BodyParameter <IMicrosoftGraph
 ```
 
 ## DESCRIPTION
-The list of co-management eligible devices report
+Create new navigation property to comanagementEligibleDevices for deviceManagement
 
 ## EXAMPLES
 
@@ -70,7 +71,7 @@ Accept wildcard characters: False
 Device registration status.
 
 ```yaml
-Type: System.String
+Type: Microsoft.Graph.PowerShell.Support.DeviceRegistrationState
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -100,7 +101,7 @@ Accept wildcard characters: False
 Device type.
 
 ```yaml
-Type: System.String
+Type: Microsoft.Graph.PowerShell.Support.DeviceType
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -127,7 +128,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -145,7 +146,7 @@ Accept wildcard characters: False
 Management agent type.
 
 ```yaml
-Type: System.String
+Type: Microsoft.Graph.PowerShell.Support.ManagementAgentType
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -160,7 +161,7 @@ Accept wildcard characters: False
 Management state of device in Microsoft Intune.
 
 ```yaml
-Type: System.String
+Type: Microsoft.Graph.PowerShell.Support.ManagementState
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -250,7 +251,7 @@ Accept wildcard characters: False
 Owner type of device.
 
 ```yaml
-Type: System.String
+Type: Microsoft.Graph.PowerShell.Support.OwnerType
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -419,19 +420,19 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphComanagementEligibleDevice>: Device Co-Management eligibility state
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
-  - `[ClientRegistrationStatus <String>]`: Device registration status.
+  - `[Id <String>]`: 
+  - `[ClientRegistrationStatus <DeviceRegistrationState?>]`: Device registration status.
   - `[DeviceName <String>]`: DeviceName
-  - `[DeviceType <String>]`: Device type.
+  - `[DeviceType <DeviceType?>]`: Device type.
   - `[EntitySource <Int32?>]`: EntitySource
-  - `[ManagementAgents <String>]`: Management agent type.
-  - `[ManagementState <String>]`: Management state of device in Microsoft Intune.
+  - `[ManagementAgents <ManagementAgentType?>]`: Management agent type.
+  - `[ManagementState <ManagementState?>]`: Management state of device in Microsoft Intune.
   - `[Manufacturer <String>]`: Manufacturer
   - `[MdmStatus <String>]`: MDMStatus
   - `[Model <String>]`: Model
   - `[OSDescription <String>]`: OSDescription
   - `[OSVersion <String>]`: OSVersion
-  - `[OwnerType <String>]`: Owner type of device.
+  - `[OwnerType <OwnerType?>]`: Owner type of device.
   - `[ReferenceId <String>]`: ReferenceId
   - `[SerialNumber <String>]`: SerialNumber
   - `[Status <String>]`: comanagementEligibleType
