@@ -13,7 +13,7 @@ metadata:
     companyName: Microsoft Corporation
     description: 'Microsoft Graph PowerShell Cmdlets'
     copyright: &copy; Microsoft Corporation. All rights reserved.
-    tags: Microsoft Office365 Graph PowerShell
+    tags: Microsoft Office365 Graph PowerShell PSModule PSIncludes_Cmdlet
     requireLicenseAcceptance: true
     licenseUri: https://aka.ms/devservicesagreement
     projectUri: https://github.com/microsoftgraph/msgraph-sdk-powershell
@@ -579,7 +579,8 @@ directive:
         let odataNextLinkRegex = /(^\s*)(while\s*\(\s*_nextLink\s*!=\s*null\s*\))/gmi
         if($.match(odataNextLinkRegex)) {
           // Add custom -PageSize parameter to *_List cmdlets that support Odata next link.
-          $ = $.replace(odataNextLinkRegex, '$1while (_nextLink != null && this.ShouldIteratePages(this.InvocationInformation.BoundParameters, result.Value.Length))\n$1');
+          let initializePageCountPlaceholder = 'this.InitializePageCount(result.Value.Length);'
+          $ = $.replace(odataNextLinkRegex, `$1${initializePageCountPlaceholder}\n$1while (_nextLink != null && this.ShouldIteratePages(this.InvocationInformation.BoundParameters, result.Value.Length))$1`);
 
           let psBaseClassImplementationRegex = /(\s*:\s*)(global::System.Management.Automation.PSCmdlet)/gmi
           $ = $.replace(psBaseClassImplementationRegex, '$1Microsoft.Graph.PowerShell.Cmdlets.Custom.ListCmdlet');

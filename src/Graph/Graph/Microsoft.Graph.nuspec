@@ -2,18 +2,56 @@
 <package>
   <metadata>
     <id>Microsoft.Graph</id>
-    <version>0.9.2</version>
+    <version>1.10.0</version>
     <authors>Microsoft</authors>
     <owners>Microsoft</owners>
     <licenseUrl>https://aka.ms/devservicesagreement</licenseUrl>
     <projectUrl>https://github.com/microsoftgraph/msgraph-sdk-powershell</projectUrl>
-    <iconUrl>https://raw.githubusercontent.com/microsoftgraph/g-raph/master/g-raph.png</iconUrl>
+    <iconUrl>https://raw.githubusercontent.com/microsoftgraph/msgraph-sdk-powershell/master/documentation/images/graph_color256.png</iconUrl>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
     <description>Microsoft Graph PowerShell module</description>
     <copyright>© Microsoft Corporation. All rights reserved.</copyright>
-    <tags>MicrosoftGraph;Microsoft;Office365;Graph;PowerShell;GraphServiceClient;Outlook;OneDrive;AzureAD;GraphAPI;Productivity;SharePoint;Intune;SDK;</tags>
+    <tags>MicrosoftGraph Microsoft Office365 Graph PowerShell Outlook OneDrive AzureAD SharePoint Intune AzureAutomationNotSupported</tags>
     <dependencies>
-      <dependency id="Microsoft.Graph.Authentication" version="0.9.1" />
+      <dependency id="Microsoft.Graph.Authentication" version="1.10.0" />
+      <dependency id="Microsoft.Graph.Calendar" version="1.10.0" />
+      <dependency id="Microsoft.Graph.DeviceManagement.Functions" version="1.10.0" />
+      <dependency id="Microsoft.Graph.Identity.Governance" version="1.10.0" />
+      <dependency id="Microsoft.Graph.ChangeNotifications" version="1.10.0" />
+      <dependency id="Microsoft.Graph.Users.Actions" version="1.10.0" />
+      <dependency id="Microsoft.Graph.SchemaExtensions" version="1.10.0" />
+      <dependency id="Microsoft.Graph.DeviceManagement.Enrolment" version="1.10.0" />
+      <dependency id="Microsoft.Graph.Bookings" version="1.10.0" />
+      <dependency id="Microsoft.Graph.Devices.CorporateManagement" version="1.10.0" />
+      <dependency id="Microsoft.Graph.Devices.ServiceAnnouncement" version="1.10.0" />
+      <dependency id="Microsoft.Graph.Users.Functions" version="1.10.0" />
+      <dependency id="Microsoft.Graph.Education" version="1.10.0" />
+      <dependency id="Microsoft.Graph.Notes" version="1.10.0" />
+      <dependency id="Microsoft.Graph.DirectoryObjects" version="1.10.0" />
+      <dependency id="Microsoft.Graph.Applications" version="1.10.0" />
+      <dependency id="Microsoft.Graph.People" version="1.10.0" />
+      <dependency id="Microsoft.Graph.Groups" version="1.10.0" />
+      <dependency id="Microsoft.Graph.CrossDeviceExperiences" version="1.10.0" />
+      <dependency id="Microsoft.Graph.Reports" version="1.10.0" />
+      <dependency id="Microsoft.Graph.Users" version="1.10.0" />
+      <dependency id="Microsoft.Graph.Search" version="1.10.0" />
+      <dependency id="Microsoft.Graph.Teams" version="1.10.0" />
+      <dependency id="Microsoft.Graph.Identity.SignIns" version="1.10.0" />
+      <dependency id="Microsoft.Graph.Files" version="1.10.0" />
+      <dependency id="Microsoft.Graph.WindowsUpdates" version="1.10.0" />
+      <dependency id="Microsoft.Graph.Compliance" version="1.10.0" />
+      <dependency id="Microsoft.Graph.DeviceManagement" version="1.10.0" />
+      <dependency id="Microsoft.Graph.DeviceManagement.Actions" version="1.10.0" />
+      <dependency id="Microsoft.Graph.Planner" version="1.10.0" />
+      <dependency id="Microsoft.Graph.Identity.DirectoryManagement" version="1.10.0" />
+      <dependency id="Microsoft.Graph.PersonalContacts" version="1.10.0" />
+      <dependency id="Microsoft.Graph.Financials" version="1.10.0" />
+      <dependency id="Microsoft.Graph.DeviceManagement.Administration" version="1.10.0" />
+      <dependency id="Microsoft.Graph.Mail" version="1.10.0" />
+      <dependency id="Microsoft.Graph.Sites" version="1.10.0" />
+      <dependency id="Microsoft.Graph.Security" version="1.10.0" />
+      <dependency id="Microsoft.Graph.CloudCommunications" version="1.10.0" />
+      <dependency id="Microsoft.Graph.Devices.CloudPrint" version="1.10.0" />
     </dependencies>
     <releaseNotes>See https://aka.ms/GraphPowerShell-Release.</releaseNotes>
   </metadata>
