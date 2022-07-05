@@ -8,28 +8,31 @@ schema: 2.0.0
 # New-MgDeviceAppMgtiOSManagedAppProtection
 
 ## SYNOPSIS
-iOS managed app policies.
+Create new navigation property to iosManagedAppProtections for deviceAppManagement
 
 ## SYNTAX
 
 ### CreateExpanded (Default)
 ```
 New-MgDeviceAppMgtiOSManagedAppProtection [-AdditionalProperties <Hashtable>]
- [-AllowedDataStorageLocations <String[]>] [-AllowedInboundDataTransferSources <String>]
- [-AllowedOutboundClipboardSharingLevel <String>] [-AllowedOutboundDataTransferDestinations <String>]
- [-AppDataEncryptionType <String>] [-Apps <IMicrosoftGraphManagedMobileApp[]>]
+ [-AllowedDataStorageLocations <ManagedAppDataStorageLocation[]>]
+ [-AllowedInboundDataTransferSources <ManagedAppDataTransferLevel>]
+ [-AllowedOutboundClipboardSharingLevel <ManagedAppClipboardSharingLevel>]
+ [-AllowedOutboundDataTransferDestinations <ManagedAppDataTransferLevel>]
+ [-AppDataEncryptionType <ManagedAppDataEncryptionType>] [-Apps <IMicrosoftGraphManagedMobileApp[]>]
  [-Assignments <IMicrosoftGraphTargetedManagedAppPolicyAssignment1[]>] [-ContactSyncBlocked]
  [-CreatedDateTime <DateTime>] [-CustomBrowserProtocol <String>] [-DataBackupBlocked]
  [-DeployedAppCount <Int32>] [-DeploymentSummary <IMicrosoftGraphManagedAppPolicyDeploymentSummary>]
  [-Description <String>] [-DeviceComplianceRequired] [-DisableAppPinIfDevicePinIsSet] [-DisplayName <String>]
  [-FaceIdBlocked] [-FingerprintBlocked] [-Id <String>] [-IsAssigned] [-LastModifiedDateTime <DateTime>]
- [-ManagedBrowser <String>] [-ManagedBrowserToOpenLinksRequired] [-MaximumPinRetries <Int32>]
+ [-ManagedBrowser <ManagedBrowserType>] [-ManagedBrowserToOpenLinksRequired] [-MaximumPinRetries <Int32>]
  [-MinimumPinLength <Int32>] [-MinimumRequiredAppVersion <String>] [-MinimumRequiredOSVersion <String>]
  [-MinimumRequiredSdkVersion <String>] [-MinimumWarningAppVersion <String>]
  [-MinimumWarningOSVersion <String>] [-OrganizationalCredentialsRequired] [-PeriodBeforePinReset <TimeSpan>]
  [-PeriodOfflineBeforeAccessCheck <TimeSpan>] [-PeriodOfflineBeforeWipeIsEnforced <TimeSpan>]
- [-PeriodOnlineBeforeAccessCheck <TimeSpan>] [-PinCharacterSet <String>] [-PinRequired] [-PrintBlocked]
- [-SaveAsBlocked] [-SimplePinBlocked] [-Version <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-PeriodOnlineBeforeAccessCheck <TimeSpan>] [-PinCharacterSet <ManagedAppPinCharacterSet>] [-PinRequired]
+ [-PrintBlocked] [-SaveAsBlocked] [-SimplePinBlocked] [-Version <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Create
@@ -39,7 +42,7 @@ New-MgDeviceAppMgtiOSManagedAppProtection -BodyParameter <IMicrosoftGraphIosMana
 ```
 
 ## DESCRIPTION
-iOS managed app policies.
+Create new navigation property to iosManagedAppProtections for deviceAppManagement
 
 ## EXAMPLES
 
@@ -64,7 +67,7 @@ Accept wildcard characters: False
 Data storage locations where a user may store managed data.
 
 ```yaml
-Type: System.String[]
+Type: Microsoft.Graph.PowerShell.Support.ManagedAppDataStorageLocation[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -79,7 +82,7 @@ Accept wildcard characters: False
 Data can be transferred from/to these classes of apps
 
 ```yaml
-Type: System.String
+Type: Microsoft.Graph.PowerShell.Support.ManagedAppDataTransferLevel
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -94,7 +97,7 @@ Accept wildcard characters: False
 Represents the level to which the device's clipboard may be shared between apps
 
 ```yaml
-Type: System.String
+Type: Microsoft.Graph.PowerShell.Support.ManagedAppClipboardSharingLevel
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -109,7 +112,7 @@ Accept wildcard characters: False
 Data can be transferred from/to these classes of apps
 
 ```yaml
-Type: System.String
+Type: Microsoft.Graph.PowerShell.Support.ManagedAppDataTransferLevel
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -124,7 +127,7 @@ Accept wildcard characters: False
 Represents the level to which app data is encrypted for managed apps
 
 ```yaml
-Type: System.String
+Type: Microsoft.Graph.PowerShell.Support.ManagedAppDataEncryptionType
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -215,7 +218,6 @@ Accept wildcard characters: False
 
 ### -CustomBrowserProtocol
 A custom browser protocol to open weblink on iOS.
-When this property is configured, ManagedBrowserToOpenLinksRequired should be true.
 
 ```yaml
 Type: System.String
@@ -366,7 +368,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -414,7 +416,7 @@ Accept wildcard characters: False
 Type of managed browser
 
 ```yaml
-Type: System.String
+Type: Microsoft.Graph.PowerShell.Support.ManagedBrowserType
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -624,7 +626,7 @@ Accept wildcard characters: False
 Character set which is to be used for a user's app PIN
 
 ```yaml
-Type: System.String
+Type: Microsoft.Graph.PowerShell.Support.ManagedAppPinCharacterSet
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -764,33 +766,33 @@ To create the parameters described below, construct a hash table containing the 
 
 
 APPS <IMicrosoftGraphManagedMobileApp[]>: List of apps to which the policy is deployed.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[MobileAppIdentifier <IMicrosoftGraphMobileAppIdentifier>]`: The identifier for a mobile app.
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Version <String>]`: Version of the entity.
 
 ASSIGNMENTS <IMicrosoftGraphTargetedManagedAppPolicyAssignment1[]>: Navigation property to list of inclusion and exclusion groups to which the policy is deployed.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget1>]`: Base type for assignment targets.
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
 
 BODYPARAMETER <IMicrosoftGraphIosManagedAppProtection1>: Policy used to configure detailed management settings targeted to specific security groups and for a specified set of apps on an iOS device
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Assignments <IMicrosoftGraphTargetedManagedAppPolicyAssignment1[]>]`: Navigation property to list of inclusion and exclusion groups to which the policy is deployed.
-    - `[Id <String>]`: Read-only.
+    - `[Id <String>]`: 
     - `[Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget1>]`: Base type for assignment targets.
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[IsAssigned <Boolean?>]`: Indicates if the policy is deployed to any inclusion groups or not.
-  - `[AllowedDataStorageLocations <String[]>]`: Data storage locations where a user may store managed data.
-  - `[AllowedInboundDataTransferSources <String>]`: Data can be transferred from/to these classes of apps
-  - `[AllowedOutboundClipboardSharingLevel <String>]`: Represents the level to which the device's clipboard may be shared between apps
-  - `[AllowedOutboundDataTransferDestinations <String>]`: Data can be transferred from/to these classes of apps
+  - `[AllowedDataStorageLocations <ManagedAppDataStorageLocation[]>]`: Data storage locations where a user may store managed data.
+  - `[AllowedInboundDataTransferSources <ManagedAppDataTransferLevel?>]`: Data can be transferred from/to these classes of apps
+  - `[AllowedOutboundClipboardSharingLevel <ManagedAppClipboardSharingLevel?>]`: Represents the level to which the device's clipboard may be shared between apps
+  - `[AllowedOutboundDataTransferDestinations <ManagedAppDataTransferLevel?>]`: Data can be transferred from/to these classes of apps
   - `[ContactSyncBlocked <Boolean?>]`: Indicates whether contacts can be synced to the user's device.
   - `[DataBackupBlocked <Boolean?>]`: Indicates whether the backup of a managed app's data is blocked.
   - `[DeviceComplianceRequired <Boolean?>]`: Indicates whether device compliance is required.
   - `[DisableAppPinIfDevicePinIsSet <Boolean?>]`: Indicates whether use of the app pin is required if the device pin is set.
   - `[FingerprintBlocked <Boolean?>]`: Indicates whether use of the fingerprint reader is allowed in place of a pin if PinRequired is set to True.
-  - `[ManagedBrowser <String>]`: Type of managed browser
+  - `[ManagedBrowser <ManagedBrowserType?>]`: Type of managed browser
   - `[ManagedBrowserToOpenLinksRequired <Boolean?>]`: Indicates whether internet links should be opened in the managed browser app, or any custom browser specified by CustomBrowserProtocol (for iOS) or CustomBrowserPackageId/CustomBrowserDisplayName (for Android)
   - `[MaximumPinRetries <Int32?>]`: Maximum number of incorrect pin retry attempts before the managed app is either blocked or wiped.
   - `[MinimumPinLength <Int32?>]`: Minimum pin length required for an app-level pin if PinRequired is set to True
@@ -803,7 +805,7 @@ BODYPARAMETER <IMicrosoftGraphIosManagedAppProtection1>: Policy used to configur
   - `[PeriodOfflineBeforeAccessCheck <TimeSpan?>]`: The period after which access is checked when the device is not connected to the internet.
   - `[PeriodOfflineBeforeWipeIsEnforced <TimeSpan?>]`: The amount of time an app is allowed to remain disconnected from the internet before all managed data it is wiped.
   - `[PeriodOnlineBeforeAccessCheck <TimeSpan?>]`: The period after which access is checked when the device is connected to the internet.
-  - `[PinCharacterSet <String>]`: Character set which is to be used for a user's app PIN
+  - `[PinCharacterSet <ManagedAppPinCharacterSet?>]`: Character set which is to be used for a user's app PIN
   - `[PinRequired <Boolean?>]`: Indicates whether an app-level pin is required.
   - `[PrintBlocked <Boolean?>]`: Indicates whether printing is allowed from managed apps.
   - `[SaveAsBlocked <Boolean?>]`: Indicates whether users may use the 'Save As' menu item to save a copy of protected files.
@@ -813,18 +815,18 @@ BODYPARAMETER <IMicrosoftGraphIosManagedAppProtection1>: Policy used to configur
   - `[DisplayName <String>]`: Policy display name.
   - `[LastModifiedDateTime <DateTime?>]`: Last time the policy was modified.
   - `[Version <String>]`: Version of the entity.
-  - `[Id <String>]`: Read-only.
-  - `[AppDataEncryptionType <String>]`: Represents the level to which app data is encrypted for managed apps
+  - `[Id <String>]`: 
+  - `[AppDataEncryptionType <ManagedAppDataEncryptionType?>]`: Represents the level to which app data is encrypted for managed apps
   - `[Apps <IMicrosoftGraphManagedMobileApp[]>]`: List of apps to which the policy is deployed.
-    - `[Id <String>]`: Read-only.
+    - `[Id <String>]`: 
     - `[MobileAppIdentifier <IMicrosoftGraphMobileAppIdentifier>]`: The identifier for a mobile app.
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Version <String>]`: Version of the entity.
-  - `[CustomBrowserProtocol <String>]`: A custom browser protocol to open weblink on iOS. When this property is configured, ManagedBrowserToOpenLinksRequired should be true.
+  - `[CustomBrowserProtocol <String>]`: A custom browser protocol to open weblink on iOS.
   - `[DeployedAppCount <Int32?>]`: Count of apps to which the current policy is deployed.
   - `[DeploymentSummary <IMicrosoftGraphManagedAppPolicyDeploymentSummary>]`: The ManagedAppEntity is the base entity type for all other entity types under app management workflow.
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Id <String>]`: Read-only.
+    - `[Id <String>]`: 
     - `[ConfigurationDeployedUserCount <Int32?>]`: Not yet documented
     - `[ConfigurationDeploymentSummaryPerApp <IMicrosoftGraphManagedAppPolicyDeploymentSummaryPerApp[]>]`: Not yet documented
       - `[ConfigurationAppliedUserCount <Int32?>]`: Number of users the policy is applied.
@@ -837,7 +839,7 @@ BODYPARAMETER <IMicrosoftGraphIosManagedAppProtection1>: Policy used to configur
 
 DEPLOYMENTSUMMARY <IMicrosoftGraphManagedAppPolicyDeploymentSummary>: The ManagedAppEntity is the base entity type for all other entity types under app management workflow.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[ConfigurationDeployedUserCount <Int32?>]`: Not yet documented
   - `[ConfigurationDeploymentSummaryPerApp <IMicrosoftGraphManagedAppPolicyDeploymentSummaryPerApp[]>]`: Not yet documented
     - `[ConfigurationAppliedUserCount <Int32?>]`: Number of users the policy is applied.

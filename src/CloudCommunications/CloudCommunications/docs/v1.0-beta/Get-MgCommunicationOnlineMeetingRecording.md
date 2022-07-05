@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgCommunicationOnlineMeetingRecording
 
 ## SYNOPSIS
-Get media content for the navigation property onlineMeetings from communications
+Get recording for the navigation property onlineMeetings from communications
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Get-MgCommunicationOnlineMeetingRecording -InputObject <ICloudCommunicationsIden
 ```
 
 ## DESCRIPTION
-Get media content for the navigation property onlineMeetings from communications
+Get recording for the navigation property onlineMeetings from communications
 
 ## EXAMPLES
 

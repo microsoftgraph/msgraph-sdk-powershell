@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgDirectoryAdministrativeUnit
 
 ## SYNOPSIS
-Conceptual container for user and group directory objects.
+Delete navigation property administrativeUnits for directory
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Remove-MgDirectoryAdministrativeUnit -InputObject <IIdentityDirectoryManagementI
 ```
 
 ## DESCRIPTION
-Conceptual container for user and group directory objects.
+Delete navigation property administrativeUnits for directory
 
 ## EXAMPLES
 
@@ -165,6 +165,7 @@ INPUTOBJECT <IIdentityDirectoryManagementIdentity>: Identity Parameter
   - `[InternalDomainFederationId <String>]`: key: id of internalDomainFederation
   - `[OrgContactId <String>]`: key: id of orgContact
   - `[OrganizationId <String>]`: key: id of organization
+  - `[OrganizationalBrandingLocalizationId <String>]`: key: id of organizationalBrandingLocalization
   - `[OutboundSharedUserProfileUserId <String>]`: key: userId of outboundSharedUserProfile
   - `[ProfileCardPropertyId <String>]`: key: id of profileCardProperty
   - `[RecommendationId <String>]`: key: id of recommendation

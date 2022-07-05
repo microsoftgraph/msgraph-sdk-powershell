@@ -8,8 +8,7 @@ schema: 2.0.0
 # Get-MgGroupAcceptedSender
 
 ## SYNOPSIS
-The list of users or groups that are allowed to create post's or calendar events in this group.
-If this list is non-empty then only users or groups listed here are allowed to post.
+Get acceptedSenders from groups
 
 ## SYNTAX
 
@@ -19,8 +18,7 @@ Get-MgGroupAcceptedSender -GroupId <String> [-Filter <String>] [-Property <Strin
 ```
 
 ## DESCRIPTION
-The list of users or groups that are allowed to create post's or calendar events in this group.
-If this list is non-empty then only users or groups listed here are allowed to post.
+Get acceptedSenders from groups
 
 ## EXAMPLES
 

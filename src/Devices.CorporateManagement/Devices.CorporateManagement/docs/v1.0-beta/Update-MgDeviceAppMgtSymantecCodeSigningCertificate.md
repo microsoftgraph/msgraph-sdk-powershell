@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgDeviceAppMgtSymantecCodeSigningCertificate
 
 ## SYNOPSIS
-The WinPhone Symantec Code Signing Certificate.
+Update the navigation property symantecCodeSigningCertificate in deviceAppManagement
 
 ## SYNTAX
 
@@ -28,7 +28,7 @@ Update-MgDeviceAppMgtSymantecCodeSigningCertificate
 ```
 
 ## DESCRIPTION
-The WinPhone Symantec Code Signing Certificate.
+Update the navigation property symantecCodeSigningCertificate in deviceAppManagement
 
 ## EXAMPLES
 
@@ -96,7 +96,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -285,7 +285,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphSymantecCodeSigningCertificate>: symantecCodeSigningCertificate
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[Content <Byte[]>]`: The Windows Symantec Code-Signing Certificate in the raw data format.
   - `[ExpirationDateTime <DateTime?>]`: The Cert Expiration Date.
   - `[Issuer <String>]`: The Issuer value for the cert.

@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgDeviceAppMgtPolicySet
 
 ## SYNOPSIS
-The PolicySet of Policies and Applications
+Create new navigation property to policySets for deviceAppManagement
 
 ## SYNTAX
 
@@ -16,9 +16,9 @@ The PolicySet of Policies and Applications
 ```
 New-MgDeviceAppMgtPolicySet [-AdditionalProperties <Hashtable>]
  [-Assignments <IMicrosoftGraphPolicySetAssignment[]>] [-CreatedDateTime <DateTime>] [-Description <String>]
- [-DisplayName <String>] [-ErrorCode <String>] [-GuidedDeploymentTags <String[]>] [-Id <String>]
+ [-DisplayName <String>] [-ErrorCode <ErrorCode>] [-GuidedDeploymentTags <String[]>] [-Id <String>]
  [-Items <IMicrosoftGraphPolicySetItem[]>] [-LastModifiedDateTime <DateTime>] [-RoleScopeTags <String[]>]
- [-Status <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Status <PolicySetStatus>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
@@ -28,7 +28,7 @@ New-MgDeviceAppMgtPolicySet -BodyParameter <IMicrosoftGraphPolicySet> [-Confirm]
 ```
 
 ## DESCRIPTION
-The PolicySet of Policies and Applications
+Create new navigation property to policySets for deviceAppManagement
 
 ## EXAMPLES
 
@@ -130,7 +130,7 @@ Accept wildcard characters: False
 errorCode
 
 ```yaml
-Type: System.String
+Type: Microsoft.Graph.PowerShell.Support.ErrorCode
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -157,7 +157,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -221,7 +221,7 @@ Accept wildcard characters: False
 The enum to specify the status of PolicySet.
 
 ```yaml
-Type: System.String
+Type: Microsoft.Graph.PowerShell.Support.PolicySetStatus
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -286,52 +286,52 @@ To create the parameters described below, construct a hash table containing the 
 
 
 ASSIGNMENTS <IMicrosoftGraphPolicySetAssignment[]>: Assignments of the PolicySet.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[LastModifiedDateTime <DateTime?>]`: Last modified time of the PolicySetAssignment.
   - `[Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget>]`: Base type for assignment targets.
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[DeviceAndAppManagementAssignmentFilterId <String>]`: The Id of the filter for the target assignment.
-    - `[DeviceAndAppManagementAssignmentFilterType <String>]`: Represents type of the assignment filter.
+    - `[DeviceAndAppManagementAssignmentFilterType <DeviceAndAppManagementAssignmentFilterType?>]`: Represents type of the assignment filter.
 
 BODYPARAMETER <IMicrosoftGraphPolicySet>: A class containing the properties used for PolicySet.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[Assignments <IMicrosoftGraphPolicySetAssignment[]>]`: Assignments of the PolicySet.
-    - `[Id <String>]`: Read-only.
+    - `[Id <String>]`: 
     - `[LastModifiedDateTime <DateTime?>]`: Last modified time of the PolicySetAssignment.
     - `[Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget>]`: Base type for assignment targets.
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[DeviceAndAppManagementAssignmentFilterId <String>]`: The Id of the filter for the target assignment.
-      - `[DeviceAndAppManagementAssignmentFilterType <String>]`: Represents type of the assignment filter.
+      - `[DeviceAndAppManagementAssignmentFilterType <DeviceAndAppManagementAssignmentFilterType?>]`: Represents type of the assignment filter.
   - `[CreatedDateTime <DateTime?>]`: Creation time of the PolicySet.
   - `[Description <String>]`: Description of the PolicySet.
   - `[DisplayName <String>]`: DisplayName of the PolicySet.
-  - `[ErrorCode <String>]`: errorCode
+  - `[ErrorCode <ErrorCode?>]`: errorCode
   - `[GuidedDeploymentTags <String[]>]`: Tags of the guided deployment
   - `[Items <IMicrosoftGraphPolicySetItem[]>]`: Items of the PolicySet with maximum count 100.
-    - `[Id <String>]`: Read-only.
+    - `[Id <String>]`: 
     - `[CreatedDateTime <DateTime?>]`: Creation time of the PolicySetItem.
     - `[DisplayName <String>]`: DisplayName of the PolicySetItem.
-    - `[ErrorCode <String>]`: errorCode
+    - `[ErrorCode <ErrorCode?>]`: errorCode
     - `[GuidedDeploymentTags <String[]>]`: Tags of the guided deployment
     - `[ItemType <String>]`: policySetType of the PolicySetItem.
     - `[LastModifiedDateTime <DateTime?>]`: Last modified time of the PolicySetItem.
     - `[PayloadId <String>]`: PayloadId of the PolicySetItem.
-    - `[Status <String>]`: The enum to specify the status of PolicySet.
+    - `[Status <PolicySetStatus?>]`: The enum to specify the status of PolicySet.
   - `[LastModifiedDateTime <DateTime?>]`: Last modified time of the PolicySet.
   - `[RoleScopeTags <String[]>]`: RoleScopeTags of the PolicySet
-  - `[Status <String>]`: The enum to specify the status of PolicySet.
+  - `[Status <PolicySetStatus?>]`: The enum to specify the status of PolicySet.
 
 ITEMS <IMicrosoftGraphPolicySetItem[]>: Items of the PolicySet with maximum count 100.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[CreatedDateTime <DateTime?>]`: Creation time of the PolicySetItem.
   - `[DisplayName <String>]`: DisplayName of the PolicySetItem.
-  - `[ErrorCode <String>]`: errorCode
+  - `[ErrorCode <ErrorCode?>]`: errorCode
   - `[GuidedDeploymentTags <String[]>]`: Tags of the guided deployment
   - `[ItemType <String>]`: policySetType of the PolicySetItem.
   - `[LastModifiedDateTime <DateTime?>]`: Last modified time of the PolicySetItem.
   - `[PayloadId <String>]`: PayloadId of the PolicySetItem.
-  - `[Status <String>]`: The enum to specify the status of PolicySet.
+  - `[Status <PolicySetStatus?>]`: The enum to specify the status of PolicySet.
 
 ## RELATED LINKS
 

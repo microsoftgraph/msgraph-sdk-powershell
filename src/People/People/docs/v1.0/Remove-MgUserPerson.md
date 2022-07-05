@@ -8,9 +8,7 @@ schema: 2.0.0
 # Remove-MgUserPerson
 
 ## SYNOPSIS
-People that are relevant to the user.
-Read-only.
-Nullable.
+Delete navigation property people for users
 
 ## SYNTAX
 
@@ -27,9 +25,7 @@ Remove-MgUserPerson -InputObject <IPeopleIdentity> [-IfMatch <String>] [-PassThr
 ```
 
 ## DESCRIPTION
-People that are relevant to the user.
-Read-only.
-Nullable.
+Delete navigation property people for users
 
 ## EXAMPLES
 

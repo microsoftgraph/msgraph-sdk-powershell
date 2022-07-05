@@ -8,12 +8,7 @@ schema: 2.0.0
 # Get-MgGroupOwnerByRef
 
 ## SYNOPSIS
-The owners of the group.
-Limited to 100 owners.
-Nullable.
-If this property is not specified when creating a Microsoft 365 group, the calling user is automatically assigned as the group owner.
-Supports $expand including nested $select.
-For example, /groups?$filter=startsWith(displayName,'Role')&$select=id,displayName&$expand=owners($select=id,userPrincipalName,displayName).
+Get ref of owners from groups
 
 ## SYNTAX
 
@@ -23,12 +18,7 @@ Get-MgGroupOwnerByRef -GroupId <String> [-Filter <String>] [-Search <String>] [-
 ```
 
 ## DESCRIPTION
-The owners of the group.
-Limited to 100 owners.
-Nullable.
-If this property is not specified when creating a Microsoft 365 group, the calling user is automatically assigned as the group owner.
-Supports $expand including nested $select.
-For example, /groups?$filter=startsWith(displayName,'Role')&$select=id,displayName&$expand=owners($select=id,userPrincipalName,displayName).
+Get ref of owners from groups
 
 ## EXAMPLES
 

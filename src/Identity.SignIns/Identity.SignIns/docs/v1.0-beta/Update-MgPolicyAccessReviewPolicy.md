@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgPolicyAccessReviewPolicy
 
 ## SYNOPSIS
-The policy that contains directory-level access review settings.
+Update the navigation property accessReviewPolicy in policies
 
 ## SYNTAX
 
@@ -26,7 +26,7 @@ Update-MgPolicyAccessReviewPolicy -BodyParameter <IMicrosoftGraphAccessReviewPol
 ```
 
 ## DESCRIPTION
-The policy that contains directory-level access review settings.
+Update the navigation property accessReviewPolicy in policies
 
 ## EXAMPLES
 
@@ -96,7 +96,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -193,7 +193,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphAccessReviewPolicy>: accessReviewPolicy
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[Description <String>]`: Description for this policy. Read-only.
   - `[DisplayName <String>]`: Display name for this policy. Read-only.
   - `[IsGroupOwnerManagementEnabled <Boolean?>]`: If true, group owners can create and manage access reviews on groups they own.

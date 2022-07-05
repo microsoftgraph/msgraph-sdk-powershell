@@ -8,8 +8,7 @@ schema: 2.0.0
 # Update-MgDirectoryCustomSecurityAttributeDefinitionAllowedValue
 
 ## SYNOPSIS
-Values that are predefined for this custom security attribute.This navigation property is not returned by default and must be specified in an $expand query.
-For example, /directory/customSecurityAttributeDefinitions?$expand=allowedValues.
+Update the navigation property allowedValues in directory
 
 ## SYNTAX
 
@@ -42,8 +41,7 @@ Update-MgDirectoryCustomSecurityAttributeDefinitionAllowedValue
 ```
 
 ## DESCRIPTION
-Values that are predefined for this custom security attribute.This navigation property is not returned by default and must be specified in an $expand query.
-For example, /directory/customSecurityAttributeDefinitions?$expand=allowedValues.
+Update the navigation property allowedValues in directory
 
 ## EXAMPLES
 
@@ -111,7 +109,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -227,7 +225,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphAllowedValue>: allowedValue
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[IsActive <Boolean?>]`: Indicates whether the predefined value is active or deactivated. If set to false, this predefined value cannot be assigned to any additional supported directory objects.
 
 INPUTOBJECT <IIdentityDirectoryManagementIdentity>: Identity Parameter
@@ -252,6 +250,7 @@ INPUTOBJECT <IIdentityDirectoryManagementIdentity>: Identity Parameter
   - `[InternalDomainFederationId <String>]`: key: id of internalDomainFederation
   - `[OrgContactId <String>]`: key: id of orgContact
   - `[OrganizationId <String>]`: key: id of organization
+  - `[OrganizationalBrandingLocalizationId <String>]`: key: id of organizationalBrandingLocalization
   - `[OutboundSharedUserProfileUserId <String>]`: key: userId of outboundSharedUserProfile
   - `[ProfileCardPropertyId <String>]`: key: id of profileCardProperty
   - `[RecommendationId <String>]`: key: id of recommendation

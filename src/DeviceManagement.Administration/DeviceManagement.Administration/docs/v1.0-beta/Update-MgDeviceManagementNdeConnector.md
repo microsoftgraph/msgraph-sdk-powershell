@@ -8,15 +8,15 @@ schema: 2.0.0
 # Update-MgDeviceManagementNdeConnector
 
 ## SYNOPSIS
-The collection of Ndes connectors for this account.
+Update the navigation property ndesConnectors in deviceManagement
 
 ## SYNTAX
 
 ### UpdateExpanded (Default)
 ```
 Update-MgDeviceManagementNdeConnector -NdesConnectorId <String> [-AdditionalProperties <Hashtable>]
- [-DisplayName <String>] [-Id <String>] [-LastConnectionDateTime <DateTime>] [-State <String>] [-PassThru]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-DisplayName <String>] [-Id <String>] [-LastConnectionDateTime <DateTime>] [-State <NdesConnectorState>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
@@ -35,11 +35,12 @@ Update-MgDeviceManagementNdeConnector -InputObject <IDeviceManagementAdministrat
 ```
 Update-MgDeviceManagementNdeConnector -InputObject <IDeviceManagementAdministrationIdentity>
  [-AdditionalProperties <Hashtable>] [-DisplayName <String>] [-Id <String>]
- [-LastConnectionDateTime <DateTime>] [-State <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-LastConnectionDateTime <DateTime>] [-State <NdesConnectorState>] [-PassThru] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-The collection of Ndes connectors for this account.
+Update the navigation property ndesConnectors in deviceManagement
 
 ## EXAMPLES
 
@@ -92,7 +93,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -171,7 +172,7 @@ Accept wildcard characters: False
 The current status of the Ndes Connector.
 
 ```yaml
-Type: System.String
+Type: Microsoft.Graph.PowerShell.Support.NdesConnectorState
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -237,10 +238,10 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphNdesConnector>: Entity which represents an OnPrem Ndes connector.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[DisplayName <String>]`: The friendly name of the Ndes Connector.
   - `[LastConnectionDateTime <DateTime?>]`: Last connection time for the Ndes Connector
-  - `[State <String>]`: The current status of the Ndes Connector.
+  - `[State <NdesConnectorState?>]`: The current status of the Ndes Connector.
 
 INPUTOBJECT <IDeviceManagementAdministrationIdentity>: Identity Parameter
   - `[AuditEventId <String>]`: key: id of auditEvent
@@ -265,6 +266,7 @@ INPUTOBJECT <IDeviceManagementAdministrationIdentity>: Identity Parameter
   - `[DeviceManagementExchangeOnPremisesPolicyId <String>]`: key: id of deviceManagementExchangeOnPremisesPolicy
   - `[DeviceManagementPartnerId <String>]`: key: id of deviceManagementPartner
   - `[GroupPolicyCategoryId <String>]`: key: id of groupPolicyCategory
+  - `[GroupPolicyCategoryId1 <String>]`: key: id of groupPolicyCategory
   - `[GroupPolicyDefinitionFileId <String>]`: key: id of groupPolicyDefinitionFile
   - `[GroupPolicyDefinitionId <String>]`: key: id of groupPolicyDefinition
   - `[GroupPolicyMigrationReportId <String>]`: key: id of groupPolicyMigrationReport

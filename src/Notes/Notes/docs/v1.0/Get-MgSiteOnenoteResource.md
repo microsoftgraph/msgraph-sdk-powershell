@@ -8,10 +8,7 @@ schema: 2.0.0
 # Get-MgSiteOnenoteResource
 
 ## SYNOPSIS
-The image and other file resources in OneNote pages.
-Getting a resources collection is not supported, but you can get the binary content of a specific resource.
-Read-only.
-Nullable.
+Get resources from sites
 
 ## SYNTAX
 
@@ -28,10 +25,7 @@ Get-MgSiteOnenoteResource -InputObject <INotesIdentity> [-ExpandProperty <String
 ```
 
 ## DESCRIPTION
-The image and other file resources in OneNote pages.
-Getting a resources collection is not supported, but you can get the binary content of a specific resource.
-Read-only.
-Nullable.
+Get resources from sites
 
 ## EXAMPLES
 

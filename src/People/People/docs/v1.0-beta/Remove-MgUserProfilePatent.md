@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgUserProfilePatent
 
 ## SYNOPSIS
-Represents patents that a user has added to their profile.
+Delete navigation property patents for users
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Remove-MgUserProfilePatent -InputObject <IPeopleIdentity> [-IfMatch <String>] [-
 ```
 
 ## DESCRIPTION
-Represents patents that a user has added to their profile.
+Delete navigation property patents for users
 
 ## EXAMPLES
 

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgUserProfileCertification
 
 ## SYNOPSIS
-Represents the details of certifications associated with a person.
+Update the navigation property certifications in users
 
 ## SYNTAX
 
@@ -48,7 +48,7 @@ Update-MgUserProfileCertification -InputObject <IPeopleIdentity> [-AdditionalPro
 ```
 
 ## DESCRIPTION
-Represents the details of certifications associated with a person.
+Update the navigation property certifications in users
 
 ## EXAMPLES
 
@@ -192,7 +192,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -510,7 +510,7 @@ BODYPARAMETER <IMicrosoftGraphPersonCertification>: personCertification
   - `[Source <IMicrosoftGraphPersonDataSources>]`: personDataSources
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Type <String[]>]`: 
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[CertificationId <String>]`: The referenceable identifier for the certification.
   - `[Description <String>]`: Description of the certification.
   - `[DisplayName <String>]`: Title of the certification.

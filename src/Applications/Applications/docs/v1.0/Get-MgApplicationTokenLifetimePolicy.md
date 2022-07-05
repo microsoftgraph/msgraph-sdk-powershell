@@ -8,8 +8,7 @@ schema: 2.0.0
 # Get-MgApplicationTokenLifetimePolicy
 
 ## SYNOPSIS
-The tokenLifetimePolicies assigned to this application.
-Supports $expand.
+Get tokenLifetimePolicies from applications
 
 ## SYNTAX
 
@@ -20,8 +19,7 @@ Get-MgApplicationTokenLifetimePolicy -ApplicationId <String> [-ExpandProperty <S
 ```
 
 ## DESCRIPTION
-The tokenLifetimePolicies assigned to this application.
-Supports $expand.
+Get tokenLifetimePolicies from applications
 
 ## EXAMPLES
 

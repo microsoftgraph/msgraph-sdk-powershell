@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgPolicyTokenIssuancePolicy
 
 ## SYNOPSIS
-The policy that specifies the characteristics of SAML tokens issued by Azure AD.
+Create new navigation property to tokenIssuancePolicies for policies
 
 ## SYNTAX
 
@@ -26,7 +26,7 @@ New-MgPolicyTokenIssuancePolicy -BodyParameter <Hashtable> [-Confirm] [-WhatIf] 
 ```
 
 ## DESCRIPTION
-The policy that specifies the characteristics of SAML tokens issued by Azure AD.
+Create new navigation property to tokenIssuancePolicies for policies
 
 ## EXAMPLES
 
@@ -144,7 +144,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -215,7 +215,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTokenIssuancePolicy
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTokenIssuancePolicy1
 
 ## NOTES
 
@@ -227,7 +227,7 @@ To create the parameters described below, construct a hash table containing the 
 
 
 APPLIESTO <IMicrosoftGraphDirectoryObject[]>: .
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
 
 ## RELATED LINKS

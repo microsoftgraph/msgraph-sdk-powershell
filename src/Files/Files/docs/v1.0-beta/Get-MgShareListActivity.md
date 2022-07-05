@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgShareListActivity
 
 ## SYNOPSIS
-The recent activities that took place within this list.
+Get activities from shares
 
 ## SYNTAX
 
@@ -19,7 +19,7 @@ Get-MgShareListActivity -SharedDriveItemId <String> [-ExpandProperty <String[]>]
 ```
 
 ## DESCRIPTION
-The recent activities that took place within this list.
+Get activities from shares
 
 ## EXAMPLES
 

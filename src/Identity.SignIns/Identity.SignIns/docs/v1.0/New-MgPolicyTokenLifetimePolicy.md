@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgPolicyTokenLifetimePolicy
 
 ## SYNOPSIS
-The policy that controls the lifetime of a JWT access token, an ID token, or a SAML 1.1/2.0 token issued by Azure AD.
+Create new navigation property to tokenLifetimePolicies for policies
 
 ## SYNTAX
 
@@ -26,7 +26,7 @@ New-MgPolicyTokenLifetimePolicy -BodyParameter <Hashtable> [-Confirm] [-WhatIf] 
 ```
 
 ## DESCRIPTION
-The policy that controls the lifetime of a JWT access token, an ID token, or a SAML 1.1/2.0 token issued by Azure AD.
+Create new navigation property to tokenLifetimePolicies for policies
 
 ## EXAMPLES
 
@@ -144,7 +144,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -215,7 +215,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTokenLifetimePolicy1
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTokenLifetimePolicy
 
 ## NOTES
 
@@ -227,7 +227,7 @@ To create the parameters described below, construct a hash table containing the 
 
 
 APPLIESTO <IMicrosoftGraphDirectoryObject[]>: .
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
 
 ## RELATED LINKS

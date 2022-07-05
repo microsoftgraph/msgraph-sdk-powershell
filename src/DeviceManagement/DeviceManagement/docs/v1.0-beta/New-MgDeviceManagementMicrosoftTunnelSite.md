@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgDeviceManagementMicrosoftTunnelSite
 
 ## SYNOPSIS
-Collection of MicrosoftTunnelSite settings associated with account.
+Create new navigation property to microsoftTunnelSites for deviceManagement
 
 ## SYNTAX
 
@@ -30,7 +30,7 @@ New-MgDeviceManagementMicrosoftTunnelSite -BodyParameter <IMicrosoftGraphMicroso
 ```
 
 ## DESCRIPTION
-Collection of MicrosoftTunnelSite settings associated with account.
+Create new navigation property to microsoftTunnelSites for deviceManagement
 
 ## EXAMPLES
 
@@ -98,7 +98,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -318,13 +318,13 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphMicrosoftTunnelSite>: Entity that represents a Microsoft Tunnel site
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[Description <String>]`: The MicrosoftTunnelSite's description
   - `[DisplayName <String>]`: The MicrosoftTunnelSite's display name
   - `[InternalNetworkProbeUrl <String>]`: The MicrosoftTunnelSite's Internal Network Access Probe URL
   - `[MicrosoftTunnelConfiguration <IMicrosoftGraphMicrosoftTunnelConfiguration>]`: Entity that represents a collection of Microsoft Tunnel settings
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Id <String>]`: Read-only.
+    - `[Id <String>]`: 
     - `[AdvancedSettings <IMicrosoftGraphKeyValuePair[]>]`: Additional settings that may be applied to the server
       - `[Name <String>]`: Name for this key-value pair
       - `[Value <String>]`: Value for this key-value pair
@@ -341,12 +341,12 @@ BODYPARAMETER <IMicrosoftGraphMicrosoftTunnelSite>: Entity that represents a Mic
     - `[RoutesInclude <String[]>]`: The routs that will be routed by the server
     - `[SplitDns <String[]>]`: The domains that will be resolved using the provided dns servers
   - `[MicrosoftTunnelServers <IMicrosoftGraphMicrosoftTunnelServer[]>]`: A list of MicrosoftTunnelServers that are registered to this MicrosoftTunnelSite
-    - `[Id <String>]`: Read-only.
+    - `[Id <String>]`: 
     - `[AgentImageDigest <String>]`: The digest of the current agent image running on this server
     - `[DisplayName <String>]`: The MicrosoftTunnelServer's display name
     - `[LastCheckinDateTime <DateTime?>]`: When the MicrosoftTunnelServer last checked in
     - `[ServerImageDigest <String>]`: The digest of the current server image running on this server
-    - `[TunnelServerHealthStatus <String>]`: Enum of possible MicrosoftTunnelServer health status types
+    - `[TunnelServerHealthStatus <MicrosoftTunnelServerHealthStatus?>]`: Enum of possible MicrosoftTunnelServer health status types
   - `[PublicAddress <String>]`: The MicrosoftTunnelSite's public domain name or IP address
   - `[RoleScopeTagIds <String[]>]`: List of Scope Tags for this Entity instance.
   - `[UpgradeAutomatically <Boolean?>]`: The site's automatic upgrade setting. True for automatic upgrades, false for manual control
@@ -357,7 +357,7 @@ BODYPARAMETER <IMicrosoftGraphMicrosoftTunnelSite>: Entity that represents a Mic
 
 MICROSOFTTUNNELCONFIGURATION <IMicrosoftGraphMicrosoftTunnelConfiguration>: Entity that represents a collection of Microsoft Tunnel settings
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[AdvancedSettings <IMicrosoftGraphKeyValuePair[]>]`: Additional settings that may be applied to the server
     - `[Name <String>]`: Name for this key-value pair
     - `[Value <String>]`: Value for this key-value pair
@@ -375,12 +375,12 @@ MICROSOFTTUNNELCONFIGURATION <IMicrosoftGraphMicrosoftTunnelConfiguration>: Enti
   - `[SplitDns <String[]>]`: The domains that will be resolved using the provided dns servers
 
 MICROSOFTTUNNELSERVERS <IMicrosoftGraphMicrosoftTunnelServer[]>: A list of MicrosoftTunnelServers that are registered to this MicrosoftTunnelSite
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[AgentImageDigest <String>]`: The digest of the current agent image running on this server
   - `[DisplayName <String>]`: The MicrosoftTunnelServer's display name
   - `[LastCheckinDateTime <DateTime?>]`: When the MicrosoftTunnelServer last checked in
   - `[ServerImageDigest <String>]`: The digest of the current server image running on this server
-  - `[TunnelServerHealthStatus <String>]`: Enum of possible MicrosoftTunnelServer health status types
+  - `[TunnelServerHealthStatus <MicrosoftTunnelServerHealthStatus?>]`: Enum of possible MicrosoftTunnelServer health status types
 
 ## RELATED LINKS
 

@@ -8,8 +8,7 @@ schema: 2.0.0
 # Get-MgComplianceEdiscoveryCaseOperation
 
 ## SYNOPSIS
-Returns a list of case operation objects for this case.
-Nullable.
+Get operations from compliance
 
 ## SYNTAX
 
@@ -33,8 +32,7 @@ Get-MgComplianceEdiscoveryCaseOperation -InputObject <IComplianceIdentity> [-Exp
 ```
 
 ## DESCRIPTION
-Returns a list of case operation objects for this case.
-Nullable.
+Get operations from compliance
 
 ## EXAMPLES
 
@@ -269,6 +267,7 @@ INPUTOBJECT <IComplianceIdentity>: Identity Parameter
   - `[SiteSourceId <String>]`: key: id of siteSource
   - `[SourceCollectionId <String>]`: key: id of sourceCollection
   - `[TagId <String>]`: key: id of tag
+  - `[TagId1 <String>]`: key: id of tag
   - `[UnifiedGroupSourceId <String>]`: key: id of unifiedGroupSource
   - `[UserSourceId <String>]`: key: id of userSource
 

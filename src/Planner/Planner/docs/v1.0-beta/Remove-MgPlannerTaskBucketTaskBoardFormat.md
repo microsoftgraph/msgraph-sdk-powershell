@@ -8,9 +8,7 @@ schema: 2.0.0
 # Remove-MgPlannerTaskBucketTaskBoardFormat
 
 ## SYNOPSIS
-Read-only.
-Nullable.
-Used to render the task correctly in the task board view when grouped by bucket.
+Delete navigation property bucketTaskBoardFormat for planner
 
 ## SYNTAX
 
@@ -27,9 +25,7 @@ Remove-MgPlannerTaskBucketTaskBoardFormat -InputObject <IPlannerIdentity> [-IfMa
 ```
 
 ## DESCRIPTION
-Read-only.
-Nullable.
-Used to render the task correctly in the task board view when grouped by bucket.
+Delete navigation property bucketTaskBoardFormat for planner
 
 ## EXAMPLES
 

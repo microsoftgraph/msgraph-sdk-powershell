@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgDeviceManagementUserExperienceAnalyticDeviceStartupHistory
 
 ## SYNOPSIS
-User experience analytics device Startup History
+Create new navigation property to userExperienceAnalyticsDeviceStartupHistory for deviceManagement
 
 ## SYNTAX
 
@@ -18,7 +18,8 @@ New-MgDeviceManagementUserExperienceAnalyticDeviceStartupHistory [-AdditionalPro
  [-CoreBootTimeInMS <Int32>] [-CoreLoginTimeInMS <Int32>] [-DeviceId <String>]
  [-FeatureUpdateBootTimeInMS <Int32>] [-GroupPolicyBootTimeInMS <Int32>] [-GroupPolicyLoginTimeInMS <Int32>]
  [-Id <String>] [-IsFeatureUpdate] [-IsFirstLogin] [-OperatingSystemVersion <String>]
- [-ResponsiveDesktopTimeInMS <Int32>] [-RestartCategory <String>] [-RestartFaultBucket <String>]
+ [-ResponsiveDesktopTimeInMS <Int32>]
+ [-RestartCategory <UserExperienceAnalyticsOperatingSystemRestartCategory>] [-RestartFaultBucket <String>]
  [-RestartStopCode <String>] [-StartTime <DateTime>] [-TotalBootTimeInMS <Int32>]
  [-TotalLoginTimeInMS <Int32>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -31,7 +32,7 @@ New-MgDeviceManagementUserExperienceAnalyticDeviceStartupHistory
 ```
 
 ## DESCRIPTION
-User experience analytics device Startup History
+Create new navigation property to userExperienceAnalyticsDeviceStartupHistory for deviceManagement
 
 ## EXAMPLES
 
@@ -159,7 +160,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -237,7 +238,7 @@ Accept wildcard characters: False
 Operating System restart category
 
 ```yaml
-Type: System.String
+Type: Microsoft.Graph.PowerShell.Support.UserExperienceAnalyticsOperatingSystemRestartCategory
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -378,7 +379,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphUserExperienceAnalyticsDeviceStartupHistory>: The user experience analytics device startup history entity contains device boot performance history details.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[CoreBootTimeInMS <Int32?>]`: The user experience analytics device core boot time in milliseconds.
   - `[CoreLoginTimeInMS <Int32?>]`: The user experience analytics device core login time in milliseconds.
   - `[DeviceId <String>]`: The user experience analytics device id.
@@ -389,7 +390,7 @@ BODYPARAMETER <IMicrosoftGraphUserExperienceAnalyticsDeviceStartupHistory>: The 
   - `[IsFirstLogin <Boolean?>]`: The user experience analytics device first login.
   - `[OperatingSystemVersion <String>]`: The user experience analytics device boot record's operating system version.
   - `[ResponsiveDesktopTimeInMS <Int32?>]`: The user experience analytics responsive desktop time in milliseconds.
-  - `[RestartCategory <String>]`: Operating System restart category
+  - `[RestartCategory <UserExperienceAnalyticsOperatingSystemRestartCategory?>]`: Operating System restart category
   - `[RestartFaultBucket <String>]`: OS restart fault bucket. The fault bucket is used to find additional information about a system crash.
   - `[RestartStopCode <String>]`: OS restart stop code. This shows the bug check code which can be used to look up the blue screen reason.
   - `[StartTime <DateTime?>]`: The user experience analytics device boot start time.

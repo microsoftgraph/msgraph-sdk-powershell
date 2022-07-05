@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgPrintOperation
 
 ## SYNOPSIS
-The list of print long running operations.
+Update the navigation property operations in print
 
 ## SYNTAX
 
@@ -39,7 +39,7 @@ Update-MgPrintOperation -InputObject <IDevicesCloudPrintIdentity> [-AdditionalPr
 ```
 
 ## DESCRIPTION
-The list of print long running operations.
+Update the navigation property operations in print
 
 ## EXAMPLES
 
@@ -93,7 +93,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -224,7 +224,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphPrintOperation>: printOperation
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[CreatedDateTime <DateTime?>]`: The DateTimeOffset when the operation was created. Read-only.
   - `[Status <IMicrosoftGraphPrintOperationStatus>]`: printOperationStatus
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -232,6 +232,7 @@ BODYPARAMETER <IMicrosoftGraphPrintOperation>: printOperation
     - `[State <String>]`: printOperationProcessingState
 
 INPUTOBJECT <IDevicesCloudPrintIdentity>: Identity Parameter
+  - `[GroupId <String>]`: key: id of group
   - `[PrintConnectorId <String>]`: key: id of printConnector
   - `[PrintOperationId <String>]`: key: id of printOperation
   - `[PrintServiceEndpointId <String>]`: key: id of printServiceEndpoint
@@ -241,6 +242,7 @@ INPUTOBJECT <IDevicesCloudPrintIdentity>: Identity Parameter
   - `[PrintTaskTriggerId <String>]`: key: id of printTaskTrigger
   - `[PrinterId <String>]`: key: id of printer
   - `[PrinterShareId <String>]`: key: id of printerShare
+  - `[UserId <String>]`: key: id of user
 
 STATUS <IMicrosoftGraphPrintOperationStatus>: printOperationStatus
   - `[(Any) <Object>]`: This indicates any property can be added to this object.

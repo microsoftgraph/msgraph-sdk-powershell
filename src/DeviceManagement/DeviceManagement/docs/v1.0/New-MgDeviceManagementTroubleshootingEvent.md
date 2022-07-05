@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgDeviceManagementTroubleshootingEvent
 
 ## SYNOPSIS
-The list of troubleshooting events for the tenant.
+Create new navigation property to troubleshootingEvents for deviceManagement
 
 ## SYNTAX
 
@@ -26,7 +26,7 @@ New-MgDeviceManagementTroubleshootingEvent
 ```
 
 ## DESCRIPTION
-The list of troubleshooting events for the tenant.
+Create new navigation property to troubleshootingEvents for deviceManagement
 
 ## EXAMPLES
 
@@ -94,7 +94,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -161,7 +161,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphDeviceManagementTroubleshootingEvent>: Event representing an general failure.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[CorrelationId <String>]`: Id used for tracing the failure in the service.
   - `[EventDateTime <DateTime?>]`: Time when the event occurred .
 

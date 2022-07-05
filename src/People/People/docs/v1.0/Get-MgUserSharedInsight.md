@@ -8,10 +8,7 @@ schema: 2.0.0
 # Get-MgUserSharedInsight
 
 ## SYNOPSIS
-Calculated relationship identifying documents shared with or by the user.
-This includes URLs, file attachments, and reference attachments to OneDrive for Business and SharePoint files found in Outlook messages and meetings.
-This also includes URLs and reference attachments to Teams conversations.
-Ordered by recency of share.
+Get shared from users
 
 ## SYNTAX
 
@@ -35,10 +32,7 @@ Get-MgUserSharedInsight -InputObject <IPeopleIdentity> [-ExpandProperty <String[
 ```
 
 ## DESCRIPTION
-Calculated relationship identifying documents shared with or by the user.
-This includes URLs, file attachments, and reference attachments to OneDrive for Business and SharePoint files found in Outlook messages and meetings.
-This also includes URLs and reference attachments to Teams conversations.
-Ordered by recency of share.
+Get shared from users
 
 ## EXAMPLES
 

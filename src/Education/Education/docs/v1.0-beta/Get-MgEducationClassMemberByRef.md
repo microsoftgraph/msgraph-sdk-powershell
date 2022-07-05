@@ -8,8 +8,7 @@ schema: 2.0.0
 # Get-MgEducationClassMemberByRef
 
 ## SYNOPSIS
-All users in the class.
-Nullable.
+Get ref of members from education
 
 ## SYNTAX
 
@@ -20,8 +19,7 @@ Get-MgEducationClassMemberByRef -EducationClassId <String> [-Filter <String>] [-
 ```
 
 ## DESCRIPTION
-All users in the class.
-Nullable.
+Get ref of members from education
 
 ## EXAMPLES
 

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgDeviceManagementUserExperienceAnalyticRegressionSummary
 
 ## SYNOPSIS
-User experience analytics regression summary
+Update the navigation property userExperienceAnalyticsRegressionSummary in deviceManagement
 
 ## SYNTAX
 
@@ -29,7 +29,7 @@ Update-MgDeviceManagementUserExperienceAnalyticRegressionSummary
 ```
 
 ## DESCRIPTION
-User experience analytics regression summary
+Update the navigation property userExperienceAnalyticsRegressionSummary in deviceManagement
 
 ## EXAMPLES
 
@@ -67,7 +67,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -197,26 +197,26 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphUserExperienceAnalyticsRegressionSummary>: The user experience analytics Regression Summary.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[ManufacturerRegression <IMicrosoftGraphUserExperienceAnalyticsMetric[]>]`: The metric values for the user experience analytics Manufacturer regression.
-    - `[Id <String>]`: Read-only.
+    - `[Id <String>]`: 
     - `[Unit <String>]`: The unit of the user experience analytics metric.
     - `[Value <Double?>]`: The value of the user experience analytics metric.
   - `[ModelRegression <IMicrosoftGraphUserExperienceAnalyticsMetric[]>]`: The metric values for the user experience analytics model regression.
   - `[OperatingSystemRegression <IMicrosoftGraphUserExperienceAnalyticsMetric[]>]`: The metric values for the user experience analytics operating system regression.
 
 MANUFACTURERREGRESSION <IMicrosoftGraphUserExperienceAnalyticsMetric[]>: The metric values for the user experience analytics Manufacturer regression.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[Unit <String>]`: The unit of the user experience analytics metric.
   - `[Value <Double?>]`: The value of the user experience analytics metric.
 
 MODELREGRESSION <IMicrosoftGraphUserExperienceAnalyticsMetric[]>: The metric values for the user experience analytics model regression.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[Unit <String>]`: The unit of the user experience analytics metric.
   - `[Value <Double?>]`: The value of the user experience analytics metric.
 
 OPERATINGSYSTEMREGRESSION <IMicrosoftGraphUserExperienceAnalyticsMetric[]>: The metric values for the user experience analytics operating system regression.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[Unit <String>]`: The unit of the user experience analytics metric.
   - `[Value <Double?>]`: The value of the user experience analytics metric.
 

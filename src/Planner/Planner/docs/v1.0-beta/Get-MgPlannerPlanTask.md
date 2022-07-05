@@ -8,9 +8,7 @@ schema: 2.0.0
 # Get-MgPlannerPlanTask
 
 ## SYNOPSIS
-Read-only.
-Nullable.
-Collection of tasks in the plan.
+Get tasks from planner
 
 ## SYNTAX
 
@@ -21,9 +19,7 @@ Get-MgPlannerPlanTask -PlannerPlanId <String> [-ExpandProperty <String[]>] [-Fil
 ```
 
 ## DESCRIPTION
-Read-only.
-Nullable.
-Collection of tasks in the plan.
+Get tasks from planner
 
 ## EXAMPLES
 

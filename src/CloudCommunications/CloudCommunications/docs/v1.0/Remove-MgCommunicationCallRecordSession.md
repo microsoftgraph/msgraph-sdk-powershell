@@ -8,10 +8,7 @@ schema: 2.0.0
 # Remove-MgCommunicationCallRecordSession
 
 ## SYNOPSIS
-List of sessions involved in the call.
-Peer-to-peer calls typically only have one session, whereas group calls typically have at least one session per participant.
-Read-only.
-Nullable.
+Delete navigation property sessions for communications
 
 ## SYNTAX
 
@@ -28,10 +25,7 @@ Remove-MgCommunicationCallRecordSession -InputObject <ICloudCommunicationsIdenti
 ```
 
 ## DESCRIPTION
-List of sessions involved in the call.
-Peer-to-peer calls typically only have one session, whereas group calls typically have at least one session per participant.
-Read-only.
-Nullable.
+Delete navigation property sessions for communications
 
 ## EXAMPLES
 

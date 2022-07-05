@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgDeviceManagementAndroidManagedStoreAccountEnterpriseSetting
 
 ## SYNOPSIS
-The singleton Android managed store account enterprise settings entity.
+Update the navigation property androidManagedStoreAccountEnterpriseSettings in deviceManagement
 
 ## SYNTAX
 
@@ -31,7 +31,7 @@ Update-MgDeviceManagementAndroidManagedStoreAccountEnterpriseSetting
 ```
 
 ## DESCRIPTION
-The singleton Android managed store account enterprise settings entity.
+Update the navigation property androidManagedStoreAccountEnterpriseSettings in deviceManagement
 
 ## EXAMPLES
 
@@ -145,7 +145,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -332,7 +332,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphAndroidManagedStoreAccountEnterpriseSettings>: Enterprise settings for an Android managed store account.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[AndroidDeviceOwnerFullyManagedEnrollmentEnabled <Boolean?>]`: Company codes for AndroidManagedStoreAccountEnterpriseSettings
   - `[BindStatus <String>]`: Bind status of the tenant with the Google EMM API
   - `[CompanyCodes <IMicrosoftGraphAndroidEnrollmentCompanyCode[]>]`: Company codes for AndroidManagedStoreAccountEnterpriseSettings

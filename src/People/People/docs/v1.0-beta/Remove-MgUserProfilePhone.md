@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgUserProfilePhone
 
 ## SYNOPSIS
-Represents detailed information about phone numbers associated with a user in various services.
+Delete navigation property phones for users
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Remove-MgUserProfilePhone -InputObject <IPeopleIdentity> [-IfMatch <String>] [-P
 ```
 
 ## DESCRIPTION
-Represents detailed information about phone numbers associated with a user in various services.
+Delete navigation property phones for users
 
 ## EXAMPLES
 

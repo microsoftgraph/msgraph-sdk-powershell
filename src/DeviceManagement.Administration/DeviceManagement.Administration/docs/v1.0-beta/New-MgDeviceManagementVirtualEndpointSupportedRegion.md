@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgDeviceManagementVirtualEndpointSupportedRegion
 
 ## SYNOPSIS
-Cloud PC supported regions.
+Create new navigation property to supportedRegions for deviceManagement
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ New-MgDeviceManagementVirtualEndpointSupportedRegion -BodyParameter <IMicrosoftG
 ```
 
 ## DESCRIPTION
-Cloud PC supported regions.
+Create new navigation property to supportedRegions for deviceManagement
 
 ## EXAMPLES
 
@@ -79,7 +79,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -146,7 +146,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphCloudPcSupportedRegion>: cloudPcSupportedRegion
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[DisplayName <String>]`: The name for the supported region. Read-only.
 
 ## RELATED LINKS

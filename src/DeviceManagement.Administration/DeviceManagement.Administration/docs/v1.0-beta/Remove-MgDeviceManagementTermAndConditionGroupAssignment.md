@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgDeviceManagementTermAndConditionGroupAssignment
 
 ## SYNOPSIS
-The list of group assignments for this T&C policy.
+Delete navigation property groupAssignments for deviceManagement
 
 ## SYNTAX
 
@@ -26,7 +26,7 @@ Remove-MgDeviceManagementTermAndConditionGroupAssignment
 ```
 
 ## DESCRIPTION
-The list of group assignments for this T&C policy.
+Delete navigation property groupAssignments for deviceManagement
 
 ## EXAMPLES
 
@@ -182,6 +182,7 @@ INPUTOBJECT <IDeviceManagementAdministrationIdentity>: Identity Parameter
   - `[DeviceManagementExchangeOnPremisesPolicyId <String>]`: key: id of deviceManagementExchangeOnPremisesPolicy
   - `[DeviceManagementPartnerId <String>]`: key: id of deviceManagementPartner
   - `[GroupPolicyCategoryId <String>]`: key: id of groupPolicyCategory
+  - `[GroupPolicyCategoryId1 <String>]`: key: id of groupPolicyCategory
   - `[GroupPolicyDefinitionFileId <String>]`: key: id of groupPolicyDefinitionFile
   - `[GroupPolicyDefinitionId <String>]`: key: id of groupPolicyDefinition
   - `[GroupPolicyMigrationReportId <String>]`: key: id of groupPolicyMigrationReport

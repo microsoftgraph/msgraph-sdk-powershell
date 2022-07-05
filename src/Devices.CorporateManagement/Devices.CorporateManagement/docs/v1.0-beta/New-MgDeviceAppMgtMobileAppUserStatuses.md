@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgDeviceAppMgtMobileAppUserStatuses
 
 ## SYNOPSIS
-The list of installation states for this mobile app.
+Create new navigation property to userStatuses for deviceAppManagement
 
 ## SYNTAX
 
@@ -43,7 +43,7 @@ New-MgDeviceAppMgtMobileAppUserStatuses -InputObject <IDevicesCorporateManagemen
 ```
 
 ## DESCRIPTION
-The list of installation states for this mobile app.
+Create new navigation property to userStatuses for deviceAppManagement
 
 ## EXAMPLES
 
@@ -128,7 +128,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -290,20 +290,20 @@ To create the parameters described below, construct a hash table containing the 
 
 APP <IMicrosoftGraphMobileApp>: An abstract class containing the base properties for Intune mobile apps.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[Assignments <IMicrosoftGraphMobileAppAssignment[]>]`: The list of group assignments for this mobile app.
-    - `[Id <String>]`: Read-only.
-    - `[Intent <String>]`: Possible values for the install intent chosen by the admin.
+    - `[Id <String>]`: 
+    - `[Intent <InstallIntent?>]`: Possible values for the install intent chosen by the admin.
     - `[Settings <IMicrosoftGraphMobileAppAssignmentSettings>]`: Abstract class to contain properties used to assign a mobile app to a group.
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Source <String>]`: Represents source of assignment.
+    - `[Source <DeviceAndAppManagementAssignmentSource?>]`: Represents source of assignment.
     - `[SourceId <String>]`: The identifier of the source of the assignment.
     - `[Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget>]`: Base type for assignment targets.
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[DeviceAndAppManagementAssignmentFilterId <String>]`: The Id of the filter for the target assignment.
-      - `[DeviceAndAppManagementAssignmentFilterType <String>]`: Represents type of the assignment filter.
+      - `[DeviceAndAppManagementAssignmentFilterType <DeviceAndAppManagementAssignmentFilterType?>]`: Represents type of the assignment filter.
   - `[Categories <IMicrosoftGraphMobileAppCategory[]>]`: The list of categories for this app.
-    - `[Id <String>]`: Read-only.
+    - `[Id <String>]`: 
     - `[DisplayName <String>]`: The name of the app category.
     - `[LastModifiedDateTime <DateTime?>]`: The date and time the mobileAppCategory was last modified.
   - `[CreatedDateTime <DateTime?>]`: The date and time the app was created.
@@ -311,16 +311,16 @@ APP <IMicrosoftGraphMobileApp>: An abstract class containing the base properties
   - `[Description <String>]`: The description of the app.
   - `[Developer <String>]`: The developer of the app.
   - `[DeviceStatuses <IMicrosoftGraphMobileAppInstallStatus[]>]`: The list of installation states for this mobile app.
-    - `[Id <String>]`: Read-only.
+    - `[Id <String>]`: 
     - `[App <IMicrosoftGraphMobileApp>]`: An abstract class containing the base properties for Intune mobile apps.
     - `[DeviceId <String>]`: Device ID
     - `[DeviceName <String>]`: Device name
     - `[DisplayVersion <String>]`: Human readable version of the application
     - `[ErrorCode <Int32?>]`: The error code for install or uninstall failures.
-    - `[InstallState <String>]`: resultantAppState
-    - `[InstallStateDetail <String>]`: Enum indicating additional details regarding why an application has a particular install state.
+    - `[InstallState <ResultantAppState?>]`: A list of possible states for application status on an individual device. When devices contact the Intune service and find targeted application enforcement intent, the status of the enforcement is recorded and becomes accessible in the Graph API. Since the application status is identified during device interaction with the Intune service, status records do not immediately appear upon application group assignment; it is created only after the assignment is evaluated in the service and devices start receiving the policy during check-ins.
+    - `[InstallStateDetail <ResultantAppStateDetail?>]`: Enum indicating additional details regarding why an application has a particular install state.
     - `[LastSyncDateTime <DateTime?>]`: Last sync date time
-    - `[MobileAppInstallStatusValue <String>]`: resultantAppState
+    - `[MobileAppInstallStatusValue <ResultantAppState?>]`: A list of possible states for application status on an individual device. When devices contact the Intune service and find targeted application enforcement intent, the status of the enforcement is recorded and becomes accessible in the Graph API. Since the application status is identified during device interaction with the Intune service, status records do not immediately appear upon application group assignment; it is created only after the assignment is evaluated in the service and devices start receiving the policy during check-ins.
     - `[OSDescription <String>]`: OS Description
     - `[OSVersion <String>]`: OS Version
     - `[UserName <String>]`: Device User Name
@@ -329,7 +329,7 @@ APP <IMicrosoftGraphMobileApp>: An abstract class containing the base properties
   - `[InformationUrl <String>]`: The more information Url.
   - `[InstallSummary <IMicrosoftGraphMobileAppInstallSummary>]`: Contains properties for the installation summary of a mobile app.
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Id <String>]`: Read-only.
+    - `[Id <String>]`: 
     - `[FailedDeviceCount <Int32?>]`: Number of Devices that have failed to install this app.
     - `[FailedUserCount <Int32?>]`: Number of Users that have 1 or more device that failed to install this app.
     - `[InstalledDeviceCount <Int32?>]`: Number of Devices that have successfully installed this app.
@@ -351,20 +351,20 @@ APP <IMicrosoftGraphMobileApp>: An abstract class containing the base properties
   - `[Owner <String>]`: The owner of the app.
   - `[PrivacyInformationUrl <String>]`: The privacy statement Url.
   - `[Publisher <String>]`: The publisher of the app.
-  - `[PublishingState <String>]`: Indicates the publishing state of an app.
+  - `[PublishingState <MobileAppPublishingState?>]`: Indicates the publishing state of an app.
   - `[Relationships <IMicrosoftGraphMobileAppRelationship[]>]`: List of relationships for this mobile app.
-    - `[Id <String>]`: Read-only.
+    - `[Id <String>]`: 
     - `[TargetDisplayName <String>]`: The target mobile app's display name.
     - `[TargetDisplayVersion <String>]`: The target mobile app's display version.
     - `[TargetId <String>]`: The target mobile app's app id.
     - `[TargetPublisher <String>]`: The target mobile app's publisher.
-    - `[TargetType <String>]`: Indicates whether the target of a relationship is the parent or the child in the relationship.
+    - `[TargetType <MobileAppRelationshipType?>]`: Indicates whether the target of a relationship is the parent or the child in the relationship.
   - `[RoleScopeTagIds <String[]>]`: List of scope tag ids for this mobile app.
   - `[SupersededAppCount <Int32?>]`: The total number of apps this app is directly or indirectly superseded by.
   - `[SupersedingAppCount <Int32?>]`: The total number of apps this app directly or indirectly supersedes.
   - `[UploadState <Int32?>]`: The upload state.
   - `[UserStatuses <IMicrosoftGraphUserAppInstallStatus[]>]`: The list of installation states for this mobile app.
-    - `[Id <String>]`: Read-only.
+    - `[Id <String>]`: 
     - `[App <IMicrosoftGraphMobileApp>]`: An abstract class containing the base properties for Intune mobile apps.
     - `[DeviceStatuses <IMicrosoftGraphMobileAppInstallStatus[]>]`: The install state of the app on devices.
     - `[FailedDeviceCount <Int32?>]`: Failed Device Count.
@@ -375,23 +375,23 @@ APP <IMicrosoftGraphMobileApp>: An abstract class containing the base properties
 
 BODYPARAMETER <IMicrosoftGraphUserAppInstallStatus>: Contains properties for the installation status for a user.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[App <IMicrosoftGraphMobileApp>]`: An abstract class containing the base properties for Intune mobile apps.
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Id <String>]`: Read-only.
+    - `[Id <String>]`: 
     - `[Assignments <IMicrosoftGraphMobileAppAssignment[]>]`: The list of group assignments for this mobile app.
-      - `[Id <String>]`: Read-only.
-      - `[Intent <String>]`: Possible values for the install intent chosen by the admin.
+      - `[Id <String>]`: 
+      - `[Intent <InstallIntent?>]`: Possible values for the install intent chosen by the admin.
       - `[Settings <IMicrosoftGraphMobileAppAssignmentSettings>]`: Abstract class to contain properties used to assign a mobile app to a group.
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[Source <String>]`: Represents source of assignment.
+      - `[Source <DeviceAndAppManagementAssignmentSource?>]`: Represents source of assignment.
       - `[SourceId <String>]`: The identifier of the source of the assignment.
       - `[Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget>]`: Base type for assignment targets.
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[DeviceAndAppManagementAssignmentFilterId <String>]`: The Id of the filter for the target assignment.
-        - `[DeviceAndAppManagementAssignmentFilterType <String>]`: Represents type of the assignment filter.
+        - `[DeviceAndAppManagementAssignmentFilterType <DeviceAndAppManagementAssignmentFilterType?>]`: Represents type of the assignment filter.
     - `[Categories <IMicrosoftGraphMobileAppCategory[]>]`: The list of categories for this app.
-      - `[Id <String>]`: Read-only.
+      - `[Id <String>]`: 
       - `[DisplayName <String>]`: The name of the app category.
       - `[LastModifiedDateTime <DateTime?>]`: The date and time the mobileAppCategory was last modified.
     - `[CreatedDateTime <DateTime?>]`: The date and time the app was created.
@@ -399,16 +399,16 @@ BODYPARAMETER <IMicrosoftGraphUserAppInstallStatus>: Contains properties for the
     - `[Description <String>]`: The description of the app.
     - `[Developer <String>]`: The developer of the app.
     - `[DeviceStatuses <IMicrosoftGraphMobileAppInstallStatus[]>]`: The list of installation states for this mobile app.
-      - `[Id <String>]`: Read-only.
+      - `[Id <String>]`: 
       - `[App <IMicrosoftGraphMobileApp>]`: An abstract class containing the base properties for Intune mobile apps.
       - `[DeviceId <String>]`: Device ID
       - `[DeviceName <String>]`: Device name
       - `[DisplayVersion <String>]`: Human readable version of the application
       - `[ErrorCode <Int32?>]`: The error code for install or uninstall failures.
-      - `[InstallState <String>]`: resultantAppState
-      - `[InstallStateDetail <String>]`: Enum indicating additional details regarding why an application has a particular install state.
+      - `[InstallState <ResultantAppState?>]`: A list of possible states for application status on an individual device. When devices contact the Intune service and find targeted application enforcement intent, the status of the enforcement is recorded and becomes accessible in the Graph API. Since the application status is identified during device interaction with the Intune service, status records do not immediately appear upon application group assignment; it is created only after the assignment is evaluated in the service and devices start receiving the policy during check-ins.
+      - `[InstallStateDetail <ResultantAppStateDetail?>]`: Enum indicating additional details regarding why an application has a particular install state.
       - `[LastSyncDateTime <DateTime?>]`: Last sync date time
-      - `[MobileAppInstallStatusValue <String>]`: resultantAppState
+      - `[MobileAppInstallStatusValue <ResultantAppState?>]`: A list of possible states for application status on an individual device. When devices contact the Intune service and find targeted application enforcement intent, the status of the enforcement is recorded and becomes accessible in the Graph API. Since the application status is identified during device interaction with the Intune service, status records do not immediately appear upon application group assignment; it is created only after the assignment is evaluated in the service and devices start receiving the policy during check-ins.
       - `[OSDescription <String>]`: OS Description
       - `[OSVersion <String>]`: OS Version
       - `[UserName <String>]`: Device User Name
@@ -417,7 +417,7 @@ BODYPARAMETER <IMicrosoftGraphUserAppInstallStatus>: Contains properties for the
     - `[InformationUrl <String>]`: The more information Url.
     - `[InstallSummary <IMicrosoftGraphMobileAppInstallSummary>]`: Contains properties for the installation summary of a mobile app.
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[Id <String>]`: Read-only.
+      - `[Id <String>]`: 
       - `[FailedDeviceCount <Int32?>]`: Number of Devices that have failed to install this app.
       - `[FailedUserCount <Int32?>]`: Number of Users that have 1 or more device that failed to install this app.
       - `[InstalledDeviceCount <Int32?>]`: Number of Devices that have successfully installed this app.
@@ -439,14 +439,14 @@ BODYPARAMETER <IMicrosoftGraphUserAppInstallStatus>: Contains properties for the
     - `[Owner <String>]`: The owner of the app.
     - `[PrivacyInformationUrl <String>]`: The privacy statement Url.
     - `[Publisher <String>]`: The publisher of the app.
-    - `[PublishingState <String>]`: Indicates the publishing state of an app.
+    - `[PublishingState <MobileAppPublishingState?>]`: Indicates the publishing state of an app.
     - `[Relationships <IMicrosoftGraphMobileAppRelationship[]>]`: List of relationships for this mobile app.
-      - `[Id <String>]`: Read-only.
+      - `[Id <String>]`: 
       - `[TargetDisplayName <String>]`: The target mobile app's display name.
       - `[TargetDisplayVersion <String>]`: The target mobile app's display version.
       - `[TargetId <String>]`: The target mobile app's app id.
       - `[TargetPublisher <String>]`: The target mobile app's publisher.
-      - `[TargetType <String>]`: Indicates whether the target of a relationship is the parent or the child in the relationship.
+      - `[TargetType <MobileAppRelationshipType?>]`: Indicates whether the target of a relationship is the parent or the child in the relationship.
     - `[RoleScopeTagIds <String[]>]`: List of scope tag ids for this mobile app.
     - `[SupersededAppCount <Int32?>]`: The total number of apps this app is directly or indirectly superseded by.
     - `[SupersedingAppCount <Int32?>]`: The total number of apps this app directly or indirectly supersedes.
@@ -460,23 +460,23 @@ BODYPARAMETER <IMicrosoftGraphUserAppInstallStatus>: Contains properties for the
   - `[UserPrincipalName <String>]`: User Principal Name.
 
 DEVICESTATUSES <IMicrosoftGraphMobileAppInstallStatus[]>: The install state of the app on devices.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[App <IMicrosoftGraphMobileApp>]`: An abstract class containing the base properties for Intune mobile apps.
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Id <String>]`: Read-only.
+    - `[Id <String>]`: 
     - `[Assignments <IMicrosoftGraphMobileAppAssignment[]>]`: The list of group assignments for this mobile app.
-      - `[Id <String>]`: Read-only.
-      - `[Intent <String>]`: Possible values for the install intent chosen by the admin.
+      - `[Id <String>]`: 
+      - `[Intent <InstallIntent?>]`: Possible values for the install intent chosen by the admin.
       - `[Settings <IMicrosoftGraphMobileAppAssignmentSettings>]`: Abstract class to contain properties used to assign a mobile app to a group.
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[Source <String>]`: Represents source of assignment.
+      - `[Source <DeviceAndAppManagementAssignmentSource?>]`: Represents source of assignment.
       - `[SourceId <String>]`: The identifier of the source of the assignment.
       - `[Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget>]`: Base type for assignment targets.
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[DeviceAndAppManagementAssignmentFilterId <String>]`: The Id of the filter for the target assignment.
-        - `[DeviceAndAppManagementAssignmentFilterType <String>]`: Represents type of the assignment filter.
+        - `[DeviceAndAppManagementAssignmentFilterType <DeviceAndAppManagementAssignmentFilterType?>]`: Represents type of the assignment filter.
     - `[Categories <IMicrosoftGraphMobileAppCategory[]>]`: The list of categories for this app.
-      - `[Id <String>]`: Read-only.
+      - `[Id <String>]`: 
       - `[DisplayName <String>]`: The name of the app category.
       - `[LastModifiedDateTime <DateTime?>]`: The date and time the mobileAppCategory was last modified.
     - `[CreatedDateTime <DateTime?>]`: The date and time the app was created.
@@ -488,7 +488,7 @@ DEVICESTATUSES <IMicrosoftGraphMobileAppInstallStatus[]>: The install state of t
     - `[InformationUrl <String>]`: The more information Url.
     - `[InstallSummary <IMicrosoftGraphMobileAppInstallSummary>]`: Contains properties for the installation summary of a mobile app.
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[Id <String>]`: Read-only.
+      - `[Id <String>]`: 
       - `[FailedDeviceCount <Int32?>]`: Number of Devices that have failed to install this app.
       - `[FailedUserCount <Int32?>]`: Number of Users that have 1 or more device that failed to install this app.
       - `[InstalledDeviceCount <Int32?>]`: Number of Devices that have successfully installed this app.
@@ -510,20 +510,20 @@ DEVICESTATUSES <IMicrosoftGraphMobileAppInstallStatus[]>: The install state of t
     - `[Owner <String>]`: The owner of the app.
     - `[PrivacyInformationUrl <String>]`: The privacy statement Url.
     - `[Publisher <String>]`: The publisher of the app.
-    - `[PublishingState <String>]`: Indicates the publishing state of an app.
+    - `[PublishingState <MobileAppPublishingState?>]`: Indicates the publishing state of an app.
     - `[Relationships <IMicrosoftGraphMobileAppRelationship[]>]`: List of relationships for this mobile app.
-      - `[Id <String>]`: Read-only.
+      - `[Id <String>]`: 
       - `[TargetDisplayName <String>]`: The target mobile app's display name.
       - `[TargetDisplayVersion <String>]`: The target mobile app's display version.
       - `[TargetId <String>]`: The target mobile app's app id.
       - `[TargetPublisher <String>]`: The target mobile app's publisher.
-      - `[TargetType <String>]`: Indicates whether the target of a relationship is the parent or the child in the relationship.
+      - `[TargetType <MobileAppRelationshipType?>]`: Indicates whether the target of a relationship is the parent or the child in the relationship.
     - `[RoleScopeTagIds <String[]>]`: List of scope tag ids for this mobile app.
     - `[SupersededAppCount <Int32?>]`: The total number of apps this app is directly or indirectly superseded by.
     - `[SupersedingAppCount <Int32?>]`: The total number of apps this app directly or indirectly supersedes.
     - `[UploadState <Int32?>]`: The upload state.
     - `[UserStatuses <IMicrosoftGraphUserAppInstallStatus[]>]`: The list of installation states for this mobile app.
-      - `[Id <String>]`: Read-only.
+      - `[Id <String>]`: 
       - `[App <IMicrosoftGraphMobileApp>]`: An abstract class containing the base properties for Intune mobile apps.
       - `[DeviceStatuses <IMicrosoftGraphMobileAppInstallStatus[]>]`: The install state of the app on devices.
       - `[FailedDeviceCount <Int32?>]`: Failed Device Count.
@@ -535,10 +535,10 @@ DEVICESTATUSES <IMicrosoftGraphMobileAppInstallStatus[]>: The install state of t
   - `[DeviceName <String>]`: Device name
   - `[DisplayVersion <String>]`: Human readable version of the application
   - `[ErrorCode <Int32?>]`: The error code for install or uninstall failures.
-  - `[InstallState <String>]`: resultantAppState
-  - `[InstallStateDetail <String>]`: Enum indicating additional details regarding why an application has a particular install state.
+  - `[InstallState <ResultantAppState?>]`: A list of possible states for application status on an individual device. When devices contact the Intune service and find targeted application enforcement intent, the status of the enforcement is recorded and becomes accessible in the Graph API. Since the application status is identified during device interaction with the Intune service, status records do not immediately appear upon application group assignment; it is created only after the assignment is evaluated in the service and devices start receiving the policy during check-ins.
+  - `[InstallStateDetail <ResultantAppStateDetail?>]`: Enum indicating additional details regarding why an application has a particular install state.
   - `[LastSyncDateTime <DateTime?>]`: Last sync date time
-  - `[MobileAppInstallStatusValue <String>]`: resultantAppState
+  - `[MobileAppInstallStatusValue <ResultantAppState?>]`: A list of possible states for application status on an individual device. When devices contact the Intune service and find targeted application enforcement intent, the status of the enforcement is recorded and becomes accessible in the Graph API. Since the application status is identified during device interaction with the Intune service, status records do not immediately appear upon application group assignment; it is created only after the assignment is evaluated in the service and devices start receiving the policy during check-ins.
   - `[OSDescription <String>]`: OS Description
   - `[OSVersion <String>]`: OS Version
   - `[UserName <String>]`: Device User Name
@@ -548,14 +548,15 @@ INPUTOBJECT <IDevicesCorporateManagementIdentity>: Identity Parameter
   - `[AndroidManagedAppProtectionId <String>]`: key: id of androidManagedAppProtection
   - `[AppLogCollectionRequestId <String>]`: key: id of appLogCollectionRequest
   - `[AssignmentFilterEvaluationStatusDetailsId <String>]`: key: id of assignmentFilterEvaluationStatusDetails
-  - `[BundleId <String>]`: Usage: bundleId={bundleId}
+  - `[BundleId <String>]`: Usage: bundleId='{bundleId}'
   - `[Count <Int64?>]`: Usage: count={count}
   - `[DefaultManagedAppProtectionId <String>]`: key: id of defaultManagedAppProtection
+  - `[DetectedAppId <String>]`: key: id of detectedApp
   - `[DeviceAppManagementTaskId <String>]`: key: id of deviceAppManagementTask
   - `[DeviceCompliancePolicyStateId <String>]`: key: id of deviceCompliancePolicyState
   - `[DeviceConfigurationStateId <String>]`: key: id of deviceConfigurationState
   - `[DeviceEnrollmentConfigurationId <String>]`: key: id of deviceEnrollmentConfiguration
-  - `[DeviceId <String>]`: Usage: deviceId={deviceId}
+  - `[DeviceId <String>]`: Usage: deviceId='{deviceId}'
   - `[DeviceInstallStateId <String>]`: key: id of deviceInstallState
   - `[DeviceLogCollectionResponseId <String>]`: key: id of deviceLogCollectionResponse
   - `[DeviceManagementTroubleshootingEventId <String>]`: key: id of deviceManagementTroubleshootingEvent
@@ -595,13 +596,13 @@ INPUTOBJECT <IDevicesCorporateManagementIdentity>: Identity Parameter
   - `[SecurityBaselineSettingStateId <String>]`: key: id of securityBaselineSettingState
   - `[SecurityBaselineStateId <String>]`: key: id of securityBaselineState
   - `[SideLoadingKeyId <String>]`: key: id of sideLoadingKey
-  - `[Status <String>]`: Usage: status={status}
+  - `[Status <String>]`: Usage: status='{status}'
   - `[TargetedManagedAppConfigurationId <String>]`: key: id of targetedManagedAppConfiguration
   - `[TargetedManagedAppPolicyAssignmentId <String>]`: key: id of targetedManagedAppPolicyAssignment
   - `[UserAppInstallStatusId <String>]`: key: id of userAppInstallStatus
   - `[UserId <String>]`: key: id of user
   - `[UserInstallStateSummaryId <String>]`: key: id of userInstallStateSummary
-  - `[UserPrincipalName <String>]`: Usage: userPrincipalName={userPrincipalName}
+  - `[UserPrincipalName <String>]`: Usage: userPrincipalName='{userPrincipalName}'
   - `[VppTokenId <String>]`: key: id of vppToken
   - `[WindowsDefenderApplicationControlSupplementalPolicyAssignmentId <String>]`: key: id of windowsDefenderApplicationControlSupplementalPolicyAssignment
   - `[WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusId <String>]`: key: id of windowsDefenderApplicationControlSupplementalPolicyDeploymentStatus
@@ -610,6 +611,7 @@ INPUTOBJECT <IDevicesCorporateManagementIdentity>: Identity Parameter
   - `[WindowsInformationProtectionDeviceRegistrationId <String>]`: key: id of windowsInformationProtectionDeviceRegistration
   - `[WindowsInformationProtectionPolicyId <String>]`: key: id of windowsInformationProtectionPolicy
   - `[WindowsInformationProtectionWipeActionId <String>]`: key: id of windowsInformationProtectionWipeAction
+  - `[WindowsManagedAppProtectionId <String>]`: key: id of windowsManagedAppProtection
 
 ## RELATED LINKS
 

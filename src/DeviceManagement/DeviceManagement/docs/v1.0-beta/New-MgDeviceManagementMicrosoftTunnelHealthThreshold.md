@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgDeviceManagementMicrosoftTunnelHealthThreshold
 
 ## SYNOPSIS
-Collection of MicrosoftTunnelHealthThreshold settings associated with account.
+Create new navigation property to microsoftTunnelHealthThresholds for deviceManagement
 
 ## SYNTAX
 
@@ -26,7 +26,7 @@ New-MgDeviceManagementMicrosoftTunnelHealthThreshold
 ```
 
 ## DESCRIPTION
-Collection of MicrosoftTunnelHealthThreshold settings associated with account.
+Create new navigation property to microsoftTunnelHealthThresholds for deviceManagement
 
 ## EXAMPLES
 
@@ -109,7 +109,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -191,7 +191,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphMicrosoftTunnelHealthThreshold>: Entity that represents the health thresholds of a health metric.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[DefaultHealthyThreshold <Int64?>]`: The default threshold for being healthy
   - `[DefaultUnhealthyThreshold <Int64?>]`: The default threshold for being unhealthy
   - `[HealthyThreshold <Int64?>]`: The threshold for being healthy

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgUserProfileAddress
 
 ## SYNOPSIS
-Represents details of addresses associated with the user.
+Update the navigation property addresses in users
 
 ## SYNTAX
 
@@ -45,7 +45,7 @@ Update-MgUserProfileAddress -InputObject <IPeopleIdentity> [-AdditionalPropertie
 ```
 
 ## DESCRIPTION
-Represents details of addresses associated with the user.
+Update the navigation property addresses in users
 
 ## EXAMPLES
 
@@ -176,7 +176,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -404,7 +404,7 @@ BODYPARAMETER <IMicrosoftGraphItemAddress>: itemAddress
   - `[Source <IMicrosoftGraphPersonDataSources>]`: personDataSources
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Type <String[]>]`: 
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[Detail <IMicrosoftGraphPhysicalAddress1>]`: physicalAddress
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[City <String>]`: The city.
@@ -418,8 +418,8 @@ BODYPARAMETER <IMicrosoftGraphItemAddress>: itemAddress
   - `[GeoCoordinates <IMicrosoftGraphGeoCoordinates>]`: geoCoordinates
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Altitude <Double?>]`: Optional. The altitude (height), in feet,  above sea level for the item. Read-only.
-    - `[Latitude <Double?>]`: Optional. The latitude, in decimal, for the item. Read-only.
-    - `[Longitude <Double?>]`: Optional. The longitude, in decimal, for the item. Read-only.
+    - `[Latitude <Double?>]`: Optional. The latitude, in decimal, for the item. Writable on OneDrive Personal.
+    - `[Longitude <Double?>]`: Optional. The longitude, in decimal, for the item. Writable on OneDrive Personal.
 
 CREATEDBY <IMicrosoftGraphIdentitySet>: identitySet
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -443,8 +443,8 @@ DETAIL <IMicrosoftGraphPhysicalAddress1>: physicalAddress
 GEOCOORDINATES <IMicrosoftGraphGeoCoordinates>: geoCoordinates
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Altitude <Double?>]`: Optional. The altitude (height), in feet,  above sea level for the item. Read-only.
-  - `[Latitude <Double?>]`: Optional. The latitude, in decimal, for the item. Read-only.
-  - `[Longitude <Double?>]`: Optional. The longitude, in decimal, for the item. Read-only.
+  - `[Latitude <Double?>]`: Optional. The latitude, in decimal, for the item. Writable on OneDrive Personal.
+  - `[Longitude <Double?>]`: Optional. The longitude, in decimal, for the item. Writable on OneDrive Personal.
 
 INFERENCE <IMicrosoftGraphInferenceData>: inferenceData
   - `[(Any) <Object>]`: This indicates any property can be added to this object.

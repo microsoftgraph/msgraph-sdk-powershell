@@ -8,16 +8,16 @@ schema: 2.0.0
 # New-MgDeviceManagementUserExperienceAnalyticDeviceScore
 
 ## SYNOPSIS
-User experience analytics device scores
+Create new navigation property to userExperienceAnalyticsDeviceScores for deviceManagement
 
 ## SYNTAX
 
 ### CreateExpanded (Default)
 ```
 New-MgDeviceManagementUserExperienceAnalyticDeviceScore [-AdditionalProperties <Hashtable>]
- [-AppReliabilityScore <Double>] [-DeviceName <String>] [-EndpointAnalyticsScore <Double>]
- [-HealthStatus <String>] [-Id <String>] [-Manufacturer <String>] [-Model <String>]
- [-StartupPerformanceScore <Double>] [-WorkFromAnywhereScore <Double>] [-Confirm] [-WhatIf]
+ [-AppReliabilityScore <Double>] [-BatteryHealthScore <Double>] [-DeviceName <String>]
+ [-EndpointAnalyticsScore <Double>] [-HealthStatus <String>] [-Id <String>] [-Manufacturer <String>]
+ [-Model <String>] [-StartupPerformanceScore <Double>] [-WorkFromAnywhereScore <Double>] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -28,7 +28,7 @@ New-MgDeviceManagementUserExperienceAnalyticDeviceScore
 ```
 
 ## DESCRIPTION
-User experience analytics device scores
+Create new navigation property to userExperienceAnalyticsDeviceScores for deviceManagement
 
 ## EXAMPLES
 
@@ -51,6 +51,22 @@ Accept wildcard characters: False
 
 ### -AppReliabilityScore
 The user experience analytics device app reliability score.
+Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+
+```yaml
+Type: System.Double
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -BatteryHealthScore
+The user experience analytics device battery health score.
 Valid values -1.79769313486232E+308 to 1.79769313486232E+308
 
 ```yaml
@@ -128,7 +144,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -257,8 +273,9 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphUserExperienceAnalyticsDeviceScores>: The user experience analytics device scores entity consolidates the various endpoint analytics scores.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[AppReliabilityScore <Double?>]`: The user experience analytics device app reliability score. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+  - `[BatteryHealthScore <Double?>]`: The user experience analytics device battery health score. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
   - `[DeviceName <String>]`: The user experience analytics device name.
   - `[EndpointAnalyticsScore <Double?>]`: The user experience analytics device score. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
   - `[HealthStatus <String>]`: userExperienceAnalyticsHealthState

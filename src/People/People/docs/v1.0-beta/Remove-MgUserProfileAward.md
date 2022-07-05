@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgUserProfileAward
 
 ## SYNOPSIS
-Represents the details of awards or honors associated with a person.
+Delete navigation property awards for users
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Remove-MgUserProfileAward -InputObject <IPeopleIdentity> [-IfMatch <String>] [-P
 ```
 
 ## DESCRIPTION
-Represents the details of awards or honors associated with a person.
+Delete navigation property awards for users
 
 ## EXAMPLES
 

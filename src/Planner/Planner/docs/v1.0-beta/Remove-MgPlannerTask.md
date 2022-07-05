@@ -8,9 +8,7 @@ schema: 2.0.0
 # Remove-MgPlannerTask
 
 ## SYNOPSIS
-Read-only.
-Nullable.
-Returns a collection of the specified tasks
+Delete navigation property tasks for planner
 
 ## SYNTAX
 
@@ -27,9 +25,7 @@ Remove-MgPlannerTask -InputObject <IPlannerIdentity> [-IfMatch <String>] [-PassT
 ```
 
 ## DESCRIPTION
-Read-only.
-Nullable.
-Returns a collection of the specified tasks
+Delete navigation property tasks for planner
 
 ## EXAMPLES
 

@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgDeviceManagementWindowInformationProtectionNetworkLearningSummary
 
 ## SYNOPSIS
-The windows information protection network learning summaries.
+Create new navigation property to windowsInformationProtectionNetworkLearningSummaries for deviceManagement
 
 ## SYNTAX
 
@@ -26,7 +26,7 @@ New-MgDeviceManagementWindowInformationProtectionNetworkLearningSummary
 ```
 
 ## DESCRIPTION
-The windows information protection network learning summaries.
+Create new navigation property to windowsInformationProtectionNetworkLearningSummaries for deviceManagement
 
 ## EXAMPLES
 
@@ -79,7 +79,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -161,7 +161,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphWindowsInformationProtectionNetworkLearningSummary>: Windows Information Protection Network learning Summary entity.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[DeviceCount <Int32?>]`: Device Count
   - `[Url <String>]`: Website url
 

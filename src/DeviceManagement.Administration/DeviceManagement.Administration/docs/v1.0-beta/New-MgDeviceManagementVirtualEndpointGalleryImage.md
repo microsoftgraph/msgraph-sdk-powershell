@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgDeviceManagementVirtualEndpointGalleryImage
 
 ## SYNOPSIS
-The gallery image resource on Cloud PC.
+Create new navigation property to galleryImages for deviceManagement
 
 ## SYNTAX
 
@@ -28,7 +28,7 @@ New-MgDeviceManagementVirtualEndpointGalleryImage -BodyParameter <IMicrosoftGrap
 ```
 
 ## DESCRIPTION
-The gallery image resource on Cloud PC.
+Create new navigation property to galleryImages for deviceManagement
 
 ## EXAMPLES
 
@@ -115,7 +115,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -330,7 +330,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphCloudPcGalleryImage>: cloudPcGalleryImage
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[DisplayName <String>]`: The official display name of the gallery image. Read-only.
   - `[EndDate <DateTime?>]`: The date in which this image is no longer within long-term support. The Cloud PC will continue to provide short-term support. Read-only.
   - `[ExpirationDate <DateTime?>]`: The date when the image is no longer available. Read-only.

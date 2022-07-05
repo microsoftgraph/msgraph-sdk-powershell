@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgRoleManagementDeviceManagement
 
 ## SYNOPSIS
-The RbacApplication for Device Management
+Delete navigation property deviceManagement for roleManagement
 
 ## SYNTAX
 
@@ -18,7 +18,7 @@ Remove-MgRoleManagementDeviceManagement [-IfMatch <String>] [-PassThru] [-Confir
 ```
 
 ## DESCRIPTION
-The RbacApplication for Device Management
+Delete navigation property deviceManagement for roleManagement
 
 ## EXAMPLES
 
