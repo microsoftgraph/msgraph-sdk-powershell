@@ -144,6 +144,14 @@ jobs:
          Write-Host $(BUILDNUMBER)
          . $(System.DefaultWorkingDirectory)/tools/GenerateModules.ps1 -ArtifactsLocation $(Build.ArtifactStagingDirectory)\ -Build -Test -EnableSigning -ModulePreviewNumber $(BUILDNUMBER) -RepositoryName "LocalNugetFeed" -ExcludeExampleTemplates -ExcludeNotesSection
 
+  - task: PowerShell@2
+    displayName: Find Duplicate Commands
+    inputs:
+      targetType: inline
+      pwsh: true
+      script: |
+        . $(System.DefaultWorkingDirectory)/tools/PostGeneration/FindDuplicateCommand.ps1 -SourcePath "$(System.DefaultWorkingDirectory)/src/"
+
   - template: ./generation-templates/generate-helpdocs-template.yml
 
   - task: SFP.build-tasks.custom-build-task-1.EsrpCodeSigning@1
