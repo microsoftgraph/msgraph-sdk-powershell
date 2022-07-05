@@ -11,7 +11,7 @@
     <iconUrl>https://raw.githubusercontent.com/microsoftgraph/msgraph-sdk-powershell/master/documentation/images/graph_color256.png</iconUrl>
     <projectUrl>https://github.com/microsoftgraph/msgraph-sdk-powershell</projectUrl>
     <copyright>© Microsoft Corporation. All rights reserved.</copyright>
-    <tags>Microsoft Office365 Graph PowerShell GraphServiceClient Outlook OneDrive AzureAD GraphAPI Productivity SharePoint Intune SDK</tags>
+    <tags>Microsoft Office365 Graph PowerShell GraphServiceClient Outlook OneDrive AzureAD GraphAPI Productivity SharePoint Intune SDK PSModule PSIncludes_Cmdlet</tags>
     <releaseNotes>See https://aka.ms/GraphPowerShell-Release.</releaseNotes>
     <dependencies />
   </metadata>

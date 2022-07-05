@@ -38,7 +38,7 @@ subject-prefix: ''
 
 ``` yaml
 directive:
-  - remove-path-by-operation: groups\.groupLifecyclePolicies_.*$|groups\.team.*$|users\.joinedGroups.*$|groups\.sites\.onenote.*$|.*\.onenote\..*parent.*|.*\.calendarView.*|.*\.notebooks\.section.*|.*\.sectionGroups\.section.*|.*\.sections\.pages.*|.*\.calendar\.events\..*$|.*\.events\..*$
+  - remove-path-by-operation: groups\.groupLifecyclePolicies_.*$|groups_(Get|Create|Update|Delete)GroupLifecyclePolicies$|groups\.team.*$|users\.joinedGroups.*$|groups\.sites\.onenote.*$|.*\.onenote\..*parent.*|.*\.calendarView.*|.*\.notebooks\.section.*|.*\.sectionGroups\.section.*|.*\.sections\.pages.*|.*\.calendar\.events\..*$|.*\.events\..*$
 # Remove cmdlets
   - where:
       verb: Test
@@ -50,6 +50,12 @@ directive:
       subject: (Group)AvailableExtensionProperty
     remove: true
 # Rename cmdlets
+  - where:
+      verb: Get
+      subject: ^(GroupLifecyclePolicy)$
+      variant: ^List$|^List1$
+    set:
+      subject: $1ByGroup
   - where:
       subject: ^(GroupLifecyclePolicy)(\1)+
     set:
