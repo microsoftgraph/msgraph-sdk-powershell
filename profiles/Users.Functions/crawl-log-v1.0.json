@@ -205,6 +205,10 @@
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Users.Functions.yml"
     },
+    "/users/{user-id}/joinedTeams/{team-id}/channels/{channel-id}/microsoft.graph.doesUserHaveAccess(userId='{userId}',tenantId='{tenantId}',userPrincipalName='{userPrincipalName}')": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Users.Functions.yml"
+    },
     "/users/{user-id}/joinedTeams/{team-id}/channels/microsoft.graph.getAllMessages()": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Users.Functions.yml"
@@ -214,6 +218,10 @@
       "originalLocation": "/openApiDocs/v1.0/Users.Functions.yml"
     },
     "/users/{user-id}/joinedTeams/{team-id}/primaryChannel/messages/microsoft.graph.delta()": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Users.Functions.yml"
+    },
+    "/users/{user-id}/joinedTeams/{team-id}/primaryChannel/microsoft.graph.doesUserHaveAccess(userId='{userId}',tenantId='{tenantId}',userPrincipalName='{userPrincipalName}')": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Users.Functions.yml"
     },
