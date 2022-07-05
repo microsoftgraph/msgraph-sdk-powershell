@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgUserProfileProject
 
 ## SYNOPSIS
-Represents detailed information about projects associated with a user.
+Delete navigation property projects for users
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Remove-MgUserProfileProject -InputObject <IPeopleIdentity> [-IfMatch <String>] [
 ```
 
 ## DESCRIPTION
-Represents detailed information about projects associated with a user.
+Delete navigation property projects for users
 
 ## EXAMPLES
 

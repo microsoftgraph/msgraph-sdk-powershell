@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgUserProfileInterest
 
 ## SYNOPSIS
-Provides detailed information about interests the user has associated with themselves in various services.
+Get interests from users
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgUserProfileInterest -InputObject <IPeopleIdentity> [-ExpandProperty <Strin
 ```
 
 ## DESCRIPTION
-Provides detailed information about interests the user has associated with themselves in various services.
+Get interests from users
 
 ## EXAMPLES
 

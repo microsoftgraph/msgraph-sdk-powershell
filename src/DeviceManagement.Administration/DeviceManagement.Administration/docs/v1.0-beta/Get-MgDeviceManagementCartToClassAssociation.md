@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceManagementCartToClassAssociation
 
 ## SYNOPSIS
-The Cart To Class Associations.
+Get cartToClassAssociations from deviceManagement
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgDeviceManagementCartToClassAssociation -InputObject <IDeviceManagementAdmi
 ```
 
 ## DESCRIPTION
-The Cart To Class Associations.
+Get cartToClassAssociations from deviceManagement
 
 ## EXAMPLES
 
@@ -263,6 +263,7 @@ INPUTOBJECT <IDeviceManagementAdministrationIdentity>: Identity Parameter
   - `[DeviceManagementExchangeOnPremisesPolicyId <String>]`: key: id of deviceManagementExchangeOnPremisesPolicy
   - `[DeviceManagementPartnerId <String>]`: key: id of deviceManagementPartner
   - `[GroupPolicyCategoryId <String>]`: key: id of groupPolicyCategory
+  - `[GroupPolicyCategoryId1 <String>]`: key: id of groupPolicyCategory
   - `[GroupPolicyDefinitionFileId <String>]`: key: id of groupPolicyDefinitionFile
   - `[GroupPolicyDefinitionId <String>]`: key: id of groupPolicyDefinition
   - `[GroupPolicyMigrationReportId <String>]`: key: id of groupPolicyMigrationReport

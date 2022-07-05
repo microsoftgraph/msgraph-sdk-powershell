@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgDeviceManagementIoUpdateStatuses
 
 ## SYNOPSIS
-The IOS software update installation statuses for this account.
+Create new navigation property to iosUpdateStatuses for deviceManagement
 
 ## SYNTAX
 
@@ -23,12 +23,12 @@ New-MgDeviceManagementIoUpdateStatuses [-AdditionalProperties <Hashtable>]
 
 ### Create
 ```
-New-MgDeviceManagementIoUpdateStatuses -BodyParameter <IMicrosoftGraphIosUpdateDeviceStatus1> [-Confirm]
+New-MgDeviceManagementIoUpdateStatuses -BodyParameter <IMicrosoftGraphIosUpdateDeviceStatus> [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-The IOS software update installation statuses for this account.
+Create new navigation property to iosUpdateStatuses for deviceManagement
 
 ## EXAMPLES
 
@@ -54,7 +54,7 @@ iosUpdateDeviceStatus
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIosUpdateDeviceStatus1
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIosUpdateDeviceStatus
 Parameter Sets: Create
 Aliases:
 
@@ -126,7 +126,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -296,11 +296,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIosUpdateDeviceStatus1
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIosUpdateDeviceStatus
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIosUpdateDeviceStatus1
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIosUpdateDeviceStatus
 
 ## NOTES
 
@@ -311,9 +311,9 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-BODYPARAMETER <IMicrosoftGraphIosUpdateDeviceStatus1>: iosUpdateDeviceStatus
+BODYPARAMETER <IMicrosoftGraphIosUpdateDeviceStatus>: iosUpdateDeviceStatus
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[ComplianceGracePeriodExpirationDateTime <DateTime?>]`: The DateTime when device compliance grace period expires
   - `[DeviceDisplayName <String>]`: Device name of the DevicePolicyStatus.
   - `[DeviceId <String>]`: The device id that is being reported.

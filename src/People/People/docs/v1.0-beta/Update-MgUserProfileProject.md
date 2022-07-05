@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgUserProfileProject
 
 ## SYNOPSIS
-Represents detailed information about projects associated with a user.
+Update the navigation property projects in users
 
 ## SYNTAX
 
@@ -51,7 +51,7 @@ Update-MgUserProfileProject -InputObject <IPeopleIdentity> [-AdditionalPropertie
 ```
 
 ## DESCRIPTION
-Represents detailed information about projects associated with a user.
+Update the navigation property projects in users
 
 ## EXAMPLES
 
@@ -229,7 +229,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -488,7 +488,7 @@ BODYPARAMETER <IMicrosoftGraphProjectParticipation>: projectParticipation
   - `[Source <IMicrosoftGraphPersonDataSources>]`: personDataSources
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Type <String[]>]`: 
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[Categories <String[]>]`: Contains categories a user has associated with the project (for example, digital transformation, oil rig).
   - `[Client <IMicrosoftGraphCompanyDetail>]`: companyDetail
     - `[(Any) <Object>]`: This indicates any property can be added to this object.

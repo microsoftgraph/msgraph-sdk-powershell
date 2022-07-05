@@ -8,9 +8,7 @@ schema: 2.0.0
 # Get-MgPlannerTask
 
 ## SYNOPSIS
-Read-only.
-Nullable.
-Returns a collection of the specified tasks
+Get tasks from planner
 
 ## SYNTAX
 
@@ -34,9 +32,7 @@ Get-MgPlannerTask -InputObject <IPlannerIdentity> [-ExpandProperty <String[]>] [
 ```
 
 ## DESCRIPTION
-Read-only.
-Nullable.
-Returns a collection of the specified tasks
+Get tasks from planner
 
 ## EXAMPLES
 

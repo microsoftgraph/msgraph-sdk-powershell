@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgUserProfilePhone
 
 ## SYNOPSIS
-Represents detailed information about phone numbers associated with a user in various services.
+Get phones from users
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgUserProfilePhone -InputObject <IPeopleIdentity> [-ExpandProperty <String[]
 ```
 
 ## DESCRIPTION
-Represents detailed information about phone numbers associated with a user in various services.
+Get phones from users
 
 ## EXAMPLES
 

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceManagementReport
 
 ## SYNOPSIS
-Reports singleton
+Get reports from deviceManagement
 
 ## SYNTAX
 
@@ -17,7 +17,7 @@ Get-MgDeviceManagementReport [-ExpandProperty <String[]>] [-Property <String[]>]
 ```
 
 ## DESCRIPTION
-Reports singleton
+Get reports from deviceManagement
 
 ## EXAMPLES
 

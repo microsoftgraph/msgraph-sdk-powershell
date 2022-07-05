@@ -8,9 +8,7 @@ schema: 2.0.0
 # Get-MgEducationClassAssignmentSubmission
 
 ## SYNOPSIS
-Once published, there is a submission object for each student representing their work and grade.
-Read-only.
-Nullable.
+Get submissions from education
 
 ## SYNTAX
 
@@ -34,9 +32,7 @@ Get-MgEducationClassAssignmentSubmission -InputObject <IEducationIdentity> [-Exp
 ```
 
 ## DESCRIPTION
-Once published, there is a submission object for each student representing their work and grade.
-Read-only.
-Nullable.
+Get submissions from education
 
 ## EXAMPLES
 

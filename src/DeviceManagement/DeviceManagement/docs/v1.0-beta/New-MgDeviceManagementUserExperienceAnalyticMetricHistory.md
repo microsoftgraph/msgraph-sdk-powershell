@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgDeviceManagementUserExperienceAnalyticMetricHistory
 
 ## SYNOPSIS
-User experience analytics metric history
+Create new navigation property to userExperienceAnalyticsMetricHistory for deviceManagement
 
 ## SYNTAX
 
@@ -27,7 +27,7 @@ New-MgDeviceManagementUserExperienceAnalyticMetricHistory
 ```
 
 ## DESCRIPTION
-User experience analytics metric history
+Create new navigation property to userExperienceAnalyticsMetricHistory for deviceManagement
 
 ## EXAMPLES
 
@@ -80,7 +80,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -177,7 +177,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphUserExperienceAnalyticsMetricHistory>: The user experience analytics metric history.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[DeviceId <String>]`: The user experience analytics device id.
   - `[MetricDateTime <DateTime?>]`: The user experience analytics metric date time.
   - `[MetricType <String>]`: The user experience analytics metric type.

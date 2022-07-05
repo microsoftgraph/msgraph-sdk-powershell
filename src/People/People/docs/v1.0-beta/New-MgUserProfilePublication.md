@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgUserProfilePublication
 
 ## SYNOPSIS
-Represents details of any publications a user has added to their profile.
+Create new navigation property to publications for users
 
 ## SYNTAX
 
@@ -45,7 +45,7 @@ New-MgUserProfilePublication -InputObject <IPeopleIdentity> [-AdditionalProperti
 ```
 
 ## DESCRIPTION
-Represents details of any publications a user has added to their profile.
+Create new navigation property to publications for users
 
 ## EXAMPLES
 
@@ -159,7 +159,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -417,7 +417,7 @@ BODYPARAMETER <IMicrosoftGraphItemPublication>: itemPublication
   - `[Source <IMicrosoftGraphPersonDataSources>]`: personDataSources
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Type <String[]>]`: 
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[Description <String>]`: Description of the publication.
   - `[DisplayName <String>]`: Title of the publication.
   - `[PublishedDate <DateTime?>]`: The date that the publication was published.

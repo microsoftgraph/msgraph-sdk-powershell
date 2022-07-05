@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgEntitlementManagementAccessPackageIncompatibleGroup
 
 ## SYNOPSIS
-The groups whose members are ineligible to be assigned this access package.
+Get incompatibleGroups from identityGovernance
 
 ## SYNTAX
 
@@ -19,7 +19,7 @@ Get-MgEntitlementManagementAccessPackageIncompatibleGroup -AccessPackageId <Stri
 ```
 
 ## DESCRIPTION
-The groups whose members are ineligible to be assigned this access package.
+Get incompatibleGroups from identityGovernance
 
 ## EXAMPLES
 

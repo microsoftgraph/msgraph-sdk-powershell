@@ -8,9 +8,7 @@ schema: 2.0.0
 # New-MgPrintServiceEndpoint
 
 ## SYNOPSIS
-Endpoints that can be used to access the service.
-Read-only.
-Nullable.
+Create new navigation property to endpoints for print
 
 ## SYNTAX
 
@@ -39,9 +37,7 @@ New-MgPrintServiceEndpoint -InputObject <IDevicesCloudPrintIdentity> [-Additiona
 ```
 
 ## DESCRIPTION
-Endpoints that can be used to access the service.
-Read-only.
-Nullable.
+Create new navigation property to endpoints for print
 
 ## EXAMPLES
 
@@ -94,7 +90,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -209,11 +205,12 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphPrintServiceEndpoint>: printServiceEndpoint
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[DisplayName <String>]`: A human-readable display name for the endpoint.
   - `[Uri <String>]`: The URI that can be used to access the service.
 
 INPUTOBJECT <IDevicesCloudPrintIdentity>: Identity Parameter
+  - `[GroupId <String>]`: key: id of group
   - `[PrintConnectorId <String>]`: key: id of printConnector
   - `[PrintOperationId <String>]`: key: id of printOperation
   - `[PrintServiceEndpointId <String>]`: key: id of printServiceEndpoint
@@ -223,6 +220,7 @@ INPUTOBJECT <IDevicesCloudPrintIdentity>: Identity Parameter
   - `[PrintTaskTriggerId <String>]`: key: id of printTaskTrigger
   - `[PrinterId <String>]`: key: id of printer
   - `[PrinterShareId <String>]`: key: id of printerShare
+  - `[UserId <String>]`: key: id of user
 
 ## RELATED LINKS
 

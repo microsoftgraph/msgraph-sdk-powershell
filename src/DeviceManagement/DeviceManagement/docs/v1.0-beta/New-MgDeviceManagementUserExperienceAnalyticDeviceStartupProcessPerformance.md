@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgDeviceManagementUserExperienceAnalyticDeviceStartupProcessPerformance
 
 ## SYNOPSIS
-User experience analytics device Startup Process Performance
+Create new navigation property to userExperienceAnalyticsDeviceStartupProcessPerformance for deviceManagement
 
 ## SYNTAX
 
@@ -28,7 +28,7 @@ New-MgDeviceManagementUserExperienceAnalyticDeviceStartupProcessPerformance
 ```
 
 ## DESCRIPTION
-User experience analytics device Startup Process Performance
+Create new navigation property to userExperienceAnalyticsDeviceStartupProcessPerformance for deviceManagement
 
 ## EXAMPLES
 
@@ -81,7 +81,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -253,7 +253,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphUserExperienceAnalyticsDeviceStartupProcessPerformance>: The user experience analytics device startup process performance.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[DeviceCount <Int64?>]`: User experience analytics device startup process summarized count.
   - `[MedianImpactInMS <Int32?>]`: User experience analytics device startup process median impact in milliseconds.
   - `[MedianImpactInMs2 <Int64?>]`: User experience analytics device startup process median impact in milliseconds.

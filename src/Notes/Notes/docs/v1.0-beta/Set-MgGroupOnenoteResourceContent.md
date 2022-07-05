@@ -8,7 +8,7 @@ schema: 2.0.0
 # Set-MgGroupOnenoteResourceContent
 
 ## SYNOPSIS
-Update media content for the navigation property resources in groups
+Update content for the navigation property resources in groups
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Set-MgGroupOnenoteResourceContent -InputObject <INotesIdentity> -InFile <String>
 ```
 
 ## DESCRIPTION
-Update media content for the navigation property resources in groups
+Update content for the navigation property resources in groups
 
 ## EXAMPLES
 

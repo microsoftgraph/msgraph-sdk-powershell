@@ -8,8 +8,7 @@ schema: 2.0.0
 # Get-MgEducationUserAssignmentSubmissionOutcome
 
 ## SYNOPSIS
-Read-Write.
-Nullable.
+Get outcomes from education
 
 ## SYNTAX
 
@@ -35,8 +34,7 @@ Get-MgEducationUserAssignmentSubmissionOutcome -InputObject <IEducationIdentity>
 ```
 
 ## DESCRIPTION
-Read-Write.
-Nullable.
+Get outcomes from education
 
 ## EXAMPLES
 

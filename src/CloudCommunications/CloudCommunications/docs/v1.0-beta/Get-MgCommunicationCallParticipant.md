@@ -8,8 +8,7 @@ schema: 2.0.0
 # Get-MgCommunicationCallParticipant
 
 ## SYNOPSIS
-Read-only.
-Nullable.
+Get participants from communications
 
 ## SYNTAX
 
@@ -33,8 +32,7 @@ Get-MgCommunicationCallParticipant -InputObject <ICloudCommunicationsIdentity> [
 ```
 
 ## DESCRIPTION
-Read-only.
-Nullable.
+Get participants from communications
 
 ## EXAMPLES
 

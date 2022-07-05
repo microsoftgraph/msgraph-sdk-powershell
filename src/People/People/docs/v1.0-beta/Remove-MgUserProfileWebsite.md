@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgUserProfileWebsite
 
 ## SYNOPSIS
-Represents detailed information about websites associated with a user in various services.
+Delete navigation property websites for users
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Remove-MgUserProfileWebsite -InputObject <IPeopleIdentity> [-IfMatch <String>] [
 ```
 
 ## DESCRIPTION
-Represents detailed information about websites associated with a user in various services.
+Delete navigation property websites for users
 
 ## EXAMPLES
 

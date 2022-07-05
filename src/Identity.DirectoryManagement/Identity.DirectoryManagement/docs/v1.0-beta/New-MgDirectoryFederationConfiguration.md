@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgDirectoryFederationConfiguration
 
 ## SYNOPSIS
-Configure domain federation with organizations whose identity provider (IdP) supports either the SAML or WS-Fed protocol.
+Create new navigation property to federationConfigurations for directory
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ New-MgDirectoryFederationConfiguration -BodyParameter <IMicrosoftGraphIdentityPr
 ```
 
 ## DESCRIPTION
-Configure domain federation with organizations whose identity provider (IdP) supports either the SAML or WS-Fed protocol.
+Create new navigation property to federationConfigurations for directory
 
 ## EXAMPLES
 
@@ -78,7 +78,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -145,7 +145,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphIdentityProviderBase>: identityProviderBase
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[DisplayName <String>]`: The display name of the identity provider.
 
 ## RELATED LINKS

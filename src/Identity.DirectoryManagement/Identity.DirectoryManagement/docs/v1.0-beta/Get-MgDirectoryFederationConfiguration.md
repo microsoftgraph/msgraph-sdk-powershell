@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDirectoryFederationConfiguration
 
 ## SYNOPSIS
-Configure domain federation with organizations whose identity provider (IdP) supports either the SAML or WS-Fed protocol.
+Get federationConfigurations from directory
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgDirectoryFederationConfiguration -InputObject <IIdentityDirectoryManagemen
 ```
 
 ## DESCRIPTION
-Configure domain federation with organizations whose identity provider (IdP) supports either the SAML or WS-Fed protocol.
+Get federationConfigurations from directory
 
 ## EXAMPLES
 
@@ -262,6 +262,7 @@ INPUTOBJECT <IIdentityDirectoryManagementIdentity>: Identity Parameter
   - `[InternalDomainFederationId <String>]`: key: id of internalDomainFederation
   - `[OrgContactId <String>]`: key: id of orgContact
   - `[OrganizationId <String>]`: key: id of organization
+  - `[OrganizationalBrandingLocalizationId <String>]`: key: id of organizationalBrandingLocalization
   - `[OutboundSharedUserProfileUserId <String>]`: key: userId of outboundSharedUserProfile
   - `[ProfileCardPropertyId <String>]`: key: id of profileCardProperty
   - `[RecommendationId <String>]`: key: id of recommendation

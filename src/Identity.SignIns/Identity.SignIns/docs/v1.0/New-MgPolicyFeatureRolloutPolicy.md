@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgPolicyFeatureRolloutPolicy
 
 ## SYNOPSIS
-The feature rollout policy associated with a directory object.
+Create new navigation property to featureRolloutPolicies for policies
 
 ## SYNTAX
 
@@ -22,12 +22,12 @@ New-MgPolicyFeatureRolloutPolicy [-AdditionalProperties <Hashtable>]
 
 ### Create1
 ```
-New-MgPolicyFeatureRolloutPolicy -BodyParameter <IMicrosoftGraphFeatureRolloutPolicy1> [-Confirm] [-WhatIf]
+New-MgPolicyFeatureRolloutPolicy -BodyParameter <IMicrosoftGraphFeatureRolloutPolicy> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-The feature rollout policy associated with a directory object.
+Create new navigation property to featureRolloutPolicies for policies
 
 ## EXAMPLES
 
@@ -70,7 +70,7 @@ featureRolloutPolicy
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphFeatureRolloutPolicy1
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphFeatureRolloutPolicy
 Parameter Sets: Create1
 Aliases:
 
@@ -127,7 +127,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -207,11 +207,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphFeatureRolloutPolicy1
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphFeatureRolloutPolicy
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphFeatureRolloutPolicy1
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphFeatureRolloutPolicy
 
 ## NOTES
 
@@ -223,14 +223,14 @@ To create the parameters described below, construct a hash table containing the 
 
 
 APPLIESTO <IMicrosoftGraphDirectoryObject[]>: Nullable. Specifies a list of directoryObjects that feature is enabled for.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
 
-BODYPARAMETER <IMicrosoftGraphFeatureRolloutPolicy1>: featureRolloutPolicy
+BODYPARAMETER <IMicrosoftGraphFeatureRolloutPolicy>: featureRolloutPolicy
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[AppliesTo <IMicrosoftGraphDirectoryObject[]>]`: Nullable. Specifies a list of directoryObjects that feature is enabled for.
-    - `[Id <String>]`: Read-only.
+    - `[Id <String>]`: 
     - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
   - `[Description <String>]`: A description for this feature rollout policy.
   - `[DisplayName <String>]`: The display name for this  feature rollout policy.

@@ -8,8 +8,7 @@ schema: 2.0.0
 # Get-MgPrintPrinterTaskTriggerDefinition
 
 ## SYNOPSIS
-An abstract definition that will be used to create a printTask when triggered by a print event.
-Read-only.
+Get definition from print
 
 ## SYNTAX
 
@@ -26,8 +25,7 @@ Get-MgPrintPrinterTaskTriggerDefinition -InputObject <IDevicesCloudPrintIdentity
 ```
 
 ## DESCRIPTION
-An abstract definition that will be used to create a printTask when triggered by a print event.
-Read-only.
+Get definition from print
 
 ## EXAMPLES
 
@@ -130,6 +128,7 @@ To create the parameters described below, construct a hash table containing the 
 
 
 INPUTOBJECT <IDevicesCloudPrintIdentity>: Identity Parameter
+  - `[GroupId <String>]`: key: id of group
   - `[PrintConnectorId <String>]`: key: id of printConnector
   - `[PrintOperationId <String>]`: key: id of printOperation
   - `[PrintServiceEndpointId <String>]`: key: id of printServiceEndpoint
@@ -139,6 +138,7 @@ INPUTOBJECT <IDevicesCloudPrintIdentity>: Identity Parameter
   - `[PrintTaskTriggerId <String>]`: key: id of printTaskTrigger
   - `[PrinterId <String>]`: key: id of printer
   - `[PrinterShareId <String>]`: key: id of printerShare
+  - `[UserId <String>]`: key: id of user
 
 ## RELATED LINKS
 

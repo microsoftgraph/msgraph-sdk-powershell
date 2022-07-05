@@ -8,8 +8,7 @@ schema: 2.0.0
 # Remove-MgAdministrativeUnitExtension
 
 ## SYNOPSIS
-The collection of open extensions defined for this administrative unit.
-Nullable.
+Delete navigation property extensions for administrativeUnits
 
 ## SYNTAX
 
@@ -26,8 +25,7 @@ Remove-MgAdministrativeUnitExtension -InputObject <IIdentityDirectoryManagementI
 ```
 
 ## DESCRIPTION
-The collection of open extensions defined for this administrative unit.
-Nullable.
+Delete navigation property extensions for administrativeUnits
 
 ## EXAMPLES
 
@@ -182,6 +180,7 @@ INPUTOBJECT <IIdentityDirectoryManagementIdentity>: Identity Parameter
   - `[InternalDomainFederationId <String>]`: key: id of internalDomainFederation
   - `[OrgContactId <String>]`: key: id of orgContact
   - `[OrganizationId <String>]`: key: id of organization
+  - `[OrganizationalBrandingLocalizationId <String>]`: key: id of organizationalBrandingLocalization
   - `[OutboundSharedUserProfileUserId <String>]`: key: userId of outboundSharedUserProfile
   - `[ProfileCardPropertyId <String>]`: key: id of profileCardProperty
   - `[RecommendationId <String>]`: key: id of recommendation

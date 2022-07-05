@@ -8,9 +8,7 @@ schema: 2.0.0
 # Get-MgPlannerPlan
 
 ## SYNOPSIS
-Read-only.
-Nullable.
-Returns a collection of the specified plans
+Get plans from planner
 
 ## SYNTAX
 
@@ -34,9 +32,7 @@ Get-MgPlannerPlan -InputObject <IPlannerIdentity> [-ExpandProperty <String[]>] [
 ```
 
 ## DESCRIPTION
-Read-only.
-Nullable.
-Returns a collection of the specified plans
+Get plans from planner
 
 ## EXAMPLES
 

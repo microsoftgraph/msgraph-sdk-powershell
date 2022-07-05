@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgUserProfileEmail
 
 ## SYNOPSIS
-Represents detailed information about email addresses associated with the user.
+Delete navigation property emails for users
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Remove-MgUserProfileEmail -InputObject <IPeopleIdentity> [-IfMatch <String>] [-P
 ```
 
 ## DESCRIPTION
-Represents detailed information about email addresses associated with the user.
+Delete navigation property emails for users
 
 ## EXAMPLES
 

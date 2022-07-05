@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgPolicyAuthorizationPolicy
 
 ## SYNOPSIS
-The policy that controls Azure AD authorization settings.
+Get authorizationPolicy from policies
 
 ## SYNTAX
 
@@ -17,7 +17,7 @@ Get-MgPolicyAuthorizationPolicy [-ExpandProperty <String[]>] [-Property <String[
 ```
 
 ## DESCRIPTION
-The policy that controls Azure AD authorization settings.
+Get authorizationPolicy from policies
 
 ## EXAMPLES
 
@@ -60,7 +60,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAuthorizationPolicy1
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAuthorizationPolicy
 
 ## NOTES
 

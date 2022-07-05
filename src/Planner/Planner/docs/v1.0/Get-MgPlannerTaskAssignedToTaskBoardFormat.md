@@ -8,9 +8,7 @@ schema: 2.0.0
 # Get-MgPlannerTaskAssignedToTaskBoardFormat
 
 ## SYNOPSIS
-Read-only.
-Nullable.
-Used to render the task correctly in the task board view when grouped by assignedTo.
+Get assignedToTaskBoardFormat from planner
 
 ## SYNTAX
 
@@ -27,9 +25,7 @@ Get-MgPlannerTaskAssignedToTaskBoardFormat -InputObject <IPlannerIdentity> [-Exp
 ```
 
 ## DESCRIPTION
-Read-only.
-Nullable.
-Used to render the task correctly in the task board view when grouped by assignedTo.
+Get assignedToTaskBoardFormat from planner
 
 ## EXAMPLES
 

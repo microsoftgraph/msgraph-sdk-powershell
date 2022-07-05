@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgDirectoryFederationConfiguration
 
 ## SYNOPSIS
-Configure domain federation with organizations whose identity provider (IdP) supports either the SAML or WS-Fed protocol.
+Update the navigation property federationConfigurations in directory
 
 ## SYNTAX
 
@@ -38,7 +38,7 @@ Update-MgDirectoryFederationConfiguration -InputObject <IIdentityDirectoryManage
 ```
 
 ## DESCRIPTION
-Configure domain federation with organizations whose identity provider (IdP) supports either the SAML or WS-Fed protocol.
+Update the navigation property federationConfigurations in directory
 
 ## EXAMPLES
 
@@ -91,7 +91,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -206,7 +206,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphIdentityProviderBase>: identityProviderBase
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[DisplayName <String>]`: The display name of the identity provider.
 
 INPUTOBJECT <IIdentityDirectoryManagementIdentity>: Identity Parameter
@@ -231,6 +231,7 @@ INPUTOBJECT <IIdentityDirectoryManagementIdentity>: Identity Parameter
   - `[InternalDomainFederationId <String>]`: key: id of internalDomainFederation
   - `[OrgContactId <String>]`: key: id of orgContact
   - `[OrganizationId <String>]`: key: id of organization
+  - `[OrganizationalBrandingLocalizationId <String>]`: key: id of organizationalBrandingLocalization
   - `[OutboundSharedUserProfileUserId <String>]`: key: userId of outboundSharedUserProfile
   - `[ProfileCardPropertyId <String>]`: key: id of profileCardProperty
   - `[RecommendationId <String>]`: key: id of recommendation

@@ -8,11 +8,7 @@ schema: 2.0.0
 # New-MgDirectoryRoleMemberByRef
 
 ## SYNOPSIS
-Users that are members of this directory role.
-HTTP Methods: GET, POST, DELETE.
-Read-only.
-Nullable.
-Supports $expand.
+Create new navigation property ref to members for directoryRoles
 
 ## SYNTAX
 
@@ -41,11 +37,7 @@ New-MgDirectoryRoleMemberByRef -InputObject <IIdentityDirectoryManagementIdentit
 ```
 
 ## DESCRIPTION
-Users that are members of this directory role.
-HTTP Methods: GET, POST, DELETE.
-Read-only.
-Nullable.
-Supports $expand.
+Create new navigation property ref to members for directoryRoles
 
 ## EXAMPLES
 
@@ -199,6 +191,7 @@ INPUTOBJECT <IIdentityDirectoryManagementIdentity>: Identity Parameter
   - `[InternalDomainFederationId <String>]`: key: id of internalDomainFederation
   - `[OrgContactId <String>]`: key: id of orgContact
   - `[OrganizationId <String>]`: key: id of organization
+  - `[OrganizationalBrandingLocalizationId <String>]`: key: id of organizationalBrandingLocalization
   - `[OutboundSharedUserProfileUserId <String>]`: key: userId of outboundSharedUserProfile
   - `[ProfileCardPropertyId <String>]`: key: id of profileCardProperty
   - `[RecommendationId <String>]`: key: id of recommendation

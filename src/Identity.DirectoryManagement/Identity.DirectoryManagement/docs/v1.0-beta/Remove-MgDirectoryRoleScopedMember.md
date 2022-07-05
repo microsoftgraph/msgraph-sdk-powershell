@@ -8,9 +8,7 @@ schema: 2.0.0
 # Remove-MgDirectoryRoleScopedMember
 
 ## SYNOPSIS
-Members of this directory role that are scoped to administrative units.
-Read-only.
-Nullable.
+Delete navigation property scopedMembers for directoryRoles
 
 ## SYNTAX
 
@@ -27,9 +25,7 @@ Remove-MgDirectoryRoleScopedMember -InputObject <IIdentityDirectoryManagementIde
 ```
 
 ## DESCRIPTION
-Members of this directory role that are scoped to administrative units.
-Read-only.
-Nullable.
+Delete navigation property scopedMembers for directoryRoles
 
 ## EXAMPLES
 
@@ -184,6 +180,7 @@ INPUTOBJECT <IIdentityDirectoryManagementIdentity>: Identity Parameter
   - `[InternalDomainFederationId <String>]`: key: id of internalDomainFederation
   - `[OrgContactId <String>]`: key: id of orgContact
   - `[OrganizationId <String>]`: key: id of organization
+  - `[OrganizationalBrandingLocalizationId <String>]`: key: id of organizationalBrandingLocalization
   - `[OutboundSharedUserProfileUserId <String>]`: key: userId of outboundSharedUserProfile
   - `[ProfileCardPropertyId <String>]`: key: id of profileCardProperty
   - `[RecommendationId <String>]`: key: id of recommendation

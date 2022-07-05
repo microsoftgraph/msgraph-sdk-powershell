@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgRoleManagementDeviceManagement
 
 ## SYNOPSIS
-The RbacApplication for Device Management
+Get deviceManagement from roleManagement
 
 ## SYNTAX
 
@@ -17,7 +17,7 @@ Get-MgRoleManagementDeviceManagement [-ExpandProperty <String[]>] [-Property <St
 ```
 
 ## DESCRIPTION
-The RbacApplication for Device Management
+Get deviceManagement from roleManagement
 
 ## EXAMPLES
 

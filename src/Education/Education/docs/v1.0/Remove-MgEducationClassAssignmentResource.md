@@ -8,9 +8,7 @@ schema: 2.0.0
 # Remove-MgEducationClassAssignmentResource
 
 ## SYNOPSIS
-Learning objects that are associated with this assignment.
-Only teachers can modify this list.
-Nullable.
+Delete navigation property resources for education
 
 ## SYNTAX
 
@@ -28,9 +26,7 @@ Remove-MgEducationClassAssignmentResource -InputObject <IEducationIdentity> [-If
 ```
 
 ## DESCRIPTION
-Learning objects that are associated with this assignment.
-Only teachers can modify this list.
-Nullable.
+Delete navigation property resources for education
 
 ## EXAMPLES
 

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceManagementVirtualEndpointOrganizationSetting
 
 ## SYNOPSIS
-The Cloud PC organization settings for a tenant.
+Get organizationSettings from deviceManagement
 
 ## SYNTAX
 
@@ -18,7 +18,7 @@ Get-MgDeviceManagementVirtualEndpointOrganizationSetting [-ExpandProperty <Strin
 ```
 
 ## DESCRIPTION
-The Cloud PC organization settings for a tenant.
+Get organizationSettings from deviceManagement
 
 ## EXAMPLES
 

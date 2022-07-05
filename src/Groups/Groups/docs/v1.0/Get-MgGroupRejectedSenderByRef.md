@@ -8,8 +8,7 @@ schema: 2.0.0
 # Get-MgGroupRejectedSenderByRef
 
 ## SYNOPSIS
-The list of users or groups that are not allowed to create posts or calendar events in this group.
-Nullable
+Get ref of rejectedSenders from groups
 
 ## SYNTAX
 
@@ -19,8 +18,7 @@ Get-MgGroupRejectedSenderByRef -GroupId <String> [-Filter <String>] [-Skip <Int3
 ```
 
 ## DESCRIPTION
-The list of users or groups that are not allowed to create posts or calendar events in this group.
-Nullable
+Get ref of rejectedSenders from groups
 
 ## EXAMPLES
 

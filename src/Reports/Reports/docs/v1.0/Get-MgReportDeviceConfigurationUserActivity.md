@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgReportDeviceConfigurationUserActivity
 
 ## SYNOPSIS
-Metadata for the device configuration user activity report
+Invoke function deviceConfigurationUserActivity
 
 ## SYNTAX
 
@@ -17,7 +17,7 @@ Get-MgReportDeviceConfigurationUserActivity -OutFile <String> [-PassThru] [<Comm
 ```
 
 ## DESCRIPTION
-Metadata for the device configuration user activity report
+Invoke function deviceConfigurationUserActivity
 
 ## EXAMPLES
 

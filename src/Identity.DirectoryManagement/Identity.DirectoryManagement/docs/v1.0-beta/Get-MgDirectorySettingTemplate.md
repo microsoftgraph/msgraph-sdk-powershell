@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDirectorySettingTemplate
 
 ## SYNOPSIS
-Get entity from directorySettingTemplates by key
+Get a directory setting template
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgDirectorySettingTemplate -InputObject <IIdentityDirectoryManagementIdentit
 ```
 
 ## DESCRIPTION
-Get entity from directorySettingTemplates by key
+Get a directory setting template
 
 ## EXAMPLES
 
@@ -262,6 +262,7 @@ INPUTOBJECT <IIdentityDirectoryManagementIdentity>: Identity Parameter
   - `[InternalDomainFederationId <String>]`: key: id of internalDomainFederation
   - `[OrgContactId <String>]`: key: id of orgContact
   - `[OrganizationId <String>]`: key: id of organization
+  - `[OrganizationalBrandingLocalizationId <String>]`: key: id of organizationalBrandingLocalization
   - `[OutboundSharedUserProfileUserId <String>]`: key: userId of outboundSharedUserProfile
   - `[ProfileCardPropertyId <String>]`: key: id of profileCardProperty
   - `[RecommendationId <String>]`: key: id of recommendation

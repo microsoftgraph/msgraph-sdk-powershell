@@ -8,8 +8,7 @@ schema: 2.0.0
 # Remove-MgEducationMeAssignmentSubmissionSubmittedResource
 
 ## SYNOPSIS
-Read-only.
-Nullable.
+Delete navigation property submittedResources for education
 
 ## SYNTAX
 
@@ -27,8 +26,7 @@ Remove-MgEducationMeAssignmentSubmissionSubmittedResource -InputObject <IEducati
 ```
 
 ## DESCRIPTION
-Read-only.
-Nullable.
+Delete navigation property submittedResources for education
 
 ## EXAMPLES
 

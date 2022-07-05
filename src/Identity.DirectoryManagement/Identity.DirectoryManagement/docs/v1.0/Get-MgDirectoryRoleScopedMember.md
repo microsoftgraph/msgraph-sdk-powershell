@@ -8,9 +8,7 @@ schema: 2.0.0
 # Get-MgDirectoryRoleScopedMember
 
 ## SYNOPSIS
-Members of this directory role that are scoped to administrative units.
-Read-only.
-Nullable.
+Get scopedMembers from directoryRoles
 
 ## SYNTAX
 
@@ -34,9 +32,7 @@ Get-MgDirectoryRoleScopedMember -InputObject <IIdentityDirectoryManagementIdenti
 ```
 
 ## DESCRIPTION
-Members of this directory role that are scoped to administrative units.
-Read-only.
-Nullable.
+Get scopedMembers from directoryRoles
 
 ## EXAMPLES
 
@@ -281,6 +277,7 @@ INPUTOBJECT <IIdentityDirectoryManagementIdentity>: Identity Parameter
   - `[InternalDomainFederationId <String>]`: key: id of internalDomainFederation
   - `[OrgContactId <String>]`: key: id of orgContact
   - `[OrganizationId <String>]`: key: id of organization
+  - `[OrganizationalBrandingLocalizationId <String>]`: key: id of organizationalBrandingLocalization
   - `[OutboundSharedUserProfileUserId <String>]`: key: userId of outboundSharedUserProfile
   - `[ProfileCardPropertyId <String>]`: key: id of profileCardProperty
   - `[RecommendationId <String>]`: key: id of recommendation
