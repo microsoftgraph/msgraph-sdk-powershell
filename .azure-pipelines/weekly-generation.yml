@@ -5,13 +5,19 @@ name: $(BuildDefinitionName)_$(SourceBranchName)_$(Date:yyyyMMdd)$(Rev:.r)
 
 parameters:
   - name: BuildAgent
-    default: 1es-windows-ps-compute
     displayName: Build Agent
+    default: 1es-windows-ps-compute
+
+  - name: SkipForceRefresh
+    displayName: Skip Force Refresh
+    default: false
+    type: boolean
 
 variables:
   Branch: "WeeklyOpenApiDocsDownload"
   BaseBranch: "dev"
   BuildAgent: ${{ parameters.BuildAgent }}
+  SkipForceRefresh: ${{ parameters.SkipForceRefresh }}
 
 pool: $(BuildAgent)
 trigger: none
@@ -33,6 +39,7 @@ stages:
           Branch: $(Branch)
           BaseBranch: $(BaseBranch)
           BuildAgent: $(BuildAgent)
+          SkipForceRefresh: $(SkipForceRefresh)
 
   - stage: GenerateServiceModules
     displayName: Generate service modules

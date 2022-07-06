@@ -8,6 +8,8 @@ parameters:
     type: string
   - name: BuildAgent
     displayName: Build Agent
+  - name: SkipForceRefresh
+    type: boolean
 
 jobs:
   - job: GetLatestDocs
@@ -45,6 +47,7 @@ jobs:
         continueOnError: false
         inputs:
           filePath: "$(System.DefaultWorkingDirectory)/tools/UpdateOpenApi.ps1"
+          arguments: -SkipForceRefresh:$$(SkipForceRefresh)
           pwsh: true
 
       - task: PowerShell@2
@@ -52,7 +55,7 @@ jobs:
         continueOnError: false
         inputs:
           filePath: "$(System.DefaultWorkingDirectory)/tools/UpdateOpenApi.ps1"
-          arguments: "-BetaGraphVersion"
+          arguments: -BetaGraphVersion -SkipForceRefresh:$$(SkipForceRefresh)
           pwsh: true
 
       - task: PowerShell@2

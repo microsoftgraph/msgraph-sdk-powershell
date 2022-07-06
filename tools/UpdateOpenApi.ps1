@@ -4,7 +4,8 @@
 Param(
     [string] $ModuleMappingConfigPath = (Join-Path $PSScriptRoot "..\config\ModulesMapping.jsonc"),
     [string] $OpenApiDocOutput = (Join-Path $PSScriptRoot "..\openApiDocs"),
-    [switch] $BetaGraphVersion
+    [switch] $BetaGraphVersion,
+    [switch] $SkipForceRefresh
 )
 
 $ErrorActionPreference = 'Stop'
@@ -38,7 +39,7 @@ $ModuleMapping.Keys | ForEach-Object -Begin { $RequestCount = 0 } -End { Write-D
     $ModuleName = $_
     $ForceRefresh = $false
     # Check whether ForceRefresh is required, Only required for the First Request.
-    if ($RequestCount -eq 0) {
+    if ($RequestCount -eq 0 -and $SkipForceRefresh -eq $false) {
         $ForceRefresh = $true
     }
 
