@@ -974,18 +974,6 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
             return resolvedFilePath;
         }
 
-        /// <summary>
-        ///     Resets GraphSession environment back to its original state.
-        ///     Original state can remain to be the previous state defined by the user, 
-        ///     or the default global state. User defined state can be removed by calling,
-        ///     Remove-MgEnvironment Command
-        /// </summary>
-        private void ResetGraphSessionEnvironment()
-        {
-            _originalEnvironment = GraphSession.Instance.Environment;
-            GraphSession.Instance.Environment = _originalEnvironment;
-        }
-
         #region CmdLet LifeCycle
 
         protected override void BeginProcessing()
@@ -1100,13 +1088,11 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
 
         protected override void EndProcessing()
         {
-            ResetGraphSessionEnvironment();
             base.EndProcessing();
         }
 
         protected override void StopProcessing()
         {
-            ResetGraphSessionEnvironment();
             _cancellationTokenSource.Cancel();
             base.StopProcessing();
         }
