@@ -7,7 +7,9 @@ parameters:
   - name: BuildAgent
     displayName: Build Agent
     default: 1es-windows-ps-compute
-
+  - name: BaseBranch
+    displayName: Base Branch
+    default: dev
   - name: SkipForceRefresh
     displayName: Skip Force Refresh
     default: false
@@ -15,7 +17,7 @@ parameters:
 
 variables:
   Branch: "WeeklyOpenApiDocsDownload"
-  BaseBranch: "dev"
+  BaseBranch: ${{ parameters.BaseBranch }}
   BuildAgent: ${{ parameters.BuildAgent }}
   SkipForceRefresh: ${{ parameters.SkipForceRefresh }}
 

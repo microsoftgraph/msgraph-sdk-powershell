@@ -9,7 +9,7 @@ parameters:
   - name: BuildAgent
     displayName: Build Agent
   - name: SkipForceRefresh
-    type: boolean
+    type: string
 
 jobs:
   - job: GetLatestDocs
