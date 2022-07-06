@@ -226,12 +226,12 @@ components:
               description: The collection of property names and types that make up the schema extension definition.
             status:
               type: string
-              description: 'The lifecycle state of the schema extension. Possible states are InDevelopment, Available, and Deprecated. Automatically set to InDevelopment on creation. Schema extensions provides more information on the possible state transitions and behaviors. Supports $filter (eq).'
+              description: 'The lifecycle state of the schema extension. Possible states are InDevelopment, Available, and Deprecated. Automatically set to InDevelopment on creation. For more information about the possible state transitions and behaviors, see Schema extensions lifecycle. Supports $filter (eq).'
             targetTypes:
               type: array
               items:
                 type: string
-              description: 'Set of Microsoft Graph types (that can support extensions) that the schema extension can be applied to. Select from administrativeUnit, contact, device, event, group, message, organization, post, or user.'
+              description: 'Set of Microsoft Graph types (that can support extensions) that the schema extension can be applied to. Select from administrativeUnit, contact, device, event, group, message, organization, post, todoTask, todoTaskList, or user.'
           additionalProperties:
             type: object
     microsoft.graph.entity:
@@ -252,7 +252,7 @@ components:
           nullable: true
         type:
           type: string
-          description: 'The type of the property that is defined as part of a schema extension.  Allowed values are Binary, Boolean, DateTime, Integer or String.  See the table below for more details.'
+          description: 'The type of the property that is defined as part of a schema extension.  Allowed values are Binary, Boolean, DateTime, Integer or String. See the table below for more details.'
           nullable: true
       additionalProperties:
         type: object

@@ -21,6 +21,14 @@
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Applications.yml"
     },
+    "/applications/{application-id}/federatedIdentityCredentials": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Applications.yml"
+    },
+    "/applications/{application-id}/federatedIdentityCredentials/{federatedIdentityCredential-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Applications.yml"
+    },
     "/applications/{application-id}/homeRealmDiscoveryPolicies": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Applications.yml"
@@ -206,6 +214,14 @@
       "originalLocation": "/openApiDocs/v1.0/Applications.yml"
     },
     "/servicePrincipals/{servicePrincipal-id}/endpoints/{endpoint-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Applications.yml"
+    },
+    "/servicePrincipals/{servicePrincipal-id}/federatedIdentityCredentials": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Applications.yml"
+    },
+    "/servicePrincipals/{servicePrincipal-id}/federatedIdentityCredentials/{federatedIdentityCredential-id}": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Applications.yml"
     },

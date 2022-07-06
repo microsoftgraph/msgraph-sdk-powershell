@@ -3511,6 +3511,7 @@ paths:
                 - activityBasedTimeoutPolicies
                 - authorizationPolicy
                 - claimsMappingPolicies
+                - crossTenantAccessPolicy
                 - homeRealmDiscoveryPolicies
                 - permissionGrantPolicies
                 - tokenIssuancePolicies
@@ -3538,6 +3539,7 @@ paths:
                 - activityBasedTimeoutPolicies
                 - authorizationPolicy
                 - claimsMappingPolicies
+                - crossTenantAccessPolicy
                 - homeRealmDiscoveryPolicies
                 - permissionGrantPolicies
                 - tokenIssuancePolicies
@@ -3567,6 +3569,8 @@ paths:
               operationId: policies.GetAuthorizationPolicy
             claimsMappingPolicies:
               operationId: policies.ListClaimsMappingPolicies
+            crossTenantAccessPolicy:
+              operationId: policies.GetCrossTenantAccessPolicy
             homeRealmDiscoveryPolicies:
               operationId: policies.ListHomeRealmDiscoveryPolicies
             permissionGrantPolicies:
@@ -4737,6 +4741,393 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: conditionalAccessPolicy
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /policies/crossTenantAccessPolicy:
+    get:
+      tags:
+        - policies.crossTenantAccessPolicy
+      summary: Get crossTenantAccessPolicy from policies
+      operationId: policies_GetCrossTenantAccessPolicy
+      parameters:
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - deletedDateTime
+                - description
+                - displayName
+                - default
+                - partners
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - default
+                - partners
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.crossTenantAccessPolicy'
+          links:
+            default:
+              operationId: policies.CrossTenantAccessPolicy.GetDefault
+            partners:
+              operationId: policies.CrossTenantAccessPolicy.ListPartners
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - policies.crossTenantAccessPolicy
+      summary: Update the navigation property crossTenantAccessPolicy in policies
+      operationId: policies_UpdateCrossTenantAccessPolicy
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.crossTenantAccessPolicy'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - policies.crossTenantAccessPolicy
+      summary: Delete navigation property crossTenantAccessPolicy for policies
+      operationId: policies_DeleteCrossTenantAccessPolicy
+      parameters:
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /policies/crossTenantAccessPolicy/default:
+    get:
+      tags:
+        - policies.crossTenantAccessPolicy
+      summary: Get default from policies
+      operationId: policies.crossTenantAccessPolicy_GetDefault
+      parameters:
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - b2bCollaborationInbound
+                - b2bCollaborationOutbound
+                - b2bDirectConnectInbound
+                - b2bDirectConnectOutbound
+                - inboundTrust
+                - isServiceDefault
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.crossTenantAccessPolicyConfigurationDefault'
+          links:
+            resetToSystemDefault:
+              operationId: policies.crossTenantAccessPolicy.default.resetToSystemDefault
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - policies.crossTenantAccessPolicy
+      summary: Update the navigation property default in policies
+      operationId: policies.crossTenantAccessPolicy_UpdateDefault
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.crossTenantAccessPolicyConfigurationDefault'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - policies.crossTenantAccessPolicy
+      summary: Delete navigation property default for policies
+      operationId: policies.crossTenantAccessPolicy_DeleteDefault
+      parameters:
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /policies/crossTenantAccessPolicy/default/microsoft.graph.resetToSystemDefault:
+    post:
+      tags:
+        - policies.Actions
+      summary: Invoke action resetToSystemDefault
+      operationId: policies.crossTenantAccessPolicy.default_resetToSystemDefault
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  /policies/crossTenantAccessPolicy/partners:
+    get:
+      tags:
+        - policies.crossTenantAccessPolicy
+      summary: Get partners from policies
+      operationId: policies.crossTenantAccessPolicy_ListPartners
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - b2bCollaborationInbound
+                - b2bCollaborationInbound desc
+                - b2bCollaborationOutbound
+                - b2bCollaborationOutbound desc
+                - b2bDirectConnectInbound
+                - b2bDirectConnectInbound desc
+                - b2bDirectConnectOutbound
+                - b2bDirectConnectOutbound desc
+                - inboundTrust
+                - inboundTrust desc
+                - isServiceProvider
+                - isServiceProvider desc
+                - tenantId
+                - tenantId desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - b2bCollaborationInbound
+                - b2bCollaborationOutbound
+                - b2bDirectConnectInbound
+                - b2bDirectConnectOutbound
+                - inboundTrust
+                - isServiceProvider
+                - tenantId
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/microsoft.graph.crossTenantAccessPolicyConfigurationPartnerCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - policies.crossTenantAccessPolicy
+      summary: Create new navigation property to partners for policies
+      operationId: policies.crossTenantAccessPolicy_CreatePartners
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.crossTenantAccessPolicyConfigurationPartner'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.crossTenantAccessPolicyConfigurationPartner'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/policies/crossTenantAccessPolicy/partners/{crossTenantAccessPolicyConfigurationPartner-tenantId}':
+    get:
+      tags:
+        - policies.crossTenantAccessPolicy
+      summary: Get partners from policies
+      operationId: policies.crossTenantAccessPolicy_GetPartners
+      parameters:
+        - name: crossTenantAccessPolicyConfigurationPartner-tenantId
+          in: path
+          description: 'key: tenantId of crossTenantAccessPolicyConfigurationPartner'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: crossTenantAccessPolicyConfigurationPartner
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - b2bCollaborationInbound
+                - b2bCollaborationOutbound
+                - b2bDirectConnectInbound
+                - b2bDirectConnectOutbound
+                - inboundTrust
+                - isServiceProvider
+                - tenantId
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.crossTenantAccessPolicyConfigurationPartner'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - policies.crossTenantAccessPolicy
+      summary: Update the navigation property partners in policies
+      operationId: policies.crossTenantAccessPolicy_UpdatePartners
+      parameters:
+        - name: crossTenantAccessPolicyConfigurationPartner-tenantId
+          in: path
+          description: 'key: tenantId of crossTenantAccessPolicyConfigurationPartner'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: crossTenantAccessPolicyConfigurationPartner
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.crossTenantAccessPolicyConfigurationPartner'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - policies.crossTenantAccessPolicy
+      summary: Delete navigation property partners for policies
+      operationId: policies.crossTenantAccessPolicy_DeletePartners
+      parameters:
+        - name: crossTenantAccessPolicyConfigurationPartner-tenantId
+          in: path
+          description: 'key: tenantId of crossTenantAccessPolicyConfigurationPartner'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: crossTenantAccessPolicyConfigurationPartner
         - name: If-Match
           in: header
           description: ETag
@@ -7666,6 +8057,8 @@ paths:
                 - fido2Methods
                 - methods
                 - microsoftAuthenticatorMethods
+                - operations
+                - passwordMethods
                 - temporaryAccessPassMethods
                 - windowsHelloForBusinessMethods
               type: string
@@ -7683,6 +8076,8 @@ paths:
                 - fido2Methods
                 - methods
                 - microsoftAuthenticatorMethods
+                - operations
+                - passwordMethods
                 - temporaryAccessPassMethods
                 - windowsHelloForBusinessMethods
               type: string
@@ -7704,6 +8099,14 @@ paths:
                 user-id: $request.path.user-id
             microsoftAuthenticatorMethods:
               operationId: users.Authentication.ListMicrosoftAuthenticatorMethods
+              parameters:
+                user-id: $request.path.user-id
+            operations:
+              operationId: users.Authentication.ListOperations
+              parameters:
+                user-id: $request.path.user-id
+            passwordMethods:
+              operationId: users.Authentication.ListPasswordMethods
               parameters:
                 user-id: $request.path.user-id
             temporaryAccessPassMethods:
@@ -8152,6 +8555,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
+          links:
+            resetPassword:
+              operationId: users.user.authentication.methods.authenticationMethod.resetPassword
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -9514,6 +9920,462 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/users/{user-id}/authentication/operations':
+    get:
+      tags:
+        - users.authentication
+      summary: Get operations from users
+      operationId: users.authentication_ListOperations
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - createdDateTime
+                - createdDateTime desc
+                - lastActionDateTime
+                - lastActionDateTime desc
+                - resourceLocation
+                - resourceLocation desc
+                - status
+                - status desc
+                - statusDetail
+                - statusDetail desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - createdDateTime
+                - lastActionDateTime
+                - resourceLocation
+                - status
+                - statusDetail
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/microsoft.graph.longRunningOperationCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - users.authentication
+      summary: Create new navigation property to operations for users
+      operationId: users.authentication_CreateOperations
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.longRunningOperation'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.longRunningOperation'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/users/{user-id}/authentication/operations/{longRunningOperation-id}':
+    get:
+      tags:
+        - users.authentication
+      summary: Get operations from users
+      operationId: users.authentication_GetOperations
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: longRunningOperation-id
+          in: path
+          description: 'key: id of longRunningOperation'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: longRunningOperation
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - createdDateTime
+                - lastActionDateTime
+                - resourceLocation
+                - status
+                - statusDetail
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.longRunningOperation'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - users.authentication
+      summary: Update the navigation property operations in users
+      operationId: users.authentication_UpdateOperations
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: longRunningOperation-id
+          in: path
+          description: 'key: id of longRunningOperation'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: longRunningOperation
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.longRunningOperation'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.authentication
+      summary: Delete navigation property operations for users
+      operationId: users.authentication_DeleteOperations
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: longRunningOperation-id
+          in: path
+          description: 'key: id of longRunningOperation'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: longRunningOperation
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/users/{user-id}/authentication/passwordMethods':
+    get:
+      tags:
+        - users.authentication
+      summary: Get passwordMethods from users
+      operationId: users.authentication_ListPasswordMethods
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - createdDateTime
+                - createdDateTime desc
+                - password
+                - password desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - createdDateTime
+                - password
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/microsoft.graph.passwordAuthenticationMethodCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - users.authentication
+      summary: Create new navigation property to passwordMethods for users
+      operationId: users.authentication_CreatePasswordMethods
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.passwordAuthenticationMethod'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.passwordAuthenticationMethod'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/users/{user-id}/authentication/passwordMethods/{passwordAuthenticationMethod-id}':
+    get:
+      tags:
+        - users.authentication
+      summary: Get passwordMethods from users
+      operationId: users.authentication_GetPasswordMethods
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: passwordAuthenticationMethod-id
+          in: path
+          description: 'key: id of passwordAuthenticationMethod'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: passwordAuthenticationMethod
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - createdDateTime
+                - password
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.passwordAuthenticationMethod'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - users.authentication
+      summary: Update the navigation property passwordMethods in users
+      operationId: users.authentication_UpdatePasswordMethods
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: passwordAuthenticationMethod-id
+          in: path
+          description: 'key: id of passwordAuthenticationMethod'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: passwordAuthenticationMethod
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.passwordAuthenticationMethod'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.authentication
+      summary: Delete navigation property passwordMethods for users
+      operationId: users.authentication_DeletePasswordMethods
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: passwordAuthenticationMethod-id
+          in: path
+          description: 'key: id of passwordAuthenticationMethod'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: passwordAuthenticationMethod
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -11668,7 +12530,7 @@ components:
               type: array
               items:
                 type: string
-              description: 'A list of additional email addresses for the user; for example: [''bob@contoso.com'', ''Robert@fabrikam.com''].NOTE: This property cannot contain accent characters.Supports $filter (eq, not, ge, le, in, startsWith, and counting empty collections).'
+              description: 'A list of additional email addresses for the user; for example: [''bob@contoso.com'', ''Robert@fabrikam.com''].NOTE: This property cannot contain accent characters.Supports $filter (eq, not, ge, le, in, startsWith, endsWith, and counting empty collections).'
             passwordPolicies:
               type: string
               description: 'Specifies password policies for the user. This value is an enumeration with one possible value being DisableStrongPassword, which allows weaker passwords than the default policy to be specified. DisablePasswordExpiration can also be specified. The two may be specified together; for example: DisablePasswordExpiration, DisableStrongPassword. For more information on the default password policies, see Azure AD pasword policies. Supports $filter (ne, not, and eq on null values).'
@@ -11846,6 +12708,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
+              description: 'The groups, including nested groups, and directory roles that a user is a member of. Nullable.'
             calendar:
               $ref: '#/components/schemas/microsoft.graph.calendar'
             calendarGroups:
@@ -11912,7 +12775,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.extension'
-              description: The collection of open extensions defined for the user. Nullable.
+              description: The collection of open extensions defined for the user. Supports $expand. Nullable.
             agreementAcceptances:
               type: array
               items:
@@ -12036,6 +12899,8 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.claimsMappingPolicy'
               description: 'The claim-mapping policies for WS-Fed, SAML, OAuth 2.0, and OpenID Connect protocols, for tokens issued to a specific application.'
+            crossTenantAccessPolicy:
+              $ref: '#/components/schemas/microsoft.graph.crossTenantAccessPolicy'
             homeRealmDiscoveryPolicies:
               type: array
               items:
@@ -12228,6 +13093,66 @@ components:
           type: object
           additionalProperties:
             type: object
+    microsoft.graph.crossTenantAccessPolicy:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.policyBase'
+        - title: crossTenantAccessPolicy
+          type: object
+          properties:
+            default:
+              $ref: '#/components/schemas/microsoft.graph.crossTenantAccessPolicyConfigurationDefault'
+            partners:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.crossTenantAccessPolicyConfigurationPartner'
+              description: Defines partner-specific configurations for external Azure Active Directory organizations.
+          additionalProperties:
+            type: object
+    microsoft.graph.crossTenantAccessPolicyConfigurationDefault:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: crossTenantAccessPolicyConfigurationDefault
+          type: object
+          properties:
+            b2bCollaborationInbound:
+              $ref: '#/components/schemas/microsoft.graph.crossTenantAccessPolicyB2BSetting'
+            b2bCollaborationOutbound:
+              $ref: '#/components/schemas/microsoft.graph.crossTenantAccessPolicyB2BSetting'
+            b2bDirectConnectInbound:
+              $ref: '#/components/schemas/microsoft.graph.crossTenantAccessPolicyB2BSetting'
+            b2bDirectConnectOutbound:
+              $ref: '#/components/schemas/microsoft.graph.crossTenantAccessPolicyB2BSetting'
+            inboundTrust:
+              $ref: '#/components/schemas/microsoft.graph.crossTenantAccessPolicyInboundTrust'
+            isServiceDefault:
+              type: boolean
+              description: 'If true, the default configuration is set to the system default configuration. If false, the default settings have been customized.'
+              nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.crossTenantAccessPolicyConfigurationPartner:
+      title: crossTenantAccessPolicyConfigurationPartner
+      type: object
+      properties:
+        b2bCollaborationInbound:
+          $ref: '#/components/schemas/microsoft.graph.crossTenantAccessPolicyB2BSetting'
+        b2bCollaborationOutbound:
+          $ref: '#/components/schemas/microsoft.graph.crossTenantAccessPolicyB2BSetting'
+        b2bDirectConnectInbound:
+          $ref: '#/components/schemas/microsoft.graph.crossTenantAccessPolicyB2BSetting'
+        b2bDirectConnectOutbound:
+          $ref: '#/components/schemas/microsoft.graph.crossTenantAccessPolicyB2BSetting'
+        inboundTrust:
+          $ref: '#/components/schemas/microsoft.graph.crossTenantAccessPolicyInboundTrust'
+        isServiceProvider:
+          type: boolean
+          description: Identifies whether the partner-specific configuration is a Cloud Service Provider for your organization.
+          nullable: true
+        tenantId:
+          type: string
+          description: The tenant identifier for the partner Azure AD organization. Read-only. Key.
+      additionalProperties:
+        type: object
     microsoft.graph.featureRolloutPolicy:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -12439,17 +13364,17 @@ components:
           properties:
             policyId:
               type: string
-              description: The id of the policy.
+              description: The id of the policy. Inherited from entity.
             roleDefinitionId:
               type: string
-              description: 'The id of the role definition where the policy applies. If not specified, the policy applies to all roles.'
+              description: 'The identifier of the role definition object where the policy applies. If not specified, the policy applies to all roles. Supports $filter (eq).'
               nullable: true
             scopeId:
               type: string
-              description: 'The id of the scope where the policy is assigned. E.g. ''/'', groupId, etc.'
+              description: The identifier of the scope where the policy is assigned.  Can be / for the tenant or a group ID. Required.
             scopeType:
               type: string
-              description: 'The type of the scope where the policy is assigned. One of Directory, DirectoryRole, Group.'
+              description: 'The type of the scope where the policy is assigned. One of Directory, DirectoryRole. Required.'
             policy:
               $ref: '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicy'
           additionalProperties:
@@ -12489,6 +13414,15 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.microsoftAuthenticatorAuthenticationMethod'
               description: The details of the Microsoft Authenticator app registered to a user for authentication.
+            operations:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.longRunningOperation'
+            passwordMethods:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.passwordAuthenticationMethod'
+              description: Represents the details of the password authentication method registered to a user for authentication.
             temporaryAccessPassMethods:
               type: array
               items:
@@ -12696,6 +13630,49 @@ components:
         - $ref: '#/components/schemas/microsoft.graph.entity'
         - title: extension
           type: object
+          additionalProperties:
+            type: object
+    microsoft.graph.longRunningOperation:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: longRunningOperation
+          type: object
+          properties:
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            lastActionDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            resourceLocation:
+              type: string
+              nullable: true
+            status:
+              $ref: '#/components/schemas/microsoft.graph.longRunningOperationStatus'
+            statusDetail:
+              type: string
+              nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.passwordAuthenticationMethod:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
+        - title: passwordAuthenticationMethod
+          type: object
+          properties:
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            password:
+              type: string
+              description: 'For security, the password is always returned as null from a LIST or GET operation.'
+              nullable: true
           additionalProperties:
             type: object
     microsoft.graph.temporaryAccessPassAuthenticationMethod:
@@ -14988,6 +15965,8 @@ components:
               $ref: '#/components/schemas/microsoft.graph.teamMessagingSettings'
             specialization:
               $ref: '#/components/schemas/microsoft.graph.teamSpecialization'
+            summary:
+              $ref: '#/components/schemas/microsoft.graph.teamSummary'
             tenantId:
               type: string
               description: The ID of the Azure Active Directory tenant.
@@ -15204,6 +16183,34 @@ components:
           description: 'Indicates if user consent to apps is allowed, and if it is, which permission to grant consent and which app consent policy (permissionGrantPolicy) govern the permission for users to grant consent. Value should be in the format managePermissionGrantsForSelf.{id}, where {id} is the id of a built-in or custom app consent policy. An empty list indicates user consent to apps is disabled.'
       additionalProperties:
         type: object
+    microsoft.graph.crossTenantAccessPolicyB2BSetting:
+      title: crossTenantAccessPolicyB2BSetting
+      type: object
+      properties:
+        applications:
+          $ref: '#/components/schemas/microsoft.graph.crossTenantAccessPolicyTargetConfiguration'
+        usersAndGroups:
+          $ref: '#/components/schemas/microsoft.graph.crossTenantAccessPolicyTargetConfiguration'
+      additionalProperties:
+        type: object
+    microsoft.graph.crossTenantAccessPolicyInboundTrust:
+      title: crossTenantAccessPolicyInboundTrust
+      type: object
+      properties:
+        isCompliantDeviceAccepted:
+          type: boolean
+          description: Specifies whether compliant devices from external Azure AD organizations are trusted.
+          nullable: true
+        isHybridAzureADJoinedDeviceAccepted:
+          type: boolean
+          description: Specifies whether hybrid Azure AD joined devices from external Azure AD organizations are trusted.
+          nullable: true
+        isMfaAccepted:
+          type: boolean
+          description: Specifies whether MFA from external Azure AD organizations is trusted.
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.stagedFeatureName:
       title: stagedFeatureName
       enum:
@@ -15300,6 +16307,15 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.longRunningOperationStatus:
+      title: longRunningOperationStatus
+      enum:
+        - notStarted
+        - running
+        - succeeded
+        - failed
+        - unknownFutureValue
+      type: string
     microsoft.graph.authenticationMethodKeyStrength:
       title: authenticationMethodKeyStrength
       enum:
@@ -15508,6 +16524,18 @@ components:
           type: string
       additionalProperties:
         type: object
+    microsoft.graph.crossTenantAccessPolicyConfigurationPartnerCollectionResponse:
+      title: Collection of crossTenantAccessPolicyConfigurationPartner
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.crossTenantAccessPolicyConfigurationPartner'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
     microsoft.graph.featureRolloutPolicyCollectionResponse:
       title: Collection of featureRolloutPolicy
       type: object
@@ -15684,6 +16712,30 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.extension'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.longRunningOperationCollectionResponse:
+      title: Collection of longRunningOperation
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.longRunningOperation'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.passwordAuthenticationMethodCollectionResponse:
+      title: Collection of passwordAuthenticationMethod
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.passwordAuthenticationMethod'
         '@odata.nextLink':
           type: string
       additionalProperties:
@@ -18768,6 +19820,33 @@ components:
         - healthcareCareCoordination
         - unknownFutureValue
       type: string
+    microsoft.graph.teamSummary:
+      title: teamSummary
+      type: object
+      properties:
+        guestsCount:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: Count of guests in a team.
+          format: int32
+          nullable: true
+        membersCount:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: Count of members in a team.
+          format: int32
+          nullable: true
+        ownersCount:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: Count of owners in a team.
+          format: int32
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.teamVisibilityType:
       title: teamVisibilityType
       enum:
@@ -18869,7 +19948,7 @@ components:
               nullable: true
             displayName:
               type: string
-              description: 'The display name for the group. Required. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.'
+              description: 'The display name for the group. Required. Maximum length is 256 characters. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.'
               nullable: true
             expirationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -18976,7 +20055,7 @@ components:
               nullable: true
             visibility:
               type: string
-              description: 'Specifies the group join policy and group content visibility for groups. Possible values are: Private, Public, or Hiddenmembership. Hiddenmembership can be set only for Microsoft 365 groups, when the groups are created. It can''t be updated later. Other values of visibility can be updated after group creation. If visibility value is not specified during group creation on Microsoft Graph, a security group is created as Private by default and Microsoft 365 group is Public. Groups assignable to roles are always Private. See group visibility options to learn more. Returned by default. Nullable.'
+              description: 'Specifies the group join policy and group content visibility for groups. Possible values are: Private, Public, or HiddenMembership. HiddenMembership can be set only for Microsoft 365 groups, when the groups are created. It can''t be updated later. Other values of visibility can be updated after group creation. If visibility value is not specified during group creation on Microsoft Graph, a security group is created as Private by default and Microsoft 365 group is Public. Groups assignable to roles are always Private. See group visibility options to learn more. Returned by default. Nullable.'
               nullable: true
             allowExternalSenders:
               type: boolean
@@ -19025,7 +20104,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: 'Members of this group, who can be users, devices, other groups, or service principals. Supports the List members, Add member, and Remove member operations. Nullable. Supports $expand including nested $select. For example, /groups?$filter=startsWith(displayName,''Role'')&$select=id,displayName&$expand=members($select=id,userPrincipalName,displayName).'
+              description: 'Direct members of this group, who can be users, devices, other groups, or service principals. Supports the List members, Add member, and Remove member operations. Nullable. Supports $expand including nested $select. For example, /groups?$filter=startsWith(displayName,''Role'')&$select=id,displayName&$expand=members($select=id,userPrincipalName,displayName).'
             membersWithLicenseErrors:
               type: array
               items:
@@ -19050,10 +20129,12 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
+              description: 'The groups that a group is a member of, either directly and through nested membership. Nullable.'
             transitiveMembers:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
+              description: The direct and transitive members of a group. Nullable.
             acceptedSenders:
               type: array
               items:
@@ -19324,6 +20405,19 @@ components:
           format: int32
         state:
           $ref: '#/components/schemas/microsoft.graph.advancedConfigState'
+      additionalProperties:
+        type: object
+    microsoft.graph.crossTenantAccessPolicyTargetConfiguration:
+      title: crossTenantAccessPolicyTargetConfiguration
+      type: object
+      properties:
+        accessType:
+          $ref: '#/components/schemas/microsoft.graph.crossTenantAccessPolicyTargetConfigurationAccessType'
+        targets:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.crossTenantAccessPolicyTarget'
+          description: 'Specifies whether to target users, groups, or applications with this rule.'
       additionalProperties:
         type: object
     microsoft.graph.unifiedRoleManagementPolicyRuleTargetOperations:
@@ -20980,32 +22074,6 @@ components:
               nullable: true
           additionalProperties:
             type: object
-    microsoft.graph.longRunningOperation:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: longRunningOperation
-          type: object
-          properties:
-            createdDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              format: date-time
-              nullable: true
-            lastActionDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              format: date-time
-              nullable: true
-            resourceLocation:
-              type: string
-              nullable: true
-            status:
-              $ref: '#/components/schemas/microsoft.graph.longRunningOperationStatus'
-            statusDetail:
-              type: string
-              nullable: true
-          additionalProperties:
-            type: object
     microsoft.graph.sharePointIdentitySet:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.identitySet'
@@ -22589,6 +23657,25 @@ components:
         - disabled
         - unknownFutureValue
       type: string
+    microsoft.graph.crossTenantAccessPolicyTargetConfigurationAccessType:
+      title: crossTenantAccessPolicyTargetConfigurationAccessType
+      enum:
+        - allowed
+        - blocked
+        - unknownFutureValue
+      type: string
+    microsoft.graph.crossTenantAccessPolicyTarget:
+      title: crossTenantAccessPolicyTarget
+      type: object
+      properties:
+        target:
+          type: string
+          description: 'The unique identifier of the user, group, or application; one of the following keywords: AllUsers and AllApplications; or for targets that are applications, you may use reserved values.'
+          nullable: true
+        targetType:
+          $ref: '#/components/schemas/microsoft.graph.crossTenantAccessPolicyTargetType'
+      additionalProperties:
+        type: object
     microsoft.graph.ODataErrors.ErrorDetails:
       required:
         - code
@@ -23111,15 +24198,6 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    microsoft.graph.longRunningOperationStatus:
-      title: longRunningOperationStatus
-      enum:
-        - notStarted
-        - running
-        - succeeded
-        - failed
-        - unknownFutureValue
-      type: string
     microsoft.graph.sharePointIdentity:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.identity'
@@ -23768,6 +24846,14 @@ components:
       enum:
         - user
         - group
+        - unknownFutureValue
+      type: string
+    microsoft.graph.crossTenantAccessPolicyTargetType:
+      title: crossTenantAccessPolicyTargetType
+      enum:
+        - user
+        - group
+        - application
         - unknownFutureValue
       type: string
     microsoft.graph.workbookCommentReply:
@@ -24646,6 +25732,12 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.claimsMappingPolicyCollectionResponse'
+    microsoft.graph.crossTenantAccessPolicyConfigurationPartnerCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.crossTenantAccessPolicyConfigurationPartnerCollectionResponse'
     microsoft.graph.featureRolloutPolicyCollectionResponse:
       description: Retrieved collection
       content:
@@ -24736,6 +25828,18 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.extensionCollectionResponse'
+    microsoft.graph.longRunningOperationCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.longRunningOperationCollectionResponse'
+    microsoft.graph.passwordAuthenticationMethodCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.passwordAuthenticationMethodCollectionResponse'
     microsoft.graph.temporaryAccessPassAuthenticationMethodCollectionResponse:
       description: Retrieved collection
       content:

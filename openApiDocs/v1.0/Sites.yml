@@ -108769,7 +108769,7 @@ components:
               type: array
               items:
                 type: string
-              description: 'A list of additional email addresses for the user; for example: [''bob@contoso.com'', ''Robert@fabrikam.com''].NOTE: This property cannot contain accent characters.Supports $filter (eq, not, ge, le, in, startsWith, and counting empty collections).'
+              description: 'A list of additional email addresses for the user; for example: [''bob@contoso.com'', ''Robert@fabrikam.com''].NOTE: This property cannot contain accent characters.Supports $filter (eq, not, ge, le, in, startsWith, endsWith, and counting empty collections).'
             passwordPolicies:
               type: string
               description: 'Specifies password policies for the user. This value is an enumeration with one possible value being DisableStrongPassword, which allows weaker passwords than the default policy to be specified. DisablePasswordExpiration can also be specified. The two may be specified together; for example: DisablePasswordExpiration, DisableStrongPassword. For more information on the default password policies, see Azure AD pasword policies. Supports $filter (ne, not, and eq on null values).'
@@ -109013,7 +109013,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.extension'
-              description: The collection of open extensions defined for the user. Nullable.
+              description: The collection of open extensions defined for the user. Supports $expand. Nullable.
             agreementAcceptances:
               type: array
               items:
@@ -112155,6 +112155,15 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.microsoftAuthenticatorAuthenticationMethod'
               description: The details of the Microsoft Authenticator app registered to a user for authentication.
+            operations:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.longRunningOperation'
+            passwordMethods:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.passwordAuthenticationMethod'
+              description: Represents the details of the password authentication method registered to a user for authentication.
             temporaryAccessPassMethods:
               type: array
               items:
@@ -112265,6 +112274,8 @@ components:
               $ref: '#/components/schemas/microsoft.graph.teamMessagingSettings'
             specialization:
               $ref: '#/components/schemas/microsoft.graph.teamSpecialization'
+            summary:
+              $ref: '#/components/schemas/microsoft.graph.teamSummary'
             tenantId:
               type: string
               description: The ID of the Azure Active Directory tenant.
@@ -114541,6 +114552,23 @@ components:
               $ref: '#/components/schemas/microsoft.graph.device'
           additionalProperties:
             type: object
+    microsoft.graph.passwordAuthenticationMethod:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
+        - title: passwordAuthenticationMethod
+          type: object
+          properties:
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            password:
+              type: string
+              description: 'For security, the password is always returned as null from a LIST or GET operation.'
+              nullable: true
+          additionalProperties:
+            type: object
     microsoft.graph.temporaryAccessPassAuthenticationMethod:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
@@ -114886,6 +114914,33 @@ components:
         - healthcareCareCoordination
         - unknownFutureValue
       type: string
+    microsoft.graph.teamSummary:
+      title: teamSummary
+      type: object
+      properties:
+        guestsCount:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: Count of guests in a team.
+          format: int32
+          nullable: true
+        membersCount:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: Count of members in a team.
+          format: int32
+          nullable: true
+        ownersCount:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: Count of owners in a team.
+          format: int32
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.teamVisibilityType:
       title: teamVisibilityType
       enum:
