@@ -13,7 +13,9 @@ using System.Net.Http.Headers;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using Microsoft.Graph.PowerShell.Authentication.Extensions;
 using Microsoft.Graph.PowerShell.Authentication.Helpers;
+using Microsoft.Graph.PowerShell.Authentication.Interfaces;
 using Microsoft.Graph.PowerShell.Authentication.Models;
 using Microsoft.Graph.PowerShell.Authentication.Properties;
 using Microsoft.PowerShell.Commands;
@@ -29,6 +31,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
     {
         private readonly CancellationTokenSource _cancellationTokenSource = new CancellationTokenSource();
         private RequestUserAgent _graphRequestUserAgent;
+        private IGraphEnvironment _originalEnvironment;
         private string _originalFilePath;
 
         /// <summary>
@@ -358,7 +361,17 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
             UriBuilder uriBuilder;
             // For AbsoluteUri such as /beta/groups?$count=true, Get the scheme and host from httpClient
             // Then use them to compose a new Url with the URL fragment. 
-            if (!uri.IsAbsoluteUri)
+            if (uri.IsAbsoluteUri)
+            {
+                _originalEnvironment = GraphSession.Instance.Environment;
+                GraphSession.Instance.Environment = new GraphEnvironment
+                {
+                    Name = "MSGraphInvokeGraphRequest",
+                    GraphEndpoint = Uri.GetBaseUrl()
+                    // No need to set AAD endpoint since a token is provided.
+                };
+            }
+            else
             {
                 uriBuilder = new UriBuilder
                 {
@@ -974,6 +987,18 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
             return resolvedFilePath;
         }
 
+        /// <summary>
+        ///     Resets GraphSession environment back to its original state.
+        ///     Original state can remain to be the previous state defined by the user, 
+        ///     or the default global state. User defined state can be removed by calling,
+        ///     Remove-MgEnvironment Command
+        /// </summary>
+        private void ResetGraphSessionEnvironment()
+        {
+            _originalEnvironment = GraphSession.Instance.Environment;
+            GraphSession.Instance.Environment = _originalEnvironment;
+        }
+
         #region CmdLet LifeCycle
 
         protected override void BeginProcessing()
@@ -1088,11 +1113,13 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
 
         protected override void EndProcessing()
         {
+            ResetGraphSessionEnvironment();
             base.EndProcessing();
         }
 
         protected override void StopProcessing()
         {
+            ResetGraphSessionEnvironment();
             _cancellationTokenSource.Cancel();
             base.StopProcessing();
         }

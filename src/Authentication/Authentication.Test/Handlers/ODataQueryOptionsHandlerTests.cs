@@ -17,7 +17,7 @@ namespace Microsoft.Graph.Authentication.Test
         public ODataQueryOptionsHandlerTests()
         {
             this._fakeSuccessHandler = new FakeSuccessHandler();
-            this._graphODataHandler = new ODataQueryOptionsHandler(_fakeSuccessHandler);
+            this._graphODataHandler = new ODataQueryOptionsHandler(new HttpVersionHandler(_fakeSuccessHandler));
             this._invoker = new HttpMessageInvoker(_graphODataHandler);
         }
 

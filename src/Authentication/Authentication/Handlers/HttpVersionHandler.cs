@@ -11,6 +11,9 @@ using System.Threading.Tasks;
 
 namespace Microsoft.Graph.PowerShell.Authentication.Handlers
 {
+    /// <summary>
+    /// A <see cref="DelegatingHandler"/> implementation that sets HTTP version on all outgoing requests.
+    /// </summary>
     internal class HttpVersionHandler : DelegatingHandler
     {
         public HttpVersionHandler()
@@ -26,10 +29,11 @@ namespace Microsoft.Graph.PowerShell.Authentication.Handlers
             request = SetHttpVersion(request);
             return base.SendAsync(request, cancellationToken);
         }
-        //TODO: Add unit test.
-        private HttpRequestMessage SetHttpVersion(HttpRequestMessage request)
+
+        private static HttpRequestMessage SetHttpVersion(HttpRequestMessage request)
         {
-            request.Version = new Version(2, 0); // default to HTTP/2. The HTTP client fall back to HTTP/1.1 as needed.
+            // Default to HTTP/2. The HTTP client will fall back to HTTP/1.1 as needed.
+            request.Version = new Version(2, 0);
             return request;
         }
     }
