@@ -95,7 +95,7 @@ Copy-Item -Path "$cmdletsSrc/StartupScripts" -Filter *.ps1 -Recurse -Destination
 Copy-Item -Path "$cmdletsSrc/custom" -Recurse -Destination $outDir
 
 # Core assemblies to include with cmdlets (Let PowerShell load them).
-$CoreAssemblies = @('Microsoft.Graph.Authentication.Core', 'Microsoft.Graph.Core')
+$CoreAssemblies = @('Microsoft.Graph.Authentication.Core')
 
 # Copy each authentication.core asset to out directory and remember it.
 $Deps = [System.Collections.Generic.HashSet[string]]::new()

@@ -17,6 +17,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Utilities
             { "Azure.Core", new Version("1.25.0") },
             { "Azure.Identity", new Version("1.6.0") },
             { "Microsoft.Bcl.AsyncInterfaces", new Version("6.0.0") },
+            { "Microsoft.Graph.Core", new Version("2.0.9") },
             { "Microsoft.Identity.Client", new Version("4.45.0") },
             { "Microsoft.Identity.Client.Extensions.Msal", new Version("2.22.0") },
             { "Microsoft.IdentityModel.Abstractions", new Version("6.18.0") },
@@ -32,7 +33,8 @@ namespace Microsoft.Graph.PowerShell.Authentication.Utilities
             { "System.Runtime.CompilerServices.Unsafe", new Version("4.0.4") },
             { "System.Memory", new Version("4.0.1") },
             { "System.Buffers", new Version("4.0.2") },
-            { "System.Numerics.Vectors", new Version("4.1.3") }
+            { "System.Numerics.Vectors", new Version("4.1.3") },
+            { "System.Net.Http.WinHttpHandler", new Version("6.0.0") }
         };
 
         /// <summary>
@@ -40,7 +42,9 @@ namespace Microsoft.Graph.PowerShell.Authentication.Utilities
         /// </summary>
         private static readonly IList<string> MultiFrameworkDependencies = new List<string> {
             "Microsoft.Identity.Client",
-            "System.Security.Cryptography.ProtectedData"
+            "System.Security.Cryptography.ProtectedData",
+            "Microsoft.Graph.Core",
+            "System.Net.Http.WinHttpHandler"
         };
 
         // Set up the path to our dependency directory within the module.

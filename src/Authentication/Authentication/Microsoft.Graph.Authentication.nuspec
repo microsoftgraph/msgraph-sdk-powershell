@@ -22,7 +22,6 @@
     <file src="artifacts\Microsoft.Graph.Authentication.psd1" />
     <file src="artifacts\Microsoft.Graph.Authentication.dll" />
     <file src="artifacts\Microsoft.Graph.Authentication.Core.dll" />
-    <file src="artifacts\Microsoft.Graph.Core.dll" />
     <file src="artifacts\StartupScripts\" target="StartupScripts" />
     <file src="artifacts\custom\" target="custom" />
     <file src="artifacts\Dependencies\Azure.Core.dll" target="Dependencies" />
@@ -45,10 +44,13 @@
     <file src="artifacts\Dependencies\System.Numerics.Vectors.dll" target="Dependencies" />
     <!-- Copy framework dependent assemblies to respective framework directory. -->
     <!-- Core-->
+    <file src="artifacts\Dependencies\Core\Microsoft.Graph.Core.dll" target="Dependencies\Core" />
     <file src="artifacts\Dependencies\Core\Microsoft.Identity.Client.dll" target="Dependencies\Core" />
     <file src="artifacts\Dependencies\Core\System.Security.Cryptography.ProtectedData.dll" target="Dependencies\Core" />
     <!-- Desktop -->
+    <file src="artifacts\Dependencies\Desktop\Microsoft.Graph.Core.dll" target="Dependencies\Desktop" />
     <file src="artifacts\Dependencies\Desktop\Microsoft.Identity.Client.dll" target="Dependencies\Desktop" />
     <file src="artifacts\Dependencies\Desktop\System.Security.Cryptography.ProtectedData.dll" target="Dependencies\Desktop" />
+    <file src="artifacts\Dependencies\Desktop\System.Net.Http.WinHttpHandler.dll" target="Dependencies\Desktop" />
   </files>
 </package>
