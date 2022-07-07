@@ -38,7 +38,7 @@ subject-prefix: ''
 
 ``` yaml
 directive:
-  - remove-path-by-operation: ^identityGovernance_(Get|Create|Update|Set|Delete)EntitlementManagement$|^identityGovernance\.entitlementManagement(_.*AccessPackageResourceRoleScopes|\.accessPackageResourceRoleScopes.*|\.accessPackageAssignmentPolicies\..*|\.accessPackageAssignmentRequests\..*|\.accessPackageAssignmentResourceRoles\..*|\.accessPackageAssignments\..*|\.accessPackageCatalogs\..*|\.accessPackageResourceRequests\..*|\.accessPackageResources\..*|\.accessPackages\..*)|^identityGovernance\.accessReviews\.definitions\.instances\.decisions\.(instance_.*)|^identityGovernance\.accessReviews\.definitions\.instances(\.decisions.*|\.stages\.decisions.*)$|^privilegedAccess.roleAssignmentRequests.(resource|roleDefinition).*$|^privilegedAccess.roleAssignments.(resource|roleDefinition).*$|^privilegedAccess.roleDefinitions.(resource|roleSetting).*$|^privilegedAccess.roleSettings.(resource|roleDefinition).*$|(^agreements.|^identityGovernance.termsGraphOPreUse.agreements.).*files.*$
+  - remove-path-by-operation: ^identityGovernance_(Get|Create|Update|Set|Delete)EntitlementManagement$|^identityGovernance\.entitlementManagement(_.*AccessPackageResourceRoleScopes|\.accessPackageResourceRoleScopes.*|\.accessPackageAssignmentPolicies\..*|\.accessPackageAssignmentRequests\..*|\.accessPackageAssignmentResourceRoles\..*|\.accessPackageAssignments\..*|\.accessPackageCatalogs\..*|\.accessPackageResourceRequests\..*|\.accessPackageResources\..*|\.accessPackages\..*)|^identityGovernance\.accessReviews\.definitions\.instances\.decisions\.instance(\.|_).*|^identityGovernance\.accessReviews\.definitions\.instances(\.stages\.decisions.*)$|^privilegedAccess.roleAssignmentRequests.(resource|roleDefinition).*$|^privilegedAccess.roleAssignments.(resource|roleDefinition).*$|^privilegedAccess.roleDefinitions.(resource|roleSetting).*$|^privilegedAccess.roleSettings.(resource|roleDefinition).*$|(^agreements.|^identityGovernance.termsGraphOPreUse.agreements.).*files.*$
 # Remove cmdlets
   - where:
       verb: Get|Remove|Set
@@ -58,7 +58,7 @@ directive:
     remove: true
   - where:
       verb: Get|Remove|Update
-      subject: (.*)(EntitlementManagement)AssignmentAccessPackage
+      subject: (.*)(EntitlementManagement)AssignmentAccessPackage$
     remove: true
   - where:
       verb: Get|Remove|Update
@@ -98,7 +98,7 @@ directive:
     remove: true
   - where:
       verb: Get
-      subject: (.*)(EntitlementManagement)AssignmentRequestAccessPackage
+      subject: (.*)(EntitlementManagement)AssignmentRequestAccessPackage$
     remove: true
   - where:
       verb: Get|Remove|Update
@@ -166,11 +166,11 @@ directive:
     remove: true
   - where:
       verb: Get|Remove|Set
-      subject: (.*)(EntitlementManagement)CatalogGraphRefAccessPackage
+      subject: (.*)(EntitlementManagement)CatalogGraphRefAccessPackage$
     remove: true
   - where:
       verb: Get|New|Remove|Update|Set|Invoke
-      subject: (.*)(EntitlementManagement)CatalogAccessPackage
+      subject: (.*)(EntitlementManagement)CatalogAccessPackage$
     remove: true
   - where:
       verb: Get
@@ -278,16 +278,8 @@ directive:
       subject: (.*)(IdentityGovernance)AccessReview$
     remove: true
   - where:
-      verb: New|Remove|Update|Get|Add|Invoke|Reset|Send|Set|Stop
-      subject: (.*)(IdentityGovernance)(AccessReviewDefinition|AccessReviewHistoryDefinition|AccessReviewPolicy)(.*)$
-    remove: true
-  - where:
-      verb: New|Remove|Update|Get
-      subject: ^(.*)(IdentityGovernance)Term$
-    remove: true
-  - where:
       verb: New|Remove|Update|Get|Invoke
-      subject: (.*)(IdentityGovernance)AppConsent
+      subject: (.*)(IdentityGovernance)AppConsent$
     remove: true
   - where:
       verb: New|Remove|Update
