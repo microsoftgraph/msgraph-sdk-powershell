@@ -445,6 +445,10 @@ directive:
       subject: ^UserManagedAppRegistrationByDeviceTag$
       variant: ^Wipe$|^WipeExpanded$|^WipeViaIdentity$|^WipeViaIdentityExpanded$
     remove: true
+  - where:
+      verb: New|Remove|Update|Get
+      subject: ^(.*)(IdentityGovernance)TermOfUse$
+    remove: true
 # Modify generated .json.cs model classes.
   - from: source-file-csharp
     where: $

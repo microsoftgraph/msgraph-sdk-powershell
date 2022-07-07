@@ -38,7 +38,7 @@ subject-prefix: ''
 
 ``` yaml
 directive:
-  - remove-path-by-operation: ^identity_(Get|Create|Delete|Update|List)ConditionalAccess$|^policies\.policyRoot_.*PolicyRoot|^policies_(Get|Create|Delete|Update|List)ConditionalAccessPolicies$|^invitations\.invitation_(List|Get|Update|Delete)Invitation$|^invitations_(.*)InvitedUser$|^identityProtection\.identityProtectionRoot_(.*)$
+  - remove-path-by-operation: ^identity_(Get|Create|Delete|Update|List)ConditionalAccess$|^policies\.policyRoot_.*PolicyRoot|^policies_(Get|Create|Delete|Update|List)ConditionalAccessPolicies$|^invitations\.invitation_(List|Get|Update|Delete)Invitation$|^invitations_(.*)InvitedUser$|^identityProtection\.identityProtectionRoot_(.*)$|^identity\.identityContainer_(.*)$|^identityProviders(\.identityProvider.*|_.*)$
 # Rename cmdlets with duplicates in their name.
   - where:
       subject: ^(Oauth2PermissionGrant)(\1)+
