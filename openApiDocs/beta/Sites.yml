@@ -71798,7 +71798,7 @@ components:
               description: State of license assignments for this user. Read-only. Returned only on $select.
             mail:
               type: string
-              description: 'The SMTP address for the user, for example, admin@contoso.com. Changes to this property will also update the user''s proxyAddresses collection to include the value as an SMTP address. For Azure AD B2C accounts, this property can be updated up to only ten times with unique SMTP addresses. This property cannot contain accent characters.  Supports $filter (eq, ne, not, ge, le, in, startsWith, endsWith, and eq on null values).'
+              description: 'The SMTP address for the user, for example, admin@contoso.com. Changes to this property will also update the user''s proxyAddresses collection to include the value as an SMTP address. This property cannot contain accent characters.  NOTE: We do not recommend updating this property for Azure AD B2C user profiles. Use the otherMails property instead.  Supports $filter (eq, ne, not, ge, le, in, startsWith, endsWith, and eq on null values).'
               nullable: true
             mailNickname:
               type: string
@@ -71857,7 +71857,7 @@ components:
               type: array
               items:
                 type: string
-              description: 'A list of additional email addresses for the user; for example: [''bob@contoso.com'', ''Robert@fabrikam.com''].NOTE: This property cannot contain accent characters.Supports $filter (eq, not, ge, le, in, startsWith, and counting empty collections).'
+              description: 'A list of additional email addresses for the user; for example: [''bob@contoso.com'', ''Robert@fabrikam.com''].NOTE: This property cannot contain accent characters.Supports $filter (eq, not, ge, le, in, startsWith, endsWith, and counting empty collections).'
             passwordPolicies:
               type: string
               description: 'Specifies password policies for the user. This value is an enumeration with one possible value being DisableStrongPassword, which allows weaker passwords than the default policy to be specified. DisablePasswordExpiration can also be specified. The two may be specified together; for example: DisablePasswordExpiration, DisableStrongPassword. For more information on the default password policies, see Azure AD pasword policies. Supports $filter (ne, not, and eq on null values).'
@@ -72134,7 +72134,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.extension'
-              description: The collection of open extensions defined for the user. Nullable.
+              description: The collection of open extensions defined for the user. Supports $expand. Nullable.
             appConsentRequestsForApproval:
               type: array
               items:
@@ -73650,11 +73650,11 @@ components:
       properties:
         displayName:
           type: string
-          description: The display name of the identity. This property is read-only.
+          description: 'The identity''s display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
           nullable: true
         id:
           type: string
-          description: The identifier of the identity. This property is read-only.
+          description: Unique identifier for the identity.
           nullable: true
       additionalProperties:
         type: object
@@ -76712,6 +76712,10 @@ components:
               description: The content stream of the alternative recording of a Microsoft Teams live event. Read-only.
               format: base64url
               nullable: true
+            anonymizeIdentityForRoles:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.onlineMeetingRole'
             attendeeReport:
               type: string
               description: The content stream of the attendee report of a Teams live event. Read-only.
@@ -78513,6 +78517,7 @@ components:
           properties:
             onPremisesGroupType:
               type: string
+              description: 'Indicates the target on-premise group type the cloud object will be written back as. Nullable. The possible values are: universalDistributionGroup, universalSecurityGroup, universalMailEnabledSecurityGroup. + If the cloud group is a unified (Microsoft 365) group, this property can be one of the following: universalDistributionGroup, universalSecurityGroup, universalMailEnabledSecurityGroup.  + Azure AD security groups can be written back as universalSecurityGroup.  + If isEnabled or the NewUnifiedGroupWritebackDefault group setting is true but this property is not explicitly configured:    + Microsoft 365 groups will be written back as universalDistributionGroup by default    + Security groups will be written back as universalSecurityGroup by default'
               nullable: true
           additionalProperties:
             type: object
@@ -82088,6 +82093,15 @@ components:
         - limited
         - unknownFutureValue
       type: string
+    microsoft.graph.onlineMeetingRole:
+      title: onlineMeetingRole
+      enum:
+        - attendee
+        - presenter
+        - unknownFutureValue
+        - producer
+        - coorganizer
+      type: string
     microsoft.graph.audioConferencing:
       title: audioConferencing
       type: object
@@ -84029,6 +84043,7 @@ components:
       properties:
         isEnabled:
           type: boolean
+          description: Indicates whether writeback of cloud groups to on-premise Active Directory is enabled. Default value is true for Microsoft 365 groups and false for security groups.
           nullable: true
       additionalProperties:
         type: object
@@ -86892,6 +86907,8 @@ components:
               $ref: '#/components/schemas/microsoft.graph.patternedRecurrence'
             reminderDateTime:
               $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
+            startDateTime:
+              $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
             status:
               $ref: '#/components/schemas/microsoft.graph.taskStatus'
             title:
@@ -88568,15 +88585,6 @@ components:
         - emergencyContact
         - other
         - unknownFutureValue
-      type: string
-    microsoft.graph.onlineMeetingRole:
-      title: onlineMeetingRole
-      enum:
-        - attendee
-        - presenter
-        - unknownFutureValue
-        - producer
-        - coorganizer
       type: string
     microsoft.graph.attendanceInterval:
       title: attendanceInterval
