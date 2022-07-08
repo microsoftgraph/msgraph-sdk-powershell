@@ -1,6 +1,10 @@
 {
   "resources": [],
   "operations": {
+    "/users/{user-id}/authentication/methods/{authenticationMethod-id}/microsoft.graph.resetPassword": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Users.Actions.yml"
+    },
     "/users/{user-id}/authentication/microsoftAuthenticatorMethods/{microsoftAuthenticatorAuthenticationMethod-id}/device/microsoft.graph.checkMemberGroups": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Users.Actions.yml"
