@@ -236,105 +236,86 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
             if (authContext is null)
                 throw new AuthenticationException(ErrorConstants.Message.MissingAuthContext);
 
-            X509Certificate2 certificate;
             if (!string.IsNullOrWhiteSpace(authContext.CertificateSubjectName))
             {
-                certificate = GetCertificateByName(authContext.CertificateSubjectName);
-                if (certificate is null)
-                    throw new Exception($"Certificate with subject name '{authContext.CertificateSubjectName}' was not found in CurrentUser and LocalMachine store or has expired.");
+                if (TryFindCertificateBySubjectName(authContext.CertificateSubjectName, StoreLocation.CurrentUser, out X509Certificate2 certificate) ||
+                    TryFindCertificateBySubjectName(authContext.CertificateSubjectName, StoreLocation.LocalMachine, out certificate))
+                        return certificate;
+                else
+                    throw new ArgumentException(string.Format(CultureInfo.InvariantCulture, ErrorConstants.Message.CertificateNotFound,
+                        "subject name",
+                        authContext.CertificateSubjectName));
             }
             else if (!string.IsNullOrWhiteSpace(authContext.CertificateThumbprint))
             {
-                certificate = GetCertificateByThumbprint(authContext.CertificateThumbprint);
-                if (certificate is null)
-                    throw new Exception($"Certificate with thumbprint '{authContext.CertificateThumbprint}' was not found in CurrentUser and LocalMachine store or has expired.");
+                if (TryFindCertificateByThumbprint(authContext.CertificateThumbprint, StoreLocation.CurrentUser, out X509Certificate2 certificate) ||
+                    TryFindCertificateByThumbprint(authContext.CertificateThumbprint, StoreLocation.LocalMachine, out certificate))
+                    return certificate;
+                else
+                    throw new ArgumentException(string.Format(CultureInfo.InvariantCulture, ErrorConstants.Message.CertificateNotFound,
+                        "thumbprint",
+                        authContext.CertificateThumbprint));
             }
             else
-                certificate = authContext.Certificate;
-
-            return certificate;
+                return authContext.Certificate;
         }
 
         /// <summary>
-        /// Gets unexpired certificate of the specified certificate thumbprint for the current user in My store.
+        /// Gets unexpired certificate using the specified certificate store using the provided thumbprint.
         /// </summary>
-        /// <param name="certificateThumbprint">Subject name of the certificate to get.</param>
-        /// <returns></returns>
-        private static X509Certificate2 GetCertificateByThumbprint(string certificateThumbprint)
+        /// <param name="thumbprint">Thumbprint of the certificate to fetch.</param>
+        /// <param name="location">The certificate store location.</param>
+        /// <param name="certificate">Unexpired certificate.</param>
+        private static bool TryFindCertificateByThumbprint(string thumbprint, StoreLocation location, out X509Certificate2 certificate)
         {
-            X509Certificate2 xCertificate = null;
-            using (X509Store xStore = new X509Store(StoreName.My, StoreLocation.CurrentUser))
+            using (X509Store xStore = new X509Store(StoreName.My, location))
             {
-                xCertificate = FindUnexpiredCertificateByThumbprint(xStore, certificateThumbprint);
+                xStore.Open(OpenFlags.ReadOnly);
+
+                // Get unexpired certificates with the specified name.
+                X509Certificate2Collection unexpiredCerts = xStore.Certificates
+                    .Find(X509FindType.FindByTimeValid, DateTime.Now, validOnly: false)
+                    .Find(X509FindType.FindByThumbprint, thumbprint, validOnly: false);
+
+                xStore.Close();
+
+                // Only return current cert.
+                certificate = unexpiredCerts
+                    .OfType<X509Certificate2>()
+                    .OrderByDescending(c => c.NotBefore)
+                    .FirstOrDefault();
+
+                return certificate != null;
             }
-            if (xCertificate is null)
-            {
-                // Fall back to local machine store.
-                using (X509Store xStore = new X509Store(StoreName.My, StoreLocation.LocalMachine))
-                {
-                    xCertificate = FindUnexpiredCertificateByThumbprint(xStore, certificateThumbprint);
-                }
-            }
-            return xCertificate;
         }
 
         /// <summary>
-        /// Gets unexpired certificate of the specified certificate subject name for the current user in My store.
+        /// Gets unexpired certificate using the specified certificate store using the provided subject distinguished name.
         /// </summary>
-        /// <param name="certificateName">Subject name of the certificate to get.</param>
-        /// <returns></returns>
-        private static X509Certificate2 GetCertificateByName(string certificateName)
+        /// <param name="subjectName">Subject distinguished name of the certificate to fetch.</param>
+        /// <param name="location">The certificate store location.</param>
+        /// <param name="certificate">Unexpired certificate.</param>
+        private static bool TryFindCertificateBySubjectName(string subjectName, StoreLocation location, out X509Certificate2 certificate)
         {
-            X509Certificate2 xCertificate = null;
-            using (X509Store xStore = new X509Store(StoreName.My, StoreLocation.CurrentUser))
+            using (X509Store xStore = new X509Store(StoreName.My, location))
             {
-                xCertificate = FindUnexpiredCertificateBySubject(xStore, certificateName);
+                xStore.Open(OpenFlags.ReadOnly);
+
+                // Get unexpired certificates with the specified name.
+                X509Certificate2Collection unexpiredCerts = xStore.Certificates
+                    .Find(X509FindType.FindByTimeValid, DateTime.Now, validOnly: false)
+                    .Find(X509FindType.FindBySubjectDistinguishedName, subjectName, validOnly: false);
+
+                xStore.Close();
+
+                // Only return current cert.
+                certificate = unexpiredCerts
+                    .OfType<X509Certificate2>()
+                    .OrderByDescending(c => c.NotBefore)
+                    .FirstOrDefault();
+
+                return certificate != null;
             }
-            if (xCertificate is null)
-            {
-                // Fall back to local machine store.
-                using (X509Store xStore = new X509Store(StoreName.My, StoreLocation.LocalMachine))
-                {
-                    xCertificate = FindUnexpiredCertificateBySubject(xStore, certificateName);
-                }
-            }
-            return xCertificate;
-        }
-
-        private static X509Certificate2 FindUnexpiredCertificateByThumbprint(X509Store xStore, string certificateThumbprint)
-        {
-            xStore.Open(OpenFlags.ReadOnly);
-
-            // Get unexpired certificates with the specified name.
-            X509Certificate2Collection unexpiredCerts = xStore.Certificates
-                .Find(X509FindType.FindByTimeValid, DateTime.Now, validOnly: false)
-                .Find(X509FindType.FindByThumbprint, certificateThumbprint, validOnly: false);
-
-            xStore.Close();
-
-            // Only return current cert.
-            return unexpiredCerts
-                .OfType<X509Certificate2>()
-                .OrderByDescending(c => c.NotBefore)
-                .FirstOrDefault();
-        }
-        
-        private static X509Certificate2 FindUnexpiredCertificateBySubject(X509Store xStore, string certificateName)
-        {
-            xStore.Open(OpenFlags.ReadOnly);
-
-            // Get unexpired certificates with the specified name.
-            X509Certificate2Collection unexpiredCerts = xStore.Certificates
-                .Find(X509FindType.FindByTimeValid, DateTime.Now, validOnly: false)
-                .Find(X509FindType.FindBySubjectDistinguishedName, certificateName, validOnly: false);
-
-            xStore.Close();
-
-            // Only return current cert.
-            return unexpiredCerts
-                .OfType<X509Certificate2>()
-                .OrderByDescending(c => c.NotBefore)
-                .FirstOrDefault();
         }
 
         /// <summary>

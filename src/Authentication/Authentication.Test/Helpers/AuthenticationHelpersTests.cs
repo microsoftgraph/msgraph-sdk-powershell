@@ -5,6 +5,7 @@ using Microsoft.Graph.PowerShell.Authentication;
 using Microsoft.Graph.PowerShell.Authentication.Core.TokenCache;
 using Microsoft.Graph.PowerShell.Authentication.Core.Utilities;
 using System;
+using System.Globalization;
 using System.Linq;
 using System.Net.Http;
 using System.Runtime.InteropServices;
@@ -270,10 +271,10 @@ namespace Microsoft.Graph.Authentication.Test.Helpers
             };
 
             // Act
-            var exception = await Assert.ThrowsAsync<Exception>(async () => await AuthenticationHelpers.GetTokenCredentialAsync(appOnlyAuthContext, default));
+            var exception = await Assert.ThrowsAsync<ArgumentException>(async () => await AuthenticationHelpers.GetTokenCredentialAsync(appOnlyAuthContext, default));
 
             //Assert
-            Assert.Equal($"Certificate with subject name '{dummyCertName}' was not found in CurrentUser and LocalMachine store or has expired.", exception.Message);
+            Assert.Equal(string.Format(CultureInfo.InvariantCulture, PowerShell.Authentication.Core.ErrorConstants.Message.CertificateNotFound, "subject name", dummyCertName), exception.Message);
         }
 
         [Fact]

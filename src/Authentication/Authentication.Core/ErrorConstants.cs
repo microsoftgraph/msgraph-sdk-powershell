@@ -27,6 +27,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core
             internal const string AuthenticationTimeout = "Authentication timed out after {0} seconds due to inactivity. Please try again.";
             internal const string InvalidUserProvidedToken = "The provided access token is invalid. Set a valid access token to `-{0}` parameter and try again.";
             internal const string ExpiredUserProvidedToken = "The provided access token has expired. Set a valid access token to `-{0}` parameter and try again.";
+            internal const string CertificateNotFound = "Certificate with {0} '{1}' was not found in certificate store or has expired.";
         }
     }
 }
