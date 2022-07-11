@@ -1,7 +1,7 @@
 ### Example 1: Get all riskDetections
 ```powershell
 Connect-MgGraph -Scopes "IdentityRiskEvent.Read.All"
-Get-Mgriskdetection -All|Format-Table UserDisplayName,RiskType,RiskLevel,DetectedDateTime
+Get-MgRiskDetection -All | Format-Table UserDisplayName, RiskType, RiskLevel, DetectedDateTime
 
 UserDisplayName RiskType                      RiskLevel DetectedDateTime
 --------------- --------                      --------- ----------------
@@ -20,7 +20,7 @@ This command returns a list of all users.
 ### Example 2: Get riskDetections by user displayname
 ```powershell
 Connect-MgGraph -Scopes "IdentityRiskEvent.Read.All"
-Get-Mgriskdetection -Filter "userdisplayname eq 'Jason Mayer'"|Format-Table UserDisplayName,RiskType,RiskLevel,DetectedDateTime
+Get-MgRiskDetection -Filter "UserDisplayname eq 'Jason Mayer'" | Format-Table UserDisplayName, RiskType, RiskLevel, DetectedDateTime
 
 UserDisplayName RiskType                      RiskLevel DetectedDateTime
 --------------- --------                      --------- ----------------
@@ -37,7 +37,7 @@ This command returns all risk detections for the specified user
 ### Example 3: Get riskDetections by risk type
 ```powershell
 Connect-MgGraph -Scopes "IdentityRiskEvent.Read.All"
-Get-Mgriskdetection -Filter "RiskType eq 'anonymizedIPAddress'" |Format-Table UserDisplayName,RiskType,RiskLevel,DetectedDateTime
+Get-MgRiskDetection -Filter "RiskType eq 'anonymizedIPAddress'" | Format-Table UserDisplayName, RiskType, RiskLevel, DetectedDateTime
 
 UserDisplayName RiskType            RiskLevel DetectedDateTime
 --------------- --------            --------- ----------------
@@ -51,7 +51,7 @@ This command returns all risk detections for the anonymizedIPAddress risk detect
 ### Example 4: Get all riskDetections for a particular user with high risk
 ```powershell
 Connect-MgGraph -Scopes "IdentityRiskEvent.Read.All"
-Get-Mgriskdetection -Filter "userdisplayname eq 'Jason Mayer' and Risklevel eq 'high'" |Format-Table UserDisplayName,RiskType,RiskLevel,DetectedDateTime
+Get-MgRiskDetection -Filter "UserDisplayName eq 'Jason Mayer' and Risklevel eq 'high'" | Format-Table UserDisplayName, RiskType, RiskLevel, DetectedDateTime
 
 UserDisplayName RiskType                      RiskLevel DetectedDateTime
 --------------- --------                      --------- ----------------
