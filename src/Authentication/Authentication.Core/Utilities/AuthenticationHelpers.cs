@@ -238,14 +238,19 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
 
             X509Certificate2 certificate;
             if (!string.IsNullOrWhiteSpace(authContext.CertificateSubjectName))
+            {
                 certificate = GetCertificateByName(authContext.CertificateSubjectName);
+                if (certificate is null)
+                    throw new Exception($"Certificate with subject name '{authContext.CertificateSubjectName}' was not found in CurrentUser and LocalMachine store or has expired.");
+            }
             else if (!string.IsNullOrWhiteSpace(authContext.CertificateThumbprint))
+            {
                 certificate = GetCertificateByThumbprint(authContext.CertificateThumbprint);
+                if (certificate is null)
+                    throw new Exception($"Certificate with thumbprint '{authContext.CertificateThumbprint}' was not found in CurrentUser and LocalMachine store or has expired.");
+            }
             else
                 certificate = authContext.Certificate;
-
-            if (certificate is null)
-                throw new ArgumentNullException(nameof(certificate), $"Certificate with the Specified ThumbPrint {authContext.CertificateThumbprint}, SubjectName {authContext.CertificateSubjectName}, or In-Memory was not found or has expired.");
 
             return certificate;
         }
@@ -260,21 +265,15 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
             X509Certificate2 xCertificate = null;
             using (X509Store xStore = new X509Store(StoreName.My, StoreLocation.CurrentUser))
             {
-                xStore.Open(OpenFlags.ReadOnly);
-
-                // Get unexpired certificates with the specified name.
-                X509Certificate2Collection unexpiredCerts = xStore.Certificates
-                    .Find(X509FindType.FindByTimeValid, DateTime.Now, validOnly: false)
-                    .Find(X509FindType.FindByThumbprint, certificateThumbprint, validOnly: false);
-
-                if (unexpiredCerts.Count < 1)
-                    throw new Exception($"{certificateThumbprint} certificate was not found or has expired.");
-
-                // Only return current cert.
-                xCertificate = unexpiredCerts
-                    .OfType<X509Certificate2>()
-                    .OrderByDescending(c => c.NotBefore)
-                    .FirstOrDefault();
+                xCertificate = FindUnexpiredCertificateByThumbprint(xStore, certificateThumbprint);
+            }
+            if (xCertificate is null)
+            {
+                // Fall back to local machine store.
+                using (X509Store xStore = new X509Store(StoreName.My, StoreLocation.LocalMachine))
+                {
+                    xCertificate = FindUnexpiredCertificateByThumbprint(xStore, certificateThumbprint);
+                }
             }
             return xCertificate;
         }
@@ -289,23 +288,53 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
             X509Certificate2 xCertificate = null;
             using (X509Store xStore = new X509Store(StoreName.My, StoreLocation.CurrentUser))
             {
-                xStore.Open(OpenFlags.ReadOnly);
-
-                // Get unexpired certificates with the specified name.
-                X509Certificate2Collection unexpiredCerts = xStore.Certificates
-                    .Find(X509FindType.FindByTimeValid, DateTime.Now, validOnly: false)
-                    .Find(X509FindType.FindBySubjectDistinguishedName, certificateName, validOnly: false);
-
-                if (unexpiredCerts.Count < 1)
-                    throw new Exception($"{certificateName} certificate was not found or has expired.");
-
-                // Only return current cert.
-                xCertificate = unexpiredCerts
-                    .OfType<X509Certificate2>()
-                    .OrderByDescending(c => c.NotBefore)
-                    .FirstOrDefault();
+                xCertificate = FindUnexpiredCertificateBySubject(xStore, certificateName);
+            }
+            if (xCertificate is null)
+            {
+                // Fall back to local machine store.
+                using (X509Store xStore = new X509Store(StoreName.My, StoreLocation.LocalMachine))
+                {
+                    xCertificate = FindUnexpiredCertificateBySubject(xStore, certificateName);
+                }
             }
             return xCertificate;
+        }
+
+        private static X509Certificate2 FindUnexpiredCertificateByThumbprint(X509Store xStore, string certificateThumbprint)
+        {
+            xStore.Open(OpenFlags.ReadOnly);
+
+            // Get unexpired certificates with the specified name.
+            X509Certificate2Collection unexpiredCerts = xStore.Certificates
+                .Find(X509FindType.FindByTimeValid, DateTime.Now, validOnly: false)
+                .Find(X509FindType.FindByThumbprint, certificateThumbprint, validOnly: false);
+
+            xStore.Close();
+
+            // Only return current cert.
+            return unexpiredCerts
+                .OfType<X509Certificate2>()
+                .OrderByDescending(c => c.NotBefore)
+                .FirstOrDefault();
+        }
+        
+        private static X509Certificate2 FindUnexpiredCertificateBySubject(X509Store xStore, string certificateName)
+        {
+            xStore.Open(OpenFlags.ReadOnly);
+
+            // Get unexpired certificates with the specified name.
+            X509Certificate2Collection unexpiredCerts = xStore.Certificates
+                .Find(X509FindType.FindByTimeValid, DateTime.Now, validOnly: false)
+                .Find(X509FindType.FindBySubjectDistinguishedName, certificateName, validOnly: false);
+
+            xStore.Close();
+
+            // Only return current cert.
+            return unexpiredCerts
+                .OfType<X509Certificate2>()
+                .OrderByDescending(c => c.NotBefore)
+                .FirstOrDefault();
         }
 
         /// <summary>
