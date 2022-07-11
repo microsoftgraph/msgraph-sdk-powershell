@@ -20,7 +20,7 @@ This command returns a list of all users.
 ### Example 2: Get riskDetections by user displayname
 ```powershell
 Connect-MgGraph -Scopes "IdentityRiskEvent.Read.All"
-Get-Mgriskdetection -All|Format-Table UserDisplayName,RiskType,RiskLevel,DetectedDateTime
+Get-Mgriskdetection -Filter "userdisplayname eq 'Jason Mayer'"|Format-Table UserDisplayName,RiskType,RiskLevel,DetectedDateTime
 
 UserDisplayName RiskType                      RiskLevel DetectedDateTime
 --------------- --------                      --------- ----------------
