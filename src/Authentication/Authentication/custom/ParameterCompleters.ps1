@@ -9,7 +9,7 @@ Set-StrictMode -Version 2
 $scopesParameterBlock = {
     param($commandName,
     $parameterName,
-    $wordToComplete,
+    $wordToCompleteScopes,
     $commandAst,
     $fakeBoundParameters
     )
@@ -18,8 +18,24 @@ $scopesParameterBlock = {
     $permissionsOAuthQuery = Permissions_GetOauthData (Permissions_GetPermissionsData)
     $permissions += $permissionsOAuthQuery.Name
     $permissions | Where-Object {
-        $_ -like "$wordToComplete*"
+        $_ -like "$wordToCompleteScopes*"
+    }
+}
+
+$environmentParameterBlock = {
+    param($commandName,
+    $parameterName,
+    $wordToCompleteEnvironment,
+    $commandAst,
+    $fakeBoundParameters
+    )
+
+    $permissions = @("Global", "Germany", "USGovDoD", "USGov", "China")
+    $permissions | Where-Object {
+        $_ -like "$wordToCompleteEnvironment*"
     }
 }
 
 Register-ArgumentCompleter -CommandName Connect-MgGraph -ParameterName Scopes -ScriptBlock $scopesParameterBlock
+
+Register-ArgumentCompleter -CommandName Connect-MgGraph -ParameterName Environment -ScriptBlock $environmentParameterBlock
