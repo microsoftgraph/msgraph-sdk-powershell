@@ -1,33 +1,48 @@
 ---
 external help file:
 Module Name: Microsoft.Graph.Users.Functions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.functions/invoke-mgmessageuserchat
+online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.functions/get-mgusercloudpcconnectivityhistory
 schema: 2.0.0
 ---
 
-# Invoke-MgMessageUserChat
+# Get-MgUserCloudPcConnectivityHistory
 
 ## SYNOPSIS
-Invoke function allMessages
+Invoke function getCloudPcConnectivityHistory
 
 ## SYNTAX
 
-### Messages (Default)
+### Get (Default)
 ```
-Invoke-MgMessageUserChat -UserId <String> [<CommonParameters>]
+Get-MgUserCloudPcConnectivityHistory -CloudPcId <String> -UserId <String> [<CommonParameters>]
 ```
 
-### MessagesViaIdentity
+### GetViaIdentity
 ```
-Invoke-MgMessageUserChat -InputObject <IUsersFunctionsIdentity> [<CommonParameters>]
+Get-MgUserCloudPcConnectivityHistory -InputObject <IUsersFunctionsIdentity> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Invoke function allMessages
+Invoke function getCloudPcConnectivityHistory
 
 ## EXAMPLES
 
 ## PARAMETERS
+
+### -CloudPcId
+key: id of cloudPC
+
+```yaml
+Type: System.String
+Parameter Sets: Get
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
 
 ### -InputObject
 Identity Parameter
@@ -35,7 +50,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IUsersFunctionsIdentity
-Parameter Sets: MessagesViaIdentity
+Parameter Sets: GetViaIdentity
 Aliases:
 
 Required: True
@@ -50,7 +65,7 @@ key: id of user
 
 ```yaml
 Type: System.String
-Parameter Sets: Messages
+Parameter Sets: Get
 Aliases:
 
 Required: True
@@ -69,7 +84,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphChatMessage1
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCloudPcConnectivityEvent
 
 ## NOTES
 
