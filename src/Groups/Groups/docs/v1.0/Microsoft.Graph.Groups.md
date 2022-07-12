@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Groups
-Module Guid: 066b8e3c-1aa7-4282-bb70-38fb3f204b59
+Module Guid: 0f4a4cbe-3a5f-4f2e-92e0-3f52438b2b7e
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.groups
 Help Version: 1.0.0.0
 Locale: en-US
@@ -169,6 +169,9 @@ Get extensions from groups
 
 ### [Get-MgGroupLifecyclePolicy](Get-MgGroupLifecyclePolicy.md)
 Get groupLifecyclePolicy
+
+### [Get-MgGroupLifecyclePolicyByGroup](Get-MgGroupLifecyclePolicyByGroup.md)
+Get groupLifecyclePolicies from groups
 
 ### [Get-MgGroupMember](Get-MgGroupMember.md)
 Get members from groups
