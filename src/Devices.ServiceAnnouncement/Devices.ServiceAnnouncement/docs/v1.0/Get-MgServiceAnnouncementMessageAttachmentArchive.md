@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgServiceAnnouncementMessageAttachmentArchive
 
 ## SYNOPSIS
-Get media content for the navigation property messages from admin
+Get attachmentsArchive for the navigation property messages from admin
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Get-MgServiceAnnouncementMessageAttachmentArchive -InputObject <IDevicesServiceA
 ```
 
 ## DESCRIPTION
-Get media content for the navigation property messages from admin
+Get attachmentsArchive for the navigation property messages from admin
 
 ## EXAMPLES
 
