@@ -149,27 +149,27 @@ To create the parameters described below, construct a hash table containing the 
 BODYPARAMETER <IPaths19M2JbiDevicemanagementImporteddeviceidentitiesMicrosoftGraphImportdeviceidentitylistPostRequestbodyContentApplicationJsonSchema>: .
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[ImportedDeviceIdentities <IMicrosoftGraphImportedDeviceIdentity[]>]`: 
-    - `[Id <String>]`: Read-only.
+    - `[Id <String>]`: 
     - `[CreatedDateTime <DateTime?>]`: Created Date Time of the device
     - `[Description <String>]`: The description of the device
-    - `[EnrollmentState <String>]`: enrollmentState
+    - `[EnrollmentState <EnrollmentState?>]`: enrollmentState
     - `[ImportedDeviceIdentifier <String>]`: Imported Device Identifier
-    - `[ImportedDeviceIdentityType <String>]`: importedDeviceIdentityType
+    - `[ImportedDeviceIdentityType <ImportedDeviceIdentityType?>]`: importedDeviceIdentityType
     - `[LastContactedDateTime <DateTime?>]`: Last Contacted Date Time of the device
     - `[LastModifiedDateTime <DateTime?>]`: Last Modified DateTime of the description
-    - `[Platform <String>]`: platform
+    - `[Platform <Platform?>]`: platform
   - `[OverwriteImportedDeviceIdentities <Boolean?>]`: 
 
 IMPORTEDDEVICEIDENTITIES <IMicrosoftGraphImportedDeviceIdentity[]>: .
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[CreatedDateTime <DateTime?>]`: Created Date Time of the device
   - `[Description <String>]`: The description of the device
-  - `[EnrollmentState <String>]`: enrollmentState
+  - `[EnrollmentState <EnrollmentState?>]`: enrollmentState
   - `[ImportedDeviceIdentifier <String>]`: Imported Device Identifier
-  - `[ImportedDeviceIdentityType <String>]`: importedDeviceIdentityType
+  - `[ImportedDeviceIdentityType <ImportedDeviceIdentityType?>]`: importedDeviceIdentityType
   - `[LastContactedDateTime <DateTime?>]`: Last Contacted Date Time of the device
   - `[LastModifiedDateTime <DateTime?>]`: Last Modified DateTime of the description
-  - `[Platform <String>]`: platform
+  - `[Platform <Platform?>]`: platform
 
 ## RELATED LINKS
 
