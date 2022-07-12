@@ -1,47 +1,47 @@
 ---
 external help file:
 Module Name: Microsoft.Graph.Users.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.actions/new-mgusertodolisttaskattachmentuploadsession
+online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.actions/reset-mguserauthenticationmethodpassword
 schema: 2.0.0
 ---
 
-# New-MgUserTodoListTaskAttachmentUploadSession
+# Reset-MgUserAuthenticationMethodPassword
 
 ## SYNOPSIS
-Invoke action createUploadSession
+Invoke action resetPassword
 
 ## SYNTAX
 
-### CreateExpanded (Default)
+### ResetExpanded1 (Default)
 ```
-New-MgUserTodoListTaskAttachmentUploadSession -TodoTaskId <String> -TodoTaskListId <String> -UserId <String>
- [-AdditionalProperties <Hashtable>] [-AttachmentInfo <IMicrosoftGraphAttachmentInfo>] [-Confirm] [-WhatIf]
+Reset-MgUserAuthenticationMethodPassword -AuthenticationMethodId <String> -UserId <String>
+ [-AdditionalProperties <Hashtable>] [-NewPassword <String>] [-RequireChangeOnNextSignIn] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
-### Create
+### Reset1
 ```
-New-MgUserTodoListTaskAttachmentUploadSession -TodoTaskId <String> -TodoTaskListId <String> -UserId <String>
- -BodyParameter <IPaths4768B9UsersUserIdTodoListsTodotasklistIdTasksTodotaskIdAttachmentsMicrosoftGraphCreateuploadsessionPostRequestbodyContentApplicationJsonSchema>
+Reset-MgUserAuthenticationMethodPassword -AuthenticationMethodId <String> -UserId <String>
+ -BodyParameter <IPaths1KjcdupUsersUserIdAuthenticationMethodsAuthenticationmethodIdMicrosoftGraphResetpasswordPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### CreateViaIdentity
+### ResetViaIdentity1
 ```
-New-MgUserTodoListTaskAttachmentUploadSession -InputObject <IUsersActionsIdentity>
- -BodyParameter <IPaths4768B9UsersUserIdTodoListsTodotasklistIdTasksTodotaskIdAttachmentsMicrosoftGraphCreateuploadsessionPostRequestbodyContentApplicationJsonSchema>
+Reset-MgUserAuthenticationMethodPassword -InputObject <IUsersActionsIdentity>
+ -BodyParameter <IPaths1KjcdupUsersUserIdAuthenticationMethodsAuthenticationmethodIdMicrosoftGraphResetpasswordPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### CreateViaIdentityExpanded
+### ResetViaIdentityExpanded1
 ```
-New-MgUserTodoListTaskAttachmentUploadSession -InputObject <IUsersActionsIdentity>
- [-AdditionalProperties <Hashtable>] [-AttachmentInfo <IMicrosoftGraphAttachmentInfo>] [-Confirm] [-WhatIf]
+Reset-MgUserAuthenticationMethodPassword -InputObject <IUsersActionsIdentity>
+ [-AdditionalProperties <Hashtable>] [-NewPassword <String>] [-RequireChangeOnNextSignIn] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Invoke action createUploadSession
+Invoke action resetPassword
 
 ## EXAMPLES
 
@@ -52,7 +52,7 @@ Additional Parameters
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Parameter Sets: ResetExpanded1, ResetViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -62,16 +62,15 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -AttachmentInfo
-attachmentInfo
-To construct, please use Get-Help -Online and see NOTES section for ATTACHMENTINFO properties and create a hash table.
+### -AuthenticationMethodId
+key: id of authenticationMethod
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAttachmentInfo
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Type: System.String
+Parameter Sets: Reset1, ResetExpanded1
 Aliases:
 
-Required: False
+Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -83,8 +82,8 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths4768B9UsersUserIdTodoListsTodotasklistIdTasksTodotaskIdAttachmentsMicrosoftGraphCreateuploadsessionPostRequestbodyContentApplicationJsonSchema
-Parameter Sets: Create, CreateViaIdentity
+Type: Microsoft.Graph.PowerShell.Models.IPaths1KjcdupUsersUserIdAuthenticationMethodsAuthenticationmethodIdMicrosoftGraphResetpasswordPostRequestbodyContentApplicationJsonSchema
+Parameter Sets: Reset1, ResetViaIdentity1
 Aliases:
 
 Required: True
@@ -100,7 +99,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
-Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
+Parameter Sets: ResetViaIdentity1, ResetViaIdentityExpanded1
 Aliases:
 
 Required: True
@@ -110,30 +109,30 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -TodoTaskId
-key: id of todoTask
+### -NewPassword
+.
 
 ```yaml
 Type: System.String
-Parameter Sets: Create, CreateExpanded
+Parameter Sets: ResetExpanded1, ResetViaIdentityExpanded1
 Aliases:
 
-Required: True
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -TodoTaskListId
-key: id of todoTaskList
+### -RequireChangeOnNextSignIn
+.
 
 ```yaml
-Type: System.String
-Parameter Sets: Create, CreateExpanded
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: ResetExpanded1, ResetViaIdentityExpanded1
 Aliases:
 
-Required: True
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -145,7 +144,7 @@ key: id of user
 
 ```yaml
 Type: System.String
-Parameter Sets: Create, CreateExpanded
+Parameter Sets: Reset1, ResetExpanded1
 Aliases:
 
 Required: True
@@ -191,13 +190,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPaths4768B9UsersUserIdTodoListsTodotasklistIdTasksTodotaskIdAttachmentsMicrosoftGraphCreateuploadsessionPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.PowerShell.Models.IPaths1KjcdupUsersUserIdAuthenticationMethodsAuthenticationmethodIdMicrosoftGraphResetpasswordPostRequestbodyContentApplicationJsonSchema
 
 ### Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUploadSession
+### System.String
 
 ## NOTES
 
@@ -208,21 +207,10 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-ATTACHMENTINFO <IMicrosoftGraphAttachmentInfo>: attachmentInfo
+BODYPARAMETER <IPaths1KjcdupUsersUserIdAuthenticationMethodsAuthenticationmethodIdMicrosoftGraphResetpasswordPostRequestbodyContentApplicationJsonSchema>: .
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[AttachmentType <String>]`: attachmentType
-  - `[ContentType <String>]`: The nature of the data in the attachment. Optional.
-  - `[Name <String>]`: The display name of the attachment. This can be a descriptive string and does not have to be the actual file name. Required.
-  - `[Size <Int64?>]`: The length of the attachment in bytes. Required.
-
-BODYPARAMETER <IPaths4768B9UsersUserIdTodoListsTodotasklistIdTasksTodotaskIdAttachmentsMicrosoftGraphCreateuploadsessionPostRequestbodyContentApplicationJsonSchema>: .
-  - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[AttachmentInfo <IMicrosoftGraphAttachmentInfo>]`: attachmentInfo
-    - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[AttachmentType <String>]`: attachmentType
-    - `[ContentType <String>]`: The nature of the data in the attachment. Optional.
-    - `[Name <String>]`: The display name of the attachment. This can be a descriptive string and does not have to be the actual file name. Required.
-    - `[Size <Int64?>]`: The length of the attachment in bytes. Required.
+  - `[NewPassword <String>]`: 
+  - `[RequireChangeOnNextSignIn <Boolean?>]`: 
 
 INPUTOBJECT <IUsersActionsIdentity>: Identity Parameter
   - `[AccessReviewInstanceId <String>]`: key: id of accessReviewInstance
