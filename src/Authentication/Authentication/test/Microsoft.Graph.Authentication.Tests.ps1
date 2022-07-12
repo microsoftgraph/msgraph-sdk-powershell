@@ -61,7 +61,8 @@ Describe "Microsoft.Graph.Authentication module" {
                 $ExpectedAliases = @(
                     "Connect-Graph",
                     "Disconnect-Graph",
-                    "Invoke-GraphRequest"
+                    "Invoke-GraphRequest",
+                    "Invoke-MgRestMethod"
                 )
 
                 $PSModuleInfo.ExportedAliases.Keys | Should -BeIn $ExpectedAliases
