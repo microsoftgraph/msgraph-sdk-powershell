@@ -77,7 +77,7 @@ Accept wildcard characters: False
 ```
 
 ### -ContentType
-.
+The MIME type.
 
 ```yaml
 Type: System.String
@@ -123,7 +123,8 @@ Accept wildcard characters: False
 ```
 
 ### -LastModifiedDateTime
-.
+The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time.
+For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 
 ```yaml
 Type: System.DateTime
@@ -138,7 +139,8 @@ Accept wildcard characters: False
 ```
 
 ### -Name
-.
+The display name of the attachment.
+This does not need to be the actual file name.
 
 ```yaml
 Type: System.String
@@ -153,7 +155,7 @@ Accept wildcard characters: False
 ```
 
 ### -Size
-.
+The length of the attachment in bytes.
 
 ```yaml
 Type: System.Int32
@@ -268,10 +270,10 @@ To create the parameters described below, construct a hash table containing the 
 BODYPARAMETER <IMicrosoftGraphAttachmentBase>: attachmentBase
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: 
-  - `[ContentType <String>]`: 
-  - `[LastModifiedDateTime <DateTime?>]`: 
-  - `[Name <String>]`: 
-  - `[Size <Int32?>]`: 
+  - `[ContentType <String>]`: The MIME type.
+  - `[LastModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+  - `[Name <String>]`: The display name of the attachment. This does not need to be the actual file name.
+  - `[Size <Int32?>]`: The length of the attachment in bytes.
 
 INPUTOBJECT <IUsersIdentity>: Identity Parameter
   - `[AttachmentBaseId <String>]`: key: id of attachmentBase
