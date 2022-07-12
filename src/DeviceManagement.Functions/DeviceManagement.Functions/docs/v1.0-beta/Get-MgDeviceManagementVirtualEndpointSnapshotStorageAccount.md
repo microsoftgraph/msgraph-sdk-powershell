@@ -1,50 +1,34 @@
 ---
 external help file:
 Module Name: Microsoft.Graph.DeviceManagement.Functions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.functions/get-mgdevicemanagementdeviceconfigurationomasettingplaintextvalue
+online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.functions/get-mgdevicemanagementvirtualendpointsnapshotstorageaccount
 schema: 2.0.0
 ---
 
-# Get-MgDeviceManagementDeviceConfigurationOmaSettingPlainTextValue
+# Get-MgDeviceManagementVirtualEndpointSnapshotStorageAccount
 
 ## SYNOPSIS
-Invoke function getOmaSettingPlainTextValue
+Invoke function getStorageAccounts
 
 ## SYNTAX
 
 ### Get (Default)
 ```
-Get-MgDeviceManagementDeviceConfigurationOmaSettingPlainTextValue -DeviceConfigurationId <String>
- -SecretReferenceValueId <String> [<CommonParameters>]
+Get-MgDeviceManagementVirtualEndpointSnapshotStorageAccount -SubscriptionId <String> [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgDeviceManagementDeviceConfigurationOmaSettingPlainTextValue
- -InputObject <IDeviceManagementFunctionsIdentity> [<CommonParameters>]
+Get-MgDeviceManagementVirtualEndpointSnapshotStorageAccount -InputObject <IDeviceManagementFunctionsIdentity>
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Invoke function getOmaSettingPlainTextValue
+Invoke function getStorageAccounts
 
 ## EXAMPLES
 
 ## PARAMETERS
-
-### -DeviceConfigurationId
-key: id of deviceConfiguration
-
-```yaml
-Type: System.String
-Parameter Sets: Get
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
 
 ### -InputObject
 Identity Parameter
@@ -62,8 +46,8 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -SecretReferenceValueId
-Usage: secretReferenceValueId='{secretReferenceValueId}'
+### -SubscriptionId
+Usage: subscriptionId='{subscriptionId}'
 
 ```yaml
 Type: System.String
@@ -86,7 +70,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### System.String
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCloudPcForensicStorageAccount
 
 ## NOTES
 

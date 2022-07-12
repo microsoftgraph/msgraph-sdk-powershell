@@ -1,23 +1,23 @@
 ---
 external help file:
 Module Name: Microsoft.Graph.DeviceManagement.Functions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.functions/get-mgdevicemanagementassignedroledetail
+online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.functions/get-mgdevicemanagementtenantattachrbacstate
 schema: 2.0.0
 ---
 
-# Get-MgDeviceManagementAssignedRoleDetail
+# Get-MgDeviceManagementTenantAttachRbacState
 
 ## SYNOPSIS
-Invoke function getAssignedRoleDetails
+Invoke function getState
 
 ## SYNTAX
 
 ```
-Get-MgDeviceManagementAssignedRoleDetail [<CommonParameters>]
+Get-MgDeviceManagementTenantAttachRbacState [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Invoke function getAssignedRoleDetails
+Invoke function getState
 
 ## EXAMPLES
 
@@ -30,7 +30,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceAndAppManagementAssignedRoleDetails
+### System.Boolean
 
 ## NOTES
 

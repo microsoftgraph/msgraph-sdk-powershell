@@ -1,23 +1,23 @@
 ---
 external help file:
 Module Name: Microsoft.Graph.DeviceManagement.Functions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.functions/get-mgdevicemanagementassignedroledetail
+online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.functions/get-mgdevicemanagementvirtualendpointsnapshotsubscription
 schema: 2.0.0
 ---
 
-# Get-MgDeviceManagementAssignedRoleDetail
+# Get-MgDeviceManagementVirtualEndpointSnapshotSubscription
 
 ## SYNOPSIS
-Invoke function getAssignedRoleDetails
+Invoke function getSubscriptions
 
 ## SYNTAX
 
 ```
-Get-MgDeviceManagementAssignedRoleDetail [<CommonParameters>]
+Get-MgDeviceManagementVirtualEndpointSnapshotSubscription [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Invoke function getAssignedRoleDetails
+Invoke function getSubscriptions
 
 ## EXAMPLES
 
@@ -30,7 +30,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceAndAppManagementAssignedRoleDetails
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCloudPcSubscription
 
 ## NOTES
 

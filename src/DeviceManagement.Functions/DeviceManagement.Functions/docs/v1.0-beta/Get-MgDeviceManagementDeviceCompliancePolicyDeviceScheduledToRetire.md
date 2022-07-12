@@ -1,23 +1,23 @@
 ---
 external help file:
 Module Name: Microsoft.Graph.DeviceManagement.Functions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.functions/get-mgdevicemanagementassignedroledetail
+online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.functions/get-mgdevicemanagementdevicecompliancepolicydevicescheduledtoretire
 schema: 2.0.0
 ---
 
-# Get-MgDeviceManagementAssignedRoleDetail
+# Get-MgDeviceManagementDeviceCompliancePolicyDeviceScheduledToRetire
 
 ## SYNOPSIS
-Invoke function getAssignedRoleDetails
+Invoke function getDevicesScheduledToRetire
 
 ## SYNTAX
 
 ```
-Get-MgDeviceManagementAssignedRoleDetail [<CommonParameters>]
+Get-MgDeviceManagementDeviceCompliancePolicyDeviceScheduledToRetire [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Invoke function getAssignedRoleDetails
+Invoke function getDevicesScheduledToRetire
 
 ## EXAMPLES
 
@@ -30,7 +30,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceAndAppManagementAssignedRoleDetails
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphRetireScheduledManagedDevice
 
 ## NOTES
 

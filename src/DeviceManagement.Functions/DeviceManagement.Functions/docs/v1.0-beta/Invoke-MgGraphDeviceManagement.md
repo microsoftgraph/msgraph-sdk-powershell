@@ -1,25 +1,25 @@
 ---
 external help file:
 Module Name: Microsoft.Graph.DeviceManagement.Functions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.functions/invoke-mgscopeddevicemanagement
+online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.functions/invoke-mggraphdevicemanagement
 schema: 2.0.0
 ---
 
-# Invoke-MgScopedDeviceManagement
+# Invoke-MgGraphDeviceManagement
 
 ## SYNOPSIS
 Invoke function scopedForResource
 
 ## SYNTAX
 
-### Scoped (Default)
+### Graph (Default)
 ```
-Invoke-MgScopedDeviceManagement -Resource <String> [<CommonParameters>]
+Invoke-MgGraphDeviceManagement -Resource <String> [<CommonParameters>]
 ```
 
-### ScopedViaIdentity
+### GraphViaIdentity
 ```
-Invoke-MgScopedDeviceManagement -InputObject <IDeviceManagementFunctionsIdentity> [<CommonParameters>]
+Invoke-MgGraphDeviceManagement -InputObject <IDeviceManagementFunctionsIdentity> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -35,7 +35,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementFunctionsIdentity
-Parameter Sets: ScopedViaIdentity
+Parameter Sets: GraphViaIdentity
 Aliases:
 
 Required: True
@@ -46,11 +46,11 @@ Accept wildcard characters: False
 ```
 
 ### -Resource
-Usage: resource={resource}
+Usage: resource='{resource}'
 
 ```yaml
 Type: System.String
-Parameter Sets: Scoped
+Parameter Sets: Graph
 Aliases:
 
 Required: True
@@ -81,41 +81,31 @@ To create the parameters described below, construct a hash table containing the 
 
 
 INPUTOBJECT <IDeviceManagementFunctionsIdentity>: Identity Parameter
-  - `[Category <String>]`: Usage: category={category}
+  - `[Category <String>]`: Usage: category='{category}'
   - `[CloudPcId <String>]`: key: id of cloudPC
   - `[DepOnboardingSettingId <String>]`: key: id of depOnboardingSetting
   - `[DeviceAndAppManagementAssignmentFilterId <String>]`: key: id of deviceAndAppManagementAssignmentFilter
-  - `[DeviceAndAppManagementRoleAssignmentId <String>]`: key: id of deviceAndAppManagementRoleAssignment
-  - `[DeviceComplianceScriptDeviceStateId <String>]`: key: id of deviceComplianceScriptDeviceState
-  - `[DeviceComplianceScriptId <String>]`: key: id of deviceComplianceScript
-  - `[DeviceConfigurationGroupAssignmentId <String>]`: key: id of deviceConfigurationGroupAssignment
   - `[DeviceConfigurationId <String>]`: key: id of deviceConfiguration
-  - `[DeviceCustomAttributeShellScriptId <String>]`: key: id of deviceCustomAttributeShellScript
-  - `[DeviceHealthScriptDeviceStateId <String>]`: key: id of deviceHealthScriptDeviceState
   - `[DeviceHealthScriptId <String>]`: key: id of deviceHealthScript
   - `[DeviceManagementIntentId <String>]`: key: id of deviceManagementIntent
-  - `[DeviceManagementScriptDeviceStateId <String>]`: key: id of deviceManagementScriptDeviceState
-  - `[DeviceManagementScriptId <String>]`: key: id of deviceManagementScript
-  - `[DeviceManagementScriptUserStateId <String>]`: key: id of deviceManagementScriptUserState
   - `[DeviceManagementTemplateId <String>]`: key: id of deviceManagementTemplate
   - `[DeviceManagementTemplateId1 <String>]`: key: id of deviceManagementTemplate
-  - `[DeviceShellScriptId <String>]`: key: id of deviceShellScript
-  - `[DomainName <String>]`: Usage: domainName={domainName}
+  - `[DomainName <String>]`: Usage: domainName='{domainName}'
   - `[EnrollmentProfileId <String>]`: key: id of enrollmentProfile
-  - `[EnrollmentType <String>]`: Usage: enrollmentType={enrollmentType}
-  - `[ExpiringBeforeDateTime <String>]`: Usage: expiringBeforeDateTime={expiringBeforeDateTime}
+  - `[EnrollmentType <String>]`: Usage: enrollmentType='{enrollmentType}'
+  - `[ExpiringBeforeDateTime <String>]`: Usage: expiringBeforeDateTime='{expiringBeforeDateTime}'
+  - `[Ids <String[]>]`: Usage: ids={ids}
   - `[ManagedDeviceId <String>]`: key: id of managedDevice
-  - `[ManagementConditionId <String>]`: key: id of managementCondition
-  - `[ManagementConditionStatementId <String>]`: key: id of managementConditionStatement
-  - `[Platform <String>]`: Usage: platform={platform}
-  - `[PolicyId <String>]`: Usage: policyId={policyId}
-  - `[Resource <String>]`: Usage: resource={resource}
+  - `[Platform <DevicePlatformType?>]`: Usage: platform='{platform}'
+  - `[PolicyId <String>]`: Usage: policyId='{policyId}'
+  - `[Resource <String>]`: Usage: resource='{resource}'
   - `[ResourceOperationId <String>]`: key: id of resourceOperation
-  - `[Scope <String>]`: Usage: scope={scope}
-  - `[SecretReferenceValueId <String>]`: Usage: secretReferenceValueId={secretReferenceValueId}
-  - `[SummarizeBy <String>]`: Usage: summarizeBy={summarizeBy}
-  - `[TemplateId <String>]`: Usage: templateId={templateId}
-  - `[Userid <String>]`: Usage: userid={userid}
+  - `[Scope <String>]`: Usage: scope='{scope}'
+  - `[SecretReferenceValueId <String>]`: Usage: secretReferenceValueId='{secretReferenceValueId}'
+  - `[SubscriptionId <String>]`: Usage: subscriptionId='{subscriptionId}'
+  - `[SummarizeBy <String>]`: Usage: summarizeBy='{summarizeBy}'
+  - `[TemplateId <String>]`: Usage: templateId='{templateId}'
+  - `[Userid <String>]`: Usage: userid='{userid}'
 
 ## RELATED LINKS
 

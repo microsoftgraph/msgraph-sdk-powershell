@@ -1,50 +1,34 @@
 ---
 external help file:
 Module Name: Microsoft.Graph.DeviceManagement.Functions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.functions/get-mgdevicemanagementdeviceconfigurationomasettingplaintextvalue
+online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.functions/get-mgdevicemanagementcomanageddevicecloudpcreviewstatus
 schema: 2.0.0
 ---
 
-# Get-MgDeviceManagementDeviceConfigurationOmaSettingPlainTextValue
+# Get-MgDeviceManagementComanagedDeviceCloudPcReviewStatus
 
 ## SYNOPSIS
-Invoke function getOmaSettingPlainTextValue
+Invoke function getCloudPcReviewStatus
 
 ## SYNTAX
 
 ### Get (Default)
 ```
-Get-MgDeviceManagementDeviceConfigurationOmaSettingPlainTextValue -DeviceConfigurationId <String>
- -SecretReferenceValueId <String> [<CommonParameters>]
+Get-MgDeviceManagementComanagedDeviceCloudPcReviewStatus -ManagedDeviceId <String> [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgDeviceManagementDeviceConfigurationOmaSettingPlainTextValue
- -InputObject <IDeviceManagementFunctionsIdentity> [<CommonParameters>]
+Get-MgDeviceManagementComanagedDeviceCloudPcReviewStatus -InputObject <IDeviceManagementFunctionsIdentity>
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Invoke function getOmaSettingPlainTextValue
+Invoke function getCloudPcReviewStatus
 
 ## EXAMPLES
 
 ## PARAMETERS
-
-### -DeviceConfigurationId
-key: id of deviceConfiguration
-
-```yaml
-Type: System.String
-Parameter Sets: Get
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
 
 ### -InputObject
 Identity Parameter
@@ -62,8 +46,8 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -SecretReferenceValueId
-Usage: secretReferenceValueId='{secretReferenceValueId}'
+### -ManagedDeviceId
+key: id of managedDevice
 
 ```yaml
 Type: System.String
@@ -86,7 +70,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### System.String
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCloudPcReviewStatus
 
 ## NOTES
 
