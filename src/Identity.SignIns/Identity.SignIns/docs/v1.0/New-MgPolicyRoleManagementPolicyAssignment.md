@@ -97,6 +97,7 @@ Accept wildcard characters: False
 
 ### -PolicyId
 The id of the policy.
+Inherited from entity.
 
 ```yaml
 Type: System.String
@@ -111,8 +112,9 @@ Accept wildcard characters: False
 ```
 
 ### -RoleDefinitionId
-The id of the role definition where the policy applies.
+The identifier of the role definition object where the policy applies.
 If not specified, the policy applies to all roles.
+Supports $filter (eq).
 
 ```yaml
 Type: System.String
@@ -127,9 +129,9 @@ Accept wildcard characters: False
 ```
 
 ### -ScopeId
-The id of the scope where the policy is assigned.
-E.g.
-'/', groupId, etc.
+The identifier of the scope where the policy is assigned.
+Can be / for the tenant or a group ID.
+Required.
 
 ```yaml
 Type: System.String
@@ -145,7 +147,8 @@ Accept wildcard characters: False
 
 ### -ScopeType
 The type of the scope where the policy is assigned.
-One of Directory, DirectoryRole, Group.
+One of Directory, DirectoryRole.
+Required.
 
 ```yaml
 Type: System.String
@@ -239,10 +242,10 @@ BODYPARAMETER <IMicrosoftGraphUnifiedRoleManagementPolicyAssignment>: unifiedRol
     - `[Rules <IMicrosoftGraphUnifiedRoleManagementPolicyRule[]>]`: The collection of rules like approval rules and expiration rules. Supports $expand.
     - `[ScopeId <String>]`: The identifier of the scope where the policy is created. Can be / for the tenant or a group ID. Required.
     - `[ScopeType <String>]`: The type of the scope where the policy is created. One of Directory, DirectoryRole. Required.
-  - `[PolicyId <String>]`: The id of the policy.
-  - `[RoleDefinitionId <String>]`: The id of the role definition where the policy applies. If not specified, the policy applies to all roles.
-  - `[ScopeId <String>]`: The id of the scope where the policy is assigned. E.g. '/', groupId, etc.
-  - `[ScopeType <String>]`: The type of the scope where the policy is assigned. One of Directory, DirectoryRole, Group.
+  - `[PolicyId <String>]`: The id of the policy. Inherited from entity.
+  - `[RoleDefinitionId <String>]`: The identifier of the role definition object where the policy applies. If not specified, the policy applies to all roles. Supports $filter (eq).
+  - `[ScopeId <String>]`: The identifier of the scope where the policy is assigned.  Can be / for the tenant or a group ID. Required.
+  - `[ScopeType <String>]`: The type of the scope where the policy is assigned. One of Directory, DirectoryRole. Required.
 
 POLICY <IMicrosoftGraphUnifiedRoleManagementPolicy>: unifiedRoleManagementPolicy
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
