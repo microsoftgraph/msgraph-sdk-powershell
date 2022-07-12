@@ -8,6 +8,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
     using System.Management.Automation;
     [Cmdlet(VerbsCommunications.Disconnect, "MgGraph")]
     [Alias("Disconnect-Graph")]
+    [OutputType(typeof(IAuthContext))]
     public class DisconnectMgGraph : PSCmdlet
     {
         protected override void BeginProcessing()
@@ -30,6 +31,8 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
             } else
             {
                 Authenticator.LogOut(GraphSession.Instance.AuthContext);
+                WriteObject(GraphSession.Instance.AuthContext);
+
                 GraphSession.Instance.AuthContext = null;
                 GraphSession.Instance.GraphHttpClient = null;
             }
