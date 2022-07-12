@@ -4,7 +4,6 @@
 namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
 {
     using Microsoft.Graph.Authentication.Core;
-    using Microsoft.Graph.PowerShell.Authentication.Helpers;
     using System;
     using System.Management.Automation;
     [Cmdlet(VerbsCommunications.Disconnect, "MgGraph")]
@@ -25,16 +24,15 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
         {
             base.ProcessRecord();
 
-            IAuthContext authContext = GraphSession.Instance.AuthContext;
-
-            if (authContext == null)
-                ThrowTerminatingError(
-                    new ErrorRecord(new Exception("No application to sign out from."), Guid.NewGuid().ToString(), ErrorCategory.InvalidArgument, null));
-
-            Authenticator.LogOut(authContext);
-
-            GraphSession.Instance.AuthContext = null;
-            GraphSession.Instance.GraphHttpClient = null;
+            if (GraphSession.Instance.AuthContext == null)
+            {
+                WriteError(new ErrorRecord(new ArgumentException("No application to sign out from."), string.Empty, ErrorCategory.CloseError, null));
+            } else
+            {
+                Authenticator.LogOut(GraphSession.Instance.AuthContext);
+                GraphSession.Instance.AuthContext = null;
+                GraphSession.Instance.GraphHttpClient = null;
+            }
         }
 
         protected override void StopProcessing()
