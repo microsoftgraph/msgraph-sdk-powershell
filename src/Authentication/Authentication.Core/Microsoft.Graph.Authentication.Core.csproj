@@ -3,26 +3,26 @@
   <PropertyGroup>
     <TargetFrameworks>netstandard2.0;net6.0;net472</TargetFrameworks>
     <RootNamespace>Microsoft.Graph.PowerShell.Authentication.Core</RootNamespace>
-    <Version>1.9.5</Version>
+    <Version>1.10.0</Version>
   </PropertyGroup>
   <PropertyGroup>
     <EnableNETAnalyzers>true</EnableNETAnalyzers>
     <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Azure.Core" Version="1.24.0" />
+    <PackageReference Include="Azure.Core" Version="1.25.0" />
     <PackageReference Include="Azure.Identity" Version="1.6.0" />
-    <PackageReference Include="Microsoft.Graph.Core" Version="2.0.8" />
-    <PackageReference Include="Microsoft.Identity.Client" Version="4.43.1" />
-    <PackageReference Include="Microsoft.Identity.Client.Extensions.Msal" Version="2.20.0" />
-    <PackageReference Include="Microsoft.IdentityModel.JsonWebTokens" Version="6.17.0" />
-    <PackageReference Include="Microsoft.IdentityModel.Logging" Version="6.17.0" />
-    <PackageReference Include="Microsoft.IdentityModel.Tokens" Version="6.17.0" />
-    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.17.0" />
+    <PackageReference Include="Microsoft.Graph.Core" Version="2.0.9" />
+    <PackageReference Include="Microsoft.Identity.Client" Version="4.45.0" />
+    <PackageReference Include="Microsoft.Identity.Client.Extensions.Msal" Version="2.22.0" />
+    <PackageReference Include="Microsoft.IdentityModel.JsonWebTokens" Version="6.21.0" />
+    <PackageReference Include="Microsoft.IdentityModel.Logging" Version="6.21.0" />
+    <PackageReference Include="Microsoft.IdentityModel.Tokens" Version="6.21.0" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.21.0" />
     <!--Always ensure this version matches the versions of System.Security.Cryptography.* dependencies of Microsoft.Identity.Client when targeting PowerShell 6 and below.-->
     <PackageReference Include="System.Security.Cryptography.ProtectedData" Version="6.0.0" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
-    <PackageReference Include="System.Text.Json" Version="6.0.3" />
+    <PackageReference Include="System.Text.Json" Version="6.0.5" />
     <PackageReference Include="System.Threading.Tasks.Extensions" Version="4.5.4" />
   </ItemGroup>
   <Target Name="CopyFiles" AfterTargets="Build">
