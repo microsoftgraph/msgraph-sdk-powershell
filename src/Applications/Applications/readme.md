@@ -51,6 +51,9 @@ directive:
       verb: Get
       subject: (Application|ServicePrincipal)AvailableExtensionProperty
     remove: true
+  - where:
+      subject: (ServicePrincipal)FederatedIdentityCredential.*
+    remove: true
 # Alias then rename cmdlets to avoid breaking change.
   - where:
       subject: ^((ServicePrincipal|Application)(Member|TransitiveMember|CreatedOnBehalf))Of$
