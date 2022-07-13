@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgServiceAnnouncementMessageAttachment
 
 ## SYNOPSIS
-A collection of serviceAnnouncementAttachments.
+Delete navigation property attachments for admin
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Remove-MgServiceAnnouncementMessageAttachment -InputObject <IDevicesServiceAnnou
 ```
 
 ## DESCRIPTION
-A collection of serviceAnnouncementAttachments.
+Delete navigation property attachments for admin
 
 ## EXAMPLES
 

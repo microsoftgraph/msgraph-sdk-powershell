@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.DeviceManagement.Administration
-Module Guid: b64af97a-c18f-45fe-bc12-694c4cce1bba
+Module Guid: f2ef4087-4971-4dd9-83ad-8ea38a8a95b0
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.administration
 Help Version: 1.0.0.0
 Locale: en-US
@@ -236,6 +236,9 @@ Get cloudPCs from deviceManagement
 ### [Get-MgDeviceManagementVirtualEndpointDeviceImage](Get-MgDeviceManagementVirtualEndpointDeviceImage.md)
 Get deviceImages from deviceManagement
 
+### [Get-MgDeviceManagementVirtualEndpointExternalPartnerSetting](Get-MgDeviceManagementVirtualEndpointExternalPartnerSetting.md)
+Get externalPartnerSettings from deviceManagement
+
 ### [Get-MgDeviceManagementVirtualEndpointGalleryImage](Get-MgDeviceManagementVirtualEndpointGalleryImage.md)
 Get galleryImages from deviceManagement
 
@@ -391,6 +394,9 @@ Create new navigation property to userPfxCertificates for deviceManagement
 
 ### [New-MgDeviceManagementVirtualEndpointDeviceImage](New-MgDeviceManagementVirtualEndpointDeviceImage.md)
 Create new navigation property to deviceImages for deviceManagement
+
+### [New-MgDeviceManagementVirtualEndpointExternalPartnerSetting](New-MgDeviceManagementVirtualEndpointExternalPartnerSetting.md)
+Create new navigation property to externalPartnerSettings for deviceManagement
 
 ### [New-MgDeviceManagementVirtualEndpointGalleryImage](New-MgDeviceManagementVirtualEndpointGalleryImage.md)
 Create new navigation property to galleryImages for deviceManagement
@@ -562,6 +568,9 @@ Delete navigation property userPfxCertificates for deviceManagement
 
 ### [Remove-MgDeviceManagementVirtualEndpointDeviceImage](Remove-MgDeviceManagementVirtualEndpointDeviceImage.md)
 Delete navigation property deviceImages for deviceManagement
+
+### [Remove-MgDeviceManagementVirtualEndpointExternalPartnerSetting](Remove-MgDeviceManagementVirtualEndpointExternalPartnerSetting.md)
+Delete navigation property externalPartnerSettings for deviceManagement
 
 ### [Remove-MgDeviceManagementVirtualEndpointGalleryImage](Remove-MgDeviceManagementVirtualEndpointGalleryImage.md)
 Delete navigation property galleryImages for deviceManagement
@@ -739,6 +748,9 @@ Update the navigation property userPfxCertificates in deviceManagement
 
 ### [Update-MgDeviceManagementVirtualEndpointDeviceImage](Update-MgDeviceManagementVirtualEndpointDeviceImage.md)
 Update the navigation property deviceImages in deviceManagement
+
+### [Update-MgDeviceManagementVirtualEndpointExternalPartnerSetting](Update-MgDeviceManagementVirtualEndpointExternalPartnerSetting.md)
+Update the navigation property externalPartnerSettings in deviceManagement
 
 ### [Update-MgDeviceManagementVirtualEndpointGalleryImage](Update-MgDeviceManagementVirtualEndpointGalleryImage.md)
 Update the navigation property galleryImages in deviceManagement

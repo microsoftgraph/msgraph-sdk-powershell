@@ -8,8 +8,7 @@ schema: 2.0.0
 # Remove-MgServiceAnnouncementIssue
 
 ## SYNOPSIS
-A collection of service issues for tenant.
-This property is a contained navigation property, it is nullable and readonly.
+Delete navigation property issues for admin
 
 ## SYNTAX
 
@@ -26,8 +25,7 @@ Remove-MgServiceAnnouncementIssue -InputObject <IDevicesServiceAnnouncementIdent
 ```
 
 ## DESCRIPTION
-A collection of service issues for tenant.
-This property is a contained navigation property, it is nullable and readonly.
+Delete navigation property issues for admin
 
 ## EXAMPLES
 
