@@ -8,9 +8,7 @@ schema: 2.0.0
 # Enable-MgDeviceManagementUnlicensedAdminstrator
 
 ## SYNOPSIS
-Upon enabling, users assigned as administrators via Role Assignment Memberships will no longer require an assigned Intune license.
-You are limited to 350 unlicensed direct members for each AAD security group in a role assignment, but you can assign multiple AAD security groups to a role if you need to support more than 350 unlicensed administrators.
-Licensed administrators will continue to function as-is in that transitive memberships apply and are not subject to the 350 member limit.
+Invoke action enableUnlicensedAdminstrators
 
 ## SYNTAX
 
@@ -19,9 +17,7 @@ Enable-MgDeviceManagementUnlicensedAdminstrator [-PassThru] [-Confirm] [-WhatIf]
 ```
 
 ## DESCRIPTION
-Upon enabling, users assigned as administrators via Role Assignment Memberships will no longer require an assigned Intune license.
-You are limited to 350 unlicensed direct members for each AAD security group in a role assignment, but you can assign multiple AAD security groups to a role if you need to support more than 350 unlicensed administrators.
-Licensed administrators will continue to function as-is in that transitive memberships apply and are not subject to the 350 member limit.
+Invoke action enableUnlicensedAdminstrators
 
 ## EXAMPLES
 

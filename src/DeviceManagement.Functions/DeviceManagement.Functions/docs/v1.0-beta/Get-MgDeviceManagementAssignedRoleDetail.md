@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceManagementAssignedRoleDetail
 
 ## SYNOPSIS
-Retrieves the assigned role definitions and role assignments of the currently authenticated user.
+Invoke function getAssignedRoleDetails
 
 ## SYNTAX
 
@@ -17,7 +17,7 @@ Get-MgDeviceManagementAssignedRoleDetail [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Retrieves the assigned role definitions and role assignments of the currently authenticated user.
+Invoke function getAssignedRoleDetails
 
 ## EXAMPLES
 

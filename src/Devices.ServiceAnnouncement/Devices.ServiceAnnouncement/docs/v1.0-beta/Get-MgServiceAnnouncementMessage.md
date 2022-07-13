@@ -8,8 +8,7 @@ schema: 2.0.0
 # Get-MgServiceAnnouncementMessage
 
 ## SYNOPSIS
-A collection of service messages for tenant.
-This property is a contained navigation property, it is nullable and readonly.
+Get messages from admin
 
 ## SYNTAX
 
@@ -33,8 +32,7 @@ Get-MgServiceAnnouncementMessage -InputObject <IDevicesServiceAnnouncementIdenti
 ```
 
 ## DESCRIPTION
-A collection of service messages for tenant.
-This property is a contained navigation property, it is nullable and readonly.
+Get messages from admin
 
 ## EXAMPLES
 

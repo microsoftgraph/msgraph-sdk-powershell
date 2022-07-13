@@ -1326,6 +1326,38 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
+  '/deviceManagement/virtualEndpoint/cloudPCs/{cloudPC-id}/microsoft.graph.getCloudPcConnectivityHistory()':
+    get:
+      tags:
+        - deviceManagement.Functions
+      summary: Invoke function getCloudPcConnectivityHistory
+      operationId: deviceManagement.virtualEndpoint.cloudPCs_getCloudPcConnectivityHistory
+      parameters:
+        - name: cloudPC-id
+          in: path
+          description: 'key: id of cloudPC'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: cloudPC
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of cloudPC
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.cloudPcConnectivityEvent'
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
   '/deviceManagement/virtualEndpoint/cloudPCs/{cloudPC-id}/microsoft.graph.getCloudPcLaunchInfo()':
     get:
       tags:
@@ -2435,6 +2467,26 @@ components:
           additionalProperties:
             type: object
           description: The user experience analytics resource performance entity.
+    microsoft.graph.cloudPcConnectivityEvent:
+      title: cloudPcConnectivityEvent
+      type: object
+      properties:
+        eventDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          format: date-time
+        eventName:
+          type: string
+          nullable: true
+        eventResult:
+          $ref: '#/components/schemas/microsoft.graph.cloudPcConnectivityEventResult'
+        eventType:
+          $ref: '#/components/schemas/microsoft.graph.cloudPcConnectivityEventType'
+        message:
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.cloudPcLaunchInfo:
       title: cloudPcLaunchInfo
       type: object
@@ -3060,6 +3112,23 @@ components:
           additionalProperties:
             type: object
           description: The user experience analytics metric contains the score and units of a metric of a user experience anlaytics category.
+    microsoft.graph.cloudPcConnectivityEventResult:
+      title: cloudPcConnectivityEventResult
+      enum:
+        - unknown
+        - success
+        - failure
+        - unknownFutureValue
+      type: string
+    microsoft.graph.cloudPcConnectivityEventType:
+      title: cloudPcConnectivityEventType
+      enum:
+        - unknown
+        - userConnection
+        - userTroubleshooting
+        - deviceHealthCheck
+        - unknownFutureValue
+      type: string
     microsoft.graph.ODataErrors.ODataError:
       required:
         - error
@@ -3075,10 +3144,10 @@ components:
       properties:
         name:
           type: string
-          description: Name for this key-value pair
+          description: 'Name for this key-value pair. Possible names are: AdditionalWSFedEndpointCheckResult,  AllowedAuthenticationClassReferencesCheckResult, AlwaysRequireAuthenticationCheckResult,   AutoUpdateEnabledCheckResult, ClaimsProviderNameCheckResult, EncryptClaimsCheckResult,  EncryptedNameIdRequiredCheckResult, MonitoringEnabledCheckResult,NotBeforeSkewCheckResult,  RequestMFAFromClaimsProvidersCheckResult, SignedSamlRequestsRequiredCheckResult, AdditionalAuthenticationRulesCheckResult, TokenLifetimeCheckResult,  DelegationAuthorizationRulesCheckResult, IssuanceAuthorizationRulesCheckResult, IssuanceTransformRulesCheckResult.'
         value:
           type: string
-          description: Value for this key-value pair
+          description: 'Value for this key-value pair. Possible result values are 0 (when the validation check passed), 1 (when the validation check failed), or 2 (when the validation check is a warning).'
           nullable: true
       additionalProperties:
         type: object
