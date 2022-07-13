@@ -1827,6 +1827,8 @@ paths:
               operationId: deviceManagement.reports.getHistoricalReport
             getMalwareSummaryReport:
               operationId: deviceManagement.reports.getMalwareSummaryReport
+            getNoncompliantDevicesAndSettingsReport:
+              operationId: deviceManagement.reports.getNoncompliantDevicesAndSettingsReport
             getPolicyNonComplianceMetadata:
               operationId: deviceManagement.reports.getPolicyNonComplianceMetadata
             getPolicyNonComplianceReport:
@@ -11518,10 +11520,10 @@ components:
       properties:
         name:
           type: string
-          description: Name for this key-value pair
+          description: 'Name for this key-value pair. Possible names are: AdditionalWSFedEndpointCheckResult,  AllowedAuthenticationClassReferencesCheckResult, AlwaysRequireAuthenticationCheckResult,   AutoUpdateEnabledCheckResult, ClaimsProviderNameCheckResult, EncryptClaimsCheckResult,  EncryptedNameIdRequiredCheckResult, MonitoringEnabledCheckResult,NotBeforeSkewCheckResult,  RequestMFAFromClaimsProvidersCheckResult, SignedSamlRequestsRequiredCheckResult, AdditionalAuthenticationRulesCheckResult, TokenLifetimeCheckResult,  DelegationAuthorizationRulesCheckResult, IssuanceAuthorizationRulesCheckResult, IssuanceTransformRulesCheckResult.'
         value:
           type: string
-          description: Value for this key-value pair
+          description: 'Value for this key-value pair. Possible result values are 0 (when the validation check passed), 1 (when the validation check failed), or 2 (when the validation check is a warning).'
           nullable: true
       additionalProperties:
         type: object
