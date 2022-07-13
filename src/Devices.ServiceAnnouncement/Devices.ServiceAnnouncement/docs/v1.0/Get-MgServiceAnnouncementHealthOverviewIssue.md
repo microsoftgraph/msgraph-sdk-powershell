@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgServiceAnnouncementHealthOverviewIssue
 
 ## SYNOPSIS
-A collection of issues that happened on the service, with detailed information for each issue.
+Get issues from admin
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgServiceAnnouncementHealthOverviewIssue -InputObject <IDevicesServiceAnnoun
 ```
 
 ## DESCRIPTION
-A collection of issues that happened on the service, with detailed information for each issue.
+Get issues from admin
 
 ## EXAMPLES
 

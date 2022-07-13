@@ -14,7 +14,7 @@ Invoke action executeAction
 
 ### ExecuteExpanded (Default)
 ```
-Invoke-MgExecuteDeviceManagementComanagedDeviceAction [-ActionName <String>]
+Invoke-MgExecuteDeviceManagementComanagedDeviceAction [-ActionName <ManagedDeviceRemoteAction>]
  [-AdditionalProperties <Hashtable>] [-CarrierUrl <String>] [-DeprovisionReason <String>]
  [-DeviceIds <String[]>] [-DeviceName <String>] [-KeepEnrollmentData] [-KeepUserData]
  [-NotificationBody <String>] [-NotificationTitle <String>] [-OrganizationalUnitPath <String>]
@@ -39,7 +39,7 @@ Invoke action executeAction
 managedDeviceRemoteAction
 
 ```yaml
-Type: System.String
+Type: Microsoft.Graph.PowerShell.Support.ManagedDeviceRemoteAction
 Parameter Sets: ExecuteExpanded
 Aliases:
 
@@ -284,7 +284,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IPaths5Wfb68DevicemanagementComanageddevicesMicrosoftGraphExecuteactionPostRequestbodyContentApplicationJsonSchema>: .
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[ActionName <String>]`: managedDeviceRemoteAction
+  - `[ActionName <ManagedDeviceRemoteAction?>]`: managedDeviceRemoteAction
   - `[CarrierUrl <String>]`: 
   - `[DeprovisionReason <String>]`: 
   - `[DeviceIds <String[]>]`: 

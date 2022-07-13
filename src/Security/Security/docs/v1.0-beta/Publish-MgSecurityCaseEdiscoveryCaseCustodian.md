@@ -12,13 +12,13 @@ Invoke action release
 
 ## SYNTAX
 
-### Release (Default)
+### Release1 (Default)
 ```
 Publish-MgSecurityCaseEdiscoveryCaseCustodian -EdiscoveryCaseId <String> -EdiscoveryCustodianId <String>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### ReleaseViaIdentity
+### ReleaseViaIdentity1
 ```
 Publish-MgSecurityCaseEdiscoveryCaseCustodian -InputObject <ISecurityIdentity> [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
@@ -36,7 +36,7 @@ key: id of ediscoveryCase
 
 ```yaml
 Type: System.String
-Parameter Sets: Release
+Parameter Sets: Release1
 Aliases:
 
 Required: True
@@ -51,7 +51,7 @@ key: id of ediscoveryCustodian
 
 ```yaml
 Type: System.String
-Parameter Sets: Release
+Parameter Sets: Release1
 Aliases:
 
 Required: True
@@ -67,7 +67,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.ISecurityIdentity
-Parameter Sets: ReleaseViaIdentity
+Parameter Sets: ReleaseViaIdentity1
 Aliases:
 
 Required: True
@@ -164,6 +164,7 @@ INPUTOBJECT <ISecurityIdentity>: Identity Parameter
   - `[FileSecurityProfileId <String>]`: key: id of fileSecurityProfile
   - `[HostSecurityProfileId <String>]`: key: id of hostSecurityProfile
   - `[IPSecurityProfileId <String>]`: key: id of ipSecurityProfile
+  - `[IncidentId <String>]`: key: id of incident
   - `[ProviderTenantSettingId <String>]`: key: id of providerTenantSetting
   - `[RetentionEventId <String>]`: key: id of retentionEvent
   - `[RetentionEventTypeId <String>]`: key: id of retentionEventType
