@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgSearchAcronym
 
 ## SYNOPSIS
-Administrative answer in Microsoft Search results to define common acronyms in a organization.
+Create new navigation property to acronyms for search
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ New-MgSearchAcronym -BodyParameter <IMicrosoftGraphSearchAcronym> [-Confirm] [-W
 ```
 
 ## DESCRIPTION
-Administrative answer in Microsoft Search results to define common acronyms in a organization.
+Create new navigation property to acronyms for search
 
 ## EXAMPLES
 
@@ -93,7 +93,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -250,7 +250,7 @@ BODYPARAMETER <IMicrosoftGraphSearchAcronym>: acronym
     - `[User <IMicrosoftGraphSearchIdentity>]`: identity
   - `[LastModifiedDateTime <DateTime?>]`: Timestamp of when the search answer is created or edited. Read-only.
   - `[WebUrl <String>]`: Search answer URL link. When users click this search answer in search results, they will go to this URL.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[StandsFor <String>]`: What the acronym stands for.
   - `[State <String>]`: answerState
 

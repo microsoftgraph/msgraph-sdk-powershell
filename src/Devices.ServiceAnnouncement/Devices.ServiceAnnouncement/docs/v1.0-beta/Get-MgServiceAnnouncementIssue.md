@@ -8,8 +8,7 @@ schema: 2.0.0
 # Get-MgServiceAnnouncementIssue
 
 ## SYNOPSIS
-A collection of service issues for tenant.
-This property is a contained navigation property, it is nullable and readonly.
+Get issues from admin
 
 ## SYNTAX
 
@@ -33,8 +32,7 @@ Get-MgServiceAnnouncementIssue -InputObject <IDevicesServiceAnnouncementIdentity
 ```
 
 ## DESCRIPTION
-A collection of service issues for tenant.
-This property is a contained navigation property, it is nullable and readonly.
+Get issues from admin
 
 ## EXAMPLES
 

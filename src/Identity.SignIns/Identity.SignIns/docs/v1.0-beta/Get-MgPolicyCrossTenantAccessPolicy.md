@@ -60,7 +60,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCrossTenantAccessPolicy
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCrossTenantAccessPolicy1
 
 ## NOTES
 

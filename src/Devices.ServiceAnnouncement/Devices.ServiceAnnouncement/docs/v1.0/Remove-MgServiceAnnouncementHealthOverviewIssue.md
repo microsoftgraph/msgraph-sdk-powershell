@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgServiceAnnouncementHealthOverviewIssue
 
 ## SYNOPSIS
-A collection of issues that happened on the service, with detailed information for each issue.
+Delete navigation property issues for admin
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Remove-MgServiceAnnouncementHealthOverviewIssue -InputObject <IDevicesServiceAnn
 ```
 
 ## DESCRIPTION
-A collection of issues that happened on the service, with detailed information for each issue.
+Delete navigation property issues for admin
 
 ## EXAMPLES
 

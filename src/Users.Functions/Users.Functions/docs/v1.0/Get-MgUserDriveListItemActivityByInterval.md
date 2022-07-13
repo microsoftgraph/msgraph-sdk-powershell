@@ -12,13 +12,13 @@ Invoke function getActivitiesByInterval
 
 ## SYNTAX
 
-### Get2 (Default)
+### Get (Default)
 ```
 Get-MgUserDriveListItemActivityByInterval -DriveId <String> -ListItemId <String> -UserId <String>
  [<CommonParameters>]
 ```
 
-### Get
+### Get1
 ```
 Get-MgUserDriveListItemActivityByInterval -DriveId <String> -EndDateTime <String> -Interval <String>
  -ListItemId <String> -StartDateTime <String> -UserId <String> [<CommonParameters>]
@@ -29,7 +29,7 @@ Get-MgUserDriveListItemActivityByInterval -DriveId <String> -EndDateTime <String
 Get-MgUserDriveListItemActivityByInterval -InputObject <IUsersFunctionsIdentity> [<CommonParameters>]
 ```
 
-### GetViaIdentity2
+### GetViaIdentity1
 ```
 Get-MgUserDriveListItemActivityByInterval -InputObject <IUsersFunctionsIdentity> [<CommonParameters>]
 ```
@@ -46,7 +46,7 @@ key: id of drive
 
 ```yaml
 Type: System.String
-Parameter Sets: Get, Get2
+Parameter Sets: Get, Get1
 Aliases:
 
 Required: True
@@ -61,7 +61,7 @@ Usage: endDateTime='{endDateTime}'
 
 ```yaml
 Type: System.String
-Parameter Sets: Get
+Parameter Sets: Get1
 Aliases:
 
 Required: True
@@ -77,7 +77,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IUsersFunctionsIdentity
-Parameter Sets: GetViaIdentity, GetViaIdentity2
+Parameter Sets: GetViaIdentity, GetViaIdentity1
 Aliases:
 
 Required: True
@@ -92,7 +92,7 @@ Usage: interval='{interval}'
 
 ```yaml
 Type: System.String
-Parameter Sets: Get
+Parameter Sets: Get1
 Aliases:
 
 Required: True
@@ -107,7 +107,7 @@ key: id of listItem
 
 ```yaml
 Type: System.String
-Parameter Sets: Get, Get2
+Parameter Sets: Get, Get1
 Aliases:
 
 Required: True
@@ -122,7 +122,7 @@ Usage: startDateTime='{startDateTime}'
 
 ```yaml
 Type: System.String
-Parameter Sets: Get
+Parameter Sets: Get1
 Aliases:
 
 Required: True
@@ -137,7 +137,7 @@ key: id of user
 
 ```yaml
 Type: System.String
-Parameter Sets: Get, Get2
+Parameter Sets: Get, Get1
 Aliases:
 
 Required: True

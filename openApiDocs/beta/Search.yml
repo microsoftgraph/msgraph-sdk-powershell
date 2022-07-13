@@ -93,12 +93,16 @@ paths:
               enum:
                 - id
                 - id desc
+                - complianceSettings
+                - complianceSettings desc
                 - configuration
                 - configuration desc
                 - connectorId
                 - connectorId desc
                 - description
                 - description desc
+                - enabledContentExperiences
+                - enabledContentExperiences desc
                 - ingestedItemsCount
                 - ingestedItemsCount desc
                 - name
@@ -119,9 +123,11 @@ paths:
             items:
               enum:
                 - id
+                - complianceSettings
                 - configuration
                 - connectorId
                 - description
+                - enabledContentExperiences
                 - ingestedItemsCount
                 - name
                 - searchSettings
@@ -205,9 +211,11 @@ paths:
             items:
               enum:
                 - id
+                - complianceSettings
                 - configuration
                 - connectorId
                 - description
+                - enabledContentExperiences
                 - ingestedItemsCount
                 - name
                 - searchSettings
@@ -2210,6 +2218,8 @@ components:
         - title: externalConnection
           type: object
           properties:
+            complianceSettings:
+              $ref: '#/components/schemas/microsoft.graph.externalConnectors.complianceSettings'
             configuration:
               $ref: '#/components/schemas/microsoft.graph.externalConnectors.configuration'
             connectorId:
@@ -2220,6 +2230,8 @@ components:
               type: string
               description: Description of the connection displayed in the Microsoft 365 admin center. Optional.
               nullable: true
+            enabledContentExperiences:
+              $ref: '#/components/schemas/microsoft.graph.externalConnectors.contentExperienceType'
             ingestedItemsCount:
               type: integer
               description: 'The number of items ingested into a connection. This value is refreshed every 15 minutes. If the connection state is draft, then ingestedItemsCount will be null.'
@@ -2591,6 +2603,16 @@ components:
           type: string
       additionalProperties:
         type: object
+    microsoft.graph.externalConnectors.complianceSettings:
+      title: complianceSettings
+      type: object
+      properties:
+        eDiscoveryResultTemplates:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.externalConnectors.displayTemplate'
+      additionalProperties:
+        type: object
     microsoft.graph.externalConnectors.configuration:
       title: configuration
       type: object
@@ -2603,6 +2625,13 @@ components:
           description: A collection of application IDs for registered Azure Active Directory apps that are allowed to manage the externalConnection and to index content in the externalConnection.
       additionalProperties:
         type: object
+    microsoft.graph.externalConnectors.contentExperienceType:
+      title: contentExperienceType
+      enum:
+        - search
+        - compliance
+        - unknownFutureValue
+      type: string
     microsoft.graph.externalConnectors.searchSettings:
       title: searchSettings
       type: object
@@ -2894,6 +2923,9 @@ components:
         - listItem
         - drive
         - unknownFutureValue
+        - acronym
+        - bookmark
+        - chatMessage
       type: string
     microsoft.graph.searchQuery:
       title: searchQuery

@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Applications
-Module Guid: 97dcb808-287b-4527-b73b-a57732a8c6bd
+Module Guid: b983129a-8589-40fb-ba5b-db381db4ca5d
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.applications
 Help Version: 1.0.0.0
 Locale: en-US
@@ -55,6 +55,9 @@ Invoke function delta
 
 ### [Get-MgApplicationExtensionProperty](Get-MgApplicationExtensionProperty.md)
 Get extensionProperties from applications
+
+### [Get-MgApplicationFederatedIdentityCredential](Get-MgApplicationFederatedIdentityCredential.md)
+Get federatedIdentityCredentials from applications
 
 ### [Get-MgApplicationHomeRealmDiscoveryPolicy](Get-MgApplicationHomeRealmDiscoveryPolicy.md)
 Get homeRealmDiscoveryPolicies from applications
@@ -122,6 +125,9 @@ Invoke function delta
 ### [Get-MgServicePrincipalEndpoint](Get-MgServicePrincipalEndpoint.md)
 Get endpoints from servicePrincipals
 
+### [Get-MgServicePrincipalFederatedIdentityCredential](Get-MgServicePrincipalFederatedIdentityCredential.md)
+Get federatedIdentityCredentials from servicePrincipals
+
 ### [Get-MgServicePrincipalHomeRealmDiscoveryPolicy](Get-MgServicePrincipalHomeRealmDiscoveryPolicy.md)
 Get homeRealmDiscoveryPolicies from servicePrincipals
 
@@ -170,6 +176,9 @@ Create application
 ### [New-MgApplicationExtensionProperty](New-MgApplicationExtensionProperty.md)
 Create new navigation property to extensionProperties for applications
 
+### [New-MgApplicationFederatedIdentityCredential](New-MgApplicationFederatedIdentityCredential.md)
+Create new navigation property to federatedIdentityCredentials for applications
+
 ### [New-MgApplicationOwnerByRef](New-MgApplicationOwnerByRef.md)
 Create new navigation property ref to owners for applications
 
@@ -203,6 +212,9 @@ Create new navigation property to delegatedPermissionClassifications for service
 ### [New-MgServicePrincipalEndpoint](New-MgServicePrincipalEndpoint.md)
 Create new navigation property to endpoints for servicePrincipals
 
+### [New-MgServicePrincipalFederatedIdentityCredential](New-MgServicePrincipalFederatedIdentityCredential.md)
+Create new navigation property to federatedIdentityCredentials for servicePrincipals
+
 ### [New-MgServicePrincipalHomeRealmDiscoveryPolicyByRef](New-MgServicePrincipalHomeRealmDiscoveryPolicyByRef.md)
 Create new navigation property ref to homeRealmDiscoveryPolicies for servicePrincipals
 
@@ -217,6 +229,9 @@ Delete application
 
 ### [Remove-MgApplicationExtensionProperty](Remove-MgApplicationExtensionProperty.md)
 Delete navigation property extensionProperties for applications
+
+### [Remove-MgApplicationFederatedIdentityCredential](Remove-MgApplicationFederatedIdentityCredential.md)
+Delete navigation property federatedIdentityCredentials for applications
 
 ### [Remove-MgApplicationKey](Remove-MgApplicationKey.md)
 Invoke action removeKey
@@ -257,6 +272,9 @@ Delete navigation property delegatedPermissionClassifications for servicePrincip
 ### [Remove-MgServicePrincipalEndpoint](Remove-MgServicePrincipalEndpoint.md)
 Delete navigation property endpoints for servicePrincipals
 
+### [Remove-MgServicePrincipalFederatedIdentityCredential](Remove-MgServicePrincipalFederatedIdentityCredential.md)
+Delete navigation property federatedIdentityCredentials for servicePrincipals
+
 ### [Remove-MgServicePrincipalHomeRealmDiscoveryPolicyByRef](Remove-MgServicePrincipalHomeRealmDiscoveryPolicyByRef.md)
 Delete ref of navigation property homeRealmDiscoveryPolicies for servicePrincipals
 
@@ -290,6 +308,9 @@ Update application
 ### [Update-MgApplicationExtensionProperty](Update-MgApplicationExtensionProperty.md)
 Update the navigation property extensionProperties in applications
 
+### [Update-MgApplicationFederatedIdentityCredential](Update-MgApplicationFederatedIdentityCredential.md)
+Update the navigation property federatedIdentityCredentials in applications
+
 ### [Update-MgApplicationTemplate](Update-MgApplicationTemplate.md)
 Update entity in applicationTemplates
 
@@ -310,6 +331,9 @@ Update the navigation property delegatedPermissionClassifications in servicePrin
 
 ### [Update-MgServicePrincipalEndpoint](Update-MgServicePrincipalEndpoint.md)
 Update the navigation property endpoints in servicePrincipals
+
+### [Update-MgServicePrincipalFederatedIdentityCredential](Update-MgServicePrincipalFederatedIdentityCredential.md)
+Update the navigation property federatedIdentityCredentials in servicePrincipals
 
 ### [Update-MgUserAppRoleAssignment](Update-MgUserAppRoleAssignment.md)
 Update the navigation property appRoleAssignments in users

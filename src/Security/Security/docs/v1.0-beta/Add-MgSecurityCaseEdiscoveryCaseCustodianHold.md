@@ -12,39 +12,39 @@ Invoke action applyHold
 
 ## SYNTAX
 
-### ApplyExpanded (Default)
+### ApplyExpanded1 (Default)
 ```
 Add-MgSecurityCaseEdiscoveryCaseCustodianHold -EdiscoveryCaseId <String> [-AdditionalProperties <Hashtable>]
  [-Ids <String[]>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### Apply
+### Apply2
 ```
 Add-MgSecurityCaseEdiscoveryCaseCustodianHold -EdiscoveryCaseId <String> -EdiscoveryCustodianId <String>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### Apply1
+### Apply3
 ```
 Add-MgSecurityCaseEdiscoveryCaseCustodianHold -EdiscoveryCaseId <String>
  -BodyParameter <IPaths2560XySecurityCasesEdiscoverycasesEdiscoverycaseIdCustodiansMicrosoftGraphSecurityApplyholdPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### ApplyViaIdentity
+### ApplyViaIdentity2
 ```
 Add-MgSecurityCaseEdiscoveryCaseCustodianHold -InputObject <ISecurityIdentity> [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
-### ApplyViaIdentity1
+### ApplyViaIdentity3
 ```
 Add-MgSecurityCaseEdiscoveryCaseCustodianHold -InputObject <ISecurityIdentity>
  -BodyParameter <IPaths2560XySecurityCasesEdiscoverycasesEdiscoverycaseIdCustodiansMicrosoftGraphSecurityApplyholdPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### ApplyViaIdentityExpanded
+### ApplyViaIdentityExpanded1
 ```
 Add-MgSecurityCaseEdiscoveryCaseCustodianHold -InputObject <ISecurityIdentity>
  [-AdditionalProperties <Hashtable>] [-Ids <String[]>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -62,7 +62,7 @@ Additional Parameters
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: ApplyExpanded, ApplyViaIdentityExpanded
+Parameter Sets: ApplyExpanded1, ApplyViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -78,7 +78,7 @@ To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETE
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IPaths2560XySecurityCasesEdiscoverycasesEdiscoverycaseIdCustodiansMicrosoftGraphSecurityApplyholdPostRequestbodyContentApplicationJsonSchema
-Parameter Sets: Apply1, ApplyViaIdentity1
+Parameter Sets: Apply3, ApplyViaIdentity3
 Aliases:
 
 Required: True
@@ -93,7 +93,7 @@ key: id of ediscoveryCase
 
 ```yaml
 Type: System.String
-Parameter Sets: Apply, Apply1, ApplyExpanded
+Parameter Sets: Apply2, Apply3, ApplyExpanded1
 Aliases:
 
 Required: True
@@ -108,7 +108,7 @@ key: id of ediscoveryCustodian
 
 ```yaml
 Type: System.String
-Parameter Sets: Apply
+Parameter Sets: Apply2
 Aliases:
 
 Required: True
@@ -123,7 +123,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.String[]
-Parameter Sets: ApplyExpanded, ApplyViaIdentityExpanded
+Parameter Sets: ApplyExpanded1, ApplyViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -139,7 +139,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.ISecurityIdentity
-Parameter Sets: ApplyViaIdentity, ApplyViaIdentity1, ApplyViaIdentityExpanded
+Parameter Sets: ApplyViaIdentity2, ApplyViaIdentity3, ApplyViaIdentityExpanded1
 Aliases:
 
 Required: True
@@ -242,6 +242,7 @@ INPUTOBJECT <ISecurityIdentity>: Identity Parameter
   - `[FileSecurityProfileId <String>]`: key: id of fileSecurityProfile
   - `[HostSecurityProfileId <String>]`: key: id of hostSecurityProfile
   - `[IPSecurityProfileId <String>]`: key: id of ipSecurityProfile
+  - `[IncidentId <String>]`: key: id of incident
   - `[ProviderTenantSettingId <String>]`: key: id of providerTenantSetting
   - `[RetentionEventId <String>]`: key: id of retentionEvent
   - `[RetentionEventTypeId <String>]`: key: id of retentionEventType
