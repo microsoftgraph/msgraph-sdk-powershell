@@ -5,6 +5,7 @@ using Microsoft.Graph.PowerShell.Authentication;
 using Microsoft.Graph.PowerShell.Authentication.Core.TokenCache;
 using Microsoft.Graph.PowerShell.Authentication.Core.Utilities;
 using System;
+using System.Globalization;
 using System.Linq;
 using System.Net.Http;
 using System.Runtime.InteropServices;
@@ -270,10 +271,10 @@ namespace Microsoft.Graph.Authentication.Test.Helpers
             };
 
             // Act
-            var exception = await Assert.ThrowsAsync<Exception>(async () => await AuthenticationHelpers.GetTokenCredentialAsync(appOnlyAuthContext, default));
+            var exception = await Assert.ThrowsAsync<ArgumentException>(async () => await AuthenticationHelpers.GetTokenCredentialAsync(appOnlyAuthContext, default));
 
             //Assert
-            Assert.Equal($"{dummyCertName} certificate was not found or has expired.", exception.Message);
+            Assert.Equal(string.Format(CultureInfo.InvariantCulture, PowerShell.Authentication.Core.ErrorConstants.Message.CertificateNotFound, "subject name", dummyCertName), exception.Message);
         }
 
         [Fact]
@@ -300,10 +301,10 @@ namespace Microsoft.Graph.Authentication.Test.Helpers
         ///     Create and Store a Self Signed Certificate
         /// </summary>
         /// <param name="certName"></param>
-        private static X509Certificate2 CreateAndStoreSelfSignedCert(string certName)
+        private static X509Certificate2 CreateAndStoreSelfSignedCert(string certName, StoreLocation storeLocation = StoreLocation.CurrentUser)
         {
             var cert = CreateSelfSignedCert(certName);
-            using (var store = new X509Store(StoreName.My, StoreLocation.CurrentUser))
+            using (var store = new X509Store(StoreName.My, storeLocation))
             {
                 store.Open(OpenFlags.ReadWrite);
                 store.Add(cert);
@@ -330,9 +331,9 @@ namespace Microsoft.Graph.Authentication.Test.Helpers
                 return new X509Certificate2(cert.Export(X509ContentType.Pfx, "P@55w0rd"), "P@55w0rd", X509KeyStorageFlags.PersistKeySet);
         }
 
-        private static void DeleteSelfSignedCertByName(string certificateName)
+        private static void DeleteSelfSignedCertByName(string certificateName, StoreLocation storeLocation = StoreLocation.CurrentUser)
         {
-            using (X509Store xStore = new X509Store(StoreName.My, StoreLocation.CurrentUser))
+            using (X509Store xStore = new X509Store(StoreName.My, storeLocation))
             {
                 xStore.Open(OpenFlags.ReadWrite);
 
@@ -349,9 +350,9 @@ namespace Microsoft.Graph.Authentication.Test.Helpers
                 xStore.Remove(xCertificate);
             }
         }
-        private static void DeleteSelfSignedCertByThumbprint(string certificateThumbPrint)
+        private static void DeleteSelfSignedCertByThumbprint(string certificateThumbPrint, StoreLocation storeLocation = StoreLocation.CurrentUser)
         {
-            using (X509Store xStore = new X509Store(StoreName.My, StoreLocation.CurrentUser))
+            using (X509Store xStore = new X509Store(StoreName.My, storeLocation))
             {
                 xStore.Open(OpenFlags.ReadWrite);
 
