@@ -10,7 +10,8 @@ namespace Microsoft.Graph.PowerShell.Authentication
     {
         public const double ClientTimeout = 300;
         public const int MaxContentLength = 10240;
-        public const string SDKHeaderValue = "graph-powershell/{0}.{1}.{2}";
+        public const string SDKHeaderValueV1 = "graph-powershell/{0}.{1}.{2}";
+        public const string SDKHeaderValueBeta = "graph-powershell-beta/{0}.{1}.{2}";
         internal const string UserParameterSet = nameof(UserParameterSet);
         internal const string AppParameterSet = nameof(AppParameterSet);
         internal const string AccessTokenParameterSet = nameof(AccessTokenParameterSet);
