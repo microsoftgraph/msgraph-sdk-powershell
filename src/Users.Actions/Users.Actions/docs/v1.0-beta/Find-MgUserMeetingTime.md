@@ -308,7 +308,7 @@ BODYPARAMETER <IPathsSzpbzfUsersUserIdMicrosoftGraphFindmeetingtimesPostRequestb
   - `[LocationConstraint <IMicrosoftGraphLocationConstraint>]`: locationConstraint
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[IsRequired <Boolean?>]`: The client requests the service to include in the response a meeting location for the meeting. If this is true and all the resources are busy, findMeetingTimes will not return any meeting time suggestions. If this is false and all the resources are busy, findMeetingTimes would still look for meeting times without locations.
-    - `[Locations <IMicrosoftGraphLocationConstraintItem[]>]`: Constraint information for one or more locations that the client requests for the meeting.
+    - `[Locations <IMicrosoftGraphLocationConstraintItem1[]>]`: Constraint information for one or more locations that the client requests for the meeting.
       - `[Address <IMicrosoftGraphPhysicalAddress1>]`: physicalAddress
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[City <String>]`: The city.
@@ -397,7 +397,7 @@ INPUTOBJECT <IUsersActionsIdentity>: Identity Parameter
 LOCATIONCONSTRAINT <IMicrosoftGraphLocationConstraint>: locationConstraint
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[IsRequired <Boolean?>]`: The client requests the service to include in the response a meeting location for the meeting. If this is true and all the resources are busy, findMeetingTimes will not return any meeting time suggestions. If this is false and all the resources are busy, findMeetingTimes would still look for meeting times without locations.
-  - `[Locations <IMicrosoftGraphLocationConstraintItem[]>]`: Constraint information for one or more locations that the client requests for the meeting.
+  - `[Locations <IMicrosoftGraphLocationConstraintItem1[]>]`: Constraint information for one or more locations that the client requests for the meeting.
     - `[Address <IMicrosoftGraphPhysicalAddress1>]`: physicalAddress
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[City <String>]`: The city.

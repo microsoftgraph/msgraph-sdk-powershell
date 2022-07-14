@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Security
-Module Guid: 26e5ba38-d996-4acc-bba1-73c2ad00413a
+Module Guid: 6ee540fa-6578-4cdf-82d4-160aa8182a29
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.security
 Help Version: 1.0.0.0
 Locale: en-US
@@ -160,6 +160,12 @@ Get fileSecurityProfiles from security
 
 ### [Get-MgSecurityHostSecurityProfile](Get-MgSecurityHostSecurityProfile.md)
 Get hostSecurityProfiles from security
+
+### [Get-MgSecurityIncident](Get-MgSecurityIncident.md)
+Get incidents from security
+
+### [Get-MgSecurityIncidentAlert](Get-MgSecurityIncidentAlert.md)
+Get alerts from security
 
 ### [Get-MgSecurityInformationProtection](Get-MgSecurityInformationProtection.md)
 Get informationProtection from security
@@ -323,6 +329,9 @@ Create new navigation property to fileSecurityProfiles for security
 ### [New-MgSecurityHostSecurityProfile](New-MgSecurityHostSecurityProfile.md)
 Create new navigation property to hostSecurityProfiles for security
 
+### [New-MgSecurityIncident](New-MgSecurityIncident.md)
+Create new navigation property to incidents for security
+
 ### [New-MgSecurityInformationProtectionSensitivityLabel](New-MgSecurityInformationProtectionSensitivityLabel.md)
 Create new navigation property to sensitivityLabels for security
 
@@ -455,6 +464,9 @@ Delete navigation property fileSecurityProfiles for security
 ### [Remove-MgSecurityHostSecurityProfile](Remove-MgSecurityHostSecurityProfile.md)
 Delete navigation property hostSecurityProfiles for security
 
+### [Remove-MgSecurityIncident](Remove-MgSecurityIncident.md)
+Delete navigation property incidents for security
+
 ### [Remove-MgSecurityInformationProtection](Remove-MgSecurityInformationProtection.md)
 Delete navigation property informationProtection for security
 
@@ -529,6 +541,9 @@ Update extractedTextContent for the navigation property files in security
 
 ### [Start-MgSecurityCaseEdiscoveryCaseReviewSetQuery](Start-MgSecurityCaseEdiscoveryCaseReviewSetQuery.md)
 Invoke function run
+
+### [Start-MgSecurityHuntingQuery](Start-MgSecurityHuntingQuery.md)
+Invoke action runHuntingQuery
 
 ### [Stop-MgSecurityAction](Stop-MgSecurityAction.md)
 Invoke action cancelSecurityAction
@@ -631,6 +646,9 @@ Update the navigation property fileSecurityProfiles in security
 
 ### [Update-MgSecurityHostSecurityProfile](Update-MgSecurityHostSecurityProfile.md)
 Update the navigation property hostSecurityProfiles in security
+
+### [Update-MgSecurityIncident](Update-MgSecurityIncident.md)
+Update the navigation property incidents in security
 
 ### [Update-MgSecurityInformationProtection](Update-MgSecurityInformationProtection.md)
 Update the navigation property informationProtection in security

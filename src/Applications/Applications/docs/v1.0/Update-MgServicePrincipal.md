@@ -23,7 +23,8 @@ Update-MgServicePrincipal -ServicePrincipalId <String> [-AccountEnabled] [-AddIn
  [-CreatedObjects <IMicrosoftGraphDirectoryObject[]>]
  [-DelegatedPermissionClassifications <IMicrosoftGraphDelegatedPermissionClassification[]>]
  [-DeletedDateTime <DateTime>] [-Description <String>] [-DisabledByMicrosoftStatus <String>]
- [-DisplayName <String>] [-Endpoints <IMicrosoftGraphEndpoint[]>] [-Homepage <String>]
+ [-DisplayName <String>] [-Endpoints <IMicrosoftGraphEndpoint[]>]
+ [-FederatedIdentityCredentials <IMicrosoftGraphFederatedIdentityCredential[]>] [-Homepage <String>]
  [-HomeRealmDiscoveryPolicies <IMicrosoftGraphHomeRealmDiscoveryPolicy[]>] [-Id <String>]
  [-Info <IMicrosoftGraphInformationalUrl>] [-KeyCredentials <IMicrosoftGraphKeyCredential[]>]
  [-LoginUrl <String>] [-LogoutUrl <String>] [-MemberOf <IMicrosoftGraphDirectoryObject[]>] [-Notes <String>]
@@ -64,7 +65,8 @@ Update-MgServicePrincipal -InputObject <IApplicationsIdentity> [-AccountEnabled]
  [-CreatedObjects <IMicrosoftGraphDirectoryObject[]>]
  [-DelegatedPermissionClassifications <IMicrosoftGraphDelegatedPermissionClassification[]>]
  [-DeletedDateTime <DateTime>] [-Description <String>] [-DisabledByMicrosoftStatus <String>]
- [-DisplayName <String>] [-Endpoints <IMicrosoftGraphEndpoint[]>] [-Homepage <String>]
+ [-DisplayName <String>] [-Endpoints <IMicrosoftGraphEndpoint[]>]
+ [-FederatedIdentityCredentials <IMicrosoftGraphFederatedIdentityCredential[]>] [-Homepage <String>]
  [-HomeRealmDiscoveryPolicies <IMicrosoftGraphHomeRealmDiscoveryPolicy[]>] [-Id <String>]
  [-Info <IMicrosoftGraphInformationalUrl>] [-KeyCredentials <IMicrosoftGraphKeyCredential[]>]
  [-LoginUrl <String>] [-LogoutUrl <String>] [-MemberOf <IMicrosoftGraphDirectoryObject[]>] [-Notes <String>]
@@ -457,6 +459,22 @@ To construct, please use Get-Help -Online and see NOTES section for ENDPOINTS pr
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEndpoint[]
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -FederatedIdentityCredentials
+.
+To construct, please use Get-Help -Online and see NOTES section for FEDERATEDIDENTITYCREDENTIALS properties and create a hash table.
+
+```yaml
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphFederatedIdentityCredential[]
 Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -1149,6 +1167,13 @@ BODYPARAMETER <IMicrosoftGraphServicePrincipal>: servicePrincipal
     - `[ProviderName <String>]`: Name of the publishing underlying service. Read-only.
     - `[ProviderResourceId <String>]`: For Microsoft 365 groups, this is set to a well-known name for the resource (e.g. Yammer.FeedURL etc.). Not nullable. Read-only.
     - `[Uri <String>]`: URL of the published resource. Not nullable. Read-only.
+  - `[FederatedIdentityCredentials <IMicrosoftGraphFederatedIdentityCredential[]>]`: 
+    - `[Id <String>]`: 
+    - `[Audiences <String[]>]`: Lists the audiences that can appear in the external token. This field is mandatory, and defaults to 'api://AzureADTokenExchange'. It says what Microsoft identity platform should accept in the aud claim in the incoming token. This value represents Azure AD in your external identity provider and has no fixed value across identity providers - you may need to create a new application registration in your identity provider to serve as the audience of this token. Required.
+    - `[Description <String>]`: The un-validated, user-provided description of the federated identity credential. Optional.
+    - `[Issuer <String>]`: The URL of the external identity provider and must match the issuer claim of the external token being exchanged. The combination of the values of issuer and subject must be unique on the app. Required.
+    - `[Name <String>]`: is the unique identifier for the federated identity credential, which has a character limit of 120 characters and must be URL friendly. It is immutable once created. Required. Not nullable. Supports $filter (eq).
+    - `[Subject <String>]`: Required. The identifier of the external software workload within the external identity provider. Like the audience value, it has no fixed format, as each identity provider uses their own - sometimes a GUID, sometimes a colon delimited identifier, sometimes arbitrary strings. The value here must match the sub claim within the token presented to Azure AD. The combination of issuer and subject must be unique on the app. Supports $filter (eq).
   - `[HomeRealmDiscoveryPolicies <IMicrosoftGraphHomeRealmDiscoveryPolicy[]>]`: The homeRealmDiscoveryPolicies assigned to this service principal. Supports $expand.
     - `[AppliesTo <IMicrosoftGraphDirectoryObject[]>]`: 
     - `[Definition <String[]>]`: A string collection containing a JSON string that defines the rules and settings for a policy. The syntax for the definition differs for each derived policy type. Required.
@@ -1270,6 +1295,14 @@ ENDPOINTS <IMicrosoftGraphEndpoint[]>: Endpoints available for discovery. Servic
   - `[ProviderName <String>]`: Name of the publishing underlying service. Read-only.
   - `[ProviderResourceId <String>]`: For Microsoft 365 groups, this is set to a well-known name for the resource (e.g. Yammer.FeedURL etc.). Not nullable. Read-only.
   - `[Uri <String>]`: URL of the published resource. Not nullable. Read-only.
+
+FEDERATEDIDENTITYCREDENTIALS <IMicrosoftGraphFederatedIdentityCredential[]>: .
+  - `[Id <String>]`: 
+  - `[Audiences <String[]>]`: Lists the audiences that can appear in the external token. This field is mandatory, and defaults to 'api://AzureADTokenExchange'. It says what Microsoft identity platform should accept in the aud claim in the incoming token. This value represents Azure AD in your external identity provider and has no fixed value across identity providers - you may need to create a new application registration in your identity provider to serve as the audience of this token. Required.
+  - `[Description <String>]`: The un-validated, user-provided description of the federated identity credential. Optional.
+  - `[Issuer <String>]`: The URL of the external identity provider and must match the issuer claim of the external token being exchanged. The combination of the values of issuer and subject must be unique on the app. Required.
+  - `[Name <String>]`: is the unique identifier for the federated identity credential, which has a character limit of 120 characters and must be URL friendly. It is immutable once created. Required. Not nullable. Supports $filter (eq).
+  - `[Subject <String>]`: Required. The identifier of the external software workload within the external identity provider. Like the audience value, it has no fixed format, as each identity provider uses their own - sometimes a GUID, sometimes a colon delimited identifier, sometimes arbitrary strings. The value here must match the sub claim within the token presented to Azure AD. The combination of issuer and subject must be unique on the app. Supports $filter (eq).
 
 HOMEREALMDISCOVERYPOLICIES <IMicrosoftGraphHomeRealmDiscoveryPolicy[]>: The homeRealmDiscoveryPolicies assigned to this service principal. Supports $expand.
   - `[AppliesTo <IMicrosoftGraphDirectoryObject[]>]`: 

@@ -12,39 +12,39 @@ Invoke action removeHold
 
 ## SYNTAX
 
-### RemoveExpanded (Default)
+### RemoveExpanded1 (Default)
 ```
 Remove-MgSecurityCaseEdiscoveryCaseCustodianHold -EdiscoveryCaseId <String>
  [-AdditionalProperties <Hashtable>] [-Ids <String[]>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### Remove
+### Remove2
 ```
 Remove-MgSecurityCaseEdiscoveryCaseCustodianHold -EdiscoveryCaseId <String> -EdiscoveryCustodianId <String>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### Remove1
+### Remove3
 ```
 Remove-MgSecurityCaseEdiscoveryCaseCustodianHold -EdiscoveryCaseId <String>
  -BodyParameter <IPaths1P15Ma7SecurityCasesEdiscoverycasesEdiscoverycaseIdCustodiansMicrosoftGraphSecurityRemoveholdPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### RemoveViaIdentity
+### RemoveViaIdentity2
 ```
 Remove-MgSecurityCaseEdiscoveryCaseCustodianHold -InputObject <ISecurityIdentity> [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
-### RemoveViaIdentity1
+### RemoveViaIdentity3
 ```
 Remove-MgSecurityCaseEdiscoveryCaseCustodianHold -InputObject <ISecurityIdentity>
  -BodyParameter <IPaths1P15Ma7SecurityCasesEdiscoverycasesEdiscoverycaseIdCustodiansMicrosoftGraphSecurityRemoveholdPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### RemoveViaIdentityExpanded
+### RemoveViaIdentityExpanded1
 ```
 Remove-MgSecurityCaseEdiscoveryCaseCustodianHold -InputObject <ISecurityIdentity>
  [-AdditionalProperties <Hashtable>] [-Ids <String[]>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -62,7 +62,7 @@ Additional Parameters
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: RemoveExpanded, RemoveViaIdentityExpanded
+Parameter Sets: RemoveExpanded1, RemoveViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -78,7 +78,7 @@ To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETE
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IPaths1P15Ma7SecurityCasesEdiscoverycasesEdiscoverycaseIdCustodiansMicrosoftGraphSecurityRemoveholdPostRequestbodyContentApplicationJsonSchema
-Parameter Sets: Remove1, RemoveViaIdentity1
+Parameter Sets: Remove3, RemoveViaIdentity3
 Aliases:
 
 Required: True
@@ -93,7 +93,7 @@ key: id of ediscoveryCase
 
 ```yaml
 Type: System.String
-Parameter Sets: Remove, Remove1, RemoveExpanded
+Parameter Sets: Remove2, Remove3, RemoveExpanded1
 Aliases:
 
 Required: True
@@ -108,7 +108,7 @@ key: id of ediscoveryCustodian
 
 ```yaml
 Type: System.String
-Parameter Sets: Remove
+Parameter Sets: Remove2
 Aliases:
 
 Required: True
@@ -123,7 +123,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.String[]
-Parameter Sets: RemoveExpanded, RemoveViaIdentityExpanded
+Parameter Sets: RemoveExpanded1, RemoveViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -139,7 +139,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.ISecurityIdentity
-Parameter Sets: RemoveViaIdentity, RemoveViaIdentity1, RemoveViaIdentityExpanded
+Parameter Sets: RemoveViaIdentity2, RemoveViaIdentity3, RemoveViaIdentityExpanded1
 Aliases:
 
 Required: True
@@ -242,6 +242,7 @@ INPUTOBJECT <ISecurityIdentity>: Identity Parameter
   - `[FileSecurityProfileId <String>]`: key: id of fileSecurityProfile
   - `[HostSecurityProfileId <String>]`: key: id of hostSecurityProfile
   - `[IPSecurityProfileId <String>]`: key: id of ipSecurityProfile
+  - `[IncidentId <String>]`: key: id of incident
   - `[ProviderTenantSettingId <String>]`: key: id of providerTenantSetting
   - `[RetentionEventId <String>]`: key: id of retentionEvent
   - `[RetentionEventTypeId <String>]`: key: id of retentionEventType

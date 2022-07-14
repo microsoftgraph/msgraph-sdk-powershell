@@ -15,14 +15,14 @@ Invoke action bulkReprovisionCloudPc
 ### BulkExpanded (Default)
 ```
 Invoke-MgBulkReprovisionDeviceManagementManagedDeviceCloudPc [-AdditionalProperties <Hashtable>]
- [-ManagedDeviceIds <String[]>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-ManagedDeviceIds <String[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Bulk
 ```
 Invoke-MgBulkReprovisionDeviceManagementManagedDeviceCloudPc
  -BodyParameter <IPaths16D2Us5DevicemanagementManageddevicesMicrosoftGraphBulkreprovisioncloudpcPostRequestbodyContentApplicationJsonSchema>
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -78,21 +78,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -PassThru
-Returns true when the command succeeds
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Confirm
 Prompts you for confirmation before running the cmdlet.
 
@@ -133,7 +118,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### System.Boolean
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCloudPcBulkRemoteActionResult
 
 ## NOTES
 

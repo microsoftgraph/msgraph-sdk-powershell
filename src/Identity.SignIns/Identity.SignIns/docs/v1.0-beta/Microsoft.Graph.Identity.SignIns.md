@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Identity.SignIns
-Module Guid: 7bd4a827-bd0f-4d2b-94cc-e1153a525c49
+Module Guid: e32aca78-3aaa-4dbe-a1e3-ecc5013fedb7
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins
 Help Version: 1.0.0.0
 Locale: en-US
@@ -23,6 +23,75 @@ Invoke action confirmCompromised
 ### [Get-MgDataPolicyOperation](Get-MgDataPolicyOperation.md)
 Get dataPolicyOperation
 
+### [Get-MgIdentityApiConnector](Get-MgIdentityApiConnector.md)
+Get apiConnectors from identity
+
+### [Get-MgIdentityB2CUserFlow](Get-MgIdentityB2CUserFlow.md)
+Get b2cUserFlows from identity
+
+### [Get-MgIdentityB2CUserFlowIdentityProvider](Get-MgIdentityB2CUserFlowIdentityProvider.md)
+Get userFlowIdentityProviders from identity
+
+### [Get-MgIdentityB2CUserFlowIdentityProviderByRef](Get-MgIdentityB2CUserFlowIdentityProviderByRef.md)
+Get ref of identityProviders from identity
+
+### [Get-MgIdentityB2CUserFlowLanguage](Get-MgIdentityB2CUserFlowLanguage.md)
+Get languages from identity
+
+### [Get-MgIdentityB2CUserFlowLanguageDefaultPage](Get-MgIdentityB2CUserFlowLanguageDefaultPage.md)
+Get defaultPages from identity
+
+### [Get-MgIdentityB2CUserFlowLanguageDefaultPageContent](Get-MgIdentityB2CUserFlowLanguageDefaultPageContent.md)
+Get media content for the navigation property defaultPages from identity
+
+### [Get-MgIdentityB2CUserFlowLanguageOverridePage](Get-MgIdentityB2CUserFlowLanguageOverridePage.md)
+Get overridesPages from identity
+
+### [Get-MgIdentityB2CUserFlowLanguageOverridePageContent](Get-MgIdentityB2CUserFlowLanguageOverridePageContent.md)
+Get media content for the navigation property overridesPages from identity
+
+### [Get-MgIdentityB2CUserFlowUserAttributeAssignment](Get-MgIdentityB2CUserFlowUserAttributeAssignment.md)
+Get userAttributeAssignments from identity
+
+### [Get-MgIdentityB2CUserFlowUserAttributeAssignmentOrder](Get-MgIdentityB2CUserFlowUserAttributeAssignmentOrder.md)
+Invoke function getOrder
+
+### [Get-MgIdentityB2CUserFlowUserAttributeAssignmentUserAttribute](Get-MgIdentityB2CUserFlowUserAttributeAssignmentUserAttribute.md)
+Get userAttribute from identity
+
+### [Get-MgIdentityB2XUserFlow](Get-MgIdentityB2XUserFlow.md)
+Get b2xUserFlows from identity
+
+### [Get-MgIdentityB2XUserFlowIdentityProvider](Get-MgIdentityB2XUserFlowIdentityProvider.md)
+Get identityProviders from identity
+
+### [Get-MgIdentityB2XUserFlowIdentityProviderByRef](Get-MgIdentityB2XUserFlowIdentityProviderByRef.md)
+Get ref of userFlowIdentityProviders from identity
+
+### [Get-MgIdentityB2XUserFlowLanguage](Get-MgIdentityB2XUserFlowLanguage.md)
+Get languages from identity
+
+### [Get-MgIdentityB2XUserFlowLanguageDefaultPage](Get-MgIdentityB2XUserFlowLanguageDefaultPage.md)
+Get defaultPages from identity
+
+### [Get-MgIdentityB2XUserFlowLanguageDefaultPageContent](Get-MgIdentityB2XUserFlowLanguageDefaultPageContent.md)
+Get media content for the navigation property defaultPages from identity
+
+### [Get-MgIdentityB2XUserFlowLanguageOverridePage](Get-MgIdentityB2XUserFlowLanguageOverridePage.md)
+Get overridesPages from identity
+
+### [Get-MgIdentityB2XUserFlowLanguageOverridePageContent](Get-MgIdentityB2XUserFlowLanguageOverridePageContent.md)
+Get media content for the navigation property overridesPages from identity
+
+### [Get-MgIdentityB2XUserFlowUserAttributeAssignment](Get-MgIdentityB2XUserFlowUserAttributeAssignment.md)
+Get userAttributeAssignments from identity
+
+### [Get-MgIdentityB2XUserFlowUserAttributeAssignmentOrder](Get-MgIdentityB2XUserFlowUserAttributeAssignmentOrder.md)
+Invoke function getOrder
+
+### [Get-MgIdentityB2XUserFlowUserAttributeAssignmentUserAttribute](Get-MgIdentityB2XUserFlowUserAttributeAssignmentUserAttribute.md)
+Get userAttribute from identity
+
 ### [Get-MgIdentityConditionalAccessAuthenticationContextClassReference](Get-MgIdentityConditionalAccessAuthenticationContextClassReference.md)
 Get authenticationContextClassReferences from identity
 
@@ -32,11 +101,17 @@ Get namedLocations from identity
 ### [Get-MgIdentityConditionalAccessPolicy](Get-MgIdentityConditionalAccessPolicy.md)
 Get policies from identity
 
+### [Get-MgIdentityContinuouAccessEvaluationPolicy](Get-MgIdentityContinuouAccessEvaluationPolicy.md)
+Get continuousAccessEvaluationPolicy from identity
+
 ### [Get-MgIdentityProvider](Get-MgIdentityProvider.md)
-Get identityProvider (deprecated)
+Get identityProviders from identity
 
 ### [Get-MgIdentityUserFlow](Get-MgIdentityUserFlow.md)
 Get userFlows from identity
+
+### [Get-MgIdentityUserFlowAttribute](Get-MgIdentityUserFlowAttribute.md)
+Get userFlowAttributes from identity
 
 ### [Get-MgInformationProtection](Get-MgInformationProtection.md)
 Get informationProtection
@@ -419,6 +494,9 @@ Invoke action extractLabel
 ### [Invoke-MgSignInformationProtectionDigest](Invoke-MgSignInformationProtectionDigest.md)
 Invoke action signDigest
 
+### [Invoke-MgUploadIdentityApiConnectorClientCertificate](Invoke-MgUploadIdentityApiConnectorClientCertificate.md)
+Invoke action uploadClientCertificate
+
 ### [Invoke-MgUploadTrustFrameworkKeySetCertificate](Invoke-MgUploadTrustFrameworkKeySetCertificate.md)
 Invoke action uploadCertificate
 
@@ -431,6 +509,45 @@ Invoke action uploadSecret
 ### [New-MgDataPolicyOperation](New-MgDataPolicyOperation.md)
 Add new entity to dataPolicyOperations
 
+### [New-MgIdentityApiConnector](New-MgIdentityApiConnector.md)
+Create new navigation property to apiConnectors for identity
+
+### [New-MgIdentityB2CUserFlow](New-MgIdentityB2CUserFlow.md)
+Create new navigation property to b2cUserFlows for identity
+
+### [New-MgIdentityB2CUserFlowIdentityProviderByRef](New-MgIdentityB2CUserFlowIdentityProviderByRef.md)
+Create new navigation property ref to identityProviders for identity
+
+### [New-MgIdentityB2CUserFlowLanguage](New-MgIdentityB2CUserFlowLanguage.md)
+Create new navigation property to languages for identity
+
+### [New-MgIdentityB2CUserFlowLanguageDefaultPage](New-MgIdentityB2CUserFlowLanguageDefaultPage.md)
+Create new navigation property to defaultPages for identity
+
+### [New-MgIdentityB2CUserFlowLanguageOverridePage](New-MgIdentityB2CUserFlowLanguageOverridePage.md)
+Create new navigation property to overridesPages for identity
+
+### [New-MgIdentityB2CUserFlowUserAttributeAssignment](New-MgIdentityB2CUserFlowUserAttributeAssignment.md)
+Create new navigation property to userAttributeAssignments for identity
+
+### [New-MgIdentityB2XUserFlow](New-MgIdentityB2XUserFlow.md)
+Create new navigation property to b2xUserFlows for identity
+
+### [New-MgIdentityB2XUserFlowIdentityProviderByRef](New-MgIdentityB2XUserFlowIdentityProviderByRef.md)
+Create new navigation property ref to userFlowIdentityProviders for identity
+
+### [New-MgIdentityB2XUserFlowLanguage](New-MgIdentityB2XUserFlowLanguage.md)
+Create new navigation property to languages for identity
+
+### [New-MgIdentityB2XUserFlowLanguageDefaultPage](New-MgIdentityB2XUserFlowLanguageDefaultPage.md)
+Create new navigation property to defaultPages for identity
+
+### [New-MgIdentityB2XUserFlowLanguageOverridePage](New-MgIdentityB2XUserFlowLanguageOverridePage.md)
+Create new navigation property to overridesPages for identity
+
+### [New-MgIdentityB2XUserFlowUserAttributeAssignment](New-MgIdentityB2XUserFlowUserAttributeAssignment.md)
+Create new navigation property to userAttributeAssignments for identity
+
 ### [New-MgIdentityConditionalAccessAuthenticationContextClassReference](New-MgIdentityConditionalAccessAuthenticationContextClassReference.md)
 Create new navigation property to authenticationContextClassReferences for identity
 
@@ -441,10 +558,13 @@ Create new navigation property to namedLocations for identity
 Create new navigation property to policies for identity
 
 ### [New-MgIdentityProvider](New-MgIdentityProvider.md)
-Create identityProvider (deprecated)
+Create new navigation property to identityProviders for identity
 
 ### [New-MgIdentityUserFlow](New-MgIdentityUserFlow.md)
 Create new navigation property to userFlows for identity
+
+### [New-MgIdentityUserFlowAttribute](New-MgIdentityUserFlowAttribute.md)
+Create new navigation property to userFlowAttributes for identity
 
 ### [New-MgInformationProtectionBitlockerRecoveryKey](New-MgInformationProtectionBitlockerRecoveryKey.md)
 Create new navigation property to recoveryKeys for informationProtection
@@ -665,6 +785,45 @@ Create new navigation property to results for users
 ### [Remove-MgDataPolicyOperation](Remove-MgDataPolicyOperation.md)
 Delete entity from dataPolicyOperations
 
+### [Remove-MgIdentityApiConnector](Remove-MgIdentityApiConnector.md)
+Delete navigation property apiConnectors for identity
+
+### [Remove-MgIdentityB2CUserFlow](Remove-MgIdentityB2CUserFlow.md)
+Delete navigation property b2cUserFlows for identity
+
+### [Remove-MgIdentityB2CUserFlowIdentityProviderByRef](Remove-MgIdentityB2CUserFlowIdentityProviderByRef.md)
+Delete ref of navigation property identityProviders for identity
+
+### [Remove-MgIdentityB2CUserFlowLanguage](Remove-MgIdentityB2CUserFlowLanguage.md)
+Delete navigation property languages for identity
+
+### [Remove-MgIdentityB2CUserFlowLanguageDefaultPage](Remove-MgIdentityB2CUserFlowLanguageDefaultPage.md)
+Delete navigation property defaultPages for identity
+
+### [Remove-MgIdentityB2CUserFlowLanguageOverridePage](Remove-MgIdentityB2CUserFlowLanguageOverridePage.md)
+Delete navigation property overridesPages for identity
+
+### [Remove-MgIdentityB2CUserFlowUserAttributeAssignment](Remove-MgIdentityB2CUserFlowUserAttributeAssignment.md)
+Delete navigation property userAttributeAssignments for identity
+
+### [Remove-MgIdentityB2XUserFlow](Remove-MgIdentityB2XUserFlow.md)
+Delete navigation property b2xUserFlows for identity
+
+### [Remove-MgIdentityB2XUserFlowIdentityProviderByRef](Remove-MgIdentityB2XUserFlowIdentityProviderByRef.md)
+Delete ref of navigation property userFlowIdentityProviders for identity
+
+### [Remove-MgIdentityB2XUserFlowLanguage](Remove-MgIdentityB2XUserFlowLanguage.md)
+Delete navigation property languages for identity
+
+### [Remove-MgIdentityB2XUserFlowLanguageDefaultPage](Remove-MgIdentityB2XUserFlowLanguageDefaultPage.md)
+Delete navigation property defaultPages for identity
+
+### [Remove-MgIdentityB2XUserFlowLanguageOverridePage](Remove-MgIdentityB2XUserFlowLanguageOverridePage.md)
+Delete navigation property overridesPages for identity
+
+### [Remove-MgIdentityB2XUserFlowUserAttributeAssignment](Remove-MgIdentityB2XUserFlowUserAttributeAssignment.md)
+Delete navigation property userAttributeAssignments for identity
+
 ### [Remove-MgIdentityConditionalAccessAuthenticationContextClassReference](Remove-MgIdentityConditionalAccessAuthenticationContextClassReference.md)
 Delete navigation property authenticationContextClassReferences for identity
 
@@ -674,11 +833,17 @@ Delete navigation property namedLocations for identity
 ### [Remove-MgIdentityConditionalAccessPolicy](Remove-MgIdentityConditionalAccessPolicy.md)
 Delete navigation property policies for identity
 
+### [Remove-MgIdentityContinuouAccessEvaluationPolicy](Remove-MgIdentityContinuouAccessEvaluationPolicy.md)
+Delete navigation property continuousAccessEvaluationPolicy for identity
+
 ### [Remove-MgIdentityProvider](Remove-MgIdentityProvider.md)
-Delete identityProvider (deprecated)
+Delete navigation property identityProviders for identity
 
 ### [Remove-MgIdentityUserFlow](Remove-MgIdentityUserFlow.md)
 Delete navigation property userFlows for identity
+
+### [Remove-MgIdentityUserFlowAttribute](Remove-MgIdentityUserFlowAttribute.md)
+Delete navigation property userFlowAttributes for identity
 
 ### [Remove-MgInformationProtectionDataLossPreventionPolicy](Remove-MgInformationProtectionDataLossPreventionPolicy.md)
 Delete navigation property dataLossPreventionPolicies for informationProtection
@@ -944,6 +1109,24 @@ Delete navigation property results for users
 ### [Reset-MgPolicyCrossTenantAccessPolicyDefaultToSystemDefault](Reset-MgPolicyCrossTenantAccessPolicyDefaultToSystemDefault.md)
 Invoke action resetToSystemDefault
 
+### [Set-MgIdentityB2CUserFlowLanguageDefaultPageContent](Set-MgIdentityB2CUserFlowLanguageDefaultPageContent.md)
+Update media content for the navigation property defaultPages in identity
+
+### [Set-MgIdentityB2CUserFlowLanguageOverridePageContent](Set-MgIdentityB2CUserFlowLanguageOverridePageContent.md)
+Update media content for the navigation property overridesPages in identity
+
+### [Set-MgIdentityB2CUserFlowUserAttributeAssignmentOrder](Set-MgIdentityB2CUserFlowUserAttributeAssignmentOrder.md)
+Invoke action setOrder
+
+### [Set-MgIdentityB2XUserFlowLanguageDefaultPageContent](Set-MgIdentityB2XUserFlowLanguageDefaultPageContent.md)
+Update media content for the navigation property defaultPages in identity
+
+### [Set-MgIdentityB2XUserFlowLanguageOverridePageContent](Set-MgIdentityB2XUserFlowLanguageOverridePageContent.md)
+Update media content for the navigation property overridesPages in identity
+
+### [Set-MgIdentityB2XUserFlowUserAttributeAssignmentOrder](Set-MgIdentityB2XUserFlowUserAttributeAssignmentOrder.md)
+Invoke action setOrder
+
 ### [Set-MgTrustFrameworkPolicyContent](Set-MgTrustFrameworkPolicyContent.md)
 Update media content for the navigation property policies in trustFramework
 
@@ -965,6 +1148,39 @@ Invoke action validateProperties
 ### [Update-MgDataPolicyOperation](Update-MgDataPolicyOperation.md)
 Update entity in dataPolicyOperations
 
+### [Update-MgIdentityApiConnector](Update-MgIdentityApiConnector.md)
+Update the navigation property apiConnectors in identity
+
+### [Update-MgIdentityB2CUserFlow](Update-MgIdentityB2CUserFlow.md)
+Update the navigation property b2cUserFlows in identity
+
+### [Update-MgIdentityB2CUserFlowLanguage](Update-MgIdentityB2CUserFlowLanguage.md)
+Update the navigation property languages in identity
+
+### [Update-MgIdentityB2CUserFlowLanguageDefaultPage](Update-MgIdentityB2CUserFlowLanguageDefaultPage.md)
+Update the navigation property defaultPages in identity
+
+### [Update-MgIdentityB2CUserFlowLanguageOverridePage](Update-MgIdentityB2CUserFlowLanguageOverridePage.md)
+Update the navigation property overridesPages in identity
+
+### [Update-MgIdentityB2CUserFlowUserAttributeAssignment](Update-MgIdentityB2CUserFlowUserAttributeAssignment.md)
+Update the navigation property userAttributeAssignments in identity
+
+### [Update-MgIdentityB2XUserFlow](Update-MgIdentityB2XUserFlow.md)
+Update the navigation property b2xUserFlows in identity
+
+### [Update-MgIdentityB2XUserFlowLanguage](Update-MgIdentityB2XUserFlowLanguage.md)
+Update the navigation property languages in identity
+
+### [Update-MgIdentityB2XUserFlowLanguageDefaultPage](Update-MgIdentityB2XUserFlowLanguageDefaultPage.md)
+Update the navigation property defaultPages in identity
+
+### [Update-MgIdentityB2XUserFlowLanguageOverridePage](Update-MgIdentityB2XUserFlowLanguageOverridePage.md)
+Update the navigation property overridesPages in identity
+
+### [Update-MgIdentityB2XUserFlowUserAttributeAssignment](Update-MgIdentityB2XUserFlowUserAttributeAssignment.md)
+Update the navigation property userAttributeAssignments in identity
+
 ### [Update-MgIdentityConditionalAccessAuthenticationContextClassReference](Update-MgIdentityConditionalAccessAuthenticationContextClassReference.md)
 Update the navigation property authenticationContextClassReferences in identity
 
@@ -974,11 +1190,17 @@ Update the navigation property namedLocations in identity
 ### [Update-MgIdentityConditionalAccessPolicy](Update-MgIdentityConditionalAccessPolicy.md)
 Update the navigation property policies in identity
 
+### [Update-MgIdentityContinuouAccessEvaluationPolicy](Update-MgIdentityContinuouAccessEvaluationPolicy.md)
+Update the navigation property continuousAccessEvaluationPolicy in identity
+
 ### [Update-MgIdentityProvider](Update-MgIdentityProvider.md)
-Update entity in identityProviders
+Update the navigation property identityProviders in identity
 
 ### [Update-MgIdentityUserFlow](Update-MgIdentityUserFlow.md)
 Update the navigation property userFlows in identity
+
+### [Update-MgIdentityUserFlowAttribute](Update-MgIdentityUserFlowAttribute.md)
+Update the navigation property userFlowAttributes in identity
 
 ### [Update-MgInformationProtection](Update-MgInformationProtection.md)
 Update informationProtection

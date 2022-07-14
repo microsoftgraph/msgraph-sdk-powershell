@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgSearchAcronym
 
 ## SYNOPSIS
-Administrative answer in Microsoft Search results to define common acronyms in a organization.
+Update the navigation property acronyms in search
 
 ## SYNTAX
 
@@ -41,7 +41,7 @@ Update-MgSearchAcronym -InputObject <ISearchIdentity> [-AdditionalProperties <Ha
 ```
 
 ## DESCRIPTION
-Administrative answer in Microsoft Search results to define common acronyms in a organization.
+Update the navigation property acronyms in search
 
 ## EXAMPLES
 
@@ -124,7 +124,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -314,14 +314,18 @@ BODYPARAMETER <IMicrosoftGraphSearchAcronym>: acronym
     - `[User <IMicrosoftGraphSearchIdentity>]`: identity
   - `[LastModifiedDateTime <DateTime?>]`: Timestamp of when the search answer is created or edited. Read-only.
   - `[WebUrl <String>]`: Search answer URL link. When users click this search answer in search results, they will go to this URL.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[StandsFor <String>]`: What the acronym stands for.
   - `[State <String>]`: answerState
 
 INPUTOBJECT <ISearchIdentity>: Identity Parameter
   - `[AcronymId <String>]`: key: id of acronym
   - `[BookmarkId <String>]`: key: id of bookmark
+  - `[ConnectionOperationId <String>]`: key: id of connectionOperation
   - `[ExternalConnectionId <String>]`: key: id of externalConnection
+  - `[ExternalGroupId <String>]`: key: id of externalGroup
+  - `[ExternalItemId <String>]`: key: id of externalItem
+  - `[IdentityId <String>]`: key: id of identity
   - `[QnaId <String>]`: key: id of qna
 
 LASTMODIFIEDBY <IMicrosoftGraphSearchIdentitySet>: identitySet
