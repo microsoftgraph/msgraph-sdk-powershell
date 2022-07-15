@@ -26,14 +26,18 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
         /// Prepends SDK header to an HTTP client.
         /// </summary>
         /// <param name="httpClient"></param>
-        private static void PrependSDKHeader(HttpClient httpClient, string headerName, string headerValue)
+        private static void PrependSDKVersionHeader(HttpClient httpClient, string headerName, string headerValue)
         {
-            httpClient.DefaultRequestHeaders.TryGetValues(headerName, out IEnumerable<string> previousSDKHeaders);
-            if (previousSDKHeaders == null) {
-                httpClient.DefaultRequestHeaders.Add(headerName, headerValue);
-            } else {
+            if (httpClient.DefaultRequestHeaders.TryGetValues(headerName, out IEnumerable<string> previousSDKHeaders))
+            {
                 httpClient.DefaultRequestHeaders.Remove(headerName);
-                httpClient.DefaultRequestHeaders.Add(headerName, new[] { headerValue, previousSDKHeaders.First() });
+                httpClient.DefaultRequestHeaders.Add(headerName, new[] {
+                    headerValue, previousSDKHeaders.Where(h => h.StartsWith(Constants.DotNetSDKHeaderValue, StringComparison.InvariantCultureIgnoreCase)).FirstOrDefault()
+                });
+            }
+            else
+            {
+                httpClient.DefaultRequestHeaders.Add(headerName, headerValue);
             }
         }
         
@@ -49,7 +53,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
 
         private static void SetRequestHeaders(HttpClient httpClient, string sdkVersionHeader, string userAgentHeader)
         {
-            PrependSDKHeader(httpClient, CoreConstants.Headers.SdkVersionHeaderName, sdkVersionHeader);
+            PrependSDKVersionHeader(httpClient, CoreConstants.Headers.SdkVersionHeaderName, sdkVersionHeader);
             ReplaceSDKHeader(httpClient, HttpKnownHeaderNames.UserAgent, userAgentHeader);            
         }
 
@@ -58,9 +62,11 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
             authContext = authContext ?? GraphSession.Instance.AuthContext;
             if (authContext is null) { throw new AuthenticationException(Core.ErrorConstants.Message.MissingAuthContext); }
             var requestUserAgent = new RequestUserAgent(authContext.PSHostVersion, invocationInfo);
-            string sdkVersionHeaderValue = string.Format(Constants.SDKHeaderValueV1, AssemblyInfo.Version.Major, AssemblyInfo.Version.Minor, AssemblyInfo.Version.Build);
+            string sdkVersionHeaderValue;
             if (requestUserAgent.App.Contains("Beta"))
-                sdkVersionHeaderValue = string.Format(Constants.SDKHeaderValueBeta, AssemblyInfo.Version.Major, AssemblyInfo.Version.Minor, AssemblyInfo.Version.Build);
+                sdkVersionHeaderValue = string.Format(Constants.PSSDKHeaderValueBeta, AssemblyInfo.Version.Major, AssemblyInfo.Version.Minor, AssemblyInfo.Version.Build);
+            else
+                sdkVersionHeaderValue = string.Format(Constants.PSSDKHeaderValueV1, AssemblyInfo.Version.Major, AssemblyInfo.Version.Minor, AssemblyInfo.Version.Build);
             var httpClient = GetGraphHttpClient(authContext);
             SetRequestHeaders(httpClient, sdkVersionHeaderValue, requestUserAgent.UserAgent);
             return httpClient;
