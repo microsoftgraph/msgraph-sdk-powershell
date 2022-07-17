@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgSearchQna
 
 ## SYNOPSIS
-Administrative answer in Microsoft Search results which provide answers for specific search keywords in an organization.
+Delete navigation property qnas for search
 
 ## SYNTAX
 
@@ -24,7 +24,7 @@ Remove-MgSearchQna -InputObject <ISearchIdentity> [-IfMatch <String>] [-PassThru
 ```
 
 ## DESCRIPTION
-Administrative answer in Microsoft Search results which provide answers for specific search keywords in an organization.
+Delete navigation property qnas for search
 
 ## EXAMPLES
 
@@ -145,7 +145,11 @@ To create the parameters described below, construct a hash table containing the 
 INPUTOBJECT <ISearchIdentity>: Identity Parameter
   - `[AcronymId <String>]`: key: id of acronym
   - `[BookmarkId <String>]`: key: id of bookmark
+  - `[ConnectionOperationId <String>]`: key: id of connectionOperation
   - `[ExternalConnectionId <String>]`: key: id of externalConnection
+  - `[ExternalGroupId <String>]`: key: id of externalGroup
+  - `[ExternalItemId <String>]`: key: id of externalItem
+  - `[IdentityId <String>]`: key: id of identity
   - `[QnaId <String>]`: key: id of qna
 
 ## RELATED LINKS

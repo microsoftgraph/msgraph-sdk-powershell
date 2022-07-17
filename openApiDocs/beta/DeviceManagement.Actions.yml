@@ -8136,6 +8136,78 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  /deviceManagement/reports/microsoft.graph.getNoncompliantDevicesAndSettingsReport:
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action getNoncompliantDevicesAndSettingsReport
+      operationId: deviceManagement.reports_getNoncompliantDevicesAndSettingsReport
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  nullable: true
+                select:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                search:
+                  type: string
+                  nullable: true
+                groupBy:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                orderBy:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                skip:
+                  maximum: 2147483647
+                  minimum: -2147483648
+                  type: integer
+                  format: int32
+                  nullable: true
+                top:
+                  maximum: 2147483647
+                  minimum: -2147483648
+                  type: integer
+                  format: int32
+                  nullable: true
+                sessionId:
+                  type: string
+                  nullable: true
+                filter:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/octet-stream:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   /deviceManagement/reports/microsoft.graph.getPolicyNonComplianceMetadata:
     post:
       tags:
@@ -12302,6 +12374,10 @@ components:
         rule:
           type: string
           description: Rule definition of the Assignment Filter.
+        search:
+          type: string
+          description: Search keyword applied to scope found devices.
+          nullable: true
         skip:
           maximum: 2147483647
           minimum: -2147483648
@@ -12992,6 +13068,7 @@ components:
         - microsoftSense
         - exchangeOnline
         - linuxMdm
+        - enrollment
         - unknownFutureValue
       type: string
       description: Describes which technology this setting can be deployed with
@@ -13023,6 +13100,9 @@ components:
           - value: linuxMdm
             description: Setting can be deployed through the Linux Mdm channel
             name: linuxMdm
+          - value: enrollment
+            description: Setting can be deployed through device enrollment.
+            name: enrollment
           - value: unknownFutureValue
             description: Sentinel member for cases where the client cannot handle the new enum values.
             name: unknownFutureValue
@@ -13863,10 +13943,10 @@ components:
       properties:
         name:
           type: string
-          description: Name for this key-value pair
+          description: 'Name for this key-value pair. Possible names are: AdditionalWSFedEndpointCheckResult,  AllowedAuthenticationClassReferencesCheckResult, AlwaysRequireAuthenticationCheckResult,   AutoUpdateEnabledCheckResult, ClaimsProviderNameCheckResult, EncryptClaimsCheckResult,  EncryptedNameIdRequiredCheckResult, MonitoringEnabledCheckResult,NotBeforeSkewCheckResult,  RequestMFAFromClaimsProvidersCheckResult, SignedSamlRequestsRequiredCheckResult, AdditionalAuthenticationRulesCheckResult, TokenLifetimeCheckResult,  DelegationAuthorizationRulesCheckResult, IssuanceAuthorizationRulesCheckResult, IssuanceTransformRulesCheckResult.'
         value:
           type: string
-          description: Value for this key-value pair
+          description: 'Value for this key-value pair. Possible result values are 0 (when the validation check passed), 1 (when the validation check failed), or 2 (when the validation check is a warning).'
           nullable: true
       additionalProperties:
         type: object

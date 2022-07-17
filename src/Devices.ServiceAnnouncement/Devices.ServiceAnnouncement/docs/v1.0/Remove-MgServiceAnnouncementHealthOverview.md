@@ -8,8 +8,7 @@ schema: 2.0.0
 # Remove-MgServiceAnnouncementHealthOverview
 
 ## SYNOPSIS
-A collection of service health information for tenant.
-This property is a contained navigation property, it is nullable and readonly.
+Delete navigation property healthOverviews for admin
 
 ## SYNTAX
 
@@ -26,8 +25,7 @@ Remove-MgServiceAnnouncementHealthOverview -InputObject <IDevicesServiceAnnounce
 ```
 
 ## DESCRIPTION
-A collection of service health information for tenant.
-This property is a contained navigation property, it is nullable and readonly.
+Delete navigation property healthOverviews for admin
 
 ## EXAMPLES
 
