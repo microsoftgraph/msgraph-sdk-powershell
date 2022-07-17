@@ -1,18 +1,10 @@
-### Example 1: {{ Add title here }}
+### Example 1: Confirm User sign in compormised 
 ```powershell
-PS C:\> {{ Add code here }}
+Connect-MgGraph -Scopes "IdentityRiskyUser.ReadWrite.All"
+Select-MgProfile beta
+Confirm-MgRiskyUserCompromised -UserIds  "254562e7-a745-496d-b98a-f6770b23152a","8f2ef8bf-53be-45f3-822d-366f51067458"
 
-{{ Add output here }}
 ```
+The command confirms the two users as compormised users.
 
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
