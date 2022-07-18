@@ -35,6 +35,7 @@ steps:
 
   - task: PowerShell@2
     displayName: Test Authentication Module
+    enabled: false
     inputs:
       targetType: inline
       pwsh: true
@@ -51,6 +52,7 @@ steps:
 
   - task: PowerShell@2
     displayName: Test Workload Modules
+    enabled: false
     inputs:
       targetType: inline
       pwsh: true
