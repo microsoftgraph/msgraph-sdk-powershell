@@ -1,0 +1,66 @@
+﻿# Copyright (c) Microsoft Corporation. All rights reserved.
+# Licensed under the MIT License.
+name: $(BuildDefinitionName)_$(SourceBranchName)_$(Date:yyyyMMdd)$(Rev:.r)
+parameters:
+  - name: BuildAgent
+    default: 1es-windows-ps-compute
+    displayName: Build Agent
+
+variables:
+  BuildAgent: ${{ parameters.BuildAgent }}
+  GitUserEmail: 'GraphTooling@service.microsoft.com'
+  GitUserName: 'Microsoft Graph DevX Tooling'
+
+pool: $(BuildAgent)
+
+trigger:
+  branches:
+    include:
+      - main
+      - features/2.0
+pr: none
+
+steps:
+  - template: ../common-templates/install-tools-template.yml
+  - template: ../common-templates/security-prechecks-template.yml
+# TODO: Load from templates.
+# Authentication module.
+  - task: PowerShell@2
+    displayName: Generate Authentication Module
+    inputs:
+      targetType: inline
+      pwsh: true
+      script: |
+        . $(System.DefaultWorkingDirectory)/tools/GenerateAuthenticationModule.ps1 -Build -Test
+
+  - task: PowerShell@2
+    displayName: Test Authentication Module
+    inputs:
+      targetType: inline
+      pwsh: true
+      script: |
+        . $(System.DefaultWorkingDirectory)/tools/GenerateAuthenticationModule.ps1 -Test
+# Workload modules.
+  - task: PowerShell@2
+    displayName: Generate Workload Modules
+    inputs:
+      targetType: inline
+      pwsh: true
+      script: |
+        . $(System.DefaultWorkingDirectory)/tools/GenerateModules.ps1 -Build -UpdateAutoRest -ExcludeExampleTemplates -ExcludeNotesSection
+
+  - task: PowerShell@2
+    displayName: Test Workload Modules
+    inputs:
+      targetType: inline
+      pwsh: true
+      script: |
+        . $(System.DefaultWorkingDirectory)/tools/GenerateModules.ps1 -Test
+# Meta-Module module.
+  - task: PowerShell@2
+    displayName: 'Generate Meta-Module'
+    inputs:
+      targetType: inline
+      pwsh: true
+      script: |
+         $(System.DefaultWorkingDirectory)/tools/GenerateRollUpModule.ps1
