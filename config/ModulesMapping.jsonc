@@ -17,7 +17,7 @@
   "DirectoryObjects": "^directoryObjects\\.",
   // "Education": "^education\\.",
   // "Files": "^drives\\.|^shares\\.|^users.drive$|^groups.drive$",
-  // "Financials": "^financials\\.",
+  "Financials": "^financials\\.",
   // "Groups": "^groups.group$|^groups.directoryObject$|^groups.conversation$|^groups.endpoint$|^groups.extension$|^groups.resourceSpecificPermissionGrant$|^groups.profilePhoto$|^groups.conversationThread$|^groupLifecyclePolicies\\.|^users.group$|^groups.directorySetting$|^groups.Actions$|^groups.Functions$",
   "Identity.DirectoryManagement": "^administrativeUnits\\.|^contacts\\.|^devices\\.|^domains\\.|^directoryRoles\\.|^directoryRoleTemplates\\.|^directorySettingTemplates\\.|^settings\\.|^subscribedSkus\\.|^contracts\\.|^directory\\.|^users.scopedRoleMembership$|^organization.organization$|^organization.organizationalBranding$|^organization.organizationSettings$|^organization.Actions$|^organization.extension$",
   // "Identity.Governance": "^accessReviews\\.|^businessFlowTemplates\\.|^programs\\.|^programControls\\.|^programControlTypes\\.|^privilegedRoles\\.|^privilegedRoleAssignments\\.|^privilegedRoleAssignmentRequests\\.|^privilegedApproval\\.|^privilegedOperationEvents\\.|^privilegedAccess\\.|^agreements\\.|^users.agreementAcceptance$|^identityGovernance\\.",
