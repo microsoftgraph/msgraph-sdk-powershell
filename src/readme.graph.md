@@ -89,7 +89,7 @@ directive:
     - MicrosoftGraphSecuritySensitivityLabel
     - MicrosoftGraphTaskViewpoint
     - MicrosoftGraphSecurityEdiscoveryReviewTag
-    - microsoftGraphSecurityEdiscoverySearch
+    - MicrosoftGraphSecurityEdiscoverySearch
   # Set parameter alias
   - where:
       parameter-name: OrderBy
@@ -453,6 +453,10 @@ directive:
       subject: ^UserManagedAppRegistrationByDeviceTag$
       variant: ^Wipe$|^WipeExpanded$|^WipeViaIdentity$|^WipeViaIdentityExpanded$
     remove: true
+  - where:
+      verb: New|Remove|Update|Get
+      subject: ^(.*)(IdentityGovernance)TermOfUse$
+    remove: true
 # Modify generated .json.cs model classes.
   - from: source-file-csharp
     where: $
@@ -582,7 +586,8 @@ directive:
         let odataNextLinkRegex = /(^\s*)(while\s*\(\s*_nextLink\s*!=\s*null\s*\))/gmi
         if($.match(odataNextLinkRegex)) {
           // Add custom -PageSize parameter to *_List cmdlets that support Odata next link.
-          $ = $.replace(odataNextLinkRegex, '$1while (_nextLink != null && this.ShouldIteratePages(this.InvocationInformation.BoundParameters, result.Value.Length))\n$1');
+          let initializePageCountPlaceholder = 'this.InitializePageCount(result.Value.Length);'
+          $ = $.replace(odataNextLinkRegex, `$1${initializePageCountPlaceholder}\n$1while (_nextLink != null && this.ShouldIteratePages(this.InvocationInformation.BoundParameters, result.Value.Length))$1`);
 
           let psBaseClassImplementationRegex = /(\s*:\s*)(global::System.Management.Automation.PSCmdlet)/gmi
           $ = $.replace(psBaseClassImplementationRegex, '$1PowerShell.Cmdlets.Custom.ListCmdlet');

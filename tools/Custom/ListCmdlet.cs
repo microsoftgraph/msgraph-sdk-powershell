@@ -49,11 +49,6 @@ namespace NamespacePrefixPlaceholder.PowerShell.Cmdlets.Custom
         public string CountVariable { get => this._countVariable; set => this._countVariable = value; }
 
         /// <summary>
-        /// Default number of items per page.
-        /// </summary>
-        internal const int DefaultPageSize = 100;
-
-        /// <summary>
         /// Maximum number of items per page.
         /// </summary>
         internal const int MaxPageSize = 999;
@@ -101,28 +96,25 @@ namespace NamespacePrefixPlaceholder.PowerShell.Cmdlets.Custom
                     null));
             }
 
-            // Move `-Top` parameter to `limit`.
             if (invocationInfo.BoundParameters.ContainsKey("Top"))
             {
-                limit = top;
-            }
+                if ((top > MaxPageSize) || invocationInfo.BoundParameters.ContainsKey("All") || invocationInfo.BoundParameters.ContainsKey("PageSize"))
+                {
+                    limit = top;
+                }
 
-            int currentPageSize = invocationInfo.BoundParameters.ContainsKey("PageSize") ? PageSize : DefaultPageSize;
-            if (invocationInfo.BoundParameters.ContainsKey("Top") && limit < currentPageSize)
-            {
-                currentPageSize = limit;
-            }
+                if (top > MaxPageSize)
+                {
+                    // Remove $top from query parameters, we will handle paging. 
+                    top = default;
+                    invocationInfo.BoundParameters.Remove("Top");
+                }
 
-            if (invocationInfo.BoundParameters.ContainsKey("PageSize") || invocationInfo.BoundParameters.ContainsKey("Top") || invocationInfo.BoundParameters.ContainsKey("All")){
-                // Explicitly set `-Top` parameter to currentPageSize in order for the generated cmdlets to construct a URL with a `$top` query parameter.
-                invocationInfo.BoundParameters["Top"] = currentPageSize;
-                top = currentPageSize;
-            }
-
-            if (limit != default)
-            {
-                requiredPages = limit / currentPageSize;
-                overflowItemsCount = limit % currentPageSize;
+                if (invocationInfo.BoundParameters.ContainsKey("PageSize"))
+                {
+                    invocationInfo.BoundParameters["Top"] = PageSize;
+                    top = PageSize;
+                }
             }
 
             if ((!invocationInfo.BoundParameters.ContainsKey("Count")) && invocationInfo.BoundParameters.ContainsKey("CountVariable"))
@@ -130,6 +122,15 @@ namespace NamespacePrefixPlaceholder.PowerShell.Cmdlets.Custom
                 // Set Count to true when CountVariable is set.
                 invocationInfo.BoundParameters["Count"] = true;
                 count = true;
+            }
+        }
+
+        public void InitializePageCount(int initialPageSize)
+        {
+            if (limit != default && initialPageSize != default)
+            {
+                requiredPages = limit / initialPageSize;
+                overflowItemsCount = limit % initialPageSize;
             }
         }
 
@@ -166,7 +167,7 @@ namespace NamespacePrefixPlaceholder.PowerShell.Cmdlets.Custom
                 }
                 else
                 {
-                    nextLinkUri.Query += $"$top=" + global::System.Uri.EscapeDataString(overflowItemsCount.ToString());
+                    nextLinkUri.Query += $"&$top={System.Uri.EscapeDataString(overflowItemsCount.ToString())}";
                 }
             }
             return nextLinkUri.Uri;
