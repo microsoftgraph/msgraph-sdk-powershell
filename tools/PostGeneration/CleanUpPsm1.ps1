@@ -5,23 +5,16 @@ Param(
     [Parameter(Mandatory = $true)] [ValidateNotNullOrEmpty()][string] $FullyQualifiedModuleName
 )
 $ErrorActionPreference = "Stop"
-# Update module psm1 with Graph session profile name.
+# Update module psm1.
 $ModulePsm1 = Join-Path $ModuleProjectPath "/$FullyQualifiedModuleName.psm1"
 (Get-Content -Path $ModulePsm1) | ForEach-Object {
-    if ($_ -match '\$instance = \[Microsoft.Graph.PowerShell.Module\]::Instance') {
-        # Update main psm1 with Graph session profile name and module name.
-        $_
-        '  $instance.ProfileName = [Microsoft.Graph.PowerShell.Authentication.GraphSession]::Instance.SelectedProfile'
-    }
-    else {
-        # Rename all Azure instances in psm1 to `Microsoft Graph`.
-        $updatedLine = $_ -replace 'Azure', 'Microsoft Graph'
-        # Replace all 'instance.Name' declarations with fully qualified module name.
-        $updatedLine = $updatedLine -replace '\$\(\$instance.Name\)', "$FullyQualifiedModuleName"
-        # Replace Write-Information with Write-Debug
-        $updatedLine = $updatedLine -replace 'Write\-Information', 'Write-Debug'
-        $updatedLine
-    }
+    # Rename all Azure instances in psm1 to `Microsoft Graph`.
+    $updatedLine = $_ -replace 'Azure', 'Microsoft Graph'
+    # Replace all 'instance.Name' declarations with fully qualified module name.
+    $updatedLine = $updatedLine -replace '\$\(\$instance.Name\)', "$FullyQualifiedModuleName"
+    # Replace Write-Information with Write-Debug
+    $updatedLine = $updatedLine -replace 'Write\-Information', 'Write-Debug'
+    $updatedLine
 } | Set-Content $ModulePsm1
 
 # Address AutoREST bug where it looks for exports in the wrong directory.
