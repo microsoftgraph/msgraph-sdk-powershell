@@ -3,66 +3,42 @@
 
 steps:
     - task: UseDotNet@2
-      displayName: 'Use .NET Core SDK 2 LTS'
-      inputs:
-        debugMode: false
-        version: 2.x
-
-    - task: UseDotNet@2
-      displayName: 'Use .NET Core SDK 3 LTS'
-      inputs:
-        debugMode: false
-        version: 3.x
-
-    - task: UseDotNet@2
-      displayName: 'Use .NET Core SDK 6 Current'
+      displayName: Use .NET SDK
       inputs:
         debugMode: false
         version: 6.x
 
     - task: NuGetToolInstaller@1
-      displayName: 'Install Nuget 5.7'
-      inputs:
-         versionSpec: 5.7.0
-         checkLatest: false # Optional
+      displayName: Install Nuget
 
     - task: NuGetAuthenticate@0
 
-
     - task: PowerShell@2
-      displayName: 'Version Check'
+      displayName: Version Check
       inputs:
         targetType: inline
         pwsh: true
         script: |
-          Write-Host $PSVersionTable.PSVersion
-          Write-Host $host.Version
-          Write-Host (Get-Host).Version
+          Write-Output $PSVersionTable
 
     - task: NodeTool@0
-      displayName: 'Install NodeJs'
+      displayName: Install NodeJs
       inputs:
-        versionSpec: '14.18.2'
-        checkLatest: true # Optional
+        versionSpec: 16.x
 
     - task: Npm@1
-      displayName: 'Install AutoRest'
+      displayName: Install AutoRest
       inputs:
-        command: 'custom'
-        customCommand: 'install -g autorest@latest'
-
-    - task: Npm@1
-      displayName: 'Install Rush'
-      inputs:
-        command: 'custom'
-        customCommand: 'install -g @microsoft/rush'
+        command: custom
+        customCommand: install -g autorest@latest
 
     - task: PowerShell@2
-      displayName: 'Register PS Repository'
+      displayName: Register PS Repository
+      enabled: false
       inputs:
         targetType: inline
         pwsh: true
-        errorActionPreference: 'continue'
+        errorActionPreference: continue
         script: |
           $ErrorActionPreference = [System.Management.Automation.ActionPreference]::Continue
           Get-PSRepository
