@@ -20,6 +20,7 @@ trigger:
       - features/2.0
 pr: none
 
+timeoutInMinutes: 840
 steps:
   - template: ./common-templates/install-tools-template.yml
   - template: ./common-templates/security-prechecks-template.yml
