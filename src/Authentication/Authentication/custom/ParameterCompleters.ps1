@@ -30,8 +30,8 @@ $environmentParameterBlock = {
     $fakeBoundParameters
     )
 
-    $permissions = Get-MgEnvironment | Select-Object -ExpandProperty Name
-    $permissions | Where-Object {
+    $environments = Get-MgEnvironment | Select-Object -ExpandProperty Name
+    $environments | Where-Object {
         $_ -like "$wordToCompleteEnvironment*"
     }
 }
