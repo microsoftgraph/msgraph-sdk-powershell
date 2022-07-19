@@ -13,7 +13,7 @@
   "DeviceManagement.Administration": "^deviceManagement.(virtualEndpoint.*|.*Partner.*|.*Certificate.*|.*role.*|deviceManagement(DomainJoinConnector|ExchangeConnector|ExchangeOnPremisesPolicy)|groupPolicy(Category|Definition|DefinitionFile|MigrationReport|ObjectFile|UploadedDefinitionFile)|auditEvent|cartToClassAssociation|comanagementEligibleDevice|deviceAndAppManagementRoleAssignment|intuneBrandingProfile|iosUpdateDeviceStatus|mobileThreatDefenseConnector|ndesConnector|resourceOperation|restrictedAppsViolation|termsAndConditions)",
   // // "DeviceManagement.Enrolment": "^deviceManagement.(.*Enrollment.*|.*Autopilot.*|.*depOnboarding.*|importedDeviceIdentity|onPremisesConditionalAccessSettings|windowsFeatureUpdateProfile)$|^roleManagement\\.",
   "DeviceManagement.Actions": "^deviceManagement.Actions$",
-  "DeviceManagement.Functions": "^deviceManagement.Functions$",
+  // // "DeviceManagement.Functions": "^deviceManagement.Functions$",
   "DirectoryObjects": "^directoryObjects\\.",
   "Education": "^education\\.",
   "Files": "^drives\\.|^shares\\.|^users.drive$|^groups.drive$",
