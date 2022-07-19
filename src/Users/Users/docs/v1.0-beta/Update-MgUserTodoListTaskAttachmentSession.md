@@ -94,7 +94,7 @@ Accept wildcard characters: False
 ```
 
 ### -ContentInputFile
-Input File for Content (.)
+Input File for Content (The content streams that are uploaded.)
 
 ```yaml
 Type: System.String
@@ -109,7 +109,8 @@ Accept wildcard characters: False
 ```
 
 ### -ExpirationDateTime
-.
+The date and time in UTC when the upload session will expire.
+The complete file must be uploaded before this expiration time is reached.
 
 ```yaml
 Type: System.DateTime
@@ -155,7 +156,7 @@ Accept wildcard characters: False
 ```
 
 ### -NextExpectedRanges
-.
+Indicates a single value {start} that represents the location in the file where the next upload should begin.
 
 ```yaml
 Type: System.String[]
@@ -285,9 +286,9 @@ To create the parameters described below, construct a hash table containing the 
 BODYPARAMETER <IMicrosoftGraphAttachmentSession>: attachmentSession
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: 
-  - `[Content <Byte[]>]`: 
-  - `[ExpirationDateTime <DateTime?>]`: 
-  - `[NextExpectedRanges <String[]>]`: 
+  - `[Content <Byte[]>]`: The content streams that are uploaded.
+  - `[ExpirationDateTime <DateTime?>]`: The date and time in UTC when the upload session will expire. The complete file must be uploaded before this expiration time is reached.
+  - `[NextExpectedRanges <String[]>]`: Indicates a single value {start} that represents the location in the file where the next upload should begin.
 
 INPUTOBJECT <IUsersIdentity>: Identity Parameter
   - `[AttachmentBaseId <String>]`: key: id of attachmentBase

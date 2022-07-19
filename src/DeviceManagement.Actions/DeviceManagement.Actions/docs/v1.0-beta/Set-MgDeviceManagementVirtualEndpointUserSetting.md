@@ -194,7 +194,7 @@ To create the parameters described below, construct a hash table containing the 
 
 
 ASSIGNMENTS <IMicrosoftGraphCloudPcUserSettingAssignment[]>: .
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[CreatedDateTime <DateTime?>]`: The date and time this assignment was created. The Timestamp type represents the date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 looks like this: '2014-01-01T00:00:00Z'.
   - `[Target <IMicrosoftGraphCloudPcManagementAssignmentTarget>]`: cloudPcManagementAssignmentTarget
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -202,7 +202,7 @@ ASSIGNMENTS <IMicrosoftGraphCloudPcUserSettingAssignment[]>: .
 BODYPARAMETER <IPaths7Tr5RcDevicemanagementVirtualendpointUsersettingsCloudpcusersettingIdMicrosoftGraphAssignPostRequestbodyContentApplicationJsonSchema>: .
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Assignments <IMicrosoftGraphCloudPcUserSettingAssignment[]>]`: 
-    - `[Id <String>]`: Read-only.
+    - `[Id <String>]`: 
     - `[CreatedDateTime <DateTime?>]`: The date and time this assignment was created. The Timestamp type represents the date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 looks like this: '2014-01-01T00:00:00Z'.
     - `[Target <IMicrosoftGraphCloudPcManagementAssignmentTarget>]`: cloudPcManagementAssignmentTarget
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -220,15 +220,11 @@ INPUTOBJECT <IDeviceManagementActionsIdentity>: Identity Parameter
   - `[CloudPcUserSettingId <String>]`: key: id of cloudPcUserSetting
   - `[DataSharingConsentId <String>]`: key: id of dataSharingConsent
   - `[DepOnboardingSettingId <String>]`: key: id of depOnboardingSetting
-  - `[DetectedAppId <String>]`: key: id of detectedApp
-  - `[DeviceAndAppManagementRoleAssignmentId <String>]`: key: id of deviceAndAppManagementRoleAssignment
   - `[DeviceCompliancePolicyId <String>]`: key: id of deviceCompliancePolicy
   - `[DeviceComplianceScriptId <String>]`: key: id of deviceComplianceScript
-  - `[DeviceConfigurationGroupAssignmentId <String>]`: key: id of deviceConfigurationGroupAssignment
   - `[DeviceConfigurationId <String>]`: key: id of deviceConfiguration
   - `[DeviceCustomAttributeShellScriptId <String>]`: key: id of deviceCustomAttributeShellScript
   - `[DeviceEnrollmentConfigurationId <String>]`: key: id of deviceEnrollmentConfiguration
-  - `[DeviceHealthScriptDeviceStateId <String>]`: key: id of deviceHealthScriptDeviceState
   - `[DeviceHealthScriptId <String>]`: key: id of deviceHealthScript
   - `[DeviceLogCollectionResponseId <String>]`: key: id of deviceLogCollectionResponse
   - `[DeviceManagementCompliancePolicyId <String>]`: key: id of deviceManagementCompliancePolicy
@@ -237,7 +233,6 @@ INPUTOBJECT <IDeviceManagementActionsIdentity>: Identity Parameter
   - `[DeviceManagementIntentId <String>]`: key: id of deviceManagementIntent
   - `[DeviceManagementResourceAccessProfileBaseId <String>]`: key: id of deviceManagementResourceAccessProfileBase
   - `[DeviceManagementReusablePolicySettingId <String>]`: key: id of deviceManagementReusablePolicySetting
-  - `[DeviceManagementScriptDeviceStateId <String>]`: key: id of deviceManagementScriptDeviceState
   - `[DeviceManagementScriptId <String>]`: key: id of deviceManagementScript
   - `[DeviceManagementTemplateId <String>]`: key: id of deviceManagementTemplate
   - `[DeviceManagementTemplateId1 <String>]`: key: id of deviceManagementTemplate
@@ -261,6 +256,7 @@ INPUTOBJECT <IDeviceManagementActionsIdentity>: Identity Parameter
   - `[WindowsDriverUpdateProfileId <String>]`: key: id of windowsDriverUpdateProfile
   - `[WindowsFeatureUpdateProfileId <String>]`: key: id of windowsFeatureUpdateProfile
   - `[WindowsQualityUpdateProfileId <String>]`: key: id of windowsQualityUpdateProfile
+  - `[ZebraFotaDeploymentId <String>]`: key: id of zebraFotaDeployment
 
 ## RELATED LINKS
 

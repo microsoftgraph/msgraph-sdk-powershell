@@ -12,7 +12,7 @@ Update the navigation property versions in agreements
 
 ## SYNTAX
 
-### UpdateExpanded (Default)
+### UpdateExpanded1 (Default)
 ```
 Update-MgAgreementFileLocalizationVersion -AgreementFileLocalizationId <String>
  -AgreementFileVersionId <String> -AgreementId <String> [-AdditionalProperties <Hashtable>]
@@ -21,20 +21,20 @@ Update-MgAgreementFileLocalizationVersion -AgreementFileLocalizationId <String>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### Update
+### Update1
 ```
 Update-MgAgreementFileLocalizationVersion -AgreementFileLocalizationId <String>
  -AgreementFileVersionId <String> -AgreementId <String> -BodyParameter <Hashtable> [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
-### UpdateViaIdentity
+### UpdateViaIdentity1
 ```
 Update-MgAgreementFileLocalizationVersion -InputObject <IIdentityGovernanceIdentity>
  -BodyParameter <Hashtable> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### UpdateViaIdentityExpanded
+### UpdateViaIdentityExpanded1
 ```
 Update-MgAgreementFileLocalizationVersion -InputObject <IIdentityGovernanceIdentity>
  [-AdditionalProperties <Hashtable>] [-CreatedDateTime <DateTime>] [-DisplayName <String>]
@@ -54,7 +54,7 @@ Additional Parameters
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -69,7 +69,7 @@ key: id of agreementFileLocalization
 
 ```yaml
 Type: System.String
-Parameter Sets: Update, UpdateExpanded
+Parameter Sets: Update1, UpdateExpanded1
 Aliases:
 
 Required: True
@@ -84,7 +84,7 @@ key: id of agreementFileVersion
 
 ```yaml
 Type: System.String
-Parameter Sets: Update, UpdateExpanded
+Parameter Sets: Update1, UpdateExpanded1
 Aliases:
 
 Required: True
@@ -99,7 +99,7 @@ key: id of agreement
 
 ```yaml
 Type: System.String
-Parameter Sets: Update, UpdateExpanded
+Parameter Sets: Update1, UpdateExpanded1
 Aliases:
 
 Required: True
@@ -114,7 +114,7 @@ agreementFileVersion
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: Update, UpdateViaIdentity
+Parameter Sets: Update1, UpdateViaIdentity1
 Aliases:
 
 Required: True
@@ -130,7 +130,7 @@ For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 
 ```yaml
 Type: System.DateTime
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -146,7 +146,7 @@ The localized display name is shown to end users who view the agreement.
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -162,7 +162,7 @@ To construct, please use Get-Help -Online and see NOTES section for FILEDATA pro
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAgreementFileData
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -178,7 +178,7 @@ Read-only.
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -193,7 +193,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -209,7 +209,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
-Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
+Parameter Sets: UpdateViaIdentity1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: True
@@ -226,7 +226,7 @@ Read-only.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -242,7 +242,7 @@ Major version updates invalidate the agreement's acceptances on the correspondin
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -261,7 +261,7 @@ Read-only.
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False

@@ -60,7 +60,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphExternalConnectorsExternalConnection
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphExternalConnectorsExternalConnection1
 
 ## NOTES
 

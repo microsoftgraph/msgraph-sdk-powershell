@@ -12,13 +12,13 @@ Invoke action close
 
 ## SYNTAX
 
-### Close (Default)
+### Close1 (Default)
 ```
 Close-MgSecurityCaseEdiscoveryCase -EdiscoveryCaseId <String> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
-### CloseViaIdentity
+### CloseViaIdentity1
 ```
 Close-MgSecurityCaseEdiscoveryCase -InputObject <ISecurityIdentity> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -36,7 +36,7 @@ key: id of ediscoveryCase
 
 ```yaml
 Type: System.String
-Parameter Sets: Close
+Parameter Sets: Close1
 Aliases:
 
 Required: True
@@ -52,7 +52,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.ISecurityIdentity
-Parameter Sets: CloseViaIdentity
+Parameter Sets: CloseViaIdentity1
 Aliases:
 
 Required: True
@@ -149,6 +149,7 @@ INPUTOBJECT <ISecurityIdentity>: Identity Parameter
   - `[FileSecurityProfileId <String>]`: key: id of fileSecurityProfile
   - `[HostSecurityProfileId <String>]`: key: id of hostSecurityProfile
   - `[IPSecurityProfileId <String>]`: key: id of ipSecurityProfile
+  - `[IncidentId <String>]`: key: id of incident
   - `[ProviderTenantSettingId <String>]`: key: id of providerTenantSetting
   - `[RetentionEventId <String>]`: key: id of retentionEvent
   - `[RetentionEventTypeId <String>]`: key: id of retentionEventType

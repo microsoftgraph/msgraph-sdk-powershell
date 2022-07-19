@@ -183,11 +183,11 @@ To create the parameters described below, construct a hash table containing the 
 BODYPARAMETER <IPaths13I2FdeDevicemanagementCompliancepoliciesDevicemanagementcompliancepolicyIdMicrosoftGraphSetscheduledactionsPostRequestbodyContentApplicationJsonSchema>: .
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[ScheduledActions <IMicrosoftGraphDeviceManagementComplianceScheduledActionForRule[]>]`: 
-    - `[Id <String>]`: Read-only.
+    - `[Id <String>]`: 
     - `[RuleName <String>]`: Name of the rule which this scheduled action applies to.
     - `[ScheduledActionConfigurations <IMicrosoftGraphDeviceManagementComplianceActionItem[]>]`: The list of scheduled action configurations for this compliance policy. This collection can contain a maximum of 100 elements.
-      - `[Id <String>]`: Read-only.
-      - `[ActionType <String>]`: Scheduled Action Type Enum
+      - `[Id <String>]`: 
+      - `[ActionType <DeviceManagementComplianceActionType?>]`: Scheduled Action Type Enum
       - `[GracePeriodHours <Int32?>]`: Number of hours to wait till the action will be enforced. Valid values 0 to 8760
       - `[NotificationMessageCcList <String[]>]`: A list of group IDs to speicify who to CC this notification message to. This collection can contain a maximum of 100 elements.
       - `[NotificationTemplateId <String>]`: What notification Message template to use
@@ -205,15 +205,11 @@ INPUTOBJECT <IDeviceManagementActionsIdentity>: Identity Parameter
   - `[CloudPcUserSettingId <String>]`: key: id of cloudPcUserSetting
   - `[DataSharingConsentId <String>]`: key: id of dataSharingConsent
   - `[DepOnboardingSettingId <String>]`: key: id of depOnboardingSetting
-  - `[DetectedAppId <String>]`: key: id of detectedApp
-  - `[DeviceAndAppManagementRoleAssignmentId <String>]`: key: id of deviceAndAppManagementRoleAssignment
   - `[DeviceCompliancePolicyId <String>]`: key: id of deviceCompliancePolicy
   - `[DeviceComplianceScriptId <String>]`: key: id of deviceComplianceScript
-  - `[DeviceConfigurationGroupAssignmentId <String>]`: key: id of deviceConfigurationGroupAssignment
   - `[DeviceConfigurationId <String>]`: key: id of deviceConfiguration
   - `[DeviceCustomAttributeShellScriptId <String>]`: key: id of deviceCustomAttributeShellScript
   - `[DeviceEnrollmentConfigurationId <String>]`: key: id of deviceEnrollmentConfiguration
-  - `[DeviceHealthScriptDeviceStateId <String>]`: key: id of deviceHealthScriptDeviceState
   - `[DeviceHealthScriptId <String>]`: key: id of deviceHealthScript
   - `[DeviceLogCollectionResponseId <String>]`: key: id of deviceLogCollectionResponse
   - `[DeviceManagementCompliancePolicyId <String>]`: key: id of deviceManagementCompliancePolicy
@@ -222,7 +218,6 @@ INPUTOBJECT <IDeviceManagementActionsIdentity>: Identity Parameter
   - `[DeviceManagementIntentId <String>]`: key: id of deviceManagementIntent
   - `[DeviceManagementResourceAccessProfileBaseId <String>]`: key: id of deviceManagementResourceAccessProfileBase
   - `[DeviceManagementReusablePolicySettingId <String>]`: key: id of deviceManagementReusablePolicySetting
-  - `[DeviceManagementScriptDeviceStateId <String>]`: key: id of deviceManagementScriptDeviceState
   - `[DeviceManagementScriptId <String>]`: key: id of deviceManagementScript
   - `[DeviceManagementTemplateId <String>]`: key: id of deviceManagementTemplate
   - `[DeviceManagementTemplateId1 <String>]`: key: id of deviceManagementTemplate
@@ -246,13 +241,14 @@ INPUTOBJECT <IDeviceManagementActionsIdentity>: Identity Parameter
   - `[WindowsDriverUpdateProfileId <String>]`: key: id of windowsDriverUpdateProfile
   - `[WindowsFeatureUpdateProfileId <String>]`: key: id of windowsFeatureUpdateProfile
   - `[WindowsQualityUpdateProfileId <String>]`: key: id of windowsQualityUpdateProfile
+  - `[ZebraFotaDeploymentId <String>]`: key: id of zebraFotaDeployment
 
 SCHEDULEDACTIONS <IMicrosoftGraphDeviceManagementComplianceScheduledActionForRule[]>: .
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[RuleName <String>]`: Name of the rule which this scheduled action applies to.
   - `[ScheduledActionConfigurations <IMicrosoftGraphDeviceManagementComplianceActionItem[]>]`: The list of scheduled action configurations for this compliance policy. This collection can contain a maximum of 100 elements.
-    - `[Id <String>]`: Read-only.
-    - `[ActionType <String>]`: Scheduled Action Type Enum
+    - `[Id <String>]`: 
+    - `[ActionType <DeviceManagementComplianceActionType?>]`: Scheduled Action Type Enum
     - `[GracePeriodHours <Int32?>]`: Number of hours to wait till the action will be enforced. Valid values 0 to 8760
     - `[NotificationMessageCcList <String[]>]`: A list of group IDs to speicify who to CC this notification message to. This collection can contain a maximum of 100 elements.
     - `[NotificationTemplateId <String>]`: What notification Message template to use
