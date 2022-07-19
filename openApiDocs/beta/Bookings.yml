@@ -2422,6 +2422,7 @@ components:
               nullable: true
             languageTag:
               type: string
+              description: The language of the self service booking page
               nullable: true
             phone:
               type: string
@@ -2482,6 +2483,7 @@ components:
               nullable: true
             anonymousJoinWebUrl:
               type: string
+              description: Url of meeting to join anonymously.
               nullable: true
             customerEmailAddress:
               type: string
@@ -2720,6 +2722,7 @@ components:
               nullable: true
             isAnonymousJoinEnabled:
               type: boolean
+              description: True if an anonymousJoinWebUrl(webrtcUrl) will be generated for the appointment booked for this service.
             isHiddenFromCustomers:
               type: boolean
               description: True means this service is not available to customers for booking.
@@ -2728,6 +2731,7 @@ components:
               description: True indicates that the appointments for the service will be held online. Default value is false.
             languageTag:
               type: string
+              description: The language of the self service booking page.
             maximumAttendeesCount:
               maximum: 2147483647
               minimum: -2147483648

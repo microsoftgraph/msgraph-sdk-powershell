@@ -4770,6 +4770,8 @@ paths:
                 - logoUrl desc
                 - publisher
                 - publisher desc
+                - supportedClaimConfiguration
+                - supportedClaimConfiguration desc
                 - supportedProvisioningTypes
                 - supportedProvisioningTypes desc
                 - supportedSingleSignOnModes
@@ -4793,6 +4795,7 @@ paths:
                 - informationalUrls
                 - logoUrl
                 - publisher
+                - supportedClaimConfiguration
                 - supportedProvisioningTypes
                 - supportedSingleSignOnModes
               type: string
@@ -4871,6 +4874,7 @@ paths:
                 - informationalUrls
                 - logoUrl
                 - publisher
+                - supportedClaimConfiguration
                 - supportedProvisioningTypes
                 - supportedSingleSignOnModes
               type: string
@@ -16302,6 +16306,8 @@ components:
               type: string
               description: The name of the publisher for this application.
               nullable: true
+            supportedClaimConfiguration:
+              $ref: '#/components/schemas/microsoft.graph.supportedClaimConfiguration'
             supportedProvisioningTypes:
               type: array
               items:
@@ -16935,11 +16941,11 @@ components:
               nullable: true
             principalId:
               type: string
-              description: 'The id of the user on behalf of whom the client is authorized to access the resource, when consentType is Principal. If consentType is AllPrincipals this value is null. Required when consentType is Principal.'
+              description: 'The id of the user on behalf of whom the client is authorized to access the resource, when consentType is Principal. If consentType is AllPrincipals this value is null. Required when consentType is Principal. Supports $filter (eq only).'
               nullable: true
             resourceId:
               type: string
-              description: The id of the resource service principal to which access is authorized. This identifies the API which the client is authorized to attempt to call on behalf of a signed-in user.
+              description: The id of the resource service principal to which access is authorized. This identifies the API which the client is authorized to attempt to call on behalf of a signed-in user. Supports $filter (eq only).
             scope:
               type: string
               description: 'A space-separated list of the claim values for delegated permissions which should be included in access tokens for the resource application (the API). For example, openid User.Read GroupMember.Read.All. Each claim value should match the value field of one of the delegated permissions defined by the API, listed in the publishedPermissionScopes property of the resource service principal.'
@@ -17439,7 +17445,7 @@ components:
           nullable: true
         objectTypeName:
           type: string
-          description: 'The type of the object to which a synchronizationJob is to be applied. Can be one of the following: user for synchronization from Active Directory to Azure AD.User for synchronization from Azure AD to a third-party application. Worker for synchronization from Workday to either Active Directory or Azure AD.'
+          description: 'The type of the object to which a synchronizationJob is to be applied. Can be one of the following: user for synchronizing between Active Directory and Azure AD.User for synchronizing a user between Azure AD and a third-party application. Worker for synchronization a user between Workday and either Active Directory or Azure AD.Group for synchronizing a group between Azure AD and a third-party application.'
           nullable: true
       additionalProperties:
         type: object
@@ -17713,6 +17719,15 @@ components:
           type: string
           nullable: true
         singleSignOnDocumentationUrl:
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.supportedClaimConfiguration:
+      title: supportedClaimConfiguration
+      type: object
+      properties:
+        nameIdPolicyFormat:
           type: string
           nullable: true
       additionalProperties:
@@ -18236,13 +18251,13 @@ components:
       properties:
         appId:
           type: string
-          description: The unique identifier for the application.
+          description: The unique identifier for the client application.
         permissionIds:
           type: array
           items:
             type: string
             nullable: true
-          description: The unique identifier for the oauth2PermissionScopes the application requires.
+          description: The unique identifier for the scopes the client application is granted.
       additionalProperties:
         type: object
     microsoft.graph.optionalClaim:
@@ -18530,6 +18545,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.synchronizationJobSubject'
+          description: All group members that you would like to provision.
         owners:
           type: array
           items:

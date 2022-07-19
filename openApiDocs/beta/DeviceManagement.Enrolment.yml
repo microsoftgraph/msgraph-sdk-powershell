@@ -7233,6 +7233,8 @@ paths:
               operationId: roleManagement.cloudPC.RoleDefinitions.ListInheritsPermissionsFrom
               parameters:
                 unifiedRoleDefinition-id: $request.path.unifiedRoleDefinition-id
+            assignedPrincipals:
+              operationId: roleManagement.cloudPC.roleDefinitions.unifiedRoleDefinition.assignedPrincipals
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -7475,6 +7477,8 @@ paths:
               parameters:
                 unifiedRoleDefinition-id: $request.path.unifiedRoleDefinition-id
                 unifiedRoleDefinition-id1: $request.path.unifiedRoleDefinition-id1
+            assignedPrincipals:
+              operationId: roleManagement.cloudPC.roleDefinitions.unifiedRoleDefinition.inheritsPermissionsFrom.unifiedRoleDefinition.assignedPrincipals
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -7542,6 +7546,109 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/roleManagement/cloudPC/roleDefinitions/{unifiedRoleDefinition-id}/inheritsPermissionsFrom/{unifiedRoleDefinition-id1}/microsoft.graph.assignedPrincipals(transitive={transitive},directoryScopeType=''{directoryScopeType}'',directoryScopeId=''{directoryScopeId}'')':
+    get:
+      tags:
+        - roleManagement.Functions
+      summary: Invoke function assignedPrincipals
+      operationId: roleManagement.cloudPC.roleDefinitions.inheritsPermissionsFrom_assignedPrincipals
+      parameters:
+        - name: unifiedRoleDefinition-id
+          in: path
+          description: 'key: id of unifiedRoleDefinition'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleDefinition
+        - name: unifiedRoleDefinition-id1
+          in: path
+          description: 'key: id of unifiedRoleDefinition'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleDefinition
+        - name: transitive
+          in: query
+          description: 'Usage: transitive={transitive}'
+          schema:
+            type: boolean
+            default: false
+        - name: directoryScopeType
+          in: query
+          description: 'Usage: directoryScopeType=''{directoryScopeType}'''
+          schema:
+            type: string
+        - name: directoryScopeId
+          in: query
+          description: 'Usage: directoryScopeId=''{directoryScopeId}'''
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of unifiedRoleDefinition
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.directoryObject'
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/roleManagement/cloudPC/roleDefinitions/{unifiedRoleDefinition-id}/microsoft.graph.assignedPrincipals(transitive={transitive},directoryScopeType=''{directoryScopeType}'',directoryScopeId=''{directoryScopeId}'')':
+    get:
+      tags:
+        - roleManagement.Functions
+      summary: Invoke function assignedPrincipals
+      operationId: roleManagement.cloudPC.roleDefinitions_assignedPrincipals
+      parameters:
+        - name: unifiedRoleDefinition-id
+          in: path
+          description: 'key: id of unifiedRoleDefinition'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleDefinition
+        - name: transitive
+          in: query
+          description: 'Usage: transitive={transitive}'
+          schema:
+            type: boolean
+            default: false
+        - name: directoryScopeType
+          in: query
+          description: 'Usage: directoryScopeType=''{directoryScopeType}'''
+          schema:
+            type: string
+        - name: directoryScopeId
+          in: query
+          description: 'Usage: directoryScopeId=''{directoryScopeId}'''
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of unifiedRoleDefinition
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.directoryObject'
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
   /roleManagement/deviceManagement:
     get:
       tags:
@@ -9165,6 +9272,8 @@ paths:
               operationId: roleManagement.deviceManagement.RoleDefinitions.ListInheritsPermissionsFrom
               parameters:
                 unifiedRoleDefinition-id: $request.path.unifiedRoleDefinition-id
+            assignedPrincipals:
+              operationId: roleManagement.deviceManagement.roleDefinitions.unifiedRoleDefinition.assignedPrincipals
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -9407,6 +9516,8 @@ paths:
               parameters:
                 unifiedRoleDefinition-id: $request.path.unifiedRoleDefinition-id
                 unifiedRoleDefinition-id1: $request.path.unifiedRoleDefinition-id1
+            assignedPrincipals:
+              operationId: roleManagement.deviceManagement.roleDefinitions.unifiedRoleDefinition.inheritsPermissionsFrom.unifiedRoleDefinition.assignedPrincipals
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -9474,6 +9585,109 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/roleManagement/deviceManagement/roleDefinitions/{unifiedRoleDefinition-id}/inheritsPermissionsFrom/{unifiedRoleDefinition-id1}/microsoft.graph.assignedPrincipals(transitive={transitive},directoryScopeType=''{directoryScopeType}'',directoryScopeId=''{directoryScopeId}'')':
+    get:
+      tags:
+        - roleManagement.Functions
+      summary: Invoke function assignedPrincipals
+      operationId: roleManagement.deviceManagement.roleDefinitions.inheritsPermissionsFrom_assignedPrincipals
+      parameters:
+        - name: unifiedRoleDefinition-id
+          in: path
+          description: 'key: id of unifiedRoleDefinition'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleDefinition
+        - name: unifiedRoleDefinition-id1
+          in: path
+          description: 'key: id of unifiedRoleDefinition'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleDefinition
+        - name: transitive
+          in: query
+          description: 'Usage: transitive={transitive}'
+          schema:
+            type: boolean
+            default: false
+        - name: directoryScopeType
+          in: query
+          description: 'Usage: directoryScopeType=''{directoryScopeType}'''
+          schema:
+            type: string
+        - name: directoryScopeId
+          in: query
+          description: 'Usage: directoryScopeId=''{directoryScopeId}'''
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of unifiedRoleDefinition
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.directoryObject'
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/roleManagement/deviceManagement/roleDefinitions/{unifiedRoleDefinition-id}/microsoft.graph.assignedPrincipals(transitive={transitive},directoryScopeType=''{directoryScopeType}'',directoryScopeId=''{directoryScopeId}'')':
+    get:
+      tags:
+        - roleManagement.Functions
+      summary: Invoke function assignedPrincipals
+      operationId: roleManagement.deviceManagement.roleDefinitions_assignedPrincipals
+      parameters:
+        - name: unifiedRoleDefinition-id
+          in: path
+          description: 'key: id of unifiedRoleDefinition'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleDefinition
+        - name: transitive
+          in: query
+          description: 'Usage: transitive={transitive}'
+          schema:
+            type: boolean
+            default: false
+        - name: directoryScopeType
+          in: query
+          description: 'Usage: directoryScopeType=''{directoryScopeType}'''
+          schema:
+            type: string
+        - name: directoryScopeId
+          in: query
+          description: 'Usage: directoryScopeId=''{directoryScopeId}'''
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of unifiedRoleDefinition
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.directoryObject'
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
   /roleManagement/directory:
     get:
       tags:
@@ -12895,6 +13109,8 @@ paths:
               operationId: roleManagement.directory.RoleDefinitions.ListInheritsPermissionsFrom
               parameters:
                 unifiedRoleDefinition-id: $request.path.unifiedRoleDefinition-id
+            assignedPrincipals:
+              operationId: roleManagement.directory.roleDefinitions.unifiedRoleDefinition.assignedPrincipals
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -13137,6 +13353,8 @@ paths:
               parameters:
                 unifiedRoleDefinition-id: $request.path.unifiedRoleDefinition-id
                 unifiedRoleDefinition-id1: $request.path.unifiedRoleDefinition-id1
+            assignedPrincipals:
+              operationId: roleManagement.directory.roleDefinitions.unifiedRoleDefinition.inheritsPermissionsFrom.unifiedRoleDefinition.assignedPrincipals
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -13204,6 +13422,109 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/roleManagement/directory/roleDefinitions/{unifiedRoleDefinition-id}/inheritsPermissionsFrom/{unifiedRoleDefinition-id1}/microsoft.graph.assignedPrincipals(transitive={transitive},directoryScopeType=''{directoryScopeType}'',directoryScopeId=''{directoryScopeId}'')':
+    get:
+      tags:
+        - roleManagement.Functions
+      summary: Invoke function assignedPrincipals
+      operationId: roleManagement.directory.roleDefinitions.inheritsPermissionsFrom_assignedPrincipals
+      parameters:
+        - name: unifiedRoleDefinition-id
+          in: path
+          description: 'key: id of unifiedRoleDefinition'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleDefinition
+        - name: unifiedRoleDefinition-id1
+          in: path
+          description: 'key: id of unifiedRoleDefinition'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleDefinition
+        - name: transitive
+          in: query
+          description: 'Usage: transitive={transitive}'
+          schema:
+            type: boolean
+            default: false
+        - name: directoryScopeType
+          in: query
+          description: 'Usage: directoryScopeType=''{directoryScopeType}'''
+          schema:
+            type: string
+        - name: directoryScopeId
+          in: query
+          description: 'Usage: directoryScopeId=''{directoryScopeId}'''
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of unifiedRoleDefinition
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.directoryObject'
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/roleManagement/directory/roleDefinitions/{unifiedRoleDefinition-id}/microsoft.graph.assignedPrincipals(transitive={transitive},directoryScopeType=''{directoryScopeType}'',directoryScopeId=''{directoryScopeId}'')':
+    get:
+      tags:
+        - roleManagement.Functions
+      summary: Invoke function assignedPrincipals
+      operationId: roleManagement.directory.roleDefinitions_assignedPrincipals
+      parameters:
+        - name: unifiedRoleDefinition-id
+          in: path
+          description: 'key: id of unifiedRoleDefinition'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleDefinition
+        - name: transitive
+          in: query
+          description: 'Usage: transitive={transitive}'
+          schema:
+            type: boolean
+            default: false
+        - name: directoryScopeType
+          in: query
+          description: 'Usage: directoryScopeType=''{directoryScopeType}'''
+          schema:
+            type: string
+        - name: directoryScopeId
+          in: query
+          description: 'Usage: directoryScopeId=''{directoryScopeId}'''
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of unifiedRoleDefinition
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.directoryObject'
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
   /roleManagement/directory/roleEligibilityScheduleInstances:
     get:
       tags:
@@ -18311,6 +18632,8 @@ paths:
               operationId: roleManagement.entitlementManagement.RoleDefinitions.ListInheritsPermissionsFrom
               parameters:
                 unifiedRoleDefinition-id: $request.path.unifiedRoleDefinition-id
+            assignedPrincipals:
+              operationId: roleManagement.entitlementManagement.roleDefinitions.unifiedRoleDefinition.assignedPrincipals
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -18553,6 +18876,8 @@ paths:
               parameters:
                 unifiedRoleDefinition-id: $request.path.unifiedRoleDefinition-id
                 unifiedRoleDefinition-id1: $request.path.unifiedRoleDefinition-id1
+            assignedPrincipals:
+              operationId: roleManagement.entitlementManagement.roleDefinitions.unifiedRoleDefinition.inheritsPermissionsFrom.unifiedRoleDefinition.assignedPrincipals
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -18620,6 +18945,109 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/roleManagement/entitlementManagement/roleDefinitions/{unifiedRoleDefinition-id}/inheritsPermissionsFrom/{unifiedRoleDefinition-id1}/microsoft.graph.assignedPrincipals(transitive={transitive},directoryScopeType=''{directoryScopeType}'',directoryScopeId=''{directoryScopeId}'')':
+    get:
+      tags:
+        - roleManagement.Functions
+      summary: Invoke function assignedPrincipals
+      operationId: roleManagement.entitlementManagement.roleDefinitions.inheritsPermissionsFrom_assignedPrincipals
+      parameters:
+        - name: unifiedRoleDefinition-id
+          in: path
+          description: 'key: id of unifiedRoleDefinition'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleDefinition
+        - name: unifiedRoleDefinition-id1
+          in: path
+          description: 'key: id of unifiedRoleDefinition'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleDefinition
+        - name: transitive
+          in: query
+          description: 'Usage: transitive={transitive}'
+          schema:
+            type: boolean
+            default: false
+        - name: directoryScopeType
+          in: query
+          description: 'Usage: directoryScopeType=''{directoryScopeType}'''
+          schema:
+            type: string
+        - name: directoryScopeId
+          in: query
+          description: 'Usage: directoryScopeId=''{directoryScopeId}'''
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of unifiedRoleDefinition
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.directoryObject'
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/roleManagement/entitlementManagement/roleDefinitions/{unifiedRoleDefinition-id}/microsoft.graph.assignedPrincipals(transitive={transitive},directoryScopeType=''{directoryScopeType}'',directoryScopeId=''{directoryScopeId}'')':
+    get:
+      tags:
+        - roleManagement.Functions
+      summary: Invoke function assignedPrincipals
+      operationId: roleManagement.entitlementManagement.roleDefinitions_assignedPrincipals
+      parameters:
+        - name: unifiedRoleDefinition-id
+          in: path
+          description: 'key: id of unifiedRoleDefinition'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleDefinition
+        - name: transitive
+          in: query
+          description: 'Usage: transitive={transitive}'
+          schema:
+            type: boolean
+            default: false
+        - name: directoryScopeType
+          in: query
+          description: 'Usage: directoryScopeType=''{directoryScopeType}'''
+          schema:
+            type: string
+        - name: directoryScopeId
+          in: query
+          description: 'Usage: directoryScopeId=''{directoryScopeId}'''
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of unifiedRoleDefinition
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.directoryObject'
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
   /roleManagement/entitlementManagement/roleEligibilityScheduleInstances:
     get:
       tags:
@@ -22056,7 +22484,7 @@ components:
           properties:
             memberType:
               type: string
-              description: 'Membership type of the eligible assignment. It can either be Inherited, Direct, or Group.'
+              description: 'Membership type of the eligible assignment. It can either be Inherited, Direct, or Group. Supports $filter (eq).'
               nullable: true
             scheduleInfo:
               $ref: '#/components/schemas/microsoft.graph.requestSchedule'
@@ -22110,37 +22538,37 @@ components:
           properties:
             action:
               type: string
-              description: 'Represents the type of the operation on the role eligibility assignment. The possible values are: AdminAssign: For administrators to assign role eligibility to users or groups to roles.AdminExtend: For administrators to extend expiring assignments.AdminUpdate: For administrators to change existing role assignments.AdminRenew: For administrators to renew expired assignments.AdminRemove: For administrators to remove users or groups from eligible roles.UserAdd: For users to activate their eligible assignments.UserExtend: For users to request to extend their expiring eligible assignments.UserRemove: For users to deactivate their active eligible assignments.UserRenew: For users to request to renew their expired eligible assignments.'
+              description: 'Represents the type of operation on the role eligibility request. The possible values are: AdminAssign: For administrators to assign eligible roles to principals.AdminRemove: For administrators to remove eligible roles from principals. AdminUpdate: For administrators to change existing role eligibilities.AdminExtend: For administrators to extend expiring role eligibilities.AdminRenew: For administrators to renew expired eligibilities.UserAdd: For users to activate their eligible assignments.UserRemove: For users to deactivate their active eligible assignments.UserExtend: For users to request to extend their expiring eligible assignments.UserRenew: For users to request to renew their expired eligible assignments.'
               nullable: true
             appScopeId:
               type: string
-              description: 'Identifier of the app-specific scope when the assignment scope is app-specific. The scope of an assignment determines the set of resources for which the principal has been granted access. App scopes are scopes that are defined and understood by this application only. Use / for tenant-wide app scopes. Use directoryScopeId to limit the scope to particular directory objects, for example, administrative units.'
+              description: 'Identifier of the app-specific scope when the role eligibility is scoped to an app. The scope of a role eligibility determines the set of resources for which the principal is eligible to access. App scopes are scopes that are defined and understood by this application only. Use / for tenant-wide app scopes. Use directoryScopeId to limit the scope to particular directory objects, for example, administrative units. Supports $filter (eq, ne, and on null values).'
               nullable: true
             directoryScopeId:
               type: string
-              description: Identifier of the directory object representing the scope of the assignment. The scope of an assignment determines the set of resources for which the principal has been granted access. Directory scopes are shared scopes stored in the directory that are understood by multiple applications. Use / for tenant-wide scope. Use appScopeId to limit the scope to an application only.
+              description: 'Identifier of the directory object representing the scope of the role eligibility. The scope of a role eligibility determines the set of resources for which the principal has been granted access. Directory scopes are shared scopes stored in the directory that are understood by multiple applications. Use / for tenant-wide scope. Use appScopeId to limit the scope to an application only. Supports $filter (eq, ne, and on null values).'
               nullable: true
             isValidationOnly:
               type: boolean
-              description: A boolean that determines whether the call is a validation or an actual call. Only set this property if you want to check whether an activation is subject to additional rules like MFA before actually submitting the request.
+              description: Determines whether the call is a validation or an actual call. Only set this property if you want to check whether an activation is subject to additional rules like MFA before actually submitting the request.
               nullable: true
             justification:
               type: string
-              description: A message provided by users and administrators when create the request about why it is needed.
+              description: A message provided by users and administrators when create they create the unifiedRoleEligibilityScheduleRequest object.
               nullable: true
             principalId:
               type: string
-              description: 'Identifier of the principal to which the assignment is being granted to. For example, a user or a group. For groups, they must be assignable to roles, that is, the isAssignableToRole of the group property set to true.'
+              description: 'Identifier of the principal that has been granted the role eligibility. Supports $filter (eq, ne).'
               nullable: true
             roleDefinitionId:
               type: string
-              description: Identifier of the unifiedRoleDefinition the assignment is for. Read only.
+              description: 'Identifier of the unifiedRoleDefinition object that is being assigned to the principal. Supports $filter (eq, ne).'
               nullable: true
             scheduleInfo:
               $ref: '#/components/schemas/microsoft.graph.requestSchedule'
             targetScheduleId:
               type: string
-              description: The time period for which the eligibility assignment is valid.
+              description: 'Identifier of the schedule object that''s linked to the eligibility request. Supports $filter (eq, ne).'
               nullable: true
             ticketInfo:
               $ref: '#/components/schemas/microsoft.graph.ticketInfo'
@@ -22979,11 +23407,11 @@ components:
       properties:
         displayName:
           type: string
-          description: The display name of the identity. This property is read-only.
+          description: 'The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
           nullable: true
         id:
           type: string
-          description: The identifier of the identity. This property is read-only.
+          description: Unique identifier for the identity.
           nullable: true
       additionalProperties:
         type: object
