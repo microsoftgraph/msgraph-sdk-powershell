@@ -2513,6 +2513,8 @@ paths:
                 - id desc
                 - info
                 - info desc
+                - isIdentityAnonymized
+                - isIdentityAnonymized desc
                 - isInLobby
                 - isInLobby desc
                 - isMuted
@@ -2536,6 +2538,7 @@ paths:
               enum:
                 - id
                 - info
+                - isIdentityAnonymized
                 - isInLobby
                 - isMuted
                 - mediaStreams
@@ -2626,6 +2629,7 @@ paths:
               enum:
                 - id
                 - info
+                - isIdentityAnonymized
                 - isInLobby
                 - isMuted
                 - mediaStreams
@@ -3040,6 +3044,8 @@ paths:
                 - allowTeamworkReactions desc
                 - alternativeRecording
                 - alternativeRecording desc
+                - anonymizeIdentityForRoles
+                - anonymizeIdentityForRoles desc
                 - attendeeReport
                 - attendeeReport desc
                 - audioConferencing
@@ -3100,6 +3106,7 @@ paths:
                 - allowMeetingChat
                 - allowTeamworkReactions
                 - alternativeRecording
+                - anonymizeIdentityForRoles
                 - attendeeReport
                 - audioConferencing
                 - broadcastSettings
@@ -3202,6 +3209,7 @@ paths:
                 - allowMeetingChat
                 - allowTeamworkReactions
                 - alternativeRecording
+                - anonymizeIdentityForRoles
                 - attendeeReport
                 - audioConferencing
                 - broadcastSettings
@@ -5098,6 +5106,8 @@ paths:
                 - allowTeamworkReactions desc
                 - alternativeRecording
                 - alternativeRecording desc
+                - anonymizeIdentityForRoles
+                - anonymizeIdentityForRoles desc
                 - attendeeReport
                 - attendeeReport desc
                 - audioConferencing
@@ -5158,6 +5168,7 @@ paths:
                 - allowMeetingChat
                 - allowTeamworkReactions
                 - alternativeRecording
+                - anonymizeIdentityForRoles
                 - attendeeReport
                 - audioConferencing
                 - broadcastSettings
@@ -5275,6 +5286,7 @@ paths:
                 - allowMeetingChat
                 - allowTeamworkReactions
                 - alternativeRecording
+                - anonymizeIdentityForRoles
                 - attendeeReport
                 - audioConferencing
                 - broadcastSettings
@@ -7518,6 +7530,8 @@ components:
           type: string
           description: The language culture string. Read-only.
           nullable: true
+        nonAnonymizedIdentity:
+          $ref: '#/components/schemas/microsoft.graph.identitySet'
         participantId:
           type: string
           description: The participant ID of the participant. Read-only.
@@ -7579,6 +7593,8 @@ components:
           properties:
             info:
               $ref: '#/components/schemas/microsoft.graph.participantInfo'
+            isIdentityAnonymized:
+              type: boolean
             isInLobby:
               type: boolean
               description: true if the participant is in lobby.
@@ -7731,6 +7747,10 @@ components:
               description: The content stream of the alternative recording of a Microsoft Teams live event. Read-only.
               format: base64url
               nullable: true
+            anonymizeIdentityForRoles:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.onlineMeetingRole'
             attendeeReport:
               type: string
               description: The content stream of the attendee report of a Teams live event. Read-only.
@@ -8461,6 +8481,15 @@ components:
         - limited
         - unknownFutureValue
       type: string
+    microsoft.graph.onlineMeetingRole:
+      title: onlineMeetingRole
+      enum:
+        - attendee
+        - presenter
+        - unknownFutureValue
+        - producer
+        - coorganizer
+      type: string
     microsoft.graph.audioConferencing:
       title: audioConferencing
       type: object
@@ -8543,12 +8572,15 @@ components:
       properties:
         isPasscodeRequired:
           type: boolean
+          description: Indicates whether a passcode is required to join a meeting when using joinMeetingId. Optional.
           nullable: true
         joinMeetingId:
           type: string
+          description: The meeting ID to be used to join a meeting. Optional. Read-only.
           nullable: true
         passcode:
           type: string
+          description: The passcode to join a meeting.  Optional. Read-only.
           nullable: true
       additionalProperties:
         type: object
@@ -8595,11 +8627,11 @@ components:
       properties:
         displayName:
           type: string
-          description: The display name of the identity. This property is read-only.
+          description: 'The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
           nullable: true
         id:
           type: string
-          description: The identifier of the identity. This property is read-only.
+          description: Unique identifier for the identity.
           nullable: true
       additionalProperties:
         type: object
@@ -9036,7 +9068,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.callRecords.traceRouteHop'
-          description: List of network trace route hops collected for this media stream.
+          description: List of network trace route hops collected for this media stream.*
         wifiBand:
           $ref: '#/components/schemas/microsoft.graph.callRecords.wifiBand'
         wifiBatteryCharge:
@@ -9340,15 +9372,6 @@ components:
               nullable: true
           additionalProperties:
             type: object
-    microsoft.graph.onlineMeetingRole:
-      title: onlineMeetingRole
-      enum:
-        - attendee
-        - presenter
-        - unknownFutureValue
-        - producer
-        - coorganizer
-      type: string
     microsoft.graph.ODataErrors.MainError:
       required:
         - code
@@ -9396,7 +9419,7 @@ components:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
-          description: The network path count of this hop that was used to compute the RTT.
+          description: The network path count of this hop that was used to compute the round-trip time.
           format: int32
           nullable: true
         ipAddress:

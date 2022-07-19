@@ -388,8 +388,6 @@ paths:
                 - mailEnabled desc
                 - mailNickname
                 - mailNickname desc
-                - mdmAppId
-                - mdmAppId desc
                 - membershipRule
                 - membershipRule desc
                 - membershipRuleProcessingState
@@ -486,7 +484,6 @@ paths:
                 - mail
                 - mailEnabled
                 - mailNickname
-                - mdmAppId
                 - membershipRule
                 - membershipRuleProcessingState
                 - onPremisesDomainName
@@ -663,7 +660,6 @@ paths:
                 - mail
                 - mailEnabled
                 - mailNickname
-                - mdmAppId
                 - membershipRule
                 - membershipRuleProcessingState
                 - onPremisesDomainName
@@ -32008,8 +32004,6 @@ paths:
                 - mailEnabled desc
                 - mailNickname
                 - mailNickname desc
-                - mdmAppId
-                - mdmAppId desc
                 - membershipRule
                 - membershipRule desc
                 - membershipRuleProcessingState
@@ -32106,7 +32100,6 @@ paths:
                 - mail
                 - mailEnabled
                 - mailNickname
-                - mdmAppId
                 - membershipRule
                 - membershipRuleProcessingState
                 - onPremisesDomainName
@@ -32269,7 +32262,7 @@ components:
               nullable: true
             displayName:
               type: string
-              description: 'The display name for the group. Required. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.'
+              description: 'The display name for the group. Required. Maximum length is 256 characters. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.'
               nullable: true
             expirationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -32311,9 +32304,6 @@ components:
             mailNickname:
               type: string
               description: 'The mail alias for the group, unique for Microsoft 365 groups in the organization. Maximum length is 64 characters. This property can contain only characters in the ASCII character set 0 - 127 except the following: @ () / [] '' ; : . <> , SPACE. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith).'
-              nullable: true
-            mdmAppId:
-              type: string
               nullable: true
             membershipRule:
               type: string
@@ -32400,7 +32390,7 @@ components:
               nullable: true
             visibility:
               type: string
-              description: 'Specifies the group join policy and group content visibility for groups. Possible values are: Private, Public, or Hiddenmembership. Hiddenmembership can be set only for Microsoft 365 groups, when the groups are created. It can''t be updated later. Other values of visibility can be updated after group creation. If visibility value is not specified during group creation on Microsoft Graph, a security group is created as Private by default and Microsoft 365 group is Public. Groups assignable to roles are always Private. See group visibility options to learn more. Returned by default. Nullable.'
+              description: 'Specifies the group join policy and group content visibility for groups. Possible values are: Private, Public, or HiddenMembership. HiddenMembership can be set only for Microsoft 365 groups, when the groups are created. It can''t be updated later. Other values of visibility can be updated after group creation. If visibility value is not specified during group creation on Microsoft Graph, a security group is created as Private by default and Microsoft 365 group is Public. Groups assignable to roles are always Private. See group visibility options to learn more. Returned by default. Nullable.'
               nullable: true
             writebackConfiguration:
               $ref: '#/components/schemas/microsoft.graph.groupWritebackConfiguration'
@@ -32454,7 +32444,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.membershipRuleProcessingStatus'
             isArchived:
               type: boolean
-              description: 'When a group is associated with a team, this property determines whether the team is in read-only mode.'
+              description: 'When a group is associated with a team, this property determines whether the team is in read-only mode. To read this property, use the /group/{groupId}/team endpoint or the Get team API. To update this property, use the archiveTeam and unarchiveTeam APIs.'
               nullable: true
             appRoleAssignments:
               type: array
@@ -32477,7 +32467,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: 'Members of this group, who can be users, devices, other groups, or service principals. Supports the List members, Add member, and Remove member operations. Nullable. Supports $expand including nested $select. For example, /groups?$filter=startsWith(displayName,''Role'')&$select=id,displayName&$expand=members($select=id,userPrincipalName,displayName).'
+              description: 'Direct members of this group, who can be users, devices, other groups, or service principals. Supports the List members, Add member, and Remove member operations. Nullable. Supports $expand including nested $select. For example, /groups?$filter=startsWith(displayName,''Role'')&$select=id,displayName&$expand=members($select=id,userPrincipalName,displayName).'
             membersWithLicenseErrors:
               type: array
               items:
@@ -32502,10 +32492,12 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
+              description: 'The groups that a group is a member of, either directly and through nested membership. Nullable.'
             transitiveMembers:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
+              description: The direct and transitive members of a group. Nullable.
             acceptedSenders:
               type: array
               items:
@@ -33861,7 +33853,7 @@ components:
               items:
                 type: string
                 nullable: true
-              description: The roles for that user.
+              description: 'The roles for that user. This property only contains additional qualifiers when relevant - for example, if the member has owner privileges, the roles property contains owner as one of the values. Similarly, if the member is a guest, the roles property contains guest as one of the values. A basic member should not have any values specified in the roles property.'
             visibleHistoryStartDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -34142,6 +34134,7 @@ components:
           properties:
             onPremisesGroupType:
               type: string
+              description: 'Indicates the target on-premise group type the cloud object will be written back as. Nullable. The possible values are: universalDistributionGroup, universalSecurityGroup, universalMailEnabledSecurityGroup.If the cloud group is a unified (Microsoft 365) group, this property can be one of the following: universalDistributionGroup, universalSecurityGroup, universalMailEnabledSecurityGroup. Azure AD security groups can be written back as universalSecurityGroup. If isEnabled or the NewUnifiedGroupWritebackDefault group setting is true but this property is not explicitly configured: Microsoft 365 groups will be written back as universalDistributionGroup by defaultSecurity groups will be written back as universalSecurityGroup by default'
               nullable: true
           additionalProperties:
             type: object
@@ -34482,6 +34475,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.channel'
+              description: List of channels shared with the team.
             installedApps:
               type: array
               items:
@@ -36659,6 +36653,7 @@ components:
       properties:
         isEnabled:
           type: boolean
+          description: Indicates whether writeback of cloud groups to on-premise Active Directory is enabled. Default value is true for Microsoft 365 groups and false for security groups.
           nullable: true
       additionalProperties:
         type: object
@@ -37232,6 +37227,8 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.assignedPlan'
               description: The plans that are assigned to the user. Read-only. Not nullable.Supports $filter (eq and not).
+            authorizationInfo:
+              $ref: '#/components/schemas/microsoft.graph.authorizationInfo'
             businessPhones:
               type: array
               items:
@@ -37353,7 +37350,7 @@ components:
               description: State of license assignments for this user. Read-only. Returned only on $select.
             mail:
               type: string
-              description: 'The SMTP address for the user, for example, admin@contoso.com. Changes to this property will also update the user''s proxyAddresses collection to include the value as an SMTP address. For Azure AD B2C accounts, this property can be updated up to only ten times with unique SMTP addresses. This property cannot contain accent characters.  Supports $filter (eq, ne, not, ge, le, in, startsWith, endsWith, and eq on null values).'
+              description: 'The SMTP address for the user, for example, admin@contoso.com. Changes to this property will also update the user''s proxyAddresses collection to include the value as an SMTP address. This property cannot contain accent characters.  NOTE: We do not recommend updating this property for Azure AD B2C user profiles. Use the otherMails property instead.  Supports $filter (eq, ne, not, ge, le, in, startsWith, endsWith, and eq on null values).'
               nullable: true
             mailNickname:
               type: string
@@ -37402,7 +37399,7 @@ components:
               nullable: true
             onPremisesSyncEnabled:
               type: boolean
-              description: 'true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced; null if this object has never been synced from an on-premises directory (default). Read-only. Supports $filter (eq, ne, not, in, and eq on null values).'
+              description: 'true if this user object is currently being synced from an on-premises Active Directory (AD); otherwise the user isn''t being synced and can be managed in Azure Active Directory (Azure AD). Read-only. Supports $filter (eq, ne, not, in, and eq on null values).'
               nullable: true
             onPremisesUserPrincipalName:
               type: string
@@ -37412,7 +37409,7 @@ components:
               type: array
               items:
                 type: string
-              description: 'A list of additional email addresses for the user; for example: [''bob@contoso.com'', ''Robert@fabrikam.com''].NOTE: This property cannot contain accent characters.Supports $filter (eq, not, ge, le, in, startsWith, and counting empty collections).'
+              description: 'A list of additional email addresses for the user; for example: [''bob@contoso.com'', ''Robert@fabrikam.com''].NOTE: This property cannot contain accent characters.Supports $filter (eq, not, ge, le, in, startsWith, endsWith, and counting empty collections).'
             passwordPolicies:
               type: string
               description: 'Specifies password policies for the user. This value is an enumeration with one possible value being DisableStrongPassword, which allows weaker passwords than the default policy to be specified. DisablePasswordExpiration can also be specified. The two may be specified together; for example: DisablePasswordExpiration, DisableStrongPassword. For more information on the default password policies, see Azure AD pasword policies. Supports $filter (ne, not, and eq on null values).'
@@ -37446,6 +37443,10 @@ components:
               type: string
               description: 'Any refresh tokens or sessions tokens (session cookies) issued before this time are invalid, and applications will get an error when using an invalid refresh or sessions token to acquire a delegated access token (to access APIs such as Microsoft Graph).  If this happens, the application will need to acquire a new refresh token by making a request to the authorize endpoint. Read-only. Use invalidateAllRefreshTokens to reset.'
               format: date-time
+              nullable: true
+            securityIdentifier:
+              type: string
+              description: 'Security identifier (SID) of the user, used in Windows scenarios. Read-only. Returned by default. Supports $select and $filter (eq, not, ge, le, startsWith).'
               nullable: true
             showInAddressList:
               type: boolean
@@ -37523,7 +37524,7 @@ components:
               description: A list for the user to enumerate their past projects. Returned only on $select.
             preferredName:
               type: string
-              description: The preferred name for the user. Returned only on $select.
+              description: The preferred name for the user. Not Supported. This attribute returns an empty string.Returned only on $select.
               nullable: true
             responsibilities:
               type: array
@@ -37611,6 +37612,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
+              description: 'The groups, including nested groups, and directory roles that a user is a member of. Nullable.'
             transitiveReports:
               type: array
               items:
@@ -37686,7 +37688,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.extension'
-              description: The collection of open extensions defined for the user. Nullable.
+              description: The collection of open extensions defined for the user. Supports $expand. Nullable.
             appConsentRequestsForApproval:
               type: array
               items:
@@ -38140,11 +38142,11 @@ components:
       properties:
         displayName:
           type: string
-          description: The display name of the identity. This property is read-only.
+          description: 'The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
           nullable: true
         id:
           type: string
-          description: The identifier of the identity. This property is read-only.
+          description: Unique identifier for the identity.
           nullable: true
       additionalProperties:
         type: object
@@ -39623,6 +39625,17 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.authorizationInfo:
+      title: authorizationInfo
+      type: object
+      properties:
+        certificateUserIds:
+          type: array
+          items:
+            type: string
+            nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.customSecurityAttributeValue:
       title: customSecurityAttributeValue
       type: object
@@ -39887,6 +39900,8 @@ components:
               type: string
               description: The Azure Active Directory (Azure AD) device ID of the Cloud PC.
               nullable: true
+            connectivityResult:
+              $ref: '#/components/schemas/microsoft.graph.cloudPcConnectivityResult'
             displayName:
               type: string
               description: The display name of the Cloud PC.
@@ -40040,11 +40055,11 @@ components:
               nullable: true
             principalId:
               type: string
-              description: 'The id of the user on behalf of whom the client is authorized to access the resource, when consentType is Principal. If consentType is AllPrincipals this value is null. Required when consentType is Principal.'
+              description: 'The id of the user on behalf of whom the client is authorized to access the resource, when consentType is Principal. If consentType is AllPrincipals this value is null. Required when consentType is Principal. Supports $filter (eq only).'
               nullable: true
             resourceId:
               type: string
-              description: The id of the resource service principal to which access is authorized. This identifies the API which the client is authorized to attempt to call on behalf of a signed-in user.
+              description: The id of the resource service principal to which access is authorized. This identifies the API which the client is authorized to attempt to call on behalf of a signed-in user. Supports $filter (eq only).
             scope:
               type: string
               description: 'A space-separated list of the claim values for delegated permissions which should be included in access tokens for the resource application (the API). For example, openid User.Read GroupMember.Read.All. Each claim value should match the value field of one of the delegated permissions defined by the API, listed in the publishedPermissionScopes property of the resource service principal.'
@@ -40881,6 +40896,9 @@ components:
               type: boolean
               description: Whether the device is Azure Active Directory registered. This property is read-only.
               nullable: true
+            bootstrapTokenEscrowed:
+              type: boolean
+              description: 'Reports if the managed device has an escrowed Bootstrap Token. This is only for macOS devices. If FALSE, no bootstrap token is escrowed. If TRUE, the device has escrowed a bootstrap token with Intune. This property is read-only.'
             chassisType:
               $ref: '#/components/schemas/microsoft.graph.chassisType'
             chromeOSDeviceInfo:
@@ -40912,6 +40930,9 @@ components:
               nullable: true
             deviceEnrollmentType:
               $ref: '#/components/schemas/microsoft.graph.deviceEnrollmentType'
+            deviceFirmwareConfigurationInterfaceManaged:
+              type: boolean
+              description: 'Indicates whether the device is DFCI managed. When TRUE the device is DFCI managed. When FALSE, the device is not DFCI managed. The default value is FALSE.'
             deviceHealthAttestationState:
               $ref: '#/components/schemas/microsoft.graph.deviceHealthAttestationState'
             deviceName:
@@ -41886,6 +41907,10 @@ components:
               description: The content stream of the alternative recording of a Microsoft Teams live event. Read-only.
               format: base64url
               nullable: true
+            anonymizeIdentityForRoles:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.onlineMeetingRole'
             attendeeReport:
               type: string
               description: The content stream of the attendee report of a Teams live event. Read-only.
@@ -43335,6 +43360,22 @@ components:
               nullable: true
           additionalProperties:
             type: object
+    microsoft.graph.cloudPcConnectivityResult:
+      title: cloudPcConnectivityResult
+      type: object
+      properties:
+        failedHealthCheckItems:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.cloudPcHealthCheckItem'
+        status:
+          $ref: '#/components/schemas/microsoft.graph.cloudPcConnectivityStatus'
+        updatedDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          format: date-time
+      additionalProperties:
+        type: object
     microsoft.graph.cloudPcLoginResult:
       title: cloudPcLoginResult
       type: object
@@ -44983,6 +45024,11 @@ components:
           type: integer
           description: The device’s current battery’s health percentage. Valid values 0 to 100
           format: int32
+        batteryLevelPercentage:
+          type: number
+          description: 'The battery level, between 0.0 and 100, or null if the battery level cannot be determined. The update frequency of this property is per-checkin. Note this property is currently supported only on devices running iOS 5.0 and later, and is available only when Device Information access right is obtained. Valid values 0 to 100'
+          format: double
+          nullable: true
         batterySerialNumber:
           type: string
           description: The serial number of the device’s current battery
@@ -45001,6 +45047,18 @@ components:
           $ref: '#/components/schemas/microsoft.graph.deviceGuardVirtualizationBasedSecurityHardwareRequirementState'
         deviceGuardVirtualizationBasedSecurityState:
           $ref: '#/components/schemas/microsoft.graph.deviceGuardVirtualizationBasedSecurityState'
+        deviceLicensingLastErrorCode:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: 'A standard error code indicating the last error, or 0 indicating no error (default). The update frequency of this property is daily. Note this property is currently supported only for Windows based Device based subscription licensing. Valid values 0 to 2147483647'
+          format: int32
+        deviceLicensingLastErrorDescription:
+          type: string
+          description: Error text message as a descripition for deviceLicensingLastErrorCode. The update frequency of this property is daily. Note this property is currently supported only for Windows based Device based subscription licensing.
+          nullable: true
+        deviceLicensingStatus:
+          $ref: '#/components/schemas/microsoft.graph.deviceLicensingStatus'
         esimIdentifier:
           type: string
           description: eSIM identifier
@@ -45060,6 +45118,17 @@ components:
           type: string
           description: Phone number of the device
           nullable: true
+        productName:
+          type: string
+          description: 'The product name, e.g. iPad8,12 etc. The update frequency of this property is weekly. Note this property is currently supported only on iOS/MacOS devices, and is available only when Device Information access right is obtained.'
+          nullable: true
+        residentUsersCount:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: 'The number of users currently on this device, or null (default) if the value of this property cannot be determined. The update frequency of this property is per-checkin. Note this property is currently supported only on devices running iOS 13.4 and later, and is available only when Device Information access right is obtained. Valid values 0 to 2147483647'
+          format: int32
+          nullable: true
         serialNumber:
           type: string
           description: Serial number.
@@ -45101,6 +45170,12 @@ components:
           type: string
           description: WiFi MAC address of the device
           nullable: true
+        wiredIPv4Addresses:
+          type: array
+          items:
+            type: string
+            nullable: true
+          description: A list of wired IPv4 addresses. The update frequency (the maximum delay for the change of property value to be synchronized from the device to the cloud storage) of this property is daily. Note this property is currently supported only on devices running on Windows.
       additionalProperties:
         type: object
       description: Hardware information of a given device.
@@ -46803,6 +46878,15 @@ components:
         - limited
         - unknownFutureValue
       type: string
+    microsoft.graph.onlineMeetingRole:
+      title: onlineMeetingRole
+      enum:
+        - attendee
+        - presenter
+        - unknownFutureValue
+        - producer
+        - coorganizer
+      type: string
     microsoft.graph.audioConferencing:
       title: audioConferencing
       type: object
@@ -46891,12 +46975,15 @@ components:
       properties:
         isPasscodeRequired:
           type: boolean
+          description: Indicates whether a passcode is required to join a meeting when using joinMeetingId. Optional.
           nullable: true
         joinMeetingId:
           type: string
+          description: The meeting ID to be used to join a meeting. Optional. Read-only.
           nullable: true
         passcode:
           type: string
+          description: The passcode to join a meeting.  Optional. Read-only.
           nullable: true
       additionalProperties:
         type: object
@@ -47199,7 +47286,7 @@ components:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: The date and time when the temporaryAccessPass was created.
+              description: The date and time when the Temporary Access Pass was created.
               format: date-time
               nullable: true
             isUsable:
@@ -47208,28 +47295,28 @@ components:
               nullable: true
             isUsableOnce:
               type: boolean
-              description: 'Determines whether the pass is limited to a one time use. If true, the pass can be used once; if false, the pass can be used multiple times within the temporaryAccessPass lifetime.'
+              description: 'Determines whether the pass is limited to a one-time use. If true, the pass can be used once; if false, the pass can be used multiple times within the Temporary Access Pass lifetime.'
               nullable: true
             lifetimeInMinutes:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
-              description: 'The lifetime of the temporaryAccessPass in minutes starting at startDateTime. Minimum 10, Maximum 43200 (equivalent to 30 days).'
+              description: The lifetime of the Temporary Access Pass in minutes starting at startDateTime. Must be between 10 and 43200 inclusive (equivalent to 30 days).
               format: int32
               nullable: true
             methodUsabilityReason:
               type: string
-              description: 'Details about usability state (isUsable). Reasons can include: enabledByPolicy, disabledByPolicy, expired, notYetValid, oneTimeUsed.'
+              description: 'Details about the usability state (isUsable). Reasons can include: EnabledByPolicy, DisabledByPolicy, Expired, NotYetValid, OneTimeUsed.'
               nullable: true
             startDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: The date and time when the temporaryAccessPass becomes available to use.
+              description: The date and time when the Temporary Access Pass becomes available to use and when isUsable is true is enforced.
               format: date-time
               nullable: true
             temporaryAccessPass:
               type: string
-              description: The temporaryAccessPass used to authenticate. Returned only on creation of a new temporaryAccessPass; returned as NULL with GET.
+              description: The Temporary Access Pass used to authenticate. Returned only on creation of a new temporaryAccessPassAuthenticationMethod object; Hidden in subsequent read operations and returned as null with GET.
               nullable: true
           additionalProperties:
             type: object
@@ -47985,6 +48072,33 @@ components:
         - Focus
         - Chat
         - Call
+      type: string
+    microsoft.graph.cloudPcHealthCheckItem:
+      title: cloudPcHealthCheckItem
+      type: object
+      properties:
+        additionalDetails:
+          type: string
+          nullable: true
+        displayName:
+          type: string
+        lastHealthCheckDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          format: date-time
+          nullable: true
+        result:
+          $ref: '#/components/schemas/microsoft.graph.cloudPcConnectivityEventResult'
+      additionalProperties:
+        type: object
+    microsoft.graph.cloudPcConnectivityStatus:
+      title: cloudPcConnectivityStatus
+      enum:
+        - unknown
+        - available
+        - availableWithWarning
+        - unavailable
+        - unknownFutureValue
       type: string
     microsoft.graph.actionState:
       title: actionState
@@ -48846,6 +48960,79 @@ components:
           - value: other
             description: Other. Event logs in microsoft-Windows-DeviceGuard have more details.
             name: other
+    microsoft.graph.deviceLicensingStatus:
+      title: deviceLicensingStatus
+      enum:
+        - unknown
+        - licenseRefreshStarted
+        - licenseRefreshPending
+        - deviceIsNotAzureActiveDirectoryJoined
+        - verifyingMicrosoftDeviceIdentity
+        - deviceIdentityVerificationFailed
+        - verifyingMirosoftAccountIdentity
+        - mirosoftAccountVerificationFailed
+        - acquiringDeviceLicense
+        - refreshingDeviceLicense
+        - deviceLicenseRefreshSucceed
+        - deviceLicenseRefreshFailed
+        - removingDeviceLicense
+        - deviceLicenseRemoveSucceed
+        - deviceLicenseRemoveFailed
+        - unknownFutureValue
+      type: string
+      description: Indicates the device licensing status after Windows device based subscription has been enabled.
+      x-ms-enum:
+        name: deviceLicensingStatus
+        modelAsString: false
+        values:
+          - value: unknown
+            description: Default. Set to unknown when status cannot be determined.
+            name: unknown
+          - value: licenseRefreshStarted
+            description: This status is set when the license refresh is started.
+            name: licenseRefreshStarted
+          - value: licenseRefreshPending
+            description: This status is set when the license refresh is pending.
+            name: licenseRefreshPending
+          - value: deviceIsNotAzureActiveDirectoryJoined
+            description: This status is set when the device is not joined to Azure Active Directory.
+            name: deviceIsNotAzureActiveDirectoryJoined
+          - value: verifyingMicrosoftDeviceIdentity
+            description: This status is set when the Microsoft device identity is being verified.
+            name: verifyingMicrosoftDeviceIdentity
+          - value: deviceIdentityVerificationFailed
+            description: This status is set when the Microsoft device identity verification fails.
+            name: deviceIdentityVerificationFailed
+          - value: verifyingMirosoftAccountIdentity
+            description: This status is set when the Microsoft account identity is being verified.
+            name: verifyingMirosoftAccountIdentity
+          - value: mirosoftAccountVerificationFailed
+            description: This status is set when the Microsoft account identity verification fails.
+            name: mirosoftAccountVerificationFailed
+          - value: acquiringDeviceLicense
+            description: This status is set when the device license is being acquired.
+            name: acquiringDeviceLicense
+          - value: refreshingDeviceLicense
+            description: This status is set when the device license is being refreshed.
+            name: refreshingDeviceLicense
+          - value: deviceLicenseRefreshSucceed
+            description: This status is set when the device license refresh succeeds.
+            name: deviceLicenseRefreshSucceed
+          - value: deviceLicenseRefreshFailed
+            description: This status is set when the device license refresh fails.
+            name: deviceLicenseRefreshFailed
+          - value: removingDeviceLicense
+            description: This status is set when the device license is being removed.
+            name: removingDeviceLicense
+          - value: deviceLicenseRemoveSucceed
+            description: This status is set when the device license removing succeeds.
+            name: deviceLicenseRemoveSucceed
+          - value: deviceLicenseRemoveFailed
+            description: This status is set when the device license removing fails.
+            name: deviceLicenseRemoveFailed
+          - value: unknownFutureValue
+            description: This is put here as a place holder for future extension.
+            name: unknownFutureValue
     microsoft.graph.sharedAppleDeviceUser:
       title: sharedAppleDeviceUser
       type: object
@@ -50191,7 +50378,7 @@ components:
             bodyLastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The date and time when the task was last modified. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2020 would look like this: ''2020-01-01T00:00:00Z''.'
+              description: 'The date and time when the task body was last modified. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2020 would look like this: ''2020-01-01T00:00:00Z''.'
               format: date-time
             categories:
               type: array
@@ -50210,6 +50397,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
             hasAttachments:
               type: boolean
+              description: Indicates whether the task has attachments.
               nullable: true
             importance:
               $ref: '#/components/schemas/microsoft.graph.importance'
@@ -50225,6 +50413,8 @@ components:
               $ref: '#/components/schemas/microsoft.graph.patternedRecurrence'
             reminderDateTime:
               $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
+            startDateTime:
+              $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
             status:
               $ref: '#/components/schemas/microsoft.graph.taskStatus'
             title:
@@ -50235,6 +50425,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.attachmentBase'
+              description: A collection of file attachments for the task.
             attachmentSessions:
               type: array
               items:
@@ -50993,6 +51184,14 @@ components:
               $ref: '#/components/schemas/microsoft.graph.printTaskDefinition'
           additionalProperties:
             type: object
+    microsoft.graph.cloudPcConnectivityEventResult:
+      title: cloudPcConnectivityEventResult
+      enum:
+        - unknown
+        - success
+        - failure
+        - unknownFutureValue
+      type: string
     microsoft.graph.volumeType:
       title: volumeType
       enum:
@@ -51729,15 +51928,6 @@ components:
         - other
         - unknownFutureValue
       type: string
-    microsoft.graph.onlineMeetingRole:
-      title: onlineMeetingRole
-      enum:
-        - attendee
-        - presenter
-        - unknownFutureValue
-        - producer
-        - coorganizer
-      type: string
     microsoft.graph.attendanceInterval:
       title: attendanceInterval
       type: object
@@ -51810,19 +52000,23 @@ components:
           properties:
             contentType:
               type: string
+              description: The MIME type.
               nullable: true
             lastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
             name:
               type: string
+              description: The display name of the attachment. This does not need to be the actual file name.
               nullable: true
             size:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
+              description: The length of the attachment in bytes.
               format: int32
           additionalProperties:
             type: object
@@ -51834,18 +52028,21 @@ components:
           properties:
             content:
               type: string
+              description: The content streams that are uploaded.
               format: base64url
               nullable: true
             expirationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: The date and time in UTC when the upload session will expire. The complete file must be uploaded before this expiration time is reached.
               format: date-time
               nullable: true
-            nextExpectedRange:
+            nextExpectedRanges:
               type: array
               items:
                 type: string
                 nullable: true
+              description: 'Indicates a single value {start} that represents the location in the file where the next upload should begin.'
           additionalProperties:
             type: object
     microsoft.graph.linkedResource:

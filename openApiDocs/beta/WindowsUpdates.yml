@@ -2925,6 +2925,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.windowsUpdates.resourceConnection'
+              description: Service connections to external resources such as analytics workspaces.
             updatableAssets:
               type: array
               items:
