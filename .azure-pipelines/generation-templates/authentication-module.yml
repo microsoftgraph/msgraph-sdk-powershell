@@ -36,10 +36,10 @@ steps:
   - ${{ if eq(parameters.Sign, true) }}:
     - template: ../common-templates/esrp/strongname.yml
       parameters:
-        FolderPath: '$(System.DefaultWorkingDirectory)/Authentication/Authentication'
+        FolderPath: '$(System.DefaultWorkingDirectory)/src/Authentication/Authentication'
         Pattern: 'Microsoft.Graph.Authentication.dll, Microsoft.Graph.Authentication.Core.dll'
 
     - template: ../common-templates/esrp/codesign.yml
       parameters:
-        FolderPath: '$(System.DefaultWorkingDirectory)/Authentication/Authentication'
+        FolderPath: '$(System.DefaultWorkingDirectory)/src/Authentication/Authentication'
         Pattern: 'Microsoft.Graph.Authentication.dll, Microsoft.Graph.Authentication.Core.dll, *.ps1'
