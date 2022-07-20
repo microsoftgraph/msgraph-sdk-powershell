@@ -1,0 +1,12 @@
+﻿# Copyright (c) Microsoft Corporation. All rights reserved.
+# Licensed under the MIT License.
+
+steps:
+  - task: PowerShell@2
+    displayName: 'Generate Meta-Module'
+    enabled: false
+    inputs:
+      targetType: inline
+      pwsh: true
+      script: |
+        $(System.DefaultWorkingDirectory)/tools/GenerateRollUpModule.ps1

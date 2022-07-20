@@ -25,49 +25,9 @@ jobs:
   displayName: Microsoft Graph PowerShell SDK CI Build
   timeoutInMinutes: 840
   steps:
-    - template: ./common-templates/install-tools-template.yml
-    - template: ./common-templates/security-prechecks-template.yml
-  # TODO: Load from templates.
-  # Authentication module.
-    - task: PowerShell@2
-      displayName: Generate Authentication Module
-      inputs:
-        targetType: inline
-        pwsh: true
-        script: |
-          . $(System.DefaultWorkingDirectory)/tools/GenerateAuthenticationModule.ps1 -Build
-
-    - task: PowerShell@2
-      displayName: Test Authentication Module
-      enabled: false
-      inputs:
-        targetType: inline
-        pwsh: true
-        script: |
-          . $(System.DefaultWorkingDirectory)/tools/GenerateAuthenticationModule.ps1 -Test
-  # Workload modules.
-    - task: PowerShell@2
-      displayName: Generate Workload Modules
-      inputs:
-        targetType: inline
-        pwsh: true
-        script: |
-          . $(System.DefaultWorkingDirectory)/tools/GenerateModules.ps1 -Build -ExcludeExampleTemplates -ExcludeNotesSection
-
-    - task: PowerShell@2
-      displayName: Test Workload Modules
-      enabled: false
-      inputs:
-        targetType: inline
-        pwsh: true
-        script: |
-          . $(System.DefaultWorkingDirectory)/tools/GenerateModules.ps1 -SkipGeneration -Test
-  # Meta-Module module.
-    - task: PowerShell@2
-      displayName: 'Generate Meta-Module'
-      enabled: false
-      inputs:
-        targetType: inline
-        pwsh: true
-        script: |
-          $(System.DefaultWorkingDirectory)/tools/GenerateRollUpModule.ps1
+    - template: ./common-templates/install-tools.yml
+    - template: ./common-templates/security-pre-checks.yml
+    - template: ./generation-templates/authentication-module.yml
+    - template: ./generation-templates/workload-modules.yml
+    - template: ./generation-templates/meta-module.yml
+    - template: ./common-templates/security-post-checks.yml
