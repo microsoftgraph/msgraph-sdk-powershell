@@ -31,5 +31,11 @@ jobs:
       parameters:
         Test: false
     - template: ./generation-templates/workload-modules.yml
+      parameters:
+        Test: false
+        Sign: false
     - template: ./generation-templates/meta-module.yml
+      parameters:
+        Test: false
+        Sign: false
     - template: ./common-templates/security-post-checks.yml

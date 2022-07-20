@@ -5,9 +5,6 @@ parameters:
   - name: Test
     type: boolean
     default: true
-  - name: Build
-    type: boolean
-    default: true
   - name: Pack
     type: boolean
     default: true
@@ -43,3 +40,12 @@ steps:
       parameters:
         FolderPath: '$(System.DefaultWorkingDirectory)/src/Authentication/Authentication'
         Pattern: 'Microsoft.Graph.Authentication.dll, Microsoft.Graph.Authentication.Core.dll, *.ps1'
+
+  - ${{ if eq(parameters.Pack, true) }}:
+    - task: PowerShell@2
+      displayName: Pack Authentication Module
+      inputs:
+        targetType: inline
+        pwsh: true
+        script: |
+          . $(System.DefaultWorkingDirectory)/tools/GenerateAuthenticationModule.ps1 -Pack

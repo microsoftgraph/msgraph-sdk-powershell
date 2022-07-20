@@ -5,9 +5,6 @@ parameters:
   - name: Test
     type: boolean
     default: true
-  - name: Build
-    type: boolean
-    default: true
   - name: Pack
     type: boolean
     default: true
@@ -43,3 +40,12 @@ steps:
       parameters:
         FolderPath: '$(System.DefaultWorkingDirectory)/src'
         Pattern: 'Microsoft.Graph.*.private.dll, Microsoft.Graph.*.psm1, Microsoft.Graph.*.format.ps1xml, ProxyCmdletDefinitions.ps1, load-dependency.ps1'
+
+  - ${{ if eq(parameters.Pack, true) }}:
+    - task: PowerShell@2
+      displayName: Pack Workload Modules
+      inputs:
+        targetType: inline
+        pwsh: true
+        script: |
+          . $(System.DefaultWorkingDirectory)/tools/GenerateModules.ps1 -SkipGeneration -Pack
