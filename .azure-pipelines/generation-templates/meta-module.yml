@@ -35,4 +35,4 @@ steps:
         targetType: inline
         pwsh: true
         script: |
-          . $(System.DefaultWorkingDirectory)/tools/GenerateRollUpModule.ps1 -Pack
+          . $(System.DefaultWorkingDirectory)/tools/GenerateRollUpModule.ps1 -Pack -ArtifactsLocation $(Build.ArtifactStagingDirectory)

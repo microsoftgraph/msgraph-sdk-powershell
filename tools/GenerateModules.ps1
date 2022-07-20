@@ -6,6 +6,7 @@ Param(
     [ValidateSet("v1.0", "beta")]
     $ApiVersionToGenerate = @("v1.0", "beta"),
     [string] $RepositoryName = "PSGallery",
+    [string] $ArtifactsLocation = (Join-Path $PSScriptRoot "..\artifacts\"),
     [int] $ModulePreviewNumber = -1,
     [switch] $SkipGeneration = $false,
     [switch] $Build,
@@ -43,7 +44,6 @@ $ENV:NODE_OPTIONS = "--max-old-space-size=$MaxMemorySize"
 $ModulePrefix = "Microsoft.Graph"
 $ScriptRoot = $PSScriptRoot
 $ModulesOutputPath = Join-Path $ScriptRoot "..\src\"
-$ArtifactsLocation = Join-Path $ScriptRoot "..\artifacts"
 $OpenApiPath = Join-Path $ScriptRoot "..\openApiDocs"
 $TemplatePath = Join-Path $ScriptRoot "\Templates\"
 $ModuleMappingConfigPath = (Join-Path $PSScriptRoot "..\config\ModulesMapping.jsonc")

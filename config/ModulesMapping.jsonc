@@ -1,5 +1,5 @@
 {
-  "Applications": "^applicationTemplates\\.|^applications\\.|^servicePrincipals\\.|^onPremisesPublishingProfiles\\.|^users.appRoleAssignment$|^groups.appRoleAssignment$",
+  // "Applications": "^applicationTemplates\\.|^applications\\.|^servicePrincipals\\.|^onPremisesPublishingProfiles\\.|^users.appRoleAssignment$|^groups.appRoleAssignment$",
   // "Bookings": "^solutions\\.|^bookingBusinesses\\.|^bookingCurrencies\\.",
   // "Calendar": "^places\\.|^users.calendar$|^users.calendarGroup$|^users.event$|^groups.calendar$|^groups.event$",
   // "ChangeNotifications": "^subscriptions\\.",
@@ -30,11 +30,11 @@
   // "Reports": "^reports\\.|^auditLogs\\.|^deviceManagement.deviceManagementReports$",
   // "SchemaExtensions": "^schemaExtensions\\.",
   "Search": "^search\\.|^external\\.",
-  "Security": "^security\\.",
+  // "Security": "^security\\.",
   // "Sites": "^sites.site$|^sites.itemAnalytics$|^sites.columnDefinition$|^sites.contentType$|^sites.drive$|^sites.list$|^sites.sitePage$|^sites.permission$|^sites.store$|^users.site$|^groups.site$|^sites.Functions$|^sites.Actions$",
   // // "Teams": "^teams\\.|^chats\\.|^users.chat$|^appCatalogs.teamsApp$|^users.userTeamwork$|^teamwork\\.|^users.team$|^groups.team$",
   // "Users": "^users.user$|^users.directoryObject$|^users.licenseDetails$|^users.notification$|^users.outlookUser$|^users.profilePhoto$|^users.userSettings$|^users.extension$|^users.oAuth2PermissionGrant$|^users.todo$",
   // "Users.Actions": "^users.Actions$",
   // // "Users.Functions": "^users.Functions$",
-  "WindowsUpdates": "^admin.windows$|^admin.Actions$|^admin.Functions$"
+  // "WindowsUpdates": "^admin.windows$|^admin.Actions$|^admin.Functions$"
 }

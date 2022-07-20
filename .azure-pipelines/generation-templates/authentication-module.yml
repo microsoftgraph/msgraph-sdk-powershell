@@ -48,4 +48,4 @@ steps:
         targetType: inline
         pwsh: true
         script: |
-          . $(System.DefaultWorkingDirectory)/tools/GenerateAuthenticationModule.ps1 -Pack
+          . $(System.DefaultWorkingDirectory)/tools/GenerateAuthenticationModule.ps1 -Pack -ArtifactsLocation $(Build.ArtifactStagingDirectory)

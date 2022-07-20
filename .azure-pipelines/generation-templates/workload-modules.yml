@@ -19,7 +19,7 @@ steps:
       targetType: inline
       pwsh: true
       script: |
-        . $(System.DefaultWorkingDirectory)/tools/GenerateModules.ps1 -Build -ExcludeExampleTemplates -ExcludeNotesSection
+        . $(System.DefaultWorkingDirectory)/tools/GenerateModules.ps1 -EnableSigning:$${{ parameters.Sign }} -Build -ExcludeExampleTemplates -ExcludeNotesSection
 
   - task: PowerShell@2
     displayName: Test Workload Modules
@@ -48,4 +48,4 @@ steps:
         targetType: inline
         pwsh: true
         script: |
-          . $(System.DefaultWorkingDirectory)/tools/GenerateModules.ps1 -SkipGeneration -Pack
+          . $(System.DefaultWorkingDirectory)/tools/GenerateModules.ps1 -SkipGeneration -Pack -ArtifactsLocation $(Build.ArtifactStagingDirectory)
