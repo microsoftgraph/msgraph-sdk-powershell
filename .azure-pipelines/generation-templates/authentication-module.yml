@@ -22,7 +22,7 @@ steps:
       targetType: inline
       pwsh: true
       script: |
-        . $(System.DefaultWorkingDirectory)/tools/GenerateAuthenticationModule.ps1 -Build
+        . $(System.DefaultWorkingDirectory)/tools/GenerateAuthenticationModule.ps1 -EnableSigning:$${{ parameters.Sign }} -Build
 
   - ${{ if eq(parameters.Test, true) }}:
     - task: PowerShell@2
