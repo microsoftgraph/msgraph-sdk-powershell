@@ -55,7 +55,7 @@ jobs:
         Pack: ${{ parameters.Pack }}
         Sign: ${{ parameters.Sign }}
 
-    - ${{ if eq(parameters.Sign, true) }}:
+    - ${{ if and(eq(parameters.Pack, true), eq(parameters.Sign, true)) }}:
       - template: ./common-templates/esrp/codesign-nuget.yml
         parameters:
           FolderPath: '$(Build.ArtifactStagingDirectory)'
