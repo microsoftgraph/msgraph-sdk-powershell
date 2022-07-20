@@ -61,7 +61,7 @@ directive:
     remove: true
   - where:
       verb: New|Update|Remove
-      subject: ^MgUserAuthenticationMethod$
+      subject: ^UserAuthenticationMethod$
     remove: true
 # Rename cmdlets
   - where:
