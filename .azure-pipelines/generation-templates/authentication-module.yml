@@ -1,5 +1,18 @@
 ﻿# Copyright (c) Microsoft Corporation. All rights reserved.
 # Licensed under the MIT License.
+parameters:
+  - name: Test
+    type: boolean
+    default: true
+  - name: Build
+    type: boolean
+    default: true
+  - name: Pack
+    type: boolean
+    default: true
+  - name: Sign
+    type: boolean
+    default: true
 
 steps:
   - task: PowerShell@2
@@ -10,11 +23,11 @@ steps:
       script: |
         . $(System.DefaultWorkingDirectory)/tools/GenerateAuthenticationModule.ps1 -Build
 
-  - task: PowerShell@2
-    displayName: Test Authentication Module
-    enabled: false
-    inputs:
-      targetType: inline
-      pwsh: true
-      script: |
-        . $(System.DefaultWorkingDirectory)/tools/GenerateAuthenticationModule.ps1 -Test
+  - ${{ if eq(parameters.Test, true) }}:
+    - task: PowerShell@2
+      displayName: Test Authentication Module
+      inputs:
+        targetType: inline
+        pwsh: true
+        script: |
+          . $(System.DefaultWorkingDirectory)/tools/GenerateAuthenticationModule.ps1 -Test

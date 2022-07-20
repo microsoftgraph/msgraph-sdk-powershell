@@ -28,6 +28,8 @@ jobs:
     - template: ./common-templates/install-tools.yml
     - template: ./common-templates/security-pre-checks.yml
     - template: ./generation-templates/authentication-module.yml
+      parameters:
+        Test: false
     - template: ./generation-templates/workload-modules.yml
     - template: ./generation-templates/meta-module.yml
     - template: ./common-templates/security-post-checks.yml
