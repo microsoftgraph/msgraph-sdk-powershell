@@ -68,4 +68,12 @@ jobs:
           ArtifactName: 'drop'
           publishLocation: 'Container'
 
+      - task: NuGetCommand@2
+        displayName: Publish NuGet to preview feed
+        inputs:
+          command: push
+          packagesToPush: $(Build.ArtifactStagingDirectory)/**/Microsoft.Graph.*.nupkg
+          publishVstsFeed: $(PROJECT_NAME)/$(PREVIEW_FEED_NAME)
+          allowPackageConflicts: true
+
     - template: ./common-templates/security-post-checks.yml
