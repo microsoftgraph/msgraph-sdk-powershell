@@ -59,6 +59,10 @@ directive:
       verb: New|Update
       subject: ^UserAuthenticationPasswordMethod$
     remove: true
+  - where:
+      verb: New|Update|Remove
+      subject: ^UserAuthenticationMethod$
+    remove: true
 # Rename cmdlets
   - where:
       subject: ^(.*)(IdentityProtection)(.*)$
