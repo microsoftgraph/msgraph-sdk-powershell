@@ -18,7 +18,7 @@ ModuleVersion = '1.10.0'
 CompatiblePSEditions = 'Core', 'Desktop'
 
 # ID used to uniquely identify this module
-GUID = 'ed12d535-7fc8-43fe-a135-e04cf5e5daca'
+GUID = 'bb5d95ba-9e29-40c0-a341-fc3a497185d0'
 
 # Author of this module
 Author = 'Microsoft'
@@ -113,7 +113,7 @@ PrivateData = @{
         ReleaseNotes = 'See https://aka.ms/GraphPowerShell-Release.'
 
         # Prerelease string of this module
-        # Prerelease = ''
+        Prerelease = 'preview1'
 
         # Flag to indicate whether the module requires explicit user acceptance for install/update/save
         # RequireLicenseAcceptance = $false

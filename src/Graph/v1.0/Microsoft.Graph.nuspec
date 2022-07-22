@@ -2,7 +2,7 @@
 <package>
   <metadata>
     <id>Microsoft.Graph</id>
-    <version>1.10.0</version>
+    <version>1.10.0-preview1</version>
     <authors>Microsoft</authors>
     <owners>Microsoft</owners>
     <licenseUrl>https://aka.ms/devservicesagreement</licenseUrl>
