@@ -20,7 +20,7 @@ steps:
       targetType: inline
       pwsh: true
       script: |
-        $(System.DefaultWorkingDirectory)/tools/GenerateRollUpModule.ps1
+        $(System.DefaultWorkingDirectory)/tools/GenerateMetaModule.ps1
 
   - ${{ if eq(parameters.Sign, true) }}:
     - template: ../common-templates/esrp/codesign.yml
@@ -35,4 +35,4 @@ steps:
         targetType: inline
         pwsh: true
         script: |
-          . $(System.DefaultWorkingDirectory)/tools/GenerateRollUpModule.ps1 -Pack -ArtifactsLocation $(Build.ArtifactStagingDirectory)
+          . $(System.DefaultWorkingDirectory)/tools/GenerateMetaModule.ps1 -Pack -ArtifactsLocation $(Build.ArtifactStagingDirectory)

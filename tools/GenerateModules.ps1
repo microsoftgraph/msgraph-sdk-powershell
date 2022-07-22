@@ -4,7 +4,7 @@
 Param(
     $ModulesToGenerate = @(),
     [ValidateSet("v1.0", "beta")]
-    $ApiVersionToGenerate = @("v1.0", "beta"),
+    $ApiVersion = @("v1.0", "beta"),
     [string] $RepositoryName = "PSGallery",
     [string] $ArtifactsLocation = (Join-Path $PSScriptRoot "..\artifacts\"),
     [int] $ModulePreviewNumber = -1,
@@ -103,18 +103,17 @@ $ModulesToGenerate | ForEach-Object {
         Write-Error "Release notes not set on $ModuleFullName module. Please set 'release-notes' in $AutoRestModuleConfig."
     }
 
-    $ApiVersionToGenerate | ForEach-Object {
-        $ApiVersion = $_
-        $OpenApiFile = Join-Path $OpenApiPath $ApiVersion "$Module.yml"
+    $ApiVersion | ForEach-Object {
+        $CurrentApiVersion = $_
+        $OpenApiFile = Join-Path $OpenApiPath $CurrentApiVersion "$Module.yml"
         if (Test-Path $OpenApiFile) {
-            Write-Host -ForegroundColor Green "-------------[$ApiVersion]-------------"
-            $NamespacePrefix = ($ApiVersion -eq "beta" ? "$ModulePrefix.Beta" : $ModulePrefix)
-            # $ModuleName = ($ApiVersion -eq "beta" ? "Beta.$Module" : $Module)
+            Write-Host -ForegroundColor Green "-------------[$CurrentApiVersion]-------------"
+            $NamespacePrefix = ($CurrentApiVersion -eq "beta" ? "$ModulePrefix.Beta" : $ModulePrefix)
             $ModuleFullName = "$NamespacePrefix.$Module"
-            $ModuleProjectPath = Join-Path $ModulePath $ApiVersion
+            $ModuleProjectPath = Join-Path $ModulePath $CurrentApiVersion
 
             $AutoRestModuleConfig = Join-Path $ModuleProjectPath "\readme.md"
-            Copy-ModuleTemplate -Destination $AutoRestModuleConfig -TemplatePath (Join-Path $ScriptRoot "\Templates\readme$ApiVersion.md") -ModuleName $Module
+            Copy-ModuleTemplate -Destination $AutoRestModuleConfig -TemplatePath (Join-Path $ScriptRoot "\Templates\readme$CurrentApiVersion.md") -ModuleName $Module
 
             # Read specified module version from readme.
             $ModuleVersion = . $ReadModuleReadMePS1 -ReadMePath $AutoRestModuleConfig -FieldToRead "module-version"
@@ -124,7 +123,7 @@ $ModulesToGenerate | ForEach-Object {
             }
 
             if ($SkipGeneration) {
-                Write-Warning "Skipping generation of '$ModuleFullName - $ApiVersion' module."
+                Write-Warning "Skipping generation of '$ModuleFullName - $CurrentApiVersion' module."
             }
             else {
                 npx autorest --max-memory-size=$MaxMemorySize --module-version:$ModuleVersion --module-name:$ModuleFullName --service-name:$Module --input-file:$OpenApiFile $AutoRestModuleConfig
