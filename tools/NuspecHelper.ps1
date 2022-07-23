@@ -37,6 +37,14 @@ function Set-NuSpecValuesFromManifest(
         Set-Dependencies -XmlDocument $XmlDocument -MetadataElement $MetadataElement -Dependencies $Manifest["dependencies"]
         $Manifest.Remove("dependencies")
 
+        if ($Manifest["prerelease"]) {
+            Set-ElementValue -XmlDocument $XmlDocument -MetadataElement $MetadataElement -ElementName "version" -ElementValue "$($Manifest["version"])-$($Manifest["prerelease"])"
+        } else {
+            Set-ElementValue -XmlDocument $XmlDocument -MetadataElement $MetadataElement -ElementName "version" -ElementValue $Manifest["version"]
+        }
+        $Manifest.Remove("version")
+        $Manifest.Remove("prerelease")
+
         Set-ElementValue -XmlDocument $XmlDocument -MetadataElement $MetadataElement -ElementName "projectUrl" -ElementValue $Manifest["projectUri"]
         $Manifest.Remove("projectUri")
 

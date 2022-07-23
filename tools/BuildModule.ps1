@@ -23,7 +23,7 @@ $BuildModulePS1 = Join-Path $ModuleSrc "/build-module.ps1"
 $ModuleCsProj = Join-Path $ModuleSrc "$ModuleFullName.csproj"
 $ModuleManifest = Join-Path $ModuleSrc "$ModuleFullName.psd1"
 $ModuleNuspec = Join-Path $ModuleSrc "$ModuleFullName.nuspec"
-[HashTable] $NuspecMetadata = Get-Content (Join-Path $PSScriptRoot "..\config\ModuleMetadata.json") | ConvertFrom-Json -AsHashTable
+[HashTable] $ModuleMetadata = Get-Content (Join-Path $PSScriptRoot "..\config\ModuleMetadata.json") | ConvertFrom-Json -AsHashTable
 # Import scripts
 . $NuspecHelperPS1
 . $CSProjHelperPS1
@@ -32,12 +32,13 @@ if (-not (Test-Path -Path $BuildModulePS1)) {
     Write-Error "Build script file '$BuildModulePS1' not found for '$ModuleFullName' module."
 }
 
+# TODO: Enable preview versions in CSproj.
 # Set delay sign to true.
 if ($EnableSigning) {
-    Set-CSProjValues -ModuleCsProj $ModuleCsProj -ModuleVersion $ModuleVersion -AssemblyOriginatorKeyFile $NuspecMetadata["assemblyOriginatorKeyFile"]
+    Set-CSProjValues -ModuleCsProj $ModuleCsProj -ModuleVersion $ModuleMetadata["version"] -PreRelease $ModuleMetadata["prerelease"] -AssemblyOriginatorKeyFile $ModuleMetadata["assemblyOriginatorKeyFile"]
 }
 else {
-    Set-CSProjValues -ModuleCsProj $ModuleCsProj -ModuleVersion $ModuleVersion -Copyright $NuspecMetadata["copyright"]
+    Set-CSProjValues -ModuleCsProj $ModuleCsProj -ModuleVersion $ModuleMetadata["version"] -PreRelease $ModuleMetadata["prerelease"] -Copyright $ModuleMetadata["copyright"]
 }
 
 # Build module
@@ -50,29 +51,25 @@ if ($lastexitcode -ne 0) {
 
 [HashTable]$ModuleManifestSettings = @{
     Path          = $ModuleManifest
-    ModuleVersion = $ModuleVersion
-    IconUri       = $NuspecMetadata["iconUri"]
+    ModuleVersion = $ModuleMetadata["version"]
+    IconUri       = $ModuleMetadata["iconUri"]
     ReleaseNotes  = $ReleaseNotes
 }
-$FullVersionNumber = $ModuleVersion
 
-if ($ModulePreviewNumber -ge 0) {
-    if ($RequiredModules.Count -gt 0) {
-        # Prerelease is only supported in PowerShell 7 (preview) and above.
-        $ModuleManifestSettings["RequiredModules"] = $RequiredModules
-        $ModuleManifestSettings["Prerelease"] = "preview$ModulePreviewNumber"
-    }
-    else {
-        $ModuleManifestSettings["Prerelease"] = "preview$ModulePreviewNumber"
-    }
-    $FullVersionNumber = "$ModuleVersion-preview$ModulePreviewNumber"
+if ($ModuleMetadata["prerelease"]) {
+    $ModuleManifestSettings.Prerelease = $ModuleMetadata["prerelease"]
 }
-else {
-    if ($RequiredModules.Count -gt 0) {
-        $ModuleManifestSettings["RequiredModules"] = $RequiredModules
-    }
+if ($RequiredModules.Count -gt 0) {
+    $ModuleManifestSettings["RequiredModules"] = $RequiredModules
+}
+
+# TODO: Refactor this line to use Set-NuSpecValuesFromManifest. Rename to ModuleVersion after refactor.
+if ($ModuleMetadata["prerelease"]) {
+    $FullVersionNumber = "$($ModuleMetadata["version"])-$($ModuleMetadata["prerelease"])"
+} else {
+    $FullVersionNumber = $ModuleMetadata["version"]
 }
 
 Write-Debug "Updating '$ModuleFullName' module manifest and nuspec..."
 Update-ModuleManifest @ModuleManifestSettings
-Set-NuSpecValues -NuSpecFilePath $ModuleNuspec -VersionNumber $FullVersionNumber -Dependencies $RequiredModules -IconUrl $NuspecMetadata["iconUri"] -ReleaseNotes $ReleaseNotes
+Set-NuSpecValues -NuSpecFilePath $ModuleNuspec -VersionNumber $FullVersionNumber -Dependencies $RequiredModules -IconUrl $ModuleMetadata["iconUri"] -ReleaseNotes $ReleaseNotes
