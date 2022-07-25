@@ -4953,9 +4953,15 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
-                $ref: '#/components/schemas/microsoft.graph.report'
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -4976,9 +4982,15 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
-                $ref: '#/components/schemas/microsoft.graph.report'
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -5001,9 +5013,15 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
-                $ref: '#/components/schemas/microsoft.graph.report'
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -5024,9 +5042,15 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
-                $ref: '#/components/schemas/microsoft.graph.report'
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -11520,10 +11544,10 @@ components:
       properties:
         name:
           type: string
-          description: 'Name for this key-value pair. Possible names are: AdditionalWSFedEndpointCheckResult,  AllowedAuthenticationClassReferencesCheckResult, AlwaysRequireAuthenticationCheckResult,   AutoUpdateEnabledCheckResult, ClaimsProviderNameCheckResult, EncryptClaimsCheckResult,  EncryptedNameIdRequiredCheckResult, MonitoringEnabledCheckResult,NotBeforeSkewCheckResult,  RequestMFAFromClaimsProvidersCheckResult, SignedSamlRequestsRequiredCheckResult, AdditionalAuthenticationRulesCheckResult, TokenLifetimeCheckResult,  DelegationAuthorizationRulesCheckResult, IssuanceAuthorizationRulesCheckResult, IssuanceTransformRulesCheckResult.'
+          description: Name for this key-value pair
         value:
           type: string
-          description: 'Value for this key-value pair. Possible result values are 0 (when the validation check passed), 1 (when the validation check failed), or 2 (when the validation check is a warning).'
+          description: Value for this key-value pair
           nullable: true
       additionalProperties:
         type: object
@@ -11731,7 +11755,7 @@ components:
       properties:
         displayName:
           type: string
-          description: 'The identity''s display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
+          description: 'The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
           nullable: true
         id:
           type: string

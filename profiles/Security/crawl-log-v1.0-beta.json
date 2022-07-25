@@ -549,6 +549,42 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Security.yml"
     },
+    "/security/threatSubmission": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Security.yml"
+    },
+    "/security/threatSubmission/emailThreats": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Security.yml"
+    },
+    "/security/threatSubmission/emailThreats/{emailThreatSubmission-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Security.yml"
+    },
+    "/security/threatSubmission/emailThreatSubmissionPolicies": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Security.yml"
+    },
+    "/security/threatSubmission/emailThreatSubmissionPolicies/{emailThreatSubmissionPolicy-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Security.yml"
+    },
+    "/security/threatSubmission/fileThreats": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Security.yml"
+    },
+    "/security/threatSubmission/fileThreats/{fileThreatSubmission-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Security.yml"
+    },
+    "/security/threatSubmission/urlThreats": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Security.yml"
+    },
+    "/security/threatSubmission/urlThreats/{urlThreatSubmission-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Security.yml"
+    },
     "/security/tiIndicators": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Security.yml"

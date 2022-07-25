@@ -6720,7 +6720,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.security.userSource'
-              description: Data source entity for a the custodian. This is the container for a custodian's mailbox and OneDrive for Business site.
+              description: Data source entity for a custodian. This is the container for a custodian's mailbox and OneDrive for Business site.
           additionalProperties:
             type: object
     microsoft.graph.security.ediscoveryIndexOperation:
@@ -9319,6 +9319,8 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.teamsAsyncOperation'
               description: The async operations that ran or are running on this team.
+            photo:
+              $ref: '#/components/schemas/microsoft.graph.profilePhoto'
             primaryChannel:
               $ref: '#/components/schemas/microsoft.graph.channel'
             template:
@@ -9487,7 +9489,7 @@ components:
         timeout:
           pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
           type: string
-          description: 'The timeout duration for the OCR engine. A longer timeout may increase success of OCR, but may add to the total processing time.'
+          description: 'The timeout duration for the OCR engine. A longer timeout might increase success of OCR, but might add to the total processing time.'
           format: duration
           nullable: true
       additionalProperties:
@@ -9529,21 +9531,21 @@ components:
       properties:
         dynamicallyAdjustTopicCount:
           type: boolean
-          description: 'To learn more, see Adjust maximum number of themes dynamically.'
+          description: 'Indicates whether the themes model should dynamically optimize the number of generated topics. To learn more, see Adjust maximum number of themes dynamically.'
           nullable: true
         ignoreNumbers:
           type: boolean
-          description: 'To learn more, see Include numbers in themes.'
+          description: 'Indicates whether the themes model should exclude numbers while parsing document texts. To learn more, see Include numbers in themes.'
           nullable: true
         isEnabled:
           type: boolean
-          description: Indicates whether themes is enabled for the case.
+          description: Indicates whether themes model is enabled for the case.
           nullable: true
         topicCount:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
-          description: 'To learn more, see Maximum number of themes.'
+          description: 'The total number of topics that the themes model will generate for a review set. To learn more, see Maximum number of themes.'
           format: int32
           nullable: true
       additionalProperties:
@@ -9979,7 +9981,7 @@ components:
       properties:
         displayName:
           type: string
-          description: 'The identity''s display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
+          description: 'The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
           nullable: true
         id:
           type: string
@@ -10212,7 +10214,7 @@ components:
               nullable: true
             onPremisesSyncEnabled:
               type: boolean
-              description: 'true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced; null if this object has never been synced from an on-premises directory (default). Read-only. Supports $filter (eq, ne, not, in, and eq on null values).'
+              description: 'true if this user object is currently being synced from an on-premises Active Directory (AD); otherwise the user isn''t being synced and can be managed in Azure Active Directory (Azure AD). Read-only. Supports $filter (eq, ne, not, in, and eq on null values).'
               nullable: true
             onPremisesUserPrincipalName:
               type: string
@@ -10325,7 +10327,7 @@ components:
               description: A list for the user to enumerate their past projects. Returned only on $select.
             preferredName:
               type: string
-              description: The preferred name for the user. Returned only on $select.
+              description: The preferred name for the user. Not Supported. This attribute returns an empty string.Returned only on $select.
               nullable: true
             responsibilities:
               type: array
@@ -13789,6 +13791,11 @@ components:
         - title: authentication
           type: object
           properties:
+            emailMethods:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.emailAuthenticationMethod'
+              description: Represents the email addresses registered to a user for authentication.
             fido2Methods:
               type: array
               items:
@@ -13813,6 +13820,15 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.passwordAuthenticationMethod'
               description: Represents the details of the password authentication method registered to a user for authentication.
+            phoneMethods:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.phoneAuthenticationMethod'
+              description: Represents the phone registered to a user for authentication.
+            softwareOathMethods:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.softwareOathAuthenticationMethod'
             temporaryAccessPassMethods:
               type: array
               items:
@@ -16886,6 +16902,18 @@ components:
               description: List of attendance records of an attendance report. Read-only.
           additionalProperties:
             type: object
+    microsoft.graph.emailAuthenticationMethod:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
+        - title: emailAuthenticationMethod
+          type: object
+          properties:
+            emailAddress:
+              type: string
+              description: The email address registered to this user.
+              nullable: true
+          additionalProperties:
+            type: object
     microsoft.graph.fido2AuthenticationMethod:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
@@ -16969,6 +16997,34 @@ components:
             password:
               type: string
               description: 'For security, the password is always returned as null from a LIST or GET operation.'
+              nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.phoneAuthenticationMethod:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
+        - title: phoneAuthenticationMethod
+          type: object
+          properties:
+            phoneNumber:
+              type: string
+              description: 'The phone number to text or call for authentication. Phone numbers use the format ''+<country code> <number>x<extension>'', with extension optional. For example, +1 5555551234 or +1 5555551234x123 are valid. Numbers are rejected when creating/updating if they do not match the required format.'
+              nullable: true
+            phoneType:
+              $ref: '#/components/schemas/microsoft.graph.authenticationPhoneType'
+            smsSignInState:
+              $ref: '#/components/schemas/microsoft.graph.authenticationMethodSignInState'
+          additionalProperties:
+            type: object
+    microsoft.graph.softwareOathAuthenticationMethod:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
+        - title: softwareOathAuthenticationMethod
+          type: object
+          properties:
+            secretKey:
+              type: string
+              description: The secret key of the method. Always returns null.
               nullable: true
           additionalProperties:
             type: object
@@ -18820,6 +18876,25 @@ components:
               description: The collection of open extensions defined for the device. Read-only. Nullable.
           additionalProperties:
             type: object
+    microsoft.graph.authenticationPhoneType:
+      title: authenticationPhoneType
+      enum:
+        - mobile
+        - alternateMobile
+        - office
+        - unknownFutureValue
+      type: string
+    microsoft.graph.authenticationMethodSignInState:
+      title: authenticationMethodSignInState
+      enum:
+        - notSupported
+        - notAllowedByPolicy
+        - notEnabled
+        - phoneNumberNotUnique
+        - ready
+        - notConfigured
+        - unknownFutureValue
+      type: string
     microsoft.graph.authenticationMethodKeyStrength:
       title: authenticationMethodKeyStrength
       enum:
@@ -18856,7 +18931,7 @@ components:
             bodyLastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The date and time when the task was last modified. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2020 would look like this: ''2020-01-01T00:00:00Z''.'
+              description: 'The date and time when the task body was last modified. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2020 would look like this: ''2020-01-01T00:00:00Z''.'
               format: date-time
             categories:
               type: array

@@ -453,6 +453,14 @@
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
     },
+    "/users/{user-id}/authentication/emailMethods": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
+    },
+    "/users/{user-id}/authentication/emailMethods/{emailAuthenticationMethod-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
+    },
     "/users/{user-id}/authentication/fido2Methods": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
@@ -538,6 +546,22 @@
       "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
     },
     "/users/{user-id}/authentication/passwordMethods/{passwordAuthenticationMethod-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
+    },
+    "/users/{user-id}/authentication/phoneMethods": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
+    },
+    "/users/{user-id}/authentication/phoneMethods/{phoneAuthenticationMethod-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
+    },
+    "/users/{user-id}/authentication/softwareOathMethods": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
+    },
+    "/users/{user-id}/authentication/softwareOathMethods/{softwareOathAuthenticationMethod-id}": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
     },

@@ -957,24 +957,9 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: b2cIdentityUserFlow
-      requestBody:
-        description: New navigation property ref value
-        content:
-          application/json:
-            schema:
-              type: object
-              additionalProperties:
-                type: object
-        required: true
       responses:
-        '201':
-          description: Created navigation property link.
-          content:
-            application/json:
-              schema:
-                type: object
-                additionalProperties:
-                  type: object
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       deprecated: true
@@ -4156,24 +4141,9 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: b2xIdentityUserFlow
-      requestBody:
-        description: New navigation property ref value
-        content:
-          application/json:
-            schema:
-              type: object
-              additionalProperties:
-                type: object
-        required: true
       responses:
-        '201':
-          description: Created navigation property link.
-          content:
-            application/json:
-              schema:
-                type: object
-                additionalProperties:
-                  type: object
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -14106,24 +14076,9 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: featureRolloutPolicy
-      requestBody:
-        description: New navigation property ref value
-        content:
-          application/json:
-            schema:
-              type: object
-              additionalProperties:
-                type: object
-        required: true
       responses:
-        '201':
-          description: Created navigation property link.
-          content:
-            application/json:
-              schema:
-                type: object
-                additionalProperties:
-                  type: object
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -14831,8 +14786,6 @@ paths:
                 - mailEnabled desc
                 - mailNickname
                 - mailNickname desc
-                - mdmAppId
-                - mdmAppId desc
                 - membershipRule
                 - membershipRule desc
                 - membershipRuleProcessingState
@@ -14929,7 +14882,6 @@ paths:
                 - mail
                 - mailEnabled
                 - mailNickname
-                - mdmAppId
                 - membershipRule
                 - membershipRuleProcessingState
                 - onPremisesDomainName
@@ -15145,8 +15097,6 @@ paths:
                 - mailEnabled desc
                 - mailNickname
                 - mailNickname desc
-                - mdmAppId
-                - mdmAppId desc
                 - membershipRule
                 - membershipRule desc
                 - membershipRuleProcessingState
@@ -15236,24 +15186,9 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: mobilityManagementPolicy
-      requestBody:
-        description: New navigation property ref value
-        content:
-          application/json:
-            schema:
-              type: object
-              additionalProperties:
-                type: object
-        required: true
       responses:
-        '201':
-          description: Created navigation property link.
-          content:
-            application/json:
-              schema:
-                type: object
-                additionalProperties:
-                  type: object
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -15539,8 +15474,6 @@ paths:
                 - mailEnabled desc
                 - mailNickname
                 - mailNickname desc
-                - mdmAppId
-                - mdmAppId desc
                 - membershipRule
                 - membershipRule desc
                 - membershipRuleProcessingState
@@ -15637,7 +15570,6 @@ paths:
                 - mail
                 - mailEnabled
                 - mailNickname
-                - mdmAppId
                 - membershipRule
                 - membershipRuleProcessingState
                 - onPremisesDomainName
@@ -15853,8 +15785,6 @@ paths:
                 - mailEnabled desc
                 - mailNickname
                 - mailNickname desc
-                - mdmAppId
-                - mdmAppId desc
                 - membershipRule
                 - membershipRule desc
                 - membershipRuleProcessingState
@@ -15944,24 +15874,9 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: mobilityManagementPolicy
-      requestBody:
-        description: New navigation property ref value
-        content:
-          application/json:
-            schema:
-              type: object
-              additionalProperties:
-                type: object
-        required: true
       responses:
-        '201':
-          description: Created navigation property link.
-          content:
-            application/json:
-              schema:
-                type: object
-                additionalProperties:
-                  type: object
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -20305,7 +20220,7 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2022-06-01T00:00:00.0000000+00:00'
+        removalDate: '2022-08-29T00:00:00.0000000+00:00'
         date: '2021-05-18T00:00:00.0000000+00:00'
         version: 2022-03/PrivatePreview:CompanionAppAllowedStatePrivatePreview
       x-ms-pageable:
@@ -20343,7 +20258,7 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2022-06-01T00:00:00.0000000+00:00'
+        removalDate: '2022-08-29T00:00:00.0000000+00:00'
         date: '2021-05-18T00:00:00.0000000+00:00'
         version: 2022-03/PrivatePreview:CompanionAppAllowedStatePrivatePreview
       x-ms-docs-operation-type: operation
@@ -20415,7 +20330,7 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2022-06-01T00:00:00.0000000+00:00'
+        removalDate: '2022-08-29T00:00:00.0000000+00:00'
         date: '2021-05-18T00:00:00.0000000+00:00'
         version: 2022-03/PrivatePreview:CompanionAppAllowedStatePrivatePreview
       x-ms-docs-operation-type: operation
@@ -20453,7 +20368,7 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2022-06-01T00:00:00.0000000+00:00'
+        removalDate: '2022-08-29T00:00:00.0000000+00:00'
         date: '2021-05-18T00:00:00.0000000+00:00'
         version: 2022-03/PrivatePreview:CompanionAppAllowedStatePrivatePreview
       x-ms-docs-operation-type: operation
@@ -20489,7 +20404,7 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2022-06-01T00:00:00.0000000+00:00'
+        removalDate: '2022-08-29T00:00:00.0000000+00:00'
         date: '2021-05-18T00:00:00.0000000+00:00'
         version: 2022-03/PrivatePreview:CompanionAppAllowedStatePrivatePreview
       x-ms-docs-operation-type: operation
@@ -20646,7 +20561,7 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2022-06-01T00:00:00.0000000+00:00'
+        removalDate: '2022-08-29T00:00:00.0000000+00:00'
         date: '2021-05-18T00:00:00.0000000+00:00'
         version: 2022-03/PrivatePreview:CompanionAppAllowedStatePrivatePreview
       x-ms-docs-operation-type: operation
@@ -20684,7 +20599,7 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2022-06-01T00:00:00.0000000+00:00'
+        removalDate: '2022-08-29T00:00:00.0000000+00:00'
         date: '2021-05-18T00:00:00.0000000+00:00'
         version: 2022-03/PrivatePreview:CompanionAppAllowedStatePrivatePreview
       x-ms-docs-operation-type: operation
@@ -20720,7 +20635,7 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2022-06-01T00:00:00.0000000+00:00'
+        removalDate: '2022-08-29T00:00:00.0000000+00:00'
         date: '2021-05-18T00:00:00.0000000+00:00'
         version: 2022-03/PrivatePreview:CompanionAppAllowedStatePrivatePreview
       x-ms-docs-operation-type: operation
@@ -20820,7 +20735,7 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2022-06-01T00:00:00.0000000+00:00'
+        removalDate: '2022-08-29T00:00:00.0000000+00:00'
         date: '2021-05-18T00:00:00.0000000+00:00'
         version: 2022-03/PrivatePreview:CompanionAppAllowedStatePrivatePreview
       x-ms-pageable:
@@ -20865,7 +20780,7 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2022-06-01T00:00:00.0000000+00:00'
+        removalDate: '2022-08-29T00:00:00.0000000+00:00'
         date: '2021-05-18T00:00:00.0000000+00:00'
         version: 2022-03/PrivatePreview:CompanionAppAllowedStatePrivatePreview
       x-ms-docs-operation-type: operation
@@ -20949,7 +20864,7 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2022-06-01T00:00:00.0000000+00:00'
+        removalDate: '2022-08-29T00:00:00.0000000+00:00'
         date: '2021-05-18T00:00:00.0000000+00:00'
         version: 2022-03/PrivatePreview:CompanionAppAllowedStatePrivatePreview
       x-ms-docs-operation-type: operation
@@ -20994,7 +20909,7 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2022-06-01T00:00:00.0000000+00:00'
+        removalDate: '2022-08-29T00:00:00.0000000+00:00'
         date: '2021-05-18T00:00:00.0000000+00:00'
         version: 2022-03/PrivatePreview:CompanionAppAllowedStatePrivatePreview
       x-ms-docs-operation-type: operation
@@ -21037,7 +20952,7 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2022-06-01T00:00:00.0000000+00:00'
+        removalDate: '2022-08-29T00:00:00.0000000+00:00'
         date: '2021-05-18T00:00:00.0000000+00:00'
         version: 2022-03/PrivatePreview:CompanionAppAllowedStatePrivatePreview
       x-ms-docs-operation-type: operation
@@ -21104,7 +21019,7 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2022-06-01T00:00:00.0000000+00:00'
+        removalDate: '2022-08-29T00:00:00.0000000+00:00'
         date: '2021-05-18T00:00:00.0000000+00:00'
         version: 2022-03/PrivatePreview:CompanionAppAllowedStatePrivatePreview
       x-ms-docs-operation-type: operation
@@ -21178,7 +21093,7 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2022-06-01T00:00:00.0000000+00:00'
+        removalDate: '2022-08-29T00:00:00.0000000+00:00'
         date: '2021-05-18T00:00:00.0000000+00:00'
         version: 2022-03/PrivatePreview:CompanionAppAllowedStatePrivatePreview
       x-ms-pageable:
@@ -21223,7 +21138,7 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2022-06-01T00:00:00.0000000+00:00'
+        removalDate: '2022-08-29T00:00:00.0000000+00:00'
         date: '2021-05-18T00:00:00.0000000+00:00'
         version: 2022-03/PrivatePreview:CompanionAppAllowedStatePrivatePreview
       x-ms-docs-operation-type: operation
@@ -21290,7 +21205,7 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2022-06-01T00:00:00.0000000+00:00'
+        removalDate: '2022-08-29T00:00:00.0000000+00:00'
         date: '2021-05-18T00:00:00.0000000+00:00'
         version: 2022-03/PrivatePreview:CompanionAppAllowedStatePrivatePreview
       x-ms-docs-operation-type: operation
@@ -21335,7 +21250,7 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2022-06-01T00:00:00.0000000+00:00'
+        removalDate: '2022-08-29T00:00:00.0000000+00:00'
         date: '2021-05-18T00:00:00.0000000+00:00'
         version: 2022-03/PrivatePreview:CompanionAppAllowedStatePrivatePreview
       x-ms-docs-operation-type: operation
@@ -21378,7 +21293,7 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2022-06-01T00:00:00.0000000+00:00'
+        removalDate: '2022-08-29T00:00:00.0000000+00:00'
         date: '2021-05-18T00:00:00.0000000+00:00'
         version: 2022-03/PrivatePreview:CompanionAppAllowedStatePrivatePreview
       x-ms-docs-operation-type: operation
@@ -21455,7 +21370,7 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2022-06-01T00:00:00.0000000+00:00'
+        removalDate: '2022-08-29T00:00:00.0000000+00:00'
         date: '2021-05-18T00:00:00.0000000+00:00'
         version: 2022-03/PrivatePreview:CompanionAppAllowedStatePrivatePreview
       x-ms-pageable:
@@ -21526,7 +21441,7 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2022-06-01T00:00:00.0000000+00:00'
+        removalDate: '2022-08-29T00:00:00.0000000+00:00'
         date: '2021-05-18T00:00:00.0000000+00:00'
         version: 2022-03/PrivatePreview:CompanionAppAllowedStatePrivatePreview
       x-ms-docs-operation-type: operation
@@ -21603,7 +21518,7 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2022-06-01T00:00:00.0000000+00:00'
+        removalDate: '2022-08-29T00:00:00.0000000+00:00'
         date: '2021-05-18T00:00:00.0000000+00:00'
         version: 2022-03/PrivatePreview:CompanionAppAllowedStatePrivatePreview
       x-ms-pageable:
@@ -21655,7 +21570,7 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2022-06-01T00:00:00.0000000+00:00'
+        removalDate: '2022-08-29T00:00:00.0000000+00:00'
         date: '2021-05-18T00:00:00.0000000+00:00'
         version: 2022-03/PrivatePreview:CompanionAppAllowedStatePrivatePreview
       x-ms-docs-operation-type: operation
@@ -21707,7 +21622,7 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2022-06-01T00:00:00.0000000+00:00'
+        removalDate: '2022-08-29T00:00:00.0000000+00:00'
         date: '2021-05-18T00:00:00.0000000+00:00'
         version: 2022-03/PrivatePreview:CompanionAppAllowedStatePrivatePreview
       x-ms-pageable:
@@ -21734,29 +21649,14 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: microsoftAuthenticatorAuthenticationMethod
-      requestBody:
-        description: New navigation property ref value
-        content:
-          application/json:
-            schema:
-              type: object
-              additionalProperties:
-                type: object
-        required: true
       responses:
-        '201':
-          description: Created navigation property link.
-          content:
-            application/json:
-              schema:
-                type: object
-                additionalProperties:
-                  type: object
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2022-06-01T00:00:00.0000000+00:00'
+        removalDate: '2022-08-29T00:00:00.0000000+00:00'
         date: '2021-05-18T00:00:00.0000000+00:00'
         version: 2022-03/PrivatePreview:CompanionAppAllowedStatePrivatePreview
       x-ms-docs-operation-type: operation
@@ -21833,7 +21733,7 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2022-06-01T00:00:00.0000000+00:00'
+        removalDate: '2022-08-29T00:00:00.0000000+00:00'
         date: '2021-05-18T00:00:00.0000000+00:00'
         version: 2022-03/PrivatePreview:CompanionAppAllowedStatePrivatePreview
       x-ms-pageable:
@@ -21904,7 +21804,7 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2022-06-01T00:00:00.0000000+00:00'
+        removalDate: '2022-08-29T00:00:00.0000000+00:00'
         date: '2021-05-18T00:00:00.0000000+00:00'
         version: 2022-03/PrivatePreview:CompanionAppAllowedStatePrivatePreview
       x-ms-docs-operation-type: operation
@@ -21981,7 +21881,7 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2022-06-01T00:00:00.0000000+00:00'
+        removalDate: '2022-08-29T00:00:00.0000000+00:00'
         date: '2021-05-18T00:00:00.0000000+00:00'
         version: 2022-03/PrivatePreview:CompanionAppAllowedStatePrivatePreview
       x-ms-pageable:
@@ -22052,7 +21952,7 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2022-06-01T00:00:00.0000000+00:00'
+        removalDate: '2022-08-29T00:00:00.0000000+00:00'
         date: '2021-05-18T00:00:00.0000000+00:00'
         version: 2022-03/PrivatePreview:CompanionAppAllowedStatePrivatePreview
       x-ms-docs-operation-type: operation
@@ -22135,7 +22035,7 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2022-06-01T00:00:00.0000000+00:00'
+        removalDate: '2022-08-29T00:00:00.0000000+00:00'
         date: '2021-05-18T00:00:00.0000000+00:00'
         version: 2022-03/PrivatePreview:CompanionAppAllowedStatePrivatePreview
       x-ms-pageable:
@@ -22180,7 +22080,7 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2022-06-01T00:00:00.0000000+00:00'
+        removalDate: '2022-08-29T00:00:00.0000000+00:00'
         date: '2021-05-18T00:00:00.0000000+00:00'
         version: 2022-03/PrivatePreview:CompanionAppAllowedStatePrivatePreview
       x-ms-docs-operation-type: operation
@@ -22250,7 +22150,7 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2022-06-01T00:00:00.0000000+00:00'
+        removalDate: '2022-08-29T00:00:00.0000000+00:00'
         date: '2021-05-18T00:00:00.0000000+00:00'
         version: 2022-03/PrivatePreview:CompanionAppAllowedStatePrivatePreview
       x-ms-docs-operation-type: operation
@@ -22295,7 +22195,7 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2022-06-01T00:00:00.0000000+00:00'
+        removalDate: '2022-08-29T00:00:00.0000000+00:00'
         date: '2021-05-18T00:00:00.0000000+00:00'
         version: 2022-03/PrivatePreview:CompanionAppAllowedStatePrivatePreview
       x-ms-docs-operation-type: operation
@@ -22338,7 +22238,7 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2022-06-01T00:00:00.0000000+00:00'
+        removalDate: '2022-08-29T00:00:00.0000000+00:00'
         date: '2021-05-18T00:00:00.0000000+00:00'
         version: 2022-03/PrivatePreview:CompanionAppAllowedStatePrivatePreview
       x-ms-docs-operation-type: operation
@@ -23958,24 +23858,9 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: passwordlessMicrosoftAuthenticatorAuthenticationMethod
-      requestBody:
-        description: New navigation property ref value
-        content:
-          application/json:
-            schema:
-              type: object
-              additionalProperties:
-                type: object
-        required: true
       responses:
-        '201':
-          description: Created navigation property link.
-          content:
-            application/json:
-              schema:
-                type: object
-                additionalProperties:
-                  type: object
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -26810,24 +26695,9 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: windowsHelloForBusinessAuthenticationMethod
-      requestBody:
-        description: New navigation property ref value
-        content:
-          application/json:
-            schema:
-              type: object
-              additionalProperties:
-                type: object
-        required: true
       responses:
-        '201':
-          description: Created navigation property link.
-          content:
-            application/json:
-              schema:
-                type: object
-                additionalProperties:
-                  type: object
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -30996,7 +30866,7 @@ components:
               nullable: true
             onPremisesSyncEnabled:
               type: boolean
-              description: 'true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced; null if this object has never been synced from an on-premises directory (default). Read-only. Supports $filter (eq, ne, not, in, and eq on null values).'
+              description: 'true if this user object is currently being synced from an on-premises Active Directory (AD); otherwise the user isn''t being synced and can be managed in Azure Active Directory (Azure AD). Read-only. Supports $filter (eq, ne, not, in, and eq on null values).'
               nullable: true
             onPremisesUserPrincipalName:
               type: string
@@ -31121,7 +30991,7 @@ components:
               description: A list for the user to enumerate their past projects. Returned only on $select.
             preferredName:
               type: string
-              description: The preferred name for the user. Returned only on $select.
+              description: The preferred name for the user. Not Supported. This attribute returns an empty string.Returned only on $select.
               nullable: true
             responsibilities:
               type: array
@@ -31915,8 +31785,10 @@ components:
           properties:
             allowDeletedIdentitiesDataRemoval:
               type: boolean
+              description: 'Notifies Azure AD whether to clean up the user information about the external identity, from the guest tenant, when the user is deleted in their home tenant.'
             allowExternalIdentitiesToLeave:
               type: boolean
+              description: 'Defines whether external users can leave the guest tenant. If set to false, self-service controls are not enabled, and the admin of the guest tenant must manually remove the external user from the guest tenant.'
           additionalProperties:
             type: object
     microsoft.graph.featureRolloutPolicy:
@@ -33327,10 +33199,10 @@ components:
       properties:
         name:
           type: string
-          description: 'Name for this key-value pair. Possible names are: AdditionalWSFedEndpointCheckResult,  AllowedAuthenticationClassReferencesCheckResult, AlwaysRequireAuthenticationCheckResult,   AutoUpdateEnabledCheckResult, ClaimsProviderNameCheckResult, EncryptClaimsCheckResult,  EncryptedNameIdRequiredCheckResult, MonitoringEnabledCheckResult,NotBeforeSkewCheckResult,  RequestMFAFromClaimsProvidersCheckResult, SignedSamlRequestsRequiredCheckResult, AdditionalAuthenticationRulesCheckResult, TokenLifetimeCheckResult,  DelegationAuthorizationRulesCheckResult, IssuanceAuthorizationRulesCheckResult, IssuanceTransformRulesCheckResult.'
+          description: Name for this key-value pair
         value:
           type: string
-          description: 'Value for this key-value pair. Possible result values are 0 (when the validation check passed), 1 (when the validation check failed), or 2 (when the validation check is a warning).'
+          description: Value for this key-value pair
           nullable: true
       additionalProperties:
         type: object
@@ -34578,9 +34450,6 @@ components:
             mailNickname:
               type: string
               description: 'The mail alias for the group, unique for Microsoft 365 groups in the organization. Maximum length is 64 characters. This property can contain only characters in the ASCII character set 0 - 127 except the following: @ () / [] '' ; : . <> , SPACE. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith).'
-              nullable: true
-            mdmAppId:
-              type: string
               nullable: true
             membershipRule:
               type: string
@@ -37125,7 +36994,7 @@ components:
       properties:
         displayName:
           type: string
-          description: 'The identity''s display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
+          description: 'The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
           nullable: true
         id:
           type: string
@@ -49426,7 +49295,7 @@ components:
             bodyLastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The date and time when the task was last modified. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2020 would look like this: ''2020-01-01T00:00:00Z''.'
+              description: 'The date and time when the task body was last modified. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2020 would look like this: ''2020-01-01T00:00:00Z''.'
               format: date-time
             categories:
               type: array
