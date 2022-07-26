@@ -39,7 +39,7 @@ subject-prefix: ''
 ``` yaml
 directive:
 # Remove invalid paths.
-  - remove-path-by-operation: ^deviceManagement_.*UserExperienceAnalytics.*$
+  - remove-path-by-operation: ^(deviceManagement_.*UserExperienceAnalytics.*|roleManagement\..*\.roleDefinitions\.inheritsPermissionsFrom.*)$
 # Remove cmdlets.
   - where:
       verb: Update

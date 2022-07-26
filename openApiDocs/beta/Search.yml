@@ -2640,7 +2640,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.externalConnectors.displayTemplate'
-          description: Enables the developer to define the appearance of the content and configure conditions that dictate when the template should be displayed.
+          description: Enables the developer to define the appearance of the content and configure conditions that dictate when the template should be displayed. Maximum of 2 search result templates per connection.
       additionalProperties:
         type: object
     microsoft.graph.externalConnectors.connectionState:
@@ -3139,14 +3139,14 @@ components:
       properties:
         id:
           type: string
-          description: 'The text identifier for the display template; for example, contosoTickets.'
+          description: 'The text identifier for the display template; for example, contosoTickets. Maximum 16 characters. Only alphanumeric characters allowed.'
         layout:
           $ref: '#/components/schemas/microsoft.graph.Json'
         priority:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
-          description: Defines the priority of a display template. A display template with priority 1 is evaluated before a template with priority 4. Gaps in priority values are supported.
+          description: Defines the priority of a display template. A display template with priority 1 is evaluated before a template with priority 4. Gaps in priority values are supported. Must be positive value.
           format: int32
         rules:
           type: array
@@ -3332,7 +3332,7 @@ components:
           nullable: true
         hitId:
           type: string
-          description: The internal identifier for the item.
+          description: 'The internal identifier for the item. The format of the identifier varies based on the entity type. For details, see hitId format.'
           nullable: true
         rank:
           maximum: 2147483647

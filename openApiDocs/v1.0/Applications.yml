@@ -91,6 +91,8 @@ paths:
                 - publisherDomain desc
                 - requiredResourceAccess
                 - requiredResourceAccess desc
+                - samlMetadataUrl
+                - samlMetadataUrl desc
                 - serviceManagementReference
                 - serviceManagementReference desc
                 - signInAudience
@@ -143,6 +145,7 @@ paths:
                 - publicClient
                 - publisherDomain
                 - requiredResourceAccess
+                - samlMetadataUrl
                 - serviceManagementReference
                 - signInAudience
                 - spa
@@ -259,6 +262,7 @@ paths:
                 - publicClient
                 - publisherDomain
                 - requiredResourceAccess
+                - samlMetadataUrl
                 - serviceManagementReference
                 - signInAudience
                 - spa
@@ -1694,24 +1698,9 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: application
-      requestBody:
-        description: New navigation property ref value
-        content:
-          application/json:
-            schema:
-              type: object
-              additionalProperties:
-                type: object
-        required: true
       responses:
-        '201':
-          description: Created navigation property link.
-          content:
-            application/json:
-              schema:
-                type: object
-                additionalProperties:
-                  type: object
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1898,24 +1887,9 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: application
-      requestBody:
-        description: New navigation property ref value
-        content:
-          application/json:
-            schema:
-              type: object
-              additionalProperties:
-                type: object
-        required: true
       responses:
-        '201':
-          description: Created navigation property link.
-          content:
-            application/json:
-              schema:
-                type: object
-                additionalProperties:
-                  type: object
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2102,24 +2076,9 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: application
-      requestBody:
-        description: New navigation property ref value
-        content:
-          application/json:
-            schema:
-              type: object
-              additionalProperties:
-                type: object
-        required: true
       responses:
-        '201':
-          description: Created navigation property link.
-          content:
-            application/json:
-              schema:
-                type: object
-                additionalProperties:
-                  type: object
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3895,24 +3854,9 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
-      requestBody:
-        description: New navigation property ref value
-        content:
-          application/json:
-            schema:
-              type: object
-              additionalProperties:
-                type: object
-        required: true
       responses:
-        '201':
-          description: Created navigation property link.
-          content:
-            application/json:
-              schema:
-                type: object
-                additionalProperties:
-                  type: object
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4921,24 +4865,9 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
-      requestBody:
-        description: New navigation property ref value
-        content:
-          application/json:
-            schema:
-              type: object
-              additionalProperties:
-                type: object
-        required: true
       responses:
-        '201':
-          description: Created navigation property link.
-          content:
-            application/json:
-              schema:
-                type: object
-                additionalProperties:
-                  type: object
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5887,24 +5816,9 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
-      requestBody:
-        description: New navigation property ref value
-        content:
-          application/json:
-            schema:
-              type: object
-              additionalProperties:
-                type: object
-        required: true
       responses:
-        '201':
-          description: Created navigation property link.
-          content:
-            application/json:
-              schema:
-                type: object
-                additionalProperties:
-                  type: object
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -6821,6 +6735,10 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.requiredResourceAccess'
               description: 'Specifies the resources that the application needs to access. This property also specifies the set of delegated permissions and application roles that it needs for each of those resources. This configuration of access to the required resources drives the consent experience. No more than 50 resource services (APIs) can be configured. Beginning mid-October 2021, the total number of required permissions must not exceed 400. Not nullable. Supports $filter (eq, not, ge, le).'
+            samlMetadataUrl:
+              type: string
+              description: The URL where the service exposes SAML metadata for federation. This property is valid only for single-tenant applications. Nullable.
+              nullable: true
             serviceManagementReference:
               type: string
               description: References application or service contact information from a Service or Asset Management database. Nullable.

@@ -1289,24 +1289,9 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: educationAssignment
-      requestBody:
-        description: New navigation property ref value
-        content:
-          application/json:
-            schema:
-              type: object
-              additionalProperties:
-                type: object
-        required: true
       responses:
-        '201':
-          description: Created navigation property link.
-          content:
-            application/json:
-              schema:
-                type: object
-                additionalProperties:
-                  type: object
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1847,13 +1832,6 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: educationAssignment
-      requestBody:
-        description: New navigation property ref values
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/ReferenceUpdateSchema'
-        required: true
       responses:
         '204':
           description: Success
@@ -4000,24 +3978,9 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: educationClass
-      requestBody:
-        description: New navigation property ref value
-        content:
-          application/json:
-            schema:
-              type: object
-              additionalProperties:
-                type: object
-        required: true
       responses:
-        '201':
-          description: Created navigation property link.
-          content:
-            application/json:
-              schema:
-                type: object
-                additionalProperties:
-                  type: object
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4557,24 +4520,9 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: educationClass
-      requestBody:
-        description: New navigation property ref value
-        content:
-          application/json:
-            schema:
-              type: object
-              additionalProperties:
-                type: object
-        required: true
       responses:
-        '201':
-          description: Created navigation property link.
-          content:
-            application/json:
-              schema:
-                type: object
-                additionalProperties:
-                  type: object
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5225,24 +5173,9 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: educationAssignment
-      requestBody:
-        description: New navigation property ref value
-        content:
-          application/json:
-            schema:
-              type: object
-              additionalProperties:
-                type: object
-        required: true
       responses:
-        '201':
-          description: Created navigation property link.
-          content:
-            application/json:
-              schema:
-                type: object
-                additionalProperties:
-                  type: object
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5692,13 +5625,6 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: educationAssignment
-      requestBody:
-        description: New navigation property ref values
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/ReferenceUpdateSchema'
-        required: true
       responses:
         '204':
           description: Success
@@ -8681,24 +8607,9 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: educationSchool
-      requestBody:
-        description: New navigation property ref value
-        content:
-          application/json:
-            schema:
-              type: object
-              additionalProperties:
-                type: object
-        required: true
       responses:
-        '201':
-          description: Created navigation property link.
-          content:
-            application/json:
-              schema:
-                type: object
-                additionalProperties:
-                  type: object
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -9030,24 +8941,9 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: educationSchool
-      requestBody:
-        description: New navigation property ref value
-        content:
-          application/json:
-            schema:
-              type: object
-              additionalProperties:
-                type: object
-        required: true
       responses:
-        '201':
-          description: Created navigation property link.
-          content:
-            application/json:
-              schema:
-                type: object
-                additionalProperties:
-                  type: object
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -9995,24 +9891,9 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: educationAssignment
-      requestBody:
-        description: New navigation property ref value
-        content:
-          application/json:
-            schema:
-              type: object
-              additionalProperties:
-                type: object
-        required: true
       responses:
-        '201':
-          description: Created navigation property link.
-          content:
-            application/json:
-              schema:
-                type: object
-                additionalProperties:
-                  type: object
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -10553,13 +10434,6 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: educationAssignment
-      requestBody:
-        description: New navigation property ref values
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/ReferenceUpdateSchema'
-        required: true
       responses:
         '204':
           description: Success
@@ -13683,16 +13557,6 @@ components:
               description: The collection of qualities making up this rubric.
           additionalProperties:
             type: object
-    ReferenceUpdateSchema:
-      type: object
-      properties:
-        '@odata.id':
-          type: string
-        '@odata.type':
-          type: string
-          nullable: true
-      additionalProperties:
-        type: object
     microsoft.graph.educationSubmission:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -14474,7 +14338,7 @@ components:
               nullable: true
             onPremisesSyncEnabled:
               type: boolean
-              description: 'true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced; null if this object has never been synced from an on-premises directory (default). Read-only. Supports $filter (eq, ne, not, in, and eq on null values).'
+              description: 'true if this user object is currently being synced from an on-premises Active Directory (AD); otherwise the user isn''t being synced and can be managed in Azure Active Directory (Azure AD). Read-only. Supports $filter (eq, ne, not, in, and eq on null values).'
               nullable: true
             onPremisesUserPrincipalName:
               type: string
@@ -14587,7 +14451,7 @@ components:
               description: A list for the user to enumerate their past projects. Returned only on $select.
             preferredName:
               type: string
-              description: The preferred name for the user. Returned only on $select.
+              description: The preferred name for the user. Not Supported. This attribute returns an empty string.Returned only on $select.
               nullable: true
             responsibilities:
               type: array
@@ -15818,6 +15682,8 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.teamsAsyncOperation'
               description: The async operations that ran or are running on this team.
+            photo:
+              $ref: '#/components/schemas/microsoft.graph.profilePhoto'
             primaryChannel:
               $ref: '#/components/schemas/microsoft.graph.channel'
             template:
@@ -17347,6 +17213,11 @@ components:
         - title: authentication
           type: object
           properties:
+            emailMethods:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.emailAuthenticationMethod'
+              description: Represents the email addresses registered to a user for authentication.
             fido2Methods:
               type: array
               items:
@@ -17371,6 +17242,15 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.passwordAuthenticationMethod'
               description: Represents the details of the password authentication method registered to a user for authentication.
+            phoneMethods:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.phoneAuthenticationMethod'
+              description: Represents the phone registered to a user for authentication.
+            softwareOathMethods:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.softwareOathAuthenticationMethod'
             temporaryAccessPassMethods:
               type: array
               items:
@@ -17617,7 +17497,7 @@ components:
       properties:
         displayName:
           type: string
-          description: 'The identity''s display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
+          description: 'The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
           nullable: true
         id:
           type: string
@@ -20640,6 +20520,18 @@ components:
               description: List of attendance records of an attendance report. Read-only.
           additionalProperties:
             type: object
+    microsoft.graph.emailAuthenticationMethod:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
+        - title: emailAuthenticationMethod
+          type: object
+          properties:
+            emailAddress:
+              type: string
+              description: The email address registered to this user.
+              nullable: true
+          additionalProperties:
+            type: object
     microsoft.graph.fido2AuthenticationMethod:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
@@ -20749,6 +20641,34 @@ components:
             password:
               type: string
               description: 'For security, the password is always returned as null from a LIST or GET operation.'
+              nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.phoneAuthenticationMethod:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
+        - title: phoneAuthenticationMethod
+          type: object
+          properties:
+            phoneNumber:
+              type: string
+              description: 'The phone number to text or call for authentication. Phone numbers use the format ''+<country code> <number>x<extension>'', with extension optional. For example, +1 5555551234 or +1 5555551234x123 are valid. Numbers are rejected when creating/updating if they do not match the required format.'
+              nullable: true
+            phoneType:
+              $ref: '#/components/schemas/microsoft.graph.authenticationPhoneType'
+            smsSignInState:
+              $ref: '#/components/schemas/microsoft.graph.authenticationMethodSignInState'
+          additionalProperties:
+            type: object
+    microsoft.graph.softwareOathAuthenticationMethod:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
+        - title: softwareOathAuthenticationMethod
+          type: object
+          properties:
+            secretKey:
+              type: string
+              description: The secret key of the method. Always returns null.
               nullable: true
           additionalProperties:
             type: object
@@ -23855,6 +23775,25 @@ components:
         - failed
         - unknownFutureValue
       type: string
+    microsoft.graph.authenticationPhoneType:
+      title: authenticationPhoneType
+      enum:
+        - mobile
+        - alternateMobile
+        - office
+        - unknownFutureValue
+      type: string
+    microsoft.graph.authenticationMethodSignInState:
+      title: authenticationMethodSignInState
+      enum:
+        - notSupported
+        - notAllowedByPolicy
+        - notEnabled
+        - phoneNumberNotUnique
+        - ready
+        - notConfigured
+        - unknownFutureValue
+      type: string
     microsoft.graph.authenticationMethodKeyStrength:
       title: authenticationMethodKeyStrength
       enum:
@@ -24064,7 +24003,7 @@ components:
             bodyLastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The date and time when the task was last modified. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2020 would look like this: ''2020-01-01T00:00:00Z''.'
+              description: 'The date and time when the task body was last modified. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2020 would look like this: ''2020-01-01T00:00:00Z''.'
               format: date-time
             categories:
               type: array
