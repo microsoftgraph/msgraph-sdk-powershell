@@ -228,7 +228,7 @@ BODYPARAMETER <IPathsBy90K2UsersUserIdChatsChatIdMicrosoftGraphMarkchatreadforus
   - `[TenantId <String>]`: 
   - `[User <IMicrosoftGraphTeamworkUserIdentity>]`: teamworkUserIdentity
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[DisplayName <String>]`: The identity's display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+    - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
     - `[Id <String>]`: Unique identifier for the identity.
     - `[UserIdentityType <String>]`: teamworkUserIdentityType
 
@@ -270,6 +270,7 @@ INPUTOBJECT <IUsersActionsIdentity>: Identity Parameter
   - `[OutlookTaskId <String>]`: key: id of outlookTask
   - `[PasswordlessMicrosoftAuthenticatorAuthenticationMethodId <String>]`: key: id of passwordlessMicrosoftAuthenticatorAuthenticationMethod
   - `[PermissionId <String>]`: key: id of permission
+  - `[PhoneAuthenticationMethodId <String>]`: key: id of phoneAuthenticationMethod
   - `[ResourceSpecificPermissionGrantId <String>]`: key: id of resourceSpecificPermissionGrant
   - `[SensitivityLabelId <String>]`: key: id of sensitivityLabel
   - `[SubscriptionId <String>]`: key: id of subscription
@@ -281,7 +282,7 @@ INPUTOBJECT <IUsersActionsIdentity>: Identity Parameter
 
 USER <IMicrosoftGraphTeamworkUserIdentity>: teamworkUserIdentity
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[DisplayName <String>]`: The identity's display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+  - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
   - `[Id <String>]`: Unique identifier for the identity.
   - `[UserIdentityType <String>]`: teamworkUserIdentityType
 

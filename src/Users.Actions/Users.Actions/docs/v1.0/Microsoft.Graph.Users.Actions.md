@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Users.Actions
-Module Guid: 1692f87a-36a3-45ee-a21f-6a075a145faf
+Module Guid: 36baf1fe-e23c-4cc0-8696-99e4d8abbe49
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.actions
 Help Version: 1.0.0.0
 Locale: en-US
@@ -83,8 +83,14 @@ Invoke action copyToNotebook
 ### [Copy-MgUserOnenoteSectionToSectionGroup](Copy-MgUserOnenoteSectionToSectionGroup.md)
 Invoke action copyToSectionGroup
 
+### [Disable-MgUserAuthenticationPhoneMethodSmSign](Disable-MgUserAuthenticationPhoneMethodSmSign.md)
+Invoke action disableSmsSignIn
+
 ### [Disable-MgUserManagedDeviceLostMode](Disable-MgUserManagedDeviceLostMode.md)
 Invoke action disableLostMode
+
+### [Enable-MgUserAuthenticationPhoneMethodSmSign](Enable-MgUserAuthenticationPhoneMethodSmSign.md)
+Invoke action enableSmsSignIn
 
 ### [Export-MgUserPersonalData](Export-MgUserPersonalData.md)
 Invoke action exportPersonalData
