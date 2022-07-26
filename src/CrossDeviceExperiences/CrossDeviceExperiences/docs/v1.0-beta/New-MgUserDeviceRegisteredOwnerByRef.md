@@ -1,92 +1,48 @@
 ---
 external help file:
 Module Name: Microsoft.Graph.CrossDeviceExperiences
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.crossdeviceexperiences/set-mguseractivityhistoryitemactivitybyref
+online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.crossdeviceexperiences/new-mguserdeviceregisteredownerbyref
 schema: 2.0.0
 ---
 
-# Set-MgUserActivityHistoryItemActivityByRef
+# New-MgUserDeviceRegisteredOwnerByRef
 
 ## SYNOPSIS
-Optional.
-NavigationProperty/Containment; navigation property to the associated activity.
+Create new navigation property ref to registeredOwners for users
 
 ## SYNTAX
 
-### SetExpanded (Default)
+### Create (Default)
 ```
-Set-MgUserActivityHistoryItemActivityByRef -ActivityHistoryItemId <String> -UserActivityId <String>
- -UserId <String> [-AdditionalProperties <Hashtable>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### Set
-```
-Set-MgUserActivityHistoryItemActivityByRef -ActivityHistoryItemId <String> -UserActivityId <String>
- -UserId <String> -BodyParameter <Hashtable> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgUserDeviceRegisteredOwnerByRef -DeviceId <String> -UserId <String> [-PassThru] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
-### SetViaIdentity
+### CreateViaIdentity
 ```
-Set-MgUserActivityHistoryItemActivityByRef -InputObject <ICrossDeviceExperiencesIdentity>
- -BodyParameter <Hashtable> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### SetViaIdentityExpanded
-```
-Set-MgUserActivityHistoryItemActivityByRef -InputObject <ICrossDeviceExperiencesIdentity>
- [-AdditionalProperties <Hashtable>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgUserDeviceRegisteredOwnerByRef -InputObject <ICrossDeviceExperiencesIdentity> [-PassThru] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Optional.
-NavigationProperty/Containment; navigation property to the associated activity.
+Create new navigation property ref to registeredOwners for users
 
 ## EXAMPLES
 
 ## PARAMETERS
 
-### -ActivityHistoryItemId
-key: id of activityHistoryItem
+### -DeviceId
+key: id of device
 
 ```yaml
 Type: System.String
-Parameter Sets: Set, SetExpanded
+Parameter Sets: Create
 Aliases:
 
 Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -AdditionalProperties
-Additional Parameters
-
-```yaml
-Type: System.Collections.Hashtable
-Parameter Sets: SetExpanded, SetViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -BodyParameter
-.
-
-```yaml
-Type: System.Collections.Hashtable
-Parameter Sets: Set, SetViaIdentity
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -96,7 +52,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.ICrossDeviceExperiencesIdentity
-Parameter Sets: SetViaIdentity, SetViaIdentityExpanded
+Parameter Sets: CreateViaIdentity
 Aliases:
 
 Required: True
@@ -121,27 +77,12 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -UserActivityId
-key: id of userActivity
-
-```yaml
-Type: System.String
-Parameter Sets: Set, SetExpanded
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -UserId
 key: id of user
 
 ```yaml
 Type: System.String
-Parameter Sets: Set, SetExpanded
+Parameter Sets: Create
 Aliases:
 
 Required: True
@@ -189,8 +130,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.ICrossDeviceExperiencesIdentity
 
-### System.Collections.Hashtable
-
 ## OUTPUTS
 
 ### System.Boolean
@@ -206,7 +145,11 @@ To create the parameters described below, construct a hash table containing the 
 
 INPUTOBJECT <ICrossDeviceExperiencesIdentity>: Identity Parameter
   - `[ActivityHistoryItemId <String>]`: key: id of activityHistoryItem
+  - `[CommandId <String>]`: key: id of command
   - `[DeviceId <String>]`: key: id of device
+  - `[DirectoryObjectId <String>]`: key: id of directoryObject
+  - `[ExtensionId <String>]`: key: id of extension
+  - `[UsageRightId <String>]`: key: id of usageRight
   - `[UserActivityId <String>]`: key: id of userActivity
   - `[UserId <String>]`: key: id of user
 

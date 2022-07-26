@@ -1,42 +1,42 @@
 ---
 external help file:
 Module Name: Microsoft.Graph.CrossDeviceExperiences
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.crossdeviceexperiences/remove-mguseractivityhistoryitem
+online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.crossdeviceexperiences/remove-mguserdeviceusagerights
 schema: 2.0.0
 ---
 
-# Remove-MgUserActivityHistoryItem
+# Remove-MgUserDeviceUsageRights
 
 ## SYNOPSIS
-Delete navigation property historyItems for users
+Delete navigation property usageRights for users
 
 ## SYNTAX
 
-### Delete1 (Default)
+### Delete (Default)
 ```
-Remove-MgUserActivityHistoryItem -ActivityHistoryItemId <String> -UserActivityId <String> -UserId <String>
- [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### DeleteViaIdentity1
-```
-Remove-MgUserActivityHistoryItem -InputObject <ICrossDeviceExperiencesIdentity> [-IfMatch <String>]
+Remove-MgUserDeviceUsageRights -DeviceId <String> -UsageRightId <String> -UserId <String> [-IfMatch <String>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
+### DeleteViaIdentity
+```
+Remove-MgUserDeviceUsageRights -InputObject <ICrossDeviceExperiencesIdentity> [-IfMatch <String>] [-PassThru]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
+```
+
 ## DESCRIPTION
-Delete navigation property historyItems for users
+Delete navigation property usageRights for users
 
 ## EXAMPLES
 
 ## PARAMETERS
 
-### -ActivityHistoryItemId
-key: id of activityHistoryItem
+### -DeviceId
+key: id of device
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete1
+Parameter Sets: Delete
 Aliases:
 
 Required: True
@@ -67,7 +67,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.ICrossDeviceExperiencesIdentity
-Parameter Sets: DeleteViaIdentity1
+Parameter Sets: DeleteViaIdentity
 Aliases:
 
 Required: True
@@ -92,12 +92,12 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -UserActivityId
-key: id of userActivity
+### -UsageRightId
+key: id of usageRight
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete1
+Parameter Sets: Delete
 Aliases:
 
 Required: True
@@ -112,7 +112,7 @@ key: id of user
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete1
+Parameter Sets: Delete
 Aliases:
 
 Required: True

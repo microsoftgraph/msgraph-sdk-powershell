@@ -8,8 +8,7 @@ schema: 2.0.0
 # Get-MgUserActivityHistoryItem
 
 ## SYNOPSIS
-Optional.
-NavigationProperty/Containment; navigation property to the activity's historyItems.
+Get historyItems from users
 
 ## SYNTAX
 
@@ -33,8 +32,7 @@ Get-MgUserActivityHistoryItem -InputObject <ICrossDeviceExperiencesIdentity> [-E
 ```
 
 ## DESCRIPTION
-Optional.
-NavigationProperty/Containment; navigation property to the activity's historyItems.
+Get historyItems from users
 
 ## EXAMPLES
 
@@ -261,7 +259,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphActivityHistoryItem1
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphActivityHistoryItem
 
 ## NOTES
 
@@ -274,7 +272,11 @@ To create the parameters described below, construct a hash table containing the 
 
 INPUTOBJECT <ICrossDeviceExperiencesIdentity>: Identity Parameter
   - `[ActivityHistoryItemId <String>]`: key: id of activityHistoryItem
+  - `[CommandId <String>]`: key: id of command
   - `[DeviceId <String>]`: key: id of device
+  - `[DirectoryObjectId <String>]`: key: id of directoryObject
+  - `[ExtensionId <String>]`: key: id of extension
+  - `[UsageRightId <String>]`: key: id of usageRight
   - `[UserActivityId <String>]`: key: id of userActivity
   - `[UserId <String>]`: key: id of user
 

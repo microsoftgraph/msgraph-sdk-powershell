@@ -1,39 +1,38 @@
 ---
 external help file:
 Module Name: Microsoft.Graph.CrossDeviceExperiences
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.crossdeviceexperiences/get-mguseractivityhistoryitemactivitybyref
+online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.crossdeviceexperiences/get-mguserdevicecommandresponsepayload
 schema: 2.0.0
 ---
 
-# Get-MgUserActivityHistoryItemActivityByRef
+# Get-MgUserDeviceCommandResponsepayload
 
 ## SYNOPSIS
-Optional.
-NavigationProperty/Containment; navigation property to the associated activity.
+Get responsepayload from users
 
 ## SYNTAX
 
 ### Get (Default)
 ```
-Get-MgUserActivityHistoryItemActivityByRef -ActivityHistoryItemId <String> -UserActivityId <String>
- -UserId <String> [<CommonParameters>]
+Get-MgUserDeviceCommandResponsepayload -CommandId <String> -DeviceId <String> -UserId <String>
+ [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgUserActivityHistoryItemActivityByRef -InputObject <ICrossDeviceExperiencesIdentity> [<CommonParameters>]
+Get-MgUserDeviceCommandResponsepayload -InputObject <ICrossDeviceExperiencesIdentity>
+ [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Optional.
-NavigationProperty/Containment; navigation property to the associated activity.
+Get responsepayload from users
 
 ## EXAMPLES
 
 ## PARAMETERS
 
-### -ActivityHistoryItemId
-key: id of activityHistoryItem
+### -CommandId
+key: id of command
 
 ```yaml
 Type: System.String
@@ -41,6 +40,36 @@ Parameter Sets: Get
 Aliases:
 
 Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -DeviceId
+key: id of device
+
+```yaml
+Type: System.String
+Parameter Sets: Get
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ExpandProperty
+Expand related entities
+
+```yaml
+Type: System.String[]
+Parameter Sets: (All)
+Aliases: Expand
+
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -63,15 +92,15 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -UserActivityId
-key: id of userActivity
+### -Property
+Select properties to be returned
 
 ```yaml
-Type: System.String
-Parameter Sets: Get
-Aliases:
+Type: System.String[]
+Parameter Sets: (All)
+Aliases: Select
 
-Required: True
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -115,7 +144,11 @@ To create the parameters described below, construct a hash table containing the 
 
 INPUTOBJECT <ICrossDeviceExperiencesIdentity>: Identity Parameter
   - `[ActivityHistoryItemId <String>]`: key: id of activityHistoryItem
+  - `[CommandId <String>]`: key: id of command
   - `[DeviceId <String>]`: key: id of device
+  - `[DirectoryObjectId <String>]`: key: id of directoryObject
+  - `[ExtensionId <String>]`: key: id of extension
+  - `[UsageRightId <String>]`: key: id of usageRight
   - `[UserActivityId <String>]`: key: id of userActivity
   - `[UserId <String>]`: key: id of user
 
