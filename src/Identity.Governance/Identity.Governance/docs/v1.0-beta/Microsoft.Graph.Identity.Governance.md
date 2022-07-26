@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Identity.Governance
-Module Guid: 69649b1b-fa3f-4636-b74f-423eb0f61ac2
+Module Guid: a6ec25f4-c318-4490-afc8-ee7eeae97ee0
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance
 Help Version: 1.0.0.0
 Locale: en-US
@@ -163,6 +163,12 @@ Invoke action getUserOwnedObjects
 
 ### [Get-MgEntitlementManagementSetting](Get-MgEntitlementManagementSetting.md)
 Get settings from identityGovernance
+
+### [Get-MgEntitlementManagementSubject](Get-MgEntitlementManagementSubject.md)
+Get subjects from identityGovernance
+
+### [Get-MgEntitlementManagementSubjectConnectedOrganization](Get-MgEntitlementManagementSubjectConnectedOrganization.md)
+Get connectedOrganization from identityGovernance
 
 ### [Get-MgIdentityGovernanceAccessReviewDecision](Get-MgIdentityGovernanceAccessReviewDecision.md)
 Get decisions from identityGovernance
@@ -629,6 +635,9 @@ Create new navigation property ref to externalSponsors for identityGovernance
 ### [New-MgEntitlementManagementConnectedOrganizationInternalSponsorByRef](New-MgEntitlementManagementConnectedOrganizationInternalSponsorByRef.md)
 Create new navigation property ref to internalSponsors for identityGovernance
 
+### [New-MgEntitlementManagementSubject](New-MgEntitlementManagementSubject.md)
+Create new navigation property to subjects for identityGovernance
+
 ### [New-MgIdentityGovernanceAccessReviewDecision](New-MgIdentityGovernanceAccessReviewDecision.md)
 Create new navigation property to decisions for identityGovernance
 
@@ -856,6 +865,9 @@ Delete ref of navigation property externalSponsors for identityGovernance
 
 ### [Remove-MgEntitlementManagementConnectedOrganizationInternalSponsorByRef](Remove-MgEntitlementManagementConnectedOrganizationInternalSponsorByRef.md)
 Delete ref of navigation property internalSponsors for identityGovernance
+
+### [Remove-MgEntitlementManagementSubject](Remove-MgEntitlementManagementSubject.md)
+Delete navigation property subjects for identityGovernance
 
 ### [Remove-MgIdentityGovernanceAccessReviewDecision](Remove-MgIdentityGovernanceAccessReviewDecision.md)
 Delete navigation property decisions for identityGovernance
@@ -1216,6 +1228,9 @@ Update the navigation property connectedOrganizations in identityGovernance
 
 ### [Update-MgEntitlementManagementSetting](Update-MgEntitlementManagementSetting.md)
 Update the navigation property settings in identityGovernance
+
+### [Update-MgEntitlementManagementSubject](Update-MgEntitlementManagementSubject.md)
+Update the navigation property subjects in identityGovernance
 
 ### [Update-MgIdentityGovernanceAccessReviewDecision](Update-MgIdentityGovernanceAccessReviewDecision.md)
 Update the navigation property decisions in identityGovernance
