@@ -1,84 +1,42 @@
 ---
 external help file:
 Module Name: Microsoft.Graph.WindowsUpdates
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.windowsupdates/update-mgwindowsupdatesupdatableasset
+online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.windowsupdates/remove-mgwindowsupdatesresourceconnection
 schema: 2.0.0
 ---
 
-# Update-MgWindowsUpdatesUpdatableAsset
+# Remove-MgWindowsUpdatesResourceConnection
 
 ## SYNOPSIS
-Update the navigation property updatableAssets in admin
+Delete navigation property resourceConnections for admin
 
 ## SYNTAX
 
-### UpdateExpanded (Default)
+### Delete (Default)
 ```
-Update-MgWindowsUpdatesUpdatableAsset -UpdatableAssetId <String> [-AdditionalProperties <Hashtable>]
- [-Id <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### Update
-```
-Update-MgWindowsUpdatesUpdatableAsset -UpdatableAssetId <String> -BodyParameter <Hashtable> [-PassThru]
+Remove-MgWindowsUpdatesResourceConnection -ResourceConnectionId <String> [-IfMatch <String>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### UpdateViaIdentity
+### DeleteViaIdentity
 ```
-Update-MgWindowsUpdatesUpdatableAsset -InputObject <IWindowsUpdatesIdentity> -BodyParameter <Hashtable>
+Remove-MgWindowsUpdatesResourceConnection -InputObject <IWindowsUpdatesIdentity> [-IfMatch <String>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### UpdateViaIdentityExpanded
-```
-Update-MgWindowsUpdatesUpdatableAsset -InputObject <IWindowsUpdatesIdentity>
- [-AdditionalProperties <Hashtable>] [-Id <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
 ## DESCRIPTION
-Update the navigation property updatableAssets in admin
+Delete navigation property resourceConnections for admin
 
 ## EXAMPLES
 
 ## PARAMETERS
 
-### -AdditionalProperties
-Additional Parameters
-
-```yaml
-Type: System.Collections.Hashtable
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -BodyParameter
-updatableAsset
-
-```yaml
-Type: System.Collections.Hashtable
-Parameter Sets: Update, UpdateViaIdentity
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -Id
-.
+### -IfMatch
+ETag
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -94,7 +52,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IWindowsUpdatesIdentity
-Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
+Parameter Sets: DeleteViaIdentity
 Aliases:
 
 Required: True
@@ -119,12 +77,12 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -UpdatableAssetId
-key: id of updatableAsset
+### -ResourceConnectionId
+key: id of resourceConnection
 
 ```yaml
 Type: System.String
-Parameter Sets: Update, UpdateExpanded
+Parameter Sets: Delete
 Aliases:
 
 Required: True
@@ -172,8 +130,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IWindowsUpdatesIdentity
 
-### System.Collections.Hashtable
-
 ## OUTPUTS
 
 ### System.Boolean
@@ -182,7 +138,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ALIASES
 
-### Update-MgWuUpdatableAsset
+### Remove-MgWuResourceConnection
 
 COMPLEX PARAMETER PROPERTIES
 

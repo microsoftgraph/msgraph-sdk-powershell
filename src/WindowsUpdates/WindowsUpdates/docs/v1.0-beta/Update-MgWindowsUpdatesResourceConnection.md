@@ -1,47 +1,46 @@
 ---
 external help file:
 Module Name: Microsoft.Graph.WindowsUpdates
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.windowsupdates/add-mgwindowsupdatesdeploymentaudiencemember
+online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.windowsupdates/update-mgwindowsupdatesresourceconnection
 schema: 2.0.0
 ---
 
-# Add-MgWindowsUpdatesDeploymentAudienceMember
+# Update-MgWindowsUpdatesResourceConnection
 
 ## SYNOPSIS
-Invoke action addMembers
+Update the navigation property resourceConnections in admin
 
 ## SYNTAX
 
-### AddExpanded (Default)
+### UpdateExpanded (Default)
 ```
-Add-MgWindowsUpdatesDeploymentAudienceMember -DeploymentId <String> -UpdatableAssetId <String>
- [-AdditionalProperties <Hashtable>] [-Assets <IMicrosoftGraphWindowsUpdatesUpdatableAsset[]>] [-PassThru]
- [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### Add
-```
-Add-MgWindowsUpdatesDeploymentAudienceMember -DeploymentId <String> -UpdatableAssetId <String>
- -BodyParameter <IPathsWx3DylAdminWindowsUpdatesDeploymentsDeploymentIdAudienceMembersUpdatableassetIdMicrosoftGraphWindowsupdatesAddmembersPostRequestbodyContentApplicationJsonSchema>
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Update-MgWindowsUpdatesResourceConnection -ResourceConnectionId <String> [-AdditionalProperties <Hashtable>]
+ [-Id <String>] [-State <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### AddViaIdentity
+### Update
 ```
-Add-MgWindowsUpdatesDeploymentAudienceMember -InputObject <IWindowsUpdatesIdentity>
- -BodyParameter <IPathsWx3DylAdminWindowsUpdatesDeploymentsDeploymentIdAudienceMembersUpdatableassetIdMicrosoftGraphWindowsupdatesAddmembersPostRequestbodyContentApplicationJsonSchema>
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Update-MgWindowsUpdatesResourceConnection -ResourceConnectionId <String>
+ -BodyParameter <IMicrosoftGraphWindowsUpdatesResourceConnection> [-PassThru] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
-### AddViaIdentityExpanded
+### UpdateViaIdentity
 ```
-Add-MgWindowsUpdatesDeploymentAudienceMember -InputObject <IWindowsUpdatesIdentity>
- [-AdditionalProperties <Hashtable>] [-Assets <IMicrosoftGraphWindowsUpdatesUpdatableAsset[]>] [-PassThru]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+Update-MgWindowsUpdatesResourceConnection -InputObject <IWindowsUpdatesIdentity>
+ -BodyParameter <IMicrosoftGraphWindowsUpdatesResourceConnection> [-PassThru] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
+```
+
+### UpdateViaIdentityExpanded
+```
+Update-MgWindowsUpdatesResourceConnection -InputObject <IWindowsUpdatesIdentity>
+ [-AdditionalProperties <Hashtable>] [-Id <String>] [-State <String>] [-PassThru] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Invoke action addMembers
+Update the navigation property resourceConnections in admin
 
 ## EXAMPLES
 
@@ -52,23 +51,7 @@ Additional Parameters
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: AddExpanded, AddViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Assets
-.
-To construct, please use Get-Help -Online and see NOTES section for ASSETS properties and create a hash table.
-
-```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphWindowsUpdatesUpdatableAsset[]
-Parameter Sets: AddExpanded, AddViaIdentityExpanded
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -79,12 +62,12 @@ Accept wildcard characters: False
 ```
 
 ### -BodyParameter
-.
+resourceConnection
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPathsWx3DylAdminWindowsUpdatesDeploymentsDeploymentIdAudienceMembersUpdatableassetIdMicrosoftGraphWindowsupdatesAddmembersPostRequestbodyContentApplicationJsonSchema
-Parameter Sets: Add, AddViaIdentity
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphWindowsUpdatesResourceConnection
+Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
 Required: True
@@ -94,15 +77,15 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -DeploymentId
-key: id of deployment
+### -Id
+.
 
 ```yaml
 Type: System.String
-Parameter Sets: Add, AddExpanded
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
-Required: True
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -115,7 +98,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IWindowsUpdatesIdentity
-Parameter Sets: AddViaIdentity, AddViaIdentityExpanded
+Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
 Required: True
@@ -140,15 +123,30 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -UpdatableAssetId
-key: id of updatableAsset
+### -ResourceConnectionId
+key: id of resourceConnection
 
 ```yaml
 Type: System.String
-Parameter Sets: Add, AddExpanded
+Parameter Sets: Update, UpdateExpanded
 Aliases:
 
 Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -State
+resourceConnectionState
+
+```yaml
+Type: System.String
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Aliases:
+
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -191,7 +189,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPathsWx3DylAdminWindowsUpdatesDeploymentsDeploymentIdAudienceMembersUpdatableassetIdMicrosoftGraphWindowsupdatesAddmembersPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphWindowsUpdatesResourceConnection
 
 ### Microsoft.Graph.PowerShell.Models.IWindowsUpdatesIdentity
 
@@ -203,20 +201,17 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ALIASES
 
-### Add-MgWuDeploymentAudienceMember
+### Update-MgWuResourceConnection
 
 COMPLEX PARAMETER PROPERTIES
 
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-ASSETS <IMicrosoftGraphWindowsUpdatesUpdatableAsset[]>: .
-  - `[Id <String>]`: 
-
-BODYPARAMETER <IPathsWx3DylAdminWindowsUpdatesDeploymentsDeploymentIdAudienceMembersUpdatableassetIdMicrosoftGraphWindowsupdatesAddmembersPostRequestbodyContentApplicationJsonSchema>: .
+BODYPARAMETER <IMicrosoftGraphWindowsUpdatesResourceConnection>: resourceConnection
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Assets <IMicrosoftGraphWindowsUpdatesUpdatableAsset[]>]`: 
-    - `[Id <String>]`: 
+  - `[Id <String>]`: 
+  - `[State <String>]`: resourceConnectionState
 
 INPUTOBJECT <IWindowsUpdatesIdentity>: Identity Parameter
   - `[CatalogEntryId <String>]`: key: id of catalogEntry

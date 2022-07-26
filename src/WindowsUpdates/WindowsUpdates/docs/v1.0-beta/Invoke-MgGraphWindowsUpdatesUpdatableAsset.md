@@ -1,32 +1,32 @@
 ---
 external help file:
 Module Name: Microsoft.Graph.WindowsUpdates
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.windowsupdates/invoke-mgenrollwindowsupdatesupdatableassetbyid
+online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.windowsupdates/invoke-mggraphwindowsupdatesupdatableasset
 schema: 2.0.0
 ---
 
-# Invoke-MgEnrollWindowsUpdatesUpdatableAssetById
+# Invoke-MgGraphWindowsUpdatesUpdatableAsset
 
 ## SYNOPSIS
-Invoke action enrollAssetsById
+Invoke action unenrollAssetsById
 
 ## SYNTAX
 
-### EnrollExpanded (Default)
+### GraphExpanded (Default)
 ```
-Invoke-MgEnrollWindowsUpdatesUpdatableAssetById [-AdditionalProperties <Hashtable>] [-Ids <String[]>]
+Invoke-MgGraphWindowsUpdatesUpdatableAsset [-AdditionalProperties <Hashtable>] [-Ids <String[]>]
  [-MemberEntityType <String>] [-UpdateCategory <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### Enroll
+### Graph
 ```
-Invoke-MgEnrollWindowsUpdatesUpdatableAssetById
- -BodyParameter <IPaths134Mc7AdminWindowsUpdatesUpdatableassetsMicrosoftGraphWindowsupdatesEnrollassetsbyidPostRequestbodyContentApplicationJsonSchema>
+Invoke-MgGraphWindowsUpdatesUpdatableAsset
+ -BodyParameter <IPaths4Wme8AdminWindowsUpdatesUpdatableassetsMicrosoftGraphWindowsupdatesUnenrollassetsbyidPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Invoke action enrollAssetsById
+Invoke action unenrollAssetsById
 
 ## EXAMPLES
 
@@ -37,7 +37,7 @@ Additional Parameters
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: EnrollExpanded
+Parameter Sets: GraphExpanded
 Aliases:
 
 Required: False
@@ -52,8 +52,8 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths134Mc7AdminWindowsUpdatesUpdatableassetsMicrosoftGraphWindowsupdatesEnrollassetsbyidPostRequestbodyContentApplicationJsonSchema
-Parameter Sets: Enroll
+Type: Microsoft.Graph.PowerShell.Models.IPaths4Wme8AdminWindowsUpdatesUpdatableassetsMicrosoftGraphWindowsupdatesUnenrollassetsbyidPostRequestbodyContentApplicationJsonSchema
+Parameter Sets: Graph
 Aliases:
 
 Required: True
@@ -68,7 +68,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.String[]
-Parameter Sets: EnrollExpanded
+Parameter Sets: GraphExpanded
 Aliases:
 
 Required: False
@@ -83,7 +83,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.String
-Parameter Sets: EnrollExpanded
+Parameter Sets: GraphExpanded
 Aliases:
 
 Required: False
@@ -113,7 +113,7 @@ updateCategory
 
 ```yaml
 Type: System.String
-Parameter Sets: EnrollExpanded
+Parameter Sets: GraphExpanded
 Aliases:
 
 Required: False
@@ -159,7 +159,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPaths134Mc7AdminWindowsUpdatesUpdatableassetsMicrosoftGraphWindowsupdatesEnrollassetsbyidPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.PowerShell.Models.IPaths4Wme8AdminWindowsUpdatesUpdatableassetsMicrosoftGraphWindowsupdatesUnenrollassetsbyidPostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 
@@ -169,14 +169,14 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ALIASES
 
-### Invoke-MgEnrollWuUpdatableAssetGraphBPreId
+### Invoke-MgGraphWuUpdatableAsset
 
 COMPLEX PARAMETER PROPERTIES
 
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-BODYPARAMETER <IPaths134Mc7AdminWindowsUpdatesUpdatableassetsMicrosoftGraphWindowsupdatesEnrollassetsbyidPostRequestbodyContentApplicationJsonSchema>: .
+BODYPARAMETER <IPaths4Wme8AdminWindowsUpdatesUpdatableassetsMicrosoftGraphWindowsupdatesUnenrollassetsbyidPostRequestbodyContentApplicationJsonSchema>: .
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Ids <String[]>]`: 
   - `[MemberEntityType <String>]`: 

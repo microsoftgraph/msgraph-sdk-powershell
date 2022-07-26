@@ -1,38 +1,38 @@
 ---
 external help file:
 Module Name: Microsoft.Graph.WindowsUpdates
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.windowsupdates/get-mgwindowsupdatescatalogentry
+online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.windowsupdates/get-mgwindowsupdatesresourceconnection
 schema: 2.0.0
 ---
 
-# Get-MgWindowsUpdatesCatalogEntry
+# Get-MgWindowsUpdatesResourceConnection
 
 ## SYNOPSIS
-Get entries from admin
+Get resourceConnections from admin
 
 ## SYNTAX
 
 ### List (Default)
 ```
-Get-MgWindowsUpdatesCatalogEntry [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
+Get-MgWindowsUpdatesResourceConnection [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
  [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>]
  [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgWindowsUpdatesCatalogEntry -CatalogEntryId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
- [<CommonParameters>]
+Get-MgWindowsUpdatesResourceConnection -ResourceConnectionId <String> [-ExpandProperty <String[]>]
+ [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgWindowsUpdatesCatalogEntry -InputObject <IWindowsUpdatesIdentity> [-ExpandProperty <String[]>]
+Get-MgWindowsUpdatesResourceConnection -InputObject <IWindowsUpdatesIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Get entries from admin
+Get resourceConnections from admin
 
 ## EXAMPLES
 
@@ -47,21 +47,6 @@ Parameter Sets: List
 Aliases:
 
 Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -CatalogEntryId
-key: id of catalogEntry
-
-```yaml
-Type: System.String
-Parameter Sets: Get
-Aliases:
-
-Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -160,6 +145,21 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -ResourceConnectionId
+key: id of resourceConnection
+
+```yaml
+Type: System.String
+Parameter Sets: Get
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Search
 Search items by search phrases
 
@@ -229,13 +229,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphWindowsUpdatesCatalogEntry
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphWindowsUpdatesResourceConnection
 
 ## NOTES
 
 ALIASES
 
-### Get-MgWuCatalogEntry
+### Get-MgWuResourceConnection
 
 COMPLEX PARAMETER PROPERTIES
 
