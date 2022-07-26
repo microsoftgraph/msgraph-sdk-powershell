@@ -1,44 +1,74 @@
 ---
 external help file:
 Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/new-mguserauthenticationmicrosoftauthenticatormethoddeviceregisteredownerbyref
+online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/update-mguserauthenticationemailmethod
 schema: 2.0.0
 ---
 
-# New-MgUserAuthenticationMicrosoftAuthenticatorMethodDeviceRegisteredOwnerByRef
+# Update-MgUserAuthenticationEmailMethod
 
 ## SYNOPSIS
-Create new navigation property ref to registeredOwners for users
+Update the navigation property emailMethods in users
 
 ## SYNTAX
 
-### Create1 (Default)
+### UpdateExpanded1 (Default)
 ```
-New-MgUserAuthenticationMicrosoftAuthenticatorMethodDeviceRegisteredOwnerByRef
- -MicrosoftAuthenticatorAuthenticationMethodId <String> -UserId <String> [-PassThru] [-Confirm] [-WhatIf]
+Update-MgUserAuthenticationEmailMethod -EmailAuthenticationMethodId <String> -UserId <String>
+ [-AdditionalProperties <Hashtable>] [-EmailAddress <String>] [-Id <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
-### CreateViaIdentity1
+### Update1
 ```
-New-MgUserAuthenticationMicrosoftAuthenticatorMethodDeviceRegisteredOwnerByRef
- -InputObject <IIdentitySignInsIdentity> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Update-MgUserAuthenticationEmailMethod -EmailAuthenticationMethodId <String> -UserId <String>
+ -BodyParameter <IMicrosoftGraphEmailAuthenticationMethod> [-PassThru] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
+```
+
+### UpdateViaIdentity1
+```
+Update-MgUserAuthenticationEmailMethod -InputObject <IIdentitySignInsIdentity>
+ -BodyParameter <IMicrosoftGraphEmailAuthenticationMethod> [-PassThru] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
+```
+
+### UpdateViaIdentityExpanded1
+```
+Update-MgUserAuthenticationEmailMethod -InputObject <IIdentitySignInsIdentity>
+ [-AdditionalProperties <Hashtable>] [-EmailAddress <String>] [-Id <String>] [-PassThru] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Create new navigation property ref to registeredOwners for users
+Update the navigation property emailMethods in users
 
 ## EXAMPLES
 
 ## PARAMETERS
 
-### -InputObject
-Identity Parameter
-To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
+### -AdditionalProperties
+Additional Parameters
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
-Parameter Sets: CreateViaIdentity1
+Type: System.Collections.Hashtable
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -BodyParameter
+emailAuthenticationMethod
+To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
+
+```yaml
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEmailAuthenticationMethod
+Parameter Sets: Update1, UpdateViaIdentity1
 Aliases:
 
 Required: True
@@ -48,18 +78,64 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -MicrosoftAuthenticatorAuthenticationMethodId
-key: id of microsoftAuthenticatorAuthenticationMethod
+### -EmailAddress
+The email address registered to this user.
 
 ```yaml
 Type: System.String
-Parameter Sets: Create1
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -EmailAuthenticationMethodId
+key: id of emailAuthenticationMethod
+
+```yaml
+Type: System.String
+Parameter Sets: Update1, UpdateExpanded1
 Aliases:
 
 Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Id
+.
+
+```yaml
+Type: System.String
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -InputObject
+Identity Parameter
+To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
+
+```yaml
+Type: Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+Parameter Sets: UpdateViaIdentity1, UpdateViaIdentityExpanded1
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -83,7 +159,7 @@ key: id of user
 
 ```yaml
 Type: System.String
-Parameter Sets: Create1
+Parameter Sets: Update1, UpdateExpanded1
 Aliases:
 
 Required: True
@@ -131,6 +207,8 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
 
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEmailAuthenticationMethod
+
 ## OUTPUTS
 
 ### System.Boolean
@@ -143,6 +221,11 @@ COMPLEX PARAMETER PROPERTIES
 
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
+
+BODYPARAMETER <IMicrosoftGraphEmailAuthenticationMethod>: emailAuthenticationMethod
+  - `[(Any) <Object>]`: This indicates any property can be added to this object.
+  - `[Id <String>]`: 
+  - `[EmailAddress <String>]`: The email address registered to this user.
 
 INPUTOBJECT <IIdentitySignInsIdentity>: Identity Parameter
   - `[ActivityBasedTimeoutPolicyId <String>]`: key: id of activityBasedTimeoutPolicy

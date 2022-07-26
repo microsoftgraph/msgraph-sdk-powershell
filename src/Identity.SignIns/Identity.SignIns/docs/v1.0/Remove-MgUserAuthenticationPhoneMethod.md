@@ -1,36 +1,50 @@
 ---
 external help file:
 Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/new-mguserauthenticationmicrosoftauthenticatormethoddeviceregisteredownerbyref
+online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/remove-mguserauthenticationphonemethod
 schema: 2.0.0
 ---
 
-# New-MgUserAuthenticationMicrosoftAuthenticatorMethodDeviceRegisteredOwnerByRef
+# Remove-MgUserAuthenticationPhoneMethod
 
 ## SYNOPSIS
-Create new navigation property ref to registeredOwners for users
+Delete navigation property phoneMethods for users
 
 ## SYNTAX
 
-### Create1 (Default)
+### Delete1 (Default)
 ```
-New-MgUserAuthenticationMicrosoftAuthenticatorMethodDeviceRegisteredOwnerByRef
- -MicrosoftAuthenticatorAuthenticationMethodId <String> -UserId <String> [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+Remove-MgUserAuthenticationPhoneMethod -PhoneAuthenticationMethodId <String> -UserId <String>
+ [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### CreateViaIdentity1
+### DeleteViaIdentity1
 ```
-New-MgUserAuthenticationMicrosoftAuthenticatorMethodDeviceRegisteredOwnerByRef
- -InputObject <IIdentitySignInsIdentity> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Remove-MgUserAuthenticationPhoneMethod -InputObject <IIdentitySignInsIdentity> [-IfMatch <String>] [-PassThru]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Create new navigation property ref to registeredOwners for users
+Delete navigation property phoneMethods for users
 
 ## EXAMPLES
 
 ## PARAMETERS
+
+### -IfMatch
+ETag
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
 
 ### -InputObject
 Identity Parameter
@@ -38,28 +52,13 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
-Parameter Sets: CreateViaIdentity1
+Parameter Sets: DeleteViaIdentity1
 Aliases:
 
 Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -MicrosoftAuthenticatorAuthenticationMethodId
-key: id of microsoftAuthenticatorAuthenticationMethod
-
-```yaml
-Type: System.String
-Parameter Sets: Create1
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -78,12 +77,27 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -PhoneAuthenticationMethodId
+key: id of phoneAuthenticationMethod
+
+```yaml
+Type: System.String
+Parameter Sets: Delete1
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -UserId
 key: id of user
 
 ```yaml
 Type: System.String
-Parameter Sets: Create1
+Parameter Sets: Delete1
 Aliases:
 
 Required: True
