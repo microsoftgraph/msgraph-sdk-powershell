@@ -181,8 +181,8 @@ BODYPARAMETER <IMicrosoftGraphServiceHealth>: serviceHealth
   - `[Id <String>]`: 
   - `[Issues <IMicrosoftGraphServiceHealthIssue[]>]`: A collection of issues that happened on the service, with detailed information for each issue.
     - `[Details <IMicrosoftGraphKeyValuePair[]>]`: Additional details about service event. This property doesn't support filters.
-      - `[Name <String>]`: Name for this key-value pair. Possible names are: AdditionalWSFedEndpointCheckResult,  AllowedAuthenticationClassReferencesCheckResult, AlwaysRequireAuthenticationCheckResult,   AutoUpdateEnabledCheckResult, ClaimsProviderNameCheckResult, EncryptClaimsCheckResult,  EncryptedNameIdRequiredCheckResult, MonitoringEnabledCheckResult,NotBeforeSkewCheckResult,  RequestMFAFromClaimsProvidersCheckResult, SignedSamlRequestsRequiredCheckResult, AdditionalAuthenticationRulesCheckResult, TokenLifetimeCheckResult,  DelegationAuthorizationRulesCheckResult, IssuanceAuthorizationRulesCheckResult, IssuanceTransformRulesCheckResult.
-      - `[Value <String>]`: Value for this key-value pair. Possible result values are 0 (when the validation check passed), 1 (when the validation check failed), or 2 (when the validation check is a warning).
+      - `[Name <String>]`: Name for this key-value pair
+      - `[Value <String>]`: Value for this key-value pair
     - `[EndDateTime <DateTime?>]`: The end time of the service event.
     - `[LastModifiedDateTime <DateTime?>]`: The last modified time of the service event.
     - `[StartDateTime <DateTime?>]`: The start time of the service event.
@@ -208,8 +208,8 @@ BODYPARAMETER <IMicrosoftGraphServiceHealth>: serviceHealth
 
 ISSUES <IMicrosoftGraphServiceHealthIssue[]>: A collection of issues that happened on the service, with detailed information for each issue.
   - `[Details <IMicrosoftGraphKeyValuePair[]>]`: Additional details about service event. This property doesn't support filters.
-    - `[Name <String>]`: Name for this key-value pair. Possible names are: AdditionalWSFedEndpointCheckResult,  AllowedAuthenticationClassReferencesCheckResult, AlwaysRequireAuthenticationCheckResult,   AutoUpdateEnabledCheckResult, ClaimsProviderNameCheckResult, EncryptClaimsCheckResult,  EncryptedNameIdRequiredCheckResult, MonitoringEnabledCheckResult,NotBeforeSkewCheckResult,  RequestMFAFromClaimsProvidersCheckResult, SignedSamlRequestsRequiredCheckResult, AdditionalAuthenticationRulesCheckResult, TokenLifetimeCheckResult,  DelegationAuthorizationRulesCheckResult, IssuanceAuthorizationRulesCheckResult, IssuanceTransformRulesCheckResult.
-    - `[Value <String>]`: Value for this key-value pair. Possible result values are 0 (when the validation check passed), 1 (when the validation check failed), or 2 (when the validation check is a warning).
+    - `[Name <String>]`: Name for this key-value pair
+    - `[Value <String>]`: Value for this key-value pair
   - `[EndDateTime <DateTime?>]`: The end time of the service event.
   - `[LastModifiedDateTime <DateTime?>]`: The last modified time of the service event.
   - `[StartDateTime <DateTime?>]`: The start time of the service event.
