@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Teams
-Module Guid: 25e79278-8987-4623-8ab4-a87f84107c68
+Module Guid: 3fdc7e28-0aeb-4fde-890d-1fcc6c9e34b5
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.teams
 Help Version: 1.0.0.0
 Locale: en-US
@@ -143,6 +143,12 @@ Get members from groups
 ### [Get-MgGroupTeamOperation](Get-MgGroupTeamOperation.md)
 Get operations from groups
 
+### [Get-MgGroupTeamPhoto](Get-MgGroupTeamPhoto.md)
+Get photo from groups
+
+### [Get-MgGroupTeamPhotoContent](Get-MgGroupTeamPhotoContent.md)
+Get media content for the navigation property photo from groups
+
 ### [Get-MgGroupTeamPrimaryChannel](Get-MgGroupTeamPrimaryChannel.md)
 Get primaryChannel from groups
 
@@ -228,7 +234,7 @@ Get content for the navigation property filesFolder from teams
 Get members from teams
 
 ### [Get-MgTeamChannelMessage](Get-MgTeamChannelMessage.md)
-Get messages from teams
+Invoke function getAllMessages
 
 ### [Get-MgTeamChannelMessageDelta](Get-MgTeamChannelMessageDelta.md)
 Invoke function delta
@@ -277,6 +283,12 @@ Invoke function getAllMessages
 
 ### [Get-MgTeamOperation](Get-MgTeamOperation.md)
 Get operations from teams
+
+### [Get-MgTeamPhoto](Get-MgTeamPhoto.md)
+Get photo from teams
+
+### [Get-MgTeamPhotoContent](Get-MgTeamPhotoContent.md)
+Get media content for the navigation property photo from teams
 
 ### [Get-MgTeamPrimaryChannel](Get-MgTeamPrimaryChannel.md)
 Get primaryChannel from teams
@@ -716,6 +728,9 @@ Delete navigation property members for groups
 ### [Remove-MgGroupTeamOperation](Remove-MgGroupTeamOperation.md)
 Delete navigation property operations for groups
 
+### [Remove-MgGroupTeamPhoto](Remove-MgGroupTeamPhoto.md)
+Delete navigation property photo for groups
+
 ### [Remove-MgGroupTeamPrimaryChannel](Remove-MgGroupTeamPrimaryChannel.md)
 Delete navigation property primaryChannel for groups
 
@@ -799,6 +814,9 @@ Delete navigation property members for teams
 
 ### [Remove-MgTeamOperation](Remove-MgTeamOperation.md)
 Delete navigation property operations for teams
+
+### [Remove-MgTeamPhoto](Remove-MgTeamPhoto.md)
+Delete navigation property photo for teams
 
 ### [Remove-MgTeamPrimaryChannel](Remove-MgTeamPrimaryChannel.md)
 Delete navigation property primaryChannel for teams
@@ -893,11 +911,17 @@ Invoke action sendActivityNotification
 ### [Set-MgGroupTeamChannelFileFolderContent](Set-MgGroupTeamChannelFileFolderContent.md)
 Update content for the navigation property filesFolder in groups
 
+### [Set-MgGroupTeamPhotoContent](Set-MgGroupTeamPhotoContent.md)
+Update media content for the navigation property photo in groups
+
 ### [Set-MgGroupTeamPrimaryChannelFileFolderContent](Set-MgGroupTeamPrimaryChannelFileFolderContent.md)
 Update content for the navigation property filesFolder in groups
 
 ### [Set-MgTeamChannelFileFolderContent](Set-MgTeamChannelFileFolderContent.md)
 Update content for the navigation property filesFolder in teams
+
+### [Set-MgTeamPhotoContent](Set-MgTeamPhotoContent.md)
+Update media content for the navigation property photo in teams
 
 ### [Set-MgTeamPrimaryChannelFileFolderContent](Set-MgTeamPrimaryChannelFileFolderContent.md)
 Update content for the navigation property filesFolder in teams
@@ -964,6 +988,9 @@ Update the navigation property members in groups
 
 ### [Update-MgGroupTeamOperation](Update-MgGroupTeamOperation.md)
 Update the navigation property operations in groups
+
+### [Update-MgGroupTeamPhoto](Update-MgGroupTeamPhoto.md)
+Update the navigation property photo in groups
 
 ### [Update-MgGroupTeamPrimaryChannel](Update-MgGroupTeamPrimaryChannel.md)
 Update the navigation property primaryChannel in groups
@@ -1051,6 +1078,9 @@ Update the navigation property members in teams
 
 ### [Update-MgTeamOperation](Update-MgTeamOperation.md)
 Update the navigation property operations in teams
+
+### [Update-MgTeamPhoto](Update-MgTeamPhoto.md)
+Update the navigation property photo in teams
 
 ### [Update-MgTeamPrimaryChannel](Update-MgTeamPrimaryChannel.md)
 Update the navigation property primaryChannel in teams

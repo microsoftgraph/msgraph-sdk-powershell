@@ -8,30 +8,30 @@ schema: 2.0.0
 # Get-MgTeamChannelMessage
 
 ## SYNOPSIS
-Get messages from teams
+Invoke function getAllMessages
 
 ## SYNTAX
 
-### Get3 (Default)
+### Get (Default)
 ```
 Get-MgTeamChannelMessage -TeamId <String> [<CommonParameters>]
 ```
 
-### Get2
+### Get3
 ```
 Get-MgTeamChannelMessage -ChannelId <String> -ChatMessageId <String> -TeamId <String>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
-### GetViaIdentity2
+### GetViaIdentity
 ```
-Get-MgTeamChannelMessage -InputObject <ITeamsIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
- [<CommonParameters>]
+Get-MgTeamChannelMessage -InputObject <ITeamsIdentity> [<CommonParameters>]
 ```
 
 ### GetViaIdentity3
 ```
-Get-MgTeamChannelMessage -InputObject <ITeamsIdentity> [<CommonParameters>]
+Get-MgTeamChannelMessage -InputObject <ITeamsIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
+ [<CommonParameters>]
 ```
 
 ### List1
@@ -42,7 +42,7 @@ Get-MgTeamChannelMessage -ChannelId <String> -TeamId <String> [-ExpandProperty <
 ```
 
 ## DESCRIPTION
-Get messages from teams
+Invoke function getAllMessages
 
 ## EXAMPLES
 
@@ -68,7 +68,7 @@ key: id of channel
 
 ```yaml
 Type: System.String
-Parameter Sets: Get2, List1
+Parameter Sets: Get3, List1
 Aliases:
 
 Required: True
@@ -83,7 +83,7 @@ key: id of chatMessage
 
 ```yaml
 Type: System.String
-Parameter Sets: Get2
+Parameter Sets: Get3
 Aliases:
 
 Required: True
@@ -114,7 +114,7 @@ Expand related entities
 
 ```yaml
 Type: System.String[]
-Parameter Sets: Get2, GetViaIdentity2, List1
+Parameter Sets: Get3, GetViaIdentity3, List1
 Aliases: Expand
 
 Required: False
@@ -145,7 +145,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.ITeamsIdentity
-Parameter Sets: GetViaIdentity2, GetViaIdentity3
+Parameter Sets: GetViaIdentity, GetViaIdentity3
 Aliases:
 
 Required: True
@@ -175,7 +175,7 @@ Select properties to be returned
 
 ```yaml
 Type: System.String[]
-Parameter Sets: Get2, GetViaIdentity2, List1
+Parameter Sets: Get3, GetViaIdentity3, List1
 Aliases: Select
 
 Required: False
@@ -235,7 +235,7 @@ key: id of team
 
 ```yaml
 Type: System.String
-Parameter Sets: Get2, Get3, List1
+Parameter Sets: Get, Get3, List1
 Aliases:
 
 Required: True

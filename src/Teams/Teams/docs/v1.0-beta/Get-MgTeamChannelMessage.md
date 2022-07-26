@@ -12,24 +12,24 @@ Get messages from teams
 
 ## SYNTAX
 
-### Get1 (Default)
+### Get2 (Default)
 ```
 Get-MgTeamChannelMessage -TeamId <String> [<CommonParameters>]
 ```
 
-### Get
+### Get1
 ```
 Get-MgTeamChannelMessage -ChannelId <String> -ChatMessageId <String> -TeamId <String>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
-### GetViaIdentity
+### GetViaIdentity1
 ```
 Get-MgTeamChannelMessage -InputObject <ITeamsIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
-### GetViaIdentity1
+### GetViaIdentity2
 ```
 Get-MgTeamChannelMessage -InputObject <ITeamsIdentity> [<CommonParameters>]
 ```
@@ -68,7 +68,7 @@ key: id of channel
 
 ```yaml
 Type: System.String
-Parameter Sets: Get, List
+Parameter Sets: Get1, List
 Aliases:
 
 Required: True
@@ -83,7 +83,7 @@ key: id of chatMessage
 
 ```yaml
 Type: System.String
-Parameter Sets: Get
+Parameter Sets: Get1
 Aliases:
 
 Required: True
@@ -114,7 +114,7 @@ Expand related entities
 
 ```yaml
 Type: System.String[]
-Parameter Sets: Get, GetViaIdentity, List
+Parameter Sets: Get1, GetViaIdentity1, List
 Aliases: Expand
 
 Required: False
@@ -145,7 +145,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.ITeamsIdentity
-Parameter Sets: GetViaIdentity, GetViaIdentity1
+Parameter Sets: GetViaIdentity1, GetViaIdentity2
 Aliases:
 
 Required: True
@@ -175,7 +175,7 @@ Select properties to be returned
 
 ```yaml
 Type: System.String[]
-Parameter Sets: Get, GetViaIdentity, List
+Parameter Sets: Get1, GetViaIdentity1, List
 Aliases: Select
 
 Required: False
@@ -235,7 +235,7 @@ key: id of team
 
 ```yaml
 Type: System.String
-Parameter Sets: Get, Get1, List
+Parameter Sets: Get1, Get2, List
 Aliases:
 
 Required: True
