@@ -12,31 +12,16 @@ Create new navigation property ref to registeredOwners for users
 
 ## SYNTAX
 
-### CreateExpanded1 (Default)
+### Create1 (Default)
 ```
 New-MgUserAuthenticationWindowHelloForBusinessMethodDeviceRegisteredOwnerByRef -UserId <String>
- -WindowsHelloForBusinessAuthenticationMethodId <String> [-AdditionalProperties <Hashtable>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
-```
-
-### Create1
-```
-New-MgUserAuthenticationWindowHelloForBusinessMethodDeviceRegisteredOwnerByRef -UserId <String>
- -WindowsHelloForBusinessAuthenticationMethodId <String> -BodyParameter <Hashtable> [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -WindowsHelloForBusinessAuthenticationMethodId <String> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity1
 ```
 New-MgUserAuthenticationWindowHelloForBusinessMethodDeviceRegisteredOwnerByRef
- -InputObject <IIdentitySignInsIdentity> -BodyParameter <Hashtable> [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### CreateViaIdentityExpanded1
-```
-New-MgUserAuthenticationWindowHelloForBusinessMethodDeviceRegisteredOwnerByRef
- -InputObject <IIdentitySignInsIdentity> [-AdditionalProperties <Hashtable>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -InputObject <IIdentitySignInsIdentity> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -46,12 +31,28 @@ Create new navigation property ref to registeredOwners for users
 
 ## PARAMETERS
 
-### -AdditionalProperties
-Additional Parameters
+### -InputObject
+Identity Parameter
+To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: System.Collections.Hashtable
-Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
+Type: Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+Parameter Sets: CreateViaIdentity1
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### -PassThru
+Returns true when the command succeeds
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -61,43 +62,12 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -BodyParameter
-.
-
-```yaml
-Type: System.Collections.Hashtable
-Parameter Sets: Create1, CreateViaIdentity1
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -InputObject
-Identity Parameter
-To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
-
-```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
-Parameter Sets: CreateViaIdentity1, CreateViaIdentityExpanded1
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -UserId
 key: id of user
 
 ```yaml
 Type: System.String
-Parameter Sets: Create1, CreateExpanded1
+Parameter Sets: Create1
 Aliases:
 
 Required: True
@@ -112,7 +82,7 @@ key: id of windowsHelloForBusinessAuthenticationMethod
 
 ```yaml
 Type: System.String
-Parameter Sets: Create1, CreateExpanded1
+Parameter Sets: Create1
 Aliases:
 
 Required: True
@@ -160,11 +130,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
 
-### System.Collections.Hashtable
-
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPathsLolfuyUsersUserIdAuthenticationWindowshelloforbusinessmethodsWindowshelloforbusinessauthenticationmethodIdDeviceRegisteredownersRefPostResponses201ContentApplicationJsonSchema
+### System.Boolean
 
 ## NOTES
 

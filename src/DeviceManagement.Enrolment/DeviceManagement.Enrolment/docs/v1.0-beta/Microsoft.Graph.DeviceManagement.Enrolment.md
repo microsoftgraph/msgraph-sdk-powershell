@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.DeviceManagement.Enrolment
-Module Guid: 9aed61f9-6a13-4e7c-a853-e4ceae0538bc
+Module Guid: 22874840-c9c0-4bc0-810a-7914cf43e42f
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.enrolment
 Help Version: 1.0.0.0
 Locale: en-US
@@ -394,6 +394,18 @@ Invoke action importResourceActions
 
 ### [Import-MgRoleManagementEntitlementManagementResourceNamespaceResourceAction](Import-MgRoleManagementEntitlementManagementResourceNamespaceResourceAction.md)
 Invoke action importResourceActions
+
+### [Invoke-MgAssignedRoleManagementCloudPcRoleDefinitionPrincipal](Invoke-MgAssignedRoleManagementCloudPcRoleDefinitionPrincipal.md)
+Invoke function assignedPrincipals
+
+### [Invoke-MgAssignedRoleManagementDeviceManagementRoleDefinitionPrincipal](Invoke-MgAssignedRoleManagementDeviceManagementRoleDefinitionPrincipal.md)
+Invoke function assignedPrincipals
+
+### [Invoke-MgAssignedRoleManagementDirectoryRoleDefinitionPrincipal](Invoke-MgAssignedRoleManagementDirectoryRoleDefinitionPrincipal.md)
+Invoke function assignedPrincipals
+
+### [Invoke-MgAssignedRoleManagementEntitlementManagementRoleDefinitionPrincipal](Invoke-MgAssignedRoleManagementEntitlementManagementRoleDefinitionPrincipal.md)
+Invoke function assignedPrincipals
 
 ### [Invoke-MgFilterRoleManagementDirectoryRoleAssignmentApprovalByCurrentUser](Invoke-MgFilterRoleManagementDirectoryRoleAssignmentApprovalByCurrentUser.md)
 Invoke function filterByCurrentUser

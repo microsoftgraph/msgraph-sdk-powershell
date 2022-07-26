@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Identity.SignIns
-Module Guid: e32aca78-3aaa-4dbe-a1e3-ecc5013fedb7
+Module Guid: 75af3c48-de1f-496f-9014-b5da64aa2d29
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins
 Help Version: 1.0.0.0
 Locale: en-US
@@ -179,6 +179,9 @@ Get riskyUsers from identityProtection
 ### [Get-MgRiskyUserHistory](Get-MgRiskyUserHistory.md)
 Get history from identityProtection
 
+### [Get-MgUserAuthenticationEmailMethod](Get-MgUserAuthenticationEmailMethod.md)
+Get emailMethods from users
+
 ### [Get-MgUserAuthenticationFido2Method](Get-MgUserAuthenticationFido2Method.md)
 Get fido2Methods from users
 
@@ -214,6 +217,12 @@ Get operations from users
 
 ### [Get-MgUserAuthenticationPasswordMethod](Get-MgUserAuthenticationPasswordMethod.md)
 Get passwordMethods from users
+
+### [Get-MgUserAuthenticationPhoneMethod](Get-MgUserAuthenticationPhoneMethod.md)
+Get phoneMethods from users
+
+### [Get-MgUserAuthenticationSoftwareOathMethod](Get-MgUserAuthenticationSoftwareOathMethod.md)
+Get softwareOathMethods from users
 
 ### [Get-MgUserAuthenticationTemporaryAccessPassMethod](Get-MgUserAuthenticationTemporaryAccessPassMethod.md)
 Get temporaryAccessPassMethods from users
@@ -362,11 +371,11 @@ Create new navigation property to riskyUsers for identityProtection
 ### [New-MgRiskyUserHistory](New-MgRiskyUserHistory.md)
 Create new navigation property to history for identityProtection
 
+### [New-MgUserAuthenticationEmailMethod](New-MgUserAuthenticationEmailMethod.md)
+Create new navigation property to emailMethods for users
+
 ### [New-MgUserAuthenticationFido2Method](New-MgUserAuthenticationFido2Method.md)
 Create new navigation property to fido2Methods for users
-
-### [New-MgUserAuthenticationMethod](New-MgUserAuthenticationMethod.md)
-Create new navigation property to methods for users
 
 ### [New-MgUserAuthenticationMicrosoftAuthenticatorMethod](New-MgUserAuthenticationMicrosoftAuthenticatorMethod.md)
 Create new navigation property to microsoftAuthenticatorMethods for users
@@ -379,6 +388,12 @@ Create new navigation property ref to registeredOwners for users
 
 ### [New-MgUserAuthenticationOperation](New-MgUserAuthenticationOperation.md)
 Create new navigation property to operations for users
+
+### [New-MgUserAuthenticationPhoneMethod](New-MgUserAuthenticationPhoneMethod.md)
+Create new navigation property to phoneMethods for users
+
+### [New-MgUserAuthenticationSoftwareOathMethod](New-MgUserAuthenticationSoftwareOathMethod.md)
+Create new navigation property to softwareOathMethods for users
 
 ### [New-MgUserAuthenticationTemporaryAccessPassMethod](New-MgUserAuthenticationTemporaryAccessPassMethod.md)
 Create new navigation property to temporaryAccessPassMethods for users
@@ -515,11 +530,11 @@ Delete navigation property riskyUsers for identityProtection
 ### [Remove-MgRiskyUserHistory](Remove-MgRiskyUserHistory.md)
 Delete navigation property history for identityProtection
 
+### [Remove-MgUserAuthenticationEmailMethod](Remove-MgUserAuthenticationEmailMethod.md)
+Delete navigation property emailMethods for users
+
 ### [Remove-MgUserAuthenticationFido2Method](Remove-MgUserAuthenticationFido2Method.md)
 Delete navigation property fido2Methods for users
-
-### [Remove-MgUserAuthenticationMethod](Remove-MgUserAuthenticationMethod.md)
-Delete navigation property methods for users
 
 ### [Remove-MgUserAuthenticationMicrosoftAuthenticatorMethod](Remove-MgUserAuthenticationMicrosoftAuthenticatorMethod.md)
 Delete navigation property microsoftAuthenticatorMethods for users
@@ -538,6 +553,12 @@ Delete navigation property operations for users
 
 ### [Remove-MgUserAuthenticationPasswordMethod](Remove-MgUserAuthenticationPasswordMethod.md)
 Delete navigation property passwordMethods for users
+
+### [Remove-MgUserAuthenticationPhoneMethod](Remove-MgUserAuthenticationPhoneMethod.md)
+Delete navigation property phoneMethods for users
+
+### [Remove-MgUserAuthenticationSoftwareOathMethod](Remove-MgUserAuthenticationSoftwareOathMethod.md)
+Delete navigation property softwareOathMethods for users
 
 ### [Remove-MgUserAuthenticationTemporaryAccessPassMethod](Remove-MgUserAuthenticationTemporaryAccessPassMethod.md)
 Delete navigation property temporaryAccessPassMethods for users
@@ -692,11 +713,11 @@ Update the navigation property riskyUsers in identityProtection
 ### [Update-MgRiskyUserHistory](Update-MgRiskyUserHistory.md)
 Update the navigation property history in identityProtection
 
+### [Update-MgUserAuthenticationEmailMethod](Update-MgUserAuthenticationEmailMethod.md)
+Update the navigation property emailMethods in users
+
 ### [Update-MgUserAuthenticationFido2Method](Update-MgUserAuthenticationFido2Method.md)
 Update the navigation property fido2Methods in users
-
-### [Update-MgUserAuthenticationMethod](Update-MgUserAuthenticationMethod.md)
-Update the navigation property methods in users
 
 ### [Update-MgUserAuthenticationMicrosoftAuthenticatorMethod](Update-MgUserAuthenticationMicrosoftAuthenticatorMethod.md)
 Update the navigation property microsoftAuthenticatorMethods in users
@@ -709,6 +730,12 @@ Update the navigation property extensions in users
 
 ### [Update-MgUserAuthenticationOperation](Update-MgUserAuthenticationOperation.md)
 Update the navigation property operations in users
+
+### [Update-MgUserAuthenticationPhoneMethod](Update-MgUserAuthenticationPhoneMethod.md)
+Update the navigation property phoneMethods in users
+
+### [Update-MgUserAuthenticationSoftwareOathMethod](Update-MgUserAuthenticationSoftwareOathMethod.md)
+Update the navigation property softwareOathMethods in users
 
 ### [Update-MgUserAuthenticationTemporaryAccessPassMethod](Update-MgUserAuthenticationTemporaryAccessPassMethod.md)
 Update the navigation property temporaryAccessPassMethods in users

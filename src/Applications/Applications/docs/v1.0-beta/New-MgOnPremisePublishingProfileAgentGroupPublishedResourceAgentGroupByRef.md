@@ -12,31 +12,17 @@ Create new navigation property ref to agentGroups for onPremisesPublishingProfil
 
 ## SYNTAX
 
-### CreateExpanded (Default)
+### Create (Default)
 ```
 New-MgOnPremisePublishingProfileAgentGroupPublishedResourceAgentGroupByRef -OnPremisesAgentGroupId <String>
- -OnPremisesPublishingProfileId <String> -PublishedResourceId <String> [-AdditionalProperties <Hashtable>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### Create
-```
-New-MgOnPremisePublishingProfileAgentGroupPublishedResourceAgentGroupByRef -OnPremisesAgentGroupId <String>
- -OnPremisesPublishingProfileId <String> -PublishedResourceId <String> -BodyParameter <Hashtable> [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ -OnPremisesPublishingProfileId <String> -PublishedResourceId <String> [-PassThru] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
 New-MgOnPremisePublishingProfileAgentGroupPublishedResourceAgentGroupByRef
- -InputObject <IApplicationsIdentity> -BodyParameter <Hashtable> [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### CreateViaIdentityExpanded
-```
-New-MgOnPremisePublishingProfileAgentGroupPublishedResourceAgentGroupByRef
- -InputObject <IApplicationsIdentity> [-AdditionalProperties <Hashtable>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -InputObject <IApplicationsIdentity> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -46,43 +32,13 @@ Create new navigation property ref to agentGroups for onPremisesPublishingProfil
 
 ## PARAMETERS
 
-### -AdditionalProperties
-Additional Parameters
-
-```yaml
-Type: System.Collections.Hashtable
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -BodyParameter
-.
-
-```yaml
-Type: System.Collections.Hashtable
-Parameter Sets: Create, CreateViaIdentity
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -InputObject
 Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
-Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
+Parameter Sets: CreateViaIdentity
 Aliases:
 
 Required: True
@@ -97,7 +53,7 @@ key: id of onPremisesAgentGroup
 
 ```yaml
 Type: System.String
-Parameter Sets: Create, CreateExpanded
+Parameter Sets: Create
 Aliases:
 
 Required: True
@@ -112,10 +68,25 @@ key: id of onPremisesPublishingProfile
 
 ```yaml
 Type: System.String
-Parameter Sets: Create, CreateExpanded
+Parameter Sets: Create
 Aliases:
 
 Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -PassThru
+Returns true when the command succeeds
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -127,7 +98,7 @@ key: id of publishedResource
 
 ```yaml
 Type: System.String
-Parameter Sets: Create, CreateExpanded
+Parameter Sets: Create
 Aliases:
 
 Required: True
@@ -175,11 +146,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
 
-### System.Collections.Hashtable
-
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPaths1C3Uxr7OnpremisespublishingprofilesOnpremisespublishingprofileIdAgentgroupsOnpremisesagentgroupIdPublishedresourcesPublishedresourceIdAgentgroupsRefPostResponses201ContentApplicationJsonSchema
+### System.Boolean
 
 ## NOTES
 

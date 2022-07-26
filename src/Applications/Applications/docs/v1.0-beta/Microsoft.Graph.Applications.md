@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Applications
-Module Guid: b983129a-8589-40fb-ba5b-db381db4ca5d
+Module Guid: acbd0cc0-ecca-4a06-93f3-3a2150c7a32f
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.applications
 Help Version: 1.0.0.0
 Locale: en-US
@@ -230,9 +230,6 @@ Invoke function delta
 ### [Get-MgServicePrincipalEndpoint](Get-MgServicePrincipalEndpoint.md)
 Get endpoints from servicePrincipals
 
-### [Get-MgServicePrincipalFederatedIdentityCredential](Get-MgServicePrincipalFederatedIdentityCredential.md)
-Get federatedIdentityCredentials from servicePrincipals
-
 ### [Get-MgServicePrincipalHomeRealmDiscoveryPolicy](Get-MgServicePrincipalHomeRealmDiscoveryPolicy.md)
 Get homeRealmDiscoveryPolicies from servicePrincipals
 
@@ -446,9 +443,6 @@ Create new navigation property to delegatedPermissionClassifications for service
 ### [New-MgServicePrincipalEndpoint](New-MgServicePrincipalEndpoint.md)
 Create new navigation property to endpoints for servicePrincipals
 
-### [New-MgServicePrincipalFederatedIdentityCredential](New-MgServicePrincipalFederatedIdentityCredential.md)
-Create new navigation property to federatedIdentityCredentials for servicePrincipals
-
 ### [New-MgServicePrincipalHomeRealmDiscoveryPolicyByRef](New-MgServicePrincipalHomeRealmDiscoveryPolicyByRef.md)
 Create new navigation property ref to homeRealmDiscoveryPolicies for servicePrincipals
 
@@ -595,9 +589,6 @@ Delete navigation property delegatedPermissionClassifications for servicePrincip
 
 ### [Remove-MgServicePrincipalEndpoint](Remove-MgServicePrincipalEndpoint.md)
 Delete navigation property endpoints for servicePrincipals
-
-### [Remove-MgServicePrincipalFederatedIdentityCredential](Remove-MgServicePrincipalFederatedIdentityCredential.md)
-Delete navigation property federatedIdentityCredentials for servicePrincipals
 
 ### [Remove-MgServicePrincipalHomeRealmDiscoveryPolicyByRef](Remove-MgServicePrincipalHomeRealmDiscoveryPolicyByRef.md)
 Delete ref of navigation property homeRealmDiscoveryPolicies for servicePrincipals
@@ -757,9 +748,6 @@ Update the navigation property delegatedPermissionClassifications in servicePrin
 
 ### [Update-MgServicePrincipalEndpoint](Update-MgServicePrincipalEndpoint.md)
 Update the navigation property endpoints in servicePrincipals
-
-### [Update-MgServicePrincipalFederatedIdentityCredential](Update-MgServicePrincipalFederatedIdentityCredential.md)
-Update the navigation property federatedIdentityCredentials in servicePrincipals
 
 ### [Update-MgServicePrincipalLicenseDetail](Update-MgServicePrincipalLicenseDetail.md)
 Update the navigation property licenseDetails in servicePrincipals

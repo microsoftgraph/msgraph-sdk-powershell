@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Groups
-Module Guid: 0f4a4cbe-3a5f-4f2e-92e0-3f52438b2b7e
+Module Guid: c0e2e3ec-5d72-4f30-9025-e8590c0db268
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.groups
 Help Version: 1.0.0.0
 Locale: en-US
@@ -505,6 +505,9 @@ Add a member to an Office 365 group or security group through the members naviga
 
 ### [New-MgGroupMemberByRef](New-MgGroupMemberByRef.md)
 Create new navigation property ref to members for groups
+
+### [New-MgGroupOwner](New-MgGroupOwner.md)
+Add an owner to an Office 365 group or security group through the owners navigation property.
 
 ### [New-MgGroupOwnerByRef](New-MgGroupOwnerByRef.md)
 Create new navigation property ref to owners for groups

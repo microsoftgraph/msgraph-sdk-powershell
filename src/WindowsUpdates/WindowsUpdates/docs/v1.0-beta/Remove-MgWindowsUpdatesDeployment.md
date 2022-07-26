@@ -8,8 +8,7 @@ schema: 2.0.0
 # Remove-MgWindowsUpdatesDeployment
 
 ## SYNOPSIS
-Deployments created using the deployment service.
-Read-only.
+Delete navigation property deployments for admin
 
 ## SYNTAX
 
@@ -26,8 +25,7 @@ Remove-MgWindowsUpdatesDeployment -InputObject <IWindowsUpdatesIdentity> [-IfMat
 ```
 
 ## DESCRIPTION
-Deployments created using the deployment service.
-Read-only.
+Delete navigation property deployments for admin
 
 ## EXAMPLES
 
@@ -150,6 +148,7 @@ To create the parameters described below, construct a hash table containing the 
 INPUTOBJECT <IWindowsUpdatesIdentity>: Identity Parameter
   - `[CatalogEntryId <String>]`: key: id of catalogEntry
   - `[DeploymentId <String>]`: key: id of deployment
+  - `[ResourceConnectionId <String>]`: key: id of resourceConnection
   - `[UpdatableAssetId <String>]`: key: id of updatableAsset
 
 ## RELATED LINKS

@@ -17,8 +17,9 @@ Update entity in applicationTemplates
 Update-MgApplicationTemplate -ApplicationTemplateId <String> [-AdditionalProperties <Hashtable>]
  [-Categories <String[]>] [-Description <String>] [-DisplayName <String>] [-HomePageUrl <String>]
  [-Id <String>] [-InformationalUrls <IMicrosoftGraphInformationalUrls>] [-LogoUrl <String>]
- [-Publisher <String>] [-SupportedProvisioningTypes <String[]>] [-SupportedSingleSignOnModes <String[]>]
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Publisher <String>] [-SupportedClaimConfiguration <IMicrosoftGraphSupportedClaimConfiguration>]
+ [-SupportedProvisioningTypes <String[]>] [-SupportedSingleSignOnModes <String[]>] [-PassThru] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
@@ -38,8 +39,9 @@ Update-MgApplicationTemplate -InputObject <IApplicationsIdentity>
 Update-MgApplicationTemplate -InputObject <IApplicationsIdentity> [-AdditionalProperties <Hashtable>]
  [-Categories <String[]>] [-Description <String>] [-DisplayName <String>] [-HomePageUrl <String>]
  [-Id <String>] [-InformationalUrls <IMicrosoftGraphInformationalUrls>] [-LogoUrl <String>]
- [-Publisher <String>] [-SupportedProvisioningTypes <String[]>] [-SupportedSingleSignOnModes <String[]>]
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Publisher <String>] [-SupportedClaimConfiguration <IMicrosoftGraphSupportedClaimConfiguration>]
+ [-SupportedProvisioningTypes <String[]>] [-SupportedSingleSignOnModes <String[]>] [-PassThru] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -248,6 +250,22 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -SupportedClaimConfiguration
+supportedClaimConfiguration
+To construct, please use Get-Help -Online and see NOTES section for SUPPORTEDCLAIMCONFIGURATION properties and create a hash table.
+
+```yaml
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSupportedClaimConfiguration
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -SupportedProvisioningTypes
 The list of provisioning modes supported by this application.
 The only valid value is sync.
@@ -346,6 +364,9 @@ BODYPARAMETER <IMicrosoftGraphApplicationTemplate>: applicationTemplate
     - `[SingleSignOnDocumentationUrl <String>]`: 
   - `[LogoUrl <String>]`: The URL to get the logo for this application.
   - `[Publisher <String>]`: The name of the publisher for this application.
+  - `[SupportedClaimConfiguration <IMicrosoftGraphSupportedClaimConfiguration>]`: supportedClaimConfiguration
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+    - `[NameIdPolicyFormat <String>]`: 
   - `[SupportedProvisioningTypes <String[]>]`: The list of provisioning modes supported by this application. The only valid value is sync.
   - `[SupportedSingleSignOnModes <String[]>]`: The list of single sign-on modes supported by this application. The supported values are oidc, password, saml, and notSupported.
 
@@ -383,6 +404,10 @@ INPUTOBJECT <IApplicationsIdentity>: Identity Parameter
   - `[TokenIssuancePolicyId <String>]`: key: id of tokenIssuancePolicy
   - `[TokenLifetimePolicyId <String>]`: key: id of tokenLifetimePolicy
   - `[UserId <String>]`: key: id of user
+
+SUPPORTEDCLAIMCONFIGURATION <IMicrosoftGraphSupportedClaimConfiguration>: supportedClaimConfiguration
+  - `[(Any) <Object>]`: This indicates any property can be added to this object.
+  - `[NameIdPolicyFormat <String>]`: 
 
 ## RELATED LINKS
 

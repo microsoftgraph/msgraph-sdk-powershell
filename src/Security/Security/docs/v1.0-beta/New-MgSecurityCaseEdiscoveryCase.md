@@ -12,7 +12,7 @@ Create new navigation property to ediscoveryCases for security
 
 ## SYNTAX
 
-### CreateExpanded1 (Default)
+### CreateExpanded (Default)
 ```
 New-MgSecurityCaseEdiscoveryCase [-AdditionalProperties <Hashtable>] [-ClosedBy <IMicrosoftGraphIdentitySet>]
  [-ClosedDateTime <DateTime>] [-CreatedDateTime <DateTime>]
@@ -27,7 +27,7 @@ New-MgSecurityCaseEdiscoveryCase [-AdditionalProperties <Hashtable>] [-ClosedBy 
  [-Tags <IMicrosoftGraphSecurityEdiscoveryReviewTag[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### Create1
+### Create
 ```
 New-MgSecurityCaseEdiscoveryCase -BodyParameter <IMicrosoftGraphSecurityEdiscoveryCase> [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -45,7 +45,7 @@ Additional Parameters
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: CreateExpanded1
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -61,7 +61,7 @@ To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETE
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityEdiscoveryCase
-Parameter Sets: Create1
+Parameter Sets: Create
 Aliases:
 
 Required: True
@@ -77,7 +77,7 @@ To construct, please use Get-Help -Online and see NOTES section for CLOSEDBY pro
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentitySet
-Parameter Sets: CreateExpanded1
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -94,7 +94,7 @@ For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 
 ```yaml
 Type: System.DateTime
-Parameter Sets: CreateExpanded1
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -109,7 +109,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.DateTime
-Parameter Sets: CreateExpanded1
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -125,7 +125,7 @@ To construct, please use Get-Help -Online and see NOTES section for CUSTODIANS p
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityEdiscoveryCustodian[]
-Parameter Sets: CreateExpanded1
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -140,7 +140,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded1
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -155,7 +155,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded1
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -170,7 +170,7 @@ The external case number for customer reference.
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded1
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -185,7 +185,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded1
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -201,7 +201,7 @@ To construct, please use Get-Help -Online and see NOTES section for LASTMODIFIED
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentitySet
-Parameter Sets: CreateExpanded1
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -216,7 +216,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.DateTime
-Parameter Sets: CreateExpanded1
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -232,7 +232,7 @@ To construct, please use Get-Help -Online and see NOTES section for LEGALHOLDS p
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityEdiscoveryHoldPolicy[]
-Parameter Sets: CreateExpanded1
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -248,7 +248,7 @@ To construct, please use Get-Help -Online and see NOTES section for NONCUSTODIAL
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityEdiscoveryNoncustodialDataSource[]
-Parameter Sets: CreateExpanded1
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -264,7 +264,7 @@ To construct, please use Get-Help -Online and see NOTES section for OPERATIONS p
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityCaseOperation[]
-Parameter Sets: CreateExpanded1
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -280,7 +280,7 @@ To construct, please use Get-Help -Online and see NOTES section for REVIEWSETS p
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityEdiscoveryReviewSet[]
-Parameter Sets: CreateExpanded1
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -296,7 +296,7 @@ To construct, please use Get-Help -Online and see NOTES section for SEARCHES pro
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityEdiscoverySearch[]
-Parameter Sets: CreateExpanded1
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -312,7 +312,7 @@ To construct, please use Get-Help -Online and see NOTES section for SETTINGS pro
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityEdiscoveryCaseSettings
-Parameter Sets: CreateExpanded1
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -327,7 +327,7 @@ caseStatus
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded1
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -343,7 +343,7 @@ To construct, please use Get-Help -Online and see NOTES section for TAGS propert
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityEdiscoveryReviewTag[]
-Parameter Sets: CreateExpanded1
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -413,7 +413,7 @@ BODYPARAMETER <IMicrosoftGraphSecurityEdiscoveryCase>: ediscoveryCase
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Application <IMicrosoftGraphIdentity>]`: identity
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[DisplayName <String>]`: The identity's display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+      - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
       - `[Id <String>]`: Unique identifier for the identity.
     - `[Device <IMicrosoftGraphIdentity>]`: identity
     - `[User <IMicrosoftGraphIdentity>]`: identity
@@ -996,12 +996,12 @@ BODYPARAMETER <IMicrosoftGraphSecurityEdiscoveryCase>: ediscoveryCase
                   - `[User <IMicrosoftGraphIdentity>]`: identity
                   - `[Conversation <IMicrosoftGraphTeamworkConversationIdentity>]`: teamworkConversationIdentity
                     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                    - `[DisplayName <String>]`: The identity's display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+                    - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
                     - `[Id <String>]`: Unique identifier for the identity.
                     - `[ConversationIdentityType <String>]`: teamworkConversationIdentityType
                   - `[Tag <IMicrosoftGraphTeamworkTagIdentity>]`: teamworkTagIdentity
                     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                    - `[DisplayName <String>]`: The identity's display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+                    - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
                     - `[Id <String>]`: Unique identifier for the identity.
               - `[MessageType <String>]`: chatMessageType
               - `[OnBehalfOf <IMicrosoftGraphChatMessageFromIdentitySet>]`: chatMessageFromIdentitySet
@@ -1035,7 +1035,7 @@ BODYPARAMETER <IMicrosoftGraphSecurityEdiscoveryCase>: ediscoveryCase
               - `[JoinWebUrl <String>]`: The URL which can be clicked on to join or uniquely identify the meeting.
               - `[Organizer <IMicrosoftGraphTeamworkUserIdentity>]`: teamworkUserIdentity
                 - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                - `[DisplayName <String>]`: The identity's display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+                - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
                 - `[Id <String>]`: Unique identifier for the identity.
                 - `[UserIdentityType <String>]`: teamworkUserIdentityType
             - `[Operations <IMicrosoftGraphTeamsAsyncOperation1[]>]`: A collection of all the Teams async operations that ran or are running on the chat. Nullable.
@@ -1114,8 +1114,8 @@ BODYPARAMETER <IMicrosoftGraphSecurityEdiscoveryCase>: ediscoveryCase
               - `[StatusDetails <IMicrosoftGraphCloudPcStatusDetails>]`: cloudPcStatusDetails
                 - `[(Any) <Object>]`: This indicates any property can be added to this object.
                 - `[AdditionalInformation <IMicrosoftGraphKeyValuePair[]>]`: Any additional information about the Cloud PC status.
-                  - `[Name <String>]`: Name for this key-value pair. Possible names are: AdditionalWSFedEndpointCheckResult,  AllowedAuthenticationClassReferencesCheckResult, AlwaysRequireAuthenticationCheckResult,   AutoUpdateEnabledCheckResult, ClaimsProviderNameCheckResult, EncryptClaimsCheckResult,  EncryptedNameIdRequiredCheckResult, MonitoringEnabledCheckResult,NotBeforeSkewCheckResult,  RequestMFAFromClaimsProvidersCheckResult, SignedSamlRequestsRequiredCheckResult, AdditionalAuthenticationRulesCheckResult, TokenLifetimeCheckResult,  DelegationAuthorizationRulesCheckResult, IssuanceAuthorizationRulesCheckResult, IssuanceTransformRulesCheckResult.
-                  - `[Value <String>]`: Value for this key-value pair. Possible result values are 0 (when the validation check passed), 1 (when the validation check failed), or 2 (when the validation check is a warning).
+                  - `[Name <String>]`: Name for this key-value pair
+                  - `[Value <String>]`: Value for this key-value pair
                 - `[Code <String>]`: The code associated with the Cloud PC status.
                 - `[Message <String>]`: The status message.
             - `[ManagedDeviceId <String>]`: The Intune device ID of the Cloud PC.
@@ -1419,7 +1419,7 @@ BODYPARAMETER <IMicrosoftGraphSecurityEdiscoveryCase>: ediscoveryCase
                   - `[(Any) <Object>]`: This indicates any property can be added to this object.
                   - `[Height <Int32?>]`: Optional. Height of the image, in pixels. Read-only.
                   - `[Width <Int32?>]`: Optional. Width of the image, in pixels. Read-only.
-                - `[ListItem <IMicrosoftGraphListItem>]`: listItem
+                - `[ListItem <IMicrosoftGraphListItem1>]`: listItem
                   - `[(Any) <Object>]`: This indicates any property can be added to this object.
                   - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
                   - `[CreatedByUser <IMicrosoftGraphUser>]`: user
@@ -1502,7 +1502,7 @@ BODYPARAMETER <IMicrosoftGraphSecurityEdiscoveryCase>: ediscoveryCase
                     - `[Group <IMicrosoftGraphIdentity>]`: identity
                     - `[SiteGroup <IMicrosoftGraphSharePointIdentity>]`: sharePointIdentity
                       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                      - `[DisplayName <String>]`: The identity's display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+                      - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
                       - `[Id <String>]`: Unique identifier for the identity.
                       - `[LoginName <String>]`: The sign in name of the SharePoint identity.
                     - `[SiteUser <IMicrosoftGraphSharePointIdentity>]`: sharePointIdentity
@@ -1515,7 +1515,7 @@ BODYPARAMETER <IMicrosoftGraphSecurityEdiscoveryCase>: ediscoveryCase
                     - `[InvitedBy <IMicrosoftGraphIdentitySet>]`: identitySet
                     - `[RedeemedBy <String>]`: 
                     - `[SignInRequired <Boolean?>]`: If true the recipient of the invitation needs to sign in in order to access the shared item. Read-only.
-                  - `[Link <IMicrosoftGraphSharingLink>]`: sharingLink
+                  - `[Link <IMicrosoftGraphSharingLink1>]`: sharingLink
                     - `[(Any) <Object>]`: This indicates any property can be added to this object.
                     - `[Application <IMicrosoftGraphIdentity>]`: identity
                     - `[ConfiguratorUrl <String>]`: 
@@ -1590,7 +1590,7 @@ BODYPARAMETER <IMicrosoftGraphSecurityEdiscoveryCase>: ediscoveryCase
                   - `[Application <String>]`: driveItemSourceApplication
                   - `[ExternalId <String>]`: The external identifier for the drive item from the source.
                 - `[SpecialFolder <IMicrosoftGraphSpecialFolder>]`: specialFolder
-                - `[Subscriptions <IMicrosoftGraphSubscription[]>]`: The set of subscriptions on the item. Only supported on the root of a drive.
+                - `[Subscriptions <IMicrosoftGraphSubscription1[]>]`: The set of subscriptions on the item. Only supported on the root of a drive.
                   - `[Id <String>]`: 
                   - `[ApplicationId <String>]`: Optional. Identifier of the application used to create the subscription. Read-only.
                   - `[ChangeType <String>]`: Required. Indicates the type of change in the subscribed resource that will raise a change notification. The supported values are: created, updated, deleted. Multiple values can be combined using a comma-separated list. Note:  Drive root item and list change notifications support only the updated changeType. User and group change notifications support updated and deleted changeType.
@@ -1857,7 +1857,7 @@ BODYPARAMETER <IMicrosoftGraphSecurityEdiscoveryCase>: ediscoveryCase
                     - `[Status <String>]`: workbookOperationStatus
                   - `[Tables <IMicrosoftGraphWorkbookTable1[]>]`: Represents a collection of tables associated with the workbook. Read-only.
                   - `[Worksheets <IMicrosoftGraphWorkbookWorksheet[]>]`: Represents a collection of worksheets associated with the workbook. Read-only.
-              - `[ListItem <IMicrosoftGraphListItem>]`: listItem
+              - `[ListItem <IMicrosoftGraphListItem1>]`: listItem
               - `[Times <IMicrosoftGraphItemActivityTimeSet>]`: itemActivityTimeSet
                 - `[(Any) <Object>]`: This indicates any property can be added to this object.
                 - `[LastRecordedDateTime <DateTime?>]`: 
@@ -1979,7 +1979,7 @@ BODYPARAMETER <IMicrosoftGraphSecurityEdiscoveryCase>: ediscoveryCase
                         - `[LocalizedNames <IMicrosoftGraphTermStoreLocalizedName[]>]`: Name of the set for each languageTag.
                           - `[LanguageTag <String>]`: The language tag for the label.
                           - `[Name <String>]`: The name in the localized language.
-                        - `[ParentGroup <IMicrosoftGraphTermStoreGroup>]`: group
+                        - `[ParentGroup <IMicrosoftGraphTermStoreGroup1>]`: group
                           - `[(Any) <Object>]`: This indicates any property can be added to this object.
                           - `[Id <String>]`: 
                           - `[CreatedDateTime <DateTime?>]`: Date and time of the group creation. Read-only.
@@ -2023,7 +2023,7 @@ BODYPARAMETER <IMicrosoftGraphSecurityEdiscoveryCase>: ediscoveryCase
                 - `[ColumnPositions <IMicrosoftGraphColumnDefinition[]>]`: Column order information in a content type.
                 - `[Columns <IMicrosoftGraphColumnDefinition[]>]`: The collection of column definitions for this contentType.
                 - `[Description <String>]`: The descriptive text for the item.
-                - `[DocumentSet <IMicrosoftGraphDocumentSet>]`: documentSet
+                - `[DocumentSet <IMicrosoftGraphDocumentSet1>]`: documentSet
                   - `[(Any) <Object>]`: This indicates any property can be added to this object.
                   - `[AllowedContentTypes <IMicrosoftGraphContentTypeInfo[]>]`: Content types allowed in document set.
                   - `[DefaultContents <IMicrosoftGraphDocumentSetContent[]>]`: Default contents of document set.
@@ -2051,7 +2051,7 @@ BODYPARAMETER <IMicrosoftGraphSecurityEdiscoveryCase>: ediscoveryCase
                 - `[Sealed <Boolean?>]`: If true, the content type cannot be modified by users or through push-down operations. Only site collection administrators can seal or unseal content types.
               - `[DisplayName <String>]`: The displayable title of the list.
               - `[Drive <IMicrosoftGraphDrive>]`: drive
-              - `[Items <IMicrosoftGraphListItem[]>]`: All items contained in the list.
+              - `[Items <IMicrosoftGraphListItem1[]>]`: All items contained in the list.
               - `[List <IMicrosoftGraphListInfo>]`: listInfo
                 - `[(Any) <Object>]`: This indicates any property can be added to this object.
                 - `[ContentTypesEnabled <Boolean?>]`: If true, indicates that content types are enabled for this list.
@@ -2083,7 +2083,7 @@ BODYPARAMETER <IMicrosoftGraphSecurityEdiscoveryCase>: ediscoveryCase
                 - `[ResourceId <String>]`: A unique identifier for the result.
                 - `[Type <String>]`: Type of the operation.
               - `[SharepointIds <IMicrosoftGraphSharepointIds>]`: sharepointIds
-              - `[Subscriptions <IMicrosoftGraphSubscription[]>]`: The set of subscriptions on the list.
+              - `[Subscriptions <IMicrosoftGraphSubscription1[]>]`: The set of subscriptions on the list.
               - `[System <IMicrosoftGraphSystemFacet>]`: systemFacet
                 - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[Owner <IMicrosoftGraphIdentitySet>]`: identitySet
@@ -2365,7 +2365,6 @@ BODYPARAMETER <IMicrosoftGraphSecurityEdiscoveryCase>: ediscoveryCase
             - `[Mail <String>]`: The SMTP address for the group, for example, 'serviceadmins@contoso.onmicrosoft.com'. Returned by default. Read-only. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
             - `[MailEnabled <Boolean?>]`: Specifies whether the group is mail-enabled. Required. Returned by default. Supports $filter (eq, ne, not, and eq on null values).
             - `[MailNickname <String>]`: The mail alias for the group, unique for Microsoft 365 groups in the organization. Maximum length is 64 characters. This property can contain only characters in the ASCII character set 0 - 127 except the following: @ () / [] ' ; : . <> , SPACE. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith).
-            - `[MdmAppId <String>]`: 
             - `[MemberOf <IMicrosoftGraphDirectoryObject[]>]`: Groups and administrative units that this group is a member of. HTTP Methods: GET (supported for all groups). Read-only. Nullable. Supports $expand.
             - `[Members <IMicrosoftGraphDirectoryObject[]>]`: Direct members of this group, who can be users, devices, other groups, or service principals. Supports the List members, Add member, and Remove member operations. Nullable. Supports $expand including nested $select. For example, /groups?$filter=startsWith(displayName,'Role')&$select=id,displayName&$expand=members($select=id,userPrincipalName,displayName).
             - `[MembersWithLicenseErrors <IMicrosoftGraphDirectoryObject[]>]`: A list of group members with license errors from this group-based license assignment. Read-only.
@@ -2431,7 +2430,7 @@ BODYPARAMETER <IMicrosoftGraphSecurityEdiscoveryCase>: ediscoveryCase
                       - `[(Any) <Object>]`: This indicates any property can be added to this object.
                       - `[OneNoteClientUrl <IMicrosoftGraphExternalLink>]`: externalLink
                       - `[OneNoteWebUrl <IMicrosoftGraphExternalLink>]`: externalLink
-                    - `[Pages <IMicrosoftGraphOnenotePage[]>]`: The collection of pages in the section.  Read-only. Nullable.
+                    - `[Pages <IMicrosoftGraphOnenotePage1[]>]`: The collection of pages in the section.  Read-only. Nullable.
                       - `[CreatedDateTime <DateTime?>]`: The date and time when the page was created. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
                       - `[Self <String>]`: The endpoint where you can get details about the page. Read-only.
                       - `[Id <String>]`: 
@@ -2469,7 +2468,7 @@ BODYPARAMETER <IMicrosoftGraphSecurityEdiscoveryCase>: ediscoveryCase
                 - `[PercentComplete <String>]`: The operation percent complete if the operation is still in running status.
                 - `[ResourceId <String>]`: The resource id.
                 - `[ResourceLocation <String>]`: The resource URI for the object. For example, the resource URI for a copied page or section.
-              - `[Pages <IMicrosoftGraphOnenotePage[]>]`: The pages in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
+              - `[Pages <IMicrosoftGraphOnenotePage1[]>]`: The pages in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
               - `[Resources <IMicrosoftGraphOnenoteResource[]>]`: The image and other file resources in OneNote pages. Getting a resources collection is not supported, but you can get the binary content of a specific resource. Read-only. Nullable.
                 - `[Self <String>]`: The endpoint where you can get details about the page. Read-only.
                 - `[Id <String>]`: 
@@ -3521,7 +3520,7 @@ BODYPARAMETER <IMicrosoftGraphSecurityEdiscoveryCase>: ediscoveryCase
           - `[OnPremisesProvisioningErrors <IMicrosoftGraphOnPremisesProvisioningError[]>]`: Errors when using Microsoft synchronization product during provisioning.  Supports $filter (eq, not, ge, le).
           - `[OnPremisesSamAccountName <String>]`: Contains the on-premises sAMAccountName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only. Supports $filter (eq, ne, not, ge, le, in, startsWith).
           - `[OnPremisesSecurityIdentifier <String>]`: Contains the on-premises security identifier (SID) for the user that was synchronized from on-premises to the cloud. Read-only. Supports $filter (eq including on null values).
-          - `[OnPremisesSyncEnabled <Boolean?>]`: true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced; null if this object has never been synced from an on-premises directory (default). Read-only. Supports $filter (eq, ne, not, in, and eq on null values).
+          - `[OnPremisesSyncEnabled <Boolean?>]`: true if this user object is currently being synced from an on-premises Active Directory (AD); otherwise the user isn't being synced and can be managed in Azure Active Directory (Azure AD). Read-only. Supports $filter (eq, ne, not, in, and eq on null values).
           - `[OnPremisesUserPrincipalName <String>]`: Contains the on-premises userPrincipalName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only. Supports $filter (eq, ne, not, ge, le, in, startsWith).
           - `[Onenote <IMicrosoftGraphOnenote>]`: onenote
           - `[OnlineMeetings <IMicrosoftGraphOnlineMeeting1[]>]`: 
@@ -3699,7 +3698,7 @@ BODYPARAMETER <IMicrosoftGraphSecurityEdiscoveryCase>: ediscoveryCase
               - `[AccessReviewId <String>]`: The identifier of the accessReviewInstance parent. Supports $select. Read-only.
               - `[AppliedBy <IMicrosoftGraphUserIdentity>]`: userIdentity
                 - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                - `[DisplayName <String>]`: The identity's display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+                - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
                 - `[Id <String>]`: Unique identifier for the identity.
                 - `[IPAddress <String>]`: Indicates the client IP address used by user performing the activity (audit log only).
                 - `[UserPrincipalName <String>]`: The userPrincipalName attribute of the user.
@@ -3837,7 +3836,7 @@ BODYPARAMETER <IMicrosoftGraphSecurityEdiscoveryCase>: ediscoveryCase
           - `[PostalCode <String>]`: The postal code for the user's postal address. The postal code is specific to the user's country/region. In the United States of America, this attribute contains the ZIP code. Maximum length is 40 characters. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
           - `[PreferredDataLocation <String>]`: The preferred data location for the user. For more information, see OneDrive Online Multi-Geo.
           - `[PreferredLanguage <String>]`: The preferred language for the user. Should follow ISO 639-1 Code; for example en-US. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
-          - `[PreferredName <String>]`: The preferred name for the user. Returned only on $select.
+          - `[PreferredName <String>]`: The preferred name for the user. Not Supported. This attribute returns an empty string.Returned only on $select.
           - `[Presence <IMicrosoftGraphPresence1>]`: presence
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[Id <String>]`: 
@@ -4613,7 +4612,7 @@ BODYPARAMETER <IMicrosoftGraphSecurityEdiscoveryCase>: ediscoveryCase
                   - `[Name <String>]`: The display name of the attachment. This does not need to be the actual file name.
                   - `[Size <Int32?>]`: The length of the attachment in bytes.
                 - `[Body <IMicrosoftGraphItemBody>]`: itemBody
-                - `[BodyLastModifiedDateTime <DateTime?>]`: The date and time when the task was last modified. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2020 would look like this: '2020-01-01T00:00:00Z'.
+                - `[BodyLastModifiedDateTime <DateTime?>]`: The date and time when the task body was last modified. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2020 would look like this: '2020-01-01T00:00:00Z'.
                 - `[Categories <String[]>]`: The categories associated with the task. Each category corresponds to the displayName property of an outlookCategory that the user has defined.
                 - `[ChecklistItems <IMicrosoftGraphChecklistItem[]>]`: A collection of smaller subtasks linked to the more complex parent task.
                 - `[CompletedDateTime <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
@@ -4722,7 +4721,7 @@ BODYPARAMETER <IMicrosoftGraphSecurityEdiscoveryCase>: ediscoveryCase
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[Id <String>]`: 
           - `[DefaultLanguageTag <String>]`: Default language of the term store.
-          - `[Groups <IMicrosoftGraphTermStoreGroup[]>]`: Collection of all groups available in the term store.
+          - `[Groups <IMicrosoftGraphTermStoreGroup1[]>]`: Collection of all groups available in the term store.
           - `[LanguageTags <String[]>]`: List of languages for the term store.
           - `[Sets <IMicrosoftGraphTermStoreSet[]>]`: Collection of all sets available in the term store.
     - `[UnifiedGroupSources <IMicrosoftGraphSecurityUnifiedGroupSource[]>]`: Data source entity for groups associated with the custodian.
@@ -4733,7 +4732,7 @@ BODYPARAMETER <IMicrosoftGraphSecurityEdiscoveryCase>: ediscoveryCase
       - `[Id <String>]`: 
       - `[Group <IMicrosoftGraphGroup>]`: group
       - `[IncludedSources <String>]`: sourceType
-    - `[UserSources <IMicrosoftGraphSecurityUserSource[]>]`: Data source entity for a the custodian. This is the container for a custodian's mailbox and OneDrive for Business site.
+    - `[UserSources <IMicrosoftGraphSecurityUserSource[]>]`: Data source entity for a custodian. This is the container for a custodian's mailbox and OneDrive for Business site.
       - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
       - `[CreatedDateTime <DateTime?>]`: The date and time the dataSource was created.
       - `[DisplayName <String>]`: The display name of the dataSource. This will be the name of the SharePoint site.
@@ -4755,8 +4754,8 @@ BODYPARAMETER <IMicrosoftGraphSecurityEdiscoveryCase>: ediscoveryCase
     - `[ContentQuery <String>]`: KQL query that specifies content to be held in the specified locations. To learn more, see Keyword queries and search conditions for Content Search and eDiscovery.  To hold all content in the specified locations, leave contentQuery blank.
     - `[Errors <String[]>]`: Lists any errors that happened while placing the hold.
     - `[IsEnabled <Boolean?>]`: Indicates whether the hold is enabled and actively holding content.
-    - `[SiteSources <IMicrosoftGraphSecuritySiteSource[]>]`: 
-    - `[UserSources <IMicrosoftGraphSecurityUserSource[]>]`: 
+    - `[SiteSources <IMicrosoftGraphSecuritySiteSource[]>]`: Data sources that represent SharePoint sites.
+    - `[UserSources <IMicrosoftGraphSecurityUserSource[]>]`: Data sources that represent Exchange mailboxes.
   - `[NoncustodialDataSources <IMicrosoftGraphSecurityEdiscoveryNoncustodialDataSource[]>]`: Returns a list of case ediscoveryNoncustodialDataSource objects for this case.
     - `[CreatedDateTime <DateTime?>]`: Created date and time of the dataSourceContainer entity.
     - `[DisplayName <String>]`: Display name of the dataSourceContainer entity.
@@ -4870,7 +4869,7 @@ BODYPARAMETER <IMicrosoftGraphSecurityEdiscoveryCase>: ediscoveryCase
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[IsEnabled <Boolean?>]`: Indicates whether or not OCR is enabled for the case.
       - `[MaxImageSize <Int32?>]`: Maximum image size that will be processed in KB).
-      - `[Timeout <TimeSpan?>]`: The timeout duration for the OCR engine. A longer timeout may increase success of OCR, but may add to the total processing time.
+      - `[Timeout <TimeSpan?>]`: The timeout duration for the OCR engine. A longer timeout might increase success of OCR, but might add to the total processing time.
     - `[RedundancyDetection <IMicrosoftGraphSecurityRedundancyDetectionSettings>]`: redundancyDetectionSettings
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[IsEnabled <Boolean?>]`: Indicates whether email threading and near duplicate detection are enabled.
@@ -4879,17 +4878,17 @@ BODYPARAMETER <IMicrosoftGraphSecurityEdiscoveryCase>: ediscoveryCase
       - `[SimilarityThreshold <Int32?>]`: Specifies the similarity level for documents to be put in the same near duplicate set. To learn more, see Document and email similarity threshold.
     - `[TopicModeling <IMicrosoftGraphSecurityTopicModelingSettings>]`: topicModelingSettings
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[DynamicallyAdjustTopicCount <Boolean?>]`: To learn more, see Adjust maximum number of themes dynamically.
-      - `[IgnoreNumbers <Boolean?>]`: To learn more, see Include numbers in themes.
-      - `[IsEnabled <Boolean?>]`: Indicates whether themes is enabled for the case.
-      - `[TopicCount <Int32?>]`: To learn more, see Maximum number of themes.
+      - `[DynamicallyAdjustTopicCount <Boolean?>]`: Indicates whether the themes model should dynamically optimize the number of generated topics. To learn more, see Adjust maximum number of themes dynamically.
+      - `[IgnoreNumbers <Boolean?>]`: Indicates whether the themes model should exclude numbers while parsing document texts. To learn more, see Include numbers in themes.
+      - `[IsEnabled <Boolean?>]`: Indicates whether themes model is enabled for the case.
+      - `[TopicCount <Int32?>]`: The total number of topics that the themes model will generate for a review set. To learn more, see Maximum number of themes.
   - `[Tags <IMicrosoftGraphSecurityEdiscoveryReviewTag[]>]`: Returns a list of ediscoveryReviewTag objects associated to this case.
 
 CLOSEDBY <IMicrosoftGraphIdentitySet>: identitySet
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Application <IMicrosoftGraphIdentity>]`: identity
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[DisplayName <String>]`: The identity's display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+    - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
     - `[Id <String>]`: Unique identifier for the identity.
   - `[Device <IMicrosoftGraphIdentity>]`: identity
   - `[User <IMicrosoftGraphIdentity>]`: identity
@@ -4912,7 +4911,7 @@ CUSTODIANS <IMicrosoftGraphSecurityEdiscoveryCustodian[]>: Returns a list of cas
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Application <IMicrosoftGraphIdentity>]`: identity
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
-        - `[DisplayName <String>]`: The identity's display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+        - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
         - `[Id <String>]`: Unique identifier for the identity.
       - `[Device <IMicrosoftGraphIdentity>]`: identity
       - `[User <IMicrosoftGraphIdentity>]`: identity
@@ -5475,12 +5474,12 @@ CUSTODIANS <IMicrosoftGraphSecurityEdiscoveryCustodian[]>: Returns a list of cas
                 - `[User <IMicrosoftGraphIdentity>]`: identity
                 - `[Conversation <IMicrosoftGraphTeamworkConversationIdentity>]`: teamworkConversationIdentity
                   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                  - `[DisplayName <String>]`: The identity's display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+                  - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
                   - `[Id <String>]`: Unique identifier for the identity.
                   - `[ConversationIdentityType <String>]`: teamworkConversationIdentityType
                 - `[Tag <IMicrosoftGraphTeamworkTagIdentity>]`: teamworkTagIdentity
                   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                  - `[DisplayName <String>]`: The identity's display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+                  - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
                   - `[Id <String>]`: Unique identifier for the identity.
             - `[MessageType <String>]`: chatMessageType
             - `[OnBehalfOf <IMicrosoftGraphChatMessageFromIdentitySet>]`: chatMessageFromIdentitySet
@@ -5514,7 +5513,7 @@ CUSTODIANS <IMicrosoftGraphSecurityEdiscoveryCustodian[]>: Returns a list of cas
             - `[JoinWebUrl <String>]`: The URL which can be clicked on to join or uniquely identify the meeting.
             - `[Organizer <IMicrosoftGraphTeamworkUserIdentity>]`: teamworkUserIdentity
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
-              - `[DisplayName <String>]`: The identity's display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+              - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
               - `[Id <String>]`: Unique identifier for the identity.
               - `[UserIdentityType <String>]`: teamworkUserIdentityType
           - `[Operations <IMicrosoftGraphTeamsAsyncOperation1[]>]`: A collection of all the Teams async operations that ran or are running on the chat. Nullable.
@@ -5593,8 +5592,8 @@ CUSTODIANS <IMicrosoftGraphSecurityEdiscoveryCustodian[]>: Returns a list of cas
             - `[StatusDetails <IMicrosoftGraphCloudPcStatusDetails>]`: cloudPcStatusDetails
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
               - `[AdditionalInformation <IMicrosoftGraphKeyValuePair[]>]`: Any additional information about the Cloud PC status.
-                - `[Name <String>]`: Name for this key-value pair. Possible names are: AdditionalWSFedEndpointCheckResult,  AllowedAuthenticationClassReferencesCheckResult, AlwaysRequireAuthenticationCheckResult,   AutoUpdateEnabledCheckResult, ClaimsProviderNameCheckResult, EncryptClaimsCheckResult,  EncryptedNameIdRequiredCheckResult, MonitoringEnabledCheckResult,NotBeforeSkewCheckResult,  RequestMFAFromClaimsProvidersCheckResult, SignedSamlRequestsRequiredCheckResult, AdditionalAuthenticationRulesCheckResult, TokenLifetimeCheckResult,  DelegationAuthorizationRulesCheckResult, IssuanceAuthorizationRulesCheckResult, IssuanceTransformRulesCheckResult.
-                - `[Value <String>]`: Value for this key-value pair. Possible result values are 0 (when the validation check passed), 1 (when the validation check failed), or 2 (when the validation check is a warning).
+                - `[Name <String>]`: Name for this key-value pair
+                - `[Value <String>]`: Value for this key-value pair
               - `[Code <String>]`: The code associated with the Cloud PC status.
               - `[Message <String>]`: The status message.
           - `[ManagedDeviceId <String>]`: The Intune device ID of the Cloud PC.
@@ -5898,7 +5897,7 @@ CUSTODIANS <IMicrosoftGraphSecurityEdiscoveryCustodian[]>: Returns a list of cas
                 - `[(Any) <Object>]`: This indicates any property can be added to this object.
                 - `[Height <Int32?>]`: Optional. Height of the image, in pixels. Read-only.
                 - `[Width <Int32?>]`: Optional. Width of the image, in pixels. Read-only.
-              - `[ListItem <IMicrosoftGraphListItem>]`: listItem
+              - `[ListItem <IMicrosoftGraphListItem1>]`: listItem
                 - `[(Any) <Object>]`: This indicates any property can be added to this object.
                 - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
                 - `[CreatedByUser <IMicrosoftGraphUser>]`: user
@@ -5981,7 +5980,7 @@ CUSTODIANS <IMicrosoftGraphSecurityEdiscoveryCustodian[]>: Returns a list of cas
                   - `[Group <IMicrosoftGraphIdentity>]`: identity
                   - `[SiteGroup <IMicrosoftGraphSharePointIdentity>]`: sharePointIdentity
                     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                    - `[DisplayName <String>]`: The identity's display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+                    - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
                     - `[Id <String>]`: Unique identifier for the identity.
                     - `[LoginName <String>]`: The sign in name of the SharePoint identity.
                   - `[SiteUser <IMicrosoftGraphSharePointIdentity>]`: sharePointIdentity
@@ -5994,7 +5993,7 @@ CUSTODIANS <IMicrosoftGraphSecurityEdiscoveryCustodian[]>: Returns a list of cas
                   - `[InvitedBy <IMicrosoftGraphIdentitySet>]`: identitySet
                   - `[RedeemedBy <String>]`: 
                   - `[SignInRequired <Boolean?>]`: If true the recipient of the invitation needs to sign in in order to access the shared item. Read-only.
-                - `[Link <IMicrosoftGraphSharingLink>]`: sharingLink
+                - `[Link <IMicrosoftGraphSharingLink1>]`: sharingLink
                   - `[(Any) <Object>]`: This indicates any property can be added to this object.
                   - `[Application <IMicrosoftGraphIdentity>]`: identity
                   - `[ConfiguratorUrl <String>]`: 
@@ -6069,7 +6068,7 @@ CUSTODIANS <IMicrosoftGraphSecurityEdiscoveryCustodian[]>: Returns a list of cas
                 - `[Application <String>]`: driveItemSourceApplication
                 - `[ExternalId <String>]`: The external identifier for the drive item from the source.
               - `[SpecialFolder <IMicrosoftGraphSpecialFolder>]`: specialFolder
-              - `[Subscriptions <IMicrosoftGraphSubscription[]>]`: The set of subscriptions on the item. Only supported on the root of a drive.
+              - `[Subscriptions <IMicrosoftGraphSubscription1[]>]`: The set of subscriptions on the item. Only supported on the root of a drive.
                 - `[Id <String>]`: 
                 - `[ApplicationId <String>]`: Optional. Identifier of the application used to create the subscription. Read-only.
                 - `[ChangeType <String>]`: Required. Indicates the type of change in the subscribed resource that will raise a change notification. The supported values are: created, updated, deleted. Multiple values can be combined using a comma-separated list. Note:  Drive root item and list change notifications support only the updated changeType. User and group change notifications support updated and deleted changeType.
@@ -6336,7 +6335,7 @@ CUSTODIANS <IMicrosoftGraphSecurityEdiscoveryCustodian[]>: Returns a list of cas
                   - `[Status <String>]`: workbookOperationStatus
                 - `[Tables <IMicrosoftGraphWorkbookTable1[]>]`: Represents a collection of tables associated with the workbook. Read-only.
                 - `[Worksheets <IMicrosoftGraphWorkbookWorksheet[]>]`: Represents a collection of worksheets associated with the workbook. Read-only.
-            - `[ListItem <IMicrosoftGraphListItem>]`: listItem
+            - `[ListItem <IMicrosoftGraphListItem1>]`: listItem
             - `[Times <IMicrosoftGraphItemActivityTimeSet>]`: itemActivityTimeSet
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
               - `[LastRecordedDateTime <DateTime?>]`: 
@@ -6458,7 +6457,7 @@ CUSTODIANS <IMicrosoftGraphSecurityEdiscoveryCustodian[]>: Returns a list of cas
                       - `[LocalizedNames <IMicrosoftGraphTermStoreLocalizedName[]>]`: Name of the set for each languageTag.
                         - `[LanguageTag <String>]`: The language tag for the label.
                         - `[Name <String>]`: The name in the localized language.
-                      - `[ParentGroup <IMicrosoftGraphTermStoreGroup>]`: group
+                      - `[ParentGroup <IMicrosoftGraphTermStoreGroup1>]`: group
                         - `[(Any) <Object>]`: This indicates any property can be added to this object.
                         - `[Id <String>]`: 
                         - `[CreatedDateTime <DateTime?>]`: Date and time of the group creation. Read-only.
@@ -6502,7 +6501,7 @@ CUSTODIANS <IMicrosoftGraphSecurityEdiscoveryCustodian[]>: Returns a list of cas
               - `[ColumnPositions <IMicrosoftGraphColumnDefinition[]>]`: Column order information in a content type.
               - `[Columns <IMicrosoftGraphColumnDefinition[]>]`: The collection of column definitions for this contentType.
               - `[Description <String>]`: The descriptive text for the item.
-              - `[DocumentSet <IMicrosoftGraphDocumentSet>]`: documentSet
+              - `[DocumentSet <IMicrosoftGraphDocumentSet1>]`: documentSet
                 - `[(Any) <Object>]`: This indicates any property can be added to this object.
                 - `[AllowedContentTypes <IMicrosoftGraphContentTypeInfo[]>]`: Content types allowed in document set.
                 - `[DefaultContents <IMicrosoftGraphDocumentSetContent[]>]`: Default contents of document set.
@@ -6530,7 +6529,7 @@ CUSTODIANS <IMicrosoftGraphSecurityEdiscoveryCustodian[]>: Returns a list of cas
               - `[Sealed <Boolean?>]`: If true, the content type cannot be modified by users or through push-down operations. Only site collection administrators can seal or unseal content types.
             - `[DisplayName <String>]`: The displayable title of the list.
             - `[Drive <IMicrosoftGraphDrive>]`: drive
-            - `[Items <IMicrosoftGraphListItem[]>]`: All items contained in the list.
+            - `[Items <IMicrosoftGraphListItem1[]>]`: All items contained in the list.
             - `[List <IMicrosoftGraphListInfo>]`: listInfo
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
               - `[ContentTypesEnabled <Boolean?>]`: If true, indicates that content types are enabled for this list.
@@ -6562,7 +6561,7 @@ CUSTODIANS <IMicrosoftGraphSecurityEdiscoveryCustodian[]>: Returns a list of cas
               - `[ResourceId <String>]`: A unique identifier for the result.
               - `[Type <String>]`: Type of the operation.
             - `[SharepointIds <IMicrosoftGraphSharepointIds>]`: sharepointIds
-            - `[Subscriptions <IMicrosoftGraphSubscription[]>]`: The set of subscriptions on the list.
+            - `[Subscriptions <IMicrosoftGraphSubscription1[]>]`: The set of subscriptions on the list.
             - `[System <IMicrosoftGraphSystemFacet>]`: systemFacet
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[Owner <IMicrosoftGraphIdentitySet>]`: identitySet
@@ -6844,7 +6843,6 @@ CUSTODIANS <IMicrosoftGraphSecurityEdiscoveryCustodian[]>: Returns a list of cas
           - `[Mail <String>]`: The SMTP address for the group, for example, 'serviceadmins@contoso.onmicrosoft.com'. Returned by default. Read-only. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
           - `[MailEnabled <Boolean?>]`: Specifies whether the group is mail-enabled. Required. Returned by default. Supports $filter (eq, ne, not, and eq on null values).
           - `[MailNickname <String>]`: The mail alias for the group, unique for Microsoft 365 groups in the organization. Maximum length is 64 characters. This property can contain only characters in the ASCII character set 0 - 127 except the following: @ () / [] ' ; : . <> , SPACE. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith).
-          - `[MdmAppId <String>]`: 
           - `[MemberOf <IMicrosoftGraphDirectoryObject[]>]`: Groups and administrative units that this group is a member of. HTTP Methods: GET (supported for all groups). Read-only. Nullable. Supports $expand.
           - `[Members <IMicrosoftGraphDirectoryObject[]>]`: Direct members of this group, who can be users, devices, other groups, or service principals. Supports the List members, Add member, and Remove member operations. Nullable. Supports $expand including nested $select. For example, /groups?$filter=startsWith(displayName,'Role')&$select=id,displayName&$expand=members($select=id,userPrincipalName,displayName).
           - `[MembersWithLicenseErrors <IMicrosoftGraphDirectoryObject[]>]`: A list of group members with license errors from this group-based license assignment. Read-only.
@@ -6910,7 +6908,7 @@ CUSTODIANS <IMicrosoftGraphSecurityEdiscoveryCustodian[]>: Returns a list of cas
                     - `[(Any) <Object>]`: This indicates any property can be added to this object.
                     - `[OneNoteClientUrl <IMicrosoftGraphExternalLink>]`: externalLink
                     - `[OneNoteWebUrl <IMicrosoftGraphExternalLink>]`: externalLink
-                  - `[Pages <IMicrosoftGraphOnenotePage[]>]`: The collection of pages in the section.  Read-only. Nullable.
+                  - `[Pages <IMicrosoftGraphOnenotePage1[]>]`: The collection of pages in the section.  Read-only. Nullable.
                     - `[CreatedDateTime <DateTime?>]`: The date and time when the page was created. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
                     - `[Self <String>]`: The endpoint where you can get details about the page. Read-only.
                     - `[Id <String>]`: 
@@ -6948,7 +6946,7 @@ CUSTODIANS <IMicrosoftGraphSecurityEdiscoveryCustodian[]>: Returns a list of cas
               - `[PercentComplete <String>]`: The operation percent complete if the operation is still in running status.
               - `[ResourceId <String>]`: The resource id.
               - `[ResourceLocation <String>]`: The resource URI for the object. For example, the resource URI for a copied page or section.
-            - `[Pages <IMicrosoftGraphOnenotePage[]>]`: The pages in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
+            - `[Pages <IMicrosoftGraphOnenotePage1[]>]`: The pages in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
             - `[Resources <IMicrosoftGraphOnenoteResource[]>]`: The image and other file resources in OneNote pages. Getting a resources collection is not supported, but you can get the binary content of a specific resource. Read-only. Nullable.
               - `[Self <String>]`: The endpoint where you can get details about the page. Read-only.
               - `[Id <String>]`: 
@@ -8000,7 +7998,7 @@ CUSTODIANS <IMicrosoftGraphSecurityEdiscoveryCustodian[]>: Returns a list of cas
         - `[OnPremisesProvisioningErrors <IMicrosoftGraphOnPremisesProvisioningError[]>]`: Errors when using Microsoft synchronization product during provisioning.  Supports $filter (eq, not, ge, le).
         - `[OnPremisesSamAccountName <String>]`: Contains the on-premises sAMAccountName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only. Supports $filter (eq, ne, not, ge, le, in, startsWith).
         - `[OnPremisesSecurityIdentifier <String>]`: Contains the on-premises security identifier (SID) for the user that was synchronized from on-premises to the cloud. Read-only. Supports $filter (eq including on null values).
-        - `[OnPremisesSyncEnabled <Boolean?>]`: true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced; null if this object has never been synced from an on-premises directory (default). Read-only. Supports $filter (eq, ne, not, in, and eq on null values).
+        - `[OnPremisesSyncEnabled <Boolean?>]`: true if this user object is currently being synced from an on-premises Active Directory (AD); otherwise the user isn't being synced and can be managed in Azure Active Directory (Azure AD). Read-only. Supports $filter (eq, ne, not, in, and eq on null values).
         - `[OnPremisesUserPrincipalName <String>]`: Contains the on-premises userPrincipalName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only. Supports $filter (eq, ne, not, ge, le, in, startsWith).
         - `[Onenote <IMicrosoftGraphOnenote>]`: onenote
         - `[OnlineMeetings <IMicrosoftGraphOnlineMeeting1[]>]`: 
@@ -8178,7 +8176,7 @@ CUSTODIANS <IMicrosoftGraphSecurityEdiscoveryCustodian[]>: Returns a list of cas
             - `[AccessReviewId <String>]`: The identifier of the accessReviewInstance parent. Supports $select. Read-only.
             - `[AppliedBy <IMicrosoftGraphUserIdentity>]`: userIdentity
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
-              - `[DisplayName <String>]`: The identity's display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+              - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
               - `[Id <String>]`: Unique identifier for the identity.
               - `[IPAddress <String>]`: Indicates the client IP address used by user performing the activity (audit log only).
               - `[UserPrincipalName <String>]`: The userPrincipalName attribute of the user.
@@ -8316,7 +8314,7 @@ CUSTODIANS <IMicrosoftGraphSecurityEdiscoveryCustodian[]>: Returns a list of cas
         - `[PostalCode <String>]`: The postal code for the user's postal address. The postal code is specific to the user's country/region. In the United States of America, this attribute contains the ZIP code. Maximum length is 40 characters. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
         - `[PreferredDataLocation <String>]`: The preferred data location for the user. For more information, see OneDrive Online Multi-Geo.
         - `[PreferredLanguage <String>]`: The preferred language for the user. Should follow ISO 639-1 Code; for example en-US. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
-        - `[PreferredName <String>]`: The preferred name for the user. Returned only on $select.
+        - `[PreferredName <String>]`: The preferred name for the user. Not Supported. This attribute returns an empty string.Returned only on $select.
         - `[Presence <IMicrosoftGraphPresence1>]`: presence
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[Id <String>]`: 
@@ -9092,7 +9090,7 @@ CUSTODIANS <IMicrosoftGraphSecurityEdiscoveryCustodian[]>: Returns a list of cas
                 - `[Name <String>]`: The display name of the attachment. This does not need to be the actual file name.
                 - `[Size <Int32?>]`: The length of the attachment in bytes.
               - `[Body <IMicrosoftGraphItemBody>]`: itemBody
-              - `[BodyLastModifiedDateTime <DateTime?>]`: The date and time when the task was last modified. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2020 would look like this: '2020-01-01T00:00:00Z'.
+              - `[BodyLastModifiedDateTime <DateTime?>]`: The date and time when the task body was last modified. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2020 would look like this: '2020-01-01T00:00:00Z'.
               - `[Categories <String[]>]`: The categories associated with the task. Each category corresponds to the displayName property of an outlookCategory that the user has defined.
               - `[ChecklistItems <IMicrosoftGraphChecklistItem[]>]`: A collection of smaller subtasks linked to the more complex parent task.
               - `[CompletedDateTime <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
@@ -9201,7 +9199,7 @@ CUSTODIANS <IMicrosoftGraphSecurityEdiscoveryCustodian[]>: Returns a list of cas
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[Id <String>]`: 
         - `[DefaultLanguageTag <String>]`: Default language of the term store.
-        - `[Groups <IMicrosoftGraphTermStoreGroup[]>]`: Collection of all groups available in the term store.
+        - `[Groups <IMicrosoftGraphTermStoreGroup1[]>]`: Collection of all groups available in the term store.
         - `[LanguageTags <String[]>]`: List of languages for the term store.
         - `[Sets <IMicrosoftGraphTermStoreSet[]>]`: Collection of all sets available in the term store.
   - `[UnifiedGroupSources <IMicrosoftGraphSecurityUnifiedGroupSource[]>]`: Data source entity for groups associated with the custodian.
@@ -9212,7 +9210,7 @@ CUSTODIANS <IMicrosoftGraphSecurityEdiscoveryCustodian[]>: Returns a list of cas
     - `[Id <String>]`: 
     - `[Group <IMicrosoftGraphGroup>]`: group
     - `[IncludedSources <String>]`: sourceType
-  - `[UserSources <IMicrosoftGraphSecurityUserSource[]>]`: Data source entity for a the custodian. This is the container for a custodian's mailbox and OneDrive for Business site.
+  - `[UserSources <IMicrosoftGraphSecurityUserSource[]>]`: Data source entity for a custodian. This is the container for a custodian's mailbox and OneDrive for Business site.
     - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
     - `[CreatedDateTime <DateTime?>]`: The date and time the dataSource was created.
     - `[DisplayName <String>]`: The display name of the dataSource. This will be the name of the SharePoint site.
@@ -9226,7 +9224,7 @@ LASTMODIFIEDBY <IMicrosoftGraphIdentitySet>: identitySet
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Application <IMicrosoftGraphIdentity>]`: identity
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[DisplayName <String>]`: The identity's display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+    - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
     - `[Id <String>]`: Unique identifier for the identity.
   - `[Device <IMicrosoftGraphIdentity>]`: identity
   - `[User <IMicrosoftGraphIdentity>]`: identity
@@ -9236,7 +9234,7 @@ LEGALHOLDS <IMicrosoftGraphSecurityEdiscoveryHoldPolicy[]>: Returns a list of ca
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Application <IMicrosoftGraphIdentity>]`: identity
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[DisplayName <String>]`: The identity's display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+      - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
       - `[Id <String>]`: Unique identifier for the identity.
     - `[Device <IMicrosoftGraphIdentity>]`: identity
     - `[User <IMicrosoftGraphIdentity>]`: identity
@@ -9250,7 +9248,7 @@ LEGALHOLDS <IMicrosoftGraphSecurityEdiscoveryHoldPolicy[]>: Returns a list of ca
   - `[ContentQuery <String>]`: KQL query that specifies content to be held in the specified locations. To learn more, see Keyword queries and search conditions for Content Search and eDiscovery.  To hold all content in the specified locations, leave contentQuery blank.
   - `[Errors <String[]>]`: Lists any errors that happened while placing the hold.
   - `[IsEnabled <Boolean?>]`: Indicates whether the hold is enabled and actively holding content.
-  - `[SiteSources <IMicrosoftGraphSecuritySiteSource[]>]`: 
+  - `[SiteSources <IMicrosoftGraphSecuritySiteSource[]>]`: Data sources that represent SharePoint sites.
     - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
     - `[CreatedDateTime <DateTime?>]`: The date and time the dataSource was created.
     - `[DisplayName <String>]`: The display name of the dataSource. This will be the name of the SharePoint site.
@@ -9800,12 +9798,12 @@ LEGALHOLDS <IMicrosoftGraphSecurityEdiscoveryHoldPolicy[]>: Returns a list of ca
                 - `[User <IMicrosoftGraphIdentity>]`: identity
                 - `[Conversation <IMicrosoftGraphTeamworkConversationIdentity>]`: teamworkConversationIdentity
                   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                  - `[DisplayName <String>]`: The identity's display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+                  - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
                   - `[Id <String>]`: Unique identifier for the identity.
                   - `[ConversationIdentityType <String>]`: teamworkConversationIdentityType
                 - `[Tag <IMicrosoftGraphTeamworkTagIdentity>]`: teamworkTagIdentity
                   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                  - `[DisplayName <String>]`: The identity's display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+                  - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
                   - `[Id <String>]`: Unique identifier for the identity.
             - `[MessageType <String>]`: chatMessageType
             - `[OnBehalfOf <IMicrosoftGraphChatMessageFromIdentitySet>]`: chatMessageFromIdentitySet
@@ -9839,7 +9837,7 @@ LEGALHOLDS <IMicrosoftGraphSecurityEdiscoveryHoldPolicy[]>: Returns a list of ca
             - `[JoinWebUrl <String>]`: The URL which can be clicked on to join or uniquely identify the meeting.
             - `[Organizer <IMicrosoftGraphTeamworkUserIdentity>]`: teamworkUserIdentity
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
-              - `[DisplayName <String>]`: The identity's display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+              - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
               - `[Id <String>]`: Unique identifier for the identity.
               - `[UserIdentityType <String>]`: teamworkUserIdentityType
           - `[Operations <IMicrosoftGraphTeamsAsyncOperation1[]>]`: A collection of all the Teams async operations that ran or are running on the chat. Nullable.
@@ -9918,8 +9916,8 @@ LEGALHOLDS <IMicrosoftGraphSecurityEdiscoveryHoldPolicy[]>: Returns a list of ca
             - `[StatusDetails <IMicrosoftGraphCloudPcStatusDetails>]`: cloudPcStatusDetails
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
               - `[AdditionalInformation <IMicrosoftGraphKeyValuePair[]>]`: Any additional information about the Cloud PC status.
-                - `[Name <String>]`: Name for this key-value pair. Possible names are: AdditionalWSFedEndpointCheckResult,  AllowedAuthenticationClassReferencesCheckResult, AlwaysRequireAuthenticationCheckResult,   AutoUpdateEnabledCheckResult, ClaimsProviderNameCheckResult, EncryptClaimsCheckResult,  EncryptedNameIdRequiredCheckResult, MonitoringEnabledCheckResult,NotBeforeSkewCheckResult,  RequestMFAFromClaimsProvidersCheckResult, SignedSamlRequestsRequiredCheckResult, AdditionalAuthenticationRulesCheckResult, TokenLifetimeCheckResult,  DelegationAuthorizationRulesCheckResult, IssuanceAuthorizationRulesCheckResult, IssuanceTransformRulesCheckResult.
-                - `[Value <String>]`: Value for this key-value pair. Possible result values are 0 (when the validation check passed), 1 (when the validation check failed), or 2 (when the validation check is a warning).
+                - `[Name <String>]`: Name for this key-value pair
+                - `[Value <String>]`: Value for this key-value pair
               - `[Code <String>]`: The code associated with the Cloud PC status.
               - `[Message <String>]`: The status message.
           - `[ManagedDeviceId <String>]`: The Intune device ID of the Cloud PC.
@@ -10223,7 +10221,7 @@ LEGALHOLDS <IMicrosoftGraphSecurityEdiscoveryHoldPolicy[]>: Returns a list of ca
                 - `[(Any) <Object>]`: This indicates any property can be added to this object.
                 - `[Height <Int32?>]`: Optional. Height of the image, in pixels. Read-only.
                 - `[Width <Int32?>]`: Optional. Width of the image, in pixels. Read-only.
-              - `[ListItem <IMicrosoftGraphListItem>]`: listItem
+              - `[ListItem <IMicrosoftGraphListItem1>]`: listItem
                 - `[(Any) <Object>]`: This indicates any property can be added to this object.
                 - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
                 - `[CreatedByUser <IMicrosoftGraphUser>]`: user
@@ -10306,7 +10304,7 @@ LEGALHOLDS <IMicrosoftGraphSecurityEdiscoveryHoldPolicy[]>: Returns a list of ca
                   - `[Group <IMicrosoftGraphIdentity>]`: identity
                   - `[SiteGroup <IMicrosoftGraphSharePointIdentity>]`: sharePointIdentity
                     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                    - `[DisplayName <String>]`: The identity's display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+                    - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
                     - `[Id <String>]`: Unique identifier for the identity.
                     - `[LoginName <String>]`: The sign in name of the SharePoint identity.
                   - `[SiteUser <IMicrosoftGraphSharePointIdentity>]`: sharePointIdentity
@@ -10319,7 +10317,7 @@ LEGALHOLDS <IMicrosoftGraphSecurityEdiscoveryHoldPolicy[]>: Returns a list of ca
                   - `[InvitedBy <IMicrosoftGraphIdentitySet>]`: identitySet
                   - `[RedeemedBy <String>]`: 
                   - `[SignInRequired <Boolean?>]`: If true the recipient of the invitation needs to sign in in order to access the shared item. Read-only.
-                - `[Link <IMicrosoftGraphSharingLink>]`: sharingLink
+                - `[Link <IMicrosoftGraphSharingLink1>]`: sharingLink
                   - `[(Any) <Object>]`: This indicates any property can be added to this object.
                   - `[Application <IMicrosoftGraphIdentity>]`: identity
                   - `[ConfiguratorUrl <String>]`: 
@@ -10394,7 +10392,7 @@ LEGALHOLDS <IMicrosoftGraphSecurityEdiscoveryHoldPolicy[]>: Returns a list of ca
                 - `[Application <String>]`: driveItemSourceApplication
                 - `[ExternalId <String>]`: The external identifier for the drive item from the source.
               - `[SpecialFolder <IMicrosoftGraphSpecialFolder>]`: specialFolder
-              - `[Subscriptions <IMicrosoftGraphSubscription[]>]`: The set of subscriptions on the item. Only supported on the root of a drive.
+              - `[Subscriptions <IMicrosoftGraphSubscription1[]>]`: The set of subscriptions on the item. Only supported on the root of a drive.
                 - `[Id <String>]`: 
                 - `[ApplicationId <String>]`: Optional. Identifier of the application used to create the subscription. Read-only.
                 - `[ChangeType <String>]`: Required. Indicates the type of change in the subscribed resource that will raise a change notification. The supported values are: created, updated, deleted. Multiple values can be combined using a comma-separated list. Note:  Drive root item and list change notifications support only the updated changeType. User and group change notifications support updated and deleted changeType.
@@ -10661,7 +10659,7 @@ LEGALHOLDS <IMicrosoftGraphSecurityEdiscoveryHoldPolicy[]>: Returns a list of ca
                   - `[Status <String>]`: workbookOperationStatus
                 - `[Tables <IMicrosoftGraphWorkbookTable1[]>]`: Represents a collection of tables associated with the workbook. Read-only.
                 - `[Worksheets <IMicrosoftGraphWorkbookWorksheet[]>]`: Represents a collection of worksheets associated with the workbook. Read-only.
-            - `[ListItem <IMicrosoftGraphListItem>]`: listItem
+            - `[ListItem <IMicrosoftGraphListItem1>]`: listItem
             - `[Times <IMicrosoftGraphItemActivityTimeSet>]`: itemActivityTimeSet
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
               - `[LastRecordedDateTime <DateTime?>]`: 
@@ -10783,7 +10781,7 @@ LEGALHOLDS <IMicrosoftGraphSecurityEdiscoveryHoldPolicy[]>: Returns a list of ca
                       - `[LocalizedNames <IMicrosoftGraphTermStoreLocalizedName[]>]`: Name of the set for each languageTag.
                         - `[LanguageTag <String>]`: The language tag for the label.
                         - `[Name <String>]`: The name in the localized language.
-                      - `[ParentGroup <IMicrosoftGraphTermStoreGroup>]`: group
+                      - `[ParentGroup <IMicrosoftGraphTermStoreGroup1>]`: group
                         - `[(Any) <Object>]`: This indicates any property can be added to this object.
                         - `[Id <String>]`: 
                         - `[CreatedDateTime <DateTime?>]`: Date and time of the group creation. Read-only.
@@ -10827,7 +10825,7 @@ LEGALHOLDS <IMicrosoftGraphSecurityEdiscoveryHoldPolicy[]>: Returns a list of ca
               - `[ColumnPositions <IMicrosoftGraphColumnDefinition[]>]`: Column order information in a content type.
               - `[Columns <IMicrosoftGraphColumnDefinition[]>]`: The collection of column definitions for this contentType.
               - `[Description <String>]`: The descriptive text for the item.
-              - `[DocumentSet <IMicrosoftGraphDocumentSet>]`: documentSet
+              - `[DocumentSet <IMicrosoftGraphDocumentSet1>]`: documentSet
                 - `[(Any) <Object>]`: This indicates any property can be added to this object.
                 - `[AllowedContentTypes <IMicrosoftGraphContentTypeInfo[]>]`: Content types allowed in document set.
                 - `[DefaultContents <IMicrosoftGraphDocumentSetContent[]>]`: Default contents of document set.
@@ -10855,7 +10853,7 @@ LEGALHOLDS <IMicrosoftGraphSecurityEdiscoveryHoldPolicy[]>: Returns a list of ca
               - `[Sealed <Boolean?>]`: If true, the content type cannot be modified by users or through push-down operations. Only site collection administrators can seal or unseal content types.
             - `[DisplayName <String>]`: The displayable title of the list.
             - `[Drive <IMicrosoftGraphDrive>]`: drive
-            - `[Items <IMicrosoftGraphListItem[]>]`: All items contained in the list.
+            - `[Items <IMicrosoftGraphListItem1[]>]`: All items contained in the list.
             - `[List <IMicrosoftGraphListInfo>]`: listInfo
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
               - `[ContentTypesEnabled <Boolean?>]`: If true, indicates that content types are enabled for this list.
@@ -10887,7 +10885,7 @@ LEGALHOLDS <IMicrosoftGraphSecurityEdiscoveryHoldPolicy[]>: Returns a list of ca
               - `[ResourceId <String>]`: A unique identifier for the result.
               - `[Type <String>]`: Type of the operation.
             - `[SharepointIds <IMicrosoftGraphSharepointIds>]`: sharepointIds
-            - `[Subscriptions <IMicrosoftGraphSubscription[]>]`: The set of subscriptions on the list.
+            - `[Subscriptions <IMicrosoftGraphSubscription1[]>]`: The set of subscriptions on the list.
             - `[System <IMicrosoftGraphSystemFacet>]`: systemFacet
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[Owner <IMicrosoftGraphIdentitySet>]`: identitySet
@@ -11169,7 +11167,6 @@ LEGALHOLDS <IMicrosoftGraphSecurityEdiscoveryHoldPolicy[]>: Returns a list of ca
           - `[Mail <String>]`: The SMTP address for the group, for example, 'serviceadmins@contoso.onmicrosoft.com'. Returned by default. Read-only. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
           - `[MailEnabled <Boolean?>]`: Specifies whether the group is mail-enabled. Required. Returned by default. Supports $filter (eq, ne, not, and eq on null values).
           - `[MailNickname <String>]`: The mail alias for the group, unique for Microsoft 365 groups in the organization. Maximum length is 64 characters. This property can contain only characters in the ASCII character set 0 - 127 except the following: @ () / [] ' ; : . <> , SPACE. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith).
-          - `[MdmAppId <String>]`: 
           - `[MemberOf <IMicrosoftGraphDirectoryObject[]>]`: Groups and administrative units that this group is a member of. HTTP Methods: GET (supported for all groups). Read-only. Nullable. Supports $expand.
           - `[Members <IMicrosoftGraphDirectoryObject[]>]`: Direct members of this group, who can be users, devices, other groups, or service principals. Supports the List members, Add member, and Remove member operations. Nullable. Supports $expand including nested $select. For example, /groups?$filter=startsWith(displayName,'Role')&$select=id,displayName&$expand=members($select=id,userPrincipalName,displayName).
           - `[MembersWithLicenseErrors <IMicrosoftGraphDirectoryObject[]>]`: A list of group members with license errors from this group-based license assignment. Read-only.
@@ -11235,7 +11232,7 @@ LEGALHOLDS <IMicrosoftGraphSecurityEdiscoveryHoldPolicy[]>: Returns a list of ca
                     - `[(Any) <Object>]`: This indicates any property can be added to this object.
                     - `[OneNoteClientUrl <IMicrosoftGraphExternalLink>]`: externalLink
                     - `[OneNoteWebUrl <IMicrosoftGraphExternalLink>]`: externalLink
-                  - `[Pages <IMicrosoftGraphOnenotePage[]>]`: The collection of pages in the section.  Read-only. Nullable.
+                  - `[Pages <IMicrosoftGraphOnenotePage1[]>]`: The collection of pages in the section.  Read-only. Nullable.
                     - `[CreatedDateTime <DateTime?>]`: The date and time when the page was created. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
                     - `[Self <String>]`: The endpoint where you can get details about the page. Read-only.
                     - `[Id <String>]`: 
@@ -11273,7 +11270,7 @@ LEGALHOLDS <IMicrosoftGraphSecurityEdiscoveryHoldPolicy[]>: Returns a list of ca
               - `[PercentComplete <String>]`: The operation percent complete if the operation is still in running status.
               - `[ResourceId <String>]`: The resource id.
               - `[ResourceLocation <String>]`: The resource URI for the object. For example, the resource URI for a copied page or section.
-            - `[Pages <IMicrosoftGraphOnenotePage[]>]`: The pages in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
+            - `[Pages <IMicrosoftGraphOnenotePage1[]>]`: The pages in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
             - `[Resources <IMicrosoftGraphOnenoteResource[]>]`: The image and other file resources in OneNote pages. Getting a resources collection is not supported, but you can get the binary content of a specific resource. Read-only. Nullable.
               - `[Self <String>]`: The endpoint where you can get details about the page. Read-only.
               - `[Id <String>]`: 
@@ -12325,7 +12322,7 @@ LEGALHOLDS <IMicrosoftGraphSecurityEdiscoveryHoldPolicy[]>: Returns a list of ca
         - `[OnPremisesProvisioningErrors <IMicrosoftGraphOnPremisesProvisioningError[]>]`: Errors when using Microsoft synchronization product during provisioning.  Supports $filter (eq, not, ge, le).
         - `[OnPremisesSamAccountName <String>]`: Contains the on-premises sAMAccountName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only. Supports $filter (eq, ne, not, ge, le, in, startsWith).
         - `[OnPremisesSecurityIdentifier <String>]`: Contains the on-premises security identifier (SID) for the user that was synchronized from on-premises to the cloud. Read-only. Supports $filter (eq including on null values).
-        - `[OnPremisesSyncEnabled <Boolean?>]`: true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced; null if this object has never been synced from an on-premises directory (default). Read-only. Supports $filter (eq, ne, not, in, and eq on null values).
+        - `[OnPremisesSyncEnabled <Boolean?>]`: true if this user object is currently being synced from an on-premises Active Directory (AD); otherwise the user isn't being synced and can be managed in Azure Active Directory (Azure AD). Read-only. Supports $filter (eq, ne, not, in, and eq on null values).
         - `[OnPremisesUserPrincipalName <String>]`: Contains the on-premises userPrincipalName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only. Supports $filter (eq, ne, not, ge, le, in, startsWith).
         - `[Onenote <IMicrosoftGraphOnenote>]`: onenote
         - `[OnlineMeetings <IMicrosoftGraphOnlineMeeting1[]>]`: 
@@ -12503,7 +12500,7 @@ LEGALHOLDS <IMicrosoftGraphSecurityEdiscoveryHoldPolicy[]>: Returns a list of ca
             - `[AccessReviewId <String>]`: The identifier of the accessReviewInstance parent. Supports $select. Read-only.
             - `[AppliedBy <IMicrosoftGraphUserIdentity>]`: userIdentity
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
-              - `[DisplayName <String>]`: The identity's display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+              - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
               - `[Id <String>]`: Unique identifier for the identity.
               - `[IPAddress <String>]`: Indicates the client IP address used by user performing the activity (audit log only).
               - `[UserPrincipalName <String>]`: The userPrincipalName attribute of the user.
@@ -12641,7 +12638,7 @@ LEGALHOLDS <IMicrosoftGraphSecurityEdiscoveryHoldPolicy[]>: Returns a list of ca
         - `[PostalCode <String>]`: The postal code for the user's postal address. The postal code is specific to the user's country/region. In the United States of America, this attribute contains the ZIP code. Maximum length is 40 characters. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
         - `[PreferredDataLocation <String>]`: The preferred data location for the user. For more information, see OneDrive Online Multi-Geo.
         - `[PreferredLanguage <String>]`: The preferred language for the user. Should follow ISO 639-1 Code; for example en-US. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
-        - `[PreferredName <String>]`: The preferred name for the user. Returned only on $select.
+        - `[PreferredName <String>]`: The preferred name for the user. Not Supported. This attribute returns an empty string.Returned only on $select.
         - `[Presence <IMicrosoftGraphPresence1>]`: presence
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[Id <String>]`: 
@@ -13417,7 +13414,7 @@ LEGALHOLDS <IMicrosoftGraphSecurityEdiscoveryHoldPolicy[]>: Returns a list of ca
                 - `[Name <String>]`: The display name of the attachment. This does not need to be the actual file name.
                 - `[Size <Int32?>]`: The length of the attachment in bytes.
               - `[Body <IMicrosoftGraphItemBody>]`: itemBody
-              - `[BodyLastModifiedDateTime <DateTime?>]`: The date and time when the task was last modified. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2020 would look like this: '2020-01-01T00:00:00Z'.
+              - `[BodyLastModifiedDateTime <DateTime?>]`: The date and time when the task body was last modified. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2020 would look like this: '2020-01-01T00:00:00Z'.
               - `[Categories <String[]>]`: The categories associated with the task. Each category corresponds to the displayName property of an outlookCategory that the user has defined.
               - `[ChecklistItems <IMicrosoftGraphChecklistItem[]>]`: A collection of smaller subtasks linked to the more complex parent task.
               - `[CompletedDateTime <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
@@ -13526,10 +13523,10 @@ LEGALHOLDS <IMicrosoftGraphSecurityEdiscoveryHoldPolicy[]>: Returns a list of ca
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[Id <String>]`: 
         - `[DefaultLanguageTag <String>]`: Default language of the term store.
-        - `[Groups <IMicrosoftGraphTermStoreGroup[]>]`: Collection of all groups available in the term store.
+        - `[Groups <IMicrosoftGraphTermStoreGroup1[]>]`: Collection of all groups available in the term store.
         - `[LanguageTags <String[]>]`: List of languages for the term store.
         - `[Sets <IMicrosoftGraphTermStoreSet[]>]`: Collection of all sets available in the term store.
-  - `[UserSources <IMicrosoftGraphSecurityUserSource[]>]`: 
+  - `[UserSources <IMicrosoftGraphSecurityUserSource[]>]`: Data sources that represent Exchange mailboxes.
     - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
     - `[CreatedDateTime <DateTime?>]`: The date and time the dataSource was created.
     - `[DisplayName <String>]`: The display name of the dataSource. This will be the name of the SharePoint site.
@@ -13554,7 +13551,7 @@ NONCUSTODIALDATASOURCES <IMicrosoftGraphSecurityEdiscoveryNoncustodialDataSource
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Application <IMicrosoftGraphIdentity>]`: identity
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
-        - `[DisplayName <String>]`: The identity's display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+        - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
         - `[Id <String>]`: Unique identifier for the identity.
       - `[Device <IMicrosoftGraphIdentity>]`: identity
       - `[User <IMicrosoftGraphIdentity>]`: identity
@@ -13584,7 +13581,7 @@ OPERATIONS <IMicrosoftGraphSecurityCaseOperation[]>: Returns a list of case case
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Application <IMicrosoftGraphIdentity>]`: identity
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[DisplayName <String>]`: The identity's display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+      - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
       - `[Id <String>]`: Unique identifier for the identity.
     - `[Device <IMicrosoftGraphIdentity>]`: identity
     - `[User <IMicrosoftGraphIdentity>]`: identity
@@ -13602,7 +13599,7 @@ REVIEWSETS <IMicrosoftGraphSecurityEdiscoveryReviewSet[]>: Returns a list of eDi
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Application <IMicrosoftGraphIdentity>]`: identity
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[DisplayName <String>]`: The identity's display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+      - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
       - `[Id <String>]`: Unique identifier for the identity.
     - `[Device <IMicrosoftGraphIdentity>]`: identity
     - `[User <IMicrosoftGraphIdentity>]`: identity
@@ -14199,12 +14196,12 @@ REVIEWSETS <IMicrosoftGraphSecurityEdiscoveryReviewSet[]>: Returns a list of eDi
                     - `[User <IMicrosoftGraphIdentity>]`: identity
                     - `[Conversation <IMicrosoftGraphTeamworkConversationIdentity>]`: teamworkConversationIdentity
                       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                      - `[DisplayName <String>]`: The identity's display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+                      - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
                       - `[Id <String>]`: Unique identifier for the identity.
                       - `[ConversationIdentityType <String>]`: teamworkConversationIdentityType
                     - `[Tag <IMicrosoftGraphTeamworkTagIdentity>]`: teamworkTagIdentity
                       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                      - `[DisplayName <String>]`: The identity's display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+                      - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
                       - `[Id <String>]`: Unique identifier for the identity.
                 - `[MessageType <String>]`: chatMessageType
                 - `[OnBehalfOf <IMicrosoftGraphChatMessageFromIdentitySet>]`: chatMessageFromIdentitySet
@@ -14238,7 +14235,7 @@ REVIEWSETS <IMicrosoftGraphSecurityEdiscoveryReviewSet[]>: Returns a list of eDi
                 - `[JoinWebUrl <String>]`: The URL which can be clicked on to join or uniquely identify the meeting.
                 - `[Organizer <IMicrosoftGraphTeamworkUserIdentity>]`: teamworkUserIdentity
                   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                  - `[DisplayName <String>]`: The identity's display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+                  - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
                   - `[Id <String>]`: Unique identifier for the identity.
                   - `[UserIdentityType <String>]`: teamworkUserIdentityType
               - `[Operations <IMicrosoftGraphTeamsAsyncOperation1[]>]`: A collection of all the Teams async operations that ran or are running on the chat. Nullable.
@@ -14317,8 +14314,8 @@ REVIEWSETS <IMicrosoftGraphSecurityEdiscoveryReviewSet[]>: Returns a list of eDi
                 - `[StatusDetails <IMicrosoftGraphCloudPcStatusDetails>]`: cloudPcStatusDetails
                   - `[(Any) <Object>]`: This indicates any property can be added to this object.
                   - `[AdditionalInformation <IMicrosoftGraphKeyValuePair[]>]`: Any additional information about the Cloud PC status.
-                    - `[Name <String>]`: Name for this key-value pair. Possible names are: AdditionalWSFedEndpointCheckResult,  AllowedAuthenticationClassReferencesCheckResult, AlwaysRequireAuthenticationCheckResult,   AutoUpdateEnabledCheckResult, ClaimsProviderNameCheckResult, EncryptClaimsCheckResult,  EncryptedNameIdRequiredCheckResult, MonitoringEnabledCheckResult,NotBeforeSkewCheckResult,  RequestMFAFromClaimsProvidersCheckResult, SignedSamlRequestsRequiredCheckResult, AdditionalAuthenticationRulesCheckResult, TokenLifetimeCheckResult,  DelegationAuthorizationRulesCheckResult, IssuanceAuthorizationRulesCheckResult, IssuanceTransformRulesCheckResult.
-                    - `[Value <String>]`: Value for this key-value pair. Possible result values are 0 (when the validation check passed), 1 (when the validation check failed), or 2 (when the validation check is a warning).
+                    - `[Name <String>]`: Name for this key-value pair
+                    - `[Value <String>]`: Value for this key-value pair
                   - `[Code <String>]`: The code associated with the Cloud PC status.
                   - `[Message <String>]`: The status message.
               - `[ManagedDeviceId <String>]`: The Intune device ID of the Cloud PC.
@@ -14622,7 +14619,7 @@ REVIEWSETS <IMicrosoftGraphSecurityEdiscoveryReviewSet[]>: Returns a list of eDi
                     - `[(Any) <Object>]`: This indicates any property can be added to this object.
                     - `[Height <Int32?>]`: Optional. Height of the image, in pixels. Read-only.
                     - `[Width <Int32?>]`: Optional. Width of the image, in pixels. Read-only.
-                  - `[ListItem <IMicrosoftGraphListItem>]`: listItem
+                  - `[ListItem <IMicrosoftGraphListItem1>]`: listItem
                     - `[(Any) <Object>]`: This indicates any property can be added to this object.
                     - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
                     - `[CreatedByUser <IMicrosoftGraphUser>]`: user
@@ -14705,7 +14702,7 @@ REVIEWSETS <IMicrosoftGraphSecurityEdiscoveryReviewSet[]>: Returns a list of eDi
                       - `[Group <IMicrosoftGraphIdentity>]`: identity
                       - `[SiteGroup <IMicrosoftGraphSharePointIdentity>]`: sharePointIdentity
                         - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                        - `[DisplayName <String>]`: The identity's display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+                        - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
                         - `[Id <String>]`: Unique identifier for the identity.
                         - `[LoginName <String>]`: The sign in name of the SharePoint identity.
                       - `[SiteUser <IMicrosoftGraphSharePointIdentity>]`: sharePointIdentity
@@ -14718,7 +14715,7 @@ REVIEWSETS <IMicrosoftGraphSecurityEdiscoveryReviewSet[]>: Returns a list of eDi
                       - `[InvitedBy <IMicrosoftGraphIdentitySet>]`: identitySet
                       - `[RedeemedBy <String>]`: 
                       - `[SignInRequired <Boolean?>]`: If true the recipient of the invitation needs to sign in in order to access the shared item. Read-only.
-                    - `[Link <IMicrosoftGraphSharingLink>]`: sharingLink
+                    - `[Link <IMicrosoftGraphSharingLink1>]`: sharingLink
                       - `[(Any) <Object>]`: This indicates any property can be added to this object.
                       - `[Application <IMicrosoftGraphIdentity>]`: identity
                       - `[ConfiguratorUrl <String>]`: 
@@ -14793,7 +14790,7 @@ REVIEWSETS <IMicrosoftGraphSecurityEdiscoveryReviewSet[]>: Returns a list of eDi
                     - `[Application <String>]`: driveItemSourceApplication
                     - `[ExternalId <String>]`: The external identifier for the drive item from the source.
                   - `[SpecialFolder <IMicrosoftGraphSpecialFolder>]`: specialFolder
-                  - `[Subscriptions <IMicrosoftGraphSubscription[]>]`: The set of subscriptions on the item. Only supported on the root of a drive.
+                  - `[Subscriptions <IMicrosoftGraphSubscription1[]>]`: The set of subscriptions on the item. Only supported on the root of a drive.
                     - `[Id <String>]`: 
                     - `[ApplicationId <String>]`: Optional. Identifier of the application used to create the subscription. Read-only.
                     - `[ChangeType <String>]`: Required. Indicates the type of change in the subscribed resource that will raise a change notification. The supported values are: created, updated, deleted. Multiple values can be combined using a comma-separated list. Note:  Drive root item and list change notifications support only the updated changeType. User and group change notifications support updated and deleted changeType.
@@ -15060,7 +15057,7 @@ REVIEWSETS <IMicrosoftGraphSecurityEdiscoveryReviewSet[]>: Returns a list of eDi
                       - `[Status <String>]`: workbookOperationStatus
                     - `[Tables <IMicrosoftGraphWorkbookTable1[]>]`: Represents a collection of tables associated with the workbook. Read-only.
                     - `[Worksheets <IMicrosoftGraphWorkbookWorksheet[]>]`: Represents a collection of worksheets associated with the workbook. Read-only.
-                - `[ListItem <IMicrosoftGraphListItem>]`: listItem
+                - `[ListItem <IMicrosoftGraphListItem1>]`: listItem
                 - `[Times <IMicrosoftGraphItemActivityTimeSet>]`: itemActivityTimeSet
                   - `[(Any) <Object>]`: This indicates any property can be added to this object.
                   - `[LastRecordedDateTime <DateTime?>]`: 
@@ -15182,7 +15179,7 @@ REVIEWSETS <IMicrosoftGraphSecurityEdiscoveryReviewSet[]>: Returns a list of eDi
                           - `[LocalizedNames <IMicrosoftGraphTermStoreLocalizedName[]>]`: Name of the set for each languageTag.
                             - `[LanguageTag <String>]`: The language tag for the label.
                             - `[Name <String>]`: The name in the localized language.
-                          - `[ParentGroup <IMicrosoftGraphTermStoreGroup>]`: group
+                          - `[ParentGroup <IMicrosoftGraphTermStoreGroup1>]`: group
                             - `[(Any) <Object>]`: This indicates any property can be added to this object.
                             - `[Id <String>]`: 
                             - `[CreatedDateTime <DateTime?>]`: Date and time of the group creation. Read-only.
@@ -15226,7 +15223,7 @@ REVIEWSETS <IMicrosoftGraphSecurityEdiscoveryReviewSet[]>: Returns a list of eDi
                   - `[ColumnPositions <IMicrosoftGraphColumnDefinition[]>]`: Column order information in a content type.
                   - `[Columns <IMicrosoftGraphColumnDefinition[]>]`: The collection of column definitions for this contentType.
                   - `[Description <String>]`: The descriptive text for the item.
-                  - `[DocumentSet <IMicrosoftGraphDocumentSet>]`: documentSet
+                  - `[DocumentSet <IMicrosoftGraphDocumentSet1>]`: documentSet
                     - `[(Any) <Object>]`: This indicates any property can be added to this object.
                     - `[AllowedContentTypes <IMicrosoftGraphContentTypeInfo[]>]`: Content types allowed in document set.
                     - `[DefaultContents <IMicrosoftGraphDocumentSetContent[]>]`: Default contents of document set.
@@ -15254,7 +15251,7 @@ REVIEWSETS <IMicrosoftGraphSecurityEdiscoveryReviewSet[]>: Returns a list of eDi
                   - `[Sealed <Boolean?>]`: If true, the content type cannot be modified by users or through push-down operations. Only site collection administrators can seal or unseal content types.
                 - `[DisplayName <String>]`: The displayable title of the list.
                 - `[Drive <IMicrosoftGraphDrive>]`: drive
-                - `[Items <IMicrosoftGraphListItem[]>]`: All items contained in the list.
+                - `[Items <IMicrosoftGraphListItem1[]>]`: All items contained in the list.
                 - `[List <IMicrosoftGraphListInfo>]`: listInfo
                   - `[(Any) <Object>]`: This indicates any property can be added to this object.
                   - `[ContentTypesEnabled <Boolean?>]`: If true, indicates that content types are enabled for this list.
@@ -15286,7 +15283,7 @@ REVIEWSETS <IMicrosoftGraphSecurityEdiscoveryReviewSet[]>: Returns a list of eDi
                   - `[ResourceId <String>]`: A unique identifier for the result.
                   - `[Type <String>]`: Type of the operation.
                 - `[SharepointIds <IMicrosoftGraphSharepointIds>]`: sharepointIds
-                - `[Subscriptions <IMicrosoftGraphSubscription[]>]`: The set of subscriptions on the list.
+                - `[Subscriptions <IMicrosoftGraphSubscription1[]>]`: The set of subscriptions on the list.
                 - `[System <IMicrosoftGraphSystemFacet>]`: systemFacet
                   - `[(Any) <Object>]`: This indicates any property can be added to this object.
               - `[Owner <IMicrosoftGraphIdentitySet>]`: identitySet
@@ -15568,7 +15565,6 @@ REVIEWSETS <IMicrosoftGraphSecurityEdiscoveryReviewSet[]>: Returns a list of eDi
               - `[Mail <String>]`: The SMTP address for the group, for example, 'serviceadmins@contoso.onmicrosoft.com'. Returned by default. Read-only. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
               - `[MailEnabled <Boolean?>]`: Specifies whether the group is mail-enabled. Required. Returned by default. Supports $filter (eq, ne, not, and eq on null values).
               - `[MailNickname <String>]`: The mail alias for the group, unique for Microsoft 365 groups in the organization. Maximum length is 64 characters. This property can contain only characters in the ASCII character set 0 - 127 except the following: @ () / [] ' ; : . <> , SPACE. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith).
-              - `[MdmAppId <String>]`: 
               - `[MemberOf <IMicrosoftGraphDirectoryObject[]>]`: Groups and administrative units that this group is a member of. HTTP Methods: GET (supported for all groups). Read-only. Nullable. Supports $expand.
               - `[Members <IMicrosoftGraphDirectoryObject[]>]`: Direct members of this group, who can be users, devices, other groups, or service principals. Supports the List members, Add member, and Remove member operations. Nullable. Supports $expand including nested $select. For example, /groups?$filter=startsWith(displayName,'Role')&$select=id,displayName&$expand=members($select=id,userPrincipalName,displayName).
               - `[MembersWithLicenseErrors <IMicrosoftGraphDirectoryObject[]>]`: A list of group members with license errors from this group-based license assignment. Read-only.
@@ -15634,7 +15630,7 @@ REVIEWSETS <IMicrosoftGraphSecurityEdiscoveryReviewSet[]>: Returns a list of eDi
                         - `[(Any) <Object>]`: This indicates any property can be added to this object.
                         - `[OneNoteClientUrl <IMicrosoftGraphExternalLink>]`: externalLink
                         - `[OneNoteWebUrl <IMicrosoftGraphExternalLink>]`: externalLink
-                      - `[Pages <IMicrosoftGraphOnenotePage[]>]`: The collection of pages in the section.  Read-only. Nullable.
+                      - `[Pages <IMicrosoftGraphOnenotePage1[]>]`: The collection of pages in the section.  Read-only. Nullable.
                         - `[CreatedDateTime <DateTime?>]`: The date and time when the page was created. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
                         - `[Self <String>]`: The endpoint where you can get details about the page. Read-only.
                         - `[Id <String>]`: 
@@ -15672,7 +15668,7 @@ REVIEWSETS <IMicrosoftGraphSecurityEdiscoveryReviewSet[]>: Returns a list of eDi
                   - `[PercentComplete <String>]`: The operation percent complete if the operation is still in running status.
                   - `[ResourceId <String>]`: The resource id.
                   - `[ResourceLocation <String>]`: The resource URI for the object. For example, the resource URI for a copied page or section.
-                - `[Pages <IMicrosoftGraphOnenotePage[]>]`: The pages in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
+                - `[Pages <IMicrosoftGraphOnenotePage1[]>]`: The pages in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
                 - `[Resources <IMicrosoftGraphOnenoteResource[]>]`: The image and other file resources in OneNote pages. Getting a resources collection is not supported, but you can get the binary content of a specific resource. Read-only. Nullable.
                   - `[Self <String>]`: The endpoint where you can get details about the page. Read-only.
                   - `[Id <String>]`: 
@@ -16724,7 +16720,7 @@ REVIEWSETS <IMicrosoftGraphSecurityEdiscoveryReviewSet[]>: Returns a list of eDi
             - `[OnPremisesProvisioningErrors <IMicrosoftGraphOnPremisesProvisioningError[]>]`: Errors when using Microsoft synchronization product during provisioning.  Supports $filter (eq, not, ge, le).
             - `[OnPremisesSamAccountName <String>]`: Contains the on-premises sAMAccountName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only. Supports $filter (eq, ne, not, ge, le, in, startsWith).
             - `[OnPremisesSecurityIdentifier <String>]`: Contains the on-premises security identifier (SID) for the user that was synchronized from on-premises to the cloud. Read-only. Supports $filter (eq including on null values).
-            - `[OnPremisesSyncEnabled <Boolean?>]`: true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced; null if this object has never been synced from an on-premises directory (default). Read-only. Supports $filter (eq, ne, not, in, and eq on null values).
+            - `[OnPremisesSyncEnabled <Boolean?>]`: true if this user object is currently being synced from an on-premises Active Directory (AD); otherwise the user isn't being synced and can be managed in Azure Active Directory (Azure AD). Read-only. Supports $filter (eq, ne, not, in, and eq on null values).
             - `[OnPremisesUserPrincipalName <String>]`: Contains the on-premises userPrincipalName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only. Supports $filter (eq, ne, not, ge, le, in, startsWith).
             - `[Onenote <IMicrosoftGraphOnenote>]`: onenote
             - `[OnlineMeetings <IMicrosoftGraphOnlineMeeting1[]>]`: 
@@ -16902,7 +16898,7 @@ REVIEWSETS <IMicrosoftGraphSecurityEdiscoveryReviewSet[]>: Returns a list of eDi
                 - `[AccessReviewId <String>]`: The identifier of the accessReviewInstance parent. Supports $select. Read-only.
                 - `[AppliedBy <IMicrosoftGraphUserIdentity>]`: userIdentity
                   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                  - `[DisplayName <String>]`: The identity's display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+                  - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
                   - `[Id <String>]`: Unique identifier for the identity.
                   - `[IPAddress <String>]`: Indicates the client IP address used by user performing the activity (audit log only).
                   - `[UserPrincipalName <String>]`: The userPrincipalName attribute of the user.
@@ -17040,7 +17036,7 @@ REVIEWSETS <IMicrosoftGraphSecurityEdiscoveryReviewSet[]>: Returns a list of eDi
             - `[PostalCode <String>]`: The postal code for the user's postal address. The postal code is specific to the user's country/region. In the United States of America, this attribute contains the ZIP code. Maximum length is 40 characters. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
             - `[PreferredDataLocation <String>]`: The preferred data location for the user. For more information, see OneDrive Online Multi-Geo.
             - `[PreferredLanguage <String>]`: The preferred language for the user. Should follow ISO 639-1 Code; for example en-US. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
-            - `[PreferredName <String>]`: The preferred name for the user. Returned only on $select.
+            - `[PreferredName <String>]`: The preferred name for the user. Not Supported. This attribute returns an empty string.Returned only on $select.
             - `[Presence <IMicrosoftGraphPresence1>]`: presence
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
               - `[Id <String>]`: 
@@ -17816,7 +17812,7 @@ REVIEWSETS <IMicrosoftGraphSecurityEdiscoveryReviewSet[]>: Returns a list of eDi
                     - `[Name <String>]`: The display name of the attachment. This does not need to be the actual file name.
                     - `[Size <Int32?>]`: The length of the attachment in bytes.
                   - `[Body <IMicrosoftGraphItemBody>]`: itemBody
-                  - `[BodyLastModifiedDateTime <DateTime?>]`: The date and time when the task was last modified. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2020 would look like this: '2020-01-01T00:00:00Z'.
+                  - `[BodyLastModifiedDateTime <DateTime?>]`: The date and time when the task body was last modified. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2020 would look like this: '2020-01-01T00:00:00Z'.
                   - `[Categories <String[]>]`: The categories associated with the task. Each category corresponds to the displayName property of an outlookCategory that the user has defined.
                   - `[ChecklistItems <IMicrosoftGraphChecklistItem[]>]`: A collection of smaller subtasks linked to the more complex parent task.
                   - `[CompletedDateTime <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
@@ -17925,7 +17921,7 @@ REVIEWSETS <IMicrosoftGraphSecurityEdiscoveryReviewSet[]>: Returns a list of eDi
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[Id <String>]`: 
             - `[DefaultLanguageTag <String>]`: Default language of the term store.
-            - `[Groups <IMicrosoftGraphTermStoreGroup[]>]`: Collection of all groups available in the term store.
+            - `[Groups <IMicrosoftGraphTermStoreGroup1[]>]`: Collection of all groups available in the term store.
             - `[LanguageTags <String[]>]`: List of languages for the term store.
             - `[Sets <IMicrosoftGraphTermStoreSet[]>]`: Collection of all sets available in the term store.
       - `[UnifiedGroupSources <IMicrosoftGraphSecurityUnifiedGroupSource[]>]`: Data source entity for groups associated with the custodian.
@@ -17936,7 +17932,7 @@ REVIEWSETS <IMicrosoftGraphSecurityEdiscoveryReviewSet[]>: Returns a list of eDi
         - `[Id <String>]`: 
         - `[Group <IMicrosoftGraphGroup>]`: group
         - `[IncludedSources <String>]`: sourceType
-      - `[UserSources <IMicrosoftGraphSecurityUserSource[]>]`: Data source entity for a the custodian. This is the container for a custodian's mailbox and OneDrive for Business site.
+      - `[UserSources <IMicrosoftGraphSecurityUserSource[]>]`: Data source entity for a custodian. This is the container for a custodian's mailbox and OneDrive for Business site.
         - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
         - `[CreatedDateTime <DateTime?>]`: The date and time the dataSource was created.
         - `[DisplayName <String>]`: The display name of the dataSource. This will be the name of the SharePoint site.
@@ -17970,7 +17966,7 @@ SEARCHES <IMicrosoftGraphSecurityEdiscoverySearch[]>: Returns a list of eDiscove
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Application <IMicrosoftGraphIdentity>]`: identity
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[DisplayName <String>]`: The identity's display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+      - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
       - `[Id <String>]`: Unique identifier for the identity.
     - `[Device <IMicrosoftGraphIdentity>]`: identity
     - `[User <IMicrosoftGraphIdentity>]`: identity
@@ -18586,12 +18582,12 @@ SEARCHES <IMicrosoftGraphSecurityEdiscoverySearch[]>: Returns a list of eDiscove
                         - `[User <IMicrosoftGraphIdentity>]`: identity
                         - `[Conversation <IMicrosoftGraphTeamworkConversationIdentity>]`: teamworkConversationIdentity
                           - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                          - `[DisplayName <String>]`: The identity's display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+                          - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
                           - `[Id <String>]`: Unique identifier for the identity.
                           - `[ConversationIdentityType <String>]`: teamworkConversationIdentityType
                         - `[Tag <IMicrosoftGraphTeamworkTagIdentity>]`: teamworkTagIdentity
                           - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                          - `[DisplayName <String>]`: The identity's display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+                          - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
                           - `[Id <String>]`: Unique identifier for the identity.
                     - `[MessageType <String>]`: chatMessageType
                     - `[OnBehalfOf <IMicrosoftGraphChatMessageFromIdentitySet>]`: chatMessageFromIdentitySet
@@ -18625,7 +18621,7 @@ SEARCHES <IMicrosoftGraphSecurityEdiscoverySearch[]>: Returns a list of eDiscove
                     - `[JoinWebUrl <String>]`: The URL which can be clicked on to join or uniquely identify the meeting.
                     - `[Organizer <IMicrosoftGraphTeamworkUserIdentity>]`: teamworkUserIdentity
                       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                      - `[DisplayName <String>]`: The identity's display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+                      - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
                       - `[Id <String>]`: Unique identifier for the identity.
                       - `[UserIdentityType <String>]`: teamworkUserIdentityType
                   - `[Operations <IMicrosoftGraphTeamsAsyncOperation1[]>]`: A collection of all the Teams async operations that ran or are running on the chat. Nullable.
@@ -18704,8 +18700,8 @@ SEARCHES <IMicrosoftGraphSecurityEdiscoverySearch[]>: Returns a list of eDiscove
                     - `[StatusDetails <IMicrosoftGraphCloudPcStatusDetails>]`: cloudPcStatusDetails
                       - `[(Any) <Object>]`: This indicates any property can be added to this object.
                       - `[AdditionalInformation <IMicrosoftGraphKeyValuePair[]>]`: Any additional information about the Cloud PC status.
-                        - `[Name <String>]`: Name for this key-value pair. Possible names are: AdditionalWSFedEndpointCheckResult,  AllowedAuthenticationClassReferencesCheckResult, AlwaysRequireAuthenticationCheckResult,   AutoUpdateEnabledCheckResult, ClaimsProviderNameCheckResult, EncryptClaimsCheckResult,  EncryptedNameIdRequiredCheckResult, MonitoringEnabledCheckResult,NotBeforeSkewCheckResult,  RequestMFAFromClaimsProvidersCheckResult, SignedSamlRequestsRequiredCheckResult, AdditionalAuthenticationRulesCheckResult, TokenLifetimeCheckResult,  DelegationAuthorizationRulesCheckResult, IssuanceAuthorizationRulesCheckResult, IssuanceTransformRulesCheckResult.
-                        - `[Value <String>]`: Value for this key-value pair. Possible result values are 0 (when the validation check passed), 1 (when the validation check failed), or 2 (when the validation check is a warning).
+                        - `[Name <String>]`: Name for this key-value pair
+                        - `[Value <String>]`: Value for this key-value pair
                       - `[Code <String>]`: The code associated with the Cloud PC status.
                       - `[Message <String>]`: The status message.
                   - `[ManagedDeviceId <String>]`: The Intune device ID of the Cloud PC.
@@ -19009,7 +19005,7 @@ SEARCHES <IMicrosoftGraphSecurityEdiscoverySearch[]>: Returns a list of eDiscove
                         - `[(Any) <Object>]`: This indicates any property can be added to this object.
                         - `[Height <Int32?>]`: Optional. Height of the image, in pixels. Read-only.
                         - `[Width <Int32?>]`: Optional. Width of the image, in pixels. Read-only.
-                      - `[ListItem <IMicrosoftGraphListItem>]`: listItem
+                      - `[ListItem <IMicrosoftGraphListItem1>]`: listItem
                         - `[(Any) <Object>]`: This indicates any property can be added to this object.
                         - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
                         - `[CreatedByUser <IMicrosoftGraphUser>]`: user
@@ -19092,7 +19088,7 @@ SEARCHES <IMicrosoftGraphSecurityEdiscoverySearch[]>: Returns a list of eDiscove
                           - `[Group <IMicrosoftGraphIdentity>]`: identity
                           - `[SiteGroup <IMicrosoftGraphSharePointIdentity>]`: sharePointIdentity
                             - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                            - `[DisplayName <String>]`: The identity's display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+                            - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
                             - `[Id <String>]`: Unique identifier for the identity.
                             - `[LoginName <String>]`: The sign in name of the SharePoint identity.
                           - `[SiteUser <IMicrosoftGraphSharePointIdentity>]`: sharePointIdentity
@@ -19105,7 +19101,7 @@ SEARCHES <IMicrosoftGraphSecurityEdiscoverySearch[]>: Returns a list of eDiscove
                           - `[InvitedBy <IMicrosoftGraphIdentitySet>]`: identitySet
                           - `[RedeemedBy <String>]`: 
                           - `[SignInRequired <Boolean?>]`: If true the recipient of the invitation needs to sign in in order to access the shared item. Read-only.
-                        - `[Link <IMicrosoftGraphSharingLink>]`: sharingLink
+                        - `[Link <IMicrosoftGraphSharingLink1>]`: sharingLink
                           - `[(Any) <Object>]`: This indicates any property can be added to this object.
                           - `[Application <IMicrosoftGraphIdentity>]`: identity
                           - `[ConfiguratorUrl <String>]`: 
@@ -19180,7 +19176,7 @@ SEARCHES <IMicrosoftGraphSecurityEdiscoverySearch[]>: Returns a list of eDiscove
                         - `[Application <String>]`: driveItemSourceApplication
                         - `[ExternalId <String>]`: The external identifier for the drive item from the source.
                       - `[SpecialFolder <IMicrosoftGraphSpecialFolder>]`: specialFolder
-                      - `[Subscriptions <IMicrosoftGraphSubscription[]>]`: The set of subscriptions on the item. Only supported on the root of a drive.
+                      - `[Subscriptions <IMicrosoftGraphSubscription1[]>]`: The set of subscriptions on the item. Only supported on the root of a drive.
                         - `[Id <String>]`: 
                         - `[ApplicationId <String>]`: Optional. Identifier of the application used to create the subscription. Read-only.
                         - `[ChangeType <String>]`: Required. Indicates the type of change in the subscribed resource that will raise a change notification. The supported values are: created, updated, deleted. Multiple values can be combined using a comma-separated list. Note:  Drive root item and list change notifications support only the updated changeType. User and group change notifications support updated and deleted changeType.
@@ -19447,7 +19443,7 @@ SEARCHES <IMicrosoftGraphSecurityEdiscoverySearch[]>: Returns a list of eDiscove
                           - `[Status <String>]`: workbookOperationStatus
                         - `[Tables <IMicrosoftGraphWorkbookTable1[]>]`: Represents a collection of tables associated with the workbook. Read-only.
                         - `[Worksheets <IMicrosoftGraphWorkbookWorksheet[]>]`: Represents a collection of worksheets associated with the workbook. Read-only.
-                    - `[ListItem <IMicrosoftGraphListItem>]`: listItem
+                    - `[ListItem <IMicrosoftGraphListItem1>]`: listItem
                     - `[Times <IMicrosoftGraphItemActivityTimeSet>]`: itemActivityTimeSet
                       - `[(Any) <Object>]`: This indicates any property can be added to this object.
                       - `[LastRecordedDateTime <DateTime?>]`: 
@@ -19569,7 +19565,7 @@ SEARCHES <IMicrosoftGraphSecurityEdiscoverySearch[]>: Returns a list of eDiscove
                               - `[LocalizedNames <IMicrosoftGraphTermStoreLocalizedName[]>]`: Name of the set for each languageTag.
                                 - `[LanguageTag <String>]`: The language tag for the label.
                                 - `[Name <String>]`: The name in the localized language.
-                              - `[ParentGroup <IMicrosoftGraphTermStoreGroup>]`: group
+                              - `[ParentGroup <IMicrosoftGraphTermStoreGroup1>]`: group
                                 - `[(Any) <Object>]`: This indicates any property can be added to this object.
                                 - `[Id <String>]`: 
                                 - `[CreatedDateTime <DateTime?>]`: Date and time of the group creation. Read-only.
@@ -19613,7 +19609,7 @@ SEARCHES <IMicrosoftGraphSecurityEdiscoverySearch[]>: Returns a list of eDiscove
                       - `[ColumnPositions <IMicrosoftGraphColumnDefinition[]>]`: Column order information in a content type.
                       - `[Columns <IMicrosoftGraphColumnDefinition[]>]`: The collection of column definitions for this contentType.
                       - `[Description <String>]`: The descriptive text for the item.
-                      - `[DocumentSet <IMicrosoftGraphDocumentSet>]`: documentSet
+                      - `[DocumentSet <IMicrosoftGraphDocumentSet1>]`: documentSet
                         - `[(Any) <Object>]`: This indicates any property can be added to this object.
                         - `[AllowedContentTypes <IMicrosoftGraphContentTypeInfo[]>]`: Content types allowed in document set.
                         - `[DefaultContents <IMicrosoftGraphDocumentSetContent[]>]`: Default contents of document set.
@@ -19641,7 +19637,7 @@ SEARCHES <IMicrosoftGraphSecurityEdiscoverySearch[]>: Returns a list of eDiscove
                       - `[Sealed <Boolean?>]`: If true, the content type cannot be modified by users or through push-down operations. Only site collection administrators can seal or unseal content types.
                     - `[DisplayName <String>]`: The displayable title of the list.
                     - `[Drive <IMicrosoftGraphDrive>]`: drive
-                    - `[Items <IMicrosoftGraphListItem[]>]`: All items contained in the list.
+                    - `[Items <IMicrosoftGraphListItem1[]>]`: All items contained in the list.
                     - `[List <IMicrosoftGraphListInfo>]`: listInfo
                       - `[(Any) <Object>]`: This indicates any property can be added to this object.
                       - `[ContentTypesEnabled <Boolean?>]`: If true, indicates that content types are enabled for this list.
@@ -19673,7 +19669,7 @@ SEARCHES <IMicrosoftGraphSecurityEdiscoverySearch[]>: Returns a list of eDiscove
                       - `[ResourceId <String>]`: A unique identifier for the result.
                       - `[Type <String>]`: Type of the operation.
                     - `[SharepointIds <IMicrosoftGraphSharepointIds>]`: sharepointIds
-                    - `[Subscriptions <IMicrosoftGraphSubscription[]>]`: The set of subscriptions on the list.
+                    - `[Subscriptions <IMicrosoftGraphSubscription1[]>]`: The set of subscriptions on the list.
                     - `[System <IMicrosoftGraphSystemFacet>]`: systemFacet
                       - `[(Any) <Object>]`: This indicates any property can be added to this object.
                   - `[Owner <IMicrosoftGraphIdentitySet>]`: identitySet
@@ -19955,7 +19951,6 @@ SEARCHES <IMicrosoftGraphSecurityEdiscoverySearch[]>: Returns a list of eDiscove
                   - `[Mail <String>]`: The SMTP address for the group, for example, 'serviceadmins@contoso.onmicrosoft.com'. Returned by default. Read-only. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
                   - `[MailEnabled <Boolean?>]`: Specifies whether the group is mail-enabled. Required. Returned by default. Supports $filter (eq, ne, not, and eq on null values).
                   - `[MailNickname <String>]`: The mail alias for the group, unique for Microsoft 365 groups in the organization. Maximum length is 64 characters. This property can contain only characters in the ASCII character set 0 - 127 except the following: @ () / [] ' ; : . <> , SPACE. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith).
-                  - `[MdmAppId <String>]`: 
                   - `[MemberOf <IMicrosoftGraphDirectoryObject[]>]`: Groups and administrative units that this group is a member of. HTTP Methods: GET (supported for all groups). Read-only. Nullable. Supports $expand.
                   - `[Members <IMicrosoftGraphDirectoryObject[]>]`: Direct members of this group, who can be users, devices, other groups, or service principals. Supports the List members, Add member, and Remove member operations. Nullable. Supports $expand including nested $select. For example, /groups?$filter=startsWith(displayName,'Role')&$select=id,displayName&$expand=members($select=id,userPrincipalName,displayName).
                   - `[MembersWithLicenseErrors <IMicrosoftGraphDirectoryObject[]>]`: A list of group members with license errors from this group-based license assignment. Read-only.
@@ -20021,7 +20016,7 @@ SEARCHES <IMicrosoftGraphSecurityEdiscoverySearch[]>: Returns a list of eDiscove
                             - `[(Any) <Object>]`: This indicates any property can be added to this object.
                             - `[OneNoteClientUrl <IMicrosoftGraphExternalLink>]`: externalLink
                             - `[OneNoteWebUrl <IMicrosoftGraphExternalLink>]`: externalLink
-                          - `[Pages <IMicrosoftGraphOnenotePage[]>]`: The collection of pages in the section.  Read-only. Nullable.
+                          - `[Pages <IMicrosoftGraphOnenotePage1[]>]`: The collection of pages in the section.  Read-only. Nullable.
                             - `[CreatedDateTime <DateTime?>]`: The date and time when the page was created. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
                             - `[Self <String>]`: The endpoint where you can get details about the page. Read-only.
                             - `[Id <String>]`: 
@@ -20059,7 +20054,7 @@ SEARCHES <IMicrosoftGraphSecurityEdiscoverySearch[]>: Returns a list of eDiscove
                       - `[PercentComplete <String>]`: The operation percent complete if the operation is still in running status.
                       - `[ResourceId <String>]`: The resource id.
                       - `[ResourceLocation <String>]`: The resource URI for the object. For example, the resource URI for a copied page or section.
-                    - `[Pages <IMicrosoftGraphOnenotePage[]>]`: The pages in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
+                    - `[Pages <IMicrosoftGraphOnenotePage1[]>]`: The pages in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
                     - `[Resources <IMicrosoftGraphOnenoteResource[]>]`: The image and other file resources in OneNote pages. Getting a resources collection is not supported, but you can get the binary content of a specific resource. Read-only. Nullable.
                       - `[Self <String>]`: The endpoint where you can get details about the page. Read-only.
                       - `[Id <String>]`: 
@@ -21111,7 +21106,7 @@ SEARCHES <IMicrosoftGraphSecurityEdiscoverySearch[]>: Returns a list of eDiscove
                 - `[OnPremisesProvisioningErrors <IMicrosoftGraphOnPremisesProvisioningError[]>]`: Errors when using Microsoft synchronization product during provisioning.  Supports $filter (eq, not, ge, le).
                 - `[OnPremisesSamAccountName <String>]`: Contains the on-premises sAMAccountName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only. Supports $filter (eq, ne, not, ge, le, in, startsWith).
                 - `[OnPremisesSecurityIdentifier <String>]`: Contains the on-premises security identifier (SID) for the user that was synchronized from on-premises to the cloud. Read-only. Supports $filter (eq including on null values).
-                - `[OnPremisesSyncEnabled <Boolean?>]`: true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced; null if this object has never been synced from an on-premises directory (default). Read-only. Supports $filter (eq, ne, not, in, and eq on null values).
+                - `[OnPremisesSyncEnabled <Boolean?>]`: true if this user object is currently being synced from an on-premises Active Directory (AD); otherwise the user isn't being synced and can be managed in Azure Active Directory (Azure AD). Read-only. Supports $filter (eq, ne, not, in, and eq on null values).
                 - `[OnPremisesUserPrincipalName <String>]`: Contains the on-premises userPrincipalName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only. Supports $filter (eq, ne, not, ge, le, in, startsWith).
                 - `[Onenote <IMicrosoftGraphOnenote>]`: onenote
                 - `[OnlineMeetings <IMicrosoftGraphOnlineMeeting1[]>]`: 
@@ -21289,7 +21284,7 @@ SEARCHES <IMicrosoftGraphSecurityEdiscoverySearch[]>: Returns a list of eDiscove
                     - `[AccessReviewId <String>]`: The identifier of the accessReviewInstance parent. Supports $select. Read-only.
                     - `[AppliedBy <IMicrosoftGraphUserIdentity>]`: userIdentity
                       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                      - `[DisplayName <String>]`: The identity's display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+                      - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
                       - `[Id <String>]`: Unique identifier for the identity.
                       - `[IPAddress <String>]`: Indicates the client IP address used by user performing the activity (audit log only).
                       - `[UserPrincipalName <String>]`: The userPrincipalName attribute of the user.
@@ -21427,7 +21422,7 @@ SEARCHES <IMicrosoftGraphSecurityEdiscoverySearch[]>: Returns a list of eDiscove
                 - `[PostalCode <String>]`: The postal code for the user's postal address. The postal code is specific to the user's country/region. In the United States of America, this attribute contains the ZIP code. Maximum length is 40 characters. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
                 - `[PreferredDataLocation <String>]`: The preferred data location for the user. For more information, see OneDrive Online Multi-Geo.
                 - `[PreferredLanguage <String>]`: The preferred language for the user. Should follow ISO 639-1 Code; for example en-US. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
-                - `[PreferredName <String>]`: The preferred name for the user. Returned only on $select.
+                - `[PreferredName <String>]`: The preferred name for the user. Not Supported. This attribute returns an empty string.Returned only on $select.
                 - `[Presence <IMicrosoftGraphPresence1>]`: presence
                   - `[(Any) <Object>]`: This indicates any property can be added to this object.
                   - `[Id <String>]`: 
@@ -22203,7 +22198,7 @@ SEARCHES <IMicrosoftGraphSecurityEdiscoverySearch[]>: Returns a list of eDiscove
                         - `[Name <String>]`: The display name of the attachment. This does not need to be the actual file name.
                         - `[Size <Int32?>]`: The length of the attachment in bytes.
                       - `[Body <IMicrosoftGraphItemBody>]`: itemBody
-                      - `[BodyLastModifiedDateTime <DateTime?>]`: The date and time when the task was last modified. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2020 would look like this: '2020-01-01T00:00:00Z'.
+                      - `[BodyLastModifiedDateTime <DateTime?>]`: The date and time when the task body was last modified. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2020 would look like this: '2020-01-01T00:00:00Z'.
                       - `[Categories <String[]>]`: The categories associated with the task. Each category corresponds to the displayName property of an outlookCategory that the user has defined.
                       - `[ChecklistItems <IMicrosoftGraphChecklistItem[]>]`: A collection of smaller subtasks linked to the more complex parent task.
                       - `[CompletedDateTime <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
@@ -22312,7 +22307,7 @@ SEARCHES <IMicrosoftGraphSecurityEdiscoverySearch[]>: Returns a list of eDiscove
                 - `[(Any) <Object>]`: This indicates any property can be added to this object.
                 - `[Id <String>]`: 
                 - `[DefaultLanguageTag <String>]`: Default language of the term store.
-                - `[Groups <IMicrosoftGraphTermStoreGroup[]>]`: Collection of all groups available in the term store.
+                - `[Groups <IMicrosoftGraphTermStoreGroup1[]>]`: Collection of all groups available in the term store.
                 - `[LanguageTags <String[]>]`: List of languages for the term store.
                 - `[Sets <IMicrosoftGraphTermStoreSet[]>]`: Collection of all sets available in the term store.
           - `[UnifiedGroupSources <IMicrosoftGraphSecurityUnifiedGroupSource[]>]`: Data source entity for groups associated with the custodian.
@@ -22323,7 +22318,7 @@ SEARCHES <IMicrosoftGraphSecurityEdiscoverySearch[]>: Returns a list of eDiscove
             - `[Id <String>]`: 
             - `[Group <IMicrosoftGraphGroup>]`: group
             - `[IncludedSources <String>]`: sourceType
-          - `[UserSources <IMicrosoftGraphSecurityUserSource[]>]`: Data source entity for a the custodian. This is the container for a custodian's mailbox and OneDrive for Business site.
+          - `[UserSources <IMicrosoftGraphSecurityUserSource[]>]`: Data source entity for a custodian. This is the container for a custodian's mailbox and OneDrive for Business site.
             - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
             - `[CreatedDateTime <DateTime?>]`: The date and time the dataSource was created.
             - `[DisplayName <String>]`: The display name of the dataSource. This will be the name of the SharePoint site.
@@ -22394,7 +22389,7 @@ SETTINGS <IMicrosoftGraphSecurityEdiscoveryCaseSettings>: ediscoveryCaseSettings
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[IsEnabled <Boolean?>]`: Indicates whether or not OCR is enabled for the case.
     - `[MaxImageSize <Int32?>]`: Maximum image size that will be processed in KB).
-    - `[Timeout <TimeSpan?>]`: The timeout duration for the OCR engine. A longer timeout may increase success of OCR, but may add to the total processing time.
+    - `[Timeout <TimeSpan?>]`: The timeout duration for the OCR engine. A longer timeout might increase success of OCR, but might add to the total processing time.
   - `[RedundancyDetection <IMicrosoftGraphSecurityRedundancyDetectionSettings>]`: redundancyDetectionSettings
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[IsEnabled <Boolean?>]`: Indicates whether email threading and near duplicate detection are enabled.
@@ -22403,17 +22398,17 @@ SETTINGS <IMicrosoftGraphSecurityEdiscoveryCaseSettings>: ediscoveryCaseSettings
     - `[SimilarityThreshold <Int32?>]`: Specifies the similarity level for documents to be put in the same near duplicate set. To learn more, see Document and email similarity threshold.
   - `[TopicModeling <IMicrosoftGraphSecurityTopicModelingSettings>]`: topicModelingSettings
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[DynamicallyAdjustTopicCount <Boolean?>]`: To learn more, see Adjust maximum number of themes dynamically.
-    - `[IgnoreNumbers <Boolean?>]`: To learn more, see Include numbers in themes.
-    - `[IsEnabled <Boolean?>]`: Indicates whether themes is enabled for the case.
-    - `[TopicCount <Int32?>]`: To learn more, see Maximum number of themes.
+    - `[DynamicallyAdjustTopicCount <Boolean?>]`: Indicates whether the themes model should dynamically optimize the number of generated topics. To learn more, see Adjust maximum number of themes dynamically.
+    - `[IgnoreNumbers <Boolean?>]`: Indicates whether the themes model should exclude numbers while parsing document texts. To learn more, see Include numbers in themes.
+    - `[IsEnabled <Boolean?>]`: Indicates whether themes model is enabled for the case.
+    - `[TopicCount <Int32?>]`: The total number of topics that the themes model will generate for a review set. To learn more, see Maximum number of themes.
 
 TAGS <IMicrosoftGraphSecurityEdiscoveryReviewTag[]>: Returns a list of ediscoveryReviewTag objects associated to this case.
   - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Application <IMicrosoftGraphIdentity>]`: identity
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[DisplayName <String>]`: The identity's display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+      - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
       - `[Id <String>]`: Unique identifier for the identity.
     - `[Device <IMicrosoftGraphIdentity>]`: identity
     - `[User <IMicrosoftGraphIdentity>]`: identity

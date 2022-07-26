@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Identity.SignIns
-Module Guid: e32aca78-3aaa-4dbe-a1e3-ecc5013fedb7
+Module Guid: 75af3c48-de1f-496f-9014-b5da64aa2d29
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins
 Help Version: 1.0.0.0
 Locale: en-US
@@ -701,9 +701,6 @@ Create new navigation property to emailMethods for users
 ### [New-MgUserAuthenticationFido2Method](New-MgUserAuthenticationFido2Method.md)
 Create new navigation property to fido2Methods for users
 
-### [New-MgUserAuthenticationMethod](New-MgUserAuthenticationMethod.md)
-Create new navigation property to methods for users
-
 ### [New-MgUserAuthenticationMicrosoftAuthenticatorMethod](New-MgUserAuthenticationMicrosoftAuthenticatorMethod.md)
 Create new navigation property to microsoftAuthenticatorMethods for users
 
@@ -1006,9 +1003,6 @@ Delete navigation property emailMethods for users
 
 ### [Remove-MgUserAuthenticationFido2Method](Remove-MgUserAuthenticationFido2Method.md)
 Delete navigation property fido2Methods for users
-
-### [Remove-MgUserAuthenticationMethod](Remove-MgUserAuthenticationMethod.md)
-Delete navigation property methods for users
 
 ### [Remove-MgUserAuthenticationMicrosoftAuthenticatorMethod](Remove-MgUserAuthenticationMicrosoftAuthenticatorMethod.md)
 Delete navigation property microsoftAuthenticatorMethods for users
@@ -1366,9 +1360,6 @@ Update the navigation property emailMethods in users
 
 ### [Update-MgUserAuthenticationFido2Method](Update-MgUserAuthenticationFido2Method.md)
 Update the navigation property fido2Methods in users
-
-### [Update-MgUserAuthenticationMethod](Update-MgUserAuthenticationMethod.md)
-Update the navigation property methods in users
 
 ### [Update-MgUserAuthenticationMicrosoftAuthenticatorMethod](Update-MgUserAuthenticationMicrosoftAuthenticatorMethod.md)
 Update the navigation property microsoftAuthenticatorMethods in users

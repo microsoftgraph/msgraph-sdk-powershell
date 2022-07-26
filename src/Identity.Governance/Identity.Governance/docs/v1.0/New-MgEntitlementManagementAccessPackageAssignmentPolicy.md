@@ -16,9 +16,11 @@ Create new navigation property to assignmentPolicies for identityGovernance
 ```
 New-MgEntitlementManagementAccessPackageAssignmentPolicy -AccessPackageId <String>
  [-AccessPackage <IMicrosoftGraphAccessPackage1>] [-AdditionalProperties <Hashtable>]
- [-AllowedTargetScope <String>] [-Catalog <IMicrosoftGraphAccessPackageCatalog1>]
- [-CreatedDateTime <DateTime>] [-Description <String>] [-DisplayName <String>]
- [-Expiration <IMicrosoftGraphExpirationPattern>] [-Id <String>] [-ModifiedDateTime <DateTime>]
+ [-AllowedTargetScope <String>]
+ [-AutomaticRequestSettings <IMicrosoftGraphAccessPackageAutomaticRequestSettings>]
+ [-Catalog <IMicrosoftGraphAccessPackageCatalog1>] [-CreatedDateTime <DateTime>] [-Description <String>]
+ [-DisplayName <String>] [-Expiration <IMicrosoftGraphExpirationPattern>] [-Id <String>]
+ [-ModifiedDateTime <DateTime>]
  [-RequestApprovalSettings <IMicrosoftGraphAccessPackageAssignmentApprovalSettings>]
  [-RequestorSettings <IMicrosoftGraphAccessPackageAssignmentRequestorSettings>]
  [-ReviewSettings <IMicrosoftGraphAccessPackageAssignmentReviewSettings>]
@@ -41,9 +43,11 @@ New-MgEntitlementManagementAccessPackageAssignmentPolicy -InputObject <IIdentity
 ```
 New-MgEntitlementManagementAccessPackageAssignmentPolicy -InputObject <IIdentityGovernanceIdentity>
  [-AccessPackage <IMicrosoftGraphAccessPackage1>] [-AdditionalProperties <Hashtable>]
- [-AllowedTargetScope <String>] [-Catalog <IMicrosoftGraphAccessPackageCatalog1>]
- [-CreatedDateTime <DateTime>] [-Description <String>] [-DisplayName <String>]
- [-Expiration <IMicrosoftGraphExpirationPattern>] [-Id <String>] [-ModifiedDateTime <DateTime>]
+ [-AllowedTargetScope <String>]
+ [-AutomaticRequestSettings <IMicrosoftGraphAccessPackageAutomaticRequestSettings>]
+ [-Catalog <IMicrosoftGraphAccessPackageCatalog1>] [-CreatedDateTime <DateTime>] [-Description <String>]
+ [-DisplayName <String>] [-Expiration <IMicrosoftGraphExpirationPattern>] [-Id <String>]
+ [-ModifiedDateTime <DateTime>]
  [-RequestApprovalSettings <IMicrosoftGraphAccessPackageAssignmentApprovalSettings>]
  [-RequestorSettings <IMicrosoftGraphAccessPackageAssignmentRequestorSettings>]
  [-ReviewSettings <IMicrosoftGraphAccessPackageAssignmentReviewSettings>]
@@ -108,6 +112,22 @@ allowedTargetScope
 
 ```yaml
 Type: System.String
+Parameter Sets: CreateExpanded2, CreateViaIdentityExpanded1
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -AutomaticRequestSettings
+accessPackageAutomaticRequestSettings
+To construct, please use Get-Help -Online and see NOTES section for AUTOMATICREQUESTSETTINGS properties and create a hash table.
+
+```yaml
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessPackageAutomaticRequestSettings
 Parameter Sets: CreateExpanded2, CreateViaIdentityExpanded1
 Aliases:
 
@@ -383,6 +403,11 @@ ACCESSPACKAGE <IMicrosoftGraphAccessPackage1>: accessPackage
     - `[Id <String>]`: 
     - `[AccessPackage <IMicrosoftGraphAccessPackage1>]`: accessPackage
     - `[AllowedTargetScope <String>]`: allowedTargetScope
+    - `[AutomaticRequestSettings <IMicrosoftGraphAccessPackageAutomaticRequestSettings>]`: accessPackageAutomaticRequestSettings
+      - `[(Any) <Object>]`: This indicates any property can be added to this object.
+      - `[GracePeriodBeforeAccessRemoval <TimeSpan?>]`: 
+      - `[RemoveAccessWhenTargetLeavesAllowedTargets <Boolean?>]`: 
+      - `[RequestAccessForAllowedTargets <Boolean?>]`: 
     - `[Catalog <IMicrosoftGraphAccessPackageCatalog1>]`: accessPackageCatalog
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Id <String>]`: 
@@ -465,6 +490,12 @@ ACCESSPACKAGE <IMicrosoftGraphAccessPackage1>: accessPackage
   - `[IsHidden <Boolean?>]`: Whether the access package is hidden from the requestor.
   - `[ModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
 
+AUTOMATICREQUESTSETTINGS <IMicrosoftGraphAccessPackageAutomaticRequestSettings>: accessPackageAutomaticRequestSettings
+  - `[(Any) <Object>]`: This indicates any property can be added to this object.
+  - `[GracePeriodBeforeAccessRemoval <TimeSpan?>]`: 
+  - `[RemoveAccessWhenTargetLeavesAllowedTargets <Boolean?>]`: 
+  - `[RequestAccessForAllowedTargets <Boolean?>]`: 
+
 BODYPARAMETER <IMicrosoftGraphAccessPackageAssignmentPolicy1>: accessPackageAssignmentPolicy
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: 
@@ -489,6 +520,11 @@ BODYPARAMETER <IMicrosoftGraphAccessPackageAssignmentPolicy1>: accessPackageAssi
     - `[IsHidden <Boolean?>]`: Whether the access package is hidden from the requestor.
     - `[ModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
   - `[AllowedTargetScope <String>]`: allowedTargetScope
+  - `[AutomaticRequestSettings <IMicrosoftGraphAccessPackageAutomaticRequestSettings>]`: accessPackageAutomaticRequestSettings
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+    - `[GracePeriodBeforeAccessRemoval <TimeSpan?>]`: 
+    - `[RemoveAccessWhenTargetLeavesAllowedTargets <Boolean?>]`: 
+    - `[RequestAccessForAllowedTargets <Boolean?>]`: 
   - `[Catalog <IMicrosoftGraphAccessPackageCatalog1>]`: accessPackageCatalog
   - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
   - `[Description <String>]`: The description of the policy.
@@ -564,6 +600,11 @@ CATALOG <IMicrosoftGraphAccessPackageCatalog1>: accessPackageCatalog
       - `[Id <String>]`: 
       - `[AccessPackage <IMicrosoftGraphAccessPackage1>]`: accessPackage
       - `[AllowedTargetScope <String>]`: allowedTargetScope
+      - `[AutomaticRequestSettings <IMicrosoftGraphAccessPackageAutomaticRequestSettings>]`: accessPackageAutomaticRequestSettings
+        - `[(Any) <Object>]`: This indicates any property can be added to this object.
+        - `[GracePeriodBeforeAccessRemoval <TimeSpan?>]`: 
+        - `[RemoveAccessWhenTargetLeavesAllowedTargets <Boolean?>]`: 
+        - `[RequestAccessForAllowedTargets <Boolean?>]`: 
       - `[Catalog <IMicrosoftGraphAccessPackageCatalog1>]`: accessPackageCatalog
       - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
       - `[Description <String>]`: The description of the policy.
@@ -664,6 +705,7 @@ INPUTOBJECT <IIdentityGovernanceIdentity>: Identity Parameter
   - `[AccessPackageResourceRoleId <String>]`: key: id of accessPackageResourceRole
   - `[AccessPackageResourceRoleScopeId <String>]`: key: id of accessPackageResourceRoleScope
   - `[AccessPackageResourceScopeId <String>]`: key: id of accessPackageResourceScope
+  - `[AccessPackageSubjectId <String>]`: key: id of accessPackageSubject
   - `[AccessReviewDecisionId <String>]`: key: id of accessReviewDecision
   - `[AccessReviewHistoryDefinitionId <String>]`: key: id of accessReviewHistoryDefinition
   - `[AccessReviewHistoryInstanceId <String>]`: key: id of accessReviewHistoryInstance

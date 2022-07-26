@@ -498,7 +498,7 @@ ACTIVATEDUSING <IMicrosoftGraphUnifiedRoleEligibilitySchedule1>: unifiedRoleElig
   - `[RoleDefinitionId <String>]`: Identifier of the unifiedRoleDefinition object that is being assigned to the principal or that a principal is eligible for.
   - `[Status <String>]`: The status of the role assignment or eligibility request.
   - `[Id <String>]`: 
-  - `[MemberType <String>]`: Membership type of the eligible assignment. It can either be Inherited, Direct, or Group.
+  - `[MemberType <String>]`: Membership type of the eligible assignment. It can either be Inherited, Direct, or Group. Supports $filter (eq).
   - `[ScheduleInfo <IMicrosoftGraphRequestSchedule>]`: requestSchedule
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Expiration <IMicrosoftGraphExpirationPattern>]`: expirationPattern
@@ -583,7 +583,7 @@ BODYPARAMETER <IMicrosoftGraphUnifiedRoleAssignmentSchedule1>: unifiedRoleAssign
     - `[RoleDefinitionId <String>]`: Identifier of the unifiedRoleDefinition object that is being assigned to the principal or that a principal is eligible for.
     - `[Status <String>]`: The status of the role assignment or eligibility request.
     - `[Id <String>]`: 
-    - `[MemberType <String>]`: Membership type of the eligible assignment. It can either be Inherited, Direct, or Group.
+    - `[MemberType <String>]`: Membership type of the eligible assignment. It can either be Inherited, Direct, or Group. Supports $filter (eq).
     - `[ScheduleInfo <IMicrosoftGraphRequestSchedule>]`: requestSchedule
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Expiration <IMicrosoftGraphExpirationPattern>]`: expirationPattern
