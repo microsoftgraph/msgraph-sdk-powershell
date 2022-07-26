@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Security
-Module Guid: 6ee540fa-6578-4cdf-82d4-160aa8182a29
+Module Guid: fc7c1899-847a-471a-a62e-d25f82f6c4cc
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.security
 Help Version: 1.0.0.0
 Locale: en-US
@@ -218,6 +218,21 @@ Get notes from security
 ### [Get-MgSecuritySubjectRightsRequestTeam](Get-MgSecuritySubjectRightsRequestTeam.md)
 Get team from security
 
+### [Get-MgSecurityThreatSubmission](Get-MgSecurityThreatSubmission.md)
+Get threatSubmission from security
+
+### [Get-MgSecurityThreatSubmissionEmailThreat](Get-MgSecurityThreatSubmissionEmailThreat.md)
+Get emailThreats from security
+
+### [Get-MgSecurityThreatSubmissionEmailThreatSubmissionPolicy](Get-MgSecurityThreatSubmissionEmailThreatSubmissionPolicy.md)
+Get emailThreatSubmissionPolicies from security
+
+### [Get-MgSecurityThreatSubmissionFileThreat](Get-MgSecurityThreatSubmissionFileThreat.md)
+Get fileThreats from security
+
+### [Get-MgSecurityThreatSubmissionUrlThreat](Get-MgSecurityThreatSubmissionUrlThreat.md)
+Get urlThreats from security
+
 ### [Get-MgSecurityTiIndicator](Get-MgSecurityTiIndicator.md)
 Get tiIndicators from security
 
@@ -358,6 +373,18 @@ Create new navigation property to subjectRightsRequests for security
 
 ### [New-MgSecuritySubjectRightsRequestNote](New-MgSecuritySubjectRightsRequestNote.md)
 Create new navigation property to notes for security
+
+### [New-MgSecurityThreatSubmissionEmailThreat](New-MgSecurityThreatSubmissionEmailThreat.md)
+Create new navigation property to emailThreats for security
+
+### [New-MgSecurityThreatSubmissionEmailThreatSubmissionPolicy](New-MgSecurityThreatSubmissionEmailThreatSubmissionPolicy.md)
+Create new navigation property to emailThreatSubmissionPolicies for security
+
+### [New-MgSecurityThreatSubmissionFileThreat](New-MgSecurityThreatSubmissionFileThreat.md)
+Create new navigation property to fileThreats for security
+
+### [New-MgSecurityThreatSubmissionUrlThreat](New-MgSecurityThreatSubmissionUrlThreat.md)
+Create new navigation property to urlThreats for security
 
 ### [New-MgSecurityTiIndicator](New-MgSecurityTiIndicator.md)
 Create new navigation property to tiIndicators for security
@@ -505,6 +532,21 @@ Delete navigation property subjectRightsRequests for security
 
 ### [Remove-MgSecuritySubjectRightsRequestNote](Remove-MgSecuritySubjectRightsRequestNote.md)
 Delete navigation property notes for security
+
+### [Remove-MgSecurityThreatSubmission](Remove-MgSecurityThreatSubmission.md)
+Delete navigation property threatSubmission for security
+
+### [Remove-MgSecurityThreatSubmissionEmailThreat](Remove-MgSecurityThreatSubmissionEmailThreat.md)
+Delete navigation property emailThreats for security
+
+### [Remove-MgSecurityThreatSubmissionEmailThreatSubmissionPolicy](Remove-MgSecurityThreatSubmissionEmailThreatSubmissionPolicy.md)
+Delete navigation property emailThreatSubmissionPolicies for security
+
+### [Remove-MgSecurityThreatSubmissionFileThreat](Remove-MgSecurityThreatSubmissionFileThreat.md)
+Delete navigation property fileThreats for security
+
+### [Remove-MgSecurityThreatSubmissionUrlThreat](Remove-MgSecurityThreatSubmissionUrlThreat.md)
+Delete navigation property urlThreats for security
 
 ### [Remove-MgSecurityTiIndicator](Remove-MgSecurityTiIndicator.md)
 Delete navigation property tiIndicators for security
@@ -688,6 +730,21 @@ Update the navigation property subjectRightsRequests in security
 
 ### [Update-MgSecuritySubjectRightsRequestNote](Update-MgSecuritySubjectRightsRequestNote.md)
 Update the navigation property notes in security
+
+### [Update-MgSecurityThreatSubmission](Update-MgSecurityThreatSubmission.md)
+Update the navigation property threatSubmission in security
+
+### [Update-MgSecurityThreatSubmissionEmailThreat](Update-MgSecurityThreatSubmissionEmailThreat.md)
+Update the navigation property emailThreats in security
+
+### [Update-MgSecurityThreatSubmissionEmailThreatSubmissionPolicy](Update-MgSecurityThreatSubmissionEmailThreatSubmissionPolicy.md)
+Update the navigation property emailThreatSubmissionPolicies in security
+
+### [Update-MgSecurityThreatSubmissionFileThreat](Update-MgSecurityThreatSubmissionFileThreat.md)
+Update the navigation property fileThreats in security
+
+### [Update-MgSecurityThreatSubmissionUrlThreat](Update-MgSecurityThreatSubmissionUrlThreat.md)
+Update the navigation property urlThreats in security
 
 ### [Update-MgSecurityTiIndicator](Update-MgSecurityTiIndicator.md)
 Update the navigation property tiIndicators in security
