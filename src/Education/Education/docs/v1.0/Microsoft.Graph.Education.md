@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Education
-Module Guid: c706c635-1a38-4aad-b8bf-83dd7160064e
+Module Guid: 18dfbe93-c8d7-4116-928d-cbcf4e21b24e
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.education
 Help Version: 1.0.0.0
 Locale: en-US
