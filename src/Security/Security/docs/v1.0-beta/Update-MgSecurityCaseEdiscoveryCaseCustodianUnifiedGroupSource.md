@@ -1890,7 +1890,7 @@ BODYPARAMETER <IMicrosoftGraphSecurityUnifiedGroupSource>: unifiedGroupSource
             - `[Required <Boolean?>]`: Specifies whether the column value isn't optional.
             - `[SourceColumn <IMicrosoftGraphColumnDefinition>]`: columnDefinition
             - `[SourceContentType <IMicrosoftGraphContentTypeInfo>]`: contentTypeInfo
-            - `[Term <IMicrosoftGraphTermColumn>]`: termColumn
+            - `[Term <IMicrosoftGraphTermColumn1>]`: termColumn
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
               - `[AllowMultipleValues <Boolean?>]`: Specifies whether the column will allow more than one value
               - `[ParentTerm <IMicrosoftGraphTermStoreTerm>]`: term
@@ -3352,7 +3352,24 @@ BODYPARAMETER <IMicrosoftGraphSecurityUnifiedGroupSource>: unifiedGroupSource
             - `[Subject <String>]`: The subject of the meeting.
           - `[StartDateTime <DateTime?>]`: The meeting start time in UTC.
           - `[Subject <String>]`: The subject of the online meeting.
+          - `[Transcripts <IMicrosoftGraphCallTranscript[]>]`: 
+            - `[Id <String>]`: 
+            - `[Content <Byte[]>]`: 
+            - `[CreatedDateTime <DateTime?>]`: 
           - `[VideoTeleconferenceId <String>]`: The video teleconferencing ID. Read-only.
+          - `[VirtualAppointment <IMicrosoftGraphVirtualAppointment>]`: virtualAppointment
+            - `[(Any) <Object>]`: This indicates any property can be added to this object.
+            - `[Id <String>]`: 
+            - `[AppointmentClientJoinWebUrl <String>]`: The join web URL of the virtual appointment for clients with waiting room and browser join. Optional.
+            - `[AppointmentClients <IMicrosoftGraphVirtualAppointmentUser[]>]`: The client information for the virtual appointment, including name, email, and SMS phone number. Optional.
+              - `[DisplayName <String>]`: The display name of the user who participates in a virtual appointment. Optional.
+              - `[EmailAddress <String>]`: The email address of the user who participates in a virtual appointment. Optional.
+              - `[SmsCapablePhoneNumber <String>]`: The phone number for sending SMS texts for the user who participates in a virtual appointment. Optional.
+            - `[ExternalAppointmentId <String>]`: The identifier of the appointment from the scheduling system, associated with the current virtual appointment. Optional.
+            - `[ExternalAppointmentUrl <String>]`: The URL of the appointment resource from the scheduling system, associated with the current virtual appointment. Optional.
+            - `[Settings <IMicrosoftGraphVirtualAppointmentSettings>]`: virtualAppointmentSettings
+              - `[(Any) <Object>]`: This indicates any property can be added to this object.
+              - `[AllowClientToJoinUsingBrowser <Boolean?>]`: Indicates whether the client can use the browser to join a virtual appointment. If set to false, the client can only use Microsoft Teams to join. Optional.
         - `[OtherMails <String[]>]`: A list of additional email addresses for the user; for example: ['bob@contoso.com', 'Robert@fabrikam.com'].NOTE: This property cannot contain accent characters.Supports $filter (eq, not, ge, le, in, startsWith, endsWith, and counting empty collections).
         - `[Outlook <IMicrosoftGraphOutlookUser1>]`: outlookUser
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -6178,7 +6195,7 @@ GROUP <IMicrosoftGraphGroup>: group
           - `[Required <Boolean?>]`: Specifies whether the column value isn't optional.
           - `[SourceColumn <IMicrosoftGraphColumnDefinition>]`: columnDefinition
           - `[SourceContentType <IMicrosoftGraphContentTypeInfo>]`: contentTypeInfo
-          - `[Term <IMicrosoftGraphTermColumn>]`: termColumn
+          - `[Term <IMicrosoftGraphTermColumn1>]`: termColumn
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[AllowMultipleValues <Boolean?>]`: Specifies whether the column will allow more than one value
             - `[ParentTerm <IMicrosoftGraphTermStoreTerm>]`: term
@@ -7640,7 +7657,24 @@ GROUP <IMicrosoftGraphGroup>: group
           - `[Subject <String>]`: The subject of the meeting.
         - `[StartDateTime <DateTime?>]`: The meeting start time in UTC.
         - `[Subject <String>]`: The subject of the online meeting.
+        - `[Transcripts <IMicrosoftGraphCallTranscript[]>]`: 
+          - `[Id <String>]`: 
+          - `[Content <Byte[]>]`: 
+          - `[CreatedDateTime <DateTime?>]`: 
         - `[VideoTeleconferenceId <String>]`: The video teleconferencing ID. Read-only.
+        - `[VirtualAppointment <IMicrosoftGraphVirtualAppointment>]`: virtualAppointment
+          - `[(Any) <Object>]`: This indicates any property can be added to this object.
+          - `[Id <String>]`: 
+          - `[AppointmentClientJoinWebUrl <String>]`: The join web URL of the virtual appointment for clients with waiting room and browser join. Optional.
+          - `[AppointmentClients <IMicrosoftGraphVirtualAppointmentUser[]>]`: The client information for the virtual appointment, including name, email, and SMS phone number. Optional.
+            - `[DisplayName <String>]`: The display name of the user who participates in a virtual appointment. Optional.
+            - `[EmailAddress <String>]`: The email address of the user who participates in a virtual appointment. Optional.
+            - `[SmsCapablePhoneNumber <String>]`: The phone number for sending SMS texts for the user who participates in a virtual appointment. Optional.
+          - `[ExternalAppointmentId <String>]`: The identifier of the appointment from the scheduling system, associated with the current virtual appointment. Optional.
+          - `[ExternalAppointmentUrl <String>]`: The URL of the appointment resource from the scheduling system, associated with the current virtual appointment. Optional.
+          - `[Settings <IMicrosoftGraphVirtualAppointmentSettings>]`: virtualAppointmentSettings
+            - `[(Any) <Object>]`: This indicates any property can be added to this object.
+            - `[AllowClientToJoinUsingBrowser <Boolean?>]`: Indicates whether the client can use the browser to join a virtual appointment. If set to false, the client can only use Microsoft Teams to join. Optional.
       - `[OtherMails <String[]>]`: A list of additional email addresses for the user; for example: ['bob@contoso.com', 'Robert@fabrikam.com'].NOTE: This property cannot contain accent characters.Supports $filter (eq, not, ge, le, in, startsWith, endsWith, and counting empty collections).
       - `[Outlook <IMicrosoftGraphOutlookUser1>]`: outlookUser
         - `[(Any) <Object>]`: This indicates any property can be added to this object.

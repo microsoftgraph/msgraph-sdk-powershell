@@ -22,14 +22,14 @@ Invoke-MgRedirectCommunicationCall -CallId <String> [-AdditionalProperties <Hash
 ### Redirect
 ```
 Invoke-MgRedirectCommunicationCall -CallId <String>
- -BodyParameter <IPaths183Gi8UCommunicationsCallsCallIdMicrosoftGraphRedirectPostRequestbodyContentApplicationJsonSchema>
+ -BodyParameter <IPaths183Gi8UCommunicationsCallsCallIdMicrosoftGraphRedirectPostRequestbodyContentApplicationJsonSchema1>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### RedirectViaIdentity
 ```
 Invoke-MgRedirectCommunicationCall -InputObject <ICloudCommunicationsIdentity>
- -BodyParameter <IPaths183Gi8UCommunicationsCallsCallIdMicrosoftGraphRedirectPostRequestbodyContentApplicationJsonSchema>
+ -BodyParameter <IPaths183Gi8UCommunicationsCallsCallIdMicrosoftGraphRedirectPostRequestbodyContentApplicationJsonSchema1>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -68,7 +68,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths183Gi8UCommunicationsCallsCallIdMicrosoftGraphRedirectPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.PowerShell.Models.IPaths183Gi8UCommunicationsCallsCallIdMicrosoftGraphRedirectPostRequestbodyContentApplicationJsonSchema1
 Parameter Sets: Redirect, RedirectViaIdentity
 Aliases:
 
@@ -209,7 +209,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.ICloudCommunicationsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IPaths183Gi8UCommunicationsCallsCallIdMicrosoftGraphRedirectPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.PowerShell.Models.IPaths183Gi8UCommunicationsCallsCallIdMicrosoftGraphRedirectPostRequestbodyContentApplicationJsonSchema1
 
 ## OUTPUTS
 
@@ -224,7 +224,7 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-BODYPARAMETER <IPaths183Gi8UCommunicationsCallsCallIdMicrosoftGraphRedirectPostRequestbodyContentApplicationJsonSchema>: .
+BODYPARAMETER <IPaths183Gi8UCommunicationsCallsCallIdMicrosoftGraphRedirectPostRequestbodyContentApplicationJsonSchema1>: .
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[CallbackUri <String>]`: 
   - `[Targets <IMicrosoftGraphInvitationParticipantInfo[]>]`: 
@@ -247,6 +247,7 @@ INPUTOBJECT <ICloudCommunicationsIdentity>: Identity Parameter
   - `[AudioRoutingGroupId <String>]`: key: id of audioRoutingGroup
   - `[CallId <String>]`: key: id of call
   - `[CallRecordId <String>]`: key: id of callRecord
+  - `[CallTranscriptId <String>]`: key: id of callTranscript
   - `[CommsOperationId <String>]`: key: id of commsOperation
   - `[ContentSharingSessionId <String>]`: key: id of contentSharingSession
   - `[MeetingAttendanceReportId <String>]`: key: id of meetingAttendanceReport

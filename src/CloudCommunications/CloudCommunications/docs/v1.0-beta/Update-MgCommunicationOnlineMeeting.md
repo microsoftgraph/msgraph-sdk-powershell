@@ -27,7 +27,9 @@ Update-MgCommunicationOnlineMeeting -OnlineMeetingId <String> [-AdditionalProper
  [-MeetingAttendanceReport <IMicrosoftGraphMeetingAttendanceReport1>]
  [-Participants <IMicrosoftGraphMeetingParticipants1>] [-RecordAutomatically] [-RecordingInputFile <String>]
  [-Registration <IMicrosoftGraphMeetingRegistration>] [-StartDateTime <DateTime>] [-Subject <String>]
- [-VideoTeleconferenceId <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Transcripts <IMicrosoftGraphCallTranscript[]>] [-VideoTeleconferenceId <String>]
+ [-VirtualAppointment <IMicrosoftGraphVirtualAppointment>] [-PassThru] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Update1
@@ -58,7 +60,9 @@ Update-MgCommunicationOnlineMeeting -InputObject <ICloudCommunicationsIdentity>
  [-MeetingAttendanceReport <IMicrosoftGraphMeetingAttendanceReport1>]
  [-Participants <IMicrosoftGraphMeetingParticipants1>] [-RecordAutomatically] [-RecordingInputFile <String>]
  [-Registration <IMicrosoftGraphMeetingRegistration>] [-StartDateTime <DateTime>] [-Subject <String>]
- [-VideoTeleconferenceId <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Transcripts <IMicrosoftGraphCallTranscript[]>] [-VideoTeleconferenceId <String>]
+ [-VirtualAppointment <IMicrosoftGraphVirtualAppointment>] [-PassThru] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -628,12 +632,44 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -Transcripts
+.
+To construct, please use Get-Help -Online and see NOTES section for TRANSCRIPTS properties and create a hash table.
+
+```yaml
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCallTranscript[]
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -VideoTeleconferenceId
 The video teleconferencing ID.
 Read-only.
 
 ```yaml
 Type: System.String
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -VirtualAppointment
+virtualAppointment
+To construct, please use Get-Help -Online and see NOTES section for VIRTUALAPPOINTMENT properties and create a hash table.
+
+```yaml
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphVirtualAppointment
 Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -842,7 +878,24 @@ BODYPARAMETER <IMicrosoftGraphOnlineMeeting1>: onlineMeeting
     - `[Subject <String>]`: The subject of the meeting.
   - `[StartDateTime <DateTime?>]`: The meeting start time in UTC.
   - `[Subject <String>]`: The subject of the online meeting.
+  - `[Transcripts <IMicrosoftGraphCallTranscript[]>]`: 
+    - `[Id <String>]`: 
+    - `[Content <Byte[]>]`: 
+    - `[CreatedDateTime <DateTime?>]`: 
   - `[VideoTeleconferenceId <String>]`: The video teleconferencing ID. Read-only.
+  - `[VirtualAppointment <IMicrosoftGraphVirtualAppointment>]`: virtualAppointment
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+    - `[Id <String>]`: 
+    - `[AppointmentClientJoinWebUrl <String>]`: The join web URL of the virtual appointment for clients with waiting room and browser join. Optional.
+    - `[AppointmentClients <IMicrosoftGraphVirtualAppointmentUser[]>]`: The client information for the virtual appointment, including name, email, and SMS phone number. Optional.
+      - `[DisplayName <String>]`: The display name of the user who participates in a virtual appointment. Optional.
+      - `[EmailAddress <String>]`: The email address of the user who participates in a virtual appointment. Optional.
+      - `[SmsCapablePhoneNumber <String>]`: The phone number for sending SMS texts for the user who participates in a virtual appointment. Optional.
+    - `[ExternalAppointmentId <String>]`: The identifier of the appointment from the scheduling system, associated with the current virtual appointment. Optional.
+    - `[ExternalAppointmentUrl <String>]`: The URL of the appointment resource from the scheduling system, associated with the current virtual appointment. Optional.
+    - `[Settings <IMicrosoftGraphVirtualAppointmentSettings>]`: virtualAppointmentSettings
+      - `[(Any) <Object>]`: This indicates any property can be added to this object.
+      - `[AllowClientToJoinUsingBrowser <Boolean?>]`: Indicates whether the client can use the browser to join a virtual appointment. If set to false, the client can only use Microsoft Teams to join. Optional.
 
 BROADCASTSETTINGS <IMicrosoftGraphBroadcastMeetingSettings1>: broadcastMeetingSettings
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -868,6 +921,7 @@ INPUTOBJECT <ICloudCommunicationsIdentity>: Identity Parameter
   - `[AudioRoutingGroupId <String>]`: key: id of audioRoutingGroup
   - `[CallId <String>]`: key: id of call
   - `[CallRecordId <String>]`: key: id of callRecord
+  - `[CallTranscriptId <String>]`: key: id of callTranscript
   - `[CommsOperationId <String>]`: key: id of commsOperation
   - `[ContentSharingSessionId <String>]`: key: id of contentSharingSession
   - `[MeetingAttendanceReportId <String>]`: key: id of meetingAttendanceReport
@@ -954,6 +1008,25 @@ REGISTRATION <IMicrosoftGraphMeetingRegistration>: meetingRegistration
     - `[DisplayName <String>]`: Display name of the speaker.
   - `[StartDateTime <DateTime?>]`: The meeting start time in UTC.
   - `[Subject <String>]`: The subject of the meeting.
+
+TRANSCRIPTS <IMicrosoftGraphCallTranscript[]>: .
+  - `[Id <String>]`: 
+  - `[Content <Byte[]>]`: 
+  - `[CreatedDateTime <DateTime?>]`: 
+
+VIRTUALAPPOINTMENT <IMicrosoftGraphVirtualAppointment>: virtualAppointment
+  - `[(Any) <Object>]`: This indicates any property can be added to this object.
+  - `[Id <String>]`: 
+  - `[AppointmentClientJoinWebUrl <String>]`: The join web URL of the virtual appointment for clients with waiting room and browser join. Optional.
+  - `[AppointmentClients <IMicrosoftGraphVirtualAppointmentUser[]>]`: The client information for the virtual appointment, including name, email, and SMS phone number. Optional.
+    - `[DisplayName <String>]`: The display name of the user who participates in a virtual appointment. Optional.
+    - `[EmailAddress <String>]`: The email address of the user who participates in a virtual appointment. Optional.
+    - `[SmsCapablePhoneNumber <String>]`: The phone number for sending SMS texts for the user who participates in a virtual appointment. Optional.
+  - `[ExternalAppointmentId <String>]`: The identifier of the appointment from the scheduling system, associated with the current virtual appointment. Optional.
+  - `[ExternalAppointmentUrl <String>]`: The URL of the appointment resource from the scheduling system, associated with the current virtual appointment. Optional.
+  - `[Settings <IMicrosoftGraphVirtualAppointmentSettings>]`: virtualAppointmentSettings
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+    - `[AllowClientToJoinUsingBrowser <Boolean?>]`: Indicates whether the client can use the browser to join a virtual appointment. If set to false, the client can only use Microsoft Teams to join. Optional.
 
 ## RELATED LINKS
 

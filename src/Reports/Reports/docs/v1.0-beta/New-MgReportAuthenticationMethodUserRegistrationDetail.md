@@ -15,9 +15,10 @@ Create new navigation property to userRegistrationDetails for reports
 ### CreateExpanded (Default)
 ```
 New-MgReportAuthenticationMethodUserRegistrationDetail [-AdditionalProperties <Hashtable>]
- [-DefaultMfaMethod <String>] [-Id <String>] [-IsMfaCapable] [-IsMfaRegistered] [-IsPasswordlessCapable]
- [-IsSsprCapable] [-IsSsprEnabled] [-IsSsprRegistered] [-MethodsRegistered <String[]>]
- [-UserDisplayName <String>] [-UserPrincipalName <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-DefaultMfaMethod <String>] [-Id <String>] [-IsAdmin] [-IsMfaCapable] [-IsMfaRegistered]
+ [-IsPasswordlessCapable] [-IsSsprCapable] [-IsSsprEnabled] [-IsSsprRegistered]
+ [-MethodsRegistered <String[]>] [-UserDisplayName <String>] [-UserPrincipalName <String>]
+ [-UserType <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
@@ -84,6 +85,21 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.String
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -IsAdmin
+.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -242,6 +258,21 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -UserType
+signInUserType
+
+```yaml
+Type: System.String
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Confirm
 Prompts you for confirmation before running the cmdlet.
 
@@ -297,6 +328,7 @@ BODYPARAMETER <IMicrosoftGraphUserRegistrationDetails>: userRegistrationDetails
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: 
   - `[DefaultMfaMethod <String>]`: defaultMfaMethodType
+  - `[IsAdmin <Boolean?>]`: 
   - `[IsMfaCapable <Boolean?>]`: Whether the user has registered a strong authentication method for multi-factor authentication. The method must be allowed by the authentication methods policy. Supports $filter (eq).
   - `[IsMfaRegistered <Boolean?>]`: Whether the user has registered a strong authentication method for multi-factor authentication. The method may not necessarily be allowed by the authentication methods policy.  Supports $filter (eq).
   - `[IsPasswordlessCapable <Boolean?>]`: Whether the user has registered a passwordless strong authentication method (including FIDO2, Windows Hello for Business, and Microsoft Authenticator (Passwordless)) that is allowed by the authentication methods policy. Supports $filter (eq).
@@ -306,6 +338,7 @@ BODYPARAMETER <IMicrosoftGraphUserRegistrationDetails>: userRegistrationDetails
   - `[MethodsRegistered <String[]>]`: Collection of authentication methods registered, such as mobilePhone, email, fido2. Supports $filter (any with eq).
   - `[UserDisplayName <String>]`: The user display name, such as Adele Vance. Supports $filter (eq, startsWith) and $orderBy.
   - `[UserPrincipalName <String>]`: The user principal name, such as AdeleV@contoso.com. Supports $filter (eq, startsWith) and $orderBy.
+  - `[UserType <String>]`: signInUserType
 
 ## RELATED LINKS
 

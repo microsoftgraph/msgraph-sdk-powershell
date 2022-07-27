@@ -12,27 +12,27 @@ Invoke action clearPresence
 
 ## SYNTAX
 
-### ClearExpanded1 (Default)
+### ClearExpanded (Default)
 ```
 Clear-MgCommunicationPresence -PresenceId <String> [-AdditionalProperties <Hashtable>] [-SessionId <String>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### Clear1
+### Clear
 ```
 Clear-MgCommunicationPresence -PresenceId <String>
  -BodyParameter <IPaths1Ca0Rf4CommunicationsPresencesPresenceIdMicrosoftGraphClearpresencePostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### ClearViaIdentity1
+### ClearViaIdentity
 ```
 Clear-MgCommunicationPresence -InputObject <ICloudCommunicationsIdentity>
  -BodyParameter <IPaths1Ca0Rf4CommunicationsPresencesPresenceIdMicrosoftGraphClearpresencePostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### ClearViaIdentityExpanded1
+### ClearViaIdentityExpanded
 ```
 Clear-MgCommunicationPresence -InputObject <ICloudCommunicationsIdentity> [-AdditionalProperties <Hashtable>]
  [-SessionId <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -50,7 +50,7 @@ Additional Parameters
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: ClearExpanded1, ClearViaIdentityExpanded1
+Parameter Sets: ClearExpanded, ClearViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -66,7 +66,7 @@ To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETE
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IPaths1Ca0Rf4CommunicationsPresencesPresenceIdMicrosoftGraphClearpresencePostRequestbodyContentApplicationJsonSchema
-Parameter Sets: Clear1, ClearViaIdentity1
+Parameter Sets: Clear, ClearViaIdentity
 Aliases:
 
 Required: True
@@ -82,7 +82,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.ICloudCommunicationsIdentity
-Parameter Sets: ClearViaIdentity1, ClearViaIdentityExpanded1
+Parameter Sets: ClearViaIdentity, ClearViaIdentityExpanded
 Aliases:
 
 Required: True
@@ -112,7 +112,7 @@ key: id of presence
 
 ```yaml
 Type: System.String
-Parameter Sets: Clear1, ClearExpanded1
+Parameter Sets: Clear, ClearExpanded
 Aliases:
 
 Required: True
@@ -127,7 +127,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.String
-Parameter Sets: ClearExpanded1, ClearViaIdentityExpanded1
+Parameter Sets: ClearExpanded, ClearViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -199,6 +199,7 @@ INPUTOBJECT <ICloudCommunicationsIdentity>: Identity Parameter
   - `[AudioRoutingGroupId <String>]`: key: id of audioRoutingGroup
   - `[CallId <String>]`: key: id of call
   - `[CallRecordId <String>]`: key: id of callRecord
+  - `[CallTranscriptId <String>]`: key: id of callTranscript
   - `[CommsOperationId <String>]`: key: id of commsOperation
   - `[ContentSharingSessionId <String>]`: key: id of contentSharingSession
   - `[MeetingAttendanceReportId <String>]`: key: id of meetingAttendanceReport

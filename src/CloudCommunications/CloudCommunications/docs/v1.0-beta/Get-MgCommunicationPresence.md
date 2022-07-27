@@ -19,13 +19,13 @@ Get-MgCommunicationPresence [-ExpandProperty <String[]>] [-Filter <String>] [-Pr
  [-PageSize <Int32>] [<CommonParameters>]
 ```
 
-### Get1
+### Get
 ```
 Get-MgCommunicationPresence -PresenceId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
-### GetViaIdentity1
+### GetViaIdentity
 ```
 Get-MgCommunicationPresence -InputObject <ICloudCommunicationsIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
@@ -105,7 +105,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.ICloudCommunicationsIdentity
-Parameter Sets: GetViaIdentity1
+Parameter Sets: GetViaIdentity
 Aliases:
 
 Required: True
@@ -135,7 +135,7 @@ key: id of presence
 
 ```yaml
 Type: System.String
-Parameter Sets: Get1
+Parameter Sets: Get
 Aliases:
 
 Required: True
@@ -245,6 +245,7 @@ INPUTOBJECT <ICloudCommunicationsIdentity>: Identity Parameter
   - `[AudioRoutingGroupId <String>]`: key: id of audioRoutingGroup
   - `[CallId <String>]`: key: id of call
   - `[CallRecordId <String>]`: key: id of callRecord
+  - `[CallTranscriptId <String>]`: key: id of callTranscript
   - `[CommsOperationId <String>]`: key: id of commsOperation
   - `[ContentSharingSessionId <String>]`: key: id of contentSharingSession
   - `[MeetingAttendanceReportId <String>]`: key: id of meetingAttendanceReport

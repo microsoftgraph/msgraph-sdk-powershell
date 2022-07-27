@@ -12,7 +12,7 @@ Create new navigation property to onlineMeetings for users
 
 ## SYNTAX
 
-### CreateExpanded (Default)
+### CreateExpanded1 (Default)
 ```
 New-MgUserOnlineMeeting -UserId <String> [-AdditionalProperties <Hashtable>] [-AllowAttendeeToEnableCamera]
  [-AllowAttendeeToEnableMic] [-AllowedPresenters <String>] [-AllowMeetingChat <String>]
@@ -26,19 +26,19 @@ New-MgUserOnlineMeeting -UserId <String> [-AdditionalProperties <Hashtable>] [-A
  [-Subject <String>] [-VideoTeleconferenceId <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### Create
+### Create1
 ```
 New-MgUserOnlineMeeting -UserId <String> -BodyParameter <IMicrosoftGraphOnlineMeeting> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
-### CreateViaIdentity
+### CreateViaIdentity1
 ```
 New-MgUserOnlineMeeting -InputObject <ICloudCommunicationsIdentity>
  -BodyParameter <IMicrosoftGraphOnlineMeeting> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### CreateViaIdentityExpanded
+### CreateViaIdentityExpanded1
 ```
 New-MgUserOnlineMeeting -InputObject <ICloudCommunicationsIdentity> [-AdditionalProperties <Hashtable>]
  [-AllowAttendeeToEnableCamera] [-AllowAttendeeToEnableMic] [-AllowedPresenters <String>]
@@ -65,7 +65,7 @@ Additional Parameters
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -80,7 +80,7 @@ Indicates whether attendees can turn on their camera.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -95,7 +95,7 @@ Indicates whether attendees can turn on their microphone.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -110,7 +110,7 @@ onlineMeetingPresenters
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -125,7 +125,7 @@ meetingChatMode
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -140,7 +140,7 @@ Indicates if Teams reactions are enabled for the meeting.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -157,7 +157,7 @@ To construct, please use Get-Help -Online and see NOTES section for ATTENDANCERE
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMeetingAttendanceReport[]
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -173,7 +173,7 @@ Read-only.)
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -189,7 +189,7 @@ To construct, please use Get-Help -Online and see NOTES section for AUDIOCONFERE
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAudioConferencing
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -205,7 +205,7 @@ To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETE
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOnlineMeeting
-Parameter Sets: Create, CreateViaIdentity
+Parameter Sets: Create1, CreateViaIdentity1
 Aliases:
 
 Required: True
@@ -221,7 +221,7 @@ To construct, please use Get-Help -Online and see NOTES section for BROADCASTSET
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphBroadcastMeetingSettings
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -237,7 +237,7 @@ To construct, please use Get-Help -Online and see NOTES section for CHATINFO pro
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphChatInfo
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -253,7 +253,7 @@ Read-only.
 
 ```yaml
 Type: System.DateTime
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -268,7 +268,7 @@ The meeting end time in UTC.
 
 ```yaml
 Type: System.DateTime
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -285,7 +285,7 @@ Optional.
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -300,7 +300,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -316,7 +316,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.ICloudCommunicationsIdentity
-Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
+Parameter Sets: CreateViaIdentity1, CreateViaIdentityExpanded1
 Aliases:
 
 Required: True
@@ -331,7 +331,7 @@ Indicates whether this is a Teams live event.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -346,7 +346,7 @@ Indicates whether to announce when callers join or leave.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -362,7 +362,7 @@ To construct, please use Get-Help -Online and see NOTES section for JOININFORMAT
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphItemBody
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -378,7 +378,7 @@ Read-only.
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -394,7 +394,7 @@ To construct, please use Get-Help -Online and see NOTES section for LOBBYBYPASSS
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphLobbyBypassSettings
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -410,7 +410,7 @@ To construct, please use Get-Help -Online and see NOTES section for PARTICIPANTS
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMeetingParticipants
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -425,7 +425,7 @@ Indicates whether to record the meeting automatically.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -440,7 +440,7 @@ The meeting start time in UTC.
 
 ```yaml
 Type: System.DateTime
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -455,7 +455,7 @@ The subject of the online meeting.
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -470,7 +470,7 @@ key: id of user
 
 ```yaml
 Type: System.String
-Parameter Sets: Create, CreateExpanded
+Parameter Sets: Create1, CreateExpanded1
 Aliases:
 
 Required: True
@@ -486,7 +486,7 @@ Read-only.
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -673,6 +673,7 @@ INPUTOBJECT <ICloudCommunicationsIdentity>: Identity Parameter
   - `[AudioRoutingGroupId <String>]`: key: id of audioRoutingGroup
   - `[CallId <String>]`: key: id of call
   - `[CallRecordId <String>]`: key: id of callRecord
+  - `[CallTranscriptId <String>]`: key: id of callTranscript
   - `[CommsOperationId <String>]`: key: id of commsOperation
   - `[ContentSharingSessionId <String>]`: key: id of contentSharingSession
   - `[MeetingAttendanceReportId <String>]`: key: id of meetingAttendanceReport

@@ -1591,7 +1591,7 @@ BODYPARAMETER <IMicrosoftGraphSecurityEdiscoveryCustodian1>: ediscoveryCustodian
               - `[Required <Boolean?>]`: Specifies whether the column value isn't optional.
               - `[SourceColumn <IMicrosoftGraphColumnDefinition1>]`: columnDefinition
               - `[SourceContentType <IMicrosoftGraphContentTypeInfo>]`: contentTypeInfo
-              - `[Term <IMicrosoftGraphTermColumn1>]`: termColumn
+              - `[Term <IMicrosoftGraphTermColumn>]`: termColumn
                 - `[(Any) <Object>]`: This indicates any property can be added to this object.
                 - `[AllowMultipleValues <Boolean?>]`: Specifies whether the column will allow more than one value
                 - `[ParentTerm <IMicrosoftGraphTermStoreTerm1>]`: term
@@ -4247,7 +4247,7 @@ SITESOURCES <IMicrosoftGraphSecuritySiteSource1[]>: Data source entity for Share
             - `[Required <Boolean?>]`: Specifies whether the column value isn't optional.
             - `[SourceColumn <IMicrosoftGraphColumnDefinition1>]`: columnDefinition
             - `[SourceContentType <IMicrosoftGraphContentTypeInfo>]`: contentTypeInfo
-            - `[Term <IMicrosoftGraphTermColumn1>]`: termColumn
+            - `[Term <IMicrosoftGraphTermColumn>]`: termColumn
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
               - `[AllowMultipleValues <Boolean?>]`: Specifies whether the column will allow more than one value
               - `[ParentTerm <IMicrosoftGraphTermStoreTerm1>]`: term
@@ -6894,7 +6894,7 @@ UNIFIEDGROUPSOURCES <IMicrosoftGraphSecurityUnifiedGroupSource1[]>: Data source 
             - `[Required <Boolean?>]`: Specifies whether the column value isn't optional.
             - `[SourceColumn <IMicrosoftGraphColumnDefinition1>]`: columnDefinition
             - `[SourceContentType <IMicrosoftGraphContentTypeInfo>]`: contentTypeInfo
-            - `[Term <IMicrosoftGraphTermColumn1>]`: termColumn
+            - `[Term <IMicrosoftGraphTermColumn>]`: termColumn
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
               - `[AllowMultipleValues <Boolean?>]`: Specifies whether the column will allow more than one value
               - `[ParentTerm <IMicrosoftGraphTermStoreTerm1>]`: term
