@@ -2799,18 +2799,14 @@ components:
       title: availabilityItem
       type: object
       properties:
-        endTime:
-          pattern: '^([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?$'
-          type: string
-          format: time
+        endDateTime:
+          $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
         serviceId:
           type: string
           description: 'Indicates the service ID in case of 1:n appointments. If the appointment is of type 1:n, this field will be present, otherwise, null.'
           nullable: true
-        startTime:
-          pattern: '^([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?$'
-          type: string
-          format: time
+        startDateTime:
+          $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
         status:
           $ref: '#/components/schemas/microsoft.graph.bookingsAvailabilityStatus'
       additionalProperties:

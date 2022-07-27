@@ -3050,6 +3050,8 @@ paths:
                 - id desc
                 - defaultMfaMethod
                 - defaultMfaMethod desc
+                - isAdmin
+                - isAdmin desc
                 - isMfaCapable
                 - isMfaCapable desc
                 - isMfaRegistered
@@ -3068,6 +3070,8 @@ paths:
                 - userDisplayName desc
                 - userPrincipalName
                 - userPrincipalName desc
+                - userType
+                - userType desc
               type: string
         - name: $select
           in: query
@@ -3081,6 +3085,7 @@ paths:
               enum:
                 - id
                 - defaultMfaMethod
+                - isAdmin
                 - isMfaCapable
                 - isMfaRegistered
                 - isPasswordlessCapable
@@ -3090,6 +3095,7 @@ paths:
                 - methodsRegistered
                 - userDisplayName
                 - userPrincipalName
+                - userType
               type: string
         - name: $expand
           in: query
@@ -3160,6 +3166,7 @@ paths:
               enum:
                 - id
                 - defaultMfaMethod
+                - isAdmin
                 - isMfaCapable
                 - isMfaRegistered
                 - isPasswordlessCapable
@@ -3169,6 +3176,7 @@ paths:
                 - methodsRegistered
                 - userDisplayName
                 - userPrincipalName
+                - userType
               type: string
         - name: $expand
           in: query
@@ -9722,6 +9730,9 @@ components:
           properties:
             defaultMfaMethod:
               $ref: '#/components/schemas/microsoft.graph.defaultMfaMethodType'
+            isAdmin:
+              type: boolean
+              nullable: true
             isMfaCapable:
               type: boolean
               description: Whether the user has registered a strong authentication method for multi-factor authentication. The method must be allowed by the authentication methods policy. Supports $filter (eq).
@@ -9752,6 +9763,8 @@ components:
             userPrincipalName:
               type: string
               description: 'The user principal name, such as AdeleV@contoso.com. Supports $filter (eq, startsWith) and $orderBy.'
+            userType:
+              $ref: '#/components/schemas/microsoft.graph.signInUserType'
           additionalProperties:
             type: object
     microsoft.graph.credentialUserRegistrationDetails:
