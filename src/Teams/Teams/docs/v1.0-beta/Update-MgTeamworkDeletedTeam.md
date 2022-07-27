@@ -1476,7 +1476,7 @@ BODYPARAMETER <IMicrosoftGraphDeletedTeam>: deletedTeam
           - `[Onenote <IMicrosoftGraphOnenote1>]`: onenote
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[Id <String>]`: 
-            - `[Notebooks <IMicrosoftGraphNotebook[]>]`: The collection of OneNote notebooks that are owned by the user or group. Read-only. Nullable.
+            - `[Notebooks <IMicrosoftGraphNotebook1[]>]`: The collection of OneNote notebooks that are owned by the user or group. Read-only. Nullable.
               - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
               - `[DisplayName <String>]`: The name of the notebook.
               - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
@@ -1500,7 +1500,7 @@ BODYPARAMETER <IMicrosoftGraphDeletedTeam>: deletedTeam
                 - `[CreatedDateTime <DateTime?>]`: The date and time when the page was created. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
                 - `[Self <String>]`: The endpoint where you can get details about the page. Read-only.
                 - `[Id <String>]`: 
-                - `[ParentNotebook <IMicrosoftGraphNotebook>]`: notebook
+                - `[ParentNotebook <IMicrosoftGraphNotebook1>]`: notebook
                 - `[ParentSectionGroup <IMicrosoftGraphSectionGroup1>]`: sectionGroup
                 - `[SectionGroups <IMicrosoftGraphSectionGroup1[]>]`: The section groups in the section. Read-only. Nullable.
                 - `[SectionGroupsUrl <String>]`: The URL for the sectionGroups navigation property, which returns all the section groups in the section group. Read-only.
@@ -1531,12 +1531,12 @@ BODYPARAMETER <IMicrosoftGraphDeletedTeam>: deletedTeam
                       - `[OneNoteClientUrl <IMicrosoftGraphExternalLink>]`: externalLink
                       - `[OneNoteWebUrl <IMicrosoftGraphExternalLink>]`: externalLink
                     - `[Order <Int32?>]`: The order of the page within its parent section. Read-only.
-                    - `[ParentNotebook <IMicrosoftGraphNotebook>]`: notebook
+                    - `[ParentNotebook <IMicrosoftGraphNotebook1>]`: notebook
                     - `[ParentSection <IMicrosoftGraphOnenoteSection1>]`: onenoteSection
                     - `[Title <String>]`: The title of the page.
                     - `[UserTags <String[]>]`: 
                   - `[PagesUrl <String>]`: The pages endpoint where you can get details for all the pages in the section. Read-only.
-                  - `[ParentNotebook <IMicrosoftGraphNotebook>]`: notebook
+                  - `[ParentNotebook <IMicrosoftGraphNotebook1>]`: notebook
                   - `[ParentSectionGroup <IMicrosoftGraphSectionGroup1>]`: sectionGroup
                 - `[SectionsUrl <String>]`: The URL for the sections navigation property, which returns all the sections in the section group. Read-only.
               - `[SectionGroupsUrl <String>]`: The URL for the sectionGroups navigation property, which returns all the section groups in the notebook. Read-only.
@@ -3043,7 +3043,24 @@ BODYPARAMETER <IMicrosoftGraphDeletedTeam>: deletedTeam
             - `[Subject <String>]`: The subject of the meeting.
           - `[StartDateTime <DateTime?>]`: The meeting start time in UTC.
           - `[Subject <String>]`: The subject of the online meeting.
+          - `[Transcripts <IMicrosoftGraphCallTranscript[]>]`: 
+            - `[Id <String>]`: 
+            - `[Content <Byte[]>]`: 
+            - `[CreatedDateTime <DateTime?>]`: 
           - `[VideoTeleconferenceId <String>]`: The video teleconferencing ID. Read-only.
+          - `[VirtualAppointment <IMicrosoftGraphVirtualAppointment>]`: virtualAppointment
+            - `[(Any) <Object>]`: This indicates any property can be added to this object.
+            - `[Id <String>]`: 
+            - `[AppointmentClientJoinWebUrl <String>]`: The join web URL of the virtual appointment for clients with waiting room and browser join. Optional.
+            - `[AppointmentClients <IMicrosoftGraphVirtualAppointmentUser[]>]`: The client information for the virtual appointment, including name, email, and SMS phone number. Optional.
+              - `[DisplayName <String>]`: The display name of the user who participates in a virtual appointment. Optional.
+              - `[EmailAddress <String>]`: The email address of the user who participates in a virtual appointment. Optional.
+              - `[SmsCapablePhoneNumber <String>]`: The phone number for sending SMS texts for the user who participates in a virtual appointment. Optional.
+            - `[ExternalAppointmentId <String>]`: The identifier of the appointment from the scheduling system, associated with the current virtual appointment. Optional.
+            - `[ExternalAppointmentUrl <String>]`: The URL of the appointment resource from the scheduling system, associated with the current virtual appointment. Optional.
+            - `[Settings <IMicrosoftGraphVirtualAppointmentSettings>]`: virtualAppointmentSettings
+              - `[(Any) <Object>]`: This indicates any property can be added to this object.
+              - `[AllowClientToJoinUsingBrowser <Boolean?>]`: Indicates whether the client can use the browser to join a virtual appointment. If set to false, the client can only use Microsoft Teams to join. Optional.
         - `[OtherMails <String[]>]`: A list of additional email addresses for the user; for example: ['bob@contoso.com', 'Robert@fabrikam.com'].NOTE: This property cannot contain accent characters.Supports $filter (eq, not, ge, le, in, startsWith, endsWith, and counting empty collections).
         - `[Outlook <IMicrosoftGraphOutlookUser1>]`: outlookUser
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -5755,7 +5772,7 @@ CHANNELS <IMicrosoftGraphChannel[]>: The channels those are either shared with t
         - `[Onenote <IMicrosoftGraphOnenote1>]`: onenote
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[Id <String>]`: 
-          - `[Notebooks <IMicrosoftGraphNotebook[]>]`: The collection of OneNote notebooks that are owned by the user or group. Read-only. Nullable.
+          - `[Notebooks <IMicrosoftGraphNotebook1[]>]`: The collection of OneNote notebooks that are owned by the user or group. Read-only. Nullable.
             - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
             - `[DisplayName <String>]`: The name of the notebook.
             - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
@@ -5779,7 +5796,7 @@ CHANNELS <IMicrosoftGraphChannel[]>: The channels those are either shared with t
               - `[CreatedDateTime <DateTime?>]`: The date and time when the page was created. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
               - `[Self <String>]`: The endpoint where you can get details about the page. Read-only.
               - `[Id <String>]`: 
-              - `[ParentNotebook <IMicrosoftGraphNotebook>]`: notebook
+              - `[ParentNotebook <IMicrosoftGraphNotebook1>]`: notebook
               - `[ParentSectionGroup <IMicrosoftGraphSectionGroup1>]`: sectionGroup
               - `[SectionGroups <IMicrosoftGraphSectionGroup1[]>]`: The section groups in the section. Read-only. Nullable.
               - `[SectionGroupsUrl <String>]`: The URL for the sectionGroups navigation property, which returns all the section groups in the section group. Read-only.
@@ -5810,12 +5827,12 @@ CHANNELS <IMicrosoftGraphChannel[]>: The channels those are either shared with t
                     - `[OneNoteClientUrl <IMicrosoftGraphExternalLink>]`: externalLink
                     - `[OneNoteWebUrl <IMicrosoftGraphExternalLink>]`: externalLink
                   - `[Order <Int32?>]`: The order of the page within its parent section. Read-only.
-                  - `[ParentNotebook <IMicrosoftGraphNotebook>]`: notebook
+                  - `[ParentNotebook <IMicrosoftGraphNotebook1>]`: notebook
                   - `[ParentSection <IMicrosoftGraphOnenoteSection1>]`: onenoteSection
                   - `[Title <String>]`: The title of the page.
                   - `[UserTags <String[]>]`: 
                 - `[PagesUrl <String>]`: The pages endpoint where you can get details for all the pages in the section. Read-only.
-                - `[ParentNotebook <IMicrosoftGraphNotebook>]`: notebook
+                - `[ParentNotebook <IMicrosoftGraphNotebook1>]`: notebook
                 - `[ParentSectionGroup <IMicrosoftGraphSectionGroup1>]`: sectionGroup
               - `[SectionsUrl <String>]`: The URL for the sections navigation property, which returns all the sections in the section group. Read-only.
             - `[SectionGroupsUrl <String>]`: The URL for the sectionGroups navigation property, which returns all the section groups in the notebook. Read-only.
@@ -7322,7 +7339,24 @@ CHANNELS <IMicrosoftGraphChannel[]>: The channels those are either shared with t
           - `[Subject <String>]`: The subject of the meeting.
         - `[StartDateTime <DateTime?>]`: The meeting start time in UTC.
         - `[Subject <String>]`: The subject of the online meeting.
+        - `[Transcripts <IMicrosoftGraphCallTranscript[]>]`: 
+          - `[Id <String>]`: 
+          - `[Content <Byte[]>]`: 
+          - `[CreatedDateTime <DateTime?>]`: 
         - `[VideoTeleconferenceId <String>]`: The video teleconferencing ID. Read-only.
+        - `[VirtualAppointment <IMicrosoftGraphVirtualAppointment>]`: virtualAppointment
+          - `[(Any) <Object>]`: This indicates any property can be added to this object.
+          - `[Id <String>]`: 
+          - `[AppointmentClientJoinWebUrl <String>]`: The join web URL of the virtual appointment for clients with waiting room and browser join. Optional.
+          - `[AppointmentClients <IMicrosoftGraphVirtualAppointmentUser[]>]`: The client information for the virtual appointment, including name, email, and SMS phone number. Optional.
+            - `[DisplayName <String>]`: The display name of the user who participates in a virtual appointment. Optional.
+            - `[EmailAddress <String>]`: The email address of the user who participates in a virtual appointment. Optional.
+            - `[SmsCapablePhoneNumber <String>]`: The phone number for sending SMS texts for the user who participates in a virtual appointment. Optional.
+          - `[ExternalAppointmentId <String>]`: The identifier of the appointment from the scheduling system, associated with the current virtual appointment. Optional.
+          - `[ExternalAppointmentUrl <String>]`: The URL of the appointment resource from the scheduling system, associated with the current virtual appointment. Optional.
+          - `[Settings <IMicrosoftGraphVirtualAppointmentSettings>]`: virtualAppointmentSettings
+            - `[(Any) <Object>]`: This indicates any property can be added to this object.
+            - `[AllowClientToJoinUsingBrowser <Boolean?>]`: Indicates whether the client can use the browser to join a virtual appointment. If set to false, the client can only use Microsoft Teams to join. Optional.
       - `[OtherMails <String[]>]`: A list of additional email addresses for the user; for example: ['bob@contoso.com', 'Robert@fabrikam.com'].NOTE: This property cannot contain accent characters.Supports $filter (eq, not, ge, le, in, startsWith, endsWith, and counting empty collections).
       - `[Outlook <IMicrosoftGraphOutlookUser1>]`: outlookUser
         - `[(Any) <Object>]`: This indicates any property can be added to this object.

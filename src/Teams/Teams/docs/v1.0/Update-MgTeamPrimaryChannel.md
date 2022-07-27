@@ -1346,7 +1346,7 @@ BODYPARAMETER <IMicrosoftGraphChannel1>: channel
         - `[Onenote <IMicrosoftGraphOnenote>]`: onenote
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[Id <String>]`: 
-          - `[Notebooks <IMicrosoftGraphNotebook1[]>]`: The collection of OneNote notebooks that are owned by the user or group. Read-only. Nullable.
+          - `[Notebooks <IMicrosoftGraphNotebook[]>]`: The collection of OneNote notebooks that are owned by the user or group. Read-only. Nullable.
             - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
             - `[DisplayName <String>]`: The name of the notebook.
             - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
@@ -1370,7 +1370,7 @@ BODYPARAMETER <IMicrosoftGraphChannel1>: channel
               - `[CreatedDateTime <DateTime?>]`: The date and time when the page was created. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
               - `[Self <String>]`: The endpoint where you can get details about the page. Read-only.
               - `[Id <String>]`: 
-              - `[ParentNotebook <IMicrosoftGraphNotebook1>]`: notebook
+              - `[ParentNotebook <IMicrosoftGraphNotebook>]`: notebook
               - `[ParentSectionGroup <IMicrosoftGraphSectionGroup>]`: sectionGroup
               - `[SectionGroups <IMicrosoftGraphSectionGroup[]>]`: The section groups in the section. Read-only. Nullable.
               - `[SectionGroupsUrl <String>]`: The URL for the sectionGroups navigation property, which returns all the section groups in the section group. Read-only.
@@ -1401,12 +1401,12 @@ BODYPARAMETER <IMicrosoftGraphChannel1>: channel
                     - `[OneNoteClientUrl <IMicrosoftGraphExternalLink>]`: externalLink
                     - `[OneNoteWebUrl <IMicrosoftGraphExternalLink>]`: externalLink
                   - `[Order <Int32?>]`: The order of the page within its parent section. Read-only.
-                  - `[ParentNotebook <IMicrosoftGraphNotebook1>]`: notebook
+                  - `[ParentNotebook <IMicrosoftGraphNotebook>]`: notebook
                   - `[ParentSection <IMicrosoftGraphOnenoteSection>]`: onenoteSection
                   - `[Title <String>]`: The title of the page.
                   - `[UserTags <String[]>]`: 
                 - `[PagesUrl <String>]`: The pages endpoint where you can get details for all the pages in the section. Read-only.
-                - `[ParentNotebook <IMicrosoftGraphNotebook1>]`: notebook
+                - `[ParentNotebook <IMicrosoftGraphNotebook>]`: notebook
                 - `[ParentSectionGroup <IMicrosoftGraphSectionGroup>]`: sectionGroup
               - `[SectionsUrl <String>]`: The URL for the sections navigation property, which returns all the sections in the section group. Read-only.
             - `[SectionGroupsUrl <String>]`: The URL for the sectionGroups navigation property, which returns all the section groups in the notebook. Read-only.
@@ -3928,7 +3928,7 @@ FILESFOLDER <IMicrosoftGraphDriveItem1>: driveItem
       - `[Onenote <IMicrosoftGraphOnenote>]`: onenote
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[Id <String>]`: 
-        - `[Notebooks <IMicrosoftGraphNotebook1[]>]`: The collection of OneNote notebooks that are owned by the user or group. Read-only. Nullable.
+        - `[Notebooks <IMicrosoftGraphNotebook[]>]`: The collection of OneNote notebooks that are owned by the user or group. Read-only. Nullable.
           - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
           - `[DisplayName <String>]`: The name of the notebook.
           - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
@@ -3952,7 +3952,7 @@ FILESFOLDER <IMicrosoftGraphDriveItem1>: driveItem
             - `[CreatedDateTime <DateTime?>]`: The date and time when the page was created. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
             - `[Self <String>]`: The endpoint where you can get details about the page. Read-only.
             - `[Id <String>]`: 
-            - `[ParentNotebook <IMicrosoftGraphNotebook1>]`: notebook
+            - `[ParentNotebook <IMicrosoftGraphNotebook>]`: notebook
             - `[ParentSectionGroup <IMicrosoftGraphSectionGroup>]`: sectionGroup
             - `[SectionGroups <IMicrosoftGraphSectionGroup[]>]`: The section groups in the section. Read-only. Nullable.
             - `[SectionGroupsUrl <String>]`: The URL for the sectionGroups navigation property, which returns all the section groups in the section group. Read-only.
@@ -3983,12 +3983,12 @@ FILESFOLDER <IMicrosoftGraphDriveItem1>: driveItem
                   - `[OneNoteClientUrl <IMicrosoftGraphExternalLink>]`: externalLink
                   - `[OneNoteWebUrl <IMicrosoftGraphExternalLink>]`: externalLink
                 - `[Order <Int32?>]`: The order of the page within its parent section. Read-only.
-                - `[ParentNotebook <IMicrosoftGraphNotebook1>]`: notebook
+                - `[ParentNotebook <IMicrosoftGraphNotebook>]`: notebook
                 - `[ParentSection <IMicrosoftGraphOnenoteSection>]`: onenoteSection
                 - `[Title <String>]`: The title of the page.
                 - `[UserTags <String[]>]`: 
               - `[PagesUrl <String>]`: The pages endpoint where you can get details for all the pages in the section. Read-only.
-              - `[ParentNotebook <IMicrosoftGraphNotebook1>]`: notebook
+              - `[ParentNotebook <IMicrosoftGraphNotebook>]`: notebook
               - `[ParentSectionGroup <IMicrosoftGraphSectionGroup>]`: sectionGroup
             - `[SectionsUrl <String>]`: The URL for the sections navigation property, which returns all the sections in the section group. Read-only.
           - `[SectionGroupsUrl <String>]`: The URL for the sectionGroups navigation property, which returns all the section groups in the notebook. Read-only.
@@ -6648,7 +6648,7 @@ SHAREDWITHTEAMS <IMicrosoftGraphSharedWithChannelTeamInfo[]>: A collection of te
             - `[Onenote <IMicrosoftGraphOnenote>]`: onenote
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
               - `[Id <String>]`: 
-              - `[Notebooks <IMicrosoftGraphNotebook1[]>]`: The collection of OneNote notebooks that are owned by the user or group. Read-only. Nullable.
+              - `[Notebooks <IMicrosoftGraphNotebook[]>]`: The collection of OneNote notebooks that are owned by the user or group. Read-only. Nullable.
                 - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
                 - `[DisplayName <String>]`: The name of the notebook.
                 - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
@@ -6672,7 +6672,7 @@ SHAREDWITHTEAMS <IMicrosoftGraphSharedWithChannelTeamInfo[]>: A collection of te
                   - `[CreatedDateTime <DateTime?>]`: The date and time when the page was created. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
                   - `[Self <String>]`: The endpoint where you can get details about the page. Read-only.
                   - `[Id <String>]`: 
-                  - `[ParentNotebook <IMicrosoftGraphNotebook1>]`: notebook
+                  - `[ParentNotebook <IMicrosoftGraphNotebook>]`: notebook
                   - `[ParentSectionGroup <IMicrosoftGraphSectionGroup>]`: sectionGroup
                   - `[SectionGroups <IMicrosoftGraphSectionGroup[]>]`: The section groups in the section. Read-only. Nullable.
                   - `[SectionGroupsUrl <String>]`: The URL for the sectionGroups navigation property, which returns all the section groups in the section group. Read-only.
@@ -6703,12 +6703,12 @@ SHAREDWITHTEAMS <IMicrosoftGraphSharedWithChannelTeamInfo[]>: A collection of te
                         - `[OneNoteClientUrl <IMicrosoftGraphExternalLink>]`: externalLink
                         - `[OneNoteWebUrl <IMicrosoftGraphExternalLink>]`: externalLink
                       - `[Order <Int32?>]`: The order of the page within its parent section. Read-only.
-                      - `[ParentNotebook <IMicrosoftGraphNotebook1>]`: notebook
+                      - `[ParentNotebook <IMicrosoftGraphNotebook>]`: notebook
                       - `[ParentSection <IMicrosoftGraphOnenoteSection>]`: onenoteSection
                       - `[Title <String>]`: The title of the page.
                       - `[UserTags <String[]>]`: 
                     - `[PagesUrl <String>]`: The pages endpoint where you can get details for all the pages in the section. Read-only.
-                    - `[ParentNotebook <IMicrosoftGraphNotebook1>]`: notebook
+                    - `[ParentNotebook <IMicrosoftGraphNotebook>]`: notebook
                     - `[ParentSectionGroup <IMicrosoftGraphSectionGroup>]`: sectionGroup
                   - `[SectionsUrl <String>]`: The URL for the sections navigation property, which returns all the sections in the section group. Read-only.
                 - `[SectionGroupsUrl <String>]`: The URL for the sectionGroups navigation property, which returns all the section groups in the notebook. Read-only.
