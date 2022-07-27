@@ -712,7 +712,7 @@ BODYPARAMETER <IMicrosoftGraphEducationRoot1>: educationRoot
             - `[Id <String>]`: 
             - `[ChatType <String>]`: chatType
             - `[CreatedDateTime <DateTime?>]`: Date and time at which the chat was created. Read-only.
-            - `[InstalledApps <IMicrosoftGraphTeamsAppInstallation1[]>]`: A collection of all the apps in the chat. Nullable.
+            - `[InstalledApps <IMicrosoftGraphTeamsAppInstallation[]>]`: A collection of all the apps in the chat. Nullable.
               - `[Id <String>]`: 
               - `[TeamsApp <IMicrosoftGraphTeamsApp>]`: teamsApp
                 - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -1875,7 +1875,7 @@ BODYPARAMETER <IMicrosoftGraphEducationRoot1>: educationRoot
           - `[JobTitle <String>]`: The user's job title. Maximum length is 128 characters. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values).
           - `[JoinedTeams <IMicrosoftGraphTeam1[]>]`: The Microsoft Teams teams that the user is a member of. Read-only. Nullable.
             - `[Id <String>]`: 
-            - `[AllChannels <IMicrosoftGraphChannel1[]>]`: List of channels either hosted in or shared with the team (incoming channels).
+            - `[AllChannels <IMicrosoftGraphChannel[]>]`: List of channels either hosted in or shared with the team (incoming channels).
               - `[Id <String>]`: 
               - `[CreatedDateTime <DateTime?>]`: Read only. Timestamp at which the channel was created.
               - `[Description <String>]`: Optional textual description for the channel.
@@ -1896,7 +1896,7 @@ BODYPARAMETER <IMicrosoftGraphEducationRoot1>: educationRoot
               - `[Tabs <IMicrosoftGraphTeamsTab[]>]`: A collection of all the tabs in the channel. A navigation property.
               - `[TenantId <String>]`: The ID of the Azure Active Directory tenant.
               - `[WebUrl <String>]`: A hyperlink that will go to the channel in Microsoft Teams. This is the URL that you get when you right-click a channel in Microsoft Teams and select Get link to channel. This URL should be treated as an opaque blob, and not parsed. Read-only.
-            - `[Channels <IMicrosoftGraphChannel1[]>]`: The collection of channels and messages associated with the team.
+            - `[Channels <IMicrosoftGraphChannel[]>]`: The collection of channels and messages associated with the team.
             - `[Classification <String>]`: An optional label. Typically describes the data or business sensitivity of the team. Must match one of a pre-configured set in the tenant's directory.
             - `[CreatedDateTime <DateTime?>]`: Timestamp at which the team was created.
             - `[Description <String>]`: An optional description for the team. Maximum length: 1024 characters.
@@ -1912,8 +1912,8 @@ BODYPARAMETER <IMicrosoftGraphEducationRoot1>: educationRoot
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
               - `[AllowCreateUpdateChannels <Boolean?>]`: If set to true, guests can add and update channels.
               - `[AllowDeleteChannels <Boolean?>]`: If set to true, guests can delete channels.
-            - `[IncomingChannels <IMicrosoftGraphChannel1[]>]`: List of channels shared with the team.
-            - `[InstalledApps <IMicrosoftGraphTeamsAppInstallation1[]>]`: The apps installed in this team.
+            - `[IncomingChannels <IMicrosoftGraphChannel[]>]`: List of channels shared with the team.
+            - `[InstalledApps <IMicrosoftGraphTeamsAppInstallation[]>]`: The apps installed in this team.
             - `[InternalId <String>]`: A unique ID for the team that has been used in a few places such as the audit log/Office 365 Management Activity API.
             - `[IsArchived <Boolean?>]`: Whether this team is in read-only mode.
             - `[MemberSettings <IMicrosoftGraphTeamMemberSettings>]`: teamMemberSettings
@@ -1946,7 +1946,7 @@ BODYPARAMETER <IMicrosoftGraphEducationRoot1>: educationRoot
               - `[TargetResourceId <String>]`: The ID of the object that's created or modified as result of this async operation, typically a team.
               - `[TargetResourceLocation <String>]`: The location of the object that's created or modified as result of this async operation. This URL should be treated as an opaque value and not parsed into its component paths.
             - `[Photo <IMicrosoftGraphProfilePhoto>]`: profilePhoto
-            - `[PrimaryChannel <IMicrosoftGraphChannel1>]`: channel
+            - `[PrimaryChannel <IMicrosoftGraphChannel>]`: channel
             - `[Schedule <IMicrosoftGraphSchedule>]`: schedule
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
               - `[Id <String>]`: 
@@ -3513,7 +3513,7 @@ CLASSES <IMicrosoftGraphEducationClass[]>: .
           - `[Id <String>]`: 
           - `[ChatType <String>]`: chatType
           - `[CreatedDateTime <DateTime?>]`: Date and time at which the chat was created. Read-only.
-          - `[InstalledApps <IMicrosoftGraphTeamsAppInstallation1[]>]`: A collection of all the apps in the chat. Nullable.
+          - `[InstalledApps <IMicrosoftGraphTeamsAppInstallation[]>]`: A collection of all the apps in the chat. Nullable.
             - `[Id <String>]`: 
             - `[TeamsApp <IMicrosoftGraphTeamsApp>]`: teamsApp
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -4676,7 +4676,7 @@ CLASSES <IMicrosoftGraphEducationClass[]>: .
         - `[JobTitle <String>]`: The user's job title. Maximum length is 128 characters. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values).
         - `[JoinedTeams <IMicrosoftGraphTeam1[]>]`: The Microsoft Teams teams that the user is a member of. Read-only. Nullable.
           - `[Id <String>]`: 
-          - `[AllChannels <IMicrosoftGraphChannel1[]>]`: List of channels either hosted in or shared with the team (incoming channels).
+          - `[AllChannels <IMicrosoftGraphChannel[]>]`: List of channels either hosted in or shared with the team (incoming channels).
             - `[Id <String>]`: 
             - `[CreatedDateTime <DateTime?>]`: Read only. Timestamp at which the channel was created.
             - `[Description <String>]`: Optional textual description for the channel.
@@ -4697,7 +4697,7 @@ CLASSES <IMicrosoftGraphEducationClass[]>: .
             - `[Tabs <IMicrosoftGraphTeamsTab[]>]`: A collection of all the tabs in the channel. A navigation property.
             - `[TenantId <String>]`: The ID of the Azure Active Directory tenant.
             - `[WebUrl <String>]`: A hyperlink that will go to the channel in Microsoft Teams. This is the URL that you get when you right-click a channel in Microsoft Teams and select Get link to channel. This URL should be treated as an opaque blob, and not parsed. Read-only.
-          - `[Channels <IMicrosoftGraphChannel1[]>]`: The collection of channels and messages associated with the team.
+          - `[Channels <IMicrosoftGraphChannel[]>]`: The collection of channels and messages associated with the team.
           - `[Classification <String>]`: An optional label. Typically describes the data or business sensitivity of the team. Must match one of a pre-configured set in the tenant's directory.
           - `[CreatedDateTime <DateTime?>]`: Timestamp at which the team was created.
           - `[Description <String>]`: An optional description for the team. Maximum length: 1024 characters.
@@ -4713,8 +4713,8 @@ CLASSES <IMicrosoftGraphEducationClass[]>: .
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[AllowCreateUpdateChannels <Boolean?>]`: If set to true, guests can add and update channels.
             - `[AllowDeleteChannels <Boolean?>]`: If set to true, guests can delete channels.
-          - `[IncomingChannels <IMicrosoftGraphChannel1[]>]`: List of channels shared with the team.
-          - `[InstalledApps <IMicrosoftGraphTeamsAppInstallation1[]>]`: The apps installed in this team.
+          - `[IncomingChannels <IMicrosoftGraphChannel[]>]`: List of channels shared with the team.
+          - `[InstalledApps <IMicrosoftGraphTeamsAppInstallation[]>]`: The apps installed in this team.
           - `[InternalId <String>]`: A unique ID for the team that has been used in a few places such as the audit log/Office 365 Management Activity API.
           - `[IsArchived <Boolean?>]`: Whether this team is in read-only mode.
           - `[MemberSettings <IMicrosoftGraphTeamMemberSettings>]`: teamMemberSettings
@@ -4747,7 +4747,7 @@ CLASSES <IMicrosoftGraphEducationClass[]>: .
             - `[TargetResourceId <String>]`: The ID of the object that's created or modified as result of this async operation, typically a team.
             - `[TargetResourceLocation <String>]`: The location of the object that's created or modified as result of this async operation. This URL should be treated as an opaque value and not parsed into its component paths.
           - `[Photo <IMicrosoftGraphProfilePhoto>]`: profilePhoto
-          - `[PrimaryChannel <IMicrosoftGraphChannel1>]`: channel
+          - `[PrimaryChannel <IMicrosoftGraphChannel>]`: channel
           - `[Schedule <IMicrosoftGraphSchedule>]`: schedule
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[Id <String>]`: 
@@ -6319,7 +6319,7 @@ ME <IMicrosoftGraphEducationUser1>: educationUser
             - `[Id <String>]`: 
             - `[ChatType <String>]`: chatType
             - `[CreatedDateTime <DateTime?>]`: Date and time at which the chat was created. Read-only.
-            - `[InstalledApps <IMicrosoftGraphTeamsAppInstallation1[]>]`: A collection of all the apps in the chat. Nullable.
+            - `[InstalledApps <IMicrosoftGraphTeamsAppInstallation[]>]`: A collection of all the apps in the chat. Nullable.
               - `[Id <String>]`: 
               - `[TeamsApp <IMicrosoftGraphTeamsApp>]`: teamsApp
                 - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -7482,7 +7482,7 @@ ME <IMicrosoftGraphEducationUser1>: educationUser
           - `[JobTitle <String>]`: The user's job title. Maximum length is 128 characters. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values).
           - `[JoinedTeams <IMicrosoftGraphTeam1[]>]`: The Microsoft Teams teams that the user is a member of. Read-only. Nullable.
             - `[Id <String>]`: 
-            - `[AllChannels <IMicrosoftGraphChannel1[]>]`: List of channels either hosted in or shared with the team (incoming channels).
+            - `[AllChannels <IMicrosoftGraphChannel[]>]`: List of channels either hosted in or shared with the team (incoming channels).
               - `[Id <String>]`: 
               - `[CreatedDateTime <DateTime?>]`: Read only. Timestamp at which the channel was created.
               - `[Description <String>]`: Optional textual description for the channel.
@@ -7503,7 +7503,7 @@ ME <IMicrosoftGraphEducationUser1>: educationUser
               - `[Tabs <IMicrosoftGraphTeamsTab[]>]`: A collection of all the tabs in the channel. A navigation property.
               - `[TenantId <String>]`: The ID of the Azure Active Directory tenant.
               - `[WebUrl <String>]`: A hyperlink that will go to the channel in Microsoft Teams. This is the URL that you get when you right-click a channel in Microsoft Teams and select Get link to channel. This URL should be treated as an opaque blob, and not parsed. Read-only.
-            - `[Channels <IMicrosoftGraphChannel1[]>]`: The collection of channels and messages associated with the team.
+            - `[Channels <IMicrosoftGraphChannel[]>]`: The collection of channels and messages associated with the team.
             - `[Classification <String>]`: An optional label. Typically describes the data or business sensitivity of the team. Must match one of a pre-configured set in the tenant's directory.
             - `[CreatedDateTime <DateTime?>]`: Timestamp at which the team was created.
             - `[Description <String>]`: An optional description for the team. Maximum length: 1024 characters.
@@ -7519,8 +7519,8 @@ ME <IMicrosoftGraphEducationUser1>: educationUser
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
               - `[AllowCreateUpdateChannels <Boolean?>]`: If set to true, guests can add and update channels.
               - `[AllowDeleteChannels <Boolean?>]`: If set to true, guests can delete channels.
-            - `[IncomingChannels <IMicrosoftGraphChannel1[]>]`: List of channels shared with the team.
-            - `[InstalledApps <IMicrosoftGraphTeamsAppInstallation1[]>]`: The apps installed in this team.
+            - `[IncomingChannels <IMicrosoftGraphChannel[]>]`: List of channels shared with the team.
+            - `[InstalledApps <IMicrosoftGraphTeamsAppInstallation[]>]`: The apps installed in this team.
             - `[InternalId <String>]`: A unique ID for the team that has been used in a few places such as the audit log/Office 365 Management Activity API.
             - `[IsArchived <Boolean?>]`: Whether this team is in read-only mode.
             - `[MemberSettings <IMicrosoftGraphTeamMemberSettings>]`: teamMemberSettings
@@ -7553,7 +7553,7 @@ ME <IMicrosoftGraphEducationUser1>: educationUser
               - `[TargetResourceId <String>]`: The ID of the object that's created or modified as result of this async operation, typically a team.
               - `[TargetResourceLocation <String>]`: The location of the object that's created or modified as result of this async operation. This URL should be treated as an opaque value and not parsed into its component paths.
             - `[Photo <IMicrosoftGraphProfilePhoto>]`: profilePhoto
-            - `[PrimaryChannel <IMicrosoftGraphChannel1>]`: channel
+            - `[PrimaryChannel <IMicrosoftGraphChannel>]`: channel
             - `[Schedule <IMicrosoftGraphSchedule>]`: schedule
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
               - `[Id <String>]`: 
@@ -9131,7 +9131,7 @@ SCHOOLS <IMicrosoftGraphEducationSchool1[]>: .
             - `[Id <String>]`: 
             - `[ChatType <String>]`: chatType
             - `[CreatedDateTime <DateTime?>]`: Date and time at which the chat was created. Read-only.
-            - `[InstalledApps <IMicrosoftGraphTeamsAppInstallation1[]>]`: A collection of all the apps in the chat. Nullable.
+            - `[InstalledApps <IMicrosoftGraphTeamsAppInstallation[]>]`: A collection of all the apps in the chat. Nullable.
               - `[Id <String>]`: 
               - `[TeamsApp <IMicrosoftGraphTeamsApp>]`: teamsApp
                 - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -10294,7 +10294,7 @@ SCHOOLS <IMicrosoftGraphEducationSchool1[]>: .
           - `[JobTitle <String>]`: The user's job title. Maximum length is 128 characters. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values).
           - `[JoinedTeams <IMicrosoftGraphTeam1[]>]`: The Microsoft Teams teams that the user is a member of. Read-only. Nullable.
             - `[Id <String>]`: 
-            - `[AllChannels <IMicrosoftGraphChannel1[]>]`: List of channels either hosted in or shared with the team (incoming channels).
+            - `[AllChannels <IMicrosoftGraphChannel[]>]`: List of channels either hosted in or shared with the team (incoming channels).
               - `[Id <String>]`: 
               - `[CreatedDateTime <DateTime?>]`: Read only. Timestamp at which the channel was created.
               - `[Description <String>]`: Optional textual description for the channel.
@@ -10315,7 +10315,7 @@ SCHOOLS <IMicrosoftGraphEducationSchool1[]>: .
               - `[Tabs <IMicrosoftGraphTeamsTab[]>]`: A collection of all the tabs in the channel. A navigation property.
               - `[TenantId <String>]`: The ID of the Azure Active Directory tenant.
               - `[WebUrl <String>]`: A hyperlink that will go to the channel in Microsoft Teams. This is the URL that you get when you right-click a channel in Microsoft Teams and select Get link to channel. This URL should be treated as an opaque blob, and not parsed. Read-only.
-            - `[Channels <IMicrosoftGraphChannel1[]>]`: The collection of channels and messages associated with the team.
+            - `[Channels <IMicrosoftGraphChannel[]>]`: The collection of channels and messages associated with the team.
             - `[Classification <String>]`: An optional label. Typically describes the data or business sensitivity of the team. Must match one of a pre-configured set in the tenant's directory.
             - `[CreatedDateTime <DateTime?>]`: Timestamp at which the team was created.
             - `[Description <String>]`: An optional description for the team. Maximum length: 1024 characters.
@@ -10331,8 +10331,8 @@ SCHOOLS <IMicrosoftGraphEducationSchool1[]>: .
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
               - `[AllowCreateUpdateChannels <Boolean?>]`: If set to true, guests can add and update channels.
               - `[AllowDeleteChannels <Boolean?>]`: If set to true, guests can delete channels.
-            - `[IncomingChannels <IMicrosoftGraphChannel1[]>]`: List of channels shared with the team.
-            - `[InstalledApps <IMicrosoftGraphTeamsAppInstallation1[]>]`: The apps installed in this team.
+            - `[IncomingChannels <IMicrosoftGraphChannel[]>]`: List of channels shared with the team.
+            - `[InstalledApps <IMicrosoftGraphTeamsAppInstallation[]>]`: The apps installed in this team.
             - `[InternalId <String>]`: A unique ID for the team that has been used in a few places such as the audit log/Office 365 Management Activity API.
             - `[IsArchived <Boolean?>]`: Whether this team is in read-only mode.
             - `[MemberSettings <IMicrosoftGraphTeamMemberSettings>]`: teamMemberSettings
@@ -10365,7 +10365,7 @@ SCHOOLS <IMicrosoftGraphEducationSchool1[]>: .
               - `[TargetResourceId <String>]`: The ID of the object that's created or modified as result of this async operation, typically a team.
               - `[TargetResourceLocation <String>]`: The location of the object that's created or modified as result of this async operation. This URL should be treated as an opaque value and not parsed into its component paths.
             - `[Photo <IMicrosoftGraphProfilePhoto>]`: profilePhoto
-            - `[PrimaryChannel <IMicrosoftGraphChannel1>]`: channel
+            - `[PrimaryChannel <IMicrosoftGraphChannel>]`: channel
             - `[Schedule <IMicrosoftGraphSchedule>]`: schedule
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
               - `[Id <String>]`: 
@@ -11915,7 +11915,7 @@ USERS <IMicrosoftGraphEducationUser1[]>: .
             - `[Id <String>]`: 
             - `[ChatType <String>]`: chatType
             - `[CreatedDateTime <DateTime?>]`: Date and time at which the chat was created. Read-only.
-            - `[InstalledApps <IMicrosoftGraphTeamsAppInstallation1[]>]`: A collection of all the apps in the chat. Nullable.
+            - `[InstalledApps <IMicrosoftGraphTeamsAppInstallation[]>]`: A collection of all the apps in the chat. Nullable.
               - `[Id <String>]`: 
               - `[TeamsApp <IMicrosoftGraphTeamsApp>]`: teamsApp
                 - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -13078,7 +13078,7 @@ USERS <IMicrosoftGraphEducationUser1[]>: .
           - `[JobTitle <String>]`: The user's job title. Maximum length is 128 characters. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values).
           - `[JoinedTeams <IMicrosoftGraphTeam1[]>]`: The Microsoft Teams teams that the user is a member of. Read-only. Nullable.
             - `[Id <String>]`: 
-            - `[AllChannels <IMicrosoftGraphChannel1[]>]`: List of channels either hosted in or shared with the team (incoming channels).
+            - `[AllChannels <IMicrosoftGraphChannel[]>]`: List of channels either hosted in or shared with the team (incoming channels).
               - `[Id <String>]`: 
               - `[CreatedDateTime <DateTime?>]`: Read only. Timestamp at which the channel was created.
               - `[Description <String>]`: Optional textual description for the channel.
@@ -13099,7 +13099,7 @@ USERS <IMicrosoftGraphEducationUser1[]>: .
               - `[Tabs <IMicrosoftGraphTeamsTab[]>]`: A collection of all the tabs in the channel. A navigation property.
               - `[TenantId <String>]`: The ID of the Azure Active Directory tenant.
               - `[WebUrl <String>]`: A hyperlink that will go to the channel in Microsoft Teams. This is the URL that you get when you right-click a channel in Microsoft Teams and select Get link to channel. This URL should be treated as an opaque blob, and not parsed. Read-only.
-            - `[Channels <IMicrosoftGraphChannel1[]>]`: The collection of channels and messages associated with the team.
+            - `[Channels <IMicrosoftGraphChannel[]>]`: The collection of channels and messages associated with the team.
             - `[Classification <String>]`: An optional label. Typically describes the data or business sensitivity of the team. Must match one of a pre-configured set in the tenant's directory.
             - `[CreatedDateTime <DateTime?>]`: Timestamp at which the team was created.
             - `[Description <String>]`: An optional description for the team. Maximum length: 1024 characters.
@@ -13115,8 +13115,8 @@ USERS <IMicrosoftGraphEducationUser1[]>: .
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
               - `[AllowCreateUpdateChannels <Boolean?>]`: If set to true, guests can add and update channels.
               - `[AllowDeleteChannels <Boolean?>]`: If set to true, guests can delete channels.
-            - `[IncomingChannels <IMicrosoftGraphChannel1[]>]`: List of channels shared with the team.
-            - `[InstalledApps <IMicrosoftGraphTeamsAppInstallation1[]>]`: The apps installed in this team.
+            - `[IncomingChannels <IMicrosoftGraphChannel[]>]`: List of channels shared with the team.
+            - `[InstalledApps <IMicrosoftGraphTeamsAppInstallation[]>]`: The apps installed in this team.
             - `[InternalId <String>]`: A unique ID for the team that has been used in a few places such as the audit log/Office 365 Management Activity API.
             - `[IsArchived <Boolean?>]`: Whether this team is in read-only mode.
             - `[MemberSettings <IMicrosoftGraphTeamMemberSettings>]`: teamMemberSettings
@@ -13149,7 +13149,7 @@ USERS <IMicrosoftGraphEducationUser1[]>: .
               - `[TargetResourceId <String>]`: The ID of the object that's created or modified as result of this async operation, typically a team.
               - `[TargetResourceLocation <String>]`: The location of the object that's created or modified as result of this async operation. This URL should be treated as an opaque value and not parsed into its component paths.
             - `[Photo <IMicrosoftGraphProfilePhoto>]`: profilePhoto
-            - `[PrimaryChannel <IMicrosoftGraphChannel1>]`: channel
+            - `[PrimaryChannel <IMicrosoftGraphChannel>]`: channel
             - `[Schedule <IMicrosoftGraphSchedule>]`: schedule
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
               - `[Id <String>]`: 

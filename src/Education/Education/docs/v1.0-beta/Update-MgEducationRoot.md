@@ -855,7 +855,7 @@ BODYPARAMETER <IMicrosoftGraphEducationRoot>: educationRoot
             - `[Id <String>]`: 
             - `[ChatType <String>]`: chatType
             - `[CreatedDateTime <DateTime?>]`: Date and time at which the chat was created. Read-only.
-            - `[InstalledApps <IMicrosoftGraphTeamsAppInstallation[]>]`: A collection of all the apps in the chat. Nullable.
+            - `[InstalledApps <IMicrosoftGraphTeamsAppInstallation1[]>]`: A collection of all the apps in the chat. Nullable.
               - `[Id <String>]`: 
               - `[TeamsApp <IMicrosoftGraphTeamsApp1>]`: teamsApp
                 - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -2350,7 +2350,7 @@ BODYPARAMETER <IMicrosoftGraphEducationRoot>: educationRoot
           - `[JoinedGroups <IMicrosoftGraphGroup[]>]`: 
           - `[JoinedTeams <IMicrosoftGraphTeam[]>]`: The Microsoft Teams teams that the user is a member of. Read-only. Nullable.
             - `[Id <String>]`: 
-            - `[AllChannels <IMicrosoftGraphChannel[]>]`: List of channels either hosted in or shared with the team (incoming channels).
+            - `[AllChannels <IMicrosoftGraphChannel1[]>]`: List of channels either hosted in or shared with the team (incoming channels).
               - `[Id <String>]`: 
               - `[CreatedDateTime <DateTime?>]`: Read only. Timestamp at which the channel was created.
               - `[Description <String>]`: Optional textual description for the channel.
@@ -2377,7 +2377,7 @@ BODYPARAMETER <IMicrosoftGraphEducationRoot>: educationRoot
               - `[Tabs <IMicrosoftGraphTeamsTab1[]>]`: A collection of all the tabs in the channel. A navigation property.
               - `[TenantId <String>]`: The ID of the Azure Active Directory tenant.
               - `[WebUrl <String>]`: A hyperlink that will go to the channel in Microsoft Teams. This is the URL that you get when you right-click a channel in Microsoft Teams and select Get link to channel. This URL should be treated as an opaque blob, and not parsed. Read-only.
-            - `[Channels <IMicrosoftGraphChannel[]>]`: The collection of channels and messages associated with the team.
+            - `[Channels <IMicrosoftGraphChannel1[]>]`: The collection of channels and messages associated with the team.
             - `[Classification <String>]`: An optional label. Typically describes the data or business sensitivity of the team. Must match one of a pre-configured set in the tenant's directory.
             - `[CreatedDateTime <DateTime?>]`: Timestamp at which the team was created.
             - `[Description <String>]`: An optional description for the team. Maximum length: 1024 characters.
@@ -2396,8 +2396,8 @@ BODYPARAMETER <IMicrosoftGraphEducationRoot>: educationRoot
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
               - `[AllowCreateUpdateChannels <Boolean?>]`: If set to true, guests can add and update channels.
               - `[AllowDeleteChannels <Boolean?>]`: If set to true, guests can delete channels.
-            - `[IncomingChannels <IMicrosoftGraphChannel[]>]`: List of channels shared with the team.
-            - `[InstalledApps <IMicrosoftGraphTeamsAppInstallation[]>]`: The apps installed in this team.
+            - `[IncomingChannels <IMicrosoftGraphChannel1[]>]`: List of channels shared with the team.
+            - `[InstalledApps <IMicrosoftGraphTeamsAppInstallation1[]>]`: The apps installed in this team.
             - `[InternalId <String>]`: A unique ID for the team that has been used in a few places such as the audit log/Office 365 Management Activity API.
             - `[IsArchived <Boolean?>]`: Whether this team is in read-only mode.
             - `[IsMembershipLimitedToOwners <Boolean?>]`: If set to true, the team is currently in the owner-only team membership state and not accessible by other team members, such as students.
@@ -2421,7 +2421,7 @@ BODYPARAMETER <IMicrosoftGraphEducationRoot>: educationRoot
             - `[Owners <IMicrosoftGraphUser[]>]`: The list of this team's owners. Currently, when creating a team using application permissions, exactly one owner must be specified. When using user delegated permissions, no owner can be specified (the current user is the owner). Owner must be specified as an object ID (GUID), not a UPN.
             - `[PermissionGrants <IMicrosoftGraphResourceSpecificPermissionGrant[]>]`: A collection of permissions granted to apps to access the team.
             - `[Photo <IMicrosoftGraphProfilePhoto>]`: profilePhoto
-            - `[PrimaryChannel <IMicrosoftGraphChannel>]`: channel
+            - `[PrimaryChannel <IMicrosoftGraphChannel1>]`: channel
             - `[Schedule <IMicrosoftGraphSchedule1>]`: schedule
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
               - `[Id <String>]`: 
@@ -3355,7 +3355,24 @@ BODYPARAMETER <IMicrosoftGraphEducationRoot>: educationRoot
               - `[Subject <String>]`: The subject of the meeting.
             - `[StartDateTime <DateTime?>]`: The meeting start time in UTC.
             - `[Subject <String>]`: The subject of the online meeting.
+            - `[Transcripts <IMicrosoftGraphCallTranscript[]>]`: 
+              - `[Id <String>]`: 
+              - `[Content <Byte[]>]`: 
+              - `[CreatedDateTime <DateTime?>]`: 
             - `[VideoTeleconferenceId <String>]`: The video teleconferencing ID. Read-only.
+            - `[VirtualAppointment <IMicrosoftGraphVirtualAppointment>]`: virtualAppointment
+              - `[(Any) <Object>]`: This indicates any property can be added to this object.
+              - `[Id <String>]`: 
+              - `[AppointmentClientJoinWebUrl <String>]`: The join web URL of the virtual appointment for clients with waiting room and browser join. Optional.
+              - `[AppointmentClients <IMicrosoftGraphVirtualAppointmentUser[]>]`: The client information for the virtual appointment, including name, email, and SMS phone number. Optional.
+                - `[DisplayName <String>]`: The display name of the user who participates in a virtual appointment. Optional.
+                - `[EmailAddress <String>]`: The email address of the user who participates in a virtual appointment. Optional.
+                - `[SmsCapablePhoneNumber <String>]`: The phone number for sending SMS texts for the user who participates in a virtual appointment. Optional.
+              - `[ExternalAppointmentId <String>]`: The identifier of the appointment from the scheduling system, associated with the current virtual appointment. Optional.
+              - `[ExternalAppointmentUrl <String>]`: The URL of the appointment resource from the scheduling system, associated with the current virtual appointment. Optional.
+              - `[Settings <IMicrosoftGraphVirtualAppointmentSettings>]`: virtualAppointmentSettings
+                - `[(Any) <Object>]`: This indicates any property can be added to this object.
+                - `[AllowClientToJoinUsingBrowser <Boolean?>]`: Indicates whether the client can use the browser to join a virtual appointment. If set to false, the client can only use Microsoft Teams to join. Optional.
           - `[OtherMails <String[]>]`: A list of additional email addresses for the user; for example: ['bob@contoso.com', 'Robert@fabrikam.com'].NOTE: This property cannot contain accent characters.Supports $filter (eq, not, ge, le, in, startsWith, endsWith, and counting empty collections).
           - `[Outlook <IMicrosoftGraphOutlookUser>]`: outlookUser
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -5378,7 +5395,7 @@ CLASSES <IMicrosoftGraphEducationClass1[]>: .
           - `[Id <String>]`: 
           - `[ChatType <String>]`: chatType
           - `[CreatedDateTime <DateTime?>]`: Date and time at which the chat was created. Read-only.
-          - `[InstalledApps <IMicrosoftGraphTeamsAppInstallation[]>]`: A collection of all the apps in the chat. Nullable.
+          - `[InstalledApps <IMicrosoftGraphTeamsAppInstallation1[]>]`: A collection of all the apps in the chat. Nullable.
             - `[Id <String>]`: 
             - `[TeamsApp <IMicrosoftGraphTeamsApp1>]`: teamsApp
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -6873,7 +6890,7 @@ CLASSES <IMicrosoftGraphEducationClass1[]>: .
         - `[JoinedGroups <IMicrosoftGraphGroup[]>]`: 
         - `[JoinedTeams <IMicrosoftGraphTeam[]>]`: The Microsoft Teams teams that the user is a member of. Read-only. Nullable.
           - `[Id <String>]`: 
-          - `[AllChannels <IMicrosoftGraphChannel[]>]`: List of channels either hosted in or shared with the team (incoming channels).
+          - `[AllChannels <IMicrosoftGraphChannel1[]>]`: List of channels either hosted in or shared with the team (incoming channels).
             - `[Id <String>]`: 
             - `[CreatedDateTime <DateTime?>]`: Read only. Timestamp at which the channel was created.
             - `[Description <String>]`: Optional textual description for the channel.
@@ -6900,7 +6917,7 @@ CLASSES <IMicrosoftGraphEducationClass1[]>: .
             - `[Tabs <IMicrosoftGraphTeamsTab1[]>]`: A collection of all the tabs in the channel. A navigation property.
             - `[TenantId <String>]`: The ID of the Azure Active Directory tenant.
             - `[WebUrl <String>]`: A hyperlink that will go to the channel in Microsoft Teams. This is the URL that you get when you right-click a channel in Microsoft Teams and select Get link to channel. This URL should be treated as an opaque blob, and not parsed. Read-only.
-          - `[Channels <IMicrosoftGraphChannel[]>]`: The collection of channels and messages associated with the team.
+          - `[Channels <IMicrosoftGraphChannel1[]>]`: The collection of channels and messages associated with the team.
           - `[Classification <String>]`: An optional label. Typically describes the data or business sensitivity of the team. Must match one of a pre-configured set in the tenant's directory.
           - `[CreatedDateTime <DateTime?>]`: Timestamp at which the team was created.
           - `[Description <String>]`: An optional description for the team. Maximum length: 1024 characters.
@@ -6919,8 +6936,8 @@ CLASSES <IMicrosoftGraphEducationClass1[]>: .
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[AllowCreateUpdateChannels <Boolean?>]`: If set to true, guests can add and update channels.
             - `[AllowDeleteChannels <Boolean?>]`: If set to true, guests can delete channels.
-          - `[IncomingChannels <IMicrosoftGraphChannel[]>]`: List of channels shared with the team.
-          - `[InstalledApps <IMicrosoftGraphTeamsAppInstallation[]>]`: The apps installed in this team.
+          - `[IncomingChannels <IMicrosoftGraphChannel1[]>]`: List of channels shared with the team.
+          - `[InstalledApps <IMicrosoftGraphTeamsAppInstallation1[]>]`: The apps installed in this team.
           - `[InternalId <String>]`: A unique ID for the team that has been used in a few places such as the audit log/Office 365 Management Activity API.
           - `[IsArchived <Boolean?>]`: Whether this team is in read-only mode.
           - `[IsMembershipLimitedToOwners <Boolean?>]`: If set to true, the team is currently in the owner-only team membership state and not accessible by other team members, such as students.
@@ -6944,7 +6961,7 @@ CLASSES <IMicrosoftGraphEducationClass1[]>: .
           - `[Owners <IMicrosoftGraphUser[]>]`: The list of this team's owners. Currently, when creating a team using application permissions, exactly one owner must be specified. When using user delegated permissions, no owner can be specified (the current user is the owner). Owner must be specified as an object ID (GUID), not a UPN.
           - `[PermissionGrants <IMicrosoftGraphResourceSpecificPermissionGrant[]>]`: A collection of permissions granted to apps to access the team.
           - `[Photo <IMicrosoftGraphProfilePhoto>]`: profilePhoto
-          - `[PrimaryChannel <IMicrosoftGraphChannel>]`: channel
+          - `[PrimaryChannel <IMicrosoftGraphChannel1>]`: channel
           - `[Schedule <IMicrosoftGraphSchedule1>]`: schedule
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[Id <String>]`: 
@@ -7878,7 +7895,24 @@ CLASSES <IMicrosoftGraphEducationClass1[]>: .
             - `[Subject <String>]`: The subject of the meeting.
           - `[StartDateTime <DateTime?>]`: The meeting start time in UTC.
           - `[Subject <String>]`: The subject of the online meeting.
+          - `[Transcripts <IMicrosoftGraphCallTranscript[]>]`: 
+            - `[Id <String>]`: 
+            - `[Content <Byte[]>]`: 
+            - `[CreatedDateTime <DateTime?>]`: 
           - `[VideoTeleconferenceId <String>]`: The video teleconferencing ID. Read-only.
+          - `[VirtualAppointment <IMicrosoftGraphVirtualAppointment>]`: virtualAppointment
+            - `[(Any) <Object>]`: This indicates any property can be added to this object.
+            - `[Id <String>]`: 
+            - `[AppointmentClientJoinWebUrl <String>]`: The join web URL of the virtual appointment for clients with waiting room and browser join. Optional.
+            - `[AppointmentClients <IMicrosoftGraphVirtualAppointmentUser[]>]`: The client information for the virtual appointment, including name, email, and SMS phone number. Optional.
+              - `[DisplayName <String>]`: The display name of the user who participates in a virtual appointment. Optional.
+              - `[EmailAddress <String>]`: The email address of the user who participates in a virtual appointment. Optional.
+              - `[SmsCapablePhoneNumber <String>]`: The phone number for sending SMS texts for the user who participates in a virtual appointment. Optional.
+            - `[ExternalAppointmentId <String>]`: The identifier of the appointment from the scheduling system, associated with the current virtual appointment. Optional.
+            - `[ExternalAppointmentUrl <String>]`: The URL of the appointment resource from the scheduling system, associated with the current virtual appointment. Optional.
+            - `[Settings <IMicrosoftGraphVirtualAppointmentSettings>]`: virtualAppointmentSettings
+              - `[(Any) <Object>]`: This indicates any property can be added to this object.
+              - `[AllowClientToJoinUsingBrowser <Boolean?>]`: Indicates whether the client can use the browser to join a virtual appointment. If set to false, the client can only use Microsoft Teams to join. Optional.
         - `[OtherMails <String[]>]`: A list of additional email addresses for the user; for example: ['bob@contoso.com', 'Robert@fabrikam.com'].NOTE: This property cannot contain accent characters.Supports $filter (eq, not, ge, le, in, startsWith, endsWith, and counting empty collections).
         - `[Outlook <IMicrosoftGraphOutlookUser>]`: outlookUser
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -9877,7 +9911,7 @@ ME <IMicrosoftGraphEducationUser>: educationUser
             - `[Id <String>]`: 
             - `[ChatType <String>]`: chatType
             - `[CreatedDateTime <DateTime?>]`: Date and time at which the chat was created. Read-only.
-            - `[InstalledApps <IMicrosoftGraphTeamsAppInstallation[]>]`: A collection of all the apps in the chat. Nullable.
+            - `[InstalledApps <IMicrosoftGraphTeamsAppInstallation1[]>]`: A collection of all the apps in the chat. Nullable.
               - `[Id <String>]`: 
               - `[TeamsApp <IMicrosoftGraphTeamsApp1>]`: teamsApp
                 - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -11372,7 +11406,7 @@ ME <IMicrosoftGraphEducationUser>: educationUser
           - `[JoinedGroups <IMicrosoftGraphGroup[]>]`: 
           - `[JoinedTeams <IMicrosoftGraphTeam[]>]`: The Microsoft Teams teams that the user is a member of. Read-only. Nullable.
             - `[Id <String>]`: 
-            - `[AllChannels <IMicrosoftGraphChannel[]>]`: List of channels either hosted in or shared with the team (incoming channels).
+            - `[AllChannels <IMicrosoftGraphChannel1[]>]`: List of channels either hosted in or shared with the team (incoming channels).
               - `[Id <String>]`: 
               - `[CreatedDateTime <DateTime?>]`: Read only. Timestamp at which the channel was created.
               - `[Description <String>]`: Optional textual description for the channel.
@@ -11399,7 +11433,7 @@ ME <IMicrosoftGraphEducationUser>: educationUser
               - `[Tabs <IMicrosoftGraphTeamsTab1[]>]`: A collection of all the tabs in the channel. A navigation property.
               - `[TenantId <String>]`: The ID of the Azure Active Directory tenant.
               - `[WebUrl <String>]`: A hyperlink that will go to the channel in Microsoft Teams. This is the URL that you get when you right-click a channel in Microsoft Teams and select Get link to channel. This URL should be treated as an opaque blob, and not parsed. Read-only.
-            - `[Channels <IMicrosoftGraphChannel[]>]`: The collection of channels and messages associated with the team.
+            - `[Channels <IMicrosoftGraphChannel1[]>]`: The collection of channels and messages associated with the team.
             - `[Classification <String>]`: An optional label. Typically describes the data or business sensitivity of the team. Must match one of a pre-configured set in the tenant's directory.
             - `[CreatedDateTime <DateTime?>]`: Timestamp at which the team was created.
             - `[Description <String>]`: An optional description for the team. Maximum length: 1024 characters.
@@ -11418,8 +11452,8 @@ ME <IMicrosoftGraphEducationUser>: educationUser
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
               - `[AllowCreateUpdateChannels <Boolean?>]`: If set to true, guests can add and update channels.
               - `[AllowDeleteChannels <Boolean?>]`: If set to true, guests can delete channels.
-            - `[IncomingChannels <IMicrosoftGraphChannel[]>]`: List of channels shared with the team.
-            - `[InstalledApps <IMicrosoftGraphTeamsAppInstallation[]>]`: The apps installed in this team.
+            - `[IncomingChannels <IMicrosoftGraphChannel1[]>]`: List of channels shared with the team.
+            - `[InstalledApps <IMicrosoftGraphTeamsAppInstallation1[]>]`: The apps installed in this team.
             - `[InternalId <String>]`: A unique ID for the team that has been used in a few places such as the audit log/Office 365 Management Activity API.
             - `[IsArchived <Boolean?>]`: Whether this team is in read-only mode.
             - `[IsMembershipLimitedToOwners <Boolean?>]`: If set to true, the team is currently in the owner-only team membership state and not accessible by other team members, such as students.
@@ -11443,7 +11477,7 @@ ME <IMicrosoftGraphEducationUser>: educationUser
             - `[Owners <IMicrosoftGraphUser[]>]`: The list of this team's owners. Currently, when creating a team using application permissions, exactly one owner must be specified. When using user delegated permissions, no owner can be specified (the current user is the owner). Owner must be specified as an object ID (GUID), not a UPN.
             - `[PermissionGrants <IMicrosoftGraphResourceSpecificPermissionGrant[]>]`: A collection of permissions granted to apps to access the team.
             - `[Photo <IMicrosoftGraphProfilePhoto>]`: profilePhoto
-            - `[PrimaryChannel <IMicrosoftGraphChannel>]`: channel
+            - `[PrimaryChannel <IMicrosoftGraphChannel1>]`: channel
             - `[Schedule <IMicrosoftGraphSchedule1>]`: schedule
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
               - `[Id <String>]`: 
@@ -12377,7 +12411,24 @@ ME <IMicrosoftGraphEducationUser>: educationUser
               - `[Subject <String>]`: The subject of the meeting.
             - `[StartDateTime <DateTime?>]`: The meeting start time in UTC.
             - `[Subject <String>]`: The subject of the online meeting.
+            - `[Transcripts <IMicrosoftGraphCallTranscript[]>]`: 
+              - `[Id <String>]`: 
+              - `[Content <Byte[]>]`: 
+              - `[CreatedDateTime <DateTime?>]`: 
             - `[VideoTeleconferenceId <String>]`: The video teleconferencing ID. Read-only.
+            - `[VirtualAppointment <IMicrosoftGraphVirtualAppointment>]`: virtualAppointment
+              - `[(Any) <Object>]`: This indicates any property can be added to this object.
+              - `[Id <String>]`: 
+              - `[AppointmentClientJoinWebUrl <String>]`: The join web URL of the virtual appointment for clients with waiting room and browser join. Optional.
+              - `[AppointmentClients <IMicrosoftGraphVirtualAppointmentUser[]>]`: The client information for the virtual appointment, including name, email, and SMS phone number. Optional.
+                - `[DisplayName <String>]`: The display name of the user who participates in a virtual appointment. Optional.
+                - `[EmailAddress <String>]`: The email address of the user who participates in a virtual appointment. Optional.
+                - `[SmsCapablePhoneNumber <String>]`: The phone number for sending SMS texts for the user who participates in a virtual appointment. Optional.
+              - `[ExternalAppointmentId <String>]`: The identifier of the appointment from the scheduling system, associated with the current virtual appointment. Optional.
+              - `[ExternalAppointmentUrl <String>]`: The URL of the appointment resource from the scheduling system, associated with the current virtual appointment. Optional.
+              - `[Settings <IMicrosoftGraphVirtualAppointmentSettings>]`: virtualAppointmentSettings
+                - `[(Any) <Object>]`: This indicates any property can be added to this object.
+                - `[AllowClientToJoinUsingBrowser <Boolean?>]`: Indicates whether the client can use the browser to join a virtual appointment. If set to false, the client can only use Microsoft Teams to join. Optional.
           - `[OtherMails <String[]>]`: A list of additional email addresses for the user; for example: ['bob@contoso.com', 'Robert@fabrikam.com'].NOTE: This property cannot contain accent characters.Supports $filter (eq, not, ge, le, in, startsWith, endsWith, and counting empty collections).
           - `[Outlook <IMicrosoftGraphOutlookUser>]`: outlookUser
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -14383,7 +14434,7 @@ SCHOOLS <IMicrosoftGraphEducationSchool[]>: .
             - `[Id <String>]`: 
             - `[ChatType <String>]`: chatType
             - `[CreatedDateTime <DateTime?>]`: Date and time at which the chat was created. Read-only.
-            - `[InstalledApps <IMicrosoftGraphTeamsAppInstallation[]>]`: A collection of all the apps in the chat. Nullable.
+            - `[InstalledApps <IMicrosoftGraphTeamsAppInstallation1[]>]`: A collection of all the apps in the chat. Nullable.
               - `[Id <String>]`: 
               - `[TeamsApp <IMicrosoftGraphTeamsApp1>]`: teamsApp
                 - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -15878,7 +15929,7 @@ SCHOOLS <IMicrosoftGraphEducationSchool[]>: .
           - `[JoinedGroups <IMicrosoftGraphGroup[]>]`: 
           - `[JoinedTeams <IMicrosoftGraphTeam[]>]`: The Microsoft Teams teams that the user is a member of. Read-only. Nullable.
             - `[Id <String>]`: 
-            - `[AllChannels <IMicrosoftGraphChannel[]>]`: List of channels either hosted in or shared with the team (incoming channels).
+            - `[AllChannels <IMicrosoftGraphChannel1[]>]`: List of channels either hosted in or shared with the team (incoming channels).
               - `[Id <String>]`: 
               - `[CreatedDateTime <DateTime?>]`: Read only. Timestamp at which the channel was created.
               - `[Description <String>]`: Optional textual description for the channel.
@@ -15905,7 +15956,7 @@ SCHOOLS <IMicrosoftGraphEducationSchool[]>: .
               - `[Tabs <IMicrosoftGraphTeamsTab1[]>]`: A collection of all the tabs in the channel. A navigation property.
               - `[TenantId <String>]`: The ID of the Azure Active Directory tenant.
               - `[WebUrl <String>]`: A hyperlink that will go to the channel in Microsoft Teams. This is the URL that you get when you right-click a channel in Microsoft Teams and select Get link to channel. This URL should be treated as an opaque blob, and not parsed. Read-only.
-            - `[Channels <IMicrosoftGraphChannel[]>]`: The collection of channels and messages associated with the team.
+            - `[Channels <IMicrosoftGraphChannel1[]>]`: The collection of channels and messages associated with the team.
             - `[Classification <String>]`: An optional label. Typically describes the data or business sensitivity of the team. Must match one of a pre-configured set in the tenant's directory.
             - `[CreatedDateTime <DateTime?>]`: Timestamp at which the team was created.
             - `[Description <String>]`: An optional description for the team. Maximum length: 1024 characters.
@@ -15924,8 +15975,8 @@ SCHOOLS <IMicrosoftGraphEducationSchool[]>: .
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
               - `[AllowCreateUpdateChannels <Boolean?>]`: If set to true, guests can add and update channels.
               - `[AllowDeleteChannels <Boolean?>]`: If set to true, guests can delete channels.
-            - `[IncomingChannels <IMicrosoftGraphChannel[]>]`: List of channels shared with the team.
-            - `[InstalledApps <IMicrosoftGraphTeamsAppInstallation[]>]`: The apps installed in this team.
+            - `[IncomingChannels <IMicrosoftGraphChannel1[]>]`: List of channels shared with the team.
+            - `[InstalledApps <IMicrosoftGraphTeamsAppInstallation1[]>]`: The apps installed in this team.
             - `[InternalId <String>]`: A unique ID for the team that has been used in a few places such as the audit log/Office 365 Management Activity API.
             - `[IsArchived <Boolean?>]`: Whether this team is in read-only mode.
             - `[IsMembershipLimitedToOwners <Boolean?>]`: If set to true, the team is currently in the owner-only team membership state and not accessible by other team members, such as students.
@@ -15949,7 +16000,7 @@ SCHOOLS <IMicrosoftGraphEducationSchool[]>: .
             - `[Owners <IMicrosoftGraphUser[]>]`: The list of this team's owners. Currently, when creating a team using application permissions, exactly one owner must be specified. When using user delegated permissions, no owner can be specified (the current user is the owner). Owner must be specified as an object ID (GUID), not a UPN.
             - `[PermissionGrants <IMicrosoftGraphResourceSpecificPermissionGrant[]>]`: A collection of permissions granted to apps to access the team.
             - `[Photo <IMicrosoftGraphProfilePhoto>]`: profilePhoto
-            - `[PrimaryChannel <IMicrosoftGraphChannel>]`: channel
+            - `[PrimaryChannel <IMicrosoftGraphChannel1>]`: channel
             - `[Schedule <IMicrosoftGraphSchedule1>]`: schedule
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
               - `[Id <String>]`: 
@@ -16883,7 +16934,24 @@ SCHOOLS <IMicrosoftGraphEducationSchool[]>: .
               - `[Subject <String>]`: The subject of the meeting.
             - `[StartDateTime <DateTime?>]`: The meeting start time in UTC.
             - `[Subject <String>]`: The subject of the online meeting.
+            - `[Transcripts <IMicrosoftGraphCallTranscript[]>]`: 
+              - `[Id <String>]`: 
+              - `[Content <Byte[]>]`: 
+              - `[CreatedDateTime <DateTime?>]`: 
             - `[VideoTeleconferenceId <String>]`: The video teleconferencing ID. Read-only.
+            - `[VirtualAppointment <IMicrosoftGraphVirtualAppointment>]`: virtualAppointment
+              - `[(Any) <Object>]`: This indicates any property can be added to this object.
+              - `[Id <String>]`: 
+              - `[AppointmentClientJoinWebUrl <String>]`: The join web URL of the virtual appointment for clients with waiting room and browser join. Optional.
+              - `[AppointmentClients <IMicrosoftGraphVirtualAppointmentUser[]>]`: The client information for the virtual appointment, including name, email, and SMS phone number. Optional.
+                - `[DisplayName <String>]`: The display name of the user who participates in a virtual appointment. Optional.
+                - `[EmailAddress <String>]`: The email address of the user who participates in a virtual appointment. Optional.
+                - `[SmsCapablePhoneNumber <String>]`: The phone number for sending SMS texts for the user who participates in a virtual appointment. Optional.
+              - `[ExternalAppointmentId <String>]`: The identifier of the appointment from the scheduling system, associated with the current virtual appointment. Optional.
+              - `[ExternalAppointmentUrl <String>]`: The URL of the appointment resource from the scheduling system, associated with the current virtual appointment. Optional.
+              - `[Settings <IMicrosoftGraphVirtualAppointmentSettings>]`: virtualAppointmentSettings
+                - `[(Any) <Object>]`: This indicates any property can be added to this object.
+                - `[AllowClientToJoinUsingBrowser <Boolean?>]`: Indicates whether the client can use the browser to join a virtual appointment. If set to false, the client can only use Microsoft Teams to join. Optional.
           - `[OtherMails <String[]>]`: A list of additional email addresses for the user; for example: ['bob@contoso.com', 'Robert@fabrikam.com'].NOTE: This property cannot contain accent characters.Supports $filter (eq, not, ge, le, in, startsWith, endsWith, and counting empty collections).
           - `[Outlook <IMicrosoftGraphOutlookUser>]`: outlookUser
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -18889,7 +18957,7 @@ USERS <IMicrosoftGraphEducationUser[]>: .
             - `[Id <String>]`: 
             - `[ChatType <String>]`: chatType
             - `[CreatedDateTime <DateTime?>]`: Date and time at which the chat was created. Read-only.
-            - `[InstalledApps <IMicrosoftGraphTeamsAppInstallation[]>]`: A collection of all the apps in the chat. Nullable.
+            - `[InstalledApps <IMicrosoftGraphTeamsAppInstallation1[]>]`: A collection of all the apps in the chat. Nullable.
               - `[Id <String>]`: 
               - `[TeamsApp <IMicrosoftGraphTeamsApp1>]`: teamsApp
                 - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -20384,7 +20452,7 @@ USERS <IMicrosoftGraphEducationUser[]>: .
           - `[JoinedGroups <IMicrosoftGraphGroup[]>]`: 
           - `[JoinedTeams <IMicrosoftGraphTeam[]>]`: The Microsoft Teams teams that the user is a member of. Read-only. Nullable.
             - `[Id <String>]`: 
-            - `[AllChannels <IMicrosoftGraphChannel[]>]`: List of channels either hosted in or shared with the team (incoming channels).
+            - `[AllChannels <IMicrosoftGraphChannel1[]>]`: List of channels either hosted in or shared with the team (incoming channels).
               - `[Id <String>]`: 
               - `[CreatedDateTime <DateTime?>]`: Read only. Timestamp at which the channel was created.
               - `[Description <String>]`: Optional textual description for the channel.
@@ -20411,7 +20479,7 @@ USERS <IMicrosoftGraphEducationUser[]>: .
               - `[Tabs <IMicrosoftGraphTeamsTab1[]>]`: A collection of all the tabs in the channel. A navigation property.
               - `[TenantId <String>]`: The ID of the Azure Active Directory tenant.
               - `[WebUrl <String>]`: A hyperlink that will go to the channel in Microsoft Teams. This is the URL that you get when you right-click a channel in Microsoft Teams and select Get link to channel. This URL should be treated as an opaque blob, and not parsed. Read-only.
-            - `[Channels <IMicrosoftGraphChannel[]>]`: The collection of channels and messages associated with the team.
+            - `[Channels <IMicrosoftGraphChannel1[]>]`: The collection of channels and messages associated with the team.
             - `[Classification <String>]`: An optional label. Typically describes the data or business sensitivity of the team. Must match one of a pre-configured set in the tenant's directory.
             - `[CreatedDateTime <DateTime?>]`: Timestamp at which the team was created.
             - `[Description <String>]`: An optional description for the team. Maximum length: 1024 characters.
@@ -20430,8 +20498,8 @@ USERS <IMicrosoftGraphEducationUser[]>: .
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
               - `[AllowCreateUpdateChannels <Boolean?>]`: If set to true, guests can add and update channels.
               - `[AllowDeleteChannels <Boolean?>]`: If set to true, guests can delete channels.
-            - `[IncomingChannels <IMicrosoftGraphChannel[]>]`: List of channels shared with the team.
-            - `[InstalledApps <IMicrosoftGraphTeamsAppInstallation[]>]`: The apps installed in this team.
+            - `[IncomingChannels <IMicrosoftGraphChannel1[]>]`: List of channels shared with the team.
+            - `[InstalledApps <IMicrosoftGraphTeamsAppInstallation1[]>]`: The apps installed in this team.
             - `[InternalId <String>]`: A unique ID for the team that has been used in a few places such as the audit log/Office 365 Management Activity API.
             - `[IsArchived <Boolean?>]`: Whether this team is in read-only mode.
             - `[IsMembershipLimitedToOwners <Boolean?>]`: If set to true, the team is currently in the owner-only team membership state and not accessible by other team members, such as students.
@@ -20455,7 +20523,7 @@ USERS <IMicrosoftGraphEducationUser[]>: .
             - `[Owners <IMicrosoftGraphUser[]>]`: The list of this team's owners. Currently, when creating a team using application permissions, exactly one owner must be specified. When using user delegated permissions, no owner can be specified (the current user is the owner). Owner must be specified as an object ID (GUID), not a UPN.
             - `[PermissionGrants <IMicrosoftGraphResourceSpecificPermissionGrant[]>]`: A collection of permissions granted to apps to access the team.
             - `[Photo <IMicrosoftGraphProfilePhoto>]`: profilePhoto
-            - `[PrimaryChannel <IMicrosoftGraphChannel>]`: channel
+            - `[PrimaryChannel <IMicrosoftGraphChannel1>]`: channel
             - `[Schedule <IMicrosoftGraphSchedule1>]`: schedule
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
               - `[Id <String>]`: 
@@ -21389,7 +21457,24 @@ USERS <IMicrosoftGraphEducationUser[]>: .
               - `[Subject <String>]`: The subject of the meeting.
             - `[StartDateTime <DateTime?>]`: The meeting start time in UTC.
             - `[Subject <String>]`: The subject of the online meeting.
+            - `[Transcripts <IMicrosoftGraphCallTranscript[]>]`: 
+              - `[Id <String>]`: 
+              - `[Content <Byte[]>]`: 
+              - `[CreatedDateTime <DateTime?>]`: 
             - `[VideoTeleconferenceId <String>]`: The video teleconferencing ID. Read-only.
+            - `[VirtualAppointment <IMicrosoftGraphVirtualAppointment>]`: virtualAppointment
+              - `[(Any) <Object>]`: This indicates any property can be added to this object.
+              - `[Id <String>]`: 
+              - `[AppointmentClientJoinWebUrl <String>]`: The join web URL of the virtual appointment for clients with waiting room and browser join. Optional.
+              - `[AppointmentClients <IMicrosoftGraphVirtualAppointmentUser[]>]`: The client information for the virtual appointment, including name, email, and SMS phone number. Optional.
+                - `[DisplayName <String>]`: The display name of the user who participates in a virtual appointment. Optional.
+                - `[EmailAddress <String>]`: The email address of the user who participates in a virtual appointment. Optional.
+                - `[SmsCapablePhoneNumber <String>]`: The phone number for sending SMS texts for the user who participates in a virtual appointment. Optional.
+              - `[ExternalAppointmentId <String>]`: The identifier of the appointment from the scheduling system, associated with the current virtual appointment. Optional.
+              - `[ExternalAppointmentUrl <String>]`: The URL of the appointment resource from the scheduling system, associated with the current virtual appointment. Optional.
+              - `[Settings <IMicrosoftGraphVirtualAppointmentSettings>]`: virtualAppointmentSettings
+                - `[(Any) <Object>]`: This indicates any property can be added to this object.
+                - `[AllowClientToJoinUsingBrowser <Boolean?>]`: Indicates whether the client can use the browser to join a virtual appointment. If set to false, the client can only use Microsoft Teams to join. Optional.
           - `[OtherMails <String[]>]`: A list of additional email addresses for the user; for example: ['bob@contoso.com', 'Robert@fabrikam.com'].NOTE: This property cannot contain accent characters.Supports $filter (eq, not, ge, le, in, startsWith, endsWith, and counting empty collections).
           - `[Outlook <IMicrosoftGraphOutlookUser>]`: outlookUser
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
