@@ -3526,7 +3526,24 @@ BODYPARAMETER <IMicrosoftGraphPrint1>: print
               - `[Subject <String>]`: The subject of the meeting.
             - `[StartDateTime <DateTime?>]`: The meeting start time in UTC.
             - `[Subject <String>]`: The subject of the online meeting.
+            - `[Transcripts <IMicrosoftGraphCallTranscript[]>]`: 
+              - `[Id <String>]`: 
+              - `[Content <Byte[]>]`: 
+              - `[CreatedDateTime <DateTime?>]`: 
             - `[VideoTeleconferenceId <String>]`: The video teleconferencing ID. Read-only.
+            - `[VirtualAppointment <IMicrosoftGraphVirtualAppointment>]`: virtualAppointment
+              - `[(Any) <Object>]`: This indicates any property can be added to this object.
+              - `[Id <String>]`: 
+              - `[AppointmentClientJoinWebUrl <String>]`: The join web URL of the virtual appointment for clients with waiting room and browser join. Optional.
+              - `[AppointmentClients <IMicrosoftGraphVirtualAppointmentUser[]>]`: The client information for the virtual appointment, including name, email, and SMS phone number. Optional.
+                - `[DisplayName <String>]`: The display name of the user who participates in a virtual appointment. Optional.
+                - `[EmailAddress <String>]`: The email address of the user who participates in a virtual appointment. Optional.
+                - `[SmsCapablePhoneNumber <String>]`: The phone number for sending SMS texts for the user who participates in a virtual appointment. Optional.
+              - `[ExternalAppointmentId <String>]`: The identifier of the appointment from the scheduling system, associated with the current virtual appointment. Optional.
+              - `[ExternalAppointmentUrl <String>]`: The URL of the appointment resource from the scheduling system, associated with the current virtual appointment. Optional.
+              - `[Settings <IMicrosoftGraphVirtualAppointmentSettings>]`: virtualAppointmentSettings
+                - `[(Any) <Object>]`: This indicates any property can be added to this object.
+                - `[AllowClientToJoinUsingBrowser <Boolean?>]`: Indicates whether the client can use the browser to join a virtual appointment. If set to false, the client can only use Microsoft Teams to join. Optional.
           - `[OtherMails <String[]>]`: A list of additional email addresses for the user; for example: ['bob@contoso.com', 'Robert@fabrikam.com'].NOTE: This property cannot contain accent characters.Supports $filter (eq, not, ge, le, in, startsWith, endsWith, and counting empty collections).
           - `[Outlook <IMicrosoftGraphOutlookUser>]`: outlookUser
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -4582,6 +4599,7 @@ BODYPARAMETER <IMicrosoftGraphPrint1>: print
       - `[UserRegistrationDetails <IMicrosoftGraphUserRegistrationDetails[]>]`: Represents the state of a user's authentication methods, including which methods are registered and which features the user is registered and capable of (such as multi-factor authentication, self-service password reset, and passwordless authentication).
         - `[Id <String>]`: 
         - `[DefaultMfaMethod <String>]`: defaultMfaMethodType
+        - `[IsAdmin <Boolean?>]`: 
         - `[IsMfaCapable <Boolean?>]`: Whether the user has registered a strong authentication method for multi-factor authentication. The method must be allowed by the authentication methods policy. Supports $filter (eq).
         - `[IsMfaRegistered <Boolean?>]`: Whether the user has registered a strong authentication method for multi-factor authentication. The method may not necessarily be allowed by the authentication methods policy.  Supports $filter (eq).
         - `[IsPasswordlessCapable <Boolean?>]`: Whether the user has registered a passwordless strong authentication method (including FIDO2, Windows Hello for Business, and Microsoft Authenticator (Passwordless)) that is allowed by the authentication methods policy. Supports $filter (eq).
@@ -4591,6 +4609,7 @@ BODYPARAMETER <IMicrosoftGraphPrint1>: print
         - `[MethodsRegistered <String[]>]`: Collection of authentication methods registered, such as mobilePhone, email, fido2. Supports $filter (any with eq).
         - `[UserDisplayName <String>]`: The user display name, such as Adele Vance. Supports $filter (eq, startsWith) and $orderBy.
         - `[UserPrincipalName <String>]`: The user principal name, such as AdeleV@contoso.com. Supports $filter (eq, startsWith) and $orderBy.
+        - `[UserType <String>]`: signInUserType
     - `[CredentialUserRegistrationDetails <IMicrosoftGraphCredentialUserRegistrationDetails[]>]`: Details of the usage of self-service password reset and multi-factor authentication (MFA) for all registered users.
       - `[Id <String>]`: 
       - `[AuthMethods <String[]>]`: Represents the authentication method that the user has registered. Possible values are: email, mobilePhone, officePhone,  securityQuestion (only used for self-service password reset), appNotification,  appCode, alternateMobilePhone (supported only in registration),  fido,  appPassword,  unknownFutureValue.
@@ -7945,7 +7964,24 @@ PRINTERS <IMicrosoftGraphPrinter1[]>: The list of printers registered in the ten
               - `[Subject <String>]`: The subject of the meeting.
             - `[StartDateTime <DateTime?>]`: The meeting start time in UTC.
             - `[Subject <String>]`: The subject of the online meeting.
+            - `[Transcripts <IMicrosoftGraphCallTranscript[]>]`: 
+              - `[Id <String>]`: 
+              - `[Content <Byte[]>]`: 
+              - `[CreatedDateTime <DateTime?>]`: 
             - `[VideoTeleconferenceId <String>]`: The video teleconferencing ID. Read-only.
+            - `[VirtualAppointment <IMicrosoftGraphVirtualAppointment>]`: virtualAppointment
+              - `[(Any) <Object>]`: This indicates any property can be added to this object.
+              - `[Id <String>]`: 
+              - `[AppointmentClientJoinWebUrl <String>]`: The join web URL of the virtual appointment for clients with waiting room and browser join. Optional.
+              - `[AppointmentClients <IMicrosoftGraphVirtualAppointmentUser[]>]`: The client information for the virtual appointment, including name, email, and SMS phone number. Optional.
+                - `[DisplayName <String>]`: The display name of the user who participates in a virtual appointment. Optional.
+                - `[EmailAddress <String>]`: The email address of the user who participates in a virtual appointment. Optional.
+                - `[SmsCapablePhoneNumber <String>]`: The phone number for sending SMS texts for the user who participates in a virtual appointment. Optional.
+              - `[ExternalAppointmentId <String>]`: The identifier of the appointment from the scheduling system, associated with the current virtual appointment. Optional.
+              - `[ExternalAppointmentUrl <String>]`: The URL of the appointment resource from the scheduling system, associated with the current virtual appointment. Optional.
+              - `[Settings <IMicrosoftGraphVirtualAppointmentSettings>]`: virtualAppointmentSettings
+                - `[(Any) <Object>]`: This indicates any property can be added to this object.
+                - `[AllowClientToJoinUsingBrowser <Boolean?>]`: Indicates whether the client can use the browser to join a virtual appointment. If set to false, the client can only use Microsoft Teams to join. Optional.
           - `[OtherMails <String[]>]`: A list of additional email addresses for the user; for example: ['bob@contoso.com', 'Robert@fabrikam.com'].NOTE: This property cannot contain accent characters.Supports $filter (eq, not, ge, le, in, startsWith, endsWith, and counting empty collections).
           - `[Outlook <IMicrosoftGraphOutlookUser>]`: outlookUser
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -12192,7 +12228,24 @@ PRINTERSHARES <IMicrosoftGraphPrinterShare[]>: .
             - `[Subject <String>]`: The subject of the meeting.
           - `[StartDateTime <DateTime?>]`: The meeting start time in UTC.
           - `[Subject <String>]`: The subject of the online meeting.
+          - `[Transcripts <IMicrosoftGraphCallTranscript[]>]`: 
+            - `[Id <String>]`: 
+            - `[Content <Byte[]>]`: 
+            - `[CreatedDateTime <DateTime?>]`: 
           - `[VideoTeleconferenceId <String>]`: The video teleconferencing ID. Read-only.
+          - `[VirtualAppointment <IMicrosoftGraphVirtualAppointment>]`: virtualAppointment
+            - `[(Any) <Object>]`: This indicates any property can be added to this object.
+            - `[Id <String>]`: 
+            - `[AppointmentClientJoinWebUrl <String>]`: The join web URL of the virtual appointment for clients with waiting room and browser join. Optional.
+            - `[AppointmentClients <IMicrosoftGraphVirtualAppointmentUser[]>]`: The client information for the virtual appointment, including name, email, and SMS phone number. Optional.
+              - `[DisplayName <String>]`: The display name of the user who participates in a virtual appointment. Optional.
+              - `[EmailAddress <String>]`: The email address of the user who participates in a virtual appointment. Optional.
+              - `[SmsCapablePhoneNumber <String>]`: The phone number for sending SMS texts for the user who participates in a virtual appointment. Optional.
+            - `[ExternalAppointmentId <String>]`: The identifier of the appointment from the scheduling system, associated with the current virtual appointment. Optional.
+            - `[ExternalAppointmentUrl <String>]`: The URL of the appointment resource from the scheduling system, associated with the current virtual appointment. Optional.
+            - `[Settings <IMicrosoftGraphVirtualAppointmentSettings>]`: virtualAppointmentSettings
+              - `[(Any) <Object>]`: This indicates any property can be added to this object.
+              - `[AllowClientToJoinUsingBrowser <Boolean?>]`: Indicates whether the client can use the browser to join a virtual appointment. If set to false, the client can only use Microsoft Teams to join. Optional.
         - `[OtherMails <String[]>]`: A list of additional email addresses for the user; for example: ['bob@contoso.com', 'Robert@fabrikam.com'].NOTE: This property cannot contain accent characters.Supports $filter (eq, not, ge, le, in, startsWith, endsWith, and counting empty collections).
         - `[Outlook <IMicrosoftGraphOutlookUser>]`: outlookUser
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -13259,6 +13312,7 @@ REPORTS <IMicrosoftGraphReportRoot>: reportRoot
     - `[UserRegistrationDetails <IMicrosoftGraphUserRegistrationDetails[]>]`: Represents the state of a user's authentication methods, including which methods are registered and which features the user is registered and capable of (such as multi-factor authentication, self-service password reset, and passwordless authentication).
       - `[Id <String>]`: 
       - `[DefaultMfaMethod <String>]`: defaultMfaMethodType
+      - `[IsAdmin <Boolean?>]`: 
       - `[IsMfaCapable <Boolean?>]`: Whether the user has registered a strong authentication method for multi-factor authentication. The method must be allowed by the authentication methods policy. Supports $filter (eq).
       - `[IsMfaRegistered <Boolean?>]`: Whether the user has registered a strong authentication method for multi-factor authentication. The method may not necessarily be allowed by the authentication methods policy.  Supports $filter (eq).
       - `[IsPasswordlessCapable <Boolean?>]`: Whether the user has registered a passwordless strong authentication method (including FIDO2, Windows Hello for Business, and Microsoft Authenticator (Passwordless)) that is allowed by the authentication methods policy. Supports $filter (eq).
@@ -13268,6 +13322,7 @@ REPORTS <IMicrosoftGraphReportRoot>: reportRoot
       - `[MethodsRegistered <String[]>]`: Collection of authentication methods registered, such as mobilePhone, email, fido2. Supports $filter (any with eq).
       - `[UserDisplayName <String>]`: The user display name, such as Adele Vance. Supports $filter (eq, startsWith) and $orderBy.
       - `[UserPrincipalName <String>]`: The user principal name, such as AdeleV@contoso.com. Supports $filter (eq, startsWith) and $orderBy.
+      - `[UserType <String>]`: signInUserType
   - `[CredentialUserRegistrationDetails <IMicrosoftGraphCredentialUserRegistrationDetails[]>]`: Details of the usage of self-service password reset and multi-factor authentication (MFA) for all registered users.
     - `[Id <String>]`: 
     - `[AuthMethods <String[]>]`: Represents the authentication method that the user has registered. Possible values are: email, mobilePhone, officePhone,  securityQuestion (only used for self-service password reset), appNotification,  appCode, alternateMobilePhone (supported only in registration),  fido,  appPassword,  unknownFutureValue.
@@ -16551,7 +16606,24 @@ SHARES <IMicrosoftGraphPrinterShare[]>: The list of printer shares registered in
             - `[Subject <String>]`: The subject of the meeting.
           - `[StartDateTime <DateTime?>]`: The meeting start time in UTC.
           - `[Subject <String>]`: The subject of the online meeting.
+          - `[Transcripts <IMicrosoftGraphCallTranscript[]>]`: 
+            - `[Id <String>]`: 
+            - `[Content <Byte[]>]`: 
+            - `[CreatedDateTime <DateTime?>]`: 
           - `[VideoTeleconferenceId <String>]`: The video teleconferencing ID. Read-only.
+          - `[VirtualAppointment <IMicrosoftGraphVirtualAppointment>]`: virtualAppointment
+            - `[(Any) <Object>]`: This indicates any property can be added to this object.
+            - `[Id <String>]`: 
+            - `[AppointmentClientJoinWebUrl <String>]`: The join web URL of the virtual appointment for clients with waiting room and browser join. Optional.
+            - `[AppointmentClients <IMicrosoftGraphVirtualAppointmentUser[]>]`: The client information for the virtual appointment, including name, email, and SMS phone number. Optional.
+              - `[DisplayName <String>]`: The display name of the user who participates in a virtual appointment. Optional.
+              - `[EmailAddress <String>]`: The email address of the user who participates in a virtual appointment. Optional.
+              - `[SmsCapablePhoneNumber <String>]`: The phone number for sending SMS texts for the user who participates in a virtual appointment. Optional.
+            - `[ExternalAppointmentId <String>]`: The identifier of the appointment from the scheduling system, associated with the current virtual appointment. Optional.
+            - `[ExternalAppointmentUrl <String>]`: The URL of the appointment resource from the scheduling system, associated with the current virtual appointment. Optional.
+            - `[Settings <IMicrosoftGraphVirtualAppointmentSettings>]`: virtualAppointmentSettings
+              - `[(Any) <Object>]`: This indicates any property can be added to this object.
+              - `[AllowClientToJoinUsingBrowser <Boolean?>]`: Indicates whether the client can use the browser to join a virtual appointment. If set to false, the client can only use Microsoft Teams to join. Optional.
         - `[OtherMails <String[]>]`: A list of additional email addresses for the user; for example: ['bob@contoso.com', 'Robert@fabrikam.com'].NOTE: This property cannot contain accent characters.Supports $filter (eq, not, ge, le, in, startsWith, endsWith, and counting empty collections).
         - `[Outlook <IMicrosoftGraphOutlookUser>]`: outlookUser
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
