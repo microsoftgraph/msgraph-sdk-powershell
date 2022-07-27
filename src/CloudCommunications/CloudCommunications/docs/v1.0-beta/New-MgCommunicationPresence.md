@@ -12,14 +12,14 @@ Create new navigation property to presences for communications
 
 ## SYNTAX
 
-### CreateExpanded1 (Default)
+### CreateExpanded (Default)
 ```
 New-MgCommunicationPresence [-Activity <String>] [-AdditionalProperties <Hashtable>] [-Availability <String>]
  [-Id <String>] [-OutOfOfficeSettings <IMicrosoftGraphOutOfOfficeSettings>] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
-### Create1
+### Create
 ```
 New-MgCommunicationPresence -BodyParameter <IMicrosoftGraphPresence1> [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -38,7 +38,7 @@ Possible values are Available, Away, BeRightBack, Busy, DoNotDisturb, InACall, I
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded1
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -53,7 +53,7 @@ Additional Parameters
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: CreateExpanded1
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -69,7 +69,7 @@ Possible values are Available, AvailableIdle, Away, BeRightBack, Busy, BusyIdle,
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded1
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -85,7 +85,7 @@ To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETE
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPresence1
-Parameter Sets: Create1
+Parameter Sets: Create
 Aliases:
 
 Required: True
@@ -100,7 +100,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded1
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -116,7 +116,7 @@ To construct, please use Get-Help -Online and see NOTES section for OUTOFOFFICES
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOutOfOfficeSettings
-Parameter Sets: CreateExpanded1
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
