@@ -23,6 +23,7 @@
   "Identity.Governance": "^accessReviews\\.|^businessFlowTemplates\\.|^programs\\.|^programControls\\.|^programControlTypes\\.|^privilegedRoles\\.|^privilegedRoleAssignments\\.|^privilegedRoleAssignmentRequests\\.|^privilegedApproval\\.|^privilegedOperationEvents\\.|^privilegedAccess\\.|^agreements\\.|^users.agreementAcceptance$|^identityGovernance\\.",
   "Identity.SignIns": "^organization.certificateBasedAuthConfiguration$|^invitations\\.|^identityProviders\\.|^oauth2PermissionGrants\\.|^identityProtection\\.|^dataPolicyOperations\\.|^identity\\.|^trustFramework\\.|^informationProtection\\.|^policies\\.|^users.authentication$|^users.informationProtection$",
   "Mail": "^users.inferenceClassification$|^users.mailFolder$|^users.message$",
+  "ManagedTenants": "^tenantRelationships/managedTenants$",
   "Notes": "^users.onenote$|^groups.onenote$|^sites.onenote$",
   "People": "^users.person$|^users.profile$|^users.officeGraphInsights$|^users.userAnalytics$",
   "PersonalContacts": "^users.contactFolder$|^users.contact$",
