@@ -8,15 +8,16 @@ schema: 2.0.0
 # New-MgDeviceAppMgtTask
 
 ## SYNOPSIS
-Device app management tasks.
+Create new navigation property to deviceAppManagementTasks for deviceAppManagement
 
 ## SYNTAX
 
 ### CreateExpanded (Default)
 ```
-New-MgDeviceAppMgtTask [-AdditionalProperties <Hashtable>] [-AssignedTo <String>] [-Category <String>]
- [-CreatedDateTime <DateTime>] [-Creator <String>] [-CreatorNotes <String>] [-Description <String>]
- [-DisplayName <String>] [-DueDateTime <DateTime>] [-Id <String>] [-Priority <String>] [-Status <String>]
+New-MgDeviceAppMgtTask [-AdditionalProperties <Hashtable>] [-AssignedTo <String>]
+ [-Category <DeviceAppManagementTaskCategory>] [-CreatedDateTime <DateTime>] [-Creator <String>]
+ [-CreatorNotes <String>] [-Description <String>] [-DisplayName <String>] [-DueDateTime <DateTime>]
+ [-Id <String>] [-Priority <DeviceAppManagementTaskPriority>] [-Status <DeviceAppManagementTaskStatus>]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -27,7 +28,7 @@ New-MgDeviceAppMgtTask -BodyParameter <IMicrosoftGraphDeviceAppManagementTask> [
 ```
 
 ## DESCRIPTION
-Device app management tasks.
+Create new navigation property to deviceAppManagementTasks for deviceAppManagement
 
 ## EXAMPLES
 
@@ -83,7 +84,7 @@ Accept wildcard characters: False
 Device app management task category.
 
 ```yaml
-Type: System.String
+Type: Microsoft.Graph.PowerShell.Support.DeviceAppManagementTaskCategory
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -185,7 +186,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -203,7 +204,7 @@ Accept wildcard characters: False
 Device app management task priority.
 
 ```yaml
-Type: System.String
+Type: Microsoft.Graph.PowerShell.Support.DeviceAppManagementTaskPriority
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -218,7 +219,7 @@ Accept wildcard characters: False
 Device app management task status.
 
 ```yaml
-Type: System.String
+Type: Microsoft.Graph.PowerShell.Support.DeviceAppManagementTaskStatus
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -284,17 +285,17 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphDeviceAppManagementTask>: A device app management task.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[AssignedTo <String>]`: The name or email of the admin this task is assigned to.
-  - `[Category <String>]`: Device app management task category.
+  - `[Category <DeviceAppManagementTaskCategory?>]`: Device app management task category.
   - `[CreatedDateTime <DateTime?>]`: The created date.
   - `[Creator <String>]`: The email address of the creator.
   - `[CreatorNotes <String>]`: Notes from the creator.
   - `[Description <String>]`: The description.
   - `[DisplayName <String>]`: The name.
   - `[DueDateTime <DateTime?>]`: The due date.
-  - `[Priority <String>]`: Device app management task priority.
-  - `[Status <String>]`: Device app management task status.
+  - `[Priority <DeviceAppManagementTaskPriority?>]`: Device app management task priority.
+  - `[Status <DeviceAppManagementTaskStatus?>]`: Device app management task status.
 
 ## RELATED LINKS
 

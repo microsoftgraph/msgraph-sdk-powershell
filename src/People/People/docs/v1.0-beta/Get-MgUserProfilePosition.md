@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgUserProfilePosition
 
 ## SYNOPSIS
-Represents detailed information about work positions associated with a user's profile.
+Get positions from users
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgUserProfilePosition -InputObject <IPeopleIdentity> [-ExpandProperty <Strin
 ```
 
 ## DESCRIPTION
-Represents detailed information about work positions associated with a user's profile.
+Get positions from users
 
 ## EXAMPLES
 

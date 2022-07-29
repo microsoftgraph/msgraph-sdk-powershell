@@ -65,7 +65,8 @@ This example updates the DisplayName setting.
 ## PARAMETERS
 
 ### -ActiveSignInUri
-.
+URL of the endpoint used by active clients when authenticating with federated domains set up for single sign-on in Azure Active Directory (Azure AD).
+Corresponds to the ActiveLogOnUri property of the Set-MsolDomainFederationSettings MSOnline v1 PowerShell cmdlet.
 
 ```yaml
 Type: System.String
@@ -156,7 +157,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -202,7 +203,8 @@ Accept wildcard characters: False
 ```
 
 ### -IsSignedAuthenticationRequestRequired
-.
+If true, when SAML authentication requests are sent to the federated SAML IdP, Azure AD will sign those requests using the OrgID signing key.
+If false (default), the SAML authentication requests sent to the federated IdP are not signed.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -247,7 +249,10 @@ Accept wildcard characters: False
 ```
 
 ### -NextSigningCertificate
-.
+Fallback token signing certificate that is used to sign tokens when the primary signing certificate expires.
+Formatted as Base64 encoded strings of the public portion of the federated IdP's token signing certificate.
+Needs to be compatible with the X509Certificate2 class.
+Much like the signingCertificate, the nextSigningCertificate property is used if a rollover is required outside of the auto-rollover update, a new federation service is being set up, or if the new token signing certificate is not present in the federation properties after the federation service certificate has been updated.
 
 ```yaml
 Type: System.String
@@ -357,7 +362,8 @@ Accept wildcard characters: False
 ```
 
 ### -SignOutUri
-.
+URI that clients are redirected to when they sign out of Azure AD services.
+Corresponds to the LogOffUri property of the Set-MsolDomainFederationSettings MSOnline v1 PowerShell cmdlet.
 
 ```yaml
 Type: System.String
@@ -432,17 +438,17 @@ BODYPARAMETER <IMicrosoftGraphInternalDomainFederation>: internalDomainFederatio
   - `[PreferredAuthenticationProtocol <String>]`: authenticationProtocol
   - `[SigningCertificate <String>]`: Current certificate used to sign tokens passed to the Microsoft identity platform. The certificate is formatted as a Base64 encoded string of the public portion of the federated IdP's token signing certificate and must be compatible with the X509Certificate2 class.   This property is used in the following scenarios:  if a rollover is required outside of the autorollover update a new federation service is being set up  if the new token signing certificate isn't present in the federation properties after the federation service certificate has been updated.   Azure AD updates certificates via an autorollover process in which it attempts to retrieve a new certificate from the federation service metadata, 30 days before expiry of the current certificate. If a new certificate isn't available, Azure AD monitors the metadata daily and will update the federation settings for the domain when a new certificate is available.
   - `[DisplayName <String>]`: The display name of the identity provider.
-  - `[Id <String>]`: Read-only.
-  - `[ActiveSignInUri <String>]`: 
+  - `[Id <String>]`: 
+  - `[ActiveSignInUri <String>]`: URL of the endpoint used by active clients when authenticating with federated domains set up for single sign-on in Azure Active Directory (Azure AD). Corresponds to the ActiveLogOnUri property of the Set-MsolDomainFederationSettings MSOnline v1 PowerShell cmdlet.
   - `[FederatedIdpMfaBehavior <String>]`: federatedIdpMfaBehavior
-  - `[IsSignedAuthenticationRequestRequired <Boolean?>]`: 
-  - `[NextSigningCertificate <String>]`: 
+  - `[IsSignedAuthenticationRequestRequired <Boolean?>]`: If true, when SAML authentication requests are sent to the federated SAML IdP, Azure AD will sign those requests using the OrgID signing key. If false (default), the SAML authentication requests sent to the federated IdP are not signed.
+  - `[NextSigningCertificate <String>]`: Fallback token signing certificate that is used to sign tokens when the primary signing certificate expires. Formatted as Base64 encoded strings of the public portion of the federated IdP's token signing certificate. Needs to be compatible with the X509Certificate2 class. Much like the signingCertificate, the nextSigningCertificate property is used if a rollover is required outside of the auto-rollover update, a new federation service is being set up, or if the new token signing certificate is not present in the federation properties after the federation service certificate has been updated.
   - `[PromptLoginBehavior <String>]`: promptLoginBehavior
-  - `[SignOutUri <String>]`: 
+  - `[SignOutUri <String>]`: URI that clients are redirected to when they sign out of Azure AD services. Corresponds to the LogOffUri property of the Set-MsolDomainFederationSettings MSOnline v1 PowerShell cmdlet.
   - `[SigningCertificateUpdateStatus <IMicrosoftGraphSigningCertificateUpdateStatus>]`: signingCertificateUpdateStatus
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[CertificateUpdateResult <String>]`: 
-    - `[LastRunDateTime <DateTime?>]`: 
+    - `[CertificateUpdateResult <String>]`: Status of the last certificate update. Read-only. For a list of statuses, see certificateUpdateResult status.
+    - `[LastRunDateTime <DateTime?>]`: Date and time in ISO 8601 format and in UTC time when the certificate was last updated. Read-only.
 
 INPUTOBJECT <IIdentityDirectoryManagementIdentity>: Identity Parameter
   - `[AdministrativeUnitId <String>]`: key: id of administrativeUnit
@@ -466,6 +472,7 @@ INPUTOBJECT <IIdentityDirectoryManagementIdentity>: Identity Parameter
   - `[InternalDomainFederationId <String>]`: key: id of internalDomainFederation
   - `[OrgContactId <String>]`: key: id of orgContact
   - `[OrganizationId <String>]`: key: id of organization
+  - `[OrganizationalBrandingLocalizationId <String>]`: key: id of organizationalBrandingLocalization
   - `[OutboundSharedUserProfileUserId <String>]`: key: userId of outboundSharedUserProfile
   - `[ProfileCardPropertyId <String>]`: key: id of profileCardProperty
   - `[RecommendationId <String>]`: key: id of recommendation
@@ -480,8 +487,8 @@ INPUTOBJECT <IIdentityDirectoryManagementIdentity>: Identity Parameter
 
 SIGNINGCERTIFICATEUPDATESTATUS <IMicrosoftGraphSigningCertificateUpdateStatus>: signingCertificateUpdateStatus
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[CertificateUpdateResult <String>]`: 
-  - `[LastRunDateTime <DateTime?>]`: 
+  - `[CertificateUpdateResult <String>]`: Status of the last certificate update. Read-only. For a list of statuses, see certificateUpdateResult status.
+  - `[LastRunDateTime <DateTime?>]`: Date and time in ISO 8601 format and in UTC time when the certificate was last updated. Read-only.
 
 ## RELATED LINKS
 

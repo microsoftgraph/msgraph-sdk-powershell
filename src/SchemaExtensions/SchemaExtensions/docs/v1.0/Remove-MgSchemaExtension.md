@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgSchemaExtension
 
 ## SYNOPSIS
-Delete entity from schemaExtensions
+Delete schemaExtension
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Remove-MgSchemaExtension -InputObject <ISchemaExtensionsIdentity> [-IfMatch <Str
 ```
 
 ## DESCRIPTION
-Delete entity from schemaExtensions
+Delete schemaExtension
 
 ## EXAMPLES
 

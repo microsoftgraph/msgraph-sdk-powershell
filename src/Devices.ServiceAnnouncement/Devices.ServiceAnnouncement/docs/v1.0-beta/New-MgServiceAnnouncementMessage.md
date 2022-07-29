@@ -8,8 +8,7 @@ schema: 2.0.0
 # New-MgServiceAnnouncementMessage
 
 ## SYNOPSIS
-A collection of service messages for tenant.
-This property is a contained navigation property, it is nullable and readonly.
+Create new navigation property to messages for admin
 
 ## SYNTAX
 
@@ -31,8 +30,7 @@ New-MgServiceAnnouncementMessage -BodyParameter <IMicrosoftGraphServiceUpdateMes
 ```
 
 ## DESCRIPTION
-A collection of service messages for tenant.
-This property is a contained navigation property, it is nullable and readonly.
+Create new navigation property to messages for admin
 
 ## EXAMPLES
 
@@ -85,7 +83,7 @@ Accept wildcard characters: False
 ```
 
 ### -AttachmentsArchiveInputFile
-Input File for AttachmentsArchive (The zip file that contains all attachments for a message.)
+Input File for AttachmentsArchive (The zip file of all attachments for a message.)
 
 ```yaml
 Type: System.String
@@ -194,7 +192,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -382,7 +380,7 @@ To create the parameters described below, construct a hash table containing the 
 
 
 ATTACHMENTS <IMicrosoftGraphServiceAnnouncementAttachment[]>: A collection of serviceAnnouncementAttachments.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[Content <Byte[]>]`: The attachment content.
   - `[ContentType <String>]`: 
   - `[LastModifiedDateTime <DateTime?>]`: 
@@ -403,16 +401,16 @@ BODYPARAMETER <IMicrosoftGraphServiceUpdateMessage>: serviceUpdateMessage
   - `[LastModifiedDateTime <DateTime?>]`: The last modified time of the service event.
   - `[StartDateTime <DateTime?>]`: The start time of the service event.
   - `[Title <String>]`: The title of the service event.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[ActionRequiredByDateTime <DateTime?>]`: The expected deadline of the action for the message.
   - `[Attachments <IMicrosoftGraphServiceAnnouncementAttachment[]>]`: A collection of serviceAnnouncementAttachments.
-    - `[Id <String>]`: Read-only.
+    - `[Id <String>]`: 
     - `[Content <Byte[]>]`: The attachment content.
     - `[ContentType <String>]`: 
     - `[LastModifiedDateTime <DateTime?>]`: 
     - `[Name <String>]`: 
     - `[Size <Int32?>]`: 
-  - `[AttachmentsArchive <Byte[]>]`: The zip file that contains all attachments for a message.
+  - `[AttachmentsArchive <Byte[]>]`: The zip file of all attachments for a message.
   - `[Body <IMicrosoftGraphItemBody>]`: itemBody
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Content <String>]`: The content of the item.

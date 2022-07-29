@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgSiteListActivity
 
 ## SYNOPSIS
-The recent activities that took place within this list.
+Get activities from sites
 
 ## SYNTAX
 
@@ -19,7 +19,7 @@ Get-MgSiteListActivity -ListId <String> -SiteId <String> [-ExpandProperty <Strin
 ```
 
 ## DESCRIPTION
-The recent activities that took place within this list.
+Get activities from sites
 
 ## EXAMPLES
 

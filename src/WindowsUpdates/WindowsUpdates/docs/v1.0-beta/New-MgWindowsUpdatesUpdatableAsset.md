@@ -8,8 +8,7 @@ schema: 2.0.0
 # New-MgWindowsUpdatesUpdatableAsset
 
 ## SYNOPSIS
-Assets registered with the deployment service that can receive updates.
-Read-only.
+Create new navigation property to updatableAssets for admin
 
 ## SYNTAX
 
@@ -25,8 +24,7 @@ New-MgWindowsUpdatesUpdatableAsset -BodyParameter <Hashtable> [-Confirm] [-WhatI
 ```
 
 ## DESCRIPTION
-Assets registered with the deployment service that can receive updates.
-Read-only.
+Create new navigation property to updatableAssets for admin
 
 ## EXAMPLES
 
@@ -63,7 +61,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String

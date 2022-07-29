@@ -38,23 +38,8 @@ subject-prefix: ''
 
 ``` yaml
 directive:
-  - remove-path-by-operation: ^identityGovernance_(Get|Create|Update|Set|Delete)EntitlementManagement$|^identityGovernance\.entitlementManagement(_.*AccessPackageResourceRoleScopes|\.accessPackageResourceRoleScopes.*|\.accessPackageAssignmentPolicies\..*|\.accessPackageAssignmentRequests\..*|\.accessPackageAssignmentResourceRoles\..*|\.accessPackageAssignments\..*|\.accessPackageCatalogs\..*|\.accessPackageResourceRequests\..*|\.accessPackageResources\..*|\.accessPackages\..*)|^identityGovernance\.accessReviews\.definitions\.instances\.decisions\.(instance_.*)|^identityGovernance\.accessReviews\.definitions\.instances\.stages\.decisions.*$
+  - remove-path-by-operation: ^identityGovernance_(Get|Create|Update|Set|Delete)EntitlementManagement$|^identityGovernance\.entitlementManagement(_.*AccessPackageResourceRoleScopes|\.accessPackageResourceRoleScopes.*|\.accessPackageAssignmentPolicies\..*|\.accessPackageAssignmentRequests\..*|\.accessPackageAssignmentResourceRoles\..*|\.accessPackageAssignments\..*|\.accessPackageCatalogs\..*|\.accessPackageResourceRequests\..*|\.accessPackageResources\..*|\.accessPackages\..*)|^identityGovernance\.accessReviews\.definitions\.instances\.decisions\.instance(\.|_).*|^identityGovernance\.accessReviews\.definitions\.instances(\.stages\.decisions.*)$|^privilegedAccess.roleAssignmentRequests.(resource|roleDefinition).*$|^privilegedAccess.roleAssignments.(resource|roleDefinition).*$|^privilegedAccess.roleDefinitions.(resource|roleSetting).*$|^privilegedAccess.roleSettings.(resource|roleDefinition).*$|(^agreements.|^identityGovernance.termsGraphOPreUse.agreements.).*files.*$
 # Remove cmdlets
-  - where:
-      verb: Get
-      subject: ^AgreementFile$
-      variant: ^Get1|Get3|GetViaIdentity1|GetViaIdentity3$
-    remove: true
-  - where:
-      verb: Update
-      subject: ^AgreementFile$
-      variant: ^Update1|Update3|UpdateExpanded1|UpdateExpanded3|UpdateViaIdentity1|UpdateViaIdentity3|UpdateViaIdentityExpanded1|UpdateViaIdentityExpanded3$
-    remove: true
-  - where:
-      verb: Remove
-      subject: ^AgreementFile$
-      variant: ^Delete1|Delete3|DeleteViaIdentity1|DeleteViaIdentity3$
-    remove: true
   - where:
       verb: Get|Remove|Set
       subject: (.*)(EntitlementManagement)AccessPackageRefAccessPackageCatalog$
@@ -73,7 +58,7 @@ directive:
     remove: true
   - where:
       verb: Get|Remove|Update
-      subject: (.*)(EntitlementManagement)AssignmentAccessPackage
+      subject: (.*)(EntitlementManagement)AssignmentAccessPackage$
     remove: true
   - where:
       verb: Get|Remove|Update
@@ -113,7 +98,7 @@ directive:
     remove: true
   - where:
       verb: Get
-      subject: (.*)(EntitlementManagement)AssignmentRequestAccessPackage
+      subject: (.*)(EntitlementManagement)AssignmentRequestAccessPackage$
     remove: true
   - where:
       verb: Get|Remove|Update
@@ -181,11 +166,11 @@ directive:
     remove: true
   - where:
       verb: Get|Remove|Set
-      subject: (.*)(EntitlementManagement)CatalogGraphRefAccessPackage
+      subject: (.*)(EntitlementManagement)CatalogGraphRefAccessPackage$
     remove: true
   - where:
       verb: Get|New|Remove|Update|Set|Invoke
-      subject: (.*)(EntitlementManagement)CatalogAccessPackage
+      subject: (.*)(EntitlementManagement)CatalogAccessPackage$
     remove: true
   - where:
       verb: Get
@@ -277,6 +262,10 @@ directive:
       variant: ^(Get1|List1|GetViaIdentity1|Create1|CreateExpanded1|CreateViaIdentity|CreateViaIdentityExpanded|Update1|UpdateExpanded1|UpdateViaIdentity1|UpdateViaIdentityExpanded1|Delete1|DeleteViaIdentity1)$
     remove: true
   - where:
+      subject: (.*)Privileged(Access|AccessResource)RoleAssignmentRequest$
+      variant: ^(Update1|UpdateExpanded1|UpdateViaIdentity1|UpdateViaIdentityExpanded1)$
+    remove: true
+  - where:
       verb: Remove
       subject: (.*)(EntitlementManagement)Setting$
     remove: true
@@ -289,16 +278,8 @@ directive:
       subject: (.*)(IdentityGovernance)AccessReview$
     remove: true
   - where:
-      verb: New|Remove|Update|Get|Add|Invoke|Reset|Send|Set|Stop
-      subject: (.*)(IdentityGovernance)(AccessReviewDefinition|AccessReviewHistoryDefinition|AccessReviewPolicy)(.*)$
-    remove: true
-  - where:
-      verb: New|Remove|Update|Get
-      subject: ^(.*)(IdentityGovernance)Term$
-    remove: true
-  - where:
       verb: New|Remove|Update|Get|Invoke
-      subject: (.*)(IdentityGovernance)AppConsent
+      subject: (.*)(IdentityGovernance)AppConsent$
     remove: true
   - where:
       verb: New|Remove|Update
@@ -339,6 +320,6 @@ directive:
 ### Versioning
 
 ``` yaml
-module-version: 1.9.6
+module-version: 1.10.1
 release-notes: See https://aka.ms/GraphPowerShell-Release.
 ```

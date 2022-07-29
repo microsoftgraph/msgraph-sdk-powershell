@@ -112,7 +112,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -197,20 +197,20 @@ To create the parameters described below, construct a hash table containing the 
 BODYPARAMETER <IMicrosoftGraphDirectorySettingTemplate>: directorySettingTemplate
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[Description <String>]`: Description of the template. Read-only.
   - `[DisplayName <String>]`: Display name of the template. Read-only.
   - `[Values <IMicrosoftGraphSettingTemplateValue[]>]`: Collection of settingTemplateValues that list the set of available settings, defaults and types that make up this template.  Read-only.
-    - `[DefaultValue <String>]`: Default value for the setting.
-    - `[Description <String>]`: Description of the setting.
-    - `[Name <String>]`: Name of the setting.
-    - `[Type <String>]`: Type of the setting.
+    - `[DefaultValue <String>]`: Default value for the setting. Read-only.
+    - `[Description <String>]`: Description of the setting. Read-only.
+    - `[Name <String>]`: Name of the setting. Read-only.
+    - `[Type <String>]`: Type of the setting. Read-only.
 
 VALUES <IMicrosoftGraphSettingTemplateValue[]>: Collection of settingTemplateValues that list the set of available settings, defaults and types that make up this template. Read-only.
-  - `[DefaultValue <String>]`: Default value for the setting.
-  - `[Description <String>]`: Description of the setting.
-  - `[Name <String>]`: Name of the setting.
-  - `[Type <String>]`: Type of the setting.
+  - `[DefaultValue <String>]`: Default value for the setting. Read-only.
+  - `[Description <String>]`: Description of the setting. Read-only.
+  - `[Name <String>]`: Name of the setting. Read-only.
+  - `[Type <String>]`: Type of the setting. Read-only.
 
 ## RELATED LINKS
 

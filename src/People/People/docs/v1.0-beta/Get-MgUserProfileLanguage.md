@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgUserProfileLanguage
 
 ## SYNOPSIS
-Represents detailed information about languages that a user has added to their profile.
+Get languages from users
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgUserProfileLanguage -InputObject <IPeopleIdentity> [-ExpandProperty <Strin
 ```
 
 ## DESCRIPTION
-Represents detailed information about languages that a user has added to their profile.
+Get languages from users
 
 ## EXAMPLES
 

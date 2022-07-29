@@ -261,7 +261,7 @@ BODYPARAMETER <IPathsQvpqn4CommunicationsCallsCallIdMicrosoftGraphAnswerPostRequ
   - `[CallOptions <IMicrosoftGraphIncomingCallOptions1>]`: incomingCallOptions
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[HideBotAfterEscalation <Boolean?>]`: 
-    - `[IsContentSharingNotificationEnabled <Boolean?>]`: 
+    - `[IsContentSharingNotificationEnabled <Boolean?>]`: Indicates whether content sharing notifications should be enabled for the call.
   - `[CallbackUri <String>]`: 
   - `[MediaConfig <IMicrosoftGraphMediaConfig1>]`: mediaConfig
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -273,6 +273,7 @@ INPUTOBJECT <ICloudCommunicationsIdentity>: Identity Parameter
   - `[AudioRoutingGroupId <String>]`: key: id of audioRoutingGroup
   - `[CallId <String>]`: key: id of call
   - `[CallRecordId <String>]`: key: id of callRecord
+  - `[CallTranscriptId <String>]`: key: id of callTranscript
   - `[CommsOperationId <String>]`: key: id of commsOperation
   - `[ContentSharingSessionId <String>]`: key: id of contentSharingSession
   - `[MeetingAttendanceReportId <String>]`: key: id of meetingAttendanceReport

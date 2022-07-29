@@ -202,21 +202,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of company
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.company'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.companyCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -498,63 +484,13 @@ paths:
               parameters:
                 company-id: $request.path.company-id
             unitsOfMeasure:
-              operationId: financials.Companies.ListUnitsOfMeasure
+              operationId: financials.Companies.ListUnitsGraphOPreMeasure
               parameters:
                 company-id: $request.path.company-id
             vendors:
               operationId: financials.Companies.ListVendors
               parameters:
                 company-id: $request.path.company-id
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    patch:
-      tags:
-        - financials.company
-      summary: Update the navigation property companies in financials
-      operationId: financials_UpdateCompanies
-      parameters:
-        - name: company-id
-          in: path
-          description: 'key: id of company'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: company
-      requestBody:
-        description: New navigation property values
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.company'
-        required: true
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - financials.company
-      summary: Delete navigation property companies for financials
-      operationId: financials_DeleteCompanies
-      parameters:
-        - name: company-id
-          in: path
-          description: 'key: id of company'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: company
-        - name: If-Match
-          in: header
-          description: ETag
-          schema:
-            type: string
-      responses:
-        '204':
-          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -634,21 +570,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of account
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.account'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.accountCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -746,70 +668,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-    patch:
-      tags:
-        - financials.company
-      summary: Update the navigation property accounts in financials
-      operationId: financials.companies_UpdateAccounts
-      parameters:
-        - name: company-id
-          in: path
-          description: 'key: id of company'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: company
-        - name: account-id
-          in: path
-          description: 'key: id of account'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: account
-      requestBody:
-        description: New navigation property values
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.account'
-        required: true
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - financials.company
-      summary: Delete navigation property accounts for financials
-      operationId: financials.companies_DeleteAccounts
-      parameters:
-        - name: company-id
-          in: path
-          description: 'key: id of company'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: company
-        - name: account-id
-          in: path
-          description: 'key: id of account'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: account
-        - name: If-Match
-          in: header
-          description: ETag
-          schema:
-            type: string
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   '/financials/companies/{company-id}/agedAccountsPayable':
     get:
       tags:
@@ -898,21 +756,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of agedAccountsPayable
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.agedAccountsPayable'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.agedAccountsPayableCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -1014,70 +858,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-    patch:
-      tags:
-        - financials.company
-      summary: Update the navigation property agedAccountsPayable in financials
-      operationId: financials.companies_UpdateAgedAccountsPayable
-      parameters:
-        - name: company-id
-          in: path
-          description: 'key: id of company'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: company
-        - name: agedAccountsPayable-id
-          in: path
-          description: 'key: id of agedAccountsPayable'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: agedAccountsPayable
-      requestBody:
-        description: New navigation property values
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.agedAccountsPayable'
-        required: true
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - financials.company
-      summary: Delete navigation property agedAccountsPayable for financials
-      operationId: financials.companies_DeleteAgedAccountsPayable
-      parameters:
-        - name: company-id
-          in: path
-          description: 'key: id of company'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: company
-        - name: agedAccountsPayable-id
-          in: path
-          description: 'key: id of agedAccountsPayable'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: agedAccountsPayable
-        - name: If-Match
-          in: header
-          description: ETag
-          schema:
-            type: string
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   '/financials/companies/{company-id}/agedAccountsReceivable':
     get:
       tags:
@@ -1166,21 +946,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of agedAccountsReceivable
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.agedAccountsReceivable'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.agedAccountsReceivableCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -1282,70 +1048,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-    patch:
-      tags:
-        - financials.company
-      summary: Update the navigation property agedAccountsReceivable in financials
-      operationId: financials.companies_UpdateAgedAccountsReceivable
-      parameters:
-        - name: company-id
-          in: path
-          description: 'key: id of company'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: company
-        - name: agedAccountsReceivable-id
-          in: path
-          description: 'key: id of agedAccountsReceivable'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: agedAccountsReceivable
-      requestBody:
-        description: New navigation property values
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.agedAccountsReceivable'
-        required: true
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - financials.company
-      summary: Delete navigation property agedAccountsReceivable for financials
-      operationId: financials.companies_DeleteAgedAccountsReceivable
-      parameters:
-        - name: company-id
-          in: path
-          description: 'key: id of company'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: company
-        - name: agedAccountsReceivable-id
-          in: path
-          description: 'key: id of agedAccountsReceivable'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: agedAccountsReceivable
-        - name: If-Match
-          in: header
-          description: ETag
-          schema:
-            type: string
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   '/financials/companies/{company-id}/companyInformation':
     get:
       tags:
@@ -1440,21 +1142,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of companyInformation
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.companyInformation'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.companyInformationCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -1591,42 +1279,11 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - financials.company
-      summary: Delete navigation property companyInformation for financials
-      operationId: financials.companies_DeleteCompanyInformation
-      parameters:
-        - name: company-id
-          in: path
-          description: 'key: id of company'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: company
-        - name: companyInformation-id
-          in: path
-          description: 'key: id of companyInformation'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: companyInformation
-        - name: If-Match
-          in: header
-          description: ETag
-          schema:
-            type: string
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   '/financials/companies/{company-id}/companyInformation/{companyInformation-id}/picture':
     get:
       tags:
         - financials.company
-      summary: Get media content for the navigation property companyInformation from financials
+      summary: Get picture for the navigation property companyInformation from financials
       operationId: financials.companies_GetCompanyInformationPicture
       parameters:
         - name: company-id
@@ -1657,7 +1314,7 @@ paths:
     put:
       tags:
         - financials.company
-      summary: Update media content for the navigation property companyInformation in financials
+      summary: Update picture for the navigation property companyInformation in financials
       operationId: financials.companies_SetCompanyInformationPicture
       parameters:
         - name: company-id
@@ -1758,21 +1415,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of countryRegion
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.countryRegion'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.countryRegionCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -2008,21 +1651,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of currency
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.currency'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.currencyCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -2261,21 +1890,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of customerPaymentJournal
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.customerPaymentJournal'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.customerPaymentJournalCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -2545,37 +2160,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - financials.company
-      summary: Delete navigation property account for financials
-      operationId: financials.companies.customerPaymentJournals_DeleteAccount
-      parameters:
-        - name: company-id
-          in: path
-          description: 'key: id of company'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: company
-        - name: customerPaymentJournal-id
-          in: path
-          description: 'key: id of customerPaymentJournal'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: customerPaymentJournal
-        - name: If-Match
-          in: header
-          description: ETag
-          schema:
-            type: string
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   '/financials/companies/{company-id}/customerPaymentJournals/{customerPaymentJournal-id}/customerPayments':
     get:
       tags:
@@ -2685,21 +2269,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of customerPayment
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.customerPayment'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.customerPaymentCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -3625,21 +3195,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of picture
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.picture'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.pictureCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -3859,7 +3415,7 @@ paths:
     get:
       tags:
         - financials.company
-      summary: Get media content for the navigation property picture from financials
+      summary: Get content for the navigation property picture from financials
       operationId: financials.companies.customerPaymentJournals.customerPayments.customer_GetPictureContent
       parameters:
         - name: company-id
@@ -3904,7 +3460,7 @@ paths:
     put:
       tags:
         - financials.company
-      summary: Update media content for the navigation property picture in financials
+      summary: Update content for the navigation property picture in financials
       operationId: financials.companies.customerPaymentJournals.customerPayments.customer_SetPictureContent
       parameters:
         - name: company-id
@@ -4194,21 +3750,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of customerPayment
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.customerPayment'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.customerPaymentCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -5009,21 +4551,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of picture
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.picture'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.pictureCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -5215,7 +4743,7 @@ paths:
     get:
       tags:
         - financials.company
-      summary: Get media content for the navigation property picture from financials
+      summary: Get content for the navigation property picture from financials
       operationId: financials.companies.customerPayments.customer_GetPictureContent
       parameters:
         - name: company-id
@@ -5253,7 +4781,7 @@ paths:
     put:
       tags:
         - financials.company
-      summary: Update media content for the navigation property picture in financials
+      summary: Update content for the navigation property picture in financials
       operationId: financials.companies.customerPayments.customer_SetPictureContent
       parameters:
         - name: company-id
@@ -5535,21 +5063,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of customer
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.customer'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.customerCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -6209,21 +5723,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of picture
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.picture'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.pictureCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -6415,7 +5915,7 @@ paths:
     get:
       tags:
         - financials.company
-      summary: Get media content for the navigation property picture from financials
+      summary: Get content for the navigation property picture from financials
       operationId: financials.companies.customers_GetPictureContent
       parameters:
         - name: company-id
@@ -6453,7 +5953,7 @@ paths:
     put:
       tags:
         - financials.company
-      summary: Update media content for the navigation property picture in financials
+      summary: Update content for the navigation property picture in financials
       operationId: financials.companies.customers_SetPictureContent
       parameters:
         - name: company-id
@@ -6682,21 +6182,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of dimension
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.dimension'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.dimensionCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -6799,70 +6285,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-    patch:
-      tags:
-        - financials.company
-      summary: Update the navigation property dimensions in financials
-      operationId: financials.companies_UpdateDimensions
-      parameters:
-        - name: company-id
-          in: path
-          description: 'key: id of company'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: company
-        - name: dimension-id
-          in: path
-          description: 'key: id of dimension'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: dimension
-      requestBody:
-        description: New navigation property values
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.dimension'
-        required: true
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - financials.company
-      summary: Delete navigation property dimensions for financials
-      operationId: financials.companies_DeleteDimensions
-      parameters:
-        - name: company-id
-          in: path
-          description: 'key: id of company'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: company
-        - name: dimension-id
-          in: path
-          description: 'key: id of dimension'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: dimension
-        - name: If-Match
-          in: header
-          description: ETag
-          schema:
-            type: string
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   '/financials/companies/{company-id}/dimensions/{dimension-id}/dimensionValues':
     get:
       tags:
@@ -6937,21 +6359,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of dimensionValue
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.dimensionValue'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.dimensionValueCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -7060,84 +6468,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-    patch:
-      tags:
-        - financials.company
-      summary: Update the navigation property dimensionValues in financials
-      operationId: financials.companies.dimensions_UpdateDimensionValues
-      parameters:
-        - name: company-id
-          in: path
-          description: 'key: id of company'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: company
-        - name: dimension-id
-          in: path
-          description: 'key: id of dimension'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: dimension
-        - name: dimensionValue-id
-          in: path
-          description: 'key: id of dimensionValue'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: dimensionValue
-      requestBody:
-        description: New navigation property values
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.dimensionValue'
-        required: true
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - financials.company
-      summary: Delete navigation property dimensionValues for financials
-      operationId: financials.companies.dimensions_DeleteDimensionValues
-      parameters:
-        - name: company-id
-          in: path
-          description: 'key: id of company'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: company
-        - name: dimension-id
-          in: path
-          description: 'key: id of dimension'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: dimension
-        - name: dimensionValue-id
-          in: path
-          description: 'key: id of dimensionValue'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: dimensionValue
-        - name: If-Match
-          in: header
-          description: ETag
-          schema:
-            type: string
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   '/financials/companies/{company-id}/dimensionValues':
     get:
       tags:
@@ -7205,21 +6535,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of dimensionValue
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.dimensionValue'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.dimensionValueCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -7311,70 +6627,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.dimensionValue'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    patch:
-      tags:
-        - financials.company
-      summary: Update the navigation property dimensionValues in financials
-      operationId: financials.companies_UpdateDimensionValues
-      parameters:
-        - name: company-id
-          in: path
-          description: 'key: id of company'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: company
-        - name: dimensionValue-id
-          in: path
-          description: 'key: id of dimensionValue'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: dimensionValue
-      requestBody:
-        description: New navigation property values
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.dimensionValue'
-        required: true
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - financials.company
-      summary: Delete navigation property dimensionValues for financials
-      operationId: financials.companies_DeleteDimensionValues
-      parameters:
-        - name: company-id
-          in: path
-          description: 'key: id of company'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: company
-        - name: dimensionValue-id
-          in: path
-          description: 'key: id of dimensionValue'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: dimensionValue
-        - name: If-Match
-          in: header
-          description: ETag
-          schema:
-            type: string
-      responses:
-        '204':
-          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -7489,21 +6741,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of employee
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.employee'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.employeeCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -7761,21 +6999,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of picture
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.picture'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.pictureCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -7967,7 +7191,7 @@ paths:
     get:
       tags:
         - financials.company
-      summary: Get media content for the navigation property picture from financials
+      summary: Get content for the navigation property picture from financials
       operationId: financials.companies.employees_GetPictureContent
       parameters:
         - name: company-id
@@ -8005,7 +7229,7 @@ paths:
     put:
       tags:
         - financials.company
-      summary: Update media content for the navigation property picture in financials
+      summary: Update content for the navigation property picture in financials
       operationId: financials.companies.employees_SetPictureContent
       parameters:
         - name: company-id
@@ -8130,21 +7354,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of generalLedgerEntry
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.generalLedgerEntry'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.generalLedgerEntryCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -8253,70 +7463,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-    patch:
-      tags:
-        - financials.company
-      summary: Update the navigation property generalLedgerEntries in financials
-      operationId: financials.companies_UpdateGeneralLedgerEntries
-      parameters:
-        - name: company-id
-          in: path
-          description: 'key: id of company'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: company
-        - name: generalLedgerEntry-id
-          in: path
-          description: 'key: id of generalLedgerEntry'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: generalLedgerEntry
-      requestBody:
-        description: New navigation property values
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.generalLedgerEntry'
-        required: true
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - financials.company
-      summary: Delete navigation property generalLedgerEntries for financials
-      operationId: financials.companies_DeleteGeneralLedgerEntries
-      parameters:
-        - name: company-id
-          in: path
-          description: 'key: id of company'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: company
-        - name: generalLedgerEntry-id
-          in: path
-          description: 'key: id of generalLedgerEntry'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: generalLedgerEntry
-        - name: If-Match
-          in: header
-          description: ETag
-          schema:
-            type: string
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   '/financials/companies/{company-id}/generalLedgerEntries/{generalLedgerEntry-id}/account':
     get:
       tags:
@@ -8411,37 +7557,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - financials.company
-      summary: Delete navigation property account for financials
-      operationId: financials.companies.generalLedgerEntries_DeleteAccount
-      parameters:
-        - name: company-id
-          in: path
-          description: 'key: id of company'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: company
-        - name: generalLedgerEntry-id
-          in: path
-          description: 'key: id of generalLedgerEntry'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: generalLedgerEntry
-        - name: If-Match
-          in: header
-          description: ETag
-          schema:
-            type: string
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   '/financials/companies/{company-id}/itemCategories':
     get:
       tags:
@@ -8509,21 +7624,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of itemCategory
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.itemCategory'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.itemCategoryCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -8789,21 +7890,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of item
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.item'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.itemCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -9188,21 +8275,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of picture
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.picture'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.pictureCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -9394,7 +8467,7 @@ paths:
     get:
       tags:
         - financials.company
-      summary: Get media content for the navigation property picture from financials
+      summary: Get content for the navigation property picture from financials
       operationId: financials.companies.items_GetPictureContent
       parameters:
         - name: company-id
@@ -9432,7 +8505,7 @@ paths:
     put:
       tags:
         - financials.company
-      summary: Update media content for the navigation property picture in financials
+      summary: Update content for the navigation property picture in financials
       operationId: financials.companies.items_SetPictureContent
       parameters:
         - name: company-id
@@ -9563,21 +8636,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of journalLine
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.journalLine'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.journalLineCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -9846,37 +8905,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - financials.company
-      summary: Delete navigation property account for financials
-      operationId: financials.companies.journalLines_DeleteAccount
-      parameters:
-        - name: company-id
-          in: path
-          description: 'key: id of company'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: company
-        - name: journalLine-id
-          in: path
-          description: 'key: id of journalLine'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: journalLine
-        - name: If-Match
-          in: header
-          description: ETag
-          schema:
-            type: string
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   '/financials/companies/{company-id}/journals':
     get:
       tags:
@@ -9954,21 +8982,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of journal
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.journal'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.journalCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -10077,6 +9091,8 @@ paths:
               parameters:
                 company-id: $request.path.company-id
                 journal-id: $request.path.journal-id
+            post:
+              operationId: financials.companies.company.journals.journal.post
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -10238,37 +9254,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - financials.company
-      summary: Delete navigation property account for financials
-      operationId: financials.companies.journals_DeleteAccount
-      parameters:
-        - name: company-id
-          in: path
-          description: 'key: id of company'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: company
-        - name: journal-id
-          in: path
-          description: 'key: id of journal'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: journal
-        - name: If-Match
-          in: header
-          description: ETag
-          schema:
-            type: string
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   '/financials/companies/{company-id}/journals/{journal-id}/journalLines':
     get:
       tags:
@@ -10369,21 +9354,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of journalLine
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.journalLine'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.journalLineCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -10695,44 +9666,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - financials.company
-      summary: Delete navigation property account for financials
-      operationId: financials.companies.journals.journalLines_DeleteAccount
-      parameters:
-        - name: company-id
-          in: path
-          description: 'key: id of company'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: company
-        - name: journal-id
-          in: path
-          description: 'key: id of journal'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: journal
-        - name: journalLine-id
-          in: path
-          description: 'key: id of journalLine'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: journalLine
-        - name: If-Match
-          in: header
-          description: ETag
-          schema:
-            type: string
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   '/financials/companies/{company-id}/journals/{journal-id}/microsoft.graph.post':
     post:
       tags:
@@ -10827,21 +9760,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of paymentMethod
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.paymentMethod'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.paymentMethodCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -11079,21 +9998,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of paymentTerm
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.paymentTerm'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.paymentTermCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -11326,21 +10231,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of picture
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.picture'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.pictureCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -11504,7 +10395,7 @@ paths:
     get:
       tags:
         - financials.company
-      summary: Get media content for the navigation property picture from financials
+      summary: Get content for the navigation property picture from financials
       operationId: financials.companies_GetPictureContent
       parameters:
         - name: company-id
@@ -11535,7 +10426,7 @@ paths:
     put:
       tags:
         - financials.company
-      summary: Update media content for the navigation property picture in financials
+      summary: Update content for the navigation property picture in financials
       operationId: financials.companies_SetPictureContent
       parameters:
         - name: company-id
@@ -11691,21 +10582,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of purchaseInvoiceLine
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.purchaseInvoiceLine'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.purchaseInvoiceLineCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -11866,37 +10743,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - financials.company
-      summary: Delete navigation property purchaseInvoiceLines for financials
-      operationId: financials.companies_DeletePurchaseInvoiceLines
-      parameters:
-        - name: company-id
-          in: path
-          description: 'key: id of company'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: company
-        - name: purchaseInvoiceLine-id
-          in: path
-          description: 'key: id of purchaseInvoiceLine'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: purchaseInvoiceLine
-        - name: If-Match
-          in: header
-          description: ETag
-          schema:
-            type: string
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   '/financials/companies/{company-id}/purchaseInvoiceLines/{purchaseInvoiceLine-id}/account':
     get:
       tags:
@@ -11985,37 +10831,6 @@ paths:
             schema:
               $ref: '#/components/schemas/microsoft.graph.account'
         required: true
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - financials.company
-      summary: Delete navigation property account for financials
-      operationId: financials.companies.purchaseInvoiceLines_DeleteAccount
-      parameters:
-        - name: company-id
-          in: path
-          description: 'key: id of company'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: company
-        - name: purchaseInvoiceLine-id
-          in: path
-          description: 'key: id of purchaseInvoiceLine'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: purchaseInvoiceLine
-        - name: If-Match
-          in: header
-          description: ETag
-          schema:
-            type: string
       responses:
         '204':
           description: Success
@@ -12370,21 +11185,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of picture
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.picture'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.pictureCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -12576,7 +11377,7 @@ paths:
     get:
       tags:
         - financials.company
-      summary: Get media content for the navigation property picture from financials
+      summary: Get content for the navigation property picture from financials
       operationId: financials.companies.purchaseInvoiceLines.item_GetPictureContent
       parameters:
         - name: company-id
@@ -12614,7 +11415,7 @@ paths:
     put:
       tags:
         - financials.company
-      summary: Update media content for the navigation property picture in financials
+      summary: Update content for the navigation property picture in financials
       operationId: financials.companies.purchaseInvoiceLines.item_SetPictureContent
       parameters:
         - name: company-id
@@ -12794,21 +11595,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of purchaseInvoice
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.purchaseInvoice'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.purchaseInvoiceCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -12945,6 +11732,8 @@ paths:
               parameters:
                 company-id: $request.path.company-id
                 purchaseInvoice-id: $request.path.purchaseInvoice-id
+            post:
+              operationId: financials.companies.company.purchaseInvoices.purchaseInvoice.post
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -12975,37 +11764,6 @@ paths:
             schema:
               $ref: '#/components/schemas/microsoft.graph.purchaseInvoice'
         required: true
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - financials.company
-      summary: Delete navigation property purchaseInvoices for financials
-      operationId: financials.companies_DeletePurchaseInvoices
-      parameters:
-        - name: company-id
-          in: path
-          description: 'key: id of company'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: company
-        - name: purchaseInvoice-id
-          in: path
-          description: 'key: id of purchaseInvoice'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: purchaseInvoice
-        - name: If-Match
-          in: header
-          description: ETag
-          schema:
-            type: string
       responses:
         '204':
           description: Success
@@ -13296,21 +12054,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of purchaseInvoiceLine
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.purchaseInvoiceLine'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.purchaseInvoiceLineCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -13494,44 +12238,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - financials.company
-      summary: Delete navigation property purchaseInvoiceLines for financials
-      operationId: financials.companies.purchaseInvoices_DeletePurchaseInvoiceLines
-      parameters:
-        - name: company-id
-          in: path
-          description: 'key: id of company'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: company
-        - name: purchaseInvoice-id
-          in: path
-          description: 'key: id of purchaseInvoice'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: purchaseInvoice
-        - name: purchaseInvoiceLine-id
-          in: path
-          description: 'key: id of purchaseInvoiceLine'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: purchaseInvoiceLine
-        - name: If-Match
-          in: header
-          description: ETag
-          schema:
-            type: string
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   '/financials/companies/{company-id}/purchaseInvoices/{purchaseInvoice-id}/purchaseInvoiceLines/{purchaseInvoiceLine-id}/account':
     get:
       tags:
@@ -13634,44 +12340,6 @@ paths:
             schema:
               $ref: '#/components/schemas/microsoft.graph.account'
         required: true
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - financials.company
-      summary: Delete navigation property account for financials
-      operationId: financials.companies.purchaseInvoices.purchaseInvoiceLines_DeleteAccount
-      parameters:
-        - name: company-id
-          in: path
-          description: 'key: id of company'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: company
-        - name: purchaseInvoice-id
-          in: path
-          description: 'key: id of purchaseInvoice'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: purchaseInvoice
-        - name: purchaseInvoiceLine-id
-          in: path
-          description: 'key: id of purchaseInvoiceLine'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: purchaseInvoiceLine
-        - name: If-Match
-          in: header
-          description: ETag
-          schema:
-            type: string
       responses:
         '204':
           description: Success
@@ -14077,21 +12745,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of picture
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.picture'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.pictureCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -14311,7 +12965,7 @@ paths:
     get:
       tags:
         - financials.company
-      summary: Get media content for the navigation property picture from financials
+      summary: Get content for the navigation property picture from financials
       operationId: financials.companies.purchaseInvoices.purchaseInvoiceLines.item_GetPictureContent
       parameters:
         - name: company-id
@@ -14356,7 +13010,7 @@ paths:
     put:
       tags:
         - financials.company
-      summary: Update media content for the navigation property picture in financials
+      summary: Update content for the navigation property picture in financials
       operationId: financials.companies.purchaseInvoices.purchaseInvoiceLines.item_SetPictureContent
       parameters:
         - name: company-id
@@ -15014,21 +13668,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of picture
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.picture'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.pictureCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -15220,7 +13860,7 @@ paths:
     get:
       tags:
         - financials.company
-      summary: Get media content for the navigation property picture from financials
+      summary: Get content for the navigation property picture from financials
       operationId: financials.companies.purchaseInvoices.vendor_GetPictureContent
       parameters:
         - name: company-id
@@ -15258,7 +13898,7 @@ paths:
     put:
       tags:
         - financials.company
-      summary: Update media content for the navigation property picture in financials
+      summary: Update content for the navigation property picture in financials
       operationId: financials.companies.purchaseInvoices.vendor_SetPictureContent
       parameters:
         - name: company-id
@@ -15424,21 +14064,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of salesCreditMemoLine
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.salesCreditMemoLine'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.salesCreditMemoLineCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -15600,37 +14226,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - financials.company
-      summary: Delete navigation property salesCreditMemoLines for financials
-      operationId: financials.companies_DeleteSalesCreditMemoLines
-      parameters:
-        - name: company-id
-          in: path
-          description: 'key: id of company'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: company
-        - name: salesCreditMemoLine-id
-          in: path
-          description: 'key: id of salesCreditMemoLine'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: salesCreditMemoLine
-        - name: If-Match
-          in: header
-          description: ETag
-          schema:
-            type: string
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   '/financials/companies/{company-id}/salesCreditMemoLines/{salesCreditMemoLine-id}/account':
     get:
       tags:
@@ -15719,37 +14314,6 @@ paths:
             schema:
               $ref: '#/components/schemas/microsoft.graph.account'
         required: true
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - financials.company
-      summary: Delete navigation property account for financials
-      operationId: financials.companies.salesCreditMemoLines_DeleteAccount
-      parameters:
-        - name: company-id
-          in: path
-          description: 'key: id of company'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: company
-        - name: salesCreditMemoLine-id
-          in: path
-          description: 'key: id of salesCreditMemoLine'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: salesCreditMemoLine
-        - name: If-Match
-          in: header
-          description: ETag
-          schema:
-            type: string
       responses:
         '204':
           description: Success
@@ -16104,21 +14668,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of picture
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.picture'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.pictureCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -16310,7 +14860,7 @@ paths:
     get:
       tags:
         - financials.company
-      summary: Get media content for the navigation property picture from financials
+      summary: Get content for the navigation property picture from financials
       operationId: financials.companies.salesCreditMemoLines.item_GetPictureContent
       parameters:
         - name: company-id
@@ -16348,7 +14898,7 @@ paths:
     put:
       tags:
         - financials.company
-      summary: Update media content for the navigation property picture in financials
+      summary: Update content for the navigation property picture in financials
       operationId: financials.companies.salesCreditMemoLines.item_SetPictureContent
       parameters:
         - name: company-id
@@ -16536,21 +15086,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of salesCreditMemo
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.salesCreditMemo'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.salesCreditMemoCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -16726,37 +15262,6 @@ paths:
             schema:
               $ref: '#/components/schemas/microsoft.graph.salesCreditMemo'
         required: true
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - financials.company
-      summary: Delete navigation property salesCreditMemos for financials
-      operationId: financials.companies_DeleteSalesCreditMemos
-      parameters:
-        - name: company-id
-          in: path
-          description: 'key: id of company'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: company
-        - name: salesCreditMemo-id
-          in: path
-          description: 'key: id of salesCreditMemo'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: salesCreditMemo
-        - name: If-Match
-          in: header
-          description: ETag
-          schema:
-            type: string
       responses:
         '204':
           description: Success
@@ -17511,21 +16016,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of picture
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.picture'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.pictureCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -17717,7 +16208,7 @@ paths:
     get:
       tags:
         - financials.company
-      summary: Get media content for the navigation property picture from financials
+      summary: Get content for the navigation property picture from financials
       operationId: financials.companies.salesCreditMemos.customer_GetPictureContent
       parameters:
         - name: company-id
@@ -17755,7 +16246,7 @@ paths:
     put:
       tags:
         - financials.company
-      summary: Update media content for the navigation property picture in financials
+      summary: Update content for the navigation property picture in financials
       operationId: financials.companies.salesCreditMemos.customer_SetPictureContent
       parameters:
         - name: company-id
@@ -18176,21 +16667,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of salesCreditMemoLine
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.salesCreditMemoLine'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.salesCreditMemoLineCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -18375,44 +16852,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - financials.company
-      summary: Delete navigation property salesCreditMemoLines for financials
-      operationId: financials.companies.salesCreditMemos_DeleteSalesCreditMemoLines
-      parameters:
-        - name: company-id
-          in: path
-          description: 'key: id of company'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: company
-        - name: salesCreditMemo-id
-          in: path
-          description: 'key: id of salesCreditMemo'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: salesCreditMemo
-        - name: salesCreditMemoLine-id
-          in: path
-          description: 'key: id of salesCreditMemoLine'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: salesCreditMemoLine
-        - name: If-Match
-          in: header
-          description: ETag
-          schema:
-            type: string
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   '/financials/companies/{company-id}/salesCreditMemos/{salesCreditMemo-id}/salesCreditMemoLines/{salesCreditMemoLine-id}/account':
     get:
       tags:
@@ -18515,44 +16954,6 @@ paths:
             schema:
               $ref: '#/components/schemas/microsoft.graph.account'
         required: true
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - financials.company
-      summary: Delete navigation property account for financials
-      operationId: financials.companies.salesCreditMemos.salesCreditMemoLines_DeleteAccount
-      parameters:
-        - name: company-id
-          in: path
-          description: 'key: id of company'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: company
-        - name: salesCreditMemo-id
-          in: path
-          description: 'key: id of salesCreditMemo'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: salesCreditMemo
-        - name: salesCreditMemoLine-id
-          in: path
-          description: 'key: id of salesCreditMemoLine'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: salesCreditMemoLine
-        - name: If-Match
-          in: header
-          description: ETag
-          schema:
-            type: string
       responses:
         '204':
           description: Success
@@ -18958,21 +17359,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of picture
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.picture'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.pictureCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -19192,7 +17579,7 @@ paths:
     get:
       tags:
         - financials.company
-      summary: Get media content for the navigation property picture from financials
+      summary: Get content for the navigation property picture from financials
       operationId: financials.companies.salesCreditMemos.salesCreditMemoLines.item_GetPictureContent
       parameters:
         - name: company-id
@@ -19237,7 +17624,7 @@ paths:
     put:
       tags:
         - financials.company
-      summary: Update media content for the navigation property picture in financials
+      summary: Update content for the navigation property picture in financials
       operationId: financials.companies.salesCreditMemos.salesCreditMemoLines.item_SetPictureContent
       parameters:
         - name: company-id
@@ -19410,21 +17797,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of salesInvoiceLine
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.salesInvoiceLine'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.salesInvoiceLineCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -19586,37 +17959,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - financials.company
-      summary: Delete navigation property salesInvoiceLines for financials
-      operationId: financials.companies_DeleteSalesInvoiceLines
-      parameters:
-        - name: company-id
-          in: path
-          description: 'key: id of company'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: company
-        - name: salesInvoiceLine-id
-          in: path
-          description: 'key: id of salesInvoiceLine'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: salesInvoiceLine
-        - name: If-Match
-          in: header
-          description: ETag
-          schema:
-            type: string
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   '/financials/companies/{company-id}/salesInvoiceLines/{salesInvoiceLine-id}/account':
     get:
       tags:
@@ -19705,37 +18047,6 @@ paths:
             schema:
               $ref: '#/components/schemas/microsoft.graph.account'
         required: true
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - financials.company
-      summary: Delete navigation property account for financials
-      operationId: financials.companies.salesInvoiceLines_DeleteAccount
-      parameters:
-        - name: company-id
-          in: path
-          description: 'key: id of company'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: company
-        - name: salesInvoiceLine-id
-          in: path
-          description: 'key: id of salesInvoiceLine'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: salesInvoiceLine
-        - name: If-Match
-          in: header
-          description: ETag
-          schema:
-            type: string
       responses:
         '204':
           description: Success
@@ -20090,21 +18401,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of picture
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.picture'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.pictureCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -20296,7 +18593,7 @@ paths:
     get:
       tags:
         - financials.company
-      summary: Get media content for the navigation property picture from financials
+      summary: Get content for the navigation property picture from financials
       operationId: financials.companies.salesInvoiceLines.item_GetPictureContent
       parameters:
         - name: company-id
@@ -20334,7 +18631,7 @@ paths:
     put:
       tags:
         - financials.company
-      summary: Update media content for the navigation property picture in financials
+      summary: Update content for the navigation property picture in financials
       operationId: financials.companies.salesInvoiceLines.item_SetPictureContent
       parameters:
         - name: company-id
@@ -20539,21 +18836,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of salesInvoice
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.salesInvoice'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.salesInvoiceCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -20711,6 +18994,16 @@ paths:
               parameters:
                 company-id: $request.path.company-id
                 salesInvoice-id: $request.path.salesInvoice-id
+            cancel:
+              operationId: financials.companies.company.salesInvoices.salesInvoice.cancel
+            cancelAndSend:
+              operationId: financials.companies.company.salesInvoices.salesInvoice.cancelAndSend
+            post:
+              operationId: financials.companies.company.salesInvoices.salesInvoice.post
+            postAndSend:
+              operationId: financials.companies.company.salesInvoices.salesInvoice.postAndSend
+            send:
+              operationId: financials.companies.company.salesInvoices.salesInvoice.send
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -20741,37 +19034,6 @@ paths:
             schema:
               $ref: '#/components/schemas/microsoft.graph.salesInvoice'
         required: true
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - financials.company
-      summary: Delete navigation property salesInvoices for financials
-      operationId: financials.companies_DeleteSalesInvoices
-      parameters:
-        - name: company-id
-          in: path
-          description: 'key: id of company'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: company
-        - name: salesInvoice-id
-          in: path
-          description: 'key: id of salesInvoice'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: salesInvoice
-        - name: If-Match
-          in: header
-          description: ETag
-          schema:
-            type: string
       responses:
         '204':
           description: Success
@@ -21526,21 +19788,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of picture
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.picture'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.pictureCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -21732,7 +19980,7 @@ paths:
     get:
       tags:
         - financials.company
-      summary: Get media content for the navigation property picture from financials
+      summary: Get content for the navigation property picture from financials
       operationId: financials.companies.salesInvoices.customer_GetPictureContent
       parameters:
         - name: company-id
@@ -21770,7 +20018,7 @@ paths:
     put:
       tags:
         - financials.company
-      summary: Update media content for the navigation property picture in financials
+      summary: Update content for the navigation property picture in financials
       operationId: financials.companies.salesInvoices.customer_SetPictureContent
       parameters:
         - name: company-id
@@ -22326,21 +20574,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of salesInvoiceLine
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.salesInvoiceLine'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.salesInvoiceLineCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -22525,44 +20759,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - financials.company
-      summary: Delete navigation property salesInvoiceLines for financials
-      operationId: financials.companies.salesInvoices_DeleteSalesInvoiceLines
-      parameters:
-        - name: company-id
-          in: path
-          description: 'key: id of company'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: company
-        - name: salesInvoice-id
-          in: path
-          description: 'key: id of salesInvoice'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: salesInvoice
-        - name: salesInvoiceLine-id
-          in: path
-          description: 'key: id of salesInvoiceLine'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: salesInvoiceLine
-        - name: If-Match
-          in: header
-          description: ETag
-          schema:
-            type: string
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   '/financials/companies/{company-id}/salesInvoices/{salesInvoice-id}/salesInvoiceLines/{salesInvoiceLine-id}/account':
     get:
       tags:
@@ -22665,44 +20861,6 @@ paths:
             schema:
               $ref: '#/components/schemas/microsoft.graph.account'
         required: true
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - financials.company
-      summary: Delete navigation property account for financials
-      operationId: financials.companies.salesInvoices.salesInvoiceLines_DeleteAccount
-      parameters:
-        - name: company-id
-          in: path
-          description: 'key: id of company'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: company
-        - name: salesInvoice-id
-          in: path
-          description: 'key: id of salesInvoice'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: salesInvoice
-        - name: salesInvoiceLine-id
-          in: path
-          description: 'key: id of salesInvoiceLine'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: salesInvoiceLine
-        - name: If-Match
-          in: header
-          description: ETag
-          schema:
-            type: string
       responses:
         '204':
           description: Success
@@ -23108,21 +21266,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of picture
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.picture'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.pictureCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -23342,7 +21486,7 @@ paths:
     get:
       tags:
         - financials.company
-      summary: Get media content for the navigation property picture from financials
+      summary: Get content for the navigation property picture from financials
       operationId: financials.companies.salesInvoices.salesInvoiceLines.item_GetPictureContent
       parameters:
         - name: company-id
@@ -23387,7 +21531,7 @@ paths:
     put:
       tags:
         - financials.company
-      summary: Update media content for the navigation property picture in financials
+      summary: Update content for the navigation property picture in financials
       operationId: financials.companies.salesInvoices.salesInvoiceLines.item_SetPictureContent
       parameters:
         - name: company-id
@@ -23694,21 +21838,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of salesOrderLine
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.salesOrderLine'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.salesOrderLineCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -23874,37 +22004,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - financials.company
-      summary: Delete navigation property salesOrderLines for financials
-      operationId: financials.companies_DeleteSalesOrderLines
-      parameters:
-        - name: company-id
-          in: path
-          description: 'key: id of company'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: company
-        - name: salesOrderLine-id
-          in: path
-          description: 'key: id of salesOrderLine'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: salesOrderLine
-        - name: If-Match
-          in: header
-          description: ETag
-          schema:
-            type: string
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   '/financials/companies/{company-id}/salesOrderLines/{salesOrderLine-id}/account':
     get:
       tags:
@@ -23993,37 +22092,6 @@ paths:
             schema:
               $ref: '#/components/schemas/microsoft.graph.account'
         required: true
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - financials.company
-      summary: Delete navigation property account for financials
-      operationId: financials.companies.salesOrderLines_DeleteAccount
-      parameters:
-        - name: company-id
-          in: path
-          description: 'key: id of company'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: company
-        - name: salesOrderLine-id
-          in: path
-          description: 'key: id of salesOrderLine'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: salesOrderLine
-        - name: If-Match
-          in: header
-          description: ETag
-          schema:
-            type: string
       responses:
         '204':
           description: Success
@@ -24378,21 +22446,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of picture
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.picture'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.pictureCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -24584,7 +22638,7 @@ paths:
     get:
       tags:
         - financials.company
-      summary: Get media content for the navigation property picture from financials
+      summary: Get content for the navigation property picture from financials
       operationId: financials.companies.salesOrderLines.item_GetPictureContent
       parameters:
         - name: company-id
@@ -24622,7 +22676,7 @@ paths:
     put:
       tags:
         - financials.company
-      summary: Update media content for the navigation property picture in financials
+      summary: Update content for the navigation property picture in financials
       operationId: financials.companies.salesOrderLines.item_SetPictureContent
       parameters:
         - name: company-id
@@ -24819,21 +22873,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of salesOrder
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.salesOrder'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.salesOrderCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -25012,37 +23052,6 @@ paths:
             schema:
               $ref: '#/components/schemas/microsoft.graph.salesOrder'
         required: true
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - financials.company
-      summary: Delete navigation property salesOrders for financials
-      operationId: financials.companies_DeleteSalesOrders
-      parameters:
-        - name: company-id
-          in: path
-          description: 'key: id of company'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: company
-        - name: salesOrder-id
-          in: path
-          description: 'key: id of salesOrder'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: salesOrder
-        - name: If-Match
-          in: header
-          description: ETag
-          schema:
-            type: string
       responses:
         '204':
           description: Success
@@ -25797,21 +23806,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of picture
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.picture'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.pictureCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -26003,7 +23998,7 @@ paths:
     get:
       tags:
         - financials.company
-      summary: Get media content for the navigation property picture from financials
+      summary: Get content for the navigation property picture from financials
       operationId: financials.companies.salesOrders.customer_GetPictureContent
       parameters:
         - name: company-id
@@ -26041,7 +24036,7 @@ paths:
     put:
       tags:
         - financials.company
-      summary: Update media content for the navigation property picture in financials
+      summary: Update content for the navigation property picture in financials
       operationId: financials.companies.salesOrders.customer_SetPictureContent
       parameters:
         - name: company-id
@@ -26474,21 +24469,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of salesOrderLine
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.salesOrderLine'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.salesOrderLineCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -26677,44 +24658,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - financials.company
-      summary: Delete navigation property salesOrderLines for financials
-      operationId: financials.companies.salesOrders_DeleteSalesOrderLines
-      parameters:
-        - name: company-id
-          in: path
-          description: 'key: id of company'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: company
-        - name: salesOrder-id
-          in: path
-          description: 'key: id of salesOrder'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: salesOrder
-        - name: salesOrderLine-id
-          in: path
-          description: 'key: id of salesOrderLine'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: salesOrderLine
-        - name: If-Match
-          in: header
-          description: ETag
-          schema:
-            type: string
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   '/financials/companies/{company-id}/salesOrders/{salesOrder-id}/salesOrderLines/{salesOrderLine-id}/account':
     get:
       tags:
@@ -26817,44 +24760,6 @@ paths:
             schema:
               $ref: '#/components/schemas/microsoft.graph.account'
         required: true
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - financials.company
-      summary: Delete navigation property account for financials
-      operationId: financials.companies.salesOrders.salesOrderLines_DeleteAccount
-      parameters:
-        - name: company-id
-          in: path
-          description: 'key: id of company'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: company
-        - name: salesOrder-id
-          in: path
-          description: 'key: id of salesOrder'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: salesOrder
-        - name: salesOrderLine-id
-          in: path
-          description: 'key: id of salesOrderLine'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: salesOrderLine
-        - name: If-Match
-          in: header
-          description: ETag
-          schema:
-            type: string
       responses:
         '204':
           description: Success
@@ -27260,21 +25165,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of picture
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.picture'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.pictureCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -27494,7 +25385,7 @@ paths:
     get:
       tags:
         - financials.company
-      summary: Get media content for the navigation property picture from financials
+      summary: Get content for the navigation property picture from financials
       operationId: financials.companies.salesOrders.salesOrderLines.item_GetPictureContent
       parameters:
         - name: company-id
@@ -27539,7 +25430,7 @@ paths:
     put:
       tags:
         - financials.company
-      summary: Update media content for the navigation property picture in financials
+      summary: Update content for the navigation property picture in financials
       operationId: financials.companies.salesOrders.salesOrderLines.item_SetPictureContent
       parameters:
         - name: company-id
@@ -27706,21 +25597,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of salesQuoteLine
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.salesQuoteLine'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.salesQuoteLineCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -27880,37 +25757,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - financials.company
-      summary: Delete navigation property salesQuoteLines for financials
-      operationId: financials.companies_DeleteSalesQuoteLines
-      parameters:
-        - name: company-id
-          in: path
-          description: 'key: id of company'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: company
-        - name: salesQuoteLine-id
-          in: path
-          description: 'key: id of salesQuoteLine'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: salesQuoteLine
-        - name: If-Match
-          in: header
-          description: ETag
-          schema:
-            type: string
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   '/financials/companies/{company-id}/salesQuoteLines/{salesQuoteLine-id}/account':
     get:
       tags:
@@ -27999,37 +25845,6 @@ paths:
             schema:
               $ref: '#/components/schemas/microsoft.graph.account'
         required: true
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - financials.company
-      summary: Delete navigation property account for financials
-      operationId: financials.companies.salesQuoteLines_DeleteAccount
-      parameters:
-        - name: company-id
-          in: path
-          description: 'key: id of company'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: company
-        - name: salesQuoteLine-id
-          in: path
-          description: 'key: id of salesQuoteLine'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: salesQuoteLine
-        - name: If-Match
-          in: header
-          description: ETag
-          schema:
-            type: string
       responses:
         '204':
           description: Success
@@ -28384,21 +26199,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of picture
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.picture'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.pictureCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -28590,7 +26391,7 @@ paths:
     get:
       tags:
         - financials.company
-      summary: Get media content for the navigation property picture from financials
+      summary: Get content for the navigation property picture from financials
       operationId: financials.companies.salesQuoteLines.item_GetPictureContent
       parameters:
         - name: company-id
@@ -28628,7 +26429,7 @@ paths:
     put:
       tags:
         - financials.company
-      summary: Update media content for the navigation property picture in financials
+      summary: Update content for the navigation property picture in financials
       operationId: financials.companies.salesQuoteLines.item_SetPictureContent
       parameters:
         - name: company-id
@@ -28827,21 +26628,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of salesQuote
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.salesQuote'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.salesQuoteCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -28997,6 +26784,10 @@ paths:
               parameters:
                 company-id: $request.path.company-id
                 salesQuote-id: $request.path.salesQuote-id
+            makeInvoice:
+              operationId: financials.companies.company.salesQuotes.salesQuote.makeInvoice
+            send:
+              operationId: financials.companies.company.salesQuotes.salesQuote.send
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -29027,37 +26818,6 @@ paths:
             schema:
               $ref: '#/components/schemas/microsoft.graph.salesQuote'
         required: true
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - financials.company
-      summary: Delete navigation property salesQuotes for financials
-      operationId: financials.companies_DeleteSalesQuotes
-      parameters:
-        - name: company-id
-          in: path
-          description: 'key: id of company'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: company
-        - name: salesQuote-id
-          in: path
-          description: 'key: id of salesQuote'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: salesQuote
-        - name: If-Match
-          in: header
-          description: ETag
-          schema:
-            type: string
       responses:
         '204':
           description: Success
@@ -29812,21 +27572,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of picture
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.picture'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.pictureCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -30018,7 +27764,7 @@ paths:
     get:
       tags:
         - financials.company
-      summary: Get media content for the navigation property picture from financials
+      summary: Get content for the navigation property picture from financials
       operationId: financials.companies.salesQuotes.customer_GetPictureContent
       parameters:
         - name: company-id
@@ -30056,7 +27802,7 @@ paths:
     put:
       tags:
         - financials.company
-      summary: Update media content for the navigation property picture in financials
+      summary: Update content for the navigation property picture in financials
       operationId: financials.companies.salesQuotes.customer_SetPictureContent
       parameters:
         - name: company-id
@@ -30525,21 +28271,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of salesQuoteLine
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.salesQuoteLine'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.salesQuoteLineCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -30722,44 +28454,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - financials.company
-      summary: Delete navigation property salesQuoteLines for financials
-      operationId: financials.companies.salesQuotes_DeleteSalesQuoteLines
-      parameters:
-        - name: company-id
-          in: path
-          description: 'key: id of company'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: company
-        - name: salesQuote-id
-          in: path
-          description: 'key: id of salesQuote'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: salesQuote
-        - name: salesQuoteLine-id
-          in: path
-          description: 'key: id of salesQuoteLine'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: salesQuoteLine
-        - name: If-Match
-          in: header
-          description: ETag
-          schema:
-            type: string
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   '/financials/companies/{company-id}/salesQuotes/{salesQuote-id}/salesQuoteLines/{salesQuoteLine-id}/account':
     get:
       tags:
@@ -30862,44 +28556,6 @@ paths:
             schema:
               $ref: '#/components/schemas/microsoft.graph.account'
         required: true
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - financials.company
-      summary: Delete navigation property account for financials
-      operationId: financials.companies.salesQuotes.salesQuoteLines_DeleteAccount
-      parameters:
-        - name: company-id
-          in: path
-          description: 'key: id of company'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: company
-        - name: salesQuote-id
-          in: path
-          description: 'key: id of salesQuote'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: salesQuote
-        - name: salesQuoteLine-id
-          in: path
-          description: 'key: id of salesQuoteLine'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: salesQuoteLine
-        - name: If-Match
-          in: header
-          description: ETag
-          schema:
-            type: string
       responses:
         '204':
           description: Success
@@ -31305,21 +28961,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of picture
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.picture'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.pictureCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -31539,7 +29181,7 @@ paths:
     get:
       tags:
         - financials.company
-      summary: Get media content for the navigation property picture from financials
+      summary: Get content for the navigation property picture from financials
       operationId: financials.companies.salesQuotes.salesQuoteLines.item_GetPictureContent
       parameters:
         - name: company-id
@@ -31584,7 +29226,7 @@ paths:
     put:
       tags:
         - financials.company
-      summary: Update media content for the navigation property picture in financials
+      summary: Update content for the navigation property picture in financials
       operationId: financials.companies.salesQuotes.salesQuoteLines.item_SetPictureContent
       parameters:
         - name: company-id
@@ -31818,21 +29460,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of shipmentMethod
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.shipmentMethod'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.shipmentMethodCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -32061,21 +29689,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of taxArea
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.taxArea'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.taxAreaCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -32305,21 +29919,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of taxGroup
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.taxGroup'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.taxGroupCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -32484,7 +30084,7 @@ paths:
       tags:
         - financials.company
       summary: Get unitsOfMeasure from financials
-      operationId: financials.companies_ListUnitsOfMeasure
+      operationId: financials.companies_ListUnitsGraphOPreMeasure
       parameters:
         - name: company-id
           in: path
@@ -32549,21 +30149,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of unitOfMeasure
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.unitOfMeasure'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.unitOfMeasureCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -32574,7 +30160,7 @@ paths:
       tags:
         - financials.company
       summary: Create new navigation property to unitsOfMeasure for financials
-      operationId: financials.companies_CreateUnitsOfMeasure
+      operationId: financials.companies_CreateUnitsGraphOPreMeasure
       parameters:
         - name: company-id
           in: path
@@ -32605,7 +30191,7 @@ paths:
       tags:
         - financials.company
       summary: Get unitsOfMeasure from financials
-      operationId: financials.companies_GetUnitsOfMeasure
+      operationId: financials.companies_GetUnitsGraphOPreMeasure
       parameters:
         - name: company-id
           in: path
@@ -32663,7 +30249,7 @@ paths:
       tags:
         - financials.company
       summary: Update the navigation property unitsOfMeasure in financials
-      operationId: financials.companies_UpdateUnitsOfMeasure
+      operationId: financials.companies_UpdateUnitsGraphOPreMeasure
       parameters:
         - name: company-id
           in: path
@@ -32696,7 +30282,7 @@ paths:
       tags:
         - financials.company
       summary: Delete navigation property unitsOfMeasure for financials
-      operationId: financials.companies_DeleteUnitsOfMeasure
+      operationId: financials.companies_DeleteUnitsGraphOPreMeasure
       parameters:
         - name: company-id
           in: path
@@ -32834,21 +30420,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of vendor
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.vendor'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.vendorCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -33498,21 +31070,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of picture
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.picture'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.pictureCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -33704,7 +31262,7 @@ paths:
     get:
       tags:
         - financials.company
-      summary: Get media content for the navigation property picture from financials
+      summary: Get content for the navigation property picture from financials
       operationId: financials.companies.vendors_GetPictureContent
       parameters:
         - name: company-id
@@ -33742,7 +31300,7 @@ paths:
     put:
       tags:
         - financials.company
-      summary: Update media content for the navigation property picture in financials
+      summary: Update content for the navigation property picture in financials
       operationId: financials.companies.vendors_SetPictureContent
       parameters:
         - name: company-id
@@ -36067,7 +33625,6 @@ components:
       properties:
         id:
           type: string
-          description: Read-only.
       additionalProperties:
         type: object
     microsoft.graph.postalAddressType:
@@ -36091,16 +33648,448 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    odata.error:
+    microsoft.graph.ODataErrors.ODataError:
       required:
         - error
       type: object
       properties:
         error:
-          $ref: '#/components/schemas/odata.error.main'
+          $ref: '#/components/schemas/microsoft.graph.ODataErrors.MainError'
       additionalProperties:
         type: object
-    odata.error.main:
+    microsoft.graph.companyCollectionResponse:
+      title: Collection of company
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.company'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.accountCollectionResponse:
+      title: Collection of account
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.account'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.agedAccountsPayableCollectionResponse:
+      title: Collection of agedAccountsPayable
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.agedAccountsPayable'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.agedAccountsReceivableCollectionResponse:
+      title: Collection of agedAccountsReceivable
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.agedAccountsReceivable'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.companyInformationCollectionResponse:
+      title: Collection of companyInformation
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.companyInformation'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.countryRegionCollectionResponse:
+      title: Collection of countryRegion
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.countryRegion'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.currencyCollectionResponse:
+      title: Collection of currency
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.currency'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.customerPaymentJournalCollectionResponse:
+      title: Collection of customerPaymentJournal
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.customerPaymentJournal'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.customerPaymentCollectionResponse:
+      title: Collection of customerPayment
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.customerPayment'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.pictureCollectionResponse:
+      title: Collection of picture
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.picture'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.customerCollectionResponse:
+      title: Collection of customer
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.customer'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.dimensionCollectionResponse:
+      title: Collection of dimension
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.dimension'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.dimensionValueCollectionResponse:
+      title: Collection of dimensionValue
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.dimensionValue'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.employeeCollectionResponse:
+      title: Collection of employee
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.employee'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.generalLedgerEntryCollectionResponse:
+      title: Collection of generalLedgerEntry
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.generalLedgerEntry'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.itemCategoryCollectionResponse:
+      title: Collection of itemCategory
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.itemCategory'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.itemCollectionResponse:
+      title: Collection of item
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.item'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.journalLineCollectionResponse:
+      title: Collection of journalLine
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.journalLine'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.journalCollectionResponse:
+      title: Collection of journal
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.journal'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.paymentMethodCollectionResponse:
+      title: Collection of paymentMethod
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.paymentMethod'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.paymentTermCollectionResponse:
+      title: Collection of paymentTerm
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.paymentTerm'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.purchaseInvoiceLineCollectionResponse:
+      title: Collection of purchaseInvoiceLine
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.purchaseInvoiceLine'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.purchaseInvoiceCollectionResponse:
+      title: Collection of purchaseInvoice
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.purchaseInvoice'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.salesCreditMemoLineCollectionResponse:
+      title: Collection of salesCreditMemoLine
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.salesCreditMemoLine'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.salesCreditMemoCollectionResponse:
+      title: Collection of salesCreditMemo
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.salesCreditMemo'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.salesInvoiceLineCollectionResponse:
+      title: Collection of salesInvoiceLine
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.salesInvoiceLine'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.salesInvoiceCollectionResponse:
+      title: Collection of salesInvoice
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.salesInvoice'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.salesOrderLineCollectionResponse:
+      title: Collection of salesOrderLine
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.salesOrderLine'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.salesOrderCollectionResponse:
+      title: Collection of salesOrder
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.salesOrder'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.salesQuoteLineCollectionResponse:
+      title: Collection of salesQuoteLine
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.salesQuoteLine'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.salesQuoteCollectionResponse:
+      title: Collection of salesQuote
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.salesQuote'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.shipmentMethodCollectionResponse:
+      title: Collection of shipmentMethod
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.shipmentMethod'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.taxAreaCollectionResponse:
+      title: Collection of taxArea
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.taxArea'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.taxGroupCollectionResponse:
+      title: Collection of taxGroup
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.taxGroup'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.unitOfMeasureCollectionResponse:
+      title: Collection of unitOfMeasure
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.unitOfMeasure'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.vendorCollectionResponse:
+      title: Collection of vendor
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.vendor'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.ODataErrors.MainError:
       required:
         - code
         - message
@@ -36112,18 +34101,16 @@ components:
           type: string
         target:
           type: string
+          nullable: true
         details:
           type: array
           items:
-            $ref: '#/components/schemas/odata.error.detail'
+            $ref: '#/components/schemas/microsoft.graph.ODataErrors.ErrorDetails'
         innererror:
-          type: object
-          additionalProperties:
-            type: object
-          description: The structure of this object is service-specific
+          $ref: '#/components/schemas/microsoft.graph.ODataErrors.InnerError'
       additionalProperties:
         type: object
-    odata.error.detail:
+    microsoft.graph.ODataErrors.ErrorDetails:
       required:
         - code
         - message
@@ -36135,15 +34122,237 @@ components:
           type: string
         target:
           type: string
+          nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.ODataErrors.InnerError:
+      type: object
+      additionalProperties:
+        type: object
+      description: The structure of this object is service-specific
   responses:
     error:
       description: error
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/odata.error'
+            $ref: '#/components/schemas/microsoft.graph.ODataErrors.ODataError'
+    microsoft.graph.companyCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.companyCollectionResponse'
+    microsoft.graph.accountCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.accountCollectionResponse'
+    microsoft.graph.agedAccountsPayableCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.agedAccountsPayableCollectionResponse'
+    microsoft.graph.agedAccountsReceivableCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.agedAccountsReceivableCollectionResponse'
+    microsoft.graph.companyInformationCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.companyInformationCollectionResponse'
+    microsoft.graph.countryRegionCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.countryRegionCollectionResponse'
+    microsoft.graph.currencyCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.currencyCollectionResponse'
+    microsoft.graph.customerPaymentJournalCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.customerPaymentJournalCollectionResponse'
+    microsoft.graph.customerPaymentCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.customerPaymentCollectionResponse'
+    microsoft.graph.pictureCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.pictureCollectionResponse'
+    microsoft.graph.customerCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.customerCollectionResponse'
+    microsoft.graph.dimensionCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.dimensionCollectionResponse'
+    microsoft.graph.dimensionValueCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.dimensionValueCollectionResponse'
+    microsoft.graph.employeeCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.employeeCollectionResponse'
+    microsoft.graph.generalLedgerEntryCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.generalLedgerEntryCollectionResponse'
+    microsoft.graph.itemCategoryCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.itemCategoryCollectionResponse'
+    microsoft.graph.itemCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.itemCollectionResponse'
+    microsoft.graph.journalLineCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.journalLineCollectionResponse'
+    microsoft.graph.journalCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.journalCollectionResponse'
+    microsoft.graph.paymentMethodCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.paymentMethodCollectionResponse'
+    microsoft.graph.paymentTermCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.paymentTermCollectionResponse'
+    microsoft.graph.purchaseInvoiceLineCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.purchaseInvoiceLineCollectionResponse'
+    microsoft.graph.purchaseInvoiceCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.purchaseInvoiceCollectionResponse'
+    microsoft.graph.salesCreditMemoLineCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.salesCreditMemoLineCollectionResponse'
+    microsoft.graph.salesCreditMemoCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.salesCreditMemoCollectionResponse'
+    microsoft.graph.salesInvoiceLineCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.salesInvoiceLineCollectionResponse'
+    microsoft.graph.salesInvoiceCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.salesInvoiceCollectionResponse'
+    microsoft.graph.salesOrderLineCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.salesOrderLineCollectionResponse'
+    microsoft.graph.salesOrderCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.salesOrderCollectionResponse'
+    microsoft.graph.salesQuoteLineCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.salesQuoteLineCollectionResponse'
+    microsoft.graph.salesQuoteCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.salesQuoteCollectionResponse'
+    microsoft.graph.shipmentMethodCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.shipmentMethodCollectionResponse'
+    microsoft.graph.taxAreaCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.taxAreaCollectionResponse'
+    microsoft.graph.taxGroupCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.taxGroupCollectionResponse'
+    microsoft.graph.unitOfMeasureCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.unitOfMeasureCollectionResponse'
+    microsoft.graph.vendorCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.vendorCollectionResponse'
   parameters:
     top:
       name: $top

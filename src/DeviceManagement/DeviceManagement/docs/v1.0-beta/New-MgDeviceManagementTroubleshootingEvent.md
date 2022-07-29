@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgDeviceManagementTroubleshootingEvent
 
 ## SYNOPSIS
-The list of troubleshooting events for the tenant.
+Create new navigation property to troubleshootingEvents for deviceManagement
 
 ## SYNTAX
 
@@ -29,7 +29,7 @@ New-MgDeviceManagementTroubleshootingEvent
 ```
 
 ## DESCRIPTION
-The list of troubleshooting events for the tenant.
+Create new navigation property to troubleshootingEvents for deviceManagement
 
 ## EXAMPLES
 
@@ -129,7 +129,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -216,7 +216,7 @@ ADDITIONALINFORMATION <IMicrosoftGraphKeyValuePair[]>: A set of string key and s
 
 BODYPARAMETER <IMicrosoftGraphDeviceManagementTroubleshootingEvent1>: Event representing an general failure.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[AdditionalInformation <IMicrosoftGraphKeyValuePair[]>]`: A set of string key and string value pairs which provides additional information on the Troubleshooting event
     - `[Name <String>]`: Name for this key-value pair
     - `[Value <String>]`: Value for this key-value pair

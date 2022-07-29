@@ -8,38 +8,39 @@ schema: 2.0.0
 # Invoke-MgMuteAllCommunicationCallParticipant
 
 ## SYNOPSIS
-Invoke action mute
+Invoke action muteAll
 
 ## SYNTAX
 
-### MuteExpanded1 (Default)
+### MuteExpanded2 (Default)
 ```
-Invoke-MgMuteAllCommunicationCallParticipant -CallId <String> -ParticipantId <String>
- [-AdditionalProperties <Hashtable>] [-ClientContext <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
+Invoke-MgMuteAllCommunicationCallParticipant -CallId <String> [-AdditionalProperties <Hashtable>]
+ [-ClientContext <String>] [-Participants <String[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### Mute1
+### Mute2
 ```
-Invoke-MgMuteAllCommunicationCallParticipant -CallId <String> -ParticipantId <String>
- -BodyParameter <IPathsTobgxoCommunicationsCallsCallIdParticipantsParticipantIdMicrosoftGraphMutePostRequestbodyContentApplicationJsonSchema>
+Invoke-MgMuteAllCommunicationCallParticipant -CallId <String>
+ -BodyParameter <IPathsKpvac3CommunicationsCallsCallIdParticipantsMicrosoftGraphMuteallPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### MuteViaIdentity1
+### MuteViaIdentity2
 ```
 Invoke-MgMuteAllCommunicationCallParticipant -InputObject <ICloudCommunicationsIdentity>
- -BodyParameter <IPathsTobgxoCommunicationsCallsCallIdParticipantsParticipantIdMicrosoftGraphMutePostRequestbodyContentApplicationJsonSchema>
+ -BodyParameter <IPathsKpvac3CommunicationsCallsCallIdParticipantsMicrosoftGraphMuteallPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### MuteViaIdentityExpanded1
+### MuteViaIdentityExpanded2
 ```
 Invoke-MgMuteAllCommunicationCallParticipant -InputObject <ICloudCommunicationsIdentity>
- [-AdditionalProperties <Hashtable>] [-ClientContext <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-AdditionalProperties <Hashtable>] [-ClientContext <String>] [-Participants <String[]>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Invoke action mute
+Invoke action muteAll
 
 ## EXAMPLES
 
@@ -50,7 +51,7 @@ Additional Parameters
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: MuteExpanded1, MuteViaIdentityExpanded1
+Parameter Sets: MuteExpanded2, MuteViaIdentityExpanded2
 Aliases:
 
 Required: False
@@ -65,8 +66,8 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPathsTobgxoCommunicationsCallsCallIdParticipantsParticipantIdMicrosoftGraphMutePostRequestbodyContentApplicationJsonSchema
-Parameter Sets: Mute1, MuteViaIdentity1
+Type: Microsoft.Graph.PowerShell.Models.IPathsKpvac3CommunicationsCallsCallIdParticipantsMicrosoftGraphMuteallPostRequestbodyContentApplicationJsonSchema
+Parameter Sets: Mute2, MuteViaIdentity2
 Aliases:
 
 Required: True
@@ -81,7 +82,7 @@ key: id of call
 
 ```yaml
 Type: System.String
-Parameter Sets: Mute1, MuteExpanded1
+Parameter Sets: Mute2, MuteExpanded2
 Aliases:
 
 Required: True
@@ -96,7 +97,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.String
-Parameter Sets: MuteExpanded1, MuteViaIdentityExpanded1
+Parameter Sets: MuteExpanded2, MuteViaIdentityExpanded2
 Aliases:
 
 Required: False
@@ -112,7 +113,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.ICloudCommunicationsIdentity
-Parameter Sets: MuteViaIdentity1, MuteViaIdentityExpanded1
+Parameter Sets: MuteViaIdentity2, MuteViaIdentityExpanded2
 Aliases:
 
 Required: True
@@ -122,15 +123,15 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -ParticipantId
-key: id of participant
+### -Participants
+.
 
 ```yaml
-Type: System.String
-Parameter Sets: Mute1, MuteExpanded1
+Type: System.String[]
+Parameter Sets: MuteExpanded2, MuteViaIdentityExpanded2
 Aliases:
 
-Required: True
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -175,11 +176,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.ICloudCommunicationsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IPathsTobgxoCommunicationsCallsCallIdParticipantsParticipantIdMicrosoftGraphMutePostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.PowerShell.Models.IPathsKpvac3CommunicationsCallsCallIdParticipantsMicrosoftGraphMuteallPostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMuteParticipantOperation
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMuteParticipantsOperation
 
 ## NOTES
 
@@ -190,15 +191,17 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-BODYPARAMETER <IPathsTobgxoCommunicationsCallsCallIdParticipantsParticipantIdMicrosoftGraphMutePostRequestbodyContentApplicationJsonSchema>: .
+BODYPARAMETER <IPathsKpvac3CommunicationsCallsCallIdParticipantsMicrosoftGraphMuteallPostRequestbodyContentApplicationJsonSchema>: .
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[ClientContext <String>]`: 
+  - `[Participants <String[]>]`: 
 
 INPUTOBJECT <ICloudCommunicationsIdentity>: Identity Parameter
   - `[AttendanceRecordId <String>]`: key: id of attendanceRecord
   - `[AudioRoutingGroupId <String>]`: key: id of audioRoutingGroup
   - `[CallId <String>]`: key: id of call
   - `[CallRecordId <String>]`: key: id of callRecord
+  - `[CallTranscriptId <String>]`: key: id of callTranscript
   - `[CommsOperationId <String>]`: key: id of commsOperation
   - `[ContentSharingSessionId <String>]`: key: id of contentSharingSession
   - `[MeetingAttendanceReportId <String>]`: key: id of meetingAttendanceReport

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgDeviceManagementApplePushNotificationCertificate
 
 ## SYNOPSIS
-Apple push notification certificate.
+Update the navigation property applePushNotificationCertificate in deviceManagement
 
 ## SYNTAX
 
@@ -29,7 +29,7 @@ Update-MgDeviceManagementApplePushNotificationCertificate
 ```
 
 ## DESCRIPTION
-Apple push notification certificate.
+Update the navigation property applePushNotificationCertificate in deviceManagement
 
 ## EXAMPLES
 
@@ -158,7 +158,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -270,7 +270,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphApplePushNotificationCertificate>: Apple push notification certificate.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[AppleIdentifier <String>]`: Apple Id of the account used to create the MDM push certificate.
   - `[Certificate <String>]`: Not yet documented
   - `[CertificateSerialNumber <String>]`: Certificate serial number. This property is read-only.

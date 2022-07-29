@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgDeviceManagementComanagedDeviceCompliancePolicyState
 
 ## SYNOPSIS
-Device compliance policy states for this device.
+Update the navigation property deviceCompliancePolicyStates in deviceManagement
 
 ## SYNTAX
 
@@ -16,7 +16,7 @@ Device compliance policy states for this device.
 ```
 Update-MgDeviceManagementComanagedDeviceCompliancePolicyState -DeviceCompliancePolicyStateId <String>
  -ManagedDeviceId <String> [-AdditionalProperties <Hashtable>] [-DisplayName <String>] [-Id <String>]
- [-PlatformType <String>] [-SettingCount <Int32>]
+ [-PlatformType <PolicyPlatformType>] [-SettingCount <Int32>]
  [-SettingStates <IMicrosoftGraphDeviceCompliancePolicySettingState1[]>] [-State <String>] [-UserId <String>]
  [-UserPrincipalName <String>] [-Version <Int32>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -38,14 +38,14 @@ Update-MgDeviceManagementComanagedDeviceCompliancePolicyState -InputObject <IDev
 ### UpdateViaIdentityExpanded
 ```
 Update-MgDeviceManagementComanagedDeviceCompliancePolicyState -InputObject <IDeviceManagementIdentity>
- [-AdditionalProperties <Hashtable>] [-DisplayName <String>] [-Id <String>] [-PlatformType <String>]
- [-SettingCount <Int32>] [-SettingStates <IMicrosoftGraphDeviceCompliancePolicySettingState1[]>]
- [-State <String>] [-UserId <String>] [-UserPrincipalName <String>] [-Version <Int32>] [-PassThru] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-AdditionalProperties <Hashtable>] [-DisplayName <String>] [-Id <String>]
+ [-PlatformType <PolicyPlatformType>] [-SettingCount <Int32>]
+ [-SettingStates <IMicrosoftGraphDeviceCompliancePolicySettingState1[]>] [-State <String>] [-UserId <String>]
+ [-UserPrincipalName <String>] [-Version <Int32>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Device compliance policy states for this device.
+Update the navigation property deviceCompliancePolicyStates in deviceManagement
 
 ## EXAMPLES
 
@@ -113,7 +113,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -177,7 +177,7 @@ Accept wildcard characters: False
 Supported platform types for policies.
 
 ```yaml
-Type: System.String
+Type: Microsoft.Graph.PowerShell.Support.PolicyPlatformType
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -334,9 +334,9 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphDeviceCompliancePolicyState1>: Device Compliance Policy State for a given device.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[DisplayName <String>]`: The name of the policy for this policyBase
-  - `[PlatformType <String>]`: Supported platform types for policies.
+  - `[PlatformType <PolicyPlatformType?>]`: Supported platform types for policies.
   - `[SettingCount <Int32?>]`: Count of how many setting a policy holds
   - `[SettingStates <IMicrosoftGraphDeviceCompliancePolicySettingState1[]>]`: 
     - `[CurrentValue <String>]`: Current value of setting on device
@@ -390,6 +390,15 @@ INPUTOBJECT <IDeviceManagementIdentity>: Identity Parameter
   - `[DeviceHealthScriptDeviceStateId <String>]`: key: id of deviceHealthScriptDeviceState
   - `[DeviceHealthScriptId <String>]`: key: id of deviceHealthScript
   - `[DeviceLogCollectionResponseId <String>]`: key: id of deviceLogCollectionResponse
+  - `[DeviceManagementComplianceActionItemId <String>]`: key: id of deviceManagementComplianceActionItem
+  - `[DeviceManagementCompliancePolicyId <String>]`: key: id of deviceManagementCompliancePolicy
+  - `[DeviceManagementComplianceScheduledActionForRuleId <String>]`: key: id of deviceManagementComplianceScheduledActionForRule
+  - `[DeviceManagementConfigurationPolicyAssignmentId <String>]`: key: id of deviceManagementConfigurationPolicyAssignment
+  - `[DeviceManagementConfigurationPolicyId <String>]`: key: id of deviceManagementConfigurationPolicy
+  - `[DeviceManagementConfigurationPolicyTemplateId <String>]`: key: id of deviceManagementConfigurationPolicyTemplate
+  - `[DeviceManagementConfigurationSettingDefinitionId <String>]`: key: id of deviceManagementConfigurationSettingDefinition
+  - `[DeviceManagementConfigurationSettingId <String>]`: key: id of deviceManagementConfigurationSetting
+  - `[DeviceManagementConfigurationSettingTemplateId <String>]`: key: id of deviceManagementConfigurationSettingTemplate
   - `[DeviceManagementDerivedCredentialSettingsId <String>]`: key: id of deviceManagementDerivedCredentialSettings
   - `[DeviceManagementIntentAssignmentId <String>]`: key: id of deviceManagementIntentAssignment
   - `[DeviceManagementIntentDeviceSettingStateSummaryId <String>]`: key: id of deviceManagementIntentDeviceSettingStateSummary
@@ -427,8 +436,6 @@ INPUTOBJECT <IDeviceManagementIdentity>: Identity Parameter
   - `[ManagedDeviceEncryptionStateId <String>]`: key: id of managedDeviceEncryptionState
   - `[ManagedDeviceId <String>]`: key: id of managedDevice
   - `[ManagedDeviceMobileAppConfigurationStateId <String>]`: key: id of managedDeviceMobileAppConfigurationState
-  - `[ManagementConditionId <String>]`: key: id of managementCondition
-  - `[ManagementConditionStatementId <String>]`: key: id of managementConditionStatement
   - `[MicrosoftTunnelConfigurationId <String>]`: key: id of microsoftTunnelConfiguration
   - `[MicrosoftTunnelHealthThresholdId <String>]`: key: id of microsoftTunnelHealthThreshold
   - `[MicrosoftTunnelServerId <String>]`: key: id of microsoftTunnelServer
@@ -458,6 +465,7 @@ INPUTOBJECT <IDeviceManagementIdentity>: Identity Parameter
   - `[UserExperienceAnalyticsBatteryHealthOSPerformanceId <String>]`: key: id of userExperienceAnalyticsBatteryHealthOsPerformance
   - `[UserExperienceAnalyticsCategoryId <String>]`: key: id of userExperienceAnalyticsCategory
   - `[UserExperienceAnalyticsDevicePerformanceId <String>]`: key: id of userExperienceAnalyticsDevicePerformance
+  - `[UserExperienceAnalyticsDeviceScopeId <String>]`: key: id of userExperienceAnalyticsDeviceScope
   - `[UserExperienceAnalyticsDeviceScoresId <String>]`: key: id of userExperienceAnalyticsDeviceScores
   - `[UserExperienceAnalyticsDeviceStartupHistoryId <String>]`: key: id of userExperienceAnalyticsDeviceStartupHistory
   - `[UserExperienceAnalyticsDeviceStartupProcessId <String>]`: key: id of userExperienceAnalyticsDeviceStartupProcess

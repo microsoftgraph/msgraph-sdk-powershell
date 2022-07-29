@@ -8,9 +8,7 @@ schema: 2.0.0
 # Remove-MgPlannerTaskAssignedToTaskBoardFormat
 
 ## SYNOPSIS
-Read-only.
-Nullable.
-Used to render the task correctly in the task board view when grouped by assignedTo.
+Delete navigation property assignedToTaskBoardFormat for planner
 
 ## SYNTAX
 
@@ -27,9 +25,7 @@ Remove-MgPlannerTaskAssignedToTaskBoardFormat -InputObject <IPlannerIdentity> [-
 ```
 
 ## DESCRIPTION
-Read-only.
-Nullable.
-Used to render the task correctly in the task board view when grouped by assignedTo.
+Delete navigation property assignedToTaskBoardFormat for planner
 
 ## EXAMPLES
 

@@ -8,9 +8,7 @@ schema: 2.0.0
 # Get-MgUserActivityStatistics
 
 ## SYNOPSIS
-The collection of work activities that a user spent time on during and outside of working hours.
-Read-only.
-Nullable.
+Get activityStatistics from users
 
 ## SYNTAX
 
@@ -34,9 +32,7 @@ Get-MgUserActivityStatistics -InputObject <IPeopleIdentity> [-ExpandProperty <St
 ```
 
 ## DESCRIPTION
-The collection of work activities that a user spent time on during and outside of working hours.
-Read-only.
-Nullable.
+Get activityStatistics from users
 
 ## EXAMPLES
 

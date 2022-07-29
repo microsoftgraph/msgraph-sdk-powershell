@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgPolicyAdminConsentRequestPolicy
 
 ## SYNOPSIS
-The policy by which consent requests are created and managed for the entire tenant.
+Update the navigation property adminConsentRequestPolicy in policies
 
 ## SYNTAX
 
@@ -16,18 +16,18 @@ The policy by which consent requests are created and managed for the entire tena
 ```
 Update-MgPolicyAdminConsentRequestPolicy [-AdditionalProperties <Hashtable>] [-Id <String>] [-IsEnabled]
  [-NotifyReviewers] [-RemindersEnabled] [-RequestDurationInDays <Int32>]
- [-Reviewers <IMicrosoftGraphAccessReviewReviewerScope1[]>] [-Version <Int32>] [-PassThru] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-Reviewers <IMicrosoftGraphAccessReviewReviewerScope[]>] [-Version <Int32>] [-PassThru] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Update1
 ```
-Update-MgPolicyAdminConsentRequestPolicy -BodyParameter <IMicrosoftGraphAdminConsentRequestPolicy1>
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Update-MgPolicyAdminConsentRequestPolicy -BodyParameter <IMicrosoftGraphAdminConsentRequestPolicy> [-PassThru]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-The policy by which consent requests are created and managed for the entire tenant.
+Update the navigation property adminConsentRequestPolicy in policies
 
 ## EXAMPLES
 
@@ -53,7 +53,7 @@ adminConsentRequestPolicy
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAdminConsentRequestPolicy1
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAdminConsentRequestPolicy
 Parameter Sets: Update1
 Aliases:
 
@@ -65,7 +65,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -158,12 +158,11 @@ Accept wildcard characters: False
 ```
 
 ### -Reviewers
-The list of reviewers for the admin consent.
 Required.
 To construct, please use Get-Help -Online and see NOTES section for REVIEWERS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessReviewReviewerScope1[]
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessReviewReviewerScope[]
 Parameter Sets: UpdateExpanded1
 Aliases:
 
@@ -227,7 +226,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAdminConsentRequestPolicy1
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAdminConsentRequestPolicy
 
 ## OUTPUTS
 
@@ -242,20 +241,20 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-BODYPARAMETER <IMicrosoftGraphAdminConsentRequestPolicy1>: adminConsentRequestPolicy
+BODYPARAMETER <IMicrosoftGraphAdminConsentRequestPolicy>: adminConsentRequestPolicy
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[IsEnabled <Boolean?>]`: Specifies whether the admin consent request feature is enabled or disabled. Required.
   - `[NotifyReviewers <Boolean?>]`: Specifies whether reviewers will receive notifications. Required.
   - `[RemindersEnabled <Boolean?>]`: Specifies whether reviewers will receive reminder emails. Required.
   - `[RequestDurationInDays <Int32?>]`: Specifies the duration the request is active before it automatically expires if no decision is applied.
-  - `[Reviewers <IMicrosoftGraphAccessReviewReviewerScope1[]>]`: The list of reviewers for the admin consent. Required.
+  - `[Reviewers <IMicrosoftGraphAccessReviewReviewerScope[]>]`: Required.
     - `[Query <String>]`: The query specifying who will be the reviewer. See table for examples.
     - `[QueryRoot <String>]`: In the scenario where reviewers need to be specified dynamically, this property is used to indicate the relative source of the query. This property is only required if a relative query, for example, ./manager, is specified. Possible value: decisions.
     - `[QueryType <String>]`: The type of query. Examples include MicrosoftGraph and ARM.
   - `[Version <Int32?>]`: Specifies the version of this policy. When the policy is updated, this version is updated. Read-only.
 
-REVIEWERS <IMicrosoftGraphAccessReviewReviewerScope1[]>: The list of reviewers for the admin consent. Required.
+REVIEWERS <IMicrosoftGraphAccessReviewReviewerScope[]>: Required.
   - `[Query <String>]`: The query specifying who will be the reviewer. See table for examples.
   - `[QueryRoot <String>]`: In the scenario where reviewers need to be specified dynamically, this property is used to indicate the relative source of the query. This property is only required if a relative query, for example, ./manager, is specified. Possible value: decisions.
   - `[QueryType <String>]`: The type of query. Examples include MicrosoftGraph and ARM.

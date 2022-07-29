@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgPolicyIdentitySecurityDefaultEnforcementPolicy
 
 ## SYNOPSIS
-The policy that represents the security defaults that protect against common attacks.
+Delete navigation property identitySecurityDefaultsEnforcementPolicy for policies
 
 ## SYNTAX
 
@@ -18,7 +18,7 @@ Remove-MgPolicyIdentitySecurityDefaultEnforcementPolicy [-IfMatch <String>] [-Pa
 ```
 
 ## DESCRIPTION
-The policy that represents the security defaults that protect against common attacks.
+Delete navigation property identitySecurityDefaultsEnforcementPolicy for policies
 
 ## EXAMPLES
 

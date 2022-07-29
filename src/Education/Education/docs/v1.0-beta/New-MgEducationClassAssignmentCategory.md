@@ -8,9 +8,7 @@ schema: 2.0.0
 # New-MgEducationClassAssignmentCategory
 
 ## SYNOPSIS
-When set, enables users to easily find assignments of a given type.
-Read-only.
-Nullable.
+Create new navigation property to categories for education
 
 ## SYNTAX
 
@@ -64,9 +62,7 @@ New-MgEducationClassAssignmentCategory -InputObject <IEducationIdentity> [-Addit
 ```
 
 ## DESCRIPTION
-When set, enables users to easily find assignments of a given type.
-Read-only.
-Nullable.
+Create new navigation property to categories for education
 
 ## EXAMPLES
 
@@ -149,7 +145,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -234,7 +230,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphEducationCategory>: educationCategory
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[DisplayName <String>]`: Unique identifier for the category.
 
 INPUTOBJECT <IEducationIdentity>: Identity Parameter

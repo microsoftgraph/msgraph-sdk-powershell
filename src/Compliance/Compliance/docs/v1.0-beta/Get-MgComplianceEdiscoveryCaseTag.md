@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgComplianceEdiscoveryCaseTag
 
 ## SYNOPSIS
-Returns a list of tag objects associated to this case.
+Get tags from compliance
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgComplianceEdiscoveryCaseTag -InputObject <IComplianceIdentity> [-ExpandPro
 ```
 
 ## DESCRIPTION
-Returns a list of tag objects associated to this case.
+Get tags from compliance
 
 ## EXAMPLES
 
@@ -267,6 +267,7 @@ INPUTOBJECT <IComplianceIdentity>: Identity Parameter
   - `[SiteSourceId <String>]`: key: id of siteSource
   - `[SourceCollectionId <String>]`: key: id of sourceCollection
   - `[TagId <String>]`: key: id of tag
+  - `[TagId1 <String>]`: key: id of tag
   - `[UnifiedGroupSourceId <String>]`: key: id of unifiedGroupSource
   - `[UserSourceId <String>]`: key: id of userSource
 

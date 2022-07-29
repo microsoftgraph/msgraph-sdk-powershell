@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceManagementDeviceConfigurationDeviceStateSummary
 
 ## SYNOPSIS
-The device configuration device state summary for this account.
+Get deviceConfigurationDeviceStateSummaries from deviceManagement
 
 ## SYNTAX
 
@@ -18,7 +18,7 @@ Get-MgDeviceManagementDeviceConfigurationDeviceStateSummary [-ExpandProperty <St
 ```
 
 ## DESCRIPTION
-The device configuration device state summary for this account.
+Get deviceConfigurationDeviceStateSummaries from deviceManagement
 
 ## EXAMPLES
 

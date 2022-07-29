@@ -8,8 +8,7 @@ schema: 2.0.0
 # Update-MgCommunicationOnlineMeetingRegistration
 
 ## SYNOPSIS
-The registration that has been enabled for an online meeting.
-One online meeting can only have one registration enabled.
+Update the navigation property registration in communications
 
 ## SYNTAX
 
@@ -47,8 +46,7 @@ Update-MgCommunicationOnlineMeetingRegistration -InputObject <ICloudCommunicatio
 ```
 
 ## DESCRIPTION
-The registration that has been enabled for an online meeting.
-One online meeting can only have one registration enabled.
+Update the navigation property registration in communications
 
 ## EXAMPLES
 
@@ -147,7 +145,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -358,11 +356,11 @@ BODYPARAMETER <IMicrosoftGraphMeetingRegistration>: meetingRegistration
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[AllowedRegistrant <String>]`: meetingAudience
   - `[Registrants <IMicrosoftGraphMeetingRegistrantBase[]>]`: Registrants of the online meeting.
-    - `[Id <String>]`: Read-only.
+    - `[Id <String>]`: 
     - `[JoinWebUrl <String>]`: A unique web URL for the registrant to join the meeting. Read-only.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[CustomQuestions <IMicrosoftGraphMeetingRegistrationQuestion[]>]`: Custom registration questions.
-    - `[Id <String>]`: Read-only.
+    - `[Id <String>]`: 
     - `[AnswerInputType <String>]`: answerInputType
     - `[AnswerOptions <String[]>]`: Answer options when answerInputType is radioButton.
     - `[DisplayName <String>]`: Display name of the custom registration question.
@@ -378,7 +376,7 @@ BODYPARAMETER <IMicrosoftGraphMeetingRegistration>: meetingRegistration
   - `[Subject <String>]`: The subject of the meeting.
 
 CUSTOMQUESTIONS <IMicrosoftGraphMeetingRegistrationQuestion[]>: Custom registration questions.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[AnswerInputType <String>]`: answerInputType
   - `[AnswerOptions <String[]>]`: Answer options when answerInputType is radioButton.
   - `[DisplayName <String>]`: Display name of the custom registration question.
@@ -389,6 +387,7 @@ INPUTOBJECT <ICloudCommunicationsIdentity>: Identity Parameter
   - `[AudioRoutingGroupId <String>]`: key: id of audioRoutingGroup
   - `[CallId <String>]`: key: id of call
   - `[CallRecordId <String>]`: key: id of callRecord
+  - `[CallTranscriptId <String>]`: key: id of callTranscript
   - `[CommsOperationId <String>]`: key: id of commsOperation
   - `[ContentSharingSessionId <String>]`: key: id of contentSharingSession
   - `[MeetingAttendanceReportId <String>]`: key: id of meetingAttendanceReport
@@ -400,7 +399,7 @@ INPUTOBJECT <ICloudCommunicationsIdentity>: Identity Parameter
   - `[UserId <String>]`: key: id of user
 
 REGISTRANTS <IMicrosoftGraphMeetingRegistrantBase[]>: Registrants of the online meeting.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[JoinWebUrl <String>]`: A unique web URL for the registrant to join the meeting. Read-only.
 
 SPEAKERS <IMicrosoftGraphMeetingSpeaker[]>: The meeting speaker's information.

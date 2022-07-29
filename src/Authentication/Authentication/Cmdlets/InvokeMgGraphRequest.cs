@@ -27,7 +27,7 @@ using DriveNotFoundException = System.Management.Automation.DriveNotFoundExcepti
 namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
 {
     [Cmdlet(VerbsLifecycle.Invoke, "MgGraphRequest", DefaultParameterSetName = Constants.UserParameterSet)]
-    [Alias("Invoke-GraphRequest")]
+    [Alias("Invoke-GraphRequest","Invoke-MgRestMethod")]
     public class InvokeMgGraphRequest : PSCmdlet
     {
         private readonly CancellationTokenSource _cancellationTokenSource = new CancellationTokenSource();
@@ -1090,9 +1090,13 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
 
         /// <summary>
         ///     Resets GraphSession environment back to its original state.
+        ///     Original state can remain to be the previous state defined by the user, 
+        ///     or the default global state. User defined state can be removed by calling,
+        ///     Remove-MgEnvironment Command
         /// </summary>
         private void ResetGraphSessionEnvironment()
         {
+            _originalEnvironment = GraphSession.Instance.Environment;
             GraphSession.Instance.Environment = _originalEnvironment;
         }
 

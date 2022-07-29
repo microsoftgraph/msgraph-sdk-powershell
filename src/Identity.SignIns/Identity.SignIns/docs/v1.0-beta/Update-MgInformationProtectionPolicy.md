@@ -63,7 +63,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -161,9 +161,9 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphInformationProtectionPolicy>: informationProtectionPolicy
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[Labels <IMicrosoftGraphInformationProtectionLabel[]>]`: 
-    - `[Id <String>]`: Read-only.
+    - `[Id <String>]`: 
     - `[Color <String>]`: The color that the UI should display for the label, if configured.
     - `[Description <String>]`: The admin-defined description for the label.
     - `[IsActive <Boolean?>]`: Indicates whether the label is active or not. Active labels should be hidden or disabled in UI.
@@ -182,7 +182,7 @@ BODYPARAMETER <IMicrosoftGraphInformationProtectionPolicy>: informationProtectio
     - `[Tooltip <String>]`: The tooltip that should be displayed for the label in a UI.
 
 LABELS <IMicrosoftGraphInformationProtectionLabel[]>: .
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[Color <String>]`: The color that the UI should display for the label, if configured.
   - `[Description <String>]`: The admin-defined description for the label.
   - `[IsActive <Boolean?>]`: Indicates whether the label is active or not. Active labels should be hidden or disabled in UI.

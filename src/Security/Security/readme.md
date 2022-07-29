@@ -40,7 +40,7 @@ subject-prefix: ''
 ``` yaml
 directive:
 # Remove invalid paths.
-  - remove-path-by-operation: ^security_.*Alerts_v2$
+  - remove-path-by-operation: ^security(_.*Alerts_v2|.cases.ediscoveryCases.noncustodialDataSources_.*DataSource)$
 # Remove cmdlets
   - where:
       verb: Get|Update
@@ -51,12 +51,6 @@ directive:
       subject: ^SecurityAttackSimulation$
     remove: true
 # Rename cmdlets
-  - where:
-      verb: Remove
-      subject: ^(SecurityTiIndicator)$
-      variant: Delete2|DeleteExpanded1
-    set:
-      subject: $1ByExternalId
   - where:
       verb: Remove
       subject: ^(SecurityTiIndicator)$
@@ -79,6 +73,6 @@ directive:
 ### Versioning
 
 ``` yaml
-module-version: 1.9.6
+module-version: 1.10.1
 release-notes: See https://aka.ms/GraphPowerShell-Release.
 ```

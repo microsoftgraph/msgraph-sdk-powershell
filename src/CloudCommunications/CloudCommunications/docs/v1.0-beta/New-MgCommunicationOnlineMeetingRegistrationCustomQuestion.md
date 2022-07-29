@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgCommunicationOnlineMeetingRegistrationCustomQuestion
 
 ## SYNOPSIS
-Custom registration questions.
+Create new navigation property to customQuestions for communications
 
 ## SYNTAX
 
@@ -39,7 +39,7 @@ New-MgCommunicationOnlineMeetingRegistrationCustomQuestion -InputObject <ICloudC
 ```
 
 ## DESCRIPTION
-Custom registration questions.
+Create new navigation property to customQuestions for communications
 
 ## EXAMPLES
 
@@ -122,7 +122,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -238,7 +238,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphMeetingRegistrationQuestion>: meetingRegistrationQuestion
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[AnswerInputType <String>]`: answerInputType
   - `[AnswerOptions <String[]>]`: Answer options when answerInputType is radioButton.
   - `[DisplayName <String>]`: Display name of the custom registration question.
@@ -249,6 +249,7 @@ INPUTOBJECT <ICloudCommunicationsIdentity>: Identity Parameter
   - `[AudioRoutingGroupId <String>]`: key: id of audioRoutingGroup
   - `[CallId <String>]`: key: id of call
   - `[CallRecordId <String>]`: key: id of callRecord
+  - `[CallTranscriptId <String>]`: key: id of callTranscript
   - `[CommsOperationId <String>]`: key: id of commsOperation
   - `[ContentSharingSessionId <String>]`: key: id of contentSharingSession
   - `[MeetingAttendanceReportId <String>]`: key: id of meetingAttendanceReport

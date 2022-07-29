@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgPolicyDefaultAppManagementPolicy
 
 ## SYNOPSIS
-The tenant-wide policy that enforces app management restrictions for all applications and service principals.
+Get defaultAppManagementPolicy from policies
 
 ## SYNTAX
 
@@ -18,7 +18,7 @@ Get-MgPolicyDefaultAppManagementPolicy [-ExpandProperty <String[]>] [-Property <
 ```
 
 ## DESCRIPTION
-The tenant-wide policy that enforces app management restrictions for all applications and service principals.
+Get defaultAppManagementPolicy from policies
 
 ## EXAMPLES
 

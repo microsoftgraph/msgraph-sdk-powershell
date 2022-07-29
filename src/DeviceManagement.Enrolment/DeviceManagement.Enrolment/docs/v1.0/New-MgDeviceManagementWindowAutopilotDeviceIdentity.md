@@ -8,28 +8,28 @@ schema: 2.0.0
 # New-MgDeviceManagementWindowAutopilotDeviceIdentity
 
 ## SYNOPSIS
-The Windows autopilot device identities contained collection.
+Create new navigation property to windowsAutopilotDeviceIdentities for deviceManagement
 
 ## SYNTAX
 
-### CreateExpanded1 (Default)
+### CreateExpanded (Default)
 ```
 New-MgDeviceManagementWindowAutopilotDeviceIdentity [-AdditionalProperties <Hashtable>]
  [-AddressableUserName <String>] [-AzureActiveDirectoryDeviceId <String>] [-DisplayName <String>]
- [-EnrollmentState <String>] [-GroupTag <String>] [-Id <String>] [-LastContactedDateTime <DateTime>]
+ [-EnrollmentState <EnrollmentState>] [-GroupTag <String>] [-Id <String>] [-LastContactedDateTime <DateTime>]
  [-ManagedDeviceId <String>] [-Manufacturer <String>] [-Model <String>] [-ProductKey <String>]
  [-PurchaseOrderIdentifier <String>] [-ResourceName <String>] [-SerialNumber <String>] [-SkuNumber <String>]
  [-SystemFamily <String>] [-UserPrincipalName <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### Create1
+### Create
 ```
 New-MgDeviceManagementWindowAutopilotDeviceIdentity
- -BodyParameter <IMicrosoftGraphWindowsAutopilotDeviceIdentity> [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphWindowsAutopilotDeviceIdentity1> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-The Windows autopilot device identities contained collection.
+Create new navigation property to windowsAutopilotDeviceIdentities for deviceManagement
 
 ## EXAMPLES
 
@@ -40,7 +40,7 @@ Additional Parameters
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: CreateExpanded1
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -55,7 +55,7 @@ Addressable user name.
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded1
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -70,7 +70,7 @@ AAD Device ID - to be deprecated
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded1
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -85,8 +85,8 @@ The windowsAutopilotDeviceIdentity resource represents a Windows Autopilot Devic
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphWindowsAutopilotDeviceIdentity
-Parameter Sets: Create1
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphWindowsAutopilotDeviceIdentity1
+Parameter Sets: Create
 Aliases:
 
 Required: True
@@ -101,7 +101,7 @@ Display Name
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded1
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -115,8 +115,8 @@ Accept wildcard characters: False
 .
 
 ```yaml
-Type: System.String
-Parameter Sets: CreateExpanded1
+Type: Microsoft.Graph.PowerShell.Support.EnrollmentState
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -131,7 +131,7 @@ Group Tag of the Windows autopilot device.
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded1
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -142,11 +142,11 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded1
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -161,7 +161,7 @@ Intune Last Contacted Date Time of the Windows autopilot device.
 
 ```yaml
 Type: System.DateTime
-Parameter Sets: CreateExpanded1
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -176,7 +176,7 @@ Managed Device ID
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded1
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -191,7 +191,7 @@ Oem manufacturer of the Windows autopilot device.
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded1
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -206,7 +206,7 @@ Model name of the Windows autopilot device.
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded1
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -221,7 +221,7 @@ Product Key of the Windows autopilot device.
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded1
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -236,7 +236,7 @@ Purchase Order Identifier of the Windows autopilot device.
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded1
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -251,7 +251,7 @@ Resource Name.
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded1
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -266,7 +266,7 @@ Serial number of the Windows autopilot device.
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded1
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -281,7 +281,7 @@ SKU Number
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded1
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -296,7 +296,7 @@ System Family
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded1
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -311,7 +311,7 @@ User Principal Name.
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded1
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -357,11 +357,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphWindowsAutopilotDeviceIdentity
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphWindowsAutopilotDeviceIdentity1
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphWindowsAutopilotDeviceIdentity
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphWindowsAutopilotDeviceIdentity1
 
 ## NOTES
 
@@ -372,13 +372,13 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-BODYPARAMETER <IMicrosoftGraphWindowsAutopilotDeviceIdentity>: The windowsAutopilotDeviceIdentity resource represents a Windows Autopilot Device.
+BODYPARAMETER <IMicrosoftGraphWindowsAutopilotDeviceIdentity1>: The windowsAutopilotDeviceIdentity resource represents a Windows Autopilot Device.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[AddressableUserName <String>]`: Addressable user name.
   - `[AzureActiveDirectoryDeviceId <String>]`: AAD Device ID - to be deprecated
   - `[DisplayName <String>]`: Display Name
-  - `[EnrollmentState <String>]`: 
+  - `[EnrollmentState <EnrollmentState?>]`: 
   - `[GroupTag <String>]`: Group Tag of the Windows autopilot device.
   - `[LastContactedDateTime <DateTime?>]`: Intune Last Contacted Date Time of the Windows autopilot device.
   - `[ManagedDeviceId <String>]`: Managed Device ID

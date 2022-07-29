@@ -8,9 +8,7 @@ schema: 2.0.0
 # Remove-MgPlannerPlan
 
 ## SYNOPSIS
-Read-only.
-Nullable.
-Returns a collection of the specified plans
+Delete navigation property plans for planner
 
 ## SYNTAX
 
@@ -27,9 +25,7 @@ Remove-MgPlannerPlan -InputObject <IPlannerIdentity> [-IfMatch <String>] [-PassT
 ```
 
 ## DESCRIPTION
-Read-only.
-Nullable.
-Returns a collection of the specified plans
+Delete navigation property plans for planner
 
 ## EXAMPLES
 

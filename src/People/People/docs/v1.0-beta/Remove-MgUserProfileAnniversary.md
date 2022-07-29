@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgUserProfileAnniversary
 
 ## SYNOPSIS
-Represents the details of meaningful dates associated with a person.
+Delete navigation property anniversaries for users
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Remove-MgUserProfileAnniversary -InputObject <IPeopleIdentity> [-IfMatch <String
 ```
 
 ## DESCRIPTION
-Represents the details of meaningful dates associated with a person.
+Delete navigation property anniversaries for users
 
 ## EXAMPLES
 

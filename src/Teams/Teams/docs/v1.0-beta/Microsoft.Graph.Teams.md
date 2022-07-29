@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Teams
-Module Guid: 914a4e48-a7b8-44c4-ba2c-3d697a1ae8f0
+Module Guid: ec601958-3c18-4710-9009-c891488077fa
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.teams
 Help Version: 1.0.0.0
 Locale: en-US
@@ -17,16 +17,13 @@ Invoke action add
 ### [Add-MgTeamChannelMember](Add-MgTeamChannelMember.md)
 Invoke action add
 
-### [Add-MgTeamChannelSharedWithTeamAllowedMember](Add-MgTeamChannelSharedWithTeamAllowedMember.md)
-Invoke action add
-
 ### [Add-MgTeamMember](Add-MgTeamMember.md)
 Invoke action add
 
 ### [Add-MgTeamPrimaryChannelMember](Add-MgTeamPrimaryChannelMember.md)
 Invoke action add
 
-### [Add-MgTeamPrimaryChannelSharedWithTeamAllowedMember](Add-MgTeamPrimaryChannelSharedWithTeamAllowedMember.md)
+### [Add-MgTeamworkDeletedTeamChannelMember](Add-MgTeamworkDeletedTeamChannelMember.md)
 Invoke action add
 
 ### [Complete-MgTeamChannelMigration](Complete-MgTeamChannelMigration.md)
@@ -38,6 +35,21 @@ Invoke action completeMigration
 ### [Complete-MgTeamPrimaryChannelMigration](Complete-MgTeamPrimaryChannelMigration.md)
 Invoke action completeMigration
 
+### [Complete-MgTeamworkDeletedTeamChannelMigration](Complete-MgTeamworkDeletedTeamChannelMigration.md)
+Invoke action completeMigration
+
+### [Confirm-MgChatPermissionGrantMemberGroup](Confirm-MgChatPermissionGrantMemberGroup.md)
+Invoke action checkMemberGroups
+
+### [Confirm-MgChatPermissionGrantMemberObject](Confirm-MgChatPermissionGrantMemberObject.md)
+Invoke action checkMemberObjects
+
+### [Confirm-MgTeamPermissionGrantMemberGroup](Confirm-MgTeamPermissionGrantMemberGroup.md)
+Invoke action checkMemberGroups
+
+### [Confirm-MgTeamPermissionGrantMemberObject](Confirm-MgTeamPermissionGrantMemberObject.md)
+Invoke action checkMemberObjects
+
 ### [Confirm-MgTeamScheduleTimeCard](Confirm-MgTeamScheduleTimeCard.md)
 Invoke action confirm
 
@@ -48,50 +60,40 @@ Invoke action clone
 Get teamsApps from appCatalogs
 
 ### [Get-MgAppCatalogTeamAppDefinition](Get-MgAppCatalogTeamAppDefinition.md)
-The details for each version of the app.
+Get appDefinitions from appCatalogs
 
 ### [Get-MgAppCatalogTeamAppDefinitionBot](Get-MgAppCatalogTeamAppDefinitionBot.md)
-The details of the bot specified in the Teams app manifest.
+Get bot from appCatalogs
 
 ### [Get-MgAppCatalogTeamAppDefinitionColorIcon](Get-MgAppCatalogTeamAppDefinitionColorIcon.md)
-The color version of the Teams app's icon.
+Get colorIcon from appCatalogs
 
 ### [Get-MgAppCatalogTeamAppDefinitionColorIconHostedContent](Get-MgAppCatalogTeamAppDefinitionColorIconHostedContent.md)
-The contents of the app icon if the icon is hosted within the Teams infrastructure.
+Get hostedContent from appCatalogs
 
 ### [Get-MgAppCatalogTeamAppDefinitionOutlineIcon](Get-MgAppCatalogTeamAppDefinitionOutlineIcon.md)
-The outline version of the Teams app's icon.
+Get outlineIcon from appCatalogs
 
 ### [Get-MgAppCatalogTeamAppDefinitionOutlineIconHostedContent](Get-MgAppCatalogTeamAppDefinitionOutlineIconHostedContent.md)
-The contents of the app icon if the icon is hosted within the Teams infrastructure.
+Get hostedContent from appCatalogs
 
 ### [Get-MgChat](Get-MgChat.md)
 Get entity from chats by key
 
 ### [Get-MgChatInstalledApp](Get-MgChatInstalledApp.md)
-A collection of all the apps in the chat.
-Nullable.
+Get installedApps from chats
 
 ### [Get-MgChatInstalledAppTeamApp](Get-MgChatInstalledAppTeamApp.md)
-The app that is installed.
-
-### [Get-MgChatInstalledAppTeamAppByRef](Get-MgChatInstalledAppTeamAppByRef.md)
-The app that is installed.
+Get teamsApp from chats
 
 ### [Get-MgChatInstalledAppTeamAppDefinition](Get-MgChatInstalledAppTeamAppDefinition.md)
-The details of this version of the app.
-
-### [Get-MgChatInstalledAppTeamAppDefinitionByRef](Get-MgChatInstalledAppTeamAppDefinitionByRef.md)
-The details of this version of the app.
+Get teamsAppDefinition from chats
 
 ### [Get-MgChatLastMessagePreview](Get-MgChatLastMessagePreview.md)
-Preview of the last message sent in the chat.
-Null if no messages have been sent in the chat.
-Currently, only the list chats operation supports this property.
+Get lastMessagePreview from chats
 
 ### [Get-MgChatMember](Get-MgChatMember.md)
-A collection of all the members in the chat.
-Nullable.
+Get members from chats
 
 ### [Get-MgChatMessage](Get-MgChatMessage.md)
 Invoke function getAllMessages
@@ -100,204 +102,328 @@ Invoke function getAllMessages
 Invoke function delta
 
 ### [Get-MgChatMessageHostedContent](Get-MgChatMessageHostedContent.md)
-Content in a message hosted by Microsoft Teams - for example, images or code snippets.
+Get hostedContents from chats
 
 ### [Get-MgChatMessageReply](Get-MgChatMessageReply.md)
-Replies for a specified message.
+Get replies from chats
 
 ### [Get-MgChatMessageReplyDelta](Get-MgChatMessageReplyDelta.md)
 Invoke function delta
 
+### [Get-MgChatMessageReplyHostedContent](Get-MgChatMessageReplyHostedContent.md)
+Get hostedContents from chats
+
 ### [Get-MgChatOperation](Get-MgChatOperation.md)
-A collection of all the Teams async operations that ran or are running on the chat.
-Nullable.
+Get operations from chats
 
 ### [Get-MgChatPermissionGrant](Get-MgChatPermissionGrant.md)
-A collection of permissions granted to apps for the chat.
+Get permissionGrants from chats
+
+### [Get-MgChatPermissionGrantById](Get-MgChatPermissionGrantById.md)
+Invoke action getByIds
+
+### [Get-MgChatPermissionGrantMemberGroup](Get-MgChatPermissionGrantMemberGroup.md)
+Invoke action getMemberGroups
+
+### [Get-MgChatPermissionGrantMemberObject](Get-MgChatPermissionGrantMemberObject.md)
+Invoke action getMemberObjects
+
+### [Get-MgChatPermissionGrantUserOwnedObject](Get-MgChatPermissionGrantUserOwnedObject.md)
+Invoke action getUserOwnedObjects
+
+### [Get-MgChatPinnedMessage](Get-MgChatPinnedMessage.md)
+Get pinnedMessages from chats
 
 ### [Get-MgChatTab](Get-MgChatTab.md)
-A collection of all the tabs in the chat.
-Nullable.
+Get tabs from chats
 
 ### [Get-MgChatTabTeamApp](Get-MgChatTabTeamApp.md)
-The application that is linked to the tab.
-This cannot be changed after tab creation.
-
-### [Get-MgChatTabTeamAppByRef](Get-MgChatTabTeamAppByRef.md)
-The application that is linked to the tab.
-This cannot be changed after tab creation.
+Get teamsApp from chats
 
 ### [Get-MgGroupTeam](Get-MgGroupTeam.md)
 Get team from groups
 
-### [Get-MgTeam](Get-MgTeam.md)
-Get entity from teams by key
+### [Get-MgGroupTeamChannel](Get-MgGroupTeamChannel.md)
+Get allChannels from groups
 
-### [Get-MgTeamAllChannelMessage](Get-MgTeamAllChannelMessage.md)
-Invoke function getAllMessages
+### [Get-MgGroupTeamChannelFileFolder](Get-MgGroupTeamChannelFileFolder.md)
+Get filesFolder from groups
+
+### [Get-MgGroupTeamChannelFileFolderContent](Get-MgGroupTeamChannelFileFolderContent.md)
+Get content for the navigation property filesFolder from groups
+
+### [Get-MgGroupTeamChannelMember](Get-MgGroupTeamChannelMember.md)
+Get members from groups
+
+### [Get-MgGroupTeamChannelMessage](Get-MgGroupTeamChannelMessage.md)
+Get messages from groups
+
+### [Get-MgGroupTeamChannelMessageHostedContent](Get-MgGroupTeamChannelMessageHostedContent.md)
+Get hostedContents from groups
+
+### [Get-MgGroupTeamChannelMessageReply](Get-MgGroupTeamChannelMessageReply.md)
+Get replies from groups
+
+### [Get-MgGroupTeamChannelMessageReplyHostedContent](Get-MgGroupTeamChannelMessageReplyHostedContent.md)
+Get hostedContents from groups
+
+### [Get-MgGroupTeamChannelSharedWithTeam](Get-MgGroupTeamChannelSharedWithTeam.md)
+Get sharedWithTeams from groups
+
+### [Get-MgGroupTeamChannelSharedWithTeamAllowedMember](Get-MgGroupTeamChannelSharedWithTeamAllowedMember.md)
+Get allowedMembers from groups
+
+### [Get-MgGroupTeamChannelTab](Get-MgGroupTeamChannelTab.md)
+Get tabs from groups
+
+### [Get-MgGroupTeamChannelTabTeamApp](Get-MgGroupTeamChannelTabTeamApp.md)
+Get teamsApp from groups
+
+### [Get-MgGroupTeamGroup](Get-MgGroupTeamGroup.md)
+Get group from groups
+
+### [Get-MgGroupTeamIncomingChannel](Get-MgGroupTeamIncomingChannel.md)
+Get incomingChannels from groups
+
+### [Get-MgGroupTeamInstalledApp](Get-MgGroupTeamInstalledApp.md)
+Get installedApps from groups
+
+### [Get-MgGroupTeamInstalledAppTeamApp](Get-MgGroupTeamInstalledAppTeamApp.md)
+Get teamsApp from groups
+
+### [Get-MgGroupTeamInstalledAppTeamAppDefinition](Get-MgGroupTeamInstalledAppTeamAppDefinition.md)
+Get teamsAppDefinition from groups
+
+### [Get-MgGroupTeamMember](Get-MgGroupTeamMember.md)
+Get members from groups
+
+### [Get-MgGroupTeamOperation](Get-MgGroupTeamOperation.md)
+Get operations from groups
+
+### [Get-MgGroupTeamOwner](Get-MgGroupTeamOwner.md)
+Get owners from groups
+
+### [Get-MgGroupTeamPermissionGrant](Get-MgGroupTeamPermissionGrant.md)
+Get permissionGrants from groups
+
+### [Get-MgGroupTeamPhoto](Get-MgGroupTeamPhoto.md)
+Get photo from groups
+
+### [Get-MgGroupTeamPhotoContent](Get-MgGroupTeamPhotoContent.md)
+Get media content for the navigation property photo from groups
+
+### [Get-MgGroupTeamPrimaryChannel](Get-MgGroupTeamPrimaryChannel.md)
+Get primaryChannel from groups
+
+### [Get-MgGroupTeamPrimaryChannelFileFolder](Get-MgGroupTeamPrimaryChannelFileFolder.md)
+Get filesFolder from groups
+
+### [Get-MgGroupTeamPrimaryChannelFileFolderContent](Get-MgGroupTeamPrimaryChannelFileFolderContent.md)
+Get content for the navigation property filesFolder from groups
+
+### [Get-MgGroupTeamPrimaryChannelMember](Get-MgGroupTeamPrimaryChannelMember.md)
+Get members from groups
+
+### [Get-MgGroupTeamPrimaryChannelMessage](Get-MgGroupTeamPrimaryChannelMessage.md)
+Get messages from groups
+
+### [Get-MgGroupTeamPrimaryChannelMessageHostedContent](Get-MgGroupTeamPrimaryChannelMessageHostedContent.md)
+Get hostedContents from groups
+
+### [Get-MgGroupTeamPrimaryChannelMessageReply](Get-MgGroupTeamPrimaryChannelMessageReply.md)
+Get replies from groups
+
+### [Get-MgGroupTeamPrimaryChannelMessageReplyHostedContent](Get-MgGroupTeamPrimaryChannelMessageReplyHostedContent.md)
+Get hostedContents from groups
+
+### [Get-MgGroupTeamPrimaryChannelSharedWithTeam](Get-MgGroupTeamPrimaryChannelSharedWithTeam.md)
+Get sharedWithTeams from groups
+
+### [Get-MgGroupTeamPrimaryChannelSharedWithTeamAllowedMember](Get-MgGroupTeamPrimaryChannelSharedWithTeamAllowedMember.md)
+Get allowedMembers from groups
+
+### [Get-MgGroupTeamPrimaryChannelTab](Get-MgGroupTeamPrimaryChannelTab.md)
+Get tabs from groups
+
+### [Get-MgGroupTeamPrimaryChannelTabTeamApp](Get-MgGroupTeamPrimaryChannelTabTeamApp.md)
+Get teamsApp from groups
+
+### [Get-MgGroupTeamSchedule](Get-MgGroupTeamSchedule.md)
+Get schedule from groups
+
+### [Get-MgGroupTeamScheduleOfferShiftRequest](Get-MgGroupTeamScheduleOfferShiftRequest.md)
+Get offerShiftRequests from groups
+
+### [Get-MgGroupTeamScheduleOpenShift](Get-MgGroupTeamScheduleOpenShift.md)
+Get openShifts from groups
+
+### [Get-MgGroupTeamScheduleOpenShiftChangeRequest](Get-MgGroupTeamScheduleOpenShiftChangeRequest.md)
+Get openShiftChangeRequests from groups
+
+### [Get-MgGroupTeamScheduleSchedulingGroup](Get-MgGroupTeamScheduleSchedulingGroup.md)
+Get schedulingGroups from groups
+
+### [Get-MgGroupTeamScheduleShift](Get-MgGroupTeamScheduleShift.md)
+Get shifts from groups
+
+### [Get-MgGroupTeamScheduleSwapShiftChangeRequest](Get-MgGroupTeamScheduleSwapShiftChangeRequest.md)
+Get swapShiftsChangeRequests from groups
+
+### [Get-MgGroupTeamScheduleTimeCard](Get-MgGroupTeamScheduleTimeCard.md)
+Get timeCards from groups
+
+### [Get-MgGroupTeamScheduleTimeOff](Get-MgGroupTeamScheduleTimeOff.md)
+Get timesOff from groups
+
+### [Get-MgGroupTeamScheduleTimeOffReason](Get-MgGroupTeamScheduleTimeOffReason.md)
+Get timeOffReasons from groups
+
+### [Get-MgGroupTeamScheduleTimeOffRequest](Get-MgGroupTeamScheduleTimeOffRequest.md)
+Get timeOffRequests from groups
+
+### [Get-MgGroupTeamTag](Get-MgGroupTeamTag.md)
+Get tags from groups
+
+### [Get-MgGroupTeamTagMember](Get-MgGroupTeamTagMember.md)
+Get members from groups
+
+### [Get-MgGroupTeamTemplate](Get-MgGroupTeamTemplate.md)
+Get template from groups
+
+### [Get-MgTeam](Get-MgTeam.md)
+Get team
 
 ### [Get-MgTeamChannel](Get-MgTeamChannel.md)
-The collection of channels and messages associated with the team.
-
-### [Get-MgTeamChannelByRef](Get-MgTeamChannelByRef.md)
-Get ref of allChannels from teams
+Get allChannels from teams
 
 ### [Get-MgTeamChannelFileFolder](Get-MgTeamChannelFileFolder.md)
-Metadata for the location where the channel's files are stored.
+Get filesFolder from teams
 
-### [Get-MgTeamChannelFileFolderByRef](Get-MgTeamChannelFileFolderByRef.md)
-Metadata for the location where the channel's files are stored.
+### [Get-MgTeamChannelFileFolderContent](Get-MgTeamChannelFileFolderContent.md)
+Get content for the navigation property filesFolder from teams
 
 ### [Get-MgTeamChannelMember](Get-MgTeamChannelMember.md)
-A collection of membership records associated with the channel.
+Get members from teams
 
 ### [Get-MgTeamChannelMessage](Get-MgTeamChannelMessage.md)
-A collection of all the messages in the channel.
-A navigation property.
-Nullable.
+Get messages from teams
 
 ### [Get-MgTeamChannelMessageDelta](Get-MgTeamChannelMessageDelta.md)
 Invoke function delta
 
 ### [Get-MgTeamChannelMessageHostedContent](Get-MgTeamChannelMessageHostedContent.md)
-Content in a message hosted by Microsoft Teams - for example, images or code snippets.
+Get hostedContents from teams
 
 ### [Get-MgTeamChannelMessageReply](Get-MgTeamChannelMessageReply.md)
-Replies for a specified message.
+Get replies from teams
 
 ### [Get-MgTeamChannelMessageReplyDelta](Get-MgTeamChannelMessageReplyDelta.md)
 Invoke function delta
 
-### [Get-MgTeamChannelShared](Get-MgTeamChannelShared.md)
+### [Get-MgTeamChannelMessageReplyHostedContent](Get-MgTeamChannelMessageReplyHostedContent.md)
+Get hostedContents from teams
+
+### [Get-MgTeamChannelSharedWithTeam](Get-MgTeamChannelSharedWithTeam.md)
 Get sharedWithTeams from teams
 
 ### [Get-MgTeamChannelSharedWithTeamAllowedMember](Get-MgTeamChannelSharedWithTeamAllowedMember.md)
 Get allowedMembers from teams
 
-### [Get-MgTeamChannelSharedWithTeamAllowedMemberByRef](Get-MgTeamChannelSharedWithTeamAllowedMemberByRef.md)
-Get ref of allowedMembers from teams
-
 ### [Get-MgTeamChannelTab](Get-MgTeamChannelTab.md)
-A collection of all the tabs in the channel.
-A navigation property.
+Get tabs from teams
 
 ### [Get-MgTeamChannelTabTeamApp](Get-MgTeamChannelTabTeamApp.md)
-The application that is linked to the tab.
-This cannot be changed after tab creation.
-
-### [Get-MgTeamChannelTabTeamAppByRef](Get-MgTeamChannelTabTeamAppByRef.md)
-The application that is linked to the tab.
-This cannot be changed after tab creation.
-
-### [Get-MgTeamGroupByRef](Get-MgTeamGroupByRef.md)
-Get ref of group from teams
+Get teamsApp from teams
 
 ### [Get-MgTeamIncomingChannel](Get-MgTeamIncomingChannel.md)
 Get incomingChannels from teams
 
-### [Get-MgTeamIncomingChannelByRef](Get-MgTeamIncomingChannelByRef.md)
-Get ref of incomingChannels from teams
-
-### [Get-MgTeamIncomingChannelMessage](Get-MgTeamIncomingChannelMessage.md)
-Invoke function getAllMessages
-
 ### [Get-MgTeamInstalledApp](Get-MgTeamInstalledApp.md)
-The apps installed in this team.
+Get installedApps from teams
 
 ### [Get-MgTeamInstalledAppTeamApp](Get-MgTeamInstalledAppTeamApp.md)
-The app that is installed.
-
-### [Get-MgTeamInstalledAppTeamAppByRef](Get-MgTeamInstalledAppTeamAppByRef.md)
-The app that is installed.
+Get teamsApp from teams
 
 ### [Get-MgTeamInstalledAppTeamAppDefinition](Get-MgTeamInstalledAppTeamAppDefinition.md)
-The details of this version of the app.
-
-### [Get-MgTeamInstalledAppTeamAppDefinitionByRef](Get-MgTeamInstalledAppTeamAppDefinitionByRef.md)
-The details of this version of the app.
+Get teamsAppDefinition from teams
 
 ### [Get-MgTeamMember](Get-MgTeamMember.md)
-Members and owners of the team.
+Get members from teams
 
 ### [Get-MgTeamMessage](Get-MgTeamMessage.md)
 Invoke function getAllMessages
 
 ### [Get-MgTeamOperation](Get-MgTeamOperation.md)
-The async operations that ran or are running on this team.
+Get operations from teams
 
 ### [Get-MgTeamOwner](Get-MgTeamOwner.md)
-The list of this team's owners.
-Currently, when creating a team using application permissions, exactly one owner must be specified.
-When using user delegated permissions, no owner can be specified (the current user is the owner).
-Owner must be specified as an object ID (GUID), not a UPN.
-
-### [Get-MgTeamOwnerByRef](Get-MgTeamOwnerByRef.md)
-The list of this team's owners.
-Currently, when creating a team using application permissions, exactly one owner must be specified.
-When using user delegated permissions, no owner can be specified (the current user is the owner).
-Owner must be specified as an object ID (GUID), not a UPN.
+Get owners from teams
 
 ### [Get-MgTeamPermissionGrant](Get-MgTeamPermissionGrant.md)
-A collection of permissions granted to apps to access the team.
+Get permissionGrants from teams
+
+### [Get-MgTeamPermissionGrantById](Get-MgTeamPermissionGrantById.md)
+Invoke action getByIds
+
+### [Get-MgTeamPermissionGrantMemberGroup](Get-MgTeamPermissionGrantMemberGroup.md)
+Invoke action getMemberGroups
+
+### [Get-MgTeamPermissionGrantMemberObject](Get-MgTeamPermissionGrantMemberObject.md)
+Invoke action getMemberObjects
+
+### [Get-MgTeamPermissionGrantUserOwnedObject](Get-MgTeamPermissionGrantUserOwnedObject.md)
+Invoke action getUserOwnedObjects
 
 ### [Get-MgTeamPhoto](Get-MgTeamPhoto.md)
-The team photo.
+Get photo from teams
 
 ### [Get-MgTeamPhotoContent](Get-MgTeamPhotoContent.md)
-The team photo.
+Get media content for the navigation property photo from teams
 
 ### [Get-MgTeamPrimaryChannel](Get-MgTeamPrimaryChannel.md)
-The general channel for the team.
+Get primaryChannel from teams
 
 ### [Get-MgTeamPrimaryChannelFileFolder](Get-MgTeamPrimaryChannelFileFolder.md)
-Metadata for the location where the channel's files are stored.
+Get filesFolder from teams
 
-### [Get-MgTeamPrimaryChannelFileFolderByRef](Get-MgTeamPrimaryChannelFileFolderByRef.md)
-Metadata for the location where the channel's files are stored.
+### [Get-MgTeamPrimaryChannelFileFolderContent](Get-MgTeamPrimaryChannelFileFolderContent.md)
+Get content for the navigation property filesFolder from teams
 
 ### [Get-MgTeamPrimaryChannelMember](Get-MgTeamPrimaryChannelMember.md)
-A collection of membership records associated with the channel.
+Get members from teams
 
 ### [Get-MgTeamPrimaryChannelMessage](Get-MgTeamPrimaryChannelMessage.md)
-A collection of all the messages in the channel.
-A navigation property.
-Nullable.
+Get messages from teams
 
 ### [Get-MgTeamPrimaryChannelMessageDelta](Get-MgTeamPrimaryChannelMessageDelta.md)
 Invoke function delta
 
 ### [Get-MgTeamPrimaryChannelMessageHostedContent](Get-MgTeamPrimaryChannelMessageHostedContent.md)
-Content in a message hosted by Microsoft Teams - for example, images or code snippets.
+Get hostedContents from teams
 
 ### [Get-MgTeamPrimaryChannelMessageReply](Get-MgTeamPrimaryChannelMessageReply.md)
-Replies for a specified message.
+Get replies from teams
 
 ### [Get-MgTeamPrimaryChannelMessageReplyDelta](Get-MgTeamPrimaryChannelMessageReplyDelta.md)
 Invoke function delta
 
-### [Get-MgTeamPrimaryChannelShared](Get-MgTeamPrimaryChannelShared.md)
+### [Get-MgTeamPrimaryChannelMessageReplyHostedContent](Get-MgTeamPrimaryChannelMessageReplyHostedContent.md)
+Get hostedContents from teams
+
+### [Get-MgTeamPrimaryChannelSharedWithTeam](Get-MgTeamPrimaryChannelSharedWithTeam.md)
 Get sharedWithTeams from teams
 
 ### [Get-MgTeamPrimaryChannelSharedWithTeamAllowedMember](Get-MgTeamPrimaryChannelSharedWithTeamAllowedMember.md)
 Get allowedMembers from teams
 
-### [Get-MgTeamPrimaryChannelSharedWithTeamAllowedMemberByRef](Get-MgTeamPrimaryChannelSharedWithTeamAllowedMemberByRef.md)
-Get ref of allowedMembers from teams
-
 ### [Get-MgTeamPrimaryChannelTab](Get-MgTeamPrimaryChannelTab.md)
-A collection of all the tabs in the channel.
-A navigation property.
+Get tabs from teams
 
 ### [Get-MgTeamPrimaryChannelTabTeamApp](Get-MgTeamPrimaryChannelTabTeamApp.md)
-The application that is linked to the tab.
-This cannot be changed after tab creation.
-
-### [Get-MgTeamPrimaryChannelTabTeamAppByRef](Get-MgTeamPrimaryChannelTabTeamAppByRef.md)
-The application that is linked to the tab.
-This cannot be changed after tab creation.
+Get teamsApp from teams
 
 ### [Get-MgTeamSchedule](Get-MgTeamSchedule.md)
-The schedule of shifts for this team.
+Get schedule from teams
 
 ### [Get-MgTeamScheduleOfferShiftRequest](Get-MgTeamScheduleOfferShiftRequest.md)
 Get offerShiftRequests from teams
@@ -309,10 +435,10 @@ Get openShifts from teams
 Get openShiftChangeRequests from teams
 
 ### [Get-MgTeamScheduleSchedulingGroup](Get-MgTeamScheduleSchedulingGroup.md)
-The logical grouping of users in the schedule (usually by role).
+Get schedulingGroups from teams
 
 ### [Get-MgTeamScheduleShift](Get-MgTeamScheduleShift.md)
-The shifts in the schedule.
+Get shifts from teams
 
 ### [Get-MgTeamScheduleSwapShiftChangeRequest](Get-MgTeamScheduleSwapShiftChangeRequest.md)
 Get swapShiftsChangeRequests from teams
@@ -321,80 +447,156 @@ Get swapShiftsChangeRequests from teams
 Get timeCards from teams
 
 ### [Get-MgTeamScheduleTimeOff](Get-MgTeamScheduleTimeOff.md)
-The instances of times off in the schedule.
+Get timesOff from teams
 
 ### [Get-MgTeamScheduleTimeOffReason](Get-MgTeamScheduleTimeOffReason.md)
-The set of reasons for a time off in the schedule.
+Get timeOffReasons from teams
 
 ### [Get-MgTeamScheduleTimeOffRequest](Get-MgTeamScheduleTimeOffRequest.md)
 Get timeOffRequests from teams
 
 ### [Get-MgTeamTag](Get-MgTeamTag.md)
-The tags associated with the team.
+Get tags from teams
 
 ### [Get-MgTeamTagMember](Get-MgTeamTagMember.md)
-Users assigned to the tag.
+Get members from teams
 
 ### [Get-MgTeamTemplate](Get-MgTeamTemplate.md)
-The template this team was created from.
-See available templates.
-
-### [Get-MgTeamTemplateByRef](Get-MgTeamTemplateByRef.md)
-The template this team was created from.
-See available templates.
+Get template from teams
 
 ### [Get-MgTeamwork](Get-MgTeamwork.md)
 Get teamwork
 
+### [Get-MgTeamworkDeletedTeam](Get-MgTeamworkDeletedTeam.md)
+Get deletedTeams from teamwork
+
+### [Get-MgTeamworkDeletedTeamChannel](Get-MgTeamworkDeletedTeamChannel.md)
+Get channels from teamwork
+
+### [Get-MgTeamworkDeletedTeamChannelFileFolder](Get-MgTeamworkDeletedTeamChannelFileFolder.md)
+Get filesFolder from teamwork
+
+### [Get-MgTeamworkDeletedTeamChannelFileFolderContent](Get-MgTeamworkDeletedTeamChannelFileFolderContent.md)
+Get content for the navigation property filesFolder from teamwork
+
+### [Get-MgTeamworkDeletedTeamChannelMember](Get-MgTeamworkDeletedTeamChannelMember.md)
+Get members from teamwork
+
+### [Get-MgTeamworkDeletedTeamChannelMessage](Get-MgTeamworkDeletedTeamChannelMessage.md)
+Get messages from teamwork
+
+### [Get-MgTeamworkDeletedTeamChannelMessageDelta](Get-MgTeamworkDeletedTeamChannelMessageDelta.md)
+Invoke function delta
+
+### [Get-MgTeamworkDeletedTeamChannelMessageHostedContent](Get-MgTeamworkDeletedTeamChannelMessageHostedContent.md)
+Get hostedContents from teamwork
+
+### [Get-MgTeamworkDeletedTeamChannelMessageReply](Get-MgTeamworkDeletedTeamChannelMessageReply.md)
+Get replies from teamwork
+
+### [Get-MgTeamworkDeletedTeamChannelMessageReplyDelta](Get-MgTeamworkDeletedTeamChannelMessageReplyDelta.md)
+Invoke function delta
+
+### [Get-MgTeamworkDeletedTeamChannelMessageReplyHostedContent](Get-MgTeamworkDeletedTeamChannelMessageReplyHostedContent.md)
+Get hostedContents from teamwork
+
+### [Get-MgTeamworkDeletedTeamChannelSharedWithTeam](Get-MgTeamworkDeletedTeamChannelSharedWithTeam.md)
+Get sharedWithTeams from teamwork
+
+### [Get-MgTeamworkDeletedTeamChannelSharedWithTeamAllowedMember](Get-MgTeamworkDeletedTeamChannelSharedWithTeamAllowedMember.md)
+Get allowedMembers from teamwork
+
+### [Get-MgTeamworkDeletedTeamChannelTab](Get-MgTeamworkDeletedTeamChannelTab.md)
+Get tabs from teamwork
+
+### [Get-MgTeamworkDeletedTeamChannelTabTeamApp](Get-MgTeamworkDeletedTeamChannelTabTeamApp.md)
+Get teamsApp from teamwork
+
+### [Get-MgTeamworkDeletedTeamMessage](Get-MgTeamworkDeletedTeamMessage.md)
+Invoke function getAllMessages
+
 ### [Get-MgTeamworkDevice](Get-MgTeamworkDevice.md)
-The Teams devices provisioned for the tenant.
+Get devices from teamwork
 
 ### [Get-MgTeamworkDeviceActivity](Get-MgTeamworkDeviceActivity.md)
-The activity properties that change based on the device usage.
+Get activity from teamwork
 
 ### [Get-MgTeamworkDeviceConfiguration](Get-MgTeamworkDeviceConfiguration.md)
-The configuration properties of the device.
+Get configuration from teamwork
 
 ### [Get-MgTeamworkDeviceHealth](Get-MgTeamworkDeviceHealth.md)
-The health properties of the device.
+Get health from teamwork
 
 ### [Get-MgTeamworkDeviceOperation](Get-MgTeamworkDeviceOperation.md)
-The async operations on the device.
+Get operations from teamwork
+
+### [Get-MgTeamworkTeamAppSetting](Get-MgTeamworkTeamAppSetting.md)
+Get teamsAppSettings from teamwork
 
 ### [Get-MgTeamworkWorkforceIntegration](Get-MgTeamworkWorkforceIntegration.md)
-A workforce integration with shifts.
+Get workforceIntegrations from teamwork
 
 ### [Get-MgUserChat](Get-MgUserChat.md)
 Get chats from users
 
-### [Get-MgUserJoinedTeam](Get-MgUserJoinedTeam.md)
-The Microsoft Teams teams that the user is a member of.
-Read-only.
-Nullable.
+### [Get-MgUserChatInstalledApp](Get-MgUserChatInstalledApp.md)
+Get installedApps from users
 
-### [Get-MgUserJoinedTeamByRef](Get-MgUserJoinedTeamByRef.md)
-The Microsoft Teams teams that the user is a member of.
-Read-only.
-Nullable.
+### [Get-MgUserChatInstalledAppTeamApp](Get-MgUserChatInstalledAppTeamApp.md)
+Get teamsApp from users
+
+### [Get-MgUserChatInstalledAppTeamAppDefinition](Get-MgUserChatInstalledAppTeamAppDefinition.md)
+Get teamsAppDefinition from users
+
+### [Get-MgUserChatLastMessagePreview](Get-MgUserChatLastMessagePreview.md)
+Get lastMessagePreview from users
+
+### [Get-MgUserChatMember](Get-MgUserChatMember.md)
+Get members from users
+
+### [Get-MgUserChatMessage](Get-MgUserChatMessage.md)
+Get messages from users
+
+### [Get-MgUserChatMessageHostedContent](Get-MgUserChatMessageHostedContent.md)
+Get hostedContents from users
+
+### [Get-MgUserChatMessageReply](Get-MgUserChatMessageReply.md)
+Get replies from users
+
+### [Get-MgUserChatMessageReplyHostedContent](Get-MgUserChatMessageReplyHostedContent.md)
+Get hostedContents from users
+
+### [Get-MgUserChatOperation](Get-MgUserChatOperation.md)
+Get operations from users
+
+### [Get-MgUserChatPermissionGrant](Get-MgUserChatPermissionGrant.md)
+Get permissionGrants from users
+
+### [Get-MgUserChatPinnedMessage](Get-MgUserChatPinnedMessage.md)
+Get pinnedMessages from users
+
+### [Get-MgUserChatTab](Get-MgUserChatTab.md)
+Get tabs from users
+
+### [Get-MgUserChatTabTeamApp](Get-MgUserChatTabTeamApp.md)
+Get teamsApp from users
+
+### [Get-MgUserJoinedTeam](Get-MgUserJoinedTeam.md)
+Get joinedTeams from users
 
 ### [Get-MgUserTeamwork](Get-MgUserTeamwork.md)
-A container for Microsoft Teams features available for the user.
-Read-only.
-Nullable.
+Get teamwork from users
 
 ### [Get-MgUserTeamworkAssociatedTeam](Get-MgUserTeamworkAssociatedTeam.md)
 Get associatedTeams from users
 
 ### [Get-MgUserTeamworkInstalledApp](Get-MgUserTeamworkInstalledApp.md)
-The apps installed in the personal scope of this user.
+Get installedApps from users
 
 ### [Get-MgUserTeamworkInstalledAppChat](Get-MgUserTeamworkInstalledAppChat.md)
-The chat between the user and Teams app.
+Get chat from users
 
-### [Get-MgUserTeamworkInstalledAppChatByRef](Get-MgUserTeamworkInstalledAppChatByRef.md)
-The chat between the user and Teams app.
-
-### [Hide-MgChat](Hide-MgChat.md)
+### [Hide-MgChatForUser](Hide-MgChatForUser.md)
 Invoke action hideForUser
 
 ### [Invoke-MgArchiveTeam](Invoke-MgArchiveTeam.md)
@@ -406,16 +608,22 @@ Invoke action clockIn
 ### [Invoke-MgClockTeamScheduleTimeCardOut](Invoke-MgClockTeamScheduleTimeCardOut.md)
 Invoke action clockOut
 
+### [Invoke-MgGraphChat](Invoke-MgGraphChat.md)
+Invoke action unhideForUser
+
 ### [Invoke-MgHaveTeamChannel](Invoke-MgHaveTeamChannel.md)
 Invoke function doesUserHaveAccess
 
 ### [Invoke-MgHaveTeamPrimaryChannel](Invoke-MgHaveTeamPrimaryChannel.md)
 Invoke function doesUserHaveAccess
 
-### [Invoke-MgMarkChatRead](Invoke-MgMarkChatRead.md)
+### [Invoke-MgHaveTeamworkDeletedTeamChannel](Invoke-MgHaveTeamworkDeletedTeamChannel.md)
+Invoke function doesUserHaveAccess
+
+### [Invoke-MgMarkChatReadForUser](Invoke-MgMarkChatReadForUser.md)
 Invoke action markChatReadForUser
 
-### [Invoke-MgMarkChatUnread](Invoke-MgMarkChatUnread.md)
+### [Invoke-MgMarkChatUnreadForUser](Invoke-MgMarkChatUnreadForUser.md)
 Invoke action markChatUnreadForUser
 
 ### [Invoke-MgMessageChat](Invoke-MgMessageChat.md)
@@ -424,13 +632,10 @@ Invoke function allMessages
 ### [Invoke-MgMessageTeam](Invoke-MgMessageTeam.md)
 Invoke function allMessages
 
-### [Invoke-MgMessageTeamAllChannel](Invoke-MgMessageTeamAllChannel.md)
-Invoke function allMessages
-
 ### [Invoke-MgMessageTeamChannel](Invoke-MgMessageTeamChannel.md)
 Invoke function allMessages
 
-### [Invoke-MgMessageTeamIncomingChannel](Invoke-MgMessageTeamIncomingChannel.md)
+### [Invoke-MgMessageTeamworkDeletedTeamChannel](Invoke-MgMessageTeamworkDeletedTeamChannel.md)
 Invoke function allMessages
 
 ### [Invoke-MgShareTeamSchedule](Invoke-MgShareTeamSchedule.md)
@@ -454,133 +659,212 @@ Invoke action softDelete
 ### [Invoke-MgSoftTeamPrimaryChannelMessageReplyDelete](Invoke-MgSoftTeamPrimaryChannelMessageReplyDelete.md)
 Invoke action softDelete
 
+### [Invoke-MgSoftTeamworkDeletedTeamChannelMessageDelete](Invoke-MgSoftTeamworkDeletedTeamChannelMessageDelete.md)
+Invoke action softDelete
+
+### [Invoke-MgSoftTeamworkDeletedTeamChannelMessageReplyDelete](Invoke-MgSoftTeamworkDeletedTeamChannelMessageReplyDelete.md)
+Invoke action softDelete
+
 ### [Invoke-MgUnarchiveTeam](Invoke-MgUnarchiveTeam.md)
 Invoke action unarchive
-
-### [Invoke-MgUnhideChat](Invoke-MgUnhideChat.md)
-Invoke action unhideForUser
 
 ### [New-MgAppCatalogTeamApp](New-MgAppCatalogTeamApp.md)
 Create new navigation property to teamsApps for appCatalogs
 
 ### [New-MgAppCatalogTeamAppDefinition](New-MgAppCatalogTeamAppDefinition.md)
-The details for each version of the app.
+Create new navigation property to appDefinitions for appCatalogs
 
 ### [New-MgChat](New-MgChat.md)
-Add new entity to chats
+Create chat
 
 ### [New-MgChatInstalledApp](New-MgChatInstalledApp.md)
-A collection of all the apps in the chat.
-Nullable.
+Create new navigation property to installedApps for chats
 
 ### [New-MgChatMember](New-MgChatMember.md)
-A collection of all the members in the chat.
-Nullable.
+Create new navigation property to members for chats
 
 ### [New-MgChatMessage](New-MgChatMessage.md)
-A collection of all the messages in the chat.
-Nullable.
+Create new navigation property to messages for chats
 
 ### [New-MgChatMessageHostedContent](New-MgChatMessageHostedContent.md)
-Content in a message hosted by Microsoft Teams - for example, images or code snippets.
+Create new navigation property to hostedContents for chats
 
 ### [New-MgChatMessageReply](New-MgChatMessageReply.md)
-Replies for a specified message.
+Create new navigation property to replies for chats
+
+### [New-MgChatMessageReplyHostedContent](New-MgChatMessageReplyHostedContent.md)
+Create new navigation property to hostedContents for chats
 
 ### [New-MgChatOperation](New-MgChatOperation.md)
-A collection of all the Teams async operations that ran or are running on the chat.
-Nullable.
+Create new navigation property to operations for chats
 
 ### [New-MgChatPermissionGrant](New-MgChatPermissionGrant.md)
-A collection of permissions granted to apps for the chat.
+Create new navigation property to permissionGrants for chats
+
+### [New-MgChatPinnedMessage](New-MgChatPinnedMessage.md)
+Create new navigation property to pinnedMessages for chats
 
 ### [New-MgChatTab](New-MgChatTab.md)
-A collection of all the tabs in the chat.
-Nullable.
+Create new navigation property to tabs for chats
+
+### [New-MgGroupTeamChannel](New-MgGroupTeamChannel.md)
+Create new navigation property to channels for groups
+
+### [New-MgGroupTeamChannelMember](New-MgGroupTeamChannelMember.md)
+Create new navigation property to members for groups
+
+### [New-MgGroupTeamChannelMessage](New-MgGroupTeamChannelMessage.md)
+Create new navigation property to messages for groups
+
+### [New-MgGroupTeamChannelMessageHostedContent](New-MgGroupTeamChannelMessageHostedContent.md)
+Create new navigation property to hostedContents for groups
+
+### [New-MgGroupTeamChannelMessageReply](New-MgGroupTeamChannelMessageReply.md)
+Create new navigation property to replies for groups
+
+### [New-MgGroupTeamChannelMessageReplyHostedContent](New-MgGroupTeamChannelMessageReplyHostedContent.md)
+Create new navigation property to hostedContents for groups
+
+### [New-MgGroupTeamChannelSharedWithTeam](New-MgGroupTeamChannelSharedWithTeam.md)
+Create new navigation property to sharedWithTeams for groups
+
+### [New-MgGroupTeamChannelTab](New-MgGroupTeamChannelTab.md)
+Create new navigation property to tabs for groups
+
+### [New-MgGroupTeamInstalledApp](New-MgGroupTeamInstalledApp.md)
+Create new navigation property to installedApps for groups
+
+### [New-MgGroupTeamMember](New-MgGroupTeamMember.md)
+Create new navigation property to members for groups
+
+### [New-MgGroupTeamOperation](New-MgGroupTeamOperation.md)
+Create new navigation property to operations for groups
+
+### [New-MgGroupTeamPermissionGrant](New-MgGroupTeamPermissionGrant.md)
+Create new navigation property to permissionGrants for groups
+
+### [New-MgGroupTeamPrimaryChannelMember](New-MgGroupTeamPrimaryChannelMember.md)
+Create new navigation property to members for groups
+
+### [New-MgGroupTeamPrimaryChannelMessage](New-MgGroupTeamPrimaryChannelMessage.md)
+Create new navigation property to messages for groups
+
+### [New-MgGroupTeamPrimaryChannelMessageHostedContent](New-MgGroupTeamPrimaryChannelMessageHostedContent.md)
+Create new navigation property to hostedContents for groups
+
+### [New-MgGroupTeamPrimaryChannelMessageReply](New-MgGroupTeamPrimaryChannelMessageReply.md)
+Create new navigation property to replies for groups
+
+### [New-MgGroupTeamPrimaryChannelMessageReplyHostedContent](New-MgGroupTeamPrimaryChannelMessageReplyHostedContent.md)
+Create new navigation property to hostedContents for groups
+
+### [New-MgGroupTeamPrimaryChannelSharedWithTeam](New-MgGroupTeamPrimaryChannelSharedWithTeam.md)
+Create new navigation property to sharedWithTeams for groups
+
+### [New-MgGroupTeamPrimaryChannelTab](New-MgGroupTeamPrimaryChannelTab.md)
+Create new navigation property to tabs for groups
+
+### [New-MgGroupTeamScheduleOfferShiftRequest](New-MgGroupTeamScheduleOfferShiftRequest.md)
+Create new navigation property to offerShiftRequests for groups
+
+### [New-MgGroupTeamScheduleOpenShift](New-MgGroupTeamScheduleOpenShift.md)
+Create new navigation property to openShifts for groups
+
+### [New-MgGroupTeamScheduleOpenShiftChangeRequest](New-MgGroupTeamScheduleOpenShiftChangeRequest.md)
+Create new navigation property to openShiftChangeRequests for groups
+
+### [New-MgGroupTeamScheduleSchedulingGroup](New-MgGroupTeamScheduleSchedulingGroup.md)
+Create new navigation property to schedulingGroups for groups
+
+### [New-MgGroupTeamScheduleShift](New-MgGroupTeamScheduleShift.md)
+Create new navigation property to shifts for groups
+
+### [New-MgGroupTeamScheduleSwapShiftChangeRequest](New-MgGroupTeamScheduleSwapShiftChangeRequest.md)
+Create new navigation property to swapShiftsChangeRequests for groups
+
+### [New-MgGroupTeamScheduleTimeCard](New-MgGroupTeamScheduleTimeCard.md)
+Create new navigation property to timeCards for groups
+
+### [New-MgGroupTeamScheduleTimeOff](New-MgGroupTeamScheduleTimeOff.md)
+Create new navigation property to timesOff for groups
+
+### [New-MgGroupTeamScheduleTimeOffReason](New-MgGroupTeamScheduleTimeOffReason.md)
+Create new navigation property to timeOffReasons for groups
+
+### [New-MgGroupTeamScheduleTimeOffRequest](New-MgGroupTeamScheduleTimeOffRequest.md)
+Create new navigation property to timeOffRequests for groups
+
+### [New-MgGroupTeamTag](New-MgGroupTeamTag.md)
+Create new navigation property to tags for groups
+
+### [New-MgGroupTeamTagMember](New-MgGroupTeamTagMember.md)
+Create new navigation property to members for groups
 
 ### [New-MgTeam](New-MgTeam.md)
-Add new entity to teams
+Create team
 
 ### [New-MgTeamChannel](New-MgTeamChannel.md)
-The collection of channels and messages associated with the team.
-
-### [New-MgTeamChannelByRef](New-MgTeamChannelByRef.md)
-Create new navigation property ref to allChannels for teams
+Create new navigation property to channels for teams
 
 ### [New-MgTeamChannelEmail](New-MgTeamChannelEmail.md)
 Invoke action provisionEmail
 
 ### [New-MgTeamChannelMember](New-MgTeamChannelMember.md)
-A collection of membership records associated with the channel.
+Create new navigation property to members for teams
 
 ### [New-MgTeamChannelMessage](New-MgTeamChannelMessage.md)
-A collection of all the messages in the channel.
-A navigation property.
-Nullable.
+Create new navigation property to messages for teams
 
 ### [New-MgTeamChannelMessageHostedContent](New-MgTeamChannelMessageHostedContent.md)
-Content in a message hosted by Microsoft Teams - for example, images or code snippets.
+Create new navigation property to hostedContents for teams
 
 ### [New-MgTeamChannelMessageReply](New-MgTeamChannelMessageReply.md)
-Replies for a specified message.
+Create new navigation property to replies for teams
 
-### [New-MgTeamChannelShared](New-MgTeamChannelShared.md)
+### [New-MgTeamChannelMessageReplyHostedContent](New-MgTeamChannelMessageReplyHostedContent.md)
+Create new navigation property to hostedContents for teams
+
+### [New-MgTeamChannelSharedWithTeam](New-MgTeamChannelSharedWithTeam.md)
 Create new navigation property to sharedWithTeams for teams
 
-### [New-MgTeamChannelSharedWithTeamAllowedMemberByRef](New-MgTeamChannelSharedWithTeamAllowedMemberByRef.md)
-Create new navigation property ref to allowedMembers for teams
-
 ### [New-MgTeamChannelTab](New-MgTeamChannelTab.md)
-A collection of all the tabs in the channel.
-A navigation property.
-
-### [New-MgTeamIncomingChannelByRef](New-MgTeamIncomingChannelByRef.md)
-Create new navigation property ref to incomingChannels for teams
+Create new navigation property to tabs for teams
 
 ### [New-MgTeamInstalledApp](New-MgTeamInstalledApp.md)
-The apps installed in this team.
+Create new navigation property to installedApps for teams
 
 ### [New-MgTeamMember](New-MgTeamMember.md)
-Members and owners of the team.
+Create new navigation property to members for teams
 
 ### [New-MgTeamOperation](New-MgTeamOperation.md)
-The async operations that ran or are running on this team.
-
-### [New-MgTeamOwnerByRef](New-MgTeamOwnerByRef.md)
-The list of this team's owners.
-Currently, when creating a team using application permissions, exactly one owner must be specified.
-When using user delegated permissions, no owner can be specified (the current user is the owner).
-Owner must be specified as an object ID (GUID), not a UPN.
+Create new navigation property to operations for teams
 
 ### [New-MgTeamPermissionGrant](New-MgTeamPermissionGrant.md)
-A collection of permissions granted to apps to access the team.
+Create new navigation property to permissionGrants for teams
 
 ### [New-MgTeamPrimaryChannelEmail](New-MgTeamPrimaryChannelEmail.md)
 Invoke action provisionEmail
 
 ### [New-MgTeamPrimaryChannelMember](New-MgTeamPrimaryChannelMember.md)
-A collection of membership records associated with the channel.
+Create new navigation property to members for teams
 
 ### [New-MgTeamPrimaryChannelMessage](New-MgTeamPrimaryChannelMessage.md)
-A collection of all the messages in the channel.
-A navigation property.
-Nullable.
+Create new navigation property to messages for teams
 
 ### [New-MgTeamPrimaryChannelMessageHostedContent](New-MgTeamPrimaryChannelMessageHostedContent.md)
-Content in a message hosted by Microsoft Teams - for example, images or code snippets.
+Create new navigation property to hostedContents for teams
 
 ### [New-MgTeamPrimaryChannelMessageReply](New-MgTeamPrimaryChannelMessageReply.md)
-Replies for a specified message.
+Create new navigation property to replies for teams
 
-### [New-MgTeamPrimaryChannelShared](New-MgTeamPrimaryChannelShared.md)
+### [New-MgTeamPrimaryChannelMessageReplyHostedContent](New-MgTeamPrimaryChannelMessageReplyHostedContent.md)
+Create new navigation property to hostedContents for teams
+
+### [New-MgTeamPrimaryChannelSharedWithTeam](New-MgTeamPrimaryChannelSharedWithTeam.md)
 Create new navigation property to sharedWithTeams for teams
 
-### [New-MgTeamPrimaryChannelSharedWithTeamAllowedMemberByRef](New-MgTeamPrimaryChannelSharedWithTeamAllowedMemberByRef.md)
-Create new navigation property ref to allowedMembers for teams
-
 ### [New-MgTeamPrimaryChannelTab](New-MgTeamPrimaryChannelTab.md)
-A collection of all the tabs in the channel.
-A navigation property.
+Create new navigation property to tabs for teams
 
 ### [New-MgTeamScheduleOfferShiftRequest](New-MgTeamScheduleOfferShiftRequest.md)
 Create new navigation property to offerShiftRequests for teams
@@ -592,10 +876,10 @@ Create new navigation property to openShifts for teams
 Create new navigation property to openShiftChangeRequests for teams
 
 ### [New-MgTeamScheduleSchedulingGroup](New-MgTeamScheduleSchedulingGroup.md)
-The logical grouping of users in the schedule (usually by role).
+Create new navigation property to schedulingGroups for teams
 
 ### [New-MgTeamScheduleShift](New-MgTeamScheduleShift.md)
-The shifts in the schedule.
+Create new navigation property to shifts for teams
 
 ### [New-MgTeamScheduleSwapShiftChangeRequest](New-MgTeamScheduleSwapShiftChangeRequest.md)
 Create new navigation property to swapShiftsChangeRequests for teams
@@ -604,179 +888,307 @@ Create new navigation property to swapShiftsChangeRequests for teams
 Create new navigation property to timeCards for teams
 
 ### [New-MgTeamScheduleTimeOff](New-MgTeamScheduleTimeOff.md)
-The instances of times off in the schedule.
+Create new navigation property to timesOff for teams
 
 ### [New-MgTeamScheduleTimeOffReason](New-MgTeamScheduleTimeOffReason.md)
-The set of reasons for a time off in the schedule.
+Create new navigation property to timeOffReasons for teams
 
 ### [New-MgTeamScheduleTimeOffRequest](New-MgTeamScheduleTimeOffRequest.md)
 Create new navigation property to timeOffRequests for teams
 
 ### [New-MgTeamTag](New-MgTeamTag.md)
-The tags associated with the team.
+Create new navigation property to tags for teams
 
 ### [New-MgTeamTagMember](New-MgTeamTagMember.md)
-Users assigned to the tag.
+Create new navigation property to members for teams
+
+### [New-MgTeamworkDeletedTeam](New-MgTeamworkDeletedTeam.md)
+Create new navigation property to deletedTeams for teamwork
+
+### [New-MgTeamworkDeletedTeamChannel](New-MgTeamworkDeletedTeamChannel.md)
+Create new navigation property to channels for teamwork
+
+### [New-MgTeamworkDeletedTeamChannelEmail](New-MgTeamworkDeletedTeamChannelEmail.md)
+Invoke action provisionEmail
+
+### [New-MgTeamworkDeletedTeamChannelMember](New-MgTeamworkDeletedTeamChannelMember.md)
+Create new navigation property to members for teamwork
+
+### [New-MgTeamworkDeletedTeamChannelMessage](New-MgTeamworkDeletedTeamChannelMessage.md)
+Create new navigation property to messages for teamwork
+
+### [New-MgTeamworkDeletedTeamChannelMessageHostedContent](New-MgTeamworkDeletedTeamChannelMessageHostedContent.md)
+Create new navigation property to hostedContents for teamwork
+
+### [New-MgTeamworkDeletedTeamChannelMessageReply](New-MgTeamworkDeletedTeamChannelMessageReply.md)
+Create new navigation property to replies for teamwork
+
+### [New-MgTeamworkDeletedTeamChannelMessageReplyHostedContent](New-MgTeamworkDeletedTeamChannelMessageReplyHostedContent.md)
+Create new navigation property to hostedContents for teamwork
+
+### [New-MgTeamworkDeletedTeamChannelSharedWithTeam](New-MgTeamworkDeletedTeamChannelSharedWithTeam.md)
+Create new navigation property to sharedWithTeams for teamwork
+
+### [New-MgTeamworkDeletedTeamChannelTab](New-MgTeamworkDeletedTeamChannelTab.md)
+Create new navigation property to tabs for teamwork
 
 ### [New-MgTeamworkDevice](New-MgTeamworkDevice.md)
-The Teams devices provisioned for the tenant.
+Create new navigation property to devices for teamwork
 
 ### [New-MgTeamworkDeviceOperation](New-MgTeamworkDeviceOperation.md)
-The async operations on the device.
+Create new navigation property to operations for teamwork
 
 ### [New-MgTeamworkWorkforceIntegration](New-MgTeamworkWorkforceIntegration.md)
-A workforce integration with shifts.
+Create new navigation property to workforceIntegrations for teamwork
 
 ### [New-MgUserChat](New-MgUserChat.md)
 Create new navigation property to chats for users
 
-### [New-MgUserJoinedTeamByRef](New-MgUserJoinedTeamByRef.md)
-The Microsoft Teams teams that the user is a member of.
-Read-only.
-Nullable.
+### [New-MgUserChatInstalledApp](New-MgUserChatInstalledApp.md)
+Create new navigation property to installedApps for users
+
+### [New-MgUserChatMember](New-MgUserChatMember.md)
+Create new navigation property to members for users
+
+### [New-MgUserChatMessage](New-MgUserChatMessage.md)
+Create new navigation property to messages for users
+
+### [New-MgUserChatMessageHostedContent](New-MgUserChatMessageHostedContent.md)
+Create new navigation property to hostedContents for users
+
+### [New-MgUserChatMessageReply](New-MgUserChatMessageReply.md)
+Create new navigation property to replies for users
+
+### [New-MgUserChatMessageReplyHostedContent](New-MgUserChatMessageReplyHostedContent.md)
+Create new navigation property to hostedContents for users
+
+### [New-MgUserChatOperation](New-MgUserChatOperation.md)
+Create new navigation property to operations for users
+
+### [New-MgUserChatPermissionGrant](New-MgUserChatPermissionGrant.md)
+Create new navigation property to permissionGrants for users
+
+### [New-MgUserChatPinnedMessage](New-MgUserChatPinnedMessage.md)
+Create new navigation property to pinnedMessages for users
+
+### [New-MgUserChatTab](New-MgUserChatTab.md)
+Create new navigation property to tabs for users
 
 ### [New-MgUserTeamworkAssociatedTeam](New-MgUserTeamworkAssociatedTeam.md)
 Create new navigation property to associatedTeams for users
 
 ### [New-MgUserTeamworkInstalledApp](New-MgUserTeamworkInstalledApp.md)
-The apps installed in the personal scope of this user.
+Create new navigation property to installedApps for users
 
 ### [Remove-MgAppCatalogTeamApp](Remove-MgAppCatalogTeamApp.md)
 Delete navigation property teamsApps for appCatalogs
 
 ### [Remove-MgAppCatalogTeamAppDefinition](Remove-MgAppCatalogTeamAppDefinition.md)
-The details for each version of the app.
+Delete navigation property appDefinitions for appCatalogs
 
 ### [Remove-MgAppCatalogTeamAppDefinitionBot](Remove-MgAppCatalogTeamAppDefinitionBot.md)
-The details of the bot specified in the Teams app manifest.
+Delete navigation property bot for appCatalogs
 
 ### [Remove-MgAppCatalogTeamAppDefinitionColorIcon](Remove-MgAppCatalogTeamAppDefinitionColorIcon.md)
-The color version of the Teams app's icon.
+Delete navigation property colorIcon for appCatalogs
 
 ### [Remove-MgAppCatalogTeamAppDefinitionColorIconHostedContent](Remove-MgAppCatalogTeamAppDefinitionColorIconHostedContent.md)
-The contents of the app icon if the icon is hosted within the Teams infrastructure.
+Delete navigation property hostedContent for appCatalogs
 
 ### [Remove-MgAppCatalogTeamAppDefinitionOutlineIcon](Remove-MgAppCatalogTeamAppDefinitionOutlineIcon.md)
-The outline version of the Teams app's icon.
+Delete navigation property outlineIcon for appCatalogs
 
 ### [Remove-MgAppCatalogTeamAppDefinitionOutlineIconHostedContent](Remove-MgAppCatalogTeamAppDefinitionOutlineIconHostedContent.md)
-The contents of the app icon if the icon is hosted within the Teams infrastructure.
+Delete navigation property hostedContent for appCatalogs
 
 ### [Remove-MgChat](Remove-MgChat.md)
 Delete entity from chats
 
 ### [Remove-MgChatInstalledApp](Remove-MgChatInstalledApp.md)
-A collection of all the apps in the chat.
-Nullable.
-
-### [Remove-MgChatInstalledAppTeamAppByRef](Remove-MgChatInstalledAppTeamAppByRef.md)
-The app that is installed.
-
-### [Remove-MgChatInstalledAppTeamAppDefinitionByRef](Remove-MgChatInstalledAppTeamAppDefinitionByRef.md)
-The details of this version of the app.
+Delete navigation property installedApps for chats
 
 ### [Remove-MgChatLastMessagePreview](Remove-MgChatLastMessagePreview.md)
-Preview of the last message sent in the chat.
-Null if no messages have been sent in the chat.
-Currently, only the list chats operation supports this property.
+Delete navigation property lastMessagePreview for chats
 
 ### [Remove-MgChatMember](Remove-MgChatMember.md)
-A collection of all the members in the chat.
-Nullable.
+Delete navigation property members for chats
+
+### [Remove-MgChatMessageReplyHostedContent](Remove-MgChatMessageReplyHostedContent.md)
+Delete navigation property hostedContents for chats
 
 ### [Remove-MgChatOperation](Remove-MgChatOperation.md)
-A collection of all the Teams async operations that ran or are running on the chat.
-Nullable.
+Delete navigation property operations for chats
 
 ### [Remove-MgChatPermissionGrant](Remove-MgChatPermissionGrant.md)
-A collection of permissions granted to apps for the chat.
+Delete navigation property permissionGrants for chats
+
+### [Remove-MgChatPinnedMessage](Remove-MgChatPinnedMessage.md)
+Delete navigation property pinnedMessages for chats
 
 ### [Remove-MgChatTab](Remove-MgChatTab.md)
-A collection of all the tabs in the chat.
-Nullable.
-
-### [Remove-MgChatTabTeamAppByRef](Remove-MgChatTabTeamAppByRef.md)
-The application that is linked to the tab.
-This cannot be changed after tab creation.
+Delete navigation property tabs for chats
 
 ### [Remove-MgGroupTeam](Remove-MgGroupTeam.md)
 Delete navigation property team for groups
+
+### [Remove-MgGroupTeamChannel](Remove-MgGroupTeamChannel.md)
+Delete navigation property channels for groups
+
+### [Remove-MgGroupTeamChannelMember](Remove-MgGroupTeamChannelMember.md)
+Delete navigation property members for groups
+
+### [Remove-MgGroupTeamChannelMessage](Remove-MgGroupTeamChannelMessage.md)
+Delete navigation property messages for groups
+
+### [Remove-MgGroupTeamChannelMessageHostedContent](Remove-MgGroupTeamChannelMessageHostedContent.md)
+Delete navigation property hostedContents for groups
+
+### [Remove-MgGroupTeamChannelMessageReply](Remove-MgGroupTeamChannelMessageReply.md)
+Delete navigation property replies for groups
+
+### [Remove-MgGroupTeamChannelMessageReplyHostedContent](Remove-MgGroupTeamChannelMessageReplyHostedContent.md)
+Delete navigation property hostedContents for groups
+
+### [Remove-MgGroupTeamChannelSharedWithTeam](Remove-MgGroupTeamChannelSharedWithTeam.md)
+Delete navigation property sharedWithTeams for groups
+
+### [Remove-MgGroupTeamChannelTab](Remove-MgGroupTeamChannelTab.md)
+Delete navigation property tabs for groups
+
+### [Remove-MgGroupTeamInstalledApp](Remove-MgGroupTeamInstalledApp.md)
+Delete navigation property installedApps for groups
+
+### [Remove-MgGroupTeamMember](Remove-MgGroupTeamMember.md)
+Delete navigation property members for groups
+
+### [Remove-MgGroupTeamOperation](Remove-MgGroupTeamOperation.md)
+Delete navigation property operations for groups
+
+### [Remove-MgGroupTeamPermissionGrant](Remove-MgGroupTeamPermissionGrant.md)
+Delete navigation property permissionGrants for groups
+
+### [Remove-MgGroupTeamPhoto](Remove-MgGroupTeamPhoto.md)
+Delete navigation property photo for groups
+
+### [Remove-MgGroupTeamPrimaryChannel](Remove-MgGroupTeamPrimaryChannel.md)
+Delete navigation property primaryChannel for groups
+
+### [Remove-MgGroupTeamPrimaryChannelMember](Remove-MgGroupTeamPrimaryChannelMember.md)
+Delete navigation property members for groups
+
+### [Remove-MgGroupTeamPrimaryChannelMessage](Remove-MgGroupTeamPrimaryChannelMessage.md)
+Delete navigation property messages for groups
+
+### [Remove-MgGroupTeamPrimaryChannelMessageHostedContent](Remove-MgGroupTeamPrimaryChannelMessageHostedContent.md)
+Delete navigation property hostedContents for groups
+
+### [Remove-MgGroupTeamPrimaryChannelMessageReply](Remove-MgGroupTeamPrimaryChannelMessageReply.md)
+Delete navigation property replies for groups
+
+### [Remove-MgGroupTeamPrimaryChannelMessageReplyHostedContent](Remove-MgGroupTeamPrimaryChannelMessageReplyHostedContent.md)
+Delete navigation property hostedContents for groups
+
+### [Remove-MgGroupTeamPrimaryChannelSharedWithTeam](Remove-MgGroupTeamPrimaryChannelSharedWithTeam.md)
+Delete navigation property sharedWithTeams for groups
+
+### [Remove-MgGroupTeamPrimaryChannelTab](Remove-MgGroupTeamPrimaryChannelTab.md)
+Delete navigation property tabs for groups
+
+### [Remove-MgGroupTeamSchedule](Remove-MgGroupTeamSchedule.md)
+Delete navigation property schedule for groups
+
+### [Remove-MgGroupTeamScheduleOfferShiftRequest](Remove-MgGroupTeamScheduleOfferShiftRequest.md)
+Delete navigation property offerShiftRequests for groups
+
+### [Remove-MgGroupTeamScheduleOpenShift](Remove-MgGroupTeamScheduleOpenShift.md)
+Delete navigation property openShifts for groups
+
+### [Remove-MgGroupTeamScheduleOpenShiftChangeRequest](Remove-MgGroupTeamScheduleOpenShiftChangeRequest.md)
+Delete navigation property openShiftChangeRequests for groups
+
+### [Remove-MgGroupTeamScheduleSchedulingGroup](Remove-MgGroupTeamScheduleSchedulingGroup.md)
+Delete navigation property schedulingGroups for groups
+
+### [Remove-MgGroupTeamScheduleShift](Remove-MgGroupTeamScheduleShift.md)
+Delete navigation property shifts for groups
+
+### [Remove-MgGroupTeamScheduleSwapShiftChangeRequest](Remove-MgGroupTeamScheduleSwapShiftChangeRequest.md)
+Delete navigation property swapShiftsChangeRequests for groups
+
+### [Remove-MgGroupTeamScheduleTimeCard](Remove-MgGroupTeamScheduleTimeCard.md)
+Delete navigation property timeCards for groups
+
+### [Remove-MgGroupTeamScheduleTimeOff](Remove-MgGroupTeamScheduleTimeOff.md)
+Delete navigation property timesOff for groups
+
+### [Remove-MgGroupTeamScheduleTimeOffReason](Remove-MgGroupTeamScheduleTimeOffReason.md)
+Delete navigation property timeOffReasons for groups
+
+### [Remove-MgGroupTeamScheduleTimeOffRequest](Remove-MgGroupTeamScheduleTimeOffRequest.md)
+Delete navigation property timeOffRequests for groups
+
+### [Remove-MgGroupTeamTag](Remove-MgGroupTeamTag.md)
+Delete navigation property tags for groups
+
+### [Remove-MgGroupTeamTagMember](Remove-MgGroupTeamTagMember.md)
+Delete navigation property members for groups
 
 ### [Remove-MgTeam](Remove-MgTeam.md)
 Delete entity from teams
 
 ### [Remove-MgTeamChannel](Remove-MgTeamChannel.md)
-The collection of channels and messages associated with the team.
+Delete navigation property channels for teams
 
 ### [Remove-MgTeamChannelEmail](Remove-MgTeamChannelEmail.md)
 Invoke action removeEmail
 
-### [Remove-MgTeamChannelFileFolderByRef](Remove-MgTeamChannelFileFolderByRef.md)
-Metadata for the location where the channel's files are stored.
-
 ### [Remove-MgTeamChannelMember](Remove-MgTeamChannelMember.md)
-A collection of membership records associated with the channel.
+Delete navigation property members for teams
 
-### [Remove-MgTeamChannelShared](Remove-MgTeamChannelShared.md)
+### [Remove-MgTeamChannelMessageReplyHostedContent](Remove-MgTeamChannelMessageReplyHostedContent.md)
+Delete navigation property hostedContents for teams
+
+### [Remove-MgTeamChannelSharedWithTeam](Remove-MgTeamChannelSharedWithTeam.md)
 Delete navigation property sharedWithTeams for teams
 
 ### [Remove-MgTeamChannelTab](Remove-MgTeamChannelTab.md)
-A collection of all the tabs in the channel.
-A navigation property.
-
-### [Remove-MgTeamChannelTabTeamAppByRef](Remove-MgTeamChannelTabTeamAppByRef.md)
-The application that is linked to the tab.
-This cannot be changed after tab creation.
-
-### [Remove-MgTeamGroupByRef](Remove-MgTeamGroupByRef.md)
-Delete ref of navigation property group for teams
+Delete navigation property tabs for teams
 
 ### [Remove-MgTeamInstalledApp](Remove-MgTeamInstalledApp.md)
-The apps installed in this team.
-
-### [Remove-MgTeamInstalledAppTeamAppByRef](Remove-MgTeamInstalledAppTeamAppByRef.md)
-The app that is installed.
-
-### [Remove-MgTeamInstalledAppTeamAppDefinitionByRef](Remove-MgTeamInstalledAppTeamAppDefinitionByRef.md)
-The details of this version of the app.
+Delete navigation property installedApps for teams
 
 ### [Remove-MgTeamMember](Remove-MgTeamMember.md)
-Members and owners of the team.
+Delete navigation property members for teams
 
 ### [Remove-MgTeamOperation](Remove-MgTeamOperation.md)
-The async operations that ran or are running on this team.
+Delete navigation property operations for teams
 
 ### [Remove-MgTeamPermissionGrant](Remove-MgTeamPermissionGrant.md)
-A collection of permissions granted to apps to access the team.
+Delete navigation property permissionGrants for teams
 
 ### [Remove-MgTeamPhoto](Remove-MgTeamPhoto.md)
-The team photo.
+Delete navigation property photo for teams
 
 ### [Remove-MgTeamPrimaryChannel](Remove-MgTeamPrimaryChannel.md)
-The general channel for the team.
+Delete navigation property primaryChannel for teams
 
 ### [Remove-MgTeamPrimaryChannelEmail](Remove-MgTeamPrimaryChannelEmail.md)
 Invoke action removeEmail
 
-### [Remove-MgTeamPrimaryChannelFileFolderByRef](Remove-MgTeamPrimaryChannelFileFolderByRef.md)
-Metadata for the location where the channel's files are stored.
-
 ### [Remove-MgTeamPrimaryChannelMember](Remove-MgTeamPrimaryChannelMember.md)
-A collection of membership records associated with the channel.
+Delete navigation property members for teams
 
-### [Remove-MgTeamPrimaryChannelShared](Remove-MgTeamPrimaryChannelShared.md)
+### [Remove-MgTeamPrimaryChannelMessageReplyHostedContent](Remove-MgTeamPrimaryChannelMessageReplyHostedContent.md)
+Delete navigation property hostedContents for teams
+
+### [Remove-MgTeamPrimaryChannelSharedWithTeam](Remove-MgTeamPrimaryChannelSharedWithTeam.md)
 Delete navigation property sharedWithTeams for teams
 
 ### [Remove-MgTeamPrimaryChannelTab](Remove-MgTeamPrimaryChannelTab.md)
-A collection of all the tabs in the channel.
-A navigation property.
-
-### [Remove-MgTeamPrimaryChannelTabTeamAppByRef](Remove-MgTeamPrimaryChannelTabTeamAppByRef.md)
-The application that is linked to the tab.
-This cannot be changed after tab creation.
+Delete navigation property tabs for teams
 
 ### [Remove-MgTeamSchedule](Remove-MgTeamSchedule.md)
-The schedule of shifts for this team.
+Delete navigation property schedule for teams
 
 ### [Remove-MgTeamScheduleOfferShiftRequest](Remove-MgTeamScheduleOfferShiftRequest.md)
 Delete navigation property offerShiftRequests for teams
@@ -788,10 +1200,10 @@ Delete navigation property openShifts for teams
 Delete navigation property openShiftChangeRequests for teams
 
 ### [Remove-MgTeamScheduleSchedulingGroup](Remove-MgTeamScheduleSchedulingGroup.md)
-The logical grouping of users in the schedule (usually by role).
+Delete navigation property schedulingGroups for teams
 
 ### [Remove-MgTeamScheduleShift](Remove-MgTeamScheduleShift.md)
-The shifts in the schedule.
+Delete navigation property shifts for teams
 
 ### [Remove-MgTeamScheduleSwapShiftChangeRequest](Remove-MgTeamScheduleSwapShiftChangeRequest.md)
 Delete navigation property swapShiftsChangeRequests for teams
@@ -800,58 +1212,115 @@ Delete navigation property swapShiftsChangeRequests for teams
 Delete navigation property timeCards for teams
 
 ### [Remove-MgTeamScheduleTimeOff](Remove-MgTeamScheduleTimeOff.md)
-The instances of times off in the schedule.
+Delete navigation property timesOff for teams
 
 ### [Remove-MgTeamScheduleTimeOffReason](Remove-MgTeamScheduleTimeOffReason.md)
-The set of reasons for a time off in the schedule.
+Delete navigation property timeOffReasons for teams
 
 ### [Remove-MgTeamScheduleTimeOffRequest](Remove-MgTeamScheduleTimeOffRequest.md)
 Delete navigation property timeOffRequests for teams
 
 ### [Remove-MgTeamTag](Remove-MgTeamTag.md)
-The tags associated with the team.
+Delete navigation property tags for teams
 
 ### [Remove-MgTeamTagMember](Remove-MgTeamTagMember.md)
-Users assigned to the tag.
+Delete navigation property members for teams
 
-### [Remove-MgTeamTemplateByRef](Remove-MgTeamTemplateByRef.md)
-The template this team was created from.
-See available templates.
+### [Remove-MgTeamworkDeletedTeam](Remove-MgTeamworkDeletedTeam.md)
+Delete navigation property deletedTeams for teamwork
+
+### [Remove-MgTeamworkDeletedTeamChannel](Remove-MgTeamworkDeletedTeamChannel.md)
+Delete navigation property channels for teamwork
+
+### [Remove-MgTeamworkDeletedTeamChannelEmail](Remove-MgTeamworkDeletedTeamChannelEmail.md)
+Invoke action removeEmail
+
+### [Remove-MgTeamworkDeletedTeamChannelMember](Remove-MgTeamworkDeletedTeamChannelMember.md)
+Delete navigation property members for teamwork
+
+### [Remove-MgTeamworkDeletedTeamChannelMessage](Remove-MgTeamworkDeletedTeamChannelMessage.md)
+Delete navigation property messages for teamwork
+
+### [Remove-MgTeamworkDeletedTeamChannelMessageHostedContent](Remove-MgTeamworkDeletedTeamChannelMessageHostedContent.md)
+Delete navigation property hostedContents for teamwork
+
+### [Remove-MgTeamworkDeletedTeamChannelMessageReply](Remove-MgTeamworkDeletedTeamChannelMessageReply.md)
+Delete navigation property replies for teamwork
+
+### [Remove-MgTeamworkDeletedTeamChannelMessageReplyHostedContent](Remove-MgTeamworkDeletedTeamChannelMessageReplyHostedContent.md)
+Delete navigation property hostedContents for teamwork
+
+### [Remove-MgTeamworkDeletedTeamChannelSharedWithTeam](Remove-MgTeamworkDeletedTeamChannelSharedWithTeam.md)
+Delete navigation property sharedWithTeams for teamwork
+
+### [Remove-MgTeamworkDeletedTeamChannelTab](Remove-MgTeamworkDeletedTeamChannelTab.md)
+Delete navigation property tabs for teamwork
 
 ### [Remove-MgTeamworkDevice](Remove-MgTeamworkDevice.md)
-The Teams devices provisioned for the tenant.
+Delete navigation property devices for teamwork
 
 ### [Remove-MgTeamworkDeviceActivity](Remove-MgTeamworkDeviceActivity.md)
-The activity properties that change based on the device usage.
+Delete navigation property activity for teamwork
 
 ### [Remove-MgTeamworkDeviceConfiguration](Remove-MgTeamworkDeviceConfiguration.md)
-The configuration properties of the device.
+Delete navigation property configuration for teamwork
 
 ### [Remove-MgTeamworkDeviceHealth](Remove-MgTeamworkDeviceHealth.md)
-The health properties of the device.
+Delete navigation property health for teamwork
 
 ### [Remove-MgTeamworkDeviceOperation](Remove-MgTeamworkDeviceOperation.md)
-The async operations on the device.
+Delete navigation property operations for teamwork
+
+### [Remove-MgTeamworkTeamAppSetting](Remove-MgTeamworkTeamAppSetting.md)
+Delete navigation property teamsAppSettings for teamwork
 
 ### [Remove-MgTeamworkWorkforceIntegration](Remove-MgTeamworkWorkforceIntegration.md)
-A workforce integration with shifts.
+Delete navigation property workforceIntegrations for teamwork
 
 ### [Remove-MgUserChat](Remove-MgUserChat.md)
 Delete navigation property chats for users
 
+### [Remove-MgUserChatInstalledApp](Remove-MgUserChatInstalledApp.md)
+Delete navigation property installedApps for users
+
+### [Remove-MgUserChatLastMessagePreview](Remove-MgUserChatLastMessagePreview.md)
+Delete navigation property lastMessagePreview for users
+
+### [Remove-MgUserChatMember](Remove-MgUserChatMember.md)
+Delete navigation property members for users
+
+### [Remove-MgUserChatMessage](Remove-MgUserChatMessage.md)
+Delete navigation property messages for users
+
+### [Remove-MgUserChatMessageHostedContent](Remove-MgUserChatMessageHostedContent.md)
+Delete navigation property hostedContents for users
+
+### [Remove-MgUserChatMessageReply](Remove-MgUserChatMessageReply.md)
+Delete navigation property replies for users
+
+### [Remove-MgUserChatMessageReplyHostedContent](Remove-MgUserChatMessageReplyHostedContent.md)
+Delete navigation property hostedContents for users
+
+### [Remove-MgUserChatOperation](Remove-MgUserChatOperation.md)
+Delete navigation property operations for users
+
+### [Remove-MgUserChatPermissionGrant](Remove-MgUserChatPermissionGrant.md)
+Delete navigation property permissionGrants for users
+
+### [Remove-MgUserChatPinnedMessage](Remove-MgUserChatPinnedMessage.md)
+Delete navigation property pinnedMessages for users
+
+### [Remove-MgUserChatTab](Remove-MgUserChatTab.md)
+Delete navigation property tabs for users
+
 ### [Remove-MgUserTeamwork](Remove-MgUserTeamwork.md)
-A container for Microsoft Teams features available for the user.
-Read-only.
-Nullable.
+Delete navigation property teamwork for users
 
 ### [Remove-MgUserTeamworkAssociatedTeam](Remove-MgUserTeamworkAssociatedTeam.md)
 Delete navigation property associatedTeams for users
 
 ### [Remove-MgUserTeamworkInstalledApp](Remove-MgUserTeamworkInstalledApp.md)
-The apps installed in the personal scope of this user.
-
-### [Remove-MgUserTeamworkInstalledAppChatByRef](Remove-MgUserTeamworkInstalledAppChatByRef.md)
-The chat between the user and Teams app.
+Delete navigation property installedApps for users
 
 ### [Restart-MgTeamworkDevice](Restart-MgTeamworkDevice.md)
 Invoke action restart
@@ -862,54 +1331,35 @@ Invoke action sendActivityNotification
 ### [Send-MgTeamActivityNotification](Send-MgTeamActivityNotification.md)
 Invoke action sendActivityNotification
 
+### [Send-MgTeamworkActivityNotificationToRecipient](Send-MgTeamworkActivityNotificationToRecipient.md)
+Invoke action sendActivityNotificationToRecipients
+
 ### [Set-MgAppCatalogTeamAppDefinitionColorIconHostedContent](Set-MgAppCatalogTeamAppDefinitionColorIconHostedContent.md)
 Update media content for the navigation property hostedContent in appCatalogs
 
 ### [Set-MgAppCatalogTeamAppDefinitionOutlineIconHostedContent](Set-MgAppCatalogTeamAppDefinitionOutlineIconHostedContent.md)
 Update media content for the navigation property hostedContent in appCatalogs
 
-### [Set-MgChatInstalledAppTeamAppByRef](Set-MgChatInstalledAppTeamAppByRef.md)
-The app that is installed.
+### [Set-MgGroupTeamChannelFileFolderContent](Set-MgGroupTeamChannelFileFolderContent.md)
+Update content for the navigation property filesFolder in groups
 
-### [Set-MgChatInstalledAppTeamAppDefinitionByRef](Set-MgChatInstalledAppTeamAppDefinitionByRef.md)
-The details of this version of the app.
+### [Set-MgGroupTeamPhotoContent](Set-MgGroupTeamPhotoContent.md)
+Update media content for the navigation property photo in groups
 
-### [Set-MgChatTabTeamAppByRef](Set-MgChatTabTeamAppByRef.md)
-The application that is linked to the tab.
-This cannot be changed after tab creation.
+### [Set-MgGroupTeamPrimaryChannelFileFolderContent](Set-MgGroupTeamPrimaryChannelFileFolderContent.md)
+Update content for the navigation property filesFolder in groups
 
-### [Set-MgTeamChannelFileFolderByRef](Set-MgTeamChannelFileFolderByRef.md)
-Metadata for the location where the channel's files are stored.
-
-### [Set-MgTeamChannelTabTeamAppByRef](Set-MgTeamChannelTabTeamAppByRef.md)
-The application that is linked to the tab.
-This cannot be changed after tab creation.
-
-### [Set-MgTeamGroupByRef](Set-MgTeamGroupByRef.md)
-Update the ref of navigation property group in teams
-
-### [Set-MgTeamInstalledAppTeamAppByRef](Set-MgTeamInstalledAppTeamAppByRef.md)
-The app that is installed.
-
-### [Set-MgTeamInstalledAppTeamAppDefinitionByRef](Set-MgTeamInstalledAppTeamAppDefinitionByRef.md)
-The details of this version of the app.
+### [Set-MgTeamChannelFileFolderContent](Set-MgTeamChannelFileFolderContent.md)
+Update content for the navigation property filesFolder in teams
 
 ### [Set-MgTeamPhotoContent](Set-MgTeamPhotoContent.md)
-The team photo.
+Update media content for the navigation property photo in teams
 
-### [Set-MgTeamPrimaryChannelFileFolderByRef](Set-MgTeamPrimaryChannelFileFolderByRef.md)
-Metadata for the location where the channel's files are stored.
+### [Set-MgTeamPrimaryChannelFileFolderContent](Set-MgTeamPrimaryChannelFileFolderContent.md)
+Update content for the navigation property filesFolder in teams
 
-### [Set-MgTeamPrimaryChannelTabTeamAppByRef](Set-MgTeamPrimaryChannelTabTeamAppByRef.md)
-The application that is linked to the tab.
-This cannot be changed after tab creation.
-
-### [Set-MgTeamTemplateByRef](Set-MgTeamTemplateByRef.md)
-The template this team was created from.
-See available templates.
-
-### [Set-MgUserTeamworkInstalledAppChatByRef](Set-MgUserTeamworkInstalledAppChatByRef.md)
-The chat between the user and Teams app.
+### [Set-MgTeamworkDeletedTeamChannelFileFolderContent](Set-MgTeamworkDeletedTeamChannelFileFolderContent.md)
+Update content for the navigation property filesFolder in teamwork
 
 ### [Start-MgTeamScheduleTimeCardBreak](Start-MgTeamScheduleTimeCardBreak.md)
 Invoke action startBreak
@@ -919,6 +1369,12 @@ Invoke action runDiagnostics
 
 ### [Stop-MgTeamScheduleTimeCardBreak](Stop-MgTeamScheduleTimeCardBreak.md)
 Invoke action endBreak
+
+### [Test-MgChatPermissionGrantProperty](Test-MgChatPermissionGrantProperty.md)
+Invoke action validateProperties
+
+### [Test-MgTeamPermissionGrantProperty](Test-MgTeamPermissionGrantProperty.md)
+Invoke action validateProperties
 
 ### [Undo-MgChatMessageReplySoftDelete](Undo-MgChatMessageReplySoftDelete.md)
 Invoke action undoSoftDelete
@@ -938,126 +1394,230 @@ Invoke action undoSoftDelete
 ### [Undo-MgTeamPrimaryChannelMessageSoftDelete](Undo-MgTeamPrimaryChannelMessageSoftDelete.md)
 Invoke action undoSoftDelete
 
+### [Undo-MgTeamworkDeletedTeamChannelMessageReplySoftDelete](Undo-MgTeamworkDeletedTeamChannelMessageReplySoftDelete.md)
+Invoke action undoSoftDelete
+
+### [Undo-MgTeamworkDeletedTeamChannelMessageSoftDelete](Undo-MgTeamworkDeletedTeamChannelMessageSoftDelete.md)
+Invoke action undoSoftDelete
+
 ### [Update-MgAppCatalogTeamApp](Update-MgAppCatalogTeamApp.md)
 Update the navigation property teamsApps in appCatalogs
 
 ### [Update-MgAppCatalogTeamAppDefinition](Update-MgAppCatalogTeamAppDefinition.md)
-The details for each version of the app.
+Update the navigation property appDefinitions in appCatalogs
 
 ### [Update-MgAppCatalogTeamAppDefinitionBot](Update-MgAppCatalogTeamAppDefinitionBot.md)
-The details of the bot specified in the Teams app manifest.
+Update the navigation property bot in appCatalogs
 
 ### [Update-MgAppCatalogTeamAppDefinitionColorIcon](Update-MgAppCatalogTeamAppDefinitionColorIcon.md)
-The color version of the Teams app's icon.
+Update the navigation property colorIcon in appCatalogs
 
 ### [Update-MgAppCatalogTeamAppDefinitionColorIconHostedContent](Update-MgAppCatalogTeamAppDefinitionColorIconHostedContent.md)
-The contents of the app icon if the icon is hosted within the Teams infrastructure.
+Update the navigation property hostedContent in appCatalogs
 
 ### [Update-MgAppCatalogTeamAppDefinitionOutlineIcon](Update-MgAppCatalogTeamAppDefinitionOutlineIcon.md)
-The outline version of the Teams app's icon.
+Update the navigation property outlineIcon in appCatalogs
 
 ### [Update-MgAppCatalogTeamAppDefinitionOutlineIconHostedContent](Update-MgAppCatalogTeamAppDefinitionOutlineIconHostedContent.md)
-The contents of the app icon if the icon is hosted within the Teams infrastructure.
+Update the navigation property hostedContent in appCatalogs
 
 ### [Update-MgChat](Update-MgChat.md)
 Update entity in chats
 
 ### [Update-MgChatInstalledApp](Update-MgChatInstalledApp.md)
-A collection of all the apps in the chat.
-Nullable.
+Invoke action upgrade
 
 ### [Update-MgChatLastMessagePreview](Update-MgChatLastMessagePreview.md)
-Preview of the last message sent in the chat.
-Null if no messages have been sent in the chat.
-Currently, only the list chats operation supports this property.
+Update the navigation property lastMessagePreview in chats
 
 ### [Update-MgChatMember](Update-MgChatMember.md)
-A collection of all the members in the chat.
-Nullable.
+Update the navigation property members in chats
 
 ### [Update-MgChatMessage](Update-MgChatMessage.md)
-A collection of all the messages in the chat.
-Nullable.
+Update the navigation property messages in chats
 
 ### [Update-MgChatMessageReply](Update-MgChatMessageReply.md)
-Replies for a specified message.
+Update the navigation property replies in chats
+
+### [Update-MgChatMessageReplyHostedContent](Update-MgChatMessageReplyHostedContent.md)
+Update the navigation property hostedContents in chats
 
 ### [Update-MgChatOperation](Update-MgChatOperation.md)
-A collection of all the Teams async operations that ran or are running on the chat.
-Nullable.
+Update the navigation property operations in chats
 
 ### [Update-MgChatPermissionGrant](Update-MgChatPermissionGrant.md)
-A collection of permissions granted to apps for the chat.
+Update the navigation property permissionGrants in chats
+
+### [Update-MgChatPinnedMessage](Update-MgChatPinnedMessage.md)
+Update the navigation property pinnedMessages in chats
 
 ### [Update-MgChatTab](Update-MgChatTab.md)
-A collection of all the tabs in the chat.
-Nullable.
+Update the navigation property tabs in chats
 
 ### [Update-MgGroupTeam](Update-MgGroupTeam.md)
 Update the navigation property team in groups
 
+### [Update-MgGroupTeamChannel](Update-MgGroupTeamChannel.md)
+Update the navigation property channels in groups
+
+### [Update-MgGroupTeamChannelMember](Update-MgGroupTeamChannelMember.md)
+Update the navigation property members in groups
+
+### [Update-MgGroupTeamChannelMessage](Update-MgGroupTeamChannelMessage.md)
+Update the navigation property messages in groups
+
+### [Update-MgGroupTeamChannelMessageHostedContent](Update-MgGroupTeamChannelMessageHostedContent.md)
+Update the navigation property hostedContents in groups
+
+### [Update-MgGroupTeamChannelMessageReply](Update-MgGroupTeamChannelMessageReply.md)
+Update the navigation property replies in groups
+
+### [Update-MgGroupTeamChannelMessageReplyHostedContent](Update-MgGroupTeamChannelMessageReplyHostedContent.md)
+Update the navigation property hostedContents in groups
+
+### [Update-MgGroupTeamChannelSharedWithTeam](Update-MgGroupTeamChannelSharedWithTeam.md)
+Update the navigation property sharedWithTeams in groups
+
+### [Update-MgGroupTeamChannelTab](Update-MgGroupTeamChannelTab.md)
+Update the navigation property tabs in groups
+
+### [Update-MgGroupTeamMember](Update-MgGroupTeamMember.md)
+Update the navigation property members in groups
+
+### [Update-MgGroupTeamOperation](Update-MgGroupTeamOperation.md)
+Update the navigation property operations in groups
+
+### [Update-MgGroupTeamPermissionGrant](Update-MgGroupTeamPermissionGrant.md)
+Update the navigation property permissionGrants in groups
+
+### [Update-MgGroupTeamPhoto](Update-MgGroupTeamPhoto.md)
+Update the navigation property photo in groups
+
+### [Update-MgGroupTeamPrimaryChannel](Update-MgGroupTeamPrimaryChannel.md)
+Update the navigation property primaryChannel in groups
+
+### [Update-MgGroupTeamPrimaryChannelMember](Update-MgGroupTeamPrimaryChannelMember.md)
+Update the navigation property members in groups
+
+### [Update-MgGroupTeamPrimaryChannelMessage](Update-MgGroupTeamPrimaryChannelMessage.md)
+Update the navigation property messages in groups
+
+### [Update-MgGroupTeamPrimaryChannelMessageHostedContent](Update-MgGroupTeamPrimaryChannelMessageHostedContent.md)
+Update the navigation property hostedContents in groups
+
+### [Update-MgGroupTeamPrimaryChannelMessageReply](Update-MgGroupTeamPrimaryChannelMessageReply.md)
+Update the navigation property replies in groups
+
+### [Update-MgGroupTeamPrimaryChannelMessageReplyHostedContent](Update-MgGroupTeamPrimaryChannelMessageReplyHostedContent.md)
+Update the navigation property hostedContents in groups
+
+### [Update-MgGroupTeamPrimaryChannelSharedWithTeam](Update-MgGroupTeamPrimaryChannelSharedWithTeam.md)
+Update the navigation property sharedWithTeams in groups
+
+### [Update-MgGroupTeamPrimaryChannelTab](Update-MgGroupTeamPrimaryChannelTab.md)
+Update the navigation property tabs in groups
+
+### [Update-MgGroupTeamSchedule](Update-MgGroupTeamSchedule.md)
+Update the navigation property schedule in groups
+
+### [Update-MgGroupTeamScheduleOfferShiftRequest](Update-MgGroupTeamScheduleOfferShiftRequest.md)
+Update the navigation property offerShiftRequests in groups
+
+### [Update-MgGroupTeamScheduleOpenShift](Update-MgGroupTeamScheduleOpenShift.md)
+Update the navigation property openShifts in groups
+
+### [Update-MgGroupTeamScheduleOpenShiftChangeRequest](Update-MgGroupTeamScheduleOpenShiftChangeRequest.md)
+Update the navigation property openShiftChangeRequests in groups
+
+### [Update-MgGroupTeamScheduleSchedulingGroup](Update-MgGroupTeamScheduleSchedulingGroup.md)
+Update the navigation property schedulingGroups in groups
+
+### [Update-MgGroupTeamScheduleShift](Update-MgGroupTeamScheduleShift.md)
+Update the navigation property shifts in groups
+
+### [Update-MgGroupTeamScheduleSwapShiftChangeRequest](Update-MgGroupTeamScheduleSwapShiftChangeRequest.md)
+Update the navigation property swapShiftsChangeRequests in groups
+
+### [Update-MgGroupTeamScheduleTimeCard](Update-MgGroupTeamScheduleTimeCard.md)
+Update the navigation property timeCards in groups
+
+### [Update-MgGroupTeamScheduleTimeOff](Update-MgGroupTeamScheduleTimeOff.md)
+Update the navigation property timesOff in groups
+
+### [Update-MgGroupTeamScheduleTimeOffReason](Update-MgGroupTeamScheduleTimeOffReason.md)
+Update the navigation property timeOffReasons in groups
+
+### [Update-MgGroupTeamScheduleTimeOffRequest](Update-MgGroupTeamScheduleTimeOffRequest.md)
+Update the navigation property timeOffRequests in groups
+
+### [Update-MgGroupTeamTag](Update-MgGroupTeamTag.md)
+Update the navigation property tags in groups
+
+### [Update-MgGroupTeamTagMember](Update-MgGroupTeamTagMember.md)
+Update the navigation property members in groups
+
 ### [Update-MgTeam](Update-MgTeam.md)
-Update entity in teams
+Update team
 
 ### [Update-MgTeamChannel](Update-MgTeamChannel.md)
-The collection of channels and messages associated with the team.
+Update the navigation property channels in teams
 
 ### [Update-MgTeamChannelMember](Update-MgTeamChannelMember.md)
-A collection of membership records associated with the channel.
+Update the navigation property members in teams
 
 ### [Update-MgTeamChannelMessage](Update-MgTeamChannelMessage.md)
-A collection of all the messages in the channel.
-A navigation property.
-Nullable.
+Update the navigation property messages in teams
 
 ### [Update-MgTeamChannelMessageReply](Update-MgTeamChannelMessageReply.md)
-Replies for a specified message.
+Update the navigation property replies in teams
 
-### [Update-MgTeamChannelShared](Update-MgTeamChannelShared.md)
+### [Update-MgTeamChannelMessageReplyHostedContent](Update-MgTeamChannelMessageReplyHostedContent.md)
+Update the navigation property hostedContents in teams
+
+### [Update-MgTeamChannelSharedWithTeam](Update-MgTeamChannelSharedWithTeam.md)
 Update the navigation property sharedWithTeams in teams
 
 ### [Update-MgTeamChannelTab](Update-MgTeamChannelTab.md)
-A collection of all the tabs in the channel.
-A navigation property.
+Update the navigation property tabs in teams
 
 ### [Update-MgTeamInstalledApp](Update-MgTeamInstalledApp.md)
-The apps installed in this team.
+Invoke action upgrade
 
 ### [Update-MgTeamMember](Update-MgTeamMember.md)
-Members and owners of the team.
+Update the navigation property members in teams
 
 ### [Update-MgTeamOperation](Update-MgTeamOperation.md)
-The async operations that ran or are running on this team.
+Update the navigation property operations in teams
 
 ### [Update-MgTeamPermissionGrant](Update-MgTeamPermissionGrant.md)
-A collection of permissions granted to apps to access the team.
+Update the navigation property permissionGrants in teams
 
 ### [Update-MgTeamPhoto](Update-MgTeamPhoto.md)
-The team photo.
+Update the navigation property photo in teams
 
 ### [Update-MgTeamPrimaryChannel](Update-MgTeamPrimaryChannel.md)
-The general channel for the team.
+Update the navigation property primaryChannel in teams
 
 ### [Update-MgTeamPrimaryChannelMember](Update-MgTeamPrimaryChannelMember.md)
-A collection of membership records associated with the channel.
+Update the navigation property members in teams
 
 ### [Update-MgTeamPrimaryChannelMessage](Update-MgTeamPrimaryChannelMessage.md)
-A collection of all the messages in the channel.
-A navigation property.
-Nullable.
+Update the navigation property messages in teams
 
 ### [Update-MgTeamPrimaryChannelMessageReply](Update-MgTeamPrimaryChannelMessageReply.md)
-Replies for a specified message.
+Update the navigation property replies in teams
 
-### [Update-MgTeamPrimaryChannelShared](Update-MgTeamPrimaryChannelShared.md)
+### [Update-MgTeamPrimaryChannelMessageReplyHostedContent](Update-MgTeamPrimaryChannelMessageReplyHostedContent.md)
+Update the navigation property hostedContents in teams
+
+### [Update-MgTeamPrimaryChannelSharedWithTeam](Update-MgTeamPrimaryChannelSharedWithTeam.md)
 Update the navigation property sharedWithTeams in teams
 
 ### [Update-MgTeamPrimaryChannelTab](Update-MgTeamPrimaryChannelTab.md)
-A collection of all the tabs in the channel.
-A navigation property.
+Update the navigation property tabs in teams
 
 ### [Update-MgTeamSchedule](Update-MgTeamSchedule.md)
-The schedule of shifts for this team.
+Update the navigation property schedule in teams
 
 ### [Update-MgTeamScheduleOfferShiftRequest](Update-MgTeamScheduleOfferShiftRequest.md)
 Update the navigation property offerShiftRequests in teams
@@ -1069,10 +1629,10 @@ Update the navigation property openShifts in teams
 Update the navigation property openShiftChangeRequests in teams
 
 ### [Update-MgTeamScheduleSchedulingGroup](Update-MgTeamScheduleSchedulingGroup.md)
-The logical grouping of users in the schedule (usually by role).
+Update the navigation property schedulingGroups in teams
 
 ### [Update-MgTeamScheduleShift](Update-MgTeamScheduleShift.md)
-The shifts in the schedule.
+Update the navigation property shifts in teams
 
 ### [Update-MgTeamScheduleSwapShiftChangeRequest](Update-MgTeamScheduleSwapShiftChangeRequest.md)
 Update the navigation property swapShiftsChangeRequests in teams
@@ -1081,55 +1641,110 @@ Update the navigation property swapShiftsChangeRequests in teams
 Update the navigation property timeCards in teams
 
 ### [Update-MgTeamScheduleTimeOff](Update-MgTeamScheduleTimeOff.md)
-The instances of times off in the schedule.
+Update the navigation property timesOff in teams
 
 ### [Update-MgTeamScheduleTimeOffReason](Update-MgTeamScheduleTimeOffReason.md)
-The set of reasons for a time off in the schedule.
+Update the navigation property timeOffReasons in teams
 
 ### [Update-MgTeamScheduleTimeOffRequest](Update-MgTeamScheduleTimeOffRequest.md)
 Update the navigation property timeOffRequests in teams
 
 ### [Update-MgTeamTag](Update-MgTeamTag.md)
-The tags associated with the team.
+Update the navigation property tags in teams
 
 ### [Update-MgTeamTagMember](Update-MgTeamTagMember.md)
-Users assigned to the tag.
+Update the navigation property members in teams
 
 ### [Update-MgTeamwork](Update-MgTeamwork.md)
 Update teamwork
 
+### [Update-MgTeamworkDeletedTeam](Update-MgTeamworkDeletedTeam.md)
+Update the navigation property deletedTeams in teamwork
+
+### [Update-MgTeamworkDeletedTeamChannel](Update-MgTeamworkDeletedTeamChannel.md)
+Update the navigation property channels in teamwork
+
+### [Update-MgTeamworkDeletedTeamChannelMember](Update-MgTeamworkDeletedTeamChannelMember.md)
+Update the navigation property members in teamwork
+
+### [Update-MgTeamworkDeletedTeamChannelMessage](Update-MgTeamworkDeletedTeamChannelMessage.md)
+Update the navigation property messages in teamwork
+
+### [Update-MgTeamworkDeletedTeamChannelMessageHostedContent](Update-MgTeamworkDeletedTeamChannelMessageHostedContent.md)
+Update the navigation property hostedContents in teamwork
+
+### [Update-MgTeamworkDeletedTeamChannelMessageReply](Update-MgTeamworkDeletedTeamChannelMessageReply.md)
+Update the navigation property replies in teamwork
+
+### [Update-MgTeamworkDeletedTeamChannelMessageReplyHostedContent](Update-MgTeamworkDeletedTeamChannelMessageReplyHostedContent.md)
+Update the navigation property hostedContents in teamwork
+
+### [Update-MgTeamworkDeletedTeamChannelSharedWithTeam](Update-MgTeamworkDeletedTeamChannelSharedWithTeam.md)
+Update the navigation property sharedWithTeams in teamwork
+
+### [Update-MgTeamworkDeletedTeamChannelTab](Update-MgTeamworkDeletedTeamChannelTab.md)
+Update the navigation property tabs in teamwork
+
 ### [Update-MgTeamworkDevice](Update-MgTeamworkDevice.md)
-The Teams devices provisioned for the tenant.
+Update the navigation property devices in teamwork
 
 ### [Update-MgTeamworkDeviceActivity](Update-MgTeamworkDeviceActivity.md)
-The activity properties that change based on the device usage.
+Update the navigation property activity in teamwork
 
 ### [Update-MgTeamworkDeviceConfiguration](Update-MgTeamworkDeviceConfiguration.md)
-The configuration properties of the device.
+Update the navigation property configuration in teamwork
 
 ### [Update-MgTeamworkDeviceHealth](Update-MgTeamworkDeviceHealth.md)
-The health properties of the device.
+Update the navigation property health in teamwork
 
 ### [Update-MgTeamworkDeviceOperation](Update-MgTeamworkDeviceOperation.md)
-The async operations on the device.
+Update the navigation property operations in teamwork
 
 ### [Update-MgTeamworkDeviceSoftware](Update-MgTeamworkDeviceSoftware.md)
 Invoke action updateSoftware
 
+### [Update-MgTeamworkTeamAppSetting](Update-MgTeamworkTeamAppSetting.md)
+Update the navigation property teamsAppSettings in teamwork
+
 ### [Update-MgTeamworkWorkforceIntegration](Update-MgTeamworkWorkforceIntegration.md)
-A workforce integration with shifts.
+Update the navigation property workforceIntegrations in teamwork
 
 ### [Update-MgUserChat](Update-MgUserChat.md)
 Update the navigation property chats in users
 
+### [Update-MgUserChatLastMessagePreview](Update-MgUserChatLastMessagePreview.md)
+Update the navigation property lastMessagePreview in users
+
+### [Update-MgUserChatMember](Update-MgUserChatMember.md)
+Update the navigation property members in users
+
+### [Update-MgUserChatMessage](Update-MgUserChatMessage.md)
+Update the navigation property messages in users
+
+### [Update-MgUserChatMessageHostedContent](Update-MgUserChatMessageHostedContent.md)
+Update the navigation property hostedContents in users
+
+### [Update-MgUserChatMessageReply](Update-MgUserChatMessageReply.md)
+Update the navigation property replies in users
+
+### [Update-MgUserChatMessageReplyHostedContent](Update-MgUserChatMessageReplyHostedContent.md)
+Update the navigation property hostedContents in users
+
+### [Update-MgUserChatOperation](Update-MgUserChatOperation.md)
+Update the navigation property operations in users
+
+### [Update-MgUserChatPermissionGrant](Update-MgUserChatPermissionGrant.md)
+Update the navigation property permissionGrants in users
+
+### [Update-MgUserChatPinnedMessage](Update-MgUserChatPinnedMessage.md)
+Update the navigation property pinnedMessages in users
+
+### [Update-MgUserChatTab](Update-MgUserChatTab.md)
+Update the navigation property tabs in users
+
 ### [Update-MgUserTeamwork](Update-MgUserTeamwork.md)
-A container for Microsoft Teams features available for the user.
-Read-only.
-Nullable.
+Update the navigation property teamwork in users
 
 ### [Update-MgUserTeamworkAssociatedTeam](Update-MgUserTeamworkAssociatedTeam.md)
 Update the navigation property associatedTeams in users
-
-### [Update-MgUserTeamworkInstalledApp](Update-MgUserTeamworkInstalledApp.md)
-The apps installed in the personal scope of this user.
 

@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Sites
-Module Guid: 87cf0927-d82b-456a-9024-6c49919c9b62
+Module Guid: fb4d114c-123f-49f0-9ccc-2004aa5ec6d2
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.sites
 Help Version: 1.0.0.0
 Locale: en-US
@@ -11,22 +11,10 @@ Locale: en-US
 Microsoft Graph PowerShell Cmdlets
 
 ## Microsoft.Graph.Sites Cmdlets
-### [Add-MgSiteContentTypeBaseTypeCopy](Add-MgSiteContentTypeBaseTypeCopy.md)
-Invoke action addCopy
-
-### [Add-MgSiteContentTypeBaseTypeCopyFromContentTypeHub](Add-MgSiteContentTypeBaseTypeCopyFromContentTypeHub.md)
-Invoke action addCopyFromContentTypeHub
-
 ### [Add-MgSiteContentTypeCopy](Add-MgSiteContentTypeCopy.md)
 Invoke action addCopy
 
 ### [Add-MgSiteContentTypeCopyFromContentTypeHub](Add-MgSiteContentTypeCopyFromContentTypeHub.md)
-Invoke action addCopyFromContentTypeHub
-
-### [Add-MgSiteListContentTypeBaseTypeCopy](Add-MgSiteListContentTypeBaseTypeCopy.md)
-Invoke action addCopy
-
-### [Add-MgSiteListContentTypeBaseTypeCopyFromContentTypeHub](Add-MgSiteListContentTypeBaseTypeCopyFromContentTypeHub.md)
 Invoke action addCopyFromContentTypeHub
 
 ### [Add-MgSiteListContentTypeCopy](Add-MgSiteListContentTypeCopy.md)
@@ -35,13 +23,7 @@ Invoke action addCopy
 ### [Add-MgSiteListContentTypeCopyFromContentTypeHub](Add-MgSiteListContentTypeCopyFromContentTypeHub.md)
 Invoke action addCopyFromContentTypeHub
 
-### [Copy-MgSiteContentTypeBaseToDefaultContentLocation](Copy-MgSiteContentTypeBaseToDefaultContentLocation.md)
-Invoke action copyToDefaultContentLocation
-
 ### [Copy-MgSiteContentTypeToDefaultContentLocation](Copy-MgSiteContentTypeToDefaultContentLocation.md)
-Invoke action copyToDefaultContentLocation
-
-### [Copy-MgSiteListContentTypeBaseToDefaultContentLocation](Copy-MgSiteListContentTypeBaseToDefaultContentLocation.md)
 Invoke action copyToDefaultContentLocation
 
 ### [Copy-MgSiteListContentTypeToDefaultContentLocation](Copy-MgSiteListContentTypeToDefaultContentLocation.md)
@@ -60,215 +42,322 @@ Invoke action copyToNotebook
 Invoke action copyToSectionGroup
 
 ### [Get-MgGroupSite](Get-MgGroupSite.md)
-The list of SharePoint sites in this group.
-Access the default site with /sites/root.
+Get sites from groups
+
+### [Get-MgGroupSiteAnalytic](Get-MgGroupSiteAnalytic.md)
+Get analytics from groups
+
+### [Get-MgGroupSiteColumn](Get-MgGroupSiteColumn.md)
+Get columns from groups
+
+### [Get-MgGroupSiteContentType](Get-MgGroupSiteContentType.md)
+Get contentTypes from groups
+
+### [Get-MgGroupSiteContentTypeColumn](Get-MgGroupSiteContentTypeColumn.md)
+Get columns from groups
+
+### [Get-MgGroupSiteContentTypeColumnLink](Get-MgGroupSiteContentTypeColumnLink.md)
+Get columnLinks from groups
+
+### [Get-MgGroupSiteDrive](Get-MgGroupSiteDrive.md)
+Get drive from groups
+
+### [Get-MgGroupSiteExternalColumn](Get-MgGroupSiteExternalColumn.md)
+Get externalColumns from groups
+
+### [Get-MgGroupSiteItem](Get-MgGroupSiteItem.md)
+Get items from groups
+
+### [Get-MgGroupSiteList](Get-MgGroupSiteList.md)
+Get lists from groups
+
+### [Get-MgGroupSiteListActivity](Get-MgGroupSiteListActivity.md)
+Get activities from groups
+
+### [Get-MgGroupSiteListColumn](Get-MgGroupSiteListColumn.md)
+Get columns from groups
+
+### [Get-MgGroupSiteListContentType](Get-MgGroupSiteListContentType.md)
+Get contentTypes from groups
+
+### [Get-MgGroupSiteListContentTypeBase](Get-MgGroupSiteListContentTypeBase.md)
+Get base from groups
+
+### [Get-MgGroupSiteListContentTypeBaseType](Get-MgGroupSiteListContentTypeBaseType.md)
+Get baseTypes from groups
+
+### [Get-MgGroupSiteListContentTypeColumn](Get-MgGroupSiteListContentTypeColumn.md)
+Get columns from groups
+
+### [Get-MgGroupSiteListContentTypeColumnLink](Get-MgGroupSiteListContentTypeColumnLink.md)
+Get columnLinks from groups
+
+### [Get-MgGroupSiteListContentTypeColumnPosition](Get-MgGroupSiteListContentTypeColumnPosition.md)
+Get columnPositions from groups
+
+### [Get-MgGroupSiteListDrive](Get-MgGroupSiteListDrive.md)
+Get drive from groups
+
+### [Get-MgGroupSiteListItem](Get-MgGroupSiteListItem.md)
+Get items from groups
+
+### [Get-MgGroupSiteListItemActivity](Get-MgGroupSiteListItemActivity.md)
+Get activities from groups
+
+### [Get-MgGroupSiteListItemAnalytic](Get-MgGroupSiteListItemAnalytic.md)
+Get analytics from groups
+
+### [Get-MgGroupSiteListItemDocumentSetVersion](Get-MgGroupSiteListItemDocumentSetVersion.md)
+Get documentSetVersions from groups
+
+### [Get-MgGroupSiteListItemDriveItem](Get-MgGroupSiteListItemDriveItem.md)
+Get driveItem from groups
+
+### [Get-MgGroupSiteListItemDriveItemContent](Get-MgGroupSiteListItemDriveItemContent.md)
+Get content for the navigation property driveItem from groups
+
+### [Get-MgGroupSiteListItemField](Get-MgGroupSiteListItemField.md)
+Get fields from groups
+
+### [Get-MgGroupSiteListItemVersion](Get-MgGroupSiteListItemVersion.md)
+Get versions from groups
+
+### [Get-MgGroupSiteListItemVersionField](Get-MgGroupSiteListItemVersionField.md)
+Get fields from groups
+
+### [Get-MgGroupSiteListOperation](Get-MgGroupSiteListOperation.md)
+Get operations from groups
+
+### [Get-MgGroupSiteListSubscription](Get-MgGroupSiteListSubscription.md)
+Get subscriptions from groups
+
+### [Get-MgGroupSiteOperation](Get-MgGroupSiteOperation.md)
+Get operations from groups
+
+### [Get-MgGroupSitePage](Get-MgGroupSitePage.md)
+Get pages from groups
+
+### [Get-MgGroupSitePermission](Get-MgGroupSitePermission.md)
+Get permissions from groups
+
+### [Get-MgGroupSiteTermStore](Get-MgGroupSiteTermStore.md)
+Get termStore from groups
+
+### [Get-MgGroupSiteTermStoreGroup](Get-MgGroupSiteTermStoreGroup.md)
+Get groups from groups
+
+### [Get-MgGroupSiteTermStoreGroupSet](Get-MgGroupSiteTermStoreGroupSet.md)
+Get sets from groups
+
+### [Get-MgGroupSiteTermStoreGroupSetChild](Get-MgGroupSiteTermStoreGroupSetChild.md)
+Get children from groups
+
+### [Get-MgGroupSiteTermStoreGroupSetRelation](Get-MgGroupSiteTermStoreGroupSetRelation.md)
+Get relations from groups
+
+### [Get-MgGroupSiteTermStoreGroupSetTerm](Get-MgGroupSiteTermStoreGroupSetTerm.md)
+Get terms from groups
+
+### [Get-MgGroupSiteTermStoreGroupSetTermChild](Get-MgGroupSiteTermStoreGroupSetTermChild.md)
+Get children from groups
+
+### [Get-MgGroupSiteTermStoreGroupSetTermRelation](Get-MgGroupSiteTermStoreGroupSetTermRelation.md)
+Get relations from groups
+
+### [Get-MgGroupSiteTermStoreSet](Get-MgGroupSiteTermStoreSet.md)
+Get sets from groups
+
+### [Get-MgGroupSiteTermStoreSetChild](Get-MgGroupSiteTermStoreSetChild.md)
+Get children from groups
+
+### [Get-MgGroupSiteTermStoreSetRelation](Get-MgGroupSiteTermStoreSetRelation.md)
+Get relations from groups
+
+### [Get-MgGroupSiteTermStoreSetTerm](Get-MgGroupSiteTermStoreSetTerm.md)
+Get terms from groups
+
+### [Get-MgGroupSiteTermStoreSetTermChild](Get-MgGroupSiteTermStoreSetTermChild.md)
+Get children from groups
+
+### [Get-MgGroupSiteTermStoreSetTermRelation](Get-MgGroupSiteTermStoreSetTermRelation.md)
+Get relations from groups
+
+### [Get-MgGroupSubSite](Get-MgGroupSubSite.md)
+Get sites from groups
 
 ### [Get-MgSite](Get-MgSite.md)
-Get entity from sites by key
+Get a site resource
 
 ### [Get-MgSiteActivityByInterval](Get-MgSiteActivityByInterval.md)
 Invoke function getActivitiesByInterval
 
 ### [Get-MgSiteAnalytic](Get-MgSiteAnalytic.md)
-Analytics about the view activities that took place in this site.
+Get analytics from sites
 
-### [Get-MgSiteAnalyticByRef](Get-MgSiteAnalyticByRef.md)
-Analytics about the view activities that took place in this site.
-
-### [Get-MgSiteApplicableContentType](Get-MgSiteApplicableContentType.md)
+### [Get-MgSiteApplicableContentTypeForList](Get-MgSiteApplicableContentTypeForList.md)
 Invoke function getApplicableContentTypesForList
 
 ### [Get-MgSiteByPath](Get-MgSiteByPath.md)
 Invoke function getByPath
 
 ### [Get-MgSiteColumn](Get-MgSiteColumn.md)
-The collection of column definitions reusable across lists under this site.
-
-### [Get-MgSiteColumnSourceColumn](Get-MgSiteColumnSourceColumn.md)
-The source column for the content type column.
-
-### [Get-MgSiteColumnSourceColumnByRef](Get-MgSiteColumnSourceColumnByRef.md)
-The source column for the content type column.
+Get columns from sites
 
 ### [Get-MgSiteContentType](Get-MgSiteContentType.md)
-The collection of content types defined for this site.
-
-### [Get-MgSiteContentTypeBase](Get-MgSiteContentTypeBase.md)
-Parent contentType from which this content type is derived.
-
-### [Get-MgSiteContentTypeBaseByRef](Get-MgSiteContentTypeBaseByRef.md)
-Parent contentType from which this content type is derived.
-
-### [Get-MgSiteContentTypeBaseType](Get-MgSiteContentTypeBaseType.md)
-The collection of content types that are ancestors of this content type.
-
-### [Get-MgSiteContentTypeBaseTypeByRef](Get-MgSiteContentTypeBaseTypeByRef.md)
-The collection of content types that are ancestors of this content type.
-
-### [Get-MgSiteContentTypeBaseTypeCompatibleHubContentType](Get-MgSiteContentTypeBaseTypeCompatibleHubContentType.md)
-Invoke function getCompatibleHubContentTypes
+Get contentTypes from sites
 
 ### [Get-MgSiteContentTypeColumn](Get-MgSiteContentTypeColumn.md)
-The collection of column definitions for this contentType.
+Get columns from sites
 
 ### [Get-MgSiteContentTypeColumnLink](Get-MgSiteContentTypeColumnLink.md)
-The collection of columns that are required by this content type.
-
-### [Get-MgSiteContentTypeColumnPosition](Get-MgSiteContentTypeColumnPosition.md)
-Column order information in a content type.
-
-### [Get-MgSiteContentTypeColumnPositionByRef](Get-MgSiteContentTypeColumnPositionByRef.md)
-Column order information in a content type.
-
-### [Get-MgSiteContentTypeColumnSourceColumn](Get-MgSiteContentTypeColumnSourceColumn.md)
-The source column for the content type column.
-
-### [Get-MgSiteContentTypeColumnSourceColumnByRef](Get-MgSiteContentTypeColumnSourceColumnByRef.md)
-The source column for the content type column.
+Get columnLinks from sites
 
 ### [Get-MgSiteContentTypeCompatibleHubContentType](Get-MgSiteContentTypeCompatibleHubContentType.md)
 Invoke function getCompatibleHubContentTypes
+
+### [Get-MgSiteDefaultDrive](Get-MgSiteDefaultDrive.md)
+Get drive from sites
 
 ### [Get-MgSiteDelta](Get-MgSiteDelta.md)
 Invoke function delta
 
 ### [Get-MgSiteDrive](Get-MgSiteDrive.md)
-The default drive (document library) for this site.
-
-### [Get-MgSiteDriveByRef](Get-MgSiteDriveByRef.md)
-The default drive (document library) for this site.
+Get drives from sites
 
 ### [Get-MgSiteExternalColumn](Get-MgSiteExternalColumn.md)
-The collection of column definitions available in the site that are referenced from the sites in the parent hierarchy of the current site.
-
-### [Get-MgSiteExternalColumnByRef](Get-MgSiteExternalColumnByRef.md)
-The collection of column definitions available in the site that are referenced from the sites in the parent hierarchy of the current site.
+Get externalColumns from sites
 
 ### [Get-MgSiteList](Get-MgSiteList.md)
-The collection of lists under this site.
+Get lists from sites
 
 ### [Get-MgSiteListActivity](Get-MgSiteListActivity.md)
-The recent activities that took place within this list.
+Get activities from sites
 
 ### [Get-MgSiteListColumn](Get-MgSiteListColumn.md)
-The collection of field definitions for this list.
-
-### [Get-MgSiteListColumnSourceColumn](Get-MgSiteListColumnSourceColumn.md)
-The source column for the content type column.
-
-### [Get-MgSiteListColumnSourceColumnByRef](Get-MgSiteListColumnSourceColumnByRef.md)
-The source column for the content type column.
+Get columns from sites
 
 ### [Get-MgSiteListContentType](Get-MgSiteListContentType.md)
-The collection of content types present in this list.
+Get contentTypes from sites
 
 ### [Get-MgSiteListContentTypeBase](Get-MgSiteListContentTypeBase.md)
-Parent contentType from which this content type is derived.
-
-### [Get-MgSiteListContentTypeBaseByRef](Get-MgSiteListContentTypeBaseByRef.md)
-Parent contentType from which this content type is derived.
+Get base from sites
 
 ### [Get-MgSiteListContentTypeBaseType](Get-MgSiteListContentTypeBaseType.md)
-The collection of content types that are ancestors of this content type.
-
-### [Get-MgSiteListContentTypeBaseTypeByRef](Get-MgSiteListContentTypeBaseTypeByRef.md)
-The collection of content types that are ancestors of this content type.
-
-### [Get-MgSiteListContentTypeBaseTypeCompatibleHubContentType](Get-MgSiteListContentTypeBaseTypeCompatibleHubContentType.md)
-Invoke function getCompatibleHubContentTypes
+Get baseTypes from sites
 
 ### [Get-MgSiteListContentTypeColumn](Get-MgSiteListContentTypeColumn.md)
-The collection of column definitions for this contentType.
+Get columns from sites
 
 ### [Get-MgSiteListContentTypeColumnLink](Get-MgSiteListContentTypeColumnLink.md)
-The collection of columns that are required by this content type.
+Get columnLinks from sites
 
 ### [Get-MgSiteListContentTypeColumnPosition](Get-MgSiteListContentTypeColumnPosition.md)
-Column order information in a content type.
-
-### [Get-MgSiteListContentTypeColumnPositionByRef](Get-MgSiteListContentTypeColumnPositionByRef.md)
-Column order information in a content type.
-
-### [Get-MgSiteListContentTypeColumnSourceColumn](Get-MgSiteListContentTypeColumnSourceColumn.md)
-The source column for the content type column.
-
-### [Get-MgSiteListContentTypeColumnSourceColumnByRef](Get-MgSiteListContentTypeColumnSourceColumnByRef.md)
-The source column for the content type column.
+Get columnPositions from sites
 
 ### [Get-MgSiteListContentTypeCompatibleHubContentType](Get-MgSiteListContentTypeCompatibleHubContentType.md)
 Invoke function getCompatibleHubContentTypes
 
 ### [Get-MgSiteListDrive](Get-MgSiteListDrive.md)
-Only present on document libraries.
-Allows access to the list as a [drive][] resource with [driveItems][driveItem].
-
-### [Get-MgSiteListDriveByRef](Get-MgSiteListDriveByRef.md)
-Only present on document libraries.
-Allows access to the list as a [drive][] resource with [driveItems][driveItem].
+Get drive from sites
 
 ### [Get-MgSiteListItem](Get-MgSiteListItem.md)
-All items contained in the list.
+Get items from sites
+
+### [Get-MgSiteListItemActivity](Get-MgSiteListItemActivity.md)
+Get activities from sites
 
 ### [Get-MgSiteListItemActivityByInterval](Get-MgSiteListItemActivityByInterval.md)
 Invoke function getActivitiesByInterval
 
 ### [Get-MgSiteListItemAnalytic](Get-MgSiteListItemAnalytic.md)
-Analytics about the view activities that took place on this item.
-
-### [Get-MgSiteListItemAnalyticByRef](Get-MgSiteListItemAnalyticByRef.md)
-Analytics about the view activities that took place on this item.
+Get analytics from sites
 
 ### [Get-MgSiteListItemDelta](Get-MgSiteListItemDelta.md)
 Invoke function delta
 
-### [Get-MgSiteListItemDriveItem](Get-MgSiteListItemDriveItem.md)
-For document libraries, the driveItem relationship exposes the listItem as a [driveItem][]
+### [Get-MgSiteListItemDocumentSetVersion](Get-MgSiteListItemDocumentSetVersion.md)
+Get documentSetVersions from sites
 
-### [Get-MgSiteListItemDriveItemByRef](Get-MgSiteListItemDriveItemByRef.md)
-For document libraries, the driveItem relationship exposes the listItem as a [driveItem][]
+### [Get-MgSiteListItemDriveItem](Get-MgSiteListItemDriveItem.md)
+Get driveItem from sites
+
+### [Get-MgSiteListItemDriveItemContent](Get-MgSiteListItemDriveItemContent.md)
+Get content for the navigation property driveItem from sites
 
 ### [Get-MgSiteListItemField](Get-MgSiteListItemField.md)
-The values of the columns set on this list item.
+Get fields from sites
 
 ### [Get-MgSiteListItemVersion](Get-MgSiteListItemVersion.md)
-The list of previous versions of the list item.
+Get versions from sites
 
 ### [Get-MgSiteListItemVersionField](Get-MgSiteListItemVersionField.md)
-A collection of the fields and values for this version of the list item.
+Get fields from sites
 
 ### [Get-MgSiteListOperation](Get-MgSiteListOperation.md)
-The collection of long running operations for the list.
+Get operations from sites
 
 ### [Get-MgSiteListSubscription](Get-MgSiteListSubscription.md)
-The set of subscriptions on the list.
+Get subscriptions from sites
 
 ### [Get-MgSiteOnenoteNotebookFromWebUrl](Get-MgSiteOnenoteNotebookFromWebUrl.md)
 Invoke action getNotebookFromWebUrl
 
 ### [Get-MgSitePage](Get-MgSitePage.md)
-The collection of pages in the SitePages list in this site.
+Get pages from sites
 
 ### [Get-MgSitePermission](Get-MgSitePermission.md)
-The permissions associated with the site.
-Nullable.
+Get permissions from sites
 
 ### [Get-MgSiteRecentNotebook](Get-MgSiteRecentNotebook.md)
 Invoke function getRecentNotebooks
 
 ### [Get-MgSiteTermStore](Get-MgSiteTermStore.md)
-The default termStore under this site.
+Get termStore from sites
+
+### [Get-MgSiteTermStoreGroup](Get-MgSiteTermStoreGroup.md)
+Get groups from sites
+
+### [Get-MgSiteTermStoreGroupSet](Get-MgSiteTermStoreGroupSet.md)
+Get sets from sites
+
+### [Get-MgSiteTermStoreGroupSetChild](Get-MgSiteTermStoreGroupSetChild.md)
+Get children from sites
+
+### [Get-MgSiteTermStoreGroupSetRelation](Get-MgSiteTermStoreGroupSetRelation.md)
+Get relations from sites
+
+### [Get-MgSiteTermStoreGroupSetTerm](Get-MgSiteTermStoreGroupSetTerm.md)
+Get terms from sites
+
+### [Get-MgSiteTermStoreGroupSetTermChild](Get-MgSiteTermStoreGroupSetTermChild.md)
+Get children from sites
+
+### [Get-MgSiteTermStoreGroupSetTermRelation](Get-MgSiteTermStoreGroupSetTermRelation.md)
+Get relations from sites
+
+### [Get-MgSiteTermStoreSet](Get-MgSiteTermStoreSet.md)
+Get sets from sites
+
+### [Get-MgSiteTermStoreSetChild](Get-MgSiteTermStoreSetChild.md)
+Get children from sites
+
+### [Get-MgSiteTermStoreSetRelation](Get-MgSiteTermStoreSetRelation.md)
+Get relations from sites
+
+### [Get-MgSiteTermStoreSetTerm](Get-MgSiteTermStoreSetTerm.md)
+Get terms from sites
+
+### [Get-MgSiteTermStoreSetTermChild](Get-MgSiteTermStoreSetTermChild.md)
+Get children from sites
+
+### [Get-MgSiteTermStoreSetTermRelation](Get-MgSiteTermStoreSetTermRelation.md)
+Get relations from sites
 
 ### [Get-MgSubSite](Get-MgSubSite.md)
-The collection of the sub-sites under this site.
-
-### [Get-MgSubSiteByRef](Get-MgSubSiteByRef.md)
-The collection of the sub-sites under this site.
+Get sites from sites
 
 ### [Get-MgUserFollowedSite](Get-MgUserFollowedSite.md)
 Get followedSites from users
-
-### [Get-MgUserFollowedSiteByRef](Get-MgUserFollowedSiteByRef.md)
-Get ref of followedSites from users
 
 ### [Grant-MgSitePermission](Grant-MgSitePermission.md)
 Invoke action grant
@@ -276,202 +365,404 @@ Invoke action grant
 ### [Invoke-MgPreviewSiteOnenotePage](Invoke-MgPreviewSiteOnenotePage.md)
 Invoke function preview
 
-### [Join-MgSiteContentType](Join-MgSiteContentType.md)
+### [Invoke-MgReauthorizeSiteListSubscription](Invoke-MgReauthorizeSiteListSubscription.md)
+Invoke action reauthorize
+
+### [Join-MgSiteContentTypeWithHubSite](Join-MgSiteContentTypeWithHubSite.md)
 Invoke action associateWithHubSites
 
-### [Join-MgSiteContentTypeBase](Join-MgSiteContentTypeBase.md)
-Invoke action associateWithHubSites
-
-### [Join-MgSiteListContentType](Join-MgSiteListContentType.md)
-Invoke action associateWithHubSites
-
-### [Join-MgSiteListContentTypeBase](Join-MgSiteListContentTypeBase.md)
+### [Join-MgSiteListContentTypeWithHubSite](Join-MgSiteListContentTypeWithHubSite.md)
 Invoke action associateWithHubSites
 
 ### [New-MgGroupSite](New-MgGroupSite.md)
-The list of SharePoint sites in this group.
-Access the default site with /sites/root.
+Create new navigation property to sites for groups
+
+### [New-MgGroupSiteColumn](New-MgGroupSiteColumn.md)
+Create new navigation property to columns for groups
+
+### [New-MgGroupSiteContentType](New-MgGroupSiteContentType.md)
+Create new navigation property to contentTypes for groups
+
+### [New-MgGroupSiteContentTypeColumn](New-MgGroupSiteContentTypeColumn.md)
+Create new navigation property to columns for groups
+
+### [New-MgGroupSiteContentTypeColumnLink](New-MgGroupSiteContentTypeColumnLink.md)
+Create new navigation property to columnLinks for groups
+
+### [New-MgGroupSiteList](New-MgGroupSiteList.md)
+Create new navigation property to lists for groups
+
+### [New-MgGroupSiteListColumn](New-MgGroupSiteListColumn.md)
+Create new navigation property to columns for groups
+
+### [New-MgGroupSiteListContentType](New-MgGroupSiteListContentType.md)
+Create new navigation property to contentTypes for groups
+
+### [New-MgGroupSiteListContentTypeColumn](New-MgGroupSiteListContentTypeColumn.md)
+Create new navigation property to columns for groups
+
+### [New-MgGroupSiteListContentTypeColumnLink](New-MgGroupSiteListContentTypeColumnLink.md)
+Create new navigation property to columnLinks for groups
+
+### [New-MgGroupSiteListItem](New-MgGroupSiteListItem.md)
+Create new navigation property to items for groups
+
+### [New-MgGroupSiteListItemDocumentSetVersion](New-MgGroupSiteListItemDocumentSetVersion.md)
+Create new navigation property to documentSetVersions for groups
+
+### [New-MgGroupSiteListItemVersion](New-MgGroupSiteListItemVersion.md)
+Create new navigation property to versions for groups
+
+### [New-MgGroupSiteListOperation](New-MgGroupSiteListOperation.md)
+Create new navigation property to operations for groups
+
+### [New-MgGroupSiteListSubscription](New-MgGroupSiteListSubscription.md)
+Create new navigation property to subscriptions for groups
+
+### [New-MgGroupSiteOperation](New-MgGroupSiteOperation.md)
+Create new navigation property to operations for groups
+
+### [New-MgGroupSitePage](New-MgGroupSitePage.md)
+Create new navigation property to pages for groups
+
+### [New-MgGroupSitePermission](New-MgGroupSitePermission.md)
+Create new navigation property to permissions for groups
+
+### [New-MgGroupSiteTermStoreGroup](New-MgGroupSiteTermStoreGroup.md)
+Create new navigation property to groups for groups
+
+### [New-MgGroupSiteTermStoreGroupSet](New-MgGroupSiteTermStoreGroupSet.md)
+Create new navigation property to sets for groups
+
+### [New-MgGroupSiteTermStoreGroupSetChild](New-MgGroupSiteTermStoreGroupSetChild.md)
+Create new navigation property to children for groups
+
+### [New-MgGroupSiteTermStoreGroupSetRelation](New-MgGroupSiteTermStoreGroupSetRelation.md)
+Create new navigation property to relations for groups
+
+### [New-MgGroupSiteTermStoreGroupSetTerm](New-MgGroupSiteTermStoreGroupSetTerm.md)
+Create new navigation property to terms for groups
+
+### [New-MgGroupSiteTermStoreGroupSetTermChild](New-MgGroupSiteTermStoreGroupSetTermChild.md)
+Create new navigation property to children for groups
+
+### [New-MgGroupSiteTermStoreGroupSetTermRelation](New-MgGroupSiteTermStoreGroupSetTermRelation.md)
+Create new navigation property to relations for groups
+
+### [New-MgGroupSiteTermStoreSet](New-MgGroupSiteTermStoreSet.md)
+Create new navigation property to sets for groups
+
+### [New-MgGroupSiteTermStoreSetChild](New-MgGroupSiteTermStoreSetChild.md)
+Create new navigation property to children for groups
+
+### [New-MgGroupSiteTermStoreSetRelation](New-MgGroupSiteTermStoreSetRelation.md)
+Create new navigation property to relations for groups
+
+### [New-MgGroupSiteTermStoreSetTerm](New-MgGroupSiteTermStoreSetTerm.md)
+Create new navigation property to terms for groups
+
+### [New-MgGroupSiteTermStoreSetTermChild](New-MgGroupSiteTermStoreSetTermChild.md)
+Create new navigation property to children for groups
+
+### [New-MgGroupSiteTermStoreSetTermRelation](New-MgGroupSiteTermStoreSetTermRelation.md)
+Create new navigation property to relations for groups
 
 ### [New-MgSiteColumn](New-MgSiteColumn.md)
-The collection of column definitions reusable across lists under this site.
+Create new navigation property to columns for sites
 
 ### [New-MgSiteContentType](New-MgSiteContentType.md)
-The collection of content types defined for this site.
-
-### [New-MgSiteContentTypeBaseTypeByRef](New-MgSiteContentTypeBaseTypeByRef.md)
-The collection of content types that are ancestors of this content type.
+Create new navigation property to contentTypes for sites
 
 ### [New-MgSiteContentTypeColumn](New-MgSiteContentTypeColumn.md)
-The collection of column definitions for this contentType.
+Create new navigation property to columns for sites
 
 ### [New-MgSiteContentTypeColumnLink](New-MgSiteContentTypeColumnLink.md)
-The collection of columns that are required by this content type.
-
-### [New-MgSiteContentTypeColumnPositionByRef](New-MgSiteContentTypeColumnPositionByRef.md)
-Column order information in a content type.
-
-### [New-MgSiteDriveByRef](New-MgSiteDriveByRef.md)
-The collection of drives (document libraries) under this site.
-
-### [New-MgSiteExternalColumnByRef](New-MgSiteExternalColumnByRef.md)
-The collection of column definitions available in the site that are referenced from the sites in the parent hierarchy of the current site.
+Create new navigation property to columnLinks for sites
 
 ### [New-MgSiteList](New-MgSiteList.md)
-The collection of lists under this site.
+Create new navigation property to lists for sites
 
 ### [New-MgSiteListColumn](New-MgSiteListColumn.md)
-The collection of field definitions for this list.
+Create new navigation property to columns for sites
 
 ### [New-MgSiteListContentType](New-MgSiteListContentType.md)
-The collection of content types present in this list.
-
-### [New-MgSiteListContentTypeBaseTypeByRef](New-MgSiteListContentTypeBaseTypeByRef.md)
-The collection of content types that are ancestors of this content type.
+Create new navigation property to contentTypes for sites
 
 ### [New-MgSiteListContentTypeColumn](New-MgSiteListContentTypeColumn.md)
-The collection of column definitions for this contentType.
+Create new navigation property to columns for sites
 
 ### [New-MgSiteListContentTypeColumnLink](New-MgSiteListContentTypeColumnLink.md)
-The collection of columns that are required by this content type.
-
-### [New-MgSiteListContentTypeColumnPositionByRef](New-MgSiteListContentTypeColumnPositionByRef.md)
-Column order information in a content type.
+Create new navigation property to columnLinks for sites
 
 ### [New-MgSiteListItem](New-MgSiteListItem.md)
-All items contained in the list.
+Create new navigation property to items for sites
+
+### [New-MgSiteListItemDocumentSetVersion](New-MgSiteListItemDocumentSetVersion.md)
+Create new navigation property to documentSetVersions for sites
 
 ### [New-MgSiteListItemLink](New-MgSiteListItemLink.md)
 Invoke action createLink
 
 ### [New-MgSiteListItemVersion](New-MgSiteListItemVersion.md)
-The list of previous versions of the list item.
+Create new navigation property to versions for sites
 
 ### [New-MgSiteListOperation](New-MgSiteListOperation.md)
-The collection of long running operations for the list.
+Create new navigation property to operations for sites
 
 ### [New-MgSiteListSubscription](New-MgSiteListSubscription.md)
-The set of subscriptions on the list.
+Create new navigation property to subscriptions for sites
 
 ### [New-MgSitePage](New-MgSitePage.md)
-The collection of pages in the SitePages list in this site.
+Create new navigation property to pages for sites
 
 ### [New-MgSitePermission](New-MgSitePermission.md)
-The permissions associated with the site.
-Nullable.
+Create new navigation property to permissions for sites
 
-### [New-MgSubSiteByRef](New-MgSubSiteByRef.md)
-The collection of the sub-sites under this site.
+### [New-MgSiteTermStoreGroup](New-MgSiteTermStoreGroup.md)
+Create new navigation property to groups for sites
 
-### [New-MgUserFollowedSiteByRef](New-MgUserFollowedSiteByRef.md)
-Create new navigation property ref to followedSites for users
+### [New-MgSiteTermStoreGroupSet](New-MgSiteTermStoreGroupSet.md)
+Create new navigation property to sets for sites
+
+### [New-MgSiteTermStoreGroupSetChild](New-MgSiteTermStoreGroupSetChild.md)
+Create new navigation property to children for sites
+
+### [New-MgSiteTermStoreGroupSetRelation](New-MgSiteTermStoreGroupSetRelation.md)
+Create new navigation property to relations for sites
+
+### [New-MgSiteTermStoreGroupSetTerm](New-MgSiteTermStoreGroupSetTerm.md)
+Create new navigation property to terms for sites
+
+### [New-MgSiteTermStoreGroupSetTermChild](New-MgSiteTermStoreGroupSetTermChild.md)
+Create new navigation property to children for sites
+
+### [New-MgSiteTermStoreGroupSetTermRelation](New-MgSiteTermStoreGroupSetTermRelation.md)
+Create new navigation property to relations for sites
+
+### [New-MgSiteTermStoreSet](New-MgSiteTermStoreSet.md)
+Create new navigation property to sets for sites
+
+### [New-MgSiteTermStoreSetChild](New-MgSiteTermStoreSetChild.md)
+Create new navigation property to children for sites
+
+### [New-MgSiteTermStoreSetRelation](New-MgSiteTermStoreSetRelation.md)
+Create new navigation property to relations for sites
+
+### [New-MgSiteTermStoreSetTerm](New-MgSiteTermStoreSetTerm.md)
+Create new navigation property to terms for sites
+
+### [New-MgSiteTermStoreSetTermChild](New-MgSiteTermStoreSetTermChild.md)
+Create new navigation property to children for sites
+
+### [New-MgSiteTermStoreSetTermRelation](New-MgSiteTermStoreSetTermRelation.md)
+Create new navigation property to relations for sites
 
 ### [Publish-MgSiteContentType](Publish-MgSiteContentType.md)
-Invoke action publish
-
-### [Publish-MgSiteContentTypeBase](Publish-MgSiteContentTypeBase.md)
 Invoke action publish
 
 ### [Publish-MgSiteListContentType](Publish-MgSiteListContentType.md)
 Invoke action publish
 
-### [Publish-MgSiteListContentTypeBase](Publish-MgSiteListContentTypeBase.md)
-Invoke action publish
-
 ### [Publish-MgSitePage](Publish-MgSitePage.md)
 Invoke action publish
 
-### [Remove-MgGroupSite](Remove-MgGroupSite.md)
-The list of SharePoint sites in this group.
-Access the default site with /sites/root.
+### [Remove-MgGroupSiteColumn](Remove-MgGroupSiteColumn.md)
+Delete navigation property columns for groups
 
-### [Remove-MgSiteAnalyticByRef](Remove-MgSiteAnalyticByRef.md)
-Analytics about the view activities that took place in this site.
+### [Remove-MgGroupSiteContentType](Remove-MgGroupSiteContentType.md)
+Delete navigation property contentTypes for groups
+
+### [Remove-MgGroupSiteContentTypeColumn](Remove-MgGroupSiteContentTypeColumn.md)
+Delete navigation property columns for groups
+
+### [Remove-MgGroupSiteContentTypeColumnLink](Remove-MgGroupSiteContentTypeColumnLink.md)
+Delete navigation property columnLinks for groups
+
+### [Remove-MgGroupSiteList](Remove-MgGroupSiteList.md)
+Delete navigation property lists for groups
+
+### [Remove-MgGroupSiteListColumn](Remove-MgGroupSiteListColumn.md)
+Delete navigation property columns for groups
+
+### [Remove-MgGroupSiteListContentType](Remove-MgGroupSiteListContentType.md)
+Delete navigation property contentTypes for groups
+
+### [Remove-MgGroupSiteListContentTypeColumn](Remove-MgGroupSiteListContentTypeColumn.md)
+Delete navigation property columns for groups
+
+### [Remove-MgGroupSiteListContentTypeColumnLink](Remove-MgGroupSiteListContentTypeColumnLink.md)
+Delete navigation property columnLinks for groups
+
+### [Remove-MgGroupSiteListItem](Remove-MgGroupSiteListItem.md)
+Delete navigation property items for groups
+
+### [Remove-MgGroupSiteListItemDocumentSetVersion](Remove-MgGroupSiteListItemDocumentSetVersion.md)
+Delete navigation property documentSetVersions for groups
+
+### [Remove-MgGroupSiteListItemField](Remove-MgGroupSiteListItemField.md)
+Delete navigation property fields for groups
+
+### [Remove-MgGroupSiteListItemVersion](Remove-MgGroupSiteListItemVersion.md)
+Delete navigation property versions for groups
+
+### [Remove-MgGroupSiteListItemVersionField](Remove-MgGroupSiteListItemVersionField.md)
+Delete navigation property fields for groups
+
+### [Remove-MgGroupSiteListOperation](Remove-MgGroupSiteListOperation.md)
+Delete navigation property operations for groups
+
+### [Remove-MgGroupSiteListSubscription](Remove-MgGroupSiteListSubscription.md)
+Delete navigation property subscriptions for groups
+
+### [Remove-MgGroupSiteOperation](Remove-MgGroupSiteOperation.md)
+Delete navigation property operations for groups
+
+### [Remove-MgGroupSitePage](Remove-MgGroupSitePage.md)
+Delete navigation property pages for groups
+
+### [Remove-MgGroupSitePermission](Remove-MgGroupSitePermission.md)
+Delete navigation property permissions for groups
+
+### [Remove-MgGroupSiteTermStore](Remove-MgGroupSiteTermStore.md)
+Delete navigation property termStore for groups
+
+### [Remove-MgGroupSiteTermStoreGroup](Remove-MgGroupSiteTermStoreGroup.md)
+Delete navigation property groups for groups
+
+### [Remove-MgGroupSiteTermStoreGroupSet](Remove-MgGroupSiteTermStoreGroupSet.md)
+Delete navigation property sets for groups
+
+### [Remove-MgGroupSiteTermStoreGroupSetChild](Remove-MgGroupSiteTermStoreGroupSetChild.md)
+Delete navigation property children for groups
+
+### [Remove-MgGroupSiteTermStoreGroupSetRelation](Remove-MgGroupSiteTermStoreGroupSetRelation.md)
+Delete navigation property relations for groups
+
+### [Remove-MgGroupSiteTermStoreGroupSetTerm](Remove-MgGroupSiteTermStoreGroupSetTerm.md)
+Delete navigation property terms for groups
+
+### [Remove-MgGroupSiteTermStoreGroupSetTermChild](Remove-MgGroupSiteTermStoreGroupSetTermChild.md)
+Delete navigation property children for groups
+
+### [Remove-MgGroupSiteTermStoreGroupSetTermRelation](Remove-MgGroupSiteTermStoreGroupSetTermRelation.md)
+Delete navigation property relations for groups
+
+### [Remove-MgGroupSiteTermStoreSet](Remove-MgGroupSiteTermStoreSet.md)
+Delete navigation property sets for groups
+
+### [Remove-MgGroupSiteTermStoreSetChild](Remove-MgGroupSiteTermStoreSetChild.md)
+Delete navigation property children for groups
+
+### [Remove-MgGroupSiteTermStoreSetRelation](Remove-MgGroupSiteTermStoreSetRelation.md)
+Delete navigation property relations for groups
+
+### [Remove-MgGroupSiteTermStoreSetTerm](Remove-MgGroupSiteTermStoreSetTerm.md)
+Delete navigation property terms for groups
+
+### [Remove-MgGroupSiteTermStoreSetTermChild](Remove-MgGroupSiteTermStoreSetTermChild.md)
+Delete navigation property children for groups
+
+### [Remove-MgGroupSiteTermStoreSetTermRelation](Remove-MgGroupSiteTermStoreSetTermRelation.md)
+Delete navigation property relations for groups
 
 ### [Remove-MgSiteColumn](Remove-MgSiteColumn.md)
-The collection of column definitions reusable across lists under this site.
-
-### [Remove-MgSiteColumnSourceColumnByRef](Remove-MgSiteColumnSourceColumnByRef.md)
-The source column for the content type column.
+Delete navigation property columns for sites
 
 ### [Remove-MgSiteContentType](Remove-MgSiteContentType.md)
-The collection of content types defined for this site.
-
-### [Remove-MgSiteContentTypeBaseByRef](Remove-MgSiteContentTypeBaseByRef.md)
-Parent contentType from which this content type is derived.
+Delete navigation property contentTypes for sites
 
 ### [Remove-MgSiteContentTypeColumn](Remove-MgSiteContentTypeColumn.md)
-The collection of column definitions for this contentType.
+Delete navigation property columns for sites
 
 ### [Remove-MgSiteContentTypeColumnLink](Remove-MgSiteContentTypeColumnLink.md)
-The collection of columns that are required by this content type.
-
-### [Remove-MgSiteContentTypeColumnSourceColumnByRef](Remove-MgSiteContentTypeColumnSourceColumnByRef.md)
-The source column for the content type column.
-
-### [Remove-MgSiteDriveByRef](Remove-MgSiteDriveByRef.md)
-The default drive (document library) for this site.
+Delete navigation property columnLinks for sites
 
 ### [Remove-MgSiteList](Remove-MgSiteList.md)
-The collection of lists under this site.
+Delete navigation property lists for sites
 
 ### [Remove-MgSiteListColumn](Remove-MgSiteListColumn.md)
-The collection of field definitions for this list.
-
-### [Remove-MgSiteListColumnSourceColumnByRef](Remove-MgSiteListColumnSourceColumnByRef.md)
-The source column for the content type column.
+Delete navigation property columns for sites
 
 ### [Remove-MgSiteListContentType](Remove-MgSiteListContentType.md)
-The collection of content types present in this list.
-
-### [Remove-MgSiteListContentTypeBaseByRef](Remove-MgSiteListContentTypeBaseByRef.md)
-Parent contentType from which this content type is derived.
+Delete navigation property contentTypes for sites
 
 ### [Remove-MgSiteListContentTypeColumn](Remove-MgSiteListContentTypeColumn.md)
-The collection of column definitions for this contentType.
+Delete navigation property columns for sites
 
 ### [Remove-MgSiteListContentTypeColumnLink](Remove-MgSiteListContentTypeColumnLink.md)
-The collection of columns that are required by this content type.
-
-### [Remove-MgSiteListContentTypeColumnSourceColumnByRef](Remove-MgSiteListContentTypeColumnSourceColumnByRef.md)
-The source column for the content type column.
-
-### [Remove-MgSiteListDriveByRef](Remove-MgSiteListDriveByRef.md)
-Only present on document libraries.
-Allows access to the list as a [drive][] resource with [driveItems][driveItem].
+Delete navigation property columnLinks for sites
 
 ### [Remove-MgSiteListItem](Remove-MgSiteListItem.md)
-All items contained in the list.
+Delete navigation property items for sites
 
-### [Remove-MgSiteListItemAnalyticByRef](Remove-MgSiteListItemAnalyticByRef.md)
-Analytics about the view activities that took place on this item.
-
-### [Remove-MgSiteListItemDriveItemByRef](Remove-MgSiteListItemDriveItemByRef.md)
-For document libraries, the driveItem relationship exposes the listItem as a [driveItem][]
+### [Remove-MgSiteListItemDocumentSetVersion](Remove-MgSiteListItemDocumentSetVersion.md)
+Delete navigation property documentSetVersions for sites
 
 ### [Remove-MgSiteListItemField](Remove-MgSiteListItemField.md)
-The values of the columns set on this list item.
+Delete navigation property fields for sites
 
 ### [Remove-MgSiteListItemVersion](Remove-MgSiteListItemVersion.md)
-The list of previous versions of the list item.
+Delete navigation property versions for sites
 
 ### [Remove-MgSiteListItemVersionField](Remove-MgSiteListItemVersionField.md)
-A collection of the fields and values for this version of the list item.
+Delete navigation property fields for sites
 
 ### [Remove-MgSiteListOperation](Remove-MgSiteListOperation.md)
-The collection of long running operations for the list.
+Delete navigation property operations for sites
 
 ### [Remove-MgSiteListSubscription](Remove-MgSiteListSubscription.md)
-The set of subscriptions on the list.
+Delete navigation property subscriptions for sites
 
 ### [Remove-MgSitePage](Remove-MgSitePage.md)
-The collection of pages in the SitePages list in this site.
+Delete navigation property pages for sites
 
 ### [Remove-MgSitePermission](Remove-MgSitePermission.md)
-The permissions associated with the site.
-Nullable.
+Delete navigation property permissions for sites
 
 ### [Remove-MgSiteTermStore](Remove-MgSiteTermStore.md)
-The default termStore under this site.
+Delete navigation property termStore for sites
+
+### [Remove-MgSiteTermStoreGroup](Remove-MgSiteTermStoreGroup.md)
+Delete navigation property groups for sites
+
+### [Remove-MgSiteTermStoreGroupSet](Remove-MgSiteTermStoreGroupSet.md)
+Delete navigation property sets for sites
+
+### [Remove-MgSiteTermStoreGroupSetChild](Remove-MgSiteTermStoreGroupSetChild.md)
+Delete navigation property children for sites
+
+### [Remove-MgSiteTermStoreGroupSetRelation](Remove-MgSiteTermStoreGroupSetRelation.md)
+Delete navigation property relations for sites
+
+### [Remove-MgSiteTermStoreGroupSetTerm](Remove-MgSiteTermStoreGroupSetTerm.md)
+Delete navigation property terms for sites
+
+### [Remove-MgSiteTermStoreGroupSetTermChild](Remove-MgSiteTermStoreGroupSetTermChild.md)
+Delete navigation property children for sites
+
+### [Remove-MgSiteTermStoreGroupSetTermRelation](Remove-MgSiteTermStoreGroupSetTermRelation.md)
+Delete navigation property relations for sites
+
+### [Remove-MgSiteTermStoreSet](Remove-MgSiteTermStoreSet.md)
+Delete navigation property sets for sites
+
+### [Remove-MgSiteTermStoreSetChild](Remove-MgSiteTermStoreSetChild.md)
+Delete navigation property children for sites
+
+### [Remove-MgSiteTermStoreSetRelation](Remove-MgSiteTermStoreSetRelation.md)
+Delete navigation property relations for sites
+
+### [Remove-MgSiteTermStoreSetTerm](Remove-MgSiteTermStoreSetTerm.md)
+Delete navigation property terms for sites
+
+### [Remove-MgSiteTermStoreSetTermChild](Remove-MgSiteTermStoreSetTermChild.md)
+Delete navigation property children for sites
+
+### [Remove-MgSiteTermStoreSetTermRelation](Remove-MgSiteTermStoreSetTermRelation.md)
+Delete navigation property relations for sites
+
+### [Restore-MgSiteListItemDocumentSetVersion](Restore-MgSiteListItemDocumentSetVersion.md)
+Invoke action restore
 
 ### [Restore-MgSiteListItemVersion](Restore-MgSiteListItemVersion.md)
 Invoke action restoreVersion
@@ -479,47 +770,13 @@ Invoke action restoreVersion
 ### [Revoke-MgSitePermissionGrant](Revoke-MgSitePermissionGrant.md)
 Invoke action revokeGrants
 
-### [Set-MgSiteAnalyticByRef](Set-MgSiteAnalyticByRef.md)
-Analytics about the view activities that took place in this site.
+### [Set-MgGroupSiteListItemDriveItemContent](Set-MgGroupSiteListItemDriveItemContent.md)
+Update content for the navigation property driveItem in groups
 
-### [Set-MgSiteColumnSourceColumnByRef](Set-MgSiteColumnSourceColumnByRef.md)
-The source column for the content type column.
-
-### [Set-MgSiteContentTypeBaseByRef](Set-MgSiteContentTypeBaseByRef.md)
-Parent contentType from which this content type is derived.
-
-### [Set-MgSiteContentTypeColumnSourceColumnByRef](Set-MgSiteContentTypeColumnSourceColumnByRef.md)
-The source column for the content type column.
-
-### [Set-MgSiteDriveByRef](Set-MgSiteDriveByRef.md)
-The default drive (document library) for this site.
-
-### [Set-MgSiteListColumnSourceColumnByRef](Set-MgSiteListColumnSourceColumnByRef.md)
-The source column for the content type column.
-
-### [Set-MgSiteListContentTypeBaseByRef](Set-MgSiteListContentTypeBaseByRef.md)
-Parent contentType from which this content type is derived.
-
-### [Set-MgSiteListContentTypeColumnSourceColumnByRef](Set-MgSiteListContentTypeColumnSourceColumnByRef.md)
-The source column for the content type column.
-
-### [Set-MgSiteListDriveByRef](Set-MgSiteListDriveByRef.md)
-Only present on document libraries.
-Allows access to the list as a [drive][] resource with [driveItems][driveItem].
-
-### [Set-MgSiteListItemAnalyticByRef](Set-MgSiteListItemAnalyticByRef.md)
-Analytics about the view activities that took place on this item.
-
-### [Set-MgSiteListItemDriveItemByRef](Set-MgSiteListItemDriveItemByRef.md)
-For document libraries, the driveItem relationship exposes the listItem as a [driveItem][]
-
-### [Test-MgSiteContentTypeBasePublished](Test-MgSiteContentTypeBasePublished.md)
-Invoke function isPublished
+### [Set-MgSiteListItemDriveItemContent](Set-MgSiteListItemDriveItemContent.md)
+Update content for the navigation property driveItem in sites
 
 ### [Test-MgSiteContentTypePublished](Test-MgSiteContentTypePublished.md)
-Invoke function isPublished
-
-### [Test-MgSiteListContentTypeBasePublished](Test-MgSiteListContentTypeBasePublished.md)
 Invoke function isPublished
 
 ### [Test-MgSiteListContentTypePublished](Test-MgSiteListContentTypePublished.md)
@@ -528,77 +785,210 @@ Invoke function isPublished
 ### [Unpublish-MgSiteContentType](Unpublish-MgSiteContentType.md)
 Invoke action unpublish
 
-### [Unpublish-MgSiteContentTypeBase](Unpublish-MgSiteContentTypeBase.md)
-Invoke action unpublish
-
 ### [Unpublish-MgSiteListContentType](Unpublish-MgSiteListContentType.md)
 Invoke action unpublish
 
-### [Unpublish-MgSiteListContentTypeBase](Unpublish-MgSiteListContentTypeBase.md)
-Invoke action unpublish
-
 ### [Update-MgGroupSite](Update-MgGroupSite.md)
-The list of SharePoint sites in this group.
-Access the default site with /sites/root.
+Update the navigation property sites in groups
+
+### [Update-MgGroupSiteColumn](Update-MgGroupSiteColumn.md)
+Update the navigation property columns in groups
+
+### [Update-MgGroupSiteContentType](Update-MgGroupSiteContentType.md)
+Update the navigation property contentTypes in groups
+
+### [Update-MgGroupSiteContentTypeColumn](Update-MgGroupSiteContentTypeColumn.md)
+Update the navigation property columns in groups
+
+### [Update-MgGroupSiteContentTypeColumnLink](Update-MgGroupSiteContentTypeColumnLink.md)
+Update the navigation property columnLinks in groups
+
+### [Update-MgGroupSiteList](Update-MgGroupSiteList.md)
+Update the navigation property lists in groups
+
+### [Update-MgGroupSiteListColumn](Update-MgGroupSiteListColumn.md)
+Update the navigation property columns in groups
+
+### [Update-MgGroupSiteListContentType](Update-MgGroupSiteListContentType.md)
+Update the navigation property contentTypes in groups
+
+### [Update-MgGroupSiteListContentTypeColumn](Update-MgGroupSiteListContentTypeColumn.md)
+Update the navigation property columns in groups
+
+### [Update-MgGroupSiteListContentTypeColumnLink](Update-MgGroupSiteListContentTypeColumnLink.md)
+Update the navigation property columnLinks in groups
+
+### [Update-MgGroupSiteListItem](Update-MgGroupSiteListItem.md)
+Update the navigation property items in groups
+
+### [Update-MgGroupSiteListItemDocumentSetVersion](Update-MgGroupSiteListItemDocumentSetVersion.md)
+Update the navigation property documentSetVersions in groups
+
+### [Update-MgGroupSiteListItemField](Update-MgGroupSiteListItemField.md)
+Update the navigation property fields in groups
+
+### [Update-MgGroupSiteListItemVersion](Update-MgGroupSiteListItemVersion.md)
+Update the navigation property versions in groups
+
+### [Update-MgGroupSiteListItemVersionField](Update-MgGroupSiteListItemVersionField.md)
+Update the navigation property fields in groups
+
+### [Update-MgGroupSiteListOperation](Update-MgGroupSiteListOperation.md)
+Update the navigation property operations in groups
+
+### [Update-MgGroupSiteListSubscription](Update-MgGroupSiteListSubscription.md)
+Update the navigation property subscriptions in groups
+
+### [Update-MgGroupSiteOperation](Update-MgGroupSiteOperation.md)
+Update the navigation property operations in groups
+
+### [Update-MgGroupSitePage](Update-MgGroupSitePage.md)
+Update the navigation property pages in groups
+
+### [Update-MgGroupSitePermission](Update-MgGroupSitePermission.md)
+Update the navigation property permissions in groups
+
+### [Update-MgGroupSiteTermStore](Update-MgGroupSiteTermStore.md)
+Update the navigation property termStore in groups
+
+### [Update-MgGroupSiteTermStoreGroup](Update-MgGroupSiteTermStoreGroup.md)
+Update the navigation property groups in groups
+
+### [Update-MgGroupSiteTermStoreGroupSet](Update-MgGroupSiteTermStoreGroupSet.md)
+Update the navigation property sets in groups
+
+### [Update-MgGroupSiteTermStoreGroupSetChild](Update-MgGroupSiteTermStoreGroupSetChild.md)
+Update the navigation property children in groups
+
+### [Update-MgGroupSiteTermStoreGroupSetRelation](Update-MgGroupSiteTermStoreGroupSetRelation.md)
+Update the navigation property relations in groups
+
+### [Update-MgGroupSiteTermStoreGroupSetTerm](Update-MgGroupSiteTermStoreGroupSetTerm.md)
+Update the navigation property terms in groups
+
+### [Update-MgGroupSiteTermStoreGroupSetTermChild](Update-MgGroupSiteTermStoreGroupSetTermChild.md)
+Update the navigation property children in groups
+
+### [Update-MgGroupSiteTermStoreGroupSetTermRelation](Update-MgGroupSiteTermStoreGroupSetTermRelation.md)
+Update the navigation property relations in groups
+
+### [Update-MgGroupSiteTermStoreSet](Update-MgGroupSiteTermStoreSet.md)
+Update the navigation property sets in groups
+
+### [Update-MgGroupSiteTermStoreSetChild](Update-MgGroupSiteTermStoreSetChild.md)
+Update the navigation property children in groups
+
+### [Update-MgGroupSiteTermStoreSetRelation](Update-MgGroupSiteTermStoreSetRelation.md)
+Update the navigation property relations in groups
+
+### [Update-MgGroupSiteTermStoreSetTerm](Update-MgGroupSiteTermStoreSetTerm.md)
+Update the navigation property terms in groups
+
+### [Update-MgGroupSiteTermStoreSetTermChild](Update-MgGroupSiteTermStoreSetTermChild.md)
+Update the navigation property children in groups
+
+### [Update-MgGroupSiteTermStoreSetTermRelation](Update-MgGroupSiteTermStoreSetTermRelation.md)
+Update the navigation property relations in groups
 
 ### [Update-MgSite](Update-MgSite.md)
 Update entity in sites
 
 ### [Update-MgSiteColumn](Update-MgSiteColumn.md)
-The collection of column definitions reusable across lists under this site.
+Update the navigation property columns in sites
 
 ### [Update-MgSiteContentType](Update-MgSiteContentType.md)
-The collection of content types defined for this site.
+Update the navigation property contentTypes in sites
 
 ### [Update-MgSiteContentTypeColumn](Update-MgSiteContentTypeColumn.md)
-The collection of column definitions for this contentType.
+Update the navigation property columns in sites
 
 ### [Update-MgSiteContentTypeColumnLink](Update-MgSiteContentTypeColumnLink.md)
-The collection of columns that are required by this content type.
+Update the navigation property columnLinks in sites
 
 ### [Update-MgSiteList](Update-MgSiteList.md)
-The collection of lists under this site.
+Update the navigation property lists in sites
 
 ### [Update-MgSiteListColumn](Update-MgSiteListColumn.md)
-The collection of field definitions for this list.
+Update the navigation property columns in sites
 
 ### [Update-MgSiteListContentType](Update-MgSiteListContentType.md)
-The collection of content types present in this list.
+Update the navigation property contentTypes in sites
 
 ### [Update-MgSiteListContentTypeColumn](Update-MgSiteListContentTypeColumn.md)
-The collection of column definitions for this contentType.
+Update the navigation property columns in sites
 
 ### [Update-MgSiteListContentTypeColumnLink](Update-MgSiteListContentTypeColumnLink.md)
-The collection of columns that are required by this content type.
+Update the navigation property columnLinks in sites
 
 ### [Update-MgSiteListItem](Update-MgSiteListItem.md)
-All items contained in the list.
+Update the navigation property items in sites
+
+### [Update-MgSiteListItemDocumentSetVersion](Update-MgSiteListItemDocumentSetVersion.md)
+Update the navigation property documentSetVersions in sites
 
 ### [Update-MgSiteListItemField](Update-MgSiteListItemField.md)
-The values of the columns set on this list item.
+Update the navigation property fields in sites
 
 ### [Update-MgSiteListItemVersion](Update-MgSiteListItemVersion.md)
-The list of previous versions of the list item.
+Update the navigation property versions in sites
 
 ### [Update-MgSiteListItemVersionField](Update-MgSiteListItemVersionField.md)
-A collection of the fields and values for this version of the list item.
+Update the navigation property fields in sites
 
 ### [Update-MgSiteListOperation](Update-MgSiteListOperation.md)
-The collection of long running operations for the list.
+Update the navigation property operations in sites
 
 ### [Update-MgSiteListSubscription](Update-MgSiteListSubscription.md)
-The set of subscriptions on the list.
+Update the navigation property subscriptions in sites
 
 ### [Update-MgSiteOnenotePageContent](Update-MgSiteOnenotePageContent.md)
 Invoke action onenotePatchContent
 
 ### [Update-MgSitePage](Update-MgSitePage.md)
-The collection of pages in the SitePages list in this site.
+Update the navigation property pages in sites
 
 ### [Update-MgSitePermission](Update-MgSitePermission.md)
-The permissions associated with the site.
-Nullable.
+Update the navigation property permissions in sites
 
 ### [Update-MgSiteTermStore](Update-MgSiteTermStore.md)
-The default termStore under this site.
+Update the navigation property termStore in sites
+
+### [Update-MgSiteTermStoreGroup](Update-MgSiteTermStoreGroup.md)
+Update the navigation property groups in sites
+
+### [Update-MgSiteTermStoreGroupSet](Update-MgSiteTermStoreGroupSet.md)
+Update the navigation property sets in sites
+
+### [Update-MgSiteTermStoreGroupSetChild](Update-MgSiteTermStoreGroupSetChild.md)
+Update the navigation property children in sites
+
+### [Update-MgSiteTermStoreGroupSetRelation](Update-MgSiteTermStoreGroupSetRelation.md)
+Update the navigation property relations in sites
+
+### [Update-MgSiteTermStoreGroupSetTerm](Update-MgSiteTermStoreGroupSetTerm.md)
+Update the navigation property terms in sites
+
+### [Update-MgSiteTermStoreGroupSetTermChild](Update-MgSiteTermStoreGroupSetTermChild.md)
+Update the navigation property children in sites
+
+### [Update-MgSiteTermStoreGroupSetTermRelation](Update-MgSiteTermStoreGroupSetTermRelation.md)
+Update the navigation property relations in sites
+
+### [Update-MgSiteTermStoreSet](Update-MgSiteTermStoreSet.md)
+Update the navigation property sets in sites
+
+### [Update-MgSiteTermStoreSetChild](Update-MgSiteTermStoreSetChild.md)
+Update the navigation property children in sites
+
+### [Update-MgSiteTermStoreSetRelation](Update-MgSiteTermStoreSetRelation.md)
+Update the navigation property relations in sites
+
+### [Update-MgSiteTermStoreSetTerm](Update-MgSiteTermStoreSetTerm.md)
+Update the navigation property terms in sites
+
+### [Update-MgSiteTermStoreSetTermChild](Update-MgSiteTermStoreSetTermChild.md)
+Update the navigation property children in sites
+
+### [Update-MgSiteTermStoreSetTermRelation](Update-MgSiteTermStoreSetTermRelation.md)
+Update the navigation property relations in sites
 

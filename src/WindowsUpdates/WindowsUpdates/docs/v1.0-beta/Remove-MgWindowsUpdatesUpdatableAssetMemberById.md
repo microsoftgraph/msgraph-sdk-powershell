@@ -12,27 +12,27 @@ Invoke action removeMembersById
 
 ## SYNTAX
 
-### RemoveExpanded1 (Default)
+### RemoveExpanded (Default)
 ```
 Remove-MgWindowsUpdatesUpdatableAssetMemberById -UpdatableAssetId <String> [-AdditionalProperties <Hashtable>]
  [-Ids <String[]>] [-MemberEntityType <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### Remove1
+### Remove
 ```
 Remove-MgWindowsUpdatesUpdatableAssetMemberById -UpdatableAssetId <String>
  -BodyParameter <IPaths1Kqj7RfAdminWindowsUpdatesUpdatableassetsUpdatableassetIdMicrosoftGraphWindowsupdatesRemovemembersbyidPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### RemoveViaIdentity1
+### RemoveViaIdentity
 ```
 Remove-MgWindowsUpdatesUpdatableAssetMemberById -InputObject <IWindowsUpdatesIdentity>
  -BodyParameter <IPaths1Kqj7RfAdminWindowsUpdatesUpdatableassetsUpdatableassetIdMicrosoftGraphWindowsupdatesRemovemembersbyidPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### RemoveViaIdentityExpanded1
+### RemoveViaIdentityExpanded
 ```
 Remove-MgWindowsUpdatesUpdatableAssetMemberById -InputObject <IWindowsUpdatesIdentity>
  [-AdditionalProperties <Hashtable>] [-Ids <String[]>] [-MemberEntityType <String>] [-PassThru] [-Confirm]
@@ -51,7 +51,7 @@ Additional Parameters
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: RemoveExpanded1, RemoveViaIdentityExpanded1
+Parameter Sets: RemoveExpanded, RemoveViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -67,7 +67,7 @@ To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETE
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IPaths1Kqj7RfAdminWindowsUpdatesUpdatableassetsUpdatableassetIdMicrosoftGraphWindowsupdatesRemovemembersbyidPostRequestbodyContentApplicationJsonSchema
-Parameter Sets: Remove1, RemoveViaIdentity1
+Parameter Sets: Remove, RemoveViaIdentity
 Aliases:
 
 Required: True
@@ -82,7 +82,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.String[]
-Parameter Sets: RemoveExpanded1, RemoveViaIdentityExpanded1
+Parameter Sets: RemoveExpanded, RemoveViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -98,7 +98,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IWindowsUpdatesIdentity
-Parameter Sets: RemoveViaIdentity1, RemoveViaIdentityExpanded1
+Parameter Sets: RemoveViaIdentity, RemoveViaIdentityExpanded
 Aliases:
 
 Required: True
@@ -113,7 +113,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.String
-Parameter Sets: RemoveExpanded1, RemoveViaIdentityExpanded1
+Parameter Sets: RemoveExpanded, RemoveViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -143,7 +143,7 @@ key: id of updatableAsset
 
 ```yaml
 Type: System.String
-Parameter Sets: Remove1, RemoveExpanded1
+Parameter Sets: Remove, RemoveExpanded
 Aliases:
 
 Required: True
@@ -201,7 +201,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ALIASES
 
-### Remove-MgWuUpdatableAssetMemberById
+### Remove-MgWuUpdatableAssetMemberGraphBPreId
 
 COMPLEX PARAMETER PROPERTIES
 
@@ -216,6 +216,7 @@ BODYPARAMETER <IPaths1Kqj7RfAdminWindowsUpdatesUpdatableassetsUpdatableassetIdMi
 INPUTOBJECT <IWindowsUpdatesIdentity>: Identity Parameter
   - `[CatalogEntryId <String>]`: key: id of catalogEntry
   - `[DeploymentId <String>]`: key: id of deployment
+  - `[ResourceConnectionId <String>]`: key: id of resourceConnection
   - `[UpdatableAssetId <String>]`: key: id of updatableAsset
 
 ## RELATED LINKS

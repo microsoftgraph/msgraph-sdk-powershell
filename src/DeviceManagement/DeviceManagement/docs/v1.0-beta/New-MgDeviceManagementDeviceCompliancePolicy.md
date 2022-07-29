@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgDeviceManagementDeviceCompliancePolicy
 
 ## SYNOPSIS
-The device compliance policies.
+Create new navigation property to deviceCompliancePolicies for deviceManagement
 
 ## SYNTAX
 
@@ -33,7 +33,7 @@ New-MgDeviceManagementDeviceCompliancePolicy -BodyParameter <IMicrosoftGraphDevi
 ```
 
 ## DESCRIPTION
-The device compliance policies.
+Create new navigation property to deviceCompliancePolicies for deviceManagement
 
 ## EXAMPLES
 
@@ -182,7 +182,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -227,8 +227,7 @@ Accept wildcard characters: False
 ```
 
 ### -ScheduledActionsForRule
-The list of scheduled action per rule for this compliance policy.
-This is a required property when creating any individual per-platform compliance policies.
+The list of scheduled action for this rule
 To construct, please use Get-Help -Online and see NOTES section for SCHEDULEDACTIONSFORRULE properties and create a hash table.
 
 ```yaml
@@ -342,29 +341,29 @@ To create the parameters described below, construct a hash table containing the 
 
 
 ASSIGNMENTS <IMicrosoftGraphDeviceCompliancePolicyAssignment1[]>: The collection of assignments for this compliance policy.
-  - `[Id <String>]`: Read-only.
-  - `[Source <String>]`: Represents source of assignment.
+  - `[Id <String>]`: 
+  - `[Source <DeviceAndAppManagementAssignmentSource?>]`: Represents source of assignment.
   - `[SourceId <String>]`: The identifier of the source of the assignment.
   - `[Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget1>]`: Base type for assignment targets.
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[DeviceAndAppManagementAssignmentFilterId <String>]`: The Id of the filter for the target assignment.
-    - `[DeviceAndAppManagementAssignmentFilterType <String>]`: Represents type of the assignment filter.
+    - `[DeviceAndAppManagementAssignmentFilterType <DeviceAndAppManagementAssignmentFilterType?>]`: Represents type of the assignment filter.
 
 BODYPARAMETER <IMicrosoftGraphDeviceCompliancePolicy1>: This is the base class for Compliance policy. Compliance policies are platform specific and individual per-platform compliance policies inherit from here. 
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[Assignments <IMicrosoftGraphDeviceCompliancePolicyAssignment1[]>]`: The collection of assignments for this compliance policy.
-    - `[Id <String>]`: Read-only.
-    - `[Source <String>]`: Represents source of assignment.
+    - `[Id <String>]`: 
+    - `[Source <DeviceAndAppManagementAssignmentSource?>]`: Represents source of assignment.
     - `[SourceId <String>]`: The identifier of the source of the assignment.
     - `[Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget1>]`: Base type for assignment targets.
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[DeviceAndAppManagementAssignmentFilterId <String>]`: The Id of the filter for the target assignment.
-      - `[DeviceAndAppManagementAssignmentFilterType <String>]`: Represents type of the assignment filter.
+      - `[DeviceAndAppManagementAssignmentFilterType <DeviceAndAppManagementAssignmentFilterType?>]`: Represents type of the assignment filter.
   - `[CreatedDateTime <DateTime?>]`: DateTime the object was created.
   - `[Description <String>]`: Admin provided description of the Device Configuration.
   - `[DeviceSettingStateSummaries <IMicrosoftGraphSettingStateDeviceSummary[]>]`: Compliance Setting State Device Summary
-    - `[Id <String>]`: Read-only.
+    - `[Id <String>]`: 
     - `[CompliantDeviceCount <Int32?>]`: Device Compliant count for the setting
     - `[ConflictDeviceCount <Int32?>]`: Device conflict error count for the setting
     - `[ErrorDeviceCount <Int32?>]`: Device error count for the setting
@@ -376,7 +375,7 @@ BODYPARAMETER <IMicrosoftGraphDeviceCompliancePolicy1>: This is the base class f
     - `[UnknownDeviceCount <Int32?>]`: Device Unkown count for the setting
   - `[DeviceStatusOverview <IMicrosoftGraphDeviceComplianceDeviceOverview1>]`: deviceComplianceDeviceOverview
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Id <String>]`: Read-only.
+    - `[Id <String>]`: 
     - `[ConfigurationVersion <Int32?>]`: Version of the policy for that overview
     - `[ConflictCount <Int32?>]`: Number of devices in conflict
     - `[ErrorCount <Int32?>]`: Number of error devices
@@ -387,7 +386,7 @@ BODYPARAMETER <IMicrosoftGraphDeviceCompliancePolicy1>: This is the base class f
     - `[PendingCount <Int32?>]`: Number of pending devices
     - `[SuccessCount <Int32?>]`: Number of succeeded devices
   - `[DeviceStatuses <IMicrosoftGraphDeviceComplianceDeviceStatus1[]>]`: List of DeviceComplianceDeviceStatus.
-    - `[Id <String>]`: Read-only.
+    - `[Id <String>]`: 
     - `[ComplianceGracePeriodExpirationDateTime <DateTime?>]`: The DateTime when device compliance grace period expires
     - `[DeviceDisplayName <String>]`: Device name of the DevicePolicyStatus.
     - `[DeviceModel <String>]`: The device model that is being reported
@@ -399,18 +398,18 @@ BODYPARAMETER <IMicrosoftGraphDeviceCompliancePolicy1>: This is the base class f
   - `[DisplayName <String>]`: Admin provided name of the device configuration.
   - `[LastModifiedDateTime <DateTime?>]`: DateTime the object was last modified.
   - `[RoleScopeTagIds <String[]>]`: List of Scope Tags for this Entity instance.
-  - `[ScheduledActionsForRule <IMicrosoftGraphDeviceComplianceScheduledActionForRule1[]>]`: The list of scheduled action per rule for this compliance policy. This is a required property when creating any individual per-platform compliance policies.
-    - `[Id <String>]`: Read-only.
+  - `[ScheduledActionsForRule <IMicrosoftGraphDeviceComplianceScheduledActionForRule1[]>]`: The list of scheduled action for this rule
+    - `[Id <String>]`: 
     - `[RuleName <String>]`: Name of the rule which this scheduled action applies to. Currently scheduled actions are created per policy instead of per rule, thus RuleName is always set to default value PasswordRequired.
     - `[ScheduledActionConfigurations <IMicrosoftGraphDeviceComplianceActionItem1[]>]`: The list of scheduled action configurations for this compliance policy. Compliance policy must have one and only one block scheduled action.
-      - `[Id <String>]`: Read-only.
-      - `[ActionType <String>]`: Scheduled Action Type Enum
+      - `[Id <String>]`: 
+      - `[ActionType <DeviceComplianceActionType?>]`: Scheduled Action Type Enum
       - `[GracePeriodHours <Int32?>]`: Number of hours to wait till the action will be enforced. Valid values 0 to 8760
       - `[NotificationMessageCcList <String[]>]`: A list of group IDs to speicify who to CC this notification message to.
       - `[NotificationTemplateId <String>]`: What notification Message template to use
   - `[UserStatusOverview <IMicrosoftGraphDeviceComplianceUserOverview1>]`: deviceComplianceUserOverview
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Id <String>]`: Read-only.
+    - `[Id <String>]`: 
     - `[ConfigurationVersion <Int32?>]`: Version of the policy for that overview
     - `[ConflictCount <Int32?>]`: Number of users in conflict
     - `[ErrorCount <Int32?>]`: Number of error Users
@@ -420,7 +419,7 @@ BODYPARAMETER <IMicrosoftGraphDeviceCompliancePolicy1>: This is the base class f
     - `[PendingCount <Int32?>]`: Number of pending Users
     - `[SuccessCount <Int32?>]`: Number of succeeded Users
   - `[UserStatuses <IMicrosoftGraphDeviceComplianceUserStatus[]>]`: List of DeviceComplianceUserStatus.
-    - `[Id <String>]`: Read-only.
+    - `[Id <String>]`: 
     - `[DevicesCount <Int32?>]`: Devices count for that user.
     - `[LastReportedDateTime <DateTime?>]`: Last modified date time of the policy report.
     - `[Status <String>]`: complianceStatus
@@ -429,7 +428,7 @@ BODYPARAMETER <IMicrosoftGraphDeviceCompliancePolicy1>: This is the base class f
   - `[Version <Int32?>]`: Version of the device configuration.
 
 DEVICESETTINGSTATESUMMARIES <IMicrosoftGraphSettingStateDeviceSummary[]>: Compliance Setting State Device Summary
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[CompliantDeviceCount <Int32?>]`: Device Compliant count for the setting
   - `[ConflictDeviceCount <Int32?>]`: Device conflict error count for the setting
   - `[ErrorDeviceCount <Int32?>]`: Device error count for the setting
@@ -441,7 +440,7 @@ DEVICESETTINGSTATESUMMARIES <IMicrosoftGraphSettingStateDeviceSummary[]>: Compli
   - `[UnknownDeviceCount <Int32?>]`: Device Unkown count for the setting
 
 DEVICESTATUSES <IMicrosoftGraphDeviceComplianceDeviceStatus1[]>: List of DeviceComplianceDeviceStatus.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[ComplianceGracePeriodExpirationDateTime <DateTime?>]`: The DateTime when device compliance grace period expires
   - `[DeviceDisplayName <String>]`: Device name of the DevicePolicyStatus.
   - `[DeviceModel <String>]`: The device model that is being reported
@@ -453,7 +452,7 @@ DEVICESTATUSES <IMicrosoftGraphDeviceComplianceDeviceStatus1[]>: List of DeviceC
 
 DEVICESTATUSOVERVIEW <IMicrosoftGraphDeviceComplianceDeviceOverview1>: deviceComplianceDeviceOverview
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[ConfigurationVersion <Int32?>]`: Version of the policy for that overview
   - `[ConflictCount <Int32?>]`: Number of devices in conflict
   - `[ErrorCount <Int32?>]`: Number of error devices
@@ -464,18 +463,18 @@ DEVICESTATUSOVERVIEW <IMicrosoftGraphDeviceComplianceDeviceOverview1>: deviceCom
   - `[PendingCount <Int32?>]`: Number of pending devices
   - `[SuccessCount <Int32?>]`: Number of succeeded devices
 
-SCHEDULEDACTIONSFORRULE <IMicrosoftGraphDeviceComplianceScheduledActionForRule1[]>: The list of scheduled action per rule for this compliance policy. This is a required property when creating any individual per-platform compliance policies.
-  - `[Id <String>]`: Read-only.
+SCHEDULEDACTIONSFORRULE <IMicrosoftGraphDeviceComplianceScheduledActionForRule1[]>: The list of scheduled action for this rule
+  - `[Id <String>]`: 
   - `[RuleName <String>]`: Name of the rule which this scheduled action applies to. Currently scheduled actions are created per policy instead of per rule, thus RuleName is always set to default value PasswordRequired.
   - `[ScheduledActionConfigurations <IMicrosoftGraphDeviceComplianceActionItem1[]>]`: The list of scheduled action configurations for this compliance policy. Compliance policy must have one and only one block scheduled action.
-    - `[Id <String>]`: Read-only.
-    - `[ActionType <String>]`: Scheduled Action Type Enum
+    - `[Id <String>]`: 
+    - `[ActionType <DeviceComplianceActionType?>]`: Scheduled Action Type Enum
     - `[GracePeriodHours <Int32?>]`: Number of hours to wait till the action will be enforced. Valid values 0 to 8760
     - `[NotificationMessageCcList <String[]>]`: A list of group IDs to speicify who to CC this notification message to.
     - `[NotificationTemplateId <String>]`: What notification Message template to use
 
 USERSTATUSES <IMicrosoftGraphDeviceComplianceUserStatus[]>: List of DeviceComplianceUserStatus.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[DevicesCount <Int32?>]`: Devices count for that user.
   - `[LastReportedDateTime <DateTime?>]`: Last modified date time of the policy report.
   - `[Status <String>]`: complianceStatus
@@ -484,7 +483,7 @@ USERSTATUSES <IMicrosoftGraphDeviceComplianceUserStatus[]>: List of DeviceCompli
 
 USERSTATUSOVERVIEW <IMicrosoftGraphDeviceComplianceUserOverview1>: deviceComplianceUserOverview
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[ConfigurationVersion <Int32?>]`: Version of the policy for that overview
   - `[ConflictCount <Int32?>]`: Number of users in conflict
   - `[ErrorCount <Int32?>]`: Number of error Users

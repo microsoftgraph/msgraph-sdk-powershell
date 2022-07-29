@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Identity.Governance
-Module Guid: 9d264349-3572-484f-a7dd-c406110e009e
+Module Guid: 720e0873-5558-4eac-a5bf-f18cf30fd4d6
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance
 Help Version: 1.0.0.0
 Locale: en-US
@@ -11,331 +11,507 @@ Locale: en-US
 Microsoft Graph PowerShell Cmdlets
 
 ## Microsoft.Graph.Identity.Governance Cmdlets
+### [Add-MgIdentityGovernanceAccessReviewDefinitionInstanceDecision](Add-MgIdentityGovernanceAccessReviewDefinitionInstanceDecision.md)
+Invoke action applyDecisions
+
 ### [Get-MgAgreement](Get-MgAgreement.md)
 Get entity from agreements by key
 
 ### [Get-MgAgreementAcceptance](Get-MgAgreementAcceptance.md)
-Read-only.
-Information about acceptances of this agreement.
+Get acceptances from agreements
 
 ### [Get-MgAgreementFile](Get-MgAgreementFile.md)
-Default PDF linked to this agreement.
+Get file from agreements
 
 ### [Get-MgAgreementFileLocalization](Get-MgAgreementFileLocalization.md)
-The localized version of the terms of use agreement files attached to the agreement.
+Get localizations from agreements
 
 ### [Get-MgAgreementFileLocalizationVersion](Get-MgAgreementFileLocalizationVersion.md)
-Read-only.
-Customized versions of the terms of use agreement in the Azure AD tenant.
-
-### [Get-MgAgreementFileVersion](Get-MgAgreementFileVersion.md)
-Read-only.
-Customized versions of the terms of use agreement in the Azure AD tenant.
+Get versions from agreements
 
 ### [Get-MgEntitlementManagementAccessPackage](Get-MgEntitlementManagementAccessPackage.md)
-Represents access package objects.
+Get accessPackages from identityGovernance
 
 ### [Get-MgEntitlementManagementAccessPackageApplicablePolicyRequirement](Get-MgEntitlementManagementAccessPackageApplicablePolicyRequirement.md)
 Invoke action getApplicablePolicyRequirements
 
 ### [Get-MgEntitlementManagementAccessPackageAssignmentApprovalStage](Get-MgEntitlementManagementAccessPackageAssignmentApprovalStage.md)
-A collection of stages in the approval decision.
+Get stages from identityGovernance
 
 ### [Get-MgEntitlementManagementAccessPackageAssignmentPolicy](Get-MgEntitlementManagementAccessPackageAssignmentPolicy.md)
 Get assignmentPolicies from identityGovernance
 
 ### [Get-MgEntitlementManagementAccessPackageCatalog](Get-MgEntitlementManagementAccessPackageCatalog.md)
-Read-only.
-Nullable.
+Get catalog from identityGovernance
 
 ### [Get-MgEntitlementManagementAssignment](Get-MgEntitlementManagementAssignment.md)
-Represents the grant of an access package to a subject (user or group).
-
-### [Get-MgEntitlementManagementAssignmentAssignmentPolicyByRef](Get-MgEntitlementManagementAssignmentAssignmentPolicyByRef.md)
-Get ref of assignmentPolicy from identityGovernance
+Get assignments from identityGovernance
 
 ### [Get-MgEntitlementManagementAssignmentPolicy](Get-MgEntitlementManagementAssignmentPolicy.md)
 Get assignmentPolicies from identityGovernance
 
 ### [Get-MgEntitlementManagementAssignmentPolicyAccessPackage](Get-MgEntitlementManagementAssignmentPolicyAccessPackage.md)
-The access package with this policy.
-Read-only.
-Nullable.
-Supports $expand.
-
-### [Get-MgEntitlementManagementAssignmentPolicyAccessPackageApplicablePolicyRequirement](Get-MgEntitlementManagementAssignmentPolicyAccessPackageApplicablePolicyRequirement.md)
-Invoke action getApplicablePolicyRequirements
-
-### [Get-MgEntitlementManagementAssignmentPolicyAccessPackageByRef](Get-MgEntitlementManagementAssignmentPolicyAccessPackageByRef.md)
-The access package with this policy.
-Read-only.
-Nullable.
-Supports $expand.
+Get accessPackage from identityGovernance
 
 ### [Get-MgEntitlementManagementAssignmentPolicyCatalog](Get-MgEntitlementManagementAssignmentPolicyCatalog.md)
 Get catalog from identityGovernance
 
-### [Get-MgEntitlementManagementAssignmentPolicyCatalogByRef](Get-MgEntitlementManagementAssignmentPolicyCatalogByRef.md)
-Get ref of catalog from identityGovernance
-
 ### [Get-MgEntitlementManagementAssignmentRequest](Get-MgEntitlementManagementAssignmentRequest.md)
-Represents access package assignment requests created by or on behalf of a user.
+Get assignmentRequests from identityGovernance
 
 ### [Get-MgEntitlementManagementCatalog](Get-MgEntitlementManagementCatalog.md)
-Represents a group of access packages.
+Get catalogs from identityGovernance
+
+### [Get-MgEntitlementManagementCatalogAccessPackageApplicablePolicyRequirement](Get-MgEntitlementManagementCatalogAccessPackageApplicablePolicyRequirement.md)
+Invoke action getApplicablePolicyRequirements
+
+### [Get-MgEntitlementManagementCatalogAccessPackageAssignmentPolicy](Get-MgEntitlementManagementCatalogAccessPackageAssignmentPolicy.md)
+Get assignmentPolicies from identityGovernance
+
+### [Get-MgEntitlementManagementCatalogAccessPackageAssignmentPolicyAccessPackage](Get-MgEntitlementManagementCatalogAccessPackageAssignmentPolicyAccessPackage.md)
+Get accessPackage from identityGovernance
+
+### [Get-MgEntitlementManagementCatalogAccessPackageAssignmentPolicyCatalog](Get-MgEntitlementManagementCatalogAccessPackageAssignmentPolicyCatalog.md)
+Get catalog from identityGovernance
 
 ### [Get-MgEntitlementManagementConnectedOrganization](Get-MgEntitlementManagementConnectedOrganization.md)
-Represents references to a directory or domain of another organization whose users can request access.
+Get connectedOrganizations from identityGovernance
 
 ### [Get-MgEntitlementManagementConnectedOrganizationExternalSponsor](Get-MgEntitlementManagementConnectedOrganizationExternalSponsor.md)
-Nullable.
+Get externalSponsors from identityGovernance
+
+### [Get-MgEntitlementManagementConnectedOrganizationExternalSponsorAvailableExtensionProperty](Get-MgEntitlementManagementConnectedOrganizationExternalSponsorAvailableExtensionProperty.md)
+Invoke action getAvailableExtensionProperties
+
+### [Get-MgEntitlementManagementConnectedOrganizationExternalSponsorById](Get-MgEntitlementManagementConnectedOrganizationExternalSponsorById.md)
+Invoke action getByIds
+
+### [Get-MgEntitlementManagementConnectedOrganizationExternalSponsorByRef](Get-MgEntitlementManagementConnectedOrganizationExternalSponsorByRef.md)
+Get ref of externalSponsors from identityGovernance
 
 ### [Get-MgEntitlementManagementConnectedOrganizationInternalSponsor](Get-MgEntitlementManagementConnectedOrganizationInternalSponsor.md)
-Nullable.
+Get internalSponsors from identityGovernance
+
+### [Get-MgEntitlementManagementConnectedOrganizationInternalSponsorAvailableExtensionProperty](Get-MgEntitlementManagementConnectedOrganizationInternalSponsorAvailableExtensionProperty.md)
+Invoke action getAvailableExtensionProperties
+
+### [Get-MgEntitlementManagementConnectedOrganizationInternalSponsorById](Get-MgEntitlementManagementConnectedOrganizationInternalSponsorById.md)
+Invoke action getByIds
+
+### [Get-MgEntitlementManagementConnectedOrganizationInternalSponsorByRef](Get-MgEntitlementManagementConnectedOrganizationInternalSponsorByRef.md)
+Get ref of internalSponsors from identityGovernance
 
 ### [Get-MgEntitlementManagementSetting](Get-MgEntitlementManagementSetting.md)
-Represents the settings that control the behavior of Azure AD entitlement management.
+Get settings from identityGovernance
+
+### [Get-MgIdentityGovernanceAccessReviewDefinition](Get-MgIdentityGovernanceAccessReviewDefinition.md)
+Get definitions from identityGovernance
+
+### [Get-MgIdentityGovernanceAccessReviewDefinitionInstance](Get-MgIdentityGovernanceAccessReviewDefinitionInstance.md)
+Get instances from identityGovernance
+
+### [Get-MgIdentityGovernanceAccessReviewDefinitionInstanceContactedReviewer](Get-MgIdentityGovernanceAccessReviewDefinitionInstanceContactedReviewer.md)
+Get contactedReviewers from identityGovernance
+
+### [Get-MgIdentityGovernanceAccessReviewDefinitionInstanceDecision](Get-MgIdentityGovernanceAccessReviewDefinitionInstanceDecision.md)
+Get decisions from identityGovernance
+
+### [Get-MgIdentityGovernanceAccessReviewDefinitionInstanceStage](Get-MgIdentityGovernanceAccessReviewDefinitionInstanceStage.md)
+Get stages from identityGovernance
+
+### [Get-MgIdentityGovernanceAccessReviewDefinitionInstanceStageDecision](Get-MgIdentityGovernanceAccessReviewDefinitionInstanceStageDecision.md)
+Get decisions from identityGovernance
+
+### [Get-MgIdentityGovernanceAccessReviewHistoryDefinition](Get-MgIdentityGovernanceAccessReviewHistoryDefinition.md)
+Get historyDefinitions from identityGovernance
+
+### [Get-MgIdentityGovernanceAccessReviewHistoryDefinitionInstance](Get-MgIdentityGovernanceAccessReviewHistoryDefinitionInstance.md)
+Get instances from identityGovernance
+
+### [Get-MgIdentityGovernanceAppConsentRequest](Get-MgIdentityGovernanceAppConsentRequest.md)
+Get appConsentRequests from identityGovernance
+
+### [Get-MgIdentityGovernanceAppConsentRequestUserConsentRequest](Get-MgIdentityGovernanceAppConsentRequestUserConsentRequest.md)
+Get userConsentRequests from identityGovernance
+
+### [Get-MgIdentityGovernanceAppConsentRequestUserConsentRequestApproval](Get-MgIdentityGovernanceAppConsentRequestUserConsentRequestApproval.md)
+Get approval from identityGovernance
+
+### [Get-MgIdentityGovernanceAppConsentRequestUserConsentRequestApprovalStage](Get-MgIdentityGovernanceAppConsentRequestUserConsentRequestApprovalStage.md)
+Get stages from identityGovernance
 
 ### [Get-MgIdentityGovernanceTermOfUseAgreement](Get-MgIdentityGovernanceTermOfUseAgreement.md)
-Represents a tenant's customizable terms of use agreement that's created and managed with Azure Active Directory (Azure AD).
+Get agreements from identityGovernance
 
 ### [Get-MgIdentityGovernanceTermOfUseAgreementAcceptance](Get-MgIdentityGovernanceTermOfUseAgreementAcceptance.md)
-Represents the current status of a user's response to a company's customizable terms of use agreement.
+Get agreementAcceptances from identityGovernance
+
+### [Get-MgIdentityGovernanceTermOfUseAgreementFile](Get-MgIdentityGovernanceTermOfUseAgreementFile.md)
+Get file from identityGovernance
+
+### [Get-MgIdentityGovernanceTermOfUseAgreementFileLocalization](Get-MgIdentityGovernanceTermOfUseAgreementFileLocalization.md)
+Get localizations from identityGovernance
+
+### [Get-MgIdentityGovernanceTermOfUseAgreementFileLocalizationVersion](Get-MgIdentityGovernanceTermOfUseAgreementFileLocalizationVersion.md)
+Get versions from identityGovernance
 
 ### [Get-MgUserAgreementAcceptance](Get-MgUserAgreementAcceptance.md)
-The user's terms of use acceptance statuses.
-Read-only.
-Nullable.
+Get agreementAcceptances from users
 
-### [Get-MgUserAgreementAcceptanceByRef](Get-MgUserAgreementAcceptanceByRef.md)
-The user's terms of use acceptance statuses.
-Read-only.
-Nullable.
+### [Invoke-MgAcceptIdentityGovernanceAccessReviewDefinitionInstanceRecommendation](Invoke-MgAcceptIdentityGovernanceAccessReviewDefinitionInstanceRecommendation.md)
+Invoke action acceptRecommendations
 
-### [Invoke-MgFilterEntitlementManagementAccessPackage](Invoke-MgFilterEntitlementManagementAccessPackage.md)
+### [Invoke-MgBatchIdentityGovernanceAccessReviewDefinitionInstanceRecordDecision](Invoke-MgBatchIdentityGovernanceAccessReviewDefinitionInstanceRecordDecision.md)
+Invoke action batchRecordDecisions
+
+### [Invoke-MgFilterEntitlementManagementAccessPackageAssignmentApprovalByCurrentUser](Invoke-MgFilterEntitlementManagementAccessPackageAssignmentApprovalByCurrentUser.md)
 Invoke function filterByCurrentUser
 
-### [Invoke-MgFilterEntitlementManagementAccessPackageAssignmentApproval](Invoke-MgFilterEntitlementManagementAccessPackageAssignmentApproval.md)
+### [Invoke-MgFilterEntitlementManagementAccessPackageByCurrentUser](Invoke-MgFilterEntitlementManagementAccessPackageByCurrentUser.md)
 Invoke function filterByCurrentUser
 
-### [Invoke-MgFilterEntitlementManagementAssignment](Invoke-MgFilterEntitlementManagementAssignment.md)
+### [Invoke-MgFilterEntitlementManagementAssignmentByCurrentUser](Invoke-MgFilterEntitlementManagementAssignmentByCurrentUser.md)
 Invoke function filterByCurrentUser
 
-### [Invoke-MgFilterEntitlementManagementAssignmentRequest](Invoke-MgFilterEntitlementManagementAssignmentRequest.md)
+### [Invoke-MgFilterEntitlementManagementAssignmentRequestByCurrentUser](Invoke-MgFilterEntitlementManagementAssignmentRequestByCurrentUser.md)
+Invoke function filterByCurrentUser
+
+### [Invoke-MgFilterEntitlementManagementCatalogAccessPackageByCurrentUser](Invoke-MgFilterEntitlementManagementCatalogAccessPackageByCurrentUser.md)
+Invoke function filterByCurrentUser
+
+### [Invoke-MgFilterIdentityGovernanceAccessReviewDefinitionByCurrentUser](Invoke-MgFilterIdentityGovernanceAccessReviewDefinitionByCurrentUser.md)
+Invoke function filterByCurrentUser
+
+### [Invoke-MgFilterIdentityGovernanceAccessReviewDefinitionInstanceByCurrentUser](Invoke-MgFilterIdentityGovernanceAccessReviewDefinitionInstanceByCurrentUser.md)
+Invoke function filterByCurrentUser
+
+### [Invoke-MgFilterIdentityGovernanceAccessReviewDefinitionInstanceDecisionByCurrentUser](Invoke-MgFilterIdentityGovernanceAccessReviewDefinitionInstanceDecisionByCurrentUser.md)
+Invoke function filterByCurrentUser
+
+### [Invoke-MgFilterIdentityGovernanceAccessReviewDefinitionInstanceStageByCurrentUser](Invoke-MgFilterIdentityGovernanceAccessReviewDefinitionInstanceStageByCurrentUser.md)
+Invoke function filterByCurrentUser
+
+### [Invoke-MgFilterIdentityGovernanceAppConsentRequestByCurrentUser](Invoke-MgFilterIdentityGovernanceAppConsentRequestByCurrentUser.md)
+Invoke function filterByCurrentUser
+
+### [Invoke-MgFilterIdentityGovernanceAppConsentRequestUserConsentRequestByCurrentUser](Invoke-MgFilterIdentityGovernanceAppConsentRequestUserConsentRequestByCurrentUser.md)
 Invoke function filterByCurrentUser
 
 ### [New-MgAgreement](New-MgAgreement.md)
 Add new entity to agreements
 
 ### [New-MgAgreementAcceptance](New-MgAgreementAcceptance.md)
-Read-only.
-Information about acceptances of this agreement.
-
-### [New-MgAgreementFile](New-MgAgreementFile.md)
-PDFs linked to this agreement.
-This property is in the process of being deprecated.
-Use the  file property instead.
-Supports $expand.
+Create new navigation property to acceptances for agreements
 
 ### [New-MgAgreementFileLocalization](New-MgAgreementFileLocalization.md)
-The localized version of the terms of use agreement files attached to the agreement.
+Create new navigation property to localizations for agreements
 
 ### [New-MgAgreementFileLocalizationVersion](New-MgAgreementFileLocalizationVersion.md)
-Read-only.
-Customized versions of the terms of use agreement in the Azure AD tenant.
-
-### [New-MgAgreementFileVersion](New-MgAgreementFileVersion.md)
-Read-only.
-Customized versions of the terms of use agreement in the Azure AD tenant.
+Create new navigation property to versions for agreements
 
 ### [New-MgEntitlementManagementAccessPackage](New-MgEntitlementManagementAccessPackage.md)
-Represents access package objects.
+Create new navigation property to accessPackages for identityGovernance
 
 ### [New-MgEntitlementManagementAccessPackageAssignmentApprovalStage](New-MgEntitlementManagementAccessPackageAssignmentApprovalStage.md)
-A collection of stages in the approval decision.
+Create new navigation property to stages for identityGovernance
 
 ### [New-MgEntitlementManagementAccessPackageAssignmentPolicy](New-MgEntitlementManagementAccessPackageAssignmentPolicy.md)
 Create new navigation property to assignmentPolicies for identityGovernance
 
 ### [New-MgEntitlementManagementAssignment](New-MgEntitlementManagementAssignment.md)
-Represents the grant of an access package to a subject (user or group).
+Create new navigation property to assignments for identityGovernance
 
 ### [New-MgEntitlementManagementAssignmentPolicy](New-MgEntitlementManagementAssignmentPolicy.md)
 Create new navigation property to assignmentPolicies for identityGovernance
 
 ### [New-MgEntitlementManagementAssignmentRequest](New-MgEntitlementManagementAssignmentRequest.md)
-Represents access package assignment requests created by or on behalf of a user.
+Create new navigation property to assignmentRequests for identityGovernance
 
 ### [New-MgEntitlementManagementCatalog](New-MgEntitlementManagementCatalog.md)
-Represents a group of access packages.
+Create new navigation property to catalogs for identityGovernance
+
+### [New-MgEntitlementManagementCatalogAccessPackageAssignmentPolicy](New-MgEntitlementManagementCatalogAccessPackageAssignmentPolicy.md)
+Create new navigation property to assignmentPolicies for identityGovernance
 
 ### [New-MgEntitlementManagementConnectedOrganization](New-MgEntitlementManagementConnectedOrganization.md)
-Represents references to a directory or domain of another organization whose users can request access.
+Create new navigation property to connectedOrganizations for identityGovernance
 
-### [New-MgEntitlementManagementConnectedOrganizationExternalSponsor](New-MgEntitlementManagementConnectedOrganizationExternalSponsor.md)
-Nullable.
+### [New-MgEntitlementManagementConnectedOrganizationExternalSponsorByRef](New-MgEntitlementManagementConnectedOrganizationExternalSponsorByRef.md)
+Create new navigation property ref to externalSponsors for identityGovernance
 
-### [New-MgEntitlementManagementConnectedOrganizationInternalSponsor](New-MgEntitlementManagementConnectedOrganizationInternalSponsor.md)
-Nullable.
+### [New-MgEntitlementManagementConnectedOrganizationInternalSponsorByRef](New-MgEntitlementManagementConnectedOrganizationInternalSponsorByRef.md)
+Create new navigation property ref to internalSponsors for identityGovernance
+
+### [New-MgIdentityGovernanceAccessReviewDefinition](New-MgIdentityGovernanceAccessReviewDefinition.md)
+Create new navigation property to definitions for identityGovernance
+
+### [New-MgIdentityGovernanceAccessReviewDefinitionInstance](New-MgIdentityGovernanceAccessReviewDefinitionInstance.md)
+Create new navigation property to instances for identityGovernance
+
+### [New-MgIdentityGovernanceAccessReviewDefinitionInstanceContactedReviewer](New-MgIdentityGovernanceAccessReviewDefinitionInstanceContactedReviewer.md)
+Create new navigation property to contactedReviewers for identityGovernance
+
+### [New-MgIdentityGovernanceAccessReviewDefinitionInstanceDecision](New-MgIdentityGovernanceAccessReviewDefinitionInstanceDecision.md)
+Create new navigation property to decisions for identityGovernance
+
+### [New-MgIdentityGovernanceAccessReviewDefinitionInstanceStage](New-MgIdentityGovernanceAccessReviewDefinitionInstanceStage.md)
+Create new navigation property to stages for identityGovernance
+
+### [New-MgIdentityGovernanceAccessReviewDefinitionInstanceStageDecision](New-MgIdentityGovernanceAccessReviewDefinitionInstanceStageDecision.md)
+Create new navigation property to decisions for identityGovernance
+
+### [New-MgIdentityGovernanceAccessReviewHistoryDefinition](New-MgIdentityGovernanceAccessReviewHistoryDefinition.md)
+Create new navigation property to historyDefinitions for identityGovernance
+
+### [New-MgIdentityGovernanceAccessReviewHistoryDefinitionInstance](New-MgIdentityGovernanceAccessReviewHistoryDefinitionInstance.md)
+Create new navigation property to instances for identityGovernance
+
+### [New-MgIdentityGovernanceAccessReviewHistoryDefinitionInstanceDownloadUri](New-MgIdentityGovernanceAccessReviewHistoryDefinitionInstanceDownloadUri.md)
+Invoke action generateDownloadUri
+
+### [New-MgIdentityGovernanceAppConsentRequest](New-MgIdentityGovernanceAppConsentRequest.md)
+Create new navigation property to appConsentRequests for identityGovernance
+
+### [New-MgIdentityGovernanceAppConsentRequestUserConsentRequest](New-MgIdentityGovernanceAppConsentRequestUserConsentRequest.md)
+Create new navigation property to userConsentRequests for identityGovernance
+
+### [New-MgIdentityGovernanceAppConsentRequestUserConsentRequestApprovalStage](New-MgIdentityGovernanceAppConsentRequestUserConsentRequestApprovalStage.md)
+Create new navigation property to stages for identityGovernance
 
 ### [New-MgIdentityGovernanceTermOfUseAgreement](New-MgIdentityGovernanceTermOfUseAgreement.md)
-Represents a tenant's customizable terms of use agreement that's created and managed with Azure Active Directory (Azure AD).
+Create new navigation property to agreements for identityGovernance
 
 ### [New-MgIdentityGovernanceTermOfUseAgreementAcceptance](New-MgIdentityGovernanceTermOfUseAgreementAcceptance.md)
-Represents the current status of a user's response to a company's customizable terms of use agreement.
+Create new navigation property to agreementAcceptances for identityGovernance
 
-### [New-MgUserAgreementAcceptanceByRef](New-MgUserAgreementAcceptanceByRef.md)
-The user's terms of use acceptance statuses.
-Read-only.
-Nullable.
+### [New-MgIdentityGovernanceTermOfUseAgreementFileLocalization](New-MgIdentityGovernanceTermOfUseAgreementFileLocalization.md)
+Create new navigation property to localizations for identityGovernance
+
+### [New-MgIdentityGovernanceTermOfUseAgreementFileLocalizationVersion](New-MgIdentityGovernanceTermOfUseAgreementFileLocalizationVersion.md)
+Create new navigation property to versions for identityGovernance
 
 ### [Remove-MgAgreement](Remove-MgAgreement.md)
 Delete entity from agreements
 
 ### [Remove-MgAgreementAcceptance](Remove-MgAgreementAcceptance.md)
-Read-only.
-Information about acceptances of this agreement.
+Delete navigation property acceptances for agreements
 
 ### [Remove-MgAgreementFile](Remove-MgAgreementFile.md)
-Default PDF linked to this agreement.
+Delete navigation property file for agreements
 
 ### [Remove-MgAgreementFileLocalization](Remove-MgAgreementFileLocalization.md)
-The localized version of the terms of use agreement files attached to the agreement.
+Delete navigation property localizations for agreements
 
 ### [Remove-MgAgreementFileLocalizationVersion](Remove-MgAgreementFileLocalizationVersion.md)
-Read-only.
-Customized versions of the terms of use agreement in the Azure AD tenant.
-
-### [Remove-MgAgreementFileVersion](Remove-MgAgreementFileVersion.md)
-Read-only.
-Customized versions of the terms of use agreement in the Azure AD tenant.
+Delete navigation property versions for agreements
 
 ### [Remove-MgEntitlementManagementAccessPackage](Remove-MgEntitlementManagementAccessPackage.md)
-Represents access package objects.
+Delete navigation property accessPackages for identityGovernance
 
 ### [Remove-MgEntitlementManagementAccessPackageAssignmentApproval](Remove-MgEntitlementManagementAccessPackageAssignmentApproval.md)
-Approval stages for assignment requests.
+Delete navigation property accessPackageAssignmentApprovals for identityGovernance
 
 ### [Remove-MgEntitlementManagementAccessPackageAssignmentApprovalStage](Remove-MgEntitlementManagementAccessPackageAssignmentApprovalStage.md)
-A collection of stages in the approval decision.
+Delete navigation property stages for identityGovernance
 
 ### [Remove-MgEntitlementManagementAccessPackageAssignmentPolicy](Remove-MgEntitlementManagementAccessPackageAssignmentPolicy.md)
 Delete navigation property assignmentPolicies for identityGovernance
 
 ### [Remove-MgEntitlementManagementAssignment](Remove-MgEntitlementManagementAssignment.md)
-Represents the grant of an access package to a subject (user or group).
-
-### [Remove-MgEntitlementManagementAssignmentAssignmentPolicyByRef](Remove-MgEntitlementManagementAssignmentAssignmentPolicyByRef.md)
-Delete ref of navigation property assignmentPolicy for identityGovernance
+Delete navigation property assignments for identityGovernance
 
 ### [Remove-MgEntitlementManagementAssignmentPolicy](Remove-MgEntitlementManagementAssignmentPolicy.md)
 Delete navigation property assignmentPolicies for identityGovernance
 
-### [Remove-MgEntitlementManagementAssignmentPolicyAccessPackageByRef](Remove-MgEntitlementManagementAssignmentPolicyAccessPackageByRef.md)
-The access package with this policy.
-Read-only.
-Nullable.
-Supports $expand.
-
-### [Remove-MgEntitlementManagementAssignmentPolicyCatalogByRef](Remove-MgEntitlementManagementAssignmentPolicyCatalogByRef.md)
-Delete ref of navigation property catalog for identityGovernance
-
 ### [Remove-MgEntitlementManagementAssignmentRequest](Remove-MgEntitlementManagementAssignmentRequest.md)
-Represents access package assignment requests created by or on behalf of a user.
+Delete navigation property assignmentRequests for identityGovernance
 
 ### [Remove-MgEntitlementManagementCatalog](Remove-MgEntitlementManagementCatalog.md)
-Represents a group of access packages.
+Delete navigation property catalogs for identityGovernance
+
+### [Remove-MgEntitlementManagementCatalogAccessPackageAssignmentPolicy](Remove-MgEntitlementManagementCatalogAccessPackageAssignmentPolicy.md)
+Delete navigation property assignmentPolicies for identityGovernance
 
 ### [Remove-MgEntitlementManagementConnectedOrganization](Remove-MgEntitlementManagementConnectedOrganization.md)
-Represents references to a directory or domain of another organization whose users can request access.
+Delete navigation property connectedOrganizations for identityGovernance
 
-### [Remove-MgEntitlementManagementConnectedOrganizationExternalSponsor](Remove-MgEntitlementManagementConnectedOrganizationExternalSponsor.md)
-Nullable.
+### [Remove-MgEntitlementManagementConnectedOrganizationExternalSponsorByRef](Remove-MgEntitlementManagementConnectedOrganizationExternalSponsorByRef.md)
+Delete ref of navigation property externalSponsors for identityGovernance
 
-### [Remove-MgEntitlementManagementConnectedOrganizationInternalSponsor](Remove-MgEntitlementManagementConnectedOrganizationInternalSponsor.md)
-Nullable.
+### [Remove-MgEntitlementManagementConnectedOrganizationInternalSponsorByRef](Remove-MgEntitlementManagementConnectedOrganizationInternalSponsorByRef.md)
+Delete ref of navigation property internalSponsors for identityGovernance
+
+### [Remove-MgIdentityGovernanceAccessReviewDefinition](Remove-MgIdentityGovernanceAccessReviewDefinition.md)
+Delete navigation property definitions for identityGovernance
+
+### [Remove-MgIdentityGovernanceAccessReviewDefinitionInstance](Remove-MgIdentityGovernanceAccessReviewDefinitionInstance.md)
+Delete navigation property instances for identityGovernance
+
+### [Remove-MgIdentityGovernanceAccessReviewDefinitionInstanceContactedReviewer](Remove-MgIdentityGovernanceAccessReviewDefinitionInstanceContactedReviewer.md)
+Delete navigation property contactedReviewers for identityGovernance
+
+### [Remove-MgIdentityGovernanceAccessReviewDefinitionInstanceDecision](Remove-MgIdentityGovernanceAccessReviewDefinitionInstanceDecision.md)
+Delete navigation property decisions for identityGovernance
+
+### [Remove-MgIdentityGovernanceAccessReviewDefinitionInstanceStage](Remove-MgIdentityGovernanceAccessReviewDefinitionInstanceStage.md)
+Delete navigation property stages for identityGovernance
+
+### [Remove-MgIdentityGovernanceAccessReviewDefinitionInstanceStageDecision](Remove-MgIdentityGovernanceAccessReviewDefinitionInstanceStageDecision.md)
+Delete navigation property decisions for identityGovernance
+
+### [Remove-MgIdentityGovernanceAccessReviewHistoryDefinition](Remove-MgIdentityGovernanceAccessReviewHistoryDefinition.md)
+Delete navigation property historyDefinitions for identityGovernance
+
+### [Remove-MgIdentityGovernanceAccessReviewHistoryDefinitionInstance](Remove-MgIdentityGovernanceAccessReviewHistoryDefinitionInstance.md)
+Delete navigation property instances for identityGovernance
+
+### [Remove-MgIdentityGovernanceAppConsentRequest](Remove-MgIdentityGovernanceAppConsentRequest.md)
+Delete navigation property appConsentRequests for identityGovernance
+
+### [Remove-MgIdentityGovernanceAppConsentRequestUserConsentRequest](Remove-MgIdentityGovernanceAppConsentRequestUserConsentRequest.md)
+Delete navigation property userConsentRequests for identityGovernance
+
+### [Remove-MgIdentityGovernanceAppConsentRequestUserConsentRequestApproval](Remove-MgIdentityGovernanceAppConsentRequestUserConsentRequestApproval.md)
+Delete navigation property approval for identityGovernance
+
+### [Remove-MgIdentityGovernanceAppConsentRequestUserConsentRequestApprovalStage](Remove-MgIdentityGovernanceAppConsentRequestUserConsentRequestApprovalStage.md)
+Delete navigation property stages for identityGovernance
 
 ### [Remove-MgIdentityGovernanceTermOfUseAgreement](Remove-MgIdentityGovernanceTermOfUseAgreement.md)
-Represents a tenant's customizable terms of use agreement that's created and managed with Azure Active Directory (Azure AD).
+Delete navigation property agreements for identityGovernance
 
 ### [Remove-MgIdentityGovernanceTermOfUseAgreementAcceptance](Remove-MgIdentityGovernanceTermOfUseAgreementAcceptance.md)
-Represents the current status of a user's response to a company's customizable terms of use agreement.
+Delete navigation property agreementAcceptances for identityGovernance
 
-### [Set-MgEntitlementManagementAssignmentAssignmentPolicyByRef](Set-MgEntitlementManagementAssignmentAssignmentPolicyByRef.md)
-Update the ref of navigation property assignmentPolicy in identityGovernance
+### [Remove-MgIdentityGovernanceTermOfUseAgreementFile](Remove-MgIdentityGovernanceTermOfUseAgreementFile.md)
+Delete navigation property file for identityGovernance
 
-### [Set-MgEntitlementManagementAssignmentPolicyAccessPackageByRef](Set-MgEntitlementManagementAssignmentPolicyAccessPackageByRef.md)
-The access package with this policy.
-Read-only.
-Nullable.
-Supports $expand.
+### [Remove-MgIdentityGovernanceTermOfUseAgreementFileLocalization](Remove-MgIdentityGovernanceTermOfUseAgreementFileLocalization.md)
+Delete navigation property localizations for identityGovernance
 
-### [Set-MgEntitlementManagementAssignmentPolicyCatalogByRef](Set-MgEntitlementManagementAssignmentPolicyCatalogByRef.md)
-Update the ref of navigation property catalog in identityGovernance
+### [Remove-MgIdentityGovernanceTermOfUseAgreementFileLocalizationVersion](Remove-MgIdentityGovernanceTermOfUseAgreementFileLocalizationVersion.md)
+Delete navigation property versions for identityGovernance
+
+### [Reset-MgIdentityGovernanceAccessReviewDefinitionInstanceDecision](Reset-MgIdentityGovernanceAccessReviewDefinitionInstanceDecision.md)
+Invoke action resetDecisions
+
+### [Send-MgIdentityGovernanceAccessReviewDefinitionInstanceReminder](Send-MgIdentityGovernanceAccessReviewDefinitionInstanceReminder.md)
+Invoke action sendReminder
 
 ### [Stop-MgEntitlementManagementAssignmentRequest](Stop-MgEntitlementManagementAssignmentRequest.md)
 Invoke action cancel
+
+### [Stop-MgIdentityGovernanceAccessReviewDefinition](Stop-MgIdentityGovernanceAccessReviewDefinition.md)
+Invoke action stop
+
+### [Stop-MgIdentityGovernanceAccessReviewDefinitionInstance](Stop-MgIdentityGovernanceAccessReviewDefinitionInstance.md)
+Invoke action stop
+
+### [Stop-MgIdentityGovernanceAccessReviewDefinitionInstanceStage](Stop-MgIdentityGovernanceAccessReviewDefinitionInstanceStage.md)
+Invoke action stop
+
+### [Test-MgEntitlementManagementConnectedOrganizationExternalSponsorProperty](Test-MgEntitlementManagementConnectedOrganizationExternalSponsorProperty.md)
+Invoke action validateProperties
+
+### [Test-MgEntitlementManagementConnectedOrganizationInternalSponsorProperty](Test-MgEntitlementManagementConnectedOrganizationInternalSponsorProperty.md)
+Invoke action validateProperties
 
 ### [Update-MgAgreement](Update-MgAgreement.md)
 Update entity in agreements
 
 ### [Update-MgAgreementAcceptance](Update-MgAgreementAcceptance.md)
-Read-only.
-Information about acceptances of this agreement.
+Update the navigation property acceptances in agreements
 
 ### [Update-MgAgreementFile](Update-MgAgreementFile.md)
-Default PDF linked to this agreement.
+Update the navigation property file in agreements
 
 ### [Update-MgAgreementFileLocalization](Update-MgAgreementFileLocalization.md)
-The localized version of the terms of use agreement files attached to the agreement.
+Update the navigation property localizations in agreements
 
 ### [Update-MgAgreementFileLocalizationVersion](Update-MgAgreementFileLocalizationVersion.md)
-Read-only.
-Customized versions of the terms of use agreement in the Azure AD tenant.
-
-### [Update-MgAgreementFileVersion](Update-MgAgreementFileVersion.md)
-Read-only.
-Customized versions of the terms of use agreement in the Azure AD tenant.
+Update the navigation property versions in agreements
 
 ### [Update-MgEntitlementManagementAccessPackage](Update-MgEntitlementManagementAccessPackage.md)
-Represents access package objects.
+Update the navigation property accessPackages in identityGovernance
 
 ### [Update-MgEntitlementManagementAccessPackageAssignmentApproval](Update-MgEntitlementManagementAccessPackageAssignmentApproval.md)
-Approval stages for assignment requests.
+Update the navigation property accessPackageAssignmentApprovals in identityGovernance
 
 ### [Update-MgEntitlementManagementAccessPackageAssignmentApprovalStage](Update-MgEntitlementManagementAccessPackageAssignmentApprovalStage.md)
-A collection of stages in the approval decision.
+Update the navigation property stages in identityGovernance
 
 ### [Update-MgEntitlementManagementAccessPackageAssignmentPolicy](Update-MgEntitlementManagementAccessPackageAssignmentPolicy.md)
 Update the navigation property assignmentPolicies in identityGovernance
 
 ### [Update-MgEntitlementManagementAssignment](Update-MgEntitlementManagementAssignment.md)
-Represents the grant of an access package to a subject (user or group).
+Invoke action reprocess
 
 ### [Update-MgEntitlementManagementAssignmentPolicy](Update-MgEntitlementManagementAssignmentPolicy.md)
 Update the navigation property assignmentPolicies in identityGovernance
 
 ### [Update-MgEntitlementManagementAssignmentRequest](Update-MgEntitlementManagementAssignmentRequest.md)
-Represents access package assignment requests created by or on behalf of a user.
+Invoke action reprocess
 
 ### [Update-MgEntitlementManagementCatalog](Update-MgEntitlementManagementCatalog.md)
-Represents a group of access packages.
+Update the navigation property catalogs in identityGovernance
+
+### [Update-MgEntitlementManagementCatalogAccessPackageAssignmentPolicy](Update-MgEntitlementManagementCatalogAccessPackageAssignmentPolicy.md)
+Update the navigation property assignmentPolicies in identityGovernance
 
 ### [Update-MgEntitlementManagementConnectedOrganization](Update-MgEntitlementManagementConnectedOrganization.md)
-Represents references to a directory or domain of another organization whose users can request access.
-
-### [Update-MgEntitlementManagementConnectedOrganizationExternalSponsor](Update-MgEntitlementManagementConnectedOrganizationExternalSponsor.md)
-Nullable.
-
-### [Update-MgEntitlementManagementConnectedOrganizationInternalSponsor](Update-MgEntitlementManagementConnectedOrganizationInternalSponsor.md)
-Nullable.
+Update the navigation property connectedOrganizations in identityGovernance
 
 ### [Update-MgEntitlementManagementSetting](Update-MgEntitlementManagementSetting.md)
-Represents the settings that control the behavior of Azure AD entitlement management.
+Update the navigation property settings in identityGovernance
+
+### [Update-MgIdentityGovernanceAccessReviewDefinition](Update-MgIdentityGovernanceAccessReviewDefinition.md)
+Update the navigation property definitions in identityGovernance
+
+### [Update-MgIdentityGovernanceAccessReviewDefinitionInstance](Update-MgIdentityGovernanceAccessReviewDefinitionInstance.md)
+Update the navigation property instances in identityGovernance
+
+### [Update-MgIdentityGovernanceAccessReviewDefinitionInstanceContactedReviewer](Update-MgIdentityGovernanceAccessReviewDefinitionInstanceContactedReviewer.md)
+Update the navigation property contactedReviewers in identityGovernance
+
+### [Update-MgIdentityGovernanceAccessReviewDefinitionInstanceDecision](Update-MgIdentityGovernanceAccessReviewDefinitionInstanceDecision.md)
+Update the navigation property decisions in identityGovernance
+
+### [Update-MgIdentityGovernanceAccessReviewDefinitionInstanceStage](Update-MgIdentityGovernanceAccessReviewDefinitionInstanceStage.md)
+Update the navigation property stages in identityGovernance
+
+### [Update-MgIdentityGovernanceAccessReviewDefinitionInstanceStageDecision](Update-MgIdentityGovernanceAccessReviewDefinitionInstanceStageDecision.md)
+Update the navigation property decisions in identityGovernance
+
+### [Update-MgIdentityGovernanceAccessReviewHistoryDefinition](Update-MgIdentityGovernanceAccessReviewHistoryDefinition.md)
+Update the navigation property historyDefinitions in identityGovernance
+
+### [Update-MgIdentityGovernanceAccessReviewHistoryDefinitionInstance](Update-MgIdentityGovernanceAccessReviewHistoryDefinitionInstance.md)
+Update the navigation property instances in identityGovernance
+
+### [Update-MgIdentityGovernanceAppConsentRequest](Update-MgIdentityGovernanceAppConsentRequest.md)
+Update the navigation property appConsentRequests in identityGovernance
+
+### [Update-MgIdentityGovernanceAppConsentRequestUserConsentRequest](Update-MgIdentityGovernanceAppConsentRequestUserConsentRequest.md)
+Update the navigation property userConsentRequests in identityGovernance
+
+### [Update-MgIdentityGovernanceAppConsentRequestUserConsentRequestApproval](Update-MgIdentityGovernanceAppConsentRequestUserConsentRequestApproval.md)
+Update the navigation property approval in identityGovernance
+
+### [Update-MgIdentityGovernanceAppConsentRequestUserConsentRequestApprovalStage](Update-MgIdentityGovernanceAppConsentRequestUserConsentRequestApprovalStage.md)
+Update the navigation property stages in identityGovernance
 
 ### [Update-MgIdentityGovernanceTermOfUseAgreement](Update-MgIdentityGovernanceTermOfUseAgreement.md)
-Represents a tenant's customizable terms of use agreement that's created and managed with Azure Active Directory (Azure AD).
+Update the navigation property agreements in identityGovernance
 
 ### [Update-MgIdentityGovernanceTermOfUseAgreementAcceptance](Update-MgIdentityGovernanceTermOfUseAgreementAcceptance.md)
-Represents the current status of a user's response to a company's customizable terms of use agreement.
+Update the navigation property agreementAcceptances in identityGovernance
+
+### [Update-MgIdentityGovernanceTermOfUseAgreementFile](Update-MgIdentityGovernanceTermOfUseAgreementFile.md)
+Update the navigation property file in identityGovernance
+
+### [Update-MgIdentityGovernanceTermOfUseAgreementFileLocalization](Update-MgIdentityGovernanceTermOfUseAgreementFileLocalization.md)
+Update the navigation property localizations in identityGovernance
+
+### [Update-MgIdentityGovernanceTermOfUseAgreementFileLocalizationVersion](Update-MgIdentityGovernanceTermOfUseAgreementFileLocalizationVersion.md)
+Update the navigation property versions in identityGovernance
 

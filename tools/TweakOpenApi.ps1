@@ -7,27 +7,29 @@ Param(
     [string] $OpenAPIFilesPath
 )
 
-$TargetWord = "ByRef"
-$ReplacementWord = "GraphRef"
-$actionPattern = [Regex]::new("(_[A-Z][a-z]+)", "Compiled")
-$Stopwatch = [system.diagnostics.stopwatch]::StartNew()
+$prepositionReplacements = @{
+    By   = "GraphBPre"
+    With = "GraphWPre"
+    At   = "GraphAPre"
+    For  = "GraphFPre"
+    Of   = "GraphOPre"
+}
+$targetOperationIdRegex = [Regex]::new("([a-z*])($($prepositionReplacements.Keys -join "|"))([A-Z*]|$)", "Compiled")
+$stopwatch = [system.diagnostics.stopwatch]::StartNew()
+# Tweak prepositions in operationIds to byPass https://github.com/Azure/autorest.powershell/issues/795.
 Get-ChildItem -Path $OpenAPIFilesPath | ForEach-Object {
     $filePath = $_.FullName
     $modified = $false
     $updatedContent = Get-Content $filePath | ForEach-Object {
-        # Tweak '/$ref' operationIds (*ByRef) to byPass -> https://github.com/Azure/autorest.powershell/issues/795.
-        if ($_.endsWith($TargetWord) -and $_.contains("operationId:")) {
+        if ($_.contains("operationId:") -and ($targetOperationIdRegex.Match($_)).Success) {
             $operationId = $_
-            # Matches '_{ActionName}' in operationIds formatted as '{entitySet}_{ActionName}{NavigationProperty}'. e.g.,
-            # For 'applications_GetCreatedOnBehalfOfByRef', we will match '_Get'.
-            $match = $actionPattern.Match($operationId)
-            if ($null -ne $match -and $match.Success) {
-                $operationId = $operationId.Replace($TargetWord, "")
-                # Suffix matched '_{ActionName}' with 'GraphRef'. GraphRef will be our safe unique word for identifying *ByRef commands in PowerShell e.g.,
-                # 'applications_GetCreatedOnBehalfOfByRef' will be renamed to 'applications_GetGraphRefCreatedOnBehalfOf'.
-                $operationId = ($operationId -replace $match.Value, "$($match.Value)$ReplacementWord")
+            $prepositionReplacements.Keys | ForEach-Object {
+                # Replace prepositions with replacement word.
+                #e.g., 'applications_GetCreatedOnBehalfOfByRef' will be renamed to 'applications_GetCreatedOnBehalfGraphOPreGraphBPreRef'.
+                $operationId = ($operationId -creplace $_, $prepositionReplacements[$_])
                 $modified = $true
             }
+            Write-Debug "$_ -> $operationId".Trim()
             return $operationId
         }
         return $_
@@ -35,4 +37,4 @@ Get-ChildItem -Path $OpenAPIFilesPath | ForEach-Object {
     if ($modified) { $updatedContent | Out-File $filePath -Force }
 }
 $stopwatch.Stop()
-Write-Debug "Tweaked '$OpenAPIFilesPath' OpenAPI files in '$($Stopwatch.Elapsed.TotalMinutes)' minutes."
+Write-Debug "Tweaked '$OpenAPIFilesPath' OpenAPI files in '$($stopwatch.Elapsed.TotalMinutes)' minutes."

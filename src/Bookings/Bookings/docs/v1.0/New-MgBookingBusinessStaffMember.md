@@ -8,9 +8,7 @@ schema: 2.0.0
 # New-MgBookingBusinessStaffMember
 
 ## SYNOPSIS
-All the staff members that provide services in this business.
-Read-only.
-Nullable.
+Create new navigation property to staffMembers for solutions
 
 ## SYNTAX
 
@@ -39,9 +37,7 @@ New-MgBookingBusinessStaffMember -InputObject <IBookingsIdentity> [-AdditionalPr
 ```
 
 ## DESCRIPTION
-All the staff members that provide services in this business.
-Read-only.
-Nullable.
+Create new navigation property to staffMembers for solutions
 
 ## EXAMPLES
 
@@ -93,7 +89,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String

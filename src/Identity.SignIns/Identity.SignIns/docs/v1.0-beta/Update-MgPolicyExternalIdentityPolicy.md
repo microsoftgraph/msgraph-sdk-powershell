@@ -48,7 +48,7 @@ Accept wildcard characters: False
 ```
 
 ### -AllowDeletedIdentitiesDataRemoval
-.
+Notifies Azure AD whether to clean up the user information about the external identity, from the guest tenant, when the user is deleted in their home tenant.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -63,7 +63,8 @@ Accept wildcard characters: False
 ```
 
 ### -AllowExternalIdentitiesToLeave
-.
+Defines whether external users can leave the guest tenant.
+If set to false, self-service controls are not enabled, and the admin of the guest tenant must manually remove the external user from the guest tenant.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -142,7 +143,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -227,9 +228,9 @@ BODYPARAMETER <IMicrosoftGraphExternalIdentitiesPolicy>: externalIdentitiesPolic
   - `[Description <String>]`: Description for this policy. Required.
   - `[DisplayName <String>]`: Display name for this policy. Required.
   - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
-  - `[Id <String>]`: Read-only.
-  - `[AllowDeletedIdentitiesDataRemoval <Boolean?>]`: 
-  - `[AllowExternalIdentitiesToLeave <Boolean?>]`: 
+  - `[Id <String>]`: 
+  - `[AllowDeletedIdentitiesDataRemoval <Boolean?>]`: Notifies Azure AD whether to clean up the user information about the external identity, from the guest tenant, when the user is deleted in their home tenant.
+  - `[AllowExternalIdentitiesToLeave <Boolean?>]`: Defines whether external users can leave the guest tenant. If set to false, self-service controls are not enabled, and the admin of the guest tenant must manually remove the external user from the guest tenant.
 
 ## RELATED LINKS
 

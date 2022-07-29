@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.People
-Module Guid: 98b3b6fb-78ad-4965-98ff-cac9f30d1737
+Module Guid: c1450d90-eeaa-42e4-8def-e8163aaa3f6d
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.people
 Help Version: 1.0.0.0
 Locale: en-US
@@ -12,264 +12,254 @@ Microsoft Graph PowerShell Cmdlets
 
 ## Microsoft.Graph.People Cmdlets
 ### [Get-MgUserActivityStatistics](Get-MgUserActivityStatistics.md)
-The collection of work activities that a user spent time on during and outside of working hours.
-Read-only.
-Nullable.
+Get activityStatistics from users
 
 ### [Get-MgUserPerson](Get-MgUserPerson.md)
-People that are relevant to the user.
-Read-only.
-Nullable.
+Get people from users
 
 ### [Get-MgUserProfile](Get-MgUserProfile.md)
-Represents properties that are descriptive of a user in a tenant.
+Get profile from users
 
 ### [Get-MgUserProfileAccount](Get-MgUserProfileAccount.md)
 Get account from users
 
 ### [Get-MgUserProfileAddress](Get-MgUserProfileAddress.md)
-Represents details of addresses associated with the user.
+Get addresses from users
 
 ### [Get-MgUserProfileAnniversary](Get-MgUserProfileAnniversary.md)
-Represents the details of meaningful dates associated with a person.
+Get anniversaries from users
 
 ### [Get-MgUserProfileAward](Get-MgUserProfileAward.md)
-Represents the details of awards or honors associated with a person.
+Get awards from users
 
 ### [Get-MgUserProfileCertification](Get-MgUserProfileCertification.md)
-Represents the details of certifications associated with a person.
+Get certifications from users
 
 ### [Get-MgUserProfileEducationalActivity](Get-MgUserProfileEducationalActivity.md)
-Represents data that a user has supplied related to undergraduate, graduate, postgraduate or other educational activities.
+Get educationalActivities from users
 
 ### [Get-MgUserProfileEmail](Get-MgUserProfileEmail.md)
-Represents detailed information about email addresses associated with the user.
+Get emails from users
 
 ### [Get-MgUserProfileInterest](Get-MgUserProfileInterest.md)
-Provides detailed information about interests the user has associated with themselves in various services.
+Get interests from users
 
 ### [Get-MgUserProfileLanguage](Get-MgUserProfileLanguage.md)
-Represents detailed information about languages that a user has added to their profile.
+Get languages from users
 
 ### [Get-MgUserProfileName](Get-MgUserProfileName.md)
-Represents the names a user has added to their profile.
+Get names from users
 
 ### [Get-MgUserProfileNote](Get-MgUserProfileNote.md)
-Represents notes that a user has added to their profile.
+Get notes from users
 
 ### [Get-MgUserProfilePatent](Get-MgUserProfilePatent.md)
-Represents patents that a user has added to their profile.
+Get patents from users
 
 ### [Get-MgUserProfilePhone](Get-MgUserProfilePhone.md)
-Represents detailed information about phone numbers associated with a user in various services.
+Get phones from users
 
 ### [Get-MgUserProfilePosition](Get-MgUserProfilePosition.md)
-Represents detailed information about work positions associated with a user's profile.
+Get positions from users
 
 ### [Get-MgUserProfileProject](Get-MgUserProfileProject.md)
-Represents detailed information about projects associated with a user.
+Get projects from users
 
 ### [Get-MgUserProfilePublication](Get-MgUserProfilePublication.md)
-Represents details of any publications a user has added to their profile.
+Get publications from users
 
 ### [Get-MgUserProfileSkill](Get-MgUserProfileSkill.md)
-Represents detailed information about skills associated with a user in various services.
+Get skills from users
 
 ### [Get-MgUserProfileWebAccount](Get-MgUserProfileWebAccount.md)
-Represents web accounts the user has indicated they use or has added to their user profile.
+Get webAccounts from users
 
 ### [Get-MgUserProfileWebsite](Get-MgUserProfileWebsite.md)
-Represents detailed information about websites associated with a user in various services.
+Get websites from users
 
 ### [New-MgUserPerson](New-MgUserPerson.md)
-People that are relevant to the user.
-Read-only.
-Nullable.
+Create new navigation property to people for users
 
 ### [New-MgUserProfileAccount](New-MgUserProfileAccount.md)
 Create new navigation property to account for users
 
 ### [New-MgUserProfileAddress](New-MgUserProfileAddress.md)
-Represents details of addresses associated with the user.
+Create new navigation property to addresses for users
 
 ### [New-MgUserProfileAnniversary](New-MgUserProfileAnniversary.md)
-Represents the details of meaningful dates associated with a person.
+Create new navigation property to anniversaries for users
 
 ### [New-MgUserProfileAward](New-MgUserProfileAward.md)
-Represents the details of awards or honors associated with a person.
+Create new navigation property to awards for users
 
 ### [New-MgUserProfileCertification](New-MgUserProfileCertification.md)
-Represents the details of certifications associated with a person.
+Create new navigation property to certifications for users
 
 ### [New-MgUserProfileEducationalActivity](New-MgUserProfileEducationalActivity.md)
-Represents data that a user has supplied related to undergraduate, graduate, postgraduate or other educational activities.
+Create new navigation property to educationalActivities for users
 
 ### [New-MgUserProfileEmail](New-MgUserProfileEmail.md)
-Represents detailed information about email addresses associated with the user.
+Create new navigation property to emails for users
 
 ### [New-MgUserProfileInterest](New-MgUserProfileInterest.md)
-Provides detailed information about interests the user has associated with themselves in various services.
+Create new navigation property to interests for users
 
 ### [New-MgUserProfileLanguage](New-MgUserProfileLanguage.md)
-Represents detailed information about languages that a user has added to their profile.
+Create new navigation property to languages for users
 
 ### [New-MgUserProfileName](New-MgUserProfileName.md)
-Represents the names a user has added to their profile.
+Create new navigation property to names for users
 
 ### [New-MgUserProfileNote](New-MgUserProfileNote.md)
-Represents notes that a user has added to their profile.
+Create new navigation property to notes for users
 
 ### [New-MgUserProfilePatent](New-MgUserProfilePatent.md)
-Represents patents that a user has added to their profile.
+Create new navigation property to patents for users
 
 ### [New-MgUserProfilePhone](New-MgUserProfilePhone.md)
-Represents detailed information about phone numbers associated with a user in various services.
+Create new navigation property to phones for users
 
 ### [New-MgUserProfilePosition](New-MgUserProfilePosition.md)
-Represents detailed information about work positions associated with a user's profile.
+Create new navigation property to positions for users
 
 ### [New-MgUserProfileProject](New-MgUserProfileProject.md)
-Represents detailed information about projects associated with a user.
+Create new navigation property to projects for users
 
 ### [New-MgUserProfilePublication](New-MgUserProfilePublication.md)
-Represents details of any publications a user has added to their profile.
+Create new navigation property to publications for users
 
 ### [New-MgUserProfileSkill](New-MgUserProfileSkill.md)
-Represents detailed information about skills associated with a user in various services.
+Create new navigation property to skills for users
 
 ### [New-MgUserProfileWebAccount](New-MgUserProfileWebAccount.md)
-Represents web accounts the user has indicated they use or has added to their user profile.
+Create new navigation property to webAccounts for users
 
 ### [New-MgUserProfileWebsite](New-MgUserProfileWebsite.md)
-Represents detailed information about websites associated with a user in various services.
+Create new navigation property to websites for users
 
 ### [Remove-MgUserPerson](Remove-MgUserPerson.md)
-People that are relevant to the user.
-Read-only.
-Nullable.
+Delete navigation property people for users
 
 ### [Remove-MgUserProfile](Remove-MgUserProfile.md)
-Represents properties that are descriptive of a user in a tenant.
+Delete navigation property profile for users
 
 ### [Remove-MgUserProfileAccount](Remove-MgUserProfileAccount.md)
 Delete navigation property account for users
 
 ### [Remove-MgUserProfileAddress](Remove-MgUserProfileAddress.md)
-Represents details of addresses associated with the user.
+Delete navigation property addresses for users
 
 ### [Remove-MgUserProfileAnniversary](Remove-MgUserProfileAnniversary.md)
-Represents the details of meaningful dates associated with a person.
+Delete navigation property anniversaries for users
 
 ### [Remove-MgUserProfileAward](Remove-MgUserProfileAward.md)
-Represents the details of awards or honors associated with a person.
+Delete navigation property awards for users
 
 ### [Remove-MgUserProfileCertification](Remove-MgUserProfileCertification.md)
-Represents the details of certifications associated with a person.
+Delete navigation property certifications for users
 
 ### [Remove-MgUserProfileEducationalActivity](Remove-MgUserProfileEducationalActivity.md)
-Represents data that a user has supplied related to undergraduate, graduate, postgraduate or other educational activities.
+Delete navigation property educationalActivities for users
 
 ### [Remove-MgUserProfileEmail](Remove-MgUserProfileEmail.md)
-Represents detailed information about email addresses associated with the user.
+Delete navigation property emails for users
 
 ### [Remove-MgUserProfileInterest](Remove-MgUserProfileInterest.md)
-Provides detailed information about interests the user has associated with themselves in various services.
+Delete navigation property interests for users
 
 ### [Remove-MgUserProfileLanguage](Remove-MgUserProfileLanguage.md)
-Represents detailed information about languages that a user has added to their profile.
+Delete navigation property languages for users
 
 ### [Remove-MgUserProfileName](Remove-MgUserProfileName.md)
-Represents the names a user has added to their profile.
+Delete navigation property names for users
 
 ### [Remove-MgUserProfileNote](Remove-MgUserProfileNote.md)
-Represents notes that a user has added to their profile.
+Delete navigation property notes for users
 
 ### [Remove-MgUserProfilePatent](Remove-MgUserProfilePatent.md)
-Represents patents that a user has added to their profile.
+Delete navigation property patents for users
 
 ### [Remove-MgUserProfilePhone](Remove-MgUserProfilePhone.md)
-Represents detailed information about phone numbers associated with a user in various services.
+Delete navigation property phones for users
 
 ### [Remove-MgUserProfilePosition](Remove-MgUserProfilePosition.md)
-Represents detailed information about work positions associated with a user's profile.
+Delete navigation property positions for users
 
 ### [Remove-MgUserProfileProject](Remove-MgUserProfileProject.md)
-Represents detailed information about projects associated with a user.
+Delete navigation property projects for users
 
 ### [Remove-MgUserProfilePublication](Remove-MgUserProfilePublication.md)
-Represents details of any publications a user has added to their profile.
+Delete navigation property publications for users
 
 ### [Remove-MgUserProfileSkill](Remove-MgUserProfileSkill.md)
-Represents detailed information about skills associated with a user in various services.
+Delete navigation property skills for users
 
 ### [Remove-MgUserProfileWebAccount](Remove-MgUserProfileWebAccount.md)
-Represents web accounts the user has indicated they use or has added to their user profile.
+Delete navigation property webAccounts for users
 
 ### [Remove-MgUserProfileWebsite](Remove-MgUserProfileWebsite.md)
-Represents detailed information about websites associated with a user in various services.
+Delete navigation property websites for users
 
 ### [Update-MgUserPerson](Update-MgUserPerson.md)
-People that are relevant to the user.
-Read-only.
-Nullable.
+Update the navigation property people in users
 
 ### [Update-MgUserProfile](Update-MgUserProfile.md)
-Represents properties that are descriptive of a user in a tenant.
+Update the navigation property profile in users
 
 ### [Update-MgUserProfileAccount](Update-MgUserProfileAccount.md)
 Update the navigation property account in users
 
 ### [Update-MgUserProfileAddress](Update-MgUserProfileAddress.md)
-Represents details of addresses associated with the user.
+Update the navigation property addresses in users
 
 ### [Update-MgUserProfileAnniversary](Update-MgUserProfileAnniversary.md)
-Represents the details of meaningful dates associated with a person.
+Update the navigation property anniversaries in users
 
 ### [Update-MgUserProfileAward](Update-MgUserProfileAward.md)
-Represents the details of awards or honors associated with a person.
+Update the navigation property awards in users
 
 ### [Update-MgUserProfileCertification](Update-MgUserProfileCertification.md)
-Represents the details of certifications associated with a person.
+Update the navigation property certifications in users
 
 ### [Update-MgUserProfileEducationalActivity](Update-MgUserProfileEducationalActivity.md)
-Represents data that a user has supplied related to undergraduate, graduate, postgraduate or other educational activities.
+Update the navigation property educationalActivities in users
 
 ### [Update-MgUserProfileEmail](Update-MgUserProfileEmail.md)
-Represents detailed information about email addresses associated with the user.
+Update the navigation property emails in users
 
 ### [Update-MgUserProfileInterest](Update-MgUserProfileInterest.md)
-Provides detailed information about interests the user has associated with themselves in various services.
+Update the navigation property interests in users
 
 ### [Update-MgUserProfileLanguage](Update-MgUserProfileLanguage.md)
-Represents detailed information about languages that a user has added to their profile.
+Update the navigation property languages in users
 
 ### [Update-MgUserProfileName](Update-MgUserProfileName.md)
-Represents the names a user has added to their profile.
+Update the navigation property names in users
 
 ### [Update-MgUserProfileNote](Update-MgUserProfileNote.md)
-Represents notes that a user has added to their profile.
+Update the navigation property notes in users
 
 ### [Update-MgUserProfilePatent](Update-MgUserProfilePatent.md)
-Represents patents that a user has added to their profile.
+Update the navigation property patents in users
 
 ### [Update-MgUserProfilePhone](Update-MgUserProfilePhone.md)
-Represents detailed information about phone numbers associated with a user in various services.
+Update the navigation property phones in users
 
 ### [Update-MgUserProfilePosition](Update-MgUserProfilePosition.md)
-Represents detailed information about work positions associated with a user's profile.
+Update the navigation property positions in users
 
 ### [Update-MgUserProfileProject](Update-MgUserProfileProject.md)
-Represents detailed information about projects associated with a user.
+Update the navigation property projects in users
 
 ### [Update-MgUserProfilePublication](Update-MgUserProfilePublication.md)
-Represents details of any publications a user has added to their profile.
+Update the navigation property publications in users
 
 ### [Update-MgUserProfileSkill](Update-MgUserProfileSkill.md)
-Represents detailed information about skills associated with a user in various services.
+Update the navigation property skills in users
 
 ### [Update-MgUserProfileWebAccount](Update-MgUserProfileWebAccount.md)
-Represents web accounts the user has indicated they use or has added to their user profile.
+Update the navigation property webAccounts in users
 
 ### [Update-MgUserProfileWebsite](Update-MgUserProfileWebsite.md)
-Represents detailed information about websites associated with a user in various services.
+Update the navigation property websites in users
 

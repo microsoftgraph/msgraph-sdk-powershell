@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgDeviceManagementDeviceConfigurationDeviceStateSummary
 
 ## SYNOPSIS
-The device configuration device state summary for this account.
+Update the navigation property deviceConfigurationDeviceStateSummaries in deviceManagement
 
 ## SYNTAX
 
@@ -28,7 +28,7 @@ Update-MgDeviceManagementDeviceConfigurationDeviceStateSummary
 ```
 
 ## DESCRIPTION
-The device configuration device state summary for this account.
+Update the navigation property deviceConfigurationDeviceStateSummaries in deviceManagement
 
 ## EXAMPLES
 
@@ -111,7 +111,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -253,7 +253,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphDeviceConfigurationDeviceStateSummary>: deviceConfigurationDeviceStateSummary
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[CompliantDeviceCount <Int32?>]`: Number of compliant devices
   - `[ConflictDeviceCount <Int32?>]`: Number of conflict devices
   - `[ErrorDeviceCount <Int32?>]`: Number of error devices

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgUserProfileAddress
 
 ## SYNOPSIS
-Represents details of addresses associated with the user.
+Delete navigation property addresses for users
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Remove-MgUserProfileAddress -InputObject <IPeopleIdentity> [-IfMatch <String>] [
 ```
 
 ## DESCRIPTION
-Represents details of addresses associated with the user.
+Delete navigation property addresses for users
 
 ## EXAMPLES
 

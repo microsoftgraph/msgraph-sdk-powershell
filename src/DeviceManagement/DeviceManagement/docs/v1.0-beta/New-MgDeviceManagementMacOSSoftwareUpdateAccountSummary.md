@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgDeviceManagementMacOSSoftwareUpdateAccountSummary
 
 ## SYNOPSIS
-The MacOS software update account summaries for this account.
+Create new navigation property to macOSSoftwareUpdateAccountSummaries for deviceManagement
 
 ## SYNTAX
 
@@ -29,7 +29,7 @@ New-MgDeviceManagementMacOSSoftwareUpdateAccountSummary
 ```
 
 ## DESCRIPTION
-The MacOS software update account summaries for this account.
+Create new navigation property to macOSSoftwareUpdateAccountSummaries for deviceManagement
 
 ## EXAMPLES
 
@@ -143,7 +143,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -300,23 +300,23 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphMacOSSoftwareUpdateAccountSummary>: MacOS software update account summary report for a device and user
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[CategorySummaries <IMicrosoftGraphMacOSSoftwareUpdateCategorySummary[]>]`: Summary of the updates by category.
-    - `[Id <String>]`: Read-only.
+    - `[Id <String>]`: 
     - `[DeviceId <String>]`: The device ID.
     - `[DisplayName <String>]`: The name of the report
     - `[FailedUpdateCount <Int32?>]`: Number of failed updates on the device
     - `[LastUpdatedDateTime <DateTime?>]`: Last date time the report for this device was updated.
     - `[SuccessfulUpdateCount <Int32?>]`: Number of successful updates on the device
     - `[TotalUpdateCount <Int32?>]`: Number of total updates on the device
-    - `[UpdateCategory <String>]`: MacOS Software Update Category
+    - `[UpdateCategory <MacOSSoftwareUpdateCategory?>]`: MacOS Software Update Category
     - `[UpdateStateSummaries <IMicrosoftGraphMacOSSoftwareUpdateStateSummary[]>]`: Summary of the update states.
-      - `[Id <String>]`: Read-only.
+      - `[Id <String>]`: 
       - `[DisplayName <String>]`: Human readable name of the software update
       - `[LastUpdatedDateTime <DateTime?>]`: Last date time the report for this device and product key was updated.
       - `[ProductKey <String>]`: Product key of the software update.
-      - `[State <String>]`: MacOS Software Update State
-      - `[UpdateCategory <String>]`: MacOS Software Update Category
+      - `[State <MacOSSoftwareUpdateState?>]`: MacOS Software Update State
+      - `[UpdateCategory <MacOSSoftwareUpdateCategory?>]`: MacOS Software Update Category
       - `[UpdateVersion <String>]`: Version of the software update
     - `[UserId <String>]`: The user ID.
   - `[DeviceId <String>]`: The device ID.
@@ -331,21 +331,21 @@ BODYPARAMETER <IMicrosoftGraphMacOSSoftwareUpdateAccountSummary>: MacOS software
   - `[UserPrincipalName <String>]`: The user principal name
 
 CATEGORYSUMMARIES <IMicrosoftGraphMacOSSoftwareUpdateCategorySummary[]>: Summary of the updates by category.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[DeviceId <String>]`: The device ID.
   - `[DisplayName <String>]`: The name of the report
   - `[FailedUpdateCount <Int32?>]`: Number of failed updates on the device
   - `[LastUpdatedDateTime <DateTime?>]`: Last date time the report for this device was updated.
   - `[SuccessfulUpdateCount <Int32?>]`: Number of successful updates on the device
   - `[TotalUpdateCount <Int32?>]`: Number of total updates on the device
-  - `[UpdateCategory <String>]`: MacOS Software Update Category
+  - `[UpdateCategory <MacOSSoftwareUpdateCategory?>]`: MacOS Software Update Category
   - `[UpdateStateSummaries <IMicrosoftGraphMacOSSoftwareUpdateStateSummary[]>]`: Summary of the update states.
-    - `[Id <String>]`: Read-only.
+    - `[Id <String>]`: 
     - `[DisplayName <String>]`: Human readable name of the software update
     - `[LastUpdatedDateTime <DateTime?>]`: Last date time the report for this device and product key was updated.
     - `[ProductKey <String>]`: Product key of the software update.
-    - `[State <String>]`: MacOS Software Update State
-    - `[UpdateCategory <String>]`: MacOS Software Update Category
+    - `[State <MacOSSoftwareUpdateState?>]`: MacOS Software Update State
+    - `[UpdateCategory <MacOSSoftwareUpdateCategory?>]`: MacOS Software Update Category
     - `[UpdateVersion <String>]`: Version of the software update
   - `[UserId <String>]`: The user ID.
 

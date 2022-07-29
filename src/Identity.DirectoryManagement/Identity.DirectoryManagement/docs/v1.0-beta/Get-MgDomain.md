@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDomain
 
 ## SYNOPSIS
-Get entity from domains by key
+Get domain
 
 ## SYNTAX
 
@@ -31,7 +31,7 @@ Get-MgDomain -InputObject <IIdentityDirectoryManagementIdentity> [-ExpandPropert
 ```
 
 ## DESCRIPTION
-Get entity from domains by key
+Get domain
 
 ## EXAMPLES
 
@@ -254,7 +254,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDomain1
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDomain
 
 ## NOTES
 
@@ -287,6 +287,7 @@ INPUTOBJECT <IIdentityDirectoryManagementIdentity>: Identity Parameter
   - `[InternalDomainFederationId <String>]`: key: id of internalDomainFederation
   - `[OrgContactId <String>]`: key: id of orgContact
   - `[OrganizationId <String>]`: key: id of organization
+  - `[OrganizationalBrandingLocalizationId <String>]`: key: id of organizationalBrandingLocalization
   - `[OutboundSharedUserProfileUserId <String>]`: key: userId of outboundSharedUserProfile
   - `[ProfileCardPropertyId <String>]`: key: id of profileCardProperty
   - `[RecommendationId <String>]`: key: id of recommendation

@@ -8,11 +8,7 @@ schema: 2.0.0
 # Get-MgDirectoryRoleMemberByRef
 
 ## SYNOPSIS
-Users that are members of this directory role.
-HTTP Methods: GET, POST, DELETE.
-Read-only.
-Nullable.
-Supports $expand.
+Get ref of members from directoryRoles
 
 ## SYNTAX
 
@@ -22,11 +18,7 @@ Get-MgDirectoryRoleMemberByRef -DirectoryRoleId <String> [-Filter <String>] [-Se
 ```
 
 ## DESCRIPTION
-Users that are members of this directory role.
-HTTP Methods: GET, POST, DELETE.
-Read-only.
-Nullable.
-Supports $expand.
+Get ref of members from directoryRoles
 
 ## EXAMPLES
 

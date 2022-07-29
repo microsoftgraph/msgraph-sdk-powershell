@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgDeviceManagementIntuneBrandingProfile
 
 ## SYNOPSIS
-Intune branding profiles targeted to AAD groups
+Create new navigation property to intuneBrandingProfiles for deviceManagement
 
 ## SYNTAX
 
@@ -20,8 +20,8 @@ New-MgDeviceManagementIntuneBrandingProfile [-AdditionalProperties <Hashtable>]
  [-ContactItEmailAddress <String>] [-ContactItName <String>] [-ContactItNotes <String>]
  [-ContactItPhoneNumber <String>] [-CreatedDateTime <DateTime>] [-CustomCanSeePrivacyMessage <String>]
  [-CustomCantSeePrivacyMessage <String>] [-CustomPrivacyMessage <String>] [-DisableClientTelemetry]
- [-DisplayName <String>] [-EnrollmentAvailability <String>] [-Id <String>] [-IsDefaultProfile]
- [-IsFactoryResetDisabled] [-IsRemoveDeviceDisabled]
+ [-DisplayName <String>] [-EnrollmentAvailability <EnrollmentAvailabilityOptions>] [-Id <String>]
+ [-IsDefaultProfile] [-IsFactoryResetDisabled] [-IsRemoveDeviceDisabled]
  [-LandingPageCustomizedImage <IMicrosoftGraphMimeContent>] [-LastModifiedDateTime <DateTime>]
  [-LightBackgroundLogo <IMicrosoftGraphMimeContent>] [-OnlineSupportSiteName <String>]
  [-OnlineSupportSiteUrl <String>] [-PrivacyUrl <String>] [-ProfileDescription <String>]
@@ -38,7 +38,7 @@ New-MgDeviceManagementIntuneBrandingProfile -BodyParameter <IMicrosoftGraphIntun
 ```
 
 ## DESCRIPTION
-Intune branding profiles targeted to AAD groups
+Create new navigation property to intuneBrandingProfiles for deviceManagement
 
 ## EXAMPLES
 
@@ -262,7 +262,7 @@ Accept wildcard characters: False
 Options available for enrollment flow customization
 
 ```yaml
-Type: System.String
+Type: Microsoft.Graph.PowerShell.Support.EnrollmentAvailabilityOptions
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -274,7 +274,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -629,25 +629,25 @@ To create the parameters described below, construct a hash table containing the 
 
 
 ASSIGNMENTS <IMicrosoftGraphIntuneBrandingProfileAssignment[]>: The list of group assignments for the branding profile
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget1>]`: Base type for assignment targets.
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[DeviceAndAppManagementAssignmentFilterId <String>]`: The Id of the filter for the target assignment.
-    - `[DeviceAndAppManagementAssignmentFilterType <String>]`: Represents type of the assignment filter.
+    - `[DeviceAndAppManagementAssignmentFilterType <DeviceAndAppManagementAssignmentFilterType?>]`: Represents type of the assignment filter.
 
 BODYPARAMETER <IMicrosoftGraphIntuneBrandingProfile>: This entity contains data which is used in customizing the tenant level appearance of the Company Portal applications as well as the end user web portal.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[Assignments <IMicrosoftGraphIntuneBrandingProfileAssignment[]>]`: The list of group assignments for the branding profile
-    - `[Id <String>]`: Read-only.
+    - `[Id <String>]`: 
     - `[Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget1>]`: Base type for assignment targets.
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[DeviceAndAppManagementAssignmentFilterId <String>]`: The Id of the filter for the target assignment.
-      - `[DeviceAndAppManagementAssignmentFilterType <String>]`: Represents type of the assignment filter.
+      - `[DeviceAndAppManagementAssignmentFilterType <DeviceAndAppManagementAssignmentFilterType?>]`: Represents type of the assignment filter.
   - `[CompanyPortalBlockedActions <IMicrosoftGraphCompanyPortalBlockedAction[]>]`: Collection of blocked actions on the company portal as per platform and device ownership types.
-    - `[Action <String>]`: Action on a device that can be executed in the Company Portal
-    - `[OwnerType <String>]`: Owner type of device.
-    - `[Platform <String>]`: Supported platform types.
+    - `[Action <CompanyPortalAction?>]`: Action on a device that can be executed in the Company Portal
+    - `[OwnerType <OwnerType?>]`: Owner type of device.
+    - `[Platform <DevicePlatformType?>]`: Supported platform types.
   - `[ContactItEmailAddress <String>]`: E-mail address of the person/organization responsible for IT support
   - `[ContactItName <String>]`: Name of the person/organization responsible for IT support
   - `[ContactItNotes <String>]`: Text comments regarding the person/organization responsible for IT support
@@ -658,7 +658,7 @@ BODYPARAMETER <IMicrosoftGraphIntuneBrandingProfile>: This entity contains data 
   - `[CustomPrivacyMessage <String>]`: Text comments regarding what the admin doesn't have access to on the device
   - `[DisableClientTelemetry <Boolean?>]`: Applies to telemetry sent from all clients to the Intune service. When disabled, all proactive troubleshooting and issue warnings within the client are turned off, and telemetry settings appear inactive or hidden to the device user.
   - `[DisplayName <String>]`: Company/organization name that is displayed to end users
-  - `[EnrollmentAvailability <String>]`: Options available for enrollment flow customization
+  - `[EnrollmentAvailability <EnrollmentAvailabilityOptions?>]`: Options available for enrollment flow customization
   - `[IsDefaultProfile <Boolean?>]`: Boolean that represents whether the profile is used as default or not
   - `[IsFactoryResetDisabled <Boolean?>]`: Boolean that represents whether the adminsistrator has disabled the 'Factory Reset' action on corporate owned devices.
   - `[IsRemoveDeviceDisabled <Boolean?>]`: Boolean that represents whether the adminsistrator has disabled the 'Remove Device' action on corporate owned devices.
@@ -687,9 +687,9 @@ BODYPARAMETER <IMicrosoftGraphIntuneBrandingProfile>: This entity contains data 
   - `[ThemeColorLogo <IMicrosoftGraphMimeContent>]`: Contains properties for a generic mime content.
 
 COMPANYPORTALBLOCKEDACTIONS <IMicrosoftGraphCompanyPortalBlockedAction[]>: Collection of blocked actions on the company portal as per platform and device ownership types.
-  - `[Action <String>]`: Action on a device that can be executed in the Company Portal
-  - `[OwnerType <String>]`: Owner type of device.
-  - `[Platform <String>]`: Supported platform types.
+  - `[Action <CompanyPortalAction?>]`: Action on a device that can be executed in the Company Portal
+  - `[OwnerType <OwnerType?>]`: Owner type of device.
+  - `[Platform <DevicePlatformType?>]`: Supported platform types.
 
 LANDINGPAGECUSTOMIZEDIMAGE <IMicrosoftGraphMimeContent>: Contains properties for a generic mime content.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.

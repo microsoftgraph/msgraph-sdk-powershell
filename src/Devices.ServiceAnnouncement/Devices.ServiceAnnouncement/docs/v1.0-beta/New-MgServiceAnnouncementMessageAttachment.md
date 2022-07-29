@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgServiceAnnouncementMessageAttachment
 
 ## SYNOPSIS
-A collection of serviceAnnouncementAttachments.
+Create new navigation property to attachments for admin
 
 ## SYNTAX
 
@@ -39,7 +39,7 @@ New-MgServiceAnnouncementMessageAttachment -InputObject <IDevicesServiceAnnounce
 ```
 
 ## DESCRIPTION
-A collection of serviceAnnouncementAttachments.
+Create new navigation property to attachments for admin
 
 ## EXAMPLES
 
@@ -107,7 +107,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -252,7 +252,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphServiceAnnouncementAttachment>: serviceAnnouncementAttachment
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[Content <Byte[]>]`: The attachment content.
   - `[ContentType <String>]`: 
   - `[LastModifiedDateTime <DateTime?>]`: 

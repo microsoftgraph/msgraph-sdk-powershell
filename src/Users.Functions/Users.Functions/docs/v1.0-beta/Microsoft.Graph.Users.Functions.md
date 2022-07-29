@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Users.Functions
-Module Guid: 312939a2-4739-429b-b172-69df9647ab2d
+Module Guid: eceb6520-5381-4c14-9cd3-fdb84b360354
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.functions
 Help Version: 1.0.0.0
 Locale: en-US
@@ -20,13 +20,28 @@ Invoke function findRooms
 ### [Find-MgUserRoomList](Find-MgUserRoomList.md)
 Invoke function findRoomLists
 
+### [Get-MgAllUserChatMessage](Get-MgAllUserChatMessage.md)
+Invoke function getAllMessages
+
 ### [Get-MgUserCalendarEventDelta](Get-MgUserCalendarEventDelta.md)
 Invoke function delta
+
+### [Get-MgUserChatMessageDelta](Get-MgUserChatMessageDelta.md)
+Invoke function delta
+
+### [Get-MgUserChatMessageReplyDelta](Get-MgUserChatMessageReplyDelta.md)
+Invoke function delta
+
+### [Get-MgUserCloudPcConnectivityHistory](Get-MgUserCloudPcConnectivityHistory.md)
+Invoke function getCloudPcConnectivityHistory
 
 ### [Get-MgUserCloudPcLaunchInfo](Get-MgUserCloudPcLaunchInfo.md)
 Invoke function getCloudPcLaunchInfo
 
 ### [Get-MgUserContactDelta](Get-MgUserContactDelta.md)
+Invoke function delta
+
+### [Get-MgUserContactFolderChildFolderContactDelta](Get-MgUserContactFolderChildFolderContactDelta.md)
 Invoke function delta
 
 ### [Get-MgUserContactFolderChildFolderDelta](Get-MgUserContactFolderChildFolderDelta.md)
@@ -40,6 +55,33 @@ Invoke function delta
 
 ### [Get-MgUserDelta](Get-MgUserDelta.md)
 Invoke function delta
+
+### [Get-MgUserDriveItemActivityByInterval](Get-MgUserDriveItemActivityByInterval.md)
+Invoke function getActivitiesByInterval
+
+### [Get-MgUserDriveItemDelta](Get-MgUserDriveItemDelta.md)
+Invoke function delta
+
+### [Get-MgUserDriveItemListItemActivityByInterval](Get-MgUserDriveItemListItemActivityByInterval.md)
+Invoke function getActivitiesByInterval
+
+### [Get-MgUserDriveListContentTypeCompatibleHubContentType](Get-MgUserDriveListContentTypeCompatibleHubContentType.md)
+Invoke function getCompatibleHubContentTypes
+
+### [Get-MgUserDriveListItemActivityByInterval](Get-MgUserDriveListItemActivityByInterval.md)
+Invoke function getActivitiesByInterval
+
+### [Get-MgUserDriveListItemDelta](Get-MgUserDriveListItemDelta.md)
+Invoke function delta
+
+### [Get-MgUserDriveRootActivityByInterval](Get-MgUserDriveRootActivityByInterval.md)
+Invoke function getActivitiesByInterval
+
+### [Get-MgUserDriveRootDelta](Get-MgUserDriveRootDelta.md)
+Invoke function delta
+
+### [Get-MgUserDriveRootListItemActivityByInterval](Get-MgUserDriveRootListItemActivityByInterval.md)
+Invoke function getActivitiesByInterval
 
 ### [Get-MgUserEffectiveDeviceEnrollmentConfiguration](Get-MgUserEffectiveDeviceEnrollmentConfiguration.md)
 Invoke function getEffectiveDeviceEnrollmentConfigurations
@@ -56,6 +98,9 @@ Invoke function getLoggedOnManagedDevices
 ### [Get-MgUserMailFolderChildFolderDelta](Get-MgUserMailFolderChildFolderDelta.md)
 Invoke function delta
 
+### [Get-MgUserMailFolderChildFolderMessageDelta](Get-MgUserMailFolderChildFolderMessageDelta.md)
+Invoke function delta
+
 ### [Get-MgUserMailFolderDelta](Get-MgUserMailFolderDelta.md)
 Invoke function delta
 
@@ -66,16 +111,16 @@ Invoke function delta
 Invoke function getManagedAppBlockedUsers
 
 ### [Get-MgUserManagedAppDiagnosticStatuses](Get-MgUserManagedAppDiagnosticStatuses.md)
-Gets diagnostics validation status for a given user.
+Invoke function getManagedAppDiagnosticStatuses
 
 ### [Get-MgUserManagedAppPolicy](Get-MgUserManagedAppPolicy.md)
-Gets app restrictions for a given user.
-
-### [Get-MgUserManagedAppRegistrationUserId](Get-MgUserManagedAppRegistrationUserId.md)
-Invoke function getUserIdsWithFlaggedAppRegistration
+Invoke function getManagedAppPolicies
 
 ### [Get-MgUserManagedDeviceCloudPcRemoteActionResult](Get-MgUserManagedDeviceCloudPcRemoteActionResult.md)
 Invoke function getCloudPcRemoteActionResults
+
+### [Get-MgUserManagedDeviceCloudPcReviewStatus](Get-MgUserManagedDeviceCloudPcReviewStatus.md)
+Invoke function getCloudPcReviewStatus
 
 ### [Get-MgUserManagedDeviceFileVaultKey](Get-MgUserManagedDeviceFileVaultKey.md)
 Invoke function getFileVaultKey
@@ -87,7 +132,10 @@ Invoke function getNonCompliantSettings
 Invoke function getOemWarranty
 
 ### [Get-MgUserManagedDeviceWithAppFailure](Get-MgUserManagedDeviceWithAppFailure.md)
-Retrieves the list of devices with failed apps
+Invoke function getManagedDevicesWithAppFailures
+
+### [Get-MgUserManagedDeviceWithFailedApp](Get-MgUserManagedDeviceWithFailedApp.md)
+Invoke function getManagedDevicesWithFailedOrPendingApps
 
 ### [Get-MgUserMessageDelta](Get-MgUserMessageDelta.md)
 Invoke function delta
@@ -116,37 +164,40 @@ Invoke function delta
 ### [Invoke-MgCalendarUserCalendarAllowedCalendarSharingRoles](Invoke-MgCalendarUserCalendarAllowedCalendarSharingRoles.md)
 Invoke function allowedCalendarSharingRoles
 
-### [Invoke-MgCalendarUserEventCalendarAllowedCalendarSharingRoles](Invoke-MgCalendarUserEventCalendarAllowedCalendarSharingRoles.md)
-Invoke function allowedCalendarSharingRoles
-
-### [Invoke-MgFilterUserAppConsentRequestForApproval](Invoke-MgFilterUserAppConsentRequestForApproval.md)
+### [Invoke-MgFilterUserAppConsentRequestForApprovalByCurrentUser](Invoke-MgFilterUserAppConsentRequestForApprovalByCurrentUser.md)
 Invoke function filterByCurrentUser
 
-### [Invoke-MgFilterUserAppConsentRequestForApprovalUserConsentRequest](Invoke-MgFilterUserAppConsentRequestForApprovalUserConsentRequest.md)
+### [Invoke-MgFilterUserAppConsentRequestForApprovalUserConsentRequestByCurrentUser](Invoke-MgFilterUserAppConsentRequestForApprovalUserConsentRequestByCurrentUser.md)
 Invoke function filterByCurrentUser
 
-### [Invoke-MgFilterUserApproval](Invoke-MgFilterUserApproval.md)
+### [Invoke-MgFilterUserApprovalByCurrentUser](Invoke-MgFilterUserApprovalByCurrentUser.md)
 Invoke function filterByCurrentUser
 
-### [Invoke-MgFilterUserPendingAccessReviewInstance](Invoke-MgFilterUserPendingAccessReviewInstance.md)
+### [Invoke-MgFilterUserPendingAccessReviewInstanceByCurrentUser](Invoke-MgFilterUserPendingAccessReviewInstanceByCurrentUser.md)
 Invoke function filterByCurrentUser
 
-### [Invoke-MgFilterUserPendingAccessReviewInstanceDecision](Invoke-MgFilterUserPendingAccessReviewInstanceDecision.md)
+### [Invoke-MgFilterUserPendingAccessReviewInstanceDecisionByCurrentUser](Invoke-MgFilterUserPendingAccessReviewInstanceDecisionByCurrentUser.md)
 Invoke function filterByCurrentUser
 
-### [Invoke-MgFilterUserPendingAccessReviewInstanceStage](Invoke-MgFilterUserPendingAccessReviewInstanceStage.md)
+### [Invoke-MgFilterUserPendingAccessReviewInstanceStageByCurrentUser](Invoke-MgFilterUserPendingAccessReviewInstanceStageByCurrentUser.md)
 Invoke function filterByCurrentUser
 
-### [Invoke-MgFilterUserPendingAccessReviewInstanceStageDecision](Invoke-MgFilterUserPendingAccessReviewInstanceStageDecision.md)
-Invoke function filterByCurrentUser
+### [Invoke-MgGraphUserDrive](Invoke-MgGraphUserDrive.md)
+Invoke function sharedWithMe
+
+### [Invoke-MgMessageUserChat](Invoke-MgMessageUserChat.md)
+Invoke function allMessages
 
 ### [Invoke-MgPendingUserApp](Invoke-MgPendingUserApp.md)
-Retrieves the list of devices with failed or pending apps
+Invoke function getManagedDevicesWithFailedOrPendingApps
 
 ### [Invoke-MgPreviewUserOnenotePage](Invoke-MgPreviewUserOnenotePage.md)
 Invoke function preview
 
 ### [Invoke-MgRecentUserActivity](Invoke-MgRecentUserActivity.md)
+Invoke function recent
+
+### [Invoke-MgRecentUserDrive](Invoke-MgRecentUserDrive.md)
 Invoke function recent
 
 ### [Invoke-MgSupportedUserOutlookLanguage](Invoke-MgSupportedUserOutlookLanguage.md)
@@ -158,6 +209,18 @@ Invoke function supportedTimeZones
 ### [Invoke-MgViewUserReminder](Invoke-MgViewUserReminder.md)
 Invoke function reminderView
 
+### [Search-MgUserDrive](Search-MgUserDrive.md)
+Invoke function search
+
+### [Search-MgUserDriveItem](Search-MgUserDriveItem.md)
+Invoke function search
+
+### [Search-MgUserDriveRoot](Search-MgUserDriveRoot.md)
+Invoke function search
+
+### [Test-MgUserDriveListContentTypePublished](Test-MgUserDriveListContentTypePublished.md)
+Invoke function isPublished
+
 ### [Test-MgUserManagedAppUserBlocked](Test-MgUserManagedAppUserBlocked.md)
-Gets the blocked state of a managed app user.
+Invoke function isManagedAppUserBlocked
 

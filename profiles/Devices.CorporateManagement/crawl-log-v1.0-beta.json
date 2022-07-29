@@ -149,23 +149,7 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Devices.CorporateManagement.yml"
     },
-    "/deviceAppManagement/managedAppPolicies/{managedAppPolicy-id}/microsoft.graph.managedAppProtection/microsoft.graph.targetApps": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Devices.CorporateManagement.yml"
-    },
     "/deviceAppManagement/managedAppPolicies/{managedAppPolicy-id}/microsoft.graph.targetApps": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Devices.CorporateManagement.yml"
-    },
-    "/deviceAppManagement/managedAppPolicies/{managedAppPolicy-id}/microsoft.graph.targetedManagedAppProtection/microsoft.graph.assign": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Devices.CorporateManagement.yml"
-    },
-    "/deviceAppManagement/managedAppPolicies/{managedAppPolicy-id}/microsoft.graph.targetedManagedAppProtection/microsoft.graph.targetApps": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Devices.CorporateManagement.yml"
-    },
-    "/deviceAppManagement/managedAppPolicies/{managedAppPolicy-id}/microsoft.graph.windowsInformationProtection/microsoft.graph.assign": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Devices.CorporateManagement.yml"
     },
@@ -185,23 +169,7 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Devices.CorporateManagement.yml"
     },
-    "/deviceAppManagement/managedAppRegistrations/{managedAppRegistration-id}/appliedPolicies/{managedAppPolicy-id}/microsoft.graph.managedAppProtection/microsoft.graph.targetApps": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Devices.CorporateManagement.yml"
-    },
     "/deviceAppManagement/managedAppRegistrations/{managedAppRegistration-id}/appliedPolicies/{managedAppPolicy-id}/microsoft.graph.targetApps": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Devices.CorporateManagement.yml"
-    },
-    "/deviceAppManagement/managedAppRegistrations/{managedAppRegistration-id}/appliedPolicies/{managedAppPolicy-id}/microsoft.graph.targetedManagedAppProtection/microsoft.graph.assign": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Devices.CorporateManagement.yml"
-    },
-    "/deviceAppManagement/managedAppRegistrations/{managedAppRegistration-id}/appliedPolicies/{managedAppPolicy-id}/microsoft.graph.targetedManagedAppProtection/microsoft.graph.targetApps": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Devices.CorporateManagement.yml"
-    },
-    "/deviceAppManagement/managedAppRegistrations/{managedAppRegistration-id}/appliedPolicies/{managedAppPolicy-id}/microsoft.graph.windowsInformationProtection/microsoft.graph.assign": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Devices.CorporateManagement.yml"
     },
@@ -213,23 +181,7 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Devices.CorporateManagement.yml"
     },
-    "/deviceAppManagement/managedAppRegistrations/{managedAppRegistration-id}/intendedPolicies/{managedAppPolicy-id}/microsoft.graph.managedAppProtection/microsoft.graph.targetApps": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Devices.CorporateManagement.yml"
-    },
     "/deviceAppManagement/managedAppRegistrations/{managedAppRegistration-id}/intendedPolicies/{managedAppPolicy-id}/microsoft.graph.targetApps": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Devices.CorporateManagement.yml"
-    },
-    "/deviceAppManagement/managedAppRegistrations/{managedAppRegistration-id}/intendedPolicies/{managedAppPolicy-id}/microsoft.graph.targetedManagedAppProtection/microsoft.graph.assign": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Devices.CorporateManagement.yml"
-    },
-    "/deviceAppManagement/managedAppRegistrations/{managedAppRegistration-id}/intendedPolicies/{managedAppPolicy-id}/microsoft.graph.targetedManagedAppProtection/microsoft.graph.targetApps": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Devices.CorporateManagement.yml"
-    },
-    "/deviceAppManagement/managedAppRegistrations/{managedAppRegistration-id}/intendedPolicies/{managedAppPolicy-id}/microsoft.graph.windowsInformationProtection/microsoft.graph.assign": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Devices.CorporateManagement.yml"
     },
@@ -281,7 +233,7 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Devices.CorporateManagement.yml"
     },
-    "/deviceAppManagement/managedEBooks/{managedEBook-id}/categories/$ref": {
+    "/deviceAppManagement/managedEBooks/{managedEBook-id}/categories/{managedEBookCategory-id}": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Devices.CorporateManagement.yml"
     },
@@ -405,7 +357,7 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Devices.CorporateManagement.yml"
     },
-    "/deviceAppManagement/mobileApps/{mobileApp-id}/categories/$ref": {
+    "/deviceAppManagement/mobileApps/{mobileApp-id}/categories/{mobileAppCategory-id}": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Devices.CorporateManagement.yml"
     },
@@ -421,34 +373,6 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Devices.CorporateManagement.yml"
     },
-    "/deviceAppManagement/mobileApps/{mobileApp-id}/deviceStatuses/{mobileAppInstallStatus-id}/app/$ref": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Devices.CorporateManagement.yml"
-    },
-    "/deviceAppManagement/mobileApps/{mobileApp-id}/deviceStatuses/{mobileAppInstallStatus-id}/app/microsoft.graph.assign": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Devices.CorporateManagement.yml"
-    },
-    "/deviceAppManagement/mobileApps/{mobileApp-id}/deviceStatuses/{mobileAppInstallStatus-id}/app/microsoft.graph.getRelatedAppStates(userPrincipalName='{userPrincipalName}',deviceId='{deviceId}')": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Devices.CorporateManagement.yml"
-    },
-    "/deviceAppManagement/mobileApps/{mobileApp-id}/deviceStatuses/{mobileAppInstallStatus-id}/app/microsoft.graph.iosVppApp/microsoft.graph.revokeAllLicenses": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Devices.CorporateManagement.yml"
-    },
-    "/deviceAppManagement/mobileApps/{mobileApp-id}/deviceStatuses/{mobileAppInstallStatus-id}/app/microsoft.graph.iosVppApp/microsoft.graph.revokeDeviceLicense": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Devices.CorporateManagement.yml"
-    },
-    "/deviceAppManagement/mobileApps/{mobileApp-id}/deviceStatuses/{mobileAppInstallStatus-id}/app/microsoft.graph.iosVppApp/microsoft.graph.revokeUserLicense": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Devices.CorporateManagement.yml"
-    },
-    "/deviceAppManagement/mobileApps/{mobileApp-id}/deviceStatuses/{mobileAppInstallStatus-id}/app/microsoft.graph.updateRelationships": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Devices.CorporateManagement.yml"
-    },
     "/deviceAppManagement/mobileApps/{mobileApp-id}/installSummary": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Devices.CorporateManagement.yml"
@@ -458,18 +382,6 @@
       "originalLocation": "/openApiDocs/beta/Devices.CorporateManagement.yml"
     },
     "/deviceAppManagement/mobileApps/{mobileApp-id}/microsoft.graph.getRelatedAppStates(userPrincipalName='{userPrincipalName}',deviceId='{deviceId}')": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Devices.CorporateManagement.yml"
-    },
-    "/deviceAppManagement/mobileApps/{mobileApp-id}/microsoft.graph.iosVppApp/microsoft.graph.revokeAllLicenses": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Devices.CorporateManagement.yml"
-    },
-    "/deviceAppManagement/mobileApps/{mobileApp-id}/microsoft.graph.iosVppApp/microsoft.graph.revokeDeviceLicense": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Devices.CorporateManagement.yml"
-    },
-    "/deviceAppManagement/mobileApps/{mobileApp-id}/microsoft.graph.iosVppApp/microsoft.graph.revokeUserLicense": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Devices.CorporateManagement.yml"
     },
@@ -497,34 +409,6 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Devices.CorporateManagement.yml"
     },
-    "/deviceAppManagement/mobileApps/{mobileApp-id}/userStatuses/{userAppInstallStatus-id}/app/$ref": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Devices.CorporateManagement.yml"
-    },
-    "/deviceAppManagement/mobileApps/{mobileApp-id}/userStatuses/{userAppInstallStatus-id}/app/microsoft.graph.assign": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Devices.CorporateManagement.yml"
-    },
-    "/deviceAppManagement/mobileApps/{mobileApp-id}/userStatuses/{userAppInstallStatus-id}/app/microsoft.graph.getRelatedAppStates(userPrincipalName='{userPrincipalName}',deviceId='{deviceId}')": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Devices.CorporateManagement.yml"
-    },
-    "/deviceAppManagement/mobileApps/{mobileApp-id}/userStatuses/{userAppInstallStatus-id}/app/microsoft.graph.iosVppApp/microsoft.graph.revokeAllLicenses": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Devices.CorporateManagement.yml"
-    },
-    "/deviceAppManagement/mobileApps/{mobileApp-id}/userStatuses/{userAppInstallStatus-id}/app/microsoft.graph.iosVppApp/microsoft.graph.revokeDeviceLicense": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Devices.CorporateManagement.yml"
-    },
-    "/deviceAppManagement/mobileApps/{mobileApp-id}/userStatuses/{userAppInstallStatus-id}/app/microsoft.graph.iosVppApp/microsoft.graph.revokeUserLicense": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Devices.CorporateManagement.yml"
-    },
-    "/deviceAppManagement/mobileApps/{mobileApp-id}/userStatuses/{userAppInstallStatus-id}/app/microsoft.graph.updateRelationships": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Devices.CorporateManagement.yml"
-    },
     "/deviceAppManagement/mobileApps/{mobileApp-id}/userStatuses/{userAppInstallStatus-id}/deviceStatuses": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Devices.CorporateManagement.yml"
@@ -534,34 +418,6 @@
       "originalLocation": "/openApiDocs/beta/Devices.CorporateManagement.yml"
     },
     "/deviceAppManagement/mobileApps/{mobileApp-id}/userStatuses/{userAppInstallStatus-id}/deviceStatuses/{mobileAppInstallStatus-id}/app": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Devices.CorporateManagement.yml"
-    },
-    "/deviceAppManagement/mobileApps/{mobileApp-id}/userStatuses/{userAppInstallStatus-id}/deviceStatuses/{mobileAppInstallStatus-id}/app/$ref": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Devices.CorporateManagement.yml"
-    },
-    "/deviceAppManagement/mobileApps/{mobileApp-id}/userStatuses/{userAppInstallStatus-id}/deviceStatuses/{mobileAppInstallStatus-id}/app/microsoft.graph.assign": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Devices.CorporateManagement.yml"
-    },
-    "/deviceAppManagement/mobileApps/{mobileApp-id}/userStatuses/{userAppInstallStatus-id}/deviceStatuses/{mobileAppInstallStatus-id}/app/microsoft.graph.getRelatedAppStates(userPrincipalName='{userPrincipalName}',deviceId='{deviceId}')": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Devices.CorporateManagement.yml"
-    },
-    "/deviceAppManagement/mobileApps/{mobileApp-id}/userStatuses/{userAppInstallStatus-id}/deviceStatuses/{mobileAppInstallStatus-id}/app/microsoft.graph.iosVppApp/microsoft.graph.revokeAllLicenses": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Devices.CorporateManagement.yml"
-    },
-    "/deviceAppManagement/mobileApps/{mobileApp-id}/userStatuses/{userAppInstallStatus-id}/deviceStatuses/{mobileAppInstallStatus-id}/app/microsoft.graph.iosVppApp/microsoft.graph.revokeDeviceLicense": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Devices.CorporateManagement.yml"
-    },
-    "/deviceAppManagement/mobileApps/{mobileApp-id}/userStatuses/{userAppInstallStatus-id}/deviceStatuses/{mobileAppInstallStatus-id}/app/microsoft.graph.iosVppApp/microsoft.graph.revokeUserLicense": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Devices.CorporateManagement.yml"
-    },
-    "/deviceAppManagement/mobileApps/{mobileApp-id}/userStatuses/{userAppInstallStatus-id}/deviceStatuses/{mobileAppInstallStatus-id}/app/microsoft.graph.updateRelationships": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Devices.CorporateManagement.yml"
     },
@@ -721,14 +577,6 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Devices.CorporateManagement.yml"
     },
-    "/deviceAppManagement/wdacSupplementalPolicies/{windowsDefenderApplicationControlSupplementalPolicy-id}/deviceStatuses/{windowsDefenderApplicationControlSupplementalPolicyDeploymentStatus-id}/policy/$ref": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Devices.CorporateManagement.yml"
-    },
-    "/deviceAppManagement/wdacSupplementalPolicies/{windowsDefenderApplicationControlSupplementalPolicy-id}/deviceStatuses/{windowsDefenderApplicationControlSupplementalPolicyDeploymentStatus-id}/policy/microsoft.graph.assign": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Devices.CorporateManagement.yml"
-    },
     "/deviceAppManagement/wdacSupplementalPolicies/{windowsDefenderApplicationControlSupplementalPolicy-id}/microsoft.graph.assign": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Devices.CorporateManagement.yml"
@@ -761,15 +609,39 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Devices.CorporateManagement.yml"
     },
+    "/deviceAppManagement/windowsManagedAppProtections": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Devices.CorporateManagement.yml"
+    },
+    "/deviceAppManagement/windowsManagedAppProtections/{windowsManagedAppProtection-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Devices.CorporateManagement.yml"
+    },
+    "/deviceAppManagement/windowsManagedAppProtections/{windowsManagedAppProtection-id}/apps": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Devices.CorporateManagement.yml"
+    },
+    "/deviceAppManagement/windowsManagedAppProtections/{windowsManagedAppProtection-id}/apps/{managedMobileApp-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Devices.CorporateManagement.yml"
+    },
+    "/deviceAppManagement/windowsManagedAppProtections/{windowsManagedAppProtection-id}/assignments": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Devices.CorporateManagement.yml"
+    },
+    "/deviceAppManagement/windowsManagedAppProtections/{windowsManagedAppProtection-id}/assignments/{targetedManagedAppPolicyAssignment-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Devices.CorporateManagement.yml"
+    },
+    "/deviceAppManagement/windowsManagedAppProtections/{windowsManagedAppProtection-id}/microsoft.graph.assign": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Devices.CorporateManagement.yml"
+    },
+    "/deviceAppManagement/windowsManagedAppProtections/{windowsManagedAppProtection-id}/microsoft.graph.targetApps": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Devices.CorporateManagement.yml"
+    },
     "/deviceAppManagement/windowsManagementApp": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Devices.CorporateManagement.yml"
-    },
-    "/deviceAppManagement/windowsManagementApp/$ref": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Devices.CorporateManagement.yml"
-    },
-    "/deviceAppManagement/windowsManagementApp/microsoft.graph.setAsManagedInstaller": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Devices.CorporateManagement.yml"
     },
@@ -837,7 +709,7 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Devices.CorporateManagement.yml"
     },
-    "/users/{user-id}/managedAppRegistrations/$ref": {
+    "/users/{user-id}/managedAppRegistrations/{managedAppRegistration-id}": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Devices.CorporateManagement.yml"
     },
@@ -861,7 +733,7 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Devices.CorporateManagement.yml"
     },
-    "/users/{user-id}/managedDevices/{managedDevice-id}/detectedApps/$ref": {
+    "/users/{user-id}/managedDevices/{managedDevice-id}/detectedApps/{detectedApp-id}": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Devices.CorporateManagement.yml"
     },
@@ -921,10 +793,6 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Devices.CorporateManagement.yml"
     },
-    "/users/{user-id}/managedDevices/{managedDevice-id}/users/$ref": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Devices.CorporateManagement.yml"
-    },
     "/users/{user-id}/managedDevices/{managedDevice-id}/windowsProtectionState": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Devices.CorporateManagement.yml"
@@ -965,7 +833,7 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Devices.CorporateManagement.yml"
     },
-    "/users/{user-id}/windowsInformationProtectionDeviceRegistrations/$ref": {
+    "/users/{user-id}/windowsInformationProtectionDeviceRegistrations/{windowsInformationProtectionDeviceRegistration-id}": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Devices.CorporateManagement.yml"
     }

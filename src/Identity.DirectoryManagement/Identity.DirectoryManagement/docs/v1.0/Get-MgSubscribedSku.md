@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgSubscribedSku
 
 ## SYNOPSIS
-Get entity from subscribedSkus by key
+Get subscribedSku
 
 ## SYNTAX
 
@@ -30,7 +30,7 @@ Get-MgSubscribedSku -InputObject <IIdentityDirectoryManagementIdentity> [-Proper
 ```
 
 ## DESCRIPTION
-Get entity from subscribedSkus by key
+Get subscribedSku
 
 ## EXAMPLES
 
@@ -219,6 +219,7 @@ INPUTOBJECT <IIdentityDirectoryManagementIdentity>: Identity Parameter
   - `[InternalDomainFederationId <String>]`: key: id of internalDomainFederation
   - `[OrgContactId <String>]`: key: id of orgContact
   - `[OrganizationId <String>]`: key: id of organization
+  - `[OrganizationalBrandingLocalizationId <String>]`: key: id of organizationalBrandingLocalization
   - `[OutboundSharedUserProfileUserId <String>]`: key: userId of outboundSharedUserProfile
   - `[ProfileCardPropertyId <String>]`: key: id of profileCardProperty
   - `[RecommendationId <String>]`: key: id of recommendation

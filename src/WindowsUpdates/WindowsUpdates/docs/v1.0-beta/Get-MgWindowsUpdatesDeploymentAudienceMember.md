@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgWindowsUpdatesDeploymentAudienceMember
 
 ## SYNOPSIS
-Specifies the assets to include in the audience.
+Get members from admin
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgWindowsUpdatesDeploymentAudienceMember -InputObject <IWindowsUpdatesIdenti
 ```
 
 ## DESCRIPTION
-Specifies the assets to include in the audience.
+Get members from admin
 
 ## EXAMPLES
 
@@ -262,6 +262,7 @@ To create the parameters described below, construct a hash table containing the 
 INPUTOBJECT <IWindowsUpdatesIdentity>: Identity Parameter
   - `[CatalogEntryId <String>]`: key: id of catalogEntry
   - `[DeploymentId <String>]`: key: id of deployment
+  - `[ResourceConnectionId <String>]`: key: id of resourceConnection
   - `[UpdatableAssetId <String>]`: key: id of updatableAsset
 
 ## RELATED LINKS

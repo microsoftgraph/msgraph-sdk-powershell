@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Identity.DirectoryManagement
-Module Guid: 078f186e-068c-4862-be7e-289ac6622079
+Module Guid: 20e42da0-2136-42fe-b3be-a9806e550eab
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.directorymanagement
 Help Version: 1.0.0.0
 Locale: en-US
@@ -29,6 +29,12 @@ Invoke action checkMemberGroups
 ### [Confirm-MgDeviceMemberObject](Confirm-MgDeviceMemberObject.md)
 Invoke action checkMemberObjects
 
+### [Confirm-MgDirectoryDeletedItemMemberGroup](Confirm-MgDirectoryDeletedItemMemberGroup.md)
+Invoke action checkMemberGroups
+
+### [Confirm-MgDirectoryDeletedItemMemberObject](Confirm-MgDirectoryDeletedItemMemberObject.md)
+Invoke action checkMemberObjects
+
 ### [Confirm-MgDirectoryRoleMemberGroup](Confirm-MgDirectoryRoleMemberGroup.md)
 Invoke action checkMemberGroups
 
@@ -51,7 +57,7 @@ Invoke action checkMemberGroups
 Invoke action checkMemberObjects
 
 ### [Get-MgContact](Get-MgContact.md)
-Get entity from contacts by key
+Get orgContact
 
 ### [Get-MgContactById](Get-MgContactById.md)
 Invoke action getByIds
@@ -60,26 +66,10 @@ Invoke action getByIds
 Invoke function delta
 
 ### [Get-MgContactDirectReport](Get-MgContactDirectReport.md)
-The contact's direct reports.
-(The users and contacts that have their manager property set to this contact.) Read-only.
-Nullable.
-Supports $expand.
-
-### [Get-MgContactDirectReportByRef](Get-MgContactDirectReportByRef.md)
-The contact's direct reports.
-(The users and contacts that have their manager property set to this contact.) Read-only.
-Nullable.
-Supports $expand.
+Get directReports from contacts
 
 ### [Get-MgContactManager](Get-MgContactManager.md)
-The user or contact that is this contact's manager.
-Read-only.
-Supports $expand.
-
-### [Get-MgContactManagerByRef](Get-MgContactManagerByRef.md)
-The user or contact that is this contact's manager.
-Read-only.
-Supports $expand.
+Get manager from contacts
 
 ### [Get-MgContactMemberGroup](Get-MgContactMemberGroup.md)
 Invoke action getMemberGroups
@@ -88,25 +78,13 @@ Invoke action getMemberGroups
 Invoke action getMemberObjects
 
 ### [Get-MgContactMemberOf](Get-MgContactMemberOf.md)
-Groups that this contact is a member of.
-Read-only.
-Nullable.
-Supports $expand.
-
-### [Get-MgContactMemberOfByRef](Get-MgContactMemberOfByRef.md)
-Groups that this contact is a member of.
-Read-only.
-Nullable.
-Supports $expand.
+Get memberOf from contacts
 
 ### [Get-MgContactTransitiveMemberOf](Get-MgContactTransitiveMemberOf.md)
 Get transitiveMemberOf from contacts
 
-### [Get-MgContactTransitiveMemberOfByRef](Get-MgContactTransitiveMemberOfByRef.md)
-Get ref of transitiveMemberOf from contacts
-
 ### [Get-MgContract](Get-MgContract.md)
-Get entity from contracts by key
+Get Contract
 
 ### [Get-MgContractById](Get-MgContractById.md)
 Invoke action getByIds
@@ -118,15 +96,13 @@ Invoke action getMemberGroups
 Invoke action getMemberObjects
 
 ### [Get-MgDevice](Get-MgDevice.md)
-Get entities from devices
+Get device
 
 ### [Get-MgDeviceById](Get-MgDeviceById.md)
-Get entity from devices by key
+Invoke action getByIds
 
 ### [Get-MgDeviceExtension](Get-MgDeviceExtension.md)
-The collection of open extensions defined for the device.
-Read-only.
-Nullable.
+Get extensions from devices
 
 ### [Get-MgDeviceMemberGroup](Get-MgDeviceMemberGroup.md)
 Invoke action getMemberGroups
@@ -135,88 +111,61 @@ Invoke action getMemberGroups
 Invoke action getMemberObjects
 
 ### [Get-MgDeviceMemberOf](Get-MgDeviceMemberOf.md)
-Groups that this device is a member of.
-Read-only.
-Nullable.
-Supports $expand.
-
-### [Get-MgDeviceMemberOfByRef](Get-MgDeviceMemberOfByRef.md)
-Groups that this device is a member of.
-Read-only.
-Nullable.
-Supports $expand.
+Get memberOf from devices
 
 ### [Get-MgDeviceRegisteredOwner](Get-MgDeviceRegisteredOwner.md)
-The user that cloud joined the device or registered their personal device.
-The registered owner is set at the time of registration.
-Currently, there can be only one owner.
-Read-only.
-Nullable.
-Supports $expand.
+Get registeredOwners from devices
 
 ### [Get-MgDeviceRegisteredOwnerByRef](Get-MgDeviceRegisteredOwnerByRef.md)
-The user that cloud joined the device or registered their personal device.
-The registered owner is set at the time of registration.
-Currently, there can be only one owner.
-Read-only.
-Nullable.
-Supports $expand.
+Get ref of registeredOwners from devices
 
 ### [Get-MgDeviceRegisteredUser](Get-MgDeviceRegisteredUser.md)
-Collection of registered users of the device.
-For cloud joined devices and registered personal devices, registered users are set to the same value as registered owners at the time of registration.
-Read-only.
-Nullable.
-Supports $expand.
-
-### [Get-MgDeviceRegisteredUserByRef](Get-MgDeviceRegisteredUserByRef.md)
-Collection of registered users of the device.
-For cloud joined devices and registered personal devices, registered users are set to the same value as registered owners at the time of registration.
-Read-only.
-Nullable.
-Supports $expand.
+Get registeredUsers from devices
 
 ### [Get-MgDeviceTransitiveMemberOf](Get-MgDeviceTransitiveMemberOf.md)
-Groups that the device is a member of.
-This operation is transitive.
-Supports $expand.
-
-### [Get-MgDeviceTransitiveMemberOfByRef](Get-MgDeviceTransitiveMemberOfByRef.md)
-Groups that the device is a member of.
-This operation is transitive.
-Supports $expand.
+Get transitiveMemberOf from devices
 
 ### [Get-MgDirectory](Get-MgDirectory.md)
 Get directory
 
 ### [Get-MgDirectoryAdministrativeUnit](Get-MgDirectoryAdministrativeUnit.md)
-Conceptual container for user and group directory objects.
+Get administrativeUnits from directory
 
 ### [Get-MgDirectoryAdministrativeUnitDelta](Get-MgDirectoryAdministrativeUnitDelta.md)
 Invoke function delta
 
 ### [Get-MgDirectoryAdministrativeUnitExtension](Get-MgDirectoryAdministrativeUnitExtension.md)
-The collection of open extensions defined for this administrative unit.
-Nullable.
+Get extensions from directory
 
 ### [Get-MgDirectoryAdministrativeUnitMember](Get-MgDirectoryAdministrativeUnitMember.md)
-Users and groups that are members of this administrative unit.
-Supports $expand.
+Get members from directory
 
 ### [Get-MgDirectoryAdministrativeUnitMemberByRef](Get-MgDirectoryAdministrativeUnitMemberByRef.md)
-Users and groups that are members of this administrative unit.
-Supports $expand.
+Get ref of members from directory
 
 ### [Get-MgDirectoryAdministrativeUnitScopedRoleMember](Get-MgDirectoryAdministrativeUnitScopedRoleMember.md)
-Scoped-role members of this administrative unit.
+Get scopedRoleMembers from directory
 
 ### [Get-MgDirectoryDeletedItem](Get-MgDirectoryDeletedItem.md)
-Recently deleted items.
-Read-only.
-Nullable.
+Get deletedItems from directory
+
+### [Get-MgDirectoryDeletedItemAvailableExtensionProperty](Get-MgDirectoryDeletedItemAvailableExtensionProperty.md)
+Invoke action getAvailableExtensionProperties
+
+### [Get-MgDirectoryDeletedItemById](Get-MgDirectoryDeletedItemById.md)
+Invoke action getByIds
+
+### [Get-MgDirectoryDeletedItemMemberGroup](Get-MgDirectoryDeletedItemMemberGroup.md)
+Invoke action getMemberGroups
+
+### [Get-MgDirectoryDeletedItemMemberObject](Get-MgDirectoryDeletedItemMemberObject.md)
+Invoke action getMemberObjects
+
+### [Get-MgDirectoryFederationConfiguration](Get-MgDirectoryFederationConfiguration.md)
+Get federationConfigurations from directory
 
 ### [Get-MgDirectoryRole](Get-MgDirectoryRole.md)
-Get entity from directoryRoles by key
+Get directoryRole
 
 ### [Get-MgDirectoryRoleById](Get-MgDirectoryRoleById.md)
 Invoke action getByIds
@@ -225,18 +174,10 @@ Invoke action getByIds
 Invoke function delta
 
 ### [Get-MgDirectoryRoleMember](Get-MgDirectoryRoleMember.md)
-Users that are members of this directory role.
-HTTP Methods: GET, POST, DELETE.
-Read-only.
-Nullable.
-Supports $expand.
+Get members from directoryRoles
 
 ### [Get-MgDirectoryRoleMemberByRef](Get-MgDirectoryRoleMemberByRef.md)
-Users that are members of this directory role.
-HTTP Methods: GET, POST, DELETE.
-Read-only.
-Nullable.
-Supports $expand.
+Get ref of members from directoryRoles
 
 ### [Get-MgDirectoryRoleMemberGroup](Get-MgDirectoryRoleMemberGroup.md)
 Invoke action getMemberGroups
@@ -245,12 +186,10 @@ Invoke action getMemberGroups
 Invoke action getMemberObjects
 
 ### [Get-MgDirectoryRoleScopedMember](Get-MgDirectoryRoleScopedMember.md)
-Members of this directory role that are scoped to administrative units.
-Read-only.
-Nullable.
+Get scopedMembers from directoryRoles
 
 ### [Get-MgDirectoryRoleTemplate](Get-MgDirectoryRoleTemplate.md)
-Get entity from directoryRoleTemplates by key
+Get directoryRoleTemplate
 
 ### [Get-MgDirectoryRoleTemplateById](Get-MgDirectoryRoleTemplateById.md)
 Invoke action getByIds
@@ -262,35 +201,52 @@ Invoke action getMemberGroups
 Invoke action getMemberObjects
 
 ### [Get-MgDomain](Get-MgDomain.md)
-Get entity from domains by key
+Get domain
 
-### [Get-MgDomainDomainNameReferenceByRef](Get-MgDomainDomainNameReferenceByRef.md)
-Read-only, Nullable
+### [Get-MgDomainFederationConfiguration](Get-MgDomainFederationConfiguration.md)
+Get federationConfiguration from domains
 
 ### [Get-MgDomainNameReference](Get-MgDomainNameReference.md)
-Read-only, Nullable
+Get domainNameReferences from domains
 
 ### [Get-MgDomainServiceConfigurationRecord](Get-MgDomainServiceConfigurationRecord.md)
-DNS records the customer adds to the DNS zone file of the domain before the domain can be used by Microsoft Online services.
-Read-only, Nullable
+Get serviceConfigurationRecords from domains
 
 ### [Get-MgDomainVerificationDnsRecord](Get-MgDomainVerificationDnsRecord.md)
-DNS records that the customer adds to the DNS zone file of the domain before the customer can complete domain ownership verification with Azure AD.
-Read-only, Nullable
+Get verificationDnsRecords from domains
 
 ### [Get-MgOrganization](Get-MgOrganization.md)
-Get entity from organization by key
+Get organization
 
 ### [Get-MgOrganizationBranding](Get-MgOrganizationBranding.md)
 Get branding from organization
+
+### [Get-MgOrganizationBrandingBackgroundImage](Get-MgOrganizationBrandingBackgroundImage.md)
+Get backgroundImage for the navigation property branding from organization
+
+### [Get-MgOrganizationBrandingBannerLogo](Get-MgOrganizationBrandingBannerLogo.md)
+Get bannerLogo for the navigation property branding from organization
+
+### [Get-MgOrganizationBrandingLocalization](Get-MgOrganizationBrandingLocalization.md)
+Get localizations from organization
+
+### [Get-MgOrganizationBrandingLocalizationBackgroundImage](Get-MgOrganizationBrandingLocalizationBackgroundImage.md)
+Get backgroundImage for the navigation property localizations from organization
+
+### [Get-MgOrganizationBrandingLocalizationBannerLogo](Get-MgOrganizationBrandingLocalizationBannerLogo.md)
+Get bannerLogo for the navigation property localizations from organization
+
+### [Get-MgOrganizationBrandingLocalizationSquareLogo](Get-MgOrganizationBrandingLocalizationSquareLogo.md)
+Get squareLogo for the navigation property localizations from organization
+
+### [Get-MgOrganizationBrandingSquareLogo](Get-MgOrganizationBrandingSquareLogo.md)
+Get squareLogo for the navigation property branding from organization
 
 ### [Get-MgOrganizationById](Get-MgOrganizationById.md)
 Invoke action getByIds
 
 ### [Get-MgOrganizationExtension](Get-MgOrganizationExtension.md)
-The collection of open extensions defined for the organization.
-Read-only.
-Nullable.
+Get extensions from organization
 
 ### [Get-MgOrganizationMemberGroup](Get-MgOrganizationMemberGroup.md)
 Invoke action getMemberGroups
@@ -299,12 +255,13 @@ Invoke action getMemberGroups
 Invoke action getMemberObjects
 
 ### [Get-MgSubscribedSku](Get-MgSubscribedSku.md)
-Get entity from subscribedSkus by key
+Get subscribedSku
 
 ### [Get-MgUserScopedRoleMemberOf](Get-MgUserScopedRoleMemberOf.md)
-The scoped-role administrative unit memberships for this user.
-Read-only.
-Nullable.
+Get scopedRoleMemberOf from users
+
+### [Invoke-MgAvailableDirectoryFederationConfigurationProviderType](Invoke-MgAvailableDirectoryFederationConfigurationProviderType.md)
+Invoke function availableProviderTypes
 
 ### [Invoke-MgForceDomainDelete](Invoke-MgForceDomainDelete.md)
 Invoke action forceDelete
@@ -312,180 +269,131 @@ Invoke action forceDelete
 ### [New-MgContact](New-MgContact.md)
 Add new entity to contacts
 
-### [New-MgContactDirectReportByRef](New-MgContactDirectReportByRef.md)
-The contact's direct reports.
-(The users and contacts that have their manager property set to this contact.) Read-only.
-Nullable.
-Supports $expand.
-
-### [New-MgContactMemberOfByRef](New-MgContactMemberOfByRef.md)
-Groups that this contact is a member of.
-Read-only.
-Nullable.
-Supports $expand.
-
-### [New-MgContactTransitiveMemberOfByRef](New-MgContactTransitiveMemberOfByRef.md)
-Create new navigation property ref to transitiveMemberOf for contacts
-
 ### [New-MgContract](New-MgContract.md)
 Add new entity to contracts
 
 ### [New-MgDevice](New-MgDevice.md)
-Add new entity to devices
+Create device
 
 ### [New-MgDeviceExtension](New-MgDeviceExtension.md)
-The collection of open extensions defined for the device.
-Read-only.
-Nullable.
-
-### [New-MgDeviceMemberOfByRef](New-MgDeviceMemberOfByRef.md)
-Groups that this device is a member of.
-Read-only.
-Nullable.
-Supports $expand.
+Create new navigation property to extensions for devices
 
 ### [New-MgDeviceRegisteredOwnerByRef](New-MgDeviceRegisteredOwnerByRef.md)
-The user that cloud joined the device or registered their personal device.
-The registered owner is set at the time of registration.
-Currently, there can be only one owner.
-Read-only.
-Nullable.
-Supports $expand.
-
-### [New-MgDeviceRegisteredUserByRef](New-MgDeviceRegisteredUserByRef.md)
-Collection of registered users of the device.
-For cloud joined devices and registered personal devices, registered users are set to the same value as registered owners at the time of registration.
-Read-only.
-Nullable.
-Supports $expand.
-
-### [New-MgDeviceTransitiveMemberOfByRef](New-MgDeviceTransitiveMemberOfByRef.md)
-Groups that the device is a member of.
-This operation is transitive.
-Supports $expand.
+Create new navigation property ref to registeredOwners for devices
 
 ### [New-MgDirectoryAdministrativeUnit](New-MgDirectoryAdministrativeUnit.md)
-Conceptual container for user and group directory objects.
+Create new navigation property to administrativeUnits for directory
 
 ### [New-MgDirectoryAdministrativeUnitExtension](New-MgDirectoryAdministrativeUnitExtension.md)
-The collection of open extensions defined for this administrative unit.
-Nullable.
+Create new navigation property to extensions for directory
 
 ### [New-MgDirectoryAdministrativeUnitMemberByRef](New-MgDirectoryAdministrativeUnitMemberByRef.md)
-Users and groups that are members of this administrative unit.
-Supports $expand.
+Create new navigation property ref to members for directory
 
 ### [New-MgDirectoryAdministrativeUnitScopedRoleMember](New-MgDirectoryAdministrativeUnitScopedRoleMember.md)
-Scoped-role members of this administrative unit.
+Create new navigation property to scopedRoleMembers for directory
 
 ### [New-MgDirectoryDeletedItem](New-MgDirectoryDeletedItem.md)
-Recently deleted items.
-Read-only.
-Nullable.
+Create new navigation property to deletedItems for directory
+
+### [New-MgDirectoryFederationConfiguration](New-MgDirectoryFederationConfiguration.md)
+Create new navigation property to federationConfigurations for directory
 
 ### [New-MgDirectoryRole](New-MgDirectoryRole.md)
-Add new entity to directoryRoles
+Activate directoryRole
 
 ### [New-MgDirectoryRoleMemberByRef](New-MgDirectoryRoleMemberByRef.md)
-Users that are members of this directory role.
-HTTP Methods: GET, POST, DELETE.
-Read-only.
-Nullable.
-Supports $expand.
+Create new navigation property ref to members for directoryRoles
 
 ### [New-MgDirectoryRoleScopedMember](New-MgDirectoryRoleScopedMember.md)
-Members of this directory role that are scoped to administrative units.
-Read-only.
-Nullable.
+Create new navigation property to scopedMembers for directoryRoles
 
 ### [New-MgDirectoryRoleTemplate](New-MgDirectoryRoleTemplate.md)
 Add new entity to directoryRoleTemplates
 
 ### [New-MgDomain](New-MgDomain.md)
-Add new entity to domains
+Create domain
 
-### [New-MgDomainDomainNameReferenceByRef](New-MgDomainDomainNameReferenceByRef.md)
-Read-only, Nullable
+### [New-MgDomainFederationConfiguration](New-MgDomainFederationConfiguration.md)
+Create new navigation property to federationConfiguration for domains
 
 ### [New-MgDomainServiceConfigurationRecord](New-MgDomainServiceConfigurationRecord.md)
-DNS records the customer adds to the DNS zone file of the domain before the domain can be used by Microsoft Online services.
-Read-only, Nullable
+Create new navigation property to serviceConfigurationRecords for domains
 
 ### [New-MgDomainVerificationDnsRecord](New-MgDomainVerificationDnsRecord.md)
-DNS records that the customer adds to the DNS zone file of the domain before the customer can complete domain ownership verification with Azure AD.
-Read-only, Nullable
+Create new navigation property to verificationDnsRecords for domains
 
 ### [New-MgOrganization](New-MgOrganization.md)
 Add new entity to organization
 
+### [New-MgOrganizationBrandingLocalization](New-MgOrganizationBrandingLocalization.md)
+Create new navigation property to localizations for organization
+
 ### [New-MgOrganizationExtension](New-MgOrganizationExtension.md)
-The collection of open extensions defined for the organization.
-Read-only.
-Nullable.
+Create new navigation property to extensions for organization
 
 ### [New-MgSubscribedSku](New-MgSubscribedSku.md)
 Add new entity to subscribedSkus
 
 ### [New-MgUserScopedRoleMemberOf](New-MgUserScopedRoleMemberOf.md)
-The scoped-role administrative unit memberships for this user.
-Read-only.
-Nullable.
+Create new navigation property to scopedRoleMemberOf for users
 
 ### [Remove-MgContact](Remove-MgContact.md)
 Delete entity from contacts
-
-### [Remove-MgContactManagerByRef](Remove-MgContactManagerByRef.md)
-The user or contact that is this contact's manager.
-Read-only.
-Supports $expand.
 
 ### [Remove-MgContract](Remove-MgContract.md)
 Delete entity from contracts
 
 ### [Remove-MgDevice](Remove-MgDevice.md)
-Delete entity from devices
+Delete device
 
 ### [Remove-MgDeviceExtension](Remove-MgDeviceExtension.md)
-The collection of open extensions defined for the device.
-Read-only.
-Nullable.
+Delete navigation property extensions for devices
+
+### [Remove-MgDeviceRegisteredOwnerByRef](Remove-MgDeviceRegisteredOwnerByRef.md)
+Delete ref of navigation property registeredOwners for devices
 
 ### [Remove-MgDirectoryAdministrativeUnit](Remove-MgDirectoryAdministrativeUnit.md)
-Conceptual container for user and group directory objects.
+Delete navigation property administrativeUnits for directory
 
 ### [Remove-MgDirectoryAdministrativeUnitExtension](Remove-MgDirectoryAdministrativeUnitExtension.md)
-The collection of open extensions defined for this administrative unit.
-Nullable.
+Delete navigation property extensions for directory
+
+### [Remove-MgDirectoryAdministrativeUnitMemberByRef](Remove-MgDirectoryAdministrativeUnitMemberByRef.md)
+Delete ref of navigation property members for directory
 
 ### [Remove-MgDirectoryAdministrativeUnitScopedRoleMember](Remove-MgDirectoryAdministrativeUnitScopedRoleMember.md)
-Scoped-role members of this administrative unit.
+Delete navigation property scopedRoleMembers for directory
 
 ### [Remove-MgDirectoryDeletedItem](Remove-MgDirectoryDeletedItem.md)
-Recently deleted items.
-Read-only.
-Nullable.
+Delete navigation property deletedItems for directory
+
+### [Remove-MgDirectoryFederationConfiguration](Remove-MgDirectoryFederationConfiguration.md)
+Delete navigation property federationConfigurations for directory
 
 ### [Remove-MgDirectoryRole](Remove-MgDirectoryRole.md)
 Delete entity from directoryRoles
 
+### [Remove-MgDirectoryRoleMemberByRef](Remove-MgDirectoryRoleMemberByRef.md)
+Delete ref of navigation property members for directoryRoles
+
 ### [Remove-MgDirectoryRoleScopedMember](Remove-MgDirectoryRoleScopedMember.md)
-Members of this directory role that are scoped to administrative units.
-Read-only.
-Nullable.
+Delete navigation property scopedMembers for directoryRoles
 
 ### [Remove-MgDirectoryRoleTemplate](Remove-MgDirectoryRoleTemplate.md)
 Delete entity from directoryRoleTemplates
 
 ### [Remove-MgDomain](Remove-MgDomain.md)
-Delete entity from domains
+Delete domain
+
+### [Remove-MgDomainFederationConfiguration](Remove-MgDomainFederationConfiguration.md)
+Delete navigation property federationConfiguration for domains
 
 ### [Remove-MgDomainServiceConfigurationRecord](Remove-MgDomainServiceConfigurationRecord.md)
-DNS records the customer adds to the DNS zone file of the domain before the domain can be used by Microsoft Online services.
-Read-only, Nullable
+Delete navigation property serviceConfigurationRecords for domains
 
 ### [Remove-MgDomainVerificationDnsRecord](Remove-MgDomainVerificationDnsRecord.md)
-DNS records that the customer adds to the DNS zone file of the domain before the customer can complete domain ownership verification with Azure AD.
-Read-only, Nullable
+Delete navigation property verificationDnsRecords for domains
 
 ### [Remove-MgOrganization](Remove-MgOrganization.md)
 Delete entity from organization
@@ -493,44 +401,41 @@ Delete entity from organization
 ### [Remove-MgOrganizationBranding](Remove-MgOrganizationBranding.md)
 Delete navigation property branding for organization
 
+### [Remove-MgOrganizationBrandingLocalization](Remove-MgOrganizationBrandingLocalization.md)
+Delete navigation property localizations for organization
+
 ### [Remove-MgOrganizationExtension](Remove-MgOrganizationExtension.md)
-The collection of open extensions defined for the organization.
-Read-only.
-Nullable.
+Delete navigation property extensions for organization
 
 ### [Remove-MgSubscribedSku](Remove-MgSubscribedSku.md)
 Delete entity from subscribedSkus
 
 ### [Remove-MgUserScopedRoleMemberOf](Remove-MgUserScopedRoleMemberOf.md)
-The scoped-role administrative unit memberships for this user.
-Read-only.
-Nullable.
+Delete navigation property scopedRoleMemberOf for users
 
-### [Restore-MgContact](Restore-MgContact.md)
+### [Restore-MgDirectoryDeletedItem](Restore-MgDirectoryDeletedItem.md)
 Invoke action restore
 
-### [Restore-MgContract](Restore-MgContract.md)
-Invoke action restore
+### [Set-MgOrganizationBrandingBackgroundImage](Set-MgOrganizationBrandingBackgroundImage.md)
+Update backgroundImage for the navigation property branding in organization
 
-### [Restore-MgDevice](Restore-MgDevice.md)
-Invoke action restore
+### [Set-MgOrganizationBrandingBannerLogo](Set-MgOrganizationBrandingBannerLogo.md)
+Update bannerLogo for the navigation property branding in organization
 
-### [Restore-MgDirectoryRole](Restore-MgDirectoryRole.md)
-Invoke action restore
+### [Set-MgOrganizationBrandingLocalizationBackgroundImage](Set-MgOrganizationBrandingLocalizationBackgroundImage.md)
+Update backgroundImage for the navigation property localizations in organization
 
-### [Restore-MgDirectoryRoleTemplate](Restore-MgDirectoryRoleTemplate.md)
-Invoke action restore
+### [Set-MgOrganizationBrandingLocalizationBannerLogo](Set-MgOrganizationBrandingLocalizationBannerLogo.md)
+Update bannerLogo for the navigation property localizations in organization
 
-### [Restore-MgOrganization](Restore-MgOrganization.md)
-Invoke action restore
+### [Set-MgOrganizationBrandingLocalizationSquareLogo](Set-MgOrganizationBrandingLocalizationSquareLogo.md)
+Update squareLogo for the navigation property localizations in organization
 
-### [Set-MgContactManagerByRef](Set-MgContactManagerByRef.md)
-The user or contact that is this contact's manager.
-Read-only.
-Supports $expand.
+### [Set-MgOrganizationBrandingSquareLogo](Set-MgOrganizationBrandingSquareLogo.md)
+Update squareLogo for the navigation property branding in organization
 
 ### [Set-MgOrganizationMobileDeviceManagementAuthority](Set-MgOrganizationMobileDeviceManagementAuthority.md)
-Set mobile device management authority
+Invoke action setMobileDeviceManagementAuthority
 
 ### [Test-MgContactProperty](Test-MgContactProperty.md)
 Invoke action validateProperties
@@ -539,6 +444,9 @@ Invoke action validateProperties
 Invoke action validateProperties
 
 ### [Test-MgDeviceProperty](Test-MgDeviceProperty.md)
+Invoke action validateProperties
+
+### [Test-MgDirectoryDeletedItemProperty](Test-MgDirectoryDeletedItemProperty.md)
 Invoke action validateProperties
 
 ### [Test-MgDirectoryRoleProperty](Test-MgDirectoryRoleProperty.md)
@@ -557,69 +465,65 @@ Update entity in contacts
 Update entity in contracts
 
 ### [Update-MgDevice](Update-MgDevice.md)
-Update entity in devices
+Update device
 
 ### [Update-MgDeviceExtension](Update-MgDeviceExtension.md)
-The collection of open extensions defined for the device.
-Read-only.
-Nullable.
+Update the navigation property extensions in devices
 
 ### [Update-MgDirectory](Update-MgDirectory.md)
 Update directory
 
 ### [Update-MgDirectoryAdministrativeUnit](Update-MgDirectoryAdministrativeUnit.md)
-Conceptual container for user and group directory objects.
+Update the navigation property administrativeUnits in directory
 
 ### [Update-MgDirectoryAdministrativeUnitExtension](Update-MgDirectoryAdministrativeUnitExtension.md)
-The collection of open extensions defined for this administrative unit.
-Nullable.
+Update the navigation property extensions in directory
 
 ### [Update-MgDirectoryAdministrativeUnitScopedRoleMember](Update-MgDirectoryAdministrativeUnitScopedRoleMember.md)
-Scoped-role members of this administrative unit.
+Update the navigation property scopedRoleMembers in directory
 
 ### [Update-MgDirectoryDeletedItem](Update-MgDirectoryDeletedItem.md)
-Recently deleted items.
-Read-only.
-Nullable.
+Update the navigation property deletedItems in directory
+
+### [Update-MgDirectoryFederationConfiguration](Update-MgDirectoryFederationConfiguration.md)
+Update the navigation property federationConfigurations in directory
 
 ### [Update-MgDirectoryRole](Update-MgDirectoryRole.md)
 Update entity in directoryRoles
 
 ### [Update-MgDirectoryRoleScopedMember](Update-MgDirectoryRoleScopedMember.md)
-Members of this directory role that are scoped to administrative units.
-Read-only.
-Nullable.
+Update the navigation property scopedMembers in directoryRoles
 
 ### [Update-MgDirectoryRoleTemplate](Update-MgDirectoryRoleTemplate.md)
 Update entity in directoryRoleTemplates
 
 ### [Update-MgDomain](Update-MgDomain.md)
-Update entity in domains
+Update domain
+
+### [Update-MgDomainFederationConfiguration](Update-MgDomainFederationConfiguration.md)
+Update the navigation property federationConfiguration in domains
 
 ### [Update-MgDomainServiceConfigurationRecord](Update-MgDomainServiceConfigurationRecord.md)
-DNS records the customer adds to the DNS zone file of the domain before the domain can be used by Microsoft Online services.
-Read-only, Nullable
+Update the navigation property serviceConfigurationRecords in domains
 
 ### [Update-MgDomainVerificationDnsRecord](Update-MgDomainVerificationDnsRecord.md)
-DNS records that the customer adds to the DNS zone file of the domain before the customer can complete domain ownership verification with Azure AD.
-Read-only, Nullable
+Update the navigation property verificationDnsRecords in domains
 
 ### [Update-MgOrganization](Update-MgOrganization.md)
-Update entity in organization
+Update organization
 
 ### [Update-MgOrganizationBranding](Update-MgOrganizationBranding.md)
 Update the navigation property branding in organization
 
+### [Update-MgOrganizationBrandingLocalization](Update-MgOrganizationBrandingLocalization.md)
+Update the navigation property localizations in organization
+
 ### [Update-MgOrganizationExtension](Update-MgOrganizationExtension.md)
-The collection of open extensions defined for the organization.
-Read-only.
-Nullable.
+Update the navigation property extensions in organization
 
 ### [Update-MgSubscribedSku](Update-MgSubscribedSku.md)
 Update entity in subscribedSkus
 
 ### [Update-MgUserScopedRoleMemberOf](Update-MgUserScopedRoleMemberOf.md)
-The scoped-role administrative unit memberships for this user.
-Read-only.
-Nullable.
+Update the navigation property scopedRoleMemberOf in users
 

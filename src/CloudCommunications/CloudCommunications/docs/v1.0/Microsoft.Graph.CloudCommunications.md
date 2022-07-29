@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.CloudCommunications
-Module Guid: 2720a41b-822d-48d0-a0ab-39403c98dfd7
+Module Guid: 833b1d48-ea2f-4ff4-a960-076413cc97a2
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.cloudcommunications
 Help Version: 1.0.0.0
 Locale: en-US
@@ -18,56 +18,49 @@ Invoke action clearPresence
 Get calls from communications
 
 ### [Get-MgCommunicationCallAudioRoutingGroup](Get-MgCommunicationCallAudioRoutingGroup.md)
-Read-only.
-Nullable.
+Get audioRoutingGroups from communications
 
 ### [Get-MgCommunicationCallOperation](Get-MgCommunicationCallOperation.md)
-Read-only.
-Nullable.
+Get operations from communications
 
 ### [Get-MgCommunicationCallParticipant](Get-MgCommunicationCallParticipant.md)
-Read-only.
-Nullable.
+Get participants from communications
 
 ### [Get-MgCommunicationCallRecord](Get-MgCommunicationCallRecord.md)
 Get callRecords from communications
 
 ### [Get-MgCommunicationCallRecordSession](Get-MgCommunicationCallRecordSession.md)
-List of sessions involved in the call.
-Peer-to-peer calls typically only have one session, whereas group calls typically have at least one session per participant.
-Read-only.
-Nullable.
+Get sessions from communications
 
 ### [Get-MgCommunicationOnlineMeeting](Get-MgCommunicationOnlineMeeting.md)
 Get onlineMeetings from communications
 
 ### [Get-MgCommunicationOnlineMeetingAttendanceReport](Get-MgCommunicationOnlineMeetingAttendanceReport.md)
-The attendance reports of an online meeting.
-Read-only.
+Get attendanceReports from communications
 
 ### [Get-MgCommunicationOnlineMeetingAttendanceReportAttendanceRecord](Get-MgCommunicationOnlineMeetingAttendanceReportAttendanceRecord.md)
-List of attendance records of an attendance report.
-Read-only.
+Get attendanceRecords from communications
 
 ### [Get-MgCommunicationOnlineMeetingAttendeeReport](Get-MgCommunicationOnlineMeetingAttendeeReport.md)
-Get media content for the navigation property onlineMeetings from communications
+Get attendeeReport for the navigation property onlineMeetings from communications
 
 ### [Get-MgCommunicationPresence](Get-MgCommunicationPresence.md)
+Get presences from communications
+
+### [Get-MgCommunicationPresenceByUserId](Get-MgCommunicationPresenceByUserId.md)
 Invoke action getPresencesByUserId
 
 ### [Get-MgUserOnlineMeeting](Get-MgUserOnlineMeeting.md)
 Get onlineMeetings from users
 
 ### [Get-MgUserOnlineMeetingAttendanceReport](Get-MgUserOnlineMeetingAttendanceReport.md)
-The attendance reports of an online meeting.
-Read-only.
+Get attendanceReports from users
 
 ### [Get-MgUserOnlineMeetingAttendanceReportAttendanceRecord](Get-MgUserOnlineMeetingAttendanceReportAttendanceRecord.md)
-List of attendance records of an attendance report.
-Read-only.
+Get attendanceRecords from users
 
 ### [Get-MgUserOnlineMeetingAttendeeReport](Get-MgUserOnlineMeetingAttendeeReport.md)
-Get media content for the navigation property onlineMeetings from users
+Get attendeeReport for the navigation property onlineMeetings from users
 
 ### [Get-MgUserPresence](Get-MgUserPresence.md)
 Get presence from users
@@ -76,7 +69,7 @@ Get presence from users
 Invoke action answer
 
 ### [Invoke-MgCreateOrGetCommunicationOnlineMeeting](Invoke-MgCreateOrGetCommunicationOnlineMeeting.md)
-Create new navigation property to onlineMeetings for communications
+Invoke action createOrGet
 
 ### [Invoke-MgInviteCommunicationCallParticipant](Invoke-MgInviteCommunicationCallParticipant.md)
 Invoke action invite
@@ -118,33 +111,25 @@ Invoke action transfer
 Create new navigation property to calls for communications
 
 ### [New-MgCommunicationCallAudioRoutingGroup](New-MgCommunicationCallAudioRoutingGroup.md)
-Read-only.
-Nullable.
+Create new navigation property to audioRoutingGroups for communications
 
 ### [New-MgCommunicationCallOperation](New-MgCommunicationCallOperation.md)
-Read-only.
-Nullable.
+Create new navigation property to operations for communications
 
 ### [New-MgCommunicationCallParticipant](New-MgCommunicationCallParticipant.md)
-Read-only.
-Nullable.
+Create new navigation property to participants for communications
 
 ### [New-MgCommunicationCallRecordSession](New-MgCommunicationCallRecordSession.md)
-List of sessions involved in the call.
-Peer-to-peer calls typically only have one session, whereas group calls typically have at least one session per participant.
-Read-only.
-Nullable.
+Create new navigation property to sessions for communications
 
 ### [New-MgCommunicationOnlineMeeting](New-MgCommunicationOnlineMeeting.md)
-Invoke action createOrGet
+Create new navigation property to onlineMeetings for communications
 
 ### [New-MgCommunicationOnlineMeetingAttendanceReport](New-MgCommunicationOnlineMeetingAttendanceReport.md)
-The attendance reports of an online meeting.
-Read-only.
+Create new navigation property to attendanceReports for communications
 
 ### [New-MgCommunicationOnlineMeetingAttendanceReportAttendanceRecord](New-MgCommunicationOnlineMeetingAttendanceReportAttendanceRecord.md)
-List of attendance records of an attendance report.
-Read-only.
+Create new navigation property to attendanceRecords for communications
 
 ### [New-MgCommunicationPresence](New-MgCommunicationPresence.md)
 Create new navigation property to presences for communications
@@ -153,44 +138,34 @@ Create new navigation property to presences for communications
 Create new navigation property to onlineMeetings for users
 
 ### [New-MgUserOnlineMeetingAttendanceReport](New-MgUserOnlineMeetingAttendanceReport.md)
-The attendance reports of an online meeting.
-Read-only.
+Create new navigation property to attendanceReports for users
 
 ### [New-MgUserOnlineMeetingAttendanceReportAttendanceRecord](New-MgUserOnlineMeetingAttendanceReportAttendanceRecord.md)
-List of attendance records of an attendance report.
-Read-only.
+Create new navigation property to attendanceRecords for users
 
 ### [Remove-MgCommunicationCall](Remove-MgCommunicationCall.md)
 Delete navigation property calls for communications
 
 ### [Remove-MgCommunicationCallAudioRoutingGroup](Remove-MgCommunicationCallAudioRoutingGroup.md)
-Read-only.
-Nullable.
+Delete navigation property audioRoutingGroups for communications
 
 ### [Remove-MgCommunicationCallOperation](Remove-MgCommunicationCallOperation.md)
-Read-only.
-Nullable.
+Delete navigation property operations for communications
 
 ### [Remove-MgCommunicationCallParticipant](Remove-MgCommunicationCallParticipant.md)
-Read-only.
-Nullable.
+Delete navigation property participants for communications
 
 ### [Remove-MgCommunicationCallRecordSession](Remove-MgCommunicationCallRecordSession.md)
-List of sessions involved in the call.
-Peer-to-peer calls typically only have one session, whereas group calls typically have at least one session per participant.
-Read-only.
-Nullable.
+Delete navigation property sessions for communications
 
 ### [Remove-MgCommunicationOnlineMeeting](Remove-MgCommunicationOnlineMeeting.md)
 Delete navigation property onlineMeetings for communications
 
 ### [Remove-MgCommunicationOnlineMeetingAttendanceReport](Remove-MgCommunicationOnlineMeetingAttendanceReport.md)
-The attendance reports of an online meeting.
-Read-only.
+Delete navigation property attendanceReports for communications
 
 ### [Remove-MgCommunicationOnlineMeetingAttendanceReportAttendanceRecord](Remove-MgCommunicationOnlineMeetingAttendanceReportAttendanceRecord.md)
-List of attendance records of an attendance report.
-Read-only.
+Delete navigation property attendanceRecords for communications
 
 ### [Remove-MgCommunicationPresence](Remove-MgCommunicationPresence.md)
 Delete navigation property presences for communications
@@ -199,12 +174,10 @@ Delete navigation property presences for communications
 Delete navigation property onlineMeetings for users
 
 ### [Remove-MgUserOnlineMeetingAttendanceReport](Remove-MgUserOnlineMeetingAttendanceReport.md)
-The attendance reports of an online meeting.
-Read-only.
+Delete navigation property attendanceReports for users
 
 ### [Remove-MgUserOnlineMeetingAttendanceReportAttendanceRecord](Remove-MgUserOnlineMeetingAttendanceReportAttendanceRecord.md)
-List of attendance records of an attendance report.
-Read-only.
+Delete navigation property attendanceRecords for users
 
 ### [Remove-MgUserPresence](Remove-MgUserPresence.md)
 Delete navigation property presence for users
@@ -213,13 +186,13 @@ Delete navigation property presence for users
 Invoke action changeScreenSharingRole
 
 ### [Set-MgCommunicationOnlineMeetingAttendeeReport](Set-MgCommunicationOnlineMeetingAttendeeReport.md)
-Update media content for the navigation property onlineMeetings in communications
+Update attendeeReport for the navigation property onlineMeetings in communications
 
 ### [Set-MgCommunicationPresence](Set-MgCommunicationPresence.md)
 Invoke action setPresence
 
 ### [Set-MgUserOnlineMeetingAttendeeReport](Set-MgUserOnlineMeetingAttendeeReport.md)
-Update media content for the navigation property onlineMeetings in users
+Update attendeeReport for the navigation property onlineMeetings in users
 
 ### [Start-MgCommunicationCallParticipantHoldMusic](Start-MgCommunicationCallParticipantHoldMusic.md)
 Invoke action startHoldMusic
@@ -231,36 +204,28 @@ Invoke action cancelMediaProcessing
 Invoke action stopHoldMusic
 
 ### [Update-MgCommunicationCallAudioRoutingGroup](Update-MgCommunicationCallAudioRoutingGroup.md)
-Read-only.
-Nullable.
+Update the navigation property audioRoutingGroups in communications
 
 ### [Update-MgCommunicationCallOperation](Update-MgCommunicationCallOperation.md)
-Read-only.
-Nullable.
+Update the navigation property operations in communications
 
 ### [Update-MgCommunicationCallParticipant](Update-MgCommunicationCallParticipant.md)
-Read-only.
-Nullable.
+Update the navigation property participants in communications
 
 ### [Update-MgCommunicationCallRecordingStatus](Update-MgCommunicationCallRecordingStatus.md)
 Invoke action updateRecordingStatus
 
 ### [Update-MgCommunicationCallRecordSession](Update-MgCommunicationCallRecordSession.md)
-List of sessions involved in the call.
-Peer-to-peer calls typically only have one session, whereas group calls typically have at least one session per participant.
-Read-only.
-Nullable.
+Update the navigation property sessions in communications
 
 ### [Update-MgCommunicationOnlineMeeting](Update-MgCommunicationOnlineMeeting.md)
 Update the navigation property onlineMeetings in communications
 
 ### [Update-MgCommunicationOnlineMeetingAttendanceReport](Update-MgCommunicationOnlineMeetingAttendanceReport.md)
-The attendance reports of an online meeting.
-Read-only.
+Update the navigation property attendanceReports in communications
 
 ### [Update-MgCommunicationOnlineMeetingAttendanceReportAttendanceRecord](Update-MgCommunicationOnlineMeetingAttendanceReportAttendanceRecord.md)
-List of attendance records of an attendance report.
-Read-only.
+Update the navigation property attendanceRecords in communications
 
 ### [Update-MgCommunicationPresence](Update-MgCommunicationPresence.md)
 Update the navigation property presences in communications
@@ -269,12 +234,10 @@ Update the navigation property presences in communications
 Update the navigation property onlineMeetings in users
 
 ### [Update-MgUserOnlineMeetingAttendanceReport](Update-MgUserOnlineMeetingAttendanceReport.md)
-The attendance reports of an online meeting.
-Read-only.
+Update the navigation property attendanceReports in users
 
 ### [Update-MgUserOnlineMeetingAttendanceReportAttendanceRecord](Update-MgUserOnlineMeetingAttendanceReportAttendanceRecord.md)
-List of attendance records of an attendance report.
-Read-only.
+Update the navigation property attendanceRecords in users
 
 ### [Update-MgUserPresence](Update-MgUserPresence.md)
 Update the navigation property presence in users

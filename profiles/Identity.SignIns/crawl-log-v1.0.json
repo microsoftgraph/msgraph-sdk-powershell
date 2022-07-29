@@ -9,6 +9,102 @@
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
     },
+    "/identity": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
+    },
+    "/identity/apiConnectors": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
+    },
+    "/identity/apiConnectors/{identityApiConnector-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
+    },
+    "/identity/apiConnectors/{identityApiConnector-id}/microsoft.graph.uploadClientCertificate": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
+    },
+    "/identity/b2xUserFlows": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
+    },
+    "/identity/b2xUserFlows/{b2xIdentityUserFlow-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
+    },
+    "/identity/b2xUserFlows/{b2xIdentityUserFlow-id}/identityProviders": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
+    },
+    "/identity/b2xUserFlows/{b2xIdentityUserFlow-id}/identityProviders/{identityProvider-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
+    },
+    "/identity/b2xUserFlows/{b2xIdentityUserFlow-id}/languages": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
+    },
+    "/identity/b2xUserFlows/{b2xIdentityUserFlow-id}/languages/{userFlowLanguageConfiguration-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
+    },
+    "/identity/b2xUserFlows/{b2xIdentityUserFlow-id}/languages/{userFlowLanguageConfiguration-id}/defaultPages": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
+    },
+    "/identity/b2xUserFlows/{b2xIdentityUserFlow-id}/languages/{userFlowLanguageConfiguration-id}/defaultPages/{userFlowLanguagePage-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
+    },
+    "/identity/b2xUserFlows/{b2xIdentityUserFlow-id}/languages/{userFlowLanguageConfiguration-id}/defaultPages/{userFlowLanguagePage-id}/$value": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
+    },
+    "/identity/b2xUserFlows/{b2xIdentityUserFlow-id}/languages/{userFlowLanguageConfiguration-id}/overridesPages": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
+    },
+    "/identity/b2xUserFlows/{b2xIdentityUserFlow-id}/languages/{userFlowLanguageConfiguration-id}/overridesPages/{userFlowLanguagePage-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
+    },
+    "/identity/b2xUserFlows/{b2xIdentityUserFlow-id}/languages/{userFlowLanguageConfiguration-id}/overridesPages/{userFlowLanguagePage-id}/$value": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
+    },
+    "/identity/b2xUserFlows/{b2xIdentityUserFlow-id}/userAttributeAssignments": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
+    },
+    "/identity/b2xUserFlows/{b2xIdentityUserFlow-id}/userAttributeAssignments/{identityUserFlowAttributeAssignment-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
+    },
+    "/identity/b2xUserFlows/{b2xIdentityUserFlow-id}/userAttributeAssignments/{identityUserFlowAttributeAssignment-id}/userAttribute": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
+    },
+    "/identity/b2xUserFlows/{b2xIdentityUserFlow-id}/userAttributeAssignments/microsoft.graph.getOrder()": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
+    },
+    "/identity/b2xUserFlows/{b2xIdentityUserFlow-id}/userAttributeAssignments/microsoft.graph.setOrder": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
+    },
+    "/identity/b2xUserFlows/{b2xIdentityUserFlow-id}/userFlowIdentityProviders": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
+    },
+    "/identity/b2xUserFlows/{b2xIdentityUserFlow-id}/userFlowIdentityProviders/{identityProviderBase-id}/$ref": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
+    },
+    "/identity/b2xUserFlows/{b2xIdentityUserFlow-id}/userFlowIdentityProviders/$ref": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
+    },
     "/identity/conditionalAccess": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
@@ -26,6 +122,62 @@
       "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
     },
     "/identity/conditionalAccess/policies/{conditionalAccessPolicy-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
+    },
+    "/identity/identityProviders": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
+    },
+    "/identity/identityProviders/{identityProviderBase-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
+    },
+    "/identity/identityProviders/microsoft.graph.availableProviderTypes()": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
+    },
+    "/identity/userFlowAttributes": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
+    },
+    "/identity/userFlowAttributes/{identityUserFlowAttribute-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
+    },
+    "/identityProtection": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
+    },
+    "/identityProtection/riskDetections": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
+    },
+    "/identityProtection/riskDetections/{riskDetection-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
+    },
+    "/identityProtection/riskyUsers": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
+    },
+    "/identityProtection/riskyUsers/{riskyUser-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
+    },
+    "/identityProtection/riskyUsers/{riskyUser-id}/history": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
+    },
+    "/identityProtection/riskyUsers/{riskyUser-id}/history/{riskyUserHistoryItem-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
+    },
+    "/identityProtection/riskyUsers/microsoft.graph.confirmCompromised": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
+    },
+    "/identityProtection/riskyUsers/microsoft.graph.dismiss": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
     },
@@ -85,10 +237,6 @@
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
     },
-    "/invitations/{invitation-id}/invitedUser/$ref": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
-    },
     "/oauth2PermissionGrants": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
@@ -105,7 +253,7 @@
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
     },
-    "/organization/{organization-id}/certificateBasedAuthConfiguration/$ref": {
+    "/organization/{organization-id}/certificateBasedAuthConfiguration/{certificateBasedAuthConfiguration-id}": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
     },
@@ -133,6 +281,14 @@
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
     },
+    "/policies/authenticationMethodsPolicy/authenticationMethodConfigurations": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
+    },
+    "/policies/authenticationMethodsPolicy/authenticationMethodConfigurations/{authenticationMethodConfiguration-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
+    },
     "/policies/authorizationPolicy": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
@@ -153,6 +309,26 @@
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
     },
+    "/policies/crossTenantAccessPolicy": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
+    },
+    "/policies/crossTenantAccessPolicy/default": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
+    },
+    "/policies/crossTenantAccessPolicy/default/microsoft.graph.resetToSystemDefault": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
+    },
+    "/policies/crossTenantAccessPolicy/partners": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
+    },
+    "/policies/crossTenantAccessPolicy/partners/{crossTenantAccessPolicyConfigurationPartner-tenantId}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
+    },
     "/policies/featureRolloutPolicies": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
@@ -165,7 +341,23 @@
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
     },
-    "/policies/featureRolloutPolicies/{featureRolloutPolicy-id}/appliesTo/{directoryObject-id}": {
+    "/policies/featureRolloutPolicies/{featureRolloutPolicy-id}/appliesTo/{directoryObject-id}/$ref": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
+    },
+    "/policies/featureRolloutPolicies/{featureRolloutPolicy-id}/appliesTo/$ref": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
+    },
+    "/policies/featureRolloutPolicies/{featureRolloutPolicy-id}/appliesTo/microsoft.graph.getAvailableExtensionProperties": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
+    },
+    "/policies/featureRolloutPolicies/{featureRolloutPolicy-id}/appliesTo/microsoft.graph.getByIds": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
+    },
+    "/policies/featureRolloutPolicies/{featureRolloutPolicy-id}/appliesTo/microsoft.graph.validateProperties": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
     },
@@ -205,6 +397,42 @@
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
     },
+    "/policies/roleManagementPolicies": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
+    },
+    "/policies/roleManagementPolicies/{unifiedRoleManagementPolicy-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
+    },
+    "/policies/roleManagementPolicies/{unifiedRoleManagementPolicy-id}/effectiveRules": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
+    },
+    "/policies/roleManagementPolicies/{unifiedRoleManagementPolicy-id}/effectiveRules/{unifiedRoleManagementPolicyRule-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
+    },
+    "/policies/roleManagementPolicies/{unifiedRoleManagementPolicy-id}/rules": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
+    },
+    "/policies/roleManagementPolicies/{unifiedRoleManagementPolicy-id}/rules/{unifiedRoleManagementPolicyRule-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
+    },
+    "/policies/roleManagementPolicyAssignments": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
+    },
+    "/policies/roleManagementPolicyAssignments/{unifiedRoleManagementPolicyAssignment-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
+    },
+    "/policies/roleManagementPolicyAssignments/{unifiedRoleManagementPolicyAssignment-id}/policy": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
+    },
     "/policies/tokenIssuancePolicies": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
@@ -222,6 +450,14 @@
       "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
     },
     "/users/{user-id}/authentication": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
+    },
+    "/users/{user-id}/authentication/emailMethods": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
+    },
+    "/users/{user-id}/authentication/emailMethods/{emailAuthenticationMethod-id}": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
     },
@@ -253,6 +489,90 @@
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
     },
+    "/users/{user-id}/authentication/microsoftAuthenticatorMethods/{microsoftAuthenticatorAuthenticationMethod-id}/device/extensions": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
+    },
+    "/users/{user-id}/authentication/microsoftAuthenticatorMethods/{microsoftAuthenticatorAuthenticationMethod-id}/device/extensions/{extension-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
+    },
+    "/users/{user-id}/authentication/microsoftAuthenticatorMethods/{microsoftAuthenticatorAuthenticationMethod-id}/device/memberOf": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
+    },
+    "/users/{user-id}/authentication/microsoftAuthenticatorMethods/{microsoftAuthenticatorAuthenticationMethod-id}/device/memberOf/{directoryObject-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
+    },
+    "/users/{user-id}/authentication/microsoftAuthenticatorMethods/{microsoftAuthenticatorAuthenticationMethod-id}/device/registeredOwners": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
+    },
+    "/users/{user-id}/authentication/microsoftAuthenticatorMethods/{microsoftAuthenticatorAuthenticationMethod-id}/device/registeredOwners/{directoryObject-id}/$ref": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
+    },
+    "/users/{user-id}/authentication/microsoftAuthenticatorMethods/{microsoftAuthenticatorAuthenticationMethod-id}/device/registeredOwners/$ref": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
+    },
+    "/users/{user-id}/authentication/microsoftAuthenticatorMethods/{microsoftAuthenticatorAuthenticationMethod-id}/device/registeredUsers": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
+    },
+    "/users/{user-id}/authentication/microsoftAuthenticatorMethods/{microsoftAuthenticatorAuthenticationMethod-id}/device/registeredUsers/{directoryObject-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
+    },
+    "/users/{user-id}/authentication/microsoftAuthenticatorMethods/{microsoftAuthenticatorAuthenticationMethod-id}/device/transitiveMemberOf": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
+    },
+    "/users/{user-id}/authentication/microsoftAuthenticatorMethods/{microsoftAuthenticatorAuthenticationMethod-id}/device/transitiveMemberOf/{directoryObject-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
+    },
+    "/users/{user-id}/authentication/operations": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
+    },
+    "/users/{user-id}/authentication/operations/{longRunningOperation-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
+    },
+    "/users/{user-id}/authentication/passwordMethods": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
+    },
+    "/users/{user-id}/authentication/passwordMethods/{passwordAuthenticationMethod-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
+    },
+    "/users/{user-id}/authentication/phoneMethods": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
+    },
+    "/users/{user-id}/authentication/phoneMethods/{phoneAuthenticationMethod-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
+    },
+    "/users/{user-id}/authentication/softwareOathMethods": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
+    },
+    "/users/{user-id}/authentication/softwareOathMethods/{softwareOathAuthenticationMethod-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
+    },
+    "/users/{user-id}/authentication/temporaryAccessPassMethods": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
+    },
+    "/users/{user-id}/authentication/temporaryAccessPassMethods/{temporaryAccessPassAuthenticationMethod-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
+    },
     "/users/{user-id}/authentication/windowsHelloForBusinessMethods": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
@@ -262,6 +582,50 @@
       "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
     },
     "/users/{user-id}/authentication/windowsHelloForBusinessMethods/{windowsHelloForBusinessAuthenticationMethod-id}/device": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
+    },
+    "/users/{user-id}/authentication/windowsHelloForBusinessMethods/{windowsHelloForBusinessAuthenticationMethod-id}/device/extensions": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
+    },
+    "/users/{user-id}/authentication/windowsHelloForBusinessMethods/{windowsHelloForBusinessAuthenticationMethod-id}/device/extensions/{extension-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
+    },
+    "/users/{user-id}/authentication/windowsHelloForBusinessMethods/{windowsHelloForBusinessAuthenticationMethod-id}/device/memberOf": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
+    },
+    "/users/{user-id}/authentication/windowsHelloForBusinessMethods/{windowsHelloForBusinessAuthenticationMethod-id}/device/memberOf/{directoryObject-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
+    },
+    "/users/{user-id}/authentication/windowsHelloForBusinessMethods/{windowsHelloForBusinessAuthenticationMethod-id}/device/registeredOwners": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
+    },
+    "/users/{user-id}/authentication/windowsHelloForBusinessMethods/{windowsHelloForBusinessAuthenticationMethod-id}/device/registeredOwners/{directoryObject-id}/$ref": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
+    },
+    "/users/{user-id}/authentication/windowsHelloForBusinessMethods/{windowsHelloForBusinessAuthenticationMethod-id}/device/registeredOwners/$ref": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
+    },
+    "/users/{user-id}/authentication/windowsHelloForBusinessMethods/{windowsHelloForBusinessAuthenticationMethod-id}/device/registeredUsers": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
+    },
+    "/users/{user-id}/authentication/windowsHelloForBusinessMethods/{windowsHelloForBusinessAuthenticationMethod-id}/device/registeredUsers/{directoryObject-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
+    },
+    "/users/{user-id}/authentication/windowsHelloForBusinessMethods/{windowsHelloForBusinessAuthenticationMethod-id}/device/transitiveMemberOf": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
+    },
+    "/users/{user-id}/authentication/windowsHelloForBusinessMethods/{windowsHelloForBusinessAuthenticationMethod-id}/device/transitiveMemberOf/{directoryObject-id}": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
     }

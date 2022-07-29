@@ -39,7 +39,7 @@ subject-prefix: ''
 ``` yaml
 directive:
 # Remove invalid paths.
-  - remove-path-by-operation: teams_GetGroup|team_ListTeam
+  - remove-path-by-operation: teams_GetGroup|users\.joinedTeams.*|users_(Get|Update|Delete|Create)JoinedTeams|.*_UpdateInstalledApps
 # Remove cmdlets
   - where:
       verb: Remove
@@ -57,6 +57,6 @@ directive:
 ### Versioning
 
 ``` yaml
-module-version: 1.9.6
+module-version: 1.10.1
 release-notes: See https://aka.ms/GraphPowerShell-Release.
 ```

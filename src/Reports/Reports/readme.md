@@ -48,18 +48,6 @@ directive:
     remove: true
 # Rename cmdlets
   - where:
-      verb: Get
-      subject: (^ReportDailyPrintUsageSummary$|^ReportMonthlyPrintUsageSummary$)
-      variant: ^Get$|^GetViaIdentity$|^List$
-    set:
-      subject: $1ByPrinter
-  - where:
-      verb: Get
-      subject: (^ReportDailyPrintUsageSummary$|^ReportMonthlyPrintUsageSummary$)
-      variant: ^Get1$|^GetViaIdentity1$|^List1$
-    set:
-      subject: $1ByUser
-  - where:
       verb: Invoke
       subject: ^TopReport$
     set:
@@ -77,10 +65,20 @@ directive:
     set:
       verb: Get
       subject: Report$1$2
+  - where:
+      subject: ^(ReportApplicationSign)$
+    set:
+      subject: $1InDetailedSummary
+      alias: ${verb}-MgReportApplicationSign
+  - where:
+      subject: ^(ReportAzureAdApplicationSign)$
+    set:
+      subject: $1InSummary
+      alias: ${verb}-MgReportAzureAdApplicationSign
 ```
 ### Versioning
 
 ``` yaml
-module-version: 1.9.6
+module-version: 1.10.1
 release-notes: See https://aka.ms/GraphPowerShell-Release.
 ```

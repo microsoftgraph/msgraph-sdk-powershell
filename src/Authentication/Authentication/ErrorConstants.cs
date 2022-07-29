@@ -29,13 +29,14 @@ namespace Microsoft.Graph.PowerShell.Authentication
             public const string InvokeGraphRequestCouldNotInferFileName = nameof(InvokeGraphRequestKeysWithDifferentCasingInJsonString);
         }
 
-        internal static class Message
+        public static class Message
         {
             internal const string CannotModifyBuiltInEnvironment = "Cannot {0} built-in environment {1}.";
             internal const string InvalidUrlParameter = "Parameter '{0}' has an invalid endpoint URL. Please use a valid URL with a network protocol i.e. [protocol]://[resource-name].";
             internal const string InvalidEnvironment = "Unable to find environment with name '{0}'. Use Get-MgEnvironment to list available environments.";
             internal const string CannotAccessFile = "Could not {0} file at '{1}'. Please ensure you have access to this file and try again in a few minutes..";
             internal const string InvalidCertificateThumbprint = "'{0}' must have a length of 40. Ensure you have the right certificate thumbprint then try again.";
+            public const string CannotInferFileName = "Could not infer file name from the response. Please specify the file name in -OutFile explicitly.";
         }
     }
 }

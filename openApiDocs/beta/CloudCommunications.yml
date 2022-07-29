@@ -61,6 +61,8 @@ paths:
               operationId: communications.ListOnlineMeetings
             presences:
               operationId: communications.ListPresences
+            getPresencesByUserId:
+              operationId: communications.getPresencesGraphBPreUserId
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -162,21 +164,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of callRecord
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.callRecords.callRecord'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.callRecords.callRecordCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -324,7 +312,6 @@ paths:
       tags:
         - communications.callRecord
       summary: Get sessions from communications
-      description: 'List of sessions involved in the call. Peer-to-peer calls typically only have one session, whereas group calls typically have at least one session per participant. Read-only. Nullable.'
       operationId: communications.callRecords_ListSessions
       parameters:
         - name: callRecord-id
@@ -398,21 +385,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of session
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.callRecords.session'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.callRecords.sessionCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -423,7 +396,6 @@ paths:
       tags:
         - communications.callRecord
       summary: Create new navigation property to sessions for communications
-      description: 'List of sessions involved in the call. Peer-to-peer calls typically only have one session, whereas group calls typically have at least one session per participant. Read-only. Nullable.'
       operationId: communications.callRecords_CreateSessions
       parameters:
         - name: callRecord-id
@@ -455,7 +427,6 @@ paths:
       tags:
         - communications.callRecord
       summary: Get sessions from communications
-      description: 'List of sessions involved in the call. Peer-to-peer calls typically only have one session, whereas group calls typically have at least one session per participant. Read-only. Nullable.'
       operationId: communications.callRecords_GetSessions
       parameters:
         - name: callRecord-id
@@ -524,7 +495,6 @@ paths:
       tags:
         - communications.callRecord
       summary: Update the navigation property sessions in communications
-      description: 'List of sessions involved in the call. Peer-to-peer calls typically only have one session, whereas group calls typically have at least one session per participant. Read-only. Nullable.'
       operationId: communications.callRecords_UpdateSessions
       parameters:
         - name: callRecord-id
@@ -558,7 +528,6 @@ paths:
       tags:
         - communications.callRecord
       summary: Delete navigation property sessions for communications
-      description: 'List of sessions involved in the call. Peer-to-peer calls typically only have one session, whereas group calls typically have at least one session per participant. Read-only. Nullable.'
       operationId: communications.callRecords_DeleteSessions
       parameters:
         - name: callRecord-id
@@ -591,7 +560,6 @@ paths:
       tags:
         - communications.callRecord
       summary: Get segments from communications
-      description: The list of segments involved in the session. Read-only. Nullable.
       operationId: communications.callRecords.sessions_ListSegments
       parameters:
         - name: callRecord-id
@@ -670,21 +638,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of segment
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.callRecords.segment'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.callRecords.segmentCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -695,7 +649,6 @@ paths:
       tags:
         - communications.callRecord
       summary: Create new navigation property to segments for communications
-      description: The list of segments involved in the session. Read-only. Nullable.
       operationId: communications.callRecords.sessions_CreateSegments
       parameters:
         - name: callRecord-id
@@ -734,7 +687,6 @@ paths:
       tags:
         - communications.callRecord
       summary: Get segments from communications
-      description: The list of segments involved in the session. Read-only. Nullable.
       operationId: communications.callRecords.sessions_GetSegments
       parameters:
         - name: callRecord-id
@@ -802,7 +754,6 @@ paths:
       tags:
         - communications.callRecord
       summary: Update the navigation property segments in communications
-      description: The list of segments involved in the session. Read-only. Nullable.
       operationId: communications.callRecords.sessions_UpdateSegments
       parameters:
         - name: callRecord-id
@@ -843,7 +794,6 @@ paths:
       tags:
         - communications.callRecord
       summary: Delete navigation property segments for communications
-      description: The list of segments involved in the session. Read-only. Nullable.
       operationId: communications.callRecords.sessions_DeleteSegments
       parameters:
         - name: callRecord-id
@@ -1015,21 +965,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of call
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.call'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.callCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -1154,6 +1090,36 @@ paths:
               operationId: communications.Calls.ListParticipants
               parameters:
                 call-id: $request.path.call-id
+            addLargeGalleryView:
+              operationId: communications.calls.call.addLargeGalleryView
+            answer:
+              operationId: communications.calls.call.answer
+            cancelMediaProcessing:
+              operationId: communications.calls.call.cancelMediaProcessing
+            changeScreenSharingRole:
+              operationId: communications.calls.call.changeScreenSharingRole
+            keepAlive:
+              operationId: communications.calls.call.keepAlive
+            mute:
+              operationId: communications.calls.call.mute
+            playPrompt:
+              operationId: communications.calls.call.playPrompt
+            record:
+              operationId: communications.calls.call.record
+            recordResponse:
+              operationId: communications.calls.call.recordResponse
+            redirect:
+              operationId: communications.calls.call.redirect
+            reject:
+              operationId: communications.calls.call.reject
+            subscribeToTone:
+              operationId: communications.calls.call.subscribeToTone
+            transfer:
+              operationId: communications.calls.call.transfer
+            unmute:
+              operationId: communications.calls.call.unmute
+            updateRecordingStatus:
+              operationId: communications.calls.call.updateRecordingStatus
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1212,7 +1178,6 @@ paths:
       tags:
         - communications.call
       summary: Get audioRoutingGroups from communications
-      description: Read-only. Nullable.
       operationId: communications.calls_ListAudioRoutingGroups
       parameters:
         - name: call-id
@@ -1275,21 +1240,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of audioRoutingGroup
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.audioRoutingGroup'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.audioRoutingGroupCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -1300,7 +1251,6 @@ paths:
       tags:
         - communications.call
       summary: Create new navigation property to audioRoutingGroups for communications
-      description: Read-only. Nullable.
       operationId: communications.calls_CreateAudioRoutingGroups
       parameters:
         - name: call-id
@@ -1332,7 +1282,6 @@ paths:
       tags:
         - communications.call
       summary: Get audioRoutingGroups from communications
-      description: Read-only. Nullable.
       operationId: communications.calls_GetAudioRoutingGroups
       parameters:
         - name: call-id
@@ -1390,7 +1339,6 @@ paths:
       tags:
         - communications.call
       summary: Update the navigation property audioRoutingGroups in communications
-      description: Read-only. Nullable.
       operationId: communications.calls_UpdateAudioRoutingGroups
       parameters:
         - name: call-id
@@ -1424,7 +1372,6 @@ paths:
       tags:
         - communications.call
       summary: Delete navigation property audioRoutingGroups for communications
-      description: Read-only. Nullable.
       operationId: communications.calls_DeleteAudioRoutingGroups
       parameters:
         - name: call-id
@@ -1510,21 +1457,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of contentSharingSession
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.contentSharingSession'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.contentSharingSessionCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -2326,7 +2259,6 @@ paths:
       tags:
         - communications.call
       summary: Get operations from communications
-      description: Read-only. Nullable.
       operationId: communications.calls_ListOperations
       parameters:
         - name: call-id
@@ -2389,21 +2321,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of commsOperation
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.commsOperation'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.commsOperationCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -2414,7 +2332,6 @@ paths:
       tags:
         - communications.call
       summary: Create new navigation property to operations for communications
-      description: Read-only. Nullable.
       operationId: communications.calls_CreateOperations
       parameters:
         - name: call-id
@@ -2446,7 +2363,6 @@ paths:
       tags:
         - communications.call
       summary: Get operations from communications
-      description: Read-only. Nullable.
       operationId: communications.calls_GetOperations
       parameters:
         - name: call-id
@@ -2504,7 +2420,6 @@ paths:
       tags:
         - communications.call
       summary: Update the navigation property operations in communications
-      description: Read-only. Nullable.
       operationId: communications.calls_UpdateOperations
       parameters:
         - name: call-id
@@ -2538,7 +2453,6 @@ paths:
       tags:
         - communications.call
       summary: Delete navigation property operations for communications
-      description: Read-only. Nullable.
       operationId: communications.calls_DeleteOperations
       parameters:
         - name: call-id
@@ -2571,7 +2485,6 @@ paths:
       tags:
         - communications.call
       summary: Get participants from communications
-      description: Read-only. Nullable.
       operationId: communications.calls_ListParticipants
       parameters:
         - name: call-id
@@ -2600,6 +2513,8 @@ paths:
                 - id desc
                 - info
                 - info desc
+                - isIdentityAnonymized
+                - isIdentityAnonymized desc
                 - isInLobby
                 - isInLobby desc
                 - isMuted
@@ -2623,6 +2538,7 @@ paths:
               enum:
                 - id
                 - info
+                - isIdentityAnonymized
                 - isInLobby
                 - isMuted
                 - mediaStreams
@@ -2643,21 +2559,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of participant
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.participant'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.participantCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -2668,7 +2570,6 @@ paths:
       tags:
         - communications.call
       summary: Create new navigation property to participants for communications
-      description: Read-only. Nullable.
       operationId: communications.calls_CreateParticipants
       parameters:
         - name: call-id
@@ -2700,7 +2601,6 @@ paths:
       tags:
         - communications.call
       summary: Get participants from communications
-      description: Read-only. Nullable.
       operationId: communications.calls_GetParticipants
       parameters:
         - name: call-id
@@ -2729,6 +2629,7 @@ paths:
               enum:
                 - id
                 - info
+                - isIdentityAnonymized
                 - isInLobby
                 - isMuted
                 - mediaStreams
@@ -2754,6 +2655,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.participant'
+          links:
+            mute:
+              operationId: communications.calls.call.participants.participant.mute
+            startHoldMusic:
+              operationId: communications.calls.call.participants.participant.startHoldMusic
+            stopHoldMusic:
+              operationId: communications.calls.call.participants.participant.stopHoldMusic
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2761,7 +2669,6 @@ paths:
       tags:
         - communications.call
       summary: Update the navigation property participants in communications
-      description: Read-only. Nullable.
       operationId: communications.calls_UpdateParticipants
       parameters:
         - name: call-id
@@ -2795,7 +2702,6 @@ paths:
       tags:
         - communications.call
       summary: Delete navigation property participants for communications
-      description: Read-only. Nullable.
       operationId: communications.calls_DeleteParticipants
       parameters:
         - name: call-id
@@ -3069,7 +2975,7 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action getPresencesByUserId
-      operationId: communications_getPresencesByUserId
+      operationId: communications_getPresencesGraphBPreUserId
       requestBody:
         description: Action parameters
         content:
@@ -3090,9 +2996,15 @@ paths:
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/microsoft.graph.presence'
+                title: Collection of cloudCommunications
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.presence'
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
@@ -3120,8 +3032,6 @@ paths:
               enum:
                 - id
                 - id desc
-                - accessLevel
-                - accessLevel desc
                 - allowAttendeeToEnableCamera
                 - allowAttendeeToEnableCamera desc
                 - allowAttendeeToEnableMic
@@ -3134,14 +3044,14 @@ paths:
                 - allowTeamworkReactions desc
                 - alternativeRecording
                 - alternativeRecording desc
+                - anonymizeIdentityForRoles
+                - anonymizeIdentityForRoles desc
                 - attendeeReport
                 - attendeeReport desc
                 - audioConferencing
                 - audioConferencing desc
                 - broadcastSettings
                 - broadcastSettings desc
-                - canceledDateTime
-                - canceledDateTime desc
                 - capabilities
                 - capabilities desc
                 - chatInfo
@@ -3150,16 +3060,10 @@ paths:
                 - creationDateTime desc
                 - endDateTime
                 - endDateTime desc
-                - entryExitAnnouncement
-                - entryExitAnnouncement desc
-                - expirationDateTime
-                - expirationDateTime desc
                 - externalId
                 - externalId desc
                 - isBroadcast
                 - isBroadcast desc
-                - isCancelled
-                - isCancelled desc
                 - isEntryExitAnnounced
                 - isEntryExitAnnounced desc
                 - joinInformation
@@ -3168,6 +3072,8 @@ paths:
                 - joinMeetingIdSettings desc
                 - joinUrl
                 - joinUrl desc
+                - joinWebUrl
+                - joinWebUrl desc
                 - lobbyBypassSettings
                 - lobbyBypassSettings desc
                 - participants
@@ -3194,30 +3100,27 @@ paths:
             items:
               enum:
                 - id
-                - accessLevel
                 - allowAttendeeToEnableCamera
                 - allowAttendeeToEnableMic
                 - allowedPresenters
                 - allowMeetingChat
                 - allowTeamworkReactions
                 - alternativeRecording
+                - anonymizeIdentityForRoles
                 - attendeeReport
                 - audioConferencing
                 - broadcastSettings
-                - canceledDateTime
                 - capabilities
                 - chatInfo
                 - creationDateTime
                 - endDateTime
-                - entryExitAnnouncement
-                - expirationDateTime
                 - externalId
                 - isBroadcast
-                - isCancelled
                 - isEntryExitAnnounced
                 - joinInformation
                 - joinMeetingIdSettings
                 - joinUrl
+                - joinWebUrl
                 - lobbyBypassSettings
                 - participants
                 - recordAutomatically
@@ -3225,9 +3128,11 @@ paths:
                 - startDateTime
                 - subject
                 - videoTeleconferenceId
+                - virtualAppointment
                 - attendanceReports
                 - meetingAttendanceReport
                 - registration
+                - transcripts
               type: string
         - name: $expand
           in: query
@@ -3240,27 +3145,15 @@ paths:
             items:
               enum:
                 - '*'
+                - virtualAppointment
                 - attendanceReports
                 - meetingAttendanceReport
                 - registration
+                - transcripts
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of onlineMeeting
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.onlineMeeting'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.onlineMeetingCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -3314,30 +3207,27 @@ paths:
             items:
               enum:
                 - id
-                - accessLevel
                 - allowAttendeeToEnableCamera
                 - allowAttendeeToEnableMic
                 - allowedPresenters
                 - allowMeetingChat
                 - allowTeamworkReactions
                 - alternativeRecording
+                - anonymizeIdentityForRoles
                 - attendeeReport
                 - audioConferencing
                 - broadcastSettings
-                - canceledDateTime
                 - capabilities
                 - chatInfo
                 - creationDateTime
                 - endDateTime
-                - entryExitAnnouncement
-                - expirationDateTime
                 - externalId
                 - isBroadcast
-                - isCancelled
                 - isEntryExitAnnounced
                 - joinInformation
                 - joinMeetingIdSettings
                 - joinUrl
+                - joinWebUrl
                 - lobbyBypassSettings
                 - participants
                 - recordAutomatically
@@ -3345,9 +3235,11 @@ paths:
                 - startDateTime
                 - subject
                 - videoTeleconferenceId
+                - virtualAppointment
                 - attendanceReports
                 - meetingAttendanceReport
                 - registration
+                - transcripts
               type: string
         - name: $expand
           in: query
@@ -3360,9 +3252,11 @@ paths:
             items:
               enum:
                 - '*'
+                - virtualAppointment
                 - attendanceReports
                 - meetingAttendanceReport
                 - registration
+                - transcripts
               type: string
       responses:
         '200':
@@ -3372,6 +3266,10 @@ paths:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.onlineMeeting'
           links:
+            virtualAppointment:
+              operationId: communications.OnlineMeetings.GetVirtualAppointment
+              parameters:
+                onlineMeeting-id: $request.path.onlineMeeting-id
             attendanceReports:
               operationId: communications.OnlineMeetings.ListAttendanceReports
               parameters:
@@ -3382,6 +3280,10 @@ paths:
                 onlineMeeting-id: $request.path.onlineMeeting-id
             registration:
               operationId: communications.OnlineMeetings.GetRegistration
+              parameters:
+                onlineMeeting-id: $request.path.onlineMeeting-id
+            transcripts:
+              operationId: communications.OnlineMeetings.ListTranscripts
               parameters:
                 onlineMeeting-id: $request.path.onlineMeeting-id
         default:
@@ -3441,7 +3343,7 @@ paths:
     get:
       tags:
         - communications.onlineMeeting
-      summary: Get media content for the navigation property onlineMeetings from communications
+      summary: Get alternativeRecording for the navigation property onlineMeetings from communications
       operationId: communications_GetOnlineMeetingsAlternativeRecording
       parameters:
         - name: onlineMeeting-id
@@ -3465,7 +3367,7 @@ paths:
     put:
       tags:
         - communications.onlineMeeting
-      summary: Update media content for the navigation property onlineMeetings in communications
+      summary: Update alternativeRecording for the navigation property onlineMeetings in communications
       operationId: communications_SetOnlineMeetingsAlternativeRecording
       parameters:
         - name: onlineMeeting-id
@@ -3494,7 +3396,6 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Get attendanceReports from communications
-      description: The attendance reports of an online meeting. Read-only.
       operationId: communications.onlineMeetings_ListAttendanceReports
       parameters:
         - name: onlineMeeting-id
@@ -3559,21 +3460,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of meetingAttendanceReport
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.meetingAttendanceReport'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.meetingAttendanceReportCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -3584,7 +3471,6 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Create new navigation property to attendanceReports for communications
-      description: The attendance reports of an online meeting. Read-only.
       operationId: communications.onlineMeetings_CreateAttendanceReports
       parameters:
         - name: onlineMeeting-id
@@ -3616,7 +3502,6 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Get attendanceReports from communications
-      description: The attendance reports of an online meeting. Read-only.
       operationId: communications.onlineMeetings_GetAttendanceReports
       parameters:
         - name: onlineMeeting-id
@@ -3682,7 +3567,6 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Update the navigation property attendanceReports in communications
-      description: The attendance reports of an online meeting. Read-only.
       operationId: communications.onlineMeetings_UpdateAttendanceReports
       parameters:
         - name: onlineMeeting-id
@@ -3716,7 +3600,6 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Delete navigation property attendanceReports for communications
-      description: The attendance reports of an online meeting. Read-only.
       operationId: communications.onlineMeetings_DeleteAttendanceReports
       parameters:
         - name: onlineMeeting-id
@@ -3749,7 +3632,6 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Get attendanceRecords from communications
-      description: List of attendance records of an attendance report. Read-only.
       operationId: communications.onlineMeetings.attendanceReports_ListAttendanceRecords
       parameters:
         - name: onlineMeeting-id
@@ -3828,21 +3710,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of attendanceRecord
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.attendanceRecord'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.attendanceRecordCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -3853,7 +3721,6 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Create new navigation property to attendanceRecords for communications
-      description: List of attendance records of an attendance report. Read-only.
       operationId: communications.onlineMeetings.attendanceReports_CreateAttendanceRecords
       parameters:
         - name: onlineMeeting-id
@@ -3892,7 +3759,6 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Get attendanceRecords from communications
-      description: List of attendance records of an attendance report. Read-only.
       operationId: communications.onlineMeetings.attendanceReports_GetAttendanceRecords
       parameters:
         - name: onlineMeeting-id
@@ -3960,7 +3826,6 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Update the navigation property attendanceRecords in communications
-      description: List of attendance records of an attendance report. Read-only.
       operationId: communications.onlineMeetings.attendanceReports_UpdateAttendanceRecords
       parameters:
         - name: onlineMeeting-id
@@ -4001,7 +3866,6 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Delete navigation property attendanceRecords for communications
-      description: List of attendance records of an attendance report. Read-only.
       operationId: communications.onlineMeetings.attendanceReports_DeleteAttendanceRecords
       parameters:
         - name: onlineMeeting-id
@@ -4040,7 +3904,7 @@ paths:
     get:
       tags:
         - communications.onlineMeeting
-      summary: Get media content for the navigation property onlineMeetings from communications
+      summary: Get attendeeReport for the navigation property onlineMeetings from communications
       operationId: communications_GetOnlineMeetingsAttendeeReport
       parameters:
         - name: onlineMeeting-id
@@ -4064,7 +3928,7 @@ paths:
     put:
       tags:
         - communications.onlineMeeting
-      summary: Update media content for the navigation property onlineMeetings in communications
+      summary: Update attendeeReport for the navigation property onlineMeetings in communications
       operationId: communications_SetOnlineMeetingsAttendeeReport
       parameters:
         - name: onlineMeeting-id
@@ -4201,7 +4065,6 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Get attendanceRecords from communications
-      description: List of attendance records of an attendance report. Read-only.
       operationId: communications.onlineMeetings.meetingAttendanceReport_ListAttendanceRecords
       parameters:
         - name: onlineMeeting-id
@@ -4273,21 +4136,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of attendanceRecord
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.attendanceRecord'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.attendanceRecordCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -4298,7 +4147,6 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Create new navigation property to attendanceRecords for communications
-      description: List of attendance records of an attendance report. Read-only.
       operationId: communications.onlineMeetings.meetingAttendanceReport_CreateAttendanceRecords
       parameters:
         - name: onlineMeeting-id
@@ -4330,7 +4178,6 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Get attendanceRecords from communications
-      description: List of attendance records of an attendance report. Read-only.
       operationId: communications.onlineMeetings.meetingAttendanceReport_GetAttendanceRecords
       parameters:
         - name: onlineMeeting-id
@@ -4391,7 +4238,6 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Update the navigation property attendanceRecords in communications
-      description: List of attendance records of an attendance report. Read-only.
       operationId: communications.onlineMeetings.meetingAttendanceReport_UpdateAttendanceRecords
       parameters:
         - name: onlineMeeting-id
@@ -4425,7 +4271,6 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Delete navigation property attendanceRecords for communications
-      description: List of attendance records of an attendance report. Read-only.
       operationId: communications.onlineMeetings.meetingAttendanceReport_DeleteAttendanceRecords
       parameters:
         - name: onlineMeeting-id
@@ -4457,7 +4302,7 @@ paths:
     get:
       tags:
         - communications.onlineMeeting
-      summary: Get media content for the navigation property onlineMeetings from communications
+      summary: Get recording for the navigation property onlineMeetings from communications
       operationId: communications_GetOnlineMeetingsRecording
       parameters:
         - name: onlineMeeting-id
@@ -4481,7 +4326,7 @@ paths:
     put:
       tags:
         - communications.onlineMeeting
-      summary: Update media content for the navigation property onlineMeetings in communications
+      summary: Update recording for the navigation property onlineMeetings in communications
       operationId: communications_SetOnlineMeetingsRecording
       parameters:
         - name: onlineMeeting-id
@@ -4510,7 +4355,6 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Get registration from communications
-      description: The registration that has been enabled for an online meeting. One online meeting can only have one registration enabled.
       operationId: communications.onlineMeetings_GetRegistration
       parameters:
         - name: onlineMeeting-id
@@ -4579,7 +4423,6 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Update the navigation property registration in communications
-      description: The registration that has been enabled for an online meeting. One online meeting can only have one registration enabled.
       operationId: communications.onlineMeetings_UpdateRegistration
       parameters:
         - name: onlineMeeting-id
@@ -4606,7 +4449,6 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Delete navigation property registration for communications
-      description: The registration that has been enabled for an online meeting. One online meeting can only have one registration enabled.
       operationId: communications.onlineMeetings_DeleteRegistration
       parameters:
         - name: onlineMeeting-id
@@ -4632,7 +4474,6 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Get customQuestions from communications
-      description: Custom registration questions.
       operationId: communications.onlineMeetings.registration_ListCustomQuestions
       parameters:
         - name: onlineMeeting-id
@@ -4698,21 +4539,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of meetingRegistrationQuestion
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.meetingRegistrationQuestion'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.meetingRegistrationQuestionCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -4723,7 +4550,6 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Create new navigation property to customQuestions for communications
-      description: Custom registration questions.
       operationId: communications.onlineMeetings.registration_CreateCustomQuestions
       parameters:
         - name: onlineMeeting-id
@@ -4755,7 +4581,6 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Get customQuestions from communications
-      description: Custom registration questions.
       operationId: communications.onlineMeetings.registration_GetCustomQuestions
       parameters:
         - name: onlineMeeting-id
@@ -4814,7 +4639,6 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Update the navigation property customQuestions in communications
-      description: Custom registration questions.
       operationId: communications.onlineMeetings.registration_UpdateCustomQuestions
       parameters:
         - name: onlineMeeting-id
@@ -4848,7 +4672,6 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Delete navigation property customQuestions for communications
-      description: Custom registration questions.
       operationId: communications.onlineMeetings.registration_DeleteCustomQuestions
       parameters:
         - name: onlineMeeting-id
@@ -4865,6 +4688,397 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: meetingRegistrationQuestion
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/communications/onlineMeetings/{onlineMeeting-id}/transcripts':
+    get:
+      tags:
+        - communications.onlineMeeting
+      summary: Get transcripts from communications
+      operationId: communications.onlineMeetings_ListTranscripts
+      parameters:
+        - name: onlineMeeting-id
+          in: path
+          description: 'key: id of onlineMeeting'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onlineMeeting
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - content
+                - content desc
+                - createdDateTime
+                - createdDateTime desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - content
+                - createdDateTime
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/microsoft.graph.callTranscriptCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - communications.onlineMeeting
+      summary: Create new navigation property to transcripts for communications
+      operationId: communications.onlineMeetings_CreateTranscripts
+      parameters:
+        - name: onlineMeeting-id
+          in: path
+          description: 'key: id of onlineMeeting'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onlineMeeting
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.callTranscript'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.callTranscript'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/communications/onlineMeetings/{onlineMeeting-id}/transcripts/{callTranscript-id}':
+    get:
+      tags:
+        - communications.onlineMeeting
+      summary: Get transcripts from communications
+      operationId: communications.onlineMeetings_GetTranscripts
+      parameters:
+        - name: onlineMeeting-id
+          in: path
+          description: 'key: id of onlineMeeting'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onlineMeeting
+        - name: callTranscript-id
+          in: path
+          description: 'key: id of callTranscript'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: callTranscript
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - content
+                - createdDateTime
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.callTranscript'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - communications.onlineMeeting
+      summary: Update the navigation property transcripts in communications
+      operationId: communications.onlineMeetings_UpdateTranscripts
+      parameters:
+        - name: onlineMeeting-id
+          in: path
+          description: 'key: id of onlineMeeting'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onlineMeeting
+        - name: callTranscript-id
+          in: path
+          description: 'key: id of callTranscript'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: callTranscript
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.callTranscript'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - communications.onlineMeeting
+      summary: Delete navigation property transcripts for communications
+      operationId: communications.onlineMeetings_DeleteTranscripts
+      parameters:
+        - name: onlineMeeting-id
+          in: path
+          description: 'key: id of onlineMeeting'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onlineMeeting
+        - name: callTranscript-id
+          in: path
+          description: 'key: id of callTranscript'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: callTranscript
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/communications/onlineMeetings/{onlineMeeting-id}/transcripts/{callTranscript-id}/content':
+    get:
+      tags:
+        - communications.onlineMeeting
+      summary: Get content for the navigation property transcripts from communications
+      operationId: communications.onlineMeetings_GetTranscriptsContent
+      parameters:
+        - name: onlineMeeting-id
+          in: path
+          description: 'key: id of onlineMeeting'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onlineMeeting
+        - name: callTranscript-id
+          in: path
+          description: 'key: id of callTranscript'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: callTranscript
+      responses:
+        '200':
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - communications.onlineMeeting
+      summary: Update content for the navigation property transcripts in communications
+      operationId: communications.onlineMeetings_SetTranscriptsContent
+      parameters:
+        - name: onlineMeeting-id
+          in: path
+          description: 'key: id of onlineMeeting'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onlineMeeting
+        - name: callTranscript-id
+          in: path
+          description: 'key: id of callTranscript'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: callTranscript
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/communications/onlineMeetings/{onlineMeeting-id}/virtualAppointment':
+    get:
+      tags:
+        - communications.onlineMeeting
+      summary: Get virtualAppointment from communications
+      operationId: communications.onlineMeetings_GetVirtualAppointment
+      parameters:
+        - name: onlineMeeting-id
+          in: path
+          description: 'key: id of onlineMeeting'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onlineMeeting
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - appointmentClientJoinWebUrl
+                - appointmentClients
+                - externalAppointmentId
+                - externalAppointmentUrl
+                - settings
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.virtualAppointment'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - communications.onlineMeeting
+      summary: Update the navigation property virtualAppointment in communications
+      operationId: communications.onlineMeetings_UpdateVirtualAppointment
+      parameters:
+        - name: onlineMeeting-id
+          in: path
+          description: 'key: id of onlineMeeting'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onlineMeeting
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.virtualAppointment'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - communications.onlineMeeting
+      summary: Delete navigation property virtualAppointment for communications
+      operationId: communications.onlineMeetings_DeleteVirtualAppointment
+      parameters:
+        - name: onlineMeeting-id
+          in: path
+          description: 'key: id of onlineMeeting'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onlineMeeting
         - name: If-Match
           in: header
           description: ETag
@@ -4981,21 +5195,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of presence
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.presence'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.presenceCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -5072,6 +5272,15 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.presence'
+          links:
+            clearPresence:
+              operationId: communications.presences.presence.clearPresence
+            clearUserPreferredPresence:
+              operationId: communications.presences.presence.clearUserPreferredPresence
+            setPresence:
+              operationId: communications.presences.presence.setPresence
+            setUserPreferredPresence:
+              operationId: communications.presences.presence.setUserPreferredPresence
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5292,8 +5501,6 @@ paths:
               enum:
                 - id
                 - id desc
-                - accessLevel
-                - accessLevel desc
                 - allowAttendeeToEnableCamera
                 - allowAttendeeToEnableCamera desc
                 - allowAttendeeToEnableMic
@@ -5306,14 +5513,14 @@ paths:
                 - allowTeamworkReactions desc
                 - alternativeRecording
                 - alternativeRecording desc
+                - anonymizeIdentityForRoles
+                - anonymizeIdentityForRoles desc
                 - attendeeReport
                 - attendeeReport desc
                 - audioConferencing
                 - audioConferencing desc
                 - broadcastSettings
                 - broadcastSettings desc
-                - canceledDateTime
-                - canceledDateTime desc
                 - capabilities
                 - capabilities desc
                 - chatInfo
@@ -5322,16 +5529,10 @@ paths:
                 - creationDateTime desc
                 - endDateTime
                 - endDateTime desc
-                - entryExitAnnouncement
-                - entryExitAnnouncement desc
-                - expirationDateTime
-                - expirationDateTime desc
                 - externalId
                 - externalId desc
                 - isBroadcast
                 - isBroadcast desc
-                - isCancelled
-                - isCancelled desc
                 - isEntryExitAnnounced
                 - isEntryExitAnnounced desc
                 - joinInformation
@@ -5340,6 +5541,8 @@ paths:
                 - joinMeetingIdSettings desc
                 - joinUrl
                 - joinUrl desc
+                - joinWebUrl
+                - joinWebUrl desc
                 - lobbyBypassSettings
                 - lobbyBypassSettings desc
                 - participants
@@ -5366,30 +5569,27 @@ paths:
             items:
               enum:
                 - id
-                - accessLevel
                 - allowAttendeeToEnableCamera
                 - allowAttendeeToEnableMic
                 - allowedPresenters
                 - allowMeetingChat
                 - allowTeamworkReactions
                 - alternativeRecording
+                - anonymizeIdentityForRoles
                 - attendeeReport
                 - audioConferencing
                 - broadcastSettings
-                - canceledDateTime
                 - capabilities
                 - chatInfo
                 - creationDateTime
                 - endDateTime
-                - entryExitAnnouncement
-                - expirationDateTime
                 - externalId
                 - isBroadcast
-                - isCancelled
                 - isEntryExitAnnounced
                 - joinInformation
                 - joinMeetingIdSettings
                 - joinUrl
+                - joinWebUrl
                 - lobbyBypassSettings
                 - participants
                 - recordAutomatically
@@ -5397,9 +5597,11 @@ paths:
                 - startDateTime
                 - subject
                 - videoTeleconferenceId
+                - virtualAppointment
                 - attendanceReports
                 - meetingAttendanceReport
                 - registration
+                - transcripts
               type: string
         - name: $expand
           in: query
@@ -5412,27 +5614,15 @@ paths:
             items:
               enum:
                 - '*'
+                - virtualAppointment
                 - attendanceReports
                 - meetingAttendanceReport
                 - registration
+                - transcripts
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of onlineMeeting
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.onlineMeeting'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.onlineMeetingCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -5501,30 +5691,27 @@ paths:
             items:
               enum:
                 - id
-                - accessLevel
                 - allowAttendeeToEnableCamera
                 - allowAttendeeToEnableMic
                 - allowedPresenters
                 - allowMeetingChat
                 - allowTeamworkReactions
                 - alternativeRecording
+                - anonymizeIdentityForRoles
                 - attendeeReport
                 - audioConferencing
                 - broadcastSettings
-                - canceledDateTime
                 - capabilities
                 - chatInfo
                 - creationDateTime
                 - endDateTime
-                - entryExitAnnouncement
-                - expirationDateTime
                 - externalId
                 - isBroadcast
-                - isCancelled
                 - isEntryExitAnnounced
                 - joinInformation
                 - joinMeetingIdSettings
                 - joinUrl
+                - joinWebUrl
                 - lobbyBypassSettings
                 - participants
                 - recordAutomatically
@@ -5532,9 +5719,11 @@ paths:
                 - startDateTime
                 - subject
                 - videoTeleconferenceId
+                - virtualAppointment
                 - attendanceReports
                 - meetingAttendanceReport
                 - registration
+                - transcripts
               type: string
         - name: $expand
           in: query
@@ -5547,9 +5736,11 @@ paths:
             items:
               enum:
                 - '*'
+                - virtualAppointment
                 - attendanceReports
                 - meetingAttendanceReport
                 - registration
+                - transcripts
               type: string
       responses:
         '200':
@@ -5559,6 +5750,11 @@ paths:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.onlineMeeting'
           links:
+            virtualAppointment:
+              operationId: users.OnlineMeetings.GetVirtualAppointment
+              parameters:
+                user-id: $request.path.user-id
+                onlineMeeting-id: $request.path.onlineMeeting-id
             attendanceReports:
               operationId: users.OnlineMeetings.ListAttendanceReports
               parameters:
@@ -5571,6 +5767,11 @@ paths:
                 onlineMeeting-id: $request.path.onlineMeeting-id
             registration:
               operationId: users.OnlineMeetings.GetRegistration
+              parameters:
+                user-id: $request.path.user-id
+                onlineMeeting-id: $request.path.onlineMeeting-id
+            transcripts:
+              operationId: users.OnlineMeetings.ListTranscripts
               parameters:
                 user-id: $request.path.user-id
                 onlineMeeting-id: $request.path.onlineMeeting-id
@@ -5645,7 +5846,7 @@ paths:
     get:
       tags:
         - users.onlineMeeting
-      summary: Get media content for the navigation property onlineMeetings from users
+      summary: Get alternativeRecording for the navigation property onlineMeetings from users
       operationId: users_GetOnlineMeetingsAlternativeRecording
       parameters:
         - name: user-id
@@ -5676,7 +5877,7 @@ paths:
     put:
       tags:
         - users.onlineMeeting
-      summary: Update media content for the navigation property onlineMeetings in users
+      summary: Update alternativeRecording for the navigation property onlineMeetings in users
       operationId: users_SetOnlineMeetingsAlternativeRecording
       parameters:
         - name: user-id
@@ -5712,7 +5913,6 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Get attendanceReports from users
-      description: The attendance reports of an online meeting. Read-only.
       operationId: users.onlineMeetings_ListAttendanceReports
       parameters:
         - name: user-id
@@ -5784,21 +5984,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of meetingAttendanceReport
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.meetingAttendanceReport'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.meetingAttendanceReportCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -5809,7 +5995,6 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Create new navigation property to attendanceReports for users
-      description: The attendance reports of an online meeting. Read-only.
       operationId: users.onlineMeetings_CreateAttendanceReports
       parameters:
         - name: user-id
@@ -5848,7 +6033,6 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Get attendanceReports from users
-      description: The attendance reports of an online meeting. Read-only.
       operationId: users.onlineMeetings_GetAttendanceReports
       parameters:
         - name: user-id
@@ -5922,7 +6106,6 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Update the navigation property attendanceReports in users
-      description: The attendance reports of an online meeting. Read-only.
       operationId: users.onlineMeetings_UpdateAttendanceReports
       parameters:
         - name: user-id
@@ -5963,7 +6146,6 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Delete navigation property attendanceReports for users
-      description: The attendance reports of an online meeting. Read-only.
       operationId: users.onlineMeetings_DeleteAttendanceReports
       parameters:
         - name: user-id
@@ -6003,7 +6185,6 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Get attendanceRecords from users
-      description: List of attendance records of an attendance report. Read-only.
       operationId: users.onlineMeetings.attendanceReports_ListAttendanceRecords
       parameters:
         - name: user-id
@@ -6089,21 +6270,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of attendanceRecord
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.attendanceRecord'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.attendanceRecordCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -6114,7 +6281,6 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Create new navigation property to attendanceRecords for users
-      description: List of attendance records of an attendance report. Read-only.
       operationId: users.onlineMeetings.attendanceReports_CreateAttendanceRecords
       parameters:
         - name: user-id
@@ -6160,7 +6326,6 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Get attendanceRecords from users
-      description: List of attendance records of an attendance report. Read-only.
       operationId: users.onlineMeetings.attendanceReports_GetAttendanceRecords
       parameters:
         - name: user-id
@@ -6235,7 +6400,6 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Update the navigation property attendanceRecords in users
-      description: List of attendance records of an attendance report. Read-only.
       operationId: users.onlineMeetings.attendanceReports_UpdateAttendanceRecords
       parameters:
         - name: user-id
@@ -6283,7 +6447,6 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Delete navigation property attendanceRecords for users
-      description: List of attendance records of an attendance report. Read-only.
       operationId: users.onlineMeetings.attendanceReports_DeleteAttendanceRecords
       parameters:
         - name: user-id
@@ -6329,7 +6492,7 @@ paths:
     get:
       tags:
         - users.onlineMeeting
-      summary: Get media content for the navigation property onlineMeetings from users
+      summary: Get attendeeReport for the navigation property onlineMeetings from users
       operationId: users_GetOnlineMeetingsAttendeeReport
       parameters:
         - name: user-id
@@ -6360,7 +6523,7 @@ paths:
     put:
       tags:
         - users.onlineMeeting
-      summary: Update media content for the navigation property onlineMeetings in users
+      summary: Update attendeeReport for the navigation property onlineMeetings in users
       operationId: users_SetOnlineMeetingsAttendeeReport
       parameters:
         - name: user-id
@@ -6526,7 +6689,6 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Get attendanceRecords from users
-      description: List of attendance records of an attendance report. Read-only.
       operationId: users.onlineMeetings.meetingAttendanceReport_ListAttendanceRecords
       parameters:
         - name: user-id
@@ -6605,21 +6767,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of attendanceRecord
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.attendanceRecord'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.attendanceRecordCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -6630,7 +6778,6 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Create new navigation property to attendanceRecords for users
-      description: List of attendance records of an attendance report. Read-only.
       operationId: users.onlineMeetings.meetingAttendanceReport_CreateAttendanceRecords
       parameters:
         - name: user-id
@@ -6669,7 +6816,6 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Get attendanceRecords from users
-      description: List of attendance records of an attendance report. Read-only.
       operationId: users.onlineMeetings.meetingAttendanceReport_GetAttendanceRecords
       parameters:
         - name: user-id
@@ -6737,7 +6883,6 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Update the navigation property attendanceRecords in users
-      description: List of attendance records of an attendance report. Read-only.
       operationId: users.onlineMeetings.meetingAttendanceReport_UpdateAttendanceRecords
       parameters:
         - name: user-id
@@ -6778,7 +6923,6 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Delete navigation property attendanceRecords for users
-      description: List of attendance records of an attendance report. Read-only.
       operationId: users.onlineMeetings.meetingAttendanceReport_DeleteAttendanceRecords
       parameters:
         - name: user-id
@@ -6817,7 +6961,7 @@ paths:
     get:
       tags:
         - users.onlineMeeting
-      summary: Get media content for the navigation property onlineMeetings from users
+      summary: Get recording for the navigation property onlineMeetings from users
       operationId: users_GetOnlineMeetingsRecording
       parameters:
         - name: user-id
@@ -6848,7 +6992,7 @@ paths:
     put:
       tags:
         - users.onlineMeeting
-      summary: Update media content for the navigation property onlineMeetings in users
+      summary: Update recording for the navigation property onlineMeetings in users
       operationId: users_SetOnlineMeetingsRecording
       parameters:
         - name: user-id
@@ -6884,7 +7028,6 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Get registration from users
-      description: The registration that has been enabled for an online meeting. One online meeting can only have one registration enabled.
       operationId: users.onlineMeetings_GetRegistration
       parameters:
         - name: user-id
@@ -6962,7 +7105,6 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Update the navigation property registration in users
-      description: The registration that has been enabled for an online meeting. One online meeting can only have one registration enabled.
       operationId: users.onlineMeetings_UpdateRegistration
       parameters:
         - name: user-id
@@ -6996,7 +7138,6 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Delete navigation property registration for users
-      description: The registration that has been enabled for an online meeting. One online meeting can only have one registration enabled.
       operationId: users.onlineMeetings_DeleteRegistration
       parameters:
         - name: user-id
@@ -7029,7 +7170,6 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Get customQuestions from users
-      description: Custom registration questions.
       operationId: users.onlineMeetings.registration_ListCustomQuestions
       parameters:
         - name: user-id
@@ -7102,21 +7242,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of meetingRegistrationQuestion
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.meetingRegistrationQuestion'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.meetingRegistrationQuestionCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -7127,7 +7253,6 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Create new navigation property to customQuestions for users
-      description: Custom registration questions.
       operationId: users.onlineMeetings.registration_CreateCustomQuestions
       parameters:
         - name: user-id
@@ -7166,7 +7291,6 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Get customQuestions from users
-      description: Custom registration questions.
       operationId: users.onlineMeetings.registration_GetCustomQuestions
       parameters:
         - name: user-id
@@ -7232,7 +7356,6 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Update the navigation property customQuestions in users
-      description: Custom registration questions.
       operationId: users.onlineMeetings.registration_UpdateCustomQuestions
       parameters:
         - name: user-id
@@ -7273,7 +7396,6 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Delete navigation property customQuestions for users
-      description: Custom registration questions.
       operationId: users.onlineMeetings.registration_DeleteCustomQuestions
       parameters:
         - name: user-id
@@ -7297,6 +7419,467 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: meetingRegistrationQuestion
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/users/{user-id}/onlineMeetings/{onlineMeeting-id}/transcripts':
+    get:
+      tags:
+        - users.onlineMeeting
+      summary: Get transcripts from users
+      operationId: users.onlineMeetings_ListTranscripts
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: onlineMeeting-id
+          in: path
+          description: 'key: id of onlineMeeting'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onlineMeeting
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - content
+                - content desc
+                - createdDateTime
+                - createdDateTime desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - content
+                - createdDateTime
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/microsoft.graph.callTranscriptCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - users.onlineMeeting
+      summary: Create new navigation property to transcripts for users
+      operationId: users.onlineMeetings_CreateTranscripts
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: onlineMeeting-id
+          in: path
+          description: 'key: id of onlineMeeting'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onlineMeeting
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.callTranscript'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.callTranscript'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/users/{user-id}/onlineMeetings/{onlineMeeting-id}/transcripts/{callTranscript-id}':
+    get:
+      tags:
+        - users.onlineMeeting
+      summary: Get transcripts from users
+      operationId: users.onlineMeetings_GetTranscripts
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: onlineMeeting-id
+          in: path
+          description: 'key: id of onlineMeeting'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onlineMeeting
+        - name: callTranscript-id
+          in: path
+          description: 'key: id of callTranscript'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: callTranscript
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - content
+                - createdDateTime
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.callTranscript'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - users.onlineMeeting
+      summary: Update the navigation property transcripts in users
+      operationId: users.onlineMeetings_UpdateTranscripts
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: onlineMeeting-id
+          in: path
+          description: 'key: id of onlineMeeting'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onlineMeeting
+        - name: callTranscript-id
+          in: path
+          description: 'key: id of callTranscript'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: callTranscript
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.callTranscript'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.onlineMeeting
+      summary: Delete navigation property transcripts for users
+      operationId: users.onlineMeetings_DeleteTranscripts
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: onlineMeeting-id
+          in: path
+          description: 'key: id of onlineMeeting'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onlineMeeting
+        - name: callTranscript-id
+          in: path
+          description: 'key: id of callTranscript'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: callTranscript
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/users/{user-id}/onlineMeetings/{onlineMeeting-id}/transcripts/{callTranscript-id}/content':
+    get:
+      tags:
+        - users.onlineMeeting
+      summary: Get content for the navigation property transcripts from users
+      operationId: users.onlineMeetings_GetTranscriptsContent
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: onlineMeeting-id
+          in: path
+          description: 'key: id of onlineMeeting'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onlineMeeting
+        - name: callTranscript-id
+          in: path
+          description: 'key: id of callTranscript'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: callTranscript
+      responses:
+        '200':
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - users.onlineMeeting
+      summary: Update content for the navigation property transcripts in users
+      operationId: users.onlineMeetings_SetTranscriptsContent
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: onlineMeeting-id
+          in: path
+          description: 'key: id of onlineMeeting'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onlineMeeting
+        - name: callTranscript-id
+          in: path
+          description: 'key: id of callTranscript'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: callTranscript
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/users/{user-id}/onlineMeetings/{onlineMeeting-id}/virtualAppointment':
+    get:
+      tags:
+        - users.onlineMeeting
+      summary: Get virtualAppointment from users
+      operationId: users.onlineMeetings_GetVirtualAppointment
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: onlineMeeting-id
+          in: path
+          description: 'key: id of onlineMeeting'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onlineMeeting
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - appointmentClientJoinWebUrl
+                - appointmentClients
+                - externalAppointmentId
+                - externalAppointmentUrl
+                - settings
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.virtualAppointment'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - users.onlineMeeting
+      summary: Update the navigation property virtualAppointment in users
+      operationId: users.onlineMeetings_UpdateVirtualAppointment
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: onlineMeeting-id
+          in: path
+          description: 'key: id of onlineMeeting'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onlineMeeting
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.virtualAppointment'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.onlineMeeting
+      summary: Delete navigation property virtualAppointment for users
+      operationId: users.onlineMeetings_DeleteVirtualAppointment
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: onlineMeeting-id
+          in: path
+          description: 'key: id of onlineMeeting'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onlineMeeting
         - name: If-Match
           in: header
           description: ETag
@@ -7356,6 +7939,15 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.presence'
+          links:
+            clearPresence:
+              operationId: users.user.presence.clearPresence
+            clearUserPreferredPresence:
+              operationId: users.user.presence.clearUserPreferredPresence
+            setPresence:
+              operationId: users.user.presence.setPresence
+            setUserPreferredPresence:
+              operationId: users.user.presence.setUserPreferredPresence
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -7470,13 +8062,13 @@ components:
             startDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'UTC time when the first user joined the call. The DatetimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
+              description: 'UTC time when the first user joined the call. The DatetimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
               format: date-time
             type:
               $ref: '#/components/schemas/microsoft.graph.callRecords.callType'
             version:
               type: integer
-              description: Monotonically increasing version of the call record. Higher version call records with the same id includes additional data compared to the lower version.
+              description: Monotonically increasing version of the call record. Higher version call records with the same ID includes additional data compared to the lower version.
               format: int64
             sessions:
               type: array
@@ -7510,7 +8102,7 @@ components:
             startDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'UTC time when the first user joined the session. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
+              description: 'UTC fime when the first user joined the session. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
               format: date-time
             segments:
               type: array
@@ -7633,7 +8225,6 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.audioRoutingGroup'
-              description: Read-only. Nullable.
             contentSharingSessions:
               type: array
               items:
@@ -7642,12 +8233,10 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.commsOperation'
-              description: Read-only. Nullable.
             participants:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.participant'
-              description: Read-only. Nullable.
           additionalProperties:
             type: object
     microsoft.graph.audioRoutingGroup:
@@ -7778,13 +8367,14 @@ components:
           $ref: '#/components/schemas/microsoft.graph.identitySet'
         participantId:
           type: string
+          description: Optional. The ID of the target participant.
           nullable: true
         removeFromDefaultAudioRoutingGroup:
           type: boolean
           nullable: true
         replacesCallId:
           type: string
-          description: Optional. The call which the target identity is currently a part of. This call will be dropped once the participant is added.
+          description: 'Optional. The call which the target identity is currently a part of. For peer-to-peer case, the call will be dropped once the participant is added successfully.'
           nullable: true
       additionalProperties:
         type: object
@@ -7826,6 +8416,8 @@ components:
           type: string
           description: The language culture string. Read-only.
           nullable: true
+        nonAnonymizedIdentity:
+          $ref: '#/components/schemas/microsoft.graph.identitySet'
         participantId:
           type: string
           description: The participant ID of the participant. Read-only.
@@ -7836,7 +8428,7 @@ components:
           nullable: true
         region:
           type: string
-          description: 'The home region of the participant. This can be a country, a continent, or a larger geographic region. This does not change based on the participant''s current physical location. Read-only.'
+          description: 'The home region of the participant. This can be a country, a continent, or a larger geographic region. This does not change based on the participant''s current physical location, unlike countryCode. Read-only.'
           nullable: true
       additionalProperties:
         type: object
@@ -7887,6 +8479,8 @@ components:
           properties:
             info:
               $ref: '#/components/schemas/microsoft.graph.participantInfo'
+            isIdentityAnonymized:
+              type: boolean
             isInLobby:
               type: boolean
               description: true if the participant is in lobby.
@@ -8002,7 +8596,7 @@ components:
           properties:
             activity:
               type: string
-              description: 'The supplemental information to a user''s availability. Possible values are Available, Away, BeRightBack, Busy, DoNotDisturb, InACall, InAConferenceCall, Inactive, InAMeeting, Offline, OffWork, OutOfOffice, PresenceUnknown, Presenting, UrgentInterruptionsOnly.'
+              description: 'The supplemental information to a user''s availability. Possible values are Available, Away, BeRightBack, Busy, DoNotDisturb, InACall, InAConferenceCall, Inactive,InAMeeting, Offline, OffWork,OutOfOffice, PresenceUnknown,Presenting, UrgentInterruptionsOnly.'
               nullable: true
             availability:
               type: string
@@ -8018,8 +8612,6 @@ components:
         - title: onlineMeeting
           type: object
           properties:
-            accessLevel:
-              $ref: '#/components/schemas/microsoft.graph.accessLevel'
             allowAttendeeToEnableCamera:
               type: boolean
               description: Indicates whether attendees can turn on their camera.
@@ -8034,27 +8626,26 @@ components:
               $ref: '#/components/schemas/microsoft.graph.meetingChatMode'
             allowTeamworkReactions:
               type: boolean
-              description: Indicates whether Teams reactions are enabled for the meeting.
+              description: Indicates if Teams reactions are enabled for the meeting.
               nullable: true
             alternativeRecording:
               type: string
               description: The content stream of the alternative recording of a Microsoft Teams live event. Read-only.
               format: base64url
               nullable: true
+            anonymizeIdentityForRoles:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.onlineMeetingRole'
             attendeeReport:
               type: string
-              description: The content stream of the attendee report of a Microsoft Teams live event. Read-only.
+              description: The content stream of the attendee report of a Teams live event. Read-only.
               format: base64url
               nullable: true
             audioConferencing:
               $ref: '#/components/schemas/microsoft.graph.audioConferencing'
             broadcastSettings:
               $ref: '#/components/schemas/microsoft.graph.broadcastMeetingSettings'
-            canceledDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              format: date-time
-              nullable: true
             capabilities:
               type: array
               items:
@@ -8073,24 +8664,13 @@ components:
               description: The meeting end time in UTC.
               format: date-time
               nullable: true
-            entryExitAnnouncement:
-              type: boolean
-              nullable: true
-            expirationDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              format: date-time
-              nullable: true
             externalId:
               type: string
               description: The external ID. A custom ID. Optional.
               nullable: true
             isBroadcast:
               type: boolean
-              description: Indicates if this is a Teams live event.
-              nullable: true
-            isCancelled:
-              type: boolean
+              description: Indicates whether this is a Teams live event.
               nullable: true
             isEntryExitAnnounced:
               type: boolean
@@ -8102,6 +8682,10 @@ components:
               $ref: '#/components/schemas/microsoft.graph.joinMeetingIdSettings'
             joinUrl:
               type: string
+              nullable: true
+            joinWebUrl:
+              type: string
+              description: The join URL of the online meeting. Read-only.
               nullable: true
             lobbyBypassSettings:
               $ref: '#/components/schemas/microsoft.graph.lobbyBypassSettings'
@@ -8130,6 +8714,8 @@ components:
               type: string
               description: The video teleconferencing ID. Read-only.
               nullable: true
+            virtualAppointment:
+              $ref: '#/components/schemas/microsoft.graph.virtualAppointment'
             attendanceReports:
               type: array
               items:
@@ -8139,6 +8725,10 @@ components:
               $ref: '#/components/schemas/microsoft.graph.meetingAttendanceReport'
             registration:
               $ref: '#/components/schemas/microsoft.graph.meetingRegistration'
+            transcripts:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.callTranscript'
           additionalProperties:
             type: object
     microsoft.graph.meetingAttendanceReport:
@@ -8280,13 +8870,57 @@ components:
               nullable: true
           additionalProperties:
             type: object
+    microsoft.graph.callTranscript:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: callTranscript
+          type: object
+          properties:
+            content:
+              type: string
+              format: base64url
+              nullable: true
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.virtualAppointment:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: virtualAppointment
+          type: object
+          properties:
+            appointmentClientJoinWebUrl:
+              type: string
+              description: The join web URL of the virtual appointment for clients with waiting room and browser join. Optional.
+              nullable: true
+            appointmentClients:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.virtualAppointmentUser'
+              description: 'The client information for the virtual appointment, including name, email, and SMS phone number. Optional.'
+            externalAppointmentId:
+              type: string
+              description: 'The identifier of the appointment from the scheduling system, associated with the current virtual appointment. Optional.'
+              nullable: true
+            externalAppointmentUrl:
+              type: string
+              description: 'The URL of the appointment resource from the scheduling system, associated with the current virtual appointment. Optional.'
+              nullable: true
+            settings:
+              $ref: '#/components/schemas/microsoft.graph.virtualAppointmentSettings'
+          additionalProperties:
+            type: object
     microsoft.graph.chatInfo:
       title: chatInfo
       type: object
       properties:
         messageId:
           type: string
-          description: The unique identifier of a message in a Microsoft Teams channel.
+          description: The unique identifier for a message in a Microsoft Teams channel.
           nullable: true
         replyChainMessageId:
           type: string
@@ -8325,7 +8959,6 @@ components:
       properties:
         id:
           type: string
-          description: Read-only.
       additionalProperties:
         type: object
     microsoft.graph.callRecords.modality:
@@ -8410,6 +9043,7 @@ components:
           nullable: true
         isContentSharingNotificationEnabled:
           type: boolean
+          description: Indicates whether content sharing notifications should be enabled for the call.
           nullable: true
       additionalProperties:
         type: object
@@ -8437,13 +9071,13 @@ components:
       properties:
         observedParticipantId:
           type: string
-          description: The ID of the participant that is under observation. Read-only.
+          description: The id of the participant that is under observation. Read-only.
           nullable: true
         onBehalfOf:
           $ref: '#/components/schemas/microsoft.graph.identitySet'
         sourceParticipantId:
           type: string
-          description: The ID of the participant that triggered the incoming call. Read-only.
+          description: The id of the participant that triggered the incoming call. Read-only.
           nullable: true
         transferor:
           $ref: '#/components/schemas/microsoft.graph.identitySet'
@@ -8611,7 +9245,7 @@ components:
           $ref: '#/components/schemas/microsoft.graph.modality'
         serverMuted:
           type: boolean
-          description: If the media is muted by the server.
+          description: Indicates whether the media is muted by the server.
         sourceId:
           type: string
           description: The source ID.
@@ -8766,15 +9400,6 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    microsoft.graph.accessLevel:
-      title: accessLevel
-      enum:
-        - everyone
-        - invited
-        - locked
-        - sameEnterprise
-        - sameEnterpriseAndFederated
-      type: string
     microsoft.graph.onlineMeetingPresenters:
       title: onlineMeetingPresenters
       enum:
@@ -8791,6 +9416,15 @@ components:
         - disabled
         - limited
         - unknownFutureValue
+      type: string
+    microsoft.graph.onlineMeetingRole:
+      title: onlineMeetingRole
+      enum:
+        - attendee
+        - presenter
+        - unknownFutureValue
+        - producer
+        - coorganizer
       type: string
     microsoft.graph.audioConferencing:
       title: audioConferencing
@@ -8874,12 +9508,15 @@ components:
       properties:
         isPasscodeRequired:
           type: boolean
+          description: Indicates whether a passcode is required to join a meeting when using joinMeetingId. Optional.
           nullable: true
         joinMeetingId:
           type: string
+          description: The meeting ID to be used to join a meeting. Optional. Read-only.
           nullable: true
         passcode:
           type: string
+          description: The passcode to join a meeting.  Optional. Read-only.
           nullable: true
       additionalProperties:
         type: object
@@ -8926,7 +9563,7 @@ components:
       properties:
         displayName:
           type: string
-          description: 'The identity''s display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
+          description: 'The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
           nullable: true
         id:
           type: string
@@ -8970,6 +9607,34 @@ components:
         - radioButton
         - unknownFutureValue
       type: string
+    microsoft.graph.virtualAppointmentUser:
+      title: virtualAppointmentUser
+      type: object
+      properties:
+        displayName:
+          type: string
+          description: The display name of the user who participates in a virtual appointment. Optional.
+          nullable: true
+        emailAddress:
+          type: string
+          description: The email address of the user who participates in a virtual appointment. Optional.
+          nullable: true
+        smsCapablePhoneNumber:
+          type: string
+          description: The phone number for sending SMS texts for the user who participates in a virtual appointment. Optional.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.virtualAppointmentSettings:
+      title: virtualAppointmentSettings
+      type: object
+      properties:
+        allowClientToJoinUsingBrowser:
+          type: boolean
+          description: 'Indicates whether the client can use the browser to join a virtual appointment. If set to false, the client can only use Microsoft Teams to join. Optional.'
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.meetingParticipantInfo:
       title: meetingParticipantInfo
       type: object
@@ -8984,13 +9649,181 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    odata.error:
+    microsoft.graph.ODataErrors.ODataError:
       required:
         - error
       type: object
       properties:
         error:
-          $ref: '#/components/schemas/odata.error.main'
+          $ref: '#/components/schemas/microsoft.graph.ODataErrors.MainError'
+      additionalProperties:
+        type: object
+    microsoft.graph.callRecords.callRecordCollectionResponse:
+      title: Collection of callRecord
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.callRecords.callRecord'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.callRecords.sessionCollectionResponse:
+      title: Collection of session
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.callRecords.session'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.callRecords.segmentCollectionResponse:
+      title: Collection of segment
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.callRecords.segment'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.callCollectionResponse:
+      title: Collection of call
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.call'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.audioRoutingGroupCollectionResponse:
+      title: Collection of audioRoutingGroup
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.audioRoutingGroup'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.contentSharingSessionCollectionResponse:
+      title: Collection of contentSharingSession
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.contentSharingSession'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.commsOperationCollectionResponse:
+      title: Collection of commsOperation
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.commsOperation'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.participantCollectionResponse:
+      title: Collection of participant
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.participant'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.onlineMeetingCollectionResponse:
+      title: Collection of onlineMeeting
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.onlineMeeting'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.meetingAttendanceReportCollectionResponse:
+      title: Collection of meetingAttendanceReport
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.meetingAttendanceReport'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.attendanceRecordCollectionResponse:
+      title: Collection of attendanceRecord
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.attendanceRecord'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.meetingRegistrationQuestionCollectionResponse:
+      title: Collection of meetingRegistrationQuestion
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.meetingRegistrationQuestion'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.callTranscriptCollectionResponse:
+      title: Collection of callTranscript
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.callTranscript'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.presenceCollectionResponse:
+      title: Collection of presence
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.presence'
+        '@odata.nextLink':
+          type: string
       additionalProperties:
         type: object
     microsoft.graph.callRecords.userAgent:
@@ -9169,6 +10002,8 @@ components:
           type: string
           description: The media access control (MAC) address of the media endpoint's network device.
           nullable: true
+        networkTransportProtocol:
+          $ref: '#/components/schemas/microsoft.graph.callRecords.networkTransportProtocol'
         port:
           maximum: 2147483647
           minimum: -2147483648
@@ -9205,6 +10040,11 @@ components:
           type: string
           description: Subnet used for media stream by the media endpoint.
           nullable: true
+        traceRouteHops:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.callRecords.traceRouteHop'
+          description: List of network trace route hops collected for this media stream.*
         wifiBand:
           $ref: '#/components/schemas/microsoft.graph.callRecords.wifiBand'
         wifiBatteryCharge:
@@ -9252,6 +10092,8 @@ components:
       title: mediaStream
       type: object
       properties:
+        audioCodec:
+          $ref: '#/components/schemas/microsoft.graph.callRecords.audioCodec'
         averageAudioDegradation:
           type: number
           description: Average Network Mean Opinion Score degradation for stream. Represents how much the network loss and jitter has impacted the quality of received audio.
@@ -9376,6 +10218,8 @@ components:
           type: string
           description: Unique identifier for the stream.
           nullable: true
+        videoCodec:
+          $ref: '#/components/schemas/microsoft.graph.callRecords.videoCodec'
         wasMediaBypassed:
           type: boolean
           description: 'True if the media stream bypassed the Mediation Server and went straight between client and PSTN Gateway/PBX, false otherwise.'
@@ -9504,16 +10348,7 @@ components:
               nullable: true
           additionalProperties:
             type: object
-    microsoft.graph.onlineMeetingRole:
-      title: onlineMeetingRole
-      enum:
-        - attendee
-        - presenter
-        - unknownFutureValue
-        - producer
-        - coorganizer
-      type: string
-    odata.error.main:
+    microsoft.graph.ODataErrors.MainError:
       required:
         - code
         - message
@@ -9525,15 +10360,13 @@ components:
           type: string
         target:
           type: string
+          nullable: true
         details:
           type: array
           items:
-            $ref: '#/components/schemas/odata.error.detail'
+            $ref: '#/components/schemas/microsoft.graph.ODataErrors.ErrorDetails'
         innererror:
-          type: object
-          additionalProperties:
-            type: object
-          description: The structure of this object is service-specific
+          $ref: '#/components/schemas/microsoft.graph.ODataErrors.InnerError'
       additionalProperties:
         type: object
     microsoft.graph.callRecords.networkConnectionType:
@@ -9546,6 +10379,37 @@ components:
         - tunnel
         - unknownFutureValue
       type: string
+    microsoft.graph.callRecords.networkTransportProtocol:
+      title: networkTransportProtocol
+      enum:
+        - unknown
+        - udp
+        - tcp
+        - unknownFutureValue
+      type: string
+    microsoft.graph.callRecords.traceRouteHop:
+      title: traceRouteHop
+      type: object
+      properties:
+        hopCount:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: The network path count of this hop that was used to compute the round-trip time.
+          format: int32
+          nullable: true
+        ipAddress:
+          type: string
+          description: IP address used for this hop in the network trace.
+          nullable: true
+        roundTripTime:
+          pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
+          type: string
+          description: 'The time from when the trace route packet was sent from the client to this hop and back to the client, denoted in [ISO 8601][] format. For example, 1 second is denoted as PT1S, where P is the duration designator, T is the time designator, and S is the second designator.'
+          format: duration
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.callRecords.wifiBand:
       title: wifiBand
       enum:
@@ -9567,13 +10431,56 @@ components:
         - wifi80211ax
         - unknownFutureValue
       type: string
+    microsoft.graph.callRecords.audioCodec:
+      title: audioCodec
+      enum:
+        - unknown
+        - invalid
+        - cn
+        - pcma
+        - pcmu
+        - amrWide
+        - g722
+        - g7221
+        - g7221c
+        - g729
+        - multiChannelAudio
+        - muchv2
+        - opus
+        - satin
+        - satinFullband
+        - rtAudio8
+        - rtAudio16
+        - silk
+        - silkNarrow
+        - silkWide
+        - siren
+        - xmsRta
+        - unknownFutureValue
+      type: string
     microsoft.graph.callRecords.mediaStreamDirection:
       title: mediaStreamDirection
       enum:
         - callerToCallee
         - calleeToCaller
       type: string
-    odata.error.detail:
+    microsoft.graph.callRecords.videoCodec:
+      title: videoCodec
+      enum:
+        - unknown
+        - invalid
+        - av1
+        - h263
+        - h264
+        - h264s
+        - h264uc
+        - h265
+        - rtvc1
+        - rtVideo
+        - xrtvc1
+        - unknownFutureValue
+      type: string
+    microsoft.graph.ODataErrors.ErrorDetails:
       required:
         - code
         - message
@@ -9585,15 +10492,105 @@ components:
           type: string
         target:
           type: string
+          nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.ODataErrors.InnerError:
+      type: object
+      additionalProperties:
+        type: object
+      description: The structure of this object is service-specific
   responses:
     error:
       description: error
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/odata.error'
+            $ref: '#/components/schemas/microsoft.graph.ODataErrors.ODataError'
+    microsoft.graph.callRecords.callRecordCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.callRecords.callRecordCollectionResponse'
+    microsoft.graph.callRecords.sessionCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.callRecords.sessionCollectionResponse'
+    microsoft.graph.callRecords.segmentCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.callRecords.segmentCollectionResponse'
+    microsoft.graph.callCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.callCollectionResponse'
+    microsoft.graph.audioRoutingGroupCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.audioRoutingGroupCollectionResponse'
+    microsoft.graph.contentSharingSessionCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.contentSharingSessionCollectionResponse'
+    microsoft.graph.commsOperationCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.commsOperationCollectionResponse'
+    microsoft.graph.participantCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.participantCollectionResponse'
+    microsoft.graph.onlineMeetingCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.onlineMeetingCollectionResponse'
+    microsoft.graph.meetingAttendanceReportCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.meetingAttendanceReportCollectionResponse'
+    microsoft.graph.attendanceRecordCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.attendanceRecordCollectionResponse'
+    microsoft.graph.meetingRegistrationQuestionCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.meetingRegistrationQuestionCollectionResponse'
+    microsoft.graph.callTranscriptCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.callTranscriptCollectionResponse'
+    microsoft.graph.presenceCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.presenceCollectionResponse'
   parameters:
     top:
       name: $top

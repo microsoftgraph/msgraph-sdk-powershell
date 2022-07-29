@@ -8,9 +8,7 @@ schema: 2.0.0
 # Update-MgBookingBusinessStaffMember
 
 ## SYNOPSIS
-All the staff members that provide services in this business.
-Read-only.
-Nullable.
+Update the navigation property staffMembers in solutions
 
 ## SYNTAX
 
@@ -39,9 +37,7 @@ Update-MgBookingBusinessStaffMember -InputObject <IBookingsIdentity> [-Additiona
 ```
 
 ## DESCRIPTION
-All the staff members that provide services in this business.
-Read-only.
-Nullable.
+Update the navigation property staffMembers in solutions
 
 ## EXAMPLES
 
@@ -108,7 +104,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String

@@ -116,7 +116,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEducationAssignment
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEducationAssignment1
 
 ## NOTES
 
