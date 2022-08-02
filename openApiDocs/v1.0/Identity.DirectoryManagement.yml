@@ -2879,6 +2879,30 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /devices/microsoft.graph.delta():
+    get:
+      tags:
+        - devices.Functions
+      summary: Invoke function delta
+      operationId: devices_delta
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of device
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.device'
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
   /devices/microsoft.graph.getAvailableExtensionProperties:
     post:
       tags:
@@ -6261,7 +6285,7 @@ paths:
     get:
       tags:
         - domains.domain
-      summary: Get domain
+      summary: Get entity from domains by key
       operationId: domains.domain_GetDomain
       parameters:
         - name: domain-id
@@ -9444,7 +9468,7 @@ components:
               type: array
               items:
                 type: string
-              description: Following values are supported. Not nullable. UserGroupOrganizationDeviceApplication
+              description: Following values are supported. Not nullable. UserGroupAdministrativeUnitApplicationDeviceOrganization
           additionalProperties:
             type: object
     microsoft.graph.contract:

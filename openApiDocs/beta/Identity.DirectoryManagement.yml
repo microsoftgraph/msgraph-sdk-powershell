@@ -4812,6 +4812,30 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /devices/microsoft.graph.delta():
+    get:
+      tags:
+        - devices.Functions
+      summary: Invoke function delta
+      operationId: devices_delta
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of device
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.device'
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
   /devices/microsoft.graph.getByIds:
     post:
       tags:
@@ -12294,7 +12318,7 @@ paths:
     get:
       tags:
         - domains.domain
-      summary: Get domain
+      summary: Get entity from domains by key
       operationId: domains.domain_GetDomain
       parameters:
         - name: domain-id
@@ -13980,6 +14004,8 @@ paths:
                 - loginPageTextVisibilitySettings
                 - signInPageText
                 - squareLogo
+                - squareLogoDark
+                - squareLogoDarkRelativeUrl
                 - squareLogoRelativeUrl
                 - usernameHintText
                 - localizations
@@ -14291,6 +14317,10 @@ paths:
                 - signInPageText desc
                 - squareLogo
                 - squareLogo desc
+                - squareLogoDark
+                - squareLogoDark desc
+                - squareLogoDarkRelativeUrl
+                - squareLogoDarkRelativeUrl desc
                 - squareLogoRelativeUrl
                 - squareLogoRelativeUrl desc
                 - usernameHintText
@@ -14328,6 +14358,8 @@ paths:
                 - loginPageTextVisibilitySettings
                 - signInPageText
                 - squareLogo
+                - squareLogoDark
+                - squareLogoDarkRelativeUrl
                 - squareLogoRelativeUrl
                 - usernameHintText
               type: string
@@ -14435,6 +14467,8 @@ paths:
                 - loginPageTextVisibilitySettings
                 - signInPageText
                 - squareLogo
+                - squareLogoDark
+                - squareLogoDarkRelativeUrl
                 - squareLogoRelativeUrl
                 - usernameHintText
               type: string
@@ -14788,6 +14822,72 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/organization/{organization-id}/branding/localizations/{organizationalBrandingLocalization-id}/squareLogoDark':
+    get:
+      tags:
+        - organization.organizationalBranding
+      summary: Get squareLogoDark for the navigation property localizations from organization
+      operationId: organization.branding_GetLocalizationsSquareLogoDark
+      parameters:
+        - name: organization-id
+          in: path
+          description: 'key: id of organization'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: organization
+        - name: organizationalBrandingLocalization-id
+          in: path
+          description: 'key: id of organizationalBrandingLocalization'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: organizationalBrandingLocalization
+      responses:
+        '200':
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - organization.organizationalBranding
+      summary: Update squareLogoDark for the navigation property localizations in organization
+      operationId: organization.branding_SetLocalizationsSquareLogoDark
+      parameters:
+        - name: organization-id
+          in: path
+          description: 'key: id of organization'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: organization
+        - name: organizationalBrandingLocalization-id
+          in: path
+          description: 'key: id of organizationalBrandingLocalization'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: organizationalBrandingLocalization
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/organization/{organization-id}/branding/squareLogo':
     get:
       tags:
@@ -14818,6 +14918,58 @@ paths:
         - organization.organizationalBranding
       summary: Update squareLogo for the navigation property branding in organization
       operationId: organization_SetBrandingSquareLogo
+      parameters:
+        - name: organization-id
+          in: path
+          description: 'key: id of organization'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: organization
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/organization/{organization-id}/branding/squareLogoDark':
+    get:
+      tags:
+        - organization.organizationalBranding
+      summary: Get squareLogoDark for the navigation property branding from organization
+      operationId: organization_GetBrandingSquareLogoDark
+      parameters:
+        - name: organization-id
+          in: path
+          description: 'key: id of organization'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: organization
+      responses:
+        '200':
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - organization.organizationalBranding
+      summary: Update squareLogoDark for the navigation property branding in organization
+      operationId: organization_SetBrandingSquareLogoDark
       parameters:
         - name: organization-id
           in: path
@@ -18567,6 +18719,15 @@ components:
               type: string
               description: A square version of your company logo that appears in Windows 10 out-of-box experiences (OOBE) and when Windows Autopilot is enabled for deployment. Allowed types are PNG or JPEG not larger than 240 x 240 pixels and not more than 10 KB in size. We recommend using a transparent image with no padding around the logo.
               format: base64url
+              nullable: true
+            squareLogoDark:
+              type: string
+              description: A square dark version of your company logo that appears in Windows 10 out-of-box experiences (OOBE) and when Windows Autopilot is enabled for deployment. Allowed types are PNG or JPEG not larger than 240 x 240 pixels and not more than 10 KB in size. We recommend using a transparent image with no padding around the logo.
+              format: base64url
+              nullable: true
+            squareLogoDarkRelativeUrl:
+              type: string
+              description: A relative URL for the squareLogoDark property that is combined with a CDN base URL from the cdnList to provide the version served by a CDN. Read-only.
               nullable: true
             squareLogoRelativeUrl:
               type: string

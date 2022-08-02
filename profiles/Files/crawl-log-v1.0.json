@@ -69,6 +69,18 @@
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Files.yml"
     },
+    "/drives/{drive-id}/items/{driveItem-id}/listItem/documentSetVersions": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Files.yml"
+    },
+    "/drives/{drive-id}/items/{driveItem-id}/listItem/documentSetVersions/{documentSetVersion-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Files.yml"
+    },
+    "/drives/{drive-id}/items/{driveItem-id}/listItem/documentSetVersions/{documentSetVersion-id}/microsoft.graph.restore": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Files.yml"
+    },
     "/drives/{drive-id}/items/{driveItem-id}/listItem/driveItem": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Files.yml"
@@ -329,6 +341,18 @@
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Files.yml"
     },
+    "/drives/{drive-id}/list/items/{listItem-id}/documentSetVersions": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Files.yml"
+    },
+    "/drives/{drive-id}/list/items/{listItem-id}/documentSetVersions/{documentSetVersion-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Files.yml"
+    },
+    "/drives/{drive-id}/list/items/{listItem-id}/documentSetVersions/{documentSetVersion-id}/microsoft.graph.restore": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Files.yml"
+    },
     "/drives/{drive-id}/list/items/{listItem-id}/driveItem": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Files.yml"
@@ -426,6 +450,18 @@
       "originalLocation": "/openApiDocs/v1.0/Files.yml"
     },
     "/drives/{drive-id}/root/listItem/analytics": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Files.yml"
+    },
+    "/drives/{drive-id}/root/listItem/documentSetVersions": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Files.yml"
+    },
+    "/drives/{drive-id}/root/listItem/documentSetVersions/{documentSetVersion-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Files.yml"
+    },
+    "/drives/{drive-id}/root/listItem/documentSetVersions/{documentSetVersion-id}/microsoft.graph.restore": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Files.yml"
     },
@@ -661,6 +697,14 @@
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Files.yml"
     },
+    "/groups/{group-id}/drives/{drive-id}/items/{driveItem-id}/listItem/documentSetVersions": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Files.yml"
+    },
+    "/groups/{group-id}/drives/{drive-id}/items/{driveItem-id}/listItem/documentSetVersions/{documentSetVersion-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Files.yml"
+    },
     "/groups/{group-id}/drives/{drive-id}/items/{driveItem-id}/listItem/driveItem": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Files.yml"
@@ -801,6 +845,14 @@
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Files.yml"
     },
+    "/groups/{group-id}/drives/{drive-id}/list/items/{listItem-id}/documentSetVersions": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Files.yml"
+    },
+    "/groups/{group-id}/drives/{drive-id}/list/items/{listItem-id}/documentSetVersions/{documentSetVersion-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Files.yml"
+    },
     "/groups/{group-id}/drives/{drive-id}/list/items/{listItem-id}/driveItem": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Files.yml"
@@ -870,6 +922,14 @@
       "originalLocation": "/openApiDocs/v1.0/Files.yml"
     },
     "/groups/{group-id}/drives/{drive-id}/root/listItem/analytics": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Files.yml"
+    },
+    "/groups/{group-id}/drives/{drive-id}/root/listItem/documentSetVersions": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Files.yml"
+    },
+    "/groups/{group-id}/drives/{drive-id}/root/listItem/documentSetVersions/{documentSetVersion-id}": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Files.yml"
     },
@@ -1085,6 +1145,18 @@
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Files.yml"
     },
+    "/shares/{sharedDriveItem-id}/list/items/{listItem-id}/documentSetVersions": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Files.yml"
+    },
+    "/shares/{sharedDriveItem-id}/list/items/{listItem-id}/documentSetVersions/{documentSetVersion-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Files.yml"
+    },
+    "/shares/{sharedDriveItem-id}/list/items/{listItem-id}/documentSetVersions/{documentSetVersion-id}/microsoft.graph.restore": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Files.yml"
+    },
     "/shares/{sharedDriveItem-id}/list/items/{listItem-id}/driveItem": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Files.yml"
@@ -1146,6 +1218,18 @@
       "originalLocation": "/openApiDocs/v1.0/Files.yml"
     },
     "/shares/{sharedDriveItem-id}/listItem/analytics": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Files.yml"
+    },
+    "/shares/{sharedDriveItem-id}/listItem/documentSetVersions": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Files.yml"
+    },
+    "/shares/{sharedDriveItem-id}/listItem/documentSetVersions/{documentSetVersion-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Files.yml"
+    },
+    "/shares/{sharedDriveItem-id}/listItem/documentSetVersions/{documentSetVersion-id}/microsoft.graph.restore": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Files.yml"
     },
@@ -1274,6 +1358,14 @@
       "originalLocation": "/openApiDocs/v1.0/Files.yml"
     },
     "/users/{user-id}/drives/{drive-id}/items/{driveItem-id}/listItem/analytics": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Files.yml"
+    },
+    "/users/{user-id}/drives/{drive-id}/items/{driveItem-id}/listItem/documentSetVersions": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Files.yml"
+    },
+    "/users/{user-id}/drives/{drive-id}/items/{driveItem-id}/listItem/documentSetVersions/{documentSetVersion-id}": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Files.yml"
     },
@@ -1417,6 +1509,14 @@
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Files.yml"
     },
+    "/users/{user-id}/drives/{drive-id}/list/items/{listItem-id}/documentSetVersions": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Files.yml"
+    },
+    "/users/{user-id}/drives/{drive-id}/list/items/{listItem-id}/documentSetVersions/{documentSetVersion-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Files.yml"
+    },
     "/users/{user-id}/drives/{drive-id}/list/items/{listItem-id}/driveItem": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Files.yml"
@@ -1486,6 +1586,14 @@
       "originalLocation": "/openApiDocs/v1.0/Files.yml"
     },
     "/users/{user-id}/drives/{drive-id}/root/listItem/analytics": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Files.yml"
+    },
+    "/users/{user-id}/drives/{drive-id}/root/listItem/documentSetVersions": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Files.yml"
+    },
+    "/users/{user-id}/drives/{drive-id}/root/listItem/documentSetVersions/{documentSetVersion-id}": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Files.yml"
     },
