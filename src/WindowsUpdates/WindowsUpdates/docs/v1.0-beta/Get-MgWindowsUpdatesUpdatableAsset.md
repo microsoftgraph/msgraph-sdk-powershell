@@ -8,8 +8,7 @@ schema: 2.0.0
 # Get-MgWindowsUpdatesUpdatableAsset
 
 ## SYNOPSIS
-Assets registered with the deployment service that can receive updates.
-Read-only.
+Get updatableAssets from admin
 
 ## SYNTAX
 
@@ -33,8 +32,7 @@ Get-MgWindowsUpdatesUpdatableAsset -InputObject <IWindowsUpdatesIdentity> [-Expa
 ```
 
 ## DESCRIPTION
-Assets registered with the deployment service that can receive updates.
-Read-only.
+Get updatableAssets from admin
 
 ## EXAMPLES
 
@@ -249,6 +247,7 @@ To create the parameters described below, construct a hash table containing the 
 INPUTOBJECT <IWindowsUpdatesIdentity>: Identity Parameter
   - `[CatalogEntryId <String>]`: key: id of catalogEntry
   - `[DeploymentId <String>]`: key: id of deployment
+  - `[ResourceConnectionId <String>]`: key: id of resourceConnection
   - `[UpdatableAssetId <String>]`: key: id of updatableAsset
 
 ## RELATED LINKS

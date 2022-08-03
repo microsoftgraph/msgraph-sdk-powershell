@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.WindowsUpdates
-Module Guid: 12d88939-94f3-4acb-8b71-cd131c15a81f
+Module Guid: df21e3ad-e8fb-4cf1-9889-01cb6becdd65
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.windowsupdates
 Help Version: 1.0.0.0
 Locale: en-US
@@ -11,6 +11,9 @@ Locale: en-US
 Microsoft Graph PowerShell Cmdlets
 
 ## Microsoft.Graph.WindowsUpdates Cmdlets
+### [Add-MgWindowsUpdatesDeploymentAudienceExclusionMemberById](Add-MgWindowsUpdatesDeploymentAudienceExclusionMemberById.md)
+Invoke action addMembersById
+
 ### [Add-MgWindowsUpdatesDeploymentAudienceMember](Add-MgWindowsUpdatesDeploymentAudienceMember.md)
 Invoke action addMembers
 
@@ -24,22 +27,28 @@ Invoke action addMembers
 Invoke action addMembersById
 
 ### [Get-MgWindowsUpdatesCatalogEntry](Get-MgWindowsUpdatesCatalogEntry.md)
-Lists the content that you can approve for deployment.
-Read-only.
+Get entries from admin
 
 ### [Get-MgWindowsUpdatesDeployment](Get-MgWindowsUpdatesDeployment.md)
-Deployments created using the deployment service.
-Read-only.
+Get deployments from admin
 
 ### [Get-MgWindowsUpdatesDeploymentAudienceExclusion](Get-MgWindowsUpdatesDeploymentAudienceExclusion.md)
-Specifies the assets to exclude from the audience.
+Get exclusions from admin
 
 ### [Get-MgWindowsUpdatesDeploymentAudienceMember](Get-MgWindowsUpdatesDeploymentAudienceMember.md)
-Specifies the assets to include in the audience.
+Get members from admin
+
+### [Get-MgWindowsUpdatesResourceConnection](Get-MgWindowsUpdatesResourceConnection.md)
+Get resourceConnections from admin
 
 ### [Get-MgWindowsUpdatesUpdatableAsset](Get-MgWindowsUpdatesUpdatableAsset.md)
-Assets registered with the deployment service that can receive updates.
-Read-only.
+Get updatableAssets from admin
+
+### [Invoke-MgEnrollWindowsUpdatesDeploymentAudienceExclusionAssetById](Invoke-MgEnrollWindowsUpdatesDeploymentAudienceExclusionAssetById.md)
+Invoke action enrollAssetsById
+
+### [Invoke-MgEnrollWindowsUpdatesDeploymentAudienceMemberAssetById](Invoke-MgEnrollWindowsUpdatesDeploymentAudienceMemberAssetById.md)
+Invoke action enrollAssetsById
 
 ### [Invoke-MgEnrollWindowsUpdatesUpdatableAsset](Invoke-MgEnrollWindowsUpdatesUpdatableAsset.md)
 Invoke action enrollAssets
@@ -47,27 +56,41 @@ Invoke action enrollAssets
 ### [Invoke-MgEnrollWindowsUpdatesUpdatableAssetById](Invoke-MgEnrollWindowsUpdatesUpdatableAssetById.md)
 Invoke action enrollAssetsById
 
+### [Invoke-MgGraphWindowsUpdatesDeploymentAudienceExclusion](Invoke-MgGraphWindowsUpdatesDeploymentAudienceExclusion.md)
+Invoke action unenrollAssetsById
+
+### [Invoke-MgGraphWindowsUpdatesDeploymentAudienceMember](Invoke-MgGraphWindowsUpdatesDeploymentAudienceMember.md)
+Invoke action unenrollAssetsById
+
+### [Invoke-MgGraphWindowsUpdatesUpdatableAsset](Invoke-MgGraphWindowsUpdatesUpdatableAsset.md)
+Invoke action unenrollAssetsById
+
 ### [Invoke-MgUnenrollWindowsUpdatesUpdatableAsset](Invoke-MgUnenrollWindowsUpdatesUpdatableAsset.md)
 Invoke action unenrollAssets
 
-### [Invoke-MgUnenrollWindowsUpdatesUpdatableAssetById](Invoke-MgUnenrollWindowsUpdatesUpdatableAssetById.md)
-Invoke action unenrollAssetsById
-
 ### [New-MgWindowsUpdatesDeployment](New-MgWindowsUpdatesDeployment.md)
-Deployments created using the deployment service.
-Read-only.
+Create new navigation property to deployments for admin
+
+### [New-MgWindowsUpdatesResourceConnection](New-MgWindowsUpdatesResourceConnection.md)
+Create new navigation property to resourceConnections for admin
 
 ### [New-MgWindowsUpdatesUpdatableAsset](New-MgWindowsUpdatesUpdatableAsset.md)
-Assets registered with the deployment service that can receive updates.
-Read-only.
+Create new navigation property to updatableAssets for admin
 
 ### [Remove-MgWindowsUpdatesDeployment](Remove-MgWindowsUpdatesDeployment.md)
-Deployments created using the deployment service.
-Read-only.
+Delete navigation property deployments for admin
+
+### [Remove-MgWindowsUpdatesDeploymentAudienceExclusionMemberById](Remove-MgWindowsUpdatesDeploymentAudienceExclusionMemberById.md)
+Invoke action removeMembersById
+
+### [Remove-MgWindowsUpdatesDeploymentAudienceMemberById](Remove-MgWindowsUpdatesDeploymentAudienceMemberById.md)
+Invoke action removeMembersById
+
+### [Remove-MgWindowsUpdatesResourceConnection](Remove-MgWindowsUpdatesResourceConnection.md)
+Delete navigation property resourceConnections for admin
 
 ### [Remove-MgWindowsUpdatesUpdatableAsset](Remove-MgWindowsUpdatesUpdatableAsset.md)
-Assets registered with the deployment service that can receive updates.
-Read-only.
+Delete navigation property updatableAssets for admin
 
 ### [Remove-MgWindowsUpdatesUpdatableAssetMember](Remove-MgWindowsUpdatesUpdatableAssetMember.md)
 Invoke action removeMembers
@@ -76,8 +99,7 @@ Invoke action removeMembers
 Invoke action removeMembersById
 
 ### [Update-MgWindowsUpdatesDeployment](Update-MgWindowsUpdatesDeployment.md)
-Deployments created using the deployment service.
-Read-only.
+Update the navigation property deployments in admin
 
 ### [Update-MgWindowsUpdatesDeploymentAudience](Update-MgWindowsUpdatesDeploymentAudience.md)
 Invoke action updateAudience
@@ -85,7 +107,9 @@ Invoke action updateAudience
 ### [Update-MgWindowsUpdatesDeploymentAudienceById](Update-MgWindowsUpdatesDeploymentAudienceById.md)
 Invoke action updateAudienceById
 
+### [Update-MgWindowsUpdatesResourceConnection](Update-MgWindowsUpdatesResourceConnection.md)
+Update the navigation property resourceConnections in admin
+
 ### [Update-MgWindowsUpdatesUpdatableAsset](Update-MgWindowsUpdatesUpdatableAsset.md)
-Assets registered with the deployment service that can receive updates.
-Read-only.
+Update the navigation property updatableAssets in admin
 

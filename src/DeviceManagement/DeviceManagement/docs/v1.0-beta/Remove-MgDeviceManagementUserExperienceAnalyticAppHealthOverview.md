@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgDeviceManagementUserExperienceAnalyticAppHealthOverview
 
 ## SYNOPSIS
-User experience analytics appHealth overview
+Delete navigation property userExperienceAnalyticsAppHealthOverview for deviceManagement
 
 ## SYNTAX
 
@@ -18,7 +18,7 @@ Remove-MgDeviceManagementUserExperienceAnalyticAppHealthOverview [-IfMatch <Stri
 ```
 
 ## DESCRIPTION
-User experience analytics appHealth overview
+Delete navigation property userExperienceAnalyticsAppHealthOverview for deviceManagement
 
 ## EXAMPLES
 

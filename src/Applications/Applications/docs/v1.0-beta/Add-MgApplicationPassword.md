@@ -43,6 +43,68 @@ Invoke action addPassword
 
 ## EXAMPLES
 
+### Example 1: Add a password credential to an application with a six month expiry
+```powershell
+
+Connect-MgGraph -Scopes 'Application.ReadWrite.All'
+
+$appObjectId = 'eaf1e531-0d58-4874-babe-b9a9f436e6c3'
+
+$passwordCred = @{
+   displayName = 'Created in PowerShell'
+   endDateTime = (Get-Date).AddMonths(6)
+}
+
+$secret = Add-MgApplicationPassword -applicationId $appObjectId -PasswordCredential $passwordCred
+$secret | Format-List
+
+CustomKeyIdentifier  :
+DisplayName          : Created in PowerShell
+EndDateTime          : 26/11/2022 12:03:31 pm
+Hint                 : Q_e
+KeyId                : c82bb763-741b-4575-9d9d-df7e766f6999
+SecretText           : Q_e8Q~ZDWJD.bkgajbREp-VFFUayCuEk8b1hDcr9
+StartDateTime        : 26/5/2022 1:03:31 pm
+AdditionalProperties : {[@odata.context,
+                       https://graph.microsoft.com/v1.0/$metadata#microsoft.graph.passwordCredential]}
+```
+
+Add a password to an application that expires in six months from the current date.
+
+### Example 2: Add a password credential to an application with a start date
+```powershell
+
+Connect-MgGraph -Scopes 'Application.ReadWrite.All'
+
+$appObjectId = 'eaf1e531-0d58-4874-babe-b9a9f436e6c3'
+
+$startDate = (Get-Date).AddDays(1).Date
+$endDate = $startDate.AddMonths(6)
+
+$passwordCred = @{
+   displayName = 'Created in PowerShell'
+   startDateTime = $startDate
+   endDateTime = $endDate
+}
+
+$secret = Add-MgApplicationPassword -applicationId $appObjectId -PasswordCredential $passwordCred
+$secret | Format-List
+
+CustomKeyIdentifier  :
+DisplayName          : Created in PowerShell
+EndDateTime          : 26/11/2022 1:00:00 pm
+Hint                 : TiA
+KeyId                : 082bf20f-63d6-4970-bb4e-55e504f50d8b
+SecretText           : TiA8Q~Zs7ej1cGtlW0qnmuFi~JlxXTZew_tU1bGA
+StartDateTime        : 26/5/2022 2:00:00 pm
+AdditionalProperties : {[@odata.context,
+                       https://graph.microsoft.com/v1.0/$metadata#microsoft.graph.passwordCredential]}
+```
+
+Add a password to an application that becomes valid at 12:00 am the next day and is valid for six months.
+
+Use `$secret.StartDateTime.ToLocalTime()` to convert the returned dates from UTC to the local timezone.
+
 ## PARAMETERS
 
 ### -AdditionalProperties
@@ -189,28 +251,33 @@ BODYPARAMETER <IPaths141Ryo0ApplicationsApplicationIdMicrosoftGraphAddpasswordPo
     - `[StartDateTime <DateTime?>]`: The date and time at which the password becomes valid. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Optional.
 
 INPUTOBJECT <IApplicationsIdentity>: Identity Parameter
+  - `[AppManagementPolicyId <String>]`: key: id of appManagementPolicy
   - `[AppRoleAssignmentId <String>]`: key: id of appRoleAssignment
   - `[ApplicationId <String>]`: key: id of application
   - `[ApplicationTemplateId <String>]`: key: id of applicationTemplate
+  - `[ClaimsMappingPolicyId <String>]`: key: id of claimsMappingPolicy
   - `[ConnectorGroupId <String>]`: key: id of connectorGroup
   - `[ConnectorId <String>]`: key: id of connector
   - `[DelegatedPermissionClassificationId <String>]`: key: id of delegatedPermissionClassification
   - `[DirectoryDefinitionId <String>]`: key: id of directoryDefinition
+  - `[DirectoryObjectId <String>]`: key: id of directoryObject
   - `[EndpointId <String>]`: key: id of endpoint
   - `[ExtensionPropertyId <String>]`: key: id of extensionProperty
   - `[FederatedIdentityCredentialId <String>]`: key: id of federatedIdentityCredential
   - `[GroupId <String>]`: key: id of group
+  - `[HomeRealmDiscoveryPolicyId <String>]`: key: id of homeRealmDiscoveryPolicy
   - `[LicenseDetailsId <String>]`: key: id of licenseDetails
+  - `[OAuth2PermissionGrantId <String>]`: key: id of oAuth2PermissionGrant
   - `[OnPremisesAgentGroupId <String>]`: key: id of onPremisesAgentGroup
   - `[OnPremisesAgentGroupId1 <String>]`: key: id of onPremisesAgentGroup
   - `[OnPremisesAgentId <String>]`: key: id of onPremisesAgent
-  - `[OnPremisesAgentId1 <String>]`: key: id of onPremisesAgent
   - `[OnPremisesPublishingProfileId <String>]`: key: id of onPremisesPublishingProfile
   - `[PublishedResourceId <String>]`: key: id of publishedResource
-  - `[PublishedResourceId1 <String>]`: key: id of publishedResource
   - `[ServicePrincipalId <String>]`: key: id of servicePrincipal
   - `[SynchronizationJobId <String>]`: key: id of synchronizationJob
   - `[SynchronizationTemplateId <String>]`: key: id of synchronizationTemplate
+  - `[TokenIssuancePolicyId <String>]`: key: id of tokenIssuancePolicy
+  - `[TokenLifetimePolicyId <String>]`: key: id of tokenLifetimePolicy
   - `[UserId <String>]`: key: id of user
 
 PASSWORDCREDENTIAL <IMicrosoftGraphPasswordCredential>: passwordCredential

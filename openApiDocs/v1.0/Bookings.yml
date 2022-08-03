@@ -291,6 +291,8 @@ paths:
               operationId: solutions.BookingBusinesses.ListStaffMembers
               parameters:
                 bookingBusiness-id: $request.path.bookingBusiness-id
+            getStaffAvailability:
+              operationId: solutions.bookingBusinesses.bookingBusiness.getStaffAvailability
             publish:
               operationId: solutions.bookingBusinesses.bookingBusiness.publish
             unpublish:
@@ -1486,6 +1488,56 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/solutions/bookingBusinesses/{bookingBusiness-id}/microsoft.graph.getStaffAvailability':
+    post:
+      tags:
+        - solutions.Actions
+      summary: Invoke action getStaffAvailability
+      operationId: solutions.bookingBusinesses_getStaffAvailability
+      parameters:
+        - name: bookingBusiness-id
+          in: path
+          description: 'key: id of bookingBusiness'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: bookingBusiness
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                staffIds:
+                  type: array
+                  items:
+                    type: string
+                startDateTime:
+                  $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
+                endDateTime:
+                  $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of bookingBusiness
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.staffAvailabilityItem'
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/solutions/bookingBusinesses/{bookingBusiness-id}/microsoft.graph.publish':
     post:
       tags:
@@ -2435,6 +2487,34 @@ components:
           additionalProperties:
             type: object
           description: Represents a custom question of the business.
+    microsoft.graph.dateTimeTimeZone:
+      title: dateTimeTimeZone
+      type: object
+      properties:
+        dateTime:
+          type: string
+          description: 'A single point of time in a combined date and time representation ({date}T{time}). For example, ''2019-04-16T09:00:00''.'
+        timeZone:
+          type: string
+          description: 'Represents a time zone, for example, ''Pacific Standard Time''. See below for possible values.'
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.staffAvailabilityItem:
+      title: staffAvailabilityItem
+      type: object
+      properties:
+        availabilityItems:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.availabilityItem'
+          description: Each item in this collection indicates a slot and the status of the staff member.
+        staffId:
+          type: string
+          description: The ID of the staff member.
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.bookingService:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -2619,19 +2699,6 @@ components:
       type: object
       additionalProperties:
         type: object
-    microsoft.graph.dateTimeTimeZone:
-      title: dateTimeTimeZone
-      type: object
-      properties:
-        dateTime:
-          type: string
-          description: 'A single point of time in a combined date and time representation ({date}T{time}). For example, ''2019-04-16T09:00:00''.'
-        timeZone:
-          type: string
-          description: 'Represents a time zone, for example, ''Pacific Standard Time''. See below for possible values.'
-          nullable: true
-      additionalProperties:
-        type: object
     microsoft.graph.bookingPriceType:
       title: bookingPriceType
       enum:
@@ -2728,6 +2795,22 @@ components:
         - radioButton
         - unknownFutureValue
       type: string
+    microsoft.graph.availabilityItem:
+      title: availabilityItem
+      type: object
+      properties:
+        endDateTime:
+          $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
+        serviceId:
+          type: string
+          description: 'Indicates the service ID in case of 1:n appointments. If the appointment is of type 1:n, this field will be present, otherwise, null.'
+          nullable: true
+        startDateTime:
+          $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
+        status:
+          $ref: '#/components/schemas/microsoft.graph.bookingsAvailabilityStatus'
+      additionalProperties:
+        type: object
     microsoft.graph.bookingQuestionAssignment:
       title: bookingQuestionAssignment
       type: object
@@ -2921,6 +3004,15 @@ components:
         - directory
         - private
         - bing
+      type: string
+    microsoft.graph.bookingsAvailabilityStatus:
+      title: bookingsAvailabilityStatus
+      enum:
+        - available
+        - busy
+        - slotsAvailable
+        - outOfOffice
+        - unknownFutureValue
       type: string
     microsoft.graph.ODataErrors.MainError:
       required:

@@ -8,8 +8,7 @@ schema: 2.0.0
 # Get-MgOnPremisePublishingProfileConnectorGroupMember
 
 ## SYNOPSIS
-Read-only.
-Nullable.
+Get members from onPremisesPublishingProfiles
 
 ## SYNTAX
 
@@ -21,8 +20,7 @@ Get-MgOnPremisePublishingProfileConnectorGroupMember -ConnectorGroupId <String>
 ```
 
 ## DESCRIPTION
-Read-only.
-Nullable.
+Get members from onPremisesPublishingProfiles
 
 ## EXAMPLES
 

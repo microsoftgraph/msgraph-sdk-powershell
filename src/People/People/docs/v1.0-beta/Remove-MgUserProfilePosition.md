@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgUserProfilePosition
 
 ## SYNOPSIS
-Represents detailed information about work positions associated with a user's profile.
+Delete navigation property positions for users
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Remove-MgUserProfilePosition -InputObject <IPeopleIdentity> [-IfMatch <String>] 
 ```
 
 ## DESCRIPTION
-Represents detailed information about work positions associated with a user's profile.
+Delete navigation property positions for users
 
 ## EXAMPLES
 

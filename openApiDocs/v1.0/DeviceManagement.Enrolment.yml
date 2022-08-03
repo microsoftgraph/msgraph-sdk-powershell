@@ -9015,7 +9015,7 @@ components:
           properties:
             memberType:
               type: string
-              description: 'Membership type of the eligible assignment. It can either be Inherited, Direct, or Group.'
+              description: 'Membership type of the eligible assignment. It can either be Inherited, Direct, or Group. Supports $filter (eq).'
               nullable: true
             scheduleInfo:
               $ref: '#/components/schemas/microsoft.graph.requestSchedule'
@@ -9071,33 +9071,33 @@ components:
               $ref: '#/components/schemas/microsoft.graph.unifiedRoleScheduleRequestActions'
             appScopeId:
               type: string
-              description: 'Identifier of the app-specific scope when the assignment scope is app-specific. The scope of an assignment determines the set of resources for which the principal has been granted access. App scopes are scopes that are defined and understood by this application only. Use / for tenant-wide app scopes. Use directoryScopeId to limit the scope to particular directory objects, for example, administrative units.'
+              description: 'Identifier of the app-specific scope when the role eligibility is scoped to an app. The scope of a role eligibility determines the set of resources for which the principal is eligible to access. App scopes are scopes that are defined and understood by this application only. Use / for tenant-wide app scopes. Use directoryScopeId to limit the scope to particular directory objects, for example, administrative units. Supports $filter (eq, ne, and on null values).'
               nullable: true
             directoryScopeId:
               type: string
-              description: Identifier of the directory object representing the scope of the assignment. The scope of an assignment determines the set of resources for which the principal has been granted access. Directory scopes are shared scopes stored in the directory that are understood by multiple applications. Use / for tenant-wide scope. Use appScopeId to limit the scope to an application only.
+              description: 'Identifier of the directory object representing the scope of the role eligibility. The scope of a role eligibility determines the set of resources for which the principal has been granted access. Directory scopes are shared scopes stored in the directory that are understood by multiple applications. Use / for tenant-wide scope. Use appScopeId to limit the scope to an application only. Supports $filter (eq, ne, and on null values).'
               nullable: true
             isValidationOnly:
               type: boolean
-              description: A boolean that determines whether the call is a validation or an actual call. Only set this property if you want to check whether an activation is subject to additional rules like MFA before actually submitting the request.
+              description: Determines whether the call is a validation or an actual call. Only set this property if you want to check whether an activation is subject to additional rules like MFA before actually submitting the request.
               nullable: true
             justification:
               type: string
-              description: A message provided by users and administrators when create the request about why it is needed.
+              description: A message provided by users and administrators when create they create the unifiedRoleEligibilityScheduleRequest object.
               nullable: true
             principalId:
               type: string
-              description: 'Identifier of the principal to which the assignment is being granted to. For example, a user or a group. For groups, they must be assignable to roles, that is, the isAssignableToRole of the group property set to true.'
+              description: 'Identifier of the principal that has been granted the role eligibility. Supports $filter (eq, ne).'
               nullable: true
             roleDefinitionId:
               type: string
-              description: Identifier of the unifiedRoleDefinition the assignment is for. Read only.
+              description: 'Identifier of the unifiedRoleDefinition object that is being assigned to the principal. Supports $filter (eq, ne).'
               nullable: true
             scheduleInfo:
               $ref: '#/components/schemas/microsoft.graph.requestSchedule'
             targetScheduleId:
               type: string
-              description: The time period for which the eligibility assignment is valid.
+              description: 'Identifier of the schedule object that''s linked to the eligibility request. Supports $filter (eq, ne).'
               nullable: true
             ticketInfo:
               $ref: '#/components/schemas/microsoft.graph.ticketInfo'
@@ -9623,11 +9623,11 @@ components:
       properties:
         displayName:
           type: string
-          description: The display name of the identity. This property is read-only.
+          description: 'The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
           nullable: true
         id:
           type: string
-          description: The identifier of the identity. This property is read-only.
+          description: Unique identifier for the identity.
           nullable: true
       additionalProperties:
         type: object

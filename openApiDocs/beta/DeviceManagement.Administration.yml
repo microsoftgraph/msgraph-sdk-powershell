@@ -12841,6 +12841,7 @@ paths:
                 - auditEvents
                 - cloudPCs
                 - deviceImages
+                - externalPartnerSettings
                 - galleryImages
                 - onPremisesConnections
                 - organizationSettings
@@ -12864,6 +12865,7 @@ paths:
                 - auditEvents
                 - cloudPCs
                 - deviceImages
+                - externalPartnerSettings
                 - galleryImages
                 - onPremisesConnections
                 - organizationSettings
@@ -12887,6 +12889,8 @@ paths:
               operationId: deviceManagement.VirtualEndpoint.ListCloudPCs
             deviceImages:
               operationId: deviceManagement.VirtualEndpoint.ListDeviceImages
+            externalPartnerSettings:
+              operationId: deviceManagement.VirtualEndpoint.ListExternalPartnerSettings
             galleryImages:
               operationId: deviceManagement.VirtualEndpoint.ListGalleryImages
             onPremisesConnections:
@@ -13191,6 +13195,8 @@ paths:
                 - id desc
                 - aadDeviceId
                 - aadDeviceId desc
+                - connectivityResult
+                - connectivityResult desc
                 - displayName
                 - displayName desc
                 - gracePeriodEndDateTime
@@ -13242,6 +13248,7 @@ paths:
               enum:
                 - id
                 - aadDeviceId
+                - connectivityResult
                 - displayName
                 - gracePeriodEndDateTime
                 - imageDisplayName
@@ -13331,6 +13338,7 @@ paths:
               enum:
                 - id
                 - aadDeviceId
+                - connectivityResult
                 - displayName
                 - gracePeriodEndDateTime
                 - imageDisplayName
@@ -13375,6 +13383,8 @@ paths:
               operationId: deviceManagement.virtualEndpoint.cloudPCs.cloudPC.changeUserAccountType
             endGracePeriod:
               operationId: deviceManagement.virtualEndpoint.cloudPCs.cloudPC.endGracePeriod
+            getCloudPcConnectivityHistory:
+              operationId: deviceManagement.virtualEndpoint.cloudPCs.cloudPC.getCloudPcConnectivityHistory
             getCloudPcLaunchInfo:
               operationId: deviceManagement.virtualEndpoint.cloudPCs.cloudPC.getCloudPcLaunchInfo
             reboot:
@@ -13648,6 +13658,204 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: cloudPcDeviceImage
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /deviceManagement/virtualEndpoint/externalPartnerSettings:
+    get:
+      tags:
+        - deviceManagement.virtualEndpoint
+      summary: Get externalPartnerSettings from deviceManagement
+      operationId: deviceManagement.virtualEndpoint_ListExternalPartnerSettings
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - enableConnection
+                - enableConnection desc
+                - lastSyncDateTime
+                - lastSyncDateTime desc
+                - partnerId
+                - partnerId desc
+                - status
+                - status desc
+                - statusDetails
+                - statusDetails desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - enableConnection
+                - lastSyncDateTime
+                - partnerId
+                - status
+                - statusDetails
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/microsoft.graph.cloudPcExternalPartnerSettingCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - deviceManagement.virtualEndpoint
+      summary: Create new navigation property to externalPartnerSettings for deviceManagement
+      operationId: deviceManagement.virtualEndpoint_CreateExternalPartnerSettings
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.cloudPcExternalPartnerSetting'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.cloudPcExternalPartnerSetting'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/deviceManagement/virtualEndpoint/externalPartnerSettings/{cloudPcExternalPartnerSetting-id}':
+    get:
+      tags:
+        - deviceManagement.virtualEndpoint
+      summary: Get externalPartnerSettings from deviceManagement
+      operationId: deviceManagement.virtualEndpoint_GetExternalPartnerSettings
+      parameters:
+        - name: cloudPcExternalPartnerSetting-id
+          in: path
+          description: 'key: id of cloudPcExternalPartnerSetting'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: cloudPcExternalPartnerSetting
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - enableConnection
+                - lastSyncDateTime
+                - partnerId
+                - status
+                - statusDetails
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.cloudPcExternalPartnerSetting'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - deviceManagement.virtualEndpoint
+      summary: Update the navigation property externalPartnerSettings in deviceManagement
+      operationId: deviceManagement.virtualEndpoint_UpdateExternalPartnerSettings
+      parameters:
+        - name: cloudPcExternalPartnerSetting-id
+          in: path
+          description: 'key: id of cloudPcExternalPartnerSetting'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: cloudPcExternalPartnerSetting
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.cloudPcExternalPartnerSetting'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - deviceManagement.virtualEndpoint
+      summary: Delete navigation property externalPartnerSettings for deviceManagement
+      operationId: deviceManagement.virtualEndpoint_DeleteExternalPartnerSettings
+      parameters:
+        - name: cloudPcExternalPartnerSetting-id
+          in: path
+          description: 'key: id of cloudPcExternalPartnerSetting'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: cloudPcExternalPartnerSetting
         - name: If-Match
           in: header
           description: ETag
@@ -15096,6 +15304,8 @@ paths:
                 - id desc
                 - displayName
                 - displayName desc
+                - regionStatus
+                - regionStatus desc
               type: string
         - name: $select
           in: query
@@ -15109,6 +15319,7 @@ paths:
               enum:
                 - id
                 - displayName
+                - regionStatus
               type: string
         - name: $expand
           in: query
@@ -15179,6 +15390,7 @@ paths:
               enum:
                 - id
                 - displayName
+                - regionStatus
               type: string
         - name: $expand
           in: query
@@ -17381,6 +17593,11 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.cloudPcDeviceImage'
               description: The image resource on Cloud PC.
+            externalPartnerSettings:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.cloudPcExternalPartnerSetting'
+              description: The external partner settings on a Cloud PC.
             galleryImages:
               type: array
               items:
@@ -17472,6 +17689,8 @@ components:
               type: string
               description: The Azure Active Directory (Azure AD) device ID of the Cloud PC.
               nullable: true
+            connectivityResult:
+              $ref: '#/components/schemas/microsoft.graph.cloudPcConnectivityResult'
             displayName:
               type: string
               description: The display name of the Cloud PC.
@@ -17585,6 +17804,32 @@ components:
               nullable: true
           additionalProperties:
             type: object
+    microsoft.graph.cloudPcExternalPartnerSetting:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: cloudPcExternalPartnerSetting
+          type: object
+          properties:
+            enableConnection:
+              type: boolean
+              description: 'Enable or disable the connection to an external partner. If true, an external partner API will accept incoming calls from external partners. Required. Supports $filter (eq).'
+            lastSyncDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'Last data sync time for this external partner. The Timestamp type represents the date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 looks like this: ''2014-01-01T00:00:00Z''.'
+              format: date-time
+              nullable: true
+            partnerId:
+              type: string
+              description: The external partner ID.
+            status:
+              $ref: '#/components/schemas/microsoft.graph.cloudPcExternalPartnerStatus'
+            statusDetails:
+              type: string
+              description: Status details message.
+              nullable: true
+          additionalProperties:
+            type: object
     microsoft.graph.cloudPcGalleryImage:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -17668,6 +17913,7 @@ components:
               nullable: true
             alternateResourceUrl:
               type: string
+              description: The interface URL of the partner service's resource that links to this Azure network connection. Returned only on $select.
               nullable: true
             displayName:
               type: string
@@ -17688,10 +17934,10 @@ components:
               nullable: true
             resourceGroupId:
               type: string
-              description: 'The ID of the target resource group. Required format: ''/subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}''.'
+              description: 'The ID of the target resource group. Required format: /subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}.'
             subnetId:
               type: string
-              description: 'The ID of the target subnet. Required format: ''/subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{virtualNetworkId}/subnets/{subnetName}''.'
+              description: 'The ID of the target subnet. Required format: /subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{virtualNetworkId}/subnets/{subnetName}.'
             subscriptionId:
               type: string
               description: The ID of the target Azure subscription that’s associated with your tenant.
@@ -17703,7 +17949,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.cloudPcOnPremisesConnectionType'
             virtualNetworkId:
               type: string
-              description: 'The ID of the target virtual network. Required format: ''/subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{virtualNetworkName}''.'
+              description: 'The ID of the target virtual network. Required format: /subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{virtualNetworkName}.'
           additionalProperties:
             type: object
     microsoft.graph.cloudPcOrganizationSettings:
@@ -17728,9 +17974,11 @@ components:
           properties:
             alternateResourceUrl:
               type: string
+              description: The URL of the alternate resource that links to this provisioning policy. Read-only.
               nullable: true
             cloudPcGroupDisplayName:
               type: string
+              description: The display name of the Cloud PC group that the Cloud PCs reside in. Read-only.
               nullable: true
             description:
               type: string
@@ -17746,6 +17994,7 @@ components:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
+              description: The number of hours to wait before reprovisioning/deprovisioning happens. Read-only.
               format: int32
               nullable: true
             imageDisplayName:
@@ -17760,6 +18009,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.cloudPcProvisioningPolicyImageType'
             localAdminEnabled:
               type: boolean
+              description: 'Indicates whether the local admin option is enabled. If the local admin option is enabled, the end user can be an admin of the Cloud PC device. Read-only.'
               nullable: true
             managedBy:
               $ref: '#/components/schemas/microsoft.graph.cloudPcManagementService'
@@ -17859,7 +18109,8 @@ components:
             displayName:
               type: string
               description: The name for the supported region. Read-only.
-              nullable: true
+            regionStatus:
+              $ref: '#/components/schemas/microsoft.graph.cloudPcSupportedRegionStatus'
           additionalProperties:
             type: object
     microsoft.graph.cloudPcUserSetting:
@@ -19356,6 +19607,22 @@ components:
           description: The type of the audit resource.
       additionalProperties:
         type: object
+    microsoft.graph.cloudPcConnectivityResult:
+      title: cloudPcConnectivityResult
+      type: object
+      properties:
+        failedHealthCheckItems:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.cloudPcHealthCheckItem'
+        status:
+          $ref: '#/components/schemas/microsoft.graph.cloudPcConnectivityStatus'
+        updatedDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          format: date-time
+      additionalProperties:
+        type: object
     microsoft.graph.cloudPcLoginResult:
       title: cloudPcLoginResult
       type: object
@@ -19481,6 +19748,15 @@ components:
         - sourceImageNotGeneralized
         - unknownFutureValue
       type: string
+    microsoft.graph.cloudPcExternalPartnerStatus:
+      title: cloudPcExternalPartnerStatus
+      enum:
+        - notAvailable
+        - available
+        - healthy
+        - unhealthy
+        - unknownFutureValue
+      type: string
     microsoft.graph.cloudPcGalleryImageStatus:
       title: cloudPcGalleryImageStatus
       enum:
@@ -19587,6 +19863,14 @@ components:
       title: cloudPcSnapshotStatus
       enum:
         - ready
+        - unknownFutureValue
+      type: string
+    microsoft.graph.cloudPcSupportedRegionStatus:
+      title: cloudPcSupportedRegionStatus
+      enum:
+        - available
+        - restricted
+        - unavailable
         - unknownFutureValue
       type: string
     microsoft.graph.cloudPcRestorePointSetting:
@@ -20107,6 +20391,18 @@ components:
           type: string
       additionalProperties:
         type: object
+    microsoft.graph.cloudPcExternalPartnerSettingCollectionResponse:
+      title: Collection of cloudPcExternalPartnerSetting
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.cloudPcExternalPartnerSetting'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
     microsoft.graph.cloudPcGalleryImageCollectionResponse:
       title: Collection of cloudPcGalleryImage
       type: object
@@ -20412,6 +20708,33 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.cloudPcHealthCheckItem:
+      title: cloudPcHealthCheckItem
+      type: object
+      properties:
+        additionalDetails:
+          type: string
+          nullable: true
+        displayName:
+          type: string
+        lastHealthCheckDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          format: date-time
+          nullable: true
+        result:
+          $ref: '#/components/schemas/microsoft.graph.cloudPcConnectivityEventResult'
+      additionalProperties:
+        type: object
+    microsoft.graph.cloudPcConnectivityStatus:
+      title: cloudPcConnectivityStatus
+      enum:
+        - unknown
+        - available
+        - availableWithWarning
+        - unavailable
+        - unknownFutureValue
+      type: string
     microsoft.graph.actionState:
       title: actionState
       enum:
@@ -20505,6 +20828,14 @@ components:
           $ref: '#/components/schemas/microsoft.graph.ODataErrors.InnerError'
       additionalProperties:
         type: object
+    microsoft.graph.cloudPcConnectivityEventResult:
+      title: cloudPcConnectivityEventResult
+      enum:
+        - unknown
+        - success
+        - failure
+        - unknownFutureValue
+      type: string
     microsoft.graph.cloudPcOnPremisesConnectionHealthCheckErrorType:
       title: cloudPcOnPremisesConnectionHealthCheckErrorType
       enum:
@@ -20548,6 +20879,9 @@ components:
         - resourceAvailabilityCheckSubnetWithExternalResources
         - resourceAvailabilityCheckResourceGroupLockedForReadonly
         - resourceAvailabilityCheckResourceGroupLockedForDelete
+        - resourceAvailabilityCheckNoIntuneReaderRoleError
+        - resourceAvailabilityCheckIntuneDefaultWindowsRestrictionViolation
+        - resourceAvailabilityCheckIntuneCustomWindowsRestrictionViolation
         - resourceAvailabilityCheckTransientServiceError
         - resourceAvailabilityCheckUnknownError
         - permissionCheckNoSubscriptionReaderRole
@@ -20836,6 +21170,12 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.cloudPcDeviceImageCollectionResponse'
+    microsoft.graph.cloudPcExternalPartnerSettingCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.cloudPcExternalPartnerSettingCollectionResponse'
     microsoft.graph.cloudPcGalleryImageCollectionResponse:
       description: Retrieved collection
       content:

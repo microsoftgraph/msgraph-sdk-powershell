@@ -8,9 +8,7 @@ schema: 2.0.0
 # Remove-MgGroupOnenoteSection
 
 ## SYNOPSIS
-The sections in all OneNote notebooks that are owned by the user or group.
-Read-only.
-Nullable.
+Delete navigation property sections for groups
 
 ## SYNTAX
 
@@ -27,9 +25,7 @@ Remove-MgGroupOnenoteSection -InputObject <INotesIdentity> [-IfMatch <String>] [
 ```
 
 ## DESCRIPTION
-The sections in all OneNote notebooks that are owned by the user or group.
-Read-only.
-Nullable.
+Delete navigation property sections for groups
 
 ## EXAMPLES
 

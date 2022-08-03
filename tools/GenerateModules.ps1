@@ -195,10 +195,11 @@ $ModulesToGenerate | ForEach-Object -ThrottleLimit $NumberOfCores -Parallel {
                 $ModuleExportsPath = Join-Path $ModuleProjectDir "\exports"
                 $Profiles = Get-ChildItem -Path $ModuleExportsPath -Directory | % { $_.Name }
 
-                # Update module manifest wiht profiles.
-                $ModuleManifestPath = Join-Path $ModuleProjectDir "$FullyQualifiedModuleName.psd1"
+                # Update module manifest.
+                $ExistingServiceModule = Find-Module $FullyQualifiedModuleName -Repository PSGallery -ErrorAction SilentlyContinue
+                $ModuleGuid = ($null -eq $ExistingServiceModule) ? (New-Guid).Guid : $ExistingServiceModule.AdditionalMetadata.GUID
                 [HashTable]$PrivateData = @{ Profiles = $Profiles }
-                Update-ModuleManifest -Path $ModuleManifestPath -PrivateData $PrivateData
+                Update-ModuleManifest -Path (Join-Path $ModuleProjectDir "$FullyQualifiedModuleName.psd1") -PrivateData $PrivateData -Guid $ModuleGuid
 
                 # Update module psm1 with Graph session profile name.
                 $ModulePsm1 = Join-Path $ModuleProjectDir "/$FullyQualifiedModuleName.psm1"

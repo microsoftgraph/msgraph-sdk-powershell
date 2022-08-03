@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgDeviceAppMgtVppToken
 
 ## SYNOPSIS
-List of Vpp tokens for this organization.
+Create new navigation property to vppTokens for deviceAppManagement
 
 ## SYNTAX
 
@@ -16,9 +16,9 @@ List of Vpp tokens for this organization.
 ```
 New-MgDeviceAppMgtVppToken [-AdditionalProperties <Hashtable>] [-AppleId <String>] [-AutomaticallyUpdateApps]
  [-CountryOrRegion <String>] [-ExpirationDateTime <DateTime>] [-Id <String>]
- [-LastModifiedDateTime <DateTime>] [-LastSyncDateTime <DateTime>] [-LastSyncStatus <String>]
- [-OrganizationName <String>] [-State <String>] [-Token <String>] [-VppTokenAccountType <String>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-LastModifiedDateTime <DateTime>] [-LastSyncDateTime <DateTime>] [-LastSyncStatus <VppTokenSyncStatus>]
+ [-OrganizationName <String>] [-State <VppTokenState>] [-Token <String>]
+ [-VppTokenAccountType <VppTokenAccountType>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create1
@@ -27,7 +27,7 @@ New-MgDeviceAppMgtVppToken -BodyParameter <IMicrosoftGraphVppToken1> [-Confirm] 
 ```
 
 ## DESCRIPTION
-List of Vpp tokens for this organization.
+Create new navigation property to vppTokens for deviceAppManagement
 
 ## EXAMPLES
 
@@ -128,7 +128,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -176,7 +176,7 @@ Accept wildcard characters: False
 Possible sync statuses associated with an Apple Volume Purchase Program token.
 
 ```yaml
-Type: System.String
+Type: Microsoft.Graph.PowerShell.Support.VppTokenSyncStatus
 Parameter Sets: CreateExpanded1
 Aliases:
 
@@ -206,7 +206,7 @@ Accept wildcard characters: False
 Possible states associated with an Apple Volume Purchase Program token.
 
 ```yaml
-Type: System.String
+Type: Microsoft.Graph.PowerShell.Support.VppTokenState
 Parameter Sets: CreateExpanded1
 Aliases:
 
@@ -236,7 +236,7 @@ Accept wildcard characters: False
 Possible types of an Apple Volume Purchase Program token.
 
 ```yaml
-Type: System.String
+Type: Microsoft.Graph.PowerShell.Support.VppTokenAccountType
 Parameter Sets: CreateExpanded1
 Aliases:
 
@@ -302,18 +302,18 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphVppToken1>: You purchase multiple licenses for iOS apps through the Apple Volume Purchase Program for Business or Education. This involves setting up an Apple VPP account from the Apple website and uploading the Apple VPP Business or Education token to Intune. You can then synchronize your volume purchase information with Intune and track your volume-purchased app use. You can upload multiple Apple VPP Business or Education tokens.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[AppleId <String>]`: The apple Id associated with the given Apple Volume Purchase Program Token.
   - `[AutomaticallyUpdateApps <Boolean?>]`: Whether or not apps for the VPP token will be automatically updated.
   - `[CountryOrRegion <String>]`: Whether or not apps for the VPP token will be automatically updated.
   - `[ExpirationDateTime <DateTime?>]`: The expiration date time of the Apple Volume Purchase Program Token.
   - `[LastModifiedDateTime <DateTime?>]`: Last modification date time associated with the Apple Volume Purchase Program Token.
   - `[LastSyncDateTime <DateTime?>]`: The last time when an application sync was done with the Apple volume purchase program service using the the Apple Volume Purchase Program Token.
-  - `[LastSyncStatus <String>]`: Possible sync statuses associated with an Apple Volume Purchase Program token.
+  - `[LastSyncStatus <VppTokenSyncStatus?>]`: Possible sync statuses associated with an Apple Volume Purchase Program token.
   - `[OrganizationName <String>]`: The organization associated with the Apple Volume Purchase Program Token
-  - `[State <String>]`: Possible states associated with an Apple Volume Purchase Program token.
+  - `[State <VppTokenState?>]`: Possible states associated with an Apple Volume Purchase Program token.
   - `[Token <String>]`: The Apple Volume Purchase Program Token string downloaded from the Apple Volume Purchase Program.
-  - `[VppTokenAccountType <String>]`: Possible types of an Apple Volume Purchase Program token.
+  - `[VppTokenAccountType <VppTokenAccountType?>]`: Possible types of an Apple Volume Purchase Program token.
 
 ## RELATED LINKS
 

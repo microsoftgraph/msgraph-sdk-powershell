@@ -8,9 +8,7 @@ schema: 2.0.0
 # Get-MgUserActivity
 
 ## SYNOPSIS
-The user's activities across devices.
-Read-only.
-Nullable.
+Get activities from users
 
 ## SYNTAX
 
@@ -34,9 +32,7 @@ Get-MgUserActivity -InputObject <ICrossDeviceExperiencesIdentity> [-ExpandProper
 ```
 
 ## DESCRIPTION
-The user's activities across devices.
-Read-only.
-Nullable.
+Get activities from users
 
 ## EXAMPLES
 
@@ -261,7 +257,11 @@ To create the parameters described below, construct a hash table containing the 
 
 INPUTOBJECT <ICrossDeviceExperiencesIdentity>: Identity Parameter
   - `[ActivityHistoryItemId <String>]`: key: id of activityHistoryItem
+  - `[CommandId <String>]`: key: id of command
   - `[DeviceId <String>]`: key: id of device
+  - `[DirectoryObjectId <String>]`: key: id of directoryObject
+  - `[ExtensionId <String>]`: key: id of extension
+  - `[UsageRightId <String>]`: key: id of usageRight
   - `[UserActivityId <String>]`: key: id of userActivity
   - `[UserId <String>]`: key: id of user
 

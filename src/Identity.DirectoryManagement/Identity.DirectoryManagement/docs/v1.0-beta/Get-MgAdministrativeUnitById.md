@@ -18,7 +18,7 @@ Get-MgAdministrativeUnitById [-AdditionalProperties <Hashtable>] [-Ids <String[]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### Get1
+### Get
 ```
 Get-MgAdministrativeUnitById
  -BodyParameter <IPaths1Q1Zk0IAdministrativeunitsMicrosoftGraphGetbyidsPostRequestbodyContentApplicationJsonSchema>
@@ -53,7 +53,7 @@ To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETE
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IPaths1Q1Zk0IAdministrativeunitsMicrosoftGraphGetbyidsPostRequestbodyContentApplicationJsonSchema
-Parameter Sets: Get1
+Parameter Sets: Get
 Aliases:
 
 Required: True

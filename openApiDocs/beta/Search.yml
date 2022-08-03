@@ -93,12 +93,16 @@ paths:
               enum:
                 - id
                 - id desc
+                - complianceSettings
+                - complianceSettings desc
                 - configuration
                 - configuration desc
                 - connectorId
                 - connectorId desc
                 - description
                 - description desc
+                - enabledContentExperiences
+                - enabledContentExperiences desc
                 - ingestedItemsCount
                 - ingestedItemsCount desc
                 - name
@@ -119,9 +123,11 @@ paths:
             items:
               enum:
                 - id
+                - complianceSettings
                 - configuration
                 - connectorId
                 - description
+                - enabledContentExperiences
                 - ingestedItemsCount
                 - name
                 - searchSettings
@@ -205,9 +211,11 @@ paths:
             items:
               enum:
                 - id
+                - complianceSettings
                 - configuration
                 - connectorId
                 - description
+                - enabledContentExperiences
                 - ingestedItemsCount
                 - name
                 - searchSettings
@@ -2210,6 +2218,8 @@ components:
         - title: externalConnection
           type: object
           properties:
+            complianceSettings:
+              $ref: '#/components/schemas/microsoft.graph.externalConnectors.complianceSettings'
             configuration:
               $ref: '#/components/schemas/microsoft.graph.externalConnectors.configuration'
             connectorId:
@@ -2220,6 +2230,8 @@ components:
               type: string
               description: Description of the connection displayed in the Microsoft 365 admin center. Optional.
               nullable: true
+            enabledContentExperiences:
+              $ref: '#/components/schemas/microsoft.graph.externalConnectors.contentExperienceType'
             ingestedItemsCount:
               type: integer
               description: 'The number of items ingested into a connection. This value is refreshed every 15 minutes. If the connection state is draft, then ingestedItemsCount will be null.'
@@ -2591,6 +2603,16 @@ components:
           type: string
       additionalProperties:
         type: object
+    microsoft.graph.externalConnectors.complianceSettings:
+      title: complianceSettings
+      type: object
+      properties:
+        eDiscoveryResultTemplates:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.externalConnectors.displayTemplate'
+      additionalProperties:
+        type: object
     microsoft.graph.externalConnectors.configuration:
       title: configuration
       type: object
@@ -2603,6 +2625,13 @@ components:
           description: A collection of application IDs for registered Azure Active Directory apps that are allowed to manage the externalConnection and to index content in the externalConnection.
       additionalProperties:
         type: object
+    microsoft.graph.externalConnectors.contentExperienceType:
+      title: contentExperienceType
+      enum:
+        - search
+        - compliance
+        - unknownFutureValue
+      type: string
     microsoft.graph.externalConnectors.searchSettings:
       title: searchSettings
       type: object
@@ -2611,7 +2640,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.externalConnectors.displayTemplate'
-          description: Enables the developer to define the appearance of the content and configure conditions that dictate when the template should be displayed.
+          description: Enables the developer to define the appearance of the content and configure conditions that dictate when the template should be displayed. Maximum of 2 search result templates per connection.
       additionalProperties:
         type: object
     microsoft.graph.externalConnectors.connectionState:
@@ -2894,6 +2923,9 @@ components:
         - listItem
         - drive
         - unknownFutureValue
+        - acronym
+        - bookmark
+        - chatMessage
       type: string
     microsoft.graph.searchQuery:
       title: searchQuery
@@ -3107,14 +3139,14 @@ components:
       properties:
         id:
           type: string
-          description: 'The text identifier for the display template; for example, contosoTickets.'
+          description: 'The text identifier for the display template; for example, contosoTickets. Maximum 16 characters. Only alphanumeric characters allowed.'
         layout:
           $ref: '#/components/schemas/microsoft.graph.Json'
         priority:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
-          description: Defines the priority of a display template. A display template with priority 1 is evaluated before a template with priority 4. Gaps in priority values are supported.
+          description: Defines the priority of a display template. A display template with priority 1 is evaluated before a template with priority 4. Gaps in priority values are supported. Must be positive value.
           format: int32
         rules:
           type: array
@@ -3300,7 +3332,7 @@ components:
           nullable: true
         hitId:
           type: string
-          description: The internal identifier for the item.
+          description: 'The internal identifier for the item. The format of the identifier varies based on the entity type. For details, see hitId format.'
           nullable: true
         rank:
           maximum: 2147483647

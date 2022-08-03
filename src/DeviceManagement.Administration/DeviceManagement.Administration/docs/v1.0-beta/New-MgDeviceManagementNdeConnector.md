@@ -8,14 +8,14 @@ schema: 2.0.0
 # New-MgDeviceManagementNdeConnector
 
 ## SYNOPSIS
-The collection of Ndes connectors for this account.
+Create new navigation property to ndesConnectors for deviceManagement
 
 ## SYNTAX
 
 ### CreateExpanded (Default)
 ```
 New-MgDeviceManagementNdeConnector [-AdditionalProperties <Hashtable>] [-DisplayName <String>] [-Id <String>]
- [-LastConnectionDateTime <DateTime>] [-State <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-LastConnectionDateTime <DateTime>] [-State <NdesConnectorState>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
@@ -25,7 +25,7 @@ New-MgDeviceManagementNdeConnector -BodyParameter <IMicrosoftGraphNdesConnector>
 ```
 
 ## DESCRIPTION
-The collection of Ndes connectors for this account.
+Create new navigation property to ndesConnectors for deviceManagement
 
 ## EXAMPLES
 
@@ -78,7 +78,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -111,7 +111,7 @@ Accept wildcard characters: False
 The current status of the Ndes Connector.
 
 ```yaml
-Type: System.String
+Type: Microsoft.Graph.PowerShell.Support.NdesConnectorState
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -175,10 +175,10 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphNdesConnector>: Entity which represents an OnPrem Ndes connector.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[DisplayName <String>]`: The friendly name of the Ndes Connector.
   - `[LastConnectionDateTime <DateTime?>]`: Last connection time for the Ndes Connector
-  - `[State <String>]`: The current status of the Ndes Connector.
+  - `[State <NdesConnectorState?>]`: The current status of the Ndes Connector.
 
 ## RELATED LINKS
 

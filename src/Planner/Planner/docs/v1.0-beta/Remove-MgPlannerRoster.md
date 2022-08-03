@@ -8,9 +8,7 @@ schema: 2.0.0
 # Remove-MgPlannerRoster
 
 ## SYNOPSIS
-Read-only.
-Nullable.
-Returns a collection of the specified rosters
+Delete navigation property rosters for planner
 
 ## SYNTAX
 
@@ -27,9 +25,7 @@ Remove-MgPlannerRoster -InputObject <IPlannerIdentity> [-IfMatch <String>] [-Pas
 ```
 
 ## DESCRIPTION
-Read-only.
-Nullable.
-Returns a collection of the specified rosters
+Delete navigation property rosters for planner
 
 ## EXAMPLES
 

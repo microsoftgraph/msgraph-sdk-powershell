@@ -8,8 +8,7 @@ schema: 2.0.0
 # New-MgWindowsUpdatesDeployment
 
 ## SYNOPSIS
-Deployments created using the deployment service.
-Read-only.
+Create new navigation property to deployments for admin
 
 ## SYNTAX
 
@@ -29,8 +28,7 @@ New-MgWindowsUpdatesDeployment -BodyParameter <IMicrosoftGraphWindowsUpdatesDepl
 ```
 
 ## DESCRIPTION
-Deployments created using the deployment service.
-Read-only.
+Create new navigation property to deployments for admin
 
 ## EXAMPLES
 
@@ -116,7 +114,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -234,19 +232,19 @@ To create the parameters described below, construct a hash table containing the 
 
 AUDIENCE <IMicrosoftGraphWindowsUpdatesDeploymentAudience>: deploymentAudience
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[Exclusions <IMicrosoftGraphWindowsUpdatesUpdatableAsset[]>]`: Specifies the assets to exclude from the audience.
-    - `[Id <String>]`: Read-only.
+    - `[Id <String>]`: 
   - `[Members <IMicrosoftGraphWindowsUpdatesUpdatableAsset[]>]`: Specifies the assets to include in the audience.
 
 BODYPARAMETER <IMicrosoftGraphWindowsUpdatesDeployment>: deployment
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[Audience <IMicrosoftGraphWindowsUpdatesDeploymentAudience>]`: deploymentAudience
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Id <String>]`: Read-only.
+    - `[Id <String>]`: 
     - `[Exclusions <IMicrosoftGraphWindowsUpdatesUpdatableAsset[]>]`: Specifies the assets to exclude from the audience.
-      - `[Id <String>]`: Read-only.
+      - `[Id <String>]`: 
     - `[Members <IMicrosoftGraphWindowsUpdatesUpdatableAsset[]>]`: Specifies the assets to include in the audience.
   - `[Content <IMicrosoftGraphWindowsUpdatesDeployableContent>]`: deployableContent
     - `[(Any) <Object>]`: This indicates any property can be added to this object.

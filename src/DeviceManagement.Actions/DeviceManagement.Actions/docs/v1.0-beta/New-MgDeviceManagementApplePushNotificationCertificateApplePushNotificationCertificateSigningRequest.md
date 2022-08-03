@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgDeviceManagementApplePushNotificationCertificateApplePushNotificationCertificateSigningRequest
 
 ## SYNOPSIS
-Download Apple push notification certificate signing request
+Invoke action generateApplePushNotificationCertificateSigningRequest
 
 ## SYNTAX
 
@@ -18,7 +18,7 @@ New-MgDeviceManagementApplePushNotificationCertificateApplePushNotificationCerti
 ```
 
 ## DESCRIPTION
-Download Apple push notification certificate signing request
+Invoke action generateApplePushNotificationCertificateSigningRequest
 
 ## EXAMPLES
 

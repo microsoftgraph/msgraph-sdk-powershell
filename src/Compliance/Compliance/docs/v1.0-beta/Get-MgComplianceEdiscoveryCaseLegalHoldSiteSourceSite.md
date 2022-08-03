@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgComplianceEdiscoveryCaseLegalHoldSiteSourceSite
 
 ## SYNOPSIS
-The SharePoint site associated with the siteSource.
+Get site from compliance
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Get-MgComplianceEdiscoveryCaseLegalHoldSiteSourceSite -InputObject <IComplianceI
 ```
 
 ## DESCRIPTION
-The SharePoint site associated with the siteSource.
+Get site from compliance
 
 ## EXAMPLES
 
@@ -154,6 +154,7 @@ INPUTOBJECT <IComplianceIdentity>: Identity Parameter
   - `[SiteSourceId <String>]`: key: id of siteSource
   - `[SourceCollectionId <String>]`: key: id of sourceCollection
   - `[TagId <String>]`: key: id of tag
+  - `[TagId1 <String>]`: key: id of tag
   - `[UnifiedGroupSourceId <String>]`: key: id of unifiedGroupSource
   - `[UserSourceId <String>]`: key: id of userSource
 

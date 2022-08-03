@@ -8,8 +8,7 @@ schema: 2.0.0
 # Remove-MgComplianceEdiscoveryCaseCustodianUserSource
 
 ## SYNOPSIS
-Data source entity for a the custodian.
-This is the container for a custodian's mailbox and OneDrive for Business site.
+Delete navigation property userSources for compliance
 
 ## SYNTAX
 
@@ -26,8 +25,7 @@ Remove-MgComplianceEdiscoveryCaseCustodianUserSource -InputObject <IComplianceId
 ```
 
 ## DESCRIPTION
-Data source entity for a the custodian.
-This is the container for a custodian's mailbox and OneDrive for Business site.
+Delete navigation property userSources for compliance
 
 ## EXAMPLES
 
@@ -187,6 +185,7 @@ INPUTOBJECT <IComplianceIdentity>: Identity Parameter
   - `[SiteSourceId <String>]`: key: id of siteSource
   - `[SourceCollectionId <String>]`: key: id of sourceCollection
   - `[TagId <String>]`: key: id of tag
+  - `[TagId1 <String>]`: key: id of tag
   - `[UnifiedGroupSourceId <String>]`: key: id of unifiedGroupSource
   - `[UserSourceId <String>]`: key: id of userSource
 

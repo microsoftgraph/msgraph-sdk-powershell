@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.DeviceManagement.Administration
-Module Guid: 76b3683c-2fae-4bb8-b02a-afe524809706
+Module Guid: af8d2f62-0141-4a4f-9847-1d44a7273d76
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.administration
 Help Version: 1.0.0.0
 Locale: en-US
@@ -12,203 +12,185 @@ Microsoft Graph PowerShell Cmdlets
 
 ## Microsoft.Graph.DeviceManagement.Administration Cmdlets
 ### [Get-MgDeviceManagementApplePushNotificationCertificate](Get-MgDeviceManagementApplePushNotificationCertificate.md)
-Apple push notification certificate.
+Get applePushNotificationCertificate from deviceManagement
 
 ### [Get-MgDeviceManagementComplianceManagementPartner](Get-MgDeviceManagementComplianceManagementPartner.md)
-The list of Compliance Management Partners configured by the tenant.
+Get complianceManagementPartners from deviceManagement
 
 ### [Get-MgDeviceManagementExchangeConnector](Get-MgDeviceManagementExchangeConnector.md)
-The list of Exchange Connectors configured by the tenant.
+Get exchangeConnectors from deviceManagement
 
 ### [Get-MgDeviceManagementIoUpdateStatuses](Get-MgDeviceManagementIoUpdateStatuses.md)
-The IOS software update installation statuses for this account.
+Get iosUpdateStatuses from deviceManagement
 
 ### [Get-MgDeviceManagementMobileThreatDefenseConnector](Get-MgDeviceManagementMobileThreatDefenseConnector.md)
-The list of Mobile threat Defense connectors configured by the tenant.
+Get mobileThreatDefenseConnectors from deviceManagement
 
 ### [Get-MgDeviceManagementPartner](Get-MgDeviceManagementPartner.md)
-The list of Device Management Partners configured by the tenant.
+Get deviceManagementPartners from deviceManagement
 
 ### [Get-MgDeviceManagementRemoteAssistancePartner](Get-MgDeviceManagementRemoteAssistancePartner.md)
-The remote assist partners.
+Get remoteAssistancePartners from deviceManagement
 
 ### [Get-MgDeviceManagementResourceOperation](Get-MgDeviceManagementResourceOperation.md)
-The Resource Operations.
+Get resourceOperations from deviceManagement
 
 ### [Get-MgDeviceManagementRoleAssignment](Get-MgDeviceManagementRoleAssignment.md)
-The Role Assignments.
+Get roleAssignments from deviceManagement
 
 ### [Get-MgDeviceManagementRoleDefinition](Get-MgDeviceManagementRoleDefinition.md)
-The Role Definitions.
+Get roleDefinitions from deviceManagement
 
 ### [Get-MgDeviceManagementRoleDefinitionRoleAssignment](Get-MgDeviceManagementRoleDefinitionRoleAssignment.md)
-List of Role assignments for this role definition.
+Get roleAssignments from deviceManagement
 
 ### [Get-MgDeviceManagementRoleDefinitionRoleAssignmentRoleDefinition](Get-MgDeviceManagementRoleDefinitionRoleAssignmentRoleDefinition.md)
-Role definition this assignment is part of.
-
-### [Get-MgDeviceManagementRoleDefinitionRoleAssignmentRoleDefinitionByRef](Get-MgDeviceManagementRoleDefinitionRoleAssignmentRoleDefinitionByRef.md)
-Role definition this assignment is part of.
+Get roleDefinition from deviceManagement
 
 ### [Get-MgDeviceManagementTelecomExpenseManagementPartner](Get-MgDeviceManagementTelecomExpenseManagementPartner.md)
-The telecom expense management partners.
+Get telecomExpenseManagementPartners from deviceManagement
 
 ### [Get-MgDeviceManagementTermAndCondition](Get-MgDeviceManagementTermAndCondition.md)
-The terms and conditions associated with device management of the company.
+Get termsAndConditions from deviceManagement
 
 ### [Get-MgDeviceManagementTermAndConditionAcceptanceStatuses](Get-MgDeviceManagementTermAndConditionAcceptanceStatuses.md)
-The list of acceptance statuses for this T&C policy.
+Get acceptanceStatuses from deviceManagement
 
 ### [Get-MgDeviceManagementTermAndConditionAcceptanceStatusesTermAndCondition](Get-MgDeviceManagementTermAndConditionAcceptanceStatusesTermAndCondition.md)
-Navigation link to the terms and conditions that are assigned.
-
-### [Get-MgDeviceManagementTermAndConditionAcceptanceStatusesTermAndConditionByRef](Get-MgDeviceManagementTermAndConditionAcceptanceStatusesTermAndConditionByRef.md)
-Navigation link to the terms and conditions that are assigned.
+Get termsAndConditions from deviceManagement
 
 ### [Get-MgDeviceManagementTermAndConditionAssignment](Get-MgDeviceManagementTermAndConditionAssignment.md)
-The list of assignments for this T&C policy.
+Get assignments from deviceManagement
 
 ### [New-MgDeviceManagementComplianceManagementPartner](New-MgDeviceManagementComplianceManagementPartner.md)
-The list of Compliance Management Partners configured by the tenant.
+Create new navigation property to complianceManagementPartners for deviceManagement
 
 ### [New-MgDeviceManagementExchangeConnector](New-MgDeviceManagementExchangeConnector.md)
-The list of Exchange Connectors configured by the tenant.
+Create new navigation property to exchangeConnectors for deviceManagement
 
 ### [New-MgDeviceManagementIoUpdateStatuses](New-MgDeviceManagementIoUpdateStatuses.md)
-The IOS software update installation statuses for this account.
+Create new navigation property to iosUpdateStatuses for deviceManagement
 
 ### [New-MgDeviceManagementMobileThreatDefenseConnector](New-MgDeviceManagementMobileThreatDefenseConnector.md)
-The list of Mobile threat Defense connectors configured by the tenant.
+Create new navigation property to mobileThreatDefenseConnectors for deviceManagement
 
 ### [New-MgDeviceManagementPartner](New-MgDeviceManagementPartner.md)
-The list of Device Management Partners configured by the tenant.
+Create new navigation property to deviceManagementPartners for deviceManagement
 
 ### [New-MgDeviceManagementRemoteAssistancePartner](New-MgDeviceManagementRemoteAssistancePartner.md)
-The remote assist partners.
+Create new navigation property to remoteAssistancePartners for deviceManagement
 
 ### [New-MgDeviceManagementResourceOperation](New-MgDeviceManagementResourceOperation.md)
-The Resource Operations.
+Create new navigation property to resourceOperations for deviceManagement
 
 ### [New-MgDeviceManagementRoleAssignment](New-MgDeviceManagementRoleAssignment.md)
-The Role Assignments.
+Create new navigation property to roleAssignments for deviceManagement
 
 ### [New-MgDeviceManagementRoleDefinition](New-MgDeviceManagementRoleDefinition.md)
-The Role Definitions.
+Create new navigation property to roleDefinitions for deviceManagement
 
 ### [New-MgDeviceManagementRoleDefinitionRoleAssignment](New-MgDeviceManagementRoleDefinitionRoleAssignment.md)
-List of Role assignments for this role definition.
+Create new navigation property to roleAssignments for deviceManagement
 
 ### [New-MgDeviceManagementTelecomExpenseManagementPartner](New-MgDeviceManagementTelecomExpenseManagementPartner.md)
-The telecom expense management partners.
+Create new navigation property to telecomExpenseManagementPartners for deviceManagement
 
 ### [New-MgDeviceManagementTermAndCondition](New-MgDeviceManagementTermAndCondition.md)
-The terms and conditions associated with device management of the company.
+Create new navigation property to termsAndConditions for deviceManagement
 
 ### [New-MgDeviceManagementTermAndConditionAcceptanceStatuses](New-MgDeviceManagementTermAndConditionAcceptanceStatuses.md)
-The list of acceptance statuses for this T&C policy.
+Create new navigation property to acceptanceStatuses for deviceManagement
 
 ### [New-MgDeviceManagementTermAndConditionAssignment](New-MgDeviceManagementTermAndConditionAssignment.md)
-The list of assignments for this T&C policy.
+Create new navigation property to assignments for deviceManagement
 
 ### [Remove-MgDeviceManagementApplePushNotificationCertificate](Remove-MgDeviceManagementApplePushNotificationCertificate.md)
-Apple push notification certificate.
+Delete navigation property applePushNotificationCertificate for deviceManagement
 
 ### [Remove-MgDeviceManagementComplianceManagementPartner](Remove-MgDeviceManagementComplianceManagementPartner.md)
-The list of Compliance Management Partners configured by the tenant.
+Delete navigation property complianceManagementPartners for deviceManagement
 
 ### [Remove-MgDeviceManagementExchangeConnector](Remove-MgDeviceManagementExchangeConnector.md)
-The list of Exchange Connectors configured by the tenant.
+Delete navigation property exchangeConnectors for deviceManagement
 
 ### [Remove-MgDeviceManagementIoUpdateStatuses](Remove-MgDeviceManagementIoUpdateStatuses.md)
-The IOS software update installation statuses for this account.
+Delete navigation property iosUpdateStatuses for deviceManagement
 
 ### [Remove-MgDeviceManagementMobileThreatDefenseConnector](Remove-MgDeviceManagementMobileThreatDefenseConnector.md)
-The list of Mobile threat Defense connectors configured by the tenant.
+Delete navigation property mobileThreatDefenseConnectors for deviceManagement
 
 ### [Remove-MgDeviceManagementPartner](Remove-MgDeviceManagementPartner.md)
-The list of Device Management Partners configured by the tenant.
+Delete navigation property deviceManagementPartners for deviceManagement
 
 ### [Remove-MgDeviceManagementRemoteAssistancePartner](Remove-MgDeviceManagementRemoteAssistancePartner.md)
-The remote assist partners.
+Delete navigation property remoteAssistancePartners for deviceManagement
 
 ### [Remove-MgDeviceManagementResourceOperation](Remove-MgDeviceManagementResourceOperation.md)
-The Resource Operations.
+Delete navigation property resourceOperations for deviceManagement
 
 ### [Remove-MgDeviceManagementRoleAssignment](Remove-MgDeviceManagementRoleAssignment.md)
-The Role Assignments.
+Delete navigation property roleAssignments for deviceManagement
 
 ### [Remove-MgDeviceManagementRoleDefinition](Remove-MgDeviceManagementRoleDefinition.md)
-The Role Definitions.
+Delete navigation property roleDefinitions for deviceManagement
 
 ### [Remove-MgDeviceManagementRoleDefinitionRoleAssignment](Remove-MgDeviceManagementRoleDefinitionRoleAssignment.md)
-List of Role assignments for this role definition.
-
-### [Remove-MgDeviceManagementRoleDefinitionRoleAssignmentRoleDefinitionByRef](Remove-MgDeviceManagementRoleDefinitionRoleAssignmentRoleDefinitionByRef.md)
-Role definition this assignment is part of.
+Delete navigation property roleAssignments for deviceManagement
 
 ### [Remove-MgDeviceManagementTelecomExpenseManagementPartner](Remove-MgDeviceManagementTelecomExpenseManagementPartner.md)
-The telecom expense management partners.
+Delete navigation property telecomExpenseManagementPartners for deviceManagement
 
 ### [Remove-MgDeviceManagementTermAndCondition](Remove-MgDeviceManagementTermAndCondition.md)
-The terms and conditions associated with device management of the company.
+Delete navigation property termsAndConditions for deviceManagement
 
 ### [Remove-MgDeviceManagementTermAndConditionAcceptanceStatuses](Remove-MgDeviceManagementTermAndConditionAcceptanceStatuses.md)
-The list of acceptance statuses for this T&C policy.
-
-### [Remove-MgDeviceManagementTermAndConditionAcceptanceStatusesTermAndConditionByRef](Remove-MgDeviceManagementTermAndConditionAcceptanceStatusesTermAndConditionByRef.md)
-Navigation link to the terms and conditions that are assigned.
+Delete navigation property acceptanceStatuses for deviceManagement
 
 ### [Remove-MgDeviceManagementTermAndConditionAssignment](Remove-MgDeviceManagementTermAndConditionAssignment.md)
-The list of assignments for this T&C policy.
-
-### [Set-MgDeviceManagementRoleDefinitionRoleAssignmentRoleDefinitionByRef](Set-MgDeviceManagementRoleDefinitionRoleAssignmentRoleDefinitionByRef.md)
-Role definition this assignment is part of.
-
-### [Set-MgDeviceManagementTermAndConditionAcceptanceStatusesTermAndConditionByRef](Set-MgDeviceManagementTermAndConditionAcceptanceStatusesTermAndConditionByRef.md)
-Navigation link to the terms and conditions that are assigned.
+Delete navigation property assignments for deviceManagement
 
 ### [Update-MgDeviceManagementApplePushNotificationCertificate](Update-MgDeviceManagementApplePushNotificationCertificate.md)
-Apple push notification certificate.
+Update the navigation property applePushNotificationCertificate in deviceManagement
 
 ### [Update-MgDeviceManagementComplianceManagementPartner](Update-MgDeviceManagementComplianceManagementPartner.md)
-The list of Compliance Management Partners configured by the tenant.
+Update the navigation property complianceManagementPartners in deviceManagement
 
 ### [Update-MgDeviceManagementExchangeConnector](Update-MgDeviceManagementExchangeConnector.md)
-The list of Exchange Connectors configured by the tenant.
+Update the navigation property exchangeConnectors in deviceManagement
 
 ### [Update-MgDeviceManagementIoUpdateStatuses](Update-MgDeviceManagementIoUpdateStatuses.md)
-The IOS software update installation statuses for this account.
+Update the navigation property iosUpdateStatuses in deviceManagement
 
 ### [Update-MgDeviceManagementMobileThreatDefenseConnector](Update-MgDeviceManagementMobileThreatDefenseConnector.md)
-The list of Mobile threat Defense connectors configured by the tenant.
+Update the navigation property mobileThreatDefenseConnectors in deviceManagement
 
 ### [Update-MgDeviceManagementPartner](Update-MgDeviceManagementPartner.md)
-The list of Device Management Partners configured by the tenant.
+Update the navigation property deviceManagementPartners in deviceManagement
 
 ### [Update-MgDeviceManagementRemoteAssistancePartner](Update-MgDeviceManagementRemoteAssistancePartner.md)
-The remote assist partners.
+Update the navigation property remoteAssistancePartners in deviceManagement
 
 ### [Update-MgDeviceManagementResourceOperation](Update-MgDeviceManagementResourceOperation.md)
-The Resource Operations.
+Update the navigation property resourceOperations in deviceManagement
 
 ### [Update-MgDeviceManagementRoleAssignment](Update-MgDeviceManagementRoleAssignment.md)
-The Role Assignments.
+Update the navigation property roleAssignments in deviceManagement
 
 ### [Update-MgDeviceManagementRoleDefinition](Update-MgDeviceManagementRoleDefinition.md)
-The Role Definitions.
+Update the navigation property roleDefinitions in deviceManagement
 
 ### [Update-MgDeviceManagementRoleDefinitionRoleAssignment](Update-MgDeviceManagementRoleDefinitionRoleAssignment.md)
-List of Role assignments for this role definition.
+Update the navigation property roleAssignments in deviceManagement
 
 ### [Update-MgDeviceManagementTelecomExpenseManagementPartner](Update-MgDeviceManagementTelecomExpenseManagementPartner.md)
-The telecom expense management partners.
+Update the navigation property telecomExpenseManagementPartners in deviceManagement
 
 ### [Update-MgDeviceManagementTermAndCondition](Update-MgDeviceManagementTermAndCondition.md)
-The terms and conditions associated with device management of the company.
+Update the navigation property termsAndConditions in deviceManagement
 
 ### [Update-MgDeviceManagementTermAndConditionAcceptanceStatuses](Update-MgDeviceManagementTermAndConditionAcceptanceStatuses.md)
-The list of acceptance statuses for this T&C policy.
+Update the navigation property acceptanceStatuses in deviceManagement
 
 ### [Update-MgDeviceManagementTermAndConditionAssignment](Update-MgDeviceManagementTermAndConditionAssignment.md)
-The list of assignments for this T&C policy.
+Update the navigation property assignments in deviceManagement
 

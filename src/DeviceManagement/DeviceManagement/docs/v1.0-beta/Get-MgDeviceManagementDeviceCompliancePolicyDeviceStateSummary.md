@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceManagementDeviceCompliancePolicyDeviceStateSummary
 
 ## SYNOPSIS
-The device compliance state summary for this account.
+Get deviceCompliancePolicyDeviceStateSummary from deviceManagement
 
 ## SYNTAX
 
@@ -18,7 +18,7 @@ Get-MgDeviceManagementDeviceCompliancePolicyDeviceStateSummary [-ExpandProperty 
 ```
 
 ## DESCRIPTION
-The device compliance state summary for this account.
+Get deviceCompliancePolicyDeviceStateSummary from deviceManagement
 
 ## EXAMPLES
 

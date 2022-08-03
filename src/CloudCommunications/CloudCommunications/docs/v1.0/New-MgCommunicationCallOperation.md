@@ -8,8 +8,7 @@ schema: 2.0.0
 # New-MgCommunicationCallOperation
 
 ## SYNOPSIS
-Read-only.
-Nullable.
+Create new navigation property to operations for communications
 
 ## SYNTAX
 
@@ -40,8 +39,7 @@ New-MgCommunicationCallOperation -InputObject <ICloudCommunicationsIdentity>
 ```
 
 ## DESCRIPTION
-Read-only.
-Nullable.
+Create new navigation property to operations for communications
 
 ## EXAMPLES
 
@@ -110,7 +108,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -226,7 +224,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphCommsOperation>: commsOperation
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[ClientContext <String>]`: Unique Client Context string. Max limit is 256 chars.
   - `[ResultInfo <IMicrosoftGraphResultInfo>]`: resultInfo
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -240,6 +238,7 @@ INPUTOBJECT <ICloudCommunicationsIdentity>: Identity Parameter
   - `[AudioRoutingGroupId <String>]`: key: id of audioRoutingGroup
   - `[CallId <String>]`: key: id of call
   - `[CallRecordId <String>]`: key: id of callRecord
+  - `[CallTranscriptId <String>]`: key: id of callTranscript
   - `[CommsOperationId <String>]`: key: id of commsOperation
   - `[ContentSharingSessionId <String>]`: key: id of contentSharingSession
   - `[MeetingAttendanceReportId <String>]`: key: id of meetingAttendanceReport

@@ -8,8 +8,7 @@ schema: 2.0.0
 # Remove-MgDirectoryCustomSecurityAttributeDefinitionAllowedValue
 
 ## SYNOPSIS
-Values that are predefined for this custom security attribute.This navigation property is not returned by default and must be specified in an $expand query.
-For example, /directory/customSecurityAttributeDefinitions?$expand=allowedValues.
+Delete navigation property allowedValues for directory
 
 ## SYNTAX
 
@@ -28,8 +27,7 @@ Remove-MgDirectoryCustomSecurityAttributeDefinitionAllowedValue
 ```
 
 ## DESCRIPTION
-Values that are predefined for this custom security attribute.This navigation property is not returned by default and must be specified in an $expand query.
-For example, /directory/customSecurityAttributeDefinitions?$expand=allowedValues.
+Delete navigation property allowedValues for directory
 
 ## EXAMPLES
 
@@ -184,6 +182,7 @@ INPUTOBJECT <IIdentityDirectoryManagementIdentity>: Identity Parameter
   - `[InternalDomainFederationId <String>]`: key: id of internalDomainFederation
   - `[OrgContactId <String>]`: key: id of orgContact
   - `[OrganizationId <String>]`: key: id of organization
+  - `[OrganizationalBrandingLocalizationId <String>]`: key: id of organizationalBrandingLocalization
   - `[OutboundSharedUserProfileUserId <String>]`: key: userId of outboundSharedUserProfile
   - `[ProfileCardPropertyId <String>]`: key: id of profileCardProperty
   - `[RecommendationId <String>]`: key: id of recommendation

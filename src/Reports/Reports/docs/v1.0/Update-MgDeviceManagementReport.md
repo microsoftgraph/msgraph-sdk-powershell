@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgDeviceManagementReport
 
 ## SYNOPSIS
-Reports singleton
+Update the navigation property reports in deviceManagement
 
 ## SYNTAX
 
@@ -26,7 +26,7 @@ Update-MgDeviceManagementReport -BodyParameter <IMicrosoftGraphDeviceManagementR
 ```
 
 ## DESCRIPTION
-Reports singleton
+Update the navigation property reports in deviceManagement
 
 ## EXAMPLES
 
@@ -80,7 +80,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -162,31 +162,31 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphDeviceManagementReports>: Singleton entity that acts as a container for all reports functionality.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[ExportJobs <IMicrosoftGraphDeviceManagementExportJob[]>]`: Entity representing a job to export a report
-    - `[Id <String>]`: Read-only.
+    - `[Id <String>]`: 
     - `[ExpirationDateTime <DateTime?>]`: Time that the exported report expires
     - `[Filter <String>]`: Filters applied on the report
-    - `[Format <String>]`: Possible values for the file format of a report
-    - `[LocalizationType <String>]`: Configures how the requested export job is localized
+    - `[Format <DeviceManagementReportFileFormat?>]`: Possible values for the file format of a report
+    - `[LocalizationType <DeviceManagementExportJobLocalizationType?>]`: Configures how the requested export job is localized
     - `[ReportName <String>]`: Name of the report
     - `[RequestDateTime <DateTime?>]`: Time that the exported report was requested
     - `[Select <String[]>]`: Columns selected from the report
     - `[SnapshotId <String>]`: A snapshot is an identifiable subset of the dataset represented by the ReportName. A sessionId or CachedReportConfiguration id can be used here. If a sessionId is specified, Filter, Select, and OrderBy are applied to the data represented by the sessionId. Filter, Select, and OrderBy cannot be specified together with a CachedReportConfiguration id.
-    - `[Status <String>]`: Possible statuses associated with a generated report
+    - `[Status <DeviceManagementReportStatus?>]`: Possible statuses associated with a generated report
     - `[Url <String>]`: Temporary location of the exported report
 
 EXPORTJOBS <IMicrosoftGraphDeviceManagementExportJob[]>: Entity representing a job to export a report
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[ExpirationDateTime <DateTime?>]`: Time that the exported report expires
   - `[Filter <String>]`: Filters applied on the report
-  - `[Format <String>]`: Possible values for the file format of a report
-  - `[LocalizationType <String>]`: Configures how the requested export job is localized
+  - `[Format <DeviceManagementReportFileFormat?>]`: Possible values for the file format of a report
+  - `[LocalizationType <DeviceManagementExportJobLocalizationType?>]`: Configures how the requested export job is localized
   - `[ReportName <String>]`: Name of the report
   - `[RequestDateTime <DateTime?>]`: Time that the exported report was requested
   - `[Select <String[]>]`: Columns selected from the report
   - `[SnapshotId <String>]`: A snapshot is an identifiable subset of the dataset represented by the ReportName. A sessionId or CachedReportConfiguration id can be used here. If a sessionId is specified, Filter, Select, and OrderBy are applied to the data represented by the sessionId. Filter, Select, and OrderBy cannot be specified together with a CachedReportConfiguration id.
-  - `[Status <String>]`: Possible statuses associated with a generated report
+  - `[Status <DeviceManagementReportStatus?>]`: Possible statuses associated with a generated report
   - `[Url <String>]`: Temporary location of the exported report
 
 ## RELATED LINKS

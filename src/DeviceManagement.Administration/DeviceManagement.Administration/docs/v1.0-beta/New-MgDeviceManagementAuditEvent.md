@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgDeviceManagementAuditEvent
 
 ## SYNOPSIS
-The Audit Events
+Create new navigation property to auditEvents for deviceManagement
 
 ## SYNTAX
 
@@ -28,7 +28,7 @@ New-MgDeviceManagementAuditEvent -BodyParameter <IMicrosoftGraphAuditEvent> [-Co
 ```
 
 ## DESCRIPTION
-The Audit Events
+Create new navigation property to auditEvents for deviceManagement
 
 ## EXAMPLES
 
@@ -217,7 +217,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -316,7 +316,7 @@ ACTOR <IMicrosoftGraphAuditActor>: A class containing the properties for Audit A
 
 BODYPARAMETER <IMicrosoftGraphAuditEvent>: A class containing the properties for Audit Event.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[Activity <String>]`: Friendly name of the activity.
   - `[ActivityDateTime <DateTime?>]`: The date time in UTC when the activity was performed.
   - `[ActivityOperationType <String>]`: The HTTP operation type of the activity.

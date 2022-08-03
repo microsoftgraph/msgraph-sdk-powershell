@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgDeviceManagementGroupPolicyUploadedDefinitionFile
 
 ## SYNOPSIS
-The available group policy uploaded definition files for this account.
+Update the navigation property groupPolicyUploadedDefinitionFiles in deviceManagement
 
 ## SYNTAX
 
@@ -19,9 +19,9 @@ Update-MgDeviceManagementGroupPolicyUploadedDefinitionFile -GroupPolicyUploadedD
  [-Definitions <IMicrosoftGraphGroupPolicyDefinition[]>] [-Description <String>] [-DisplayName <String>]
  [-FileName <String>] [-GroupPolicyOperations <IMicrosoftGraphGroupPolicyOperation[]>]
  [-GroupPolicyUploadedLanguageFiles <IMicrosoftGraphGroupPolicyUploadedLanguageFile[]>] [-Id <String>]
- [-LanguageCodes <String[]>] [-LastModifiedDateTime <DateTime>] [-PolicyType <String>] [-Revision <String>]
- [-Status <String>] [-TargetNamespace <String>] [-TargetPrefix <String>] [-UploadDateTime <DateTime>]
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-LanguageCodes <String[]>] [-LastModifiedDateTime <DateTime>] [-PolicyType <GroupPolicyType>]
+ [-Revision <String>] [-Status <GroupPolicyUploadedDefinitionFileStatus>] [-TargetNamespace <String>]
+ [-TargetPrefix <String>] [-UploadDateTime <DateTime>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
@@ -47,13 +47,13 @@ Update-MgDeviceManagementGroupPolicyUploadedDefinitionFile
  [-Definitions <IMicrosoftGraphGroupPolicyDefinition[]>] [-Description <String>] [-DisplayName <String>]
  [-FileName <String>] [-GroupPolicyOperations <IMicrosoftGraphGroupPolicyOperation[]>]
  [-GroupPolicyUploadedLanguageFiles <IMicrosoftGraphGroupPolicyUploadedLanguageFile[]>] [-Id <String>]
- [-LanguageCodes <String[]>] [-LastModifiedDateTime <DateTime>] [-PolicyType <String>] [-Revision <String>]
- [-Status <String>] [-TargetNamespace <String>] [-TargetPrefix <String>] [-UploadDateTime <DateTime>]
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-LanguageCodes <String[]>] [-LastModifiedDateTime <DateTime>] [-PolicyType <GroupPolicyType>]
+ [-Revision <String>] [-Status <GroupPolicyUploadedDefinitionFileStatus>] [-TargetNamespace <String>]
+ [-TargetPrefix <String>] [-UploadDateTime <DateTime>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-The available group policy uploaded definition files for this account.
+Update the navigation property groupPolicyUploadedDefinitionFiles in deviceManagement
 
 ## EXAMPLES
 
@@ -233,7 +233,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -312,7 +312,7 @@ Accept wildcard characters: False
 Type of Group Policy File or Definition.
 
 ```yaml
-Type: System.String
+Type: Microsoft.Graph.PowerShell.Support.GroupPolicyType
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -342,7 +342,7 @@ Accept wildcard characters: False
 Type of Group Policy uploaded definition file status.
 
 ```yaml
-Type: System.String
+Type: Microsoft.Graph.PowerShell.Support.GroupPolicyUploadedDefinitionFileStatus
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -454,21 +454,21 @@ To create the parameters described below, construct a hash table containing the 
 BODYPARAMETER <IMicrosoftGraphGroupPolicyUploadedDefinitionFile>: The entity represents an ADMX (Administrative Template) XML file uploaded by Administrator. The ADMX file contains a collection of group policy definitions and their locations by category path. The group policy definition file also contains the languages supported as determined by the language dependent ADML (Administrative Template) language files.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Definitions <IMicrosoftGraphGroupPolicyDefinition[]>]`: The group policy definitions associated with the file.
-    - `[Id <String>]`: Read-only.
+    - `[Id <String>]`: 
     - `[Category <IMicrosoftGraphGroupPolicyCategory>]`: The category entity stores the category of a group policy definition
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[Id <String>]`: Read-only.
+      - `[Id <String>]`: 
       - `[Children <IMicrosoftGraphGroupPolicyCategory[]>]`: The children categories
       - `[DefinitionFile <IMicrosoftGraphGroupPolicyDefinitionFile>]`: The entity represents an ADMX (Administrative Template) XML file. The ADMX file contains a collection of group policy definitions and their locations by category path. The group policy definition file also contains the languages supported as determined by the language dependent ADML (Administrative Template) language files.
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
-        - `[Id <String>]`: Read-only.
+        - `[Id <String>]`: 
         - `[Definitions <IMicrosoftGraphGroupPolicyDefinition[]>]`: The group policy definitions associated with the file.
         - `[Description <String>]`: The localized description of the policy settings in the ADMX file. The default value is empty.
         - `[DisplayName <String>]`: The localized friendly name of the ADMX file.
         - `[FileName <String>]`: The file name of the ADMX file without the path. For example: edge.admx
         - `[LanguageCodes <String[]>]`: The supported language codes for the ADMX file.
         - `[LastModifiedDateTime <DateTime?>]`: The date and time the entity was last modified.
-        - `[PolicyType <String>]`: Type of Group Policy File or Definition.
+        - `[PolicyType <GroupPolicyType?>]`: Type of Group Policy File or Definition.
         - `[Revision <String>]`: The revision version associated with the file.
         - `[TargetNamespace <String>]`: Specifies the URI used to identify the namespace within the ADMX file.
         - `[TargetPrefix <String>]`: Specifies the logical name that refers to the namespace within the ADMX file.
@@ -478,7 +478,7 @@ BODYPARAMETER <IMicrosoftGraphGroupPolicyUploadedDefinitionFile>: The entity rep
       - `[LastModifiedDateTime <DateTime?>]`: The date and time the entity was last modified.
       - `[Parent <IMicrosoftGraphGroupPolicyCategory>]`: The category entity stores the category of a group policy definition
     - `[CategoryPath <String>]`: The localized full category path for the policy.
-    - `[ClassType <String>]`: Group Policy Definition Class Type.
+    - `[ClassType <GroupPolicyDefinitionClassType?>]`: Group Policy Definition Class Type.
     - `[DefinitionFile <IMicrosoftGraphGroupPolicyDefinitionFile>]`: The entity represents an ADMX (Administrative Template) XML file. The ADMX file contains a collection of group policy definitions and their locations by category path. The group policy definition file also contains the languages supported as determined by the language dependent ADML (Administrative Template) language files.
     - `[DisplayName <String>]`: The localized policy name.
     - `[ExplainText <String>]`: The localized explanation or help text associated with the policy. The default value is empty.
@@ -488,9 +488,9 @@ BODYPARAMETER <IMicrosoftGraphGroupPolicyUploadedDefinitionFile>: The entity rep
     - `[MinDeviceCspVersion <String>]`: Minimum required CSP version for device configuration in this definition
     - `[MinUserCspVersion <String>]`: Minimum required CSP version for user configuration in this definition
     - `[NextVersionDefinition <IMicrosoftGraphGroupPolicyDefinition>]`: The entity describes all of the information about a single group policy.
-    - `[PolicyType <String>]`: Type of Group Policy File or Definition.
+    - `[PolicyType <GroupPolicyType?>]`: Type of Group Policy File or Definition.
     - `[Presentations <IMicrosoftGraphGroupPolicyPresentation[]>]`: The group policy presentations associated with the definition.
-      - `[Id <String>]`: Read-only.
+      - `[Id <String>]`: 
       - `[Definition <IMicrosoftGraphGroupPolicyDefinition>]`: The entity describes all of the information about a single group policy.
       - `[Label <String>]`: Localized text label for any presentation entity. The default value is empty.
       - `[LastModifiedDateTime <DateTime?>]`: The date and time the entity was last modified.
@@ -502,18 +502,18 @@ BODYPARAMETER <IMicrosoftGraphGroupPolicyUploadedDefinitionFile>: The entity rep
   - `[FileName <String>]`: The file name of the ADMX file without the path. For example: edge.admx
   - `[LanguageCodes <String[]>]`: The supported language codes for the ADMX file.
   - `[LastModifiedDateTime <DateTime?>]`: The date and time the entity was last modified.
-  - `[PolicyType <String>]`: Type of Group Policy File or Definition.
+  - `[PolicyType <GroupPolicyType?>]`: Type of Group Policy File or Definition.
   - `[Revision <String>]`: The revision version associated with the file.
   - `[TargetNamespace <String>]`: Specifies the URI used to identify the namespace within the ADMX file.
   - `[TargetPrefix <String>]`: Specifies the logical name that refers to the namespace within the ADMX file.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[Content <Byte[]>]`: The contents of the uploaded ADMX file.
   - `[DefaultLanguageCode <String>]`: The default language of the uploaded ADMX file.
   - `[GroupPolicyOperations <IMicrosoftGraphGroupPolicyOperation[]>]`: The list of operations on the uploaded ADMX file.
-    - `[Id <String>]`: Read-only.
+    - `[Id <String>]`: 
     - `[LastModifiedDateTime <DateTime?>]`: The date and time the entity was last modified.
-    - `[OperationStatus <String>]`: Type of Group Policy operation status.
-    - `[OperationType <String>]`: Type of Group Policy operation.
+    - `[OperationStatus <GroupPolicyOperationStatus?>]`: Type of Group Policy operation status.
+    - `[OperationType <GroupPolicyOperationType?>]`: Type of Group Policy operation.
     - `[StatusDetails <String>]`: The group policy operation status detail.
   - `[GroupPolicyUploadedLanguageFiles <IMicrosoftGraphGroupPolicyUploadedLanguageFile[]>]`: The list of ADML files associated with the uploaded ADMX file.
     - `[Content <Byte[]>]`: The contents of the uploaded ADML file.
@@ -521,25 +521,25 @@ BODYPARAMETER <IMicrosoftGraphGroupPolicyUploadedDefinitionFile>: The entity rep
     - `[Id <String>]`: Key of the entity.
     - `[LanguageCode <String>]`: The language code of the uploaded ADML file.
     - `[LastModifiedDateTime <DateTime?>]`: The date and time the entity was last modified.
-  - `[Status <String>]`: Type of Group Policy uploaded definition file status.
+  - `[Status <GroupPolicyUploadedDefinitionFileStatus?>]`: Type of Group Policy uploaded definition file status.
   - `[UploadDateTime <DateTime?>]`: The uploaded time of the uploaded ADMX file.
 
 DEFINITIONS <IMicrosoftGraphGroupPolicyDefinition[]>: The group policy definitions associated with the file.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[Category <IMicrosoftGraphGroupPolicyCategory>]`: The category entity stores the category of a group policy definition
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Id <String>]`: Read-only.
+    - `[Id <String>]`: 
     - `[Children <IMicrosoftGraphGroupPolicyCategory[]>]`: The children categories
     - `[DefinitionFile <IMicrosoftGraphGroupPolicyDefinitionFile>]`: The entity represents an ADMX (Administrative Template) XML file. The ADMX file contains a collection of group policy definitions and their locations by category path. The group policy definition file also contains the languages supported as determined by the language dependent ADML (Administrative Template) language files.
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[Id <String>]`: Read-only.
+      - `[Id <String>]`: 
       - `[Definitions <IMicrosoftGraphGroupPolicyDefinition[]>]`: The group policy definitions associated with the file.
       - `[Description <String>]`: The localized description of the policy settings in the ADMX file. The default value is empty.
       - `[DisplayName <String>]`: The localized friendly name of the ADMX file.
       - `[FileName <String>]`: The file name of the ADMX file without the path. For example: edge.admx
       - `[LanguageCodes <String[]>]`: The supported language codes for the ADMX file.
       - `[LastModifiedDateTime <DateTime?>]`: The date and time the entity was last modified.
-      - `[PolicyType <String>]`: Type of Group Policy File or Definition.
+      - `[PolicyType <GroupPolicyType?>]`: Type of Group Policy File or Definition.
       - `[Revision <String>]`: The revision version associated with the file.
       - `[TargetNamespace <String>]`: Specifies the URI used to identify the namespace within the ADMX file.
       - `[TargetPrefix <String>]`: Specifies the logical name that refers to the namespace within the ADMX file.
@@ -549,7 +549,7 @@ DEFINITIONS <IMicrosoftGraphGroupPolicyDefinition[]>: The group policy definitio
     - `[LastModifiedDateTime <DateTime?>]`: The date and time the entity was last modified.
     - `[Parent <IMicrosoftGraphGroupPolicyCategory>]`: The category entity stores the category of a group policy definition
   - `[CategoryPath <String>]`: The localized full category path for the policy.
-  - `[ClassType <String>]`: Group Policy Definition Class Type.
+  - `[ClassType <GroupPolicyDefinitionClassType?>]`: Group Policy Definition Class Type.
   - `[DefinitionFile <IMicrosoftGraphGroupPolicyDefinitionFile>]`: The entity represents an ADMX (Administrative Template) XML file. The ADMX file contains a collection of group policy definitions and their locations by category path. The group policy definition file also contains the languages supported as determined by the language dependent ADML (Administrative Template) language files.
   - `[DisplayName <String>]`: The localized policy name.
   - `[ExplainText <String>]`: The localized explanation or help text associated with the policy. The default value is empty.
@@ -559,9 +559,9 @@ DEFINITIONS <IMicrosoftGraphGroupPolicyDefinition[]>: The group policy definitio
   - `[MinDeviceCspVersion <String>]`: Minimum required CSP version for device configuration in this definition
   - `[MinUserCspVersion <String>]`: Minimum required CSP version for user configuration in this definition
   - `[NextVersionDefinition <IMicrosoftGraphGroupPolicyDefinition>]`: The entity describes all of the information about a single group policy.
-  - `[PolicyType <String>]`: Type of Group Policy File or Definition.
+  - `[PolicyType <GroupPolicyType?>]`: Type of Group Policy File or Definition.
   - `[Presentations <IMicrosoftGraphGroupPolicyPresentation[]>]`: The group policy presentations associated with the definition.
-    - `[Id <String>]`: Read-only.
+    - `[Id <String>]`: 
     - `[Definition <IMicrosoftGraphGroupPolicyDefinition>]`: The entity describes all of the information about a single group policy.
     - `[Label <String>]`: Localized text label for any presentation entity. The default value is empty.
     - `[LastModifiedDateTime <DateTime?>]`: The date and time the entity was last modified.
@@ -570,10 +570,10 @@ DEFINITIONS <IMicrosoftGraphGroupPolicyDefinition[]>: The group policy definitio
   - `[Version <String>]`: Setting definition version
 
 GROUPPOLICYOPERATIONS <IMicrosoftGraphGroupPolicyOperation[]>: The list of operations on the uploaded ADMX file.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[LastModifiedDateTime <DateTime?>]`: The date and time the entity was last modified.
-  - `[OperationStatus <String>]`: Type of Group Policy operation status.
-  - `[OperationType <String>]`: Type of Group Policy operation.
+  - `[OperationStatus <GroupPolicyOperationStatus?>]`: Type of Group Policy operation status.
+  - `[OperationType <GroupPolicyOperationType?>]`: Type of Group Policy operation.
   - `[StatusDetails <String>]`: The group policy operation status detail.
 
 GROUPPOLICYUPLOADEDLANGUAGEFILES <IMicrosoftGraphGroupPolicyUploadedLanguageFile[]>: The list of ADML files associated with the uploaded ADMX file.
@@ -588,6 +588,7 @@ INPUTOBJECT <IDeviceManagementAdministrationIdentity>: Identity Parameter
   - `[CartToClassAssociationId <String>]`: key: id of cartToClassAssociation
   - `[CloudPcAuditEventId <String>]`: key: id of cloudPcAuditEvent
   - `[CloudPcDeviceImageId <String>]`: key: id of cloudPcDeviceImage
+  - `[CloudPcExternalPartnerSettingId <String>]`: key: id of cloudPcExternalPartnerSetting
   - `[CloudPcGalleryImageId <String>]`: key: id of cloudPcGalleryImage
   - `[CloudPcId <String>]`: key: id of cloudPC
   - `[CloudPcOnPremisesConnectionId <String>]`: key: id of cloudPcOnPremisesConnection
@@ -606,6 +607,7 @@ INPUTOBJECT <IDeviceManagementAdministrationIdentity>: Identity Parameter
   - `[DeviceManagementExchangeOnPremisesPolicyId <String>]`: key: id of deviceManagementExchangeOnPremisesPolicy
   - `[DeviceManagementPartnerId <String>]`: key: id of deviceManagementPartner
   - `[GroupPolicyCategoryId <String>]`: key: id of groupPolicyCategory
+  - `[GroupPolicyCategoryId1 <String>]`: key: id of groupPolicyCategory
   - `[GroupPolicyDefinitionFileId <String>]`: key: id of groupPolicyDefinitionFile
   - `[GroupPolicyDefinitionId <String>]`: key: id of groupPolicyDefinition
   - `[GroupPolicyMigrationReportId <String>]`: key: id of groupPolicyMigrationReport

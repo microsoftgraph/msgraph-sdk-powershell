@@ -8,7 +8,7 @@ schema: 2.0.0
 # Set-MgGroupOnenoteSectionPageContent
 
 ## SYNOPSIS
-Update media content for the navigation property pages in groups
+Update content for the navigation property pages in groups
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Set-MgGroupOnenoteSectionPageContent -InputObject <INotesIdentity> -InFile <Stri
 ```
 
 ## DESCRIPTION
-Update media content for the navigation property pages in groups
+Update content for the navigation property pages in groups
 
 ## EXAMPLES
 

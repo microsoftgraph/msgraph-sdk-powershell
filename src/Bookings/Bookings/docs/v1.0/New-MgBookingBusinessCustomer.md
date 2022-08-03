@@ -8,9 +8,7 @@ schema: 2.0.0
 # New-MgBookingBusinessCustomer
 
 ## SYNOPSIS
-All the customers of this business.
-Read-only.
-Nullable.
+Create new navigation property to customers for solutions
 
 ## SYNTAX
 
@@ -39,9 +37,7 @@ New-MgBookingBusinessCustomer -InputObject <IBookingsIdentity> [-AdditionalPrope
 ```
 
 ## DESCRIPTION
-All the customers of this business.
-Read-only.
-Nullable.
+Create new navigation property to customers for solutions
 
 ## EXAMPLES
 
@@ -93,7 +89,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String

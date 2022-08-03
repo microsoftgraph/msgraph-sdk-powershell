@@ -40,8 +40,8 @@ paths:
                 - subscriptionState
                 - userExperienceAnalyticsSettings
                 - windowsMalwareOverview
-                - androidDeviceOwnerEnrollmentProfiles
                 - virtualEndpoint
+                - androidDeviceOwnerEnrollmentProfiles
                 - androidForWorkAppConfigurationSchemas
                 - androidForWorkEnrollmentProfiles
                 - androidForWorkSettings
@@ -207,8 +207,8 @@ paths:
             items:
               enum:
                 - '*'
-                - androidDeviceOwnerEnrollmentProfiles
                 - virtualEndpoint
+                - androidDeviceOwnerEnrollmentProfiles
                 - androidForWorkAppConfigurationSchemas
                 - androidForWorkEnrollmentProfiles
                 - androidForWorkSettings
@@ -371,10 +371,10 @@ paths:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.deviceManagement'
           links:
-            androidDeviceOwnerEnrollmentProfiles:
-              operationId: deviceManagement.ListAndroidDeviceOwnerEnrollmentProfiles
             virtualEndpoint:
               operationId: deviceManagement.GetVirtualEndpoint
+            androidDeviceOwnerEnrollmentProfiles:
+              operationId: deviceManagement.ListAndroidDeviceOwnerEnrollmentProfiles
             androidForWorkAppConfigurationSchemas:
               operationId: deviceManagement.ListAndroidGraphFPreWorkAppConfigurationSchemas
             androidForWorkEnrollmentProfiles:
@@ -2324,6 +2324,8 @@ paths:
                 - azureADDeviceId desc
                 - azureADRegistered
                 - azureADRegistered desc
+                - bootstrapTokenEscrowed
+                - bootstrapTokenEscrowed desc
                 - chassisType
                 - chassisType desc
                 - chromeOSDeviceInfo
@@ -2344,6 +2346,8 @@ paths:
                 - deviceCategoryDisplayName desc
                 - deviceEnrollmentType
                 - deviceEnrollmentType desc
+                - deviceFirmwareConfigurationInterfaceManaged
+                - deviceFirmwareConfigurationInterfaceManaged desc
                 - deviceHealthAttestationState
                 - deviceHealthAttestationState desc
                 - deviceName
@@ -2486,6 +2490,7 @@ paths:
                 - azureActiveDirectoryDeviceId
                 - azureADDeviceId
                 - azureADRegistered
+                - bootstrapTokenEscrowed
                 - chassisType
                 - chromeOSDeviceInfo
                 - complianceGracePeriodExpirationDateTime
@@ -2496,6 +2501,7 @@ paths:
                 - deviceActionResults
                 - deviceCategoryDisplayName
                 - deviceEnrollmentType
+                - deviceFirmwareConfigurationInterfaceManaged
                 - deviceHealthAttestationState
                 - deviceName
                 - deviceRegistrationState
@@ -2654,6 +2660,7 @@ paths:
                 - azureActiveDirectoryDeviceId
                 - azureADDeviceId
                 - azureADRegistered
+                - bootstrapTokenEscrowed
                 - chassisType
                 - chromeOSDeviceInfo
                 - complianceGracePeriodExpirationDateTime
@@ -2664,6 +2671,7 @@ paths:
                 - deviceActionResults
                 - deviceCategoryDisplayName
                 - deviceEnrollmentType
+                - deviceFirmwareConfigurationInterfaceManaged
                 - deviceHealthAttestationState
                 - deviceName
                 - deviceRegistrationState
@@ -4959,6 +4967,8 @@ paths:
                 - assignedLicenses desc
                 - assignedPlans
                 - assignedPlans desc
+                - authorizationInfo
+                - authorizationInfo desc
                 - businessPhones
                 - businessPhones desc
                 - city
@@ -5061,6 +5071,8 @@ paths:
                 - proxyAddresses desc
                 - refreshTokensValidFromDateTime
                 - refreshTokensValidFromDateTime desc
+                - securityIdentifier
+                - securityIdentifier desc
                 - showInAddressList
                 - showInAddressList desc
                 - signInSessionsValidFromDateTime
@@ -5121,6 +5133,7 @@ paths:
                 - ageGroup
                 - assignedLicenses
                 - assignedPlans
+                - authorizationInfo
                 - businessPhones
                 - city
                 - companyName
@@ -5172,6 +5185,7 @@ paths:
                 - provisionedPlans
                 - proxyAddresses
                 - refreshTokensValidFromDateTime
+                - securityIdentifier
                 - showInAddressList
                 - signInSessionsValidFromDateTime
                 - state
@@ -9958,6 +9972,8 @@ paths:
                 - azureADDeviceId desc
                 - azureADRegistered
                 - azureADRegistered desc
+                - bootstrapTokenEscrowed
+                - bootstrapTokenEscrowed desc
                 - chassisType
                 - chassisType desc
                 - chromeOSDeviceInfo
@@ -9978,6 +9994,8 @@ paths:
                 - deviceCategoryDisplayName desc
                 - deviceEnrollmentType
                 - deviceEnrollmentType desc
+                - deviceFirmwareConfigurationInterfaceManaged
+                - deviceFirmwareConfigurationInterfaceManaged desc
                 - deviceHealthAttestationState
                 - deviceHealthAttestationState desc
                 - deviceName
@@ -10120,6 +10138,7 @@ paths:
                 - azureActiveDirectoryDeviceId
                 - azureADDeviceId
                 - azureADRegistered
+                - bootstrapTokenEscrowed
                 - chassisType
                 - chromeOSDeviceInfo
                 - complianceGracePeriodExpirationDateTime
@@ -10130,6 +10149,7 @@ paths:
                 - deviceActionResults
                 - deviceCategoryDisplayName
                 - deviceEnrollmentType
+                - deviceFirmwareConfigurationInterfaceManaged
                 - deviceHealthAttestationState
                 - deviceName
                 - deviceRegistrationState
@@ -10273,6 +10293,7 @@ paths:
                 - azureActiveDirectoryDeviceId
                 - azureADDeviceId
                 - azureADRegistered
+                - bootstrapTokenEscrowed
                 - chassisType
                 - chromeOSDeviceInfo
                 - complianceGracePeriodExpirationDateTime
@@ -10283,6 +10304,7 @@ paths:
                 - deviceActionResults
                 - deviceCategoryDisplayName
                 - deviceEnrollmentType
+                - deviceFirmwareConfigurationInterfaceManaged
                 - deviceHealthAttestationState
                 - deviceName
                 - deviceRegistrationState
@@ -16095,6 +16117,7 @@ paths:
                 - azureActiveDirectoryDeviceId
                 - azureADDeviceId
                 - azureADRegistered
+                - bootstrapTokenEscrowed
                 - chassisType
                 - chromeOSDeviceInfo
                 - complianceGracePeriodExpirationDateTime
@@ -16105,6 +16128,7 @@ paths:
                 - deviceActionResults
                 - deviceCategoryDisplayName
                 - deviceEnrollmentType
+                - deviceFirmwareConfigurationInterfaceManaged
                 - deviceHealthAttestationState
                 - deviceName
                 - deviceRegistrationState
@@ -17132,6 +17156,7 @@ paths:
                 - azureActiveDirectoryDeviceId
                 - azureADDeviceId
                 - azureADRegistered
+                - bootstrapTokenEscrowed
                 - chassisType
                 - chromeOSDeviceInfo
                 - complianceGracePeriodExpirationDateTime
@@ -17142,6 +17167,7 @@ paths:
                 - deviceActionResults
                 - deviceCategoryDisplayName
                 - deviceEnrollmentType
+                - deviceFirmwareConfigurationInterfaceManaged
                 - deviceHealthAttestationState
                 - deviceName
                 - deviceRegistrationState
@@ -18130,6 +18156,7 @@ paths:
                 - azureActiveDirectoryDeviceId
                 - azureADDeviceId
                 - azureADRegistered
+                - bootstrapTokenEscrowed
                 - chassisType
                 - chromeOSDeviceInfo
                 - complianceGracePeriodExpirationDateTime
@@ -18140,6 +18167,7 @@ paths:
                 - deviceActionResults
                 - deviceCategoryDisplayName
                 - deviceEnrollmentType
+                - deviceFirmwareConfigurationInterfaceManaged
                 - deviceHealthAttestationState
                 - deviceName
                 - deviceRegistrationState
@@ -19072,6 +19100,7 @@ paths:
                 - azureActiveDirectoryDeviceId
                 - azureADDeviceId
                 - azureADRegistered
+                - bootstrapTokenEscrowed
                 - chassisType
                 - chromeOSDeviceInfo
                 - complianceGracePeriodExpirationDateTime
@@ -19082,6 +19111,7 @@ paths:
                 - deviceActionResults
                 - deviceCategoryDisplayName
                 - deviceEnrollmentType
+                - deviceFirmwareConfigurationInterfaceManaged
                 - deviceHealthAttestationState
                 - deviceName
                 - deviceRegistrationState
@@ -20070,6 +20100,7 @@ paths:
                 - azureActiveDirectoryDeviceId
                 - azureADDeviceId
                 - azureADRegistered
+                - bootstrapTokenEscrowed
                 - chassisType
                 - chromeOSDeviceInfo
                 - complianceGracePeriodExpirationDateTime
@@ -20080,6 +20111,7 @@ paths:
                 - deviceActionResults
                 - deviceCategoryDisplayName
                 - deviceEnrollmentType
+                - deviceFirmwareConfigurationInterfaceManaged
                 - deviceHealthAttestationState
                 - deviceName
                 - deviceRegistrationState
@@ -25355,6 +25387,8 @@ paths:
                 - azureADDeviceId desc
                 - azureADRegistered
                 - azureADRegistered desc
+                - bootstrapTokenEscrowed
+                - bootstrapTokenEscrowed desc
                 - chassisType
                 - chassisType desc
                 - chromeOSDeviceInfo
@@ -25375,6 +25409,8 @@ paths:
                 - deviceCategoryDisplayName desc
                 - deviceEnrollmentType
                 - deviceEnrollmentType desc
+                - deviceFirmwareConfigurationInterfaceManaged
+                - deviceFirmwareConfigurationInterfaceManaged desc
                 - deviceHealthAttestationState
                 - deviceHealthAttestationState desc
                 - deviceName
@@ -25517,6 +25553,7 @@ paths:
                 - azureActiveDirectoryDeviceId
                 - azureADDeviceId
                 - azureADRegistered
+                - bootstrapTokenEscrowed
                 - chassisType
                 - chromeOSDeviceInfo
                 - complianceGracePeriodExpirationDateTime
@@ -25527,6 +25564,7 @@ paths:
                 - deviceActionResults
                 - deviceCategoryDisplayName
                 - deviceEnrollmentType
+                - deviceFirmwareConfigurationInterfaceManaged
                 - deviceHealthAttestationState
                 - deviceName
                 - deviceRegistrationState
@@ -25685,6 +25723,7 @@ paths:
                 - azureActiveDirectoryDeviceId
                 - azureADDeviceId
                 - azureADRegistered
+                - bootstrapTokenEscrowed
                 - chassisType
                 - chromeOSDeviceInfo
                 - complianceGracePeriodExpirationDateTime
@@ -25695,6 +25734,7 @@ paths:
                 - deviceActionResults
                 - deviceCategoryDisplayName
                 - deviceEnrollmentType
+                - deviceFirmwareConfigurationInterfaceManaged
                 - deviceHealthAttestationState
                 - deviceName
                 - deviceRegistrationState
@@ -27990,6 +28030,8 @@ paths:
                 - assignedLicenses desc
                 - assignedPlans
                 - assignedPlans desc
+                - authorizationInfo
+                - authorizationInfo desc
                 - businessPhones
                 - businessPhones desc
                 - city
@@ -28092,6 +28134,8 @@ paths:
                 - proxyAddresses desc
                 - refreshTokensValidFromDateTime
                 - refreshTokensValidFromDateTime desc
+                - securityIdentifier
+                - securityIdentifier desc
                 - showInAddressList
                 - showInAddressList desc
                 - signInSessionsValidFromDateTime
@@ -28152,6 +28196,7 @@ paths:
                 - ageGroup
                 - assignedLicenses
                 - assignedPlans
+                - authorizationInfo
                 - businessPhones
                 - city
                 - companyName
@@ -28203,6 +28248,7 @@ paths:
                 - provisionedPlans
                 - proxyAddresses
                 - refreshTokensValidFromDateTime
+                - securityIdentifier
                 - showInAddressList
                 - signInSessionsValidFromDateTime
                 - state
@@ -44639,13 +44685,13 @@ components:
               $ref: '#/components/schemas/microsoft.graph.userExperienceAnalyticsSettings'
             windowsMalwareOverview:
               $ref: '#/components/schemas/microsoft.graph.windowsMalwareOverview'
+            virtualEndpoint:
+              $ref: '#/components/schemas/microsoft.graph.virtualEndpoint'
             androidDeviceOwnerEnrollmentProfiles:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.androidDeviceOwnerEnrollmentProfile'
               description: Android device owner enrollment profile entities.
-            virtualEndpoint:
-              $ref: '#/components/schemas/microsoft.graph.virtualEndpoint'
             androidForWorkAppConfigurationSchemas:
               type: array
               items:
@@ -45755,6 +45801,9 @@ components:
               type: boolean
               description: Whether the device is Azure Active Directory registered. This property is read-only.
               nullable: true
+            bootstrapTokenEscrowed:
+              type: boolean
+              description: 'Reports if the managed device has an escrowed Bootstrap Token. This is only for macOS devices. To get, include BootstrapTokenEscrowed in the select clause and query with a device id. If FALSE, no bootstrap token is escrowed. If TRUE, the device has escrowed a bootstrap token with Intune. This property is read-only.'
             chassisType:
               $ref: '#/components/schemas/microsoft.graph.chassisType'
             chromeOSDeviceInfo:
@@ -45786,6 +45835,9 @@ components:
               nullable: true
             deviceEnrollmentType:
               $ref: '#/components/schemas/microsoft.graph.deviceEnrollmentType'
+            deviceFirmwareConfigurationInterfaceManaged:
+              type: boolean
+              description: 'Indicates whether the device is DFCI managed. When TRUE the device is DFCI managed. When FALSE, the device is not DFCI managed. The default value is FALSE.'
             deviceHealthAttestationState:
               $ref: '#/components/schemas/microsoft.graph.deviceHealthAttestationState'
             deviceName:
@@ -52120,6 +52172,71 @@ components:
       additionalProperties:
         type: object
       description: Windows device malware overview.
+    microsoft.graph.virtualEndpoint:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: virtualEndpoint
+          type: object
+          properties:
+            auditEvents:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.cloudPcAuditEvent'
+              description: Cloud PC audit event.
+            cloudPCs:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.cloudPC'
+              description: Cloud managed virtual desktops.
+            deviceImages:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.cloudPcDeviceImage'
+              description: The image resource on Cloud PC.
+            externalPartnerSettings:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.cloudPcExternalPartnerSetting'
+              description: The external partner settings on a Cloud PC.
+            galleryImages:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.cloudPcGalleryImage'
+              description: The gallery image resource on Cloud PC.
+            onPremisesConnections:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.cloudPcOnPremisesConnection'
+              description: A defined collection of Azure resource information that can be used to establish on-premises network connectivity for Cloud PCs.
+            organizationSettings:
+              $ref: '#/components/schemas/microsoft.graph.cloudPcOrganizationSettings'
+            provisioningPolicies:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.cloudPcProvisioningPolicy'
+              description: Cloud PC provisioning policy.
+            servicePlans:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.cloudPcServicePlan'
+              description: Cloud PC service plans.
+            snapshots:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.cloudPcSnapshot'
+              description: Cloud PC snapshots.
+            supportedRegions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.cloudPcSupportedRegion'
+              description: Cloud PC supported regions.
+            userSettings:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.cloudPcUserSetting'
+              description: Cloud PC user settings.
+          additionalProperties:
+            type: object
     microsoft.graph.androidDeviceOwnerEnrollmentProfile:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -52206,66 +52323,6 @@ components:
           additionalProperties:
             type: object
           description: Enrollment Profile used to enroll Android Enterprise devices using Google's Cloud Management.
-    microsoft.graph.virtualEndpoint:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: virtualEndpoint
-          type: object
-          properties:
-            auditEvents:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.cloudPcAuditEvent'
-              description: Cloud PC audit event.
-            cloudPCs:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.cloudPC'
-              description: Cloud managed virtual desktops.
-            deviceImages:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.cloudPcDeviceImage'
-              description: The image resource on Cloud PC.
-            galleryImages:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.cloudPcGalleryImage'
-              description: The gallery image resource on Cloud PC.
-            onPremisesConnections:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.cloudPcOnPremisesConnection'
-              description: A defined collection of Azure resource information that can be used to establish on-premises network connectivity for Cloud PCs.
-            organizationSettings:
-              $ref: '#/components/schemas/microsoft.graph.cloudPcOrganizationSettings'
-            provisioningPolicies:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.cloudPcProvisioningPolicy'
-              description: Cloud PC provisioning policy.
-            servicePlans:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.cloudPcServicePlan'
-              description: Cloud PC service plans.
-            snapshots:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.cloudPcSnapshot'
-              description: Cloud PC snapshots.
-            supportedRegions:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.cloudPcSupportedRegion'
-              description: Cloud PC supported regions.
-            userSettings:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.cloudPcUserSetting'
-              description: Cloud PC user settings.
-          additionalProperties:
-            type: object
     microsoft.graph.androidForWorkEnrollmentProfile:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -53830,19 +53887,19 @@ components:
           properties:
             boardSupportPackageVersion:
               type: string
-              description: The version of the Board Support Package.
+              description: 'The version of the Board Support Package (BSP. E.g.: 01.18.02.00)'
             deviceModel:
               type: string
-              description: Artifact device model.
+              description: 'Applicable device model (e.g.: TC8300)'
             osVersion:
               type: string
-              description: Artifact OS version.
+              description: 'Artifact OS version (e.g.: 8.1.0)'
             patchVersion:
               type: string
-              description: Artifact patch version.
+              description: 'Artifact patch version (e.g.: U00)'
             releaseNotesUrl:
               type: string
-              description: Artifact release notes URL.
+              description: 'Artifact release notes URL (e.g.: https://www.zebra.com/<filename.pdf>)'
           additionalProperties:
             type: object
           description: Describes a single artifact for a specific device model.
@@ -54539,6 +54596,7 @@ components:
               type: integer
               description: Number of devices reporting for this profile
               format: int32
+              nullable: true
             displayName:
               type: string
               description: The display name for the profile.
@@ -55915,6 +55973,11 @@ components:
           type: integer
           description: The device’s current battery’s health percentage. Valid values 0 to 100
           format: int32
+        batteryLevelPercentage:
+          type: number
+          description: 'The battery level, between 0.0 and 100, or null if the battery level cannot be determined. The update frequency of this property is per-checkin. Note this property is currently supported only on devices running iOS 5.0 and later, and is available only when Device Information access right is obtained. Valid values 0 to 100'
+          format: double
+          nullable: true
         batterySerialNumber:
           type: string
           description: The serial number of the device’s current battery
@@ -55933,6 +55996,18 @@ components:
           $ref: '#/components/schemas/microsoft.graph.deviceGuardVirtualizationBasedSecurityHardwareRequirementState'
         deviceGuardVirtualizationBasedSecurityState:
           $ref: '#/components/schemas/microsoft.graph.deviceGuardVirtualizationBasedSecurityState'
+        deviceLicensingLastErrorCode:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: 'A standard error code indicating the last error, or 0 indicating no error (default). The update frequency of this property is daily. Note this property is currently supported only for Windows based Device based subscription licensing. Valid values 0 to 2147483647'
+          format: int32
+        deviceLicensingLastErrorDescription:
+          type: string
+          description: Error text message as a descripition for deviceLicensingLastErrorCode. The update frequency of this property is daily. Note this property is currently supported only for Windows based Device based subscription licensing.
+          nullable: true
+        deviceLicensingStatus:
+          $ref: '#/components/schemas/microsoft.graph.deviceLicensingStatus'
         esimIdentifier:
           type: string
           description: eSIM identifier
@@ -55992,6 +56067,17 @@ components:
           type: string
           description: Phone number of the device
           nullable: true
+        productName:
+          type: string
+          description: 'The product name, e.g. iPad8,12 etc. The update frequency of this property is weekly. Note this property is currently supported only on iOS/MacOS devices, and is available only when Device Information access right is obtained.'
+          nullable: true
+        residentUsersCount:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: 'The number of users currently on this device, or null (default) if the value of this property cannot be determined. The update frequency of this property is per-checkin. Note this property is currently supported only on devices running iOS 13.4 and later, and is available only when Device Information access right is obtained. Valid values 0 to 2147483647'
+          format: int32
+          nullable: true
         serialNumber:
           type: string
           description: Serial number.
@@ -56033,6 +56119,12 @@ components:
           type: string
           description: WiFi MAC address of the device
           nullable: true
+        wiredIPv4Addresses:
+          type: array
+          items:
+            type: string
+            nullable: true
+          description: A list of wired IPv4 addresses. The update frequency (the maximum delay for the change of property value to be synchronized from the device to the cloud storage) of this property is daily. Note this property is currently supported only on devices running on Windows.
       additionalProperties:
         type: object
       description: Hardware information of a given device.
@@ -56376,6 +56468,8 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.assignedPlan'
               description: The plans that are assigned to the user. Read-only. Not nullable.Supports $filter (eq and not).
+            authorizationInfo:
+              $ref: '#/components/schemas/microsoft.graph.authorizationInfo'
             businessPhones:
               type: array
               items:
@@ -56497,7 +56591,7 @@ components:
               description: State of license assignments for this user. Read-only. Returned only on $select.
             mail:
               type: string
-              description: 'The SMTP address for the user, for example, admin@contoso.com. Changes to this property will also update the user''s proxyAddresses collection to include the value as an SMTP address. For Azure AD B2C accounts, this property can be updated up to only ten times with unique SMTP addresses. This property cannot contain accent characters.  Supports $filter (eq, ne, not, ge, le, in, startsWith, endsWith, and eq on null values).'
+              description: 'The SMTP address for the user, for example, admin@contoso.com. Changes to this property will also update the user''s proxyAddresses collection to include the value as an SMTP address. This property cannot contain accent characters.  NOTE: We do not recommend updating this property for Azure AD B2C user profiles. Use the otherMails property instead.  Supports $filter (eq, ne, not, ge, le, in, startsWith, endsWith, and eq on null values).'
               nullable: true
             mailNickname:
               type: string
@@ -56546,7 +56640,7 @@ components:
               nullable: true
             onPremisesSyncEnabled:
               type: boolean
-              description: 'true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced; null if this object has never been synced from an on-premises directory (default). Read-only. Supports $filter (eq, ne, not, in, and eq on null values).'
+              description: 'true if this user object is currently being synced from an on-premises Active Directory (AD); otherwise the user isn''t being synced and can be managed in Azure Active Directory (Azure AD). Read-only. Supports $filter (eq, ne, not, in, and eq on null values).'
               nullable: true
             onPremisesUserPrincipalName:
               type: string
@@ -56556,7 +56650,7 @@ components:
               type: array
               items:
                 type: string
-              description: 'A list of additional email addresses for the user; for example: [''bob@contoso.com'', ''Robert@fabrikam.com''].NOTE: This property cannot contain accent characters.Supports $filter (eq, not, ge, le, in, startsWith, and counting empty collections).'
+              description: 'A list of additional email addresses for the user; for example: [''bob@contoso.com'', ''Robert@fabrikam.com''].NOTE: This property cannot contain accent characters.Supports $filter (eq, not, ge, le, in, startsWith, endsWith, and counting empty collections).'
             passwordPolicies:
               type: string
               description: 'Specifies password policies for the user. This value is an enumeration with one possible value being DisableStrongPassword, which allows weaker passwords than the default policy to be specified. DisablePasswordExpiration can also be specified. The two may be specified together; for example: DisablePasswordExpiration, DisableStrongPassword. For more information on the default password policies, see Azure AD pasword policies. Supports $filter (ne, not, and eq on null values).'
@@ -56590,6 +56684,10 @@ components:
               type: string
               description: 'Any refresh tokens or sessions tokens (session cookies) issued before this time are invalid, and applications will get an error when using an invalid refresh or sessions token to acquire a delegated access token (to access APIs such as Microsoft Graph).  If this happens, the application will need to acquire a new refresh token by making a request to the authorize endpoint. Read-only. Use invalidateAllRefreshTokens to reset.'
               format: date-time
+              nullable: true
+            securityIdentifier:
+              type: string
+              description: 'Security identifier (SID) of the user, used in Windows scenarios. Read-only. Returned by default. Supports $select and $filter (eq, not, ge, le, startsWith).'
               nullable: true
             showInAddressList:
               type: boolean
@@ -56667,7 +56765,7 @@ components:
               description: A list for the user to enumerate their past projects. Returned only on $select.
             preferredName:
               type: string
-              description: The preferred name for the user. Returned only on $select.
+              description: The preferred name for the user. Not Supported. This attribute returns an empty string.Returned only on $select.
               nullable: true
             responsibilities:
               type: array
@@ -56755,6 +56853,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
+              description: 'The groups, including nested groups, and directory roles that a user is a member of. Nullable.'
             transitiveReports:
               type: array
               items:
@@ -56830,7 +56929,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.extension'
-              description: The collection of open extensions defined for the user. Nullable.
+              description: The collection of open extensions defined for the user. Supports $expand. Nullable.
             appConsentRequestsForApproval:
               type: array
               items:
@@ -57812,6 +57911,7 @@ components:
         - microsoftSense
         - exchangeOnline
         - linuxMdm
+        - enrollment
         - unknownFutureValue
       type: string
       description: Describes which technology this setting can be deployed with
@@ -57843,6 +57943,9 @@ components:
           - value: linuxMdm
             description: Setting can be deployed through the Linux Mdm channel
             name: linuxMdm
+          - value: enrollment
+            description: Setting can be deployed through device enrollment.
+            name: enrollment
           - value: unknownFutureValue
             description: Sentinel member for cases where the client cannot handle the new enum values.
             name: unknownFutureValue
@@ -59172,6 +59275,7 @@ components:
         - includeCompanyName
         - includeContactInformation
         - includeCompanyPortalLink
+        - includeDeviceDetails
       type: string
       description: Branding Options for the Message Template. Branding is defined in the Intune Admin Console.
       x-ms-enum:
@@ -59193,6 +59297,9 @@ components:
           - value: includeCompanyPortalLink
             description: Include Company Portal Link.
             name: includeCompanyPortalLink
+          - value: includeDeviceDetails
+            description: Include Device Details.
+            name: includeDeviceDetails
     microsoft.graph.remoteAction:
       title: remoteAction
       enum:
@@ -61458,64 +61565,6 @@ components:
       additionalProperties:
         type: object
       description: Count of devices with malware for each OS version
-    microsoft.graph.androidDeviceOwnerEnrollmentMode:
-      title: androidDeviceOwnerEnrollmentMode
-      enum:
-        - corporateOwnedDedicatedDevice
-        - corporateOwnedFullyManaged
-        - corporateOwnedWorkProfile
-        - corporateOwnedAOSPUserlessDevice
-        - corporateOwnedAOSPUserAssociatedDevice
-      type: string
-      description: The enrollment mode for an enrollment profile.
-      x-ms-enum:
-        name: androidDeviceOwnerEnrollmentMode
-        modelAsString: false
-        values:
-          - value: corporateOwnedAOSPUserlessDevice
-            description: 'Corporate owned, userless Android Open Source Project (AOSP) device, without Google Mobile Services.'
-            name: corporateOwnedAOSPUserlessDevice
-          - value: corporateOwnedAOSPUserAssociatedDevice
-            description: 'Corporate owned, user-associated Android Open Source Project (AOSP) device, without Google Mobile Services.'
-            name: corporateOwnedAOSPUserAssociatedDevice
-    microsoft.graph.androidDeviceOwnerEnrollmentTokenType:
-      title: androidDeviceOwnerEnrollmentTokenType
-      enum:
-        - default
-        - corporateOwnedDedicatedDeviceWithAzureADSharedMode
-      type: string
-      description: The enrollment token type for an enrollment profile.
-      x-ms-enum:
-        name: androidDeviceOwnerEnrollmentTokenType
-        modelAsString: false
-        values:
-          - value: default
-            description: Default token type.
-            name: default
-          - value: corporateOwnedDedicatedDeviceWithAzureADSharedMode
-            description: Token type for Azure AD shared dedicated device enrollment. It applies to CorporateOwnedDedicatedDevice enrollment mode only.
-            name: corporateOwnedDedicatedDeviceWithAzureADSharedMode
-    microsoft.graph.aospWifiSecurityType:
-      title: aospWifiSecurityType
-      enum:
-        - none
-        - wpa
-        - wep
-      type: string
-      description: This enum represents Wi-Fi Security Types for Android Device Owner AOSP Scenarios.
-      x-ms-enum:
-        name: aospWifiSecurityType
-        modelAsString: false
-        values:
-          - value: none
-            description: No security type.
-            name: none
-          - value: wpa
-            description: WPA-Pre-shared-key
-            name: wpa
-          - value: wep
-            description: WEP-Pre-shared-key
-            name: wep
     microsoft.graph.cloudPcAuditEvent:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -61568,6 +61617,8 @@ components:
               type: string
               description: The Azure Active Directory (Azure AD) device ID of the Cloud PC.
               nullable: true
+            connectivityResult:
+              $ref: '#/components/schemas/microsoft.graph.cloudPcConnectivityResult'
             displayName:
               type: string
               description: The display name of the Cloud PC.
@@ -61681,6 +61732,32 @@ components:
               nullable: true
           additionalProperties:
             type: object
+    microsoft.graph.cloudPcExternalPartnerSetting:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: cloudPcExternalPartnerSetting
+          type: object
+          properties:
+            enableConnection:
+              type: boolean
+              description: 'Enable or disable the connection to an external partner. If true, an external partner API will accept incoming calls from external partners. Required. Supports $filter (eq).'
+            lastSyncDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'Last data sync time for this external partner. The Timestamp type represents the date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 looks like this: ''2014-01-01T00:00:00Z''.'
+              format: date-time
+              nullable: true
+            partnerId:
+              type: string
+              description: The external partner ID.
+            status:
+              $ref: '#/components/schemas/microsoft.graph.cloudPcExternalPartnerStatus'
+            statusDetails:
+              type: string
+              description: Status details message.
+              nullable: true
+          additionalProperties:
+            type: object
     microsoft.graph.cloudPcGalleryImage:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -61764,6 +61841,7 @@ components:
               nullable: true
             alternateResourceUrl:
               type: string
+              description: The interface URL of the partner service's resource that links to this Azure network connection. Returned only on $select.
               nullable: true
             displayName:
               type: string
@@ -61784,10 +61862,10 @@ components:
               nullable: true
             resourceGroupId:
               type: string
-              description: 'The ID of the target resource group. Required format: ''/subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}''.'
+              description: 'The ID of the target resource group. Required format: /subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}.'
             subnetId:
               type: string
-              description: 'The ID of the target subnet. Required format: ''/subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{virtualNetworkId}/subnets/{subnetName}''.'
+              description: 'The ID of the target subnet. Required format: /subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{virtualNetworkId}/subnets/{subnetName}.'
             subscriptionId:
               type: string
               description: The ID of the target Azure subscription that’s associated with your tenant.
@@ -61799,7 +61877,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.cloudPcOnPremisesConnectionType'
             virtualNetworkId:
               type: string
-              description: 'The ID of the target virtual network. Required format: ''/subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{virtualNetworkName}''.'
+              description: 'The ID of the target virtual network. Required format: /subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{virtualNetworkName}.'
           additionalProperties:
             type: object
     microsoft.graph.cloudPcOrganizationSettings:
@@ -61824,9 +61902,11 @@ components:
           properties:
             alternateResourceUrl:
               type: string
+              description: The URL of the alternate resource that links to this provisioning policy. Read-only.
               nullable: true
             cloudPcGroupDisplayName:
               type: string
+              description: The display name of the Cloud PC group that the Cloud PCs reside in. Read-only.
               nullable: true
             description:
               type: string
@@ -61842,6 +61922,7 @@ components:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
+              description: The number of hours to wait before reprovisioning/deprovisioning happens. Read-only.
               format: int32
               nullable: true
             imageDisplayName:
@@ -61856,6 +61937,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.cloudPcProvisioningPolicyImageType'
             localAdminEnabled:
               type: boolean
+              description: 'Indicates whether the local admin option is enabled. If the local admin option is enabled, the end user can be an admin of the Cloud PC device. Read-only.'
               nullable: true
             managedBy:
               $ref: '#/components/schemas/microsoft.graph.cloudPcManagementService'
@@ -61945,7 +62027,8 @@ components:
             displayName:
               type: string
               description: The name for the supported region. Read-only.
-              nullable: true
+            regionStatus:
+              $ref: '#/components/schemas/microsoft.graph.cloudPcSupportedRegionStatus'
           additionalProperties:
             type: object
     microsoft.graph.cloudPcUserSetting:
@@ -61987,6 +62070,64 @@ components:
               description: 'Represents the set of Microsoft 365 groups and security groups in Azure AD that have cloudPCUserSetting assigned. Returned only on $expand. For an example, see Get cloudPcUserSettingample.'
           additionalProperties:
             type: object
+    microsoft.graph.androidDeviceOwnerEnrollmentMode:
+      title: androidDeviceOwnerEnrollmentMode
+      enum:
+        - corporateOwnedDedicatedDevice
+        - corporateOwnedFullyManaged
+        - corporateOwnedWorkProfile
+        - corporateOwnedAOSPUserlessDevice
+        - corporateOwnedAOSPUserAssociatedDevice
+      type: string
+      description: The enrollment mode for an enrollment profile.
+      x-ms-enum:
+        name: androidDeviceOwnerEnrollmentMode
+        modelAsString: false
+        values:
+          - value: corporateOwnedAOSPUserlessDevice
+            description: 'Corporate owned, userless Android Open Source Project (AOSP) device, without Google Mobile Services.'
+            name: corporateOwnedAOSPUserlessDevice
+          - value: corporateOwnedAOSPUserAssociatedDevice
+            description: 'Corporate owned, user-associated Android Open Source Project (AOSP) device, without Google Mobile Services.'
+            name: corporateOwnedAOSPUserAssociatedDevice
+    microsoft.graph.androidDeviceOwnerEnrollmentTokenType:
+      title: androidDeviceOwnerEnrollmentTokenType
+      enum:
+        - default
+        - corporateOwnedDedicatedDeviceWithAzureADSharedMode
+      type: string
+      description: The enrollment token type for an enrollment profile.
+      x-ms-enum:
+        name: androidDeviceOwnerEnrollmentTokenType
+        modelAsString: false
+        values:
+          - value: default
+            description: Default token type.
+            name: default
+          - value: corporateOwnedDedicatedDeviceWithAzureADSharedMode
+            description: Token type for Azure AD shared dedicated device enrollment. It applies to CorporateOwnedDedicatedDevice enrollment mode only.
+            name: corporateOwnedDedicatedDeviceWithAzureADSharedMode
+    microsoft.graph.aospWifiSecurityType:
+      title: aospWifiSecurityType
+      enum:
+        - none
+        - wpa
+        - wep
+      type: string
+      description: This enum represents Wi-Fi Security Types for Android Device Owner AOSP Scenarios.
+      x-ms-enum:
+        name: aospWifiSecurityType
+        modelAsString: false
+        values:
+          - value: none
+            description: No security type.
+            name: none
+          - value: wpa
+            description: WPA-Pre-shared-key
+            name: wpa
+          - value: wep
+            description: WEP-Pre-shared-key
+            name: wep
     microsoft.graph.auditActor:
       title: auditActor
       type: object
@@ -63294,7 +63435,7 @@ components:
       properties:
         id:
           type: string
-          description: Key for the Android FOTA Assignment entity
+          description: A unique identifier assigned to each Android FOTA Assignment entity
           nullable: true
         target:
           $ref: '#/components/schemas/microsoft.graph.androidFotaDeploymentAssignmentTarget'
@@ -64350,6 +64491,79 @@ components:
           - value: other
             description: Other. Event logs in microsoft-Windows-DeviceGuard have more details.
             name: other
+    microsoft.graph.deviceLicensingStatus:
+      title: deviceLicensingStatus
+      enum:
+        - unknown
+        - licenseRefreshStarted
+        - licenseRefreshPending
+        - deviceIsNotAzureActiveDirectoryJoined
+        - verifyingMicrosoftDeviceIdentity
+        - deviceIdentityVerificationFailed
+        - verifyingMirosoftAccountIdentity
+        - mirosoftAccountVerificationFailed
+        - acquiringDeviceLicense
+        - refreshingDeviceLicense
+        - deviceLicenseRefreshSucceed
+        - deviceLicenseRefreshFailed
+        - removingDeviceLicense
+        - deviceLicenseRemoveSucceed
+        - deviceLicenseRemoveFailed
+        - unknownFutureValue
+      type: string
+      description: Indicates the device licensing status after Windows device based subscription has been enabled.
+      x-ms-enum:
+        name: deviceLicensingStatus
+        modelAsString: false
+        values:
+          - value: unknown
+            description: Default. Set to unknown when status cannot be determined.
+            name: unknown
+          - value: licenseRefreshStarted
+            description: This status is set when the license refresh is started.
+            name: licenseRefreshStarted
+          - value: licenseRefreshPending
+            description: This status is set when the license refresh is pending.
+            name: licenseRefreshPending
+          - value: deviceIsNotAzureActiveDirectoryJoined
+            description: This status is set when the device is not joined to Azure Active Directory.
+            name: deviceIsNotAzureActiveDirectoryJoined
+          - value: verifyingMicrosoftDeviceIdentity
+            description: This status is set when the Microsoft device identity is being verified.
+            name: verifyingMicrosoftDeviceIdentity
+          - value: deviceIdentityVerificationFailed
+            description: This status is set when the Microsoft device identity verification fails.
+            name: deviceIdentityVerificationFailed
+          - value: verifyingMirosoftAccountIdentity
+            description: This status is set when the Microsoft account identity is being verified.
+            name: verifyingMirosoftAccountIdentity
+          - value: mirosoftAccountVerificationFailed
+            description: This status is set when the Microsoft account identity verification fails.
+            name: mirosoftAccountVerificationFailed
+          - value: acquiringDeviceLicense
+            description: This status is set when the device license is being acquired.
+            name: acquiringDeviceLicense
+          - value: refreshingDeviceLicense
+            description: This status is set when the device license is being refreshed.
+            name: refreshingDeviceLicense
+          - value: deviceLicenseRefreshSucceed
+            description: This status is set when the device license refresh succeeds.
+            name: deviceLicenseRefreshSucceed
+          - value: deviceLicenseRefreshFailed
+            description: This status is set when the device license refresh fails.
+            name: deviceLicenseRefreshFailed
+          - value: removingDeviceLicense
+            description: This status is set when the device license is being removed.
+            name: removingDeviceLicense
+          - value: deviceLicenseRemoveSucceed
+            description: This status is set when the device license removing succeeds.
+            name: deviceLicenseRemoveSucceed
+          - value: deviceLicenseRemoveFailed
+            description: This status is set when the device license removing fails.
+            name: deviceLicenseRemoveFailed
+          - value: unknownFutureValue
+            description: This is put here as a place holder for future extension.
+            name: unknownFutureValue
     microsoft.graph.sharedAppleDeviceUser:
       title: sharedAppleDeviceUser
       type: object
@@ -64455,6 +64669,17 @@ components:
           description: 'A GUID that identifies the service plan. For a complete list of GUIDs and their equivalent friendly service names, see Product names and service plan identifiers for licensing.'
           format: uuid
           nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.authorizationInfo:
+      title: authorizationInfo
+      type: object
+      properties:
+        certificateUserIds:
+          type: array
+          items:
+            type: string
+            nullable: true
       additionalProperties:
         type: object
     microsoft.graph.customSecurityAttributeValue:
@@ -64864,11 +65089,11 @@ components:
               nullable: true
             principalId:
               type: string
-              description: 'The id of the user on behalf of whom the client is authorized to access the resource, when consentType is Principal. If consentType is AllPrincipals this value is null. Required when consentType is Principal.'
+              description: 'The id of the user on behalf of whom the client is authorized to access the resource, when consentType is Principal. If consentType is AllPrincipals this value is null. Required when consentType is Principal. Supports $filter (eq only).'
               nullable: true
             resourceId:
               type: string
-              description: The id of the resource service principal to which access is authorized. This identifies the API which the client is authorized to attempt to call on behalf of a signed-in user.
+              description: The id of the resource service principal to which access is authorized. This identifies the API which the client is authorized to attempt to call on behalf of a signed-in user. Supports $filter (eq only).
             scope:
               type: string
               description: 'A space-separated list of the claim values for delegated permissions which should be included in access tokens for the resource application (the API). For example, openid User.Read GroupMember.Read.All. Each claim value should match the value field of one of the delegated permissions defined by the API, listed in the publishedPermissionScopes property of the resource service principal.'
@@ -65406,7 +65631,7 @@ components:
               nullable: true
             displayName:
               type: string
-              description: 'The display name for the group. Required. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.'
+              description: 'The display name for the group. Required. Maximum length is 256 characters. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.'
               nullable: true
             expirationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -65448,9 +65673,6 @@ components:
             mailNickname:
               type: string
               description: 'The mail alias for the group, unique for Microsoft 365 groups in the organization. Maximum length is 64 characters. This property can contain only characters in the ASCII character set 0 - 127 except the following: @ () / [] '' ; : . <> , SPACE. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith).'
-              nullable: true
-            mdmAppId:
-              type: string
               nullable: true
             membershipRule:
               type: string
@@ -65537,7 +65759,7 @@ components:
               nullable: true
             visibility:
               type: string
-              description: 'Specifies the group join policy and group content visibility for groups. Possible values are: Private, Public, or Hiddenmembership. Hiddenmembership can be set only for Microsoft 365 groups, when the groups are created. It can''t be updated later. Other values of visibility can be updated after group creation. If visibility value is not specified during group creation on Microsoft Graph, a security group is created as Private by default and Microsoft 365 group is Public. Groups assignable to roles are always Private. See group visibility options to learn more. Returned by default. Nullable.'
+              description: 'Specifies the group join policy and group content visibility for groups. Possible values are: Private, Public, or HiddenMembership. HiddenMembership can be set only for Microsoft 365 groups, when the groups are created. It can''t be updated later. Other values of visibility can be updated after group creation. If visibility value is not specified during group creation on Microsoft Graph, a security group is created as Private by default and Microsoft 365 group is Public. Groups assignable to roles are always Private. See group visibility options to learn more. Returned by default. Nullable.'
               nullable: true
             writebackConfiguration:
               $ref: '#/components/schemas/microsoft.graph.groupWritebackConfiguration'
@@ -65591,7 +65813,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.membershipRuleProcessingStatus'
             isArchived:
               type: boolean
-              description: 'When a group is associated with a team, this property determines whether the team is in read-only mode.'
+              description: 'When a group is associated with a team, this property determines whether the team is in read-only mode. To read this property, use the /group/{groupId}/team endpoint or the Get team API. To update this property, use the archiveTeam and unarchiveTeam APIs.'
               nullable: true
             appRoleAssignments:
               type: array
@@ -65614,7 +65836,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: 'Members of this group, who can be users, devices, other groups, or service principals. Supports the List members, Add member, and Remove member operations. Nullable. Supports $expand including nested $select. For example, /groups?$filter=startsWith(displayName,''Role'')&$select=id,displayName&$expand=members($select=id,userPrincipalName,displayName).'
+              description: 'Direct members of this group, who can be users, devices, other groups, or service principals. Supports the List members, Add member, and Remove member operations. Nullable. Supports $expand including nested $select. For example, /groups?$filter=startsWith(displayName,''Role'')&$select=id,displayName&$expand=members($select=id,userPrincipalName,displayName).'
             membersWithLicenseErrors:
               type: array
               items:
@@ -65639,10 +65861,12 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
+              description: 'The groups that a group is a member of, either directly and through nested membership. Nullable.'
             transitiveMembers:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
+              description: The direct and transitive members of a group. Nullable.
             acceptedSenders:
               type: array
               items:
@@ -67041,6 +67265,10 @@ components:
               description: The content stream of the alternative recording of a Microsoft Teams live event. Read-only.
               format: base64url
               nullable: true
+            anonymizeIdentityForRoles:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.onlineMeetingRole'
             attendeeReport:
               type: string
               description: The content stream of the attendee report of a Teams live event. Read-only.
@@ -67118,6 +67346,8 @@ components:
               type: string
               description: The video teleconferencing ID. Read-only.
               nullable: true
+            virtualAppointment:
+              $ref: '#/components/schemas/microsoft.graph.virtualAppointment'
             attendanceReports:
               type: array
               items:
@@ -67127,6 +67357,11 @@ components:
               $ref: '#/components/schemas/microsoft.graph.meetingAttendanceReport'
             registration:
               $ref: '#/components/schemas/microsoft.graph.meetingRegistration'
+            transcripts:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.callTranscript'
+              description: The transcripts of an online meeting. Read-only.
           additionalProperties:
             type: object
     microsoft.graph.presence:
@@ -67377,6 +67612,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.channel'
+              description: List of channels shared with the team.
             installedApps:
               type: array
               items:
@@ -67797,6 +68033,22 @@ components:
           description: The type of the audit resource.
       additionalProperties:
         type: object
+    microsoft.graph.cloudPcConnectivityResult:
+      title: cloudPcConnectivityResult
+      type: object
+      properties:
+        failedHealthCheckItems:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.cloudPcHealthCheckItem'
+        status:
+          $ref: '#/components/schemas/microsoft.graph.cloudPcConnectivityStatus'
+        updatedDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          format: date-time
+      additionalProperties:
+        type: object
     microsoft.graph.cloudPcLoginResult:
       title: cloudPcLoginResult
       type: object
@@ -67867,6 +68119,15 @@ components:
         - osVersionNotSupported
         - sourceImageInvalid
         - sourceImageNotGeneralized
+        - unknownFutureValue
+      type: string
+    microsoft.graph.cloudPcExternalPartnerStatus:
+      title: cloudPcExternalPartnerStatus
+      enum:
+        - notAvailable
+        - available
+        - healthy
+        - unhealthy
         - unknownFutureValue
       type: string
     microsoft.graph.cloudPcGalleryImageStatus:
@@ -67980,6 +68241,14 @@ components:
       title: cloudPcSnapshotStatus
       enum:
         - ready
+        - unknownFutureValue
+      type: string
+    microsoft.graph.cloudPcSupportedRegionStatus:
+      title: cloudPcSupportedRegionStatus
+      enum:
+        - available
+        - restricted
+        - unavailable
         - unknownFutureValue
       type: string
     microsoft.graph.cloudPcRestorePointSetting:
@@ -69126,11 +69395,11 @@ components:
       properties:
         displayName:
           type: string
-          description: The display name of the identity. This property is read-only.
+          description: 'The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
           nullable: true
         id:
           type: string
-          description: The identifier of the identity. This property is read-only.
+          description: Unique identifier for the identity.
           nullable: true
       additionalProperties:
         type: object
@@ -69579,6 +69848,7 @@ components:
           properties:
             onPremisesGroupType:
               type: string
+              description: 'Indicates the target on-premise group type the cloud object will be written back as. Nullable. The possible values are: universalDistributionGroup, universalSecurityGroup, universalMailEnabledSecurityGroup.If the cloud group is a unified (Microsoft 365) group, this property can be one of the following: universalDistributionGroup, universalSecurityGroup, universalMailEnabledSecurityGroup. Azure AD security groups can be written back as universalSecurityGroup. If isEnabled or the NewUnifiedGroupWritebackDefault group setting is true but this property is not explicitly configured: Microsoft 365 groups will be written back as universalDistributionGroup by defaultSecurity groups will be written back as universalSecurityGroup by default'
               nullable: true
           additionalProperties:
             type: object
@@ -72367,6 +72637,15 @@ components:
         - limited
         - unknownFutureValue
       type: string
+    microsoft.graph.onlineMeetingRole:
+      title: onlineMeetingRole
+      enum:
+        - attendee
+        - presenter
+        - unknownFutureValue
+        - producer
+        - coorganizer
+      type: string
     microsoft.graph.audioConferencing:
       title: audioConferencing
       type: object
@@ -72455,12 +72734,15 @@ components:
       properties:
         isPasscodeRequired:
           type: boolean
+          description: Indicates whether a passcode is required to join a meeting when using joinMeetingId. Optional.
           nullable: true
         joinMeetingId:
           type: string
+          description: The meeting ID to be used to join a meeting. Optional. Read-only.
           nullable: true
         passcode:
           type: string
+          description: The passcode to join a meeting.  Optional. Read-only.
           nullable: true
       additionalProperties:
         type: object
@@ -72497,6 +72779,33 @@ components:
             $ref: '#/components/schemas/microsoft.graph.meetingParticipantInfo'
       additionalProperties:
         type: object
+    microsoft.graph.virtualAppointment:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: virtualAppointment
+          type: object
+          properties:
+            appointmentClientJoinWebUrl:
+              type: string
+              description: The join web URL of the virtual appointment for clients with waiting room and browser join. Optional.
+              nullable: true
+            appointmentClients:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.virtualAppointmentUser'
+              description: 'The client information for the virtual appointment, including name, email, and SMS phone number. Optional.'
+            externalAppointmentId:
+              type: string
+              description: 'The identifier of the appointment from the scheduling system, associated with the current virtual appointment. Optional.'
+              nullable: true
+            externalAppointmentUrl:
+              type: string
+              description: 'The URL of the appointment resource from the scheduling system, associated with the current virtual appointment. Optional.'
+              nullable: true
+            settings:
+              $ref: '#/components/schemas/microsoft.graph.virtualAppointmentSettings'
+          additionalProperties:
+            type: object
     microsoft.graph.meetingAttendanceReport:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -72576,6 +72885,25 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.meetingRegistrationQuestion'
               description: Custom registration questions.
+          additionalProperties:
+            type: object
+    microsoft.graph.callTranscript:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: callTranscript
+          type: object
+          properties:
+            content:
+              type: string
+              description: A field representing the content of the transcript. Read-only.
+              format: base64url
+              nullable: true
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Date and time at which the transcript was created. Read-only.
+              format: date-time
+              nullable: true
           additionalProperties:
             type: object
     microsoft.graph.outOfOfficeSettings:
@@ -72789,7 +73117,7 @@ components:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: The date and time when the temporaryAccessPass was created.
+              description: The date and time when the Temporary Access Pass was created.
               format: date-time
               nullable: true
             isUsable:
@@ -72798,28 +73126,28 @@ components:
               nullable: true
             isUsableOnce:
               type: boolean
-              description: 'Determines whether the pass is limited to a one time use. If true, the pass can be used once; if false, the pass can be used multiple times within the temporaryAccessPass lifetime.'
+              description: 'Determines whether the pass is limited to a one-time use. If true, the pass can be used once; if false, the pass can be used multiple times within the Temporary Access Pass lifetime.'
               nullable: true
             lifetimeInMinutes:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
-              description: 'The lifetime of the temporaryAccessPass in minutes starting at startDateTime. Minimum 10, Maximum 43200 (equivalent to 30 days).'
+              description: The lifetime of the Temporary Access Pass in minutes starting at startDateTime. Must be between 10 and 43200 inclusive (equivalent to 30 days).
               format: int32
               nullable: true
             methodUsabilityReason:
               type: string
-              description: 'Details about usability state (isUsable). Reasons can include: enabledByPolicy, disabledByPolicy, expired, notYetValid, oneTimeUsed.'
+              description: 'Details about the usability state (isUsable). Reasons can include: EnabledByPolicy, DisabledByPolicy, Expired, NotYetValid, OneTimeUsed.'
               nullable: true
             startDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: The date and time when the temporaryAccessPass becomes available to use.
+              description: The date and time when the Temporary Access Pass becomes available to use and when isUsable is true is enforced.
               format: date-time
               nullable: true
             temporaryAccessPass:
               type: string
-              description: The temporaryAccessPass used to authenticate. Returned only on creation of a new temporaryAccessPass; returned as NULL with GET.
+              description: The Temporary Access Pass used to authenticate. Returned only on creation of a new temporaryAccessPassAuthenticationMethod object; Hidden in subsequent read operations and returned as null with GET.
               nullable: true
           additionalProperties:
             type: object
@@ -73026,7 +73354,7 @@ components:
               items:
                 type: string
                 nullable: true
-              description: The roles for that user.
+              description: 'The roles for that user. This property only contains additional qualifiers when relevant - for example, if the member has owner privileges, the roles property contains owner as one of the values. Similarly, if the member is a guest, the roles property contains guest as one of the values. A basic member should not have any values specified in the roles property.'
             visibleHistoryStartDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -73660,6 +73988,33 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.cloudPcHealthCheckItem:
+      title: cloudPcHealthCheckItem
+      type: object
+      properties:
+        additionalDetails:
+          type: string
+          nullable: true
+        displayName:
+          type: string
+        lastHealthCheckDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          format: date-time
+          nullable: true
+        result:
+          $ref: '#/components/schemas/microsoft.graph.cloudPcConnectivityEventResult'
+      additionalProperties:
+        type: object
+    microsoft.graph.cloudPcConnectivityStatus:
+      title: cloudPcConnectivityStatus
+      enum:
+        - unknown
+        - available
+        - availableWithWarning
+        - unavailable
+        - unknownFutureValue
+      type: string
     microsoft.graph.cloudPcOnPremisesConnectionHealthCheck:
       title: cloudPcOnPremisesConnectionHealthCheck
       type: object
@@ -74235,6 +74590,7 @@ components:
       properties:
         isEnabled:
           type: boolean
+          description: Indicates whether writeback of cloud groups to on-premise Active Directory is enabled. Default value is true for Microsoft 365 groups and false for security groups.
           nullable: true
       additionalProperties:
         type: object
@@ -77028,6 +77384,34 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.virtualAppointmentUser:
+      title: virtualAppointmentUser
+      type: object
+      properties:
+        displayName:
+          type: string
+          description: The display name of the user who participates in a virtual appointment. Optional.
+          nullable: true
+        emailAddress:
+          type: string
+          description: The email address of the user who participates in a virtual appointment. Optional.
+          nullable: true
+        smsCapablePhoneNumber:
+          type: string
+          description: The phone number for sending SMS texts for the user who participates in a virtual appointment. Optional.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.virtualAppointmentSettings:
+      title: virtualAppointmentSettings
+      type: object
+      properties:
+        allowClientToJoinUsingBrowser:
+          type: boolean
+          description: 'Indicates whether the client can use the browser to join a virtual appointment. If set to false, the client can only use Microsoft Teams to join. Optional.'
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.attendanceRecord:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -77836,7 +78220,7 @@ components:
             bodyLastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The date and time when the task was last modified. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2020 would look like this: ''2020-01-01T00:00:00Z''.'
+              description: 'The date and time when the task body was last modified. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2020 would look like this: ''2020-01-01T00:00:00Z''.'
               format: date-time
             categories:
               type: array
@@ -77855,6 +78239,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
             hasAttachments:
               type: boolean
+              description: Indicates whether the task has attachments.
               nullable: true
             importance:
               $ref: '#/components/schemas/microsoft.graph.importance'
@@ -77870,6 +78255,8 @@ components:
               $ref: '#/components/schemas/microsoft.graph.patternedRecurrence'
             reminderDateTime:
               $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
+            startDateTime:
+              $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
             status:
               $ref: '#/components/schemas/microsoft.graph.taskStatus'
             title:
@@ -77880,6 +78267,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.attachmentBase'
+              description: A collection of file attachments for the task.
             attachmentSessions:
               type: array
               items:
@@ -77901,6 +78289,14 @@ components:
               description: A collection of resources linked to the task.
           additionalProperties:
             type: object
+    microsoft.graph.cloudPcConnectivityEventResult:
+      title: cloudPcConnectivityEventResult
+      enum:
+        - unknown
+        - success
+        - failure
+        - unknownFutureValue
+      type: string
     microsoft.graph.cloudPcOnPremisesConnectionHealthCheckErrorType:
       title: cloudPcOnPremisesConnectionHealthCheckErrorType
       enum:
@@ -77944,6 +78340,9 @@ components:
         - resourceAvailabilityCheckSubnetWithExternalResources
         - resourceAvailabilityCheckResourceGroupLockedForReadonly
         - resourceAvailabilityCheckResourceGroupLockedForDelete
+        - resourceAvailabilityCheckNoIntuneReaderRoleError
+        - resourceAvailabilityCheckIntuneDefaultWindowsRestrictionViolation
+        - resourceAvailabilityCheckIntuneCustomWindowsRestrictionViolation
         - resourceAvailabilityCheckTransientServiceError
         - resourceAvailabilityCheckUnknownError
         - permissionCheckNoSubscriptionReaderRole
@@ -79667,15 +80066,6 @@ components:
         - other
         - unknownFutureValue
       type: string
-    microsoft.graph.onlineMeetingRole:
-      title: onlineMeetingRole
-      enum:
-        - attendee
-        - presenter
-        - unknownFutureValue
-        - producer
-        - coorganizer
-      type: string
     microsoft.graph.attendanceInterval:
       title: attendanceInterval
       type: object
@@ -80058,19 +80448,23 @@ components:
           properties:
             contentType:
               type: string
+              description: The MIME type.
               nullable: true
             lastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
             name:
               type: string
+              description: The display name of the attachment. This does not need to be the actual file name.
               nullable: true
             size:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
+              description: The length of the attachment in bytes.
               format: int32
           additionalProperties:
             type: object
@@ -80082,18 +80476,21 @@ components:
           properties:
             content:
               type: string
+              description: The content streams that are uploaded.
               format: base64url
               nullable: true
             expirationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: The date and time in UTC when the upload session will expire. The complete file must be uploaded before this expiration time is reached.
               format: date-time
               nullable: true
-            nextExpectedRange:
+            nextExpectedRanges:
               type: array
               items:
                 type: string
                 nullable: true
+              description: 'Indicates a single value {start} that represents the location in the file where the next upload should begin.'
           additionalProperties:
             type: object
     microsoft.graph.linkedResource:

@@ -12,13 +12,13 @@ Invoke action enrollAssetsById
 
 ## SYNTAX
 
-### EnrollExpanded1 (Default)
+### EnrollExpanded (Default)
 ```
 Invoke-MgEnrollWindowsUpdatesUpdatableAssetById [-AdditionalProperties <Hashtable>] [-Ids <String[]>]
  [-MemberEntityType <String>] [-UpdateCategory <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### Enroll1
+### Enroll
 ```
 Invoke-MgEnrollWindowsUpdatesUpdatableAssetById
  -BodyParameter <IPaths134Mc7AdminWindowsUpdatesUpdatableassetsMicrosoftGraphWindowsupdatesEnrollassetsbyidPostRequestbodyContentApplicationJsonSchema>
@@ -37,7 +37,7 @@ Additional Parameters
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: EnrollExpanded1
+Parameter Sets: EnrollExpanded
 Aliases:
 
 Required: False
@@ -53,7 +53,7 @@ To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETE
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IPaths134Mc7AdminWindowsUpdatesUpdatableassetsMicrosoftGraphWindowsupdatesEnrollassetsbyidPostRequestbodyContentApplicationJsonSchema
-Parameter Sets: Enroll1
+Parameter Sets: Enroll
 Aliases:
 
 Required: True
@@ -68,7 +68,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.String[]
-Parameter Sets: EnrollExpanded1
+Parameter Sets: EnrollExpanded
 Aliases:
 
 Required: False
@@ -83,7 +83,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.String
-Parameter Sets: EnrollExpanded1
+Parameter Sets: EnrollExpanded
 Aliases:
 
 Required: False
@@ -113,7 +113,7 @@ updateCategory
 
 ```yaml
 Type: System.String
-Parameter Sets: EnrollExpanded1
+Parameter Sets: EnrollExpanded
 Aliases:
 
 Required: False
@@ -169,7 +169,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ALIASES
 
-### Invoke-MgEnrollWuUpdatableAssetById
+### Invoke-MgEnrollWuUpdatableAssetGraphBPreId
 
 COMPLEX PARAMETER PROPERTIES
 

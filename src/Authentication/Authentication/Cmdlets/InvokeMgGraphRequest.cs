@@ -27,7 +27,7 @@ using DriveNotFoundException = System.Management.Automation.DriveNotFoundExcepti
 namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
 {
     [Cmdlet(VerbsLifecycle.Invoke, "MgGraphRequest", DefaultParameterSetName = Constants.UserParameterSet)]
-    [Alias("Invoke-GraphRequest")]
+    [Alias("Invoke-GraphRequest","Invoke-MgRestMethod")]
     public class InvokeMgGraphRequest : PSCmdlet
     {
         private readonly CancellationTokenSource _cancellationTokenSource = new CancellationTokenSource();

@@ -8,13 +8,11 @@ schema: 2.0.0
 # Get-MgEducationClassAssignmentResource
 
 ## SYNOPSIS
-Learning objects that are associated with this assignment.
-Only teachers can modify this list.
-Nullable.
+Get resources from education
 
 ## SYNTAX
 
-### List (Default)
+### List1 (Default)
 ```
 Get-MgEducationClassAssignmentResource -EducationAssignmentId <String> -EducationClassId <String>
  [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>]
@@ -34,9 +32,7 @@ Get-MgEducationClassAssignmentResource -InputObject <IEducationIdentity> [-Expan
 ```
 
 ## DESCRIPTION
-Learning objects that are associated with this assignment.
-Only teachers can modify this list.
-Nullable.
+Get resources from education
 
 ## EXAMPLES
 
@@ -47,7 +43,7 @@ List all pages.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
-Parameter Sets: List
+Parameter Sets: List1
 Aliases:
 
 Required: False
@@ -63,7 +59,7 @@ By default, this variable will be set in the global scope.
 
 ```yaml
 Type: System.String
-Parameter Sets: List
+Parameter Sets: List1
 Aliases: CV
 
 Required: False
@@ -78,7 +74,7 @@ key: id of educationAssignment
 
 ```yaml
 Type: System.String
-Parameter Sets: Get1, List
+Parameter Sets: Get1, List1
 Aliases:
 
 Required: True
@@ -108,7 +104,7 @@ key: id of educationClass
 
 ```yaml
 Type: System.String
-Parameter Sets: Get1, List
+Parameter Sets: Get1, List1
 Aliases:
 
 Required: True
@@ -138,7 +134,7 @@ Filter items by property values
 
 ```yaml
 Type: System.String
-Parameter Sets: List
+Parameter Sets: List1
 Aliases:
 
 Required: False
@@ -169,7 +165,7 @@ Sets the page size of results.
 
 ```yaml
 Type: System.Int32
-Parameter Sets: List
+Parameter Sets: List1
 Aliases:
 
 Required: False
@@ -199,7 +195,7 @@ Search items by search phrases
 
 ```yaml
 Type: System.String
-Parameter Sets: List
+Parameter Sets: List1
 Aliases:
 
 Required: False
@@ -214,7 +210,7 @@ Skip the first n items
 
 ```yaml
 Type: System.Int32
-Parameter Sets: List
+Parameter Sets: List1
 Aliases:
 
 Required: False
@@ -229,7 +225,7 @@ Order items by property values
 
 ```yaml
 Type: System.String[]
-Parameter Sets: List
+Parameter Sets: List1
 Aliases: OrderBy
 
 Required: False
@@ -244,7 +240,7 @@ Show only the first n items
 
 ```yaml
 Type: System.Int32
-Parameter Sets: List
+Parameter Sets: List1
 Aliases: Limit
 
 Required: False

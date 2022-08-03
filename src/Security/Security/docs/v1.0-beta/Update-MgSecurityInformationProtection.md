@@ -65,7 +65,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -179,16 +179,16 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphSecurityInformationProtection>: informationProtection
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[LabelPolicySettings <IMicrosoftGraphSecurityInformationProtectionPolicySetting>]`: informationProtectionPolicySetting
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Id <String>]`: Read-only.
+    - `[Id <String>]`: 
     - `[DefaultLabelId <String>]`: 
     - `[IsDowngradeJustificationRequired <Boolean?>]`: 
     - `[IsMandatory <Boolean?>]`: 
     - `[MoreInfoUrl <String>]`: 
   - `[SensitivityLabels <IMicrosoftGraphSecuritySensitivityLabel[]>]`: 
-    - `[Id <String>]`: Read-only.
+    - `[Id <String>]`: 
     - `[Color <String>]`: 
     - `[ContentFormats <String[]>]`: 
     - `[Description <String>]`: 
@@ -202,14 +202,14 @@ BODYPARAMETER <IMicrosoftGraphSecurityInformationProtection>: informationProtect
 
 LABELPOLICYSETTINGS <IMicrosoftGraphSecurityInformationProtectionPolicySetting>: informationProtectionPolicySetting
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[DefaultLabelId <String>]`: 
   - `[IsDowngradeJustificationRequired <Boolean?>]`: 
   - `[IsMandatory <Boolean?>]`: 
   - `[MoreInfoUrl <String>]`: 
 
 SENSITIVITYLABELS <IMicrosoftGraphSecuritySensitivityLabel[]>: .
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[Color <String>]`: 
   - `[ContentFormats <String[]>]`: 
   - `[Description <String>]`: 

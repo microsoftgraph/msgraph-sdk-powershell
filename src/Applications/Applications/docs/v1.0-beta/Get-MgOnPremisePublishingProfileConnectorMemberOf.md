@@ -8,8 +8,7 @@ schema: 2.0.0
 # Get-MgOnPremisePublishingProfileConnectorMemberOf
 
 ## SYNOPSIS
-The connectorGroup that the connector is a member of.
-Read-only.
+Get memberOf from onPremisesPublishingProfiles
 
 ## SYNTAX
 
@@ -21,8 +20,7 @@ Get-MgOnPremisePublishingProfileConnectorMemberOf -ConnectorId <String>
 ```
 
 ## DESCRIPTION
-The connectorGroup that the connector is a member of.
-Read-only.
+Get memberOf from onPremisesPublishingProfiles
 
 ## EXAMPLES
 

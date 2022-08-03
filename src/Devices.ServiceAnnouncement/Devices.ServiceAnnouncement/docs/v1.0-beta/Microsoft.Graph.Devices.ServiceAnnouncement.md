@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Devices.ServiceAnnouncement
-Module Guid: 7005102c-18ec-4e93-ae26-de84c55b59c9
+Module Guid: 21c4a005-a572-4d1c-8ffb-1b9c1d6a15cf
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.serviceannouncement
 Help Version: 1.0.0.0
 Locale: en-US
@@ -12,28 +12,25 @@ Microsoft Graph PowerShell Cmdlets
 
 ## Microsoft.Graph.Devices.ServiceAnnouncement Cmdlets
 ### [Get-MgServiceAnnouncementHealthOverview](Get-MgServiceAnnouncementHealthOverview.md)
-A collection of service health information for tenant.
-This property is a contained navigation property, it is nullable and readonly.
+Get healthOverviews from admin
 
 ### [Get-MgServiceAnnouncementHealthOverviewIssue](Get-MgServiceAnnouncementHealthOverviewIssue.md)
-A collection of issues that happened on the service, with detailed information for each issue.
+Get issues from admin
 
 ### [Get-MgServiceAnnouncementIssue](Get-MgServiceAnnouncementIssue.md)
-A collection of service issues for tenant.
-This property is a contained navigation property, it is nullable and readonly.
+Get issues from admin
 
 ### [Get-MgServiceAnnouncementMessage](Get-MgServiceAnnouncementMessage.md)
-A collection of service messages for tenant.
-This property is a contained navigation property, it is nullable and readonly.
+Get messages from admin
 
 ### [Get-MgServiceAnnouncementMessageAttachment](Get-MgServiceAnnouncementMessageAttachment.md)
-A collection of serviceAnnouncementAttachments.
+Get attachments from admin
 
 ### [Get-MgServiceAnnouncementMessageAttachmentArchive](Get-MgServiceAnnouncementMessageAttachmentArchive.md)
-Get media content for the navigation property messages from admin
+Get attachmentsArchive for the navigation property messages from admin
 
 ### [Get-MgServiceAnnouncementMessageAttachmentContent](Get-MgServiceAnnouncementMessageAttachmentContent.md)
-Get media content for the navigation property attachments from admin
+Get content for the navigation property attachments from admin
 
 ### [Invoke-MgArchiveServiceAnnouncementMessage](Invoke-MgArchiveServiceAnnouncementMessage.md)
 Invoke action archive
@@ -60,62 +57,53 @@ Invoke action unarchive
 Invoke action unfavorite
 
 ### [New-MgServiceAnnouncementHealthOverview](New-MgServiceAnnouncementHealthOverview.md)
-A collection of service health information for tenant.
-This property is a contained navigation property, it is nullable and readonly.
+Create new navigation property to healthOverviews for admin
 
 ### [New-MgServiceAnnouncementHealthOverviewIssue](New-MgServiceAnnouncementHealthOverviewIssue.md)
-A collection of issues that happened on the service, with detailed information for each issue.
+Create new navigation property to issues for admin
 
 ### [New-MgServiceAnnouncementIssue](New-MgServiceAnnouncementIssue.md)
-A collection of service issues for tenant.
-This property is a contained navigation property, it is nullable and readonly.
+Create new navigation property to issues for admin
 
 ### [New-MgServiceAnnouncementMessage](New-MgServiceAnnouncementMessage.md)
-A collection of service messages for tenant.
-This property is a contained navigation property, it is nullable and readonly.
+Create new navigation property to messages for admin
 
 ### [New-MgServiceAnnouncementMessageAttachment](New-MgServiceAnnouncementMessageAttachment.md)
-A collection of serviceAnnouncementAttachments.
+Create new navigation property to attachments for admin
 
 ### [Remove-MgServiceAnnouncementHealthOverview](Remove-MgServiceAnnouncementHealthOverview.md)
-A collection of service health information for tenant.
-This property is a contained navigation property, it is nullable and readonly.
+Delete navigation property healthOverviews for admin
 
 ### [Remove-MgServiceAnnouncementHealthOverviewIssue](Remove-MgServiceAnnouncementHealthOverviewIssue.md)
-A collection of issues that happened on the service, with detailed information for each issue.
+Delete navigation property issues for admin
 
 ### [Remove-MgServiceAnnouncementIssue](Remove-MgServiceAnnouncementIssue.md)
-A collection of service issues for tenant.
-This property is a contained navigation property, it is nullable and readonly.
+Delete navigation property issues for admin
 
 ### [Remove-MgServiceAnnouncementMessage](Remove-MgServiceAnnouncementMessage.md)
-A collection of service messages for tenant.
-This property is a contained navigation property, it is nullable and readonly.
+Delete navigation property messages for admin
 
 ### [Remove-MgServiceAnnouncementMessageAttachment](Remove-MgServiceAnnouncementMessageAttachment.md)
-A collection of serviceAnnouncementAttachments.
+Delete navigation property attachments for admin
 
 ### [Set-MgServiceAnnouncementMessageAttachmentArchive](Set-MgServiceAnnouncementMessageAttachmentArchive.md)
-Update media content for the navigation property messages in admin
+Update attachmentsArchive for the navigation property messages in admin
 
 ### [Set-MgServiceAnnouncementMessageAttachmentContent](Set-MgServiceAnnouncementMessageAttachmentContent.md)
-Update media content for the navigation property attachments in admin
+Update content for the navigation property attachments in admin
 
 ### [Update-MgServiceAnnouncementHealthOverview](Update-MgServiceAnnouncementHealthOverview.md)
-A collection of service health information for tenant.
-This property is a contained navigation property, it is nullable and readonly.
+Update the navigation property healthOverviews in admin
 
 ### [Update-MgServiceAnnouncementHealthOverviewIssue](Update-MgServiceAnnouncementHealthOverviewIssue.md)
-A collection of issues that happened on the service, with detailed information for each issue.
+Update the navigation property issues in admin
 
 ### [Update-MgServiceAnnouncementIssue](Update-MgServiceAnnouncementIssue.md)
-A collection of service issues for tenant.
-This property is a contained navigation property, it is nullable and readonly.
+Update the navigation property issues in admin
 
 ### [Update-MgServiceAnnouncementMessage](Update-MgServiceAnnouncementMessage.md)
-A collection of service messages for tenant.
-This property is a contained navigation property, it is nullable and readonly.
+Update the navigation property messages in admin
 
 ### [Update-MgServiceAnnouncementMessageAttachment](Update-MgServiceAnnouncementMessageAttachment.md)
-A collection of serviceAnnouncementAttachments.
+Update the navigation property attachments in admin
 

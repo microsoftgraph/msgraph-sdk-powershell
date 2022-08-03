@@ -8,16 +8,11 @@ schema: 2.0.0
 # Get-MgUserManagedDeviceWithAppFailure
 
 ## SYNOPSIS
-Retrieves the list of devices with failed apps
+Invoke function getManagedDevicesWithAppFailures
 
 ## SYNTAX
 
 ### Get (Default)
-```
-Get-MgUserManagedDeviceWithAppFailure -UserId <String> [<CommonParameters>]
-```
-
-### Get1
 ```
 Get-MgUserManagedDeviceWithAppFailure -UserId <String> [<CommonParameters>]
 ```
@@ -27,13 +22,8 @@ Get-MgUserManagedDeviceWithAppFailure -UserId <String> [<CommonParameters>]
 Get-MgUserManagedDeviceWithAppFailure -InputObject <IUsersFunctionsIdentity> [<CommonParameters>]
 ```
 
-### GetViaIdentity1
-```
-Get-MgUserManagedDeviceWithAppFailure -InputObject <IUsersFunctionsIdentity> [<CommonParameters>]
-```
-
 ## DESCRIPTION
-Retrieves the list of devices with failed apps
+Invoke function getManagedDevicesWithAppFailures
 
 ## EXAMPLES
 
@@ -45,7 +35,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IUsersFunctionsIdentity
-Parameter Sets: GetViaIdentity, GetViaIdentity1
+Parameter Sets: GetViaIdentity
 Aliases:
 
 Required: True
@@ -60,7 +50,7 @@ key: id of user
 
 ```yaml
 Type: System.String
-Parameter Sets: Get, Get1
+Parameter Sets: Get
 Aliases:
 
 Required: True
@@ -79,8 +69,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedDeviceSummarizedAppState
-
 ### System.String
 
 ## NOTES
@@ -94,39 +82,39 @@ To create the parameters described below, construct a hash table containing the 
 
 INPUTOBJECT <IUsersFunctionsIdentity>: Identity Parameter
   - `[AccessReviewInstanceId <String>]`: key: id of accessReviewInstance
-  - `[AccessReviewStageId <String>]`: key: id of accessReviewStage
-  - `[AnotherRange <String>]`: Usage: anotherRange={anotherRange}
   - `[AppConsentRequestId <String>]`: key: id of appConsentRequest
   - `[BaseTaskListId <String>]`: key: id of baseTaskList
   - `[CalendarId <String>]`: key: id of calendar
+  - `[ChatId <String>]`: key: id of chat
+  - `[ChatMessageId <String>]`: key: id of chatMessage
   - `[CloudPcId <String>]`: key: id of cloudPC
-  - `[Column <Int32?>]`: Usage: column={column}
-  - `[ColumnOffset <Int32?>]`: Usage: columnOffset={columnOffset}
   - `[ContactFolderId <String>]`: key: id of contactFolder
-  - `[Count <Int32?>]`: Usage: count={count}
-  - `[DeltaColumns <Int32?>]`: Usage: deltaColumns={deltaColumns}
-  - `[DeltaRows <Int32?>]`: Usage: deltaRows={deltaRows}
-  - `[EndDateTime <String>]`: Usage: EndDateTime={EndDateTime}
+  - `[ContactFolderId1 <String>]`: key: id of contactFolder
+  - `[ContentTypeId <String>]`: key: id of contentType
+  - `[DriveId <String>]`: key: id of drive
+  - `[DriveItemId <String>]`: key: id of driveItem
+  - `[EndDateTime <String>]`: Usage: EndDateTime='{EndDateTime}'
+  - `[EndDateTime1 <String>]`: Usage: endDateTime='{endDateTime}'
   - `[EventId <String>]`: key: id of event
   - `[IncludePersonalNotebooks <Boolean?>]`: Usage: includePersonalNotebooks={includePersonalNotebooks}
+  - `[Interval <String>]`: Usage: interval='{interval}'
+  - `[ListItemId <String>]`: key: id of listItem
   - `[MailFolderId <String>]`: key: id of mailFolder
+  - `[MailFolderId1 <String>]`: key: id of mailFolder
   - `[ManagedDeviceId <String>]`: key: id of managedDevice
-  - `[On <String>]`: Usage: on={on}
+  - `[On <String>]`: Usage: on='{on}'
   - `[OnenotePageId <String>]`: key: id of onenotePage
-  - `[RoomList <String>]`: Usage: RoomList={RoomList}
-  - `[Row <Int32?>]`: Usage: row={row}
-  - `[RowOffset <Int32?>]`: Usage: rowOffset={rowOffset}
-  - `[SharedInsightId <String>]`: key: id of sharedInsight
+  - `[Q <String>]`: Usage: q='{q}'
+  - `[RoomList <String>]`: Usage: RoomList='{RoomList}'
   - `[Skip <Int32?>]`: Usage: skip={skip}
-  - `[StartDateTime <String>]`: Usage: StartDateTime={StartDateTime}
-  - `[TimeZoneStandard <String>]`: Usage: TimeZoneStandard={TimeZoneStandard}
+  - `[StartDateTime <String>]`: Usage: StartDateTime='{StartDateTime}'
+  - `[StartDateTime1 <String>]`: Usage: startDateTime='{startDateTime}'
+  - `[TimeZoneStandard <String>]`: Usage: TimeZoneStandard='{TimeZoneStandard}'
   - `[TodoTaskListId <String>]`: key: id of todoTaskList
+  - `[Token <String>]`: Usage: token='{token}'
   - `[Top <Int32?>]`: Usage: top={top}
-  - `[TrendingId <String>]`: key: id of trending
-  - `[UsedInsightId <String>]`: key: id of usedInsight
-  - `[User <String>]`: Usage: User={User}
+  - `[User <String>]`: Usage: User='{User}'
   - `[UserId <String>]`: key: id of user
-  - `[ValuesOnly <Boolean?>]`: Usage: valuesOnly={valuesOnly}
 
 ## RELATED LINKS
 
