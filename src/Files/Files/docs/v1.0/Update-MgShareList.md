@@ -1226,18 +1226,32 @@ BODYPARAMETER <IMicrosoftGraphList>: list
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[Id <String>]`: The id of the content type.
             - `[Name <String>]`: The name of the content type.
-          - `[DriveItem <IMicrosoftGraphDriveItem>]`: driveItem
-          - `[Fields <IMicrosoftGraphFieldValueSet>]`: fieldValueSet
-            - `[(Any) <Object>]`: This indicates any property can be added to this object.
-            - `[Id <String>]`: 
-          - `[SharepointIds <IMicrosoftGraphSharepointIds>]`: sharepointIds
-          - `[Versions <IMicrosoftGraphListItemVersion[]>]`: The list of previous versions of the list item.
+          - `[DocumentSetVersions <IMicrosoftGraphDocumentSetVersion[]>]`: Version information for a document set version created by a user.
+            - `[Fields <IMicrosoftGraphFieldValueSet>]`: fieldValueSet
+              - `[(Any) <Object>]`: This indicates any property can be added to this object.
+              - `[Id <String>]`: 
             - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
             - `[LastModifiedDateTime <DateTime?>]`: Date and time the version was last modified. Read-only.
             - `[Publication <IMicrosoftGraphPublicationFacet>]`: publicationFacet
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
               - `[Level <String>]`: The state of publication for this document. Either published or checkout. Read-only.
               - `[VersionId <String>]`: The unique identifier for the version that is visible to the current caller. Read-only.
+            - `[Id <String>]`: 
+            - `[Comment <String>]`: Comment about the captured version.
+            - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
+            - `[CreatedDateTime <DateTime?>]`: Date and time when this version was created.
+            - `[Items <IMicrosoftGraphDocumentSetVersionItem[]>]`: Items within the document set that are captured as part of this version.
+              - `[ItemId <String>]`: The unique identifier for the item.
+              - `[Title <String>]`: The title of the item.
+              - `[VersionId <String>]`: The version ID of the item.
+            - `[ShouldCaptureMinorVersion <Boolean?>]`: If true, minor versions of items are also captured; otherwise, only major versions will be captured. Default value is false.
+          - `[DriveItem <IMicrosoftGraphDriveItem>]`: driveItem
+          - `[Fields <IMicrosoftGraphFieldValueSet>]`: fieldValueSet
+          - `[SharepointIds <IMicrosoftGraphSharepointIds>]`: sharepointIds
+          - `[Versions <IMicrosoftGraphListItemVersion[]>]`: The list of previous versions of the list item.
+            - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
+            - `[LastModifiedDateTime <DateTime?>]`: Date and time the version was last modified. Read-only.
+            - `[Publication <IMicrosoftGraphPublicationFacet>]`: publicationFacet
             - `[Id <String>]`: 
             - `[Fields <IMicrosoftGraphFieldValueSet>]`: fieldValueSet
         - `[Location <IMicrosoftGraphGeoCoordinates>]`: geoCoordinates
@@ -4141,18 +4155,32 @@ CREATEDBYUSER <IMicrosoftGraphUser>: user
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[Id <String>]`: The id of the content type.
           - `[Name <String>]`: The name of the content type.
-        - `[DriveItem <IMicrosoftGraphDriveItem>]`: driveItem
-        - `[Fields <IMicrosoftGraphFieldValueSet>]`: fieldValueSet
-          - `[(Any) <Object>]`: This indicates any property can be added to this object.
-          - `[Id <String>]`: 
-        - `[SharepointIds <IMicrosoftGraphSharepointIds>]`: sharepointIds
-        - `[Versions <IMicrosoftGraphListItemVersion[]>]`: The list of previous versions of the list item.
+        - `[DocumentSetVersions <IMicrosoftGraphDocumentSetVersion[]>]`: Version information for a document set version created by a user.
+          - `[Fields <IMicrosoftGraphFieldValueSet>]`: fieldValueSet
+            - `[(Any) <Object>]`: This indicates any property can be added to this object.
+            - `[Id <String>]`: 
           - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
           - `[LastModifiedDateTime <DateTime?>]`: Date and time the version was last modified. Read-only.
           - `[Publication <IMicrosoftGraphPublicationFacet>]`: publicationFacet
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[Level <String>]`: The state of publication for this document. Either published or checkout. Read-only.
             - `[VersionId <String>]`: The unique identifier for the version that is visible to the current caller. Read-only.
+          - `[Id <String>]`: 
+          - `[Comment <String>]`: Comment about the captured version.
+          - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
+          - `[CreatedDateTime <DateTime?>]`: Date and time when this version was created.
+          - `[Items <IMicrosoftGraphDocumentSetVersionItem[]>]`: Items within the document set that are captured as part of this version.
+            - `[ItemId <String>]`: The unique identifier for the item.
+            - `[Title <String>]`: The title of the item.
+            - `[VersionId <String>]`: The version ID of the item.
+          - `[ShouldCaptureMinorVersion <Boolean?>]`: If true, minor versions of items are also captured; otherwise, only major versions will be captured. Default value is false.
+        - `[DriveItem <IMicrosoftGraphDriveItem>]`: driveItem
+        - `[Fields <IMicrosoftGraphFieldValueSet>]`: fieldValueSet
+        - `[SharepointIds <IMicrosoftGraphSharepointIds>]`: sharepointIds
+        - `[Versions <IMicrosoftGraphListItemVersion[]>]`: The list of previous versions of the list item.
+          - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
+          - `[LastModifiedDateTime <DateTime?>]`: Date and time the version was last modified. Read-only.
+          - `[Publication <IMicrosoftGraphPublicationFacet>]`: publicationFacet
           - `[Id <String>]`: 
           - `[Fields <IMicrosoftGraphFieldValueSet>]`: fieldValueSet
       - `[Location <IMicrosoftGraphGeoCoordinates>]`: geoCoordinates
@@ -6733,18 +6761,32 @@ DRIVE <IMicrosoftGraphDrive>: drive
                   - `[(Any) <Object>]`: This indicates any property can be added to this object.
                   - `[Id <String>]`: The id of the content type.
                   - `[Name <String>]`: The name of the content type.
-                - `[DriveItem <IMicrosoftGraphDriveItem>]`: driveItem
-                - `[Fields <IMicrosoftGraphFieldValueSet>]`: fieldValueSet
-                  - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                  - `[Id <String>]`: 
-                - `[SharepointIds <IMicrosoftGraphSharepointIds>]`: sharepointIds
-                - `[Versions <IMicrosoftGraphListItemVersion[]>]`: The list of previous versions of the list item.
+                - `[DocumentSetVersions <IMicrosoftGraphDocumentSetVersion[]>]`: Version information for a document set version created by a user.
+                  - `[Fields <IMicrosoftGraphFieldValueSet>]`: fieldValueSet
+                    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+                    - `[Id <String>]`: 
                   - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
                   - `[LastModifiedDateTime <DateTime?>]`: Date and time the version was last modified. Read-only.
                   - `[Publication <IMicrosoftGraphPublicationFacet>]`: publicationFacet
                     - `[(Any) <Object>]`: This indicates any property can be added to this object.
                     - `[Level <String>]`: The state of publication for this document. Either published or checkout. Read-only.
                     - `[VersionId <String>]`: The unique identifier for the version that is visible to the current caller. Read-only.
+                  - `[Id <String>]`: 
+                  - `[Comment <String>]`: Comment about the captured version.
+                  - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
+                  - `[CreatedDateTime <DateTime?>]`: Date and time when this version was created.
+                  - `[Items <IMicrosoftGraphDocumentSetVersionItem[]>]`: Items within the document set that are captured as part of this version.
+                    - `[ItemId <String>]`: The unique identifier for the item.
+                    - `[Title <String>]`: The title of the item.
+                    - `[VersionId <String>]`: The version ID of the item.
+                  - `[ShouldCaptureMinorVersion <Boolean?>]`: If true, minor versions of items are also captured; otherwise, only major versions will be captured. Default value is false.
+                - `[DriveItem <IMicrosoftGraphDriveItem>]`: driveItem
+                - `[Fields <IMicrosoftGraphFieldValueSet>]`: fieldValueSet
+                - `[SharepointIds <IMicrosoftGraphSharepointIds>]`: sharepointIds
+                - `[Versions <IMicrosoftGraphListItemVersion[]>]`: The list of previous versions of the list item.
+                  - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
+                  - `[LastModifiedDateTime <DateTime?>]`: Date and time the version was last modified. Read-only.
+                  - `[Publication <IMicrosoftGraphPublicationFacet>]`: publicationFacet
                   - `[Id <String>]`: 
                   - `[Fields <IMicrosoftGraphFieldValueSet>]`: fieldValueSet
               - `[Location <IMicrosoftGraphGeoCoordinates>]`: geoCoordinates
@@ -11232,10 +11274,24 @@ ITEMS <IMicrosoftGraphListItem[]>: All items contained in the list.
   - `[Id <String>]`: 
   - `[Analytics <IMicrosoftGraphItemAnalytics>]`: itemAnalytics
   - `[ContentType <IMicrosoftGraphContentTypeInfo>]`: contentTypeInfo
+  - `[DocumentSetVersions <IMicrosoftGraphDocumentSetVersion[]>]`: Version information for a document set version created by a user.
+    - `[Fields <IMicrosoftGraphFieldValueSet>]`: fieldValueSet
+      - `[(Any) <Object>]`: This indicates any property can be added to this object.
+      - `[Id <String>]`: 
+    - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
+    - `[LastModifiedDateTime <DateTime?>]`: Date and time the version was last modified. Read-only.
+    - `[Publication <IMicrosoftGraphPublicationFacet>]`: publicationFacet
+    - `[Id <String>]`: 
+    - `[Comment <String>]`: Comment about the captured version.
+    - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
+    - `[CreatedDateTime <DateTime?>]`: Date and time when this version was created.
+    - `[Items <IMicrosoftGraphDocumentSetVersionItem[]>]`: Items within the document set that are captured as part of this version.
+      - `[ItemId <String>]`: The unique identifier for the item.
+      - `[Title <String>]`: The title of the item.
+      - `[VersionId <String>]`: The version ID of the item.
+    - `[ShouldCaptureMinorVersion <Boolean?>]`: If true, minor versions of items are also captured; otherwise, only major versions will be captured. Default value is false.
   - `[DriveItem <IMicrosoftGraphDriveItem>]`: driveItem
   - `[Fields <IMicrosoftGraphFieldValueSet>]`: fieldValueSet
-    - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Id <String>]`: 
   - `[SharepointIds <IMicrosoftGraphSharepointIds>]`: sharepointIds
   - `[Versions <IMicrosoftGraphListItemVersion[]>]`: The list of previous versions of the list item.
     - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
@@ -11938,18 +11994,32 @@ LASTMODIFIEDBYUSER <IMicrosoftGraphUser>: user
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[Id <String>]`: The id of the content type.
           - `[Name <String>]`: The name of the content type.
-        - `[DriveItem <IMicrosoftGraphDriveItem>]`: driveItem
-        - `[Fields <IMicrosoftGraphFieldValueSet>]`: fieldValueSet
-          - `[(Any) <Object>]`: This indicates any property can be added to this object.
-          - `[Id <String>]`: 
-        - `[SharepointIds <IMicrosoftGraphSharepointIds>]`: sharepointIds
-        - `[Versions <IMicrosoftGraphListItemVersion[]>]`: The list of previous versions of the list item.
+        - `[DocumentSetVersions <IMicrosoftGraphDocumentSetVersion[]>]`: Version information for a document set version created by a user.
+          - `[Fields <IMicrosoftGraphFieldValueSet>]`: fieldValueSet
+            - `[(Any) <Object>]`: This indicates any property can be added to this object.
+            - `[Id <String>]`: 
           - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
           - `[LastModifiedDateTime <DateTime?>]`: Date and time the version was last modified. Read-only.
           - `[Publication <IMicrosoftGraphPublicationFacet>]`: publicationFacet
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[Level <String>]`: The state of publication for this document. Either published or checkout. Read-only.
             - `[VersionId <String>]`: The unique identifier for the version that is visible to the current caller. Read-only.
+          - `[Id <String>]`: 
+          - `[Comment <String>]`: Comment about the captured version.
+          - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
+          - `[CreatedDateTime <DateTime?>]`: Date and time when this version was created.
+          - `[Items <IMicrosoftGraphDocumentSetVersionItem[]>]`: Items within the document set that are captured as part of this version.
+            - `[ItemId <String>]`: The unique identifier for the item.
+            - `[Title <String>]`: The title of the item.
+            - `[VersionId <String>]`: The version ID of the item.
+          - `[ShouldCaptureMinorVersion <Boolean?>]`: If true, minor versions of items are also captured; otherwise, only major versions will be captured. Default value is false.
+        - `[DriveItem <IMicrosoftGraphDriveItem>]`: driveItem
+        - `[Fields <IMicrosoftGraphFieldValueSet>]`: fieldValueSet
+        - `[SharepointIds <IMicrosoftGraphSharepointIds>]`: sharepointIds
+        - `[Versions <IMicrosoftGraphListItemVersion[]>]`: The list of previous versions of the list item.
+          - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
+          - `[LastModifiedDateTime <DateTime?>]`: Date and time the version was last modified. Read-only.
+          - `[Publication <IMicrosoftGraphPublicationFacet>]`: publicationFacet
           - `[Id <String>]`: 
           - `[Fields <IMicrosoftGraphFieldValueSet>]`: fieldValueSet
       - `[Location <IMicrosoftGraphGeoCoordinates>]`: geoCoordinates

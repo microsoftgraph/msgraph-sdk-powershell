@@ -12,13 +12,13 @@ Invoke function getActivitiesByInterval
 
 ## SYNTAX
 
-### Get (Default)
+### Get2 (Default)
 ```
 Get-MgDriveRootListItemActivityByInterval -DriveId <String> -EndDateTime <String> -Interval <String>
  -StartDateTime <String> [<CommonParameters>]
 ```
 
-### GetViaIdentity
+### GetViaIdentity2
 ```
 Get-MgDriveRootListItemActivityByInterval -InputObject <IFilesIdentity> [<CommonParameters>]
 ```
@@ -35,7 +35,7 @@ key: id of drive
 
 ```yaml
 Type: System.String
-Parameter Sets: Get
+Parameter Sets: Get2
 Aliases:
 
 Required: True
@@ -50,7 +50,7 @@ Usage: endDateTime='{endDateTime}'
 
 ```yaml
 Type: System.String
-Parameter Sets: Get
+Parameter Sets: Get2
 Aliases:
 
 Required: True
@@ -66,7 +66,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IFilesIdentity
-Parameter Sets: GetViaIdentity
+Parameter Sets: GetViaIdentity2
 Aliases:
 
 Required: True
@@ -81,7 +81,7 @@ Usage: interval='{interval}'
 
 ```yaml
 Type: System.String
-Parameter Sets: Get
+Parameter Sets: Get2
 Aliases:
 
 Required: True
@@ -96,7 +96,7 @@ Usage: startDateTime='{startDateTime}'
 
 ```yaml
 Type: System.String
-Parameter Sets: Get
+Parameter Sets: Get2
 Aliases:
 
 Required: True
