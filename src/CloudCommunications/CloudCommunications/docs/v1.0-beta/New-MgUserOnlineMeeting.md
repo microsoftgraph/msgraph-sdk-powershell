@@ -600,7 +600,8 @@ Accept wildcard characters: False
 ```
 
 ### -Transcripts
-.
+The transcripts of an online meeting.
+Read-only.
 To construct, please use Get-Help -Online and see NOTES section for TRANSCRIPTS properties and create a hash table.
 
 ```yaml
@@ -860,10 +861,10 @@ BODYPARAMETER <IMicrosoftGraphOnlineMeeting1>: onlineMeeting
     - `[Subject <String>]`: The subject of the meeting.
   - `[StartDateTime <DateTime?>]`: The meeting start time in UTC.
   - `[Subject <String>]`: The subject of the online meeting.
-  - `[Transcripts <IMicrosoftGraphCallTranscript[]>]`: 
+  - `[Transcripts <IMicrosoftGraphCallTranscript[]>]`: The transcripts of an online meeting. Read-only.
     - `[Id <String>]`: 
-    - `[Content <Byte[]>]`: 
-    - `[CreatedDateTime <DateTime?>]`: 
+    - `[Content <Byte[]>]`: A field representing the content of the transcript. Read-only.
+    - `[CreatedDateTime <DateTime?>]`: Date and time at which the transcript was created. Read-only.
   - `[VideoTeleconferenceId <String>]`: The video teleconferencing ID. Read-only.
   - `[VirtualAppointment <IMicrosoftGraphVirtualAppointment>]`: virtualAppointment
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -991,10 +992,10 @@ REGISTRATION <IMicrosoftGraphMeetingRegistration>: meetingRegistration
   - `[StartDateTime <DateTime?>]`: The meeting start time in UTC.
   - `[Subject <String>]`: The subject of the meeting.
 
-TRANSCRIPTS <IMicrosoftGraphCallTranscript[]>: .
+TRANSCRIPTS <IMicrosoftGraphCallTranscript[]>: The transcripts of an online meeting. Read-only.
   - `[Id <String>]`: 
-  - `[Content <Byte[]>]`: 
-  - `[CreatedDateTime <DateTime?>]`: 
+  - `[Content <Byte[]>]`: A field representing the content of the transcript. Read-only.
+  - `[CreatedDateTime <DateTime?>]`: Date and time at which the transcript was created. Read-only.
 
 VIRTUALAPPOINTMENT <IMicrosoftGraphVirtualAppointment>: virtualAppointment
   - `[(Any) <Object>]`: This indicates any property can be added to this object.

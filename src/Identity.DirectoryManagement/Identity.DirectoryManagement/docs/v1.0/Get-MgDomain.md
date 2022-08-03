@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDomain
 
 ## SYNOPSIS
-Get domain
+Get entity from domains by key
 
 ## SYNTAX
 
@@ -31,7 +31,7 @@ Get-MgDomain -InputObject <IIdentityDirectoryManagementIdentity> [-ExpandPropert
 ```
 
 ## DESCRIPTION
-Get domain
+Get entity from domains by key
 
 ## EXAMPLES
 

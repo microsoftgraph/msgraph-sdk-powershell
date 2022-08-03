@@ -8,30 +8,30 @@ schema: 2.0.0
 # Update-MgSiteTermStore
 
 ## SYNOPSIS
-Update the navigation property termStore in sites
+Update the navigation property termStores in sites
 
 ## SYNTAX
 
-### UpdateExpanded1 (Default)
+### UpdateExpanded2 (Default)
 ```
 Update-MgSiteTermStore -SiteId <String> [-AdditionalProperties <Hashtable>] [-DefaultLanguageTag <String>]
  [-Groups <IMicrosoftGraphTermStoreGroup1[]>] [-Id <String>] [-LanguageTags <String[]>]
  [-Sets <IMicrosoftGraphTermStoreSet[]>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### Update1
-```
-Update-MgSiteTermStore -SiteId <String> -BodyParameter <IMicrosoftGraphTermStore1> [-PassThru] [-Confirm]
- [-WhatIf] [<CommonParameters>]
-```
-
-### Update2
+### Update
 ```
 Update-MgSiteTermStore -SiteId <String> -StoreId <String> -BodyParameter <IMicrosoftGraphTermStore1>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### UpdateExpanded2
+### Update2
+```
+Update-MgSiteTermStore -SiteId <String> -BodyParameter <IMicrosoftGraphTermStore1> [-PassThru] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
+```
+
+### UpdateExpanded
 ```
 Update-MgSiteTermStore -SiteId <String> -StoreId <String> [-AdditionalProperties <Hashtable>]
  [-DefaultLanguageTag <String>] [-Groups <IMicrosoftGraphTermStoreGroup1[]>] [-Id <String>]
@@ -39,7 +39,7 @@ Update-MgSiteTermStore -SiteId <String> -StoreId <String> [-AdditionalProperties
  [<CommonParameters>]
 ```
 
-### UpdateViaIdentity1
+### UpdateViaIdentity
 ```
 Update-MgSiteTermStore -InputObject <ISitesIdentity> -BodyParameter <IMicrosoftGraphTermStore1> [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -51,7 +51,7 @@ Update-MgSiteTermStore -InputObject <ISitesIdentity> -BodyParameter <IMicrosoftG
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### UpdateViaIdentityExpanded1
+### UpdateViaIdentityExpanded
 ```
 Update-MgSiteTermStore -InputObject <ISitesIdentity> [-AdditionalProperties <Hashtable>]
  [-DefaultLanguageTag <String>] [-Groups <IMicrosoftGraphTermStoreGroup1[]>] [-Id <String>]
@@ -68,7 +68,7 @@ Update-MgSiteTermStore -InputObject <ISitesIdentity> [-AdditionalProperties <Has
 ```
 
 ## DESCRIPTION
-Update the navigation property termStore in sites
+Update the navigation property termStores in sites
 
 ## EXAMPLES
 
@@ -79,7 +79,7 @@ Additional Parameters
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: UpdateExpanded1, UpdateExpanded2, UpdateViaIdentityExpanded1, UpdateViaIdentityExpanded2
+Parameter Sets: UpdateExpanded, UpdateExpanded2, UpdateViaIdentityExpanded, UpdateViaIdentityExpanded2
 Aliases:
 
 Required: False
@@ -95,7 +95,7 @@ To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETE
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTermStore1
-Parameter Sets: Update1, Update2, UpdateViaIdentity1, UpdateViaIdentity2
+Parameter Sets: Update, Update2, UpdateViaIdentity, UpdateViaIdentity2
 Aliases:
 
 Required: True
@@ -110,7 +110,7 @@ Default language of the term store.
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded1, UpdateExpanded2, UpdateViaIdentityExpanded1, UpdateViaIdentityExpanded2
+Parameter Sets: UpdateExpanded, UpdateExpanded2, UpdateViaIdentityExpanded, UpdateViaIdentityExpanded2
 Aliases:
 
 Required: False
@@ -126,7 +126,7 @@ To construct, please use Get-Help -Online and see NOTES section for GROUPS prope
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTermStoreGroup1[]
-Parameter Sets: UpdateExpanded1, UpdateExpanded2, UpdateViaIdentityExpanded1, UpdateViaIdentityExpanded2
+Parameter Sets: UpdateExpanded, UpdateExpanded2, UpdateViaIdentityExpanded, UpdateViaIdentityExpanded2
 Aliases:
 
 Required: False
@@ -141,7 +141,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded1, UpdateExpanded2, UpdateViaIdentityExpanded1, UpdateViaIdentityExpanded2
+Parameter Sets: UpdateExpanded, UpdateExpanded2, UpdateViaIdentityExpanded, UpdateViaIdentityExpanded2
 Aliases:
 
 Required: False
@@ -157,7 +157,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.ISitesIdentity
-Parameter Sets: UpdateViaIdentity1, UpdateViaIdentity2, UpdateViaIdentityExpanded1, UpdateViaIdentityExpanded2
+Parameter Sets: UpdateViaIdentity, UpdateViaIdentity2, UpdateViaIdentityExpanded, UpdateViaIdentityExpanded2
 Aliases:
 
 Required: True
@@ -172,7 +172,7 @@ List of languages for the term store.
 
 ```yaml
 Type: System.String[]
-Parameter Sets: UpdateExpanded1, UpdateExpanded2, UpdateViaIdentityExpanded1, UpdateViaIdentityExpanded2
+Parameter Sets: UpdateExpanded, UpdateExpanded2, UpdateViaIdentityExpanded, UpdateViaIdentityExpanded2
 Aliases:
 
 Required: False
@@ -203,7 +203,7 @@ To construct, please use Get-Help -Online and see NOTES section for SETS propert
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTermStoreSet[]
-Parameter Sets: UpdateExpanded1, UpdateExpanded2, UpdateViaIdentityExpanded1, UpdateViaIdentityExpanded2
+Parameter Sets: UpdateExpanded, UpdateExpanded2, UpdateViaIdentityExpanded, UpdateViaIdentityExpanded2
 Aliases:
 
 Required: False
@@ -218,7 +218,7 @@ key: id of site
 
 ```yaml
 Type: System.String
-Parameter Sets: Update1, Update2, UpdateExpanded1, UpdateExpanded2
+Parameter Sets: Update, Update2, UpdateExpanded, UpdateExpanded2
 Aliases:
 
 Required: True
@@ -233,7 +233,7 @@ key: id of store
 
 ```yaml
 Type: System.String
-Parameter Sets: Update2, UpdateExpanded2
+Parameter Sets: Update, UpdateExpanded
 Aliases:
 
 Required: True

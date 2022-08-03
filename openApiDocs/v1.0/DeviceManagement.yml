@@ -10117,6 +10117,7 @@ components:
         - includeCompanyLogo
         - includeCompanyName
         - includeContactInformation
+        - includeDeviceDetails
       type: string
       description: Branding Options for the Message Template. Branding is defined in the Intune Admin Console.
       x-ms-enum:
@@ -10135,6 +10136,9 @@ components:
           - value: includeContactInformation
             description: Include Contact Info.
             name: includeContactInformation
+          - value: includeDeviceDetails
+            description: Include Device Details.
+            name: includeDeviceDetails
     microsoft.graph.applicationType:
       title: applicationType
       enum:
@@ -10971,7 +10975,7 @@ components:
         modelAsString: false
         values:
           - value: csv
-            description: Comma-separated values
+            description: CSV Format
             name: csv
           - value: pdf
             description: Portable Document Format

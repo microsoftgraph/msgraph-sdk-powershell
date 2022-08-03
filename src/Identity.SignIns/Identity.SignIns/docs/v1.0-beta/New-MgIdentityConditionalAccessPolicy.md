@@ -335,7 +335,7 @@ BODYPARAMETER <IMicrosoftGraphConditionalAccessPolicy1>: conditionalAccessPolicy
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[IsEnabled <Boolean?>]`: Specifies whether the session control is enabled.
       - `[Mode <String>]`: persistentBrowserSessionMode
-    - `[SignInFrequency <IMicrosoftGraphSignInFrequencySessionControl1>]`: signInFrequencySessionControl
+    - `[SignInFrequency <IMicrosoftGraphSignInFrequencySessionControl>]`: signInFrequencySessionControl
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[IsEnabled <Boolean?>]`: Specifies whether the session control is enabled.
       - `[AuthenticationType <String>]`: signInFrequencyAuthenticationType
@@ -415,7 +415,7 @@ SESSIONCONTROLS <IMicrosoftGraphConditionalAccessSessionControls1>: conditionalA
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[IsEnabled <Boolean?>]`: Specifies whether the session control is enabled.
     - `[Mode <String>]`: persistentBrowserSessionMode
-  - `[SignInFrequency <IMicrosoftGraphSignInFrequencySessionControl1>]`: signInFrequencySessionControl
+  - `[SignInFrequency <IMicrosoftGraphSignInFrequencySessionControl>]`: signInFrequencySessionControl
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[IsEnabled <Boolean?>]`: Specifies whether the session control is enabled.
     - `[AuthenticationType <String>]`: signInFrequencyAuthenticationType

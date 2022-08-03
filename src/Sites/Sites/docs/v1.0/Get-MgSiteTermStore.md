@@ -8,22 +8,22 @@ schema: 2.0.0
 # Get-MgSiteTermStore
 
 ## SYNOPSIS
-Get termStore from sites
+Get termStores from sites
 
 ## SYNTAX
 
-### Get1 (Default)
+### Get2 (Default)
 ```
 Get-MgSiteTermStore -SiteId <String> [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
-### Get2
+### Get
 ```
 Get-MgSiteTermStore -SiteId <String> -StoreId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
-### GetViaIdentity1
+### GetViaIdentity
 ```
 Get-MgSiteTermStore -InputObject <ISitesIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
@@ -43,7 +43,7 @@ Get-MgSiteTermStore -SiteId <String> [-ExpandProperty <String[]>] [-Filter <Stri
 ```
 
 ## DESCRIPTION
-Get termStore from sites
+Get termStores from sites
 
 ## EXAMPLES
 
@@ -116,7 +116,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.ISitesIdentity
-Parameter Sets: GetViaIdentity1, GetViaIdentity2
+Parameter Sets: GetViaIdentity, GetViaIdentity2
 Aliases:
 
 Required: True
@@ -176,7 +176,7 @@ key: id of site
 
 ```yaml
 Type: System.String
-Parameter Sets: Get1, Get2, List
+Parameter Sets: Get, Get2, List
 Aliases:
 
 Required: True
@@ -221,7 +221,7 @@ key: id of store
 
 ```yaml
 Type: System.String
-Parameter Sets: Get2
+Parameter Sets: Get
 Aliases:
 
 Required: True

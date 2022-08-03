@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Identity.DirectoryManagement
-Module Guid: 20e42da0-2136-42fe-b3be-a9806e550eab
+Module Guid: 8aa12f83-9823-4b95-8902-bfa898df055e
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.directorymanagement
 Help Version: 1.0.0.0
 Locale: en-US
@@ -100,6 +100,9 @@ Get device
 
 ### [Get-MgDeviceById](Get-MgDeviceById.md)
 Invoke action getByIds
+
+### [Get-MgDeviceDelta](Get-MgDeviceDelta.md)
+Invoke function delta
 
 ### [Get-MgDeviceExtension](Get-MgDeviceExtension.md)
 Get extensions from devices
@@ -201,7 +204,7 @@ Invoke action getMemberGroups
 Invoke action getMemberObjects
 
 ### [Get-MgDomain](Get-MgDomain.md)
-Get domain
+Get entity from domains by key
 
 ### [Get-MgDomainFederationConfiguration](Get-MgDomainFederationConfiguration.md)
 Get federationConfiguration from domains
