@@ -1,29 +1,29 @@
 ---
 external help file:
 Module Name: Microsoft.Graph.Users.Functions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.functions/invoke-mgmessageuserchat
+online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.functions/get-mguserdevicedelta
 schema: 2.0.0
 ---
 
-# Invoke-MgMessageUserChat
+# Get-MgUserDeviceDelta
 
 ## SYNOPSIS
-Invoke function allMessages
+Invoke function delta
 
 ## SYNTAX
 
-### Messages (Default)
+### Delta (Default)
 ```
-Invoke-MgMessageUserChat -UserId <String> [<CommonParameters>]
+Get-MgUserDeviceDelta -UserId <String> [<CommonParameters>]
 ```
 
-### MessagesViaIdentity
+### DeltaViaIdentity
 ```
-Invoke-MgMessageUserChat -InputObject <IUsersFunctionsIdentity> [<CommonParameters>]
+Get-MgUserDeviceDelta -InputObject <IUsersFunctionsIdentity> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Invoke function allMessages
+Invoke function delta
 
 ## EXAMPLES
 
@@ -35,7 +35,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IUsersFunctionsIdentity
-Parameter Sets: MessagesViaIdentity
+Parameter Sets: DeltaViaIdentity
 Aliases:
 
 Required: True
@@ -50,7 +50,7 @@ key: id of user
 
 ```yaml
 Type: System.String
-Parameter Sets: Messages
+Parameter Sets: Delta
 Aliases:
 
 Required: True
@@ -69,7 +69,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphChatMessage1
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDevice1
 
 ## NOTES
 

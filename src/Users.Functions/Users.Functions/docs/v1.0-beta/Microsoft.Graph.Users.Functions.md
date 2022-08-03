@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Users.Functions
-Module Guid: eceb6520-5381-4c14-9cd3-fdb84b360354
+Module Guid: 120fd959-732e-40ca-b6e1-bf18379f1451
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.functions
 Help Version: 1.0.0.0
 Locale: en-US
@@ -54,6 +54,9 @@ Invoke function delta
 Invoke function delta
 
 ### [Get-MgUserDelta](Get-MgUserDelta.md)
+Invoke function delta
+
+### [Get-MgUserDeviceDelta](Get-MgUserDeviceDelta.md)
 Invoke function delta
 
 ### [Get-MgUserDriveItemActivityByInterval](Get-MgUserDriveItemActivityByInterval.md)
