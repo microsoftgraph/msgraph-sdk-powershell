@@ -12,13 +12,13 @@ Delete navigation property relations for sites
 
 ## SYNTAX
 
-### Delete2 (Default)
+### Delete (Default)
 ```
 Remove-MgSiteTermStoreSetTermRelation -RelationId <String> -SetId <String> -SiteId <String> -TermId <String>
  [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### Delete
+### Delete1
 ```
 Remove-MgSiteTermStoreSetTermRelation -RelationId <String> -SetId <String> -SiteId <String> -StoreId <String>
  -TermId <String> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -30,7 +30,7 @@ Remove-MgSiteTermStoreSetTermRelation -InputObject <ISitesIdentity> [-IfMatch <S
  [-WhatIf] [<CommonParameters>]
 ```
 
-### DeleteViaIdentity2
+### DeleteViaIdentity1
 ```
 Remove-MgSiteTermStoreSetTermRelation -InputObject <ISitesIdentity> [-IfMatch <String>] [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
@@ -64,7 +64,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.ISitesIdentity
-Parameter Sets: DeleteViaIdentity, DeleteViaIdentity2
+Parameter Sets: DeleteViaIdentity, DeleteViaIdentity1
 Aliases:
 
 Required: True
@@ -94,7 +94,7 @@ key: id of relation
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete, Delete2
+Parameter Sets: Delete, Delete1
 Aliases:
 
 Required: True
@@ -109,7 +109,7 @@ key: id of set
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete, Delete2
+Parameter Sets: Delete, Delete1
 Aliases:
 
 Required: True
@@ -124,7 +124,7 @@ key: id of site
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete, Delete2
+Parameter Sets: Delete, Delete1
 Aliases:
 
 Required: True
@@ -139,7 +139,7 @@ key: id of store
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete
+Parameter Sets: Delete1
 Aliases:
 
 Required: True
@@ -154,7 +154,7 @@ key: id of term
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete, Delete2
+Parameter Sets: Delete, Delete1
 Aliases:
 
 Required: True

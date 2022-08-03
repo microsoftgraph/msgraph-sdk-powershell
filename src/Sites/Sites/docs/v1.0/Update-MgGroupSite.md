@@ -17,11 +17,11 @@ Update the navigation property sites in groups
 Update-MgGroupSite -GroupId <String> -SiteId <String> [-AdditionalProperties <Hashtable>]
  [-Analytics <IMicrosoftGraphItemAnalytics1>] [-Columns <IMicrosoftGraphColumnDefinition1[]>]
  [-ContentTypes <IMicrosoftGraphContentType[]>] [-CreatedBy <IMicrosoftGraphIdentitySet>]
- [-CreatedByUser <IMicrosoftGraphUser>] [-CreatedDateTime <DateTime>] [-Description <String>]
+ [-CreatedByUser <IMicrosoftGraphUser1>] [-CreatedDateTime <DateTime>] [-Description <String>]
  [-DisplayName <String>] [-Drive <IMicrosoftGraphDrive>] [-Drives <IMicrosoftGraphDrive[]>]
  [-Error <IMicrosoftGraphPublicError>] [-ETag <String>]
  [-ExternalColumns <IMicrosoftGraphColumnDefinition1[]>] [-Id <String>] [-Items <IMicrosoftGraphBaseItem1[]>]
- [-LastModifiedBy <IMicrosoftGraphIdentitySet>] [-LastModifiedByUser <IMicrosoftGraphUser>]
+ [-LastModifiedBy <IMicrosoftGraphIdentitySet>] [-LastModifiedByUser <IMicrosoftGraphUser1>]
  [-LastModifiedDateTime <DateTime>] [-Lists <IMicrosoftGraphList1[]>] [-Name <String>]
  [-Onenote <IMicrosoftGraphOnenote1>] [-Operations <IMicrosoftGraphRichLongRunningOperation[]>]
  [-ParentReference <IMicrosoftGraphItemReference>] [-Permissions <IMicrosoftGraphPermission1[]>]
@@ -48,11 +48,11 @@ Update-MgGroupSite -InputObject <ISitesIdentity> -BodyParameter <IMicrosoftGraph
 Update-MgGroupSite -InputObject <ISitesIdentity> [-AdditionalProperties <Hashtable>]
  [-Analytics <IMicrosoftGraphItemAnalytics1>] [-Columns <IMicrosoftGraphColumnDefinition1[]>]
  [-ContentTypes <IMicrosoftGraphContentType[]>] [-CreatedBy <IMicrosoftGraphIdentitySet>]
- [-CreatedByUser <IMicrosoftGraphUser>] [-CreatedDateTime <DateTime>] [-Description <String>]
+ [-CreatedByUser <IMicrosoftGraphUser1>] [-CreatedDateTime <DateTime>] [-Description <String>]
  [-DisplayName <String>] [-Drive <IMicrosoftGraphDrive>] [-Drives <IMicrosoftGraphDrive[]>]
  [-Error <IMicrosoftGraphPublicError>] [-ETag <String>]
  [-ExternalColumns <IMicrosoftGraphColumnDefinition1[]>] [-Id <String>] [-Items <IMicrosoftGraphBaseItem1[]>]
- [-LastModifiedBy <IMicrosoftGraphIdentitySet>] [-LastModifiedByUser <IMicrosoftGraphUser>]
+ [-LastModifiedBy <IMicrosoftGraphIdentitySet>] [-LastModifiedByUser <IMicrosoftGraphUser1>]
  [-LastModifiedDateTime <DateTime>] [-Lists <IMicrosoftGraphList1[]>] [-Name <String>]
  [-Onenote <IMicrosoftGraphOnenote1>] [-Operations <IMicrosoftGraphRichLongRunningOperation[]>]
  [-ParentReference <IMicrosoftGraphItemReference>] [-Permissions <IMicrosoftGraphPermission1[]>]
@@ -169,7 +169,7 @@ user
 To construct, please use Get-Help -Online and see NOTES section for CREATEDBYUSER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUser
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUser1
 Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -392,7 +392,7 @@ user
 To construct, please use Get-Help -Online and see NOTES section for LASTMODIFIEDBYUSER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUser
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUser1
 Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -736,7 +736,7 @@ ANALYTICS <IMicrosoftGraphItemAnalytics1>: itemAnalytics
       - `[DriveItem <IMicrosoftGraphDriveItem>]`: driveItem
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-        - `[CreatedByUser <IMicrosoftGraphUser>]`: user
+        - `[CreatedByUser <IMicrosoftGraphUser1>]`: user
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
           - `[Id <String>]`: 
@@ -1267,12 +1267,12 @@ ANALYTICS <IMicrosoftGraphItemAnalytics1>: itemAnalytics
           - `[Drive <IMicrosoftGraphDrive>]`: drive
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-            - `[CreatedByUser <IMicrosoftGraphUser>]`: user
+            - `[CreatedByUser <IMicrosoftGraphUser1>]`: user
             - `[CreatedDateTime <DateTime?>]`: Date and time of item creation. Read-only.
             - `[Description <String>]`: Provides a user-visible description of the item. Optional.
             - `[ETag <String>]`: ETag for the item. Read-only.
             - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-            - `[LastModifiedByUser <IMicrosoftGraphUser>]`: user
+            - `[LastModifiedByUser <IMicrosoftGraphUser1>]`: user
             - `[LastModifiedDateTime <DateTime?>]`: Date and time the item was last modified. Read-only.
             - `[Name <String>]`: The name of the item. Read-write.
             - `[ParentReference <IMicrosoftGraphItemReference>]`: itemReference
@@ -1302,12 +1302,12 @@ ANALYTICS <IMicrosoftGraphItemAnalytics1>: itemAnalytics
             - `[List <IMicrosoftGraphList1>]`: list
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
               - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-              - `[CreatedByUser <IMicrosoftGraphUser>]`: user
+              - `[CreatedByUser <IMicrosoftGraphUser1>]`: user
               - `[CreatedDateTime <DateTime?>]`: Date and time of item creation. Read-only.
               - `[Description <String>]`: Provides a user-visible description of the item. Optional.
               - `[ETag <String>]`: ETag for the item. Read-only.
               - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-              - `[LastModifiedByUser <IMicrosoftGraphUser>]`: user
+              - `[LastModifiedByUser <IMicrosoftGraphUser1>]`: user
               - `[LastModifiedDateTime <DateTime?>]`: Date and time the item was last modified. Read-only.
               - `[Name <String>]`: The name of the item. Read-write.
               - `[ParentReference <IMicrosoftGraphItemReference>]`: itemReference
@@ -1487,12 +1487,12 @@ ANALYTICS <IMicrosoftGraphItemAnalytics1>: itemAnalytics
               - `[Drive <IMicrosoftGraphDrive>]`: drive
               - `[Items <IMicrosoftGraphListItem1[]>]`: All items contained in the list.
                 - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-                - `[CreatedByUser <IMicrosoftGraphUser>]`: user
+                - `[CreatedByUser <IMicrosoftGraphUser1>]`: user
                 - `[CreatedDateTime <DateTime?>]`: Date and time of item creation. Read-only.
                 - `[Description <String>]`: Provides a user-visible description of the item. Optional.
                 - `[ETag <String>]`: ETag for the item. Read-only.
                 - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-                - `[LastModifiedByUser <IMicrosoftGraphUser>]`: user
+                - `[LastModifiedByUser <IMicrosoftGraphUser1>]`: user
                 - `[LastModifiedDateTime <DateTime?>]`: Date and time the item was last modified. Read-only.
                 - `[Name <String>]`: The name of the item. Read-write.
                 - `[ParentReference <IMicrosoftGraphItemReference>]`: itemReference
@@ -1500,18 +1500,32 @@ ANALYTICS <IMicrosoftGraphItemAnalytics1>: itemAnalytics
                 - `[Id <String>]`: 
                 - `[Analytics <IMicrosoftGraphItemAnalytics1>]`: itemAnalytics
                 - `[ContentType <IMicrosoftGraphContentTypeInfo>]`: contentTypeInfo
-                - `[DriveItem <IMicrosoftGraphDriveItem>]`: driveItem
-                - `[Fields <IMicrosoftGraphFieldValueSet>]`: fieldValueSet
-                  - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                  - `[Id <String>]`: 
-                - `[SharepointIds <IMicrosoftGraphSharepointIds>]`: sharepointIds
-                - `[Versions <IMicrosoftGraphListItemVersion[]>]`: The list of previous versions of the list item.
+                - `[DocumentSetVersions <IMicrosoftGraphDocumentSetVersion[]>]`: Version information for a document set version created by a user.
+                  - `[Fields <IMicrosoftGraphFieldValueSet>]`: fieldValueSet
+                    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+                    - `[Id <String>]`: 
                   - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
                   - `[LastModifiedDateTime <DateTime?>]`: Date and time the version was last modified. Read-only.
                   - `[Publication <IMicrosoftGraphPublicationFacet>]`: publicationFacet
                     - `[(Any) <Object>]`: This indicates any property can be added to this object.
                     - `[Level <String>]`: The state of publication for this document. Either published or checkout. Read-only.
                     - `[VersionId <String>]`: The unique identifier for the version that is visible to the current caller. Read-only.
+                  - `[Id <String>]`: 
+                  - `[Comment <String>]`: Comment about the captured version.
+                  - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
+                  - `[CreatedDateTime <DateTime?>]`: Date and time when this version was created.
+                  - `[Items <IMicrosoftGraphDocumentSetVersionItem[]>]`: Items within the document set that are captured as part of this version.
+                    - `[ItemId <String>]`: The unique identifier for the item.
+                    - `[Title <String>]`: The title of the item.
+                    - `[VersionId <String>]`: The version ID of the item.
+                  - `[ShouldCaptureMinorVersion <Boolean?>]`: If true, minor versions of items are also captured; otherwise, only major versions will be captured. Default value is false.
+                - `[DriveItem <IMicrosoftGraphDriveItem>]`: driveItem
+                - `[Fields <IMicrosoftGraphFieldValueSet>]`: fieldValueSet
+                - `[SharepointIds <IMicrosoftGraphSharepointIds>]`: sharepointIds
+                - `[Versions <IMicrosoftGraphListItemVersion[]>]`: The list of previous versions of the list item.
+                  - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
+                  - `[LastModifiedDateTime <DateTime?>]`: Date and time the version was last modified. Read-only.
+                  - `[Publication <IMicrosoftGraphPublicationFacet>]`: publicationFacet
                   - `[Id <String>]`: 
                   - `[Fields <IMicrosoftGraphFieldValueSet>]`: fieldValueSet
               - `[List <IMicrosoftGraphListInfo>]`: listInfo
@@ -1593,12 +1607,12 @@ ANALYTICS <IMicrosoftGraphItemAnalytics1>: itemAnalytics
           - `[FaxNumber <String>]`: The fax number of the user. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values).
           - `[FollowedSites <IMicrosoftGraphSite[]>]`: 
             - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-            - `[CreatedByUser <IMicrosoftGraphUser>]`: user
+            - `[CreatedByUser <IMicrosoftGraphUser1>]`: user
             - `[CreatedDateTime <DateTime?>]`: Date and time of item creation. Read-only.
             - `[Description <String>]`: Provides a user-visible description of the item. Optional.
             - `[ETag <String>]`: ETag for the item. Read-only.
             - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-            - `[LastModifiedByUser <IMicrosoftGraphUser>]`: user
+            - `[LastModifiedByUser <IMicrosoftGraphUser1>]`: user
             - `[LastModifiedDateTime <DateTime?>]`: Date and time the item was last modified. Read-only.
             - `[Name <String>]`: The name of the item. Read-write.
             - `[ParentReference <IMicrosoftGraphItemReference>]`: itemReference
@@ -1615,12 +1629,12 @@ ANALYTICS <IMicrosoftGraphItemAnalytics1>: itemAnalytics
             - `[Items <IMicrosoftGraphBaseItem1[]>]`: Used to address any item contained in this site. This collection cannot be enumerated.
               - `[Id <String>]`: 
               - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-              - `[CreatedByUser <IMicrosoftGraphUser>]`: user
+              - `[CreatedByUser <IMicrosoftGraphUser1>]`: user
               - `[CreatedDateTime <DateTime?>]`: Date and time of item creation. Read-only.
               - `[Description <String>]`: Provides a user-visible description of the item. Optional.
               - `[ETag <String>]`: ETag for the item. Read-only.
               - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-              - `[LastModifiedByUser <IMicrosoftGraphUser>]`: user
+              - `[LastModifiedByUser <IMicrosoftGraphUser1>]`: user
               - `[LastModifiedDateTime <DateTime?>]`: Date and time the item was last modified. Read-only.
               - `[Name <String>]`: The name of the item. Read-write.
               - `[ParentReference <IMicrosoftGraphItemReference>]`: itemReference
@@ -2892,7 +2906,7 @@ ANALYTICS <IMicrosoftGraphItemAnalytics1>: itemAnalytics
         - `[Description <String>]`: Provides a user-visible description of the item. Optional.
         - `[ETag <String>]`: ETag for the item. Read-only.
         - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-        - `[LastModifiedByUser <IMicrosoftGraphUser>]`: user
+        - `[LastModifiedByUser <IMicrosoftGraphUser1>]`: user
         - `[LastModifiedDateTime <DateTime?>]`: Date and time the item was last modified. Read-only.
         - `[Name <String>]`: The name of the item. Read-write.
         - `[ParentReference <IMicrosoftGraphItemReference>]`: itemReference
@@ -3308,7 +3322,7 @@ BODYPARAMETER <IMicrosoftGraphSite>: site
       - `[Id <String>]`: Unique identifier for the identity.
     - `[Device <IMicrosoftGraphIdentity>]`: identity
     - `[User <IMicrosoftGraphIdentity>]`: identity
-  - `[CreatedByUser <IMicrosoftGraphUser>]`: user
+  - `[CreatedByUser <IMicrosoftGraphUser1>]`: user
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
     - `[Id <String>]`: 
@@ -3839,12 +3853,12 @@ BODYPARAMETER <IMicrosoftGraphSite>: site
     - `[Drive <IMicrosoftGraphDrive>]`: drive
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-      - `[CreatedByUser <IMicrosoftGraphUser>]`: user
+      - `[CreatedByUser <IMicrosoftGraphUser1>]`: user
       - `[CreatedDateTime <DateTime?>]`: Date and time of item creation. Read-only.
       - `[Description <String>]`: Provides a user-visible description of the item. Optional.
       - `[ETag <String>]`: ETag for the item. Read-only.
       - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-      - `[LastModifiedByUser <IMicrosoftGraphUser>]`: user
+      - `[LastModifiedByUser <IMicrosoftGraphUser1>]`: user
       - `[LastModifiedDateTime <DateTime?>]`: Date and time the item was last modified. Read-only.
       - `[Name <String>]`: The name of the item. Read-write.
       - `[ParentReference <IMicrosoftGraphItemReference>]`: itemReference
@@ -3869,12 +3883,12 @@ BODYPARAMETER <IMicrosoftGraphSite>: site
       - `[Id <String>]`: 
       - `[Bundles <IMicrosoftGraphDriveItem[]>]`: Collection of [bundles][bundle] (albums and multi-select-shared sets of items). Only in personal OneDrive.
         - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-        - `[CreatedByUser <IMicrosoftGraphUser>]`: user
+        - `[CreatedByUser <IMicrosoftGraphUser1>]`: user
         - `[CreatedDateTime <DateTime?>]`: Date and time of item creation. Read-only.
         - `[Description <String>]`: Provides a user-visible description of the item. Optional.
         - `[ETag <String>]`: ETag for the item. Read-only.
         - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-        - `[LastModifiedByUser <IMicrosoftGraphUser>]`: user
+        - `[LastModifiedByUser <IMicrosoftGraphUser1>]`: user
         - `[LastModifiedDateTime <DateTime?>]`: Date and time the item was last modified. Read-only.
         - `[Name <String>]`: The name of the item. Read-write.
         - `[ParentReference <IMicrosoftGraphItemReference>]`: itemReference
@@ -3970,12 +3984,12 @@ BODYPARAMETER <IMicrosoftGraphSite>: site
         - `[ListItem <IMicrosoftGraphListItem1>]`: listItem
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-          - `[CreatedByUser <IMicrosoftGraphUser>]`: user
+          - `[CreatedByUser <IMicrosoftGraphUser1>]`: user
           - `[CreatedDateTime <DateTime?>]`: Date and time of item creation. Read-only.
           - `[Description <String>]`: Provides a user-visible description of the item. Optional.
           - `[ETag <String>]`: ETag for the item. Read-only.
           - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-          - `[LastModifiedByUser <IMicrosoftGraphUser>]`: user
+          - `[LastModifiedByUser <IMicrosoftGraphUser1>]`: user
           - `[LastModifiedDateTime <DateTime?>]`: Date and time the item was last modified. Read-only.
           - `[Name <String>]`: The name of the item. Read-write.
           - `[ParentReference <IMicrosoftGraphItemReference>]`: itemReference
@@ -3986,18 +4000,32 @@ BODYPARAMETER <IMicrosoftGraphSite>: site
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[Id <String>]`: The id of the content type.
             - `[Name <String>]`: The name of the content type.
-          - `[DriveItem <IMicrosoftGraphDriveItem>]`: driveItem
-          - `[Fields <IMicrosoftGraphFieldValueSet>]`: fieldValueSet
-            - `[(Any) <Object>]`: This indicates any property can be added to this object.
-            - `[Id <String>]`: 
-          - `[SharepointIds <IMicrosoftGraphSharepointIds>]`: sharepointIds
-          - `[Versions <IMicrosoftGraphListItemVersion[]>]`: The list of previous versions of the list item.
+          - `[DocumentSetVersions <IMicrosoftGraphDocumentSetVersion[]>]`: Version information for a document set version created by a user.
+            - `[Fields <IMicrosoftGraphFieldValueSet>]`: fieldValueSet
+              - `[(Any) <Object>]`: This indicates any property can be added to this object.
+              - `[Id <String>]`: 
             - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
             - `[LastModifiedDateTime <DateTime?>]`: Date and time the version was last modified. Read-only.
             - `[Publication <IMicrosoftGraphPublicationFacet>]`: publicationFacet
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
               - `[Level <String>]`: The state of publication for this document. Either published or checkout. Read-only.
               - `[VersionId <String>]`: The unique identifier for the version that is visible to the current caller. Read-only.
+            - `[Id <String>]`: 
+            - `[Comment <String>]`: Comment about the captured version.
+            - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
+            - `[CreatedDateTime <DateTime?>]`: Date and time when this version was created.
+            - `[Items <IMicrosoftGraphDocumentSetVersionItem[]>]`: Items within the document set that are captured as part of this version.
+              - `[ItemId <String>]`: The unique identifier for the item.
+              - `[Title <String>]`: The title of the item.
+              - `[VersionId <String>]`: The version ID of the item.
+            - `[ShouldCaptureMinorVersion <Boolean?>]`: If true, minor versions of items are also captured; otherwise, only major versions will be captured. Default value is false.
+          - `[DriveItem <IMicrosoftGraphDriveItem>]`: driveItem
+          - `[Fields <IMicrosoftGraphFieldValueSet>]`: fieldValueSet
+          - `[SharepointIds <IMicrosoftGraphSharepointIds>]`: sharepointIds
+          - `[Versions <IMicrosoftGraphListItemVersion[]>]`: The list of previous versions of the list item.
+            - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
+            - `[LastModifiedDateTime <DateTime?>]`: Date and time the version was last modified. Read-only.
+            - `[Publication <IMicrosoftGraphPublicationFacet>]`: publicationFacet
             - `[Id <String>]`: 
             - `[Fields <IMicrosoftGraphFieldValueSet>]`: fieldValueSet
         - `[Location <IMicrosoftGraphGeoCoordinates>]`: geoCoordinates
@@ -4383,12 +4411,12 @@ BODYPARAMETER <IMicrosoftGraphSite>: site
       - `[List <IMicrosoftGraphList1>]`: list
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-        - `[CreatedByUser <IMicrosoftGraphUser>]`: user
+        - `[CreatedByUser <IMicrosoftGraphUser1>]`: user
         - `[CreatedDateTime <DateTime?>]`: Date and time of item creation. Read-only.
         - `[Description <String>]`: Provides a user-visible description of the item. Optional.
         - `[ETag <String>]`: ETag for the item. Read-only.
         - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-        - `[LastModifiedByUser <IMicrosoftGraphUser>]`: user
+        - `[LastModifiedByUser <IMicrosoftGraphUser1>]`: user
         - `[LastModifiedDateTime <DateTime?>]`: Date and time the item was last modified. Read-only.
         - `[Name <String>]`: The name of the item. Read-write.
         - `[ParentReference <IMicrosoftGraphItemReference>]`: itemReference
@@ -5839,7 +5867,7 @@ BODYPARAMETER <IMicrosoftGraphSite>: site
   - `[Description <String>]`: Provides a user-visible description of the item. Optional.
   - `[ETag <String>]`: ETag for the item. Read-only.
   - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-  - `[LastModifiedByUser <IMicrosoftGraphUser>]`: user
+  - `[LastModifiedByUser <IMicrosoftGraphUser1>]`: user
   - `[LastModifiedDateTime <DateTime?>]`: Date and time the item was last modified. Read-only.
   - `[Name <String>]`: The name of the item. Read-write.
   - `[ParentReference <IMicrosoftGraphItemReference>]`: itemReference
@@ -5856,12 +5884,12 @@ BODYPARAMETER <IMicrosoftGraphSite>: site
   - `[Items <IMicrosoftGraphBaseItem1[]>]`: Used to address any item contained in this site. This collection cannot be enumerated.
     - `[Id <String>]`: 
     - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-    - `[CreatedByUser <IMicrosoftGraphUser>]`: user
+    - `[CreatedByUser <IMicrosoftGraphUser1>]`: user
     - `[CreatedDateTime <DateTime?>]`: Date and time of item creation. Read-only.
     - `[Description <String>]`: Provides a user-visible description of the item. Optional.
     - `[ETag <String>]`: ETag for the item. Read-only.
     - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-    - `[LastModifiedByUser <IMicrosoftGraphUser>]`: user
+    - `[LastModifiedByUser <IMicrosoftGraphUser1>]`: user
     - `[LastModifiedDateTime <DateTime?>]`: Date and time the item was last modified. Read-only.
     - `[Name <String>]`: The name of the item. Read-write.
     - `[ParentReference <IMicrosoftGraphItemReference>]`: itemReference
@@ -6217,7 +6245,7 @@ CREATEDBY <IMicrosoftGraphIdentitySet>: identitySet
   - `[Device <IMicrosoftGraphIdentity>]`: identity
   - `[User <IMicrosoftGraphIdentity>]`: identity
 
-CREATEDBYUSER <IMicrosoftGraphUser>: user
+CREATEDBYUSER <IMicrosoftGraphUser1>: user
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
   - `[Id <String>]`: 
@@ -6755,12 +6783,12 @@ CREATEDBYUSER <IMicrosoftGraphUser>: user
   - `[Drive <IMicrosoftGraphDrive>]`: drive
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-    - `[CreatedByUser <IMicrosoftGraphUser>]`: user
+    - `[CreatedByUser <IMicrosoftGraphUser1>]`: user
     - `[CreatedDateTime <DateTime?>]`: Date and time of item creation. Read-only.
     - `[Description <String>]`: Provides a user-visible description of the item. Optional.
     - `[ETag <String>]`: ETag for the item. Read-only.
     - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-    - `[LastModifiedByUser <IMicrosoftGraphUser>]`: user
+    - `[LastModifiedByUser <IMicrosoftGraphUser1>]`: user
     - `[LastModifiedDateTime <DateTime?>]`: Date and time the item was last modified. Read-only.
     - `[Name <String>]`: The name of the item. Read-write.
     - `[ParentReference <IMicrosoftGraphItemReference>]`: itemReference
@@ -6785,12 +6813,12 @@ CREATEDBYUSER <IMicrosoftGraphUser>: user
     - `[Id <String>]`: 
     - `[Bundles <IMicrosoftGraphDriveItem[]>]`: Collection of [bundles][bundle] (albums and multi-select-shared sets of items). Only in personal OneDrive.
       - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-      - `[CreatedByUser <IMicrosoftGraphUser>]`: user
+      - `[CreatedByUser <IMicrosoftGraphUser1>]`: user
       - `[CreatedDateTime <DateTime?>]`: Date and time of item creation. Read-only.
       - `[Description <String>]`: Provides a user-visible description of the item. Optional.
       - `[ETag <String>]`: ETag for the item. Read-only.
       - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-      - `[LastModifiedByUser <IMicrosoftGraphUser>]`: user
+      - `[LastModifiedByUser <IMicrosoftGraphUser1>]`: user
       - `[LastModifiedDateTime <DateTime?>]`: Date and time the item was last modified. Read-only.
       - `[Name <String>]`: The name of the item. Read-write.
       - `[ParentReference <IMicrosoftGraphItemReference>]`: itemReference
@@ -6886,12 +6914,12 @@ CREATEDBYUSER <IMicrosoftGraphUser>: user
       - `[ListItem <IMicrosoftGraphListItem1>]`: listItem
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-        - `[CreatedByUser <IMicrosoftGraphUser>]`: user
+        - `[CreatedByUser <IMicrosoftGraphUser1>]`: user
         - `[CreatedDateTime <DateTime?>]`: Date and time of item creation. Read-only.
         - `[Description <String>]`: Provides a user-visible description of the item. Optional.
         - `[ETag <String>]`: ETag for the item. Read-only.
         - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-        - `[LastModifiedByUser <IMicrosoftGraphUser>]`: user
+        - `[LastModifiedByUser <IMicrosoftGraphUser1>]`: user
         - `[LastModifiedDateTime <DateTime?>]`: Date and time the item was last modified. Read-only.
         - `[Name <String>]`: The name of the item. Read-write.
         - `[ParentReference <IMicrosoftGraphItemReference>]`: itemReference
@@ -6902,18 +6930,32 @@ CREATEDBYUSER <IMicrosoftGraphUser>: user
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[Id <String>]`: The id of the content type.
           - `[Name <String>]`: The name of the content type.
-        - `[DriveItem <IMicrosoftGraphDriveItem>]`: driveItem
-        - `[Fields <IMicrosoftGraphFieldValueSet>]`: fieldValueSet
-          - `[(Any) <Object>]`: This indicates any property can be added to this object.
-          - `[Id <String>]`: 
-        - `[SharepointIds <IMicrosoftGraphSharepointIds>]`: sharepointIds
-        - `[Versions <IMicrosoftGraphListItemVersion[]>]`: The list of previous versions of the list item.
+        - `[DocumentSetVersions <IMicrosoftGraphDocumentSetVersion[]>]`: Version information for a document set version created by a user.
+          - `[Fields <IMicrosoftGraphFieldValueSet>]`: fieldValueSet
+            - `[(Any) <Object>]`: This indicates any property can be added to this object.
+            - `[Id <String>]`: 
           - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
           - `[LastModifiedDateTime <DateTime?>]`: Date and time the version was last modified. Read-only.
           - `[Publication <IMicrosoftGraphPublicationFacet>]`: publicationFacet
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[Level <String>]`: The state of publication for this document. Either published or checkout. Read-only.
             - `[VersionId <String>]`: The unique identifier for the version that is visible to the current caller. Read-only.
+          - `[Id <String>]`: 
+          - `[Comment <String>]`: Comment about the captured version.
+          - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
+          - `[CreatedDateTime <DateTime?>]`: Date and time when this version was created.
+          - `[Items <IMicrosoftGraphDocumentSetVersionItem[]>]`: Items within the document set that are captured as part of this version.
+            - `[ItemId <String>]`: The unique identifier for the item.
+            - `[Title <String>]`: The title of the item.
+            - `[VersionId <String>]`: The version ID of the item.
+          - `[ShouldCaptureMinorVersion <Boolean?>]`: If true, minor versions of items are also captured; otherwise, only major versions will be captured. Default value is false.
+        - `[DriveItem <IMicrosoftGraphDriveItem>]`: driveItem
+        - `[Fields <IMicrosoftGraphFieldValueSet>]`: fieldValueSet
+        - `[SharepointIds <IMicrosoftGraphSharepointIds>]`: sharepointIds
+        - `[Versions <IMicrosoftGraphListItemVersion[]>]`: The list of previous versions of the list item.
+          - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
+          - `[LastModifiedDateTime <DateTime?>]`: Date and time the version was last modified. Read-only.
+          - `[Publication <IMicrosoftGraphPublicationFacet>]`: publicationFacet
           - `[Id <String>]`: 
           - `[Fields <IMicrosoftGraphFieldValueSet>]`: fieldValueSet
       - `[Location <IMicrosoftGraphGeoCoordinates>]`: geoCoordinates
@@ -7299,12 +7341,12 @@ CREATEDBYUSER <IMicrosoftGraphUser>: user
     - `[List <IMicrosoftGraphList1>]`: list
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-      - `[CreatedByUser <IMicrosoftGraphUser>]`: user
+      - `[CreatedByUser <IMicrosoftGraphUser1>]`: user
       - `[CreatedDateTime <DateTime?>]`: Date and time of item creation. Read-only.
       - `[Description <String>]`: Provides a user-visible description of the item. Optional.
       - `[ETag <String>]`: ETag for the item. Read-only.
       - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-      - `[LastModifiedByUser <IMicrosoftGraphUser>]`: user
+      - `[LastModifiedByUser <IMicrosoftGraphUser1>]`: user
       - `[LastModifiedDateTime <DateTime?>]`: Date and time the item was last modified. Read-only.
       - `[Name <String>]`: The name of the item. Read-write.
       - `[ParentReference <IMicrosoftGraphItemReference>]`: itemReference
@@ -7544,12 +7586,12 @@ CREATEDBYUSER <IMicrosoftGraphUser>: user
   - `[FaxNumber <String>]`: The fax number of the user. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values).
   - `[FollowedSites <IMicrosoftGraphSite[]>]`: 
     - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-    - `[CreatedByUser <IMicrosoftGraphUser>]`: user
+    - `[CreatedByUser <IMicrosoftGraphUser1>]`: user
     - `[CreatedDateTime <DateTime?>]`: Date and time of item creation. Read-only.
     - `[Description <String>]`: Provides a user-visible description of the item. Optional.
     - `[ETag <String>]`: ETag for the item. Read-only.
     - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-    - `[LastModifiedByUser <IMicrosoftGraphUser>]`: user
+    - `[LastModifiedByUser <IMicrosoftGraphUser1>]`: user
     - `[LastModifiedDateTime <DateTime?>]`: Date and time the item was last modified. Read-only.
     - `[Name <String>]`: The name of the item. Read-write.
     - `[ParentReference <IMicrosoftGraphItemReference>]`: itemReference
@@ -7566,12 +7608,12 @@ CREATEDBYUSER <IMicrosoftGraphUser>: user
     - `[Items <IMicrosoftGraphBaseItem1[]>]`: Used to address any item contained in this site. This collection cannot be enumerated.
       - `[Id <String>]`: 
       - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-      - `[CreatedByUser <IMicrosoftGraphUser>]`: user
+      - `[CreatedByUser <IMicrosoftGraphUser1>]`: user
       - `[CreatedDateTime <DateTime?>]`: Date and time of item creation. Read-only.
       - `[Description <String>]`: Provides a user-visible description of the item. Optional.
       - `[ETag <String>]`: ETag for the item. Read-only.
       - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-      - `[LastModifiedByUser <IMicrosoftGraphUser>]`: user
+      - `[LastModifiedByUser <IMicrosoftGraphUser1>]`: user
       - `[LastModifiedDateTime <DateTime?>]`: Date and time the item was last modified. Read-only.
       - `[Name <String>]`: The name of the item. Read-write.
       - `[ParentReference <IMicrosoftGraphItemReference>]`: itemReference
@@ -8815,7 +8857,7 @@ DRIVE <IMicrosoftGraphDrive>: drive
       - `[Id <String>]`: Unique identifier for the identity.
     - `[Device <IMicrosoftGraphIdentity>]`: identity
     - `[User <IMicrosoftGraphIdentity>]`: identity
-  - `[CreatedByUser <IMicrosoftGraphUser>]`: user
+  - `[CreatedByUser <IMicrosoftGraphUser1>]`: user
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
     - `[Id <String>]`: 
@@ -9359,12 +9401,12 @@ DRIVE <IMicrosoftGraphDrive>: drive
     - `[FaxNumber <String>]`: The fax number of the user. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values).
     - `[FollowedSites <IMicrosoftGraphSite[]>]`: 
       - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-      - `[CreatedByUser <IMicrosoftGraphUser>]`: user
+      - `[CreatedByUser <IMicrosoftGraphUser1>]`: user
       - `[CreatedDateTime <DateTime?>]`: Date and time of item creation. Read-only.
       - `[Description <String>]`: Provides a user-visible description of the item. Optional.
       - `[ETag <String>]`: ETag for the item. Read-only.
       - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-      - `[LastModifiedByUser <IMicrosoftGraphUser>]`: user
+      - `[LastModifiedByUser <IMicrosoftGraphUser1>]`: user
       - `[LastModifiedDateTime <DateTime?>]`: Date and time the item was last modified. Read-only.
       - `[Name <String>]`: The name of the item. Read-write.
       - `[ParentReference <IMicrosoftGraphItemReference>]`: itemReference
@@ -9406,12 +9448,12 @@ DRIVE <IMicrosoftGraphDrive>: drive
             - `[DriveItem <IMicrosoftGraphDriveItem>]`: driveItem
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
               - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-              - `[CreatedByUser <IMicrosoftGraphUser>]`: user
+              - `[CreatedByUser <IMicrosoftGraphUser1>]`: user
               - `[CreatedDateTime <DateTime?>]`: Date and time of item creation. Read-only.
               - `[Description <String>]`: Provides a user-visible description of the item. Optional.
               - `[ETag <String>]`: ETag for the item. Read-only.
               - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-              - `[LastModifiedByUser <IMicrosoftGraphUser>]`: user
+              - `[LastModifiedByUser <IMicrosoftGraphUser1>]`: user
               - `[LastModifiedDateTime <DateTime?>]`: Date and time the item was last modified. Read-only.
               - `[Name <String>]`: The name of the item. Read-write.
               - `[ParentReference <IMicrosoftGraphItemReference>]`: itemReference
@@ -9478,12 +9520,12 @@ DRIVE <IMicrosoftGraphDrive>: drive
               - `[ListItem <IMicrosoftGraphListItem1>]`: listItem
                 - `[(Any) <Object>]`: This indicates any property can be added to this object.
                 - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-                - `[CreatedByUser <IMicrosoftGraphUser>]`: user
+                - `[CreatedByUser <IMicrosoftGraphUser1>]`: user
                 - `[CreatedDateTime <DateTime?>]`: Date and time of item creation. Read-only.
                 - `[Description <String>]`: Provides a user-visible description of the item. Optional.
                 - `[ETag <String>]`: ETag for the item. Read-only.
                 - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-                - `[LastModifiedByUser <IMicrosoftGraphUser>]`: user
+                - `[LastModifiedByUser <IMicrosoftGraphUser1>]`: user
                 - `[LastModifiedDateTime <DateTime?>]`: Date and time the item was last modified. Read-only.
                 - `[Name <String>]`: The name of the item. Read-write.
                 - `[ParentReference <IMicrosoftGraphItemReference>]`: itemReference
@@ -9494,18 +9536,32 @@ DRIVE <IMicrosoftGraphDrive>: drive
                   - `[(Any) <Object>]`: This indicates any property can be added to this object.
                   - `[Id <String>]`: The id of the content type.
                   - `[Name <String>]`: The name of the content type.
-                - `[DriveItem <IMicrosoftGraphDriveItem>]`: driveItem
-                - `[Fields <IMicrosoftGraphFieldValueSet>]`: fieldValueSet
-                  - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                  - `[Id <String>]`: 
-                - `[SharepointIds <IMicrosoftGraphSharepointIds>]`: sharepointIds
-                - `[Versions <IMicrosoftGraphListItemVersion[]>]`: The list of previous versions of the list item.
+                - `[DocumentSetVersions <IMicrosoftGraphDocumentSetVersion[]>]`: Version information for a document set version created by a user.
+                  - `[Fields <IMicrosoftGraphFieldValueSet>]`: fieldValueSet
+                    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+                    - `[Id <String>]`: 
                   - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
                   - `[LastModifiedDateTime <DateTime?>]`: Date and time the version was last modified. Read-only.
                   - `[Publication <IMicrosoftGraphPublicationFacet>]`: publicationFacet
                     - `[(Any) <Object>]`: This indicates any property can be added to this object.
                     - `[Level <String>]`: The state of publication for this document. Either published or checkout. Read-only.
                     - `[VersionId <String>]`: The unique identifier for the version that is visible to the current caller. Read-only.
+                  - `[Id <String>]`: 
+                  - `[Comment <String>]`: Comment about the captured version.
+                  - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
+                  - `[CreatedDateTime <DateTime?>]`: Date and time when this version was created.
+                  - `[Items <IMicrosoftGraphDocumentSetVersionItem[]>]`: Items within the document set that are captured as part of this version.
+                    - `[ItemId <String>]`: The unique identifier for the item.
+                    - `[Title <String>]`: The title of the item.
+                    - `[VersionId <String>]`: The version ID of the item.
+                  - `[ShouldCaptureMinorVersion <Boolean?>]`: If true, minor versions of items are also captured; otherwise, only major versions will be captured. Default value is false.
+                - `[DriveItem <IMicrosoftGraphDriveItem>]`: driveItem
+                - `[Fields <IMicrosoftGraphFieldValueSet>]`: fieldValueSet
+                - `[SharepointIds <IMicrosoftGraphSharepointIds>]`: sharepointIds
+                - `[Versions <IMicrosoftGraphListItemVersion[]>]`: The list of previous versions of the list item.
+                  - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
+                  - `[LastModifiedDateTime <DateTime?>]`: Date and time the version was last modified. Read-only.
+                  - `[Publication <IMicrosoftGraphPublicationFacet>]`: publicationFacet
                   - `[Id <String>]`: 
                   - `[Fields <IMicrosoftGraphFieldValueSet>]`: fieldValueSet
               - `[Location <IMicrosoftGraphGeoCoordinates>]`: geoCoordinates
@@ -10087,24 +10143,24 @@ DRIVE <IMicrosoftGraphDrive>: drive
       - `[Items <IMicrosoftGraphBaseItem1[]>]`: Used to address any item contained in this site. This collection cannot be enumerated.
         - `[Id <String>]`: 
         - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-        - `[CreatedByUser <IMicrosoftGraphUser>]`: user
+        - `[CreatedByUser <IMicrosoftGraphUser1>]`: user
         - `[CreatedDateTime <DateTime?>]`: Date and time of item creation. Read-only.
         - `[Description <String>]`: Provides a user-visible description of the item. Optional.
         - `[ETag <String>]`: ETag for the item. Read-only.
         - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-        - `[LastModifiedByUser <IMicrosoftGraphUser>]`: user
+        - `[LastModifiedByUser <IMicrosoftGraphUser1>]`: user
         - `[LastModifiedDateTime <DateTime?>]`: Date and time the item was last modified. Read-only.
         - `[Name <String>]`: The name of the item. Read-write.
         - `[ParentReference <IMicrosoftGraphItemReference>]`: itemReference
         - `[WebUrl <String>]`: URL that displays the resource in the browser. Read-only.
       - `[Lists <IMicrosoftGraphList1[]>]`: The collection of lists under this site.
         - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-        - `[CreatedByUser <IMicrosoftGraphUser>]`: user
+        - `[CreatedByUser <IMicrosoftGraphUser1>]`: user
         - `[CreatedDateTime <DateTime?>]`: Date and time of item creation. Read-only.
         - `[Description <String>]`: Provides a user-visible description of the item. Optional.
         - `[ETag <String>]`: ETag for the item. Read-only.
         - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-        - `[LastModifiedByUser <IMicrosoftGraphUser>]`: user
+        - `[LastModifiedByUser <IMicrosoftGraphUser1>]`: user
         - `[LastModifiedDateTime <DateTime?>]`: Date and time the item was last modified. Read-only.
         - `[Name <String>]`: The name of the item. Read-write.
         - `[ParentReference <IMicrosoftGraphItemReference>]`: itemReference
@@ -11366,7 +11422,7 @@ DRIVE <IMicrosoftGraphDrive>: drive
   - `[Description <String>]`: Provides a user-visible description of the item. Optional.
   - `[ETag <String>]`: ETag for the item. Read-only.
   - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-  - `[LastModifiedByUser <IMicrosoftGraphUser>]`: user
+  - `[LastModifiedByUser <IMicrosoftGraphUser1>]`: user
   - `[LastModifiedDateTime <DateTime?>]`: Date and time the item was last modified. Read-only.
   - `[Name <String>]`: The name of the item. Read-write.
   - `[ParentReference <IMicrosoftGraphItemReference>]`: itemReference
@@ -11402,7 +11458,7 @@ DRIVES <IMicrosoftGraphDrive[]>: The collection of drives (document libraries) u
       - `[Id <String>]`: Unique identifier for the identity.
     - `[Device <IMicrosoftGraphIdentity>]`: identity
     - `[User <IMicrosoftGraphIdentity>]`: identity
-  - `[CreatedByUser <IMicrosoftGraphUser>]`: user
+  - `[CreatedByUser <IMicrosoftGraphUser1>]`: user
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
     - `[Id <String>]`: 
@@ -11946,12 +12002,12 @@ DRIVES <IMicrosoftGraphDrive[]>: The collection of drives (document libraries) u
     - `[FaxNumber <String>]`: The fax number of the user. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values).
     - `[FollowedSites <IMicrosoftGraphSite[]>]`: 
       - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-      - `[CreatedByUser <IMicrosoftGraphUser>]`: user
+      - `[CreatedByUser <IMicrosoftGraphUser1>]`: user
       - `[CreatedDateTime <DateTime?>]`: Date and time of item creation. Read-only.
       - `[Description <String>]`: Provides a user-visible description of the item. Optional.
       - `[ETag <String>]`: ETag for the item. Read-only.
       - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-      - `[LastModifiedByUser <IMicrosoftGraphUser>]`: user
+      - `[LastModifiedByUser <IMicrosoftGraphUser1>]`: user
       - `[LastModifiedDateTime <DateTime?>]`: Date and time the item was last modified. Read-only.
       - `[Name <String>]`: The name of the item. Read-write.
       - `[ParentReference <IMicrosoftGraphItemReference>]`: itemReference
@@ -11993,12 +12049,12 @@ DRIVES <IMicrosoftGraphDrive[]>: The collection of drives (document libraries) u
             - `[DriveItem <IMicrosoftGraphDriveItem>]`: driveItem
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
               - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-              - `[CreatedByUser <IMicrosoftGraphUser>]`: user
+              - `[CreatedByUser <IMicrosoftGraphUser1>]`: user
               - `[CreatedDateTime <DateTime?>]`: Date and time of item creation. Read-only.
               - `[Description <String>]`: Provides a user-visible description of the item. Optional.
               - `[ETag <String>]`: ETag for the item. Read-only.
               - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-              - `[LastModifiedByUser <IMicrosoftGraphUser>]`: user
+              - `[LastModifiedByUser <IMicrosoftGraphUser1>]`: user
               - `[LastModifiedDateTime <DateTime?>]`: Date and time the item was last modified. Read-only.
               - `[Name <String>]`: The name of the item. Read-write.
               - `[ParentReference <IMicrosoftGraphItemReference>]`: itemReference
@@ -12065,12 +12121,12 @@ DRIVES <IMicrosoftGraphDrive[]>: The collection of drives (document libraries) u
               - `[ListItem <IMicrosoftGraphListItem1>]`: listItem
                 - `[(Any) <Object>]`: This indicates any property can be added to this object.
                 - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-                - `[CreatedByUser <IMicrosoftGraphUser>]`: user
+                - `[CreatedByUser <IMicrosoftGraphUser1>]`: user
                 - `[CreatedDateTime <DateTime?>]`: Date and time of item creation. Read-only.
                 - `[Description <String>]`: Provides a user-visible description of the item. Optional.
                 - `[ETag <String>]`: ETag for the item. Read-only.
                 - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-                - `[LastModifiedByUser <IMicrosoftGraphUser>]`: user
+                - `[LastModifiedByUser <IMicrosoftGraphUser1>]`: user
                 - `[LastModifiedDateTime <DateTime?>]`: Date and time the item was last modified. Read-only.
                 - `[Name <String>]`: The name of the item. Read-write.
                 - `[ParentReference <IMicrosoftGraphItemReference>]`: itemReference
@@ -12081,18 +12137,32 @@ DRIVES <IMicrosoftGraphDrive[]>: The collection of drives (document libraries) u
                   - `[(Any) <Object>]`: This indicates any property can be added to this object.
                   - `[Id <String>]`: The id of the content type.
                   - `[Name <String>]`: The name of the content type.
-                - `[DriveItem <IMicrosoftGraphDriveItem>]`: driveItem
-                - `[Fields <IMicrosoftGraphFieldValueSet>]`: fieldValueSet
-                  - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                  - `[Id <String>]`: 
-                - `[SharepointIds <IMicrosoftGraphSharepointIds>]`: sharepointIds
-                - `[Versions <IMicrosoftGraphListItemVersion[]>]`: The list of previous versions of the list item.
+                - `[DocumentSetVersions <IMicrosoftGraphDocumentSetVersion[]>]`: Version information for a document set version created by a user.
+                  - `[Fields <IMicrosoftGraphFieldValueSet>]`: fieldValueSet
+                    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+                    - `[Id <String>]`: 
                   - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
                   - `[LastModifiedDateTime <DateTime?>]`: Date and time the version was last modified. Read-only.
                   - `[Publication <IMicrosoftGraphPublicationFacet>]`: publicationFacet
                     - `[(Any) <Object>]`: This indicates any property can be added to this object.
                     - `[Level <String>]`: The state of publication for this document. Either published or checkout. Read-only.
                     - `[VersionId <String>]`: The unique identifier for the version that is visible to the current caller. Read-only.
+                  - `[Id <String>]`: 
+                  - `[Comment <String>]`: Comment about the captured version.
+                  - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
+                  - `[CreatedDateTime <DateTime?>]`: Date and time when this version was created.
+                  - `[Items <IMicrosoftGraphDocumentSetVersionItem[]>]`: Items within the document set that are captured as part of this version.
+                    - `[ItemId <String>]`: The unique identifier for the item.
+                    - `[Title <String>]`: The title of the item.
+                    - `[VersionId <String>]`: The version ID of the item.
+                  - `[ShouldCaptureMinorVersion <Boolean?>]`: If true, minor versions of items are also captured; otherwise, only major versions will be captured. Default value is false.
+                - `[DriveItem <IMicrosoftGraphDriveItem>]`: driveItem
+                - `[Fields <IMicrosoftGraphFieldValueSet>]`: fieldValueSet
+                - `[SharepointIds <IMicrosoftGraphSharepointIds>]`: sharepointIds
+                - `[Versions <IMicrosoftGraphListItemVersion[]>]`: The list of previous versions of the list item.
+                  - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
+                  - `[LastModifiedDateTime <DateTime?>]`: Date and time the version was last modified. Read-only.
+                  - `[Publication <IMicrosoftGraphPublicationFacet>]`: publicationFacet
                   - `[Id <String>]`: 
                   - `[Fields <IMicrosoftGraphFieldValueSet>]`: fieldValueSet
               - `[Location <IMicrosoftGraphGeoCoordinates>]`: geoCoordinates
@@ -12674,24 +12744,24 @@ DRIVES <IMicrosoftGraphDrive[]>: The collection of drives (document libraries) u
       - `[Items <IMicrosoftGraphBaseItem1[]>]`: Used to address any item contained in this site. This collection cannot be enumerated.
         - `[Id <String>]`: 
         - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-        - `[CreatedByUser <IMicrosoftGraphUser>]`: user
+        - `[CreatedByUser <IMicrosoftGraphUser1>]`: user
         - `[CreatedDateTime <DateTime?>]`: Date and time of item creation. Read-only.
         - `[Description <String>]`: Provides a user-visible description of the item. Optional.
         - `[ETag <String>]`: ETag for the item. Read-only.
         - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-        - `[LastModifiedByUser <IMicrosoftGraphUser>]`: user
+        - `[LastModifiedByUser <IMicrosoftGraphUser1>]`: user
         - `[LastModifiedDateTime <DateTime?>]`: Date and time the item was last modified. Read-only.
         - `[Name <String>]`: The name of the item. Read-write.
         - `[ParentReference <IMicrosoftGraphItemReference>]`: itemReference
         - `[WebUrl <String>]`: URL that displays the resource in the browser. Read-only.
       - `[Lists <IMicrosoftGraphList1[]>]`: The collection of lists under this site.
         - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-        - `[CreatedByUser <IMicrosoftGraphUser>]`: user
+        - `[CreatedByUser <IMicrosoftGraphUser1>]`: user
         - `[CreatedDateTime <DateTime?>]`: Date and time of item creation. Read-only.
         - `[Description <String>]`: Provides a user-visible description of the item. Optional.
         - `[ETag <String>]`: ETag for the item. Read-only.
         - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-        - `[LastModifiedByUser <IMicrosoftGraphUser>]`: user
+        - `[LastModifiedByUser <IMicrosoftGraphUser1>]`: user
         - `[LastModifiedDateTime <DateTime?>]`: Date and time the item was last modified. Read-only.
         - `[Name <String>]`: The name of the item. Read-write.
         - `[ParentReference <IMicrosoftGraphItemReference>]`: itemReference
@@ -13953,7 +14023,7 @@ DRIVES <IMicrosoftGraphDrive[]>: The collection of drives (document libraries) u
   - `[Description <String>]`: Provides a user-visible description of the item. Optional.
   - `[ETag <String>]`: ETag for the item. Read-only.
   - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-  - `[LastModifiedByUser <IMicrosoftGraphUser>]`: user
+  - `[LastModifiedByUser <IMicrosoftGraphUser1>]`: user
   - `[LastModifiedDateTime <DateTime?>]`: Date and time the item was last modified. Read-only.
   - `[Name <String>]`: The name of the item. Read-write.
   - `[ParentReference <IMicrosoftGraphItemReference>]`: itemReference
@@ -14177,7 +14247,7 @@ ITEMS <IMicrosoftGraphBaseItem1[]>: Used to address any item contained in this s
       - `[Id <String>]`: Unique identifier for the identity.
     - `[Device <IMicrosoftGraphIdentity>]`: identity
     - `[User <IMicrosoftGraphIdentity>]`: identity
-  - `[CreatedByUser <IMicrosoftGraphUser>]`: user
+  - `[CreatedByUser <IMicrosoftGraphUser1>]`: user
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
     - `[Id <String>]`: 
@@ -14708,12 +14778,12 @@ ITEMS <IMicrosoftGraphBaseItem1[]>: Used to address any item contained in this s
     - `[Drive <IMicrosoftGraphDrive>]`: drive
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-      - `[CreatedByUser <IMicrosoftGraphUser>]`: user
+      - `[CreatedByUser <IMicrosoftGraphUser1>]`: user
       - `[CreatedDateTime <DateTime?>]`: Date and time of item creation. Read-only.
       - `[Description <String>]`: Provides a user-visible description of the item. Optional.
       - `[ETag <String>]`: ETag for the item. Read-only.
       - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-      - `[LastModifiedByUser <IMicrosoftGraphUser>]`: user
+      - `[LastModifiedByUser <IMicrosoftGraphUser1>]`: user
       - `[LastModifiedDateTime <DateTime?>]`: Date and time the item was last modified. Read-only.
       - `[Name <String>]`: The name of the item. Read-write.
       - `[ParentReference <IMicrosoftGraphItemReference>]`: itemReference
@@ -14738,12 +14808,12 @@ ITEMS <IMicrosoftGraphBaseItem1[]>: Used to address any item contained in this s
       - `[Id <String>]`: 
       - `[Bundles <IMicrosoftGraphDriveItem[]>]`: Collection of [bundles][bundle] (albums and multi-select-shared sets of items). Only in personal OneDrive.
         - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-        - `[CreatedByUser <IMicrosoftGraphUser>]`: user
+        - `[CreatedByUser <IMicrosoftGraphUser1>]`: user
         - `[CreatedDateTime <DateTime?>]`: Date and time of item creation. Read-only.
         - `[Description <String>]`: Provides a user-visible description of the item. Optional.
         - `[ETag <String>]`: ETag for the item. Read-only.
         - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-        - `[LastModifiedByUser <IMicrosoftGraphUser>]`: user
+        - `[LastModifiedByUser <IMicrosoftGraphUser1>]`: user
         - `[LastModifiedDateTime <DateTime?>]`: Date and time the item was last modified. Read-only.
         - `[Name <String>]`: The name of the item. Read-write.
         - `[ParentReference <IMicrosoftGraphItemReference>]`: itemReference
@@ -14839,12 +14909,12 @@ ITEMS <IMicrosoftGraphBaseItem1[]>: Used to address any item contained in this s
         - `[ListItem <IMicrosoftGraphListItem1>]`: listItem
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-          - `[CreatedByUser <IMicrosoftGraphUser>]`: user
+          - `[CreatedByUser <IMicrosoftGraphUser1>]`: user
           - `[CreatedDateTime <DateTime?>]`: Date and time of item creation. Read-only.
           - `[Description <String>]`: Provides a user-visible description of the item. Optional.
           - `[ETag <String>]`: ETag for the item. Read-only.
           - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-          - `[LastModifiedByUser <IMicrosoftGraphUser>]`: user
+          - `[LastModifiedByUser <IMicrosoftGraphUser1>]`: user
           - `[LastModifiedDateTime <DateTime?>]`: Date and time the item was last modified. Read-only.
           - `[Name <String>]`: The name of the item. Read-write.
           - `[ParentReference <IMicrosoftGraphItemReference>]`: itemReference
@@ -14855,18 +14925,32 @@ ITEMS <IMicrosoftGraphBaseItem1[]>: Used to address any item contained in this s
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[Id <String>]`: The id of the content type.
             - `[Name <String>]`: The name of the content type.
-          - `[DriveItem <IMicrosoftGraphDriveItem>]`: driveItem
-          - `[Fields <IMicrosoftGraphFieldValueSet>]`: fieldValueSet
-            - `[(Any) <Object>]`: This indicates any property can be added to this object.
-            - `[Id <String>]`: 
-          - `[SharepointIds <IMicrosoftGraphSharepointIds>]`: sharepointIds
-          - `[Versions <IMicrosoftGraphListItemVersion[]>]`: The list of previous versions of the list item.
+          - `[DocumentSetVersions <IMicrosoftGraphDocumentSetVersion[]>]`: Version information for a document set version created by a user.
+            - `[Fields <IMicrosoftGraphFieldValueSet>]`: fieldValueSet
+              - `[(Any) <Object>]`: This indicates any property can be added to this object.
+              - `[Id <String>]`: 
             - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
             - `[LastModifiedDateTime <DateTime?>]`: Date and time the version was last modified. Read-only.
             - `[Publication <IMicrosoftGraphPublicationFacet>]`: publicationFacet
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
               - `[Level <String>]`: The state of publication for this document. Either published or checkout. Read-only.
               - `[VersionId <String>]`: The unique identifier for the version that is visible to the current caller. Read-only.
+            - `[Id <String>]`: 
+            - `[Comment <String>]`: Comment about the captured version.
+            - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
+            - `[CreatedDateTime <DateTime?>]`: Date and time when this version was created.
+            - `[Items <IMicrosoftGraphDocumentSetVersionItem[]>]`: Items within the document set that are captured as part of this version.
+              - `[ItemId <String>]`: The unique identifier for the item.
+              - `[Title <String>]`: The title of the item.
+              - `[VersionId <String>]`: The version ID of the item.
+            - `[ShouldCaptureMinorVersion <Boolean?>]`: If true, minor versions of items are also captured; otherwise, only major versions will be captured. Default value is false.
+          - `[DriveItem <IMicrosoftGraphDriveItem>]`: driveItem
+          - `[Fields <IMicrosoftGraphFieldValueSet>]`: fieldValueSet
+          - `[SharepointIds <IMicrosoftGraphSharepointIds>]`: sharepointIds
+          - `[Versions <IMicrosoftGraphListItemVersion[]>]`: The list of previous versions of the list item.
+            - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
+            - `[LastModifiedDateTime <DateTime?>]`: Date and time the version was last modified. Read-only.
+            - `[Publication <IMicrosoftGraphPublicationFacet>]`: publicationFacet
             - `[Id <String>]`: 
             - `[Fields <IMicrosoftGraphFieldValueSet>]`: fieldValueSet
         - `[Location <IMicrosoftGraphGeoCoordinates>]`: geoCoordinates
@@ -15252,12 +15336,12 @@ ITEMS <IMicrosoftGraphBaseItem1[]>: Used to address any item contained in this s
       - `[List <IMicrosoftGraphList1>]`: list
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-        - `[CreatedByUser <IMicrosoftGraphUser>]`: user
+        - `[CreatedByUser <IMicrosoftGraphUser1>]`: user
         - `[CreatedDateTime <DateTime?>]`: Date and time of item creation. Read-only.
         - `[Description <String>]`: Provides a user-visible description of the item. Optional.
         - `[ETag <String>]`: ETag for the item. Read-only.
         - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-        - `[LastModifiedByUser <IMicrosoftGraphUser>]`: user
+        - `[LastModifiedByUser <IMicrosoftGraphUser1>]`: user
         - `[LastModifiedDateTime <DateTime?>]`: Date and time the item was last modified. Read-only.
         - `[Name <String>]`: The name of the item. Read-write.
         - `[ParentReference <IMicrosoftGraphItemReference>]`: itemReference
@@ -15497,12 +15581,12 @@ ITEMS <IMicrosoftGraphBaseItem1[]>: Used to address any item contained in this s
     - `[FaxNumber <String>]`: The fax number of the user. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values).
     - `[FollowedSites <IMicrosoftGraphSite[]>]`: 
       - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-      - `[CreatedByUser <IMicrosoftGraphUser>]`: user
+      - `[CreatedByUser <IMicrosoftGraphUser1>]`: user
       - `[CreatedDateTime <DateTime?>]`: Date and time of item creation. Read-only.
       - `[Description <String>]`: Provides a user-visible description of the item. Optional.
       - `[ETag <String>]`: ETag for the item. Read-only.
       - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-      - `[LastModifiedByUser <IMicrosoftGraphUser>]`: user
+      - `[LastModifiedByUser <IMicrosoftGraphUser1>]`: user
       - `[LastModifiedDateTime <DateTime?>]`: Date and time the item was last modified. Read-only.
       - `[Name <String>]`: The name of the item. Read-write.
       - `[ParentReference <IMicrosoftGraphItemReference>]`: itemReference
@@ -16749,7 +16833,7 @@ ITEMS <IMicrosoftGraphBaseItem1[]>: Used to address any item contained in this s
   - `[Description <String>]`: Provides a user-visible description of the item. Optional.
   - `[ETag <String>]`: ETag for the item. Read-only.
   - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-  - `[LastModifiedByUser <IMicrosoftGraphUser>]`: user
+  - `[LastModifiedByUser <IMicrosoftGraphUser1>]`: user
   - `[LastModifiedDateTime <DateTime?>]`: Date and time the item was last modified. Read-only.
   - `[Name <String>]`: The name of the item. Read-write.
   - `[ParentReference <IMicrosoftGraphItemReference>]`: itemReference
@@ -16764,7 +16848,7 @@ LASTMODIFIEDBY <IMicrosoftGraphIdentitySet>: identitySet
   - `[Device <IMicrosoftGraphIdentity>]`: identity
   - `[User <IMicrosoftGraphIdentity>]`: identity
 
-LASTMODIFIEDBYUSER <IMicrosoftGraphUser>: user
+LASTMODIFIEDBYUSER <IMicrosoftGraphUser1>: user
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
   - `[Id <String>]`: 
@@ -17302,12 +17386,12 @@ LASTMODIFIEDBYUSER <IMicrosoftGraphUser>: user
   - `[Drive <IMicrosoftGraphDrive>]`: drive
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-    - `[CreatedByUser <IMicrosoftGraphUser>]`: user
+    - `[CreatedByUser <IMicrosoftGraphUser1>]`: user
     - `[CreatedDateTime <DateTime?>]`: Date and time of item creation. Read-only.
     - `[Description <String>]`: Provides a user-visible description of the item. Optional.
     - `[ETag <String>]`: ETag for the item. Read-only.
     - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-    - `[LastModifiedByUser <IMicrosoftGraphUser>]`: user
+    - `[LastModifiedByUser <IMicrosoftGraphUser1>]`: user
     - `[LastModifiedDateTime <DateTime?>]`: Date and time the item was last modified. Read-only.
     - `[Name <String>]`: The name of the item. Read-write.
     - `[ParentReference <IMicrosoftGraphItemReference>]`: itemReference
@@ -17332,12 +17416,12 @@ LASTMODIFIEDBYUSER <IMicrosoftGraphUser>: user
     - `[Id <String>]`: 
     - `[Bundles <IMicrosoftGraphDriveItem[]>]`: Collection of [bundles][bundle] (albums and multi-select-shared sets of items). Only in personal OneDrive.
       - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-      - `[CreatedByUser <IMicrosoftGraphUser>]`: user
+      - `[CreatedByUser <IMicrosoftGraphUser1>]`: user
       - `[CreatedDateTime <DateTime?>]`: Date and time of item creation. Read-only.
       - `[Description <String>]`: Provides a user-visible description of the item. Optional.
       - `[ETag <String>]`: ETag for the item. Read-only.
       - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-      - `[LastModifiedByUser <IMicrosoftGraphUser>]`: user
+      - `[LastModifiedByUser <IMicrosoftGraphUser1>]`: user
       - `[LastModifiedDateTime <DateTime?>]`: Date and time the item was last modified. Read-only.
       - `[Name <String>]`: The name of the item. Read-write.
       - `[ParentReference <IMicrosoftGraphItemReference>]`: itemReference
@@ -17433,12 +17517,12 @@ LASTMODIFIEDBYUSER <IMicrosoftGraphUser>: user
       - `[ListItem <IMicrosoftGraphListItem1>]`: listItem
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-        - `[CreatedByUser <IMicrosoftGraphUser>]`: user
+        - `[CreatedByUser <IMicrosoftGraphUser1>]`: user
         - `[CreatedDateTime <DateTime?>]`: Date and time of item creation. Read-only.
         - `[Description <String>]`: Provides a user-visible description of the item. Optional.
         - `[ETag <String>]`: ETag for the item. Read-only.
         - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-        - `[LastModifiedByUser <IMicrosoftGraphUser>]`: user
+        - `[LastModifiedByUser <IMicrosoftGraphUser1>]`: user
         - `[LastModifiedDateTime <DateTime?>]`: Date and time the item was last modified. Read-only.
         - `[Name <String>]`: The name of the item. Read-write.
         - `[ParentReference <IMicrosoftGraphItemReference>]`: itemReference
@@ -17449,18 +17533,32 @@ LASTMODIFIEDBYUSER <IMicrosoftGraphUser>: user
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[Id <String>]`: The id of the content type.
           - `[Name <String>]`: The name of the content type.
-        - `[DriveItem <IMicrosoftGraphDriveItem>]`: driveItem
-        - `[Fields <IMicrosoftGraphFieldValueSet>]`: fieldValueSet
-          - `[(Any) <Object>]`: This indicates any property can be added to this object.
-          - `[Id <String>]`: 
-        - `[SharepointIds <IMicrosoftGraphSharepointIds>]`: sharepointIds
-        - `[Versions <IMicrosoftGraphListItemVersion[]>]`: The list of previous versions of the list item.
+        - `[DocumentSetVersions <IMicrosoftGraphDocumentSetVersion[]>]`: Version information for a document set version created by a user.
+          - `[Fields <IMicrosoftGraphFieldValueSet>]`: fieldValueSet
+            - `[(Any) <Object>]`: This indicates any property can be added to this object.
+            - `[Id <String>]`: 
           - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
           - `[LastModifiedDateTime <DateTime?>]`: Date and time the version was last modified. Read-only.
           - `[Publication <IMicrosoftGraphPublicationFacet>]`: publicationFacet
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[Level <String>]`: The state of publication for this document. Either published or checkout. Read-only.
             - `[VersionId <String>]`: The unique identifier for the version that is visible to the current caller. Read-only.
+          - `[Id <String>]`: 
+          - `[Comment <String>]`: Comment about the captured version.
+          - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
+          - `[CreatedDateTime <DateTime?>]`: Date and time when this version was created.
+          - `[Items <IMicrosoftGraphDocumentSetVersionItem[]>]`: Items within the document set that are captured as part of this version.
+            - `[ItemId <String>]`: The unique identifier for the item.
+            - `[Title <String>]`: The title of the item.
+            - `[VersionId <String>]`: The version ID of the item.
+          - `[ShouldCaptureMinorVersion <Boolean?>]`: If true, minor versions of items are also captured; otherwise, only major versions will be captured. Default value is false.
+        - `[DriveItem <IMicrosoftGraphDriveItem>]`: driveItem
+        - `[Fields <IMicrosoftGraphFieldValueSet>]`: fieldValueSet
+        - `[SharepointIds <IMicrosoftGraphSharepointIds>]`: sharepointIds
+        - `[Versions <IMicrosoftGraphListItemVersion[]>]`: The list of previous versions of the list item.
+          - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
+          - `[LastModifiedDateTime <DateTime?>]`: Date and time the version was last modified. Read-only.
+          - `[Publication <IMicrosoftGraphPublicationFacet>]`: publicationFacet
           - `[Id <String>]`: 
           - `[Fields <IMicrosoftGraphFieldValueSet>]`: fieldValueSet
       - `[Location <IMicrosoftGraphGeoCoordinates>]`: geoCoordinates
@@ -17846,12 +17944,12 @@ LASTMODIFIEDBYUSER <IMicrosoftGraphUser>: user
     - `[List <IMicrosoftGraphList1>]`: list
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-      - `[CreatedByUser <IMicrosoftGraphUser>]`: user
+      - `[CreatedByUser <IMicrosoftGraphUser1>]`: user
       - `[CreatedDateTime <DateTime?>]`: Date and time of item creation. Read-only.
       - `[Description <String>]`: Provides a user-visible description of the item. Optional.
       - `[ETag <String>]`: ETag for the item. Read-only.
       - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-      - `[LastModifiedByUser <IMicrosoftGraphUser>]`: user
+      - `[LastModifiedByUser <IMicrosoftGraphUser1>]`: user
       - `[LastModifiedDateTime <DateTime?>]`: Date and time the item was last modified. Read-only.
       - `[Name <String>]`: The name of the item. Read-write.
       - `[ParentReference <IMicrosoftGraphItemReference>]`: itemReference
@@ -18091,12 +18189,12 @@ LASTMODIFIEDBYUSER <IMicrosoftGraphUser>: user
   - `[FaxNumber <String>]`: The fax number of the user. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values).
   - `[FollowedSites <IMicrosoftGraphSite[]>]`: 
     - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-    - `[CreatedByUser <IMicrosoftGraphUser>]`: user
+    - `[CreatedByUser <IMicrosoftGraphUser1>]`: user
     - `[CreatedDateTime <DateTime?>]`: Date and time of item creation. Read-only.
     - `[Description <String>]`: Provides a user-visible description of the item. Optional.
     - `[ETag <String>]`: ETag for the item. Read-only.
     - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-    - `[LastModifiedByUser <IMicrosoftGraphUser>]`: user
+    - `[LastModifiedByUser <IMicrosoftGraphUser1>]`: user
     - `[LastModifiedDateTime <DateTime?>]`: Date and time the item was last modified. Read-only.
     - `[Name <String>]`: The name of the item. Read-write.
     - `[ParentReference <IMicrosoftGraphItemReference>]`: itemReference
@@ -18113,12 +18211,12 @@ LASTMODIFIEDBYUSER <IMicrosoftGraphUser>: user
     - `[Items <IMicrosoftGraphBaseItem1[]>]`: Used to address any item contained in this site. This collection cannot be enumerated.
       - `[Id <String>]`: 
       - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-      - `[CreatedByUser <IMicrosoftGraphUser>]`: user
+      - `[CreatedByUser <IMicrosoftGraphUser1>]`: user
       - `[CreatedDateTime <DateTime?>]`: Date and time of item creation. Read-only.
       - `[Description <String>]`: Provides a user-visible description of the item. Optional.
       - `[ETag <String>]`: ETag for the item. Read-only.
       - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-      - `[LastModifiedByUser <IMicrosoftGraphUser>]`: user
+      - `[LastModifiedByUser <IMicrosoftGraphUser1>]`: user
       - `[LastModifiedDateTime <DateTime?>]`: Date and time the item was last modified. Read-only.
       - `[Name <String>]`: The name of the item. Read-write.
       - `[ParentReference <IMicrosoftGraphItemReference>]`: itemReference
@@ -19361,7 +19459,7 @@ LISTS <IMicrosoftGraphList1[]>: The collection of lists under this site.
       - `[Id <String>]`: Unique identifier for the identity.
     - `[Device <IMicrosoftGraphIdentity>]`: identity
     - `[User <IMicrosoftGraphIdentity>]`: identity
-  - `[CreatedByUser <IMicrosoftGraphUser>]`: user
+  - `[CreatedByUser <IMicrosoftGraphUser1>]`: user
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
     - `[Id <String>]`: 
@@ -19892,12 +19990,12 @@ LISTS <IMicrosoftGraphList1[]>: The collection of lists under this site.
     - `[Drive <IMicrosoftGraphDrive>]`: drive
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-      - `[CreatedByUser <IMicrosoftGraphUser>]`: user
+      - `[CreatedByUser <IMicrosoftGraphUser1>]`: user
       - `[CreatedDateTime <DateTime?>]`: Date and time of item creation. Read-only.
       - `[Description <String>]`: Provides a user-visible description of the item. Optional.
       - `[ETag <String>]`: ETag for the item. Read-only.
       - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-      - `[LastModifiedByUser <IMicrosoftGraphUser>]`: user
+      - `[LastModifiedByUser <IMicrosoftGraphUser1>]`: user
       - `[LastModifiedDateTime <DateTime?>]`: Date and time the item was last modified. Read-only.
       - `[Name <String>]`: The name of the item. Read-write.
       - `[ParentReference <IMicrosoftGraphItemReference>]`: itemReference
@@ -19922,12 +20020,12 @@ LISTS <IMicrosoftGraphList1[]>: The collection of lists under this site.
       - `[Id <String>]`: 
       - `[Bundles <IMicrosoftGraphDriveItem[]>]`: Collection of [bundles][bundle] (albums and multi-select-shared sets of items). Only in personal OneDrive.
         - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-        - `[CreatedByUser <IMicrosoftGraphUser>]`: user
+        - `[CreatedByUser <IMicrosoftGraphUser1>]`: user
         - `[CreatedDateTime <DateTime?>]`: Date and time of item creation. Read-only.
         - `[Description <String>]`: Provides a user-visible description of the item. Optional.
         - `[ETag <String>]`: ETag for the item. Read-only.
         - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-        - `[LastModifiedByUser <IMicrosoftGraphUser>]`: user
+        - `[LastModifiedByUser <IMicrosoftGraphUser1>]`: user
         - `[LastModifiedDateTime <DateTime?>]`: Date and time the item was last modified. Read-only.
         - `[Name <String>]`: The name of the item. Read-write.
         - `[ParentReference <IMicrosoftGraphItemReference>]`: itemReference
@@ -20023,12 +20121,12 @@ LISTS <IMicrosoftGraphList1[]>: The collection of lists under this site.
         - `[ListItem <IMicrosoftGraphListItem1>]`: listItem
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-          - `[CreatedByUser <IMicrosoftGraphUser>]`: user
+          - `[CreatedByUser <IMicrosoftGraphUser1>]`: user
           - `[CreatedDateTime <DateTime?>]`: Date and time of item creation. Read-only.
           - `[Description <String>]`: Provides a user-visible description of the item. Optional.
           - `[ETag <String>]`: ETag for the item. Read-only.
           - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-          - `[LastModifiedByUser <IMicrosoftGraphUser>]`: user
+          - `[LastModifiedByUser <IMicrosoftGraphUser1>]`: user
           - `[LastModifiedDateTime <DateTime?>]`: Date and time the item was last modified. Read-only.
           - `[Name <String>]`: The name of the item. Read-write.
           - `[ParentReference <IMicrosoftGraphItemReference>]`: itemReference
@@ -20039,18 +20137,32 @@ LISTS <IMicrosoftGraphList1[]>: The collection of lists under this site.
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[Id <String>]`: The id of the content type.
             - `[Name <String>]`: The name of the content type.
-          - `[DriveItem <IMicrosoftGraphDriveItem>]`: driveItem
-          - `[Fields <IMicrosoftGraphFieldValueSet>]`: fieldValueSet
-            - `[(Any) <Object>]`: This indicates any property can be added to this object.
-            - `[Id <String>]`: 
-          - `[SharepointIds <IMicrosoftGraphSharepointIds>]`: sharepointIds
-          - `[Versions <IMicrosoftGraphListItemVersion[]>]`: The list of previous versions of the list item.
+          - `[DocumentSetVersions <IMicrosoftGraphDocumentSetVersion[]>]`: Version information for a document set version created by a user.
+            - `[Fields <IMicrosoftGraphFieldValueSet>]`: fieldValueSet
+              - `[(Any) <Object>]`: This indicates any property can be added to this object.
+              - `[Id <String>]`: 
             - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
             - `[LastModifiedDateTime <DateTime?>]`: Date and time the version was last modified. Read-only.
             - `[Publication <IMicrosoftGraphPublicationFacet>]`: publicationFacet
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
               - `[Level <String>]`: The state of publication for this document. Either published or checkout. Read-only.
               - `[VersionId <String>]`: The unique identifier for the version that is visible to the current caller. Read-only.
+            - `[Id <String>]`: 
+            - `[Comment <String>]`: Comment about the captured version.
+            - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
+            - `[CreatedDateTime <DateTime?>]`: Date and time when this version was created.
+            - `[Items <IMicrosoftGraphDocumentSetVersionItem[]>]`: Items within the document set that are captured as part of this version.
+              - `[ItemId <String>]`: The unique identifier for the item.
+              - `[Title <String>]`: The title of the item.
+              - `[VersionId <String>]`: The version ID of the item.
+            - `[ShouldCaptureMinorVersion <Boolean?>]`: If true, minor versions of items are also captured; otherwise, only major versions will be captured. Default value is false.
+          - `[DriveItem <IMicrosoftGraphDriveItem>]`: driveItem
+          - `[Fields <IMicrosoftGraphFieldValueSet>]`: fieldValueSet
+          - `[SharepointIds <IMicrosoftGraphSharepointIds>]`: sharepointIds
+          - `[Versions <IMicrosoftGraphListItemVersion[]>]`: The list of previous versions of the list item.
+            - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
+            - `[LastModifiedDateTime <DateTime?>]`: Date and time the version was last modified. Read-only.
+            - `[Publication <IMicrosoftGraphPublicationFacet>]`: publicationFacet
             - `[Id <String>]`: 
             - `[Fields <IMicrosoftGraphFieldValueSet>]`: fieldValueSet
         - `[Location <IMicrosoftGraphGeoCoordinates>]`: geoCoordinates
@@ -20465,12 +20577,12 @@ LISTS <IMicrosoftGraphList1[]>: The collection of lists under this site.
     - `[FaxNumber <String>]`: The fax number of the user. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values).
     - `[FollowedSites <IMicrosoftGraphSite[]>]`: 
       - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-      - `[CreatedByUser <IMicrosoftGraphUser>]`: user
+      - `[CreatedByUser <IMicrosoftGraphUser1>]`: user
       - `[CreatedDateTime <DateTime?>]`: Date and time of item creation. Read-only.
       - `[Description <String>]`: Provides a user-visible description of the item. Optional.
       - `[ETag <String>]`: ETag for the item. Read-only.
       - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-      - `[LastModifiedByUser <IMicrosoftGraphUser>]`: user
+      - `[LastModifiedByUser <IMicrosoftGraphUser1>]`: user
       - `[LastModifiedDateTime <DateTime?>]`: Date and time the item was last modified. Read-only.
       - `[Name <String>]`: The name of the item. Read-write.
       - `[ParentReference <IMicrosoftGraphItemReference>]`: itemReference
@@ -20666,12 +20778,12 @@ LISTS <IMicrosoftGraphList1[]>: The collection of lists under this site.
       - `[Items <IMicrosoftGraphBaseItem1[]>]`: Used to address any item contained in this site. This collection cannot be enumerated.
         - `[Id <String>]`: 
         - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-        - `[CreatedByUser <IMicrosoftGraphUser>]`: user
+        - `[CreatedByUser <IMicrosoftGraphUser1>]`: user
         - `[CreatedDateTime <DateTime?>]`: Date and time of item creation. Read-only.
         - `[Description <String>]`: Provides a user-visible description of the item. Optional.
         - `[ETag <String>]`: ETag for the item. Read-only.
         - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-        - `[LastModifiedByUser <IMicrosoftGraphUser>]`: user
+        - `[LastModifiedByUser <IMicrosoftGraphUser1>]`: user
         - `[LastModifiedDateTime <DateTime?>]`: Date and time the item was last modified. Read-only.
         - `[Name <String>]`: The name of the item. Read-write.
         - `[ParentReference <IMicrosoftGraphItemReference>]`: itemReference
@@ -21918,7 +22030,7 @@ LISTS <IMicrosoftGraphList1[]>: The collection of lists under this site.
   - `[Description <String>]`: Provides a user-visible description of the item. Optional.
   - `[ETag <String>]`: ETag for the item. Read-only.
   - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-  - `[LastModifiedByUser <IMicrosoftGraphUser>]`: user
+  - `[LastModifiedByUser <IMicrosoftGraphUser1>]`: user
   - `[LastModifiedDateTime <DateTime?>]`: Date and time the item was last modified. Read-only.
   - `[Name <String>]`: The name of the item. Read-write.
   - `[ParentReference <IMicrosoftGraphItemReference>]`: itemReference
@@ -22168,7 +22280,7 @@ SITES <IMicrosoftGraphSite[]>: The collection of the sub-sites under this site.
       - `[Id <String>]`: Unique identifier for the identity.
     - `[Device <IMicrosoftGraphIdentity>]`: identity
     - `[User <IMicrosoftGraphIdentity>]`: identity
-  - `[CreatedByUser <IMicrosoftGraphUser>]`: user
+  - `[CreatedByUser <IMicrosoftGraphUser1>]`: user
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
     - `[Id <String>]`: 
@@ -22699,12 +22811,12 @@ SITES <IMicrosoftGraphSite[]>: The collection of the sub-sites under this site.
     - `[Drive <IMicrosoftGraphDrive>]`: drive
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-      - `[CreatedByUser <IMicrosoftGraphUser>]`: user
+      - `[CreatedByUser <IMicrosoftGraphUser1>]`: user
       - `[CreatedDateTime <DateTime?>]`: Date and time of item creation. Read-only.
       - `[Description <String>]`: Provides a user-visible description of the item. Optional.
       - `[ETag <String>]`: ETag for the item. Read-only.
       - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-      - `[LastModifiedByUser <IMicrosoftGraphUser>]`: user
+      - `[LastModifiedByUser <IMicrosoftGraphUser1>]`: user
       - `[LastModifiedDateTime <DateTime?>]`: Date and time the item was last modified. Read-only.
       - `[Name <String>]`: The name of the item. Read-write.
       - `[ParentReference <IMicrosoftGraphItemReference>]`: itemReference
@@ -22729,12 +22841,12 @@ SITES <IMicrosoftGraphSite[]>: The collection of the sub-sites under this site.
       - `[Id <String>]`: 
       - `[Bundles <IMicrosoftGraphDriveItem[]>]`: Collection of [bundles][bundle] (albums and multi-select-shared sets of items). Only in personal OneDrive.
         - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-        - `[CreatedByUser <IMicrosoftGraphUser>]`: user
+        - `[CreatedByUser <IMicrosoftGraphUser1>]`: user
         - `[CreatedDateTime <DateTime?>]`: Date and time of item creation. Read-only.
         - `[Description <String>]`: Provides a user-visible description of the item. Optional.
         - `[ETag <String>]`: ETag for the item. Read-only.
         - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-        - `[LastModifiedByUser <IMicrosoftGraphUser>]`: user
+        - `[LastModifiedByUser <IMicrosoftGraphUser1>]`: user
         - `[LastModifiedDateTime <DateTime?>]`: Date and time the item was last modified. Read-only.
         - `[Name <String>]`: The name of the item. Read-write.
         - `[ParentReference <IMicrosoftGraphItemReference>]`: itemReference
@@ -22830,12 +22942,12 @@ SITES <IMicrosoftGraphSite[]>: The collection of the sub-sites under this site.
         - `[ListItem <IMicrosoftGraphListItem1>]`: listItem
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-          - `[CreatedByUser <IMicrosoftGraphUser>]`: user
+          - `[CreatedByUser <IMicrosoftGraphUser1>]`: user
           - `[CreatedDateTime <DateTime?>]`: Date and time of item creation. Read-only.
           - `[Description <String>]`: Provides a user-visible description of the item. Optional.
           - `[ETag <String>]`: ETag for the item. Read-only.
           - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-          - `[LastModifiedByUser <IMicrosoftGraphUser>]`: user
+          - `[LastModifiedByUser <IMicrosoftGraphUser1>]`: user
           - `[LastModifiedDateTime <DateTime?>]`: Date and time the item was last modified. Read-only.
           - `[Name <String>]`: The name of the item. Read-write.
           - `[ParentReference <IMicrosoftGraphItemReference>]`: itemReference
@@ -22846,18 +22958,32 @@ SITES <IMicrosoftGraphSite[]>: The collection of the sub-sites under this site.
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[Id <String>]`: The id of the content type.
             - `[Name <String>]`: The name of the content type.
-          - `[DriveItem <IMicrosoftGraphDriveItem>]`: driveItem
-          - `[Fields <IMicrosoftGraphFieldValueSet>]`: fieldValueSet
-            - `[(Any) <Object>]`: This indicates any property can be added to this object.
-            - `[Id <String>]`: 
-          - `[SharepointIds <IMicrosoftGraphSharepointIds>]`: sharepointIds
-          - `[Versions <IMicrosoftGraphListItemVersion[]>]`: The list of previous versions of the list item.
+          - `[DocumentSetVersions <IMicrosoftGraphDocumentSetVersion[]>]`: Version information for a document set version created by a user.
+            - `[Fields <IMicrosoftGraphFieldValueSet>]`: fieldValueSet
+              - `[(Any) <Object>]`: This indicates any property can be added to this object.
+              - `[Id <String>]`: 
             - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
             - `[LastModifiedDateTime <DateTime?>]`: Date and time the version was last modified. Read-only.
             - `[Publication <IMicrosoftGraphPublicationFacet>]`: publicationFacet
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
               - `[Level <String>]`: The state of publication for this document. Either published or checkout. Read-only.
               - `[VersionId <String>]`: The unique identifier for the version that is visible to the current caller. Read-only.
+            - `[Id <String>]`: 
+            - `[Comment <String>]`: Comment about the captured version.
+            - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
+            - `[CreatedDateTime <DateTime?>]`: Date and time when this version was created.
+            - `[Items <IMicrosoftGraphDocumentSetVersionItem[]>]`: Items within the document set that are captured as part of this version.
+              - `[ItemId <String>]`: The unique identifier for the item.
+              - `[Title <String>]`: The title of the item.
+              - `[VersionId <String>]`: The version ID of the item.
+            - `[ShouldCaptureMinorVersion <Boolean?>]`: If true, minor versions of items are also captured; otherwise, only major versions will be captured. Default value is false.
+          - `[DriveItem <IMicrosoftGraphDriveItem>]`: driveItem
+          - `[Fields <IMicrosoftGraphFieldValueSet>]`: fieldValueSet
+          - `[SharepointIds <IMicrosoftGraphSharepointIds>]`: sharepointIds
+          - `[Versions <IMicrosoftGraphListItemVersion[]>]`: The list of previous versions of the list item.
+            - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
+            - `[LastModifiedDateTime <DateTime?>]`: Date and time the version was last modified. Read-only.
+            - `[Publication <IMicrosoftGraphPublicationFacet>]`: publicationFacet
             - `[Id <String>]`: 
             - `[Fields <IMicrosoftGraphFieldValueSet>]`: fieldValueSet
         - `[Location <IMicrosoftGraphGeoCoordinates>]`: geoCoordinates
@@ -23243,12 +23369,12 @@ SITES <IMicrosoftGraphSite[]>: The collection of the sub-sites under this site.
       - `[List <IMicrosoftGraphList1>]`: list
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-        - `[CreatedByUser <IMicrosoftGraphUser>]`: user
+        - `[CreatedByUser <IMicrosoftGraphUser1>]`: user
         - `[CreatedDateTime <DateTime?>]`: Date and time of item creation. Read-only.
         - `[Description <String>]`: Provides a user-visible description of the item. Optional.
         - `[ETag <String>]`: ETag for the item. Read-only.
         - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-        - `[LastModifiedByUser <IMicrosoftGraphUser>]`: user
+        - `[LastModifiedByUser <IMicrosoftGraphUser1>]`: user
         - `[LastModifiedDateTime <DateTime?>]`: Date and time the item was last modified. Read-only.
         - `[Name <String>]`: The name of the item. Read-write.
         - `[ParentReference <IMicrosoftGraphItemReference>]`: itemReference
@@ -24699,7 +24825,7 @@ SITES <IMicrosoftGraphSite[]>: The collection of the sub-sites under this site.
   - `[Description <String>]`: Provides a user-visible description of the item. Optional.
   - `[ETag <String>]`: ETag for the item. Read-only.
   - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-  - `[LastModifiedByUser <IMicrosoftGraphUser>]`: user
+  - `[LastModifiedByUser <IMicrosoftGraphUser1>]`: user
   - `[LastModifiedDateTime <DateTime?>]`: Date and time the item was last modified. Read-only.
   - `[Name <String>]`: The name of the item. Read-write.
   - `[ParentReference <IMicrosoftGraphItemReference>]`: itemReference
@@ -24716,12 +24842,12 @@ SITES <IMicrosoftGraphSite[]>: The collection of the sub-sites under this site.
   - `[Items <IMicrosoftGraphBaseItem1[]>]`: Used to address any item contained in this site. This collection cannot be enumerated.
     - `[Id <String>]`: 
     - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-    - `[CreatedByUser <IMicrosoftGraphUser>]`: user
+    - `[CreatedByUser <IMicrosoftGraphUser1>]`: user
     - `[CreatedDateTime <DateTime?>]`: Date and time of item creation. Read-only.
     - `[Description <String>]`: Provides a user-visible description of the item. Optional.
     - `[ETag <String>]`: ETag for the item. Read-only.
     - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-    - `[LastModifiedByUser <IMicrosoftGraphUser>]`: user
+    - `[LastModifiedByUser <IMicrosoftGraphUser1>]`: user
     - `[LastModifiedDateTime <DateTime?>]`: Date and time the item was last modified. Read-only.
     - `[Name <String>]`: The name of the item. Read-write.
     - `[ParentReference <IMicrosoftGraphItemReference>]`: itemReference

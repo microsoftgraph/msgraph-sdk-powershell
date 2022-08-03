@@ -12,13 +12,13 @@ Delete navigation property relations for sites
 
 ## SYNTAX
 
-### Delete1 (Default)
+### Delete2 (Default)
 ```
 Remove-MgSiteTermStoreSetTermRelation -RelationId <String> -SetId <String> -SiteId <String> -TermId <String>
  [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### DeleteViaIdentity1
+### DeleteViaIdentity2
 ```
 Remove-MgSiteTermStoreSetTermRelation -InputObject <ISitesIdentity> [-IfMatch <String>] [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
@@ -52,7 +52,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.ISitesIdentity
-Parameter Sets: DeleteViaIdentity1
+Parameter Sets: DeleteViaIdentity2
 Aliases:
 
 Required: True
@@ -82,7 +82,7 @@ key: id of relation
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete1
+Parameter Sets: Delete2
 Aliases:
 
 Required: True
@@ -97,7 +97,7 @@ key: id of set
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete1
+Parameter Sets: Delete2
 Aliases:
 
 Required: True
@@ -112,7 +112,7 @@ key: id of site
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete1
+Parameter Sets: Delete2
 Aliases:
 
 Required: True
@@ -127,7 +127,7 @@ key: id of term
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete1
+Parameter Sets: Delete2
 Aliases:
 
 Required: True

@@ -17,10 +17,10 @@ Create new navigation property to items for sites
 New-MgSiteListItem -ListId <String> -SiteId <String> [-Activities <IMicrosoftGraphItemActivityOld[]>]
  [-AdditionalProperties <Hashtable>] [-Analytics <IMicrosoftGraphItemAnalytics>]
  [-ContentType <IMicrosoftGraphContentTypeInfo>] [-CreatedBy <IMicrosoftGraphIdentitySet>]
- [-CreatedByUser <IMicrosoftGraphUser1>] [-CreatedDateTime <DateTime>] [-Deleted <IMicrosoftGraphDeleted>]
+ [-CreatedByUser <IMicrosoftGraphUser>] [-CreatedDateTime <DateTime>] [-Deleted <IMicrosoftGraphDeleted>]
  [-Description <String>] [-DocumentSetVersions <IMicrosoftGraphDocumentSetVersion[]>]
  [-DriveItem <IMicrosoftGraphDriveItem1>] [-ETag <String>] [-Fields <Hashtable>] [-Id <String>]
- [-LastModifiedBy <IMicrosoftGraphIdentitySet>] [-LastModifiedByUser <IMicrosoftGraphUser1>]
+ [-LastModifiedBy <IMicrosoftGraphIdentitySet>] [-LastModifiedByUser <IMicrosoftGraphUser>]
  [-LastModifiedDateTime <DateTime>] [-Name <String>] [-ParentReference <IMicrosoftGraphItemReference>]
  [-SharepointIds <IMicrosoftGraphSharepointIds>] [-Versions <IMicrosoftGraphListItemVersion[]>]
  [-WebUrl <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -43,10 +43,10 @@ New-MgSiteListItem -InputObject <ISitesIdentity> -BodyParameter <IMicrosoftGraph
 New-MgSiteListItem -InputObject <ISitesIdentity> [-Activities <IMicrosoftGraphItemActivityOld[]>]
  [-AdditionalProperties <Hashtable>] [-Analytics <IMicrosoftGraphItemAnalytics>]
  [-ContentType <IMicrosoftGraphContentTypeInfo>] [-CreatedBy <IMicrosoftGraphIdentitySet>]
- [-CreatedByUser <IMicrosoftGraphUser1>] [-CreatedDateTime <DateTime>] [-Deleted <IMicrosoftGraphDeleted>]
+ [-CreatedByUser <IMicrosoftGraphUser>] [-CreatedDateTime <DateTime>] [-Deleted <IMicrosoftGraphDeleted>]
  [-Description <String>] [-DocumentSetVersions <IMicrosoftGraphDocumentSetVersion[]>]
  [-DriveItem <IMicrosoftGraphDriveItem1>] [-ETag <String>] [-Fields <Hashtable>] [-Id <String>]
- [-LastModifiedBy <IMicrosoftGraphIdentitySet>] [-LastModifiedByUser <IMicrosoftGraphUser1>]
+ [-LastModifiedBy <IMicrosoftGraphIdentitySet>] [-LastModifiedByUser <IMicrosoftGraphUser>]
  [-LastModifiedDateTime <DateTime>] [-Name <String>] [-ParentReference <IMicrosoftGraphItemReference>]
  [-SharepointIds <IMicrosoftGraphSharepointIds>] [-Versions <IMicrosoftGraphListItemVersion[]>]
  [-WebUrl <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -159,7 +159,7 @@ user
 To construct, please use Get-Help -Online and see NOTES section for CREATEDBYUSER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUser1
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUser
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -333,7 +333,7 @@ user
 To construct, please use Get-Help -Online and see NOTES section for LASTMODIFIEDBYUSER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUser1
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUser
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -570,7 +570,7 @@ ACTIVITIES <IMicrosoftGraphItemActivityOld[]>: The list of recent activities tha
   - `[DriveItem <IMicrosoftGraphDriveItem1>]`: driveItem
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-    - `[CreatedByUser <IMicrosoftGraphUser1>]`: user
+    - `[CreatedByUser <IMicrosoftGraphUser>]`: user
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
       - `[Id <String>]`: 
@@ -1367,12 +1367,12 @@ ACTIVITIES <IMicrosoftGraphItemActivityOld[]>: The list of recent activities tha
       - `[Drive <IMicrosoftGraphDrive1>]`: drive
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-        - `[CreatedByUser <IMicrosoftGraphUser1>]`: user
+        - `[CreatedByUser <IMicrosoftGraphUser>]`: user
         - `[CreatedDateTime <DateTime?>]`: Date and time of item creation. Read-only.
         - `[Description <String>]`: Provides a user-visible description of the item. Optional.
         - `[ETag <String>]`: ETag for the item. Read-only.
         - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-        - `[LastModifiedByUser <IMicrosoftGraphUser1>]`: user
+        - `[LastModifiedByUser <IMicrosoftGraphUser>]`: user
         - `[LastModifiedDateTime <DateTime?>]`: Date and time the item was last modified. Read-only.
         - `[Name <String>]`: The name of the item. Read-write.
         - `[ParentReference <IMicrosoftGraphItemReference>]`: itemReference
@@ -1403,12 +1403,12 @@ ACTIVITIES <IMicrosoftGraphItemActivityOld[]>: The list of recent activities tha
         - `[List <IMicrosoftGraphList>]`: list
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-          - `[CreatedByUser <IMicrosoftGraphUser1>]`: user
+          - `[CreatedByUser <IMicrosoftGraphUser>]`: user
           - `[CreatedDateTime <DateTime?>]`: Date and time of item creation. Read-only.
           - `[Description <String>]`: Provides a user-visible description of the item. Optional.
           - `[ETag <String>]`: ETag for the item. Read-only.
           - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-          - `[LastModifiedByUser <IMicrosoftGraphUser1>]`: user
+          - `[LastModifiedByUser <IMicrosoftGraphUser>]`: user
           - `[LastModifiedDateTime <DateTime?>]`: Date and time the item was last modified. Read-only.
           - `[Name <String>]`: The name of the item. Read-write.
           - `[ParentReference <IMicrosoftGraphItemReference>]`: itemReference
@@ -1589,12 +1589,12 @@ ACTIVITIES <IMicrosoftGraphItemActivityOld[]>: The list of recent activities tha
           - `[Drive <IMicrosoftGraphDrive1>]`: drive
           - `[Items <IMicrosoftGraphListItem[]>]`: All items contained in the list.
             - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-            - `[CreatedByUser <IMicrosoftGraphUser1>]`: user
+            - `[CreatedByUser <IMicrosoftGraphUser>]`: user
             - `[CreatedDateTime <DateTime?>]`: Date and time of item creation. Read-only.
             - `[Description <String>]`: Provides a user-visible description of the item. Optional.
             - `[ETag <String>]`: ETag for the item. Read-only.
             - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-            - `[LastModifiedByUser <IMicrosoftGraphUser1>]`: user
+            - `[LastModifiedByUser <IMicrosoftGraphUser>]`: user
             - `[LastModifiedDateTime <DateTime?>]`: Date and time the item was last modified. Read-only.
             - `[Name <String>]`: The name of the item. Read-write.
             - `[ParentReference <IMicrosoftGraphItemReference>]`: itemReference
@@ -1743,12 +1743,12 @@ ACTIVITIES <IMicrosoftGraphItemActivityOld[]>: The list of recent activities tha
       - `[FaxNumber <String>]`: The fax number of the user. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values).
       - `[FollowedSites <IMicrosoftGraphSite1[]>]`: 
         - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-        - `[CreatedByUser <IMicrosoftGraphUser1>]`: user
+        - `[CreatedByUser <IMicrosoftGraphUser>]`: user
         - `[CreatedDateTime <DateTime?>]`: Date and time of item creation. Read-only.
         - `[Description <String>]`: Provides a user-visible description of the item. Optional.
         - `[ETag <String>]`: ETag for the item. Read-only.
         - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-        - `[LastModifiedByUser <IMicrosoftGraphUser1>]`: user
+        - `[LastModifiedByUser <IMicrosoftGraphUser>]`: user
         - `[LastModifiedDateTime <DateTime?>]`: Date and time the item was last modified. Read-only.
         - `[Name <String>]`: The name of the item. Read-write.
         - `[ParentReference <IMicrosoftGraphItemReference>]`: itemReference
@@ -1765,12 +1765,12 @@ ACTIVITIES <IMicrosoftGraphItemActivityOld[]>: The list of recent activities tha
         - `[Items <IMicrosoftGraphBaseItem[]>]`: Used to address any item contained in this site. This collection cannot be enumerated.
           - `[Id <String>]`: 
           - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-          - `[CreatedByUser <IMicrosoftGraphUser1>]`: user
+          - `[CreatedByUser <IMicrosoftGraphUser>]`: user
           - `[CreatedDateTime <DateTime?>]`: Date and time of item creation. Read-only.
           - `[Description <String>]`: Provides a user-visible description of the item. Optional.
           - `[ETag <String>]`: ETag for the item. Read-only.
           - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-          - `[LastModifiedByUser <IMicrosoftGraphUser1>]`: user
+          - `[LastModifiedByUser <IMicrosoftGraphUser>]`: user
           - `[LastModifiedDateTime <DateTime?>]`: Date and time the item was last modified. Read-only.
           - `[Name <String>]`: The name of the item. Read-write.
           - `[ParentReference <IMicrosoftGraphItemReference>]`: itemReference
@@ -1869,12 +1869,12 @@ ACTIVITIES <IMicrosoftGraphItemActivityOld[]>: The list of recent activities tha
         - `[Operations <IMicrosoftGraphRichLongRunningOperation[]>]`: The collection of long running operations for the site.
         - `[Pages <IMicrosoftGraphSitePage[]>]`: The collection of pages in the SitePages list in this site.
           - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-          - `[CreatedByUser <IMicrosoftGraphUser1>]`: user
+          - `[CreatedByUser <IMicrosoftGraphUser>]`: user
           - `[CreatedDateTime <DateTime?>]`: Date and time of item creation. Read-only.
           - `[Description <String>]`: Provides a user-visible description of the item. Optional.
           - `[ETag <String>]`: ETag for the item. Read-only.
           - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-          - `[LastModifiedByUser <IMicrosoftGraphUser1>]`: user
+          - `[LastModifiedByUser <IMicrosoftGraphUser>]`: user
           - `[LastModifiedDateTime <DateTime?>]`: Date and time the item was last modified. Read-only.
           - `[Name <String>]`: The name of the item. Read-write.
           - `[ParentReference <IMicrosoftGraphItemReference>]`: itemReference
@@ -2422,7 +2422,7 @@ ACTIVITIES <IMicrosoftGraphItemActivityOld[]>: The list of recent activities tha
             - `[AllowUserDeleteMessages <Boolean?>]`: If set to true, users can delete their messages.
             - `[AllowUserEditMessages <Boolean?>]`: If set to true, users can edit their messages.
           - `[Operations <IMicrosoftGraphTeamsAsyncOperation[]>]`: The async operations that ran or are running on this team.
-          - `[Owners <IMicrosoftGraphUser1[]>]`: The list of this team's owners. Currently, when creating a team using application permissions, exactly one owner must be specified. When using user delegated permissions, no owner can be specified (the current user is the owner). Owner must be specified as an object ID (GUID), not a UPN.
+          - `[Owners <IMicrosoftGraphUser[]>]`: The list of this team's owners. Currently, when creating a team using application permissions, exactly one owner must be specified. When using user delegated permissions, no owner can be specified (the current user is the owner). Owner must be specified as an object ID (GUID), not a UPN.
           - `[PermissionGrants <IMicrosoftGraphResourceSpecificPermissionGrant[]>]`: A collection of permissions granted to apps to access the team.
           - `[Photo <IMicrosoftGraphProfilePhoto>]`: profilePhoto
           - `[PrimaryChannel <IMicrosoftGraphChannel>]`: channel
@@ -2863,7 +2863,7 @@ ACTIVITIES <IMicrosoftGraphItemActivityOld[]>: The list of recent activities tha
         - `[AzureActiveDirectoryDeviceId <String>]`: The unique identifier for the Azure Active Directory device. Read only. This property is read-only.
         - `[AzureAdDeviceId <String>]`: The unique identifier for the Azure Active Directory device. Read only. This property is read-only.
         - `[AzureAdRegistered <Boolean?>]`: Whether the device is Azure Active Directory registered. This property is read-only.
-        - `[BootstrapTokenEscrowed <Boolean?>]`: Reports if the managed device has an escrowed Bootstrap Token. This is only for macOS devices. If FALSE, no bootstrap token is escrowed. If TRUE, the device has escrowed a bootstrap token with Intune. This property is read-only.
+        - `[BootstrapTokenEscrowed <Boolean?>]`: Reports if the managed device has an escrowed Bootstrap Token. This is only for macOS devices. To get, include BootstrapTokenEscrowed in the select clause and query with a device id. If FALSE, no bootstrap token is escrowed. If TRUE, the device has escrowed a bootstrap token with Intune. This property is read-only.
         - `[ChassisType <ChassisType?>]`: Chassis type.
         - `[ChromeOSDeviceInfo <IMicrosoftGraphChromeOSDeviceProperty[]>]`: List of properties of the ChromeOS Device.
           - `[Name <String>]`: Name of the property
@@ -3149,7 +3149,7 @@ ACTIVITIES <IMicrosoftGraphItemActivityOld[]>: The list of recent activities tha
         - `[UserDisplayName <String>]`: User display name. This property is read-only.
         - `[UserId <String>]`: Unique Identifier for the user associated with the device. This property is read-only.
         - `[UserPrincipalName <String>]`: Device user principal name. This property is read-only.
-        - `[Users <IMicrosoftGraphUser1[]>]`: The primary users associated with the managed device.
+        - `[Users <IMicrosoftGraphUser[]>]`: The primary users associated with the managed device.
         - `[UsersLoggedOn <IMicrosoftGraphLoggedOnUser[]>]`: Indicates the last logged on users of a device. This property is read-only.
           - `[LastLogOnDateTime <DateTime?>]`: Date time when user logs on
           - `[UserId <String>]`: User id
@@ -3372,10 +3372,10 @@ ACTIVITIES <IMicrosoftGraphItemActivityOld[]>: The list of recent activities tha
           - `[Subject <String>]`: The subject of the meeting.
         - `[StartDateTime <DateTime?>]`: The meeting start time in UTC.
         - `[Subject <String>]`: The subject of the online meeting.
-        - `[Transcripts <IMicrosoftGraphCallTranscript[]>]`: 
+        - `[Transcripts <IMicrosoftGraphCallTranscript[]>]`: The transcripts of an online meeting. Read-only.
           - `[Id <String>]`: 
-          - `[Content <Byte[]>]`: 
-          - `[CreatedDateTime <DateTime?>]`: 
+          - `[Content <Byte[]>]`: A field representing the content of the transcript. Read-only.
+          - `[CreatedDateTime <DateTime?>]`: Date and time at which the transcript was created. Read-only.
         - `[VideoTeleconferenceId <String>]`: The video teleconferencing ID. Read-only.
         - `[VirtualAppointment <IMicrosoftGraphVirtualAppointment>]`: virtualAppointment
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -3810,7 +3810,7 @@ ACTIVITIES <IMicrosoftGraphItemActivityOld[]>: The list of recent activities tha
           - `[Id <String>]`: 
           - `[AllowAllUsers <Boolean?>]`: If true, all users and groups will be granted access to this printer share. This supersedes the allow lists defined by the allowedUsers and allowedGroups navigation properties.
           - `[AllowedGroups <IMicrosoftGraphGroup1[]>]`: The groups whose users have access to print using the printer.
-          - `[AllowedUsers <IMicrosoftGraphUser1[]>]`: The users who have access to print using the printer.
+          - `[AllowedUsers <IMicrosoftGraphUser[]>]`: The users who have access to print using the printer.
           - `[CreatedDateTime <DateTime?>]`: The DateTimeOffset when the printer share was created. Read-only.
           - `[Printer <IMicrosoftGraphPrinter>]`: printer
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -4414,7 +4414,7 @@ ACTIVITIES <IMicrosoftGraphItemActivityOld[]>: The list of recent activities tha
     - `[Description <String>]`: Provides a user-visible description of the item. Optional.
     - `[ETag <String>]`: ETag for the item. Read-only.
     - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-    - `[LastModifiedByUser <IMicrosoftGraphUser1>]`: user
+    - `[LastModifiedByUser <IMicrosoftGraphUser>]`: user
     - `[LastModifiedDateTime <DateTime?>]`: Date and time the item was last modified. Read-only.
     - `[Name <String>]`: The name of the item. Read-write.
     - `[ParentReference <IMicrosoftGraphItemReference>]`: itemReference
@@ -4844,7 +4844,7 @@ ANALYTICS <IMicrosoftGraphItemAnalytics>: itemAnalytics
       - `[DriveItem <IMicrosoftGraphDriveItem1>]`: driveItem
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-        - `[CreatedByUser <IMicrosoftGraphUser1>]`: user
+        - `[CreatedByUser <IMicrosoftGraphUser>]`: user
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
           - `[Id <String>]`: 
@@ -5641,12 +5641,12 @@ ANALYTICS <IMicrosoftGraphItemAnalytics>: itemAnalytics
           - `[Drive <IMicrosoftGraphDrive1>]`: drive
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-            - `[CreatedByUser <IMicrosoftGraphUser1>]`: user
+            - `[CreatedByUser <IMicrosoftGraphUser>]`: user
             - `[CreatedDateTime <DateTime?>]`: Date and time of item creation. Read-only.
             - `[Description <String>]`: Provides a user-visible description of the item. Optional.
             - `[ETag <String>]`: ETag for the item. Read-only.
             - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-            - `[LastModifiedByUser <IMicrosoftGraphUser1>]`: user
+            - `[LastModifiedByUser <IMicrosoftGraphUser>]`: user
             - `[LastModifiedDateTime <DateTime?>]`: Date and time the item was last modified. Read-only.
             - `[Name <String>]`: The name of the item. Read-write.
             - `[ParentReference <IMicrosoftGraphItemReference>]`: itemReference
@@ -5710,12 +5710,12 @@ ANALYTICS <IMicrosoftGraphItemAnalytics>: itemAnalytics
               - `[ListItem <IMicrosoftGraphListItem>]`: listItem
                 - `[(Any) <Object>]`: This indicates any property can be added to this object.
                 - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-                - `[CreatedByUser <IMicrosoftGraphUser1>]`: user
+                - `[CreatedByUser <IMicrosoftGraphUser>]`: user
                 - `[CreatedDateTime <DateTime?>]`: Date and time of item creation. Read-only.
                 - `[Description <String>]`: Provides a user-visible description of the item. Optional.
                 - `[ETag <String>]`: ETag for the item. Read-only.
                 - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-                - `[LastModifiedByUser <IMicrosoftGraphUser1>]`: user
+                - `[LastModifiedByUser <IMicrosoftGraphUser>]`: user
                 - `[LastModifiedDateTime <DateTime?>]`: Date and time the item was last modified. Read-only.
                 - `[Name <String>]`: The name of the item. Read-write.
                 - `[ParentReference <IMicrosoftGraphItemReference>]`: itemReference
@@ -5770,12 +5770,12 @@ ANALYTICS <IMicrosoftGraphItemAnalytics>: itemAnalytics
             - `[List <IMicrosoftGraphList>]`: list
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
               - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-              - `[CreatedByUser <IMicrosoftGraphUser1>]`: user
+              - `[CreatedByUser <IMicrosoftGraphUser>]`: user
               - `[CreatedDateTime <DateTime?>]`: Date and time of item creation. Read-only.
               - `[Description <String>]`: Provides a user-visible description of the item. Optional.
               - `[ETag <String>]`: ETag for the item. Read-only.
               - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-              - `[LastModifiedByUser <IMicrosoftGraphUser1>]`: user
+              - `[LastModifiedByUser <IMicrosoftGraphUser>]`: user
               - `[LastModifiedDateTime <DateTime?>]`: Date and time the item was last modified. Read-only.
               - `[Name <String>]`: The name of the item. Read-write.
               - `[ParentReference <IMicrosoftGraphItemReference>]`: itemReference
@@ -6032,12 +6032,12 @@ ANALYTICS <IMicrosoftGraphItemAnalytics>: itemAnalytics
           - `[FaxNumber <String>]`: The fax number of the user. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values).
           - `[FollowedSites <IMicrosoftGraphSite1[]>]`: 
             - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-            - `[CreatedByUser <IMicrosoftGraphUser1>]`: user
+            - `[CreatedByUser <IMicrosoftGraphUser>]`: user
             - `[CreatedDateTime <DateTime?>]`: Date and time of item creation. Read-only.
             - `[Description <String>]`: Provides a user-visible description of the item. Optional.
             - `[ETag <String>]`: ETag for the item. Read-only.
             - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-            - `[LastModifiedByUser <IMicrosoftGraphUser1>]`: user
+            - `[LastModifiedByUser <IMicrosoftGraphUser>]`: user
             - `[LastModifiedDateTime <DateTime?>]`: Date and time the item was last modified. Read-only.
             - `[Name <String>]`: The name of the item. Read-write.
             - `[ParentReference <IMicrosoftGraphItemReference>]`: itemReference
@@ -6054,12 +6054,12 @@ ANALYTICS <IMicrosoftGraphItemAnalytics>: itemAnalytics
             - `[Items <IMicrosoftGraphBaseItem[]>]`: Used to address any item contained in this site. This collection cannot be enumerated.
               - `[Id <String>]`: 
               - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-              - `[CreatedByUser <IMicrosoftGraphUser1>]`: user
+              - `[CreatedByUser <IMicrosoftGraphUser>]`: user
               - `[CreatedDateTime <DateTime?>]`: Date and time of item creation. Read-only.
               - `[Description <String>]`: Provides a user-visible description of the item. Optional.
               - `[ETag <String>]`: ETag for the item. Read-only.
               - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-              - `[LastModifiedByUser <IMicrosoftGraphUser1>]`: user
+              - `[LastModifiedByUser <IMicrosoftGraphUser>]`: user
               - `[LastModifiedDateTime <DateTime?>]`: Date and time the item was last modified. Read-only.
               - `[Name <String>]`: The name of the item. Read-write.
               - `[ParentReference <IMicrosoftGraphItemReference>]`: itemReference
@@ -6158,12 +6158,12 @@ ANALYTICS <IMicrosoftGraphItemAnalytics>: itemAnalytics
             - `[Operations <IMicrosoftGraphRichLongRunningOperation[]>]`: The collection of long running operations for the site.
             - `[Pages <IMicrosoftGraphSitePage[]>]`: The collection of pages in the SitePages list in this site.
               - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-              - `[CreatedByUser <IMicrosoftGraphUser1>]`: user
+              - `[CreatedByUser <IMicrosoftGraphUser>]`: user
               - `[CreatedDateTime <DateTime?>]`: Date and time of item creation. Read-only.
               - `[Description <String>]`: Provides a user-visible description of the item. Optional.
               - `[ETag <String>]`: ETag for the item. Read-only.
               - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-              - `[LastModifiedByUser <IMicrosoftGraphUser1>]`: user
+              - `[LastModifiedByUser <IMicrosoftGraphUser>]`: user
               - `[LastModifiedDateTime <DateTime?>]`: Date and time the item was last modified. Read-only.
               - `[Name <String>]`: The name of the item. Read-write.
               - `[ParentReference <IMicrosoftGraphItemReference>]`: itemReference
@@ -6711,7 +6711,7 @@ ANALYTICS <IMicrosoftGraphItemAnalytics>: itemAnalytics
                 - `[AllowUserDeleteMessages <Boolean?>]`: If set to true, users can delete their messages.
                 - `[AllowUserEditMessages <Boolean?>]`: If set to true, users can edit their messages.
               - `[Operations <IMicrosoftGraphTeamsAsyncOperation[]>]`: The async operations that ran or are running on this team.
-              - `[Owners <IMicrosoftGraphUser1[]>]`: The list of this team's owners. Currently, when creating a team using application permissions, exactly one owner must be specified. When using user delegated permissions, no owner can be specified (the current user is the owner). Owner must be specified as an object ID (GUID), not a UPN.
+              - `[Owners <IMicrosoftGraphUser[]>]`: The list of this team's owners. Currently, when creating a team using application permissions, exactly one owner must be specified. When using user delegated permissions, no owner can be specified (the current user is the owner). Owner must be specified as an object ID (GUID), not a UPN.
               - `[PermissionGrants <IMicrosoftGraphResourceSpecificPermissionGrant[]>]`: A collection of permissions granted to apps to access the team.
               - `[Photo <IMicrosoftGraphProfilePhoto>]`: profilePhoto
               - `[PrimaryChannel <IMicrosoftGraphChannel>]`: channel
@@ -7152,7 +7152,7 @@ ANALYTICS <IMicrosoftGraphItemAnalytics>: itemAnalytics
             - `[AzureActiveDirectoryDeviceId <String>]`: The unique identifier for the Azure Active Directory device. Read only. This property is read-only.
             - `[AzureAdDeviceId <String>]`: The unique identifier for the Azure Active Directory device. Read only. This property is read-only.
             - `[AzureAdRegistered <Boolean?>]`: Whether the device is Azure Active Directory registered. This property is read-only.
-            - `[BootstrapTokenEscrowed <Boolean?>]`: Reports if the managed device has an escrowed Bootstrap Token. This is only for macOS devices. If FALSE, no bootstrap token is escrowed. If TRUE, the device has escrowed a bootstrap token with Intune. This property is read-only.
+            - `[BootstrapTokenEscrowed <Boolean?>]`: Reports if the managed device has an escrowed Bootstrap Token. This is only for macOS devices. To get, include BootstrapTokenEscrowed in the select clause and query with a device id. If FALSE, no bootstrap token is escrowed. If TRUE, the device has escrowed a bootstrap token with Intune. This property is read-only.
             - `[ChassisType <ChassisType?>]`: Chassis type.
             - `[ChromeOSDeviceInfo <IMicrosoftGraphChromeOSDeviceProperty[]>]`: List of properties of the ChromeOS Device.
               - `[Name <String>]`: Name of the property
@@ -7438,7 +7438,7 @@ ANALYTICS <IMicrosoftGraphItemAnalytics>: itemAnalytics
             - `[UserDisplayName <String>]`: User display name. This property is read-only.
             - `[UserId <String>]`: Unique Identifier for the user associated with the device. This property is read-only.
             - `[UserPrincipalName <String>]`: Device user principal name. This property is read-only.
-            - `[Users <IMicrosoftGraphUser1[]>]`: The primary users associated with the managed device.
+            - `[Users <IMicrosoftGraphUser[]>]`: The primary users associated with the managed device.
             - `[UsersLoggedOn <IMicrosoftGraphLoggedOnUser[]>]`: Indicates the last logged on users of a device. This property is read-only.
               - `[LastLogOnDateTime <DateTime?>]`: Date time when user logs on
               - `[UserId <String>]`: User id
@@ -7661,10 +7661,10 @@ ANALYTICS <IMicrosoftGraphItemAnalytics>: itemAnalytics
               - `[Subject <String>]`: The subject of the meeting.
             - `[StartDateTime <DateTime?>]`: The meeting start time in UTC.
             - `[Subject <String>]`: The subject of the online meeting.
-            - `[Transcripts <IMicrosoftGraphCallTranscript[]>]`: 
+            - `[Transcripts <IMicrosoftGraphCallTranscript[]>]`: The transcripts of an online meeting. Read-only.
               - `[Id <String>]`: 
-              - `[Content <Byte[]>]`: 
-              - `[CreatedDateTime <DateTime?>]`: 
+              - `[Content <Byte[]>]`: A field representing the content of the transcript. Read-only.
+              - `[CreatedDateTime <DateTime?>]`: Date and time at which the transcript was created. Read-only.
             - `[VideoTeleconferenceId <String>]`: The video teleconferencing ID. Read-only.
             - `[VirtualAppointment <IMicrosoftGraphVirtualAppointment>]`: virtualAppointment
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -8099,7 +8099,7 @@ ANALYTICS <IMicrosoftGraphItemAnalytics>: itemAnalytics
               - `[Id <String>]`: 
               - `[AllowAllUsers <Boolean?>]`: If true, all users and groups will be granted access to this printer share. This supersedes the allow lists defined by the allowedUsers and allowedGroups navigation properties.
               - `[AllowedGroups <IMicrosoftGraphGroup1[]>]`: The groups whose users have access to print using the printer.
-              - `[AllowedUsers <IMicrosoftGraphUser1[]>]`: The users who have access to print using the printer.
+              - `[AllowedUsers <IMicrosoftGraphUser[]>]`: The users who have access to print using the printer.
               - `[CreatedDateTime <DateTime?>]`: The DateTimeOffset when the printer share was created. Read-only.
               - `[Printer <IMicrosoftGraphPrinter>]`: printer
                 - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -8703,7 +8703,7 @@ ANALYTICS <IMicrosoftGraphItemAnalytics>: itemAnalytics
         - `[Description <String>]`: Provides a user-visible description of the item. Optional.
         - `[ETag <String>]`: ETag for the item. Read-only.
         - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-        - `[LastModifiedByUser <IMicrosoftGraphUser1>]`: user
+        - `[LastModifiedByUser <IMicrosoftGraphUser>]`: user
         - `[LastModifiedDateTime <DateTime?>]`: Date and time the item was last modified. Read-only.
         - `[Name <String>]`: The name of the item. Read-write.
         - `[ParentReference <IMicrosoftGraphItemReference>]`: itemReference
@@ -9124,7 +9124,7 @@ BODYPARAMETER <IMicrosoftGraphListItem>: listItem
       - `[Id <String>]`: Unique identifier for the identity.
     - `[Device <IMicrosoftGraphIdentity>]`: identity
     - `[User <IMicrosoftGraphIdentity>]`: identity
-  - `[CreatedByUser <IMicrosoftGraphUser1>]`: user
+  - `[CreatedByUser <IMicrosoftGraphUser>]`: user
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
     - `[Id <String>]`: 
@@ -9921,12 +9921,12 @@ BODYPARAMETER <IMicrosoftGraphListItem>: listItem
     - `[Drive <IMicrosoftGraphDrive1>]`: drive
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-      - `[CreatedByUser <IMicrosoftGraphUser1>]`: user
+      - `[CreatedByUser <IMicrosoftGraphUser>]`: user
       - `[CreatedDateTime <DateTime?>]`: Date and time of item creation. Read-only.
       - `[Description <String>]`: Provides a user-visible description of the item. Optional.
       - `[ETag <String>]`: ETag for the item. Read-only.
       - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-      - `[LastModifiedByUser <IMicrosoftGraphUser1>]`: user
+      - `[LastModifiedByUser <IMicrosoftGraphUser>]`: user
       - `[LastModifiedDateTime <DateTime?>]`: Date and time the item was last modified. Read-only.
       - `[Name <String>]`: The name of the item. Read-write.
       - `[ParentReference <IMicrosoftGraphItemReference>]`: itemReference
@@ -9989,12 +9989,12 @@ BODYPARAMETER <IMicrosoftGraphListItem>: listItem
         - `[DriveItem <IMicrosoftGraphDriveItem1>]`: driveItem
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-          - `[CreatedByUser <IMicrosoftGraphUser1>]`: user
+          - `[CreatedByUser <IMicrosoftGraphUser>]`: user
           - `[CreatedDateTime <DateTime?>]`: Date and time of item creation. Read-only.
           - `[Description <String>]`: Provides a user-visible description of the item. Optional.
           - `[ETag <String>]`: ETag for the item. Read-only.
           - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-          - `[LastModifiedByUser <IMicrosoftGraphUser1>]`: user
+          - `[LastModifiedByUser <IMicrosoftGraphUser>]`: user
           - `[LastModifiedDateTime <DateTime?>]`: Date and time the item was last modified. Read-only.
           - `[Name <String>]`: The name of the item. Read-write.
           - `[ParentReference <IMicrosoftGraphItemReference>]`: itemReference
@@ -10494,12 +10494,12 @@ BODYPARAMETER <IMicrosoftGraphListItem>: listItem
       - `[List <IMicrosoftGraphList>]`: list
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-        - `[CreatedByUser <IMicrosoftGraphUser1>]`: user
+        - `[CreatedByUser <IMicrosoftGraphUser>]`: user
         - `[CreatedDateTime <DateTime?>]`: Date and time of item creation. Read-only.
         - `[Description <String>]`: Provides a user-visible description of the item. Optional.
         - `[ETag <String>]`: ETag for the item. Read-only.
         - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-        - `[LastModifiedByUser <IMicrosoftGraphUser1>]`: user
+        - `[LastModifiedByUser <IMicrosoftGraphUser>]`: user
         - `[LastModifiedDateTime <DateTime?>]`: Date and time the item was last modified. Read-only.
         - `[Name <String>]`: The name of the item. Read-write.
         - `[ParentReference <IMicrosoftGraphItemReference>]`: itemReference
@@ -10743,12 +10743,12 @@ BODYPARAMETER <IMicrosoftGraphListItem>: listItem
     - `[FaxNumber <String>]`: The fax number of the user. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values).
     - `[FollowedSites <IMicrosoftGraphSite1[]>]`: 
       - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-      - `[CreatedByUser <IMicrosoftGraphUser1>]`: user
+      - `[CreatedByUser <IMicrosoftGraphUser>]`: user
       - `[CreatedDateTime <DateTime?>]`: Date and time of item creation. Read-only.
       - `[Description <String>]`: Provides a user-visible description of the item. Optional.
       - `[ETag <String>]`: ETag for the item. Read-only.
       - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-      - `[LastModifiedByUser <IMicrosoftGraphUser1>]`: user
+      - `[LastModifiedByUser <IMicrosoftGraphUser>]`: user
       - `[LastModifiedDateTime <DateTime?>]`: Date and time the item was last modified. Read-only.
       - `[Name <String>]`: The name of the item. Read-write.
       - `[ParentReference <IMicrosoftGraphItemReference>]`: itemReference
@@ -10765,12 +10765,12 @@ BODYPARAMETER <IMicrosoftGraphListItem>: listItem
       - `[Items <IMicrosoftGraphBaseItem[]>]`: Used to address any item contained in this site. This collection cannot be enumerated.
         - `[Id <String>]`: 
         - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-        - `[CreatedByUser <IMicrosoftGraphUser1>]`: user
+        - `[CreatedByUser <IMicrosoftGraphUser>]`: user
         - `[CreatedDateTime <DateTime?>]`: Date and time of item creation. Read-only.
         - `[Description <String>]`: Provides a user-visible description of the item. Optional.
         - `[ETag <String>]`: ETag for the item. Read-only.
         - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-        - `[LastModifiedByUser <IMicrosoftGraphUser1>]`: user
+        - `[LastModifiedByUser <IMicrosoftGraphUser>]`: user
         - `[LastModifiedDateTime <DateTime?>]`: Date and time the item was last modified. Read-only.
         - `[Name <String>]`: The name of the item. Read-write.
         - `[ParentReference <IMicrosoftGraphItemReference>]`: itemReference
@@ -10869,12 +10869,12 @@ BODYPARAMETER <IMicrosoftGraphListItem>: listItem
       - `[Operations <IMicrosoftGraphRichLongRunningOperation[]>]`: The collection of long running operations for the site.
       - `[Pages <IMicrosoftGraphSitePage[]>]`: The collection of pages in the SitePages list in this site.
         - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-        - `[CreatedByUser <IMicrosoftGraphUser1>]`: user
+        - `[CreatedByUser <IMicrosoftGraphUser>]`: user
         - `[CreatedDateTime <DateTime?>]`: Date and time of item creation. Read-only.
         - `[Description <String>]`: Provides a user-visible description of the item. Optional.
         - `[ETag <String>]`: ETag for the item. Read-only.
         - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-        - `[LastModifiedByUser <IMicrosoftGraphUser1>]`: user
+        - `[LastModifiedByUser <IMicrosoftGraphUser>]`: user
         - `[LastModifiedDateTime <DateTime?>]`: Date and time the item was last modified. Read-only.
         - `[Name <String>]`: The name of the item. Read-write.
         - `[ParentReference <IMicrosoftGraphItemReference>]`: itemReference
@@ -11386,7 +11386,7 @@ BODYPARAMETER <IMicrosoftGraphListItem>: listItem
           - `[AllowUserDeleteMessages <Boolean?>]`: If set to true, users can delete their messages.
           - `[AllowUserEditMessages <Boolean?>]`: If set to true, users can edit their messages.
         - `[Operations <IMicrosoftGraphTeamsAsyncOperation[]>]`: The async operations that ran or are running on this team.
-        - `[Owners <IMicrosoftGraphUser1[]>]`: The list of this team's owners. Currently, when creating a team using application permissions, exactly one owner must be specified. When using user delegated permissions, no owner can be specified (the current user is the owner). Owner must be specified as an object ID (GUID), not a UPN.
+        - `[Owners <IMicrosoftGraphUser[]>]`: The list of this team's owners. Currently, when creating a team using application permissions, exactly one owner must be specified. When using user delegated permissions, no owner can be specified (the current user is the owner). Owner must be specified as an object ID (GUID), not a UPN.
         - `[PermissionGrants <IMicrosoftGraphResourceSpecificPermissionGrant[]>]`: A collection of permissions granted to apps to access the team.
         - `[Photo <IMicrosoftGraphProfilePhoto>]`: profilePhoto
         - `[PrimaryChannel <IMicrosoftGraphChannel>]`: channel
@@ -11823,7 +11823,7 @@ BODYPARAMETER <IMicrosoftGraphListItem>: listItem
       - `[AzureActiveDirectoryDeviceId <String>]`: The unique identifier for the Azure Active Directory device. Read only. This property is read-only.
       - `[AzureAdDeviceId <String>]`: The unique identifier for the Azure Active Directory device. Read only. This property is read-only.
       - `[AzureAdRegistered <Boolean?>]`: Whether the device is Azure Active Directory registered. This property is read-only.
-      - `[BootstrapTokenEscrowed <Boolean?>]`: Reports if the managed device has an escrowed Bootstrap Token. This is only for macOS devices. If FALSE, no bootstrap token is escrowed. If TRUE, the device has escrowed a bootstrap token with Intune. This property is read-only.
+      - `[BootstrapTokenEscrowed <Boolean?>]`: Reports if the managed device has an escrowed Bootstrap Token. This is only for macOS devices. To get, include BootstrapTokenEscrowed in the select clause and query with a device id. If FALSE, no bootstrap token is escrowed. If TRUE, the device has escrowed a bootstrap token with Intune. This property is read-only.
       - `[ChassisType <ChassisType?>]`: Chassis type.
       - `[ChromeOSDeviceInfo <IMicrosoftGraphChromeOSDeviceProperty[]>]`: List of properties of the ChromeOS Device.
         - `[Name <String>]`: Name of the property
@@ -12109,7 +12109,7 @@ BODYPARAMETER <IMicrosoftGraphListItem>: listItem
       - `[UserDisplayName <String>]`: User display name. This property is read-only.
       - `[UserId <String>]`: Unique Identifier for the user associated with the device. This property is read-only.
       - `[UserPrincipalName <String>]`: Device user principal name. This property is read-only.
-      - `[Users <IMicrosoftGraphUser1[]>]`: The primary users associated with the managed device.
+      - `[Users <IMicrosoftGraphUser[]>]`: The primary users associated with the managed device.
       - `[UsersLoggedOn <IMicrosoftGraphLoggedOnUser[]>]`: Indicates the last logged on users of a device. This property is read-only.
         - `[LastLogOnDateTime <DateTime?>]`: Date time when user logs on
         - `[UserId <String>]`: User id
@@ -12332,10 +12332,10 @@ BODYPARAMETER <IMicrosoftGraphListItem>: listItem
         - `[Subject <String>]`: The subject of the meeting.
       - `[StartDateTime <DateTime?>]`: The meeting start time in UTC.
       - `[Subject <String>]`: The subject of the online meeting.
-      - `[Transcripts <IMicrosoftGraphCallTranscript[]>]`: 
+      - `[Transcripts <IMicrosoftGraphCallTranscript[]>]`: The transcripts of an online meeting. Read-only.
         - `[Id <String>]`: 
-        - `[Content <Byte[]>]`: 
-        - `[CreatedDateTime <DateTime?>]`: 
+        - `[Content <Byte[]>]`: A field representing the content of the transcript. Read-only.
+        - `[CreatedDateTime <DateTime?>]`: Date and time at which the transcript was created. Read-only.
       - `[VideoTeleconferenceId <String>]`: The video teleconferencing ID. Read-only.
       - `[VirtualAppointment <IMicrosoftGraphVirtualAppointment>]`: virtualAppointment
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -12770,7 +12770,7 @@ BODYPARAMETER <IMicrosoftGraphListItem>: listItem
         - `[Id <String>]`: 
         - `[AllowAllUsers <Boolean?>]`: If true, all users and groups will be granted access to this printer share. This supersedes the allow lists defined by the allowedUsers and allowedGroups navigation properties.
         - `[AllowedGroups <IMicrosoftGraphGroup1[]>]`: The groups whose users have access to print using the printer.
-        - `[AllowedUsers <IMicrosoftGraphUser1[]>]`: The users who have access to print using the printer.
+        - `[AllowedUsers <IMicrosoftGraphUser[]>]`: The users who have access to print using the printer.
         - `[CreatedDateTime <DateTime?>]`: The DateTimeOffset when the printer share was created. Read-only.
         - `[Printer <IMicrosoftGraphPrinter>]`: printer
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -13374,7 +13374,7 @@ BODYPARAMETER <IMicrosoftGraphListItem>: listItem
   - `[Description <String>]`: Provides a user-visible description of the item. Optional.
   - `[ETag <String>]`: ETag for the item. Read-only.
   - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-  - `[LastModifiedByUser <IMicrosoftGraphUser1>]`: user
+  - `[LastModifiedByUser <IMicrosoftGraphUser>]`: user
   - `[LastModifiedDateTime <DateTime?>]`: Date and time the item was last modified. Read-only.
   - `[Name <String>]`: The name of the item. Read-write.
   - `[ParentReference <IMicrosoftGraphItemReference>]`: itemReference
@@ -13424,7 +13424,7 @@ CREATEDBY <IMicrosoftGraphIdentitySet>: identitySet
   - `[Device <IMicrosoftGraphIdentity>]`: identity
   - `[User <IMicrosoftGraphIdentity>]`: identity
 
-CREATEDBYUSER <IMicrosoftGraphUser1>: user
+CREATEDBYUSER <IMicrosoftGraphUser>: user
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
   - `[Id <String>]`: 
@@ -14228,12 +14228,12 @@ CREATEDBYUSER <IMicrosoftGraphUser1>: user
   - `[Drive <IMicrosoftGraphDrive1>]`: drive
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-    - `[CreatedByUser <IMicrosoftGraphUser1>]`: user
+    - `[CreatedByUser <IMicrosoftGraphUser>]`: user
     - `[CreatedDateTime <DateTime?>]`: Date and time of item creation. Read-only.
     - `[Description <String>]`: Provides a user-visible description of the item. Optional.
     - `[ETag <String>]`: ETag for the item. Read-only.
     - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-    - `[LastModifiedByUser <IMicrosoftGraphUser1>]`: user
+    - `[LastModifiedByUser <IMicrosoftGraphUser>]`: user
     - `[LastModifiedDateTime <DateTime?>]`: Date and time the item was last modified. Read-only.
     - `[Name <String>]`: The name of the item. Read-write.
     - `[ParentReference <IMicrosoftGraphItemReference>]`: itemReference
@@ -14296,12 +14296,12 @@ CREATEDBYUSER <IMicrosoftGraphUser1>: user
       - `[DriveItem <IMicrosoftGraphDriveItem1>]`: driveItem
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-        - `[CreatedByUser <IMicrosoftGraphUser1>]`: user
+        - `[CreatedByUser <IMicrosoftGraphUser>]`: user
         - `[CreatedDateTime <DateTime?>]`: Date and time of item creation. Read-only.
         - `[Description <String>]`: Provides a user-visible description of the item. Optional.
         - `[ETag <String>]`: ETag for the item. Read-only.
         - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-        - `[LastModifiedByUser <IMicrosoftGraphUser1>]`: user
+        - `[LastModifiedByUser <IMicrosoftGraphUser>]`: user
         - `[LastModifiedDateTime <DateTime?>]`: Date and time the item was last modified. Read-only.
         - `[Name <String>]`: The name of the item. Read-write.
         - `[ParentReference <IMicrosoftGraphItemReference>]`: itemReference
@@ -14398,12 +14398,12 @@ CREATEDBYUSER <IMicrosoftGraphUser1>: user
         - `[ListItem <IMicrosoftGraphListItem>]`: listItem
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-          - `[CreatedByUser <IMicrosoftGraphUser1>]`: user
+          - `[CreatedByUser <IMicrosoftGraphUser>]`: user
           - `[CreatedDateTime <DateTime?>]`: Date and time of item creation. Read-only.
           - `[Description <String>]`: Provides a user-visible description of the item. Optional.
           - `[ETag <String>]`: ETag for the item. Read-only.
           - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-          - `[LastModifiedByUser <IMicrosoftGraphUser1>]`: user
+          - `[LastModifiedByUser <IMicrosoftGraphUser>]`: user
           - `[LastModifiedDateTime <DateTime?>]`: Date and time the item was last modified. Read-only.
           - `[Name <String>]`: The name of the item. Read-write.
           - `[ParentReference <IMicrosoftGraphItemReference>]`: itemReference
@@ -14846,12 +14846,12 @@ CREATEDBYUSER <IMicrosoftGraphUser1>: user
     - `[List <IMicrosoftGraphList>]`: list
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-      - `[CreatedByUser <IMicrosoftGraphUser1>]`: user
+      - `[CreatedByUser <IMicrosoftGraphUser>]`: user
       - `[CreatedDateTime <DateTime?>]`: Date and time of item creation. Read-only.
       - `[Description <String>]`: Provides a user-visible description of the item. Optional.
       - `[ETag <String>]`: ETag for the item. Read-only.
       - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-      - `[LastModifiedByUser <IMicrosoftGraphUser1>]`: user
+      - `[LastModifiedByUser <IMicrosoftGraphUser>]`: user
       - `[LastModifiedDateTime <DateTime?>]`: Date and time the item was last modified. Read-only.
       - `[Name <String>]`: The name of the item. Read-write.
       - `[ParentReference <IMicrosoftGraphItemReference>]`: itemReference
@@ -15092,12 +15092,12 @@ CREATEDBYUSER <IMicrosoftGraphUser1>: user
   - `[FaxNumber <String>]`: The fax number of the user. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values).
   - `[FollowedSites <IMicrosoftGraphSite1[]>]`: 
     - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-    - `[CreatedByUser <IMicrosoftGraphUser1>]`: user
+    - `[CreatedByUser <IMicrosoftGraphUser>]`: user
     - `[CreatedDateTime <DateTime?>]`: Date and time of item creation. Read-only.
     - `[Description <String>]`: Provides a user-visible description of the item. Optional.
     - `[ETag <String>]`: ETag for the item. Read-only.
     - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-    - `[LastModifiedByUser <IMicrosoftGraphUser1>]`: user
+    - `[LastModifiedByUser <IMicrosoftGraphUser>]`: user
     - `[LastModifiedDateTime <DateTime?>]`: Date and time the item was last modified. Read-only.
     - `[Name <String>]`: The name of the item. Read-write.
     - `[ParentReference <IMicrosoftGraphItemReference>]`: itemReference
@@ -15114,12 +15114,12 @@ CREATEDBYUSER <IMicrosoftGraphUser1>: user
     - `[Items <IMicrosoftGraphBaseItem[]>]`: Used to address any item contained in this site. This collection cannot be enumerated.
       - `[Id <String>]`: 
       - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-      - `[CreatedByUser <IMicrosoftGraphUser1>]`: user
+      - `[CreatedByUser <IMicrosoftGraphUser>]`: user
       - `[CreatedDateTime <DateTime?>]`: Date and time of item creation. Read-only.
       - `[Description <String>]`: Provides a user-visible description of the item. Optional.
       - `[ETag <String>]`: ETag for the item. Read-only.
       - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-      - `[LastModifiedByUser <IMicrosoftGraphUser1>]`: user
+      - `[LastModifiedByUser <IMicrosoftGraphUser>]`: user
       - `[LastModifiedDateTime <DateTime?>]`: Date and time the item was last modified. Read-only.
       - `[Name <String>]`: The name of the item. Read-write.
       - `[ParentReference <IMicrosoftGraphItemReference>]`: itemReference
@@ -15218,12 +15218,12 @@ CREATEDBYUSER <IMicrosoftGraphUser1>: user
     - `[Operations <IMicrosoftGraphRichLongRunningOperation[]>]`: The collection of long running operations for the site.
     - `[Pages <IMicrosoftGraphSitePage[]>]`: The collection of pages in the SitePages list in this site.
       - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-      - `[CreatedByUser <IMicrosoftGraphUser1>]`: user
+      - `[CreatedByUser <IMicrosoftGraphUser>]`: user
       - `[CreatedDateTime <DateTime?>]`: Date and time of item creation. Read-only.
       - `[Description <String>]`: Provides a user-visible description of the item. Optional.
       - `[ETag <String>]`: ETag for the item. Read-only.
       - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-      - `[LastModifiedByUser <IMicrosoftGraphUser1>]`: user
+      - `[LastModifiedByUser <IMicrosoftGraphUser>]`: user
       - `[LastModifiedDateTime <DateTime?>]`: Date and time the item was last modified. Read-only.
       - `[Name <String>]`: The name of the item. Read-write.
       - `[ParentReference <IMicrosoftGraphItemReference>]`: itemReference
@@ -15735,7 +15735,7 @@ CREATEDBYUSER <IMicrosoftGraphUser1>: user
         - `[AllowUserDeleteMessages <Boolean?>]`: If set to true, users can delete their messages.
         - `[AllowUserEditMessages <Boolean?>]`: If set to true, users can edit their messages.
       - `[Operations <IMicrosoftGraphTeamsAsyncOperation[]>]`: The async operations that ran or are running on this team.
-      - `[Owners <IMicrosoftGraphUser1[]>]`: The list of this team's owners. Currently, when creating a team using application permissions, exactly one owner must be specified. When using user delegated permissions, no owner can be specified (the current user is the owner). Owner must be specified as an object ID (GUID), not a UPN.
+      - `[Owners <IMicrosoftGraphUser[]>]`: The list of this team's owners. Currently, when creating a team using application permissions, exactly one owner must be specified. When using user delegated permissions, no owner can be specified (the current user is the owner). Owner must be specified as an object ID (GUID), not a UPN.
       - `[PermissionGrants <IMicrosoftGraphResourceSpecificPermissionGrant[]>]`: A collection of permissions granted to apps to access the team.
       - `[Photo <IMicrosoftGraphProfilePhoto>]`: profilePhoto
       - `[PrimaryChannel <IMicrosoftGraphChannel>]`: channel
@@ -16172,7 +16172,7 @@ CREATEDBYUSER <IMicrosoftGraphUser1>: user
     - `[AzureActiveDirectoryDeviceId <String>]`: The unique identifier for the Azure Active Directory device. Read only. This property is read-only.
     - `[AzureAdDeviceId <String>]`: The unique identifier for the Azure Active Directory device. Read only. This property is read-only.
     - `[AzureAdRegistered <Boolean?>]`: Whether the device is Azure Active Directory registered. This property is read-only.
-    - `[BootstrapTokenEscrowed <Boolean?>]`: Reports if the managed device has an escrowed Bootstrap Token. This is only for macOS devices. If FALSE, no bootstrap token is escrowed. If TRUE, the device has escrowed a bootstrap token with Intune. This property is read-only.
+    - `[BootstrapTokenEscrowed <Boolean?>]`: Reports if the managed device has an escrowed Bootstrap Token. This is only for macOS devices. To get, include BootstrapTokenEscrowed in the select clause and query with a device id. If FALSE, no bootstrap token is escrowed. If TRUE, the device has escrowed a bootstrap token with Intune. This property is read-only.
     - `[ChassisType <ChassisType?>]`: Chassis type.
     - `[ChromeOSDeviceInfo <IMicrosoftGraphChromeOSDeviceProperty[]>]`: List of properties of the ChromeOS Device.
       - `[Name <String>]`: Name of the property
@@ -16458,7 +16458,7 @@ CREATEDBYUSER <IMicrosoftGraphUser1>: user
     - `[UserDisplayName <String>]`: User display name. This property is read-only.
     - `[UserId <String>]`: Unique Identifier for the user associated with the device. This property is read-only.
     - `[UserPrincipalName <String>]`: Device user principal name. This property is read-only.
-    - `[Users <IMicrosoftGraphUser1[]>]`: The primary users associated with the managed device.
+    - `[Users <IMicrosoftGraphUser[]>]`: The primary users associated with the managed device.
     - `[UsersLoggedOn <IMicrosoftGraphLoggedOnUser[]>]`: Indicates the last logged on users of a device. This property is read-only.
       - `[LastLogOnDateTime <DateTime?>]`: Date time when user logs on
       - `[UserId <String>]`: User id
@@ -16681,10 +16681,10 @@ CREATEDBYUSER <IMicrosoftGraphUser1>: user
       - `[Subject <String>]`: The subject of the meeting.
     - `[StartDateTime <DateTime?>]`: The meeting start time in UTC.
     - `[Subject <String>]`: The subject of the online meeting.
-    - `[Transcripts <IMicrosoftGraphCallTranscript[]>]`: 
+    - `[Transcripts <IMicrosoftGraphCallTranscript[]>]`: The transcripts of an online meeting. Read-only.
       - `[Id <String>]`: 
-      - `[Content <Byte[]>]`: 
-      - `[CreatedDateTime <DateTime?>]`: 
+      - `[Content <Byte[]>]`: A field representing the content of the transcript. Read-only.
+      - `[CreatedDateTime <DateTime?>]`: Date and time at which the transcript was created. Read-only.
     - `[VideoTeleconferenceId <String>]`: The video teleconferencing ID. Read-only.
     - `[VirtualAppointment <IMicrosoftGraphVirtualAppointment>]`: virtualAppointment
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -17119,7 +17119,7 @@ CREATEDBYUSER <IMicrosoftGraphUser1>: user
       - `[Id <String>]`: 
       - `[AllowAllUsers <Boolean?>]`: If true, all users and groups will be granted access to this printer share. This supersedes the allow lists defined by the allowedUsers and allowedGroups navigation properties.
       - `[AllowedGroups <IMicrosoftGraphGroup1[]>]`: The groups whose users have access to print using the printer.
-      - `[AllowedUsers <IMicrosoftGraphUser1[]>]`: The users who have access to print using the printer.
+      - `[AllowedUsers <IMicrosoftGraphUser[]>]`: The users who have access to print using the printer.
       - `[CreatedDateTime <DateTime?>]`: The DateTimeOffset when the printer share was created. Read-only.
       - `[Printer <IMicrosoftGraphPrinter>]`: printer
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -17761,7 +17761,7 @@ DRIVEITEM <IMicrosoftGraphDriveItem1>: driveItem
       - `[Id <String>]`: Unique identifier for the identity.
     - `[Device <IMicrosoftGraphIdentity>]`: identity
     - `[User <IMicrosoftGraphIdentity>]`: identity
-  - `[CreatedByUser <IMicrosoftGraphUser1>]`: user
+  - `[CreatedByUser <IMicrosoftGraphUser>]`: user
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
     - `[Id <String>]`: 
@@ -18558,12 +18558,12 @@ DRIVEITEM <IMicrosoftGraphDriveItem1>: driveItem
     - `[Drive <IMicrosoftGraphDrive1>]`: drive
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-      - `[CreatedByUser <IMicrosoftGraphUser1>]`: user
+      - `[CreatedByUser <IMicrosoftGraphUser>]`: user
       - `[CreatedDateTime <DateTime?>]`: Date and time of item creation. Read-only.
       - `[Description <String>]`: Provides a user-visible description of the item. Optional.
       - `[ETag <String>]`: ETag for the item. Read-only.
       - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-      - `[LastModifiedByUser <IMicrosoftGraphUser1>]`: user
+      - `[LastModifiedByUser <IMicrosoftGraphUser>]`: user
       - `[LastModifiedDateTime <DateTime?>]`: Date and time the item was last modified. Read-only.
       - `[Name <String>]`: The name of the item. Read-write.
       - `[ParentReference <IMicrosoftGraphItemReference>]`: itemReference
@@ -18627,12 +18627,12 @@ DRIVEITEM <IMicrosoftGraphDriveItem1>: driveItem
         - `[ListItem <IMicrosoftGraphListItem>]`: listItem
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-          - `[CreatedByUser <IMicrosoftGraphUser1>]`: user
+          - `[CreatedByUser <IMicrosoftGraphUser>]`: user
           - `[CreatedDateTime <DateTime?>]`: Date and time of item creation. Read-only.
           - `[Description <String>]`: Provides a user-visible description of the item. Optional.
           - `[ETag <String>]`: ETag for the item. Read-only.
           - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-          - `[LastModifiedByUser <IMicrosoftGraphUser1>]`: user
+          - `[LastModifiedByUser <IMicrosoftGraphUser>]`: user
           - `[LastModifiedDateTime <DateTime?>]`: Date and time the item was last modified. Read-only.
           - `[Name <String>]`: The name of the item. Read-write.
           - `[ParentReference <IMicrosoftGraphItemReference>]`: itemReference
@@ -18716,12 +18716,12 @@ DRIVEITEM <IMicrosoftGraphDriveItem1>: driveItem
       - `[List <IMicrosoftGraphList>]`: list
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-        - `[CreatedByUser <IMicrosoftGraphUser1>]`: user
+        - `[CreatedByUser <IMicrosoftGraphUser>]`: user
         - `[CreatedDateTime <DateTime?>]`: Date and time of item creation. Read-only.
         - `[Description <String>]`: Provides a user-visible description of the item. Optional.
         - `[ETag <String>]`: ETag for the item. Read-only.
         - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-        - `[LastModifiedByUser <IMicrosoftGraphUser1>]`: user
+        - `[LastModifiedByUser <IMicrosoftGraphUser>]`: user
         - `[LastModifiedDateTime <DateTime?>]`: Date and time the item was last modified. Read-only.
         - `[Name <String>]`: The name of the item. Read-write.
         - `[ParentReference <IMicrosoftGraphItemReference>]`: itemReference
@@ -18978,12 +18978,12 @@ DRIVEITEM <IMicrosoftGraphDriveItem1>: driveItem
     - `[FaxNumber <String>]`: The fax number of the user. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values).
     - `[FollowedSites <IMicrosoftGraphSite1[]>]`: 
       - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-      - `[CreatedByUser <IMicrosoftGraphUser1>]`: user
+      - `[CreatedByUser <IMicrosoftGraphUser>]`: user
       - `[CreatedDateTime <DateTime?>]`: Date and time of item creation. Read-only.
       - `[Description <String>]`: Provides a user-visible description of the item. Optional.
       - `[ETag <String>]`: ETag for the item. Read-only.
       - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-      - `[LastModifiedByUser <IMicrosoftGraphUser1>]`: user
+      - `[LastModifiedByUser <IMicrosoftGraphUser>]`: user
       - `[LastModifiedDateTime <DateTime?>]`: Date and time the item was last modified. Read-only.
       - `[Name <String>]`: The name of the item. Read-write.
       - `[ParentReference <IMicrosoftGraphItemReference>]`: itemReference
@@ -19000,12 +19000,12 @@ DRIVEITEM <IMicrosoftGraphDriveItem1>: driveItem
       - `[Items <IMicrosoftGraphBaseItem[]>]`: Used to address any item contained in this site. This collection cannot be enumerated.
         - `[Id <String>]`: 
         - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-        - `[CreatedByUser <IMicrosoftGraphUser1>]`: user
+        - `[CreatedByUser <IMicrosoftGraphUser>]`: user
         - `[CreatedDateTime <DateTime?>]`: Date and time of item creation. Read-only.
         - `[Description <String>]`: Provides a user-visible description of the item. Optional.
         - `[ETag <String>]`: ETag for the item. Read-only.
         - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-        - `[LastModifiedByUser <IMicrosoftGraphUser1>]`: user
+        - `[LastModifiedByUser <IMicrosoftGraphUser>]`: user
         - `[LastModifiedDateTime <DateTime?>]`: Date and time the item was last modified. Read-only.
         - `[Name <String>]`: The name of the item. Read-write.
         - `[ParentReference <IMicrosoftGraphItemReference>]`: itemReference
@@ -19104,12 +19104,12 @@ DRIVEITEM <IMicrosoftGraphDriveItem1>: driveItem
       - `[Operations <IMicrosoftGraphRichLongRunningOperation[]>]`: The collection of long running operations for the site.
       - `[Pages <IMicrosoftGraphSitePage[]>]`: The collection of pages in the SitePages list in this site.
         - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-        - `[CreatedByUser <IMicrosoftGraphUser1>]`: user
+        - `[CreatedByUser <IMicrosoftGraphUser>]`: user
         - `[CreatedDateTime <DateTime?>]`: Date and time of item creation. Read-only.
         - `[Description <String>]`: Provides a user-visible description of the item. Optional.
         - `[ETag <String>]`: ETag for the item. Read-only.
         - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-        - `[LastModifiedByUser <IMicrosoftGraphUser1>]`: user
+        - `[LastModifiedByUser <IMicrosoftGraphUser>]`: user
         - `[LastModifiedDateTime <DateTime?>]`: Date and time the item was last modified. Read-only.
         - `[Name <String>]`: The name of the item. Read-write.
         - `[ParentReference <IMicrosoftGraphItemReference>]`: itemReference
@@ -19657,7 +19657,7 @@ DRIVEITEM <IMicrosoftGraphDriveItem1>: driveItem
           - `[AllowUserDeleteMessages <Boolean?>]`: If set to true, users can delete their messages.
           - `[AllowUserEditMessages <Boolean?>]`: If set to true, users can edit their messages.
         - `[Operations <IMicrosoftGraphTeamsAsyncOperation[]>]`: The async operations that ran or are running on this team.
-        - `[Owners <IMicrosoftGraphUser1[]>]`: The list of this team's owners. Currently, when creating a team using application permissions, exactly one owner must be specified. When using user delegated permissions, no owner can be specified (the current user is the owner). Owner must be specified as an object ID (GUID), not a UPN.
+        - `[Owners <IMicrosoftGraphUser[]>]`: The list of this team's owners. Currently, when creating a team using application permissions, exactly one owner must be specified. When using user delegated permissions, no owner can be specified (the current user is the owner). Owner must be specified as an object ID (GUID), not a UPN.
         - `[PermissionGrants <IMicrosoftGraphResourceSpecificPermissionGrant[]>]`: A collection of permissions granted to apps to access the team.
         - `[Photo <IMicrosoftGraphProfilePhoto>]`: profilePhoto
         - `[PrimaryChannel <IMicrosoftGraphChannel>]`: channel
@@ -20098,7 +20098,7 @@ DRIVEITEM <IMicrosoftGraphDriveItem1>: driveItem
       - `[AzureActiveDirectoryDeviceId <String>]`: The unique identifier for the Azure Active Directory device. Read only. This property is read-only.
       - `[AzureAdDeviceId <String>]`: The unique identifier for the Azure Active Directory device. Read only. This property is read-only.
       - `[AzureAdRegistered <Boolean?>]`: Whether the device is Azure Active Directory registered. This property is read-only.
-      - `[BootstrapTokenEscrowed <Boolean?>]`: Reports if the managed device has an escrowed Bootstrap Token. This is only for macOS devices. If FALSE, no bootstrap token is escrowed. If TRUE, the device has escrowed a bootstrap token with Intune. This property is read-only.
+      - `[BootstrapTokenEscrowed <Boolean?>]`: Reports if the managed device has an escrowed Bootstrap Token. This is only for macOS devices. To get, include BootstrapTokenEscrowed in the select clause and query with a device id. If FALSE, no bootstrap token is escrowed. If TRUE, the device has escrowed a bootstrap token with Intune. This property is read-only.
       - `[ChassisType <ChassisType?>]`: Chassis type.
       - `[ChromeOSDeviceInfo <IMicrosoftGraphChromeOSDeviceProperty[]>]`: List of properties of the ChromeOS Device.
         - `[Name <String>]`: Name of the property
@@ -20384,7 +20384,7 @@ DRIVEITEM <IMicrosoftGraphDriveItem1>: driveItem
       - `[UserDisplayName <String>]`: User display name. This property is read-only.
       - `[UserId <String>]`: Unique Identifier for the user associated with the device. This property is read-only.
       - `[UserPrincipalName <String>]`: Device user principal name. This property is read-only.
-      - `[Users <IMicrosoftGraphUser1[]>]`: The primary users associated with the managed device.
+      - `[Users <IMicrosoftGraphUser[]>]`: The primary users associated with the managed device.
       - `[UsersLoggedOn <IMicrosoftGraphLoggedOnUser[]>]`: Indicates the last logged on users of a device. This property is read-only.
         - `[LastLogOnDateTime <DateTime?>]`: Date time when user logs on
         - `[UserId <String>]`: User id
@@ -20607,10 +20607,10 @@ DRIVEITEM <IMicrosoftGraphDriveItem1>: driveItem
         - `[Subject <String>]`: The subject of the meeting.
       - `[StartDateTime <DateTime?>]`: The meeting start time in UTC.
       - `[Subject <String>]`: The subject of the online meeting.
-      - `[Transcripts <IMicrosoftGraphCallTranscript[]>]`: 
+      - `[Transcripts <IMicrosoftGraphCallTranscript[]>]`: The transcripts of an online meeting. Read-only.
         - `[Id <String>]`: 
-        - `[Content <Byte[]>]`: 
-        - `[CreatedDateTime <DateTime?>]`: 
+        - `[Content <Byte[]>]`: A field representing the content of the transcript. Read-only.
+        - `[CreatedDateTime <DateTime?>]`: Date and time at which the transcript was created. Read-only.
       - `[VideoTeleconferenceId <String>]`: The video teleconferencing ID. Read-only.
       - `[VirtualAppointment <IMicrosoftGraphVirtualAppointment>]`: virtualAppointment
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -21045,7 +21045,7 @@ DRIVEITEM <IMicrosoftGraphDriveItem1>: driveItem
         - `[Id <String>]`: 
         - `[AllowAllUsers <Boolean?>]`: If true, all users and groups will be granted access to this printer share. This supersedes the allow lists defined by the allowedUsers and allowedGroups navigation properties.
         - `[AllowedGroups <IMicrosoftGraphGroup1[]>]`: The groups whose users have access to print using the printer.
-        - `[AllowedUsers <IMicrosoftGraphUser1[]>]`: The users who have access to print using the printer.
+        - `[AllowedUsers <IMicrosoftGraphUser[]>]`: The users who have access to print using the printer.
         - `[CreatedDateTime <DateTime?>]`: The DateTimeOffset when the printer share was created. Read-only.
         - `[Printer <IMicrosoftGraphPrinter>]`: printer
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -21649,7 +21649,7 @@ DRIVEITEM <IMicrosoftGraphDriveItem1>: driveItem
   - `[Description <String>]`: Provides a user-visible description of the item. Optional.
   - `[ETag <String>]`: ETag for the item. Read-only.
   - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-  - `[LastModifiedByUser <IMicrosoftGraphUser1>]`: user
+  - `[LastModifiedByUser <IMicrosoftGraphUser>]`: user
   - `[LastModifiedDateTime <DateTime?>]`: Date and time the item was last modified. Read-only.
   - `[Name <String>]`: The name of the item. Read-write.
   - `[ParentReference <IMicrosoftGraphItemReference>]`: itemReference
@@ -22093,7 +22093,7 @@ LASTMODIFIEDBY <IMicrosoftGraphIdentitySet>: identitySet
   - `[Device <IMicrosoftGraphIdentity>]`: identity
   - `[User <IMicrosoftGraphIdentity>]`: identity
 
-LASTMODIFIEDBYUSER <IMicrosoftGraphUser1>: user
+LASTMODIFIEDBYUSER <IMicrosoftGraphUser>: user
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
   - `[Id <String>]`: 
@@ -22897,12 +22897,12 @@ LASTMODIFIEDBYUSER <IMicrosoftGraphUser1>: user
   - `[Drive <IMicrosoftGraphDrive1>]`: drive
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-    - `[CreatedByUser <IMicrosoftGraphUser1>]`: user
+    - `[CreatedByUser <IMicrosoftGraphUser>]`: user
     - `[CreatedDateTime <DateTime?>]`: Date and time of item creation. Read-only.
     - `[Description <String>]`: Provides a user-visible description of the item. Optional.
     - `[ETag <String>]`: ETag for the item. Read-only.
     - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-    - `[LastModifiedByUser <IMicrosoftGraphUser1>]`: user
+    - `[LastModifiedByUser <IMicrosoftGraphUser>]`: user
     - `[LastModifiedDateTime <DateTime?>]`: Date and time the item was last modified. Read-only.
     - `[Name <String>]`: The name of the item. Read-write.
     - `[ParentReference <IMicrosoftGraphItemReference>]`: itemReference
@@ -22965,12 +22965,12 @@ LASTMODIFIEDBYUSER <IMicrosoftGraphUser1>: user
       - `[DriveItem <IMicrosoftGraphDriveItem1>]`: driveItem
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-        - `[CreatedByUser <IMicrosoftGraphUser1>]`: user
+        - `[CreatedByUser <IMicrosoftGraphUser>]`: user
         - `[CreatedDateTime <DateTime?>]`: Date and time of item creation. Read-only.
         - `[Description <String>]`: Provides a user-visible description of the item. Optional.
         - `[ETag <String>]`: ETag for the item. Read-only.
         - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-        - `[LastModifiedByUser <IMicrosoftGraphUser1>]`: user
+        - `[LastModifiedByUser <IMicrosoftGraphUser>]`: user
         - `[LastModifiedDateTime <DateTime?>]`: Date and time the item was last modified. Read-only.
         - `[Name <String>]`: The name of the item. Read-write.
         - `[ParentReference <IMicrosoftGraphItemReference>]`: itemReference
@@ -23067,12 +23067,12 @@ LASTMODIFIEDBYUSER <IMicrosoftGraphUser1>: user
         - `[ListItem <IMicrosoftGraphListItem>]`: listItem
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-          - `[CreatedByUser <IMicrosoftGraphUser1>]`: user
+          - `[CreatedByUser <IMicrosoftGraphUser>]`: user
           - `[CreatedDateTime <DateTime?>]`: Date and time of item creation. Read-only.
           - `[Description <String>]`: Provides a user-visible description of the item. Optional.
           - `[ETag <String>]`: ETag for the item. Read-only.
           - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-          - `[LastModifiedByUser <IMicrosoftGraphUser1>]`: user
+          - `[LastModifiedByUser <IMicrosoftGraphUser>]`: user
           - `[LastModifiedDateTime <DateTime?>]`: Date and time the item was last modified. Read-only.
           - `[Name <String>]`: The name of the item. Read-write.
           - `[ParentReference <IMicrosoftGraphItemReference>]`: itemReference
@@ -23515,12 +23515,12 @@ LASTMODIFIEDBYUSER <IMicrosoftGraphUser1>: user
     - `[List <IMicrosoftGraphList>]`: list
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-      - `[CreatedByUser <IMicrosoftGraphUser1>]`: user
+      - `[CreatedByUser <IMicrosoftGraphUser>]`: user
       - `[CreatedDateTime <DateTime?>]`: Date and time of item creation. Read-only.
       - `[Description <String>]`: Provides a user-visible description of the item. Optional.
       - `[ETag <String>]`: ETag for the item. Read-only.
       - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-      - `[LastModifiedByUser <IMicrosoftGraphUser1>]`: user
+      - `[LastModifiedByUser <IMicrosoftGraphUser>]`: user
       - `[LastModifiedDateTime <DateTime?>]`: Date and time the item was last modified. Read-only.
       - `[Name <String>]`: The name of the item. Read-write.
       - `[ParentReference <IMicrosoftGraphItemReference>]`: itemReference
@@ -23761,12 +23761,12 @@ LASTMODIFIEDBYUSER <IMicrosoftGraphUser1>: user
   - `[FaxNumber <String>]`: The fax number of the user. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values).
   - `[FollowedSites <IMicrosoftGraphSite1[]>]`: 
     - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-    - `[CreatedByUser <IMicrosoftGraphUser1>]`: user
+    - `[CreatedByUser <IMicrosoftGraphUser>]`: user
     - `[CreatedDateTime <DateTime?>]`: Date and time of item creation. Read-only.
     - `[Description <String>]`: Provides a user-visible description of the item. Optional.
     - `[ETag <String>]`: ETag for the item. Read-only.
     - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-    - `[LastModifiedByUser <IMicrosoftGraphUser1>]`: user
+    - `[LastModifiedByUser <IMicrosoftGraphUser>]`: user
     - `[LastModifiedDateTime <DateTime?>]`: Date and time the item was last modified. Read-only.
     - `[Name <String>]`: The name of the item. Read-write.
     - `[ParentReference <IMicrosoftGraphItemReference>]`: itemReference
@@ -23783,12 +23783,12 @@ LASTMODIFIEDBYUSER <IMicrosoftGraphUser1>: user
     - `[Items <IMicrosoftGraphBaseItem[]>]`: Used to address any item contained in this site. This collection cannot be enumerated.
       - `[Id <String>]`: 
       - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-      - `[CreatedByUser <IMicrosoftGraphUser1>]`: user
+      - `[CreatedByUser <IMicrosoftGraphUser>]`: user
       - `[CreatedDateTime <DateTime?>]`: Date and time of item creation. Read-only.
       - `[Description <String>]`: Provides a user-visible description of the item. Optional.
       - `[ETag <String>]`: ETag for the item. Read-only.
       - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-      - `[LastModifiedByUser <IMicrosoftGraphUser1>]`: user
+      - `[LastModifiedByUser <IMicrosoftGraphUser>]`: user
       - `[LastModifiedDateTime <DateTime?>]`: Date and time the item was last modified. Read-only.
       - `[Name <String>]`: The name of the item. Read-write.
       - `[ParentReference <IMicrosoftGraphItemReference>]`: itemReference
@@ -23887,12 +23887,12 @@ LASTMODIFIEDBYUSER <IMicrosoftGraphUser1>: user
     - `[Operations <IMicrosoftGraphRichLongRunningOperation[]>]`: The collection of long running operations for the site.
     - `[Pages <IMicrosoftGraphSitePage[]>]`: The collection of pages in the SitePages list in this site.
       - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-      - `[CreatedByUser <IMicrosoftGraphUser1>]`: user
+      - `[CreatedByUser <IMicrosoftGraphUser>]`: user
       - `[CreatedDateTime <DateTime?>]`: Date and time of item creation. Read-only.
       - `[Description <String>]`: Provides a user-visible description of the item. Optional.
       - `[ETag <String>]`: ETag for the item. Read-only.
       - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-      - `[LastModifiedByUser <IMicrosoftGraphUser1>]`: user
+      - `[LastModifiedByUser <IMicrosoftGraphUser>]`: user
       - `[LastModifiedDateTime <DateTime?>]`: Date and time the item was last modified. Read-only.
       - `[Name <String>]`: The name of the item. Read-write.
       - `[ParentReference <IMicrosoftGraphItemReference>]`: itemReference
@@ -24404,7 +24404,7 @@ LASTMODIFIEDBYUSER <IMicrosoftGraphUser1>: user
         - `[AllowUserDeleteMessages <Boolean?>]`: If set to true, users can delete their messages.
         - `[AllowUserEditMessages <Boolean?>]`: If set to true, users can edit their messages.
       - `[Operations <IMicrosoftGraphTeamsAsyncOperation[]>]`: The async operations that ran or are running on this team.
-      - `[Owners <IMicrosoftGraphUser1[]>]`: The list of this team's owners. Currently, when creating a team using application permissions, exactly one owner must be specified. When using user delegated permissions, no owner can be specified (the current user is the owner). Owner must be specified as an object ID (GUID), not a UPN.
+      - `[Owners <IMicrosoftGraphUser[]>]`: The list of this team's owners. Currently, when creating a team using application permissions, exactly one owner must be specified. When using user delegated permissions, no owner can be specified (the current user is the owner). Owner must be specified as an object ID (GUID), not a UPN.
       - `[PermissionGrants <IMicrosoftGraphResourceSpecificPermissionGrant[]>]`: A collection of permissions granted to apps to access the team.
       - `[Photo <IMicrosoftGraphProfilePhoto>]`: profilePhoto
       - `[PrimaryChannel <IMicrosoftGraphChannel>]`: channel
@@ -24841,7 +24841,7 @@ LASTMODIFIEDBYUSER <IMicrosoftGraphUser1>: user
     - `[AzureActiveDirectoryDeviceId <String>]`: The unique identifier for the Azure Active Directory device. Read only. This property is read-only.
     - `[AzureAdDeviceId <String>]`: The unique identifier for the Azure Active Directory device. Read only. This property is read-only.
     - `[AzureAdRegistered <Boolean?>]`: Whether the device is Azure Active Directory registered. This property is read-only.
-    - `[BootstrapTokenEscrowed <Boolean?>]`: Reports if the managed device has an escrowed Bootstrap Token. This is only for macOS devices. If FALSE, no bootstrap token is escrowed. If TRUE, the device has escrowed a bootstrap token with Intune. This property is read-only.
+    - `[BootstrapTokenEscrowed <Boolean?>]`: Reports if the managed device has an escrowed Bootstrap Token. This is only for macOS devices. To get, include BootstrapTokenEscrowed in the select clause and query with a device id. If FALSE, no bootstrap token is escrowed. If TRUE, the device has escrowed a bootstrap token with Intune. This property is read-only.
     - `[ChassisType <ChassisType?>]`: Chassis type.
     - `[ChromeOSDeviceInfo <IMicrosoftGraphChromeOSDeviceProperty[]>]`: List of properties of the ChromeOS Device.
       - `[Name <String>]`: Name of the property
@@ -25127,7 +25127,7 @@ LASTMODIFIEDBYUSER <IMicrosoftGraphUser1>: user
     - `[UserDisplayName <String>]`: User display name. This property is read-only.
     - `[UserId <String>]`: Unique Identifier for the user associated with the device. This property is read-only.
     - `[UserPrincipalName <String>]`: Device user principal name. This property is read-only.
-    - `[Users <IMicrosoftGraphUser1[]>]`: The primary users associated with the managed device.
+    - `[Users <IMicrosoftGraphUser[]>]`: The primary users associated with the managed device.
     - `[UsersLoggedOn <IMicrosoftGraphLoggedOnUser[]>]`: Indicates the last logged on users of a device. This property is read-only.
       - `[LastLogOnDateTime <DateTime?>]`: Date time when user logs on
       - `[UserId <String>]`: User id
@@ -25350,10 +25350,10 @@ LASTMODIFIEDBYUSER <IMicrosoftGraphUser1>: user
       - `[Subject <String>]`: The subject of the meeting.
     - `[StartDateTime <DateTime?>]`: The meeting start time in UTC.
     - `[Subject <String>]`: The subject of the online meeting.
-    - `[Transcripts <IMicrosoftGraphCallTranscript[]>]`: 
+    - `[Transcripts <IMicrosoftGraphCallTranscript[]>]`: The transcripts of an online meeting. Read-only.
       - `[Id <String>]`: 
-      - `[Content <Byte[]>]`: 
-      - `[CreatedDateTime <DateTime?>]`: 
+      - `[Content <Byte[]>]`: A field representing the content of the transcript. Read-only.
+      - `[CreatedDateTime <DateTime?>]`: Date and time at which the transcript was created. Read-only.
     - `[VideoTeleconferenceId <String>]`: The video teleconferencing ID. Read-only.
     - `[VirtualAppointment <IMicrosoftGraphVirtualAppointment>]`: virtualAppointment
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -25788,7 +25788,7 @@ LASTMODIFIEDBYUSER <IMicrosoftGraphUser1>: user
       - `[Id <String>]`: 
       - `[AllowAllUsers <Boolean?>]`: If true, all users and groups will be granted access to this printer share. This supersedes the allow lists defined by the allowedUsers and allowedGroups navigation properties.
       - `[AllowedGroups <IMicrosoftGraphGroup1[]>]`: The groups whose users have access to print using the printer.
-      - `[AllowedUsers <IMicrosoftGraphUser1[]>]`: The users who have access to print using the printer.
+      - `[AllowedUsers <IMicrosoftGraphUser[]>]`: The users who have access to print using the printer.
       - `[CreatedDateTime <DateTime?>]`: The DateTimeOffset when the printer share was created. Read-only.
       - `[Printer <IMicrosoftGraphPrinter>]`: printer
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
