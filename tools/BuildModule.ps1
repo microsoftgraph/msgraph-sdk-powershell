@@ -4,9 +4,9 @@
 Param(
     [Parameter(Mandatory = $true)] [ValidateNotNullOrEmpty()][string] $ModuleSrc,
     [Parameter(Mandatory = $true)] [ValidateNotNullOrEmpty()][string] $ModuleFullName,
-    [Parameter(Mandatory = $true)] [ValidateNotNullOrEmpty()][string] $ModuleVersion,
-    [Parameter(Mandatory = $true)] [ValidateNotNullOrEmpty()][string[]] $ReleaseNotes,
-    [int] $ModulePreviewNumber = -1,
+    [Parameter(Mandatory = $true)] [ValidateNotNullOrEmpty()][HashTable] $ModuleMetadata,
+    [Parameter(Mandatory = $true)] [ValidateNotNullOrEmpty()][string] $Version,
+    [Parameter()] [ValidateNotNullOrEmpty()][string] $Prerelease,
     [hashtable[]] $RequiredModules,
     [switch] $EnableSigning,
     [switch] $ExcludeExampleTemplates,
@@ -23,7 +23,6 @@ $BuildModulePS1 = Join-Path $ModuleSrc "/build-module.ps1"
 $ModuleCsProj = Join-Path $ModuleSrc "$ModuleFullName.csproj"
 $ModuleManifest = Join-Path $ModuleSrc "$ModuleFullName.psd1"
 $ModuleNuspec = Join-Path $ModuleSrc "$ModuleFullName.nuspec"
-[HashTable] $ModuleMetadata = Get-Content (Join-Path $PSScriptRoot "..\config\ModuleMetadata.json") | ConvertFrom-Json -AsHashTable
 # Import scripts
 . $NuspecHelperPS1
 . $CSProjHelperPS1
@@ -32,13 +31,12 @@ if (-not (Test-Path -Path $BuildModulePS1)) {
     Write-Error "Build script file '$BuildModulePS1' not found for '$ModuleFullName' module."
 }
 
-# TODO: Enable preview versions in CSproj.
 # Set delay sign to true.
 if ($EnableSigning) {
-    Set-CSProjValues -ModuleCsProj $ModuleCsProj -ModuleVersion $ModuleMetadata["version"] -PreRelease $ModuleMetadata["prerelease"] -AssemblyOriginatorKeyFile $ModuleMetadata["assemblyOriginatorKeyFile"]
+    Set-CSProjValues -ModuleCsProj $ModuleCsProj -ModuleVersion $Version -PreRelease $Prerelease -AssemblyOriginatorKeyFile $ModuleMetadata["assemblyOriginatorKeyFile"]
 }
 else {
-    Set-CSProjValues -ModuleCsProj $ModuleCsProj -ModuleVersion $ModuleMetadata["version"] -PreRelease $ModuleMetadata["prerelease"] -Copyright $ModuleMetadata["copyright"]
+    Set-CSProjValues -ModuleCsProj $ModuleCsProj -ModuleVersion $Version -PreRelease $Prerelease -Copyright $ModuleMetadata["copyright"]
 }
 
 # Build module
@@ -51,23 +49,21 @@ if ($lastexitcode -ne 0) {
 
 [HashTable]$ModuleManifestSettings = @{
     Path          = $ModuleManifest
-    ModuleVersion = $ModuleMetadata["version"]
+    ModuleVersion = $Version
     IconUri       = $ModuleMetadata["iconUri"]
-    ReleaseNotes  = $ReleaseNotes
+    ReleaseNotes  = $ModuleMetadata["releaseNotes"]
 }
 
-if ($ModuleMetadata["prerelease"]) {
-    $ModuleManifestSettings.Prerelease = $ModuleMetadata["prerelease"]
-}
 if ($RequiredModules.Count -gt 0) {
     $ModuleManifestSettings["RequiredModules"] = $RequiredModules
 }
 
-# TODO: Refactor this line to use Set-NuSpecValuesFromManifest. Rename to ModuleVersion after refactor.
-if ($ModuleMetadata["prerelease"]) {
-    $FullVersionNumber = "$($ModuleMetadata["version"])-$($ModuleMetadata["prerelease"])"
-} else {
-    $FullVersionNumber = $ModuleMetadata["version"]
+if ($Prerelease) {
+    $ModuleManifestSettings.Prerelease = $Prerelease
+    $FullVersionNumber = "$Version-$Prerelease"
+}
+else {
+    $FullVersionNumber = $Version
 }
 
 Write-Debug "Updating '$ModuleFullName' module manifest and nuspec..."

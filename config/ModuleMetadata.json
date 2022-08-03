@@ -1,12 +1,14 @@
 {
+  "assemblyOriginatorKeyFile": "35MSSharedLib1024.snk",
   "authors": "Microsoft",
-  "owners": "Microsoft",
-  "description": "Microsoft Graph PowerShell module",
-  "requireLicenseAcceptance": "true",
   "copyright": "© Microsoft Corporation. All rights reserved.",
-  "licenseUri": "https://aka.ms/devservicesagreement",
-  "projectUri": "https://github.com/microsoftgraph/msgraph-sdk-powershell",
+  "description": "Microsoft Graph PowerShell module",
   "iconUri": "https://raw.githubusercontent.com/microsoftgraph/msgraph-sdk-powershell/master/documentation/images/graph_color256.png",
+  "licenseUri": "https://aka.ms/devservicesagreement",
+  "owners": "Microsoft",
+  "projectUri": "https://github.com/microsoftgraph/msgraph-sdk-powershell",
+  "releaseNotes": "See https://aka.ms/GraphPowerShell-Release.",
+  "requireLicenseAcceptance": "true",
   "tags": [
     "MicrosoftGraph",
     "Microsoft",
@@ -20,8 +22,18 @@
     "Intune",
     "AzureAutomationNotSupported"
   ],
-  "releaseNotes": "See https://aka.ms/GraphPowerShell-Release.",
-  "assemblyOriginatorKeyFile": "35MSSharedLib1024.snk",
-  "version": "1.10.0",
-  "prerelease": "preview1"
+  "versions": {
+    "authentication": {
+      "prerelease": "preview1",
+      "version": "1.11.0"
+    },
+    "beta": {
+      "prerelease": "preview1",
+      "version": "1.11.0"
+    },
+    "v1.0": {
+      "prerelease": "preview1",
+      "version": "1.11.0"
+    }
+  }
 }

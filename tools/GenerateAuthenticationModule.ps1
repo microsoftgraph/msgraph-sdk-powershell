@@ -23,7 +23,6 @@ if ($PSEdition -ne 'Core') {
 $ModulePrefix = "Microsoft.Graph"
 $ModuleName = "Authentication"
 $ModuleFullName = "$ModulePrefix.$ModuleName"
-$AuthModuleManifest = "Microsoft.Graph.Authentication.psd1"
 $BuildModulePS1 = Join-Path $PSScriptRoot ".\BuildModule.ps1" -Resolve
 $PackModulePS1 = Join-Path $PSScriptRoot ".\PackModule.ps1" -Resolve
 $PublishModulePS1 = Join-Path $PSScriptRoot ".\PublishModule.ps1" -Resolve
@@ -31,22 +30,16 @@ $AuthSrcPath = Join-Path $PSScriptRoot "..\src\Authentication\"
 $AuthModulePath = Join-Path $AuthSrcPath "Authentication" -Resolve
 $TestModulePS1 = Join-Path $PSScriptRoot ".\TestModule.ps1" -Resolve
 $RunModulePS1 = Join-Path $AuthModulePath ".\run-module.ps1" -Resolve
-$CSProjHelperPS1 = Join-Path $PSScriptRoot "./CSProjHelper.ps1"
+$ModuleMetadataPath = Join-Path $PSScriptRoot "..\config\ModuleMetadata.json"
+[HashTable] $ModuleMetadata = Get-Content $ModuleMetadataPath | ConvertFrom-Json -AsHashTable
 
-# Import scripts
-. $CSProjHelperPS1
-
-# Read ModuleVersion set on local auth module.
-$ManifestContent = Import-LocalizedData -BaseDirectory $AuthModulePath -FileName $AuthModuleManifest
-if ($null -eq $ManifestContent.ModuleVersion) {
-  # Module version not set in module manifest (psd1).
-  Write-Error "Version number is not set on $ModuleFullName module. Please set 'ModuleVersion' in $AuthModulePath\$AuthModuleManifest."
+if ($null -eq $ModuleMetadata.versions.authentication.version) {
+  Write-Error "Version number is not set for $ModuleFullName module. Please set authentication version in $ModuleMetadataPath."
 }
 
-$ModuleVersion = $ManifestContent.ModuleVersion
 # Build and pack generated module.
 if ($Build -or $Run) {
-  & $BuildModulePS1 -ModuleFullName $ModuleFullName -ModuleSrc $AuthModulePath -ModuleVersion $ModuleVersion -ModulePreviewNumber $ModulePreviewNumber -ReleaseNotes $ManifestContent.PrivateData.PSData.ReleaseNotes -EnableSigning:$EnableSigning
+  & $BuildModulePS1 -ModuleFullName $ModuleFullName -ModuleSrc $AuthModulePath -EnableSigning:$EnableSigning -Version $ModuleMetadata.versions.authentication.version -Prerelease $ModuleMetadata.versions.authentication.prerelease -ModuleMetadata $ModuleMetadata.Clone()
 }
 
 if ($Test) {

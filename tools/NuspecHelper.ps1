@@ -88,7 +88,11 @@ function Set-Dependencies(
     foreach($Dependency in $Dependencies){
         $NewDependencyElement = $XmlDocument.CreateElement("dependency", $XmlDocument.DocumentElement.NamespaceURI)
         $NewDependencyElement.SetAttribute("id", $Dependency.ModuleName)
-        $NewDependencyElement.SetAttribute("version", $Dependency.ModuleVersion ?? $Dependency.RequiredVersion)
+        if ($Dependency.ModuleVersion) {
+            $NewDependencyElement.SetAttribute("version", $Dependency.ModuleVersion)
+        } else {
+            $NewDependencyElement.SetAttribute("version", "[$($Dependency.RequiredVersion)]")
+        }
 
         $MetadataElement["dependencies"].AppendChild($NewDependencyElement) | Out-Null
     }
