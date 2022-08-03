@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Users.Actions
-Module Guid: 1be5c4a7-c33b-401d-a530-7cc21a51360a
+Module Guid: e8aa2fa0-d700-4683-967f-219abd9a7a65
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.actions
 Help Version: 1.0.0.0
 Locale: en-US
@@ -377,16 +377,25 @@ Invoke action restore
 ### [Restore-MgUserDriveItem](Restore-MgUserDriveItem.md)
 Invoke action restore
 
+### [Restore-MgUserDriveItemListItemDocumentSetVersion](Restore-MgUserDriveItemListItemDocumentSetVersion.md)
+Invoke action restore
+
 ### [Restore-MgUserDriveItemListItemVersion](Restore-MgUserDriveItemListItemVersion.md)
 Invoke action restoreVersion
 
 ### [Restore-MgUserDriveItemVersion](Restore-MgUserDriveItemVersion.md)
 Invoke action restoreVersion
 
+### [Restore-MgUserDriveListItemDocumentSetVersion](Restore-MgUserDriveListItemDocumentSetVersion.md)
+Invoke action restore
+
 ### [Restore-MgUserDriveListItemVersion](Restore-MgUserDriveListItemVersion.md)
 Invoke action restoreVersion
 
 ### [Restore-MgUserDriveRoot](Restore-MgUserDriveRoot.md)
+Invoke action restore
+
+### [Restore-MgUserDriveRootListItemDocumentSetVersion](Restore-MgUserDriveRootListItemDocumentSetVersion.md)
 Invoke action restore
 
 ### [Restore-MgUserDriveRootListItemVersion](Restore-MgUserDriveRootListItemVersion.md)
