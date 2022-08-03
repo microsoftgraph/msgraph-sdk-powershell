@@ -66,7 +66,8 @@ function Set-NuSpecValuesFromManifest(
 function Set-ElementValue(
     [System.Xml.XmlDocument] $XmlDocument,
     [System.Xml.XmlElement] $MetadataElement,
-    [string] $ElementName, [string] $ElementValue) {
+    [string] $ElementName,
+    [string] $ElementValue) {
     if(-not $MetadataElement[$ElementName]){
         $NewElement = $XmlDocument.CreateElement($ElementName, $XmlDocument.DocumentElement.NamespaceURI)
         $MetadataElement.AppendChild($NewElement) | Out-Null
@@ -95,6 +96,15 @@ function Set-Dependencies(
         }
 
         $MetadataElement["dependencies"].AppendChild($NewDependencyElement) | Out-Null
+    }
+}
+
+function Remove-Element(
+    [System.Xml.XmlDocument] $XmlDocument,
+    [System.Xml.XmlElement] $MetadataElement,
+    [string] $ElementName) {
+    if($MetadataElement[$ElementName]){
+        $MetadataElement.RemoveChild($MetadataElement[$ElementName])
     }
 }
 

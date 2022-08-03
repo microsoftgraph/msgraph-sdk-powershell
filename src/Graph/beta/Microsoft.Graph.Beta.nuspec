@@ -2,7 +2,7 @@
 <package>
   <metadata>
     <id>Microsoft.Graph.Beta</id>
-    <version>1.10.0-preview1</version>
+    <version>1.11.0-preview1</version>
     <authors>Microsoft</authors>
     <owners>Microsoft</owners>
     <licenseUrl>https://aka.ms/devservicesagreement</licenseUrl>
@@ -13,9 +13,9 @@
     <copyright>© Microsoft Corporation. All rights reserved.</copyright>
     <tags>MicrosoftGraph Microsoft Office365 Graph PowerShell Outlook OneDrive AzureAD SharePoint Intune AzureAutomationNotSupported</tags>
     <dependencies>
-      <dependency id="Microsoft.Graph.Authentication" version="1.10.0" />
-      <dependency id="Microsoft.Graph.Beta.WindowsUpdates" version="1.9.6" />
-      <dependency id="Microsoft.Graph.Beta.Search" version="1.9.6" />
+      <dependency id="Microsoft.Graph.Authentication" version="1.11.0" />
+      <dependency id="Microsoft.Graph.Beta.Search" version="[1.11.0]" />
+      <dependency id="Microsoft.Graph.Beta.WindowsUpdates" version="[1.11.0]" />
     </dependencies>
     <releaseNotes>See https://aka.ms/GraphPowerShell-Release.</releaseNotes>
   </metadata>

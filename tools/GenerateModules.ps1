@@ -106,7 +106,11 @@ $ModulesToGenerate | ForEach-Object {
                 Write-Warning "Skipping generation of '$ModuleFullName - $CurrentApiVersion' module."
             }
             else {
-                $FullModuleVersion = "$($ModuleMetadata.versions[$CurrentApiVersion].version)-$($ModuleMetadata.versions[$CurrentApiVersion].prerelease)"
+                if ($ModuleMetadata.versions[$CurrentApiVersion].prerelease) {
+                    $FullModuleVersion = "$($ModuleMetadata.versions[$CurrentApiVersion].version)-$($ModuleMetadata.versions[$CurrentApiVersion].prerelease)"
+                } else {
+                    $FullModuleVersion = $ModuleMetadata.versions[$CurrentApiVersion].version
+                }
                 npx autorest --max-memory-size=$MaxMemorySize --module-version:$FullModuleVersion --module-name:$ModuleFullName --service-name:$Module --input-file:$OpenApiFile $AutoRestModuleConfig
                 if ($LastExitCode -ne 0) {
                     Write-Host -ForegroundColor Red "AutoREST failed to generate '$ModuleFullName' module."

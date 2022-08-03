@@ -6,7 +6,7 @@ Param(
     [Parameter(Mandatory = $true)] [ValidateNotNullOrEmpty()][string] $ModuleFullName,
     [Parameter(Mandatory = $true)] [ValidateNotNullOrEmpty()][HashTable] $ModuleMetadata,
     [Parameter(Mandatory = $true)] [ValidateNotNullOrEmpty()][string] $Version,
-    [Parameter()] [ValidateNotNullOrEmpty()][string] $Prerelease,
+    [string] $Prerelease,
     [hashtable[]] $RequiredModules,
     [switch] $EnableSigning,
     [switch] $ExcludeExampleTemplates,

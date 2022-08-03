@@ -30,8 +30,12 @@ $AuthSrcPath = Join-Path $PSScriptRoot "..\src\Authentication\"
 $AuthModulePath = Join-Path $AuthSrcPath "Authentication" -Resolve
 $TestModulePS1 = Join-Path $PSScriptRoot ".\TestModule.ps1" -Resolve
 $RunModulePS1 = Join-Path $AuthModulePath ".\run-module.ps1" -Resolve
+$CSProjHelperPS1 = Join-Path $PSScriptRoot "./CSProjHelper.ps1"
 $ModuleMetadataPath = Join-Path $PSScriptRoot "..\config\ModuleMetadata.json"
 [HashTable] $ModuleMetadata = Get-Content $ModuleMetadataPath | ConvertFrom-Json -AsHashTable
+
+# Import scripts
+. $CSProjHelperPS1
 
 if ($null -eq $ModuleMetadata.versions.authentication.version) {
   Write-Error "Version number is not set for $ModuleFullName module. Please set authentication version in $ModuleMetadataPath."
@@ -39,6 +43,13 @@ if ($null -eq $ModuleMetadata.versions.authentication.version) {
 
 # Build and pack generated module.
 if ($Build -or $Run) {
+    $AuthCoreCSProj = Join-Path $AuthSrcPath "$ModuleName.Core" "$ModuleFullName.Core.csproj"
+  if ($EnableSigning) {
+    Set-CSProjValues -ModuleCsProj $AuthCoreCSProj -AssemblyOriginatorKeyFile $SigningKeyFile -ModuleVersion $ModuleMetadata.versions.authentication.version -PreRelease $ModuleMetadata.versions.authentication.prerelease
+  }
+  else {
+    Set-CSProjValues -ModuleCsProj $AuthCoreCSProj -ModuleVersion $ModuleMetadata.versions.authentication.version -PreRelease $ModuleMetadata.versions.authentication.prerelease
+  }
   & $BuildModulePS1 -ModuleFullName $ModuleFullName -ModuleSrc $AuthModulePath -EnableSigning:$EnableSigning -Version $ModuleMetadata.versions.authentication.version -Prerelease $ModuleMetadata.versions.authentication.prerelease -ModuleMetadata $ModuleMetadata.Clone()
 }
 
