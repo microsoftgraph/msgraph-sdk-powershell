@@ -12,26 +12,26 @@ Create new navigation property to groups for sites
 
 ## SYNTAX
 
-### CreateExpanded1 (Default)
+### CreateExpanded2 (Default)
 ```
 New-MgSiteTermStoreGroup -SiteId <String> [-AdditionalProperties <Hashtable>] [-CreatedDateTime <DateTime>]
  [-Description <String>] [-DisplayName <String>] [-Id <String>] [-ParentSiteId <String>] [-Scope <String>]
  [-Sets <IMicrosoftGraphTermStoreSet[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### Create1
-```
-New-MgSiteTermStoreGroup -SiteId <String> -BodyParameter <IMicrosoftGraphTermStoreGroup1> [-Confirm] [-WhatIf]
- [<CommonParameters>]
-```
-
-### Create2
+### Create
 ```
 New-MgSiteTermStoreGroup -SiteId <String> -StoreId <String> -BodyParameter <IMicrosoftGraphTermStoreGroup1>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### CreateExpanded2
+### Create2
+```
+New-MgSiteTermStoreGroup -SiteId <String> -BodyParameter <IMicrosoftGraphTermStoreGroup1> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
+```
+
+### CreateExpanded
 ```
 New-MgSiteTermStoreGroup -SiteId <String> -StoreId <String> [-AdditionalProperties <Hashtable>]
  [-CreatedDateTime <DateTime>] [-Description <String>] [-DisplayName <String>] [-Id <String>]
@@ -39,7 +39,7 @@ New-MgSiteTermStoreGroup -SiteId <String> -StoreId <String> [-AdditionalProperti
  [<CommonParameters>]
 ```
 
-### CreateViaIdentity1
+### CreateViaIdentity
 ```
 New-MgSiteTermStoreGroup -InputObject <ISitesIdentity> -BodyParameter <IMicrosoftGraphTermStoreGroup1>
  [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -51,7 +51,7 @@ New-MgSiteTermStoreGroup -InputObject <ISitesIdentity> -BodyParameter <IMicrosof
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### CreateViaIdentityExpanded1
+### CreateViaIdentityExpanded
 ```
 New-MgSiteTermStoreGroup -InputObject <ISitesIdentity> [-AdditionalProperties <Hashtable>]
  [-CreatedDateTime <DateTime>] [-Description <String>] [-DisplayName <String>] [-Id <String>]
@@ -79,7 +79,7 @@ Additional Parameters
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: CreateExpanded1, CreateExpanded2, CreateViaIdentityExpanded1, CreateViaIdentityExpanded2
+Parameter Sets: CreateExpanded, CreateExpanded2, CreateViaIdentityExpanded, CreateViaIdentityExpanded2
 Aliases:
 
 Required: False
@@ -95,7 +95,7 @@ To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETE
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTermStoreGroup1
-Parameter Sets: Create1, Create2, CreateViaIdentity1, CreateViaIdentity2
+Parameter Sets: Create, Create2, CreateViaIdentity, CreateViaIdentity2
 Aliases:
 
 Required: True
@@ -111,7 +111,7 @@ Read-only.
 
 ```yaml
 Type: System.DateTime
-Parameter Sets: CreateExpanded1, CreateExpanded2, CreateViaIdentityExpanded1, CreateViaIdentityExpanded2
+Parameter Sets: CreateExpanded, CreateExpanded2, CreateViaIdentityExpanded, CreateViaIdentityExpanded2
 Aliases:
 
 Required: False
@@ -126,7 +126,7 @@ Description that gives details on the term usage.
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded1, CreateExpanded2, CreateViaIdentityExpanded1, CreateViaIdentityExpanded2
+Parameter Sets: CreateExpanded, CreateExpanded2, CreateViaIdentityExpanded, CreateViaIdentityExpanded2
 Aliases:
 
 Required: False
@@ -141,7 +141,7 @@ Name of the group.
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded1, CreateExpanded2, CreateViaIdentityExpanded1, CreateViaIdentityExpanded2
+Parameter Sets: CreateExpanded, CreateExpanded2, CreateViaIdentityExpanded, CreateViaIdentityExpanded2
 Aliases:
 
 Required: False
@@ -156,7 +156,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded1, CreateExpanded2, CreateViaIdentityExpanded1, CreateViaIdentityExpanded2
+Parameter Sets: CreateExpanded, CreateExpanded2, CreateViaIdentityExpanded, CreateViaIdentityExpanded2
 Aliases:
 
 Required: False
@@ -172,7 +172,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.ISitesIdentity
-Parameter Sets: CreateViaIdentity1, CreateViaIdentity2, CreateViaIdentityExpanded1, CreateViaIdentityExpanded2
+Parameter Sets: CreateViaIdentity, CreateViaIdentity2, CreateViaIdentityExpanded, CreateViaIdentityExpanded2
 Aliases:
 
 Required: True
@@ -187,7 +187,7 @@ ID of the parent site of this group.
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded1, CreateExpanded2, CreateViaIdentityExpanded1, CreateViaIdentityExpanded2
+Parameter Sets: CreateExpanded, CreateExpanded2, CreateViaIdentityExpanded, CreateViaIdentityExpanded2
 Aliases:
 
 Required: False
@@ -202,7 +202,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded1, CreateExpanded2, CreateViaIdentityExpanded1, CreateViaIdentityExpanded2
+Parameter Sets: CreateExpanded, CreateExpanded2, CreateViaIdentityExpanded, CreateViaIdentityExpanded2
 Aliases:
 
 Required: False
@@ -218,7 +218,7 @@ To construct, please use Get-Help -Online and see NOTES section for SETS propert
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTermStoreSet[]
-Parameter Sets: CreateExpanded1, CreateExpanded2, CreateViaIdentityExpanded1, CreateViaIdentityExpanded2
+Parameter Sets: CreateExpanded, CreateExpanded2, CreateViaIdentityExpanded, CreateViaIdentityExpanded2
 Aliases:
 
 Required: False
@@ -233,7 +233,7 @@ key: id of site
 
 ```yaml
 Type: System.String
-Parameter Sets: Create1, Create2, CreateExpanded1, CreateExpanded2
+Parameter Sets: Create, Create2, CreateExpanded, CreateExpanded2
 Aliases:
 
 Required: True
@@ -248,7 +248,7 @@ key: id of store
 
 ```yaml
 Type: System.String
-Parameter Sets: Create2, CreateExpanded2
+Parameter Sets: Create, CreateExpanded
 Aliases:
 
 Required: True

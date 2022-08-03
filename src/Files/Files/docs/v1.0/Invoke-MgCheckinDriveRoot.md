@@ -12,27 +12,27 @@ Invoke action checkin
 
 ## SYNTAX
 
-### CheckinExpanded1 (Default)
+### CheckinExpanded (Default)
 ```
 Invoke-MgCheckinDriveRoot -DriveId <String> [-AdditionalProperties <Hashtable>] [-CheckInAs <String>]
  [-Comment <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### Checkin1
+### Checkin
 ```
 Invoke-MgCheckinDriveRoot -DriveId <String>
  -BodyParameter <IPathsW65Kj4DrivesDriveIdRootMicrosoftGraphCheckinPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### CheckinViaIdentity1
+### CheckinViaIdentity
 ```
 Invoke-MgCheckinDriveRoot -InputObject <IFilesIdentity>
  -BodyParameter <IPathsW65Kj4DrivesDriveIdRootMicrosoftGraphCheckinPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### CheckinViaIdentityExpanded1
+### CheckinViaIdentityExpanded
 ```
 Invoke-MgCheckinDriveRoot -InputObject <IFilesIdentity> [-AdditionalProperties <Hashtable>]
  [-CheckInAs <String>] [-Comment <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -50,7 +50,7 @@ Additional Parameters
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: CheckinExpanded1, CheckinViaIdentityExpanded1
+Parameter Sets: CheckinExpanded, CheckinViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -66,7 +66,7 @@ To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETE
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IPathsW65Kj4DrivesDriveIdRootMicrosoftGraphCheckinPostRequestbodyContentApplicationJsonSchema
-Parameter Sets: Checkin1, CheckinViaIdentity1
+Parameter Sets: Checkin, CheckinViaIdentity
 Aliases:
 
 Required: True
@@ -81,7 +81,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.String
-Parameter Sets: CheckinExpanded1, CheckinViaIdentityExpanded1
+Parameter Sets: CheckinExpanded, CheckinViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -96,7 +96,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.String
-Parameter Sets: CheckinExpanded1, CheckinViaIdentityExpanded1
+Parameter Sets: CheckinExpanded, CheckinViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -111,7 +111,7 @@ key: id of drive
 
 ```yaml
 Type: System.String
-Parameter Sets: Checkin1, CheckinExpanded1
+Parameter Sets: Checkin, CheckinExpanded
 Aliases:
 
 Required: True
@@ -127,7 +127,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IFilesIdentity
-Parameter Sets: CheckinViaIdentity1, CheckinViaIdentityExpanded1
+Parameter Sets: CheckinViaIdentity, CheckinViaIdentityExpanded
 Aliases:
 
 Required: True

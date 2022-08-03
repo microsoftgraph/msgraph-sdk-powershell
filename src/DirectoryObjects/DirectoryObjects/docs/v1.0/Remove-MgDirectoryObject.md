@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgDirectoryObject
 
 ## SYNOPSIS
-Delete entity from directoryObjects
+Delete directoryObject
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Remove-MgDirectoryObject -InputObject <IDirectoryObjectsIdentity> [-IfMatch <Str
 ```
 
 ## DESCRIPTION
-Delete entity from directoryObjects
+Delete directoryObject
 
 ## EXAMPLES
 

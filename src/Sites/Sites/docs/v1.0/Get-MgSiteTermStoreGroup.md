@@ -12,26 +12,26 @@ Get groups from sites
 
 ## SYNTAX
 
-### List1 (Default)
+### List2 (Default)
 ```
 Get-MgSiteTermStoreGroup -SiteId <String> [-ExpandProperty <String[]>] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
  [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
-### Get1
-```
-Get-MgSiteTermStoreGroup -GroupId <String> -SiteId <String> [-ExpandProperty <String[]>]
- [-Property <String[]>] [<CommonParameters>]
-```
-
-### Get2
+### Get
 ```
 Get-MgSiteTermStoreGroup -GroupId <String> -SiteId <String> -StoreId <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
-### GetViaIdentity1
+### Get2
+```
+Get-MgSiteTermStoreGroup -GroupId <String> -SiteId <String> [-ExpandProperty <String[]>]
+ [-Property <String[]>] [<CommonParameters>]
+```
+
+### GetViaIdentity
 ```
 Get-MgSiteTermStoreGroup -InputObject <ISitesIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
@@ -43,7 +43,7 @@ Get-MgSiteTermStoreGroup -InputObject <ISitesIdentity> [-ExpandProperty <String[
  [<CommonParameters>]
 ```
 
-### List2
+### List
 ```
 Get-MgSiteTermStoreGroup -SiteId <String> -StoreId <String> [-ExpandProperty <String[]>] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
@@ -62,7 +62,7 @@ List all pages.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
-Parameter Sets: List1, List2
+Parameter Sets: List, List2
 Aliases:
 
 Required: False
@@ -78,7 +78,7 @@ By default, this variable will be set in the global scope.
 
 ```yaml
 Type: System.String
-Parameter Sets: List1, List2
+Parameter Sets: List, List2
 Aliases: CV
 
 Required: False
@@ -108,7 +108,7 @@ Filter items by property values
 
 ```yaml
 Type: System.String
-Parameter Sets: List1, List2
+Parameter Sets: List, List2
 Aliases:
 
 Required: False
@@ -123,7 +123,7 @@ key: id of group
 
 ```yaml
 Type: System.String
-Parameter Sets: Get1, Get2
+Parameter Sets: Get, Get2
 Aliases:
 
 Required: True
@@ -139,7 +139,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.ISitesIdentity
-Parameter Sets: GetViaIdentity1, GetViaIdentity2
+Parameter Sets: GetViaIdentity, GetViaIdentity2
 Aliases:
 
 Required: True
@@ -154,7 +154,7 @@ Sets the page size of results.
 
 ```yaml
 Type: System.Int32
-Parameter Sets: List1, List2
+Parameter Sets: List, List2
 Aliases:
 
 Required: False
@@ -184,7 +184,7 @@ Search items by search phrases
 
 ```yaml
 Type: System.String
-Parameter Sets: List1, List2
+Parameter Sets: List, List2
 Aliases:
 
 Required: False
@@ -199,7 +199,7 @@ key: id of site
 
 ```yaml
 Type: System.String
-Parameter Sets: Get1, Get2, List1, List2
+Parameter Sets: Get, Get2, List, List2
 Aliases:
 
 Required: True
@@ -214,7 +214,7 @@ Skip the first n items
 
 ```yaml
 Type: System.Int32
-Parameter Sets: List1, List2
+Parameter Sets: List, List2
 Aliases:
 
 Required: False
@@ -229,7 +229,7 @@ Order items by property values
 
 ```yaml
 Type: System.String[]
-Parameter Sets: List1, List2
+Parameter Sets: List, List2
 Aliases: OrderBy
 
 Required: False
@@ -244,7 +244,7 @@ key: id of store
 
 ```yaml
 Type: System.String
-Parameter Sets: Get2, List2
+Parameter Sets: Get, List
 Aliases:
 
 Required: True
@@ -259,7 +259,7 @@ Show only the first n items
 
 ```yaml
 Type: System.Int32
-Parameter Sets: List1, List2
+Parameter Sets: List, List2
 Aliases: Limit
 
 Required: False

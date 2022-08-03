@@ -97,7 +97,10 @@ Accept wildcard characters: False
 ```
 
 ### -EnableConnection
-.
+Enable or disable the connection to an external partner.
+If true, an external partner API will accept incoming calls from external partners.
+Required.
+Supports $filter (eq).
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -143,7 +146,9 @@ Accept wildcard characters: False
 ```
 
 ### -LastSyncDateTime
-.
+Last data sync time for this external partner.
+The Timestamp type represents the date and time information using ISO 8601 format and is always in UTC time.
+For example, midnight UTC on Jan 1, 2014 looks like this: '2014-01-01T00:00:00Z'.
 
 ```yaml
 Type: System.DateTime
@@ -158,7 +163,7 @@ Accept wildcard characters: False
 ```
 
 ### -PartnerId
-.
+The external partner ID.
 
 ```yaml
 Type: System.String
@@ -203,7 +208,7 @@ Accept wildcard characters: False
 ```
 
 ### -StatusDetails
-.
+Status details message.
 
 ```yaml
 Type: System.String
@@ -273,11 +278,11 @@ To create the parameters described below, construct a hash table containing the 
 BODYPARAMETER <IMicrosoftGraphCloudPcExternalPartnerSetting>: cloudPcExternalPartnerSetting
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: 
-  - `[EnableConnection <Boolean?>]`: 
-  - `[LastSyncDateTime <DateTime?>]`: 
-  - `[PartnerId <String>]`: 
+  - `[EnableConnection <Boolean?>]`: Enable or disable the connection to an external partner. If true, an external partner API will accept incoming calls from external partners. Required. Supports $filter (eq).
+  - `[LastSyncDateTime <DateTime?>]`: Last data sync time for this external partner. The Timestamp type represents the date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 looks like this: '2014-01-01T00:00:00Z'.
+  - `[PartnerId <String>]`: The external partner ID.
   - `[Status <String>]`: cloudPcExternalPartnerStatus
-  - `[StatusDetails <String>]`: 
+  - `[StatusDetails <String>]`: Status details message.
 
 INPUTOBJECT <IDeviceManagementAdministrationIdentity>: Identity Parameter
   - `[AuditEventId <String>]`: key: id of auditEvent
