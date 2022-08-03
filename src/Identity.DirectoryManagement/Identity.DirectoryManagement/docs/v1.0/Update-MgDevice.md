@@ -29,13 +29,13 @@ Update-MgDevice -DeviceId <String> [-AccountEnabled] [-AdditionalProperties <Has
 
 ### Update
 ```
-Update-MgDevice -DeviceId <String> -BodyParameter <IMicrosoftGraphDevice1> [-PassThru] [-Confirm] [-WhatIf]
+Update-MgDevice -DeviceId <String> -BodyParameter <IMicrosoftGraphDevice> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgDevice -InputObject <IIdentityDirectoryManagementIdentity> -BodyParameter <IMicrosoftGraphDevice1>
+Update-MgDevice -InputObject <IIdentityDirectoryManagementIdentity> -BodyParameter <IMicrosoftGraphDevice>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -135,7 +135,7 @@ device
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDevice1
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDevice
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -627,7 +627,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDevice1
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDevice
 
 ## OUTPUTS
 
@@ -647,7 +647,7 @@ ALTERNATIVESECURITYIDS <IMicrosoftGraphAlternativeSecurityId[]>: For internal us
   - `[Key <Byte[]>]`: For internal use only
   - `[Type <Int32?>]`: For internal use only
 
-BODYPARAMETER <IMicrosoftGraphDevice1>: device
+BODYPARAMETER <IMicrosoftGraphDevice>: device
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
   - `[Id <String>]`: 

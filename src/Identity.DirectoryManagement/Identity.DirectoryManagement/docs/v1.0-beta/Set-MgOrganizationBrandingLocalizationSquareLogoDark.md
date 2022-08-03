@@ -1,78 +1,66 @@
 ---
 external help file:
 Module Name: Microsoft.Graph.Identity.DirectoryManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.directorymanagement/get-mgcontactmembergroup
+online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.directorymanagement/set-mgorganizationbrandinglocalizationsquarelogodark
 schema: 2.0.0
 ---
 
-# Get-MgContactMemberGroup
+# Set-MgOrganizationBrandingLocalizationSquareLogoDark
 
 ## SYNOPSIS
-Invoke action getMemberGroups
+Update squareLogoDark for the navigation property localizations in organization
 
 ## SYNTAX
 
-### GetExpanded1 (Default)
+### Set (Default)
 ```
-Get-MgContactMemberGroup -OrgContactId <String> [-AdditionalProperties <Hashtable>] [-SecurityEnabledOnly]
- [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### Get1
-```
-Get-MgContactMemberGroup -OrgContactId <String>
- -BodyParameter <IPaths3Y2P0KContactsOrgcontactIdMicrosoftGraphGetmembergroupsPostRequestbodyContentApplicationJsonSchema>
- [-Confirm] [-WhatIf] [<CommonParameters>]
+Set-MgOrganizationBrandingLocalizationSquareLogoDark -OrganizationalBrandingLocalizationId <String>
+ -OrganizationId <String> -InFile <String> [-BodyParameter <Stream>] [-PassThru] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
-### GetViaIdentity1
+### SetViaIdentity
 ```
-Get-MgContactMemberGroup -InputObject <IIdentityDirectoryManagementIdentity>
- -BodyParameter <IPaths3Y2P0KContactsOrgcontactIdMicrosoftGraphGetmembergroupsPostRequestbodyContentApplicationJsonSchema>
- [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### GetViaIdentityExpanded1
-```
-Get-MgContactMemberGroup -InputObject <IIdentityDirectoryManagementIdentity>
- [-AdditionalProperties <Hashtable>] [-SecurityEnabledOnly] [-Confirm] [-WhatIf] [<CommonParameters>]
+Set-MgOrganizationBrandingLocalizationSquareLogoDark -InputObject <IIdentityDirectoryManagementIdentity>
+ -InFile <String> [-BodyParameter <Stream>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Invoke action getMemberGroups
+Update squareLogoDark for the navigation property localizations in organization
 
 ## EXAMPLES
 
 ## PARAMETERS
 
-### -AdditionalProperties
-Additional Parameters
+### -BodyParameter
+.
 
 ```yaml
-Type: System.Collections.Hashtable
-Parameter Sets: GetExpanded1, GetViaIdentityExpanded1
+Type: System.IO.Stream
+Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -BodyParameter
-.
-To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
+### -InFile
+The path to the file to upload.
+This should include a path and file name.
+If you omit the path, the current location will be used.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths3Y2P0KContactsOrgcontactIdMicrosoftGraphGetmembergroupsPostRequestbodyContentApplicationJsonSchema
-Parameter Sets: Get1, GetViaIdentity1
+Type: System.String
+Parameter Sets: (All)
 Aliases:
 
 Required: True
 Position: Named
 Default value: None
-Accept pipeline input: True (ByValue)
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -82,7 +70,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
-Parameter Sets: GetViaIdentity1, GetViaIdentityExpanded1
+Parameter Sets: SetViaIdentity
 Aliases:
 
 Required: True
@@ -92,12 +80,12 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -OrgContactId
-key: id of orgContact
+### -OrganizationalBrandingLocalizationId
+key: id of organizationalBrandingLocalization
 
 ```yaml
 Type: System.String
-Parameter Sets: Get1, GetExpanded1
+Parameter Sets: Set
 Aliases:
 
 Required: True
@@ -107,12 +95,27 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -SecurityEnabledOnly
-.
+### -OrganizationId
+key: id of organization
+
+```yaml
+Type: System.String
+Parameter Sets: Set
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -PassThru
+Returns true when the command succeeds
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
-Parameter Sets: GetExpanded1, GetViaIdentityExpanded1
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -160,11 +163,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
 
-### Microsoft.Graph.PowerShell.Models.IPaths3Y2P0KContactsOrgcontactIdMicrosoftGraphGetmembergroupsPostRequestbodyContentApplicationJsonSchema
+### System.IO.Stream
 
 ## OUTPUTS
 
-### System.String
+### System.Boolean
 
 ## NOTES
 
@@ -174,10 +177,6 @@ COMPLEX PARAMETER PROPERTIES
 
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
-
-BODYPARAMETER <IPaths3Y2P0KContactsOrgcontactIdMicrosoftGraphGetmembergroupsPostRequestbodyContentApplicationJsonSchema>: .
-  - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[SecurityEnabledOnly <Boolean?>]`: 
 
 INPUTOBJECT <IIdentityDirectoryManagementIdentity>: Identity Parameter
   - `[AdministrativeUnitId <String>]`: key: id of administrativeUnit
