@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Groups
-Module Guid: 7f012664-dd89-4d92-8b37-df71f1884e8e
+Module Guid: 0344be99-3308-4e86-8a42-1860d8986a6e
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.groups
 Help Version: 1.0.0.0
 Locale: en-US
@@ -671,11 +671,17 @@ Invoke action resetUnseenCount
 ### [Restore-MgGroupDriveItem](Restore-MgGroupDriveItem.md)
 Invoke action restore
 
+### [Restore-MgGroupDriveItemListItemDocumentSetVersion](Restore-MgGroupDriveItemListItemDocumentSetVersion.md)
+Invoke action restore
+
 ### [Restore-MgGroupDriveItemListItemVersion](Restore-MgGroupDriveItemListItemVersion.md)
 Invoke action restoreVersion
 
 ### [Restore-MgGroupDriveItemVersion](Restore-MgGroupDriveItemVersion.md)
 Invoke action restoreVersion
+
+### [Restore-MgGroupDriveListItemDocumentSetVersion](Restore-MgGroupDriveListItemDocumentSetVersion.md)
+Invoke action restore
 
 ### [Restore-MgGroupDriveListItemVersion](Restore-MgGroupDriveListItemVersion.md)
 Invoke action restoreVersion
@@ -683,11 +689,17 @@ Invoke action restoreVersion
 ### [Restore-MgGroupDriveRoot](Restore-MgGroupDriveRoot.md)
 Invoke action restore
 
+### [Restore-MgGroupDriveRootListItemDocumentSetVersion](Restore-MgGroupDriveRootListItemDocumentSetVersion.md)
+Invoke action restore
+
 ### [Restore-MgGroupDriveRootListItemVersion](Restore-MgGroupDriveRootListItemVersion.md)
 Invoke action restoreVersion
 
 ### [Restore-MgGroupDriveRootVersion](Restore-MgGroupDriveRootVersion.md)
 Invoke action restoreVersion
+
+### [Restore-MgGroupSiteListItemDocumentSetVersion](Restore-MgGroupSiteListItemDocumentSetVersion.md)
+Invoke action restore
 
 ### [Restore-MgGroupSiteListItemVersion](Restore-MgGroupSiteListItemVersion.md)
 Invoke action restoreVersion
