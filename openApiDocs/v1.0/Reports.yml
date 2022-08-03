@@ -1155,6 +1155,8 @@ paths:
               operationId: deviceManagement.reports.getDeviceNonComplianceReport
             getHistoricalReport:
               operationId: deviceManagement.reports.getHistoricalReport
+            getNoncompliantDevicesAndSettingsReport:
+              operationId: deviceManagement.reports.getNoncompliantDevicesAndSettingsReport
             getPolicyNonComplianceMetadata:
               operationId: deviceManagement.reports.getPolicyNonComplianceMetadata
             getPolicyNonComplianceReport:
@@ -5516,7 +5518,7 @@ components:
         modelAsString: false
         values:
           - value: csv
-            description: Comma-separated values
+            description: CSV Format
             name: csv
           - value: pdf
             description: Portable Document Format

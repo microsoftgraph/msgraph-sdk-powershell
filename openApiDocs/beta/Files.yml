@@ -69022,7 +69022,7 @@ components:
               nullable: true
             bootstrapTokenEscrowed:
               type: boolean
-              description: 'Reports if the managed device has an escrowed Bootstrap Token. This is only for macOS devices. If FALSE, no bootstrap token is escrowed. If TRUE, the device has escrowed a bootstrap token with Intune. This property is read-only.'
+              description: 'Reports if the managed device has an escrowed Bootstrap Token. This is only for macOS devices. To get, include BootstrapTokenEscrowed in the select clause and query with a device id. If FALSE, no bootstrap token is escrowed. If TRUE, the device has escrowed a bootstrap token with Intune. This property is read-only.'
             chassisType:
               $ref: '#/components/schemas/microsoft.graph.chassisType'
             chromeOSDeviceInfo:
@@ -70149,6 +70149,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.callTranscript'
+              description: The transcripts of an online meeting. Read-only.
           additionalProperties:
             type: object
     microsoft.graph.presence:
@@ -75642,11 +75643,13 @@ components:
           properties:
             content:
               type: string
+              description: A field representing the content of the transcript. Read-only.
               format: base64url
               nullable: true
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: Date and time at which the transcript was created. Read-only.
               format: date-time
               nullable: true
           additionalProperties:

@@ -6650,7 +6650,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.apiApplication'
             appId:
               type: string
-              description: The unique identifier for the application that is assigned by Azure AD. Not nullable. Read-only.
+              description: The unique identifier for the application that is assigned by Azure AD. Not nullable. Read-only. Supports $filter (eq).
               nullable: true
             applicationTemplateId:
               type: string
@@ -6770,7 +6770,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.extensionProperty'
-              description: Read-only. Nullable. Supports $expand and $filter (eq when counting empty collections).
+              description: Read-only. Nullable. Supports $expand and $filter (eq and ne when counting empty collections and only with advanced query parameters).
             federatedIdentityCredentials:
               type: array
               items:
@@ -6834,7 +6834,7 @@ components:
               type: array
               items:
                 type: string
-              description: Following values are supported. Not nullable. UserGroupOrganizationDeviceApplication
+              description: Following values are supported. Not nullable. UserGroupAdministrativeUnitApplicationDeviceOrganization
           additionalProperties:
             type: object
     microsoft.graph.federatedIdentityCredential:

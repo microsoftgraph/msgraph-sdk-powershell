@@ -157,6 +157,10 @@
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/DeviceManagement.Actions.yml"
     },
+    "/deviceManagement/reports/microsoft.graph.getNoncompliantDevicesAndSettingsReport": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.Actions.yml"
+    },
     "/deviceManagement/reports/microsoft.graph.getPolicyNonComplianceMetadata": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/DeviceManagement.Actions.yml"
