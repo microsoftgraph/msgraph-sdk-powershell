@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgUserProfileWebAccount
 
 ## SYNOPSIS
-Represents web accounts the user has indicated they use or has added to their user profile.
+Get webAccounts from users
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgUserProfileWebAccount -InputObject <IPeopleIdentity> [-ExpandProperty <Str
 ```
 
 ## DESCRIPTION
-Represents web accounts the user has indicated they use or has added to their user profile.
+Get webAccounts from users
 
 ## EXAMPLES
 

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgUserProfileAnniversary
 
 ## SYNOPSIS
-Represents the details of meaningful dates associated with a person.
+Get anniversaries from users
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgUserProfileAnniversary -InputObject <IPeopleIdentity> [-ExpandProperty <St
 ```
 
 ## DESCRIPTION
-Represents the details of meaningful dates associated with a person.
+Get anniversaries from users
 
 ## EXAMPLES
 

@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgServiceAnnouncementHealthOverviewIssue
 
 ## SYNOPSIS
-A collection of issues that happened on the service, with detailed information for each issue.
+Create new navigation property to issues for admin
 
 ## SYNTAX
 
@@ -45,7 +45,7 @@ New-MgServiceAnnouncementHealthOverviewIssue -InputObject <IDevicesServiceAnnoun
 ```
 
 ## DESCRIPTION
-A collection of issues that happened on the service, with detailed information for each issue.
+Create new navigation property to issues for admin
 
 ## EXAMPLES
 
@@ -160,7 +160,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -403,7 +403,7 @@ BODYPARAMETER <IMicrosoftGraphServiceHealthIssue>: serviceHealthIssue
   - `[LastModifiedDateTime <DateTime?>]`: The last modified time of the service event.
   - `[StartDateTime <DateTime?>]`: The start time of the service event.
   - `[Title <String>]`: The title of the service event.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[Classification <String>]`: serviceHealthClassificationType
   - `[Feature <String>]`: The feature name of the service issue.
   - `[FeatureGroup <String>]`: The feature group name of the service issue.

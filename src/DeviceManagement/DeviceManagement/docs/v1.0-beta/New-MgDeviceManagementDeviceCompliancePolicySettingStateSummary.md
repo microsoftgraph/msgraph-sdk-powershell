@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgDeviceManagementDeviceCompliancePolicySettingStateSummary
 
 ## SYNOPSIS
-The summary states of compliance policy settings for this account.
+Create new navigation property to deviceCompliancePolicySettingStateSummaries for deviceManagement
 
 ## SYNTAX
 
@@ -18,8 +18,8 @@ New-MgDeviceManagementDeviceCompliancePolicySettingStateSummary [-AdditionalProp
  [-CompliantDeviceCount <Int32>] [-ConflictDeviceCount <Int32>]
  [-DeviceComplianceSettingStates <IMicrosoftGraphDeviceComplianceSettingState1[]>] [-ErrorDeviceCount <Int32>]
  [-Id <String>] [-NonCompliantDeviceCount <Int32>] [-NotApplicableDeviceCount <Int32>]
- [-PlatformType <String>] [-RemediatedDeviceCount <Int32>] [-Setting <String>] [-SettingName <String>]
- [-UnknownDeviceCount <Int32>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-PlatformType <PolicyPlatformType>] [-RemediatedDeviceCount <Int32>] [-Setting <String>]
+ [-SettingName <String>] [-UnknownDeviceCount <Int32>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
@@ -30,7 +30,7 @@ New-MgDeviceManagementDeviceCompliancePolicySettingStateSummary
 ```
 
 ## DESCRIPTION
-The summary states of compliance policy settings for this account.
+Create new navigation property to deviceCompliancePolicySettingStateSummaries for deviceManagement
 
 ## EXAMPLES
 
@@ -129,7 +129,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -177,7 +177,7 @@ Accept wildcard characters: False
 Supported platform types for policies.
 
 ```yaml
-Type: System.String
+Type: Microsoft.Graph.PowerShell.Support.PolicyPlatformType
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -301,16 +301,16 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphDeviceCompliancePolicySettingStateSummary1>: Device Compilance Policy Setting State summary across the account.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[CompliantDeviceCount <Int32?>]`: Number of compliant devices
   - `[ConflictDeviceCount <Int32?>]`: Number of conflict devices
   - `[DeviceComplianceSettingStates <IMicrosoftGraphDeviceComplianceSettingState1[]>]`: Not yet documented
-    - `[Id <String>]`: Read-only.
+    - `[Id <String>]`: 
     - `[ComplianceGracePeriodExpirationDateTime <DateTime?>]`: The DateTime when device compliance grace period expires
     - `[DeviceId <String>]`: The Device Id that is being reported
     - `[DeviceModel <String>]`: The device model that is being reported
     - `[DeviceName <String>]`: The Device Name that is being reported
-    - `[PlatformType <String>]`: Device type.
+    - `[PlatformType <DeviceType?>]`: Device type.
     - `[Setting <String>]`: The setting class name and property name.
     - `[SettingName <String>]`: The Setting Name that is being reported
     - `[State <String>]`: complianceStatus
@@ -321,19 +321,19 @@ BODYPARAMETER <IMicrosoftGraphDeviceCompliancePolicySettingStateSummary1>: Devic
   - `[ErrorDeviceCount <Int32?>]`: Number of error devices
   - `[NonCompliantDeviceCount <Int32?>]`: Number of NonCompliant devices
   - `[NotApplicableDeviceCount <Int32?>]`: Number of not applicable devices
-  - `[PlatformType <String>]`: Supported platform types for policies.
+  - `[PlatformType <PolicyPlatformType?>]`: Supported platform types for policies.
   - `[RemediatedDeviceCount <Int32?>]`: Number of remediated devices
   - `[Setting <String>]`: The setting class name and property name.
   - `[SettingName <String>]`: Name of the setting.
   - `[UnknownDeviceCount <Int32?>]`: Number of unknown devices
 
 DEVICECOMPLIANCESETTINGSTATES <IMicrosoftGraphDeviceComplianceSettingState1[]>: Not yet documented
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[ComplianceGracePeriodExpirationDateTime <DateTime?>]`: The DateTime when device compliance grace period expires
   - `[DeviceId <String>]`: The Device Id that is being reported
   - `[DeviceModel <String>]`: The device model that is being reported
   - `[DeviceName <String>]`: The Device Name that is being reported
-  - `[PlatformType <String>]`: Device type.
+  - `[PlatformType <DeviceType?>]`: Device type.
   - `[Setting <String>]`: The setting class name and property name.
   - `[SettingName <String>]`: The Setting Name that is being reported
   - `[State <String>]`: complianceStatus

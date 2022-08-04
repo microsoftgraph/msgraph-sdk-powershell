@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgDeviceManagementCartToClassAssociation
 
 ## SYNOPSIS
-The Cart To Class Associations.
+Create new navigation property to cartToClassAssociations for deviceManagement
 
 ## SYNTAX
 
@@ -27,7 +27,7 @@ New-MgDeviceManagementCartToClassAssociation -BodyParameter <IMicrosoftGraphCart
 ```
 
 ## DESCRIPTION
-The Cart To Class Associations.
+Create new navigation property to cartToClassAssociations for deviceManagement
 
 ## EXAMPLES
 
@@ -140,7 +140,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -237,7 +237,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphCartToClassAssociation>: CartToClassAssociation for associating device carts with classrooms.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[ClassroomIds <String[]>]`: Identifiers of classrooms to be associated with device carts.
   - `[CreatedDateTime <DateTime?>]`: DateTime the object was created.
   - `[Description <String>]`: Admin provided description of the CartToClassAssociation.

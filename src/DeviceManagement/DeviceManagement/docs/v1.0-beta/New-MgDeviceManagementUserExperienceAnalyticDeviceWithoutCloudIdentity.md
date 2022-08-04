@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgDeviceManagementUserExperienceAnalyticDeviceWithoutCloudIdentity
 
 ## SYNOPSIS
-User experience analytics devices without cloud identity.
+Create new navigation property to userExperienceAnalyticsDevicesWithoutCloudIdentity for deviceManagement
 
 ## SYNTAX
 
@@ -26,7 +26,7 @@ New-MgDeviceManagementUserExperienceAnalyticDeviceWithoutCloudIdentity
 ```
 
 ## DESCRIPTION
-User experience analytics devices without cloud identity.
+Create new navigation property to userExperienceAnalyticsDevicesWithoutCloudIdentity for deviceManagement
 
 ## EXAMPLES
 
@@ -94,7 +94,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -161,7 +161,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphUserExperienceAnalyticsDeviceWithoutCloudIdentity>: The user experience analytics Device without Cloud Identity.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[AzureAdDeviceId <String>]`: Azure Active Directory Device Id
   - `[DeviceName <String>]`: The tenant attach device's name.
 

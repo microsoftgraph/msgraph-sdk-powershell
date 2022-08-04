@@ -8,14 +8,15 @@ schema: 2.0.0
 # Update-MgDeviceManagementVirtualEndpointOrganizationSetting
 
 ## SYNOPSIS
-The Cloud PC organization settings for a tenant.
+Update the navigation property organizationSettings in deviceManagement
 
 ## SYNTAX
 
 ### UpdateExpanded (Default)
 ```
 Update-MgDeviceManagementVirtualEndpointOrganizationSetting [-AdditionalProperties <Hashtable>] [-Id <String>]
- [-OSVersion <String>] [-UserAccountType <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-OSVersion <String>] [-UserAccountType <String>] [-WindowsSettings <IMicrosoftGraphCloudPcWindowsSettings>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
@@ -26,7 +27,7 @@ Update-MgDeviceManagementVirtualEndpointOrganizationSetting
 ```
 
 ## DESCRIPTION
-The Cloud PC organization settings for a tenant.
+Update the navigation property organizationSettings in deviceManagement
 
 ## EXAMPLES
 
@@ -64,7 +65,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -113,6 +114,22 @@ cloudPcUserAccountType
 
 ```yaml
 Type: System.String
+Parameter Sets: UpdateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -WindowsSettings
+cloudPcWindowsSettings
+To construct, please use Get-Help -Online and see NOTES section for WINDOWSSETTINGS properties and create a hash table.
+
+```yaml
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCloudPcWindowsSettings
 Parameter Sets: UpdateExpanded
 Aliases:
 
@@ -176,9 +193,16 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphCloudPcOrganizationSettings>: cloudPcOrganizationSettings
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[OSVersion <String>]`: cloudPcOperatingSystem
   - `[UserAccountType <String>]`: cloudPcUserAccountType
+  - `[WindowsSettings <IMicrosoftGraphCloudPcWindowsSettings>]`: cloudPcWindowsSettings
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+    - `[Language <String>]`: The Windows language/region tag to use for language pack configuration and localization of the Cloud PC. The default value is en-US, which corresponds to English (United States).
+
+WINDOWSSETTINGS <IMicrosoftGraphCloudPcWindowsSettings>: cloudPcWindowsSettings
+  - `[(Any) <Object>]`: This indicates any property can be added to this object.
+  - `[Language <String>]`: The Windows language/region tag to use for language pack configuration and localization of the Cloud PC. The default value is en-US, which corresponds to English (United States).
 
 ## RELATED LINKS
 

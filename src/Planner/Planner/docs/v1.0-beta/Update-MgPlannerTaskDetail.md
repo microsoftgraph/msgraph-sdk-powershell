@@ -8,9 +8,7 @@ schema: 2.0.0
 # Update-MgPlannerTaskDetail
 
 ## SYNOPSIS
-Read-only.
-Nullable.
-Additional details about the task.
+Update the navigation property details in planner
 
 ## SYNTAX
 
@@ -41,9 +39,7 @@ Update-MgPlannerTaskDetail -InputObject <IPlannerIdentity> [-AdditionalPropertie
 ```
 
 ## DESCRIPTION
-Read-only.
-Nullable.
-Additional details about the task.
+Update the navigation property details in planner
 
 ## EXAMPLES
 
@@ -111,7 +107,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -256,7 +252,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphPlannerTaskDetails1>: plannerTaskDetails
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[Checklist <IMicrosoftGraphPlannerChecklistItems>]`: plannerChecklistItems
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Description <String>]`: Description of the task.

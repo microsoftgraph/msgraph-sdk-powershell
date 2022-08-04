@@ -8,9 +8,7 @@ schema: 2.0.0
 # Remove-MgPlannerTaskProgressTaskBoardFormat
 
 ## SYNOPSIS
-Read-only.
-Nullable.
-Used to render the task correctly in the task board view when grouped by progress.
+Delete navigation property progressTaskBoardFormat for planner
 
 ## SYNTAX
 
@@ -27,9 +25,7 @@ Remove-MgPlannerTaskProgressTaskBoardFormat -InputObject <IPlannerIdentity> [-If
 ```
 
 ## DESCRIPTION
-Read-only.
-Nullable.
-Used to render the task correctly in the task board view when grouped by progress.
+Delete navigation property progressTaskBoardFormat for planner
 
 ## EXAMPLES
 

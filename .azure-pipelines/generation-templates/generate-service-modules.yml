@@ -293,4 +293,12 @@ jobs:
               DOCSBRANCH: $(DocsBranch)
               ModulesToGenerate: $(ModulesToGenerate)
 
+      - task: PowerShell@2
+        displayName: Find Duplicate Commands
+        inputs:
+          targetType: inline
+          pwsh: true
+          script: |
+            . $(System.DefaultWorkingDirectory)/tools/PostGeneration/FindDuplicateCommand.ps1 -SourcePath "$(System.DefaultWorkingDirectory)/src/"
+
       - template: ../common-templates/security-postchecks-template.yml

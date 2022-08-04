@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgSearchAcronym
 
 ## SYNOPSIS
-Administrative answer in Microsoft Search results to define common acronyms in a organization.
+Get acronyms from search
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgSearchAcronym -InputObject <ISearchIdentity> [-ExpandProperty <String[]>] 
 ```
 
 ## DESCRIPTION
-Administrative answer in Microsoft Search results to define common acronyms in a organization.
+Get acronyms from search
 
 ## EXAMPLES
 
@@ -243,7 +243,11 @@ To create the parameters described below, construct a hash table containing the 
 INPUTOBJECT <ISearchIdentity>: Identity Parameter
   - `[AcronymId <String>]`: key: id of acronym
   - `[BookmarkId <String>]`: key: id of bookmark
+  - `[ConnectionOperationId <String>]`: key: id of connectionOperation
   - `[ExternalConnectionId <String>]`: key: id of externalConnection
+  - `[ExternalGroupId <String>]`: key: id of externalGroup
+  - `[ExternalItemId <String>]`: key: id of externalItem
+  - `[IdentityId <String>]`: key: id of identity
   - `[QnaId <String>]`: key: id of qna
 
 ## RELATED LINKS

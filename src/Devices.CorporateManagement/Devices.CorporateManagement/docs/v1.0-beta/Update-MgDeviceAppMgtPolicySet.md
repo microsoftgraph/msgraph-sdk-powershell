@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgDeviceAppMgtPolicySet
 
 ## SYNOPSIS
-The PolicySet of Policies and Applications
+Update the navigation property policySets in deviceAppManagement
 
 ## SYNTAX
 
@@ -16,9 +16,9 @@ The PolicySet of Policies and Applications
 ```
 Update-MgDeviceAppMgtPolicySet -PolicySetId <String> [-AdditionalProperties <Hashtable>]
  [-Assignments <IMicrosoftGraphPolicySetAssignment[]>] [-CreatedDateTime <DateTime>] [-Description <String>]
- [-DisplayName <String>] [-ErrorCode <String>] [-GuidedDeploymentTags <String[]>] [-Id <String>]
+ [-DisplayName <String>] [-ErrorCode <ErrorCode>] [-GuidedDeploymentTags <String[]>] [-Id <String>]
  [-Items <IMicrosoftGraphPolicySetItem[]>] [-LastModifiedDateTime <DateTime>] [-RoleScopeTags <String[]>]
- [-Status <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Status <PolicySetStatus>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
@@ -37,14 +37,14 @@ Update-MgDeviceAppMgtPolicySet -InputObject <IDevicesCorporateManagementIdentity
 ```
 Update-MgDeviceAppMgtPolicySet -InputObject <IDevicesCorporateManagementIdentity>
  [-AdditionalProperties <Hashtable>] [-Assignments <IMicrosoftGraphPolicySetAssignment[]>]
- [-CreatedDateTime <DateTime>] [-Description <String>] [-DisplayName <String>] [-ErrorCode <String>]
+ [-CreatedDateTime <DateTime>] [-Description <String>] [-DisplayName <String>] [-ErrorCode <ErrorCode>]
  [-GuidedDeploymentTags <String[]>] [-Id <String>] [-Items <IMicrosoftGraphPolicySetItem[]>]
- [-LastModifiedDateTime <DateTime>] [-RoleScopeTags <String[]>] [-Status <String>] [-PassThru] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-LastModifiedDateTime <DateTime>] [-RoleScopeTags <String[]>] [-Status <PolicySetStatus>] [-PassThru]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-The PolicySet of Policies and Applications
+Update the navigation property policySets in deviceAppManagement
 
 ## EXAMPLES
 
@@ -146,7 +146,7 @@ Accept wildcard characters: False
 errorCode
 
 ```yaml
-Type: System.String
+Type: Microsoft.Graph.PowerShell.Support.ErrorCode
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -173,7 +173,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -283,7 +283,7 @@ Accept wildcard characters: False
 The enum to specify the status of PolicySet.
 
 ```yaml
-Type: System.String
+Type: Microsoft.Graph.PowerShell.Support.PolicySetStatus
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -350,54 +350,55 @@ To create the parameters described below, construct a hash table containing the 
 
 
 ASSIGNMENTS <IMicrosoftGraphPolicySetAssignment[]>: Assignments of the PolicySet.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[LastModifiedDateTime <DateTime?>]`: Last modified time of the PolicySetAssignment.
   - `[Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget>]`: Base type for assignment targets.
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[DeviceAndAppManagementAssignmentFilterId <String>]`: The Id of the filter for the target assignment.
-    - `[DeviceAndAppManagementAssignmentFilterType <String>]`: Represents type of the assignment filter.
+    - `[DeviceAndAppManagementAssignmentFilterType <DeviceAndAppManagementAssignmentFilterType?>]`: Represents type of the assignment filter.
 
 BODYPARAMETER <IMicrosoftGraphPolicySet>: A class containing the properties used for PolicySet.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[Assignments <IMicrosoftGraphPolicySetAssignment[]>]`: Assignments of the PolicySet.
-    - `[Id <String>]`: Read-only.
+    - `[Id <String>]`: 
     - `[LastModifiedDateTime <DateTime?>]`: Last modified time of the PolicySetAssignment.
     - `[Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget>]`: Base type for assignment targets.
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[DeviceAndAppManagementAssignmentFilterId <String>]`: The Id of the filter for the target assignment.
-      - `[DeviceAndAppManagementAssignmentFilterType <String>]`: Represents type of the assignment filter.
+      - `[DeviceAndAppManagementAssignmentFilterType <DeviceAndAppManagementAssignmentFilterType?>]`: Represents type of the assignment filter.
   - `[CreatedDateTime <DateTime?>]`: Creation time of the PolicySet.
   - `[Description <String>]`: Description of the PolicySet.
   - `[DisplayName <String>]`: DisplayName of the PolicySet.
-  - `[ErrorCode <String>]`: errorCode
+  - `[ErrorCode <ErrorCode?>]`: errorCode
   - `[GuidedDeploymentTags <String[]>]`: Tags of the guided deployment
   - `[Items <IMicrosoftGraphPolicySetItem[]>]`: Items of the PolicySet with maximum count 100.
-    - `[Id <String>]`: Read-only.
+    - `[Id <String>]`: 
     - `[CreatedDateTime <DateTime?>]`: Creation time of the PolicySetItem.
     - `[DisplayName <String>]`: DisplayName of the PolicySetItem.
-    - `[ErrorCode <String>]`: errorCode
+    - `[ErrorCode <ErrorCode?>]`: errorCode
     - `[GuidedDeploymentTags <String[]>]`: Tags of the guided deployment
     - `[ItemType <String>]`: policySetType of the PolicySetItem.
     - `[LastModifiedDateTime <DateTime?>]`: Last modified time of the PolicySetItem.
     - `[PayloadId <String>]`: PayloadId of the PolicySetItem.
-    - `[Status <String>]`: The enum to specify the status of PolicySet.
+    - `[Status <PolicySetStatus?>]`: The enum to specify the status of PolicySet.
   - `[LastModifiedDateTime <DateTime?>]`: Last modified time of the PolicySet.
   - `[RoleScopeTags <String[]>]`: RoleScopeTags of the PolicySet
-  - `[Status <String>]`: The enum to specify the status of PolicySet.
+  - `[Status <PolicySetStatus?>]`: The enum to specify the status of PolicySet.
 
 INPUTOBJECT <IDevicesCorporateManagementIdentity>: Identity Parameter
   - `[AndroidManagedAppProtectionId <String>]`: key: id of androidManagedAppProtection
   - `[AppLogCollectionRequestId <String>]`: key: id of appLogCollectionRequest
   - `[AssignmentFilterEvaluationStatusDetailsId <String>]`: key: id of assignmentFilterEvaluationStatusDetails
-  - `[BundleId <String>]`: Usage: bundleId={bundleId}
+  - `[BundleId <String>]`: Usage: bundleId='{bundleId}'
   - `[Count <Int64?>]`: Usage: count={count}
   - `[DefaultManagedAppProtectionId <String>]`: key: id of defaultManagedAppProtection
+  - `[DetectedAppId <String>]`: key: id of detectedApp
   - `[DeviceAppManagementTaskId <String>]`: key: id of deviceAppManagementTask
   - `[DeviceCompliancePolicyStateId <String>]`: key: id of deviceCompliancePolicyState
   - `[DeviceConfigurationStateId <String>]`: key: id of deviceConfigurationState
   - `[DeviceEnrollmentConfigurationId <String>]`: key: id of deviceEnrollmentConfiguration
-  - `[DeviceId <String>]`: Usage: deviceId={deviceId}
+  - `[DeviceId <String>]`: Usage: deviceId='{deviceId}'
   - `[DeviceInstallStateId <String>]`: key: id of deviceInstallState
   - `[DeviceLogCollectionResponseId <String>]`: key: id of deviceLogCollectionResponse
   - `[DeviceManagementTroubleshootingEventId <String>]`: key: id of deviceManagementTroubleshootingEvent
@@ -437,13 +438,13 @@ INPUTOBJECT <IDevicesCorporateManagementIdentity>: Identity Parameter
   - `[SecurityBaselineSettingStateId <String>]`: key: id of securityBaselineSettingState
   - `[SecurityBaselineStateId <String>]`: key: id of securityBaselineState
   - `[SideLoadingKeyId <String>]`: key: id of sideLoadingKey
-  - `[Status <String>]`: Usage: status={status}
+  - `[Status <String>]`: Usage: status='{status}'
   - `[TargetedManagedAppConfigurationId <String>]`: key: id of targetedManagedAppConfiguration
   - `[TargetedManagedAppPolicyAssignmentId <String>]`: key: id of targetedManagedAppPolicyAssignment
   - `[UserAppInstallStatusId <String>]`: key: id of userAppInstallStatus
   - `[UserId <String>]`: key: id of user
   - `[UserInstallStateSummaryId <String>]`: key: id of userInstallStateSummary
-  - `[UserPrincipalName <String>]`: Usage: userPrincipalName={userPrincipalName}
+  - `[UserPrincipalName <String>]`: Usage: userPrincipalName='{userPrincipalName}'
   - `[VppTokenId <String>]`: key: id of vppToken
   - `[WindowsDefenderApplicationControlSupplementalPolicyAssignmentId <String>]`: key: id of windowsDefenderApplicationControlSupplementalPolicyAssignment
   - `[WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusId <String>]`: key: id of windowsDefenderApplicationControlSupplementalPolicyDeploymentStatus
@@ -452,17 +453,18 @@ INPUTOBJECT <IDevicesCorporateManagementIdentity>: Identity Parameter
   - `[WindowsInformationProtectionDeviceRegistrationId <String>]`: key: id of windowsInformationProtectionDeviceRegistration
   - `[WindowsInformationProtectionPolicyId <String>]`: key: id of windowsInformationProtectionPolicy
   - `[WindowsInformationProtectionWipeActionId <String>]`: key: id of windowsInformationProtectionWipeAction
+  - `[WindowsManagedAppProtectionId <String>]`: key: id of windowsManagedAppProtection
 
 ITEMS <IMicrosoftGraphPolicySetItem[]>: Items of the PolicySet with maximum count 100.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[CreatedDateTime <DateTime?>]`: Creation time of the PolicySetItem.
   - `[DisplayName <String>]`: DisplayName of the PolicySetItem.
-  - `[ErrorCode <String>]`: errorCode
+  - `[ErrorCode <ErrorCode?>]`: errorCode
   - `[GuidedDeploymentTags <String[]>]`: Tags of the guided deployment
   - `[ItemType <String>]`: policySetType of the PolicySetItem.
   - `[LastModifiedDateTime <DateTime?>]`: Last modified time of the PolicySetItem.
   - `[PayloadId <String>]`: PayloadId of the PolicySetItem.
-  - `[Status <String>]`: The enum to specify the status of PolicySet.
+  - `[Status <PolicySetStatus?>]`: The enum to specify the status of PolicySet.
 
 ## RELATED LINKS
 

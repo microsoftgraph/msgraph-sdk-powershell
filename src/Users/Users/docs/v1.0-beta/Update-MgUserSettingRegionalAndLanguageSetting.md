@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgUserSettingRegionalAndLanguageSetting
 
 ## SYNOPSIS
-The user's preferences for languages, regional locale and date/time formatting.
+Update the navigation property regionalAndLanguageSettings in users
 
 ## SYNTAX
 
@@ -51,7 +51,7 @@ Update-MgUserSettingRegionalAndLanguageSetting -InputObject <IUsersIdentity>
 ```
 
 ## DESCRIPTION
-The user's preferences for languages, regional locale and date/time formatting.
+Update the navigation property regionalAndLanguageSettings in users
 
 ## EXAMPLES
 
@@ -170,7 +170,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -321,7 +321,7 @@ AUTHORINGLANGUAGES <IMicrosoftGraphLocaleInfo[]>: Prioritized list of languages 
 
 BODYPARAMETER <IMicrosoftGraphRegionalAndLanguageSettings>: regionalAndLanguageSettings
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[AuthoringLanguages <IMicrosoftGraphLocaleInfo[]>]`: Prioritized list of languages the user reads and authors in.Returned by default. Not nullable.
     - `[DisplayName <String>]`: A name representing the user's locale in natural language, for example, 'English (United States)'.
     - `[Locale <String>]`: A locale representation for the user, which includes the user's preferred language and country/region. For example, 'en-us'. The language component follows 2-letter codes as defined in ISO 639-1, and the country component follows 2-letter codes as defined in ISO 3166-1 alpha-2.
@@ -367,12 +367,17 @@ DEFAULTTRANSLATIONLANGUAGE <IMicrosoftGraphLocaleInfo>: localeInfo
   - `[Locale <String>]`: A locale representation for the user, which includes the user's preferred language and country/region. For example, 'en-us'. The language component follows 2-letter codes as defined in ISO 639-1, and the country component follows 2-letter codes as defined in ISO 3166-1 alpha-2.
 
 INPUTOBJECT <IUsersIdentity>: Identity Parameter
+  - `[AttachmentBaseId <String>]`: key: id of attachmentBase
   - `[AttachmentId <String>]`: key: id of attachment
+  - `[AttachmentSessionId <String>]`: key: id of attachmentSession
+  - `[ChecklistItemId <String>]`: key: id of checklistItem
+  - `[DirectoryObjectId <String>]`: key: id of directoryObject
   - `[ExtensionId <String>]`: key: id of extension
   - `[LicenseDetailsId <String>]`: key: id of licenseDetails
   - `[LinkedResourceId <String>]`: key: id of linkedResource
   - `[MultiValueLegacyExtendedPropertyId <String>]`: key: id of multiValueLegacyExtendedProperty
   - `[NotificationId <String>]`: key: id of notification
+  - `[OAuth2PermissionGrantId <String>]`: key: id of oAuth2PermissionGrant
   - `[OutlookCategoryId <String>]`: key: id of outlookCategory
   - `[OutlookTaskFolderId <String>]`: key: id of outlookTaskFolder
   - `[OutlookTaskGroupId <String>]`: key: id of outlookTaskGroup

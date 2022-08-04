@@ -8,9 +8,7 @@ schema: 2.0.0
 # Get-MgGroupPlannerPlan
 
 ## SYNOPSIS
-Read-only.
-Nullable.
-Returns the plannerPlans owned by the group.
+Get plans from groups
 
 ## SYNTAX
 
@@ -34,9 +32,7 @@ Get-MgGroupPlannerPlan -InputObject <IPlannerIdentity> [-ExpandProperty <String[
 ```
 
 ## DESCRIPTION
-Read-only.
-Nullable.
-Returns the plannerPlans owned by the group.
+Get plans from groups
 
 ## EXAMPLES
 

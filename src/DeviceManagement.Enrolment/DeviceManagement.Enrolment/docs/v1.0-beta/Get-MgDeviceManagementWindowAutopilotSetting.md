@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceManagementWindowAutopilotSetting
 
 ## SYNOPSIS
-The Windows autopilot account settings.
+Get windowsAutopilotSettings from deviceManagement
 
 ## SYNTAX
 
@@ -18,7 +18,7 @@ Get-MgDeviceManagementWindowAutopilotSetting [-ExpandProperty <String[]>] [-Prop
 ```
 
 ## DESCRIPTION
-The Windows autopilot account settings.
+Get windowsAutopilotSettings from deviceManagement
 
 ## EXAMPLES
 

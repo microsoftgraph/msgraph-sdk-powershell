@@ -8,9 +8,7 @@ schema: 2.0.0
 # Get-MgPlannerTaskBucketTaskBoardFormat
 
 ## SYNOPSIS
-Read-only.
-Nullable.
-Used to render the task correctly in the task board view when grouped by bucket.
+Get bucketTaskBoardFormat from planner
 
 ## SYNTAX
 
@@ -27,9 +25,7 @@ Get-MgPlannerTaskBucketTaskBoardFormat -InputObject <IPlannerIdentity> [-ExpandP
 ```
 
 ## DESCRIPTION
-Read-only.
-Nullable.
-Used to render the task correctly in the task board view when grouped by bucket.
+Get bucketTaskBoardFormat from planner
 
 ## EXAMPLES
 

@@ -8,8 +8,7 @@ schema: 2.0.0
 # Remove-MgUserActivityHistoryItem
 
 ## SYNOPSIS
-Optional.
-NavigationProperty/Containment; navigation property to the activity's historyItems.
+Delete navigation property historyItems for users
 
 ## SYNTAX
 
@@ -26,8 +25,7 @@ Remove-MgUserActivityHistoryItem -InputObject <ICrossDeviceExperiencesIdentity> 
 ```
 
 ## DESCRIPTION
-Optional.
-NavigationProperty/Containment; navigation property to the activity's historyItems.
+Delete navigation property historyItems for users
 
 ## EXAMPLES
 
@@ -177,7 +175,11 @@ To create the parameters described below, construct a hash table containing the 
 
 INPUTOBJECT <ICrossDeviceExperiencesIdentity>: Identity Parameter
   - `[ActivityHistoryItemId <String>]`: key: id of activityHistoryItem
+  - `[CommandId <String>]`: key: id of command
   - `[DeviceId <String>]`: key: id of device
+  - `[DirectoryObjectId <String>]`: key: id of directoryObject
+  - `[ExtensionId <String>]`: key: id of extension
+  - `[UsageRightId <String>]`: key: id of usageRight
   - `[UserActivityId <String>]`: key: id of userActivity
   - `[UserId <String>]`: key: id of user
 

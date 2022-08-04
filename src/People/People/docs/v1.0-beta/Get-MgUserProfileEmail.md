@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgUserProfileEmail
 
 ## SYNOPSIS
-Represents detailed information about email addresses associated with the user.
+Get emails from users
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgUserProfileEmail -InputObject <IPeopleIdentity> [-ExpandProperty <String[]
 ```
 
 ## DESCRIPTION
-Represents detailed information about email addresses associated with the user.
+Get emails from users
 
 ## EXAMPLES
 

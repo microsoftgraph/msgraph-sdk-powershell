@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgSiteOnenotePageContent
 
 ## SYNOPSIS
-Get media content for the navigation property pages from sites
+Get content for the navigation property pages from sites
 
 ## SYNTAX
 
@@ -24,7 +24,7 @@ Get-MgSiteOnenotePageContent -InputObject <INotesIdentity> -OutFile <String> [-P
 ```
 
 ## DESCRIPTION
-Get media content for the navigation property pages from sites
+Get content for the navigation property pages from sites
 
 ## EXAMPLES
 

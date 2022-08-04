@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgPolicyAdminConsentRequestPolicy
 
 ## SYNOPSIS
-The policy by which consent requests are created and managed for the entire tenant.
+Get adminConsentRequestPolicy from policies
 
 ## SYNTAX
 
@@ -17,7 +17,7 @@ Get-MgPolicyAdminConsentRequestPolicy [-ExpandProperty <String[]>] [-Property <S
 ```
 
 ## DESCRIPTION
-The policy by which consent requests are created and managed for the entire tenant.
+Get adminConsentRequestPolicy from policies
 
 ## EXAMPLES
 
@@ -60,7 +60,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAdminConsentRequestPolicy1
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAdminConsentRequestPolicy
 
 ## NOTES
 

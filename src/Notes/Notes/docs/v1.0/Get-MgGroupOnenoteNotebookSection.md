@@ -8,9 +8,7 @@ schema: 2.0.0
 # Get-MgGroupOnenoteNotebookSection
 
 ## SYNOPSIS
-The sections in the notebook.
-Read-only.
-Nullable.
+Get sections from groups
 
 ## SYNTAX
 
@@ -21,9 +19,7 @@ Get-MgGroupOnenoteNotebookSection -GroupId <String> -NotebookId <String> [-Expan
 ```
 
 ## DESCRIPTION
-The sections in the notebook.
-Read-only.
-Nullable.
+Get sections from groups
 
 ## EXAMPLES
 

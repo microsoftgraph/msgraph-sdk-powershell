@@ -8,15 +8,16 @@ schema: 2.0.0
 # New-MgDeviceManagementDerivedCredentials
 
 ## SYNOPSIS
-Collection of Derived credential settings associated with account.
+Create new navigation property to derivedCredentials for deviceManagement
 
 ## SYNTAX
 
 ### CreateExpanded (Default)
 ```
 New-MgDeviceManagementDerivedCredentials [-AdditionalProperties <Hashtable>] [-DisplayName <String>]
- [-HelpUrl <String>] [-Id <String>] [-Issuer <String>] [-NotificationType <String>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-HelpUrl <String>] [-Id <String>] [-Issuer <DeviceManagementDerivedCredentialIssuer>]
+ [-NotificationType <DeviceManagementDerivedCredentialNotificationType>] [-RenewalThresholdPercentage <Int32>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
@@ -27,7 +28,7 @@ New-MgDeviceManagementDerivedCredentials
 ```
 
 ## DESCRIPTION
-Collection of Derived credential settings associated with account.
+Create new navigation property to derivedCredentials for deviceManagement
 
 ## EXAMPLES
 
@@ -95,7 +96,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -113,7 +114,7 @@ Accept wildcard characters: False
 Supported values for the derived credential issuer.
 
 ```yaml
-Type: System.String
+Type: Microsoft.Graph.PowerShell.Support.DeviceManagementDerivedCredentialIssuer
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -128,7 +129,22 @@ Accept wildcard characters: False
 Supported values for the notification type to use.
 
 ```yaml
-Type: System.String
+Type: Microsoft.Graph.PowerShell.Support.DeviceManagementDerivedCredentialNotificationType
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -RenewalThresholdPercentage
+The nominal percentage of time before certificate renewal is initiated by the client.
+
+```yaml
+Type: System.Int32
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -192,11 +208,12 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphDeviceManagementDerivedCredentialSettings>: Entity that describes tenant level settings for derived credentials
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[DisplayName <String>]`: The display name for the profile.
   - `[HelpUrl <String>]`: The URL that will be accessible to end users as they retrieve a derived credential using the Company Portal.
-  - `[Issuer <String>]`: Supported values for the derived credential issuer.
-  - `[NotificationType <String>]`: Supported values for the notification type to use.
+  - `[Issuer <DeviceManagementDerivedCredentialIssuer?>]`: Supported values for the derived credential issuer.
+  - `[NotificationType <DeviceManagementDerivedCredentialNotificationType?>]`: Supported values for the notification type to use.
+  - `[RenewalThresholdPercentage <Int32?>]`: The nominal percentage of time before certificate renewal is initiated by the client.
 
 ## RELATED LINKS
 

@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgUserManagedDeviceLogCollectionResponse
 
 ## SYNOPSIS
-List of log collection requests
+Create new navigation property to logCollectionRequests for users
 
 ## SYNTAX
 
@@ -43,7 +43,7 @@ New-MgUserManagedDeviceLogCollectionResponse -InputObject <IDevicesCorporateMana
 ```
 
 ## DESCRIPTION
-List of log collection requests
+Create new navigation property to logCollectionRequests for users
 
 ## EXAMPLES
 
@@ -112,7 +112,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -318,7 +318,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphDeviceLogCollectionResponse>: Windows Log Collection request entity.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[ErrorCode <Int64?>]`: The error code, if any. Valid values -9.22337203685478E+18 to 9.22337203685478E+18
   - `[ExpirationDateTimeUtc <DateTime?>]`: The DateTime of the expiration of the logs
   - `[InitiatedByUserPrincipalName <String>]`: The UPN for who initiated the request
@@ -332,14 +332,15 @@ INPUTOBJECT <IDevicesCorporateManagementIdentity>: Identity Parameter
   - `[AndroidManagedAppProtectionId <String>]`: key: id of androidManagedAppProtection
   - `[AppLogCollectionRequestId <String>]`: key: id of appLogCollectionRequest
   - `[AssignmentFilterEvaluationStatusDetailsId <String>]`: key: id of assignmentFilterEvaluationStatusDetails
-  - `[BundleId <String>]`: Usage: bundleId={bundleId}
+  - `[BundleId <String>]`: Usage: bundleId='{bundleId}'
   - `[Count <Int64?>]`: Usage: count={count}
   - `[DefaultManagedAppProtectionId <String>]`: key: id of defaultManagedAppProtection
+  - `[DetectedAppId <String>]`: key: id of detectedApp
   - `[DeviceAppManagementTaskId <String>]`: key: id of deviceAppManagementTask
   - `[DeviceCompliancePolicyStateId <String>]`: key: id of deviceCompliancePolicyState
   - `[DeviceConfigurationStateId <String>]`: key: id of deviceConfigurationState
   - `[DeviceEnrollmentConfigurationId <String>]`: key: id of deviceEnrollmentConfiguration
-  - `[DeviceId <String>]`: Usage: deviceId={deviceId}
+  - `[DeviceId <String>]`: Usage: deviceId='{deviceId}'
   - `[DeviceInstallStateId <String>]`: key: id of deviceInstallState
   - `[DeviceLogCollectionResponseId <String>]`: key: id of deviceLogCollectionResponse
   - `[DeviceManagementTroubleshootingEventId <String>]`: key: id of deviceManagementTroubleshootingEvent
@@ -379,13 +380,13 @@ INPUTOBJECT <IDevicesCorporateManagementIdentity>: Identity Parameter
   - `[SecurityBaselineSettingStateId <String>]`: key: id of securityBaselineSettingState
   - `[SecurityBaselineStateId <String>]`: key: id of securityBaselineState
   - `[SideLoadingKeyId <String>]`: key: id of sideLoadingKey
-  - `[Status <String>]`: Usage: status={status}
+  - `[Status <String>]`: Usage: status='{status}'
   - `[TargetedManagedAppConfigurationId <String>]`: key: id of targetedManagedAppConfiguration
   - `[TargetedManagedAppPolicyAssignmentId <String>]`: key: id of targetedManagedAppPolicyAssignment
   - `[UserAppInstallStatusId <String>]`: key: id of userAppInstallStatus
   - `[UserId <String>]`: key: id of user
   - `[UserInstallStateSummaryId <String>]`: key: id of userInstallStateSummary
-  - `[UserPrincipalName <String>]`: Usage: userPrincipalName={userPrincipalName}
+  - `[UserPrincipalName <String>]`: Usage: userPrincipalName='{userPrincipalName}'
   - `[VppTokenId <String>]`: key: id of vppToken
   - `[WindowsDefenderApplicationControlSupplementalPolicyAssignmentId <String>]`: key: id of windowsDefenderApplicationControlSupplementalPolicyAssignment
   - `[WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusId <String>]`: key: id of windowsDefenderApplicationControlSupplementalPolicyDeploymentStatus
@@ -394,6 +395,7 @@ INPUTOBJECT <IDevicesCorporateManagementIdentity>: Identity Parameter
   - `[WindowsInformationProtectionDeviceRegistrationId <String>]`: key: id of windowsInformationProtectionDeviceRegistration
   - `[WindowsInformationProtectionPolicyId <String>]`: key: id of windowsInformationProtectionPolicy
   - `[WindowsInformationProtectionWipeActionId <String>]`: key: id of windowsInformationProtectionWipeAction
+  - `[WindowsManagedAppProtectionId <String>]`: key: id of windowsManagedAppProtection
 
 ## RELATED LINKS
 

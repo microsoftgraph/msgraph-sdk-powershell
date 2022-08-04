@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgEntitlementManagementConnectedOrganization
 
 ## SYNOPSIS
-Represents references to a directory or domain of another organization whose users can request access.
+Create new navigation property to connectedOrganizations for identityGovernance
 
 ## SYNTAX
 
@@ -35,7 +35,7 @@ New-MgEntitlementManagementConnectedOrganization [-AdditionalProperties <Hashtab
 ```
 
 ## DESCRIPTION
-Represents references to a directory or domain of another organization whose users can request access.
+Create new navigation property to connectedOrganizations for identityGovernance
 
 ## EXAMPLES
 
@@ -152,7 +152,7 @@ Accept wildcard characters: False
 ```
 
 ### -ExternalSponsors
-Nullable.
+.
 To construct, please use Get-Help -Online and see NOTES section for EXTERNALSPONSORS properties and create a hash table.
 
 ```yaml
@@ -168,7 +168,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -183,8 +183,11 @@ Accept wildcard characters: False
 ```
 
 ### -IdentitySources
-The identity sources in this connected organization, one of azureActiveDirectoryTenant, domainIdentitySource or externalDomainFederation.
+The identity sources in this connected organization, one of azureActiveDirectoryTenant, crossCloudAzureActiveDirectoryTenant, domainIdentitySource or externalDomainFederation.
+Read-only.
 Nullable.
+Supports $select and $filter(eq).
+To filter by the derived types, you must declare the resource using its full OData cast, for example, $filter=identitySources/any(is:is/microsoft.graph.azureActiveDirectoryTenant/tenantId eq 'bcfdfff4-cbc3-43f2-9000-ba7b7515054f').
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentitySource[]
@@ -199,7 +202,7 @@ Accept wildcard characters: False
 ```
 
 ### -InternalSponsors
-Nullable.
+.
 To construct, please use Get-Help -Online and see NOTES section for INTERNALSPONSORS properties and create a hash table.
 
 ```yaml
@@ -315,26 +318,26 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphConnectedOrganization>: connectedOrganization
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[CreatedBy <String>]`: UPN of the user who created this resource. Read-only.
   - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
   - `[Description <String>]`: The description of the connected organization.
   - `[DisplayName <String>]`: The display name of the connected organization. Supports $filter (eq).
-  - `[ExternalSponsors <IMicrosoftGraphDirectoryObject[]>]`: Nullable.
-    - `[Id <String>]`: Read-only.
+  - `[ExternalSponsors <IMicrosoftGraphDirectoryObject[]>]`: 
+    - `[Id <String>]`: 
     - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
-  - `[IdentitySources <IMicrosoftGraphIdentitySource[]>]`: The identity sources in this connected organization, one of azureActiveDirectoryTenant, domainIdentitySource or externalDomainFederation. Nullable.
-  - `[InternalSponsors <IMicrosoftGraphDirectoryObject[]>]`: Nullable.
+  - `[IdentitySources <IMicrosoftGraphIdentitySource[]>]`: The identity sources in this connected organization, one of azureActiveDirectoryTenant, crossCloudAzureActiveDirectoryTenant, domainIdentitySource or externalDomainFederation. Read-only. Nullable. Supports $select and $filter(eq). To filter by the derived types, you must declare the resource using its full OData cast, for example, $filter=identitySources/any(is:is/microsoft.graph.azureActiveDirectoryTenant/tenantId eq 'bcfdfff4-cbc3-43f2-9000-ba7b7515054f').
+  - `[InternalSponsors <IMicrosoftGraphDirectoryObject[]>]`: 
   - `[ModifiedBy <String>]`: UPN of the user who last modified this resource. Read-only.
   - `[ModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
   - `[State <String>]`: connectedOrganizationState
 
-EXTERNALSPONSORS <IMicrosoftGraphDirectoryObject[]>: Nullable.
-  - `[Id <String>]`: Read-only.
+EXTERNALSPONSORS <IMicrosoftGraphDirectoryObject[]>: .
+  - `[Id <String>]`: 
   - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
 
-INTERNALSPONSORS <IMicrosoftGraphDirectoryObject[]>: Nullable.
-  - `[Id <String>]`: Read-only.
+INTERNALSPONSORS <IMicrosoftGraphDirectoryObject[]>: .
+  - `[Id <String>]`: 
   - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
 
 ## RELATED LINKS

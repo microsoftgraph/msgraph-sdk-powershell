@@ -8,79 +8,35 @@ schema: 2.0.0
 # New-MgEducationSchoolUserByRef
 
 ## SYNOPSIS
-Users in the school.
-Nullable.
+Create new navigation property ref to users for education
 
 ## SYNTAX
 
-### CreateExpanded1 (Default)
+### Create1 (Default)
 ```
-New-MgEducationSchoolUserByRef -EducationSchoolId <String> [-AdditionalProperties <Hashtable>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
-```
-
-### Create1
-```
-New-MgEducationSchoolUserByRef -EducationSchoolId <String> -BodyParameter <Hashtable> [-Confirm] [-WhatIf]
+New-MgEducationSchoolUserByRef -EducationSchoolId <String> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### CreateViaIdentity1
 ```
-New-MgEducationSchoolUserByRef -InputObject <IEducationIdentity> -BodyParameter <Hashtable> [-Confirm]
- [-WhatIf] [<CommonParameters>]
-```
-
-### CreateViaIdentityExpanded1
-```
-New-MgEducationSchoolUserByRef -InputObject <IEducationIdentity> [-AdditionalProperties <Hashtable>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgEducationSchoolUserByRef -InputObject <IEducationIdentity> [-PassThru] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Users in the school.
-Nullable.
+Create new navigation property ref to users for education
 
 ## EXAMPLES
 
 ## PARAMETERS
-
-### -AdditionalProperties
-Additional Parameters
-
-```yaml
-Type: System.Collections.Hashtable
-Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -BodyParameter
-.
-
-```yaml
-Type: System.Collections.Hashtable
-Parameter Sets: Create1, CreateViaIdentity1
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
 
 ### -EducationSchoolId
 key: id of educationSchool
 
 ```yaml
 Type: System.String
-Parameter Sets: Create1, CreateExpanded1
+Parameter Sets: Create1
 Aliases:
 
 Required: True
@@ -96,13 +52,28 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IEducationIdentity
-Parameter Sets: CreateViaIdentity1, CreateViaIdentityExpanded1
+Parameter Sets: CreateViaIdentity1
 Aliases:
 
 Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### -PassThru
+Returns true when the command succeeds
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -144,11 +115,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IEducationIdentity
 
-### System.Collections.Hashtable
-
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPathsLrhftyEducationSchoolsEducationschoolIdUsersRefPostResponses201ContentApplicationJsonSchema
+### System.Boolean
 
 ## NOTES
 

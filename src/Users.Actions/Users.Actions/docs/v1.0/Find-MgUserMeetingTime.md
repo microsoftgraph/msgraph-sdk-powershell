@@ -292,8 +292,8 @@ To create the parameters described below, construct a hash table containing the 
 ATTENDEES <IMicrosoftGraphAttendeeBase[]>: .
   - `[EmailAddress <IMicrosoftGraphEmailAddress>]`: emailAddress
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Address <String>]`: The email address of the person or entity.
-    - `[Name <String>]`: The display name of the person or entity.
+    - `[Address <String>]`: The email address of an entity instance.
+    - `[Name <String>]`: The display name of an entity instance.
   - `[Type <String>]`: attendeeType
 
 BODYPARAMETER <IPathsSzpbzfUsersUserIdMicrosoftGraphFindmeetingtimesPostRequestbodyContentApplicationJsonSchema1>: .
@@ -301,15 +301,15 @@ BODYPARAMETER <IPathsSzpbzfUsersUserIdMicrosoftGraphFindmeetingtimesPostRequestb
   - `[Attendees <IMicrosoftGraphAttendeeBase[]>]`: 
     - `[EmailAddress <IMicrosoftGraphEmailAddress>]`: emailAddress
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[Address <String>]`: The email address of the person or entity.
-      - `[Name <String>]`: The display name of the person or entity.
+      - `[Address <String>]`: The email address of an entity instance.
+      - `[Name <String>]`: The display name of an entity instance.
     - `[Type <String>]`: attendeeType
   - `[IsOrganizerOptional <Boolean?>]`: 
   - `[LocationConstraint <IMicrosoftGraphLocationConstraint1>]`: locationConstraint
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[IsRequired <Boolean?>]`: The client requests the service to include in the response a meeting location for the meeting. If this is true and all the resources are busy, findMeetingTimes will not return any meeting time suggestions. If this is false and all the resources are busy, findMeetingTimes would still look for meeting times without locations.
-    - `[Locations <IMicrosoftGraphLocationConstraintItem1[]>]`: Constraint information for one or more locations that the client requests for the meeting.
-      - `[Address <IMicrosoftGraphPhysicalAddress1>]`: physicalAddress
+    - `[Locations <IMicrosoftGraphLocationConstraintItem[]>]`: Constraint information for one or more locations that the client requests for the meeting.
+      - `[Address <IMicrosoftGraphPhysicalAddress>]`: physicalAddress
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[City <String>]`: The city.
         - `[CountryOrRegion <String>]`: The country or region. It's a free-format string value, for example, 'United States'.
@@ -341,12 +341,11 @@ BODYPARAMETER <IPathsSzpbzfUsersUserIdMicrosoftGraphFindmeetingtimesPostRequestb
     - `[TimeSlots <IMicrosoftGraphTimeSlot[]>]`: 
       - `[End <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
-        - `[DateTime <String>]`: A single point of time in a combined date and time representation ({date}T{time}; for example, 2017-08-29T04:00:00.0000000).
-        - `[TimeZone <String>]`: Represents a time zone, for example, 'Pacific Standard Time'. See below for more possible values.
+        - `[DateTime <String>]`: A single point of time in a combined date and time representation ({date}T{time}). For example, '2019-04-16T09:00:00'.
+        - `[TimeZone <String>]`: Represents a time zone, for example, 'Pacific Standard Time'. See below for possible values.
       - `[Start <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
 
 INPUTOBJECT <IUsersActionsIdentity>: Identity Parameter
-  - `[AccessReviewInstanceDecisionItemId <String>]`: key: id of accessReviewInstanceDecisionItem
   - `[AccessReviewInstanceId <String>]`: key: id of accessReviewInstance
   - `[AccessReviewStageId <String>]`: key: id of accessReviewStage
   - `[AppLogCollectionRequestId <String>]`: key: id of appLogCollectionRequest
@@ -354,15 +353,27 @@ INPUTOBJECT <IUsersActionsIdentity>: Identity Parameter
   - `[BaseTaskId <String>]`: key: id of baseTask
   - `[BaseTaskListId <String>]`: key: id of baseTaskList
   - `[CalendarId <String>]`: key: id of calendar
+  - `[ChatId <String>]`: key: id of chat
+  - `[ChatMessageId <String>]`: key: id of chatMessage
+  - `[ChatMessageId1 <String>]`: key: id of chatMessage
   - `[CloudPcId <String>]`: key: id of cloudPC
+  - `[ContentTypeId <String>]`: key: id of contentType
   - `[DeviceEnrollmentConfigurationId <String>]`: key: id of deviceEnrollmentConfiguration
+  - `[DeviceId <String>]`: key: id of device
   - `[DeviceLogCollectionResponseId <String>]`: key: id of deviceLogCollectionResponse
+  - `[DocumentSetVersionId <String>]`: key: id of documentSetVersion
+  - `[DriveId <String>]`: key: id of drive
+  - `[DriveItemId <String>]`: key: id of driveItem
+  - `[DriveItemVersionId <String>]`: key: id of driveItemVersion
   - `[EventId <String>]`: key: id of event
   - `[EventId1 <String>]`: key: id of event
+  - `[ListItemId <String>]`: key: id of listItem
+  - `[ListItemVersionId <String>]`: key: id of listItemVersion
   - `[MailFolderId <String>]`: key: id of mailFolder
   - `[MailFolderId1 <String>]`: key: id of mailFolder
   - `[ManagedDeviceId <String>]`: key: id of managedDevice
   - `[MessageId <String>]`: key: id of message
+  - `[MicrosoftAuthenticatorAuthenticationMethodId <String>]`: key: id of microsoftAuthenticatorAuthenticationMethod
   - `[MobileAppTroubleshootingEventId <String>]`: key: id of mobileAppTroubleshootingEvent
   - `[NotebookId <String>]`: key: id of notebook
   - `[OnenotePageId <String>]`: key: id of onenotePage
@@ -370,16 +381,23 @@ INPUTOBJECT <IUsersActionsIdentity>: Identity Parameter
   - `[OutlookTaskFolderId <String>]`: key: id of outlookTaskFolder
   - `[OutlookTaskGroupId <String>]`: key: id of outlookTaskGroup
   - `[OutlookTaskId <String>]`: key: id of outlookTask
-  - `[SharedInsightId <String>]`: key: id of sharedInsight
-  - `[TrendingId <String>]`: key: id of trending
-  - `[UsedInsightId <String>]`: key: id of usedInsight
+  - `[PasswordlessMicrosoftAuthenticatorAuthenticationMethodId <String>]`: key: id of passwordlessMicrosoftAuthenticatorAuthenticationMethod
+  - `[PermissionId <String>]`: key: id of permission
+  - `[PhoneAuthenticationMethodId <String>]`: key: id of phoneAuthenticationMethod
+  - `[ResourceSpecificPermissionGrantId <String>]`: key: id of resourceSpecificPermissionGrant
+  - `[SensitivityLabelId <String>]`: key: id of sensitivityLabel
+  - `[SubscriptionId <String>]`: key: id of subscription
+  - `[TeamsAppInstallationId <String>]`: key: id of teamsAppInstallation
+  - `[TodoTaskId <String>]`: key: id of todoTask
+  - `[TodoTaskListId <String>]`: key: id of todoTaskList
   - `[UserId <String>]`: key: id of user
+  - `[WindowsHelloForBusinessAuthenticationMethodId <String>]`: key: id of windowsHelloForBusinessAuthenticationMethod
 
 LOCATIONCONSTRAINT <IMicrosoftGraphLocationConstraint1>: locationConstraint
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[IsRequired <Boolean?>]`: The client requests the service to include in the response a meeting location for the meeting. If this is true and all the resources are busy, findMeetingTimes will not return any meeting time suggestions. If this is false and all the resources are busy, findMeetingTimes would still look for meeting times without locations.
-  - `[Locations <IMicrosoftGraphLocationConstraintItem1[]>]`: Constraint information for one or more locations that the client requests for the meeting.
-    - `[Address <IMicrosoftGraphPhysicalAddress1>]`: physicalAddress
+  - `[Locations <IMicrosoftGraphLocationConstraintItem[]>]`: Constraint information for one or more locations that the client requests for the meeting.
+    - `[Address <IMicrosoftGraphPhysicalAddress>]`: physicalAddress
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[City <String>]`: The city.
       - `[CountryOrRegion <String>]`: The country or region. It's a free-format string value, for example, 'United States'.
@@ -408,8 +426,8 @@ TIMECONSTRAINT <IMicrosoftGraphTimeConstraint>: timeConstraint
   - `[TimeSlots <IMicrosoftGraphTimeSlot[]>]`: 
     - `[End <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[DateTime <String>]`: A single point of time in a combined date and time representation ({date}T{time}; for example, 2017-08-29T04:00:00.0000000).
-      - `[TimeZone <String>]`: Represents a time zone, for example, 'Pacific Standard Time'. See below for more possible values.
+      - `[DateTime <String>]`: A single point of time in a combined date and time representation ({date}T{time}). For example, '2019-04-16T09:00:00'.
+      - `[TimeZone <String>]`: Represents a time zone, for example, 'Pacific Standard Time'. See below for possible values.
     - `[Start <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
 
 ## RELATED LINKS

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgDeviceManagementUserPfxCertificate
 
 ## SYNOPSIS
-Collection of PFX certificates associated with a user.
+Update the navigation property userPfxCertificates in deviceManagement
 
 ## SYNTAX
 
@@ -16,10 +16,10 @@ Collection of PFX certificates associated with a user.
 ```
 Update-MgDeviceManagementUserPfxCertificate -UserPfxCertificateId <String> [-AdditionalProperties <Hashtable>]
  [-CreatedDateTime <DateTime>] [-EncryptedPfxBlobInputFile <String>] [-EncryptedPfxPassword <String>]
- [-ExpirationDateTime <DateTime>] [-Id <String>] [-IntendedPurpose <String>] [-KeyName <String>]
- [-LastModifiedDateTime <DateTime>] [-PaddingScheme <String>] [-ProviderName <String>]
- [-StartDateTime <DateTime>] [-Thumbprint <String>] [-UserPrincipalName <String>] [-PassThru] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-ExpirationDateTime <DateTime>] [-Id <String>] [-IntendedPurpose <UserPfxIntendedPurpose>]
+ [-KeyName <String>] [-LastModifiedDateTime <DateTime>] [-PaddingScheme <UserPfxPaddingScheme>]
+ [-ProviderName <String>] [-StartDateTime <DateTime>] [-Thumbprint <String>] [-UserPrincipalName <String>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
@@ -38,14 +38,14 @@ Update-MgDeviceManagementUserPfxCertificate -InputObject <IDeviceManagementAdmin
 ```
 Update-MgDeviceManagementUserPfxCertificate -InputObject <IDeviceManagementAdministrationIdentity>
  [-AdditionalProperties <Hashtable>] [-CreatedDateTime <DateTime>] [-EncryptedPfxBlobInputFile <String>]
- [-EncryptedPfxPassword <String>] [-ExpirationDateTime <DateTime>] [-Id <String>] [-IntendedPurpose <String>]
- [-KeyName <String>] [-LastModifiedDateTime <DateTime>] [-PaddingScheme <String>] [-ProviderName <String>]
- [-StartDateTime <DateTime>] [-Thumbprint <String>] [-UserPrincipalName <String>] [-PassThru] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-EncryptedPfxPassword <String>] [-ExpirationDateTime <DateTime>] [-Id <String>]
+ [-IntendedPurpose <UserPfxIntendedPurpose>] [-KeyName <String>] [-LastModifiedDateTime <DateTime>]
+ [-PaddingScheme <UserPfxPaddingScheme>] [-ProviderName <String>] [-StartDateTime <DateTime>]
+ [-Thumbprint <String>] [-UserPrincipalName <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Collection of PFX certificates associated with a user.
+Update the navigation property userPfxCertificates in deviceManagement
 
 ## EXAMPLES
 
@@ -143,7 +143,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -177,7 +177,7 @@ Accept wildcard characters: False
 Supported values for the intended purpose of a user PFX certificate.
 
 ```yaml
-Type: System.String
+Type: Microsoft.Graph.PowerShell.Support.UserPfxIntendedPurpose
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -222,7 +222,7 @@ Accept wildcard characters: False
 Supported values for the padding scheme used by encryption provider.
 
 ```yaml
-Type: System.String
+Type: Microsoft.Graph.PowerShell.Support.UserPfxPaddingScheme
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -378,15 +378,15 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphUserPfxCertificate>: Entity that encapsulates all information required for a user's PFX certificates.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[CreatedDateTime <DateTime?>]`: Date/time when this PFX certificate was imported.
   - `[EncryptedPfxBlob <Byte[]>]`: Encrypted PFX blob.
   - `[EncryptedPfxPassword <String>]`: Encrypted PFX password.
   - `[ExpirationDateTime <DateTime?>]`: Certificate's validity expiration date/time.
-  - `[IntendedPurpose <String>]`: Supported values for the intended purpose of a user PFX certificate.
+  - `[IntendedPurpose <UserPfxIntendedPurpose?>]`: Supported values for the intended purpose of a user PFX certificate.
   - `[KeyName <String>]`: Name of the key (within the provider) used to encrypt the blob.
   - `[LastModifiedDateTime <DateTime?>]`: Date/time when this PFX certificate was last modified.
-  - `[PaddingScheme <String>]`: Supported values for the padding scheme used by encryption provider.
+  - `[PaddingScheme <UserPfxPaddingScheme?>]`: Supported values for the padding scheme used by encryption provider.
   - `[ProviderName <String>]`: Crypto provider used to encrypt this blob.
   - `[StartDateTime <DateTime?>]`: Certificate's validity start date/time.
   - `[Thumbprint <String>]`: SHA-1 thumbprint of the PFX certificate.
@@ -397,6 +397,7 @@ INPUTOBJECT <IDeviceManagementAdministrationIdentity>: Identity Parameter
   - `[CartToClassAssociationId <String>]`: key: id of cartToClassAssociation
   - `[CloudPcAuditEventId <String>]`: key: id of cloudPcAuditEvent
   - `[CloudPcDeviceImageId <String>]`: key: id of cloudPcDeviceImage
+  - `[CloudPcExternalPartnerSettingId <String>]`: key: id of cloudPcExternalPartnerSetting
   - `[CloudPcGalleryImageId <String>]`: key: id of cloudPcGalleryImage
   - `[CloudPcId <String>]`: key: id of cloudPC
   - `[CloudPcOnPremisesConnectionId <String>]`: key: id of cloudPcOnPremisesConnection
@@ -415,6 +416,7 @@ INPUTOBJECT <IDeviceManagementAdministrationIdentity>: Identity Parameter
   - `[DeviceManagementExchangeOnPremisesPolicyId <String>]`: key: id of deviceManagementExchangeOnPremisesPolicy
   - `[DeviceManagementPartnerId <String>]`: key: id of deviceManagementPartner
   - `[GroupPolicyCategoryId <String>]`: key: id of groupPolicyCategory
+  - `[GroupPolicyCategoryId1 <String>]`: key: id of groupPolicyCategory
   - `[GroupPolicyDefinitionFileId <String>]`: key: id of groupPolicyDefinitionFile
   - `[GroupPolicyDefinitionId <String>]`: key: id of groupPolicyDefinition
   - `[GroupPolicyMigrationReportId <String>]`: key: id of groupPolicyMigrationReport

@@ -8,8 +8,7 @@ schema: 2.0.0
 # Get-MgEducationSchoolUser
 
 ## SYNOPSIS
-Users in the school.
-Nullable.
+Get users from education
 
 ## SYNTAX
 
@@ -20,8 +19,7 @@ Get-MgEducationSchoolUser -EducationSchoolId <String> [-ExpandProperty <String[]
 ```
 
 ## DESCRIPTION
-Users in the school.
-Nullable.
+Get users from education
 
 ## EXAMPLES
 

@@ -12,27 +12,27 @@ Invoke action snoozeReminder
 
 ## SYNTAX
 
-### SnoozeExpanded1 (Default)
+### SnoozeExpanded (Default)
 ```
 Invoke-MgSnoozeUserEventReminder -EventId <String> -UserId <String> [-AdditionalProperties <Hashtable>]
  [-NewReminderTime <IMicrosoftGraphDateTimeZone>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### Snooze1
+### Snooze
 ```
 Invoke-MgSnoozeUserEventReminder -EventId <String> -UserId <String>
  -BodyParameter <IPaths10X81JrUsersUserIdEventsEventIdMicrosoftGraphSnoozereminderPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### SnoozeViaIdentity1
+### SnoozeViaIdentity
 ```
 Invoke-MgSnoozeUserEventReminder -InputObject <IUsersActionsIdentity>
  -BodyParameter <IPaths10X81JrUsersUserIdEventsEventIdMicrosoftGraphSnoozereminderPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### SnoozeViaIdentityExpanded1
+### SnoozeViaIdentityExpanded
 ```
 Invoke-MgSnoozeUserEventReminder -InputObject <IUsersActionsIdentity> [-AdditionalProperties <Hashtable>]
  [-NewReminderTime <IMicrosoftGraphDateTimeZone>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -50,7 +50,7 @@ Additional Parameters
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: SnoozeExpanded1, SnoozeViaIdentityExpanded1
+Parameter Sets: SnoozeExpanded, SnoozeViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -66,7 +66,7 @@ To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETE
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IPaths10X81JrUsersUserIdEventsEventIdMicrosoftGraphSnoozereminderPostRequestbodyContentApplicationJsonSchema
-Parameter Sets: Snooze1, SnoozeViaIdentity1
+Parameter Sets: Snooze, SnoozeViaIdentity
 Aliases:
 
 Required: True
@@ -81,7 +81,7 @@ key: id of event
 
 ```yaml
 Type: System.String
-Parameter Sets: Snooze1, SnoozeExpanded1
+Parameter Sets: Snooze, SnoozeExpanded
 Aliases:
 
 Required: True
@@ -97,7 +97,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
-Parameter Sets: SnoozeViaIdentity1, SnoozeViaIdentityExpanded1
+Parameter Sets: SnoozeViaIdentity, SnoozeViaIdentityExpanded
 Aliases:
 
 Required: True
@@ -113,7 +113,7 @@ To construct, please use Get-Help -Online and see NOTES section for NEWREMINDERT
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDateTimeZone
-Parameter Sets: SnoozeExpanded1, SnoozeViaIdentityExpanded1
+Parameter Sets: SnoozeExpanded, SnoozeViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -143,7 +143,7 @@ key: id of user
 
 ```yaml
 Type: System.String
-Parameter Sets: Snooze1, SnoozeExpanded1
+Parameter Sets: Snooze, SnoozeExpanded
 Aliases:
 
 Required: True
@@ -210,11 +210,10 @@ BODYPARAMETER <IPaths10X81JrUsersUserIdEventsEventIdMicrosoftGraphSnoozereminder
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[NewReminderTime <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[DateTime <String>]`: A single point of time in a combined date and time representation ({date}T{time}; for example, 2017-08-29T04:00:00.0000000).
-    - `[TimeZone <String>]`: Represents a time zone, for example, 'Pacific Standard Time'. See below for more possible values.
+    - `[DateTime <String>]`: A single point of time in a combined date and time representation ({date}T{time}). For example, '2019-04-16T09:00:00'.
+    - `[TimeZone <String>]`: Represents a time zone, for example, 'Pacific Standard Time'. See below for possible values.
 
 INPUTOBJECT <IUsersActionsIdentity>: Identity Parameter
-  - `[AccessReviewInstanceDecisionItemId <String>]`: key: id of accessReviewInstanceDecisionItem
   - `[AccessReviewInstanceId <String>]`: key: id of accessReviewInstance
   - `[AccessReviewStageId <String>]`: key: id of accessReviewStage
   - `[AppLogCollectionRequestId <String>]`: key: id of appLogCollectionRequest
@@ -222,15 +221,27 @@ INPUTOBJECT <IUsersActionsIdentity>: Identity Parameter
   - `[BaseTaskId <String>]`: key: id of baseTask
   - `[BaseTaskListId <String>]`: key: id of baseTaskList
   - `[CalendarId <String>]`: key: id of calendar
+  - `[ChatId <String>]`: key: id of chat
+  - `[ChatMessageId <String>]`: key: id of chatMessage
+  - `[ChatMessageId1 <String>]`: key: id of chatMessage
   - `[CloudPcId <String>]`: key: id of cloudPC
+  - `[ContentTypeId <String>]`: key: id of contentType
   - `[DeviceEnrollmentConfigurationId <String>]`: key: id of deviceEnrollmentConfiguration
+  - `[DeviceId <String>]`: key: id of device
   - `[DeviceLogCollectionResponseId <String>]`: key: id of deviceLogCollectionResponse
+  - `[DocumentSetVersionId <String>]`: key: id of documentSetVersion
+  - `[DriveId <String>]`: key: id of drive
+  - `[DriveItemId <String>]`: key: id of driveItem
+  - `[DriveItemVersionId <String>]`: key: id of driveItemVersion
   - `[EventId <String>]`: key: id of event
   - `[EventId1 <String>]`: key: id of event
+  - `[ListItemId <String>]`: key: id of listItem
+  - `[ListItemVersionId <String>]`: key: id of listItemVersion
   - `[MailFolderId <String>]`: key: id of mailFolder
   - `[MailFolderId1 <String>]`: key: id of mailFolder
   - `[ManagedDeviceId <String>]`: key: id of managedDevice
   - `[MessageId <String>]`: key: id of message
+  - `[MicrosoftAuthenticatorAuthenticationMethodId <String>]`: key: id of microsoftAuthenticatorAuthenticationMethod
   - `[MobileAppTroubleshootingEventId <String>]`: key: id of mobileAppTroubleshootingEvent
   - `[NotebookId <String>]`: key: id of notebook
   - `[OnenotePageId <String>]`: key: id of onenotePage
@@ -238,15 +249,22 @@ INPUTOBJECT <IUsersActionsIdentity>: Identity Parameter
   - `[OutlookTaskFolderId <String>]`: key: id of outlookTaskFolder
   - `[OutlookTaskGroupId <String>]`: key: id of outlookTaskGroup
   - `[OutlookTaskId <String>]`: key: id of outlookTask
-  - `[SharedInsightId <String>]`: key: id of sharedInsight
-  - `[TrendingId <String>]`: key: id of trending
-  - `[UsedInsightId <String>]`: key: id of usedInsight
+  - `[PasswordlessMicrosoftAuthenticatorAuthenticationMethodId <String>]`: key: id of passwordlessMicrosoftAuthenticatorAuthenticationMethod
+  - `[PermissionId <String>]`: key: id of permission
+  - `[PhoneAuthenticationMethodId <String>]`: key: id of phoneAuthenticationMethod
+  - `[ResourceSpecificPermissionGrantId <String>]`: key: id of resourceSpecificPermissionGrant
+  - `[SensitivityLabelId <String>]`: key: id of sensitivityLabel
+  - `[SubscriptionId <String>]`: key: id of subscription
+  - `[TeamsAppInstallationId <String>]`: key: id of teamsAppInstallation
+  - `[TodoTaskId <String>]`: key: id of todoTask
+  - `[TodoTaskListId <String>]`: key: id of todoTaskList
   - `[UserId <String>]`: key: id of user
+  - `[WindowsHelloForBusinessAuthenticationMethodId <String>]`: key: id of windowsHelloForBusinessAuthenticationMethod
 
 NEWREMINDERTIME <IMicrosoftGraphDateTimeZone>: dateTimeTimeZone
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[DateTime <String>]`: A single point of time in a combined date and time representation ({date}T{time}; for example, 2017-08-29T04:00:00.0000000).
-  - `[TimeZone <String>]`: Represents a time zone, for example, 'Pacific Standard Time'. See below for more possible values.
+  - `[DateTime <String>]`: A single point of time in a combined date and time representation ({date}T{time}). For example, '2019-04-16T09:00:00'.
+  - `[TimeZone <String>]`: Represents a time zone, for example, 'Pacific Standard Time'. See below for possible values.
 
 ## RELATED LINKS
 

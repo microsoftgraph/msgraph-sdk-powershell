@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgDeviceManagementDeviceConfigurationManagedDeviceCertificateState
 
 ## SYNOPSIS
-Summary of all certificates for all devices.
+Update the navigation property deviceConfigurationsAllManagedDeviceCertificateStates in deviceManagement
 
 ## SYNTAX
 
@@ -18,10 +18,11 @@ Update-MgDeviceManagementDeviceConfigurationManagedDeviceCertificateState
  -ManagedAllDeviceCertificateStateId <String> [-AdditionalProperties <Hashtable>]
  [-CertificateExpirationDateTime <DateTime>] [-CertificateExtendedKeyUsages <String>]
  [-CertificateIssuanceDateTime <DateTime>] [-CertificateIssuerName <String>] [-CertificateKeyUsages <Int32>]
- [-CertificateRevokeStatus <String>] [-CertificateRevokeStatusLastChangeDateTime <DateTime>]
- [-CertificateSerialNumber <String>] [-CertificateSubjectName <String>] [-CertificateThumbprint <String>]
- [-Id <String>] [-ManagedDeviceDisplayName <String>] [-UserPrincipalName <String>] [-PassThru] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-CertificateRevokeStatus <CertificateRevocationStatus>]
+ [-CertificateRevokeStatusLastChangeDateTime <DateTime>] [-CertificateSerialNumber <String>]
+ [-CertificateSubjectName <String>] [-CertificateThumbprint <String>] [-Id <String>]
+ [-ManagedDeviceDisplayName <String>] [-UserPrincipalName <String>] [-PassThru] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Update
@@ -45,14 +46,15 @@ Update-MgDeviceManagementDeviceConfigurationManagedDeviceCertificateState
  -InputObject <IDeviceManagementAdministrationIdentity> [-AdditionalProperties <Hashtable>]
  [-CertificateExpirationDateTime <DateTime>] [-CertificateExtendedKeyUsages <String>]
  [-CertificateIssuanceDateTime <DateTime>] [-CertificateIssuerName <String>] [-CertificateKeyUsages <Int32>]
- [-CertificateRevokeStatus <String>] [-CertificateRevokeStatusLastChangeDateTime <DateTime>]
- [-CertificateSerialNumber <String>] [-CertificateSubjectName <String>] [-CertificateThumbprint <String>]
- [-Id <String>] [-ManagedDeviceDisplayName <String>] [-UserPrincipalName <String>] [-PassThru] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-CertificateRevokeStatus <CertificateRevocationStatus>]
+ [-CertificateRevokeStatusLastChangeDateTime <DateTime>] [-CertificateSerialNumber <String>]
+ [-CertificateSubjectName <String>] [-CertificateThumbprint <String>] [-Id <String>]
+ [-ManagedDeviceDisplayName <String>] [-UserPrincipalName <String>] [-PassThru] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Summary of all certificates for all devices.
+Update the navigation property deviceConfigurationsAllManagedDeviceCertificateStates in deviceManagement
 
 ## EXAMPLES
 
@@ -168,7 +170,7 @@ Accept wildcard characters: False
 Certificate Revocation Status.
 
 ```yaml
-Type: System.String
+Type: Microsoft.Graph.PowerShell.Support.CertificateRevocationStatus
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -240,7 +242,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -385,13 +387,13 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphManagedAllDeviceCertificateState>: managedAllDeviceCertificateState
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[CertificateExpirationDateTime <DateTime?>]`: Certificate expiry date
   - `[CertificateExtendedKeyUsages <String>]`: Enhanced Key Usage
   - `[CertificateIssuanceDateTime <DateTime?>]`: Issuance date
   - `[CertificateIssuerName <String>]`: Issuer
   - `[CertificateKeyUsages <Int32?>]`: Key Usage
-  - `[CertificateRevokeStatus <String>]`: Certificate Revocation Status.
+  - `[CertificateRevokeStatus <CertificateRevocationStatus?>]`: Certificate Revocation Status.
   - `[CertificateRevokeStatusLastChangeDateTime <DateTime?>]`: The time the revoke status was last changed
   - `[CertificateSerialNumber <String>]`: Serial number
   - `[CertificateSubjectName <String>]`: Certificate subject name
@@ -404,6 +406,7 @@ INPUTOBJECT <IDeviceManagementAdministrationIdentity>: Identity Parameter
   - `[CartToClassAssociationId <String>]`: key: id of cartToClassAssociation
   - `[CloudPcAuditEventId <String>]`: key: id of cloudPcAuditEvent
   - `[CloudPcDeviceImageId <String>]`: key: id of cloudPcDeviceImage
+  - `[CloudPcExternalPartnerSettingId <String>]`: key: id of cloudPcExternalPartnerSetting
   - `[CloudPcGalleryImageId <String>]`: key: id of cloudPcGalleryImage
   - `[CloudPcId <String>]`: key: id of cloudPC
   - `[CloudPcOnPremisesConnectionId <String>]`: key: id of cloudPcOnPremisesConnection
@@ -422,6 +425,7 @@ INPUTOBJECT <IDeviceManagementAdministrationIdentity>: Identity Parameter
   - `[DeviceManagementExchangeOnPremisesPolicyId <String>]`: key: id of deviceManagementExchangeOnPremisesPolicy
   - `[DeviceManagementPartnerId <String>]`: key: id of deviceManagementPartner
   - `[GroupPolicyCategoryId <String>]`: key: id of groupPolicyCategory
+  - `[GroupPolicyCategoryId1 <String>]`: key: id of groupPolicyCategory
   - `[GroupPolicyDefinitionFileId <String>]`: key: id of groupPolicyDefinitionFile
   - `[GroupPolicyDefinitionId <String>]`: key: id of groupPolicyDefinition
   - `[GroupPolicyMigrationReportId <String>]`: key: id of groupPolicyMigrationReport

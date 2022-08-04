@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgEducationUserAssignmentSubmissionResource
 
 ## SYNOPSIS
-Nullable.
+Get resources from education
 
 ## SYNTAX
 
@@ -34,7 +34,7 @@ Get-MgEducationUserAssignmentSubmissionResource -InputObject <IEducationIdentity
 ```
 
 ## DESCRIPTION
-Nullable.
+Get resources from education
 
 ## EXAMPLES
 

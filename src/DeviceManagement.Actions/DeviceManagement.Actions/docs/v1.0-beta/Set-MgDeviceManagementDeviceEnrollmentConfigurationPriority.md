@@ -12,27 +12,27 @@ Invoke action setPriority
 
 ## SYNTAX
 
-### SetExpanded (Default)
+### SetExpanded1 (Default)
 ```
 Set-MgDeviceManagementDeviceEnrollmentConfigurationPriority -DeviceEnrollmentConfigurationId <String>
  [-AdditionalProperties <Hashtable>] [-Priority <Int32>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### Set
+### Set1
 ```
 Set-MgDeviceManagementDeviceEnrollmentConfigurationPriority -DeviceEnrollmentConfigurationId <String>
  -BodyParameter <IPaths1Ch2TbmDevicemanagementDeviceenrollmentconfigurationsDeviceenrollmentconfigurationIdMicrosoftGraphSetpriorityPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### SetViaIdentity
+### SetViaIdentity1
 ```
 Set-MgDeviceManagementDeviceEnrollmentConfigurationPriority -InputObject <IDeviceManagementActionsIdentity>
  -BodyParameter <IPaths1Ch2TbmDevicemanagementDeviceenrollmentconfigurationsDeviceenrollmentconfigurationIdMicrosoftGraphSetpriorityPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### SetViaIdentityExpanded
+### SetViaIdentityExpanded1
 ```
 Set-MgDeviceManagementDeviceEnrollmentConfigurationPriority -InputObject <IDeviceManagementActionsIdentity>
  [-AdditionalProperties <Hashtable>] [-Priority <Int32>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -50,7 +50,7 @@ Additional Parameters
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: SetExpanded, SetViaIdentityExpanded
+Parameter Sets: SetExpanded1, SetViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -66,7 +66,7 @@ To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETE
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IPaths1Ch2TbmDevicemanagementDeviceenrollmentconfigurationsDeviceenrollmentconfigurationIdMicrosoftGraphSetpriorityPostRequestbodyContentApplicationJsonSchema
-Parameter Sets: Set, SetViaIdentity
+Parameter Sets: Set1, SetViaIdentity1
 Aliases:
 
 Required: True
@@ -81,7 +81,7 @@ key: id of deviceEnrollmentConfiguration
 
 ```yaml
 Type: System.String
-Parameter Sets: Set, SetExpanded
+Parameter Sets: Set1, SetExpanded1
 Aliases:
 
 Required: True
@@ -97,7 +97,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementActionsIdentity
-Parameter Sets: SetViaIdentity, SetViaIdentityExpanded
+Parameter Sets: SetViaIdentity1, SetViaIdentityExpanded1
 Aliases:
 
 Required: True
@@ -127,7 +127,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.Int32
-Parameter Sets: SetExpanded, SetViaIdentityExpanded
+Parameter Sets: SetExpanded1, SetViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -207,15 +207,11 @@ INPUTOBJECT <IDeviceManagementActionsIdentity>: Identity Parameter
   - `[CloudPcUserSettingId <String>]`: key: id of cloudPcUserSetting
   - `[DataSharingConsentId <String>]`: key: id of dataSharingConsent
   - `[DepOnboardingSettingId <String>]`: key: id of depOnboardingSetting
-  - `[DetectedAppId <String>]`: key: id of detectedApp
-  - `[DeviceAndAppManagementRoleAssignmentId <String>]`: key: id of deviceAndAppManagementRoleAssignment
   - `[DeviceCompliancePolicyId <String>]`: key: id of deviceCompliancePolicy
   - `[DeviceComplianceScriptId <String>]`: key: id of deviceComplianceScript
-  - `[DeviceConfigurationGroupAssignmentId <String>]`: key: id of deviceConfigurationGroupAssignment
   - `[DeviceConfigurationId <String>]`: key: id of deviceConfiguration
   - `[DeviceCustomAttributeShellScriptId <String>]`: key: id of deviceCustomAttributeShellScript
   - `[DeviceEnrollmentConfigurationId <String>]`: key: id of deviceEnrollmentConfiguration
-  - `[DeviceHealthScriptDeviceStateId <String>]`: key: id of deviceHealthScriptDeviceState
   - `[DeviceHealthScriptId <String>]`: key: id of deviceHealthScript
   - `[DeviceLogCollectionResponseId <String>]`: key: id of deviceLogCollectionResponse
   - `[DeviceManagementCompliancePolicyId <String>]`: key: id of deviceManagementCompliancePolicy
@@ -224,7 +220,6 @@ INPUTOBJECT <IDeviceManagementActionsIdentity>: Identity Parameter
   - `[DeviceManagementIntentId <String>]`: key: id of deviceManagementIntent
   - `[DeviceManagementResourceAccessProfileBaseId <String>]`: key: id of deviceManagementResourceAccessProfileBase
   - `[DeviceManagementReusablePolicySettingId <String>]`: key: id of deviceManagementReusablePolicySetting
-  - `[DeviceManagementScriptDeviceStateId <String>]`: key: id of deviceManagementScriptDeviceState
   - `[DeviceManagementScriptId <String>]`: key: id of deviceManagementScript
   - `[DeviceManagementTemplateId <String>]`: key: id of deviceManagementTemplate
   - `[DeviceManagementTemplateId1 <String>]`: key: id of deviceManagementTemplate
@@ -248,6 +243,7 @@ INPUTOBJECT <IDeviceManagementActionsIdentity>: Identity Parameter
   - `[WindowsDriverUpdateProfileId <String>]`: key: id of windowsDriverUpdateProfile
   - `[WindowsFeatureUpdateProfileId <String>]`: key: id of windowsFeatureUpdateProfile
   - `[WindowsQualityUpdateProfileId <String>]`: key: id of windowsQualityUpdateProfile
+  - `[ZebraFotaDeploymentId <String>]`: key: id of zebraFotaDeployment
 
 ## RELATED LINKS
 

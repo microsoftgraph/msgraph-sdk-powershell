@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgDeviceManagementEmbeddedSimActivationCodePoolDeviceState
 
 ## SYNOPSIS
-Navigational property to a list of device states for this pool.
+Create new navigation property to deviceStates for deviceManagement
 
 ## SYNTAX
 
@@ -16,9 +16,9 @@ Navigational property to a list of device states for this pool.
 ```
 New-MgDeviceManagementEmbeddedSimActivationCodePoolDeviceState -EmbeddedSimActivationCodePoolId <String>
  [-AdditionalProperties <Hashtable>] [-CreatedDateTime <DateTime>] [-DeviceName <String>] [-Id <String>]
- [-LastSyncDateTime <DateTime>] [-ModifiedDateTime <DateTime>] [-State <String>] [-StateDetails <String>]
- [-UniversalIntegratedCircuitCardIdentifier <String>] [-UserName <String>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-LastSyncDateTime <DateTime>] [-ModifiedDateTime <DateTime>] [-State <EmbeddedSimDeviceStateValue>]
+ [-StateDetails <String>] [-UniversalIntegratedCircuitCardIdentifier <String>] [-UserName <String>] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
@@ -37,13 +37,13 @@ New-MgDeviceManagementEmbeddedSimActivationCodePoolDeviceState -InputObject <IDe
 ```
 New-MgDeviceManagementEmbeddedSimActivationCodePoolDeviceState -InputObject <IDeviceManagementIdentity>
  [-AdditionalProperties <Hashtable>] [-CreatedDateTime <DateTime>] [-DeviceName <String>] [-Id <String>]
- [-LastSyncDateTime <DateTime>] [-ModifiedDateTime <DateTime>] [-State <String>] [-StateDetails <String>]
- [-UniversalIntegratedCircuitCardIdentifier <String>] [-UserName <String>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-LastSyncDateTime <DateTime>] [-ModifiedDateTime <DateTime>] [-State <EmbeddedSimDeviceStateValue>]
+ [-StateDetails <String>] [-UniversalIntegratedCircuitCardIdentifier <String>] [-UserName <String>] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Navigational property to a list of device states for this pool.
+Create new navigation property to deviceStates for deviceManagement
 
 ## EXAMPLES
 
@@ -128,7 +128,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -194,7 +194,7 @@ Accept wildcard characters: False
 Describes the various states for an embedded SIM activation code.
 
 ```yaml
-Type: System.String
+Type: Microsoft.Graph.PowerShell.Support.EmbeddedSimDeviceStateValue
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -306,12 +306,12 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphEmbeddedSimDeviceState>: Describes the embedded SIM activation code deployment state in relation to a device.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[CreatedDateTime <DateTime?>]`: The time the embedded SIM device status was created. Generated service side.
   - `[DeviceName <String>]`: Device name to which the subscription was provisioned e.g. DESKTOP-JOE
   - `[LastSyncDateTime <DateTime?>]`: The time the embedded SIM device last checked in. Updated service side.
   - `[ModifiedDateTime <DateTime?>]`: The time the embedded SIM device status was last modified. Updated service side.
-  - `[State <String>]`: Describes the various states for an embedded SIM activation code.
+  - `[State <EmbeddedSimDeviceStateValue?>]`: Describes the various states for an embedded SIM activation code.
   - `[StateDetails <String>]`: String description of the provisioning state.
   - `[UniversalIntegratedCircuitCardIdentifier <String>]`: The Universal Integrated Circuit Card Identifier (UICCID) identifying the hardware onto which a profile is to be deployed.
   - `[UserName <String>]`: Username which the subscription was provisioned to e.g. joe@contoso.com
@@ -346,6 +346,15 @@ INPUTOBJECT <IDeviceManagementIdentity>: Identity Parameter
   - `[DeviceHealthScriptDeviceStateId <String>]`: key: id of deviceHealthScriptDeviceState
   - `[DeviceHealthScriptId <String>]`: key: id of deviceHealthScript
   - `[DeviceLogCollectionResponseId <String>]`: key: id of deviceLogCollectionResponse
+  - `[DeviceManagementComplianceActionItemId <String>]`: key: id of deviceManagementComplianceActionItem
+  - `[DeviceManagementCompliancePolicyId <String>]`: key: id of deviceManagementCompliancePolicy
+  - `[DeviceManagementComplianceScheduledActionForRuleId <String>]`: key: id of deviceManagementComplianceScheduledActionForRule
+  - `[DeviceManagementConfigurationPolicyAssignmentId <String>]`: key: id of deviceManagementConfigurationPolicyAssignment
+  - `[DeviceManagementConfigurationPolicyId <String>]`: key: id of deviceManagementConfigurationPolicy
+  - `[DeviceManagementConfigurationPolicyTemplateId <String>]`: key: id of deviceManagementConfigurationPolicyTemplate
+  - `[DeviceManagementConfigurationSettingDefinitionId <String>]`: key: id of deviceManagementConfigurationSettingDefinition
+  - `[DeviceManagementConfigurationSettingId <String>]`: key: id of deviceManagementConfigurationSetting
+  - `[DeviceManagementConfigurationSettingTemplateId <String>]`: key: id of deviceManagementConfigurationSettingTemplate
   - `[DeviceManagementDerivedCredentialSettingsId <String>]`: key: id of deviceManagementDerivedCredentialSettings
   - `[DeviceManagementIntentAssignmentId <String>]`: key: id of deviceManagementIntentAssignment
   - `[DeviceManagementIntentDeviceSettingStateSummaryId <String>]`: key: id of deviceManagementIntentDeviceSettingStateSummary
@@ -383,8 +392,6 @@ INPUTOBJECT <IDeviceManagementIdentity>: Identity Parameter
   - `[ManagedDeviceEncryptionStateId <String>]`: key: id of managedDeviceEncryptionState
   - `[ManagedDeviceId <String>]`: key: id of managedDevice
   - `[ManagedDeviceMobileAppConfigurationStateId <String>]`: key: id of managedDeviceMobileAppConfigurationState
-  - `[ManagementConditionId <String>]`: key: id of managementCondition
-  - `[ManagementConditionStatementId <String>]`: key: id of managementConditionStatement
   - `[MicrosoftTunnelConfigurationId <String>]`: key: id of microsoftTunnelConfiguration
   - `[MicrosoftTunnelHealthThresholdId <String>]`: key: id of microsoftTunnelHealthThreshold
   - `[MicrosoftTunnelServerId <String>]`: key: id of microsoftTunnelServer
@@ -414,6 +421,7 @@ INPUTOBJECT <IDeviceManagementIdentity>: Identity Parameter
   - `[UserExperienceAnalyticsBatteryHealthOSPerformanceId <String>]`: key: id of userExperienceAnalyticsBatteryHealthOsPerformance
   - `[UserExperienceAnalyticsCategoryId <String>]`: key: id of userExperienceAnalyticsCategory
   - `[UserExperienceAnalyticsDevicePerformanceId <String>]`: key: id of userExperienceAnalyticsDevicePerformance
+  - `[UserExperienceAnalyticsDeviceScopeId <String>]`: key: id of userExperienceAnalyticsDeviceScope
   - `[UserExperienceAnalyticsDeviceScoresId <String>]`: key: id of userExperienceAnalyticsDeviceScores
   - `[UserExperienceAnalyticsDeviceStartupHistoryId <String>]`: key: id of userExperienceAnalyticsDeviceStartupHistory
   - `[UserExperienceAnalyticsDeviceStartupProcessId <String>]`: key: id of userExperienceAnalyticsDeviceStartupProcess

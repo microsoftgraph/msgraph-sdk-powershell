@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgUserTodoListTaskLinkedResource
 
 ## SYNOPSIS
-A collection of resources linked to the task.
+Create new navigation property to linkedResources for users
 
 ## SYNTAX
 
@@ -39,7 +39,7 @@ New-MgUserTodoListTaskLinkedResource -InputObject <IUsersIdentity> [-AdditionalP
 ```
 
 ## DESCRIPTION
-A collection of resources linked to the task.
+Create new navigation property to linkedResources for users
 
 ## EXAMPLES
 
@@ -122,7 +122,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -267,19 +267,24 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphLinkedResource>: linkedResource
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[ApplicationName <String>]`: Field indicating the app name of the source that is sending the linkedResource.
   - `[DisplayName <String>]`: Field indicating the title of the linkedResource.
   - `[ExternalId <String>]`: Id of the object that is associated with this task on the third-party/partner system.
   - `[WebUrl <String>]`: Deep link to the linkedResource.
 
 INPUTOBJECT <IUsersIdentity>: Identity Parameter
+  - `[AttachmentBaseId <String>]`: key: id of attachmentBase
   - `[AttachmentId <String>]`: key: id of attachment
+  - `[AttachmentSessionId <String>]`: key: id of attachmentSession
+  - `[ChecklistItemId <String>]`: key: id of checklistItem
+  - `[DirectoryObjectId <String>]`: key: id of directoryObject
   - `[ExtensionId <String>]`: key: id of extension
   - `[LicenseDetailsId <String>]`: key: id of licenseDetails
   - `[LinkedResourceId <String>]`: key: id of linkedResource
   - `[MultiValueLegacyExtendedPropertyId <String>]`: key: id of multiValueLegacyExtendedProperty
   - `[NotificationId <String>]`: key: id of notification
+  - `[OAuth2PermissionGrantId <String>]`: key: id of oAuth2PermissionGrant
   - `[OutlookCategoryId <String>]`: key: id of outlookCategory
   - `[OutlookTaskFolderId <String>]`: key: id of outlookTaskFolder
   - `[OutlookTaskGroupId <String>]`: key: id of outlookTaskGroup

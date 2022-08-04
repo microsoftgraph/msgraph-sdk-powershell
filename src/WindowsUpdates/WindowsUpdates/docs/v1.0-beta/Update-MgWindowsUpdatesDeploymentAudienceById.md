@@ -12,7 +12,7 @@ Invoke action updateAudienceById
 
 ## SYNTAX
 
-### UpdateExpanded1 (Default)
+### UpdateExpanded (Default)
 ```
 Update-MgWindowsUpdatesDeploymentAudienceById -DeploymentId <String> [-AddExclusions <String[]>]
  [-AdditionalProperties <Hashtable>] [-AddMembers <String[]>] [-MemberEntityType <String>]
@@ -20,21 +20,21 @@ Update-MgWindowsUpdatesDeploymentAudienceById -DeploymentId <String> [-AddExclus
  [<CommonParameters>]
 ```
 
-### Update1
+### Update
 ```
 Update-MgWindowsUpdatesDeploymentAudienceById -DeploymentId <String>
  -BodyParameter <IPaths1Yczx1TAdminWindowsUpdatesDeploymentsDeploymentIdAudienceMicrosoftGraphWindowsupdatesUpdateaudiencebyidPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### UpdateViaIdentity1
+### UpdateViaIdentity
 ```
 Update-MgWindowsUpdatesDeploymentAudienceById -InputObject <IWindowsUpdatesIdentity>
  -BodyParameter <IPaths1Yczx1TAdminWindowsUpdatesDeploymentsDeploymentIdAudienceMicrosoftGraphWindowsupdatesUpdateaudiencebyidPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### UpdateViaIdentityExpanded1
+### UpdateViaIdentityExpanded
 ```
 Update-MgWindowsUpdatesDeploymentAudienceById -InputObject <IWindowsUpdatesIdentity>
  [-AddExclusions <String[]>] [-AdditionalProperties <Hashtable>] [-AddMembers <String[]>]
@@ -54,7 +54,7 @@ Invoke action updateAudienceById
 
 ```yaml
 Type: System.String[]
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -69,7 +69,7 @@ Additional Parameters
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -84,7 +84,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.String[]
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -100,7 +100,7 @@ To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETE
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IPaths1Yczx1TAdminWindowsUpdatesDeploymentsDeploymentIdAudienceMicrosoftGraphWindowsupdatesUpdateaudiencebyidPostRequestbodyContentApplicationJsonSchema
-Parameter Sets: Update1, UpdateViaIdentity1
+Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
 Required: True
@@ -115,7 +115,7 @@ key: id of deployment
 
 ```yaml
 Type: System.String
-Parameter Sets: Update1, UpdateExpanded1
+Parameter Sets: Update, UpdateExpanded
 Aliases:
 
 Required: True
@@ -131,7 +131,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IWindowsUpdatesIdentity
-Parameter Sets: UpdateViaIdentity1, UpdateViaIdentityExpanded1
+Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
 Required: True
@@ -146,7 +146,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -176,7 +176,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.String[]
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -191,7 +191,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.String[]
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -249,7 +249,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ALIASES
 
-### Update-MgWuDeploymentAudienceById
+### Update-MgWuDeploymentAudienceGraphBPreId
 
 COMPLEX PARAMETER PROPERTIES
 
@@ -267,6 +267,7 @@ BODYPARAMETER <IPaths1Yczx1TAdminWindowsUpdatesDeploymentsDeploymentIdAudienceMi
 INPUTOBJECT <IWindowsUpdatesIdentity>: Identity Parameter
   - `[CatalogEntryId <String>]`: key: id of catalogEntry
   - `[DeploymentId <String>]`: key: id of deployment
+  - `[ResourceConnectionId <String>]`: key: id of resourceConnection
   - `[UpdatableAssetId <String>]`: key: id of updatableAsset
 
 ## RELATED LINKS

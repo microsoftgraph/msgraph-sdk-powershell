@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgUserProfileNote
 
 ## SYNOPSIS
-Represents notes that a user has added to their profile.
+Get notes from users
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgUserProfileNote -InputObject <IPeopleIdentity> [-ExpandProperty <String[]>
 ```
 
 ## DESCRIPTION
-Represents notes that a user has added to their profile.
+Get notes from users
 
 ## EXAMPLES
 

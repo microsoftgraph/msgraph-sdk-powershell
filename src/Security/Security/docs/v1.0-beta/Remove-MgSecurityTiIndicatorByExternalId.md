@@ -12,13 +12,13 @@ Invoke action deleteTiIndicatorsByExternalId
 
 ## SYNTAX
 
-### DeleteExpanded1 (Default)
+### DeleteExpanded (Default)
 ```
 Remove-MgSecurityTiIndicatorByExternalId [-AdditionalProperties <Hashtable>] [-Value <String[]>] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
-### Delete2
+### Delete
 ```
 Remove-MgSecurityTiIndicatorByExternalId
  -BodyParameter <IPaths1Jddi17SecurityTiindicatorsMicrosoftGraphDeletetiindicatorsbyexternalidPostRequestbodyContentApplicationJsonSchema>
@@ -37,7 +37,7 @@ Additional Parameters
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: DeleteExpanded1
+Parameter Sets: DeleteExpanded
 Aliases:
 
 Required: False
@@ -53,7 +53,7 @@ To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETE
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IPaths1Jddi17SecurityTiindicatorsMicrosoftGraphDeletetiindicatorsbyexternalidPostRequestbodyContentApplicationJsonSchema
-Parameter Sets: Delete2
+Parameter Sets: Delete
 Aliases:
 
 Required: True
@@ -68,7 +68,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.String[]
-Parameter Sets: DeleteExpanded1
+Parameter Sets: DeleteExpanded
 Aliases:
 
 Required: False

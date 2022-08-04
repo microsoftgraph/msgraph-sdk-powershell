@@ -8,23 +8,23 @@ schema: 2.0.0
 # New-MgPrintOperation
 
 ## SYNOPSIS
-The list of print long running operations.
+Create new navigation property to operations for print
 
 ## SYNTAX
 
-### CreateExpanded1 (Default)
+### CreateExpanded (Default)
 ```
 New-MgPrintOperation [-AdditionalProperties <Hashtable>] [-CreatedDateTime <DateTime>] [-Id <String>]
  [-Status <IMicrosoftGraphPrintOperationStatus>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### Create1
+### Create
 ```
 New-MgPrintOperation -BodyParameter <IMicrosoftGraphPrintOperation> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-The list of print long running operations.
+Create new navigation property to operations for print
 
 ## EXAMPLES
 
@@ -35,7 +35,7 @@ Additional Parameters
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: CreateExpanded1
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -51,7 +51,7 @@ To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETE
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPrintOperation
-Parameter Sets: Create1
+Parameter Sets: Create
 Aliases:
 
 Required: True
@@ -67,7 +67,7 @@ Read-only.
 
 ```yaml
 Type: System.DateTime
-Parameter Sets: CreateExpanded1
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -78,11 +78,11 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded1
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -98,7 +98,7 @@ To construct, please use Get-Help -Online and see NOTES section for STATUS prope
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPrintOperationStatus
-Parameter Sets: CreateExpanded1
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -161,7 +161,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphPrintOperation>: printOperation
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[CreatedDateTime <DateTime?>]`: The DateTimeOffset when the operation was created. Read-only.
   - `[Status <IMicrosoftGraphPrintOperationStatus>]`: printOperationStatus
     - `[(Any) <Object>]`: This indicates any property can be added to this object.

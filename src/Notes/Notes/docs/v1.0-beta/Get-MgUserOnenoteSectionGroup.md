@@ -8,13 +8,11 @@ schema: 2.0.0
 # Get-MgUserOnenoteSectionGroup
 
 ## SYNOPSIS
-The section groups in all OneNote notebooks that are owned by the user or group.
-Read-only.
-Nullable.
+Get sectionGroups from users
 
 ## SYNTAX
 
-### List3 (Default)
+### List2 (Default)
 ```
 Get-MgUserOnenoteSectionGroup -UserId <String> [-ExpandProperty <String[]>] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
@@ -33,7 +31,7 @@ Get-MgUserOnenoteSectionGroup -InputObject <INotesIdentity> [-ExpandProperty <St
  [-Property <String[]>] [<CommonParameters>]
 ```
 
-### List
+### List3
 ```
 Get-MgUserOnenoteSectionGroup -SectionGroupId <String> -UserId <String> [-ExpandProperty <String[]>]
  [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>]
@@ -41,9 +39,7 @@ Get-MgUserOnenoteSectionGroup -SectionGroupId <String> -UserId <String> [-Expand
 ```
 
 ## DESCRIPTION
-The section groups in all OneNote notebooks that are owned by the user or group.
-Read-only.
-Nullable.
+Get sectionGroups from users
 
 ## EXAMPLES
 
@@ -54,7 +50,7 @@ List all pages.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
-Parameter Sets: List, List3
+Parameter Sets: List2, List3
 Aliases:
 
 Required: False
@@ -70,7 +66,7 @@ By default, this variable will be set in the global scope.
 
 ```yaml
 Type: System.String
-Parameter Sets: List, List3
+Parameter Sets: List2, List3
 Aliases: CV
 
 Required: False
@@ -100,7 +96,7 @@ Filter items by property values
 
 ```yaml
 Type: System.String
-Parameter Sets: List, List3
+Parameter Sets: List2, List3
 Aliases:
 
 Required: False
@@ -131,7 +127,7 @@ Sets the page size of results.
 
 ```yaml
 Type: System.Int32
-Parameter Sets: List, List3
+Parameter Sets: List2, List3
 Aliases:
 
 Required: False
@@ -161,7 +157,7 @@ Search items by search phrases
 
 ```yaml
 Type: System.String
-Parameter Sets: List, List3
+Parameter Sets: List2, List3
 Aliases:
 
 Required: False
@@ -176,7 +172,7 @@ key: id of sectionGroup
 
 ```yaml
 Type: System.String
-Parameter Sets: Get1, List
+Parameter Sets: Get1, List3
 Aliases:
 
 Required: True
@@ -191,7 +187,7 @@ Skip the first n items
 
 ```yaml
 Type: System.Int32
-Parameter Sets: List, List3
+Parameter Sets: List2, List3
 Aliases:
 
 Required: False
@@ -206,7 +202,7 @@ Order items by property values
 
 ```yaml
 Type: System.String[]
-Parameter Sets: List, List3
+Parameter Sets: List2, List3
 Aliases: OrderBy
 
 Required: False
@@ -221,7 +217,7 @@ Show only the first n items
 
 ```yaml
 Type: System.Int32
-Parameter Sets: List, List3
+Parameter Sets: List2, List3
 Aliases: Limit
 
 Required: False
@@ -236,7 +232,7 @@ key: id of user
 
 ```yaml
 Type: System.String
-Parameter Sets: Get1, List, List3
+Parameter Sets: Get1, List2, List3
 Aliases:
 
 Required: True

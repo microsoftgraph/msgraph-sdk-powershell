@@ -322,12 +322,14 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
         /// Signs out of the current session using the provided <see cref="IAuthContext"/>.
         /// </summary>
         /// <param name="authContext">The <see cref="IAuthContext"/> to sign-out from.</param>
-        public static async Task LogoutAsync()
+        public static async Task<IAuthContext> LogoutAsync()
         {
+            var authContext = GraphSession.Instance.AuthContext;
             GraphSession.Instance.InMemoryTokenCache.ClearCache();
             GraphSession.Instance.AuthContext = null;
             GraphSession.Instance.GraphHttpClient = null;
             await DeleteAuthRecordAsync().ConfigureAwait(false);
+            return authContext;
         }
 
         private static async Task<AuthenticationRecord> ReadAuthRecordAsync()

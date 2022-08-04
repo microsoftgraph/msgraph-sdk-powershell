@@ -619,24 +619,9 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: application
-      requestBody:
-        description: New navigation property ref value
-        content:
-          application/json:
-            schema:
-              type: object
-              additionalProperties:
-                type: object
-        required: true
       responses:
-        '201':
-          description: Created navigation property link.
-          content:
-            application/json:
-              schema:
-                type: object
-                additionalProperties:
-                  type: object
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -751,13 +736,6 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: application
-      requestBody:
-        description: New navigation property ref values
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/ReferenceUpdateSchema'
-        required: true
       responses:
         '204':
           description: Success
@@ -2078,24 +2056,9 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: application
-      requestBody:
-        description: New navigation property ref value
-        content:
-          application/json:
-            schema:
-              type: object
-              additionalProperties:
-                type: object
-        required: true
       responses:
-        '201':
-          description: Created navigation property link.
-          content:
-            application/json:
-              schema:
-                type: object
-                additionalProperties:
-                  type: object
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4372,24 +4335,9 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: application
-      requestBody:
-        description: New navigation property ref value
-        content:
-          application/json:
-            schema:
-              type: object
-              additionalProperties:
-                type: object
-        required: true
       responses:
-        '201':
-          description: Created navigation property link.
-          content:
-            application/json:
-              schema:
-                type: object
-                additionalProperties:
-                  type: object
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4576,24 +4524,9 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: application
-      requestBody:
-        description: New navigation property ref value
-        content:
-          application/json:
-            schema:
-              type: object
-              additionalProperties:
-                type: object
-        required: true
       responses:
-        '201':
-          description: Created navigation property link.
-          content:
-            application/json:
-              schema:
-                type: object
-                additionalProperties:
-                  type: object
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -6211,24 +6144,9 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: onPremisesAgent
-      requestBody:
-        description: New navigation property ref value
-        content:
-          application/json:
-            schema:
-              type: object
-              additionalProperties:
-                type: object
-        required: true
       responses:
-        '201':
-          description: Created navigation property link.
-          content:
-            application/json:
-              schema:
-                type: object
-                additionalProperties:
-                  type: object
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -6779,24 +6697,9 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: publishedResource
-      requestBody:
-        description: New navigation property ref value
-        content:
-          application/json:
-            schema:
-              type: object
-              additionalProperties:
-                type: object
-        required: true
       responses:
-        '201':
-          description: Created navigation property link.
-          content:
-            application/json:
-              schema:
-                type: object
-                additionalProperties:
-                  type: object
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -7243,24 +7146,9 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: onPremisesAgent
-      requestBody:
-        description: New navigation property ref value
-        content:
-          application/json:
-            schema:
-              type: object
-              additionalProperties:
-                type: object
-        required: true
       responses:
-        '201':
-          description: Created navigation property link.
-          content:
-            application/json:
-              schema:
-                type: object
-                additionalProperties:
-                  type: object
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -8169,24 +8057,9 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: connectorGroup
-      requestBody:
-        description: New navigation property ref value
-        content:
-          application/json:
-            schema:
-              type: object
-              additionalProperties:
-                type: object
-        required: true
       responses:
-        '201':
-          description: Created navigation property link.
-          content:
-            application/json:
-              schema:
-                type: object
-                additionalProperties:
-                  type: object
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -8634,24 +8507,9 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: connector
-      requestBody:
-        description: New navigation property ref value
-        content:
-          application/json:
-            schema:
-              type: object
-              additionalProperties:
-                type: object
-        required: true
       responses:
-        '201':
-          description: Created navigation property link.
-          content:
-            application/json:
-              schema:
-                type: object
-                additionalProperties:
-                  type: object
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -9131,24 +8989,9 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: publishedResource
-      requestBody:
-        description: New navigation property ref value
-        content:
-          application/json:
-            schema:
-              type: object
-              additionalProperties:
-                type: object
-        required: true
       responses:
-        '201':
-          description: Created navigation property link.
-          content:
-            application/json:
-              schema:
-                type: object
-                additionalProperties:
-                  type: object
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -10473,24 +10316,9 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
-      requestBody:
-        description: New navigation property ref value
-        content:
-          application/json:
-            schema:
-              type: object
-              additionalProperties:
-                type: object
-        required: true
       responses:
-        '201':
-          description: Created navigation property link.
-          content:
-            application/json:
-              schema:
-                type: object
-                additionalProperties:
-                  type: object
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -11499,24 +11327,9 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
-      requestBody:
-        description: New navigation property ref value
-        content:
-          application/json:
-            schema:
-              type: object
-              additionalProperties:
-                type: object
-        required: true
       responses:
-        '201':
-          description: Created navigation property link.
-          content:
-            application/json:
-              schema:
-                type: object
-                additionalProperties:
-                  type: object
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -12697,24 +12510,9 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
-      requestBody:
-        description: New navigation property ref value
-        content:
-          application/json:
-            schema:
-              type: object
-              additionalProperties:
-                type: object
-        required: true
       responses:
-        '201':
-          description: Created navigation property link.
-          content:
-            application/json:
-              schema:
-                type: object
-                additionalProperties:
-                  type: object
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -15621,7 +15419,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.apiApplication'
             appId:
               type: string
-              description: The unique identifier for the application that is assigned by Azure AD. Not nullable. Read-only.
+              description: The unique identifier for the application that is assigned by Azure AD. Not nullable. Read-only. Supports $filter (eq).
               nullable: true
             appRoles:
               type: array
@@ -15752,7 +15550,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.extensionProperty'
-              description: Read-only. Nullable. Supports $expand and $filter (eq when counting empty collections).
+              description: Read-only. Nullable. Supports $expand and $filter (eq and ne when counting empty collections and only with advanced query parameters).
             federatedIdentityCredentials:
               type: array
               items:
@@ -15808,16 +15606,6 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.connector'
           additionalProperties:
             type: object
-    ReferenceUpdateSchema:
-      type: object
-      properties:
-        '@odata.id':
-          type: string
-        '@odata.type':
-          type: string
-          nullable: true
-      additionalProperties:
-        type: object
     microsoft.graph.directoryObject:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -15856,7 +15644,7 @@ components:
               type: array
               items:
                 type: string
-              description: Following values are supported. Not nullable. UserGroupOrganizationDeviceApplication
+              description: Following values are supported. Not nullable. UserGroupAdministrativeUnitApplicationDeviceOrganization
           additionalProperties:
             type: object
     microsoft.graph.federatedIdentityCredential:

@@ -8,32 +8,30 @@ schema: 2.0.0
 # Update-MgIdentityConditionalAccessNamedLocation
 
 ## SYNOPSIS
-Read-only.
-Nullable.
-Returns a collection of the specified named locations.
+Update the navigation property namedLocations in identity
 
 ## SYNTAX
 
-### UpdateExpanded (Default)
+### UpdateExpanded1 (Default)
 ```
 Update-MgIdentityConditionalAccessNamedLocation -NamedLocationId <String> [-AdditionalProperties <Hashtable>]
  [-CreatedDateTime <DateTime>] [-DisplayName <String>] [-Id <String>] [-ModifiedDateTime <DateTime>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### Update
+### Update1
 ```
 Update-MgIdentityConditionalAccessNamedLocation -NamedLocationId <String>
  -BodyParameter <IMicrosoftGraphNamedLocation> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### UpdateViaIdentity
+### UpdateViaIdentity1
 ```
 Update-MgIdentityConditionalAccessNamedLocation -InputObject <IIdentitySignInsIdentity>
  -BodyParameter <IMicrosoftGraphNamedLocation> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### UpdateViaIdentityExpanded
+### UpdateViaIdentityExpanded1
 ```
 Update-MgIdentityConditionalAccessNamedLocation -InputObject <IIdentitySignInsIdentity>
  [-AdditionalProperties <Hashtable>] [-CreatedDateTime <DateTime>] [-DisplayName <String>] [-Id <String>]
@@ -41,9 +39,7 @@ Update-MgIdentityConditionalAccessNamedLocation -InputObject <IIdentitySignInsId
 ```
 
 ## DESCRIPTION
-Read-only.
-Nullable.
-Returns a collection of the specified named locations.
+Update the navigation property namedLocations in identity
 
 ## EXAMPLES
 
@@ -54,7 +50,7 @@ Additional Parameters
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -70,7 +66,7 @@ To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETE
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphNamedLocation
-Parameter Sets: Update, UpdateViaIdentity
+Parameter Sets: Update1, UpdateViaIdentity1
 Aliases:
 
 Required: True
@@ -87,7 +83,7 @@ Read-only.
 
 ```yaml
 Type: System.DateTime
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -102,7 +98,7 @@ Human-readable name of the location.
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -113,11 +109,11 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -133,7 +129,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
-Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
+Parameter Sets: UpdateViaIdentity1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: True
@@ -150,7 +146,7 @@ Read-only.
 
 ```yaml
 Type: System.DateTime
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -165,7 +161,7 @@ key: id of namedLocation
 
 ```yaml
 Type: System.String
-Parameter Sets: Update, UpdateExpanded
+Parameter Sets: Update1, UpdateExpanded1
 Aliases:
 
 Required: True
@@ -245,7 +241,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphNamedLocation>: namedLocation
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents creation date and time of the location using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
   - `[DisplayName <String>]`: Human-readable name of the location.
   - `[ModifiedDateTime <DateTime?>]`: The Timestamp type represents last modified date and time of the location using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
@@ -254,10 +250,15 @@ INPUTOBJECT <IIdentitySignInsIdentity>: Identity Parameter
   - `[ActivityBasedTimeoutPolicyId <String>]`: key: id of activityBasedTimeoutPolicy
   - `[AppManagementPolicyId <String>]`: key: id of appManagementPolicy
   - `[AuthenticationContextClassReferenceId <String>]`: key: id of authenticationContextClassReference
+  - `[AuthenticationMethodConfigurationId <String>]`: key: id of authenticationMethodConfiguration
   - `[AuthenticationMethodId <String>]`: key: id of authenticationMethod
   - `[AuthorizationPolicyId <String>]`: key: id of authorizationPolicy
+  - `[B2CIdentityUserFlowId <String>]`: key: id of b2cIdentityUserFlow
+  - `[B2XIdentityUserFlowId <String>]`: key: id of b2xIdentityUserFlow
   - `[BitlockerRecoveryKeyId <String>]`: key: id of bitlockerRecoveryKey
+  - `[CertificateBasedAuthConfigurationId <String>]`: key: id of certificateBasedAuthConfiguration
   - `[ClaimsMappingPolicyId <String>]`: key: id of claimsMappingPolicy
+  - `[CommandId <String>]`: key: id of command
   - `[ConditionalAccessPolicyId <String>]`: key: id of conditionalAccessPolicy
   - `[CrossTenantAccessPolicyConfigurationPartnerTenantId <String>]`: key: tenantId of crossTenantAccessPolicyConfigurationPartner
   - `[DataLossPreventionPolicyId <String>]`: key: id of dataLossPreventionPolicy
@@ -265,10 +266,16 @@ INPUTOBJECT <IIdentitySignInsIdentity>: Identity Parameter
   - `[DefaultUserRoleOverrideId <String>]`: key: id of defaultUserRoleOverride
   - `[DirectoryObjectId <String>]`: key: id of directoryObject
   - `[EmailAuthenticationMethodId <String>]`: key: id of emailAuthenticationMethod
+  - `[ExtensionId <String>]`: key: id of extension
   - `[FeatureRolloutPolicyId <String>]`: key: id of featureRolloutPolicy
   - `[Fido2AuthenticationMethodId <String>]`: key: id of fido2AuthenticationMethod
+  - `[GroupId <String>]`: key: id of group
   - `[HomeRealmDiscoveryPolicyId <String>]`: key: id of homeRealmDiscoveryPolicy
+  - `[IdentityApiConnectorId <String>]`: key: id of identityApiConnector
+  - `[IdentityProviderBaseId <String>]`: key: id of identityProviderBase
   - `[IdentityProviderId <String>]`: key: id of identityProvider
+  - `[IdentityUserFlowAttributeAssignmentId <String>]`: key: id of identityUserFlowAttributeAssignment
+  - `[IdentityUserFlowAttributeId <String>]`: key: id of identityUserFlowAttribute
   - `[IdentityUserFlowId <String>]`: key: id of identityUserFlow
   - `[InformationProtectionLabelId <String>]`: key: id of informationProtectionLabel
   - `[LongRunningOperationId <String>]`: key: id of longRunningOperation
@@ -283,12 +290,15 @@ INPUTOBJECT <IIdentitySignInsIdentity>: Identity Parameter
   - `[PermissionGrantPolicyId <String>]`: key: id of permissionGrantPolicy
   - `[PhoneAuthenticationMethodId <String>]`: key: id of phoneAuthenticationMethod
   - `[RiskDetectionId <String>]`: key: id of riskDetection
+  - `[RiskyServicePrincipalHistoryItemId <String>]`: key: id of riskyServicePrincipalHistoryItem
+  - `[RiskyServicePrincipalId <String>]`: key: id of riskyServicePrincipal
   - `[RiskyUserHistoryItemId <String>]`: key: id of riskyUserHistoryItem
   - `[RiskyUserId <String>]`: key: id of riskyUser
   - `[SensitivityLabelId <String>]`: key: id of sensitivityLabel
   - `[SensitivityLabelId1 <String>]`: key: id of sensitivityLabel
   - `[ServicePrincipalCreationConditionSetId <String>]`: key: id of servicePrincipalCreationConditionSet
   - `[ServicePrincipalCreationPolicyId <String>]`: key: id of servicePrincipalCreationPolicy
+  - `[ServicePrincipalRiskDetectionId <String>]`: key: id of servicePrincipalRiskDetection
   - `[SoftwareOathAuthenticationMethodId <String>]`: key: id of softwareOathAuthenticationMethod
   - `[TemporaryAccessPassAuthenticationMethodId <String>]`: key: id of temporaryAccessPassAuthenticationMethod
   - `[ThreatAssessmentRequestId <String>]`: key: id of threatAssessmentRequest
@@ -300,6 +310,9 @@ INPUTOBJECT <IIdentitySignInsIdentity>: Identity Parameter
   - `[UnifiedRoleManagementPolicyAssignmentId <String>]`: key: id of unifiedRoleManagementPolicyAssignment
   - `[UnifiedRoleManagementPolicyId <String>]`: key: id of unifiedRoleManagementPolicy
   - `[UnifiedRoleManagementPolicyRuleId <String>]`: key: id of unifiedRoleManagementPolicyRule
+  - `[UsageRightId <String>]`: key: id of usageRight
+  - `[UserFlowLanguageConfigurationId <String>]`: key: id of userFlowLanguageConfiguration
+  - `[UserFlowLanguagePageId <String>]`: key: id of userFlowLanguagePage
   - `[UserId <String>]`: key: id of user
   - `[WindowsHelloForBusinessAuthenticationMethodId <String>]`: key: id of windowsHelloForBusinessAuthenticationMethod
 

@@ -8,9 +8,7 @@ schema: 2.0.0
 # Remove-MgSiteOnenotePage
 
 ## SYNOPSIS
-The pages in all OneNote notebooks that are owned by the user or group.
-Read-only.
-Nullable.
+Delete navigation property pages for sites
 
 ## SYNTAX
 
@@ -27,9 +25,7 @@ Remove-MgSiteOnenotePage -InputObject <INotesIdentity> [-IfMatch <String>] [-Pas
 ```
 
 ## DESCRIPTION
-The pages in all OneNote notebooks that are owned by the user or group.
-Read-only.
-Nullable.
+Delete navigation property pages for sites
 
 ## EXAMPLES
 

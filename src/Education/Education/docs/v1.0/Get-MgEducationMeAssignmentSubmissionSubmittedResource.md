@@ -8,8 +8,7 @@ schema: 2.0.0
 # Get-MgEducationMeAssignmentSubmissionSubmittedResource
 
 ## SYNOPSIS
-Read-only.
-Nullable.
+Get submittedResources from education
 
 ## SYNTAX
 
@@ -35,8 +34,7 @@ Get-MgEducationMeAssignmentSubmissionSubmittedResource -InputObject <IEducationI
 ```
 
 ## DESCRIPTION
-Read-only.
-Nullable.
+Get submittedResources from education
 
 ## EXAMPLES
 

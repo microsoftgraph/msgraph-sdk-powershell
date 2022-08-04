@@ -182,9 +182,9 @@ To create the parameters described below, construct a hash table containing the 
 BODYPARAMETER <IMicrosoftGraphOfficeConfiguration>: officeConfiguration
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[ClientConfigurations <IMicrosoftGraphOfficeClientConfiguration[]>]`: List of office Client configuration.
-    - `[Id <String>]`: Read-only.
+    - `[Id <String>]`: 
     - `[Assignments <IMicrosoftGraphOfficeClientConfigurationAssignment[]>]`: The list of group assignments for the policy.
-      - `[Id <String>]`: Read-only.
+      - `[Id <String>]`: 
       - `[Target <IMicrosoftGraphOfficeConfigurationAssignmentTarget>]`: officeConfigurationAssignmentTarget
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[CheckinStatuses <IMicrosoftGraphOfficeClientCheckinStatus[]>]`: List of office Client check-in status.
@@ -210,9 +210,9 @@ BODYPARAMETER <IMicrosoftGraphOfficeConfiguration>: officeConfiguration
   - `[TenantUserCheckinSummary <IMicrosoftGraphOfficeUserCheckinSummary>]`: officeUserCheckinSummary
 
 CLIENTCONFIGURATIONS <IMicrosoftGraphOfficeClientConfiguration[]>: List of office Client configuration.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[Assignments <IMicrosoftGraphOfficeClientConfigurationAssignment[]>]`: The list of group assignments for the policy.
-    - `[Id <String>]`: Read-only.
+    - `[Id <String>]`: 
     - `[Target <IMicrosoftGraphOfficeConfigurationAssignmentTarget>]`: officeConfigurationAssignmentTarget
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[CheckinStatuses <IMicrosoftGraphOfficeClientCheckinStatus[]>]`: List of office Client check-in status.

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgEducationClassGroup
 
 ## SYNOPSIS
-The underlying Microsoft 365 group object.
+Get group from education
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Get-MgEducationClassGroup -InputObject <IEducationIdentity> [-ExpandProperty <St
 ```
 
 ## DESCRIPTION
-The underlying Microsoft 365 group object.
+Get group from education
 
 ## EXAMPLES
 

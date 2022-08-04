@@ -12,13 +12,13 @@ Invoke action unpublish
 
 ## SYNTAX
 
-### Unpublish1 (Default)
+### Unpublish (Default)
 ```
 Unpublish-MgSiteContentType -ContentTypeId <String> -SiteId <String> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
-### UnpublishViaIdentity1
+### UnpublishViaIdentity
 ```
 Unpublish-MgSiteContentType -InputObject <ISitesIdentity> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -36,7 +36,7 @@ key: id of contentType
 
 ```yaml
 Type: System.String
-Parameter Sets: Unpublish1
+Parameter Sets: Unpublish
 Aliases:
 
 Required: True
@@ -52,7 +52,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.ISitesIdentity
-Parameter Sets: UnpublishViaIdentity1
+Parameter Sets: UnpublishViaIdentity
 Aliases:
 
 Required: True
@@ -82,7 +82,7 @@ key: id of site
 
 ```yaml
 Type: System.String
-Parameter Sets: Unpublish1
+Parameter Sets: Unpublish
 Aliases:
 
 Required: True
@@ -144,34 +144,40 @@ To create the parameters described below, construct a hash table containing the 
 
 
 INPUTOBJECT <ISitesIdentity>: Identity Parameter
+  - `[BaseItemId <String>]`: key: id of baseItem
   - `[ColumnDefinitionId <String>]`: key: id of columnDefinition
   - `[ColumnLinkId <String>]`: key: id of columnLink
   - `[ContentTypeId <String>]`: key: id of contentType
-  - `[EndDateTime <String>]`: Usage: endDateTime={endDateTime}
+  - `[ContentTypeId1 <String>]`: key: id of contentType
+  - `[DocumentSetVersionId <String>]`: key: id of documentSetVersion
+  - `[DriveId <String>]`: key: id of drive
+  - `[EndDateTime <String>]`: Usage: endDateTime='{endDateTime}'
   - `[GroupId <String>]`: key: id of group
+  - `[GroupId1 <String>]`: key: id of group
   - `[IncludePersonalNotebooks <Boolean?>]`: Usage: includePersonalNotebooks={includePersonalNotebooks}
-  - `[Interval <String>]`: Usage: interval={interval}
+  - `[Interval <String>]`: Usage: interval='{interval}'
   - `[ListId <String>]`: key: id of list
-  - `[ListId1 <String>]`: Usage: listId={listId}
+  - `[ListId1 <String>]`: Usage: listId='{listId}'
   - `[ListItemId <String>]`: key: id of listItem
   - `[ListItemVersionId <String>]`: key: id of listItemVersion
   - `[NotebookId <String>]`: key: id of notebook
   - `[OnenotePageId <String>]`: key: id of onenotePage
   - `[OnenoteSectionId <String>]`: key: id of onenoteSection
-  - `[Path <String>]`: Usage: path={path}
+  - `[Path <String>]`: Usage: path='{path}'
   - `[PermissionId <String>]`: key: id of permission
   - `[RelationId <String>]`: key: id of relation
   - `[RichLongRunningOperationId <String>]`: key: id of richLongRunningOperation
   - `[SetId <String>]`: key: id of set
   - `[SetId1 <String>]`: key: id of set
   - `[SiteId <String>]`: key: id of site
+  - `[SiteId1 <String>]`: key: id of site
   - `[SitePageId <String>]`: key: id of sitePage
-  - `[StartDateTime <String>]`: Usage: startDateTime={startDateTime}
+  - `[StartDateTime <String>]`: Usage: startDateTime='{startDateTime}'
   - `[StoreId <String>]`: key: id of store
   - `[SubscriptionId <String>]`: key: id of subscription
   - `[TermId <String>]`: key: id of term
   - `[TermId1 <String>]`: key: id of term
-  - `[Token <String>]`: Usage: token={token}
+  - `[Token <String>]`: Usage: token='{token}'
   - `[UserId <String>]`: key: id of user
 
 ## RELATED LINKS

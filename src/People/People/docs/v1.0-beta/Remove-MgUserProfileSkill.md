@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgUserProfileSkill
 
 ## SYNOPSIS
-Represents detailed information about skills associated with a user in various services.
+Delete navigation property skills for users
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Remove-MgUserProfileSkill -InputObject <IPeopleIdentity> [-IfMatch <String>] [-P
 ```
 
 ## DESCRIPTION
-Represents detailed information about skills associated with a user in various services.
+Delete navigation property skills for users
 
 ## EXAMPLES
 

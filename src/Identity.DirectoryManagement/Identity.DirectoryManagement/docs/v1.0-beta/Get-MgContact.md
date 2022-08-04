@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgContact
 
 ## SYNOPSIS
-Get entity from contacts by key
+Get orgContact
 
 ## SYNTAX
 
@@ -21,18 +21,17 @@ Get-MgContact [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String
 
 ### Get
 ```
-Get-MgContact -OrgContactId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
- [-ConsistencyLevel <String>] [<CommonParameters>]
+Get-MgContact -OrgContactId <String> [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
 Get-MgContact -InputObject <IIdentityDirectoryManagementIdentity> [-ExpandProperty <String[]>]
- [-Property <String[]>] [-ConsistencyLevel <String>] [<CommonParameters>]
+ [-Property <String[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Get entity from contacts by key
+Get orgContact
 
 ## EXAMPLES
 
@@ -67,11 +66,11 @@ Accept wildcard characters: False
 
 ### -ConsistencyLevel
 Indicates the requested consistency level.
-Documentation URL: https://developer.microsoft.com/en-us/office/blogs/microsoft-graph-advanced-queries-for-directory-objects-are-now-generally-available/
+Documentation URL: https://docs.microsoft.com/graph/aad-advanced-queries
 
 ```yaml
 Type: System.String
-Parameter Sets: (All)
+Parameter Sets: List
 Aliases:
 
 Required: False
@@ -290,6 +289,7 @@ INPUTOBJECT <IIdentityDirectoryManagementIdentity>: Identity Parameter
   - `[InternalDomainFederationId <String>]`: key: id of internalDomainFederation
   - `[OrgContactId <String>]`: key: id of orgContact
   - `[OrganizationId <String>]`: key: id of organization
+  - `[OrganizationalBrandingLocalizationId <String>]`: key: id of organizationalBrandingLocalization
   - `[OutboundSharedUserProfileUserId <String>]`: key: userId of outboundSharedUserProfile
   - `[ProfileCardPropertyId <String>]`: key: id of profileCardProperty
   - `[RecommendationId <String>]`: key: id of recommendation

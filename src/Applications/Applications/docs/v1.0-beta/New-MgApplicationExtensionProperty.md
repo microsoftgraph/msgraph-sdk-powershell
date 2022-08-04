@@ -8,8 +8,7 @@ schema: 2.0.0
 # New-MgApplicationExtensionProperty
 
 ## SYNOPSIS
-Read-only.
-Nullable.
+Create new navigation property to extensionProperties for applications
 
 ## SYNTAX
 
@@ -42,8 +41,7 @@ New-MgApplicationExtensionProperty -InputObject <IApplicationsIdentity> [-Additi
 ```
 
 ## DESCRIPTION
-Read-only.
-Nullable.
+Create new navigation property to extensionProperties for applications
 
 ## EXAMPLES
 
@@ -147,7 +145,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -212,7 +210,7 @@ Accept wildcard characters: False
 ### -TargetObjects
 Following values are supported.
 Not nullable.
-UserGroupOrganizationDeviceApplication
+UserGroupAdministrativeUnitApplicationDeviceOrganization
 
 ```yaml
 Type: System.String[]
@@ -282,36 +280,41 @@ To create the parameters described below, construct a hash table containing the 
 BODYPARAMETER <IMicrosoftGraphExtensionProperty>: extensionProperty
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[AppDisplayName <String>]`: Display name of the application object on which this extension property is defined. Read-only.
   - `[DataType <String>]`: Specifies the data type of the value the extension property can hold. Following values are supported. Not nullable. Binary - 256 bytes maximumBooleanDateTime - Must be specified in ISO 8601 format. Will be stored in UTC.Integer - 32-bit value.LargeInteger - 64-bit value.String - 256 characters maximum
   - `[IsSyncedFromOnPremises <Boolean?>]`: Indicates if this extension property was synced from on-premises active directory using Azure AD Connect. Read-only.
   - `[Name <String>]`: Name of the extension property. Not nullable.
-  - `[TargetObjects <String[]>]`: Following values are supported. Not nullable. UserGroupOrganizationDeviceApplication
+  - `[TargetObjects <String[]>]`: Following values are supported. Not nullable. UserGroupAdministrativeUnitApplicationDeviceOrganization
 
 INPUTOBJECT <IApplicationsIdentity>: Identity Parameter
+  - `[AppManagementPolicyId <String>]`: key: id of appManagementPolicy
   - `[AppRoleAssignmentId <String>]`: key: id of appRoleAssignment
   - `[ApplicationId <String>]`: key: id of application
   - `[ApplicationTemplateId <String>]`: key: id of applicationTemplate
+  - `[ClaimsMappingPolicyId <String>]`: key: id of claimsMappingPolicy
   - `[ConnectorGroupId <String>]`: key: id of connectorGroup
   - `[ConnectorId <String>]`: key: id of connector
   - `[DelegatedPermissionClassificationId <String>]`: key: id of delegatedPermissionClassification
   - `[DirectoryDefinitionId <String>]`: key: id of directoryDefinition
+  - `[DirectoryObjectId <String>]`: key: id of directoryObject
   - `[EndpointId <String>]`: key: id of endpoint
   - `[ExtensionPropertyId <String>]`: key: id of extensionProperty
   - `[FederatedIdentityCredentialId <String>]`: key: id of federatedIdentityCredential
   - `[GroupId <String>]`: key: id of group
+  - `[HomeRealmDiscoveryPolicyId <String>]`: key: id of homeRealmDiscoveryPolicy
   - `[LicenseDetailsId <String>]`: key: id of licenseDetails
+  - `[OAuth2PermissionGrantId <String>]`: key: id of oAuth2PermissionGrant
   - `[OnPremisesAgentGroupId <String>]`: key: id of onPremisesAgentGroup
   - `[OnPremisesAgentGroupId1 <String>]`: key: id of onPremisesAgentGroup
   - `[OnPremisesAgentId <String>]`: key: id of onPremisesAgent
-  - `[OnPremisesAgentId1 <String>]`: key: id of onPremisesAgent
   - `[OnPremisesPublishingProfileId <String>]`: key: id of onPremisesPublishingProfile
   - `[PublishedResourceId <String>]`: key: id of publishedResource
-  - `[PublishedResourceId1 <String>]`: key: id of publishedResource
   - `[ServicePrincipalId <String>]`: key: id of servicePrincipal
   - `[SynchronizationJobId <String>]`: key: id of synchronizationJob
   - `[SynchronizationTemplateId <String>]`: key: id of synchronizationTemplate
+  - `[TokenIssuancePolicyId <String>]`: key: id of tokenIssuancePolicy
+  - `[TokenLifetimePolicyId <String>]`: key: id of tokenLifetimePolicy
   - `[UserId <String>]`: key: id of user
 
 ## RELATED LINKS

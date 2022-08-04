@@ -8,9 +8,7 @@ schema: 2.0.0
 # Get-MgPlannerTaskProgressTaskBoardFormat
 
 ## SYNOPSIS
-Read-only.
-Nullable.
-Used to render the task correctly in the task board view when grouped by progress.
+Get progressTaskBoardFormat from planner
 
 ## SYNTAX
 
@@ -27,9 +25,7 @@ Get-MgPlannerTaskProgressTaskBoardFormat -InputObject <IPlannerIdentity> [-Expan
 ```
 
 ## DESCRIPTION
-Read-only.
-Nullable.
-Used to render the task correctly in the task board view when grouped by progress.
+Get progressTaskBoardFormat from planner
 
 ## EXAMPLES
 

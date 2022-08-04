@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgDeviceManagementUserExperienceAnalyticBatteryHealthRuntimeDetail
 
 ## SYNOPSIS
-User Experience Analytics Battery Health Runtime Details
+Delete navigation property userExperienceAnalyticsBatteryHealthRuntimeDetails for deviceManagement
 
 ## SYNTAX
 
@@ -18,7 +18,7 @@ Remove-MgDeviceManagementUserExperienceAnalyticBatteryHealthRuntimeDetail [-IfMa
 ```
 
 ## DESCRIPTION
-User Experience Analytics Battery Health Runtime Details
+Delete navigation property userExperienceAnalyticsBatteryHealthRuntimeDetails for deviceManagement
 
 ## EXAMPLES
 

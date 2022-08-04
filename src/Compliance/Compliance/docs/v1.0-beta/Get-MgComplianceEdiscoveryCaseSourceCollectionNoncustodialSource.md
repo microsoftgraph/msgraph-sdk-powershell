@@ -8,18 +8,32 @@ schema: 2.0.0
 # Get-MgComplianceEdiscoveryCaseSourceCollectionNoncustodialSource
 
 ## SYNOPSIS
-noncustodialDataSource sources that are included in the sourceCollection
+Get noncustodialSources from compliance
 
 ## SYNTAX
 
+### List (Default)
 ```
 Get-MgComplianceEdiscoveryCaseSourceCollectionNoncustodialSource -CaseId <String> -SourceCollectionId <String>
  [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>]
  [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
+### Get
+```
+Get-MgComplianceEdiscoveryCaseSourceCollectionNoncustodialSource -CaseId <String>
+ -NoncustodialDataSourceId <String> -SourceCollectionId <String> [-ExpandProperty <String[]>]
+ [-Property <String[]>] [<CommonParameters>]
+```
+
+### GetViaIdentity
+```
+Get-MgComplianceEdiscoveryCaseSourceCollectionNoncustodialSource -InputObject <IComplianceIdentity>
+ [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
+```
+
 ## DESCRIPTION
-noncustodialDataSource sources that are included in the sourceCollection
+Get noncustodialSources from compliance
 
 ## EXAMPLES
 
@@ -30,7 +44,7 @@ List all pages.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
+Parameter Sets: List
 Aliases:
 
 Required: False
@@ -45,7 +59,7 @@ key: id of case
 
 ```yaml
 Type: System.String
-Parameter Sets: (All)
+Parameter Sets: Get, List
 Aliases:
 
 Required: True
@@ -61,7 +75,7 @@ By default, this variable will be set in the global scope.
 
 ```yaml
 Type: System.String
-Parameter Sets: (All)
+Parameter Sets: List
 Aliases: CV
 
 Required: False
@@ -91,10 +105,41 @@ Filter items by property values
 
 ```yaml
 Type: System.String
-Parameter Sets: (All)
+Parameter Sets: List
 Aliases:
 
 Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -InputObject
+Identity Parameter
+To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
+
+```yaml
+Type: Microsoft.Graph.PowerShell.Models.IComplianceIdentity
+Parameter Sets: GetViaIdentity
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### -NoncustodialDataSourceId
+key: id of noncustodialDataSource
+
+```yaml
+Type: System.String
+Parameter Sets: Get
+Aliases:
+
+Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -106,7 +151,7 @@ Sets the page size of results.
 
 ```yaml
 Type: System.Int32
-Parameter Sets: (All)
+Parameter Sets: List
 Aliases:
 
 Required: False
@@ -136,7 +181,7 @@ Search items by search phrases
 
 ```yaml
 Type: System.String
-Parameter Sets: (All)
+Parameter Sets: List
 Aliases:
 
 Required: False
@@ -151,7 +196,7 @@ Skip the first n items
 
 ```yaml
 Type: System.Int32
-Parameter Sets: (All)
+Parameter Sets: List
 Aliases:
 
 Required: False
@@ -166,7 +211,7 @@ Order items by property values
 
 ```yaml
 Type: System.String[]
-Parameter Sets: (All)
+Parameter Sets: List
 Aliases: OrderBy
 
 Required: False
@@ -181,7 +226,7 @@ key: id of sourceCollection
 
 ```yaml
 Type: System.String
-Parameter Sets: (All)
+Parameter Sets: Get, List
 Aliases:
 
 Required: True
@@ -196,7 +241,7 @@ Show only the first n items
 
 ```yaml
 Type: System.Int32
-Parameter Sets: (All)
+Parameter Sets: List
 Aliases: Limit
 
 Required: False
@@ -211,6 +256,8 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
+### Microsoft.Graph.PowerShell.Models.IComplianceIdentity
+
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEdiscoveryNoncustodialDataSource
@@ -218,6 +265,27 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## NOTES
 
 ALIASES
+
+COMPLEX PARAMETER PROPERTIES
+
+To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
+
+
+INPUTOBJECT <IComplianceIdentity>: Identity Parameter
+  - `[CaseId <String>]`: key: id of case
+  - `[CaseOperationId <String>]`: key: id of caseOperation
+  - `[CustodianId <String>]`: key: id of custodian
+  - `[DataSourceId <String>]`: key: id of dataSource
+  - `[LegalHoldId <String>]`: key: id of legalHold
+  - `[NoncustodialDataSourceId <String>]`: key: id of noncustodialDataSource
+  - `[ReviewSetId <String>]`: key: id of reviewSet
+  - `[ReviewSetQueryId <String>]`: key: id of reviewSetQuery
+  - `[SiteSourceId <String>]`: key: id of siteSource
+  - `[SourceCollectionId <String>]`: key: id of sourceCollection
+  - `[TagId <String>]`: key: id of tag
+  - `[TagId1 <String>]`: key: id of tag
+  - `[UnifiedGroupSourceId <String>]`: key: id of unifiedGroupSource
+  - `[UserSourceId <String>]`: key: id of userSource
 
 ## RELATED LINKS
 

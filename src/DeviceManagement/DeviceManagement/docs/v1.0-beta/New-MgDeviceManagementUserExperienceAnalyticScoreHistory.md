@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgDeviceManagementUserExperienceAnalyticScoreHistory
 
 ## SYNOPSIS
-User experience analytics device Startup Score History
+Create new navigation property to userExperienceAnalyticsScoreHistory for deviceManagement
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ New-MgDeviceManagementUserExperienceAnalyticScoreHistory
 ```
 
 ## DESCRIPTION
-User experience analytics device Startup Score History
+Create new navigation property to userExperienceAnalyticsScoreHistory for deviceManagement
 
 ## EXAMPLES
 
@@ -63,7 +63,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -145,7 +145,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphUserExperienceAnalyticsScoreHistory>: The user experience analytics device startup score history.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[StartupDateTime <DateTime?>]`: The user experience analytics device startup date time.
 
 ## RELATED LINKS

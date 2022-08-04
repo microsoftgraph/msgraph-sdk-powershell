@@ -8,42 +8,22 @@ schema: 2.0.0
 # Set-MgUserManagerByRef
 
 ## SYNOPSIS
-The user or contact that is this user's manager.
-Read-only.
-(HTTP Methods: GET, PUT, DELETE.).
-Supports $expand.
+Update the ref of navigation property manager in users
 
 ## SYNTAX
 
-### SetExpanded (Default)
+### Set1 (Default)
 ```
-Set-MgUserManagerByRef -UserId <String> [-AdditionalProperties <Hashtable>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
-```
-
-### Set
-```
-Set-MgUserManagerByRef -UserId <String> -BodyParameter <Hashtable> [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+Set-MgUserManagerByRef -UserId <String> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### SetViaIdentity
+### SetViaIdentity1
 ```
-Set-MgUserManagerByRef -InputObject <IUsersIdentity> -BodyParameter <Hashtable> [-PassThru] [-Confirm]
- [-WhatIf] [<CommonParameters>]
-```
-
-### SetViaIdentityExpanded
-```
-Set-MgUserManagerByRef -InputObject <IUsersIdentity> [-AdditionalProperties <Hashtable>] [-PassThru]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+Set-MgUserManagerByRef -InputObject <IUsersIdentity> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-The user or contact that is this user's manager.
-Read-only.
-(HTTP Methods: GET, PUT, DELETE.).
-Supports $expand.
+Update the ref of navigation property manager in users
 
 ## EXAMPLES
 
@@ -61,43 +41,13 @@ The second command sets the manager for user defined by the UserId as the value 
 
 ## PARAMETERS
 
-### -AdditionalProperties
-Additional Parameters
-
-```yaml
-Type: System.Collections.Hashtable
-Parameter Sets: SetExpanded, SetViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -BodyParameter
-.
-
-```yaml
-Type: System.Collections.Hashtable
-Parameter Sets: Set, SetViaIdentity
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -InputObject
 Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IUsersIdentity
-Parameter Sets: SetViaIdentity, SetViaIdentityExpanded
+Parameter Sets: SetViaIdentity1
 Aliases:
 
 Required: True
@@ -127,7 +77,7 @@ key: id of user
 
 ```yaml
 Type: System.String
-Parameter Sets: Set, SetExpanded
+Parameter Sets: Set1
 Aliases:
 
 Required: True
@@ -175,8 +125,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IUsersIdentity
 
-### System.Collections.Hashtable
-
 ## OUTPUTS
 
 ### System.Boolean
@@ -191,12 +139,17 @@ To create the parameters described below, construct a hash table containing the 
 
 
 INPUTOBJECT <IUsersIdentity>: Identity Parameter
+  - `[AttachmentBaseId <String>]`: key: id of attachmentBase
   - `[AttachmentId <String>]`: key: id of attachment
+  - `[AttachmentSessionId <String>]`: key: id of attachmentSession
+  - `[ChecklistItemId <String>]`: key: id of checklistItem
+  - `[DirectoryObjectId <String>]`: key: id of directoryObject
   - `[ExtensionId <String>]`: key: id of extension
   - `[LicenseDetailsId <String>]`: key: id of licenseDetails
   - `[LinkedResourceId <String>]`: key: id of linkedResource
   - `[MultiValueLegacyExtendedPropertyId <String>]`: key: id of multiValueLegacyExtendedProperty
   - `[NotificationId <String>]`: key: id of notification
+  - `[OAuth2PermissionGrantId <String>]`: key: id of oAuth2PermissionGrant
   - `[OutlookCategoryId <String>]`: key: id of outlookCategory
   - `[OutlookTaskFolderId <String>]`: key: id of outlookTaskFolder
   - `[OutlookTaskGroupId <String>]`: key: id of outlookTaskGroup

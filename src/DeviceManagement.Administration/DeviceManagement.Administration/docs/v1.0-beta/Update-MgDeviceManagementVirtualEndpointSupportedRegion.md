@@ -8,15 +8,15 @@ schema: 2.0.0
 # Update-MgDeviceManagementVirtualEndpointSupportedRegion
 
 ## SYNOPSIS
-Cloud PC supported regions.
+Update the navigation property supportedRegions in deviceManagement
 
 ## SYNTAX
 
 ### UpdateExpanded (Default)
 ```
 Update-MgDeviceManagementVirtualEndpointSupportedRegion -CloudPcSupportedRegionId <String>
- [-AdditionalProperties <Hashtable>] [-DisplayName <String>] [-Id <String>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-AdditionalProperties <Hashtable>] [-DisplayName <String>] [-Id <String>] [-RegionStatus <String>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
@@ -34,12 +34,12 @@ Update-MgDeviceManagementVirtualEndpointSupportedRegion -InputObject <IDeviceMan
 ### UpdateViaIdentityExpanded
 ```
 Update-MgDeviceManagementVirtualEndpointSupportedRegion -InputObject <IDeviceManagementAdministrationIdentity>
- [-AdditionalProperties <Hashtable>] [-DisplayName <String>] [-Id <String>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-AdditionalProperties <Hashtable>] [-DisplayName <String>] [-Id <String>] [-RegionStatus <String>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Cloud PC supported regions.
+Update the navigation property supportedRegions in deviceManagement
 
 ## EXAMPLES
 
@@ -108,7 +108,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -144,6 +144,21 @@ Returns true when the command succeeds
 ```yaml
 Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -RegionStatus
+cloudPcSupportedRegionStatus
+
+```yaml
+Type: System.String
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -208,14 +223,16 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphCloudPcSupportedRegion>: cloudPcSupportedRegion
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[DisplayName <String>]`: The name for the supported region. Read-only.
+  - `[RegionStatus <String>]`: cloudPcSupportedRegionStatus
 
 INPUTOBJECT <IDeviceManagementAdministrationIdentity>: Identity Parameter
   - `[AuditEventId <String>]`: key: id of auditEvent
   - `[CartToClassAssociationId <String>]`: key: id of cartToClassAssociation
   - `[CloudPcAuditEventId <String>]`: key: id of cloudPcAuditEvent
   - `[CloudPcDeviceImageId <String>]`: key: id of cloudPcDeviceImage
+  - `[CloudPcExternalPartnerSettingId <String>]`: key: id of cloudPcExternalPartnerSetting
   - `[CloudPcGalleryImageId <String>]`: key: id of cloudPcGalleryImage
   - `[CloudPcId <String>]`: key: id of cloudPC
   - `[CloudPcOnPremisesConnectionId <String>]`: key: id of cloudPcOnPremisesConnection
@@ -234,6 +251,7 @@ INPUTOBJECT <IDeviceManagementAdministrationIdentity>: Identity Parameter
   - `[DeviceManagementExchangeOnPremisesPolicyId <String>]`: key: id of deviceManagementExchangeOnPremisesPolicy
   - `[DeviceManagementPartnerId <String>]`: key: id of deviceManagementPartner
   - `[GroupPolicyCategoryId <String>]`: key: id of groupPolicyCategory
+  - `[GroupPolicyCategoryId1 <String>]`: key: id of groupPolicyCategory
   - `[GroupPolicyDefinitionFileId <String>]`: key: id of groupPolicyDefinitionFile
   - `[GroupPolicyDefinitionId <String>]`: key: id of groupPolicyDefinition
   - `[GroupPolicyMigrationReportId <String>]`: key: id of groupPolicyMigrationReport

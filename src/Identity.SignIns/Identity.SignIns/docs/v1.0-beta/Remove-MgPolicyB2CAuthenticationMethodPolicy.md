@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgPolicyB2CAuthenticationMethodPolicy
 
 ## SYNOPSIS
-The Azure AD B2C policies that define how end users register via local accounts.
+Delete navigation property b2cAuthenticationMethodsPolicy for policies
 
 ## SYNTAX
 
@@ -18,7 +18,7 @@ Remove-MgPolicyB2CAuthenticationMethodPolicy [-IfMatch <String>] [-PassThru] [-C
 ```
 
 ## DESCRIPTION
-The Azure AD B2C policies that define how end users register via local accounts.
+Delete navigation property b2cAuthenticationMethodsPolicy for policies
 
 ## EXAMPLES
 

@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgDeviceManagementUserExperienceAnalyticBatteryHealthModelPerformance
 
 ## SYNOPSIS
-User Experience Analytics Battery Health Model Performance
+Create new navigation property to userExperienceAnalyticsBatteryHealthModelPerformance for deviceManagement
 
 ## SYNTAX
 
@@ -17,7 +17,8 @@ User Experience Analytics Battery Health Model Performance
 New-MgDeviceManagementUserExperienceAnalyticBatteryHealthModelPerformance [-ActiveDevices <Int32>]
  [-AdditionalProperties <Hashtable>] [-AverageBatteryAgeInDays <Int32>]
  [-AverageEstimatedRuntimeInMinutes <Int32>] [-AverageMaxCapacityPercentage <Int32>] [-Id <String>]
- [-Manufacturer <String>] [-Model <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Manufacturer <String>] [-Model <String>] [-ModelBatteryHealthScore <Int32>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Create
@@ -28,7 +29,7 @@ New-MgDeviceManagementUserExperienceAnalyticBatteryHealthModelPerformance
 ```
 
 ## DESCRIPTION
-User Experience Analytics Battery Health Model Performance
+Create new navigation property to userExperienceAnalyticsBatteryHealthModelPerformance for deviceManagement
 
 ## EXAMPLES
 
@@ -134,7 +135,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -168,6 +169,23 @@ The model name of the device.
 
 ```yaml
 Type: System.String
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ModelBatteryHealthScore
+A weighted average of a model’s maximum capacity score and runtime estimate score.
+Values range from 0-100.
+Valid values -2147483648 to 2147483647
+
+```yaml
+Type: System.Int32
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -231,13 +249,14 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphUserExperienceAnalyticsBatteryHealthModelPerformance>: The user experience analytics battery health model performance entity contains battery related information for all unique device models in their organization.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[ActiveDevices <Int32?>]`: Number of active devices for that model. Valid values -2147483648 to 2147483647
   - `[AverageBatteryAgeInDays <Int32?>]`: The mean of the battery age for all devices of a given model in a tenant. Unit in days. Valid values -2147483648 to 2147483647
   - `[AverageEstimatedRuntimeInMinutes <Int32?>]`: The mean of the estimated runtimes on full charge for all devices of a given model. Unit in minutes. Valid values -2147483648 to 2147483647
   - `[AverageMaxCapacityPercentage <Int32?>]`: The mean of the maximum capacity for all devices of a given model. Maximum capacity measures the full charge vs. design capacity for a device’s batteries.. Valid values -2147483648 to 2147483647
   - `[Manufacturer <String>]`: Name of the device manufacturer.
   - `[Model <String>]`: The model name of the device.
+  - `[ModelBatteryHealthScore <Int32?>]`: A weighted average of a model’s maximum capacity score and runtime estimate score. Values range from 0-100. Valid values -2147483648 to 2147483647
 
 ## RELATED LINKS
 

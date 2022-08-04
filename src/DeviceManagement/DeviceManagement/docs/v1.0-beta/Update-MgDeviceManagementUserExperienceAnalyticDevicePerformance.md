@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgDeviceManagementUserExperienceAnalyticDevicePerformance
 
 ## SYNOPSIS
-User experience analytics device performance
+Update the navigation property userExperienceAnalyticsDevicePerformance in deviceManagement
 
 ## SYNTAX
 
@@ -18,7 +18,7 @@ Update-MgDeviceManagementUserExperienceAnalyticDevicePerformance
  -UserExperienceAnalyticsDevicePerformanceId <String> [-AdditionalProperties <Hashtable>]
  [-AverageBlueScreens <Double>] [-AverageRestarts <Double>] [-BlueScreenCount <Int32>] [-BootScore <Int32>]
  [-CoreBootTimeInMS <Int32>] [-CoreLoginTimeInMS <Int32>] [-DeviceCount <Int64>] [-DeviceName <String>]
- [-DiskType <String>] [-GroupPolicyBootTimeInMS <Int32>] [-GroupPolicyLoginTimeInMS <Int32>]
+ [-DiskType <DiskType>] [-GroupPolicyBootTimeInMS <Int32>] [-GroupPolicyLoginTimeInMS <Int32>]
  [-HealthStatus <String>] [-Id <String>] [-LoginScore <Int32>] [-Manufacturer <String>] [-Model <String>]
  [-ModelStartupPerformanceScore <Double>] [-OperatingSystemVersion <String>]
  [-ResponsiveDesktopTimeInMS <Int32>] [-RestartCount <Int32>] [-StartupPerformanceScore <Double>] [-PassThru]
@@ -45,7 +45,7 @@ Update-MgDeviceManagementUserExperienceAnalyticDevicePerformance -InputObject <I
 Update-MgDeviceManagementUserExperienceAnalyticDevicePerformance -InputObject <IDeviceManagementIdentity>
  [-AdditionalProperties <Hashtable>] [-AverageBlueScreens <Double>] [-AverageRestarts <Double>]
  [-BlueScreenCount <Int32>] [-BootScore <Int32>] [-CoreBootTimeInMS <Int32>] [-CoreLoginTimeInMS <Int32>]
- [-DeviceCount <Int64>] [-DeviceName <String>] [-DiskType <String>] [-GroupPolicyBootTimeInMS <Int32>]
+ [-DeviceCount <Int64>] [-DeviceName <String>] [-DiskType <DiskType>] [-GroupPolicyBootTimeInMS <Int32>]
  [-GroupPolicyLoginTimeInMS <Int32>] [-HealthStatus <String>] [-Id <String>] [-LoginScore <Int32>]
  [-Manufacturer <String>] [-Model <String>] [-ModelStartupPerformanceScore <Double>]
  [-OperatingSystemVersion <String>] [-ResponsiveDesktopTimeInMS <Int32>] [-RestartCount <Int32>]
@@ -53,7 +53,7 @@ Update-MgDeviceManagementUserExperienceAnalyticDevicePerformance -InputObject <I
 ```
 
 ## DESCRIPTION
-User experience analytics device performance
+Update the navigation property userExperienceAnalyticsDevicePerformance in deviceManagement
 
 ## EXAMPLES
 
@@ -217,7 +217,7 @@ Accept wildcard characters: False
 diskType
 
 ```yaml
-Type: System.String
+Type: Microsoft.Graph.PowerShell.Support.DiskType
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -274,7 +274,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -512,7 +512,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphUserExperienceAnalyticsDevicePerformance>: The user experience analytics device performance entity contains device boot performance details.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[AverageBlueScreens <Double?>]`: Average (mean) number of Blue Screens per device in the last 14 days. Valid values 0 to 9999999
   - `[AverageRestarts <Double?>]`: Average (mean) number of Restarts per device in the last 14 days. Valid values 0 to 9999999
   - `[BlueScreenCount <Int32?>]`: Number of Blue Screens in the last 14 days. Valid values 0 to 9999999
@@ -521,7 +521,7 @@ BODYPARAMETER <IMicrosoftGraphUserExperienceAnalyticsDevicePerformance>: The use
   - `[CoreLoginTimeInMS <Int32?>]`: The user experience analytics device core login time in milliseconds.
   - `[DeviceCount <Int64?>]`: User experience analytics summarized device count.
   - `[DeviceName <String>]`: The user experience analytics device name.
-  - `[DiskType <String>]`: diskType
+  - `[DiskType <DiskType?>]`: diskType
   - `[GroupPolicyBootTimeInMS <Int32?>]`: The user experience analytics device group policy boot time in milliseconds.
   - `[GroupPolicyLoginTimeInMS <Int32?>]`: The user experience analytics device group policy login time in milliseconds.
   - `[HealthStatus <String>]`: userExperienceAnalyticsHealthState
@@ -564,6 +564,15 @@ INPUTOBJECT <IDeviceManagementIdentity>: Identity Parameter
   - `[DeviceHealthScriptDeviceStateId <String>]`: key: id of deviceHealthScriptDeviceState
   - `[DeviceHealthScriptId <String>]`: key: id of deviceHealthScript
   - `[DeviceLogCollectionResponseId <String>]`: key: id of deviceLogCollectionResponse
+  - `[DeviceManagementComplianceActionItemId <String>]`: key: id of deviceManagementComplianceActionItem
+  - `[DeviceManagementCompliancePolicyId <String>]`: key: id of deviceManagementCompliancePolicy
+  - `[DeviceManagementComplianceScheduledActionForRuleId <String>]`: key: id of deviceManagementComplianceScheduledActionForRule
+  - `[DeviceManagementConfigurationPolicyAssignmentId <String>]`: key: id of deviceManagementConfigurationPolicyAssignment
+  - `[DeviceManagementConfigurationPolicyId <String>]`: key: id of deviceManagementConfigurationPolicy
+  - `[DeviceManagementConfigurationPolicyTemplateId <String>]`: key: id of deviceManagementConfigurationPolicyTemplate
+  - `[DeviceManagementConfigurationSettingDefinitionId <String>]`: key: id of deviceManagementConfigurationSettingDefinition
+  - `[DeviceManagementConfigurationSettingId <String>]`: key: id of deviceManagementConfigurationSetting
+  - `[DeviceManagementConfigurationSettingTemplateId <String>]`: key: id of deviceManagementConfigurationSettingTemplate
   - `[DeviceManagementDerivedCredentialSettingsId <String>]`: key: id of deviceManagementDerivedCredentialSettings
   - `[DeviceManagementIntentAssignmentId <String>]`: key: id of deviceManagementIntentAssignment
   - `[DeviceManagementIntentDeviceSettingStateSummaryId <String>]`: key: id of deviceManagementIntentDeviceSettingStateSummary
@@ -601,8 +610,6 @@ INPUTOBJECT <IDeviceManagementIdentity>: Identity Parameter
   - `[ManagedDeviceEncryptionStateId <String>]`: key: id of managedDeviceEncryptionState
   - `[ManagedDeviceId <String>]`: key: id of managedDevice
   - `[ManagedDeviceMobileAppConfigurationStateId <String>]`: key: id of managedDeviceMobileAppConfigurationState
-  - `[ManagementConditionId <String>]`: key: id of managementCondition
-  - `[ManagementConditionStatementId <String>]`: key: id of managementConditionStatement
   - `[MicrosoftTunnelConfigurationId <String>]`: key: id of microsoftTunnelConfiguration
   - `[MicrosoftTunnelHealthThresholdId <String>]`: key: id of microsoftTunnelHealthThreshold
   - `[MicrosoftTunnelServerId <String>]`: key: id of microsoftTunnelServer
@@ -632,6 +639,7 @@ INPUTOBJECT <IDeviceManagementIdentity>: Identity Parameter
   - `[UserExperienceAnalyticsBatteryHealthOSPerformanceId <String>]`: key: id of userExperienceAnalyticsBatteryHealthOsPerformance
   - `[UserExperienceAnalyticsCategoryId <String>]`: key: id of userExperienceAnalyticsCategory
   - `[UserExperienceAnalyticsDevicePerformanceId <String>]`: key: id of userExperienceAnalyticsDevicePerformance
+  - `[UserExperienceAnalyticsDeviceScopeId <String>]`: key: id of userExperienceAnalyticsDeviceScope
   - `[UserExperienceAnalyticsDeviceScoresId <String>]`: key: id of userExperienceAnalyticsDeviceScores
   - `[UserExperienceAnalyticsDeviceStartupHistoryId <String>]`: key: id of userExperienceAnalyticsDeviceStartupHistory
   - `[UserExperienceAnalyticsDeviceStartupProcessId <String>]`: key: id of userExperienceAnalyticsDeviceStartupProcess

@@ -8,28 +8,24 @@ schema: 2.0.0
 # Remove-MgGroupPlannerPlanDetail
 
 ## SYNOPSIS
-Read-only.
-Nullable.
-Additional details about the plan.
+Delete navigation property details for groups
 
 ## SYNTAX
 
-### Delete (Default)
+### Delete1 (Default)
 ```
 Remove-MgGroupPlannerPlanDetail -GroupId <String> -PlannerPlanId <String> [-IfMatch <String>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### DeleteViaIdentity
+### DeleteViaIdentity1
 ```
 Remove-MgGroupPlannerPlanDetail -InputObject <IPlannerIdentity> [-IfMatch <String>] [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Read-only.
-Nullable.
-Additional details about the plan.
+Delete navigation property details for groups
 
 ## EXAMPLES
 
@@ -40,7 +36,7 @@ key: id of group
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete
+Parameter Sets: Delete1
 Aliases:
 
 Required: True
@@ -71,7 +67,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IPlannerIdentity
-Parameter Sets: DeleteViaIdentity
+Parameter Sets: DeleteViaIdentity1
 Aliases:
 
 Required: True
@@ -101,7 +97,7 @@ key: id of plannerPlan
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete
+Parameter Sets: Delete1
 Aliases:
 
 Required: True

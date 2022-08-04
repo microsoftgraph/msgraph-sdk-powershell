@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgGroupPlanner
 
 ## SYNOPSIS
-Entry-point to Planner resource that might exist for a Unified Group.
+Get planner from groups
 
 ## SYNTAX
 
@@ -24,7 +24,7 @@ Get-MgGroupPlanner -InputObject <IPlannerIdentity> [-ExpandProperty <String[]>] 
 ```
 
 ## DESCRIPTION
-Entry-point to Planner resource that might exist for a Unified Group.
+Get planner from groups
 
 ## EXAMPLES
 

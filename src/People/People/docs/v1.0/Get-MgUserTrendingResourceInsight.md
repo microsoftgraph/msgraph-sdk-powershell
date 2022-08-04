@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgUserTrendingResourceInsight
 
 ## SYNOPSIS
-Used for navigating to the trending document.
+Get resource from users
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Get-MgUserTrendingResourceInsight -InputObject <IPeopleIdentity> [-ExpandPropert
 ```
 
 ## DESCRIPTION
-Used for navigating to the trending document.
+Get resource from users
 
 ## EXAMPLES
 

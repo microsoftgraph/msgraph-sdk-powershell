@@ -1289,24 +1289,9 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: educationAssignment
-      requestBody:
-        description: New navigation property ref value
-        content:
-          application/json:
-            schema:
-              type: object
-              additionalProperties:
-                type: object
-        required: true
       responses:
-        '201':
-          description: Created navigation property link.
-          content:
-            application/json:
-              schema:
-                type: object
-                additionalProperties:
-                  type: object
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1847,13 +1832,6 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: educationAssignment
-      requestBody:
-        description: New navigation property ref values
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/ReferenceUpdateSchema'
-        required: true
       responses:
         '204':
           description: Success
@@ -3501,8 +3479,6 @@ paths:
                 - calendarView
                 - conversations
                 - events
-                - photo
-                - photos
                 - rejectedSenders
                 - threads
                 - drive
@@ -3512,6 +3488,8 @@ paths:
                 - groupLifecyclePolicies
                 - planner
                 - onenote
+                - photo
+                - photos
                 - team
               type: string
         - name: $expand
@@ -3540,8 +3518,6 @@ paths:
                 - calendarView
                 - conversations
                 - events
-                - photo
-                - photos
                 - rejectedSenders
                 - threads
                 - drive
@@ -3551,6 +3527,8 @@ paths:
                 - groupLifecyclePolicies
                 - planner
                 - onenote
+                - photo
+                - photos
                 - team
               type: string
       responses:
@@ -3621,14 +3599,6 @@ paths:
               operationId: education.classes.Group.ListEvents
               parameters:
                 educationClass-id: $request.path.educationClass-id
-            photo:
-              operationId: education.classes.Group.GetPhoto
-              parameters:
-                educationClass-id: $request.path.educationClass-id
-            photos:
-              operationId: education.classes.Group.ListPhotos
-              parameters:
-                educationClass-id: $request.path.educationClass-id
             rejectedSenders:
               operationId: education.classes.Group.ListRejectedSenders
               parameters:
@@ -3663,6 +3633,14 @@ paths:
                 educationClass-id: $request.path.educationClass-id
             onenote:
               operationId: education.classes.Group.GetOnenote
+              parameters:
+                educationClass-id: $request.path.educationClass-id
+            photo:
+              operationId: education.classes.Group.GetPhoto
+              parameters:
+                educationClass-id: $request.path.educationClass-id
+            photos:
+              operationId: education.classes.Group.ListPhotos
               parameters:
                 educationClass-id: $request.path.educationClass-id
             team:
@@ -4000,24 +3978,9 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: educationClass
-      requestBody:
-        description: New navigation property ref value
-        content:
-          application/json:
-            schema:
-              type: object
-              additionalProperties:
-                type: object
-        required: true
       responses:
-        '201':
-          description: Created navigation property link.
-          content:
-            application/json:
-              schema:
-                type: object
-                additionalProperties:
-                  type: object
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4557,24 +4520,9 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: educationClass
-      requestBody:
-        description: New navigation property ref value
-        content:
-          application/json:
-            schema:
-              type: object
-              additionalProperties:
-                type: object
-        required: true
       responses:
-        '201':
-          description: Created navigation property link.
-          content:
-            application/json:
-              schema:
-                type: object
-                additionalProperties:
-                  type: object
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5225,24 +5173,9 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: educationAssignment
-      requestBody:
-        description: New navigation property ref value
-        content:
-          application/json:
-            schema:
-              type: object
-              additionalProperties:
-                type: object
-        required: true
       responses:
-        '201':
-          description: Created navigation property link.
-          content:
-            application/json:
-              schema:
-                type: object
-                additionalProperties:
-                  type: object
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5692,13 +5625,6 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: educationAssignment
-      requestBody:
-        description: New navigation property ref values
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/ReferenceUpdateSchema'
-        required: true
       responses:
         '204':
           description: Success
@@ -8681,24 +8607,9 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: educationSchool
-      requestBody:
-        description: New navigation property ref value
-        content:
-          application/json:
-            schema:
-              type: object
-              additionalProperties:
-                type: object
-        required: true
       responses:
-        '201':
-          description: Created navigation property link.
-          content:
-            application/json:
-              schema:
-                type: object
-                additionalProperties:
-                  type: object
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -9030,24 +8941,9 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: educationSchool
-      requestBody:
-        description: New navigation property ref value
-        content:
-          application/json:
-            schema:
-              type: object
-              additionalProperties:
-                type: object
-        required: true
       responses:
-        '201':
-          description: Created navigation property link.
-          content:
-            application/json:
-              schema:
-                type: object
-                additionalProperties:
-                  type: object
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -9995,24 +9891,9 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: educationAssignment
-      requestBody:
-        description: New navigation property ref value
-        content:
-          application/json:
-            schema:
-              type: object
-              additionalProperties:
-                type: object
-        required: true
       responses:
-        '201':
-          description: Created navigation property link.
-          content:
-            application/json:
-              schema:
-                type: object
-                additionalProperties:
-                  type: object
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -10553,13 +10434,6 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: educationAssignment
-      requestBody:
-        description: New navigation property ref values
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/ReferenceUpdateSchema'
-        required: true
       responses:
         '204':
           description: Success
@@ -13683,16 +13557,6 @@ components:
               description: The collection of qualities making up this rubric.
           additionalProperties:
             type: object
-    ReferenceUpdateSchema:
-      type: object
-      properties:
-        '@odata.id':
-          type: string
-        '@odata.type':
-          type: string
-          nullable: true
-      additionalProperties:
-        type: object
     microsoft.graph.educationSubmission:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -13827,7 +13691,7 @@ components:
               nullable: true
             displayName:
               type: string
-              description: 'The display name for the group. Required. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.'
+              description: 'The display name for the group. Required. Maximum length is 256 characters. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.'
               nullable: true
             expirationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -13934,7 +13798,7 @@ components:
               nullable: true
             visibility:
               type: string
-              description: 'Specifies the group join policy and group content visibility for groups. Possible values are: Private, Public, or Hiddenmembership. Hiddenmembership can be set only for Microsoft 365 groups, when the groups are created. It can''t be updated later. Other values of visibility can be updated after group creation. If visibility value is not specified during group creation on Microsoft Graph, a security group is created as Private by default and Microsoft 365 group is Public. Groups assignable to roles are always Private. See group visibility options to learn more. Returned by default. Nullable.'
+              description: 'Specifies the group join policy and group content visibility for groups. Possible values are: Private, Public, or HiddenMembership. HiddenMembership can be set only for Microsoft 365 groups, when the groups are created. It can''t be updated later. Other values of visibility can be updated after group creation. If visibility value is not specified during group creation on Microsoft Graph, a security group is created as Private by default and Microsoft 365 group is Public. Groups assignable to roles are always Private. See group visibility options to learn more. Returned by default. Nullable.'
               nullable: true
             allowExternalSenders:
               type: boolean
@@ -13965,7 +13829,7 @@ components:
               nullable: true
             isArchived:
               type: boolean
-              description: 'When a group is associated with a team, this property determines whether the team is in read-only mode.'
+              description: 'When a group is associated with a team, this property determines whether the team is in read-only mode. To read this property, use the /group/{groupId}/team endpoint or the Get team API. To update this property, use the archiveTeam and unarchiveTeam APIs.'
               nullable: true
             appRoleAssignments:
               type: array
@@ -13983,7 +13847,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: 'Members of this group, who can be users, devices, other groups, or service principals. Supports the List members, Add member, and Remove member operations. Nullable. Supports $expand including nested $select. For example, /groups?$filter=startsWith(displayName,''Role'')&$select=id,displayName&$expand=members($select=id,userPrincipalName,displayName).'
+              description: 'Direct members of this group, who can be users, devices, other groups, or service principals. Supports the List members, Add member, and Remove member operations. Nullable. Supports $expand including nested $select. For example, /groups?$filter=startsWith(displayName,''Role'')&$select=id,displayName&$expand=members($select=id,userPrincipalName,displayName).'
             membersWithLicenseErrors:
               type: array
               items:
@@ -14008,10 +13872,12 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
+              description: 'The groups that a group is a member of, either directly and through nested membership. Nullable.'
             transitiveMembers:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
+              description: The direct and transitive members of a group. Nullable.
             acceptedSenders:
               type: array
               items:
@@ -14034,13 +13900,6 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.event'
               description: The group's events.
-            photo:
-              $ref: '#/components/schemas/microsoft.graph.profilePhoto'
-            photos:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.profilePhoto'
-              description: The profile photos owned by the group. Read-only. Nullable.
             rejectedSenders:
               type: array
               items:
@@ -14077,6 +13936,13 @@ components:
               $ref: '#/components/schemas/microsoft.graph.plannerGroup'
             onenote:
               $ref: '#/components/schemas/microsoft.graph.onenote'
+            photo:
+              $ref: '#/components/schemas/microsoft.graph.profilePhoto'
+            photos:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.profilePhoto'
+              description: The profile photos owned by the group. Read-only. Nullable.
             team:
               $ref: '#/components/schemas/microsoft.graph.team'
           additionalProperties:
@@ -14423,7 +14289,7 @@ components:
               description: State of license assignments for this user. Read-only. Returned only on $select.
             mail:
               type: string
-              description: 'The SMTP address for the user, for example, admin@contoso.com. Changes to this property will also update the user''s proxyAddresses collection to include the value as an SMTP address. For Azure AD B2C accounts, this property can be updated up to only ten times with unique SMTP addresses. This property cannot contain accent characters.  Supports $filter (eq, ne, not, ge, le, in, startsWith, endsWith, and eq on null values).'
+              description: 'The SMTP address for the user, for example, admin@contoso.com. Changes to this property will also update the user''s proxyAddresses collection to include the value as an SMTP address. This property cannot contain accent characters.  NOTE: We do not recommend updating this property for Azure AD B2C user profiles. Use the otherMails property instead.  Supports $filter (eq, ne, not, ge, le, in, startsWith, endsWith, and eq on null values).'
               nullable: true
             mailNickname:
               type: string
@@ -14472,7 +14338,7 @@ components:
               nullable: true
             onPremisesSyncEnabled:
               type: boolean
-              description: 'true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced; null if this object has never been synced from an on-premises directory (default). Read-only. Supports $filter (eq, ne, not, in, and eq on null values).'
+              description: 'true if this user object is currently being synced from an on-premises Active Directory (AD); otherwise the user isn''t being synced and can be managed in Azure Active Directory (Azure AD). Read-only. Supports $filter (eq, ne, not, in, and eq on null values).'
               nullable: true
             onPremisesUserPrincipalName:
               type: string
@@ -14482,7 +14348,7 @@ components:
               type: array
               items:
                 type: string
-              description: 'A list of additional email addresses for the user; for example: [''bob@contoso.com'', ''Robert@fabrikam.com''].NOTE: This property cannot contain accent characters.Supports $filter (eq, not, ge, le, in, startsWith, and counting empty collections).'
+              description: 'A list of additional email addresses for the user; for example: [''bob@contoso.com'', ''Robert@fabrikam.com''].NOTE: This property cannot contain accent characters.Supports $filter (eq, not, ge, le, in, startsWith, endsWith, and counting empty collections).'
             passwordPolicies:
               type: string
               description: 'Specifies password policies for the user. This value is an enumeration with one possible value being DisableStrongPassword, which allows weaker passwords than the default policy to be specified. DisablePasswordExpiration can also be specified. The two may be specified together; for example: DisablePasswordExpiration, DisableStrongPassword. For more information on the default password policies, see Azure AD pasword policies. Supports $filter (ne, not, and eq on null values).'
@@ -14585,7 +14451,7 @@ components:
               description: A list for the user to enumerate their past projects. Returned only on $select.
             preferredName:
               type: string
-              description: The preferred name for the user. Returned only on $select.
+              description: The preferred name for the user. Not Supported. This attribute returns an empty string.Returned only on $select.
               nullable: true
             responsibilities:
               type: array
@@ -14660,6 +14526,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
+              description: 'The groups, including nested groups, and directory roles that a user is a member of. Nullable.'
             calendar:
               $ref: '#/components/schemas/microsoft.graph.calendar'
             calendarGroups:
@@ -14726,7 +14593,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.extension'
-              description: The collection of open extensions defined for the user. Nullable.
+              description: The collection of open extensions defined for the user. Supports $expand. Nullable.
             agreementAcceptances:
               type: array
               items:
@@ -14805,7 +14672,7 @@ components:
               nullable: true
             visibility:
               type: string
-              description: 'Controls whether the administrative unit and its members are hidden or public. Can be set to HiddenMembership. If not set (value is null), the default behavior is public. When set to HiddenMembership, only members of the administrative unit can list other members of the administrative unit.'
+              description: 'Controls whether the administrative unit and its members are hidden or public. Can be set to HiddenMembership or Public. If not set, the default behavior is Public. When set to HiddenMembership, only members of the administrative unit can list other members of the administrative unit.'
               nullable: true
             members:
               type: array
@@ -15460,28 +15327,6 @@ components:
               description: A collection of all the conversation threads in the conversation. A navigation property. Read-only. Nullable.
           additionalProperties:
             type: object
-    microsoft.graph.profilePhoto:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: profilePhoto
-          type: object
-          properties:
-            height:
-              maximum: 2147483647
-              minimum: -2147483648
-              type: integer
-              description: The height of the photo. Read-only.
-              format: int32
-              nullable: true
-            width:
-              maximum: 2147483647
-              minimum: -2147483648
-              type: integer
-              description: The width of the photo. Read-only.
-              format: int32
-              nullable: true
-          additionalProperties:
-            type: object
     microsoft.graph.conversationThread:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -15729,6 +15574,28 @@ components:
               description: The sections in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
           additionalProperties:
             type: object
+    microsoft.graph.profilePhoto:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: profilePhoto
+          type: object
+          properties:
+            height:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              description: The height of the photo. Read-only.
+              format: int32
+              nullable: true
+            width:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              description: The width of the photo. Read-only.
+              format: int32
+              nullable: true
+          additionalProperties:
+            type: object
     microsoft.graph.team:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -15771,12 +15638,23 @@ components:
               $ref: '#/components/schemas/microsoft.graph.teamMessagingSettings'
             specialization:
               $ref: '#/components/schemas/microsoft.graph.teamSpecialization'
+            summary:
+              $ref: '#/components/schemas/microsoft.graph.teamSummary'
+            tenantId:
+              type: string
+              description: The ID of the Azure Active Directory tenant.
+              nullable: true
             visibility:
               $ref: '#/components/schemas/microsoft.graph.teamVisibilityType'
             webUrl:
               type: string
               description: 'A hyperlink that will go to the team in the Microsoft Teams client. This is the URL that you get when you right-click a team in the Microsoft Teams client and select Get link to team. This URL should be treated as an opaque blob, and not parsed.'
               nullable: true
+            allChannels:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.channel'
+              description: List of channels either hosted in or shared with the team (incoming channels).
             channels:
               type: array
               items:
@@ -15784,6 +15662,11 @@ components:
               description: The collection of channels and messages associated with the team.
             group:
               $ref: '#/components/schemas/microsoft.graph.group'
+            incomingChannels:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.channel'
+              description: List of channels shared with the team.
             installedApps:
               type: array
               items:
@@ -15799,6 +15682,8 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.teamsAsyncOperation'
               description: The async operations that ran or are running on this team.
+            photo:
+              $ref: '#/components/schemas/microsoft.graph.profilePhoto'
             primaryChannel:
               $ref: '#/components/schemas/microsoft.graph.channel'
             template:
@@ -16206,11 +16091,11 @@ components:
               nullable: true
             principalId:
               type: string
-              description: 'The id of the user on behalf of whom the client is authorized to access the resource, when consentType is Principal. If consentType is AllPrincipals this value is null. Required when consentType is Principal.'
+              description: 'The id of the user on behalf of whom the client is authorized to access the resource, when consentType is Principal. If consentType is AllPrincipals this value is null. Required when consentType is Principal. Supports $filter (eq only).'
               nullable: true
             resourceId:
               type: string
-              description: The id of the resource service principal to which access is authorized. This identifies the API which the client is authorized to attempt to call on behalf of a signed-in user.
+              description: The id of the resource service principal to which access is authorized. This identifies the API which the client is authorized to attempt to call on behalf of a signed-in user. Supports $filter (eq only).
             scope:
               type: string
               description: 'A space-separated list of the claim values for delegated permissions which should be included in access tokens for the resource application (the API). For example, openid User.Read GroupMember.Read.All. Each claim value should match the value field of one of the delegated permissions defined by the API, listed in the publishedPermissionScopes property of the resource service principal.'
@@ -17328,6 +17213,11 @@ components:
         - title: authentication
           type: object
           properties:
+            emailMethods:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.emailAuthenticationMethod'
+              description: Represents the email addresses registered to a user for authentication.
             fido2Methods:
               type: array
               items:
@@ -17343,6 +17233,24 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.microsoftAuthenticatorAuthenticationMethod'
               description: The details of the Microsoft Authenticator app registered to a user for authentication.
+            operations:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.longRunningOperation'
+            passwordMethods:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.passwordAuthenticationMethod'
+              description: Represents the details of the password authentication method registered to a user for authentication.
+            phoneMethods:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.phoneAuthenticationMethod'
+              description: Represents the phone registered to a user for authentication.
+            softwareOathMethods:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.softwareOathAuthenticationMethod'
             temporaryAccessPassMethods:
               type: array
               items:
@@ -17417,6 +17325,11 @@ components:
         - title: userTeamwork
           type: object
           properties:
+            associatedTeams:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.associatedTeamInfo'
+              description: The list of associatedTeamInfo objects that a user is associated with.
             installedApps:
               type: array
               items:
@@ -17584,11 +17497,11 @@ components:
       properties:
         displayName:
           type: string
-          description: The display name of the identity. This property is read-only.
+          description: 'The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
           nullable: true
         id:
           type: string
-          description: The identifier of the identity. This property is read-only.
+          description: Unique identifier for the identity.
           nullable: true
       additionalProperties:
         type: object
@@ -18914,6 +18827,33 @@ components:
         - healthcareCareCoordination
         - unknownFutureValue
       type: string
+    microsoft.graph.teamSummary:
+      title: teamSummary
+      type: object
+      properties:
+        guestsCount:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: Count of guests in a team.
+          format: int32
+          nullable: true
+        membersCount:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: Count of members in a team.
+          format: int32
+          nullable: true
+        ownersCount:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: Count of owners in a team.
+          format: int32
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.teamVisibilityType:
       title: teamVisibilityType
       enum:
@@ -18951,6 +18891,10 @@ components:
               nullable: true
             membershipType:
               $ref: '#/components/schemas/microsoft.graph.channelMembershipType'
+            tenantId:
+              type: string
+              description: The ID of the Azure Active Directory tenant.
+              nullable: true
             webUrl:
               type: string
               description: 'A hyperlink that will go to the channel in Microsoft Teams. This is the URL that you get when you right-click a channel in Microsoft Teams and select Get link to channel. This URL should be treated as an opaque blob, and not parsed. Read-only.'
@@ -18967,6 +18911,11 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.chatMessage'
               description: A collection of all the messages in the channel. A navigation property. Nullable.
+            sharedWithTeams:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.sharedWithChannelTeamInfo'
+              description: A collection of teams with which a channel is shared.
             tabs:
               type: array
               items:
@@ -19001,7 +18950,7 @@ components:
               items:
                 type: string
                 nullable: true
-              description: The roles for that user.
+              description: 'The roles for that user. This property only contains additional qualifiers when relevant - for example, if the member has owner privileges, the roles property contains owner as one of the values. Similarly, if the member is a guest, the roles property contains guest as one of the values. A basic member should not have any values specified in the roles property.'
             visibleHistoryStartDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -20571,6 +20520,18 @@ components:
               description: List of attendance records of an attendance report. Read-only.
           additionalProperties:
             type: object
+    microsoft.graph.emailAuthenticationMethod:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
+        - title: emailAuthenticationMethod
+          type: object
+          properties:
+            emailAddress:
+              type: string
+              description: The email address registered to this user.
+              nullable: true
+          additionalProperties:
+            type: object
     microsoft.graph.fido2AuthenticationMethod:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
@@ -20640,6 +20601,77 @@ components:
               $ref: '#/components/schemas/microsoft.graph.device'
           additionalProperties:
             type: object
+    microsoft.graph.longRunningOperation:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: longRunningOperation
+          type: object
+          properties:
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            lastActionDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            resourceLocation:
+              type: string
+              nullable: true
+            status:
+              $ref: '#/components/schemas/microsoft.graph.longRunningOperationStatus'
+            statusDetail:
+              type: string
+              nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.passwordAuthenticationMethod:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
+        - title: passwordAuthenticationMethod
+          type: object
+          properties:
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            password:
+              type: string
+              description: 'For security, the password is always returned as null from a LIST or GET operation.'
+              nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.phoneAuthenticationMethod:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
+        - title: phoneAuthenticationMethod
+          type: object
+          properties:
+            phoneNumber:
+              type: string
+              description: 'The phone number to text or call for authentication. Phone numbers use the format ''+<country code> <number>x<extension>'', with extension optional. For example, +1 5555551234 or +1 5555551234x123 are valid. Numbers are rejected when creating/updating if they do not match the required format.'
+              nullable: true
+            phoneType:
+              $ref: '#/components/schemas/microsoft.graph.authenticationPhoneType'
+            smsSignInState:
+              $ref: '#/components/schemas/microsoft.graph.authenticationMethodSignInState'
+          additionalProperties:
+            type: object
+    microsoft.graph.softwareOathAuthenticationMethod:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
+        - title: softwareOathAuthenticationMethod
+          type: object
+          properties:
+            secretKey:
+              type: string
+              description: The secret key of the method. Always returns null.
+              nullable: true
+          additionalProperties:
+            type: object
     microsoft.graph.temporaryAccessPassAuthenticationMethod:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
@@ -20649,7 +20681,7 @@ components:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: The date and time when the temporaryAccessPass was created.
+              description: The date and time when the Temporary Access Pass was created.
               format: date-time
               nullable: true
             isUsable:
@@ -20658,28 +20690,28 @@ components:
               nullable: true
             isUsableOnce:
               type: boolean
-              description: 'Determines whether the pass is limited to a one time use. If true, the pass can be used once; if false, the pass can be used multiple times within the temporaryAccessPass lifetime.'
+              description: 'Determines whether the pass is limited to a one-time use. If true, the pass can be used once; if false, the pass can be used multiple times within the Temporary Access Pass lifetime.'
               nullable: true
             lifetimeInMinutes:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
-              description: 'The lifetime of the temporaryAccessPass in minutes starting at startDateTime. Minimum 10, Maximum 43200 (equivalent to 30 days).'
+              description: The lifetime of the Temporary Access Pass in minutes starting at startDateTime. Must be between 10 and 43200 inclusive (equivalent to 30 days).
               format: int32
               nullable: true
             methodUsabilityReason:
               type: string
-              description: 'Details about usability state (isUsable). Reasons can include: enabledByPolicy, disabledByPolicy, expired, notYetValid, oneTimeUsed.'
+              description: 'Details about the usability state (isUsable). Reasons can include: EnabledByPolicy, DisabledByPolicy, Expired, NotYetValid, OneTimeUsed.'
               nullable: true
             startDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: The date and time when the temporaryAccessPass becomes available to use.
+              description: The date and time when the Temporary Access Pass becomes available to use and when isUsable is true is enforced.
               format: date-time
               nullable: true
             temporaryAccessPass:
               type: string
-              description: The temporaryAccessPass used to authenticate. Returned only on creation of a new temporaryAccessPass; returned as NULL with GET.
+              description: The Temporary Access Pass used to authenticate. Returned only on creation of a new temporaryAccessPassAuthenticationMethod object; Hidden in subsequent read operations and returned as null with GET.
               nullable: true
           additionalProperties:
             type: object
@@ -20845,6 +20877,13 @@ components:
               nullable: true
             teamsApp:
               $ref: '#/components/schemas/microsoft.graph.teamsApp'
+          additionalProperties:
+            type: object
+    microsoft.graph.associatedTeamInfo:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.teamInfo'
+        - title: associatedTeamInfo
+          type: object
           additionalProperties:
             type: object
     microsoft.graph.userScopeTeamsAppInstallation:
@@ -21635,6 +21674,11 @@ components:
               $ref: '#/components/schemas/microsoft.graph.sharepointIds'
             analytics:
               $ref: '#/components/schemas/microsoft.graph.itemAnalytics'
+            documentSetVersions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.documentSetVersion'
+              description: Version information for a document set version created by a user.
             driveItem:
               $ref: '#/components/schemas/microsoft.graph.driveItem'
             fields:
@@ -22202,32 +22246,6 @@ components:
               nullable: true
           additionalProperties:
             type: object
-    microsoft.graph.longRunningOperation:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: longRunningOperation
-          type: object
-          properties:
-            createdDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              format: date-time
-              nullable: true
-            lastActionDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              format: date-time
-              nullable: true
-            resourceLocation:
-              type: string
-              nullable: true
-            status:
-              $ref: '#/components/schemas/microsoft.graph.longRunningOperationStatus'
-            statusDetail:
-              type: string
-              nullable: true
-          additionalProperties:
-            type: object
     microsoft.graph.sharePointIdentitySet:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.identitySet'
@@ -22552,7 +22570,25 @@ components:
         - standard
         - private
         - unknownFutureValue
+        - shared
       type: string
+    microsoft.graph.sharedWithChannelTeamInfo:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.teamInfo'
+        - title: sharedWithChannelTeamInfo
+          type: object
+          properties:
+            isHostTeam:
+              type: boolean
+              description: Indicates whether the team is the host of the channel.
+              nullable: true
+            allowedMembers:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.conversationMember'
+              description: A collection of team members who have access to the shared channel.
+          additionalProperties:
+            type: object
     microsoft.graph.teamsApp:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -22638,6 +22674,8 @@ components:
         - unarchiveTeam
         - createTeam
         - unknownFutureValue
+        - teamifyGroup
+        - createChannel
       type: string
     microsoft.graph.teamsAsyncOperationStatus:
       title: teamsAsyncOperationStatus
@@ -23733,6 +23771,34 @@ components:
               description: The collection of open extensions defined for the device. Read-only. Nullable.
           additionalProperties:
             type: object
+    microsoft.graph.longRunningOperationStatus:
+      title: longRunningOperationStatus
+      enum:
+        - notStarted
+        - running
+        - succeeded
+        - failed
+        - unknownFutureValue
+      type: string
+    microsoft.graph.authenticationPhoneType:
+      title: authenticationPhoneType
+      enum:
+        - mobile
+        - alternateMobile
+        - office
+        - unknownFutureValue
+      type: string
+    microsoft.graph.authenticationMethodSignInState:
+      title: authenticationMethodSignInState
+      enum:
+        - notSupported
+        - notAllowedByPolicy
+        - notEnabled
+        - phoneNumberNotUnique
+        - ready
+        - notConfigured
+        - unknownFutureValue
+      type: string
     microsoft.graph.authenticationMethodKeyStrength:
       title: authenticationMethodKeyStrength
       enum:
@@ -23905,6 +23971,24 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.teamInfo:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: teamInfo
+          type: object
+          properties:
+            displayName:
+              type: string
+              description: The name of the team.
+              nullable: true
+            tenantId:
+              type: string
+              description: The ID of the Azure Active Directory tenant.
+              nullable: true
+            team:
+              $ref: '#/components/schemas/microsoft.graph.team'
+          additionalProperties:
+            type: object
     microsoft.graph.wellknownListName:
       title: wellknownListName
       enum:
@@ -23924,7 +24008,7 @@ components:
             bodyLastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The date and time when the task was last modified. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2020 would look like this: ''2020-01-01T00:00:00Z''.'
+              description: 'The date and time when the task body was last modified. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2020 would look like this: ''2020-01-01T00:00:00Z''.'
               format: date-time
             categories:
               type: array
@@ -24274,6 +24358,35 @@ components:
               description: Collection of tables that are part of the worksheet. Read-only.
           additionalProperties:
             type: object
+    microsoft.graph.documentSetVersion:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.listItemVersion'
+        - title: documentSetVersion
+          type: object
+          properties:
+            comment:
+              type: string
+              description: Comment about the captured version.
+              nullable: true
+            createdBy:
+              $ref: '#/components/schemas/microsoft.graph.identitySet'
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Date and time when this version was created.
+              format: date-time
+              nullable: true
+            items:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.documentSetVersionItem'
+              description: Items within the document set that are captured as part of this version.
+            shouldCaptureMinorVersion:
+              type: boolean
+              description: 'If true, minor versions of items are also captured; otherwise, only major versions will be captured. Default value is false.'
+              nullable: true
+          additionalProperties:
+            type: object
     microsoft.graph.fieldValueSet:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -24459,15 +24572,6 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    microsoft.graph.longRunningOperationStatus:
-      title: longRunningOperationStatus
-      enum:
-        - notStarted
-        - running
-        - succeeded
-        - failed
-        - unknownFutureValue
-      type: string
     microsoft.graph.sharePointIdentity:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.identity'
@@ -25265,6 +25369,24 @@ components:
               description: Indicates if the worksheet is protected.  Read-only.
           additionalProperties:
             type: object
+    microsoft.graph.documentSetVersionItem:
+      title: documentSetVersionItem
+      type: object
+      properties:
+        itemId:
+          type: string
+          description: The unique identifier for the item.
+          nullable: true
+        title:
+          type: string
+          description: The title of the item.
+          nullable: true
+        versionId:
+          type: string
+          description: The version ID of the item.
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.accessAction:
       title: accessAction
       type: object

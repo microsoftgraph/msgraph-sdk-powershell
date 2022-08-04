@@ -12,27 +12,27 @@ Invoke action grant
 
 ## SYNTAX
 
-### GrantExpanded1 (Default)
+### GrantExpanded (Default)
 ```
 Grant-MgSharePermission -SharedDriveItemId <String> [-AdditionalProperties <Hashtable>]
  [-Recipients <IMicrosoftGraphDriveRecipient[]>] [-Roles <String[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### Grant1
+### Grant
 ```
 Grant-MgSharePermission -SharedDriveItemId <String>
- -BodyParameter <IPaths1Mcxy93SharesShareddriveitemIdPermissionMicrosoftGraphGrantPostRequestbodyContentApplicationJsonSchema1>
+ -BodyParameter <IPaths1Mcxy93SharesShareddriveitemIdPermissionMicrosoftGraphGrantPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### GrantViaIdentity1
+### GrantViaIdentity
 ```
 Grant-MgSharePermission -InputObject <IFilesIdentity>
- -BodyParameter <IPaths1Mcxy93SharesShareddriveitemIdPermissionMicrosoftGraphGrantPostRequestbodyContentApplicationJsonSchema1>
+ -BodyParameter <IPaths1Mcxy93SharesShareddriveitemIdPermissionMicrosoftGraphGrantPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### GrantViaIdentityExpanded1
+### GrantViaIdentityExpanded
 ```
 Grant-MgSharePermission -InputObject <IFilesIdentity> [-AdditionalProperties <Hashtable>]
  [-Recipients <IMicrosoftGraphDriveRecipient[]>] [-Roles <String[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -50,7 +50,7 @@ Additional Parameters
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: GrantExpanded1, GrantViaIdentityExpanded1
+Parameter Sets: GrantExpanded, GrantViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -65,8 +65,8 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths1Mcxy93SharesShareddriveitemIdPermissionMicrosoftGraphGrantPostRequestbodyContentApplicationJsonSchema1
-Parameter Sets: Grant1, GrantViaIdentity1
+Type: Microsoft.Graph.PowerShell.Models.IPaths1Mcxy93SharesShareddriveitemIdPermissionMicrosoftGraphGrantPostRequestbodyContentApplicationJsonSchema
+Parameter Sets: Grant, GrantViaIdentity
 Aliases:
 
 Required: True
@@ -82,7 +82,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IFilesIdentity
-Parameter Sets: GrantViaIdentity1, GrantViaIdentityExpanded1
+Parameter Sets: GrantViaIdentity, GrantViaIdentityExpanded
 Aliases:
 
 Required: True
@@ -98,7 +98,7 @@ To construct, please use Get-Help -Online and see NOTES section for RECIPIENTS p
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDriveRecipient[]
-Parameter Sets: GrantExpanded1, GrantViaIdentityExpanded1
+Parameter Sets: GrantExpanded, GrantViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -113,7 +113,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.String[]
-Parameter Sets: GrantExpanded1, GrantViaIdentityExpanded1
+Parameter Sets: GrantExpanded, GrantViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -128,7 +128,7 @@ key: id of sharedDriveItem
 
 ```yaml
 Type: System.String
-Parameter Sets: Grant1, GrantExpanded1
+Parameter Sets: Grant, GrantExpanded
 Aliases:
 
 Required: True
@@ -176,11 +176,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IFilesIdentity
 
-### Microsoft.Graph.PowerShell.Models.IPaths1Mcxy93SharesShareddriveitemIdPermissionMicrosoftGraphGrantPostRequestbodyContentApplicationJsonSchema1
+### Microsoft.Graph.PowerShell.Models.IPaths1Mcxy93SharesShareddriveitemIdPermissionMicrosoftGraphGrantPostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPermission1
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPermission
 
 ## NOTES
 
@@ -191,7 +191,7 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-BODYPARAMETER <IPaths1Mcxy93SharesShareddriveitemIdPermissionMicrosoftGraphGrantPostRequestbodyContentApplicationJsonSchema1>: .
+BODYPARAMETER <IPaths1Mcxy93SharesShareddriveitemIdPermissionMicrosoftGraphGrantPostRequestbodyContentApplicationJsonSchema>: .
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Recipients <IMicrosoftGraphDriveRecipient[]>]`: 
     - `[Alias <String>]`: The alias of the domain object, for cases where an email address is unavailable (e.g. security groups).
@@ -203,19 +203,25 @@ INPUTOBJECT <IFilesIdentity>: Identity Parameter
   - `[ColumnDefinitionId <String>]`: key: id of columnDefinition
   - `[ColumnLinkId <String>]`: key: id of columnLink
   - `[ContentTypeId <String>]`: key: id of contentType
+  - `[ContentTypeId1 <String>]`: key: id of contentType
+  - `[DocumentSetVersionId <String>]`: key: id of documentSetVersion
   - `[DriveId <String>]`: key: id of drive
   - `[DriveItemId <String>]`: key: id of driveItem
-  - `[EndDateTime <String>]`: Usage: endDateTime={endDateTime}
+  - `[DriveItemId1 <String>]`: key: id of driveItem
+  - `[DriveItemVersionId <String>]`: key: id of driveItemVersion
+  - `[EndDateTime <String>]`: Usage: endDateTime='{endDateTime}'
   - `[GroupId <String>]`: key: id of group
-  - `[Interval <String>]`: Usage: interval={interval}
+  - `[Interval <String>]`: Usage: interval='{interval}'
   - `[ListItemId <String>]`: key: id of listItem
   - `[ListItemVersionId <String>]`: key: id of listItemVersion
-  - `[Q <String>]`: Usage: q={q}
+  - `[PermissionId <String>]`: key: id of permission
+  - `[Q <String>]`: Usage: q='{q}'
   - `[RichLongRunningOperationId <String>]`: key: id of richLongRunningOperation
   - `[SharedDriveItemId <String>]`: key: id of sharedDriveItem
-  - `[StartDateTime <String>]`: Usage: startDateTime={startDateTime}
+  - `[StartDateTime <String>]`: Usage: startDateTime='{startDateTime}'
   - `[SubscriptionId <String>]`: key: id of subscription
-  - `[Token <String>]`: Usage: token={token}
+  - `[ThumbnailSetId <String>]`: key: id of thumbnailSet
+  - `[Token <String>]`: Usage: token='{token}'
   - `[UserId <String>]`: key: id of user
 
 RECIPIENTS <IMicrosoftGraphDriveRecipient[]>: .

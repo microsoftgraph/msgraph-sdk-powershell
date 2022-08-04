@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgUserProfileCertification
 
 ## SYNOPSIS
-Represents the details of certifications associated with a person.
+Delete navigation property certifications for users
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Remove-MgUserProfileCertification -InputObject <IPeopleIdentity> [-IfMatch <Stri
 ```
 
 ## DESCRIPTION
-Represents the details of certifications associated with a person.
+Delete navigation property certifications for users
 
 ## EXAMPLES
 

@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgDeviceManagementUserExperienceAnalyticNotAutopilotReadyDevice
 
 ## SYNOPSIS
-User experience analytics devices not Windows Autopilot ready.
+Create new navigation property to userExperienceAnalyticsNotAutopilotReadyDevice for deviceManagement
 
 ## SYNTAX
 
@@ -28,7 +28,7 @@ New-MgDeviceManagementUserExperienceAnalyticNotAutopilotReadyDevice
 ```
 
 ## DESCRIPTION
-User experience analytics devices not Windows Autopilot ready.
+Create new navigation property to userExperienceAnalyticsNotAutopilotReadyDevice for deviceManagement
 
 ## EXAMPLES
 
@@ -141,7 +141,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -268,7 +268,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphUserExperienceAnalyticsNotAutopilotReadyDevice>: The user experience analytics Device not windows autopilot ready.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[AutoPilotProfileAssigned <Boolean?>]`: The intune device's autopilotProfileAssigned.
   - `[AutoPilotRegistered <Boolean?>]`: The intune device's autopilotRegistered.
   - `[AzureAdJoinType <String>]`: The intune device's azure Ad joinType.

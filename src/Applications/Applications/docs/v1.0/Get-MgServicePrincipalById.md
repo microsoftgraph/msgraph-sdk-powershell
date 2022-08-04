@@ -18,7 +18,7 @@ Get-MgServicePrincipalById [-AdditionalProperties <Hashtable>] [-Ids <String[]>]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### Get3
+### Get1
 ```
 Get-MgServicePrincipalById
  -BodyParameter <IPaths15YkyvsServiceprincipalsMicrosoftGraphGetbyidsPostRequestbodyContentApplicationJsonSchema>
@@ -53,7 +53,7 @@ To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETE
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IPaths15YkyvsServiceprincipalsMicrosoftGraphGetbyidsPostRequestbodyContentApplicationJsonSchema
-Parameter Sets: Get3
+Parameter Sets: Get1
 Aliases:
 
 Required: True

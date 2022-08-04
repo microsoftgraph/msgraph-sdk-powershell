@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgUserProfile
 
 ## SYNOPSIS
-Represents properties that are descriptive of a user in a tenant.
+Get profile from users
 
 ## SYNTAX
 
@@ -24,7 +24,7 @@ Get-MgUserProfile -InputObject <IPeopleIdentity> [-ExpandProperty <String[]>] [-
 ```
 
 ## DESCRIPTION
-Represents properties that are descriptive of a user in a tenant.
+Get profile from users
 
 ## EXAMPLES
 

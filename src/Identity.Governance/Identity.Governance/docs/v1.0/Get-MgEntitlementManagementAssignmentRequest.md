@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgEntitlementManagementAssignmentRequest
 
 ## SYNOPSIS
-Represents access package assignment requests created by or on behalf of a user.
+Get assignmentRequests from identityGovernance
 
 ## SYNTAX
 
@@ -44,7 +44,7 @@ Get-MgEntitlementManagementAssignmentRequest -AccessPackageId <String> [-ExpandP
 ```
 
 ## DESCRIPTION
-Represents access package assignment requests created by or on behalf of a user.
+Get assignmentRequests from identityGovernance
 
 ## EXAMPLES
 
@@ -274,12 +274,15 @@ INPUTOBJECT <IIdentityGovernanceIdentity>: Identity Parameter
   - `[AccessPackageAssignmentResourceRoleId <String>]`: key: id of accessPackageAssignmentResourceRole
   - `[AccessPackageCatalogId <String>]`: key: id of accessPackageCatalog
   - `[AccessPackageId <String>]`: key: id of accessPackage
+  - `[AccessPackageId1 <String>]`: key: id of accessPackage
+  - `[AccessPackageId2 <String>]`: Usage: accessPackageId='{accessPackageId}'
   - `[AccessPackageResourceEnvironmentId <String>]`: key: id of accessPackageResourceEnvironment
   - `[AccessPackageResourceId <String>]`: key: id of accessPackageResource
   - `[AccessPackageResourceRequestId <String>]`: key: id of accessPackageResourceRequest
   - `[AccessPackageResourceRoleId <String>]`: key: id of accessPackageResourceRole
   - `[AccessPackageResourceRoleScopeId <String>]`: key: id of accessPackageResourceRoleScope
   - `[AccessPackageResourceScopeId <String>]`: key: id of accessPackageResourceScope
+  - `[AccessPackageSubjectId <String>]`: key: id of accessPackageSubject
   - `[AccessReviewDecisionId <String>]`: key: id of accessReviewDecision
   - `[AccessReviewHistoryDefinitionId <String>]`: key: id of accessReviewHistoryDefinition
   - `[AccessReviewHistoryInstanceId <String>]`: key: id of accessReviewHistoryInstance
@@ -310,14 +313,18 @@ INPUTOBJECT <IIdentityGovernanceIdentity>: Identity Parameter
   - `[GovernanceRoleAssignmentRequestId <String>]`: key: id of governanceRoleAssignmentRequest
   - `[GovernanceRoleDefinitionId <String>]`: key: id of governanceRoleDefinition
   - `[GovernanceRoleSettingId <String>]`: key: id of governanceRoleSetting
-  - `[On <String>]`: Usage: on={on}
+  - `[GroupId <String>]`: key: id of group
+  - `[IncompatibleAccessPackageId <String>]`: Usage: incompatibleAccessPackageId='{incompatibleAccessPackageId}'
+  - `[On <String>]`: Usage: on='{on}'
   - `[PrivilegedAccessId <String>]`: key: id of privilegedAccess
   - `[PrivilegedApprovalId <String>]`: key: id of privilegedApproval
   - `[PrivilegedOperationEventId <String>]`: key: id of privilegedOperationEvent
   - `[PrivilegedRoleAssignmentId <String>]`: key: id of privilegedRoleAssignment
+  - `[PrivilegedRoleAssignmentId1 <String>]`: key: id of privilegedRoleAssignment
   - `[PrivilegedRoleAssignmentRequestId <String>]`: key: id of privilegedRoleAssignmentRequest
   - `[PrivilegedRoleId <String>]`: key: id of privilegedRole
   - `[ProgramControlId <String>]`: key: id of programControl
+  - `[ProgramControlId1 <String>]`: key: id of programControl
   - `[ProgramControlTypeId <String>]`: key: id of programControlType
   - `[ProgramId <String>]`: key: id of program
   - `[UserConsentRequestId <String>]`: key: id of userConsentRequest

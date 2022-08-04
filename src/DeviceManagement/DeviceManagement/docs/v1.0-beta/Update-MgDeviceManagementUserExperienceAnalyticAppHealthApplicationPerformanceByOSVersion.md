@@ -5,41 +5,41 @@ online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.gra
 schema: 2.0.0
 ---
 
-# Update-MgDeviceManagementUserExperienceAnalyticAppHealthApplicationPerformanceByOSVersion
+# Update-MgDeviceManagementUserExperienceAnalyticAppHealthApplicationPerformanceByOsversion
 
 ## SYNOPSIS
-User experience analytics appHealth Application Performance by OS Version
+Update the navigation property userExperienceAnalyticsAppHealthApplicationPerformanceByOSVersion in deviceManagement
 
 ## SYNTAX
 
-### UpdateExpanded4 (Default)
+### UpdateExpanded (Default)
 ```
-Update-MgDeviceManagementUserExperienceAnalyticAppHealthApplicationPerformanceByOSVersion
+Update-MgDeviceManagementUserExperienceAnalyticAppHealthApplicationPerformanceByOsversion
  -UserExperienceAnalyticsAppHealthAppPerformanceByOSVersionId <String> [-ActiveDeviceCount <Int32>]
  [-AdditionalProperties <Hashtable>] [-AppCrashCount <Int32>] [-AppDisplayName <String>] [-AppName <String>]
  [-AppPublisher <String>] [-AppUsageDuration <Int32>] [-Id <String>] [-MeanTimeToFailureInMinutes <Int32>]
  [-OSBuildNumber <String>] [-OSVersion <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### Update4
+### Update
 ```
-Update-MgDeviceManagementUserExperienceAnalyticAppHealthApplicationPerformanceByOSVersion
+Update-MgDeviceManagementUserExperienceAnalyticAppHealthApplicationPerformanceByOsversion
  -UserExperienceAnalyticsAppHealthAppPerformanceByOSVersionId <String>
  -BodyParameter <IMicrosoftGraphUserExperienceAnalyticsAppHealthAppPerformanceByOSVersion> [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### UpdateViaIdentity4
+### UpdateViaIdentity
 ```
-Update-MgDeviceManagementUserExperienceAnalyticAppHealthApplicationPerformanceByOSVersion
+Update-MgDeviceManagementUserExperienceAnalyticAppHealthApplicationPerformanceByOsversion
  -InputObject <IDeviceManagementIdentity>
  -BodyParameter <IMicrosoftGraphUserExperienceAnalyticsAppHealthAppPerformanceByOSVersion> [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### UpdateViaIdentityExpanded4
+### UpdateViaIdentityExpanded
 ```
-Update-MgDeviceManagementUserExperienceAnalyticAppHealthApplicationPerformanceByOSVersion
+Update-MgDeviceManagementUserExperienceAnalyticAppHealthApplicationPerformanceByOsversion
  -InputObject <IDeviceManagementIdentity> [-ActiveDeviceCount <Int32>] [-AdditionalProperties <Hashtable>]
  [-AppCrashCount <Int32>] [-AppDisplayName <String>] [-AppName <String>] [-AppPublisher <String>]
  [-AppUsageDuration <Int32>] [-Id <String>] [-MeanTimeToFailureInMinutes <Int32>] [-OSBuildNumber <String>]
@@ -47,7 +47,7 @@ Update-MgDeviceManagementUserExperienceAnalyticAppHealthApplicationPerformanceBy
 ```
 
 ## DESCRIPTION
-User experience analytics appHealth Application Performance by OS Version
+Update the navigation property userExperienceAnalyticsAppHealthApplicationPerformanceByOSVersion in deviceManagement
 
 ## EXAMPLES
 
@@ -59,7 +59,7 @@ Valid values -2147483648 to 2147483647
 
 ```yaml
 Type: System.Int32
-Parameter Sets: UpdateExpanded4, UpdateViaIdentityExpanded4
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -74,7 +74,7 @@ Additional Parameters
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: UpdateExpanded4, UpdateViaIdentityExpanded4
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -90,7 +90,7 @@ Valid values -2147483648 to 2147483647
 
 ```yaml
 Type: System.Int32
-Parameter Sets: UpdateExpanded4, UpdateViaIdentityExpanded4
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -105,7 +105,7 @@ The friendly name of the application.
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded4, UpdateViaIdentityExpanded4
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -120,7 +120,7 @@ The name of the application.
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded4, UpdateViaIdentityExpanded4
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -135,7 +135,7 @@ The publisher of the application.
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded4, UpdateViaIdentityExpanded4
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -151,7 +151,7 @@ Valid values -2147483648 to 2147483647
 
 ```yaml
 Type: System.Int32
-Parameter Sets: UpdateExpanded4, UpdateViaIdentityExpanded4
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -167,7 +167,7 @@ To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETE
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsAppHealthAppPerformanceByOSVersion
-Parameter Sets: Update4, UpdateViaIdentity4
+Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
 Required: True
@@ -178,11 +178,11 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded4, UpdateViaIdentityExpanded4
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -198,7 +198,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
-Parameter Sets: UpdateViaIdentity4, UpdateViaIdentityExpanded4
+Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
 Required: True
@@ -214,7 +214,7 @@ Valid values -2147483648 to 2147483647
 
 ```yaml
 Type: System.Int32
-Parameter Sets: UpdateExpanded4, UpdateViaIdentityExpanded4
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -229,7 +229,7 @@ The os build number of the application.
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded4, UpdateViaIdentityExpanded4
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -244,7 +244,7 @@ The os version of the application.
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded4, UpdateViaIdentityExpanded4
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -274,7 +274,7 @@ key: id of userExperienceAnalyticsAppHealthAppPerformanceByOSVersion
 
 ```yaml
 Type: System.String
-Parameter Sets: Update4, UpdateExpanded4
+Parameter Sets: Update, UpdateExpanded
 Aliases:
 
 Required: True
@@ -339,7 +339,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphUserExperienceAnalyticsAppHealthAppPerformanceByOSVersion>: The user experience analytics application performance entity contains app performance details by OS version.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[ActiveDeviceCount <Int32?>]`: The number of devices where the app has been active. Valid values -2147483648 to 2147483647
   - `[AppCrashCount <Int32?>]`: The number of crashes for the app. Valid values -2147483648 to 2147483647
   - `[AppDisplayName <String>]`: The friendly name of the application.
@@ -380,6 +380,15 @@ INPUTOBJECT <IDeviceManagementIdentity>: Identity Parameter
   - `[DeviceHealthScriptDeviceStateId <String>]`: key: id of deviceHealthScriptDeviceState
   - `[DeviceHealthScriptId <String>]`: key: id of deviceHealthScript
   - `[DeviceLogCollectionResponseId <String>]`: key: id of deviceLogCollectionResponse
+  - `[DeviceManagementComplianceActionItemId <String>]`: key: id of deviceManagementComplianceActionItem
+  - `[DeviceManagementCompliancePolicyId <String>]`: key: id of deviceManagementCompliancePolicy
+  - `[DeviceManagementComplianceScheduledActionForRuleId <String>]`: key: id of deviceManagementComplianceScheduledActionForRule
+  - `[DeviceManagementConfigurationPolicyAssignmentId <String>]`: key: id of deviceManagementConfigurationPolicyAssignment
+  - `[DeviceManagementConfigurationPolicyId <String>]`: key: id of deviceManagementConfigurationPolicy
+  - `[DeviceManagementConfigurationPolicyTemplateId <String>]`: key: id of deviceManagementConfigurationPolicyTemplate
+  - `[DeviceManagementConfigurationSettingDefinitionId <String>]`: key: id of deviceManagementConfigurationSettingDefinition
+  - `[DeviceManagementConfigurationSettingId <String>]`: key: id of deviceManagementConfigurationSetting
+  - `[DeviceManagementConfigurationSettingTemplateId <String>]`: key: id of deviceManagementConfigurationSettingTemplate
   - `[DeviceManagementDerivedCredentialSettingsId <String>]`: key: id of deviceManagementDerivedCredentialSettings
   - `[DeviceManagementIntentAssignmentId <String>]`: key: id of deviceManagementIntentAssignment
   - `[DeviceManagementIntentDeviceSettingStateSummaryId <String>]`: key: id of deviceManagementIntentDeviceSettingStateSummary
@@ -417,8 +426,6 @@ INPUTOBJECT <IDeviceManagementIdentity>: Identity Parameter
   - `[ManagedDeviceEncryptionStateId <String>]`: key: id of managedDeviceEncryptionState
   - `[ManagedDeviceId <String>]`: key: id of managedDevice
   - `[ManagedDeviceMobileAppConfigurationStateId <String>]`: key: id of managedDeviceMobileAppConfigurationState
-  - `[ManagementConditionId <String>]`: key: id of managementCondition
-  - `[ManagementConditionStatementId <String>]`: key: id of managementConditionStatement
   - `[MicrosoftTunnelConfigurationId <String>]`: key: id of microsoftTunnelConfiguration
   - `[MicrosoftTunnelHealthThresholdId <String>]`: key: id of microsoftTunnelHealthThreshold
   - `[MicrosoftTunnelServerId <String>]`: key: id of microsoftTunnelServer
@@ -448,6 +455,7 @@ INPUTOBJECT <IDeviceManagementIdentity>: Identity Parameter
   - `[UserExperienceAnalyticsBatteryHealthOSPerformanceId <String>]`: key: id of userExperienceAnalyticsBatteryHealthOsPerformance
   - `[UserExperienceAnalyticsCategoryId <String>]`: key: id of userExperienceAnalyticsCategory
   - `[UserExperienceAnalyticsDevicePerformanceId <String>]`: key: id of userExperienceAnalyticsDevicePerformance
+  - `[UserExperienceAnalyticsDeviceScopeId <String>]`: key: id of userExperienceAnalyticsDeviceScope
   - `[UserExperienceAnalyticsDeviceScoresId <String>]`: key: id of userExperienceAnalyticsDeviceScores
   - `[UserExperienceAnalyticsDeviceStartupHistoryId <String>]`: key: id of userExperienceAnalyticsDeviceStartupHistory
   - `[UserExperienceAnalyticsDeviceStartupProcessId <String>]`: key: id of userExperienceAnalyticsDeviceStartupProcess

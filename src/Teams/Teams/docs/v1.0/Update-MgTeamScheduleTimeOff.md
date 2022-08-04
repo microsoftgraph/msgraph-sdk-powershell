@@ -8,11 +8,11 @@ schema: 2.0.0
 # Update-MgTeamScheduleTimeOff
 
 ## SYNOPSIS
-The instances of times off in the schedule.
+Update the navigation property timesOff in teams
 
 ## SYNTAX
 
-### UpdateExpanded1 (Default)
+### UpdateExpanded (Default)
 ```
 Update-MgTeamScheduleTimeOff -TeamId <String> -TimeOffId <String> [-AdditionalProperties <Hashtable>]
  [-CreatedDateTime <DateTime>] [-DraftTimeOff <IMicrosoftGraphTimeOffItem>] [-Id <String>]
@@ -21,19 +21,19 @@ Update-MgTeamScheduleTimeOff -TeamId <String> -TimeOffId <String> [-AdditionalPr
  [<CommonParameters>]
 ```
 
-### Update1
+### Update
 ```
-Update-MgTeamScheduleTimeOff -TeamId <String> -TimeOffId <String> -BodyParameter <IMicrosoftGraphTimeOff1>
+Update-MgTeamScheduleTimeOff -TeamId <String> -TimeOffId <String> -BodyParameter <IMicrosoftGraphTimeOff>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### UpdateViaIdentity1
+### UpdateViaIdentity
 ```
-Update-MgTeamScheduleTimeOff -InputObject <ITeamsIdentity> -BodyParameter <IMicrosoftGraphTimeOff1>
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Update-MgTeamScheduleTimeOff -InputObject <ITeamsIdentity> -BodyParameter <IMicrosoftGraphTimeOff> [-PassThru]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### UpdateViaIdentityExpanded1
+### UpdateViaIdentityExpanded
 ```
 Update-MgTeamScheduleTimeOff -InputObject <ITeamsIdentity> [-AdditionalProperties <Hashtable>]
  [-CreatedDateTime <DateTime>] [-DraftTimeOff <IMicrosoftGraphTimeOffItem>] [-Id <String>]
@@ -43,7 +43,7 @@ Update-MgTeamScheduleTimeOff -InputObject <ITeamsIdentity> [-AdditionalPropertie
 ```
 
 ## DESCRIPTION
-The instances of times off in the schedule.
+Update the navigation property timesOff in teams
 
 ## EXAMPLES
 
@@ -54,7 +54,7 @@ Additional Parameters
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -69,8 +69,8 @@ timeOff
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTimeOff1
-Parameter Sets: Update1, UpdateViaIdentity1
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTimeOff
+Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
 Required: True
@@ -86,7 +86,7 @@ For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 
 ```yaml
 Type: System.DateTime
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -102,7 +102,7 @@ To construct, please use Get-Help -Online and see NOTES section for DRAFTTIMEOFF
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTimeOffItem
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -113,11 +113,11 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -133,7 +133,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.ITeamsIdentity
-Parameter Sets: UpdateViaIdentity1, UpdateViaIdentityExpanded1
+Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
 Required: True
@@ -149,7 +149,7 @@ To construct, please use Get-Help -Online and see NOTES section for LASTMODIFIED
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentitySet
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -165,7 +165,7 @@ For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 
 ```yaml
 Type: System.DateTime
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -196,7 +196,7 @@ To construct, please use Get-Help -Online and see NOTES section for SHAREDTIMEOF
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTimeOffItem
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -211,7 +211,7 @@ key: id of team
 
 ```yaml
 Type: System.String
-Parameter Sets: Update1, UpdateExpanded1
+Parameter Sets: Update, UpdateExpanded
 Aliases:
 
 Required: True
@@ -226,7 +226,7 @@ key: id of timeOff
 
 ```yaml
 Type: System.String
-Parameter Sets: Update1, UpdateExpanded1
+Parameter Sets: Update, UpdateExpanded
 Aliases:
 
 Required: True
@@ -242,7 +242,7 @@ Required.
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -288,7 +288,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTimeOff1
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTimeOff
 
 ### Microsoft.Graph.PowerShell.Models.ITeamsIdentity
 
@@ -305,19 +305,19 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-BODYPARAMETER <IMicrosoftGraphTimeOff1>: timeOff
+BODYPARAMETER <IMicrosoftGraphTimeOff>: timeOff
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
   - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Application <IMicrosoftGraphIdentity>]`: identity
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[DisplayName <String>]`: The identity's display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+      - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
       - `[Id <String>]`: Unique identifier for the identity.
     - `[Device <IMicrosoftGraphIdentity>]`: identity
     - `[User <IMicrosoftGraphIdentity>]`: identity
   - `[LastModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[DraftTimeOff <IMicrosoftGraphTimeOffItem>]`: timeOffItem
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[EndDateTime <DateTime?>]`: 
@@ -342,10 +342,12 @@ INPUTOBJECT <ITeamsIdentity>: Identity Parameter
   - `[ChatMessageId <String>]`: key: id of chatMessage
   - `[ChatMessageId1 <String>]`: key: id of chatMessage
   - `[ConversationMemberId <String>]`: key: id of conversationMember
+  - `[DeletedTeamId <String>]`: key: id of deletedTeam
   - `[GroupId <String>]`: key: id of group
   - `[OfferShiftRequestId <String>]`: key: id of offerShiftRequest
   - `[OpenShiftChangeRequestId <String>]`: key: id of openShiftChangeRequest
   - `[OpenShiftId <String>]`: key: id of openShift
+  - `[PinnedChatMessageInfoId <String>]`: key: id of pinnedChatMessageInfo
   - `[ResourceSpecificPermissionGrantId <String>]`: key: id of resourceSpecificPermissionGrant
   - `[SchedulingGroupId <String>]`: key: id of schedulingGroup
   - `[SharedWithChannelTeamInfoId <String>]`: key: id of sharedWithChannelTeamInfo
@@ -361,14 +363,11 @@ INPUTOBJECT <ITeamsIdentity>: Identity Parameter
   - `[TeamworkDeviceOperationId <String>]`: key: id of teamworkDeviceOperation
   - `[TeamworkTagId <String>]`: key: id of teamworkTag
   - `[TeamworkTagMemberId <String>]`: key: id of teamworkTagMember
-  - `[TenantId <String>]`: Usage: tenantId={tenantId}
   - `[TimeCardId <String>]`: key: id of timeCard
   - `[TimeOffId <String>]`: key: id of timeOff
   - `[TimeOffReasonId <String>]`: key: id of timeOffReason
   - `[TimeOffRequestId <String>]`: key: id of timeOffRequest
   - `[UserId <String>]`: key: id of user
-  - `[UserId1 <String>]`: Usage: userId={userId}
-  - `[UserPrincipalName <String>]`: Usage: userPrincipalName={userPrincipalName}
   - `[UserScopeTeamsAppInstallationId <String>]`: key: id of userScopeTeamsAppInstallation
   - `[WorkforceIntegrationId <String>]`: key: id of workforceIntegration
 
@@ -376,7 +375,7 @@ LASTMODIFIEDBY <IMicrosoftGraphIdentitySet>: identitySet
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Application <IMicrosoftGraphIdentity>]`: identity
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[DisplayName <String>]`: The identity's display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+    - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
     - `[Id <String>]`: Unique identifier for the identity.
   - `[Device <IMicrosoftGraphIdentity>]`: identity
   - `[User <IMicrosoftGraphIdentity>]`: identity

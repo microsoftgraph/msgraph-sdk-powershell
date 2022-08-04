@@ -12,27 +12,27 @@ Invoke action cancel
 
 ## SYNTAX
 
-### CancelExpanded1 (Default)
+### CancelExpanded (Default)
 ```
 Stop-MgGroupEvent -EventId <String> -GroupId <String> [-AdditionalProperties <Hashtable>] [-Comment <String>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### Cancel1
+### Cancel
 ```
 Stop-MgGroupEvent -EventId <String> -GroupId <String>
  -BodyParameter <IPaths1BptnttGroupsGroupIdEventsEventIdMicrosoftGraphCancelPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### CancelViaIdentity1
+### CancelViaIdentity
 ```
 Stop-MgGroupEvent -InputObject <IGroupsIdentity>
  -BodyParameter <IPaths1BptnttGroupsGroupIdEventsEventIdMicrosoftGraphCancelPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### CancelViaIdentityExpanded1
+### CancelViaIdentityExpanded
 ```
 Stop-MgGroupEvent -InputObject <IGroupsIdentity> [-AdditionalProperties <Hashtable>] [-Comment <String>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -50,7 +50,7 @@ Additional Parameters
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: CancelExpanded1, CancelViaIdentityExpanded1
+Parameter Sets: CancelExpanded, CancelViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -66,7 +66,7 @@ To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETE
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IPaths1BptnttGroupsGroupIdEventsEventIdMicrosoftGraphCancelPostRequestbodyContentApplicationJsonSchema
-Parameter Sets: Cancel1, CancelViaIdentity1
+Parameter Sets: Cancel, CancelViaIdentity
 Aliases:
 
 Required: True
@@ -81,7 +81,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.String
-Parameter Sets: CancelExpanded1, CancelViaIdentityExpanded1
+Parameter Sets: CancelExpanded, CancelViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -96,7 +96,7 @@ key: id of event
 
 ```yaml
 Type: System.String
-Parameter Sets: Cancel1, CancelExpanded1
+Parameter Sets: Cancel, CancelExpanded
 Aliases:
 
 Required: True
@@ -111,7 +111,7 @@ key: id of group
 
 ```yaml
 Type: System.String
-Parameter Sets: Cancel1, CancelExpanded1
+Parameter Sets: Cancel, CancelExpanded
 Aliases:
 
 Required: True
@@ -127,7 +127,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IGroupsIdentity
-Parameter Sets: CancelViaIdentity1, CancelViaIdentityExpanded1
+Parameter Sets: CancelViaIdentity, CancelViaIdentityExpanded
 Aliases:
 
 Required: True
@@ -211,25 +211,45 @@ BODYPARAMETER <IPaths1BptnttGroupsGroupIdEventsEventIdMicrosoftGraphCancelPostRe
 
 INPUTOBJECT <IGroupsIdentity>: Identity Parameter
   - `[AttachmentId <String>]`: key: id of attachment
+  - `[ContentTypeId <String>]`: key: id of contentType
   - `[ConversationId <String>]`: key: id of conversation
   - `[ConversationThreadId <String>]`: key: id of conversationThread
+  - `[DirectoryObjectId <String>]`: key: id of directoryObject
   - `[DirectorySettingId <String>]`: key: id of directorySetting
+  - `[DocumentSetVersionId <String>]`: key: id of documentSetVersion
+  - `[DriveId <String>]`: key: id of drive
+  - `[DriveItemId <String>]`: key: id of driveItem
+  - `[DriveItemVersionId <String>]`: key: id of driveItemVersion
+  - `[EndDateTime <String>]`: Usage: endDateTime='{endDateTime}'
   - `[EndpointId <String>]`: key: id of endpoint
   - `[EventId <String>]`: key: id of event
   - `[ExtensionId <String>]`: key: id of extension
   - `[GroupId <String>]`: key: id of group
   - `[GroupLifecyclePolicyId <String>]`: key: id of groupLifecyclePolicy
   - `[IncludePersonalNotebooks <Boolean?>]`: Usage: includePersonalNotebooks={includePersonalNotebooks}
+  - `[Interval <String>]`: Usage: interval='{interval}'
+  - `[ListId <String>]`: key: id of list
+  - `[ListId1 <String>]`: Usage: listId='{listId}'
+  - `[ListItemId <String>]`: key: id of listItem
+  - `[ListItemVersionId <String>]`: key: id of listItemVersion
   - `[MentionId <String>]`: key: id of mention
   - `[MultiValueLegacyExtendedPropertyId <String>]`: key: id of multiValueLegacyExtendedProperty
   - `[NotebookId <String>]`: key: id of notebook
   - `[OnenotePageId <String>]`: key: id of onenotePage
   - `[OnenoteSectionId <String>]`: key: id of onenoteSection
+  - `[Path <String>]`: Usage: path='{path}'
+  - `[PermissionId <String>]`: key: id of permission
   - `[PostId <String>]`: key: id of post
   - `[ProfilePhotoId <String>]`: key: id of profilePhoto
+  - `[Q <String>]`: Usage: q='{q}'
   - `[ResourceSpecificPermissionGrantId <String>]`: key: id of resourceSpecificPermissionGrant
   - `[SingleValueLegacyExtendedPropertyId <String>]`: key: id of singleValueLegacyExtendedProperty
-  - `[User <String>]`: Usage: User={User}
+  - `[SiteId <String>]`: key: id of site
+  - `[SitePageId <String>]`: key: id of sitePage
+  - `[StartDateTime <String>]`: Usage: startDateTime='{startDateTime}'
+  - `[SubscriptionId <String>]`: key: id of subscription
+  - `[Token <String>]`: Usage: token='{token}'
+  - `[User <String>]`: Usage: User='{User}'
   - `[UserId <String>]`: key: id of user
 
 ## RELATED LINKS

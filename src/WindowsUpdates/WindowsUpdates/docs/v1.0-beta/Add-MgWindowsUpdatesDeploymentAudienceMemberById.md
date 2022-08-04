@@ -12,28 +12,28 @@ Invoke action addMembersById
 
 ## SYNTAX
 
-### AddExpanded1 (Default)
+### AddExpanded (Default)
 ```
 Add-MgWindowsUpdatesDeploymentAudienceMemberById -DeploymentId <String> -UpdatableAssetId <String>
  [-AdditionalProperties <Hashtable>] [-Ids <String[]>] [-MemberEntityType <String>] [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
-### Add1
+### Add
 ```
 Add-MgWindowsUpdatesDeploymentAudienceMemberById -DeploymentId <String> -UpdatableAssetId <String>
  -BodyParameter <IPaths1K7YvheAdminWindowsUpdatesDeploymentsDeploymentIdAudienceMembersUpdatableassetIdMicrosoftGraphWindowsupdatesAddmembersbyidPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### AddViaIdentity1
+### AddViaIdentity
 ```
 Add-MgWindowsUpdatesDeploymentAudienceMemberById -InputObject <IWindowsUpdatesIdentity>
  -BodyParameter <IPaths1K7YvheAdminWindowsUpdatesDeploymentsDeploymentIdAudienceMembersUpdatableassetIdMicrosoftGraphWindowsupdatesAddmembersbyidPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### AddViaIdentityExpanded1
+### AddViaIdentityExpanded
 ```
 Add-MgWindowsUpdatesDeploymentAudienceMemberById -InputObject <IWindowsUpdatesIdentity>
  [-AdditionalProperties <Hashtable>] [-Ids <String[]>] [-MemberEntityType <String>] [-PassThru] [-Confirm]
@@ -52,7 +52,7 @@ Additional Parameters
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: AddExpanded1, AddViaIdentityExpanded1
+Parameter Sets: AddExpanded, AddViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -68,7 +68,7 @@ To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETE
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IPaths1K7YvheAdminWindowsUpdatesDeploymentsDeploymentIdAudienceMembersUpdatableassetIdMicrosoftGraphWindowsupdatesAddmembersbyidPostRequestbodyContentApplicationJsonSchema
-Parameter Sets: Add1, AddViaIdentity1
+Parameter Sets: Add, AddViaIdentity
 Aliases:
 
 Required: True
@@ -83,7 +83,7 @@ key: id of deployment
 
 ```yaml
 Type: System.String
-Parameter Sets: Add1, AddExpanded1
+Parameter Sets: Add, AddExpanded
 Aliases:
 
 Required: True
@@ -98,7 +98,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.String[]
-Parameter Sets: AddExpanded1, AddViaIdentityExpanded1
+Parameter Sets: AddExpanded, AddViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -114,7 +114,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IWindowsUpdatesIdentity
-Parameter Sets: AddViaIdentity1, AddViaIdentityExpanded1
+Parameter Sets: AddViaIdentity, AddViaIdentityExpanded
 Aliases:
 
 Required: True
@@ -129,7 +129,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.String
-Parameter Sets: AddExpanded1, AddViaIdentityExpanded1
+Parameter Sets: AddExpanded, AddViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -159,7 +159,7 @@ key: id of updatableAsset
 
 ```yaml
 Type: System.String
-Parameter Sets: Add1, AddExpanded1
+Parameter Sets: Add, AddExpanded
 Aliases:
 
 Required: True
@@ -217,7 +217,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ALIASES
 
-### Add-MgWuDeploymentAudienceMemberById
+### Add-MgWuDeploymentAudienceMemberGraphBPreId
 
 COMPLEX PARAMETER PROPERTIES
 
@@ -232,6 +232,7 @@ BODYPARAMETER <IPaths1K7YvheAdminWindowsUpdatesDeploymentsDeploymentIdAudienceMe
 INPUTOBJECT <IWindowsUpdatesIdentity>: Identity Parameter
   - `[CatalogEntryId <String>]`: key: id of catalogEntry
   - `[DeploymentId <String>]`: key: id of deployment
+  - `[ResourceConnectionId <String>]`: key: id of resourceConnection
   - `[UpdatableAssetId <String>]`: key: id of updatableAsset
 
 ## RELATED LINKS

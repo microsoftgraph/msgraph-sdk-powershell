@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgDeviceManagementImportedWindowAutopilotDeviceIdentity
 
 ## SYNOPSIS
-Collection of imported Windows autopilot devices.
+Update the navigation property importedWindowsAutopilotDeviceIdentities in deviceManagement
 
 ## SYNTAX
 
@@ -49,7 +49,7 @@ Update-MgDeviceManagementImportedWindowAutopilotDeviceIdentity
 ```
 
 ## DESCRIPTION
-Collection of imported Windows autopilot devices.
+Update the navigation property importedWindowsAutopilotDeviceIdentities in deviceManagement
 
 ## EXAMPLES
 
@@ -132,7 +132,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -308,7 +308,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphImportedWindowsAutopilotDeviceIdentity>: Imported windows autopilot devices.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[AssignedUserPrincipalName <String>]`: UPN of the user the device will be assigned
   - `[GroupTag <String>]`: Group Tag of the Windows autopilot device.
   - `[HardwareIdentifier <Byte[]>]`: Hardware Blob of the Windows autopilot device.
@@ -319,14 +319,13 @@ BODYPARAMETER <IMicrosoftGraphImportedWindowsAutopilotDeviceIdentity>: Imported 
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[DeviceErrorCode <Int32?>]`: Device error code reported by Device Directory Service(DDS).
     - `[DeviceErrorName <String>]`: Device error name reported by Device Directory Service(DDS).
-    - `[DeviceImportStatus <String>]`: importedWindowsAutopilotDeviceIdentityImportStatus
+    - `[DeviceImportStatus <ImportedWindowsAutopilotDeviceIdentityImportStatus?>]`: importedWindowsAutopilotDeviceIdentityImportStatus
     - `[DeviceRegistrationId <String>]`: Device Registration ID for successfully added device reported by Device Directory Service(DDS).
 
 INPUTOBJECT <IDeviceManagementEnrolmentIdentity>: Identity Parameter
   - `[AndroidDeviceOwnerEnrollmentProfileId <String>]`: key: id of androidDeviceOwnerEnrollmentProfile
   - `[AndroidForWorkEnrollmentProfileId <String>]`: key: id of androidForWorkEnrollmentProfile
   - `[AppScopeId <String>]`: key: id of appScope
-  - `[AppScopeId1 <String>]`: Usage: appScopeId={appScopeId}
   - `[AppleEnrollmentProfileAssignmentId <String>]`: key: id of appleEnrollmentProfileAssignment
   - `[AppleUserInitiatedEnrollmentProfileId <String>]`: key: id of appleUserInitiatedEnrollmentProfile
   - `[ApprovalId <String>]`: key: id of approval
@@ -335,15 +334,13 @@ INPUTOBJECT <IDeviceManagementEnrolmentIdentity>: Identity Parameter
   - `[DeviceEnrollmentConfigurationId <String>]`: key: id of deviceEnrollmentConfiguration
   - `[DeviceManagementAutopilotEventId <String>]`: key: id of deviceManagementAutopilotEvent
   - `[DeviceManagementAutopilotPolicyStatusDetailId <String>]`: key: id of deviceManagementAutopilotPolicyStatusDetail
-  - `[DirectoryScopeId <String>]`: Usage: directoryScopeId={directoryScopeId}
+  - `[DirectoryObjectId <String>]`: key: id of directoryObject
   - `[EnrollmentConfigurationAssignmentId <String>]`: key: id of enrollmentConfigurationAssignment
   - `[EnrollmentProfileId <String>]`: key: id of enrollmentProfile
   - `[ImportedAppleDeviceIdentityId <String>]`: key: id of importedAppleDeviceIdentity
   - `[ImportedDeviceIdentityId <String>]`: key: id of importedDeviceIdentity
   - `[ImportedWindowsAutopilotDeviceIdentityId <String>]`: key: id of importedWindowsAutopilotDeviceIdentity
-  - `[On <String>]`: Usage: on={on}
-  - `[PrincipalId <String>]`: Usage: principalId={principalId}
-  - `[RoleDefinitionId <String>]`: Usage: roleDefinitionId={roleDefinitionId}
+  - `[On <String>]`: Usage: on='{on}'
   - `[UnifiedRbacResourceActionId <String>]`: key: id of unifiedRbacResourceAction
   - `[UnifiedRbacResourceNamespaceId <String>]`: key: id of unifiedRbacResourceNamespace
   - `[UnifiedRoleAssignmentId <String>]`: key: id of unifiedRoleAssignment
@@ -366,7 +363,7 @@ STATE <IMicrosoftGraphImportedWindowsAutopilotDeviceIdentityState>: importedWind
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[DeviceErrorCode <Int32?>]`: Device error code reported by Device Directory Service(DDS).
   - `[DeviceErrorName <String>]`: Device error name reported by Device Directory Service(DDS).
-  - `[DeviceImportStatus <String>]`: importedWindowsAutopilotDeviceIdentityImportStatus
+  - `[DeviceImportStatus <ImportedWindowsAutopilotDeviceIdentityImportStatus?>]`: importedWindowsAutopilotDeviceIdentityImportStatus
   - `[DeviceRegistrationId <String>]`: Device Registration ID for successfully added device reported by Device Directory Service(DDS).
 
 ## RELATED LINKS

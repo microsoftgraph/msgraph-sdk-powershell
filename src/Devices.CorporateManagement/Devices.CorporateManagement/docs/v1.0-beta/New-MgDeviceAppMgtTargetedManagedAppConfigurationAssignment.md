@@ -8,15 +8,16 @@ schema: 2.0.0
 # New-MgDeviceAppMgtTargetedManagedAppConfigurationAssignment
 
 ## SYNOPSIS
-Navigation property to list of inclusion and exclusion groups to which the policy is deployed.
+Create new navigation property to assignments for deviceAppManagement
 
 ## SYNTAX
 
 ### CreateExpanded (Default)
 ```
 New-MgDeviceAppMgtTargetedManagedAppConfigurationAssignment -TargetedManagedAppConfigurationId <String>
- [-AdditionalProperties <Hashtable>] [-Id <String>] [-Source <String>] [-SourceId <String>]
- [-Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-AdditionalProperties <Hashtable>] [-Id <String>] [-Source <DeviceAndAppManagementAssignmentSource>]
+ [-SourceId <String>] [-Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Create
@@ -34,12 +35,13 @@ New-MgDeviceAppMgtTargetedManagedAppConfigurationAssignment -InputObject <IDevic
 ### CreateViaIdentityExpanded
 ```
 New-MgDeviceAppMgtTargetedManagedAppConfigurationAssignment -InputObject <IDevicesCorporateManagementIdentity>
- [-AdditionalProperties <Hashtable>] [-Id <String>] [-Source <String>] [-SourceId <String>]
- [-Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-AdditionalProperties <Hashtable>] [-Id <String>] [-Source <DeviceAndAppManagementAssignmentSource>]
+ [-SourceId <String>] [-Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Navigation property to list of inclusion and exclusion groups to which the policy is deployed.
+Create new navigation property to assignments for deviceAppManagement
 
 ## EXAMPLES
 
@@ -77,7 +79,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -111,7 +113,7 @@ Accept wildcard characters: False
 Represents source of assignment.
 
 ```yaml
-Type: System.String
+Type: Microsoft.Graph.PowerShell.Support.DeviceAndAppManagementAssignmentSource
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -225,26 +227,27 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphTargetedManagedAppPolicyAssignment>: The type for deployment of groups or apps.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
-  - `[Source <String>]`: Represents source of assignment.
+  - `[Id <String>]`: 
+  - `[Source <DeviceAndAppManagementAssignmentSource?>]`: Represents source of assignment.
   - `[SourceId <String>]`: Identifier for resource used for deployment to a group
   - `[Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget>]`: Base type for assignment targets.
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[DeviceAndAppManagementAssignmentFilterId <String>]`: The Id of the filter for the target assignment.
-    - `[DeviceAndAppManagementAssignmentFilterType <String>]`: Represents type of the assignment filter.
+    - `[DeviceAndAppManagementAssignmentFilterType <DeviceAndAppManagementAssignmentFilterType?>]`: Represents type of the assignment filter.
 
 INPUTOBJECT <IDevicesCorporateManagementIdentity>: Identity Parameter
   - `[AndroidManagedAppProtectionId <String>]`: key: id of androidManagedAppProtection
   - `[AppLogCollectionRequestId <String>]`: key: id of appLogCollectionRequest
   - `[AssignmentFilterEvaluationStatusDetailsId <String>]`: key: id of assignmentFilterEvaluationStatusDetails
-  - `[BundleId <String>]`: Usage: bundleId={bundleId}
+  - `[BundleId <String>]`: Usage: bundleId='{bundleId}'
   - `[Count <Int64?>]`: Usage: count={count}
   - `[DefaultManagedAppProtectionId <String>]`: key: id of defaultManagedAppProtection
+  - `[DetectedAppId <String>]`: key: id of detectedApp
   - `[DeviceAppManagementTaskId <String>]`: key: id of deviceAppManagementTask
   - `[DeviceCompliancePolicyStateId <String>]`: key: id of deviceCompliancePolicyState
   - `[DeviceConfigurationStateId <String>]`: key: id of deviceConfigurationState
   - `[DeviceEnrollmentConfigurationId <String>]`: key: id of deviceEnrollmentConfiguration
-  - `[DeviceId <String>]`: Usage: deviceId={deviceId}
+  - `[DeviceId <String>]`: Usage: deviceId='{deviceId}'
   - `[DeviceInstallStateId <String>]`: key: id of deviceInstallState
   - `[DeviceLogCollectionResponseId <String>]`: key: id of deviceLogCollectionResponse
   - `[DeviceManagementTroubleshootingEventId <String>]`: key: id of deviceManagementTroubleshootingEvent
@@ -284,13 +287,13 @@ INPUTOBJECT <IDevicesCorporateManagementIdentity>: Identity Parameter
   - `[SecurityBaselineSettingStateId <String>]`: key: id of securityBaselineSettingState
   - `[SecurityBaselineStateId <String>]`: key: id of securityBaselineState
   - `[SideLoadingKeyId <String>]`: key: id of sideLoadingKey
-  - `[Status <String>]`: Usage: status={status}
+  - `[Status <String>]`: Usage: status='{status}'
   - `[TargetedManagedAppConfigurationId <String>]`: key: id of targetedManagedAppConfiguration
   - `[TargetedManagedAppPolicyAssignmentId <String>]`: key: id of targetedManagedAppPolicyAssignment
   - `[UserAppInstallStatusId <String>]`: key: id of userAppInstallStatus
   - `[UserId <String>]`: key: id of user
   - `[UserInstallStateSummaryId <String>]`: key: id of userInstallStateSummary
-  - `[UserPrincipalName <String>]`: Usage: userPrincipalName={userPrincipalName}
+  - `[UserPrincipalName <String>]`: Usage: userPrincipalName='{userPrincipalName}'
   - `[VppTokenId <String>]`: key: id of vppToken
   - `[WindowsDefenderApplicationControlSupplementalPolicyAssignmentId <String>]`: key: id of windowsDefenderApplicationControlSupplementalPolicyAssignment
   - `[WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusId <String>]`: key: id of windowsDefenderApplicationControlSupplementalPolicyDeploymentStatus
@@ -299,11 +302,12 @@ INPUTOBJECT <IDevicesCorporateManagementIdentity>: Identity Parameter
   - `[WindowsInformationProtectionDeviceRegistrationId <String>]`: key: id of windowsInformationProtectionDeviceRegistration
   - `[WindowsInformationProtectionPolicyId <String>]`: key: id of windowsInformationProtectionPolicy
   - `[WindowsInformationProtectionWipeActionId <String>]`: key: id of windowsInformationProtectionWipeAction
+  - `[WindowsManagedAppProtectionId <String>]`: key: id of windowsManagedAppProtection
 
 TARGET <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget>: Base type for assignment targets.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[DeviceAndAppManagementAssignmentFilterId <String>]`: The Id of the filter for the target assignment.
-  - `[DeviceAndAppManagementAssignmentFilterType <String>]`: Represents type of the assignment filter.
+  - `[DeviceAndAppManagementAssignmentFilterType <DeviceAndAppManagementAssignmentFilterType?>]`: Represents type of the assignment filter.
 
 ## RELATED LINKS
 
