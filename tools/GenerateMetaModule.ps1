@@ -86,6 +86,7 @@ $ApiVersion | ForEach-Object {
         Write-Warning "Module not found in $AuthModuleManifest."
     }
 
+    Write-Host -ForegroundColor Green "Creating '$Module' module manifest..."
     $ModuleMapping.Keys | ForEach-Object {
         $RequiredModule = $_
         $ModuleManifest = Join-Path $ModulesSrc $RequiredModule $CurrentApiVersion "$Module.$RequiredModule.psd1"
@@ -97,16 +98,22 @@ $ApiVersion | ForEach-Object {
             Write-Warning "Module not found in $ModuleManifest."
         }
     }
+    $ModuleManifestSettings.RequiredModules = $RequiredGraphModules
 
-    Write-Host -ForegroundColor Green "Creating '$Module' module manifest..."
     if ($null -eq $NuspecOptions.version) {
         Write-Error "Version number is not set for $ModulePrefix module. Please set 'version' in $ModuleMetadataPath."
     }
     $ModuleManifestSettings.ModuleVersion = $NuspecOptions.version
-    $ModuleManifestSettings.Path = "$MetaModuleModuleDir\$CurrentApiVersion\$Module.psd1"
-    $ModuleManifestSettings.RequiredModules = $RequiredGraphModules
     if ($NuspecOptions.prerelease) {
         $ModuleManifestSettings.Prerelease = $NuspecOptions.prerelease
+    }
+    $ModuleManifestSettings.Path =  Join-Path $MetaModuleModuleDir $CurrentApiVersion "$Module.psd1"
+    if (Test-Path $ModuleManifestSettings.Path) {
+        $Psd1 = Import-PowerShellDataFile $ModuleManifestSettings.Path
+        $ModuleManifestSettings.GUID = $Psd1.GUID
+    }
+    else {
+        $ModuleManifestSettings.GUID = (New-Guid).Guid
     }
     New-ModuleManifest @ModuleManifestSettings
 

@@ -11,7 +11,7 @@
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
     <description>Microsoft Graph PowerShell module</description>
     <copyright>© Microsoft Corporation. All rights reserved.</copyright>
-    <tags>MicrosoftGraph Microsoft Office365 Graph PowerShell Outlook OneDrive AzureAD SharePoint Intune AzureAutomationNotSupported</tags>
+    <tags>MicrosoftGraph Microsoft Office365 Graph PowerShell Outlook OneDrive AzureAD SharePoint Intune AzureAutomationNotSupported PSModule PSIncludes_Cmdlet</tags>
     <dependencies>
       <dependency id="Microsoft.Graph.Authentication" version="1.11.0" />
       <dependency id="Microsoft.Graph.Search" version="[1.11.0]" />
