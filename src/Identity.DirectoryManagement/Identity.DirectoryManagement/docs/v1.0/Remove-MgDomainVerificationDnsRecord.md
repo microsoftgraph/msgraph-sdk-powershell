@@ -8,8 +8,7 @@ schema: 2.0.0
 # Remove-MgDomainVerificationDnsRecord
 
 ## SYNOPSIS
-DNS records that the customer adds to the DNS zone file of the domain before the customer can complete domain ownership verification with Azure AD.
-Read-only, Nullable
+Delete navigation property verificationDnsRecords for domains
 
 ## SYNTAX
 
@@ -26,8 +25,7 @@ Remove-MgDomainVerificationDnsRecord -InputObject <IIdentityDirectoryManagementI
 ```
 
 ## DESCRIPTION
-DNS records that the customer adds to the DNS zone file of the domain before the customer can complete domain ownership verification with Azure AD.
-Read-only, Nullable
+Delete navigation property verificationDnsRecords for domains
 
 ## EXAMPLES
 
@@ -182,6 +180,7 @@ INPUTOBJECT <IIdentityDirectoryManagementIdentity>: Identity Parameter
   - `[InternalDomainFederationId <String>]`: key: id of internalDomainFederation
   - `[OrgContactId <String>]`: key: id of orgContact
   - `[OrganizationId <String>]`: key: id of organization
+  - `[OrganizationalBrandingLocalizationId <String>]`: key: id of organizationalBrandingLocalization
   - `[OutboundSharedUserProfileUserId <String>]`: key: userId of outboundSharedUserProfile
   - `[ProfileCardPropertyId <String>]`: key: id of profileCardProperty
   - `[RecommendationId <String>]`: key: id of recommendation

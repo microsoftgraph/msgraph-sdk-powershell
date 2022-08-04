@@ -100,7 +100,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -246,34 +246,34 @@ To create the parameters described below, construct a hash table containing the 
 
 BITLOCKER <IMicrosoftGraphBitlocker>: bitlocker
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[RecoveryKeys <IMicrosoftGraphBitlockerRecoveryKey[]>]`: The recovery keys associated with the bitlocker entity.
-    - `[Id <String>]`: Read-only.
-    - `[CreatedDateTime <DateTime?>]`: The date and time when the key was originally backed up to Azure Active Directory. Not nullable.
-    - `[DeviceId <String>]`: Identifier of the device the BitLocker key is originally backed up from. Supports $filter (eq).
-    - `[Key <String>]`: The BitLocker recovery key. Returned only on $select. Not nullable.
+    - `[Id <String>]`: 
+    - `[CreatedDateTime <DateTime?>]`: The date and time when the key was originally backed up to Azure Active Directory.
+    - `[DeviceId <String>]`: ID of the device the BitLocker key is originally backed up from.
+    - `[Key <String>]`: The BitLocker recovery key.
     - `[VolumeType <String>]`: volumeType
 
 BODYPARAMETER <IMicrosoftGraphInformationProtection>: informationProtection
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[Bitlocker <IMicrosoftGraphBitlocker>]`: bitlocker
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Id <String>]`: Read-only.
+    - `[Id <String>]`: 
     - `[RecoveryKeys <IMicrosoftGraphBitlockerRecoveryKey[]>]`: The recovery keys associated with the bitlocker entity.
-      - `[Id <String>]`: Read-only.
-      - `[CreatedDateTime <DateTime?>]`: The date and time when the key was originally backed up to Azure Active Directory. Not nullable.
-      - `[DeviceId <String>]`: Identifier of the device the BitLocker key is originally backed up from. Supports $filter (eq).
-      - `[Key <String>]`: The BitLocker recovery key. Returned only on $select. Not nullable.
+      - `[Id <String>]`: 
+      - `[CreatedDateTime <DateTime?>]`: The date and time when the key was originally backed up to Azure Active Directory.
+      - `[DeviceId <String>]`: ID of the device the BitLocker key is originally backed up from.
+      - `[Key <String>]`: The BitLocker recovery key.
       - `[VolumeType <String>]`: volumeType
   - `[DataLossPreventionPolicies <IMicrosoftGraphDataLossPreventionPolicy[]>]`: 
-    - `[Id <String>]`: Read-only.
+    - `[Id <String>]`: 
     - `[Name <String>]`: 
   - `[Policy <IMicrosoftGraphInformationProtectionPolicy>]`: informationProtectionPolicy
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Id <String>]`: Read-only.
+    - `[Id <String>]`: 
     - `[Labels <IMicrosoftGraphInformationProtectionLabel[]>]`: 
-      - `[Id <String>]`: Read-only.
+      - `[Id <String>]`: 
       - `[Color <String>]`: The color that the UI should display for the label, if configured.
       - `[Description <String>]`: The admin-defined description for the label.
       - `[IsActive <Boolean?>]`: Indicates whether the label is active or not. Active labels should be hidden or disabled in UI.
@@ -291,7 +291,7 @@ BODYPARAMETER <IMicrosoftGraphInformationProtection>: informationProtection
       - `[Sensitivity <Int32?>]`: The sensitivity value of the label, where lower is less sensitive.
       - `[Tooltip <String>]`: The tooltip that should be displayed for the label in a UI.
   - `[SensitivityLabels <IMicrosoftGraphSensitivityLabel[]>]`: 
-    - `[Id <String>]`: Read-only.
+    - `[Id <String>]`: 
     - `[ApplicableTo <String>]`: sensitivityLabelTarget
     - `[ApplicationMode <String>]`: applicationMode
     - `[AssignedPolicies <IMicrosoftGraphLabelPolicy[]>]`: 
@@ -313,20 +313,20 @@ BODYPARAMETER <IMicrosoftGraphInformationProtection>: informationProtection
     - `[ToolTip <String>]`: 
   - `[SensitivityPolicySettings <IMicrosoftGraphSensitivityPolicySettings>]`: sensitivityPolicySettings
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Id <String>]`: Read-only.
+    - `[Id <String>]`: 
     - `[ApplicableTo <String>]`: sensitivityLabelTarget
     - `[DowngradeSensitivityRequiresJustification <Boolean?>]`: 
     - `[HelpWebUrl <String>]`: 
     - `[IsMandatory <Boolean?>]`: 
   - `[ThreatAssessmentRequests <IMicrosoftGraphThreatAssessmentRequest[]>]`: 
-    - `[Id <String>]`: Read-only.
+    - `[Id <String>]`: 
     - `[Category <String>]`: threatCategory
     - `[ContentType <String>]`: threatAssessmentContentType
     - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Application <IMicrosoftGraphIdentity>]`: identity
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
-        - `[DisplayName <String>]`: The identity's display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+        - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
         - `[Id <String>]`: Unique identifier for the identity.
       - `[Device <IMicrosoftGraphIdentity>]`: identity
       - `[User <IMicrosoftGraphIdentity>]`: identity
@@ -334,21 +334,21 @@ BODYPARAMETER <IMicrosoftGraphInformationProtection>: informationProtection
     - `[ExpectedAssessment <String>]`: threatExpectedAssessment
     - `[RequestSource <String>]`: threatAssessmentRequestSource
     - `[Results <IMicrosoftGraphThreatAssessmentResult[]>]`: A collection of threat assessment results. Read-only. By default, a GET /threatAssessmentRequests/{id} does not return this property unless you apply $expand on it.
-      - `[Id <String>]`: Read-only.
+      - `[Id <String>]`: 
       - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
       - `[Message <String>]`: The result message for each threat assessment.
       - `[ResultType <String>]`: threatAssessmentResultType
     - `[Status <String>]`: threatAssessmentStatus
 
 DATALOSSPREVENTIONPOLICIES <IMicrosoftGraphDataLossPreventionPolicy[]>: .
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[Name <String>]`: 
 
 POLICY <IMicrosoftGraphInformationProtectionPolicy>: informationProtectionPolicy
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[Labels <IMicrosoftGraphInformationProtectionLabel[]>]`: 
-    - `[Id <String>]`: Read-only.
+    - `[Id <String>]`: 
     - `[Color <String>]`: The color that the UI should display for the label, if configured.
     - `[Description <String>]`: The admin-defined description for the label.
     - `[IsActive <Boolean?>]`: Indicates whether the label is active or not. Active labels should be hidden or disabled in UI.
@@ -367,7 +367,7 @@ POLICY <IMicrosoftGraphInformationProtectionPolicy>: informationProtectionPolicy
     - `[Tooltip <String>]`: The tooltip that should be displayed for the label in a UI.
 
 SENSITIVITYLABELS <IMicrosoftGraphSensitivityLabel[]>: .
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[ApplicableTo <String>]`: sensitivityLabelTarget
   - `[ApplicationMode <String>]`: applicationMode
   - `[AssignedPolicies <IMicrosoftGraphLabelPolicy[]>]`: 
@@ -390,21 +390,21 @@ SENSITIVITYLABELS <IMicrosoftGraphSensitivityLabel[]>: .
 
 SENSITIVITYPOLICYSETTINGS <IMicrosoftGraphSensitivityPolicySettings>: sensitivityPolicySettings
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[ApplicableTo <String>]`: sensitivityLabelTarget
   - `[DowngradeSensitivityRequiresJustification <Boolean?>]`: 
   - `[HelpWebUrl <String>]`: 
   - `[IsMandatory <Boolean?>]`: 
 
 THREATASSESSMENTREQUESTS <IMicrosoftGraphThreatAssessmentRequest[]>: .
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[Category <String>]`: threatCategory
   - `[ContentType <String>]`: threatAssessmentContentType
   - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Application <IMicrosoftGraphIdentity>]`: identity
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[DisplayName <String>]`: The identity's display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+      - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
       - `[Id <String>]`: Unique identifier for the identity.
     - `[Device <IMicrosoftGraphIdentity>]`: identity
     - `[User <IMicrosoftGraphIdentity>]`: identity
@@ -412,7 +412,7 @@ THREATASSESSMENTREQUESTS <IMicrosoftGraphThreatAssessmentRequest[]>: .
   - `[ExpectedAssessment <String>]`: threatExpectedAssessment
   - `[RequestSource <String>]`: threatAssessmentRequestSource
   - `[Results <IMicrosoftGraphThreatAssessmentResult[]>]`: A collection of threat assessment results. Read-only. By default, a GET /threatAssessmentRequests/{id} does not return this property unless you apply $expand on it.
-    - `[Id <String>]`: Read-only.
+    - `[Id <String>]`: 
     - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
     - `[Message <String>]`: The result message for each threat assessment.
     - `[ResultType <String>]`: threatAssessmentResultType

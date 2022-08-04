@@ -8,15 +8,17 @@ schema: 2.0.0
 # New-MgDeviceAppMgtAndroidManagedAppProtection
 
 ## SYNOPSIS
-Android managed app policies.
+Create new navigation property to androidManagedAppProtections for deviceAppManagement
 
 ## SYNTAX
 
 ### CreateExpanded1 (Default)
 ```
 New-MgDeviceAppMgtAndroidManagedAppProtection [-AdditionalProperties <Hashtable>]
- [-AllowedDataStorageLocations <String[]>] [-AllowedInboundDataTransferSources <String>]
- [-AllowedOutboundClipboardSharingLevel <String>] [-AllowedOutboundDataTransferDestinations <String>]
+ [-AllowedDataStorageLocations <ManagedAppDataStorageLocation[]>]
+ [-AllowedInboundDataTransferSources <ManagedAppDataTransferLevel>]
+ [-AllowedOutboundClipboardSharingLevel <ManagedAppClipboardSharingLevel>]
+ [-AllowedOutboundDataTransferDestinations <ManagedAppDataTransferLevel>]
  [-Apps <IMicrosoftGraphManagedMobileApp[]>]
  [-Assignments <IMicrosoftGraphTargetedManagedAppPolicyAssignment1[]>] [-ContactSyncBlocked]
  [-CreatedDateTime <DateTime>] [-CustomBrowserDisplayName <String>] [-CustomBrowserPackageId <String>]
@@ -24,16 +26,16 @@ New-MgDeviceAppMgtAndroidManagedAppProtection [-AdditionalProperties <Hashtable>
  [-DeploymentSummary <IMicrosoftGraphManagedAppPolicyDeploymentSummary>] [-Description <String>]
  [-DeviceComplianceRequired] [-DisableAppEncryptionIfDeviceEncryptionIsEnabled]
  [-DisableAppPinIfDevicePinIsSet] [-DisplayName <String>] [-EncryptAppData] [-FingerprintBlocked]
- [-Id <String>] [-IsAssigned] [-LastModifiedDateTime <DateTime>] [-ManagedBrowser <String>]
+ [-Id <String>] [-IsAssigned] [-LastModifiedDateTime <DateTime>] [-ManagedBrowser <ManagedBrowserType>]
  [-ManagedBrowserToOpenLinksRequired] [-MaximumPinRetries <Int32>] [-MinimumPinLength <Int32>]
  [-MinimumRequiredAppVersion <String>] [-MinimumRequiredOSVersion <String>]
  [-MinimumRequiredPatchVersion <String>] [-MinimumWarningAppVersion <String>]
  [-MinimumWarningOSVersion <String>] [-MinimumWarningPatchVersion <String>]
  [-OrganizationalCredentialsRequired] [-PeriodBeforePinReset <TimeSpan>]
  [-PeriodOfflineBeforeAccessCheck <TimeSpan>] [-PeriodOfflineBeforeWipeIsEnforced <TimeSpan>]
- [-PeriodOnlineBeforeAccessCheck <TimeSpan>] [-PinCharacterSet <String>] [-PinRequired] [-PrintBlocked]
- [-SaveAsBlocked] [-ScreenCaptureBlocked] [-SimplePinBlocked] [-Version <String>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-PeriodOnlineBeforeAccessCheck <TimeSpan>] [-PinCharacterSet <ManagedAppPinCharacterSet>] [-PinRequired]
+ [-PrintBlocked] [-SaveAsBlocked] [-ScreenCaptureBlocked] [-SimplePinBlocked] [-Version <String>] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create1
@@ -43,7 +45,7 @@ New-MgDeviceAppMgtAndroidManagedAppProtection -BodyParameter <IMicrosoftGraphAnd
 ```
 
 ## DESCRIPTION
-Android managed app policies.
+Create new navigation property to androidManagedAppProtections for deviceAppManagement
 
 ## EXAMPLES
 
@@ -68,7 +70,7 @@ Accept wildcard characters: False
 Data storage locations where a user may store managed data.
 
 ```yaml
-Type: System.String[]
+Type: Microsoft.Graph.PowerShell.Support.ManagedAppDataStorageLocation[]
 Parameter Sets: CreateExpanded1
 Aliases:
 
@@ -83,7 +85,7 @@ Accept wildcard characters: False
 Data can be transferred from/to these classes of apps
 
 ```yaml
-Type: System.String
+Type: Microsoft.Graph.PowerShell.Support.ManagedAppDataTransferLevel
 Parameter Sets: CreateExpanded1
 Aliases:
 
@@ -98,7 +100,7 @@ Accept wildcard characters: False
 Represents the level to which the device's clipboard may be shared between apps
 
 ```yaml
-Type: System.String
+Type: Microsoft.Graph.PowerShell.Support.ManagedAppClipboardSharingLevel
 Parameter Sets: CreateExpanded1
 Aliases:
 
@@ -113,7 +115,7 @@ Accept wildcard characters: False
 Data can be transferred from/to these classes of apps
 
 ```yaml
-Type: System.String
+Type: Microsoft.Graph.PowerShell.Support.ManagedAppDataTransferLevel
 Parameter Sets: CreateExpanded1
 Aliases:
 
@@ -204,7 +206,6 @@ Accept wildcard characters: False
 
 ### -CustomBrowserDisplayName
 Friendly name of the preferred custom browser to open weblink on Android.
-When this property is configured, ManagedBrowserToOpenLinksRequired should be true.
 
 ```yaml
 Type: System.String
@@ -219,8 +220,7 @@ Accept wildcard characters: False
 ```
 
 ### -CustomBrowserPackageId
-Unique identifier of the preferred custom browser to open weblink on Android.
-When this property is configured, ManagedBrowserToOpenLinksRequired should be true.
+Unique identifier of a custom browser to open weblink on Android.
 
 ```yaml
 Type: System.String
@@ -386,7 +386,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -434,7 +434,7 @@ Accept wildcard characters: False
 Type of managed browser
 
 ```yaml
-Type: System.String
+Type: Microsoft.Graph.PowerShell.Support.ManagedBrowserType
 Parameter Sets: CreateExpanded1
 Aliases:
 
@@ -659,7 +659,7 @@ Accept wildcard characters: False
 Character set which is to be used for a user's app PIN
 
 ```yaml
-Type: System.String
+Type: Microsoft.Graph.PowerShell.Support.ManagedAppPinCharacterSet
 Parameter Sets: CreateExpanded1
 Aliases:
 
@@ -814,33 +814,33 @@ To create the parameters described below, construct a hash table containing the 
 
 
 APPS <IMicrosoftGraphManagedMobileApp[]>: List of apps to which the policy is deployed.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[MobileAppIdentifier <IMicrosoftGraphMobileAppIdentifier>]`: The identifier for a mobile app.
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Version <String>]`: Version of the entity.
 
 ASSIGNMENTS <IMicrosoftGraphTargetedManagedAppPolicyAssignment1[]>: Navigation property to list of inclusion and exclusion groups to which the policy is deployed.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget1>]`: Base type for assignment targets.
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
 
 BODYPARAMETER <IMicrosoftGraphAndroidManagedAppProtection1>: Policy used to configure detailed management settings targeted to specific security groups and for a specified set of apps on an Android device
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Assignments <IMicrosoftGraphTargetedManagedAppPolicyAssignment1[]>]`: Navigation property to list of inclusion and exclusion groups to which the policy is deployed.
-    - `[Id <String>]`: Read-only.
+    - `[Id <String>]`: 
     - `[Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget1>]`: Base type for assignment targets.
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[IsAssigned <Boolean?>]`: Indicates if the policy is deployed to any inclusion groups or not.
-  - `[AllowedDataStorageLocations <String[]>]`: Data storage locations where a user may store managed data.
-  - `[AllowedInboundDataTransferSources <String>]`: Data can be transferred from/to these classes of apps
-  - `[AllowedOutboundClipboardSharingLevel <String>]`: Represents the level to which the device's clipboard may be shared between apps
-  - `[AllowedOutboundDataTransferDestinations <String>]`: Data can be transferred from/to these classes of apps
+  - `[AllowedDataStorageLocations <ManagedAppDataStorageLocation[]>]`: Data storage locations where a user may store managed data.
+  - `[AllowedInboundDataTransferSources <ManagedAppDataTransferLevel?>]`: Data can be transferred from/to these classes of apps
+  - `[AllowedOutboundClipboardSharingLevel <ManagedAppClipboardSharingLevel?>]`: Represents the level to which the device's clipboard may be shared between apps
+  - `[AllowedOutboundDataTransferDestinations <ManagedAppDataTransferLevel?>]`: Data can be transferred from/to these classes of apps
   - `[ContactSyncBlocked <Boolean?>]`: Indicates whether contacts can be synced to the user's device.
   - `[DataBackupBlocked <Boolean?>]`: Indicates whether the backup of a managed app's data is blocked.
   - `[DeviceComplianceRequired <Boolean?>]`: Indicates whether device compliance is required.
   - `[DisableAppPinIfDevicePinIsSet <Boolean?>]`: Indicates whether use of the app pin is required if the device pin is set.
   - `[FingerprintBlocked <Boolean?>]`: Indicates whether use of the fingerprint reader is allowed in place of a pin if PinRequired is set to True.
-  - `[ManagedBrowser <String>]`: Type of managed browser
+  - `[ManagedBrowser <ManagedBrowserType?>]`: Type of managed browser
   - `[ManagedBrowserToOpenLinksRequired <Boolean?>]`: Indicates whether internet links should be opened in the managed browser app, or any custom browser specified by CustomBrowserProtocol (for iOS) or CustomBrowserPackageId/CustomBrowserDisplayName (for Android)
   - `[MaximumPinRetries <Int32?>]`: Maximum number of incorrect pin retry attempts before the managed app is either blocked or wiped.
   - `[MinimumPinLength <Int32?>]`: Minimum pin length required for an app-level pin if PinRequired is set to True
@@ -853,7 +853,7 @@ BODYPARAMETER <IMicrosoftGraphAndroidManagedAppProtection1>: Policy used to conf
   - `[PeriodOfflineBeforeAccessCheck <TimeSpan?>]`: The period after which access is checked when the device is not connected to the internet.
   - `[PeriodOfflineBeforeWipeIsEnforced <TimeSpan?>]`: The amount of time an app is allowed to remain disconnected from the internet before all managed data it is wiped.
   - `[PeriodOnlineBeforeAccessCheck <TimeSpan?>]`: The period after which access is checked when the device is connected to the internet.
-  - `[PinCharacterSet <String>]`: Character set which is to be used for a user's app PIN
+  - `[PinCharacterSet <ManagedAppPinCharacterSet?>]`: Character set which is to be used for a user's app PIN
   - `[PinRequired <Boolean?>]`: Indicates whether an app-level pin is required.
   - `[PrintBlocked <Boolean?>]`: Indicates whether printing is allowed from managed apps.
   - `[SaveAsBlocked <Boolean?>]`: Indicates whether users may use the 'Save As' menu item to save a copy of protected files.
@@ -863,18 +863,18 @@ BODYPARAMETER <IMicrosoftGraphAndroidManagedAppProtection1>: Policy used to conf
   - `[DisplayName <String>]`: Policy display name.
   - `[LastModifiedDateTime <DateTime?>]`: Last time the policy was modified.
   - `[Version <String>]`: Version of the entity.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[Apps <IMicrosoftGraphManagedMobileApp[]>]`: List of apps to which the policy is deployed.
-    - `[Id <String>]`: Read-only.
+    - `[Id <String>]`: 
     - `[MobileAppIdentifier <IMicrosoftGraphMobileAppIdentifier>]`: The identifier for a mobile app.
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Version <String>]`: Version of the entity.
-  - `[CustomBrowserDisplayName <String>]`: Friendly name of the preferred custom browser to open weblink on Android. When this property is configured, ManagedBrowserToOpenLinksRequired should be true.
-  - `[CustomBrowserPackageId <String>]`: Unique identifier of the preferred custom browser to open weblink on Android. When this property is configured, ManagedBrowserToOpenLinksRequired should be true.
+  - `[CustomBrowserDisplayName <String>]`: Friendly name of the preferred custom browser to open weblink on Android.
+  - `[CustomBrowserPackageId <String>]`: Unique identifier of a custom browser to open weblink on Android.
   - `[DeployedAppCount <Int32?>]`: Count of apps to which the current policy is deployed.
   - `[DeploymentSummary <IMicrosoftGraphManagedAppPolicyDeploymentSummary>]`: The ManagedAppEntity is the base entity type for all other entity types under app management workflow.
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Id <String>]`: Read-only.
+    - `[Id <String>]`: 
     - `[ConfigurationDeployedUserCount <Int32?>]`: Not yet documented
     - `[ConfigurationDeploymentSummaryPerApp <IMicrosoftGraphManagedAppPolicyDeploymentSummaryPerApp[]>]`: Not yet documented
       - `[ConfigurationAppliedUserCount <Int32?>]`: Number of users the policy is applied.
@@ -890,7 +890,7 @@ BODYPARAMETER <IMicrosoftGraphAndroidManagedAppProtection1>: Policy used to conf
 
 DEPLOYMENTSUMMARY <IMicrosoftGraphManagedAppPolicyDeploymentSummary>: The ManagedAppEntity is the base entity type for all other entity types under app management workflow.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[ConfigurationDeployedUserCount <Int32?>]`: Not yet documented
   - `[ConfigurationDeploymentSummaryPerApp <IMicrosoftGraphManagedAppPolicyDeploymentSummaryPerApp[]>]`: Not yet documented
     - `[ConfigurationAppliedUserCount <Int32?>]`: Number of users the policy is applied.

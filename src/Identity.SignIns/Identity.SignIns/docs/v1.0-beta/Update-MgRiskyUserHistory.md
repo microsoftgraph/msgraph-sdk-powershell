@@ -8,15 +8,15 @@ schema: 2.0.0
 # Update-MgRiskyUserHistory
 
 ## SYNOPSIS
-The activity related to user risk level change
+Update the navigation property history in identityProtection
 
 ## SYNTAX
 
 ### UpdateExpanded (Default)
 ```
 Update-MgRiskyUserHistory -RiskyUserHistoryItemId <String> -RiskyUserId <String>
- [-Activity <IMicrosoftGraphRiskUserActivity>] [-AdditionalProperties <Hashtable>]
- [-History <IMicrosoftGraphRiskyUserHistoryItem[]>] [-Id <String>] [-InitiatedBy <String>] [-IsDeleted]
+ [-Activity <IMicrosoftGraphRiskUserActivity1>] [-AdditionalProperties <Hashtable>]
+ [-History <IMicrosoftGraphRiskyUserHistoryItem1[]>] [-Id <String>] [-InitiatedBy <String>] [-IsDeleted]
  [-IsProcessing] [-RiskDetail <String>] [-RiskLastUpdatedDateTime <DateTime>] [-RiskLevel <String>]
  [-RiskState <String>] [-UserDisplayName <String>] [-UserId <String>] [-UserPrincipalName <String>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -25,27 +25,27 @@ Update-MgRiskyUserHistory -RiskyUserHistoryItemId <String> -RiskyUserId <String>
 ### Update
 ```
 Update-MgRiskyUserHistory -RiskyUserHistoryItemId <String> -RiskyUserId <String>
- -BodyParameter <IMicrosoftGraphRiskyUserHistoryItem> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphRiskyUserHistoryItem1> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgRiskyUserHistory -InputObject <IIdentitySignInsIdentity>
- -BodyParameter <IMicrosoftGraphRiskyUserHistoryItem> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphRiskyUserHistoryItem1> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
 Update-MgRiskyUserHistory -InputObject <IIdentitySignInsIdentity>
- [-Activity <IMicrosoftGraphRiskUserActivity>] [-AdditionalProperties <Hashtable>]
- [-History <IMicrosoftGraphRiskyUserHistoryItem[]>] [-Id <String>] [-InitiatedBy <String>] [-IsDeleted]
+ [-Activity <IMicrosoftGraphRiskUserActivity1>] [-AdditionalProperties <Hashtable>]
+ [-History <IMicrosoftGraphRiskyUserHistoryItem1[]>] [-Id <String>] [-InitiatedBy <String>] [-IsDeleted]
  [-IsProcessing] [-RiskDetail <String>] [-RiskLastUpdatedDateTime <DateTime>] [-RiskLevel <String>]
  [-RiskState <String>] [-UserDisplayName <String>] [-UserId <String>] [-UserPrincipalName <String>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-The activity related to user risk level change
+Update the navigation property history in identityProtection
 
 ## EXAMPLES
 
@@ -56,7 +56,7 @@ riskUserActivity
 To construct, please use Get-Help -Online and see NOTES section for ACTIVITY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphRiskUserActivity
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphRiskUserActivity1
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -87,7 +87,7 @@ riskyUserHistoryItem
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphRiskyUserHistoryItem
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphRiskyUserHistoryItem1
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -103,7 +103,7 @@ The activity related to user risk level change
 To construct, please use Get-Help -Online and see NOTES section for HISTORY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphRiskyUserHistoryItem[]
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphRiskyUserHistoryItem1[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -115,7 +115,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -207,7 +207,7 @@ Accept wildcard characters: False
 ```
 
 ### -RiskDetail
-riskDetail
+.
 
 ```yaml
 Type: System.String
@@ -381,7 +381,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphRiskyUserHistoryItem
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphRiskyUserHistoryItem1
 
 ## OUTPUTS
 
@@ -396,46 +396,46 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-ACTIVITY <IMicrosoftGraphRiskUserActivity>: riskUserActivity
+ACTIVITY <IMicrosoftGraphRiskUserActivity1>: riskUserActivity
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Detail <String>]`: riskDetail
+  - `[Detail <String>]`: 
   - `[EventTypes <String[]>]`: 
   - `[RiskEventTypes <String[]>]`: The type of risk event detected.
 
-BODYPARAMETER <IMicrosoftGraphRiskyUserHistoryItem>: riskyUserHistoryItem
+BODYPARAMETER <IMicrosoftGraphRiskyUserHistoryItem1>: riskyUserHistoryItem
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[History <IMicrosoftGraphRiskyUserHistoryItem[]>]`: The activity related to user risk level change
+  - `[History <IMicrosoftGraphRiskyUserHistoryItem1[]>]`: The activity related to user risk level change
   - `[IsDeleted <Boolean?>]`: Indicates whether the user is deleted. Possible values are: true, false.
   - `[IsProcessing <Boolean?>]`: Indicates whether a user's risky state is being processed by the backend.
-  - `[RiskDetail <String>]`: riskDetail
+  - `[RiskDetail <String>]`: 
   - `[RiskLastUpdatedDateTime <DateTime?>]`: The date and time that the risky user was last updated.  The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
   - `[RiskLevel <String>]`: riskLevel
   - `[RiskState <String>]`: riskState
   - `[UserDisplayName <String>]`: Risky user display name.
   - `[UserPrincipalName <String>]`: Risky user principal name.
-  - `[Id <String>]`: Read-only.
-  - `[Activity <IMicrosoftGraphRiskUserActivity>]`: riskUserActivity
+  - `[Id <String>]`: 
+  - `[Activity <IMicrosoftGraphRiskUserActivity1>]`: riskUserActivity
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Detail <String>]`: riskDetail
+    - `[Detail <String>]`: 
     - `[EventTypes <String[]>]`: 
     - `[RiskEventTypes <String[]>]`: The type of risk event detected.
   - `[InitiatedBy <String>]`: The id of actor that does the operation.
   - `[UserId <String>]`: The id of the user.
 
-HISTORY <IMicrosoftGraphRiskyUserHistoryItem[]>: The activity related to user risk level change
-  - `[History <IMicrosoftGraphRiskyUserHistoryItem[]>]`: The activity related to user risk level change
+HISTORY <IMicrosoftGraphRiskyUserHistoryItem1[]>: The activity related to user risk level change
+  - `[History <IMicrosoftGraphRiskyUserHistoryItem1[]>]`: The activity related to user risk level change
   - `[IsDeleted <Boolean?>]`: Indicates whether the user is deleted. Possible values are: true, false.
   - `[IsProcessing <Boolean?>]`: Indicates whether a user's risky state is being processed by the backend.
-  - `[RiskDetail <String>]`: riskDetail
+  - `[RiskDetail <String>]`: 
   - `[RiskLastUpdatedDateTime <DateTime?>]`: The date and time that the risky user was last updated.  The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
   - `[RiskLevel <String>]`: riskLevel
   - `[RiskState <String>]`: riskState
   - `[UserDisplayName <String>]`: Risky user display name.
   - `[UserPrincipalName <String>]`: Risky user principal name.
-  - `[Id <String>]`: Read-only.
-  - `[Activity <IMicrosoftGraphRiskUserActivity>]`: riskUserActivity
+  - `[Id <String>]`: 
+  - `[Activity <IMicrosoftGraphRiskUserActivity1>]`: riskUserActivity
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Detail <String>]`: riskDetail
+    - `[Detail <String>]`: 
     - `[EventTypes <String[]>]`: 
     - `[RiskEventTypes <String[]>]`: The type of risk event detected.
   - `[InitiatedBy <String>]`: The id of actor that does the operation.
@@ -445,10 +445,15 @@ INPUTOBJECT <IIdentitySignInsIdentity>: Identity Parameter
   - `[ActivityBasedTimeoutPolicyId <String>]`: key: id of activityBasedTimeoutPolicy
   - `[AppManagementPolicyId <String>]`: key: id of appManagementPolicy
   - `[AuthenticationContextClassReferenceId <String>]`: key: id of authenticationContextClassReference
+  - `[AuthenticationMethodConfigurationId <String>]`: key: id of authenticationMethodConfiguration
   - `[AuthenticationMethodId <String>]`: key: id of authenticationMethod
   - `[AuthorizationPolicyId <String>]`: key: id of authorizationPolicy
+  - `[B2CIdentityUserFlowId <String>]`: key: id of b2cIdentityUserFlow
+  - `[B2XIdentityUserFlowId <String>]`: key: id of b2xIdentityUserFlow
   - `[BitlockerRecoveryKeyId <String>]`: key: id of bitlockerRecoveryKey
+  - `[CertificateBasedAuthConfigurationId <String>]`: key: id of certificateBasedAuthConfiguration
   - `[ClaimsMappingPolicyId <String>]`: key: id of claimsMappingPolicy
+  - `[CommandId <String>]`: key: id of command
   - `[ConditionalAccessPolicyId <String>]`: key: id of conditionalAccessPolicy
   - `[CrossTenantAccessPolicyConfigurationPartnerTenantId <String>]`: key: tenantId of crossTenantAccessPolicyConfigurationPartner
   - `[DataLossPreventionPolicyId <String>]`: key: id of dataLossPreventionPolicy
@@ -456,10 +461,16 @@ INPUTOBJECT <IIdentitySignInsIdentity>: Identity Parameter
   - `[DefaultUserRoleOverrideId <String>]`: key: id of defaultUserRoleOverride
   - `[DirectoryObjectId <String>]`: key: id of directoryObject
   - `[EmailAuthenticationMethodId <String>]`: key: id of emailAuthenticationMethod
+  - `[ExtensionId <String>]`: key: id of extension
   - `[FeatureRolloutPolicyId <String>]`: key: id of featureRolloutPolicy
   - `[Fido2AuthenticationMethodId <String>]`: key: id of fido2AuthenticationMethod
+  - `[GroupId <String>]`: key: id of group
   - `[HomeRealmDiscoveryPolicyId <String>]`: key: id of homeRealmDiscoveryPolicy
+  - `[IdentityApiConnectorId <String>]`: key: id of identityApiConnector
+  - `[IdentityProviderBaseId <String>]`: key: id of identityProviderBase
   - `[IdentityProviderId <String>]`: key: id of identityProvider
+  - `[IdentityUserFlowAttributeAssignmentId <String>]`: key: id of identityUserFlowAttributeAssignment
+  - `[IdentityUserFlowAttributeId <String>]`: key: id of identityUserFlowAttribute
   - `[IdentityUserFlowId <String>]`: key: id of identityUserFlow
   - `[InformationProtectionLabelId <String>]`: key: id of informationProtectionLabel
   - `[LongRunningOperationId <String>]`: key: id of longRunningOperation
@@ -474,12 +485,15 @@ INPUTOBJECT <IIdentitySignInsIdentity>: Identity Parameter
   - `[PermissionGrantPolicyId <String>]`: key: id of permissionGrantPolicy
   - `[PhoneAuthenticationMethodId <String>]`: key: id of phoneAuthenticationMethod
   - `[RiskDetectionId <String>]`: key: id of riskDetection
+  - `[RiskyServicePrincipalHistoryItemId <String>]`: key: id of riskyServicePrincipalHistoryItem
+  - `[RiskyServicePrincipalId <String>]`: key: id of riskyServicePrincipal
   - `[RiskyUserHistoryItemId <String>]`: key: id of riskyUserHistoryItem
   - `[RiskyUserId <String>]`: key: id of riskyUser
   - `[SensitivityLabelId <String>]`: key: id of sensitivityLabel
   - `[SensitivityLabelId1 <String>]`: key: id of sensitivityLabel
   - `[ServicePrincipalCreationConditionSetId <String>]`: key: id of servicePrincipalCreationConditionSet
   - `[ServicePrincipalCreationPolicyId <String>]`: key: id of servicePrincipalCreationPolicy
+  - `[ServicePrincipalRiskDetectionId <String>]`: key: id of servicePrincipalRiskDetection
   - `[SoftwareOathAuthenticationMethodId <String>]`: key: id of softwareOathAuthenticationMethod
   - `[TemporaryAccessPassAuthenticationMethodId <String>]`: key: id of temporaryAccessPassAuthenticationMethod
   - `[ThreatAssessmentRequestId <String>]`: key: id of threatAssessmentRequest
@@ -491,6 +505,9 @@ INPUTOBJECT <IIdentitySignInsIdentity>: Identity Parameter
   - `[UnifiedRoleManagementPolicyAssignmentId <String>]`: key: id of unifiedRoleManagementPolicyAssignment
   - `[UnifiedRoleManagementPolicyId <String>]`: key: id of unifiedRoleManagementPolicy
   - `[UnifiedRoleManagementPolicyRuleId <String>]`: key: id of unifiedRoleManagementPolicyRule
+  - `[UsageRightId <String>]`: key: id of usageRight
+  - `[UserFlowLanguageConfigurationId <String>]`: key: id of userFlowLanguageConfiguration
+  - `[UserFlowLanguagePageId <String>]`: key: id of userFlowLanguagePage
   - `[UserId <String>]`: key: id of user
   - `[WindowsHelloForBusinessAuthenticationMethodId <String>]`: key: id of windowsHelloForBusinessAuthenticationMethod
 

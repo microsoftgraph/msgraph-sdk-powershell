@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgComplianceEdiscoveryCaseCustodianSiteSource
 
 ## SYNOPSIS
-Data source entity for SharePoint sites associated with the custodian.
+Delete navigation property siteSources for compliance
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Remove-MgComplianceEdiscoveryCaseCustodianSiteSource -InputObject <IComplianceId
 ```
 
 ## DESCRIPTION
-Data source entity for SharePoint sites associated with the custodian.
+Delete navigation property siteSources for compliance
 
 ## EXAMPLES
 
@@ -185,6 +185,7 @@ INPUTOBJECT <IComplianceIdentity>: Identity Parameter
   - `[SiteSourceId <String>]`: key: id of siteSource
   - `[SourceCollectionId <String>]`: key: id of sourceCollection
   - `[TagId <String>]`: key: id of tag
+  - `[TagId1 <String>]`: key: id of tag
   - `[UnifiedGroupSourceId <String>]`: key: id of unifiedGroupSource
   - `[UserSourceId <String>]`: key: id of userSource
 

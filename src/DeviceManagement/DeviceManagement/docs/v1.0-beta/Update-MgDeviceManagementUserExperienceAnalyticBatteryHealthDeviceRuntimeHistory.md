@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgDeviceManagementUserExperienceAnalyticBatteryHealthDeviceRuntimeHistory
 
 ## SYNOPSIS
-User Experience Analytics Battery Health Device Runtime History
+Update the navigation property userExperienceAnalyticsBatteryHealthDeviceRuntimeHistory in deviceManagement
 
 ## SYNTAX
 
@@ -45,7 +45,7 @@ Update-MgDeviceManagementUserExperienceAnalyticBatteryHealthDeviceRuntimeHistory
 ```
 
 ## DESCRIPTION
-User Experience Analytics Battery Health Device Runtime History
+Update the navigation property userExperienceAnalyticsBatteryHealthDeviceRuntimeHistory in deviceManagement
 
 ## EXAMPLES
 
@@ -115,7 +115,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -245,7 +245,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphUserExperienceAnalyticsBatteryHealthDeviceRuntimeHistory>: The user experience analytics battery health runtime history entity contains the trend of runtime of a device over a period of 30 days
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[DeviceId <String>]`: The unique identifier of the device, Intune DeviceID or SCCM device id.
   - `[EstimatedRuntimeInMinutes <Int32?>]`: The estimated runtime of the device when the battery is fully charged. Unit in minutes. Valid values -2147483648 to 2147483647
   - `[RuntimeDateTime <String>]`: The datetime for the instance of runtime history.
@@ -280,6 +280,15 @@ INPUTOBJECT <IDeviceManagementIdentity>: Identity Parameter
   - `[DeviceHealthScriptDeviceStateId <String>]`: key: id of deviceHealthScriptDeviceState
   - `[DeviceHealthScriptId <String>]`: key: id of deviceHealthScript
   - `[DeviceLogCollectionResponseId <String>]`: key: id of deviceLogCollectionResponse
+  - `[DeviceManagementComplianceActionItemId <String>]`: key: id of deviceManagementComplianceActionItem
+  - `[DeviceManagementCompliancePolicyId <String>]`: key: id of deviceManagementCompliancePolicy
+  - `[DeviceManagementComplianceScheduledActionForRuleId <String>]`: key: id of deviceManagementComplianceScheduledActionForRule
+  - `[DeviceManagementConfigurationPolicyAssignmentId <String>]`: key: id of deviceManagementConfigurationPolicyAssignment
+  - `[DeviceManagementConfigurationPolicyId <String>]`: key: id of deviceManagementConfigurationPolicy
+  - `[DeviceManagementConfigurationPolicyTemplateId <String>]`: key: id of deviceManagementConfigurationPolicyTemplate
+  - `[DeviceManagementConfigurationSettingDefinitionId <String>]`: key: id of deviceManagementConfigurationSettingDefinition
+  - `[DeviceManagementConfigurationSettingId <String>]`: key: id of deviceManagementConfigurationSetting
+  - `[DeviceManagementConfigurationSettingTemplateId <String>]`: key: id of deviceManagementConfigurationSettingTemplate
   - `[DeviceManagementDerivedCredentialSettingsId <String>]`: key: id of deviceManagementDerivedCredentialSettings
   - `[DeviceManagementIntentAssignmentId <String>]`: key: id of deviceManagementIntentAssignment
   - `[DeviceManagementIntentDeviceSettingStateSummaryId <String>]`: key: id of deviceManagementIntentDeviceSettingStateSummary
@@ -317,8 +326,6 @@ INPUTOBJECT <IDeviceManagementIdentity>: Identity Parameter
   - `[ManagedDeviceEncryptionStateId <String>]`: key: id of managedDeviceEncryptionState
   - `[ManagedDeviceId <String>]`: key: id of managedDevice
   - `[ManagedDeviceMobileAppConfigurationStateId <String>]`: key: id of managedDeviceMobileAppConfigurationState
-  - `[ManagementConditionId <String>]`: key: id of managementCondition
-  - `[ManagementConditionStatementId <String>]`: key: id of managementConditionStatement
   - `[MicrosoftTunnelConfigurationId <String>]`: key: id of microsoftTunnelConfiguration
   - `[MicrosoftTunnelHealthThresholdId <String>]`: key: id of microsoftTunnelHealthThreshold
   - `[MicrosoftTunnelServerId <String>]`: key: id of microsoftTunnelServer
@@ -348,6 +355,7 @@ INPUTOBJECT <IDeviceManagementIdentity>: Identity Parameter
   - `[UserExperienceAnalyticsBatteryHealthOSPerformanceId <String>]`: key: id of userExperienceAnalyticsBatteryHealthOsPerformance
   - `[UserExperienceAnalyticsCategoryId <String>]`: key: id of userExperienceAnalyticsCategory
   - `[UserExperienceAnalyticsDevicePerformanceId <String>]`: key: id of userExperienceAnalyticsDevicePerformance
+  - `[UserExperienceAnalyticsDeviceScopeId <String>]`: key: id of userExperienceAnalyticsDeviceScope
   - `[UserExperienceAnalyticsDeviceScoresId <String>]`: key: id of userExperienceAnalyticsDeviceScores
   - `[UserExperienceAnalyticsDeviceStartupHistoryId <String>]`: key: id of userExperienceAnalyticsDeviceStartupHistory
   - `[UserExperienceAnalyticsDeviceStartupProcessId <String>]`: key: id of userExperienceAnalyticsDeviceStartupProcess

@@ -8,8 +8,7 @@ schema: 2.0.0
 # Update-MgServiceAnnouncementIssue
 
 ## SYNOPSIS
-A collection of service issues for tenant.
-This property is a contained navigation property, it is nullable and readonly.
+Update the navigation property issues in admin
 
 ## SYNTAX
 
@@ -46,8 +45,7 @@ Update-MgServiceAnnouncementIssue -InputObject <IDevicesServiceAnnouncementIdent
 ```
 
 ## DESCRIPTION
-A collection of service issues for tenant.
-This property is a contained navigation property, it is nullable and readonly.
+Update the navigation property issues in admin
 
 ## EXAMPLES
 
@@ -162,7 +160,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -420,7 +418,7 @@ BODYPARAMETER <IMicrosoftGraphServiceHealthIssue>: serviceHealthIssue
   - `[LastModifiedDateTime <DateTime?>]`: The last modified time of the service event.
   - `[StartDateTime <DateTime?>]`: The start time of the service event.
   - `[Title <String>]`: The title of the service event.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[Classification <String>]`: serviceHealthClassificationType
   - `[Feature <String>]`: The feature name of the service issue.
   - `[FeatureGroup <String>]`: The feature group name of the service issue.

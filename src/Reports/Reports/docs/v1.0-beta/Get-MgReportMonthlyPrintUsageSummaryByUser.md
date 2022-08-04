@@ -12,20 +12,20 @@ Get monthlyPrintUsageSummariesByUser from reports
 
 ## SYNTAX
 
-### List1 (Default)
+### List (Default)
 ```
 Get-MgReportMonthlyPrintUsageSummaryByUser [-ExpandProperty <String[]>] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
  [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
-### Get1
+### Get
 ```
 Get-MgReportMonthlyPrintUsageSummaryByUser -PrintUsageByUserId <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
-### GetViaIdentity1
+### GetViaIdentity
 ```
 Get-MgReportMonthlyPrintUsageSummaryByUser -InputObject <IReportsIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
@@ -43,7 +43,7 @@ List all pages.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
-Parameter Sets: List1
+Parameter Sets: List
 Aliases:
 
 Required: False
@@ -59,7 +59,7 @@ By default, this variable will be set in the global scope.
 
 ```yaml
 Type: System.String
-Parameter Sets: List1
+Parameter Sets: List
 Aliases: CV
 
 Required: False
@@ -89,7 +89,7 @@ Filter items by property values
 
 ```yaml
 Type: System.String
-Parameter Sets: List1
+Parameter Sets: List
 Aliases:
 
 Required: False
@@ -105,7 +105,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IReportsIdentity
-Parameter Sets: GetViaIdentity1
+Parameter Sets: GetViaIdentity
 Aliases:
 
 Required: True
@@ -120,7 +120,7 @@ Sets the page size of results.
 
 ```yaml
 Type: System.Int32
-Parameter Sets: List1
+Parameter Sets: List
 Aliases:
 
 Required: False
@@ -135,7 +135,7 @@ key: id of printUsageByUser
 
 ```yaml
 Type: System.String
-Parameter Sets: Get1
+Parameter Sets: Get
 Aliases:
 
 Required: True
@@ -165,7 +165,7 @@ Search items by search phrases
 
 ```yaml
 Type: System.String
-Parameter Sets: List1
+Parameter Sets: List
 Aliases:
 
 Required: False
@@ -180,7 +180,7 @@ Skip the first n items
 
 ```yaml
 Type: System.Int32
-Parameter Sets: List1
+Parameter Sets: List
 Aliases:
 
 Required: False
@@ -195,7 +195,7 @@ Order items by property values
 
 ```yaml
 Type: System.String[]
-Parameter Sets: List1
+Parameter Sets: List
 Aliases: OrderBy
 
 Required: False
@@ -210,7 +210,7 @@ Show only the first n items
 
 ```yaml
 Type: System.Int32
-Parameter Sets: List1
+Parameter Sets: List
 Aliases: Limit
 
 Required: False
@@ -247,24 +247,24 @@ INPUTOBJECT <IReportsIdentity>: Identity Parameter
   - `[DeviceManagementCachedReportConfigurationId <String>]`: key: id of deviceManagementCachedReportConfiguration
   - `[DeviceManagementExportJobId <String>]`: key: id of deviceManagementExportJob
   - `[DirectoryAuditId <String>]`: key: id of directoryAudit
-  - `[EndDateTime <DateTime?>]`: Usage: endDateTime={endDateTime}
-  - `[Filter <String>]`: Usage: filter={filter}
-  - `[GroupId <String>]`: Usage: groupId={groupId}
-  - `[IncludedUserRoles <String>]`: Usage: includedUserRoles={includedUserRoles}
-  - `[IncludedUserTypes <String>]`: Usage: includedUserTypes={includedUserTypes}
-  - `[Period <String>]`: Usage: period={period}
+  - `[EndDateTime <DateTime?>]`: Usage: endDateTime='{endDateTime}'
+  - `[Filter <String>]`: Usage: filter='{filter}'
+  - `[GroupId <String>]`: Usage: groupId='{groupId}'
+  - `[IncludedUserRoles <String>]`: Usage: includedUserRoles='{includedUserRoles}'
+  - `[IncludedUserTypes <String>]`: Usage: includedUserTypes='{includedUserTypes}'
+  - `[Period <String>]`: Usage: period='{period}'
   - `[PrintUsageByPrinterId <String>]`: key: id of printUsageByPrinter
   - `[PrintUsageByUserId <String>]`: key: id of printUsageByUser
-  - `[PrinterId <String>]`: Usage: printerId={printerId}
+  - `[PrinterId <String>]`: Usage: printerId='{printerId}'
   - `[ProvisioningObjectSummaryId <String>]`: key: id of provisioningObjectSummary
   - `[RestrictedSignInId <String>]`: key: id of restrictedSignIn
   - `[SignInId <String>]`: key: id of signIn
   - `[Skip <Int32?>]`: Usage: skip={skip}
-  - `[SkipToken <String>]`: Usage: skipToken={skipToken}
-  - `[StartDateTime <DateTime?>]`: Usage: startDateTime={startDateTime}
+  - `[SkipToken <String>]`: Usage: skipToken='{skipToken}'
+  - `[StartDateTime <DateTime?>]`: Usage: startDateTime='{startDateTime}'
   - `[Top <Int32?>]`: Usage: top={top}
   - `[UserCredentialUsageDetailsId <String>]`: key: id of userCredentialUsageDetails
-  - `[UserId <String>]`: Usage: userId={userId}
+  - `[UserId <String>]`: Usage: userId='{userId}'
   - `[UserRegistrationDetailsId <String>]`: key: id of userRegistrationDetails
 
 ## RELATED LINKS

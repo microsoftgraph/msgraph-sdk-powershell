@@ -21,7 +21,7 @@ Confirm-MgRiskyUserCompromised [-AdditionalProperties <Hashtable>] [-UserIds <St
 ### Confirm
 ```
 Confirm-MgRiskyUserCompromised
- -BodyParameter <IPathsL8Oa4IRiskyusersMicrosoftGraphConfirmcompromisedPostRequestbodyContentApplicationJsonSchema>
+ -BodyParameter <IPaths1CcwvbvIdentityprotectionRiskyusersMicrosoftGraphConfirmcompromisedPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -29,6 +29,16 @@ Confirm-MgRiskyUserCompromised
 Invoke action confirmCompromised
 
 ## EXAMPLES
+
+### Example 1: Confirm User sign in compormised 
+```powershell
+Connect-MgGraph -Scopes "IdentityRiskyUser.ReadWrite.All"
+Select-MgProfile beta
+Confirm-MgRiskyUserCompromised -UserIds "254562e7-a745-496d-b98a-f6770b23152a","8f2ef8bf-53be-45f3-822d-366f51067458"
+
+```
+
+The command confirms the two users as compormised users.
 
 ## PARAMETERS
 
@@ -52,7 +62,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPathsL8Oa4IRiskyusersMicrosoftGraphConfirmcompromisedPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.PowerShell.Models.IPaths1CcwvbvIdentityprotectionRiskyusersMicrosoftGraphConfirmcompromisedPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Confirm
 Aliases:
 
@@ -129,7 +139,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPathsL8Oa4IRiskyusersMicrosoftGraphConfirmcompromisedPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.PowerShell.Models.IPaths1CcwvbvIdentityprotectionRiskyusersMicrosoftGraphConfirmcompromisedPostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 
@@ -144,7 +154,7 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-BODYPARAMETER <IPathsL8Oa4IRiskyusersMicrosoftGraphConfirmcompromisedPostRequestbodyContentApplicationJsonSchema>: .
+BODYPARAMETER <IPaths1CcwvbvIdentityprotectionRiskyusersMicrosoftGraphConfirmcompromisedPostRequestbodyContentApplicationJsonSchema>: .
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[UserIds <String[]>]`: 
 

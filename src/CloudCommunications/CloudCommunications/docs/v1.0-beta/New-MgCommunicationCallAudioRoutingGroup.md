@@ -8,8 +8,7 @@ schema: 2.0.0
 # New-MgCommunicationCallAudioRoutingGroup
 
 ## SYNOPSIS
-Read-only.
-Nullable.
+Create new navigation property to audioRoutingGroups for communications
 
 ## SYNTAX
 
@@ -40,8 +39,7 @@ New-MgCommunicationCallAudioRoutingGroup -InputObject <ICloudCommunicationsIdent
 ```
 
 ## DESCRIPTION
-Read-only.
-Nullable.
+Create new navigation property to audioRoutingGroups for communications
 
 ## EXAMPLES
 
@@ -94,7 +92,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -224,7 +222,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphAudioRoutingGroup1>: audioRoutingGroup
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[Receivers <String[]>]`: List of receiving participant ids.
   - `[RoutingMode <String>]`: 
   - `[Sources <String[]>]`: List of source participant ids.
@@ -234,6 +232,7 @@ INPUTOBJECT <ICloudCommunicationsIdentity>: Identity Parameter
   - `[AudioRoutingGroupId <String>]`: key: id of audioRoutingGroup
   - `[CallId <String>]`: key: id of call
   - `[CallRecordId <String>]`: key: id of callRecord
+  - `[CallTranscriptId <String>]`: key: id of callTranscript
   - `[CommsOperationId <String>]`: key: id of commsOperation
   - `[ContentSharingSessionId <String>]`: key: id of contentSharingSession
   - `[MeetingAttendanceReportId <String>]`: key: id of meetingAttendanceReport

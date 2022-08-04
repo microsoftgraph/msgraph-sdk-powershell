@@ -8,87 +8,34 @@ schema: 2.0.0
 # New-MgDeviceRegisteredOwnerByRef
 
 ## SYNOPSIS
-The user that cloud joined the device or registered their personal device.
-The registered owner is set at the time of registration.
-Currently, there can be only one owner.
-Read-only.
-Nullable.
-Supports $expand.
+Create new navigation property ref to registeredOwners for devices
 
 ## SYNTAX
 
-### CreateExpanded (Default)
+### Create (Default)
 ```
-New-MgDeviceRegisteredOwnerByRef -DeviceId <String> [-AdditionalProperties <Hashtable>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
-```
-
-### Create
-```
-New-MgDeviceRegisteredOwnerByRef -DeviceId <String> -BodyParameter <Hashtable> [-Confirm] [-WhatIf]
- [<CommonParameters>]
+New-MgDeviceRegisteredOwnerByRef -DeviceId <String> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgDeviceRegisteredOwnerByRef -InputObject <IIdentityDirectoryManagementIdentity>
- -BodyParameter <Hashtable> [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### CreateViaIdentityExpanded
-```
-New-MgDeviceRegisteredOwnerByRef -InputObject <IIdentityDirectoryManagementIdentity>
- [-AdditionalProperties <Hashtable>] [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgDeviceRegisteredOwnerByRef -InputObject <IIdentityDirectoryManagementIdentity> [-PassThru] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-The user that cloud joined the device or registered their personal device.
-The registered owner is set at the time of registration.
-Currently, there can be only one owner.
-Read-only.
-Nullable.
-Supports $expand.
+Create new navigation property ref to registeredOwners for devices
 
 ## EXAMPLES
 
 ## PARAMETERS
-
-### -AdditionalProperties
-Additional Parameters
-
-```yaml
-Type: System.Collections.Hashtable
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -BodyParameter
-.
-
-```yaml
-Type: System.Collections.Hashtable
-Parameter Sets: Create, CreateViaIdentity
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
 
 ### -DeviceId
 key: id of device
 
 ```yaml
 Type: System.String
-Parameter Sets: Create, CreateExpanded
+Parameter Sets: Create
 Aliases:
 
 Required: True
@@ -104,13 +51,28 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
-Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
+Parameter Sets: CreateViaIdentity
 Aliases:
 
 Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### -PassThru
+Returns true when the command succeeds
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -152,11 +114,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
 
-### System.Collections.Hashtable
-
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPaths11Iw6ThDevicesDeviceIdRegisteredownersRefPostResponses201ContentApplicationJsonSchema
+### System.Boolean
 
 ## NOTES
 
@@ -189,6 +149,7 @@ INPUTOBJECT <IIdentityDirectoryManagementIdentity>: Identity Parameter
   - `[InternalDomainFederationId <String>]`: key: id of internalDomainFederation
   - `[OrgContactId <String>]`: key: id of orgContact
   - `[OrganizationId <String>]`: key: id of organization
+  - `[OrganizationalBrandingLocalizationId <String>]`: key: id of organizationalBrandingLocalization
   - `[OutboundSharedUserProfileUserId <String>]`: key: userId of outboundSharedUserProfile
   - `[ProfileCardPropertyId <String>]`: key: id of profileCardProperty
   - `[RecommendationId <String>]`: key: id of recommendation

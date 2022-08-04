@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.CrossDeviceExperiences
-Module Guid: 637ffe63-729d-4d69-af10-2fbdf6907277
+Module Guid: 65306b6b-b9fa-4922-8a57-35e75d60a6b2
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.crossdeviceexperiences
 Help Version: 1.0.0.0
 Locale: en-US
@@ -12,54 +12,29 @@ Microsoft Graph PowerShell Cmdlets
 
 ## Microsoft.Graph.CrossDeviceExperiences Cmdlets
 ### [Get-MgUserActivity](Get-MgUserActivity.md)
-The user's activities across devices.
-Read-only.
-Nullable.
+Get activities from users
 
 ### [Get-MgUserActivityHistoryItem](Get-MgUserActivityHistoryItem.md)
-Optional.
-NavigationProperty/Containment; navigation property to the activity's historyItems.
+Get historyItems from users
 
 ### [Get-MgUserActivityHistoryItemActivity](Get-MgUserActivityHistoryItemActivity.md)
-Optional.
-NavigationProperty/Containment; navigation property to the associated activity.
-
-### [Get-MgUserActivityHistoryItemActivityByRef](Get-MgUserActivityHistoryItemActivityByRef.md)
-Optional.
-NavigationProperty/Containment; navigation property to the associated activity.
+Get activity from users
 
 ### [New-MgUserActivity](New-MgUserActivity.md)
-The user's activities across devices.
-Read-only.
-Nullable.
+Create new navigation property to activities for users
 
 ### [New-MgUserActivityHistoryItem](New-MgUserActivityHistoryItem.md)
-Optional.
-NavigationProperty/Containment; navigation property to the activity's historyItems.
+Create new navigation property to historyItems for users
 
 ### [Remove-MgUserActivity](Remove-MgUserActivity.md)
-The user's activities across devices.
-Read-only.
-Nullable.
+Delete navigation property activities for users
 
 ### [Remove-MgUserActivityHistoryItem](Remove-MgUserActivityHistoryItem.md)
-Optional.
-NavigationProperty/Containment; navigation property to the activity's historyItems.
-
-### [Remove-MgUserActivityHistoryItemActivityByRef](Remove-MgUserActivityHistoryItemActivityByRef.md)
-Optional.
-NavigationProperty/Containment; navigation property to the associated activity.
-
-### [Set-MgUserActivityHistoryItemActivityByRef](Set-MgUserActivityHistoryItemActivityByRef.md)
-Optional.
-NavigationProperty/Containment; navigation property to the associated activity.
+Delete navigation property historyItems for users
 
 ### [Update-MgUserActivity](Update-MgUserActivity.md)
-The user's activities across devices.
-Read-only.
-Nullable.
+Update the navigation property activities in users
 
 ### [Update-MgUserActivityHistoryItem](Update-MgUserActivityHistoryItem.md)
-Optional.
-NavigationProperty/Containment; navigation property to the activity's historyItems.
+Update the navigation property historyItems in users
 

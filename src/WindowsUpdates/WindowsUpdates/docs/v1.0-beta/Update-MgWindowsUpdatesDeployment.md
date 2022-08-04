@@ -8,8 +8,7 @@ schema: 2.0.0
 # Update-MgWindowsUpdatesDeployment
 
 ## SYNOPSIS
-Deployments created using the deployment service.
-Read-only.
+Update the navigation property deployments in admin
 
 ## SYNTAX
 
@@ -46,8 +45,7 @@ Update-MgWindowsUpdatesDeployment -InputObject <IWindowsUpdatesIdentity> [-Addit
 ```
 
 ## DESCRIPTION
-Deployments created using the deployment service.
-Read-only.
+Update the navigation property deployments in admin
 
 ## EXAMPLES
 
@@ -148,7 +146,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -299,19 +297,19 @@ To create the parameters described below, construct a hash table containing the 
 
 AUDIENCE <IMicrosoftGraphWindowsUpdatesDeploymentAudience>: deploymentAudience
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[Exclusions <IMicrosoftGraphWindowsUpdatesUpdatableAsset[]>]`: Specifies the assets to exclude from the audience.
-    - `[Id <String>]`: Read-only.
+    - `[Id <String>]`: 
   - `[Members <IMicrosoftGraphWindowsUpdatesUpdatableAsset[]>]`: Specifies the assets to include in the audience.
 
 BODYPARAMETER <IMicrosoftGraphWindowsUpdatesDeployment>: deployment
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[Audience <IMicrosoftGraphWindowsUpdatesDeploymentAudience>]`: deploymentAudience
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Id <String>]`: Read-only.
+    - `[Id <String>]`: 
     - `[Exclusions <IMicrosoftGraphWindowsUpdatesUpdatableAsset[]>]`: Specifies the assets to exclude from the audience.
-      - `[Id <String>]`: Read-only.
+      - `[Id <String>]`: 
     - `[Members <IMicrosoftGraphWindowsUpdatesUpdatableAsset[]>]`: Specifies the assets to include in the audience.
   - `[Content <IMicrosoftGraphWindowsUpdatesDeployableContent>]`: deployableContent
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -345,6 +343,7 @@ BODYPARAMETER <IMicrosoftGraphWindowsUpdatesDeployment>: deployment
 INPUTOBJECT <IWindowsUpdatesIdentity>: Identity Parameter
   - `[CatalogEntryId <String>]`: key: id of catalogEntry
   - `[DeploymentId <String>]`: key: id of deployment
+  - `[ResourceConnectionId <String>]`: key: id of resourceConnection
   - `[UpdatableAssetId <String>]`: key: id of updatableAsset
 
 SETTINGS <IMicrosoftGraphWindowsUpdatesDeploymentSettings>: deploymentSettings

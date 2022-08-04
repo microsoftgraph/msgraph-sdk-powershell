@@ -8,61 +8,61 @@ schema: 2.0.0
 # Update-MgShareListItemVersionField
 
 ## SYNOPSIS
-A collection of the fields and values for this version of the list item.
+Update the navigation property fields in shares
 
 ## SYNTAX
 
-### UpdateExpanded1 (Default)
+### UpdateExpanded3 (Default)
 ```
 Update-MgShareListItemVersionField -ListItemVersionId <String> -SharedDriveItemId <String>
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### Update
+### Update2
 ```
 Update-MgShareListItemVersionField -ListItemId <String> -ListItemVersionId <String>
  -SharedDriveItemId <String> -BodyParameter <Hashtable> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### Update1
+### Update3
 ```
 Update-MgShareListItemVersionField -ListItemVersionId <String> -SharedDriveItemId <String>
  -BodyParameter <Hashtable> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### UpdateExpanded
+### UpdateExpanded2
 ```
 Update-MgShareListItemVersionField -ListItemId <String> -ListItemVersionId <String>
  -SharedDriveItemId <String> [-AdditionalProperties <Hashtable>] [-Id <String>] [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
-### UpdateViaIdentity
+### UpdateViaIdentity2
 ```
 Update-MgShareListItemVersionField -InputObject <IFilesIdentity> -BodyParameter <Hashtable> [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### UpdateViaIdentity1
+### UpdateViaIdentity3
 ```
 Update-MgShareListItemVersionField -InputObject <IFilesIdentity> -BodyParameter <Hashtable> [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### UpdateViaIdentityExpanded
+### UpdateViaIdentityExpanded2
 ```
 Update-MgShareListItemVersionField -InputObject <IFilesIdentity> [-AdditionalProperties <Hashtable>]
  [-Id <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### UpdateViaIdentityExpanded1
+### UpdateViaIdentityExpanded3
 ```
 Update-MgShareListItemVersionField -InputObject <IFilesIdentity> [-AdditionalProperties <Hashtable>]
  [-Id <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-A collection of the fields and values for this version of the list item.
+Update the navigation property fields in shares
 
 ## EXAMPLES
 
@@ -73,7 +73,7 @@ Additional Parameters
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: UpdateExpanded, UpdateExpanded1, UpdateViaIdentityExpanded, UpdateViaIdentityExpanded1
+Parameter Sets: UpdateExpanded2, UpdateExpanded3, UpdateViaIdentityExpanded2, UpdateViaIdentityExpanded3
 Aliases:
 
 Required: False
@@ -88,7 +88,7 @@ fieldValueSet
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: Update, Update1, UpdateViaIdentity, UpdateViaIdentity1
+Parameter Sets: Update2, Update3, UpdateViaIdentity2, UpdateViaIdentity3
 Aliases:
 
 Required: True
@@ -99,11 +99,11 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded, UpdateExpanded1, UpdateViaIdentityExpanded, UpdateViaIdentityExpanded1
+Parameter Sets: UpdateExpanded2, UpdateExpanded3, UpdateViaIdentityExpanded2, UpdateViaIdentityExpanded3
 Aliases:
 
 Required: False
@@ -119,7 +119,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IFilesIdentity
-Parameter Sets: UpdateViaIdentity, UpdateViaIdentity1, UpdateViaIdentityExpanded, UpdateViaIdentityExpanded1
+Parameter Sets: UpdateViaIdentity2, UpdateViaIdentity3, UpdateViaIdentityExpanded2, UpdateViaIdentityExpanded3
 Aliases:
 
 Required: True
@@ -134,7 +134,7 @@ key: id of listItem
 
 ```yaml
 Type: System.String
-Parameter Sets: Update, UpdateExpanded
+Parameter Sets: Update2, UpdateExpanded2
 Aliases:
 
 Required: True
@@ -149,7 +149,7 @@ key: id of listItemVersion
 
 ```yaml
 Type: System.String
-Parameter Sets: Update, Update1, UpdateExpanded, UpdateExpanded1
+Parameter Sets: Update2, Update3, UpdateExpanded2, UpdateExpanded3
 Aliases:
 
 Required: True
@@ -179,7 +179,7 @@ key: id of sharedDriveItem
 
 ```yaml
 Type: System.String
-Parameter Sets: Update, Update1, UpdateExpanded, UpdateExpanded1
+Parameter Sets: Update2, Update3, UpdateExpanded2, UpdateExpanded3
 Aliases:
 
 Required: True
@@ -246,19 +246,25 @@ INPUTOBJECT <IFilesIdentity>: Identity Parameter
   - `[ColumnDefinitionId <String>]`: key: id of columnDefinition
   - `[ColumnLinkId <String>]`: key: id of columnLink
   - `[ContentTypeId <String>]`: key: id of contentType
+  - `[ContentTypeId1 <String>]`: key: id of contentType
+  - `[DocumentSetVersionId <String>]`: key: id of documentSetVersion
   - `[DriveId <String>]`: key: id of drive
   - `[DriveItemId <String>]`: key: id of driveItem
-  - `[EndDateTime <String>]`: Usage: endDateTime={endDateTime}
+  - `[DriveItemId1 <String>]`: key: id of driveItem
+  - `[DriveItemVersionId <String>]`: key: id of driveItemVersion
+  - `[EndDateTime <String>]`: Usage: endDateTime='{endDateTime}'
   - `[GroupId <String>]`: key: id of group
-  - `[Interval <String>]`: Usage: interval={interval}
+  - `[Interval <String>]`: Usage: interval='{interval}'
   - `[ListItemId <String>]`: key: id of listItem
   - `[ListItemVersionId <String>]`: key: id of listItemVersion
-  - `[Q <String>]`: Usage: q={q}
+  - `[PermissionId <String>]`: key: id of permission
+  - `[Q <String>]`: Usage: q='{q}'
   - `[RichLongRunningOperationId <String>]`: key: id of richLongRunningOperation
   - `[SharedDriveItemId <String>]`: key: id of sharedDriveItem
-  - `[StartDateTime <String>]`: Usage: startDateTime={startDateTime}
+  - `[StartDateTime <String>]`: Usage: startDateTime='{startDateTime}'
   - `[SubscriptionId <String>]`: key: id of subscription
-  - `[Token <String>]`: Usage: token={token}
+  - `[ThumbnailSetId <String>]`: key: id of thumbnailSet
+  - `[Token <String>]`: Usage: token='{token}'
   - `[UserId <String>]`: key: id of user
 
 ## RELATED LINKS

@@ -8,16 +8,16 @@ schema: 2.0.0
 # New-MgDeviceManagementManagedDeviceEncryptionState
 
 ## SYNOPSIS
-Encryption report for devices in this account
+Create new navigation property to managedDeviceEncryptionStates for deviceManagement
 
 ## SYNTAX
 
 ### CreateExpanded (Default)
 ```
 New-MgDeviceManagementManagedDeviceEncryptionState [-AdditionalProperties <Hashtable>]
- [-AdvancedBitLockerStates <String>] [-DeviceName <String>] [-DeviceType <String>]
- [-EncryptionPolicySettingState <String>] [-EncryptionReadinessState <String>] [-EncryptionState <String>]
- [-FileVaultStates <String>] [-Id <String>] [-OSVersion <String>]
+ [-AdvancedBitLockerStates <AdvancedBitLockerState>] [-DeviceName <String>] [-DeviceType <DeviceTypes>]
+ [-EncryptionPolicySettingState <String>] [-EncryptionReadinessState <EncryptionReadinessState>]
+ [-EncryptionState <EncryptionState>] [-FileVaultStates <FileVaultState>] [-Id <String>] [-OSVersion <String>]
  [-PolicyDetails <IMicrosoftGraphEncryptionReportPolicyDetails[]>] [-TpmSpecificationVersion <String>]
  [-UserPrincipalName <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -29,7 +29,7 @@ New-MgDeviceManagementManagedDeviceEncryptionState
 ```
 
 ## DESCRIPTION
-Encryption report for devices in this account
+Create new navigation property to managedDeviceEncryptionStates for deviceManagement
 
 ## EXAMPLES
 
@@ -54,7 +54,7 @@ Accept wildcard characters: False
 Advanced BitLocker State
 
 ```yaml
-Type: System.String
+Type: Microsoft.Graph.PowerShell.Support.AdvancedBitLockerState
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -100,7 +100,7 @@ Accept wildcard characters: False
 Device type.
 
 ```yaml
-Type: System.String
+Type: Microsoft.Graph.PowerShell.Support.DeviceTypes
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -130,7 +130,7 @@ Accept wildcard characters: False
 Encryption readiness state
 
 ```yaml
-Type: System.String
+Type: Microsoft.Graph.PowerShell.Support.EncryptionReadinessState
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -145,7 +145,7 @@ Accept wildcard characters: False
 Encryption state
 
 ```yaml
-Type: System.String
+Type: Microsoft.Graph.PowerShell.Support.EncryptionState
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -160,7 +160,7 @@ Accept wildcard characters: False
 FileVault State
 
 ```yaml
-Type: System.String
+Type: Microsoft.Graph.PowerShell.Support.FileVaultState
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -172,7 +172,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -300,14 +300,14 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphManagedDeviceEncryptionState>: Encryption report per device
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
-  - `[AdvancedBitLockerStates <String>]`: Advanced BitLocker State
+  - `[Id <String>]`: 
+  - `[AdvancedBitLockerStates <AdvancedBitLockerState?>]`: Advanced BitLocker State
   - `[DeviceName <String>]`: Device name
-  - `[DeviceType <String>]`: Device type.
+  - `[DeviceType <DeviceTypes?>]`: Device type.
   - `[EncryptionPolicySettingState <String>]`: complianceStatus
-  - `[EncryptionReadinessState <String>]`: Encryption readiness state
-  - `[EncryptionState <String>]`: Encryption state
-  - `[FileVaultStates <String>]`: FileVault State
+  - `[EncryptionReadinessState <EncryptionReadinessState?>]`: Encryption readiness state
+  - `[EncryptionState <EncryptionState?>]`: Encryption state
+  - `[FileVaultStates <FileVaultState?>]`: FileVault State
   - `[OSVersion <String>]`: Operating system version of the device
   - `[PolicyDetails <IMicrosoftGraphEncryptionReportPolicyDetails[]>]`: Policy Details
     - `[PolicyId <String>]`: Policy Id for Encryption Report

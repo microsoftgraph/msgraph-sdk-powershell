@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgDeviceManagementDeviceCompliancePolicyDeviceStateSummary
 
 ## SYNOPSIS
-The device compliance state summary for this account.
+Delete navigation property deviceCompliancePolicyDeviceStateSummary for deviceManagement
 
 ## SYNTAX
 
@@ -18,7 +18,7 @@ Remove-MgDeviceManagementDeviceCompliancePolicyDeviceStateSummary [-IfMatch <Str
 ```
 
 ## DESCRIPTION
-The device compliance state summary for this account.
+Delete navigation property deviceCompliancePolicyDeviceStateSummary for deviceManagement
 
 ## EXAMPLES
 

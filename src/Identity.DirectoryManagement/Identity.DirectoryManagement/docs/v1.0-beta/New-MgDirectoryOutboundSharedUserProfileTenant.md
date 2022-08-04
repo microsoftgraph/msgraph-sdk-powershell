@@ -199,6 +199,7 @@ INPUTOBJECT <IIdentityDirectoryManagementIdentity>: Identity Parameter
   - `[InternalDomainFederationId <String>]`: key: id of internalDomainFederation
   - `[OrgContactId <String>]`: key: id of orgContact
   - `[OrganizationId <String>]`: key: id of organization
+  - `[OrganizationalBrandingLocalizationId <String>]`: key: id of organizationalBrandingLocalization
   - `[OutboundSharedUserProfileUserId <String>]`: key: userId of outboundSharedUserProfile
   - `[ProfileCardPropertyId <String>]`: key: id of profileCardProperty
   - `[RecommendationId <String>]`: key: id of recommendation

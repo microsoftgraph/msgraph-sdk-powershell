@@ -12,27 +12,27 @@ Invoke action share
 
 ## SYNTAX
 
-### ShareExpanded1 (Default)
+### ShareExpanded (Default)
 ```
 Invoke-MgShareTeamSchedule -TeamId <String> [-AdditionalProperties <Hashtable>] [-EndDateTime <DateTime>]
  [-NotifyTeam] [-StartDateTime <DateTime>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### Share1
+### Share
 ```
 Invoke-MgShareTeamSchedule -TeamId <String>
  -BodyParameter <IPathsCo6ShtTeamsTeamIdScheduleMicrosoftGraphSharePostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### ShareViaIdentity1
+### ShareViaIdentity
 ```
 Invoke-MgShareTeamSchedule -InputObject <ITeamsIdentity>
  -BodyParameter <IPathsCo6ShtTeamsTeamIdScheduleMicrosoftGraphSharePostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### ShareViaIdentityExpanded1
+### ShareViaIdentityExpanded
 ```
 Invoke-MgShareTeamSchedule -InputObject <ITeamsIdentity> [-AdditionalProperties <Hashtable>]
  [-EndDateTime <DateTime>] [-NotifyTeam] [-StartDateTime <DateTime>] [-PassThru] [-Confirm] [-WhatIf]
@@ -51,7 +51,7 @@ Additional Parameters
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: ShareExpanded1, ShareViaIdentityExpanded1
+Parameter Sets: ShareExpanded, ShareViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -67,7 +67,7 @@ To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETE
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IPathsCo6ShtTeamsTeamIdScheduleMicrosoftGraphSharePostRequestbodyContentApplicationJsonSchema
-Parameter Sets: Share1, ShareViaIdentity1
+Parameter Sets: Share, ShareViaIdentity
 Aliases:
 
 Required: True
@@ -82,7 +82,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.DateTime
-Parameter Sets: ShareExpanded1, ShareViaIdentityExpanded1
+Parameter Sets: ShareExpanded, ShareViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -98,7 +98,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.ITeamsIdentity
-Parameter Sets: ShareViaIdentity1, ShareViaIdentityExpanded1
+Parameter Sets: ShareViaIdentity, ShareViaIdentityExpanded
 Aliases:
 
 Required: True
@@ -113,7 +113,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
-Parameter Sets: ShareExpanded1, ShareViaIdentityExpanded1
+Parameter Sets: ShareExpanded, ShareViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -143,7 +143,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.DateTime
-Parameter Sets: ShareExpanded1, ShareViaIdentityExpanded1
+Parameter Sets: ShareExpanded, ShareViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -158,7 +158,7 @@ key: id of team
 
 ```yaml
 Type: System.String
-Parameter Sets: Share1, ShareExpanded1
+Parameter Sets: Share, ShareExpanded
 Aliases:
 
 Required: True
@@ -235,10 +235,12 @@ INPUTOBJECT <ITeamsIdentity>: Identity Parameter
   - `[ChatMessageId <String>]`: key: id of chatMessage
   - `[ChatMessageId1 <String>]`: key: id of chatMessage
   - `[ConversationMemberId <String>]`: key: id of conversationMember
+  - `[DeletedTeamId <String>]`: key: id of deletedTeam
   - `[GroupId <String>]`: key: id of group
   - `[OfferShiftRequestId <String>]`: key: id of offerShiftRequest
   - `[OpenShiftChangeRequestId <String>]`: key: id of openShiftChangeRequest
   - `[OpenShiftId <String>]`: key: id of openShift
+  - `[PinnedChatMessageInfoId <String>]`: key: id of pinnedChatMessageInfo
   - `[ResourceSpecificPermissionGrantId <String>]`: key: id of resourceSpecificPermissionGrant
   - `[SchedulingGroupId <String>]`: key: id of schedulingGroup
   - `[SharedWithChannelTeamInfoId <String>]`: key: id of sharedWithChannelTeamInfo
@@ -254,14 +256,11 @@ INPUTOBJECT <ITeamsIdentity>: Identity Parameter
   - `[TeamworkDeviceOperationId <String>]`: key: id of teamworkDeviceOperation
   - `[TeamworkTagId <String>]`: key: id of teamworkTag
   - `[TeamworkTagMemberId <String>]`: key: id of teamworkTagMember
-  - `[TenantId <String>]`: Usage: tenantId={tenantId}
   - `[TimeCardId <String>]`: key: id of timeCard
   - `[TimeOffId <String>]`: key: id of timeOff
   - `[TimeOffReasonId <String>]`: key: id of timeOffReason
   - `[TimeOffRequestId <String>]`: key: id of timeOffRequest
   - `[UserId <String>]`: key: id of user
-  - `[UserId1 <String>]`: Usage: userId={userId}
-  - `[UserPrincipalName <String>]`: Usage: userPrincipalName={userPrincipalName}
   - `[UserScopeTeamsAppInstallationId <String>]`: key: id of userScopeTeamsAppInstallation
   - `[WorkforceIntegrationId <String>]`: key: id of workforceIntegration
 

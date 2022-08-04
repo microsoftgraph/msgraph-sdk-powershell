@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgEducationMeAssignment
 
 ## SYNOPSIS
-Assignments belonging to the user.
+Get assignments from education
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgEducationMeAssignment -InputObject <IEducationIdentity> [-ExpandProperty <
 ```
 
 ## DESCRIPTION
-Assignments belonging to the user.
+Get assignments from education
 
 ## EXAMPLES
 
@@ -229,7 +229,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEducationAssignment
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEducationAssignment1
 
 ## NOTES
 

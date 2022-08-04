@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgDeviceManagementTermAndConditionAcceptanceStatuses
 
 ## SYNOPSIS
-The list of acceptance statuses for this T&C policy.
+Update the navigation property acceptanceStatuses in deviceManagement
 
 ## SYNTAX
 
@@ -24,15 +24,15 @@ Update-MgDeviceManagementTermAndConditionAcceptanceStatuses -TermsAndConditionsA
 ### Update1
 ```
 Update-MgDeviceManagementTermAndConditionAcceptanceStatuses -TermsAndConditionsAcceptanceStatusId <String>
- -TermsAndConditionsId <String> -BodyParameter <IMicrosoftGraphTermsAndConditionsAcceptanceStatus> [-PassThru]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ -TermsAndConditionsId <String> -BodyParameter <IMicrosoftGraphTermsAndConditionsAcceptanceStatus1>
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity1
 ```
 Update-MgDeviceManagementTermAndConditionAcceptanceStatuses
  -InputObject <IDeviceManagementAdministrationIdentity>
- -BodyParameter <IMicrosoftGraphTermsAndConditionsAcceptanceStatus> [-PassThru] [-Confirm] [-WhatIf]
+ -BodyParameter <IMicrosoftGraphTermsAndConditionsAcceptanceStatus1> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -46,7 +46,7 @@ Update-MgDeviceManagementTermAndConditionAcceptanceStatuses
 ```
 
 ## DESCRIPTION
-The list of acceptance statuses for this T&C policy.
+Update the navigation property acceptanceStatuses in deviceManagement
 
 ## EXAMPLES
 
@@ -103,7 +103,7 @@ Users must accept the most up-to-date version of the terms in order to retain ac
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTermsAndConditionsAcceptanceStatus
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTermsAndConditionsAcceptanceStatus1
 Parameter Sets: Update1, UpdateViaIdentity1
 Aliases:
 
@@ -115,7 +115,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -276,7 +276,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IDeviceManagementAdministrationIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTermsAndConditionsAcceptanceStatus
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTermsAndConditionsAcceptanceStatus1
 
 ## OUTPUTS
 
@@ -291,18 +291,18 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-BODYPARAMETER <IMicrosoftGraphTermsAndConditionsAcceptanceStatus>: A termsAndConditionsAcceptanceStatus entity represents the acceptance status of a given Terms and Conditions (T&C) policy by a given user. Users must accept the most up-to-date version of the terms in order to retain access to the Company Portal.
+BODYPARAMETER <IMicrosoftGraphTermsAndConditionsAcceptanceStatus1>: A termsAndConditionsAcceptanceStatus entity represents the acceptance status of a given Terms and Conditions (T&C) policy by a given user. Users must accept the most up-to-date version of the terms in order to retain access to the Company Portal.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[AcceptedDateTime <DateTime?>]`: DateTime when the terms were last accepted by the user.
   - `[AcceptedVersion <Int32?>]`: Most recent version number of the T&C accepted by the user.
   - `[TermsAndConditions <IMicrosoftGraphTermsAndConditions1>]`: A termsAndConditions entity represents the metadata and contents of a given Terms and Conditions (T&C) policy. T&C policies’ contents are presented to users upon their first attempt to enroll into Intune and subsequently upon edits where an administrator has required re-acceptance. They enable administrators to communicate the provisions to which a user must agree in order to have devices enrolled into Intune.
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Id <String>]`: Read-only.
+    - `[Id <String>]`: 
     - `[AcceptanceStatement <String>]`: Administrator-supplied explanation of the terms and conditions, typically describing what it means to accept the terms and conditions set out in the T&C policy. This is shown to the user on prompts to accept the T&C policy.
-    - `[AcceptanceStatuses <IMicrosoftGraphTermsAndConditionsAcceptanceStatus[]>]`: The list of acceptance statuses for this T&C policy.
+    - `[AcceptanceStatuses <IMicrosoftGraphTermsAndConditionsAcceptanceStatus1[]>]`: The list of acceptance statuses for this T&C policy.
     - `[Assignments <IMicrosoftGraphTermsAndConditionsAssignment[]>]`: The list of assignments for this T&C policy.
-      - `[Id <String>]`: Read-only.
+      - `[Id <String>]`: 
       - `[Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget>]`: Base type for assignment targets.
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[BodyText <String>]`: Administrator-supplied body text of the terms and conditions, typically the terms themselves. This is shown to the user on prompts to accept the T&C policy.
@@ -320,6 +320,7 @@ INPUTOBJECT <IDeviceManagementAdministrationIdentity>: Identity Parameter
   - `[CartToClassAssociationId <String>]`: key: id of cartToClassAssociation
   - `[CloudPcAuditEventId <String>]`: key: id of cloudPcAuditEvent
   - `[CloudPcDeviceImageId <String>]`: key: id of cloudPcDeviceImage
+  - `[CloudPcExternalPartnerSettingId <String>]`: key: id of cloudPcExternalPartnerSetting
   - `[CloudPcGalleryImageId <String>]`: key: id of cloudPcGalleryImage
   - `[CloudPcId <String>]`: key: id of cloudPC
   - `[CloudPcOnPremisesConnectionId <String>]`: key: id of cloudPcOnPremisesConnection
@@ -338,6 +339,7 @@ INPUTOBJECT <IDeviceManagementAdministrationIdentity>: Identity Parameter
   - `[DeviceManagementExchangeOnPremisesPolicyId <String>]`: key: id of deviceManagementExchangeOnPremisesPolicy
   - `[DeviceManagementPartnerId <String>]`: key: id of deviceManagementPartner
   - `[GroupPolicyCategoryId <String>]`: key: id of groupPolicyCategory
+  - `[GroupPolicyCategoryId1 <String>]`: key: id of groupPolicyCategory
   - `[GroupPolicyDefinitionFileId <String>]`: key: id of groupPolicyDefinitionFile
   - `[GroupPolicyDefinitionId <String>]`: key: id of groupPolicyDefinition
   - `[GroupPolicyMigrationReportId <String>]`: key: id of groupPolicyMigrationReport
@@ -369,17 +371,17 @@ INPUTOBJECT <IDeviceManagementAdministrationIdentity>: Identity Parameter
 
 TERMSANDCONDITIONS <IMicrosoftGraphTermsAndConditions1>: A termsAndConditions entity represents the metadata and contents of a given Terms and Conditions (T&C) policy. T&C policies’ contents are presented to users upon their first attempt to enroll into Intune and subsequently upon edits where an administrator has required re-acceptance. They enable administrators to communicate the provisions to which a user must agree in order to have devices enrolled into Intune.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[AcceptanceStatement <String>]`: Administrator-supplied explanation of the terms and conditions, typically describing what it means to accept the terms and conditions set out in the T&C policy. This is shown to the user on prompts to accept the T&C policy.
-  - `[AcceptanceStatuses <IMicrosoftGraphTermsAndConditionsAcceptanceStatus[]>]`: The list of acceptance statuses for this T&C policy.
-    - `[Id <String>]`: Read-only.
+  - `[AcceptanceStatuses <IMicrosoftGraphTermsAndConditionsAcceptanceStatus1[]>]`: The list of acceptance statuses for this T&C policy.
+    - `[Id <String>]`: 
     - `[AcceptedDateTime <DateTime?>]`: DateTime when the terms were last accepted by the user.
     - `[AcceptedVersion <Int32?>]`: Most recent version number of the T&C accepted by the user.
     - `[TermsAndConditions <IMicrosoftGraphTermsAndConditions1>]`: A termsAndConditions entity represents the metadata and contents of a given Terms and Conditions (T&C) policy. T&C policies’ contents are presented to users upon their first attempt to enroll into Intune and subsequently upon edits where an administrator has required re-acceptance. They enable administrators to communicate the provisions to which a user must agree in order to have devices enrolled into Intune.
     - `[UserDisplayName <String>]`: Display name of the user whose acceptance the entity represents.
     - `[UserPrincipalName <String>]`: The userPrincipalName of the User that accepted the term.
   - `[Assignments <IMicrosoftGraphTermsAndConditionsAssignment[]>]`: The list of assignments for this T&C policy.
-    - `[Id <String>]`: Read-only.
+    - `[Id <String>]`: 
     - `[Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget>]`: Base type for assignment targets.
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[BodyText <String>]`: Administrator-supplied body text of the terms and conditions, typically the terms themselves. This is shown to the user on prompts to accept the T&C policy.

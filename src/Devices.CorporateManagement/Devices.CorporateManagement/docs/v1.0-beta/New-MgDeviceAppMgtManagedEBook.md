@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgDeviceAppMgtManagedEBook
 
 ## SYNOPSIS
-The Managed eBook.
+Create new navigation property to managedEBooks for deviceAppManagement
 
 ## SYNTAX
 
@@ -31,7 +31,7 @@ New-MgDeviceAppMgtManagedEBook -BodyParameter <IMicrosoftGraphManagedEBook> [-Co
 ```
 
 ## DESCRIPTION
-The Managed eBook.
+Create new navigation property to managedEBooks for deviceAppManagement
 
 ## EXAMPLES
 
@@ -162,7 +162,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -353,35 +353,35 @@ To create the parameters described below, construct a hash table containing the 
 
 
 ASSIGNMENTS <IMicrosoftGraphManagedEBookAssignment[]>: The list of assignments for this eBook.
-  - `[Id <String>]`: Read-only.
-  - `[InstallIntent <String>]`: Possible values for the install intent chosen by the admin.
+  - `[Id <String>]`: 
+  - `[InstallIntent <InstallIntent?>]`: Possible values for the install intent chosen by the admin.
   - `[Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget>]`: Base type for assignment targets.
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[DeviceAndAppManagementAssignmentFilterId <String>]`: The Id of the filter for the target assignment.
-    - `[DeviceAndAppManagementAssignmentFilterType <String>]`: Represents type of the assignment filter.
+    - `[DeviceAndAppManagementAssignmentFilterType <DeviceAndAppManagementAssignmentFilterType?>]`: Represents type of the assignment filter.
 
 BODYPARAMETER <IMicrosoftGraphManagedEBook>: An abstract class containing the base properties for Managed eBook.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[Assignments <IMicrosoftGraphManagedEBookAssignment[]>]`: The list of assignments for this eBook.
-    - `[Id <String>]`: Read-only.
-    - `[InstallIntent <String>]`: Possible values for the install intent chosen by the admin.
+    - `[Id <String>]`: 
+    - `[InstallIntent <InstallIntent?>]`: Possible values for the install intent chosen by the admin.
     - `[Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget>]`: Base type for assignment targets.
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[DeviceAndAppManagementAssignmentFilterId <String>]`: The Id of the filter for the target assignment.
-      - `[DeviceAndAppManagementAssignmentFilterType <String>]`: Represents type of the assignment filter.
+      - `[DeviceAndAppManagementAssignmentFilterType <DeviceAndAppManagementAssignmentFilterType?>]`: Represents type of the assignment filter.
   - `[Categories <IMicrosoftGraphManagedEBookCategory[]>]`: The list of categories for this eBook.
-    - `[Id <String>]`: Read-only.
+    - `[Id <String>]`: 
     - `[DisplayName <String>]`: The name of the eBook category.
     - `[LastModifiedDateTime <DateTime?>]`: The date and time the ManagedEBookCategory was last modified.
   - `[CreatedDateTime <DateTime?>]`: The date and time when the eBook file was created.
   - `[Description <String>]`: Description.
   - `[DeviceStates <IMicrosoftGraphDeviceInstallState[]>]`: The list of installation states for this eBook.
-    - `[Id <String>]`: Read-only.
+    - `[Id <String>]`: 
     - `[DeviceId <String>]`: Device Id.
     - `[DeviceName <String>]`: Device name.
     - `[ErrorCode <String>]`: The error code for install failures.
-    - `[InstallState <String>]`: Possible values for install state.
+    - `[InstallState <InstallState?>]`: Possible values for install state.
     - `[LastSyncDateTime <DateTime?>]`: Last sync date and time.
     - `[OSDescription <String>]`: OS Description.
     - `[OSVersion <String>]`: OS Version.
@@ -390,7 +390,7 @@ BODYPARAMETER <IMicrosoftGraphManagedEBook>: An abstract class containing the ba
   - `[InformationUrl <String>]`: The more information Url.
   - `[InstallSummary <IMicrosoftGraphEBookInstallSummary>]`: Contains properties for the installation summary of a book for a device.
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Id <String>]`: Read-only.
+    - `[Id <String>]`: 
     - `[FailedDeviceCount <Int32?>]`: Number of Devices that have failed to install this book.
     - `[FailedUserCount <Int32?>]`: Number of Users that have 1 or more device that failed to install this book.
     - `[InstalledDeviceCount <Int32?>]`: Number of Devices that have successfully installed this book.
@@ -406,7 +406,7 @@ BODYPARAMETER <IMicrosoftGraphManagedEBook>: An abstract class containing the ba
   - `[PublishedDateTime <DateTime?>]`: The date and time when the eBook was published.
   - `[Publisher <String>]`: Publisher.
   - `[UserStateSummary <IMicrosoftGraphUserInstallStateSummary[]>]`: The list of installation states for this eBook.
-    - `[Id <String>]`: Read-only.
+    - `[Id <String>]`: 
     - `[DeviceStates <IMicrosoftGraphDeviceInstallState[]>]`: The install state of the eBook.
     - `[FailedDeviceCount <Int32?>]`: Failed Device Count.
     - `[InstalledDeviceCount <Int32?>]`: Installed Device Count.
@@ -414,16 +414,16 @@ BODYPARAMETER <IMicrosoftGraphManagedEBook>: An abstract class containing the ba
     - `[UserName <String>]`: User name.
 
 CATEGORIES <IMicrosoftGraphManagedEBookCategory[]>: The list of categories for this eBook.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[DisplayName <String>]`: The name of the eBook category.
   - `[LastModifiedDateTime <DateTime?>]`: The date and time the ManagedEBookCategory was last modified.
 
 DEVICESTATES <IMicrosoftGraphDeviceInstallState[]>: The list of installation states for this eBook.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[DeviceId <String>]`: Device Id.
   - `[DeviceName <String>]`: Device name.
   - `[ErrorCode <String>]`: The error code for install failures.
-  - `[InstallState <String>]`: Possible values for install state.
+  - `[InstallState <InstallState?>]`: Possible values for install state.
   - `[LastSyncDateTime <DateTime?>]`: Last sync date and time.
   - `[OSDescription <String>]`: OS Description.
   - `[OSVersion <String>]`: OS Version.
@@ -431,7 +431,7 @@ DEVICESTATES <IMicrosoftGraphDeviceInstallState[]>: The list of installation sta
 
 INSTALLSUMMARY <IMicrosoftGraphEBookInstallSummary>: Contains properties for the installation summary of a book for a device.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[FailedDeviceCount <Int32?>]`: Number of Devices that have failed to install this book.
   - `[FailedUserCount <Int32?>]`: Number of Users that have 1 or more device that failed to install this book.
   - `[InstalledDeviceCount <Int32?>]`: Number of Devices that have successfully installed this book.
@@ -445,13 +445,13 @@ LARGECOVER <IMicrosoftGraphMimeContent>: Contains properties for a generic mime 
   - `[Value <Byte[]>]`: The byte array that contains the actual content.
 
 USERSTATESUMMARY <IMicrosoftGraphUserInstallStateSummary[]>: The list of installation states for this eBook.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[DeviceStates <IMicrosoftGraphDeviceInstallState[]>]`: The install state of the eBook.
-    - `[Id <String>]`: Read-only.
+    - `[Id <String>]`: 
     - `[DeviceId <String>]`: Device Id.
     - `[DeviceName <String>]`: Device name.
     - `[ErrorCode <String>]`: The error code for install failures.
-    - `[InstallState <String>]`: Possible values for install state.
+    - `[InstallState <InstallState?>]`: Possible values for install state.
     - `[LastSyncDateTime <DateTime?>]`: Last sync date and time.
     - `[OSDescription <String>]`: OS Description.
     - `[OSVersion <String>]`: OS Version.

@@ -8,9 +8,7 @@ schema: 2.0.0
 # New-MgDirectoryDeletedItem
 
 ## SYNOPSIS
-Recently deleted items.
-Read-only.
-Nullable.
+Create new navigation property to deletedItems for directory
 
 ## SYNTAX
 
@@ -27,9 +25,7 @@ New-MgDirectoryDeletedItem -BodyParameter <IMicrosoftGraphDirectoryObject> [-Con
 ```
 
 ## DESCRIPTION
-Recently deleted items.
-Read-only.
-Nullable.
+Create new navigation property to deletedItems for directory
 
 ## EXAMPLES
 
@@ -83,7 +79,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -150,7 +146,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphDirectoryObject>: directoryObject
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
 
 ## RELATED LINKS

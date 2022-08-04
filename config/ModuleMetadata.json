@@ -3,6 +3,7 @@
   "authors": "Microsoft",
   "copyright": "© Microsoft Corporation. All rights reserved.",
   "description": "Microsoft Graph PowerShell module",
+  "guid": "fceec1eb-c2e8-4b2b-a120-0fab3f0d7b47",
   "iconUri": "https://raw.githubusercontent.com/microsoftgraph/msgraph-sdk-powershell/master/documentation/images/graph_color256.png",
   "licenseUri": "https://aka.ms/devservicesagreement",
   "owners": "Microsoft",
@@ -20,7 +21,9 @@
     "AzureAD",
     "SharePoint",
     "Intune",
-    "AzureAutomationNotSupported"
+    "AzureAutomationNotSupported",
+    "PSModule",
+    "PSIncludes_Cmdlet"
   ],
   "versions": {
     "authentication": {

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Set-MgUserOnlineMeetingRecording
 
 ## SYNOPSIS
-Update media content for the navigation property onlineMeetings in users
+Update recording for the navigation property onlineMeetings in users
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Set-MgUserOnlineMeetingRecording -InputObject <ICloudCommunicationsIdentity> -In
 ```
 
 ## DESCRIPTION
-Update media content for the navigation property onlineMeetings in users
+Update recording for the navigation property onlineMeetings in users
 
 ## EXAMPLES
 
@@ -182,6 +182,7 @@ INPUTOBJECT <ICloudCommunicationsIdentity>: Identity Parameter
   - `[AudioRoutingGroupId <String>]`: key: id of audioRoutingGroup
   - `[CallId <String>]`: key: id of call
   - `[CallRecordId <String>]`: key: id of callRecord
+  - `[CallTranscriptId <String>]`: key: id of callTranscript
   - `[CommsOperationId <String>]`: key: id of commsOperation
   - `[ContentSharingSessionId <String>]`: key: id of contentSharingSession
   - `[MeetingAttendanceReportId <String>]`: key: id of meetingAttendanceReport

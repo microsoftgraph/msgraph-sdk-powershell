@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceManagementUserExperienceAnalyticWorkFromAnywhereHardwareReadinessMetric
 
 ## SYNOPSIS
-User experience analytics work from anywhere hardware readiness metrics.
+Get userExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric from deviceManagement
 
 ## SYNTAX
 
@@ -18,7 +18,7 @@ Get-MgDeviceManagementUserExperienceAnalyticWorkFromAnywhereHardwareReadinessMet
 ```
 
 ## DESCRIPTION
-User experience analytics work from anywhere hardware readiness metrics.
+Get userExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric from deviceManagement
 
 ## EXAMPLES
 

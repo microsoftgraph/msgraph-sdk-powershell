@@ -8,8 +8,7 @@ schema: 2.0.0
 # Remove-MgServiceAnnouncementMessage
 
 ## SYNOPSIS
-A collection of service messages for tenant.
-This property is a contained navigation property, it is nullable and readonly.
+Delete navigation property messages for admin
 
 ## SYNTAX
 
@@ -26,8 +25,7 @@ Remove-MgServiceAnnouncementMessage -InputObject <IDevicesServiceAnnouncementIde
 ```
 
 ## DESCRIPTION
-A collection of service messages for tenant.
-This property is a contained navigation property, it is nullable and readonly.
+Delete navigation property messages for admin
 
 ## EXAMPLES
 

@@ -8,9 +8,7 @@ schema: 2.0.0
 # Remove-MgEducationUserAssignmentSubmission
 
 ## SYNOPSIS
-Once published, there is a submission object for each student representing their work and grade.
-Read-only.
-Nullable.
+Delete navigation property submissions for education
 
 ## SYNTAX
 
@@ -27,9 +25,7 @@ Remove-MgEducationUserAssignmentSubmission -InputObject <IEducationIdentity> [-I
 ```
 
 ## DESCRIPTION
-Once published, there is a submission object for each student representing their work and grade.
-Read-only.
-Nullable.
+Delete navigation property submissions for education
 
 ## EXAMPLES
 

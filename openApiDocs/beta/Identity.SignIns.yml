@@ -208,6 +208,3945 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /identity:
+    get:
+      tags:
+        - identity.identityContainer
+      summary: Get identity
+      operationId: identity.identityContainer_GetIdentityContainer
+      parameters:
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - apiConnectors
+                - b2cUserFlows
+                - b2xUserFlows
+                - identityProviders
+                - userFlowAttributes
+                - userFlows
+                - conditionalAccess
+                - continuousAccessEvaluationPolicy
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - apiConnectors
+                - b2cUserFlows
+                - b2xUserFlows
+                - identityProviders
+                - userFlowAttributes
+                - userFlows
+                - conditionalAccess
+                - continuousAccessEvaluationPolicy
+              type: string
+      responses:
+        '200':
+          description: Retrieved entity
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.identityContainer'
+          links:
+            apiConnectors:
+              operationId: identity.ListApiConnectors
+            b2cUserFlows:
+              operationId: identity.ListB2cUserFlows
+            b2xUserFlows:
+              operationId: identity.ListB2xUserFlows
+            identityProviders:
+              operationId: identity.ListIdentityProviders
+            userFlowAttributes:
+              operationId: identity.ListUserFlowAttributes
+            userFlows:
+              operationId: identity.ListUserFlows
+            conditionalAccess:
+              operationId: identity.GetConditionalAccess
+            continuousAccessEvaluationPolicy:
+              operationId: identity.GetContinuousAccessEvaluationPolicy
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - identity.identityContainer
+      summary: Update identity
+      operationId: identity.identityContainer_UpdateIdentityContainer
+      requestBody:
+        description: New property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.identityContainer'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /identity/apiConnectors:
+    get:
+      tags:
+        - identity.identityApiConnector
+      summary: Get apiConnectors from identity
+      operationId: identity_ListApiConnectors
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - authenticationConfiguration
+                - authenticationConfiguration desc
+                - displayName
+                - displayName desc
+                - targetUrl
+                - targetUrl desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - authenticationConfiguration
+                - displayName
+                - targetUrl
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/microsoft.graph.identityApiConnectorCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - identity.identityApiConnector
+      summary: Create new navigation property to apiConnectors for identity
+      operationId: identity_CreateApiConnectors
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.identityApiConnector'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.identityApiConnector'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/identity/apiConnectors/{identityApiConnector-id}':
+    get:
+      tags:
+        - identity.identityApiConnector
+      summary: Get apiConnectors from identity
+      operationId: identity_GetApiConnectors
+      parameters:
+        - name: identityApiConnector-id
+          in: path
+          description: 'key: id of identityApiConnector'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: identityApiConnector
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - authenticationConfiguration
+                - displayName
+                - targetUrl
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.identityApiConnector'
+          links:
+            uploadClientCertificate:
+              operationId: identity.apiConnectors.identityApiConnector.uploadClientCertificate
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - identity.identityApiConnector
+      summary: Update the navigation property apiConnectors in identity
+      operationId: identity_UpdateApiConnectors
+      parameters:
+        - name: identityApiConnector-id
+          in: path
+          description: 'key: id of identityApiConnector'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: identityApiConnector
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.identityApiConnector'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - identity.identityApiConnector
+      summary: Delete navigation property apiConnectors for identity
+      operationId: identity_DeleteApiConnectors
+      parameters:
+        - name: identityApiConnector-id
+          in: path
+          description: 'key: id of identityApiConnector'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: identityApiConnector
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/identity/apiConnectors/{identityApiConnector-id}/microsoft.graph.uploadClientCertificate':
+    post:
+      tags:
+        - identity.Actions
+      summary: Invoke action uploadClientCertificate
+      operationId: identity.apiConnectors_uploadClientCertificate
+      parameters:
+        - name: identityApiConnector-id
+          in: path
+          description: 'key: id of identityApiConnector'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: identityApiConnector
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                pkcs12Value:
+                  type: string
+                  nullable: true
+                password:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.identityApiConnector'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  /identity/b2cUserFlows:
+    get:
+      tags:
+        - identity.b2cIdentityUserFlow
+      summary: Get b2cUserFlows from identity
+      operationId: identity_ListB2cUserFlows
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - userFlowType
+                - userFlowType desc
+                - userFlowTypeVersion
+                - userFlowTypeVersion desc
+                - apiConnectorConfiguration
+                - apiConnectorConfiguration desc
+                - defaultLanguageTag
+                - defaultLanguageTag desc
+                - isLanguageCustomizationEnabled
+                - isLanguageCustomizationEnabled desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - userFlowType
+                - userFlowTypeVersion
+                - apiConnectorConfiguration
+                - defaultLanguageTag
+                - isLanguageCustomizationEnabled
+                - identityProviders
+                - languages
+                - userAttributeAssignments
+                - userFlowIdentityProviders
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - identityProviders
+                - languages
+                - userAttributeAssignments
+                - userFlowIdentityProviders
+              type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/microsoft.graph.b2cIdentityUserFlowCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - identity.b2cIdentityUserFlow
+      summary: Create new navigation property to b2cUserFlows for identity
+      operationId: identity_CreateB2cUserFlows
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.b2cIdentityUserFlow'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.b2cIdentityUserFlow'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/identity/b2cUserFlows/{b2cIdentityUserFlow-id}':
+    get:
+      tags:
+        - identity.b2cIdentityUserFlow
+      summary: Get b2cUserFlows from identity
+      operationId: identity_GetB2cUserFlows
+      parameters:
+        - name: b2cIdentityUserFlow-id
+          in: path
+          description: 'key: id of b2cIdentityUserFlow'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: b2cIdentityUserFlow
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - userFlowType
+                - userFlowTypeVersion
+                - apiConnectorConfiguration
+                - defaultLanguageTag
+                - isLanguageCustomizationEnabled
+                - identityProviders
+                - languages
+                - userAttributeAssignments
+                - userFlowIdentityProviders
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - identityProviders
+                - languages
+                - userAttributeAssignments
+                - userFlowIdentityProviders
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.b2cIdentityUserFlow'
+          links:
+            identityProviders:
+              operationId: identity.B2cUserFlows.ListIdentityProviders
+              parameters:
+                b2cIdentityUserFlow-id: $request.path.b2cIdentityUserFlow-id
+            languages:
+              operationId: identity.B2cUserFlows.ListLanguages
+              parameters:
+                b2cIdentityUserFlow-id: $request.path.b2cIdentityUserFlow-id
+            userAttributeAssignments:
+              operationId: identity.B2cUserFlows.ListUserAttributeAssignments
+              parameters:
+                b2cIdentityUserFlow-id: $request.path.b2cIdentityUserFlow-id
+            userFlowIdentityProviders:
+              operationId: identity.B2cUserFlows.ListUserFlowIdentityProviders
+              parameters:
+                b2cIdentityUserFlow-id: $request.path.b2cIdentityUserFlow-id
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - identity.b2cIdentityUserFlow
+      summary: Update the navigation property b2cUserFlows in identity
+      operationId: identity_UpdateB2cUserFlows
+      parameters:
+        - name: b2cIdentityUserFlow-id
+          in: path
+          description: 'key: id of b2cIdentityUserFlow'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: b2cIdentityUserFlow
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.b2cIdentityUserFlow'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - identity.b2cIdentityUserFlow
+      summary: Delete navigation property b2cUserFlows for identity
+      operationId: identity_DeleteB2cUserFlows
+      parameters:
+        - name: b2cIdentityUserFlow-id
+          in: path
+          description: 'key: id of b2cIdentityUserFlow'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: b2cIdentityUserFlow
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/identity/b2cUserFlows/{b2cIdentityUserFlow-id}/identityProviders':
+    get:
+      tags:
+        - identity.b2cIdentityUserFlow
+      summary: Get identityProviders from identity
+      operationId: identity.b2cUserFlows_ListIdentityProviders
+      parameters:
+        - name: b2cIdentityUserFlow-id
+          in: path
+          description: 'key: id of b2cIdentityUserFlow'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: b2cIdentityUserFlow
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - clientId
+                - clientId desc
+                - clientSecret
+                - clientSecret desc
+                - name
+                - name desc
+                - type
+                - type desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - clientId
+                - clientSecret
+                - name
+                - type
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/microsoft.graph.identityProviderCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-15T00:00:00.0000000+00:00'
+        date: '2021-08-24T00:00:00.0000000+00:00'
+        version: 2021-05/identityProvider
+        description: The identityProvider API is deprecated and will stop returning data on March 2023. Please use the new identityProviderBase API.
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+  '/identity/b2cUserFlows/{b2cIdentityUserFlow-id}/identityProviders/{identityProvider-id}/$ref':
+    delete:
+      tags:
+        - identity.b2cIdentityUserFlow
+      summary: Delete ref of navigation property identityProviders for identity
+      operationId: identity.b2cUserFlows_DeleteIdentityProvidersGraphBPreRef
+      parameters:
+        - name: b2cIdentityUserFlow-id
+          in: path
+          description: 'key: id of b2cIdentityUserFlow'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: b2cIdentityUserFlow
+        - name: identityProvider-id
+          in: path
+          description: 'key: id of identityProvider'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: identityProvider
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+        - name: '@id'
+          in: query
+          description: Delete Uri
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-15T00:00:00.0000000+00:00'
+        date: '2021-08-24T00:00:00.0000000+00:00'
+        version: 2021-05/identityProvider
+        description: The identityProvider API is deprecated and will stop returning data on March 2023. Please use the new identityProviderBase API.
+      x-ms-docs-operation-type: operation
+  '/identity/b2cUserFlows/{b2cIdentityUserFlow-id}/identityProviders/$ref':
+    get:
+      tags:
+        - identity.b2cIdentityUserFlow
+      summary: Get ref of identityProviders from identity
+      operationId: identity.b2cUserFlows_ListIdentityProvidersGraphBPreRef
+      parameters:
+        - name: b2cIdentityUserFlow-id
+          in: path
+          description: 'key: id of b2cIdentityUserFlow'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: b2cIdentityUserFlow
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - clientId
+                - clientId desc
+                - clientSecret
+                - clientSecret desc
+                - name
+                - name desc
+                - type
+                - type desc
+              type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/StringCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-15T00:00:00.0000000+00:00'
+        date: '2021-08-24T00:00:00.0000000+00:00'
+        version: 2021-05/identityProvider
+        description: The identityProvider API is deprecated and will stop returning data on March 2023. Please use the new identityProviderBase API.
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - identity.b2cIdentityUserFlow
+      summary: Create new navigation property ref to identityProviders for identity
+      operationId: identity.b2cUserFlows_CreateIdentityProvidersGraphBPreRef
+      parameters:
+        - name: b2cIdentityUserFlow-id
+          in: path
+          description: 'key: id of b2cIdentityUserFlow'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: b2cIdentityUserFlow
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-15T00:00:00.0000000+00:00'
+        date: '2021-08-24T00:00:00.0000000+00:00'
+        version: 2021-05/identityProvider
+        description: The identityProvider API is deprecated and will stop returning data on March 2023. Please use the new identityProviderBase API.
+      x-ms-docs-operation-type: operation
+  '/identity/b2cUserFlows/{b2cIdentityUserFlow-id}/languages':
+    get:
+      tags:
+        - identity.b2cIdentityUserFlow
+      summary: Get languages from identity
+      operationId: identity.b2cUserFlows_ListLanguages
+      parameters:
+        - name: b2cIdentityUserFlow-id
+          in: path
+          description: 'key: id of b2cIdentityUserFlow'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: b2cIdentityUserFlow
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - displayName
+                - displayName desc
+                - isEnabled
+                - isEnabled desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - displayName
+                - isEnabled
+                - defaultPages
+                - overridesPages
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - defaultPages
+                - overridesPages
+              type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/microsoft.graph.userFlowLanguageConfigurationCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - identity.b2cIdentityUserFlow
+      summary: Create new navigation property to languages for identity
+      operationId: identity.b2cUserFlows_CreateLanguages
+      parameters:
+        - name: b2cIdentityUserFlow-id
+          in: path
+          description: 'key: id of b2cIdentityUserFlow'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: b2cIdentityUserFlow
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.userFlowLanguageConfiguration'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.userFlowLanguageConfiguration'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/identity/b2cUserFlows/{b2cIdentityUserFlow-id}/languages/{userFlowLanguageConfiguration-id}':
+    get:
+      tags:
+        - identity.b2cIdentityUserFlow
+      summary: Get languages from identity
+      operationId: identity.b2cUserFlows_GetLanguages
+      parameters:
+        - name: b2cIdentityUserFlow-id
+          in: path
+          description: 'key: id of b2cIdentityUserFlow'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: b2cIdentityUserFlow
+        - name: userFlowLanguageConfiguration-id
+          in: path
+          description: 'key: id of userFlowLanguageConfiguration'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: userFlowLanguageConfiguration
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - displayName
+                - isEnabled
+                - defaultPages
+                - overridesPages
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - defaultPages
+                - overridesPages
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.userFlowLanguageConfiguration'
+          links:
+            defaultPages:
+              operationId: identity.b2cUserFlows.Languages.ListDefaultPages
+              parameters:
+                b2cIdentityUserFlow-id: $request.path.b2cIdentityUserFlow-id
+                userFlowLanguageConfiguration-id: $request.path.userFlowLanguageConfiguration-id
+            overridesPages:
+              operationId: identity.b2cUserFlows.Languages.ListOverridesPages
+              parameters:
+                b2cIdentityUserFlow-id: $request.path.b2cIdentityUserFlow-id
+                userFlowLanguageConfiguration-id: $request.path.userFlowLanguageConfiguration-id
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - identity.b2cIdentityUserFlow
+      summary: Update the navigation property languages in identity
+      operationId: identity.b2cUserFlows_UpdateLanguages
+      parameters:
+        - name: b2cIdentityUserFlow-id
+          in: path
+          description: 'key: id of b2cIdentityUserFlow'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: b2cIdentityUserFlow
+        - name: userFlowLanguageConfiguration-id
+          in: path
+          description: 'key: id of userFlowLanguageConfiguration'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: userFlowLanguageConfiguration
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.userFlowLanguageConfiguration'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - identity.b2cIdentityUserFlow
+      summary: Delete navigation property languages for identity
+      operationId: identity.b2cUserFlows_DeleteLanguages
+      parameters:
+        - name: b2cIdentityUserFlow-id
+          in: path
+          description: 'key: id of b2cIdentityUserFlow'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: b2cIdentityUserFlow
+        - name: userFlowLanguageConfiguration-id
+          in: path
+          description: 'key: id of userFlowLanguageConfiguration'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: userFlowLanguageConfiguration
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/identity/b2cUserFlows/{b2cIdentityUserFlow-id}/languages/{userFlowLanguageConfiguration-id}/defaultPages':
+    get:
+      tags:
+        - identity.b2cIdentityUserFlow
+      summary: Get defaultPages from identity
+      operationId: identity.b2cUserFlows.languages_ListDefaultPages
+      parameters:
+        - name: b2cIdentityUserFlow-id
+          in: path
+          description: 'key: id of b2cIdentityUserFlow'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: b2cIdentityUserFlow
+        - name: userFlowLanguageConfiguration-id
+          in: path
+          description: 'key: id of userFlowLanguageConfiguration'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: userFlowLanguageConfiguration
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/microsoft.graph.userFlowLanguagePageCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - identity.b2cIdentityUserFlow
+      summary: Create new navigation property to defaultPages for identity
+      operationId: identity.b2cUserFlows.languages_CreateDefaultPages
+      parameters:
+        - name: b2cIdentityUserFlow-id
+          in: path
+          description: 'key: id of b2cIdentityUserFlow'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: b2cIdentityUserFlow
+        - name: userFlowLanguageConfiguration-id
+          in: path
+          description: 'key: id of userFlowLanguageConfiguration'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: userFlowLanguageConfiguration
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.userFlowLanguagePage'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.userFlowLanguagePage'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/identity/b2cUserFlows/{b2cIdentityUserFlow-id}/languages/{userFlowLanguageConfiguration-id}/defaultPages/{userFlowLanguagePage-id}':
+    get:
+      tags:
+        - identity.b2cIdentityUserFlow
+      summary: Get defaultPages from identity
+      operationId: identity.b2cUserFlows.languages_GetDefaultPages
+      parameters:
+        - name: b2cIdentityUserFlow-id
+          in: path
+          description: 'key: id of b2cIdentityUserFlow'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: b2cIdentityUserFlow
+        - name: userFlowLanguageConfiguration-id
+          in: path
+          description: 'key: id of userFlowLanguageConfiguration'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: userFlowLanguageConfiguration
+        - name: userFlowLanguagePage-id
+          in: path
+          description: 'key: id of userFlowLanguagePage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: userFlowLanguagePage
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.userFlowLanguagePage'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - identity.b2cIdentityUserFlow
+      summary: Update the navigation property defaultPages in identity
+      operationId: identity.b2cUserFlows.languages_UpdateDefaultPages
+      parameters:
+        - name: b2cIdentityUserFlow-id
+          in: path
+          description: 'key: id of b2cIdentityUserFlow'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: b2cIdentityUserFlow
+        - name: userFlowLanguageConfiguration-id
+          in: path
+          description: 'key: id of userFlowLanguageConfiguration'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: userFlowLanguageConfiguration
+        - name: userFlowLanguagePage-id
+          in: path
+          description: 'key: id of userFlowLanguagePage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: userFlowLanguagePage
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.userFlowLanguagePage'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - identity.b2cIdentityUserFlow
+      summary: Delete navigation property defaultPages for identity
+      operationId: identity.b2cUserFlows.languages_DeleteDefaultPages
+      parameters:
+        - name: b2cIdentityUserFlow-id
+          in: path
+          description: 'key: id of b2cIdentityUserFlow'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: b2cIdentityUserFlow
+        - name: userFlowLanguageConfiguration-id
+          in: path
+          description: 'key: id of userFlowLanguageConfiguration'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: userFlowLanguageConfiguration
+        - name: userFlowLanguagePage-id
+          in: path
+          description: 'key: id of userFlowLanguagePage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: userFlowLanguagePage
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/identity/b2cUserFlows/{b2cIdentityUserFlow-id}/languages/{userFlowLanguageConfiguration-id}/defaultPages/{userFlowLanguagePage-id}/$value':
+    get:
+      tags:
+        - identity.b2cIdentityUserFlow
+      summary: Get media content for the navigation property defaultPages from identity
+      operationId: identity.b2cUserFlows.languages_GetDefaultPagesContent
+      parameters:
+        - name: b2cIdentityUserFlow-id
+          in: path
+          description: 'key: id of b2cIdentityUserFlow'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: b2cIdentityUserFlow
+        - name: userFlowLanguageConfiguration-id
+          in: path
+          description: 'key: id of userFlowLanguageConfiguration'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: userFlowLanguageConfiguration
+        - name: userFlowLanguagePage-id
+          in: path
+          description: 'key: id of userFlowLanguagePage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: userFlowLanguagePage
+      responses:
+        '200':
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - identity.b2cIdentityUserFlow
+      summary: Update media content for the navigation property defaultPages in identity
+      operationId: identity.b2cUserFlows.languages_SetDefaultPagesContent
+      parameters:
+        - name: b2cIdentityUserFlow-id
+          in: path
+          description: 'key: id of b2cIdentityUserFlow'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: b2cIdentityUserFlow
+        - name: userFlowLanguageConfiguration-id
+          in: path
+          description: 'key: id of userFlowLanguageConfiguration'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: userFlowLanguageConfiguration
+        - name: userFlowLanguagePage-id
+          in: path
+          description: 'key: id of userFlowLanguagePage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: userFlowLanguagePage
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/identity/b2cUserFlows/{b2cIdentityUserFlow-id}/languages/{userFlowLanguageConfiguration-id}/overridesPages':
+    get:
+      tags:
+        - identity.b2cIdentityUserFlow
+      summary: Get overridesPages from identity
+      operationId: identity.b2cUserFlows.languages_ListOverridesPages
+      parameters:
+        - name: b2cIdentityUserFlow-id
+          in: path
+          description: 'key: id of b2cIdentityUserFlow'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: b2cIdentityUserFlow
+        - name: userFlowLanguageConfiguration-id
+          in: path
+          description: 'key: id of userFlowLanguageConfiguration'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: userFlowLanguageConfiguration
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/microsoft.graph.userFlowLanguagePageCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - identity.b2cIdentityUserFlow
+      summary: Create new navigation property to overridesPages for identity
+      operationId: identity.b2cUserFlows.languages_CreateOverridesPages
+      parameters:
+        - name: b2cIdentityUserFlow-id
+          in: path
+          description: 'key: id of b2cIdentityUserFlow'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: b2cIdentityUserFlow
+        - name: userFlowLanguageConfiguration-id
+          in: path
+          description: 'key: id of userFlowLanguageConfiguration'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: userFlowLanguageConfiguration
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.userFlowLanguagePage'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.userFlowLanguagePage'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/identity/b2cUserFlows/{b2cIdentityUserFlow-id}/languages/{userFlowLanguageConfiguration-id}/overridesPages/{userFlowLanguagePage-id}':
+    get:
+      tags:
+        - identity.b2cIdentityUserFlow
+      summary: Get overridesPages from identity
+      operationId: identity.b2cUserFlows.languages_GetOverridesPages
+      parameters:
+        - name: b2cIdentityUserFlow-id
+          in: path
+          description: 'key: id of b2cIdentityUserFlow'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: b2cIdentityUserFlow
+        - name: userFlowLanguageConfiguration-id
+          in: path
+          description: 'key: id of userFlowLanguageConfiguration'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: userFlowLanguageConfiguration
+        - name: userFlowLanguagePage-id
+          in: path
+          description: 'key: id of userFlowLanguagePage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: userFlowLanguagePage
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.userFlowLanguagePage'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - identity.b2cIdentityUserFlow
+      summary: Update the navigation property overridesPages in identity
+      operationId: identity.b2cUserFlows.languages_UpdateOverridesPages
+      parameters:
+        - name: b2cIdentityUserFlow-id
+          in: path
+          description: 'key: id of b2cIdentityUserFlow'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: b2cIdentityUserFlow
+        - name: userFlowLanguageConfiguration-id
+          in: path
+          description: 'key: id of userFlowLanguageConfiguration'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: userFlowLanguageConfiguration
+        - name: userFlowLanguagePage-id
+          in: path
+          description: 'key: id of userFlowLanguagePage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: userFlowLanguagePage
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.userFlowLanguagePage'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - identity.b2cIdentityUserFlow
+      summary: Delete navigation property overridesPages for identity
+      operationId: identity.b2cUserFlows.languages_DeleteOverridesPages
+      parameters:
+        - name: b2cIdentityUserFlow-id
+          in: path
+          description: 'key: id of b2cIdentityUserFlow'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: b2cIdentityUserFlow
+        - name: userFlowLanguageConfiguration-id
+          in: path
+          description: 'key: id of userFlowLanguageConfiguration'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: userFlowLanguageConfiguration
+        - name: userFlowLanguagePage-id
+          in: path
+          description: 'key: id of userFlowLanguagePage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: userFlowLanguagePage
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/identity/b2cUserFlows/{b2cIdentityUserFlow-id}/languages/{userFlowLanguageConfiguration-id}/overridesPages/{userFlowLanguagePage-id}/$value':
+    get:
+      tags:
+        - identity.b2cIdentityUserFlow
+      summary: Get media content for the navigation property overridesPages from identity
+      operationId: identity.b2cUserFlows.languages_GetOverridesPagesContent
+      parameters:
+        - name: b2cIdentityUserFlow-id
+          in: path
+          description: 'key: id of b2cIdentityUserFlow'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: b2cIdentityUserFlow
+        - name: userFlowLanguageConfiguration-id
+          in: path
+          description: 'key: id of userFlowLanguageConfiguration'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: userFlowLanguageConfiguration
+        - name: userFlowLanguagePage-id
+          in: path
+          description: 'key: id of userFlowLanguagePage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: userFlowLanguagePage
+      responses:
+        '200':
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - identity.b2cIdentityUserFlow
+      summary: Update media content for the navigation property overridesPages in identity
+      operationId: identity.b2cUserFlows.languages_SetOverridesPagesContent
+      parameters:
+        - name: b2cIdentityUserFlow-id
+          in: path
+          description: 'key: id of b2cIdentityUserFlow'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: b2cIdentityUserFlow
+        - name: userFlowLanguageConfiguration-id
+          in: path
+          description: 'key: id of userFlowLanguageConfiguration'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: userFlowLanguageConfiguration
+        - name: userFlowLanguagePage-id
+          in: path
+          description: 'key: id of userFlowLanguagePage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: userFlowLanguagePage
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/identity/b2cUserFlows/{b2cIdentityUserFlow-id}/userAttributeAssignments':
+    get:
+      tags:
+        - identity.b2cIdentityUserFlow
+      summary: Get userAttributeAssignments from identity
+      operationId: identity.b2cUserFlows_ListUserAttributeAssignments
+      parameters:
+        - name: b2cIdentityUserFlow-id
+          in: path
+          description: 'key: id of b2cIdentityUserFlow'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: b2cIdentityUserFlow
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - displayName
+                - displayName desc
+                - isOptional
+                - isOptional desc
+                - requiresVerification
+                - requiresVerification desc
+                - userAttributeValues
+                - userAttributeValues desc
+                - userInputType
+                - userInputType desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - displayName
+                - isOptional
+                - requiresVerification
+                - userAttributeValues
+                - userInputType
+                - userAttribute
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - userAttribute
+              type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/microsoft.graph.identityUserFlowAttributeAssignmentCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - identity.b2cIdentityUserFlow
+      summary: Create new navigation property to userAttributeAssignments for identity
+      operationId: identity.b2cUserFlows_CreateUserAttributeAssignments
+      parameters:
+        - name: b2cIdentityUserFlow-id
+          in: path
+          description: 'key: id of b2cIdentityUserFlow'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: b2cIdentityUserFlow
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.identityUserFlowAttributeAssignment'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.identityUserFlowAttributeAssignment'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/identity/b2cUserFlows/{b2cIdentityUserFlow-id}/userAttributeAssignments/{identityUserFlowAttributeAssignment-id}':
+    get:
+      tags:
+        - identity.b2cIdentityUserFlow
+      summary: Get userAttributeAssignments from identity
+      operationId: identity.b2cUserFlows_GetUserAttributeAssignments
+      parameters:
+        - name: b2cIdentityUserFlow-id
+          in: path
+          description: 'key: id of b2cIdentityUserFlow'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: b2cIdentityUserFlow
+        - name: identityUserFlowAttributeAssignment-id
+          in: path
+          description: 'key: id of identityUserFlowAttributeAssignment'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: identityUserFlowAttributeAssignment
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - displayName
+                - isOptional
+                - requiresVerification
+                - userAttributeValues
+                - userInputType
+                - userAttribute
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - userAttribute
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.identityUserFlowAttributeAssignment'
+          links:
+            userAttribute:
+              operationId: identity.b2cUserFlows.UserAttributeAssignments.GetUserAttribute
+              parameters:
+                b2cIdentityUserFlow-id: $request.path.b2cIdentityUserFlow-id
+                identityUserFlowAttributeAssignment-id: $request.path.identityUserFlowAttributeAssignment-id
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - identity.b2cIdentityUserFlow
+      summary: Update the navigation property userAttributeAssignments in identity
+      operationId: identity.b2cUserFlows_UpdateUserAttributeAssignments
+      parameters:
+        - name: b2cIdentityUserFlow-id
+          in: path
+          description: 'key: id of b2cIdentityUserFlow'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: b2cIdentityUserFlow
+        - name: identityUserFlowAttributeAssignment-id
+          in: path
+          description: 'key: id of identityUserFlowAttributeAssignment'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: identityUserFlowAttributeAssignment
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.identityUserFlowAttributeAssignment'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - identity.b2cIdentityUserFlow
+      summary: Delete navigation property userAttributeAssignments for identity
+      operationId: identity.b2cUserFlows_DeleteUserAttributeAssignments
+      parameters:
+        - name: b2cIdentityUserFlow-id
+          in: path
+          description: 'key: id of b2cIdentityUserFlow'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: b2cIdentityUserFlow
+        - name: identityUserFlowAttributeAssignment-id
+          in: path
+          description: 'key: id of identityUserFlowAttributeAssignment'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: identityUserFlowAttributeAssignment
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/identity/b2cUserFlows/{b2cIdentityUserFlow-id}/userAttributeAssignments/{identityUserFlowAttributeAssignment-id}/userAttribute':
+    get:
+      tags:
+        - identity.b2cIdentityUserFlow
+      summary: Get userAttribute from identity
+      operationId: identity.b2cUserFlows.userAttributeAssignments_GetUserAttribute
+      parameters:
+        - name: b2cIdentityUserFlow-id
+          in: path
+          description: 'key: id of b2cIdentityUserFlow'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: b2cIdentityUserFlow
+        - name: identityUserFlowAttributeAssignment-id
+          in: path
+          description: 'key: id of identityUserFlowAttributeAssignment'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: identityUserFlowAttributeAssignment
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - dataType
+                - description
+                - displayName
+                - userFlowAttributeType
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.identityUserFlowAttribute'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/identity/b2cUserFlows/{b2cIdentityUserFlow-id}/userAttributeAssignments/microsoft.graph.getOrder()':
+    get:
+      tags:
+        - identity.Functions
+      summary: Invoke function getOrder
+      operationId: identity.b2cUserFlows.userAttributeAssignments_getOrder
+      parameters:
+        - name: b2cIdentityUserFlow-id
+          in: path
+          description: 'key: id of b2cIdentityUserFlow'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: b2cIdentityUserFlow
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.assignmentOrder'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/identity/b2cUserFlows/{b2cIdentityUserFlow-id}/userAttributeAssignments/microsoft.graph.setOrder':
+    post:
+      tags:
+        - identity.Actions
+      summary: Invoke action setOrder
+      operationId: identity.b2cUserFlows.userAttributeAssignments_setOrder
+      parameters:
+        - name: b2cIdentityUserFlow-id
+          in: path
+          description: 'key: id of b2cIdentityUserFlow'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: b2cIdentityUserFlow
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                newAssignmentOrder:
+                  $ref: '#/components/schemas/microsoft.graph.assignmentOrder'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/identity/b2cUserFlows/{b2cIdentityUserFlow-id}/userFlowIdentityProviders':
+    get:
+      tags:
+        - identity.b2cIdentityUserFlow
+      summary: Get userFlowIdentityProviders from identity
+      operationId: identity.b2cUserFlows_ListUserFlowIdentityProviders
+      parameters:
+        - name: b2cIdentityUserFlow-id
+          in: path
+          description: 'key: id of b2cIdentityUserFlow'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: b2cIdentityUserFlow
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - displayName
+                - displayName desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - displayName
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/microsoft.graph.identityProviderBaseCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+  '/identity/b2cUserFlows/{b2cIdentityUserFlow-id}/userFlowIdentityProviders/{identityProviderBase-id}':
+    get:
+      tags:
+        - identity.b2cIdentityUserFlow
+      summary: Get userFlowIdentityProviders from identity
+      operationId: identity.b2cUserFlows_GetUserFlowIdentityProviders
+      parameters:
+        - name: b2cIdentityUserFlow-id
+          in: path
+          description: 'key: id of b2cIdentityUserFlow'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: b2cIdentityUserFlow
+        - name: identityProviderBase-id
+          in: path
+          description: 'key: id of identityProviderBase'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: identityProviderBase
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - displayName
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.identityProviderBase'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /identity/b2xUserFlows:
+    get:
+      tags:
+        - identity.b2xIdentityUserFlow
+      summary: Get b2xUserFlows from identity
+      operationId: identity_ListB2xUserFlows
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - userFlowType
+                - userFlowType desc
+                - userFlowTypeVersion
+                - userFlowTypeVersion desc
+                - apiConnectorConfiguration
+                - apiConnectorConfiguration desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - userFlowType
+                - userFlowTypeVersion
+                - apiConnectorConfiguration
+                - identityProviders
+                - languages
+                - userAttributeAssignments
+                - userFlowIdentityProviders
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - identityProviders
+                - languages
+                - userAttributeAssignments
+                - userFlowIdentityProviders
+              type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/microsoft.graph.b2xIdentityUserFlowCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - identity.b2xIdentityUserFlow
+      summary: Create new navigation property to b2xUserFlows for identity
+      operationId: identity_CreateB2xUserFlows
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.b2xIdentityUserFlow'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.b2xIdentityUserFlow'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/identity/b2xUserFlows/{b2xIdentityUserFlow-id}':
+    get:
+      tags:
+        - identity.b2xIdentityUserFlow
+      summary: Get b2xUserFlows from identity
+      operationId: identity_GetB2xUserFlows
+      parameters:
+        - name: b2xIdentityUserFlow-id
+          in: path
+          description: 'key: id of b2xIdentityUserFlow'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: b2xIdentityUserFlow
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - userFlowType
+                - userFlowTypeVersion
+                - apiConnectorConfiguration
+                - identityProviders
+                - languages
+                - userAttributeAssignments
+                - userFlowIdentityProviders
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - identityProviders
+                - languages
+                - userAttributeAssignments
+                - userFlowIdentityProviders
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.b2xIdentityUserFlow'
+          links:
+            identityProviders:
+              operationId: identity.B2xUserFlows.ListIdentityProviders
+              parameters:
+                b2xIdentityUserFlow-id: $request.path.b2xIdentityUserFlow-id
+            languages:
+              operationId: identity.B2xUserFlows.ListLanguages
+              parameters:
+                b2xIdentityUserFlow-id: $request.path.b2xIdentityUserFlow-id
+            userAttributeAssignments:
+              operationId: identity.B2xUserFlows.ListUserAttributeAssignments
+              parameters:
+                b2xIdentityUserFlow-id: $request.path.b2xIdentityUserFlow-id
+            userFlowIdentityProviders:
+              operationId: identity.B2xUserFlows.ListUserFlowIdentityProviders
+              parameters:
+                b2xIdentityUserFlow-id: $request.path.b2xIdentityUserFlow-id
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - identity.b2xIdentityUserFlow
+      summary: Update the navigation property b2xUserFlows in identity
+      operationId: identity_UpdateB2xUserFlows
+      parameters:
+        - name: b2xIdentityUserFlow-id
+          in: path
+          description: 'key: id of b2xIdentityUserFlow'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: b2xIdentityUserFlow
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.b2xIdentityUserFlow'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - identity.b2xIdentityUserFlow
+      summary: Delete navigation property b2xUserFlows for identity
+      operationId: identity_DeleteB2xUserFlows
+      parameters:
+        - name: b2xIdentityUserFlow-id
+          in: path
+          description: 'key: id of b2xIdentityUserFlow'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: b2xIdentityUserFlow
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/identity/b2xUserFlows/{b2xIdentityUserFlow-id}/identityProviders':
+    get:
+      tags:
+        - identity.b2xIdentityUserFlow
+      summary: Get identityProviders from identity
+      operationId: identity.b2xUserFlows_ListIdentityProviders
+      parameters:
+        - name: b2xIdentityUserFlow-id
+          in: path
+          description: 'key: id of b2xIdentityUserFlow'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: b2xIdentityUserFlow
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - clientId
+                - clientId desc
+                - clientSecret
+                - clientSecret desc
+                - name
+                - name desc
+                - type
+                - type desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - clientId
+                - clientSecret
+                - name
+                - type
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/microsoft.graph.identityProviderCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-15T00:00:00.0000000+00:00'
+        date: '2021-08-24T00:00:00.0000000+00:00'
+        version: 2021-05/identityProvider
+        description: The identityProvider API is deprecated and will stop returning data on March 2023. Please use the new identityProviderBase API.
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+  '/identity/b2xUserFlows/{b2xIdentityUserFlow-id}/identityProviders/{identityProvider-id}':
+    get:
+      tags:
+        - identity.b2xIdentityUserFlow
+      summary: Get identityProviders from identity
+      operationId: identity.b2xUserFlows_GetIdentityProviders
+      parameters:
+        - name: b2xIdentityUserFlow-id
+          in: path
+          description: 'key: id of b2xIdentityUserFlow'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: b2xIdentityUserFlow
+        - name: identityProvider-id
+          in: path
+          description: 'key: id of identityProvider'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: identityProvider
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - clientId
+                - clientSecret
+                - name
+                - type
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.identityProvider'
+        default:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-15T00:00:00.0000000+00:00'
+        date: '2021-08-24T00:00:00.0000000+00:00'
+        version: 2021-05/identityProvider
+        description: The identityProvider API is deprecated and will stop returning data on March 2023. Please use the new identityProviderBase API.
+      x-ms-docs-operation-type: operation
+  '/identity/b2xUserFlows/{b2xIdentityUserFlow-id}/languages':
+    get:
+      tags:
+        - identity.b2xIdentityUserFlow
+      summary: Get languages from identity
+      operationId: identity.b2xUserFlows_ListLanguages
+      parameters:
+        - name: b2xIdentityUserFlow-id
+          in: path
+          description: 'key: id of b2xIdentityUserFlow'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: b2xIdentityUserFlow
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - displayName
+                - displayName desc
+                - isEnabled
+                - isEnabled desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - displayName
+                - isEnabled
+                - defaultPages
+                - overridesPages
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - defaultPages
+                - overridesPages
+              type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/microsoft.graph.userFlowLanguageConfigurationCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - identity.b2xIdentityUserFlow
+      summary: Create new navigation property to languages for identity
+      operationId: identity.b2xUserFlows_CreateLanguages
+      parameters:
+        - name: b2xIdentityUserFlow-id
+          in: path
+          description: 'key: id of b2xIdentityUserFlow'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: b2xIdentityUserFlow
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.userFlowLanguageConfiguration'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.userFlowLanguageConfiguration'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/identity/b2xUserFlows/{b2xIdentityUserFlow-id}/languages/{userFlowLanguageConfiguration-id}':
+    get:
+      tags:
+        - identity.b2xIdentityUserFlow
+      summary: Get languages from identity
+      operationId: identity.b2xUserFlows_GetLanguages
+      parameters:
+        - name: b2xIdentityUserFlow-id
+          in: path
+          description: 'key: id of b2xIdentityUserFlow'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: b2xIdentityUserFlow
+        - name: userFlowLanguageConfiguration-id
+          in: path
+          description: 'key: id of userFlowLanguageConfiguration'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: userFlowLanguageConfiguration
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - displayName
+                - isEnabled
+                - defaultPages
+                - overridesPages
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - defaultPages
+                - overridesPages
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.userFlowLanguageConfiguration'
+          links:
+            defaultPages:
+              operationId: identity.b2xUserFlows.Languages.ListDefaultPages
+              parameters:
+                b2xIdentityUserFlow-id: $request.path.b2xIdentityUserFlow-id
+                userFlowLanguageConfiguration-id: $request.path.userFlowLanguageConfiguration-id
+            overridesPages:
+              operationId: identity.b2xUserFlows.Languages.ListOverridesPages
+              parameters:
+                b2xIdentityUserFlow-id: $request.path.b2xIdentityUserFlow-id
+                userFlowLanguageConfiguration-id: $request.path.userFlowLanguageConfiguration-id
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - identity.b2xIdentityUserFlow
+      summary: Update the navigation property languages in identity
+      operationId: identity.b2xUserFlows_UpdateLanguages
+      parameters:
+        - name: b2xIdentityUserFlow-id
+          in: path
+          description: 'key: id of b2xIdentityUserFlow'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: b2xIdentityUserFlow
+        - name: userFlowLanguageConfiguration-id
+          in: path
+          description: 'key: id of userFlowLanguageConfiguration'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: userFlowLanguageConfiguration
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.userFlowLanguageConfiguration'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - identity.b2xIdentityUserFlow
+      summary: Delete navigation property languages for identity
+      operationId: identity.b2xUserFlows_DeleteLanguages
+      parameters:
+        - name: b2xIdentityUserFlow-id
+          in: path
+          description: 'key: id of b2xIdentityUserFlow'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: b2xIdentityUserFlow
+        - name: userFlowLanguageConfiguration-id
+          in: path
+          description: 'key: id of userFlowLanguageConfiguration'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: userFlowLanguageConfiguration
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/identity/b2xUserFlows/{b2xIdentityUserFlow-id}/languages/{userFlowLanguageConfiguration-id}/defaultPages':
+    get:
+      tags:
+        - identity.b2xIdentityUserFlow
+      summary: Get defaultPages from identity
+      operationId: identity.b2xUserFlows.languages_ListDefaultPages
+      parameters:
+        - name: b2xIdentityUserFlow-id
+          in: path
+          description: 'key: id of b2xIdentityUserFlow'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: b2xIdentityUserFlow
+        - name: userFlowLanguageConfiguration-id
+          in: path
+          description: 'key: id of userFlowLanguageConfiguration'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: userFlowLanguageConfiguration
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/microsoft.graph.userFlowLanguagePageCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - identity.b2xIdentityUserFlow
+      summary: Create new navigation property to defaultPages for identity
+      operationId: identity.b2xUserFlows.languages_CreateDefaultPages
+      parameters:
+        - name: b2xIdentityUserFlow-id
+          in: path
+          description: 'key: id of b2xIdentityUserFlow'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: b2xIdentityUserFlow
+        - name: userFlowLanguageConfiguration-id
+          in: path
+          description: 'key: id of userFlowLanguageConfiguration'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: userFlowLanguageConfiguration
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.userFlowLanguagePage'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.userFlowLanguagePage'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/identity/b2xUserFlows/{b2xIdentityUserFlow-id}/languages/{userFlowLanguageConfiguration-id}/defaultPages/{userFlowLanguagePage-id}':
+    get:
+      tags:
+        - identity.b2xIdentityUserFlow
+      summary: Get defaultPages from identity
+      operationId: identity.b2xUserFlows.languages_GetDefaultPages
+      parameters:
+        - name: b2xIdentityUserFlow-id
+          in: path
+          description: 'key: id of b2xIdentityUserFlow'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: b2xIdentityUserFlow
+        - name: userFlowLanguageConfiguration-id
+          in: path
+          description: 'key: id of userFlowLanguageConfiguration'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: userFlowLanguageConfiguration
+        - name: userFlowLanguagePage-id
+          in: path
+          description: 'key: id of userFlowLanguagePage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: userFlowLanguagePage
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.userFlowLanguagePage'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - identity.b2xIdentityUserFlow
+      summary: Update the navigation property defaultPages in identity
+      operationId: identity.b2xUserFlows.languages_UpdateDefaultPages
+      parameters:
+        - name: b2xIdentityUserFlow-id
+          in: path
+          description: 'key: id of b2xIdentityUserFlow'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: b2xIdentityUserFlow
+        - name: userFlowLanguageConfiguration-id
+          in: path
+          description: 'key: id of userFlowLanguageConfiguration'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: userFlowLanguageConfiguration
+        - name: userFlowLanguagePage-id
+          in: path
+          description: 'key: id of userFlowLanguagePage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: userFlowLanguagePage
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.userFlowLanguagePage'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - identity.b2xIdentityUserFlow
+      summary: Delete navigation property defaultPages for identity
+      operationId: identity.b2xUserFlows.languages_DeleteDefaultPages
+      parameters:
+        - name: b2xIdentityUserFlow-id
+          in: path
+          description: 'key: id of b2xIdentityUserFlow'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: b2xIdentityUserFlow
+        - name: userFlowLanguageConfiguration-id
+          in: path
+          description: 'key: id of userFlowLanguageConfiguration'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: userFlowLanguageConfiguration
+        - name: userFlowLanguagePage-id
+          in: path
+          description: 'key: id of userFlowLanguagePage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: userFlowLanguagePage
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/identity/b2xUserFlows/{b2xIdentityUserFlow-id}/languages/{userFlowLanguageConfiguration-id}/defaultPages/{userFlowLanguagePage-id}/$value':
+    get:
+      tags:
+        - identity.b2xIdentityUserFlow
+      summary: Get media content for the navigation property defaultPages from identity
+      operationId: identity.b2xUserFlows.languages_GetDefaultPagesContent
+      parameters:
+        - name: b2xIdentityUserFlow-id
+          in: path
+          description: 'key: id of b2xIdentityUserFlow'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: b2xIdentityUserFlow
+        - name: userFlowLanguageConfiguration-id
+          in: path
+          description: 'key: id of userFlowLanguageConfiguration'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: userFlowLanguageConfiguration
+        - name: userFlowLanguagePage-id
+          in: path
+          description: 'key: id of userFlowLanguagePage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: userFlowLanguagePage
+      responses:
+        '200':
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - identity.b2xIdentityUserFlow
+      summary: Update media content for the navigation property defaultPages in identity
+      operationId: identity.b2xUserFlows.languages_SetDefaultPagesContent
+      parameters:
+        - name: b2xIdentityUserFlow-id
+          in: path
+          description: 'key: id of b2xIdentityUserFlow'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: b2xIdentityUserFlow
+        - name: userFlowLanguageConfiguration-id
+          in: path
+          description: 'key: id of userFlowLanguageConfiguration'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: userFlowLanguageConfiguration
+        - name: userFlowLanguagePage-id
+          in: path
+          description: 'key: id of userFlowLanguagePage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: userFlowLanguagePage
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/identity/b2xUserFlows/{b2xIdentityUserFlow-id}/languages/{userFlowLanguageConfiguration-id}/overridesPages':
+    get:
+      tags:
+        - identity.b2xIdentityUserFlow
+      summary: Get overridesPages from identity
+      operationId: identity.b2xUserFlows.languages_ListOverridesPages
+      parameters:
+        - name: b2xIdentityUserFlow-id
+          in: path
+          description: 'key: id of b2xIdentityUserFlow'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: b2xIdentityUserFlow
+        - name: userFlowLanguageConfiguration-id
+          in: path
+          description: 'key: id of userFlowLanguageConfiguration'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: userFlowLanguageConfiguration
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/microsoft.graph.userFlowLanguagePageCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - identity.b2xIdentityUserFlow
+      summary: Create new navigation property to overridesPages for identity
+      operationId: identity.b2xUserFlows.languages_CreateOverridesPages
+      parameters:
+        - name: b2xIdentityUserFlow-id
+          in: path
+          description: 'key: id of b2xIdentityUserFlow'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: b2xIdentityUserFlow
+        - name: userFlowLanguageConfiguration-id
+          in: path
+          description: 'key: id of userFlowLanguageConfiguration'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: userFlowLanguageConfiguration
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.userFlowLanguagePage'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.userFlowLanguagePage'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/identity/b2xUserFlows/{b2xIdentityUserFlow-id}/languages/{userFlowLanguageConfiguration-id}/overridesPages/{userFlowLanguagePage-id}':
+    get:
+      tags:
+        - identity.b2xIdentityUserFlow
+      summary: Get overridesPages from identity
+      operationId: identity.b2xUserFlows.languages_GetOverridesPages
+      parameters:
+        - name: b2xIdentityUserFlow-id
+          in: path
+          description: 'key: id of b2xIdentityUserFlow'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: b2xIdentityUserFlow
+        - name: userFlowLanguageConfiguration-id
+          in: path
+          description: 'key: id of userFlowLanguageConfiguration'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: userFlowLanguageConfiguration
+        - name: userFlowLanguagePage-id
+          in: path
+          description: 'key: id of userFlowLanguagePage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: userFlowLanguagePage
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.userFlowLanguagePage'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - identity.b2xIdentityUserFlow
+      summary: Update the navigation property overridesPages in identity
+      operationId: identity.b2xUserFlows.languages_UpdateOverridesPages
+      parameters:
+        - name: b2xIdentityUserFlow-id
+          in: path
+          description: 'key: id of b2xIdentityUserFlow'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: b2xIdentityUserFlow
+        - name: userFlowLanguageConfiguration-id
+          in: path
+          description: 'key: id of userFlowLanguageConfiguration'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: userFlowLanguageConfiguration
+        - name: userFlowLanguagePage-id
+          in: path
+          description: 'key: id of userFlowLanguagePage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: userFlowLanguagePage
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.userFlowLanguagePage'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - identity.b2xIdentityUserFlow
+      summary: Delete navigation property overridesPages for identity
+      operationId: identity.b2xUserFlows.languages_DeleteOverridesPages
+      parameters:
+        - name: b2xIdentityUserFlow-id
+          in: path
+          description: 'key: id of b2xIdentityUserFlow'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: b2xIdentityUserFlow
+        - name: userFlowLanguageConfiguration-id
+          in: path
+          description: 'key: id of userFlowLanguageConfiguration'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: userFlowLanguageConfiguration
+        - name: userFlowLanguagePage-id
+          in: path
+          description: 'key: id of userFlowLanguagePage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: userFlowLanguagePage
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/identity/b2xUserFlows/{b2xIdentityUserFlow-id}/languages/{userFlowLanguageConfiguration-id}/overridesPages/{userFlowLanguagePage-id}/$value':
+    get:
+      tags:
+        - identity.b2xIdentityUserFlow
+      summary: Get media content for the navigation property overridesPages from identity
+      operationId: identity.b2xUserFlows.languages_GetOverridesPagesContent
+      parameters:
+        - name: b2xIdentityUserFlow-id
+          in: path
+          description: 'key: id of b2xIdentityUserFlow'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: b2xIdentityUserFlow
+        - name: userFlowLanguageConfiguration-id
+          in: path
+          description: 'key: id of userFlowLanguageConfiguration'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: userFlowLanguageConfiguration
+        - name: userFlowLanguagePage-id
+          in: path
+          description: 'key: id of userFlowLanguagePage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: userFlowLanguagePage
+      responses:
+        '200':
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - identity.b2xIdentityUserFlow
+      summary: Update media content for the navigation property overridesPages in identity
+      operationId: identity.b2xUserFlows.languages_SetOverridesPagesContent
+      parameters:
+        - name: b2xIdentityUserFlow-id
+          in: path
+          description: 'key: id of b2xIdentityUserFlow'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: b2xIdentityUserFlow
+        - name: userFlowLanguageConfiguration-id
+          in: path
+          description: 'key: id of userFlowLanguageConfiguration'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: userFlowLanguageConfiguration
+        - name: userFlowLanguagePage-id
+          in: path
+          description: 'key: id of userFlowLanguagePage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: userFlowLanguagePage
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/identity/b2xUserFlows/{b2xIdentityUserFlow-id}/userAttributeAssignments':
+    get:
+      tags:
+        - identity.b2xIdentityUserFlow
+      summary: Get userAttributeAssignments from identity
+      operationId: identity.b2xUserFlows_ListUserAttributeAssignments
+      parameters:
+        - name: b2xIdentityUserFlow-id
+          in: path
+          description: 'key: id of b2xIdentityUserFlow'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: b2xIdentityUserFlow
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - displayName
+                - displayName desc
+                - isOptional
+                - isOptional desc
+                - requiresVerification
+                - requiresVerification desc
+                - userAttributeValues
+                - userAttributeValues desc
+                - userInputType
+                - userInputType desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - displayName
+                - isOptional
+                - requiresVerification
+                - userAttributeValues
+                - userInputType
+                - userAttribute
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - userAttribute
+              type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/microsoft.graph.identityUserFlowAttributeAssignmentCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - identity.b2xIdentityUserFlow
+      summary: Create new navigation property to userAttributeAssignments for identity
+      operationId: identity.b2xUserFlows_CreateUserAttributeAssignments
+      parameters:
+        - name: b2xIdentityUserFlow-id
+          in: path
+          description: 'key: id of b2xIdentityUserFlow'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: b2xIdentityUserFlow
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.identityUserFlowAttributeAssignment'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.identityUserFlowAttributeAssignment'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/identity/b2xUserFlows/{b2xIdentityUserFlow-id}/userAttributeAssignments/{identityUserFlowAttributeAssignment-id}':
+    get:
+      tags:
+        - identity.b2xIdentityUserFlow
+      summary: Get userAttributeAssignments from identity
+      operationId: identity.b2xUserFlows_GetUserAttributeAssignments
+      parameters:
+        - name: b2xIdentityUserFlow-id
+          in: path
+          description: 'key: id of b2xIdentityUserFlow'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: b2xIdentityUserFlow
+        - name: identityUserFlowAttributeAssignment-id
+          in: path
+          description: 'key: id of identityUserFlowAttributeAssignment'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: identityUserFlowAttributeAssignment
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - displayName
+                - isOptional
+                - requiresVerification
+                - userAttributeValues
+                - userInputType
+                - userAttribute
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - userAttribute
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.identityUserFlowAttributeAssignment'
+          links:
+            userAttribute:
+              operationId: identity.b2xUserFlows.UserAttributeAssignments.GetUserAttribute
+              parameters:
+                b2xIdentityUserFlow-id: $request.path.b2xIdentityUserFlow-id
+                identityUserFlowAttributeAssignment-id: $request.path.identityUserFlowAttributeAssignment-id
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - identity.b2xIdentityUserFlow
+      summary: Update the navigation property userAttributeAssignments in identity
+      operationId: identity.b2xUserFlows_UpdateUserAttributeAssignments
+      parameters:
+        - name: b2xIdentityUserFlow-id
+          in: path
+          description: 'key: id of b2xIdentityUserFlow'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: b2xIdentityUserFlow
+        - name: identityUserFlowAttributeAssignment-id
+          in: path
+          description: 'key: id of identityUserFlowAttributeAssignment'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: identityUserFlowAttributeAssignment
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.identityUserFlowAttributeAssignment'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - identity.b2xIdentityUserFlow
+      summary: Delete navigation property userAttributeAssignments for identity
+      operationId: identity.b2xUserFlows_DeleteUserAttributeAssignments
+      parameters:
+        - name: b2xIdentityUserFlow-id
+          in: path
+          description: 'key: id of b2xIdentityUserFlow'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: b2xIdentityUserFlow
+        - name: identityUserFlowAttributeAssignment-id
+          in: path
+          description: 'key: id of identityUserFlowAttributeAssignment'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: identityUserFlowAttributeAssignment
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/identity/b2xUserFlows/{b2xIdentityUserFlow-id}/userAttributeAssignments/{identityUserFlowAttributeAssignment-id}/userAttribute':
+    get:
+      tags:
+        - identity.b2xIdentityUserFlow
+      summary: Get userAttribute from identity
+      operationId: identity.b2xUserFlows.userAttributeAssignments_GetUserAttribute
+      parameters:
+        - name: b2xIdentityUserFlow-id
+          in: path
+          description: 'key: id of b2xIdentityUserFlow'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: b2xIdentityUserFlow
+        - name: identityUserFlowAttributeAssignment-id
+          in: path
+          description: 'key: id of identityUserFlowAttributeAssignment'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: identityUserFlowAttributeAssignment
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - dataType
+                - description
+                - displayName
+                - userFlowAttributeType
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.identityUserFlowAttribute'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/identity/b2xUserFlows/{b2xIdentityUserFlow-id}/userAttributeAssignments/microsoft.graph.getOrder()':
+    get:
+      tags:
+        - identity.Functions
+      summary: Invoke function getOrder
+      operationId: identity.b2xUserFlows.userAttributeAssignments_getOrder
+      parameters:
+        - name: b2xIdentityUserFlow-id
+          in: path
+          description: 'key: id of b2xIdentityUserFlow'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: b2xIdentityUserFlow
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.assignmentOrder'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/identity/b2xUserFlows/{b2xIdentityUserFlow-id}/userAttributeAssignments/microsoft.graph.setOrder':
+    post:
+      tags:
+        - identity.Actions
+      summary: Invoke action setOrder
+      operationId: identity.b2xUserFlows.userAttributeAssignments_setOrder
+      parameters:
+        - name: b2xIdentityUserFlow-id
+          in: path
+          description: 'key: id of b2xIdentityUserFlow'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: b2xIdentityUserFlow
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                newAssignmentOrder:
+                  $ref: '#/components/schemas/microsoft.graph.assignmentOrder'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/identity/b2xUserFlows/{b2xIdentityUserFlow-id}/userFlowIdentityProviders':
+    get:
+      tags:
+        - identity.b2xIdentityUserFlow
+      summary: Get userFlowIdentityProviders from identity
+      operationId: identity.b2xUserFlows_ListUserFlowIdentityProviders
+      parameters:
+        - name: b2xIdentityUserFlow-id
+          in: path
+          description: 'key: id of b2xIdentityUserFlow'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: b2xIdentityUserFlow
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - displayName
+                - displayName desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - displayName
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/microsoft.graph.identityProviderBaseCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+  '/identity/b2xUserFlows/{b2xIdentityUserFlow-id}/userFlowIdentityProviders/{identityProviderBase-id}/$ref':
+    delete:
+      tags:
+        - identity.b2xIdentityUserFlow
+      summary: Delete ref of navigation property userFlowIdentityProviders for identity
+      operationId: identity.b2xUserFlows_DeleteUserFlowIdentityProvidersGraphBPreRef
+      parameters:
+        - name: b2xIdentityUserFlow-id
+          in: path
+          description: 'key: id of b2xIdentityUserFlow'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: b2xIdentityUserFlow
+        - name: identityProviderBase-id
+          in: path
+          description: 'key: id of identityProviderBase'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: identityProviderBase
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+        - name: '@id'
+          in: query
+          description: Delete Uri
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/identity/b2xUserFlows/{b2xIdentityUserFlow-id}/userFlowIdentityProviders/$ref':
+    get:
+      tags:
+        - identity.b2xIdentityUserFlow
+      summary: Get ref of userFlowIdentityProviders from identity
+      operationId: identity.b2xUserFlows_ListUserFlowIdentityProvidersGraphBPreRef
+      parameters:
+        - name: b2xIdentityUserFlow-id
+          in: path
+          description: 'key: id of b2xIdentityUserFlow'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: b2xIdentityUserFlow
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - displayName
+                - displayName desc
+              type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/StringCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - identity.b2xIdentityUserFlow
+      summary: Create new navigation property ref to userFlowIdentityProviders for identity
+      operationId: identity.b2xUserFlows_CreateUserFlowIdentityProvidersGraphBPreRef
+      parameters:
+        - name: b2xIdentityUserFlow-id
+          in: path
+          description: 'key: id of b2xIdentityUserFlow'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: b2xIdentityUserFlow
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   /identity/conditionalAccess:
     get:
       tags:
@@ -876,6 +4815,489 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: conditionalAccessPolicy
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /identity/continuousAccessEvaluationPolicy:
+    get:
+      tags:
+        - identity.continuousAccessEvaluationPolicy
+      summary: Get continuousAccessEvaluationPolicy from identity
+      operationId: identity_GetContinuousAccessEvaluationPolicy
+      parameters:
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - description
+                - displayName
+                - groups
+                - isEnabled
+                - migrate
+                - users
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.continuousAccessEvaluationPolicy'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - identity.continuousAccessEvaluationPolicy
+      summary: Update the navigation property continuousAccessEvaluationPolicy in identity
+      operationId: identity_UpdateContinuousAccessEvaluationPolicy
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.continuousAccessEvaluationPolicy'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - identity.continuousAccessEvaluationPolicy
+      summary: Delete navigation property continuousAccessEvaluationPolicy for identity
+      operationId: identity_DeleteContinuousAccessEvaluationPolicy
+      parameters:
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /identity/identityProviders:
+    get:
+      tags:
+        - identity.identityProviderBase
+      summary: Get identityProviders from identity
+      operationId: identity_ListIdentityProviders
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - displayName
+                - displayName desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - displayName
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/microsoft.graph.identityProviderBaseCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - identity.identityProviderBase
+      summary: Create new navigation property to identityProviders for identity
+      operationId: identity_CreateIdentityProviders
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.identityProviderBase'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.identityProviderBase'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/identity/identityProviders/{identityProviderBase-id}':
+    get:
+      tags:
+        - identity.identityProviderBase
+      summary: Get identityProviders from identity
+      operationId: identity_GetIdentityProviders
+      parameters:
+        - name: identityProviderBase-id
+          in: path
+          description: 'key: id of identityProviderBase'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: identityProviderBase
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - displayName
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.identityProviderBase'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - identity.identityProviderBase
+      summary: Update the navigation property identityProviders in identity
+      operationId: identity_UpdateIdentityProviders
+      parameters:
+        - name: identityProviderBase-id
+          in: path
+          description: 'key: id of identityProviderBase'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: identityProviderBase
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.identityProviderBase'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - identity.identityProviderBase
+      summary: Delete navigation property identityProviders for identity
+      operationId: identity_DeleteIdentityProviders
+      parameters:
+        - name: identityProviderBase-id
+          in: path
+          description: 'key: id of identityProviderBase'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: identityProviderBase
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /identity/identityProviders/microsoft.graph.availableProviderTypes():
+    get:
+      tags:
+        - identity.Functions
+      summary: Invoke function availableProviderTypes
+      operationId: identity.identityProviders_availableProviderTypes
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of identityProviderBase
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      type: string
+                      nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  /identity/userFlowAttributes:
+    get:
+      tags:
+        - identity.identityUserFlowAttribute
+      summary: Get userFlowAttributes from identity
+      operationId: identity_ListUserFlowAttributes
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - dataType
+                - dataType desc
+                - description
+                - description desc
+                - displayName
+                - displayName desc
+                - userFlowAttributeType
+                - userFlowAttributeType desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - dataType
+                - description
+                - displayName
+                - userFlowAttributeType
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/microsoft.graph.identityUserFlowAttributeCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - identity.identityUserFlowAttribute
+      summary: Create new navigation property to userFlowAttributes for identity
+      operationId: identity_CreateUserFlowAttributes
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.identityUserFlowAttribute'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.identityUserFlowAttribute'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/identity/userFlowAttributes/{identityUserFlowAttribute-id}':
+    get:
+      tags:
+        - identity.identityUserFlowAttribute
+      summary: Get userFlowAttributes from identity
+      operationId: identity_GetUserFlowAttributes
+      parameters:
+        - name: identityUserFlowAttribute-id
+          in: path
+          description: 'key: id of identityUserFlowAttribute'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: identityUserFlowAttribute
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - dataType
+                - description
+                - displayName
+                - userFlowAttributeType
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.identityUserFlowAttribute'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - identity.identityUserFlowAttribute
+      summary: Update the navigation property userFlowAttributes in identity
+      operationId: identity_UpdateUserFlowAttributes
+      parameters:
+        - name: identityUserFlowAttribute-id
+          in: path
+          description: 'key: id of identityUserFlowAttribute'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: identityUserFlowAttribute
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.identityUserFlowAttribute'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - identity.identityUserFlowAttribute
+      summary: Delete navigation property userFlowAttributes for identity
+      operationId: identity_DeleteUserFlowAttributes
+      parameters:
+        - name: identityUserFlowAttribute-id
+          in: path
+          description: 'key: id of identityUserFlowAttribute'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: identityUserFlowAttribute
         - name: If-Match
           in: header
           description: ETag
@@ -9654,24 +14076,9 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: featureRolloutPolicy
-      requestBody:
-        description: New navigation property ref value
-        content:
-          application/json:
-            schema:
-              type: object
-              additionalProperties:
-                type: object
-        required: true
       responses:
-        '201':
-          description: Created navigation property link.
-          content:
-            application/json:
-              schema:
-                type: object
-                additionalProperties:
-                  type: object
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -10779,24 +15186,9 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: mobilityManagementPolicy
-      requestBody:
-        description: New navigation property ref value
-        content:
-          application/json:
-            schema:
-              type: object
-              additionalProperties:
-                type: object
-        required: true
       responses:
-        '201':
-          description: Created navigation property link.
-          content:
-            application/json:
-              schema:
-                type: object
-                additionalProperties:
-                  type: object
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -11482,24 +15874,9 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: mobilityManagementPolicy
-      requestBody:
-        description: New navigation property ref value
-        content:
-          application/json:
-            schema:
-              type: object
-              additionalProperties:
-                type: object
-        required: true
       responses:
-        '201':
-          description: Created navigation property link.
-          content:
-            application/json:
-              schema:
-                type: object
-                additionalProperties:
-                  type: object
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -17272,24 +21649,9 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: microsoftAuthenticatorAuthenticationMethod
-      requestBody:
-        description: New navigation property ref value
-        content:
-          application/json:
-            schema:
-              type: object
-              additionalProperties:
-                type: object
-        required: true
       responses:
-        '201':
-          description: Created navigation property link.
-          content:
-            application/json:
-              schema:
-                type: object
-                additionalProperties:
-                  type: object
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       deprecated: true
@@ -19496,24 +23858,9 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: passwordlessMicrosoftAuthenticatorAuthenticationMethod
-      requestBody:
-        description: New navigation property ref value
-        content:
-          application/json:
-            schema:
-              type: object
-              additionalProperties:
-                type: object
-        required: true
       responses:
-        '201':
-          description: Created navigation property link.
-          content:
-            application/json:
-              schema:
-                type: object
-                additionalProperties:
-                  type: object
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -22348,24 +26695,9 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: windowsHelloForBusinessAuthenticationMethod
-      requestBody:
-        description: New navigation property ref value
-        content:
-          application/json:
-            schema:
-              type: object
-              additionalProperties:
-                type: object
-        required: true
       responses:
-        '201':
-          description: Created navigation property link.
-          content:
-            application/json:
-              schema:
-                type: object
-                additionalProperties:
-                  type: object
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -25138,6 +29470,254 @@ components:
               description: The id for the user on whom the operation is performed.
           additionalProperties:
             type: object
+    microsoft.graph.identityContainer:
+      title: identityContainer
+      type: object
+      properties:
+        apiConnectors:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.identityApiConnector'
+          description: Represents entry point for API connectors.
+        b2cUserFlows:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.b2cIdentityUserFlow'
+          description: Represents entry point for B2C identity userflows.
+        b2xUserFlows:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.b2xIdentityUserFlow'
+          description: Represents entry point for B2X and self-service sign-up identity userflows.
+        identityProviders:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.identityProviderBase'
+          description: Represents entry point for identity provider base.
+        userFlowAttributes:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.identityUserFlowAttribute'
+          description: Represents entry point for identity userflow attributes.
+        userFlows:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.identityUserFlow'
+        conditionalAccess:
+          $ref: '#/components/schemas/microsoft.graph.conditionalAccessRoot'
+        continuousAccessEvaluationPolicy:
+          $ref: '#/components/schemas/microsoft.graph.continuousAccessEvaluationPolicy'
+      additionalProperties:
+        type: object
+    microsoft.graph.identityApiConnector:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: identityApiConnector
+          type: object
+          properties:
+            authenticationConfiguration:
+              $ref: '#/components/schemas/microsoft.graph.apiAuthenticationConfigurationBase'
+            displayName:
+              type: string
+              description: The name of the API connector.
+              nullable: true
+            targetUrl:
+              type: string
+              description: The URL of the API endpoint to call.
+              nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.b2cIdentityUserFlow:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.identityUserFlow'
+        - title: b2cIdentityUserFlow
+          type: object
+          properties:
+            apiConnectorConfiguration:
+              $ref: '#/components/schemas/microsoft.graph.userFlowApiConnectorConfiguration'
+            defaultLanguageTag:
+              type: string
+              description: Indicates the default language of the b2cIdentityUserFlow that is used when no ui_locale tag is specified in the request. This field is RFC 5646 compliant.
+              nullable: true
+            isLanguageCustomizationEnabled:
+              type: boolean
+              description: The property that determines whether language customization is enabled within the B2C user flow. Language customization is not enabled by default for B2C user flows.
+            identityProviders:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.identityProvider'
+            languages:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.userFlowLanguageConfiguration'
+              description: The languages supported for customization within the user flow. Language customization is not enabled by default in B2C user flows.
+            userAttributeAssignments:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.identityUserFlowAttributeAssignment'
+              description: The user attribute assignments included in the user flow.
+            userFlowIdentityProviders:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.identityProviderBase'
+          additionalProperties:
+            type: object
+    microsoft.graph.userFlowLanguageConfiguration:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: userFlowLanguageConfiguration
+          type: object
+          properties:
+            displayName:
+              type: string
+              description: The language name to display. This property is read-only.
+              nullable: true
+            isEnabled:
+              type: boolean
+              description: Indicates whether the language is enabled within the user flow.
+            defaultPages:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.userFlowLanguagePage'
+              description: Collection of pages with the default content to display in a user flow for a specified language. This collection does not allow any kind of modification.
+            overridesPages:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.userFlowLanguagePage'
+              description: 'Collection of pages with the overrides messages to display in a user flow for a specified language. This collection only allows to modify the content of the page, any other modification is not allowed (creation or deletion of pages).'
+          additionalProperties:
+            type: object
+    microsoft.graph.userFlowLanguagePage:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: userFlowLanguagePage
+          type: object
+          additionalProperties:
+            type: object
+    microsoft.graph.identityUserFlowAttributeAssignment:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: identityUserFlowAttributeAssignment
+          type: object
+          properties:
+            displayName:
+              type: string
+              description: The display name of the identityUserFlowAttribute within a user flow.
+              nullable: true
+            isOptional:
+              type: boolean
+              description: Determines whether the identityUserFlowAttribute is optional. true means the user doesn't have to provide a value. false means the user cannot complete sign-up without providing a value.
+            requiresVerification:
+              type: boolean
+              description: Determines whether the identityUserFlowAttribute requires verification. This is only used for verifying the user's phone number or email address.
+            userAttributeValues:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.userAttributeValuesItem'
+              description: 'The input options for the user flow attribute. Only applicable when the userInputType is radioSingleSelect, dropdownSingleSelect, or checkboxMultiSelect.'
+            userInputType:
+              $ref: '#/components/schemas/microsoft.graph.identityUserFlowAttributeInputType'
+            userAttribute:
+              $ref: '#/components/schemas/microsoft.graph.identityUserFlowAttribute'
+          additionalProperties:
+            type: object
+    microsoft.graph.identityUserFlowAttribute:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: identityUserFlowAttribute
+          type: object
+          properties:
+            dataType:
+              $ref: '#/components/schemas/microsoft.graph.identityUserFlowAttributeDataType'
+            description:
+              type: string
+              description: The description of the user flow attribute that's shown to the user at the time of sign-up.
+              nullable: true
+            displayName:
+              type: string
+              description: The display name of the user flow attribute.
+              nullable: true
+            userFlowAttributeType:
+              $ref: '#/components/schemas/microsoft.graph.identityUserFlowAttributeType'
+          additionalProperties:
+            type: object
+    microsoft.graph.assignmentOrder:
+      title: assignmentOrder
+      type: object
+      properties:
+        order:
+          type: array
+          items:
+            type: string
+            nullable: true
+          description: A list of identityUserFlowAttribute IDs provided to determine the order in which attributes should be collected within a user flow.
+      additionalProperties:
+        type: object
+    microsoft.graph.identityProviderBase:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: identityProviderBase
+          type: object
+          properties:
+            displayName:
+              type: string
+              description: The display name of the identity provider.
+              nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.b2xIdentityUserFlow:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.identityUserFlow'
+        - title: b2xIdentityUserFlow
+          type: object
+          properties:
+            apiConnectorConfiguration:
+              $ref: '#/components/schemas/microsoft.graph.userFlowApiConnectorConfiguration'
+            identityProviders:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.identityProvider'
+              description: The identity providers included in the user flow.
+            languages:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.userFlowLanguageConfiguration'
+              description: The languages supported for customization within the user flow. Language customization is enabled by default in self-service sign up user flow. You cannot create custom languages in self-service sign up user flows.
+            userAttributeAssignments:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.identityUserFlowAttributeAssignment'
+              description: The user attribute assignments included in the user flow.
+            userFlowIdentityProviders:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.identityProviderBase'
+          additionalProperties:
+            type: object
+    microsoft.graph.identityProvider:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: identityProvider
+          type: object
+          properties:
+            clientId:
+              type: string
+              description: The client ID for the application obtained when registering the application with the identity provider. This is a required field.  Required. Not nullable.
+              nullable: true
+            clientSecret:
+              type: string
+              description: The client secret for the application obtained when registering the application with the identity provider. This is write-only. A read operation will return ****. This is a required field. Required. Not nullable.
+              nullable: true
+            name:
+              type: string
+              description: The display name of the identity provider. Not nullable.
+              nullable: true
+            type:
+              type: string
+              description: 'The identity provider type is a required field. For B2B scenario: Google, Facebook. For B2C scenario: Microsoft, Google, Amazon, LinkedIn, Facebook, GitHub, Twitter, Weibo,QQ, WeChat, OpenIDConnect. Not nullable.'
+              nullable: true
+          additionalProperties:
+            type: object
     microsoft.graph.conditionalAccessRoot:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -25237,6 +29817,36 @@ components:
               $ref: '#/components/schemas/microsoft.graph.conditionalAccessSessionControls'
             state:
               $ref: '#/components/schemas/microsoft.graph.conditionalAccessPolicyState'
+          additionalProperties:
+            type: object
+    microsoft.graph.continuousAccessEvaluationPolicy:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: continuousAccessEvaluationPolicy
+          type: object
+          properties:
+            description:
+              type: string
+              description: Continuous access evaluation automatically blocks access to resources and applications in near real time when a user's access is removed or a client IP address changes. Read-only.
+            displayName:
+              type: string
+              description: The value is always Continuous Access Evaluation. Read-only.
+            groups:
+              type: array
+              items:
+                type: string
+              description: The collection of group identifiers in scope for evaluation. All groups are in scope when the collection is empty. Read-only.
+            isEnabled:
+              type: boolean
+              description: true to indicate whether continuous access evaluation should be performed; otherwise false. Read-only.
+            migrate:
+              type: boolean
+              description: true to indicate that the continuous access evaluation policy settings should be or has been migrated to the conditional access policy.
+            users:
+              type: array
+              items:
+                type: string
+              description: The collection of user identifiers in scope for evaluation. All users are in scope when the collection is empty. Read-only.
           additionalProperties:
             type: object
     microsoft.graph.identityUserFlow:
@@ -25558,30 +30168,6 @@ components:
               nullable: true
             tokenIssuerType:
               $ref: '#/components/schemas/microsoft.graph.tokenIssuerType'
-          additionalProperties:
-            type: object
-    microsoft.graph.identityProvider:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: identityProvider
-          type: object
-          properties:
-            clientId:
-              type: string
-              description: The client ID for the application obtained when registering the application with the identity provider. This is a required field.  Required. Not nullable.
-              nullable: true
-            clientSecret:
-              type: string
-              description: The client secret for the application obtained when registering the application with the identity provider. This is write-only. A read operation will return ****. This is a required field. Required. Not nullable.
-              nullable: true
-            name:
-              type: string
-              description: The display name of the identity provider. Not nullable.
-              nullable: true
-            type:
-              type: string
-              description: 'The identity provider type is a required field. For B2B scenario: Google, Facebook. For B2C scenario: Microsoft, Google, Amazon, LinkedIn, Facebook, GitHub, Twitter, Weibo,QQ, WeChat, OpenIDConnect. Not nullable.'
-              nullable: true
           additionalProperties:
             type: object
     microsoft.graph.informationProtection:
@@ -28197,6 +32783,68 @@ components:
         - failed
         - unknownFutureValue
       type: string
+    microsoft.graph.apiAuthenticationConfigurationBase:
+      title: apiAuthenticationConfigurationBase
+      type: object
+      additionalProperties:
+        type: object
+    microsoft.graph.userFlowApiConnectorConfiguration:
+      title: userFlowApiConnectorConfiguration
+      type: object
+      properties:
+        postAttributeCollection:
+          $ref: '#/components/schemas/microsoft.graph.identityApiConnector'
+        postFederationSignup:
+          $ref: '#/components/schemas/microsoft.graph.identityApiConnector'
+        preTokenIssuance:
+          $ref: '#/components/schemas/microsoft.graph.identityApiConnector'
+      additionalProperties:
+        type: object
+    microsoft.graph.userAttributeValuesItem:
+      title: userAttributeValuesItem
+      type: object
+      properties:
+        isDefault:
+          type: boolean
+          description: Used to set the value as the default.
+        name:
+          type: string
+          description: The display name of the property displayed to the end user in the user flow.
+          nullable: true
+        value:
+          type: string
+          description: The value that is set when this item is selected.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.identityUserFlowAttributeInputType:
+      title: identityUserFlowAttributeInputType
+      enum:
+        - textBox
+        - dateTimeDropdown
+        - radioSingleSelect
+        - dropdownSingleSelect
+        - emailBox
+        - checkboxMultiSelect
+      type: string
+    microsoft.graph.identityUserFlowAttributeDataType:
+      title: identityUserFlowAttributeDataType
+      enum:
+        - string
+        - boolean
+        - int64
+        - stringCollection
+        - dateTime
+        - unknownFutureValue
+      type: string
+    microsoft.graph.identityUserFlowAttributeType:
+      title: identityUserFlowAttributeType
+      enum:
+        - builtIn
+        - custom
+        - required
+        - unknownFutureValue
+      type: string
     microsoft.graph.conditionalAccessConditionSet:
       title: conditionalAccessConditionSet
       type: object
@@ -30778,7 +35426,7 @@ components:
               nullable: true
             bootstrapTokenEscrowed:
               type: boolean
-              description: 'Reports if the managed device has an escrowed Bootstrap Token. This is only for macOS devices. If FALSE, no bootstrap token is escrowed. If TRUE, the device has escrowed a bootstrap token with Intune. This property is read-only.'
+              description: 'Reports if the managed device has an escrowed Bootstrap Token. This is only for macOS devices. To get, include BootstrapTokenEscrowed in the select clause and query with a device id. If FALSE, no bootstrap token is escrowed. If TRUE, the device has escrowed a bootstrap token with Intune. This property is read-only.'
             chassisType:
               $ref: '#/components/schemas/microsoft.graph.chassisType'
             chromeOSDeviceInfo:
@@ -31728,6 +36376,8 @@ components:
               type: string
               description: The video teleconferencing ID. Read-only.
               nullable: true
+            virtualAppointment:
+              $ref: '#/components/schemas/microsoft.graph.virtualAppointment'
             attendanceReports:
               type: array
               items:
@@ -31737,6 +36387,11 @@ components:
               $ref: '#/components/schemas/microsoft.graph.meetingAttendanceReport'
             registration:
               $ref: '#/components/schemas/microsoft.graph.meetingRegistration'
+            transcripts:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.callTranscript'
+              description: The transcripts of an online meeting. Read-only.
           additionalProperties:
             type: object
     microsoft.graph.presence:
@@ -32489,6 +37144,114 @@ components:
           $ref: '#/components/schemas/microsoft.graph.ODataErrors.MainError'
       additionalProperties:
         type: object
+    microsoft.graph.identityApiConnectorCollectionResponse:
+      title: Collection of identityApiConnector
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.identityApiConnector'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.b2cIdentityUserFlowCollectionResponse:
+      title: Collection of b2cIdentityUserFlow
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.b2cIdentityUserFlow'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.identityProviderCollectionResponse:
+      title: Collection of identityProvider
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.identityProvider'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    StringCollectionResponse:
+      title: Collection of string
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            type: string
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.userFlowLanguageConfigurationCollectionResponse:
+      title: Collection of userFlowLanguageConfiguration
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.userFlowLanguageConfiguration'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.userFlowLanguagePageCollectionResponse:
+      title: Collection of userFlowLanguagePage
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.userFlowLanguagePage'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.identityUserFlowAttributeAssignmentCollectionResponse:
+      title: Collection of identityUserFlowAttributeAssignment
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.identityUserFlowAttributeAssignment'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.identityProviderBaseCollectionResponse:
+      title: Collection of identityProviderBase
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.identityProviderBase'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.b2xIdentityUserFlowCollectionResponse:
+      title: Collection of b2xIdentityUserFlow
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.b2xIdentityUserFlow'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
     microsoft.graph.authenticationContextClassReferenceCollectionResponse:
       title: Collection of authenticationContextClassReference
       type: object
@@ -32521,6 +37284,18 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.conditionalAccessPolicy'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.identityUserFlowAttributeCollectionResponse:
+      title: Collection of identityUserFlowAttribute
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.identityUserFlowAttribute'
         '@odata.nextLink':
           type: string
       additionalProperties:
@@ -32605,18 +37380,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.servicePrincipalRiskDetection'
-        '@odata.nextLink':
-          type: string
-      additionalProperties:
-        type: object
-    microsoft.graph.identityProviderCollectionResponse:
-      title: Collection of identityProvider
-      type: object
-      properties:
-        value:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.identityProvider'
         '@odata.nextLink':
           type: string
       additionalProperties:
@@ -32833,18 +37596,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.featureRolloutPolicy'
-        '@odata.nextLink':
-          type: string
-      additionalProperties:
-        type: object
-    StringCollectionResponse:
-      title: Collection of string
-      type: object
-      properties:
-        value:
-          type: array
-          items:
-            type: string
         '@odata.nextLink':
           type: string
       additionalProperties:
@@ -38749,6 +43500,33 @@ components:
             $ref: '#/components/schemas/microsoft.graph.meetingParticipantInfo'
       additionalProperties:
         type: object
+    microsoft.graph.virtualAppointment:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: virtualAppointment
+          type: object
+          properties:
+            appointmentClientJoinWebUrl:
+              type: string
+              description: The join web URL of the virtual appointment for clients with waiting room and browser join. Optional.
+              nullable: true
+            appointmentClients:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.virtualAppointmentUser'
+              description: 'The client information for the virtual appointment, including name, email, and SMS phone number. Optional.'
+            externalAppointmentId:
+              type: string
+              description: 'The identifier of the appointment from the scheduling system, associated with the current virtual appointment. Optional.'
+              nullable: true
+            externalAppointmentUrl:
+              type: string
+              description: 'The URL of the appointment resource from the scheduling system, associated with the current virtual appointment. Optional.'
+              nullable: true
+            settings:
+              $ref: '#/components/schemas/microsoft.graph.virtualAppointmentSettings'
+          additionalProperties:
+            type: object
     microsoft.graph.meetingAttendanceReport:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -38828,6 +43606,25 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.meetingRegistrationQuestion'
               description: Custom registration questions.
+          additionalProperties:
+            type: object
+    microsoft.graph.callTranscript:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: callTranscript
+          type: object
+          properties:
+            content:
+              type: string
+              description: A field representing the content of the transcript. Read-only.
+              format: base64url
+              nullable: true
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Date and time at which the transcript was created. Read-only.
+              format: date-time
+              nullable: true
           additionalProperties:
             type: object
     microsoft.graph.outOfOfficeSettings:
@@ -43782,6 +48579,34 @@ components:
         upn:
           type: string
           description: User principal name of the participant.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.virtualAppointmentUser:
+      title: virtualAppointmentUser
+      type: object
+      properties:
+        displayName:
+          type: string
+          description: The display name of the user who participates in a virtual appointment. Optional.
+          nullable: true
+        emailAddress:
+          type: string
+          description: The email address of the user who participates in a virtual appointment. Optional.
+          nullable: true
+        smsCapablePhoneNumber:
+          type: string
+          description: The phone number for sending SMS texts for the user who participates in a virtual appointment. Optional.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.virtualAppointmentSettings:
+      title: virtualAppointmentSettings
+      type: object
+      properties:
+        allowClientToJoinUsingBrowser:
+          type: boolean
+          description: 'Indicates whether the client can use the browser to join a virtual appointment. If set to false, the client can only use Microsoft Teams to join. Optional.'
           nullable: true
       additionalProperties:
         type: object
@@ -49521,6 +54346,60 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.ODataErrors.ODataError'
+    microsoft.graph.identityApiConnectorCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.identityApiConnectorCollectionResponse'
+    microsoft.graph.b2cIdentityUserFlowCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.b2cIdentityUserFlowCollectionResponse'
+    microsoft.graph.identityProviderCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.identityProviderCollectionResponse'
+    StringCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/StringCollectionResponse'
+    microsoft.graph.userFlowLanguageConfigurationCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.userFlowLanguageConfigurationCollectionResponse'
+    microsoft.graph.userFlowLanguagePageCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.userFlowLanguagePageCollectionResponse'
+    microsoft.graph.identityUserFlowAttributeAssignmentCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.identityUserFlowAttributeAssignmentCollectionResponse'
+    microsoft.graph.identityProviderBaseCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.identityProviderBaseCollectionResponse'
+    microsoft.graph.b2xIdentityUserFlowCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.b2xIdentityUserFlowCollectionResponse'
     microsoft.graph.authenticationContextClassReferenceCollectionResponse:
       description: Retrieved collection
       content:
@@ -49539,6 +54418,12 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.conditionalAccessPolicyCollectionResponse'
+    microsoft.graph.identityUserFlowAttributeCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.identityUserFlowAttributeCollectionResponse'
     microsoft.graph.identityUserFlowCollectionResponse:
       description: Retrieved collection
       content:
@@ -49581,12 +54466,6 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.servicePrincipalRiskDetectionCollectionResponse'
-    microsoft.graph.identityProviderCollectionResponse:
-      description: Retrieved collection
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/microsoft.graph.identityProviderCollectionResponse'
     microsoft.graph.bitlockerRecoveryKeyCollectionResponse:
       description: Retrieved collection
       content:
@@ -49695,12 +54574,6 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.featureRolloutPolicyCollectionResponse'
-    StringCollectionResponse:
-      description: Retrieved collection
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/StringCollectionResponse'
     microsoft.graph.homeRealmDiscoveryPolicyCollectionResponse:
       description: Retrieved collection
       content:

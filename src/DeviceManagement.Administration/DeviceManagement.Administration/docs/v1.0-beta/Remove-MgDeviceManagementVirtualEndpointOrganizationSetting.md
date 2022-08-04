@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgDeviceManagementVirtualEndpointOrganizationSetting
 
 ## SYNOPSIS
-The Cloud PC organization settings for a tenant.
+Delete navigation property organizationSettings for deviceManagement
 
 ## SYNTAX
 
@@ -18,7 +18,7 @@ Remove-MgDeviceManagementVirtualEndpointOrganizationSetting [-IfMatch <String>] 
 ```
 
 ## DESCRIPTION
-The Cloud PC organization settings for a tenant.
+Delete navigation property organizationSettings for deviceManagement
 
 ## EXAMPLES
 

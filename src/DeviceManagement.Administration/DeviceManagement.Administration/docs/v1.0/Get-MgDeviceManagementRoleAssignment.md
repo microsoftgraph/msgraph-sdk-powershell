@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceManagementRoleAssignment
 
 ## SYNOPSIS
-The Role Assignments.
+Get roleAssignments from deviceManagement
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgDeviceManagementRoleAssignment -InputObject <IDeviceManagementAdministrati
 ```
 
 ## DESCRIPTION
-The Role Assignments.
+Get roleAssignments from deviceManagement
 
 ## EXAMPLES
 
@@ -229,7 +229,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceAndAppManagementRoleAssignment
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceAndAppManagementRoleAssignment1
 
 ## NOTES
 
@@ -245,6 +245,7 @@ INPUTOBJECT <IDeviceManagementAdministrationIdentity>: Identity Parameter
   - `[CartToClassAssociationId <String>]`: key: id of cartToClassAssociation
   - `[CloudPcAuditEventId <String>]`: key: id of cloudPcAuditEvent
   - `[CloudPcDeviceImageId <String>]`: key: id of cloudPcDeviceImage
+  - `[CloudPcExternalPartnerSettingId <String>]`: key: id of cloudPcExternalPartnerSetting
   - `[CloudPcGalleryImageId <String>]`: key: id of cloudPcGalleryImage
   - `[CloudPcId <String>]`: key: id of cloudPC
   - `[CloudPcOnPremisesConnectionId <String>]`: key: id of cloudPcOnPremisesConnection
@@ -263,6 +264,7 @@ INPUTOBJECT <IDeviceManagementAdministrationIdentity>: Identity Parameter
   - `[DeviceManagementExchangeOnPremisesPolicyId <String>]`: key: id of deviceManagementExchangeOnPremisesPolicy
   - `[DeviceManagementPartnerId <String>]`: key: id of deviceManagementPartner
   - `[GroupPolicyCategoryId <String>]`: key: id of groupPolicyCategory
+  - `[GroupPolicyCategoryId1 <String>]`: key: id of groupPolicyCategory
   - `[GroupPolicyDefinitionFileId <String>]`: key: id of groupPolicyDefinitionFile
   - `[GroupPolicyDefinitionId <String>]`: key: id of groupPolicyDefinition
   - `[GroupPolicyMigrationReportId <String>]`: key: id of groupPolicyMigrationReport

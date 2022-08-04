@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Reports
-Module Guid: a4ccbcab-417c-44a5-889c-31ef892f3c6b
+Module Guid: a4eeed35-f73d-40a0-a306-2cfe919cf700
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.reports
 Help Version: 1.0.0.0
 Locale: en-US
@@ -12,8 +12,7 @@ Microsoft Graph PowerShell Cmdlets
 
 ## Microsoft.Graph.Reports Cmdlets
 ### [Get-MgAuditLogDirectoryAudit](Get-MgAuditLogDirectoryAudit.md)
-Read-only.
-Nullable.
+Get directoryAudits from auditLogs
 
 ### [Get-MgAuditLogProvisioning](Get-MgAuditLogProvisioning.md)
 Get provisioning from auditLogs
@@ -22,23 +21,25 @@ Get provisioning from auditLogs
 Get restrictedSignIns from auditLogs
 
 ### [Get-MgAuditLogSignIn](Get-MgAuditLogSignIn.md)
-Read-only.
-Nullable.
+Get signIns from auditLogs
 
 ### [Get-MgDeviceManagementReport](Get-MgDeviceManagementReport.md)
-Reports singleton
+Get reports from deviceManagement
 
 ### [Get-MgDeviceManagementReportExportJob](Get-MgDeviceManagementReportExportJob.md)
-Entity representing a job to export a report
+Get exportJobs from deviceManagement
 
-### [Get-MgReportDailyPrintUsage](Get-MgReportDailyPrintUsage.md)
+### [Get-MgReportDailyPrintUsageByPrinter](Get-MgReportDailyPrintUsageByPrinter.md)
 Get dailyPrintUsageByPrinter from reports
 
+### [Get-MgReportDailyPrintUsageByUser](Get-MgReportDailyPrintUsageByUser.md)
+Get dailyPrintUsageByUser from reports
+
 ### [Get-MgReportDeviceConfigurationDeviceActivity](Get-MgReportDeviceConfigurationDeviceActivity.md)
-Metadata for the device configuration device activity report
+Invoke function deviceConfigurationDeviceActivity
 
 ### [Get-MgReportDeviceConfigurationUserActivity](Get-MgReportDeviceConfigurationUserActivity.md)
-Metadata for the device configuration user activity report
+Invoke function deviceConfigurationUserActivity
 
 ### [Get-MgReportEmailActivityCount](Get-MgReportEmailActivityCount.md)
 Invoke function getEmailActivityCounts
@@ -82,8 +83,11 @@ Invoke function managedDeviceEnrollmentFailureDetails
 ### [Get-MgReportManagedDeviceEnrollmentTopFailures](Get-MgReportManagedDeviceEnrollmentTopFailures.md)
 Invoke function managedDeviceEnrollmentTopFailures
 
-### [Get-MgReportMonthlyPrintUsage](Get-MgReportMonthlyPrintUsage.md)
+### [Get-MgReportMonthlyPrintUsageByPrinter](Get-MgReportMonthlyPrintUsageByPrinter.md)
 Get monthlyPrintUsageByPrinter from reports
+
+### [Get-MgReportMonthlyPrintUsageByUser](Get-MgReportMonthlyPrintUsageByUser.md)
+Get monthlyPrintUsageByUser from reports
 
 ### [Get-MgReportOffice365ActivationCount](Get-MgReportOffice365ActivationCount.md)
 Invoke function getOffice365ActivationCounts
@@ -169,8 +173,50 @@ Invoke function getSharePointSiteUsageSiteCounts
 ### [Get-MgReportSharePointSiteUsageStorage](Get-MgReportSharePointSiteUsageStorage.md)
 Invoke function getSharePointSiteUsageStorage
 
-### [Get-MgReportSkype](Get-MgReportSkype.md)
+### [Get-MgReportSkypeForBusinessActivityCount](Get-MgReportSkypeForBusinessActivityCount.md)
 Invoke function getSkypeForBusinessActivityCounts
+
+### [Get-MgReportSkypeForBusinessActivityUserCount](Get-MgReportSkypeForBusinessActivityUserCount.md)
+Invoke function getSkypeForBusinessActivityUserCounts
+
+### [Get-MgReportSkypeForBusinessActivityUserDetail](Get-MgReportSkypeForBusinessActivityUserDetail.md)
+Invoke function getSkypeForBusinessActivityUserDetail
+
+### [Get-MgReportSkypeForBusinessDeviceUsageDistributionUserCount](Get-MgReportSkypeForBusinessDeviceUsageDistributionUserCount.md)
+Invoke function getSkypeForBusinessDeviceUsageDistributionUserCounts
+
+### [Get-MgReportSkypeForBusinessDeviceUsageUserCount](Get-MgReportSkypeForBusinessDeviceUsageUserCount.md)
+Invoke function getSkypeForBusinessDeviceUsageUserCounts
+
+### [Get-MgReportSkypeForBusinessDeviceUsageUserDetail](Get-MgReportSkypeForBusinessDeviceUsageUserDetail.md)
+Invoke function getSkypeForBusinessDeviceUsageUserDetail
+
+### [Get-MgReportSkypeForBusinessOrganizerActivityCount](Get-MgReportSkypeForBusinessOrganizerActivityCount.md)
+Invoke function getSkypeForBusinessOrganizerActivityCounts
+
+### [Get-MgReportSkypeForBusinessOrganizerActivityMinuteCount](Get-MgReportSkypeForBusinessOrganizerActivityMinuteCount.md)
+Invoke function getSkypeForBusinessOrganizerActivityMinuteCounts
+
+### [Get-MgReportSkypeForBusinessOrganizerActivityUserCount](Get-MgReportSkypeForBusinessOrganizerActivityUserCount.md)
+Invoke function getSkypeForBusinessOrganizerActivityUserCounts
+
+### [Get-MgReportSkypeForBusinessParticipantActivityCount](Get-MgReportSkypeForBusinessParticipantActivityCount.md)
+Invoke function getSkypeForBusinessParticipantActivityCounts
+
+### [Get-MgReportSkypeForBusinessParticipantActivityMinuteCount](Get-MgReportSkypeForBusinessParticipantActivityMinuteCount.md)
+Invoke function getSkypeForBusinessParticipantActivityMinuteCounts
+
+### [Get-MgReportSkypeForBusinessParticipantActivityUserCount](Get-MgReportSkypeForBusinessParticipantActivityUserCount.md)
+Invoke function getSkypeForBusinessParticipantActivityUserCounts
+
+### [Get-MgReportSkypeForBusinessPeerToPeerActivityCount](Get-MgReportSkypeForBusinessPeerToPeerActivityCount.md)
+Invoke function getSkypeForBusinessPeerToPeerActivityCounts
+
+### [Get-MgReportSkypeForBusinessPeerToPeerActivityMinuteCount](Get-MgReportSkypeForBusinessPeerToPeerActivityMinuteCount.md)
+Invoke function getSkypeForBusinessPeerToPeerActivityMinuteCounts
+
+### [Get-MgReportSkypeForBusinessPeerToPeerActivityUserCount](Get-MgReportSkypeForBusinessPeerToPeerActivityUserCount.md)
+Invoke function getSkypeForBusinessPeerToPeerActivityUserCounts
 
 ### [Get-MgReportTeamDeviceUsageDistributionUserCount](Get-MgReportTeamDeviceUsageDistributionUserCount.md)
 Invoke function getTeamsDeviceUsageDistributionUserCounts
@@ -221,8 +267,8 @@ Invoke function getYammerGroupsActivityDetail
 Invoke function getYammerGroupsActivityGroupCounts
 
 ### [Remove-MgDeviceManagementReport](Remove-MgDeviceManagementReport.md)
-Reports singleton
+Delete navigation property reports for deviceManagement
 
 ### [Update-MgDeviceManagementReport](Update-MgDeviceManagementReport.md)
-Reports singleton
+Update the navigation property reports in deviceManagement
 

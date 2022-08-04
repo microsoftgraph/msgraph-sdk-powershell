@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgEntitlementManagementSetting
 
 ## SYNOPSIS
-Represents the settings that control the behavior of Azure AD entitlement management.
+Update the navigation property settings in identityGovernance
 
 ## SYNTAX
 
@@ -26,7 +26,7 @@ Update-MgEntitlementManagementSetting -BodyParameter <IMicrosoftGraphEntitlement
 ```
 
 ## DESCRIPTION
-Represents the settings that control the behavior of Azure AD entitlement management.
+Update the navigation property settings in identityGovernance
 
 ## EXAMPLES
 
@@ -94,7 +94,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -176,7 +176,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphEntitlementManagementSettings1>: entitlementManagementSettings
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[DurationUntilExternalUserDeletedAfterBlocked <TimeSpan?>]`: If externalUserLifecycleAction is blockSignInAndDelete, the duration, typically a number of days, after an external user is blocked from sign in before their account is deleted.
   - `[ExternalUserLifecycleAction <String>]`: accessPackageExternalUserLifecycleAction
 

@@ -21,14 +21,14 @@ Update-MgUserPassword -UserId <String> [-AdditionalProperties <Hashtable>] [-Cur
 ### Change1
 ```
 Update-MgUserPassword -UserId <String>
- -BodyParameter <IPaths3Mx0JpUsersUserIdMicrosoftGraphChangepasswordPostRequestbodyContentApplicationJsonSchema1>
+ -BodyParameter <IPaths3Mx0JpUsersUserIdMicrosoftGraphChangepasswordPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### ChangeViaIdentity1
 ```
 Update-MgUserPassword -InputObject <IUsersActionsIdentity>
- -BodyParameter <IPaths3Mx0JpUsersUserIdMicrosoftGraphChangepasswordPostRequestbodyContentApplicationJsonSchema1>
+ -BodyParameter <IPaths3Mx0JpUsersUserIdMicrosoftGraphChangepasswordPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -65,7 +65,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths3Mx0JpUsersUserIdMicrosoftGraphChangepasswordPostRequestbodyContentApplicationJsonSchema1
+Type: Microsoft.Graph.PowerShell.Models.IPaths3Mx0JpUsersUserIdMicrosoftGraphChangepasswordPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Change1, ChangeViaIdentity1
 Aliases:
 
@@ -188,7 +188,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPaths3Mx0JpUsersUserIdMicrosoftGraphChangepasswordPostRequestbodyContentApplicationJsonSchema1
+### Microsoft.Graph.PowerShell.Models.IPaths3Mx0JpUsersUserIdMicrosoftGraphChangepasswordPostRequestbodyContentApplicationJsonSchema
 
 ### Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
 
@@ -205,13 +205,12 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-BODYPARAMETER <IPaths3Mx0JpUsersUserIdMicrosoftGraphChangepasswordPostRequestbodyContentApplicationJsonSchema1>: .
+BODYPARAMETER <IPaths3Mx0JpUsersUserIdMicrosoftGraphChangepasswordPostRequestbodyContentApplicationJsonSchema>: .
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[CurrentPassword <String>]`: 
   - `[NewPassword <String>]`: 
 
 INPUTOBJECT <IUsersActionsIdentity>: Identity Parameter
-  - `[AccessReviewInstanceDecisionItemId <String>]`: key: id of accessReviewInstanceDecisionItem
   - `[AccessReviewInstanceId <String>]`: key: id of accessReviewInstance
   - `[AccessReviewStageId <String>]`: key: id of accessReviewStage
   - `[AppLogCollectionRequestId <String>]`: key: id of appLogCollectionRequest
@@ -219,15 +218,27 @@ INPUTOBJECT <IUsersActionsIdentity>: Identity Parameter
   - `[BaseTaskId <String>]`: key: id of baseTask
   - `[BaseTaskListId <String>]`: key: id of baseTaskList
   - `[CalendarId <String>]`: key: id of calendar
+  - `[ChatId <String>]`: key: id of chat
+  - `[ChatMessageId <String>]`: key: id of chatMessage
+  - `[ChatMessageId1 <String>]`: key: id of chatMessage
   - `[CloudPcId <String>]`: key: id of cloudPC
+  - `[ContentTypeId <String>]`: key: id of contentType
   - `[DeviceEnrollmentConfigurationId <String>]`: key: id of deviceEnrollmentConfiguration
+  - `[DeviceId <String>]`: key: id of device
   - `[DeviceLogCollectionResponseId <String>]`: key: id of deviceLogCollectionResponse
+  - `[DocumentSetVersionId <String>]`: key: id of documentSetVersion
+  - `[DriveId <String>]`: key: id of drive
+  - `[DriveItemId <String>]`: key: id of driveItem
+  - `[DriveItemVersionId <String>]`: key: id of driveItemVersion
   - `[EventId <String>]`: key: id of event
   - `[EventId1 <String>]`: key: id of event
+  - `[ListItemId <String>]`: key: id of listItem
+  - `[ListItemVersionId <String>]`: key: id of listItemVersion
   - `[MailFolderId <String>]`: key: id of mailFolder
   - `[MailFolderId1 <String>]`: key: id of mailFolder
   - `[ManagedDeviceId <String>]`: key: id of managedDevice
   - `[MessageId <String>]`: key: id of message
+  - `[MicrosoftAuthenticatorAuthenticationMethodId <String>]`: key: id of microsoftAuthenticatorAuthenticationMethod
   - `[MobileAppTroubleshootingEventId <String>]`: key: id of mobileAppTroubleshootingEvent
   - `[NotebookId <String>]`: key: id of notebook
   - `[OnenotePageId <String>]`: key: id of onenotePage
@@ -235,10 +246,17 @@ INPUTOBJECT <IUsersActionsIdentity>: Identity Parameter
   - `[OutlookTaskFolderId <String>]`: key: id of outlookTaskFolder
   - `[OutlookTaskGroupId <String>]`: key: id of outlookTaskGroup
   - `[OutlookTaskId <String>]`: key: id of outlookTask
-  - `[SharedInsightId <String>]`: key: id of sharedInsight
-  - `[TrendingId <String>]`: key: id of trending
-  - `[UsedInsightId <String>]`: key: id of usedInsight
+  - `[PasswordlessMicrosoftAuthenticatorAuthenticationMethodId <String>]`: key: id of passwordlessMicrosoftAuthenticatorAuthenticationMethod
+  - `[PermissionId <String>]`: key: id of permission
+  - `[PhoneAuthenticationMethodId <String>]`: key: id of phoneAuthenticationMethod
+  - `[ResourceSpecificPermissionGrantId <String>]`: key: id of resourceSpecificPermissionGrant
+  - `[SensitivityLabelId <String>]`: key: id of sensitivityLabel
+  - `[SubscriptionId <String>]`: key: id of subscription
+  - `[TeamsAppInstallationId <String>]`: key: id of teamsAppInstallation
+  - `[TodoTaskId <String>]`: key: id of todoTask
+  - `[TodoTaskListId <String>]`: key: id of todoTaskList
   - `[UserId <String>]`: key: id of user
+  - `[WindowsHelloForBusinessAuthenticationMethodId <String>]`: key: id of windowsHelloForBusinessAuthenticationMethod
 
 ## RELATED LINKS
 

@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgEntitlementManagementCatalog
 
 ## SYNOPSIS
-Represents a group of access packages.
+Create new navigation property to catalogs for identityGovernance
 
 ## SYNTAX
 
@@ -27,7 +27,7 @@ New-MgEntitlementManagementCatalog -BodyParameter <IMicrosoftGraphAccessPackageC
 ```
 
 ## DESCRIPTION
-Represents a group of access packages.
+Create new navigation property to catalogs for identityGovernance
 
 ## EXAMPLES
 
@@ -37,6 +37,7 @@ Represents a group of access packages.
 The access packages in this catalog.
 Read-only.
 Nullable.
+Supports $expand.
 To construct, please use Get-Help -Online and see NOTES section for ACCESSPACKAGES properties and create a hash table.
 
 ```yaml
@@ -131,6 +132,7 @@ Accept wildcard characters: False
 
 ### -DisplayName
 The display name of the access package catalog.
+Supports $filter (eq, contains).
 
 ```yaml
 Type: System.String
@@ -145,7 +147,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -257,20 +259,25 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-ACCESSPACKAGES <IMicrosoftGraphAccessPackage1[]>: The access packages in this catalog. Read-only. Nullable.
-  - `[Id <String>]`: Read-only.
+ACCESSPACKAGES <IMicrosoftGraphAccessPackage1[]>: The access packages in this catalog. Read-only. Nullable. Supports $expand.
+  - `[Id <String>]`: 
   - `[AssignmentPolicies <IMicrosoftGraphAccessPackageAssignmentPolicy1[]>]`: 
-    - `[Id <String>]`: Read-only.
+    - `[Id <String>]`: 
     - `[AccessPackage <IMicrosoftGraphAccessPackage1>]`: accessPackage
     - `[AllowedTargetScope <String>]`: allowedTargetScope
+    - `[AutomaticRequestSettings <IMicrosoftGraphAccessPackageAutomaticRequestSettings>]`: accessPackageAutomaticRequestSettings
+      - `[(Any) <Object>]`: This indicates any property can be added to this object.
+      - `[GracePeriodBeforeAccessRemoval <TimeSpan?>]`: 
+      - `[RemoveAccessWhenTargetLeavesAllowedTargets <Boolean?>]`: 
+      - `[RequestAccessForAllowedTargets <Boolean?>]`: 
     - `[Catalog <IMicrosoftGraphAccessPackageCatalog1>]`: accessPackageCatalog
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[Id <String>]`: Read-only.
-      - `[AccessPackages <IMicrosoftGraphAccessPackage1[]>]`: The access packages in this catalog. Read-only. Nullable.
+      - `[Id <String>]`: 
+      - `[AccessPackages <IMicrosoftGraphAccessPackage1[]>]`: The access packages in this catalog. Read-only. Nullable. Supports $expand.
       - `[CatalogType <String>]`: accessPackageCatalogType
       - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
       - `[Description <String>]`: The description of the access package catalog.
-      - `[DisplayName <String>]`: The display name of the access package catalog.
+      - `[DisplayName <String>]`: The display name of the access package catalog. Supports $filter (eq, contains).
       - `[IsExternallyVisible <Boolean?>]`: Whether the access packages in this catalog can be requested by users outside of the tenant.
       - `[ModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
       - `[State <String>]`: accessPackageCatalogState
@@ -285,36 +292,36 @@ ACCESSPACKAGES <IMicrosoftGraphAccessPackage1[]>: The access packages in this ca
     - `[ModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
     - `[RequestApprovalSettings <IMicrosoftGraphAccessPackageAssignmentApprovalSettings>]`: accessPackageAssignmentApprovalSettings
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[IsApprovalRequiredForAdd <Boolean?>]`: 
-      - `[IsApprovalRequiredForUpdate <Boolean?>]`: 
-      - `[Stages <IMicrosoftGraphAccessPackageApprovalStage[]>]`: 
-        - `[DurationBeforeAutomaticDenial <TimeSpan?>]`: 
-        - `[DurationBeforeEscalation <TimeSpan?>]`: 
-        - `[EscalationApprovers <IMicrosoftGraphSubjectSet[]>]`: 
-        - `[FallbackEscalationApprovers <IMicrosoftGraphSubjectSet[]>]`: 
-        - `[FallbackPrimaryApprovers <IMicrosoftGraphSubjectSet[]>]`: 
-        - `[IsApproverJustificationRequired <Boolean?>]`: 
-        - `[IsEscalationEnabled <Boolean?>]`: 
-        - `[PrimaryApprovers <IMicrosoftGraphSubjectSet[]>]`: 
+      - `[IsApprovalRequiredForAdd <Boolean?>]`: If false, then approval is not required for new requests in this policy.
+      - `[IsApprovalRequiredForUpdate <Boolean?>]`: If false, then approval is not required for updates to requests in this policy.
+      - `[Stages <IMicrosoftGraphAccessPackageApprovalStage[]>]`: If approval is required, the one, two or three elements of this collection define each of the stages of approval. An empty array is present if no approval is required.
+        - `[DurationBeforeAutomaticDenial <TimeSpan?>]`: The number of days that a request can be pending a response before it is automatically denied.
+        - `[DurationBeforeEscalation <TimeSpan?>]`: If escalation is required, the time a request can be pending a response from a primary approver.
+        - `[EscalationApprovers <IMicrosoftGraphSubjectSet[]>]`: If escalation is enabled and the primary approvers do not respond before the escalation time, the escalationApprovers are the users who will be asked to approve requests.
+        - `[FallbackEscalationApprovers <IMicrosoftGraphSubjectSet[]>]`: The subjects, typically users, who are the fallback escalation approvers.
+        - `[FallbackPrimaryApprovers <IMicrosoftGraphSubjectSet[]>]`: The subjects, typically users, who are the fallback primary approvers.
+        - `[IsApproverJustificationRequired <Boolean?>]`: Indicates whether the approver is required to provide a justification for approving a request.
+        - `[IsEscalationEnabled <Boolean?>]`: If true, then one or more escalationApprovers are configured in this approval stage.
+        - `[PrimaryApprovers <IMicrosoftGraphSubjectSet[]>]`: The subjects, typically users, who will be asked to approve requests. A collection of singleUser, groupMembers, requestorManager, internalSponsors or externalSponsors.
     - `[RequestorSettings <IMicrosoftGraphAccessPackageAssignmentRequestorSettings>]`: accessPackageAssignmentRequestorSettings
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[AllowCustomAssignmentSchedule <Boolean?>]`: 
-      - `[EnableOnBehalfRequestorsToAddAccess <Boolean?>]`: 
-      - `[EnableOnBehalfRequestorsToRemoveAccess <Boolean?>]`: 
-      - `[EnableOnBehalfRequestorsToUpdateAccess <Boolean?>]`: 
-      - `[EnableTargetsToSelfAddAccess <Boolean?>]`: 
-      - `[EnableTargetsToSelfRemoveAccess <Boolean?>]`: 
-      - `[EnableTargetsToSelfUpdateAccess <Boolean?>]`: 
-      - `[OnBehalfRequestors <IMicrosoftGraphSubjectSet[]>]`: 
+      - `[AllowCustomAssignmentSchedule <Boolean?>]`: If false, the requestor is not permitted to include a schedule in their request.
+      - `[EnableOnBehalfRequestorsToAddAccess <Boolean?>]`: If true, allows on-behalf-of requestors to create a request to add access for another principal.
+      - `[EnableOnBehalfRequestorsToRemoveAccess <Boolean?>]`: If true, allows on-behalf-of requestors to create a request to remove access for another principal.
+      - `[EnableOnBehalfRequestorsToUpdateAccess <Boolean?>]`: If true, allows on-behalf-of requestors to create a request to update access for another principal.
+      - `[EnableTargetsToSelfAddAccess <Boolean?>]`: If true, allows requestors to create a request to add access for themselves.
+      - `[EnableTargetsToSelfRemoveAccess <Boolean?>]`: If true, allows requestors to create a request to remove their access.
+      - `[EnableTargetsToSelfUpdateAccess <Boolean?>]`: If true, allows requestors to create a request to update their access.
+      - `[OnBehalfRequestors <IMicrosoftGraphSubjectSet[]>]`: The principals who can request on-behalf-of others.
     - `[ReviewSettings <IMicrosoftGraphAccessPackageAssignmentReviewSettings>]`: accessPackageAssignmentReviewSettings
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[ExpirationBehavior <String>]`: accessReviewExpirationBehavior
-      - `[FallbackReviewers <IMicrosoftGraphSubjectSet[]>]`: 
-      - `[IsEnabled <Boolean?>]`: 
-      - `[IsRecommendationEnabled <Boolean?>]`: 
-      - `[IsReviewerJustificationRequired <Boolean?>]`: 
-      - `[IsSelfReview <Boolean?>]`: 
-      - `[PrimaryReviewers <IMicrosoftGraphSubjectSet[]>]`: 
+      - `[FallbackReviewers <IMicrosoftGraphSubjectSet[]>]`: This collection specifies the users who will be the fallback reviewers when the primary reviewers don't respond.
+      - `[IsEnabled <Boolean?>]`: If true, access reviews are required for assignments through this policy.
+      - `[IsRecommendationEnabled <Boolean?>]`: Specifies whether to display recommendations to the reviewer. The default value is true.
+      - `[IsReviewerJustificationRequired <Boolean?>]`: Specifies whether the reviewer must provide justification for the approval. The default value is true.
+      - `[IsSelfReview <Boolean?>]`: Specifies whether the principals can review their own assignments.
+      - `[PrimaryReviewers <IMicrosoftGraphSubjectSet[]>]`: This collection specifies the users or group of users who will review the access package assignments.
       - `[Schedule <IMicrosoftGraphEntitlementManagementSchedule>]`: entitlementManagementSchedule
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[Expiration <IMicrosoftGraphExpirationPattern>]`: expirationPattern
@@ -337,7 +344,7 @@ ACCESSPACKAGES <IMicrosoftGraphAccessPackage1[]>: The access packages in this ca
             - `[StartDate <DateTime?>]`: The date to start applying the recurrence pattern. The first occurrence of the meeting may be this date or later, depending on the recurrence pattern of the event. Must be the same value as the start property of the recurring event. Required.
             - `[Type <String>]`: recurrenceRangeType
         - `[StartDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-    - `[SpecificAllowedTargets <IMicrosoftGraphSubjectSet[]>]`: 
+    - `[SpecificAllowedTargets <IMicrosoftGraphSubjectSet[]>]`: The principals that can be assigned access from an access package through this policy.
   - `[Catalog <IMicrosoftGraphAccessPackageCatalog1>]`: accessPackageCatalog
   - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
   - `[Description <String>]`: The description of the access package.
@@ -347,13 +354,18 @@ ACCESSPACKAGES <IMicrosoftGraphAccessPackage1[]>: The access packages in this ca
 
 BODYPARAMETER <IMicrosoftGraphAccessPackageCatalog1>: accessPackageCatalog
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
-  - `[AccessPackages <IMicrosoftGraphAccessPackage1[]>]`: The access packages in this catalog. Read-only. Nullable.
-    - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
+  - `[AccessPackages <IMicrosoftGraphAccessPackage1[]>]`: The access packages in this catalog. Read-only. Nullable. Supports $expand.
+    - `[Id <String>]`: 
     - `[AssignmentPolicies <IMicrosoftGraphAccessPackageAssignmentPolicy1[]>]`: 
-      - `[Id <String>]`: Read-only.
+      - `[Id <String>]`: 
       - `[AccessPackage <IMicrosoftGraphAccessPackage1>]`: accessPackage
       - `[AllowedTargetScope <String>]`: allowedTargetScope
+      - `[AutomaticRequestSettings <IMicrosoftGraphAccessPackageAutomaticRequestSettings>]`: accessPackageAutomaticRequestSettings
+        - `[(Any) <Object>]`: This indicates any property can be added to this object.
+        - `[GracePeriodBeforeAccessRemoval <TimeSpan?>]`: 
+        - `[RemoveAccessWhenTargetLeavesAllowedTargets <Boolean?>]`: 
+        - `[RequestAccessForAllowedTargets <Boolean?>]`: 
       - `[Catalog <IMicrosoftGraphAccessPackageCatalog1>]`: accessPackageCatalog
       - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
       - `[Description <String>]`: The description of the policy.
@@ -366,36 +378,36 @@ BODYPARAMETER <IMicrosoftGraphAccessPackageCatalog1>: accessPackageCatalog
       - `[ModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
       - `[RequestApprovalSettings <IMicrosoftGraphAccessPackageAssignmentApprovalSettings>]`: accessPackageAssignmentApprovalSettings
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
-        - `[IsApprovalRequiredForAdd <Boolean?>]`: 
-        - `[IsApprovalRequiredForUpdate <Boolean?>]`: 
-        - `[Stages <IMicrosoftGraphAccessPackageApprovalStage[]>]`: 
-          - `[DurationBeforeAutomaticDenial <TimeSpan?>]`: 
-          - `[DurationBeforeEscalation <TimeSpan?>]`: 
-          - `[EscalationApprovers <IMicrosoftGraphSubjectSet[]>]`: 
-          - `[FallbackEscalationApprovers <IMicrosoftGraphSubjectSet[]>]`: 
-          - `[FallbackPrimaryApprovers <IMicrosoftGraphSubjectSet[]>]`: 
-          - `[IsApproverJustificationRequired <Boolean?>]`: 
-          - `[IsEscalationEnabled <Boolean?>]`: 
-          - `[PrimaryApprovers <IMicrosoftGraphSubjectSet[]>]`: 
+        - `[IsApprovalRequiredForAdd <Boolean?>]`: If false, then approval is not required for new requests in this policy.
+        - `[IsApprovalRequiredForUpdate <Boolean?>]`: If false, then approval is not required for updates to requests in this policy.
+        - `[Stages <IMicrosoftGraphAccessPackageApprovalStage[]>]`: If approval is required, the one, two or three elements of this collection define each of the stages of approval. An empty array is present if no approval is required.
+          - `[DurationBeforeAutomaticDenial <TimeSpan?>]`: The number of days that a request can be pending a response before it is automatically denied.
+          - `[DurationBeforeEscalation <TimeSpan?>]`: If escalation is required, the time a request can be pending a response from a primary approver.
+          - `[EscalationApprovers <IMicrosoftGraphSubjectSet[]>]`: If escalation is enabled and the primary approvers do not respond before the escalation time, the escalationApprovers are the users who will be asked to approve requests.
+          - `[FallbackEscalationApprovers <IMicrosoftGraphSubjectSet[]>]`: The subjects, typically users, who are the fallback escalation approvers.
+          - `[FallbackPrimaryApprovers <IMicrosoftGraphSubjectSet[]>]`: The subjects, typically users, who are the fallback primary approvers.
+          - `[IsApproverJustificationRequired <Boolean?>]`: Indicates whether the approver is required to provide a justification for approving a request.
+          - `[IsEscalationEnabled <Boolean?>]`: If true, then one or more escalationApprovers are configured in this approval stage.
+          - `[PrimaryApprovers <IMicrosoftGraphSubjectSet[]>]`: The subjects, typically users, who will be asked to approve requests. A collection of singleUser, groupMembers, requestorManager, internalSponsors or externalSponsors.
       - `[RequestorSettings <IMicrosoftGraphAccessPackageAssignmentRequestorSettings>]`: accessPackageAssignmentRequestorSettings
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
-        - `[AllowCustomAssignmentSchedule <Boolean?>]`: 
-        - `[EnableOnBehalfRequestorsToAddAccess <Boolean?>]`: 
-        - `[EnableOnBehalfRequestorsToRemoveAccess <Boolean?>]`: 
-        - `[EnableOnBehalfRequestorsToUpdateAccess <Boolean?>]`: 
-        - `[EnableTargetsToSelfAddAccess <Boolean?>]`: 
-        - `[EnableTargetsToSelfRemoveAccess <Boolean?>]`: 
-        - `[EnableTargetsToSelfUpdateAccess <Boolean?>]`: 
-        - `[OnBehalfRequestors <IMicrosoftGraphSubjectSet[]>]`: 
+        - `[AllowCustomAssignmentSchedule <Boolean?>]`: If false, the requestor is not permitted to include a schedule in their request.
+        - `[EnableOnBehalfRequestorsToAddAccess <Boolean?>]`: If true, allows on-behalf-of requestors to create a request to add access for another principal.
+        - `[EnableOnBehalfRequestorsToRemoveAccess <Boolean?>]`: If true, allows on-behalf-of requestors to create a request to remove access for another principal.
+        - `[EnableOnBehalfRequestorsToUpdateAccess <Boolean?>]`: If true, allows on-behalf-of requestors to create a request to update access for another principal.
+        - `[EnableTargetsToSelfAddAccess <Boolean?>]`: If true, allows requestors to create a request to add access for themselves.
+        - `[EnableTargetsToSelfRemoveAccess <Boolean?>]`: If true, allows requestors to create a request to remove their access.
+        - `[EnableTargetsToSelfUpdateAccess <Boolean?>]`: If true, allows requestors to create a request to update their access.
+        - `[OnBehalfRequestors <IMicrosoftGraphSubjectSet[]>]`: The principals who can request on-behalf-of others.
       - `[ReviewSettings <IMicrosoftGraphAccessPackageAssignmentReviewSettings>]`: accessPackageAssignmentReviewSettings
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[ExpirationBehavior <String>]`: accessReviewExpirationBehavior
-        - `[FallbackReviewers <IMicrosoftGraphSubjectSet[]>]`: 
-        - `[IsEnabled <Boolean?>]`: 
-        - `[IsRecommendationEnabled <Boolean?>]`: 
-        - `[IsReviewerJustificationRequired <Boolean?>]`: 
-        - `[IsSelfReview <Boolean?>]`: 
-        - `[PrimaryReviewers <IMicrosoftGraphSubjectSet[]>]`: 
+        - `[FallbackReviewers <IMicrosoftGraphSubjectSet[]>]`: This collection specifies the users who will be the fallback reviewers when the primary reviewers don't respond.
+        - `[IsEnabled <Boolean?>]`: If true, access reviews are required for assignments through this policy.
+        - `[IsRecommendationEnabled <Boolean?>]`: Specifies whether to display recommendations to the reviewer. The default value is true.
+        - `[IsReviewerJustificationRequired <Boolean?>]`: Specifies whether the reviewer must provide justification for the approval. The default value is true.
+        - `[IsSelfReview <Boolean?>]`: Specifies whether the principals can review their own assignments.
+        - `[PrimaryReviewers <IMicrosoftGraphSubjectSet[]>]`: This collection specifies the users or group of users who will review the access package assignments.
         - `[Schedule <IMicrosoftGraphEntitlementManagementSchedule>]`: entitlementManagementSchedule
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[Expiration <IMicrosoftGraphExpirationPattern>]`: expirationPattern
@@ -418,7 +430,7 @@ BODYPARAMETER <IMicrosoftGraphAccessPackageCatalog1>: accessPackageCatalog
               - `[StartDate <DateTime?>]`: The date to start applying the recurrence pattern. The first occurrence of the meeting may be this date or later, depending on the recurrence pattern of the event. Must be the same value as the start property of the recurring event. Required.
               - `[Type <String>]`: recurrenceRangeType
           - `[StartDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-      - `[SpecificAllowedTargets <IMicrosoftGraphSubjectSet[]>]`: 
+      - `[SpecificAllowedTargets <IMicrosoftGraphSubjectSet[]>]`: The principals that can be assigned access from an access package through this policy.
     - `[Catalog <IMicrosoftGraphAccessPackageCatalog1>]`: accessPackageCatalog
     - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
     - `[Description <String>]`: The description of the access package.
@@ -428,7 +440,7 @@ BODYPARAMETER <IMicrosoftGraphAccessPackageCatalog1>: accessPackageCatalog
   - `[CatalogType <String>]`: accessPackageCatalogType
   - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
   - `[Description <String>]`: The description of the access package catalog.
-  - `[DisplayName <String>]`: The display name of the access package catalog.
+  - `[DisplayName <String>]`: The display name of the access package catalog. Supports $filter (eq, contains).
   - `[IsExternallyVisible <Boolean?>]`: Whether the access packages in this catalog can be requested by users outside of the tenant.
   - `[ModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
   - `[State <String>]`: accessPackageCatalogState

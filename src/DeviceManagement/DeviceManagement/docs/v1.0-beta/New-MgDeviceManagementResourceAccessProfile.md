@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgDeviceManagementResourceAccessProfile
 
 ## SYNOPSIS
-Collection of resource access settings associated with account.
+Create new navigation property to resourceAccessProfiles for deviceManagement
 
 ## SYNTAX
 
@@ -29,7 +29,7 @@ New-MgDeviceManagementResourceAccessProfile
 ```
 
 ## DESCRIPTION
-Collection of resource access settings associated with account.
+Create new navigation property to resourceAccessProfiles for deviceManagement
 
 ## EXAMPLES
 
@@ -128,7 +128,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -239,25 +239,25 @@ To create the parameters described below, construct a hash table containing the 
 
 
 ASSIGNMENTS <IMicrosoftGraphDeviceManagementResourceAccessProfileAssignment[]>: The list of assignments for the device configuration profile.
-  - `[Id <String>]`: Read-only.
-  - `[Intent <String>]`: The administrator intent for the assignment of the profile.
+  - `[Id <String>]`: 
+  - `[Intent <DeviceManagementResourceAccessProfileIntent?>]`: The administrator intent for the assignment of the profile.
   - `[SourceId <String>]`: The identifier of the source of the assignment.
   - `[Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget1>]`: Base type for assignment targets.
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[DeviceAndAppManagementAssignmentFilterId <String>]`: The Id of the filter for the target assignment.
-    - `[DeviceAndAppManagementAssignmentFilterType <String>]`: Represents type of the assignment filter.
+    - `[DeviceAndAppManagementAssignmentFilterType <DeviceAndAppManagementAssignmentFilterType?>]`: Represents type of the assignment filter.
 
 BODYPARAMETER <IMicrosoftGraphDeviceManagementResourceAccessProfileBase>: Base Profile Type for Resource Access
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[Assignments <IMicrosoftGraphDeviceManagementResourceAccessProfileAssignment[]>]`: The list of assignments for the device configuration profile.
-    - `[Id <String>]`: Read-only.
-    - `[Intent <String>]`: The administrator intent for the assignment of the profile.
+    - `[Id <String>]`: 
+    - `[Intent <DeviceManagementResourceAccessProfileIntent?>]`: The administrator intent for the assignment of the profile.
     - `[SourceId <String>]`: The identifier of the source of the assignment.
     - `[Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget1>]`: Base type for assignment targets.
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[DeviceAndAppManagementAssignmentFilterId <String>]`: The Id of the filter for the target assignment.
-      - `[DeviceAndAppManagementAssignmentFilterType <String>]`: Represents type of the assignment filter.
+      - `[DeviceAndAppManagementAssignmentFilterType <DeviceAndAppManagementAssignmentFilterType?>]`: Represents type of the assignment filter.
   - `[CreationDateTime <DateTime?>]`: DateTime profile was created
   - `[Description <String>]`: Profile description
   - `[DisplayName <String>]`: Profile display name

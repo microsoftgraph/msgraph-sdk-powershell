@@ -8,9 +8,7 @@ schema: 2.0.0
 # Get-MgUserSharedResourceInsight
 
 ## SYNOPSIS
-Used for navigating to the item that was shared.
-For file attachments, the type is fileAttachment.
-For linked attachments, the type is driveItem.
+Get resource from users
 
 ## SYNTAX
 
@@ -27,9 +25,7 @@ Get-MgUserSharedResourceInsight -InputObject <IPeopleIdentity> [-ExpandProperty 
 ```
 
 ## DESCRIPTION
-Used for navigating to the item that was shared.
-For file attachments, the type is fileAttachment.
-For linked attachments, the type is driveItem.
+Get resource from users
 
 ## EXAMPLES
 

@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgDeviceManagementDeviceConfigurationConflictSummary
 
 ## SYNOPSIS
-Summary of policies in conflict state for this account.
+Create new navigation property to deviceConfigurationConflictSummary for deviceManagement
 
 ## SYNTAX
 
@@ -26,7 +26,7 @@ New-MgDeviceManagementDeviceConfigurationConflictSummary
 ```
 
 ## DESCRIPTION
-Summary of policies in conflict state for this account.
+Create new navigation property to deviceConfigurationConflictSummary for deviceManagement
 
 ## EXAMPLES
 
@@ -110,7 +110,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -177,7 +177,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphDeviceConfigurationConflictSummary>: Conflict summary for a set of device configuration policies.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[ConflictingDeviceConfigurations <IMicrosoftGraphSettingSource[]>]`: The set of policies in conflict with the given setting
     - `[DisplayName <String>]`: Not yet documented
     - `[Id <String>]`: Not yet documented

@@ -8,24 +8,24 @@ schema: 2.0.0
 # Remove-MgDeviceManagementWindowAutopilotDeviceIdentity
 
 ## SYNOPSIS
-The Windows autopilot device identities contained collection.
+Delete navigation property windowsAutopilotDeviceIdentities for deviceManagement
 
 ## SYNTAX
 
-### Delete (Default)
+### Delete1 (Default)
 ```
 Remove-MgDeviceManagementWindowAutopilotDeviceIdentity -WindowsAutopilotDeviceIdentityId <String>
  [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### DeleteViaIdentity
+### DeleteViaIdentity1
 ```
 Remove-MgDeviceManagementWindowAutopilotDeviceIdentity -InputObject <IDeviceManagementEnrolmentIdentity>
  [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-The Windows autopilot device identities contained collection.
+Delete navigation property windowsAutopilotDeviceIdentities for deviceManagement
 
 ## EXAMPLES
 
@@ -52,7 +52,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementEnrolmentIdentity
-Parameter Sets: DeleteViaIdentity
+Parameter Sets: DeleteViaIdentity1
 Aliases:
 
 Required: True
@@ -82,7 +82,7 @@ key: id of windowsAutopilotDeviceIdentity
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete
+Parameter Sets: Delete1
 Aliases:
 
 Required: True
@@ -147,7 +147,6 @@ INPUTOBJECT <IDeviceManagementEnrolmentIdentity>: Identity Parameter
   - `[AndroidDeviceOwnerEnrollmentProfileId <String>]`: key: id of androidDeviceOwnerEnrollmentProfile
   - `[AndroidForWorkEnrollmentProfileId <String>]`: key: id of androidForWorkEnrollmentProfile
   - `[AppScopeId <String>]`: key: id of appScope
-  - `[AppScopeId1 <String>]`: Usage: appScopeId={appScopeId}
   - `[AppleEnrollmentProfileAssignmentId <String>]`: key: id of appleEnrollmentProfileAssignment
   - `[AppleUserInitiatedEnrollmentProfileId <String>]`: key: id of appleUserInitiatedEnrollmentProfile
   - `[ApprovalId <String>]`: key: id of approval
@@ -156,15 +155,13 @@ INPUTOBJECT <IDeviceManagementEnrolmentIdentity>: Identity Parameter
   - `[DeviceEnrollmentConfigurationId <String>]`: key: id of deviceEnrollmentConfiguration
   - `[DeviceManagementAutopilotEventId <String>]`: key: id of deviceManagementAutopilotEvent
   - `[DeviceManagementAutopilotPolicyStatusDetailId <String>]`: key: id of deviceManagementAutopilotPolicyStatusDetail
-  - `[DirectoryScopeId <String>]`: Usage: directoryScopeId={directoryScopeId}
+  - `[DirectoryObjectId <String>]`: key: id of directoryObject
   - `[EnrollmentConfigurationAssignmentId <String>]`: key: id of enrollmentConfigurationAssignment
   - `[EnrollmentProfileId <String>]`: key: id of enrollmentProfile
   - `[ImportedAppleDeviceIdentityId <String>]`: key: id of importedAppleDeviceIdentity
   - `[ImportedDeviceIdentityId <String>]`: key: id of importedDeviceIdentity
   - `[ImportedWindowsAutopilotDeviceIdentityId <String>]`: key: id of importedWindowsAutopilotDeviceIdentity
-  - `[On <String>]`: Usage: on={on}
-  - `[PrincipalId <String>]`: Usage: principalId={principalId}
-  - `[RoleDefinitionId <String>]`: Usage: roleDefinitionId={roleDefinitionId}
+  - `[On <String>]`: Usage: on='{on}'
   - `[UnifiedRbacResourceActionId <String>]`: key: id of unifiedRbacResourceAction
   - `[UnifiedRbacResourceNamespaceId <String>]`: key: id of unifiedRbacResourceNamespace
   - `[UnifiedRoleAssignmentId <String>]`: key: id of unifiedRoleAssignment

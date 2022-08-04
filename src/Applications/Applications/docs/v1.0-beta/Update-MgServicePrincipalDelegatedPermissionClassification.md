@@ -8,8 +8,7 @@ schema: 2.0.0
 # Update-MgServicePrincipalDelegatedPermissionClassification
 
 ## SYNOPSIS
-The permission classifications for delegated permissions exposed by the app that this service principal represents.
-Supports $expand.
+Update the navigation property delegatedPermissionClassifications in servicePrincipals
 
 ## SYNTAX
 
@@ -42,8 +41,7 @@ Update-MgServicePrincipalDelegatedPermissionClassification -InputObject <IApplic
 ```
 
 ## DESCRIPTION
-The permission classifications for delegated permissions exposed by the app that this service principal represents.
-Supports $expand.
+Update the navigation property delegatedPermissionClassifications in servicePrincipals
 
 ## EXAMPLES
 
@@ -111,7 +109,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -157,7 +155,7 @@ Accept wildcard characters: False
 ```
 
 ### -PermissionId
-The unique identifier (id) for the delegated permission listed in the oauth2PermissionScopes collection of the servicePrincipal.
+The unique identifier (id) for the delegated permission listed in the publishedPermissionScopes collection of the servicePrincipal.
 Required on create.
 Does not support $filter.
 
@@ -174,7 +172,7 @@ Accept wildcard characters: False
 ```
 
 ### -PermissionName
-The claim value (value) for the delegated permission listed in the oauth2PermissionScopes collection of the servicePrincipal.
+The claim value (value) for the delegated permission listed in the publishedPermissionScopes collection of the servicePrincipal.
 Does not support $filter.
 
 ```yaml
@@ -259,34 +257,39 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphDelegatedPermissionClassification>: delegatedPermissionClassification
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[Classification <String>]`: permissionClassificationType
-  - `[PermissionId <String>]`: The unique identifier (id) for the delegated permission listed in the oauth2PermissionScopes collection of the servicePrincipal. Required on create. Does not support $filter.
-  - `[PermissionName <String>]`: The claim value (value) for the delegated permission listed in the oauth2PermissionScopes collection of the servicePrincipal. Does not support $filter.
+  - `[PermissionId <String>]`: The unique identifier (id) for the delegated permission listed in the publishedPermissionScopes collection of the servicePrincipal. Required on create. Does not support $filter.
+  - `[PermissionName <String>]`: The claim value (value) for the delegated permission listed in the publishedPermissionScopes collection of the servicePrincipal. Does not support $filter.
 
 INPUTOBJECT <IApplicationsIdentity>: Identity Parameter
+  - `[AppManagementPolicyId <String>]`: key: id of appManagementPolicy
   - `[AppRoleAssignmentId <String>]`: key: id of appRoleAssignment
   - `[ApplicationId <String>]`: key: id of application
   - `[ApplicationTemplateId <String>]`: key: id of applicationTemplate
+  - `[ClaimsMappingPolicyId <String>]`: key: id of claimsMappingPolicy
   - `[ConnectorGroupId <String>]`: key: id of connectorGroup
   - `[ConnectorId <String>]`: key: id of connector
   - `[DelegatedPermissionClassificationId <String>]`: key: id of delegatedPermissionClassification
   - `[DirectoryDefinitionId <String>]`: key: id of directoryDefinition
+  - `[DirectoryObjectId <String>]`: key: id of directoryObject
   - `[EndpointId <String>]`: key: id of endpoint
   - `[ExtensionPropertyId <String>]`: key: id of extensionProperty
   - `[FederatedIdentityCredentialId <String>]`: key: id of federatedIdentityCredential
   - `[GroupId <String>]`: key: id of group
+  - `[HomeRealmDiscoveryPolicyId <String>]`: key: id of homeRealmDiscoveryPolicy
   - `[LicenseDetailsId <String>]`: key: id of licenseDetails
+  - `[OAuth2PermissionGrantId <String>]`: key: id of oAuth2PermissionGrant
   - `[OnPremisesAgentGroupId <String>]`: key: id of onPremisesAgentGroup
   - `[OnPremisesAgentGroupId1 <String>]`: key: id of onPremisesAgentGroup
   - `[OnPremisesAgentId <String>]`: key: id of onPremisesAgent
-  - `[OnPremisesAgentId1 <String>]`: key: id of onPremisesAgent
   - `[OnPremisesPublishingProfileId <String>]`: key: id of onPremisesPublishingProfile
   - `[PublishedResourceId <String>]`: key: id of publishedResource
-  - `[PublishedResourceId1 <String>]`: key: id of publishedResource
   - `[ServicePrincipalId <String>]`: key: id of servicePrincipal
   - `[SynchronizationJobId <String>]`: key: id of synchronizationJob
   - `[SynchronizationTemplateId <String>]`: key: id of synchronizationTemplate
+  - `[TokenIssuancePolicyId <String>]`: key: id of tokenIssuancePolicy
+  - `[TokenLifetimePolicyId <String>]`: key: id of tokenLifetimePolicy
   - `[UserId <String>]`: key: id of user
 
 ## RELATED LINKS

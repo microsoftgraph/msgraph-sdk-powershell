@@ -8,9 +8,7 @@ schema: 2.0.0
 # Remove-MgUserOnenoteNotebook
 
 ## SYNOPSIS
-The collection of OneNote notebooks that are owned by the user or group.
-Read-only.
-Nullable.
+Delete navigation property notebooks for users
 
 ## SYNTAX
 
@@ -27,9 +25,7 @@ Remove-MgUserOnenoteNotebook -InputObject <INotesIdentity> [-IfMatch <String>] [
 ```
 
 ## DESCRIPTION
-The collection of OneNote notebooks that are owned by the user or group.
-Read-only.
-Nullable.
+Delete navigation property notebooks for users
 
 ## EXAMPLES
 

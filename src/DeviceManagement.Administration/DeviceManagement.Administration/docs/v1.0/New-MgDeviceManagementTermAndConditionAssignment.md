@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgDeviceManagementTermAndConditionAssignment
 
 ## SYNOPSIS
-The list of assignments for this T&C policy.
+Create new navigation property to assignments for deviceManagement
 
 ## SYNTAX
 
@@ -39,7 +39,7 @@ New-MgDeviceManagementTermAndConditionAssignment -InputObject <IDeviceManagement
 ```
 
 ## DESCRIPTION
-The list of assignments for this T&C policy.
+Create new navigation property to assignments for deviceManagement
 
 ## EXAMPLES
 
@@ -78,7 +78,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -193,7 +193,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphTermsAndConditionsAssignment>: A termsAndConditionsAssignment entity represents the assignment of a given Terms and Conditions (T&C) policy to a given group. Users in the group will be required to accept the terms in order to have devices enrolled into Intune.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget>]`: Base type for assignment targets.
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
 
@@ -202,6 +202,7 @@ INPUTOBJECT <IDeviceManagementAdministrationIdentity>: Identity Parameter
   - `[CartToClassAssociationId <String>]`: key: id of cartToClassAssociation
   - `[CloudPcAuditEventId <String>]`: key: id of cloudPcAuditEvent
   - `[CloudPcDeviceImageId <String>]`: key: id of cloudPcDeviceImage
+  - `[CloudPcExternalPartnerSettingId <String>]`: key: id of cloudPcExternalPartnerSetting
   - `[CloudPcGalleryImageId <String>]`: key: id of cloudPcGalleryImage
   - `[CloudPcId <String>]`: key: id of cloudPC
   - `[CloudPcOnPremisesConnectionId <String>]`: key: id of cloudPcOnPremisesConnection
@@ -220,6 +221,7 @@ INPUTOBJECT <IDeviceManagementAdministrationIdentity>: Identity Parameter
   - `[DeviceManagementExchangeOnPremisesPolicyId <String>]`: key: id of deviceManagementExchangeOnPremisesPolicy
   - `[DeviceManagementPartnerId <String>]`: key: id of deviceManagementPartner
   - `[GroupPolicyCategoryId <String>]`: key: id of groupPolicyCategory
+  - `[GroupPolicyCategoryId1 <String>]`: key: id of groupPolicyCategory
   - `[GroupPolicyDefinitionFileId <String>]`: key: id of groupPolicyDefinitionFile
   - `[GroupPolicyDefinitionId <String>]`: key: id of groupPolicyDefinition
   - `[GroupPolicyMigrationReportId <String>]`: key: id of groupPolicyMigrationReport

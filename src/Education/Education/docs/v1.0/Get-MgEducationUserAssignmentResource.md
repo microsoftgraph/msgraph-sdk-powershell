@@ -8,9 +8,7 @@ schema: 2.0.0
 # Get-MgEducationUserAssignmentResource
 
 ## SYNOPSIS
-Learning objects that are associated with this assignment.
-Only teachers can modify this list.
-Nullable.
+Get resources from education
 
 ## SYNTAX
 
@@ -34,9 +32,7 @@ Get-MgEducationUserAssignmentResource -InputObject <IEducationIdentity> [-Expand
 ```
 
 ## DESCRIPTION
-Learning objects that are associated with this assignment.
-Only teachers can modify this list.
-Nullable.
+Get resources from education
 
 ## EXAMPLES
 

@@ -8,22 +8,31 @@ schema: 2.0.0
 # Get-MgServicePrincipalOauth2PermissionGrant
 
 ## SYNOPSIS
-Delegated permission grants authorizing this service principal to access an API on behalf of a signed-in user.
-Read-only.
-Nullable.
+Get oauth2PermissionGrants from servicePrincipals
 
 ## SYNTAX
 
+### List (Default)
 ```
 Get-MgServicePrincipalOauth2PermissionGrant -ServicePrincipalId <String> [-ExpandProperty <String[]>]
  [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>]
  [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
+### Get
+```
+Get-MgServicePrincipalOauth2PermissionGrant -OAuth2PermissionGrantId <String> -ServicePrincipalId <String>
+ [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
+```
+
+### GetViaIdentity
+```
+Get-MgServicePrincipalOauth2PermissionGrant -InputObject <IApplicationsIdentity> [-ExpandProperty <String[]>]
+ [-Property <String[]>] [<CommonParameters>]
+```
+
 ## DESCRIPTION
-Delegated permission grants authorizing this service principal to access an API on behalf of a signed-in user.
-Read-only.
-Nullable.
+Get oauth2PermissionGrants from servicePrincipals
 
 ## EXAMPLES
 
@@ -34,7 +43,7 @@ List all pages.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
+Parameter Sets: List
 Aliases:
 
 Required: False
@@ -50,7 +59,7 @@ By default, this variable will be set in the global scope.
 
 ```yaml
 Type: System.String
-Parameter Sets: (All)
+Parameter Sets: List
 Aliases: CV
 
 Required: False
@@ -80,10 +89,41 @@ Filter items by property values
 
 ```yaml
 Type: System.String
-Parameter Sets: (All)
+Parameter Sets: List
 Aliases:
 
 Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -InputObject
+Identity Parameter
+To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
+
+```yaml
+Type: Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+Parameter Sets: GetViaIdentity
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### -OAuth2PermissionGrantId
+key: id of oAuth2PermissionGrant
+
+```yaml
+Type: System.String
+Parameter Sets: Get
+Aliases:
+
+Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -95,7 +135,7 @@ Sets the page size of results.
 
 ```yaml
 Type: System.Int32
-Parameter Sets: (All)
+Parameter Sets: List
 Aliases:
 
 Required: False
@@ -125,7 +165,7 @@ Search items by search phrases
 
 ```yaml
 Type: System.String
-Parameter Sets: (All)
+Parameter Sets: List
 Aliases:
 
 Required: False
@@ -140,7 +180,7 @@ key: id of servicePrincipal
 
 ```yaml
 Type: System.String
-Parameter Sets: (All)
+Parameter Sets: Get, List
 Aliases:
 
 Required: True
@@ -155,7 +195,7 @@ Skip the first n items
 
 ```yaml
 Type: System.Int32
-Parameter Sets: (All)
+Parameter Sets: List
 Aliases:
 
 Required: False
@@ -170,7 +210,7 @@ Order items by property values
 
 ```yaml
 Type: System.String[]
-Parameter Sets: (All)
+Parameter Sets: List
 Aliases: OrderBy
 
 Required: False
@@ -185,7 +225,7 @@ Show only the first n items
 
 ```yaml
 Type: System.Int32
-Parameter Sets: (All)
+Parameter Sets: List
 Aliases: Limit
 
 Required: False
@@ -200,6 +240,8 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
+### Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOAuth2PermissionGrant1
@@ -207,6 +249,41 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## NOTES
 
 ALIASES
+
+COMPLEX PARAMETER PROPERTIES
+
+To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
+
+
+INPUTOBJECT <IApplicationsIdentity>: Identity Parameter
+  - `[AppManagementPolicyId <String>]`: key: id of appManagementPolicy
+  - `[AppRoleAssignmentId <String>]`: key: id of appRoleAssignment
+  - `[ApplicationId <String>]`: key: id of application
+  - `[ApplicationTemplateId <String>]`: key: id of applicationTemplate
+  - `[ClaimsMappingPolicyId <String>]`: key: id of claimsMappingPolicy
+  - `[ConnectorGroupId <String>]`: key: id of connectorGroup
+  - `[ConnectorId <String>]`: key: id of connector
+  - `[DelegatedPermissionClassificationId <String>]`: key: id of delegatedPermissionClassification
+  - `[DirectoryDefinitionId <String>]`: key: id of directoryDefinition
+  - `[DirectoryObjectId <String>]`: key: id of directoryObject
+  - `[EndpointId <String>]`: key: id of endpoint
+  - `[ExtensionPropertyId <String>]`: key: id of extensionProperty
+  - `[FederatedIdentityCredentialId <String>]`: key: id of federatedIdentityCredential
+  - `[GroupId <String>]`: key: id of group
+  - `[HomeRealmDiscoveryPolicyId <String>]`: key: id of homeRealmDiscoveryPolicy
+  - `[LicenseDetailsId <String>]`: key: id of licenseDetails
+  - `[OAuth2PermissionGrantId <String>]`: key: id of oAuth2PermissionGrant
+  - `[OnPremisesAgentGroupId <String>]`: key: id of onPremisesAgentGroup
+  - `[OnPremisesAgentGroupId1 <String>]`: key: id of onPremisesAgentGroup
+  - `[OnPremisesAgentId <String>]`: key: id of onPremisesAgent
+  - `[OnPremisesPublishingProfileId <String>]`: key: id of onPremisesPublishingProfile
+  - `[PublishedResourceId <String>]`: key: id of publishedResource
+  - `[ServicePrincipalId <String>]`: key: id of servicePrincipal
+  - `[SynchronizationJobId <String>]`: key: id of synchronizationJob
+  - `[SynchronizationTemplateId <String>]`: key: id of synchronizationTemplate
+  - `[TokenIssuancePolicyId <String>]`: key: id of tokenIssuancePolicy
+  - `[TokenLifetimePolicyId <String>]`: key: id of tokenLifetimePolicy
+  - `[UserId <String>]`: key: id of user
 
 ## RELATED LINKS
 

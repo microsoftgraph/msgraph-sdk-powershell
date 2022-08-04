@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgDeviceAppMgtiOSLobAppProvisioningConfiguration
 
 ## SYNOPSIS
-The IOS Lob App Provisioning Configurations.
+Create new navigation property to iosLobAppProvisioningConfigurations for deviceAppManagement
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ New-MgDeviceAppMgtiOSLobAppProvisioningConfiguration
 ```
 
 ## DESCRIPTION
-The IOS Lob App Provisioning Configurations.
+Create new navigation property to iosLobAppProvisioningConfigurations for deviceAppManagement
 
 ## EXAMPLES
 
@@ -178,7 +178,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -338,25 +338,25 @@ To create the parameters described below, construct a hash table containing the 
 
 
 ASSIGNMENTS <IMicrosoftGraphIosLobAppProvisioningConfigurationAssignment[]>: The associated group assignments for IosLobAppProvisioningConfiguration.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget>]`: Base type for assignment targets.
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[DeviceAndAppManagementAssignmentFilterId <String>]`: The Id of the filter for the target assignment.
-    - `[DeviceAndAppManagementAssignmentFilterType <String>]`: Represents type of the assignment filter.
+    - `[DeviceAndAppManagementAssignmentFilterType <DeviceAndAppManagementAssignmentFilterType?>]`: Represents type of the assignment filter.
 
 BODYPARAMETER <IMicrosoftGraphIosLobAppProvisioningConfiguration>: This topic provides descriptions of the declared methods, properties and relationships exposed by the iOS Lob App Provisioning Configuration resource.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[Assignments <IMicrosoftGraphIosLobAppProvisioningConfigurationAssignment[]>]`: The associated group assignments for IosLobAppProvisioningConfiguration.
-    - `[Id <String>]`: Read-only.
+    - `[Id <String>]`: 
     - `[Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget>]`: Base type for assignment targets.
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[DeviceAndAppManagementAssignmentFilterId <String>]`: The Id of the filter for the target assignment.
-      - `[DeviceAndAppManagementAssignmentFilterType <String>]`: Represents type of the assignment filter.
+      - `[DeviceAndAppManagementAssignmentFilterType <DeviceAndAppManagementAssignmentFilterType?>]`: Represents type of the assignment filter.
   - `[CreatedDateTime <DateTime?>]`: DateTime the object was created.
   - `[Description <String>]`: Admin provided description of the Device Configuration.
   - `[DeviceStatuses <IMicrosoftGraphManagedDeviceMobileAppConfigurationDeviceStatus[]>]`: The list of device installation states for this mobile app configuration.
-    - `[Id <String>]`: Read-only.
+    - `[Id <String>]`: 
     - `[ComplianceGracePeriodExpirationDateTime <DateTime?>]`: The DateTime when device compliance grace period expires
     - `[DeviceDisplayName <String>]`: Device name of the DevicePolicyStatus.
     - `[DeviceModel <String>]`: The device model that is being reported
@@ -368,14 +368,14 @@ BODYPARAMETER <IMicrosoftGraphIosLobAppProvisioningConfiguration>: This topic pr
   - `[DisplayName <String>]`: Admin provided name of the device configuration.
   - `[ExpirationDateTime <DateTime?>]`: Optional profile expiration date and time.
   - `[GroupAssignments <IMicrosoftGraphMobileAppProvisioningConfigGroupAssignment[]>]`: The associated group assignments.
-    - `[Id <String>]`: Read-only.
+    - `[Id <String>]`: 
     - `[TargetGroupId <String>]`: The ID of the AAD group in which the app provisioning configuration is being targeted.
   - `[LastModifiedDateTime <DateTime?>]`: DateTime the object was last modified.
   - `[Payload <Byte[]>]`: Payload. (UTF8 encoded byte array)
   - `[PayloadFileName <String>]`: Payload file name (.mobileprovision
   - `[RoleScopeTagIds <String[]>]`: List of Scope Tags for this iOS LOB app provisioning configuration entity.
   - `[UserStatuses <IMicrosoftGraphManagedDeviceMobileAppConfigurationUserStatus[]>]`: The list of user installation states for this mobile app configuration.
-    - `[Id <String>]`: Read-only.
+    - `[Id <String>]`: 
     - `[DevicesCount <Int32?>]`: Devices count for that user.
     - `[LastReportedDateTime <DateTime?>]`: Last modified date time of the policy report.
     - `[Status <String>]`: complianceStatus
@@ -384,7 +384,7 @@ BODYPARAMETER <IMicrosoftGraphIosLobAppProvisioningConfiguration>: This topic pr
   - `[Version <Int32?>]`: Version of the device configuration.
 
 DEVICESTATUSES <IMicrosoftGraphManagedDeviceMobileAppConfigurationDeviceStatus[]>: The list of device installation states for this mobile app configuration.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[ComplianceGracePeriodExpirationDateTime <DateTime?>]`: The DateTime when device compliance grace period expires
   - `[DeviceDisplayName <String>]`: Device name of the DevicePolicyStatus.
   - `[DeviceModel <String>]`: The device model that is being reported
@@ -395,11 +395,11 @@ DEVICESTATUSES <IMicrosoftGraphManagedDeviceMobileAppConfigurationDeviceStatus[]
   - `[UserPrincipalName <String>]`: UserPrincipalName.
 
 GROUPASSIGNMENTS <IMicrosoftGraphMobileAppProvisioningConfigGroupAssignment[]>: The associated group assignments.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[TargetGroupId <String>]`: The ID of the AAD group in which the app provisioning configuration is being targeted.
 
 USERSTATUSES <IMicrosoftGraphManagedDeviceMobileAppConfigurationUserStatus[]>: The list of user installation states for this mobile app configuration.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[DevicesCount <Int32?>]`: Devices count for that user.
   - `[LastReportedDateTime <DateTime?>]`: Last modified date time of the policy report.
   - `[Status <String>]`: complianceStatus

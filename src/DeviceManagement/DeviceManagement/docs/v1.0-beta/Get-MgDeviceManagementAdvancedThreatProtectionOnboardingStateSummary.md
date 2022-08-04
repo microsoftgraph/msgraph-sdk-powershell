@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceManagementAdvancedThreatProtectionOnboardingStateSummary
 
 ## SYNOPSIS
-The summary state of ATP onboarding state for this account.
+Get advancedThreatProtectionOnboardingStateSummary from deviceManagement
 
 ## SYNTAX
 
@@ -18,7 +18,7 @@ Get-MgDeviceManagementAdvancedThreatProtectionOnboardingStateSummary [-ExpandPro
 ```
 
 ## DESCRIPTION
-The summary state of ATP onboarding state for this account.
+Get advancedThreatProtectionOnboardingStateSummary from deviceManagement
 
 ## EXAMPLES
 

@@ -39,7 +39,7 @@ subject-prefix: ''
 ``` yaml
 directive:
 # Remove invalid paths.
-  - remove-path-by-operation: ^deviceManagement_.*UserExperienceAnalytics.*$
+  - remove-path-by-operation: ^(deviceManagement_.*UserExperienceAnalytics.*|roleManagement\..*\.roleDefinitions\.inheritsPermissionsFrom.*)$
 # Remove cmdlets.
   - where:
       verb: Update
@@ -49,6 +49,6 @@ directive:
 ### Versioning
 
 ``` yaml
-module-version: 1.10.0
+module-version: 1.11.0
 release-notes: See https://aka.ms/GraphPowerShell-Release.
 ```

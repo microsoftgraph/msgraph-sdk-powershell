@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgDeviceManagementIoUpdateStatuses
 
 ## SYNOPSIS
-The IOS software update installation statuses for this account.
+Update the navigation property iosUpdateStatuses in deviceManagement
 
 ## SYNTAX
 
@@ -25,13 +25,13 @@ Update-MgDeviceManagementIoUpdateStatuses -IosUpdateDeviceStatusId <String>
 ### Update
 ```
 Update-MgDeviceManagementIoUpdateStatuses -IosUpdateDeviceStatusId <String>
- -BodyParameter <IMicrosoftGraphIosUpdateDeviceStatus1> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphIosUpdateDeviceStatus> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgDeviceManagementIoUpdateStatuses -InputObject <IDeviceManagementAdministrationIdentity>
- -BodyParameter <IMicrosoftGraphIosUpdateDeviceStatus1> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphIosUpdateDeviceStatus> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -45,7 +45,7 @@ Update-MgDeviceManagementIoUpdateStatuses -InputObject <IDeviceManagementAdminis
 ```
 
 ## DESCRIPTION
-The IOS software update installation statuses for this account.
+Update the navigation property iosUpdateStatuses in deviceManagement
 
 ## EXAMPLES
 
@@ -71,7 +71,7 @@ iosUpdateDeviceStatus
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIosUpdateDeviceStatus1
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIosUpdateDeviceStatus
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -143,7 +143,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -361,7 +361,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IDeviceManagementAdministrationIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIosUpdateDeviceStatus1
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIosUpdateDeviceStatus
 
 ## OUTPUTS
 
@@ -376,9 +376,9 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-BODYPARAMETER <IMicrosoftGraphIosUpdateDeviceStatus1>: iosUpdateDeviceStatus
+BODYPARAMETER <IMicrosoftGraphIosUpdateDeviceStatus>: iosUpdateDeviceStatus
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[ComplianceGracePeriodExpirationDateTime <DateTime?>]`: The DateTime when device compliance grace period expires
   - `[DeviceDisplayName <String>]`: Device name of the DevicePolicyStatus.
   - `[DeviceId <String>]`: The device id that is being reported.
@@ -397,6 +397,7 @@ INPUTOBJECT <IDeviceManagementAdministrationIdentity>: Identity Parameter
   - `[CartToClassAssociationId <String>]`: key: id of cartToClassAssociation
   - `[CloudPcAuditEventId <String>]`: key: id of cloudPcAuditEvent
   - `[CloudPcDeviceImageId <String>]`: key: id of cloudPcDeviceImage
+  - `[CloudPcExternalPartnerSettingId <String>]`: key: id of cloudPcExternalPartnerSetting
   - `[CloudPcGalleryImageId <String>]`: key: id of cloudPcGalleryImage
   - `[CloudPcId <String>]`: key: id of cloudPC
   - `[CloudPcOnPremisesConnectionId <String>]`: key: id of cloudPcOnPremisesConnection
@@ -415,6 +416,7 @@ INPUTOBJECT <IDeviceManagementAdministrationIdentity>: Identity Parameter
   - `[DeviceManagementExchangeOnPremisesPolicyId <String>]`: key: id of deviceManagementExchangeOnPremisesPolicy
   - `[DeviceManagementPartnerId <String>]`: key: id of deviceManagementPartner
   - `[GroupPolicyCategoryId <String>]`: key: id of groupPolicyCategory
+  - `[GroupPolicyCategoryId1 <String>]`: key: id of groupPolicyCategory
   - `[GroupPolicyDefinitionFileId <String>]`: key: id of groupPolicyDefinitionFile
   - `[GroupPolicyDefinitionId <String>]`: key: id of groupPolicyDefinition
   - `[GroupPolicyMigrationReportId <String>]`: key: id of groupPolicyMigrationReport

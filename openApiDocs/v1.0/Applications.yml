@@ -91,6 +91,8 @@ paths:
                 - publisherDomain desc
                 - requiredResourceAccess
                 - requiredResourceAccess desc
+                - samlMetadataUrl
+                - samlMetadataUrl desc
                 - serviceManagementReference
                 - serviceManagementReference desc
                 - signInAudience
@@ -143,6 +145,7 @@ paths:
                 - publicClient
                 - publisherDomain
                 - requiredResourceAccess
+                - samlMetadataUrl
                 - serviceManagementReference
                 - signInAudience
                 - spa
@@ -152,6 +155,7 @@ paths:
                 - web
                 - createdOnBehalfOf
                 - extensionProperties
+                - federatedIdentityCredentials
                 - homeRealmDiscoveryPolicies
                 - owners
                 - tokenIssuancePolicies
@@ -170,6 +174,7 @@ paths:
                 - '*'
                 - createdOnBehalfOf
                 - extensionProperties
+                - federatedIdentityCredentials
                 - homeRealmDiscoveryPolicies
                 - owners
                 - tokenIssuancePolicies
@@ -257,6 +262,7 @@ paths:
                 - publicClient
                 - publisherDomain
                 - requiredResourceAccess
+                - samlMetadataUrl
                 - serviceManagementReference
                 - signInAudience
                 - spa
@@ -266,6 +272,7 @@ paths:
                 - web
                 - createdOnBehalfOf
                 - extensionProperties
+                - federatedIdentityCredentials
                 - homeRealmDiscoveryPolicies
                 - owners
                 - tokenIssuancePolicies
@@ -284,6 +291,7 @@ paths:
                 - '*'
                 - createdOnBehalfOf
                 - extensionProperties
+                - federatedIdentityCredentials
                 - homeRealmDiscoveryPolicies
                 - owners
                 - tokenIssuancePolicies
@@ -303,6 +311,10 @@ paths:
                 application-id: $request.path.application-id
             extensionProperties:
               operationId: applications.ListExtensionProperties
+              parameters:
+                application-id: $request.path.application-id
+            federatedIdentityCredentials:
+              operationId: applications.ListFederatedIdentityCredentials
               parameters:
                 application-id: $request.path.application-id
             homeRealmDiscoveryPolicies:
@@ -672,6 +684,240 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: extensionProperty
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/applications/{application-id}/federatedIdentityCredentials':
+    get:
+      tags:
+        - applications.federatedIdentityCredential
+      summary: Get federatedIdentityCredentials from applications
+      operationId: applications_ListFederatedIdentityCredentials
+      parameters:
+        - name: application-id
+          in: path
+          description: 'key: id of application'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: application
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - audiences
+                - audiences desc
+                - description
+                - description desc
+                - issuer
+                - issuer desc
+                - name
+                - name desc
+                - subject
+                - subject desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - audiences
+                - description
+                - issuer
+                - name
+                - subject
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/microsoft.graph.federatedIdentityCredentialCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - applications.federatedIdentityCredential
+      summary: Create new navigation property to federatedIdentityCredentials for applications
+      operationId: applications_CreateFederatedIdentityCredentials
+      parameters:
+        - name: application-id
+          in: path
+          description: 'key: id of application'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: application
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.federatedIdentityCredential'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.federatedIdentityCredential'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/applications/{application-id}/federatedIdentityCredentials/{federatedIdentityCredential-id}':
+    get:
+      tags:
+        - applications.federatedIdentityCredential
+      summary: Get federatedIdentityCredentials from applications
+      operationId: applications_GetFederatedIdentityCredentials
+      parameters:
+        - name: application-id
+          in: path
+          description: 'key: id of application'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: application
+        - name: federatedIdentityCredential-id
+          in: path
+          description: 'key: id of federatedIdentityCredential'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: federatedIdentityCredential
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - audiences
+                - description
+                - issuer
+                - name
+                - subject
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.federatedIdentityCredential'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - applications.federatedIdentityCredential
+      summary: Update the navigation property federatedIdentityCredentials in applications
+      operationId: applications_UpdateFederatedIdentityCredentials
+      parameters:
+        - name: application-id
+          in: path
+          description: 'key: id of application'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: application
+        - name: federatedIdentityCredential-id
+          in: path
+          description: 'key: id of federatedIdentityCredential'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: federatedIdentityCredential
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.federatedIdentityCredential'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - applications.federatedIdentityCredential
+      summary: Delete navigation property federatedIdentityCredentials for applications
+      operationId: applications_DeleteFederatedIdentityCredentials
+      parameters:
+        - name: application-id
+          in: path
+          description: 'key: id of application'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: application
+        - name: federatedIdentityCredential-id
+          in: path
+          description: 'key: id of federatedIdentityCredential'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: federatedIdentityCredential
         - name: If-Match
           in: header
           description: ETag
@@ -1452,24 +1698,9 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: application
-      requestBody:
-        description: New navigation property ref value
-        content:
-          application/json:
-            schema:
-              type: object
-              additionalProperties:
-                type: object
-        required: true
       responses:
-        '201':
-          description: Created navigation property link.
-          content:
-            application/json:
-              schema:
-                type: object
-                additionalProperties:
-                  type: object
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1656,24 +1887,9 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: application
-      requestBody:
-        description: New navigation property ref value
-        content:
-          application/json:
-            schema:
-              type: object
-              additionalProperties:
-                type: object
-        required: true
       responses:
-        '201':
-          description: Created navigation property link.
-          content:
-            application/json:
-              schema:
-                type: object
-                additionalProperties:
-                  type: object
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1860,24 +2076,9 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: application
-      requestBody:
-        description: New navigation property ref value
-        content:
-          application/json:
-            schema:
-              type: object
-              additionalProperties:
-                type: object
-        required: true
       responses:
-        '201':
-          description: Created navigation property link.
-          content:
-            application/json:
-              schema:
-                type: object
-                additionalProperties:
-                  type: object
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2668,6 +2869,7 @@ paths:
                 - createdObjects
                 - delegatedPermissionClassifications
                 - endpoints
+                - federatedIdentityCredentials
                 - homeRealmDiscoveryPolicies
                 - memberOf
                 - oauth2PermissionGrants
@@ -2694,6 +2896,7 @@ paths:
                 - createdObjects
                 - delegatedPermissionClassifications
                 - endpoints
+                - federatedIdentityCredentials
                 - homeRealmDiscoveryPolicies
                 - memberOf
                 - oauth2PermissionGrants
@@ -2798,6 +3001,7 @@ paths:
                 - createdObjects
                 - delegatedPermissionClassifications
                 - endpoints
+                - federatedIdentityCredentials
                 - homeRealmDiscoveryPolicies
                 - memberOf
                 - oauth2PermissionGrants
@@ -2824,6 +3028,7 @@ paths:
                 - createdObjects
                 - delegatedPermissionClassifications
                 - endpoints
+                - federatedIdentityCredentials
                 - homeRealmDiscoveryPolicies
                 - memberOf
                 - oauth2PermissionGrants
@@ -2863,6 +3068,10 @@ paths:
                 servicePrincipal-id: $request.path.servicePrincipal-id
             endpoints:
               operationId: servicePrincipals.ListEndpoints
+              parameters:
+                servicePrincipal-id: $request.path.servicePrincipal-id
+            federatedIdentityCredentials:
+              operationId: servicePrincipals.ListFederatedIdentityCredentials
               parameters:
                 servicePrincipal-id: $request.path.servicePrincipal-id
             homeRealmDiscoveryPolicies:
@@ -3645,24 +3854,9 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
-      requestBody:
-        description: New navigation property ref value
-        content:
-          application/json:
-            schema:
-              type: object
-              additionalProperties:
-                type: object
-        required: true
       responses:
-        '201':
-          description: Created navigation property link.
-          content:
-            application/json:
-              schema:
-                type: object
-                additionalProperties:
-                  type: object
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4254,6 +4448,240 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/servicePrincipals/{servicePrincipal-id}/federatedIdentityCredentials':
+    get:
+      tags:
+        - servicePrincipals.federatedIdentityCredential
+      summary: Get federatedIdentityCredentials from servicePrincipals
+      operationId: servicePrincipals_ListFederatedIdentityCredentials
+      parameters:
+        - name: servicePrincipal-id
+          in: path
+          description: 'key: id of servicePrincipal'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: servicePrincipal
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - audiences
+                - audiences desc
+                - description
+                - description desc
+                - issuer
+                - issuer desc
+                - name
+                - name desc
+                - subject
+                - subject desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - audiences
+                - description
+                - issuer
+                - name
+                - subject
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/microsoft.graph.federatedIdentityCredentialCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - servicePrincipals.federatedIdentityCredential
+      summary: Create new navigation property to federatedIdentityCredentials for servicePrincipals
+      operationId: servicePrincipals_CreateFederatedIdentityCredentials
+      parameters:
+        - name: servicePrincipal-id
+          in: path
+          description: 'key: id of servicePrincipal'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: servicePrincipal
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.federatedIdentityCredential'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.federatedIdentityCredential'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/servicePrincipals/{servicePrincipal-id}/federatedIdentityCredentials/{federatedIdentityCredential-id}':
+    get:
+      tags:
+        - servicePrincipals.federatedIdentityCredential
+      summary: Get federatedIdentityCredentials from servicePrincipals
+      operationId: servicePrincipals_GetFederatedIdentityCredentials
+      parameters:
+        - name: servicePrincipal-id
+          in: path
+          description: 'key: id of servicePrincipal'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: servicePrincipal
+        - name: federatedIdentityCredential-id
+          in: path
+          description: 'key: id of federatedIdentityCredential'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: federatedIdentityCredential
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - audiences
+                - description
+                - issuer
+                - name
+                - subject
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.federatedIdentityCredential'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - servicePrincipals.federatedIdentityCredential
+      summary: Update the navigation property federatedIdentityCredentials in servicePrincipals
+      operationId: servicePrincipals_UpdateFederatedIdentityCredentials
+      parameters:
+        - name: servicePrincipal-id
+          in: path
+          description: 'key: id of servicePrincipal'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: servicePrincipal
+        - name: federatedIdentityCredential-id
+          in: path
+          description: 'key: id of federatedIdentityCredential'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: federatedIdentityCredential
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.federatedIdentityCredential'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - servicePrincipals.federatedIdentityCredential
+      summary: Delete navigation property federatedIdentityCredentials for servicePrincipals
+      operationId: servicePrincipals_DeleteFederatedIdentityCredentials
+      parameters:
+        - name: servicePrincipal-id
+          in: path
+          description: 'key: id of servicePrincipal'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: servicePrincipal
+        - name: federatedIdentityCredential-id
+          in: path
+          description: 'key: id of federatedIdentityCredential'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: federatedIdentityCredential
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/servicePrincipals/{servicePrincipal-id}/homeRealmDiscoveryPolicies':
     get:
       tags:
@@ -4437,24 +4865,9 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
-      requestBody:
-        description: New navigation property ref value
-        content:
-          application/json:
-            schema:
-              type: object
-              additionalProperties:
-                type: object
-        required: true
       responses:
-        '201':
-          description: Created navigation property link.
-          content:
-            application/json:
-              schema:
-                type: object
-                additionalProperties:
-                  type: object
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5403,24 +5816,9 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
-      requestBody:
-        description: New navigation property ref value
-        content:
-          application/json:
-            schema:
-              type: object
-              additionalProperties:
-                type: object
-        required: true
       responses:
-        '201':
-          description: Created navigation property link.
-          content:
-            application/json:
-              schema:
-                type: object
-                additionalProperties:
-                  type: object
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -6252,7 +6650,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.apiApplication'
             appId:
               type: string
-              description: The unique identifier for the application that is assigned by Azure AD. Not nullable. Read-only.
+              description: The unique identifier for the application that is assigned by Azure AD. Not nullable. Read-only. Supports $filter (eq).
               nullable: true
             applicationTemplateId:
               type: string
@@ -6337,6 +6735,10 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.requiredResourceAccess'
               description: 'Specifies the resources that the application needs to access. This property also specifies the set of delegated permissions and application roles that it needs for each of those resources. This configuration of access to the required resources drives the consent experience. No more than 50 resource services (APIs) can be configured. Beginning mid-October 2021, the total number of required permissions must not exceed 400. Not nullable. Supports $filter (eq, not, ge, le).'
+            samlMetadataUrl:
+              type: string
+              description: The URL where the service exposes SAML metadata for federation. This property is valid only for single-tenant applications. Nullable.
+              nullable: true
             serviceManagementReference:
               type: string
               description: References application or service contact information from a Service or Asset Management database. Nullable.
@@ -6368,7 +6770,12 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.extensionProperty'
-              description: Read-only. Nullable. Supports $expand and $filter (eq when counting empty collections).
+              description: Read-only. Nullable. Supports $expand and $filter (eq and ne when counting empty collections and only with advanced query parameters).
+            federatedIdentityCredentials:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.federatedIdentityCredential'
+              description: Federated identities for applications. Supports $expand and $filter (eq when counting empty collections).
             homeRealmDiscoveryPolicies:
               type: array
               items:
@@ -6427,7 +6834,33 @@ components:
               type: array
               items:
                 type: string
-              description: Following values are supported. Not nullable. UserGroupOrganizationDeviceApplication
+              description: Following values are supported. Not nullable. UserGroupAdministrativeUnitApplicationDeviceOrganization
+          additionalProperties:
+            type: object
+    microsoft.graph.federatedIdentityCredential:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: federatedIdentityCredential
+          type: object
+          properties:
+            audiences:
+              type: array
+              items:
+                type: string
+              description: 'Lists the audiences that can appear in the external token. This field is mandatory, and defaults to ''api://AzureADTokenExchange''. It says what Microsoft identity platform should accept in the aud claim in the incoming token. This value represents Azure AD in your external identity provider and has no fixed value across identity providers - you may need to create a new application registration in your identity provider to serve as the audience of this token. Required.'
+            description:
+              type: string
+              description: 'The un-validated, user-provided description of the federated identity credential. Optional.'
+              nullable: true
+            issuer:
+              type: string
+              description: The URL of the external identity provider and must match the issuer claim of the external token being exchanged. The combination of the values of issuer and subject must be unique on the app. Required.
+            name:
+              type: string
+              description: 'is the unique identifier for the federated identity credential, which has a character limit of 120 characters and must be URL friendly. It is immutable once created. Required. Not nullable. Supports $filter (eq).'
+            subject:
+              type: string
+              description: 'Required. The identifier of the external software workload within the external identity provider. Like the audience value, it has no fixed format, as each identity provider uses their own - sometimes a GUID, sometimes a colon delimited identifier, sometimes arbitrary strings. The value here must match the sub claim within the token presented to Azure AD. The combination of issuer and subject must be unique on the app. Supports $filter (eq).'
           additionalProperties:
             type: object
     microsoft.graph.homeRealmDiscoveryPolicy:
@@ -6797,6 +7230,10 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.endpoint'
               description: Endpoints available for discovery. Services like Sharepoint populate this property with a tenant specific SharePoint endpoints that other applications can discover and use in their experiences.
+            federatedIdentityCredentials:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.federatedIdentityCredential'
             homeRealmDiscoveryPolicies:
               type: array
               items:
@@ -6947,11 +7384,11 @@ components:
               nullable: true
             principalId:
               type: string
-              description: 'The id of the user on behalf of whom the client is authorized to access the resource, when consentType is Principal. If consentType is AllPrincipals this value is null. Required when consentType is Principal.'
+              description: 'The id of the user on behalf of whom the client is authorized to access the resource, when consentType is Principal. If consentType is AllPrincipals this value is null. Required when consentType is Principal. Supports $filter (eq only).'
               nullable: true
             resourceId:
               type: string
-              description: The id of the resource service principal to which access is authorized. This identifies the API which the client is authorized to attempt to call on behalf of a signed-in user.
+              description: The id of the resource service principal to which access is authorized. This identifies the API which the client is authorized to attempt to call on behalf of a signed-in user. Supports $filter (eq only).
             scope:
               type: string
               description: 'A space-separated list of the claim values for delegated permissions which should be included in access tokens for the resource application (the API). For example, openid User.Read GroupMember.Read.All. Each claim value should match the value field of one of the delegated permissions defined by the API, listed in the publishedPermissionScopes property of the resource service principal.'
@@ -7383,6 +7820,18 @@ components:
           type: string
       additionalProperties:
         type: object
+    microsoft.graph.federatedIdentityCredentialCollectionResponse:
+      title: Collection of federatedIdentityCredential
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.federatedIdentityCredential'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
     microsoft.graph.homeRealmDiscoveryPolicyCollectionResponse:
       title: Collection of homeRealmDiscoveryPolicy
       type: object
@@ -7547,7 +7996,7 @@ components:
       properties:
         appId:
           type: string
-          description: The unique identifier for the application.
+          description: The unique identifier for the client application.
           nullable: true
         delegatedPermissionIds:
           type: array
@@ -7683,6 +8132,12 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.extensionPropertyCollectionResponse'
+    microsoft.graph.federatedIdentityCredentialCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.federatedIdentityCredentialCollectionResponse'
     microsoft.graph.homeRealmDiscoveryPolicyCollectionResponse:
       description: Retrieved collection
       content:

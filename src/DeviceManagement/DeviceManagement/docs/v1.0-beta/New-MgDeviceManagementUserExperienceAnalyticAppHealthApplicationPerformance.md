@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgDeviceManagementUserExperienceAnalyticAppHealthApplicationPerformance
 
 ## SYNOPSIS
-User experience analytics appHealth Application Performance
+Create new navigation property to userExperienceAnalyticsAppHealthApplicationPerformance for deviceManagement
 
 ## SYNTAX
 
@@ -29,7 +29,7 @@ New-MgDeviceManagementUserExperienceAnalyticAppHealthApplicationPerformance
 ```
 
 ## DESCRIPTION
-User experience analytics appHealth Application Performance
+Create new navigation property to userExperienceAnalyticsAppHealthApplicationPerformance for deviceManagement
 
 ## EXAMPLES
 
@@ -207,7 +207,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -290,7 +290,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphUserExperienceAnalyticsAppHealthApplicationPerformance>: The user experience analytics application performance entity contains app performance details.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[ActiveDeviceCount <Int32?>]`: The number of devices where the app has been active. Valid values -2147483648 to 2147483647
   - `[AppCrashCount <Int32?>]`: The number of crashes for the app. Valid values -2147483648 to 2147483647
   - `[AppDisplayName <String>]`: The friendly name of the application.

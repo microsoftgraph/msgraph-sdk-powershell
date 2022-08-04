@@ -8,8 +8,7 @@ schema: 2.0.0
 # Get-MgWindowsUpdatesCatalogEntry
 
 ## SYNOPSIS
-Lists the content that you can approve for deployment.
-Read-only.
+Get entries from admin
 
 ## SYNTAX
 
@@ -33,8 +32,7 @@ Get-MgWindowsUpdatesCatalogEntry -InputObject <IWindowsUpdatesIdentity> [-Expand
 ```
 
 ## DESCRIPTION
-Lists the content that you can approve for deployment.
-Read-only.
+Get entries from admin
 
 ## EXAMPLES
 
@@ -247,6 +245,7 @@ To create the parameters described below, construct a hash table containing the 
 INPUTOBJECT <IWindowsUpdatesIdentity>: Identity Parameter
   - `[CatalogEntryId <String>]`: key: id of catalogEntry
   - `[DeploymentId <String>]`: key: id of deployment
+  - `[ResourceConnectionId <String>]`: key: id of resourceConnection
   - `[UpdatableAssetId <String>]`: key: id of updatableAsset
 
 ## RELATED LINKS

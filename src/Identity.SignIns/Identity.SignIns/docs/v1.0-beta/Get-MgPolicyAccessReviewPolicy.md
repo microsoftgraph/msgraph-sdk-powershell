@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgPolicyAccessReviewPolicy
 
 ## SYNOPSIS
-The policy that contains directory-level access review settings.
+Get accessReviewPolicy from policies
 
 ## SYNTAX
 
@@ -17,7 +17,7 @@ Get-MgPolicyAccessReviewPolicy [-ExpandProperty <String[]>] [-Property <String[]
 ```
 
 ## DESCRIPTION
-The policy that contains directory-level access review settings.
+Get accessReviewPolicy from policies
 
 ## EXAMPLES
 

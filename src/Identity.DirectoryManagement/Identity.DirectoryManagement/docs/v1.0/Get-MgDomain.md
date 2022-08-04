@@ -35,7 +35,7 @@ Get entity from domains by key
 
 ## EXAMPLES
 
-### Example 1: Get a list of domain objects
+### Example 1: Get a list of domaim objects
 ```powershell
 Get-MgDomain | Format-List
 
@@ -254,7 +254,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDomain
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDomain1
 
 ## NOTES
 
@@ -287,6 +287,7 @@ INPUTOBJECT <IIdentityDirectoryManagementIdentity>: Identity Parameter
   - `[InternalDomainFederationId <String>]`: key: id of internalDomainFederation
   - `[OrgContactId <String>]`: key: id of orgContact
   - `[OrganizationId <String>]`: key: id of organization
+  - `[OrganizationalBrandingLocalizationId <String>]`: key: id of organizationalBrandingLocalization
   - `[OutboundSharedUserProfileUserId <String>]`: key: userId of outboundSharedUserProfile
   - `[ProfileCardPropertyId <String>]`: key: id of profileCardProperty
   - `[RecommendationId <String>]`: key: id of recommendation

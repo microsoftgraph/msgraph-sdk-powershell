@@ -12,27 +12,27 @@ Invoke action checkMemberObjects
 
 ## SYNTAX
 
-### CheckExpanded (Default)
+### CheckExpanded1 (Default)
 ```
 Confirm-MgContactMemberObject -OrgContactId <String> [-AdditionalProperties <Hashtable>] [-Ids <String[]>]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### Check
+### Check1
 ```
 Confirm-MgContactMemberObject -OrgContactId <String>
- -BodyParameter <IPaths8Ke2VbContactsOrgcontactIdMicrosoftGraphCheckmemberobjectsPostRequestbodyContentApplicationJsonSchema>
+ -BodyParameter <IPaths8Ke2VbContactsOrgcontactIdMicrosoftGraphCheckmemberobjectsPostRequestbodyContentApplicationJsonSchema1>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### CheckViaIdentity
+### CheckViaIdentity1
 ```
 Confirm-MgContactMemberObject -InputObject <IIdentityDirectoryManagementIdentity>
- -BodyParameter <IPaths8Ke2VbContactsOrgcontactIdMicrosoftGraphCheckmemberobjectsPostRequestbodyContentApplicationJsonSchema>
+ -BodyParameter <IPaths8Ke2VbContactsOrgcontactIdMicrosoftGraphCheckmemberobjectsPostRequestbodyContentApplicationJsonSchema1>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### CheckViaIdentityExpanded
+### CheckViaIdentityExpanded1
 ```
 Confirm-MgContactMemberObject -InputObject <IIdentityDirectoryManagementIdentity>
  [-AdditionalProperties <Hashtable>] [-Ids <String[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -50,7 +50,7 @@ Additional Parameters
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: CheckExpanded, CheckViaIdentityExpanded
+Parameter Sets: CheckExpanded1, CheckViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -65,8 +65,8 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths8Ke2VbContactsOrgcontactIdMicrosoftGraphCheckmemberobjectsPostRequestbodyContentApplicationJsonSchema
-Parameter Sets: Check, CheckViaIdentity
+Type: Microsoft.Graph.PowerShell.Models.IPaths8Ke2VbContactsOrgcontactIdMicrosoftGraphCheckmemberobjectsPostRequestbodyContentApplicationJsonSchema1
+Parameter Sets: Check1, CheckViaIdentity1
 Aliases:
 
 Required: True
@@ -81,7 +81,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.String[]
-Parameter Sets: CheckExpanded, CheckViaIdentityExpanded
+Parameter Sets: CheckExpanded1, CheckViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -97,7 +97,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
-Parameter Sets: CheckViaIdentity, CheckViaIdentityExpanded
+Parameter Sets: CheckViaIdentity1, CheckViaIdentityExpanded1
 Aliases:
 
 Required: True
@@ -112,7 +112,7 @@ key: id of orgContact
 
 ```yaml
 Type: System.String
-Parameter Sets: Check, CheckExpanded
+Parameter Sets: Check1, CheckExpanded1
 Aliases:
 
 Required: True
@@ -160,7 +160,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
 
-### Microsoft.Graph.PowerShell.Models.IPaths8Ke2VbContactsOrgcontactIdMicrosoftGraphCheckmemberobjectsPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.PowerShell.Models.IPaths8Ke2VbContactsOrgcontactIdMicrosoftGraphCheckmemberobjectsPostRequestbodyContentApplicationJsonSchema1
 
 ## OUTPUTS
 
@@ -175,7 +175,7 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-BODYPARAMETER <IPaths8Ke2VbContactsOrgcontactIdMicrosoftGraphCheckmemberobjectsPostRequestbodyContentApplicationJsonSchema>: .
+BODYPARAMETER <IPaths8Ke2VbContactsOrgcontactIdMicrosoftGraphCheckmemberobjectsPostRequestbodyContentApplicationJsonSchema1>: .
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Ids <String[]>]`: 
 
@@ -201,6 +201,7 @@ INPUTOBJECT <IIdentityDirectoryManagementIdentity>: Identity Parameter
   - `[InternalDomainFederationId <String>]`: key: id of internalDomainFederation
   - `[OrgContactId <String>]`: key: id of orgContact
   - `[OrganizationId <String>]`: key: id of organization
+  - `[OrganizationalBrandingLocalizationId <String>]`: key: id of organizationalBrandingLocalization
   - `[OutboundSharedUserProfileUserId <String>]`: key: userId of outboundSharedUserProfile
   - `[ProfileCardPropertyId <String>]`: key: id of profileCardProperty
   - `[RecommendationId <String>]`: key: id of recommendation

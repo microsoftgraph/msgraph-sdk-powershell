@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgUserProfileWebAccount
 
 ## SYNOPSIS
-Represents web accounts the user has indicated they use or has added to their user profile.
+Delete navigation property webAccounts for users
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Remove-MgUserProfileWebAccount -InputObject <IPeopleIdentity> [-IfMatch <String>
 ```
 
 ## DESCRIPTION
-Represents web accounts the user has indicated they use or has added to their user profile.
+Delete navigation property webAccounts for users
 
 ## EXAMPLES
 

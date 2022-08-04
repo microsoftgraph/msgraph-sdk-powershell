@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceManagementManagedDeviceOverview
 
 ## SYNOPSIS
-Device overview
+Get managedDeviceOverview from deviceManagement
 
 ## SYNTAX
 
@@ -18,7 +18,7 @@ Get-MgDeviceManagementManagedDeviceOverview [-ExpandProperty <String[]>] [-Prope
 ```
 
 ## DESCRIPTION
-Device overview
+Get managedDeviceOverview from deviceManagement
 
 ## EXAMPLES
 

@@ -8,8 +8,7 @@ schema: 2.0.0
 # Update-MgWindowsUpdatesUpdatableAsset
 
 ## SYNOPSIS
-Assets registered with the deployment service that can receive updates.
-Read-only.
+Update the navigation property updatableAssets in admin
 
 ## SYNTAX
 
@@ -38,8 +37,7 @@ Update-MgWindowsUpdatesUpdatableAsset -InputObject <IWindowsUpdatesIdentity>
 ```
 
 ## DESCRIPTION
-Assets registered with the deployment service that can receive updates.
-Read-only.
+Update the navigation property updatableAssets in admin
 
 ## EXAMPLES
 
@@ -76,7 +74,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -194,6 +192,7 @@ To create the parameters described below, construct a hash table containing the 
 INPUTOBJECT <IWindowsUpdatesIdentity>: Identity Parameter
   - `[CatalogEntryId <String>]`: key: id of catalogEntry
   - `[DeploymentId <String>]`: key: id of deployment
+  - `[ResourceConnectionId <String>]`: key: id of resourceConnection
   - `[UpdatableAssetId <String>]`: key: id of updatableAsset
 
 ## RELATED LINKS

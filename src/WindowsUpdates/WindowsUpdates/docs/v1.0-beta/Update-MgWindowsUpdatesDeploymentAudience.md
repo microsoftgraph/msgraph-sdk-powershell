@@ -250,15 +250,15 @@ To create the parameters described below, construct a hash table containing the 
 
 
 ADDEXCLUSIONS <IMicrosoftGraphWindowsUpdatesUpdatableAsset[]>: .
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
 
 ADDMEMBERS <IMicrosoftGraphWindowsUpdatesUpdatableAsset[]>: .
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
 
 BODYPARAMETER <IPathsGxoqhAdminWindowsUpdatesDeploymentsDeploymentIdAudienceMicrosoftGraphWindowsupdatesUpdateaudiencePostRequestbodyContentApplicationJsonSchema>: .
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[AddExclusions <IMicrosoftGraphWindowsUpdatesUpdatableAsset[]>]`: 
-    - `[Id <String>]`: Read-only.
+    - `[Id <String>]`: 
   - `[AddMembers <IMicrosoftGraphWindowsUpdatesUpdatableAsset[]>]`: 
   - `[RemoveExclusions <IMicrosoftGraphWindowsUpdatesUpdatableAsset[]>]`: 
   - `[RemoveMembers <IMicrosoftGraphWindowsUpdatesUpdatableAsset[]>]`: 
@@ -266,13 +266,14 @@ BODYPARAMETER <IPathsGxoqhAdminWindowsUpdatesDeploymentsDeploymentIdAudienceMicr
 INPUTOBJECT <IWindowsUpdatesIdentity>: Identity Parameter
   - `[CatalogEntryId <String>]`: key: id of catalogEntry
   - `[DeploymentId <String>]`: key: id of deployment
+  - `[ResourceConnectionId <String>]`: key: id of resourceConnection
   - `[UpdatableAssetId <String>]`: key: id of updatableAsset
 
 REMOVEEXCLUSIONS <IMicrosoftGraphWindowsUpdatesUpdatableAsset[]>: .
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
 
 REMOVEMEMBERS <IMicrosoftGraphWindowsUpdatesUpdatableAsset[]>: .
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
 
 ## RELATED LINKS
 

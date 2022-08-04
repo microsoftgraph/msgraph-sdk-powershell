@@ -8,8 +8,7 @@ schema: 2.0.0
 # Get-MgServicePrincipalClaimMappingPolicy
 
 ## SYNOPSIS
-The claimsMappingPolicies assigned to this service principal.
-Supports $expand.
+Get claimsMappingPolicies from servicePrincipals
 
 ## SYNTAX
 
@@ -20,8 +19,7 @@ Get-MgServicePrincipalClaimMappingPolicy -ServicePrincipalId <String> [-ExpandPr
 ```
 
 ## DESCRIPTION
-The claimsMappingPolicies assigned to this service principal.
-Supports $expand.
+Get claimsMappingPolicies from servicePrincipals
 
 ## EXAMPLES
 

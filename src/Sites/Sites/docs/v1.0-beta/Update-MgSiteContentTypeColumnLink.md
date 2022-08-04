@@ -8,37 +8,37 @@ schema: 2.0.0
 # Update-MgSiteContentTypeColumnLink
 
 ## SYNOPSIS
-The collection of columns that are required by this content type.
+Update the navigation property columnLinks in sites
 
 ## SYNTAX
 
-### UpdateExpanded1 (Default)
+### UpdateExpanded (Default)
 ```
 Update-MgSiteContentTypeColumnLink -ColumnLinkId <String> -ContentTypeId <String> -SiteId <String>
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-Name <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
-### Update1
+### Update
 ```
 Update-MgSiteContentTypeColumnLink -ColumnLinkId <String> -ContentTypeId <String> -SiteId <String>
  -BodyParameter <IMicrosoftGraphColumnLink> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### UpdateViaIdentity1
+### UpdateViaIdentity
 ```
 Update-MgSiteContentTypeColumnLink -InputObject <ISitesIdentity> -BodyParameter <IMicrosoftGraphColumnLink>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### UpdateViaIdentityExpanded1
+### UpdateViaIdentityExpanded
 ```
 Update-MgSiteContentTypeColumnLink -InputObject <ISitesIdentity> [-AdditionalProperties <Hashtable>]
  [-Id <String>] [-Name <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-The collection of columns that are required by this content type.
+Update the navigation property columnLinks in sites
 
 ## EXAMPLES
 
@@ -49,7 +49,7 @@ Additional Parameters
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -65,7 +65,7 @@ To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETE
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphColumnLink
-Parameter Sets: Update1, UpdateViaIdentity1
+Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
 Required: True
@@ -80,7 +80,7 @@ key: id of columnLink
 
 ```yaml
 Type: System.String
-Parameter Sets: Update1, UpdateExpanded1
+Parameter Sets: Update, UpdateExpanded
 Aliases:
 
 Required: True
@@ -95,7 +95,7 @@ key: id of contentType
 
 ```yaml
 Type: System.String
-Parameter Sets: Update1, UpdateExpanded1
+Parameter Sets: Update, UpdateExpanded
 Aliases:
 
 Required: True
@@ -106,11 +106,11 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -126,7 +126,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.ISitesIdentity
-Parameter Sets: UpdateViaIdentity1, UpdateViaIdentityExpanded1
+Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
 Required: True
@@ -141,7 +141,7 @@ The name of the column in this content type.
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -171,7 +171,7 @@ key: id of site
 
 ```yaml
 Type: System.String
-Parameter Sets: Update1, UpdateExpanded1
+Parameter Sets: Update, UpdateExpanded
 Aliases:
 
 Required: True
@@ -236,38 +236,44 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphColumnLink>: columnLink
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[Name <String>]`: The name of the column  in this content type.
 
 INPUTOBJECT <ISitesIdentity>: Identity Parameter
+  - `[BaseItemId <String>]`: key: id of baseItem
   - `[ColumnDefinitionId <String>]`: key: id of columnDefinition
   - `[ColumnLinkId <String>]`: key: id of columnLink
   - `[ContentTypeId <String>]`: key: id of contentType
-  - `[EndDateTime <String>]`: Usage: endDateTime={endDateTime}
+  - `[ContentTypeId1 <String>]`: key: id of contentType
+  - `[DocumentSetVersionId <String>]`: key: id of documentSetVersion
+  - `[DriveId <String>]`: key: id of drive
+  - `[EndDateTime <String>]`: Usage: endDateTime='{endDateTime}'
   - `[GroupId <String>]`: key: id of group
+  - `[GroupId1 <String>]`: key: id of group
   - `[IncludePersonalNotebooks <Boolean?>]`: Usage: includePersonalNotebooks={includePersonalNotebooks}
-  - `[Interval <String>]`: Usage: interval={interval}
+  - `[Interval <String>]`: Usage: interval='{interval}'
   - `[ListId <String>]`: key: id of list
-  - `[ListId1 <String>]`: Usage: listId={listId}
+  - `[ListId1 <String>]`: Usage: listId='{listId}'
   - `[ListItemId <String>]`: key: id of listItem
   - `[ListItemVersionId <String>]`: key: id of listItemVersion
   - `[NotebookId <String>]`: key: id of notebook
   - `[OnenotePageId <String>]`: key: id of onenotePage
   - `[OnenoteSectionId <String>]`: key: id of onenoteSection
-  - `[Path <String>]`: Usage: path={path}
+  - `[Path <String>]`: Usage: path='{path}'
   - `[PermissionId <String>]`: key: id of permission
   - `[RelationId <String>]`: key: id of relation
   - `[RichLongRunningOperationId <String>]`: key: id of richLongRunningOperation
   - `[SetId <String>]`: key: id of set
   - `[SetId1 <String>]`: key: id of set
   - `[SiteId <String>]`: key: id of site
+  - `[SiteId1 <String>]`: key: id of site
   - `[SitePageId <String>]`: key: id of sitePage
-  - `[StartDateTime <String>]`: Usage: startDateTime={startDateTime}
+  - `[StartDateTime <String>]`: Usage: startDateTime='{startDateTime}'
   - `[StoreId <String>]`: key: id of store
   - `[SubscriptionId <String>]`: key: id of subscription
   - `[TermId <String>]`: key: id of term
   - `[TermId1 <String>]`: key: id of term
-  - `[Token <String>]`: Usage: token={token}
+  - `[Token <String>]`: Usage: token='{token}'
   - `[UserId <String>]`: key: id of user
 
 ## RELATED LINKS

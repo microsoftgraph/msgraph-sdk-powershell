@@ -8,8 +8,7 @@ schema: 2.0.0
 # Remove-MgUserOnlineMeetingAttendanceReportAttendanceRecord
 
 ## SYNOPSIS
-List of attendance records of an attendance report.
-Read-only.
+Delete navigation property attendanceRecords for users
 
 ## SYNTAX
 
@@ -27,8 +26,7 @@ Remove-MgUserOnlineMeetingAttendanceReportAttendanceRecord -InputObject <ICloudC
 ```
 
 ## DESCRIPTION
-List of attendance records of an attendance report.
-Read-only.
+Delete navigation property attendanceRecords for users
 
 ## EXAMPLES
 
@@ -196,6 +194,7 @@ INPUTOBJECT <ICloudCommunicationsIdentity>: Identity Parameter
   - `[AudioRoutingGroupId <String>]`: key: id of audioRoutingGroup
   - `[CallId <String>]`: key: id of call
   - `[CallRecordId <String>]`: key: id of callRecord
+  - `[CallTranscriptId <String>]`: key: id of callTranscript
   - `[CommsOperationId <String>]`: key: id of commsOperation
   - `[ContentSharingSessionId <String>]`: key: id of contentSharingSession
   - `[MeetingAttendanceReportId <String>]`: key: id of meetingAttendanceReport

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgUserProfileInterest
 
 ## SYNOPSIS
-Provides detailed information about interests the user has associated with themselves in various services.
+Delete navigation property interests for users
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Remove-MgUserProfileInterest -InputObject <IPeopleIdentity> [-IfMatch <String>] 
 ```
 
 ## DESCRIPTION
-Provides detailed information about interests the user has associated with themselves in various services.
+Delete navigation property interests for users
 
 ## EXAMPLES
 

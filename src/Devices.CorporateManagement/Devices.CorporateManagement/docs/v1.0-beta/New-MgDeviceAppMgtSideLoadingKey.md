@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgDeviceAppMgtSideLoadingKey
 
 ## SYNOPSIS
-Side Loading Keys that are required for the Windows 8 and 8.1 Apps installation.
+Create new navigation property to sideLoadingKeys for deviceAppManagement
 
 ## SYNTAX
 
@@ -26,7 +26,7 @@ New-MgDeviceAppMgtSideLoadingKey -BodyParameter <IMicrosoftGraphSideLoadingKey> 
 ```
 
 ## DESCRIPTION
-Side Loading Keys that are required for the Windows 8 and 8.1 Apps installation.
+Create new navigation property to sideLoadingKeys for deviceAppManagement
 
 ## EXAMPLES
 
@@ -94,7 +94,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -208,7 +208,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphSideLoadingKey>: SideLoadingKey entity is required for Windows 8 and 8.1 devices to intall Line Of Business Apps for a tenant.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[Description <String>]`: Side Loading Key description displayed to the ITPro Admins..
   - `[DisplayName <String>]`: Side Loading Key Name displayed to the ITPro Admins.
   - `[LastUpdatedDateTime <String>]`: Side Loading Key Last Updated Date displayed to the ITPro Admins.

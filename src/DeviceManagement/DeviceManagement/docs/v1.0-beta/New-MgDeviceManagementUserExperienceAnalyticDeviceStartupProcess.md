@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgDeviceManagementUserExperienceAnalyticDeviceStartupProcess
 
 ## SYNOPSIS
-User experience analytics device Startup Processes
+Create new navigation property to userExperienceAnalyticsDeviceStartupProcesses for deviceManagement
 
 ## SYNTAX
 
@@ -27,7 +27,7 @@ New-MgDeviceManagementUserExperienceAnalyticDeviceStartupProcess
 ```
 
 ## DESCRIPTION
-User experience analytics device Startup Processes
+Create new navigation property to userExperienceAnalyticsDeviceStartupProcesses for deviceManagement
 
 ## EXAMPLES
 
@@ -65,7 +65,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -207,7 +207,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphUserExperienceAnalyticsDeviceStartupProcess>: The user experience analytics device startup process details.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[ManagedDeviceId <String>]`: The user experience analytics device id.
   - `[ProcessName <String>]`: User experience analytics device startup process name.
   - `[ProductName <String>]`: The user experience analytics device startup process product name.

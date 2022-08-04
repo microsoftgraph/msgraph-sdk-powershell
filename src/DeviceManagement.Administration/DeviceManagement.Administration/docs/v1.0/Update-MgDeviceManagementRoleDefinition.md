@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgDeviceManagementRoleDefinition
 
 ## SYNOPSIS
-The Role Definitions.
+Update the navigation property roleDefinitions in deviceManagement
 
 ## SYNTAX
 
@@ -41,7 +41,7 @@ Update-MgDeviceManagementRoleDefinition -InputObject <IDeviceManagementAdministr
 ```
 
 ## DESCRIPTION
-The Role Definitions.
+Update the navigation property roleDefinitions in deviceManagement
 
 ## EXAMPLES
 
@@ -115,7 +115,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -279,12 +279,12 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphRoleDefinition>: The Role Definition resource. The role definition is the foundation of role based access in Intune. The role combines an Intune resource such as a Mobile App and associated role permissions such as Create or Read for the resource. There are two types of roles, built-in and custom. Built-in roles cannot be modified. Both built-in roles and custom roles must have assignments to be enforced. Create custom roles if you want to define a role that allows any of the available resources and role permissions to be combined into a single role.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[Description <String>]`: Description of the Role definition.
   - `[DisplayName <String>]`: Display Name of the Role definition.
   - `[IsBuiltIn <Boolean?>]`: Type of Role. Set to True if it is built-in, or set to False if it is a custom role definition.
   - `[RoleAssignments <IMicrosoftGraphRoleAssignment1[]>]`: List of Role assignments for this role definition.
-    - `[Id <String>]`: Read-only.
+    - `[Id <String>]`: 
     - `[Description <String>]`: Description of the Role Assignment.
     - `[DisplayName <String>]`: The display or friendly name of the role Assignment.
     - `[ResourceScopes <String[]>]`: List of ids of role scope member security groups.  These are IDs from Azure Active Directory.
@@ -299,6 +299,7 @@ INPUTOBJECT <IDeviceManagementAdministrationIdentity>: Identity Parameter
   - `[CartToClassAssociationId <String>]`: key: id of cartToClassAssociation
   - `[CloudPcAuditEventId <String>]`: key: id of cloudPcAuditEvent
   - `[CloudPcDeviceImageId <String>]`: key: id of cloudPcDeviceImage
+  - `[CloudPcExternalPartnerSettingId <String>]`: key: id of cloudPcExternalPartnerSetting
   - `[CloudPcGalleryImageId <String>]`: key: id of cloudPcGalleryImage
   - `[CloudPcId <String>]`: key: id of cloudPC
   - `[CloudPcOnPremisesConnectionId <String>]`: key: id of cloudPcOnPremisesConnection
@@ -317,6 +318,7 @@ INPUTOBJECT <IDeviceManagementAdministrationIdentity>: Identity Parameter
   - `[DeviceManagementExchangeOnPremisesPolicyId <String>]`: key: id of deviceManagementExchangeOnPremisesPolicy
   - `[DeviceManagementPartnerId <String>]`: key: id of deviceManagementPartner
   - `[GroupPolicyCategoryId <String>]`: key: id of groupPolicyCategory
+  - `[GroupPolicyCategoryId1 <String>]`: key: id of groupPolicyCategory
   - `[GroupPolicyDefinitionFileId <String>]`: key: id of groupPolicyDefinitionFile
   - `[GroupPolicyDefinitionId <String>]`: key: id of groupPolicyDefinition
   - `[GroupPolicyMigrationReportId <String>]`: key: id of groupPolicyMigrationReport
@@ -347,13 +349,13 @@ INPUTOBJECT <IDeviceManagementAdministrationIdentity>: Identity Parameter
   - `[UserPfxCertificateId <String>]`: key: id of userPFXCertificate
 
 ROLEASSIGNMENTS <IMicrosoftGraphRoleAssignment1[]>: List of Role assignments for this role definition.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[Description <String>]`: Description of the Role Assignment.
   - `[DisplayName <String>]`: The display or friendly name of the role Assignment.
   - `[ResourceScopes <String[]>]`: List of ids of role scope member security groups.  These are IDs from Azure Active Directory.
   - `[RoleDefinition <IMicrosoftGraphRoleDefinition>]`: The Role Definition resource. The role definition is the foundation of role based access in Intune. The role combines an Intune resource such as a Mobile App and associated role permissions such as Create or Read for the resource. There are two types of roles, built-in and custom. Built-in roles cannot be modified. Both built-in roles and custom roles must have assignments to be enforced. Create custom roles if you want to define a role that allows any of the available resources and role permissions to be combined into a single role.
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Id <String>]`: Read-only.
+    - `[Id <String>]`: 
     - `[Description <String>]`: Description of the Role definition.
     - `[DisplayName <String>]`: Display Name of the Role definition.
     - `[IsBuiltIn <Boolean?>]`: Type of Role. Set to True if it is built-in, or set to False if it is a custom role definition.

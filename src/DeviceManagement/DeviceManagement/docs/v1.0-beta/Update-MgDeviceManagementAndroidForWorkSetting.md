@@ -8,11 +8,11 @@ schema: 2.0.0
 # Update-MgDeviceManagementAndroidForWorkSetting
 
 ## SYNOPSIS
-The singleton Android for Work settings entity.
+Update the navigation property androidForWorkSettings in deviceManagement
 
 ## SYNTAX
 
-### UpdateExpanded1 (Default)
+### UpdateExpanded (Default)
 ```
 Update-MgDeviceManagementAndroidForWorkSetting [-AdditionalProperties <Hashtable>] [-BindStatus <String>]
  [-DeviceOwnerManagementEnabled] [-EnrollmentTarget <String>] [-Id <String>] [-LastAppSyncDateTime <DateTime>]
@@ -21,14 +21,14 @@ Update-MgDeviceManagementAndroidForWorkSetting [-AdditionalProperties <Hashtable
  [<CommonParameters>]
 ```
 
-### Update1
+### Update
 ```
 Update-MgDeviceManagementAndroidForWorkSetting -BodyParameter <IMicrosoftGraphAndroidForWorkSettings>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-The singleton Android for Work settings entity.
+Update the navigation property androidForWorkSettings in deviceManagement
 
 ## EXAMPLES
 
@@ -39,7 +39,7 @@ Additional Parameters
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: UpdateExpanded1
+Parameter Sets: UpdateExpanded
 Aliases:
 
 Required: False
@@ -54,7 +54,7 @@ Bind status of the tenant with the Google EMM API
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded1
+Parameter Sets: UpdateExpanded
 Aliases:
 
 Required: False
@@ -70,7 +70,7 @@ To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETE
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAndroidForWorkSettings
-Parameter Sets: Update1
+Parameter Sets: Update
 Aliases:
 
 Required: True
@@ -85,7 +85,7 @@ Indicates if this account is flighting for Android Device Owner Management with 
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
-Parameter Sets: UpdateExpanded1
+Parameter Sets: UpdateExpanded
 Aliases:
 
 Required: False
@@ -100,7 +100,7 @@ Android for Work device management targeting type for the account
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded1
+Parameter Sets: UpdateExpanded
 Aliases:
 
 Required: False
@@ -111,11 +111,11 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded1
+Parameter Sets: UpdateExpanded
 Aliases:
 
 Required: False
@@ -130,7 +130,7 @@ Last completion time for app sync
 
 ```yaml
 Type: System.DateTime
-Parameter Sets: UpdateExpanded1
+Parameter Sets: UpdateExpanded
 Aliases:
 
 Required: False
@@ -145,7 +145,7 @@ Sync status of the tenant with the Google EMM API
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded1
+Parameter Sets: UpdateExpanded
 Aliases:
 
 Required: False
@@ -160,7 +160,7 @@ Last modification time for Android for Work settings
 
 ```yaml
 Type: System.DateTime
-Parameter Sets: UpdateExpanded1
+Parameter Sets: UpdateExpanded
 Aliases:
 
 Required: False
@@ -175,7 +175,7 @@ Organization name used when onboarding Android for Work
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded1
+Parameter Sets: UpdateExpanded
 Aliases:
 
 Required: False
@@ -190,7 +190,7 @@ Owner UPN that created the enterprise
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded1
+Parameter Sets: UpdateExpanded
 Aliases:
 
 Required: False
@@ -220,7 +220,7 @@ Specifies which AAD groups can enroll devices in Android for Work device managem
 
 ```yaml
 Type: System.String[]
-Parameter Sets: UpdateExpanded1
+Parameter Sets: UpdateExpanded
 Aliases:
 
 Required: False
@@ -283,7 +283,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphAndroidForWorkSettings>: Settings for Android For Work.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[BindStatus <String>]`: Bind status of the tenant with the Google EMM API
   - `[DeviceOwnerManagementEnabled <Boolean?>]`: Indicates if this account is flighting for Android Device Owner Management with CloudDPC.
   - `[EnrollmentTarget <String>]`: Android for Work device management targeting type for the account

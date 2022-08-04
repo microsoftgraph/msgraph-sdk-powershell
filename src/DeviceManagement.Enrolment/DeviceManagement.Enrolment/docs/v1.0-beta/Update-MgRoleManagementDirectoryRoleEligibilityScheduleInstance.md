@@ -28,7 +28,7 @@ Update-MgRoleManagementDirectoryRoleEligibilityScheduleInstance
 ```
 Update-MgRoleManagementDirectoryRoleEligibilityScheduleInstance
  -UnifiedRoleEligibilityScheduleInstanceId <String>
- -BodyParameter <IMicrosoftGraphUnifiedRoleEligibilityScheduleInstance> [-PassThru] [-Confirm] [-WhatIf]
+ -BodyParameter <IMicrosoftGraphUnifiedRoleEligibilityScheduleInstance1> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -36,7 +36,7 @@ Update-MgRoleManagementDirectoryRoleEligibilityScheduleInstance
 ```
 Update-MgRoleManagementDirectoryRoleEligibilityScheduleInstance
  -InputObject <IDeviceManagementEnrolmentIdentity>
- -BodyParameter <IMicrosoftGraphUnifiedRoleEligibilityScheduleInstance> [-PassThru] [-Confirm] [-WhatIf]
+ -BodyParameter <IMicrosoftGraphUnifiedRoleEligibilityScheduleInstance1> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -91,8 +91,8 @@ Accept wildcard characters: False
 ```
 
 ### -AppScopeId
-Identifier of the app-specific scope when the assignment scope is app-specific.
-The scope of an assignment determines the set of resources for which the principal has been granted access.
+Identifier of the app-specific scope when the assignment or role eligibility is scoped to an app.
+The scope of an assignment or role eligibility determines the set of resources for which the principal has been granted access.
 App scopes are scopes that are defined and understood by this application only.
 Use / for tenant-wide app scopes.
 Use directoryScopeId to limit the scope to particular directory objects, for example, administrative units.
@@ -114,7 +114,7 @@ unifiedRoleEligibilityScheduleInstance
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUnifiedRoleEligibilityScheduleInstance
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUnifiedRoleEligibilityScheduleInstance1
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -142,8 +142,8 @@ Accept wildcard characters: False
 ```
 
 ### -DirectoryScopeId
-Identifier of the directory object representing the scope of the assignment.
-The scope of an assignment determines the set of resources for which the principal has been granted access.
+Identifier of the directory object representing the scope of the assignment or role eligibility.
+The scope of an assignment or role eligibility determines the set of resources for which the principal has been granted access.
 Directory scopes are shared scopes stored in the directory that are understood by multiple applications.
 Use / for tenant-wide scope.
 Use appScopeId to limit the scope to an application only.
@@ -176,7 +176,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -254,8 +254,7 @@ Accept wildcard characters: False
 ```
 
 ### -PrincipalId
-Identifier of the principal to which the assignment is being granted to.
-Can be a group or a user.
+Identifier of the principal that has been granted the role assignment or that's eligible for a role.
 
 ```yaml
 Type: System.String
@@ -286,9 +285,7 @@ Accept wildcard characters: False
 ```
 
 ### -RoleDefinitionId
-Identifier of the unifiedRoleDefinition the assignment is for.
-Read only.
-Supports $filter (eq).
+Identifier of the unifiedRoleDefinition object that is being assigned to the principal or that the principal is eligible for.
 
 ```yaml
 Type: System.String
@@ -385,7 +382,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IDeviceManagementEnrolmentIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUnifiedRoleEligibilityScheduleInstance
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUnifiedRoleEligibilityScheduleInstance1
 
 ## OUTPUTS
 
@@ -402,42 +399,42 @@ To create the parameters described below, construct a hash table containing the 
 
 APPSCOPE <IMicrosoftGraphAppScope>: appScope
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
-  - `[DisplayName <String>]`: Provides the display name of the app-specific resource represented by the app scope. Provided for display purposes since appScopeId is often an immutable, non-human-readable id. Read-only.
-  - `[Type <String>]`: Describes the type of app-specific resource represented by the app scope. Provided for display purposes, so a user interface can convey to the user the kind of app specific resource represented by the app scope. Read-only.
+  - `[Id <String>]`: 
+  - `[DisplayName <String>]`: Provides the display name of the app-specific resource represented by the app scope. Provided for display purposes since appScopeId is often an immutable, non-human-readable id. This property is read only.
+  - `[Type <String>]`: Describes the type of app-specific resource represented by the app scope. Provided for display purposes, so a user interface can convey to the user the kind of app specific resource represented by the app scope. This property is read only.
 
-BODYPARAMETER <IMicrosoftGraphUnifiedRoleEligibilityScheduleInstance>: unifiedRoleEligibilityScheduleInstance
+BODYPARAMETER <IMicrosoftGraphUnifiedRoleEligibilityScheduleInstance1>: unifiedRoleEligibilityScheduleInstance
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[AppScope <IMicrosoftGraphAppScope>]`: appScope
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Id <String>]`: Read-only.
-    - `[DisplayName <String>]`: Provides the display name of the app-specific resource represented by the app scope. Provided for display purposes since appScopeId is often an immutable, non-human-readable id. Read-only.
-    - `[Type <String>]`: Describes the type of app-specific resource represented by the app scope. Provided for display purposes, so a user interface can convey to the user the kind of app specific resource represented by the app scope. Read-only.
-  - `[AppScopeId <String>]`: Identifier of the app-specific scope when the assignment scope is app-specific. The scope of an assignment determines the set of resources for which the principal has been granted access. App scopes are scopes that are defined and understood by this application only. Use / for tenant-wide app scopes. Use directoryScopeId to limit the scope to particular directory objects, for example, administrative units.
+    - `[Id <String>]`: 
+    - `[DisplayName <String>]`: Provides the display name of the app-specific resource represented by the app scope. Provided for display purposes since appScopeId is often an immutable, non-human-readable id. This property is read only.
+    - `[Type <String>]`: Describes the type of app-specific resource represented by the app scope. Provided for display purposes, so a user interface can convey to the user the kind of app specific resource represented by the app scope. This property is read only.
+  - `[AppScopeId <String>]`: Identifier of the app-specific scope when the assignment or role eligibility is scoped to an app. The scope of an assignment or role eligibility determines the set of resources for which the principal has been granted access. App scopes are scopes that are defined and understood by this application only. Use / for tenant-wide app scopes. Use directoryScopeId to limit the scope to particular directory objects, for example, administrative units.
   - `[DirectoryScope <IMicrosoftGraphDirectoryObject>]`: directoryObject
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Id <String>]`: Read-only.
+    - `[Id <String>]`: 
     - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
-  - `[DirectoryScopeId <String>]`: Identifier of the directory object representing the scope of the assignment. The scope of an assignment determines the set of resources for which the principal has been granted access. Directory scopes are shared scopes stored in the directory that are understood by multiple applications. Use / for tenant-wide scope. Use appScopeId to limit the scope to an application only.
+  - `[DirectoryScopeId <String>]`: Identifier of the directory object representing the scope of the assignment or role eligibility. The scope of an assignment or role eligibility determines the set of resources for which the principal has been granted access. Directory scopes are shared scopes stored in the directory that are understood by multiple applications. Use / for tenant-wide scope. Use appScopeId to limit the scope to an application only.
   - `[Principal <IMicrosoftGraphDirectoryObject>]`: directoryObject
-  - `[PrincipalId <String>]`: Identifier of the principal to which the assignment is being granted to. Can be a group or a user.
+  - `[PrincipalId <String>]`: Identifier of the principal that has been granted the role assignment or that's eligible for a role.
   - `[RoleDefinition <IMicrosoftGraphUnifiedRoleDefinition>]`: unifiedRoleDefinition
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Id <String>]`: Read-only.
+    - `[Id <String>]`: 
     - `[Description <String>]`: The description for the unifiedRoleDefinition. Read-only when isBuiltIn is true.
-    - `[DisplayName <String>]`: The display name for the unifiedRoleDefinition. Read-only when isBuiltIn is true. Required.  Supports $filter (eq, in).
-    - `[InheritsPermissionsFrom <IMicrosoftGraphUnifiedRoleDefinition[]>]`: Read-only collection of role definitions that the given role definition inherits from. Only Azure AD built-in roles (isBuiltIn is true) support this attribute. Supports $expand.
-    - `[IsBuiltIn <Boolean?>]`: Flag indicating whether the role definition is part of the default set included in Azure Active Directory (Azure AD) or a custom definition. Read-only. Supports $filter (eq, in).
-    - `[IsEnabled <Boolean?>]`: Flag indicating whether the role is enabled for assignment. If false the role is not available for assignment. Read-only when isBuiltIn is true.
-    - `[ResourceScopes <String[]>]`: List of the scopes or permissions the role definition applies to. Currently only / is supported. Read-only when isBuiltIn is true. DO NOT USE. This will be deprecated soon. Attach scope to role assignment.
+    - `[DisplayName <String>]`: The display name for the unifiedRoleDefinition. Read-only when isBuiltIn is true. Required.  Supports $filter (eq and startsWith operators only).
+    - `[InheritsPermissionsFrom <IMicrosoftGraphUnifiedRoleDefinition[]>]`: Read-only collection of role definitions that the given role definition inherits from. Only Azure AD built-in roles support this attribute.
+    - `[IsBuiltIn <Boolean?>]`: Flag indicating if the unifiedRoleDefinition is part of the default set included with the product or custom. Read-only.  Supports $filter (eq operator only).
+    - `[IsEnabled <Boolean?>]`: Flag indicating if the role is enabled for assignment. If false the role is not available for assignment. Read-only when isBuiltIn is true.
+    - `[ResourceScopes <String[]>]`: List of scopes permissions granted by the role definition apply to. Currently only / is supported. Read-only when isBuiltIn is true. DO NOT USE. This will be deprecated soon. Attach scope to role assignment
     - `[RolePermissions <IMicrosoftGraphUnifiedRolePermission[]>]`: List of permissions included in the role. Read-only when isBuiltIn is true. Required.
-      - `[AllowedResourceActions <String[]>]`: Set of tasks that can be performed on a resource. Required.
+      - `[AllowedResourceActions <String[]>]`: Set of tasks that can be performed on a resource.
       - `[Condition <String>]`: Optional constraints that must be met for the permission to be effective.
       - `[ExcludedResourceActions <String[]>]`: Set of tasks that may not be performed on a resource. Not yet supported.
-    - `[TemplateId <String>]`: Custom template identifier that can be set when isBuiltIn is false but is read-only when isBuiltIn is true. This identifier is typically used if one needs an identifier to be the same across different directories.
-    - `[Version <String>]`: Indicates version of the role definition. Read-only when isBuiltIn is true.
-  - `[RoleDefinitionId <String>]`: Identifier of the unifiedRoleDefinition the assignment is for. Read only.  Supports $filter (eq).
-  - `[Id <String>]`: Read-only.
+    - `[TemplateId <String>]`: Custom template identifier that can be set when isBuiltIn is false. This identifier is typically used if one needs an identifier to be the same across different directories. Read-only when isBuiltIn is true.
+    - `[Version <String>]`: Indicates version of the unifiedRoleDefinition. Read-only when isBuiltIn is true.
+  - `[RoleDefinitionId <String>]`: Identifier of the unifiedRoleDefinition object that is being assigned to the principal or that the principal is eligible for.
+  - `[Id <String>]`: 
   - `[EndDateTime <DateTime?>]`: Time that the roleEligibilityScheduleInstance will expire.
   - `[MemberType <String>]`: Membership type of the assignment. It can either be Inherited, Direct, or Group.
   - `[RoleEligibilityScheduleId <String>]`: Identifier of the parent roleEligibilitySchedule for this instance.
@@ -445,14 +442,13 @@ BODYPARAMETER <IMicrosoftGraphUnifiedRoleEligibilityScheduleInstance>: unifiedRo
 
 DIRECTORYSCOPE <IMicrosoftGraphDirectoryObject>: directoryObject
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
 
 INPUTOBJECT <IDeviceManagementEnrolmentIdentity>: Identity Parameter
   - `[AndroidDeviceOwnerEnrollmentProfileId <String>]`: key: id of androidDeviceOwnerEnrollmentProfile
   - `[AndroidForWorkEnrollmentProfileId <String>]`: key: id of androidForWorkEnrollmentProfile
   - `[AppScopeId <String>]`: key: id of appScope
-  - `[AppScopeId1 <String>]`: Usage: appScopeId={appScopeId}
   - `[AppleEnrollmentProfileAssignmentId <String>]`: key: id of appleEnrollmentProfileAssignment
   - `[AppleUserInitiatedEnrollmentProfileId <String>]`: key: id of appleUserInitiatedEnrollmentProfile
   - `[ApprovalId <String>]`: key: id of approval
@@ -461,15 +457,13 @@ INPUTOBJECT <IDeviceManagementEnrolmentIdentity>: Identity Parameter
   - `[DeviceEnrollmentConfigurationId <String>]`: key: id of deviceEnrollmentConfiguration
   - `[DeviceManagementAutopilotEventId <String>]`: key: id of deviceManagementAutopilotEvent
   - `[DeviceManagementAutopilotPolicyStatusDetailId <String>]`: key: id of deviceManagementAutopilotPolicyStatusDetail
-  - `[DirectoryScopeId <String>]`: Usage: directoryScopeId={directoryScopeId}
+  - `[DirectoryObjectId <String>]`: key: id of directoryObject
   - `[EnrollmentConfigurationAssignmentId <String>]`: key: id of enrollmentConfigurationAssignment
   - `[EnrollmentProfileId <String>]`: key: id of enrollmentProfile
   - `[ImportedAppleDeviceIdentityId <String>]`: key: id of importedAppleDeviceIdentity
   - `[ImportedDeviceIdentityId <String>]`: key: id of importedDeviceIdentity
   - `[ImportedWindowsAutopilotDeviceIdentityId <String>]`: key: id of importedWindowsAutopilotDeviceIdentity
-  - `[On <String>]`: Usage: on={on}
-  - `[PrincipalId <String>]`: Usage: principalId={principalId}
-  - `[RoleDefinitionId <String>]`: Usage: roleDefinitionId={roleDefinitionId}
+  - `[On <String>]`: Usage: on='{on}'
   - `[UnifiedRbacResourceActionId <String>]`: key: id of unifiedRbacResourceAction
   - `[UnifiedRbacResourceNamespaceId <String>]`: key: id of unifiedRbacResourceNamespace
   - `[UnifiedRoleAssignmentId <String>]`: key: id of unifiedRoleAssignment
@@ -490,24 +484,24 @@ INPUTOBJECT <IDeviceManagementEnrolmentIdentity>: Identity Parameter
 
 PRINCIPAL <IMicrosoftGraphDirectoryObject>: directoryObject
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
 
 ROLEDEFINITION <IMicrosoftGraphUnifiedRoleDefinition>: unifiedRoleDefinition
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[Description <String>]`: The description for the unifiedRoleDefinition. Read-only when isBuiltIn is true.
-  - `[DisplayName <String>]`: The display name for the unifiedRoleDefinition. Read-only when isBuiltIn is true. Required.  Supports $filter (eq, in).
-  - `[InheritsPermissionsFrom <IMicrosoftGraphUnifiedRoleDefinition[]>]`: Read-only collection of role definitions that the given role definition inherits from. Only Azure AD built-in roles (isBuiltIn is true) support this attribute. Supports $expand.
-  - `[IsBuiltIn <Boolean?>]`: Flag indicating whether the role definition is part of the default set included in Azure Active Directory (Azure AD) or a custom definition. Read-only. Supports $filter (eq, in).
-  - `[IsEnabled <Boolean?>]`: Flag indicating whether the role is enabled for assignment. If false the role is not available for assignment. Read-only when isBuiltIn is true.
-  - `[ResourceScopes <String[]>]`: List of the scopes or permissions the role definition applies to. Currently only / is supported. Read-only when isBuiltIn is true. DO NOT USE. This will be deprecated soon. Attach scope to role assignment.
+  - `[DisplayName <String>]`: The display name for the unifiedRoleDefinition. Read-only when isBuiltIn is true. Required.  Supports $filter (eq and startsWith operators only).
+  - `[InheritsPermissionsFrom <IMicrosoftGraphUnifiedRoleDefinition[]>]`: Read-only collection of role definitions that the given role definition inherits from. Only Azure AD built-in roles support this attribute.
+  - `[IsBuiltIn <Boolean?>]`: Flag indicating if the unifiedRoleDefinition is part of the default set included with the product or custom. Read-only.  Supports $filter (eq operator only).
+  - `[IsEnabled <Boolean?>]`: Flag indicating if the role is enabled for assignment. If false the role is not available for assignment. Read-only when isBuiltIn is true.
+  - `[ResourceScopes <String[]>]`: List of scopes permissions granted by the role definition apply to. Currently only / is supported. Read-only when isBuiltIn is true. DO NOT USE. This will be deprecated soon. Attach scope to role assignment
   - `[RolePermissions <IMicrosoftGraphUnifiedRolePermission[]>]`: List of permissions included in the role. Read-only when isBuiltIn is true. Required.
-    - `[AllowedResourceActions <String[]>]`: Set of tasks that can be performed on a resource. Required.
+    - `[AllowedResourceActions <String[]>]`: Set of tasks that can be performed on a resource.
     - `[Condition <String>]`: Optional constraints that must be met for the permission to be effective.
     - `[ExcludedResourceActions <String[]>]`: Set of tasks that may not be performed on a resource. Not yet supported.
-  - `[TemplateId <String>]`: Custom template identifier that can be set when isBuiltIn is false but is read-only when isBuiltIn is true. This identifier is typically used if one needs an identifier to be the same across different directories.
-  - `[Version <String>]`: Indicates version of the role definition. Read-only when isBuiltIn is true.
+  - `[TemplateId <String>]`: Custom template identifier that can be set when isBuiltIn is false. This identifier is typically used if one needs an identifier to be the same across different directories. Read-only when isBuiltIn is true.
+  - `[Version <String>]`: Indicates version of the unifiedRoleDefinition. Read-only when isBuiltIn is true.
 
 ## RELATED LINKS
 

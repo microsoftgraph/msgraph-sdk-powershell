@@ -15,7 +15,7 @@ Create new navigation property to teamsApps for appCatalogs
 ### CreateExpanded1 (Default)
 ```
 New-MgAppCatalogTeamApp [-AdditionalProperties <Hashtable>]
- [-AppDefinitions <IMicrosoftGraphTeamsAppDefinition1[]>] [-DisplayName <String>]
+ [-AppDefinitions <IMicrosoftGraphTeamsAppDefinition[]>] [-DisplayName <String>]
  [-DistributionMethod <String>] [-ExternalId <String>] [-Id <String>] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
@@ -52,7 +52,7 @@ The details for each version of the app.
 To construct, please use Get-Help -Online and see NOTES section for APPDEFINITIONS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTeamsAppDefinition1[]
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTeamsAppDefinition[]
 Parameter Sets: CreateExpanded1
 Aliases:
 
@@ -125,7 +125,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -190,16 +190,16 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-APPDEFINITIONS <IMicrosoftGraphTeamsAppDefinition1[]>: The details for each version of the app.
-  - `[Id <String>]`: Read-only.
+APPDEFINITIONS <IMicrosoftGraphTeamsAppDefinition[]>: The details for each version of the app.
+  - `[Id <String>]`: 
   - `[Bot <IMicrosoftGraphTeamworkBot>]`: teamworkBot
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Id <String>]`: Read-only.
+    - `[Id <String>]`: 
   - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Application <IMicrosoftGraphIdentity>]`: identity
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[DisplayName <String>]`: The identity's display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+      - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
       - `[Id <String>]`: Unique identifier for the identity.
     - `[Device <IMicrosoftGraphIdentity>]`: identity
     - `[User <IMicrosoftGraphIdentity>]`: identity
@@ -213,17 +213,17 @@ APPDEFINITIONS <IMicrosoftGraphTeamsAppDefinition1[]>: The details for each vers
 
 BODYPARAMETER <IMicrosoftGraphTeamsApp1>: teamsApp
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
-  - `[AppDefinitions <IMicrosoftGraphTeamsAppDefinition1[]>]`: The details for each version of the app.
-    - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
+  - `[AppDefinitions <IMicrosoftGraphTeamsAppDefinition[]>]`: The details for each version of the app.
+    - `[Id <String>]`: 
     - `[Bot <IMicrosoftGraphTeamworkBot>]`: teamworkBot
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[Id <String>]`: Read-only.
+      - `[Id <String>]`: 
     - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Application <IMicrosoftGraphIdentity>]`: identity
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
-        - `[DisplayName <String>]`: The identity's display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+        - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
         - `[Id <String>]`: Unique identifier for the identity.
       - `[Device <IMicrosoftGraphIdentity>]`: identity
       - `[User <IMicrosoftGraphIdentity>]`: identity

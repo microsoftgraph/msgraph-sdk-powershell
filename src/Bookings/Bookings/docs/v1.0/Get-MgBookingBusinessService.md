@@ -8,9 +8,7 @@ schema: 2.0.0
 # Get-MgBookingBusinessService
 
 ## SYNOPSIS
-All the services offered by this business.
-Read-only.
-Nullable.
+Get services from solutions
 
 ## SYNTAX
 
@@ -34,9 +32,7 @@ Get-MgBookingBusinessService -InputObject <IBookingsIdentity> [-ExpandProperty <
 ```
 
 ## DESCRIPTION
-All the services offered by this business.
-Read-only.
-Nullable.
+Get services from solutions
 
 ## EXAMPLES
 

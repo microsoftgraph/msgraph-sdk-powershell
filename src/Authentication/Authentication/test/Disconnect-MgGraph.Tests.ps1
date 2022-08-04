@@ -38,3 +38,13 @@ Describe 'Disconnect-MgGraph' {
         } | Should -Not -Throw
     }
 }
+
+Describe 'Disconnect-MgGraph ErrorAction Handling' {
+    It 'Should throw error by default' {
+        { Disconnect-MgGraph } | Should -Throw -ExpectedMessage "No application to sign out from."
+    }
+
+    It 'Should not throw error when ErrorAction is SilentlyContinue' {
+        { Disconnect-MgGraph -ErrorAction SilentlyContinue } | Should -Not -Throw
+    }
+}

@@ -8,38 +8,38 @@ schema: 2.0.0
 # Update-MgShareListContentTypeColumnLink
 
 ## SYNOPSIS
-The collection of columns that are required by this content type.
+Update the navigation property columnLinks in shares
 
 ## SYNTAX
 
-### UpdateExpanded (Default)
+### UpdateExpanded1 (Default)
 ```
 Update-MgShareListContentTypeColumnLink -ColumnLinkId <String> -ContentTypeId <String>
  -SharedDriveItemId <String> [-AdditionalProperties <Hashtable>] [-Id <String>] [-Name <String>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### Update
+### Update1
 ```
 Update-MgShareListContentTypeColumnLink -ColumnLinkId <String> -ContentTypeId <String>
  -SharedDriveItemId <String> -BodyParameter <IMicrosoftGraphColumnLink> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
-### UpdateViaIdentity
+### UpdateViaIdentity1
 ```
 Update-MgShareListContentTypeColumnLink -InputObject <IFilesIdentity>
  -BodyParameter <IMicrosoftGraphColumnLink> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### UpdateViaIdentityExpanded
+### UpdateViaIdentityExpanded1
 ```
 Update-MgShareListContentTypeColumnLink -InputObject <IFilesIdentity> [-AdditionalProperties <Hashtable>]
  [-Id <String>] [-Name <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-The collection of columns that are required by this content type.
+Update the navigation property columnLinks in shares
 
 ## EXAMPLES
 
@@ -50,7 +50,7 @@ Additional Parameters
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -66,7 +66,7 @@ To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETE
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphColumnLink
-Parameter Sets: Update, UpdateViaIdentity
+Parameter Sets: Update1, UpdateViaIdentity1
 Aliases:
 
 Required: True
@@ -81,7 +81,7 @@ key: id of columnLink
 
 ```yaml
 Type: System.String
-Parameter Sets: Update, UpdateExpanded
+Parameter Sets: Update1, UpdateExpanded1
 Aliases:
 
 Required: True
@@ -96,7 +96,7 @@ key: id of contentType
 
 ```yaml
 Type: System.String
-Parameter Sets: Update, UpdateExpanded
+Parameter Sets: Update1, UpdateExpanded1
 Aliases:
 
 Required: True
@@ -107,11 +107,11 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -127,7 +127,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IFilesIdentity
-Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
+Parameter Sets: UpdateViaIdentity1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: True
@@ -142,7 +142,7 @@ The name of the column in this content type.
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -172,7 +172,7 @@ key: id of sharedDriveItem
 
 ```yaml
 Type: System.String
-Parameter Sets: Update, UpdateExpanded
+Parameter Sets: Update1, UpdateExpanded1
 Aliases:
 
 Required: True
@@ -237,26 +237,32 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphColumnLink>: columnLink
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[Name <String>]`: The name of the column  in this content type.
 
 INPUTOBJECT <IFilesIdentity>: Identity Parameter
   - `[ColumnDefinitionId <String>]`: key: id of columnDefinition
   - `[ColumnLinkId <String>]`: key: id of columnLink
   - `[ContentTypeId <String>]`: key: id of contentType
+  - `[ContentTypeId1 <String>]`: key: id of contentType
+  - `[DocumentSetVersionId <String>]`: key: id of documentSetVersion
   - `[DriveId <String>]`: key: id of drive
   - `[DriveItemId <String>]`: key: id of driveItem
-  - `[EndDateTime <String>]`: Usage: endDateTime={endDateTime}
+  - `[DriveItemId1 <String>]`: key: id of driveItem
+  - `[DriveItemVersionId <String>]`: key: id of driveItemVersion
+  - `[EndDateTime <String>]`: Usage: endDateTime='{endDateTime}'
   - `[GroupId <String>]`: key: id of group
-  - `[Interval <String>]`: Usage: interval={interval}
+  - `[Interval <String>]`: Usage: interval='{interval}'
   - `[ListItemId <String>]`: key: id of listItem
   - `[ListItemVersionId <String>]`: key: id of listItemVersion
-  - `[Q <String>]`: Usage: q={q}
+  - `[PermissionId <String>]`: key: id of permission
+  - `[Q <String>]`: Usage: q='{q}'
   - `[RichLongRunningOperationId <String>]`: key: id of richLongRunningOperation
   - `[SharedDriveItemId <String>]`: key: id of sharedDriveItem
-  - `[StartDateTime <String>]`: Usage: startDateTime={startDateTime}
+  - `[StartDateTime <String>]`: Usage: startDateTime='{startDateTime}'
   - `[SubscriptionId <String>]`: key: id of subscription
-  - `[Token <String>]`: Usage: token={token}
+  - `[ThumbnailSetId <String>]`: key: id of thumbnailSet
+  - `[Token <String>]`: Usage: token='{token}'
   - `[UserId <String>]`: key: id of user
 
 ## RELATED LINKS

@@ -8,36 +8,24 @@ schema: 2.0.0
 # New-MgEntitlementManagementAccessPackageIncompatibleGroupByRef
 
 ## SYNOPSIS
-The groups whose members are ineligible to be assigned this access package.
+Create new navigation property ref to incompatibleGroups for identityGovernance
 
 ## SYNTAX
 
-### CreateExpanded (Default)
+### Create (Default)
 ```
-New-MgEntitlementManagementAccessPackageIncompatibleGroupByRef -AccessPackageId <String>
- [-AdditionalProperties <Hashtable>] [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### Create
-```
-New-MgEntitlementManagementAccessPackageIncompatibleGroupByRef -AccessPackageId <String>
- -BodyParameter <Hashtable> [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgEntitlementManagementAccessPackageIncompatibleGroupByRef -AccessPackageId <String> [-PassThru]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
 New-MgEntitlementManagementAccessPackageIncompatibleGroupByRef -InputObject <IIdentityGovernanceIdentity>
- -BodyParameter <Hashtable> [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### CreateViaIdentityExpanded
-```
-New-MgEntitlementManagementAccessPackageIncompatibleGroupByRef -InputObject <IIdentityGovernanceIdentity>
- [-AdditionalProperties <Hashtable>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-The groups whose members are ineligible to be assigned this access package.
+Create new navigation property ref to incompatibleGroups for identityGovernance
 
 ## EXAMPLES
 
@@ -48,43 +36,13 @@ key: id of accessPackage
 
 ```yaml
 Type: System.String
-Parameter Sets: Create, CreateExpanded
+Parameter Sets: Create
 Aliases:
 
 Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -AdditionalProperties
-Additional Parameters
-
-```yaml
-Type: System.Collections.Hashtable
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -BodyParameter
-.
-
-```yaml
-Type: System.Collections.Hashtable
-Parameter Sets: Create, CreateViaIdentity
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -94,13 +52,28 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
-Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
+Parameter Sets: CreateViaIdentity
 Aliases:
 
 Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### -PassThru
+Returns true when the command succeeds
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -142,11 +115,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
 
-### System.Collections.Hashtable
-
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPathsN03BnhIdentitygovernanceEntitlementmanagementAccesspackagesAccesspackageIdIncompatiblegroupsRefPostResponses201ContentApplicationJsonSchema
+### System.Boolean
 
 ## NOTES
 
@@ -164,12 +135,15 @@ INPUTOBJECT <IIdentityGovernanceIdentity>: Identity Parameter
   - `[AccessPackageAssignmentResourceRoleId <String>]`: key: id of accessPackageAssignmentResourceRole
   - `[AccessPackageCatalogId <String>]`: key: id of accessPackageCatalog
   - `[AccessPackageId <String>]`: key: id of accessPackage
+  - `[AccessPackageId1 <String>]`: key: id of accessPackage
+  - `[AccessPackageId2 <String>]`: Usage: accessPackageId='{accessPackageId}'
   - `[AccessPackageResourceEnvironmentId <String>]`: key: id of accessPackageResourceEnvironment
   - `[AccessPackageResourceId <String>]`: key: id of accessPackageResource
   - `[AccessPackageResourceRequestId <String>]`: key: id of accessPackageResourceRequest
   - `[AccessPackageResourceRoleId <String>]`: key: id of accessPackageResourceRole
   - `[AccessPackageResourceRoleScopeId <String>]`: key: id of accessPackageResourceRoleScope
   - `[AccessPackageResourceScopeId <String>]`: key: id of accessPackageResourceScope
+  - `[AccessPackageSubjectId <String>]`: key: id of accessPackageSubject
   - `[AccessReviewDecisionId <String>]`: key: id of accessReviewDecision
   - `[AccessReviewHistoryDefinitionId <String>]`: key: id of accessReviewHistoryDefinition
   - `[AccessReviewHistoryInstanceId <String>]`: key: id of accessReviewHistoryInstance
@@ -200,14 +174,18 @@ INPUTOBJECT <IIdentityGovernanceIdentity>: Identity Parameter
   - `[GovernanceRoleAssignmentRequestId <String>]`: key: id of governanceRoleAssignmentRequest
   - `[GovernanceRoleDefinitionId <String>]`: key: id of governanceRoleDefinition
   - `[GovernanceRoleSettingId <String>]`: key: id of governanceRoleSetting
-  - `[On <String>]`: Usage: on={on}
+  - `[GroupId <String>]`: key: id of group
+  - `[IncompatibleAccessPackageId <String>]`: Usage: incompatibleAccessPackageId='{incompatibleAccessPackageId}'
+  - `[On <String>]`: Usage: on='{on}'
   - `[PrivilegedAccessId <String>]`: key: id of privilegedAccess
   - `[PrivilegedApprovalId <String>]`: key: id of privilegedApproval
   - `[PrivilegedOperationEventId <String>]`: key: id of privilegedOperationEvent
   - `[PrivilegedRoleAssignmentId <String>]`: key: id of privilegedRoleAssignment
+  - `[PrivilegedRoleAssignmentId1 <String>]`: key: id of privilegedRoleAssignment
   - `[PrivilegedRoleAssignmentRequestId <String>]`: key: id of privilegedRoleAssignmentRequest
   - `[PrivilegedRoleId <String>]`: key: id of privilegedRole
   - `[ProgramControlId <String>]`: key: id of programControl
+  - `[ProgramControlId1 <String>]`: key: id of programControl
   - `[ProgramControlTypeId <String>]`: key: id of programControlType
   - `[ProgramId <String>]`: key: id of program
   - `[UserConsentRequestId <String>]`: key: id of userConsentRequest

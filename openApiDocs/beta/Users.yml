@@ -1866,13 +1866,6 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: user
-      requestBody:
-        description: New navigation property ref values
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/ReferenceUpdateSchema'
-        required: true
       responses:
         '204':
           description: Success
@@ -12908,16 +12901,6 @@ components:
               nullable: true
           additionalProperties:
             type: object
-    ReferenceUpdateSchema:
-      type: object
-      properties:
-        '@odata.id':
-          type: string
-        '@odata.type':
-          type: string
-          nullable: true
-      additionalProperties:
-        type: object
     microsoft.graph.notification:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -15593,7 +15576,7 @@ components:
               nullable: true
             bootstrapTokenEscrowed:
               type: boolean
-              description: 'Reports if the managed device has an escrowed Bootstrap Token. This is only for macOS devices. If FALSE, no bootstrap token is escrowed. If TRUE, the device has escrowed a bootstrap token with Intune. This property is read-only.'
+              description: 'Reports if the managed device has an escrowed Bootstrap Token. This is only for macOS devices. To get, include BootstrapTokenEscrowed in the select clause and query with a device id. If FALSE, no bootstrap token is escrowed. If TRUE, the device has escrowed a bootstrap token with Intune. This property is read-only.'
             chassisType:
               $ref: '#/components/schemas/microsoft.graph.chassisType'
             chromeOSDeviceInfo:
@@ -16665,6 +16648,8 @@ components:
               type: string
               description: The video teleconferencing ID. Read-only.
               nullable: true
+            virtualAppointment:
+              $ref: '#/components/schemas/microsoft.graph.virtualAppointment'
             attendanceReports:
               type: array
               items:
@@ -16674,6 +16659,11 @@ components:
               $ref: '#/components/schemas/microsoft.graph.meetingAttendanceReport'
             registration:
               $ref: '#/components/schemas/microsoft.graph.meetingRegistration'
+            transcripts:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.callTranscript'
+              description: The transcripts of an online meeting. Read-only.
           additionalProperties:
             type: object
     microsoft.graph.presence:
@@ -22628,6 +22618,33 @@ components:
             $ref: '#/components/schemas/microsoft.graph.meetingParticipantInfo'
       additionalProperties:
         type: object
+    microsoft.graph.virtualAppointment:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: virtualAppointment
+          type: object
+          properties:
+            appointmentClientJoinWebUrl:
+              type: string
+              description: The join web URL of the virtual appointment for clients with waiting room and browser join. Optional.
+              nullable: true
+            appointmentClients:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.virtualAppointmentUser'
+              description: 'The client information for the virtual appointment, including name, email, and SMS phone number. Optional.'
+            externalAppointmentId:
+              type: string
+              description: 'The identifier of the appointment from the scheduling system, associated with the current virtual appointment. Optional.'
+              nullable: true
+            externalAppointmentUrl:
+              type: string
+              description: 'The URL of the appointment resource from the scheduling system, associated with the current virtual appointment. Optional.'
+              nullable: true
+            settings:
+              $ref: '#/components/schemas/microsoft.graph.virtualAppointmentSettings'
+          additionalProperties:
+            type: object
     microsoft.graph.meetingAttendanceReport:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -22707,6 +22724,25 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.meetingRegistrationQuestion'
               description: Custom registration questions.
+          additionalProperties:
+            type: object
+    microsoft.graph.callTranscript:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: callTranscript
+          type: object
+          properties:
+            content:
+              type: string
+              description: A field representing the content of the transcript. Read-only.
+              format: base64url
+              nullable: true
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Date and time at which the transcript was created. Read-only.
+              format: date-time
+              nullable: true
           additionalProperties:
             type: object
     microsoft.graph.outOfOfficeSettings:
@@ -27770,6 +27806,34 @@ components:
         upn:
           type: string
           description: User principal name of the participant.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.virtualAppointmentUser:
+      title: virtualAppointmentUser
+      type: object
+      properties:
+        displayName:
+          type: string
+          description: The display name of the user who participates in a virtual appointment. Optional.
+          nullable: true
+        emailAddress:
+          type: string
+          description: The email address of the user who participates in a virtual appointment. Optional.
+          nullable: true
+        smsCapablePhoneNumber:
+          type: string
+          description: The phone number for sending SMS texts for the user who participates in a virtual appointment. Optional.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.virtualAppointmentSettings:
+      title: virtualAppointmentSettings
+      type: object
+      properties:
+        allowClientToJoinUsingBrowser:
+          type: boolean
+          description: 'Indicates whether the client can use the browser to join a virtual appointment. If set to false, the client can only use Microsoft Teams to join. Optional.'
           nullable: true
       additionalProperties:
         type: object

@@ -8,8 +8,7 @@ schema: 2.0.0
 # Update-MgUserActivityHistoryItem
 
 ## SYNOPSIS
-Optional.
-NavigationProperty/Containment; navigation property to the activity's historyItems.
+Update the navigation property historyItems in users
 
 ## SYNTAX
 
@@ -26,13 +25,13 @@ Update-MgUserActivityHistoryItem -ActivityHistoryItemId <String> -UserActivityId
 ### Update1
 ```
 Update-MgUserActivityHistoryItem -ActivityHistoryItemId <String> -UserActivityId <String> -UserId <String>
- -BodyParameter <IMicrosoftGraphActivityHistoryItem1> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphActivityHistoryItem> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity1
 ```
 Update-MgUserActivityHistoryItem -InputObject <ICrossDeviceExperiencesIdentity>
- -BodyParameter <IMicrosoftGraphActivityHistoryItem1> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphActivityHistoryItem> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded1
@@ -46,8 +45,7 @@ Update-MgUserActivityHistoryItem -InputObject <ICrossDeviceExperiencesIdentity>
 ```
 
 ## DESCRIPTION
-Optional.
-NavigationProperty/Containment; navigation property to the activity's historyItems.
+Update the navigation property historyItems in users
 
 ## EXAMPLES
 
@@ -121,7 +119,7 @@ activityHistoryItem
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphActivityHistoryItem1
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphActivityHistoryItem
 Parameter Sets: Update1, UpdateViaIdentity1
 Aliases:
 
@@ -166,7 +164,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -360,7 +358,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.ICrossDeviceExperiencesIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphActivityHistoryItem1
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphActivityHistoryItem
 
 ## OUTPUTS
 
@@ -377,7 +375,7 @@ To create the parameters described below, construct a hash table containing the 
 
 ACTIVITY <IMicrosoftGraphUserActivity1>: userActivity
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[ActivationUrl <String>]`: Required. URL used to launch the activity in the best native experience represented by the appId. Might launch a web-based app if no native app exists.
   - `[ActivitySourceHost <String>]`: Required. URL for the domain representing the cross-platform identity mapping for the app. Mapping is stored either as a JSON file hosted on the domain or configurable via Windows Dev Center. The JSON file is named cross-platform-app-identifiers and is hosted at root of your HTTPS domain, either at the top level domain or include a sub domain. For example: https://contoso.com or https://myapp.contoso.com but NOT https://myapp.contoso.com/somepath. You must have a unique file and domain (or sub domain) per cross-platform app identity. For example, a separate file and domain is needed for Word vs. PowerPoint.
   - `[AppActivityId <String>]`: Required. The unique activity ID in the context of the app - supplied by caller and immutable thereafter.
@@ -388,8 +386,8 @@ ACTIVITY <IMicrosoftGraphUserActivity1>: userActivity
   - `[CreatedDateTime <DateTime?>]`: Set by the server. DateTime in UTC when the object was created on the server.
   - `[ExpirationDateTime <DateTime?>]`: Set by the server. DateTime in UTC when the object expired on the server.
   - `[FallbackUrl <String>]`: Optional. URL used to launch the activity in a web-based app, if available.
-  - `[HistoryItems <IMicrosoftGraphActivityHistoryItem1[]>]`: Optional. NavigationProperty/Containment; navigation property to the activity's historyItems.
-    - `[Id <String>]`: Read-only.
+  - `[HistoryItems <IMicrosoftGraphActivityHistoryItem[]>]`: Optional. NavigationProperty/Containment; navigation property to the activity's historyItems.
+    - `[Id <String>]`: 
     - `[ActiveDurationSeconds <Int32?>]`: Optional. The duration of active user engagement. if not supplied, this is calculated from the startedDateTime and lastActiveDateTime.
     - `[Activity <IMicrosoftGraphUserActivity1>]`: userActivity
     - `[CreatedDateTime <DateTime?>]`: Set by the server. DateTime in UTC when the object was created on the server.
@@ -415,13 +413,13 @@ ACTIVITY <IMicrosoftGraphUserActivity1>: userActivity
     - `[Description <String>]`: Optional. Longer text description of the user's unique activity (example: document name, first sentence, and/or metadata)
     - `[DisplayText <String>]`: Required. Short text description of the user's unique activity (for example, document name in cases where an activity refers to document creation)
 
-BODYPARAMETER <IMicrosoftGraphActivityHistoryItem1>: activityHistoryItem
+BODYPARAMETER <IMicrosoftGraphActivityHistoryItem>: activityHistoryItem
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[ActiveDurationSeconds <Int32?>]`: Optional. The duration of active user engagement. if not supplied, this is calculated from the startedDateTime and lastActiveDateTime.
   - `[Activity <IMicrosoftGraphUserActivity1>]`: userActivity
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Id <String>]`: Read-only.
+    - `[Id <String>]`: 
     - `[ActivationUrl <String>]`: Required. URL used to launch the activity in the best native experience represented by the appId. Might launch a web-based app if no native app exists.
     - `[ActivitySourceHost <String>]`: Required. URL for the domain representing the cross-platform identity mapping for the app. Mapping is stored either as a JSON file hosted on the domain or configurable via Windows Dev Center. The JSON file is named cross-platform-app-identifiers and is hosted at root of your HTTPS domain, either at the top level domain or include a sub domain. For example: https://contoso.com or https://myapp.contoso.com but NOT https://myapp.contoso.com/somepath. You must have a unique file and domain (or sub domain) per cross-platform app identity. For example, a separate file and domain is needed for Word vs. PowerPoint.
     - `[AppActivityId <String>]`: Required. The unique activity ID in the context of the app - supplied by caller and immutable thereafter.
@@ -432,7 +430,7 @@ BODYPARAMETER <IMicrosoftGraphActivityHistoryItem1>: activityHistoryItem
     - `[CreatedDateTime <DateTime?>]`: Set by the server. DateTime in UTC when the object was created on the server.
     - `[ExpirationDateTime <DateTime?>]`: Set by the server. DateTime in UTC when the object expired on the server.
     - `[FallbackUrl <String>]`: Optional. URL used to launch the activity in a web-based app, if available.
-    - `[HistoryItems <IMicrosoftGraphActivityHistoryItem1[]>]`: Optional. NavigationProperty/Containment; navigation property to the activity's historyItems.
+    - `[HistoryItems <IMicrosoftGraphActivityHistoryItem[]>]`: Optional. NavigationProperty/Containment; navigation property to the activity's historyItems.
     - `[LastModifiedDateTime <DateTime?>]`: Set by the server. DateTime in UTC when the object was modified on the server.
     - `[Status <String>]`: status
     - `[UserTimezone <String>]`: Optional. The timezone in which the user's device used to generate the activity was located at activity creation time; values supplied as Olson IDs in order to support cross-platform representation.
@@ -458,7 +456,11 @@ BODYPARAMETER <IMicrosoftGraphActivityHistoryItem1>: activityHistoryItem
 
 INPUTOBJECT <ICrossDeviceExperiencesIdentity>: Identity Parameter
   - `[ActivityHistoryItemId <String>]`: key: id of activityHistoryItem
+  - `[CommandId <String>]`: key: id of command
   - `[DeviceId <String>]`: key: id of device
+  - `[DirectoryObjectId <String>]`: key: id of directoryObject
+  - `[ExtensionId <String>]`: key: id of extension
+  - `[UsageRightId <String>]`: key: id of usageRight
   - `[UserActivityId <String>]`: key: id of userActivity
   - `[UserId <String>]`: key: id of user
 

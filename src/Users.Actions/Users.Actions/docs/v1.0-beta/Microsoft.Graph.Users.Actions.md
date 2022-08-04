@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Users.Actions
-Module Guid: 989236bc-2feb-410e-b36c-0188b5749e63
+Module Guid: e8aa2fa0-d700-4683-967f-219abd9a7a65
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.actions
 Help Version: 1.0.0.0
 Locale: en-US
@@ -11,17 +11,29 @@ Locale: en-US
 Microsoft Graph PowerShell Cmdlets
 
 ## Microsoft.Graph.Users.Actions Cmdlets
+### [Add-MgUserChatMember](Add-MgUserChatMember.md)
+Invoke action add
+
+### [Add-MgUserDriveListContentTypeCopy](Add-MgUserDriveListContentTypeCopy.md)
+Invoke action addCopy
+
+### [Add-MgUserDriveListContentTypeCopyFromContentTypeHub](Add-MgUserDriveListContentTypeCopyFromContentTypeHub.md)
+Invoke action addCopyFromContentTypeHub
+
 ### [Add-MgUserPendingAccessReviewInstanceDecision](Add-MgUserPendingAccessReviewInstanceDecision.md)
 Invoke action applyDecisions
 
 ### [Clear-MgUserAndBlockManagedApp](Clear-MgUserAndBlockManagedApp.md)
-Blocks the managed app user from app check-in.
+Invoke action wipeAndBlockManagedApps
+
+### [Clear-MgUserManagedAppRegistrationByAzureAdDeviceId](Clear-MgUserManagedAppRegistrationByAzureAdDeviceId.md)
+Invoke action wipeManagedAppRegistrationsByAzureAdDeviceId
 
 ### [Clear-MgUserManagedAppRegistrationByDeviceTag](Clear-MgUserManagedAppRegistrationByDeviceTag.md)
-Issues a wipe operation on an app registration with specified device tag.
+Invoke action wipeManagedAppRegistrationsByDeviceTag
 
 ### [Clear-MgUserManagedDevice](Clear-MgUserManagedDevice.md)
-Wipe a device
+Invoke action wipe
 
 ### [Clear-MgUserPresence](Clear-MgUserPresence.md)
 Invoke action clearPresence
@@ -38,16 +50,61 @@ Invoke action complete
 ### [Complete-MgUserOutlookTaskGroupTaskFolderTask](Complete-MgUserOutlookTaskGroupTaskFolderTask.md)
 Invoke action complete
 
+### [Confirm-MgUserAuthenticationMicrosoftAuthenticatorMethodDeviceMemberGroup](Confirm-MgUserAuthenticationMicrosoftAuthenticatorMethodDeviceMemberGroup.md)
+Invoke action checkMemberGroups
+
+### [Confirm-MgUserAuthenticationMicrosoftAuthenticatorMethodDeviceMemberObject](Confirm-MgUserAuthenticationMicrosoftAuthenticatorMethodDeviceMemberObject.md)
+Invoke action checkMemberObjects
+
+### [Confirm-MgUserAuthenticationPasswordlessMicrosoftAuthenticatorMethodDeviceMemberGroup](Confirm-MgUserAuthenticationPasswordlessMicrosoftAuthenticatorMethodDeviceMemberGroup.md)
+Invoke action checkMemberGroups
+
+### [Confirm-MgUserAuthenticationPasswordlessMicrosoftAuthenticatorMethodDeviceMemberObject](Confirm-MgUserAuthenticationPasswordlessMicrosoftAuthenticatorMethodDeviceMemberObject.md)
+Invoke action checkMemberObjects
+
+### [Confirm-MgUserAuthenticationWindowHelloForBusinessMethodDeviceMemberGroup](Confirm-MgUserAuthenticationWindowHelloForBusinessMethodDeviceMemberGroup.md)
+Invoke action checkMemberGroups
+
+### [Confirm-MgUserAuthenticationWindowHelloForBusinessMethodDeviceMemberObject](Confirm-MgUserAuthenticationWindowHelloForBusinessMethodDeviceMemberObject.md)
+Invoke action checkMemberObjects
+
+### [Confirm-MgUserChatPermissionGrantMemberGroup](Confirm-MgUserChatPermissionGrantMemberGroup.md)
+Invoke action checkMemberGroups
+
+### [Confirm-MgUserChatPermissionGrantMemberObject](Confirm-MgUserChatPermissionGrantMemberObject.md)
+Invoke action checkMemberObjects
+
+### [Confirm-MgUserDeviceMemberGroup](Confirm-MgUserDeviceMemberGroup.md)
+Invoke action checkMemberGroups
+
+### [Confirm-MgUserDeviceMemberObject](Confirm-MgUserDeviceMemberObject.md)
+Invoke action checkMemberObjects
+
+### [Confirm-MgUserInformationProtectionSignature](Confirm-MgUserInformationProtectionSignature.md)
+Invoke action verifySignature
+
 ### [Confirm-MgUserMemberGroup](Confirm-MgUserMemberGroup.md)
 Invoke action checkMemberGroups
 
 ### [Confirm-MgUserMemberObject](Confirm-MgUserMemberObject.md)
 Invoke action checkMemberObjects
 
+### [Copy-MgUserDriveItem](Copy-MgUserDriveItem.md)
+Invoke action copy
+
+### [Copy-MgUserDriveListContentTypeToDefaultContentLocation](Copy-MgUserDriveListContentTypeToDefaultContentLocation.md)
+Invoke action copyToDefaultContentLocation
+
+### [Copy-MgUserDriveRoot](Copy-MgUserDriveRoot.md)
+Invoke action copy
+
 ### [Copy-MgUserMailFolder](Copy-MgUserMailFolder.md)
 Invoke action copy
 
 ### [Copy-MgUserMailFolderChildFolder](Copy-MgUserMailFolderChildFolder.md)
+Invoke action copy
+
+### [Copy-MgUserMailFolderChildFolderMessage](Copy-MgUserMailFolderChildFolderMessage.md)
 Invoke action copy
 
 ### [Copy-MgUserMailFolderMessage](Copy-MgUserMailFolderMessage.md)
@@ -68,29 +125,47 @@ Invoke action copyToNotebook
 ### [Copy-MgUserOnenoteSectionToSectionGroup](Copy-MgUserOnenoteSectionToSectionGroup.md)
 Invoke action copyToSectionGroup
 
-### [Disable-MgUserAuthenticationMethodSmSign](Disable-MgUserAuthenticationMethodSmSign.md)
+### [Disable-MgUserAuthenticationMethodSmsSignIn](Disable-MgUserAuthenticationMethodSmsSignIn.md)
 Invoke action disableSmsSignIn
 
 ### [Disable-MgUserManagedDevice](Disable-MgUserManagedDevice.md)
 Invoke action disable
 
 ### [Disable-MgUserManagedDeviceLostMode](Disable-MgUserManagedDeviceLostMode.md)
-Disable lost mode
+Invoke action disableLostMode
 
-### [Enable-MgUserAuthenticationMethodSmSign](Enable-MgUserAuthenticationMethodSmSign.md)
+### [Enable-MgUserAuthenticationMethodSmsSignIn](Enable-MgUserAuthenticationMethodSmsSignIn.md)
 Invoke action enableSmsSignIn
 
 ### [Enable-MgUserManagedDeviceLostMode](Enable-MgUserManagedDeviceLostMode.md)
-Enable lost mode
+Invoke action enableLostMode
 
 ### [Export-MgUserPersonalData](Export-MgUserPersonalData.md)
 Invoke action exportPersonalData
 
 ### [Find-MgUserManagedDevice](Find-MgUserManagedDevice.md)
-Locate a device
+Invoke action locateDevice
 
 ### [Find-MgUserMeetingTime](Find-MgUserMeetingTime.md)
 Invoke action findMeetingTimes
+
+### [Get-MgUserAuthenticationMicrosoftAuthenticatorMethodDeviceMemberGroup](Get-MgUserAuthenticationMicrosoftAuthenticatorMethodDeviceMemberGroup.md)
+Invoke action getMemberGroups
+
+### [Get-MgUserAuthenticationMicrosoftAuthenticatorMethodDeviceMemberObject](Get-MgUserAuthenticationMicrosoftAuthenticatorMethodDeviceMemberObject.md)
+Invoke action getMemberObjects
+
+### [Get-MgUserAuthenticationPasswordlessMicrosoftAuthenticatorMethodDeviceMemberGroup](Get-MgUserAuthenticationPasswordlessMicrosoftAuthenticatorMethodDeviceMemberGroup.md)
+Invoke action getMemberGroups
+
+### [Get-MgUserAuthenticationPasswordlessMicrosoftAuthenticatorMethodDeviceMemberObject](Get-MgUserAuthenticationPasswordlessMicrosoftAuthenticatorMethodDeviceMemberObject.md)
+Invoke action getMemberObjects
+
+### [Get-MgUserAuthenticationWindowHelloForBusinessMethodDeviceMemberGroup](Get-MgUserAuthenticationWindowHelloForBusinessMethodDeviceMemberGroup.md)
+Invoke action getMemberGroups
+
+### [Get-MgUserAuthenticationWindowHelloForBusinessMethodDeviceMemberObject](Get-MgUserAuthenticationWindowHelloForBusinessMethodDeviceMemberObject.md)
+Invoke action getMemberObjects
 
 ### [Get-MgUserById](Get-MgUserById.md)
 Invoke action getByIds
@@ -98,11 +173,38 @@ Invoke action getByIds
 ### [Get-MgUserCalendarSchedule](Get-MgUserCalendarSchedule.md)
 Invoke action getSchedule
 
+### [Get-MgUserChatPermissionGrantById](Get-MgUserChatPermissionGrantById.md)
+Invoke action getByIds
+
+### [Get-MgUserChatPermissionGrantMemberGroup](Get-MgUserChatPermissionGrantMemberGroup.md)
+Invoke action getMemberGroups
+
+### [Get-MgUserChatPermissionGrantMemberObject](Get-MgUserChatPermissionGrantMemberObject.md)
+Invoke action getMemberObjects
+
+### [Get-MgUserChatPermissionGrantUserOwnedObject](Get-MgUserChatPermissionGrantUserOwnedObject.md)
+Invoke action getUserOwnedObjects
+
 ### [Get-MgUserDefaultCalendarSchedule](Get-MgUserDefaultCalendarSchedule.md)
 Invoke action getSchedule
 
-### [Get-MgUserEventCalendarSchedule](Get-MgUserEventCalendarSchedule.md)
-Invoke action getSchedule
+### [Get-MgUserDeviceById](Get-MgUserDeviceById.md)
+Invoke action getByIds
+
+### [Get-MgUserDeviceMemberGroup](Get-MgUserDeviceMemberGroup.md)
+Invoke action getMemberGroups
+
+### [Get-MgUserDeviceMemberObject](Get-MgUserDeviceMemberObject.md)
+Invoke action getMemberObjects
+
+### [Get-MgUserDeviceUserOwnedObject](Get-MgUserDeviceUserOwnedObject.md)
+Invoke action getUserOwnedObjects
+
+### [Get-MgUserJoinedGroupById](Get-MgUserJoinedGroupById.md)
+Invoke action getByIds
+
+### [Get-MgUserJoinedGroupUserOwnedObject](Get-MgUserJoinedGroupUserOwnedObject.md)
+Invoke action getUserOwnedObjects
 
 ### [Get-MgUserMailTip](Get-MgUserMailTip.md)
 Invoke action getMailTips
@@ -119,8 +221,17 @@ Invoke action getNotebookFromWebUrl
 ### [Get-MgUserOwnedObjectByType](Get-MgUserOwnedObjectByType.md)
 Invoke action getUserOwnedObjects
 
+### [Grant-MgUserDriveItemPermission](Grant-MgUserDriveItemPermission.md)
+Invoke action grant
+
+### [Grant-MgUserDriveRootPermission](Grant-MgUserDriveRootPermission.md)
+Invoke action grant
+
+### [Hide-MgUserChatForUser](Hide-MgUserChatForUser.md)
+Invoke action hideForUser
+
 ### [Initialize-MgUserManagedDeviceEsim](Initialize-MgUserManagedDeviceEsim.md)
-Activate eSIM on the device.
+Invoke action activateDeviceEsim
 
 ### [Initialize-MgUserServicePlan](Initialize-MgUserServicePlan.md)
 Invoke action activateServicePlan
@@ -137,35 +248,17 @@ Invoke action tentativelyAccept
 ### [Invoke-MgAcceptUserEventTentatively](Invoke-MgAcceptUserEventTentatively.md)
 Invoke action tentativelyAccept
 
-### [Invoke-MgAcceptUserMailFolderMessageMicrosoftGraphCalendarSharingMessage](Invoke-MgAcceptUserMailFolderMessageMicrosoftGraphCalendarSharingMessage.md)
-Invoke action accept
-
-### [Invoke-MgAcceptUserMailFolderMessageMicrosoftGraphEventMessageRequest](Invoke-MgAcceptUserMailFolderMessageMicrosoftGraphEventMessageRequest.md)
-Invoke action accept
-
-### [Invoke-MgAcceptUserMailFolderMessageMicrosoftGraphEventMessageRequestTentatively](Invoke-MgAcceptUserMailFolderMessageMicrosoftGraphEventMessageRequestTentatively.md)
-Invoke action tentativelyAccept
-
-### [Invoke-MgAcceptUserMessageMicrosoftGraphCalendarSharingMessage](Invoke-MgAcceptUserMessageMicrosoftGraphCalendarSharingMessage.md)
-Invoke action accept
-
-### [Invoke-MgAcceptUserMessageMicrosoftGraphEventMessageRequest](Invoke-MgAcceptUserMessageMicrosoftGraphEventMessageRequest.md)
-Invoke action accept
-
-### [Invoke-MgAcceptUserMessageMicrosoftGraphEventMessageRequestTentatively](Invoke-MgAcceptUserMessageMicrosoftGraphEventMessageRequestTentatively.md)
-Invoke action tentativelyAccept
-
-### [Invoke-MgAcceptUserPendingAccessReviewInstanceDecisionInstanceRecommendation](Invoke-MgAcceptUserPendingAccessReviewInstanceDecisionInstanceRecommendation.md)
-Invoke action acceptRecommendations
-
 ### [Invoke-MgAcceptUserPendingAccessReviewInstanceRecommendation](Invoke-MgAcceptUserPendingAccessReviewInstanceRecommendation.md)
 Invoke action acceptRecommendations
 
-### [Invoke-MgBatchUserPendingAccessReviewInstanceDecisionInstanceRecordDecision](Invoke-MgBatchUserPendingAccessReviewInstanceDecisionInstanceRecordDecision.md)
-Invoke action batchRecordDecisions
-
 ### [Invoke-MgBatchUserPendingAccessReviewInstanceRecordDecision](Invoke-MgBatchUserPendingAccessReviewInstanceRecordDecision.md)
 Invoke action batchRecordDecisions
+
+### [Invoke-MgBufferUserInformationProtectionDecrypt](Invoke-MgBufferUserInformationProtectionDecrypt.md)
+Invoke action decryptBuffer
+
+### [Invoke-MgBufferUserInformationProtectionEncrypt](Invoke-MgBufferUserInformationProtectionEncrypt.md)
+Invoke action encryptBuffer
 
 ### [Invoke-MgBulkReprovisionUserManagedDeviceCloudPc](Invoke-MgBulkReprovisionUserManagedDeviceCloudPc.md)
 Invoke action bulkReprovisionCloudPc
@@ -173,8 +266,23 @@ Invoke action bulkReprovisionCloudPc
 ### [Invoke-MgBulkRestoreUserManagedDeviceCloudPc](Invoke-MgBulkRestoreUserManagedDeviceCloudPc.md)
 Invoke action bulkRestoreCloudPc
 
+### [Invoke-MgBulkUserManagedDeviceSetCloudPcReviewStatus](Invoke-MgBulkUserManagedDeviceSetCloudPcReviewStatus.md)
+Invoke action bulkSetCloudPcReviewStatus
+
+### [Invoke-MgCheckinUserDriveItem](Invoke-MgCheckinUserDriveItem.md)
+Invoke action checkin
+
+### [Invoke-MgCheckinUserDriveRoot](Invoke-MgCheckinUserDriveRoot.md)
+Invoke action checkin
+
+### [Invoke-MgCheckoutUserDriveItem](Invoke-MgCheckoutUserDriveItem.md)
+Invoke action checkout
+
+### [Invoke-MgCheckoutUserDriveRoot](Invoke-MgCheckoutUserDriveRoot.md)
+Invoke action checkout
+
 ### [Invoke-MgCleanUserManagedDeviceWindowDevice](Invoke-MgCleanUserManagedDeviceWindowDevice.md)
-Clean Windows device
+Invoke action cleanWindowsDevice
 
 ### [Invoke-MgCreateOrGetUserOnlineMeeting](Invoke-MgCreateOrGetUserOnlineMeeting.md)
 Invoke action createOrGet
@@ -183,12 +291,6 @@ Invoke action createOrGet
 Invoke action decline
 
 ### [Invoke-MgDeclineUserEventInstance](Invoke-MgDeclineUserEventInstance.md)
-Invoke action decline
-
-### [Invoke-MgDeclineUserMailFolderMessageMicrosoftGraphEventMessageRequest](Invoke-MgDeclineUserMailFolderMessageMicrosoftGraphEventMessageRequest.md)
-Invoke action decline
-
-### [Invoke-MgDeclineUserMessageMicrosoftGraphEventMessageRequest](Invoke-MgDeclineUserMessageMicrosoftGraphEventMessageRequest.md)
 Invoke action decline
 
 ### [Invoke-MgDeprovisionUserManagedDevice](Invoke-MgDeprovisionUserManagedDevice.md)
@@ -201,18 +303,36 @@ Invoke action dismissReminder
 Invoke action dismissReminder
 
 ### [Invoke-MgDownUserManagedDeviceShut](Invoke-MgDownUserManagedDeviceShut.md)
-Shut down device
+Invoke action shutDown
 
 ### [Invoke-MgExecuteUserManagedDeviceAction](Invoke-MgExecuteUserManagedDeviceAction.md)
 Invoke action executeAction
 
+### [Invoke-MgExtractUserDriveItemSensitivityLabel](Invoke-MgExtractUserDriveItemSensitivityLabel.md)
+Invoke action extractSensitivityLabels
+
+### [Invoke-MgExtractUserDriveRootSensitivityLabel](Invoke-MgExtractUserDriveRootSensitivityLabel.md)
+Invoke action extractSensitivityLabels
+
+### [Invoke-MgExtractUserInformationProtectionPolicyLabel](Invoke-MgExtractUserInformationProtectionPolicyLabel.md)
+Invoke action extractLabel
+
 ### [Invoke-MgExtractUserSecurityInformationProtectionSensitivityLabelContentLabel](Invoke-MgExtractUserSecurityInformationProtectionSensitivityLabelContentLabel.md)
 Invoke action extractContentLabel
+
+### [Invoke-MgFollowUserDriveItem](Invoke-MgFollowUserDriveItem.md)
+Invoke action follow
+
+### [Invoke-MgFollowUserDriveRoot](Invoke-MgFollowUserDriveRoot.md)
+Invoke action follow
 
 ### [Invoke-MgForwardUserEvent](Invoke-MgForwardUserEvent.md)
 Invoke action forward
 
 ### [Invoke-MgForwardUserEventInstance](Invoke-MgForwardUserEventInstance.md)
+Invoke action forward
+
+### [Invoke-MgForwardUserMailFolderChildFolderMessage](Invoke-MgForwardUserMailFolderChildFolderMessage.md)
 Invoke action forward
 
 ### [Invoke-MgForwardUserMailFolderMessage](Invoke-MgForwardUserMailFolderMessage.md)
@@ -221,23 +341,53 @@ Invoke action forward
 ### [Invoke-MgForwardUserMessage](Invoke-MgForwardUserMessage.md)
 Invoke action forward
 
+### [Invoke-MgGraphUserChat](Invoke-MgGraphUserChat.md)
+Invoke action unhideForUser
+
 ### [Invoke-MgHasUserDeviceEnrollmentConfigurationPayloadLink](Invoke-MgHasUserDeviceEnrollmentConfigurationPayloadLink.md)
 Invoke action hasPayloadLinks
 
 ### [Invoke-MgInvalidateUserRefreshToken](Invoke-MgInvalidateUserRefreshToken.md)
 Invoke action invalidateAllRefreshTokens
 
+### [Invoke-MgInviteUserDriveItem](Invoke-MgInviteUserDriveItem.md)
+Invoke action invite
+
+### [Invoke-MgInviteUserDriveRoot](Invoke-MgInviteUserDriveRoot.md)
+Invoke action invite
+
 ### [Invoke-MgLicenseUser](Invoke-MgLicenseUser.md)
 Invoke action reprocessLicenseAssignment
 
 ### [Invoke-MgLogoutUserManagedDeviceSharedAppleDeviceActiveUser](Invoke-MgLogoutUserManagedDeviceSharedAppleDeviceActiveUser.md)
-Logout shared Apple device active user
+Invoke action logoutSharedAppleDeviceActiveUser
+
+### [Invoke-MgMarkUserChatReadForUser](Invoke-MgMarkUserChatReadForUser.md)
+Invoke action markChatReadForUser
+
+### [Invoke-MgMarkUserChatUnreadForUser](Invoke-MgMarkUserChatUnreadForUser.md)
+Invoke action markChatUnreadForUser
 
 ### [Invoke-MgOverrideUserManagedDeviceComplianceState](Invoke-MgOverrideUserManagedDeviceComplianceState.md)
 Invoke action overrideComplianceState
 
 ### [Invoke-MgPlayUserManagedDeviceLostModeSound](Invoke-MgPlayUserManagedDeviceLostModeSound.md)
-Play lost mode sound
+Invoke action playLostModeSound
+
+### [Invoke-MgPreviewUserDriveItem](Invoke-MgPreviewUserDriveItem.md)
+Invoke action preview
+
+### [Invoke-MgPreviewUserDriveRoot](Invoke-MgPreviewUserDriveRoot.md)
+Invoke action preview
+
+### [Invoke-MgReauthorizeUserDriveItemSubscription](Invoke-MgReauthorizeUserDriveItemSubscription.md)
+Invoke action reauthorize
+
+### [Invoke-MgReauthorizeUserDriveListSubscription](Invoke-MgReauthorizeUserDriveListSubscription.md)
+Invoke action reauthorize
+
+### [Invoke-MgReauthorizeUserDriveRootSubscription](Invoke-MgReauthorizeUserDriveRootSubscription.md)
+Invoke action reauthorize
 
 ### [Invoke-MgRecordUserPendingAccessReviewInstanceDecision](Invoke-MgRecordUserPendingAccessReviewInstanceDecision.md)
 Invoke action recordAllDecisions
@@ -245,11 +395,17 @@ Invoke action recordAllDecisions
 ### [Invoke-MgReenableUserManagedDevice](Invoke-MgReenableUserManagedDevice.md)
 Invoke action reenable
 
+### [Invoke-MgReplyAllUserMailFolderChildFolderMessage](Invoke-MgReplyAllUserMailFolderChildFolderMessage.md)
+Invoke action replyAll
+
 ### [Invoke-MgReplyAllUserMailFolderMessage](Invoke-MgReplyAllUserMailFolderMessage.md)
 Invoke action replyAll
 
 ### [Invoke-MgReplyAllUserMessage](Invoke-MgReplyAllUserMessage.md)
 Invoke action replyAll
+
+### [Invoke-MgReplyUserMailFolderChildFolderMessage](Invoke-MgReplyUserMailFolderChildFolderMessage.md)
+Invoke action reply
 
 ### [Invoke-MgReplyUserMailFolderMessage](Invoke-MgReplyUserMailFolderMessage.md)
 Invoke action reply
@@ -264,10 +420,10 @@ Invoke action reprovision
 Invoke action reprovisionCloudPc
 
 ### [Invoke-MgRetireUserManagedDevice](Invoke-MgRetireUserManagedDevice.md)
-Retire a device
+Invoke action retire
 
 ### [Invoke-MgRotateUserManagedDeviceBitLockerKey](Invoke-MgRotateUserManagedDeviceBitLockerKey.md)
-Rotate BitLockerKeys
+Invoke action rotateBitLockerKeys
 
 ### [Invoke-MgRotateUserManagedDeviceFileVaultKey](Invoke-MgRotateUserManagedDeviceFileVaultKey.md)
 Invoke action rotateFileVaultKey
@@ -275,11 +431,20 @@ Invoke action rotateFileVaultKey
 ### [Invoke-MgScanUserManagedDeviceWindowDefender](Invoke-MgScanUserManagedDeviceWindowDefender.md)
 Invoke action windowsDefenderScan
 
+### [Invoke-MgSignUserInformationProtectionDigest](Invoke-MgSignUserInformationProtectionDigest.md)
+Invoke action signDigest
+
 ### [Invoke-MgSnoozeUserEventInstanceReminder](Invoke-MgSnoozeUserEventInstanceReminder.md)
 Invoke action snoozeReminder
 
 ### [Invoke-MgSnoozeUserEventReminder](Invoke-MgSnoozeUserEventReminder.md)
 Invoke action snoozeReminder
+
+### [Invoke-MgSoftUserChatMessageDelete](Invoke-MgSoftUserChatMessageDelete.md)
+Invoke action softDelete
+
+### [Invoke-MgSoftUserChatMessageReplyDelete](Invoke-MgSoftUserChatMessageReplyDelete.md)
+Invoke action softDelete
 
 ### [Invoke-MgTranslateUserExchangeId](Invoke-MgTranslateUserExchangeId.md)
 Invoke action translateExchangeIds
@@ -287,19 +452,34 @@ Invoke action translateExchangeIds
 ### [Invoke-MgTroubleshootUserCloudPc](Invoke-MgTroubleshootUserCloudPc.md)
 Invoke action troubleshoot
 
+### [Invoke-MgUnfollowUserDriveItem](Invoke-MgUnfollowUserDriveItem.md)
+Invoke action unfollow
+
+### [Invoke-MgUnfollowUserDriveRoot](Invoke-MgUnfollowUserDriveRoot.md)
+Invoke action unfollow
+
+### [Invoke-MgUnsubscribeUserMailFolderChildFolderMessage](Invoke-MgUnsubscribeUserMailFolderChildFolderMessage.md)
+Invoke action unsubscribe
+
 ### [Invoke-MgUnsubscribeUserMailFolderMessage](Invoke-MgUnsubscribeUserMailFolderMessage.md)
 Invoke action unsubscribe
 
 ### [Invoke-MgUnsubscribeUserMessage](Invoke-MgUnsubscribeUserMessage.md)
 Invoke action unsubscribe
 
+### [Join-MgUserDriveListContentTypeWithHubSite](Join-MgUserDriveListContentTypeWithHubSite.md)
+Invoke action associateWithHubSites
+
 ### [Lock-MgUserManagedDeviceRemote](Lock-MgUserManagedDeviceRemote.md)
-Remote lock
+Invoke action remoteLock
 
 ### [Move-MgUserMailFolder](Move-MgUserMailFolder.md)
 Invoke action move
 
 ### [Move-MgUserMailFolderChildFolder](Move-MgUserMailFolderChildFolder.md)
+Invoke action move
+
+### [Move-MgUserMailFolderChildFolderMessage](Move-MgUserMailFolderChildFolderMessage.md)
 Invoke action move
 
 ### [Move-MgUserMailFolderMessage](Move-MgUserMailFolderMessage.md)
@@ -317,8 +497,47 @@ Invoke action move
 ### [Move-MgUserTaskListTask](Move-MgUserTaskListTask.md)
 Invoke action move
 
+### [New-MgUserDeviceEnrollmentConfigurationEnrollmentNotificationConfiguration](New-MgUserDeviceEnrollmentConfigurationEnrollmentNotificationConfiguration.md)
+Invoke action createEnrollmentNotificationConfiguration
+
+### [New-MgUserDriveItemLink](New-MgUserDriveItemLink.md)
+Invoke action createLink
+
+### [New-MgUserDriveItemListItemLink](New-MgUserDriveItemListItemLink.md)
+Invoke action createLink
+
+### [New-MgUserDriveItemUploadSession](New-MgUserDriveItemUploadSession.md)
+Invoke action createUploadSession
+
+### [New-MgUserDriveListItemLink](New-MgUserDriveListItemLink.md)
+Invoke action createLink
+
+### [New-MgUserDriveRootLink](New-MgUserDriveRootLink.md)
+Invoke action createLink
+
+### [New-MgUserDriveRootListItemLink](New-MgUserDriveRootListItemLink.md)
+Invoke action createLink
+
+### [New-MgUserDriveRootUploadSession](New-MgUserDriveRootUploadSession.md)
+Invoke action createUploadSession
+
 ### [New-MgUserEventAttachmentUploadSession](New-MgUserEventAttachmentUploadSession.md)
 Invoke action createUploadSession
+
+### [New-MgUserEventInstanceAttachmentUploadSession](New-MgUserEventInstanceAttachmentUploadSession.md)
+Invoke action createUploadSession
+
+### [New-MgUserMailFolderChildFolderMessageAttachmentUploadSession](New-MgUserMailFolderChildFolderMessageAttachmentUploadSession.md)
+Invoke action createUploadSession
+
+### [New-MgUserMailFolderChildFolderMessageForward](New-MgUserMailFolderChildFolderMessageForward.md)
+Invoke action createForward
+
+### [New-MgUserMailFolderChildFolderMessageReply](New-MgUserMailFolderChildFolderMessageReply.md)
+Invoke action createReply
+
+### [New-MgUserMailFolderChildFolderMessageReplyAll](New-MgUserMailFolderChildFolderMessageReplyAll.md)
+Invoke action createReplyAll
 
 ### [New-MgUserMailFolderMessageAttachmentUploadSession](New-MgUserMailFolderMessageAttachmentUploadSession.md)
 Invoke action createUploadSession
@@ -365,11 +584,20 @@ Invoke action createUploadSession
 ### [New-MgUserOutlookTaskGroupTaskFolderTaskAttachmentUploadSession](New-MgUserOutlookTaskGroupTaskFolderTaskAttachmentUploadSession.md)
 Invoke action createUploadSession
 
+### [New-MgUserTodoListTaskAttachmentUploadSession](New-MgUserTodoListTaskAttachmentUploadSession.md)
+Invoke action createUploadSession
+
+### [Publish-MgUserDriveListContentType](Publish-MgUserDriveListContentType.md)
+Invoke action publish
+
 ### [Remove-MgUserDeviceFromManagement](Remove-MgUserDeviceFromManagement.md)
-Retire all devices from management for this user
+Invoke action removeAllDevicesFromManagement
+
+### [Remove-MgUserManagedDeviceFirmwareConfigurationInterfaceManagement](Remove-MgUserManagedDeviceFirmwareConfigurationInterfaceManagement.md)
+Invoke action removeDeviceFirmwareConfigurationInterfaceManagement
 
 ### [Remove-MgUserManagedDeviceUserFromSharedAppleDevice](Remove-MgUserManagedDeviceUserFromSharedAppleDevice.md)
-Delete user from shared Apple device
+Invoke action deleteUserFromSharedAppleDevice
 
 ### [Rename-MgUserCloudPc](Rename-MgUserCloudPc.md)
 Invoke action rename
@@ -378,13 +606,13 @@ Invoke action rename
 Invoke action changeUserAccountType
 
 ### [Request-MgUserManagedDeviceRemoteAssistance](Request-MgUserManagedDeviceRemoteAssistance.md)
-Request remote assistance
+Invoke action requestRemoteAssistance
 
 ### [Reset-MgUserAuthenticationMethodPassword](Reset-MgUserAuthenticationMethodPassword.md)
 Invoke action resetPassword
 
 ### [Reset-MgUserManagedDevicePasscode](Reset-MgUserManagedDevicePasscode.md)
-Reset passcode
+Invoke action resetPasscode
 
 ### [Reset-MgUserPendingAccessReviewInstanceDecision](Reset-MgUserPendingAccessReviewInstanceDecision.md)
 Invoke action resetDecisions
@@ -396,25 +624,67 @@ Invoke action resizeCloudPc
 Invoke action reboot
 
 ### [Restart-MgUserManagedDeviceNow](Restart-MgUserManagedDeviceNow.md)
-Reboot device
+Invoke action rebootNow
 
-### [Restore-MgUser](Restore-MgUser.md)
+### [Restore-MgUserAuthenticationWindowHelloForBusinessMethodDevice](Restore-MgUserAuthenticationWindowHelloForBusinessMethodDevice.md)
 Invoke action restore
+
+### [Restore-MgUserDriveItem](Restore-MgUserDriveItem.md)
+Invoke action restore
+
+### [Restore-MgUserDriveItemListItemDocumentSetVersion](Restore-MgUserDriveItemListItemDocumentSetVersion.md)
+Invoke action restore
+
+### [Restore-MgUserDriveItemListItemVersion](Restore-MgUserDriveItemListItemVersion.md)
+Invoke action restoreVersion
+
+### [Restore-MgUserDriveItemVersion](Restore-MgUserDriveItemVersion.md)
+Invoke action restoreVersion
+
+### [Restore-MgUserDriveListItemDocumentSetVersion](Restore-MgUserDriveListItemDocumentSetVersion.md)
+Invoke action restore
+
+### [Restore-MgUserDriveListItemVersion](Restore-MgUserDriveListItemVersion.md)
+Invoke action restoreVersion
+
+### [Restore-MgUserDriveRoot](Restore-MgUserDriveRoot.md)
+Invoke action restore
+
+### [Restore-MgUserDriveRootListItemDocumentSetVersion](Restore-MgUserDriveRootListItemDocumentSetVersion.md)
+Invoke action restore
+
+### [Restore-MgUserDriveRootListItemVersion](Restore-MgUserDriveRootListItemVersion.md)
+Invoke action restoreVersion
+
+### [Restore-MgUserDriveRootVersion](Restore-MgUserDriveRootVersion.md)
+Invoke action restoreVersion
 
 ### [Restore-MgUserManagedDeviceCloudPc](Restore-MgUserManagedDeviceCloudPc.md)
 Invoke action restoreCloudPc
 
 ### [Restore-MgUserManagedDevicePasscode](Restore-MgUserManagedDevicePasscode.md)
-Recover passcode
+Invoke action recoverPasscode
+
+### [Revoke-MgUserDriveItemPermissionGrant](Revoke-MgUserDriveItemPermissionGrant.md)
+Invoke action revokeGrants
+
+### [Revoke-MgUserDriveRootPermissionGrant](Revoke-MgUserDriveRootPermissionGrant.md)
+Invoke action revokeGrants
 
 ### [Revoke-MgUserManagedDeviceAppleVppLicense](Revoke-MgUserManagedDeviceAppleVppLicense.md)
-Revoke all Apple Vpp licenses for a device
+Invoke action revokeAppleVppLicenses
 
-### [Revoke-MgUserSign](Revoke-MgUserSign.md)
+### [Revoke-MgUserSignInSession](Revoke-MgUserSignInSession.md)
 Invoke action revokeSignInSessions
+
+### [Send-MgUserChatActivityNotification](Send-MgUserChatActivityNotification.md)
+Invoke action sendActivityNotification
 
 ### [Send-MgUserMail](Send-MgUserMail.md)
 Invoke action sendMail
+
+### [Send-MgUserMailFolderChildFolderMessage](Send-MgUserMailFolderChildFolderMessage.md)
+Invoke action send
 
 ### [Send-MgUserMailFolderMessage](Send-MgUserMailFolderMessage.md)
 Invoke action send
@@ -424,9 +694,6 @@ Invoke action sendCustomNotificationToCompanyPortal
 
 ### [Send-MgUserMessage](Send-MgUserMessage.md)
 Invoke action send
-
-### [Send-MgUserPendingAccessReviewInstanceDecisionInstanceReminder](Send-MgUserPendingAccessReviewInstanceDecisionInstanceReminder.md)
-Invoke action sendReminder
 
 ### [Send-MgUserPendingAccessReviewInstanceReminder](Send-MgUserPendingAccessReviewInstanceReminder.md)
 Invoke action sendReminder
@@ -443,8 +710,11 @@ Invoke action setPriority
 ### [Set-MgUserLicense](Set-MgUserLicense.md)
 Invoke action assignLicense
 
+### [Set-MgUserManagedDeviceCloudPcReviewStatus](Set-MgUserManagedDeviceCloudPcReviewStatus.md)
+Invoke action setCloudPcReviewStatus
+
 ### [Set-MgUserManagedDeviceName](Set-MgUserManagedDeviceName.md)
-Set device name of the device.
+Invoke action setDeviceName
 
 ### [Set-MgUserPresence](Set-MgUserPresence.md)
 Invoke action setPresence
@@ -453,10 +723,10 @@ Invoke action setPresence
 Invoke action setUserPreferredPresence
 
 ### [Skip-MgUserManagedDeviceActivationLock](Skip-MgUserManagedDeviceActivationLock.md)
-Bypass activation lock
+Invoke action bypassActivationLock
 
 ### [Start-MgUserManagedDeviceConfigurationManagerAction](Start-MgUserManagedDeviceConfigurationManagerAction.md)
-Trigger action on ConfigurationManager client
+Invoke action triggerConfigurationManagerAction
 
 ### [Stop-MgUserCloudPcGracePeriod](Stop-MgUserCloudPcGracePeriod.md)
 Invoke action endGracePeriod
@@ -470,17 +740,47 @@ Invoke action cancel
 ### [Stop-MgUserPendingAccessReviewInstance](Stop-MgUserPendingAccessReviewInstance.md)
 Invoke action stop
 
-### [Stop-MgUserPendingAccessReviewInstanceDecisionInstance](Stop-MgUserPendingAccessReviewInstanceDecisionInstance.md)
-Invoke action stop
-
-### [Stop-MgUserPendingAccessReviewInstanceDefinition](Stop-MgUserPendingAccessReviewInstanceDefinition.md)
-Invoke action stop
-
 ### [Stop-MgUserPendingAccessReviewInstanceStage](Stop-MgUserPendingAccessReviewInstanceStage.md)
 Invoke action stop
 
 ### [Sync-MgUserManagedDevice](Sync-MgUserManagedDevice.md)
 Invoke action syncDevice
+
+### [Test-MgUserChatPermissionGrantProperty](Test-MgUserChatPermissionGrantProperty.md)
+Invoke action validateProperties
+
+### [Test-MgUserDeviceProperty](Test-MgUserDeviceProperty.md)
+Invoke action validateProperties
+
+### [Test-MgUserDriveItemPermission](Test-MgUserDriveItemPermission.md)
+Invoke action validatePermission
+
+### [Test-MgUserDriveRootPermission](Test-MgUserDriveRootPermission.md)
+Invoke action validatePermission
+
+### [Test-MgUserInformationProtectionDataLossPreventionPolicy](Test-MgUserInformationProtectionDataLossPreventionPolicy.md)
+Invoke action evaluate
+
+### [Test-MgUserInformationProtectionPolicyLabelApplication](Test-MgUserInformationProtectionPolicyLabelApplication.md)
+Invoke action evaluateApplication
+
+### [Test-MgUserInformationProtectionPolicyLabelClassificationResult](Test-MgUserInformationProtectionPolicyLabelClassificationResult.md)
+Invoke action evaluateClassificationResults
+
+### [Test-MgUserInformationProtectionPolicyLabelRemoval](Test-MgUserInformationProtectionPolicyLabelRemoval.md)
+Invoke action evaluateRemoval
+
+### [Test-MgUserInformationProtectionSensitivityLabel](Test-MgUserInformationProtectionSensitivityLabel.md)
+Invoke action evaluate
+
+### [Test-MgUserInformationProtectionSensitivityLabelSublabel](Test-MgUserInformationProtectionSensitivityLabelSublabel.md)
+Invoke action evaluate
+
+### [Test-MgUserJoinedGroupDynamicMembership](Test-MgUserJoinedGroupDynamicMembership.md)
+Invoke action evaluateDynamicMembership
+
+### [Test-MgUserJoinedGroupProperty](Test-MgUserJoinedGroupProperty.md)
+Invoke action validateProperties
 
 ### [Test-MgUserPassword](Test-MgUserPassword.md)
 Invoke action validatePassword
@@ -498,7 +798,19 @@ Invoke action evaluateClassificationResults
 Invoke action evaluateRemoval
 
 ### [Unblock-MgUserManagedApp](Unblock-MgUserManagedApp.md)
-Unblocks the managed app user from app check-in.
+Invoke action unblockManagedApps
+
+### [Undo-MgUserChatMessageReplySoftDelete](Undo-MgUserChatMessageReplySoftDelete.md)
+Invoke action undoSoftDelete
+
+### [Undo-MgUserChatMessageSoftDelete](Undo-MgUserChatMessageSoftDelete.md)
+Invoke action undoSoftDelete
+
+### [Unpublish-MgUserDriveListContentType](Unpublish-MgUserDriveListContentType.md)
+Invoke action unpublish
+
+### [Update-MgUserChatInstalledApp](Update-MgUserChatInstalledApp.md)
+Invoke action upgrade
 
 ### [Update-MgUserManagedDeviceWindowDeviceAccount](Update-MgUserManagedDeviceWindowDeviceAccount.md)
 Invoke action updateWindowsDeviceAccount

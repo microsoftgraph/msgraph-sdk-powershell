@@ -51,6 +51,9 @@ directive:
       verb: Get
       subject: (Application|ServicePrincipal)AvailableExtensionProperty
     remove: true
+  - where:
+      subject: (ServicePrincipal)FederatedIdentityCredential.*
+    remove: true
 # Alias then rename cmdlets to avoid breaking change.
   - where:
       subject: ^((ServicePrincipal|Application)(Member|TransitiveMember|CreatedOnBehalf))Of$
@@ -75,6 +78,6 @@ directive:
 ### Versioning
 
 ``` yaml
-module-version: 1.10.0
+module-version: 1.11.0
 release-notes: See https://aka.ms/GraphPowerShell-Release.
 ```

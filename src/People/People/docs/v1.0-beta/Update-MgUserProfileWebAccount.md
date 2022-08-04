@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgUserProfileWebAccount
 
 ## SYNOPSIS
-Represents web accounts the user has indicated they use or has added to their user profile.
+Update the navigation property webAccounts in users
 
 ## SYNTAX
 
@@ -47,7 +47,7 @@ Update-MgUserProfileWebAccount -InputObject <IPeopleIdentity> [-UserId <String>]
 ```
 
 ## DESCRIPTION
-Represents web accounts the user has indicated they use or has added to their user profile.
+Update the navigation property webAccounts in users
 
 ## EXAMPLES
 
@@ -146,7 +146,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -435,7 +435,7 @@ BODYPARAMETER <IMicrosoftGraphWebAccount>: webAccount
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Application <IMicrosoftGraphIdentity>]`: identity
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[DisplayName <String>]`: The identity's display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+      - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
       - `[Id <String>]`: Unique identifier for the identity.
     - `[Device <IMicrosoftGraphIdentity>]`: identity
     - `[User <IMicrosoftGraphIdentity>]`: identity
@@ -450,7 +450,7 @@ BODYPARAMETER <IMicrosoftGraphWebAccount>: webAccount
   - `[Source <IMicrosoftGraphPersonDataSources>]`: personDataSources
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Type <String[]>]`: 
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[Description <String>]`: Contains the description the user has provided for the account on the service being referenced.
   - `[Service <IMicrosoftGraphServiceInformation>]`: serviceInformation
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -465,7 +465,7 @@ CREATEDBY <IMicrosoftGraphIdentitySet>: identitySet
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Application <IMicrosoftGraphIdentity>]`: identity
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[DisplayName <String>]`: The identity's display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+    - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
     - `[Id <String>]`: Unique identifier for the identity.
   - `[Device <IMicrosoftGraphIdentity>]`: identity
   - `[User <IMicrosoftGraphIdentity>]`: identity
@@ -506,7 +506,7 @@ LASTMODIFIEDBY <IMicrosoftGraphIdentitySet>: identitySet
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Application <IMicrosoftGraphIdentity>]`: identity
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[DisplayName <String>]`: The identity's display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+    - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
     - `[Id <String>]`: Unique identifier for the identity.
   - `[Device <IMicrosoftGraphIdentity>]`: identity
   - `[User <IMicrosoftGraphIdentity>]`: identity

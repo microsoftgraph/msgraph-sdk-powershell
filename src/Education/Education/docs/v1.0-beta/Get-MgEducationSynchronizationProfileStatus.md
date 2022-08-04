@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgEducationSynchronizationProfileStatus
 
 ## SYNOPSIS
-The synchronization status.
+Get profileStatus from education
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Get-MgEducationSynchronizationProfileStatus -InputObject <IEducationIdentity> [-
 ```
 
 ## DESCRIPTION
-The synchronization status.
+Get profileStatus from education
 
 ## EXAMPLES
 

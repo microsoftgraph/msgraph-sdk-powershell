@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgPolicyRoleManagementPolicy
 
 ## SYNOPSIS
-Represents the role management policies.
+Update the navigation property roleManagementPolicies in policies
 
 ## SYNTAX
 
@@ -16,23 +16,23 @@ Represents the role management policies.
 ```
 Update-MgPolicyRoleManagementPolicy -UnifiedRoleManagementPolicyId <String>
  [-AdditionalProperties <Hashtable>] [-Description <String>] [-DisplayName <String>]
- [-EffectiveRules <IMicrosoftGraphUnifiedRoleManagementPolicyRule[]>] [-Id <String>] [-IsOrganizationDefault]
+ [-EffectiveRules <IMicrosoftGraphUnifiedRoleManagementPolicyRule1[]>] [-Id <String>] [-IsOrganizationDefault]
  [-LastModifiedBy <IMicrosoftGraphIdentity>] [-LastModifiedDateTime <DateTime>]
- [-Rules <IMicrosoftGraphUnifiedRoleManagementPolicyRule[]>] [-ScopeId <String>] [-ScopeType <String>]
+ [-Rules <IMicrosoftGraphUnifiedRoleManagementPolicyRule1[]>] [-ScopeId <String>] [-ScopeType <String>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgPolicyRoleManagementPolicy -UnifiedRoleManagementPolicyId <String>
- -BodyParameter <IMicrosoftGraphUnifiedRoleManagementPolicy> [-PassThru] [-Confirm] [-WhatIf]
+ -BodyParameter <IMicrosoftGraphUnifiedRoleManagementPolicy1> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgPolicyRoleManagementPolicy -InputObject <IIdentitySignInsIdentity>
- -BodyParameter <IMicrosoftGraphUnifiedRoleManagementPolicy> [-PassThru] [-Confirm] [-WhatIf]
+ -BodyParameter <IMicrosoftGraphUnifiedRoleManagementPolicy1> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -40,14 +40,14 @@ Update-MgPolicyRoleManagementPolicy -InputObject <IIdentitySignInsIdentity>
 ```
 Update-MgPolicyRoleManagementPolicy -InputObject <IIdentitySignInsIdentity>
  [-AdditionalProperties <Hashtable>] [-Description <String>] [-DisplayName <String>]
- [-EffectiveRules <IMicrosoftGraphUnifiedRoleManagementPolicyRule[]>] [-Id <String>] [-IsOrganizationDefault]
+ [-EffectiveRules <IMicrosoftGraphUnifiedRoleManagementPolicyRule1[]>] [-Id <String>] [-IsOrganizationDefault]
  [-LastModifiedBy <IMicrosoftGraphIdentity>] [-LastModifiedDateTime <DateTime>]
- [-Rules <IMicrosoftGraphUnifiedRoleManagementPolicyRule[]>] [-ScopeId <String>] [-ScopeType <String>]
+ [-Rules <IMicrosoftGraphUnifiedRoleManagementPolicyRule1[]>] [-ScopeId <String>] [-ScopeType <String>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Represents the role management policies.
+Update the navigation property roleManagementPolicies in policies
 
 ## EXAMPLES
 
@@ -73,7 +73,7 @@ unifiedRoleManagementPolicy
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUnifiedRoleManagementPolicy
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUnifiedRoleManagementPolicy1
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -115,13 +115,13 @@ Accept wildcard characters: False
 ```
 
 ### -EffectiveRules
-Not implemented.
 The list of effective rules like approval rules and expiration rules evaluated based on inherited referenced rules.
 For example, if there is a tenant-wide policy to enforce enabling an approval rule, the effective rule will be to enable approval even if the policy has a rule to disable approval.
+Supports $expand.
 To construct, please use Get-Help -Online and see NOTES section for EFFECTIVERULES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUnifiedRoleManagementPolicyRule[]
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUnifiedRoleManagementPolicyRule1[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -133,7 +133,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -164,8 +164,9 @@ Accept wildcard characters: False
 ```
 
 ### -IsOrganizationDefault
-This can only be set to true for a single tenant wide policy which will apply to all scopes and roles.
-Set the scopeId to '/' and scopeType to Directory.
+This can only be set to true for a single tenant-wide policy which will apply to all scopes and roles.
+Set the scopeId to / and scopeType to Directory.
+Supports $filter (eq, ne).
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -227,10 +228,11 @@ Accept wildcard characters: False
 
 ### -Rules
 The collection of rules like approval rules and expiration rules.
+Supports $expand.
 To construct, please use Get-Help -Online and see NOTES section for RULES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUnifiedRoleManagementPolicyRule[]
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUnifiedRoleManagementPolicyRule1[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -242,7 +244,7 @@ Accept wildcard characters: False
 ```
 
 ### -ScopeId
-The id of the scope where the policy is created.
+The identifier of the scope where the policy is created.
 Can be / for the tenant or a group ID.
 Required.
 
@@ -328,7 +330,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUnifiedRoleManagementPolicy
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUnifiedRoleManagementPolicy1
 
 ## OUTPUTS
 
@@ -343,54 +345,59 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-BODYPARAMETER <IMicrosoftGraphUnifiedRoleManagementPolicy>: unifiedRoleManagementPolicy
+BODYPARAMETER <IMicrosoftGraphUnifiedRoleManagementPolicy1>: unifiedRoleManagementPolicy
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[Description <String>]`: Description for the policy.
   - `[DisplayName <String>]`: Display name for the policy.
-  - `[EffectiveRules <IMicrosoftGraphUnifiedRoleManagementPolicyRule[]>]`: Not implemented. The list of effective rules like approval rules and expiration rules evaluated based on inherited referenced rules. For example, if there is a tenant-wide policy to enforce enabling an approval rule, the effective rule will be to enable approval even if the policy has a rule to disable approval.
-    - `[Id <String>]`: Read-only.
-    - `[Target <IMicrosoftGraphUnifiedRoleManagementPolicyRuleTarget>]`: unifiedRoleManagementPolicyRuleTarget
+  - `[EffectiveRules <IMicrosoftGraphUnifiedRoleManagementPolicyRule1[]>]`: The list of effective rules like approval rules and expiration rules evaluated based on inherited referenced rules. For example, if there is a tenant-wide policy to enforce enabling an approval rule, the effective rule will be to enable approval even if the policy has a rule to disable approval. Supports $expand.
+    - `[Id <String>]`: 
+    - `[Target <IMicrosoftGraphUnifiedRoleManagementPolicyRuleTarget1>]`: unifiedRoleManagementPolicyRuleTarget
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[Caller <String>]`: The caller for the policy rule target. Allowed values are: None, Admin, EndUser.
-      - `[EnforcedSettings <String[]>]`: The list of settings which are enforced and cannot be overridden by child scopes. Use All for all settings.
-      - `[InheritableSettings <String[]>]`: The list of settings which can be inherited by child scopes. Use All for all settings.
-      - `[Level <String>]`: The level for the policy rule target. Allowed values are: Eligibility, Assignment.
-      - `[Operations <String[]>]`: The operations for policy rule target. Allowed values are: All, Activate, Deactivate, Assign, Update, Remove, Extend, Renew.
+      - `[Caller <String>]`: The type of caller that's the target of the policy rule. Allowed values are: None, Admin, EndUser.
+      - `[EnforcedSettings <String[]>]`: The list of role settings that are enforced and cannot be overridden by child scopes. Use All for all settings.
+      - `[InheritableSettings <String[]>]`: The list of role settings that can be inherited by child scopes. Use All for all settings.
+      - `[Level <String>]`: The role assignment type that's the target of policy rule. Allowed values are: Eligibility, Assignment.
+      - `[Operations <String[]>]`: The role management operations that are the target of the policy rule. Allowed values are: All, Activate, Deactivate, Assign, Update, Remove, Extend, Renew.
       - `[TargetObjects <IMicrosoftGraphDirectoryObject[]>]`: 
-        - `[Id <String>]`: Read-only.
+        - `[Id <String>]`: 
         - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
-  - `[IsOrganizationDefault <Boolean?>]`: This can only be set to true for a single tenant wide policy which will apply to all scopes and roles. Set the scopeId to '/' and scopeType to Directory.
+  - `[IsOrganizationDefault <Boolean?>]`: This can only be set to true for a single tenant-wide policy which will apply to all scopes and roles. Set the scopeId to / and scopeType to Directory. Supports $filter (eq, ne).
   - `[LastModifiedBy <IMicrosoftGraphIdentity>]`: identity
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[DisplayName <String>]`: The identity's display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+    - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
     - `[Id <String>]`: Unique identifier for the identity.
   - `[LastModifiedDateTime <DateTime?>]`: The time when the role setting was last modified.
-  - `[Rules <IMicrosoftGraphUnifiedRoleManagementPolicyRule[]>]`: The collection of rules like approval rules and expiration rules.
-  - `[ScopeId <String>]`: The id of the scope where the policy is created. Can be / for the tenant or a group ID. Required.
+  - `[Rules <IMicrosoftGraphUnifiedRoleManagementPolicyRule1[]>]`: The collection of rules like approval rules and expiration rules. Supports $expand.
+  - `[ScopeId <String>]`: The identifier of the scope where the policy is created. Can be / for the tenant or a group ID. Required.
   - `[ScopeType <String>]`: The type of the scope where the policy is created. One of Directory, DirectoryRole. Required.
 
-EFFECTIVERULES <IMicrosoftGraphUnifiedRoleManagementPolicyRule[]>: Not implemented. The list of effective rules like approval rules and expiration rules evaluated based on inherited referenced rules. For example, if there is a tenant-wide policy to enforce enabling an approval rule, the effective rule will be to enable approval even if the policy has a rule to disable approval.
-  - `[Id <String>]`: Read-only.
-  - `[Target <IMicrosoftGraphUnifiedRoleManagementPolicyRuleTarget>]`: unifiedRoleManagementPolicyRuleTarget
+EFFECTIVERULES <IMicrosoftGraphUnifiedRoleManagementPolicyRule1[]>: The list of effective rules like approval rules and expiration rules evaluated based on inherited referenced rules. For example, if there is a tenant-wide policy to enforce enabling an approval rule, the effective rule will be to enable approval even if the policy has a rule to disable approval. Supports $expand.
+  - `[Id <String>]`: 
+  - `[Target <IMicrosoftGraphUnifiedRoleManagementPolicyRuleTarget1>]`: unifiedRoleManagementPolicyRuleTarget
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Caller <String>]`: The caller for the policy rule target. Allowed values are: None, Admin, EndUser.
-    - `[EnforcedSettings <String[]>]`: The list of settings which are enforced and cannot be overridden by child scopes. Use All for all settings.
-    - `[InheritableSettings <String[]>]`: The list of settings which can be inherited by child scopes. Use All for all settings.
-    - `[Level <String>]`: The level for the policy rule target. Allowed values are: Eligibility, Assignment.
-    - `[Operations <String[]>]`: The operations for policy rule target. Allowed values are: All, Activate, Deactivate, Assign, Update, Remove, Extend, Renew.
+    - `[Caller <String>]`: The type of caller that's the target of the policy rule. Allowed values are: None, Admin, EndUser.
+    - `[EnforcedSettings <String[]>]`: The list of role settings that are enforced and cannot be overridden by child scopes. Use All for all settings.
+    - `[InheritableSettings <String[]>]`: The list of role settings that can be inherited by child scopes. Use All for all settings.
+    - `[Level <String>]`: The role assignment type that's the target of policy rule. Allowed values are: Eligibility, Assignment.
+    - `[Operations <String[]>]`: The role management operations that are the target of the policy rule. Allowed values are: All, Activate, Deactivate, Assign, Update, Remove, Extend, Renew.
     - `[TargetObjects <IMicrosoftGraphDirectoryObject[]>]`: 
-      - `[Id <String>]`: Read-only.
+      - `[Id <String>]`: 
       - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
 
 INPUTOBJECT <IIdentitySignInsIdentity>: Identity Parameter
   - `[ActivityBasedTimeoutPolicyId <String>]`: key: id of activityBasedTimeoutPolicy
   - `[AppManagementPolicyId <String>]`: key: id of appManagementPolicy
   - `[AuthenticationContextClassReferenceId <String>]`: key: id of authenticationContextClassReference
+  - `[AuthenticationMethodConfigurationId <String>]`: key: id of authenticationMethodConfiguration
   - `[AuthenticationMethodId <String>]`: key: id of authenticationMethod
   - `[AuthorizationPolicyId <String>]`: key: id of authorizationPolicy
+  - `[B2CIdentityUserFlowId <String>]`: key: id of b2cIdentityUserFlow
+  - `[B2XIdentityUserFlowId <String>]`: key: id of b2xIdentityUserFlow
   - `[BitlockerRecoveryKeyId <String>]`: key: id of bitlockerRecoveryKey
+  - `[CertificateBasedAuthConfigurationId <String>]`: key: id of certificateBasedAuthConfiguration
   - `[ClaimsMappingPolicyId <String>]`: key: id of claimsMappingPolicy
+  - `[CommandId <String>]`: key: id of command
   - `[ConditionalAccessPolicyId <String>]`: key: id of conditionalAccessPolicy
   - `[CrossTenantAccessPolicyConfigurationPartnerTenantId <String>]`: key: tenantId of crossTenantAccessPolicyConfigurationPartner
   - `[DataLossPreventionPolicyId <String>]`: key: id of dataLossPreventionPolicy
@@ -398,10 +405,16 @@ INPUTOBJECT <IIdentitySignInsIdentity>: Identity Parameter
   - `[DefaultUserRoleOverrideId <String>]`: key: id of defaultUserRoleOverride
   - `[DirectoryObjectId <String>]`: key: id of directoryObject
   - `[EmailAuthenticationMethodId <String>]`: key: id of emailAuthenticationMethod
+  - `[ExtensionId <String>]`: key: id of extension
   - `[FeatureRolloutPolicyId <String>]`: key: id of featureRolloutPolicy
   - `[Fido2AuthenticationMethodId <String>]`: key: id of fido2AuthenticationMethod
+  - `[GroupId <String>]`: key: id of group
   - `[HomeRealmDiscoveryPolicyId <String>]`: key: id of homeRealmDiscoveryPolicy
+  - `[IdentityApiConnectorId <String>]`: key: id of identityApiConnector
+  - `[IdentityProviderBaseId <String>]`: key: id of identityProviderBase
   - `[IdentityProviderId <String>]`: key: id of identityProvider
+  - `[IdentityUserFlowAttributeAssignmentId <String>]`: key: id of identityUserFlowAttributeAssignment
+  - `[IdentityUserFlowAttributeId <String>]`: key: id of identityUserFlowAttribute
   - `[IdentityUserFlowId <String>]`: key: id of identityUserFlow
   - `[InformationProtectionLabelId <String>]`: key: id of informationProtectionLabel
   - `[LongRunningOperationId <String>]`: key: id of longRunningOperation
@@ -416,12 +429,15 @@ INPUTOBJECT <IIdentitySignInsIdentity>: Identity Parameter
   - `[PermissionGrantPolicyId <String>]`: key: id of permissionGrantPolicy
   - `[PhoneAuthenticationMethodId <String>]`: key: id of phoneAuthenticationMethod
   - `[RiskDetectionId <String>]`: key: id of riskDetection
+  - `[RiskyServicePrincipalHistoryItemId <String>]`: key: id of riskyServicePrincipalHistoryItem
+  - `[RiskyServicePrincipalId <String>]`: key: id of riskyServicePrincipal
   - `[RiskyUserHistoryItemId <String>]`: key: id of riskyUserHistoryItem
   - `[RiskyUserId <String>]`: key: id of riskyUser
   - `[SensitivityLabelId <String>]`: key: id of sensitivityLabel
   - `[SensitivityLabelId1 <String>]`: key: id of sensitivityLabel
   - `[ServicePrincipalCreationConditionSetId <String>]`: key: id of servicePrincipalCreationConditionSet
   - `[ServicePrincipalCreationPolicyId <String>]`: key: id of servicePrincipalCreationPolicy
+  - `[ServicePrincipalRiskDetectionId <String>]`: key: id of servicePrincipalRiskDetection
   - `[SoftwareOathAuthenticationMethodId <String>]`: key: id of softwareOathAuthenticationMethod
   - `[TemporaryAccessPassAuthenticationMethodId <String>]`: key: id of temporaryAccessPassAuthenticationMethod
   - `[ThreatAssessmentRequestId <String>]`: key: id of threatAssessmentRequest
@@ -433,25 +449,28 @@ INPUTOBJECT <IIdentitySignInsIdentity>: Identity Parameter
   - `[UnifiedRoleManagementPolicyAssignmentId <String>]`: key: id of unifiedRoleManagementPolicyAssignment
   - `[UnifiedRoleManagementPolicyId <String>]`: key: id of unifiedRoleManagementPolicy
   - `[UnifiedRoleManagementPolicyRuleId <String>]`: key: id of unifiedRoleManagementPolicyRule
+  - `[UsageRightId <String>]`: key: id of usageRight
+  - `[UserFlowLanguageConfigurationId <String>]`: key: id of userFlowLanguageConfiguration
+  - `[UserFlowLanguagePageId <String>]`: key: id of userFlowLanguagePage
   - `[UserId <String>]`: key: id of user
   - `[WindowsHelloForBusinessAuthenticationMethodId <String>]`: key: id of windowsHelloForBusinessAuthenticationMethod
 
 LASTMODIFIEDBY <IMicrosoftGraphIdentity>: identity
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[DisplayName <String>]`: The identity's display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+  - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
   - `[Id <String>]`: Unique identifier for the identity.
 
-RULES <IMicrosoftGraphUnifiedRoleManagementPolicyRule[]>: The collection of rules like approval rules and expiration rules.
-  - `[Id <String>]`: Read-only.
-  - `[Target <IMicrosoftGraphUnifiedRoleManagementPolicyRuleTarget>]`: unifiedRoleManagementPolicyRuleTarget
+RULES <IMicrosoftGraphUnifiedRoleManagementPolicyRule1[]>: The collection of rules like approval rules and expiration rules. Supports $expand.
+  - `[Id <String>]`: 
+  - `[Target <IMicrosoftGraphUnifiedRoleManagementPolicyRuleTarget1>]`: unifiedRoleManagementPolicyRuleTarget
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Caller <String>]`: The caller for the policy rule target. Allowed values are: None, Admin, EndUser.
-    - `[EnforcedSettings <String[]>]`: The list of settings which are enforced and cannot be overridden by child scopes. Use All for all settings.
-    - `[InheritableSettings <String[]>]`: The list of settings which can be inherited by child scopes. Use All for all settings.
-    - `[Level <String>]`: The level for the policy rule target. Allowed values are: Eligibility, Assignment.
-    - `[Operations <String[]>]`: The operations for policy rule target. Allowed values are: All, Activate, Deactivate, Assign, Update, Remove, Extend, Renew.
+    - `[Caller <String>]`: The type of caller that's the target of the policy rule. Allowed values are: None, Admin, EndUser.
+    - `[EnforcedSettings <String[]>]`: The list of role settings that are enforced and cannot be overridden by child scopes. Use All for all settings.
+    - `[InheritableSettings <String[]>]`: The list of role settings that can be inherited by child scopes. Use All for all settings.
+    - `[Level <String>]`: The role assignment type that's the target of policy rule. Allowed values are: Eligibility, Assignment.
+    - `[Operations <String[]>]`: The role management operations that are the target of the policy rule. Allowed values are: All, Activate, Deactivate, Assign, Update, Remove, Extend, Renew.
     - `[TargetObjects <IMicrosoftGraphDirectoryObject[]>]`: 
-      - `[Id <String>]`: Read-only.
+      - `[Id <String>]`: 
       - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
 
 ## RELATED LINKS

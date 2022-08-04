@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgDeviceManagementUserExperienceAnalyticOverview
 
 ## SYNOPSIS
-User experience analytics overview
+Update the navigation property userExperienceAnalyticsOverview in deviceManagement
 
 ## SYNTAX
 
@@ -27,7 +27,7 @@ Update-MgDeviceManagementUserExperienceAnalyticOverview
 ```
 
 ## DESCRIPTION
-User experience analytics overview
+Update the navigation property userExperienceAnalyticsOverview in deviceManagement
 
 ## EXAMPLES
 
@@ -65,7 +65,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -163,7 +163,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphUserExperienceAnalyticsOverview>: The user experience analytics overview entity contains the overall score and the scores and insights of every metric of all categories.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[Insights <IMicrosoftGraphUserExperienceAnalyticsInsight[]>]`: The user experience analytics insights.
     - `[InsightId <String>]`: The unique identifier of the user experience analytics insight.
     - `[Severity <String>]`: userExperienceAnalyticsInsightSeverity

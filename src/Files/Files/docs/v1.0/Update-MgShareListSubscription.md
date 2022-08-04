@@ -8,11 +8,11 @@ schema: 2.0.0
 # Update-MgShareListSubscription
 
 ## SYNOPSIS
-The set of subscriptions on the list.
+Update the navigation property subscriptions in shares
 
 ## SYNTAX
 
-### UpdateExpanded1 (Default)
+### UpdateExpanded (Default)
 ```
 Update-MgShareListSubscription -SharedDriveItemId <String> -SubscriptionId <String>
  [-AdditionalProperties <Hashtable>] [-ApplicationId <String>] [-ChangeType <String>] [-ClientState <String>]
@@ -22,19 +22,19 @@ Update-MgShareListSubscription -SharedDriveItemId <String> -SubscriptionId <Stri
  [-NotificationUrlAppId <String>] [-Resource <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### Update1
+### Update
 ```
 Update-MgShareListSubscription -SharedDriveItemId <String> -SubscriptionId <String>
- -BodyParameter <IMicrosoftGraphSubscription1> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphSubscription> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### UpdateViaIdentity1
+### UpdateViaIdentity
 ```
-Update-MgShareListSubscription -InputObject <IFilesIdentity> -BodyParameter <IMicrosoftGraphSubscription1>
+Update-MgShareListSubscription -InputObject <IFilesIdentity> -BodyParameter <IMicrosoftGraphSubscription>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### UpdateViaIdentityExpanded1
+### UpdateViaIdentityExpanded
 ```
 Update-MgShareListSubscription -InputObject <IFilesIdentity> [-AdditionalProperties <Hashtable>]
  [-ApplicationId <String>] [-ChangeType <String>] [-ClientState <String>] [-CreatorId <String>]
@@ -45,7 +45,7 @@ Update-MgShareListSubscription -InputObject <IFilesIdentity> [-AdditionalPropert
 ```
 
 ## DESCRIPTION
-The set of subscriptions on the list.
+Update the navigation property subscriptions in shares
 
 ## EXAMPLES
 
@@ -56,7 +56,7 @@ Additional Parameters
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -73,7 +73,7 @@ Read-only.
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -88,8 +88,8 @@ subscription
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSubscription1
-Parameter Sets: Update1, UpdateViaIdentity1
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSubscription
+Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
 Required: True
@@ -109,7 +109,7 @@ User and group change notifications support updated and deleted changeType.
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -122,12 +122,12 @@ Accept wildcard characters: False
 ### -ClientState
 Optional.
 Specifies the value of the clientState property sent by the service in each change notification.
-The maximum length is 128 characters.
+The maximum length is 255 characters.
 The client can check that the change notification came from the service by comparing the value of the clientState property sent with the subscription with the value of the clientState property received with each change notification.
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -140,13 +140,13 @@ Accept wildcard characters: False
 ### -CreatorId
 Optional.
 Identifier of the user or service principal that created the subscription.
-If the app used delegated permissions to create the subscription, this field contains the id of the signed-in user the app called on behalf of.
-If the app used application permissions, this field contains the id of the service principal corresponding to the app.
+If the app used delegated permissions to create the subscription, this field contains the ID of the signed-in user the app called on behalf of.
+If the app used application permissions, this field contains the ID of the service principal corresponding to the app.
 Read-only.
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -163,7 +163,7 @@ Optional but required when includeResourceData is true.
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -176,10 +176,11 @@ Accept wildcard characters: False
 ### -EncryptionCertificateId
 Optional.
 A custom app-provided identifier to help identify the certificate needed to decrypt resource data.
+Required when includeResourceData is true.
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -197,7 +198,7 @@ For the maximum supported subscription length of time, see the table below.
 
 ```yaml
 Type: System.DateTime
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -208,11 +209,11 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -228,7 +229,7 @@ When set to true, change notifications include resource data (such as content of
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -244,7 +245,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IFilesIdentity
-Parameter Sets: UpdateViaIdentity1, UpdateViaIdentityExpanded1
+Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
 Required: True
@@ -265,7 +266,7 @@ In such cases, Microsoft Graph defaults the property to v1_2.
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -282,7 +283,7 @@ This URL must make use of the HTTPS protocol.
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -294,14 +295,14 @@ Accept wildcard characters: False
 
 ### -NotificationQueryOptions
 Optional.
-OData query options for specifying value for the targeting resource.
-Clients receive notifications when resource reaches the state matching the query options provided here.
+OData query options for specifying the value for the targeting resource.
+Clients receive notifications when the resource reaches the state matching the query options provided here.
 With this new property in the subscription creation payload along with all existing properties, Webhooks will deliver notifications whenever a resource reaches the desired state mentioned in the notificationQueryOptions property.
 For example, when the print job is completed or when a print job resource isFetchable property value becomes true etc.
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -313,12 +314,12 @@ Accept wildcard characters: False
 
 ### -NotificationUrl
 Required.
-The URL of the endpoint that will receive the change notifications.
+The URL of the endpoint that receives the change notifications.
 This URL must make use of the HTTPS protocol.
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -335,7 +336,7 @@ This allows the client to validate the authenticity of the notification received
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -363,12 +364,12 @@ Accept wildcard characters: False
 ### -Resource
 Required.
 Specifies the resource that will be monitored for changes.
-Do not include the base URL (https://graph.microsoft.com/v1.0/).
+Do not include the base URL (https://graph.microsoft.com/beta/).
 See the possible resource path values for each supported resource.
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -383,7 +384,7 @@ key: id of sharedDriveItem
 
 ```yaml
 Type: System.String
-Parameter Sets: Update1, UpdateExpanded1
+Parameter Sets: Update, UpdateExpanded
 Aliases:
 
 Required: True
@@ -398,7 +399,7 @@ key: id of subscription
 
 ```yaml
 Type: System.String
-Parameter Sets: Update1, UpdateExpanded1
+Parameter Sets: Update, UpdateExpanded
 Aliases:
 
 Required: True
@@ -446,7 +447,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IFilesIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSubscription1
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSubscription
 
 ## OUTPUTS
 
@@ -461,41 +462,47 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-BODYPARAMETER <IMicrosoftGraphSubscription1>: subscription
+BODYPARAMETER <IMicrosoftGraphSubscription>: subscription
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[ApplicationId <String>]`: Optional. Identifier of the application used to create the subscription. Read-only.
   - `[ChangeType <String>]`: Required. Indicates the type of change in the subscribed resource that will raise a change notification. The supported values are: created, updated, deleted. Multiple values can be combined using a comma-separated list. Note:  Drive root item and list change notifications support only the updated changeType. User and group change notifications support updated and deleted changeType.
-  - `[ClientState <String>]`: Optional. Specifies the value of the clientState property sent by the service in each change notification. The maximum length is 128 characters. The client can check that the change notification came from the service by comparing the value of the clientState property sent with the subscription with the value of the clientState property received with each change notification.
-  - `[CreatorId <String>]`: Optional. Identifier of the user or service principal that created the subscription. If the app used delegated permissions to create the subscription, this field contains the id of the signed-in user the app called on behalf of. If the app used application permissions, this field contains the id of the service principal corresponding to the app. Read-only.
+  - `[ClientState <String>]`: Optional. Specifies the value of the clientState property sent by the service in each change notification. The maximum length is 255 characters. The client can check that the change notification came from the service by comparing the value of the clientState property sent with the subscription with the value of the clientState property received with each change notification.
+  - `[CreatorId <String>]`: Optional. Identifier of the user or service principal that created the subscription. If the app used delegated permissions to create the subscription, this field contains the ID of the signed-in user the app called on behalf of. If the app used application permissions, this field contains the ID of the service principal corresponding to the app. Read-only.
   - `[EncryptionCertificate <String>]`: Optional. A base64-encoded representation of a certificate with a public key used to encrypt resource data in change notifications. Optional but required when includeResourceData is true.
-  - `[EncryptionCertificateId <String>]`: Optional. A custom app-provided identifier to help identify the certificate needed to decrypt resource data.
+  - `[EncryptionCertificateId <String>]`: Optional. A custom app-provided identifier to help identify the certificate needed to decrypt resource data. Required when includeResourceData is true.
   - `[ExpirationDateTime <DateTime?>]`: Required. Specifies the date and time when the webhook subscription expires. The time is in UTC, and can be an amount of time from subscription creation that varies for the resource subscribed to. For the maximum supported subscription length of time, see the table below.
   - `[IncludeResourceData <Boolean?>]`: Optional. When set to true, change notifications include resource data (such as content of a chat message).
   - `[LatestSupportedTlsVersion <String>]`: Optional. Specifies the latest version of Transport Layer Security (TLS) that the notification endpoint, specified by notificationUrl, supports. The possible values are: v1_0, v1_1, v1_2, v1_3. For subscribers whose notification endpoint supports a version lower than the currently recommended version (TLS 1.2), specifying this property by a set timeline allows them to temporarily use their deprecated version of TLS before completing their upgrade to TLS 1.2. For these subscribers, not setting this property per the timeline would result in subscription operations failing. For subscribers whose notification endpoint already supports TLS 1.2, setting this property is optional. In such cases, Microsoft Graph defaults the property to v1_2.
   - `[LifecycleNotificationUrl <String>]`: Optional. The URL of the endpoint that receives lifecycle notifications, including subscriptionRemoved and missed notifications. This URL must make use of the HTTPS protocol.
-  - `[NotificationQueryOptions <String>]`: Optional. OData query options for specifying value for the targeting resource. Clients receive notifications when resource reaches the state matching the query options provided here. With this new property in the subscription creation payload along with all existing properties, Webhooks will deliver notifications whenever a resource reaches the desired state mentioned in the notificationQueryOptions property. For example, when the print job is completed or when a print job resource isFetchable property value becomes true etc.
-  - `[NotificationUrl <String>]`: Required. The URL of the endpoint that will receive the change notifications. This URL must make use of the HTTPS protocol.
+  - `[NotificationQueryOptions <String>]`: Optional.  OData query options for specifying the value for the targeting resource. Clients receive notifications when the resource reaches the state matching the query options provided here. With this new property in the subscription creation payload along with all existing properties, Webhooks will deliver notifications whenever a resource reaches the desired state mentioned in the notificationQueryOptions property. For example, when the print job is completed or when a print job resource isFetchable property value becomes true etc.
+  - `[NotificationUrl <String>]`: Required. The URL of the endpoint that receives the change notifications. This URL must make use of the HTTPS protocol.
   - `[NotificationUrlAppId <String>]`: Optional. The app ID that the subscription service can use to generate the validation token. This allows the client to validate the authenticity of the notification received.
-  - `[Resource <String>]`: Required. Specifies the resource that will be monitored for changes. Do not include the base URL (https://graph.microsoft.com/v1.0/). See the possible resource path values for each supported resource.
+  - `[Resource <String>]`: Required. Specifies the resource that will be monitored for changes. Do not include the base URL (https://graph.microsoft.com/beta/). See the possible resource path values for each supported resource.
 
 INPUTOBJECT <IFilesIdentity>: Identity Parameter
   - `[ColumnDefinitionId <String>]`: key: id of columnDefinition
   - `[ColumnLinkId <String>]`: key: id of columnLink
   - `[ContentTypeId <String>]`: key: id of contentType
+  - `[ContentTypeId1 <String>]`: key: id of contentType
+  - `[DocumentSetVersionId <String>]`: key: id of documentSetVersion
   - `[DriveId <String>]`: key: id of drive
   - `[DriveItemId <String>]`: key: id of driveItem
-  - `[EndDateTime <String>]`: Usage: endDateTime={endDateTime}
+  - `[DriveItemId1 <String>]`: key: id of driveItem
+  - `[DriveItemVersionId <String>]`: key: id of driveItemVersion
+  - `[EndDateTime <String>]`: Usage: endDateTime='{endDateTime}'
   - `[GroupId <String>]`: key: id of group
-  - `[Interval <String>]`: Usage: interval={interval}
+  - `[Interval <String>]`: Usage: interval='{interval}'
   - `[ListItemId <String>]`: key: id of listItem
   - `[ListItemVersionId <String>]`: key: id of listItemVersion
-  - `[Q <String>]`: Usage: q={q}
+  - `[PermissionId <String>]`: key: id of permission
+  - `[Q <String>]`: Usage: q='{q}'
   - `[RichLongRunningOperationId <String>]`: key: id of richLongRunningOperation
   - `[SharedDriveItemId <String>]`: key: id of sharedDriveItem
-  - `[StartDateTime <String>]`: Usage: startDateTime={startDateTime}
+  - `[StartDateTime <String>]`: Usage: startDateTime='{startDateTime}'
   - `[SubscriptionId <String>]`: key: id of subscription
-  - `[Token <String>]`: Usage: token={token}
+  - `[ThumbnailSetId <String>]`: key: id of thumbnailSet
+  - `[Token <String>]`: Usage: token='{token}'
   - `[UserId <String>]`: key: id of user
 
 ## RELATED LINKS

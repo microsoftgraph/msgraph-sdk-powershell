@@ -63,7 +63,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -146,7 +146,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphTrustFrameworkKeySet>: trustFrameworkKeySet
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[Keys <IMicrosoftGraphTrustFrameworkKey[]>]`: A collection of the keys.
     - `[D <String>]`: RSA Key - private exponent. Field cannot be read back.
     - `[Dp <String>]`: RSA Key - first exponent. Field cannot be read back.

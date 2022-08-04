@@ -573,7 +573,7 @@ components:
               type: array
               items:
                 type: string
-              description: Following values are supported. Not nullable. UserGroupOrganizationDeviceApplication
+              description: Following values are supported. Not nullable. UserGroupAdministrativeUnitApplicationDeviceOrganization
           additionalProperties:
             type: object
     microsoft.graph.entity:

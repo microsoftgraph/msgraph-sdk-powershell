@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgSecurityAttackSimulation
 
 ## SYNOPSIS
-Represents an attack simulation training campaign in a tenant.
+Create new navigation property to simulations for security
 
 ## SYNTAX
 
@@ -29,7 +29,7 @@ New-MgSecurityAttackSimulation -BodyParameter <IMicrosoftGraphSimulation> [-Conf
 ```
 
 ## DESCRIPTION
-Represents an attack simulation training campaign in a tenant.
+Create new navigation property to simulations for security
 
 ## EXAMPLES
 
@@ -190,7 +190,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -366,14 +366,14 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphSimulation>: simulation
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[AttackTechnique <String>]`: simulationAttackTechnique
   - `[AttackType <String>]`: simulationAttackType
   - `[AutomationId <String>]`: Unique identifier for the attack simulation automation.
   - `[CompletionDateTime <DateTime?>]`: Date and time of completion of the attack simulation and training campaign. Supports $filter and $orderby.
   - `[CreatedBy <IMicrosoftGraphEmailIdentity>]`: emailIdentity
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[DisplayName <String>]`: The identity's display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+    - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
     - `[Id <String>]`: Unique identifier for the identity.
     - `[Email <String>]`: Email address of the user.
   - `[CreatedDateTime <DateTime?>]`: Date and time of creation of the attack simulation and training campaign.
@@ -440,13 +440,13 @@ BODYPARAMETER <IMicrosoftGraphSimulation>: simulation
 
 CREATEDBY <IMicrosoftGraphEmailIdentity>: emailIdentity
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[DisplayName <String>]`: The identity's display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+  - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
   - `[Id <String>]`: Unique identifier for the identity.
   - `[Email <String>]`: Email address of the user.
 
 LASTMODIFIEDBY <IMicrosoftGraphEmailIdentity>: emailIdentity
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[DisplayName <String>]`: The identity's display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+  - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
   - `[Id <String>]`: Unique identifier for the identity.
   - `[Email <String>]`: Email address of the user.
 

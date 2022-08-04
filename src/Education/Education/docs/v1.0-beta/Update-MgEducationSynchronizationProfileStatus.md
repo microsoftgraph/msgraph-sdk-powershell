@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgEducationSynchronizationProfileStatus
 
 ## SYNOPSIS
-The synchronization status.
+Update the navigation property profileStatus in education
 
 ## SYNTAX
 
@@ -43,7 +43,7 @@ Update-MgEducationSynchronizationProfileStatus -InputObject <IEducationIdentity>
 ```
 
 ## DESCRIPTION
-The synchronization status.
+Update the navigation property profileStatus in education
 
 ## EXAMPLES
 
@@ -111,7 +111,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -271,7 +271,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphEducationSynchronizationProfileStatus>: educationSynchronizationProfileStatus
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[ErrorCount <Int64?>]`: Number of errors during synchronization.
   - `[LastActivityDateTime <DateTime?>]`: Represents the time when most recent changes were observed in profile.
   - `[LastSynchronizationDateTime <DateTime?>]`: Represents the time of the most recent successful  synchronization.
