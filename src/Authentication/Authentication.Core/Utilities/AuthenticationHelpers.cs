@@ -38,11 +38,26 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
                     return await GetDeviceCodeCredentialAsync(authContext, cancellationToken).ConfigureAwait(false);
                 case AuthenticationType.AppOnly:
                     return await GetClientCertificateCredentialAsync(authContext).ConfigureAwait(false);
+                case AuthenticationType.ManagedIdentity:
+                    return await GetManagedIdentityCredentialAsync(authContext).ConfigureAwait(false);
                 case AuthenticationType.UserProvidedAccessToken:
                     return new UserProvidedTokenCredential();
                 default:
                     throw new NotSupportedException($"{authContext.AuthType} is not supported.");
             }
+        }
+
+        private static async Task<TokenCredential> GetManagedIdentityCredentialAsync(IAuthContext authContext)
+        {
+            if (authContext is null)
+                throw new AuthenticationException(ErrorConstants.Message.MissingAuthContext);
+
+            var managedIdentityOptions = new TokenCredentialOptions
+            {
+                AuthorityHost = new Uri(GetAuthorityUrl(authContext))
+            };
+            var managedIdentityCredential = new ManagedIdentityCredential(authContext.ClientId, managedIdentityOptions);
+            return await Task.FromResult(managedIdentityCredential).ConfigureAwait(false);
         }
 
         private static async Task<InteractiveBrowserCredential> GetInteractiveBrowserCredentialAsync(IAuthContext authContext, CancellationToken cancellationToken = default)

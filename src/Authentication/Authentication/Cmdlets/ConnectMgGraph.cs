@@ -20,7 +20,7 @@ using Microsoft.Graph.PowerShell.Authentication.Helpers;
 using Microsoft.Graph.PowerShell.Authentication.Interfaces;
 using Microsoft.Graph.PowerShell.Authentication.Models;
 using Microsoft.Graph.PowerShell.Authentication.Utilities;
-
+using static Microsoft.Graph.PowerShell.Authentication.Constants;
 using static Microsoft.Graph.PowerShell.Authentication.Helpers.AsyncHelpers;
 
 namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
@@ -31,76 +31,83 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
     {
         [Parameter(ParameterSetName = Constants.UserParameterSet,
             Position = 1,
-            HelpMessage = "An array of delegated permissions to consent to.")]
+            HelpMessage = HelpMessages.Scopes)]
         public string[] Scopes { get; set; }
 
         [Parameter(ParameterSetName = Constants.AppParameterSet,
             Position = 1,
             Mandatory = true,
-            HelpMessage = "The client id of your application.")]
+            HelpMessage = HelpMessages.ClientId)]
         [Parameter(ParameterSetName = Constants.UserParameterSet,
             Mandatory = false,
-            HelpMessage = "The client id of your application.")]
+            HelpMessage = HelpMessages.ClientId)]
+        [Parameter(ParameterSetName = Constants.IdentityParameterSet)]
         [Alias("AppId")]
         public string ClientId { get; set; }
 
         [Parameter(ParameterSetName = Constants.AppParameterSet,
             Position = 2,
-            HelpMessage = "The subject distinguished name of a certificate. The Certificate will be retrieved from the current user's certificate store.")]
+            HelpMessage = HelpMessages.CertificateSubjectName)]
         [Alias("CertificateSubject")]
         public string CertificateSubjectName { get; set; }
 
         [Parameter(ParameterSetName = Constants.AppParameterSet,
             Position = 3,
-            HelpMessage = "The thumbprint of your certificate. The Certificate will be retrieved from the current user's certificate store.")]
+            HelpMessage = HelpMessages.CertificateThumbprint)]
         public string CertificateThumbprint { get; set; }
 
         [Parameter(Mandatory = false,
             ParameterSetName = Constants.AppParameterSet,
-            HelpMessage = "An X.509 certificate supplied during invocation.")]
+            HelpMessage = HelpMessages.Certificate)]
         public X509Certificate2 Certificate { get; set; }
 
         [Parameter(ParameterSetName = Constants.AccessTokenParameterSet,
             Position = 1,
             Mandatory = true,
-            HelpMessage = "Specifies a bearer token for Microsoft Graph service. Access tokens do timeout and you'll have to handle their refresh.")]
+            HelpMessage = HelpMessages.AccessToken)]
         public SecureString AccessToken { get; set; }
 
-        [Parameter(ParameterSetName = Constants.AppParameterSet)]
+        [Parameter(ParameterSetName = Constants.AppParameterSet, HelpMessage = HelpMessages.TenantId)]
+        [Parameter(ParameterSetName = Constants.IdentityParameterSet, HelpMessage = HelpMessages.TenantId)]
         [Parameter(ParameterSetName = Constants.UserParameterSet,
             Position = 4,
-            HelpMessage = "The id of the tenant to connect to. You can also use this parameter to specify your sign-in audience. i.e., common, organizations, or consumers. " +
-            "See https://docs.microsoft.com/en-us/azure/active-directory/develop/msal-client-application-configuration#authority.")]
+            HelpMessage = HelpMessages.TenantId)]
         [Alias("Audience")]
         public string TenantId { get; set; }
 
-        [Parameter(ParameterSetName = Constants.AppParameterSet)]
+        [Parameter(ParameterSetName = Constants.AppParameterSet, HelpMessage = HelpMessages.ContextScope)]
         [Parameter(ParameterSetName = Constants.UserParameterSet,
             Mandatory = false,
-            HelpMessage = "Determines the scope of authentication context. This accepts `Process` for the current process, or `CurrentUser` for all sessions started by user.")]
+            HelpMessage = HelpMessages.ContextScope)]
         public ContextScope ContextScope { get; set; }
 
-        [Parameter(ParameterSetName = Constants.AppParameterSet)]
-        [Parameter(ParameterSetName = Constants.AccessTokenParameterSet)]
+        [Parameter(ParameterSetName = Constants.AppParameterSet, HelpMessage = HelpMessages.Environment)]
+        [Parameter(ParameterSetName = Constants.AccessTokenParameterSet, HelpMessage = HelpMessages.Environment)]
         [Parameter(ParameterSetName = Constants.UserParameterSet,
             Mandatory = false,
-            HelpMessage = "The name of the national cloud environment to connect to. By default global cloud is used.")]
+            HelpMessage = HelpMessages.Environment)]
         [ValidateNotNullOrEmpty]
         [Alias("EnvironmentName", "NationalCloud")]
         public string Environment { get; set; }
 
         [Parameter(ParameterSetName = Constants.UserParameterSet,
-            Mandatory = false, HelpMessage = "Use device code authentication instead of a browser control.")]
+            Mandatory = false, HelpMessage = HelpMessages.UseDeviceCode)]
         [Alias("UseDeviceAuthentication", "DeviceCode", "DeviceAuth", "Device")]
         public SwitchParameter UseDeviceCode { get; set; }
 
-        [Parameter(ParameterSetName = Constants.AppParameterSet)]
-        [Parameter(ParameterSetName = Constants.AccessTokenParameterSet)]
+        [Parameter(ParameterSetName = Constants.AppParameterSet, HelpMessage = HelpMessages.ClientTimeout)]
+        [Parameter(ParameterSetName = Constants.AccessTokenParameterSet, HelpMessage = HelpMessages.ClientTimeout)]
         [Parameter(ParameterSetName = Constants.UserParameterSet,
             Mandatory = false,
-            HelpMessage = "Sets the HTTP client timeout in seconds.")]
+            HelpMessage = HelpMessages.ClientTimeout)]
         [ValidateNotNullOrEmpty]
         public double ClientTimeout { get; set; }
+
+        [Parameter(ParameterSetName = Constants.IdentityParameterSet,
+            Mandatory = false,
+            HelpMessage = HelpMessages.Identity)]
+        [Alias("ManagedIdentity", "ManagedServiceIdentity", "MSI")]
+        public SwitchParameter Identity { get; set; }
 
         [Parameter(Mandatory = false,
             DontShow = true,
@@ -206,6 +213,17 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                             authContext.TokenCredentialType = TokenCredentialType.UserProvidedAccessToken;
                             authContext.ContextScope = ContextScope.Process;
                             GraphSession.Instance.InMemoryTokenCache = new InMemoryTokenCache(Encoding.UTF8.GetBytes(new NetworkCredential(string.Empty, AccessToken).Password));
+                        }
+                        break;
+                    case Constants.IdentityParameterSet:
+                        {
+                            string[] processedScopes = ProcessScopes(Scopes);
+                            authContext.Scopes = !processedScopes.Any() ? new[] { "User.Read" } : processedScopes;
+                            authContext.AuthType = AuthenticationType.ManagedIdentity;
+                            authContext.ClientId = ClientId;
+                            // Default to Process but allow the customer to change this via `-ContextScope`.
+                            authContext.ContextScope = this.IsParameterBound(nameof(ContextScope)) ? ContextScope : ContextScope.Process;
+                            authContext.TokenCredentialType = TokenCredentialType.ManagedIdentity;
                         }
                         break;
                 }
