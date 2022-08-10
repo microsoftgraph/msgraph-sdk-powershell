@@ -10,6 +10,7 @@ using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
+using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -20,6 +21,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
     /// </summary>
     public static class AuthenticationHelpers
     {
+        private static Regex SystemMsiNameRegex = new Regex(Constants.DefaultMsiAccountIdPrefix + @"\d+", RegexOptions.Compiled);
         /// <summary>
         /// Gets a <see cref="TokenCredential"/> using the provide <see cref="IAuthContext"/>.
         /// </summary>
@@ -52,11 +54,13 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
             if (authContext is null)
                 throw new AuthenticationException(ErrorConstants.Message.MissingAuthContext);
 
-            var managedIdentityOptions = new TokenCredentialOptions
-            {
-                AuthorityHost = new Uri(GetAuthorityUrl(authContext))
-            };
-            var managedIdentityCredential = new ManagedIdentityCredential(authContext.ClientId, managedIdentityOptions);
+            //var managedIdentityOptions = new TokenCredentialOptions
+            //{
+            //    AuthorityHost = new Uri(GetAuthorityUrl(authContext))
+            //};
+            // TODO: Review the need to SystemMsiNameRegex since we default to a null clientId.
+            var userAccountId = SystemMsiNameRegex.IsMatch(authContext.AccountId) ? null : authContext.AccountId;
+            var managedIdentityCredential = new ManagedIdentityCredential(userAccountId);
             return await Task.FromResult(managedIdentityCredential).ConfigureAwait(false);
         }
 
@@ -196,9 +200,9 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
                 {
                     throw new Exception(string.Format(CultureInfo.CurrentCulture, ErrorConstants.Message.AuthenticationTimeout, Constants.MaxAuthenticationTimeOutInSeconds), taskCanceledEx);
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
-                    throw ex.InnerException ?? ex;
+                    throw;
                 }
             }
             return signInAuthContext;
@@ -218,10 +222,16 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
         {
             if (authContext is null)
                 throw new AuthenticationException(ErrorConstants.Message.MissingAuthContext);
-            if (authContext.AuthType == AuthenticationType.AppOnly)
-                return new[] { $"{GraphSession.Instance.Environment?.GraphEndpoint ?? Constants.DefaultGraphEndpoint}/.default" };
 
-            return authContext.Scopes;
+            switch (authContext.AuthType)
+            {
+                case AuthenticationType.AppOnly:
+                    return new[] { $"{GraphSession.Instance.Environment?.GraphEndpoint ?? Constants.DefaultGraphEndpoint}/.default" };
+                case AuthenticationType.ManagedIdentity:
+                    return new[] { GraphSession.Instance.Environment.GraphEndpoint };
+                default:
+                    return authContext.Scopes;
+            }
         }
 
         /// <summary>

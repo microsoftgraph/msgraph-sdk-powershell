@@ -33,6 +33,7 @@ namespace Microsoft.Graph.PowerShell.Authentication
             public const string UseDeviceCode = "Use device code authentication instead of a browser control.";
             public const string ClientTimeout = "Sets the HTTP client timeout in seconds.";
             public const string Identity = "Login using a Managed Service Identity (MSI).";
+            public const string IdentityAccountId = "Account Id for managed service. Can be a managed service resource Id, or the associated client id. To use the SystemAssigned identity, leave this field blank.";
         }
     }
 }
