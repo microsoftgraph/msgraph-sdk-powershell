@@ -2568,6 +2568,8 @@ paths:
                 - id desc
                 - displayName
                 - displayName desc
+                - ingestionSource
+                - ingestionSource desc
                 - isRoot
                 - isRoot desc
                 - lastModifiedDateTime
@@ -2585,6 +2587,7 @@ paths:
               enum:
                 - id
                 - displayName
+                - ingestionSource
                 - isRoot
                 - lastModifiedDateTime
                 - children
@@ -2665,6 +2668,7 @@ paths:
               enum:
                 - id
                 - displayName
+                - ingestionSource
                 - isRoot
                 - lastModifiedDateTime
                 - children
@@ -2798,6 +2802,8 @@ paths:
                 - id desc
                 - displayName
                 - displayName desc
+                - ingestionSource
+                - ingestionSource desc
                 - isRoot
                 - isRoot desc
                 - lastModifiedDateTime
@@ -2815,6 +2821,7 @@ paths:
               enum:
                 - id
                 - displayName
+                - ingestionSource
                 - isRoot
                 - lastModifiedDateTime
                 - children
@@ -2880,6 +2887,7 @@ paths:
               enum:
                 - id
                 - displayName
+                - ingestionSource
                 - isRoot
                 - lastModifiedDateTime
                 - children
@@ -3238,6 +3246,7 @@ paths:
               enum:
                 - id
                 - displayName
+                - ingestionSource
                 - isRoot
                 - lastModifiedDateTime
                 - children
@@ -4018,6 +4027,7 @@ paths:
               enum:
                 - id
                 - displayName
+                - ingestionSource
                 - isRoot
                 - lastModifiedDateTime
                 - children
@@ -4299,6 +4309,7 @@ paths:
               enum:
                 - id
                 - displayName
+                - ingestionSource
                 - isRoot
                 - lastModifiedDateTime
                 - children
@@ -4915,6 +4926,7 @@ paths:
               enum:
                 - id
                 - displayName
+                - ingestionSource
                 - isRoot
                 - lastModifiedDateTime
                 - children
@@ -5866,6 +5878,7 @@ paths:
               enum:
                 - id
                 - displayName
+                - ingestionSource
                 - isRoot
                 - lastModifiedDateTime
                 - children
@@ -6147,6 +6160,7 @@ paths:
               enum:
                 - id
                 - displayName
+                - ingestionSource
                 - isRoot
                 - lastModifiedDateTime
                 - children
@@ -9414,10 +9428,18 @@ paths:
               enum:
                 - id
                 - id desc
+                - connectorVersion
+                - connectorVersion desc
                 - displayName
                 - displayName desc
+                - enrolledDateTime
+                - enrolledDateTime desc
                 - lastConnectionDateTime
                 - lastConnectionDateTime desc
+                - machineName
+                - machineName desc
+                - roleScopeTagIds
+                - roleScopeTagIds desc
                 - state
                 - state desc
               type: string
@@ -9432,8 +9454,12 @@ paths:
             items:
               enum:
                 - id
+                - connectorVersion
                 - displayName
+                - enrolledDateTime
                 - lastConnectionDateTime
+                - machineName
+                - roleScopeTagIds
                 - state
               type: string
         - name: $expand
@@ -9504,8 +9530,12 @@ paths:
             items:
               enum:
                 - id
+                - connectorVersion
                 - displayName
+                - enrolledDateTime
                 - lastConnectionDateTime
+                - machineName
+                - roleScopeTagIds
                 - state
               type: string
         - name: $expand
@@ -16459,6 +16489,8 @@ components:
               type: string
               description: The string id of the category's display name
               nullable: true
+            ingestionSource:
+              $ref: '#/components/schemas/microsoft.graph.ingestionSource'
             isRoot:
               type: boolean
               description: Defines if the category is a root category
@@ -17156,15 +17188,34 @@ components:
         - title: ndesConnector
           type: object
           properties:
+            connectorVersion:
+              type: string
+              description: The build version of the Ndes Connector.
+              nullable: true
             displayName:
               type: string
               description: The friendly name of the Ndes Connector.
               nullable: true
+            enrolledDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Timestamp when on-prem certificate connector was enrolled in Intune.
+              format: date-time
             lastConnectionDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
               description: Last connection time for the Ndes Connector
               format: date-time
+            machineName:
+              type: string
+              description: Name of the machine running on-prem certificate connector service.
+              nullable: true
+            roleScopeTagIds:
+              type: array
+              items:
+                type: string
+                nullable: true
+              description: List of Scope Tags for this Entity instance.
             state:
               $ref: '#/components/schemas/microsoft.graph.ndesConnectorState'
           additionalProperties:
@@ -18863,6 +18914,31 @@ components:
       additionalProperties:
         type: object
       description: Device Class in Exchange.
+    microsoft.graph.ingestionSource:
+      title: ingestionSource
+      enum:
+        - unknown
+        - custom
+        - builtIn
+        - unknownFutureValue
+      type: string
+      description: Category Ingestion source
+      x-ms-enum:
+        name: ingestionSource
+        modelAsString: false
+        values:
+          - value: unknown
+            description: Indicates unknown category
+            name: unknown
+          - value: custom
+            description: Indicates the category is ingested by IT admin with sufficient permissions through custom ingestion process
+            name: custom
+          - value: builtIn
+            description: Indicates the category is ingested through system ingestion process
+            name: builtIn
+          - value: unknownFutureValue
+            description: Unknown future enum value
+            name: unknownFutureValue
     microsoft.graph.groupPolicyType:
       title: groupPolicyType
       enum:

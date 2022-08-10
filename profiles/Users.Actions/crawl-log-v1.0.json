@@ -1185,6 +1185,10 @@
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Users.Actions.yml"
     },
+    "/users/{user-id}/todo/lists/{todoTaskList-id}/tasks/{todoTask-id}/attachments/microsoft.graph.createUploadSession": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Users.Actions.yml"
+    },
     "/users/microsoft.graph.getAvailableExtensionProperties": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Users.Actions.yml"
