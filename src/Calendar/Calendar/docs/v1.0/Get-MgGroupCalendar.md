@@ -8,8 +8,7 @@ schema: 2.0.0
 # Get-MgGroupCalendar
 
 ## SYNOPSIS
-The group's calendar.
-Read-only.
+Get calendar from groups
 
 ## SYNTAX
 
@@ -24,8 +23,7 @@ Get-MgGroupCalendar -InputObject <ICalendarIdentity> [-Property <String[]>] [<Co
 ```
 
 ## DESCRIPTION
-The group's calendar.
-Read-only.
+Get calendar from groups
 
 ## EXAMPLES
 
@@ -104,6 +102,7 @@ INPUTOBJECT <ICalendarIdentity>: Identity Parameter
   - `[CalendarPermissionId <String>]`: key: id of calendarPermission
   - `[EventId <String>]`: key: id of event
   - `[EventId1 <String>]`: key: id of event
+  - `[EventId2 <String>]`: key: id of event
   - `[ExtensionId <String>]`: key: id of extension
   - `[GroupId <String>]`: key: id of group
   - `[MultiValueLegacyExtendedPropertyId <String>]`: key: id of multiValueLegacyExtendedProperty

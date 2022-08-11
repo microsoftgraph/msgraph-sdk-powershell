@@ -8,13 +8,11 @@ schema: 2.0.0
 # New-MgUserCalendarSingleValueExtendedProperty
 
 ## SYNOPSIS
-The collection of single-value extended properties defined for the calendar.
-Read-only.
-Nullable.
+Create new navigation property to singleValueExtendedProperties for users
 
 ## SYNTAX
 
-### CreateExpanded3 (Default)
+### CreateExpanded (Default)
 ```
 New-MgUserCalendarSingleValueExtendedProperty -UserId <String> [-AdditionalProperties <Hashtable>]
  [-Id <String>] [-Value <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -22,17 +20,17 @@ New-MgUserCalendarSingleValueExtendedProperty -UserId <String> [-AdditionalPrope
 
 ### Create
 ```
-New-MgUserCalendarSingleValueExtendedProperty -CalendarId <String> -UserId <String>
- -BodyParameter <IMicrosoftGraphSingleValueLegacyExtendedProperty> [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### Create3
-```
 New-MgUserCalendarSingleValueExtendedProperty -UserId <String>
  -BodyParameter <IMicrosoftGraphSingleValueLegacyExtendedProperty> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### CreateExpanded
+### Create1
+```
+New-MgUserCalendarSingleValueExtendedProperty -CalendarId <String> -UserId <String>
+ -BodyParameter <IMicrosoftGraphSingleValueLegacyExtendedProperty> [-Confirm] [-WhatIf] [<CommonParameters>]
+```
+
+### CreateExpanded1
 ```
 New-MgUserCalendarSingleValueExtendedProperty -CalendarId <String> -UserId <String>
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-Value <String>] [-Confirm] [-WhatIf]
@@ -45,7 +43,7 @@ New-MgUserCalendarSingleValueExtendedProperty -InputObject <ICalendarIdentity>
  -BodyParameter <IMicrosoftGraphSingleValueLegacyExtendedProperty> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### CreateViaIdentity3
+### CreateViaIdentity1
 ```
 New-MgUserCalendarSingleValueExtendedProperty -InputObject <ICalendarIdentity>
  -BodyParameter <IMicrosoftGraphSingleValueLegacyExtendedProperty> [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -58,7 +56,7 @@ New-MgUserCalendarSingleValueExtendedProperty -InputObject <ICalendarIdentity>
  [<CommonParameters>]
 ```
 
-### CreateViaIdentityExpanded3
+### CreateViaIdentityExpanded1
 ```
 New-MgUserCalendarSingleValueExtendedProperty -InputObject <ICalendarIdentity>
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-Value <String>] [-Confirm] [-WhatIf]
@@ -66,9 +64,7 @@ New-MgUserCalendarSingleValueExtendedProperty -InputObject <ICalendarIdentity>
 ```
 
 ## DESCRIPTION
-The collection of single-value extended properties defined for the calendar.
-Read-only.
-Nullable.
+Create new navigation property to singleValueExtendedProperties for users
 
 ## EXAMPLES
 
@@ -79,7 +75,7 @@ Additional Parameters
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: CreateExpanded, CreateExpanded3, CreateViaIdentityExpanded, CreateViaIdentityExpanded3
+Parameter Sets: CreateExpanded, CreateExpanded1, CreateViaIdentityExpanded, CreateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -95,7 +91,7 @@ To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETE
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSingleValueLegacyExtendedProperty
-Parameter Sets: Create, Create3, CreateViaIdentity, CreateViaIdentity3
+Parameter Sets: Create, Create1, CreateViaIdentity, CreateViaIdentity1
 Aliases:
 
 Required: True
@@ -110,7 +106,7 @@ key: id of calendar
 
 ```yaml
 Type: System.String
-Parameter Sets: Create, CreateExpanded
+Parameter Sets: Create1, CreateExpanded1
 Aliases:
 
 Required: True
@@ -121,11 +117,11 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded, CreateExpanded3, CreateViaIdentityExpanded, CreateViaIdentityExpanded3
+Parameter Sets: CreateExpanded, CreateExpanded1, CreateViaIdentityExpanded, CreateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -141,7 +137,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.ICalendarIdentity
-Parameter Sets: CreateViaIdentity, CreateViaIdentity3, CreateViaIdentityExpanded, CreateViaIdentityExpanded3
+Parameter Sets: CreateViaIdentity, CreateViaIdentity1, CreateViaIdentityExpanded, CreateViaIdentityExpanded1
 Aliases:
 
 Required: True
@@ -156,7 +152,7 @@ key: id of user
 
 ```yaml
 Type: System.String
-Parameter Sets: Create, Create3, CreateExpanded, CreateExpanded3
+Parameter Sets: Create, Create1, CreateExpanded, CreateExpanded1
 Aliases:
 
 Required: True
@@ -171,7 +167,7 @@ A property value.
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded, CreateExpanded3, CreateViaIdentityExpanded, CreateViaIdentityExpanded3
+Parameter Sets: CreateExpanded, CreateExpanded1, CreateViaIdentityExpanded, CreateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -236,7 +232,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphSingleValueLegacyExtendedProperty>: singleValueLegacyExtendedProperty
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[Value <String>]`: A property value.
 
 INPUTOBJECT <ICalendarIdentity>: Identity Parameter
@@ -246,6 +242,7 @@ INPUTOBJECT <ICalendarIdentity>: Identity Parameter
   - `[CalendarPermissionId <String>]`: key: id of calendarPermission
   - `[EventId <String>]`: key: id of event
   - `[EventId1 <String>]`: key: id of event
+  - `[EventId2 <String>]`: key: id of event
   - `[ExtensionId <String>]`: key: id of extension
   - `[GroupId <String>]`: key: id of group
   - `[MultiValueLegacyExtendedPropertyId <String>]`: key: id of multiValueLegacyExtendedProperty

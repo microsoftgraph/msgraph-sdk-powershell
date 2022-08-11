@@ -8,30 +8,28 @@ schema: 2.0.0
 # Get-MgUserCalendar
 
 ## SYNOPSIS
-The user's primary calendar.
-Read-only.
+Get calendars from users
 
 ## SYNTAX
 
-### Get2 (Default)
-```
-Get-MgUserCalendar -UserId <String> [-Property <String[]>] [<CommonParameters>]
-```
-
-### GetViaIdentity2
-```
-Get-MgUserCalendar -InputObject <ICalendarIdentity> [-Property <String[]>] [<CommonParameters>]
-```
-
-### List1
+### List (Default)
 ```
 Get-MgUserCalendar -UserId <String> [-Filter <String>] [-Property <String[]>] [-Skip <Int32>]
  [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
+### Get1
+```
+Get-MgUserCalendar -CalendarId <String> -UserId <String> [-Property <String[]>] [<CommonParameters>]
+```
+
+### GetViaIdentity1
+```
+Get-MgUserCalendar -InputObject <ICalendarIdentity> [-Property <String[]>] [<CommonParameters>]
+```
+
 ## DESCRIPTION
-The user's primary calendar.
-Read-only.
+Get calendars from users
 
 ## EXAMPLES
 
@@ -42,10 +40,25 @@ List all pages.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
-Parameter Sets: List1
+Parameter Sets: List
 Aliases:
 
 Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -CalendarId
+key: id of calendar
+
+```yaml
+Type: System.String
+Parameter Sets: Get1
+Aliases:
+
+Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -58,7 +71,7 @@ By default, this variable will be set in the global scope.
 
 ```yaml
 Type: System.String
-Parameter Sets: List1
+Parameter Sets: List
 Aliases: CV
 
 Required: False
@@ -73,7 +86,7 @@ Filter items by property values
 
 ```yaml
 Type: System.String
-Parameter Sets: List1
+Parameter Sets: List
 Aliases:
 
 Required: False
@@ -89,7 +102,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.ICalendarIdentity
-Parameter Sets: GetViaIdentity2
+Parameter Sets: GetViaIdentity1
 Aliases:
 
 Required: True
@@ -104,7 +117,7 @@ Sets the page size of results.
 
 ```yaml
 Type: System.Int32
-Parameter Sets: List1
+Parameter Sets: List
 Aliases:
 
 Required: False
@@ -134,7 +147,7 @@ Skip the first n items
 
 ```yaml
 Type: System.Int32
-Parameter Sets: List1
+Parameter Sets: List
 Aliases:
 
 Required: False
@@ -149,7 +162,7 @@ Order items by property values
 
 ```yaml
 Type: System.String[]
-Parameter Sets: List1
+Parameter Sets: List
 Aliases: OrderBy
 
 Required: False
@@ -164,7 +177,7 @@ Show only the first n items
 
 ```yaml
 Type: System.Int32
-Parameter Sets: List1
+Parameter Sets: List
 Aliases: Limit
 
 Required: False
@@ -179,7 +192,7 @@ key: id of user
 
 ```yaml
 Type: System.String
-Parameter Sets: Get2, List1
+Parameter Sets: Get1, List
 Aliases:
 
 Required: True
@@ -216,6 +229,7 @@ INPUTOBJECT <ICalendarIdentity>: Identity Parameter
   - `[CalendarPermissionId <String>]`: key: id of calendarPermission
   - `[EventId <String>]`: key: id of event
   - `[EventId1 <String>]`: key: id of event
+  - `[EventId2 <String>]`: key: id of event
   - `[ExtensionId <String>]`: key: id of extension
   - `[GroupId <String>]`: key: id of group
   - `[MultiValueLegacyExtendedPropertyId <String>]`: key: id of multiValueLegacyExtendedProperty

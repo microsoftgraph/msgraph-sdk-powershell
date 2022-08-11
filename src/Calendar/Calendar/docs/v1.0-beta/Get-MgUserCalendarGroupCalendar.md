@@ -8,10 +8,7 @@ schema: 2.0.0
 # Get-MgUserCalendarGroupCalendar
 
 ## SYNOPSIS
-The calendars in the calendar group.
-Navigation property.
-Read-only.
-Nullable.
+Get calendars from users
 
 ## SYNTAX
 
@@ -22,10 +19,7 @@ Get-MgUserCalendarGroupCalendar -CalendarGroupId <String> -UserId <String> [-Fil
 ```
 
 ## DESCRIPTION
-The calendars in the calendar group.
-Navigation property.
-Read-only.
-Nullable.
+Get calendars from users
 
 ## EXAMPLES
 
