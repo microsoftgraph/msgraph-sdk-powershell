@@ -1,42 +1,57 @@
 ---
 external help file:
 Module Name: Microsoft.Graph.Search
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.search/remove-mgexternalconnection
+online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.search/get-mgexternalconnectionitemactivityperformedby
 schema: 2.0.0
 ---
 
-# Remove-MgExternalConnection
+# Get-MgExternalConnectionItemActivityPerformedBy
 
 ## SYNOPSIS
-Delete navigation property connections for external
+Get performedBy from external
 
 ## SYNTAX
 
-### Delete1 (Default)
+### Get (Default)
 ```
-Remove-MgExternalConnection -ExternalConnectionId <String> [-IfMatch <String>] [-PassThru] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+Get-MgExternalConnectionItemActivityPerformedBy -ExternalActivityId <String> -ExternalConnectionId <String>
+ -ExternalItemId <String> [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
-### DeleteViaIdentity1
+### GetViaIdentity
 ```
-Remove-MgExternalConnection -InputObject <ISearchIdentity> [-IfMatch <String>] [-PassThru] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+Get-MgExternalConnectionItemActivityPerformedBy -InputObject <ISearchIdentity> [-ExpandProperty <String[]>]
+ [-Property <String[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Delete navigation property connections for external
+Get performedBy from external
 
 ## EXAMPLES
 
 ## PARAMETERS
 
-### -ExternalConnectionId
-key: id of externalConnection
+### -ExpandProperty
+Expand related entities
+
+```yaml
+Type: System.String[]
+Parameter Sets: (All)
+Aliases: Expand
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ExternalActivityId
+key: id of externalActivity
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete1
+Parameter Sets: Get
 Aliases:
 
 Required: True
@@ -46,15 +61,30 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -IfMatch
-ETag
+### -ExternalConnectionId
+key: id of externalConnection
 
 ```yaml
 Type: System.String
-Parameter Sets: (All)
+Parameter Sets: Get
 Aliases:
 
-Required: False
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ExternalItemId
+key: id of externalItem
+
+```yaml
+Type: System.String
+Parameter Sets: Get
+Aliases:
+
+Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -67,7 +97,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.ISearchIdentity
-Parameter Sets: DeleteViaIdentity1
+Parameter Sets: GetViaIdentity
 Aliases:
 
 Required: True
@@ -77,44 +107,13 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -PassThru
-Returns true when the command succeeds
+### -Property
+Select properties to be returned
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: System.String[]
 Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Confirm
-Prompts you for confirmation before running the cmdlet.
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
-Aliases: cf
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -WhatIf
-Shows what would happen if the cmdlet runs.
-The cmdlet is not run.
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
-Aliases: wi
+Aliases: Select
 
 Required: False
 Position: Named
@@ -132,7 +131,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### System.Boolean
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphExternalConnectorsIdentity
 
 ## NOTES
 

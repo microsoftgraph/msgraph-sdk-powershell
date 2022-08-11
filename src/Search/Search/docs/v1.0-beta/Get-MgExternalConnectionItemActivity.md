@@ -1,38 +1,38 @@
 ---
 external help file:
 Module Name: Microsoft.Graph.Search
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.search/get-mgexternalconnection
+online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.search/get-mgexternalconnectionitemactivity
 schema: 2.0.0
 ---
 
-# Get-MgExternalConnection
+# Get-MgExternalConnectionItemActivity
 
 ## SYNOPSIS
-Get connections from external
+Get activities from external
 
 ## SYNTAX
 
-### List1 (Default)
+### List (Default)
 ```
-Get-MgExternalConnection [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
- [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>]
- [-PageSize <Int32>] [<CommonParameters>]
-```
-
-### Get1
-```
-Get-MgExternalConnection -ExternalConnectionId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
- [<CommonParameters>]
+Get-MgExternalConnectionItemActivity -ExternalConnectionId <String> -ExternalItemId <String>
+ [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>]
+ [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
-### GetViaIdentity1
+### Get
 ```
-Get-MgExternalConnection -InputObject <ISearchIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
- [<CommonParameters>]
+Get-MgExternalConnectionItemActivity -ExternalActivityId <String> -ExternalConnectionId <String>
+ -ExternalItemId <String> [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
+```
+
+### GetViaIdentity
+```
+Get-MgExternalConnectionItemActivity -InputObject <ISearchIdentity> [-ExpandProperty <String[]>]
+ [-Property <String[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Get connections from external
+Get activities from external
 
 ## EXAMPLES
 
@@ -43,7 +43,7 @@ List all pages.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
-Parameter Sets: List1
+Parameter Sets: List
 Aliases:
 
 Required: False
@@ -59,7 +59,7 @@ By default, this variable will be set in the global scope.
 
 ```yaml
 Type: System.String
-Parameter Sets: List1
+Parameter Sets: List
 Aliases: CV
 
 Required: False
@@ -84,12 +84,42 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -ExternalActivityId
+key: id of externalActivity
+
+```yaml
+Type: System.String
+Parameter Sets: Get
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -ExternalConnectionId
 key: id of externalConnection
 
 ```yaml
 Type: System.String
-Parameter Sets: Get1
+Parameter Sets: Get, List
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ExternalItemId
+key: id of externalItem
+
+```yaml
+Type: System.String
+Parameter Sets: Get, List
 Aliases:
 
 Required: True
@@ -104,7 +134,7 @@ Filter items by property values
 
 ```yaml
 Type: System.String
-Parameter Sets: List1
+Parameter Sets: List
 Aliases:
 
 Required: False
@@ -120,7 +150,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.ISearchIdentity
-Parameter Sets: GetViaIdentity1
+Parameter Sets: GetViaIdentity
 Aliases:
 
 Required: True
@@ -135,7 +165,7 @@ Sets the page size of results.
 
 ```yaml
 Type: System.Int32
-Parameter Sets: List1
+Parameter Sets: List
 Aliases:
 
 Required: False
@@ -165,7 +195,7 @@ Search items by search phrases
 
 ```yaml
 Type: System.String
-Parameter Sets: List1
+Parameter Sets: List
 Aliases:
 
 Required: False
@@ -180,7 +210,7 @@ Skip the first n items
 
 ```yaml
 Type: System.Int32
-Parameter Sets: List1
+Parameter Sets: List
 Aliases:
 
 Required: False
@@ -195,7 +225,7 @@ Order items by property values
 
 ```yaml
 Type: System.String[]
-Parameter Sets: List1
+Parameter Sets: List
 Aliases: OrderBy
 
 Required: False
@@ -210,7 +240,7 @@ Show only the first n items
 
 ```yaml
 Type: System.Int32
-Parameter Sets: List1
+Parameter Sets: List
 Aliases: Limit
 
 Required: False
@@ -229,7 +259,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphExternalConnectorsExternalConnection1
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphExternalConnectorsExternalActivity
 
 ## NOTES
 

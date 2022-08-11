@@ -1,42 +1,72 @@
 ---
 external help file:
 Module Name: Microsoft.Graph.Search
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.search/remove-mgexternalconnection
+online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.search/remove-mgexternalconnectionitemactivity
 schema: 2.0.0
 ---
 
-# Remove-MgExternalConnection
+# Remove-MgExternalConnectionItemActivity
 
 ## SYNOPSIS
-Delete navigation property connections for external
+Delete navigation property activities for external
 
 ## SYNTAX
 
-### Delete1 (Default)
+### Delete (Default)
 ```
-Remove-MgExternalConnection -ExternalConnectionId <String> [-IfMatch <String>] [-PassThru] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+Remove-MgExternalConnectionItemActivity -ExternalActivityId <String> -ExternalConnectionId <String>
+ -ExternalItemId <String> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### DeleteViaIdentity1
+### DeleteViaIdentity
 ```
-Remove-MgExternalConnection -InputObject <ISearchIdentity> [-IfMatch <String>] [-PassThru] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+Remove-MgExternalConnectionItemActivity -InputObject <ISearchIdentity> [-IfMatch <String>] [-PassThru]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Delete navigation property connections for external
+Delete navigation property activities for external
 
 ## EXAMPLES
 
 ## PARAMETERS
+
+### -ExternalActivityId
+key: id of externalActivity
+
+```yaml
+Type: System.String
+Parameter Sets: Delete
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
 
 ### -ExternalConnectionId
 key: id of externalConnection
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete1
+Parameter Sets: Delete
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ExternalItemId
+key: id of externalItem
+
+```yaml
+Type: System.String
+Parameter Sets: Delete
 Aliases:
 
 Required: True
@@ -67,7 +97,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.ISearchIdentity
-Parameter Sets: DeleteViaIdentity1
+Parameter Sets: DeleteViaIdentity
 Aliases:
 
 Required: True

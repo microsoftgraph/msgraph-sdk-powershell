@@ -1,49 +1,48 @@
 ---
 external help file:
 Module Name: Microsoft.Graph.Search
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.search/update-mgexternalconnectiongroup
+online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.search/update-mgexternalconnectionitemactivity
 schema: 2.0.0
 ---
 
-# Update-MgExternalConnectionGroup
+# Update-MgExternalConnectionItemActivity
 
 ## SYNOPSIS
-Update the navigation property groups in external
+Update the navigation property activities in external
 
 ## SYNTAX
 
 ### UpdateExpanded (Default)
 ```
-Update-MgExternalConnectionGroup -ExternalConnectionId <String> -ExternalGroupId <String>
- [-AdditionalProperties <Hashtable>] [-Description <String>] [-DisplayName <String>] [-Id <String>]
- [-Members <IMicrosoftGraphExternalConnectorsIdentity[]>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+Update-MgExternalConnectionItemActivity -ExternalActivityId <String> -ExternalConnectionId <String>
+ -ExternalItemId <String> [-AdditionalProperties <Hashtable>] [-Id <String>]
+ [-PerformedBy <IMicrosoftGraphExternalConnectorsIdentity>] [-StartDateTime <DateTime>] [-Type <String>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
-Update-MgExternalConnectionGroup -ExternalConnectionId <String> -ExternalGroupId <String>
- -BodyParameter <IMicrosoftGraphExternalConnectorsExternalGroup> [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+Update-MgExternalConnectionItemActivity -ExternalActivityId <String> -ExternalConnectionId <String>
+ -ExternalItemId <String> -BodyParameter <IMicrosoftGraphExternalConnectorsExternalActivity> [-PassThru]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgExternalConnectionGroup -InputObject <ISearchIdentity>
- -BodyParameter <IMicrosoftGraphExternalConnectorsExternalGroup> [-PassThru] [-Confirm] [-WhatIf]
+Update-MgExternalConnectionItemActivity -InputObject <ISearchIdentity>
+ -BodyParameter <IMicrosoftGraphExternalConnectorsExternalActivity> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgExternalConnectionGroup -InputObject <ISearchIdentity> [-AdditionalProperties <Hashtable>]
- [-Description <String>] [-DisplayName <String>] [-Id <String>]
- [-Members <IMicrosoftGraphExternalConnectorsIdentity[]>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+Update-MgExternalConnectionItemActivity -InputObject <ISearchIdentity> [-AdditionalProperties <Hashtable>]
+ [-Id <String>] [-PerformedBy <IMicrosoftGraphExternalConnectorsIdentity>] [-StartDateTime <DateTime>]
+ [-Type <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Update the navigation property groups in external
+Update the navigation property activities in external
 
 ## EXAMPLES
 
@@ -65,11 +64,11 @@ Accept wildcard characters: False
 ```
 
 ### -BodyParameter
-externalGroup
+externalActivity
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphExternalConnectorsExternalGroup
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphExternalConnectorsExternalActivity
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -80,32 +79,15 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -Description
-The description of the external group.
-Optional.
+### -ExternalActivityId
+key: id of externalActivity
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: Update, UpdateExpanded
 Aliases:
 
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -DisplayName
-The friendly name of the external group.
-Optional.
-
-```yaml
-Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
-Aliases:
-
-Required: False
+Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -127,8 +109,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ExternalGroupId
-key: id of externalGroup
+### -ExternalItemId
+key: id of externalItem
 
 ```yaml
 Type: System.String
@@ -173,13 +155,27 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -Members
-A member added to an externalGroup.
-You can add Azure Active Directory users, Azure Active Directory groups, or other externalGroups as members.
-To construct, please use Get-Help -Online and see NOTES section for MEMBERS properties and create a hash table.
+### -PassThru
+Returns true when the command succeeds
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphExternalConnectorsIdentity[]
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -PerformedBy
+identity
+To construct, please use Get-Help -Online and see NOTES section for PERFORMEDBY properties and create a hash table.
+
+```yaml
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphExternalConnectorsIdentity
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -190,12 +186,27 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -PassThru
-Returns true when the command succeeds
+### -StartDateTime
+When the particular activity occurred.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
+Type: System.DateTime
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Type
+externalActivityType
+
+```yaml
+Type: System.String
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -241,7 +252,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphExternalConnectorsExternalGroup
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphExternalConnectorsExternalActivity
 
 ### Microsoft.Graph.PowerShell.Models.ISearchIdentity
 
@@ -258,14 +269,15 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-BODYPARAMETER <IMicrosoftGraphExternalConnectorsExternalGroup>: externalGroup
+BODYPARAMETER <IMicrosoftGraphExternalConnectorsExternalActivity>: externalActivity
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: 
-  - `[Description <String>]`: The description of the external group. Optional.
-  - `[DisplayName <String>]`: The friendly name of the external group. Optional.
-  - `[Members <IMicrosoftGraphExternalConnectorsIdentity[]>]`: A member added to an externalGroup. You can add Azure Active Directory users, Azure Active Directory groups, or other externalGroups as members.
+  - `[PerformedBy <IMicrosoftGraphExternalConnectorsIdentity>]`: identity
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Id <String>]`: 
     - `[Type <String>]`: identityType
+  - `[StartDateTime <DateTime?>]`: When the particular activity occurred.
+  - `[Type <String>]`: externalActivityType
 
 INPUTOBJECT <ISearchIdentity>: Identity Parameter
   - `[AcronymId <String>]`: key: id of acronym
@@ -278,7 +290,8 @@ INPUTOBJECT <ISearchIdentity>: Identity Parameter
   - `[IdentityId <String>]`: key: id of identity
   - `[QnaId <String>]`: key: id of qna
 
-MEMBERS <IMicrosoftGraphExternalConnectorsIdentity[]>: A member added to an externalGroup. You can add Azure Active Directory users, Azure Active Directory groups, or other externalGroups as members.
+PERFORMEDBY <IMicrosoftGraphExternalConnectorsIdentity>: identity
+  - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: 
   - `[Type <String>]`: identityType
 
