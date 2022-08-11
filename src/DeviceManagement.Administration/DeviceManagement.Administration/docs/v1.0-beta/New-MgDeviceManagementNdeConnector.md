@@ -14,8 +14,10 @@ Create new navigation property to ndesConnectors for deviceManagement
 
 ### CreateExpanded (Default)
 ```
-New-MgDeviceManagementNdeConnector [-AdditionalProperties <Hashtable>] [-DisplayName <String>] [-Id <String>]
- [-LastConnectionDateTime <DateTime>] [-State <NdesConnectorState>] [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgDeviceManagementNdeConnector [-AdditionalProperties <Hashtable>] [-ConnectorVersion <String>]
+ [-DisplayName <String>] [-EnrolledDateTime <DateTime>] [-Id <String>] [-LastConnectionDateTime <DateTime>]
+ [-MachineName <String>] [-RoleScopeTagIds <String[]>] [-State <NdesConnectorState>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Create
@@ -62,11 +64,41 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
+### -ConnectorVersion
+The build version of the Ndes Connector.
+
+```yaml
+Type: System.String
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -DisplayName
 The friendly name of the Ndes Connector.
 
 ```yaml
 Type: System.String
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -EnrolledDateTime
+Timestamp when on-prem certificate connector was enrolled in Intune.
+
+```yaml
+Type: System.DateTime
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -97,6 +129,36 @@ Last connection time for the Ndes Connector
 
 ```yaml
 Type: System.DateTime
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -MachineName
+Name of the machine running on-prem certificate connector service.
+
+```yaml
+Type: System.String
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -RoleScopeTagIds
+List of Scope Tags for this Entity instance.
+
+```yaml
+Type: System.String[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -176,8 +238,12 @@ To create the parameters described below, construct a hash table containing the 
 BODYPARAMETER <IMicrosoftGraphNdesConnector>: Entity which represents an OnPrem Ndes connector.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: 
+  - `[ConnectorVersion <String>]`: The build version of the Ndes Connector.
   - `[DisplayName <String>]`: The friendly name of the Ndes Connector.
+  - `[EnrolledDateTime <DateTime?>]`: Timestamp when on-prem certificate connector was enrolled in Intune.
   - `[LastConnectionDateTime <DateTime?>]`: Last connection time for the Ndes Connector
+  - `[MachineName <String>]`: Name of the machine running on-prem certificate connector service.
+  - `[RoleScopeTagIds <String[]>]`: List of Scope Tags for this Entity instance.
   - `[State <NdesConnectorState?>]`: The current status of the Ndes Connector.
 
 ## RELATED LINKS
