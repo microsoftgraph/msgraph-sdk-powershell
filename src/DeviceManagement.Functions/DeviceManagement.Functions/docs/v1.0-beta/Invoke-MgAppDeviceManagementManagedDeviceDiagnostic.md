@@ -1,30 +1,30 @@
 ---
 external help file:
 Module Name: Microsoft.Graph.DeviceManagement.Functions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.functions/get-mgdevicemanagementcomanageddevicenoncompliantsetting
+online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.functions/invoke-mgappdevicemanagementmanageddevicediagnostic
 schema: 2.0.0
 ---
 
-# Get-MgDeviceManagementComanagedDeviceNonCompliantSetting
+# Invoke-MgAppDeviceManagementManagedDeviceDiagnostic
 
 ## SYNOPSIS
-Invoke function getNonCompliantSettings
+Invoke function appDiagnostics
 
 ## SYNTAX
 
-### Get (Default)
+### App (Default)
 ```
-Get-MgDeviceManagementComanagedDeviceNonCompliantSetting -ManagedDeviceId <String> [<CommonParameters>]
+Invoke-MgAppDeviceManagementManagedDeviceDiagnostic -Upn <String> [<CommonParameters>]
 ```
 
-### GetViaIdentity
+### AppViaIdentity
 ```
-Get-MgDeviceManagementComanagedDeviceNonCompliantSetting -InputObject <IDeviceManagementFunctionsIdentity>
+Invoke-MgAppDeviceManagementManagedDeviceDiagnostic -InputObject <IDeviceManagementFunctionsIdentity>
  [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Invoke function getNonCompliantSettings
+Invoke function appDiagnostics
 
 ## EXAMPLES
 
@@ -36,7 +36,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementFunctionsIdentity
-Parameter Sets: GetViaIdentity
+Parameter Sets: AppViaIdentity
 Aliases:
 
 Required: True
@@ -46,12 +46,12 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -ManagedDeviceId
-key: id of managedDevice
+### -Upn
+Usage: upn='{upn}'
 
 ```yaml
 Type: System.String
-Parameter Sets: Get
+Parameter Sets: App
 Aliases:
 
 Required: True
@@ -70,7 +70,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceCompliancePolicySettingState
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPowerliftIncidentMetadata
 
 ## NOTES
 
