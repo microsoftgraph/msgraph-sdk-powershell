@@ -1,29 +1,29 @@
 ---
 external help file:
 Module Name: Microsoft.Graph.Users.Functions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.functions/get-mgusermanagedappdiagnosticstatuses
+online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.functions/invoke-mgappusermanageddevicediagnostic
 schema: 2.0.0
 ---
 
-# Get-MgUserManagedAppDiagnosticStatuses
+# Invoke-MgAppUserManagedDeviceDiagnostic
 
 ## SYNOPSIS
-Invoke function getManagedAppDiagnosticStatuses
+Invoke function appDiagnostics
 
 ## SYNTAX
 
-### Get1 (Default)
+### App (Default)
 ```
-Get-MgUserManagedAppDiagnosticStatuses -UserId <String> [<CommonParameters>]
+Invoke-MgAppUserManagedDeviceDiagnostic -Upn <String> -UserId <String> [<CommonParameters>]
 ```
 
-### GetViaIdentity1
+### AppViaIdentity
 ```
-Get-MgUserManagedAppDiagnosticStatuses -InputObject <IUsersFunctionsIdentity> [<CommonParameters>]
+Invoke-MgAppUserManagedDeviceDiagnostic -InputObject <IUsersFunctionsIdentity> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Invoke function getManagedAppDiagnosticStatuses
+Invoke function appDiagnostics
 
 ## EXAMPLES
 
@@ -35,7 +35,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IUsersFunctionsIdentity
-Parameter Sets: GetViaIdentity1
+Parameter Sets: AppViaIdentity
 Aliases:
 
 Required: True
@@ -45,12 +45,27 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
+### -Upn
+Usage: upn='{upn}'
+
+```yaml
+Type: System.String
+Parameter Sets: App
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -UserId
 key: id of user
 
 ```yaml
 Type: System.String
-Parameter Sets: Get1
+Parameter Sets: App
 Aliases:
 
 Required: True
@@ -69,7 +84,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedAppDiagnosticStatus
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPowerliftIncidentMetadata
 
 ## NOTES
 
