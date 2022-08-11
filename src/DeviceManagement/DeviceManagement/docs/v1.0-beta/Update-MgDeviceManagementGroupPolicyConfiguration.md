@@ -18,7 +18,8 @@ Update-MgDeviceManagementGroupPolicyConfiguration -GroupPolicyConfigurationId <S
  [-AdditionalProperties <Hashtable>] [-Assignments <IMicrosoftGraphGroupPolicyConfigurationAssignment[]>]
  [-CreatedDateTime <DateTime>] [-DefinitionValues <IMicrosoftGraphGroupPolicyDefinitionValue[]>]
  [-Description <String>] [-DisplayName <String>] [-Id <String>] [-LastModifiedDateTime <DateTime>]
- [-RoleScopeTagIds <String[]>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-PolicyConfigurationIngestionType <GroupPolicyConfigurationIngestionType>] [-RoleScopeTagIds <String[]>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
@@ -41,7 +42,8 @@ Update-MgDeviceManagementGroupPolicyConfiguration -InputObject <IDeviceManagemen
  [-AdditionalProperties <Hashtable>] [-Assignments <IMicrosoftGraphGroupPolicyConfigurationAssignment[]>]
  [-CreatedDateTime <DateTime>] [-DefinitionValues <IMicrosoftGraphGroupPolicyDefinitionValue[]>]
  [-Description <String>] [-DisplayName <String>] [-Id <String>] [-LastModifiedDateTime <DateTime>]
- [-RoleScopeTagIds <String[]>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-PolicyConfigurationIngestionType <GroupPolicyConfigurationIngestionType>] [-RoleScopeTagIds <String[]>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -235,6 +237,21 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -PolicyConfigurationIngestionType
+Group Policy Configuration Ingestion Type
+
+```yaml
+Type: Microsoft.Graph.PowerShell.Support.GroupPolicyConfigurationIngestionType
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -RoleScopeTagIds
 The list of scope tags for the configuration.
 
@@ -348,6 +365,7 @@ BODYPARAMETER <IMicrosoftGraphGroupPolicyConfiguration>: The group policy config
           - `[TargetPrefix <String>]`: Specifies the logical name that refers to the namespace within the ADMX file.
         - `[Definitions <IMicrosoftGraphGroupPolicyDefinition[]>]`: The immediate GroupPolicyDefinition children of the category
         - `[DisplayName <String>]`: The string id of the category's display name
+        - `[IngestionSource <IngestionSource?>]`: Category Ingestion source
         - `[IsRoot <Boolean?>]`: Defines if the category is a root category
         - `[LastModifiedDateTime <DateTime?>]`: The date and time the entity was last modified.
         - `[Parent <IMicrosoftGraphGroupPolicyCategory>]`: The category entity stores the category of a group policy definition
@@ -382,6 +400,7 @@ BODYPARAMETER <IMicrosoftGraphGroupPolicyConfiguration>: The group policy config
   - `[Description <String>]`: User provided description for the resource object.
   - `[DisplayName <String>]`: User provided name for the resource object.
   - `[LastModifiedDateTime <DateTime?>]`: The date and time the entity was last modified.
+  - `[PolicyConfigurationIngestionType <GroupPolicyConfigurationIngestionType?>]`: Group Policy Configuration Ingestion Type
   - `[RoleScopeTagIds <String[]>]`: The list of scope tags for the configuration.
 
 DEFINITIONVALUES <IMicrosoftGraphGroupPolicyDefinitionValue[]>: The list of enabled or disabled group policy definition values for the configuration.
@@ -410,6 +429,7 @@ DEFINITIONVALUES <IMicrosoftGraphGroupPolicyDefinitionValue[]>: The list of enab
         - `[TargetPrefix <String>]`: Specifies the logical name that refers to the namespace within the ADMX file.
       - `[Definitions <IMicrosoftGraphGroupPolicyDefinition[]>]`: The immediate GroupPolicyDefinition children of the category
       - `[DisplayName <String>]`: The string id of the category's display name
+      - `[IngestionSource <IngestionSource?>]`: Category Ingestion source
       - `[IsRoot <Boolean?>]`: Defines if the category is a root category
       - `[LastModifiedDateTime <DateTime?>]`: The date and time the entity was last modified.
       - `[Parent <IMicrosoftGraphGroupPolicyCategory>]`: The category entity stores the category of a group policy definition
