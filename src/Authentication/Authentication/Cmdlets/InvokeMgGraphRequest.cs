@@ -469,6 +469,11 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                             ErrorConstants.Codes.InvokeGraphContentTypeException, returnType);
                     ThrowIfError(errorRecord);
                 }
+                else if (returnType == RestReturnType.Detect)
+                {
+                    var responseString = await response.Content.ReadAsStringAsync();
+                    WriteObject(responseString);
+                }
                 else if (returnType == RestReturnType.OctetStream)
                 {
                     var errorRecord =
@@ -594,6 +599,12 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
 
                 var cancellationToken = _cancellationTokenSource.Token;
                 var response = await client.SendAsync(request, cancellationToken);
+                var responseType = response.GetType();
+                var contentType = response.GetContentType();
+                if (responseType != typeof(HttpResponseMessage) || (contentType.Equals("text/plain") && String.IsNullOrEmpty(OutputFilePath) && !OutputType.Equals(OutputType.HttpResponseMessage)))
+                {
+                    throw new ArgumentException("missing -OutputFilePath parameter"); 
+                }
                 return response;
             }
         }
