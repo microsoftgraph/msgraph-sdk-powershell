@@ -8,20 +8,18 @@ schema: 2.0.0
 # Get-MgUserCalendarView
 
 ## SYNOPSIS
-The calendar view for the calendar.
-Navigation property.
-Read-only.
+Get calendarView from users
 
 ## SYNTAX
 
-### List2 (Default)
+### List (Default)
 ```
 Get-MgUserCalendarView -UserId <String> -EndDateTime <String> -StartDateTime <String> [-Filter <String>]
  [-Property <String[]>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>]
  [-PageSize <Int32>] [<CommonParameters>]
 ```
 
-### List3
+### List1
 ```
 Get-MgUserCalendarView -CalendarId <String> -UserId <String> -EndDateTime <String> -StartDateTime <String>
  [-Filter <String>] [-Property <String[]>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
@@ -29,9 +27,7 @@ Get-MgUserCalendarView -CalendarId <String> -UserId <String> -EndDateTime <Strin
 ```
 
 ## DESCRIPTION
-The calendar view for the calendar.
-Navigation property.
-Read-only.
+Get calendarView from users
 
 ## EXAMPLES
 
@@ -57,7 +53,7 @@ key: id of calendar
 
 ```yaml
 Type: System.String
-Parameter Sets: List3
+Parameter Sets: List1
 Aliases:
 
 Required: True
@@ -227,7 +223,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEvent1
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEvent
 
 ## NOTES
 

@@ -8,10 +8,7 @@ schema: 2.0.0
 # Remove-MgUserEvent
 
 ## SYNOPSIS
-The user's events.
-Default is to show Events under the Default Calendar.
-Read-only.
-Nullable.
+Delete navigation property events for users
 
 ## SYNTAX
 
@@ -28,10 +25,7 @@ Remove-MgUserEvent -InputObject <ICalendarIdentity> [-IfMatch <String>] [-PassTh
 ```
 
 ## DESCRIPTION
-The user's events.
-Default is to show Events under the Default Calendar.
-Read-only.
-Nullable.
+Delete navigation property events for users
 
 ## EXAMPLES
 
@@ -171,6 +165,7 @@ INPUTOBJECT <ICalendarIdentity>: Identity Parameter
   - `[CalendarPermissionId <String>]`: key: id of calendarPermission
   - `[EventId <String>]`: key: id of event
   - `[EventId1 <String>]`: key: id of event
+  - `[EventId2 <String>]`: key: id of event
   - `[ExtensionId <String>]`: key: id of extension
   - `[GroupId <String>]`: key: id of group
   - `[MultiValueLegacyExtendedPropertyId <String>]`: key: id of multiValueLegacyExtendedProperty

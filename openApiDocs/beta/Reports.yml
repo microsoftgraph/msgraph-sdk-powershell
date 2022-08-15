@@ -9732,6 +9732,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.defaultMfaMethodType'
             isAdmin:
               type: boolean
+              description: Whether the user has an admin role in the tenant. This value can be used to check the authentication methods that privileged accounts are registered for and capable of.
               nullable: true
             isMfaCapable:
               type: boolean
@@ -11279,7 +11280,7 @@ components:
       title: deviceManagementReportFileFormat
       enum:
         - csv
-        - pdf
+        - json
       type: string
       description: Possible values for the file format of a report
       x-ms-enum:
@@ -11287,11 +11288,11 @@ components:
         modelAsString: false
         values:
           - value: csv
-            description: Comma-separated values
+            description: CSV Format
             name: csv
-          - value: pdf
-            description: Portable Document Format
-            name: pdf
+          - value: json
+            description: JSON Format
+            name: json
     microsoft.graph.deviceManagementExportJobLocalizationType:
       title: deviceManagementExportJobLocalizationType
       enum:

@@ -8,10 +8,7 @@ schema: 2.0.0
 # Remove-MgUserEventAttachment
 
 ## SYNOPSIS
-The collection of FileAttachment, ItemAttachment, and referenceAttachment attachments for the event.
-Navigation property.
-Read-only.
-Nullable.
+Delete navigation property attachments for users
 
 ## SYNTAX
 
@@ -28,10 +25,7 @@ Remove-MgUserEventAttachment -InputObject <ICalendarIdentity> [-IfMatch <String>
 ```
 
 ## DESCRIPTION
-The collection of FileAttachment, ItemAttachment, and referenceAttachment attachments for the event.
-Navigation property.
-Read-only.
-Nullable.
+Delete navigation property attachments for users
 
 ## EXAMPLES
 
@@ -186,6 +180,7 @@ INPUTOBJECT <ICalendarIdentity>: Identity Parameter
   - `[CalendarPermissionId <String>]`: key: id of calendarPermission
   - `[EventId <String>]`: key: id of event
   - `[EventId1 <String>]`: key: id of event
+  - `[EventId2 <String>]`: key: id of event
   - `[ExtensionId <String>]`: key: id of extension
   - `[GroupId <String>]`: key: id of group
   - `[MultiValueLegacyExtendedPropertyId <String>]`: key: id of multiValueLegacyExtendedProperty

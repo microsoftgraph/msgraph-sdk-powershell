@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgBookingBusiness
 
 ## SYNOPSIS
-Get entity from bookingBusinesses by key
+Get bookingBusiness
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgBookingBusiness -InputObject <IBookingsIdentity> [-ExpandProperty <String[
 ```
 
 ## DESCRIPTION
-Get entity from bookingBusinesses by key
+Get bookingBusiness
 
 ## EXAMPLES
 

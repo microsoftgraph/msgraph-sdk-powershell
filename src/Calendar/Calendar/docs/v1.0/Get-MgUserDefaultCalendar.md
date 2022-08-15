@@ -8,45 +8,26 @@ schema: 2.0.0
 # Get-MgUserDefaultCalendar
 
 ## SYNOPSIS
-The user's calendars.
-Read-only.
-Nullable.
+Get calendar from users
 
 ## SYNTAX
 
-### Get1 (Default)
+### Get2 (Default)
 ```
-Get-MgUserDefaultCalendar -CalendarId <String> -UserId <String> [-Property <String[]>] [<CommonParameters>]
+Get-MgUserDefaultCalendar -UserId <String> [-Property <String[]>] [<CommonParameters>]
 ```
 
-### GetViaIdentity1
+### GetViaIdentity2
 ```
 Get-MgUserDefaultCalendar -InputObject <ICalendarIdentity> [-Property <String[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-The user's calendars.
-Read-only.
-Nullable.
+Get calendar from users
 
 ## EXAMPLES
 
 ## PARAMETERS
-
-### -CalendarId
-key: id of calendar
-
-```yaml
-Type: System.String
-Parameter Sets: Get1
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
 
 ### -InputObject
 Identity Parameter
@@ -54,7 +35,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.ICalendarIdentity
-Parameter Sets: GetViaIdentity1
+Parameter Sets: GetViaIdentity2
 Aliases:
 
 Required: True
@@ -84,7 +65,7 @@ key: id of user
 
 ```yaml
 Type: System.String
-Parameter Sets: Get1
+Parameter Sets: Get2
 Aliases:
 
 Required: True
@@ -121,6 +102,7 @@ INPUTOBJECT <ICalendarIdentity>: Identity Parameter
   - `[CalendarPermissionId <String>]`: key: id of calendarPermission
   - `[EventId <String>]`: key: id of event
   - `[EventId1 <String>]`: key: id of event
+  - `[EventId2 <String>]`: key: id of event
   - `[ExtensionId <String>]`: key: id of extension
   - `[GroupId <String>]`: key: id of group
   - `[MultiValueLegacyExtendedPropertyId <String>]`: key: id of multiValueLegacyExtendedProperty

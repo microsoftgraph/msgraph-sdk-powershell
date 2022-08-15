@@ -8,39 +8,39 @@ schema: 2.0.0
 # Get-MgUserCalendarPermission
 
 ## SYNOPSIS
-The permissions of the users with whom the calendar is shared.
+Get calendarPermissions from users
 
 ## SYNTAX
 
-### List (Default)
+### List2 (Default)
 ```
 Get-MgUserCalendarPermission -UserId <String> [-Filter <String>] [-Property <String[]>] [-Skip <Int32>]
  [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
-### Get
+### Get2
 ```
 Get-MgUserCalendarPermission -CalendarPermissionId <String> -UserId <String> [-Property <String[]>]
  [<CommonParameters>]
 ```
 
-### Get1
+### Get3
 ```
 Get-MgUserCalendarPermission -CalendarId <String> -CalendarPermissionId <String> -UserId <String>
  [-Property <String[]>] [<CommonParameters>]
 ```
 
-### GetViaIdentity
+### GetViaIdentity2
 ```
 Get-MgUserCalendarPermission -InputObject <ICalendarIdentity> [-Property <String[]>] [<CommonParameters>]
 ```
 
-### GetViaIdentity1
+### GetViaIdentity3
 ```
 Get-MgUserCalendarPermission -InputObject <ICalendarIdentity> [-Property <String[]>] [<CommonParameters>]
 ```
 
-### List1
+### List3
 ```
 Get-MgUserCalendarPermission -CalendarId <String> -UserId <String> [-Filter <String>] [-Property <String[]>]
  [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>]
@@ -48,7 +48,7 @@ Get-MgUserCalendarPermission -CalendarId <String> -UserId <String> [-Filter <Str
 ```
 
 ## DESCRIPTION
-The permissions of the users with whom the calendar is shared.
+Get calendarPermissions from users
 
 ## EXAMPLES
 
@@ -59,7 +59,7 @@ List all pages.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
-Parameter Sets: List, List1
+Parameter Sets: List2, List3
 Aliases:
 
 Required: False
@@ -74,7 +74,7 @@ key: id of calendar
 
 ```yaml
 Type: System.String
-Parameter Sets: Get1, List1
+Parameter Sets: Get3, List3
 Aliases:
 
 Required: True
@@ -89,7 +89,7 @@ key: id of calendarPermission
 
 ```yaml
 Type: System.String
-Parameter Sets: Get, Get1
+Parameter Sets: Get2, Get3
 Aliases:
 
 Required: True
@@ -105,7 +105,7 @@ By default, this variable will be set in the global scope.
 
 ```yaml
 Type: System.String
-Parameter Sets: List, List1
+Parameter Sets: List2, List3
 Aliases: CV
 
 Required: False
@@ -120,7 +120,7 @@ Filter items by property values
 
 ```yaml
 Type: System.String
-Parameter Sets: List, List1
+Parameter Sets: List2, List3
 Aliases:
 
 Required: False
@@ -136,7 +136,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.ICalendarIdentity
-Parameter Sets: GetViaIdentity, GetViaIdentity1
+Parameter Sets: GetViaIdentity2, GetViaIdentity3
 Aliases:
 
 Required: True
@@ -151,7 +151,7 @@ Sets the page size of results.
 
 ```yaml
 Type: System.Int32
-Parameter Sets: List, List1
+Parameter Sets: List2, List3
 Aliases:
 
 Required: False
@@ -181,7 +181,7 @@ Skip the first n items
 
 ```yaml
 Type: System.Int32
-Parameter Sets: List, List1
+Parameter Sets: List2, List3
 Aliases:
 
 Required: False
@@ -196,7 +196,7 @@ Order items by property values
 
 ```yaml
 Type: System.String[]
-Parameter Sets: List, List1
+Parameter Sets: List2, List3
 Aliases: OrderBy
 
 Required: False
@@ -211,7 +211,7 @@ Show only the first n items
 
 ```yaml
 Type: System.Int32
-Parameter Sets: List, List1
+Parameter Sets: List2, List3
 Aliases: Limit
 
 Required: False
@@ -226,7 +226,7 @@ key: id of user
 
 ```yaml
 Type: System.String
-Parameter Sets: Get, Get1, List, List1
+Parameter Sets: Get2, Get3, List2, List3
 Aliases:
 
 Required: True
@@ -263,6 +263,7 @@ INPUTOBJECT <ICalendarIdentity>: Identity Parameter
   - `[CalendarPermissionId <String>]`: key: id of calendarPermission
   - `[EventId <String>]`: key: id of event
   - `[EventId1 <String>]`: key: id of event
+  - `[EventId2 <String>]`: key: id of event
   - `[ExtensionId <String>]`: key: id of extension
   - `[GroupId <String>]`: key: id of group
   - `[MultiValueLegacyExtendedPropertyId <String>]`: key: id of multiValueLegacyExtendedProperty

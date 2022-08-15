@@ -8,11 +8,7 @@ schema: 2.0.0
 # Remove-MgGroupEventInstance
 
 ## SYNOPSIS
-The occurrences of a recurring series, if the event is a series master.
-This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series.
-Navigation property.
-Read-only.
-Nullable.
+Delete navigation property instances for groups
 
 ## SYNTAX
 
@@ -29,11 +25,7 @@ Remove-MgGroupEventInstance -InputObject <ICalendarIdentity> [-IfMatch <String>]
 ```
 
 ## DESCRIPTION
-The occurrences of a recurring series, if the event is a series master.
-This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series.
-Navigation property.
-Read-only.
-Nullable.
+Delete navigation property instances for groups
 
 ## EXAMPLES
 
@@ -188,6 +180,7 @@ INPUTOBJECT <ICalendarIdentity>: Identity Parameter
   - `[CalendarPermissionId <String>]`: key: id of calendarPermission
   - `[EventId <String>]`: key: id of event
   - `[EventId1 <String>]`: key: id of event
+  - `[EventId2 <String>]`: key: id of event
   - `[ExtensionId <String>]`: key: id of extension
   - `[GroupId <String>]`: key: id of group
   - `[MultiValueLegacyExtendedPropertyId <String>]`: key: id of multiValueLegacyExtendedProperty
