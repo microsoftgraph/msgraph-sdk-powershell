@@ -32,7 +32,7 @@ namespace Microsoft.Graph.PowerShell.Authentication
 
     public interface IAuthContext
     {
-        string AccountId { get; set; }
+        string ManagedIdentityId { get; set; }
         string ClientId { get; set; }
         string TenantId { get; set; }
         string[] Scopes { get; set; }

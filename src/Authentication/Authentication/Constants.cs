@@ -32,8 +32,8 @@ namespace Microsoft.Graph.PowerShell.Authentication
             public const string Environment = "The name of the national cloud environment to connect to. By default global cloud is used.";
             public const string UseDeviceCode = "Use device code authentication instead of a browser control.";
             public const string ClientTimeout = "Sets the HTTP client timeout in seconds.";
-            public const string Identity = "Login using a Managed Service Identity (MSI).";
-            public const string IdentityAccountId = "Account Id for managed service. Can be a managed service resource Id, or the associated client id. To use the SystemAssigned identity, leave this field blank.";
+            public const string Identity = "Login using a Managed Identity.";
+            public const string ManagedIdentityClientId = "The client id to authenticate for a user assigned managed identity. For more information on user assigned managed identities see: https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/overview#how-a-user-assigned-managed-identity-works-with-an-azure-vmId. To use the SystemAssigned identity, leave this field blank.";
         }
     }
 }

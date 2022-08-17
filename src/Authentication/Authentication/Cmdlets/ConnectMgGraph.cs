@@ -34,7 +34,8 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
 
         [Parameter(ParameterSetName = Constants.AppParameterSet, Position = 1, Mandatory = true, HelpMessage = HelpMessages.ClientId)]
         [Parameter(ParameterSetName = Constants.UserParameterSet, Mandatory = false, HelpMessage = HelpMessages.ClientId)]
-        [Alias("AppId")]
+        [Parameter(ParameterSetName = Constants.IdentityParameterSet, Mandatory = false, HelpMessage = HelpMessages.ManagedIdentityClientId)]
+        [Alias("AppId", "ApplicationId")]
         public string ClientId { get; set; }
 
         [Parameter(ParameterSetName = Constants.AppParameterSet, Position = 2, HelpMessage = HelpMessages.CertificateSubjectName)]
@@ -51,9 +52,8 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
         public SecureString AccessToken { get; set; }
 
         [Parameter(ParameterSetName = Constants.AppParameterSet, HelpMessage = HelpMessages.TenantId)]
-        [Parameter(ParameterSetName = Constants.IdentityParameterSet, HelpMessage = HelpMessages.TenantId)]
         [Parameter(ParameterSetName = Constants.UserParameterSet, Position = 4, HelpMessage = HelpMessages.TenantId)]
-        [Alias("Audience")]
+        [Alias("Audience", "Tenant")]
         public string TenantId { get; set; }
 
         [Parameter(ParameterSetName = Constants.AppParameterSet, HelpMessage = HelpMessages.ContextScope)]
@@ -64,6 +64,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
         [Parameter(ParameterSetName = Constants.AppParameterSet, HelpMessage = HelpMessages.Environment)]
         [Parameter(ParameterSetName = Constants.AccessTokenParameterSet, HelpMessage = HelpMessages.Environment)]
         [Parameter(ParameterSetName = Constants.UserParameterSet, Mandatory = false, HelpMessage = HelpMessages.Environment)]
+        [Parameter(ParameterSetName = Constants.IdentityParameterSet, Mandatory = false, HelpMessage = HelpMessages.Environment)]
         [ValidateNotNullOrEmpty]
         [Alias("EnvironmentName", "NationalCloud")]
         public string Environment { get; set; }
@@ -75,16 +76,13 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
         [Parameter(ParameterSetName = Constants.AppParameterSet, HelpMessage = HelpMessages.ClientTimeout)]
         [Parameter(ParameterSetName = Constants.AccessTokenParameterSet, HelpMessage = HelpMessages.ClientTimeout)]
         [Parameter(ParameterSetName = Constants.UserParameterSet, Mandatory = false, HelpMessage = HelpMessages.ClientTimeout)]
+        [Parameter(ParameterSetName = Constants.IdentityParameterSet, Mandatory = false, HelpMessage = HelpMessages.ClientTimeout)]
         [ValidateNotNullOrEmpty]
         public double ClientTimeout { get; set; }
 
-        [Parameter(ParameterSetName = Constants.IdentityParameterSet, Mandatory = false, HelpMessage = HelpMessages.Identity)]
+        [Parameter(ParameterSetName = Constants.IdentityParameterSet, Position = 1, Mandatory = false, HelpMessage = HelpMessages.Identity)]
         [Alias("ManagedIdentity", "ManagedServiceIdentity", "MSI")]
         public SwitchParameter Identity { get; set; }
-
-        [Parameter(ParameterSetName = Constants.IdentityParameterSet, Mandatory = false, HelpMessage = HelpMessages.IdentityAccountId)]
-        [ValidateNotNullOrEmpty]
-        public string AccountId { get; set; }
 
         [Parameter(Mandatory = false, DontShow = true, HelpMessage = "Wait for .NET debugger to attach")]
         public SwitchParameter Break { get; set; }
@@ -192,15 +190,10 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                         break;
                     case Constants.IdentityParameterSet:
                         {
-                            string[] processedScopes = ProcessScopes(Scopes);
-                            authContext.Scopes = !processedScopes.Any() ? new[] { "User.Read" } : processedScopes;
+                            authContext.ManagedIdentityId = this.IsParameterBound(nameof(ClientId)) ? ClientId : $"{Core.Constants.DefaultMsiIdPrefix}{Core.Constants.DefaultMsiPort}";
                             authContext.AuthType = AuthenticationType.ManagedIdentity;
-                            authContext.ClientId = ClientId;
-                            // Default to Process but allow the customer to change this via `-ContextScope`.
                             authContext.ContextScope = this.IsParameterBound(nameof(ContextScope)) ? ContextScope : ContextScope.Process;
                             authContext.TokenCredentialType = TokenCredentialType.ManagedIdentity;
-                            // TODO: Review the need for the constants.
-                            authContext.AccountId = this.IsParameterBound(nameof(AccountId)) ? AccountId : $"{Core.Constants.DefaultMsiAccountIdPrefix}{Core.Constants.DefaultMsiPort}";
                         }
                         break;
                 }

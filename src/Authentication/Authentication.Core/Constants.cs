@@ -10,7 +10,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core
     {
         public const int MaxAuthenticationTimeOutInSeconds = 120;
         public const string DefaultTenant = "common";
-        public const string DefaultMsiAccountIdPrefix = "MSI@";
+        public const string DefaultMsiIdPrefix = "MSI@";
         public const int DefaultMsiPort = 50342;
         public static readonly string GraphDirectoryPath = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.UserProfile), ".mg");
         internal const int TokenExpirationBufferInMinutes = 5;

@@ -21,7 +21,6 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
     /// </summary>
     public static class AuthenticationHelpers
     {
-        private static Regex SystemMsiNameRegex = new Regex(Constants.DefaultMsiAccountIdPrefix + @"\d+", RegexOptions.Compiled);
         /// <summary>
         /// Gets a <see cref="TokenCredential"/> using the provide <see cref="IAuthContext"/>.
         /// </summary>
@@ -53,15 +52,9 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
         {
             if (authContext is null)
                 throw new AuthenticationException(ErrorConstants.Message.MissingAuthContext);
-
-            //var managedIdentityOptions = new TokenCredentialOptions
-            //{
-            //    AuthorityHost = new Uri(GetAuthorityUrl(authContext))
-            //};
-            // TODO: Review the need to SystemMsiNameRegex since we default to a null clientId.
-            var userAccountId = SystemMsiNameRegex.IsMatch(authContext.AccountId) ? null : authContext.AccountId;
-            var managedIdentityCredential = new ManagedIdentityCredential(userAccountId);
-            return await Task.FromResult(managedIdentityCredential).ConfigureAwait(false);
+            
+            var userAccountId = authContext.ManagedIdentityId.StartsWith(Constants.DefaultMsiIdPrefix) ? null : authContext.ManagedIdentityId;
+            return await Task.FromResult(new ManagedIdentityCredential(userAccountId)).ConfigureAwait(false);
         }
 
         private static async Task<InteractiveBrowserCredential> GetInteractiveBrowserCredentialAsync(IAuthContext authContext, CancellationToken cancellationToken = default)
