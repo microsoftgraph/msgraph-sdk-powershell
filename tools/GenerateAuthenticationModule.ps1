@@ -11,17 +11,11 @@ Param(
   [switch] $EnableSigning,
   [switch] $BuildWhenEqual,
   [switch] $Test,
-  [switch] $Run,
-  [int] $ModulePreviewNumber = -1
+  [switch] $Run
 )
-enum VersionState {
-  Invalid
-  Valid
-  EqualToFeed
-  NotOnFeed
-}
 $ErrorActionPreference = 'Stop'
-$LASTEXITCODE = $null
+$LASTEXITCODE = 0
+
 if ($PSEdition -ne 'Core') {
   Write-Error 'This script requires PowerShell Core to execute. [Note] Generated cmdlets will work in both PowerShell Core or Windows PowerShell.'
 }
@@ -29,67 +23,48 @@ if ($PSEdition -ne 'Core') {
 $ModulePrefix = "Microsoft.Graph"
 $ModuleName = "Authentication"
 $ModuleFullName = "$ModulePrefix.$ModuleName"
-$AuthModuleManifest = "Microsoft.Graph.Authentication.psd1"
-$SigningKeyFile = "35MSSharedLib1024.snk"
 $BuildModulePS1 = Join-Path $PSScriptRoot ".\BuildModule.ps1" -Resolve
 $PackModulePS1 = Join-Path $PSScriptRoot ".\PackModule.ps1" -Resolve
 $PublishModulePS1 = Join-Path $PSScriptRoot ".\PublishModule.ps1" -Resolve
-$ValidateUpdatedModuleVersionPS1 = Join-Path $PSScriptRoot ".\ValidateUpdatedModuleVersion.ps1" -Resolve
 $AuthSrcPath = Join-Path $PSScriptRoot "..\src\Authentication\"
 $AuthModulePath = Join-Path $AuthSrcPath "Authentication" -Resolve
 $TestModulePS1 = Join-Path $PSScriptRoot ".\TestModule.ps1" -Resolve
 $RunModulePS1 = Join-Path $AuthModulePath ".\run-module.ps1" -Resolve
-$AuthCoreCSProj = Join-Path $AuthSrcPath "$ModuleName.Core" "$ModuleFullName.Core.csproj"
 $CSProjHelperPS1 = Join-Path $PSScriptRoot "./CSProjHelper.ps1"
+$ModuleMetadataPath = Join-Path $PSScriptRoot "..\config\ModuleMetadata.json"
+[HashTable] $ModuleMetadata = Get-Content $ModuleMetadataPath | ConvertFrom-Json -AsHashTable
 
 # Import scripts
 . $CSProjHelperPS1
 
-# Read ModuleVersion set on local auth module.
-$ManifestContent = Import-LocalizedData -BaseDirectory $AuthModulePath -FileName $AuthModuleManifest
-if ($null -eq $ManifestContent.ModuleVersion) {
-  # Module version not set in module manifest (psd1).
-  Write-Error "Version number is not set on $ModuleFullName module. Please set 'ModuleVersion' in $AuthModulePath\$AuthModuleManifest."
+if ($null -eq $ModuleMetadata.versions.authentication.version) {
+  Write-Error "Version number is not set for $ModuleFullName module. Please set authentication version in $ModuleMetadataPath."
 }
-$AllowPreRelease = $true
-if ($ModulePreviewNumber -eq -1) {
-  $AllowPreRelease = $false
+
+# Build and pack generated module.
+if ($Build -or $Run) {
+    $AuthCoreCSProj = Join-Path $AuthSrcPath "$ModuleName.Core" "$ModuleFullName.Core.csproj"
+  if ($EnableSigning) {
+    Set-CSProjValues -ModuleCsProj $AuthCoreCSProj -AssemblyOriginatorKeyFile $SigningKeyFile -ModuleVersion $ModuleMetadata.versions.authentication.version -PreRelease $ModuleMetadata.versions.authentication.prerelease
+  }
+  else {
+    Set-CSProjValues -ModuleCsProj $AuthCoreCSProj -ModuleVersion $ModuleMetadata.versions.authentication.version -PreRelease $ModuleMetadata.versions.authentication.prerelease
+  }
+  & $BuildModulePS1 -ModuleFullName $ModuleFullName -ModuleSrc $AuthModulePath -EnableSigning:$EnableSigning -Version $ModuleMetadata.versions.authentication.version -Prerelease $ModuleMetadata.versions.authentication.prerelease -ModuleMetadata $ModuleMetadata.Clone()
 }
-# Validate module version with the one on PSGallery.
-[VersionState]$VersionState = & $ValidateUpdatedModuleVersionPS1 -ModuleName "$ModuleFullName" -NextVersion $ManifestContent.ModuleVersion -PSRepository $RepositoryName -ModulePreviewNumber $ModulePreviewNumber
 
-if ($VersionState.Equals([VersionState]::Invalid)) {
-  Write-Warning "The specified version in $ModuleFullName module is either higher or lower than what's on $RepositoryName. Update 'ModuleVersion' in $AuthModulePath$AuthModuleManifest."
+if ($Test) {
+  & $TestModulePS1 -ModulePath (Join-Path $AuthModulePath "artifacts" ) -ModuleName "$ModuleFullName" -ModuleTestsPath (Join-Path $AuthModulePath "test")
 }
-elseif ($VersionState.Equals([VersionState]::EqualToFeed) -and !$BuildWhenEqual) {
-  Write-Warning "$ModuleFullName module skipped. Version has not changed and is equal to what's on $RepositoryName."
+
+if ($Pack -or $Run) {
+  & $PackModulePS1 -ModuleFullName $ModuleFullName -ModuleSrc $AuthModulePath -Module $ModuleName -ArtifactsLocation $ArtifactsLocation
 }
-elseif ($VersionState.Equals([VersionState]::Valid) -or $VersionState.Equals([VersionState]::NotOnFeed) -or $BuildWhenEqual) {
-  $ModuleVersion = $ManifestContent.ModuleVersion
-  # Build and pack generated module.
-  if ($Build -or $Run) {
-    if ($EnableSigning) {
-      Set-CSProjValues -ModuleCsProj $AuthCoreCSProj -ModuleVersion $ModuleVersion -AssemblyOriginatorKeyFile $SigningKeyFile
-      & $BuildModulePS1 -ModuleFullName $ModuleFullName -ModuleSrc $AuthModulePath -ModuleVersion $ModuleVersion -ModulePreviewNumber $ModulePreviewNumber -ReleaseNotes $ManifestContent.PrivateData.PSData.ReleaseNotes -EnableSigning
-    }
-    else {
-      Set-CSProjValues -ModuleCsProj $AuthCoreCSProj -ModuleVersion $ModuleVersion
-      & $BuildModulePS1 -ModuleFullName $ModuleFullName -ModuleSrc $AuthModulePath -ModuleVersion $ModuleVersion -ModulePreviewNumber $ModulePreviewNumber -ReleaseNotes $ManifestContent.PrivateData.PSData.ReleaseNotes
-    }
-  }
-  if ($Test) {
-    & $TestModulePS1 -ModulePath (Join-Path $AuthModulePath "artifacts" ) -ModuleName "$ModuleFullName" -ModuleTestsPath (Join-Path $AuthModulePath "test")
-  }
 
-  if ($Pack -or $Run) {
-    & $PackModulePS1 -ModuleFullName $ModuleFullName -ModuleSrc $AuthModulePath -Module $ModuleName -ArtifactsLocation $ArtifactsLocation
-  }
+if ($Run) {
+  & $RunModulePS1 -ModuleName "$ModuleFullName" -ArtifactLocation $ArtifactsLocation
+}
 
-  if ($Run) {
-    & $RunModulePS1 -ModuleName "$ModuleFullName" -ArtifactLocation $ArtifactsLocation
-  }
-
-  if ($Publish) {
-    & $PublishModulePS1 -Modules $ModuleName -ModulePrefix $ModulePrefix -ArtifactsLocation $ArtifactsLocation -RepositoryName $RepositoryName -RepositoryApiKey $RepositoryApiKey
-  }
+if ($Publish) {
+  & $PublishModulePS1 -Modules $ModuleName -ModulePrefix $ModulePrefix -ArtifactsLocation $ArtifactsLocation -RepositoryName $RepositoryName -RepositoryApiKey $RepositoryApiKey
 }

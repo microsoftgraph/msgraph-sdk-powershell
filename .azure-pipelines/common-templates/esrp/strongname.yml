@@ -1,0 +1,38 @@
+﻿# Copyright (c) Microsoft Corporation. All rights reserved.
+# Licensed under the MIT License.
+
+parameters:
+  - name: FolderPath
+    type: string
+    default: $(System.DefaultWorkingDirectory)
+  - name: Pattern
+    type: string
+    default: '.*.dll'
+
+steps:
+  - task: SFP.build-tasks.custom-build-task-1.EsrpCodeSigning@1
+    displayName: ESRP DLL Strong Name
+    enabled: true
+    inputs:
+      ConnectedServiceName: microsoftgraph ESRP CodeSign DLL and NuGet (AKV)
+      FolderPath: ${{ parameters.FolderPath }}
+      Pattern: ${{ parameters.Pattern }}
+      signConfigType: inlineSignParams
+      inlineOperation: |
+        [
+            {
+                "keyCode": "CP-233863-SN",
+                "operationSetCode": "StrongNameSign",
+                "parameters": [],
+                "toolName": "sign",
+                "toolVersion": "1.0"
+            },
+            {
+                "keyCode": "CP-233863-SN",
+                "operationSetCode": "StrongNameVerify",
+                "parameters": [],
+                "toolName": "sign",
+                "toolVersion": "1.0"
+            }
+        ]
+      SessionTimeout: 20

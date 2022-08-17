@@ -4,9 +4,9 @@
 Param(
     [Parameter(Mandatory = $true)] [ValidateNotNullOrEmpty()][string] $ModuleSrc,
     [Parameter(Mandatory = $true)] [ValidateNotNullOrEmpty()][string] $ModuleFullName,
-    [Parameter(Mandatory = $true)] [ValidateNotNullOrEmpty()][string] $ModuleVersion,
-    [Parameter(Mandatory = $true)] [ValidateNotNullOrEmpty()][string[]] $ReleaseNotes,
-    [int] $ModulePreviewNumber = -1,
+    [Parameter(Mandatory = $true)] [ValidateNotNullOrEmpty()][HashTable] $ModuleMetadata,
+    [Parameter(Mandatory = $true)] [ValidateNotNullOrEmpty()][string] $Version,
+    [string] $Prerelease,
     [hashtable[]] $RequiredModules,
     [switch] $EnableSigning,
     [switch] $ExcludeExampleTemplates,
@@ -23,7 +23,6 @@ $BuildModulePS1 = Join-Path $ModuleSrc "/build-module.ps1"
 $ModuleCsProj = Join-Path $ModuleSrc "$ModuleFullName.csproj"
 $ModuleManifest = Join-Path $ModuleSrc "$ModuleFullName.psd1"
 $ModuleNuspec = Join-Path $ModuleSrc "$ModuleFullName.nuspec"
-[HashTable] $NuspecMetadata = Get-Content (Join-Path $PSScriptRoot "..\config\ModuleMetadata.json") | ConvertFrom-Json -AsHashTable
 # Import scripts
 . $NuspecHelperPS1
 . $CSProjHelperPS1
@@ -34,10 +33,10 @@ if (-not (Test-Path -Path $BuildModulePS1)) {
 
 # Set delay sign to true.
 if ($EnableSigning) {
-    Set-CSProjValues -ModuleCsProj $ModuleCsProj -ModuleVersion $ModuleVersion -AssemblyOriginatorKeyFile $NuspecMetadata["assemblyOriginatorKeyFile"]
+    Set-CSProjValues -ModuleCsProj $ModuleCsProj -ModuleVersion $Version -PreRelease $Prerelease -AssemblyOriginatorKeyFile $ModuleMetadata["assemblyOriginatorKeyFile"]
 }
 else {
-    Set-CSProjValues -ModuleCsProj $ModuleCsProj -ModuleVersion $ModuleVersion -Copyright $NuspecMetadata["copyright"]
+    Set-CSProjValues -ModuleCsProj $ModuleCsProj -ModuleVersion $Version -PreRelease $Prerelease -Copyright $ModuleMetadata["copyright"]
 }
 
 # Build module
@@ -50,29 +49,23 @@ if ($lastexitcode -ne 0) {
 
 [HashTable]$ModuleManifestSettings = @{
     Path          = $ModuleManifest
-    ModuleVersion = $ModuleVersion
-    IconUri       = $NuspecMetadata["iconUri"]
-    ReleaseNotes  = $ReleaseNotes
+    ModuleVersion = $Version
+    IconUri       = $ModuleMetadata["iconUri"]
+    ReleaseNotes  = $ModuleMetadata["releaseNotes"]
 }
-$FullVersionNumber = $ModuleVersion
 
-if ($ModulePreviewNumber -ge 0) {
-    if ($RequiredModules.Count -gt 0) {
-        # Prerelease is only supported in PowerShell 7 (preview) and above.
-        $ModuleManifestSettings["RequiredModules"] = $RequiredModules
-        $ModuleManifestSettings["Prerelease"] = "preview$ModulePreviewNumber"
-    }
-    else {
-        $ModuleManifestSettings["Prerelease"] = "preview$ModulePreviewNumber"
-    }
-    $FullVersionNumber = "$ModuleVersion-preview$ModulePreviewNumber"
+if ($RequiredModules.Count -gt 0) {
+    $ModuleManifestSettings["RequiredModules"] = $RequiredModules
+}
+
+if ($Prerelease) {
+    $ModuleManifestSettings.Prerelease = $Prerelease
+    $FullVersionNumber = "$Version-$Prerelease"
 }
 else {
-    if ($RequiredModules.Count -gt 0) {
-        $ModuleManifestSettings["RequiredModules"] = $RequiredModules
-    }
+    $FullVersionNumber = $Version
 }
 
 Write-Debug "Updating '$ModuleFullName' module manifest and nuspec..."
 Update-ModuleManifest @ModuleManifestSettings
-Set-NuSpecValues -NuSpecFilePath $ModuleNuspec -VersionNumber $FullVersionNumber -Dependencies $RequiredModules -IconUrl $NuspecMetadata["iconUri"] -ReleaseNotes $ReleaseNotes
+Set-NuSpecValues -NuSpecFilePath $ModuleNuspec -VersionNumber $FullVersionNumber -Dependencies $RequiredModules -IconUrl $ModuleMetadata["iconUri"] -ReleaseNotes $ReleaseNotes

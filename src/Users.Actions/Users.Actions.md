@@ -49,16 +49,16 @@ directive:
       subject: $1Default$2
   - where:
       verb: Invoke
-      subject: ^(Reply)(UserMessage|UserMailFolderMessage)$
+      subject: ^(Reply)(UserMessage|UserMailFolderMessage|UserMailFolderChildFolderMessage)$
       variant: ^Reply1$|^ReplyExpanded1$|^ReplyViaIdentity1$|^ReplyViaIdentityExpanded1$
     set:
       subject: $1All$2
   - where:
       verb: New
-      subject: ^(User)(MessageReply|MailFolderMessageReply)$
+      subject: ^(User)(Message|MailFolderMessage|MailFolderChildFolderMessage)(Reply)$
       variant: ^Create1$|^CreateExpanded1$|^CreateViaIdentity1$|^CreateViaIdentityExpanded1$
     set:
-      subject: $1$2All
+      subject: $1$2$3All
   # https://docs.microsoft.com/en-us/graph/api/resources/intune-devices-devicelogcollectionresponse?view=graph-rest-beta
   - where:
       verb: New
@@ -89,6 +89,16 @@ directive:
     set:
       subject: Reprovision$1CloudPc
       alias: Invoke-MgCloudUserManagedDevice
+  - where:
+      subject: ^(UserAuthenticationMethod)SmSign$
+    set:
+      subject: $1SmsSignIn
+      alias: ${verb}-MgUserAuthenticationMethodSmSign
+  - where:
+      subject: ^(UserSign)$
+    set:
+      subject: $1InSession
+      alias: ${verb}-MgUserSign
 ```
 
 ### Versioning

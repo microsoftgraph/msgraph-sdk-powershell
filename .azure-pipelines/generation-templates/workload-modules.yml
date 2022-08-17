@@ -1,0 +1,51 @@
+﻿# Copyright (c) Microsoft Corporation. All rights reserved.
+# Licensed under the MIT License.
+
+parameters:
+  - name: Test
+    type: boolean
+    default: true
+  - name: Pack
+    type: boolean
+    default: true
+  - name: Sign
+    type: boolean
+    default: true
+
+steps:
+  - task: PowerShell@2
+    displayName: Generate Workload Modules
+    inputs:
+      targetType: inline
+      pwsh: true
+      script: |
+        . $(System.DefaultWorkingDirectory)/tools/GenerateModules.ps1 -EnableSigning:$${{ parameters.Sign }} -Build -ExcludeExampleTemplates -ExcludeNotesSection
+
+  - task: PowerShell@2
+    displayName: Test Workload Modules
+    enabled: false
+    inputs:
+      targetType: inline
+      pwsh: true
+      script: |
+        . $(System.DefaultWorkingDirectory)/tools/GenerateModules.ps1 -SkipGeneration -Test
+
+  - ${{ if eq(parameters.Sign, true) }}:
+    - template: ../common-templates/esrp/strongname.yml
+      parameters:
+        FolderPath: '$(System.DefaultWorkingDirectory)/src'
+        Pattern: 'Microsoft.Graph.*.private.dll'
+
+    - template: ../common-templates/esrp/codesign.yml
+      parameters:
+        FolderPath: '$(System.DefaultWorkingDirectory)/src'
+        Pattern: 'Microsoft.Graph.*.private.dll, Microsoft.Graph.*.psm1, Microsoft.Graph.*.format.ps1xml, ProxyCmdletDefinitions.ps1, load-dependency.ps1'
+
+  - ${{ if eq(parameters.Pack, true) }}:
+    - task: PowerShell@2
+      displayName: Pack Workload Modules
+      inputs:
+        targetType: inline
+        pwsh: true
+        script: |
+          . $(System.DefaultWorkingDirectory)/tools/GenerateModules.ps1 -SkipGeneration -Pack -ArtifactsLocation $(Build.ArtifactStagingDirectory)

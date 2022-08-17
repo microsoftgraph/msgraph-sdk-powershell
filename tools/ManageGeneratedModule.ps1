@@ -13,7 +13,7 @@ Param(
     [Parameter(Mandatory = $true)][ValidateNotNullOrEmpty()][string]$ModuleSrc,
     [Parameter(Mandatory = $true)][ValidateNotNullOrEmpty()][string] $NamespacePrefix
 )
-$NugetPackagesToAdd = @("hyak.common")
+$NugetPackagesToAdd = @("Hyak.Common")
 $NugetPackagesToRemove = @("Microsoft.CSharp")
 $AuthenticationProj = Join-Path $PSScriptRoot "..\src\Authentication\Authentication\Microsoft.Graph.Authentication.csproj"
 $ModuleCsProj = Join-Path $ModuleSrc "$ModuleName.csproj"
