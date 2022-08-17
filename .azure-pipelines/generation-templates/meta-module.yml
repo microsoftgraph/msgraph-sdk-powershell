@@ -1,0 +1,38 @@
+﻿# Copyright (c) Microsoft Corporation. All rights reserved.
+# Licensed under the MIT License.
+
+parameters:
+  - name: Test
+    type: boolean
+    default: true
+  - name: Pack
+    type: boolean
+    default: true
+  - name: Sign
+    type: boolean
+    default: true
+
+steps:
+  - task: PowerShell@2
+    displayName: 'Generate Meta-Module'
+    enabled: false
+    inputs:
+      targetType: inline
+      pwsh: true
+      script: |
+        $(System.DefaultWorkingDirectory)/tools/GenerateMetaModule.ps1
+
+  - ${{ if eq(parameters.Sign, true) }}:
+    - template: ../common-templates/esrp/codesign.yml
+      parameters:
+        FolderPath: '$(System.DefaultWorkingDirectory)/src/Graph'
+        Pattern: 'Microsoft.Graph.psm1, Microsoft.Graph.*.format.ps1xml, *.ps1'
+
+  - ${{ if eq(parameters.Pack, true) }}:
+    - task: PowerShell@2
+      displayName: Pack Meta-Module
+      inputs:
+        targetType: inline
+        pwsh: true
+        script: |
+          . $(System.DefaultWorkingDirectory)/tools/GenerateMetaModule.ps1 -Pack -ArtifactsLocation $(Build.ArtifactStagingDirectory)
