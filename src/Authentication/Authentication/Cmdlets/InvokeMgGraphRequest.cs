@@ -599,9 +599,8 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
 
                 var cancellationToken = _cancellationTokenSource.Token;
                 var response = await client.SendAsync(request, cancellationToken);
-                var responseType = response.GetType();
                 var contentType = response.GetContentType();
-                if (responseType != typeof(HttpResponseMessage) || (contentType.Equals("text/plain") && String.IsNullOrEmpty(OutputFilePath) && !OutputType.Equals(OutputType.HttpResponseMessage)))
+                if ((contentType.Equals("text/plain") && String.IsNullOrEmpty(OutputFilePath) && !OutputType.Equals(OutputType.HttpResponseMessage)))
                 {
                     throw new ArgumentException("missing -OutputFilePath parameter"); 
                 }
