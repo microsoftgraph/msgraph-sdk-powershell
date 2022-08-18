@@ -8,32 +8,28 @@ schema: 2.0.0
 # Get-MgUserCalendarGroup
 
 ## SYNOPSIS
-The user's calendar groups.
-Read-only.
-Nullable.
+Get calendarGroups from users
 
 ## SYNTAX
 
-### List1 (Default)
+### List (Default)
 ```
 Get-MgUserCalendarGroup -UserId <String> [-Filter <String>] [-Property <String[]>] [-Skip <Int32>]
  [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
-### Get1
+### Get
 ```
 Get-MgUserCalendarGroup -CalendarGroupId <String> -UserId <String> [-Property <String[]>] [<CommonParameters>]
 ```
 
-### GetViaIdentity1
+### GetViaIdentity
 ```
 Get-MgUserCalendarGroup -InputObject <ICalendarIdentity> [-Property <String[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-The user's calendar groups.
-Read-only.
-Nullable.
+Get calendarGroups from users
 
 ## EXAMPLES
 
@@ -44,7 +40,7 @@ List all pages.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
-Parameter Sets: List1
+Parameter Sets: List
 Aliases:
 
 Required: False
@@ -59,7 +55,7 @@ key: id of calendarGroup
 
 ```yaml
 Type: System.String
-Parameter Sets: Get1
+Parameter Sets: Get
 Aliases:
 
 Required: True
@@ -75,7 +71,7 @@ By default, this variable will be set in the global scope.
 
 ```yaml
 Type: System.String
-Parameter Sets: List1
+Parameter Sets: List
 Aliases: CV
 
 Required: False
@@ -90,7 +86,7 @@ Filter items by property values
 
 ```yaml
 Type: System.String
-Parameter Sets: List1
+Parameter Sets: List
 Aliases:
 
 Required: False
@@ -106,7 +102,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.ICalendarIdentity
-Parameter Sets: GetViaIdentity1
+Parameter Sets: GetViaIdentity
 Aliases:
 
 Required: True
@@ -121,7 +117,7 @@ Sets the page size of results.
 
 ```yaml
 Type: System.Int32
-Parameter Sets: List1
+Parameter Sets: List
 Aliases:
 
 Required: False
@@ -151,7 +147,7 @@ Skip the first n items
 
 ```yaml
 Type: System.Int32
-Parameter Sets: List1
+Parameter Sets: List
 Aliases:
 
 Required: False
@@ -166,7 +162,7 @@ Order items by property values
 
 ```yaml
 Type: System.String[]
-Parameter Sets: List1
+Parameter Sets: List
 Aliases: OrderBy
 
 Required: False
@@ -181,7 +177,7 @@ Show only the first n items
 
 ```yaml
 Type: System.Int32
-Parameter Sets: List1
+Parameter Sets: List
 Aliases: Limit
 
 Required: False
@@ -196,7 +192,7 @@ key: id of user
 
 ```yaml
 Type: System.String
-Parameter Sets: Get1, List1
+Parameter Sets: Get, List
 Aliases:
 
 Required: True
@@ -215,7 +211,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCalendarGroup1
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCalendarGroup
 
 ## NOTES
 
@@ -233,6 +229,7 @@ INPUTOBJECT <ICalendarIdentity>: Identity Parameter
   - `[CalendarPermissionId <String>]`: key: id of calendarPermission
   - `[EventId <String>]`: key: id of event
   - `[EventId1 <String>]`: key: id of event
+  - `[EventId2 <String>]`: key: id of event
   - `[ExtensionId <String>]`: key: id of extension
   - `[GroupId <String>]`: key: id of group
   - `[MultiValueLegacyExtendedPropertyId <String>]`: key: id of multiValueLegacyExtendedProperty

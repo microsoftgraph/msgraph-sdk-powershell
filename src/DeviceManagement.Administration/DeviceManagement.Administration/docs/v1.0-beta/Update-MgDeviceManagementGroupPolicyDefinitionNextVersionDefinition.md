@@ -489,6 +489,7 @@ BODYPARAMETER <IMicrosoftGraphGroupPolicyDefinition>: The entity describes all o
       - `[TargetPrefix <String>]`: Specifies the logical name that refers to the namespace within the ADMX file.
     - `[Definitions <IMicrosoftGraphGroupPolicyDefinition[]>]`: The immediate GroupPolicyDefinition children of the category
     - `[DisplayName <String>]`: The string id of the category's display name
+    - `[IngestionSource <IngestionSource?>]`: Category Ingestion source
     - `[IsRoot <Boolean?>]`: Defines if the category is a root category
     - `[LastModifiedDateTime <DateTime?>]`: The date and time the entity was last modified.
     - `[Parent <IMicrosoftGraphGroupPolicyCategory>]`: The category entity stores the category of a group policy definition
@@ -554,6 +555,7 @@ CATEGORY <IMicrosoftGraphGroupPolicyCategory>: The category entity stores the ca
     - `[TargetPrefix <String>]`: Specifies the logical name that refers to the namespace within the ADMX file.
   - `[Definitions <IMicrosoftGraphGroupPolicyDefinition[]>]`: The immediate GroupPolicyDefinition children of the category
   - `[DisplayName <String>]`: The string id of the category's display name
+  - `[IngestionSource <IngestionSource?>]`: Category Ingestion source
   - `[IsRoot <Boolean?>]`: Defines if the category is a root category
   - `[LastModifiedDateTime <DateTime?>]`: The date and time the entity was last modified.
   - `[Parent <IMicrosoftGraphGroupPolicyCategory>]`: The category entity stores the category of a group policy definition
@@ -570,6 +572,7 @@ DEFINITIONFILE <IMicrosoftGraphGroupPolicyDefinitionFile>: The entity represents
       - `[DefinitionFile <IMicrosoftGraphGroupPolicyDefinitionFile>]`: The entity represents an ADMX (Administrative Template) XML file. The ADMX file contains a collection of group policy definitions and their locations by category path. The group policy definition file also contains the languages supported as determined by the language dependent ADML (Administrative Template) language files.
       - `[Definitions <IMicrosoftGraphGroupPolicyDefinition[]>]`: The immediate GroupPolicyDefinition children of the category
       - `[DisplayName <String>]`: The string id of the category's display name
+      - `[IngestionSource <IngestionSource?>]`: Category Ingestion source
       - `[IsRoot <Boolean?>]`: Defines if the category is a root category
       - `[LastModifiedDateTime <DateTime?>]`: The date and time the entity was last modified.
       - `[Parent <IMicrosoftGraphGroupPolicyCategory>]`: The category entity stores the category of a group policy definition
@@ -679,6 +682,7 @@ NEXTVERSIONDEFINITION <IMicrosoftGraphGroupPolicyDefinition>: The entity describ
       - `[TargetPrefix <String>]`: Specifies the logical name that refers to the namespace within the ADMX file.
     - `[Definitions <IMicrosoftGraphGroupPolicyDefinition[]>]`: The immediate GroupPolicyDefinition children of the category
     - `[DisplayName <String>]`: The string id of the category's display name
+    - `[IngestionSource <IngestionSource?>]`: Category Ingestion source
     - `[IsRoot <Boolean?>]`: Defines if the category is a root category
     - `[LastModifiedDateTime <DateTime?>]`: The date and time the entity was last modified.
     - `[Parent <IMicrosoftGraphGroupPolicyCategory>]`: The category entity stores the category of a group policy definition
@@ -727,6 +731,7 @@ PRESENTATIONS <IMicrosoftGraphGroupPolicyPresentation[]>: The group policy prese
         - `[TargetPrefix <String>]`: Specifies the logical name that refers to the namespace within the ADMX file.
       - `[Definitions <IMicrosoftGraphGroupPolicyDefinition[]>]`: The immediate GroupPolicyDefinition children of the category
       - `[DisplayName <String>]`: The string id of the category's display name
+      - `[IngestionSource <IngestionSource?>]`: Category Ingestion source
       - `[IsRoot <Boolean?>]`: Defines if the category is a root category
       - `[LastModifiedDateTime <DateTime?>]`: The date and time the entity was last modified.
       - `[Parent <IMicrosoftGraphGroupPolicyCategory>]`: The category entity stores the category of a group policy definition
@@ -771,6 +776,7 @@ PREVIOUSVERSIONDEFINITION <IMicrosoftGraphGroupPolicyDefinition>: The entity des
       - `[TargetPrefix <String>]`: Specifies the logical name that refers to the namespace within the ADMX file.
     - `[Definitions <IMicrosoftGraphGroupPolicyDefinition[]>]`: The immediate GroupPolicyDefinition children of the category
     - `[DisplayName <String>]`: The string id of the category's display name
+    - `[IngestionSource <IngestionSource?>]`: Category Ingestion source
     - `[IsRoot <Boolean?>]`: Defines if the category is a root category
     - `[LastModifiedDateTime <DateTime?>]`: The date and time the entity was last modified.
     - `[Parent <IMicrosoftGraphGroupPolicyCategory>]`: The category entity stores the category of a group policy definition

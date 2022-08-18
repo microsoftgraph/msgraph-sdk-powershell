@@ -13338,7 +13338,7 @@ components:
               nullable: true
             name:
               type: string
-              description: Name of the extension property. Not nullable.
+              description: Name of the extension property. Not nullable. Supports $filter (eq).
             targetObjects:
               type: array
               items:

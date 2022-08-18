@@ -1084,7 +1084,7 @@ BODYPARAMETER <IMicrosoftGraphEducationUser1>: educationUser
           - `[IsOnlineMeeting <Boolean?>]`: 
           - `[IsOrganizer <Boolean?>]`: 
           - `[IsReminderOn <Boolean?>]`: 
-          - `[Location <IMicrosoftGraphLocation1>]`: location
+          - `[Location <IMicrosoftGraphLocation>]`: location
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[Address <IMicrosoftGraphPhysicalAddress1>]`: physicalAddress
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -1106,11 +1106,11 @@ BODYPARAMETER <IMicrosoftGraphEducationUser1>: educationUser
             - `[LocationUri <String>]`: Optional URI representing the location.
             - `[UniqueId <String>]`: For internal use only.
             - `[UniqueIdType <String>]`: locationUniqueIdType
-          - `[Locations <IMicrosoftGraphLocation1[]>]`: 
+          - `[Locations <IMicrosoftGraphLocation[]>]`: 
           - `[MultiValueExtendedProperties <IMicrosoftGraphMultiValueLegacyExtendedProperty[]>]`: The collection of multi-value extended properties defined for the event. Read-only. Nullable.
             - `[Id <String>]`: 
             - `[Value <String[]>]`: A collection of property values.
-          - `[OnlineMeeting <IMicrosoftGraphOnlineMeetingInfo1>]`: onlineMeetingInfo
+          - `[OnlineMeeting <IMicrosoftGraphOnlineMeetingInfo>]`: onlineMeetingInfo
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[ConferenceId <String>]`: The ID of the conference.
             - `[JoinUrl <String>]`: The external link that launches the online meeting. This is a URL that clients will launch into a browser and will redirect the user to join the meeting.
@@ -1190,7 +1190,7 @@ BODYPARAMETER <IMicrosoftGraphEducationUser1>: educationUser
           - `[HasAttachments <Boolean?>]`: Indicates whether any of the posts within this thread has at least one attachment. Returned by default.
           - `[IsLocked <Boolean?>]`: Indicates if the thread is locked. Returned by default.
           - `[LastDeliveredDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default.
-          - `[Posts <IMicrosoftGraphPost1[]>]`: 
+          - `[Posts <IMicrosoftGraphPost[]>]`: 
             - `[Categories <String[]>]`: The categories associated with the item
             - `[ChangeKey <String>]`: Identifies the version of the item. Every time the item is changed, changeKey changes as well. This allows Exchange to apply changes to the correct version of the object. Read-only.
             - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
@@ -1203,7 +1203,7 @@ BODYPARAMETER <IMicrosoftGraphEducationUser1>: educationUser
             - `[Extensions <IMicrosoftGraphExtension[]>]`: The collection of open extensions defined for the post. Read-only. Nullable. Supports $expand.
             - `[From <IMicrosoftGraphRecipient>]`: recipient
             - `[HasAttachments <Boolean?>]`: Indicates whether the post has at least one attachment. This is a default property.
-            - `[InReplyTo <IMicrosoftGraphPost1>]`: post
+            - `[InReplyTo <IMicrosoftGraphPost>]`: post
             - `[MultiValueExtendedProperties <IMicrosoftGraphMultiValueLegacyExtendedProperty[]>]`: The collection of multi-value extended properties defined for the post. Read-only. Nullable.
             - `[NewParticipants <IMicrosoftGraphRecipient[]>]`: Conversation participants that were added to the thread as part of this post.
             - `[ReceivedDateTime <DateTime?>]`: Specifies when the post was received. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
@@ -1285,7 +1285,7 @@ BODYPARAMETER <IMicrosoftGraphEducationUser1>: educationUser
           - `[AppRoleAssignments <IMicrosoftGraphAppRoleAssignment1[]>]`: Represents the app roles a user has been granted for an application. Supports $expand.
           - `[AssignedLicenses <IMicrosoftGraphAssignedLicense[]>]`: The licenses that are assigned to the user, including inherited (group-based) licenses. Not nullable. Supports $filter (eq, not, and counting empty collections).
           - `[AssignedPlans <IMicrosoftGraphAssignedPlan[]>]`: The plans that are assigned to the user. Read-only. Not nullable.Supports $filter (eq and not).
-          - `[Authentication <IMicrosoftGraphAuthentication1>]`: authentication
+          - `[Authentication <IMicrosoftGraphAuthentication>]`: authentication
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[Id <String>]`: 
             - `[EmailMethods <IMicrosoftGraphEmailAuthenticationMethod[]>]`: Represents the email addresses registered to a user for authentication.
@@ -1383,7 +1383,7 @@ BODYPARAMETER <IMicrosoftGraphEducationUser1>: educationUser
             - `[Name <String>]`: The group name.
           - `[CalendarView <IMicrosoftGraphEvent1[]>]`: The calendar view for the calendar. Read-only. Nullable.
           - `[Calendars <IMicrosoftGraphCalendar1[]>]`: The user's calendars. Read-only. Nullable.
-          - `[Chats <IMicrosoftGraphChat1[]>]`: 
+          - `[Chats <IMicrosoftGraphChat[]>]`: 
             - `[Id <String>]`: 
             - `[ChatType <String>]`: chatType
             - `[CreatedDateTime <DateTime?>]`: Date and time at which the chat was created. Read-only.
@@ -1774,7 +1774,7 @@ BODYPARAMETER <IMicrosoftGraphEducationUser1>: educationUser
                       - `[PendingContentUpdate <IMicrosoftGraphPendingContentUpdate>]`: pendingContentUpdate
                         - `[(Any) <Object>]`: This indicates any property can be added to this object.
                         - `[QueuedDateTime <DateTime?>]`: Date and time the pending binary operation was queued in UTC time. Read-only.
-                    - `[Permissions <IMicrosoftGraphPermission1[]>]`: The set of permissions for the item. Read-only. Nullable.
+                    - `[Permissions <IMicrosoftGraphPermission[]>]`: The set of permissions for the item. Read-only. Nullable.
                       - `[Id <String>]`: 
                       - `[ExpirationDateTime <DateTime?>]`: A format of yyyy-MM-ddTHH:mm:ssZ of DateTimeOffset indicates the expiration time of the permission. DateTime.MinValue indicates there is no expiration set for this permission. Optional.
                       - `[GrantedTo <IMicrosoftGraphIdentitySet>]`: identitySet
@@ -2148,7 +2148,7 @@ BODYPARAMETER <IMicrosoftGraphEducationUser1>: educationUser
                 - `[StartDateTime <DateTime?>]`: When the interval starts. Read-only.
               - `[ItemActivityStats <IMicrosoftGraphItemActivityStat[]>]`: 
               - `[LastSevenDays <IMicrosoftGraphItemActivityStat>]`: itemActivityStat
-            - `[Columns <IMicrosoftGraphColumnDefinition1[]>]`: The collection of column definitions reusable across lists under this site.
+            - `[Columns <IMicrosoftGraphColumnDefinition[]>]`: The collection of column definitions reusable across lists under this site.
               - `[Id <String>]`: 
               - `[Boolean <IMicrosoftGraphBooleanColumn>]`: booleanColumn
                 - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -2211,7 +2211,7 @@ BODYPARAMETER <IMicrosoftGraphEducationUser1>: educationUser
               - `[PropagateChanges <Boolean?>]`: If true, changes to this column will be propagated to lists that implement the column.
               - `[ReadOnly <Boolean?>]`: Specifies whether the column values can be modified.
               - `[Required <Boolean?>]`: Specifies whether the column value isn't optional.
-              - `[SourceColumn <IMicrosoftGraphColumnDefinition1>]`: columnDefinition
+              - `[SourceColumn <IMicrosoftGraphColumnDefinition>]`: columnDefinition
               - `[SourceContentType <IMicrosoftGraphContentTypeInfo>]`: contentTypeInfo
               - `[Term <IMicrosoftGraphTermColumn>]`: termColumn
                 - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -2286,8 +2286,8 @@ BODYPARAMETER <IMicrosoftGraphEducationUser1>: educationUser
               - `[ColumnLinks <IMicrosoftGraphColumnLink[]>]`: The collection of columns that are required by this content type
                 - `[Id <String>]`: 
                 - `[Name <String>]`: The name of the column  in this content type.
-              - `[ColumnPositions <IMicrosoftGraphColumnDefinition1[]>]`: Column order information in a content type.
-              - `[Columns <IMicrosoftGraphColumnDefinition1[]>]`: The collection of column definitions for this contentType.
+              - `[ColumnPositions <IMicrosoftGraphColumnDefinition[]>]`: Column order information in a content type.
+              - `[Columns <IMicrosoftGraphColumnDefinition[]>]`: The collection of column definitions for this contentType.
               - `[Description <String>]`: The descriptive text for the item.
               - `[DocumentSet <IMicrosoftGraphDocumentSet>]`: documentSet
                 - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -2297,9 +2297,9 @@ BODYPARAMETER <IMicrosoftGraphEducationUser1>: educationUser
                   - `[FileName <String>]`: Name of the file in resource folder that should be added as a default content or a template in the document set
                   - `[FolderName <String>]`: Folder name in which the file will be placed when a new document set is created in the library.
                 - `[PropagateWelcomePageChanges <Boolean?>]`: Indicates whether to add the name of the document set to each file name.
-                - `[SharedColumns <IMicrosoftGraphColumnDefinition1[]>]`: 
+                - `[SharedColumns <IMicrosoftGraphColumnDefinition[]>]`: 
                 - `[ShouldPrefixNameToFile <Boolean?>]`: Add the name of the Document Set to each file name.
-                - `[WelcomePageColumns <IMicrosoftGraphColumnDefinition1[]>]`: 
+                - `[WelcomePageColumns <IMicrosoftGraphColumnDefinition[]>]`: 
                 - `[WelcomePageUrl <String>]`: Welcome page absolute URL.
               - `[DocumentTemplate <IMicrosoftGraphDocumentSetContent>]`: documentSetContent
               - `[Group <String>]`: The name of the group this content type belongs to. Helps organize related content types.
@@ -2333,8 +2333,8 @@ BODYPARAMETER <IMicrosoftGraphEducationUser1>: educationUser
                 - `[Target <String>]`: The target of the error.
               - `[Message <String>]`: A non-localized message for the developer.
               - `[Target <String>]`: The target of the error.
-            - `[ExternalColumns <IMicrosoftGraphColumnDefinition1[]>]`: The collection of column definitions available in the site that are referenced from the sites in the parent hierarchy of the current site.
-            - `[Items <IMicrosoftGraphBaseItem1[]>]`: Used to address any item contained in this site. This collection cannot be enumerated.
+            - `[ExternalColumns <IMicrosoftGraphColumnDefinition[]>]`: The collection of column definitions available in the site that are referenced from the sites in the parent hierarchy of the current site.
+            - `[Items <IMicrosoftGraphBaseItem[]>]`: Used to address any item contained in this site. This collection cannot be enumerated.
               - `[Id <String>]`: 
               - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
               - `[CreatedByUser <IMicrosoftGraphUser1>]`: user
@@ -2347,7 +2347,7 @@ BODYPARAMETER <IMicrosoftGraphEducationUser1>: educationUser
               - `[Name <String>]`: The name of the item. Read-write.
               - `[ParentReference <IMicrosoftGraphItemReference>]`: itemReference
               - `[WebUrl <String>]`: URL that displays the resource in the browser. Read-only.
-            - `[Lists <IMicrosoftGraphList1[]>]`: The collection of lists under this site.
+            - `[Lists <IMicrosoftGraphList[]>]`: The collection of lists under this site.
               - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
               - `[CreatedByUser <IMicrosoftGraphUser1>]`: user
               - `[CreatedDateTime <DateTime?>]`: Date and time of item creation. Read-only.
@@ -2360,7 +2360,7 @@ BODYPARAMETER <IMicrosoftGraphEducationUser1>: educationUser
               - `[ParentReference <IMicrosoftGraphItemReference>]`: itemReference
               - `[WebUrl <String>]`: URL that displays the resource in the browser. Read-only.
               - `[Id <String>]`: 
-              - `[Columns <IMicrosoftGraphColumnDefinition1[]>]`: The collection of field definitions for this list.
+              - `[Columns <IMicrosoftGraphColumnDefinition[]>]`: The collection of field definitions for this list.
               - `[ContentTypes <IMicrosoftGraphContentType1[]>]`: The collection of content types present in this list.
               - `[DisplayName <String>]`: The displayable title of the list.
               - `[Drive <IMicrosoftGraphDrive1>]`: drive
@@ -2429,7 +2429,7 @@ BODYPARAMETER <IMicrosoftGraphEducationUser1>: educationUser
                       - `[(Any) <Object>]`: This indicates any property can be added to this object.
                       - `[OneNoteClientUrl <IMicrosoftGraphExternalLink>]`: externalLink
                       - `[OneNoteWebUrl <IMicrosoftGraphExternalLink>]`: externalLink
-                    - `[Pages <IMicrosoftGraphOnenotePage1[]>]`: The collection of pages in the section.  Read-only. Nullable.
+                    - `[Pages <IMicrosoftGraphOnenotePage[]>]`: The collection of pages in the section.  Read-only. Nullable.
                       - `[CreatedDateTime <DateTime?>]`: The date and time when the page was created. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
                       - `[Self <String>]`: The endpoint where you can get details about the page. Read-only.
                       - `[Id <String>]`: 
@@ -2467,7 +2467,7 @@ BODYPARAMETER <IMicrosoftGraphEducationUser1>: educationUser
                 - `[PercentComplete <String>]`: The operation percent complete if the operation is still in running status.
                 - `[ResourceId <String>]`: The resource id.
                 - `[ResourceLocation <String>]`: The resource URI for the object. For example, the resource URI for a copied page or section.
-              - `[Pages <IMicrosoftGraphOnenotePage1[]>]`: The pages in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
+              - `[Pages <IMicrosoftGraphOnenotePage[]>]`: The pages in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
               - `[Resources <IMicrosoftGraphOnenoteResource[]>]`: The image and other file resources in OneNote pages. Getting a resources collection is not supported, but you can get the binary content of a specific resource. Read-only. Nullable.
                 - `[Self <String>]`: The endpoint where you can get details about the page. Read-only.
                 - `[Id <String>]`: 
@@ -2476,7 +2476,7 @@ BODYPARAMETER <IMicrosoftGraphEducationUser1>: educationUser
               - `[SectionGroups <IMicrosoftGraphSectionGroup1[]>]`: The section groups in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
               - `[Sections <IMicrosoftGraphOnenoteSection1[]>]`: The sections in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
             - `[Operations <IMicrosoftGraphRichLongRunningOperation[]>]`: The collection of long running operations for the site.
-            - `[Permissions <IMicrosoftGraphPermission1[]>]`: The permissions associated with the site. Nullable.
+            - `[Permissions <IMicrosoftGraphPermission[]>]`: The permissions associated with the site. Nullable.
             - `[Root <IMicrosoftGraphRoot>]`: root
             - `[SharepointIds <IMicrosoftGraphSharepointIds>]`: sharepointIds
             - `[SiteCollection <IMicrosoftGraphSiteCollection>]`: siteCollection
@@ -2485,14 +2485,14 @@ BODYPARAMETER <IMicrosoftGraphEducationUser1>: educationUser
               - `[Hostname <String>]`: The hostname for the site collection. Read-only.
               - `[Root <IMicrosoftGraphRoot>]`: root
             - `[Sites <IMicrosoftGraphSite1[]>]`: The collection of the sub-sites under this site.
-            - `[TermStore <IMicrosoftGraphTermStore1>]`: store
+            - `[TermStore <IMicrosoftGraphTermStore>]`: store
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
               - `[Id <String>]`: 
               - `[DefaultLanguageTag <String>]`: Default language of the term store.
               - `[Groups <IMicrosoftGraphTermStoreGroup[]>]`: Collection of all groups available in the term store.
               - `[LanguageTags <String[]>]`: List of languages for the term store.
               - `[Sets <IMicrosoftGraphTermStoreSet1[]>]`: Collection of all sets available in the term store.
-            - `[TermStores <IMicrosoftGraphTermStore1[]>]`: The collection of termStores under this site.
+            - `[TermStores <IMicrosoftGraphTermStore[]>]`: The collection of termStores under this site.
           - `[GivenName <String>]`: The given name (first name) of the user. Maximum length is 64 characters. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values).
           - `[HireDate <DateTime?>]`: The hire date of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.  Returned only on $select.  Note: This property is specific to SharePoint Online. We recommend using the native employeeHireDate property to set and update hire date values using Microsoft Graph APIs.
           - `[Identities <IMicrosoftGraphObjectIdentity[]>]`: Represents the identities that can be used to sign in to this user account. An identity can be provided by Microsoft (also known as a local account), by organizations, or by social identity providers such as Facebook, Google, and Microsoft, and tied to a user account. May contain multiple items with the same signInType value. Supports $filter (eq) including on null values, only where the signInType is not userPrincipalName.
@@ -3169,7 +3169,7 @@ BODYPARAMETER <IMicrosoftGraphEducationUser1>: educationUser
           - `[OnPremisesSyncEnabled <Boolean?>]`: true if this user object is currently being synced from an on-premises Active Directory (AD); otherwise the user isn't being synced and can be managed in Azure Active Directory (Azure AD). Read-only. Supports $filter (eq, ne, not, in, and eq on null values).
           - `[OnPremisesUserPrincipalName <String>]`: Contains the on-premises userPrincipalName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only. Supports $filter (eq, ne, not, ge, le, in, startsWith).
           - `[Onenote <IMicrosoftGraphOnenote1>]`: onenote
-          - `[OnlineMeetings <IMicrosoftGraphOnlineMeeting1[]>]`: 
+          - `[OnlineMeetings <IMicrosoftGraphOnlineMeeting[]>]`: 
             - `[Id <String>]`: 
             - `[AllowAttendeeToEnableCamera <Boolean?>]`: Indicates whether attendees can turn on their camera.
             - `[AllowAttendeeToEnableMic <Boolean?>]`: Indicates whether attendees can turn on their microphone.
@@ -3268,7 +3268,7 @@ BODYPARAMETER <IMicrosoftGraphEducationUser1>: educationUser
               - `[Class <String>]`: The type of data source, such as Person.
               - `[Subclass <String>]`: The secondary type of data source, such as OrganizationUser.
             - `[Phones <IMicrosoftGraphPhone[]>]`: The person's phone numbers.
-            - `[PostalAddresses <IMicrosoftGraphLocation1[]>]`: The person's addresses.
+            - `[PostalAddresses <IMicrosoftGraphLocation[]>]`: The person's addresses.
             - `[Profession <String>]`: The person's profession.
             - `[ScoredEmailAddresses <IMicrosoftGraphScoredEmailAddress[]>]`: The person's email addresses.
               - `[Address <String>]`: The email address.
@@ -3287,7 +3287,7 @@ BODYPARAMETER <IMicrosoftGraphEducationUser1>: educationUser
           - `[Planner <IMicrosoftGraphPlannerUser1>]`: plannerUser
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[Id <String>]`: 
-            - `[Plans <IMicrosoftGraphPlannerPlan1[]>]`: Read-only. Nullable. Returns the plannerTasks assigned to the user.
+            - `[Plans <IMicrosoftGraphPlannerPlan[]>]`: Read-only. Nullable. Returns the plannerTasks assigned to the user.
               - `[Id <String>]`: 
               - `[Buckets <IMicrosoftGraphPlannerBucket[]>]`: Collection of buckets in the plan. Read-only. Nullable.
                 - `[Id <String>]`: 
@@ -3389,7 +3389,7 @@ BODYPARAMETER <IMicrosoftGraphEducationUser1>: educationUser
           - `[PreferredDataLocation <String>]`: The preferred data location for the user. For more information, see OneDrive Online Multi-Geo.
           - `[PreferredLanguage <String>]`: The preferred language for the user. Should follow ISO 639-1 Code; for example en-US. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
           - `[PreferredName <String>]`: The preferred name for the user. Not Supported. This attribute returns an empty string.Returned only on $select.
-          - `[Presence <IMicrosoftGraphPresence1>]`: presence
+          - `[Presence <IMicrosoftGraphPresence>]`: presence
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[Id <String>]`: 
             - `[Activity <String>]`: The supplemental information to a user's availability. Possible values are Available, Away, BeRightBack, Busy, DoNotDisturb, InACall, InAConferenceCall, Inactive,InAMeeting, Offline, OffWork,OutOfOffice, PresenceUnknown,Presenting, UrgentInterruptionsOnly.
@@ -3430,7 +3430,7 @@ BODYPARAMETER <IMicrosoftGraphEducationUser1>: educationUser
           - `[State <String>]`: The state or province in the user's address. Maximum length is 128 characters. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
           - `[StreetAddress <String>]`: The street address of the user's place of business. Maximum length is 1024 characters. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
           - `[Surname <String>]`: The user's surname (family name or last name). Maximum length is 64 characters. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
-          - `[Teamwork <IMicrosoftGraphUserTeamwork1>]`: userTeamwork
+          - `[Teamwork <IMicrosoftGraphUserTeamwork>]`: userTeamwork
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[Id <String>]`: 
             - `[AssociatedTeams <IMicrosoftGraphAssociatedTeamInfo[]>]`: The list of associatedTeamInfo objects that a user is associated with.
@@ -3442,8 +3442,8 @@ BODYPARAMETER <IMicrosoftGraphEducationUser1>: educationUser
               - `[TeamsApp <IMicrosoftGraphTeamsApp>]`: teamsApp
               - `[TeamsAppDefinition <IMicrosoftGraphTeamsAppDefinition>]`: teamsAppDefinition
               - `[Id <String>]`: 
-              - `[Chat <IMicrosoftGraphChat1>]`: chat
-          - `[Todo <IMicrosoftGraphTodo1>]`: todo
+              - `[Chat <IMicrosoftGraphChat>]`: chat
+          - `[Todo <IMicrosoftGraphTodo>]`: todo
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[Id <String>]`: 
             - `[Lists <IMicrosoftGraphTodoTaskList[]>]`: The task lists in the users mailbox.
@@ -3454,6 +3454,17 @@ BODYPARAMETER <IMicrosoftGraphEducationUser1>: educationUser
               - `[IsShared <Boolean?>]`: True if the task list is shared with other users
               - `[Tasks <IMicrosoftGraphTodoTask[]>]`: The tasks in this task list. Read-only. Nullable.
                 - `[Id <String>]`: 
+                - `[AttachmentSessions <IMicrosoftGraphAttachmentSession[]>]`: 
+                  - `[Id <String>]`: 
+                  - `[Content <Byte[]>]`: The content streams that are uploaded.
+                  - `[ExpirationDateTime <DateTime?>]`: The date and time in UTC when the upload session will expire. The complete file must be uploaded before this expiration time is reached.
+                  - `[NextExpectedRanges <String[]>]`: Indicates a single value {start} that represents the location in the file where the next upload should begin.
+                - `[Attachments <IMicrosoftGraphAttachmentBase[]>]`: A collection of file attachments for the task.
+                  - `[Id <String>]`: 
+                  - `[ContentType <String>]`: The MIME type.
+                  - `[LastModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+                  - `[Name <String>]`: The display name of the attachment. This does not need to be the actual file name.
+                  - `[Size <Int32?>]`: The length of the attachment in bytes.
                 - `[Body <IMicrosoftGraphItemBody>]`: itemBody
                 - `[BodyLastModifiedDateTime <DateTime?>]`: The date and time when the task body was last modified. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2020 would look like this: '2020-01-01T00:00:00Z'.
                 - `[Categories <String[]>]`: The categories associated with the task. Each category corresponds to the displayName property of an outlookCategory that the user has defined.
@@ -3467,6 +3478,7 @@ BODYPARAMETER <IMicrosoftGraphEducationUser1>: educationUser
                 - `[CreatedDateTime <DateTime?>]`: The date and time when the task was created. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format. For example, midnight UTC on Jan 1, 2020 would look like this: '2020-01-01T00:00:00Z'.
                 - `[DueDateTime <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
                 - `[Extensions <IMicrosoftGraphExtension[]>]`: The collection of open extensions defined for the task. Nullable.
+                - `[HasAttachments <Boolean?>]`: Indicates whether the task has attachments.
                 - `[Importance <String>]`: importance
                 - `[IsReminderOn <Boolean?>]`: Set to true if an alert is set to remind the user of the task.
                 - `[LastModifiedDateTime <DateTime?>]`: The date and time when the task was last modified. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2020 would look like this: '2020-01-01T00:00:00Z'.
@@ -3478,6 +3490,7 @@ BODYPARAMETER <IMicrosoftGraphEducationUser1>: educationUser
                   - `[WebUrl <String>]`: Deep link to the linkedResource.
                 - `[Recurrence <IMicrosoftGraphPatternedRecurrence>]`: patternedRecurrence
                 - `[ReminderDateTime <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
+                - `[StartDateTime <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
                 - `[Status <String>]`: taskStatus
                 - `[Title <String>]`: A brief description of the task.
               - `[WellknownListName <String>]`: wellknownListName
@@ -3499,7 +3512,7 @@ BODYPARAMETER <IMicrosoftGraphEducationUser1>: educationUser
         - `[DriveType <String>]`: Describes the type of drive represented by this resource. OneDrive personal drives will return personal. OneDrive for Business will return business. SharePoint document libraries will return documentLibrary. Read-only.
         - `[Following <IMicrosoftGraphDriveItem1[]>]`: The list of items the user is following. Only in OneDrive for Business.
         - `[Items <IMicrosoftGraphDriveItem1[]>]`: All items contained in the drive. Read-only. Nullable.
-        - `[List <IMicrosoftGraphList1>]`: list
+        - `[List <IMicrosoftGraphList>]`: list
         - `[Owner <IMicrosoftGraphIdentitySet>]`: identitySet
         - `[Quota <IMicrosoftGraphQuota>]`: quota
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -3564,7 +3577,7 @@ BODYPARAMETER <IMicrosoftGraphEducationUser1>: educationUser
       - `[Planner <IMicrosoftGraphPlannerGroup1>]`: plannerGroup
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[Id <String>]`: 
-        - `[Plans <IMicrosoftGraphPlannerPlan1[]>]`: Read-only. Nullable. Returns the plannerPlans owned by the group.
+        - `[Plans <IMicrosoftGraphPlannerPlan[]>]`: Read-only. Nullable. Returns the plannerPlans owned by the group.
       - `[PreferredDataLocation <String>]`: The preferred data location for the Microsoft 365 group. By default, the group inherits the group creator's preferred data location. To set this property, the calling user must be assigned one of the following Azure AD roles:  Global Administrator  User Account Administrator Directory Writer  Exchange Administrator  SharePoint Administrator  For more information about this property, see OneDrive Online Multi-Geo. Nullable. Returned by default.
       - `[PreferredLanguage <String>]`: The preferred language for a Microsoft 365 group. Should follow ISO 639-1 Code; for example en-US. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
       - `[ProxyAddresses <String[]>]`: Email addresses for the group that direct to the same group mailbox. For example: ['SMTP: bob@contoso.com', 'smtp: bob@sales.contoso.com']. The any operator is required for filter expressions on multi-valued properties. Returned by default. Read-only. Not nullable. Supports $filter (eq, not, ge, le, startsWith, endsWith, and counting empty collections).
@@ -3885,7 +3898,7 @@ CLASSES <IMicrosoftGraphEducationClass[]>: Classes to which the user belongs. Nu
         - `[IsOnlineMeeting <Boolean?>]`: 
         - `[IsOrganizer <Boolean?>]`: 
         - `[IsReminderOn <Boolean?>]`: 
-        - `[Location <IMicrosoftGraphLocation1>]`: location
+        - `[Location <IMicrosoftGraphLocation>]`: location
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[Address <IMicrosoftGraphPhysicalAddress1>]`: physicalAddress
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -3907,11 +3920,11 @@ CLASSES <IMicrosoftGraphEducationClass[]>: Classes to which the user belongs. Nu
           - `[LocationUri <String>]`: Optional URI representing the location.
           - `[UniqueId <String>]`: For internal use only.
           - `[UniqueIdType <String>]`: locationUniqueIdType
-        - `[Locations <IMicrosoftGraphLocation1[]>]`: 
+        - `[Locations <IMicrosoftGraphLocation[]>]`: 
         - `[MultiValueExtendedProperties <IMicrosoftGraphMultiValueLegacyExtendedProperty[]>]`: The collection of multi-value extended properties defined for the event. Read-only. Nullable.
           - `[Id <String>]`: 
           - `[Value <String[]>]`: A collection of property values.
-        - `[OnlineMeeting <IMicrosoftGraphOnlineMeetingInfo1>]`: onlineMeetingInfo
+        - `[OnlineMeeting <IMicrosoftGraphOnlineMeetingInfo>]`: onlineMeetingInfo
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[ConferenceId <String>]`: The ID of the conference.
           - `[JoinUrl <String>]`: The external link that launches the online meeting. This is a URL that clients will launch into a browser and will redirect the user to join the meeting.
@@ -3991,7 +4004,7 @@ CLASSES <IMicrosoftGraphEducationClass[]>: Classes to which the user belongs. Nu
         - `[HasAttachments <Boolean?>]`: Indicates whether any of the posts within this thread has at least one attachment. Returned by default.
         - `[IsLocked <Boolean?>]`: Indicates if the thread is locked. Returned by default.
         - `[LastDeliveredDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default.
-        - `[Posts <IMicrosoftGraphPost1[]>]`: 
+        - `[Posts <IMicrosoftGraphPost[]>]`: 
           - `[Categories <String[]>]`: The categories associated with the item
           - `[ChangeKey <String>]`: Identifies the version of the item. Every time the item is changed, changeKey changes as well. This allows Exchange to apply changes to the correct version of the object. Read-only.
           - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
@@ -4004,7 +4017,7 @@ CLASSES <IMicrosoftGraphEducationClass[]>: Classes to which the user belongs. Nu
           - `[Extensions <IMicrosoftGraphExtension[]>]`: The collection of open extensions defined for the post. Read-only. Nullable. Supports $expand.
           - `[From <IMicrosoftGraphRecipient>]`: recipient
           - `[HasAttachments <Boolean?>]`: Indicates whether the post has at least one attachment. This is a default property.
-          - `[InReplyTo <IMicrosoftGraphPost1>]`: post
+          - `[InReplyTo <IMicrosoftGraphPost>]`: post
           - `[MultiValueExtendedProperties <IMicrosoftGraphMultiValueLegacyExtendedProperty[]>]`: The collection of multi-value extended properties defined for the post. Read-only. Nullable.
           - `[NewParticipants <IMicrosoftGraphRecipient[]>]`: Conversation participants that were added to the thread as part of this post.
           - `[ReceivedDateTime <DateTime?>]`: Specifies when the post was received. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
@@ -4090,7 +4103,7 @@ CLASSES <IMicrosoftGraphEducationClass[]>: Classes to which the user belongs. Nu
           - `[CapabilityStatus <String>]`: Condition of the capability assignment. The possible values are Enabled, Warning, Suspended, Deleted, LockedOut.
           - `[Service <String>]`: The name of the service; for example, exchange.
           - `[ServicePlanId <String>]`: A GUID that identifies the service plan. For a complete list of GUIDs and their equivalent friendly service names, see Product names and service plan identifiers for licensing.
-        - `[Authentication <IMicrosoftGraphAuthentication1>]`: authentication
+        - `[Authentication <IMicrosoftGraphAuthentication>]`: authentication
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[Id <String>]`: 
           - `[EmailMethods <IMicrosoftGraphEmailAuthenticationMethod[]>]`: Represents the email addresses registered to a user for authentication.
@@ -4188,7 +4201,7 @@ CLASSES <IMicrosoftGraphEducationClass[]>: Classes to which the user belongs. Nu
           - `[Name <String>]`: The group name.
         - `[CalendarView <IMicrosoftGraphEvent1[]>]`: The calendar view for the calendar. Read-only. Nullable.
         - `[Calendars <IMicrosoftGraphCalendar1[]>]`: The user's calendars. Read-only. Nullable.
-        - `[Chats <IMicrosoftGraphChat1[]>]`: 
+        - `[Chats <IMicrosoftGraphChat[]>]`: 
           - `[Id <String>]`: 
           - `[ChatType <String>]`: chatType
           - `[CreatedDateTime <DateTime?>]`: Date and time at which the chat was created. Read-only.
@@ -4579,7 +4592,7 @@ CLASSES <IMicrosoftGraphEducationClass[]>: Classes to which the user belongs. Nu
                     - `[PendingContentUpdate <IMicrosoftGraphPendingContentUpdate>]`: pendingContentUpdate
                       - `[(Any) <Object>]`: This indicates any property can be added to this object.
                       - `[QueuedDateTime <DateTime?>]`: Date and time the pending binary operation was queued in UTC time. Read-only.
-                  - `[Permissions <IMicrosoftGraphPermission1[]>]`: The set of permissions for the item. Read-only. Nullable.
+                  - `[Permissions <IMicrosoftGraphPermission[]>]`: The set of permissions for the item. Read-only. Nullable.
                     - `[Id <String>]`: 
                     - `[ExpirationDateTime <DateTime?>]`: A format of yyyy-MM-ddTHH:mm:ssZ of DateTimeOffset indicates the expiration time of the permission. DateTime.MinValue indicates there is no expiration set for this permission. Optional.
                     - `[GrantedTo <IMicrosoftGraphIdentitySet>]`: identitySet
@@ -4953,7 +4966,7 @@ CLASSES <IMicrosoftGraphEducationClass[]>: Classes to which the user belongs. Nu
               - `[StartDateTime <DateTime?>]`: When the interval starts. Read-only.
             - `[ItemActivityStats <IMicrosoftGraphItemActivityStat[]>]`: 
             - `[LastSevenDays <IMicrosoftGraphItemActivityStat>]`: itemActivityStat
-          - `[Columns <IMicrosoftGraphColumnDefinition1[]>]`: The collection of column definitions reusable across lists under this site.
+          - `[Columns <IMicrosoftGraphColumnDefinition[]>]`: The collection of column definitions reusable across lists under this site.
             - `[Id <String>]`: 
             - `[Boolean <IMicrosoftGraphBooleanColumn>]`: booleanColumn
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -5016,7 +5029,7 @@ CLASSES <IMicrosoftGraphEducationClass[]>: Classes to which the user belongs. Nu
             - `[PropagateChanges <Boolean?>]`: If true, changes to this column will be propagated to lists that implement the column.
             - `[ReadOnly <Boolean?>]`: Specifies whether the column values can be modified.
             - `[Required <Boolean?>]`: Specifies whether the column value isn't optional.
-            - `[SourceColumn <IMicrosoftGraphColumnDefinition1>]`: columnDefinition
+            - `[SourceColumn <IMicrosoftGraphColumnDefinition>]`: columnDefinition
             - `[SourceContentType <IMicrosoftGraphContentTypeInfo>]`: contentTypeInfo
             - `[Term <IMicrosoftGraphTermColumn>]`: termColumn
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -5091,8 +5104,8 @@ CLASSES <IMicrosoftGraphEducationClass[]>: Classes to which the user belongs. Nu
             - `[ColumnLinks <IMicrosoftGraphColumnLink[]>]`: The collection of columns that are required by this content type
               - `[Id <String>]`: 
               - `[Name <String>]`: The name of the column  in this content type.
-            - `[ColumnPositions <IMicrosoftGraphColumnDefinition1[]>]`: Column order information in a content type.
-            - `[Columns <IMicrosoftGraphColumnDefinition1[]>]`: The collection of column definitions for this contentType.
+            - `[ColumnPositions <IMicrosoftGraphColumnDefinition[]>]`: Column order information in a content type.
+            - `[Columns <IMicrosoftGraphColumnDefinition[]>]`: The collection of column definitions for this contentType.
             - `[Description <String>]`: The descriptive text for the item.
             - `[DocumentSet <IMicrosoftGraphDocumentSet>]`: documentSet
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -5102,9 +5115,9 @@ CLASSES <IMicrosoftGraphEducationClass[]>: Classes to which the user belongs. Nu
                 - `[FileName <String>]`: Name of the file in resource folder that should be added as a default content or a template in the document set
                 - `[FolderName <String>]`: Folder name in which the file will be placed when a new document set is created in the library.
               - `[PropagateWelcomePageChanges <Boolean?>]`: Indicates whether to add the name of the document set to each file name.
-              - `[SharedColumns <IMicrosoftGraphColumnDefinition1[]>]`: 
+              - `[SharedColumns <IMicrosoftGraphColumnDefinition[]>]`: 
               - `[ShouldPrefixNameToFile <Boolean?>]`: Add the name of the Document Set to each file name.
-              - `[WelcomePageColumns <IMicrosoftGraphColumnDefinition1[]>]`: 
+              - `[WelcomePageColumns <IMicrosoftGraphColumnDefinition[]>]`: 
               - `[WelcomePageUrl <String>]`: Welcome page absolute URL.
             - `[DocumentTemplate <IMicrosoftGraphDocumentSetContent>]`: documentSetContent
             - `[Group <String>]`: The name of the group this content type belongs to. Helps organize related content types.
@@ -5138,8 +5151,8 @@ CLASSES <IMicrosoftGraphEducationClass[]>: Classes to which the user belongs. Nu
               - `[Target <String>]`: The target of the error.
             - `[Message <String>]`: A non-localized message for the developer.
             - `[Target <String>]`: The target of the error.
-          - `[ExternalColumns <IMicrosoftGraphColumnDefinition1[]>]`: The collection of column definitions available in the site that are referenced from the sites in the parent hierarchy of the current site.
-          - `[Items <IMicrosoftGraphBaseItem1[]>]`: Used to address any item contained in this site. This collection cannot be enumerated.
+          - `[ExternalColumns <IMicrosoftGraphColumnDefinition[]>]`: The collection of column definitions available in the site that are referenced from the sites in the parent hierarchy of the current site.
+          - `[Items <IMicrosoftGraphBaseItem[]>]`: Used to address any item contained in this site. This collection cannot be enumerated.
             - `[Id <String>]`: 
             - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
             - `[CreatedByUser <IMicrosoftGraphUser1>]`: user
@@ -5152,7 +5165,7 @@ CLASSES <IMicrosoftGraphEducationClass[]>: Classes to which the user belongs. Nu
             - `[Name <String>]`: The name of the item. Read-write.
             - `[ParentReference <IMicrosoftGraphItemReference>]`: itemReference
             - `[WebUrl <String>]`: URL that displays the resource in the browser. Read-only.
-          - `[Lists <IMicrosoftGraphList1[]>]`: The collection of lists under this site.
+          - `[Lists <IMicrosoftGraphList[]>]`: The collection of lists under this site.
             - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
             - `[CreatedByUser <IMicrosoftGraphUser1>]`: user
             - `[CreatedDateTime <DateTime?>]`: Date and time of item creation. Read-only.
@@ -5165,7 +5178,7 @@ CLASSES <IMicrosoftGraphEducationClass[]>: Classes to which the user belongs. Nu
             - `[ParentReference <IMicrosoftGraphItemReference>]`: itemReference
             - `[WebUrl <String>]`: URL that displays the resource in the browser. Read-only.
             - `[Id <String>]`: 
-            - `[Columns <IMicrosoftGraphColumnDefinition1[]>]`: The collection of field definitions for this list.
+            - `[Columns <IMicrosoftGraphColumnDefinition[]>]`: The collection of field definitions for this list.
             - `[ContentTypes <IMicrosoftGraphContentType1[]>]`: The collection of content types present in this list.
             - `[DisplayName <String>]`: The displayable title of the list.
             - `[Drive <IMicrosoftGraphDrive1>]`: drive
@@ -5234,7 +5247,7 @@ CLASSES <IMicrosoftGraphEducationClass[]>: Classes to which the user belongs. Nu
                     - `[(Any) <Object>]`: This indicates any property can be added to this object.
                     - `[OneNoteClientUrl <IMicrosoftGraphExternalLink>]`: externalLink
                     - `[OneNoteWebUrl <IMicrosoftGraphExternalLink>]`: externalLink
-                  - `[Pages <IMicrosoftGraphOnenotePage1[]>]`: The collection of pages in the section.  Read-only. Nullable.
+                  - `[Pages <IMicrosoftGraphOnenotePage[]>]`: The collection of pages in the section.  Read-only. Nullable.
                     - `[CreatedDateTime <DateTime?>]`: The date and time when the page was created. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
                     - `[Self <String>]`: The endpoint where you can get details about the page. Read-only.
                     - `[Id <String>]`: 
@@ -5272,7 +5285,7 @@ CLASSES <IMicrosoftGraphEducationClass[]>: Classes to which the user belongs. Nu
               - `[PercentComplete <String>]`: The operation percent complete if the operation is still in running status.
               - `[ResourceId <String>]`: The resource id.
               - `[ResourceLocation <String>]`: The resource URI for the object. For example, the resource URI for a copied page or section.
-            - `[Pages <IMicrosoftGraphOnenotePage1[]>]`: The pages in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
+            - `[Pages <IMicrosoftGraphOnenotePage[]>]`: The pages in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
             - `[Resources <IMicrosoftGraphOnenoteResource[]>]`: The image and other file resources in OneNote pages. Getting a resources collection is not supported, but you can get the binary content of a specific resource. Read-only. Nullable.
               - `[Self <String>]`: The endpoint where you can get details about the page. Read-only.
               - `[Id <String>]`: 
@@ -5281,7 +5294,7 @@ CLASSES <IMicrosoftGraphEducationClass[]>: Classes to which the user belongs. Nu
             - `[SectionGroups <IMicrosoftGraphSectionGroup1[]>]`: The section groups in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
             - `[Sections <IMicrosoftGraphOnenoteSection1[]>]`: The sections in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
           - `[Operations <IMicrosoftGraphRichLongRunningOperation[]>]`: The collection of long running operations for the site.
-          - `[Permissions <IMicrosoftGraphPermission1[]>]`: The permissions associated with the site. Nullable.
+          - `[Permissions <IMicrosoftGraphPermission[]>]`: The permissions associated with the site. Nullable.
           - `[Root <IMicrosoftGraphRoot>]`: root
           - `[SharepointIds <IMicrosoftGraphSharepointIds>]`: sharepointIds
           - `[SiteCollection <IMicrosoftGraphSiteCollection>]`: siteCollection
@@ -5290,14 +5303,14 @@ CLASSES <IMicrosoftGraphEducationClass[]>: Classes to which the user belongs. Nu
             - `[Hostname <String>]`: The hostname for the site collection. Read-only.
             - `[Root <IMicrosoftGraphRoot>]`: root
           - `[Sites <IMicrosoftGraphSite1[]>]`: The collection of the sub-sites under this site.
-          - `[TermStore <IMicrosoftGraphTermStore1>]`: store
+          - `[TermStore <IMicrosoftGraphTermStore>]`: store
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[Id <String>]`: 
             - `[DefaultLanguageTag <String>]`: Default language of the term store.
             - `[Groups <IMicrosoftGraphTermStoreGroup[]>]`: Collection of all groups available in the term store.
             - `[LanguageTags <String[]>]`: List of languages for the term store.
             - `[Sets <IMicrosoftGraphTermStoreSet1[]>]`: Collection of all sets available in the term store.
-          - `[TermStores <IMicrosoftGraphTermStore1[]>]`: The collection of termStores under this site.
+          - `[TermStores <IMicrosoftGraphTermStore[]>]`: The collection of termStores under this site.
         - `[GivenName <String>]`: The given name (first name) of the user. Maximum length is 64 characters. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values).
         - `[HireDate <DateTime?>]`: The hire date of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.  Returned only on $select.  Note: This property is specific to SharePoint Online. We recommend using the native employeeHireDate property to set and update hire date values using Microsoft Graph APIs.
         - `[Identities <IMicrosoftGraphObjectIdentity[]>]`: Represents the identities that can be used to sign in to this user account. An identity can be provided by Microsoft (also known as a local account), by organizations, or by social identity providers such as Facebook, Google, and Microsoft, and tied to a user account. May contain multiple items with the same signInType value. Supports $filter (eq) including on null values, only where the signInType is not userPrincipalName.
@@ -5974,7 +5987,7 @@ CLASSES <IMicrosoftGraphEducationClass[]>: Classes to which the user belongs. Nu
         - `[OnPremisesSyncEnabled <Boolean?>]`: true if this user object is currently being synced from an on-premises Active Directory (AD); otherwise the user isn't being synced and can be managed in Azure Active Directory (Azure AD). Read-only. Supports $filter (eq, ne, not, in, and eq on null values).
         - `[OnPremisesUserPrincipalName <String>]`: Contains the on-premises userPrincipalName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only. Supports $filter (eq, ne, not, ge, le, in, startsWith).
         - `[Onenote <IMicrosoftGraphOnenote1>]`: onenote
-        - `[OnlineMeetings <IMicrosoftGraphOnlineMeeting1[]>]`: 
+        - `[OnlineMeetings <IMicrosoftGraphOnlineMeeting[]>]`: 
           - `[Id <String>]`: 
           - `[AllowAttendeeToEnableCamera <Boolean?>]`: Indicates whether attendees can turn on their camera.
           - `[AllowAttendeeToEnableMic <Boolean?>]`: Indicates whether attendees can turn on their microphone.
@@ -6073,7 +6086,7 @@ CLASSES <IMicrosoftGraphEducationClass[]>: Classes to which the user belongs. Nu
             - `[Class <String>]`: The type of data source, such as Person.
             - `[Subclass <String>]`: The secondary type of data source, such as OrganizationUser.
           - `[Phones <IMicrosoftGraphPhone[]>]`: The person's phone numbers.
-          - `[PostalAddresses <IMicrosoftGraphLocation1[]>]`: The person's addresses.
+          - `[PostalAddresses <IMicrosoftGraphLocation[]>]`: The person's addresses.
           - `[Profession <String>]`: The person's profession.
           - `[ScoredEmailAddresses <IMicrosoftGraphScoredEmailAddress[]>]`: The person's email addresses.
             - `[Address <String>]`: The email address.
@@ -6092,7 +6105,7 @@ CLASSES <IMicrosoftGraphEducationClass[]>: Classes to which the user belongs. Nu
         - `[Planner <IMicrosoftGraphPlannerUser1>]`: plannerUser
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[Id <String>]`: 
-          - `[Plans <IMicrosoftGraphPlannerPlan1[]>]`: Read-only. Nullable. Returns the plannerTasks assigned to the user.
+          - `[Plans <IMicrosoftGraphPlannerPlan[]>]`: Read-only. Nullable. Returns the plannerTasks assigned to the user.
             - `[Id <String>]`: 
             - `[Buckets <IMicrosoftGraphPlannerBucket[]>]`: Collection of buckets in the plan. Read-only. Nullable.
               - `[Id <String>]`: 
@@ -6194,7 +6207,7 @@ CLASSES <IMicrosoftGraphEducationClass[]>: Classes to which the user belongs. Nu
         - `[PreferredDataLocation <String>]`: The preferred data location for the user. For more information, see OneDrive Online Multi-Geo.
         - `[PreferredLanguage <String>]`: The preferred language for the user. Should follow ISO 639-1 Code; for example en-US. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
         - `[PreferredName <String>]`: The preferred name for the user. Not Supported. This attribute returns an empty string.Returned only on $select.
-        - `[Presence <IMicrosoftGraphPresence1>]`: presence
+        - `[Presence <IMicrosoftGraphPresence>]`: presence
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[Id <String>]`: 
           - `[Activity <String>]`: The supplemental information to a user's availability. Possible values are Available, Away, BeRightBack, Busy, DoNotDisturb, InACall, InAConferenceCall, Inactive,InAMeeting, Offline, OffWork,OutOfOffice, PresenceUnknown,Presenting, UrgentInterruptionsOnly.
@@ -6235,7 +6248,7 @@ CLASSES <IMicrosoftGraphEducationClass[]>: Classes to which the user belongs. Nu
         - `[State <String>]`: The state or province in the user's address. Maximum length is 128 characters. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
         - `[StreetAddress <String>]`: The street address of the user's place of business. Maximum length is 1024 characters. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
         - `[Surname <String>]`: The user's surname (family name or last name). Maximum length is 64 characters. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
-        - `[Teamwork <IMicrosoftGraphUserTeamwork1>]`: userTeamwork
+        - `[Teamwork <IMicrosoftGraphUserTeamwork>]`: userTeamwork
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[Id <String>]`: 
           - `[AssociatedTeams <IMicrosoftGraphAssociatedTeamInfo[]>]`: The list of associatedTeamInfo objects that a user is associated with.
@@ -6247,8 +6260,8 @@ CLASSES <IMicrosoftGraphEducationClass[]>: Classes to which the user belongs. Nu
             - `[TeamsApp <IMicrosoftGraphTeamsApp>]`: teamsApp
             - `[TeamsAppDefinition <IMicrosoftGraphTeamsAppDefinition>]`: teamsAppDefinition
             - `[Id <String>]`: 
-            - `[Chat <IMicrosoftGraphChat1>]`: chat
-        - `[Todo <IMicrosoftGraphTodo1>]`: todo
+            - `[Chat <IMicrosoftGraphChat>]`: chat
+        - `[Todo <IMicrosoftGraphTodo>]`: todo
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[Id <String>]`: 
           - `[Lists <IMicrosoftGraphTodoTaskList[]>]`: The task lists in the users mailbox.
@@ -6259,6 +6272,17 @@ CLASSES <IMicrosoftGraphEducationClass[]>: Classes to which the user belongs. Nu
             - `[IsShared <Boolean?>]`: True if the task list is shared with other users
             - `[Tasks <IMicrosoftGraphTodoTask[]>]`: The tasks in this task list. Read-only. Nullable.
               - `[Id <String>]`: 
+              - `[AttachmentSessions <IMicrosoftGraphAttachmentSession[]>]`: 
+                - `[Id <String>]`: 
+                - `[Content <Byte[]>]`: The content streams that are uploaded.
+                - `[ExpirationDateTime <DateTime?>]`: The date and time in UTC when the upload session will expire. The complete file must be uploaded before this expiration time is reached.
+                - `[NextExpectedRanges <String[]>]`: Indicates a single value {start} that represents the location in the file where the next upload should begin.
+              - `[Attachments <IMicrosoftGraphAttachmentBase[]>]`: A collection of file attachments for the task.
+                - `[Id <String>]`: 
+                - `[ContentType <String>]`: The MIME type.
+                - `[LastModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+                - `[Name <String>]`: The display name of the attachment. This does not need to be the actual file name.
+                - `[Size <Int32?>]`: The length of the attachment in bytes.
               - `[Body <IMicrosoftGraphItemBody>]`: itemBody
               - `[BodyLastModifiedDateTime <DateTime?>]`: The date and time when the task body was last modified. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2020 would look like this: '2020-01-01T00:00:00Z'.
               - `[Categories <String[]>]`: The categories associated with the task. Each category corresponds to the displayName property of an outlookCategory that the user has defined.
@@ -6272,6 +6296,7 @@ CLASSES <IMicrosoftGraphEducationClass[]>: Classes to which the user belongs. Nu
               - `[CreatedDateTime <DateTime?>]`: The date and time when the task was created. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format. For example, midnight UTC on Jan 1, 2020 would look like this: '2020-01-01T00:00:00Z'.
               - `[DueDateTime <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
               - `[Extensions <IMicrosoftGraphExtension[]>]`: The collection of open extensions defined for the task. Nullable.
+              - `[HasAttachments <Boolean?>]`: Indicates whether the task has attachments.
               - `[Importance <String>]`: importance
               - `[IsReminderOn <Boolean?>]`: Set to true if an alert is set to remind the user of the task.
               - `[LastModifiedDateTime <DateTime?>]`: The date and time when the task was last modified. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2020 would look like this: '2020-01-01T00:00:00Z'.
@@ -6283,6 +6308,7 @@ CLASSES <IMicrosoftGraphEducationClass[]>: Classes to which the user belongs. Nu
                 - `[WebUrl <String>]`: Deep link to the linkedResource.
               - `[Recurrence <IMicrosoftGraphPatternedRecurrence>]`: patternedRecurrence
               - `[ReminderDateTime <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
+              - `[StartDateTime <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
               - `[Status <String>]`: taskStatus
               - `[Title <String>]`: A brief description of the task.
             - `[WellknownListName <String>]`: wellknownListName
@@ -6304,7 +6330,7 @@ CLASSES <IMicrosoftGraphEducationClass[]>: Classes to which the user belongs. Nu
       - `[DriveType <String>]`: Describes the type of drive represented by this resource. OneDrive personal drives will return personal. OneDrive for Business will return business. SharePoint document libraries will return documentLibrary. Read-only.
       - `[Following <IMicrosoftGraphDriveItem1[]>]`: The list of items the user is following. Only in OneDrive for Business.
       - `[Items <IMicrosoftGraphDriveItem1[]>]`: All items contained in the drive. Read-only. Nullable.
-      - `[List <IMicrosoftGraphList1>]`: list
+      - `[List <IMicrosoftGraphList>]`: list
       - `[Owner <IMicrosoftGraphIdentitySet>]`: identitySet
       - `[Quota <IMicrosoftGraphQuota>]`: quota
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -6369,7 +6395,7 @@ CLASSES <IMicrosoftGraphEducationClass[]>: Classes to which the user belongs. Nu
     - `[Planner <IMicrosoftGraphPlannerGroup1>]`: plannerGroup
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Id <String>]`: 
-      - `[Plans <IMicrosoftGraphPlannerPlan1[]>]`: Read-only. Nullable. Returns the plannerPlans owned by the group.
+      - `[Plans <IMicrosoftGraphPlannerPlan[]>]`: Read-only. Nullable. Returns the plannerPlans owned by the group.
     - `[PreferredDataLocation <String>]`: The preferred data location for the Microsoft 365 group. By default, the group inherits the group creator's preferred data location. To set this property, the calling user must be assigned one of the following Azure AD roles:  Global Administrator  User Account Administrator Directory Writer  Exchange Administrator  SharePoint Administrator  For more information about this property, see OneDrive Online Multi-Geo. Nullable. Returned by default.
     - `[PreferredLanguage <String>]`: The preferred language for a Microsoft 365 group. Should follow ISO 639-1 Code; for example en-US. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
     - `[ProxyAddresses <String[]>]`: Email addresses for the group that direct to the same group mailbox. For example: ['SMTP: bob@contoso.com', 'smtp: bob@sales.contoso.com']. The any operator is required for filter expressions on multi-valued properties. Returned by default. Read-only. Not nullable. Supports $filter (eq, not, ge, le, startsWith, endsWith, and counting empty collections).
@@ -6804,7 +6830,7 @@ SCHOOLS <IMicrosoftGraphEducationSchool1[]>: Schools to which the user belongs. 
           - `[IsOnlineMeeting <Boolean?>]`: 
           - `[IsOrganizer <Boolean?>]`: 
           - `[IsReminderOn <Boolean?>]`: 
-          - `[Location <IMicrosoftGraphLocation1>]`: location
+          - `[Location <IMicrosoftGraphLocation>]`: location
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[Address <IMicrosoftGraphPhysicalAddress1>]`: physicalAddress
             - `[Coordinates <IMicrosoftGraphOutlookGeoCoordinates>]`: outlookGeoCoordinates
@@ -6820,11 +6846,11 @@ SCHOOLS <IMicrosoftGraphEducationSchool1[]>: Schools to which the user belongs. 
             - `[LocationUri <String>]`: Optional URI representing the location.
             - `[UniqueId <String>]`: For internal use only.
             - `[UniqueIdType <String>]`: locationUniqueIdType
-          - `[Locations <IMicrosoftGraphLocation1[]>]`: 
+          - `[Locations <IMicrosoftGraphLocation[]>]`: 
           - `[MultiValueExtendedProperties <IMicrosoftGraphMultiValueLegacyExtendedProperty[]>]`: The collection of multi-value extended properties defined for the event. Read-only. Nullable.
             - `[Id <String>]`: 
             - `[Value <String[]>]`: A collection of property values.
-          - `[OnlineMeeting <IMicrosoftGraphOnlineMeetingInfo1>]`: onlineMeetingInfo
+          - `[OnlineMeeting <IMicrosoftGraphOnlineMeetingInfo>]`: onlineMeetingInfo
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[ConferenceId <String>]`: The ID of the conference.
             - `[JoinUrl <String>]`: The external link that launches the online meeting. This is a URL that clients will launch into a browser and will redirect the user to join the meeting.
@@ -6904,7 +6930,7 @@ SCHOOLS <IMicrosoftGraphEducationSchool1[]>: Schools to which the user belongs. 
           - `[HasAttachments <Boolean?>]`: Indicates whether any of the posts within this thread has at least one attachment. Returned by default.
           - `[IsLocked <Boolean?>]`: Indicates if the thread is locked. Returned by default.
           - `[LastDeliveredDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default.
-          - `[Posts <IMicrosoftGraphPost1[]>]`: 
+          - `[Posts <IMicrosoftGraphPost[]>]`: 
             - `[Categories <String[]>]`: The categories associated with the item
             - `[ChangeKey <String>]`: Identifies the version of the item. Every time the item is changed, changeKey changes as well. This allows Exchange to apply changes to the correct version of the object. Read-only.
             - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
@@ -6917,7 +6943,7 @@ SCHOOLS <IMicrosoftGraphEducationSchool1[]>: Schools to which the user belongs. 
             - `[Extensions <IMicrosoftGraphExtension[]>]`: The collection of open extensions defined for the post. Read-only. Nullable. Supports $expand.
             - `[From <IMicrosoftGraphRecipient>]`: recipient
             - `[HasAttachments <Boolean?>]`: Indicates whether the post has at least one attachment. This is a default property.
-            - `[InReplyTo <IMicrosoftGraphPost1>]`: post
+            - `[InReplyTo <IMicrosoftGraphPost>]`: post
             - `[MultiValueExtendedProperties <IMicrosoftGraphMultiValueLegacyExtendedProperty[]>]`: The collection of multi-value extended properties defined for the post. Read-only. Nullable.
             - `[NewParticipants <IMicrosoftGraphRecipient[]>]`: Conversation participants that were added to the thread as part of this post.
             - `[ReceivedDateTime <DateTime?>]`: Specifies when the post was received. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
@@ -7003,7 +7029,7 @@ SCHOOLS <IMicrosoftGraphEducationSchool1[]>: Schools to which the user belongs. 
             - `[CapabilityStatus <String>]`: Condition of the capability assignment. The possible values are Enabled, Warning, Suspended, Deleted, LockedOut.
             - `[Service <String>]`: The name of the service; for example, exchange.
             - `[ServicePlanId <String>]`: A GUID that identifies the service plan. For a complete list of GUIDs and their equivalent friendly service names, see Product names and service plan identifiers for licensing.
-          - `[Authentication <IMicrosoftGraphAuthentication1>]`: authentication
+          - `[Authentication <IMicrosoftGraphAuthentication>]`: authentication
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[Id <String>]`: 
             - `[EmailMethods <IMicrosoftGraphEmailAuthenticationMethod[]>]`: Represents the email addresses registered to a user for authentication.
@@ -7101,7 +7127,7 @@ SCHOOLS <IMicrosoftGraphEducationSchool1[]>: Schools to which the user belongs. 
             - `[Name <String>]`: The group name.
           - `[CalendarView <IMicrosoftGraphEvent1[]>]`: The calendar view for the calendar. Read-only. Nullable.
           - `[Calendars <IMicrosoftGraphCalendar1[]>]`: The user's calendars. Read-only. Nullable.
-          - `[Chats <IMicrosoftGraphChat1[]>]`: 
+          - `[Chats <IMicrosoftGraphChat[]>]`: 
             - `[Id <String>]`: 
             - `[ChatType <String>]`: chatType
             - `[CreatedDateTime <DateTime?>]`: Date and time at which the chat was created. Read-only.
@@ -7492,7 +7518,7 @@ SCHOOLS <IMicrosoftGraphEducationSchool1[]>: Schools to which the user belongs. 
                       - `[PendingContentUpdate <IMicrosoftGraphPendingContentUpdate>]`: pendingContentUpdate
                         - `[(Any) <Object>]`: This indicates any property can be added to this object.
                         - `[QueuedDateTime <DateTime?>]`: Date and time the pending binary operation was queued in UTC time. Read-only.
-                    - `[Permissions <IMicrosoftGraphPermission1[]>]`: The set of permissions for the item. Read-only. Nullable.
+                    - `[Permissions <IMicrosoftGraphPermission[]>]`: The set of permissions for the item. Read-only. Nullable.
                       - `[Id <String>]`: 
                       - `[ExpirationDateTime <DateTime?>]`: A format of yyyy-MM-ddTHH:mm:ssZ of DateTimeOffset indicates the expiration time of the permission. DateTime.MinValue indicates there is no expiration set for this permission. Optional.
                       - `[GrantedTo <IMicrosoftGraphIdentitySet>]`: identitySet
@@ -7866,7 +7892,7 @@ SCHOOLS <IMicrosoftGraphEducationSchool1[]>: Schools to which the user belongs. 
                 - `[StartDateTime <DateTime?>]`: When the interval starts. Read-only.
               - `[ItemActivityStats <IMicrosoftGraphItemActivityStat[]>]`: 
               - `[LastSevenDays <IMicrosoftGraphItemActivityStat>]`: itemActivityStat
-            - `[Columns <IMicrosoftGraphColumnDefinition1[]>]`: The collection of column definitions reusable across lists under this site.
+            - `[Columns <IMicrosoftGraphColumnDefinition[]>]`: The collection of column definitions reusable across lists under this site.
               - `[Id <String>]`: 
               - `[Boolean <IMicrosoftGraphBooleanColumn>]`: booleanColumn
                 - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -7929,7 +7955,7 @@ SCHOOLS <IMicrosoftGraphEducationSchool1[]>: Schools to which the user belongs. 
               - `[PropagateChanges <Boolean?>]`: If true, changes to this column will be propagated to lists that implement the column.
               - `[ReadOnly <Boolean?>]`: Specifies whether the column values can be modified.
               - `[Required <Boolean?>]`: Specifies whether the column value isn't optional.
-              - `[SourceColumn <IMicrosoftGraphColumnDefinition1>]`: columnDefinition
+              - `[SourceColumn <IMicrosoftGraphColumnDefinition>]`: columnDefinition
               - `[SourceContentType <IMicrosoftGraphContentTypeInfo>]`: contentTypeInfo
               - `[Term <IMicrosoftGraphTermColumn>]`: termColumn
                 - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -8004,8 +8030,8 @@ SCHOOLS <IMicrosoftGraphEducationSchool1[]>: Schools to which the user belongs. 
               - `[ColumnLinks <IMicrosoftGraphColumnLink[]>]`: The collection of columns that are required by this content type
                 - `[Id <String>]`: 
                 - `[Name <String>]`: The name of the column  in this content type.
-              - `[ColumnPositions <IMicrosoftGraphColumnDefinition1[]>]`: Column order information in a content type.
-              - `[Columns <IMicrosoftGraphColumnDefinition1[]>]`: The collection of column definitions for this contentType.
+              - `[ColumnPositions <IMicrosoftGraphColumnDefinition[]>]`: Column order information in a content type.
+              - `[Columns <IMicrosoftGraphColumnDefinition[]>]`: The collection of column definitions for this contentType.
               - `[Description <String>]`: The descriptive text for the item.
               - `[DocumentSet <IMicrosoftGraphDocumentSet>]`: documentSet
                 - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -8015,9 +8041,9 @@ SCHOOLS <IMicrosoftGraphEducationSchool1[]>: Schools to which the user belongs. 
                   - `[FileName <String>]`: Name of the file in resource folder that should be added as a default content or a template in the document set
                   - `[FolderName <String>]`: Folder name in which the file will be placed when a new document set is created in the library.
                 - `[PropagateWelcomePageChanges <Boolean?>]`: Indicates whether to add the name of the document set to each file name.
-                - `[SharedColumns <IMicrosoftGraphColumnDefinition1[]>]`: 
+                - `[SharedColumns <IMicrosoftGraphColumnDefinition[]>]`: 
                 - `[ShouldPrefixNameToFile <Boolean?>]`: Add the name of the Document Set to each file name.
-                - `[WelcomePageColumns <IMicrosoftGraphColumnDefinition1[]>]`: 
+                - `[WelcomePageColumns <IMicrosoftGraphColumnDefinition[]>]`: 
                 - `[WelcomePageUrl <String>]`: Welcome page absolute URL.
               - `[DocumentTemplate <IMicrosoftGraphDocumentSetContent>]`: documentSetContent
               - `[Group <String>]`: The name of the group this content type belongs to. Helps organize related content types.
@@ -8051,8 +8077,8 @@ SCHOOLS <IMicrosoftGraphEducationSchool1[]>: Schools to which the user belongs. 
                 - `[Target <String>]`: The target of the error.
               - `[Message <String>]`: A non-localized message for the developer.
               - `[Target <String>]`: The target of the error.
-            - `[ExternalColumns <IMicrosoftGraphColumnDefinition1[]>]`: The collection of column definitions available in the site that are referenced from the sites in the parent hierarchy of the current site.
-            - `[Items <IMicrosoftGraphBaseItem1[]>]`: Used to address any item contained in this site. This collection cannot be enumerated.
+            - `[ExternalColumns <IMicrosoftGraphColumnDefinition[]>]`: The collection of column definitions available in the site that are referenced from the sites in the parent hierarchy of the current site.
+            - `[Items <IMicrosoftGraphBaseItem[]>]`: Used to address any item contained in this site. This collection cannot be enumerated.
               - `[Id <String>]`: 
               - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
               - `[CreatedByUser <IMicrosoftGraphUser1>]`: user
@@ -8065,7 +8091,7 @@ SCHOOLS <IMicrosoftGraphEducationSchool1[]>: Schools to which the user belongs. 
               - `[Name <String>]`: The name of the item. Read-write.
               - `[ParentReference <IMicrosoftGraphItemReference>]`: itemReference
               - `[WebUrl <String>]`: URL that displays the resource in the browser. Read-only.
-            - `[Lists <IMicrosoftGraphList1[]>]`: The collection of lists under this site.
+            - `[Lists <IMicrosoftGraphList[]>]`: The collection of lists under this site.
               - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
               - `[CreatedByUser <IMicrosoftGraphUser1>]`: user
               - `[CreatedDateTime <DateTime?>]`: Date and time of item creation. Read-only.
@@ -8078,7 +8104,7 @@ SCHOOLS <IMicrosoftGraphEducationSchool1[]>: Schools to which the user belongs. 
               - `[ParentReference <IMicrosoftGraphItemReference>]`: itemReference
               - `[WebUrl <String>]`: URL that displays the resource in the browser. Read-only.
               - `[Id <String>]`: 
-              - `[Columns <IMicrosoftGraphColumnDefinition1[]>]`: The collection of field definitions for this list.
+              - `[Columns <IMicrosoftGraphColumnDefinition[]>]`: The collection of field definitions for this list.
               - `[ContentTypes <IMicrosoftGraphContentType1[]>]`: The collection of content types present in this list.
               - `[DisplayName <String>]`: The displayable title of the list.
               - `[Drive <IMicrosoftGraphDrive1>]`: drive
@@ -8147,7 +8173,7 @@ SCHOOLS <IMicrosoftGraphEducationSchool1[]>: Schools to which the user belongs. 
                       - `[(Any) <Object>]`: This indicates any property can be added to this object.
                       - `[OneNoteClientUrl <IMicrosoftGraphExternalLink>]`: externalLink
                       - `[OneNoteWebUrl <IMicrosoftGraphExternalLink>]`: externalLink
-                    - `[Pages <IMicrosoftGraphOnenotePage1[]>]`: The collection of pages in the section.  Read-only. Nullable.
+                    - `[Pages <IMicrosoftGraphOnenotePage[]>]`: The collection of pages in the section.  Read-only. Nullable.
                       - `[CreatedDateTime <DateTime?>]`: The date and time when the page was created. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
                       - `[Self <String>]`: The endpoint where you can get details about the page. Read-only.
                       - `[Id <String>]`: 
@@ -8185,7 +8211,7 @@ SCHOOLS <IMicrosoftGraphEducationSchool1[]>: Schools to which the user belongs. 
                 - `[PercentComplete <String>]`: The operation percent complete if the operation is still in running status.
                 - `[ResourceId <String>]`: The resource id.
                 - `[ResourceLocation <String>]`: The resource URI for the object. For example, the resource URI for a copied page or section.
-              - `[Pages <IMicrosoftGraphOnenotePage1[]>]`: The pages in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
+              - `[Pages <IMicrosoftGraphOnenotePage[]>]`: The pages in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
               - `[Resources <IMicrosoftGraphOnenoteResource[]>]`: The image and other file resources in OneNote pages. Getting a resources collection is not supported, but you can get the binary content of a specific resource. Read-only. Nullable.
                 - `[Self <String>]`: The endpoint where you can get details about the page. Read-only.
                 - `[Id <String>]`: 
@@ -8194,7 +8220,7 @@ SCHOOLS <IMicrosoftGraphEducationSchool1[]>: Schools to which the user belongs. 
               - `[SectionGroups <IMicrosoftGraphSectionGroup1[]>]`: The section groups in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
               - `[Sections <IMicrosoftGraphOnenoteSection1[]>]`: The sections in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
             - `[Operations <IMicrosoftGraphRichLongRunningOperation[]>]`: The collection of long running operations for the site.
-            - `[Permissions <IMicrosoftGraphPermission1[]>]`: The permissions associated with the site. Nullable.
+            - `[Permissions <IMicrosoftGraphPermission[]>]`: The permissions associated with the site. Nullable.
             - `[Root <IMicrosoftGraphRoot>]`: root
             - `[SharepointIds <IMicrosoftGraphSharepointIds>]`: sharepointIds
             - `[SiteCollection <IMicrosoftGraphSiteCollection>]`: siteCollection
@@ -8203,14 +8229,14 @@ SCHOOLS <IMicrosoftGraphEducationSchool1[]>: Schools to which the user belongs. 
               - `[Hostname <String>]`: The hostname for the site collection. Read-only.
               - `[Root <IMicrosoftGraphRoot>]`: root
             - `[Sites <IMicrosoftGraphSite1[]>]`: The collection of the sub-sites under this site.
-            - `[TermStore <IMicrosoftGraphTermStore1>]`: store
+            - `[TermStore <IMicrosoftGraphTermStore>]`: store
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
               - `[Id <String>]`: 
               - `[DefaultLanguageTag <String>]`: Default language of the term store.
               - `[Groups <IMicrosoftGraphTermStoreGroup[]>]`: Collection of all groups available in the term store.
               - `[LanguageTags <String[]>]`: List of languages for the term store.
               - `[Sets <IMicrosoftGraphTermStoreSet1[]>]`: Collection of all sets available in the term store.
-            - `[TermStores <IMicrosoftGraphTermStore1[]>]`: The collection of termStores under this site.
+            - `[TermStores <IMicrosoftGraphTermStore[]>]`: The collection of termStores under this site.
           - `[GivenName <String>]`: The given name (first name) of the user. Maximum length is 64 characters. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values).
           - `[HireDate <DateTime?>]`: The hire date of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.  Returned only on $select.  Note: This property is specific to SharePoint Online. We recommend using the native employeeHireDate property to set and update hire date values using Microsoft Graph APIs.
           - `[Identities <IMicrosoftGraphObjectIdentity[]>]`: Represents the identities that can be used to sign in to this user account. An identity can be provided by Microsoft (also known as a local account), by organizations, or by social identity providers such as Facebook, Google, and Microsoft, and tied to a user account. May contain multiple items with the same signInType value. Supports $filter (eq) including on null values, only where the signInType is not userPrincipalName.
@@ -8887,7 +8913,7 @@ SCHOOLS <IMicrosoftGraphEducationSchool1[]>: Schools to which the user belongs. 
           - `[OnPremisesSyncEnabled <Boolean?>]`: true if this user object is currently being synced from an on-premises Active Directory (AD); otherwise the user isn't being synced and can be managed in Azure Active Directory (Azure AD). Read-only. Supports $filter (eq, ne, not, in, and eq on null values).
           - `[OnPremisesUserPrincipalName <String>]`: Contains the on-premises userPrincipalName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only. Supports $filter (eq, ne, not, ge, le, in, startsWith).
           - `[Onenote <IMicrosoftGraphOnenote1>]`: onenote
-          - `[OnlineMeetings <IMicrosoftGraphOnlineMeeting1[]>]`: 
+          - `[OnlineMeetings <IMicrosoftGraphOnlineMeeting[]>]`: 
             - `[Id <String>]`: 
             - `[AllowAttendeeToEnableCamera <Boolean?>]`: Indicates whether attendees can turn on their camera.
             - `[AllowAttendeeToEnableMic <Boolean?>]`: Indicates whether attendees can turn on their microphone.
@@ -8986,7 +9012,7 @@ SCHOOLS <IMicrosoftGraphEducationSchool1[]>: Schools to which the user belongs. 
               - `[Class <String>]`: The type of data source, such as Person.
               - `[Subclass <String>]`: The secondary type of data source, such as OrganizationUser.
             - `[Phones <IMicrosoftGraphPhone[]>]`: The person's phone numbers.
-            - `[PostalAddresses <IMicrosoftGraphLocation1[]>]`: The person's addresses.
+            - `[PostalAddresses <IMicrosoftGraphLocation[]>]`: The person's addresses.
             - `[Profession <String>]`: The person's profession.
             - `[ScoredEmailAddresses <IMicrosoftGraphScoredEmailAddress[]>]`: The person's email addresses.
               - `[Address <String>]`: The email address.
@@ -9005,7 +9031,7 @@ SCHOOLS <IMicrosoftGraphEducationSchool1[]>: Schools to which the user belongs. 
           - `[Planner <IMicrosoftGraphPlannerUser1>]`: plannerUser
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[Id <String>]`: 
-            - `[Plans <IMicrosoftGraphPlannerPlan1[]>]`: Read-only. Nullable. Returns the plannerTasks assigned to the user.
+            - `[Plans <IMicrosoftGraphPlannerPlan[]>]`: Read-only. Nullable. Returns the plannerTasks assigned to the user.
               - `[Id <String>]`: 
               - `[Buckets <IMicrosoftGraphPlannerBucket[]>]`: Collection of buckets in the plan. Read-only. Nullable.
                 - `[Id <String>]`: 
@@ -9107,7 +9133,7 @@ SCHOOLS <IMicrosoftGraphEducationSchool1[]>: Schools to which the user belongs. 
           - `[PreferredDataLocation <String>]`: The preferred data location for the user. For more information, see OneDrive Online Multi-Geo.
           - `[PreferredLanguage <String>]`: The preferred language for the user. Should follow ISO 639-1 Code; for example en-US. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
           - `[PreferredName <String>]`: The preferred name for the user. Not Supported. This attribute returns an empty string.Returned only on $select.
-          - `[Presence <IMicrosoftGraphPresence1>]`: presence
+          - `[Presence <IMicrosoftGraphPresence>]`: presence
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[Id <String>]`: 
             - `[Activity <String>]`: The supplemental information to a user's availability. Possible values are Available, Away, BeRightBack, Busy, DoNotDisturb, InACall, InAConferenceCall, Inactive,InAMeeting, Offline, OffWork,OutOfOffice, PresenceUnknown,Presenting, UrgentInterruptionsOnly.
@@ -9144,7 +9170,7 @@ SCHOOLS <IMicrosoftGraphEducationSchool1[]>: Schools to which the user belongs. 
           - `[State <String>]`: The state or province in the user's address. Maximum length is 128 characters. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
           - `[StreetAddress <String>]`: The street address of the user's place of business. Maximum length is 1024 characters. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
           - `[Surname <String>]`: The user's surname (family name or last name). Maximum length is 64 characters. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
-          - `[Teamwork <IMicrosoftGraphUserTeamwork1>]`: userTeamwork
+          - `[Teamwork <IMicrosoftGraphUserTeamwork>]`: userTeamwork
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[Id <String>]`: 
             - `[AssociatedTeams <IMicrosoftGraphAssociatedTeamInfo[]>]`: The list of associatedTeamInfo objects that a user is associated with.
@@ -9156,8 +9182,8 @@ SCHOOLS <IMicrosoftGraphEducationSchool1[]>: Schools to which the user belongs. 
               - `[TeamsApp <IMicrosoftGraphTeamsApp>]`: teamsApp
               - `[TeamsAppDefinition <IMicrosoftGraphTeamsAppDefinition>]`: teamsAppDefinition
               - `[Id <String>]`: 
-              - `[Chat <IMicrosoftGraphChat1>]`: chat
-          - `[Todo <IMicrosoftGraphTodo1>]`: todo
+              - `[Chat <IMicrosoftGraphChat>]`: chat
+          - `[Todo <IMicrosoftGraphTodo>]`: todo
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[Id <String>]`: 
             - `[Lists <IMicrosoftGraphTodoTaskList[]>]`: The task lists in the users mailbox.
@@ -9168,6 +9194,17 @@ SCHOOLS <IMicrosoftGraphEducationSchool1[]>: Schools to which the user belongs. 
               - `[IsShared <Boolean?>]`: True if the task list is shared with other users
               - `[Tasks <IMicrosoftGraphTodoTask[]>]`: The tasks in this task list. Read-only. Nullable.
                 - `[Id <String>]`: 
+                - `[AttachmentSessions <IMicrosoftGraphAttachmentSession[]>]`: 
+                  - `[Id <String>]`: 
+                  - `[Content <Byte[]>]`: The content streams that are uploaded.
+                  - `[ExpirationDateTime <DateTime?>]`: The date and time in UTC when the upload session will expire. The complete file must be uploaded before this expiration time is reached.
+                  - `[NextExpectedRanges <String[]>]`: Indicates a single value {start} that represents the location in the file where the next upload should begin.
+                - `[Attachments <IMicrosoftGraphAttachmentBase[]>]`: A collection of file attachments for the task.
+                  - `[Id <String>]`: 
+                  - `[ContentType <String>]`: The MIME type.
+                  - `[LastModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+                  - `[Name <String>]`: The display name of the attachment. This does not need to be the actual file name.
+                  - `[Size <Int32?>]`: The length of the attachment in bytes.
                 - `[Body <IMicrosoftGraphItemBody>]`: itemBody
                 - `[BodyLastModifiedDateTime <DateTime?>]`: The date and time when the task body was last modified. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2020 would look like this: '2020-01-01T00:00:00Z'.
                 - `[Categories <String[]>]`: The categories associated with the task. Each category corresponds to the displayName property of an outlookCategory that the user has defined.
@@ -9181,6 +9218,7 @@ SCHOOLS <IMicrosoftGraphEducationSchool1[]>: Schools to which the user belongs. 
                 - `[CreatedDateTime <DateTime?>]`: The date and time when the task was created. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format. For example, midnight UTC on Jan 1, 2020 would look like this: '2020-01-01T00:00:00Z'.
                 - `[DueDateTime <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
                 - `[Extensions <IMicrosoftGraphExtension[]>]`: The collection of open extensions defined for the task. Nullable.
+                - `[HasAttachments <Boolean?>]`: Indicates whether the task has attachments.
                 - `[Importance <String>]`: importance
                 - `[IsReminderOn <Boolean?>]`: Set to true if an alert is set to remind the user of the task.
                 - `[LastModifiedDateTime <DateTime?>]`: The date and time when the task was last modified. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2020 would look like this: '2020-01-01T00:00:00Z'.
@@ -9192,6 +9230,7 @@ SCHOOLS <IMicrosoftGraphEducationSchool1[]>: Schools to which the user belongs. 
                   - `[WebUrl <String>]`: Deep link to the linkedResource.
                 - `[Recurrence <IMicrosoftGraphPatternedRecurrence>]`: patternedRecurrence
                 - `[ReminderDateTime <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
+                - `[StartDateTime <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
                 - `[Status <String>]`: taskStatus
                 - `[Title <String>]`: A brief description of the task.
               - `[WellknownListName <String>]`: wellknownListName
@@ -9213,7 +9252,7 @@ SCHOOLS <IMicrosoftGraphEducationSchool1[]>: Schools to which the user belongs. 
         - `[DriveType <String>]`: Describes the type of drive represented by this resource. OneDrive personal drives will return personal. OneDrive for Business will return business. SharePoint document libraries will return documentLibrary. Read-only.
         - `[Following <IMicrosoftGraphDriveItem1[]>]`: The list of items the user is following. Only in OneDrive for Business.
         - `[Items <IMicrosoftGraphDriveItem1[]>]`: All items contained in the drive. Read-only. Nullable.
-        - `[List <IMicrosoftGraphList1>]`: list
+        - `[List <IMicrosoftGraphList>]`: list
         - `[Owner <IMicrosoftGraphIdentitySet>]`: identitySet
         - `[Quota <IMicrosoftGraphQuota>]`: quota
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -9278,7 +9317,7 @@ SCHOOLS <IMicrosoftGraphEducationSchool1[]>: Schools to which the user belongs. 
       - `[Planner <IMicrosoftGraphPlannerGroup1>]`: plannerGroup
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[Id <String>]`: 
-        - `[Plans <IMicrosoftGraphPlannerPlan1[]>]`: Read-only. Nullable. Returns the plannerPlans owned by the group.
+        - `[Plans <IMicrosoftGraphPlannerPlan[]>]`: Read-only. Nullable. Returns the plannerPlans owned by the group.
       - `[PreferredDataLocation <String>]`: The preferred data location for the Microsoft 365 group. By default, the group inherits the group creator's preferred data location. To set this property, the calling user must be assigned one of the following Azure AD roles:  Global Administrator  User Account Administrator Directory Writer  Exchange Administrator  SharePoint Administrator  For more information about this property, see OneDrive Online Multi-Geo. Nullable. Returned by default.
       - `[PreferredLanguage <String>]`: The preferred language for a Microsoft 365 group. Should follow ISO 639-1 Code; for example en-US. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
       - `[ProxyAddresses <String[]>]`: Email addresses for the group that direct to the same group mailbox. For example: ['SMTP: bob@contoso.com', 'smtp: bob@sales.contoso.com']. The any operator is required for filter expressions on multi-valued properties. Returned by default. Read-only. Not nullable. Supports $filter (eq, not, ge, le, startsWith, endsWith, and counting empty collections).
@@ -9598,7 +9637,7 @@ TAUGHTCLASSES <IMicrosoftGraphEducationClass[]>: Classes for which the user is a
         - `[IsOnlineMeeting <Boolean?>]`: 
         - `[IsOrganizer <Boolean?>]`: 
         - `[IsReminderOn <Boolean?>]`: 
-        - `[Location <IMicrosoftGraphLocation1>]`: location
+        - `[Location <IMicrosoftGraphLocation>]`: location
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[Address <IMicrosoftGraphPhysicalAddress1>]`: physicalAddress
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -9620,11 +9659,11 @@ TAUGHTCLASSES <IMicrosoftGraphEducationClass[]>: Classes for which the user is a
           - `[LocationUri <String>]`: Optional URI representing the location.
           - `[UniqueId <String>]`: For internal use only.
           - `[UniqueIdType <String>]`: locationUniqueIdType
-        - `[Locations <IMicrosoftGraphLocation1[]>]`: 
+        - `[Locations <IMicrosoftGraphLocation[]>]`: 
         - `[MultiValueExtendedProperties <IMicrosoftGraphMultiValueLegacyExtendedProperty[]>]`: The collection of multi-value extended properties defined for the event. Read-only. Nullable.
           - `[Id <String>]`: 
           - `[Value <String[]>]`: A collection of property values.
-        - `[OnlineMeeting <IMicrosoftGraphOnlineMeetingInfo1>]`: onlineMeetingInfo
+        - `[OnlineMeeting <IMicrosoftGraphOnlineMeetingInfo>]`: onlineMeetingInfo
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[ConferenceId <String>]`: The ID of the conference.
           - `[JoinUrl <String>]`: The external link that launches the online meeting. This is a URL that clients will launch into a browser and will redirect the user to join the meeting.
@@ -9704,7 +9743,7 @@ TAUGHTCLASSES <IMicrosoftGraphEducationClass[]>: Classes for which the user is a
         - `[HasAttachments <Boolean?>]`: Indicates whether any of the posts within this thread has at least one attachment. Returned by default.
         - `[IsLocked <Boolean?>]`: Indicates if the thread is locked. Returned by default.
         - `[LastDeliveredDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default.
-        - `[Posts <IMicrosoftGraphPost1[]>]`: 
+        - `[Posts <IMicrosoftGraphPost[]>]`: 
           - `[Categories <String[]>]`: The categories associated with the item
           - `[ChangeKey <String>]`: Identifies the version of the item. Every time the item is changed, changeKey changes as well. This allows Exchange to apply changes to the correct version of the object. Read-only.
           - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
@@ -9717,7 +9756,7 @@ TAUGHTCLASSES <IMicrosoftGraphEducationClass[]>: Classes for which the user is a
           - `[Extensions <IMicrosoftGraphExtension[]>]`: The collection of open extensions defined for the post. Read-only. Nullable. Supports $expand.
           - `[From <IMicrosoftGraphRecipient>]`: recipient
           - `[HasAttachments <Boolean?>]`: Indicates whether the post has at least one attachment. This is a default property.
-          - `[InReplyTo <IMicrosoftGraphPost1>]`: post
+          - `[InReplyTo <IMicrosoftGraphPost>]`: post
           - `[MultiValueExtendedProperties <IMicrosoftGraphMultiValueLegacyExtendedProperty[]>]`: The collection of multi-value extended properties defined for the post. Read-only. Nullable.
           - `[NewParticipants <IMicrosoftGraphRecipient[]>]`: Conversation participants that were added to the thread as part of this post.
           - `[ReceivedDateTime <DateTime?>]`: Specifies when the post was received. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
@@ -9803,7 +9842,7 @@ TAUGHTCLASSES <IMicrosoftGraphEducationClass[]>: Classes for which the user is a
           - `[CapabilityStatus <String>]`: Condition of the capability assignment. The possible values are Enabled, Warning, Suspended, Deleted, LockedOut.
           - `[Service <String>]`: The name of the service; for example, exchange.
           - `[ServicePlanId <String>]`: A GUID that identifies the service plan. For a complete list of GUIDs and their equivalent friendly service names, see Product names and service plan identifiers for licensing.
-        - `[Authentication <IMicrosoftGraphAuthentication1>]`: authentication
+        - `[Authentication <IMicrosoftGraphAuthentication>]`: authentication
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[Id <String>]`: 
           - `[EmailMethods <IMicrosoftGraphEmailAuthenticationMethod[]>]`: Represents the email addresses registered to a user for authentication.
@@ -9901,7 +9940,7 @@ TAUGHTCLASSES <IMicrosoftGraphEducationClass[]>: Classes for which the user is a
           - `[Name <String>]`: The group name.
         - `[CalendarView <IMicrosoftGraphEvent1[]>]`: The calendar view for the calendar. Read-only. Nullable.
         - `[Calendars <IMicrosoftGraphCalendar1[]>]`: The user's calendars. Read-only. Nullable.
-        - `[Chats <IMicrosoftGraphChat1[]>]`: 
+        - `[Chats <IMicrosoftGraphChat[]>]`: 
           - `[Id <String>]`: 
           - `[ChatType <String>]`: chatType
           - `[CreatedDateTime <DateTime?>]`: Date and time at which the chat was created. Read-only.
@@ -10292,7 +10331,7 @@ TAUGHTCLASSES <IMicrosoftGraphEducationClass[]>: Classes for which the user is a
                     - `[PendingContentUpdate <IMicrosoftGraphPendingContentUpdate>]`: pendingContentUpdate
                       - `[(Any) <Object>]`: This indicates any property can be added to this object.
                       - `[QueuedDateTime <DateTime?>]`: Date and time the pending binary operation was queued in UTC time. Read-only.
-                  - `[Permissions <IMicrosoftGraphPermission1[]>]`: The set of permissions for the item. Read-only. Nullable.
+                  - `[Permissions <IMicrosoftGraphPermission[]>]`: The set of permissions for the item. Read-only. Nullable.
                     - `[Id <String>]`: 
                     - `[ExpirationDateTime <DateTime?>]`: A format of yyyy-MM-ddTHH:mm:ssZ of DateTimeOffset indicates the expiration time of the permission. DateTime.MinValue indicates there is no expiration set for this permission. Optional.
                     - `[GrantedTo <IMicrosoftGraphIdentitySet>]`: identitySet
@@ -10666,7 +10705,7 @@ TAUGHTCLASSES <IMicrosoftGraphEducationClass[]>: Classes for which the user is a
               - `[StartDateTime <DateTime?>]`: When the interval starts. Read-only.
             - `[ItemActivityStats <IMicrosoftGraphItemActivityStat[]>]`: 
             - `[LastSevenDays <IMicrosoftGraphItemActivityStat>]`: itemActivityStat
-          - `[Columns <IMicrosoftGraphColumnDefinition1[]>]`: The collection of column definitions reusable across lists under this site.
+          - `[Columns <IMicrosoftGraphColumnDefinition[]>]`: The collection of column definitions reusable across lists under this site.
             - `[Id <String>]`: 
             - `[Boolean <IMicrosoftGraphBooleanColumn>]`: booleanColumn
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -10729,7 +10768,7 @@ TAUGHTCLASSES <IMicrosoftGraphEducationClass[]>: Classes for which the user is a
             - `[PropagateChanges <Boolean?>]`: If true, changes to this column will be propagated to lists that implement the column.
             - `[ReadOnly <Boolean?>]`: Specifies whether the column values can be modified.
             - `[Required <Boolean?>]`: Specifies whether the column value isn't optional.
-            - `[SourceColumn <IMicrosoftGraphColumnDefinition1>]`: columnDefinition
+            - `[SourceColumn <IMicrosoftGraphColumnDefinition>]`: columnDefinition
             - `[SourceContentType <IMicrosoftGraphContentTypeInfo>]`: contentTypeInfo
             - `[Term <IMicrosoftGraphTermColumn>]`: termColumn
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -10804,8 +10843,8 @@ TAUGHTCLASSES <IMicrosoftGraphEducationClass[]>: Classes for which the user is a
             - `[ColumnLinks <IMicrosoftGraphColumnLink[]>]`: The collection of columns that are required by this content type
               - `[Id <String>]`: 
               - `[Name <String>]`: The name of the column  in this content type.
-            - `[ColumnPositions <IMicrosoftGraphColumnDefinition1[]>]`: Column order information in a content type.
-            - `[Columns <IMicrosoftGraphColumnDefinition1[]>]`: The collection of column definitions for this contentType.
+            - `[ColumnPositions <IMicrosoftGraphColumnDefinition[]>]`: Column order information in a content type.
+            - `[Columns <IMicrosoftGraphColumnDefinition[]>]`: The collection of column definitions for this contentType.
             - `[Description <String>]`: The descriptive text for the item.
             - `[DocumentSet <IMicrosoftGraphDocumentSet>]`: documentSet
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -10815,9 +10854,9 @@ TAUGHTCLASSES <IMicrosoftGraphEducationClass[]>: Classes for which the user is a
                 - `[FileName <String>]`: Name of the file in resource folder that should be added as a default content or a template in the document set
                 - `[FolderName <String>]`: Folder name in which the file will be placed when a new document set is created in the library.
               - `[PropagateWelcomePageChanges <Boolean?>]`: Indicates whether to add the name of the document set to each file name.
-              - `[SharedColumns <IMicrosoftGraphColumnDefinition1[]>]`: 
+              - `[SharedColumns <IMicrosoftGraphColumnDefinition[]>]`: 
               - `[ShouldPrefixNameToFile <Boolean?>]`: Add the name of the Document Set to each file name.
-              - `[WelcomePageColumns <IMicrosoftGraphColumnDefinition1[]>]`: 
+              - `[WelcomePageColumns <IMicrosoftGraphColumnDefinition[]>]`: 
               - `[WelcomePageUrl <String>]`: Welcome page absolute URL.
             - `[DocumentTemplate <IMicrosoftGraphDocumentSetContent>]`: documentSetContent
             - `[Group <String>]`: The name of the group this content type belongs to. Helps organize related content types.
@@ -10851,8 +10890,8 @@ TAUGHTCLASSES <IMicrosoftGraphEducationClass[]>: Classes for which the user is a
               - `[Target <String>]`: The target of the error.
             - `[Message <String>]`: A non-localized message for the developer.
             - `[Target <String>]`: The target of the error.
-          - `[ExternalColumns <IMicrosoftGraphColumnDefinition1[]>]`: The collection of column definitions available in the site that are referenced from the sites in the parent hierarchy of the current site.
-          - `[Items <IMicrosoftGraphBaseItem1[]>]`: Used to address any item contained in this site. This collection cannot be enumerated.
+          - `[ExternalColumns <IMicrosoftGraphColumnDefinition[]>]`: The collection of column definitions available in the site that are referenced from the sites in the parent hierarchy of the current site.
+          - `[Items <IMicrosoftGraphBaseItem[]>]`: Used to address any item contained in this site. This collection cannot be enumerated.
             - `[Id <String>]`: 
             - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
             - `[CreatedByUser <IMicrosoftGraphUser1>]`: user
@@ -10865,7 +10904,7 @@ TAUGHTCLASSES <IMicrosoftGraphEducationClass[]>: Classes for which the user is a
             - `[Name <String>]`: The name of the item. Read-write.
             - `[ParentReference <IMicrosoftGraphItemReference>]`: itemReference
             - `[WebUrl <String>]`: URL that displays the resource in the browser. Read-only.
-          - `[Lists <IMicrosoftGraphList1[]>]`: The collection of lists under this site.
+          - `[Lists <IMicrosoftGraphList[]>]`: The collection of lists under this site.
             - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
             - `[CreatedByUser <IMicrosoftGraphUser1>]`: user
             - `[CreatedDateTime <DateTime?>]`: Date and time of item creation. Read-only.
@@ -10878,7 +10917,7 @@ TAUGHTCLASSES <IMicrosoftGraphEducationClass[]>: Classes for which the user is a
             - `[ParentReference <IMicrosoftGraphItemReference>]`: itemReference
             - `[WebUrl <String>]`: URL that displays the resource in the browser. Read-only.
             - `[Id <String>]`: 
-            - `[Columns <IMicrosoftGraphColumnDefinition1[]>]`: The collection of field definitions for this list.
+            - `[Columns <IMicrosoftGraphColumnDefinition[]>]`: The collection of field definitions for this list.
             - `[ContentTypes <IMicrosoftGraphContentType1[]>]`: The collection of content types present in this list.
             - `[DisplayName <String>]`: The displayable title of the list.
             - `[Drive <IMicrosoftGraphDrive1>]`: drive
@@ -10947,7 +10986,7 @@ TAUGHTCLASSES <IMicrosoftGraphEducationClass[]>: Classes for which the user is a
                     - `[(Any) <Object>]`: This indicates any property can be added to this object.
                     - `[OneNoteClientUrl <IMicrosoftGraphExternalLink>]`: externalLink
                     - `[OneNoteWebUrl <IMicrosoftGraphExternalLink>]`: externalLink
-                  - `[Pages <IMicrosoftGraphOnenotePage1[]>]`: The collection of pages in the section.  Read-only. Nullable.
+                  - `[Pages <IMicrosoftGraphOnenotePage[]>]`: The collection of pages in the section.  Read-only. Nullable.
                     - `[CreatedDateTime <DateTime?>]`: The date and time when the page was created. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
                     - `[Self <String>]`: The endpoint where you can get details about the page. Read-only.
                     - `[Id <String>]`: 
@@ -10985,7 +11024,7 @@ TAUGHTCLASSES <IMicrosoftGraphEducationClass[]>: Classes for which the user is a
               - `[PercentComplete <String>]`: The operation percent complete if the operation is still in running status.
               - `[ResourceId <String>]`: The resource id.
               - `[ResourceLocation <String>]`: The resource URI for the object. For example, the resource URI for a copied page or section.
-            - `[Pages <IMicrosoftGraphOnenotePage1[]>]`: The pages in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
+            - `[Pages <IMicrosoftGraphOnenotePage[]>]`: The pages in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
             - `[Resources <IMicrosoftGraphOnenoteResource[]>]`: The image and other file resources in OneNote pages. Getting a resources collection is not supported, but you can get the binary content of a specific resource. Read-only. Nullable.
               - `[Self <String>]`: The endpoint where you can get details about the page. Read-only.
               - `[Id <String>]`: 
@@ -10994,7 +11033,7 @@ TAUGHTCLASSES <IMicrosoftGraphEducationClass[]>: Classes for which the user is a
             - `[SectionGroups <IMicrosoftGraphSectionGroup1[]>]`: The section groups in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
             - `[Sections <IMicrosoftGraphOnenoteSection1[]>]`: The sections in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
           - `[Operations <IMicrosoftGraphRichLongRunningOperation[]>]`: The collection of long running operations for the site.
-          - `[Permissions <IMicrosoftGraphPermission1[]>]`: The permissions associated with the site. Nullable.
+          - `[Permissions <IMicrosoftGraphPermission[]>]`: The permissions associated with the site. Nullable.
           - `[Root <IMicrosoftGraphRoot>]`: root
           - `[SharepointIds <IMicrosoftGraphSharepointIds>]`: sharepointIds
           - `[SiteCollection <IMicrosoftGraphSiteCollection>]`: siteCollection
@@ -11003,14 +11042,14 @@ TAUGHTCLASSES <IMicrosoftGraphEducationClass[]>: Classes for which the user is a
             - `[Hostname <String>]`: The hostname for the site collection. Read-only.
             - `[Root <IMicrosoftGraphRoot>]`: root
           - `[Sites <IMicrosoftGraphSite1[]>]`: The collection of the sub-sites under this site.
-          - `[TermStore <IMicrosoftGraphTermStore1>]`: store
+          - `[TermStore <IMicrosoftGraphTermStore>]`: store
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[Id <String>]`: 
             - `[DefaultLanguageTag <String>]`: Default language of the term store.
             - `[Groups <IMicrosoftGraphTermStoreGroup[]>]`: Collection of all groups available in the term store.
             - `[LanguageTags <String[]>]`: List of languages for the term store.
             - `[Sets <IMicrosoftGraphTermStoreSet1[]>]`: Collection of all sets available in the term store.
-          - `[TermStores <IMicrosoftGraphTermStore1[]>]`: The collection of termStores under this site.
+          - `[TermStores <IMicrosoftGraphTermStore[]>]`: The collection of termStores under this site.
         - `[GivenName <String>]`: The given name (first name) of the user. Maximum length is 64 characters. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values).
         - `[HireDate <DateTime?>]`: The hire date of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.  Returned only on $select.  Note: This property is specific to SharePoint Online. We recommend using the native employeeHireDate property to set and update hire date values using Microsoft Graph APIs.
         - `[Identities <IMicrosoftGraphObjectIdentity[]>]`: Represents the identities that can be used to sign in to this user account. An identity can be provided by Microsoft (also known as a local account), by organizations, or by social identity providers such as Facebook, Google, and Microsoft, and tied to a user account. May contain multiple items with the same signInType value. Supports $filter (eq) including on null values, only where the signInType is not userPrincipalName.
@@ -11687,7 +11726,7 @@ TAUGHTCLASSES <IMicrosoftGraphEducationClass[]>: Classes for which the user is a
         - `[OnPremisesSyncEnabled <Boolean?>]`: true if this user object is currently being synced from an on-premises Active Directory (AD); otherwise the user isn't being synced and can be managed in Azure Active Directory (Azure AD). Read-only. Supports $filter (eq, ne, not, in, and eq on null values).
         - `[OnPremisesUserPrincipalName <String>]`: Contains the on-premises userPrincipalName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only. Supports $filter (eq, ne, not, ge, le, in, startsWith).
         - `[Onenote <IMicrosoftGraphOnenote1>]`: onenote
-        - `[OnlineMeetings <IMicrosoftGraphOnlineMeeting1[]>]`: 
+        - `[OnlineMeetings <IMicrosoftGraphOnlineMeeting[]>]`: 
           - `[Id <String>]`: 
           - `[AllowAttendeeToEnableCamera <Boolean?>]`: Indicates whether attendees can turn on their camera.
           - `[AllowAttendeeToEnableMic <Boolean?>]`: Indicates whether attendees can turn on their microphone.
@@ -11786,7 +11825,7 @@ TAUGHTCLASSES <IMicrosoftGraphEducationClass[]>: Classes for which the user is a
             - `[Class <String>]`: The type of data source, such as Person.
             - `[Subclass <String>]`: The secondary type of data source, such as OrganizationUser.
           - `[Phones <IMicrosoftGraphPhone[]>]`: The person's phone numbers.
-          - `[PostalAddresses <IMicrosoftGraphLocation1[]>]`: The person's addresses.
+          - `[PostalAddresses <IMicrosoftGraphLocation[]>]`: The person's addresses.
           - `[Profession <String>]`: The person's profession.
           - `[ScoredEmailAddresses <IMicrosoftGraphScoredEmailAddress[]>]`: The person's email addresses.
             - `[Address <String>]`: The email address.
@@ -11805,7 +11844,7 @@ TAUGHTCLASSES <IMicrosoftGraphEducationClass[]>: Classes for which the user is a
         - `[Planner <IMicrosoftGraphPlannerUser1>]`: plannerUser
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[Id <String>]`: 
-          - `[Plans <IMicrosoftGraphPlannerPlan1[]>]`: Read-only. Nullable. Returns the plannerTasks assigned to the user.
+          - `[Plans <IMicrosoftGraphPlannerPlan[]>]`: Read-only. Nullable. Returns the plannerTasks assigned to the user.
             - `[Id <String>]`: 
             - `[Buckets <IMicrosoftGraphPlannerBucket[]>]`: Collection of buckets in the plan. Read-only. Nullable.
               - `[Id <String>]`: 
@@ -11907,7 +11946,7 @@ TAUGHTCLASSES <IMicrosoftGraphEducationClass[]>: Classes for which the user is a
         - `[PreferredDataLocation <String>]`: The preferred data location for the user. For more information, see OneDrive Online Multi-Geo.
         - `[PreferredLanguage <String>]`: The preferred language for the user. Should follow ISO 639-1 Code; for example en-US. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
         - `[PreferredName <String>]`: The preferred name for the user. Not Supported. This attribute returns an empty string.Returned only on $select.
-        - `[Presence <IMicrosoftGraphPresence1>]`: presence
+        - `[Presence <IMicrosoftGraphPresence>]`: presence
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[Id <String>]`: 
           - `[Activity <String>]`: The supplemental information to a user's availability. Possible values are Available, Away, BeRightBack, Busy, DoNotDisturb, InACall, InAConferenceCall, Inactive,InAMeeting, Offline, OffWork,OutOfOffice, PresenceUnknown,Presenting, UrgentInterruptionsOnly.
@@ -11948,7 +11987,7 @@ TAUGHTCLASSES <IMicrosoftGraphEducationClass[]>: Classes for which the user is a
         - `[State <String>]`: The state or province in the user's address. Maximum length is 128 characters. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
         - `[StreetAddress <String>]`: The street address of the user's place of business. Maximum length is 1024 characters. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
         - `[Surname <String>]`: The user's surname (family name or last name). Maximum length is 64 characters. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
-        - `[Teamwork <IMicrosoftGraphUserTeamwork1>]`: userTeamwork
+        - `[Teamwork <IMicrosoftGraphUserTeamwork>]`: userTeamwork
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[Id <String>]`: 
           - `[AssociatedTeams <IMicrosoftGraphAssociatedTeamInfo[]>]`: The list of associatedTeamInfo objects that a user is associated with.
@@ -11960,8 +11999,8 @@ TAUGHTCLASSES <IMicrosoftGraphEducationClass[]>: Classes for which the user is a
             - `[TeamsApp <IMicrosoftGraphTeamsApp>]`: teamsApp
             - `[TeamsAppDefinition <IMicrosoftGraphTeamsAppDefinition>]`: teamsAppDefinition
             - `[Id <String>]`: 
-            - `[Chat <IMicrosoftGraphChat1>]`: chat
-        - `[Todo <IMicrosoftGraphTodo1>]`: todo
+            - `[Chat <IMicrosoftGraphChat>]`: chat
+        - `[Todo <IMicrosoftGraphTodo>]`: todo
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[Id <String>]`: 
           - `[Lists <IMicrosoftGraphTodoTaskList[]>]`: The task lists in the users mailbox.
@@ -11972,6 +12011,17 @@ TAUGHTCLASSES <IMicrosoftGraphEducationClass[]>: Classes for which the user is a
             - `[IsShared <Boolean?>]`: True if the task list is shared with other users
             - `[Tasks <IMicrosoftGraphTodoTask[]>]`: The tasks in this task list. Read-only. Nullable.
               - `[Id <String>]`: 
+              - `[AttachmentSessions <IMicrosoftGraphAttachmentSession[]>]`: 
+                - `[Id <String>]`: 
+                - `[Content <Byte[]>]`: The content streams that are uploaded.
+                - `[ExpirationDateTime <DateTime?>]`: The date and time in UTC when the upload session will expire. The complete file must be uploaded before this expiration time is reached.
+                - `[NextExpectedRanges <String[]>]`: Indicates a single value {start} that represents the location in the file where the next upload should begin.
+              - `[Attachments <IMicrosoftGraphAttachmentBase[]>]`: A collection of file attachments for the task.
+                - `[Id <String>]`: 
+                - `[ContentType <String>]`: The MIME type.
+                - `[LastModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+                - `[Name <String>]`: The display name of the attachment. This does not need to be the actual file name.
+                - `[Size <Int32?>]`: The length of the attachment in bytes.
               - `[Body <IMicrosoftGraphItemBody>]`: itemBody
               - `[BodyLastModifiedDateTime <DateTime?>]`: The date and time when the task body was last modified. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2020 would look like this: '2020-01-01T00:00:00Z'.
               - `[Categories <String[]>]`: The categories associated with the task. Each category corresponds to the displayName property of an outlookCategory that the user has defined.
@@ -11985,6 +12035,7 @@ TAUGHTCLASSES <IMicrosoftGraphEducationClass[]>: Classes for which the user is a
               - `[CreatedDateTime <DateTime?>]`: The date and time when the task was created. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format. For example, midnight UTC on Jan 1, 2020 would look like this: '2020-01-01T00:00:00Z'.
               - `[DueDateTime <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
               - `[Extensions <IMicrosoftGraphExtension[]>]`: The collection of open extensions defined for the task. Nullable.
+              - `[HasAttachments <Boolean?>]`: Indicates whether the task has attachments.
               - `[Importance <String>]`: importance
               - `[IsReminderOn <Boolean?>]`: Set to true if an alert is set to remind the user of the task.
               - `[LastModifiedDateTime <DateTime?>]`: The date and time when the task was last modified. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2020 would look like this: '2020-01-01T00:00:00Z'.
@@ -11996,6 +12047,7 @@ TAUGHTCLASSES <IMicrosoftGraphEducationClass[]>: Classes for which the user is a
                 - `[WebUrl <String>]`: Deep link to the linkedResource.
               - `[Recurrence <IMicrosoftGraphPatternedRecurrence>]`: patternedRecurrence
               - `[ReminderDateTime <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
+              - `[StartDateTime <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
               - `[Status <String>]`: taskStatus
               - `[Title <String>]`: A brief description of the task.
             - `[WellknownListName <String>]`: wellknownListName
@@ -12017,7 +12069,7 @@ TAUGHTCLASSES <IMicrosoftGraphEducationClass[]>: Classes for which the user is a
       - `[DriveType <String>]`: Describes the type of drive represented by this resource. OneDrive personal drives will return personal. OneDrive for Business will return business. SharePoint document libraries will return documentLibrary. Read-only.
       - `[Following <IMicrosoftGraphDriveItem1[]>]`: The list of items the user is following. Only in OneDrive for Business.
       - `[Items <IMicrosoftGraphDriveItem1[]>]`: All items contained in the drive. Read-only. Nullable.
-      - `[List <IMicrosoftGraphList1>]`: list
+      - `[List <IMicrosoftGraphList>]`: list
       - `[Owner <IMicrosoftGraphIdentitySet>]`: identitySet
       - `[Quota <IMicrosoftGraphQuota>]`: quota
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -12082,7 +12134,7 @@ TAUGHTCLASSES <IMicrosoftGraphEducationClass[]>: Classes for which the user is a
     - `[Planner <IMicrosoftGraphPlannerGroup1>]`: plannerGroup
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Id <String>]`: 
-      - `[Plans <IMicrosoftGraphPlannerPlan1[]>]`: Read-only. Nullable. Returns the plannerPlans owned by the group.
+      - `[Plans <IMicrosoftGraphPlannerPlan[]>]`: Read-only. Nullable. Returns the plannerPlans owned by the group.
     - `[PreferredDataLocation <String>]`: The preferred data location for the Microsoft 365 group. By default, the group inherits the group creator's preferred data location. To set this property, the calling user must be assigned one of the following Azure AD roles:  Global Administrator  User Account Administrator Directory Writer  Exchange Administrator  SharePoint Administrator  For more information about this property, see OneDrive Online Multi-Geo. Nullable. Returned by default.
     - `[PreferredLanguage <String>]`: The preferred language for a Microsoft 365 group. Should follow ISO 639-1 Code; for example en-US. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
     - `[ProxyAddresses <String[]>]`: Email addresses for the group that direct to the same group mailbox. For example: ['SMTP: bob@contoso.com', 'smtp: bob@sales.contoso.com']. The any operator is required for filter expressions on multi-valued properties. Returned by default. Read-only. Not nullable. Supports $filter (eq, not, ge, le, startsWith, endsWith, and counting empty collections).
@@ -12283,7 +12335,7 @@ USER <IMicrosoftGraphUser1>: user
     - `[CapabilityStatus <String>]`: Condition of the capability assignment. The possible values are Enabled, Warning, Suspended, Deleted, LockedOut.
     - `[Service <String>]`: The name of the service; for example, exchange.
     - `[ServicePlanId <String>]`: A GUID that identifies the service plan. For a complete list of GUIDs and their equivalent friendly service names, see Product names and service plan identifiers for licensing.
-  - `[Authentication <IMicrosoftGraphAuthentication1>]`: authentication
+  - `[Authentication <IMicrosoftGraphAuthentication>]`: authentication
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Id <String>]`: 
     - `[EmailMethods <IMicrosoftGraphEmailAuthenticationMethod[]>]`: Represents the email addresses registered to a user for authentication.
@@ -12436,7 +12488,7 @@ USER <IMicrosoftGraphUser1>: user
       - `[IsOnlineMeeting <Boolean?>]`: 
       - `[IsOrganizer <Boolean?>]`: 
       - `[IsReminderOn <Boolean?>]`: 
-      - `[Location <IMicrosoftGraphLocation1>]`: location
+      - `[Location <IMicrosoftGraphLocation>]`: location
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[Address <IMicrosoftGraphPhysicalAddress1>]`: physicalAddress
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -12458,11 +12510,11 @@ USER <IMicrosoftGraphUser1>: user
         - `[LocationUri <String>]`: Optional URI representing the location.
         - `[UniqueId <String>]`: For internal use only.
         - `[UniqueIdType <String>]`: locationUniqueIdType
-      - `[Locations <IMicrosoftGraphLocation1[]>]`: 
+      - `[Locations <IMicrosoftGraphLocation[]>]`: 
       - `[MultiValueExtendedProperties <IMicrosoftGraphMultiValueLegacyExtendedProperty[]>]`: The collection of multi-value extended properties defined for the event. Read-only. Nullable.
         - `[Id <String>]`: 
         - `[Value <String[]>]`: A collection of property values.
-      - `[OnlineMeeting <IMicrosoftGraphOnlineMeetingInfo1>]`: onlineMeetingInfo
+      - `[OnlineMeeting <IMicrosoftGraphOnlineMeetingInfo>]`: onlineMeetingInfo
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[ConferenceId <String>]`: The ID of the conference.
         - `[JoinUrl <String>]`: The external link that launches the online meeting. This is a URL that clients will launch into a browser and will redirect the user to join the meeting.
@@ -12537,7 +12589,7 @@ USER <IMicrosoftGraphUser1>: user
     - `[Name <String>]`: The group name.
   - `[CalendarView <IMicrosoftGraphEvent1[]>]`: The calendar view for the calendar. Read-only. Nullable.
   - `[Calendars <IMicrosoftGraphCalendar1[]>]`: The user's calendars. Read-only. Nullable.
-  - `[Chats <IMicrosoftGraphChat1[]>]`: 
+  - `[Chats <IMicrosoftGraphChat[]>]`: 
     - `[Id <String>]`: 
     - `[ChatType <String>]`: chatType
     - `[CreatedDateTime <DateTime?>]`: Date and time at which the chat was created. Read-only.
@@ -12934,7 +12986,7 @@ USER <IMicrosoftGraphUser1>: user
         - `[PendingContentUpdate <IMicrosoftGraphPendingContentUpdate>]`: pendingContentUpdate
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[QueuedDateTime <DateTime?>]`: Date and time the pending binary operation was queued in UTC time. Read-only.
-      - `[Permissions <IMicrosoftGraphPermission1[]>]`: The set of permissions for the item. Read-only. Nullable.
+      - `[Permissions <IMicrosoftGraphPermission[]>]`: The set of permissions for the item. Read-only. Nullable.
         - `[Id <String>]`: 
         - `[ExpirationDateTime <DateTime?>]`: A format of yyyy-MM-ddTHH:mm:ssZ of DateTimeOffset indicates the expiration time of the permission. DateTime.MinValue indicates there is no expiration set for this permission. Optional.
         - `[GrantedTo <IMicrosoftGraphIdentitySet>]`: identitySet
@@ -13298,7 +13350,7 @@ USER <IMicrosoftGraphUser1>: user
     - `[DriveType <String>]`: Describes the type of drive represented by this resource. OneDrive personal drives will return personal. OneDrive for Business will return business. SharePoint document libraries will return documentLibrary. Read-only.
     - `[Following <IMicrosoftGraphDriveItem1[]>]`: The list of items the user is following. Only in OneDrive for Business.
     - `[Items <IMicrosoftGraphDriveItem1[]>]`: All items contained in the drive. Read-only. Nullable.
-    - `[List <IMicrosoftGraphList1>]`: list
+    - `[List <IMicrosoftGraphList>]`: list
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
       - `[CreatedByUser <IMicrosoftGraphUser1>]`: user
@@ -13312,7 +13364,7 @@ USER <IMicrosoftGraphUser1>: user
       - `[ParentReference <IMicrosoftGraphItemReference>]`: itemReference
       - `[WebUrl <String>]`: URL that displays the resource in the browser. Read-only.
       - `[Id <String>]`: 
-      - `[Columns <IMicrosoftGraphColumnDefinition1[]>]`: The collection of field definitions for this list.
+      - `[Columns <IMicrosoftGraphColumnDefinition[]>]`: The collection of field definitions for this list.
         - `[Id <String>]`: 
         - `[Boolean <IMicrosoftGraphBooleanColumn>]`: booleanColumn
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -13375,7 +13427,7 @@ USER <IMicrosoftGraphUser1>: user
         - `[PropagateChanges <Boolean?>]`: If true, changes to this column will be propagated to lists that implement the column.
         - `[ReadOnly <Boolean?>]`: Specifies whether the column values can be modified.
         - `[Required <Boolean?>]`: Specifies whether the column value isn't optional.
-        - `[SourceColumn <IMicrosoftGraphColumnDefinition1>]`: columnDefinition
+        - `[SourceColumn <IMicrosoftGraphColumnDefinition>]`: columnDefinition
         - `[SourceContentType <IMicrosoftGraphContentTypeInfo>]`: contentTypeInfo
         - `[Term <IMicrosoftGraphTermColumn>]`: termColumn
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -13450,8 +13502,8 @@ USER <IMicrosoftGraphUser1>: user
         - `[ColumnLinks <IMicrosoftGraphColumnLink[]>]`: The collection of columns that are required by this content type
           - `[Id <String>]`: 
           - `[Name <String>]`: The name of the column  in this content type.
-        - `[ColumnPositions <IMicrosoftGraphColumnDefinition1[]>]`: Column order information in a content type.
-        - `[Columns <IMicrosoftGraphColumnDefinition1[]>]`: The collection of column definitions for this contentType.
+        - `[ColumnPositions <IMicrosoftGraphColumnDefinition[]>]`: Column order information in a content type.
+        - `[Columns <IMicrosoftGraphColumnDefinition[]>]`: The collection of column definitions for this contentType.
         - `[Description <String>]`: The descriptive text for the item.
         - `[DocumentSet <IMicrosoftGraphDocumentSet>]`: documentSet
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -13461,9 +13513,9 @@ USER <IMicrosoftGraphUser1>: user
             - `[FileName <String>]`: Name of the file in resource folder that should be added as a default content or a template in the document set
             - `[FolderName <String>]`: Folder name in which the file will be placed when a new document set is created in the library.
           - `[PropagateWelcomePageChanges <Boolean?>]`: Indicates whether to add the name of the document set to each file name.
-          - `[SharedColumns <IMicrosoftGraphColumnDefinition1[]>]`: 
+          - `[SharedColumns <IMicrosoftGraphColumnDefinition[]>]`: 
           - `[ShouldPrefixNameToFile <Boolean?>]`: Add the name of the Document Set to each file name.
-          - `[WelcomePageColumns <IMicrosoftGraphColumnDefinition1[]>]`: 
+          - `[WelcomePageColumns <IMicrosoftGraphColumnDefinition[]>]`: 
           - `[WelcomePageUrl <String>]`: Welcome page absolute URL.
         - `[DocumentTemplate <IMicrosoftGraphDocumentSetContent>]`: documentSetContent
         - `[Group <String>]`: The name of the group this content type belongs to. Helps organize related content types.
@@ -13558,14 +13610,14 @@ USER <IMicrosoftGraphUser1>: user
     - `[WebUrl <String>]`: URL that displays the resource in the browser. Read-only.
     - `[Id <String>]`: 
     - `[Analytics <IMicrosoftGraphItemAnalytics1>]`: itemAnalytics
-    - `[Columns <IMicrosoftGraphColumnDefinition1[]>]`: The collection of column definitions reusable across lists under this site.
+    - `[Columns <IMicrosoftGraphColumnDefinition[]>]`: The collection of column definitions reusable across lists under this site.
     - `[ContentTypes <IMicrosoftGraphContentType1[]>]`: The collection of content types defined for this site.
     - `[DisplayName <String>]`: The full title for the site. Read-only.
     - `[Drive <IMicrosoftGraphDrive1>]`: drive
     - `[Drives <IMicrosoftGraphDrive1[]>]`: The collection of drives (document libraries) under this site.
     - `[Error <IMicrosoftGraphPublicError>]`: publicError
-    - `[ExternalColumns <IMicrosoftGraphColumnDefinition1[]>]`: The collection of column definitions available in the site that are referenced from the sites in the parent hierarchy of the current site.
-    - `[Items <IMicrosoftGraphBaseItem1[]>]`: Used to address any item contained in this site. This collection cannot be enumerated.
+    - `[ExternalColumns <IMicrosoftGraphColumnDefinition[]>]`: The collection of column definitions available in the site that are referenced from the sites in the parent hierarchy of the current site.
+    - `[Items <IMicrosoftGraphBaseItem[]>]`: Used to address any item contained in this site. This collection cannot be enumerated.
       - `[Id <String>]`: 
       - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
       - `[CreatedByUser <IMicrosoftGraphUser1>]`: user
@@ -13578,7 +13630,7 @@ USER <IMicrosoftGraphUser1>: user
       - `[Name <String>]`: The name of the item. Read-write.
       - `[ParentReference <IMicrosoftGraphItemReference>]`: itemReference
       - `[WebUrl <String>]`: URL that displays the resource in the browser. Read-only.
-    - `[Lists <IMicrosoftGraphList1[]>]`: The collection of lists under this site.
+    - `[Lists <IMicrosoftGraphList[]>]`: The collection of lists under this site.
     - `[Onenote <IMicrosoftGraphOnenote1>]`: onenote
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Id <String>]`: 
@@ -13623,7 +13675,7 @@ USER <IMicrosoftGraphUser1>: user
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
               - `[OneNoteClientUrl <IMicrosoftGraphExternalLink>]`: externalLink
               - `[OneNoteWebUrl <IMicrosoftGraphExternalLink>]`: externalLink
-            - `[Pages <IMicrosoftGraphOnenotePage1[]>]`: The collection of pages in the section.  Read-only. Nullable.
+            - `[Pages <IMicrosoftGraphOnenotePage[]>]`: The collection of pages in the section.  Read-only. Nullable.
               - `[CreatedDateTime <DateTime?>]`: The date and time when the page was created. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
               - `[Self <String>]`: The endpoint where you can get details about the page. Read-only.
               - `[Id <String>]`: 
@@ -13661,7 +13713,7 @@ USER <IMicrosoftGraphUser1>: user
         - `[PercentComplete <String>]`: The operation percent complete if the operation is still in running status.
         - `[ResourceId <String>]`: The resource id.
         - `[ResourceLocation <String>]`: The resource URI for the object. For example, the resource URI for a copied page or section.
-      - `[Pages <IMicrosoftGraphOnenotePage1[]>]`: The pages in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
+      - `[Pages <IMicrosoftGraphOnenotePage[]>]`: The pages in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
       - `[Resources <IMicrosoftGraphOnenoteResource[]>]`: The image and other file resources in OneNote pages. Getting a resources collection is not supported, but you can get the binary content of a specific resource. Read-only. Nullable.
         - `[Self <String>]`: The endpoint where you can get details about the page. Read-only.
         - `[Id <String>]`: 
@@ -13670,7 +13722,7 @@ USER <IMicrosoftGraphUser1>: user
       - `[SectionGroups <IMicrosoftGraphSectionGroup1[]>]`: The section groups in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
       - `[Sections <IMicrosoftGraphOnenoteSection1[]>]`: The sections in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
     - `[Operations <IMicrosoftGraphRichLongRunningOperation[]>]`: The collection of long running operations for the site.
-    - `[Permissions <IMicrosoftGraphPermission1[]>]`: The permissions associated with the site. Nullable.
+    - `[Permissions <IMicrosoftGraphPermission[]>]`: The permissions associated with the site. Nullable.
     - `[Root <IMicrosoftGraphRoot>]`: root
     - `[SharepointIds <IMicrosoftGraphSharepointIds>]`: sharepointIds
     - `[SiteCollection <IMicrosoftGraphSiteCollection>]`: siteCollection
@@ -13679,14 +13731,14 @@ USER <IMicrosoftGraphUser1>: user
       - `[Hostname <String>]`: The hostname for the site collection. Read-only.
       - `[Root <IMicrosoftGraphRoot>]`: root
     - `[Sites <IMicrosoftGraphSite1[]>]`: The collection of the sub-sites under this site.
-    - `[TermStore <IMicrosoftGraphTermStore1>]`: store
+    - `[TermStore <IMicrosoftGraphTermStore>]`: store
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Id <String>]`: 
       - `[DefaultLanguageTag <String>]`: Default language of the term store.
       - `[Groups <IMicrosoftGraphTermStoreGroup[]>]`: Collection of all groups available in the term store.
       - `[LanguageTags <String[]>]`: List of languages for the term store.
       - `[Sets <IMicrosoftGraphTermStoreSet1[]>]`: Collection of all sets available in the term store.
-    - `[TermStores <IMicrosoftGraphTermStore1[]>]`: The collection of termStores under this site.
+    - `[TermStores <IMicrosoftGraphTermStore[]>]`: The collection of termStores under this site.
   - `[GivenName <String>]`: The given name (first name) of the user. Maximum length is 64 characters. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values).
   - `[HireDate <DateTime?>]`: The hire date of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.  Returned only on $select.  Note: This property is specific to SharePoint Online. We recommend using the native employeeHireDate property to set and update hire date values using Microsoft Graph APIs.
   - `[Identities <IMicrosoftGraphObjectIdentity[]>]`: Represents the identities that can be used to sign in to this user account. An identity can be provided by Microsoft (also known as a local account), by organizations, or by social identity providers such as Facebook, Google, and Microsoft, and tied to a user account. May contain multiple items with the same signInType value. Supports $filter (eq) including on null values, only where the signInType is not userPrincipalName.
@@ -13816,7 +13868,7 @@ USER <IMicrosoftGraphUser1>: user
           - `[HasAttachments <Boolean?>]`: Indicates whether any of the posts within this thread has at least one attachment. Returned by default.
           - `[IsLocked <Boolean?>]`: Indicates if the thread is locked. Returned by default.
           - `[LastDeliveredDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default.
-          - `[Posts <IMicrosoftGraphPost1[]>]`: 
+          - `[Posts <IMicrosoftGraphPost[]>]`: 
             - `[Categories <String[]>]`: The categories associated with the item
             - `[ChangeKey <String>]`: Identifies the version of the item. Every time the item is changed, changeKey changes as well. This allows Exchange to apply changes to the correct version of the object. Read-only.
             - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
@@ -13829,7 +13881,7 @@ USER <IMicrosoftGraphUser1>: user
             - `[Extensions <IMicrosoftGraphExtension[]>]`: The collection of open extensions defined for the post. Read-only. Nullable. Supports $expand.
             - `[From <IMicrosoftGraphRecipient>]`: recipient
             - `[HasAttachments <Boolean?>]`: Indicates whether the post has at least one attachment. This is a default property.
-            - `[InReplyTo <IMicrosoftGraphPost1>]`: post
+            - `[InReplyTo <IMicrosoftGraphPost>]`: post
             - `[MultiValueExtendedProperties <IMicrosoftGraphMultiValueLegacyExtendedProperty[]>]`: The collection of multi-value extended properties defined for the post. Read-only. Nullable.
             - `[NewParticipants <IMicrosoftGraphRecipient[]>]`: Conversation participants that were added to the thread as part of this post.
             - `[ReceivedDateTime <DateTime?>]`: Specifies when the post was received. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
@@ -13899,7 +13951,7 @@ USER <IMicrosoftGraphUser1>: user
       - `[Planner <IMicrosoftGraphPlannerGroup1>]`: plannerGroup
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[Id <String>]`: 
-        - `[Plans <IMicrosoftGraphPlannerPlan1[]>]`: Read-only. Nullable. Returns the plannerPlans owned by the group.
+        - `[Plans <IMicrosoftGraphPlannerPlan[]>]`: Read-only. Nullable. Returns the plannerPlans owned by the group.
           - `[Id <String>]`: 
           - `[Buckets <IMicrosoftGraphPlannerBucket[]>]`: Collection of buckets in the plan. Read-only. Nullable.
             - `[Id <String>]`: 
@@ -14586,7 +14638,7 @@ USER <IMicrosoftGraphUser1>: user
   - `[OnPremisesSyncEnabled <Boolean?>]`: true if this user object is currently being synced from an on-premises Active Directory (AD); otherwise the user isn't being synced and can be managed in Azure Active Directory (Azure AD). Read-only. Supports $filter (eq, ne, not, in, and eq on null values).
   - `[OnPremisesUserPrincipalName <String>]`: Contains the on-premises userPrincipalName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only. Supports $filter (eq, ne, not, ge, le, in, startsWith).
   - `[Onenote <IMicrosoftGraphOnenote1>]`: onenote
-  - `[OnlineMeetings <IMicrosoftGraphOnlineMeeting1[]>]`: 
+  - `[OnlineMeetings <IMicrosoftGraphOnlineMeeting[]>]`: 
     - `[Id <String>]`: 
     - `[AllowAttendeeToEnableCamera <Boolean?>]`: Indicates whether attendees can turn on their camera.
     - `[AllowAttendeeToEnableMic <Boolean?>]`: Indicates whether attendees can turn on their microphone.
@@ -14685,7 +14737,7 @@ USER <IMicrosoftGraphUser1>: user
       - `[Class <String>]`: The type of data source, such as Person.
       - `[Subclass <String>]`: The secondary type of data source, such as OrganizationUser.
     - `[Phones <IMicrosoftGraphPhone[]>]`: The person's phone numbers.
-    - `[PostalAddresses <IMicrosoftGraphLocation1[]>]`: The person's addresses.
+    - `[PostalAddresses <IMicrosoftGraphLocation[]>]`: The person's addresses.
     - `[Profession <String>]`: The person's profession.
     - `[ScoredEmailAddresses <IMicrosoftGraphScoredEmailAddress[]>]`: The person's email addresses.
       - `[Address <String>]`: The email address.
@@ -14704,13 +14756,13 @@ USER <IMicrosoftGraphUser1>: user
   - `[Planner <IMicrosoftGraphPlannerUser1>]`: plannerUser
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Id <String>]`: 
-    - `[Plans <IMicrosoftGraphPlannerPlan1[]>]`: Read-only. Nullable. Returns the plannerTasks assigned to the user.
+    - `[Plans <IMicrosoftGraphPlannerPlan[]>]`: Read-only. Nullable. Returns the plannerTasks assigned to the user.
     - `[Tasks <IMicrosoftGraphPlannerTask[]>]`: Read-only. Nullable. Returns the plannerTasks assigned to the user.
   - `[PostalCode <String>]`: The postal code for the user's postal address. The postal code is specific to the user's country/region. In the United States of America, this attribute contains the ZIP code. Maximum length is 40 characters. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
   - `[PreferredDataLocation <String>]`: The preferred data location for the user. For more information, see OneDrive Online Multi-Geo.
   - `[PreferredLanguage <String>]`: The preferred language for the user. Should follow ISO 639-1 Code; for example en-US. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
   - `[PreferredName <String>]`: The preferred name for the user. Not Supported. This attribute returns an empty string.Returned only on $select.
-  - `[Presence <IMicrosoftGraphPresence1>]`: presence
+  - `[Presence <IMicrosoftGraphPresence>]`: presence
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Id <String>]`: 
     - `[Activity <String>]`: The supplemental information to a user's availability. Possible values are Available, Away, BeRightBack, Busy, DoNotDisturb, InACall, InAConferenceCall, Inactive,InAMeeting, Offline, OffWork,OutOfOffice, PresenceUnknown,Presenting, UrgentInterruptionsOnly.
@@ -14751,7 +14803,7 @@ USER <IMicrosoftGraphUser1>: user
   - `[State <String>]`: The state or province in the user's address. Maximum length is 128 characters. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
   - `[StreetAddress <String>]`: The street address of the user's place of business. Maximum length is 1024 characters. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
   - `[Surname <String>]`: The user's surname (family name or last name). Maximum length is 64 characters. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
-  - `[Teamwork <IMicrosoftGraphUserTeamwork1>]`: userTeamwork
+  - `[Teamwork <IMicrosoftGraphUserTeamwork>]`: userTeamwork
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Id <String>]`: 
     - `[AssociatedTeams <IMicrosoftGraphAssociatedTeamInfo[]>]`: The list of associatedTeamInfo objects that a user is associated with.
@@ -14763,8 +14815,8 @@ USER <IMicrosoftGraphUser1>: user
       - `[TeamsApp <IMicrosoftGraphTeamsApp>]`: teamsApp
       - `[TeamsAppDefinition <IMicrosoftGraphTeamsAppDefinition>]`: teamsAppDefinition
       - `[Id <String>]`: 
-      - `[Chat <IMicrosoftGraphChat1>]`: chat
-  - `[Todo <IMicrosoftGraphTodo1>]`: todo
+      - `[Chat <IMicrosoftGraphChat>]`: chat
+  - `[Todo <IMicrosoftGraphTodo>]`: todo
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Id <String>]`: 
     - `[Lists <IMicrosoftGraphTodoTaskList[]>]`: The task lists in the users mailbox.
@@ -14775,6 +14827,17 @@ USER <IMicrosoftGraphUser1>: user
       - `[IsShared <Boolean?>]`: True if the task list is shared with other users
       - `[Tasks <IMicrosoftGraphTodoTask[]>]`: The tasks in this task list. Read-only. Nullable.
         - `[Id <String>]`: 
+        - `[AttachmentSessions <IMicrosoftGraphAttachmentSession[]>]`: 
+          - `[Id <String>]`: 
+          - `[Content <Byte[]>]`: The content streams that are uploaded.
+          - `[ExpirationDateTime <DateTime?>]`: The date and time in UTC when the upload session will expire. The complete file must be uploaded before this expiration time is reached.
+          - `[NextExpectedRanges <String[]>]`: Indicates a single value {start} that represents the location in the file where the next upload should begin.
+        - `[Attachments <IMicrosoftGraphAttachmentBase[]>]`: A collection of file attachments for the task.
+          - `[Id <String>]`: 
+          - `[ContentType <String>]`: The MIME type.
+          - `[LastModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+          - `[Name <String>]`: The display name of the attachment. This does not need to be the actual file name.
+          - `[Size <Int32?>]`: The length of the attachment in bytes.
         - `[Body <IMicrosoftGraphItemBody>]`: itemBody
         - `[BodyLastModifiedDateTime <DateTime?>]`: The date and time when the task body was last modified. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2020 would look like this: '2020-01-01T00:00:00Z'.
         - `[Categories <String[]>]`: The categories associated with the task. Each category corresponds to the displayName property of an outlookCategory that the user has defined.
@@ -14788,6 +14851,7 @@ USER <IMicrosoftGraphUser1>: user
         - `[CreatedDateTime <DateTime?>]`: The date and time when the task was created. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format. For example, midnight UTC on Jan 1, 2020 would look like this: '2020-01-01T00:00:00Z'.
         - `[DueDateTime <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
         - `[Extensions <IMicrosoftGraphExtension[]>]`: The collection of open extensions defined for the task. Nullable.
+        - `[HasAttachments <Boolean?>]`: Indicates whether the task has attachments.
         - `[Importance <String>]`: importance
         - `[IsReminderOn <Boolean?>]`: Set to true if an alert is set to remind the user of the task.
         - `[LastModifiedDateTime <DateTime?>]`: The date and time when the task was last modified. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2020 would look like this: '2020-01-01T00:00:00Z'.
@@ -14799,6 +14863,7 @@ USER <IMicrosoftGraphUser1>: user
           - `[WebUrl <String>]`: Deep link to the linkedResource.
         - `[Recurrence <IMicrosoftGraphPatternedRecurrence>]`: patternedRecurrence
         - `[ReminderDateTime <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
+        - `[StartDateTime <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
         - `[Status <String>]`: taskStatus
         - `[Title <String>]`: A brief description of the task.
       - `[WellknownListName <String>]`: wellknownListName

@@ -8,8 +8,7 @@ schema: 2.0.0
 # Get-MgUserEventExtension
 
 ## SYNOPSIS
-The collection of open extensions defined for the event.
-Nullable.
+Get extensions from users
 
 ## SYNTAX
 
@@ -33,8 +32,7 @@ Get-MgUserEventExtension -InputObject <ICalendarIdentity> [-ExpandProperty <Stri
 ```
 
 ## DESCRIPTION
-The collection of open extensions defined for the event.
-Nullable.
+Get extensions from users
 
 ## EXAMPLES
 
@@ -266,6 +264,7 @@ INPUTOBJECT <ICalendarIdentity>: Identity Parameter
   - `[CalendarPermissionId <String>]`: key: id of calendarPermission
   - `[EventId <String>]`: key: id of event
   - `[EventId1 <String>]`: key: id of event
+  - `[EventId2 <String>]`: key: id of event
   - `[ExtensionId <String>]`: key: id of extension
   - `[GroupId <String>]`: key: id of group
   - `[MultiValueLegacyExtendedPropertyId <String>]`: key: id of multiValueLegacyExtendedProperty

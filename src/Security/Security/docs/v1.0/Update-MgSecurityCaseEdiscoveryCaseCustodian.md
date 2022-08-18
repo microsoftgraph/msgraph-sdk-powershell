@@ -440,7 +440,7 @@ BODYPARAMETER <IMicrosoftGraphSecurityEdiscoveryCustodian1>: ediscoveryCustodian
     - `[Site <IMicrosoftGraphSite1>]`: site
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-      - `[CreatedByUser <IMicrosoftGraphUser1>]`: user
+      - `[CreatedByUser <IMicrosoftGraphUser>]`: user
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
         - `[Id <String>]`: 
@@ -971,12 +971,12 @@ BODYPARAMETER <IMicrosoftGraphSecurityEdiscoveryCustodian1>: ediscoveryCustodian
         - `[Drive <IMicrosoftGraphDrive1>]`: drive
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-          - `[CreatedByUser <IMicrosoftGraphUser1>]`: user
+          - `[CreatedByUser <IMicrosoftGraphUser>]`: user
           - `[CreatedDateTime <DateTime?>]`: Date and time of item creation. Read-only.
           - `[Description <String>]`: Provides a user-visible description of the item. Optional.
           - `[ETag <String>]`: ETag for the item. Read-only.
           - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-          - `[LastModifiedByUser <IMicrosoftGraphUser1>]`: user
+          - `[LastModifiedByUser <IMicrosoftGraphUser>]`: user
           - `[LastModifiedDateTime <DateTime?>]`: Date and time the item was last modified. Read-only.
           - `[Name <String>]`: The name of the item. Read-write.
           - `[ParentReference <IMicrosoftGraphItemReference>]`: itemReference
@@ -1001,12 +1001,12 @@ BODYPARAMETER <IMicrosoftGraphSecurityEdiscoveryCustodian1>: ediscoveryCustodian
           - `[Id <String>]`: 
           - `[Bundles <IMicrosoftGraphDriveItem1[]>]`: Collection of [bundles][bundle] (albums and multi-select-shared sets of items). Only in personal OneDrive.
             - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-            - `[CreatedByUser <IMicrosoftGraphUser1>]`: user
+            - `[CreatedByUser <IMicrosoftGraphUser>]`: user
             - `[CreatedDateTime <DateTime?>]`: Date and time of item creation. Read-only.
             - `[Description <String>]`: Provides a user-visible description of the item. Optional.
             - `[ETag <String>]`: ETag for the item. Read-only.
             - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-            - `[LastModifiedByUser <IMicrosoftGraphUser1>]`: user
+            - `[LastModifiedByUser <IMicrosoftGraphUser>]`: user
             - `[LastModifiedDateTime <DateTime?>]`: Date and time the item was last modified. Read-only.
             - `[Name <String>]`: The name of the item. Read-write.
             - `[ParentReference <IMicrosoftGraphItemReference>]`: itemReference
@@ -1015,7 +1015,7 @@ BODYPARAMETER <IMicrosoftGraphSecurityEdiscoveryCustodian1>: ediscoveryCustodian
             - `[Analytics <IMicrosoftGraphItemAnalytics1>]`: itemAnalytics
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
               - `[Id <String>]`: 
-              - `[AllTime <IMicrosoftGraphItemActivityStat1>]`: itemActivityStat
+              - `[AllTime <IMicrosoftGraphItemActivityStat>]`: itemActivityStat
                 - `[(Any) <Object>]`: This indicates any property can be added to this object.
                 - `[Id <String>]`: 
                 - `[Access <IMicrosoftGraphItemActionStat>]`: itemActionStat
@@ -1040,8 +1040,8 @@ BODYPARAMETER <IMicrosoftGraphSecurityEdiscoveryCustodian1>: ediscoveryCustodian
                 - `[IsTrending <Boolean?>]`: Indicates whether the item is 'trending.' Read-only.
                 - `[Move <IMicrosoftGraphItemActionStat>]`: itemActionStat
                 - `[StartDateTime <DateTime?>]`: When the interval starts. Read-only.
-              - `[ItemActivityStats <IMicrosoftGraphItemActivityStat1[]>]`: 
-              - `[LastSevenDays <IMicrosoftGraphItemActivityStat1>]`: itemActivityStat
+              - `[ItemActivityStats <IMicrosoftGraphItemActivityStat[]>]`: 
+              - `[LastSevenDays <IMicrosoftGraphItemActivityStat>]`: itemActivityStat
             - `[Audio <IMicrosoftGraphAudio>]`: audio
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
               - `[Album <String>]`: The title of the album for this audio file.
@@ -1102,12 +1102,12 @@ BODYPARAMETER <IMicrosoftGraphSecurityEdiscoveryCustodian1>: ediscoveryCustodian
             - `[ListItem <IMicrosoftGraphListItem>]`: listItem
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
               - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-              - `[CreatedByUser <IMicrosoftGraphUser1>]`: user
+              - `[CreatedByUser <IMicrosoftGraphUser>]`: user
               - `[CreatedDateTime <DateTime?>]`: Date and time of item creation. Read-only.
               - `[Description <String>]`: Provides a user-visible description of the item. Optional.
               - `[ETag <String>]`: ETag for the item. Read-only.
               - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-              - `[LastModifiedByUser <IMicrosoftGraphUser1>]`: user
+              - `[LastModifiedByUser <IMicrosoftGraphUser>]`: user
               - `[LastModifiedDateTime <DateTime?>]`: Date and time the item was last modified. Read-only.
               - `[Name <String>]`: The name of the item. Read-write.
               - `[ParentReference <IMicrosoftGraphItemReference>]`: itemReference
@@ -1529,12 +1529,12 @@ BODYPARAMETER <IMicrosoftGraphSecurityEdiscoveryCustodian1>: ediscoveryCustodian
           - `[List <IMicrosoftGraphList1>]`: list
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-            - `[CreatedByUser <IMicrosoftGraphUser1>]`: user
+            - `[CreatedByUser <IMicrosoftGraphUser>]`: user
             - `[CreatedDateTime <DateTime?>]`: Date and time of item creation. Read-only.
             - `[Description <String>]`: Provides a user-visible description of the item. Optional.
             - `[ETag <String>]`: ETag for the item. Read-only.
             - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-            - `[LastModifiedByUser <IMicrosoftGraphUser1>]`: user
+            - `[LastModifiedByUser <IMicrosoftGraphUser>]`: user
             - `[LastModifiedDateTime <DateTime?>]`: Date and time the item was last modified. Read-only.
             - `[Name <String>]`: The name of the item. Read-write.
             - `[ParentReference <IMicrosoftGraphItemReference>]`: itemReference
@@ -1896,7 +1896,7 @@ BODYPARAMETER <IMicrosoftGraphSecurityEdiscoveryCustodian1>: ediscoveryCustodian
               - `[HasAttachments <Boolean?>]`: Indicates whether any of the posts within this Conversation has at least one attachment. Supports $filter (eq, ne) and $search.
               - `[LastDeliveredDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Supports $filter (eq, ne, le, ge).
               - `[Preview <String>]`: A short summary from the body of the latest post in this conversation.
-              - `[Threads <IMicrosoftGraphConversationThread1[]>]`: A collection of all the conversation threads in the conversation. A navigation property. Read-only. Nullable.
+              - `[Threads <IMicrosoftGraphConversationThread[]>]`: A collection of all the conversation threads in the conversation. A navigation property. Read-only. Nullable.
                 - `[Id <String>]`: 
                 - `[CcRecipients <IMicrosoftGraphRecipient[]>]`: The Cc: recipients for the thread. Returned only on $select.
                 - `[HasAttachments <Boolean?>]`: Indicates whether any of the posts within this thread has at least one attachment. Returned by default.
@@ -2071,7 +2071,7 @@ BODYPARAMETER <IMicrosoftGraphSecurityEdiscoveryCustodian1>: ediscoveryCustodian
               - `[ResourceAppId <String>]`: ID of the Azure AD app that is hosting the resource. Read-only.
             - `[Photo <IMicrosoftGraphProfilePhoto>]`: profilePhoto
             - `[Photos <IMicrosoftGraphProfilePhoto[]>]`: The profile photos owned by the group. Read-only. Nullable.
-            - `[Planner <IMicrosoftGraphPlannerGroup1>]`: plannerGroup
+            - `[Planner <IMicrosoftGraphPlannerGroup>]`: plannerGroup
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
               - `[Id <String>]`: 
               - `[Plans <IMicrosoftGraphPlannerPlan[]>]`: Read-only. Nullable. Returns the plannerPlans owned by the group.
@@ -2188,7 +2188,7 @@ BODYPARAMETER <IMicrosoftGraphSecurityEdiscoveryCustodian1>: ediscoveryCustodian
             - `[Sites <IMicrosoftGraphSite1[]>]`: The list of SharePoint sites in this group. Access the default site with /sites/root.
             - `[Team <IMicrosoftGraphTeam1>]`: team
             - `[Theme <String>]`: Specifies a Microsoft 365 group's color theme. Possible values are Teal, Purple, Green, Blue, Pink, Orange or Red. Returned by default.
-            - `[Threads <IMicrosoftGraphConversationThread1[]>]`: The group's conversation threads. Nullable.
+            - `[Threads <IMicrosoftGraphConversationThread[]>]`: The group's conversation threads. Nullable.
             - `[TransitiveMemberOf <IMicrosoftGraphDirectoryObject[]>]`: The groups that a group is a member of, either directly and through nested membership. Nullable.
             - `[TransitiveMembers <IMicrosoftGraphDirectoryObject[]>]`: The direct and transitive members of a group. Nullable.
             - `[UnseenCount <Int32?>]`: Count of conversations that have received new posts since the signed-in user last visited the group. This property is the same as unseenConversationsCount.Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
@@ -2950,6 +2950,17 @@ BODYPARAMETER <IMicrosoftGraphSecurityEdiscoveryCustodian1>: ediscoveryCustodian
             - `[IsShared <Boolean?>]`: True if the task list is shared with other users
             - `[Tasks <IMicrosoftGraphTodoTask[]>]`: The tasks in this task list. Read-only. Nullable.
               - `[Id <String>]`: 
+              - `[AttachmentSessions <IMicrosoftGraphAttachmentSession[]>]`: 
+                - `[Id <String>]`: 
+                - `[Content <Byte[]>]`: The content streams that are uploaded.
+                - `[ExpirationDateTime <DateTime?>]`: The date and time in UTC when the upload session will expire. The complete file must be uploaded before this expiration time is reached.
+                - `[NextExpectedRanges <String[]>]`: Indicates a single value {start} that represents the location in the file where the next upload should begin.
+              - `[Attachments <IMicrosoftGraphAttachmentBase[]>]`: A collection of file attachments for the task.
+                - `[Id <String>]`: 
+                - `[ContentType <String>]`: The MIME type.
+                - `[LastModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+                - `[Name <String>]`: The display name of the attachment. This does not need to be the actual file name.
+                - `[Size <Int32?>]`: The length of the attachment in bytes.
               - `[Body <IMicrosoftGraphItemBody>]`: itemBody
               - `[BodyLastModifiedDateTime <DateTime?>]`: The date and time when the task body was last modified. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2020 would look like this: '2020-01-01T00:00:00Z'.
               - `[Categories <String[]>]`: The categories associated with the task. Each category corresponds to the displayName property of an outlookCategory that the user has defined.
@@ -2963,6 +2974,7 @@ BODYPARAMETER <IMicrosoftGraphSecurityEdiscoveryCustodian1>: ediscoveryCustodian
               - `[CreatedDateTime <DateTime?>]`: The date and time when the task was created. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format. For example, midnight UTC on Jan 1, 2020 would look like this: '2020-01-01T00:00:00Z'.
               - `[DueDateTime <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
               - `[Extensions <IMicrosoftGraphExtension[]>]`: The collection of open extensions defined for the task. Nullable.
+              - `[HasAttachments <Boolean?>]`: Indicates whether the task has attachments.
               - `[Importance <String>]`: importance
               - `[IsReminderOn <Boolean?>]`: Set to true if an alert is set to remind the user of the task.
               - `[LastModifiedDateTime <DateTime?>]`: The date and time when the task was last modified. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2020 would look like this: '2020-01-01T00:00:00Z'.
@@ -2974,6 +2986,7 @@ BODYPARAMETER <IMicrosoftGraphSecurityEdiscoveryCustodian1>: ediscoveryCustodian
                 - `[WebUrl <String>]`: Deep link to the linkedResource.
               - `[Recurrence <IMicrosoftGraphPatternedRecurrence>]`: patternedRecurrence
               - `[ReminderDateTime <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
+              - `[StartDateTime <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
               - `[Status <String>]`: taskStatus
               - `[Title <String>]`: A brief description of the task.
             - `[WellknownListName <String>]`: wellknownListName
@@ -2985,7 +2998,7 @@ BODYPARAMETER <IMicrosoftGraphSecurityEdiscoveryCustodian1>: ediscoveryCustodian
       - `[Description <String>]`: Provides a user-visible description of the item. Optional.
       - `[ETag <String>]`: ETag for the item. Read-only.
       - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-      - `[LastModifiedByUser <IMicrosoftGraphUser1>]`: user
+      - `[LastModifiedByUser <IMicrosoftGraphUser>]`: user
       - `[LastModifiedDateTime <DateTime?>]`: Date and time the item was last modified. Read-only.
       - `[Name <String>]`: The name of the item. Read-write.
       - `[ParentReference <IMicrosoftGraphItemReference>]`: itemReference
@@ -3002,12 +3015,12 @@ BODYPARAMETER <IMicrosoftGraphSecurityEdiscoveryCustodian1>: ediscoveryCustodian
       - `[Items <IMicrosoftGraphBaseItem1[]>]`: Used to address any item contained in this site. This collection cannot be enumerated.
         - `[Id <String>]`: 
         - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-        - `[CreatedByUser <IMicrosoftGraphUser1>]`: user
+        - `[CreatedByUser <IMicrosoftGraphUser>]`: user
         - `[CreatedDateTime <DateTime?>]`: Date and time of item creation. Read-only.
         - `[Description <String>]`: Provides a user-visible description of the item. Optional.
         - `[ETag <String>]`: ETag for the item. Read-only.
         - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-        - `[LastModifiedByUser <IMicrosoftGraphUser1>]`: user
+        - `[LastModifiedByUser <IMicrosoftGraphUser>]`: user
         - `[LastModifiedDateTime <DateTime?>]`: Date and time the item was last modified. Read-only.
         - `[Name <String>]`: The name of the item. Read-write.
         - `[ParentReference <IMicrosoftGraphItemReference>]`: itemReference
@@ -3110,7 +3123,7 @@ SITESOURCES <IMicrosoftGraphSecuritySiteSource1[]>: Data source entity for Share
   - `[Site <IMicrosoftGraphSite1>]`: site
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-    - `[CreatedByUser <IMicrosoftGraphUser1>]`: user
+    - `[CreatedByUser <IMicrosoftGraphUser>]`: user
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
       - `[Id <String>]`: 
@@ -3641,12 +3654,12 @@ SITESOURCES <IMicrosoftGraphSecuritySiteSource1[]>: Data source entity for Share
       - `[Drive <IMicrosoftGraphDrive1>]`: drive
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-        - `[CreatedByUser <IMicrosoftGraphUser1>]`: user
+        - `[CreatedByUser <IMicrosoftGraphUser>]`: user
         - `[CreatedDateTime <DateTime?>]`: Date and time of item creation. Read-only.
         - `[Description <String>]`: Provides a user-visible description of the item. Optional.
         - `[ETag <String>]`: ETag for the item. Read-only.
         - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-        - `[LastModifiedByUser <IMicrosoftGraphUser1>]`: user
+        - `[LastModifiedByUser <IMicrosoftGraphUser>]`: user
         - `[LastModifiedDateTime <DateTime?>]`: Date and time the item was last modified. Read-only.
         - `[Name <String>]`: The name of the item. Read-write.
         - `[ParentReference <IMicrosoftGraphItemReference>]`: itemReference
@@ -3671,12 +3684,12 @@ SITESOURCES <IMicrosoftGraphSecuritySiteSource1[]>: Data source entity for Share
         - `[Id <String>]`: 
         - `[Bundles <IMicrosoftGraphDriveItem1[]>]`: Collection of [bundles][bundle] (albums and multi-select-shared sets of items). Only in personal OneDrive.
           - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-          - `[CreatedByUser <IMicrosoftGraphUser1>]`: user
+          - `[CreatedByUser <IMicrosoftGraphUser>]`: user
           - `[CreatedDateTime <DateTime?>]`: Date and time of item creation. Read-only.
           - `[Description <String>]`: Provides a user-visible description of the item. Optional.
           - `[ETag <String>]`: ETag for the item. Read-only.
           - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-          - `[LastModifiedByUser <IMicrosoftGraphUser1>]`: user
+          - `[LastModifiedByUser <IMicrosoftGraphUser>]`: user
           - `[LastModifiedDateTime <DateTime?>]`: Date and time the item was last modified. Read-only.
           - `[Name <String>]`: The name of the item. Read-write.
           - `[ParentReference <IMicrosoftGraphItemReference>]`: itemReference
@@ -3685,7 +3698,7 @@ SITESOURCES <IMicrosoftGraphSecuritySiteSource1[]>: Data source entity for Share
           - `[Analytics <IMicrosoftGraphItemAnalytics1>]`: itemAnalytics
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[Id <String>]`: 
-            - `[AllTime <IMicrosoftGraphItemActivityStat1>]`: itemActivityStat
+            - `[AllTime <IMicrosoftGraphItemActivityStat>]`: itemActivityStat
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
               - `[Id <String>]`: 
               - `[Access <IMicrosoftGraphItemActionStat>]`: itemActionStat
@@ -3710,8 +3723,8 @@ SITESOURCES <IMicrosoftGraphSecuritySiteSource1[]>: Data source entity for Share
               - `[IsTrending <Boolean?>]`: Indicates whether the item is 'trending.' Read-only.
               - `[Move <IMicrosoftGraphItemActionStat>]`: itemActionStat
               - `[StartDateTime <DateTime?>]`: When the interval starts. Read-only.
-            - `[ItemActivityStats <IMicrosoftGraphItemActivityStat1[]>]`: 
-            - `[LastSevenDays <IMicrosoftGraphItemActivityStat1>]`: itemActivityStat
+            - `[ItemActivityStats <IMicrosoftGraphItemActivityStat[]>]`: 
+            - `[LastSevenDays <IMicrosoftGraphItemActivityStat>]`: itemActivityStat
           - `[Audio <IMicrosoftGraphAudio>]`: audio
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[Album <String>]`: The title of the album for this audio file.
@@ -3772,12 +3785,12 @@ SITESOURCES <IMicrosoftGraphSecuritySiteSource1[]>: Data source entity for Share
           - `[ListItem <IMicrosoftGraphListItem>]`: listItem
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-            - `[CreatedByUser <IMicrosoftGraphUser1>]`: user
+            - `[CreatedByUser <IMicrosoftGraphUser>]`: user
             - `[CreatedDateTime <DateTime?>]`: Date and time of item creation. Read-only.
             - `[Description <String>]`: Provides a user-visible description of the item. Optional.
             - `[ETag <String>]`: ETag for the item. Read-only.
             - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-            - `[LastModifiedByUser <IMicrosoftGraphUser1>]`: user
+            - `[LastModifiedByUser <IMicrosoftGraphUser>]`: user
             - `[LastModifiedDateTime <DateTime?>]`: Date and time the item was last modified. Read-only.
             - `[Name <String>]`: The name of the item. Read-write.
             - `[ParentReference <IMicrosoftGraphItemReference>]`: itemReference
@@ -4199,12 +4212,12 @@ SITESOURCES <IMicrosoftGraphSecuritySiteSource1[]>: Data source entity for Share
         - `[List <IMicrosoftGraphList1>]`: list
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-          - `[CreatedByUser <IMicrosoftGraphUser1>]`: user
+          - `[CreatedByUser <IMicrosoftGraphUser>]`: user
           - `[CreatedDateTime <DateTime?>]`: Date and time of item creation. Read-only.
           - `[Description <String>]`: Provides a user-visible description of the item. Optional.
           - `[ETag <String>]`: ETag for the item. Read-only.
           - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-          - `[LastModifiedByUser <IMicrosoftGraphUser1>]`: user
+          - `[LastModifiedByUser <IMicrosoftGraphUser>]`: user
           - `[LastModifiedDateTime <DateTime?>]`: Date and time the item was last modified. Read-only.
           - `[Name <String>]`: The name of the item. Read-write.
           - `[ParentReference <IMicrosoftGraphItemReference>]`: itemReference
@@ -4566,7 +4579,7 @@ SITESOURCES <IMicrosoftGraphSecuritySiteSource1[]>: Data source entity for Share
             - `[HasAttachments <Boolean?>]`: Indicates whether any of the posts within this Conversation has at least one attachment. Supports $filter (eq, ne) and $search.
             - `[LastDeliveredDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Supports $filter (eq, ne, le, ge).
             - `[Preview <String>]`: A short summary from the body of the latest post in this conversation.
-            - `[Threads <IMicrosoftGraphConversationThread1[]>]`: A collection of all the conversation threads in the conversation. A navigation property. Read-only. Nullable.
+            - `[Threads <IMicrosoftGraphConversationThread[]>]`: A collection of all the conversation threads in the conversation. A navigation property. Read-only. Nullable.
               - `[Id <String>]`: 
               - `[CcRecipients <IMicrosoftGraphRecipient[]>]`: The Cc: recipients for the thread. Returned only on $select.
               - `[HasAttachments <Boolean?>]`: Indicates whether any of the posts within this thread has at least one attachment. Returned by default.
@@ -4741,7 +4754,7 @@ SITESOURCES <IMicrosoftGraphSecuritySiteSource1[]>: Data source entity for Share
             - `[ResourceAppId <String>]`: ID of the Azure AD app that is hosting the resource. Read-only.
           - `[Photo <IMicrosoftGraphProfilePhoto>]`: profilePhoto
           - `[Photos <IMicrosoftGraphProfilePhoto[]>]`: The profile photos owned by the group. Read-only. Nullable.
-          - `[Planner <IMicrosoftGraphPlannerGroup1>]`: plannerGroup
+          - `[Planner <IMicrosoftGraphPlannerGroup>]`: plannerGroup
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[Id <String>]`: 
             - `[Plans <IMicrosoftGraphPlannerPlan[]>]`: Read-only. Nullable. Returns the plannerPlans owned by the group.
@@ -4858,7 +4871,7 @@ SITESOURCES <IMicrosoftGraphSecuritySiteSource1[]>: Data source entity for Share
           - `[Sites <IMicrosoftGraphSite1[]>]`: The list of SharePoint sites in this group. Access the default site with /sites/root.
           - `[Team <IMicrosoftGraphTeam1>]`: team
           - `[Theme <String>]`: Specifies a Microsoft 365 group's color theme. Possible values are Teal, Purple, Green, Blue, Pink, Orange or Red. Returned by default.
-          - `[Threads <IMicrosoftGraphConversationThread1[]>]`: The group's conversation threads. Nullable.
+          - `[Threads <IMicrosoftGraphConversationThread[]>]`: The group's conversation threads. Nullable.
           - `[TransitiveMemberOf <IMicrosoftGraphDirectoryObject[]>]`: The groups that a group is a member of, either directly and through nested membership. Nullable.
           - `[TransitiveMembers <IMicrosoftGraphDirectoryObject[]>]`: The direct and transitive members of a group. Nullable.
           - `[UnseenCount <Int32?>]`: Count of conversations that have received new posts since the signed-in user last visited the group. This property is the same as unseenConversationsCount.Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
@@ -5620,6 +5633,17 @@ SITESOURCES <IMicrosoftGraphSecuritySiteSource1[]>: Data source entity for Share
           - `[IsShared <Boolean?>]`: True if the task list is shared with other users
           - `[Tasks <IMicrosoftGraphTodoTask[]>]`: The tasks in this task list. Read-only. Nullable.
             - `[Id <String>]`: 
+            - `[AttachmentSessions <IMicrosoftGraphAttachmentSession[]>]`: 
+              - `[Id <String>]`: 
+              - `[Content <Byte[]>]`: The content streams that are uploaded.
+              - `[ExpirationDateTime <DateTime?>]`: The date and time in UTC when the upload session will expire. The complete file must be uploaded before this expiration time is reached.
+              - `[NextExpectedRanges <String[]>]`: Indicates a single value {start} that represents the location in the file where the next upload should begin.
+            - `[Attachments <IMicrosoftGraphAttachmentBase[]>]`: A collection of file attachments for the task.
+              - `[Id <String>]`: 
+              - `[ContentType <String>]`: The MIME type.
+              - `[LastModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+              - `[Name <String>]`: The display name of the attachment. This does not need to be the actual file name.
+              - `[Size <Int32?>]`: The length of the attachment in bytes.
             - `[Body <IMicrosoftGraphItemBody>]`: itemBody
             - `[BodyLastModifiedDateTime <DateTime?>]`: The date and time when the task body was last modified. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2020 would look like this: '2020-01-01T00:00:00Z'.
             - `[Categories <String[]>]`: The categories associated with the task. Each category corresponds to the displayName property of an outlookCategory that the user has defined.
@@ -5633,6 +5657,7 @@ SITESOURCES <IMicrosoftGraphSecuritySiteSource1[]>: Data source entity for Share
             - `[CreatedDateTime <DateTime?>]`: The date and time when the task was created. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format. For example, midnight UTC on Jan 1, 2020 would look like this: '2020-01-01T00:00:00Z'.
             - `[DueDateTime <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
             - `[Extensions <IMicrosoftGraphExtension[]>]`: The collection of open extensions defined for the task. Nullable.
+            - `[HasAttachments <Boolean?>]`: Indicates whether the task has attachments.
             - `[Importance <String>]`: importance
             - `[IsReminderOn <Boolean?>]`: Set to true if an alert is set to remind the user of the task.
             - `[LastModifiedDateTime <DateTime?>]`: The date and time when the task was last modified. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2020 would look like this: '2020-01-01T00:00:00Z'.
@@ -5644,6 +5669,7 @@ SITESOURCES <IMicrosoftGraphSecuritySiteSource1[]>: Data source entity for Share
               - `[WebUrl <String>]`: Deep link to the linkedResource.
             - `[Recurrence <IMicrosoftGraphPatternedRecurrence>]`: patternedRecurrence
             - `[ReminderDateTime <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
+            - `[StartDateTime <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
             - `[Status <String>]`: taskStatus
             - `[Title <String>]`: A brief description of the task.
           - `[WellknownListName <String>]`: wellknownListName
@@ -5655,7 +5681,7 @@ SITESOURCES <IMicrosoftGraphSecuritySiteSource1[]>: Data source entity for Share
     - `[Description <String>]`: Provides a user-visible description of the item. Optional.
     - `[ETag <String>]`: ETag for the item. Read-only.
     - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-    - `[LastModifiedByUser <IMicrosoftGraphUser1>]`: user
+    - `[LastModifiedByUser <IMicrosoftGraphUser>]`: user
     - `[LastModifiedDateTime <DateTime?>]`: Date and time the item was last modified. Read-only.
     - `[Name <String>]`: The name of the item. Read-write.
     - `[ParentReference <IMicrosoftGraphItemReference>]`: itemReference
@@ -5672,12 +5698,12 @@ SITESOURCES <IMicrosoftGraphSecuritySiteSource1[]>: Data source entity for Share
     - `[Items <IMicrosoftGraphBaseItem1[]>]`: Used to address any item contained in this site. This collection cannot be enumerated.
       - `[Id <String>]`: 
       - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-      - `[CreatedByUser <IMicrosoftGraphUser1>]`: user
+      - `[CreatedByUser <IMicrosoftGraphUser>]`: user
       - `[CreatedDateTime <DateTime?>]`: Date and time of item creation. Read-only.
       - `[Description <String>]`: Provides a user-visible description of the item. Optional.
       - `[ETag <String>]`: ETag for the item. Read-only.
       - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-      - `[LastModifiedByUser <IMicrosoftGraphUser1>]`: user
+      - `[LastModifiedByUser <IMicrosoftGraphUser>]`: user
       - `[LastModifiedDateTime <DateTime?>]`: Date and time the item was last modified. Read-only.
       - `[Name <String>]`: The name of the item. Read-write.
       - `[ParentReference <IMicrosoftGraphItemReference>]`: itemReference
@@ -5903,7 +5929,7 @@ UNIFIEDGROUPSOURCES <IMicrosoftGraphSecurityUnifiedGroupSource1[]>: Data source 
       - `[HasAttachments <Boolean?>]`: Indicates whether any of the posts within this Conversation has at least one attachment. Supports $filter (eq, ne) and $search.
       - `[LastDeliveredDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Supports $filter (eq, ne, le, ge).
       - `[Preview <String>]`: A short summary from the body of the latest post in this conversation.
-      - `[Threads <IMicrosoftGraphConversationThread1[]>]`: A collection of all the conversation threads in the conversation. A navigation property. Read-only. Nullable.
+      - `[Threads <IMicrosoftGraphConversationThread[]>]`: A collection of all the conversation threads in the conversation. A navigation property. Read-only. Nullable.
         - `[Id <String>]`: 
         - `[CcRecipients <IMicrosoftGraphRecipient[]>]`: The Cc: recipients for the thread. Returned only on $select.
         - `[HasAttachments <Boolean?>]`: Indicates whether any of the posts within this thread has at least one attachment. Returned by default.
@@ -5941,7 +5967,7 @@ UNIFIEDGROUPSOURCES <IMicrosoftGraphSecurityUnifiedGroupSource1[]>: Data source 
     - `[Drive <IMicrosoftGraphDrive1>]`: drive
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-      - `[CreatedByUser <IMicrosoftGraphUser1>]`: user
+      - `[CreatedByUser <IMicrosoftGraphUser>]`: user
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
         - `[Id <String>]`: 
@@ -6318,12 +6344,12 @@ UNIFIEDGROUPSOURCES <IMicrosoftGraphSecurityUnifiedGroupSource1[]>: Data source 
         - `[FaxNumber <String>]`: The fax number of the user. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values).
         - `[FollowedSites <IMicrosoftGraphSite1[]>]`: 
           - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-          - `[CreatedByUser <IMicrosoftGraphUser1>]`: user
+          - `[CreatedByUser <IMicrosoftGraphUser>]`: user
           - `[CreatedDateTime <DateTime?>]`: Date and time of item creation. Read-only.
           - `[Description <String>]`: Provides a user-visible description of the item. Optional.
           - `[ETag <String>]`: ETag for the item. Read-only.
           - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-          - `[LastModifiedByUser <IMicrosoftGraphUser1>]`: user
+          - `[LastModifiedByUser <IMicrosoftGraphUser>]`: user
           - `[LastModifiedDateTime <DateTime?>]`: Date and time the item was last modified. Read-only.
           - `[Name <String>]`: The name of the item. Read-write.
           - `[ParentReference <IMicrosoftGraphItemReference>]`: itemReference
@@ -6349,7 +6375,7 @@ UNIFIEDGROUPSOURCES <IMicrosoftGraphSecurityUnifiedGroupSource1[]>: Data source 
           - `[Analytics <IMicrosoftGraphItemAnalytics1>]`: itemAnalytics
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[Id <String>]`: 
-            - `[AllTime <IMicrosoftGraphItemActivityStat1>]`: itemActivityStat
+            - `[AllTime <IMicrosoftGraphItemActivityStat>]`: itemActivityStat
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
               - `[Id <String>]`: 
               - `[Access <IMicrosoftGraphItemActionStat>]`: itemActionStat
@@ -6365,12 +6391,12 @@ UNIFIEDGROUPSOURCES <IMicrosoftGraphSecurityUnifiedGroupSource1[]>: Data source 
                 - `[DriveItem <IMicrosoftGraphDriveItem1>]`: driveItem
                   - `[(Any) <Object>]`: This indicates any property can be added to this object.
                   - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-                  - `[CreatedByUser <IMicrosoftGraphUser1>]`: user
+                  - `[CreatedByUser <IMicrosoftGraphUser>]`: user
                   - `[CreatedDateTime <DateTime?>]`: Date and time of item creation. Read-only.
                   - `[Description <String>]`: Provides a user-visible description of the item. Optional.
                   - `[ETag <String>]`: ETag for the item. Read-only.
                   - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-                  - `[LastModifiedByUser <IMicrosoftGraphUser1>]`: user
+                  - `[LastModifiedByUser <IMicrosoftGraphUser>]`: user
                   - `[LastModifiedDateTime <DateTime?>]`: Date and time the item was last modified. Read-only.
                   - `[Name <String>]`: The name of the item. Read-write.
                   - `[ParentReference <IMicrosoftGraphItemReference>]`: itemReference
@@ -6437,12 +6463,12 @@ UNIFIEDGROUPSOURCES <IMicrosoftGraphSecurityUnifiedGroupSource1[]>: Data source 
                   - `[ListItem <IMicrosoftGraphListItem>]`: listItem
                     - `[(Any) <Object>]`: This indicates any property can be added to this object.
                     - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-                    - `[CreatedByUser <IMicrosoftGraphUser1>]`: user
+                    - `[CreatedByUser <IMicrosoftGraphUser>]`: user
                     - `[CreatedDateTime <DateTime?>]`: Date and time of item creation. Read-only.
                     - `[Description <String>]`: Provides a user-visible description of the item. Optional.
                     - `[ETag <String>]`: ETag for the item. Read-only.
                     - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-                    - `[LastModifiedByUser <IMicrosoftGraphUser1>]`: user
+                    - `[LastModifiedByUser <IMicrosoftGraphUser>]`: user
                     - `[LastModifiedDateTime <DateTime?>]`: Date and time the item was last modified. Read-only.
                     - `[Name <String>]`: The name of the item. Read-write.
                     - `[ParentReference <IMicrosoftGraphItemReference>]`: itemReference
@@ -6869,8 +6895,8 @@ UNIFIEDGROUPSOURCES <IMicrosoftGraphSecurityUnifiedGroupSource1[]>: Data source 
               - `[IsTrending <Boolean?>]`: Indicates whether the item is 'trending.' Read-only.
               - `[Move <IMicrosoftGraphItemActionStat>]`: itemActionStat
               - `[StartDateTime <DateTime?>]`: When the interval starts. Read-only.
-            - `[ItemActivityStats <IMicrosoftGraphItemActivityStat1[]>]`: 
-            - `[LastSevenDays <IMicrosoftGraphItemActivityStat1>]`: itemActivityStat
+            - `[ItemActivityStats <IMicrosoftGraphItemActivityStat[]>]`: 
+            - `[LastSevenDays <IMicrosoftGraphItemActivityStat>]`: itemActivityStat
           - `[Columns <IMicrosoftGraphColumnDefinition1[]>]`: The collection of column definitions reusable across lists under this site.
             - `[Id <String>]`: 
             - `[Boolean <IMicrosoftGraphBooleanColumn>]`: booleanColumn
@@ -7060,24 +7086,24 @@ UNIFIEDGROUPSOURCES <IMicrosoftGraphSecurityUnifiedGroupSource1[]>: Data source 
           - `[Items <IMicrosoftGraphBaseItem1[]>]`: Used to address any item contained in this site. This collection cannot be enumerated.
             - `[Id <String>]`: 
             - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-            - `[CreatedByUser <IMicrosoftGraphUser1>]`: user
+            - `[CreatedByUser <IMicrosoftGraphUser>]`: user
             - `[CreatedDateTime <DateTime?>]`: Date and time of item creation. Read-only.
             - `[Description <String>]`: Provides a user-visible description of the item. Optional.
             - `[ETag <String>]`: ETag for the item. Read-only.
             - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-            - `[LastModifiedByUser <IMicrosoftGraphUser1>]`: user
+            - `[LastModifiedByUser <IMicrosoftGraphUser>]`: user
             - `[LastModifiedDateTime <DateTime?>]`: Date and time the item was last modified. Read-only.
             - `[Name <String>]`: The name of the item. Read-write.
             - `[ParentReference <IMicrosoftGraphItemReference>]`: itemReference
             - `[WebUrl <String>]`: URL that displays the resource in the browser. Read-only.
           - `[Lists <IMicrosoftGraphList1[]>]`: The collection of lists under this site.
             - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-            - `[CreatedByUser <IMicrosoftGraphUser1>]`: user
+            - `[CreatedByUser <IMicrosoftGraphUser>]`: user
             - `[CreatedDateTime <DateTime?>]`: Date and time of item creation. Read-only.
             - `[Description <String>]`: Provides a user-visible description of the item. Optional.
             - `[ETag <String>]`: ETag for the item. Read-only.
             - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-            - `[LastModifiedByUser <IMicrosoftGraphUser1>]`: user
+            - `[LastModifiedByUser <IMicrosoftGraphUser>]`: user
             - `[LastModifiedDateTime <DateTime?>]`: Date and time the item was last modified. Read-only.
             - `[Name <String>]`: The name of the item. Read-write.
             - `[ParentReference <IMicrosoftGraphItemReference>]`: itemReference
@@ -8177,6 +8203,17 @@ UNIFIEDGROUPSOURCES <IMicrosoftGraphSecurityUnifiedGroupSource1[]>: Data source 
             - `[IsShared <Boolean?>]`: True if the task list is shared with other users
             - `[Tasks <IMicrosoftGraphTodoTask[]>]`: The tasks in this task list. Read-only. Nullable.
               - `[Id <String>]`: 
+              - `[AttachmentSessions <IMicrosoftGraphAttachmentSession[]>]`: 
+                - `[Id <String>]`: 
+                - `[Content <Byte[]>]`: The content streams that are uploaded.
+                - `[ExpirationDateTime <DateTime?>]`: The date and time in UTC when the upload session will expire. The complete file must be uploaded before this expiration time is reached.
+                - `[NextExpectedRanges <String[]>]`: Indicates a single value {start} that represents the location in the file where the next upload should begin.
+              - `[Attachments <IMicrosoftGraphAttachmentBase[]>]`: A collection of file attachments for the task.
+                - `[Id <String>]`: 
+                - `[ContentType <String>]`: The MIME type.
+                - `[LastModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+                - `[Name <String>]`: The display name of the attachment. This does not need to be the actual file name.
+                - `[Size <Int32?>]`: The length of the attachment in bytes.
               - `[Body <IMicrosoftGraphItemBody>]`: itemBody
               - `[BodyLastModifiedDateTime <DateTime?>]`: The date and time when the task body was last modified. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2020 would look like this: '2020-01-01T00:00:00Z'.
               - `[Categories <String[]>]`: The categories associated with the task. Each category corresponds to the displayName property of an outlookCategory that the user has defined.
@@ -8190,6 +8227,7 @@ UNIFIEDGROUPSOURCES <IMicrosoftGraphSecurityUnifiedGroupSource1[]>: Data source 
               - `[CreatedDateTime <DateTime?>]`: The date and time when the task was created. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format. For example, midnight UTC on Jan 1, 2020 would look like this: '2020-01-01T00:00:00Z'.
               - `[DueDateTime <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
               - `[Extensions <IMicrosoftGraphExtension[]>]`: The collection of open extensions defined for the task. Nullable.
+              - `[HasAttachments <Boolean?>]`: Indicates whether the task has attachments.
               - `[Importance <String>]`: importance
               - `[IsReminderOn <Boolean?>]`: Set to true if an alert is set to remind the user of the task.
               - `[LastModifiedDateTime <DateTime?>]`: The date and time when the task was last modified. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2020 would look like this: '2020-01-01T00:00:00Z'.
@@ -8201,6 +8239,7 @@ UNIFIEDGROUPSOURCES <IMicrosoftGraphSecurityUnifiedGroupSource1[]>: Data source 
                 - `[WebUrl <String>]`: Deep link to the linkedResource.
               - `[Recurrence <IMicrosoftGraphPatternedRecurrence>]`: patternedRecurrence
               - `[ReminderDateTime <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
+              - `[StartDateTime <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
               - `[Status <String>]`: taskStatus
               - `[Title <String>]`: A brief description of the task.
             - `[WellknownListName <String>]`: wellknownListName
@@ -8212,7 +8251,7 @@ UNIFIEDGROUPSOURCES <IMicrosoftGraphSecurityUnifiedGroupSource1[]>: Data source 
       - `[Description <String>]`: Provides a user-visible description of the item. Optional.
       - `[ETag <String>]`: ETag for the item. Read-only.
       - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-      - `[LastModifiedByUser <IMicrosoftGraphUser1>]`: user
+      - `[LastModifiedByUser <IMicrosoftGraphUser>]`: user
       - `[LastModifiedDateTime <DateTime?>]`: Date and time the item was last modified. Read-only.
       - `[Name <String>]`: The name of the item. Read-write.
       - `[ParentReference <IMicrosoftGraphItemReference>]`: itemReference
@@ -8284,7 +8323,7 @@ UNIFIEDGROUPSOURCES <IMicrosoftGraphSecurityUnifiedGroupSource1[]>: Data source 
       - `[ResourceAppId <String>]`: ID of the Azure AD app that is hosting the resource. Read-only.
     - `[Photo <IMicrosoftGraphProfilePhoto>]`: profilePhoto
     - `[Photos <IMicrosoftGraphProfilePhoto[]>]`: The profile photos owned by the group. Read-only. Nullable.
-    - `[Planner <IMicrosoftGraphPlannerGroup1>]`: plannerGroup
+    - `[Planner <IMicrosoftGraphPlannerGroup>]`: plannerGroup
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Id <String>]`: 
       - `[Plans <IMicrosoftGraphPlannerPlan[]>]`: Read-only. Nullable. Returns the plannerPlans owned by the group.
@@ -8305,7 +8344,7 @@ UNIFIEDGROUPSOURCES <IMicrosoftGraphSecurityUnifiedGroupSource1[]>: Data source 
     - `[Sites <IMicrosoftGraphSite1[]>]`: The list of SharePoint sites in this group. Access the default site with /sites/root.
     - `[Team <IMicrosoftGraphTeam1>]`: team
     - `[Theme <String>]`: Specifies a Microsoft 365 group's color theme. Possible values are Teal, Purple, Green, Blue, Pink, Orange or Red. Returned by default.
-    - `[Threads <IMicrosoftGraphConversationThread1[]>]`: The group's conversation threads. Nullable.
+    - `[Threads <IMicrosoftGraphConversationThread[]>]`: The group's conversation threads. Nullable.
     - `[TransitiveMemberOf <IMicrosoftGraphDirectoryObject[]>]`: The groups that a group is a member of, either directly and through nested membership. Nullable.
     - `[TransitiveMembers <IMicrosoftGraphDirectoryObject[]>]`: The direct and transitive members of a group. Nullable.
     - `[UnseenCount <Int32?>]`: Count of conversations that have received new posts since the signed-in user last visited the group. This property is the same as unseenConversationsCount.Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).

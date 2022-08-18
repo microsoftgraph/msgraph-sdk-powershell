@@ -22,13 +22,13 @@ Update-MgPrintServiceEndpoint -PrintServiceEndpointId <String> -PrintServiceId <
 ### Update1
 ```
 Update-MgPrintServiceEndpoint -PrintServiceEndpointId <String> -PrintServiceId <String>
- -BodyParameter <IMicrosoftGraphPrintServiceEndpoint1> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphPrintServiceEndpoint> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity1
 ```
 Update-MgPrintServiceEndpoint -InputObject <IDevicesCloudPrintIdentity>
- -BodyParameter <IMicrosoftGraphPrintServiceEndpoint1> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphPrintServiceEndpoint> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded1
@@ -64,7 +64,7 @@ printServiceEndpoint
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPrintServiceEndpoint1
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPrintServiceEndpoint
 Parameter Sets: Update1, UpdateViaIdentity1
 Aliases:
 
@@ -219,7 +219,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IDevicesCloudPrintIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPrintServiceEndpoint1
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPrintServiceEndpoint
 
 ## OUTPUTS
 
@@ -234,7 +234,7 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-BODYPARAMETER <IMicrosoftGraphPrintServiceEndpoint1>: printServiceEndpoint
+BODYPARAMETER <IMicrosoftGraphPrintServiceEndpoint>: printServiceEndpoint
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: 
   - `[DisplayName <String>]`: A human-readable display name for the endpoint.

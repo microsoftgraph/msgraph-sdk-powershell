@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Users
-Module Guid: 142c3529-676c-4243-8d12-285908b9acb8
+Module Guid: 14eaae18-958f-4cbf-b5cb-bcb14198e8dd
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users
 Help Version: 1.0.0.0
 Locale: en-US
@@ -71,6 +71,18 @@ Get extensions from users
 ### [Get-MgUserTodoListTask](Get-MgUserTodoListTask.md)
 Get tasks from users
 
+### [Get-MgUserTodoListTaskAttachment](Get-MgUserTodoListTaskAttachment.md)
+Get attachments from users
+
+### [Get-MgUserTodoListTaskAttachmentContent](Get-MgUserTodoListTaskAttachmentContent.md)
+Get media content for the navigation property attachments from users
+
+### [Get-MgUserTodoListTaskAttachmentSession](Get-MgUserTodoListTaskAttachmentSession.md)
+Get attachmentSessions from users
+
+### [Get-MgUserTodoListTaskAttachmentSessionContent](Get-MgUserTodoListTaskAttachmentSessionContent.md)
+Get content for the navigation property attachmentSessions from users
+
 ### [Get-MgUserTodoListTaskChecklistItem](Get-MgUserTodoListTaskChecklistItem.md)
 Get checklistItems from users
 
@@ -103,6 +115,12 @@ Create new navigation property to extensions for users
 
 ### [New-MgUserTodoListTask](New-MgUserTodoListTask.md)
 Create new navigation property to tasks for users
+
+### [New-MgUserTodoListTaskAttachment](New-MgUserTodoListTaskAttachment.md)
+Create new navigation property to attachments for users
+
+### [New-MgUserTodoListTaskAttachmentSession](New-MgUserTodoListTaskAttachmentSession.md)
+Create new navigation property to attachmentSessions for users
 
 ### [New-MgUserTodoListTaskChecklistItem](New-MgUserTodoListTaskChecklistItem.md)
 Create new navigation property to checklistItems for users
@@ -146,6 +164,12 @@ Delete navigation property extensions for users
 ### [Remove-MgUserTodoListTask](Remove-MgUserTodoListTask.md)
 Delete navigation property tasks for users
 
+### [Remove-MgUserTodoListTaskAttachment](Remove-MgUserTodoListTaskAttachment.md)
+Delete navigation property attachments for users
+
+### [Remove-MgUserTodoListTaskAttachmentSession](Remove-MgUserTodoListTaskAttachmentSession.md)
+Delete navigation property attachmentSessions for users
+
 ### [Remove-MgUserTodoListTaskChecklistItem](Remove-MgUserTodoListTaskChecklistItem.md)
 Delete navigation property checklistItems for users
 
@@ -160,6 +184,12 @@ Update the ref of navigation property manager in users
 
 ### [Set-MgUserPhotoContent](Set-MgUserPhotoContent.md)
 Update media content for the navigation property photo in users
+
+### [Set-MgUserTodoListTaskAttachmentContent](Set-MgUserTodoListTaskAttachmentContent.md)
+Update media content for the navigation property attachments in users
+
+### [Set-MgUserTodoListTaskAttachmentSessionContent](Set-MgUserTodoListTaskAttachmentSessionContent.md)
+Update content for the navigation property attachmentSessions in users
 
 ### [Update-MgUser](Update-MgUser.md)
 Update user
@@ -190,6 +220,12 @@ Update the navigation property extensions in users
 
 ### [Update-MgUserTodoListTask](Update-MgUserTodoListTask.md)
 Update the navigation property tasks in users
+
+### [Update-MgUserTodoListTaskAttachment](Update-MgUserTodoListTaskAttachment.md)
+Update the navigation property attachments in users
+
+### [Update-MgUserTodoListTaskAttachmentSession](Update-MgUserTodoListTaskAttachmentSession.md)
+Update the navigation property attachmentSessions in users
 
 ### [Update-MgUserTodoListTaskChecklistItem](Update-MgUserTodoListTaskChecklistItem.md)
 Update the navigation property checklistItems in users

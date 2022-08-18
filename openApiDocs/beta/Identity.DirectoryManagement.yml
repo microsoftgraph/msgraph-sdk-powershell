@@ -12318,7 +12318,7 @@ paths:
     get:
       tags:
         - domains.domain
-      summary: Get entity from domains by key
+      summary: Get domain
       operationId: domains.domain_GetDomain
       parameters:
         - name: domain-id
