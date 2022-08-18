@@ -17,7 +17,7 @@ require:
 
 ``` yaml
 directive:
-  - remove-path-by-operation: ^identity_(Get|Create|Delete|Update|List)ConditionalAccess$|^policies\.policyRoot_.*PolicyRoot|^policies_(Get|Create|Delete|Update|List)ConditionalAccessPolicies$|^invitations\.invitation_(List|Get|Update|Delete)Invitation$|^invitations_(.*)InvitedUser$
+  - remove-path-by-operation: ^identity_(Get|Create|Delete|Update|List)ConditionalAccess$|^policies\.policyRoot_.*PolicyRoot|^policies_(Get|Create|Delete|Update|List)ConditionalAccessPolicies$|^invitations\.invitation_(List|Get|Update|Delete)Invitation$|^invitations_(.*)InvitedUser$|^identityProviders.*$
 # Rename cmdlets with duplicates in their name.
   - where:
       subject: ^(Oauth2PermissionGrant)(\1)+
