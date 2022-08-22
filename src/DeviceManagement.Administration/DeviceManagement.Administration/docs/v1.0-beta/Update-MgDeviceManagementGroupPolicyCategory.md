@@ -17,9 +17,9 @@ Update the navigation property groupPolicyCategories in deviceManagement
 Update-MgDeviceManagementGroupPolicyCategory -GroupPolicyCategoryId <String>
  [-AdditionalProperties <Hashtable>] [-Children <IMicrosoftGraphGroupPolicyCategory[]>]
  [-DefinitionFile <IMicrosoftGraphGroupPolicyDefinitionFile>]
- [-Definitions <IMicrosoftGraphGroupPolicyDefinition[]>] [-DisplayName <String>] [-Id <String>] [-IsRoot]
- [-LastModifiedDateTime <DateTime>] [-Parent <IMicrosoftGraphGroupPolicyCategory>] [-PassThru] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-Definitions <IMicrosoftGraphGroupPolicyDefinition[]>] [-DisplayName <String>] [-Id <String>]
+ [-IngestionSource <IngestionSource>] [-IsRoot] [-LastModifiedDateTime <DateTime>]
+ [-Parent <IMicrosoftGraphGroupPolicyCategory>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
@@ -39,9 +39,9 @@ Update-MgDeviceManagementGroupPolicyCategory -InputObject <IDeviceManagementAdmi
 Update-MgDeviceManagementGroupPolicyCategory -InputObject <IDeviceManagementAdministrationIdentity>
  [-AdditionalProperties <Hashtable>] [-Children <IMicrosoftGraphGroupPolicyCategory[]>]
  [-DefinitionFile <IMicrosoftGraphGroupPolicyDefinitionFile>]
- [-Definitions <IMicrosoftGraphGroupPolicyDefinition[]>] [-DisplayName <String>] [-Id <String>] [-IsRoot]
- [-LastModifiedDateTime <DateTime>] [-Parent <IMicrosoftGraphGroupPolicyCategory>] [-PassThru] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-Definitions <IMicrosoftGraphGroupPolicyDefinition[]>] [-DisplayName <String>] [-Id <String>]
+ [-IngestionSource <IngestionSource>] [-IsRoot] [-LastModifiedDateTime <DateTime>]
+ [-Parent <IMicrosoftGraphGroupPolicyCategory>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -167,6 +167,21 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.String
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -IngestionSource
+Category Ingestion source
+
+```yaml
+Type: Microsoft.Graph.PowerShell.Support.IngestionSource
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -348,6 +363,7 @@ BODYPARAMETER <IMicrosoftGraphGroupPolicyCategory>: The category entity stores t
     - `[TargetPrefix <String>]`: Specifies the logical name that refers to the namespace within the ADMX file.
   - `[Definitions <IMicrosoftGraphGroupPolicyDefinition[]>]`: The immediate GroupPolicyDefinition children of the category
   - `[DisplayName <String>]`: The string id of the category's display name
+  - `[IngestionSource <IngestionSource?>]`: Category Ingestion source
   - `[IsRoot <Boolean?>]`: Defines if the category is a root category
   - `[LastModifiedDateTime <DateTime?>]`: The date and time the entity was last modified.
   - `[Parent <IMicrosoftGraphGroupPolicyCategory>]`: The category entity stores the category of a group policy definition
@@ -392,6 +408,7 @@ CHILDREN <IMicrosoftGraphGroupPolicyCategory[]>: The children categories
     - `[TargetPrefix <String>]`: Specifies the logical name that refers to the namespace within the ADMX file.
   - `[Definitions <IMicrosoftGraphGroupPolicyDefinition[]>]`: The immediate GroupPolicyDefinition children of the category
   - `[DisplayName <String>]`: The string id of the category's display name
+  - `[IngestionSource <IngestionSource?>]`: Category Ingestion source
   - `[IsRoot <Boolean?>]`: Defines if the category is a root category
   - `[LastModifiedDateTime <DateTime?>]`: The date and time the entity was last modified.
   - `[Parent <IMicrosoftGraphGroupPolicyCategory>]`: The category entity stores the category of a group policy definition
@@ -408,6 +425,7 @@ DEFINITIONFILE <IMicrosoftGraphGroupPolicyDefinitionFile>: The entity represents
       - `[DefinitionFile <IMicrosoftGraphGroupPolicyDefinitionFile>]`: The entity represents an ADMX (Administrative Template) XML file. The ADMX file contains a collection of group policy definitions and their locations by category path. The group policy definition file also contains the languages supported as determined by the language dependent ADML (Administrative Template) language files.
       - `[Definitions <IMicrosoftGraphGroupPolicyDefinition[]>]`: The immediate GroupPolicyDefinition children of the category
       - `[DisplayName <String>]`: The string id of the category's display name
+      - `[IngestionSource <IngestionSource?>]`: Category Ingestion source
       - `[IsRoot <Boolean?>]`: Defines if the category is a root category
       - `[LastModifiedDateTime <DateTime?>]`: The date and time the entity was last modified.
       - `[Parent <IMicrosoftGraphGroupPolicyCategory>]`: The category entity stores the category of a group policy definition
@@ -462,6 +480,7 @@ DEFINITIONS <IMicrosoftGraphGroupPolicyDefinition[]>: The immediate GroupPolicyD
       - `[TargetPrefix <String>]`: Specifies the logical name that refers to the namespace within the ADMX file.
     - `[Definitions <IMicrosoftGraphGroupPolicyDefinition[]>]`: The immediate GroupPolicyDefinition children of the category
     - `[DisplayName <String>]`: The string id of the category's display name
+    - `[IngestionSource <IngestionSource?>]`: Category Ingestion source
     - `[IsRoot <Boolean?>]`: Defines if the category is a root category
     - `[LastModifiedDateTime <DateTime?>]`: The date and time the entity was last modified.
     - `[Parent <IMicrosoftGraphGroupPolicyCategory>]`: The category entity stores the category of a group policy definition
@@ -581,6 +600,7 @@ PARENT <IMicrosoftGraphGroupPolicyCategory>: The category entity stores the cate
     - `[TargetPrefix <String>]`: Specifies the logical name that refers to the namespace within the ADMX file.
   - `[Definitions <IMicrosoftGraphGroupPolicyDefinition[]>]`: The immediate GroupPolicyDefinition children of the category
   - `[DisplayName <String>]`: The string id of the category's display name
+  - `[IngestionSource <IngestionSource?>]`: Category Ingestion source
   - `[IsRoot <Boolean?>]`: Defines if the category is a root category
   - `[LastModifiedDateTime <DateTime?>]`: The date and time the entity was last modified.
   - `[Parent <IMicrosoftGraphGroupPolicyCategory>]`: The category entity stores the category of a group policy definition

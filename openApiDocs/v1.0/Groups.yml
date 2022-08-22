@@ -7636,6 +7636,47 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/groups/{group-id}/drives/{drive-id}/items/{driveItem-id}/listItem/documentSetVersions/{documentSetVersion-id}/microsoft.graph.restore':
+    post:
+      tags:
+        - groups.Actions
+      summary: Invoke action restore
+      operationId: groups.drives.items.listItem.documentSetVersions_restore
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: drive-id
+          in: path
+          description: 'key: id of drive'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - name: driveItem-id
+          in: path
+          description: 'key: id of driveItem'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: driveItem
+        - name: documentSetVersion-id
+          in: path
+          description: 'key: id of documentSetVersion'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: documentSetVersion
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/groups/{group-id}/drives/{drive-id}/items/{driveItem-id}/listItem/microsoft.graph.getActivitiesByInterval()':
     get:
       tags:
@@ -9117,6 +9158,47 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
+  '/groups/{group-id}/drives/{drive-id}/list/items/{listItem-id}/documentSetVersions/{documentSetVersion-id}/microsoft.graph.restore':
+    post:
+      tags:
+        - groups.Actions
+      summary: Invoke action restore
+      operationId: groups.drives.list.items.documentSetVersions_restore
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: drive-id
+          in: path
+          description: 'key: id of drive'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - name: listItem-id
+          in: path
+          description: 'key: id of listItem'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: listItem
+        - name: documentSetVersion-id
+          in: path
+          description: 'key: id of documentSetVersion'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: documentSetVersion
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/groups/{group-id}/drives/{drive-id}/list/items/{listItem-id}/microsoft.graph.getActivitiesByInterval()':
     get:
       tags:
@@ -9429,6 +9511,40 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
+  '/groups/{group-id}/drives/{drive-id}/root/listItem/documentSetVersions/{documentSetVersion-id}/microsoft.graph.restore':
+    post:
+      tags:
+        - groups.Actions
+      summary: Invoke action restore
+      operationId: groups.drives.root.listItem.documentSetVersions_restore
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: drive-id
+          in: path
+          description: 'key: id of drive'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - name: documentSetVersion-id
+          in: path
+          description: 'key: id of documentSetVersion'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: documentSetVersion
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/groups/{group-id}/drives/{drive-id}/root/listItem/microsoft.graph.getActivitiesByInterval()':
     get:
       tags:
@@ -16123,6 +16239,54 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
+  '/groups/{group-id}/sites/{site-id}/lists/{list-id}/items/{listItem-id}/documentSetVersions/{documentSetVersion-id}/microsoft.graph.restore':
+    post:
+      tags:
+        - groups.Actions
+      summary: Invoke action restore
+      operationId: groups.sites.lists.items.documentSetVersions_restore
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: site-id
+          in: path
+          description: 'key: id of site'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: list-id
+          in: path
+          description: 'key: id of list'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: list
+        - name: listItem-id
+          in: path
+          description: 'key: id of listItem'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: listItem
+        - name: documentSetVersion-id
+          in: path
+          description: 'key: id of documentSetVersion'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: documentSetVersion
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/groups/{group-id}/sites/{site-id}/lists/{list-id}/items/{listItem-id}/microsoft.graph.getActivitiesByInterval()':
     get:
       tags:
@@ -24263,12 +24427,12 @@ components:
               nullable: true
             name:
               type: string
-              description: Name of the extension property. Not nullable.
+              description: Name of the extension property. Not nullable. Supports $filter (eq).
             targetObjects:
               type: array
               items:
                 type: string
-              description: Following values are supported. Not nullable. UserGroupOrganizationDeviceApplication
+              description: Following values are supported. Not nullable. UserGroupAdministrativeUnitApplicationDeviceOrganization
           additionalProperties:
             type: object
     microsoft.graph.profilePhoto:
@@ -25892,6 +26056,11 @@ components:
               $ref: '#/components/schemas/microsoft.graph.sharepointIds'
             analytics:
               $ref: '#/components/schemas/microsoft.graph.itemAnalytics'
+            documentSetVersions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.documentSetVersion'
+              description: Version information for a document set version created by a user.
             driveItem:
               $ref: '#/components/schemas/microsoft.graph.driveItem'
             fields:
@@ -28387,6 +28556,35 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.documentSetVersion:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.listItemVersion'
+        - title: documentSetVersion
+          type: object
+          properties:
+            comment:
+              type: string
+              description: Comment about the captured version.
+              nullable: true
+            createdBy:
+              $ref: '#/components/schemas/microsoft.graph.identitySet'
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Date and time when this version was created.
+              format: date-time
+              nullable: true
+            items:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.documentSetVersionItem'
+              description: Items within the document set that are captured as part of this version.
+            shouldCaptureMinorVersion:
+              type: boolean
+              description: 'If true, minor versions of items are also captured; otherwise, only major versions will be captured. Default value is false.'
+              nullable: true
+          additionalProperties:
+            type: object
     microsoft.graph.fieldValueSet:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -31329,6 +31527,24 @@ components:
               description: Indicates if the worksheet is protected.  Read-only.
           additionalProperties:
             type: object
+    microsoft.graph.documentSetVersionItem:
+      title: documentSetVersionItem
+      type: object
+      properties:
+        itemId:
+          type: string
+          description: The unique identifier for the item.
+          nullable: true
+        title:
+          type: string
+          description: The title of the item.
+          nullable: true
+        versionId:
+          type: string
+          description: The version ID of the item.
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.termStore.term:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -34561,6 +34777,10 @@ components:
               format: date-time
             dueDateTime:
               $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
+            hasAttachments:
+              type: boolean
+              description: Indicates whether the task has attachments.
+              nullable: true
             importance:
               $ref: '#/components/schemas/microsoft.graph.importance'
             isReminderOn:
@@ -34575,12 +34795,23 @@ components:
               $ref: '#/components/schemas/microsoft.graph.patternedRecurrence'
             reminderDateTime:
               $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
+            startDateTime:
+              $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
             status:
               $ref: '#/components/schemas/microsoft.graph.taskStatus'
             title:
               type: string
               description: A brief description of the task.
               nullable: true
+            attachments:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.attachmentBase'
+              description: A collection of file attachments for the task.
+            attachmentSessions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.attachmentSession'
             checklistItems:
               type: array
               items:
@@ -34943,6 +35174,59 @@ components:
         - waitingOnOthers
         - deferred
       type: string
+    microsoft.graph.attachmentBase:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: attachmentBase
+          type: object
+          properties:
+            contentType:
+              type: string
+              description: The MIME type.
+              nullable: true
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
+              format: date-time
+              nullable: true
+            name:
+              type: string
+              description: The display name of the attachment. This does not need to be the actual file name.
+              nullable: true
+            size:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              description: The length of the attachment in bytes.
+              format: int32
+          additionalProperties:
+            type: object
+    microsoft.graph.attachmentSession:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: attachmentSession
+          type: object
+          properties:
+            content:
+              type: string
+              description: The content streams that are uploaded.
+              format: base64url
+              nullable: true
+            expirationDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The date and time in UTC when the upload session will expire. The complete file must be uploaded before this expiration time is reached.
+              format: date-time
+              nullable: true
+            nextExpectedRanges:
+              type: array
+              items:
+                type: string
+                nullable: true
+              description: 'Indicates a single value {start} that represents the location in the file where the next upload should begin.'
+          additionalProperties:
+            type: object
     microsoft.graph.checklistItem:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'

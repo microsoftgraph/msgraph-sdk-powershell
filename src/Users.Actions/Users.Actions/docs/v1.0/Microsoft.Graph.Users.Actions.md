@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Users.Actions
-Module Guid: 1be5c4a7-c33b-401d-a530-7cc21a51360a
+Module Guid: 5f2fa8d9-6913-43ab-8af5-9f5abb1e9c7a
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.actions
 Help Version: 1.0.0.0
 Locale: en-US
@@ -350,6 +350,9 @@ Invoke action createReply
 ### [New-MgUserMessageReplyAll](New-MgUserMessageReplyAll.md)
 Invoke action createReplyAll
 
+### [New-MgUserTodoListTaskAttachmentUploadSession](New-MgUserTodoListTaskAttachmentUploadSession.md)
+Invoke action createUploadSession
+
 ### [Publish-MgUserDriveListContentType](Publish-MgUserDriveListContentType.md)
 Invoke action publish
 
@@ -377,16 +380,25 @@ Invoke action restore
 ### [Restore-MgUserDriveItem](Restore-MgUserDriveItem.md)
 Invoke action restore
 
+### [Restore-MgUserDriveItemListItemDocumentSetVersion](Restore-MgUserDriveItemListItemDocumentSetVersion.md)
+Invoke action restore
+
 ### [Restore-MgUserDriveItemListItemVersion](Restore-MgUserDriveItemListItemVersion.md)
 Invoke action restoreVersion
 
 ### [Restore-MgUserDriveItemVersion](Restore-MgUserDriveItemVersion.md)
 Invoke action restoreVersion
 
+### [Restore-MgUserDriveListItemDocumentSetVersion](Restore-MgUserDriveListItemDocumentSetVersion.md)
+Invoke action restore
+
 ### [Restore-MgUserDriveListItemVersion](Restore-MgUserDriveListItemVersion.md)
 Invoke action restoreVersion
 
 ### [Restore-MgUserDriveRoot](Restore-MgUserDriveRoot.md)
+Invoke action restore
+
+### [Restore-MgUserDriveRootListItemDocumentSetVersion](Restore-MgUserDriveRootListItemDocumentSetVersion.md)
 Invoke action restore
 
 ### [Restore-MgUserDriveRootListItemVersion](Restore-MgUserDriveRootListItemVersion.md)

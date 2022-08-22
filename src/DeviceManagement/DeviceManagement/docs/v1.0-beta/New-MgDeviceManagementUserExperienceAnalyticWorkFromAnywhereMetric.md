@@ -162,7 +162,7 @@ BODYPARAMETER <IMicrosoftGraphUserExperienceAnalyticsWorkFromAnywhereMetric>: Th
     - `[CompliancePolicySetToIntune <Boolean?>]`: The user experience work from anywhere device's compliancePolicySetToIntune.
     - `[DeviceId <String>]`: The user experience work from anywhere device Id.
     - `[DeviceName <String>]`: The work from anywhere device's name.
-    - `[HealthStatus <String>]`: userExperienceAnalyticsHealthState
+    - `[HealthStatus <UserExperienceAnalyticsHealthState?>]`: userExperienceAnalyticsHealthState
     - `[IsCloudManagedGatewayEnabled <Boolean?>]`: The user experience work from anywhere device's Cloud Management Gateway for Configuration Manager is enabled.
     - `[ManagedBy <String>]`: The user experience work from anywhere management agent of the device.
     - `[Manufacturer <String>]`: The user experience work from anywhere device's manufacturer.
@@ -199,7 +199,7 @@ METRICDEVICES <IMicrosoftGraphUserExperienceAnalyticsWorkFromAnywhereDevice[]>: 
   - `[CompliancePolicySetToIntune <Boolean?>]`: The user experience work from anywhere device's compliancePolicySetToIntune.
   - `[DeviceId <String>]`: The user experience work from anywhere device Id.
   - `[DeviceName <String>]`: The work from anywhere device's name.
-  - `[HealthStatus <String>]`: userExperienceAnalyticsHealthState
+  - `[HealthStatus <UserExperienceAnalyticsHealthState?>]`: userExperienceAnalyticsHealthState
   - `[IsCloudManagedGatewayEnabled <Boolean?>]`: The user experience work from anywhere device's Cloud Management Gateway for Configuration Manager is enabled.
   - `[ManagedBy <String>]`: The user experience work from anywhere management agent of the device.
   - `[Manufacturer <String>]`: The user experience work from anywhere device's manufacturer.

@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Identity.SignIns
-Module Guid: 3b604bdc-eef8-413a-ac9f-ff6da777fb86
+Module Guid: eeaf8bb1-d854-4601-bce7-dcad01decaa7
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins
 Help Version: 1.0.0.0
 Locale: en-US
@@ -25,6 +25,9 @@ Get dataPolicyOperation
 
 ### [Get-MgIdentityApiConnector](Get-MgIdentityApiConnector.md)
 Get apiConnectors from identity
+
+### [Get-MgIdentityAuthenticationEventListener](Get-MgIdentityAuthenticationEventListener.md)
+Get authenticationEventListeners from identity
 
 ### [Get-MgIdentityB2CUserFlow](Get-MgIdentityB2CUserFlow.md)
 Get b2cUserFlows from identity
@@ -104,6 +107,9 @@ Get policies from identity
 ### [Get-MgIdentityContinuouAccessEvaluationPolicy](Get-MgIdentityContinuouAccessEvaluationPolicy.md)
 Get continuousAccessEvaluationPolicy from identity
 
+### [Get-MgIdentityCustomAuthenticationExtension](Get-MgIdentityCustomAuthenticationExtension.md)
+Get customAuthenticationExtensions from identity
+
 ### [Get-MgIdentityProvider](Get-MgIdentityProvider.md)
 Get identityProviders from identity
 
@@ -141,7 +147,7 @@ Get threatAssessmentRequests from informationProtection
 Get results from informationProtection
 
 ### [Get-MgOauth2PermissionGrant](Get-MgOauth2PermissionGrant.md)
-Get entity from oauth2PermissionGrants by key
+Get oAuth2PermissionGrant (a delegated permission grant)
 
 ### [Get-MgOauth2PermissionGrantDelta](Get-MgOauth2PermissionGrantDelta.md)
 Invoke function delta
@@ -512,6 +518,9 @@ Add new entity to dataPolicyOperations
 ### [New-MgIdentityApiConnector](New-MgIdentityApiConnector.md)
 Create new navigation property to apiConnectors for identity
 
+### [New-MgIdentityAuthenticationEventListener](New-MgIdentityAuthenticationEventListener.md)
+Create new navigation property to authenticationEventListeners for identity
+
 ### [New-MgIdentityB2CUserFlow](New-MgIdentityB2CUserFlow.md)
 Create new navigation property to b2cUserFlows for identity
 
@@ -556,6 +565,9 @@ Create new navigation property to namedLocations for identity
 
 ### [New-MgIdentityConditionalAccessPolicy](New-MgIdentityConditionalAccessPolicy.md)
 Create new navigation property to policies for identity
+
+### [New-MgIdentityCustomAuthenticationExtension](New-MgIdentityCustomAuthenticationExtension.md)
+Create new navigation property to customAuthenticationExtensions for identity
 
 ### [New-MgIdentityProvider](New-MgIdentityProvider.md)
 Create new navigation property to identityProviders for identity
@@ -785,6 +797,9 @@ Delete entity from dataPolicyOperations
 ### [Remove-MgIdentityApiConnector](Remove-MgIdentityApiConnector.md)
 Delete navigation property apiConnectors for identity
 
+### [Remove-MgIdentityAuthenticationEventListener](Remove-MgIdentityAuthenticationEventListener.md)
+Delete navigation property authenticationEventListeners for identity
+
 ### [Remove-MgIdentityB2CUserFlow](Remove-MgIdentityB2CUserFlow.md)
 Delete navigation property b2cUserFlows for identity
 
@@ -833,6 +848,9 @@ Delete navigation property policies for identity
 ### [Remove-MgIdentityContinuouAccessEvaluationPolicy](Remove-MgIdentityContinuouAccessEvaluationPolicy.md)
 Delete navigation property continuousAccessEvaluationPolicy for identity
 
+### [Remove-MgIdentityCustomAuthenticationExtension](Remove-MgIdentityCustomAuthenticationExtension.md)
+Delete navigation property customAuthenticationExtensions for identity
+
 ### [Remove-MgIdentityProvider](Remove-MgIdentityProvider.md)
 Delete navigation property identityProviders for identity
 
@@ -861,7 +879,7 @@ Delete navigation property threatAssessmentRequests for informationProtection
 Delete navigation property results for informationProtection
 
 ### [Remove-MgOauth2PermissionGrant](Remove-MgOauth2PermissionGrant.md)
-Delete entity from oauth2PermissionGrants
+Delete oAuth2PermissionGrant (a delegated permission grant)
 
 ### [Remove-MgPolicyAccessReviewPolicy](Remove-MgPolicyAccessReviewPolicy.md)
 Delete navigation property accessReviewPolicy for policies
@@ -1124,6 +1142,9 @@ Invoke action setOrder
 ### [Set-MgTrustFrameworkPolicyContent](Set-MgTrustFrameworkPolicyContent.md)
 Update media content for the navigation property policies in trustFramework
 
+### [Test-MgIdentityCustomAuthenticationExtensionAuthenticationConfiguration](Test-MgIdentityCustomAuthenticationExtensionAuthenticationConfiguration.md)
+Invoke action validateAuthenticationConfiguration
+
 ### [Test-MgInformationProtectionDataLossPreventionPolicy](Test-MgInformationProtectionDataLossPreventionPolicy.md)
 Invoke action evaluate
 
@@ -1144,6 +1165,9 @@ Update entity in dataPolicyOperations
 
 ### [Update-MgIdentityApiConnector](Update-MgIdentityApiConnector.md)
 Update the navigation property apiConnectors in identity
+
+### [Update-MgIdentityAuthenticationEventListener](Update-MgIdentityAuthenticationEventListener.md)
+Update the navigation property authenticationEventListeners in identity
 
 ### [Update-MgIdentityB2CUserFlow](Update-MgIdentityB2CUserFlow.md)
 Update the navigation property b2cUserFlows in identity
@@ -1187,6 +1211,9 @@ Update the navigation property policies in identity
 ### [Update-MgIdentityContinuouAccessEvaluationPolicy](Update-MgIdentityContinuouAccessEvaluationPolicy.md)
 Update the navigation property continuousAccessEvaluationPolicy in identity
 
+### [Update-MgIdentityCustomAuthenticationExtension](Update-MgIdentityCustomAuthenticationExtension.md)
+Update the navigation property customAuthenticationExtensions in identity
+
 ### [Update-MgIdentityProvider](Update-MgIdentityProvider.md)
 Update the navigation property identityProviders in identity
 
@@ -1221,7 +1248,7 @@ Update the navigation property threatAssessmentRequests in informationProtection
 Update the navigation property results in informationProtection
 
 ### [Update-MgOauth2PermissionGrant](Update-MgOauth2PermissionGrant.md)
-Update entity in oauth2PermissionGrants
+Update oAuth2PermissionGrant (a delegated permission grant)
 
 ### [Update-MgPolicyAccessReviewPolicy](Update-MgPolicyAccessReviewPolicy.md)
 Update the navigation property accessReviewPolicy in policies

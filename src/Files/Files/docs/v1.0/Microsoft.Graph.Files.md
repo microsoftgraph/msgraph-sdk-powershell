@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Files
-Module Guid: 1b2b2c18-9aa2-4dfc-9d16-56990be52266
+Module Guid: 84ce8717-6aa0-452e-8863-9c6aff90f621
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.files
 Help Version: 1.0.0.0
 Locale: en-US
@@ -80,6 +80,9 @@ Invoke function getActivitiesByInterval
 ### [Get-MgDriveItemListItemAnalytic](Get-MgDriveItemListItemAnalytic.md)
 Get analytics from drives
 
+### [Get-MgDriveItemListItemDocumentSetVersion](Get-MgDriveItemListItemDocumentSetVersion.md)
+Get documentSetVersions from drives
+
 ### [Get-MgDriveItemListItemDriveItem](Get-MgDriveItemListItemDriveItem.md)
 Get driveItem from drives
 
@@ -155,6 +158,9 @@ Invoke function getActivitiesByInterval
 ### [Get-MgDriveListItemAnalytic](Get-MgDriveListItemAnalytic.md)
 Get analytics from drives
 
+### [Get-MgDriveListItemDocumentSetVersion](Get-MgDriveListItemDocumentSetVersion.md)
+Get documentSetVersions from drives
+
 ### [Get-MgDriveListItemDriveItem](Get-MgDriveListItemDriveItem.md)
 Get driveItem from drives
 
@@ -205,6 +211,9 @@ Invoke function getActivitiesByInterval
 
 ### [Get-MgDriveRootListItemAnalytic](Get-MgDriveRootListItemAnalytic.md)
 Get analytics from drives
+
+### [Get-MgDriveRootListItemDocumentSetVersion](Get-MgDriveRootListItemDocumentSetVersion.md)
+Get documentSetVersions from drives
 
 ### [Get-MgDriveRootListItemDriveItem](Get-MgDriveRootListItemDriveItem.md)
 Get driveItem from drives
@@ -281,6 +290,9 @@ Get listItem from groups
 ### [Get-MgGroupDriveItemListItemAnalytic](Get-MgGroupDriveItemListItemAnalytic.md)
 Get analytics from groups
 
+### [Get-MgGroupDriveItemListItemDocumentSetVersion](Get-MgGroupDriveItemListItemDocumentSetVersion.md)
+Get documentSetVersions from groups
+
 ### [Get-MgGroupDriveItemListItemDriveItem](Get-MgGroupDriveItemListItemDriveItem.md)
 Get driveItem from groups
 
@@ -350,6 +362,9 @@ Get items from groups
 ### [Get-MgGroupDriveListItemAnalytic](Get-MgGroupDriveListItemAnalytic.md)
 Get analytics from groups
 
+### [Get-MgGroupDriveListItemDocumentSetVersion](Get-MgGroupDriveListItemDocumentSetVersion.md)
+Get documentSetVersions from groups
+
 ### [Get-MgGroupDriveListItemDriveItem](Get-MgGroupDriveListItemDriveItem.md)
 Get driveItem from groups
 
@@ -391,6 +406,9 @@ Get listItem from groups
 
 ### [Get-MgGroupDriveRootListItemAnalytic](Get-MgGroupDriveRootListItemAnalytic.md)
 Get analytics from groups
+
+### [Get-MgGroupDriveRootListItemDocumentSetVersion](Get-MgGroupDriveRootListItemDocumentSetVersion.md)
+Get documentSetVersions from groups
 
 ### [Get-MgGroupDriveRootListItemDriveItem](Get-MgGroupDriveRootListItemDriveItem.md)
 Get driveItem from groups
@@ -485,6 +503,9 @@ Invoke function getActivitiesByInterval
 ### [Get-MgShareListItemAnalytic](Get-MgShareListItemAnalytic.md)
 Get analytics from shares
 
+### [Get-MgShareListItemDocumentSetVersion](Get-MgShareListItemDocumentSetVersion.md)
+Get documentSetVersions from shares
+
 ### [Get-MgShareListItemDriveItem](Get-MgShareListItemDriveItem.md)
 Get driveItem from shares
 
@@ -560,6 +581,9 @@ Get listItem from users
 ### [Get-MgUserDriveItemListItemAnalytic](Get-MgUserDriveItemListItemAnalytic.md)
 Get analytics from users
 
+### [Get-MgUserDriveItemListItemDocumentSetVersion](Get-MgUserDriveItemListItemDocumentSetVersion.md)
+Get documentSetVersions from users
+
 ### [Get-MgUserDriveItemListItemDriveItem](Get-MgUserDriveItemListItemDriveItem.md)
 Get driveItem from users
 
@@ -629,6 +653,9 @@ Get items from users
 ### [Get-MgUserDriveListItemAnalytic](Get-MgUserDriveListItemAnalytic.md)
 Get analytics from users
 
+### [Get-MgUserDriveListItemDocumentSetVersion](Get-MgUserDriveListItemDocumentSetVersion.md)
+Get documentSetVersions from users
+
 ### [Get-MgUserDriveListItemDriveItem](Get-MgUserDriveListItemDriveItem.md)
 Get driveItem from users
 
@@ -670,6 +697,9 @@ Get listItem from users
 
 ### [Get-MgUserDriveRootListItemAnalytic](Get-MgUserDriveRootListItemAnalytic.md)
 Get analytics from users
+
+### [Get-MgUserDriveRootListItemDocumentSetVersion](Get-MgUserDriveRootListItemDocumentSetVersion.md)
+Get documentSetVersions from users
 
 ### [Get-MgUserDriveRootListItemDriveItem](Get-MgUserDriveRootListItemDriveItem.md)
 Get driveItem from users
@@ -785,6 +815,9 @@ Create new navigation property to items for drives
 ### [New-MgDriveItemLink](New-MgDriveItemLink.md)
 Invoke action createLink
 
+### [New-MgDriveItemListItemDocumentSetVersion](New-MgDriveItemListItemDocumentSetVersion.md)
+Create new navigation property to documentSetVersions for drives
+
 ### [New-MgDriveItemListItemVersion](New-MgDriveItemListItemVersion.md)
 Create new navigation property to versions for drives
 
@@ -818,6 +851,9 @@ Create new navigation property to columnLinks for drives
 ### [New-MgDriveListItem](New-MgDriveListItem.md)
 Create new navigation property to items for drives
 
+### [New-MgDriveListItemDocumentSetVersion](New-MgDriveListItemDocumentSetVersion.md)
+Create new navigation property to documentSetVersions for drives
+
 ### [New-MgDriveListItemVersion](New-MgDriveListItemVersion.md)
 Create new navigation property to versions for drives
 
@@ -829,6 +865,9 @@ Create new navigation property to subscriptions for drives
 
 ### [New-MgDriveRootLink](New-MgDriveRootLink.md)
 Invoke action createLink
+
+### [New-MgDriveRootListItemDocumentSetVersion](New-MgDriveRootListItemDocumentSetVersion.md)
+Create new navigation property to documentSetVersions for drives
 
 ### [New-MgDriveRootListItemVersion](New-MgDriveRootListItemVersion.md)
 Create new navigation property to versions for drives
@@ -853,6 +892,9 @@ Create new navigation property to drives for groups
 
 ### [New-MgGroupDriveItem](New-MgGroupDriveItem.md)
 Create new navigation property to items for groups
+
+### [New-MgGroupDriveItemListItemDocumentSetVersion](New-MgGroupDriveItemListItemDocumentSetVersion.md)
+Create new navigation property to documentSetVersions for groups
 
 ### [New-MgGroupDriveItemListItemVersion](New-MgGroupDriveItemListItemVersion.md)
 Create new navigation property to versions for groups
@@ -884,6 +926,9 @@ Create new navigation property to columnLinks for groups
 ### [New-MgGroupDriveListItem](New-MgGroupDriveListItem.md)
 Create new navigation property to items for groups
 
+### [New-MgGroupDriveListItemDocumentSetVersion](New-MgGroupDriveListItemDocumentSetVersion.md)
+Create new navigation property to documentSetVersions for groups
+
 ### [New-MgGroupDriveListItemVersion](New-MgGroupDriveListItemVersion.md)
 Create new navigation property to versions for groups
 
@@ -892,6 +937,9 @@ Create new navigation property to operations for groups
 
 ### [New-MgGroupDriveListSubscription](New-MgGroupDriveListSubscription.md)
 Create new navigation property to subscriptions for groups
+
+### [New-MgGroupDriveRootListItemDocumentSetVersion](New-MgGroupDriveRootListItemDocumentSetVersion.md)
+Create new navigation property to documentSetVersions for groups
 
 ### [New-MgGroupDriveRootListItemVersion](New-MgGroupDriveRootListItemVersion.md)
 Create new navigation property to versions for groups
@@ -923,6 +971,9 @@ Create new navigation property to columnLinks for shares
 ### [New-MgShareListItem](New-MgShareListItem.md)
 Create new navigation property to items for shares
 
+### [New-MgShareListItemDocumentSetVersion](New-MgShareListItemDocumentSetVersion.md)
+Create new navigation property to documentSetVersions for shares
+
 ### [New-MgShareListItemVersion](New-MgShareListItemVersion.md)
 Create new navigation property to versions for shares
 
@@ -940,6 +991,9 @@ Create new navigation property to drives for users
 
 ### [New-MgUserDriveItem](New-MgUserDriveItem.md)
 Create new navigation property to items for users
+
+### [New-MgUserDriveItemListItemDocumentSetVersion](New-MgUserDriveItemListItemDocumentSetVersion.md)
+Create new navigation property to documentSetVersions for users
 
 ### [New-MgUserDriveItemListItemVersion](New-MgUserDriveItemListItemVersion.md)
 Create new navigation property to versions for users
@@ -971,6 +1025,9 @@ Create new navigation property to columnLinks for users
 ### [New-MgUserDriveListItem](New-MgUserDriveListItem.md)
 Create new navigation property to items for users
 
+### [New-MgUserDriveListItemDocumentSetVersion](New-MgUserDriveListItemDocumentSetVersion.md)
+Create new navigation property to documentSetVersions for users
+
 ### [New-MgUserDriveListItemVersion](New-MgUserDriveListItemVersion.md)
 Create new navigation property to versions for users
 
@@ -979,6 +1036,9 @@ Create new navigation property to operations for users
 
 ### [New-MgUserDriveListSubscription](New-MgUserDriveListSubscription.md)
 Create new navigation property to subscriptions for users
+
+### [New-MgUserDriveRootListItemDocumentSetVersion](New-MgUserDriveRootListItemDocumentSetVersion.md)
+Create new navigation property to documentSetVersions for users
 
 ### [New-MgUserDriveRootListItemVersion](New-MgUserDriveRootListItemVersion.md)
 Create new navigation property to versions for users
@@ -1009,6 +1069,9 @@ Delete navigation property items for drives
 
 ### [Remove-MgDriveItemListItem](Remove-MgDriveItemListItem.md)
 Delete navigation property listItem for drives
+
+### [Remove-MgDriveItemListItemDocumentSetVersion](Remove-MgDriveItemListItemDocumentSetVersion.md)
+Delete navigation property documentSetVersions for drives
 
 ### [Remove-MgDriveItemListItemField](Remove-MgDriveItemListItemField.md)
 Delete navigation property fields for drives
@@ -1049,6 +1112,9 @@ Delete navigation property columnLinks for drives
 ### [Remove-MgDriveListItem](Remove-MgDriveListItem.md)
 Delete navigation property items for drives
 
+### [Remove-MgDriveListItemDocumentSetVersion](Remove-MgDriveListItemDocumentSetVersion.md)
+Delete navigation property documentSetVersions for drives
+
 ### [Remove-MgDriveListItemField](Remove-MgDriveListItemField.md)
 Delete navigation property fields for drives
 
@@ -1069,6 +1135,9 @@ Delete navigation property root for drives
 
 ### [Remove-MgDriveRootListItem](Remove-MgDriveRootListItem.md)
 Delete navigation property listItem for drives
+
+### [Remove-MgDriveRootListItemDocumentSetVersion](Remove-MgDriveRootListItemDocumentSetVersion.md)
+Delete navigation property documentSetVersions for drives
 
 ### [Remove-MgDriveRootListItemField](Remove-MgDriveRootListItemField.md)
 Delete navigation property fields for drives
@@ -1099,6 +1168,9 @@ Delete navigation property items for groups
 
 ### [Remove-MgGroupDriveItemListItem](Remove-MgGroupDriveItemListItem.md)
 Delete navigation property listItem for groups
+
+### [Remove-MgGroupDriveItemListItemDocumentSetVersion](Remove-MgGroupDriveItemListItemDocumentSetVersion.md)
+Delete navigation property documentSetVersions for groups
 
 ### [Remove-MgGroupDriveItemListItemField](Remove-MgGroupDriveItemListItemField.md)
 Delete navigation property fields for groups
@@ -1139,6 +1211,9 @@ Delete navigation property columnLinks for groups
 ### [Remove-MgGroupDriveListItem](Remove-MgGroupDriveListItem.md)
 Delete navigation property items for groups
 
+### [Remove-MgGroupDriveListItemDocumentSetVersion](Remove-MgGroupDriveListItemDocumentSetVersion.md)
+Delete navigation property documentSetVersions for groups
+
 ### [Remove-MgGroupDriveListItemField](Remove-MgGroupDriveListItemField.md)
 Delete navigation property fields for groups
 
@@ -1159,6 +1234,9 @@ Delete navigation property root for groups
 
 ### [Remove-MgGroupDriveRootListItem](Remove-MgGroupDriveRootListItem.md)
 Delete navigation property listItem for groups
+
+### [Remove-MgGroupDriveRootListItemDocumentSetVersion](Remove-MgGroupDriveRootListItemDocumentSetVersion.md)
+Delete navigation property documentSetVersions for groups
 
 ### [Remove-MgGroupDriveRootListItemField](Remove-MgGroupDriveRootListItemField.md)
 Delete navigation property fields for groups
@@ -1199,6 +1277,9 @@ Delete navigation property columnLinks for shares
 ### [Remove-MgShareListItem](Remove-MgShareListItem.md)
 Delete navigation property items for shares
 
+### [Remove-MgShareListItemDocumentSetVersion](Remove-MgShareListItemDocumentSetVersion.md)
+Delete navigation property documentSetVersions for shares
+
 ### [Remove-MgShareListItemField](Remove-MgShareListItemField.md)
 Delete navigation property fields for shares
 
@@ -1228,6 +1309,9 @@ Delete navigation property items for users
 
 ### [Remove-MgUserDriveItemListItem](Remove-MgUserDriveItemListItem.md)
 Delete navigation property listItem for users
+
+### [Remove-MgUserDriveItemListItemDocumentSetVersion](Remove-MgUserDriveItemListItemDocumentSetVersion.md)
+Delete navigation property documentSetVersions for users
 
 ### [Remove-MgUserDriveItemListItemField](Remove-MgUserDriveItemListItemField.md)
 Delete navigation property fields for users
@@ -1268,6 +1352,9 @@ Delete navigation property columnLinks for users
 ### [Remove-MgUserDriveListItem](Remove-MgUserDriveListItem.md)
 Delete navigation property items for users
 
+### [Remove-MgUserDriveListItemDocumentSetVersion](Remove-MgUserDriveListItemDocumentSetVersion.md)
+Delete navigation property documentSetVersions for users
+
 ### [Remove-MgUserDriveListItemField](Remove-MgUserDriveListItemField.md)
 Delete navigation property fields for users
 
@@ -1288,6 +1375,9 @@ Delete navigation property root for users
 
 ### [Remove-MgUserDriveRootListItem](Remove-MgUserDriveRootListItem.md)
 Delete navigation property listItem for users
+
+### [Remove-MgUserDriveRootListItemDocumentSetVersion](Remove-MgUserDriveRootListItemDocumentSetVersion.md)
+Delete navigation property documentSetVersions for users
 
 ### [Remove-MgUserDriveRootListItemField](Remove-MgUserDriveRootListItemField.md)
 Delete navigation property fields for users
@@ -1313,11 +1403,17 @@ Delete navigation property versions for users
 ### [Restore-MgDriveItem](Restore-MgDriveItem.md)
 Invoke action restore
 
+### [Restore-MgDriveItemListItemDocumentSetVersion](Restore-MgDriveItemListItemDocumentSetVersion.md)
+Invoke action restore
+
 ### [Restore-MgDriveItemListItemVersion](Restore-MgDriveItemListItemVersion.md)
 Invoke action restoreVersion
 
 ### [Restore-MgDriveItemVersion](Restore-MgDriveItemVersion.md)
 Invoke action restoreVersion
+
+### [Restore-MgDriveListItemDocumentSetVersion](Restore-MgDriveListItemDocumentSetVersion.md)
+Invoke action restore
 
 ### [Restore-MgDriveListItemVersion](Restore-MgDriveListItemVersion.md)
 Invoke action restoreVersion
@@ -1325,11 +1421,17 @@ Invoke action restoreVersion
 ### [Restore-MgDriveRoot](Restore-MgDriveRoot.md)
 Invoke action restore
 
+### [Restore-MgDriveRootListItemDocumentSetVersion](Restore-MgDriveRootListItemDocumentSetVersion.md)
+Invoke action restore
+
 ### [Restore-MgDriveRootListItemVersion](Restore-MgDriveRootListItemVersion.md)
 Invoke action restoreVersion
 
 ### [Restore-MgDriveRootVersion](Restore-MgDriveRootVersion.md)
 Invoke action restoreVersion
+
+### [Restore-MgShareListItemDocumentSetVersion](Restore-MgShareListItemDocumentSetVersion.md)
+Invoke action restore
 
 ### [Restore-MgShareListItemVersion](Restore-MgShareListItemVersion.md)
 Invoke action restoreVersion
@@ -1490,6 +1592,9 @@ Update the navigation property items in drives
 ### [Update-MgDriveItemListItem](Update-MgDriveItemListItem.md)
 Update the navigation property listItem in drives
 
+### [Update-MgDriveItemListItemDocumentSetVersion](Update-MgDriveItemListItemDocumentSetVersion.md)
+Update the navigation property documentSetVersions in drives
+
 ### [Update-MgDriveItemListItemField](Update-MgDriveItemListItemField.md)
 Update the navigation property fields in drives
 
@@ -1529,6 +1634,9 @@ Update the navigation property columnLinks in drives
 ### [Update-MgDriveListItem](Update-MgDriveListItem.md)
 Update the navigation property items in drives
 
+### [Update-MgDriveListItemDocumentSetVersion](Update-MgDriveListItemDocumentSetVersion.md)
+Update the navigation property documentSetVersions in drives
+
 ### [Update-MgDriveListItemField](Update-MgDriveListItemField.md)
 Update the navigation property fields in drives
 
@@ -1549,6 +1657,9 @@ Update the navigation property root in drives
 
 ### [Update-MgDriveRootListItem](Update-MgDriveRootListItem.md)
 Update the navigation property listItem in drives
+
+### [Update-MgDriveRootListItemDocumentSetVersion](Update-MgDriveRootListItemDocumentSetVersion.md)
+Update the navigation property documentSetVersions in drives
 
 ### [Update-MgDriveRootListItemField](Update-MgDriveRootListItemField.md)
 Update the navigation property fields in drives
@@ -1579,6 +1690,9 @@ Update the navigation property items in groups
 
 ### [Update-MgGroupDriveItemListItem](Update-MgGroupDriveItemListItem.md)
 Update the navigation property listItem in groups
+
+### [Update-MgGroupDriveItemListItemDocumentSetVersion](Update-MgGroupDriveItemListItemDocumentSetVersion.md)
+Update the navigation property documentSetVersions in groups
 
 ### [Update-MgGroupDriveItemListItemField](Update-MgGroupDriveItemListItemField.md)
 Update the navigation property fields in groups
@@ -1619,6 +1733,9 @@ Update the navigation property columnLinks in groups
 ### [Update-MgGroupDriveListItem](Update-MgGroupDriveListItem.md)
 Update the navigation property items in groups
 
+### [Update-MgGroupDriveListItemDocumentSetVersion](Update-MgGroupDriveListItemDocumentSetVersion.md)
+Update the navigation property documentSetVersions in groups
+
 ### [Update-MgGroupDriveListItemField](Update-MgGroupDriveListItemField.md)
 Update the navigation property fields in groups
 
@@ -1639,6 +1756,9 @@ Update the navigation property root in groups
 
 ### [Update-MgGroupDriveRootListItem](Update-MgGroupDriveRootListItem.md)
 Update the navigation property listItem in groups
+
+### [Update-MgGroupDriveRootListItemDocumentSetVersion](Update-MgGroupDriveRootListItemDocumentSetVersion.md)
+Update the navigation property documentSetVersions in groups
 
 ### [Update-MgGroupDriveRootListItemField](Update-MgGroupDriveRootListItemField.md)
 Update the navigation property fields in groups
@@ -1679,6 +1799,9 @@ Update the navigation property columnLinks in shares
 ### [Update-MgShareListItem](Update-MgShareListItem.md)
 Update the navigation property items in shares
 
+### [Update-MgShareListItemDocumentSetVersion](Update-MgShareListItemDocumentSetVersion.md)
+Update the navigation property documentSetVersions in shares
+
 ### [Update-MgShareListItemField](Update-MgShareListItemField.md)
 Update the navigation property fields in shares
 
@@ -1708,6 +1831,9 @@ Update the navigation property items in users
 
 ### [Update-MgUserDriveItemListItem](Update-MgUserDriveItemListItem.md)
 Update the navigation property listItem in users
+
+### [Update-MgUserDriveItemListItemDocumentSetVersion](Update-MgUserDriveItemListItemDocumentSetVersion.md)
+Update the navigation property documentSetVersions in users
 
 ### [Update-MgUserDriveItemListItemField](Update-MgUserDriveItemListItemField.md)
 Update the navigation property fields in users
@@ -1748,6 +1874,9 @@ Update the navigation property columnLinks in users
 ### [Update-MgUserDriveListItem](Update-MgUserDriveListItem.md)
 Update the navigation property items in users
 
+### [Update-MgUserDriveListItemDocumentSetVersion](Update-MgUserDriveListItemDocumentSetVersion.md)
+Update the navigation property documentSetVersions in users
+
 ### [Update-MgUserDriveListItemField](Update-MgUserDriveListItemField.md)
 Update the navigation property fields in users
 
@@ -1768,6 +1897,9 @@ Update the navigation property root in users
 
 ### [Update-MgUserDriveRootListItem](Update-MgUserDriveRootListItem.md)
 Update the navigation property listItem in users
+
+### [Update-MgUserDriveRootListItemDocumentSetVersion](Update-MgUserDriveRootListItemDocumentSetVersion.md)
+Update the navigation property documentSetVersions in users
 
 ### [Update-MgUserDriveRootListItemField](Update-MgUserDriveRootListItemField.md)
 Update the navigation property fields in users

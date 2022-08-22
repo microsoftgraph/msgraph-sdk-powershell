@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgGroupCalendarPermission
 
 ## SYNOPSIS
-The permissions of the users with whom the calendar is shared.
+Delete navigation property calendarPermissions for groups
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Remove-MgGroupCalendarPermission -InputObject <ICalendarIdentity> [-IfMatch <Str
 ```
 
 ## DESCRIPTION
-The permissions of the users with whom the calendar is shared.
+Delete navigation property calendarPermissions for groups
 
 ## EXAMPLES
 
@@ -165,6 +165,7 @@ INPUTOBJECT <ICalendarIdentity>: Identity Parameter
   - `[CalendarPermissionId <String>]`: key: id of calendarPermission
   - `[EventId <String>]`: key: id of event
   - `[EventId1 <String>]`: key: id of event
+  - `[EventId2 <String>]`: key: id of event
   - `[ExtensionId <String>]`: key: id of extension
   - `[GroupId <String>]`: key: id of group
   - `[MultiValueLegacyExtendedPropertyId <String>]`: key: id of multiValueLegacyExtendedProperty

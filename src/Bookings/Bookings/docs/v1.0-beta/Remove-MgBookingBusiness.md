@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgBookingBusiness
 
 ## SYNOPSIS
-Delete entity from bookingBusinesses
+Delete bookingBusiness
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Remove-MgBookingBusiness -InputObject <IBookingsIdentity> [-IfMatch <String>] [-
 ```
 
 ## DESCRIPTION
-Delete entity from bookingBusinesses
+Delete bookingBusiness
 
 ## EXAMPLES
 

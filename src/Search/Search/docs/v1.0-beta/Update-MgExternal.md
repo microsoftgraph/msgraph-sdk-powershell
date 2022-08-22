@@ -149,6 +149,10 @@ BODYPARAMETER <IMicrosoftGraphExternalConnectorsExternal>: external
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Connections <IMicrosoftGraphExternalConnectorsExternalConnection[]>]`: 
     - `[Id <String>]`: 
+    - `[ActivitySettings <IMicrosoftGraphExternalConnectorsActivitySettings>]`: activitySettings
+      - `[(Any) <Object>]`: This indicates any property can be added to this object.
+      - `[UrlToItemResolvers <IMicrosoftGraphExternalConnectorsUrlToItemResolverBase[]>]`: Specifies configurations to identify an externalItem based on a shared URL.
+        - `[Priority <Int32?>]`: The priority which defines the sequence in which the urlToItemResolverBase instances are evaluated.
     - `[ComplianceSettings <IMicrosoftGraphExternalConnectorsComplianceSettings>]`: complianceSettings
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[EDiscoveryResultTemplates <IMicrosoftGraphExternalConnectorsDisplayTemplate[]>]`: 
@@ -182,6 +186,11 @@ BODYPARAMETER <IMicrosoftGraphExternalConnectorsExternal>: external
         - `[IdentitySource <String>]`: identitySourceType
         - `[Type <String>]`: aclType
         - `[Value <String>]`: The unique identifer of the identity. In case of Azure Active Directory identities, value is set to the object identifier of the user, group or tenant for types user, group and everyone (and everyoneExceptGuests) respectively. In case of external groups value is set to the ID of the externalGroup.
+      - `[Activities <IMicrosoftGraphExternalConnectorsExternalActivity[]>]`: Write-only property. Returns results.
+        - `[Id <String>]`: 
+        - `[PerformedBy <IMicrosoftGraphExternalConnectorsIdentity>]`: identity
+        - `[StartDateTime <DateTime?>]`: When the particular activity occurred.
+        - `[Type <String>]`: externalActivityType
       - `[Content <IMicrosoftGraphExternalConnectorsExternalItemContent>]`: externalItemContent
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[Type <String>]`: externalItemContentType
@@ -231,6 +240,10 @@ BODYPARAMETER <IMicrosoftGraphExternalConnectorsExternal>: external
 
 CONNECTIONS <IMicrosoftGraphExternalConnectorsExternalConnection[]>: .
   - `[Id <String>]`: 
+  - `[ActivitySettings <IMicrosoftGraphExternalConnectorsActivitySettings>]`: activitySettings
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+    - `[UrlToItemResolvers <IMicrosoftGraphExternalConnectorsUrlToItemResolverBase[]>]`: Specifies configurations to identify an externalItem based on a shared URL.
+      - `[Priority <Int32?>]`: The priority which defines the sequence in which the urlToItemResolverBase instances are evaluated.
   - `[ComplianceSettings <IMicrosoftGraphExternalConnectorsComplianceSettings>]`: complianceSettings
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[EDiscoveryResultTemplates <IMicrosoftGraphExternalConnectorsDisplayTemplate[]>]`: 
@@ -264,6 +277,11 @@ CONNECTIONS <IMicrosoftGraphExternalConnectorsExternalConnection[]>: .
       - `[IdentitySource <String>]`: identitySourceType
       - `[Type <String>]`: aclType
       - `[Value <String>]`: The unique identifer of the identity. In case of Azure Active Directory identities, value is set to the object identifier of the user, group or tenant for types user, group and everyone (and everyoneExceptGuests) respectively. In case of external groups value is set to the ID of the externalGroup.
+    - `[Activities <IMicrosoftGraphExternalConnectorsExternalActivity[]>]`: Write-only property. Returns results.
+      - `[Id <String>]`: 
+      - `[PerformedBy <IMicrosoftGraphExternalConnectorsIdentity>]`: identity
+      - `[StartDateTime <DateTime?>]`: When the particular activity occurred.
+      - `[Type <String>]`: externalActivityType
     - `[Content <IMicrosoftGraphExternalConnectorsExternalItemContent>]`: externalItemContent
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Type <String>]`: externalItemContentType

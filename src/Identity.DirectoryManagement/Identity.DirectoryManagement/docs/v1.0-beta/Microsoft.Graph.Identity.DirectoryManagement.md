@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Identity.DirectoryManagement
-Module Guid: 20e42da0-2136-42fe-b3be-a9806e550eab
+Module Guid: d4968fd5-b1b0-429a-8ab5-99a2a36bc3d7
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.directorymanagement
 Help Version: 1.0.0.0
 Locale: en-US
@@ -175,6 +175,9 @@ Get commands from devices
 
 ### [Get-MgDeviceCommandResponsepayload](Get-MgDeviceCommandResponsepayload.md)
 Get responsepayload from devices
+
+### [Get-MgDeviceDelta](Get-MgDeviceDelta.md)
+Invoke function delta
 
 ### [Get-MgDeviceExtension](Get-MgDeviceExtension.md)
 Get extensions from devices
@@ -410,8 +413,14 @@ Get favicon for the navigation property localizations from organization
 ### [Get-MgOrganizationBrandingLocalizationSquareLogo](Get-MgOrganizationBrandingLocalizationSquareLogo.md)
 Get squareLogo for the navigation property localizations from organization
 
+### [Get-MgOrganizationBrandingLocalizationSquareLogoDark](Get-MgOrganizationBrandingLocalizationSquareLogoDark.md)
+Get squareLogoDark for the navigation property localizations from organization
+
 ### [Get-MgOrganizationBrandingSquareLogo](Get-MgOrganizationBrandingSquareLogo.md)
 Get squareLogo for the navigation property branding from organization
+
+### [Get-MgOrganizationBrandingSquareLogoDark](Get-MgOrganizationBrandingSquareLogoDark.md)
+Get squareLogoDark for the navigation property branding from organization
 
 ### [Get-MgOrganizationById](Get-MgOrganizationById.md)
 Invoke action getByIds
@@ -812,8 +821,14 @@ Update favicon for the navigation property localizations in organization
 ### [Set-MgOrganizationBrandingLocalizationSquareLogo](Set-MgOrganizationBrandingLocalizationSquareLogo.md)
 Update squareLogo for the navigation property localizations in organization
 
+### [Set-MgOrganizationBrandingLocalizationSquareLogoDark](Set-MgOrganizationBrandingLocalizationSquareLogoDark.md)
+Update squareLogoDark for the navigation property localizations in organization
+
 ### [Set-MgOrganizationBrandingSquareLogo](Set-MgOrganizationBrandingSquareLogo.md)
 Update squareLogo for the navigation property branding in organization
+
+### [Set-MgOrganizationBrandingSquareLogoDark](Set-MgOrganizationBrandingSquareLogoDark.md)
+Update squareLogoDark for the navigation property branding in organization
 
 ### [Set-MgOrganizationMobileDeviceManagementAuthority](Set-MgOrganizationMobileDeviceManagementAuthority.md)
 Invoke action setMobileDeviceManagementAuthority

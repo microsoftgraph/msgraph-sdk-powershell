@@ -1747,6 +1747,41 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  /deviceManagement/comanagedDevices/microsoft.graph.downloadAppDiagnostics:
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action downloadAppDiagnostics
+      operationId: deviceManagement.comanagedDevices_downloadAppDiagnostics
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                request:
+                  $ref: '#/components/schemas/microsoft.graph.powerliftDownloadRequest'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/octet-stream:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   /deviceManagement/comanagedDevices/microsoft.graph.executeAction:
     post:
       tags:
@@ -4887,6 +4922,41 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.cloudPcBulkRemoteActionResult'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  /deviceManagement/managedDevices/microsoft.graph.downloadAppDiagnostics:
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action downloadAppDiagnostics
+      operationId: deviceManagement.managedDevices_downloadAppDiagnostics
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                request:
+                  $ref: '#/components/schemas/microsoft.graph.powerliftDownloadRequest'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/octet-stream:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                    nullable: true
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
@@ -11421,6 +11491,24 @@ components:
         - beforeOrAfter
         - unknownFutureValue
       type: string
+    microsoft.graph.powerliftDownloadRequest:
+      title: powerliftDownloadRequest
+      type: object
+      properties:
+        files:
+          type: array
+          items:
+            type: string
+            nullable: true
+          description: The list of files to download
+        powerliftId:
+          pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
+          type: string
+          description: The unique id for the request
+          format: uuid
+      additionalProperties:
+        type: object
+      description: Request used to download app diagnostic files.
     microsoft.graph.managedDeviceRemoteAction:
       title: managedDeviceRemoteAction
       enum:
@@ -11748,7 +11836,8 @@ components:
       title: scheduledRetireState
       enum:
         - cancelRetire
-        - comfirmRetire
+        - confirmRetire
+        - unknownFutureValue
       type: string
       description: 'Cancel or confirm scheduled retire '
       x-ms-enum:
@@ -11758,9 +11847,12 @@ components:
           - value: cancelRetire
             description: Cancel retire.
             name: cancelRetire
-          - value: comfirmRetire
+          - value: confirmRetire
             description: Retire these devices.
-            name: comfirmRetire
+            name: confirmRetire
+          - value: unknownFutureValue
+            description: Evolvable enumeration sentinel value. Do not use.
+            name: unknownFutureValue
     microsoft.graph.deviceCompliancePolicyScript:
       title: deviceCompliancePolicyScript
       type: object
@@ -15268,6 +15360,8 @@ components:
               type: string
               description: The string id of the category's display name
               nullable: true
+            ingestionSource:
+              $ref: '#/components/schemas/microsoft.graph.ingestionSource'
             isRoot:
               type: boolean
               description: Defines if the category is a root category
@@ -15761,6 +15855,31 @@ components:
           - value: windows10IoTCoreCommercial
             description: Windows 10 IoT Core Commercial
             name: windows10IoTCoreCommercial
+    microsoft.graph.ingestionSource:
+      title: ingestionSource
+      enum:
+        - unknown
+        - custom
+        - builtIn
+        - unknownFutureValue
+      type: string
+      description: Category Ingestion source
+      x-ms-enum:
+        name: ingestionSource
+        modelAsString: false
+        values:
+          - value: unknown
+            description: Indicates unknown category
+            name: unknown
+          - value: custom
+            description: Indicates the category is ingested by IT admin with sufficient permissions through custom ingestion process
+            name: custom
+          - value: builtIn
+            description: Indicates the category is ingested through system ingestion process
+            name: builtIn
+          - value: unknownFutureValue
+            description: Unknown future enum value
+            name: unknownFutureValue
     microsoft.graph.deviceManagementSettingDefinition:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'

@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.DeviceManagement.Actions
-Module Guid: a162f9d1-a7c1-4058-98cd-9b6326850dcc
+Module Guid: 0987f3f9-3487-42b5-84d4-a523e01def35
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.actions
 Help Version: 1.0.0.0
 Locale: en-US
@@ -355,6 +355,12 @@ Invoke action shutDown
 
 ### [Invoke-MgDownDeviceManagementManagedDeviceShut](Invoke-MgDownDeviceManagementManagedDeviceShut.md)
 Invoke action shutDown
+
+### [Invoke-MgDownloadDeviceManagementComanagedDeviceAppDiagnostic](Invoke-MgDownloadDeviceManagementComanagedDeviceAppDiagnostic.md)
+Invoke action downloadAppDiagnostics
+
+### [Invoke-MgDownloadDeviceManagementManagedDeviceAppDiagnostic](Invoke-MgDownloadDeviceManagementManagedDeviceAppDiagnostic.md)
+Invoke action downloadAppDiagnostics
 
 ### [Invoke-MgExecuteDeviceManagementComanagedDeviceAction](Invoke-MgExecuteDeviceManagementComanagedDeviceAction.md)
 Invoke action executeAction

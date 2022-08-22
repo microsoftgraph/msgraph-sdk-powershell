@@ -18,7 +18,7 @@ Get-MgDirectoryObjectById [-AdditionalProperties <Hashtable>] [-Ids <String[]>] 
  [-WhatIf] [<CommonParameters>]
 ```
 
-### Get3
+### Get1
 ```
 Get-MgDirectoryObjectById
  -BodyParameter <IPathsG5Xp0HDirectoryobjectsMicrosoftGraphGetbyidsPostRequestbodyContentApplicationJsonSchema>
@@ -53,7 +53,7 @@ To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETE
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IPathsG5Xp0HDirectoryobjectsMicrosoftGraphGetbyidsPostRequestbodyContentApplicationJsonSchema
-Parameter Sets: Get3
+Parameter Sets: Get1
 Aliases:
 
 Required: True

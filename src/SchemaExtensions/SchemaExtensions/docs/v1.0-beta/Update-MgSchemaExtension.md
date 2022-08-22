@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgSchemaExtension
 
 ## SYNOPSIS
-Update entity in schemaExtensions
+Update schemaExtension
 
 ## SYNTAX
 
@@ -41,7 +41,7 @@ Update-MgSchemaExtension -InputObject <ISchemaExtensionsIdentity> [-AdditionalPr
 ```
 
 ## DESCRIPTION
-Update entity in schemaExtensions
+Update schemaExtension
 
 ## EXAMPLES
 

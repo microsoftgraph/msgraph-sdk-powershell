@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Identity.Governance
-Module Guid: 720e0873-5558-4eac-a5bf-f18cf30fd4d6
+Module Guid: 56e50e42-57be-4061-b3c3-501d927c0249
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance
 Help Version: 1.0.0.0
 Locale: en-US

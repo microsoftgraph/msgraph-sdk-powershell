@@ -36598,7 +36598,7 @@ paths:
     patch:
       tags:
         - places.place
-      summary: Update entity in places
+      summary: Update place
       operationId: places.place_UpdatePlace
       parameters:
         - name: place-id
