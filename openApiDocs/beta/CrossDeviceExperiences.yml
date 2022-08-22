@@ -2024,6 +2024,15 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: device
+      requestBody:
+        description: New navigation property ref value
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties:
+                type: object
+        required: true
       responses:
         '204':
           description: Success
