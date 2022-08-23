@@ -623,6 +623,15 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: application
+      requestBody:
+        description: New navigation property ref value
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties:
+                type: object
+        required: true
       responses:
         '204':
           description: Success
@@ -740,6 +749,15 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: application
+      requestBody:
+        description: New navigation property ref value
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties:
+                type: object
+        required: true
       responses:
         '204':
           description: Success
@@ -2060,6 +2078,15 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: application
+      requestBody:
+        description: New navigation property ref value
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties:
+                type: object
+        required: true
       responses:
         '204':
           description: Success
@@ -4339,6 +4366,15 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: application
+      requestBody:
+        description: New navigation property ref value
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties:
+                type: object
+        required: true
       responses:
         '204':
           description: Success
@@ -4528,6 +4564,15 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: application
+      requestBody:
+        description: New navigation property ref value
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties:
+                type: object
+        required: true
       responses:
         '204':
           description: Success
@@ -6148,6 +6193,15 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: onPremisesAgent
+      requestBody:
+        description: New navigation property ref value
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties:
+                type: object
+        required: true
       responses:
         '204':
           description: Success
@@ -6701,6 +6755,15 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: publishedResource
+      requestBody:
+        description: New navigation property ref value
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties:
+                type: object
+        required: true
       responses:
         '204':
           description: Success
@@ -7150,6 +7213,15 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: onPremisesAgent
+      requestBody:
+        description: New navigation property ref value
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties:
+                type: object
+        required: true
       responses:
         '204':
           description: Success
@@ -8065,6 +8137,15 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: connectorGroup
+      requestBody:
+        description: New navigation property ref value
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties:
+                type: object
+        required: true
       responses:
         '204':
           description: Success
@@ -8515,6 +8596,15 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: connector
+      requestBody:
+        description: New navigation property ref value
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties:
+                type: object
+        required: true
       responses:
         '204':
           description: Success
@@ -8997,6 +9087,15 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: publishedResource
+      requestBody:
+        description: New navigation property ref value
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties:
+                type: object
+        required: true
       responses:
         '204':
           description: Success
@@ -10324,6 +10423,15 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
+      requestBody:
+        description: New navigation property ref value
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties:
+                type: object
+        required: true
       responses:
         '204':
           description: Success
@@ -11335,6 +11443,15 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
+      requestBody:
+        description: New navigation property ref value
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties:
+                type: object
+        required: true
       responses:
         '204':
           description: Success
@@ -12518,6 +12635,15 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
+      requestBody:
+        description: New navigation property ref value
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties:
+                type: object
+        required: true
       responses:
         '204':
           description: Success
