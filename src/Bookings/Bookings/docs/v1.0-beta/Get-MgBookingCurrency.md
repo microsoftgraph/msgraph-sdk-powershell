@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgBookingCurrency
 
 ## SYNOPSIS
-Get entity from bookingCurrencies by key
+Get bookingCurrency
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgBookingCurrency -InputObject <IBookingsIdentity> [-ExpandProperty <String[
 ```
 
 ## DESCRIPTION
-Get entity from bookingCurrencies by key
+Get bookingCurrency
 
 ## EXAMPLES
 

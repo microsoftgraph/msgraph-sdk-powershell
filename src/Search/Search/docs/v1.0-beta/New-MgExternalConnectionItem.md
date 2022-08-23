@@ -15,8 +15,9 @@ Create new navigation property to items for external
 ### CreateExpanded (Default)
 ```
 New-MgExternalConnectionItem -ExternalConnectionId <String> [-Acl <IMicrosoftGraphExternalConnectorsAcl[]>]
- [-AdditionalProperties <Hashtable>] [-Content <IMicrosoftGraphExternalConnectorsExternalItemContent>]
- [-Id <String>] [-Properties <Hashtable>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Activities <IMicrosoftGraphExternalConnectorsExternalActivity[]>] [-AdditionalProperties <Hashtable>]
+ [-Content <IMicrosoftGraphExternalConnectorsExternalItemContent>] [-Id <String>] [-Properties <Hashtable>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
@@ -34,8 +35,9 @@ New-MgExternalConnectionItem -InputObject <ISearchIdentity>
 ### CreateViaIdentityExpanded
 ```
 New-MgExternalConnectionItem -InputObject <ISearchIdentity> [-Acl <IMicrosoftGraphExternalConnectorsAcl[]>]
- [-AdditionalProperties <Hashtable>] [-Content <IMicrosoftGraphExternalConnectorsExternalItemContent>]
- [-Id <String>] [-Properties <Hashtable>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Activities <IMicrosoftGraphExternalConnectorsExternalActivity[]>] [-AdditionalProperties <Hashtable>]
+ [-Content <IMicrosoftGraphExternalConnectorsExternalItemContent>] [-Id <String>] [-Properties <Hashtable>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -53,6 +55,23 @@ To construct, please use Get-Help -Online and see NOTES section for ACL properti
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphExternalConnectorsAcl[]
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Activities
+Write-only property.
+Returns results.
+To construct, please use Get-Help -Online and see NOTES section for ACTIVITIES properties and create a hash table.
+
+```yaml
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphExternalConnectorsExternalActivity[]
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -230,6 +249,15 @@ ACL <IMicrosoftGraphExternalConnectorsAcl[]>: An array of access control entries
   - `[Type <String>]`: aclType
   - `[Value <String>]`: The unique identifer of the identity. In case of Azure Active Directory identities, value is set to the object identifier of the user, group or tenant for types user, group and everyone (and everyoneExceptGuests) respectively. In case of external groups value is set to the ID of the externalGroup.
 
+ACTIVITIES <IMicrosoftGraphExternalConnectorsExternalActivity[]>: Write-only property. Returns results.
+  - `[Id <String>]`: 
+  - `[PerformedBy <IMicrosoftGraphExternalConnectorsIdentity>]`: identity
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+    - `[Id <String>]`: 
+    - `[Type <String>]`: identityType
+  - `[StartDateTime <DateTime?>]`: When the particular activity occurred.
+  - `[Type <String>]`: externalActivityType
+
 BODYPARAMETER <IMicrosoftGraphExternalConnectorsExternalItem>: externalItem
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: 
@@ -238,6 +266,14 @@ BODYPARAMETER <IMicrosoftGraphExternalConnectorsExternalItem>: externalItem
     - `[IdentitySource <String>]`: identitySourceType
     - `[Type <String>]`: aclType
     - `[Value <String>]`: The unique identifer of the identity. In case of Azure Active Directory identities, value is set to the object identifier of the user, group or tenant for types user, group and everyone (and everyoneExceptGuests) respectively. In case of external groups value is set to the ID of the externalGroup.
+  - `[Activities <IMicrosoftGraphExternalConnectorsExternalActivity[]>]`: Write-only property. Returns results.
+    - `[Id <String>]`: 
+    - `[PerformedBy <IMicrosoftGraphExternalConnectorsIdentity>]`: identity
+      - `[(Any) <Object>]`: This indicates any property can be added to this object.
+      - `[Id <String>]`: 
+      - `[Type <String>]`: identityType
+    - `[StartDateTime <DateTime?>]`: When the particular activity occurred.
+    - `[Type <String>]`: externalActivityType
   - `[Content <IMicrosoftGraphExternalConnectorsExternalItemContent>]`: externalItemContent
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Type <String>]`: externalItemContentType
@@ -254,6 +290,7 @@ INPUTOBJECT <ISearchIdentity>: Identity Parameter
   - `[AcronymId <String>]`: key: id of acronym
   - `[BookmarkId <String>]`: key: id of bookmark
   - `[ConnectionOperationId <String>]`: key: id of connectionOperation
+  - `[ExternalActivityId <String>]`: key: id of externalActivity
   - `[ExternalConnectionId <String>]`: key: id of externalConnection
   - `[ExternalGroupId <String>]`: key: id of externalGroup
   - `[ExternalItemId <String>]`: key: id of externalItem

@@ -8,19 +8,17 @@ schema: 2.0.0
 # Remove-MgUserCalendarSingleValueExtendedProperty
 
 ## SYNOPSIS
-The collection of single-value extended properties defined for the calendar.
-Read-only.
-Nullable.
+Delete navigation property singleValueExtendedProperties for users
 
 ## SYNTAX
 
-### Delete3 (Default)
+### Delete (Default)
 ```
 Remove-MgUserCalendarSingleValueExtendedProperty -SingleValueLegacyExtendedPropertyId <String>
  -UserId <String> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### Delete
+### Delete1
 ```
 Remove-MgUserCalendarSingleValueExtendedProperty -CalendarId <String>
  -SingleValueLegacyExtendedPropertyId <String> -UserId <String> [-IfMatch <String>] [-PassThru] [-Confirm]
@@ -33,16 +31,14 @@ Remove-MgUserCalendarSingleValueExtendedProperty -InputObject <ICalendarIdentity
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### DeleteViaIdentity3
+### DeleteViaIdentity1
 ```
 Remove-MgUserCalendarSingleValueExtendedProperty -InputObject <ICalendarIdentity> [-IfMatch <String>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-The collection of single-value extended properties defined for the calendar.
-Read-only.
-Nullable.
+Delete navigation property singleValueExtendedProperties for users
 
 ## EXAMPLES
 
@@ -53,7 +49,7 @@ key: id of calendar
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete
+Parameter Sets: Delete1
 Aliases:
 
 Required: True
@@ -84,7 +80,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.ICalendarIdentity
-Parameter Sets: DeleteViaIdentity, DeleteViaIdentity3
+Parameter Sets: DeleteViaIdentity, DeleteViaIdentity1
 Aliases:
 
 Required: True
@@ -114,7 +110,7 @@ key: id of singleValueLegacyExtendedProperty
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete, Delete3
+Parameter Sets: Delete, Delete1
 Aliases:
 
 Required: True
@@ -129,7 +125,7 @@ key: id of user
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete, Delete3
+Parameter Sets: Delete, Delete1
 Aliases:
 
 Required: True
@@ -197,6 +193,7 @@ INPUTOBJECT <ICalendarIdentity>: Identity Parameter
   - `[CalendarPermissionId <String>]`: key: id of calendarPermission
   - `[EventId <String>]`: key: id of event
   - `[EventId1 <String>]`: key: id of event
+  - `[EventId2 <String>]`: key: id of event
   - `[ExtensionId <String>]`: key: id of extension
   - `[GroupId <String>]`: key: id of group
   - `[MultiValueLegacyExtendedPropertyId <String>]`: key: id of multiValueLegacyExtendedProperty

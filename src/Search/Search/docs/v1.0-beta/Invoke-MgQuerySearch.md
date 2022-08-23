@@ -151,10 +151,10 @@ BODYPARAMETER <IPaths1Kd2XrlSearchMicrosoftGraphQueryPostRequestbodyContentAppli
     - `[EntityTypes <String[]>]`: One or more types of resources expected in the response. Possible values are: list, site, listItem, message, event, drive, driveItem, person, externalItem. See known limitations for those combinations of two or more entity types that are supported in the same search request. Required.
     - `[Fields <String[]>]`: Contains the fields to be returned for each resource object specified in entityTypes, allowing customization of the fields returned by default otherwise, including additional fields such as custom managed properties from SharePoint and OneDrive, or custom fields in externalItem from content that Microsoft Graph connectors bring in. The fields property can be using the semantic labels applied to properties. For example, if a property is label as title, you can retrieve it using the following syntax : label_title.Optional.
     - `[From <Int32?>]`: Specifies the offset for the search results. Offset 0 returns the very first result. Optional.
-    - `[Query <IMicrosoftGraphSearchQuery>]`: searchQuery
+    - `[Query <IMicrosoftGraphSearchQuery1>]`: searchQuery
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[QueryString <String>]`: The search query containing the search terms. Required.
-      - `[QueryString1 <IMicrosoftGraphSearchQueryString1>]`: searchQueryString
+      - `[QueryString1 <IMicrosoftGraphSearchQueryString2>]`: searchQueryString
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[Query <String>]`: Contains the actual search terms of the request.
       - `[QueryTemplate <String>]`: Provides a way to decorate the query string. Supports both KQL and query variables. Optional.
@@ -192,10 +192,10 @@ REQUESTS <IMicrosoftGraphSearchRequest[]>: .
   - `[EntityTypes <String[]>]`: One or more types of resources expected in the response. Possible values are: list, site, listItem, message, event, drive, driveItem, person, externalItem. See known limitations for those combinations of two or more entity types that are supported in the same search request. Required.
   - `[Fields <String[]>]`: Contains the fields to be returned for each resource object specified in entityTypes, allowing customization of the fields returned by default otherwise, including additional fields such as custom managed properties from SharePoint and OneDrive, or custom fields in externalItem from content that Microsoft Graph connectors bring in. The fields property can be using the semantic labels applied to properties. For example, if a property is label as title, you can retrieve it using the following syntax : label_title.Optional.
   - `[From <Int32?>]`: Specifies the offset for the search results. Offset 0 returns the very first result. Optional.
-  - `[Query <IMicrosoftGraphSearchQuery>]`: searchQuery
+  - `[Query <IMicrosoftGraphSearchQuery1>]`: searchQuery
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[QueryString <String>]`: The search query containing the search terms. Required.
-    - `[QueryString1 <IMicrosoftGraphSearchQueryString1>]`: searchQueryString
+    - `[QueryString1 <IMicrosoftGraphSearchQueryString2>]`: searchQueryString
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Query <String>]`: Contains the actual search terms of the request.
     - `[QueryTemplate <String>]`: Provides a way to decorate the query string. Supports both KQL and query variables. Optional.

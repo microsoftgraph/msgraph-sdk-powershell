@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Users.Actions
-Module Guid: e8aa2fa0-d700-4683-967f-219abd9a7a65
+Module Guid: 5f2fa8d9-6913-43ab-8af5-9f5abb1e9c7a
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.actions
 Help Version: 1.0.0.0
 Locale: en-US
@@ -301,6 +301,9 @@ Invoke action dismissReminder
 
 ### [Invoke-MgDismissUserEventReminder](Invoke-MgDismissUserEventReminder.md)
 Invoke action dismissReminder
+
+### [Invoke-MgDownloadUserManagedDeviceAppDiagnostic](Invoke-MgDownloadUserManagedDeviceAppDiagnostic.md)
+Invoke action downloadAppDiagnostics
 
 ### [Invoke-MgDownUserManagedDeviceShut](Invoke-MgDownUserManagedDeviceShut.md)
 Invoke action shutDown

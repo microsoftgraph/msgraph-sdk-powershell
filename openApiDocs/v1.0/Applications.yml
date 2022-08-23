@@ -1698,6 +1698,15 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: application
+      requestBody:
+        description: New navigation property ref value
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties:
+                type: object
+        required: true
       responses:
         '204':
           description: Success
@@ -1887,6 +1896,15 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: application
+      requestBody:
+        description: New navigation property ref value
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties:
+                type: object
+        required: true
       responses:
         '204':
           description: Success
@@ -2076,6 +2094,15 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: application
+      requestBody:
+        description: New navigation property ref value
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties:
+                type: object
+        required: true
       responses:
         '204':
           description: Success
@@ -3854,6 +3881,15 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
+      requestBody:
+        description: New navigation property ref value
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties:
+                type: object
+        required: true
       responses:
         '204':
           description: Success
@@ -4865,6 +4901,15 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
+      requestBody:
+        description: New navigation property ref value
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties:
+                type: object
+        required: true
       responses:
         '204':
           description: Success
@@ -5816,6 +5861,15 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
+      requestBody:
+        description: New navigation property ref value
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties:
+                type: object
+        required: true
       responses:
         '204':
           description: Success
@@ -6784,7 +6838,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: Directory objects that are owners of the application. Read-only. Nullable. Supports $expand.
+              description: Directory objects that are owners of the application. Read-only. Nullable. Supports $expand and $filter (eq when counting empty collections).
             tokenIssuancePolicies:
               type: array
               items:
@@ -6829,7 +6883,7 @@ components:
               nullable: true
             name:
               type: string
-              description: Name of the extension property. Not nullable.
+              description: Name of the extension property. Not nullable. Supports $filter (eq).
             targetObjects:
               type: array
               items:
@@ -6847,20 +6901,20 @@ components:
               type: array
               items:
                 type: string
-              description: 'Lists the audiences that can appear in the external token. This field is mandatory, and defaults to ''api://AzureADTokenExchange''. It says what Microsoft identity platform should accept in the aud claim in the incoming token. This value represents Azure AD in your external identity provider and has no fixed value across identity providers - you may need to create a new application registration in your identity provider to serve as the audience of this token. Required.'
+              description: The audience that can appear in the external token. This field is mandatory and should be set to api://AzureADTokenExchange for Azure AD. It says what Microsoft identity platform should accept in the aud claim in the incoming token. This value represents Azure AD in your external identity provider and has no fixed value across identity providers - you may need to create a new application registration in your identity provider to serve as the audience of this token. This field can only accept a single value and has a limit of 600 characters. Required.
             description:
               type: string
-              description: 'The un-validated, user-provided description of the federated identity credential. Optional.'
+              description: 'The un-validated, user-provided description of the federated identity credential. It has a limit of 600 characters. Optional.'
               nullable: true
             issuer:
               type: string
-              description: The URL of the external identity provider and must match the issuer claim of the external token being exchanged. The combination of the values of issuer and subject must be unique on the app. Required.
+              description: The URL of the external identity provider and must match the issuer claim of the external token being exchanged. The combination of the values of issuer and subject must be unique on the app. It has a limit of 600 characters. Required.
             name:
               type: string
-              description: 'is the unique identifier for the federated identity credential, which has a character limit of 120 characters and must be URL friendly. It is immutable once created. Required. Not nullable. Supports $filter (eq).'
+              description: 'is the unique identifier for the federated identity credential, which has a limit of 120 characters and must be URL friendly. It is immutable once created. Required. Not nullable. Supports $filter (eq).'
             subject:
               type: string
-              description: 'Required. The identifier of the external software workload within the external identity provider. Like the audience value, it has no fixed format, as each identity provider uses their own - sometimes a GUID, sometimes a colon delimited identifier, sometimes arbitrary strings. The value here must match the sub claim within the token presented to Azure AD. The combination of issuer and subject must be unique on the app. Supports $filter (eq).'
+              description: 'Required. The identifier of the external software workload within the external identity provider. Like the audience value, it has no fixed format, as each identity provider uses their own - sometimes a GUID, sometimes a colon delimited identifier, sometimes arbitrary strings. The value here must match the sub claim within the token presented to Azure AD. The combination of issuer and subject must be unique on the app. It has a limit of 600 characters. Supports $filter (eq).'
           additionalProperties:
             type: object
     microsoft.graph.homeRealmDiscoveryPolicy:
@@ -7234,6 +7288,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.federatedIdentityCredential'
+              description: Federated identities for a specific type of service principal - managed identity. Supports $expand and $filter (eq when counting empty collections).
             homeRealmDiscoveryPolicies:
               type: array
               items:

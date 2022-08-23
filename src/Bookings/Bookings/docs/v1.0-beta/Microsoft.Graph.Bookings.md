@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Bookings
-Module Guid: 7b1ab58d-68e6-42eb-add9-b7114bcab77f
+Module Guid: 69ab5200-ba3a-40e1-829a-a36e5f4f3d70
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.bookings
 Help Version: 1.0.0.0
 Locale: en-US
@@ -12,7 +12,7 @@ Microsoft Graph PowerShell Cmdlets
 
 ## Microsoft.Graph.Bookings Cmdlets
 ### [Get-MgBookingBusiness](Get-MgBookingBusiness.md)
-Get entity from bookingBusinesses by key
+Get bookingBusiness
 
 ### [Get-MgBookingBusinessAppointment](Get-MgBookingBusinessAppointment.md)
 Get appointments from bookingBusinesses
@@ -36,7 +36,7 @@ Invoke action getStaffAvailability
 Get staffMembers from bookingBusinesses
 
 ### [Get-MgBookingCurrency](Get-MgBookingCurrency.md)
-Get entity from bookingCurrencies by key
+Get bookingCurrency
 
 ### [New-MgBookingBusiness](New-MgBookingBusiness.md)
 Create bookingBusiness
@@ -66,7 +66,7 @@ Add new entity to bookingCurrencies
 Invoke action publish
 
 ### [Remove-MgBookingBusiness](Remove-MgBookingBusiness.md)
-Delete entity from bookingBusinesses
+Delete bookingBusiness
 
 ### [Remove-MgBookingBusinessAppointment](Remove-MgBookingBusinessAppointment.md)
 Delete navigation property appointments for bookingBusinesses
@@ -99,7 +99,7 @@ Invoke action cancel
 Invoke action unpublish
 
 ### [Update-MgBookingBusiness](Update-MgBookingBusiness.md)
-Update entity in bookingBusinesses
+Update bookingbusiness
 
 ### [Update-MgBookingBusinessAppointment](Update-MgBookingBusinessAppointment.md)
 Update the navigation property appointments in bookingBusinesses

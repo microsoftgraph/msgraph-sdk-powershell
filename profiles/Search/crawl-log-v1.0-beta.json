@@ -37,6 +37,22 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Search.yml"
     },
+    "/external/connections/{externalConnection-id}/items/{externalItem-id}/activities": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Search.yml"
+    },
+    "/external/connections/{externalConnection-id}/items/{externalItem-id}/activities/{externalActivity-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Search.yml"
+    },
+    "/external/connections/{externalConnection-id}/items/{externalItem-id}/activities/{externalActivity-id}/performedBy": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Search.yml"
+    },
+    "/external/connections/{externalConnection-id}/items/{externalItem-id}/microsoft.graph.externalConnectors.addActivities": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Search.yml"
+    },
     "/external/connections/{externalConnection-id}/operations": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Search.yml"
