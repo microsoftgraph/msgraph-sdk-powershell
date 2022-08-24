@@ -10,6 +10,7 @@ using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
+using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -38,11 +39,22 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
                     return await GetDeviceCodeCredentialAsync(authContext, cancellationToken).ConfigureAwait(false);
                 case AuthenticationType.AppOnly:
                     return await GetClientCertificateCredentialAsync(authContext).ConfigureAwait(false);
+                case AuthenticationType.ManagedIdentity:
+                    return await GetManagedIdentityCredentialAsync(authContext).ConfigureAwait(false);
                 case AuthenticationType.UserProvidedAccessToken:
                     return new UserProvidedTokenCredential();
                 default:
                     throw new NotSupportedException($"{authContext.AuthType} is not supported.");
             }
+        }
+
+        private static async Task<TokenCredential> GetManagedIdentityCredentialAsync(IAuthContext authContext)
+        {
+            if (authContext is null)
+                throw new AuthenticationException(ErrorConstants.Message.MissingAuthContext);
+            
+            var userAccountId = authContext.ManagedIdentityId.StartsWith(Constants.DefaultMsiIdPrefix) ? null : authContext.ManagedIdentityId;
+            return await Task.FromResult(new ManagedIdentityCredential(userAccountId)).ConfigureAwait(false);
         }
 
         private static async Task<InteractiveBrowserCredential> GetInteractiveBrowserCredentialAsync(IAuthContext authContext, CancellationToken cancellationToken = default)
@@ -181,9 +193,9 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
                 {
                     throw new Exception(string.Format(CultureInfo.CurrentCulture, ErrorConstants.Message.AuthenticationTimeout, Constants.MaxAuthenticationTimeOutInSeconds), taskCanceledEx);
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
-                    throw ex.InnerException ?? ex;
+                    throw;
                 }
             }
             return signInAuthContext;
@@ -203,10 +215,16 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
         {
             if (authContext is null)
                 throw new AuthenticationException(ErrorConstants.Message.MissingAuthContext);
-            if (authContext.AuthType == AuthenticationType.AppOnly)
-                return new[] { $"{GraphSession.Instance.Environment?.GraphEndpoint ?? Constants.DefaultGraphEndpoint}/.default" };
 
-            return authContext.Scopes;
+            switch (authContext.AuthType)
+            {
+                case AuthenticationType.AppOnly:
+                    return new[] { $"{GraphSession.Instance.Environment?.GraphEndpoint ?? Constants.DefaultGraphEndpoint}/.default" };
+                case AuthenticationType.ManagedIdentity:
+                    return new[] { GraphSession.Instance.Environment.GraphEndpoint };
+                default:
+                    return authContext.Scopes;
+            }
         }
 
         /// <summary>

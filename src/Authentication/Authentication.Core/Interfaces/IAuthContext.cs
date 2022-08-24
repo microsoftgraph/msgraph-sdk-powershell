@@ -11,7 +11,8 @@ namespace Microsoft.Graph.PowerShell.Authentication
     {
         Delegated,
         AppOnly,
-        UserProvidedAccessToken
+        UserProvidedAccessToken,
+        ManagedIdentity
     }
 
     public enum ContextScope
@@ -25,11 +26,13 @@ namespace Microsoft.Graph.PowerShell.Authentication
         InteractiveBrowser,
         DeviceCode,
         ClientCertificate,
-        UserProvidedAccessToken
+        UserProvidedAccessToken,
+        ManagedIdentity
     }
 
     public interface IAuthContext
     {
+        string ManagedIdentityId { get; set; }
         string ClientId { get; set; }
         string TenantId { get; set; }
         string[] Scopes { get; set; }

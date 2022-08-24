@@ -23,6 +23,7 @@ namespace Microsoft.Graph.PowerShell.Authentication
         public X509Certificate2 Certificate { get; set; }
         public Version PSHostVersion { get; set; }
         public TimeSpan ClientTimeout { get; set; } = TimeSpan.FromSeconds(Constants.ClientTimeout);
+        public string ManagedIdentityId { get; set; }
 
         public AuthContext()
         {
