@@ -8,9 +8,7 @@ schema: 2.0.0
 # Get-MgUserEventCalendar
 
 ## SYNOPSIS
-The calendar that contains the event.
-Navigation property.
-Read-only.
+Get calendar from users
 
 ## SYNTAX
 
@@ -25,9 +23,7 @@ Get-MgUserEventCalendar -InputObject <ICalendarIdentity> [-Property <String[]>] 
 ```
 
 ## DESCRIPTION
-The calendar that contains the event.
-Navigation property.
-Read-only.
+Get calendar from users
 
 ## EXAMPLES
 
@@ -121,6 +117,7 @@ INPUTOBJECT <ICalendarIdentity>: Identity Parameter
   - `[CalendarPermissionId <String>]`: key: id of calendarPermission
   - `[EventId <String>]`: key: id of event
   - `[EventId1 <String>]`: key: id of event
+  - `[EventId2 <String>]`: key: id of event
   - `[ExtensionId <String>]`: key: id of extension
   - `[GroupId <String>]`: key: id of group
   - `[MultiValueLegacyExtendedPropertyId <String>]`: key: id of multiValueLegacyExtendedProperty

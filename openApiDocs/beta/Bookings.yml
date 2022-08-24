@@ -138,7 +138,7 @@ paths:
     get:
       tags:
         - bookingBusinesses.bookingBusiness
-      summary: Get entity from bookingBusinesses by key
+      summary: Get bookingBusiness
       operationId: bookingBusinesses.bookingBusiness_GetBookingBusiness
       parameters:
         - name: bookingBusiness-id
@@ -240,7 +240,7 @@ paths:
     patch:
       tags:
         - bookingBusinesses.bookingBusiness
-      summary: Update entity in bookingBusinesses
+      summary: Update bookingbusiness
       operationId: bookingBusinesses.bookingBusiness_UpdateBookingBusiness
       parameters:
         - name: bookingBusiness-id
@@ -266,7 +266,7 @@ paths:
     delete:
       tags:
         - bookingBusinesses.bookingBusiness
-      summary: Delete entity from bookingBusinesses
+      summary: Delete bookingBusiness
       operationId: bookingBusinesses.bookingBusiness_DeleteBookingBusiness
       parameters:
         - name: bookingBusiness-id
@@ -2294,7 +2294,7 @@ paths:
     get:
       tags:
         - bookingCurrencies.bookingCurrency
-      summary: Get entity from bookingCurrencies by key
+      summary: Get bookingCurrency
       operationId: bookingCurrencies.bookingCurrency_GetBookingCurrency
       parameters:
         - name: bookingCurrency-id
@@ -2383,6 +2383,63 @@ paths:
           description: ETag
           schema:
             type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /solutions:
+    get:
+      tags:
+        - solutions.solutionsRoot
+      summary: Get solutions
+      operationId: solutions.solutionsRoot_GetSolutionsRoot
+      parameters:
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved entity
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.solutionsRoot'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - solutions.solutionsRoot
+      summary: Update solutions
+      operationId: solutions.solutionsRoot_UpdateSolutionsRoot
+      requestBody:
+        description: New property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.solutionsRoot'
+        required: true
       responses:
         '204':
           description: Success
@@ -2817,6 +2874,11 @@ components:
               description: 'The currency symbol. For example, the currency symbol for the US dollar and for the Australian dollar is $.'
           additionalProperties:
             type: object
+    microsoft.graph.solutionsRoot:
+      title: solutionsRoot
+      type: object
+      additionalProperties:
+        type: object
     microsoft.graph.bookingNamedEntity:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'

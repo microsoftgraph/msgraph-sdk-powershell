@@ -8,36 +8,36 @@ schema: 2.0.0
 # Remove-MgUserCalendarPermission
 
 ## SYNOPSIS
-The permissions of the users with whom the calendar is shared.
+Delete navigation property calendarPermissions for users
 
 ## SYNTAX
 
-### Delete (Default)
+### Delete2 (Default)
 ```
 Remove-MgUserCalendarPermission -CalendarPermissionId <String> -UserId <String> [-IfMatch <String>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### Delete1
+### Delete3
 ```
 Remove-MgUserCalendarPermission -CalendarId <String> -CalendarPermissionId <String> -UserId <String>
  [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### DeleteViaIdentity
+### DeleteViaIdentity2
 ```
 Remove-MgUserCalendarPermission -InputObject <ICalendarIdentity> [-IfMatch <String>] [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
-### DeleteViaIdentity1
+### DeleteViaIdentity3
 ```
 Remove-MgUserCalendarPermission -InputObject <ICalendarIdentity> [-IfMatch <String>] [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-The permissions of the users with whom the calendar is shared.
+Delete navigation property calendarPermissions for users
 
 ## EXAMPLES
 
@@ -48,7 +48,7 @@ key: id of calendar
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete1
+Parameter Sets: Delete3
 Aliases:
 
 Required: True
@@ -63,7 +63,7 @@ key: id of calendarPermission
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete, Delete1
+Parameter Sets: Delete2, Delete3
 Aliases:
 
 Required: True
@@ -94,7 +94,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.ICalendarIdentity
-Parameter Sets: DeleteViaIdentity, DeleteViaIdentity1
+Parameter Sets: DeleteViaIdentity2, DeleteViaIdentity3
 Aliases:
 
 Required: True
@@ -124,7 +124,7 @@ key: id of user
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete, Delete1
+Parameter Sets: Delete2, Delete3
 Aliases:
 
 Required: True
@@ -192,6 +192,7 @@ INPUTOBJECT <ICalendarIdentity>: Identity Parameter
   - `[CalendarPermissionId <String>]`: key: id of calendarPermission
   - `[EventId <String>]`: key: id of event
   - `[EventId1 <String>]`: key: id of event
+  - `[EventId2 <String>]`: key: id of event
   - `[ExtensionId <String>]`: key: id of extension
   - `[GroupId <String>]`: key: id of group
   - `[MultiValueLegacyExtendedPropertyId <String>]`: key: id of multiValueLegacyExtendedProperty

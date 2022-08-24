@@ -8,8 +8,7 @@ schema: 2.0.0
 # Remove-MgUserEventExtension
 
 ## SYNOPSIS
-The collection of open extensions defined for the event.
-Nullable.
+Delete navigation property extensions for users
 
 ## SYNTAX
 
@@ -26,8 +25,7 @@ Remove-MgUserEventExtension -InputObject <ICalendarIdentity> [-IfMatch <String>]
 ```
 
 ## DESCRIPTION
-The collection of open extensions defined for the event.
-Nullable.
+Delete navigation property extensions for users
 
 ## EXAMPLES
 
@@ -182,6 +180,7 @@ INPUTOBJECT <ICalendarIdentity>: Identity Parameter
   - `[CalendarPermissionId <String>]`: key: id of calendarPermission
   - `[EventId <String>]`: key: id of event
   - `[EventId1 <String>]`: key: id of event
+  - `[EventId2 <String>]`: key: id of event
   - `[ExtensionId <String>]`: key: id of extension
   - `[GroupId <String>]`: key: id of group
   - `[MultiValueLegacyExtendedPropertyId <String>]`: key: id of multiValueLegacyExtendedProperty

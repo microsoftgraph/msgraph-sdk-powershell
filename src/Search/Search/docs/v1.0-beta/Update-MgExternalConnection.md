@@ -14,7 +14,8 @@ Update the navigation property connections in external
 
 ### UpdateExpanded (Default)
 ```
-Update-MgExternalConnection -ExternalConnectionId <String> [-AdditionalProperties <Hashtable>]
+Update-MgExternalConnection -ExternalConnectionId <String>
+ [-ActivitySettings <IMicrosoftGraphExternalConnectorsActivitySettings>] [-AdditionalProperties <Hashtable>]
  [-ComplianceSettings <IMicrosoftGraphExternalConnectorsComplianceSettings>]
  [-Configuration <IMicrosoftGraphExternalConnectorsConfiguration>] [-ConnectorId <String>]
  [-Description <String>] [-EnabledContentExperiences <String>]
@@ -43,7 +44,8 @@ Update-MgExternalConnection -InputObject <ISearchIdentity>
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgExternalConnection -InputObject <ISearchIdentity> [-AdditionalProperties <Hashtable>]
+Update-MgExternalConnection -InputObject <ISearchIdentity>
+ [-ActivitySettings <IMicrosoftGraphExternalConnectorsActivitySettings>] [-AdditionalProperties <Hashtable>]
  [-ComplianceSettings <IMicrosoftGraphExternalConnectorsComplianceSettings>]
  [-Configuration <IMicrosoftGraphExternalConnectorsConfiguration>] [-ConnectorId <String>]
  [-Description <String>] [-EnabledContentExperiences <String>]
@@ -62,6 +64,22 @@ Update the navigation property connections in external
 ## EXAMPLES
 
 ## PARAMETERS
+
+### -ActivitySettings
+activitySettings
+To construct, please use Get-Help -Online and see NOTES section for ACTIVITYSETTINGS properties and create a hash table.
+
+```yaml
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphExternalConnectorsActivitySettings
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
 
 ### -AdditionalProperties
 Additional Parameters
@@ -432,9 +450,18 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
+ACTIVITYSETTINGS <IMicrosoftGraphExternalConnectorsActivitySettings>: activitySettings
+  - `[(Any) <Object>]`: This indicates any property can be added to this object.
+  - `[UrlToItemResolvers <IMicrosoftGraphExternalConnectorsUrlToItemResolverBase[]>]`: Specifies configurations to identify an externalItem based on a shared URL.
+    - `[Priority <Int32?>]`: The priority which defines the sequence in which the urlToItemResolverBase instances are evaluated.
+
 BODYPARAMETER <IMicrosoftGraphExternalConnectorsExternalConnection>: externalConnection
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: 
+  - `[ActivitySettings <IMicrosoftGraphExternalConnectorsActivitySettings>]`: activitySettings
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+    - `[UrlToItemResolvers <IMicrosoftGraphExternalConnectorsUrlToItemResolverBase[]>]`: Specifies configurations to identify an externalItem based on a shared URL.
+      - `[Priority <Int32?>]`: The priority which defines the sequence in which the urlToItemResolverBase instances are evaluated.
   - `[ComplianceSettings <IMicrosoftGraphExternalConnectorsComplianceSettings>]`: complianceSettings
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[EDiscoveryResultTemplates <IMicrosoftGraphExternalConnectorsDisplayTemplate[]>]`: 
@@ -468,6 +495,11 @@ BODYPARAMETER <IMicrosoftGraphExternalConnectorsExternalConnection>: externalCon
       - `[IdentitySource <String>]`: identitySourceType
       - `[Type <String>]`: aclType
       - `[Value <String>]`: The unique identifer of the identity. In case of Azure Active Directory identities, value is set to the object identifier of the user, group or tenant for types user, group and everyone (and everyoneExceptGuests) respectively. In case of external groups value is set to the ID of the externalGroup.
+    - `[Activities <IMicrosoftGraphExternalConnectorsExternalActivity[]>]`: Write-only property. Returns results.
+      - `[Id <String>]`: 
+      - `[PerformedBy <IMicrosoftGraphExternalConnectorsIdentity>]`: identity
+      - `[StartDateTime <DateTime?>]`: When the particular activity occurred.
+      - `[Type <String>]`: externalActivityType
     - `[Content <IMicrosoftGraphExternalConnectorsExternalItemContent>]`: externalItemContent
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Type <String>]`: externalItemContentType
@@ -544,6 +576,7 @@ INPUTOBJECT <ISearchIdentity>: Identity Parameter
   - `[AcronymId <String>]`: key: id of acronym
   - `[BookmarkId <String>]`: key: id of bookmark
   - `[ConnectionOperationId <String>]`: key: id of connectionOperation
+  - `[ExternalActivityId <String>]`: key: id of externalActivity
   - `[ExternalConnectionId <String>]`: key: id of externalConnection
   - `[ExternalGroupId <String>]`: key: id of externalGroup
   - `[ExternalItemId <String>]`: key: id of externalItem
@@ -557,6 +590,14 @@ ITEMS <IMicrosoftGraphExternalConnectorsExternalItem[]>: .
     - `[IdentitySource <String>]`: identitySourceType
     - `[Type <String>]`: aclType
     - `[Value <String>]`: The unique identifer of the identity. In case of Azure Active Directory identities, value is set to the object identifier of the user, group or tenant for types user, group and everyone (and everyoneExceptGuests) respectively. In case of external groups value is set to the ID of the externalGroup.
+  - `[Activities <IMicrosoftGraphExternalConnectorsExternalActivity[]>]`: Write-only property. Returns results.
+    - `[Id <String>]`: 
+    - `[PerformedBy <IMicrosoftGraphExternalConnectorsIdentity>]`: identity
+      - `[(Any) <Object>]`: This indicates any property can be added to this object.
+      - `[Id <String>]`: 
+      - `[Type <String>]`: identityType
+    - `[StartDateTime <DateTime?>]`: When the particular activity occurred.
+    - `[Type <String>]`: externalActivityType
   - `[Content <IMicrosoftGraphExternalConnectorsExternalItemContent>]`: externalItemContent
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Type <String>]`: externalItemContentType

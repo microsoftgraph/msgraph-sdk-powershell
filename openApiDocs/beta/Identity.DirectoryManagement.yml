@@ -623,6 +623,15 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: administrativeUnit
+      requestBody:
+        description: New navigation property ref value
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties:
+                type: object
+        required: true
       responses:
         '204':
           description: Success
@@ -4332,6 +4341,15 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: device
+      requestBody:
+        description: New navigation property ref value
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties:
+                type: object
+        required: true
       responses:
         '204':
           description: Success
@@ -5659,6 +5677,15 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: administrativeUnit
+      requestBody:
+        description: New navigation property ref value
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties:
+                type: object
+        required: true
       responses:
         '204':
           description: Success
@@ -7821,6 +7848,15 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: featureRolloutPolicy
+      requestBody:
+        description: New navigation property ref value
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties:
+                type: object
+        required: true
       responses:
         '204':
           description: Success
@@ -10573,6 +10609,15 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: directoryRole
+      requestBody:
+        description: New navigation property ref value
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties:
+                type: object
+        required: true
       responses:
         '204':
           description: Success
@@ -12318,7 +12363,7 @@ paths:
     get:
       tags:
         - domains.domain
-      summary: Get entity from domains by key
+      summary: Get domain
       operationId: domains.domain_GetDomain
       parameters:
         - name: domain-id

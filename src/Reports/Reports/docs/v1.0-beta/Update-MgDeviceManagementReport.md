@@ -16,7 +16,7 @@ Update the navigation property reports in deviceManagement
 ```
 Update-MgDeviceManagementReport [-AdditionalProperties <Hashtable>]
  [-CachedReportConfigurations <IMicrosoftGraphDeviceManagementCachedReportConfiguration[]>]
- [-ExportJobs <IMicrosoftGraphDeviceManagementExportJob[]>] [-Id <String>] [-PassThru] [-Confirm] [-WhatIf]
+ [-ExportJobs <IMicrosoftGraphDeviceManagementExportJob1[]>] [-Id <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -85,7 +85,7 @@ Entity representing a job to export a report
 To construct, please use Get-Help -Online and see NOTES section for EXPORTJOBS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceManagementExportJob[]
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceManagementExportJob1[]
 Parameter Sets: UpdateExpanded
 Aliases:
 
@@ -190,7 +190,7 @@ BODYPARAMETER <IMicrosoftGraphDeviceManagementReports1>: Singleton entity that a
     - `[ReportName <String>]`: Name of the report
     - `[Select <String[]>]`: Columns selected from the report
     - `[Status <DeviceManagementReportStatus?>]`: Possible statuses associated with a generated report
-  - `[ExportJobs <IMicrosoftGraphDeviceManagementExportJob[]>]`: Entity representing a job to export a report
+  - `[ExportJobs <IMicrosoftGraphDeviceManagementExportJob1[]>]`: Entity representing a job to export a report
     - `[Id <String>]`: 
     - `[ExpirationDateTime <DateTime?>]`: Time that the exported report expires
     - `[Filter <String>]`: Filters applied on the report
@@ -214,7 +214,7 @@ CACHEDREPORTCONFIGURATIONS <IMicrosoftGraphDeviceManagementCachedReportConfigura
   - `[Select <String[]>]`: Columns selected from the report
   - `[Status <DeviceManagementReportStatus?>]`: Possible statuses associated with a generated report
 
-EXPORTJOBS <IMicrosoftGraphDeviceManagementExportJob[]>: Entity representing a job to export a report
+EXPORTJOBS <IMicrosoftGraphDeviceManagementExportJob1[]>: Entity representing a job to export a report
   - `[Id <String>]`: 
   - `[ExpirationDateTime <DateTime?>]`: Time that the exported report expires
   - `[Filter <String>]`: Filters applied on the report

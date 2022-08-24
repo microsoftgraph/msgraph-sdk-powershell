@@ -26,7 +26,7 @@ using DriveNotFoundException = System.Management.Automation.DriveNotFoundExcepti
 namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
 {
     [Cmdlet(VerbsLifecycle.Invoke, "MgGraphRequest", DefaultParameterSetName = Constants.UserParameterSet)]
-    [Alias("Invoke-GraphRequest","Invoke-MgRestMethod")]
+    [Alias("Invoke-GraphRequest", "Invoke-MgRestMethod")]
     public class InvokeMgGraphRequest : PSCmdlet
     {
         private readonly CancellationTokenSource _cancellationTokenSource = new CancellationTokenSource();
@@ -397,7 +397,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                 {
                     uriBuilder.Query = bodyQueryParameters;
                 }
-                
+
                 // set body to null to prevent later FillRequestStream
                 Body = null;
             }
@@ -422,45 +422,48 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
             if (ShouldWriteToPipeline)
             {
                 var returnType = response.CheckReturnType();
-                if (returnType == RestReturnType.Json)
+                switch (returnType)
                 {
-                    var responseString = await response.Content.ReadAsStringAsync();
-                    ErrorRecord error;
-                    switch (OutputType)
-                    {
-                        case OutputType.HashTable:
-                            var hashTable = responseString.ConvertFromJson(true, null, out error);
-                            ThrowIfError(error);
-                            WriteObject(hashTable);
-                            break;
-                        case OutputType.PSObject:
-                            var psObject = responseString.ConvertFromJson(false, null, out error);
-                            ThrowIfError(error);
-                            WriteObject(psObject, true);
-                            break;
-                        case OutputType.HttpResponseMessage:
+                    case RestReturnType.Json:
+                        ErrorRecord error;
+                        string responseString;
+                        switch (OutputType)
+                        {
+                            case OutputType.HashTable:
+                                responseString = await response.Content.ReadAsStringAsync();
+                                var hashTable = responseString.ConvertFromJson(true, null, out error);
+                                ThrowIfError(error);
+                                WriteObject(hashTable);
+                                break;
+                            case OutputType.PSObject:
+                                responseString = await response.Content.ReadAsStringAsync();
+                                var psObject = responseString.ConvertFromJson(false, null, out error);
+                                ThrowIfError(error);
+                                WriteObject(psObject, true);
+                                break;
+                            case OutputType.HttpResponseMessage:
+                                WriteObject(response);
+                                break;
+                            case OutputType.Json:
+                                responseString = await response.Content.ReadAsStringAsync();
+                                WriteObject(responseString);
+                                break;
+                            default:
+                                throw new ArgumentOutOfRangeException(nameof(OutputType));
+                        }
+                        break;
+                    case RestReturnType.OctetStream:
+                        if (OutputType == OutputType.HttpResponseMessage)
                             WriteObject(response);
-                            break;
-                        case OutputType.Json:
-                            WriteObject(responseString);
-                            break;
-                        default:
-                            throw new ArgumentOutOfRangeException(nameof(OutputType));
-                    }
-                }
-                else if (returnType == RestReturnType.Image)
-                {
-                    var errorRecord =
-                        GetValidationError(Resources.NonJsonResponseWithoutOutputFilePath,
-                            ErrorConstants.Codes.InvokeGraphContentTypeException, returnType);
-                    ThrowIfError(errorRecord);
-                }
-                else if (returnType == RestReturnType.OctetStream)
-                {
-                    var errorRecord =
-                        GetValidationError(Resources.NonJsonResponseWithoutInfer,
-                            ErrorConstants.Codes.InvokeGraphContentTypeException, returnType, response.Content.Headers.ContentDisposition);
-                    ThrowIfError(errorRecord);
+                        else
+                            ThrowIfError(GetValidationError(Resources.NonJsonResponseWithoutInfer, ErrorConstants.Codes.InvokeGraphContentTypeException, returnType, response.Content.Headers.ContentDisposition));
+                        break;
+                    default:
+                        if (OutputType == OutputType.HttpResponseMessage)
+                            WriteObject(response);
+                        else
+                            ThrowIfError(GetValidationError(Resources.NonJsonResponseWithoutOutputFilePath, ErrorConstants.Codes.InvokeGraphContentTypeException, returnType));
+                        break;
                 }
             }
             if (ShouldSaveToOutFile)
@@ -801,7 +804,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                 var vi = SessionState.PSVariable;
                 vi.Set(SessionVariable, GraphRequestSession);
             }
-            
+
             // Handle Custom User Agents
             GraphRequestSession.UserAgent = UserAgent ?? _graphRequestUserAgent.UserAgent;
 
@@ -822,7 +825,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                 }
             }
         }
-        
+
         private void ValidateRequestUri()
         {
             if (Uri == null)
