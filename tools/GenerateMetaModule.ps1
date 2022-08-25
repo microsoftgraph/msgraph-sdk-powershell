@@ -9,8 +9,21 @@ Param(
     [string] $RepositoryName = "PSGallery",
     [string] $ArtifactsLocation = (Join-Path $PSScriptRoot "..\artifacts\"),
     [switch] $Pack,
-    [switch] $Publish
+    [switch] $Publish,
+    [switch] $Isolated
 )
+
+if (-not $Isolated) {
+    Write-Host -ForegroundColor Green 'Creating isolated process...'
+    $pwsh = [System.Diagnostics.Process]::GetCurrentProcess().Path
+    & "$pwsh" -NonInteractive -NoLogo -NoProfile -File $MyInvocation.MyCommand.Path @PSBoundParameters -Isolated
+
+    if($LastExitCode -ne 0) {
+        # Build failed. Don't attempt to run the module.
+        return
+    }
+}
+
 $ErrorActionPreference = 'Stop'
 $LASTEXITCODE = 0
 
@@ -80,7 +93,7 @@ $ApiVersion | ForEach-Object {
     $Module = ($CurrentApiVersion -eq "beta" ? "$ModulePrefix.Beta" : $ModulePrefix)
     $RequiredGraphModules = @()
     if ($null -ne $LoadedAuthModule) {
-        $RequiredGraphModules += @{ ModuleName = $LoadedAuthModule.Name ; ModuleVersion = $LoadedAuthModule.Version }
+        $RequiredGraphModules += @{ ModuleName = $LoadedAuthModule.Name ; RequiredVersion = $LoadedAuthModule.Version; PreRelease = $LoadedAuthModule.PrivateData.PSData.PreRelease }
     }
     else {
         Write-Warning "Module not found in $AuthModuleManifest."
@@ -92,13 +105,17 @@ $ApiVersion | ForEach-Object {
         $ModuleManifest = Join-Path $ModulesSrc $RequiredModule $CurrentApiVersion "$Module.$RequiredModule.psd1"
         $LoadedModule = Import-Module $ModuleManifest -PassThru -ErrorAction SilentlyContinue
         if ($null -ne $LoadedModule) {
-            $RequiredGraphModules += @{ ModuleName = $LoadedModule.Name ; RequiredVersion = $LoadedModule.Version; }
+            $RequiredGraphModules += @{ ModuleName = $LoadedModule.Name ; RequiredVersion = $LoadedModule.Version; PreRelease = $LoadedModule.PrivateData.PSData.PreRelease }
         }
         else {
             Write-Warning "Module not found in $ModuleManifest."
         }
     }
-    $ModuleManifestSettings.RequiredModules = $RequiredGraphModules
+    if ($RequiredGraphModules.Count -gt 0) {
+        $RequiredGraphModules | ForEach-Object {
+            $ModuleManifestSettings.RequiredModules += @{ ModuleName = $_.ModuleName ; ModuleVersion = $_.ModuleVersion; RequiredVersion = $_.RequiredVersion }
+        }
+    }
 
     if ($null -eq $NuspecOptions.version) {
         Write-Error "Version number is not set for $ModulePrefix module. Please set 'version' in $ModuleMetadataPath."

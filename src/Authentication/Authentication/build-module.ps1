@@ -17,10 +17,10 @@ $coreSrc = Join-Path $PSScriptRoot "../$ModuleName.Core"
 $cmdletsSrc = Join-Path $PSScriptRoot "../$ModuleName"
 
 # Generated output locations
-$outDir = "$PSScriptRoot/artifacts"
-$outDeps = "$outDir/Dependencies"
-$outCore = "$outDeps/Core"
-$outDesktop = "$outDeps/Desktop"
+$outDir = Join-Path $PSScriptRoot "artifacts"
+$outDeps = Join-Path $outDir "Dependencies"
+$outCore = Join-Path $outDeps "Core"
+$outDesktop = Join-Path $outDeps "Desktop"
 
 if ($PSEdition -ne 'Core') {
   Write-Error 'This script requires PowerShell Core to execute. [Note] Generated cmdlets will work in both PowerShell Core or Windows PowerShell.'
@@ -79,7 +79,9 @@ if ($LastExitCode -ne 0) {
 }
 
 # Ensure out directory exists and is clean.
-Remove-Item -Path $outDir -Recurse -ErrorAction Ignore
+if (Test-Path $outDir) {
+  Remove-Item -Path $outDir -Recurse -Force
+}
 New-Item -Path $outDir -ItemType Directory | out-null
 New-Item -Path $outDeps -ItemType Directory | out-null
 New-Item -Path $outCore -ItemType Directory | out-null

@@ -26,16 +26,16 @@
   ],
   "versions": {
     "authentication": {
-      "prerelease": "preview1",
-      "version": "1.11.0"
+      "prerelease": "preview2",
+      "version": "2.0.0"
     },
     "beta": {
-      "prerelease": "preview1",
-      "version": "1.11.0"
+      "prerelease": "preview2",
+      "version": "2.0.0"
     },
     "v1.0": {
-      "prerelease": "preview1",
-      "version": "1.11.0"
+      "prerelease": "preview2",
+      "version": "2.0.0"
     }
   }
 }

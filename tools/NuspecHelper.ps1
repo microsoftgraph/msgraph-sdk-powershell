@@ -90,9 +90,11 @@ function Set-Dependencies(
         $NewDependencyElement = $XmlDocument.CreateElement("dependency", $XmlDocument.DocumentElement.NamespaceURI)
         $NewDependencyElement.SetAttribute("id", $Dependency.ModuleName)
         if ($Dependency.ModuleVersion) {
-            $NewDependencyElement.SetAttribute("version", $Dependency.ModuleVersion)
+            $FullVersion = $Dependency.PreRelease ? "$($Dependency.ModuleVersion)-$($Dependency.PreRelease)" : $Dependency.ModuleVersion
+            $NewDependencyElement.SetAttribute("version", $FullVersion)
         } else {
-            $NewDependencyElement.SetAttribute("version", "[$($Dependency.RequiredVersion)]")
+            $FullVersion = $Dependency.PreRelease ? "$($Dependency.RequiredVersion)-$($Dependency.PreRelease)" : $Dependency.RequiredVersion
+            $NewDependencyElement.SetAttribute("version", "[$FullVersion]")
         }
 
         $MetadataElement["dependencies"].AppendChild($NewDependencyElement) | Out-Null

@@ -39,12 +39,16 @@ else {
     Set-CSProjValues -ModuleCsProj $ModuleCsProj -ModuleVersion $Version -PreRelease $Prerelease -Copyright $ModuleMetadata["copyright"]
 }
 
-# Build module
-Write-Debug "Building '$ModuleFullName' module..."
-& $BuildModulePS1 -Docs -Release -ExcludeExampleTemplates:$ExcludeExampleTemplates -ExcludeNotesSection:$ExcludeNotesSection
-if ($lastexitcode -ne 0) {
-    Write-Debug "Failed to build '$ModuleFullName' module."
-    exit $lastexitcode
+if ($ModuleFullName -ne "Microsoft.Graph.Authentication") {
+    # Build service modules.
+    # We need to build the service modules first because AutoREST will override the manifest settings on build.
+    # See https://github.com/Azure/autorest.powershell/issues/981.
+    Write-Debug "Building '$ModuleFullName' module..."
+    & $BuildModulePS1 -Docs -Release -ExcludeExampleTemplates:$ExcludeExampleTemplates -ExcludeNotesSection:$ExcludeNotesSection
+    if ($lastexitcode -ne 0) {
+        Write-Debug "Failed to build '$ModuleFullName' module."
+        exit $lastexitcode
+    }
 }
 
 [HashTable]$ModuleManifestSettings = @{
@@ -55,7 +59,9 @@ if ($lastexitcode -ne 0) {
 }
 
 if ($RequiredModules.Count -gt 0) {
-    $ModuleManifestSettings["RequiredModules"] = $RequiredModules
+    $RequiredModules | ForEach-Object {
+        $ModuleManifestSettings.RequiredModules += @{ ModuleName = $_.ModuleName ; ModuleVersion = $_.ModuleVersion; RequiredVersion = $_.RequiredVersion }
+    }
 }
 
 if ($Prerelease) {
@@ -69,3 +75,13 @@ else {
 Write-Debug "Updating '$ModuleFullName' module manifest and nuspec..."
 Update-ModuleManifest @ModuleManifestSettings
 Set-NuSpecValues -NuSpecFilePath $ModuleNuspec -VersionNumber $FullVersionNumber -Dependencies $RequiredModules -IconUrl $ModuleMetadata["iconUri"] -ReleaseNotes $ReleaseNotes
+
+if ($ModuleFullName -eq "Microsoft.Graph.Authentication") {
+    # Build auth modules.
+    Write-Debug "Building '$ModuleFullName' module..."
+    & $BuildModulePS1 -Docs -Release -ExcludeExampleTemplates:$ExcludeExampleTemplates -ExcludeNotesSection:$ExcludeNotesSection
+    if ($lastexitcode -ne 0) {
+        Write-Debug "Failed to build '$ModuleFullName' module."
+        exit $lastexitcode
+    }
+}

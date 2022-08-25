@@ -22,6 +22,11 @@ directive:
 # Remove cmdlets.
   - where:
       verb: Get
+      subject: ^(UserOwnedObject)$
+    set:
+      subject: $1ByType
+  - where:
+      verb: Get
       subject: ^(UserOnlineMeeting)$
     remove: true
   - where:
@@ -71,34 +76,6 @@ directive:
     set:
       verb: New
       subject: $1WindowsDefenderUpdateSignature
-  - where:
-      verb: Invoke
-      subject: ^Bulk(UserManagedDevice)RestoreCloudPc$
-    set:
-      subject: BulkRestore$1CloudPc
-      alias: Invoke-MgBulkUserManagedDeviceRestoreCloudPc
-  - where:
-      verb: Invoke
-      subject: ^Bulk(UserManagedDevice)ReprovisionCloudPc$
-    set:
-      subject: BulkReprovision$1CloudPc
-      alias: Invoke-MgBulkUserManagedDeviceReprovisionCloudPc
-  - where:
-      verb: Invoke
-      subject: ^Cloud(UserManagedDevice)$
-    set:
-      subject: Reprovision$1CloudPc
-      alias: Invoke-MgCloudUserManagedDevice
-  - where:
-      subject: ^(UserAuthenticationMethod)SmSign$
-    set:
-      subject: $1SmsSignIn
-      alias: ${verb}-MgUserAuthenticationMethodSmSign
-  - where:
-      subject: ^(UserSign)$
-    set:
-      subject: $1InSession
-      alias: ${verb}-MgUserSign
 ```
 
 ### Versioning

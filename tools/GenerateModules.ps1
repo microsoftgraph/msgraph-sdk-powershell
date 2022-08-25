@@ -67,7 +67,7 @@ $RequiredGraphModules = @()
 $AuthModuleManifest = Join-Path $ModulesSrc "Authentication" "Authentication" "artifacts" "Microsoft.Graph.Authentication.psd1"
 $LoadedAuthModule = Import-Module $AuthModuleManifest -PassThru -ErrorAction SilentlyContinue
 if ($null -ne $LoadedAuthModule) {
-    $RequiredGraphModules += @{ ModuleName = $LoadedAuthModule.Name ; ModuleVersion = $LoadedAuthModule.Version }
+    $RequiredGraphModules += @{ ModuleName = $LoadedAuthModule.Name ; RequiredVersion = $LoadedAuthModule.Version; PreRelease = $LoadedAuthModule.PrivateData.PSData.PreRelease }
 }
 else {
     Write-Warning "Module not found in $AuthModuleManifest."
