@@ -35,19 +35,18 @@ directive:
       subject: ^(Site)OnenoteNotebook(RecentNotebook$)
     set:
       subject: $1$2
-# TODO: Needs validation
-  # - where:
-  #     verb: Get
-  #     subject: ^GroupSite$
-  #     variant: ^Get$|^GetViaIdentity$|^List$
-  #   set:
-  #     subject: GroupSubSite
-  # - where:
-  #     verb: Get
-  #     subject: ^(Site)(Drive)$
-  #     variant: ^Get$|^GetViaIdentity$
-  #   set:
-  #     subject: $1Default$2
+  - where:
+      verb: Get
+      subject: ^GroupSite$
+      variant: ^Get1$|^GetViaIdentity1$|^List1$
+    set:
+      subject: GroupSubSite
+  - where:
+      verb: Get
+      subject: ^(Group|Site|GroupSite)(Drive)$
+      variant: ^Get$|^GetViaIdentity$
+    set:
+      subject: $1Default$2
 # Rename cmdlets that call onenotePatchContent action.
   - where:
       verb: Update
