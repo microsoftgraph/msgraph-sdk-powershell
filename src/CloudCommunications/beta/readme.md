@@ -10,9 +10,3 @@ subject-prefix: ''
 prefix: MgBeta
 namespace: Microsoft.Graph.Beta.PowerShell
 ```
-
-### Versioning
-
-``` yaml
-module-version: 1.9.6
-```

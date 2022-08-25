@@ -54,9 +54,3 @@ directive:
   #   set:
   #     subject: $1WindowsUpdates$3
 ```
-
-### Versioning
-
-``` yaml
-release-notes: See https://aka.ms/GraphPowerShell-Release.
-```

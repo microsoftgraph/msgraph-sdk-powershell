@@ -42,10 +42,12 @@ directive:
     set:
       verb: Get
       subject: Report$1$2
-```
-
-### Versioning
-
-``` yaml
-release-notes: See https://aka.ms/GraphPowerShell-Release.
+  - where:
+      subject: ^(ReportApplicationSign)$
+    set:
+      subject: $1InDetailedSummary
+  - where:
+      subject: ^(ReportAzureAdApplicationSign)$
+    set:
+      subject: $1InSummary
 ```

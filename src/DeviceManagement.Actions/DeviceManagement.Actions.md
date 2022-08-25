@@ -18,7 +18,7 @@ require:
 ``` yaml
 directive:
 # Remove invalid paths that exceed Windows file name limit.
-  - remove-path-by-operation: ^deviceManagement.(reusablePolicySettings.referencingConfigurationPolicies_(assign|createCopy)|deviceShellScripts.userRunStates.deviceRunStates.managedDevice_.*|windowsAutopilotDeploymentProfiles.(assignedDevices_updateDeviceProperties|assignedDevices.deploymentProfile_assign|assignedDevices.intendedDeploymentProfile_assign|assignedDevices_assignResourceAccountToDevice|assignedDevices_unassignResourceAccountFromDevice)|deviceComplianceScripts.deviceRunStates.managedDevice_.*|deviceCustomAttributeShellScripts.(deviceRunStates.managedDevice_.*|userRunStates.deviceRunStates.managedDevice_.*)|deviceManagementScripts.deviceRunStates.managedDevice(_updateWindowsDeviceAccount|_logoutSharedAppleDeviceActiveUser|_deleteUserFromSharedAppleDevice|_createDeviceLogCollectionRequest|_sendCustomNotificationToCompanyPortal|_triggerConfigurationManagerAction|_windowsDefenderUpdateSignatures)|deviceManagementScripts.userRunStates.deviceRunStates.managedDevice_.*|deviceConfigurations.groupAssignments.deviceConfiguration(_assignedAccessMultiModeProfiles|_windowsPrivacyAccessControls)|deviceHealthScripts.deviceRunStates.managedDevice(_sendCustomNotificationToCompanyPortal|_createDeviceLogCollectionRequest)|deviceShellScripts.deviceRunStates.managedDevice_sendCustomNotificationToCompanyPortal)$
+  - remove-path-by-operation: ^deviceManagement.(userExperienceAnalyticsDeviceScope_.*|reusablePolicySettings.referencingConfigurationPolicies_(assign|createCopy)|deviceShellScripts.userRunStates.deviceRunStates.managedDevice_.*|windowsAutopilotDeploymentProfiles.(assignedDevices_updateDeviceProperties|assignedDevices.deploymentProfile_assign|assignedDevices.intendedDeploymentProfile_assign|assignedDevices_assignResourceAccountToDevice|assignedDevices_unassignResourceAccountFromDevice)|deviceComplianceScripts.deviceRunStates.managedDevice_.*|deviceCustomAttributeShellScripts.(deviceRunStates.managedDevice_.*|userRunStates.deviceRunStates.managedDevice_.*)|deviceManagementScripts.deviceRunStates.managedDevice(_updateWindowsDeviceAccount|_logoutSharedAppleDeviceActiveUser|_deleteUserFromSharedAppleDevice|_createDeviceLogCollectionRequest|_sendCustomNotificationToCompanyPortal|_triggerConfigurationManagerAction|_windowsDefenderUpdateSignatures)|deviceManagementScripts.userRunStates.deviceRunStates.managedDevice_.*|deviceConfigurations.groupAssignments.deviceConfiguration(_assignedAccessMultiModeProfiles|_windowsPrivacyAccessControls)|deviceHealthScripts.deviceRunStates.managedDevice(_sendCustomNotificationToCompanyPortal|_createDeviceLogCollectionRequest)|deviceShellScripts.deviceRunStates.managedDevice_sendCustomNotificationToCompanyPortal)$
 
 # Remove cmdlets.
   - where:
@@ -142,10 +142,4 @@ directive:
   #   set:
   #     subject: Reprovision$1CloudPc
   #     alias: Invoke-MgCloudDeviceManagementManagedDevice
-```
-
-### Versioning
-
-``` yaml
-release-notes: See https://aka.ms/GraphPowerShell-Release.
 ```

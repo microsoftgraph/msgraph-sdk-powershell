@@ -18,7 +18,7 @@ require:
 ``` yaml
 directive:
 # Remove invalid paths.
-  - remove-path-by-operation: teams_GetGroup|team_ListTeam
+  - remove-path-by-operation: teams_GetGroup|users\.joinedTeams.*|users_(Get|Update|Delete|Create)JoinedTeams|.*_UpdateInstalledApps
 # Remove cmdlets
   - where:
       verb: Remove
@@ -32,10 +32,4 @@ directive:
       verb: Remove|Update
       subject: ^(Chat|TeamChannel|TeamPrimaryChannel)MessageHostedContent$
     remove: true
-```
-
-### Versioning
-
-``` yaml
-release-notes: See https://aka.ms/GraphPowerShell-Release.
 ```

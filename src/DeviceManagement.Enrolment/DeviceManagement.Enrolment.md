@@ -18,16 +18,10 @@ require:
 ``` yaml
 directive:
 # Remove invalid paths.
-  - remove-path-by-operation: ^deviceManagement_.*UserExperienceAnalytics.*$
+  - remove-path-by-operation: ^(deviceManagement_.*UserExperienceAnalytics.*|roleManagement\..*\.roleDefinitions\.inheritsPermissionsFrom.*)$
 # Remove cmdlets.
   - where:
       verb: Update
       subject: ^DeviceManagementWindowAutopilotDeviceIdentity$
     remove: true
-```
-
-### Versioning
-
-``` yaml
-release-notes: See https://aka.ms/GraphPowerShell-Release.
 ```

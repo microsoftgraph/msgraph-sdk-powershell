@@ -17,8 +17,8 @@ require:
 
 ``` yaml
 directive:
-  - remove-path-by-operation: ^identity_(Get|Create|Delete|Update|List)ConditionalAccess$|^policies\.policyRoot_.*PolicyRoot|^policies_(Get|Create|Delete|Update|List)ConditionalAccessPolicies$|^invitations\.invitation_(List|Get|Update|Delete)Invitation$|^invitations_(.*)InvitedUser$|^identityProviders.*$
-# Rename cmdlets with duplicates in their name.
+  - remove-path-by-operation: ^identity_(Get|Create|Delete|Update|List)ConditionalAccess$|^policies\.policyRoot_.*PolicyRoot|^policies_(Get|Create|Delete|Update|List)ConditionalAccessPolicies$|^invitations\.invitation_(List|Get|Update|Delete)Invitation$|^invitations_(.*)InvitedUser$|^identityProtection\.identityProtectionRoot_(.*)$|^identity\.identityContainer_(.*)$|^identityProviders(\.identityProvider.*|_.*)$
+# Remove cmdlets
   - where:
       subject: ^(Oauth2PermissionGrant)(\1)+
     set:
@@ -27,6 +27,10 @@ directive:
       subject: ^(DataPolicyOperation)(\1)+
     set:
       subject: $1
+  - where:
+      subject: ^(.*)(IdentityProtection)(.*)$
+    set:
+      subject: $1$3
 # Remove cmdlets
   - where:
       subject: ^UserAuthentication$
@@ -38,10 +42,4 @@ directive:
       verb: New|Update
       subject: ^UserAuthenticationPasswordMethod$
     remove: true
-```
-
-### Versioning
-
-``` yaml
-release-notes: See https://aka.ms/GraphPowerShell-Release.
 ```

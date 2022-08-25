@@ -25,9 +25,3 @@ directive:
       subject: ^UserLicenseDetail$
     remove: true
 ```
-
-### Versioning
-
-``` yaml
-release-notes: See https://aka.ms/GraphPowerShell-Release.
-```

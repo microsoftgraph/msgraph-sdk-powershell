@@ -80,9 +80,3 @@ directive:
     set:
       subject: $1Content
 ```
-
-### Versioning
-
-``` yaml
-release-notes: See https://aka.ms/GraphPowerShell-Release.
-```
