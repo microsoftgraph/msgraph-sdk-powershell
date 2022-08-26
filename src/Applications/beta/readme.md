@@ -6,7 +6,6 @@
 require:
   - $(this-folder)/../Applications.md
 title: $(service-name)
-subject-prefix: ''
-prefix: MgBeta
+subject-prefix: 'Beta'
 namespace: Microsoft.Graph.Beta.PowerShell
 ```

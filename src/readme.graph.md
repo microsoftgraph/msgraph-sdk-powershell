@@ -24,7 +24,6 @@ metadata:
 
 ``` yaml
 prefix: Mg
-subject-prefix: ''
 sanitize-names: false
 ```
 

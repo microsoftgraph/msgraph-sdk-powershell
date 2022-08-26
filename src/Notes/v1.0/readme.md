@@ -7,6 +7,5 @@ require:
   - $(this-folder)/../Notes.md
 title: $(service-name)
 subject-prefix: ''
-prefix: Mg
 namespace: Microsoft.Graph.PowerShell
 ```
