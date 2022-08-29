@@ -268,7 +268,7 @@
                 }
                 catch (Runtime.UndeclaredResponseException urexception)
                 {
-                    WriteError(new System.Management.Automation.ErrorRecord(urexception, urexception.StatusCode.ToString(), System.Management.Automation.ErrorCategory.InvalidOperation, new { GroupId = GroupId, body = BodyParameterBody })
+                    WriteError(new System.Management.Automation.ErrorRecord(urexception, urexception.StatusCode.ToString(), System.Management.Automation.ErrorCategory.InvalidOperation, new { GroupId = GroupId, body = _bodyParameter })
                     {
                         ErrorDetails = new System.Management.Automation.ErrorDetails(urexception.Message) { RecommendedAction = urexception.Action }
                     });

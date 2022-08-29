@@ -30,14 +30,14 @@ PS C:\> {{ Add code here }}
 .Inputs
 Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
 .Outputs
-Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessPackageAssignment1
+Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessPackageAssignment
 .Notes
 
 .Link
 https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/get-mgentitlementmanagementassignment
 #>
 function Get-MgEntitlementManagementAssignment {
-[OutputType([Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessPackageAssignment1])]
+[OutputType([Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessPackageAssignment])]
 [CmdletBinding(DefaultParameterSetName='ListAll', PositionalBinding=$false)]
 param(
 

@@ -38,7 +38,6 @@ https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.gove
 function Get-MgEntitlementManagementCatalog {
 [OutputType([Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessPackageCatalog])]
 [CmdletBinding(DefaultParameterSetName='ListAll',PositionalBinding=$false)]
-[Microsoft.Graph.PowerShell.Profile('v1.0')]
 param(
 
     [Parameter()]
