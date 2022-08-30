@@ -56,7 +56,7 @@ $RequiredGraphModules = @()
 # PS Scripts
 $ManageGeneratedModulePS1 = Join-Path $PSScriptRoot ".\ManageGeneratedModule.ps1" -Resolve
 $BuildModulePS1 = Join-Path $PSScriptRoot ".\BuildModule.ps1" -Resolve
-$TestModulePS1 = Join-Path $PSScriptRoot ".\TestModule.ps1" -Resolve
+//$TestModulePS1 = Join-Path $PSScriptRoot ".\TestModule.ps1" -Resolve
 $PackModulePS1 = Join-Path $PSScriptRoot ".\PackModule.ps1" -Resolve
 $PublishModulePS1 = Join-Path $PSScriptRoot ".\PublishModule.ps1" -Resolve
 $ReadModuleReadMePS1 = Join-Path $PSScriptRoot ".\ReadModuleReadMe.ps1" -Resolve
