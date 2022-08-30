@@ -17,15 +17,10 @@ require:
 
 ``` yaml
 directive:
+  - remove-path-by-operation: ^print(_.*Reports|\.reports.*)
   - where:
       verb: New
       subject: PrintPrinter
       variant: ^Create$|^CreateExpanded$
     remove: true
-```
-
-### Versioning
-
-``` yaml
-release-notes: See https://aka.ms/GraphPowerShell-Release.
 ```

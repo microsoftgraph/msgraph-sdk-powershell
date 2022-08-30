@@ -18,7 +18,7 @@ require:
 ``` yaml
 directive:
 # Remove invalid paths.
-  - remove-path-by-operation: .*exceptionOccurrences.*|users\.onenote\..*.parent.*|users.*\.calendarView.*|.*\.notebooks\.section.*|.*\.sectionGroups\.section.*|.*\.sections\.pages.*|users\.calendar\.events.*|users\.calendarGroups\.calendars.*|users\.calendars\.events.*|users\.events\.calendar\.events.*|users\.pendingAccessReviewInstances\.stages\.decisions.*
+  - remove-path-by-operation: .*exceptionOccurrences.*|users\.joinedTeams.*|users\.onenote\..*.parent.*|users.*\.calendarView.*|.*\.notebooks\.section.*|.*\.sectionGroups\.section.*|.*\.sections\.pages.*|users\.calendar\.events.*|users\.calendarGroups\.calendars.*|users\.calendars\.events.*|users\.events\.calendar\.events.*|users\.pendingAccessReviewInstances\.stages\.decisions.*|users\.pendingAccessReviewInstances(\.decisions|\.stages\.decisions)\.instance.*
 # Remove cmdlets.
   - where:
       verb: Get
@@ -76,10 +76,27 @@ directive:
     set:
       verb: New
       subject: $1WindowsDefenderUpdateSignature
-```
-
-### Versioning
-
-``` yaml
-release-notes: See https://aka.ms/GraphPowerShell-Release.
+  - where:
+      verb: Invoke
+      subject: ^Bulk(UserManagedDevice)RestoreCloudPc$
+    set:
+      subject: BulkRestore$1CloudPc
+  - where:
+      verb: Invoke
+      subject: ^Bulk(UserManagedDevice)ReprovisionCloudPc$
+    set:
+      subject: BulkReprovision$1CloudPc
+  - where:
+      verb: Invoke
+      subject: ^Cloud(UserManagedDevice)$
+    set:
+      subject: Reprovision$1CloudPc
+  - where:
+      subject: ^(UserAuthenticationMethod)SmSign$
+    set:
+      subject: $1SmsSignIn
+  - where:
+      subject: ^(UserSign)$
+    set:
+      subject: $1InSession
 ```

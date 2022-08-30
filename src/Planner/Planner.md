@@ -50,9 +50,3 @@ directive:
       subject: ^GroupPlanner(PlanBucket[A-Z].*|PlanTask[A-Z].*)$
     remove: true
 ```
-
-### Versioning
-
-``` yaml
-release-notes: See https://aka.ms/GraphPowerShell-Release.
-```

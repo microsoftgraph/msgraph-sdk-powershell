@@ -24,10 +24,12 @@ directive:
       subject: (Application|ServicePrincipal)SynchronizationJobCredentials
       variant: Validate1|ValidateExpanded1|ValidateViaIdentity1|ValidateViaIdentityExpanded1
     remove: true
-```
-
-### Versioning
-
-``` yaml
-release-notes: See https://aka.ms/GraphPowerShell-Release.
+  - where:
+      subject: (ServicePrincipal)FederatedIdentityCredential.*
+    remove: true
+# Singularize credentials.
+  - where:
+      subject: (.*)(FederatedIdentityCredential)s(.*)
+    set:
+      subject: $1$2$3
 ```

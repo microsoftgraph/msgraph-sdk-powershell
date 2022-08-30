@@ -35,9 +35,3 @@ directive:
       subject: ^DeviceManagementVirtualEndpoint$
     remove: true
 ```
-
-### Versioning
-
-``` yaml
-release-notes: See https://aka.ms/GraphPowerShell-Release.
-```

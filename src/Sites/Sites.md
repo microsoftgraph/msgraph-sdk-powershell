@@ -18,7 +18,7 @@ require:
 ``` yaml
 directive:
 # Remove invalid paths.
-  - remove-path-by-operation: .*\.onenote\..*\.parent.*|.*\.notebooks\.section.*|.*\.sectionGroups\.section.*|.*\.sections\.pages.*|sites\..*_(Create|Get|Update|Delete)Activities$|sites\..*\.activities.*|^sites_(remove|add)$
+  - remove-path-by-operation: groups\.sites_.*Onenote$|groups\.sites\.onenote.*$|.*\.onenote\..*\.parent.*|.*\.notebooks\.section.*|.*\.sectionGroups\.section.*|.*\.sections\.pages.*|sites\..*_(Create|Get|Update|Delete)Activities$|sites\..*\.activities.*|^sites_(remove|add)$|^.*sites\.(.*_.*SourceColumn|contentTypes_.*(Base|BaseTypes|ColumnPositions)|.*_(Get|Create|Update|Delete)Activities|.*\.activities.*|termStore_ListSets|termStore\.groups\.sets(\.children.*|_.*ParentGroup|\.relations_.*|\.terms\.relations_.*|\.terms\.children.*|\.terms_.*Set)|termStore\.sets(\.children.*|_.*ParentGroup|\.parentGroup.*|\.relations.*|\.terms\.children.*|\.terms\.relations.*|\.terms_.*Set))$
 # Remove cmdlets
   - where:
       verb: Remove|New
@@ -35,6 +35,18 @@ directive:
       subject: ^(Site)OnenoteNotebook(RecentNotebook$)
     set:
       subject: $1$2
+  - where:
+      verb: Get
+      subject: ^GroupSite$
+      variant: ^Get1$|^GetViaIdentity1$|^List1$
+    set:
+      subject: GroupSubSite
+  - where:
+      verb: Get
+      subject: ^(Group|Site|GroupSite)(Drive)$
+      variant: ^Get$|^GetViaIdentity$
+    set:
+      subject: $1Default$2
 # Rename cmdlets that call onenotePatchContent action.
   - where:
       verb: Update
@@ -50,10 +62,4 @@ directive:
         name: SiteId Default Value
         description: Get the SiteId as default to root
         script: '"root"'
-```
-
-### Versioning
-
-``` yaml
-release-notes: See https://aka.ms/GraphPowerShell-Release.
 ```

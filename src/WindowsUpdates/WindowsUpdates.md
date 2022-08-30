@@ -41,22 +41,14 @@ directive:
       subject: ^(Enroll|UnEnroll)WindowsUpdatesDeploymentAudience(ExclusionAsset|ExclusionAssetById|MemberAsset|MemberAssetById)$
     remove: true
 # Alias cmdlets.
-# NB: We have to rename the command to the desired alias name, alias based on the rename, then undo the rename due to:
-# - https://github.com/Azure/autorest.powershell/issues/769
-# TODO: Use prefix in alias names.
-  # - where:
-  #     subject: (.*)(WindowsUpdates)(.*)
-  #   set:
-  #     subject: $1Wu$3
-  #     alias: ${verb}-Mg${subject}
-  # - where:
-  #     subject: (.*)(Wu)(.*)
-  #   set:
-  #     subject: $1WindowsUpdates$3
-```
-
-### Versioning
-
-``` yaml
-release-notes: See https://aka.ms/GraphPowerShell-Release.
+# NB: We have to rename the command to the desired alias name, alias based on the rename, then undo the rename due to - https://github.com/Azure/autorest.powershell/issues/769
+  - where:
+      subject: (.*)(WindowsUpdates)(.*)
+    set:
+      subject: $1Wu$3
+      alias: ${verb}-Mg${subject-prefix}${subject}
+  - where:
+      subject: (.*)(Wu)(.*)
+    set:
+      subject: $1WindowsUpdates$3
 ```

@@ -24,7 +24,6 @@ metadata:
 
 ``` yaml
 prefix: Mg
-subject-prefix: ''
 sanitize-names: false
 ```
 
@@ -414,6 +413,14 @@ directive:
       variant: ^(Check|Verify)(.*)
     set:
       verb: Confirm
+  - where:
+      subject: Io(Lob|Managed)
+    set:
+      subject: iOS$1
+  - where:
+      subject: ^(Office)(Configuration)(ClientConfiguration.*)
+    set:
+      subject: $1$3
 # Remove *AvailableExtensionProperty commands except those bound to DirectoryObject.
   - where:
       subject: ^(?!DirectoryObject).*AvailableExtensionProperty$

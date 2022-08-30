@@ -16,11 +16,5 @@ require:
 > see https://github.com/Azure/autorest/blob/master/docs/powershell/directives.md
 
 ``` yaml
-
-```
-
-### Versioning
-
-``` yaml
-release-notes: See https://aka.ms/GraphPowerShell-Release.
+# Directives go here!
 ```

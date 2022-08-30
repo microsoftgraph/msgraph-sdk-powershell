@@ -42,9 +42,3 @@ directive:
     set:
       subject: $1Multiple
 ```
-
-### Versioning
-
-``` yaml
-release-notes: See https://aka.ms/GraphPowerShell-Release.
-```

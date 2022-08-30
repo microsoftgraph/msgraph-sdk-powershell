@@ -27,9 +27,3 @@ directive:
     set:
       subject: $1Default$2
 ```
-
-### Versioning
-
-``` yaml
-release-notes: See https://aka.ms/GraphPowerShell-Release.
-```

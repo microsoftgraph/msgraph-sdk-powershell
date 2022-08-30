@@ -30,9 +30,3 @@ directive:
       subject: ^DeviceManagementComanagedDevice$
     remove: true
 ```
-
-### Versioning
-
-``` yaml
-release-notes: See https://aka.ms/GraphPowerShell-Release.
-```

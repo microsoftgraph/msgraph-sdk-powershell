@@ -18,10 +18,10 @@ require:
 ``` yaml
 directive:
   - remove-path-by-operation: .*_(Create|Get|Update|Set|Delete)Activities$|.*\.activities.*$|shares\..*_createLink
-```
-
-### Versioning
-
-``` yaml
-release-notes: See https://aka.ms/GraphPowerShell-Release.
+  - where:
+      verb: Get
+      subject: ^(Group|User)(Drive)$
+      variant: ^Get$|^GetViaIdentity$
+    set:
+      subject: $1Default$2
 ```

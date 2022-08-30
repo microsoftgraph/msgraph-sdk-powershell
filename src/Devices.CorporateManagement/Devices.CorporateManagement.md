@@ -42,15 +42,4 @@ directive:
       variant: ^Update1$|^UpdateExpanded1$|^UpdateViaIdentity1$|^UpdateViaIdentityExpanded1$
     set:
       subject: $1Multiple$2
-# Rename cmdlets.
-  - where:
-      subject: ^(Office)(Configuration)(ClientConfiguration.*)
-    set:
-      subject: $1$3
-```
-
-### Versioning
-
-``` yaml
-release-notes: See https://aka.ms/GraphPowerShell-Release.
 ```

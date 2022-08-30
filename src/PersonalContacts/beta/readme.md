@@ -6,13 +6,6 @@
 require:
   - $(this-folder)/../PersonalContacts.md
 title: $(service-name)
-subject-prefix: ''
-prefix: MgBeta
+subject-prefix: 'Beta'
 namespace: Microsoft.Graph.Beta.PowerShell
-```
-
-### Versioning
-
-``` yaml
-module-version: 1.9.6
 ```
