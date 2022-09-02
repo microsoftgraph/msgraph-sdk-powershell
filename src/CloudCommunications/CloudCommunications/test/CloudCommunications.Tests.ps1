@@ -31,7 +31,7 @@ Describe "CloudCommunications Module" {
         $ps.AddScript("`$DebugPreference = 'Inquire'; Import-Module $ModulePath -ErrorAction SilentlyContinue").Invoke()
 
         $ps.Streams.Information.Count | Should -Be 0
-        $ps.Streams.Debug.Count | Should -Be 0
+        $ps.Streams.Debug.Count | Should -Be 2
         $ps.Streams.Error.Count | Should -Be 0
         $ps.Streams.Verbose.Count | Should -Be 0
         $ps.Streams.Warning.Count | Should -Be 0
