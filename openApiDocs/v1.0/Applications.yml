@@ -11,6 +11,7 @@ paths:
       tags:
         - applications.application
       summary: List applications
+      description: Get the list of applications in this organization.
       operationId: applications.application_ListApplication
       parameters:
         - name: ConsistencyLevel
@@ -193,6 +194,7 @@ paths:
       tags:
         - applications.application
       summary: Create application
+      description: Create a new application object.
       operationId: applications.application_CreateApplication
       requestBody:
         description: New entity
@@ -216,6 +218,7 @@ paths:
       tags:
         - applications.application
       summary: Get application
+      description: Get the properties and relationships of an application object.
       operationId: applications.application_GetApplication
       parameters:
         - name: application-id
@@ -362,6 +365,7 @@ paths:
       tags:
         - applications.application
       summary: Update application
+      description: Update the properties of an application object.
       operationId: applications.application_UpdateApplication
       parameters:
         - name: application-id
@@ -388,6 +392,7 @@ paths:
       tags:
         - applications.application
       summary: Delete application
+      description: 'Delete an application object. When deleted, apps are moved to a temporary container and can be restored within 30 days. After that time, they are permanently deleted.'
       operationId: applications.application_DeleteApplication
       parameters:
         - name: application-id
@@ -413,6 +418,7 @@ paths:
       tags:
         - applications.directoryObject
       summary: Get createdOnBehalfOf from applications
+      description: Supports $filter (eq when counting empty collections). Read-only.
       operationId: applications_GetCreatedOnBehalfGraphOPre
       parameters:
         - name: application-id
@@ -462,6 +468,7 @@ paths:
       tags:
         - applications.extensionProperty
       summary: Get extensionProperties from applications
+      description: Read-only. Nullable. Supports $expand and $filter (eq and ne when counting empty collections and only with advanced query parameters).
       operationId: applications_ListExtensionProperties
       parameters:
         - name: application-id
@@ -575,6 +582,7 @@ paths:
       tags:
         - applications.extensionProperty
       summary: Get extensionProperties from applications
+      description: Read-only. Nullable. Supports $expand and $filter (eq and ne when counting empty collections and only with advanced query parameters).
       operationId: applications_GetExtensionProperties
       parameters:
         - name: application-id
@@ -700,6 +708,7 @@ paths:
       tags:
         - applications.federatedIdentityCredential
       summary: Get federatedIdentityCredentials from applications
+      description: Federated identities for applications. Supports $expand and $filter (eq when counting empty collections).
       operationId: applications_ListFederatedIdentityCredentials
       parameters:
         - name: application-id
@@ -810,6 +819,7 @@ paths:
       tags:
         - applications.federatedIdentityCredential
       summary: Get federatedIdentityCredentials from applications
+      description: Federated identities for applications. Supports $expand and $filter (eq when counting empty collections).
       operationId: applications_GetFederatedIdentityCredentials
       parameters:
         - name: application-id
@@ -1084,6 +1094,7 @@ paths:
       tags:
         - applications.application
       summary: Get logo for application from applications
+      description: The main logo for the application. Not nullable.
       operationId: applications.application_GetLogo
       parameters:
         - name: application-id
@@ -1108,6 +1119,7 @@ paths:
       tags:
         - applications.application
       summary: Update logo for application in applications
+      description: The main logo for the application. Not nullable.
       operationId: applications.application_SetLogo
       parameters:
         - name: application-id
@@ -1542,6 +1554,7 @@ paths:
       tags:
         - applications.directoryObject
       summary: Get owners from applications
+      description: Directory objects that are owners of the application. Read-only. Nullable. Supports $expand and $filter (eq when counting empty collections).
       operationId: applications_ListOwners
       parameters:
         - name: application-id
@@ -1647,6 +1660,7 @@ paths:
       tags:
         - applications.directoryObject
       summary: Get ref of owners from applications
+      description: Directory objects that are owners of the application. Read-only. Nullable. Supports $expand and $filter (eq when counting empty collections).
       operationId: applications_ListOwnersGraphBPreRef
       parameters:
         - name: application-id
@@ -1699,14 +1713,7 @@ paths:
             type: string
           x-ms-docs-key-type: application
       requestBody:
-        description: New navigation property ref value
-        content:
-          application/json:
-            schema:
-              type: object
-              additionalProperties:
-                type: object
-        required: true
+        $ref: '#/components/requestBodies/refPostBody'
       responses:
         '204':
           description: Success
@@ -1897,14 +1904,7 @@ paths:
             type: string
           x-ms-docs-key-type: application
       requestBody:
-        description: New navigation property ref value
-        content:
-          application/json:
-            schema:
-              type: object
-              additionalProperties:
-                type: object
-        required: true
+        $ref: '#/components/requestBodies/refPostBody'
       responses:
         '204':
           description: Success
@@ -2095,14 +2095,7 @@ paths:
             type: string
           x-ms-docs-key-type: application
       requestBody:
-        description: New navigation property ref value
-        content:
-          application/json:
-            schema:
-              type: object
-              additionalProperties:
-                type: object
-        required: true
+        $ref: '#/components/requestBodies/refPostBody'
       responses:
         '204':
           description: Success
@@ -2255,6 +2248,7 @@ paths:
       tags:
         - applicationTemplates.applicationTemplate
       summary: List applicationTemplates
+      description: Retrieve a list of applicationTemplate objects from the Azure AD application gallery.
       operationId: applicationTemplates.applicationTemplate_ListApplicationTemplate
       parameters:
         - $ref: '#/components/parameters/top'
@@ -2359,6 +2353,7 @@ paths:
       tags:
         - applicationTemplates.applicationTemplate
       summary: Get applicationTemplate
+      description: Retrieve the properties of an applicationTemplate object.
       operationId: applicationTemplates.applicationTemplate_GetApplicationTemplate
       parameters:
         - name: applicationTemplate-id
@@ -2505,6 +2500,7 @@ paths:
       tags:
         - groups.appRoleAssignment
       summary: Get appRoleAssignments from groups
+      description: Represents the app roles a group has been granted for an application. Supports $expand.
       operationId: groups_ListAppRoleAssignments
       parameters:
         - name: group-id
@@ -2624,6 +2620,7 @@ paths:
       tags:
         - groups.appRoleAssignment
       summary: Get appRoleAssignments from groups
+      description: Represents the app roles a group has been granted for an application. Supports $expand.
       operationId: groups_GetAppRoleAssignments
       parameters:
         - name: group-id
@@ -2751,6 +2748,7 @@ paths:
       tags:
         - servicePrincipals.servicePrincipal
       summary: List servicePrincipals
+      description: Retrieve a list of servicePrincipal objects.
       operationId: servicePrincipals.servicePrincipal_ListServicePrincipal
       parameters:
         - name: ConsistencyLevel
@@ -2845,6 +2843,8 @@ paths:
                 - tags desc
                 - tokenEncryptionKeyId
                 - tokenEncryptionKeyId desc
+                - verifiedPublisher
+                - verifiedPublisher desc
               type: string
         - name: $select
           in: query
@@ -2890,6 +2890,7 @@ paths:
                 - signInAudience
                 - tags
                 - tokenEncryptionKeyId
+                - verifiedPublisher
                 - appRoleAssignedTo
                 - appRoleAssignments
                 - claimsMappingPolicies
@@ -2946,6 +2947,7 @@ paths:
       tags:
         - servicePrincipals.servicePrincipal
       summary: Create servicePrincipal
+      description: Create a new servicePrincipal object.
       operationId: servicePrincipals.servicePrincipal_CreateServicePrincipal
       requestBody:
         description: New entity
@@ -2969,6 +2971,7 @@ paths:
       tags:
         - servicePrincipals.servicePrincipal
       summary: Get servicePrincipal
+      description: Retrieve the properties and relationships of a servicePrincipal object.
       operationId: servicePrincipals.servicePrincipal_GetServicePrincipal
       parameters:
         - name: servicePrincipal-id
@@ -3022,6 +3025,7 @@ paths:
                 - signInAudience
                 - tags
                 - tokenEncryptionKeyId
+                - verifiedPublisher
                 - appRoleAssignedTo
                 - appRoleAssignments
                 - claimsMappingPolicies
@@ -3159,7 +3163,7 @@ paths:
     patch:
       tags:
         - servicePrincipals.servicePrincipal
-      summary: Update servicePrincipal
+      summary: Update entity in servicePrincipals
       operationId: servicePrincipals.servicePrincipal_UpdateServicePrincipal
       parameters:
         - name: servicePrincipal-id
@@ -3186,6 +3190,7 @@ paths:
       tags:
         - servicePrincipals.servicePrincipal
       summary: Delete servicePrincipal
+      description: Delete a servicePrincipal object.
       operationId: servicePrincipals.servicePrincipal_DeleteServicePrincipal
       parameters:
         - name: servicePrincipal-id
@@ -3211,6 +3216,7 @@ paths:
       tags:
         - servicePrincipals.appRoleAssignment
       summary: Get appRoleAssignedTo from servicePrincipals
+      description: 'App role assignments for this app or service, granted to users, groups, and other service principals. Supports $expand.'
       operationId: servicePrincipals_ListAppRoleAssignedTo
       parameters:
         - name: servicePrincipal-id
@@ -3330,6 +3336,7 @@ paths:
       tags:
         - servicePrincipals.appRoleAssignment
       summary: Get appRoleAssignedTo from servicePrincipals
+      description: 'App role assignments for this app or service, granted to users, groups, and other service principals. Supports $expand.'
       operationId: servicePrincipals_GetAppRoleAssignedTo
       parameters:
         - name: servicePrincipal-id
@@ -3457,6 +3464,7 @@ paths:
       tags:
         - servicePrincipals.appRoleAssignment
       summary: Get appRoleAssignments from servicePrincipals
+      description: 'App role assignment for another app or service, granted to this service principal. Supports $expand.'
       operationId: servicePrincipals_ListAppRoleAssignments
       parameters:
         - name: servicePrincipal-id
@@ -3576,6 +3584,7 @@ paths:
       tags:
         - servicePrincipals.appRoleAssignment
       summary: Get appRoleAssignments from servicePrincipals
+      description: 'App role assignment for another app or service, granted to this service principal. Supports $expand.'
       operationId: servicePrincipals_GetAppRoleAssignments
       parameters:
         - name: servicePrincipal-id
@@ -3703,6 +3712,7 @@ paths:
       tags:
         - servicePrincipals.claimsMappingPolicy
       summary: Get claimsMappingPolicies from servicePrincipals
+      description: The claimsMappingPolicies assigned to this service principal. Supports $expand.
       operationId: servicePrincipals_ListClaimsMappingPolicies
       parameters:
         - name: servicePrincipal-id
@@ -3822,6 +3832,7 @@ paths:
       tags:
         - servicePrincipals.claimsMappingPolicy
       summary: Get ref of claimsMappingPolicies from servicePrincipals
+      description: The claimsMappingPolicies assigned to this service principal. Supports $expand.
       operationId: servicePrincipals_ListClaimsMappingPoliciesGraphBPreRef
       parameters:
         - name: servicePrincipal-id
@@ -3882,14 +3893,7 @@ paths:
             type: string
           x-ms-docs-key-type: servicePrincipal
       requestBody:
-        description: New navigation property ref value
-        content:
-          application/json:
-            schema:
-              type: object
-              additionalProperties:
-                type: object
-        required: true
+        $ref: '#/components/requestBodies/refPostBody'
       responses:
         '204':
           description: Success
@@ -3901,6 +3905,7 @@ paths:
       tags:
         - servicePrincipals.directoryObject
       summary: Get createdObjects from servicePrincipals
+      description: Directory objects created by this service principal. Read-only. Nullable.
       operationId: servicePrincipals_ListCreatedObjects
       parameters:
         - name: servicePrincipal-id
@@ -3969,6 +3974,7 @@ paths:
       tags:
         - servicePrincipals.directoryObject
       summary: Get createdObjects from servicePrincipals
+      description: Directory objects created by this service principal. Read-only. Nullable.
       operationId: servicePrincipals_GetCreatedObjects
       parameters:
         - name: servicePrincipal-id
@@ -4489,6 +4495,7 @@ paths:
       tags:
         - servicePrincipals.federatedIdentityCredential
       summary: Get federatedIdentityCredentials from servicePrincipals
+      description: Federated identities for a specific type of service principal - managed identity. Supports $expand and $filter (eq when counting empty collections).
       operationId: servicePrincipals_ListFederatedIdentityCredentials
       parameters:
         - name: servicePrincipal-id
@@ -4599,6 +4606,7 @@ paths:
       tags:
         - servicePrincipals.federatedIdentityCredential
       summary: Get federatedIdentityCredentials from servicePrincipals
+      description: Federated identities for a specific type of service principal - managed identity. Supports $expand and $filter (eq when counting empty collections).
       operationId: servicePrincipals_GetFederatedIdentityCredentials
       parameters:
         - name: servicePrincipal-id
@@ -4723,6 +4731,7 @@ paths:
       tags:
         - servicePrincipals.homeRealmDiscoveryPolicy
       summary: Get homeRealmDiscoveryPolicies from servicePrincipals
+      description: The homeRealmDiscoveryPolicies assigned to this service principal. Supports $expand.
       operationId: servicePrincipals_ListHomeRealmDiscoveryPolicies
       parameters:
         - name: servicePrincipal-id
@@ -4842,6 +4851,7 @@ paths:
       tags:
         - servicePrincipals.homeRealmDiscoveryPolicy
       summary: Get ref of homeRealmDiscoveryPolicies from servicePrincipals
+      description: The homeRealmDiscoveryPolicies assigned to this service principal. Supports $expand.
       operationId: servicePrincipals_ListHomeRealmDiscoveryPoliciesGraphBPreRef
       parameters:
         - name: servicePrincipal-id
@@ -4902,14 +4912,7 @@ paths:
             type: string
           x-ms-docs-key-type: servicePrincipal
       requestBody:
-        description: New navigation property ref value
-        content:
-          application/json:
-            schema:
-              type: object
-              additionalProperties:
-                type: object
-        required: true
+        $ref: '#/components/requestBodies/refPostBody'
       responses:
         '204':
           description: Success
@@ -4921,6 +4924,7 @@ paths:
       tags:
         - servicePrincipals.directoryObject
       summary: Get memberOf from servicePrincipals
+      description: 'Roles that this service principal is a member of. HTTP Methods: GET Read-only. Nullable. Supports $expand.'
       operationId: servicePrincipals_ListMemberGraphOPre
       parameters:
         - name: servicePrincipal-id
@@ -4989,6 +4993,7 @@ paths:
       tags:
         - servicePrincipals.directoryObject
       summary: Get memberOf from servicePrincipals
+      description: 'Roles that this service principal is a member of. HTTP Methods: GET Read-only. Nullable. Supports $expand.'
       operationId: servicePrincipals_GetMemberGraphOPre
       parameters:
         - name: servicePrincipal-id
@@ -5441,6 +5446,7 @@ paths:
       tags:
         - servicePrincipals.oAuth2PermissionGrant
       summary: Get oauth2PermissionGrants from servicePrincipals
+      description: Delegated permission grants authorizing this service principal to access an API on behalf of a signed-in user. Read-only. Nullable.
       operationId: servicePrincipals_ListOauth2PermissionGrants
       parameters:
         - name: servicePrincipal-id
@@ -5521,6 +5527,7 @@ paths:
       tags:
         - servicePrincipals.oAuth2PermissionGrant
       summary: Get oauth2PermissionGrants from servicePrincipals
+      description: Delegated permission grants authorizing this service principal to access an API on behalf of a signed-in user. Read-only. Nullable.
       operationId: servicePrincipals_GetOauth2PermissionGrants
       parameters:
         - name: servicePrincipal-id
@@ -5581,6 +5588,7 @@ paths:
       tags:
         - servicePrincipals.directoryObject
       summary: Get ownedObjects from servicePrincipals
+      description: Directory objects that are owned by this service principal. Read-only. Nullable. Supports $expand.
       operationId: servicePrincipals_ListOwnedObjects
       parameters:
         - name: servicePrincipal-id
@@ -5649,6 +5657,7 @@ paths:
       tags:
         - servicePrincipals.directoryObject
       summary: Get ownedObjects from servicePrincipals
+      description: Directory objects that are owned by this service principal. Read-only. Nullable. Supports $expand.
       operationId: servicePrincipals_GetOwnedObjects
       parameters:
         - name: servicePrincipal-id
@@ -5705,6 +5714,7 @@ paths:
       tags:
         - servicePrincipals.directoryObject
       summary: Get owners from servicePrincipals
+      description: Directory objects that are owners of this servicePrincipal. The owners are a set of non-admin users or servicePrincipals who are allowed to modify this object. Read-only. Nullable. Supports $expand.
       operationId: servicePrincipals_ListOwners
       parameters:
         - name: servicePrincipal-id
@@ -5810,6 +5820,7 @@ paths:
       tags:
         - servicePrincipals.directoryObject
       summary: Get ref of owners from servicePrincipals
+      description: Directory objects that are owners of this servicePrincipal. The owners are a set of non-admin users or servicePrincipals who are allowed to modify this object. Read-only. Nullable. Supports $expand.
       operationId: servicePrincipals_ListOwnersGraphBPreRef
       parameters:
         - name: servicePrincipal-id
@@ -5862,14 +5873,7 @@ paths:
             type: string
           x-ms-docs-key-type: servicePrincipal
       requestBody:
-        description: New navigation property ref value
-        content:
-          application/json:
-            schema:
-              type: object
-              additionalProperties:
-                type: object
-        required: true
+        $ref: '#/components/requestBodies/refPostBody'
       responses:
         '204':
           description: Success
@@ -5881,6 +5885,7 @@ paths:
       tags:
         - servicePrincipals.tokenIssuancePolicy
       summary: Get tokenIssuancePolicies from servicePrincipals
+      description: The tokenIssuancePolicies assigned to this service principal.
       operationId: servicePrincipals_ListTokenIssuancePolicies
       parameters:
         - name: servicePrincipal-id
@@ -5963,6 +5968,7 @@ paths:
       tags:
         - servicePrincipals.tokenIssuancePolicy
       summary: Get tokenIssuancePolicies from servicePrincipals
+      description: The tokenIssuancePolicies assigned to this service principal.
       operationId: servicePrincipals_GetTokenIssuancePolicies
       parameters:
         - name: servicePrincipal-id
@@ -6031,6 +6037,7 @@ paths:
       tags:
         - servicePrincipals.tokenLifetimePolicy
       summary: Get tokenLifetimePolicies from servicePrincipals
+      description: The tokenLifetimePolicies assigned to this service principal.
       operationId: servicePrincipals_ListTokenLifetimePolicies
       parameters:
         - name: servicePrincipal-id
@@ -6113,6 +6120,7 @@ paths:
       tags:
         - servicePrincipals.tokenLifetimePolicy
       summary: Get tokenLifetimePolicies from servicePrincipals
+      description: The tokenLifetimePolicies assigned to this service principal.
       operationId: servicePrincipals_GetTokenLifetimePolicies
       parameters:
         - name: servicePrincipal-id
@@ -6446,6 +6454,7 @@ paths:
       tags:
         - users.appRoleAssignment
       summary: Get appRoleAssignments from users
+      description: Represents the app roles a user has been granted for an application. Supports $expand.
       operationId: users_ListAppRoleAssignments
       parameters:
         - name: user-id
@@ -6565,6 +6574,7 @@ paths:
       tags:
         - users.appRoleAssignment
       summary: Get appRoleAssignments from users
+      description: Represents the app roles a user has been granted for an application. Supports $expand.
       operationId: users_GetAppRoleAssignments
       parameters:
         - name: user-id
@@ -6704,7 +6714,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.apiApplication'
             appId:
               type: string
-              description: The unique identifier for the application that is assigned by Azure AD. Not nullable. Read-only. Supports $filter (eq).
+              description: The unique identifier for the application that is assigned to an application by Azure AD. Not nullable. Read-only. Supports $filter (eq).
               nullable: true
             applicationTemplateId:
               type: string
@@ -6725,7 +6735,7 @@ components:
               nullable: true
             description:
               type: string
-              description: 'Free text field to provide a description of the application object to end users. The maximum allowed size is 1024 characters. Returned by default. Supports $filter (eq, ne, not, ge, le, startsWith) and $search.'
+              description: 'Free text field to provide a description of the application object to end users. The maximum allowed size is 1024 characters. Supports $filter (eq, ne, not, ge, le, startsWith) and $search.'
               nullable: true
             disabledByMicrosoftStatus:
               type: string
@@ -6737,7 +6747,7 @@ components:
               nullable: true
             groupMembershipClaims:
               type: string
-              description: 'Configures the groups claim issued in a user or OAuth 2.0 access token that the application expects. To set this attribute, use one of the following string values: None, SecurityGroup (for security groups and Azure AD roles), All (this gets all security groups, distribution groups, and Azure AD directory roles that the signed-in user is a member of).'
+              description: 'Configures the groups claim issued in a user or OAuth 2.0 access token that the application expects. To set this attribute, use one of the following valid string values: None, SecurityGroup (for security groups and Azure AD roles), All (this gets all of the security groups, distribution groups, and Azure AD directory roles that the signed-in user is a member of).'
               nullable: true
             identifierUris:
               type: array
@@ -6752,7 +6762,7 @@ components:
               nullable: true
             isFallbackPublicClient:
               type: boolean
-              description: 'Specifies the fallback application type as public client, such as an installed application running on a mobile device. The default value is false which means the fallback application type is confidential client such as a web app. There are certain scenarios where Azure AD cannot determine the client application type. For example, the ROPC flow where the application is configured without specifying a redirect URI. In those cases Azure AD interprets the application type based on the value of this property.'
+              description: 'Specifies the fallback application type as public client, such as an installed application running on a mobile device. The default value is false which means the fallback application type is confidential client such as a web app. There are certain scenarios where Azure AD cannot determine the client application type. For example, the ROPC flow where it is configured without specifying a redirect URI. In those cases Azure AD interprets the application type based on the value of this property.'
               nullable: true
             keyCredentials:
               type: array
@@ -6782,7 +6792,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.publicClientApplication'
             publisherDomain:
               type: string
-              description: 'The verified publisher domain for the application. Read-only. Supports $filter (eq, ne, ge, le, startsWith).'
+              description: 'The verified publisher domain for the application. Read-only. For more information, see How to: Configure an application''s publisher domain. Supports $filter (eq, ne, ge, le, startsWith).'
               nullable: true
             requiredResourceAccess:
               type: array
@@ -6807,7 +6817,7 @@ components:
               type: array
               items:
                 type: string
-              description: 'Custom strings that can be used to categorize and identify the application. Not nullable.Supports $filter (eq, not, ge, le, startsWith).'
+              description: 'Custom strings that can be used to categorize and identify the application. Not nullable. Supports $filter (eq, not, ge, le, startsWith).'
             tokenEncryptionKeyId:
               pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
               type: string
@@ -6847,7 +6857,6 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.tokenLifetimePolicy'
-              description: The tokenLifetimePolicies assigned to this application. Supports $expand.
           additionalProperties:
             type: object
     microsoft.graph.directoryObject:
@@ -6945,13 +6954,13 @@ components:
           nullable: true
         key:
           type: string
-          description: 'Value for the key credential. Should be a Base64 encoded value. Returned only on $select for a single object, that is, GET applications/{applicationId}?$select=keyCredentials or GET servicePrincipals/{servicePrincipalId}?$select=keyCredentials; otherwise, it is always null.'
+          description: 'The certificate''s raw data in byte array converted to Base64 string. Returned only on $select for a single object, that is, GET applications/{applicationId}?$select=keyCredentials or GET servicePrincipals/{servicePrincipalId}?$select=keyCredentials; otherwise, it is always null.'
           format: base64url
           nullable: true
         keyId:
           pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
           type: string
-          description: The unique identifier for the key.
+          description: The unique identifier (GUID) for the key.
           format: uuid
           nullable: true
         startDateTime:
@@ -7149,7 +7158,7 @@ components:
             appOwnerOrganizationId:
               pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
               type: string
-              description: 'Contains the tenant id where the application is registered. This is applicable only to service principals backed by applications.Supports $filter (eq, ne, NOT, ge, le).'
+              description: 'Contains the tenant id where the application is registered. This is applicable only to service principals backed by applications. Supports $filter (eq, ne, NOT, ge, le).'
               format: uuid
               nullable: true
             appRoleAssignmentRequired:
@@ -7209,7 +7218,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.passwordCredential'
-              description: The collection of password credentials associated with the service principal. Not nullable.
+              description: The collection of password credentials associated with the application. Not nullable.
             preferredSingleSignOnMode:
               type: string
               description: 'Specifies the single sign-on mode configured for this application. Azure AD uses the preferred single sign-on mode to launch the application from Microsoft 365 or the Azure AD My Apps. The supported values are password, saml, notSupported, and oidc.'
@@ -7237,7 +7246,7 @@ components:
               description: 'Contains the list of identifiersUris, copied over from the associated application. Additional values can be added to hybrid applications. These values can be used to identify the permissions exposed by this app within Azure AD. For example,Client apps can specify a resource URI which is based on the values of this property to acquire an access token, which is the URI returned in the ''aud'' claim.The any operator is required for filter expressions on multi-valued properties. Not nullable.  Supports $filter (eq, not, ge, le, startsWith).'
             servicePrincipalType:
               type: string
-              description: Identifies if the service principal represents an application or a managed identity. This is set by Azure AD internally. For a service principal that represents an application this is set as Application. For a service principal that represent a managed identity this is set as ManagedIdentity. The SocialIdp type is for internal use.
+              description: 'Identifies whether the service principal represents an application, a managed identity, or a legacy application. This is set by Azure AD internally. The servicePrincipalType property can be set to three different values: __Application - A service principal that represents an application or service. The appId property identifies the associated app registration, and matches the appId of an application, possibly from a different tenant. If the associated app registration is missing, tokens are not issued for the service principal.__ManagedIdentity - A service principal that represents a managed identity. Service principals representing managed identities can be granted access and permissions, but cannot be updated or modified directly.__Legacy - A service principal that represents an app created before app registrations, or through legacy experiences. Legacy service principal can have credentials, service principal names, reply URLs, and other properties which are editable by an authorized user, but does not have an associated app registration. The appId value does not associate the service principal with an app registration. The service principal can only be used in the tenant where it was created.__SocialIdp - For internal use.'
               nullable: true
             signInAudience:
               type: string
@@ -7254,11 +7263,13 @@ components:
               description: 'Specifies the keyId of a public key from the keyCredentials collection. When configured, Azure AD issues tokens for this application encrypted using the key specified by this property. The application code that receives the encrypted token must use the matching private key to decrypt the token before it can be used for the signed-in user.'
               format: uuid
               nullable: true
+            verifiedPublisher:
+              $ref: '#/components/schemas/microsoft.graph.verifiedPublisher'
             appRoleAssignedTo:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.appRoleAssignment'
-              description: 'App role assignments for this app or service, granted to users, groups, and other service principals.Supports $expand.'
+              description: 'App role assignments for this app or service, granted to users, groups, and other service principals. Supports $expand.'
             appRoleAssignments:
               type: array
               items:
@@ -7278,12 +7289,10 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.delegatedPermissionClassification'
-              description: The permission classifications for delegated permissions exposed by the app that this service principal represents. Supports $expand.
             endpoints:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.endpoint'
-              description: Endpoints available for discovery. Services like Sharepoint populate this property with a tenant specific SharePoint endpoints that other applications can discover and use in their experiences.
             federatedIdentityCredentials:
               type: array
               items:
@@ -7318,12 +7327,12 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.tokenIssuancePolicy'
-              description: The tokenIssuancePolicies assigned to this service principal. Supports $expand.
+              description: The tokenIssuancePolicies assigned to this service principal.
             tokenLifetimePolicies:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.tokenLifetimePolicy'
-              description: The tokenLifetimePolicies assigned to this service principal. Supports $expand.
+              description: The tokenLifetimePolicies assigned to this service principal.
             transitiveMemberOf:
               type: array
               items:
@@ -7340,11 +7349,11 @@ components:
               $ref: '#/components/schemas/microsoft.graph.permissionClassificationType'
             permissionId:
               type: string
-              description: The unique identifier (id) for the delegated permission listed in the publishedPermissionScopes collection of the servicePrincipal. Required on create. Does not support $filter.
+              description: The unique identifier (id) for the delegated permission listed in the oauth2PermissionScopes collection of the servicePrincipal. Required on create. Does not support $filter.
               nullable: true
             permissionName:
               type: string
-              description: The claim value (value) for the delegated permission listed in the publishedPermissionScopes collection of the servicePrincipal. Does not support $filter.
+              description: The claim value (value) for the delegated permission listed in the oauth2PermissionScopes collection of the servicePrincipal. Does not support $filter.
               nullable: true
           additionalProperties:
             type: object
@@ -7356,22 +7365,17 @@ components:
           properties:
             capability:
               type: string
-              description: 'Describes the capability that is associated with this resource. (e.g. Messages, Conversations, etc.) Not nullable. Read-only.'
             providerId:
               type: string
-              description: Application id of the publishing underlying service. Not nullable. Read-only.
               nullable: true
             providerName:
               type: string
-              description: Name of the publishing underlying service. Read-only.
               nullable: true
             providerResourceId:
               type: string
-              description: 'For Microsoft 365 groups, this is set to a well-known name for the resource (e.g. Yammer.FeedURL etc.). Not nullable. Read-only.'
               nullable: true
             uri:
               type: string
-              description: URL of the published resource. Not nullable. Read-only.
           additionalProperties:
             type: object
     microsoft.graph.selfSignedCertificate:
@@ -7380,47 +7384,38 @@ components:
       properties:
         customKeyIdentifier:
           type: string
-          description: Custom key identifier.
           format: base64url
           nullable: true
         displayName:
           type: string
-          description: The friendly name for the key.
           nullable: true
         endDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
-          description: 'The date and time at which the credential expires. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
           format: date-time
           nullable: true
         key:
           type: string
-          description: The value for the key credential. Should be a base-64 encoded value.
           format: base64url
           nullable: true
         keyId:
           pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
           type: string
-          description: The unique identifier (GUID) for the key.
           format: uuid
           nullable: true
         startDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
-          description: 'The date and time at which the credential becomes valid. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
           format: date-time
           nullable: true
         thumbprint:
           type: string
-          description: The thumbprint value for the key.
           nullable: true
         type:
           type: string
-          description: The type of key credential. 'AsymmetricX509Cert'.
           nullable: true
         usage:
           type: string
-          description: 'A string that describes the purpose for which the key can be used. For example, ''Verify''.'
           nullable: true
       additionalProperties:
         type: object
@@ -7435,7 +7430,7 @@ components:
               description: The id of the client service principal for the application which is authorized to act on behalf of a signed-in user when accessing an API. Required. Supports $filter (eq only).
             consentType:
               type: string
-              description: 'Indicates whether authorization is granted for the client application to impersonate all users or only a specific user. AllPrincipals indicates authorization to impersonate all users. Principal indicates authorization to impersonate a specific user. Consent on behalf of all users can be granted by an administrator. Non-admin users may be authorized to consent on behalf of themselves in some cases, for some delegated permissions. Required. Supports $filter (eq only).'
+              description: 'Indicates if authorization is granted for the client application to impersonate all users or only a specific user. AllPrincipals indicates authorization to impersonate all users. Principal indicates authorization to impersonate a specific user. Consent on behalf of all users can be granted by an administrator. Non-admin users may be authorized to consent on behalf of themselves in some cases, for some delegated permissions. Required. Supports $filter (eq only).'
               nullable: true
             principalId:
               type: string
@@ -7446,7 +7441,7 @@ components:
               description: The id of the resource service principal to which access is authorized. This identifies the API which the client is authorized to attempt to call on behalf of a signed-in user. Supports $filter (eq only).
             scope:
               type: string
-              description: 'A space-separated list of the claim values for delegated permissions which should be included in access tokens for the resource application (the API). For example, openid User.Read GroupMember.Read.All. Each claim value should match the value field of one of the delegated permissions defined by the API, listed in the publishedPermissionScopes property of the resource service principal.'
+              description: 'A space-separated list of the claim values for delegated permissions which should be included in access tokens for the resource application (the API). For example, openid User.Read GroupMember.Read.All. Each claim value should match the value field of one of the delegated permissions defined by the API, listed in the oauth2PermissionScopes property of the resource service principal.'
               nullable: true
           additionalProperties:
             type: object
@@ -7692,7 +7687,7 @@ components:
           nullable: true
         displayName:
           type: string
-          description: The verified publisher name from the app publisher's Microsoft Partner Network (MPN) account.
+          description: The verified publisher name from the app publisher's Partner Center account.
           nullable: true
         verifiedPublisherId:
           type: string
@@ -7842,6 +7837,13 @@ components:
         - high
         - unknownFutureValue
       type: string
+    ReferenceCreate:
+      type: object
+      properties:
+        '@odata.id':
+          type: string
+      additionalProperties:
+        type: object
     microsoft.graph.applicationCollectionResponse:
       title: Collection of application
       type: object
@@ -8037,11 +8039,11 @@ components:
       properties:
         key:
           type: string
-          description: 'Contains the name of the field that a value is associated with. When a sign in or domain hint is included in the sign-in request, corresponding fields are included as key-value pairs. Possible keys: Login hint present, Domain hint present.'
+          description: Key for the key-value pair.
           nullable: true
         value:
           type: string
-          description: Contains the corresponding value for the specified key. The value is true if a sign in hint was included in the sign-in request; otherwise false. The value is true if a domain hint was included in the sign-in request; otherwise false.
+          description: Value for the key-value pair.
           nullable: true
       additionalProperties:
         type: object
@@ -8051,7 +8053,7 @@ components:
       properties:
         appId:
           type: string
-          description: The unique identifier for the client application.
+          description: The unique identifier for the application.
           nullable: true
         delegatedPermissionIds:
           type: array
@@ -8299,6 +8301,14 @@ components:
       description: Include count of items
       schema:
         type: boolean
+  requestBodies:
+    refPostBody:
+      description: New navigation property ref value
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ReferenceCreate'
+      required: true
   securitySchemes:
     azureaadv2:
       type: oauth2

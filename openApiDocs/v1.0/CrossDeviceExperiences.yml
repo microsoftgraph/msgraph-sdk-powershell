@@ -11,6 +11,7 @@ paths:
       tags:
         - users.userActivity
       summary: Get activities from users
+      description: The user's activities across devices. Read-only. Nullable.
       operationId: users_ListActivities
       parameters:
         - name: user-id
@@ -147,6 +148,7 @@ paths:
       tags:
         - users.userActivity
       summary: Get activities from users
+      description: The user's activities across devices. Read-only. Nullable.
       operationId: users_GetActivities
       parameters:
         - name: user-id
@@ -287,6 +289,7 @@ paths:
       tags:
         - users.userActivity
       summary: Get historyItems from users
+      description: Optional. NavigationProperty/Containment; navigation property to the activity's historyItems.
       operationId: users.activities_ListHistoryItems
       parameters:
         - name: user-id
@@ -422,6 +425,7 @@ paths:
       tags:
         - users.userActivity
       summary: Get historyItems from users
+      description: Optional. NavigationProperty/Containment; navigation property to the activity's historyItems.
       operationId: users.activities_GetHistoryItems
       parameters:
         - name: user-id
@@ -579,6 +583,7 @@ paths:
       tags:
         - users.userActivity
       summary: Get activity from users
+      description: Optional. NavigationProperty/Containment; navigation property to the associated activity.
       operationId: users.activities.historyItems_GetActivity
       parameters:
         - name: user-id
@@ -829,15 +834,6 @@ components:
           type: string
       additionalProperties:
         type: object
-    microsoft.graph.ODataErrors.ODataError:
-      required:
-        - error
-      type: object
-      properties:
-        error:
-          $ref: '#/components/schemas/microsoft.graph.ODataErrors.MainError'
-      additionalProperties:
-        type: object
     microsoft.graph.activityHistoryItemCollectionResponse:
       title: Collection of activityHistoryItem
       type: object
@@ -871,47 +867,6 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    microsoft.graph.ODataErrors.MainError:
-      required:
-        - code
-        - message
-      type: object
-      properties:
-        code:
-          type: string
-        message:
-          type: string
-        target:
-          type: string
-          nullable: true
-        details:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.ODataErrors.ErrorDetails'
-        innererror:
-          $ref: '#/components/schemas/microsoft.graph.ODataErrors.InnerError'
-      additionalProperties:
-        type: object
-    microsoft.graph.ODataErrors.ErrorDetails:
-      required:
-        - code
-        - message
-      type: object
-      properties:
-        code:
-          type: string
-        message:
-          type: string
-        target:
-          type: string
-          nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.ODataErrors.InnerError:
-      type: object
-      additionalProperties:
-        type: object
-      description: The structure of this object is service-specific
   responses:
     microsoft.graph.userActivityCollectionResponse:
       description: Retrieved collection
@@ -921,10 +876,6 @@ components:
             $ref: '#/components/schemas/microsoft.graph.userActivityCollectionResponse'
     error:
       description: error
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/microsoft.graph.ODataErrors.ODataError'
     microsoft.graph.activityHistoryItemCollectionResponse:
       description: Retrieved collection
       content:

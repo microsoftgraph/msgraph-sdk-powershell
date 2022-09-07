@@ -11,6 +11,7 @@ paths:
       tags:
         - admin.serviceAnnouncement
       summary: Get serviceAnnouncement from admin
+      description: A container for service communications resources. Read-only.
       operationId: admin_GetServiceAnnouncement
       parameters:
         - name: $select
@@ -100,6 +101,7 @@ paths:
       tags:
         - admin.serviceAnnouncement
       summary: Get healthOverviews from admin
+      description: 'A collection of service health information for tenant. This property is a contained navigation property, it is nullable and readonly.'
       operationId: admin.serviceAnnouncement_ListHealthOverviews
       parameters:
         - $ref: '#/components/parameters/top'
@@ -188,6 +190,7 @@ paths:
       tags:
         - admin.serviceAnnouncement
       summary: Get healthOverviews from admin
+      description: 'A collection of service health information for tenant. This property is a contained navigation property, it is nullable and readonly.'
       operationId: admin.serviceAnnouncement_GetHealthOverviews
       parameters:
         - name: serviceHealth-id
@@ -295,6 +298,7 @@ paths:
       tags:
         - admin.serviceAnnouncement
       summary: Get issues from admin
+      description: 'A collection of issues that happened on the service, with detailed information for each issue.'
       operationId: admin.serviceAnnouncement.healthOverviews_ListIssues
       parameters:
         - name: serviceHealth-id
@@ -432,6 +436,7 @@ paths:
       tags:
         - admin.serviceAnnouncement
       summary: Get issues from admin
+      description: 'A collection of issues that happened on the service, with detailed information for each issue.'
       operationId: admin.serviceAnnouncement.healthOverviews_GetIssues
       parameters:
         - name: serviceHealth-id
@@ -606,6 +611,7 @@ paths:
       tags:
         - admin.serviceAnnouncement
       summary: Get issues from admin
+      description: 'A collection of service issues for tenant. This property is a contained navigation property, it is nullable and readonly.'
       operationId: admin.serviceAnnouncement_ListIssues
       parameters:
         - $ref: '#/components/parameters/top'
@@ -728,6 +734,7 @@ paths:
       tags:
         - admin.serviceAnnouncement
       summary: Get issues from admin
+      description: 'A collection of service issues for tenant. This property is a contained navigation property, it is nullable and readonly.'
       operationId: admin.serviceAnnouncement_GetIssues
       parameters:
         - name: serviceHealthIssue-id
@@ -874,6 +881,7 @@ paths:
       tags:
         - admin.serviceAnnouncement
       summary: Get messages from admin
+      description: 'A collection of service messages for tenant. This property is a contained navigation property, it is nullable and readonly.'
       operationId: admin.serviceAnnouncement_ListMessages
       parameters:
         - $ref: '#/components/parameters/top'
@@ -1001,6 +1009,7 @@ paths:
       tags:
         - admin.serviceAnnouncement
       summary: Get messages from admin
+      description: 'A collection of service messages for tenant. This property is a contained navigation property, it is nullable and readonly.'
       operationId: admin.serviceAnnouncement_GetMessages
       parameters:
         - name: serviceUpdateMessage-id
@@ -1121,6 +1130,7 @@ paths:
       tags:
         - admin.serviceAnnouncement
       summary: Get attachments from admin
+      description: A collection of serviceAnnouncementAttachments.
       operationId: admin.serviceAnnouncement.messages_ListAttachments
       parameters:
         - name: serviceUpdateMessage-id
@@ -1231,6 +1241,7 @@ paths:
       tags:
         - admin.serviceAnnouncement
       summary: Get attachments from admin
+      description: A collection of serviceAnnouncementAttachments.
       operationId: admin.serviceAnnouncement.messages_GetAttachments
       parameters:
         - name: serviceUpdateMessage-id
@@ -1355,6 +1366,7 @@ paths:
       tags:
         - admin.serviceAnnouncement
       summary: Get content for the navigation property attachments from admin
+      description: The attachment content.
       operationId: admin.serviceAnnouncement.messages_GetAttachmentsContent
       parameters:
         - name: serviceUpdateMessage-id
@@ -1386,6 +1398,7 @@ paths:
       tags:
         - admin.serviceAnnouncement
       summary: Update content for the navigation property attachments in admin
+      description: The attachment content.
       operationId: admin.serviceAnnouncement.messages_SetAttachmentsContent
       parameters:
         - name: serviceUpdateMessage-id
@@ -1421,6 +1434,7 @@ paths:
       tags:
         - admin.serviceAnnouncement
       summary: Get attachmentsArchive for the navigation property messages from admin
+      description: The zip file of all attachments for a message.
       operationId: admin.serviceAnnouncement_GetMessagesAttachmentsArchive
       parameters:
         - name: serviceUpdateMessage-id
@@ -1445,6 +1459,7 @@ paths:
       tags:
         - admin.serviceAnnouncement
       summary: Update attachmentsArchive for the navigation property messages in admin
+      description: The zip file of all attachments for a message.
       operationId: admin.serviceAnnouncement_SetMessagesAttachmentsArchive
       parameters:
         - name: serviceUpdateMessage-id
@@ -3018,15 +3033,6 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    microsoft.graph.ODataErrors.ODataError:
-      required:
-        - error
-      type: object
-      properties:
-        error:
-          $ref: '#/components/schemas/microsoft.graph.ODataErrors.MainError'
-      additionalProperties:
-        type: object
     microsoft.graph.serviceHealthCollectionResponse:
       title: Collection of serviceHealth
       type: object
@@ -3097,59 +3103,10 @@ components:
         - unknownFutureValue
       type: string
     microsoft.graph.bodyType:
-      title: bodyType
-      enum:
-        - text
-        - html
-      type: string
-    microsoft.graph.ODataErrors.MainError:
-      required:
-        - code
-        - message
-      type: object
-      properties:
-        code:
-          type: string
-        message:
-          type: string
-        target:
-          type: string
-          nullable: true
-        details:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.ODataErrors.ErrorDetails'
-        innererror:
-          $ref: '#/components/schemas/microsoft.graph.ODataErrors.InnerError'
-      additionalProperties:
-        type: object
-    microsoft.graph.ODataErrors.ErrorDetails:
-      required:
-        - code
-        - message
-      type: object
-      properties:
-        code:
-          type: string
-        message:
-          type: string
-        target:
-          type: string
-          nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.ODataErrors.InnerError:
-      type: object
-      additionalProperties:
-        type: object
-      description: The structure of this object is service-specific
+      description: The type of the content. Possible values are text and html.
   responses:
     error:
       description: error
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/microsoft.graph.ODataErrors.ODataError'
     microsoft.graph.serviceHealthCollectionResponse:
       description: Retrieved collection
       content:

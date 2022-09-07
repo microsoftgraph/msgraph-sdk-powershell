@@ -11,6 +11,7 @@ paths:
       tags:
         - users.inferenceClassification
       summary: Get inferenceClassification from users
+      description: Relevance classification of the user's messages based on explicit designations which override inferred relevance or importance.
       operationId: users_GetInferenceClassification
       parameters:
         - name: user-id
@@ -103,6 +104,7 @@ paths:
       tags:
         - users.inferenceClassification
       summary: Get overrides from users
+      description: 'A set of overrides for a user to always classify messages from specific senders in certain ways: focused, or other. Read-only. Nullable.'
       operationId: users.inferenceClassification_ListOverrides
       parameters:
         - name: user-id
@@ -191,6 +193,7 @@ paths:
       tags:
         - users.inferenceClassification
       summary: Get overrides from users
+      description: 'A set of overrides for a user to always classify messages from specific senders in certain ways: focused, or other. Read-only. Nullable.'
       operationId: users.inferenceClassification_GetOverrides
       parameters:
         - name: user-id
@@ -300,6 +303,7 @@ paths:
       tags:
         - users.mailFolder
       summary: Get mailFolders from users
+      description: The user's mail folders. Read-only. Nullable.
       operationId: users_ListMailFolders
       parameters:
         - name: user-id
@@ -405,6 +409,7 @@ paths:
       tags:
         - users.mailFolder
       summary: Get mailFolders from users
+      description: The user's mail folders. Read-only. Nullable.
       operationId: users_GetMailFolders
       parameters:
         - name: user-id
@@ -553,6 +558,7 @@ paths:
       tags:
         - users.mailFolder
       summary: Get childFolders from users
+      description: The collection of child folders in the mailFolder.
       operationId: users.mailFolders_ListChildFolders
       parameters:
         - name: user-id
@@ -689,6 +695,7 @@ paths:
       tags:
         - users.mailFolder
       summary: Get childFolders from users
+      description: The collection of child folders in the mailFolder.
       operationId: users.mailFolders_GetChildFolders
       parameters:
         - name: user-id
@@ -880,6 +887,7 @@ paths:
       tags:
         - users.mailFolder
       summary: Get messageRules from users
+      description: The collection of rules that apply to the user's Inbox folder.
       operationId: users.mailFolders.childFolders_ListMessageRules
       parameters:
         - name: user-id
@@ -1014,6 +1022,7 @@ paths:
       tags:
         - users.mailFolder
       summary: Get messageRules from users
+      description: The collection of rules that apply to the user's Inbox folder.
       operationId: users.mailFolders.childFolders_GetMessageRules
       parameters:
         - name: user-id
@@ -1171,6 +1180,7 @@ paths:
       tags:
         - users.mailFolder
       summary: Get messages from users
+      description: The collection of messages in the mailFolder.
       operationId: users.mailFolders.childFolders_ListMessages
       parameters:
         - name: user-id
@@ -1392,6 +1402,7 @@ paths:
       tags:
         - users.mailFolder
       summary: Get messages from users
+      description: The collection of messages in the mailFolder.
       operationId: users.mailFolders.childFolders_GetMessages
       parameters:
         - name: user-id
@@ -1732,6 +1743,7 @@ paths:
       tags:
         - users.mailFolder
       summary: Get attachments from users
+      description: The fileAttachment and itemAttachment attachments for the message.
       operationId: users.mailFolders.childFolders.messages_ListAttachments
       parameters:
         - name: user-id
@@ -1883,6 +1895,7 @@ paths:
       tags:
         - users.mailFolder
       summary: Get attachments from users
+      description: The fileAttachment and itemAttachment attachments for the message.
       operationId: users.mailFolders.childFolders.messages_GetAttachments
       parameters:
         - name: user-id
@@ -2070,6 +2083,7 @@ paths:
       tags:
         - users.mailFolder
       summary: Get extensions from users
+      description: The collection of open extensions defined for the message. Nullable.
       operationId: users.mailFolders.childFolders.messages_ListExtensions
       parameters:
         - name: user-id
@@ -2206,6 +2220,7 @@ paths:
       tags:
         - users.mailFolder
       summary: Get extensions from users
+      description: The collection of open extensions defined for the message. Nullable.
       operationId: users.mailFolders.childFolders.messages_GetExtensions
       parameters:
         - name: user-id
@@ -2388,6 +2403,7 @@ paths:
       tags:
         - users.mailFolder
       summary: Get multiValueExtendedProperties from users
+      description: The collection of multi-value extended properties defined for the message. Nullable.
       operationId: users.mailFolders.childFolders.messages_ListMultiValueExtendedProperties
       parameters:
         - name: user-id
@@ -2528,6 +2544,7 @@ paths:
       tags:
         - users.mailFolder
       summary: Get multiValueExtendedProperties from users
+      description: The collection of multi-value extended properties defined for the message. Nullable.
       operationId: users.mailFolders.childFolders.messages_GetMultiValueExtendedProperties
       parameters:
         - name: user-id
@@ -2711,6 +2728,7 @@ paths:
       tags:
         - users.mailFolder
       summary: Get singleValueExtendedProperties from users
+      description: The collection of single-value extended properties defined for the message. Nullable.
       operationId: users.mailFolders.childFolders.messages_ListSingleValueExtendedProperties
       parameters:
         - name: user-id
@@ -2851,6 +2869,7 @@ paths:
       tags:
         - users.mailFolder
       summary: Get singleValueExtendedProperties from users
+      description: The collection of single-value extended properties defined for the message. Nullable.
       operationId: users.mailFolders.childFolders.messages_GetSingleValueExtendedProperties
       parameters:
         - name: user-id
@@ -3034,6 +3053,7 @@ paths:
       tags:
         - users.mailFolder
       summary: Get multiValueExtendedProperties from users
+      description: The collection of multi-value extended properties defined for the mailFolder. Read-only. Nullable.
       operationId: users.mailFolders.childFolders_ListMultiValueExtendedProperties
       parameters:
         - name: user-id
@@ -3160,6 +3180,7 @@ paths:
       tags:
         - users.mailFolder
       summary: Get multiValueExtendedProperties from users
+      description: The collection of multi-value extended properties defined for the mailFolder. Read-only. Nullable.
       operationId: users.mailFolders.childFolders_GetMultiValueExtendedProperties
       parameters:
         - name: user-id
@@ -3322,6 +3343,7 @@ paths:
       tags:
         - users.mailFolder
       summary: Get singleValueExtendedProperties from users
+      description: The collection of single-value extended properties defined for the mailFolder. Read-only. Nullable.
       operationId: users.mailFolders.childFolders_ListSingleValueExtendedProperties
       parameters:
         - name: user-id
@@ -3448,6 +3470,7 @@ paths:
       tags:
         - users.mailFolder
       summary: Get singleValueExtendedProperties from users
+      description: The collection of single-value extended properties defined for the mailFolder. Read-only. Nullable.
       operationId: users.mailFolders.childFolders_GetSingleValueExtendedProperties
       parameters:
         - name: user-id
@@ -3610,6 +3633,7 @@ paths:
       tags:
         - users.mailFolder
       summary: Get messageRules from users
+      description: The collection of rules that apply to the user's Inbox folder.
       operationId: users.mailFolders_ListMessageRules
       parameters:
         - name: user-id
@@ -3730,6 +3754,7 @@ paths:
       tags:
         - users.mailFolder
       summary: Get messageRules from users
+      description: The collection of rules that apply to the user's Inbox folder.
       operationId: users.mailFolders_GetMessageRules
       parameters:
         - name: user-id
@@ -3866,6 +3891,7 @@ paths:
       tags:
         - users.mailFolder
       summary: Get messages from users
+      description: The collection of messages in the mailFolder.
       operationId: users.mailFolders_ListMessages
       parameters:
         - name: user-id
@@ -4073,6 +4099,7 @@ paths:
       tags:
         - users.mailFolder
       summary: Get messages from users
+      description: The collection of messages in the mailFolder.
       operationId: users.mailFolders_GetMessages
       parameters:
         - name: user-id
@@ -4374,6 +4401,7 @@ paths:
       tags:
         - users.mailFolder
       summary: Get attachments from users
+      description: The fileAttachment and itemAttachment attachments for the message.
       operationId: users.mailFolders.messages_ListAttachments
       parameters:
         - name: user-id
@@ -4511,6 +4539,7 @@ paths:
       tags:
         - users.mailFolder
       summary: Get attachments from users
+      description: The fileAttachment and itemAttachment attachments for the message.
       operationId: users.mailFolders.messages_GetAttachments
       parameters:
         - name: user-id
@@ -4677,6 +4706,7 @@ paths:
       tags:
         - users.mailFolder
       summary: Get extensions from users
+      description: The collection of open extensions defined for the message. Nullable.
       operationId: users.mailFolders.messages_ListExtensions
       parameters:
         - name: user-id
@@ -4799,6 +4829,7 @@ paths:
       tags:
         - users.mailFolder
       summary: Get extensions from users
+      description: The collection of open extensions defined for the message. Nullable.
       operationId: users.mailFolders.messages_GetExtensions
       parameters:
         - name: user-id
@@ -4960,6 +4991,7 @@ paths:
       tags:
         - users.mailFolder
       summary: Get multiValueExtendedProperties from users
+      description: The collection of multi-value extended properties defined for the message. Nullable.
       operationId: users.mailFolders.messages_ListMultiValueExtendedProperties
       parameters:
         - name: user-id
@@ -5086,6 +5118,7 @@ paths:
       tags:
         - users.mailFolder
       summary: Get multiValueExtendedProperties from users
+      description: The collection of multi-value extended properties defined for the message. Nullable.
       operationId: users.mailFolders.messages_GetMultiValueExtendedProperties
       parameters:
         - name: user-id
@@ -5248,6 +5281,7 @@ paths:
       tags:
         - users.mailFolder
       summary: Get singleValueExtendedProperties from users
+      description: The collection of single-value extended properties defined for the message. Nullable.
       operationId: users.mailFolders.messages_ListSingleValueExtendedProperties
       parameters:
         - name: user-id
@@ -5374,6 +5408,7 @@ paths:
       tags:
         - users.mailFolder
       summary: Get singleValueExtendedProperties from users
+      description: The collection of single-value extended properties defined for the message. Nullable.
       operationId: users.mailFolders.messages_GetSingleValueExtendedProperties
       parameters:
         - name: user-id
@@ -5536,6 +5571,7 @@ paths:
       tags:
         - users.mailFolder
       summary: Get multiValueExtendedProperties from users
+      description: The collection of multi-value extended properties defined for the mailFolder. Read-only. Nullable.
       operationId: users.mailFolders_ListMultiValueExtendedProperties
       parameters:
         - name: user-id
@@ -5648,6 +5684,7 @@ paths:
       tags:
         - users.mailFolder
       summary: Get multiValueExtendedProperties from users
+      description: The collection of multi-value extended properties defined for the mailFolder. Read-only. Nullable.
       operationId: users.mailFolders_GetMultiValueExtendedProperties
       parameters:
         - name: user-id
@@ -5789,6 +5826,7 @@ paths:
       tags:
         - users.mailFolder
       summary: Get singleValueExtendedProperties from users
+      description: The collection of single-value extended properties defined for the mailFolder. Read-only. Nullable.
       operationId: users.mailFolders_ListSingleValueExtendedProperties
       parameters:
         - name: user-id
@@ -5901,6 +5939,7 @@ paths:
       tags:
         - users.mailFolder
       summary: Get singleValueExtendedProperties from users
+      description: The collection of single-value extended properties defined for the mailFolder. Read-only. Nullable.
       operationId: users.mailFolders_GetSingleValueExtendedProperties
       parameters:
         - name: user-id
@@ -6042,6 +6081,7 @@ paths:
       tags:
         - users.message
       summary: Get messages from users
+      description: The messages in a mailbox or folder. Read-only. Nullable.
       operationId: users_ListMessages
       parameters:
         - name: user-id
@@ -6219,6 +6259,7 @@ paths:
       tags:
         - users.message
       summary: Get messages from users
+      description: The messages in a mailbox or folder. Read-only. Nullable.
       operationId: users_GetMessages
       parameters:
         - name: user-id
@@ -6465,6 +6506,7 @@ paths:
       tags:
         - users.message
       summary: Get attachments from users
+      description: The fileAttachment and itemAttachment attachments for the message.
       operationId: users.messages_ListAttachments
       parameters:
         - name: user-id
@@ -6588,6 +6630,7 @@ paths:
       tags:
         - users.message
       summary: Get attachments from users
+      description: The fileAttachment and itemAttachment attachments for the message.
       operationId: users.messages_GetAttachments
       parameters:
         - name: user-id
@@ -6733,6 +6776,7 @@ paths:
       tags:
         - users.message
       summary: Get extensions from users
+      description: The collection of open extensions defined for the message. Nullable.
       operationId: users.messages_ListExtensions
       parameters:
         - name: user-id
@@ -6841,6 +6885,7 @@ paths:
       tags:
         - users.message
       summary: Get extensions from users
+      description: The collection of open extensions defined for the message. Nullable.
       operationId: users.messages_GetExtensions
       parameters:
         - name: user-id
@@ -6981,6 +7026,7 @@ paths:
       tags:
         - users.message
       summary: Get multiValueExtendedProperties from users
+      description: The collection of multi-value extended properties defined for the message. Nullable.
       operationId: users.messages_ListMultiValueExtendedProperties
       parameters:
         - name: user-id
@@ -7093,6 +7139,7 @@ paths:
       tags:
         - users.message
       summary: Get multiValueExtendedProperties from users
+      description: The collection of multi-value extended properties defined for the message. Nullable.
       operationId: users.messages_GetMultiValueExtendedProperties
       parameters:
         - name: user-id
@@ -7234,6 +7281,7 @@ paths:
       tags:
         - users.message
       summary: Get singleValueExtendedProperties from users
+      description: The collection of single-value extended properties defined for the message. Nullable.
       operationId: users.messages_ListSingleValueExtendedProperties
       parameters:
         - name: user-id
@@ -7346,6 +7394,7 @@ paths:
       tags:
         - users.message
       summary: Get singleValueExtendedProperties from users
+      description: The collection of single-value extended properties defined for the message. Nullable.
       operationId: users.messages_GetSingleValueExtendedProperties
       parameters:
         - name: user-id
@@ -7627,7 +7676,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.itemBody'
             bodyPreview:
               type: string
-              description: 'The first 255 characters of the message body. It is in text format. If the message contains instances of mention, this property would contain a concatenation of these mentions as well.'
+              description: The first 255 characters of the message body. It is in text format.
               nullable: true
             ccRecipients:
               type: array
@@ -7748,7 +7797,7 @@ components:
               nullable: true
             name:
               type: string
-              description: The display name of the attachment. This does not need to be the actual file name.
+              description: The attachment's file name.
               nullable: true
             size:
               maximum: 2147483647
@@ -7800,212 +7849,13 @@ components:
       additionalProperties:
         type: object
     microsoft.graph.inferenceClassificationType:
-      title: inferenceClassificationType
-      enum:
-        - focused
-        - other
-      type: string
+      description: 'Specifies how incoming messages from a specific sender should always be classified as. The possible values are: focused, other.'
     microsoft.graph.emailAddress:
-      title: emailAddress
-      type: object
-      properties:
-        address:
-          type: string
-          description: The email address of an entity instance.
-          nullable: true
-        name:
-          type: string
-          description: The display name of an entity instance.
-          nullable: true
-      additionalProperties:
-        type: object
+      description: The email address information of the sender for whom the override is created.
     microsoft.graph.messageRuleActions:
-      title: messageRuleActions
-      type: object
-      properties:
-        assignCategories:
-          type: array
-          items:
-            type: string
-            nullable: true
-          description: A list of categories to be assigned to a message.
-        copyToFolder:
-          type: string
-          description: The ID of a folder that a message is to be copied to.
-          nullable: true
-        delete:
-          type: boolean
-          description: Indicates whether a message should be moved to the Deleted Items folder.
-          nullable: true
-        forwardAsAttachmentTo:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.recipient'
-          description: The email addresses of the recipients to which a message should be forwarded as an attachment.
-        forwardTo:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.recipient'
-          description: The email addresses of the recipients to which a message should be forwarded.
-        markAsRead:
-          type: boolean
-          description: Indicates whether a message should be marked as read.
-          nullable: true
-        markImportance:
-          $ref: '#/components/schemas/microsoft.graph.importance'
-        moveToFolder:
-          type: string
-          description: The ID of the folder that a message will be moved to.
-          nullable: true
-        permanentDelete:
-          type: boolean
-          description: Indicates whether a message should be permanently deleted and not saved to the Deleted Items folder.
-          nullable: true
-        redirectTo:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.recipient'
-          description: The email address to which a message should be redirected.
-        stopProcessingRules:
-          type: boolean
-          description: Indicates whether subsequent rules should be evaluated.
-          nullable: true
-      additionalProperties:
-        type: object
+      description: Actions to be taken on a message when the corresponding conditions are fulfilled.
     microsoft.graph.messageRulePredicates:
-      title: messageRulePredicates
-      type: object
-      properties:
-        bodyContains:
-          type: array
-          items:
-            type: string
-            nullable: true
-          description: Represents the strings that should appear in the body of an incoming message in order for the condition or exception to apply.
-        bodyOrSubjectContains:
-          type: array
-          items:
-            type: string
-            nullable: true
-          description: Represents the strings that should appear in the body or subject of an incoming message in order for the condition or exception to apply.
-        categories:
-          type: array
-          items:
-            type: string
-            nullable: true
-          description: Represents the categories that an incoming message should be labeled with in order for the condition or exception to apply.
-        fromAddresses:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.recipient'
-          description: Represents the specific sender email addresses of an incoming message in order for the condition or exception to apply.
-        hasAttachments:
-          type: boolean
-          description: Indicates whether an incoming message must have attachments in order for the condition or exception to apply.
-          nullable: true
-        headerContains:
-          type: array
-          items:
-            type: string
-            nullable: true
-          description: Represents the strings that appear in the headers of an incoming message in order for the condition or exception to apply.
-        importance:
-          $ref: '#/components/schemas/microsoft.graph.importance'
-        isApprovalRequest:
-          type: boolean
-          description: Indicates whether an incoming message must be an approval request in order for the condition or exception to apply.
-          nullable: true
-        isAutomaticForward:
-          type: boolean
-          description: Indicates whether an incoming message must be automatically forwarded in order for the condition or exception to apply.
-          nullable: true
-        isAutomaticReply:
-          type: boolean
-          description: Indicates whether an incoming message must be an auto reply in order for the condition or exception to apply.
-          nullable: true
-        isEncrypted:
-          type: boolean
-          description: Indicates whether an incoming message must be encrypted in order for the condition or exception to apply.
-          nullable: true
-        isMeetingRequest:
-          type: boolean
-          description: Indicates whether an incoming message must be a meeting request in order for the condition or exception to apply.
-          nullable: true
-        isMeetingResponse:
-          type: boolean
-          description: Indicates whether an incoming message must be a meeting response in order for the condition or exception to apply.
-          nullable: true
-        isNonDeliveryReport:
-          type: boolean
-          description: Indicates whether an incoming message must be a non-delivery report in order for the condition or exception to apply.
-          nullable: true
-        isPermissionControlled:
-          type: boolean
-          description: Indicates whether an incoming message must be permission controlled (RMS-protected) in order for the condition or exception to apply.
-          nullable: true
-        isReadReceipt:
-          type: boolean
-          description: Indicates whether an incoming message must be a read receipt in order for the condition or exception to apply.
-          nullable: true
-        isSigned:
-          type: boolean
-          description: Indicates whether an incoming message must be S/MIME-signed in order for the condition or exception to apply.
-          nullable: true
-        isVoicemail:
-          type: boolean
-          description: Indicates whether an incoming message must be a voice mail in order for the condition or exception to apply.
-          nullable: true
-        messageActionFlag:
-          $ref: '#/components/schemas/microsoft.graph.messageActionFlag'
-        notSentToMe:
-          type: boolean
-          description: Indicates whether the owner of the mailbox must not be a recipient of an incoming message in order for the condition or exception to apply.
-          nullable: true
-        recipientContains:
-          type: array
-          items:
-            type: string
-            nullable: true
-          description: Represents the strings that appear in either the toRecipients or ccRecipients properties of an incoming message in order for the condition or exception to apply.
-        senderContains:
-          type: array
-          items:
-            type: string
-            nullable: true
-          description: Represents the strings that appear in the from property of an incoming message in order for the condition or exception to apply.
-        sensitivity:
-          $ref: '#/components/schemas/microsoft.graph.sensitivity'
-        sentCcMe:
-          type: boolean
-          description: Indicates whether the owner of the mailbox must be in the ccRecipients property of an incoming message in order for the condition or exception to apply.
-          nullable: true
-        sentOnlyToMe:
-          type: boolean
-          description: Indicates whether the owner of the mailbox must be the only recipient in an incoming message in order for the condition or exception to apply.
-          nullable: true
-        sentToAddresses:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.recipient'
-          description: Represents the email addresses that an incoming message must have been sent to in order for the condition or exception to apply.
-        sentToMe:
-          type: boolean
-          description: Indicates whether the owner of the mailbox must be in the toRecipients property of an incoming message in order for the condition or exception to apply.
-          nullable: true
-        sentToOrCcMe:
-          type: boolean
-          description: Indicates whether the owner of the mailbox must be in either a toRecipients or ccRecipients property of an incoming message in order for the condition or exception to apply.
-          nullable: true
-        subjectContains:
-          type: array
-          items:
-            type: string
-            nullable: true
-          description: Represents the strings that appear in the subject of an incoming message in order for the condition or exception to apply.
-        withinSizeRange:
-          $ref: '#/components/schemas/microsoft.graph.sizeRange'
-      additionalProperties:
-        type: object
+      description: 'Conditions that when fulfilled, will trigger the corresponding actions for that rule.'
     microsoft.graph.outlookItem:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -8036,70 +7886,13 @@ components:
               nullable: true
           additionalProperties:
             type: object
-    microsoft.graph.recipient:
-      title: recipient
-      type: object
-      properties:
-        emailAddress:
-          $ref: '#/components/schemas/microsoft.graph.emailAddress'
-      additionalProperties:
-        type: object
+    microsoft.graph.recipient: { }
     microsoft.graph.itemBody:
-      title: itemBody
-      type: object
-      properties:
-        content:
-          type: string
-          description: The content of the item.
-          nullable: true
-        contentType:
-          $ref: '#/components/schemas/microsoft.graph.bodyType'
-      additionalProperties:
-        type: object
+      description: The body of the message. It can be in HTML or text format. Find out about safe HTML in a message body.
     microsoft.graph.followupFlag:
-      title: followupFlag
-      type: object
-      properties:
-        completedDateTime:
-          $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
-        dueDateTime:
-          $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
-        flagStatus:
-          $ref: '#/components/schemas/microsoft.graph.followupFlagStatus'
-        startDateTime:
-          $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
-      additionalProperties:
-        type: object
-    microsoft.graph.importance:
-      title: importance
-      enum:
-        - low
-        - normal
-        - high
-      type: string
-    microsoft.graph.internetMessageHeader:
-      title: internetMessageHeader
-      type: object
-      properties:
-        name:
-          type: string
-          description: Represents the key in a key-value pair.
-          nullable: true
-        value:
-          type: string
-          description: The value in a key-value pair.
-          nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.ODataErrors.ODataError:
-      required:
-        - error
-      type: object
-      properties:
-        error:
-          $ref: '#/components/schemas/microsoft.graph.ODataErrors.MainError'
-      additionalProperties:
-        type: object
+      description: 'The flag value that indicates the status, start date, due date, or completion date for the message.'
+    microsoft.graph.importance: { }
+    microsoft.graph.internetMessageHeader: { }
     microsoft.graph.inferenceClassificationOverrideCollectionResponse:
       title: Collection of inferenceClassificationOverride
       type: object
@@ -8196,123 +7989,9 @@ components:
           type: string
       additionalProperties:
         type: object
-    microsoft.graph.messageActionFlag:
-      title: messageActionFlag
-      enum:
-        - any
-        - call
-        - doNotForward
-        - followUp
-        - fyi
-        - forward
-        - noResponseNecessary
-        - read
-        - reply
-        - replyToAll
-        - review
-      type: string
-    microsoft.graph.sensitivity:
-      title: sensitivity
-      enum:
-        - normal
-        - personal
-        - private
-        - confidential
-      type: string
-    microsoft.graph.sizeRange:
-      title: sizeRange
-      type: object
-      properties:
-        maximumSize:
-          maximum: 2147483647
-          minimum: -2147483648
-          type: integer
-          description: The maximum size (in kilobytes) that an incoming message must have in order for a condition or exception to apply.
-          format: int32
-          nullable: true
-        minimumSize:
-          maximum: 2147483647
-          minimum: -2147483648
-          type: integer
-          description: The minimum size (in kilobytes) that an incoming message must have in order for a condition or exception to apply.
-          format: int32
-          nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.bodyType:
-      title: bodyType
-      enum:
-        - text
-        - html
-      type: string
-    microsoft.graph.dateTimeTimeZone:
-      title: dateTimeTimeZone
-      type: object
-      properties:
-        dateTime:
-          type: string
-          description: 'A single point of time in a combined date and time representation ({date}T{time}). For example, ''2019-04-16T09:00:00''.'
-        timeZone:
-          type: string
-          description: 'Represents a time zone, for example, ''Pacific Standard Time''. See below for possible values.'
-          nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.followupFlagStatus:
-      title: followupFlagStatus
-      enum:
-        - notFlagged
-        - complete
-        - flagged
-      type: string
-    microsoft.graph.ODataErrors.MainError:
-      required:
-        - code
-        - message
-      type: object
-      properties:
-        code:
-          type: string
-        message:
-          type: string
-        target:
-          type: string
-          nullable: true
-        details:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.ODataErrors.ErrorDetails'
-        innererror:
-          $ref: '#/components/schemas/microsoft.graph.ODataErrors.InnerError'
-      additionalProperties:
-        type: object
-    microsoft.graph.ODataErrors.ErrorDetails:
-      required:
-        - code
-        - message
-      type: object
-      properties:
-        code:
-          type: string
-        message:
-          type: string
-        target:
-          type: string
-          nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.ODataErrors.InnerError:
-      type: object
-      additionalProperties:
-        type: object
-      description: The structure of this object is service-specific
   responses:
     error:
       description: error
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/microsoft.graph.ODataErrors.ODataError'
     microsoft.graph.inferenceClassificationOverrideCollectionResponse:
       description: Retrieved collection
       content:

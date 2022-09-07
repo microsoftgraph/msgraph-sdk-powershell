@@ -276,6 +276,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action bypassActivationLock
+      description: Bypass activation lock
       operationId: deviceManagement.managedDevices_bypassActivationLock
       parameters:
         - name: managedDevice-id
@@ -296,6 +297,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action cleanWindowsDevice
+      description: Clean Windows device
       operationId: deviceManagement.managedDevices_cleanWindowsDevice
       parameters:
         - name: managedDevice-id
@@ -329,6 +331,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action deleteUserFromSharedAppleDevice
+      description: Delete user from shared Apple device
       operationId: deviceManagement.managedDevices_deleteUserFromSharedAppleDevice
       parameters:
         - name: managedDevice-id
@@ -362,6 +365,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action disableLostMode
+      description: Disable lost mode
       operationId: deviceManagement.managedDevices_disableLostMode
       parameters:
         - name: managedDevice-id
@@ -382,6 +386,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action locateDevice
+      description: Locate a device
       operationId: deviceManagement.managedDevices_locateDevice
       parameters:
         - name: managedDevice-id
@@ -402,6 +407,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action logoutSharedAppleDeviceActiveUser
+      description: Logout shared Apple device active user
       operationId: deviceManagement.managedDevices_logoutSharedAppleDeviceActiveUser
       parameters:
         - name: managedDevice-id
@@ -422,6 +428,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action rebootNow
+      description: Reboot device
       operationId: deviceManagement.managedDevices_rebootNow
       parameters:
         - name: managedDevice-id
@@ -442,6 +449,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action recoverPasscode
+      description: Recover passcode
       operationId: deviceManagement.managedDevices_recoverPasscode
       parameters:
         - name: managedDevice-id
@@ -462,6 +470,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action remoteLock
+      description: Remote lock
       operationId: deviceManagement.managedDevices_remoteLock
       parameters:
         - name: managedDevice-id
@@ -482,6 +491,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action requestRemoteAssistance
+      description: Request remote assistance
       operationId: deviceManagement.managedDevices_requestRemoteAssistance
       parameters:
         - name: managedDevice-id
@@ -502,6 +512,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action resetPasscode
+      description: Reset passcode
       operationId: deviceManagement.managedDevices_resetPasscode
       parameters:
         - name: managedDevice-id
@@ -522,6 +533,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action retire
+      description: Retire a device
       operationId: deviceManagement.managedDevices_retire
       parameters:
         - name: managedDevice-id
@@ -542,6 +554,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action shutDown
+      description: Shut down device
       operationId: deviceManagement.managedDevices_shutDown
       parameters:
         - name: managedDevice-id
@@ -667,6 +680,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action wipe
+      description: Wipe a device
       operationId: deviceManagement.managedDevices_wipe
       parameters:
         - name: managedDevice-id
@@ -712,6 +726,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action sendTestMessage
+      description: Sends test message using the specified notificationMessageTemplate in the default locale
       operationId: deviceManagement.notificationMessageTemplates_sendTestMessage
       parameters:
         - name: notificationMessageTemplate-id
@@ -732,6 +747,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action beginOnboarding
+      description: A request to start onboarding.  Must be coupled with the appropriate TeamViewer account information
       operationId: deviceManagement.remoteAssistancePartners_beginOnboarding
       parameters:
         - name: remoteAssistancePartner-id
@@ -752,6 +768,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action disconnect
+      description: A request to remove the active TeamViewer connector
       operationId: deviceManagement.remoteAssistancePartners_disconnect
       parameters:
         - name: remoteAssistancePartner-id
@@ -1987,6 +2004,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action assignUserToDevice
+      description: Assigns user to Autopilot devices.
       operationId: deviceManagement.windowsAutopilotDeviceIdentities_assignUserToDevice
       parameters:
         - name: windowsAutopilotDeviceIdentity-id
@@ -2023,6 +2041,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action unassignUserFromDevice
+      description: Unassigns the user from an Autopilot device.
       operationId: deviceManagement.windowsAutopilotDeviceIdentities_unassignUserFromDevice
       parameters:
         - name: windowsAutopilotDeviceIdentity-id
@@ -2043,6 +2062,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action updateDeviceProperties
+      description: Updates properties on Autopilot devices.
       operationId: deviceManagement.windowsAutopilotDeviceIdentities_updateDeviceProperties
       parameters:
         - name: windowsAutopilotDeviceIdentity-id

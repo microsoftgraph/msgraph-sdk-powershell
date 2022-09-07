@@ -11,6 +11,7 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function downloadApplePushNotificationCertificateSigningRequest
+      description: Download Apple push notification certificate signing request
       operationId: deviceManagement.applePushNotificationCertificate_downloadApplePushNotificationCertificateSigningRequest
       responses:
         '200':
@@ -70,6 +71,7 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function getEffectivePermissions
+      description: Retrieves the effective permissions of the currently authenticated user
       operationId: deviceManagement_getEffectivePermissions
       parameters:
         - name: scope
@@ -141,25 +143,7 @@ components:
       additionalProperties:
         type: object
       description: Contains the set of ResourceActions determining the allowed and not allowed permissions for each role.
-    microsoft.graph.resourceAction:
-      title: resourceAction
-      type: object
-      properties:
-        allowedResourceActions:
-          type: array
-          items:
-            type: string
-            nullable: true
-          description: Allowed Actions
-        notAllowedResourceActions:
-          type: array
-          items:
-            type: string
-            nullable: true
-          description: Not Allowed Actions.
-      additionalProperties:
-        type: object
-      description: Set of allowed and not allowed actions for a resource.
+    microsoft.graph.resourceAction: { }
     microsoft.graph.ODataErrors.ODataError:
       required:
         - error

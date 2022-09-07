@@ -128,6 +128,7 @@ paths:
       tags:
         - users.officeGraphInsights
       summary: Get shared from users
+      description: 'Calculated relationship identifying documents shared with or by the user. This includes URLs, file attachments, and reference attachments to OneDrive for Business and SharePoint files found in Outlook messages and meetings. This also includes URLs and reference attachments to Teams conversations. Ordered by recency of share.'
       operationId: users.insights_ListShared
       parameters:
         - name: user-id
@@ -239,6 +240,7 @@ paths:
       tags:
         - users.officeGraphInsights
       summary: Get shared from users
+      description: 'Calculated relationship identifying documents shared with or by the user. This includes URLs, file attachments, and reference attachments to OneDrive for Business and SharePoint files found in Outlook messages and meetings. This also includes URLs and reference attachments to Teams conversations. Ordered by recency of share.'
       operationId: users.insights_GetShared
       parameters:
         - name: user-id
@@ -432,6 +434,7 @@ paths:
       tags:
         - users.officeGraphInsights
       summary: Get resource from users
+      description: 'Used for navigating to the item that was shared. For file attachments, the type is fileAttachment. For linked attachments, the type is driveItem.'
       operationId: users.insights.shared_GetResource
       parameters:
         - name: user-id
@@ -487,6 +490,7 @@ paths:
       tags:
         - users.officeGraphInsights
       summary: Get trending from users
+      description: 'Calculated relationship identifying documents trending around a user. Trending documents are calculated based on activity of the user''s closest network of people and include files stored in OneDrive for Business and SharePoint. Trending insights help the user to discover potentially useful content that the user has access to, but has never viewed before.'
       operationId: users.insights_ListTrending
       parameters:
         - name: user-id
@@ -596,6 +600,7 @@ paths:
       tags:
         - users.officeGraphInsights
       summary: Get trending from users
+      description: 'Calculated relationship identifying documents trending around a user. Trending documents are calculated based on activity of the user''s closest network of people and include files stored in OneDrive for Business and SharePoint. Trending insights help the user to discover potentially useful content that the user has access to, but has never viewed before.'
       operationId: users.insights_GetTrending
       parameters:
         - name: user-id
@@ -727,6 +732,7 @@ paths:
       tags:
         - users.officeGraphInsights
       summary: Get resource from users
+      description: Used for navigating to the trending document.
       operationId: users.insights.trending_GetResource
       parameters:
         - name: user-id
@@ -782,6 +788,7 @@ paths:
       tags:
         - users.officeGraphInsights
       summary: Get used from users
+      description: 'Calculated relationship identifying the latest documents viewed or modified by a user, including OneDrive for Business and SharePoint documents, ranked by recency of use.'
       operationId: users.insights_ListUsed
       parameters:
         - name: user-id
@@ -888,6 +895,7 @@ paths:
       tags:
         - users.officeGraphInsights
       summary: Get used from users
+      description: 'Calculated relationship identifying the latest documents viewed or modified by a user, including OneDrive for Business and SharePoint documents, ranked by recency of use.'
       operationId: users.insights_GetUsed
       parameters:
         - name: user-id
@@ -1018,6 +1026,7 @@ paths:
       tags:
         - users.officeGraphInsights
       summary: Get resource from users
+      description: 'Used for navigating to the item that was used. For file attachments, the type is fileAttachment. For linked attachments, the type is driveItem.'
       operationId: users.insights.used_GetResource
       parameters:
         - name: user-id
@@ -1073,6 +1082,7 @@ paths:
       tags:
         - users.person
       summary: Get people from users
+      description: People that are relevant to the user. Read-only. Nullable.
       operationId: users_ListPeople
       parameters:
         - name: user-id
@@ -1213,6 +1223,7 @@ paths:
       tags:
         - users.person
       summary: Get people from users
+      description: People that are relevant to the user. Read-only. Nullable.
       operationId: users_GetPeople
       parameters:
         - name: user-id
@@ -1346,17 +1357,17 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.sharedInsight'
-              description: Access this property from the derived type itemInsights.
+              description: 'Calculated relationship identifying documents shared with or by the user. This includes URLs, file attachments, and reference attachments to OneDrive for Business and SharePoint files found in Outlook messages and meetings. This also includes URLs and reference attachments to Teams conversations. Ordered by recency of share.'
             trending:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.trending'
-              description: Access this property from the derived type itemInsights.
+              description: 'Calculated relationship identifying documents trending around a user. Trending documents are calculated based on activity of the user''s closest network of people and include files stored in OneDrive for Business and SharePoint. Trending insights help the user to discover potentially useful content that the user has access to, but has never viewed before.'
             used:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.usedInsight'
-              description: Access this property from the derived type itemInsights.
+              description: 'Calculated relationship identifying the latest documents viewed or modified by a user, including OneDrive for Business and SharePoint documents, ranked by recency of use.'
           additionalProperties:
             type: object
     microsoft.graph.sharedInsight:
@@ -1515,201 +1526,19 @@ components:
           additionalProperties:
             type: object
     microsoft.graph.sharingDetail:
-      title: sharingDetail
-      type: object
-      properties:
-        sharedBy:
-          $ref: '#/components/schemas/microsoft.graph.insightIdentity'
-        sharedDateTime:
-          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-          type: string
-          description: 'The date and time the file was last shared. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
-          format: date-time
-          nullable: true
-        sharingReference:
-          $ref: '#/components/schemas/microsoft.graph.resourceReference'
-        sharingSubject:
-          type: string
-          description: The subject with which the document was shared.
-          nullable: true
-        sharingType:
-          type: string
-          description: 'Determines the way the document was shared, can be by a ''Link'', ''Attachment'', ''Group'', ''Site''.'
-          nullable: true
-      additionalProperties:
-        type: object
+      description: Details about the shared item. Read only.
     microsoft.graph.resourceReference:
-      title: resourceReference
-      type: object
-      properties:
-        id:
-          type: string
-          description: The item's unique identifier.
-          nullable: true
-        type:
-          type: string
-          description: 'A string value that can be used to classify the item, such as ''microsoft.graph.driveItem'''
-          nullable: true
-        webUrl:
-          type: string
-          description: A URL leading to the referenced item.
-          nullable: true
-      additionalProperties:
-        type: object
+      description: 'Reference properties of the shared document, such as the url and type of the document. Read-only'
     microsoft.graph.resourceVisualization:
-      title: resourceVisualization
-      type: object
-      properties:
-        containerDisplayName:
-          type: string
-          description: 'A string describing where the item is stored. For example, the name of a SharePoint site or the user name identifying the owner of the OneDrive storing the item.'
-          nullable: true
-        containerType:
-          type: string
-          description: Can be used for filtering by the type of container in which the file is stored. Such as Site or OneDriveBusiness.
-          nullable: true
-        containerWebUrl:
-          type: string
-          description: A path leading to the folder in which the item is stored.
-          nullable: true
-        mediaType:
-          type: string
-          description: The item's media type. Can be used for filtering for a specific type of file based on supported IANA Media Mime Types. Note that not all Media Mime Types are supported.
-          nullable: true
-        previewImageUrl:
-          type: string
-          description: A URL leading to the preview image for the item.
-          nullable: true
-        previewText:
-          type: string
-          description: A preview text for the item.
-          nullable: true
-        title:
-          type: string
-          description: The item's title text.
-          nullable: true
-        type:
-          type: string
-          description: The item's media type. Can be used for filtering for a specific file based on a specific type. See below for supported types.
-          nullable: true
-      additionalProperties:
-        type: object
+      description: Properties that you can use to visualize the document in your experience. Read-only
     microsoft.graph.usageDetails:
-      title: usageDetails
-      type: object
-      properties:
-        lastAccessedDateTime:
-          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-          type: string
-          description: 'The date and time the resource was last accessed by the user. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
-          format: date-time
-          nullable: true
-        lastModifiedDateTime:
-          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-          type: string
-          description: 'The date and time the resource was last modified by the user. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
-          format: date-time
-          nullable: true
-      additionalProperties:
-        type: object
+      description: Information about when the item was last viewed or modified by the user. Read only.
     microsoft.graph.personType:
-      title: personType
-      type: object
-      properties:
-        class:
-          type: string
-          description: 'The type of data source, such as Person.'
-          nullable: true
-        subclass:
-          type: string
-          description: 'The secondary type of data source, such as OrganizationUser.'
-          nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.phone:
-      title: phone
-      type: object
-      properties:
-        language:
-          type: string
-          nullable: true
-        number:
-          type: string
-          description: The phone number.
-          nullable: true
-        region:
-          type: string
-          nullable: true
-        type:
-          $ref: '#/components/schemas/microsoft.graph.phoneType'
-      additionalProperties:
-        type: object
-    microsoft.graph.location:
-      title: location
-      type: object
-      properties:
-        address:
-          $ref: '#/components/schemas/microsoft.graph.physicalAddress'
-        coordinates:
-          $ref: '#/components/schemas/microsoft.graph.outlookGeoCoordinates'
-        displayName:
-          type: string
-          description: The name associated with the location.
-          nullable: true
-        locationEmailAddress:
-          type: string
-          description: Optional email address of the location.
-          nullable: true
-        locationType:
-          $ref: '#/components/schemas/microsoft.graph.locationType'
-        locationUri:
-          type: string
-          description: Optional URI representing the location.
-          nullable: true
-        uniqueId:
-          type: string
-          description: For internal use only.
-          nullable: true
-        uniqueIdType:
-          $ref: '#/components/schemas/microsoft.graph.locationUniqueIdType'
-      additionalProperties:
-        type: object
-    microsoft.graph.scoredEmailAddress:
-      title: scoredEmailAddress
-      type: object
-      properties:
-        address:
-          type: string
-          description: The email address.
-          nullable: true
-        itemId:
-          type: string
-          nullable: true
-        relevanceScore:
-          type: number
-          description: 'The relevance score of the email address. A relevance score is used as a sort key, in relation to the other returned results. A higher relevance score value corresponds to a more relevant result. Relevance is determined by the user’s communication and collaboration patterns and business relationships.'
-          format: double
-          nullable: true
-        selectionLikelihood:
-          $ref: '#/components/schemas/microsoft.graph.selectionLikelihoodInfo'
-      additionalProperties:
-        type: object
-    microsoft.graph.website:
-      title: website
-      type: object
-      properties:
-        address:
-          type: string
-          description: The URL of the website.
-          nullable: true
-        displayName:
-          type: string
-          description: The display name of the web site.
-          nullable: true
-        type:
-          $ref: '#/components/schemas/microsoft.graph.websiteType'
-      additionalProperties:
-        type: object
+      description: The type of person.
+    microsoft.graph.phone: { }
+    microsoft.graph.location: { }
+    microsoft.graph.scoredEmailAddress: { }
+    microsoft.graph.website: { }
     microsoft.graph.ODataErrors.ODataError:
       required:
         - error
@@ -1767,133 +1596,6 @@ components:
           type: string
       additionalProperties:
         type: object
-    microsoft.graph.insightIdentity:
-      title: insightIdentity
-      type: object
-      properties:
-        address:
-          type: string
-          description: The email address of the user who shared the item.
-          nullable: true
-        displayName:
-          type: string
-          description: The display name of the user who shared the item.
-          nullable: true
-        id:
-          type: string
-          description: The id of the user who shared the item.
-          nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.phoneType:
-      title: phoneType
-      enum:
-        - home
-        - business
-        - mobile
-        - other
-        - assistant
-        - homeFax
-        - businessFax
-        - otherFax
-        - pager
-        - radio
-      type: string
-    microsoft.graph.physicalAddress:
-      title: physicalAddress
-      type: object
-      properties:
-        city:
-          type: string
-          description: The city.
-          nullable: true
-        countryOrRegion:
-          type: string
-          description: 'The country or region. It''s a free-format string value, for example, ''United States''.'
-          nullable: true
-        postalCode:
-          type: string
-          description: The postal code.
-          nullable: true
-        state:
-          type: string
-          description: The state.
-          nullable: true
-        street:
-          type: string
-          description: The street.
-          nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.outlookGeoCoordinates:
-      title: outlookGeoCoordinates
-      type: object
-      properties:
-        accuracy:
-          type: number
-          description: 'The accuracy of the latitude and longitude. As an example, the accuracy can be measured in meters, such as the latitude and longitude are accurate to within 50 meters.'
-          format: double
-          nullable: true
-        altitude:
-          type: number
-          description: The altitude of the location.
-          format: double
-          nullable: true
-        altitudeAccuracy:
-          type: number
-          description: The accuracy of the altitude.
-          format: double
-          nullable: true
-        latitude:
-          type: number
-          description: The latitude of the location.
-          format: double
-          nullable: true
-        longitude:
-          type: number
-          description: The longitude of the location.
-          format: double
-          nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.locationType:
-      title: locationType
-      enum:
-        - default
-        - conferenceRoom
-        - homeAddress
-        - businessAddress
-        - geoCoordinates
-        - streetAddress
-        - hotel
-        - restaurant
-        - localBusiness
-        - postalAddress
-      type: string
-    microsoft.graph.locationUniqueIdType:
-      title: locationUniqueIdType
-      enum:
-        - unknown
-        - locationStore
-        - directory
-        - private
-        - bing
-      type: string
-    microsoft.graph.selectionLikelihoodInfo:
-      title: selectionLikelihoodInfo
-      enum:
-        - notSpecified
-        - high
-      type: string
-    microsoft.graph.websiteType:
-      title: websiteType
-      enum:
-        - other
-        - home
-        - work
-        - blog
-        - profile
-      type: string
     microsoft.graph.ODataErrors.MainError:
       required:
         - code
