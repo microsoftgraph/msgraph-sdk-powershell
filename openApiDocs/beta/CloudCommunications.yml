@@ -312,6 +312,7 @@ paths:
       tags:
         - communications.callRecord
       summary: Get sessions from communications
+      description: 'List of sessions involved in the call. Peer-to-peer calls typically only have one session, whereas group calls typically have at least one session per participant. Read-only. Nullable.'
       operationId: communications.callRecords_ListSessions
       parameters:
         - name: callRecord-id
@@ -427,6 +428,7 @@ paths:
       tags:
         - communications.callRecord
       summary: Get sessions from communications
+      description: 'List of sessions involved in the call. Peer-to-peer calls typically only have one session, whereas group calls typically have at least one session per participant. Read-only. Nullable.'
       operationId: communications.callRecords_GetSessions
       parameters:
         - name: callRecord-id
@@ -560,6 +562,7 @@ paths:
       tags:
         - communications.callRecord
       summary: Get segments from communications
+      description: The list of segments involved in the session. Read-only. Nullable.
       operationId: communications.callRecords.sessions_ListSegments
       parameters:
         - name: callRecord-id
@@ -687,6 +690,7 @@ paths:
       tags:
         - communications.callRecord
       summary: Get segments from communications
+      description: The list of segments involved in the session. Read-only. Nullable.
       operationId: communications.callRecords.sessions_GetSegments
       parameters:
         - name: callRecord-id
@@ -3344,6 +3348,7 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Get alternativeRecording for the navigation property onlineMeetings from communications
+      description: The content stream of the alternative recording of a Microsoft Teams live event. Read-only.
       operationId: communications_GetOnlineMeetingsAlternativeRecording
       parameters:
         - name: onlineMeeting-id
@@ -3368,6 +3373,7 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Update alternativeRecording for the navigation property onlineMeetings in communications
+      description: The content stream of the alternative recording of a Microsoft Teams live event. Read-only.
       operationId: communications_SetOnlineMeetingsAlternativeRecording
       parameters:
         - name: onlineMeeting-id
@@ -3396,6 +3402,7 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Get attendanceReports from communications
+      description: The attendance reports of an online meeting. Read-only.
       operationId: communications.onlineMeetings_ListAttendanceReports
       parameters:
         - name: onlineMeeting-id
@@ -3502,6 +3509,7 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Get attendanceReports from communications
+      description: The attendance reports of an online meeting. Read-only.
       operationId: communications.onlineMeetings_GetAttendanceReports
       parameters:
         - name: onlineMeeting-id
@@ -3632,6 +3640,7 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Get attendanceRecords from communications
+      description: List of attendance records of an attendance report. Read-only.
       operationId: communications.onlineMeetings.attendanceReports_ListAttendanceRecords
       parameters:
         - name: onlineMeeting-id
@@ -3759,6 +3768,7 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Get attendanceRecords from communications
+      description: List of attendance records of an attendance report. Read-only.
       operationId: communications.onlineMeetings.attendanceReports_GetAttendanceRecords
       parameters:
         - name: onlineMeeting-id
@@ -3905,6 +3915,7 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Get attendeeReport for the navigation property onlineMeetings from communications
+      description: The content stream of the attendee report of a Teams live event. Read-only.
       operationId: communications_GetOnlineMeetingsAttendeeReport
       parameters:
         - name: onlineMeeting-id
@@ -3929,6 +3940,7 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Update attendeeReport for the navigation property onlineMeetings in communications
+      description: The content stream of the attendee report of a Teams live event. Read-only.
       operationId: communications_SetOnlineMeetingsAttendeeReport
       parameters:
         - name: onlineMeeting-id
@@ -4065,6 +4077,7 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Get attendanceRecords from communications
+      description: List of attendance records of an attendance report. Read-only.
       operationId: communications.onlineMeetings.meetingAttendanceReport_ListAttendanceRecords
       parameters:
         - name: onlineMeeting-id
@@ -4178,6 +4191,7 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Get attendanceRecords from communications
+      description: List of attendance records of an attendance report. Read-only.
       operationId: communications.onlineMeetings.meetingAttendanceReport_GetAttendanceRecords
       parameters:
         - name: onlineMeeting-id
@@ -4303,6 +4317,7 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Get recording for the navigation property onlineMeetings from communications
+      description: The content stream of the recording of a Teams live event. Read-only.
       operationId: communications_GetOnlineMeetingsRecording
       parameters:
         - name: onlineMeeting-id
@@ -4327,6 +4342,7 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Update recording for the navigation property onlineMeetings in communications
+      description: The content stream of the recording of a Teams live event. Read-only.
       operationId: communications_SetOnlineMeetingsRecording
       parameters:
         - name: onlineMeeting-id
@@ -4355,6 +4371,7 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Get registration from communications
+      description: The registration that has been enabled for an online meeting. One online meeting can only have one registration enabled.
       operationId: communications.onlineMeetings_GetRegistration
       parameters:
         - name: onlineMeeting-id
@@ -4474,6 +4491,7 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Get customQuestions from communications
+      description: Custom registration questions.
       operationId: communications.onlineMeetings.registration_ListCustomQuestions
       parameters:
         - name: onlineMeeting-id
@@ -4581,6 +4599,7 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Get customQuestions from communications
+      description: Custom registration questions.
       operationId: communications.onlineMeetings.registration_GetCustomQuestions
       parameters:
         - name: onlineMeeting-id
@@ -4704,6 +4723,7 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Get transcripts from communications
+      description: The transcripts of an online meeting. Read-only.
       operationId: communications.onlineMeetings_ListTranscripts
       parameters:
         - name: onlineMeeting-id
@@ -4805,6 +4825,7 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Get transcripts from communications
+      description: The transcripts of an online meeting. Read-only.
       operationId: communications.onlineMeetings_GetTranscripts
       parameters:
         - name: onlineMeeting-id
@@ -4926,6 +4947,7 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Get content for the navigation property transcripts from communications
+      description: A field representing the content of the transcript. Read-only.
       operationId: communications.onlineMeetings_GetTranscriptsContent
       parameters:
         - name: onlineMeeting-id
@@ -4957,6 +4979,7 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Update content for the navigation property transcripts in communications
+      description: A field representing the content of the transcript. Read-only.
       operationId: communications.onlineMeetings_SetTranscriptsContent
       parameters:
         - name: onlineMeeting-id
@@ -5452,10 +5475,8 @@ paths:
               properties:
                 availability:
                   type: string
-                  nullable: true
                 activity:
                   type: string
-                  nullable: true
                 expirationDuration:
                   pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
                   type: string
@@ -5847,6 +5868,7 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Get alternativeRecording for the navigation property onlineMeetings from users
+      description: The content stream of the alternative recording of a Microsoft Teams live event. Read-only.
       operationId: users_GetOnlineMeetingsAlternativeRecording
       parameters:
         - name: user-id
@@ -5878,6 +5900,7 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Update alternativeRecording for the navigation property onlineMeetings in users
+      description: The content stream of the alternative recording of a Microsoft Teams live event. Read-only.
       operationId: users_SetOnlineMeetingsAlternativeRecording
       parameters:
         - name: user-id
@@ -5913,6 +5936,7 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Get attendanceReports from users
+      description: The attendance reports of an online meeting. Read-only.
       operationId: users.onlineMeetings_ListAttendanceReports
       parameters:
         - name: user-id
@@ -6033,6 +6057,7 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Get attendanceReports from users
+      description: The attendance reports of an online meeting. Read-only.
       operationId: users.onlineMeetings_GetAttendanceReports
       parameters:
         - name: user-id
@@ -6185,6 +6210,7 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Get attendanceRecords from users
+      description: List of attendance records of an attendance report. Read-only.
       operationId: users.onlineMeetings.attendanceReports_ListAttendanceRecords
       parameters:
         - name: user-id
@@ -6326,6 +6352,7 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Get attendanceRecords from users
+      description: List of attendance records of an attendance report. Read-only.
       operationId: users.onlineMeetings.attendanceReports_GetAttendanceRecords
       parameters:
         - name: user-id
@@ -6493,6 +6520,7 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Get attendeeReport for the navigation property onlineMeetings from users
+      description: The content stream of the attendee report of a Teams live event. Read-only.
       operationId: users_GetOnlineMeetingsAttendeeReport
       parameters:
         - name: user-id
@@ -6524,6 +6552,7 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Update attendeeReport for the navigation property onlineMeetings in users
+      description: The content stream of the attendee report of a Teams live event. Read-only.
       operationId: users_SetOnlineMeetingsAttendeeReport
       parameters:
         - name: user-id
@@ -6689,6 +6718,7 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Get attendanceRecords from users
+      description: List of attendance records of an attendance report. Read-only.
       operationId: users.onlineMeetings.meetingAttendanceReport_ListAttendanceRecords
       parameters:
         - name: user-id
@@ -6816,6 +6846,7 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Get attendanceRecords from users
+      description: List of attendance records of an attendance report. Read-only.
       operationId: users.onlineMeetings.meetingAttendanceReport_GetAttendanceRecords
       parameters:
         - name: user-id
@@ -6962,6 +6993,7 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Get recording for the navigation property onlineMeetings from users
+      description: The content stream of the recording of a Teams live event. Read-only.
       operationId: users_GetOnlineMeetingsRecording
       parameters:
         - name: user-id
@@ -6993,6 +7025,7 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Update recording for the navigation property onlineMeetings in users
+      description: The content stream of the recording of a Teams live event. Read-only.
       operationId: users_SetOnlineMeetingsRecording
       parameters:
         - name: user-id
@@ -7028,6 +7061,7 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Get registration from users
+      description: The registration that has been enabled for an online meeting. One online meeting can only have one registration enabled.
       operationId: users.onlineMeetings_GetRegistration
       parameters:
         - name: user-id
@@ -7170,6 +7204,7 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Get customQuestions from users
+      description: Custom registration questions.
       operationId: users.onlineMeetings.registration_ListCustomQuestions
       parameters:
         - name: user-id
@@ -7291,6 +7326,7 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Get customQuestions from users
+      description: Custom registration questions.
       operationId: users.onlineMeetings.registration_GetCustomQuestions
       parameters:
         - name: user-id
@@ -7435,6 +7471,7 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Get transcripts from users
+      description: The transcripts of an online meeting. Read-only.
       operationId: users.onlineMeetings_ListTranscripts
       parameters:
         - name: user-id
@@ -7550,6 +7587,7 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Get transcripts from users
+      description: The transcripts of an online meeting. Read-only.
       operationId: users.onlineMeetings_GetTranscripts
       parameters:
         - name: user-id
@@ -7692,6 +7730,7 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Get content for the navigation property transcripts from users
+      description: A field representing the content of the transcript. Read-only.
       operationId: users.onlineMeetings_GetTranscriptsContent
       parameters:
         - name: user-id
@@ -7730,6 +7769,7 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Update content for the navigation property transcripts in users
+      description: A field representing the content of the transcript. Read-only.
       operationId: users.onlineMeetings_SetTranscriptsContent
       parameters:
         - name: user-id
@@ -9566,11 +9606,11 @@ components:
       properties:
         displayName:
           type: string
-          description: 'The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
+          description: The display name of the identity. This property is read-only.
           nullable: true
         id:
           type: string
-          description: Unique identifier for the identity.
+          description: The identifier of the identity. This property is read-only.
           nullable: true
       additionalProperties:
         type: object

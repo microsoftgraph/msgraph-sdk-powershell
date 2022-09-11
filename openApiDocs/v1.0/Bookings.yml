@@ -355,6 +355,7 @@ paths:
       tags:
         - solutions.bookingBusiness
       summary: Get appointments from solutions
+      description: All the appointments of this business. Read-only. Nullable.
       operationId: solutions.bookingBusinesses_ListAppointments
       parameters:
         - name: bookingBusiness-id
@@ -519,6 +520,7 @@ paths:
       tags:
         - solutions.bookingBusiness
       summary: Get appointments from solutions
+      description: All the appointments of this business. Read-only. Nullable.
       operationId: solutions.bookingBusinesses_GetAppointments
       parameters:
         - name: bookingBusiness-id
@@ -664,6 +666,7 @@ paths:
       tags:
         - solutions.Actions
       summary: Invoke action cancel
+      description: 'Cancels the giving booking appointment, sending a message to the involved parties.'
       operationId: solutions.bookingBusinesses.appointments_cancel
       parameters:
         - name: bookingBusiness-id
@@ -704,6 +707,7 @@ paths:
       tags:
         - solutions.bookingBusiness
       summary: Get calendarView from solutions
+      description: The set of appointments of this business in a specified date range. Read-only. Nullable.
       operationId: solutions.bookingBusinesses_ListCalendarView
       parameters:
         - name: bookingBusiness-id
@@ -868,6 +872,7 @@ paths:
       tags:
         - solutions.bookingBusiness
       summary: Get calendarView from solutions
+      description: The set of appointments of this business in a specified date range. Read-only. Nullable.
       operationId: solutions.bookingBusinesses_GetCalendarView
       parameters:
         - name: bookingBusiness-id
@@ -1013,6 +1018,7 @@ paths:
       tags:
         - solutions.Actions
       summary: Invoke action cancel
+      description: 'Cancels the giving booking appointment, sending a message to the involved parties.'
       operationId: solutions.bookingBusinesses.calendarView_cancel
       parameters:
         - name: bookingBusiness-id
@@ -1053,6 +1059,7 @@ paths:
       tags:
         - solutions.bookingBusiness
       summary: Get customers from solutions
+      description: All the customers of this business. Read-only. Nullable.
       operationId: solutions.bookingBusinesses_ListCustomers
       parameters:
         - name: bookingBusiness-id
@@ -1148,6 +1155,7 @@ paths:
       tags:
         - solutions.bookingBusiness
       summary: Get customers from solutions
+      description: All the customers of this business. Read-only. Nullable.
       operationId: solutions.bookingBusinesses_GetCustomers
       parameters:
         - name: bookingBusiness-id
@@ -1267,6 +1275,7 @@ paths:
       tags:
         - solutions.bookingBusiness
       summary: Get customQuestions from solutions
+      description: All the custom questions of this business. Read-only. Nullable.
       operationId: solutions.bookingBusinesses_ListCustomQuestions
       parameters:
         - name: bookingBusiness-id
@@ -1371,6 +1380,7 @@ paths:
       tags:
         - solutions.bookingBusiness
       summary: Get customQuestions from solutions
+      description: All the custom questions of this business. Read-only. Nullable.
       operationId: solutions.bookingBusinesses_GetCustomQuestions
       parameters:
         - name: bookingBusiness-id
@@ -1543,6 +1553,7 @@ paths:
       tags:
         - solutions.Actions
       summary: Invoke action publish
+      description: Makes the scheduling page of this business available to the general public.
       operationId: solutions.bookingBusinesses_publish
       parameters:
         - name: bookingBusiness-id
@@ -1563,6 +1574,7 @@ paths:
       tags:
         - solutions.Actions
       summary: Invoke action unpublish
+      description: Prevents the general public from seeing the scheduling page of this business.
       operationId: solutions.bookingBusinesses_unpublish
       parameters:
         - name: bookingBusiness-id
@@ -1583,6 +1595,7 @@ paths:
       tags:
         - solutions.bookingBusiness
       summary: Get services from solutions
+      description: All the services offered by this business. Read-only. Nullable.
       operationId: solutions.bookingBusinesses_ListServices
       parameters:
         - name: bookingBusiness-id
@@ -1735,6 +1748,7 @@ paths:
       tags:
         - solutions.bookingBusiness
       summary: Get services from solutions
+      description: All the services offered by this business. Read-only. Nullable.
       operationId: solutions.bookingBusinesses_GetServices
       parameters:
         - name: bookingBusiness-id
@@ -1873,6 +1887,7 @@ paths:
       tags:
         - solutions.bookingBusiness
       summary: Get staffMembers from solutions
+      description: All the staff members that provide services in this business. Read-only. Nullable.
       operationId: solutions.bookingBusinesses_ListStaffMembers
       parameters:
         - name: bookingBusiness-id
@@ -1968,6 +1983,7 @@ paths:
       tags:
         - solutions.bookingBusiness
       summary: Get staffMembers from solutions
+      description: All the staff members that provide services in this business. Read-only. Nullable.
       operationId: solutions.bookingBusinesses_GetStaffMembers
       parameters:
         - name: bookingBusiness-id
@@ -2389,11 +2405,11 @@ components:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
-              description: The current number of customers in the appointment.
+              description: The current number of customers in the appointment
               format: int32
             isLocationOnline:
               type: boolean
-              description: True indicates that the appointment will be held online. Default value is false.
+              description: 'If true, indicates that the appointment will be held online. Default value is false.'
             joinWebUrl:
               type: string
               description: The URL of the online meeting for the appointment.
@@ -2406,7 +2422,7 @@ components:
               format: int32
             optOutOfCustomerEmail:
               type: boolean
-              description: True indicates that the bookingCustomer for this appointment does not wish to receive a confirmation for this appointment.
+              description: If true indicates that the bookingCustomer for this appointment does not wish to receive a confirmation for this appointment.
             postBuffer:
               pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
               type: string
@@ -2430,7 +2446,7 @@ components:
               description: The collection of customer reminders sent for this appointment. The value of this property is available only when reading this bookingAppointment by its ID.
             selfServiceAppointmentId:
               type: string
-              description: 'An additional tracking ID for the appointment, if the appointment has been created directly by the customer on the scheduling page, as opposed to by a staff member on the behalf of the customer.'
+              description: 'An additional tracking ID for the appointment, if the appointment has been created directly by the customer on the scheduling page, as opposed to by a staff member on the behalf of the customer. Only supported for appointment if maxAttendeeCount is 1.'
               nullable: true
             serviceId:
               type: string
@@ -2447,7 +2463,7 @@ components:
               nullable: true
             smsNotificationsEnabled:
               type: boolean
-              description: True indicates SMS notifications will be sent to the customers for the appointment. Default value is false.
+              description: 'If true, indicates SMS notifications will be sent to the customers for the appointment. Default value is false.'
             staffMemberIds:
               type: array
               items:
@@ -2483,7 +2499,7 @@ components:
               description: List of possible answer values.
             displayName:
               type: string
-              description: Display name of this entity.
+              description: The question.
           additionalProperties:
             type: object
           description: Represents a custom question of the business.
@@ -2493,10 +2509,10 @@ components:
       properties:
         dateTime:
           type: string
-          description: 'A single point of time in a combined date and time representation ({date}T{time}). For example, ''2019-04-16T09:00:00''.'
+          description: 'A single point of time in a combined date and time representation ({date}T{time}; for example, 2017-08-29T04:00:00.0000000).'
         timeZone:
           type: string
-          description: 'Represents a time zone, for example, ''Pacific Standard Time''. See below for possible values.'
+          description: 'Represents a time zone, for example, ''Pacific Standard Time''. See below for more possible values.'
           nullable: true
       additionalProperties:
         type: object
@@ -2565,7 +2581,7 @@ components:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
-              description: 'The maximum number of customers allowed in a service. If maximumAttendeesCount of the service is greater than 1, pass valid customer IDs while creating or updating an appointment.  To create a customer, use the Create bookingCustomer operation.'
+              description: 'The maximum number of customers allowed in a service. If maximumAttendeesCount of the service is greater than 1, pass valid customer IDs while creating or updating an appointment. To create a customer, use the Create bookingCustomer operation.'
               format: int32
             notes:
               type: string
@@ -2817,10 +2833,10 @@ components:
       properties:
         isRequired:
           type: boolean
-          description: Indicates whether it is mandatory to answer the custom question.
+          description: The ID of the custom question.
         questionId:
           type: string
-          description: If it is mandatory to answer the custom question.
+          description: Indicates whether it is mandatory to answer the custom question.
       additionalProperties:
         type: object
     microsoft.graph.ODataErrors.ODataError:
@@ -2952,59 +2968,11 @@ components:
         - unknownFutureValue
       type: string
     microsoft.graph.outlookGeoCoordinates:
-      title: outlookGeoCoordinates
-      type: object
-      properties:
-        accuracy:
-          type: number
-          description: 'The accuracy of the latitude and longitude. As an example, the accuracy can be measured in meters, such as the latitude and longitude are accurate to within 50 meters.'
-          format: double
-          nullable: true
-        altitude:
-          type: number
-          description: The altitude of the location.
-          format: double
-          nullable: true
-        altitudeAccuracy:
-          type: number
-          description: The accuracy of the altitude.
-          format: double
-          nullable: true
-        latitude:
-          type: number
-          description: The latitude of the location.
-          format: double
-          nullable: true
-        longitude:
-          type: number
-          description: The longitude of the location.
-          format: double
-          nullable: true
-      additionalProperties:
-        type: object
+      description: The geographic coordinates and elevation of the location.
     microsoft.graph.locationType:
-      title: locationType
-      enum:
-        - default
-        - conferenceRoom
-        - homeAddress
-        - businessAddress
-        - geoCoordinates
-        - streetAddress
-        - hotel
-        - restaurant
-        - localBusiness
-        - postalAddress
-      type: string
+      description: 'The type of location. The possible values are: default, conferenceRoom, homeAddress, businessAddress,geoCoordinates, streetAddress, hotel, restaurant, localBusiness, postalAddress. Read-only.'
     microsoft.graph.locationUniqueIdType:
-      title: locationUniqueIdType
-      enum:
-        - unknown
-        - locationStore
-        - directory
-        - private
-        - bing
-      type: string
+      description: For internal use only.
     microsoft.graph.bookingsAvailabilityStatus:
       title: bookingsAvailabilityStatus
       enum:

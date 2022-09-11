@@ -133,6 +133,7 @@ paths:
       tags:
         - deviceAppManagement.androidManagedAppProtection
       summary: Get androidManagedAppProtections from deviceAppManagement
+      description: Android managed app policies.
       operationId: deviceAppManagement_ListAndroidManagedAppProtections
       parameters:
         - $ref: '#/components/parameters/top'
@@ -342,6 +343,7 @@ paths:
       tags:
         - deviceAppManagement.androidManagedAppProtection
       summary: Get androidManagedAppProtections from deviceAppManagement
+      description: Android managed app policies.
       operationId: deviceAppManagement_GetAndroidManagedAppProtections
       parameters:
         - name: androidManagedAppProtection-id
@@ -500,6 +502,7 @@ paths:
       tags:
         - deviceAppManagement.androidManagedAppProtection
       summary: Get apps from deviceAppManagement
+      description: List of apps to which the policy is deployed.
       operationId: deviceAppManagement.androidManagedAppProtections_ListApps
       parameters:
         - name: androidManagedAppProtection-id
@@ -601,6 +604,7 @@ paths:
       tags:
         - deviceAppManagement.androidManagedAppProtection
       summary: Get apps from deviceAppManagement
+      description: List of apps to which the policy is deployed.
       operationId: deviceAppManagement.androidManagedAppProtections_GetApps
       parameters:
         - name: androidManagedAppProtection-id
@@ -722,6 +726,7 @@ paths:
       tags:
         - deviceAppManagement.androidManagedAppProtection
       summary: Get deploymentSummary from deviceAppManagement
+      description: Navigation property to deployment summary of the configuration.
       operationId: deviceAppManagement.androidManagedAppProtections_GetDeploymentSummary
       parameters:
         - name: androidManagedAppProtection-id
@@ -825,6 +830,7 @@ paths:
       tags:
         - deviceAppManagement.defaultManagedAppProtection
       summary: Get defaultManagedAppProtections from deviceAppManagement
+      description: Default managed app policies.
       operationId: deviceAppManagement_ListDefaultManagedAppProtections
       parameters:
         - $ref: '#/components/parameters/top'
@@ -1035,6 +1041,7 @@ paths:
       tags:
         - deviceAppManagement.defaultManagedAppProtection
       summary: Get defaultManagedAppProtections from deviceAppManagement
+      description: Default managed app policies.
       operationId: deviceAppManagement_GetDefaultManagedAppProtections
       parameters:
         - name: defaultManagedAppProtection-id
@@ -1188,6 +1195,7 @@ paths:
       tags:
         - deviceAppManagement.defaultManagedAppProtection
       summary: Get apps from deviceAppManagement
+      description: List of apps to which the policy is deployed.
       operationId: deviceAppManagement.defaultManagedAppProtections_ListApps
       parameters:
         - name: defaultManagedAppProtection-id
@@ -1289,6 +1297,7 @@ paths:
       tags:
         - deviceAppManagement.defaultManagedAppProtection
       summary: Get apps from deviceAppManagement
+      description: List of apps to which the policy is deployed.
       operationId: deviceAppManagement.defaultManagedAppProtections_GetApps
       parameters:
         - name: defaultManagedAppProtection-id
@@ -1410,6 +1419,7 @@ paths:
       tags:
         - deviceAppManagement.defaultManagedAppProtection
       summary: Get deploymentSummary from deviceAppManagement
+      description: Navigation property to deployment summary of the configuration.
       operationId: deviceAppManagement.defaultManagedAppProtections_GetDeploymentSummary
       parameters:
         - name: defaultManagedAppProtection-id
@@ -1513,6 +1523,7 @@ paths:
       tags:
         - deviceAppManagement.iosManagedAppProtection
       summary: Get iosManagedAppProtections from deviceAppManagement
+      description: iOS managed app policies.
       operationId: deviceAppManagement_ListIosManagedAppProtections
       parameters:
         - $ref: '#/components/parameters/top'
@@ -1713,6 +1724,7 @@ paths:
       tags:
         - deviceAppManagement.iosManagedAppProtection
       summary: Get iosManagedAppProtections from deviceAppManagement
+      description: iOS managed app policies.
       operationId: deviceAppManagement_GetIosManagedAppProtections
       parameters:
         - name: iosManagedAppProtection-id
@@ -1868,6 +1880,7 @@ paths:
       tags:
         - deviceAppManagement.iosManagedAppProtection
       summary: Get apps from deviceAppManagement
+      description: List of apps to which the policy is deployed.
       operationId: deviceAppManagement.iosManagedAppProtections_ListApps
       parameters:
         - name: iosManagedAppProtection-id
@@ -1969,6 +1982,7 @@ paths:
       tags:
         - deviceAppManagement.iosManagedAppProtection
       summary: Get apps from deviceAppManagement
+      description: List of apps to which the policy is deployed.
       operationId: deviceAppManagement.iosManagedAppProtections_GetApps
       parameters:
         - name: iosManagedAppProtection-id
@@ -2090,6 +2104,7 @@ paths:
       tags:
         - deviceAppManagement.iosManagedAppProtection
       summary: Get deploymentSummary from deviceAppManagement
+      description: Navigation property to deployment summary of the configuration.
       operationId: deviceAppManagement.iosManagedAppProtections_GetDeploymentSummary
       parameters:
         - name: iosManagedAppProtection-id
@@ -2193,6 +2208,7 @@ paths:
       tags:
         - deviceAppManagement.managedAppPolicy
       summary: Get managedAppPolicies from deviceAppManagement
+      description: Managed app policies.
       operationId: deviceAppManagement_ListManagedAppPolicies
       parameters:
         - $ref: '#/components/parameters/top'
@@ -2288,6 +2304,7 @@ paths:
       tags:
         - deviceAppManagement.managedAppPolicy
       summary: Get managedAppPolicies from deviceAppManagement
+      description: Managed app policies.
       operationId: deviceAppManagement_GetManagedAppPolicies
       parameters:
         - name: managedAppPolicy-id
@@ -2428,6 +2445,7 @@ paths:
       tags:
         - deviceAppManagement.managedAppRegistration
       summary: Get managedAppRegistrations from deviceAppManagement
+      description: The managed app registrations.
       operationId: deviceAppManagement_ListManagedAppRegistrations
       parameters:
         - $ref: '#/components/parameters/top'
@@ -2550,6 +2568,7 @@ paths:
       tags:
         - deviceAppManagement.managedAppRegistration
       summary: Get managedAppRegistrations from deviceAppManagement
+      description: The managed app registrations.
       operationId: deviceAppManagement_GetManagedAppRegistrations
       parameters:
         - name: managedAppRegistration-id
@@ -2679,6 +2698,7 @@ paths:
       tags:
         - deviceAppManagement.managedAppRegistration
       summary: Get appliedPolicies from deviceAppManagement
+      description: Zero or more policys already applied on the registered app when it last synchronized with managment service.
       operationId: deviceAppManagement.managedAppRegistrations_ListAppliedPolicies
       parameters:
         - name: managedAppRegistration-id
@@ -2789,6 +2809,7 @@ paths:
       tags:
         - deviceAppManagement.managedAppRegistration
       summary: Get appliedPolicies from deviceAppManagement
+      description: Zero or more policys already applied on the registered app when it last synchronized with managment service.
       operationId: deviceAppManagement.managedAppRegistrations_GetAppliedPolicies
       parameters:
         - name: managedAppRegistration-id
@@ -2957,6 +2978,7 @@ paths:
       tags:
         - deviceAppManagement.managedAppRegistration
       summary: Get intendedPolicies from deviceAppManagement
+      description: Zero or more policies admin intended for the app as of now.
       operationId: deviceAppManagement.managedAppRegistrations_ListIntendedPolicies
       parameters:
         - name: managedAppRegistration-id
@@ -3067,6 +3089,7 @@ paths:
       tags:
         - deviceAppManagement.managedAppRegistration
       summary: Get intendedPolicies from deviceAppManagement
+      description: Zero or more policies admin intended for the app as of now.
       operationId: deviceAppManagement.managedAppRegistrations_GetIntendedPolicies
       parameters:
         - name: managedAppRegistration-id
@@ -3235,6 +3258,7 @@ paths:
       tags:
         - deviceAppManagement.managedAppRegistration
       summary: Get operations from deviceAppManagement
+      description: Zero or more long running operations triggered on the app registration.
       operationId: deviceAppManagement.managedAppRegistrations_ListOperations
       parameters:
         - name: managedAppRegistration-id
@@ -3342,6 +3366,7 @@ paths:
       tags:
         - deviceAppManagement.managedAppRegistration
       summary: Get operations from deviceAppManagement
+      description: Zero or more long running operations triggered on the app registration.
       operationId: deviceAppManagement.managedAppRegistrations_GetOperations
       parameters:
         - name: managedAppRegistration-id
@@ -3490,6 +3515,7 @@ paths:
       tags:
         - deviceAppManagement.managedAppStatus
       summary: Get managedAppStatuses from deviceAppManagement
+      description: The managed app statuses.
       operationId: deviceAppManagement_ListManagedAppStatuses
       parameters:
         - $ref: '#/components/parameters/top'
@@ -3576,6 +3602,7 @@ paths:
       tags:
         - deviceAppManagement.managedAppStatus
       summary: Get managedAppStatuses from deviceAppManagement
+      description: The managed app statuses.
       operationId: deviceAppManagement_GetManagedAppStatuses
       parameters:
         - name: managedAppStatus-id
@@ -3676,6 +3703,7 @@ paths:
       tags:
         - deviceAppManagement.managedEBook
       summary: Get managedEBooks from deviceAppManagement
+      description: The Managed eBook.
       operationId: deviceAppManagement_ListManagedEBooks
       parameters:
         - $ref: '#/components/parameters/top'
@@ -3791,6 +3819,7 @@ paths:
       tags:
         - deviceAppManagement.managedEBook
       summary: Get managedEBooks from deviceAppManagement
+      description: The Managed eBook.
       operationId: deviceAppManagement_GetManagedEBooks
       parameters:
         - name: managedEBook-id
@@ -3925,6 +3954,7 @@ paths:
       tags:
         - deviceAppManagement.managedEBook
       summary: Get assignments from deviceAppManagement
+      description: The list of assignments for this eBook.
       operationId: deviceAppManagement.managedEBooks_ListAssignments
       parameters:
         - name: managedEBook-id
@@ -4026,6 +4056,7 @@ paths:
       tags:
         - deviceAppManagement.managedEBook
       summary: Get assignments from deviceAppManagement
+      description: The list of assignments for this eBook.
       operationId: deviceAppManagement.managedEBooks_GetAssignments
       parameters:
         - name: managedEBook-id
@@ -4147,6 +4178,7 @@ paths:
       tags:
         - deviceAppManagement.managedEBook
       summary: Get deviceStates from deviceAppManagement
+      description: The list of installation states for this eBook.
       operationId: deviceAppManagement.managedEBooks_ListDeviceStates
       parameters:
         - name: managedEBook-id
@@ -4266,6 +4298,7 @@ paths:
       tags:
         - deviceAppManagement.managedEBook
       summary: Get deviceStates from deviceAppManagement
+      description: The list of installation states for this eBook.
       operationId: deviceAppManagement.managedEBooks_GetDeviceStates
       parameters:
         - name: managedEBook-id
@@ -4393,6 +4426,7 @@ paths:
       tags:
         - deviceAppManagement.managedEBook
       summary: Get installSummary from deviceAppManagement
+      description: Mobile App Install Summary.
       operationId: deviceAppManagement.managedEBooks_GetInstallSummary
       parameters:
         - name: managedEBook-id
@@ -4531,6 +4565,7 @@ paths:
       tags:
         - deviceAppManagement.managedEBook
       summary: Get userStateSummary from deviceAppManagement
+      description: The list of installation states for this eBook.
       operationId: deviceAppManagement.managedEBooks_ListUserStateSummary
       parameters:
         - name: managedEBook-id
@@ -4640,6 +4675,7 @@ paths:
       tags:
         - deviceAppManagement.managedEBook
       summary: Get userStateSummary from deviceAppManagement
+      description: The list of installation states for this eBook.
       operationId: deviceAppManagement.managedEBooks_GetUserStateSummary
       parameters:
         - name: managedEBook-id
@@ -4771,6 +4807,7 @@ paths:
       tags:
         - deviceAppManagement.managedEBook
       summary: Get deviceStates from deviceAppManagement
+      description: The install state of the eBook.
       operationId: deviceAppManagement.managedEBooks.userStateSummary_ListDeviceStates
       parameters:
         - name: managedEBook-id
@@ -4904,6 +4941,7 @@ paths:
       tags:
         - deviceAppManagement.managedEBook
       summary: Get deviceStates from deviceAppManagement
+      description: The install state of the eBook.
       operationId: deviceAppManagement.managedEBooks.userStateSummary_GetDeviceStates
       parameters:
         - name: managedEBook-id
@@ -5052,6 +5090,7 @@ paths:
       tags:
         - deviceAppManagement.mdmWindowsInformationProtectionPolicy
       summary: Get mdmWindowsInformationProtectionPolicies from deviceAppManagement
+      description: Windows information protection for apps running on devices which are MDM enrolled.
       operationId: deviceAppManagement_ListMdmWindowsInformationProtectionPolicies
       parameters:
         - $ref: '#/components/parameters/top'
@@ -5219,6 +5258,7 @@ paths:
       tags:
         - deviceAppManagement.mdmWindowsInformationProtectionPolicy
       summary: Get mdmWindowsInformationProtectionPolicies from deviceAppManagement
+      description: Windows information protection for apps running on devices which are MDM enrolled.
       operationId: deviceAppManagement_GetMdmWindowsInformationProtectionPolicies
       parameters:
         - name: mdmWindowsInformationProtectionPolicy-id
@@ -5363,6 +5403,7 @@ paths:
       tags:
         - deviceAppManagement.Actions
       summary: Invoke action syncMicrosoftStoreForBusinessApps
+      description: Syncs Intune account with Microsoft Store For Business
       operationId: deviceAppManagement_syncMicrosoftStoreGraphFPreBusinessApps
       responses:
         '204':
@@ -5375,6 +5416,7 @@ paths:
       tags:
         - deviceAppManagement.mobileAppCategory
       summary: Get mobileAppCategories from deviceAppManagement
+      description: The mobile app categories.
       operationId: deviceAppManagement_ListMobileAppCategories
       parameters:
         - $ref: '#/components/parameters/top'
@@ -5461,6 +5503,7 @@ paths:
       tags:
         - deviceAppManagement.mobileAppCategory
       summary: Get mobileAppCategories from deviceAppManagement
+      description: The mobile app categories.
       operationId: deviceAppManagement_GetMobileAppCategories
       parameters:
         - name: mobileAppCategory-id
@@ -5561,6 +5604,7 @@ paths:
       tags:
         - deviceAppManagement.managedDeviceMobileAppConfiguration
       summary: Get mobileAppConfigurations from deviceAppManagement
+      description: The Managed Device Mobile Application Configurations.
       operationId: deviceAppManagement_ListMobileAppConfigurations
       parameters:
         - $ref: '#/components/parameters/top'
@@ -5669,6 +5713,7 @@ paths:
       tags:
         - deviceAppManagement.managedDeviceMobileAppConfiguration
       summary: Get mobileAppConfigurations from deviceAppManagement
+      description: The Managed Device Mobile Application Configurations.
       operationId: deviceAppManagement_GetMobileAppConfigurations
       parameters:
         - name: managedDeviceMobileAppConfiguration-id
@@ -5806,6 +5851,7 @@ paths:
       tags:
         - deviceAppManagement.managedDeviceMobileAppConfiguration
       summary: Get assignments from deviceAppManagement
+      description: The list of group assignemenets for app configration.
       operationId: deviceAppManagement.mobileAppConfigurations_ListAssignments
       parameters:
         - name: managedDeviceMobileAppConfiguration-id
@@ -5904,6 +5950,7 @@ paths:
       tags:
         - deviceAppManagement.managedDeviceMobileAppConfiguration
       summary: Get assignments from deviceAppManagement
+      description: The list of group assignemenets for app configration.
       operationId: deviceAppManagement.mobileAppConfigurations_GetAssignments
       parameters:
         - name: managedDeviceMobileAppConfiguration-id
@@ -6024,6 +6071,7 @@ paths:
       tags:
         - deviceAppManagement.managedDeviceMobileAppConfiguration
       summary: Get deviceStatuses from deviceAppManagement
+      description: List of ManagedDeviceMobileAppConfigurationDeviceStatus.
       operationId: deviceAppManagement.mobileAppConfigurations_ListDeviceStatuses
       parameters:
         - name: managedDeviceMobileAppConfiguration-id
@@ -6140,6 +6188,7 @@ paths:
       tags:
         - deviceAppManagement.managedDeviceMobileAppConfiguration
       summary: Get deviceStatuses from deviceAppManagement
+      description: List of ManagedDeviceMobileAppConfigurationDeviceStatus.
       operationId: deviceAppManagement.mobileAppConfigurations_GetDeviceStatuses
       parameters:
         - name: managedDeviceMobileAppConfiguration-id
@@ -6266,6 +6315,7 @@ paths:
       tags:
         - deviceAppManagement.managedDeviceMobileAppConfiguration
       summary: Get deviceStatusSummary from deviceAppManagement
+      description: App configuration device status summary.
       operationId: deviceAppManagement.mobileAppConfigurations_GetDeviceStatusSummary
       parameters:
         - name: managedDeviceMobileAppConfiguration-id
@@ -6405,6 +6455,7 @@ paths:
       tags:
         - deviceAppManagement.managedDeviceMobileAppConfiguration
       summary: Get userStatuses from deviceAppManagement
+      description: List of ManagedDeviceMobileAppConfigurationUserStatus.
       operationId: deviceAppManagement.mobileAppConfigurations_ListUserStatuses
       parameters:
         - name: managedDeviceMobileAppConfiguration-id
@@ -6515,6 +6566,7 @@ paths:
       tags:
         - deviceAppManagement.managedDeviceMobileAppConfiguration
       summary: Get userStatuses from deviceAppManagement
+      description: List of ManagedDeviceMobileAppConfigurationUserStatus.
       operationId: deviceAppManagement.mobileAppConfigurations_GetUserStatuses
       parameters:
         - name: managedDeviceMobileAppConfiguration-id
@@ -6639,6 +6691,7 @@ paths:
       tags:
         - deviceAppManagement.managedDeviceMobileAppConfiguration
       summary: Get userStatusSummary from deviceAppManagement
+      description: App configuration user status summary.
       operationId: deviceAppManagement.mobileAppConfigurations_GetUserStatusSummary
       parameters:
         - name: managedDeviceMobileAppConfiguration-id
@@ -6744,6 +6797,7 @@ paths:
       tags:
         - deviceAppManagement.mobileApp
       summary: Get mobileApps from deviceAppManagement
+      description: The mobile apps.
       operationId: deviceAppManagement_ListMobileApps
       parameters:
         - $ref: '#/components/parameters/top'
@@ -6867,6 +6921,7 @@ paths:
       tags:
         - deviceAppManagement.mobileApp
       summary: Get mobileApps from deviceAppManagement
+      description: The mobile apps.
       operationId: deviceAppManagement_GetMobileApps
       parameters:
         - name: mobileApp-id
@@ -6993,6 +7048,7 @@ paths:
       tags:
         - deviceAppManagement.mobileApp
       summary: Get assignments from deviceAppManagement
+      description: The list of group assignments for this mobile app.
       operationId: deviceAppManagement.mobileApps_ListAssignments
       parameters:
         - name: mobileApp-id
@@ -7097,6 +7153,7 @@ paths:
       tags:
         - deviceAppManagement.mobileApp
       summary: Get assignments from deviceAppManagement
+      description: The list of group assignments for this mobile app.
       operationId: deviceAppManagement.mobileApps_GetAssignments
       parameters:
         - name: mobileApp-id
@@ -7219,6 +7276,7 @@ paths:
       tags:
         - deviceAppManagement.mobileApp
       summary: Get categories from deviceAppManagement
+      description: The list of categories for this app.
       operationId: deviceAppManagement.mobileApps_ListCategories
       parameters:
         - name: mobileApp-id
@@ -7290,6 +7348,7 @@ paths:
       tags:
         - deviceAppManagement.mobileApp
       summary: Get categories from deviceAppManagement
+      description: The list of categories for this app.
       operationId: deviceAppManagement.mobileApps_GetCategories
       parameters:
         - name: mobileApp-id
@@ -7381,6 +7440,7 @@ paths:
       tags:
         - deviceAppManagement.targetedManagedAppConfiguration
       summary: Get targetedManagedAppConfigurations from deviceAppManagement
+      description: Targeted managed app configurations.
       operationId: deviceAppManagement_ListTargetedManagedAppConfigurations
       parameters:
         - $ref: '#/components/parameters/top'
@@ -7491,6 +7551,7 @@ paths:
       tags:
         - deviceAppManagement.targetedManagedAppConfiguration
       summary: Get targetedManagedAppConfigurations from deviceAppManagement
+      description: Targeted managed app configurations.
       operationId: deviceAppManagement_GetTargetedManagedAppConfigurations
       parameters:
         - name: targetedManagedAppConfiguration-id
@@ -7620,6 +7681,7 @@ paths:
       tags:
         - deviceAppManagement.targetedManagedAppConfiguration
       summary: Get apps from deviceAppManagement
+      description: List of apps to which the policy is deployed.
       operationId: deviceAppManagement.targetedManagedAppConfigurations_ListApps
       parameters:
         - name: targetedManagedAppConfiguration-id
@@ -7721,6 +7783,7 @@ paths:
       tags:
         - deviceAppManagement.targetedManagedAppConfiguration
       summary: Get apps from deviceAppManagement
+      description: List of apps to which the policy is deployed.
       operationId: deviceAppManagement.targetedManagedAppConfigurations_GetApps
       parameters:
         - name: targetedManagedAppConfiguration-id
@@ -7842,6 +7905,7 @@ paths:
       tags:
         - deviceAppManagement.targetedManagedAppConfiguration
       summary: Get assignments from deviceAppManagement
+      description: Navigation property to list of inclusion and exclusion groups to which the policy is deployed.
       operationId: deviceAppManagement.targetedManagedAppConfigurations_ListAssignments
       parameters:
         - name: targetedManagedAppConfiguration-id
@@ -7940,6 +8004,7 @@ paths:
       tags:
         - deviceAppManagement.targetedManagedAppConfiguration
       summary: Get assignments from deviceAppManagement
+      description: Navigation property to list of inclusion and exclusion groups to which the policy is deployed.
       operationId: deviceAppManagement.targetedManagedAppConfigurations_GetAssignments
       parameters:
         - name: targetedManagedAppConfiguration-id
@@ -8060,6 +8125,7 @@ paths:
       tags:
         - deviceAppManagement.targetedManagedAppConfiguration
       summary: Get deploymentSummary from deviceAppManagement
+      description: Navigation property to deployment summary of the configuration.
       operationId: deviceAppManagement.targetedManagedAppConfigurations_GetDeploymentSummary
       parameters:
         - name: targetedManagedAppConfiguration-id
@@ -8233,6 +8299,7 @@ paths:
       tags:
         - deviceAppManagement.vppToken
       summary: Get vppTokens from deviceAppManagement
+      description: List of Vpp tokens for this organization.
       operationId: deviceAppManagement_ListVppTokens
       parameters:
         - $ref: '#/components/parameters/top'
@@ -8346,6 +8413,7 @@ paths:
       tags:
         - deviceAppManagement.vppToken
       summary: Get vppTokens from deviceAppManagement
+      description: List of Vpp tokens for this organization.
       operationId: deviceAppManagement_GetVppTokens
       parameters:
         - name: vppToken-id
@@ -8458,6 +8526,7 @@ paths:
       tags:
         - deviceAppManagement.Actions
       summary: Invoke action syncLicenses
+      description: Syncs licenses associated with a specific appleVolumePurchaseProgramToken
       operationId: deviceAppManagement.vppTokens_syncLicenses
       parameters:
         - name: vppToken-id
@@ -8482,6 +8551,7 @@ paths:
       tags:
         - deviceAppManagement.windowsInformationProtectionPolicy
       summary: Get windowsInformationProtectionPolicies from deviceAppManagement
+      description: Windows information protection for apps running on devices which are not MDM enrolled.
       operationId: deviceAppManagement_ListWindowsInformationProtectionPolicies
       parameters:
         - $ref: '#/components/parameters/top'
@@ -8685,6 +8755,7 @@ paths:
       tags:
         - deviceAppManagement.windowsInformationProtectionPolicy
       summary: Get windowsInformationProtectionPolicies from deviceAppManagement
+      description: Windows information protection for apps running on devices which are not MDM enrolled.
       operationId: deviceAppManagement_GetWindowsInformationProtectionPolicies
       parameters:
         - name: windowsInformationProtectionPolicy-id
@@ -8841,6 +8912,7 @@ paths:
       tags:
         - users.deviceManagementTroubleshootingEvent
       summary: Get deviceManagementTroubleshootingEvents from users
+      description: The list of troubleshooting events for this user.
       operationId: users_ListDeviceManagementTroubleshootingEvents
       parameters:
         - name: user-id
@@ -8942,6 +9014,7 @@ paths:
       tags:
         - users.deviceManagementTroubleshootingEvent
       summary: Get deviceManagementTroubleshootingEvents from users
+      description: The list of troubleshooting events for this user.
       operationId: users_GetDeviceManagementTroubleshootingEvents
       parameters:
         - name: user-id
@@ -9063,6 +9136,7 @@ paths:
       tags:
         - users.managedAppRegistration
       summary: Get managedAppRegistrations from users
+      description: Zero or more managed app registrations that belong to the user.
       operationId: users_ListManagedAppRegistrations
       parameters:
         - name: user-id
@@ -9170,6 +9244,7 @@ paths:
       tags:
         - users.managedAppRegistration
       summary: Get managedAppRegistrations from users
+      description: Zero or more managed app registrations that belong to the user.
       operationId: users_GetManagedAppRegistrations
       parameters:
         - name: user-id
@@ -9259,6 +9334,7 @@ paths:
       tags:
         - users.managedDevice
       summary: Get managedDevices from users
+      description: The managed devices associated with the user.
       operationId: users_ListManagedDevices
       parameters:
         - name: user-id
@@ -9513,6 +9589,7 @@ paths:
       tags:
         - users.managedDevice
       summary: Get managedDevices from users
+      description: The managed devices associated with the user.
       operationId: users_GetManagedDevices
       parameters:
         - name: user-id
@@ -9741,6 +9818,7 @@ paths:
       tags:
         - users.managedDevice
       summary: Get deviceCategory from users
+      description: Device category
       operationId: users.managedDevices_GetDeviceCategory
       parameters:
         - name: user-id
@@ -9862,6 +9940,7 @@ paths:
       tags:
         - users.managedDevice
       summary: Get deviceCompliancePolicyStates from users
+      description: Device compliance policy states for this device.
       operationId: users.managedDevices_ListDeviceCompliancePolicyStates
       parameters:
         - name: user-id
@@ -9989,6 +10068,7 @@ paths:
       tags:
         - users.managedDevice
       summary: Get deviceCompliancePolicyStates from users
+      description: Device compliance policy states for this device.
       operationId: users.managedDevices_GetDeviceCompliancePolicyStates
       parameters:
         - name: user-id
@@ -10135,6 +10215,7 @@ paths:
       tags:
         - users.managedDevice
       summary: Get deviceConfigurationStates from users
+      description: Device configuration states for this device.
       operationId: users.managedDevices_ListDeviceConfigurationStates
       parameters:
         - name: user-id
@@ -10262,6 +10343,7 @@ paths:
       tags:
         - users.managedDevice
       summary: Get deviceConfigurationStates from users
+      description: Device configuration states for this device.
       operationId: users.managedDevices_GetDeviceConfigurationStates
       parameters:
         - name: user-id
@@ -10509,11 +10591,11 @@ components:
           properties:
             customBrowserDisplayName:
               type: string
-              description: Friendly name of the preferred custom browser to open weblink on Android.
+              description: 'Friendly name of the preferred custom browser to open weblink on Android. When this property is configured, ManagedBrowserToOpenLinksRequired should be true.'
               nullable: true
             customBrowserPackageId:
               type: string
-              description: Unique identifier of a custom browser to open weblink on Android.
+              description: 'Unique identifier of the preferred custom browser to open weblink on Android. When this property is configured, ManagedBrowserToOpenLinksRequired should be true.'
               nullable: true
             deployedAppCount:
               maximum: 2147483647
@@ -10659,7 +10741,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.managedAppDataEncryptionType'
             customBrowserProtocol:
               type: string
-              description: A custom browser protocol to open weblink on iOS.
+              description: 'A custom browser protocol to open weblink on iOS. When this property is configured, ManagedBrowserToOpenLinksRequired should be true.'
               nullable: true
             deployedAppCount:
               maximum: 2147483647

@@ -308,6 +308,7 @@ paths:
       tags:
         - admin.windows
       summary: Get windows from admin
+      description: A container for all Windows Update for Business deployment service functionality. Read-only.
       operationId: admin_GetWindows
       parameters:
         - name: $select
@@ -389,6 +390,7 @@ paths:
       tags:
         - admin.windows
       summary: Get updates from admin
+      description: Entity that acts as a container for the functionality of the Windows Update for Business deployment service. Read-only.
       operationId: admin.windows_GetUpdates
       parameters:
         - name: $select
@@ -482,6 +484,7 @@ paths:
       tags:
         - admin.windows
       summary: Get catalog from admin
+      description: Catalog of content that can be approved for deployment by the deployment service. Read-only.
       operationId: admin.windows.updates_GetCatalog
       parameters:
         - name: $select
@@ -563,6 +566,7 @@ paths:
       tags:
         - admin.windows
       summary: Get entries from admin
+      description: Lists the content that you can approve for deployment. Read-only.
       operationId: admin.windows.updates.catalog_ListEntries
       parameters:
         - $ref: '#/components/parameters/top'
@@ -652,6 +656,7 @@ paths:
       tags:
         - admin.windows
       summary: Get entries from admin
+      description: Lists the content that you can approve for deployment. Read-only.
       operationId: admin.windows.updates.catalog_GetEntries
       parameters:
         - name: catalogEntry-id
@@ -753,6 +758,7 @@ paths:
       tags:
         - admin.windows
       summary: Get deployments from admin
+      description: Deployments created using the deployment service. Read-only.
       operationId: admin.windows.updates_ListDeployments
       parameters:
         - $ref: '#/components/parameters/top'
@@ -850,6 +856,7 @@ paths:
       tags:
         - admin.windows
       summary: Get deployments from admin
+      description: Deployments created using the deployment service. Read-only.
       operationId: admin.windows.updates_GetDeployments
       parameters:
         - name: deployment-id
@@ -960,6 +967,7 @@ paths:
       tags:
         - admin.windows
       summary: Get audience from admin
+      description: Specifies the audience to which content is deployed.
       operationId: admin.windows.updates.deployments_GetAudience
       parameters:
         - name: deployment-id
@@ -1075,6 +1083,7 @@ paths:
       tags:
         - admin.windows
       summary: Get exclusions from admin
+      description: Specifies the assets to exclude from the audience.
       operationId: admin.windows.updates.deployments.audience_ListExclusions
       parameters:
         - name: deployment-id
@@ -1170,6 +1179,7 @@ paths:
       tags:
         - admin.windows
       summary: Get exclusions from admin
+      description: Specifies the assets to exclude from the audience.
       operationId: admin.windows.updates.deployments.audience_GetExclusions
       parameters:
         - name: deployment-id
@@ -1622,6 +1632,7 @@ paths:
       tags:
         - admin.windows
       summary: Get members from admin
+      description: Specifies the assets to include in the audience.
       operationId: admin.windows.updates.deployments.audience_ListMembers
       parameters:
         - name: deployment-id
@@ -1717,6 +1728,7 @@ paths:
       tags:
         - admin.windows
       summary: Get members from admin
+      description: Specifies the assets to include in the audience.
       operationId: admin.windows.updates.deployments.audience_GetMembers
       parameters:
         - name: deployment-id
@@ -2268,6 +2280,7 @@ paths:
       tags:
         - admin.windows
       summary: Get resourceConnections from admin
+      description: Service connections to external resources such as analytics workspaces.
       operationId: admin.windows.updates_ListResourceConnections
       parameters:
         - $ref: '#/components/parameters/top'
@@ -2351,6 +2364,7 @@ paths:
       tags:
         - admin.windows
       summary: Get resourceConnections from admin
+      description: Service connections to external resources such as analytics workspaces.
       operationId: admin.windows.updates_GetResourceConnections
       parameters:
         - name: resourceConnection-id
@@ -2450,6 +2464,7 @@ paths:
       tags:
         - admin.windows
       summary: Get updatableAssets from admin
+      description: Assets registered with the deployment service that can receive updates. Read-only.
       operationId: admin.windows.updates_ListUpdatableAssets
       parameters:
         - $ref: '#/components/parameters/top'
@@ -2530,6 +2545,7 @@ paths:
       tags:
         - admin.windows
       summary: Get updatableAssets from admin
+      description: Assets registered with the deployment service that can receive updates. Read-only.
       operationId: admin.windows.updates_GetUpdatableAssets
       parameters:
         - name: updatableAsset-id

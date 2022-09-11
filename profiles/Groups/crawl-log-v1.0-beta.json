@@ -745,6 +745,10 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Groups.yml"
     },
+    "/groups/{group-id}/drives/{drive-id}/items/{driveItem-id}/microsoft.graph.assignSensitivityLabel": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Groups.yml"
+    },
     "/groups/{group-id}/drives/{drive-id}/items/{driveItem-id}/microsoft.graph.checkin": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Groups.yml"
@@ -910,6 +914,10 @@
       "originalLocation": "/openApiDocs/beta/Groups.yml"
     },
     "/groups/{group-id}/drives/{drive-id}/root/listItem/versions/{listItemVersion-id}/microsoft.graph.restoreVersion": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Groups.yml"
+    },
+    "/groups/{group-id}/drives/{drive-id}/root/microsoft.graph.assignSensitivityLabel": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Groups.yml"
     },

@@ -11,6 +11,7 @@ paths:
       tags:
         - administrativeUnits.administrativeUnit
       summary: List administrativeUnits
+      description: Retrieve a list of administrativeUnit objects.
       operationId: administrativeUnits.administrativeUnit_ListAdministrativeUnit
       parameters:
         - name: ConsistencyLevel
@@ -23,10 +24,7 @@ paths:
               description: $search and $count queries require the client to set the ConsistencyLevel HTTP header to 'eventual'.
               value: eventual
         - $ref: '#/components/parameters/top'
-        - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
-        - $ref: '#/components/parameters/filter'
-        - $ref: '#/components/parameters/count'
         - name: $orderby
           in: query
           description: Order items by property values
@@ -70,21 +68,6 @@ paths:
                 - scopedRoleMembers
                 - extensions
               type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-                - members
-                - scopedRoleMembers
-                - extensions
-              type: string
       responses:
         '200':
           $ref: '#/components/responses/microsoft.graph.administrativeUnitCollectionResponse'
@@ -98,6 +81,7 @@ paths:
       tags:
         - administrativeUnits.administrativeUnit
       summary: Create administrativeUnit
+      description: Use this API to create a new administrativeUnit.
       operationId: administrativeUnits.administrativeUnit_CreateAdministrativeUnit
       requestBody:
         description: New entity
@@ -121,6 +105,7 @@ paths:
       tags:
         - administrativeUnits.administrativeUnit
       summary: Get administrativeUnit
+      description: 'Retrieve the properties and relationships of an administrativeUnit object. Since the **administrativeUnit** resource supports extensions, you can also use the `GET` operation to get custom properties and extension data in an **administrativeUnit** instance.'
       operationId: administrativeUnits.administrativeUnit_GetAdministrativeUnit
       parameters:
         - name: administrativeUnit-id
@@ -146,21 +131,6 @@ paths:
                 - displayName
                 - isMemberManagementRestricted
                 - visibility
-                - members
-                - scopedRoleMembers
-                - extensions
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
                 - members
                 - scopedRoleMembers
                 - extensions
@@ -202,6 +172,7 @@ paths:
       tags:
         - administrativeUnits.administrativeUnit
       summary: Update administrativeunit
+      description: Update the properties of an administrativeUnit object.
       operationId: administrativeUnits.administrativeUnit_UpdateAdministrativeUnit
       parameters:
         - name: administrativeUnit-id
@@ -228,6 +199,7 @@ paths:
       tags:
         - administrativeUnits.administrativeUnit
       summary: Delete administrativeUnit
+      description: Delete an administrativeUnit.
       operationId: administrativeUnits.administrativeUnit_DeleteAdministrativeUnit
       parameters:
         - name: administrativeUnit-id
@@ -253,6 +225,7 @@ paths:
       tags:
         - administrativeUnits.extension
       summary: Get extensions from administrativeUnits
+      description: The collection of open extensions defined for this administrative unit. Nullable.
       operationId: administrativeUnits_ListExtensions
       parameters:
         - name: administrativeUnit-id
@@ -348,6 +321,7 @@ paths:
       tags:
         - administrativeUnits.extension
       summary: Get extensions from administrativeUnits
+      description: The collection of open extensions defined for this administrative unit. Nullable.
       operationId: administrativeUnits_GetExtensions
       parameters:
         - name: administrativeUnit-id
@@ -467,6 +441,7 @@ paths:
       tags:
         - administrativeUnits.directoryObject
       summary: Get members from administrativeUnits
+      description: Users and groups that are members of this administrative unit. Supports $expand.
       operationId: administrativeUnits_ListMembers
       parameters:
         - name: administrativeUnit-id
@@ -572,6 +547,7 @@ paths:
       tags:
         - administrativeUnits.directoryObject
       summary: Get ref of members from administrativeUnits
+      description: Users and groups that are members of this administrative unit. Supports $expand.
       operationId: administrativeUnits_ListMembersGraphBPreRef
       parameters:
         - name: administrativeUnit-id
@@ -624,14 +600,7 @@ paths:
             type: string
           x-ms-docs-key-type: administrativeUnit
       requestBody:
-        description: New navigation property ref value
-        content:
-          application/json:
-            schema:
-              type: object
-              additionalProperties:
-                type: object
-        required: true
+        $ref: '#/components/requestBodies/refPostBody'
       responses:
         '204':
           description: Success
@@ -851,6 +820,7 @@ paths:
       tags:
         - administrativeUnits.scopedRoleMembership
       summary: Get scopedRoleMembers from administrativeUnits
+      description: Scoped-role members of this administrative unit.
       operationId: administrativeUnits_ListScopedRoleMembers
       parameters:
         - name: administrativeUnit-id
@@ -955,6 +925,7 @@ paths:
       tags:
         - administrativeUnits.scopedRoleMembership
       summary: Get scopedRoleMembers from administrativeUnits
+      description: Scoped-role members of this administrative unit.
       operationId: administrativeUnits_GetScopedRoleMembers
       parameters:
         - name: administrativeUnit-id
@@ -1212,6 +1183,7 @@ paths:
       tags:
         - contacts.orgContact
       summary: List orgContacts
+      description: Get the list of organizational contacts for this organization.
       operationId: contacts.orgContact_ListOrgContact
       parameters:
         - name: ConsistencyLevel
@@ -1224,10 +1196,7 @@ paths:
               description: $search and $count queries require the client to set the ConsistencyLevel HTTP header to 'eventual'.
               value: eventual
         - $ref: '#/components/parameters/top'
-        - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
-        - $ref: '#/components/parameters/filter'
-        - $ref: '#/components/parameters/count'
         - name: $orderby
           in: query
           description: Order items by property values
@@ -1303,23 +1272,6 @@ paths:
                 - transitiveMemberOf
                 - transitiveReports
               type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-                - directReports
-                - manager
-                - memberOf
-                - transitiveMemberOf
-                - transitiveReports
-              type: string
       responses:
         '200':
           $ref: '#/components/responses/microsoft.graph.orgContactCollectionResponse'
@@ -1356,6 +1308,7 @@ paths:
       tags:
         - contacts.orgContact
       summary: Get orgContact
+      description: Get the properties and relationships of an organizational contact object.
       operationId: contacts.orgContact_GetOrgContact
       parameters:
         - name: orgContact-id
@@ -1391,23 +1344,6 @@ paths:
                 - phones
                 - proxyAddresses
                 - surname
-                - directReports
-                - manager
-                - memberOf
-                - transitiveMemberOf
-                - transitiveReports
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
                 - directReports
                 - manager
                 - memberOf
@@ -1510,6 +1446,7 @@ paths:
       tags:
         - contacts.directoryObject
       summary: Get directReports from contacts
+      description: The contact's direct reports. (The users and contacts that have their manager property set to this contact.) Read-only. Nullable. Supports $expand.
       operationId: contacts_ListDirectReports
       parameters:
         - name: orgContact-id
@@ -1578,6 +1515,7 @@ paths:
       tags:
         - contacts.directoryObject
       summary: Get directReports from contacts
+      description: The contact's direct reports. (The users and contacts that have their manager property set to this contact.) Read-only. Nullable. Supports $expand.
       operationId: contacts_GetDirectReports
       parameters:
         - name: orgContact-id
@@ -1634,6 +1572,7 @@ paths:
       tags:
         - contacts.directoryObject
       summary: Get manager from contacts
+      description: The user or contact that is this contact's manager. Read-only. Supports $expand.
       operationId: contacts_GetManager
       parameters:
         - name: orgContact-id
@@ -1683,6 +1622,7 @@ paths:
       tags:
         - contacts.directoryObject
       summary: Get memberOf from contacts
+      description: Groups that this contact is a member of. Read-only. Nullable. Supports $expand.
       operationId: contacts_ListMemberGraphOPre
       parameters:
         - name: orgContact-id
@@ -1751,6 +1691,7 @@ paths:
       tags:
         - contacts.directoryObject
       summary: Get memberOf from contacts
+      description: Groups that this contact is a member of. Read-only. Nullable. Supports $expand.
       operationId: contacts_GetMemberGraphOPre
       parameters:
         - name: orgContact-id
@@ -2139,6 +2080,7 @@ paths:
       tags:
         - contacts.directoryObject
       summary: Get transitiveReports from contacts
+      description: The transitive reports for a contact. Read-only.
       operationId: contacts_ListTransitiveReports
       parameters:
         - name: orgContact-id
@@ -2207,6 +2149,7 @@ paths:
       tags:
         - contacts.directoryObject
       summary: Get transitiveReports from contacts
+      description: The transitive reports for a contact. Read-only.
       operationId: contacts_GetTransitiveReports
       parameters:
         - name: orgContact-id
@@ -2398,13 +2341,11 @@ paths:
       tags:
         - contracts.contract
       summary: List contracts
+      description: Retrieve a list of contract objects associated to a partner tenant.
       operationId: contracts.contract_ListContract
       parameters:
         - $ref: '#/components/parameters/top'
-        - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
-        - $ref: '#/components/parameters/filter'
-        - $ref: '#/components/parameters/count'
         - name: $orderby
           in: query
           description: Order items by property values
@@ -2445,18 +2386,6 @@ paths:
                 - defaultDomainName
                 - displayName
               type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-              type: string
       responses:
         '200':
           $ref: '#/components/responses/microsoft.graph.contractCollectionResponse'
@@ -2493,6 +2422,7 @@ paths:
       tags:
         - contracts.contract
       summary: Get Contract
+      description: Retrieve the properties and relationships of contract object.
       operationId: contracts.contract_GetContract
       parameters:
         - name: contract-id
@@ -2518,18 +2448,6 @@ paths:
                 - customerId
                 - defaultDomainName
                 - displayName
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
               type: string
       responses:
         '200':
@@ -2926,6 +2844,7 @@ paths:
       tags:
         - devices.device
       summary: List devices
+      description: 'Retrieve a list of devices registered in the directory. '
       operationId: devices.device_ListDevice
       parameters:
         - name: ConsistencyLevel
@@ -2938,10 +2857,7 @@ paths:
               description: $search and $count queries require the client to set the ConsistencyLevel HTTP header to 'eventual'.
               value: eventual
         - $ref: '#/components/parameters/top'
-        - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
-        - $ref: '#/components/parameters/filter'
-        - $ref: '#/components/parameters/count'
         - name: $orderby
           in: query
           description: Order items by property values
@@ -3085,25 +3001,6 @@ paths:
                 - extensions
                 - commands
               type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-                - usageRights
-                - memberOf
-                - registeredOwners
-                - registeredUsers
-                - transitiveMemberOf
-                - extensions
-                - commands
-              type: string
       responses:
         '200':
           $ref: '#/components/responses/microsoft.graph.deviceCollectionResponse'
@@ -3117,6 +3014,7 @@ paths:
       tags:
         - devices.device
       summary: Create device
+      description: Create a new device.
       operationId: devices.device_CreateDevice
       requestBody:
         description: New entity
@@ -3140,6 +3038,7 @@ paths:
       tags:
         - devices.device
       summary: Get device
+      description: 'Get the properties and relationships of a device object. Since the **device** resource supports extensions, you can also use the `GET` operation to get custom properties and extension data in a **device** instance.'
       operationId: devices.device_GetDevice
       parameters:
         - name: device-id
@@ -3205,25 +3104,6 @@ paths:
                 - extensions
                 - commands
               type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-                - usageRights
-                - memberOf
-                - registeredOwners
-                - registeredUsers
-                - transitiveMemberOf
-                - extensions
-                - commands
-              type: string
       responses:
         '200':
           description: Retrieved entity
@@ -3277,6 +3157,7 @@ paths:
       tags:
         - devices.device
       summary: Update device
+      description: Update the properties of a device. Only certain properties of a device can be updated through approved Mobile Device Management (MDM) apps.
       operationId: devices.device_UpdateDevice
       parameters:
         - name: device-id
@@ -3303,6 +3184,7 @@ paths:
       tags:
         - devices.device
       summary: Delete device
+      description: Delete a registered device.
       operationId: devices.device_DeleteDevice
       parameters:
         - name: device-id
@@ -3328,6 +3210,7 @@ paths:
       tags:
         - devices.command
       summary: Get commands from devices
+      description: Set of commands sent to this device.
       operationId: devices_ListCommands
       parameters:
         - name: device-id
@@ -3449,6 +3332,7 @@ paths:
       tags:
         - devices.command
       summary: Get commands from devices
+      description: Set of commands sent to this device.
       operationId: devices_GetCommands
       parameters:
         - name: device-id
@@ -3639,6 +3523,7 @@ paths:
       tags:
         - devices.extension
       summary: Get extensions from devices
+      description: The collection of open extensions defined for the device. Read-only. Nullable.
       operationId: devices_ListExtensions
       parameters:
         - name: device-id
@@ -3734,6 +3619,7 @@ paths:
       tags:
         - devices.extension
       summary: Get extensions from devices
+      description: The collection of open extensions defined for the device. Read-only. Nullable.
       operationId: devices_GetExtensions
       parameters:
         - name: device-id
@@ -3853,6 +3739,7 @@ paths:
       tags:
         - devices.directoryObject
       summary: Get memberOf from devices
+      description: Groups and administrative units that this device is a member of. Read-only. Nullable. Supports $expand.
       operationId: devices_ListMemberGraphOPre
       parameters:
         - name: device-id
@@ -3921,6 +3808,7 @@ paths:
       tags:
         - devices.directoryObject
       summary: Get memberOf from devices
+      description: Groups and administrative units that this device is a member of. Read-only. Nullable. Supports $expand.
       operationId: devices_GetMemberGraphOPre
       parameters:
         - name: device-id
@@ -4185,6 +4073,7 @@ paths:
       tags:
         - devices.directoryObject
       summary: Get registeredOwners from devices
+      description: 'The user that cloud joined the device or registered their personal device. The registered owner is set at the time of registration. Currently, there can be only one owner. Read-only. Nullable. Supports $expand.'
       operationId: devices_ListRegisteredOwners
       parameters:
         - name: device-id
@@ -4290,6 +4179,7 @@ paths:
       tags:
         - devices.directoryObject
       summary: Get ref of registeredOwners from devices
+      description: 'The user that cloud joined the device or registered their personal device. The registered owner is set at the time of registration. Currently, there can be only one owner. Read-only. Nullable. Supports $expand.'
       operationId: devices_ListRegisteredOwnersGraphBPreRef
       parameters:
         - name: device-id
@@ -4342,14 +4232,7 @@ paths:
             type: string
           x-ms-docs-key-type: device
       requestBody:
-        description: New navigation property ref value
-        content:
-          application/json:
-            schema:
-              type: object
-              additionalProperties:
-                type: object
-        required: true
+        $ref: '#/components/requestBodies/refPostBody'
       responses:
         '204':
           description: Success
@@ -4361,6 +4244,7 @@ paths:
       tags:
         - devices.directoryObject
       summary: Get registeredUsers from devices
+      description: 'Collection of registered users of the device. For cloud joined devices and registered personal devices, registered users are set to the same value as registered owners at the time of registration. Read-only. Nullable. Supports $expand.'
       operationId: devices_ListRegisteredUsers
       parameters:
         - name: device-id
@@ -4429,6 +4313,7 @@ paths:
       tags:
         - devices.directoryObject
       summary: Get registeredUsers from devices
+      description: 'Collection of registered users of the device. For cloud joined devices and registered personal devices, registered users are set to the same value as registered owners at the time of registration. Read-only. Nullable. Supports $expand.'
       operationId: devices_GetRegisteredUsers
       parameters:
         - name: device-id
@@ -4485,6 +4370,7 @@ paths:
       tags:
         - devices.directoryObject
       summary: Get transitiveMemberOf from devices
+      description: Groups and administrative units that this device is a member of. This operation is transitive. Supports $expand.
       operationId: devices_ListTransitiveMemberGraphOPre
       parameters:
         - name: device-id
@@ -4553,6 +4439,7 @@ paths:
       tags:
         - devices.directoryObject
       summary: Get transitiveMemberOf from devices
+      description: Groups and administrative units that this device is a member of. This operation is transitive. Supports $expand.
       operationId: devices_GetTransitiveMemberGraphOPre
       parameters:
         - name: device-id
@@ -4609,6 +4496,7 @@ paths:
       tags:
         - devices.usageRight
       summary: Get usageRights from devices
+      description: Represents the usage rights a device has been granted.
       operationId: devices_ListUsageRights
       parameters:
         - name: device-id
@@ -4713,6 +4601,7 @@ paths:
       tags:
         - devices.usageRight
       summary: Get usageRights from devices
+      description: Represents the usage rights a device has been granted.
       operationId: devices_GetUsageRights
       parameters:
         - name: device-id
@@ -5074,6 +4963,7 @@ paths:
       tags:
         - directory.administrativeUnit
       summary: Get administrativeUnits from directory
+      description: Conceptual container for user and group directory objects.
       operationId: directory_ListAdministrativeUnits
       parameters:
         - $ref: '#/components/parameters/top'
@@ -5175,6 +5065,7 @@ paths:
       tags:
         - directory.administrativeUnit
       summary: Get administrativeUnits from directory
+      description: Conceptual container for user and group directory objects.
       operationId: directory_GetAdministrativeUnits
       parameters:
         - name: administrativeUnit-id
@@ -5307,6 +5198,7 @@ paths:
       tags:
         - directory.administrativeUnit
       summary: Get extensions from directory
+      description: The collection of open extensions defined for this administrative unit. Nullable.
       operationId: directory.administrativeUnits_ListExtensions
       parameters:
         - name: administrativeUnit-id
@@ -5402,6 +5294,7 @@ paths:
       tags:
         - directory.administrativeUnit
       summary: Get extensions from directory
+      description: The collection of open extensions defined for this administrative unit. Nullable.
       operationId: directory.administrativeUnits_GetExtensions
       parameters:
         - name: administrativeUnit-id
@@ -5521,6 +5414,7 @@ paths:
       tags:
         - directory.administrativeUnit
       summary: Get members from directory
+      description: Users and groups that are members of this administrative unit. Supports $expand.
       operationId: directory.administrativeUnits_ListMembers
       parameters:
         - name: administrativeUnit-id
@@ -5626,6 +5520,7 @@ paths:
       tags:
         - directory.administrativeUnit
       summary: Get ref of members from directory
+      description: Users and groups that are members of this administrative unit. Supports $expand.
       operationId: directory.administrativeUnits_ListMembersGraphBPreRef
       parameters:
         - name: administrativeUnit-id
@@ -5678,14 +5573,7 @@ paths:
             type: string
           x-ms-docs-key-type: administrativeUnit
       requestBody:
-        description: New navigation property ref value
-        content:
-          application/json:
-            schema:
-              type: object
-              additionalProperties:
-                type: object
-        required: true
+        $ref: '#/components/requestBodies/refPostBody'
       responses:
         '204':
           description: Success
@@ -5905,6 +5793,7 @@ paths:
       tags:
         - directory.administrativeUnit
       summary: Get scopedRoleMembers from directory
+      description: Scoped-role members of this administrative unit.
       operationId: directory.administrativeUnits_ListScopedRoleMembers
       parameters:
         - name: administrativeUnit-id
@@ -6009,6 +5898,7 @@ paths:
       tags:
         - directory.administrativeUnit
       summary: Get scopedRoleMembers from directory
+      description: Scoped-role members of this administrative unit.
       operationId: directory.administrativeUnits_GetScopedRoleMembers
       parameters:
         - name: administrativeUnit-id
@@ -6266,6 +6156,7 @@ paths:
       tags:
         - directory.attributeSet
       summary: Get attributeSets from directory
+      description: Group of related custom security attribute definitions.
       operationId: directory_ListAttributeSets
       parameters:
         - $ref: '#/components/parameters/top'
@@ -6352,6 +6243,7 @@ paths:
       tags:
         - directory.attributeSet
       summary: Get attributeSets from directory
+      description: Group of related custom security attribute definitions.
       operationId: directory_GetAttributeSets
       parameters:
         - name: attributeSet-id
@@ -6452,6 +6344,7 @@ paths:
       tags:
         - directory.customSecurityAttributeDefinition
       summary: Get customSecurityAttributeDefinitions from directory
+      description: Schema of a custom security attributes (key-value pairs).
       operationId: directory_ListCustomSecurityAttributeDefinitions
       parameters:
         - $ref: '#/components/parameters/top'
@@ -6558,6 +6451,7 @@ paths:
       tags:
         - directory.customSecurityAttributeDefinition
       summary: Get customSecurityAttributeDefinitions from directory
+      description: Schema of a custom security attributes (key-value pairs).
       operationId: directory_GetCustomSecurityAttributeDefinitions
       parameters:
         - name: customSecurityAttributeDefinition-id
@@ -6671,6 +6565,7 @@ paths:
       tags:
         - directory.customSecurityAttributeDefinition
       summary: Get allowedValues from directory
+      description: 'Values that are predefined for this custom security attribute.This navigation property is not returned by default and must be specified in an $expand query. For example, /directory/customSecurityAttributeDefinitions?$expand=allowedValues.'
       operationId: directory.customSecurityAttributeDefinitions_ListAllowedValues
       parameters:
         - name: customSecurityAttributeDefinition-id
@@ -6769,6 +6664,7 @@ paths:
       tags:
         - directory.customSecurityAttributeDefinition
       summary: Get allowedValues from directory
+      description: 'Values that are predefined for this custom security attribute.This navigation property is not returned by default and must be specified in an $expand query. For example, /directory/customSecurityAttributeDefinitions?$expand=allowedValues.'
       operationId: directory.customSecurityAttributeDefinitions_GetAllowedValues
       parameters:
         - name: customSecurityAttributeDefinition-id
@@ -7638,6 +7534,7 @@ paths:
       tags:
         - directory.featureRolloutPolicy
       summary: Get appliesTo from directory
+      description: Nullable. Specifies a list of directoryObjects that feature is enabled for.
       operationId: directory.featureRolloutPolicies_ListAppliesTo
       parameters:
         - name: featureRolloutPolicy-id
@@ -7791,6 +7688,7 @@ paths:
       tags:
         - directory.featureRolloutPolicy
       summary: Get ref of appliesTo from directory
+      description: Nullable. Specifies a list of directoryObjects that feature is enabled for.
       operationId: directory.featureRolloutPolicies_ListAppliesToGraphBPreRef
       parameters:
         - name: featureRolloutPolicy-id
@@ -7849,14 +7747,7 @@ paths:
             type: string
           x-ms-docs-key-type: featureRolloutPolicy
       requestBody:
-        description: New navigation property ref value
-        content:
-          application/json:
-            schema:
-              type: object
-              additionalProperties:
-                type: object
-        required: true
+        $ref: '#/components/requestBodies/refPostBody'
       responses:
         '204':
           description: Success
@@ -8027,6 +7918,7 @@ paths:
       tags:
         - directory.identityProviderBase
       summary: Get federationConfigurations from directory
+      description: Configure domain federation with organizations whose identity provider (IdP) supports either the SAML or WS-Fed protocol.
       operationId: directory_ListFederationConfigurations
       parameters:
         - $ref: '#/components/parameters/top'
@@ -8110,6 +8002,7 @@ paths:
       tags:
         - directory.identityProviderBase
       summary: Get federationConfigurations from directory
+      description: Configure domain federation with organizations whose identity provider (IdP) supports either the SAML or WS-Fed protocol.
       operationId: directory_GetFederationConfigurations
       parameters:
         - name: identityProviderBase-id
@@ -10233,12 +10126,10 @@ paths:
       tags:
         - directoryRoles.directoryRole
       summary: List directoryRoles
+      description: 'List the directory roles that are activated in the tenant. This operation only returns roles that have been activated. A role becomes activated when an admin activates the role using the Activate directoryRole API. Not all built-in roles are initially activated.  When assigning a role using the Azure portal, the role activation step is implicitly done on the admin''s behalf. To get the full list of roles that are available in Azure AD, use List directoryRoleTemplates.'
       operationId: directoryRoles.directoryRole_ListDirectoryRole
       parameters:
-        - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
-        - $ref: '#/components/parameters/filter'
-        - $ref: '#/components/parameters/count'
         - name: $orderby
           in: query
           description: Order items by property values
@@ -10278,20 +10169,6 @@ paths:
                 - members
                 - scopedMembers
               type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-                - members
-                - scopedMembers
-              type: string
       responses:
         '200':
           $ref: '#/components/responses/microsoft.graph.directoryRoleCollectionResponse'
@@ -10305,6 +10182,7 @@ paths:
       tags:
         - directoryRoles.directoryRole
       summary: Activate directoryRole
+      description: 'Activate a directory role. To read a directory role or update its members, it must first be activated in the tenant. The Company Administrators and the implicit user directory roles (**User**, **Guest User**, and **Restricted Guest User** roles) are activated by default. To access and assign members to other directory roles, you must first activate it with its corresponding directory role template ID.'
       operationId: directoryRoles.directoryRole_CreateDirectoryRole
       requestBody:
         description: New entity
@@ -10328,6 +10206,7 @@ paths:
       tags:
         - directoryRoles.directoryRole
       summary: Get directoryRole
+      description: 'Retrieve the properties of a directoryRole object. You can use both the object ID and template ID of the **directoryRole** with this API. The template ID of a built-in role is immutable and can be seen in the role description on the Azure portal. For details, see Role template IDs.'
       operationId: directoryRoles.directoryRole_GetDirectoryRole
       parameters:
         - name: directoryRole-id
@@ -10352,20 +10231,6 @@ paths:
                 - description
                 - displayName
                 - roleTemplateId
-                - members
-                - scopedMembers
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
                 - members
                 - scopedMembers
               type: string
@@ -10453,6 +10318,7 @@ paths:
       tags:
         - directoryRoles.directoryObject
       summary: Get members from directoryRoles
+      description: 'Users that are members of this directory role. HTTP Methods: GET, POST, DELETE. Read-only. Nullable. Supports $expand.'
       operationId: directoryRoles_ListMembers
       parameters:
         - name: directoryRole-id
@@ -10558,6 +10424,7 @@ paths:
       tags:
         - directoryRoles.directoryObject
       summary: Get ref of members from directoryRoles
+      description: 'Users that are members of this directory role. HTTP Methods: GET, POST, DELETE. Read-only. Nullable. Supports $expand.'
       operationId: directoryRoles_ListMembersGraphBPreRef
       parameters:
         - name: directoryRole-id
@@ -10610,14 +10477,7 @@ paths:
             type: string
           x-ms-docs-key-type: directoryRole
       requestBody:
-        description: New navigation property ref value
-        content:
-          application/json:
-            schema:
-              type: object
-              additionalProperties:
-                type: object
-        required: true
+        $ref: '#/components/requestBodies/refPostBody'
       responses:
         '204':
           description: Success
@@ -10837,6 +10697,7 @@ paths:
       tags:
         - directoryRoles.scopedRoleMembership
       summary: Get scopedMembers from directoryRoles
+      description: Members of this directory role that are scoped to administrative units. Read-only. Nullable.
       operationId: directoryRoles_ListScopedMembers
       parameters:
         - name: directoryRole-id
@@ -10941,6 +10802,7 @@ paths:
       tags:
         - directoryRoles.scopedRoleMembership
       summary: Get scopedMembers from directoryRoles
+      description: Members of this directory role that are scoped to administrative units. Read-only. Nullable.
       operationId: directoryRoles_GetScopedMembers
       parameters:
         - name: directoryRole-id
@@ -11198,12 +11060,10 @@ paths:
       tags:
         - directoryRoleTemplates.directoryRoleTemplate
       summary: List directoryRoleTemplates
+      description: Retrieve a list of directoryroletemplate objects.
       operationId: directoryRoleTemplates.directoryRoleTemplate_ListDirectoryRoleTemplate
       parameters:
-        - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
-        - $ref: '#/components/parameters/filter'
-        - $ref: '#/components/parameters/count'
         - name: $orderby
           in: query
           description: Order items by property values
@@ -11237,18 +11097,6 @@ paths:
                 - deletedDateTime
                 - description
                 - displayName
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
               type: string
       responses:
         '200':
@@ -11286,6 +11134,7 @@ paths:
       tags:
         - directoryRoleTemplates.directoryRoleTemplate
       summary: Get directoryRoleTemplate
+      description: Retrieve the properties and relationships of a directoryroletemplate object.
       operationId: directoryRoleTemplates.directoryRoleTemplate_GetDirectoryRoleTemplate
       parameters:
         - name: directoryRoleTemplate-id
@@ -11309,18 +11158,6 @@ paths:
                 - deletedDateTime
                 - description
                 - displayName
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
               type: string
       responses:
         '200':
@@ -11717,13 +11554,11 @@ paths:
       tags:
         - directorySettingTemplates.directorySettingTemplate
       summary: List directorySettingTemplates
+      description: 'Directory setting templates represents a set of templates of directory settings, from which directory settings may be created and used within a tenant.  This operation retrieves the list of available **directorySettingTemplates** objects.'
       operationId: directorySettingTemplates.directorySettingTemplate_ListDirectorySettingTemplate
       parameters:
         - $ref: '#/components/parameters/top'
-        - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
-        - $ref: '#/components/parameters/filter'
-        - $ref: '#/components/parameters/count'
         - name: $orderby
           in: query
           description: Order items by property values
@@ -11761,18 +11596,6 @@ paths:
                 - displayName
                 - values
               type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-              type: string
       responses:
         '200':
           $ref: '#/components/responses/microsoft.graph.directorySettingTemplateCollectionResponse'
@@ -11809,6 +11632,7 @@ paths:
       tags:
         - directorySettingTemplates.directorySettingTemplate
       summary: Get a directory setting template
+      description: 'A directory setting template represents a template of settings from which settings may be created within a tenant. This operation allows retrieval of the properties of the **directorySettingTemplate** object, including the available settings and their defaults.'
       operationId: directorySettingTemplates.directorySettingTemplate_GetDirectorySettingTemplate
       parameters:
         - name: directorySettingTemplate-id
@@ -11833,18 +11657,6 @@ paths:
                 - description
                 - displayName
                 - values
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
               type: string
       responses:
         '200':
@@ -12241,6 +12053,7 @@ paths:
       tags:
         - domains.domain
       summary: List domains
+      description: Retrieve a list of domain objects.
       operationId: domains.domain_ListDomain
       parameters:
         - $ref: '#/components/parameters/top'
@@ -12341,6 +12154,7 @@ paths:
       tags:
         - domains.domain
       summary: Create domain
+      description: 'Adds a domain to the tenant. **Important**: You cannot use an associated domain with your Azure AD tenant until ownership is verified. See List verificationDnsRecords for details. Root domains require verification. For example, contoso.com requires verification. If a root domain is verified, subdomains of the root domain are automatically verified. For example, subdomain.contoso.com is automatically be verified if contoso.com has been verified.'
       operationId: domains.domain_CreateDomain
       requestBody:
         description: New entity
@@ -12364,6 +12178,7 @@ paths:
       tags:
         - domains.domain
       summary: Get domain
+      description: Retrieve the properties and relationships of domain object.
       operationId: domains.domain_GetDomain
       parameters:
         - name: domain-id
@@ -12459,6 +12274,7 @@ paths:
       tags:
         - domains.domain
       summary: Update domain
+      description: Update the properties of domain object.
       operationId: domains.domain_UpdateDomain
       parameters:
         - name: domain-id
@@ -12485,6 +12301,7 @@ paths:
       tags:
         - domains.domain
       summary: Delete domain
+      description: Deletes a domain from a tenant.
       operationId: domains.domain_DeleteDomain
       parameters:
         - name: domain-id
@@ -12510,6 +12327,7 @@ paths:
       tags:
         - domains.directoryObject
       summary: Get domainNameReferences from domains
+      description: 'The objects such as users and groups that reference the domain ID. Read-only, Nullable. Supports $expand and $filter by the OData type of objects returned. For example /domains/{domainId}/domainNameReferences/microsoft.graph.user and /domains/{domainId}/domainNameReferences/microsoft.graph.group.'
       operationId: domains_ListDomainNameReferences
       parameters:
         - name: domain-id
@@ -12578,6 +12396,7 @@ paths:
       tags:
         - domains.directoryObject
       summary: Get domainNameReferences from domains
+      description: 'The objects such as users and groups that reference the domain ID. Read-only, Nullable. Supports $expand and $filter by the OData type of objects returned. For example /domains/{domainId}/domainNameReferences/microsoft.graph.user and /domains/{domainId}/domainNameReferences/microsoft.graph.group.'
       operationId: domains_GetDomainNameReferences
       parameters:
         - name: domain-id
@@ -12634,6 +12453,7 @@ paths:
       tags:
         - domains.internalDomainFederation
       summary: Get federationConfiguration from domains
+      description: Domain settings configured by customer when federated with Azure AD. Supports $expand.
       operationId: domains_ListFederationConfiguration
       parameters:
         - name: domain-id
@@ -12768,6 +12588,7 @@ paths:
       tags:
         - domains.internalDomainFederation
       summary: Get federationConfiguration from domains
+      description: Domain settings configured by customer when federated with Azure AD. Supports $expand.
       operationId: domains_GetFederationConfiguration
       parameters:
         - name: domain-id
@@ -12989,6 +12810,7 @@ paths:
       tags:
         - domains.domainDnsRecord
       summary: Get serviceConfigurationRecords from domains
+      description: 'DNS records the customer adds to the DNS zone file of the domain before the domain can be used by Microsoft Online services. Read-only, Nullable. Supports $expand.'
       operationId: domains_ListServiceConfigurationRecords
       parameters:
         - name: domain-id
@@ -13099,6 +12921,7 @@ paths:
       tags:
         - domains.domainDnsRecord
       summary: Get serviceConfigurationRecords from domains
+      description: 'DNS records the customer adds to the DNS zone file of the domain before the domain can be used by Microsoft Online services. Read-only, Nullable. Supports $expand.'
       operationId: domains_GetServiceConfigurationRecords
       parameters:
         - name: domain-id
@@ -13449,6 +13272,7 @@ paths:
       tags:
         - domains.domainDnsRecord
       summary: Get verificationDnsRecords from domains
+      description: 'DNS records that the customer adds to the DNS zone file of the domain before the customer can complete domain ownership verification with Azure AD. Read-only, Nullable. Supports $expand.'
       operationId: domains_ListVerificationDnsRecords
       parameters:
         - name: domain-id
@@ -13559,6 +13383,7 @@ paths:
       tags:
         - domains.domainDnsRecord
       summary: Get verificationDnsRecords from domains
+      description: 'DNS records that the customer adds to the DNS zone file of the domain before the customer can complete domain ownership verification with Azure AD. Read-only, Nullable. Supports $expand.'
       operationId: domains_GetVerificationDnsRecords
       parameters:
         - name: domain-id
@@ -13683,13 +13508,11 @@ paths:
       tags:
         - organization.organization
       summary: List organization
+      description: Retrieve a list of organization objects.
       operationId: organization.organization_ListOrganization
       parameters:
         - $ref: '#/components/parameters/top'
-        - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
-        - $ref: '#/components/parameters/filter'
-        - $ref: '#/components/parameters/count'
         - name: $orderby
           in: query
           description: Order items by property values
@@ -13794,22 +13617,6 @@ paths:
                 - extensions
                 - settings
               type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-                - branding
-                - certificateBasedAuthConfiguration
-                - extensions
-                - settings
-              type: string
       responses:
         '200':
           $ref: '#/components/responses/microsoft.graph.organizationCollectionResponse'
@@ -13846,6 +13653,7 @@ paths:
       tags:
         - organization.organization
       summary: Get organization
+      description: 'Get the properties and relationships of the currently authenticated organization. Since the **organization** resource supports extensions, you can also use the `GET` operation to get custom properties and extension data in an **organization** instance.'
       operationId: organization.organization_GetOrganization
       parameters:
         - name: organization-id
@@ -13896,22 +13704,6 @@ paths:
                 - extensions
                 - settings
               type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-                - branding
-                - certificateBasedAuthConfiguration
-                - extensions
-                - settings
-              type: string
       responses:
         '200':
           description: Retrieved entity
@@ -13957,6 +13749,7 @@ paths:
       tags:
         - organization.organization
       summary: Update organization
+      description: 'Update the properties of the currently authenticated organization. In this case, `organization` is defined as a collection of exactly one record, and so its **ID** must be specified in the request.  The **ID** is also known as the **tenantId** of the organization.'
       operationId: organization.organization_UpdateOrganization
       parameters:
         - name: organization-id
@@ -14008,6 +13801,7 @@ paths:
       tags:
         - organization.organizationalBranding
       summary: Get branding from organization
+      description: Resource to manage the default branding for the organization. Nullable.
       operationId: organization_GetBranding
       parameters:
         - name: organization-id
@@ -14138,6 +13932,7 @@ paths:
       tags:
         - organization.organizationalBranding
       summary: Get backgroundImage for the navigation property branding from organization
+      description: Image that appears as the background of the sign-in page. The allowed types are PNG or JPEG not smaller than 300 KB and not larger than 1920 × 1080 pixels. A smaller image will reduce bandwidth requirements and make the page load faster.
       operationId: organization_GetBrandingBackgroundImage
       parameters:
         - name: organization-id
@@ -14162,6 +13957,7 @@ paths:
       tags:
         - organization.organizationalBranding
       summary: Update backgroundImage for the navigation property branding in organization
+      description: Image that appears as the background of the sign-in page. The allowed types are PNG or JPEG not smaller than 300 KB and not larger than 1920 × 1080 pixels. A smaller image will reduce bandwidth requirements and make the page load faster.
       operationId: organization_SetBrandingBackgroundImage
       parameters:
         - name: organization-id
@@ -14190,6 +13986,7 @@ paths:
       tags:
         - organization.organizationalBranding
       summary: Get bannerLogo for the navigation property branding from organization
+      description: A banner version of your company logo that appears on the sign-in page. The allowed types are PNG or JPEG not larger than 36 × 245 pixels. We recommend using a transparent image with no padding around the logo.
       operationId: organization_GetBrandingBannerLogo
       parameters:
         - name: organization-id
@@ -14214,6 +14011,7 @@ paths:
       tags:
         - organization.organizationalBranding
       summary: Update bannerLogo for the navigation property branding in organization
+      description: A banner version of your company logo that appears on the sign-in page. The allowed types are PNG or JPEG not larger than 36 × 245 pixels. We recommend using a transparent image with no padding around the logo.
       operationId: organization_SetBrandingBannerLogo
       parameters:
         - name: organization-id
@@ -14242,6 +14040,7 @@ paths:
       tags:
         - organization.organizationalBranding
       summary: Get favicon for the navigation property branding from organization
+      description: A custom icon (favicon) to replace a default Microsoft product favicon on an Azure AD tenant.
       operationId: organization_GetBrandingFavicon
       parameters:
         - name: organization-id
@@ -14266,6 +14065,7 @@ paths:
       tags:
         - organization.organizationalBranding
       summary: Update favicon for the navigation property branding in organization
+      description: A custom icon (favicon) to replace a default Microsoft product favicon on an Azure AD tenant.
       operationId: organization_SetBrandingFavicon
       parameters:
         - name: organization-id
@@ -14294,6 +14094,7 @@ paths:
       tags:
         - organization.organizationalBranding
       summary: Get localizations from organization
+      description: Add different branding based on a locale.
       operationId: organization.branding_ListLocalizations
       parameters:
         - name: organization-id
@@ -14464,6 +14265,7 @@ paths:
       tags:
         - organization.organizationalBranding
       summary: Get localizations from organization
+      description: Add different branding based on a locale.
       operationId: organization.branding_GetLocalizations
       parameters:
         - name: organization-id
@@ -14608,6 +14410,7 @@ paths:
       tags:
         - organization.organizationalBranding
       summary: Get backgroundImage for the navigation property localizations from organization
+      description: Image that appears as the background of the sign-in page. The allowed types are PNG or JPEG not smaller than 300 KB and not larger than 1920 × 1080 pixels. A smaller image will reduce bandwidth requirements and make the page load faster.
       operationId: organization.branding_GetLocalizationsBackgroundImage
       parameters:
         - name: organization-id
@@ -14639,6 +14442,7 @@ paths:
       tags:
         - organization.organizationalBranding
       summary: Update backgroundImage for the navigation property localizations in organization
+      description: Image that appears as the background of the sign-in page. The allowed types are PNG or JPEG not smaller than 300 KB and not larger than 1920 × 1080 pixels. A smaller image will reduce bandwidth requirements and make the page load faster.
       operationId: organization.branding_SetLocalizationsBackgroundImage
       parameters:
         - name: organization-id
@@ -14674,6 +14478,7 @@ paths:
       tags:
         - organization.organizationalBranding
       summary: Get bannerLogo for the navigation property localizations from organization
+      description: A banner version of your company logo that appears on the sign-in page. The allowed types are PNG or JPEG not larger than 36 × 245 pixels. We recommend using a transparent image with no padding around the logo.
       operationId: organization.branding_GetLocalizationsBannerLogo
       parameters:
         - name: organization-id
@@ -14705,6 +14510,7 @@ paths:
       tags:
         - organization.organizationalBranding
       summary: Update bannerLogo for the navigation property localizations in organization
+      description: A banner version of your company logo that appears on the sign-in page. The allowed types are PNG or JPEG not larger than 36 × 245 pixels. We recommend using a transparent image with no padding around the logo.
       operationId: organization.branding_SetLocalizationsBannerLogo
       parameters:
         - name: organization-id
@@ -14740,6 +14546,7 @@ paths:
       tags:
         - organization.organizationalBranding
       summary: Get favicon for the navigation property localizations from organization
+      description: A custom icon (favicon) to replace a default Microsoft product favicon on an Azure AD tenant.
       operationId: organization.branding_GetLocalizationsFavicon
       parameters:
         - name: organization-id
@@ -14771,6 +14578,7 @@ paths:
       tags:
         - organization.organizationalBranding
       summary: Update favicon for the navigation property localizations in organization
+      description: A custom icon (favicon) to replace a default Microsoft product favicon on an Azure AD tenant.
       operationId: organization.branding_SetLocalizationsFavicon
       parameters:
         - name: organization-id
@@ -14806,6 +14614,7 @@ paths:
       tags:
         - organization.organizationalBranding
       summary: Get squareLogo for the navigation property localizations from organization
+      description: A square version of your company logo that appears in Windows 10 out-of-box experiences (OOBE) and when Windows Autopilot is enabled for deployment. Allowed types are PNG or JPEG not larger than 240 x 240 pixels and not more than 10 KB in size. We recommend using a transparent image with no padding around the logo.
       operationId: organization.branding_GetLocalizationsSquareLogo
       parameters:
         - name: organization-id
@@ -14837,6 +14646,7 @@ paths:
       tags:
         - organization.organizationalBranding
       summary: Update squareLogo for the navigation property localizations in organization
+      description: A square version of your company logo that appears in Windows 10 out-of-box experiences (OOBE) and when Windows Autopilot is enabled for deployment. Allowed types are PNG or JPEG not larger than 240 x 240 pixels and not more than 10 KB in size. We recommend using a transparent image with no padding around the logo.
       operationId: organization.branding_SetLocalizationsSquareLogo
       parameters:
         - name: organization-id
@@ -14872,6 +14682,7 @@ paths:
       tags:
         - organization.organizationalBranding
       summary: Get squareLogoDark for the navigation property localizations from organization
+      description: A square dark version of your company logo that appears in Windows 10 out-of-box experiences (OOBE) and when Windows Autopilot is enabled for deployment. Allowed types are PNG or JPEG not larger than 240 x 240 pixels and not more than 10 KB in size. We recommend using a transparent image with no padding around the logo.
       operationId: organization.branding_GetLocalizationsSquareLogoDark
       parameters:
         - name: organization-id
@@ -14903,6 +14714,7 @@ paths:
       tags:
         - organization.organizationalBranding
       summary: Update squareLogoDark for the navigation property localizations in organization
+      description: A square dark version of your company logo that appears in Windows 10 out-of-box experiences (OOBE) and when Windows Autopilot is enabled for deployment. Allowed types are PNG or JPEG not larger than 240 x 240 pixels and not more than 10 KB in size. We recommend using a transparent image with no padding around the logo.
       operationId: organization.branding_SetLocalizationsSquareLogoDark
       parameters:
         - name: organization-id
@@ -14938,6 +14750,7 @@ paths:
       tags:
         - organization.organizationalBranding
       summary: Get squareLogo for the navigation property branding from organization
+      description: A square version of your company logo that appears in Windows 10 out-of-box experiences (OOBE) and when Windows Autopilot is enabled for deployment. Allowed types are PNG or JPEG not larger than 240 x 240 pixels and not more than 10 KB in size. We recommend using a transparent image with no padding around the logo.
       operationId: organization_GetBrandingSquareLogo
       parameters:
         - name: organization-id
@@ -14962,6 +14775,7 @@ paths:
       tags:
         - organization.organizationalBranding
       summary: Update squareLogo for the navigation property branding in organization
+      description: A square version of your company logo that appears in Windows 10 out-of-box experiences (OOBE) and when Windows Autopilot is enabled for deployment. Allowed types are PNG or JPEG not larger than 240 x 240 pixels and not more than 10 KB in size. We recommend using a transparent image with no padding around the logo.
       operationId: organization_SetBrandingSquareLogo
       parameters:
         - name: organization-id
@@ -14990,6 +14804,7 @@ paths:
       tags:
         - organization.organizationalBranding
       summary: Get squareLogoDark for the navigation property branding from organization
+      description: A square dark version of your company logo that appears in Windows 10 out-of-box experiences (OOBE) and when Windows Autopilot is enabled for deployment. Allowed types are PNG or JPEG not larger than 240 x 240 pixels and not more than 10 KB in size. We recommend using a transparent image with no padding around the logo.
       operationId: organization_GetBrandingSquareLogoDark
       parameters:
         - name: organization-id
@@ -15014,6 +14829,7 @@ paths:
       tags:
         - organization.organizationalBranding
       summary: Update squareLogoDark for the navigation property branding in organization
+      description: A square dark version of your company logo that appears in Windows 10 out-of-box experiences (OOBE) and when Windows Autopilot is enabled for deployment. Allowed types are PNG or JPEG not larger than 240 x 240 pixels and not more than 10 KB in size. We recommend using a transparent image with no padding around the logo.
       operationId: organization_SetBrandingSquareLogoDark
       parameters:
         - name: organization-id
@@ -15042,6 +14858,7 @@ paths:
       tags:
         - organization.extension
       summary: Get extensions from organization
+      description: The collection of open extensions defined for the organization resource. Nullable.
       operationId: organization_ListExtensions
       parameters:
         - name: organization-id
@@ -15137,6 +14954,7 @@ paths:
       tags:
         - organization.extension
       summary: Get extensions from organization
+      description: The collection of open extensions defined for the organization resource. Nullable.
       operationId: organization_GetExtensions
       parameters:
         - name: organization-id
@@ -15513,6 +15331,7 @@ paths:
       tags:
         - organization.Actions
       summary: Invoke action setMobileDeviceManagementAuthority
+      description: Set mobile device management authority
       operationId: organization_setMobileDeviceManagementAuthority
       parameters:
         - name: organization-id
@@ -15545,6 +15364,7 @@ paths:
       tags:
         - organization.organizationSettings
       summary: Get settings from organization
+      description: Retrieve the properties and relationships of organizationSettings object. Nullable.
       operationId: organization_GetSettings
       parameters:
         - name: organization-id
@@ -15668,6 +15488,7 @@ paths:
       tags:
         - organization.organizationSettings
       summary: Get itemInsights from organization
+      description: 'Contains the properties that are configured by an administrator for the visibility of Microsoft Graph-derived insights, between a user and other items in Microsoft 365, such as documents or sites. List itemInsights returns the settings to display or return item insights in an organization.'
       operationId: organization.settings_GetItemInsights
       parameters:
         - name: organization-id
@@ -15868,6 +15689,7 @@ paths:
       tags:
         - organization.organizationSettings
       summary: Get peopleInsights from organization
+      description: Contains the properties that are configured by an administrator for the visibility of a list of people relevant and working with a user in Microsoft 365. List peopleInsights returns the settings to display or return people insights in an organization.
       operationId: organization.settings_GetPeopleInsights
       parameters:
         - name: organization-id
@@ -15968,6 +15790,7 @@ paths:
       tags:
         - organization.organizationSettings
       summary: Get profileCardProperties from organization
+      description: Contains a collection of the properties an administrator has defined as visible on the Microsoft 365 profile card. Get organization settings returns the properties configured for profile cards for the organization.
       operationId: organization.settings_ListProfileCardProperties
       parameters:
         - name: organization-id
@@ -16069,6 +15892,7 @@ paths:
       tags:
         - organization.organizationSettings
       summary: Get profileCardProperties from organization
+      description: Contains a collection of the properties an administrator has defined as visible on the Microsoft 365 profile card. Get organization settings returns the properties configured for profile cards for the organization.
       operationId: organization.settings_GetProfileCardProperties
       parameters:
         - name: organization-id
@@ -16301,6 +16125,7 @@ paths:
       tags:
         - settings.directorySetting
       summary: List settings
+      description: Retrieve a list of tenant-level or group-specific group settings objects.
       operationId: settings.directorySetting_ListDirectorySetting
       parameters:
         - $ref: '#/components/parameters/top'
@@ -16367,6 +16192,7 @@ paths:
       tags:
         - settings.directorySetting
       summary: Create settings
+      description: 'Create a new setting based on the templates available in directorySettingTemplates. These settings can be at the tenant-level or at the group level. Group settings apply to only Microsoft 365 groups. The template named `Group.Unified` can be used to configure tenant-wide Microsoft 365 group settings, while the template named `Group.Unified.Guest` can be used to configure group-specific settings.'
       operationId: settings.directorySetting_CreateDirectorySetting
       requestBody:
         description: New entity
@@ -16390,6 +16216,7 @@ paths:
       tags:
         - settings.directorySetting
       summary: Get directorySetting
+      description: Retrieve the properties of a specific directory setting object.
       operationId: settings.directorySetting_GetDirectorySetting
       parameters:
         - name: directorySetting-id
@@ -16440,6 +16267,7 @@ paths:
       tags:
         - settings.directorySetting
       summary: Update directorySetting
+      description: Update the properties of a specific directory setting object.
       operationId: settings.directorySetting_UpdateDirectorySetting
       parameters:
         - name: directorySetting-id
@@ -16466,6 +16294,7 @@ paths:
       tags:
         - settings.directorySetting
       summary: Delete directorySetting
+      description: Delete a directory setting.
       operationId: settings.directorySetting_DeleteDirectorySetting
       parameters:
         - name: directorySetting-id
@@ -16491,6 +16320,7 @@ paths:
       tags:
         - subscribedSkus.subscribedSku
       summary: List subscribedSkus
+      description: 'Get the list of commercial subscriptions that an organization has acquired. For the mapping of license names as displayed on the Azure portal or the Microsoft 365 admin center against their Microsoft Graph **skuId** and **skuPartNumber** properties, see Product names and service plan identifiers for licensing.'
       operationId: subscribedSkus.subscribedSku_ListSubscribedSku
       parameters:
         - $ref: '#/components/parameters/search'
@@ -16576,6 +16406,7 @@ paths:
       tags:
         - subscribedSkus.subscribedSku
       summary: Get subscribedSku
+      description: Get a specific commercial subscription that an organization has acquired.
       operationId: subscribedSkus.subscribedSku_GetSubscribedSku
       parameters:
         - name: subscribedSku-id
@@ -16669,6 +16500,7 @@ paths:
       tags:
         - users.scopedRoleMembership
       summary: Get scopedRoleMemberOf from users
+      description: The scoped-role administrative unit memberships for this user. Read-only. Nullable.
       operationId: users_ListScopedRoleMemberGraphOPre
       parameters:
         - name: user-id
@@ -16773,6 +16605,7 @@ paths:
       tags:
         - users.scopedRoleMembership
       summary: Get scopedRoleMemberOf from users
+      description: The scoped-role administrative unit memberships for this user. Read-only. Nullable.
       operationId: users_GetScopedRoleMemberGraphOPre
       parameters:
         - name: user-id
@@ -17066,21 +16899,17 @@ components:
           properties:
             contractType:
               type: string
-              description: 'Type of contract. Possible values are:  SyndicationPartner, BreadthPartner, ResellerPartner. See more in the table below.'
               nullable: true
             customerId:
               pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
               type: string
-              description: The unique identifier for the customer tenant referenced by this partnership. Corresponds to the id property of the customer tenant's organization resource.
               format: uuid
               nullable: true
             defaultDomainName:
               type: string
-              description: A copy of the customer tenant's default domain name. The copy is made when the partnership with the customer is established. It is not automatically updated if the customer tenant's default domain name changes.
               nullable: true
             displayName:
               type: string
-              description: A copy of the customer tenant's display name. The copy is made when the partnership with the customer is established. It is not automatically updated if the customer tenant's display name changes.
               nullable: true
           additionalProperties:
             type: object
@@ -17373,7 +17202,6 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: Recently deleted items. Read-only. Nullable.
             federationConfigurations:
               type: array
               items:
@@ -18153,11 +17981,11 @@ components:
       properties:
         displayName:
           type: string
-          description: 'The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
+          description: The display name of the identity. This property is read-only.
           nullable: true
         id:
           type: string
-          description: Unique identifier for the identity.
+          description: The identifier of the identity. This property is read-only.
           nullable: true
       additionalProperties:
         type: object
@@ -18250,76 +18078,8 @@ components:
       additionalProperties:
         type: object
     microsoft.graph.onPremisesExtensionAttributes:
-      title: onPremisesExtensionAttributes
-      type: object
-      properties:
-        extensionAttribute1:
-          type: string
-          description: First customizable extension attribute.
-          nullable: true
-        extensionAttribute10:
-          type: string
-          description: Tenth customizable extension attribute.
-          nullable: true
-        extensionAttribute11:
-          type: string
-          description: Eleventh customizable extension attribute.
-          nullable: true
-        extensionAttribute12:
-          type: string
-          description: Twelfth customizable extension attribute.
-          nullable: true
-        extensionAttribute13:
-          type: string
-          description: Thirteenth customizable extension attribute.
-          nullable: true
-        extensionAttribute14:
-          type: string
-          description: Fourteenth customizable extension attribute.
-          nullable: true
-        extensionAttribute15:
-          type: string
-          description: Fifteenth customizable extension attribute.
-          nullable: true
-        extensionAttribute2:
-          type: string
-          description: Second customizable extension attribute.
-          nullable: true
-        extensionAttribute3:
-          type: string
-          description: Third customizable extension attribute.
-          nullable: true
-        extensionAttribute4:
-          type: string
-          description: Fourth customizable extension attribute.
-          nullable: true
-        extensionAttribute5:
-          type: string
-          description: Fifth customizable extension attribute.
-          nullable: true
-        extensionAttribute6:
-          type: string
-          description: Sixth customizable extension attribute.
-          nullable: true
-        extensionAttribute7:
-          type: string
-          description: Seventh customizable extension attribute.
-          nullable: true
-        extensionAttribute8:
-          type: string
-          description: Eighth customizable extension attribute.
-          nullable: true
-        extensionAttribute9:
-          type: string
-          description: Ninth customizable extension attribute.
-          nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.payloadRequest:
-      title: payloadRequest
-      type: object
-      additionalProperties:
-        type: object
+      description: 'Contains extension attributes 1-15 for the device. The individual extension attributes are not selectable. These properties are mastered in cloud and can be set during creation or update of a device object in Azure AD. Supports $filter (eq, not, startsWith, and eq on null values).'
+    microsoft.graph.payloadRequest: { }
     microsoft.graph.usageRightState:
       title: usageRightState
       enum:
@@ -18345,11 +18105,11 @@ components:
       properties:
         key:
           type: string
-          description: 'Contains the name of the field that a value is associated with. When a sign in or domain hint is included in the sign-in request, corresponding fields are included as key-value pairs. Possible keys: Login hint present, Domain hint present.'
+          description: Key.
           nullable: true
         value:
           type: string
-          description: Contains the corresponding value for the specified key. The value is true if a sign in hint was included in the sign-in request; otherwise false. The value is true if a domain hint was included in the sign-in request; otherwise false.
+          description: Value.
           nullable: true
       additionalProperties:
         type: object
@@ -18864,6 +18624,13 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    ReferenceCreate:
+      type: object
+      properties:
+        '@odata.id':
+          type: string
+      additionalProperties:
+        type: object
     microsoft.graph.administrativeUnitCollectionResponse:
       title: Collection of administrativeUnit
       type: object
@@ -19270,19 +19037,7 @@ components:
       additionalProperties:
         type: object
     microsoft.graph.phoneType:
-      title: phoneType
-      enum:
-        - home
-        - business
-        - mobile
-        - other
-        - assistant
-        - homeFax
-        - businessFax
-        - otherFax
-        - pager
-        - radio
-      type: string
+      description: 'The type of phone number. Possible values are: home, business, mobile, other, assistant, homeFax, businessFax, otherFax, pager, radio.'
     microsoft.graph.actionUrl:
       title: actionUrl
       type: object
@@ -19627,6 +19382,12 @@ components:
         minimum: 0
         type: integer
       example: 50
+    search:
+      name: $search
+      in: query
+      description: Search items by search phrases
+      schema:
+        type: string
     skip:
       name: $skip
       in: query
@@ -19634,12 +19395,6 @@ components:
       schema:
         minimum: 0
         type: integer
-    search:
-      name: $search
-      in: query
-      description: Search items by search phrases
-      schema:
-        type: string
     filter:
       name: $filter
       in: query
@@ -19652,6 +19407,14 @@ components:
       description: Include count of items
       schema:
         type: boolean
+  requestBodies:
+    refPostBody:
+      description: New navigation property ref value
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ReferenceCreate'
+      required: true
   securitySchemes:
     azureaadv2:
       type: oauth2

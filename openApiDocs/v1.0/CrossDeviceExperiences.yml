@@ -11,6 +11,7 @@ paths:
       tags:
         - users.userActivity
       summary: Get activities from users
+      description: The user's activities across devices. Read-only. Nullable.
       operationId: users_ListActivities
       parameters:
         - name: user-id
@@ -147,6 +148,7 @@ paths:
       tags:
         - users.userActivity
       summary: Get activities from users
+      description: The user's activities across devices. Read-only. Nullable.
       operationId: users_GetActivities
       parameters:
         - name: user-id
@@ -287,6 +289,7 @@ paths:
       tags:
         - users.userActivity
       summary: Get historyItems from users
+      description: Optional. NavigationProperty/Containment; navigation property to the activity's historyItems.
       operationId: users.activities_ListHistoryItems
       parameters:
         - name: user-id
@@ -422,6 +425,7 @@ paths:
       tags:
         - users.userActivity
       summary: Get historyItems from users
+      description: Optional. NavigationProperty/Containment; navigation property to the activity's historyItems.
       operationId: users.activities_GetHistoryItems
       parameters:
         - name: user-id
@@ -579,6 +583,7 @@ paths:
       tags:
         - users.userActivity
       summary: Get activity from users
+      description: Optional. NavigationProperty/Containment; navigation property to the associated activity.
       operationId: users.activities.historyItems_GetActivity
       parameters:
         - name: user-id
@@ -783,19 +788,9 @@ components:
       additionalProperties:
         type: object
     microsoft.graph.Json:
-      title: Json
-      type: object
-      additionalProperties:
-        type: object
+      description: Optional. A custom piece of data - JSON-LD extensible description of content according to schema.org syntax.
     microsoft.graph.status:
-      title: status
-      enum:
-        - active
-        - updated
-        - deleted
-        - ignored
-        - unknownFutureValue
-      type: string
+      description: 'Set by the server. A status code used to identify valid objects. Values: active, updated, deleted, ignored.'
     microsoft.graph.visualInfo:
       title: visualInfo
       type: object
@@ -851,26 +846,7 @@ components:
       additionalProperties:
         type: object
     microsoft.graph.imageInfo:
-      title: imageInfo
-      type: object
-      properties:
-        addImageQuery:
-          type: boolean
-          description: Optional; parameter used to indicate the server is able to render image dynamically in response to parameterization. For example – a high contrast image
-          nullable: true
-        alternateText:
-          type: string
-          description: Optional; alt-text accessible content for the image
-          nullable: true
-        alternativeText:
-          type: string
-          nullable: true
-        iconUrl:
-          type: string
-          description: Optional; URI that points to an icon which represents the application used to generate the activity
-          nullable: true
-      additionalProperties:
-        type: object
+      description: Optional. JSON object used to represent an icon which represents the application used to generate the activity
     microsoft.graph.ODataErrors.MainError:
       required:
         - code

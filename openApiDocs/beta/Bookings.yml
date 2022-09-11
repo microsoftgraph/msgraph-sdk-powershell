@@ -11,6 +11,7 @@ paths:
       tags:
         - bookingBusinesses.bookingBusiness
       summary: List bookingBusinesses
+      description: 'Get a collection of bookingBusiness objects that has been created for the tenant. This operation returns only the **id** and **displayName** of each Microsoft Bookings business in the collection. For performance considerations, it does not return other properties. You can get the other properties of a Bookings business by specifying its **id** in a GET operation. You can also query for Bookings businesses by specifying a string in a `query` parameter to do substring matching among the businesses of a tenant. See an example below.'
       operationId: bookingBusinesses.bookingBusiness_ListBookingBusiness
       parameters:
         - $ref: '#/components/parameters/top'
@@ -116,6 +117,7 @@ paths:
       tags:
         - bookingBusinesses.bookingBusiness
       summary: Create bookingBusiness
+      description: 'Create a new Microsoft Bookings business in a tenant. This is the first step in setting up a Bookings business where you must specify the business display name. You can include other information such as business address, web site address, and scheduling policy, or set that information later by updating the **bookingBusiness**.'
       operationId: bookingBusinesses.bookingBusiness_CreateBookingBusiness
       requestBody:
         description: New entity
@@ -139,6 +141,7 @@ paths:
       tags:
         - bookingBusinesses.bookingBusiness
       summary: Get bookingBusiness
+      description: Get the properties and relationships of a bookingBusiness object.
       operationId: bookingBusinesses.bookingBusiness_GetBookingBusiness
       parameters:
         - name: bookingBusiness-id
@@ -241,6 +244,7 @@ paths:
       tags:
         - bookingBusinesses.bookingBusiness
       summary: Update bookingbusiness
+      description: Update the properties of a bookingBusiness object.
       operationId: bookingBusinesses.bookingBusiness_UpdateBookingBusiness
       parameters:
         - name: bookingBusiness-id
@@ -267,6 +271,7 @@ paths:
       tags:
         - bookingBusinesses.bookingBusiness
       summary: Delete bookingBusiness
+      description: Delete a bookingBusiness object.
       operationId: bookingBusinesses.bookingBusiness_DeleteBookingBusiness
       parameters:
         - name: bookingBusiness-id
@@ -292,6 +297,7 @@ paths:
       tags:
         - bookingBusinesses.bookingAppointment
       summary: Get appointments from bookingBusinesses
+      description: All the appointments of this business. Read-only. Nullable.
       operationId: bookingBusinesses_ListAppointments
       parameters:
         - name: bookingBusiness-id
@@ -495,6 +501,7 @@ paths:
       tags:
         - bookingBusinesses.bookingAppointment
       summary: Get appointments from bookingBusinesses
+      description: All the appointments of this business. Read-only. Nullable.
       operationId: bookingBusinesses_GetAppointments
       parameters:
         - name: bookingBusiness-id
@@ -653,6 +660,7 @@ paths:
       tags:
         - bookingBusinesses.Actions
       summary: Invoke action cancel
+      description: 'Cancels the giving booking appointment, sending a message to the involved parties.'
       operationId: bookingBusinesses.appointments_cancel
       parameters:
         - name: bookingBusiness-id
@@ -693,6 +701,7 @@ paths:
       tags:
         - bookingBusinesses.bookingAppointment
       summary: Get calendarView from bookingBusinesses
+      description: The set of appointments of this business in a specified date range. Read-only. Nullable.
       operationId: bookingBusinesses_ListCalendarView
       parameters:
         - name: bookingBusiness-id
@@ -908,6 +917,7 @@ paths:
       tags:
         - bookingBusinesses.bookingAppointment
       summary: Get calendarView from bookingBusinesses
+      description: The set of appointments of this business in a specified date range. Read-only. Nullable.
       operationId: bookingBusinesses_GetCalendarView
       parameters:
         - name: bookingBusiness-id
@@ -1078,6 +1088,7 @@ paths:
       tags:
         - bookingBusinesses.Actions
       summary: Invoke action cancel
+      description: 'Cancels the giving booking appointment, sending a message to the involved parties.'
       operationId: bookingBusinesses.calendarView_cancel
       parameters:
         - name: bookingBusiness-id
@@ -1118,6 +1129,7 @@ paths:
       tags:
         - bookingBusinesses.bookingCustomer
       summary: Get customers from bookingBusinesses
+      description: All the customers of this business. Read-only. Nullable.
       operationId: bookingBusinesses_ListCustomers
       parameters:
         - name: bookingBusiness-id
@@ -1225,6 +1237,7 @@ paths:
       tags:
         - bookingBusinesses.bookingCustomer
       summary: Get customers from bookingBusinesses
+      description: All the customers of this business. Read-only. Nullable.
       operationId: bookingBusinesses_GetCustomers
       parameters:
         - name: bookingBusiness-id
@@ -1348,6 +1361,7 @@ paths:
       tags:
         - bookingBusinesses.bookingCustomQuestion
       summary: Get customQuestions from bookingBusinesses
+      description: All the custom questions of this business. Read-only. Nullable.
       operationId: bookingBusinesses_ListCustomQuestions
       parameters:
         - name: bookingBusiness-id
@@ -1452,6 +1466,7 @@ paths:
       tags:
         - bookingBusinesses.bookingCustomQuestion
       summary: Get customQuestions from bookingBusinesses
+      description: All the custom questions of this business. Read-only. Nullable.
       operationId: bookingBusinesses_GetCustomQuestions
       parameters:
         - name: bookingBusiness-id
@@ -1624,6 +1639,7 @@ paths:
       tags:
         - bookingBusinesses.Actions
       summary: Invoke action publish
+      description: Makes the scheduling page of this business available to the general public.
       operationId: bookingBusinesses_publish
       parameters:
         - name: bookingBusiness-id
@@ -1644,6 +1660,7 @@ paths:
       tags:
         - bookingBusinesses.Actions
       summary: Invoke action unpublish
+      description: Prevents the general public from seeing the scheduling page of this business.
       operationId: bookingBusinesses_unpublish
       parameters:
         - name: bookingBusiness-id
@@ -1664,6 +1681,7 @@ paths:
       tags:
         - bookingBusinesses.bookingService
       summary: Get services from bookingBusinesses
+      description: All the services offered by this business. Read-only. Nullable.
       operationId: bookingBusinesses_ListServices
       parameters:
         - name: bookingBusiness-id
@@ -1822,6 +1840,7 @@ paths:
       tags:
         - bookingBusinesses.bookingService
       summary: Get services from bookingBusinesses
+      description: All the services offered by this business. Read-only. Nullable.
       operationId: bookingBusinesses_GetServices
       parameters:
         - name: bookingBusiness-id
@@ -1962,6 +1981,7 @@ paths:
       tags:
         - bookingBusinesses.bookingStaffMember
       summary: Get staffMembers from bookingBusinesses
+      description: All the staff members that provide services in this business. Read-only. Nullable.
       operationId: bookingBusinesses_ListStaffMembers
       parameters:
         - name: bookingBusiness-id
@@ -2084,6 +2104,7 @@ paths:
       tags:
         - bookingBusinesses.bookingStaffMember
       summary: Get staffMembers from bookingBusinesses
+      description: All the staff members that provide services in this business. Read-only. Nullable.
       operationId: bookingBusinesses_GetStaffMembers
       parameters:
         - name: bookingBusiness-id
@@ -2212,6 +2233,7 @@ paths:
       tags:
         - bookingCurrencies.bookingCurrency
       summary: List bookingCurrencies
+      description: Get a list of bookingCurrency objects available to a Microsoft Bookings business.
       operationId: bookingCurrencies.bookingCurrency_ListBookingCurrency
       parameters:
         - $ref: '#/components/parameters/top'
@@ -2295,6 +2317,7 @@ paths:
       tags:
         - bookingCurrencies.bookingCurrency
       summary: Get bookingCurrency
+      description: 'Get the properties of a bookingCurrency object that is available to a Microsoft Bookings business. Use the **id** property, which is the currency code, to specify the currency.'
       operationId: bookingCurrencies.bookingCurrency_GetBookingCurrency
       parameters:
         - name: bookingCurrency-id
@@ -3241,13 +3264,7 @@ components:
       additionalProperties:
         type: object
     microsoft.graph.physicalAddressType:
-      title: physicalAddressType
-      enum:
-        - unknown
-        - home
-        - business
-        - other
-      type: string
+      description: 'The type of address. Possible values are: unknown, home, business, other.'
     microsoft.graph.dayOfWeek:
       title: dayOfWeek
       enum:
@@ -3276,59 +3293,11 @@ components:
       additionalProperties:
         type: object
     microsoft.graph.outlookGeoCoordinates:
-      title: outlookGeoCoordinates
-      type: object
-      properties:
-        accuracy:
-          type: number
-          description: 'The accuracy of the latitude and longitude. As an example, the accuracy can be measured in meters, such as the latitude and longitude are accurate to within 50 meters.'
-          format: double
-          nullable: true
-        altitude:
-          type: number
-          description: The altitude of the location.
-          format: double
-          nullable: true
-        altitudeAccuracy:
-          type: number
-          description: The accuracy of the altitude.
-          format: double
-          nullable: true
-        latitude:
-          type: number
-          description: The latitude of the location.
-          format: double
-          nullable: true
-        longitude:
-          type: number
-          description: The longitude of the location.
-          format: double
-          nullable: true
-      additionalProperties:
-        type: object
+      description: The geographic coordinates and elevation of the location.
     microsoft.graph.locationType:
-      title: locationType
-      enum:
-        - default
-        - conferenceRoom
-        - homeAddress
-        - businessAddress
-        - geoCoordinates
-        - streetAddress
-        - hotel
-        - restaurant
-        - localBusiness
-        - postalAddress
-      type: string
+      description: 'The type of location. Possible values are: default, conferenceRoom, homeAddress, businessAddress,geoCoordinates, streetAddress, hotel, restaurant, localBusiness, postalAddress. Read-only.'
     microsoft.graph.locationUniqueIdType:
-      title: locationUniqueIdType
-      enum:
-        - unknown
-        - locationStore
-        - directory
-        - private
-        - bing
-      type: string
+      description: For internal use only.
     microsoft.graph.bookingReminderRecipients:
       title: bookingReminderRecipients
       enum:
@@ -3337,19 +3306,7 @@ components:
         - customer
       type: string
     microsoft.graph.phoneType:
-      title: phoneType
-      enum:
-        - home
-        - business
-        - mobile
-        - other
-        - assistant
-        - homeFax
-        - businessFax
-        - otherFax
-        - pager
-        - radio
-      type: string
+      description: 'The type of phone number. Possible values are: home, business, mobile, other, assistant, homeFax, businessFax, otherFax, pager, radio.'
     microsoft.graph.bookingsAvailabilityStatus:
       title: bookingsAvailabilityStatus
       enum:

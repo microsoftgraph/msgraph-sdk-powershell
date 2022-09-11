@@ -11,7 +11,7 @@ paths:
       tags:
         - admin.Functions
       summary: Invoke function incidentReport
-      operationId: admin.serviceAnnouncement.healthOverviews.issues_incidentReport
+      operationId: admin.serviceAnnouncement.healthOverviews_issues_incidentReport
       parameters:
         - name: serviceHealth-id
           in: path
@@ -49,7 +49,7 @@ paths:
       tags:
         - admin.Functions
       summary: Invoke function incidentReport
-      operationId: admin.serviceAnnouncement.issues_incidentReport
+      operationId: admin.serviceAnnouncement_issues_incidentReport
       parameters:
         - name: serviceHealthIssue-id
           in: path
@@ -80,7 +80,7 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action archive
-      operationId: admin.serviceAnnouncement.messages_archive
+      operationId: admin.serviceAnnouncement_messages_archive
       requestBody:
         description: Action parameters
         content:
@@ -118,7 +118,7 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action favorite
-      operationId: admin.serviceAnnouncement.messages_favorite
+      operationId: admin.serviceAnnouncement_messages_favorite
       requestBody:
         description: Action parameters
         content:
@@ -156,7 +156,7 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action markRead
-      operationId: admin.serviceAnnouncement.messages_markRead
+      operationId: admin.serviceAnnouncement_messages_markRead
       requestBody:
         description: Action parameters
         content:
@@ -194,7 +194,7 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action markUnread
-      operationId: admin.serviceAnnouncement.messages_markUnread
+      operationId: admin.serviceAnnouncement_messages_markUnread
       requestBody:
         description: Action parameters
         content:
@@ -232,7 +232,7 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action unarchive
-      operationId: admin.serviceAnnouncement.messages_unarchive
+      operationId: admin.serviceAnnouncement_messages_unarchive
       requestBody:
         description: Action parameters
         content:
@@ -270,7 +270,7 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action unfavorite
-      operationId: admin.serviceAnnouncement.messages_unfavorite
+      operationId: admin.serviceAnnouncement_messages_unfavorite
       requestBody:
         description: Action parameters
         content:

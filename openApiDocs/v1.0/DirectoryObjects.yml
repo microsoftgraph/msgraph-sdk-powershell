@@ -103,6 +103,7 @@ paths:
       tags:
         - directoryObjects.directoryObject
       summary: Get directoryObject
+      description: Retrieve the properties and relationships of a directoryObject object.
       operationId: directoryObjects.directoryObject_GetDirectoryObject
       parameters:
         - name: directoryObject-id
@@ -188,6 +189,7 @@ paths:
       tags:
         - directoryObjects.directoryObject
       summary: Delete directoryObject
+      description: 'Delete a directory object, for example, a group, user, application, or service principal.'
       operationId: directoryObjects.directoryObject_DeleteDirectoryObject
       parameters:
         - name: directoryObject-id

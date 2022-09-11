@@ -11,6 +11,7 @@ paths:
       tags:
         - deviceManagement.applePushNotificationCertificate
       summary: Get applePushNotificationCertificate from deviceManagement
+      description: Apple push notification certificate.
       operationId: deviceManagement_GetApplePushNotificationCertificate
       parameters:
         - name: $select
@@ -100,6 +101,7 @@ paths:
       tags:
         - deviceManagement.auditEvent
       summary: Get auditEvents from deviceManagement
+      description: The Audit Events
       operationId: deviceManagement_ListAuditEvents
       parameters:
         - $ref: '#/components/parameters/top'
@@ -213,6 +215,7 @@ paths:
       tags:
         - deviceManagement.auditEvent
       summary: Get auditEvents from deviceManagement
+      description: The Audit Events
       operationId: deviceManagement_GetAuditEvents
       parameters:
         - name: auditEvent-id
@@ -322,6 +325,7 @@ paths:
       tags:
         - deviceManagement.cartToClassAssociation
       summary: Get cartToClassAssociations from deviceManagement
+      description: The Cart To Class Associations.
       operationId: deviceManagement_ListCartToClassAssociations
       parameters:
         - $ref: '#/components/parameters/top'
@@ -423,6 +427,7 @@ paths:
       tags:
         - deviceManagement.cartToClassAssociation
       summary: Get cartToClassAssociations from deviceManagement
+      description: The Cart To Class Associations.
       operationId: deviceManagement_GetCartToClassAssociations
       parameters:
         - name: cartToClassAssociation-id
@@ -528,6 +533,7 @@ paths:
       tags:
         - deviceManagement.comanagementEligibleDevice
       summary: Get comanagementEligibleDevices from deviceManagement
+      description: The list of co-management eligible devices report
       operationId: deviceManagement_ListComanagementEligibleDevices
       parameters:
         - $ref: '#/components/parameters/top'
@@ -665,6 +671,7 @@ paths:
       tags:
         - deviceManagement.comanagementEligibleDevice
       summary: Get comanagementEligibleDevices from deviceManagement
+      description: The list of co-management eligible devices report
       operationId: deviceManagement_GetComanagementEligibleDevices
       parameters:
         - name: comanagementEligibleDevice-id
@@ -782,6 +789,7 @@ paths:
       tags:
         - deviceManagement.complianceManagementPartner
       summary: Get complianceManagementPartners from deviceManagement
+      description: The list of Compliance Management Partners configured by the tenant.
       operationId: deviceManagement_ListComplianceManagementPartners
       parameters:
         - $ref: '#/components/parameters/top'
@@ -895,6 +903,7 @@ paths:
       tags:
         - deviceManagement.complianceManagementPartner
       summary: Get complianceManagementPartners from deviceManagement
+      description: The list of Compliance Management Partners configured by the tenant.
       operationId: deviceManagement_GetComplianceManagementPartners
       parameters:
         - name: complianceManagementPartner-id
@@ -1004,6 +1013,7 @@ paths:
       tags:
         - deviceManagement.restrictedAppsViolation
       summary: Get deviceConfigurationRestrictedAppsViolations from deviceManagement
+      description: Restricted apps violations for this account.
       operationId: deviceManagement_ListDeviceConfigurationRestrictedAppsViolations
       parameters:
         - $ref: '#/components/parameters/top'
@@ -1111,6 +1121,7 @@ paths:
       tags:
         - deviceManagement.restrictedAppsViolation
       summary: Get deviceConfigurationRestrictedAppsViolations from deviceManagement
+      description: Restricted apps violations for this account.
       operationId: deviceManagement_GetDeviceConfigurationRestrictedAppsViolations
       parameters:
         - name: restrictedAppsViolation-id
@@ -1218,6 +1229,7 @@ paths:
       tags:
         - deviceManagement.managedAllDeviceCertificateState
       summary: Get deviceConfigurationsAllManagedDeviceCertificateStates from deviceManagement
+      description: Summary of all certificates for all devices.
       operationId: deviceManagement_ListDeviceConfigurationsAllManagedDeviceCertificateStates
       parameters:
         - $ref: '#/components/parameters/top'
@@ -1334,6 +1346,7 @@ paths:
       tags:
         - deviceManagement.managedAllDeviceCertificateState
       summary: Get deviceConfigurationsAllManagedDeviceCertificateStates from deviceManagement
+      description: Summary of all certificates for all devices.
       operationId: deviceManagement_GetDeviceConfigurationsAllManagedDeviceCertificateStates
       parameters:
         - name: managedAllDeviceCertificateState-id
@@ -1444,6 +1457,7 @@ paths:
       tags:
         - deviceManagement.deviceManagementPartner
       summary: Get deviceManagementPartners from deviceManagement
+      description: The list of Device Management Partners configured by the tenant.
       operationId: deviceManagement_ListDeviceManagementPartners
       parameters:
         - $ref: '#/components/parameters/top'
@@ -1557,6 +1571,7 @@ paths:
       tags:
         - deviceManagement.deviceManagementPartner
       summary: Get deviceManagementPartners from deviceManagement
+      description: The list of Device Management Partners configured by the tenant.
       operationId: deviceManagement_GetDeviceManagementPartners
       parameters:
         - name: deviceManagementPartner-id
@@ -1666,6 +1681,7 @@ paths:
       tags:
         - deviceManagement.deviceManagementDomainJoinConnector
       summary: Get domainJoinConnectors from deviceManagement
+      description: A list of connector objects.
       operationId: deviceManagement_ListDomainJoinConnectors
       parameters:
         - $ref: '#/components/parameters/top'
@@ -1758,6 +1774,7 @@ paths:
       tags:
         - deviceManagement.deviceManagementDomainJoinConnector
       summary: Get domainJoinConnectors from deviceManagement
+      description: A list of connector objects.
       operationId: deviceManagement_GetDomainJoinConnectors
       parameters:
         - name: deviceManagementDomainJoinConnector-id
@@ -1860,6 +1877,7 @@ paths:
       tags:
         - deviceManagement.deviceManagementExchangeConnector
       summary: Get exchangeConnectors from deviceManagement
+      description: The list of Exchange Connectors configured by the tenant.
       operationId: deviceManagement_ListExchangeConnectors
       parameters:
         - $ref: '#/components/parameters/top'
@@ -1967,6 +1985,7 @@ paths:
       tags:
         - deviceManagement.deviceManagementExchangeConnector
       summary: Get exchangeConnectors from deviceManagement
+      description: The list of Exchange Connectors configured by the tenant.
       operationId: deviceManagement_GetExchangeConnectors
       parameters:
         - name: deviceManagementExchangeConnector-id
@@ -2077,6 +2096,7 @@ paths:
       tags:
         - deviceManagement.deviceManagementExchangeOnPremisesPolicy
       summary: Get exchangeOnPremisesPolicies from deviceManagement
+      description: The list of Exchange On Premisis policies configured by the tenant.
       operationId: deviceManagement_ListExchangeOnPremisesPolicies
       parameters:
         - $ref: '#/components/parameters/top'
@@ -2171,6 +2191,7 @@ paths:
       tags:
         - deviceManagement.deviceManagementExchangeOnPremisesPolicy
       summary: Get exchangeOnPremisesPolicies from deviceManagement
+      description: The list of Exchange On Premisis policies configured by the tenant.
       operationId: deviceManagement_GetExchangeOnPremisesPolicies
       parameters:
         - name: deviceManagementExchangeOnPremisesPolicy-id
@@ -2280,6 +2301,7 @@ paths:
       tags:
         - deviceManagement.deviceManagementExchangeOnPremisesPolicy
       summary: Get conditionalAccessSettings from deviceManagement
+      description: The Exchange on premises conditional access settings. On premises conditional access will require devices to be both enrolled and compliant for mail access
       operationId: deviceManagement.exchangeOnPremisesPolicies_GetConditionalAccessSettings
       parameters:
         - name: deviceManagementExchangeOnPremisesPolicy-id
@@ -2382,6 +2404,7 @@ paths:
       tags:
         - deviceManagement.deviceManagementExchangeOnPremisesPolicy
       summary: Get exchangeOnPremisesPolicy from deviceManagement
+      description: The policy which controls mobile device access to Exchange On Premises
       operationId: deviceManagement_GetExchangeOnPremisesPolicy
       parameters:
         - name: $select
@@ -2467,6 +2490,7 @@ paths:
       tags:
         - deviceManagement.deviceManagementExchangeOnPremisesPolicy
       summary: Get conditionalAccessSettings from deviceManagement
+      description: The Exchange on premises conditional access settings. On premises conditional access will require devices to be both enrolled and compliant for mail access
       operationId: deviceManagement.exchangeOnPremisesPolicy_GetConditionalAccessSettings
       parameters:
         - name: $select
@@ -2547,6 +2571,7 @@ paths:
       tags:
         - deviceManagement.groupPolicyCategory
       summary: Get groupPolicyCategories from deviceManagement
+      description: The available group policy categories for this account.
       operationId: deviceManagement_ListGroupPolicyCategories
       parameters:
         - $ref: '#/components/parameters/top'
@@ -2647,6 +2672,7 @@ paths:
       tags:
         - deviceManagement.groupPolicyCategory
       summary: Get groupPolicyCategories from deviceManagement
+      description: The available group policy categories for this account.
       operationId: deviceManagement_GetGroupPolicyCategories
       parameters:
         - name: groupPolicyCategory-id
@@ -2774,6 +2800,7 @@ paths:
       tags:
         - deviceManagement.groupPolicyCategory
       summary: Get children from deviceManagement
+      description: The children categories
       operationId: deviceManagement.groupPolicyCategories_ListChildren
       parameters:
         - name: groupPolicyCategory-id
@@ -2859,6 +2886,7 @@ paths:
       tags:
         - deviceManagement.groupPolicyCategory
       summary: Get children from deviceManagement
+      description: The children categories
       operationId: deviceManagement.groupPolicyCategories_GetChildren
       parameters:
         - name: groupPolicyCategory-id
@@ -2947,6 +2975,7 @@ paths:
       tags:
         - deviceManagement.groupPolicyCategory
       summary: Get definitionFile from deviceManagement
+      description: The id of the definition file the category came from
       operationId: deviceManagement.groupPolicyCategories_GetDefinitionFile
       parameters:
         - name: groupPolicyCategory-id
@@ -3011,6 +3040,7 @@ paths:
       tags:
         - deviceManagement.groupPolicyCategory
       summary: Get definitions from deviceManagement
+      description: The immediate GroupPolicyDefinition children of the category
       operationId: deviceManagement.groupPolicyCategories_ListDefinitions
       parameters:
         - name: groupPolicyCategory-id
@@ -3122,6 +3152,7 @@ paths:
       tags:
         - deviceManagement.groupPolicyCategory
       summary: Get definitions from deviceManagement
+      description: The immediate GroupPolicyDefinition children of the category
       operationId: deviceManagement.groupPolicyCategories_GetDefinitions
       parameters:
         - name: groupPolicyCategory-id
@@ -3225,6 +3256,7 @@ paths:
       tags:
         - deviceManagement.groupPolicyCategory
       summary: Get parent from deviceManagement
+      description: The parent category
       operationId: deviceManagement.groupPolicyCategories_GetParent
       parameters:
         - name: groupPolicyCategory-id
@@ -3302,6 +3334,7 @@ paths:
       tags:
         - deviceManagement.groupPolicyDefinitionFile
       summary: Get groupPolicyDefinitionFiles from deviceManagement
+      description: The available group policy definition files for this account.
       operationId: deviceManagement_ListGroupPolicyDefinitionFiles
       parameters:
         - $ref: '#/components/parameters/top'
@@ -3411,6 +3444,7 @@ paths:
       tags:
         - deviceManagement.groupPolicyDefinitionFile
       summary: Get groupPolicyDefinitionFiles from deviceManagement
+      description: The available group policy definition files for this account.
       operationId: deviceManagement_GetGroupPolicyDefinitionFiles
       parameters:
         - name: groupPolicyDefinitionFile-id
@@ -3525,6 +3559,7 @@ paths:
       tags:
         - deviceManagement.groupPolicyDefinitionFile
       summary: Get definitions from deviceManagement
+      description: The group policy definitions associated with the file.
       operationId: deviceManagement.groupPolicyDefinitionFiles_ListDefinitions
       parameters:
         - name: groupPolicyDefinitionFile-id
@@ -3636,6 +3671,7 @@ paths:
       tags:
         - deviceManagement.groupPolicyDefinitionFile
       summary: Get definitions from deviceManagement
+      description: The group policy definitions associated with the file.
       operationId: deviceManagement.groupPolicyDefinitionFiles_GetDefinitions
       parameters:
         - name: groupPolicyDefinitionFile-id
@@ -3739,6 +3775,7 @@ paths:
       tags:
         - deviceManagement.groupPolicyDefinition
       summary: Get groupPolicyDefinitions from deviceManagement
+      description: The available group policy definitions for this account.
       operationId: deviceManagement_ListGroupPolicyDefinitions
       parameters:
         - $ref: '#/components/parameters/top'
@@ -3865,6 +3902,7 @@ paths:
       tags:
         - deviceManagement.groupPolicyDefinition
       summary: Get groupPolicyDefinitions from deviceManagement
+      description: The available group policy definitions for this account.
       operationId: deviceManagement_GetGroupPolicyDefinitions
       parameters:
         - name: groupPolicyDefinition-id
@@ -4006,6 +4044,7 @@ paths:
       tags:
         - deviceManagement.groupPolicyDefinition
       summary: Get category from deviceManagement
+      description: The group policy category associated with the definition.
       operationId: deviceManagement.groupPolicyDefinitions_GetCategory
       parameters:
         - name: groupPolicyDefinition-id
@@ -4083,6 +4122,7 @@ paths:
       tags:
         - deviceManagement.groupPolicyDefinition
       summary: Get definitionFile from deviceManagement
+      description: The group policy file associated with the definition.
       operationId: deviceManagement.groupPolicyDefinitions_GetDefinitionFile
       parameters:
         - name: groupPolicyDefinition-id
@@ -4147,6 +4187,7 @@ paths:
       tags:
         - deviceManagement.groupPolicyDefinition
       summary: Get nextVersionDefinition from deviceManagement
+      description: Definition of the next version of this definition
       operationId: deviceManagement.groupPolicyDefinitions_GetNextVersionDefinition
       parameters:
         - name: groupPolicyDefinition-id
@@ -4288,6 +4329,7 @@ paths:
       tags:
         - deviceManagement.groupPolicyDefinition
       summary: Get category from deviceManagement
+      description: The group policy category associated with the definition.
       operationId: deviceManagement.groupPolicyDefinitions.nextVersionDefinition_GetCategory
       parameters:
         - name: groupPolicyDefinition-id
@@ -4365,6 +4407,7 @@ paths:
       tags:
         - deviceManagement.groupPolicyDefinition
       summary: Get definitionFile from deviceManagement
+      description: The group policy file associated with the definition.
       operationId: deviceManagement.groupPolicyDefinitions.nextVersionDefinition_GetDefinitionFile
       parameters:
         - name: groupPolicyDefinition-id
@@ -4429,6 +4472,7 @@ paths:
       tags:
         - deviceManagement.groupPolicyDefinition
       summary: Get presentations from deviceManagement
+      description: The group policy presentations associated with the definition.
       operationId: deviceManagement.groupPolicyDefinitions.nextVersionDefinition_ListPresentations
       parameters:
         - name: groupPolicyDefinition-id
@@ -4532,6 +4576,7 @@ paths:
       tags:
         - deviceManagement.groupPolicyDefinition
       summary: Get presentations from deviceManagement
+      description: The group policy presentations associated with the definition.
       operationId: deviceManagement.groupPolicyDefinitions.nextVersionDefinition_GetPresentations
       parameters:
         - name: groupPolicyDefinition-id
@@ -4661,6 +4706,7 @@ paths:
       tags:
         - deviceManagement.groupPolicyDefinition
       summary: Get definition from deviceManagement
+      description: The group policy definition associated with the presentation.
       operationId: deviceManagement.groupPolicyDefinitions.nextVersionDefinition.presentations_GetDefinition
       parameters:
         - name: groupPolicyDefinition-id
@@ -4764,6 +4810,7 @@ paths:
       tags:
         - deviceManagement.groupPolicyDefinition
       summary: Get previousVersionDefinition from deviceManagement
+      description: Definition of the previous version of this definition
       operationId: deviceManagement.groupPolicyDefinitions.nextVersionDefinition_GetPreviousVersionDefinition
       parameters:
         - name: groupPolicyDefinition-id
@@ -4905,6 +4952,7 @@ paths:
       tags:
         - deviceManagement.groupPolicyDefinition
       summary: Get category from deviceManagement
+      description: The group policy category associated with the definition.
       operationId: deviceManagement.groupPolicyDefinitions.nextVersionDefinition.previousVersionDefinition_GetCategory
       parameters:
         - name: groupPolicyDefinition-id
@@ -4982,6 +5030,7 @@ paths:
       tags:
         - deviceManagement.groupPolicyDefinition
       summary: Get definitionFile from deviceManagement
+      description: The group policy file associated with the definition.
       operationId: deviceManagement.groupPolicyDefinitions.nextVersionDefinition.previousVersionDefinition_GetDefinitionFile
       parameters:
         - name: groupPolicyDefinition-id
@@ -5046,6 +5095,7 @@ paths:
       tags:
         - deviceManagement.groupPolicyDefinition
       summary: Get presentations from deviceManagement
+      description: The group policy presentations associated with the definition.
       operationId: deviceManagement.groupPolicyDefinitions.nextVersionDefinition.previousVersionDefinition_ListPresentations
       parameters:
         - name: groupPolicyDefinition-id
@@ -5149,6 +5199,7 @@ paths:
       tags:
         - deviceManagement.groupPolicyDefinition
       summary: Get presentations from deviceManagement
+      description: The group policy presentations associated with the definition.
       operationId: deviceManagement.groupPolicyDefinitions.nextVersionDefinition.previousVersionDefinition_GetPresentations
       parameters:
         - name: groupPolicyDefinition-id
@@ -5278,6 +5329,7 @@ paths:
       tags:
         - deviceManagement.groupPolicyDefinition
       summary: Get definition from deviceManagement
+      description: The group policy definition associated with the presentation.
       operationId: deviceManagement.groupPolicyDefinitions.nextVersionDefinition.previousVersionDefinition.presentations_GetDefinition
       parameters:
         - name: groupPolicyDefinition-id
@@ -5381,6 +5433,7 @@ paths:
       tags:
         - deviceManagement.groupPolicyDefinition
       summary: Get presentations from deviceManagement
+      description: The group policy presentations associated with the definition.
       operationId: deviceManagement.groupPolicyDefinitions_ListPresentations
       parameters:
         - name: groupPolicyDefinition-id
@@ -5484,6 +5537,7 @@ paths:
       tags:
         - deviceManagement.groupPolicyDefinition
       summary: Get presentations from deviceManagement
+      description: The group policy presentations associated with the definition.
       operationId: deviceManagement.groupPolicyDefinitions_GetPresentations
       parameters:
         - name: groupPolicyDefinition-id
@@ -5613,6 +5667,7 @@ paths:
       tags:
         - deviceManagement.groupPolicyDefinition
       summary: Get definition from deviceManagement
+      description: The group policy definition associated with the presentation.
       operationId: deviceManagement.groupPolicyDefinitions.presentations_GetDefinition
       parameters:
         - name: groupPolicyDefinition-id
@@ -5716,6 +5771,7 @@ paths:
       tags:
         - deviceManagement.groupPolicyDefinition
       summary: Get previousVersionDefinition from deviceManagement
+      description: Definition of the previous version of this definition
       operationId: deviceManagement.groupPolicyDefinitions_GetPreviousVersionDefinition
       parameters:
         - name: groupPolicyDefinition-id
@@ -5857,6 +5913,7 @@ paths:
       tags:
         - deviceManagement.groupPolicyDefinition
       summary: Get category from deviceManagement
+      description: The group policy category associated with the definition.
       operationId: deviceManagement.groupPolicyDefinitions.previousVersionDefinition_GetCategory
       parameters:
         - name: groupPolicyDefinition-id
@@ -5934,6 +5991,7 @@ paths:
       tags:
         - deviceManagement.groupPolicyDefinition
       summary: Get definitionFile from deviceManagement
+      description: The group policy file associated with the definition.
       operationId: deviceManagement.groupPolicyDefinitions.previousVersionDefinition_GetDefinitionFile
       parameters:
         - name: groupPolicyDefinition-id
@@ -5998,6 +6056,7 @@ paths:
       tags:
         - deviceManagement.groupPolicyDefinition
       summary: Get nextVersionDefinition from deviceManagement
+      description: Definition of the next version of this definition
       operationId: deviceManagement.groupPolicyDefinitions.previousVersionDefinition_GetNextVersionDefinition
       parameters:
         - name: groupPolicyDefinition-id
@@ -6139,6 +6198,7 @@ paths:
       tags:
         - deviceManagement.groupPolicyDefinition
       summary: Get category from deviceManagement
+      description: The group policy category associated with the definition.
       operationId: deviceManagement.groupPolicyDefinitions.previousVersionDefinition.nextVersionDefinition_GetCategory
       parameters:
         - name: groupPolicyDefinition-id
@@ -6216,6 +6276,7 @@ paths:
       tags:
         - deviceManagement.groupPolicyDefinition
       summary: Get definitionFile from deviceManagement
+      description: The group policy file associated with the definition.
       operationId: deviceManagement.groupPolicyDefinitions.previousVersionDefinition.nextVersionDefinition_GetDefinitionFile
       parameters:
         - name: groupPolicyDefinition-id
@@ -6280,6 +6341,7 @@ paths:
       tags:
         - deviceManagement.groupPolicyDefinition
       summary: Get presentations from deviceManagement
+      description: The group policy presentations associated with the definition.
       operationId: deviceManagement.groupPolicyDefinitions.previousVersionDefinition.nextVersionDefinition_ListPresentations
       parameters:
         - name: groupPolicyDefinition-id
@@ -6383,6 +6445,7 @@ paths:
       tags:
         - deviceManagement.groupPolicyDefinition
       summary: Get presentations from deviceManagement
+      description: The group policy presentations associated with the definition.
       operationId: deviceManagement.groupPolicyDefinitions.previousVersionDefinition.nextVersionDefinition_GetPresentations
       parameters:
         - name: groupPolicyDefinition-id
@@ -6512,6 +6575,7 @@ paths:
       tags:
         - deviceManagement.groupPolicyDefinition
       summary: Get definition from deviceManagement
+      description: The group policy definition associated with the presentation.
       operationId: deviceManagement.groupPolicyDefinitions.previousVersionDefinition.nextVersionDefinition.presentations_GetDefinition
       parameters:
         - name: groupPolicyDefinition-id
@@ -6615,6 +6679,7 @@ paths:
       tags:
         - deviceManagement.groupPolicyDefinition
       summary: Get presentations from deviceManagement
+      description: The group policy presentations associated with the definition.
       operationId: deviceManagement.groupPolicyDefinitions.previousVersionDefinition_ListPresentations
       parameters:
         - name: groupPolicyDefinition-id
@@ -6718,6 +6783,7 @@ paths:
       tags:
         - deviceManagement.groupPolicyDefinition
       summary: Get presentations from deviceManagement
+      description: The group policy presentations associated with the definition.
       operationId: deviceManagement.groupPolicyDefinitions.previousVersionDefinition_GetPresentations
       parameters:
         - name: groupPolicyDefinition-id
@@ -6847,6 +6913,7 @@ paths:
       tags:
         - deviceManagement.groupPolicyDefinition
       summary: Get definition from deviceManagement
+      description: The group policy definition associated with the presentation.
       operationId: deviceManagement.groupPolicyDefinitions.previousVersionDefinition.presentations_GetDefinition
       parameters:
         - name: groupPolicyDefinition-id
@@ -6950,6 +7017,7 @@ paths:
       tags:
         - deviceManagement.groupPolicyMigrationReport
       summary: Get groupPolicyMigrationReports from deviceManagement
+      description: A list of Group Policy migration reports.
       operationId: deviceManagement_ListGroupPolicyMigrationReports
       parameters:
         - $ref: '#/components/parameters/top'
@@ -7070,6 +7138,7 @@ paths:
       tags:
         - deviceManagement.groupPolicyMigrationReport
       summary: Get groupPolicyMigrationReports from deviceManagement
+      description: A list of Group Policy migration reports.
       operationId: deviceManagement_GetGroupPolicyMigrationReports
       parameters:
         - name: groupPolicyMigrationReport-id
@@ -7193,6 +7262,7 @@ paths:
       tags:
         - deviceManagement.groupPolicyMigrationReport
       summary: Get groupPolicySettingMappings from deviceManagement
+      description: A list of group policy settings to MDM/Intune mappings.
       operationId: deviceManagement.groupPolicyMigrationReports_ListGroupPolicySettingMappings
       parameters:
         - name: groupPolicyMigrationReport-id
@@ -7348,6 +7418,7 @@ paths:
       tags:
         - deviceManagement.groupPolicyMigrationReport
       summary: Get groupPolicySettingMappings from deviceManagement
+      description: A list of group policy settings to MDM/Intune mappings.
       operationId: deviceManagement.groupPolicyMigrationReports_GetGroupPolicySettingMappings
       parameters:
         - name: groupPolicyMigrationReport-id
@@ -7487,6 +7558,7 @@ paths:
       tags:
         - deviceManagement.groupPolicyMigrationReport
       summary: Get unsupportedGroupPolicyExtensions from deviceManagement
+      description: A list of unsupported group policy extensions inside the Group Policy Object.
       operationId: deviceManagement.groupPolicyMigrationReports_ListUnsupportedGroupPolicyExtensions
       parameters:
         - name: groupPolicyMigrationReport-id
@@ -7594,6 +7666,7 @@ paths:
       tags:
         - deviceManagement.groupPolicyMigrationReport
       summary: Get unsupportedGroupPolicyExtensions from deviceManagement
+      description: A list of unsupported group policy extensions inside the Group Policy Object.
       operationId: deviceManagement.groupPolicyMigrationReports_GetUnsupportedGroupPolicyExtensions
       parameters:
         - name: groupPolicyMigrationReport-id
@@ -7717,6 +7790,7 @@ paths:
       tags:
         - deviceManagement.groupPolicyObjectFile
       summary: Get groupPolicyObjectFiles from deviceManagement
+      description: A list of Group Policy Object files uploaded.
       operationId: deviceManagement_ListGroupPolicyObjectFiles
       parameters:
         - $ref: '#/components/parameters/top'
@@ -7812,6 +7886,7 @@ paths:
       tags:
         - deviceManagement.groupPolicyObjectFile
       summary: Get groupPolicyObjectFiles from deviceManagement
+      description: A list of Group Policy Object files uploaded.
       operationId: deviceManagement_GetGroupPolicyObjectFiles
       parameters:
         - name: groupPolicyObjectFile-id
@@ -7915,6 +7990,7 @@ paths:
       tags:
         - deviceManagement.groupPolicyUploadedDefinitionFile
       summary: Get groupPolicyUploadedDefinitionFiles from deviceManagement
+      description: The available group policy uploaded definition files for this account.
       operationId: deviceManagement_ListGroupPolicyUploadedDefinitionFiles
       parameters:
         - $ref: '#/components/parameters/top'
@@ -8041,6 +8117,7 @@ paths:
       tags:
         - deviceManagement.groupPolicyUploadedDefinitionFile
       summary: Get groupPolicyUploadedDefinitionFiles from deviceManagement
+      description: The available group policy uploaded definition files for this account.
       operationId: deviceManagement_GetGroupPolicyUploadedDefinitionFiles
       parameters:
         - name: groupPolicyUploadedDefinitionFile-id
@@ -8176,6 +8253,7 @@ paths:
       tags:
         - deviceManagement.groupPolicyUploadedDefinitionFile
       summary: Get groupPolicyOperations from deviceManagement
+      description: The list of operations on the uploaded ADMX file.
       operationId: deviceManagement.groupPolicyUploadedDefinitionFiles_ListGroupPolicyOperations
       parameters:
         - name: groupPolicyUploadedDefinitionFile-id
@@ -8283,6 +8361,7 @@ paths:
       tags:
         - deviceManagement.groupPolicyUploadedDefinitionFile
       summary: Get groupPolicyOperations from deviceManagement
+      description: The list of operations on the uploaded ADMX file.
       operationId: deviceManagement.groupPolicyUploadedDefinitionFiles_GetGroupPolicyOperations
       parameters:
         - name: groupPolicyUploadedDefinitionFile-id
@@ -8406,6 +8485,7 @@ paths:
       tags:
         - deviceManagement.intuneBrandingProfile
       summary: Get intuneBrandingProfiles from deviceManagement
+      description: Intune branding profiles targeted to AAD groups
       operationId: deviceManagement_ListIntuneBrandingProfiles
       parameters:
         - $ref: '#/components/parameters/top'
@@ -8581,6 +8661,7 @@ paths:
       tags:
         - deviceManagement.intuneBrandingProfile
       summary: Get intuneBrandingProfiles from deviceManagement
+      description: Intune branding profiles targeted to AAD groups
       operationId: deviceManagement_GetIntuneBrandingProfiles
       parameters:
         - name: intuneBrandingProfile-id
@@ -8719,6 +8800,7 @@ paths:
       tags:
         - deviceManagement.intuneBrandingProfile
       summary: Get assignments from deviceManagement
+      description: The list of group assignments for the branding profile
       operationId: deviceManagement.intuneBrandingProfiles_ListAssignments
       parameters:
         - name: intuneBrandingProfile-id
@@ -8817,6 +8899,7 @@ paths:
       tags:
         - deviceManagement.intuneBrandingProfile
       summary: Get assignments from deviceManagement
+      description: The list of group assignments for the branding profile
       operationId: deviceManagement.intuneBrandingProfiles_GetAssignments
       parameters:
         - name: intuneBrandingProfile-id
@@ -8937,6 +9020,7 @@ paths:
       tags:
         - deviceManagement.iosUpdateDeviceStatus
       summary: Get iosUpdateStatuses from deviceManagement
+      description: The IOS software update installation statuses for this account.
       operationId: deviceManagement_ListIosUpdateStatuses
       parameters:
         - $ref: '#/components/parameters/top'
@@ -9053,6 +9137,7 @@ paths:
       tags:
         - deviceManagement.iosUpdateDeviceStatus
       summary: Get iosUpdateStatuses from deviceManagement
+      description: The IOS software update installation statuses for this account.
       operationId: deviceManagement_GetIosUpdateStatuses
       parameters:
         - name: iosUpdateDeviceStatus-id
@@ -9163,6 +9248,7 @@ paths:
       tags:
         - deviceManagement.mobileThreatDefenseConnector
       summary: Get mobileThreatDefenseConnectors from deviceManagement
+      description: The list of Mobile threat Defense connectors configured by the tenant.
       operationId: deviceManagement_ListMobileThreatDefenseConnectors
       parameters:
         - $ref: '#/components/parameters/top'
@@ -9216,6 +9302,8 @@ paths:
                 - windowsDeviceBlockedOnMissingPartnerData desc
                 - windowsEnabled
                 - windowsEnabled desc
+                - windowsMobileApplicationManagementEnabled
+                - windowsMobileApplicationManagementEnabled desc
               type: string
         - name: $select
           in: query
@@ -9245,6 +9333,7 @@ paths:
                 - partnerUnsupportedOsVersionBlocked
                 - windowsDeviceBlockedOnMissingPartnerData
                 - windowsEnabled
+                - windowsMobileApplicationManagementEnabled
               type: string
         - name: $expand
           in: query
@@ -9294,6 +9383,7 @@ paths:
       tags:
         - deviceManagement.mobileThreatDefenseConnector
       summary: Get mobileThreatDefenseConnectors from deviceManagement
+      description: The list of Mobile threat Defense connectors configured by the tenant.
       operationId: deviceManagement_GetMobileThreatDefenseConnectors
       parameters:
         - name: mobileThreatDefenseConnector-id
@@ -9331,6 +9421,7 @@ paths:
                 - partnerUnsupportedOsVersionBlocked
                 - windowsDeviceBlockedOnMissingPartnerData
                 - windowsEnabled
+                - windowsMobileApplicationManagementEnabled
               type: string
         - name: $expand
           in: query
@@ -9409,6 +9500,7 @@ paths:
       tags:
         - deviceManagement.ndesConnector
       summary: Get ndesConnectors from deviceManagement
+      description: The collection of Ndes connectors for this account.
       operationId: deviceManagement_ListNdesConnectors
       parameters:
         - $ref: '#/components/parameters/top'
@@ -9510,6 +9602,7 @@ paths:
       tags:
         - deviceManagement.ndesConnector
       summary: Get ndesConnectors from deviceManagement
+      description: The collection of Ndes connectors for this account.
       operationId: deviceManagement_GetNdesConnectors
       parameters:
         - name: ndesConnector-id
@@ -9615,6 +9708,7 @@ paths:
       tags:
         - deviceManagement.remoteAssistancePartner
       summary: Get remoteAssistancePartners from deviceManagement
+      description: The remote assist partners.
       operationId: deviceManagement_ListRemoteAssistancePartners
       parameters:
         - $ref: '#/components/parameters/top'
@@ -9710,6 +9804,7 @@ paths:
       tags:
         - deviceManagement.remoteAssistancePartner
       summary: Get remoteAssistancePartners from deviceManagement
+      description: The remote assist partners.
       operationId: deviceManagement_GetRemoteAssistancePartners
       parameters:
         - name: remoteAssistancePartner-id
@@ -9818,6 +9913,7 @@ paths:
       tags:
         - deviceManagement.resourceOperation
       summary: Get resourceOperations from deviceManagement
+      description: The Resource Operations.
       operationId: deviceManagement_ListResourceOperations
       parameters:
         - $ref: '#/components/parameters/top'
@@ -9913,6 +10009,7 @@ paths:
       tags:
         - deviceManagement.resourceOperation
       summary: Get resourceOperations from deviceManagement
+      description: The Resource Operations.
       operationId: deviceManagement_GetResourceOperations
       parameters:
         - name: resourceOperation-id
@@ -10019,6 +10116,7 @@ paths:
       tags:
         - deviceManagement.deviceAndAppManagementRoleAssignment
       summary: Get roleAssignments from deviceManagement
+      description: The Role Assignments.
       operationId: deviceManagement_ListRoleAssignments
       parameters:
         - $ref: '#/components/parameters/top'
@@ -10121,6 +10219,7 @@ paths:
       tags:
         - deviceManagement.deviceAndAppManagementRoleAssignment
       summary: Get roleAssignments from deviceManagement
+      description: The Role Assignments.
       operationId: deviceManagement_GetRoleAssignments
       parameters:
         - name: deviceAndAppManagementRoleAssignment-id
@@ -10238,6 +10337,7 @@ paths:
       tags:
         - deviceManagement.deviceAndAppManagementRoleAssignment
       summary: Get roleScopeTags from deviceManagement
+      description: The set of Role Scope Tags defined on the Role Assignment.
       operationId: deviceManagement.roleAssignments_ListRoleScopeTags
       parameters:
         - name: deviceAndAppManagementRoleAssignment-id
@@ -10314,6 +10414,7 @@ paths:
       tags:
         - deviceManagement.deviceAndAppManagementRoleAssignment
       summary: Get roleScopeTags from deviceManagement
+      description: The set of Role Scope Tags defined on the Role Assignment.
       operationId: deviceManagement.roleAssignments_GetRoleScopeTags
       parameters:
         - name: deviceAndAppManagementRoleAssignment-id
@@ -10380,6 +10481,7 @@ paths:
       tags:
         - deviceManagement.roleDefinition
       summary: Get roleDefinitions from deviceManagement
+      description: The Role Definitions.
       operationId: deviceManagement_ListRoleDefinitions
       parameters:
         - $ref: '#/components/parameters/top'
@@ -10483,6 +10585,7 @@ paths:
       tags:
         - deviceManagement.roleDefinition
       summary: Get roleDefinitions from deviceManagement
+      description: The Role Definitions.
       operationId: deviceManagement_GetRoleDefinitions
       parameters:
         - name: roleDefinition-id
@@ -10595,6 +10698,7 @@ paths:
       tags:
         - deviceManagement.roleDefinition
       summary: Get roleAssignments from deviceManagement
+      description: List of Role assignments for this role definition.
       operationId: deviceManagement.roleDefinitions_ListRoleAssignments
       parameters:
         - name: roleDefinition-id
@@ -10707,6 +10811,7 @@ paths:
       tags:
         - deviceManagement.roleDefinition
       summary: Get roleAssignments from deviceManagement
+      description: List of Role assignments for this role definition.
       operationId: deviceManagement.roleDefinitions_GetRoleAssignments
       parameters:
         - name: roleDefinition-id
@@ -10839,6 +10944,7 @@ paths:
       tags:
         - deviceManagement.roleDefinition
       summary: Get roleDefinition from deviceManagement
+      description: Role definition this assignment is part of.
       operationId: deviceManagement.roleDefinitions.roleAssignments_GetRoleDefinition
       parameters:
         - name: roleDefinition-id
@@ -10909,6 +11015,7 @@ paths:
       tags:
         - deviceManagement.roleScopeTag
       summary: Get roleScopeTags from deviceManagement
+      description: The Role Scope Tags.
       operationId: deviceManagement_ListRoleScopeTags
       parameters:
         - $ref: '#/components/parameters/top'
@@ -11000,6 +11107,7 @@ paths:
       tags:
         - deviceManagement.roleScopeTag
       summary: Get roleScopeTags from deviceManagement
+      description: The Role Scope Tags.
       operationId: deviceManagement_GetRoleScopeTags
       parameters:
         - name: roleScopeTag-id
@@ -11110,6 +11218,7 @@ paths:
       tags:
         - deviceManagement.roleScopeTag
       summary: Get assignments from deviceManagement
+      description: The list of assignments for this Role Scope Tag.
       operationId: deviceManagement.roleScopeTags_ListAssignments
       parameters:
         - name: roleScopeTag-id
@@ -11208,6 +11317,7 @@ paths:
       tags:
         - deviceManagement.roleScopeTag
       summary: Get assignments from deviceManagement
+      description: The list of assignments for this Role Scope Tag.
       operationId: deviceManagement.roleScopeTags_GetAssignments
       parameters:
         - name: roleScopeTag-id
@@ -11328,6 +11438,7 @@ paths:
       tags:
         - deviceManagement.telecomExpenseManagementPartner
       summary: Get telecomExpenseManagementPartners from deviceManagement
+      description: The telecom expense management partners.
       operationId: deviceManagement_ListTelecomExpenseManagementPartners
       parameters:
         - $ref: '#/components/parameters/top'
@@ -11423,6 +11534,7 @@ paths:
       tags:
         - deviceManagement.telecomExpenseManagementPartner
       summary: Get telecomExpenseManagementPartners from deviceManagement
+      description: The telecom expense management partners.
       operationId: deviceManagement_GetTelecomExpenseManagementPartners
       parameters:
         - name: telecomExpenseManagementPartner-id
@@ -11526,6 +11638,7 @@ paths:
       tags:
         - deviceManagement.termsAndConditions
       summary: Get termsAndConditions from deviceManagement
+      description: The terms and conditions associated with device management of the company.
       operationId: deviceManagement_ListTermsAndConditions
       parameters:
         - $ref: '#/components/parameters/top'
@@ -11642,6 +11755,7 @@ paths:
       tags:
         - deviceManagement.termsAndConditions
       summary: Get termsAndConditions from deviceManagement
+      description: The terms and conditions associated with device management of the company.
       operationId: deviceManagement_GetTermsAndConditions
       parameters:
         - name: termsAndConditions-id
@@ -11769,6 +11883,7 @@ paths:
       tags:
         - deviceManagement.termsAndConditions
       summary: Get acceptanceStatuses from deviceManagement
+      description: The list of acceptance statuses for this T&C policy.
       operationId: deviceManagement.termsAndConditions_ListAcceptanceStatuses
       parameters:
         - name: termsAndConditions-id
@@ -11878,6 +11993,7 @@ paths:
       tags:
         - deviceManagement.termsAndConditions
       summary: Get acceptanceStatuses from deviceManagement
+      description: The list of acceptance statuses for this T&C policy.
       operationId: deviceManagement.termsAndConditions_GetAcceptanceStatuses
       parameters:
         - name: termsAndConditions-id
@@ -12009,6 +12125,7 @@ paths:
       tags:
         - deviceManagement.termsAndConditions
       summary: Get termsAndConditions from deviceManagement
+      description: Navigation link to the terms and conditions that are assigned.
       operationId: deviceManagement.termsAndConditions.acceptanceStatuses_GetTermsAndConditions
       parameters:
         - name: termsAndConditions-id
@@ -12096,6 +12213,7 @@ paths:
       tags:
         - deviceManagement.termsAndConditions
       summary: Get assignments from deviceManagement
+      description: The list of assignments for this T&C policy.
       operationId: deviceManagement.termsAndConditions_ListAssignments
       parameters:
         - name: termsAndConditions-id
@@ -12194,6 +12312,7 @@ paths:
       tags:
         - deviceManagement.termsAndConditions
       summary: Get assignments from deviceManagement
+      description: The list of assignments for this T&C policy.
       operationId: deviceManagement.termsAndConditions_GetAssignments
       parameters:
         - name: termsAndConditions-id
@@ -12314,6 +12433,7 @@ paths:
       tags:
         - deviceManagement.termsAndConditions
       summary: Get groupAssignments from deviceManagement
+      description: The list of group assignments for this T&C policy.
       operationId: deviceManagement.termsAndConditions_ListGroupAssignments
       parameters:
         - name: termsAndConditions-id
@@ -12414,6 +12534,7 @@ paths:
       tags:
         - deviceManagement.termsAndConditions
       summary: Get groupAssignments from deviceManagement
+      description: The list of group assignments for this T&C policy.
       operationId: deviceManagement.termsAndConditions_GetGroupAssignments
       parameters:
         - name: termsAndConditions-id
@@ -12542,6 +12663,7 @@ paths:
       tags:
         - deviceManagement.termsAndConditions
       summary: Get termsAndConditions from deviceManagement
+      description: Navigation link to the terms and conditions that are assigned.
       operationId: deviceManagement.termsAndConditions.groupAssignments_GetTermsAndConditions
       parameters:
         - name: termsAndConditions-id
@@ -12629,6 +12751,7 @@ paths:
       tags:
         - deviceManagement.userPFXCertificate
       summary: Get userPfxCertificates from deviceManagement
+      description: Collection of PFX certificates associated with a user.
       operationId: deviceManagement_ListUserPfxCertificates
       parameters:
         - $ref: '#/components/parameters/top'
@@ -12745,6 +12868,7 @@ paths:
       tags:
         - deviceManagement.userPFXCertificate
       summary: Get userPfxCertificates from deviceManagement
+      description: Collection of PFX certificates associated with a user.
       operationId: deviceManagement_GetUserPfxCertificates
       parameters:
         - name: userPFXCertificate-id
@@ -12982,6 +13106,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Get auditEvents from deviceManagement
+      description: Cloud PC audit event.
       operationId: deviceManagement.virtualEndpoint_ListAuditEvents
       parameters:
         - $ref: '#/components/parameters/top'
@@ -13095,6 +13220,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Get auditEvents from deviceManagement
+      description: Cloud PC audit event.
       operationId: deviceManagement.virtualEndpoint_GetAuditEvents
       parameters:
         - name: cloudPcAuditEvent-id
@@ -13204,6 +13330,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Get cloudPCs from deviceManagement
+      description: Cloud managed virtual desktops.
       operationId: deviceManagement.virtualEndpoint_ListCloudPCs
       parameters:
         - $ref: '#/components/parameters/top'
@@ -13347,6 +13474,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Get cloudPCs from deviceManagement
+      description: Cloud managed virtual desktops.
       operationId: deviceManagement.virtualEndpoint_GetCloudPCs
       parameters:
         - name: cloudPC-id
@@ -13423,6 +13551,8 @@ paths:
               operationId: deviceManagement.virtualEndpoint.cloudPCs.cloudPC.rename
             reprovision:
               operationId: deviceManagement.virtualEndpoint.cloudPCs.cloudPC.reprovision
+            restore:
+              operationId: deviceManagement.virtualEndpoint.cloudPCs.cloudPC.restore
             troubleshoot:
               operationId: deviceManagement.virtualEndpoint.cloudPCs.cloudPC.troubleshoot
         default:
@@ -13483,6 +13613,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Get deviceImages from deviceManagement
+      description: The image resource on Cloud PC.
       operationId: deviceManagement.virtualEndpoint_ListDeviceImages
       parameters:
         - $ref: '#/components/parameters/top'
@@ -13593,6 +13724,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Get deviceImages from deviceManagement
+      description: The image resource on Cloud PC.
       operationId: deviceManagement.virtualEndpoint_GetDeviceImages
       parameters:
         - name: cloudPcDeviceImage-id
@@ -13704,6 +13836,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Get externalPartnerSettings from deviceManagement
+      description: The external partner settings on a Cloud PC.
       operationId: deviceManagement.virtualEndpoint_ListExternalPartnerSettings
       parameters:
         - $ref: '#/components/parameters/top'
@@ -13799,6 +13932,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Get externalPartnerSettings from deviceManagement
+      description: The external partner settings on a Cloud PC.
       operationId: deviceManagement.virtualEndpoint_GetExternalPartnerSettings
       parameters:
         - name: cloudPcExternalPartnerSetting-id
@@ -13902,6 +14036,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Get galleryImages from deviceManagement
+      description: The gallery image resource on Cloud PC.
       operationId: deviceManagement.virtualEndpoint_ListGalleryImages
       parameters:
         - $ref: '#/components/parameters/top'
@@ -14018,6 +14153,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Get galleryImages from deviceManagement
+      description: The gallery image resource on Cloud PC.
       operationId: deviceManagement.virtualEndpoint_GetGalleryImages
       parameters:
         - name: cloudPcGalleryImage-id
@@ -14128,6 +14264,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Get onPremisesConnections from deviceManagement
+      description: A defined collection of Azure resource information that can be used to establish on-premises network connectivity for Cloud PCs.
       operationId: deviceManagement.virtualEndpoint_ListOnPremisesConnections
       parameters:
         - $ref: '#/components/parameters/top'
@@ -14256,6 +14393,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Get onPremisesConnections from deviceManagement
+      description: A defined collection of Azure resource information that can be used to establish on-premises network connectivity for Cloud PCs.
       operationId: deviceManagement.virtualEndpoint_GetOnPremisesConnections
       parameters:
         - name: cloudPcOnPremisesConnection-id
@@ -14375,6 +14513,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Get organizationSettings from deviceManagement
+      description: The Cloud PC organization settings for a tenant.
       operationId: deviceManagement.virtualEndpoint_GetOrganizationSettings
       parameters:
         - name: $select
@@ -14388,6 +14527,7 @@ paths:
             items:
               enum:
                 - id
+                - enableMEMAutoEnroll
                 - osVersion
                 - userAccountType
                 - windowsSettings
@@ -14454,6 +14594,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Get provisioningPolicies from deviceManagement
+      description: Cloud PC provisioning policy.
       operationId: deviceManagement.virtualEndpoint_ListProvisioningPolicies
       parameters:
         - $ref: '#/components/parameters/top'
@@ -14578,6 +14719,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Get provisioningPolicies from deviceManagement
+      description: Cloud PC provisioning policy.
       operationId: deviceManagement.virtualEndpoint_GetProvisioningPolicies
       parameters:
         - name: cloudPcProvisioningPolicy-id
@@ -14699,6 +14841,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Get assignments from deviceManagement
+      description: A defined collection of provisioning policy assignments. Represents the set of Microsoft 365 groups and security groups in Azure AD that have provisioning policy assigned. Returned only on $expand. See an example of getting the assignments relationship.
       operationId: deviceManagement.virtualEndpoint.provisioningPolicies_ListAssignments
       parameters:
         - name: cloudPcProvisioningPolicy-id
@@ -14797,6 +14940,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Get assignments from deviceManagement
+      description: A defined collection of provisioning policy assignments. Represents the set of Microsoft 365 groups and security groups in Azure AD that have provisioning policy assigned. Returned only on $expand. See an example of getting the assignments relationship.
       operationId: deviceManagement.virtualEndpoint.provisioningPolicies_GetAssignments
       parameters:
         - name: cloudPcProvisioningPolicy-id
@@ -14917,6 +15061,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Get servicePlans from deviceManagement
+      description: Cloud PC service plans.
       operationId: deviceManagement.virtualEndpoint_ListServicePlans
       parameters:
         - $ref: '#/components/parameters/top'
@@ -15015,6 +15160,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Get servicePlans from deviceManagement
+      description: Cloud PC service plans.
       operationId: deviceManagement.virtualEndpoint_GetServicePlans
       parameters:
         - name: cloudPcServicePlan-id
@@ -15119,6 +15265,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Get snapshots from deviceManagement
+      description: Cloud PC snapshots.
       operationId: deviceManagement.virtualEndpoint_ListSnapshots
       parameters:
         - $ref: '#/components/parameters/top'
@@ -15211,6 +15358,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Get snapshots from deviceManagement
+      description: Cloud PC snapshots.
       operationId: deviceManagement.virtualEndpoint_GetSnapshots
       parameters:
         - name: cloudPcSnapshot-id
@@ -15313,6 +15461,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Get supportedRegions from deviceManagement
+      description: Cloud PC supported regions.
       operationId: deviceManagement.virtualEndpoint_ListSupportedRegions
       parameters:
         - $ref: '#/components/parameters/top'
@@ -15336,6 +15485,8 @@ paths:
                 - displayName desc
                 - regionStatus
                 - regionStatus desc
+                - supportedSolution
+                - supportedSolution desc
               type: string
         - name: $select
           in: query
@@ -15350,6 +15501,7 @@ paths:
                 - id
                 - displayName
                 - regionStatus
+                - supportedSolution
               type: string
         - name: $expand
           in: query
@@ -15399,6 +15551,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Get supportedRegions from deviceManagement
+      description: Cloud PC supported regions.
       operationId: deviceManagement.virtualEndpoint_GetSupportedRegions
       parameters:
         - name: cloudPcSupportedRegion-id
@@ -15421,6 +15574,7 @@ paths:
                 - id
                 - displayName
                 - regionStatus
+                - supportedSolution
               type: string
         - name: $expand
           in: query
@@ -15499,6 +15653,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Get userSettings from deviceManagement
+      description: Cloud PC user settings.
       operationId: deviceManagement.virtualEndpoint_ListUserSettings
       parameters:
         - $ref: '#/components/parameters/top'
@@ -15599,6 +15754,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Get userSettings from deviceManagement
+      description: Cloud PC user settings.
       operationId: deviceManagement.virtualEndpoint_GetUserSettings
       parameters:
         - name: cloudPcUserSetting-id
@@ -15712,6 +15868,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Get assignments from deviceManagement
+      description: 'Represents the set of Microsoft 365 groups and security groups in Azure AD that have cloudPCUserSetting assigned. Returned only on $expand. For an example, see Get cloudPcUserSettingample.'
       operationId: deviceManagement.virtualEndpoint.userSettings_ListAssignments
       parameters:
         - name: cloudPcUserSetting-id
@@ -15813,6 +15970,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Get assignments from deviceManagement
+      description: 'Represents the set of Microsoft 365 groups and security groups in Azure AD that have cloudPCUserSetting assigned. Returned only on $expand. For an example, see Get cloudPcUserSettingample.'
       operationId: deviceManagement.virtualEndpoint.userSettings_GetAssignments
       parameters:
         - name: cloudPcUserSetting-id
@@ -17179,6 +17337,9 @@ components:
             windowsEnabled:
               type: boolean
               description: 'For Windows, get or set whether data from the data sync partner should be used during compliance evaluations'
+            windowsMobileApplicationManagementEnabled:
+              type: boolean
+              description: 'When TRUE, app protection policies using the Device Threat Level rule will evaluate devices including data from this connector for Windows. When FALSE, Intune will not use device risk details sent over this connector during app protection policies calculation for policies with a Device Threat Level configured. Existing devices that are not compliant due to risk levels obtained from this connector will also become compliant.'
           additionalProperties:
             type: object
           description: Entity which represents a connection to Mobile threat defense partner.
@@ -18009,6 +18170,10 @@ components:
         - title: cloudPcOrganizationSettings
           type: object
           properties:
+            enableMEMAutoEnroll:
+              type: boolean
+              description: Specifies whether new Cloud PCs will be automatically enrolled in Microsoft Endpoint Manager(MEM). The default value is false.
+              nullable: true
             osVersion:
               $ref: '#/components/schemas/microsoft.graph.cloudPcOperatingSystem'
             userAccountType:
@@ -18162,6 +18327,8 @@ components:
               description: The name for the supported region. Read-only.
             regionStatus:
               $ref: '#/components/schemas/microsoft.graph.cloudPcSupportedRegionStatus'
+            supportedSolution:
+              $ref: '#/components/schemas/microsoft.graph.cloudPcManagementService'
           additionalProperties:
             type: object
     microsoft.graph.cloudPcUserSetting:
@@ -18239,6 +18406,10 @@ components:
           type: string
           description: AAD Application Id.
           nullable: true
+        auditActorType:
+          type: string
+          description: Actor Type.
+          nullable: true
         ipAddress:
           type: string
           description: IPAddress.
@@ -18285,6 +18456,10 @@ components:
       title: auditResource
       type: object
       properties:
+        auditResourceType:
+          type: string
+          description: Audit resource's type.
+          nullable: true
         displayName:
           type: string
           description: Display name.
@@ -18611,7 +18786,15 @@ components:
         - eligibleButNotAzureAdJoined
         - needsOsUpdate
         - ineligible
+        - scheduledForEnrollment
       type: string
+      x-ms-enum:
+        name: comanagementEligibleType
+        modelAsString: false
+        values:
+          - value: scheduledForEnrollment
+            description: Devices scheduled for Co-Management enrollment
+            name: scheduledForEnrollment
     microsoft.graph.complianceManagementPartnerAssignment:
       title: complianceManagementPartnerAssignment
       type: object
@@ -19684,81 +19867,15 @@ components:
       additionalProperties:
         type: object
     microsoft.graph.cloudPcConnectivityResult:
-      title: cloudPcConnectivityResult
-      type: object
-      properties:
-        failedHealthCheckItems:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.cloudPcHealthCheckItem'
-        status:
-          $ref: '#/components/schemas/microsoft.graph.cloudPcConnectivityStatus'
-        updatedDateTime:
-          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-          type: string
-          format: date-time
-      additionalProperties:
-        type: object
+      description: 'The connectivity health check result of a Cloud PC, including the updated timestamp and whether the Cloud PC is able to be connected or not.'
     microsoft.graph.cloudPcLoginResult:
-      title: cloudPcLoginResult
-      type: object
-      properties:
-        time:
-          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-          type: string
-          description: 'The time of the Cloud PC sign in action. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 appears as ''2014-01-01T00:00:00Z''. Read-only.'
-          format: date-time
-          nullable: true
-      additionalProperties:
-        type: object
+      description: 'The last login result of the Cloud PC. For example, { ''time'': ''2014-01-01T00:00:00Z''}.'
     microsoft.graph.cloudPcRemoteActionResult:
-      title: cloudPcRemoteActionResult
-      type: object
-      properties:
-        actionName:
-          type: string
-          description: 'The specified action. Supported values in the Microsoft Endpoint Manager portal are: Reprovision, Resize, Restore. Supported values in enterprise Cloud PC devices are: Reboot, Rename, Reprovision, Troubleshoot.'
-          nullable: true
-        actionState:
-          $ref: '#/components/schemas/microsoft.graph.actionState'
-        cloudPcId:
-          type: string
-          description: The ID of the Cloud PC device on which the remote action is performed. Read-only.
-          nullable: true
-        lastUpdatedDateTime:
-          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-          type: string
-          description: 'Last update time for action. The Timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 appears as ''2014-01-01T00:00:00Z''.'
-          format: date-time
-          nullable: true
-        managedDeviceId:
-          type: string
-          description: The ID of the Intune managed device on which the remote action is performed. Read-only.
-          nullable: true
-        startDateTime:
-          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-          type: string
-          description: 'Time the action was initiated. The Timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 appears as ''2014-01-01T00:00:00Z''.'
-          format: date-time
-          nullable: true
-        statusDetails:
-          $ref: '#/components/schemas/microsoft.graph.cloudPcStatusDetails'
-      additionalProperties:
-        type: object
+      description: 'The last remote action result of the enterprise Cloud PCs. The supported remote actions are: Reboot, Rename, Reprovision, Restore, and Troubleshoot.'
     microsoft.graph.cloudPcOperatingSystem:
-      title: cloudPcOperatingSystem
-      enum:
-        - windows10
-        - windows11
-        - unknownFutureValue
-      type: string
+      description: 'The version of the operating system (OS) to provision on Cloud PCs. Possible values are: windows10, windows11, and unknownFutureValue.'
     microsoft.graph.cloudPcServicePlanType:
-      title: cloudPcServicePlanType
-      enum:
-        - enterprise
-        - business
-        - unknownFutureValue
-      type: string
+      description: The service plan type of the Cloud PC.
     microsoft.graph.cloudPcStatus:
       title: cloudPcStatus
       enum:
@@ -19775,31 +19892,9 @@ components:
         - unknownFutureValue
       type: string
     microsoft.graph.cloudPcStatusDetails:
-      title: cloudPcStatusDetails
-      type: object
-      properties:
-        additionalInformation:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.keyValuePair'
-          description: Any additional information about the Cloud PC status.
-        code:
-          type: string
-          description: The code associated with the Cloud PC status.
-          nullable: true
-        message:
-          type: string
-          description: The status message.
-          nullable: true
-      additionalProperties:
-        type: object
+      description: The details of the Cloud PC status.
     microsoft.graph.cloudPcUserAccountType:
-      title: cloudPcUserAccountType
-      enum:
-        - standardUser
-        - administrator
-        - unknownFutureValue
-      type: string
+      description: 'The account type of the user on provisioned Cloud PCs. Possible values are: standardUser, administrator, and unknownFutureValue.'
     microsoft.graph.cloudPcDeviceImageOsStatus:
       title: cloudPcDeviceImageOsStatus
       enum:
@@ -20729,25 +20824,7 @@ components:
           - value: exclude
             description: 'Indicates out-filter, rule matching will not offer the payload to devices.'
             name: exclude
-    microsoft.graph.resourceAction:
-      title: resourceAction
-      type: object
-      properties:
-        allowedResourceActions:
-          type: array
-          items:
-            type: string
-            nullable: true
-          description: Allowed Actions
-        notAllowedResourceActions:
-          type: array
-          items:
-            type: string
-            nullable: true
-          description: Not Allowed Actions.
-      additionalProperties:
-        type: object
-      description: Set of allowed and not allowed actions for a resource.
+    microsoft.graph.resourceAction: { }
     microsoft.graph.cloudPcAuditActorType:
       title: cloudPcAuditActorType
       enum:
@@ -20781,57 +20858,6 @@ components:
         oldValue:
           type: string
           description: Old value.
-          nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.cloudPcHealthCheckItem:
-      title: cloudPcHealthCheckItem
-      type: object
-      properties:
-        additionalDetails:
-          type: string
-          nullable: true
-        displayName:
-          type: string
-        lastHealthCheckDateTime:
-          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-          type: string
-          format: date-time
-          nullable: true
-        result:
-          $ref: '#/components/schemas/microsoft.graph.cloudPcConnectivityEventResult'
-      additionalProperties:
-        type: object
-    microsoft.graph.cloudPcConnectivityStatus:
-      title: cloudPcConnectivityStatus
-      enum:
-        - unknown
-        - available
-        - availableWithWarning
-        - unavailable
-        - unknownFutureValue
-      type: string
-    microsoft.graph.actionState:
-      title: actionState
-      enum:
-        - none
-        - pending
-        - canceled
-        - active
-        - done
-        - failed
-        - notSupported
-      type: string
-    microsoft.graph.keyValuePair:
-      title: keyValuePair
-      type: object
-      properties:
-        name:
-          type: string
-          description: Name for this key-value pair
-        value:
-          type: string
-          description: Value for this key-value pair
           nullable: true
       additionalProperties:
         type: object
@@ -20904,14 +20930,6 @@ components:
           $ref: '#/components/schemas/microsoft.graph.ODataErrors.InnerError'
       additionalProperties:
         type: object
-    microsoft.graph.cloudPcConnectivityEventResult:
-      title: cloudPcConnectivityEventResult
-      enum:
-        - unknown
-        - success
-        - failure
-        - unknownFutureValue
-      type: string
     microsoft.graph.cloudPcOnPremisesConnectionHealthCheckErrorType:
       title: cloudPcOnPremisesConnectionHealthCheckErrorType
       enum:
@@ -20931,6 +20949,8 @@ components:
         - endpointConnectivityCheckCloudPcUrlNotAllowListed
         - endpointConnectivityCheckWVDUrlNotAllowListed
         - endpointConnectivityCheckIntuneUrlNotAllowListed
+        - endpointConnectivityCheckAzureADUrlNotAllowListed
+        - endpointConnectivityCheckLocaleUrlNotAllowListed
         - endpointConnectivityCheckUnknownError
         - azureAdDeviceSyncCheckDeviceNotFound
         - azureAdDeviceSyncCheckLongSyncCircle

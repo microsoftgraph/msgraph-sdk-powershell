@@ -113,6 +113,10 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/DeviceManagement.Actions.yml"
     },
+    "/deviceManagement/comanagedDevices/{managedDevice-id}/microsoft.graph.createRemoteHelpSession": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Actions.yml"
+    },
     "/deviceManagement/comanagedDevices/{managedDevice-id}/microsoft.graph.deleteUserFromSharedAppleDevice": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/DeviceManagement.Actions.yml"
@@ -174,6 +178,10 @@
       "originalLocation": "/openApiDocs/beta/DeviceManagement.Actions.yml"
     },
     "/deviceManagement/comanagedDevices/{managedDevice-id}/microsoft.graph.requestRemoteAssistance": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Actions.yml"
+    },
+    "/deviceManagement/comanagedDevices/{managedDevice-id}/microsoft.graph.requestRemoteHelpSessionAccess": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/DeviceManagement.Actions.yml"
     },
@@ -509,6 +517,10 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/DeviceManagement.Actions.yml"
     },
+    "/deviceManagement/managedDevices/{managedDevice-id}/microsoft.graph.createRemoteHelpSession": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Actions.yml"
+    },
     "/deviceManagement/managedDevices/{managedDevice-id}/microsoft.graph.deleteUserFromSharedAppleDevice": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/DeviceManagement.Actions.yml"
@@ -570,6 +582,10 @@
       "originalLocation": "/openApiDocs/beta/DeviceManagement.Actions.yml"
     },
     "/deviceManagement/managedDevices/{managedDevice-id}/microsoft.graph.requestRemoteAssistance": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Actions.yml"
+    },
+    "/deviceManagement/managedDevices/{managedDevice-id}/microsoft.graph.requestRemoteHelpSessionAccess": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/DeviceManagement.Actions.yml"
     },
@@ -1030,6 +1046,10 @@
       "originalLocation": "/openApiDocs/beta/DeviceManagement.Actions.yml"
     },
     "/deviceManagement/virtualEndpoint/cloudPCs/{cloudPC-id}/microsoft.graph.reprovision": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Actions.yml"
+    },
+    "/deviceManagement/virtualEndpoint/cloudPCs/{cloudPC-id}/microsoft.graph.restore": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/DeviceManagement.Actions.yml"
     },

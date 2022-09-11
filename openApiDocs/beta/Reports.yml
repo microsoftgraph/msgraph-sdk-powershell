@@ -23,7 +23,6 @@ paths:
             type: array
             items:
               enum:
-                - id
                 - directoryAudits
                 - directoryProvisioning
                 - provisioning
@@ -1711,6 +1710,7 @@ paths:
       tags:
         - deviceManagement.deviceManagementReports
       summary: Get reports from deviceManagement
+      description: Reports singleton
       operationId: deviceManagement_GetReports
       parameters:
         - name: $select
@@ -1908,6 +1908,7 @@ paths:
       tags:
         - deviceManagement.deviceManagementReports
       summary: Get cachedReportConfigurations from deviceManagement
+      description: Entity representing the configuration of a cached report
       operationId: deviceManagement.reports_ListCachedReportConfigurations
       parameters:
         - $ref: '#/components/parameters/top'
@@ -2012,6 +2013,7 @@ paths:
       tags:
         - deviceManagement.deviceManagementReports
       summary: Get cachedReportConfigurations from deviceManagement
+      description: Entity representing the configuration of a cached report
       operationId: deviceManagement.reports_GetCachedReportConfigurations
       parameters:
         - name: deviceManagementCachedReportConfiguration-id
@@ -2118,6 +2120,7 @@ paths:
       tags:
         - deviceManagement.deviceManagementReports
       summary: Get exportJobs from deviceManagement
+      description: Entity representing a job to export a report
       operationId: deviceManagement.reports_ListExportJobs
       parameters:
         - $ref: '#/components/parameters/top'
@@ -2228,6 +2231,7 @@ paths:
       tags:
         - deviceManagement.deviceManagementReports
       summary: Get exportJobs from deviceManagement
+      description: Entity representing a job to export a report
       operationId: deviceManagement.reports_GetExportJobs
       parameters:
         - name: deviceManagementExportJob-id
@@ -2656,6 +2660,7 @@ paths:
       tags:
         - reports.applicationSignInDetailedSummary
       summary: Get applicationSignInDetailedSummary from reports
+      description: Represents a detailed summary of an application sign-in.
       operationId: reports_ListApplicationSignInDetailedSummary
       parameters:
         - $ref: '#/components/parameters/top'
@@ -2751,6 +2756,7 @@ paths:
       tags:
         - reports.applicationSignInDetailedSummary
       summary: Get applicationSignInDetailedSummary from reports
+      description: Represents a detailed summary of an application sign-in.
       operationId: reports_GetApplicationSignInDetailedSummary
       parameters:
         - name: applicationSignInDetailedSummary-id
@@ -2854,6 +2860,7 @@ paths:
       tags:
         - reports.authenticationMethodsRoot
       summary: Get authenticationMethods from reports
+      description: Container for navigation properties for Azure AD authentication methods resources.
       operationId: reports_GetAuthenticationMethods
       parameters:
         - name: $select
@@ -3029,6 +3036,7 @@ paths:
       tags:
         - reports.authenticationMethodsRoot
       summary: Get userRegistrationDetails from reports
+      description: 'Represents the state of a user''s authentication methods, including which methods are registered and which features the user is registered and capable of (such as multi-factor authentication, self-service password reset, and passwordless authentication).'
       operationId: reports.authenticationMethods_ListUserRegistrationDetails
       parameters:
         - $ref: '#/components/parameters/top'
@@ -3145,6 +3153,7 @@ paths:
       tags:
         - reports.authenticationMethodsRoot
       summary: Get userRegistrationDetails from reports
+      description: 'Represents the state of a user''s authentication methods, including which methods are registered and which features the user is registered and capable of (such as multi-factor authentication, self-service password reset, and passwordless authentication).'
       operationId: reports.authenticationMethods_GetUserRegistrationDetails
       parameters:
         - name: userRegistrationDetails-id
@@ -3255,6 +3264,7 @@ paths:
       tags:
         - reports.credentialUserRegistrationDetails
       summary: Get credentialUserRegistrationDetails from reports
+      description: Details of the usage of self-service password reset and multi-factor authentication (MFA) for all registered users.
       operationId: reports_ListCredentialUserRegistrationDetails
       parameters:
         - $ref: '#/components/parameters/top'
@@ -3356,6 +3366,7 @@ paths:
       tags:
         - reports.credentialUserRegistrationDetails
       summary: Get credentialUserRegistrationDetails from reports
+      description: Details of the usage of self-service password reset and multi-factor authentication (MFA) for all registered users.
       operationId: reports_GetCredentialUserRegistrationDetails
       parameters:
         - name: credentialUserRegistrationDetails-id
@@ -4253,6 +4264,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function deviceConfigurationDeviceActivity
+      description: Metadata for the device configuration device activity report
       operationId: reports_deviceConfigurationDeviceActivity
       responses:
         '200':
@@ -4269,6 +4281,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function deviceConfigurationUserActivity
+      description: Metadata for the device configuration user activity report
       operationId: reports_deviceConfigurationUserActivity
       responses:
         '200':
@@ -7690,6 +7703,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function managedDeviceEnrollmentAbandonmentDetails
+      description: Metadata for Enrollment abandonment details report
       operationId: reports_managedDeviceEnrollmentAbandonmentDetails
       parameters:
         - name: skip
@@ -7741,6 +7755,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function managedDeviceEnrollmentAbandonmentSummary
+      description: Metadata for Enrollment abandonment summary report
       operationId: reports_managedDeviceEnrollmentAbandonmentSummary
       parameters:
         - name: skip
@@ -7859,6 +7874,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function managedDeviceEnrollmentFailureTrends
+      description: Metadata for the enrollment failure trends report
       operationId: reports_managedDeviceEnrollmentFailureTrends
       responses:
         '200':
@@ -8707,6 +8723,7 @@ paths:
       tags:
         - reports.securityReportsRoot
       summary: Get security from reports
+      description: Provides the ability to launch a realistic simulated phishing attack that organizations can learn from.
       operationId: reports_GetSecurity
       parameters:
         - name: $select
@@ -8862,6 +8879,7 @@ paths:
       tags:
         - reports.userCredentialUsageDetails
       summary: Get userCredentialUsageDetails from reports
+      description: Represents the self-service password reset (SSPR) usage for a given tenant.
       operationId: reports_ListUserCredentialUsageDetails
       parameters:
         - $ref: '#/components/parameters/top'
@@ -8963,6 +8981,7 @@ paths:
       tags:
         - reports.userCredentialUsageDetails
       summary: Get userCredentialUsageDetails from reports
+      description: Represents the self-service password reset (SSPR) usage for a given tenant.
       operationId: reports_GetUserCredentialUsageDetails
       parameters:
         - name: userCredentialUsageDetails-id
@@ -9066,33 +9085,31 @@ paths:
 components:
   schemas:
     microsoft.graph.auditLogRoot:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: auditLogRoot
-          type: object
-          properties:
-            directoryAudits:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.directoryAudit'
-            directoryProvisioning:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.provisioningObjectSummary'
-            provisioning:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.provisioningObjectSummary'
-            restrictedSignIns:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.restrictedSignIn'
-            signIns:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.signIn'
-          additionalProperties:
-            type: object
+      title: auditLogRoot
+      type: object
+      properties:
+        directoryAudits:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.directoryAudit'
+        directoryProvisioning:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.provisioningObjectSummary'
+        provisioning:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.provisioningObjectSummary'
+        restrictedSignIns:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.restrictedSignIn'
+        signIns:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.signIn'
+      additionalProperties:
+        type: object
     microsoft.graph.directoryAudit:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -10722,11 +10739,11 @@ components:
       properties:
         key:
           type: string
-          description: 'Contains the name of the field that a value is associated with. When a sign in or domain hint is included in the sign-in request, corresponding fields are included as key-value pairs. Possible keys: Login hint present, Domain hint present.'
+          description: Key.
           nullable: true
         value:
           type: string
-          description: Contains the corresponding value for the specified key. The value is true if a sign in hint was included in the sign-in request; otherwise false. The value is true if a domain hint was included in the sign-in request; otherwise false.
+          description: Value.
           nullable: true
       additionalProperties:
         type: object
@@ -11165,6 +11182,7 @@ components:
         - unknownFutureValue
         - adminConfirmedServicePrincipalCompromised
         - adminDismissedAllRiskForServicePrincipal
+        - m365DAdminDismissedDetection
       type: string
     microsoft.graph.riskLevel:
       title: riskLevel
@@ -11280,7 +11298,9 @@ components:
       title: deviceManagementReportFileFormat
       enum:
         - csv
+        - pdf
         - json
+        - unknownFutureValue
       type: string
       description: Possible values for the file format of a report
       x-ms-enum:
@@ -11290,9 +11310,15 @@ components:
           - value: csv
             description: CSV Format
             name: csv
+          - value: pdf
+            description: PDF Format (Deprecate later)
+            name: pdf
           - value: json
             description: JSON Format
             name: json
+          - value: unknownFutureValue
+            description: Evolvable enumeration sentinel value. Do not use.
+            name: unknownFutureValue
     microsoft.graph.deviceManagementExportJobLocalizationType:
       title: deviceManagementExportJobLocalizationType
       enum:
@@ -11769,11 +11795,11 @@ components:
       properties:
         displayName:
           type: string
-          description: 'The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
+          description: The display name of the identity. This property is read-only.
           nullable: true
         id:
           type: string
-          description: Unique identifier for the identity.
+          description: The identifier of the identity. This property is read-only.
           nullable: true
       additionalProperties:
         type: object
