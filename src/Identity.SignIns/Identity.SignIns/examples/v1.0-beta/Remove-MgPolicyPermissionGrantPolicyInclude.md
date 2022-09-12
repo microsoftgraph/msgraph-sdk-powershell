@@ -1,18 +1,8 @@
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
+### Example 1: {Remove a permission grant policy include
 
-{{ Add output here }}
+```powershell
+Connect-MgGraph -Scopes "Policy.Read.PermissionGrant,Policy.ReadWrite.PermissionGrant"  
+Remove-MgPolicyPermissionGrantPolicyInclude -PermissionGrantConditionSetId "a42959bb-c338-469c-b224-6998216ec573" -PermissionGrantPolicyId "testtenant-sampleapp-permissions"  
 ```
 
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
+This command deletes the specified include configuration from the specific permission grant policy in Azure AD. 

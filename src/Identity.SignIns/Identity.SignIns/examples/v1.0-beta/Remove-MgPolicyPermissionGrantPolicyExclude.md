@@ -1,18 +1,8 @@
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
+### Example 1: Remove a permission grant policy exclude
 
-{{ Add output here }}
+```powershell
+Connect-MgGraph -Scopes "Policy.Read.PermissionGrant,Policy.ReadWrite.PermissionGrant"  
+Remove-MgPolicyPermissionGrantPolicyExclude -PermissionGrantConditionSetId "66a94faf-9134-4f46-83d2-1aae2eaea98f" -PermissionGrantPolicyId "testtenant-sampleapp-permissions"  
 ```
 
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
+This command deletes the specified exclude configuration from the specific permission grant policy in Azure AD.

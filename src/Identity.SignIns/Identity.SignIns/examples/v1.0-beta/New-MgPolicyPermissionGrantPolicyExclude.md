@@ -1,18 +1,19 @@
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
+### Example 1: Create a permission grant policy exclude
 
-{{ Add output here }}
+```powershell
+Connect-MgGraph -Scopes "Policy.Read.PermissionGrant,Policy.ReadWrite.PermissionGrant"  
+New-MgPolicyPermissionGrantPolicyExclude -PermissionGrantPolicyId "testtenant-sampleapp-permissions" -PermissionType "application" -ResourceApplication "00000000-0000-0000-0000-000000000000" -Permissions "00000000-0000-0000-0000-000000000000" | fl 
+
+ClientApplicationIds                        : {all}
+ClientApplicationPublisherIds               : {all}
+ClientApplicationTenantIds                  : {all}
+ClientApplicationsFromVerifiedPublisherOnly : False
+Id                                          : 66a94faf-9134-4f46-83d2-1aae2eaea98f
+PermissionClassification                    : all
+PermissionType                              : application
+Permissions                                 : {00000000-0000-0000-0000-000000000000}
+ResourceApplication                         : 00000000-0000-0000-0000-000000000000
+AdditionalProperties                        : {[@odata.context, https://graph.microsoft.com/v1.0/$metadata#policies/permissionGrantPolicies('testtenant-sampleapp-permissions')/excludes/$entity]}
 ```
 
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
+This command creates a new permission grant policy exclude configuration for the specified permission grant policy in Azure AD.
