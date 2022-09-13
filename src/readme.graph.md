@@ -579,6 +579,17 @@ directive:
         let catchAllExceptionImplementation = '((Runtime.IEventListener)this).Signal(Runtime.Events.CmdletException, $"{ex.GetType().Name} - {ex.Message} : {ex.StackTrace}").Wait(); if (((Runtime.IEventListener)this).Token.IsCancellationRequested) { return; } WriteError(new global::System.Management.Automation.ErrorRecord(ex, string.Empty, global::System.Management.Automation.ErrorCategory.NotSpecified, null));'
         $ = $.replace(processAsyncFinallyRegex, `catch (System.Exception ex){${catchAllExceptionImplementation}}\n$1`);
 
+        // Add API path to should process message.
+        let operationRegex = /\[OpenAPI\].s*(.*)=>(.*):\"(.*)\"/gmi
+        let shouldProcessRegex = /SupportsShouldProcess\s*=\s*true/gmi
+        let shouldProcessMessageRegex = /\$("Call\s*remote\s*').*('\s*operation")/gmi
+        if ($.match(shouldProcessRegex)) {
+          var operationMatch = operationRegex.exec($);
+          if (operationMatch) {
+            $ = $.replace(shouldProcessMessageRegex, `$1${operationMatch[2]} ${operationMatch[3]}$2`);
+          }
+        }
+
         return $;
       }
 
