@@ -1,18 +1,32 @@
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+###Example 1
 ```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+Import-Module Microsoft.Graph.Security
+$params = @{
+	AssignedTo = ""
+	Comment = "control is reviewed"
+	State = "Reviewed"
+	VendorInformation = @{
+		Provider = "SecureScore"
+		ProviderVersion = $null
+		SubProvider = $null
+		Vendor = "Microsoft"
+	}
+}
+Update-MgSecuritySecureScoreControlProfile -SecureScoreControlProfileId $secureScoreControlProfileId -BodyParameter $params
 ```
-
-{{ Add description here }}
-
+###Example 2
+```
+Import-Module Microsoft.Graph.Security
+$params = @{
+	AssignedTo = ""
+	Comment = "control is reviewed"
+	State = "Reviewed"
+	VendorInformation = @{
+		Provider = "SecureScore"
+		ProviderVersion = $null
+		SubProvider = $null
+		Vendor = "Microsoft"
+	}
+}
+Update-MgSecuritySecureScoreControlProfile -SecureScoreControlProfileId $secureScoreControlProfileId -BodyParameter $params
+```

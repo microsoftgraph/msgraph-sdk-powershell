@@ -1,18 +1,42 @@
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+###Example 1
 ```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+Import-Module Microsoft.Graph.Mail
+# A UPN can also be used as -UserId.
+Get-MgUserMessageAttachment -UserId $userId -MessageId $messageId
 ```
-
-{{ Add description here }}
-
+###Example 2
+```
+Import-Module Microsoft.Graph.Mail
+# A UPN can also be used as -UserId.
+Get-MgUserMessageAttachment -UserId $userId -MessageId $messageId -AttachmentId $attachmentId -ExpandProperty "microsoft.graph.itemattachment/item" 
+```
+###Example 3
+```
+Import-Module Microsoft.Graph.Mail
+# A UPN can also be used as -UserId.
+Get-MgUserMessageAttachment -UserId $userId -MessageId $messageId -AttachmentId $attachmentId -ExpandProperty "microsoft.graph.itemattachment/item" 
+```
+###Example 4
+```
+Import-Module Microsoft.Graph.Mail
+# A UPN can also be used as -UserId.
+Get-MgUserMessageAttachment -UserId $userId -MessageId $messageId -AttachmentId $attachmentId
+```
+###Example 5
+```
+Import-Module Microsoft.Graph.Mail
+# A UPN can also be used as -UserId.
+Get-MgUserMessageAttachment -UserId $userId -MessageId $messageId -AttachmentId $attachmentId
+```
+###Example 6
+```
+Import-Module Microsoft.Graph.Mail
+# A UPN can also be used as -UserId.
+Get-MgUserMessageAttachment -UserId $userId -MessageId $messageId -AttachmentId $attachmentId
+```
+###Example 7
+```
+Import-Module Microsoft.Graph.Mail
+# A UPN can also be used as -UserId.
+Get-MgUserMessageAttachment -UserId $userId -MessageId $messageId
+```

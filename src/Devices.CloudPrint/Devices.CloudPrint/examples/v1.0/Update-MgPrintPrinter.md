@@ -1,18 +1,13 @@
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+###Example 1
 ```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+Import-Module Microsoft.Graph.Devices.CloudPrint
+$params = @{
+	Name = "PrinterName"
+	Location = @{
+		Latitude = 1.1
+		Longitude = 2.2
+		AltitudeInMeters = 3
+	}
+}
+Update-MgPrintPrinter -PrinterId $printerId -BodyParameter $params
 ```
-
-{{ Add description here }}
-

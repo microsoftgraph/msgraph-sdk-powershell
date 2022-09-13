@@ -1,18 +1,8 @@
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+###Example 1
 ```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+Import-Module Microsoft.Graph.Planner
+$params = @{
+	OrderHint = "A6673H Ejkl!"
+}
+Update-MgPlannerTaskBucketTaskBoardFormat -PlannerTaskId $plannerTaskId -BodyParameter $params
 ```
-
-{{ Add description here }}
-

@@ -1,18 +1,15 @@
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+###Example 1
 ```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+Import-Module Microsoft.Graph.Teams
+Get-MgChatTab -ChatId $chatId -TeamsTabId $teamsTabId -ExpandProperty "teamsApp" 
 ```
-
-{{ Add description here }}
-
+###Example 2
+```
+Import-Module Microsoft.Graph.Teams
+Get-MgChatTab -ChatId $chatId -ExpandProperty "teamsApp" -Filter "teamsApp/id eq 'com.microsoft.teamspace.tab.web'" 
+```
+###Example 3
+```
+Import-Module Microsoft.Graph.Teams
+Get-MgChatTab -ChatId $chatId -ExpandProperty "teamsApp" 
+```

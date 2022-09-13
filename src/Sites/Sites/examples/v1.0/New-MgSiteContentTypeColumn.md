@@ -1,18 +1,8 @@
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+###Example 1
 ```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+Import-Module Microsoft.Graph.Sites
+$params = @{
+	"SourceColumn@odata.bind" = "https://graph.microsoft.com/v1.0/sites/root/columns/99ddcf45-e2f7-4f17-82b0-6fba34445103"
+}
+New-MgSiteContentTypeColumn -SiteId $siteId -ContentTypeId $contentTypeId -BodyParameter $params
 ```
-
-{{ Add description here }}
-

@@ -1,18 +1,12 @@
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+###Example 1
 ```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+Import-Module Microsoft.Graph.Identity.SignIns
+$params = @{
+	DisplayName = "PassthroughAuthentication rollout policy"
+	Description = "PassthroughAuthentication rollout policy"
+	Feature = "passthroughAuthentication"
+	IsEnabled = $true
+	IsAppliedToOrganization = $false
+}
+New-MgPolicyFeatureRolloutPolicy -BodyParameter $params
 ```
-
-{{ Add description here }}
-

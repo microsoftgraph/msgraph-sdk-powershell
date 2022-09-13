@@ -1,18 +1,11 @@
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+###Example 1
 ```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+Import-Module Microsoft.Graph.Identity.Governance
+$params = @{
+	DisplayName = "sales"
+	Description = "for employees working with sales and outside sales partners"
+	State = "published"
+	IsExternallyVisible = $true
+}
+New-MgEntitlementManagementCatalog -BodyParameter $params
 ```
-
-{{ Add description here }}
-

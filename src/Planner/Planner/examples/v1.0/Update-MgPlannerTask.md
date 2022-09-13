@@ -1,18 +1,17 @@
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+###Example 1
 ```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+Import-Module Microsoft.Graph.Planner
+$params = @{
+	Assignments = @{
+		"Fbab97d0-4932-4511-b675-204639209557" = @{
+			"@odata.type" = "#microsoft.graph.plannerAssignment"
+			OrderHint = "N9917 U2883!"
+		}
+	}
+	AppliedCategories = @{
+		Category3 = $true
+		Category4 = $false
+	}
+}
+Update-MgPlannerTask -PlannerTaskId $plannerTaskId -BodyParameter $params
 ```
-
-{{ Add description here }}
-

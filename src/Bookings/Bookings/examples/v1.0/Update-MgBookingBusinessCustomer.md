@@ -1,18 +1,10 @@
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+###Example 1
 ```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+Import-Module Microsoft.Graph.Bookings
+$params = @{
+	"@odata.type" = "#microsoft.graph.bookingCustomer"
+	DisplayName = "Adele"
+	EmailAddress = "adele@relecloud.com"
+}
+Update-MgBookingBusinessCustomer -BookingBusinessId $bookingBusinessId -BookingCustomerBaseId $bookingCustomerBaseId -BodyParameter $params
 ```
-
-{{ Add description here }}
-

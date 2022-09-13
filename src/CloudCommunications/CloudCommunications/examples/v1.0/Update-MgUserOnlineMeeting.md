@@ -1,18 +1,22 @@
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+###Example 1
 ```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+Import-Module Microsoft.Graph.CloudCommunications
+$params = @{
+	LobbyBypassSettings = @{
+		IsDialInBypassEnabled = $true
+	}
+}
+# A UPN can also be used as -UserId.
+Update-MgUserOnlineMeeting -UserId $userId -OnlineMeetingId $onlineMeetingId -BodyParameter $params
 ```
-
-{{ Add description here }}
-
+###Example 2
+```
+Import-Module Microsoft.Graph.CloudCommunications
+$params = @{
+	StartDateTime = [System.DateTime]::Parse("2020-09-09T14:33:30.8546353-07:00")
+	EndDateTime = [System.DateTime]::Parse("2020-09-09T15:03:30.8566356-07:00")
+	Subject = "Patch Meeting Subject"
+}
+# A UPN can also be used as -UserId.
+Update-MgUserOnlineMeeting -UserId $userId -OnlineMeetingId $onlineMeetingId -BodyParameter $params
+```

@@ -1,18 +1,5 @@
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+###Example 1
 ```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+Import-Module Microsoft.Graph.Bookings
+Get-MgBookingBusinessCalendarView -BookingBusinessId $bookingBusinessId -Start "2018-04-30T00:00:00Z" -End "2018-05-10T00:00:00Z" 
 ```
-
-{{ Add description here }}
-

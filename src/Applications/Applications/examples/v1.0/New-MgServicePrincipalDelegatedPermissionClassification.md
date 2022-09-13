@@ -1,18 +1,10 @@
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+###Example 1
 ```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+Import-Module Microsoft.Graph.Applications
+$params = @{
+	PermissionId = "e1fe6dd8-ba31-4d61-89e7-88639da4683d"
+	PermissionName = "User.Read"
+	Classification = "low"
+}
+New-MgServicePrincipalDelegatedPermissionClassification -ServicePrincipalId $servicePrincipalId -BodyParameter $params
 ```
-
-{{ Add description here }}
-

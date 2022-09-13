@@ -1,18 +1,17 @@
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+###Example 1
 ```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+Import-Module Microsoft.Graph.Users.Actions
+$params = @{
+	Comment = "comment-value"
+	ToRecipients = @(
+		@{
+			EmailAddress = @{
+				Name = "name-value"
+				Address = "address-value"
+			}
+		}
+	)
+}
+# A UPN can also be used as -UserId.
+Invoke-MgForwardUserMessage -UserId $userId -MessageId $messageId -BodyParameter $params
 ```
-
-{{ Add description here }}
-

@@ -1,18 +1,10 @@
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+###Example 1
 ```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+Import-Module Microsoft.Graph.Groups
+$params = @{
+	GroupLifetimeInDays = 100
+	ManagedGroupTypes = "Selected"
+	AlternateNotificationEmails = "admin@contoso.com"
+}
+New-MgGroupLifecyclePolicy -BodyParameter $params
 ```
-
-{{ Add description here }}
-

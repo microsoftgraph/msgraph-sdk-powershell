@@ -1,18 +1,13 @@
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+###Example 1
 ```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+Import-Module Microsoft.Graph.Mail
+$params = @{
+	ClassifyAs = "focused"
+	SenderEmailAddress = @{
+		Name = "Samantha Booth"
+		Address = "samanthab@adatum.onmicrosoft.com"
+	}
+}
+# A UPN can also be used as -UserId.
+New-MgUserInferenceClassificationOverride -UserId $userId -BodyParameter $params
 ```
-
-{{ Add description here }}
-

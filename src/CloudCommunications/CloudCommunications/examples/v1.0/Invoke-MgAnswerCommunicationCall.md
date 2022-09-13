@@ -1,18 +1,47 @@
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+###Example 1
 ```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+Import-Module Microsoft.Graph.CloudCommunications
+$params = @{
+	CallbackUri = "https://bot.contoso.com/api/calls"
+	AcceptedModalities = @(
+		"audio"
+	)
+	MediaConfig = @{
+		"@odata.type" = "#microsoft.graph.appHostedMediaConfig"
+		Blob = "<Media Session Configuration Blob>"
+	}
+}
+Invoke-MgAnswerCommunicationCall -CallId $callId -BodyParameter $params
 ```
-
-{{ Add description here }}
-
+###Example 2
+```
+Import-Module Microsoft.Graph.CloudCommunications
+$params = @{
+	CallbackUri = "callbackUri-value"
+	MediaConfig = @{
+		"@odata.type" = "#microsoft.graph.appHostedMediaConfig"
+		Blob = "<Media Session Configuration Blob>"
+	}
+	AcceptedModalities = @(
+		"audio"
+	)
+	ParticipantCapacity = 200
+}
+Invoke-MgAnswerCommunicationCall -CallId $callId -BodyParameter $params
+```
+###Example 3
+```
+Import-Module Microsoft.Graph.CloudCommunications
+$params = @{
+	CallbackUri = "https://bot.contoso.com/api/calls"
+	AcceptedModalities = @(
+		"audio"
+	)
+	MediaConfig = @{
+		"@odata.type" = "#microsoft.graph.serviceHostedMediaConfig"
+		PreFetchMedia = @(
+		)
+	}
+}
+Invoke-MgAnswerCommunicationCall -CallId $callId -BodyParameter $params
+```

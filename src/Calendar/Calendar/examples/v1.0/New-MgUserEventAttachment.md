@@ -1,18 +1,38 @@
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+###Example 1
 ```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+Import-Module Microsoft.Graph.Calendar
+$params = @{
+	"@odata.type" = "#microsoft.graph.fileAttachment"
+	Name = "menu.txt"
+	ContentBytes = "base64bWFjIGFuZCBjaGVlc2UgdG9kYXk="
+}
+# A UPN can also be used as -UserId.
+New-MgUserEventAttachment -UserId $userId -EventId $eventId -BodyParameter $params
 ```
-
-{{ Add description here }}
-
+###Example 2
+```
+Import-Module Microsoft.Graph.Calendar
+$params = @{
+	"@odata.type" = "#microsoft.graph.itemAttachment"
+	Name = "Holiday event"
+	Item = @{
+		"@odata.type" = "microsoft.graph.event"
+		Subject = "Discuss gifts for children"
+	}
+}
+# A UPN can also be used as -UserId.
+New-MgUserEventAttachment -UserId $userId -EventId $eventId -BodyParameter $params
+```
+###Example 3
+```
+Import-Module Microsoft.Graph.Calendar
+$params = @{
+	"@odata.type" = "#Microsoft.OutlookServices.ItemAttachment"
+	Name = "name-value"
+	Item = @{
+		"@odata.type" = "microsoft.graph.message"
+	}
+}
+# A UPN can also be used as -UserId.
+New-MgUserEventAttachment -UserId $userId -EventId $eventId -BodyParameter $params
+```

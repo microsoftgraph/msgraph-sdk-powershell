@@ -1,18 +1,25 @@
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+###Example 1
 ```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+Import-Module Microsoft.Graph.Teams
+Get-MgTeamInstalledApp -TeamId $teamId -TeamsAppInstallationId $teamsAppInstallationId -ExpandProperty "teamsAppDefinition" 
 ```
-
-{{ Add description here }}
-
+###Example 2
+```
+Import-Module Microsoft.Graph.Teams
+Get-MgTeamInstalledApp -TeamId $teamId -TeamsAppInstallationId $teamsAppInstallationId
+```
+###Example 3
+```
+Import-Module Microsoft.Graph.Teams
+Get-MgTeamInstalledApp -TeamId $teamId -ExpandProperty "teamsApp,teamsAppDefinition" -Filter "teamsApp/externalId eq 'cf1ba4c7-f94e-4d80-ba90-5594b641a8ee'" 
+```
+###Example 4
+```
+Import-Module Microsoft.Graph.Teams
+Get-MgTeamInstalledApp -TeamId $teamId
+```
+###Example 5
+```
+Import-Module Microsoft.Graph.Teams
+Get-MgTeamInstalledApp -TeamId $teamId -ExpandProperty "teamsAppDefinition" 
+```

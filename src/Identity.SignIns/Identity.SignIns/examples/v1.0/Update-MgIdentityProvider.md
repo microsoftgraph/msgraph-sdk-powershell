@@ -1,18 +1,26 @@
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+###Example 1
 ```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+Import-Module Microsoft.Graph.Identity.SignIns
+$params = @{
+	"@odata.type" = "#microsoft.graph.socialIdentityProvider"
+	DisplayName = "Apple"
+}
+Update-MgIdentityProvider -IdentityProviderBaseId $identityProviderBaseId -BodyParameter $params
 ```
-
-{{ Add description here }}
-
+###Example 2
+```
+Import-Module Microsoft.Graph.Identity.SignIns
+$params = @{
+	ClientSecret = "1111111111111"
+}
+Update-MgIdentityProvider -IdentityProviderId $identityProviderId -BodyParameter $params
+```
+###Example 3
+```
+Import-Module Microsoft.Graph.Identity.SignIns
+$params = @{
+	"@odata.type" = "#microsoft.graph.socialIdentityProvider"
+	ClientSecret = "1111111111111"
+}
+Update-MgIdentityProvider -IdentityProviderBaseId $identityProviderBaseId -BodyParameter $params
+```

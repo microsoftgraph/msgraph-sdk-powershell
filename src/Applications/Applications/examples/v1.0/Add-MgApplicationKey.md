@@ -1,18 +1,30 @@
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+###Example 1
 ```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+Import-Module Microsoft.Graph.Applications
+$params = @{
+	KeyCredential = @{
+		Type = "AsymmetricX509Cert"
+		Usage = "Verify"
+		Key = [System.Text.Encoding]::ASCII.GetBytes("MIIDYDCCAki...")
+	}
+	PasswordCredential = $null
+	Proof = "eyJ0eXAiOiJ..."
+}
+Add-MgApplicationKey -ApplicationId $applicationId -BodyParameter $params
 ```
-
-{{ Add description here }}
-
+###Example 2
+```
+Import-Module Microsoft.Graph.Applications
+$params = @{
+	KeyCredential = @{
+		Type = "X509CertAndPassword"
+		Usage = "Sign"
+		Key = [System.Text.Encoding]::ASCII.GetBytes("MIIDYDCCAki...")
+	}
+	PasswordCredential = @{
+		SecretText = "MKTr0w1..."
+	}
+	Proof = "eyJ0eXAiOiJ..."
+}
+Add-MgApplicationKey -ApplicationId $applicationId -BodyParameter $params
+```

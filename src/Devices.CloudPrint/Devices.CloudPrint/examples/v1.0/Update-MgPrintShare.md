@@ -1,18 +1,10 @@
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+###Example 1
 ```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+Import-Module Microsoft.Graph.Devices.CloudPrint
+$params = @{
+	DisplayName = "PrinterShare Name"
+	"Printer@odata.bind" = "https://graph.microsoft.com/v1.0/print/printers/{printerId}"
+	AllowAllUsers = $false
+}
+Update-MgPrintShare -PrinterShareId $printerShareId -BodyParameter $params
 ```
-
-{{ Add description here }}
-

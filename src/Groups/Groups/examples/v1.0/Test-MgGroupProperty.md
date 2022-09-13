@@ -1,18 +1,10 @@
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+###Example 1
 ```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+Import-Module Microsoft.Graph.Groups
+$params = @{
+	DisplayName = "Myprefix_test_mysuffix"
+	MailNickname = "Myprefix_test_mysuffix"
+	OnBehalfOfUserId = "onBehalfOfUserId-value"
+}
+Test-MgGroupProperty -GroupId $groupId -BodyParameter $params
 ```
-
-{{ Add description here }}
-

@@ -1,18 +1,17 @@
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+###Example 1
 ```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+Import-Module Microsoft.Graph.Security
+$params = @{
+	"@odata.type" = "#microsoft.graph.security.ediscoveryCaseSettings"
+	RedundancyDetection = @{
+		"@odata.type" = "microsoft.graph.security.redundancyDetectionSettings"
+	}
+	TopicModeling = @{
+		"@odata.type" = "microsoft.graph.security.topicModelingSettings"
+	}
+	Ocr = @{
+		"@odata.type" = "microsoft.graph.security.ocrSettings"
+	}
+}
+Update-MgSecurityCaseEdiscoveryCaseSetting -EdiscoveryCaseId $ediscoveryCaseId -BodyParameter $params
 ```
-
-{{ Add description here }}
-

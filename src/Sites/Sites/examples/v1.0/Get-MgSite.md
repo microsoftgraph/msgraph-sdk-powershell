@@ -1,18 +1,15 @@
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+###Example 1
 ```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+Import-Module Microsoft.Graph.Sites
+Get-MgSite -SiteId $siteId
 ```
-
-{{ Add description here }}
-
+###Example 2
+```
+Import-Module Microsoft.Graph.Sites
+Get-MgSite -Search "{query}" 
+```
+###Example 3
+```
+Import-Module Microsoft.Graph.Sites
+Get-MgSite -Search "{query}"  -OutFile $outFileId
+```

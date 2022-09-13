@@ -1,18 +1,10 @@
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+###Example 1
 ```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+Import-Module Microsoft.Graph.Identity.SignIns
+$params = @{
+	StartDateTime = [System.DateTime]::Parse("2022-06-05T00:00:00.000Z")
+	LifetimeInMinutes = 60
+	IsUsableOnce = $false
+}
+New-MgUserAuthenticationTemporaryAccessPassMethod -UserId $userId -BodyParameter $params
 ```
-
-{{ Add description here }}
-

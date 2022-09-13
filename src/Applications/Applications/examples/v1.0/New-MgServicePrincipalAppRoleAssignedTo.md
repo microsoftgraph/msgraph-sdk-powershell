@@ -1,18 +1,10 @@
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+###Example 1
 ```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+Import-Module Microsoft.Graph.Applications
+$params = @{
+	PrincipalId = "33ad69f9-da99-4bed-acd0-3f24235cb296"
+	ResourceId = "9028d19c-26a9-4809-8e3f-20ff73e2d75e"
+	AppRoleId = "ef7437e6-4f94-4a0a-a110-a439eb2aa8f7"
+}
+New-MgServicePrincipalAppRoleAssignedTo -ServicePrincipalId $servicePrincipalId -BodyParameter $params
 ```
-
-{{ Add description here }}
-

@@ -1,18 +1,52 @@
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+###Example 1
 ```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+Import-Module Microsoft.Graph.SchemaExtensions
+$params = @{
+	Owner = "ef4cb9a8-97c3-4ca7-854b-5cb5ced376fa"
+	Properties = @(
+		@{
+			Name = "courseId"
+			Type = "Integer"
+		}
+		@{
+			Name = "courseName"
+			Type = "String"
+		}
+		@{
+			Name = "courseType"
+			Type = "String"
+		}
+		@{
+			Name = "courseSupervisors"
+			Type = "String"
+		}
+	)
+}
+Update-MgSchemaExtension -SchemaExtensionId $schemaExtensionId -BodyParameter $params
 ```
-
-{{ Add description here }}
-
+###Example 2
+```
+Import-Module Microsoft.Graph.SchemaExtensions
+$params = @{
+	Owner = "ef4cb9a8-97c3-4ca7-854b-5cb5ced376fa"
+	Properties = @(
+		@{
+			Name = "courseId"
+			Type = "Integer"
+		}
+		@{
+			Name = "courseName"
+			Type = "String"
+		}
+		@{
+			Name = "courseType"
+			Type = "String"
+		}
+		@{
+			Name = "courseSupervisors"
+			Type = "String"
+		}
+	)
+}
+Update-MgSchemaExtension -SchemaExtensionId $schemaExtensionId -BodyParameter $params
+```

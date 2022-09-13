@@ -1,18 +1,17 @@
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+###Example 1
 ```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+Import-Module Microsoft.Graph.DeviceManagement.Enrolment
+$params = @{
+	Description = "Update basic properties of application registrations"
+	DisplayName = "Application Registration Support Administrator"
+	RolePermissions = @(
+		@{
+			AllowedResourceActions = @(
+				"microsoft.directory/applications/basic/read"
+			)
+		}
+	)
+	IsEnabled = $true
+}
+New-MgRoleManagementDirectoryRoleDefinition -BodyParameter $params
 ```
-
-{{ Add description here }}
-

@@ -1,18 +1,10 @@
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+###Example 1
 ```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+Import-Module Microsoft.Graph.PersonalContacts
+$params = @{
+	ParentFolderId = "parentFolderId-value"
+	DisplayName = "displayName-value"
+}
+# A UPN can also be used as -UserId.
+Update-MgUserContactFolder -UserId $userId -ContactFolderId $contactFolderId -BodyParameter $params
 ```
-
-{{ Add description here }}
-

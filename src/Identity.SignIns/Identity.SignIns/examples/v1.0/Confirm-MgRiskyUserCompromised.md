@@ -1,18 +1,11 @@
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+###Example 1
 ```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+Import-Module Microsoft.Graph.Identity.SignIns
+$params = @{
+	UserIds = @(
+		"29f270bb-4d23-4f68-8a57-dc73dc0d4caf"
+		"20f91ec9-d140-4d90-9cd9-f618587a1471"
+	)
+}
+Confirm-MgRiskyUserCompromised -BodyParameter $params
 ```
-
-{{ Add description here }}
-

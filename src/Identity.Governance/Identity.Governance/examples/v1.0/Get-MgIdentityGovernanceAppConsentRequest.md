@@ -1,18 +1,20 @@
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+###Example 1
 ```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+Import-Module Microsoft.Graph.Identity.Governance
+Get-MgIdentityGovernanceAppConsentRequest -AppConsentRequestId $appConsentRequestId -Filter "userConsentRequests/any(u:u/status eq 'InProgress')" 
 ```
-
-{{ Add description here }}
-
+###Example 2
+```
+Import-Module Microsoft.Graph.Identity.Governance
+Get-MgIdentityGovernanceAppConsentRequest -AppConsentRequestId $appConsentRequestId
+```
+###Example 3
+```
+Import-Module Microsoft.Graph.Identity.Governance
+Get-MgIdentityGovernanceAppConsentRequest
+```
+###Example 4
+```
+Import-Module Microsoft.Graph.Identity.Governance
+Get-MgIdentityGovernanceAppConsentRequest -Filter "userConsentRequests/any (u:u/status eq 'InProgress')" 
+```

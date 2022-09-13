@@ -1,18 +1,23 @@
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+###Example 1
 ```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+Import-Module Microsoft.Graph.Identity.DirectoryManagement
+$params = @{
+	MarketingNotificationEmails = @(
+		"marketing@contoso.com"
+	)
+	PrivacyProfile = @{
+		ContactEmail = "alice@contoso.com"
+		StatementUrl = "https://contoso.com/privacyStatement"
+	}
+	SecurityComplianceNotificationMails = @(
+		"security@contoso.com"
+	)
+	SecurityComplianceNotificationPhones = @(
+		"(123) 456-7890"
+	)
+	TechnicalNotificationMails = @(
+		"tech@contoso.com"
+	)
+}
+Update-MgOrganization -OrganizationId $organizationId -BodyParameter $params
 ```
-
-{{ Add description here }}
-

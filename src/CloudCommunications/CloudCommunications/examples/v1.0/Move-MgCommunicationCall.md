@@ -1,18 +1,102 @@
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+###Example 1
 ```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+Import-Module Microsoft.Graph.CloudCommunications
+$params = @{
+	TransferTarget = @{
+		EndpointType = "default"
+		Identity = @{
+			User = @{
+				Id = "550fae72-d251-43ec-868c-373732c2704f"
+				DisplayName = "Heidi Steen"
+			}
+		}
+	}
+}
+Move-MgCommunicationCall -CallId $callId -BodyParameter $params
 ```
-
-{{ Add description here }}
-
+###Example 2
+```
+Import-Module Microsoft.Graph.CloudCommunications
+$params = @{
+	TransferTarget = @{
+		"@odata.type" = "#microsoft.graph.invitationParticipantInfo"
+		EndpointType = "default"
+		Identity = @{
+			"@odata.type" = "#microsoft.graph.identitySet"
+			User = @{
+				"@odata.type" = "#microsoft.graph.identity"
+				Id = "550fae72-d251-43ec-868c-373732c2704f"
+				DisplayName = "Heidi Steen"
+			}
+		}
+		ReplacesCallId = "e5d39592-99bd-4db8-bca8-30fb894ec51d"
+	}
+}
+Move-MgCommunicationCall -CallId $callId -BodyParameter $params
+```
+###Example 3
+```
+Import-Module Microsoft.Graph.CloudCommunications
+$params = @{
+	TransferTarget = @{
+		EndpointType = "default"
+		Identity = @{
+			Phone = @{
+				"@odata.type" = "#microsoft.graph.identity"
+				Id = "+12345678901"
+			}
+		}
+		LanguageId = "languageId-value"
+		Region = "region-value"
+	}
+	ClientContext = "9e90d1c1-f61e-43e7-9f75-d420159aae08"
+}
+Move-MgCommunicationCall -CallId $callId -BodyParameter $params
+```
+###Example 4
+```
+Import-Module Microsoft.Graph.CloudCommunications
+$params = @{
+	TransferTarget = @{
+		"@odata.type" = "#microsoft.graph.invitationParticipantInfo"
+		EndpointType = "default"
+		Identity = @{
+			"@odata.type" = "#microsoft.graph.identitySet"
+			Phone = @{
+				"@odata.type" = "#microsoft.graph.identity"
+				Id = "+12345678901"
+			}
+		}
+		LanguageId = "en-us"
+		Region = "amer"
+		ReplacesCallId = "e5d39592-99bd-4db8-bca8-30fb894ec51d"
+	}
+	ClientContext = "9e90d1c1-f61e-43e7-9f75-d420159aae08"
+}
+Move-MgCommunicationCall -CallId $callId -BodyParameter $params
+```
+###Example 5
+```
+Import-Module Microsoft.Graph.CloudCommunications
+$params = @{
+	TransferTarget = @{
+		EndpointType = "default"
+		Identity = @{
+			User = @{
+				Id = "550fae72-d251-43ec-868c-373732c2704f"
+				DisplayName = "Heidi Steen"
+			}
+		}
+	}
+	Transferee = @{
+		Identity = @{
+			User = @{
+				Id = "751f6800-3180-414d-bd94-333364659951"
+				TenantId = "72f988bf-86f1-41af-91ab-2d7cd011db47"
+			}
+		}
+		ParticipantId = "909c6581-5130-43e9-88f3-fcb3582cde37"
+	}
+}
+Move-MgCommunicationCall -CallId $callId -BodyParameter $params
+```

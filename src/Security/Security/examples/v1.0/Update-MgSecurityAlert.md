@@ -1,18 +1,42 @@
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+###Example 1
 ```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+Import-Module Microsoft.Graph.Security
+$params = @{
+	AssignedTo = "String"
+	ClosedDateTime = [System.DateTime]::Parse("String (timestamp)")
+	Comments = @(
+		"String"
+	)
+	Feedback = "@odata.type: microsoft.graph.alertFeedback"
+	Status = "@odata.type: microsoft.graph.alertStatus"
+	Tags = @(
+		"String"
+	)
+	VendorInformation = @{
+		Provider = "String"
+		Vendor = "String"
+	}
+}
+Update-MgSecurityAlert -AlertId $alertId -BodyParameter $params
 ```
-
-{{ Add description here }}
-
+###Example 2
+```
+Import-Module Microsoft.Graph.Security
+$params = @{
+	AssignedTo = "String"
+	ClosedDateTime = [System.DateTime]::Parse("String (timestamp)")
+	Comments = @(
+		"String"
+	)
+	Feedback = "@odata.type: microsoft.graph.alertFeedback"
+	Status = "@odata.type: microsoft.graph.alertStatus"
+	Tags = @(
+		"String"
+	)
+	VendorInformation = @{
+		Provider = "String"
+		Vendor = "String"
+	}
+}
+Update-MgSecurityAlert -AlertId $alertId -BodyParameter $params
+```

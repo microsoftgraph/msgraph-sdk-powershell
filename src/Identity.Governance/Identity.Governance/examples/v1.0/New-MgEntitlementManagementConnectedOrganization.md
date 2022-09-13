@@ -1,18 +1,17 @@
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+###Example 1
 ```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+Import-Module Microsoft.Graph.Identity.Governance
+$params = @{
+	DisplayName = "Connected organization name"
+	Description = "Connected organization description"
+	IdentitySources = @(
+		@{
+			"@odata.type" = "#microsoft.graph.domainIdentitySource"
+			DomainName = "example.com"
+			DisplayName = "example.com"
+		}
+	)
+	State = "proposed"
+}
+New-MgEntitlementManagementConnectedOrganization -BodyParameter $params
 ```
-
-{{ Add description here }}
-

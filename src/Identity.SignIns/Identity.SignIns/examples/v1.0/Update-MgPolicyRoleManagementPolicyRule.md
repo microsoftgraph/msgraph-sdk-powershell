@@ -1,18 +1,23 @@
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+###Example 1
 ```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+Import-Module Microsoft.Graph.Identity.SignIns
+$params = @{
+	"@odata.type" = "#microsoft.graph.unifiedRoleManagementPolicyExpirationRule"
+	Id = "Expiration_EndUser_Assignment"
+	IsExpirationRequired = $true
+	MaximumDuration = "PT1H45M"
+	Target = @{
+		"@odata.type" = "microsoft.graph.unifiedRoleManagementPolicyRuleTarget"
+		Caller = "EndUser"
+		Operations = @(
+			"All"
+		)
+		Level = "Assignment"
+		InheritableSettings = @(
+		)
+		EnforcedSettings = @(
+		)
+	}
+}
+Update-MgPolicyRoleManagementPolicyRule -UnifiedRoleManagementPolicyId $unifiedRoleManagementPolicyId -UnifiedRoleManagementPolicyRuleId $unifiedRoleManagementPolicyRuleId -BodyParameter $params
 ```
-
-{{ Add description here }}
-

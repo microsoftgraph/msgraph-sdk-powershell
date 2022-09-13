@@ -1,18 +1,18 @@
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+###Example 1
 ```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+Import-Module Microsoft.Graph.Teams
+$params = @{
+	PolicyViolation = @{
+		PolicyTip = @{
+			GeneralText = "This item has been blocked by the administrator."
+			ComplianceUrl = "https://contoso.com/dlp-policy-page"
+			MatchedConditionDescriptions = @(
+				"Credit Card Number"
+			)
+		}
+		VerdictDetails = "AllowOverrideWithoutJustification,AllowFalsePositiveOverride"
+		DlpAction = "BlockAccess"
+	}
+}
+Update-MgTeamChannelMessage -TeamId $teamId -ChannelId $channelId -ChatMessageId $chatMessageId -BodyParameter $params
 ```
-
-{{ Add description here }}
-

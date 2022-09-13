@@ -1,18 +1,35 @@
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+###Example 1
 ```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+Import-Module Microsoft.Graph.Identity.DirectoryManagement
+Get-MgDevice -Search "displayName:Android" -CountVariable CountVar -ConsistencyLevel eventual 
 ```
-
-{{ Add description here }}
-
+###Example 2
+```
+Import-Module Microsoft.Graph.Identity.DirectoryManagement
+Get-MgDevice -DeviceId $deviceId
+```
+###Example 3
+```
+Import-Module Microsoft.Graph.Identity.DirectoryManagement
+Get-MgDevice -DeviceId $deviceId -Property "id,extensionAttributes" 
+```
+###Example 4
+```
+Import-Module Microsoft.Graph.Identity.DirectoryManagement
+Get-MgDevice -Filter "extensionAttributes/extensionAttribute1 eq 'BYOD-Device'" -CountVariable CountVar -ConsistencyLevel eventual 
+```
+###Example 5
+```
+Import-Module Microsoft.Graph.Identity.DirectoryManagement
+Get-MgDevice
+```
+###Example 6
+```
+Import-Module Microsoft.Graph.Identity.DirectoryManagement
+Get-MgDevice -Property "id,extensionAttributes" 
+```
+###Example 7
+```
+Import-Module Microsoft.Graph.Identity.DirectoryManagement
+Get-MgDevice -Filter "startswith(displayName, 'a')" -CountVariable CountVar -Top 1 -Sort "displayName" -ConsistencyLevel eventual 
+```

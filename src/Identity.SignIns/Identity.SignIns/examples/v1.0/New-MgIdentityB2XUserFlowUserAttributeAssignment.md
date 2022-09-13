@@ -1,18 +1,16 @@
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+###Example 1
 ```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+Import-Module Microsoft.Graph.Identity.SignIns
+$params = @{
+	IsOptional = $false
+	RequiresVerification = $false
+	UserInputType = "TextBox"
+	DisplayName = "Shoe size"
+	UserAttributeValues = @(
+	)
+	UserAttribute = @{
+		Id = "extension_guid_shoeSize"
+	}
+}
+New-MgIdentityB2XUserFlowUserAttributeAssignment -B2xIdentityUserFlowId $b2xIdentityUserFlowId -BodyParameter $params
 ```
-
-{{ Add description here }}
-

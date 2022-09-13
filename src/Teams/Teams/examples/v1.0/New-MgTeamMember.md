@@ -1,18 +1,24 @@
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+###Example 1
 ```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+Import-Module Microsoft.Graph.Teams
+$params = @{
+	"@odata.type" = "#microsoft.graph.aadUserConversationMember"
+	Roles = @(
+		"owner"
+	)
+	"User@odata.bind" = "https://graph.microsoft.com/v1.0/users('8b081ef6-4792-4def-b2c9-c363a1bf41d5')"
+}
+New-MgTeamMember -TeamId $teamId -BodyParameter $params
 ```
-
-{{ Add description here }}
-
+###Example 2
+```
+Import-Module Microsoft.Graph.Teams
+$params = @{
+	"@odata.type" = "#microsoft.graph.aadUserConversationMember"
+	Roles = @(
+		"owner"
+	)
+	"User@odata.bind" = "https://graph.microsoft.com/v1.0/users('jacob@contoso.com')"
+}
+New-MgTeamMember -TeamId $teamId -BodyParameter $params
+```

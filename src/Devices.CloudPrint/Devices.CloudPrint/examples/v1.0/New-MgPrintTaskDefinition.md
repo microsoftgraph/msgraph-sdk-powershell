@@ -1,18 +1,11 @@
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+###Example 1
 ```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+Import-Module Microsoft.Graph.Devices.CloudPrint
+$params = @{
+	DisplayName = "Test TaskDefinitionName"
+	CreatedBy = @{
+		DisplayName = "Requesting App Display Name"
+	}
+}
+New-MgPrintTaskDefinition -BodyParameter $params
 ```
-
-{{ Add description here }}
-

@@ -1,18 +1,40 @@
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+###Example 1
 ```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+Import-Module Microsoft.Graph.Identity.SignIns
+Get-MgIdentityProvider -IdentityProviderBaseId $identityProviderBaseId
 ```
-
-{{ Add description here }}
-
+###Example 2
+```
+Import-Module Microsoft.Graph.Identity.SignIns
+Get-MgIdentityProvider -IdentityProviderBaseId $identityProviderBaseId
+```
+###Example 3
+```
+Import-Module Microsoft.Graph.Identity.SignIns
+Get-MgIdentityProvider -IdentityProviderId $identityProviderId
+```
+###Example 4
+```
+Import-Module Microsoft.Graph.Identity.SignIns
+Get-MgIdentityProvider
+```
+###Example 5
+```
+Import-Module Microsoft.Graph.Identity.SignIns
+Get-MgIdentityProvider
+```
+###Example 6
+```
+Import-Module Microsoft.Graph.Identity.SignIns
+Get-MgIdentityProvider -OutFile $outFileId
+```
+###Example 7
+```
+Import-Module Microsoft.Graph.Identity.SignIns
+Get-MgIdentityProvider -IdentityProviderBaseId $identityProviderBaseId
+```
+###Example 8
+```
+Import-Module Microsoft.Graph.Identity.SignIns
+Get-MgIdentityProvider
+```

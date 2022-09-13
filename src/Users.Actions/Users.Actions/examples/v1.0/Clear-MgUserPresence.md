@@ -1,18 +1,8 @@
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+###Example 1
 ```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+Import-Module Microsoft.Graph.Users.Actions
+$params = @{
+	SessionId = "22553876-f5ab-4529-bffb-cfe50aa89f87"
+}
+Clear-MgUserPresence -UserId $userId -BodyParameter $params
 ```
-
-{{ Add description here }}
-

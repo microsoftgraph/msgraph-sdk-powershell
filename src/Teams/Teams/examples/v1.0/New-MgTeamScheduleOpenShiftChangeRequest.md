@@ -1,18 +1,9 @@
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+###Example 1
 ```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+Import-Module Microsoft.Graph.Teams
+$params = @{
+	SenderMessage = "Can I take this shift?"
+	OpenShiftId = "577b75d2-a927-48c0-a5d1-dc984894e7b8"
+}
+New-MgTeamScheduleOpenShiftChangeRequest -TeamId $teamId -BodyParameter $params
 ```
-
-{{ Add description here }}
-

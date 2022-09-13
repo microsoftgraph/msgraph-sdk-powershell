@@ -1,18 +1,9 @@
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+###Example 1
 ```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+Import-Module Microsoft.Graph.Users.Actions
+$params = @{
+	DestinationId = "destinationId-value"
+}
+# A UPN can also be used as -UserId.
+Copy-MgUserMailFolder -UserId $userId -MailFolderId $mailFolderId -BodyParameter $params
 ```
-
-{{ Add description here }}
-

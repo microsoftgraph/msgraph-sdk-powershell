@@ -1,18 +1,14 @@
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+###Example 1
 ```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+Import-Module Microsoft.Graph.Sites
+$params = @{
+	Name = "docSet"
+	Description = "custom docset"
+	Base = @{
+		Name = "Document Set"
+		Id = "0x0120D520"
+	}
+	Group = "Document Set Content Types"
+}
+New-MgSiteContentType -SiteId $siteId -BodyParameter $params
 ```
-
-{{ Add description here }}
-

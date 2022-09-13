@@ -1,18 +1,14 @@
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+###Example 1
 ```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+Import-Module Microsoft.Graph.Education
+$params = @{
+	DisplayName = "Reading and review test 09.03 #5"
+	Instructions = @{
+		ContentType = "text"
+		Content = "Read chapter 5 and write your review"
+	}
+	DueDateTime = [System.DateTime]::Parse("2021-09-10T00:00:00Z")
+	AddedStudentAction = "none"
+}
+Update-MgEducationClassAssignment -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -BodyParameter $params
 ```
-
-{{ Add description here }}
-

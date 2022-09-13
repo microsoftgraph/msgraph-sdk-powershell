@@ -1,18 +1,15 @@
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+###Example 1
 ```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+Import-Module Microsoft.Graph.PersonalContacts
+$params = @{
+	HomeAddress = @{
+		Street = "123 Some street"
+		City = "Seattle"
+		State = "WA"
+		PostalCode = "98121"
+	}
+	Birthday = [System.DateTime]::Parse("1974-07-22")
+}
+# A UPN can also be used as -UserId.
+Update-MgUserContact -UserId $userId -ContactId $contactId -BodyParameter $params
 ```
-
-{{ Add description here }}
-

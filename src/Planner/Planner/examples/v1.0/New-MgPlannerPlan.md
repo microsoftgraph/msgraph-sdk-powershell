@@ -1,18 +1,9 @@
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+###Example 1
 ```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+Import-Module Microsoft.Graph.Planner
+$params = @{
+	Owner = "ebf3b108-5234-4e22-b93d-656d7dae5874"
+	Title = "title-value"
+}
+New-MgPlannerPlan -BodyParameter $params
 ```
-
-{{ Add description here }}
-

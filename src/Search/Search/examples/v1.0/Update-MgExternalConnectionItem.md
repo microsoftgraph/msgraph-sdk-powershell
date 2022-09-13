@@ -1,18 +1,14 @@
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+###Example 1
 ```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+Import-Module Microsoft.Graph.Search
+$params = @{
+	Acl = @(
+		@{
+			Type = "everyone"
+			Value = "67a141d8-cf4e-4528-ba07-bed21bfacd2d"
+			AccessType = "grant"
+		}
+	)
+}
+Update-MgExternalConnectionItem -ExternalConnectionId $externalConnectionId -ExternalItemId $externalItemId -BodyParameter $params
 ```
-
-{{ Add description here }}
-

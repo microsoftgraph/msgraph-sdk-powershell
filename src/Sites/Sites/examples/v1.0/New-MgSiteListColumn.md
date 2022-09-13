@@ -1,18 +1,18 @@
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+###Example 1
 ```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+Import-Module Microsoft.Graph.Sites
+$params = @{
+	Description = "test"
+	EnforceUniqueValues = $false
+	Hidden = $false
+	Indexed = $false
+	Name = "Title"
+	Text = @{
+		AllowMultipleLines = $false
+		AppendChangesToExistingText = $false
+		LinesForEditing = 0
+		MaxLength = 255
+	}
+}
+New-MgSiteListColumn -SiteId $siteId -ListId $listId -BodyParameter $params
 ```
-
-{{ Add description here }}
-

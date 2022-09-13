@@ -1,18 +1,19 @@
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+###Example 1
 ```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+Import-Module Microsoft.Graph.PersonalContacts
+$params = @{
+	GivenName = "Pavel"
+	Surname = "Bansky"
+	EmailAddresses = @(
+		@{
+			Address = "pavelb@fabrikam.onmicrosoft.com"
+			Name = "Pavel Bansky"
+		}
+	)
+	BusinessPhones = @(
+		"+1 732 555 0102"
+	)
+}
+# A UPN can also be used as -UserId.
+New-MgUserContact -UserId $userId -BodyParameter $params
 ```
-
-{{ Add description here }}
-

@@ -1,18 +1,20 @@
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+###Example 1
 ```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+Import-Module Microsoft.Graph.Teams
+Get-MgChat -ChatId $chatId -ExpandProperty "members" 
 ```
-
-{{ Add description here }}
-
+###Example 2
+```
+Import-Module Microsoft.Graph.Teams
+Get-MgChat -ChatId $chatId
+```
+###Example 3
+```
+Import-Module Microsoft.Graph.Teams
+Get-MgChat -ChatId $chatId
+```
+###Example 4
+```
+Import-Module Microsoft.Graph.Teams
+Get-MgChat -Sort "lastMessagePreview/createdDateTime desc" 
+```
