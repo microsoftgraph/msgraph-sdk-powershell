@@ -48,11 +48,21 @@ function GraphUri_TokenizeIds {
     )
 
     $TokenizedUri = $Uri.GetComponents([System.UriComponents]::SchemeAndServer, [System.UriFormat]::SafeUnescaped)
+    $LastSegment = $Uri.Segments[$Uri.Segments.length - 1]
+    $UnescapedUri = $Uri.ToString()
     for ($i = 0 ; $i -lt $Uri.Segments.length; $i++) {
         # Segment contains an integer/id and is not API version.
         if ($Uri.Segments[$i] -match "[^v1.0|beta]\d") {
+            #For Uris whose last segments match the regex '(?<={)(.*?)(?=})', all characters from the first '(' are substituted with '.*' 
+            if($i -eq $Uri.Segments.length - 1){
+                if($UnescapedUri -match '(?<={)(.*?)(?=})'){
+                    $UpdatedLastSegment = $LastSegment.Substring(0,$LastSegment.IndexOf("("))
+                    $TokenizedUri += $UpdatedLastSegment
+                }
+            }else{
             # Substitute integers/ids with {id} tokens, e.g, /users/289ee2a5-9450-4837-aa87-6bd8d8e72891 -> users/{id}.
             $TokenizedUri += "{id}/"
+            }
         }
         else {
             $TokenizedUri += $Uri.Segments[$i]
