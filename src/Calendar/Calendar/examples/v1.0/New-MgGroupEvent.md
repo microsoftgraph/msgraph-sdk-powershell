@@ -1,5 +1,5 @@
-###Example 1
-```
+### Example 1
+``` powershell
 Import-Module Microsoft.Graph.Calendar
 $params = @{
 	Subject = "Let's go for lunch"

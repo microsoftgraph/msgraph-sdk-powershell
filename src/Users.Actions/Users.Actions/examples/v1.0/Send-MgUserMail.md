@@ -1,5 +1,5 @@
-###Example 1
-```
+### Example 1
+``` powershell
 Import-Module Microsoft.Graph.Users.Actions
 $params = @{
 	Message = @{
@@ -28,8 +28,8 @@ $params = @{
 # A UPN can also be used as -UserId.
 Send-MgUserMail -UserId $userId -BodyParameter $params
 ```
-###Example 2
-```
+### Example 2
+``` powershell
 Import-Module Microsoft.Graph.Users.Actions
 $params = @{
 	Message = @{
@@ -58,8 +58,8 @@ $params = @{
 # A UPN can also be used as -UserId.
 Send-MgUserMail -UserId $userId -BodyParameter $params
 ```
-###Example 3
-```
+### Example 3
+``` powershell
 Import-Module Microsoft.Graph.Users.Actions
 $params = @{
 	Message = @{

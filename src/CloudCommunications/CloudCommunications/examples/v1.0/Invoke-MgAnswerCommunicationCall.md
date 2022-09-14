@@ -1,5 +1,5 @@
-###Example 1
-```
+### Example 1
+``` powershell
 Import-Module Microsoft.Graph.CloudCommunications
 $params = @{
 	CallbackUri = "https://bot.contoso.com/api/calls"
@@ -13,8 +13,8 @@ $params = @{
 }
 Invoke-MgAnswerCommunicationCall -CallId $callId -BodyParameter $params
 ```
-###Example 2
-```
+### Example 2
+``` powershell
 Import-Module Microsoft.Graph.CloudCommunications
 $params = @{
 	CallbackUri = "callbackUri-value"
@@ -29,8 +29,8 @@ $params = @{
 }
 Invoke-MgAnswerCommunicationCall -CallId $callId -BodyParameter $params
 ```
-###Example 3
-```
+### Example 3
+``` powershell
 Import-Module Microsoft.Graph.CloudCommunications
 $params = @{
 	CallbackUri = "https://bot.contoso.com/api/calls"

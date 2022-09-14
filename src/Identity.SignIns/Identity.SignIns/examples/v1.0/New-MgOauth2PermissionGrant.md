@@ -1,5 +1,5 @@
-###Example 1
-```
+### Example 1
+``` powershell
 Import-Module Microsoft.Graph.Identity.SignIns
 $params = @{
 	ClientId = "ef969797-201d-4f6b-960c-e9ed5f31dab5"

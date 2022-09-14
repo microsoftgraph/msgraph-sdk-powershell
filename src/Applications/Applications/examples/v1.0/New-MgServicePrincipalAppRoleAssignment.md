@@ -1,5 +1,5 @@
-###Example 1
-```
+### Example 1
+``` powershell
 Import-Module Microsoft.Graph.Applications
 $params = @{
 	PrincipalId = "9028d19c-26a9-4809-8e3f-20ff73e2d75e"

@@ -1,5 +1,5 @@
-###Example 1
-```
+### Example 1
+``` powershell
 Import-Module Microsoft.Graph.Calendar
 $params = @{
 	Subject = "Let's go for lunch"
@@ -32,8 +32,8 @@ $params = @{
 # A UPN can also be used as -UserId.
 New-MgUserCalendarEvent -UserId $userId -CalendarId $calendarId -BodyParameter $params
 ```
-###Example 2
-```
+### Example 2
+``` powershell
 Import-Module Microsoft.Graph.Calendar
 $params = @{
 	Subject = "Let's go for lunch"

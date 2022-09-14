@@ -1,5 +1,5 @@
-###Example 1
-```
+### Example 1
+``` powershell
 Import-Module Microsoft.Graph.Users.Actions
 $params = @{
 	Comment = "Cancelling for this week due to all hands"

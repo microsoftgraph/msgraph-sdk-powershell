@@ -1,5 +1,5 @@
-###Example 1
-```
+### Example 1
+``` powershell
 Import-Module Microsoft.Graph.Teams
 $params = @{
 	UserId = "c5d0c76b-80c4-481c-be50-923cd8d680a1"

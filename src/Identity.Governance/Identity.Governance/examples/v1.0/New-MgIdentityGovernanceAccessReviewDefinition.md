@@ -1,5 +1,5 @@
-###Example 1
-```
+### Example 1
+``` powershell
 Import-Module Microsoft.Graph.Identity.Governance
 $params = @{
 	DisplayName = "Review employee access to LinkedIn"
@@ -61,8 +61,8 @@ $params = @{
 }
 New-MgIdentityGovernanceAccessReviewDefinition -BodyParameter $params
 ```
-###Example 2
-```
+### Example 2
+``` powershell
 Import-Module Microsoft.Graph.Identity.Governance
 $params = @{
 	DisplayName = "Group Multi-stage Access Review"
@@ -133,8 +133,8 @@ $params = @{
 }
 New-MgIdentityGovernanceAccessReviewDefinition -BodyParameter $params
 ```
-###Example 3
-```
+### Example 3
+``` powershell
 Import-Module Microsoft.Graph.Identity.Governance
 $params = @{
 	DisplayName = "Review inactive guests on teams"
@@ -187,8 +187,8 @@ $params = @{
 }
 New-MgIdentityGovernanceAccessReviewDefinition -BodyParameter $params
 ```
-###Example 4
-```
+### Example 4
+``` powershell
 Import-Module Microsoft.Graph.Identity.Governance
 $params = @{
 	DisplayName = "Test create"

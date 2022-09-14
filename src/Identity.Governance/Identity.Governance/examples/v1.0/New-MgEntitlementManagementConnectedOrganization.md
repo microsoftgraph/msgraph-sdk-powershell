@@ -1,5 +1,5 @@
-###Example 1
-```
+### Example 1
+``` powershell
 Import-Module Microsoft.Graph.Identity.Governance
 $params = @{
 	DisplayName = "Connected organization name"

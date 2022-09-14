@@ -1,5 +1,5 @@
-###Example 1
-```
+### Example 1
+``` powershell
 Import-Module Microsoft.Graph.Calendar
 $params = @{
 	"@odata.type" = "#microsoft.graph.fileAttachment"
@@ -9,8 +9,8 @@ $params = @{
 # A UPN can also be used as -UserId.
 New-MgUserEventAttachment -UserId $userId -EventId $eventId -BodyParameter $params
 ```
-###Example 2
-```
+### Example 2
+``` powershell
 Import-Module Microsoft.Graph.Calendar
 $params = @{
 	"@odata.type" = "#microsoft.graph.itemAttachment"
@@ -23,8 +23,8 @@ $params = @{
 # A UPN can also be used as -UserId.
 New-MgUserEventAttachment -UserId $userId -EventId $eventId -BodyParameter $params
 ```
-###Example 3
-```
+### Example 3
+``` powershell
 Import-Module Microsoft.Graph.Calendar
 $params = @{
 	"@odata.type" = "#Microsoft.OutlookServices.ItemAttachment"

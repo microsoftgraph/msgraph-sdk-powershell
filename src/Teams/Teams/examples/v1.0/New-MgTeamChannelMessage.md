@@ -1,5 +1,5 @@
-###Example 1
-```
+### Example 1
+``` powershell
 Import-Module Microsoft.Graph.Teams
 $params = @{
 	Body = @{
@@ -8,8 +8,8 @@ $params = @{
 }
 New-MgTeamChannelMessage -TeamId $teamId -ChannelId $channelId -BodyParameter $params
 ```
-###Example 2
-```
+### Example 2
+``` powershell
 Import-Module Microsoft.Graph.Teams
 $params = @{
 	Body = @{
@@ -18,8 +18,8 @@ $params = @{
 }
 New-MgTeamChannelMessage -TeamId $teamId -ChannelId $channelId -BodyParameter $params
 ```
-###Example 3
-```
+### Example 3
+``` powershell
 Import-Module Microsoft.Graph.Teams
 $params = @{
 	Body = @{
@@ -42,8 +42,8 @@ $params = @{
 }
 New-MgTeamChannelMessage -TeamId $teamId -ChannelId $channelId -BodyParameter $params
 ```
-###Example 4
-```
+### Example 4
+``` powershell
 Import-Module Microsoft.Graph.Teams
 $params = @{
 	Subject = $null
@@ -77,8 +77,8 @@ $params = @{
 }
 New-MgTeamChannelMessage -TeamId $teamId -ChannelId $channelId -BodyParameter $params
 ```
-###Example 5
-```
+### Example 5
+``` powershell
 Import-Module Microsoft.Graph.Teams
 $params = @{
 	Body = @{
@@ -96,8 +96,8 @@ $params = @{
 }
 New-MgTeamChannelMessage -TeamId $teamId -ChannelId $channelId -BodyParameter $params
 ```
-###Example 6
-```
+### Example 6
+``` powershell
 Import-Module Microsoft.Graph.Teams
 $params = @{
 	Subject = $null
@@ -209,8 +209,8 @@ $params = @{
 }
 New-MgTeamChannelMessage -TeamId $teamId -ChannelId $channelId -BodyParameter $params
 ```
-###Example 7
-```
+### Example 7
+``` powershell
 Import-Module Microsoft.Graph.Teams
 $params = @{
 	Body = @{
@@ -233,8 +233,8 @@ $params = @{
 }
 New-MgTeamChannelMessage -TeamId $teamId -ChannelId $channelId -BodyParameter $params
 ```
-###Example 8
-```
+### Example 8
+``` powershell
 Import-Module Microsoft.Graph.Teams
 $params = @{
 	Body = @{

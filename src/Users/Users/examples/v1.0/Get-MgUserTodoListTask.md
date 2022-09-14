@@ -1,11 +1,11 @@
-###Example 1
-```
+### Example 1
+``` powershell
 Import-Module Microsoft.Graph.Users
 # A UPN can also be used as -UserId.
 Get-MgUserTodoListTask -UserId $userId -TodoTaskListId $todoTaskListId -TodoTaskId $todoTaskId
 ```
-###Example 2
-```
+### Example 2
+``` powershell
 Import-Module Microsoft.Graph.Users
 # A UPN can also be used as -UserId.
 Get-MgUserTodoListTask -UserId $userId -TodoTaskListId $todoTaskListId

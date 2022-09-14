@@ -1,5 +1,5 @@
-###Example 1
-```
+### Example 1
+``` powershell
 Import-Module Microsoft.Graph.DeviceManagement.Enrolment
 $params = @{
 	"@odata.type" = "#microsoft.graph.unifiedRoleAssignment"
@@ -9,8 +9,8 @@ $params = @{
 }
 New-MgRoleManagementDirectoryRoleAssignment -BodyParameter $params
 ```
-###Example 2
-```
+### Example 2
+``` powershell
 Import-Module Microsoft.Graph.DeviceManagement.Enrolment
 $params = @{
 	"@odata.type" = "#microsoft.graph.unifiedRoleAssignment"
@@ -20,8 +20,8 @@ $params = @{
 }
 New-MgRoleManagementDirectoryRoleAssignment -BodyParameter $params
 ```
-###Example 3
-```
+### Example 3
+``` powershell
 Import-Module Microsoft.Graph.DeviceManagement.Enrolment
 $params = @{
 	"@odata.type" = "#microsoft.graph.unifiedRoleAssignment"

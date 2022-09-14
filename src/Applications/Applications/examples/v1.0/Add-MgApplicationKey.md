@@ -1,5 +1,5 @@
-###Example 1
-```
+### Example 1
+``` powershell
 Import-Module Microsoft.Graph.Applications
 $params = @{
 	KeyCredential = @{
@@ -12,8 +12,8 @@ $params = @{
 }
 Add-MgApplicationKey -ApplicationId $applicationId -BodyParameter $params
 ```
-###Example 2
-```
+### Example 2
+``` powershell
 Import-Module Microsoft.Graph.Applications
 $params = @{
 	KeyCredential = @{

@@ -1,5 +1,5 @@
-###Example 1
-```
+### Example 1
+``` powershell
 Import-Module Microsoft.Graph.Teams
 $params = @{
 	"@microsoft.graph.channelCreationMode" = "migration"
@@ -9,8 +9,8 @@ $params = @{
 }
 New-MgTeamChannel -TeamId $teamId -BodyParameter $params
 ```
-###Example 2
-```
+### Example 2
+``` powershell
 Import-Module Microsoft.Graph.Teams
 $params = @{
 	DisplayName = "Architecture Discussion"
@@ -19,8 +19,8 @@ $params = @{
 }
 New-MgTeamChannel -TeamId $teamId -BodyParameter $params
 ```
-###Example 3
-```
+### Example 3
+``` powershell
 Import-Module Microsoft.Graph.Teams
 $params = @{
 	"@odata.type" = "#Microsoft.Graph.channel"
@@ -39,8 +39,8 @@ $params = @{
 }
 New-MgTeamChannel -TeamId $teamId -BodyParameter $params
 ```
-###Example 4
-```
+### Example 4
+``` powershell
 Import-Module Microsoft.Graph.Teams
 $params = @{
 	"@odata.type" = "#Microsoft.Graph.channel"
@@ -59,8 +59,8 @@ $params = @{
 }
 New-MgTeamChannel -TeamId $teamId -BodyParameter $params
 ```
-###Example 5
-```
+### Example 5
+``` powershell
 Import-Module Microsoft.Graph.Teams
 $params = @{
 	DisplayName = "My First Shared Channel"

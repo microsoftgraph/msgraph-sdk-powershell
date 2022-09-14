@@ -1,5 +1,5 @@
-###Example 1
-```
+### Example 1
+``` powershell
 Import-Module Microsoft.Graph.Calendar
 $params = @{
 	"@odata.type" = "microsoft.graph.room"
@@ -11,8 +11,8 @@ $params = @{
 }
 Update-MgPlace -PlaceId $placeId -BodyParameter $params
 ```
-###Example 2
-```
+### Example 2
+``` powershell
 Import-Module Microsoft.Graph.Calendar
 $params = @{
 	"@odata.type" = "microsoft.graph.roomList"

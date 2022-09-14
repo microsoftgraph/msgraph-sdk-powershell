@@ -1,5 +1,5 @@
-###Example 1
-```
+### Example 1
+``` powershell
 Import-Module Microsoft.Graph.Identity.DirectoryManagement
 $params = @{
 	BackgroundColor = "#00000F"
@@ -7,8 +7,8 @@ $params = @{
 }
 Update-MgOrganizationBrandingLocalization -OrganizationId $organizationId -OrganizationalBrandingLocalizationId $organizationalBrandingLocalizationId -BodyParameter $params
 ```
-###Example 2
-```
+### Example 2
+``` powershell
 Import-Module Microsoft.Graph.Identity.DirectoryManagement
 $params = @{
 	SignInPageText = "Welcome to Contoso France."

@@ -1,5 +1,5 @@
-###Example 1
-```
+### Example 1
+``` powershell
 Import-Module Microsoft.Graph.Mail
 $params = @{
 	Subject = "Did you see last night's game?"
@@ -19,8 +19,8 @@ $params = @{
 # A UPN can also be used as -UserId.
 New-MgUserMessage -UserId $userId -BodyParameter $params
 ```
-###Example 2
-```
+### Example 2
+``` powershell
 Import-Module Microsoft.Graph.Mail
 $params = @{
 	Subject = "9/8/2018: concert"

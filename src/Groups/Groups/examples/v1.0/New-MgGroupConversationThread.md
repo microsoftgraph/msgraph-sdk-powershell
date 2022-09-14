@@ -1,5 +1,5 @@
-###Example 1
-```
+### Example 1
+``` powershell
 Import-Module Microsoft.Graph.Groups
 $params = @{
 	Topic = "Take your wellness days and rest"
