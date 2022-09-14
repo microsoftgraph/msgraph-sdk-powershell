@@ -57,7 +57,7 @@ function GraphUri_TokenizeIds {
             if($i -eq $Uri.Segments.length - 1){
                 if($UnescapedUri -match '(?<={)(.*?)(?=})'){
                     $UpdatedLastSegment = $LastSegment.Substring(0,$LastSegment.IndexOf("("))
-                    $TokenizedUri += $UpdatedLastSegment
+                    $TokenizedUri += $UpdatedLastSegment + ".*"
                 }
             }else{
             # Substitute integers/ids with {id} tokens, e.g, /users/289ee2a5-9450-4837-aa87-6bd8d8e72891 -> users/{id}.
