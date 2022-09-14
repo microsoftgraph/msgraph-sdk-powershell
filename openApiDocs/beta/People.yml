@@ -117,6 +117,7 @@ paths:
       tags:
         - users.userAnalytics
       summary: Get activityStatistics from users
+      description: The collection of work activities that a user spent time on during and outside of working hours. Read-only. Nullable.
       operationId: users.analytics_ListActivityStatistics
       parameters:
         - name: user-id
@@ -227,6 +228,7 @@ paths:
       tags:
         - users.userAnalytics
       summary: Get activityStatistics from users
+      description: The collection of work activities that a user spent time on during and outside of working hours. Read-only. Nullable.
       operationId: users.analytics_GetActivityStatistics
       parameters:
         - name: user-id
@@ -351,6 +353,7 @@ paths:
       tags:
         - users.person
       summary: Get people from users
+      description: 'Read-only. The most relevant people to the user. The collection is ordered by their relevance to the user, which is determined by the user''s communication, collaboration and business relationships. A person is an aggregation of information from across mail, contacts and social networks.'
       operationId: users_ListPeople
       parameters:
         - name: user-id
@@ -494,6 +497,7 @@ paths:
       tags:
         - users.person
       summary: Get people from users
+      description: 'Read-only. The most relevant people to the user. The collection is ordered by their relevance to the user, which is determined by the user''s communication, collaboration and business relationships. A person is an aggregation of information from across mail, contacts and social networks.'
       operationId: users_GetPeople
       parameters:
         - name: user-id
@@ -621,6 +625,7 @@ paths:
       tags:
         - users.profile
       summary: Get profile from users
+      description: Represents properties that are descriptive of a user in a tenant.
       operationId: users_GetProfile
       parameters:
         - name: user-id
@@ -1096,6 +1101,7 @@ paths:
       tags:
         - users.profile
       summary: Get addresses from users
+      description: Represents details of addresses associated with the user.
       operationId: users.profile_ListAddresses
       parameters:
         - name: user-id
@@ -1224,6 +1230,7 @@ paths:
       tags:
         - users.profile
       summary: Get addresses from users
+      description: Represents details of addresses associated with the user.
       operationId: users.profile_GetAddresses
       parameters:
         - name: user-id
@@ -1354,6 +1361,7 @@ paths:
       tags:
         - users.profile
       summary: Get anniversaries from users
+      description: Represents the details of meaningful dates associated with a person.
       operationId: users.profile_ListAnniversaries
       parameters:
         - name: user-id
@@ -1482,6 +1490,7 @@ paths:
       tags:
         - users.profile
       summary: Get anniversaries from users
+      description: Represents the details of meaningful dates associated with a person.
       operationId: users.profile_GetAnniversaries
       parameters:
         - name: user-id
@@ -1612,6 +1621,7 @@ paths:
       tags:
         - users.profile
       summary: Get awards from users
+      description: Represents the details of awards or honors associated with a person.
       operationId: users.profile_ListAwards
       parameters:
         - name: user-id
@@ -1749,6 +1759,7 @@ paths:
       tags:
         - users.profile
       summary: Get awards from users
+      description: Represents the details of awards or honors associated with a person.
       operationId: users.profile_GetAwards
       parameters:
         - name: user-id
@@ -1882,6 +1893,7 @@ paths:
       tags:
         - users.profile
       summary: Get certifications from users
+      description: Represents the details of certifications associated with a person.
       operationId: users.profile_ListCertifications
       parameters:
         - name: user-id
@@ -2031,6 +2043,7 @@ paths:
       tags:
         - users.profile
       summary: Get certifications from users
+      description: Represents the details of certifications associated with a person.
       operationId: users.profile_GetCertifications
       parameters:
         - name: user-id
@@ -2168,6 +2181,7 @@ paths:
       tags:
         - users.profile
       summary: Get educationalActivities from users
+      description: 'Represents data that a user has supplied related to undergraduate, graduate, postgraduate or other educational activities.'
       operationId: users.profile_ListEducationalActivities
       parameters:
         - name: user-id
@@ -2302,6 +2316,7 @@ paths:
       tags:
         - users.profile
       summary: Get educationalActivities from users
+      description: 'Represents data that a user has supplied related to undergraduate, graduate, postgraduate or other educational activities.'
       operationId: users.profile_GetEducationalActivities
       parameters:
         - name: user-id
@@ -2434,6 +2449,7 @@ paths:
       tags:
         - users.profile
       summary: Get emails from users
+      description: Represents detailed information about email addresses associated with the user.
       operationId: users.profile_ListEmails
       parameters:
         - name: user-id
@@ -2562,6 +2578,7 @@ paths:
       tags:
         - users.profile
       summary: Get emails from users
+      description: Represents detailed information about email addresses associated with the user.
       operationId: users.profile_GetEmails
       parameters:
         - name: user-id
@@ -2692,6 +2709,7 @@ paths:
       tags:
         - users.profile
       summary: Get interests from users
+      description: Provides detailed information about interests the user has associated with themselves in various services.
       operationId: users.profile_ListInterests
       parameters:
         - name: user-id
@@ -2829,6 +2847,7 @@ paths:
       tags:
         - users.profile
       summary: Get interests from users
+      description: Provides detailed information about interests the user has associated with themselves in various services.
       operationId: users.profile_GetInterests
       parameters:
         - name: user-id
@@ -2962,6 +2981,7 @@ paths:
       tags:
         - users.profile
       summary: Get languages from users
+      description: Represents detailed information about languages that a user has added to their profile.
       operationId: users.profile_ListLanguages
       parameters:
         - name: user-id
@@ -3102,6 +3122,7 @@ paths:
       tags:
         - users.profile
       summary: Get languages from users
+      description: Represents detailed information about languages that a user has added to their profile.
       operationId: users.profile_GetLanguages
       parameters:
         - name: user-id
@@ -3236,6 +3257,7 @@ paths:
       tags:
         - users.profile
       summary: Get names from users
+      description: Represents the names a user has added to their profile.
       operationId: users.profile_ListNames
       parameters:
         - name: user-id
@@ -3388,6 +3410,7 @@ paths:
       tags:
         - users.profile
       summary: Get names from users
+      description: Represents the names a user has added to their profile.
       operationId: users.profile_GetNames
       parameters:
         - name: user-id
@@ -3526,6 +3549,7 @@ paths:
       tags:
         - users.profile
       summary: Get notes from users
+      description: Represents notes that a user has added to their profile.
       operationId: users.profile_ListNotes
       parameters:
         - name: user-id
@@ -3654,6 +3678,7 @@ paths:
       tags:
         - users.profile
       summary: Get notes from users
+      description: Represents notes that a user has added to their profile.
       operationId: users.profile_GetNotes
       parameters:
         - name: user-id
@@ -3784,6 +3809,7 @@ paths:
       tags:
         - users.profile
       summary: Get patents from users
+      description: Represents patents that a user has added to their profile.
       operationId: users.profile_ListPatents
       parameters:
         - name: user-id
@@ -3924,6 +3950,7 @@ paths:
       tags:
         - users.profile
       summary: Get patents from users
+      description: Represents patents that a user has added to their profile.
       operationId: users.profile_GetPatents
       parameters:
         - name: user-id
@@ -4058,6 +4085,7 @@ paths:
       tags:
         - users.profile
       summary: Get phones from users
+      description: Represents detailed information about phone numbers associated with a user in various services.
       operationId: users.profile_ListPhones
       parameters:
         - name: user-id
@@ -4186,6 +4214,7 @@ paths:
       tags:
         - users.profile
       summary: Get phones from users
+      description: Represents detailed information about phone numbers associated with a user in various services.
       operationId: users.profile_GetPhones
       parameters:
         - name: user-id
@@ -4316,6 +4345,7 @@ paths:
       tags:
         - users.profile
       summary: Get positions from users
+      description: Represents detailed information about work positions associated with a user's profile.
       operationId: users.profile_ListPositions
       parameters:
         - name: user-id
@@ -4450,6 +4480,7 @@ paths:
       tags:
         - users.profile
       summary: Get positions from users
+      description: Represents detailed information about work positions associated with a user's profile.
       operationId: users.profile_GetPositions
       parameters:
         - name: user-id
@@ -4582,6 +4613,7 @@ paths:
       tags:
         - users.profile
       summary: Get projects from users
+      description: Represents detailed information about projects associated with a user.
       operationId: users.profile_ListProjects
       parameters:
         - name: user-id
@@ -4725,6 +4757,7 @@ paths:
       tags:
         - users.profile
       summary: Get projects from users
+      description: Represents detailed information about projects associated with a user.
       operationId: users.profile_GetProjects
       parameters:
         - name: user-id
@@ -4860,6 +4893,7 @@ paths:
       tags:
         - users.profile
       summary: Get publications from users
+      description: Represents details of any publications a user has added to their profile.
       operationId: users.profile_ListPublications
       parameters:
         - name: user-id
@@ -4997,6 +5031,7 @@ paths:
       tags:
         - users.profile
       summary: Get publications from users
+      description: Represents details of any publications a user has added to their profile.
       operationId: users.profile_GetPublications
       parameters:
         - name: user-id
@@ -5130,6 +5165,7 @@ paths:
       tags:
         - users.profile
       summary: Get skills from users
+      description: Represents detailed information about skills associated with a user in various services.
       operationId: users.profile_ListSkills
       parameters:
         - name: user-id
@@ -5267,6 +5303,7 @@ paths:
       tags:
         - users.profile
       summary: Get skills from users
+      description: Represents detailed information about skills associated with a user in various services.
       operationId: users.profile_GetSkills
       parameters:
         - name: user-id
@@ -5400,6 +5437,7 @@ paths:
       tags:
         - users.profile
       summary: Get webAccounts from users
+      description: Represents web accounts the user has indicated they use or has added to their user profile.
       operationId: users.profile_ListWebAccounts
       parameters:
         - name: user-id
@@ -5537,6 +5575,7 @@ paths:
       tags:
         - users.profile
       summary: Get webAccounts from users
+      description: Represents web accounts the user has indicated they use or has added to their user profile.
       operationId: users.profile_GetWebAccounts
       parameters:
         - name: user-id
@@ -5670,6 +5709,7 @@ paths:
       tags:
         - users.profile
       summary: Get websites from users
+      description: Represents detailed information about websites associated with a user in various services.
       operationId: users.profile_ListWebsites
       parameters:
         - name: user-id
@@ -5804,6 +5844,7 @@ paths:
       tags:
         - users.profile
       summary: Get websites from users
+      description: Represents detailed information about websites associated with a user in various services.
       operationId: users.profile_GetWebsites
       parameters:
         - name: user-id
@@ -6735,112 +6776,14 @@ components:
       additionalProperties:
         type: object
     microsoft.graph.settings:
-      title: settings
-      type: object
-      properties:
-        hasGraphMailbox:
-          type: boolean
-          description: Specifies if the user's primary mailbox is hosted in the cloud and is enabled for Microsoft Graph.
-        hasLicense:
-          type: boolean
-          description: Specifies if the user has a MyAnalytics license assigned.
-        hasOptedOut:
-          type: boolean
-          description: Specifies if the user opted out of MyAnalytics.
-      additionalProperties:
-        type: object
+      description: The current settings for a user to use the analytics API.
     microsoft.graph.analyticsActivityType:
-      title: analyticsActivityType
-      enum:
-        - Email
-        - Meeting
-        - Focus
-        - Chat
-        - Call
-      type: string
-    microsoft.graph.rankedEmailAddress:
-      title: rankedEmailAddress
-      type: object
-      properties:
-        address:
-          type: string
-          description: The email address.
-          nullable: true
-        rank:
-          type: number
-          description: 'The rank of the email address. A rank is used as a sort key, in relation to the other returned results. A higher rank value corresponds to a more relevant result. Relevance is determined by communication, collaboration, and business relationship signals.'
-          format: double
-          nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.phone:
-      title: phone
-      type: object
-      properties:
-        number:
-          type: string
-          description: The phone number.
-          nullable: true
-        type:
-          $ref: '#/components/schemas/microsoft.graph.phoneType'
-      additionalProperties:
-        type: object
-    microsoft.graph.location:
-      title: location
-      type: object
-      properties:
-        address:
-          $ref: '#/components/schemas/microsoft.graph.physicalAddress'
-        coordinates:
-          $ref: '#/components/schemas/microsoft.graph.outlookGeoCoordinates'
-        displayName:
-          type: string
-          description: The name associated with the location.
-          nullable: true
-        locationEmailAddress:
-          type: string
-          description: Optional email address of the location.
-          nullable: true
-        locationType:
-          $ref: '#/components/schemas/microsoft.graph.locationType'
-        locationUri:
-          type: string
-          description: Optional URI representing the location.
-          nullable: true
-        uniqueId:
-          type: string
-          description: For internal use only.
-          nullable: true
-        uniqueIdType:
-          $ref: '#/components/schemas/microsoft.graph.locationUniqueIdType'
-      additionalProperties:
-        type: object
-    microsoft.graph.personDataSource:
-      title: personDataSource
-      type: object
-      properties:
-        type:
-          type: string
-          description: The type of data source.
-          nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.website:
-      title: website
-      type: object
-      properties:
-        address:
-          type: string
-          description: The URL of the website.
-          nullable: true
-        displayName:
-          type: string
-          description: The display name of the web site.
-          nullable: true
-        type:
-          $ref: '#/components/schemas/microsoft.graph.websiteType'
-      additionalProperties:
-        type: object
+      description: 'The type of activity for which statistics are returned. The possible values are: call, chat, email, focus, and meeting.'
+    microsoft.graph.rankedEmailAddress: { }
+    microsoft.graph.phone: { }
+    microsoft.graph.location: { }
+    microsoft.graph.personDataSource: { }
+    microsoft.graph.website: { }
     microsoft.graph.itemFacet:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -6919,35 +6862,8 @@ components:
       additionalProperties:
         type: object
     microsoft.graph.geoCoordinates:
-      title: geoCoordinates
-      type: object
-      properties:
-        altitude:
-          type: number
-          description: 'Optional. The altitude (height), in feet,  above sea level for the item. Read-only.'
-          format: double
-          nullable: true
-        latitude:
-          type: number
-          description: 'Optional. The latitude, in decimal, for the item. Writable on OneDrive Personal.'
-          format: double
-          nullable: true
-        longitude:
-          type: number
-          description: 'Optional. The longitude, in decimal, for the item. Writable on OneDrive Personal.'
-          format: double
-          nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.personAnnualEventType:
-      title: personAnnualEventType
-      enum:
-        - birthday
-        - wedding
-        - work
-        - other
-        - unknownFutureValue
-      type: string
+      description: The geocoordinates of the address.
+    microsoft.graph.personAnnualEventType: { }
     microsoft.graph.institutionData:
       title: institutionData
       type: object
@@ -7023,50 +6939,11 @@ components:
         - main
         - other
       type: string
-    microsoft.graph.languageProficiencyLevel:
-      title: languageProficiencyLevel
-      enum:
-        - elementary
-        - conversational
-        - limitedWorking
-        - professionalWorking
-        - fullProfessional
-        - nativeOrBilingual
-        - unknownFutureValue
-      type: string
+    microsoft.graph.languageProficiencyLevel: { }
     microsoft.graph.personNamePronounciation:
-      title: personNamePronounciation
-      type: object
-      properties:
-        displayName:
-          type: string
-          nullable: true
-        first:
-          type: string
-          nullable: true
-        last:
-          type: string
-          nullable: true
-        maiden:
-          type: string
-          nullable: true
-        middle:
-          type: string
-          nullable: true
-      additionalProperties:
-        type: object
+      description: Guidance on how to pronounce the users name.
     microsoft.graph.itemBody:
-      title: itemBody
-      type: object
-      properties:
-        content:
-          type: string
-          description: The content of the item.
-          nullable: true
-        contentType:
-          $ref: '#/components/schemas/microsoft.graph.bodyType'
-      additionalProperties:
-        type: object
+      description: Contains the detail of the note itself.
     microsoft.graph.phoneType:
       title: phoneType
       enum:
@@ -7081,22 +6958,7 @@ components:
         - pager
         - radio
       type: string
-    microsoft.graph.relatedPerson:
-      title: relatedPerson
-      type: object
-      properties:
-        displayName:
-          type: string
-          description: Name of the person.
-          nullable: true
-        relationship:
-          $ref: '#/components/schemas/microsoft.graph.personRelationship'
-        userPrincipalName:
-          type: string
-          description: Email address or reference to person within organization.
-          nullable: true
-      additionalProperties:
-        type: object
+    microsoft.graph.relatedPerson: { }
     microsoft.graph.positionDetail:
       title: positionDetail
       type: object
@@ -7134,42 +6996,9 @@ components:
       additionalProperties:
         type: object
     microsoft.graph.companyDetail:
-      title: companyDetail
-      type: object
-      properties:
-        address:
-          $ref: '#/components/schemas/microsoft.graph.physicalAddress'
-        department:
-          type: string
-          description: Department Name within a company.
-          nullable: true
-        displayName:
-          type: string
-          description: Company name.
-        officeLocation:
-          type: string
-          description: Office Location of the person referred to.
-          nullable: true
-        pronunciation:
-          type: string
-          description: Pronunciation guide for the company name.
-          nullable: true
-        webUrl:
-          type: string
-          description: Link to the company home page.
-          nullable: true
-      additionalProperties:
-        type: object
+      description: Contains detailed information about the client the project was for.
     microsoft.graph.skillProficiencyLevel:
-      title: skillProficiencyLevel
-      enum:
-        - elementary
-        - limitedWorking
-        - generalProfessional
-        - advancedProfessional
-        - expert
-        - unknownFutureValue
-      type: string
+      description: 'Detail of the users proficiency with this skill. Possible values are: elementary, limitedWorking, generalProfessional, advancedProfessional, expert, unknownFutureValue.'
     microsoft.graph.serviceInformation:
       title: serviceInformation
       type: object
@@ -7180,15 +7009,6 @@ components:
         webUrl:
           type: string
           description: Contains the URL for the service being referenced.
-      additionalProperties:
-        type: object
-    microsoft.graph.ODataErrors.ODataError:
-      required:
-        - error
-      type: object
-      properties:
-        error:
-          $ref: '#/components/schemas/microsoft.graph.ODataErrors.MainError'
       additionalProperties:
         type: object
     microsoft.graph.activityStatisticsCollectionResponse:
@@ -7443,81 +7263,8 @@ components:
           type: string
       additionalProperties:
         type: object
-    microsoft.graph.outlookGeoCoordinates:
-      title: outlookGeoCoordinates
-      type: object
-      properties:
-        accuracy:
-          type: number
-          description: 'The accuracy of the latitude and longitude. As an example, the accuracy can be measured in meters, such as the latitude and longitude are accurate to within 50 meters.'
-          format: double
-          nullable: true
-        altitude:
-          type: number
-          description: The altitude of the location.
-          format: double
-          nullable: true
-        altitudeAccuracy:
-          type: number
-          description: The accuracy of the altitude.
-          format: double
-          nullable: true
-        latitude:
-          type: number
-          description: The latitude of the location.
-          format: double
-          nullable: true
-        longitude:
-          type: number
-          description: The longitude of the location.
-          format: double
-          nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.locationType:
-      title: locationType
-      enum:
-        - default
-        - conferenceRoom
-        - homeAddress
-        - businessAddress
-        - geoCoordinates
-        - streetAddress
-        - hotel
-        - restaurant
-        - localBusiness
-        - postalAddress
-      type: string
-    microsoft.graph.locationUniqueIdType:
-      title: locationUniqueIdType
-      enum:
-        - unknown
-        - locationStore
-        - directory
-        - private
-        - bing
-      type: string
-    microsoft.graph.websiteType:
-      title: websiteType
-      enum:
-        - other
-        - home
-        - work
-        - blog
-        - profile
-      type: string
     microsoft.graph.allowedAudiences:
-      title: allowedAudiences
-      enum:
-        - me
-        - family
-        - contacts
-        - groupMembers
-        - organization
-        - federatedOrganizations
-        - everyone
-        - unknownFutureValue
-      type: string
+      description: 'The audiences that are able to see the values contained within the associated entity. Possible values are: me, family, contacts, groupMembers, organization, federatedOrganizations, everyone, unknownFutureValue.'
     microsoft.graph.identitySet:
       title: identitySet
       type: object
@@ -7531,127 +7278,16 @@ components:
       additionalProperties:
         type: object
     microsoft.graph.inferenceData:
-      title: inferenceData
-      type: object
-      properties:
-        confidenceScore:
-          type: number
-          description: Confidence score reflecting the accuracy of the data inferred about the user.
-          format: double
-          nullable: true
-        userHasVerifiedAccuracy:
-          type: boolean
-          description: Records if the user has confirmed this inference as being True or False.
-          nullable: true
-      additionalProperties:
-        type: object
+      description: Contains inference detail if the entity is inferred by the creating or modifying application.
     microsoft.graph.personDataSources:
-      title: personDataSources
-      type: object
-      properties:
-        type:
-          type: array
-          items:
-            type: string
-            nullable: true
-      additionalProperties:
-        type: object
+      description: Where the values within an entity originated if synced from another service.
     microsoft.graph.physicalAddressType:
-      title: physicalAddressType
-      enum:
-        - unknown
-        - home
-        - business
-        - other
-      type: string
-    microsoft.graph.bodyType:
-      title: bodyType
-      enum:
-        - text
-        - html
-      type: string
-    microsoft.graph.personRelationship:
-      title: personRelationship
-      enum:
-        - manager
-        - colleague
-        - directReport
-        - dotLineReport
-        - assistant
-        - dotLineManager
-        - alternateContact
-        - friend
-        - spouse
-        - sibling
-        - child
-        - parent
-        - sponsor
-        - emergencyContact
-        - other
-        - unknownFutureValue
-      type: string
-    microsoft.graph.ODataErrors.MainError:
-      required:
-        - code
-        - message
-      type: object
-      properties:
-        code:
-          type: string
-        message:
-          type: string
-        target:
-          type: string
-          nullable: true
-        details:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.ODataErrors.ErrorDetails'
-        innererror:
-          $ref: '#/components/schemas/microsoft.graph.ODataErrors.InnerError'
-      additionalProperties:
-        type: object
+      description: 'The type of address. Possible values are: unknown, home, business, other.'
     microsoft.graph.identity:
-      title: identity
-      type: object
-      properties:
-        displayName:
-          type: string
-          description: 'The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
-          nullable: true
-        id:
-          type: string
-          description: Unique identifier for the identity.
-          nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.ODataErrors.ErrorDetails:
-      required:
-        - code
-        - message
-      type: object
-      properties:
-        code:
-          type: string
-        message:
-          type: string
-        target:
-          type: string
-          nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.ODataErrors.InnerError:
-      type: object
-      additionalProperties:
-        type: object
-      description: The structure of this object is service-specific
+      description: Optional. The application associated with this action.
   responses:
     error:
       description: error
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/microsoft.graph.ODataErrors.ODataError'
     microsoft.graph.activityStatisticsCollectionResponse:
       description: Retrieved collection
       content:

@@ -11,6 +11,7 @@ paths:
       tags:
         - schemaExtensions.schemaExtension
       summary: List schemaExtensions
+      description: "Get a list of schemaExtension objects in your tenant. The schema extensions can be `InDevelopment`, `Available`, or `Deprecated` and includes schema extensions:\n+ Created by any apps you own in the current tenant.\n+ Owned by other apps that are marked as `Available`.\n+ Created by other developers from other tenants and marked as `Available`. This is different from other APIs that only return tenant-specific data. Extension data created based on schema extension definitions is tenant-specific and can only be accessed by apps explicitly granted permission. "
       operationId: schemaExtensions.schemaExtension_ListSchemaExtension
       parameters:
         - $ref: '#/components/parameters/top'
@@ -83,6 +84,7 @@ paths:
       tags:
         - schemaExtensions.schemaExtension
       summary: Create schemaExtension
+      description: "Create a new schemaExtension definition and its associated schema extension property to extend a supporting resource type. Schema extensions let you add strongly-typed custom data to a resource. The app that creates a schema extension is the owner app. Depending on the \nstate of the extension, the owner app, and only the owner app, may update or delete the extension.  See examples of how to define a schema extension that describes a training course, \nuse the schema extension definition to create a new group with training course data, and \nadd training course data to an existing group."
       operationId: schemaExtensions.schemaExtension_CreateSchemaExtension
       requestBody:
         description: New entity
@@ -105,7 +107,7 @@ paths:
     get:
       tags:
         - schemaExtensions.schemaExtension
-      summary: Get schemaExtension
+      summary: Get entity from schemaExtensions by key
       operationId: schemaExtensions.schemaExtension_GetSchemaExtension
       parameters:
         - name: schemaExtension-id
@@ -158,6 +160,7 @@ paths:
       tags:
         - schemaExtensions.schemaExtension
       summary: Update schemaExtension
+      description: 'Update properties in the definition of the specified schemaExtension. Additive updates to the extension can only be made when the extension is in the `InDevelopment` or `Available` status. This means custom properties or target resource types cannot be removed from the definition, but new custom properties can be added and the description of the extension changed. The update applies to all the resources that are included in the **targetTypes** property of the extension. These resources are among the supporting resource types. For delegated flows, the signed-in user can update a schema extension as long as the **owner** property of the extension is set to the **appId** of an application the signed-in user owns. That application can be the one that initially created the extension, or some other application owned by the signed-in user.  This criteria for the **owner** property allows a signed-in user to make updates through other applications they don''t own, such as Microsoft Graph Explorer. When using Graph Explorer to update a **schemaExtension** resource, include the **owner** property in the PATCH request body. For more information, see the Extensions section in Known issues with Microsoft Graph.'
       operationId: schemaExtensions.schemaExtension_UpdateSchemaExtension
       parameters:
         - name: schemaExtension-id
@@ -184,6 +187,7 @@ paths:
       tags:
         - schemaExtensions.schemaExtension
       summary: Delete schemaExtension
+      description: 'Delete the definition of a schema extension. Only the app that created the schema extension (owner app) can delete the schema extension definition, and only when the extension is in the `InDevelopment` state. Deleting a schema extension definition does not affect accessing custom data that has been added to resource instances based on that definition.'
       operationId: schemaExtensions.schemaExtension_DeleteSchemaExtension
       parameters:
         - name: schemaExtension-id
@@ -248,7 +252,7 @@ components:
       properties:
         name:
           type: string
-          description: The name of the strongly typed property defined as part of a schema extension.
+          description: The name of the strongly-typed property defined as part of a schema extension.
           nullable: true
         type:
           type: string
@@ -268,56 +272,6 @@ components:
           type: string
       additionalProperties:
         type: object
-    microsoft.graph.ODataErrors.ODataError:
-      required:
-        - error
-      type: object
-      properties:
-        error:
-          $ref: '#/components/schemas/microsoft.graph.ODataErrors.MainError'
-      additionalProperties:
-        type: object
-    microsoft.graph.ODataErrors.MainError:
-      required:
-        - code
-        - message
-      type: object
-      properties:
-        code:
-          type: string
-        message:
-          type: string
-        target:
-          type: string
-          nullable: true
-        details:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.ODataErrors.ErrorDetails'
-        innererror:
-          $ref: '#/components/schemas/microsoft.graph.ODataErrors.InnerError'
-      additionalProperties:
-        type: object
-    microsoft.graph.ODataErrors.ErrorDetails:
-      required:
-        - code
-        - message
-      type: object
-      properties:
-        code:
-          type: string
-        message:
-          type: string
-        target:
-          type: string
-          nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.ODataErrors.InnerError:
-      type: object
-      additionalProperties:
-        type: object
-      description: The structure of this object is service-specific
   responses:
     microsoft.graph.schemaExtensionCollectionResponse:
       description: Retrieved collection
@@ -327,10 +281,6 @@ components:
             $ref: '#/components/schemas/microsoft.graph.schemaExtensionCollectionResponse'
     error:
       description: error
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/microsoft.graph.ODataErrors.ODataError'
   parameters:
     top:
       name: $top

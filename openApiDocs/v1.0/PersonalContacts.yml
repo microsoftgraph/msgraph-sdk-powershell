@@ -11,6 +11,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Get contactFolders from users
+      description: The user's contacts folders. Read-only. Nullable.
       operationId: users_ListContactFolders
       parameters:
         - name: user-id
@@ -103,6 +104,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Get contactFolders from users
+      description: The user's contacts folders. Read-only. Nullable.
       operationId: users_GetContactFolders
       parameters:
         - name: user-id
@@ -237,6 +239,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Get childFolders from users
+      description: The collection of child folders in the folder. Navigation property. Read-only. Nullable.
       operationId: users.contactFolders_ListChildFolders
       parameters:
         - name: user-id
@@ -359,6 +362,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Get childFolders from users
+      description: The collection of child folders in the folder. Navigation property. Read-only. Nullable.
       operationId: users.contactFolders_GetChildFolders
       parameters:
         - name: user-id
@@ -534,6 +538,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Get contacts from users
+      description: The contacts in the folder. Navigation property. Read-only. Nullable.
       operationId: users.contactFolders.childFolders_ListContacts
       parameters:
         - name: user-id
@@ -775,6 +780,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Get contacts from users
+      description: The contacts in the folder. Navigation property. Read-only. Nullable.
       operationId: users.contactFolders.childFolders_GetContacts
       parameters:
         - name: user-id
@@ -1010,6 +1016,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Get extensions from users
+      description: The collection of open extensions defined for the contact. Read-only. Nullable.
       operationId: users.contactFolders.childFolders.contacts_ListExtensions
       parameters:
         - name: user-id
@@ -1146,6 +1153,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Get extensions from users
+      description: The collection of open extensions defined for the contact. Read-only. Nullable.
       operationId: users.contactFolders.childFolders.contacts_GetExtensions
       parameters:
         - name: user-id
@@ -1328,6 +1336,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Get multiValueExtendedProperties from users
+      description: The collection of multi-value extended properties defined for the contact. Read-only. Nullable.
       operationId: users.contactFolders.childFolders.contacts_ListMultiValueExtendedProperties
       parameters:
         - name: user-id
@@ -1468,6 +1477,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Get multiValueExtendedProperties from users
+      description: The collection of multi-value extended properties defined for the contact. Read-only. Nullable.
       operationId: users.contactFolders.childFolders.contacts_GetMultiValueExtendedProperties
       parameters:
         - name: user-id
@@ -1651,6 +1661,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Get photo from users
+      description: Optional contact picture. You can get or set a photo for a contact.
       operationId: users.contactFolders.childFolders.contacts_GetPhoto
       parameters:
         - name: user-id
@@ -1896,6 +1907,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Get singleValueExtendedProperties from users
+      description: The collection of single-value extended properties defined for the contact. Read-only. Nullable.
       operationId: users.contactFolders.childFolders.contacts_ListSingleValueExtendedProperties
       parameters:
         - name: user-id
@@ -2036,6 +2048,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Get singleValueExtendedProperties from users
+      description: The collection of single-value extended properties defined for the contact. Read-only. Nullable.
       operationId: users.contactFolders.childFolders.contacts_GetSingleValueExtendedProperties
       parameters:
         - name: user-id
@@ -2219,6 +2232,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Get multiValueExtendedProperties from users
+      description: The collection of multi-value extended properties defined for the contactFolder. Read-only. Nullable.
       operationId: users.contactFolders.childFolders_ListMultiValueExtendedProperties
       parameters:
         - name: user-id
@@ -2345,6 +2359,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Get multiValueExtendedProperties from users
+      description: The collection of multi-value extended properties defined for the contactFolder. Read-only. Nullable.
       operationId: users.contactFolders.childFolders_GetMultiValueExtendedProperties
       parameters:
         - name: user-id
@@ -2507,6 +2522,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Get singleValueExtendedProperties from users
+      description: The collection of single-value extended properties defined for the contactFolder. Read-only. Nullable.
       operationId: users.contactFolders.childFolders_ListSingleValueExtendedProperties
       parameters:
         - name: user-id
@@ -2633,6 +2649,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Get singleValueExtendedProperties from users
+      description: The collection of single-value extended properties defined for the contactFolder. Read-only. Nullable.
       operationId: users.contactFolders.childFolders_GetSingleValueExtendedProperties
       parameters:
         - name: user-id
@@ -2795,6 +2812,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Get contacts from users
+      description: The contacts in the folder. Navigation property. Read-only. Nullable.
       operationId: users.contactFolders_ListContacts
       parameters:
         - name: user-id
@@ -3022,6 +3040,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Get contacts from users
+      description: The contacts in the folder. Navigation property. Read-only. Nullable.
       operationId: users.contactFolders_GetContacts
       parameters:
         - name: user-id
@@ -3232,6 +3251,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Get extensions from users
+      description: The collection of open extensions defined for the contact. Read-only. Nullable.
       operationId: users.contactFolders.contacts_ListExtensions
       parameters:
         - name: user-id
@@ -3354,6 +3374,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Get extensions from users
+      description: The collection of open extensions defined for the contact. Read-only. Nullable.
       operationId: users.contactFolders.contacts_GetExtensions
       parameters:
         - name: user-id
@@ -3515,6 +3536,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Get multiValueExtendedProperties from users
+      description: The collection of multi-value extended properties defined for the contact. Read-only. Nullable.
       operationId: users.contactFolders.contacts_ListMultiValueExtendedProperties
       parameters:
         - name: user-id
@@ -3641,6 +3663,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Get multiValueExtendedProperties from users
+      description: The collection of multi-value extended properties defined for the contact. Read-only. Nullable.
       operationId: users.contactFolders.contacts_GetMultiValueExtendedProperties
       parameters:
         - name: user-id
@@ -3803,6 +3826,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Get photo from users
+      description: Optional contact picture. You can get or set a photo for a contact.
       operationId: users.contactFolders.contacts_GetPhoto
       parameters:
         - name: user-id
@@ -4013,6 +4037,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Get singleValueExtendedProperties from users
+      description: The collection of single-value extended properties defined for the contact. Read-only. Nullable.
       operationId: users.contactFolders.contacts_ListSingleValueExtendedProperties
       parameters:
         - name: user-id
@@ -4139,6 +4164,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Get singleValueExtendedProperties from users
+      description: The collection of single-value extended properties defined for the contact. Read-only. Nullable.
       operationId: users.contactFolders.contacts_GetSingleValueExtendedProperties
       parameters:
         - name: user-id
@@ -4301,6 +4327,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Get multiValueExtendedProperties from users
+      description: The collection of multi-value extended properties defined for the contactFolder. Read-only. Nullable.
       operationId: users.contactFolders_ListMultiValueExtendedProperties
       parameters:
         - name: user-id
@@ -4413,6 +4440,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Get multiValueExtendedProperties from users
+      description: The collection of multi-value extended properties defined for the contactFolder. Read-only. Nullable.
       operationId: users.contactFolders_GetMultiValueExtendedProperties
       parameters:
         - name: user-id
@@ -4554,6 +4582,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Get singleValueExtendedProperties from users
+      description: The collection of single-value extended properties defined for the contactFolder. Read-only. Nullable.
       operationId: users.contactFolders_ListSingleValueExtendedProperties
       parameters:
         - name: user-id
@@ -4666,6 +4695,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Get singleValueExtendedProperties from users
+      description: The collection of single-value extended properties defined for the contactFolder. Read-only. Nullable.
       operationId: users.contactFolders_GetSingleValueExtendedProperties
       parameters:
         - name: user-id
@@ -4807,6 +4837,7 @@ paths:
       tags:
         - users.contact
       summary: Get contacts from users
+      description: The user's contacts. Read-only. Nullable.
       operationId: users_ListContacts
       parameters:
         - name: user-id
@@ -5005,6 +5036,7 @@ paths:
       tags:
         - users.contact
       summary: Get contacts from users
+      description: The user's contacts. Read-only. Nullable.
       operationId: users_GetContacts
       parameters:
         - name: user-id
@@ -5174,6 +5206,7 @@ paths:
       tags:
         - users.contact
       summary: Get extensions from users
+      description: The collection of open extensions defined for the contact. Read-only. Nullable.
       operationId: users.contacts_ListExtensions
       parameters:
         - name: user-id
@@ -5282,6 +5315,7 @@ paths:
       tags:
         - users.contact
       summary: Get extensions from users
+      description: The collection of open extensions defined for the contact. Read-only. Nullable.
       operationId: users.contacts_GetExtensions
       parameters:
         - name: user-id
@@ -5422,6 +5456,7 @@ paths:
       tags:
         - users.contact
       summary: Get multiValueExtendedProperties from users
+      description: The collection of multi-value extended properties defined for the contact. Read-only. Nullable.
       operationId: users.contacts_ListMultiValueExtendedProperties
       parameters:
         - name: user-id
@@ -5534,6 +5569,7 @@ paths:
       tags:
         - users.contact
       summary: Get multiValueExtendedProperties from users
+      description: The collection of multi-value extended properties defined for the contact. Read-only. Nullable.
       operationId: users.contacts_GetMultiValueExtendedProperties
       parameters:
         - name: user-id
@@ -5675,6 +5711,7 @@ paths:
       tags:
         - users.contact
       summary: Get photo from users
+      description: Optional contact picture. You can get or set a photo for a contact.
       operationId: users.contacts_GetPhoto
       parameters:
         - name: user-id
@@ -5850,6 +5887,7 @@ paths:
       tags:
         - users.contact
       summary: Get singleValueExtendedProperties from users
+      description: The collection of single-value extended properties defined for the contact. Read-only. Nullable.
       operationId: users.contacts_ListSingleValueExtendedProperties
       parameters:
         - name: user-id
@@ -5962,6 +6000,7 @@ paths:
       tags:
         - users.contact
       summary: Get singleValueExtendedProperties from users
+      description: The collection of single-value extended properties defined for the contact. Read-only. Nullable.
       operationId: users.contacts_GetSingleValueExtendedProperties
       parameters:
         - name: user-id
@@ -6266,7 +6305,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.extension'
-              description: The collection of open extensions defined for the contact. Nullable.
+              description: The collection of open extensions defined for the contact. Read-only. Nullable.
             multiValueExtendedProperties:
               type: array
               items:
@@ -6375,45 +6414,8 @@ components:
           additionalProperties:
             type: object
     microsoft.graph.physicalAddress:
-      title: physicalAddress
-      type: object
-      properties:
-        city:
-          type: string
-          description: The city.
-          nullable: true
-        countryOrRegion:
-          type: string
-          description: 'The country or region. It''s a free-format string value, for example, ''United States''.'
-          nullable: true
-        postalCode:
-          type: string
-          description: The postal code.
-          nullable: true
-        state:
-          type: string
-          description: The state.
-          nullable: true
-        street:
-          type: string
-          description: The street.
-          nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.emailAddress:
-      title: emailAddress
-      type: object
-      properties:
-        address:
-          type: string
-          description: The email address of an entity instance.
-          nullable: true
-        name:
-          type: string
-          description: The display name of an entity instance.
-          nullable: true
-      additionalProperties:
-        type: object
+      description: The contact's business address.
+    microsoft.graph.emailAddress: { }
     microsoft.graph.contactFolderCollectionResponse:
       title: Collection of contactFolder
       type: object

@@ -11,6 +11,7 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function downloadApplePushNotificationCertificateSigningRequest
+      description: Download Apple push notification certificate signing request
       operationId: deviceManagement.applePushNotificationCertificate_downloadApplePushNotificationCertificateSigningRequest
       responses:
         '200':
@@ -70,6 +71,7 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function getEffectivePermissions
+      description: Retrieves the effective permissions of the currently authenticated user
       operationId: deviceManagement_getEffectivePermissions
       parameters:
         - name: scope
@@ -141,82 +143,10 @@ components:
       additionalProperties:
         type: object
       description: Contains the set of ResourceActions determining the allowed and not allowed permissions for each role.
-    microsoft.graph.resourceAction:
-      title: resourceAction
-      type: object
-      properties:
-        allowedResourceActions:
-          type: array
-          items:
-            type: string
-            nullable: true
-          description: Allowed Actions
-        notAllowedResourceActions:
-          type: array
-          items:
-            type: string
-            nullable: true
-          description: Not Allowed Actions.
-      additionalProperties:
-        type: object
-      description: Set of allowed and not allowed actions for a resource.
-    microsoft.graph.ODataErrors.ODataError:
-      required:
-        - error
-      type: object
-      properties:
-        error:
-          $ref: '#/components/schemas/microsoft.graph.ODataErrors.MainError'
-      additionalProperties:
-        type: object
-    microsoft.graph.ODataErrors.MainError:
-      required:
-        - code
-        - message
-      type: object
-      properties:
-        code:
-          type: string
-        message:
-          type: string
-        target:
-          type: string
-          nullable: true
-        details:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.ODataErrors.ErrorDetails'
-        innererror:
-          $ref: '#/components/schemas/microsoft.graph.ODataErrors.InnerError'
-      additionalProperties:
-        type: object
-    microsoft.graph.ODataErrors.ErrorDetails:
-      required:
-        - code
-        - message
-      type: object
-      properties:
-        code:
-          type: string
-        message:
-          type: string
-        target:
-          type: string
-          nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.ODataErrors.InnerError:
-      type: object
-      additionalProperties:
-        type: object
-      description: The structure of this object is service-specific
+    microsoft.graph.resourceAction: { }
   responses:
     error:
       description: error
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/microsoft.graph.ODataErrors.ODataError'
   securitySchemes:
     azureaadv2:
       type: oauth2

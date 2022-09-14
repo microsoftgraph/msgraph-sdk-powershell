@@ -23,11 +23,9 @@ paths:
             type: array
             items:
               enum:
-                - id
                 - directoryAudits
                 - directoryProvisioning
                 - provisioning
-                - restrictedSignIns
                 - signIns
               type: string
         - name: $expand
@@ -44,7 +42,6 @@ paths:
                 - directoryAudits
                 - directoryProvisioning
                 - provisioning
-                - restrictedSignIns
                 - signIns
               type: string
       responses:
@@ -61,8 +58,6 @@ paths:
               operationId: auditLogs.ListDirectoryProvisioning
             provisioning:
               operationId: auditLogs.ListProvisioning
-            restrictedSignIns:
-              operationId: auditLogs.ListRestrictedSignIns
             signIns:
               operationId: auditLogs.ListSignIns
         default:
@@ -812,428 +807,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-  /auditLogs/restrictedSignIns:
-    get:
-      tags:
-        - auditLogs.restrictedSignIn
-      summary: Get restrictedSignIns from auditLogs
-      operationId: auditLogs_ListRestrictedSignIns
-      parameters:
-        - $ref: '#/components/parameters/top'
-        - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
-        - $ref: '#/components/parameters/filter'
-        - $ref: '#/components/parameters/count'
-        - name: $orderby
-          in: query
-          description: Order items by property values
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - id desc
-                - appDisplayName
-                - appDisplayName desc
-                - appId
-                - appId desc
-                - appliedConditionalAccessPolicies
-                - appliedConditionalAccessPolicies desc
-                - authenticationContextClassReferences
-                - authenticationContextClassReferences desc
-                - authenticationDetails
-                - authenticationDetails desc
-                - authenticationMethodsUsed
-                - authenticationMethodsUsed desc
-                - authenticationProcessingDetails
-                - authenticationProcessingDetails desc
-                - authenticationProtocol
-                - authenticationProtocol desc
-                - authenticationRequirement
-                - authenticationRequirement desc
-                - authenticationRequirementPolicies
-                - authenticationRequirementPolicies desc
-                - autonomousSystemNumber
-                - autonomousSystemNumber desc
-                - azureResourceId
-                - azureResourceId desc
-                - clientAppUsed
-                - clientAppUsed desc
-                - clientCredentialType
-                - clientCredentialType desc
-                - conditionalAccessStatus
-                - conditionalAccessStatus desc
-                - correlationId
-                - correlationId desc
-                - createdDateTime
-                - createdDateTime desc
-                - crossTenantAccessType
-                - crossTenantAccessType desc
-                - deviceDetail
-                - deviceDetail desc
-                - federatedCredentialId
-                - federatedCredentialId desc
-                - flaggedForReview
-                - flaggedForReview desc
-                - homeTenantId
-                - homeTenantId desc
-                - homeTenantName
-                - homeTenantName desc
-                - incomingTokenType
-                - incomingTokenType desc
-                - ipAddress
-                - ipAddress desc
-                - ipAddressFromResourceProvider
-                - ipAddressFromResourceProvider desc
-                - isInteractive
-                - isInteractive desc
-                - isTenantRestricted
-                - isTenantRestricted desc
-                - location
-                - location desc
-                - mfaDetail
-                - mfaDetail desc
-                - networkLocationDetails
-                - networkLocationDetails desc
-                - originalRequestId
-                - originalRequestId desc
-                - privateLinkDetails
-                - privateLinkDetails desc
-                - processingTimeInMilliseconds
-                - processingTimeInMilliseconds desc
-                - resourceDisplayName
-                - resourceDisplayName desc
-                - resourceId
-                - resourceId desc
-                - resourceServicePrincipalId
-                - resourceServicePrincipalId desc
-                - resourceTenantId
-                - resourceTenantId desc
-                - riskDetail
-                - riskDetail desc
-                - riskEventTypes_v2
-                - riskEventTypes_v2 desc
-                - riskLevelAggregated
-                - riskLevelAggregated desc
-                - riskLevelDuringSignIn
-                - riskLevelDuringSignIn desc
-                - riskState
-                - riskState desc
-                - servicePrincipalCredentialKeyId
-                - servicePrincipalCredentialKeyId desc
-                - servicePrincipalCredentialThumbprint
-                - servicePrincipalCredentialThumbprint desc
-                - servicePrincipalId
-                - servicePrincipalId desc
-                - servicePrincipalName
-                - servicePrincipalName desc
-                - sessionLifetimePolicies
-                - sessionLifetimePolicies desc
-                - signInEventTypes
-                - signInEventTypes desc
-                - signInIdentifier
-                - signInIdentifier desc
-                - signInIdentifierType
-                - signInIdentifierType desc
-                - status
-                - status desc
-                - tokenIssuerName
-                - tokenIssuerName desc
-                - tokenIssuerType
-                - tokenIssuerType desc
-                - uniqueTokenIdentifier
-                - uniqueTokenIdentifier desc
-                - userAgent
-                - userAgent desc
-                - userDisplayName
-                - userDisplayName desc
-                - userId
-                - userId desc
-                - userPrincipalName
-                - userPrincipalName desc
-                - userType
-                - userType desc
-                - targetTenantId
-                - targetTenantId desc
-              type: string
-        - name: $select
-          in: query
-          description: Select properties to be returned
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - appDisplayName
-                - appId
-                - appliedConditionalAccessPolicies
-                - authenticationContextClassReferences
-                - authenticationDetails
-                - authenticationMethodsUsed
-                - authenticationProcessingDetails
-                - authenticationProtocol
-                - authenticationRequirement
-                - authenticationRequirementPolicies
-                - autonomousSystemNumber
-                - azureResourceId
-                - clientAppUsed
-                - clientCredentialType
-                - conditionalAccessStatus
-                - correlationId
-                - createdDateTime
-                - crossTenantAccessType
-                - deviceDetail
-                - federatedCredentialId
-                - flaggedForReview
-                - homeTenantId
-                - homeTenantName
-                - incomingTokenType
-                - ipAddress
-                - ipAddressFromResourceProvider
-                - isInteractive
-                - isTenantRestricted
-                - location
-                - mfaDetail
-                - networkLocationDetails
-                - originalRequestId
-                - privateLinkDetails
-                - processingTimeInMilliseconds
-                - resourceDisplayName
-                - resourceId
-                - resourceServicePrincipalId
-                - resourceTenantId
-                - riskDetail
-                - riskEventTypes_v2
-                - riskLevelAggregated
-                - riskLevelDuringSignIn
-                - riskState
-                - servicePrincipalCredentialKeyId
-                - servicePrincipalCredentialThumbprint
-                - servicePrincipalId
-                - servicePrincipalName
-                - sessionLifetimePolicies
-                - signInEventTypes
-                - signInIdentifier
-                - signInIdentifierType
-                - status
-                - tokenIssuerName
-                - tokenIssuerType
-                - uniqueTokenIdentifier
-                - userAgent
-                - userDisplayName
-                - userId
-                - userPrincipalName
-                - userType
-                - targetTenantId
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-              type: string
-      responses:
-        '200':
-          $ref: '#/components/responses/microsoft.graph.restrictedSignInCollectionResponse'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
-      x-ms-docs-operation-type: operation
-    post:
-      tags:
-        - auditLogs.restrictedSignIn
-      summary: Create new navigation property to restrictedSignIns for auditLogs
-      operationId: auditLogs_CreateRestrictedSignIns
-      requestBody:
-        description: New navigation property
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.restrictedSignIn'
-        required: true
-      responses:
-        '201':
-          description: Created navigation property.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.restrictedSignIn'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-  '/auditLogs/restrictedSignIns/{restrictedSignIn-id}':
-    get:
-      tags:
-        - auditLogs.restrictedSignIn
-      summary: Get restrictedSignIns from auditLogs
-      operationId: auditLogs_GetRestrictedSignIns
-      parameters:
-        - name: restrictedSignIn-id
-          in: path
-          description: 'key: id of restrictedSignIn'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: restrictedSignIn
-        - name: $select
-          in: query
-          description: Select properties to be returned
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - appDisplayName
-                - appId
-                - appliedConditionalAccessPolicies
-                - authenticationContextClassReferences
-                - authenticationDetails
-                - authenticationMethodsUsed
-                - authenticationProcessingDetails
-                - authenticationProtocol
-                - authenticationRequirement
-                - authenticationRequirementPolicies
-                - autonomousSystemNumber
-                - azureResourceId
-                - clientAppUsed
-                - clientCredentialType
-                - conditionalAccessStatus
-                - correlationId
-                - createdDateTime
-                - crossTenantAccessType
-                - deviceDetail
-                - federatedCredentialId
-                - flaggedForReview
-                - homeTenantId
-                - homeTenantName
-                - incomingTokenType
-                - ipAddress
-                - ipAddressFromResourceProvider
-                - isInteractive
-                - isTenantRestricted
-                - location
-                - mfaDetail
-                - networkLocationDetails
-                - originalRequestId
-                - privateLinkDetails
-                - processingTimeInMilliseconds
-                - resourceDisplayName
-                - resourceId
-                - resourceServicePrincipalId
-                - resourceTenantId
-                - riskDetail
-                - riskEventTypes_v2
-                - riskLevelAggregated
-                - riskLevelDuringSignIn
-                - riskState
-                - servicePrincipalCredentialKeyId
-                - servicePrincipalCredentialThumbprint
-                - servicePrincipalId
-                - servicePrincipalName
-                - sessionLifetimePolicies
-                - signInEventTypes
-                - signInIdentifier
-                - signInIdentifierType
-                - status
-                - tokenIssuerName
-                - tokenIssuerType
-                - uniqueTokenIdentifier
-                - userAgent
-                - userDisplayName
-                - userId
-                - userPrincipalName
-                - userType
-                - targetTenantId
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-              type: string
-      responses:
-        '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.restrictedSignIn'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    patch:
-      tags:
-        - auditLogs.restrictedSignIn
-      summary: Update the navigation property restrictedSignIns in auditLogs
-      operationId: auditLogs_UpdateRestrictedSignIns
-      parameters:
-        - name: restrictedSignIn-id
-          in: path
-          description: 'key: id of restrictedSignIn'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: restrictedSignIn
-      requestBody:
-        description: New navigation property values
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.restrictedSignIn'
-        required: true
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - auditLogs.restrictedSignIn
-      summary: Delete navigation property restrictedSignIns for auditLogs
-      operationId: auditLogs_DeleteRestrictedSignIns
-      parameters:
-        - name: restrictedSignIn-id
-          in: path
-          description: 'key: id of restrictedSignIn'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: restrictedSignIn
-        - name: If-Match
-          in: header
-          description: ETag
-          schema:
-            type: string
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   /auditLogs/signIns:
     get:
       tags:
@@ -1711,6 +1284,7 @@ paths:
       tags:
         - deviceManagement.deviceManagementReports
       summary: Get reports from deviceManagement
+      description: Reports singleton
       operationId: deviceManagement_GetReports
       parameters:
         - name: $select
@@ -1908,6 +1482,7 @@ paths:
       tags:
         - deviceManagement.deviceManagementReports
       summary: Get cachedReportConfigurations from deviceManagement
+      description: Entity representing the configuration of a cached report
       operationId: deviceManagement.reports_ListCachedReportConfigurations
       parameters:
         - $ref: '#/components/parameters/top'
@@ -2012,6 +1587,7 @@ paths:
       tags:
         - deviceManagement.deviceManagementReports
       summary: Get cachedReportConfigurations from deviceManagement
+      description: Entity representing the configuration of a cached report
       operationId: deviceManagement.reports_GetCachedReportConfigurations
       parameters:
         - name: deviceManagementCachedReportConfiguration-id
@@ -2118,6 +1694,7 @@ paths:
       tags:
         - deviceManagement.deviceManagementReports
       summary: Get exportJobs from deviceManagement
+      description: Entity representing a job to export a report
       operationId: deviceManagement.reports_ListExportJobs
       parameters:
         - $ref: '#/components/parameters/top'
@@ -2228,6 +1805,7 @@ paths:
       tags:
         - deviceManagement.deviceManagementReports
       summary: Get exportJobs from deviceManagement
+      description: Entity representing a job to export a report
       operationId: deviceManagement.reports_GetExportJobs
       parameters:
         - name: deviceManagementExportJob-id
@@ -2434,12 +2012,6 @@ paths:
               operationId: reports.getAttackSimulationTrainingUserCoverage
             getAzureADApplicationSignInSummary:
               operationId: reports.getAzureADApplicationSignInSummary
-            getAzureADFeatureUsage:
-              operationId: reports.getAzureADFeatureUsage
-            getAzureADLicenseUsage:
-              operationId: reports.getAzureADLicenseUsage
-            getAzureADUserFeatureUsage:
-              operationId: reports.getAzureADUserFeatureUsage
             getBrowserDistributionUserCounts:
               operationId: reports.getBrowserDistributionUserCounts
             getBrowserUserCounts:
@@ -2656,6 +2228,7 @@ paths:
       tags:
         - reports.applicationSignInDetailedSummary
       summary: Get applicationSignInDetailedSummary from reports
+      description: Represents a detailed summary of an application sign-in.
       operationId: reports_ListApplicationSignInDetailedSummary
       parameters:
         - $ref: '#/components/parameters/top'
@@ -2751,6 +2324,7 @@ paths:
       tags:
         - reports.applicationSignInDetailedSummary
       summary: Get applicationSignInDetailedSummary from reports
+      description: Represents a detailed summary of an application sign-in.
       operationId: reports_GetApplicationSignInDetailedSummary
       parameters:
         - name: applicationSignInDetailedSummary-id
@@ -2854,6 +2428,7 @@ paths:
       tags:
         - reports.authenticationMethodsRoot
       summary: Get authenticationMethods from reports
+      description: Container for navigation properties for Azure AD authentication methods resources.
       operationId: reports_GetAuthenticationMethods
       parameters:
         - name: $select
@@ -3029,6 +2604,7 @@ paths:
       tags:
         - reports.authenticationMethodsRoot
       summary: Get userRegistrationDetails from reports
+      description: 'Represents the state of a user''s authentication methods, including which methods are registered and which features the user is registered and capable of (such as multi-factor authentication, self-service password reset, and passwordless authentication).'
       operationId: reports.authenticationMethods_ListUserRegistrationDetails
       parameters:
         - $ref: '#/components/parameters/top'
@@ -3145,6 +2721,7 @@ paths:
       tags:
         - reports.authenticationMethodsRoot
       summary: Get userRegistrationDetails from reports
+      description: 'Represents the state of a user''s authentication methods, including which methods are registered and which features the user is registered and capable of (such as multi-factor authentication, self-service password reset, and passwordless authentication).'
       operationId: reports.authenticationMethods_GetUserRegistrationDetails
       parameters:
         - name: userRegistrationDetails-id
@@ -3255,6 +2832,7 @@ paths:
       tags:
         - reports.credentialUserRegistrationDetails
       summary: Get credentialUserRegistrationDetails from reports
+      description: Details of the usage of self-service password reset and multi-factor authentication (MFA) for all registered users.
       operationId: reports_ListCredentialUserRegistrationDetails
       parameters:
         - $ref: '#/components/parameters/top'
@@ -3356,6 +2934,7 @@ paths:
       tags:
         - reports.credentialUserRegistrationDetails
       summary: Get credentialUserRegistrationDetails from reports
+      description: Details of the usage of self-service password reset and multi-factor authentication (MFA) for all registered users.
       operationId: reports_GetCredentialUserRegistrationDetails
       parameters:
         - name: credentialUserRegistrationDetails-id
@@ -4253,6 +3832,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function deviceConfigurationDeviceActivity
+      description: Metadata for the device configuration device activity report
       operationId: reports_deviceConfigurationDeviceActivity
       responses:
         '200':
@@ -4269,6 +3849,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function deviceConfigurationUserActivity
+      description: Metadata for the device configuration user activity report
       operationId: reports_deviceConfigurationUserActivity
       responses:
         '200':
@@ -4396,92 +3977,6 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.applicationSignInSummary'
-                additionalProperties:
-                  type: object
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: function
-  '/reports/microsoft.graph.getAzureADFeatureUsage(period=''{period}'')':
-    get:
-      tags:
-        - reports.Functions
-      summary: Invoke function getAzureADFeatureUsage
-      operationId: reports_getAzureADFeatureUsage
-      parameters:
-        - name: period
-          in: path
-          description: 'Usage: period=''{period}'''
-          required: true
-          schema:
-            type: string
-      responses:
-        '200':
-          description: Success
-          content:
-            application/json:
-              schema:
-                title: Collection of reportRoot
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.azureADFeatureUsage'
-                additionalProperties:
-                  type: object
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: function
-  '/reports/microsoft.graph.getAzureADLicenseUsage(period=''{period}'')':
-    get:
-      tags:
-        - reports.Functions
-      summary: Invoke function getAzureADLicenseUsage
-      operationId: reports_getAzureADLicenseUsage
-      parameters:
-        - name: period
-          in: path
-          description: 'Usage: period=''{period}'''
-          required: true
-          schema:
-            type: string
-      responses:
-        '200':
-          description: Success
-          content:
-            application/json:
-              schema:
-                title: Collection of reportRoot
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.azureADLicenseUsage'
-                additionalProperties:
-                  type: object
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: function
-  /reports/microsoft.graph.getAzureADUserFeatureUsage():
-    get:
-      tags:
-        - reports.Functions
-      summary: Invoke function getAzureADUserFeatureUsage
-      operationId: reports_getAzureADUserFeatureUsage
-      responses:
-        '200':
-          description: Success
-          content:
-            application/json:
-              schema:
-                title: Collection of reportRoot
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.azureADUserFeatureUsage'
                 additionalProperties:
                   type: object
         default:
@@ -7690,6 +7185,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function managedDeviceEnrollmentAbandonmentDetails
+      description: Metadata for Enrollment abandonment details report
       operationId: reports_managedDeviceEnrollmentAbandonmentDetails
       parameters:
         - name: skip
@@ -7741,6 +7237,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function managedDeviceEnrollmentAbandonmentSummary
+      description: Metadata for Enrollment abandonment summary report
       operationId: reports_managedDeviceEnrollmentAbandonmentSummary
       parameters:
         - name: skip
@@ -7859,6 +7356,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function managedDeviceEnrollmentFailureTrends
+      description: Metadata for the enrollment failure trends report
       operationId: reports_managedDeviceEnrollmentFailureTrends
       responses:
         '200':
@@ -8707,6 +8205,7 @@ paths:
       tags:
         - reports.securityReportsRoot
       summary: Get security from reports
+      description: Provides the ability to launch a realistic simulated phishing attack that organizations can learn from.
       operationId: reports_GetSecurity
       parameters:
         - name: $select
@@ -8862,6 +8361,7 @@ paths:
       tags:
         - reports.userCredentialUsageDetails
       summary: Get userCredentialUsageDetails from reports
+      description: Represents the self-service password reset (SSPR) usage for a given tenant.
       operationId: reports_ListUserCredentialUsageDetails
       parameters:
         - $ref: '#/components/parameters/top'
@@ -8963,6 +8463,7 @@ paths:
       tags:
         - reports.userCredentialUsageDetails
       summary: Get userCredentialUsageDetails from reports
+      description: Represents the self-service password reset (SSPR) usage for a given tenant.
       operationId: reports_GetUserCredentialUsageDetails
       parameters:
         - name: userCredentialUsageDetails-id
@@ -9066,33 +8567,27 @@ paths:
 components:
   schemas:
     microsoft.graph.auditLogRoot:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: auditLogRoot
-          type: object
-          properties:
-            directoryAudits:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.directoryAudit'
-            directoryProvisioning:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.provisioningObjectSummary'
-            provisioning:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.provisioningObjectSummary'
-            restrictedSignIns:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.restrictedSignIn'
-            signIns:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.signIn'
-          additionalProperties:
-            type: object
+      title: auditLogRoot
+      type: object
+      properties:
+        directoryAudits:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.directoryAudit'
+        directoryProvisioning:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.provisioningObjectSummary'
+        provisioning:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.provisioningObjectSummary'
+        signIns:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.signIn'
+      additionalProperties:
+        type: object
     microsoft.graph.directoryAudit:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -9210,19 +8705,6 @@ components:
             tenantId:
               type: string
               description: Unique Azure AD tenant ID.
-              nullable: true
-          additionalProperties:
-            type: object
-    microsoft.graph.restrictedSignIn:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.signIn'
-        - title: restrictedSignIn
-          type: object
-          properties:
-            targetTenantId:
-              pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
-              type: string
-              format: uuid
               nullable: true
           additionalProperties:
             type: object
@@ -9920,70 +9402,6 @@ components:
               type: number
               description: Percentage of successful sign-ins made by the application.
               format: double
-              nullable: true
-          additionalProperties:
-            type: object
-    microsoft.graph.azureADFeatureUsage:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: azureADFeatureUsage
-          type: object
-          properties:
-            featureName:
-              type: string
-            snapshotDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              format: date-time
-            usage:
-              maximum: 2147483647
-              minimum: -2147483648
-              type: integer
-              format: int32
-              nullable: true
-          additionalProperties:
-            type: object
-    microsoft.graph.azureADLicenseUsage:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: azureADLicenseUsage
-          type: object
-          properties:
-            licenseInfoDetails:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.licenseInfoDetail'
-            snapshotDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              format: date-time
-          additionalProperties:
-            type: object
-    microsoft.graph.azureADUserFeatureUsage:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: azureADUserFeatureUsage
-          type: object
-          properties:
-            featureUsageDetails:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.featureUsageDetail'
-            lastUpdatedDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              format: date-time
-            licenseAssigned:
-              $ref: '#/components/schemas/microsoft.graph.azureADLicenseType'
-            licenseRecommended:
-              $ref: '#/components/schemas/microsoft.graph.azureADLicenseType'
-            userDisplayName:
-              type: string
-              nullable: true
-            userId:
-              type: string
-            userPrincipalName:
-              type: string
               nullable: true
           additionalProperties:
             type: object
@@ -10722,11 +10140,11 @@ components:
       properties:
         key:
           type: string
-          description: 'Contains the name of the field that a value is associated with. When a sign in or domain hint is included in the sign-in request, corresponding fields are included as key-value pairs. Possible keys: Login hint present, Domain hint present.'
+          description: Key.
           nullable: true
         value:
           type: string
-          description: Contains the corresponding value for the specified key. The value is true if a sign in hint was included in the sign-in request; otherwise false. The value is true if a domain hint was included in the sign-in request; otherwise false.
+          description: Value.
           nullable: true
       additionalProperties:
         type: object
@@ -11165,6 +10583,7 @@ components:
         - unknownFutureValue
         - adminConfirmedServicePrincipalCompromised
         - adminDismissedAllRiskForServicePrincipal
+        - m365DAdminDismissedDetection
       type: string
     microsoft.graph.riskLevel:
       title: riskLevel
@@ -11280,7 +10699,9 @@ components:
       title: deviceManagementReportFileFormat
       enum:
         - csv
+        - pdf
         - json
+        - unknownFutureValue
       type: string
       description: Possible values for the file format of a report
       x-ms-enum:
@@ -11290,9 +10711,15 @@ components:
           - value: csv
             description: CSV Format
             name: csv
+          - value: pdf
+            description: PDF Format (Deprecate later)
+            name: pdf
           - value: json
             description: JSON Format
             name: json
+          - value: unknownFutureValue
+            description: Evolvable enumeration sentinel value. Do not use.
+            name: unknownFutureValue
     microsoft.graph.deviceManagementExportJobLocalizationType:
       title: deviceManagementExportJobLocalizationType
       enum:
@@ -11423,65 +10850,6 @@ components:
           $ref: '#/components/schemas/microsoft.graph.trainingStatus'
       additionalProperties:
         type: object
-    microsoft.graph.licenseInfoDetail:
-      title: licenseInfoDetail
-      type: object
-      properties:
-        licenseType:
-          $ref: '#/components/schemas/microsoft.graph.azureADLicenseType'
-        totalAssignedCount:
-          maximum: 2147483647
-          minimum: -2147483648
-          type: integer
-          format: int32
-          nullable: true
-        totalLicenseCount:
-          maximum: 2147483647
-          minimum: -2147483648
-          type: integer
-          format: int32
-          nullable: true
-        totalUsageCount:
-          maximum: 2147483647
-          minimum: -2147483648
-          type: integer
-          format: int32
-          nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.featureUsageDetail:
-      title: featureUsageDetail
-      type: object
-      properties:
-        featureName:
-          type: string
-          nullable: true
-        lastConfiguredDateTime:
-          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-          type: string
-          format: date-time
-          nullable: true
-        lastUsedDateTime:
-          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-          type: string
-          format: date-time
-          nullable: true
-        licenseAssigned:
-          $ref: '#/components/schemas/microsoft.graph.azureADLicenseType'
-        licenseRequired:
-          $ref: '#/components/schemas/microsoft.graph.azureADLicenseType'
-      additionalProperties:
-        type: object
-    microsoft.graph.azureADLicenseType:
-      title: azureADLicenseType
-      enum:
-        - none
-        - free
-        - basic
-        - premiumP1
-        - premiumP2
-        - unknownFutureValue
-      type: string
     microsoft.graph.usageAuthMethod:
       title: usageAuthMethod
       enum:
@@ -11565,15 +10933,6 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    microsoft.graph.ODataErrors.ODataError:
-      required:
-        - error
-      type: object
-      properties:
-        error:
-          $ref: '#/components/schemas/microsoft.graph.ODataErrors.MainError'
-      additionalProperties:
-        type: object
     microsoft.graph.directoryAuditCollectionResponse:
       title: Collection of directoryAudit
       type: object
@@ -11594,18 +10953,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.provisioningObjectSummary'
-        '@odata.nextLink':
-          type: string
-      additionalProperties:
-        type: object
-    microsoft.graph.restrictedSignInCollectionResponse:
-      title: Collection of restrictedSignIn
-      type: object
-      properties:
-        value:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.restrictedSignIn'
         '@odata.nextLink':
           type: string
       additionalProperties:
@@ -11769,11 +11116,11 @@ components:
       properties:
         displayName:
           type: string
-          description: 'The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
+          description: The display name of the identity. This property is read-only.
           nullable: true
         id:
           type: string
-          description: Unique identifier for the identity.
+          description: The identifier of the identity. This property is read-only.
           nullable: true
       additionalProperties:
         type: object
@@ -11995,27 +11342,6 @@ components:
         - mfaRegistered
         - unknownFutureValue
       type: string
-    microsoft.graph.ODataErrors.MainError:
-      required:
-        - code
-        - message
-      type: object
-      properties:
-        code:
-          type: string
-        message:
-          type: string
-        target:
-          type: string
-          nullable: true
-        details:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.ODataErrors.ErrorDetails'
-        innererror:
-          $ref: '#/components/schemas/microsoft.graph.ODataErrors.InnerError'
-      additionalProperties:
-        type: object
     microsoft.graph.provisioningStatusErrorCategory:
       title: provisioningStatusErrorCategory
       enum:
@@ -12051,33 +11377,9 @@ components:
         - deviceFilterIncludeRuleNotMatched
         - allDeviceStates
       type: string
-    microsoft.graph.ODataErrors.ErrorDetails:
-      required:
-        - code
-        - message
-      type: object
-      properties:
-        code:
-          type: string
-        message:
-          type: string
-        target:
-          type: string
-          nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.ODataErrors.InnerError:
-      type: object
-      additionalProperties:
-        type: object
-      description: The structure of this object is service-specific
   responses:
     error:
       description: error
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/microsoft.graph.ODataErrors.ODataError'
     microsoft.graph.directoryAuditCollectionResponse:
       description: Retrieved collection
       content:
@@ -12090,12 +11392,6 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.provisioningObjectSummaryCollectionResponse'
-    microsoft.graph.restrictedSignInCollectionResponse:
-      description: Retrieved collection
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/microsoft.graph.restrictedSignInCollectionResponse'
     microsoft.graph.signInCollectionResponse:
       description: Retrieved collection
       content:

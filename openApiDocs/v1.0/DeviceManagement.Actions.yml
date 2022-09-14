@@ -276,6 +276,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action bypassActivationLock
+      description: Bypass activation lock
       operationId: deviceManagement.managedDevices_bypassActivationLock
       parameters:
         - name: managedDevice-id
@@ -296,6 +297,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action cleanWindowsDevice
+      description: Clean Windows device
       operationId: deviceManagement.managedDevices_cleanWindowsDevice
       parameters:
         - name: managedDevice-id
@@ -329,6 +331,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action deleteUserFromSharedAppleDevice
+      description: Delete user from shared Apple device
       operationId: deviceManagement.managedDevices_deleteUserFromSharedAppleDevice
       parameters:
         - name: managedDevice-id
@@ -362,6 +365,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action disableLostMode
+      description: Disable lost mode
       operationId: deviceManagement.managedDevices_disableLostMode
       parameters:
         - name: managedDevice-id
@@ -382,6 +386,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action locateDevice
+      description: Locate a device
       operationId: deviceManagement.managedDevices_locateDevice
       parameters:
         - name: managedDevice-id
@@ -402,6 +407,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action logoutSharedAppleDeviceActiveUser
+      description: Logout shared Apple device active user
       operationId: deviceManagement.managedDevices_logoutSharedAppleDeviceActiveUser
       parameters:
         - name: managedDevice-id
@@ -422,6 +428,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action rebootNow
+      description: Reboot device
       operationId: deviceManagement.managedDevices_rebootNow
       parameters:
         - name: managedDevice-id
@@ -442,6 +449,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action recoverPasscode
+      description: Recover passcode
       operationId: deviceManagement.managedDevices_recoverPasscode
       parameters:
         - name: managedDevice-id
@@ -462,6 +470,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action remoteLock
+      description: Remote lock
       operationId: deviceManagement.managedDevices_remoteLock
       parameters:
         - name: managedDevice-id
@@ -482,6 +491,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action requestRemoteAssistance
+      description: Request remote assistance
       operationId: deviceManagement.managedDevices_requestRemoteAssistance
       parameters:
         - name: managedDevice-id
@@ -502,6 +512,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action resetPasscode
+      description: Reset passcode
       operationId: deviceManagement.managedDevices_resetPasscode
       parameters:
         - name: managedDevice-id
@@ -522,6 +533,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action retire
+      description: Retire a device
       operationId: deviceManagement.managedDevices_retire
       parameters:
         - name: managedDevice-id
@@ -542,6 +554,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action shutDown
+      description: Shut down device
       operationId: deviceManagement.managedDevices_shutDown
       parameters:
         - name: managedDevice-id
@@ -667,6 +680,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action wipe
+      description: Wipe a device
       operationId: deviceManagement.managedDevices_wipe
       parameters:
         - name: managedDevice-id
@@ -712,6 +726,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action sendTestMessage
+      description: Sends test message using the specified notificationMessageTemplate in the default locale
       operationId: deviceManagement.notificationMessageTemplates_sendTestMessage
       parameters:
         - name: notificationMessageTemplate-id
@@ -732,6 +747,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action beginOnboarding
+      description: A request to start onboarding.  Must be coupled with the appropriate TeamViewer account information
       operationId: deviceManagement.remoteAssistancePartners_beginOnboarding
       parameters:
         - name: remoteAssistancePartner-id
@@ -752,6 +768,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action disconnect
+      description: A request to remove the active TeamViewer connector
       operationId: deviceManagement.remoteAssistancePartners_disconnect
       parameters:
         - name: remoteAssistancePartner-id
@@ -1987,6 +2004,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action assignUserToDevice
+      description: Assigns user to Autopilot devices.
       operationId: deviceManagement.windowsAutopilotDeviceIdentities_assignUserToDevice
       parameters:
         - name: windowsAutopilotDeviceIdentity-id
@@ -2023,6 +2041,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action unassignUserFromDevice
+      description: Unassigns the user from an Autopilot device.
       operationId: deviceManagement.windowsAutopilotDeviceIdentities_unassignUserFromDevice
       parameters:
         - name: windowsAutopilotDeviceIdentity-id
@@ -2043,6 +2062,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action updateDeviceProperties
+      description: Updates properties on Autopilot devices.
       operationId: deviceManagement.windowsAutopilotDeviceIdentities_updateDeviceProperties
       parameters:
         - name: windowsAutopilotDeviceIdentity-id
@@ -2223,11 +2243,7 @@ components:
       additionalProperties:
         type: object
     microsoft.graph.deviceAndAppManagementAssignmentTarget:
-      title: deviceAndAppManagementAssignmentTarget
-      type: object
-      additionalProperties:
-        type: object
-      description: Base type for assignment targets.
+      description: Target for the compliance policy assignment.
     microsoft.graph.deviceComplianceActionItem:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -2256,27 +2272,7 @@ components:
             type: object
           description: Scheduled Action Configuration
     microsoft.graph.importedWindowsAutopilotDeviceIdentityState:
-      title: importedWindowsAutopilotDeviceIdentityState
-      type: object
-      properties:
-        deviceErrorCode:
-          maximum: 2147483647
-          minimum: -2147483648
-          type: integer
-          description: Device error code reported by Device Directory Service(DDS).
-          format: int32
-        deviceErrorName:
-          type: string
-          description: Device error name reported by Device Directory Service(DDS).
-          nullable: true
-        deviceImportStatus:
-          $ref: '#/components/schemas/microsoft.graph.importedWindowsAutopilotDeviceIdentityImportStatus'
-        deviceRegistrationId:
-          type: string
-          description: Device Registration ID for successfully added device reported by Device Directory Service(DDS).
-          nullable: true
-      additionalProperties:
-        type: object
+      description: Current state of the imported device.
     microsoft.graph.windowsDeviceAccount:
       title: windowsDeviceAccount
       type: object
@@ -2285,15 +2281,6 @@ components:
           type: string
           description: Not yet documented
           nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.ODataErrors.ODataError:
-      required:
-        - error
-      type: object
-      properties:
-        error:
-          $ref: '#/components/schemas/microsoft.graph.ODataErrors.MainError'
       additionalProperties:
         type: object
     microsoft.graph.deviceComplianceActionType:
@@ -2333,82 +2320,9 @@ components:
           - value: pushNotification
             description: Send push notification to device
             name: pushNotification
-    microsoft.graph.importedWindowsAutopilotDeviceIdentityImportStatus:
-      title: importedWindowsAutopilotDeviceIdentityImportStatus
-      enum:
-        - unknown
-        - pending
-        - partial
-        - complete
-        - error
-      type: string
-      x-ms-enum:
-        name: importedWindowsAutopilotDeviceIdentityImportStatus
-        modelAsString: false
-        values:
-          - value: unknown
-            description: Unknown status.
-            name: unknown
-          - value: pending
-            description: Pending status.
-            name: pending
-          - value: partial
-            description: Partial status.
-            name: partial
-          - value: complete
-            description: Complete status.
-            name: complete
-          - value: error
-            description: Error status.
-            name: error
-    microsoft.graph.ODataErrors.MainError:
-      required:
-        - code
-        - message
-      type: object
-      properties:
-        code:
-          type: string
-        message:
-          type: string
-        target:
-          type: string
-          nullable: true
-        details:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.ODataErrors.ErrorDetails'
-        innererror:
-          $ref: '#/components/schemas/microsoft.graph.ODataErrors.InnerError'
-      additionalProperties:
-        type: object
-    microsoft.graph.ODataErrors.ErrorDetails:
-      required:
-        - code
-        - message
-      type: object
-      properties:
-        code:
-          type: string
-        message:
-          type: string
-        target:
-          type: string
-          nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.ODataErrors.InnerError:
-      type: object
-      additionalProperties:
-        type: object
-      description: The structure of this object is service-specific
   responses:
     error:
       description: error
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/microsoft.graph.ODataErrors.ODataError'
   securitySchemes:
     azureaadv2:
       type: oauth2

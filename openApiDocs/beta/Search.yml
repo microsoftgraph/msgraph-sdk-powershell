@@ -565,6 +565,7 @@ paths:
       tags:
         - external.externalConnection
       summary: Get members from external
+      description: 'A member added to an externalGroup. You can add Azure Active Directory users, Azure Active Directory groups, or other externalGroups as members.'
       operationId: external.connections.groups_ListMembers
       parameters:
         - name: externalConnection-id
@@ -677,6 +678,7 @@ paths:
       tags:
         - external.externalConnection
       summary: Get members from external
+      description: 'A member added to an externalGroup. You can add Azure Active Directory users, Azure Active Directory groups, or other externalGroups as members.'
       operationId: external.connections.groups_GetMembers
       parameters:
         - name: externalConnection-id
@@ -1056,6 +1058,7 @@ paths:
       tags:
         - external.externalConnection
       summary: Get activities from external
+      description: Write-only property. Returns results.
       operationId: external.connections.items_ListActivities
       parameters:
         - name: externalConnection-id
@@ -1173,6 +1176,7 @@ paths:
       tags:
         - external.externalConnection
       summary: Get activities from external
+      description: Write-only property. Returns results.
       operationId: external.connections.items_GetActivities
       parameters:
         - name: externalConnection-id
@@ -1324,6 +1328,7 @@ paths:
       tags:
         - external.externalConnection
       summary: Get performedBy from external
+      description: Represents an identity used to identify who is responsible for the activity.
       operationId: external.connections.items.activities_GetPerformedGraphBPre
       parameters:
         - name: externalConnection-id
@@ -1706,6 +1711,56 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - external.externalConnection
+      summary: Update the navigation property quota in external
+      operationId: external.connections_UpdateQuota
+      parameters:
+        - name: externalConnection-id
+          in: path
+          description: 'key: id of externalConnection'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: externalConnection
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.externalConnectors.connectionQuota'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - external.externalConnection
+      summary: Delete navigation property quota for external
+      operationId: external.connections_DeleteQuota
+      parameters:
+        - name: externalConnection-id
+          in: path
+          description: 'key: id of externalConnection'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: externalConnection
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/external/connections/{externalConnection-id}/schema':
     get:
       tags:
@@ -1885,6 +1940,7 @@ paths:
       tags:
         - search.acronym
       summary: Get acronyms from search
+      description: Administrative answer in Microsoft Search results to define common acronyms in a organization.
       operationId: search_ListAcronyms
       parameters:
         - $ref: '#/components/parameters/top'
@@ -1986,6 +2042,7 @@ paths:
       tags:
         - search.acronym
       summary: Get acronyms from search
+      description: Administrative answer in Microsoft Search results to define common acronyms in a organization.
       operationId: search_GetAcronyms
       parameters:
         - name: acronym-id
@@ -2091,6 +2148,7 @@ paths:
       tags:
         - search.bookmark
       summary: Get bookmarks from search
+      description: Administrative answer in Microsoft Search results for common search queries in an organization.
       operationId: search_ListBookmarks
       parameters:
         - $ref: '#/components/parameters/top'
@@ -2219,6 +2277,7 @@ paths:
       tags:
         - search.bookmark
       summary: Get bookmarks from search
+      description: Administrative answer in Microsoft Search results for common search queries in an organization.
       operationId: search_GetBookmarks
       parameters:
         - name: bookmark-id
@@ -2371,6 +2430,7 @@ paths:
       tags:
         - search.qna
       summary: Get qnas from search
+      description: Administrative answer in Microsoft Search results which provide answers for specific search keywords in an organization.
       operationId: search_ListQnas
       parameters:
         - $ref: '#/components/parameters/top'
@@ -2493,6 +2553,7 @@ paths:
       tags:
         - search.qna
       summary: Get qnas from search
+      description: Administrative answer in Microsoft Search results which provide answers for specific search keywords in an organization.
       operationId: search_GetQnas
       parameters:
         - name: qna-id
@@ -3482,15 +3543,6 @@ components:
           type: object
           additionalProperties:
             type: object
-    microsoft.graph.ODataErrors.ODataError:
-      required:
-        - error
-      type: object
-      properties:
-        error:
-          $ref: '#/components/schemas/microsoft.graph.ODataErrors.MainError'
-      additionalProperties:
-        type: object
     microsoft.graph.externalConnectors.externalConnectionCollectionResponse:
       title: Collection of externalConnection
       type: object
@@ -3877,27 +3929,6 @@ components:
       type: object
       additionalProperties:
         type: object
-    microsoft.graph.ODataErrors.MainError:
-      required:
-        - code
-        - message
-      type: object
-      properties:
-        code:
-          type: string
-        message:
-          type: string
-        target:
-          type: string
-          nullable: true
-        details:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.ODataErrors.ErrorDetails'
-        innererror:
-          $ref: '#/components/schemas/microsoft.graph.ODataErrors.InnerError'
-      additionalProperties:
-        type: object
     microsoft.graph.Json:
       title: Json
       type: object
@@ -3998,26 +4029,6 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    microsoft.graph.ODataErrors.ErrorDetails:
-      required:
-        - code
-        - message
-      type: object
-      properties:
-        code:
-          type: string
-        message:
-          type: string
-        target:
-          type: string
-          nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.ODataErrors.InnerError:
-      type: object
-      additionalProperties:
-        type: object
-      description: The structure of this object is service-specific
     microsoft.graph.externalConnectors.ruleOperation:
       title: ruleOperation
       enum:
@@ -4040,10 +4051,6 @@ components:
   responses:
     error:
       description: error
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/microsoft.graph.ODataErrors.ODataError'
     microsoft.graph.externalConnectors.externalConnectionCollectionResponse:
       description: Retrieved collection
       content:

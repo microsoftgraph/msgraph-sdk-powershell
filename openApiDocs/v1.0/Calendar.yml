@@ -11,6 +11,7 @@ paths:
       tags:
         - groups.calendar
       summary: Get calendar from groups
+      description: The group's calendar. Read-only.
       operationId: groups_GetCalendar
       parameters:
         - name: group-id
@@ -140,6 +141,7 @@ paths:
       tags:
         - groups.calendar
       summary: Get calendarPermissions from groups
+      description: The permissions of the users with whom the calendar is shared.
       operationId: groups.calendar_ListCalendarPermissions
       parameters:
         - name: group-id
@@ -237,6 +239,7 @@ paths:
       tags:
         - groups.calendar
       summary: Get calendarPermissions from groups
+      description: The permissions of the users with whom the calendar is shared.
       operationId: groups.calendar_GetCalendarPermissions
       parameters:
         - name: group-id
@@ -349,6 +352,7 @@ paths:
       tags:
         - groups.calendar
       summary: Get calendarView from groups
+      description: The calendar view for the calendar. Navigation property. Read-only.
       operationId: groups.calendar_ListCalendarView
       parameters:
         - name: group-id
@@ -569,6 +573,7 @@ paths:
       tags:
         - groups.calendar
       summary: Get calendarView from groups
+      description: The calendar view for the calendar. Navigation property. Read-only.
       operationId: groups.calendar_GetCalendarView
       parameters:
         - name: group-id
@@ -779,6 +784,7 @@ paths:
       tags:
         - groups.calendar
       summary: Get attachments from groups
+      description: 'The collection of FileAttachment, ItemAttachment, and referenceAttachment attachments for the event. Navigation property. Read-only. Nullable.'
       operationId: groups.calendar.calendarView_ListAttachments
       parameters:
         - name: group-id
@@ -902,6 +908,7 @@ paths:
       tags:
         - groups.calendar
       summary: Get attachments from groups
+      description: 'The collection of FileAttachment, ItemAttachment, and referenceAttachment attachments for the event. Navigation property. Read-only. Nullable.'
       operationId: groups.calendar.calendarView_GetAttachments
       parameters:
         - name: group-id
@@ -1047,6 +1054,7 @@ paths:
       tags:
         - groups.calendar
       summary: Get calendar from groups
+      description: The calendar that contains the event. Navigation property. Read-only.
       operationId: groups.calendar.calendarView_GetCalendar
       parameters:
         - name: group-id
@@ -1134,6 +1142,7 @@ paths:
       tags:
         - groups.calendar
       summary: Get extensions from groups
+      description: The collection of open extensions defined for the event. Nullable.
       operationId: groups.calendar.calendarView_ListExtensions
       parameters:
         - name: group-id
@@ -1242,6 +1251,7 @@ paths:
       tags:
         - groups.calendar
       summary: Get extensions from groups
+      description: The collection of open extensions defined for the event. Nullable.
       operationId: groups.calendar.calendarView_GetExtensions
       parameters:
         - name: group-id
@@ -1382,6 +1392,7 @@ paths:
       tags:
         - groups.calendar
       summary: Get instances from groups
+      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.'
       operationId: groups.calendar.calendarView_ListInstances
       parameters:
         - name: group-id
@@ -1604,6 +1615,7 @@ paths:
       tags:
         - groups.calendar
       summary: Get instances from groups
+      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.'
       operationId: groups.calendar.calendarView_GetInstances
       parameters:
         - name: group-id
@@ -1829,6 +1841,7 @@ paths:
       tags:
         - groups.calendar
       summary: Get attachments from groups
+      description: 'The collection of FileAttachment, ItemAttachment, and referenceAttachment attachments for the event. Navigation property. Read-only. Nullable.'
       operationId: groups.calendar.calendarView.instances_ListAttachments
       parameters:
         - name: group-id
@@ -1966,6 +1979,7 @@ paths:
       tags:
         - groups.calendar
       summary: Get attachments from groups
+      description: 'The collection of FileAttachment, ItemAttachment, and referenceAttachment attachments for the event. Navigation property. Read-only. Nullable.'
       operationId: groups.calendar.calendarView.instances_GetAttachments
       parameters:
         - name: group-id
@@ -2132,6 +2146,7 @@ paths:
       tags:
         - groups.calendar
       summary: Get calendar from groups
+      description: The calendar that contains the event. Navigation property. Read-only.
       operationId: groups.calendar.calendarView.instances_GetCalendar
       parameters:
         - name: group-id
@@ -2231,6 +2246,7 @@ paths:
       tags:
         - groups.calendar
       summary: Get extensions from groups
+      description: The collection of open extensions defined for the event. Nullable.
       operationId: groups.calendar.calendarView.instances_ListExtensions
       parameters:
         - name: group-id
@@ -2353,6 +2369,7 @@ paths:
       tags:
         - groups.calendar
       summary: Get extensions from groups
+      description: The collection of open extensions defined for the event. Nullable.
       operationId: groups.calendar.calendarView.instances_GetExtensions
       parameters:
         - name: group-id
@@ -2514,6 +2531,7 @@ paths:
       tags:
         - groups.calendar
       summary: Get multiValueExtendedProperties from groups
+      description: The collection of multi-value extended properties defined for the event. Read-only. Nullable.
       operationId: groups.calendar.calendarView.instances_ListMultiValueExtendedProperties
       parameters:
         - name: group-id
@@ -2640,6 +2658,7 @@ paths:
       tags:
         - groups.calendar
       summary: Get multiValueExtendedProperties from groups
+      description: The collection of multi-value extended properties defined for the event. Read-only. Nullable.
       operationId: groups.calendar.calendarView.instances_GetMultiValueExtendedProperties
       parameters:
         - name: group-id
@@ -2802,6 +2821,7 @@ paths:
       tags:
         - groups.calendar
       summary: Get singleValueExtendedProperties from groups
+      description: The collection of single-value extended properties defined for the event. Read-only. Nullable.
       operationId: groups.calendar.calendarView.instances_ListSingleValueExtendedProperties
       parameters:
         - name: group-id
@@ -2928,6 +2948,7 @@ paths:
       tags:
         - groups.calendar
       summary: Get singleValueExtendedProperties from groups
+      description: The collection of single-value extended properties defined for the event. Read-only. Nullable.
       operationId: groups.calendar.calendarView.instances_GetSingleValueExtendedProperties
       parameters:
         - name: group-id
@@ -3090,6 +3111,7 @@ paths:
       tags:
         - groups.calendar
       summary: Get multiValueExtendedProperties from groups
+      description: The collection of multi-value extended properties defined for the event. Read-only. Nullable.
       operationId: groups.calendar.calendarView_ListMultiValueExtendedProperties
       parameters:
         - name: group-id
@@ -3202,6 +3224,7 @@ paths:
       tags:
         - groups.calendar
       summary: Get multiValueExtendedProperties from groups
+      description: The collection of multi-value extended properties defined for the event. Read-only. Nullable.
       operationId: groups.calendar.calendarView_GetMultiValueExtendedProperties
       parameters:
         - name: group-id
@@ -3343,6 +3366,7 @@ paths:
       tags:
         - groups.calendar
       summary: Get singleValueExtendedProperties from groups
+      description: The collection of single-value extended properties defined for the event. Read-only. Nullable.
       operationId: groups.calendar.calendarView_ListSingleValueExtendedProperties
       parameters:
         - name: group-id
@@ -3455,6 +3479,7 @@ paths:
       tags:
         - groups.calendar
       summary: Get singleValueExtendedProperties from groups
+      description: The collection of single-value extended properties defined for the event. Read-only. Nullable.
       operationId: groups.calendar.calendarView_GetSingleValueExtendedProperties
       parameters:
         - name: group-id
@@ -3596,6 +3621,7 @@ paths:
       tags:
         - groups.calendar
       summary: Get events from groups
+      description: The events in the calendar. Navigation property. Read-only.
       operationId: groups.calendar_ListEvents
       parameters:
         - name: group-id
@@ -3804,6 +3830,7 @@ paths:
       tags:
         - groups.calendar
       summary: Get events from groups
+      description: The events in the calendar. Navigation property. Read-only.
       operationId: groups.calendar_GetEvents
       parameters:
         - name: group-id
@@ -4002,6 +4029,7 @@ paths:
       tags:
         - groups.calendar
       summary: Get attachments from groups
+      description: 'The collection of FileAttachment, ItemAttachment, and referenceAttachment attachments for the event. Navigation property. Read-only. Nullable.'
       operationId: groups.calendar.events_ListAttachments
       parameters:
         - name: group-id
@@ -4125,6 +4153,7 @@ paths:
       tags:
         - groups.calendar
       summary: Get attachments from groups
+      description: 'The collection of FileAttachment, ItemAttachment, and referenceAttachment attachments for the event. Navigation property. Read-only. Nullable.'
       operationId: groups.calendar.events_GetAttachments
       parameters:
         - name: group-id
@@ -4270,6 +4299,7 @@ paths:
       tags:
         - groups.calendar
       summary: Get calendar from groups
+      description: The calendar that contains the event. Navigation property. Read-only.
       operationId: groups.calendar.events_GetCalendar
       parameters:
         - name: group-id
@@ -4357,6 +4387,7 @@ paths:
       tags:
         - groups.calendar
       summary: Get extensions from groups
+      description: The collection of open extensions defined for the event. Nullable.
       operationId: groups.calendar.events_ListExtensions
       parameters:
         - name: group-id
@@ -4465,6 +4496,7 @@ paths:
       tags:
         - groups.calendar
       summary: Get extensions from groups
+      description: The collection of open extensions defined for the event. Nullable.
       operationId: groups.calendar.events_GetExtensions
       parameters:
         - name: group-id
@@ -4605,6 +4637,7 @@ paths:
       tags:
         - groups.calendar
       summary: Get instances from groups
+      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.'
       operationId: groups.calendar.events_ListInstances
       parameters:
         - name: group-id
@@ -4827,6 +4860,7 @@ paths:
       tags:
         - groups.calendar
       summary: Get instances from groups
+      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.'
       operationId: groups.calendar.events_GetInstances
       parameters:
         - name: group-id
@@ -5052,6 +5086,7 @@ paths:
       tags:
         - groups.calendar
       summary: Get attachments from groups
+      description: 'The collection of FileAttachment, ItemAttachment, and referenceAttachment attachments for the event. Navigation property. Read-only. Nullable.'
       operationId: groups.calendar.events.instances_ListAttachments
       parameters:
         - name: group-id
@@ -5189,6 +5224,7 @@ paths:
       tags:
         - groups.calendar
       summary: Get attachments from groups
+      description: 'The collection of FileAttachment, ItemAttachment, and referenceAttachment attachments for the event. Navigation property. Read-only. Nullable.'
       operationId: groups.calendar.events.instances_GetAttachments
       parameters:
         - name: group-id
@@ -5355,6 +5391,7 @@ paths:
       tags:
         - groups.calendar
       summary: Get calendar from groups
+      description: The calendar that contains the event. Navigation property. Read-only.
       operationId: groups.calendar.events.instances_GetCalendar
       parameters:
         - name: group-id
@@ -5454,6 +5491,7 @@ paths:
       tags:
         - groups.calendar
       summary: Get extensions from groups
+      description: The collection of open extensions defined for the event. Nullable.
       operationId: groups.calendar.events.instances_ListExtensions
       parameters:
         - name: group-id
@@ -5576,6 +5614,7 @@ paths:
       tags:
         - groups.calendar
       summary: Get extensions from groups
+      description: The collection of open extensions defined for the event. Nullable.
       operationId: groups.calendar.events.instances_GetExtensions
       parameters:
         - name: group-id
@@ -5737,6 +5776,7 @@ paths:
       tags:
         - groups.calendar
       summary: Get multiValueExtendedProperties from groups
+      description: The collection of multi-value extended properties defined for the event. Read-only. Nullable.
       operationId: groups.calendar.events.instances_ListMultiValueExtendedProperties
       parameters:
         - name: group-id
@@ -5863,6 +5903,7 @@ paths:
       tags:
         - groups.calendar
       summary: Get multiValueExtendedProperties from groups
+      description: The collection of multi-value extended properties defined for the event. Read-only. Nullable.
       operationId: groups.calendar.events.instances_GetMultiValueExtendedProperties
       parameters:
         - name: group-id
@@ -6025,6 +6066,7 @@ paths:
       tags:
         - groups.calendar
       summary: Get singleValueExtendedProperties from groups
+      description: The collection of single-value extended properties defined for the event. Read-only. Nullable.
       operationId: groups.calendar.events.instances_ListSingleValueExtendedProperties
       parameters:
         - name: group-id
@@ -6151,6 +6193,7 @@ paths:
       tags:
         - groups.calendar
       summary: Get singleValueExtendedProperties from groups
+      description: The collection of single-value extended properties defined for the event. Read-only. Nullable.
       operationId: groups.calendar.events.instances_GetSingleValueExtendedProperties
       parameters:
         - name: group-id
@@ -6313,6 +6356,7 @@ paths:
       tags:
         - groups.calendar
       summary: Get multiValueExtendedProperties from groups
+      description: The collection of multi-value extended properties defined for the event. Read-only. Nullable.
       operationId: groups.calendar.events_ListMultiValueExtendedProperties
       parameters:
         - name: group-id
@@ -6425,6 +6469,7 @@ paths:
       tags:
         - groups.calendar
       summary: Get multiValueExtendedProperties from groups
+      description: The collection of multi-value extended properties defined for the event. Read-only. Nullable.
       operationId: groups.calendar.events_GetMultiValueExtendedProperties
       parameters:
         - name: group-id
@@ -6566,6 +6611,7 @@ paths:
       tags:
         - groups.calendar
       summary: Get singleValueExtendedProperties from groups
+      description: The collection of single-value extended properties defined for the event. Read-only. Nullable.
       operationId: groups.calendar.events_ListSingleValueExtendedProperties
       parameters:
         - name: group-id
@@ -6678,6 +6724,7 @@ paths:
       tags:
         - groups.calendar
       summary: Get singleValueExtendedProperties from groups
+      description: The collection of single-value extended properties defined for the event. Read-only. Nullable.
       operationId: groups.calendar.events_GetSingleValueExtendedProperties
       parameters:
         - name: group-id
@@ -6819,6 +6866,7 @@ paths:
       tags:
         - groups.calendar
       summary: Get multiValueExtendedProperties from groups
+      description: The collection of multi-value extended properties defined for the calendar. Read-only. Nullable.
       operationId: groups.calendar_ListMultiValueExtendedProperties
       parameters:
         - name: group-id
@@ -6917,6 +6965,7 @@ paths:
       tags:
         - groups.calendar
       summary: Get multiValueExtendedProperties from groups
+      description: The collection of multi-value extended properties defined for the calendar. Read-only. Nullable.
       operationId: groups.calendar_GetMultiValueExtendedProperties
       parameters:
         - name: group-id
@@ -7037,6 +7086,7 @@ paths:
       tags:
         - groups.calendar
       summary: Get singleValueExtendedProperties from groups
+      description: The collection of single-value extended properties defined for the calendar. Read-only. Nullable.
       operationId: groups.calendar_ListSingleValueExtendedProperties
       parameters:
         - name: group-id
@@ -7135,6 +7185,7 @@ paths:
       tags:
         - groups.calendar
       summary: Get singleValueExtendedProperties from groups
+      description: The collection of single-value extended properties defined for the calendar. Read-only. Nullable.
       operationId: groups.calendar_GetSingleValueExtendedProperties
       parameters:
         - name: group-id
@@ -7255,6 +7306,7 @@ paths:
       tags:
         - groups.event
       summary: Get calendarView from groups
+      description: The calendar view for the calendar. Read-only.
       operationId: groups_ListCalendarView
       parameters:
         - name: group-id
@@ -7475,6 +7527,7 @@ paths:
       tags:
         - groups.event
       summary: Get calendarView from groups
+      description: The calendar view for the calendar. Read-only.
       operationId: groups_GetCalendarView
       parameters:
         - name: group-id
@@ -7685,6 +7738,7 @@ paths:
       tags:
         - groups.event
       summary: Get attachments from groups
+      description: 'The collection of FileAttachment, ItemAttachment, and referenceAttachment attachments for the event. Navigation property. Read-only. Nullable.'
       operationId: groups.calendarView_ListAttachments
       parameters:
         - name: group-id
@@ -7808,6 +7862,7 @@ paths:
       tags:
         - groups.event
       summary: Get attachments from groups
+      description: 'The collection of FileAttachment, ItemAttachment, and referenceAttachment attachments for the event. Navigation property. Read-only. Nullable.'
       operationId: groups.calendarView_GetAttachments
       parameters:
         - name: group-id
@@ -7953,6 +8008,7 @@ paths:
       tags:
         - groups.event
       summary: Get calendar from groups
+      description: The calendar that contains the event. Navigation property. Read-only.
       operationId: groups.calendarView_GetCalendar
       parameters:
         - name: group-id
@@ -8040,6 +8096,7 @@ paths:
       tags:
         - groups.event
       summary: Get extensions from groups
+      description: The collection of open extensions defined for the event. Nullable.
       operationId: groups.calendarView_ListExtensions
       parameters:
         - name: group-id
@@ -8148,6 +8205,7 @@ paths:
       tags:
         - groups.event
       summary: Get extensions from groups
+      description: The collection of open extensions defined for the event. Nullable.
       operationId: groups.calendarView_GetExtensions
       parameters:
         - name: group-id
@@ -8288,6 +8346,7 @@ paths:
       tags:
         - groups.event
       summary: Get instances from groups
+      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.'
       operationId: groups.calendarView_ListInstances
       parameters:
         - name: group-id
@@ -8510,6 +8569,7 @@ paths:
       tags:
         - groups.event
       summary: Get instances from groups
+      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.'
       operationId: groups.calendarView_GetInstances
       parameters:
         - name: group-id
@@ -8735,6 +8795,7 @@ paths:
       tags:
         - groups.event
       summary: Get attachments from groups
+      description: 'The collection of FileAttachment, ItemAttachment, and referenceAttachment attachments for the event. Navigation property. Read-only. Nullable.'
       operationId: groups.calendarView.instances_ListAttachments
       parameters:
         - name: group-id
@@ -8872,6 +8933,7 @@ paths:
       tags:
         - groups.event
       summary: Get attachments from groups
+      description: 'The collection of FileAttachment, ItemAttachment, and referenceAttachment attachments for the event. Navigation property. Read-only. Nullable.'
       operationId: groups.calendarView.instances_GetAttachments
       parameters:
         - name: group-id
@@ -9038,6 +9100,7 @@ paths:
       tags:
         - groups.event
       summary: Get calendar from groups
+      description: The calendar that contains the event. Navigation property. Read-only.
       operationId: groups.calendarView.instances_GetCalendar
       parameters:
         - name: group-id
@@ -9137,6 +9200,7 @@ paths:
       tags:
         - groups.event
       summary: Get extensions from groups
+      description: The collection of open extensions defined for the event. Nullable.
       operationId: groups.calendarView.instances_ListExtensions
       parameters:
         - name: group-id
@@ -9259,6 +9323,7 @@ paths:
       tags:
         - groups.event
       summary: Get extensions from groups
+      description: The collection of open extensions defined for the event. Nullable.
       operationId: groups.calendarView.instances_GetExtensions
       parameters:
         - name: group-id
@@ -9420,6 +9485,7 @@ paths:
       tags:
         - groups.event
       summary: Get multiValueExtendedProperties from groups
+      description: The collection of multi-value extended properties defined for the event. Read-only. Nullable.
       operationId: groups.calendarView.instances_ListMultiValueExtendedProperties
       parameters:
         - name: group-id
@@ -9546,6 +9612,7 @@ paths:
       tags:
         - groups.event
       summary: Get multiValueExtendedProperties from groups
+      description: The collection of multi-value extended properties defined for the event. Read-only. Nullable.
       operationId: groups.calendarView.instances_GetMultiValueExtendedProperties
       parameters:
         - name: group-id
@@ -9708,6 +9775,7 @@ paths:
       tags:
         - groups.event
       summary: Get singleValueExtendedProperties from groups
+      description: The collection of single-value extended properties defined for the event. Read-only. Nullable.
       operationId: groups.calendarView.instances_ListSingleValueExtendedProperties
       parameters:
         - name: group-id
@@ -9834,6 +9902,7 @@ paths:
       tags:
         - groups.event
       summary: Get singleValueExtendedProperties from groups
+      description: The collection of single-value extended properties defined for the event. Read-only. Nullable.
       operationId: groups.calendarView.instances_GetSingleValueExtendedProperties
       parameters:
         - name: group-id
@@ -9996,6 +10065,7 @@ paths:
       tags:
         - groups.event
       summary: Get multiValueExtendedProperties from groups
+      description: The collection of multi-value extended properties defined for the event. Read-only. Nullable.
       operationId: groups.calendarView_ListMultiValueExtendedProperties
       parameters:
         - name: group-id
@@ -10108,6 +10178,7 @@ paths:
       tags:
         - groups.event
       summary: Get multiValueExtendedProperties from groups
+      description: The collection of multi-value extended properties defined for the event. Read-only. Nullable.
       operationId: groups.calendarView_GetMultiValueExtendedProperties
       parameters:
         - name: group-id
@@ -10249,6 +10320,7 @@ paths:
       tags:
         - groups.event
       summary: Get singleValueExtendedProperties from groups
+      description: The collection of single-value extended properties defined for the event. Read-only. Nullable.
       operationId: groups.calendarView_ListSingleValueExtendedProperties
       parameters:
         - name: group-id
@@ -10361,6 +10433,7 @@ paths:
       tags:
         - groups.event
       summary: Get singleValueExtendedProperties from groups
+      description: The collection of single-value extended properties defined for the event. Read-only. Nullable.
       operationId: groups.calendarView_GetSingleValueExtendedProperties
       parameters:
         - name: group-id
@@ -10502,6 +10575,7 @@ paths:
       tags:
         - groups.event
       summary: Get events from groups
+      description: The group's calendar events.
       operationId: groups_ListEvents
       parameters:
         - name: group-id
@@ -10710,6 +10784,7 @@ paths:
       tags:
         - groups.event
       summary: Get events from groups
+      description: The group's calendar events.
       operationId: groups_GetEvents
       parameters:
         - name: group-id
@@ -10908,6 +10983,7 @@ paths:
       tags:
         - groups.event
       summary: Get attachments from groups
+      description: 'The collection of FileAttachment, ItemAttachment, and referenceAttachment attachments for the event. Navigation property. Read-only. Nullable.'
       operationId: groups.events_ListAttachments
       parameters:
         - name: group-id
@@ -11031,6 +11107,7 @@ paths:
       tags:
         - groups.event
       summary: Get attachments from groups
+      description: 'The collection of FileAttachment, ItemAttachment, and referenceAttachment attachments for the event. Navigation property. Read-only. Nullable.'
       operationId: groups.events_GetAttachments
       parameters:
         - name: group-id
@@ -11176,6 +11253,7 @@ paths:
       tags:
         - groups.event
       summary: Get calendar from groups
+      description: The calendar that contains the event. Navigation property. Read-only.
       operationId: groups.events_GetCalendar
       parameters:
         - name: group-id
@@ -11263,6 +11341,7 @@ paths:
       tags:
         - groups.event
       summary: Get extensions from groups
+      description: The collection of open extensions defined for the event. Nullable.
       operationId: groups.events_ListExtensions
       parameters:
         - name: group-id
@@ -11371,6 +11450,7 @@ paths:
       tags:
         - groups.event
       summary: Get extensions from groups
+      description: The collection of open extensions defined for the event. Nullable.
       operationId: groups.events_GetExtensions
       parameters:
         - name: group-id
@@ -11511,6 +11591,7 @@ paths:
       tags:
         - groups.event
       summary: Get instances from groups
+      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.'
       operationId: groups.events_ListInstances
       parameters:
         - name: group-id
@@ -11733,6 +11814,7 @@ paths:
       tags:
         - groups.event
       summary: Get instances from groups
+      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.'
       operationId: groups.events_GetInstances
       parameters:
         - name: group-id
@@ -11958,6 +12040,7 @@ paths:
       tags:
         - groups.event
       summary: Get attachments from groups
+      description: 'The collection of FileAttachment, ItemAttachment, and referenceAttachment attachments for the event. Navigation property. Read-only. Nullable.'
       operationId: groups.events.instances_ListAttachments
       parameters:
         - name: group-id
@@ -12095,6 +12178,7 @@ paths:
       tags:
         - groups.event
       summary: Get attachments from groups
+      description: 'The collection of FileAttachment, ItemAttachment, and referenceAttachment attachments for the event. Navigation property. Read-only. Nullable.'
       operationId: groups.events.instances_GetAttachments
       parameters:
         - name: group-id
@@ -12261,6 +12345,7 @@ paths:
       tags:
         - groups.event
       summary: Get calendar from groups
+      description: The calendar that contains the event. Navigation property. Read-only.
       operationId: groups.events.instances_GetCalendar
       parameters:
         - name: group-id
@@ -12360,6 +12445,7 @@ paths:
       tags:
         - groups.event
       summary: Get extensions from groups
+      description: The collection of open extensions defined for the event. Nullable.
       operationId: groups.events.instances_ListExtensions
       parameters:
         - name: group-id
@@ -12482,6 +12568,7 @@ paths:
       tags:
         - groups.event
       summary: Get extensions from groups
+      description: The collection of open extensions defined for the event. Nullable.
       operationId: groups.events.instances_GetExtensions
       parameters:
         - name: group-id
@@ -12643,6 +12730,7 @@ paths:
       tags:
         - groups.event
       summary: Get multiValueExtendedProperties from groups
+      description: The collection of multi-value extended properties defined for the event. Read-only. Nullable.
       operationId: groups.events.instances_ListMultiValueExtendedProperties
       parameters:
         - name: group-id
@@ -12769,6 +12857,7 @@ paths:
       tags:
         - groups.event
       summary: Get multiValueExtendedProperties from groups
+      description: The collection of multi-value extended properties defined for the event. Read-only. Nullable.
       operationId: groups.events.instances_GetMultiValueExtendedProperties
       parameters:
         - name: group-id
@@ -12931,6 +13020,7 @@ paths:
       tags:
         - groups.event
       summary: Get singleValueExtendedProperties from groups
+      description: The collection of single-value extended properties defined for the event. Read-only. Nullable.
       operationId: groups.events.instances_ListSingleValueExtendedProperties
       parameters:
         - name: group-id
@@ -13057,6 +13147,7 @@ paths:
       tags:
         - groups.event
       summary: Get singleValueExtendedProperties from groups
+      description: The collection of single-value extended properties defined for the event. Read-only. Nullable.
       operationId: groups.events.instances_GetSingleValueExtendedProperties
       parameters:
         - name: group-id
@@ -13219,6 +13310,7 @@ paths:
       tags:
         - groups.event
       summary: Get multiValueExtendedProperties from groups
+      description: The collection of multi-value extended properties defined for the event. Read-only. Nullable.
       operationId: groups.events_ListMultiValueExtendedProperties
       parameters:
         - name: group-id
@@ -13331,6 +13423,7 @@ paths:
       tags:
         - groups.event
       summary: Get multiValueExtendedProperties from groups
+      description: The collection of multi-value extended properties defined for the event. Read-only. Nullable.
       operationId: groups.events_GetMultiValueExtendedProperties
       parameters:
         - name: group-id
@@ -13472,6 +13565,7 @@ paths:
       tags:
         - groups.event
       summary: Get singleValueExtendedProperties from groups
+      description: The collection of single-value extended properties defined for the event. Read-only. Nullable.
       operationId: groups.events_ListSingleValueExtendedProperties
       parameters:
         - name: group-id
@@ -13584,6 +13678,7 @@ paths:
       tags:
         - groups.event
       summary: Get singleValueExtendedProperties from groups
+      description: The collection of single-value extended properties defined for the event. Read-only. Nullable.
       operationId: groups.events_GetSingleValueExtendedProperties
       parameters:
         - name: group-id
@@ -13725,6 +13820,7 @@ paths:
       tags:
         - places.place
       summary: Get place
+      description: 'Get the properties and relationships of a place object specified by either its ID or email address. The **place** object can be one of the following types: Both **room** and **roomList** are derived from the place object.'
       operationId: places.place_ListPlace
       parameters:
         - $ref: '#/components/parameters/top'
@@ -13817,6 +13913,7 @@ paths:
       tags:
         - places.place
       summary: Get place
+      description: 'Get the properties and relationships of a place object specified by either its ID or email address. The **place** object can be one of the following types: Both **room** and **roomList** are derived from the place object.'
       operationId: places.place_GetPlace
       parameters:
         - name: place-id
@@ -13868,6 +13965,7 @@ paths:
       tags:
         - places.place
       summary: Update place
+      description: 'Update the properties of place object, which can be a room or roomList. You can identify the **room** or **roomList** by specifying the **id** or **emailAddress** property.'
       operationId: places.place_UpdatePlace
       parameters:
         - name: place-id
@@ -13919,6 +14017,7 @@ paths:
       tags:
         - users.calendar
       summary: Get calendar from users
+      description: The user's primary calendar. Read-only.
       operationId: users_GetCalendar
       parameters:
         - name: user-id
@@ -14048,6 +14147,7 @@ paths:
       tags:
         - users.calendar
       summary: Get calendarPermissions from users
+      description: The permissions of the users with whom the calendar is shared.
       operationId: users.calendar_ListCalendarPermissions
       parameters:
         - name: user-id
@@ -14145,6 +14245,7 @@ paths:
       tags:
         - users.calendar
       summary: Get calendarPermissions from users
+      description: The permissions of the users with whom the calendar is shared.
       operationId: users.calendar_GetCalendarPermissions
       parameters:
         - name: user-id
@@ -14257,6 +14358,7 @@ paths:
       tags:
         - users.calendar
       summary: Get calendarView from users
+      description: The calendar view for the calendar. Navigation property. Read-only.
       operationId: users.calendar_ListCalendarView
       parameters:
         - name: user-id
@@ -14477,6 +14579,7 @@ paths:
       tags:
         - users.calendar
       summary: Get calendarView from users
+      description: The calendar view for the calendar. Navigation property. Read-only.
       operationId: users.calendar_GetCalendarView
       parameters:
         - name: user-id
@@ -14687,6 +14790,7 @@ paths:
       tags:
         - users.calendar
       summary: Get attachments from users
+      description: 'The collection of FileAttachment, ItemAttachment, and referenceAttachment attachments for the event. Navigation property. Read-only. Nullable.'
       operationId: users.calendar.calendarView_ListAttachments
       parameters:
         - name: user-id
@@ -14810,6 +14914,7 @@ paths:
       tags:
         - users.calendar
       summary: Get attachments from users
+      description: 'The collection of FileAttachment, ItemAttachment, and referenceAttachment attachments for the event. Navigation property. Read-only. Nullable.'
       operationId: users.calendar.calendarView_GetAttachments
       parameters:
         - name: user-id
@@ -14955,6 +15060,7 @@ paths:
       tags:
         - users.calendar
       summary: Get calendar from users
+      description: The calendar that contains the event. Navigation property. Read-only.
       operationId: users.calendar.calendarView_GetCalendar
       parameters:
         - name: user-id
@@ -15042,6 +15148,7 @@ paths:
       tags:
         - users.calendar
       summary: Get extensions from users
+      description: The collection of open extensions defined for the event. Nullable.
       operationId: users.calendar.calendarView_ListExtensions
       parameters:
         - name: user-id
@@ -15150,6 +15257,7 @@ paths:
       tags:
         - users.calendar
       summary: Get extensions from users
+      description: The collection of open extensions defined for the event. Nullable.
       operationId: users.calendar.calendarView_GetExtensions
       parameters:
         - name: user-id
@@ -15290,6 +15398,7 @@ paths:
       tags:
         - users.calendar
       summary: Get instances from users
+      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.'
       operationId: users.calendar.calendarView_ListInstances
       parameters:
         - name: user-id
@@ -15512,6 +15621,7 @@ paths:
       tags:
         - users.calendar
       summary: Get instances from users
+      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.'
       operationId: users.calendar.calendarView_GetInstances
       parameters:
         - name: user-id
@@ -15737,6 +15847,7 @@ paths:
       tags:
         - users.calendar
       summary: Get attachments from users
+      description: 'The collection of FileAttachment, ItemAttachment, and referenceAttachment attachments for the event. Navigation property. Read-only. Nullable.'
       operationId: users.calendar.calendarView.instances_ListAttachments
       parameters:
         - name: user-id
@@ -15874,6 +15985,7 @@ paths:
       tags:
         - users.calendar
       summary: Get attachments from users
+      description: 'The collection of FileAttachment, ItemAttachment, and referenceAttachment attachments for the event. Navigation property. Read-only. Nullable.'
       operationId: users.calendar.calendarView.instances_GetAttachments
       parameters:
         - name: user-id
@@ -16040,6 +16152,7 @@ paths:
       tags:
         - users.calendar
       summary: Get calendar from users
+      description: The calendar that contains the event. Navigation property. Read-only.
       operationId: users.calendar.calendarView.instances_GetCalendar
       parameters:
         - name: user-id
@@ -16139,6 +16252,7 @@ paths:
       tags:
         - users.calendar
       summary: Get extensions from users
+      description: The collection of open extensions defined for the event. Nullable.
       operationId: users.calendar.calendarView.instances_ListExtensions
       parameters:
         - name: user-id
@@ -16261,6 +16375,7 @@ paths:
       tags:
         - users.calendar
       summary: Get extensions from users
+      description: The collection of open extensions defined for the event. Nullable.
       operationId: users.calendar.calendarView.instances_GetExtensions
       parameters:
         - name: user-id
@@ -16422,6 +16537,7 @@ paths:
       tags:
         - users.calendar
       summary: Get multiValueExtendedProperties from users
+      description: The collection of multi-value extended properties defined for the event. Read-only. Nullable.
       operationId: users.calendar.calendarView.instances_ListMultiValueExtendedProperties
       parameters:
         - name: user-id
@@ -16548,6 +16664,7 @@ paths:
       tags:
         - users.calendar
       summary: Get multiValueExtendedProperties from users
+      description: The collection of multi-value extended properties defined for the event. Read-only. Nullable.
       operationId: users.calendar.calendarView.instances_GetMultiValueExtendedProperties
       parameters:
         - name: user-id
@@ -16710,6 +16827,7 @@ paths:
       tags:
         - users.calendar
       summary: Get singleValueExtendedProperties from users
+      description: The collection of single-value extended properties defined for the event. Read-only. Nullable.
       operationId: users.calendar.calendarView.instances_ListSingleValueExtendedProperties
       parameters:
         - name: user-id
@@ -16836,6 +16954,7 @@ paths:
       tags:
         - users.calendar
       summary: Get singleValueExtendedProperties from users
+      description: The collection of single-value extended properties defined for the event. Read-only. Nullable.
       operationId: users.calendar.calendarView.instances_GetSingleValueExtendedProperties
       parameters:
         - name: user-id
@@ -16998,6 +17117,7 @@ paths:
       tags:
         - users.calendar
       summary: Get multiValueExtendedProperties from users
+      description: The collection of multi-value extended properties defined for the event. Read-only. Nullable.
       operationId: users.calendar.calendarView_ListMultiValueExtendedProperties
       parameters:
         - name: user-id
@@ -17110,6 +17230,7 @@ paths:
       tags:
         - users.calendar
       summary: Get multiValueExtendedProperties from users
+      description: The collection of multi-value extended properties defined for the event. Read-only. Nullable.
       operationId: users.calendar.calendarView_GetMultiValueExtendedProperties
       parameters:
         - name: user-id
@@ -17251,6 +17372,7 @@ paths:
       tags:
         - users.calendar
       summary: Get singleValueExtendedProperties from users
+      description: The collection of single-value extended properties defined for the event. Read-only. Nullable.
       operationId: users.calendar.calendarView_ListSingleValueExtendedProperties
       parameters:
         - name: user-id
@@ -17363,6 +17485,7 @@ paths:
       tags:
         - users.calendar
       summary: Get singleValueExtendedProperties from users
+      description: The collection of single-value extended properties defined for the event. Read-only. Nullable.
       operationId: users.calendar.calendarView_GetSingleValueExtendedProperties
       parameters:
         - name: user-id
@@ -17504,6 +17627,7 @@ paths:
       tags:
         - users.calendar
       summary: Get events from users
+      description: The events in the calendar. Navigation property. Read-only.
       operationId: users.calendar_ListEvents
       parameters:
         - name: user-id
@@ -17712,6 +17836,7 @@ paths:
       tags:
         - users.calendar
       summary: Get events from users
+      description: The events in the calendar. Navigation property. Read-only.
       operationId: users.calendar_GetEvents
       parameters:
         - name: user-id
@@ -17910,6 +18035,7 @@ paths:
       tags:
         - users.calendar
       summary: Get attachments from users
+      description: 'The collection of FileAttachment, ItemAttachment, and referenceAttachment attachments for the event. Navigation property. Read-only. Nullable.'
       operationId: users.calendar.events_ListAttachments
       parameters:
         - name: user-id
@@ -18033,6 +18159,7 @@ paths:
       tags:
         - users.calendar
       summary: Get attachments from users
+      description: 'The collection of FileAttachment, ItemAttachment, and referenceAttachment attachments for the event. Navigation property. Read-only. Nullable.'
       operationId: users.calendar.events_GetAttachments
       parameters:
         - name: user-id
@@ -18178,6 +18305,7 @@ paths:
       tags:
         - users.calendar
       summary: Get calendar from users
+      description: The calendar that contains the event. Navigation property. Read-only.
       operationId: users.calendar.events_GetCalendar
       parameters:
         - name: user-id
@@ -18265,6 +18393,7 @@ paths:
       tags:
         - users.calendar
       summary: Get extensions from users
+      description: The collection of open extensions defined for the event. Nullable.
       operationId: users.calendar.events_ListExtensions
       parameters:
         - name: user-id
@@ -18373,6 +18502,7 @@ paths:
       tags:
         - users.calendar
       summary: Get extensions from users
+      description: The collection of open extensions defined for the event. Nullable.
       operationId: users.calendar.events_GetExtensions
       parameters:
         - name: user-id
@@ -18513,6 +18643,7 @@ paths:
       tags:
         - users.calendar
       summary: Get instances from users
+      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.'
       operationId: users.calendar.events_ListInstances
       parameters:
         - name: user-id
@@ -18735,6 +18866,7 @@ paths:
       tags:
         - users.calendar
       summary: Get instances from users
+      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.'
       operationId: users.calendar.events_GetInstances
       parameters:
         - name: user-id
@@ -18960,6 +19092,7 @@ paths:
       tags:
         - users.calendar
       summary: Get attachments from users
+      description: 'The collection of FileAttachment, ItemAttachment, and referenceAttachment attachments for the event. Navigation property. Read-only. Nullable.'
       operationId: users.calendar.events.instances_ListAttachments
       parameters:
         - name: user-id
@@ -19097,6 +19230,7 @@ paths:
       tags:
         - users.calendar
       summary: Get attachments from users
+      description: 'The collection of FileAttachment, ItemAttachment, and referenceAttachment attachments for the event. Navigation property. Read-only. Nullable.'
       operationId: users.calendar.events.instances_GetAttachments
       parameters:
         - name: user-id
@@ -19263,6 +19397,7 @@ paths:
       tags:
         - users.calendar
       summary: Get calendar from users
+      description: The calendar that contains the event. Navigation property. Read-only.
       operationId: users.calendar.events.instances_GetCalendar
       parameters:
         - name: user-id
@@ -19362,6 +19497,7 @@ paths:
       tags:
         - users.calendar
       summary: Get extensions from users
+      description: The collection of open extensions defined for the event. Nullable.
       operationId: users.calendar.events.instances_ListExtensions
       parameters:
         - name: user-id
@@ -19484,6 +19620,7 @@ paths:
       tags:
         - users.calendar
       summary: Get extensions from users
+      description: The collection of open extensions defined for the event. Nullable.
       operationId: users.calendar.events.instances_GetExtensions
       parameters:
         - name: user-id
@@ -19645,6 +19782,7 @@ paths:
       tags:
         - users.calendar
       summary: Get multiValueExtendedProperties from users
+      description: The collection of multi-value extended properties defined for the event. Read-only. Nullable.
       operationId: users.calendar.events.instances_ListMultiValueExtendedProperties
       parameters:
         - name: user-id
@@ -19771,6 +19909,7 @@ paths:
       tags:
         - users.calendar
       summary: Get multiValueExtendedProperties from users
+      description: The collection of multi-value extended properties defined for the event. Read-only. Nullable.
       operationId: users.calendar.events.instances_GetMultiValueExtendedProperties
       parameters:
         - name: user-id
@@ -19933,6 +20072,7 @@ paths:
       tags:
         - users.calendar
       summary: Get singleValueExtendedProperties from users
+      description: The collection of single-value extended properties defined for the event. Read-only. Nullable.
       operationId: users.calendar.events.instances_ListSingleValueExtendedProperties
       parameters:
         - name: user-id
@@ -20059,6 +20199,7 @@ paths:
       tags:
         - users.calendar
       summary: Get singleValueExtendedProperties from users
+      description: The collection of single-value extended properties defined for the event. Read-only. Nullable.
       operationId: users.calendar.events.instances_GetSingleValueExtendedProperties
       parameters:
         - name: user-id
@@ -20221,6 +20362,7 @@ paths:
       tags:
         - users.calendar
       summary: Get multiValueExtendedProperties from users
+      description: The collection of multi-value extended properties defined for the event. Read-only. Nullable.
       operationId: users.calendar.events_ListMultiValueExtendedProperties
       parameters:
         - name: user-id
@@ -20333,6 +20475,7 @@ paths:
       tags:
         - users.calendar
       summary: Get multiValueExtendedProperties from users
+      description: The collection of multi-value extended properties defined for the event. Read-only. Nullable.
       operationId: users.calendar.events_GetMultiValueExtendedProperties
       parameters:
         - name: user-id
@@ -20474,6 +20617,7 @@ paths:
       tags:
         - users.calendar
       summary: Get singleValueExtendedProperties from users
+      description: The collection of single-value extended properties defined for the event. Read-only. Nullable.
       operationId: users.calendar.events_ListSingleValueExtendedProperties
       parameters:
         - name: user-id
@@ -20586,6 +20730,7 @@ paths:
       tags:
         - users.calendar
       summary: Get singleValueExtendedProperties from users
+      description: The collection of single-value extended properties defined for the event. Read-only. Nullable.
       operationId: users.calendar.events_GetSingleValueExtendedProperties
       parameters:
         - name: user-id
@@ -20727,6 +20872,7 @@ paths:
       tags:
         - users.calendar
       summary: Get multiValueExtendedProperties from users
+      description: The collection of multi-value extended properties defined for the calendar. Read-only. Nullable.
       operationId: users.calendar_ListMultiValueExtendedProperties
       parameters:
         - name: user-id
@@ -20825,6 +20971,7 @@ paths:
       tags:
         - users.calendar
       summary: Get multiValueExtendedProperties from users
+      description: The collection of multi-value extended properties defined for the calendar. Read-only. Nullable.
       operationId: users.calendar_GetMultiValueExtendedProperties
       parameters:
         - name: user-id
@@ -20945,6 +21092,7 @@ paths:
       tags:
         - users.calendar
       summary: Get singleValueExtendedProperties from users
+      description: The collection of single-value extended properties defined for the calendar. Read-only. Nullable.
       operationId: users.calendar_ListSingleValueExtendedProperties
       parameters:
         - name: user-id
@@ -21043,6 +21191,7 @@ paths:
       tags:
         - users.calendar
       summary: Get singleValueExtendedProperties from users
+      description: The collection of single-value extended properties defined for the calendar. Read-only. Nullable.
       operationId: users.calendar_GetSingleValueExtendedProperties
       parameters:
         - name: user-id
@@ -21163,6 +21312,7 @@ paths:
       tags:
         - users.calendarGroup
       summary: Get calendarGroups from users
+      description: The user's calendar groups. Read-only. Nullable.
       operationId: users_ListCalendarGroups
       parameters:
         - name: user-id
@@ -21255,6 +21405,7 @@ paths:
       tags:
         - users.calendarGroup
       summary: Get calendarGroups from users
+      description: The user's calendar groups. Read-only. Nullable.
       operationId: users_GetCalendarGroups
       parameters:
         - name: user-id
@@ -21372,6 +21523,7 @@ paths:
       tags:
         - users.calendarGroup
       summary: Get calendars from users
+      description: The calendars in the calendar group. Navigation property. Read-only. Nullable.
       operationId: users.calendarGroups_ListCalendars
       parameters:
         - name: user-id
@@ -21512,6 +21664,7 @@ paths:
       tags:
         - users.calendarGroup
       summary: Get calendars from users
+      description: The calendars in the calendar group. Navigation property. Read-only. Nullable.
       operationId: users.calendarGroups_GetCalendars
       parameters:
         - name: user-id
@@ -21693,6 +21846,7 @@ paths:
       tags:
         - users.calendarGroup
       summary: Get calendarPermissions from users
+      description: The permissions of the users with whom the calendar is shared.
       operationId: users.calendarGroups.calendars_ListCalendarPermissions
       parameters:
         - name: user-id
@@ -21818,6 +21972,7 @@ paths:
       tags:
         - users.calendarGroup
       summary: Get calendarPermissions from users
+      description: The permissions of the users with whom the calendar is shared.
       operationId: users.calendarGroups.calendars_GetCalendarPermissions
       parameters:
         - name: user-id
@@ -21972,6 +22127,7 @@ paths:
       tags:
         - users.calendarGroup
       summary: Get calendarView from users
+      description: The calendar view for the calendar. Navigation property. Read-only.
       operationId: users.calendarGroups.calendars_ListCalendarView
       parameters:
         - name: user-id
@@ -22208,6 +22364,7 @@ paths:
       tags:
         - users.calendarGroup
       summary: Get calendarView from users
+      description: The calendar view for the calendar. Navigation property. Read-only.
       operationId: users.calendarGroups.calendars_GetCalendarView
       parameters:
         - name: user-id
@@ -22460,6 +22617,7 @@ paths:
       tags:
         - users.calendarGroup
       summary: Get attachments from users
+      description: 'The collection of FileAttachment, ItemAttachment, and referenceAttachment attachments for the event. Navigation property. Read-only. Nullable.'
       operationId: users.calendarGroups.calendars.calendarView_ListAttachments
       parameters:
         - name: user-id
@@ -22611,6 +22769,7 @@ paths:
       tags:
         - users.calendarGroup
       summary: Get attachments from users
+      description: 'The collection of FileAttachment, ItemAttachment, and referenceAttachment attachments for the event. Navigation property. Read-only. Nullable.'
       operationId: users.calendarGroups.calendars.calendarView_GetAttachments
       parameters:
         - name: user-id
@@ -22798,6 +22957,7 @@ paths:
       tags:
         - users.calendarGroup
       summary: Get calendar from users
+      description: The calendar that contains the event. Navigation property. Read-only.
       operationId: users.calendarGroups.calendars.calendarView_GetCalendar
       parameters:
         - name: user-id
@@ -22909,6 +23069,7 @@ paths:
       tags:
         - users.calendarGroup
       summary: Get extensions from users
+      description: The collection of open extensions defined for the event. Nullable.
       operationId: users.calendarGroups.calendars.calendarView_ListExtensions
       parameters:
         - name: user-id
@@ -23045,6 +23206,7 @@ paths:
       tags:
         - users.calendarGroup
       summary: Get extensions from users
+      description: The collection of open extensions defined for the event. Nullable.
       operationId: users.calendarGroups.calendars.calendarView_GetExtensions
       parameters:
         - name: user-id
@@ -23227,6 +23389,7 @@ paths:
       tags:
         - users.calendarGroup
       summary: Get instances from users
+      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.'
       operationId: users.calendarGroups.calendars.calendarView_ListInstances
       parameters:
         - name: user-id
@@ -23477,6 +23640,7 @@ paths:
       tags:
         - users.calendarGroup
       summary: Get instances from users
+      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.'
       operationId: users.calendarGroups.calendars.calendarView_GetInstances
       parameters:
         - name: user-id
@@ -23756,6 +23920,7 @@ paths:
       tags:
         - users.calendarGroup
       summary: Get attachments from users
+      description: 'The collection of FileAttachment, ItemAttachment, and referenceAttachment attachments for the event. Navigation property. Read-only. Nullable.'
       operationId: users.calendarGroups.calendars.calendarView.instances_ListAttachments
       parameters:
         - name: user-id
@@ -23921,6 +24086,7 @@ paths:
       tags:
         - users.calendarGroup
       summary: Get attachments from users
+      description: 'The collection of FileAttachment, ItemAttachment, and referenceAttachment attachments for the event. Navigation property. Read-only. Nullable.'
       operationId: users.calendarGroups.calendars.calendarView.instances_GetAttachments
       parameters:
         - name: user-id
@@ -24129,6 +24295,7 @@ paths:
       tags:
         - users.calendarGroup
       summary: Get calendar from users
+      description: The calendar that contains the event. Navigation property. Read-only.
       operationId: users.calendarGroups.calendars.calendarView.instances_GetCalendar
       parameters:
         - name: user-id
@@ -24252,6 +24419,7 @@ paths:
       tags:
         - users.calendarGroup
       summary: Get extensions from users
+      description: The collection of open extensions defined for the event. Nullable.
       operationId: users.calendarGroups.calendars.calendarView.instances_ListExtensions
       parameters:
         - name: user-id
@@ -24402,6 +24570,7 @@ paths:
       tags:
         - users.calendarGroup
       summary: Get extensions from users
+      description: The collection of open extensions defined for the event. Nullable.
       operationId: users.calendarGroups.calendars.calendarView.instances_GetExtensions
       parameters:
         - name: user-id
@@ -24605,6 +24774,7 @@ paths:
       tags:
         - users.calendarGroup
       summary: Get multiValueExtendedProperties from users
+      description: The collection of multi-value extended properties defined for the event. Read-only. Nullable.
       operationId: users.calendarGroups.calendars.calendarView.instances_ListMultiValueExtendedProperties
       parameters:
         - name: user-id
@@ -24759,6 +24929,7 @@ paths:
       tags:
         - users.calendarGroup
       summary: Get multiValueExtendedProperties from users
+      description: The collection of multi-value extended properties defined for the event. Read-only. Nullable.
       operationId: users.calendarGroups.calendars.calendarView.instances_GetMultiValueExtendedProperties
       parameters:
         - name: user-id
@@ -24963,6 +25134,7 @@ paths:
       tags:
         - users.calendarGroup
       summary: Get singleValueExtendedProperties from users
+      description: The collection of single-value extended properties defined for the event. Read-only. Nullable.
       operationId: users.calendarGroups.calendars.calendarView.instances_ListSingleValueExtendedProperties
       parameters:
         - name: user-id
@@ -25117,6 +25289,7 @@ paths:
       tags:
         - users.calendarGroup
       summary: Get singleValueExtendedProperties from users
+      description: The collection of single-value extended properties defined for the event. Read-only. Nullable.
       operationId: users.calendarGroups.calendars.calendarView.instances_GetSingleValueExtendedProperties
       parameters:
         - name: user-id
@@ -25321,6 +25494,7 @@ paths:
       tags:
         - users.calendarGroup
       summary: Get multiValueExtendedProperties from users
+      description: The collection of multi-value extended properties defined for the event. Read-only. Nullable.
       operationId: users.calendarGroups.calendars.calendarView_ListMultiValueExtendedProperties
       parameters:
         - name: user-id
@@ -25461,6 +25635,7 @@ paths:
       tags:
         - users.calendarGroup
       summary: Get multiValueExtendedProperties from users
+      description: The collection of multi-value extended properties defined for the event. Read-only. Nullable.
       operationId: users.calendarGroups.calendars.calendarView_GetMultiValueExtendedProperties
       parameters:
         - name: user-id
@@ -25644,6 +25819,7 @@ paths:
       tags:
         - users.calendarGroup
       summary: Get singleValueExtendedProperties from users
+      description: The collection of single-value extended properties defined for the event. Read-only. Nullable.
       operationId: users.calendarGroups.calendars.calendarView_ListSingleValueExtendedProperties
       parameters:
         - name: user-id
@@ -25784,6 +25960,7 @@ paths:
       tags:
         - users.calendarGroup
       summary: Get singleValueExtendedProperties from users
+      description: The collection of single-value extended properties defined for the event. Read-only. Nullable.
       operationId: users.calendarGroups.calendars.calendarView_GetSingleValueExtendedProperties
       parameters:
         - name: user-id
@@ -25967,6 +26144,7 @@ paths:
       tags:
         - users.calendarGroup
       summary: Get events from users
+      description: The events in the calendar. Navigation property. Read-only.
       operationId: users.calendarGroups.calendars_ListEvents
       parameters:
         - name: user-id
@@ -26203,6 +26381,7 @@ paths:
       tags:
         - users.calendarGroup
       summary: Get events from users
+      description: The events in the calendar. Navigation property. Read-only.
       operationId: users.calendarGroups.calendars_GetEvents
       parameters:
         - name: user-id
@@ -26455,6 +26634,7 @@ paths:
       tags:
         - users.calendarGroup
       summary: Get attachments from users
+      description: 'The collection of FileAttachment, ItemAttachment, and referenceAttachment attachments for the event. Navigation property. Read-only. Nullable.'
       operationId: users.calendarGroups.calendars.events_ListAttachments
       parameters:
         - name: user-id
@@ -26606,6 +26786,7 @@ paths:
       tags:
         - users.calendarGroup
       summary: Get attachments from users
+      description: 'The collection of FileAttachment, ItemAttachment, and referenceAttachment attachments for the event. Navigation property. Read-only. Nullable.'
       operationId: users.calendarGroups.calendars.events_GetAttachments
       parameters:
         - name: user-id
@@ -26793,6 +26974,7 @@ paths:
       tags:
         - users.calendarGroup
       summary: Get calendar from users
+      description: The calendar that contains the event. Navigation property. Read-only.
       operationId: users.calendarGroups.calendars.events_GetCalendar
       parameters:
         - name: user-id
@@ -26904,6 +27086,7 @@ paths:
       tags:
         - users.calendarGroup
       summary: Get extensions from users
+      description: The collection of open extensions defined for the event. Nullable.
       operationId: users.calendarGroups.calendars.events_ListExtensions
       parameters:
         - name: user-id
@@ -27040,6 +27223,7 @@ paths:
       tags:
         - users.calendarGroup
       summary: Get extensions from users
+      description: The collection of open extensions defined for the event. Nullable.
       operationId: users.calendarGroups.calendars.events_GetExtensions
       parameters:
         - name: user-id
@@ -27222,6 +27406,7 @@ paths:
       tags:
         - users.calendarGroup
       summary: Get instances from users
+      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.'
       operationId: users.calendarGroups.calendars.events_ListInstances
       parameters:
         - name: user-id
@@ -27472,6 +27657,7 @@ paths:
       tags:
         - users.calendarGroup
       summary: Get instances from users
+      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.'
       operationId: users.calendarGroups.calendars.events_GetInstances
       parameters:
         - name: user-id
@@ -27751,6 +27937,7 @@ paths:
       tags:
         - users.calendarGroup
       summary: Get attachments from users
+      description: 'The collection of FileAttachment, ItemAttachment, and referenceAttachment attachments for the event. Navigation property. Read-only. Nullable.'
       operationId: users.calendarGroups.calendars.events.instances_ListAttachments
       parameters:
         - name: user-id
@@ -27916,6 +28103,7 @@ paths:
       tags:
         - users.calendarGroup
       summary: Get attachments from users
+      description: 'The collection of FileAttachment, ItemAttachment, and referenceAttachment attachments for the event. Navigation property. Read-only. Nullable.'
       operationId: users.calendarGroups.calendars.events.instances_GetAttachments
       parameters:
         - name: user-id
@@ -28124,6 +28312,7 @@ paths:
       tags:
         - users.calendarGroup
       summary: Get calendar from users
+      description: The calendar that contains the event. Navigation property. Read-only.
       operationId: users.calendarGroups.calendars.events.instances_GetCalendar
       parameters:
         - name: user-id
@@ -28247,6 +28436,7 @@ paths:
       tags:
         - users.calendarGroup
       summary: Get extensions from users
+      description: The collection of open extensions defined for the event. Nullable.
       operationId: users.calendarGroups.calendars.events.instances_ListExtensions
       parameters:
         - name: user-id
@@ -28397,6 +28587,7 @@ paths:
       tags:
         - users.calendarGroup
       summary: Get extensions from users
+      description: The collection of open extensions defined for the event. Nullable.
       operationId: users.calendarGroups.calendars.events.instances_GetExtensions
       parameters:
         - name: user-id
@@ -28600,6 +28791,7 @@ paths:
       tags:
         - users.calendarGroup
       summary: Get multiValueExtendedProperties from users
+      description: The collection of multi-value extended properties defined for the event. Read-only. Nullable.
       operationId: users.calendarGroups.calendars.events.instances_ListMultiValueExtendedProperties
       parameters:
         - name: user-id
@@ -28754,6 +28946,7 @@ paths:
       tags:
         - users.calendarGroup
       summary: Get multiValueExtendedProperties from users
+      description: The collection of multi-value extended properties defined for the event. Read-only. Nullable.
       operationId: users.calendarGroups.calendars.events.instances_GetMultiValueExtendedProperties
       parameters:
         - name: user-id
@@ -28958,6 +29151,7 @@ paths:
       tags:
         - users.calendarGroup
       summary: Get singleValueExtendedProperties from users
+      description: The collection of single-value extended properties defined for the event. Read-only. Nullable.
       operationId: users.calendarGroups.calendars.events.instances_ListSingleValueExtendedProperties
       parameters:
         - name: user-id
@@ -29112,6 +29306,7 @@ paths:
       tags:
         - users.calendarGroup
       summary: Get singleValueExtendedProperties from users
+      description: The collection of single-value extended properties defined for the event. Read-only. Nullable.
       operationId: users.calendarGroups.calendars.events.instances_GetSingleValueExtendedProperties
       parameters:
         - name: user-id
@@ -29316,6 +29511,7 @@ paths:
       tags:
         - users.calendarGroup
       summary: Get multiValueExtendedProperties from users
+      description: The collection of multi-value extended properties defined for the event. Read-only. Nullable.
       operationId: users.calendarGroups.calendars.events_ListMultiValueExtendedProperties
       parameters:
         - name: user-id
@@ -29456,6 +29652,7 @@ paths:
       tags:
         - users.calendarGroup
       summary: Get multiValueExtendedProperties from users
+      description: The collection of multi-value extended properties defined for the event. Read-only. Nullable.
       operationId: users.calendarGroups.calendars.events_GetMultiValueExtendedProperties
       parameters:
         - name: user-id
@@ -29639,6 +29836,7 @@ paths:
       tags:
         - users.calendarGroup
       summary: Get singleValueExtendedProperties from users
+      description: The collection of single-value extended properties defined for the event. Read-only. Nullable.
       operationId: users.calendarGroups.calendars.events_ListSingleValueExtendedProperties
       parameters:
         - name: user-id
@@ -29779,6 +29977,7 @@ paths:
       tags:
         - users.calendarGroup
       summary: Get singleValueExtendedProperties from users
+      description: The collection of single-value extended properties defined for the event. Read-only. Nullable.
       operationId: users.calendarGroups.calendars.events_GetSingleValueExtendedProperties
       parameters:
         - name: user-id
@@ -29962,6 +30161,7 @@ paths:
       tags:
         - users.calendarGroup
       summary: Get multiValueExtendedProperties from users
+      description: The collection of multi-value extended properties defined for the calendar. Read-only. Nullable.
       operationId: users.calendarGroups.calendars_ListMultiValueExtendedProperties
       parameters:
         - name: user-id
@@ -30088,6 +30288,7 @@ paths:
       tags:
         - users.calendarGroup
       summary: Get multiValueExtendedProperties from users
+      description: The collection of multi-value extended properties defined for the calendar. Read-only. Nullable.
       operationId: users.calendarGroups.calendars_GetMultiValueExtendedProperties
       parameters:
         - name: user-id
@@ -30250,6 +30451,7 @@ paths:
       tags:
         - users.calendarGroup
       summary: Get singleValueExtendedProperties from users
+      description: The collection of single-value extended properties defined for the calendar. Read-only. Nullable.
       operationId: users.calendarGroups.calendars_ListSingleValueExtendedProperties
       parameters:
         - name: user-id
@@ -30376,6 +30578,7 @@ paths:
       tags:
         - users.calendarGroup
       summary: Get singleValueExtendedProperties from users
+      description: The collection of single-value extended properties defined for the calendar. Read-only. Nullable.
       operationId: users.calendarGroups.calendars_GetSingleValueExtendedProperties
       parameters:
         - name: user-id
@@ -30538,6 +30741,7 @@ paths:
       tags:
         - users.calendar
       summary: Get calendars from users
+      description: The user's calendars. Read-only. Nullable.
       operationId: users_ListCalendars
       parameters:
         - name: user-id
@@ -30664,6 +30868,7 @@ paths:
       tags:
         - users.calendar
       summary: Get calendars from users
+      description: The user's calendars. Read-only. Nullable.
       operationId: users_GetCalendars
       parameters:
         - name: user-id
@@ -30819,6 +31024,7 @@ paths:
       tags:
         - users.calendar
       summary: Get calendarPermissions from users
+      description: The permissions of the users with whom the calendar is shared.
       operationId: users.calendars_ListCalendarPermissions
       parameters:
         - name: user-id
@@ -30930,6 +31136,7 @@ paths:
       tags:
         - users.calendar
       summary: Get calendarPermissions from users
+      description: The permissions of the users with whom the calendar is shared.
       operationId: users.calendars_GetCalendarPermissions
       parameters:
         - name: user-id
@@ -31063,6 +31270,7 @@ paths:
       tags:
         - users.calendar
       summary: Get calendarView from users
+      description: The calendar view for the calendar. Navigation property. Read-only.
       operationId: users.calendars_ListCalendarView
       parameters:
         - name: user-id
@@ -31297,6 +31505,7 @@ paths:
       tags:
         - users.calendar
       summary: Get calendarView from users
+      description: The calendar view for the calendar. Navigation property. Read-only.
       operationId: users.calendars_GetCalendarView
       parameters:
         - name: user-id
@@ -31534,6 +31743,7 @@ paths:
       tags:
         - users.calendar
       summary: Get attachments from users
+      description: 'The collection of FileAttachment, ItemAttachment, and referenceAttachment attachments for the event. Navigation property. Read-only. Nullable.'
       operationId: users.calendars.calendarView_ListAttachments
       parameters:
         - name: user-id
@@ -31671,6 +31881,7 @@ paths:
       tags:
         - users.calendar
       summary: Get attachments from users
+      description: 'The collection of FileAttachment, ItemAttachment, and referenceAttachment attachments for the event. Navigation property. Read-only. Nullable.'
       operationId: users.calendars.calendarView_GetAttachments
       parameters:
         - name: user-id
@@ -31837,6 +32048,7 @@ paths:
       tags:
         - users.calendar
       summary: Get calendar from users
+      description: The calendar that contains the event. Navigation property. Read-only.
       operationId: users.calendars.calendarView_GetCalendar
       parameters:
         - name: user-id
@@ -31936,6 +32148,7 @@ paths:
       tags:
         - users.calendar
       summary: Get extensions from users
+      description: The collection of open extensions defined for the event. Nullable.
       operationId: users.calendars.calendarView_ListExtensions
       parameters:
         - name: user-id
@@ -32058,6 +32271,7 @@ paths:
       tags:
         - users.calendar
       summary: Get extensions from users
+      description: The collection of open extensions defined for the event. Nullable.
       operationId: users.calendars.calendarView_GetExtensions
       parameters:
         - name: user-id
@@ -32219,6 +32433,7 @@ paths:
       tags:
         - users.calendar
       summary: Get instances from users
+      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.'
       operationId: users.calendars.calendarView_ListInstances
       parameters:
         - name: user-id
@@ -32455,6 +32670,7 @@ paths:
       tags:
         - users.calendar
       summary: Get instances from users
+      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.'
       operationId: users.calendars.calendarView_GetInstances
       parameters:
         - name: user-id
@@ -32707,6 +32923,7 @@ paths:
       tags:
         - users.calendar
       summary: Get attachments from users
+      description: 'The collection of FileAttachment, ItemAttachment, and referenceAttachment attachments for the event. Navigation property. Read-only. Nullable.'
       operationId: users.calendars.calendarView.instances_ListAttachments
       parameters:
         - name: user-id
@@ -32858,6 +33075,7 @@ paths:
       tags:
         - users.calendar
       summary: Get attachments from users
+      description: 'The collection of FileAttachment, ItemAttachment, and referenceAttachment attachments for the event. Navigation property. Read-only. Nullable.'
       operationId: users.calendars.calendarView.instances_GetAttachments
       parameters:
         - name: user-id
@@ -33045,6 +33263,7 @@ paths:
       tags:
         - users.calendar
       summary: Get calendar from users
+      description: The calendar that contains the event. Navigation property. Read-only.
       operationId: users.calendars.calendarView.instances_GetCalendar
       parameters:
         - name: user-id
@@ -33156,6 +33375,7 @@ paths:
       tags:
         - users.calendar
       summary: Get extensions from users
+      description: The collection of open extensions defined for the event. Nullable.
       operationId: users.calendars.calendarView.instances_ListExtensions
       parameters:
         - name: user-id
@@ -33292,6 +33512,7 @@ paths:
       tags:
         - users.calendar
       summary: Get extensions from users
+      description: The collection of open extensions defined for the event. Nullable.
       operationId: users.calendars.calendarView.instances_GetExtensions
       parameters:
         - name: user-id
@@ -33474,6 +33695,7 @@ paths:
       tags:
         - users.calendar
       summary: Get multiValueExtendedProperties from users
+      description: The collection of multi-value extended properties defined for the event. Read-only. Nullable.
       operationId: users.calendars.calendarView.instances_ListMultiValueExtendedProperties
       parameters:
         - name: user-id
@@ -33614,6 +33836,7 @@ paths:
       tags:
         - users.calendar
       summary: Get multiValueExtendedProperties from users
+      description: The collection of multi-value extended properties defined for the event. Read-only. Nullable.
       operationId: users.calendars.calendarView.instances_GetMultiValueExtendedProperties
       parameters:
         - name: user-id
@@ -33797,6 +34020,7 @@ paths:
       tags:
         - users.calendar
       summary: Get singleValueExtendedProperties from users
+      description: The collection of single-value extended properties defined for the event. Read-only. Nullable.
       operationId: users.calendars.calendarView.instances_ListSingleValueExtendedProperties
       parameters:
         - name: user-id
@@ -33937,6 +34161,7 @@ paths:
       tags:
         - users.calendar
       summary: Get singleValueExtendedProperties from users
+      description: The collection of single-value extended properties defined for the event. Read-only. Nullable.
       operationId: users.calendars.calendarView.instances_GetSingleValueExtendedProperties
       parameters:
         - name: user-id
@@ -34120,6 +34345,7 @@ paths:
       tags:
         - users.calendar
       summary: Get multiValueExtendedProperties from users
+      description: The collection of multi-value extended properties defined for the event. Read-only. Nullable.
       operationId: users.calendars.calendarView_ListMultiValueExtendedProperties
       parameters:
         - name: user-id
@@ -34246,6 +34472,7 @@ paths:
       tags:
         - users.calendar
       summary: Get multiValueExtendedProperties from users
+      description: The collection of multi-value extended properties defined for the event. Read-only. Nullable.
       operationId: users.calendars.calendarView_GetMultiValueExtendedProperties
       parameters:
         - name: user-id
@@ -34408,6 +34635,7 @@ paths:
       tags:
         - users.calendar
       summary: Get singleValueExtendedProperties from users
+      description: The collection of single-value extended properties defined for the event. Read-only. Nullable.
       operationId: users.calendars.calendarView_ListSingleValueExtendedProperties
       parameters:
         - name: user-id
@@ -34534,6 +34762,7 @@ paths:
       tags:
         - users.calendar
       summary: Get singleValueExtendedProperties from users
+      description: The collection of single-value extended properties defined for the event. Read-only. Nullable.
       operationId: users.calendars.calendarView_GetSingleValueExtendedProperties
       parameters:
         - name: user-id
@@ -34696,6 +34925,7 @@ paths:
       tags:
         - users.calendar
       summary: Get events from users
+      description: The events in the calendar. Navigation property. Read-only.
       operationId: users.calendars_ListEvents
       parameters:
         - name: user-id
@@ -34898,18 +35128,11 @@ paths:
           x-ms-docs-key-type: calendar
       requestBody:
         description: New navigation property
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.event'
+        content: { }
         required: true
       responses:
         '201':
           description: Created navigation property.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.event'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -34918,6 +35141,7 @@ paths:
       tags:
         - users.calendar
       summary: Get events from users
+      description: The events in the calendar. Navigation property. Read-only.
       operationId: users.calendars_GetEvents
       parameters:
         - name: user-id
@@ -35143,6 +35367,7 @@ paths:
       tags:
         - users.calendar
       summary: Get attachments from users
+      description: 'The collection of FileAttachment, ItemAttachment, and referenceAttachment attachments for the event. Navigation property. Read-only. Nullable.'
       operationId: users.calendars.events_ListAttachments
       parameters:
         - name: user-id
@@ -35280,6 +35505,7 @@ paths:
       tags:
         - users.calendar
       summary: Get attachments from users
+      description: 'The collection of FileAttachment, ItemAttachment, and referenceAttachment attachments for the event. Navigation property. Read-only. Nullable.'
       operationId: users.calendars.events_GetAttachments
       parameters:
         - name: user-id
@@ -35446,6 +35672,7 @@ paths:
       tags:
         - users.calendar
       summary: Get calendar from users
+      description: The calendar that contains the event. Navigation property. Read-only.
       operationId: users.calendars.events_GetCalendar
       parameters:
         - name: user-id
@@ -35545,6 +35772,7 @@ paths:
       tags:
         - users.calendar
       summary: Get extensions from users
+      description: The collection of open extensions defined for the event. Nullable.
       operationId: users.calendars.events_ListExtensions
       parameters:
         - name: user-id
@@ -35667,6 +35895,7 @@ paths:
       tags:
         - users.calendar
       summary: Get extensions from users
+      description: The collection of open extensions defined for the event. Nullable.
       operationId: users.calendars.events_GetExtensions
       parameters:
         - name: user-id
@@ -35828,6 +36057,7 @@ paths:
       tags:
         - users.calendar
       summary: Get instances from users
+      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.'
       operationId: users.calendars.events_ListInstances
       parameters:
         - name: user-id
@@ -36064,6 +36294,7 @@ paths:
       tags:
         - users.calendar
       summary: Get instances from users
+      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.'
       operationId: users.calendars.events_GetInstances
       parameters:
         - name: user-id
@@ -36316,6 +36547,7 @@ paths:
       tags:
         - users.calendar
       summary: Get attachments from users
+      description: 'The collection of FileAttachment, ItemAttachment, and referenceAttachment attachments for the event. Navigation property. Read-only. Nullable.'
       operationId: users.calendars.events.instances_ListAttachments
       parameters:
         - name: user-id
@@ -36467,6 +36699,7 @@ paths:
       tags:
         - users.calendar
       summary: Get attachments from users
+      description: 'The collection of FileAttachment, ItemAttachment, and referenceAttachment attachments for the event. Navigation property. Read-only. Nullable.'
       operationId: users.calendars.events.instances_GetAttachments
       parameters:
         - name: user-id
@@ -36654,6 +36887,7 @@ paths:
       tags:
         - users.calendar
       summary: Get calendar from users
+      description: The calendar that contains the event. Navigation property. Read-only.
       operationId: users.calendars.events.instances_GetCalendar
       parameters:
         - name: user-id
@@ -36765,6 +36999,7 @@ paths:
       tags:
         - users.calendar
       summary: Get extensions from users
+      description: The collection of open extensions defined for the event. Nullable.
       operationId: users.calendars.events.instances_ListExtensions
       parameters:
         - name: user-id
@@ -36901,6 +37136,7 @@ paths:
       tags:
         - users.calendar
       summary: Get extensions from users
+      description: The collection of open extensions defined for the event. Nullable.
       operationId: users.calendars.events.instances_GetExtensions
       parameters:
         - name: user-id
@@ -37083,6 +37319,7 @@ paths:
       tags:
         - users.calendar
       summary: Get multiValueExtendedProperties from users
+      description: The collection of multi-value extended properties defined for the event. Read-only. Nullable.
       operationId: users.calendars.events.instances_ListMultiValueExtendedProperties
       parameters:
         - name: user-id
@@ -37223,6 +37460,7 @@ paths:
       tags:
         - users.calendar
       summary: Get multiValueExtendedProperties from users
+      description: The collection of multi-value extended properties defined for the event. Read-only. Nullable.
       operationId: users.calendars.events.instances_GetMultiValueExtendedProperties
       parameters:
         - name: user-id
@@ -37406,6 +37644,7 @@ paths:
       tags:
         - users.calendar
       summary: Get singleValueExtendedProperties from users
+      description: The collection of single-value extended properties defined for the event. Read-only. Nullable.
       operationId: users.calendars.events.instances_ListSingleValueExtendedProperties
       parameters:
         - name: user-id
@@ -37546,6 +37785,7 @@ paths:
       tags:
         - users.calendar
       summary: Get singleValueExtendedProperties from users
+      description: The collection of single-value extended properties defined for the event. Read-only. Nullable.
       operationId: users.calendars.events.instances_GetSingleValueExtendedProperties
       parameters:
         - name: user-id
@@ -37729,6 +37969,7 @@ paths:
       tags:
         - users.calendar
       summary: Get multiValueExtendedProperties from users
+      description: The collection of multi-value extended properties defined for the event. Read-only. Nullable.
       operationId: users.calendars.events_ListMultiValueExtendedProperties
       parameters:
         - name: user-id
@@ -37855,6 +38096,7 @@ paths:
       tags:
         - users.calendar
       summary: Get multiValueExtendedProperties from users
+      description: The collection of multi-value extended properties defined for the event. Read-only. Nullable.
       operationId: users.calendars.events_GetMultiValueExtendedProperties
       parameters:
         - name: user-id
@@ -38017,6 +38259,7 @@ paths:
       tags:
         - users.calendar
       summary: Get singleValueExtendedProperties from users
+      description: The collection of single-value extended properties defined for the event. Read-only. Nullable.
       operationId: users.calendars.events_ListSingleValueExtendedProperties
       parameters:
         - name: user-id
@@ -38143,6 +38386,7 @@ paths:
       tags:
         - users.calendar
       summary: Get singleValueExtendedProperties from users
+      description: The collection of single-value extended properties defined for the event. Read-only. Nullable.
       operationId: users.calendars.events_GetSingleValueExtendedProperties
       parameters:
         - name: user-id
@@ -38305,6 +38549,7 @@ paths:
       tags:
         - users.calendar
       summary: Get multiValueExtendedProperties from users
+      description: The collection of multi-value extended properties defined for the calendar. Read-only. Nullable.
       operationId: users.calendars_ListMultiValueExtendedProperties
       parameters:
         - name: user-id
@@ -38417,6 +38662,7 @@ paths:
       tags:
         - users.calendar
       summary: Get multiValueExtendedProperties from users
+      description: The collection of multi-value extended properties defined for the calendar. Read-only. Nullable.
       operationId: users.calendars_GetMultiValueExtendedProperties
       parameters:
         - name: user-id
@@ -38558,6 +38804,7 @@ paths:
       tags:
         - users.calendar
       summary: Get singleValueExtendedProperties from users
+      description: The collection of single-value extended properties defined for the calendar. Read-only. Nullable.
       operationId: users.calendars_ListSingleValueExtendedProperties
       parameters:
         - name: user-id
@@ -38670,6 +38917,7 @@ paths:
       tags:
         - users.calendar
       summary: Get singleValueExtendedProperties from users
+      description: The collection of single-value extended properties defined for the calendar. Read-only. Nullable.
       operationId: users.calendars_GetSingleValueExtendedProperties
       parameters:
         - name: user-id
@@ -38811,6 +39059,7 @@ paths:
       tags:
         - users.event
       summary: Get calendarView from users
+      description: The calendar view for the calendar. Read-only. Nullable.
       operationId: users_ListCalendarView
       parameters:
         - name: user-id
@@ -39031,6 +39280,7 @@ paths:
       tags:
         - users.event
       summary: Get calendarView from users
+      description: The calendar view for the calendar. Read-only. Nullable.
       operationId: users_GetCalendarView
       parameters:
         - name: user-id
@@ -39241,6 +39491,7 @@ paths:
       tags:
         - users.event
       summary: Get attachments from users
+      description: 'The collection of FileAttachment, ItemAttachment, and referenceAttachment attachments for the event. Navigation property. Read-only. Nullable.'
       operationId: users.calendarView_ListAttachments
       parameters:
         - name: user-id
@@ -39364,6 +39615,7 @@ paths:
       tags:
         - users.event
       summary: Get attachments from users
+      description: 'The collection of FileAttachment, ItemAttachment, and referenceAttachment attachments for the event. Navigation property. Read-only. Nullable.'
       operationId: users.calendarView_GetAttachments
       parameters:
         - name: user-id
@@ -39509,6 +39761,7 @@ paths:
       tags:
         - users.event
       summary: Get calendar from users
+      description: The calendar that contains the event. Navigation property. Read-only.
       operationId: users.calendarView_GetCalendar
       parameters:
         - name: user-id
@@ -39596,6 +39849,7 @@ paths:
       tags:
         - users.event
       summary: Get extensions from users
+      description: The collection of open extensions defined for the event. Nullable.
       operationId: users.calendarView_ListExtensions
       parameters:
         - name: user-id
@@ -39704,6 +39958,7 @@ paths:
       tags:
         - users.event
       summary: Get extensions from users
+      description: The collection of open extensions defined for the event. Nullable.
       operationId: users.calendarView_GetExtensions
       parameters:
         - name: user-id
@@ -39844,6 +40099,7 @@ paths:
       tags:
         - users.event
       summary: Get instances from users
+      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.'
       operationId: users.calendarView_ListInstances
       parameters:
         - name: user-id
@@ -40066,6 +40322,7 @@ paths:
       tags:
         - users.event
       summary: Get instances from users
+      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.'
       operationId: users.calendarView_GetInstances
       parameters:
         - name: user-id
@@ -40291,6 +40548,7 @@ paths:
       tags:
         - users.event
       summary: Get attachments from users
+      description: 'The collection of FileAttachment, ItemAttachment, and referenceAttachment attachments for the event. Navigation property. Read-only. Nullable.'
       operationId: users.calendarView.instances_ListAttachments
       parameters:
         - name: user-id
@@ -40428,6 +40686,7 @@ paths:
       tags:
         - users.event
       summary: Get attachments from users
+      description: 'The collection of FileAttachment, ItemAttachment, and referenceAttachment attachments for the event. Navigation property. Read-only. Nullable.'
       operationId: users.calendarView.instances_GetAttachments
       parameters:
         - name: user-id
@@ -40594,6 +40853,7 @@ paths:
       tags:
         - users.event
       summary: Get calendar from users
+      description: The calendar that contains the event. Navigation property. Read-only.
       operationId: users.calendarView.instances_GetCalendar
       parameters:
         - name: user-id
@@ -40693,6 +40953,7 @@ paths:
       tags:
         - users.event
       summary: Get extensions from users
+      description: The collection of open extensions defined for the event. Nullable.
       operationId: users.calendarView.instances_ListExtensions
       parameters:
         - name: user-id
@@ -40815,6 +41076,7 @@ paths:
       tags:
         - users.event
       summary: Get extensions from users
+      description: The collection of open extensions defined for the event. Nullable.
       operationId: users.calendarView.instances_GetExtensions
       parameters:
         - name: user-id
@@ -40976,6 +41238,7 @@ paths:
       tags:
         - users.event
       summary: Get multiValueExtendedProperties from users
+      description: The collection of multi-value extended properties defined for the event. Read-only. Nullable.
       operationId: users.calendarView.instances_ListMultiValueExtendedProperties
       parameters:
         - name: user-id
@@ -41102,6 +41365,7 @@ paths:
       tags:
         - users.event
       summary: Get multiValueExtendedProperties from users
+      description: The collection of multi-value extended properties defined for the event. Read-only. Nullable.
       operationId: users.calendarView.instances_GetMultiValueExtendedProperties
       parameters:
         - name: user-id
@@ -41264,6 +41528,7 @@ paths:
       tags:
         - users.event
       summary: Get singleValueExtendedProperties from users
+      description: The collection of single-value extended properties defined for the event. Read-only. Nullable.
       operationId: users.calendarView.instances_ListSingleValueExtendedProperties
       parameters:
         - name: user-id
@@ -41390,6 +41655,7 @@ paths:
       tags:
         - users.event
       summary: Get singleValueExtendedProperties from users
+      description: The collection of single-value extended properties defined for the event. Read-only. Nullable.
       operationId: users.calendarView.instances_GetSingleValueExtendedProperties
       parameters:
         - name: user-id
@@ -41552,6 +41818,7 @@ paths:
       tags:
         - users.event
       summary: Get multiValueExtendedProperties from users
+      description: The collection of multi-value extended properties defined for the event. Read-only. Nullable.
       operationId: users.calendarView_ListMultiValueExtendedProperties
       parameters:
         - name: user-id
@@ -41664,6 +41931,7 @@ paths:
       tags:
         - users.event
       summary: Get multiValueExtendedProperties from users
+      description: The collection of multi-value extended properties defined for the event. Read-only. Nullable.
       operationId: users.calendarView_GetMultiValueExtendedProperties
       parameters:
         - name: user-id
@@ -41805,6 +42073,7 @@ paths:
       tags:
         - users.event
       summary: Get singleValueExtendedProperties from users
+      description: The collection of single-value extended properties defined for the event. Read-only. Nullable.
       operationId: users.calendarView_ListSingleValueExtendedProperties
       parameters:
         - name: user-id
@@ -41917,6 +42186,7 @@ paths:
       tags:
         - users.event
       summary: Get singleValueExtendedProperties from users
+      description: The collection of single-value extended properties defined for the event. Read-only. Nullable.
       operationId: users.calendarView_GetSingleValueExtendedProperties
       parameters:
         - name: user-id
@@ -42058,6 +42328,7 @@ paths:
       tags:
         - users.event
       summary: Get events from users
+      description: The user's events. Default is to show Events under the Default Calendar. Read-only. Nullable.
       operationId: users_ListEvents
       parameters:
         - name: user-id
@@ -42266,6 +42537,7 @@ paths:
       tags:
         - users.event
       summary: Get events from users
+      description: The user's events. Default is to show Events under the Default Calendar. Read-only. Nullable.
       operationId: users_GetEvents
       parameters:
         - name: user-id
@@ -42464,6 +42736,7 @@ paths:
       tags:
         - users.event
       summary: Get attachments from users
+      description: 'The collection of FileAttachment, ItemAttachment, and referenceAttachment attachments for the event. Navigation property. Read-only. Nullable.'
       operationId: users.events_ListAttachments
       parameters:
         - name: user-id
@@ -42587,6 +42860,7 @@ paths:
       tags:
         - users.event
       summary: Get attachments from users
+      description: 'The collection of FileAttachment, ItemAttachment, and referenceAttachment attachments for the event. Navigation property. Read-only. Nullable.'
       operationId: users.events_GetAttachments
       parameters:
         - name: user-id
@@ -42732,6 +43006,7 @@ paths:
       tags:
         - users.event
       summary: Get calendar from users
+      description: The calendar that contains the event. Navigation property. Read-only.
       operationId: users.events_GetCalendar
       parameters:
         - name: user-id
@@ -42819,6 +43094,7 @@ paths:
       tags:
         - users.event
       summary: Get extensions from users
+      description: The collection of open extensions defined for the event. Nullable.
       operationId: users.events_ListExtensions
       parameters:
         - name: user-id
@@ -42927,6 +43203,7 @@ paths:
       tags:
         - users.event
       summary: Get extensions from users
+      description: The collection of open extensions defined for the event. Nullable.
       operationId: users.events_GetExtensions
       parameters:
         - name: user-id
@@ -43067,6 +43344,7 @@ paths:
       tags:
         - users.event
       summary: Get instances from users
+      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.'
       operationId: users.events_ListInstances
       parameters:
         - name: user-id
@@ -43289,6 +43567,7 @@ paths:
       tags:
         - users.event
       summary: Get instances from users
+      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.'
       operationId: users.events_GetInstances
       parameters:
         - name: user-id
@@ -43514,6 +43793,7 @@ paths:
       tags:
         - users.event
       summary: Get attachments from users
+      description: 'The collection of FileAttachment, ItemAttachment, and referenceAttachment attachments for the event. Navigation property. Read-only. Nullable.'
       operationId: users.events.instances_ListAttachments
       parameters:
         - name: user-id
@@ -43651,6 +43931,7 @@ paths:
       tags:
         - users.event
       summary: Get attachments from users
+      description: 'The collection of FileAttachment, ItemAttachment, and referenceAttachment attachments for the event. Navigation property. Read-only. Nullable.'
       operationId: users.events.instances_GetAttachments
       parameters:
         - name: user-id
@@ -43817,6 +44098,7 @@ paths:
       tags:
         - users.event
       summary: Get calendar from users
+      description: The calendar that contains the event. Navigation property. Read-only.
       operationId: users.events.instances_GetCalendar
       parameters:
         - name: user-id
@@ -43916,6 +44198,7 @@ paths:
       tags:
         - users.event
       summary: Get extensions from users
+      description: The collection of open extensions defined for the event. Nullable.
       operationId: users.events.instances_ListExtensions
       parameters:
         - name: user-id
@@ -44038,6 +44321,7 @@ paths:
       tags:
         - users.event
       summary: Get extensions from users
+      description: The collection of open extensions defined for the event. Nullable.
       operationId: users.events.instances_GetExtensions
       parameters:
         - name: user-id
@@ -44199,6 +44483,7 @@ paths:
       tags:
         - users.event
       summary: Get multiValueExtendedProperties from users
+      description: The collection of multi-value extended properties defined for the event. Read-only. Nullable.
       operationId: users.events.instances_ListMultiValueExtendedProperties
       parameters:
         - name: user-id
@@ -44325,6 +44610,7 @@ paths:
       tags:
         - users.event
       summary: Get multiValueExtendedProperties from users
+      description: The collection of multi-value extended properties defined for the event. Read-only. Nullable.
       operationId: users.events.instances_GetMultiValueExtendedProperties
       parameters:
         - name: user-id
@@ -44487,6 +44773,7 @@ paths:
       tags:
         - users.event
       summary: Get singleValueExtendedProperties from users
+      description: The collection of single-value extended properties defined for the event. Read-only. Nullable.
       operationId: users.events.instances_ListSingleValueExtendedProperties
       parameters:
         - name: user-id
@@ -44613,6 +44900,7 @@ paths:
       tags:
         - users.event
       summary: Get singleValueExtendedProperties from users
+      description: The collection of single-value extended properties defined for the event. Read-only. Nullable.
       operationId: users.events.instances_GetSingleValueExtendedProperties
       parameters:
         - name: user-id
@@ -44775,6 +45063,7 @@ paths:
       tags:
         - users.event
       summary: Get multiValueExtendedProperties from users
+      description: The collection of multi-value extended properties defined for the event. Read-only. Nullable.
       operationId: users.events_ListMultiValueExtendedProperties
       parameters:
         - name: user-id
@@ -44887,6 +45176,7 @@ paths:
       tags:
         - users.event
       summary: Get multiValueExtendedProperties from users
+      description: The collection of multi-value extended properties defined for the event. Read-only. Nullable.
       operationId: users.events_GetMultiValueExtendedProperties
       parameters:
         - name: user-id
@@ -45028,6 +45318,7 @@ paths:
       tags:
         - users.event
       summary: Get singleValueExtendedProperties from users
+      description: The collection of single-value extended properties defined for the event. Read-only. Nullable.
       operationId: users.events_ListSingleValueExtendedProperties
       parameters:
         - name: user-id
@@ -45140,6 +45431,7 @@ paths:
       tags:
         - users.event
       summary: Get singleValueExtendedProperties from users
+      description: The collection of single-value extended properties defined for the event. Read-only. Nullable.
       operationId: users.events_GetSingleValueExtendedProperties
       parameters:
         - name: user-id
@@ -45291,15 +45583,15 @@ components:
               description: 'Represent the online meeting service providers that can be used to create online meetings in this calendar. Possible values are: unknown, skypeForBusiness, skypeForConsumer, teamsForBusiness.'
             canEdit:
               type: boolean
-              description: 'true if the user can write to the calendar, false otherwise. This property is true for the user who created the calendar. This property is also true for a user who has been shared a calendar and granted write access, through an Outlook client or the corresponding calendarPermission resource. Read-only.'
+              description: 'true if the user can write to the calendar, false otherwise. This property is true for the user who created the calendar. This property is also true for a user who has been shared a calendar and granted write access.'
               nullable: true
             canShare:
               type: boolean
-              description: 'true if the user has the permission to share the calendar, false otherwise. Only the user who created the calendar can share it. Read-only.'
+              description: 'true if the user has the permission to share the calendar, false otherwise. Only the user who created the calendar can share it.'
               nullable: true
             canViewPrivateItems:
               type: boolean
-              description: 'true if the user can read calendar items that have been marked private, false otherwise. This property is set through an Outlook client or the corresponding calendarPermission resource. Read-only.'
+              description: 'true if the user can read calendar items that have been marked private, false otherwise.'
               nullable: true
             changeKey:
               type: string
@@ -45311,7 +45603,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.onlineMeetingProviderType'
             hexColor:
               type: string
-              description: 'The calendar color, expressed in a hex color code of three hexadecimal values, each ranging from 00 to FF and representing the red, green, or blue components of the color in the RGB color space. If the user has never explicitly set a color for the calendar, this property is  empty.'
+              description: 'The calendar color, expressed in a hex color code of three hexadecimal values, each ranging from 00 to FF and representing the red, green, or blue components of the color in the RGB color space. If the user has never explicitly set a color for the calendar, this property is empty. Read-only.'
               nullable: true
             isDefaultCalendar:
               type: boolean
@@ -45391,7 +45683,7 @@ components:
           properties:
             allowNewTimeProposals:
               type: boolean
-              description: true if the meeting organizer allows invitees to propose a new time when responding; otherwise false. Optional. Default is true.
+              description: 'true if the meeting organizer allows invitees to propose a new time when responding; otherwise, false. Optional. Default is true.'
               nullable: true
             attendees:
               type: array
@@ -45547,7 +45839,7 @@ components:
               nullable: true
             name:
               type: string
-              description: The display name of the attachment. This does not need to be the actual file name.
+              description: The attachment's file name.
               nullable: true
             size:
               maximum: 2147483647
@@ -45673,11 +45965,11 @@ components:
       properties:
         address:
           type: string
-          description: The email address of an entity instance.
+          description: The email address of the person or entity.
           nullable: true
         name:
           type: string
-          description: The display name of an entity instance.
+          description: The display name of the person or entity.
           nullable: true
       additionalProperties:
         type: object
@@ -45753,10 +46045,10 @@ components:
       properties:
         dateTime:
           type: string
-          description: 'A single point of time in a combined date and time representation ({date}T{time}). For example, ''2019-04-16T09:00:00''.'
+          description: 'A single point of time in a combined date and time representation ({date}T{time}; for example, 2017-08-29T04:00:00.0000000).'
         timeZone:
           type: string
-          description: 'Represents a time zone, for example, ''Pacific Standard Time''. See below for possible values.'
+          description: 'Represents a time zone, for example, ''Pacific Standard Time''. See below for more possible values.'
           nullable: true
       additionalProperties:
         type: object
@@ -45945,15 +46237,6 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    microsoft.graph.ODataErrors.ODataError:
-      required:
-        - error
-      type: object
-      properties:
-        error:
-          $ref: '#/components/schemas/microsoft.graph.ODataErrors.MainError'
-      additionalProperties:
-        type: object
     microsoft.graph.calendarPermissionCollectionResponse:
       title: Collection of calendarPermission
       type: object
@@ -45962,18 +46245,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.calendarPermission'
-        '@odata.nextLink':
-          type: string
-      additionalProperties:
-        type: object
-    microsoft.graph.eventCollectionResponse:
-      title: Collection of event
-      type: object
-      properties:
-        value:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.event'
         '@odata.nextLink':
           type: string
       additionalProperties:
@@ -46204,27 +46475,6 @@ components:
         - declined
         - notResponded
       type: string
-    microsoft.graph.ODataErrors.MainError:
-      required:
-        - code
-        - message
-      type: object
-      properties:
-        code:
-          type: string
-        message:
-          type: string
-        target:
-          type: string
-          nullable: true
-        details:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.ODataErrors.ErrorDetails'
-        innererror:
-          $ref: '#/components/schemas/microsoft.graph.ODataErrors.InnerError'
-      additionalProperties:
-        type: object
     microsoft.graph.attendeeType:
       title: attendeeType
       enum:
@@ -46283,33 +46533,9 @@ components:
         - noEnd
         - numbered
       type: string
-    microsoft.graph.ODataErrors.ErrorDetails:
-      required:
-        - code
-        - message
-      type: object
-      properties:
-        code:
-          type: string
-        message:
-          type: string
-        target:
-          type: string
-          nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.ODataErrors.InnerError:
-      type: object
-      additionalProperties:
-        type: object
-      description: The structure of this object is service-specific
   responses:
     error:
       description: error
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/microsoft.graph.ODataErrors.ODataError'
     microsoft.graph.calendarPermissionCollectionResponse:
       description: Retrieved collection
       content:
@@ -46318,10 +46544,6 @@ components:
             $ref: '#/components/schemas/microsoft.graph.calendarPermissionCollectionResponse'
     microsoft.graph.eventCollectionResponse:
       description: Retrieved collection
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/microsoft.graph.eventCollectionResponse'
     microsoft.graph.attachmentCollectionResponse:
       description: Retrieved collection
       content:

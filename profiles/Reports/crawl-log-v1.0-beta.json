@@ -29,14 +29,6 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Reports.yml"
     },
-    "/auditLogs/restrictedSignIns": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Reports.yml"
-    },
-    "/auditLogs/restrictedSignIns/{restrictedSignIn-id}": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Reports.yml"
-    },
     "/auditLogs/signIns": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Reports.yml"
@@ -174,18 +166,6 @@
       "originalLocation": "/openApiDocs/beta/Reports.yml"
     },
     "/reports/microsoft.graph.getAzureADApplicationSignInSummary(period='{period}')": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Reports.yml"
-    },
-    "/reports/microsoft.graph.getAzureADFeatureUsage(period='{period}')": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Reports.yml"
-    },
-    "/reports/microsoft.graph.getAzureADLicenseUsage(period='{period}')": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Reports.yml"
-    },
-    "/reports/microsoft.graph.getAzureADUserFeatureUsage()": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Reports.yml"
     },

@@ -11,6 +11,7 @@ paths:
       tags:
         - subscriptions.subscription
       summary: List subscriptions
+      description: 'Retrieve a list of webhook subscriptions.  The content of the response depends on the context in which the app is calling; for details, see the scenarios in the Permissions section.'
       operationId: subscriptions.subscription_ListSubscription
       parameters:
         - $ref: '#/components/parameters/search'
@@ -54,6 +55,7 @@ paths:
       tags:
         - subscriptions.subscription
       summary: Create subscription
+      description: 'Subscribes a listener application to receive change notifications when the requested type of changes occur to the specified resource in Microsoft Graph. See the table in the Permissions section for the list of resources that support subscribing to change notifications. Some resources support the option to include encrypted resource data in change notifications. These resources include chatMessage, contact, event, message, onlineMeetings and presence. For more information, see Set up change notifications that include resource data and Change notifications for Outlook resources in Microsoft Graph.'
       operationId: subscriptions.subscription_CreateSubscription
       requestBody:
         description: New entity
@@ -77,6 +79,7 @@ paths:
       tags:
         - subscriptions.subscription
       summary: Get subscription
+      description: Retrieve the properties and relationships of a subscription. See the table in the Permissions section for the list of resources that support subscribing to change notifications.
       operationId: subscriptions.subscription_GetSubscription
       parameters:
         - name: subscription-id
@@ -130,6 +133,7 @@ paths:
       tags:
         - subscriptions.subscription
       summary: Update subscription
+      description: 'Renew a subscription by extending its expiry time. The table in the Permissions section lists the resources that support subscribing to change notifications. Subscriptions expire after a length of time that varies by resource type. In order to avoid missing change notifications, an app should renew its subscriptions well in advance of their expiry date. See subscription for maximum length of a subscription for each resource type.'
       operationId: subscriptions.subscription_UpdateSubscription
       parameters:
         - name: subscription-id
@@ -156,6 +160,7 @@ paths:
       tags:
         - subscriptions.subscription
       summary: Delete subscription
+      description: 'Delete a subscription. For the list of resources that support subscribing to change notifications, see the table in the Permissions section.'
       operationId: subscriptions.subscription_DeleteSubscription
       parameters:
         - name: subscription-id
@@ -284,56 +289,6 @@ components:
           type: string
       additionalProperties:
         type: object
-    microsoft.graph.ODataErrors.ODataError:
-      required:
-        - error
-      type: object
-      properties:
-        error:
-          $ref: '#/components/schemas/microsoft.graph.ODataErrors.MainError'
-      additionalProperties:
-        type: object
-    microsoft.graph.ODataErrors.MainError:
-      required:
-        - code
-        - message
-      type: object
-      properties:
-        code:
-          type: string
-        message:
-          type: string
-        target:
-          type: string
-          nullable: true
-        details:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.ODataErrors.ErrorDetails'
-        innererror:
-          $ref: '#/components/schemas/microsoft.graph.ODataErrors.InnerError'
-      additionalProperties:
-        type: object
-    microsoft.graph.ODataErrors.ErrorDetails:
-      required:
-        - code
-        - message
-      type: object
-      properties:
-        code:
-          type: string
-        message:
-          type: string
-        target:
-          type: string
-          nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.ODataErrors.InnerError:
-      type: object
-      additionalProperties:
-        type: object
-      description: The structure of this object is service-specific
   responses:
     microsoft.graph.subscriptionCollectionResponse:
       description: Retrieved collection
@@ -343,10 +298,6 @@ components:
             $ref: '#/components/schemas/microsoft.graph.subscriptionCollectionResponse'
     error:
       description: error
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/microsoft.graph.ODataErrors.ODataError'
   parameters:
     search:
       name: $search

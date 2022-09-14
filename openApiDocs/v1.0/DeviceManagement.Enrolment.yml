@@ -11,6 +11,7 @@ paths:
       tags:
         - deviceManagement.onPremisesConditionalAccessSettings
       summary: Get conditionalAccessSettings from deviceManagement
+      description: The Exchange on premises conditional access settings. On premises conditional access will require devices to be both enrolled and compliant for mail access
       operationId: deviceManagement_GetConditionalAccessSettings
       parameters:
         - name: $select
@@ -91,6 +92,7 @@ paths:
       tags:
         - deviceManagement.deviceEnrollmentConfiguration
       summary: Get deviceEnrollmentConfigurations from deviceManagement
+      description: The list of device enrollment configurations
       operationId: deviceManagement_ListDeviceEnrollmentConfigurations
       parameters:
         - $ref: '#/components/parameters/top'
@@ -191,6 +193,7 @@ paths:
       tags:
         - deviceManagement.deviceEnrollmentConfiguration
       summary: Get deviceEnrollmentConfigurations from deviceManagement
+      description: The list of device enrollment configurations
       operationId: deviceManagement_GetDeviceEnrollmentConfigurations
       parameters:
         - name: deviceEnrollmentConfiguration-id
@@ -306,6 +309,7 @@ paths:
       tags:
         - deviceManagement.deviceEnrollmentConfiguration
       summary: Get assignments from deviceManagement
+      description: The list of group assignments for the device configuration profile
       operationId: deviceManagement.deviceEnrollmentConfigurations_ListAssignments
       parameters:
         - name: deviceEnrollmentConfiguration-id
@@ -404,6 +408,7 @@ paths:
       tags:
         - deviceManagement.deviceEnrollmentConfiguration
       summary: Get assignments from deviceManagement
+      description: The list of group assignments for the device configuration profile
       operationId: deviceManagement.deviceEnrollmentConfigurations_GetAssignments
       parameters:
         - name: deviceEnrollmentConfiguration-id
@@ -524,6 +529,7 @@ paths:
       tags:
         - deviceManagement.importedWindowsAutopilotDeviceIdentity
       summary: Get importedWindowsAutopilotDeviceIdentities from deviceManagement
+      description: Collection of imported Windows autopilot devices.
       operationId: deviceManagement_ListImportedWindowsAutopilotDeviceIdentities
       parameters:
         - $ref: '#/components/parameters/top'
@@ -625,6 +631,7 @@ paths:
       tags:
         - deviceManagement.importedWindowsAutopilotDeviceIdentity
       summary: Get importedWindowsAutopilotDeviceIdentities from deviceManagement
+      description: Collection of imported Windows autopilot devices.
       operationId: deviceManagement_GetImportedWindowsAutopilotDeviceIdentities
       parameters:
         - name: importedWindowsAutopilotDeviceIdentity-id
@@ -730,6 +737,7 @@ paths:
       tags:
         - deviceManagement.windowsAutopilotDeviceIdentity
       summary: Get windowsAutopilotDeviceIdentities from deviceManagement
+      description: The Windows autopilot device identities contained collection.
       operationId: deviceManagement_ListWindowsAutopilotDeviceIdentities
       parameters:
         - $ref: '#/components/parameters/top'
@@ -858,6 +866,7 @@ paths:
       tags:
         - deviceManagement.windowsAutopilotDeviceIdentity
       summary: Get windowsAutopilotDeviceIdentities from deviceManagement
+      description: The Windows autopilot device identities contained collection.
       operationId: deviceManagement_GetWindowsAutopilotDeviceIdentities
       parameters:
         - name: windowsAutopilotDeviceIdentity-id
@@ -1155,6 +1164,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get roleAssignments from roleManagement
+      description: Resource to grant access to users or groups.
       operationId: roleManagement.directory_ListRoleAssignments
       parameters:
         - $ref: '#/components/parameters/top'
@@ -1258,6 +1268,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get roleAssignments from roleManagement
+      description: Resource to grant access to users or groups.
       operationId: roleManagement.directory_GetRoleAssignments
       parameters:
         - name: unifiedRoleAssignment-id
@@ -1386,6 +1397,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get appScope from roleManagement
+      description: Read-only property with details of the app specific scope when the assignment scope is app specific. Containment entity. Supports $expand.
       operationId: roleManagement.directory.roleAssignments_GetAppScope
       parameters:
         - name: unifiedRoleAssignment-id
@@ -1486,6 +1498,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get directoryScope from roleManagement
+      description: The directory object that is the scope of the assignment. Read-only. Supports $expand.
       operationId: roleManagement.directory.roleAssignments_GetDirectoryScope
       parameters:
         - name: unifiedRoleAssignment-id
@@ -1535,6 +1548,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get principal from roleManagement
+      description: Referencing the assigned principal. Read-only. Supports $expand.
       operationId: roleManagement.directory.roleAssignments_GetPrincipal
       parameters:
         - name: unifiedRoleAssignment-id
@@ -1584,6 +1598,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get roleDefinition from roleManagement
+      description: The roleDefinition the assignment is for.  Supports $expand. roleDefinition.Id will be auto expanded.
       operationId: roleManagement.directory.roleAssignments_GetRoleDefinition
       parameters:
         - name: unifiedRoleAssignment-id
@@ -1647,6 +1662,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get roleAssignmentScheduleInstances from roleManagement
+      description: Instances for active role assignments.
       operationId: roleManagement.directory_ListRoleAssignmentScheduleInstances
       parameters:
         - $ref: '#/components/parameters/top'
@@ -1767,6 +1783,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get roleAssignmentScheduleInstances from roleManagement
+      description: Instances for active role assignments.
       operationId: roleManagement.directory_GetRoleAssignmentScheduleInstances
       parameters:
         - name: unifiedRoleAssignmentScheduleInstance-id
@@ -1906,6 +1923,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get activatedUsing from roleManagement
+      description: 'If the request is from an eligible administrator to activate a role, this parameter will show the related eligible assignment for that activation. Otherwise, it is null. Supports $expand.'
       operationId: roleManagement.directory.roleAssignmentScheduleInstances_GetActivatedUsing
       parameters:
         - name: unifiedRoleAssignmentScheduleInstance-id
@@ -2018,6 +2036,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get roleAssignmentScheduleRequests from roleManagement
+      description: Requests for active role assignments to principals through PIM.
       operationId: roleManagement.directory_ListRoleAssignmentScheduleRequests
       parameters:
         - $ref: '#/components/parameters/top'
@@ -2158,6 +2177,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get roleAssignmentScheduleRequests from roleManagement
+      description: Requests for active role assignments to principals through PIM.
       operationId: roleManagement.directory_GetRoleAssignmentScheduleRequests
       parameters:
         - name: unifiedRoleAssignmentScheduleRequest-id
@@ -2311,6 +2331,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get activatedUsing from roleManagement
+      description: 'If the request is from an eligible administrator to activate a role, this parameter will show the related eligible assignment for that activation. Otherwise, it''s null. Supports $expand.'
       operationId: roleManagement.directory.roleAssignmentScheduleRequests_GetActivatedUsing
       parameters:
         - name: unifiedRoleAssignmentScheduleRequest-id
@@ -2394,6 +2415,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get appScope from roleManagement
+      description: Read-only property with details of the app-specific scope when the assignment is scoped to an app. Nullable. Supports $expand.
       operationId: roleManagement.directory.roleAssignmentScheduleRequests_GetAppScope
       parameters:
         - name: unifiedRoleAssignmentScheduleRequest-id
@@ -2444,6 +2466,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get directoryScope from roleManagement
+      description: The directory object that is the scope of the assignment. Read-only. Supports $expand.
       operationId: roleManagement.directory.roleAssignmentScheduleRequests_GetDirectoryScope
       parameters:
         - name: unifiedRoleAssignmentScheduleRequest-id
@@ -2513,6 +2536,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get principal from roleManagement
+      description: The principal that's getting a role assignment through the request. Supports $expand.
       operationId: roleManagement.directory.roleAssignmentScheduleRequests_GetPrincipal
       parameters:
         - name: unifiedRoleAssignmentScheduleRequest-id
@@ -2562,6 +2586,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get roleDefinition from roleManagement
+      description: Detailed information for the unifiedRoleDefinition object that is referenced through the roleDefinitionId property. Supports $expand.
       operationId: roleManagement.directory.roleAssignmentScheduleRequests_GetRoleDefinition
       parameters:
         - name: unifiedRoleAssignmentScheduleRequest-id
@@ -2625,6 +2650,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get targetSchedule from roleManagement
+      description: The schedule for an eligible role assignment that is referenced through the targetScheduleId property. Supports $expand.
       operationId: roleManagement.directory.roleAssignmentScheduleRequests_GetTargetSchedule
       parameters:
         - name: unifiedRoleAssignmentScheduleRequest-id
@@ -2746,6 +2772,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get roleAssignmentSchedules from roleManagement
+      description: Schedules for active role assignment operations.
       operationId: roleManagement.directory_ListRoleAssignmentSchedules
       parameters:
         - $ref: '#/components/parameters/top'
@@ -2869,6 +2896,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get roleAssignmentSchedules from roleManagement
+      description: Schedules for active role assignment operations.
       operationId: roleManagement.directory_GetRoleAssignmentSchedules
       parameters:
         - name: unifiedRoleAssignmentSchedule-id
@@ -3009,6 +3037,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get activatedUsing from roleManagement
+      description: 'If the request is from an eligible administrator to activate a role, this parameter will show the related eligible assignment for that activation. Otherwise, it is null. Supports $expand.'
       operationId: roleManagement.directory.roleAssignmentSchedules_GetActivatedUsing
       parameters:
         - name: unifiedRoleAssignmentSchedule-id
@@ -3123,6 +3152,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get roleDefinitions from roleManagement
+      description: Resource representing the roles allowed by RBAC providers and the permissions assigned to the roles.
       operationId: roleManagement.directory_ListRoleDefinitions
       parameters:
         - $ref: '#/components/parameters/top'
@@ -3229,6 +3259,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get roleDefinitions from roleManagement
+      description: Resource representing the roles allowed by RBAC providers and the permissions assigned to the roles.
       operationId: roleManagement.directory_GetRoleDefinitions
       parameters:
         - name: unifiedRoleDefinition-id
@@ -3342,6 +3373,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get inheritsPermissionsFrom from roleManagement
+      description: Read-only collection of role definitions that the given role definition inherits from. Only Azure AD built-in roles (isBuiltIn is true) support this attribute. Supports $expand.
       operationId: roleManagement.directory.roleDefinitions_ListInheritsPermissionsFrom
       parameters:
         - name: unifiedRoleDefinition-id
@@ -3463,6 +3495,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get inheritsPermissionsFrom from roleManagement
+      description: Read-only collection of role definitions that the given role definition inherits from. Only Azure AD built-in roles (isBuiltIn is true) support this attribute. Supports $expand.
       operationId: roleManagement.directory.roleDefinitions_GetInheritsPermissionsFrom
       parameters:
         - name: unifiedRoleDefinition-id
@@ -3598,6 +3631,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get roleEligibilityScheduleInstances from roleManagement
+      description: Instances for role eligibility requests.
       operationId: roleManagement.directory_ListRoleEligibilityScheduleInstances
       parameters:
         - $ref: '#/components/parameters/top'
@@ -3710,6 +3744,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get roleEligibilityScheduleInstances from roleManagement
+      description: Instances for role eligibility requests.
       operationId: roleManagement.directory_GetRoleEligibilityScheduleInstances
       parameters:
         - name: unifiedRoleEligibilityScheduleInstance-id
@@ -3872,6 +3907,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get roleEligibilityScheduleRequests from roleManagement
+      description: Requests for role eligibilities for principals through PIM.
       operationId: roleManagement.directory_ListRoleEligibilityScheduleRequests
       parameters:
         - $ref: '#/components/parameters/top'
@@ -4010,6 +4046,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get roleEligibilityScheduleRequests from roleManagement
+      description: Requests for role eligibilities for principals through PIM.
       operationId: roleManagement.directory_GetRoleEligibilityScheduleRequests
       parameters:
         - name: unifiedRoleEligibilityScheduleRequest-id
@@ -4157,6 +4194,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get appScope from roleManagement
+      description: Read-only property with details of the app-specific scope when the role eligibility is scoped to an app. Nullable. Supports $expand.
       operationId: roleManagement.directory.roleEligibilityScheduleRequests_GetAppScope
       parameters:
         - name: unifiedRoleEligibilityScheduleRequest-id
@@ -4207,6 +4245,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get directoryScope from roleManagement
+      description: The directory object that is the scope of the role eligibility. Read-only. Supports $expand.
       operationId: roleManagement.directory.roleEligibilityScheduleRequests_GetDirectoryScope
       parameters:
         - name: unifiedRoleEligibilityScheduleRequest-id
@@ -4276,6 +4315,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get principal from roleManagement
+      description: The principal that's getting a role eligibility through the request. Supports $expand.
       operationId: roleManagement.directory.roleEligibilityScheduleRequests_GetPrincipal
       parameters:
         - name: unifiedRoleEligibilityScheduleRequest-id
@@ -4325,6 +4365,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get roleDefinition from roleManagement
+      description: Detailed information for the unifiedRoleDefinition object that is referenced through the roleDefinitionId property. Supports $expand.
       operationId: roleManagement.directory.roleEligibilityScheduleRequests_GetRoleDefinition
       parameters:
         - name: unifiedRoleEligibilityScheduleRequest-id
@@ -4388,6 +4429,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get targetSchedule from roleManagement
+      description: The schedule for a role eligibility that is referenced through the targetScheduleId property. Supports $expand.
       operationId: roleManagement.directory.roleEligibilityScheduleRequests_GetTargetSchedule
       parameters:
         - name: unifiedRoleEligibilityScheduleRequest-id
@@ -4502,6 +4544,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get roleEligibilitySchedules from roleManagement
+      description: Schedules for role eligibility operations.
       operationId: roleManagement.directory_ListRoleEligibilitySchedules
       parameters:
         - $ref: '#/components/parameters/top'
@@ -4620,6 +4663,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get roleEligibilitySchedules from roleManagement
+      description: Schedules for role eligibility operations.
       operationId: roleManagement.directory_GetRoleEligibilitySchedules
       parameters:
         - name: unifiedRoleEligibilitySchedule-id
@@ -4784,6 +4828,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get entitlementManagement from roleManagement
+      description: Container for roles and assignments for entitlement management resources.
       operationId: roleManagement_GetEntitlementManagement
       parameters:
         - name: $select
@@ -4893,6 +4938,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get roleAssignments from roleManagement
+      description: Resource to grant access to users or groups.
       operationId: roleManagement.entitlementManagement_ListRoleAssignments
       parameters:
         - $ref: '#/components/parameters/top'
@@ -4996,6 +5042,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get roleAssignments from roleManagement
+      description: Resource to grant access to users or groups.
       operationId: roleManagement.entitlementManagement_GetRoleAssignments
       parameters:
         - name: unifiedRoleAssignment-id
@@ -5124,6 +5171,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get appScope from roleManagement
+      description: Read-only property with details of the app specific scope when the assignment scope is app specific. Containment entity. Supports $expand.
       operationId: roleManagement.entitlementManagement.roleAssignments_GetAppScope
       parameters:
         - name: unifiedRoleAssignment-id
@@ -5224,6 +5272,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get directoryScope from roleManagement
+      description: The directory object that is the scope of the assignment. Read-only. Supports $expand.
       operationId: roleManagement.entitlementManagement.roleAssignments_GetDirectoryScope
       parameters:
         - name: unifiedRoleAssignment-id
@@ -5273,6 +5322,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get principal from roleManagement
+      description: Referencing the assigned principal. Read-only. Supports $expand.
       operationId: roleManagement.entitlementManagement.roleAssignments_GetPrincipal
       parameters:
         - name: unifiedRoleAssignment-id
@@ -5322,6 +5372,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get roleDefinition from roleManagement
+      description: The roleDefinition the assignment is for.  Supports $expand. roleDefinition.Id will be auto expanded.
       operationId: roleManagement.entitlementManagement.roleAssignments_GetRoleDefinition
       parameters:
         - name: unifiedRoleAssignment-id
@@ -5385,6 +5436,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get roleAssignmentScheduleInstances from roleManagement
+      description: Instances for active role assignments.
       operationId: roleManagement.entitlementManagement_ListRoleAssignmentScheduleInstances
       parameters:
         - $ref: '#/components/parameters/top'
@@ -5505,6 +5557,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get roleAssignmentScheduleInstances from roleManagement
+      description: Instances for active role assignments.
       operationId: roleManagement.entitlementManagement_GetRoleAssignmentScheduleInstances
       parameters:
         - name: unifiedRoleAssignmentScheduleInstance-id
@@ -5644,6 +5697,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get activatedUsing from roleManagement
+      description: 'If the request is from an eligible administrator to activate a role, this parameter will show the related eligible assignment for that activation. Otherwise, it is null. Supports $expand.'
       operationId: roleManagement.entitlementManagement.roleAssignmentScheduleInstances_GetActivatedUsing
       parameters:
         - name: unifiedRoleAssignmentScheduleInstance-id
@@ -5756,6 +5810,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get roleAssignmentScheduleRequests from roleManagement
+      description: Requests for active role assignments to principals through PIM.
       operationId: roleManagement.entitlementManagement_ListRoleAssignmentScheduleRequests
       parameters:
         - $ref: '#/components/parameters/top'
@@ -5896,6 +5951,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get roleAssignmentScheduleRequests from roleManagement
+      description: Requests for active role assignments to principals through PIM.
       operationId: roleManagement.entitlementManagement_GetRoleAssignmentScheduleRequests
       parameters:
         - name: unifiedRoleAssignmentScheduleRequest-id
@@ -6049,6 +6105,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get activatedUsing from roleManagement
+      description: 'If the request is from an eligible administrator to activate a role, this parameter will show the related eligible assignment for that activation. Otherwise, it''s null. Supports $expand.'
       operationId: roleManagement.entitlementManagement.roleAssignmentScheduleRequests_GetActivatedUsing
       parameters:
         - name: unifiedRoleAssignmentScheduleRequest-id
@@ -6132,6 +6189,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get appScope from roleManagement
+      description: Read-only property with details of the app-specific scope when the assignment is scoped to an app. Nullable. Supports $expand.
       operationId: roleManagement.entitlementManagement.roleAssignmentScheduleRequests_GetAppScope
       parameters:
         - name: unifiedRoleAssignmentScheduleRequest-id
@@ -6182,6 +6240,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get directoryScope from roleManagement
+      description: The directory object that is the scope of the assignment. Read-only. Supports $expand.
       operationId: roleManagement.entitlementManagement.roleAssignmentScheduleRequests_GetDirectoryScope
       parameters:
         - name: unifiedRoleAssignmentScheduleRequest-id
@@ -6251,6 +6310,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get principal from roleManagement
+      description: The principal that's getting a role assignment through the request. Supports $expand.
       operationId: roleManagement.entitlementManagement.roleAssignmentScheduleRequests_GetPrincipal
       parameters:
         - name: unifiedRoleAssignmentScheduleRequest-id
@@ -6300,6 +6360,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get roleDefinition from roleManagement
+      description: Detailed information for the unifiedRoleDefinition object that is referenced through the roleDefinitionId property. Supports $expand.
       operationId: roleManagement.entitlementManagement.roleAssignmentScheduleRequests_GetRoleDefinition
       parameters:
         - name: unifiedRoleAssignmentScheduleRequest-id
@@ -6363,6 +6424,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get targetSchedule from roleManagement
+      description: The schedule for an eligible role assignment that is referenced through the targetScheduleId property. Supports $expand.
       operationId: roleManagement.entitlementManagement.roleAssignmentScheduleRequests_GetTargetSchedule
       parameters:
         - name: unifiedRoleAssignmentScheduleRequest-id
@@ -6484,6 +6546,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get roleAssignmentSchedules from roleManagement
+      description: Schedules for active role assignment operations.
       operationId: roleManagement.entitlementManagement_ListRoleAssignmentSchedules
       parameters:
         - $ref: '#/components/parameters/top'
@@ -6607,6 +6670,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get roleAssignmentSchedules from roleManagement
+      description: Schedules for active role assignment operations.
       operationId: roleManagement.entitlementManagement_GetRoleAssignmentSchedules
       parameters:
         - name: unifiedRoleAssignmentSchedule-id
@@ -6747,6 +6811,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get activatedUsing from roleManagement
+      description: 'If the request is from an eligible administrator to activate a role, this parameter will show the related eligible assignment for that activation. Otherwise, it is null. Supports $expand.'
       operationId: roleManagement.entitlementManagement.roleAssignmentSchedules_GetActivatedUsing
       parameters:
         - name: unifiedRoleAssignmentSchedule-id
@@ -6861,6 +6926,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get roleDefinitions from roleManagement
+      description: Resource representing the roles allowed by RBAC providers and the permissions assigned to the roles.
       operationId: roleManagement.entitlementManagement_ListRoleDefinitions
       parameters:
         - $ref: '#/components/parameters/top'
@@ -6967,6 +7033,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get roleDefinitions from roleManagement
+      description: Resource representing the roles allowed by RBAC providers and the permissions assigned to the roles.
       operationId: roleManagement.entitlementManagement_GetRoleDefinitions
       parameters:
         - name: unifiedRoleDefinition-id
@@ -7080,6 +7147,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get inheritsPermissionsFrom from roleManagement
+      description: Read-only collection of role definitions that the given role definition inherits from. Only Azure AD built-in roles (isBuiltIn is true) support this attribute. Supports $expand.
       operationId: roleManagement.entitlementManagement.roleDefinitions_ListInheritsPermissionsFrom
       parameters:
         - name: unifiedRoleDefinition-id
@@ -7201,6 +7269,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get inheritsPermissionsFrom from roleManagement
+      description: Read-only collection of role definitions that the given role definition inherits from. Only Azure AD built-in roles (isBuiltIn is true) support this attribute. Supports $expand.
       operationId: roleManagement.entitlementManagement.roleDefinitions_GetInheritsPermissionsFrom
       parameters:
         - name: unifiedRoleDefinition-id
@@ -7336,6 +7405,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get roleEligibilityScheduleInstances from roleManagement
+      description: Instances for role eligibility requests.
       operationId: roleManagement.entitlementManagement_ListRoleEligibilityScheduleInstances
       parameters:
         - $ref: '#/components/parameters/top'
@@ -7448,6 +7518,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get roleEligibilityScheduleInstances from roleManagement
+      description: Instances for role eligibility requests.
       operationId: roleManagement.entitlementManagement_GetRoleEligibilityScheduleInstances
       parameters:
         - name: unifiedRoleEligibilityScheduleInstance-id
@@ -7610,6 +7681,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get roleEligibilityScheduleRequests from roleManagement
+      description: Requests for role eligibilities for principals through PIM.
       operationId: roleManagement.entitlementManagement_ListRoleEligibilityScheduleRequests
       parameters:
         - $ref: '#/components/parameters/top'
@@ -7748,6 +7820,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get roleEligibilityScheduleRequests from roleManagement
+      description: Requests for role eligibilities for principals through PIM.
       operationId: roleManagement.entitlementManagement_GetRoleEligibilityScheduleRequests
       parameters:
         - name: unifiedRoleEligibilityScheduleRequest-id
@@ -7895,6 +7968,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get appScope from roleManagement
+      description: Read-only property with details of the app-specific scope when the role eligibility is scoped to an app. Nullable. Supports $expand.
       operationId: roleManagement.entitlementManagement.roleEligibilityScheduleRequests_GetAppScope
       parameters:
         - name: unifiedRoleEligibilityScheduleRequest-id
@@ -7945,6 +8019,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get directoryScope from roleManagement
+      description: The directory object that is the scope of the role eligibility. Read-only. Supports $expand.
       operationId: roleManagement.entitlementManagement.roleEligibilityScheduleRequests_GetDirectoryScope
       parameters:
         - name: unifiedRoleEligibilityScheduleRequest-id
@@ -8014,6 +8089,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get principal from roleManagement
+      description: The principal that's getting a role eligibility through the request. Supports $expand.
       operationId: roleManagement.entitlementManagement.roleEligibilityScheduleRequests_GetPrincipal
       parameters:
         - name: unifiedRoleEligibilityScheduleRequest-id
@@ -8063,6 +8139,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get roleDefinition from roleManagement
+      description: Detailed information for the unifiedRoleDefinition object that is referenced through the roleDefinitionId property. Supports $expand.
       operationId: roleManagement.entitlementManagement.roleEligibilityScheduleRequests_GetRoleDefinition
       parameters:
         - name: unifiedRoleEligibilityScheduleRequest-id
@@ -8126,6 +8203,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get targetSchedule from roleManagement
+      description: The schedule for a role eligibility that is referenced through the targetScheduleId property. Supports $expand.
       operationId: roleManagement.entitlementManagement.roleEligibilityScheduleRequests_GetTargetSchedule
       parameters:
         - name: unifiedRoleEligibilityScheduleRequest-id
@@ -8240,6 +8318,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get roleEligibilitySchedules from roleManagement
+      description: Schedules for role eligibility operations.
       operationId: roleManagement.entitlementManagement_ListRoleEligibilitySchedules
       parameters:
         - $ref: '#/components/parameters/top'
@@ -8358,6 +8437,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get roleEligibilitySchedules from roleManagement
+      description: Schedules for role eligibility operations.
       operationId: roleManagement.entitlementManagement_GetRoleEligibilitySchedules
       parameters:
         - name: unifiedRoleEligibilitySchedule-id
@@ -8777,22 +8857,22 @@ components:
           properties:
             appScopeId:
               type: string
-              description: 'Identifier of the app specific scope when the assignment scope is app specific. The scope of an assignment determines the set of resources for which the principal has been granted access. Directory scopes are shared scopes stored in the directory that are understood by multiple applications. Use / for tenant-wide scope. App scopes are scopes that are defined and understood by this application only.  For the entitlement management provider, use app scopes to specify a catalog, for example /AccessPackageCatalog/beedadfe-01d5-4025-910b-84abb9369997.'
+              description: 'Identifier of the app-specific scope when the assignment scope is app-specific.  Either this property or directoryScopeId is required. App scopes are scopes that are defined and understood by this application only. Use / for tenant-wide app scopes. Use directoryScopeId to limit the scope to particular directory objects, for example, administrative units. Supports $filter (eq, in).'
               nullable: true
             condition:
               type: string
               nullable: true
             directoryScopeId:
               type: string
-              description: Identifier of the directory object representing the scope of the assignment. The scope of an assignment determines the set of resources for which the principal has been granted access. Directory scopes are shared scopes stored in the directory that are understood by multiple applications. App scopes are scopes that are defined and understood by this application only.
+              description: 'Identifier of the directory object representing the scope of the assignment.  Either this property or appScopeId is required. The scope of an assignment determines the set of resources for which the principal has been granted access. Directory scopes are shared scopes stored in the directory that are understood by multiple applications. Use / for tenant-wide scope. Use appScopeId to limit the scope to an application only. Supports $filter (eq, in).'
               nullable: true
             principalId:
               type: string
-              description: Identifier of the principal to which the assignment is granted. Supports $filter (eq operator only).
+              description: 'Identifier of the principal to which the assignment is granted. Supports $filter (eq, in).'
               nullable: true
             roleDefinitionId:
               type: string
-              description: Identifier of the unifiedRoleDefinition the assignment is for. Read-only. Supports $filter (eq operator only).
+              description: 'Identifier of the role definition the assignment is for. Read only. Supports $filter (eq, in).'
               nullable: true
             appScope:
               $ref: '#/components/schemas/microsoft.graph.appScope'
@@ -8812,11 +8892,11 @@ components:
           properties:
             displayName:
               type: string
-              description: 'Provides the display name of the app-specific resource represented by the app scope. Provided for display purposes since appScopeId is often an immutable, non-human-readable id. This property is read only.'
+              description: 'Provides the display name of the app-specific resource represented by the app scope. Provided for display purposes since appScopeId is often an immutable, non-human-readable id. Read-only.'
               nullable: true
             type:
               type: string
-              description: 'Describes the type of app-specific resource represented by the app scope. Provided for display purposes, so a user interface can convey to the user the kind of app specific resource represented by the app scope. This property is read only.'
+              description: 'Describes the type of app-specific resource represented by the app scope. Provided for display purposes, so a user interface can convey to the user the kind of app specific resource represented by the app scope. Read-only.'
               nullable: true
           additionalProperties:
             type: object
@@ -8846,21 +8926,21 @@ components:
               nullable: true
             displayName:
               type: string
-              description: The display name for the unifiedRoleDefinition. Read-only when isBuiltIn is true. Required.  Supports $filter (eq and startsWith operators only).
+              description: 'The display name for the unifiedRoleDefinition. Read-only when isBuiltIn is true. Required.  Supports $filter (eq, in).'
               nullable: true
             isBuiltIn:
               type: boolean
-              description: Flag indicating if the unifiedRoleDefinition is part of the default set included with the product or custom. Read-only.  Supports $filter (eq operator only).
+              description: 'Flag indicating whether the role definition is part of the default set included in Azure Active Directory (Azure AD) or a custom definition. Read-only. Supports $filter (eq, in).'
               nullable: true
             isEnabled:
               type: boolean
-              description: Flag indicating if the role is enabled for assignment. If false the role is not available for assignment. Read-only when isBuiltIn is true.
+              description: Flag indicating whether the role is enabled for assignment. If false the role is not available for assignment. Read-only when isBuiltIn is true.
               nullable: true
             resourceScopes:
               type: array
               items:
                 type: string
-              description: List of scopes permissions granted by the role definition apply to. Currently only / is supported. Read-only when isBuiltIn is true. DO NOT USE. This will be deprecated soon. Attach scope to role assignment
+              description: List of the scopes or permissions the role definition applies to. Currently only / is supported. Read-only when isBuiltIn is true. DO NOT USE. This will be deprecated soon. Attach scope to role assignment.
             rolePermissions:
               type: array
               items:
@@ -8868,17 +8948,17 @@ components:
               description: List of permissions included in the role. Read-only when isBuiltIn is true. Required.
             templateId:
               type: string
-              description: Custom template identifier that can be set when isBuiltIn is false. This identifier is typically used if one needs an identifier to be the same across different directories. Read-only when isBuiltIn is true.
+              description: Custom template identifier that can be set when isBuiltIn is false but is read-only when isBuiltIn is true. This identifier is typically used if one needs an identifier to be the same across different directories.
               nullable: true
             version:
               type: string
-              description: Indicates version of the unifiedRoleDefinition. Read-only when isBuiltIn is true.
+              description: Indicates version of the role definition. Read-only when isBuiltIn is true.
               nullable: true
             inheritsPermissionsFrom:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRoleDefinition'
-              description: Read-only collection of role definitions that the given role definition inherits from. Only Azure AD built-in roles support this attribute.
+              description: Read-only collection of role definitions that the given role definition inherits from. Only Azure AD built-in roles (isBuiltIn is true) support this attribute. Supports $expand.
           additionalProperties:
             type: object
     microsoft.graph.unifiedRoleAssignmentScheduleInstance:
@@ -8903,11 +8983,11 @@ components:
               nullable: true
             roleAssignmentOriginId:
               type: string
-              description: The identifier of the role assignment in Azure AD.
+              description: 'The identifier of the role assignment in Azure AD. Supports $filter (eq, ne).'
               nullable: true
             roleAssignmentScheduleId:
               type: string
-              description: The identifier of the unifiedRoleAssignmentSchedule object from which this instance was created.
+              description: 'The identifier of the unifiedRoleAssignmentSchedule object from which this instance was created. Supports $filter (eq, ne).'
               nullable: true
             startDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -8928,21 +9008,21 @@ components:
             endDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Time that the roleEligibilityScheduleInstance will expire.
+              description: The end date of the schedule instance.
               format: date-time
               nullable: true
             memberType:
               type: string
-              description: 'Membership type of the assignment. It can either be Inherited, Direct, or Group.'
+              description: 'How the role eligibility is inherited. It can either be Inherited, Direct, or Group. It can further imply whether the unifiedRoleEligibilitySchedule can be managed by the caller. Supports $filter (eq, ne).'
               nullable: true
             roleEligibilityScheduleId:
               type: string
-              description: Identifier of the parent roleEligibilitySchedule for this instance.
+              description: 'The identifier of the unifiedRoleEligibilitySchedule object from which this instance was created. Supports $filter (eq, ne).'
               nullable: true
             startDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Time that the roleEligibilityScheduleInstance will start.
+              description: When this instance starts.
               format: date-time
               nullable: true
           additionalProperties:
@@ -8979,7 +9059,7 @@ components:
               nullable: true
             principalId:
               type: string
-              description: 'Identifier of the principal that has been granted the assignment. Supports $filter (eq, ne).'
+              description: 'Identifier of the principal that has been granted the assignment. Can be a user, role-assignable group, or a service principal. Supports $filter (eq, ne).'
               nullable: true
             roleDefinitionId:
               type: string
@@ -9015,7 +9095,7 @@ components:
           properties:
             memberType:
               type: string
-              description: 'Membership type of the eligible assignment. It can either be Inherited, Direct, or Group. Supports $filter (eq).'
+              description: 'How the role eligibility is inherited. It can either be Inherited, Direct, or Group. It can further imply whether the unifiedRoleEligibilitySchedule can be managed by the caller. Supports $filter (eq, ne).'
               nullable: true
             scheduleInfo:
               $ref: '#/components/schemas/microsoft.graph.requestSchedule'
@@ -9087,7 +9167,7 @@ components:
               nullable: true
             principalId:
               type: string
-              description: 'Identifier of the principal that has been granted the role eligibility. Supports $filter (eq, ne).'
+              description: 'Identifier of the principal that has been granted the role eligibility. Can be a user or a role-assignable group. You can grant only active assignments service principals.Supports $filter (eq, ne).'
               nullable: true
             roleDefinitionId:
               type: string
@@ -9199,7 +9279,7 @@ components:
           type: array
           items:
             type: string
-          description: Set of tasks that can be performed on a resource.
+          description: Set of tasks that can be performed on a resource. Required.
         condition:
           type: string
           description: Optional constraints that must be met for the permission to be effective.
@@ -9302,7 +9382,7 @@ components:
         startDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
-          description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. In PIM, when the  eligible or active assignment becomes active.'
+          description: When the  eligible or active assignment becomes active.
           format: date-time
           nullable: true
       additionalProperties:
@@ -9555,17 +9635,7 @@ components:
             description: Error status.
             name: error
     microsoft.graph.identitySet:
-      title: identitySet
-      type: object
-      properties:
-        application:
-          $ref: '#/components/schemas/microsoft.graph.identity'
-        device:
-          $ref: '#/components/schemas/microsoft.graph.identity'
-        user:
-          $ref: '#/components/schemas/microsoft.graph.identity'
-      additionalProperties:
-        type: object
+      description: The principal that created the request.
     microsoft.graph.expirationPattern:
       title: expirationPattern
       type: object
@@ -9617,93 +9687,12 @@ components:
           $ref: '#/components/schemas/microsoft.graph.ODataErrors.InnerError'
       additionalProperties:
         type: object
-    microsoft.graph.identity:
-      title: identity
-      type: object
-      properties:
-        displayName:
-          type: string
-          description: 'The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
-          nullable: true
-        id:
-          type: string
-          description: Unique identifier for the identity.
-          nullable: true
-      additionalProperties:
-        type: object
     microsoft.graph.expirationPatternType:
-      title: expirationPatternType
-      enum:
-        - notSpecified
-        - noExpiration
-        - afterDateTime
-        - afterDuration
-      type: string
+      description: 'The requestor''s desired expiration pattern type. The possible values are: notSpecified, noExpiration, afterDateTime, afterDuration.'
     microsoft.graph.recurrencePattern:
-      title: recurrencePattern
-      type: object
-      properties:
-        dayOfMonth:
-          maximum: 2147483647
-          minimum: -2147483648
-          type: integer
-          description: The day of the month on which the event occurs. Required if type is absoluteMonthly or absoluteYearly.
-          format: int32
-        daysOfWeek:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.dayOfWeek'
-          description: 'A collection of the days of the week on which the event occurs. The possible values are: sunday, monday, tuesday, wednesday, thursday, friday, saturday. If type is relativeMonthly or relativeYearly, and daysOfWeek specifies more than one day, the event falls on the first day that satisfies the pattern.  Required if type is weekly, relativeMonthly, or relativeYearly.'
-        firstDayOfWeek:
-          $ref: '#/components/schemas/microsoft.graph.dayOfWeek'
-        index:
-          $ref: '#/components/schemas/microsoft.graph.weekIndex'
-        interval:
-          maximum: 2147483647
-          minimum: -2147483648
-          type: integer
-          description: 'The number of units between occurrences, where units can be in days, weeks, months, or years, depending on the type. Required.'
-          format: int32
-        month:
-          maximum: 2147483647
-          minimum: -2147483648
-          type: integer
-          description: The month in which the event occurs.  This is a number from 1 to 12.
-          format: int32
-        type:
-          $ref: '#/components/schemas/microsoft.graph.recurrencePatternType'
-      additionalProperties:
-        type: object
+      description: 'The frequency of an event.  For access reviews: Do not specify this property for a one-time access review.  Only interval, dayOfMonth, and type (weekly, absoluteMonthly) properties of recurrencePattern are supported.'
     microsoft.graph.recurrenceRange:
-      title: recurrenceRange
-      type: object
-      properties:
-        endDate:
-          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
-          type: string
-          description: 'The date to stop applying the recurrence pattern. Depending on the recurrence pattern of the event, the last occurrence of the meeting may not be this date. Required if type is endDate.'
-          format: date
-          nullable: true
-        numberOfOccurrences:
-          maximum: 2147483647
-          minimum: -2147483648
-          type: integer
-          description: The number of times to repeat the event. Required and must be positive if type is numbered.
-          format: int32
-        recurrenceTimeZone:
-          type: string
-          description: 'Time zone for the startDate and endDate properties. Optional. If not specified, the time zone of the event is used.'
-          nullable: true
-        startDate:
-          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
-          type: string
-          description: 'The date to start applying the recurrence pattern. The first occurrence of the meeting may be this date or later, depending on the recurrence pattern of the event. Must be the same value as the start property of the recurring event. Required.'
-          format: date
-          nullable: true
-        type:
-          $ref: '#/components/schemas/microsoft.graph.recurrenceRangeType'
-      additionalProperties:
-        type: object
+      description: The duration of an event.
     microsoft.graph.ODataErrors.ErrorDetails:
       required:
         - code
@@ -9724,43 +9713,6 @@ components:
       additionalProperties:
         type: object
       description: The structure of this object is service-specific
-    microsoft.graph.dayOfWeek:
-      title: dayOfWeek
-      enum:
-        - sunday
-        - monday
-        - tuesday
-        - wednesday
-        - thursday
-        - friday
-        - saturday
-      type: string
-    microsoft.graph.weekIndex:
-      title: weekIndex
-      enum:
-        - first
-        - second
-        - third
-        - fourth
-        - last
-      type: string
-    microsoft.graph.recurrencePatternType:
-      title: recurrencePatternType
-      enum:
-        - daily
-        - weekly
-        - absoluteMonthly
-        - relativeMonthly
-        - absoluteYearly
-        - relativeYearly
-      type: string
-    microsoft.graph.recurrenceRangeType:
-      title: recurrenceRangeType
-      enum:
-        - endDate
-        - noEnd
-        - numbered
-      type: string
   responses:
     error:
       description: error

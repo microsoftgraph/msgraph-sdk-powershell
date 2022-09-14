@@ -11,6 +11,7 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Get planner from groups
+      description: Entry-point to Planner resource that might exist for a Unified Group.
       operationId: groups_GetPlanner
       parameters:
         - name: group-id
@@ -116,6 +117,7 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Get plans from groups
+      description: Read-only. Nullable. Returns the plannerPlans owned by the group.
       operationId: groups.planner_ListPlans
       parameters:
         - name: group-id
@@ -232,6 +234,7 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Get plans from groups
+      description: Read-only. Nullable. Returns the plannerPlans owned by the group.
       operationId: groups.planner_GetPlans
       parameters:
         - name: group-id
@@ -378,6 +381,7 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Get buckets from groups
+      description: Read-only. Nullable. Collection of buckets in the plan.
       operationId: groups.planner.plans_ListBuckets
       parameters:
         - name: group-id
@@ -498,6 +502,7 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Get buckets from groups
+      description: Read-only. Nullable. Collection of buckets in the plan.
       operationId: groups.planner.plans_GetBuckets
       parameters:
         - name: group-id
@@ -650,6 +655,7 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Get tasks from groups
+      description: Read-only. Nullable. The collection of tasks in the bucket.
       operationId: groups.planner.plans.buckets_ListTasks
       parameters:
         - name: group-id
@@ -844,6 +850,7 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Get tasks from groups
+      description: Read-only. Nullable. The collection of tasks in the bucket.
       operationId: groups.planner.plans.buckets_GetTasks
       parameters:
         - name: group-id
@@ -1063,6 +1070,7 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Get assignedToTaskBoardFormat from groups
+      description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by assignedTo.
       operationId: groups.planner.plans.buckets.tasks_GetAssignedToTaskBoardFormat
       parameters:
         - name: group-id
@@ -1226,6 +1234,7 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Get bucketTaskBoardFormat from groups
+      description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by bucket.
       operationId: groups.planner.plans.buckets.tasks_GetBucketTaskBoardFormat
       parameters:
         - name: group-id
@@ -1388,6 +1397,7 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Get details from groups
+      description: Read-only. Nullable. Additional details about the task.
       operationId: groups.planner.plans.buckets.tasks_GetDetails
       parameters:
         - name: group-id
@@ -1553,6 +1563,7 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Get progressTaskBoardFormat from groups
+      description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by progress.
       operationId: groups.planner.plans.buckets.tasks_GetProgressTaskBoardFormat
       parameters:
         - name: group-id
@@ -1715,6 +1726,7 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Get details from groups
+      description: Read-only. Nullable. Additional details about the plan.
       operationId: groups.planner.plans_GetDetails
       parameters:
         - name: group-id
@@ -1836,6 +1848,7 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Get tasks from groups
+      description: Read-only. Nullable. Collection of tasks in the plan.
       operationId: groups.planner.plans_ListTasks
       parameters:
         - name: group-id
@@ -2016,6 +2029,7 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Get tasks from groups
+      description: Read-only. Nullable. Collection of tasks in the plan.
       operationId: groups.planner.plans_GetTasks
       parameters:
         - name: group-id
@@ -2210,6 +2224,7 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Get assignedToTaskBoardFormat from groups
+      description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by assignedTo.
       operationId: groups.planner.plans.tasks_GetAssignedToTaskBoardFormat
       parameters:
         - name: group-id
@@ -2352,6 +2367,7 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Get bucketTaskBoardFormat from groups
+      description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by bucket.
       operationId: groups.planner.plans.tasks_GetBucketTaskBoardFormat
       parameters:
         - name: group-id
@@ -2493,6 +2509,7 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Get details from groups
+      description: Read-only. Nullable. Additional details about the task.
       operationId: groups.planner.plans.tasks_GetDetails
       parameters:
         - name: group-id
@@ -2637,6 +2654,7 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Get progressTaskBoardFormat from groups
+      description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by progress.
       operationId: groups.planner.plans.tasks_GetProgressTaskBoardFormat
       parameters:
         - name: group-id
@@ -2850,6 +2868,7 @@ paths:
       tags:
         - planner.plannerBucket
       summary: Get buckets from planner
+      description: Read-only. Nullable. Returns a collection of the specified buckets
       operationId: planner_ListBuckets
       parameters:
         - $ref: '#/components/parameters/top'
@@ -2941,6 +2960,7 @@ paths:
       tags:
         - planner.plannerBucket
       summary: Get buckets from planner
+      description: Read-only. Nullable. Returns a collection of the specified buckets
       operationId: planner_GetBuckets
       parameters:
         - name: plannerBucket-id
@@ -3049,6 +3069,7 @@ paths:
       tags:
         - planner.plannerBucket
       summary: Get tasks from planner
+      description: Read-only. Nullable. The collection of tasks in the bucket.
       operationId: planner.buckets_ListTasks
       parameters:
         - name: plannerBucket-id
@@ -3215,6 +3236,7 @@ paths:
       tags:
         - planner.plannerBucket
       summary: Get tasks from planner
+      description: Read-only. Nullable. The collection of tasks in the bucket.
       operationId: planner.buckets_GetTasks
       parameters:
         - name: plannerBucket-id
@@ -3384,6 +3406,7 @@ paths:
       tags:
         - planner.plannerBucket
       summary: Get assignedToTaskBoardFormat from planner
+      description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by assignedTo.
       operationId: planner.buckets.tasks_GetAssignedToTaskBoardFormat
       parameters:
         - name: plannerBucket-id
@@ -3505,6 +3528,7 @@ paths:
       tags:
         - planner.plannerBucket
       summary: Get bucketTaskBoardFormat from planner
+      description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by bucket.
       operationId: planner.buckets.tasks_GetBucketTaskBoardFormat
       parameters:
         - name: plannerBucket-id
@@ -3625,6 +3649,7 @@ paths:
       tags:
         - planner.plannerBucket
       summary: Get details from planner
+      description: Read-only. Nullable. Additional details about the task.
       operationId: planner.buckets.tasks_GetDetails
       parameters:
         - name: plannerBucket-id
@@ -3748,6 +3773,7 @@ paths:
       tags:
         - planner.plannerBucket
       summary: Get progressTaskBoardFormat from planner
+      description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by progress.
       operationId: planner.buckets.tasks_GetProgressTaskBoardFormat
       parameters:
         - name: plannerBucket-id
@@ -3868,6 +3894,7 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Get plans from planner
+      description: Read-only. Nullable. Returns a collection of the specified plans
       operationId: planner_ListPlans
       parameters:
         - $ref: '#/components/parameters/top'
@@ -3969,6 +3996,7 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Get plans from planner
+      description: Read-only. Nullable. Returns a collection of the specified plans
       operationId: planner_GetPlans
       parameters:
         - name: plannerPlan-id
@@ -4091,6 +4119,7 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Get buckets from planner
+      description: Read-only. Nullable. Collection of buckets in the plan.
       operationId: planner.plans_ListBuckets
       parameters:
         - name: plannerPlan-id
@@ -4197,6 +4226,7 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Get buckets from planner
+      description: Read-only. Nullable. Collection of buckets in the plan.
       operationId: planner.plans_GetBuckets
       parameters:
         - name: plannerPlan-id
@@ -4327,6 +4357,7 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Get tasks from planner
+      description: Read-only. Nullable. The collection of tasks in the bucket.
       operationId: planner.plans.buckets_ListTasks
       parameters:
         - name: plannerPlan-id
@@ -4507,6 +4538,7 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Get tasks from planner
+      description: Read-only. Nullable. The collection of tasks in the bucket.
       operationId: planner.plans.buckets_GetTasks
       parameters:
         - name: plannerPlan-id
@@ -4701,6 +4733,7 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Get assignedToTaskBoardFormat from planner
+      description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by assignedTo.
       operationId: planner.plans.buckets.tasks_GetAssignedToTaskBoardFormat
       parameters:
         - name: plannerPlan-id
@@ -4843,6 +4876,7 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Get bucketTaskBoardFormat from planner
+      description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by bucket.
       operationId: planner.plans.buckets.tasks_GetBucketTaskBoardFormat
       parameters:
         - name: plannerPlan-id
@@ -4984,6 +5018,7 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Get details from planner
+      description: Read-only. Nullable. Additional details about the task.
       operationId: planner.plans.buckets.tasks_GetDetails
       parameters:
         - name: plannerPlan-id
@@ -5128,6 +5163,7 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Get progressTaskBoardFormat from planner
+      description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by progress.
       operationId: planner.plans.buckets.tasks_GetProgressTaskBoardFormat
       parameters:
         - name: plannerPlan-id
@@ -5269,6 +5305,7 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Get details from planner
+      description: Read-only. Nullable. Additional details about the plan.
       operationId: planner.plans_GetDetails
       parameters:
         - name: plannerPlan-id
@@ -5369,6 +5406,7 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Get tasks from planner
+      description: Read-only. Nullable. Collection of tasks in the plan.
       operationId: planner.plans_ListTasks
       parameters:
         - name: plannerPlan-id
@@ -5535,6 +5573,7 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Get tasks from planner
+      description: Read-only. Nullable. Collection of tasks in the plan.
       operationId: planner.plans_GetTasks
       parameters:
         - name: plannerPlan-id
@@ -5704,6 +5743,7 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Get assignedToTaskBoardFormat from planner
+      description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by assignedTo.
       operationId: planner.plans.tasks_GetAssignedToTaskBoardFormat
       parameters:
         - name: plannerPlan-id
@@ -5825,6 +5865,7 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Get bucketTaskBoardFormat from planner
+      description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by bucket.
       operationId: planner.plans.tasks_GetBucketTaskBoardFormat
       parameters:
         - name: plannerPlan-id
@@ -5945,6 +5986,7 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Get details from planner
+      description: Read-only. Nullable. Additional details about the task.
       operationId: planner.plans.tasks_GetDetails
       parameters:
         - name: plannerPlan-id
@@ -6068,6 +6110,7 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Get progressTaskBoardFormat from planner
+      description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by progress.
       operationId: planner.plans.tasks_GetProgressTaskBoardFormat
       parameters:
         - name: plannerPlan-id
@@ -6188,6 +6231,7 @@ paths:
       tags:
         - planner.plannerTask
       summary: Get tasks from planner
+      description: Read-only. Nullable. Returns a collection of the specified tasks
       operationId: planner_ListTasks
       parameters:
         - $ref: '#/components/parameters/top'
@@ -6339,6 +6383,7 @@ paths:
       tags:
         - planner.plannerTask
       summary: Get tasks from planner
+      description: Read-only. Nullable. Returns a collection of the specified tasks
       operationId: planner_GetTasks
       parameters:
         - name: plannerTask-id
@@ -6483,6 +6528,7 @@ paths:
       tags:
         - planner.plannerTask
       summary: Get assignedToTaskBoardFormat from planner
+      description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by assignedTo.
       operationId: planner.tasks_GetAssignedToTaskBoardFormat
       parameters:
         - name: plannerTask-id
@@ -6583,6 +6629,7 @@ paths:
       tags:
         - planner.plannerTask
       summary: Get bucketTaskBoardFormat from planner
+      description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by bucket.
       operationId: planner.tasks_GetBucketTaskBoardFormat
       parameters:
         - name: plannerTask-id
@@ -6682,6 +6729,7 @@ paths:
       tags:
         - planner.plannerTask
       summary: Get details from planner
+      description: Read-only. Nullable. Additional details about the task.
       operationId: planner.tasks_GetDetails
       parameters:
         - name: plannerTask-id
@@ -6784,6 +6832,7 @@ paths:
       tags:
         - planner.plannerTask
       summary: Get progressTaskBoardFormat from planner
+      description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by progress.
       operationId: planner.tasks_GetProgressTaskBoardFormat
       parameters:
         - name: plannerTask-id
@@ -6883,6 +6932,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Get planner from users
+      description: Entry-point to the Planner resource that might exist for a user. Read-only.
       operationId: users_GetPlanner
       parameters:
         - name: user-id
@@ -6994,6 +7044,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Get plans from users
+      description: Read-only. Nullable. Returns the plannerTasks assigned to the user.
       operationId: users.planner_ListPlans
       parameters:
         - name: user-id
@@ -7110,6 +7161,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Get plans from users
+      description: Read-only. Nullable. Returns the plannerTasks assigned to the user.
       operationId: users.planner_GetPlans
       parameters:
         - name: user-id
@@ -7256,6 +7308,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Get buckets from users
+      description: Read-only. Nullable. Collection of buckets in the plan.
       operationId: users.planner.plans_ListBuckets
       parameters:
         - name: user-id
@@ -7376,6 +7429,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Get buckets from users
+      description: Read-only. Nullable. Collection of buckets in the plan.
       operationId: users.planner.plans_GetBuckets
       parameters:
         - name: user-id
@@ -7528,6 +7582,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Get tasks from users
+      description: Read-only. Nullable. The collection of tasks in the bucket.
       operationId: users.planner.plans.buckets_ListTasks
       parameters:
         - name: user-id
@@ -7722,6 +7777,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Get tasks from users
+      description: Read-only. Nullable. The collection of tasks in the bucket.
       operationId: users.planner.plans.buckets_GetTasks
       parameters:
         - name: user-id
@@ -7941,6 +7997,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Get assignedToTaskBoardFormat from users
+      description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by assignedTo.
       operationId: users.planner.plans.buckets.tasks_GetAssignedToTaskBoardFormat
       parameters:
         - name: user-id
@@ -8104,6 +8161,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Get bucketTaskBoardFormat from users
+      description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by bucket.
       operationId: users.planner.plans.buckets.tasks_GetBucketTaskBoardFormat
       parameters:
         - name: user-id
@@ -8266,6 +8324,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Get details from users
+      description: Read-only. Nullable. Additional details about the task.
       operationId: users.planner.plans.buckets.tasks_GetDetails
       parameters:
         - name: user-id
@@ -8431,6 +8490,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Get progressTaskBoardFormat from users
+      description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by progress.
       operationId: users.planner.plans.buckets.tasks_GetProgressTaskBoardFormat
       parameters:
         - name: user-id
@@ -8593,6 +8653,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Get details from users
+      description: Read-only. Nullable. Additional details about the plan.
       operationId: users.planner.plans_GetDetails
       parameters:
         - name: user-id
@@ -8714,6 +8775,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Get tasks from users
+      description: Read-only. Nullable. Collection of tasks in the plan.
       operationId: users.planner.plans_ListTasks
       parameters:
         - name: user-id
@@ -8894,6 +8956,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Get tasks from users
+      description: Read-only. Nullable. Collection of tasks in the plan.
       operationId: users.planner.plans_GetTasks
       parameters:
         - name: user-id
@@ -9088,6 +9151,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Get assignedToTaskBoardFormat from users
+      description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by assignedTo.
       operationId: users.planner.plans.tasks_GetAssignedToTaskBoardFormat
       parameters:
         - name: user-id
@@ -9230,6 +9294,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Get bucketTaskBoardFormat from users
+      description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by bucket.
       operationId: users.planner.plans.tasks_GetBucketTaskBoardFormat
       parameters:
         - name: user-id
@@ -9371,6 +9436,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Get details from users
+      description: Read-only. Nullable. Additional details about the task.
       operationId: users.planner.plans.tasks_GetDetails
       parameters:
         - name: user-id
@@ -9515,6 +9581,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Get progressTaskBoardFormat from users
+      description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by progress.
       operationId: users.planner.plans.tasks_GetProgressTaskBoardFormat
       parameters:
         - name: user-id
@@ -9656,6 +9723,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Get tasks from users
+      description: Read-only. Nullable. Returns the plannerPlans shared with the user.
       operationId: users.planner_ListTasks
       parameters:
         - name: user-id
@@ -9822,6 +9890,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Get tasks from users
+      description: Read-only. Nullable. Returns the plannerPlans shared with the user.
       operationId: users.planner_GetTasks
       parameters:
         - name: user-id
@@ -9991,6 +10060,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Get assignedToTaskBoardFormat from users
+      description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by assignedTo.
       operationId: users.planner.tasks_GetAssignedToTaskBoardFormat
       parameters:
         - name: user-id
@@ -10112,6 +10182,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Get bucketTaskBoardFormat from users
+      description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by bucket.
       operationId: users.planner.tasks_GetBucketTaskBoardFormat
       parameters:
         - name: user-id
@@ -10232,6 +10303,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Get details from users
+      description: Read-only. Nullable. Additional details about the task.
       operationId: users.planner.tasks_GetDetails
       parameters:
         - name: user-id
@@ -10355,6 +10427,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Get progressTaskBoardFormat from users
+      description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by progress.
       operationId: users.planner.tasks_GetProgressTaskBoardFormat
       parameters:
         - name: user-id
@@ -10511,14 +10584,14 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.plannerBucket'
-              description: Collection of buckets in the plan. Read-only. Nullable.
+              description: Read-only. Nullable. Collection of buckets in the plan.
             details:
               $ref: '#/components/schemas/microsoft.graph.plannerPlanDetails'
             tasks:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.plannerTask'
-              description: Collection of tasks in the plan. Read-only. Nullable.
+              description: Read-only. Nullable. Collection of tasks in the plan.
           additionalProperties:
             type: object
     microsoft.graph.plannerBucket:
@@ -10628,7 +10701,7 @@ components:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
-              description: 'Priority of the task. Valid range of values is between 0 and 10 (inclusive), with increasing value being lower priority (0 has the highest priority and 10 has the lowest priority).  Currently, Planner interprets values 0 and 1 as ''urgent'', 2 and 3 and 4 as ''important'', 5, 6, and 7 as ''medium'', and 8, 9, and 10 as ''low''.  Currently, Planner sets the value 1 for ''urgent'', 3 for ''important'', 5 for ''medium'', and 9 for ''low''.'
+              description: 'Priority of the task. The valid range of values is between 0 and 10, with the increasing value being lower priority (0 has the highest priority and 10 has the lowest priority).  Currently, Planner interprets values 0 and 1 as ''urgent'', 2, 3 and 4 as ''important'', 5, 6, and 7 as ''medium'', and 8, 9, and 10 as ''low''.  Additionally, Planner sets the value 1 for ''urgent'', 3 for ''important'', 5 for ''medium'', and 9 for ''low''.'
               format: int32
               nullable: true
             referenceCount:
@@ -10763,7 +10836,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.plannerTask'
-              description: Read-only. Nullable. Returns the plannerTasks assigned to the user.
+              description: Read-only. Nullable. Returns the plannerPlans shared with the user.
           additionalProperties:
             type: object
     microsoft.graph.entity:
@@ -10775,176 +10848,25 @@ components:
       additionalProperties:
         type: object
     microsoft.graph.plannerPlanContainer:
-      title: plannerPlanContainer
-      type: object
-      properties:
-        containerId:
-          type: string
-          description: The identifier of the resource that contains the plan.
-        type:
-          $ref: '#/components/schemas/microsoft.graph.plannerContainerType'
-        url:
-          type: string
-          description: The full canonical URL of the container.
-      additionalProperties:
-        type: object
+      description: 'Identifies the container of the plan. After it is set, this property can’t be updated. Required.'
     microsoft.graph.identitySet:
-      title: identitySet
-      type: object
-      properties:
-        application:
-          $ref: '#/components/schemas/microsoft.graph.identity'
-        device:
-          $ref: '#/components/schemas/microsoft.graph.identity'
-        user:
-          $ref: '#/components/schemas/microsoft.graph.identity'
-      additionalProperties:
-        type: object
+      description: Read-only. The user who created the plan.
     microsoft.graph.plannerAppliedCategories:
-      title: plannerAppliedCategories
-      type: object
-      additionalProperties:
-        type: object
+      description: The categories to which the task has been applied. See applied Categories for possible values.
     microsoft.graph.plannerAssignments:
-      title: plannerAssignments
-      type: object
-      additionalProperties:
-        type: object
+      description: The set of assignees the task is assigned to.
     microsoft.graph.plannerPreviewType:
-      title: plannerPreviewType
-      enum:
-        - automatic
-        - noPreview
-        - checklist
-        - description
-        - reference
-      type: string
+      description: 'This sets the type of preview that shows up on the task. The possible values are: automatic, noPreview, checklist, description, reference.'
     microsoft.graph.plannerOrderHintsByAssignee:
-      title: plannerOrderHintsByAssignee
-      type: object
-      additionalProperties:
-        type: object
+      description: Dictionary of hints used to order tasks on the AssignedTo view of the Task Board. The key of each entry is one of the users the task is assigned to and the value is the order hint. The format of each value is defined as outlined here.
     microsoft.graph.plannerChecklistItems:
-      title: plannerChecklistItems
-      type: object
-      additionalProperties:
-        type: object
+      description: The collection of checklist items on the task.
     microsoft.graph.plannerExternalReferences:
-      title: plannerExternalReferences
-      type: object
-      additionalProperties:
-        type: object
+      description: The collection of references on the task.
     microsoft.graph.plannerCategoryDescriptions:
-      title: plannerCategoryDescriptions
-      type: object
-      properties:
-        category1:
-          type: string
-          description: The label associated with Category 1
-          nullable: true
-        category10:
-          type: string
-          description: The label associated with Category 10
-          nullable: true
-        category11:
-          type: string
-          description: The label associated with Category 11
-          nullable: true
-        category12:
-          type: string
-          description: The label associated with Category 12
-          nullable: true
-        category13:
-          type: string
-          description: The label associated with Category 13
-          nullable: true
-        category14:
-          type: string
-          description: The label associated with Category 14
-          nullable: true
-        category15:
-          type: string
-          description: The label associated with Category 15
-          nullable: true
-        category16:
-          type: string
-          description: The label associated with Category 16
-          nullable: true
-        category17:
-          type: string
-          description: The label associated with Category 17
-          nullable: true
-        category18:
-          type: string
-          description: The label associated with Category 18
-          nullable: true
-        category19:
-          type: string
-          description: The label associated with Category 19
-          nullable: true
-        category2:
-          type: string
-          description: The label associated with Category 2
-          nullable: true
-        category20:
-          type: string
-          description: The label associated with Category 20
-          nullable: true
-        category21:
-          type: string
-          description: The label associated with Category 21
-          nullable: true
-        category22:
-          type: string
-          description: The label associated with Category 22
-          nullable: true
-        category23:
-          type: string
-          description: The label associated with Category 23
-          nullable: true
-        category24:
-          type: string
-          description: The label associated with Category 24
-          nullable: true
-        category25:
-          type: string
-          description: The label associated with Category 25
-          nullable: true
-        category3:
-          type: string
-          description: The label associated with Category 3
-          nullable: true
-        category4:
-          type: string
-          description: The label associated with Category 4
-          nullable: true
-        category5:
-          type: string
-          description: The label associated with Category 5
-          nullable: true
-        category6:
-          type: string
-          description: The label associated with Category 6
-          nullable: true
-        category7:
-          type: string
-          description: The label associated with Category 7
-          nullable: true
-        category8:
-          type: string
-          description: The label associated with Category 8
-          nullable: true
-        category9:
-          type: string
-          description: The label associated with Category 9
-          nullable: true
-      additionalProperties:
-        type: object
+      description: An object that specifies the descriptions of the 25 categories that can be associated with tasks in the plan.
     microsoft.graph.plannerUserIds:
-      title: plannerUserIds
-      type: object
-      additionalProperties:
-        type: object
+      description: 'Set of user ids that this plan is shared with. If you are leveraging Microsoft 365 groups, use the Groups API to manage group membership to share the group''s plan. You can also add existing members of the group to this collection though it is not required for them to access the plan owned by the group.'
     microsoft.graph.ODataErrors.ODataError:
       required:
         - error
@@ -10988,27 +10910,6 @@ components:
             $ref: '#/components/schemas/microsoft.graph.plannerTask'
         '@odata.nextLink':
           type: string
-      additionalProperties:
-        type: object
-    microsoft.graph.plannerContainerType:
-      title: plannerContainerType
-      enum:
-        - group
-        - unknownFutureValue
-        - roster
-      type: string
-    microsoft.graph.identity:
-      title: identity
-      type: object
-      properties:
-        displayName:
-          type: string
-          description: 'The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
-          nullable: true
-        id:
-          type: string
-          description: Unique identifier for the identity.
-          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.ODataErrors.MainError:

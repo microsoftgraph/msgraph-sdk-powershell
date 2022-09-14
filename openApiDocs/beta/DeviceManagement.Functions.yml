@@ -11,6 +11,7 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function downloadApplePushNotificationCertificateSigningRequest
+      description: Download Apple push notification certificate signing request
       operationId: deviceManagement.applePushNotificationCertificate_downloadApplePushNotificationCertificateSigningRequest
       responses:
         '200':
@@ -307,6 +308,37 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
+  '/deviceManagement/comanagedDevices/{managedDevice-id}/microsoft.graph.retrieveRemoteHelpSession(sessionKey=''{sessionKey}'')':
+    get:
+      tags:
+        - deviceManagement.Functions
+      summary: Invoke function retrieveRemoteHelpSession
+      operationId: deviceManagement.comanagedDevices_retrieveRemoteHelpSession
+      parameters:
+        - name: managedDevice-id
+          in: path
+          description: 'key: id of managedDevice'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: managedDevice
+        - name: sessionKey
+          in: path
+          description: 'Usage: sessionKey=''{sessionKey}'''
+          required: true
+          schema:
+            type: string
+            nullable: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.retrieveRemoteHelpSessionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
   '/deviceManagement/comanagedDevices/microsoft.graph.appDiagnostics(upn=''{upn}'')':
     get:
       tags:
@@ -368,6 +400,7 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function exportMobileConfig
+      description: Exports the mobile configuration
       operationId: deviceManagement.depOnboardingSettings.enrollmentProfiles_exportMobileConfig
       parameters:
         - name: depOnboardingSetting-id
@@ -405,6 +438,7 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function getEncryptionPublicKey
+      description: Get a public key to use to encrypt the Apple device enrollment program token
       operationId: deviceManagement.depOnboardingSettings_getEncryptionPublicKey
       parameters:
         - name: depOnboardingSetting-id
@@ -552,6 +586,7 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function getRemediationHistory
+      description: Function to get the number of remediations by a device health scripts
       operationId: deviceManagement.deviceHealthScripts_getRemediationHistory
       parameters:
         - name: deviceHealthScript-id
@@ -784,6 +819,37 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
+  '/deviceManagement/managedDevices/{managedDevice-id}/microsoft.graph.retrieveRemoteHelpSession(sessionKey=''{sessionKey}'')':
+    get:
+      tags:
+        - deviceManagement.Functions
+      summary: Invoke function retrieveRemoteHelpSession
+      operationId: deviceManagement.managedDevices_retrieveRemoteHelpSession
+      parameters:
+        - name: managedDevice-id
+          in: path
+          description: 'key: id of managedDevice'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: managedDevice
+        - name: sessionKey
+          in: path
+          description: 'Usage: sessionKey=''{sessionKey}'''
+          required: true
+          schema:
+            type: string
+            nullable: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.retrieveRemoteHelpSessionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
   '/deviceManagement/managedDevices/microsoft.graph.appDiagnostics(upn=''{upn}'')':
     get:
       tags:
@@ -821,6 +887,7 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function getAssignedRoleDetails
+      description: Retrieves the assigned role definitions and role assignments of the currently authenticated user.
       operationId: deviceManagement_getAssignedRoleDetails
       responses:
         '200':
@@ -1081,6 +1148,30 @@ paths:
                   value:
                     type: boolean
                     default: false
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  /deviceManagement/monitoring/alertRecords/microsoft.graph.deviceManagement.getPortalNotifications():
+    get:
+      tags:
+        - deviceManagement.Functions
+      summary: Invoke function getPortalNotifications
+      operationId: deviceManagement.monitoring.alertRecords_getPortalNotifications
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of alertRecord
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.deviceManagement.portalNotification'
                 additionalProperties:
                   type: object
         default:
@@ -1691,6 +1782,10 @@ components:
           type: string
           description: The name of the Azure Storage account in which the Cloud PC snapshot is being saved.
           nullable: true
+        azureStorageContainerName:
+          type: string
+          description: The name of the container in an Azure Storage account in which the Cloud PC snapshot is being saved.
+          nullable: true
         inReview:
           type: boolean
           description: True if the Cloud PC is set to in review by the administrator.
@@ -1801,6 +1896,42 @@ components:
       additionalProperties:
         type: object
       description: OEM Warranty information for a given device
+    microsoft.graph.retrieveRemoteHelpSessionResponse:
+      title: retrieveRemoteHelpSessionResponse
+      type: object
+      properties:
+        acsGroupId:
+          type: string
+          description: ACS Group Id
+        acsHelperUserId:
+          type: string
+          description: Helper ACS User Id
+        acsHelperUserToken:
+          type: string
+          description: Helper ACS User Token
+        acsSharerUserId:
+          type: string
+          description: Sharer ACS User Id
+        deviceName:
+          type: string
+          description: Android Device Name
+        pubSubGroupId:
+          type: string
+          description: Azure Pubsub Group Id
+        pubSubHelperAccessUri:
+          type: string
+          description: Azure Pubsub Group Id
+        sessionExpirationDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: Azure Pubsub Session Expiration Date Time.
+          format: date-time
+        sessionKey:
+          type: string
+          description: The unique identifier for a session
+      additionalProperties:
+        type: object
+      description: Remote help - response we provide back to the helper on retrieve session API call
     microsoft.graph.powerliftIncidentMetadata:
       title: powerliftIncidentMetadata
       type: object
@@ -2296,6 +2427,33 @@ components:
       additionalProperties:
         type: object
       description: The user experience analytics Work From Anywhere metrics devices summary.
+    microsoft.graph.deviceManagement.portalNotification:
+      title: portalNotification
+      type: object
+      properties:
+        alertImpact:
+          $ref: '#/components/schemas/microsoft.graph.deviceManagement.alertImpact'
+        alertRecordId:
+          type: string
+          nullable: true
+        alertRuleId:
+          type: string
+          nullable: true
+        alertRuleName:
+          type: string
+          nullable: true
+        alertRuleTemplate:
+          $ref: '#/components/schemas/microsoft.graph.deviceManagement.alertRuleTemplate'
+        id:
+          type: string
+          nullable: true
+        isPortalNotificationSent:
+          type: boolean
+          nullable: true
+        severity:
+          $ref: '#/components/schemas/microsoft.graph.deviceManagement.ruleSeverityType'
+      additionalProperties:
+        type: object
     microsoft.graph.tenantAttachRBACState:
       title: tenantAttachRBACState
       type: object
@@ -2582,9 +2740,11 @@ components:
         eventDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: 'Indicates the date and time when this event was created. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 appears as 2014-01-01T00:00:00Z.'
           format: date-time
         eventName:
           type: string
+          description: Name of the event.
           nullable: true
         eventResult:
           $ref: '#/components/schemas/microsoft.graph.cloudPcConnectivityEventResult'
@@ -2592,6 +2752,7 @@ components:
           $ref: '#/components/schemas/microsoft.graph.cloudPcConnectivityEventType'
         message:
           type: string
+          description: Additional message for this event.
           nullable: true
       additionalProperties:
         type: object
@@ -2717,35 +2878,9 @@ components:
             description: NotEndsWith.
             name: notEndsWith
     microsoft.graph.actionState:
-      title: actionState
-      enum:
-        - none
-        - pending
-        - canceled
-        - active
-        - done
-        - failed
-        - notSupported
-      type: string
+      description: 'State of the action. Possible values are: None, pending, canceled, active, done, failed, notSupported. Read-only.'
     microsoft.graph.cloudPcStatusDetails:
-      title: cloudPcStatusDetails
-      type: object
-      properties:
-        additionalInformation:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.keyValuePair'
-          description: Any additional information about the Cloud PC status.
-        code:
-          type: string
-          description: The code associated with the Cloud PC status.
-          nullable: true
-        message:
-          type: string
-          description: The status message.
-          nullable: true
-      additionalProperties:
-        type: object
+      description: The details of the Cloud PC status.
     microsoft.graph.cloudPcUserAccessLevel:
       title: cloudPcUserAccessLevel
       enum:
@@ -2753,22 +2888,7 @@ components:
         - restricted
         - unknownFutureValue
       type: string
-    microsoft.graph.settingSource:
-      title: settingSource
-      type: object
-      properties:
-        displayName:
-          type: string
-          description: Not yet documented
-          nullable: true
-        id:
-          type: string
-          description: Not yet documented
-          nullable: true
-        sourceType:
-          $ref: '#/components/schemas/microsoft.graph.settingSourceType'
-      additionalProperties:
-        type: object
+    microsoft.graph.settingSource: { }
     microsoft.graph.complianceStatus:
       title: complianceStatus
       enum:
@@ -3171,6 +3291,37 @@ components:
       additionalProperties:
         type: object
       description: The user experience analytics work from anywhere Windows 10 devices summary.
+    microsoft.graph.deviceManagement.alertImpact:
+      title: alertImpact
+      type: object
+      properties:
+        aggregationType:
+          $ref: '#/components/schemas/microsoft.graph.deviceManagement.aggregationType'
+        value:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          format: int32
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.deviceManagement.alertRuleTemplate:
+      title: alertRuleTemplate
+      enum:
+        - cloudPcProvisionScenario
+        - cloudPcImageUploadScenario
+        - cloudPcOnPremiseNetworkConnectionCheckScenario
+        - unknownFutureValue
+      type: string
+    microsoft.graph.deviceManagement.ruleSeverityType:
+      title: ruleSeverityType
+      enum:
+        - unknown
+        - informational
+        - warning
+        - critical
+        - unknownFutureValue
+      type: string
     microsoft.graph.diskType:
       title: diskType
       enum:
@@ -3245,34 +3396,6 @@ components:
         - deviceHealthCheck
         - unknownFutureValue
       type: string
-    microsoft.graph.ODataErrors.ODataError:
-      required:
-        - error
-      type: object
-      properties:
-        error:
-          $ref: '#/components/schemas/microsoft.graph.ODataErrors.MainError'
-      additionalProperties:
-        type: object
-    microsoft.graph.keyValuePair:
-      title: keyValuePair
-      type: object
-      properties:
-        name:
-          type: string
-          description: Name for this key-value pair
-        value:
-          type: string
-          description: Value for this key-value pair
-          nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.settingSourceType:
-      title: settingSourceType
-      enum:
-        - deviceConfiguration
-        - deviceIntent
-      type: string
     microsoft.graph.warrantyType:
       title: warrantyType
       enum:
@@ -3311,27 +3434,15 @@ components:
       additionalProperties:
         type: object
       description: Base type for assignment targets.
-    microsoft.graph.ODataErrors.MainError:
-      required:
-        - code
-        - message
-      type: object
-      properties:
-        code:
-          type: string
-        message:
-          type: string
-        target:
-          type: string
-          nullable: true
-        details:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.ODataErrors.ErrorDetails'
-        innererror:
-          $ref: '#/components/schemas/microsoft.graph.ODataErrors.InnerError'
-      additionalProperties:
-        type: object
+    microsoft.graph.deviceManagement.aggregationType:
+      title: aggregationType
+      enum:
+        - count
+        - percentage
+        - affectedCloudPcCount
+        - affectedCloudPcPercentage
+        - unknownFutureValue
+      type: string
     microsoft.graph.deviceAndAppManagementAssignmentFilterType:
       title: deviceAndAppManagementAssignmentFilterType
       enum:
@@ -3353,33 +3464,9 @@ components:
           - value: exclude
             description: 'Indicates out-filter, rule matching will not offer the payload to devices.'
             name: exclude
-    microsoft.graph.ODataErrors.ErrorDetails:
-      required:
-        - code
-        - message
-      type: object
-      properties:
-        code:
-          type: string
-        message:
-          type: string
-        target:
-          type: string
-          nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.ODataErrors.InnerError:
-      type: object
-      additionalProperties:
-        type: object
-      description: The structure of this object is service-specific
   responses:
     error:
       description: error
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/microsoft.graph.ODataErrors.ODataError'
   securitySchemes:
     azureaadv2:
       type: oauth2
