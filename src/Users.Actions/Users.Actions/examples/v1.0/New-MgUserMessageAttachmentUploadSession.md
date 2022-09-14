@@ -1,5 +1,5 @@
 ### Example 1
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.Users.Actions
 $params = @{
 	AttachmentItem = @{
@@ -14,7 +14,7 @@ $params = @{
 New-MgUserMessageAttachmentUploadSession -UserId $userId -MessageId $messageId -BodyParameter $params
 ```
 ### Example 2
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.Users.Actions
 $params = @{
 	AttachmentItem = @{

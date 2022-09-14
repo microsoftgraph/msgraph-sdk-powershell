@@ -1,17 +1,17 @@
 ### Example 1
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.Notes
 # A UPN can also be used as -UserId.
 Get-MgUserOnenoteNotebook -UserId $userId -NotebookId $notebookId
 ```
 ### Example 2
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.Notes
 # A UPN can also be used as -UserId.
 Get-MgUserOnenoteNotebook -UserId $userId
 ```
 ### Example 3
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.Notes
 # A UPN can also be used as -UserId.
 Get-MgUserOnenoteNotebook -UserId $userId -NotebookId $notebookId

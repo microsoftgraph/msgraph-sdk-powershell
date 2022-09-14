@@ -1,5 +1,5 @@
 ### Example 1
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.Identity.SignIns
 $params = @{
 	AuthenticationConfiguration = @{
@@ -11,7 +11,7 @@ $params = @{
 Update-MgIdentityApiConnector -IdentityApiConnectorId $identityApiConnectorId -BodyParameter $params
 ```
 ### Example 2
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.Identity.SignIns
 $params = @{
 	DisplayName = "New Test API"
@@ -25,7 +25,7 @@ $params = @{
 Update-MgIdentityApiConnector -IdentityApiConnectorId $identityApiConnectorId -BodyParameter $params
 ```
 ### Example 3
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.Identity.SignIns
 $params = @{
 	AuthenticationConfiguration = @{

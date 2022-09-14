@@ -1,5 +1,5 @@
 ### Example 1
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.Search
 $params = @{
 	Id = "31bea3d537902000"

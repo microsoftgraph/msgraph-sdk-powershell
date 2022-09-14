@@ -1,5 +1,5 @@
 ### Example 1
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.Education
 $params = @{
 	DistributeForStudentWork = $false
@@ -12,7 +12,7 @@ $params = @{
 New-MgEducationClassAssignmentResource -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -BodyParameter $params
 ```
 ### Example 2
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.Education
 $params = @{
 	DistributeForStudentWork = $false
@@ -24,7 +24,7 @@ $params = @{
 New-MgEducationClassAssignmentResource -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -BodyParameter $params
 ```
 ### Example 3
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.Education
 $params = @{
 	DistributeForStudentWork = $false
@@ -38,7 +38,7 @@ $params = @{
 New-MgEducationClassAssignmentResource -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -BodyParameter $params
 ```
 ### Example 4
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.Education
 $params = @{
 	DistributeForStudentWork = $false
@@ -51,7 +51,7 @@ $params = @{
 New-MgEducationClassAssignmentResource -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -BodyParameter $params
 ```
 ### Example 5
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.Education
 $params = @{
 	DistributeForStudentWork = $false
@@ -64,7 +64,7 @@ $params = @{
 New-MgEducationClassAssignmentResource -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -BodyParameter $params
 ```
 ### Example 6
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.Education
 $params = @{
 	DistributeForStudentWork = $false

@@ -1,5 +1,5 @@
 ### Example 1
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.Devices.CloudPrint
 Remove-MgPrintShareAllowedUserByRef -PrinterShareId $printerShareId -UserId $userId
 ```

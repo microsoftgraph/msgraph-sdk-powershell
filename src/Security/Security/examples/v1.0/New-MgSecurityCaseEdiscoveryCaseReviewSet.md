@@ -1,5 +1,5 @@
 ### Example 1
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.Security
 $params = @{
 	DisplayName = "My review set 2"

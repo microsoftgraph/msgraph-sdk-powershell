@@ -1,12 +1,12 @@
 ### Example 1
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.Identity.DirectoryManagement
 $params = @{
 }
 Update-MgDevice -DeviceId $deviceId -BodyParameter $params
 ```
 ### Example 2
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.Identity.DirectoryManagement
 $params = @{
 	AccountEnabled = $false

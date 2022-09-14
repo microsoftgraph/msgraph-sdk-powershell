@@ -1,5 +1,5 @@
 ### Example 1
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.CloudCommunications
 $params = @{
 	StartDateTime = [System.DateTime]::Parse("2019-07-12T14:30:34.2444915-07:00")

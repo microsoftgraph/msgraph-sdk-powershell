@@ -1,5 +1,5 @@
 ### Example 1
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.Identity.SignIns
 $params = @{
 	"@odata.type" = "#microsoft.graph.emailFileAssessmentRequest"
@@ -11,7 +11,7 @@ $params = @{
 New-MgInformationProtectionThreatAssessmentRequest -BodyParameter $params
 ```
 ### Example 2
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.Identity.SignIns
 $params = @{
 	"@odata.type" = "#microsoft.graph.fileAssessmentRequest"
@@ -23,7 +23,7 @@ $params = @{
 New-MgInformationProtectionThreatAssessmentRequest -BodyParameter $params
 ```
 ### Example 3
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.Identity.SignIns
 $params = @{
 	"@odata.type" = "#microsoft.graph.mailAssessmentRequest"
@@ -35,7 +35,7 @@ $params = @{
 New-MgInformationProtectionThreatAssessmentRequest -BodyParameter $params
 ```
 ### Example 4
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.Identity.SignIns
 $params = @{
 	"@odata.type" = "#microsoft.graph.urlAssessmentRequest"

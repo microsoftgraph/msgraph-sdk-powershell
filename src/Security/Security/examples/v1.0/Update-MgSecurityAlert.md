@@ -1,5 +1,5 @@
 ### Example 1
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.Security
 $params = @{
 	AssignedTo = "String"
@@ -20,7 +20,7 @@ $params = @{
 Update-MgSecurityAlert -AlertId $alertId -BodyParameter $params
 ```
 ### Example 2
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.Security
 $params = @{
 	AssignedTo = "String"

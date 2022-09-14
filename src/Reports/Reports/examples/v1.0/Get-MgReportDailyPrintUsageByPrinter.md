@@ -1,10 +1,10 @@
 ### Example 1
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.Reports
 Get-MgReportDailyPrintUsageByPrinter -PrintUsageByPrinterId $printUsageByPrinterId
 ```
 ### Example 2
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.Reports
 Get-MgReportDailyPrintUsageByPrinter
 ```

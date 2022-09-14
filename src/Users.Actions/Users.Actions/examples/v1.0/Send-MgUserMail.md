@@ -1,5 +1,5 @@
 ### Example 1
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.Users.Actions
 $params = @{
 	Message = @{
@@ -29,7 +29,7 @@ $params = @{
 Send-MgUserMail -UserId $userId -BodyParameter $params
 ```
 ### Example 2
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.Users.Actions
 $params = @{
 	Message = @{
@@ -59,7 +59,7 @@ $params = @{
 Send-MgUserMail -UserId $userId -BodyParameter $params
 ```
 ### Example 3
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.Users.Actions
 $params = @{
 	Message = @{

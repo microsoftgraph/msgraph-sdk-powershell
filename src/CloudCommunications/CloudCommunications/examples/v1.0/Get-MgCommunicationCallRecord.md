@@ -1,20 +1,20 @@
 ### Example 1
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.CloudCommunications
 Get-MgCommunicationCallRecord -CallRecordId $callRecordId
 ```
 ### Example 2
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.CloudCommunications
 Get-MgCommunicationCallRecord -CallRecordId $callRecordId
 ```
 ### Example 3
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.CloudCommunications
 Get-MgCommunicationCallRecord -CallRecordId $callRecordId -ExpandProperty "sessions(`$expand=segments)" 
 ```
 ### Example 4
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.CloudCommunications
 Get-MgCommunicationCallRecord -CallRecordId $callRecordId
 ```

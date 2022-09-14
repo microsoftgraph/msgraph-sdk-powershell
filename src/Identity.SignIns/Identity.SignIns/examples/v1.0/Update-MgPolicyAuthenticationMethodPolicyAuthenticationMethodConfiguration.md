@@ -1,5 +1,5 @@
 ### Example 1
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.Identity.SignIns
 $params = @{
 	"@odata.type" = "#microsoft.graph.emailAuthenticationMethodConfiguration"
@@ -8,7 +8,7 @@ $params = @{
 Update-MgPolicyAuthenticationMethodPolicyAuthenticationMethodConfiguration -AuthenticationMethodConfigurationId $authenticationMethodConfigurationId -BodyParameter $params
 ```
 ### Example 2
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.Identity.SignIns
 $params = @{
 	"@odata.type" = "#microsoft.graph.fido2AuthenticationMethodConfiguration"
@@ -18,7 +18,7 @@ $params = @{
 Update-MgPolicyAuthenticationMethodPolicyAuthenticationMethodConfiguration -AuthenticationMethodConfigurationId $authenticationMethodConfigurationId -BodyParameter $params
 ```
 ### Example 3
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.Identity.SignIns
 $params = @{
 	"@odata.type" = "#microsoft.graph.microsoftAuthenticatorAuthenticationMethodConfiguration"
@@ -27,7 +27,7 @@ $params = @{
 Update-MgPolicyAuthenticationMethodPolicyAuthenticationMethodConfiguration -AuthenticationMethodConfigurationId $authenticationMethodConfigurationId -BodyParameter $params
 ```
 ### Example 4
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.Identity.SignIns
 $params = @{
 	"@odata.type" = "#microsoft.graph.temporaryAccessPassAuthenticationMethodConfiguration"

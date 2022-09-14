@@ -1,5 +1,5 @@
 ### Example 1
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.Users.Actions
 $params = @{
 	StartDateTime = [System.DateTime]::Parse("2020-02-06T01:49:21.3524945+00:00")

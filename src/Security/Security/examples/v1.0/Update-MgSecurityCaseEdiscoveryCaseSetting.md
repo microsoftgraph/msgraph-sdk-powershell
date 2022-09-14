@@ -1,5 +1,5 @@
 ### Example 1
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.Security
 $params = @{
 	"@odata.type" = "#microsoft.graph.security.ediscoveryCaseSettings"

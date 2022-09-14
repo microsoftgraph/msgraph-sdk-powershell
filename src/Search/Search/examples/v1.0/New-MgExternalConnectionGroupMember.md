@@ -1,5 +1,5 @@
 ### Example 1
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.Search
 $params = @{
 	Id = "e5477431-1038-484e-bf69-1dfedb97a110"
@@ -8,7 +8,7 @@ $params = @{
 New-MgExternalConnectionGroupMember -ExternalConnectionId $externalConnectionId -ExternalGroupId $externalGroupId -BodyParameter $params
 ```
 ### Example 2
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.Search
 $params = @{
 	Id = "e811976d-83df-4cbd-8b9b-5215b18aa874"
@@ -17,7 +17,7 @@ $params = @{
 New-MgExternalConnectionGroupMember -ExternalConnectionId $externalConnectionId -ExternalGroupId $externalGroupId -BodyParameter $params
 ```
 ### Example 3
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.Search
 $params = @{
 	Id = "1431b9c38ee647f6a"

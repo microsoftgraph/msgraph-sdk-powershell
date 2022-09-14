@@ -1,5 +1,5 @@
 ### Example 1
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.Groups
 $params = @{
 	Post = @{
@@ -12,7 +12,7 @@ $params = @{
 Invoke-MgReplyGroupThread -GroupId $groupId -ConversationThreadId $conversationThreadId -BodyParameter $params
 ```
 ### Example 2
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.Groups
 $params = @{
 	Post = @{
@@ -32,7 +32,7 @@ $params = @{
 Invoke-MgReplyGroupThread -GroupId $groupId -ConversationThreadId $conversationThreadId -BodyParameter $params
 ```
 ### Example 3
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.Groups
 $params = @{
 	Post = @{
@@ -55,7 +55,7 @@ $params = @{
 Invoke-MgReplyGroupThread -GroupId $groupId -ConversationThreadId $conversationThreadId -BodyParameter $params
 ```
 ### Example 4
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.Groups
 $params = @{
 	Post = @{

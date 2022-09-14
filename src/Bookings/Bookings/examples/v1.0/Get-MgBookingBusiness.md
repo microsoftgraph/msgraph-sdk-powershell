@@ -1,15 +1,15 @@
 ### Example 1
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.Bookings
 Get-MgBookingBusiness -BookingBusinessId $bookingBusinessId
 ```
 ### Example 2
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.Bookings
 Get-MgBookingBusiness
 ```
 ### Example 3
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.Bookings
 Get-MgBookingBusiness -Query "Adventure" 
 ```

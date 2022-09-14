@@ -1,20 +1,20 @@
 ### Example 1
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.DeviceManagement.Enrolment
 Get-MgRoleManagementDirectoryRoleDefinition -UnifiedRoleDefinitionId $unifiedRoleDefinitionId
 ```
 ### Example 2
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.DeviceManagement.Enrolment
 Get-MgRoleManagementDirectoryRoleDefinition -UnifiedRoleDefinitionId $unifiedRoleDefinitionId
 ```
 ### Example 3
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.DeviceManagement.Enrolment
 Get-MgRoleManagementDirectoryRoleDefinition -UnifiedRoleDefinitionId $unifiedRoleDefinitionId -ExpandProperty "inheritsPermissionsFrom" 
 ```
 ### Example 4
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.DeviceManagement.Enrolment
 Get-MgRoleManagementDirectoryRoleDefinition
 ```

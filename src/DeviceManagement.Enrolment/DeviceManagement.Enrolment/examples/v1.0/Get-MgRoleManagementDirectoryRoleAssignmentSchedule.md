@@ -1,15 +1,15 @@
 ### Example 1
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.DeviceManagement.Enrolment
 Get-MgRoleManagementDirectoryRoleAssignmentSchedule -UnifiedRoleAssignmentScheduleId $unifiedRoleAssignmentScheduleId
 ```
 ### Example 2
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.DeviceManagement.Enrolment
 Get-MgRoleManagementDirectoryRoleAssignmentSchedule
 ```
 ### Example 3
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.DeviceManagement.Enrolment
 Get-MgRoleManagementDirectoryRoleAssignmentSchedule -UnifiedRoleAssignmentScheduleId $unifiedRoleAssignmentScheduleId
 ```

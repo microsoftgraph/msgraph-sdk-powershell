@@ -1,15 +1,15 @@
 ### Example 1
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.CloudCommunications
 Remove-MgCommunicationCallParticipant -CallId $callId -ParticipantId $participantId
 ```
 ### Example 2
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.CloudCommunications
 Remove-MgCommunicationCallParticipant -CallId $callId -ParticipantId $participantId
 ```
 ### Example 3
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.CloudCommunications
 Remove-MgCommunicationCallParticipant -CallId $callId -ParticipantId $participantId
 ```

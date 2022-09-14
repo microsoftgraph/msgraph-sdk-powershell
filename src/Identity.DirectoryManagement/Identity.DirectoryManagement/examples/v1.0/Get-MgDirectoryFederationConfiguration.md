@@ -1,10 +1,10 @@
 ### Example 1
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.Identity.DirectoryManagement
 Get-MgDirectoryFederationConfiguration -IdentityProviderBaseId $identityProviderBaseId -Filter "domains/any(x: x/id eq 'contoso.com')" 
 ```
 ### Example 2
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.Identity.DirectoryManagement
 Get-MgDirectoryFederationConfiguration -IdentityProviderBaseId $identityProviderBaseId
 ```

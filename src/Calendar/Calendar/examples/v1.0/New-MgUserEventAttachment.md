@@ -1,5 +1,5 @@
 ### Example 1
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.Calendar
 $params = @{
 	"@odata.type" = "#microsoft.graph.fileAttachment"
@@ -10,7 +10,7 @@ $params = @{
 New-MgUserEventAttachment -UserId $userId -EventId $eventId -BodyParameter $params
 ```
 ### Example 2
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.Calendar
 $params = @{
 	"@odata.type" = "#microsoft.graph.itemAttachment"
@@ -24,7 +24,7 @@ $params = @{
 New-MgUserEventAttachment -UserId $userId -EventId $eventId -BodyParameter $params
 ```
 ### Example 3
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.Calendar
 $params = @{
 	"@odata.type" = "#Microsoft.OutlookServices.ItemAttachment"

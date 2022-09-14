@@ -1,15 +1,15 @@
 ### Example 1
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.Identity.Governance
 Get-MgEntitlementManagementAssignment -AccessPackageAssignmentId $accessPackageAssignmentId
 ```
 ### Example 2
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.Identity.Governance
 Get-MgEntitlementManagementAssignment -AccessPackageAssignmentId $accessPackageAssignmentId
 ```
 ### Example 3
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.Identity.Governance
 Get-MgEntitlementManagementAssignment
 ```

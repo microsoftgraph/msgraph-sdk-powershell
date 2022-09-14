@@ -1,5 +1,5 @@
 ### Example 1
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.Sites
 Remove-MgSitePermission -SiteId $siteId -PermissionId $permissionId
 ```

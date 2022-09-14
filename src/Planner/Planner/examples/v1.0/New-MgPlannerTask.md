@@ -1,5 +1,5 @@
 ### Example 1
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.Planner
 $params = @{
 	PlanId = "xqQg5FS2LkCp935s-FIFm2QAFkHM"

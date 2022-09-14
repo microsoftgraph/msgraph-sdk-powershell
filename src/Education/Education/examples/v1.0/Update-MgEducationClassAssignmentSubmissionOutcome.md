@@ -1,5 +1,5 @@
 ### Example 1
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.Education
 $params = @{
 	"@odata.type" = "#microsoft.graph.educationFeedbackOutcome"
@@ -7,7 +7,7 @@ $params = @{
 Update-MgEducationClassAssignmentSubmissionOutcome -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -EducationSubmissionId $educationSubmissionId -EducationOutcomeId $educationOutcomeId -BodyParameter $params
 ```
 ### Example 2
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.Education
 $params = @{
 	"@odata.type" = "#microsoft.graph.educationRubricOutcome"
@@ -19,7 +19,7 @@ $params = @{
 Update-MgEducationClassAssignmentSubmissionOutcome -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -EducationSubmissionId $educationSubmissionId -EducationOutcomeId $educationOutcomeId -BodyParameter $params
 ```
 ### Example 3
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.Education
 $params = @{
 	"@odata.type" = "#microsoft.graph.educationPointsOutcome"

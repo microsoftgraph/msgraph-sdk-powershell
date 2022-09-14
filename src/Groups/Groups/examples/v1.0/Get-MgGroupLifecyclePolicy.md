@@ -1,10 +1,10 @@
 ### Example 1
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.Groups
 Get-MgGroupLifecyclePolicy -GroupLifecyclePolicyId $groupLifecyclePolicyId
 ```
 ### Example 2
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.Groups
 Get-MgGroupLifecyclePolicy
 ```

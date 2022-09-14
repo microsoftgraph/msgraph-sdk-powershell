@@ -1,5 +1,5 @@
 ### Example 1
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.Mail
 $params = @{
 	"@odata.type" = "microsoft.graph.fileAttachment"
@@ -13,7 +13,7 @@ $params = @{
 New-MgUserMessageAttachment -UserId $userId -MessageId $messageId -BodyParameter $params
 ```
 ### Example 2
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.Mail
 $params = @{
 	"@odata.type" = "#microsoft.graph.fileAttachment"

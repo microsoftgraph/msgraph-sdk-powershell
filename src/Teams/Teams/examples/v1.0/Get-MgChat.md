@@ -1,20 +1,20 @@
 ### Example 1
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.Teams
 Get-MgChat -ChatId $chatId -ExpandProperty "members" 
 ```
 ### Example 2
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.Teams
 Get-MgChat -ChatId $chatId
 ```
 ### Example 3
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.Teams
 Get-MgChat -ChatId $chatId
 ```
 ### Example 4
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.Teams
 Get-MgChat -Sort "lastMessagePreview/createdDateTime desc" 
 ```

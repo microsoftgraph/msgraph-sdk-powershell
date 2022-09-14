@@ -1,5 +1,5 @@
 ### Example 1
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.Teams
 Remove-MgTeamScheduleTimeOffRequest -TeamId $teamId -TimeOffRequestId $timeOffRequestId
 ```

@@ -1,5 +1,5 @@
 ### Example 1
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.SchemaExtensions
 $params = @{
 	Id = "graphlearn_courses"
@@ -25,7 +25,7 @@ $params = @{
 New-MgSchemaExtension -BodyParameter $params
 ```
 ### Example 2
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.SchemaExtensions
 $params = @{
 	Id = "courses"
@@ -51,7 +51,7 @@ $params = @{
 New-MgSchemaExtension -BodyParameter $params
 ```
 ### Example 3
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.SchemaExtensions
 $params = @{
 	Id = "courses"

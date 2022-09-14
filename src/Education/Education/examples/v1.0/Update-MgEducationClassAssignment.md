@@ -1,5 +1,5 @@
 ### Example 1
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.Education
 $params = @{
 	DisplayName = "Reading and review test 09.03 #5"

@@ -1,35 +1,35 @@
 ### Example 1
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.Education
 Get-MgEducationClassAssignmentSubmissionResource -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -EducationSubmissionId $educationSubmissionId -EducationSubmissionResourceId $educationSubmissionResourceId
 ```
 ### Example 2
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.Education
 Get-MgEducationClassAssignmentSubmissionResource -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -EducationSubmissionId $educationSubmissionId -EducationSubmissionResourceId $educationSubmissionResourceId
 ```
 ### Example 3
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.Education
 Get-MgEducationClassAssignmentSubmissionResource -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -EducationSubmissionId $educationSubmissionId -EducationSubmissionResourceId $educationSubmissionResourceId
 ```
 ### Example 4
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.Education
 Get-MgEducationClassAssignmentSubmissionResource -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -EducationSubmissionId $educationSubmissionId -EducationSubmissionResourceId $educationSubmissionResourceId
 ```
 ### Example 5
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.Education
 Get-MgEducationClassAssignmentSubmissionResource -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -EducationSubmissionId $educationSubmissionId -EducationSubmissionResourceId $educationSubmissionResourceId
 ```
 ### Example 6
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.Education
 Get-MgEducationClassAssignmentSubmissionResource -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -EducationSubmissionId $educationSubmissionId -EducationSubmissionResourceId $educationSubmissionResourceId
 ```
 ### Example 7
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.Education
 Get-MgEducationClassAssignmentSubmissionResource -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -EducationSubmissionId $educationSubmissionId
 ```

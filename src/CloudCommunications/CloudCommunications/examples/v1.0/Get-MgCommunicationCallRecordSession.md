@@ -1,10 +1,10 @@
 ### Example 1
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.CloudCommunications
 Get-MgCommunicationCallRecordSession -CallRecordId $callRecordId -ExpandProperty "segments" 
 ```
 ### Example 2
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.CloudCommunications
 Get-MgCommunicationCallRecordSession -CallRecordId $callRecordId
 ```

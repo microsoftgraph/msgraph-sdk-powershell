@@ -1,5 +1,5 @@
 ### Example 1
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.CloudCommunications
 $params = @{
 	Reason = "none"
@@ -7,7 +7,7 @@ $params = @{
 Invoke-MgRejectCommunicationCall -CallId $callId -BodyParameter $params
 ```
 ### Example 2
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.CloudCommunications
 $params = @{
 	Reason = "busy"

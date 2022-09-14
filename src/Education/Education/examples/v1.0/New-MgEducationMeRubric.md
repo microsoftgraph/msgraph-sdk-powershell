@@ -1,5 +1,5 @@
 ### Example 1
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.Education
 $params = @{
 	DisplayName = "Example Credit Rubric"
@@ -69,7 +69,7 @@ $params = @{
 New-MgEducationMeRubric -BodyParameter $params
 ```
 ### Example 2
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.Education
 $params = @{
 	DisplayName = "Example Points Rubric"

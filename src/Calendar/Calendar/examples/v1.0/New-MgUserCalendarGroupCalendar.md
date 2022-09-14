@@ -1,5 +1,5 @@
 ### Example 1
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.Calendar
 $params = @{
 	Name = "Marketing calendar"

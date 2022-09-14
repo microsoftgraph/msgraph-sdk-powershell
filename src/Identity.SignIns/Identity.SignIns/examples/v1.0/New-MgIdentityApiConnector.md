@@ -1,5 +1,5 @@
 ### Example 1
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.Identity.SignIns
 $params = @{
 	DisplayName = "Test API"
@@ -13,7 +13,7 @@ $params = @{
 New-MgIdentityApiConnector -BodyParameter $params
 ```
 ### Example 2
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.Identity.SignIns
 $params = @{
 	DisplayName = "Test API"
@@ -27,7 +27,7 @@ $params = @{
 New-MgIdentityApiConnector -BodyParameter $params
 ```
 ### Example 3
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.Identity.SignIns
 $params = @{
 	DisplayName = "Test API"

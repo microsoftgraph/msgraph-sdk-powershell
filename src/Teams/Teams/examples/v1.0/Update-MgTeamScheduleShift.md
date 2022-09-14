@@ -1,5 +1,5 @@
 ### Example 1
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.Teams
 $params = @{
 	Id = "SHFT_577b75d2-a927-48c0-a5d1-dc984894e7b8"

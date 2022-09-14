@@ -1,5 +1,5 @@
 ### Example 1
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.Users.Actions
 $params = @{
 	Comment = "I won't be able to make this week. How about next week?"

@@ -1,5 +1,5 @@
 ### Example 1
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.Identity.SignIns
 $params = @{
 	Id = "UserFlowWithAPIConnector"
@@ -17,7 +17,7 @@ $params = @{
 New-MgIdentityB2XUserFlow -BodyParameter $params
 ```
 ### Example 2
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.Identity.SignIns
 $params = @{
 	Id = "Partner"
@@ -34,7 +34,7 @@ $params = @{
 New-MgIdentityB2XUserFlow -BodyParameter $params
 ```
 ### Example 3
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.Identity.SignIns
 $params = @{
 	Id = "Partner"

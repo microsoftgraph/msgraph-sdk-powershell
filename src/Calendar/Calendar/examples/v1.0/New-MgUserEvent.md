@@ -1,5 +1,5 @@
 ### Example 1
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.Calendar
 $params = @{
 	Subject = "Plan summer company picnic"
@@ -63,7 +63,7 @@ $params = @{
 New-MgUserEvent -UserId $userId -BodyParameter $params
 ```
 ### Example 2
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.Calendar
 $params = @{
 	Subject = "Let's go for lunch"
@@ -98,7 +98,7 @@ $params = @{
 New-MgUserEvent -UserId $userId -BodyParameter $params
 ```
 ### Example 3
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.Calendar
 $params = @{
 	Subject = "Let's go for lunch"
@@ -134,7 +134,7 @@ $params = @{
 New-MgUserEvent -UserId $userId -BodyParameter $params
 ```
 ### Example 4
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.Calendar
 $params = @{
 	Subject = "Let's go for lunch"

@@ -1,10 +1,10 @@
 ### Example 1
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.Devices.CloudPrint
 Get-MgPrintPrinterTaskTrigger -PrinterId $printerId -PrintTaskTriggerId $printTaskTriggerId
 ```
 ### Example 2
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.Devices.CloudPrint
 Get-MgPrintPrinterTaskTrigger -PrinterId $printerId
 ```

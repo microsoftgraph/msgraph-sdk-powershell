@@ -1,15 +1,15 @@
 ### Example 1
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.Sites
 Get-MgSite -SiteId $siteId
 ```
 ### Example 2
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.Sites
 Get-MgSite -Search "{query}" 
 ```
 ### Example 3
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.Sites
 Get-MgSite -Search "{query}"  -OutFile $outFileId
 ```

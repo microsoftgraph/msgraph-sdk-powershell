@@ -1,10 +1,10 @@
 ### Example 1
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.Identity.Governance
 Get-MgEntitlementManagementAccessPackageAssignmentApprovalStage -ApprovalId $approvalId -ApprovalStageId $approvalStageId
 ```
 ### Example 2
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.Identity.Governance
 Get-MgEntitlementManagementAccessPackageAssignmentApprovalStage -ApprovalId $approvalId
 ```

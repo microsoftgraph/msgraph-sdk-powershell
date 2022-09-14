@@ -1,10 +1,10 @@
 ### Example 1
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.CloudCommunications
 Get-MgCommunicationCallParticipant -CallId $callId -ParticipantId $participantId
 ```
 ### Example 2
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.CloudCommunications
 Get-MgCommunicationCallParticipant -CallId $callId
 ```

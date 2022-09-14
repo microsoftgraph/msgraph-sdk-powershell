@@ -1,5 +1,5 @@
 ### Example 1
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.Education
 $params = @{
 	DueDateTime = [System.DateTime]::Parse("2021-09-07T00:00:00Z")

@@ -1,5 +1,5 @@
 ### Example 1
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.DeviceManagement.Enrolment
 $params = @{
 	PrincipalId = "679a9213-c497-48a4-830a-8d3d25d94ddc"

@@ -1,5 +1,5 @@
 ### Example 1
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.Applications
 $params = @{
 	KeyCredential = @{
@@ -13,7 +13,7 @@ $params = @{
 Add-MgServicePrincipalKey -ServicePrincipalId $servicePrincipalId -BodyParameter $params
 ```
 ### Example 2
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.Applications
 $params = @{
 	KeyCredential = @{

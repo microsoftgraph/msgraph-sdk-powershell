@@ -1,10 +1,10 @@
 ### Example 1
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.Planner
 Get-MgPlannerPlan -PlannerPlanId $plannerPlanId
 ```
 ### Example 2
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.Planner
 Get-MgPlannerPlan
 ```

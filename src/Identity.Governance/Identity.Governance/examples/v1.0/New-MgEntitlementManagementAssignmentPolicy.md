@@ -1,5 +1,5 @@
 ### Example 1
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.Identity.Governance
 $params = @{
 	DisplayName = "policy for external access requests"
@@ -117,7 +117,7 @@ $params = @{
 New-MgEntitlementManagementAssignmentPolicy -BodyParameter $params
 ```
 ### Example 2
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.Identity.Governance
 $params = @{
 	DisplayName = "New Policy"

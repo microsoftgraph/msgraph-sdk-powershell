@@ -1,5 +1,5 @@
 ### Example 1
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.Sites
 $params = @{
 	ContentTypeId = "0x0101"
@@ -7,7 +7,7 @@ $params = @{
 Add-MgSiteListContentTypeCopyFromContentTypeHub -SiteId $siteId -ListId $listId -BodyParameter $params
 ```
 ### Example 2
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.Sites
 $params = @{
 	ContentTypeId = "0x0101"
@@ -15,7 +15,7 @@ $params = @{
 Add-MgSiteListContentTypeCopyFromContentTypeHub -SiteId $siteId -ListId $listId -BodyParameter $params
 ```
 ### Example 3
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.Sites
 $params = @{
 	ContentTypeId = "0x0101"

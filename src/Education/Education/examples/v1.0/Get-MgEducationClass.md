@@ -1,10 +1,10 @@
 ### Example 1
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.Education
 Get-MgEducationClass -EducationClassId $educationClassId
 ```
 ### Example 2
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.Education
 Get-MgEducationClass
 ```

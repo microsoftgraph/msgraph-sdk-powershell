@@ -1,5 +1,5 @@
 ### Example 1
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.Identity.SignIns
 $params = @{
 	"@odata.type" = "microsoft.graph.appleManagedIdentityProvider"
@@ -12,7 +12,7 @@ $params = @{
 New-MgIdentityProvider -BodyParameter $params
 ```
 ### Example 2
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.Identity.SignIns
 $params = @{
 	"@odata.type" = "microsoft.graph.socialIdentityProvider"

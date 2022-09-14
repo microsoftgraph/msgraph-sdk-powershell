@@ -1,5 +1,5 @@
 ### Example 1
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.Teams
 $params = @{
 	"@odata.type" = "#microsoft.graph.aadUserConversationMember"
@@ -12,7 +12,7 @@ $params = @{
 New-MgChatMember -ChatId $chatId -BodyParameter $params
 ```
 ### Example 2
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.Teams
 $params = @{
 	"@odata.type" = "#microsoft.graph.aadUserConversationMember"
@@ -25,7 +25,7 @@ $params = @{
 New-MgChatMember -ChatId $chatId -BodyParameter $params
 ```
 ### Example 3
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.Teams
 $params = @{
 	"@odata.type" = "#microsoft.graph.aadUserConversationMember"
@@ -37,7 +37,7 @@ $params = @{
 New-MgChatMember -ChatId $chatId -BodyParameter $params
 ```
 ### Example 4
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.Teams
 $params = @{
 	"@odata.type" = "#microsoft.graph.aadUserConversationMember"

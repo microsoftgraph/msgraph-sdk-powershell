@@ -1,5 +1,5 @@
 ### Example 1
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.Groups
 Remove-MgGroupOwnerByRef -GroupId $groupId -DirectoryObjectId $directoryObjectId
 ```

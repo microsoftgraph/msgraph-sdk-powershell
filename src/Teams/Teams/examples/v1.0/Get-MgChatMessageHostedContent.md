@@ -1,10 +1,10 @@
 ### Example 1
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.Teams
 Get-MgChatMessageHostedContent -ChatId $chatId -ChatMessageId $chatMessageId -ChatMessageHostedContentId $chatMessageHostedContentId
 ```
 ### Example 2
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.Teams
 Get-MgChatMessageHostedContent -ChatId $chatId -ChatMessageId $chatMessageId
 ```

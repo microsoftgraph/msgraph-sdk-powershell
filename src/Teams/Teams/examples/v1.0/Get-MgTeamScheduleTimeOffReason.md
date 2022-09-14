@@ -1,10 +1,10 @@
 ### Example 1
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.Teams
 Get-MgTeamScheduleTimeOffReason -TeamId $teamId
 ```
 ### Example 2
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.Teams
 Get-MgTeamScheduleTimeOffReason -TeamId $teamId -TimeOffReasonId $timeOffReasonId
 ```

@@ -1,40 +1,40 @@
 ### Example 1
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.Identity.SignIns
 Get-MgIdentityProvider -IdentityProviderBaseId $identityProviderBaseId
 ```
 ### Example 2
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.Identity.SignIns
 Get-MgIdentityProvider -IdentityProviderBaseId $identityProviderBaseId
 ```
 ### Example 3
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.Identity.SignIns
 Get-MgIdentityProvider -IdentityProviderId $identityProviderId
 ```
 ### Example 4
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.Identity.SignIns
 Get-MgIdentityProvider
 ```
 ### Example 5
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.Identity.SignIns
 Get-MgIdentityProvider
 ```
 ### Example 6
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.Identity.SignIns
 Get-MgIdentityProvider -OutFile $outFileId
 ```
 ### Example 7
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.Identity.SignIns
 Get-MgIdentityProvider -IdentityProviderBaseId $identityProviderBaseId
 ```
 ### Example 8
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.Identity.SignIns
 Get-MgIdentityProvider
 ```

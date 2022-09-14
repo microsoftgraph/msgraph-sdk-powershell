@@ -1,5 +1,5 @@
 ### Example 1
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.CloudCommunications
 $params = @{
 	Participants = @(
@@ -21,7 +21,7 @@ $params = @{
 Invoke-MgInviteCommunicationCallParticipant -CallId $callId -BodyParameter $params
 ```
 ### Example 2
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.CloudCommunications
 $params = @{
 	Participants = @(
@@ -41,7 +41,7 @@ $params = @{
 Invoke-MgInviteCommunicationCallParticipant -CallId $callId -BodyParameter $params
 ```
 ### Example 3
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.CloudCommunications
 $params = @{
 	Participants = @(
@@ -63,7 +63,7 @@ $params = @{
 Invoke-MgInviteCommunicationCallParticipant -CallId $callId -BodyParameter $params
 ```
 ### Example 4
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.CloudCommunications
 $params = @{
 	Participants = @(
@@ -86,7 +86,7 @@ $params = @{
 Invoke-MgInviteCommunicationCallParticipant -CallId $callId -BodyParameter $params
 ```
 ### Example 5
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.CloudCommunications
 $params = @{
 	Participants = @(
@@ -120,7 +120,7 @@ $params = @{
 Invoke-MgInviteCommunicationCallParticipant -CallId $callId -BodyParameter $params
 ```
 ### Example 6
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.CloudCommunications
 $params = @{
 	Participants = @(
@@ -142,7 +142,7 @@ $params = @{
 Invoke-MgInviteCommunicationCallParticipant -CallId $callId -BodyParameter $params
 ```
 ### Example 7
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.CloudCommunications
 $params = @{
 	Participants = @(

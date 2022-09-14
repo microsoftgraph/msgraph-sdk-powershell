@@ -1,5 +1,5 @@
 ### Example 1
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.CloudCommunications
 $params = @{
 	"@odata.type" = "#microsoft.graph.call"
@@ -41,7 +41,7 @@ $params = @{
 New-MgCommunicationCall -BodyParameter $params
 ```
 ### Example 2
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.CloudCommunications
 $params = @{
 	"@odata.type" = "#microsoft.graph.call"
@@ -69,7 +69,7 @@ $params = @{
 New-MgCommunicationCall -BodyParameter $params
 ```
 ### Example 3
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.CloudCommunications
 $params = @{
 	"@odata.type" = "#microsoft.graph.call"
@@ -112,7 +112,7 @@ $params = @{
 New-MgCommunicationCall -BodyParameter $params
 ```
 ### Example 4
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.CloudCommunications
 $params = @{
 	"@odata.type" = "#microsoft.graph.call"

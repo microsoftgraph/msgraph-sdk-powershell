@@ -1,10 +1,10 @@
 ### Example 1
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.Applications
 Get-MgApplicationFederatedIdentityCredential -ApplicationId $applicationId -FederatedIdentityCredentialId $federatedIdentityCredentialId
 ```
 ### Example 2
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.Applications
 Get-MgApplicationFederatedIdentityCredential -ApplicationId $applicationId
 ```

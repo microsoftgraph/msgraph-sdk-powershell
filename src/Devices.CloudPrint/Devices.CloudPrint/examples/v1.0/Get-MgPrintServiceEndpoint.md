@@ -1,10 +1,10 @@
 ### Example 1
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.Devices.CloudPrint
 Get-MgPrintServiceEndpoint -PrintServiceId $printServiceId -PrintServiceEndpointId $printServiceEndpointId
 ```
 ### Example 2
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.Devices.CloudPrint
 Get-MgPrintServiceEndpoint -PrintServiceId $printServiceId
 ```

@@ -1,15 +1,15 @@
 ### Example 1
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.Education
 Get-MgEducationClassAssignment -EducationClassId $educationClassId
 ```
 ### Example 2
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.Education
 Get-MgEducationClassAssignment -EducationClassId $educationClassId -ExpandProperty "resources" 
 ```
 ### Example 3
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.Education
 Get-MgEducationClassAssignment -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId
 ```

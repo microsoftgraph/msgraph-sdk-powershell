@@ -1,10 +1,10 @@
 ### Example 1
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.Bookings
 Get-MgBookingBusinessStaffMember -BookingBusinessId $bookingBusinessId
 ```
 ### Example 2
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.Bookings
 Get-MgBookingBusinessStaffMember -BookingBusinessId $bookingBusinessId -BookingStaffMemberBaseId $bookingStaffMemberBaseId
 ```

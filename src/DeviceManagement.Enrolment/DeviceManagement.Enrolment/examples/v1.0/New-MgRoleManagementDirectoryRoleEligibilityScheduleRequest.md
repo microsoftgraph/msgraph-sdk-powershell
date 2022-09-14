@@ -1,5 +1,5 @@
 ### Example 1
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.DeviceManagement.Enrolment
 $params = @{
 	Action = "adminAssign"
@@ -18,7 +18,7 @@ $params = @{
 New-MgRoleManagementDirectoryRoleEligibilityScheduleRequest -BodyParameter $params
 ```
 ### Example 2
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.DeviceManagement.Enrolment
 $params = @{
 	Action = "adminRemove"

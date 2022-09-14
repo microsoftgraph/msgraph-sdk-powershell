@@ -1,10 +1,10 @@
 ### Example 1
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.Identity.DirectoryManagement
 Get-MgDirectoryAdministrativeUnit -AdministrativeUnitId $administrativeUnitId
 ```
 ### Example 2
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.Identity.DirectoryManagement
 Get-MgDirectoryAdministrativeUnit
 ```

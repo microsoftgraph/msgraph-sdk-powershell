@@ -1,5 +1,5 @@
 ### Example 1
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.Mail
 $params = @{
 	Subject = "Did you see last night's game?"
@@ -20,7 +20,7 @@ $params = @{
 New-MgUserMessage -UserId $userId -BodyParameter $params
 ```
 ### Example 2
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.Mail
 $params = @{
 	Subject = "9/8/2018: concert"

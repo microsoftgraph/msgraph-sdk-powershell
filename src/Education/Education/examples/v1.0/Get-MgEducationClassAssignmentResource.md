@@ -1,35 +1,35 @@
 ### Example 1
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.Education
 Get-MgEducationClassAssignmentResource -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -EducationAssignmentResourceId $educationAssignmentResourceId
 ```
 ### Example 2
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.Education
 Get-MgEducationClassAssignmentResource -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -EducationAssignmentResourceId $educationAssignmentResourceId
 ```
 ### Example 3
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.Education
 Get-MgEducationClassAssignmentResource -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -EducationAssignmentResourceId $educationAssignmentResourceId
 ```
 ### Example 4
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.Education
 Get-MgEducationClassAssignmentResource -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -EducationAssignmentResourceId $educationAssignmentResourceId
 ```
 ### Example 5
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.Education
 Get-MgEducationClassAssignmentResource -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -EducationAssignmentResourceId $educationAssignmentResourceId
 ```
 ### Example 6
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.Education
 Get-MgEducationClassAssignmentResource -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -EducationAssignmentResourceId $educationAssignmentResourceId
 ```
 ### Example 7
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.Education
 Get-MgEducationClassAssignmentResource -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId
 ```

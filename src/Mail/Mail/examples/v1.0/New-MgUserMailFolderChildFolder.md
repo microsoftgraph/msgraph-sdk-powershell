@@ -1,5 +1,5 @@
 ### Example 1
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.Mail
 $params = @{
 	DisplayName = "displayName-value"
@@ -9,7 +9,7 @@ $params = @{
 New-MgUserMailFolderChildFolder -UserId $userId -MailFolderId $mailFolderId -BodyParameter $params
 ```
 ### Example 2
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.Mail
 $params = @{
 	"@odata.type" = "microsoft.graph.mailSearchFolder"

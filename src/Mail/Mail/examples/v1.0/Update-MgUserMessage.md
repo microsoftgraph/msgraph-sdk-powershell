@@ -1,5 +1,5 @@
 ### Example 1
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.Mail
 $params = @{
 	IsRead = $true
@@ -8,7 +8,7 @@ $params = @{
 Update-MgUserMessage -UserId $userId -MessageId $messageId -BodyParameter $params
 ```
 ### Example 2
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.Mail
 $params = @{
 	Subject = "subject-value"

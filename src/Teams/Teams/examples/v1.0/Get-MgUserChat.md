@@ -1,15 +1,15 @@
 ### Example 1
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.Teams
 Get-MgUserChat -UserId $userId -ChatId $chatId
 ```
 ### Example 2
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.Teams
 Get-MgUserChat -UserId $userId -ExpandProperty "members" 
 ```
 ### Example 3
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.Teams
 Get-MgUserChat -UserId $userId
 ```

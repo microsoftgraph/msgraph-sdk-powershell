@@ -1,5 +1,5 @@
 ### Example 1
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.Groups
 $params = @{
 	AddLicenses = @(
@@ -23,7 +23,7 @@ $params = @{
 Set-MgGroupLicense -GroupId $groupId -BodyParameter $params
 ```
 ### Example 2
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.Groups
 $params = @{
 	AddLicenses = @(

@@ -1,5 +1,5 @@
 ### Example 1
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.Identity.Governance
 $params = @{
 	RequestType = "AdminAdd"
@@ -12,7 +12,7 @@ $params = @{
 New-MgEntitlementManagementAssignmentRequest -BodyParameter $params
 ```
 ### Example 2
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.Identity.Governance
 $params = @{
 	RequestType = "AdminAdd"
@@ -25,7 +25,7 @@ $params = @{
 New-MgEntitlementManagementAssignmentRequest -BodyParameter $params
 ```
 ### Example 3
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.Identity.Governance
 $params = @{
 	RequestType = "AdminRemove"
@@ -36,7 +36,7 @@ $params = @{
 New-MgEntitlementManagementAssignmentRequest -BodyParameter $params
 ```
 ### Example 4
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.Identity.Governance
 $params = @{
 	RequestType = "userAdd"
@@ -47,7 +47,7 @@ $params = @{
 New-MgEntitlementManagementAssignmentRequest -BodyParameter $params
 ```
 ### Example 5
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.Identity.Governance
 $params = @{
 	RequestType = "userAdd"

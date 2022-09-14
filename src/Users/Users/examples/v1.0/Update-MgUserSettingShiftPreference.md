@@ -1,5 +1,5 @@
 ### Example 1
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.Users
 $params = @{
 	Id = "SHPR_eeab4fb1-20e5-48ca-ad9b-98119d94bee7"

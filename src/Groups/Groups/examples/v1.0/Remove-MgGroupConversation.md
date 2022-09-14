@@ -1,10 +1,10 @@
 ### Example 1
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.Groups
 Remove-MgGroupConversation -GroupId $groupId -ConversationId $conversationId
 ```
 ### Example 2
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.Groups
 Remove-MgGroupConversation -GroupId $groupId -ConversationId $conversationId
 ```

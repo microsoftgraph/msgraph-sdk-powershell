@@ -1,5 +1,5 @@
 ### Example 1
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.Teams
 $params = @{
 	Values = @(
@@ -21,7 +21,7 @@ $params = @{
 Add-MgTeamMember -TeamId $teamId -BodyParameter $params
 ```
 ### Example 2
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.Teams
 $params = @{
 	Values = @(
@@ -43,7 +43,7 @@ $params = @{
 Add-MgTeamMember -TeamId $teamId -BodyParameter $params
 ```
 ### Example 3
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.Teams
 $params = @{
 	Values = @(

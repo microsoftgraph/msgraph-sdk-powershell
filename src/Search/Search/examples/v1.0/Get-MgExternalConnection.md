@@ -1,10 +1,10 @@
 ### Example 1
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.Search
 Get-MgExternalConnection -ExternalConnectionId $externalConnectionId
 ```
 ### Example 2
-``` powershell
+```powershell
 Import-Module Microsoft.Graph.Search
 Get-MgExternalConnection
 ```
