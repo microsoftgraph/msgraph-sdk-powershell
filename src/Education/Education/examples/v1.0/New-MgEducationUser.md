@@ -1,4 +1,4 @@
-### Example 1
+### Example 1: Using the New-MgEducationUser Cmdlet
 ```powershell
 Import-Module Microsoft.Graph.Education
 $params = @{
@@ -65,3 +65,5 @@ $params = @{
 }
 New-MgEducationUser -BodyParameter $params
 ```
+This example shows how to use the New-MgEducationUser Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

@@ -1,6 +1,8 @@
-### Example 1
+### Example 1: Using the Get-MgUserEventAttachment Cmdlet
 ```powershell
 Import-Module Microsoft.Graph.Calendar
 # A UPN can also be used as -UserId.
 Get-MgUserEventAttachment -UserId $userId -EventId $eventId
 ```
+This example shows how to use the Get-MgUserEventAttachment Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

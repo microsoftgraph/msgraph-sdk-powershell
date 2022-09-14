@@ -1,4 +1,4 @@
-### Example 1
+### Example 1: Using the Update-MgUserSettingShiftPreference Cmdlet
 ```powershell
 Import-Module Microsoft.Graph.Users
 $params = @{
@@ -27,3 +27,5 @@ $params = @{
 }
 Update-MgUserSettingShiftPreference -UserId $userId -BodyParameter $params
 ```
+This example shows how to use the Update-MgUserSettingShiftPreference Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

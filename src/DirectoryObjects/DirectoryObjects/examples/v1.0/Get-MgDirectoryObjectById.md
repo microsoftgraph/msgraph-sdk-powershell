@@ -1,4 +1,4 @@
-### Example 1
+### Example 1: Using the Get-MgDirectoryObjectById Cmdlet
 ```powershell
 Import-Module Microsoft.Graph.DirectoryObjects
 $params = @{
@@ -16,3 +16,5 @@ $params = @{
 }
 Get-MgDirectoryObjectById -BodyParameter $params
 ```
+This example shows how to use the Get-MgDirectoryObjectById Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

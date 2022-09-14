@@ -1,4 +1,4 @@
-### Example 1
+### Example 1: Using the Update-MgTeamworkWorkforceIntegration Cmdlet
 ```powershell
 Import-Module Microsoft.Graph.Teams
 $params = @{
@@ -14,3 +14,5 @@ $params = @{
 }
 Update-MgTeamworkWorkforceIntegration -WorkforceIntegrationId $workforceIntegrationId -BodyParameter $params
 ```
+This example shows how to use the Update-MgTeamworkWorkforceIntegration Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

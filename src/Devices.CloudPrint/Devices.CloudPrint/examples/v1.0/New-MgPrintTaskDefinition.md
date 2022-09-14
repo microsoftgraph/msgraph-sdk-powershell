@@ -1,4 +1,4 @@
-### Example 1
+### Example 1: Using the New-MgPrintTaskDefinition Cmdlet
 ```powershell
 Import-Module Microsoft.Graph.Devices.CloudPrint
 $params = @{
@@ -9,3 +9,5 @@ $params = @{
 }
 New-MgPrintTaskDefinition -BodyParameter $params
 ```
+This example shows how to use the New-MgPrintTaskDefinition Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

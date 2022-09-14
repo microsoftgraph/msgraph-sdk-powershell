@@ -1,4 +1,4 @@
-### Example 1
+### Example 1: Using the Update-MgSchemaExtension Cmdlet
 ```powershell
 Import-Module Microsoft.Graph.SchemaExtensions
 $params = @{
@@ -24,7 +24,9 @@ $params = @{
 }
 Update-MgSchemaExtension -SchemaExtensionId $schemaExtensionId -BodyParameter $params
 ```
-### Example 2
+This example shows how to use the Update-MgSchemaExtension Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+### Example 2: Using the Update-MgSchemaExtension Cmdlet
 ```powershell
 Import-Module Microsoft.Graph.SchemaExtensions
 $params = @{
@@ -50,3 +52,5 @@ $params = @{
 }
 Update-MgSchemaExtension -SchemaExtensionId $schemaExtensionId -BodyParameter $params
 ```
+This example shows how to use the Update-MgSchemaExtension Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

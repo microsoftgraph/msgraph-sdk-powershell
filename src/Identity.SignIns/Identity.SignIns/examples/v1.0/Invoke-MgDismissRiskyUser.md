@@ -1,4 +1,4 @@
-### Example 1
+### Example 1: Using the Invoke-MgDismissRiskyUser Cmdlet
 ```powershell
 Import-Module Microsoft.Graph.Identity.SignIns
 $params = @{
@@ -9,3 +9,5 @@ $params = @{
 }
 Invoke-MgDismissRiskyUser -BodyParameter $params
 ```
+This example shows how to use the Invoke-MgDismissRiskyUser Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

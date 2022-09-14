@@ -1,4 +1,4 @@
-### Example 1
+### Example 1: Using the Send-MgChatActivityNotification Cmdlet
 ```powershell
 Import-Module Microsoft.Graph.Teams
 $params = @{
@@ -23,7 +23,9 @@ $params = @{
 }
 Send-MgChatActivityNotification -ChatId $chatId -BodyParameter $params
 ```
-### Example 2
+This example shows how to use the Send-MgChatActivityNotification Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+### Example 2: Using the Send-MgChatActivityNotification Cmdlet
 ```powershell
 Import-Module Microsoft.Graph.Teams
 $params = @{
@@ -48,7 +50,9 @@ $params = @{
 }
 Send-MgChatActivityNotification -ChatId $chatId -BodyParameter $params
 ```
-### Example 3
+This example shows how to use the Send-MgChatActivityNotification Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+### Example 3: Using the Send-MgChatActivityNotification Cmdlet
 ```powershell
 Import-Module Microsoft.Graph.Teams
 $params = @{
@@ -74,7 +78,9 @@ $params = @{
 }
 Send-MgChatActivityNotification -ChatId $chatId -BodyParameter $params
 ```
-### Example 4
+This example shows how to use the Send-MgChatActivityNotification Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+### Example 4: Using the Send-MgChatActivityNotification Cmdlet
 ```powershell
 Import-Module Microsoft.Graph.Teams
 $params = @{
@@ -100,7 +106,9 @@ $params = @{
 }
 Send-MgChatActivityNotification -ChatId $chatId -BodyParameter $params
 ```
-### Example 5
+This example shows how to use the Send-MgChatActivityNotification Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+### Example 5: Using the Send-MgChatActivityNotification Cmdlet
 ```powershell
 Import-Module Microsoft.Graph.Teams
 $params = @{
@@ -125,3 +133,5 @@ $params = @{
 }
 Send-MgChatActivityNotification -ChatId $chatId -BodyParameter $params
 ```
+This example shows how to use the Send-MgChatActivityNotification Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

@@ -1,4 +1,4 @@
-### Example 1
+### Example 1: Using the New-MgApplicationTokenLifetimePolicyByRef Cmdlet
 ```powershell
 Import-Module Microsoft.Graph.Applications
 $params = @{
@@ -6,3 +6,5 @@ $params = @{
 }
 New-MgApplicationTokenLifetimePolicyByRef -ApplicationId $applicationId -BodyParameter $params
 ```
+This example shows how to use the New-MgApplicationTokenLifetimePolicyByRef Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

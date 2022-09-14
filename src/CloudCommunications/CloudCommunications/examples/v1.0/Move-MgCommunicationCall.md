@@ -1,4 +1,4 @@
-### Example 1
+### Example 1: Using the Move-MgCommunicationCall Cmdlet
 ```powershell
 Import-Module Microsoft.Graph.CloudCommunications
 $params = @{
@@ -14,7 +14,9 @@ $params = @{
 }
 Move-MgCommunicationCall -CallId $callId -BodyParameter $params
 ```
-### Example 2
+This example shows how to use the Move-MgCommunicationCall Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+### Example 2: Using the Move-MgCommunicationCall Cmdlet
 ```powershell
 Import-Module Microsoft.Graph.CloudCommunications
 $params = @{
@@ -34,7 +36,9 @@ $params = @{
 }
 Move-MgCommunicationCall -CallId $callId -BodyParameter $params
 ```
-### Example 3
+This example shows how to use the Move-MgCommunicationCall Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+### Example 3: Using the Move-MgCommunicationCall Cmdlet
 ```powershell
 Import-Module Microsoft.Graph.CloudCommunications
 $params = @{
@@ -53,7 +57,9 @@ $params = @{
 }
 Move-MgCommunicationCall -CallId $callId -BodyParameter $params
 ```
-### Example 4
+This example shows how to use the Move-MgCommunicationCall Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+### Example 4: Using the Move-MgCommunicationCall Cmdlet
 ```powershell
 Import-Module Microsoft.Graph.CloudCommunications
 $params = @{
@@ -75,7 +81,9 @@ $params = @{
 }
 Move-MgCommunicationCall -CallId $callId -BodyParameter $params
 ```
-### Example 5
+This example shows how to use the Move-MgCommunicationCall Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+### Example 5: Using the Move-MgCommunicationCall Cmdlet
 ```powershell
 Import-Module Microsoft.Graph.CloudCommunications
 $params = @{
@@ -100,3 +108,5 @@ $params = @{
 }
 Move-MgCommunicationCall -CallId $callId -BodyParameter $params
 ```
+This example shows how to use the Move-MgCommunicationCall Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

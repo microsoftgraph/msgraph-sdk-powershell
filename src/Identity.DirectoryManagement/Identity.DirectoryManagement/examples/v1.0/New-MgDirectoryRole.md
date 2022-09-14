@@ -1,4 +1,4 @@
-### Example 1
+### Example 1: Using the New-MgDirectoryRole Cmdlet
 ```powershell
 Import-Module Microsoft.Graph.Identity.DirectoryManagement
 $params = @{
@@ -6,3 +6,5 @@ $params = @{
 }
 New-MgDirectoryRole -BodyParameter $params
 ```
+This example shows how to use the New-MgDirectoryRole Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

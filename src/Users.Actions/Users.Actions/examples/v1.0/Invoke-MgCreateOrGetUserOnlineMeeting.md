@@ -1,4 +1,4 @@
-### Example 1
+### Example 1: Using the Invoke-MgCreateOrGetUserOnlineMeeting Cmdlet
 ```powershell
 Import-Module Microsoft.Graph.Users.Actions
 $params = @{
@@ -22,3 +22,5 @@ $params = @{
 # A UPN can also be used as -UserId.
 Invoke-MgCreateOrGetUserOnlineMeeting -UserId $userId -BodyParameter $params
 ```
+This example shows how to use the Invoke-MgCreateOrGetUserOnlineMeeting Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

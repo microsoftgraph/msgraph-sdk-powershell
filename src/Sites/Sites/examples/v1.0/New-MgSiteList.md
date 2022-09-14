@@ -1,4 +1,4 @@
-### Example 1
+### Example 1: Using the New-MgSiteList Cmdlet
 ```powershell
 Import-Module Microsoft.Graph.Sites
 $params = @{
@@ -21,3 +21,5 @@ $params = @{
 }
 New-MgSiteList -SiteId $siteId -BodyParameter $params
 ```
+This example shows how to use the New-MgSiteList Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

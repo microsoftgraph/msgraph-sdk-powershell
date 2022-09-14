@@ -1,4 +1,4 @@
-### Example 1
+### Example 1: Using the New-MgSecurityCaseEdiscoveryCaseSearch Cmdlet
 ```powershell
 Import-Module Microsoft.Graph.Security
 $params = @{
@@ -16,3 +16,5 @@ $params = @{
 }
 New-MgSecurityCaseEdiscoveryCaseSearch -EdiscoveryCaseId $ediscoveryCaseId -BodyParameter $params
 ```
+This example shows how to use the New-MgSecurityCaseEdiscoveryCaseSearch Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

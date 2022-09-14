@@ -1,4 +1,4 @@
-### Example 1
+### Example 1: Using the New-MgGroupConversation Cmdlet
 ```powershell
 Import-Module Microsoft.Graph.Groups
 $params = @{
@@ -26,3 +26,5 @@ $params = @{
 }
 New-MgGroupConversation -GroupId $groupId -BodyParameter $params
 ```
+This example shows how to use the New-MgGroupConversation Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

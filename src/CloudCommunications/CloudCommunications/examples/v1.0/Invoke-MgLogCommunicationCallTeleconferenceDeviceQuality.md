@@ -1,4 +1,4 @@
-### Example 1
+### Example 1: Using the Invoke-MgLogCommunicationCallTeleconferenceDeviceQuality Cmdlet
 ```powershell
 Import-Module Microsoft.Graph.CloudCommunications
 $params = @{
@@ -87,3 +87,5 @@ $params = @{
 }
 Invoke-MgLogCommunicationCallTeleconferenceDeviceQuality -BodyParameter $params
 ```
+This example shows how to use the Invoke-MgLogCommunicationCallTeleconferenceDeviceQuality Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

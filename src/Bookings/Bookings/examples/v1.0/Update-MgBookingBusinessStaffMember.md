@@ -1,4 +1,4 @@
-### Example 1
+### Example 1: Using the Update-MgBookingBusinessStaffMember Cmdlet
 ```powershell
 Import-Module Microsoft.Graph.Bookings
 $params = @{
@@ -68,3 +68,5 @@ $params = @{
 }
 Update-MgBookingBusinessStaffMember -BookingBusinessId $bookingBusinessId -BookingStaffMemberBaseId $bookingStaffMemberBaseId -BodyParameter $params
 ```
+This example shows how to use the Update-MgBookingBusinessStaffMember Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

@@ -1,20 +1,28 @@
-### Example 1
+### Example 1: Using the Get-MgServiceAnnouncementHealthOverview Cmdlet
 ```powershell
 Import-Module Microsoft.Graph.Devices.ServiceAnnouncement
 Get-MgServiceAnnouncementHealthOverview -ServiceHealthId $serviceHealthId
 ```
-### Example 2
+This example shows how to use the Get-MgServiceAnnouncementHealthOverview Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+### Example 2: Using the Get-MgServiceAnnouncementHealthOverview Cmdlet
 ```powershell
 Import-Module Microsoft.Graph.Devices.ServiceAnnouncement
 Get-MgServiceAnnouncementHealthOverview -ServiceHealthId $serviceHealthId -ExpandProperty "issues" 
 ```
-### Example 3
+This example shows how to use the Get-MgServiceAnnouncementHealthOverview Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+### Example 3: Using the Get-MgServiceAnnouncementHealthOverview Cmdlet
 ```powershell
 Import-Module Microsoft.Graph.Devices.ServiceAnnouncement
 Get-MgServiceAnnouncementHealthOverview
 ```
-### Example 4
+This example shows how to use the Get-MgServiceAnnouncementHealthOverview Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+### Example 4: Using the Get-MgServiceAnnouncementHealthOverview Cmdlet
 ```powershell
 Import-Module Microsoft.Graph.Devices.ServiceAnnouncement
 Get-MgServiceAnnouncementHealthOverview -ExpandProperty "issues" 
 ```
+This example shows how to use the Get-MgServiceAnnouncementHealthOverview Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

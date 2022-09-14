@@ -1,4 +1,4 @@
-### Example 1
+### Example 1: Using the New-MgIdentityProvider Cmdlet
 ```powershell
 Import-Module Microsoft.Graph.Identity.SignIns
 $params = @{
@@ -11,7 +11,9 @@ $params = @{
 }
 New-MgIdentityProvider -BodyParameter $params
 ```
-### Example 2
+This example shows how to use the New-MgIdentityProvider Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+### Example 2: Using the New-MgIdentityProvider Cmdlet
 ```powershell
 Import-Module Microsoft.Graph.Identity.SignIns
 $params = @{
@@ -23,3 +25,5 @@ $params = @{
 }
 New-MgIdentityProvider -BodyParameter $params
 ```
+This example shows how to use the New-MgIdentityProvider Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

@@ -1,5 +1,7 @@
-### Example 1
+### Example 1: Using the Get-MgIdentityB2XUserFlowLanguageOverridePage Cmdlet
 ```powershell
 Import-Module Microsoft.Graph.Identity.SignIns
 Get-MgIdentityB2XUserFlowLanguageOverridePage -B2xIdentityUserFlowId $b2xIdentityUserFlowId -UserFlowLanguageConfigurationId $userFlowLanguageConfigurationId
 ```
+This example shows how to use the Get-MgIdentityB2XUserFlowLanguageOverridePage Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

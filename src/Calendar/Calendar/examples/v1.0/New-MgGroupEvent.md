@@ -1,4 +1,4 @@
-### Example 1
+### Example 1: Using the New-MgGroupEvent Cmdlet
 ```powershell
 Import-Module Microsoft.Graph.Calendar
 $params = @{
@@ -30,3 +30,5 @@ $params = @{
 }
 New-MgGroupEvent -GroupId $groupId -BodyParameter $params
 ```
+This example shows how to use the New-MgGroupEvent Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

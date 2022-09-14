@@ -1,4 +1,4 @@
-### Example 1
+### Example 1: Using the Update-MgGroupThreadPostExtension Cmdlet
 ```powershell
 Import-Module Microsoft.Graph.Groups
 $params = @{
@@ -15,3 +15,5 @@ $params = @{
 }
 Update-MgGroupThreadPostExtension -GroupId $groupId -ConversationThreadId $conversationThreadId -PostId $postId -ExtensionId $extensionId -BodyParameter $params
 ```
+This example shows how to use the Update-MgGroupThreadPostExtension Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

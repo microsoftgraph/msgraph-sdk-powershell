@@ -1,4 +1,4 @@
-### Example 1
+### Example 1: Using the Update-MgPrintPrinter Cmdlet
 ```powershell
 Import-Module Microsoft.Graph.Devices.CloudPrint
 $params = @{
@@ -11,3 +11,5 @@ $params = @{
 }
 Update-MgPrintPrinter -PrinterId $printerId -BodyParameter $params
 ```
+This example shows how to use the Update-MgPrintPrinter Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

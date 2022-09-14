@@ -1,4 +1,4 @@
-### Example 1
+### Example 1: Using the New-MgTeamChannelMember Cmdlet
 ```powershell
 Import-Module Microsoft.Graph.Teams
 $params = @{
@@ -10,12 +10,16 @@ $params = @{
 }
 New-MgTeamChannelMember -TeamId $teamId -ChannelId $channelId -BodyParameter $params
 ```
-### Example 2
+This example shows how to use the New-MgTeamChannelMember Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+### Example 2: Using the New-MgTeamChannelMember Cmdlet
 ```powershell
 Import-Module Microsoft.Graph.Teams
 New-MgTeamChannelMember -TeamId $teamId -ChannelId $channelId
 ```
-### Example 3
+This example shows how to use the New-MgTeamChannelMember Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+### Example 3: Using the New-MgTeamChannelMember Cmdlet
 ```powershell
 Import-Module Microsoft.Graph.Teams
 $params = @{
@@ -27,7 +31,9 @@ $params = @{
 }
 New-MgTeamChannelMember -TeamId $teamId -ChannelId $channelId -BodyParameter $params
 ```
-### Example 4
+This example shows how to use the New-MgTeamChannelMember Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+### Example 4: Using the New-MgTeamChannelMember Cmdlet
 ```powershell
 Import-Module Microsoft.Graph.Teams
 $params = @{
@@ -38,7 +44,9 @@ $params = @{
 }
 New-MgTeamChannelMember -TeamId $teamId -ChannelId $channelId -BodyParameter $params
 ```
-### Example 5
+This example shows how to use the New-MgTeamChannelMember Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+### Example 5: Using the New-MgTeamChannelMember Cmdlet
 ```powershell
 Import-Module Microsoft.Graph.Teams
 $params = @{
@@ -49,7 +57,9 @@ $params = @{
 }
 New-MgTeamChannelMember -TeamId $teamId -ChannelId $channelId -BodyParameter $params
 ```
-### Example 6
+This example shows how to use the New-MgTeamChannelMember Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+### Example 6: Using the New-MgTeamChannelMember Cmdlet
 ```powershell
 Import-Module Microsoft.Graph.Teams
 $params = @{
@@ -60,7 +70,9 @@ $params = @{
 }
 New-MgTeamChannelMember -TeamId $teamId -ChannelId $channelId -BodyParameter $params
 ```
-### Example 7
+This example shows how to use the New-MgTeamChannelMember Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+### Example 7: Using the New-MgTeamChannelMember Cmdlet
 ```powershell
 Import-Module Microsoft.Graph.Teams
 $params = @{
@@ -72,3 +84,5 @@ $params = @{
 }
 New-MgTeamChannelMember -TeamId $teamId -ChannelId $channelId -BodyParameter $params
 ```
+This example shows how to use the New-MgTeamChannelMember Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

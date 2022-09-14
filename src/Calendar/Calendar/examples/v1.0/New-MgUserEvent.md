@@ -1,4 +1,4 @@
-### Example 1
+### Example 1: Using the New-MgUserEvent Cmdlet
 ```powershell
 Import-Module Microsoft.Graph.Calendar
 $params = @{
@@ -62,7 +62,9 @@ $params = @{
 # A UPN can also be used as -UserId.
 New-MgUserEvent -UserId $userId -BodyParameter $params
 ```
-### Example 2
+This example shows how to use the New-MgUserEvent Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+### Example 2: Using the New-MgUserEvent Cmdlet
 ```powershell
 Import-Module Microsoft.Graph.Calendar
 $params = @{
@@ -97,7 +99,9 @@ $params = @{
 # A UPN can also be used as -UserId.
 New-MgUserEvent -UserId $userId -BodyParameter $params
 ```
-### Example 3
+This example shows how to use the New-MgUserEvent Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+### Example 3: Using the New-MgUserEvent Cmdlet
 ```powershell
 Import-Module Microsoft.Graph.Calendar
 $params = @{
@@ -133,7 +137,9 @@ $params = @{
 # A UPN can also be used as -UserId.
 New-MgUserEvent -UserId $userId -BodyParameter $params
 ```
-### Example 4
+This example shows how to use the New-MgUserEvent Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+### Example 4: Using the New-MgUserEvent Cmdlet
 ```powershell
 Import-Module Microsoft.Graph.Calendar
 $params = @{
@@ -181,3 +187,5 @@ $params = @{
 # A UPN can also be used as -UserId.
 New-MgUserEvent -UserId $userId -BodyParameter $params
 ```
+This example shows how to use the New-MgUserEvent Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

@@ -1,35 +1,49 @@
-### Example 1
+### Example 1: Using the Get-MgEducationClassAssignmentResource Cmdlet
 ```powershell
 Import-Module Microsoft.Graph.Education
 Get-MgEducationClassAssignmentResource -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -EducationAssignmentResourceId $educationAssignmentResourceId
 ```
-### Example 2
+This example shows how to use the Get-MgEducationClassAssignmentResource Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+### Example 2: Using the Get-MgEducationClassAssignmentResource Cmdlet
 ```powershell
 Import-Module Microsoft.Graph.Education
 Get-MgEducationClassAssignmentResource -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -EducationAssignmentResourceId $educationAssignmentResourceId
 ```
-### Example 3
+This example shows how to use the Get-MgEducationClassAssignmentResource Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+### Example 3: Using the Get-MgEducationClassAssignmentResource Cmdlet
 ```powershell
 Import-Module Microsoft.Graph.Education
 Get-MgEducationClassAssignmentResource -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -EducationAssignmentResourceId $educationAssignmentResourceId
 ```
-### Example 4
+This example shows how to use the Get-MgEducationClassAssignmentResource Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+### Example 4: Using the Get-MgEducationClassAssignmentResource Cmdlet
 ```powershell
 Import-Module Microsoft.Graph.Education
 Get-MgEducationClassAssignmentResource -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -EducationAssignmentResourceId $educationAssignmentResourceId
 ```
-### Example 5
+This example shows how to use the Get-MgEducationClassAssignmentResource Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+### Example 5: Using the Get-MgEducationClassAssignmentResource Cmdlet
 ```powershell
 Import-Module Microsoft.Graph.Education
 Get-MgEducationClassAssignmentResource -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -EducationAssignmentResourceId $educationAssignmentResourceId
 ```
-### Example 6
+This example shows how to use the Get-MgEducationClassAssignmentResource Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+### Example 6: Using the Get-MgEducationClassAssignmentResource Cmdlet
 ```powershell
 Import-Module Microsoft.Graph.Education
 Get-MgEducationClassAssignmentResource -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -EducationAssignmentResourceId $educationAssignmentResourceId
 ```
-### Example 7
+This example shows how to use the Get-MgEducationClassAssignmentResource Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+### Example 7: Using the Get-MgEducationClassAssignmentResource Cmdlet
 ```powershell
 Import-Module Microsoft.Graph.Education
 Get-MgEducationClassAssignmentResource -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId
 ```
+This example shows how to use the Get-MgEducationClassAssignmentResource Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

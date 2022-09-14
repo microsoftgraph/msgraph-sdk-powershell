@@ -1,4 +1,4 @@
-### Example 1
+### Example 1: Using the Invoke-MgShareTeamSchedule Cmdlet
 ```powershell
 Import-Module Microsoft.Graph.Teams
 $params = @{
@@ -8,3 +8,5 @@ $params = @{
 }
 Invoke-MgShareTeamSchedule -TeamId $teamId -BodyParameter $params
 ```
+This example shows how to use the Invoke-MgShareTeamSchedule Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

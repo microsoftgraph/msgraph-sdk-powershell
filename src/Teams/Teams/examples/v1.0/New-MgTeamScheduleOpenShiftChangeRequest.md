@@ -1,4 +1,4 @@
-### Example 1
+### Example 1: Using the New-MgTeamScheduleOpenShiftChangeRequest Cmdlet
 ```powershell
 Import-Module Microsoft.Graph.Teams
 $params = @{
@@ -7,3 +7,5 @@ $params = @{
 }
 New-MgTeamScheduleOpenShiftChangeRequest -TeamId $teamId -BodyParameter $params
 ```
+This example shows how to use the New-MgTeamScheduleOpenShiftChangeRequest Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

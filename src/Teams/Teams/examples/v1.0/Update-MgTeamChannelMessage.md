@@ -1,4 +1,4 @@
-### Example 1
+### Example 1: Using the Update-MgTeamChannelMessage Cmdlet
 ```powershell
 Import-Module Microsoft.Graph.Teams
 $params = @{
@@ -16,3 +16,5 @@ $params = @{
 }
 Update-MgTeamChannelMessage -TeamId $teamId -ChannelId $channelId -ChatMessageId $chatMessageId -BodyParameter $params
 ```
+This example shows how to use the Update-MgTeamChannelMessage Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

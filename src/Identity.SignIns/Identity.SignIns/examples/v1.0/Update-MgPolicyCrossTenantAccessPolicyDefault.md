@@ -1,4 +1,4 @@
-### Example 1
+### Example 1: Using the Update-MgPolicyCrossTenantAccessPolicyDefault Cmdlet
 ```powershell
 Import-Module Microsoft.Graph.Identity.SignIns
 $params = @{
@@ -25,3 +25,5 @@ $params = @{
 }
 Update-MgPolicyCrossTenantAccessPolicyDefault -BodyParameter $params
 ```
+This example shows how to use the Update-MgPolicyCrossTenantAccessPolicyDefault Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

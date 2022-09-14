@@ -1,4 +1,4 @@
-### Example 1
+### Example 1: Using the Confirm-MgDirectoryObjectMemberGroup Cmdlet
 ```powershell
 Import-Module Microsoft.Graph.DirectoryObjects
 $params = @{
@@ -12,3 +12,5 @@ $params = @{
 }
 Confirm-MgDirectoryObjectMemberGroup -DirectoryObjectId $directoryObjectId -BodyParameter $params
 ```
+This example shows how to use the Confirm-MgDirectoryObjectMemberGroup Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

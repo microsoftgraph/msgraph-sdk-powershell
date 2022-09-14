@@ -1,4 +1,4 @@
-### Example 1
+### Example 1: Using the Set-MgGroupLicense Cmdlet
 ```powershell
 Import-Module Microsoft.Graph.Groups
 $params = @{
@@ -22,7 +22,9 @@ $params = @{
 }
 Set-MgGroupLicense -GroupId $groupId -BodyParameter $params
 ```
-### Example 2
+This example shows how to use the Set-MgGroupLicense Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+### Example 2: Using the Set-MgGroupLicense Cmdlet
 ```powershell
 Import-Module Microsoft.Graph.Groups
 $params = @{
@@ -35,3 +37,5 @@ $params = @{
 }
 Set-MgGroupLicense -GroupId $groupId -BodyParameter $params
 ```
+This example shows how to use the Set-MgGroupLicense Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

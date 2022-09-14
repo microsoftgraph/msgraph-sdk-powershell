@@ -1,4 +1,4 @@
-### Example 1
+### Example 1: Using the Copy-MgSiteContentTypeToDefaultContentLocation Cmdlet
 ```powershell
 Import-Module Microsoft.Graph.Sites
 $params = @{
@@ -12,3 +12,5 @@ $params = @{
 }
 Copy-MgSiteContentTypeToDefaultContentLocation -SiteId $siteId -ContentTypeId $contentTypeId -BodyParameter $params
 ```
+This example shows how to use the Copy-MgSiteContentTypeToDefaultContentLocation Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

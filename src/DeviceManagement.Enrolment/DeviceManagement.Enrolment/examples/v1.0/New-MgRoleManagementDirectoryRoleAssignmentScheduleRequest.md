@@ -1,4 +1,4 @@
-### Example 1
+### Example 1: Using the New-MgRoleManagementDirectoryRoleAssignmentScheduleRequest Cmdlet
 ```powershell
 Import-Module Microsoft.Graph.DeviceManagement.Enrolment
 $params = @{
@@ -16,7 +16,9 @@ $params = @{
 }
 New-MgRoleManagementDirectoryRoleAssignmentScheduleRequest -BodyParameter $params
 ```
-### Example 2
+This example shows how to use the New-MgRoleManagementDirectoryRoleAssignmentScheduleRequest Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+### Example 2: Using the New-MgRoleManagementDirectoryRoleAssignmentScheduleRequest Cmdlet
 ```powershell
 Import-Module Microsoft.Graph.DeviceManagement.Enrolment
 $params = @{
@@ -39,3 +41,5 @@ $params = @{
 }
 New-MgRoleManagementDirectoryRoleAssignmentScheduleRequest -BodyParameter $params
 ```
+This example shows how to use the New-MgRoleManagementDirectoryRoleAssignmentScheduleRequest Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

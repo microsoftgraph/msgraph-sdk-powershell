@@ -1,4 +1,4 @@
-### Example 1
+### Example 1: Using the New-MgApplicationFederatedIdentityCredential Cmdlet
 ```powershell
 Import-Module Microsoft.Graph.Applications
 $params = @{
@@ -11,3 +11,5 @@ $params = @{
 }
 New-MgApplicationFederatedIdentityCredential -ApplicationId $applicationId -BodyParameter $params
 ```
+This example shows how to use the New-MgApplicationFederatedIdentityCredential Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

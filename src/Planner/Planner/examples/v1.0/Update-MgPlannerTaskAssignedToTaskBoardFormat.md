@@ -1,4 +1,4 @@
-### Example 1
+### Example 1: Using the Update-MgPlannerTaskAssignedToTaskBoardFormat Cmdlet
 ```powershell
 Import-Module Microsoft.Graph.Planner
 $params = @{
@@ -8,3 +8,5 @@ $params = @{
 }
 Update-MgPlannerTaskAssignedToTaskBoardFormat -PlannerTaskId $plannerTaskId -BodyParameter $params
 ```
+This example shows how to use the Update-MgPlannerTaskAssignedToTaskBoardFormat Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

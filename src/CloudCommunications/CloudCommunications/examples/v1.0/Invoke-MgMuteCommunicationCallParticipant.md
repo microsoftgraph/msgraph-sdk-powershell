@@ -1,4 +1,4 @@
-### Example 1
+### Example 1: Using the Invoke-MgMuteCommunicationCallParticipant Cmdlet
 ```powershell
 Import-Module Microsoft.Graph.CloudCommunications
 $params = @{
@@ -6,3 +6,5 @@ $params = @{
 }
 Invoke-MgMuteCommunicationCallParticipant -CallId $callId -ParticipantId $participantId -BodyParameter $params
 ```
+This example shows how to use the Invoke-MgMuteCommunicationCallParticipant Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

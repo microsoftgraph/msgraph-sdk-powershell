@@ -1,4 +1,4 @@
-### Example 1
+### Example 1: Using the New-MgBookingBusiness Cmdlet
 ```powershell
 Import-Module Microsoft.Graph.Bookings
 $params = @{
@@ -18,3 +18,5 @@ $params = @{
 }
 New-MgBookingBusiness -BodyParameter $params
 ```
+This example shows how to use the New-MgBookingBusiness Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

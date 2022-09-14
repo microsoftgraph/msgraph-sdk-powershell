@@ -1,4 +1,4 @@
-### Example 1
+### Example 1: Using the Update-MgTeamScheduleOpenShift Cmdlet
 ```powershell
 Import-Module Microsoft.Graph.Teams
 $params = @{
@@ -24,3 +24,5 @@ $params = @{
 }
 Update-MgTeamScheduleOpenShift -TeamId $teamId -OpenShiftId $openShiftId -BodyParameter $params
 ```
+This example shows how to use the Update-MgTeamScheduleOpenShift Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

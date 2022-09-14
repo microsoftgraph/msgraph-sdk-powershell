@@ -1,4 +1,4 @@
-### Example 1
+### Example 1: Using the Invoke-MgPlayCommunicationCallPrompt Cmdlet
 ```powershell
 Import-Module Microsoft.Graph.CloudCommunications
 $params = @{
@@ -16,3 +16,5 @@ $params = @{
 }
 Invoke-MgPlayCommunicationCallPrompt -CallId $callId -BodyParameter $params
 ```
+This example shows how to use the Invoke-MgPlayCommunicationCallPrompt Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

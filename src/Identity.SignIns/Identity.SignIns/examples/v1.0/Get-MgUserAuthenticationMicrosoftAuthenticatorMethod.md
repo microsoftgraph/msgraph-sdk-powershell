@@ -1,5 +1,7 @@
-### Example 1
+### Example 1: Using the Get-MgUserAuthenticationMicrosoftAuthenticatorMethod Cmdlet
 ```powershell
 Import-Module Microsoft.Graph.Identity.SignIns
 Get-MgUserAuthenticationMicrosoftAuthenticatorMethod -UserId $userId
 ```
+This example shows how to use the Get-MgUserAuthenticationMicrosoftAuthenticatorMethod Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

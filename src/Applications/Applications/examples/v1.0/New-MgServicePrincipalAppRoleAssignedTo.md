@@ -1,4 +1,4 @@
-### Example 1
+### Example 1: Using the New-MgServicePrincipalAppRoleAssignedTo Cmdlet
 ```powershell
 Import-Module Microsoft.Graph.Applications
 $params = @{
@@ -8,3 +8,5 @@ $params = @{
 }
 New-MgServicePrincipalAppRoleAssignedTo -ServicePrincipalId $servicePrincipalId -BodyParameter $params
 ```
+This example shows how to use the New-MgServicePrincipalAppRoleAssignedTo Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

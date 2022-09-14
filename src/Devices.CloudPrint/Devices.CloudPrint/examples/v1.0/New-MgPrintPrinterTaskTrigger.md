@@ -1,4 +1,4 @@
-### Example 1
+### Example 1: Using the New-MgPrintPrinterTaskTrigger Cmdlet
 ```powershell
 Import-Module Microsoft.Graph.Devices.CloudPrint
 $params = @{
@@ -7,3 +7,5 @@ $params = @{
 }
 New-MgPrintPrinterTaskTrigger -PrinterId $printerId -BodyParameter $params
 ```
+This example shows how to use the New-MgPrintPrinterTaskTrigger Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

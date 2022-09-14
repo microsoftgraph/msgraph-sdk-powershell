@@ -1,4 +1,4 @@
-### Example 1
+### Example 1: Using the Update-MgPlannerTask Cmdlet
 ```powershell
 Import-Module Microsoft.Graph.Planner
 $params = @{
@@ -15,3 +15,5 @@ $params = @{
 }
 Update-MgPlannerTask -PlannerTaskId $plannerTaskId -BodyParameter $params
 ```
+This example shows how to use the Update-MgPlannerTask Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

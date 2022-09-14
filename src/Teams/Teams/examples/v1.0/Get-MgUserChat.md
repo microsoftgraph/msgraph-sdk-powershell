@@ -1,15 +1,21 @@
-### Example 1
+### Example 1: Using the Get-MgUserChat Cmdlet
 ```powershell
 Import-Module Microsoft.Graph.Teams
 Get-MgUserChat -UserId $userId -ChatId $chatId
 ```
-### Example 2
+This example shows how to use the Get-MgUserChat Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+### Example 2: Using the Get-MgUserChat Cmdlet
 ```powershell
 Import-Module Microsoft.Graph.Teams
 Get-MgUserChat -UserId $userId -ExpandProperty "members" 
 ```
-### Example 3
+This example shows how to use the Get-MgUserChat Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+### Example 3: Using the Get-MgUserChat Cmdlet
 ```powershell
 Import-Module Microsoft.Graph.Teams
 Get-MgUserChat -UserId $userId
 ```
+This example shows how to use the Get-MgUserChat Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

@@ -1,4 +1,4 @@
-### Example 1
+### Example 1: Using the Update-MgUserOnlineMeeting Cmdlet
 ```powershell
 Import-Module Microsoft.Graph.CloudCommunications
 $params = @{
@@ -9,7 +9,9 @@ $params = @{
 # A UPN can also be used as -UserId.
 Update-MgUserOnlineMeeting -UserId $userId -OnlineMeetingId $onlineMeetingId -BodyParameter $params
 ```
-### Example 2
+This example shows how to use the Update-MgUserOnlineMeeting Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+### Example 2: Using the Update-MgUserOnlineMeeting Cmdlet
 ```powershell
 Import-Module Microsoft.Graph.CloudCommunications
 $params = @{
@@ -20,3 +22,5 @@ $params = @{
 # A UPN can also be used as -UserId.
 Update-MgUserOnlineMeeting -UserId $userId -OnlineMeetingId $onlineMeetingId -BodyParameter $params
 ```
+This example shows how to use the Update-MgUserOnlineMeeting Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
