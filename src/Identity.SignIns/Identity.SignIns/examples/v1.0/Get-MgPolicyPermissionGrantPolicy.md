@@ -25,7 +25,7 @@ AdditionalProperties : {[includeAllPreApprovedApplications, False], [resourceSco
                        https://graph.microsoft.com/beta/$metadata#policies/permissionGrantPolicies('microsoft-all-application-permissions-for-chat')/excludes]}
 ```
 
-This command retrieves a list of all permission grant policies in Azure AD. 
+This command retrieves a list of all permission grant policies in Azure AD.
 
 ### Example 2: Get a permission grant policy by ID
 

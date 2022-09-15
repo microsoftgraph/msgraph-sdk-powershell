@@ -1,4 +1,4 @@
-### Example 1: {Remove a permission grant policy include
+### Example 1: Remove a permission grant policy include
 
 ```powershell
 Connect-MgGraph -Scopes "Policy.Read.PermissionGrant,Policy.ReadWrite.PermissionGrant"  
