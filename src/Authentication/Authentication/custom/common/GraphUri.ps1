@@ -55,7 +55,7 @@ function GraphUri_TokenizeIds {
         if ($Uri.Segments[$i] -match "[^v1.0|beta]\d") {
             #For Uris whose last segments match the regex '(?<={)(.*?)(?=})', all characters from the first '(' are substituted with '.*' 
             if ($i -eq $Uri.Segments.length - 1) {
-                if ($UnescapedUri -match '(?<={)(.*?)(?=})') {
+                if ($UnescapedUri -match '(.*?)') {
                     try {
                         $UpdatedLastSegment = $LastSegment.Substring(0, $LastSegment.IndexOf("("))
                         $TokenizedUri += $UpdatedLastSegment + ".*"
@@ -75,6 +75,7 @@ function GraphUri_TokenizeIds {
             $TokenizedUri += $Uri.Segments[$i]
         }
     }
+    Write-host $TokenizedUri
     return $TokenizedUri.TrimEnd("/")
 }
 
