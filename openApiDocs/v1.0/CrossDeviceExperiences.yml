@@ -11,12 +11,14 @@ paths:
       tags:
         - users.userActivity
       summary: Get activities from users
+      description: The user's activities across devices. Read-only. Nullable.
       operationId: users_ListActivities
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -122,6 +124,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -147,12 +150,14 @@ paths:
       tags:
         - users.userActivity
       summary: Get activities from users
+      description: The user's activities across devices. Read-only. Nullable.
       operationId: users_GetActivities
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -160,6 +165,7 @@ paths:
           in: path
           description: 'key: id of userActivity'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: userActivity
@@ -228,6 +234,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -235,6 +242,7 @@ paths:
           in: path
           description: 'key: id of userActivity'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: userActivity
@@ -261,6 +269,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -268,12 +277,14 @@ paths:
           in: path
           description: 'key: id of userActivity'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: userActivity
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -287,12 +298,14 @@ paths:
       tags:
         - users.userActivity
       summary: Get historyItems from users
+      description: Optional. NavigationProperty/Containment; navigation property to the activity's historyItems.
       operationId: users.activities_ListHistoryItems
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -300,6 +313,7 @@ paths:
           in: path
           description: 'key: id of userActivity'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: userActivity
@@ -390,6 +404,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -397,6 +412,7 @@ paths:
           in: path
           description: 'key: id of userActivity'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: userActivity
@@ -422,12 +438,14 @@ paths:
       tags:
         - users.userActivity
       summary: Get historyItems from users
+      description: Optional. NavigationProperty/Containment; navigation property to the activity's historyItems.
       operationId: users.activities_GetHistoryItems
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -435,6 +453,7 @@ paths:
           in: path
           description: 'key: id of userActivity'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: userActivity
@@ -442,6 +461,7 @@ paths:
           in: path
           description: 'key: id of activityHistoryItem'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: activityHistoryItem
@@ -506,6 +526,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -513,6 +534,7 @@ paths:
           in: path
           description: 'key: id of userActivity'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: userActivity
@@ -520,6 +542,7 @@ paths:
           in: path
           description: 'key: id of activityHistoryItem'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: activityHistoryItem
@@ -546,6 +569,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -553,6 +577,7 @@ paths:
           in: path
           description: 'key: id of userActivity'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: userActivity
@@ -560,12 +585,14 @@ paths:
           in: path
           description: 'key: id of activityHistoryItem'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: activityHistoryItem
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -579,12 +606,14 @@ paths:
       tags:
         - users.userActivity
       summary: Get activity from users
+      description: Optional. NavigationProperty/Containment; navigation property to the associated activity.
       operationId: users.activities.historyItems_GetActivity
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -592,6 +621,7 @@ paths:
           in: path
           description: 'key: id of userActivity'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: userActivity
@@ -599,6 +629,7 @@ paths:
           in: path
           description: 'key: id of activityHistoryItem'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: activityHistoryItem
@@ -720,6 +751,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.activityHistoryItem'
               description: Optional. NavigationProperty/Containment; navigation property to the activity's historyItems.
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.activityHistoryItem:
@@ -820,13 +852,16 @@ components:
     microsoft.graph.userActivityCollectionResponse:
       title: Collection of userActivity
       type: object
-      properties:
-        value:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.userActivity'
-        '@odata.nextLink':
-          type: string
+      allOf:
+        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
+        - type: object
+          properties:
+            value:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.userActivity'
+          additionalProperties:
+            type: object
       additionalProperties:
         type: object
     microsoft.graph.ODataErrors.ODataError:
@@ -841,13 +876,16 @@ components:
     microsoft.graph.activityHistoryItemCollectionResponse:
       title: Collection of activityHistoryItem
       type: object
-      properties:
-        value:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.activityHistoryItem'
-        '@odata.nextLink':
-          type: string
+      allOf:
+        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
+        - type: object
+          properties:
+            value:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.activityHistoryItem'
+          additionalProperties:
+            type: object
       additionalProperties:
         type: object
     microsoft.graph.imageInfo:
@@ -868,6 +906,15 @@ components:
         iconUrl:
           type: string
           description: Optional; URI that points to an icon which represents the application used to generate the activity
+          nullable: true
+      additionalProperties:
+        type: object
+    BaseCollectionPaginationCountResponse:
+      title: Base collection pagination and count responses
+      type: object
+      properties:
+        '@odata.nextLink':
+          type: string
           nullable: true
       additionalProperties:
         type: object
@@ -936,6 +983,8 @@ components:
       name: $top
       in: query
       description: Show only the first n items
+      style: form
+      explode: false
       schema:
         minimum: 0
         type: integer
@@ -944,6 +993,8 @@ components:
       name: $skip
       in: query
       description: Skip the first n items
+      style: form
+      explode: false
       schema:
         minimum: 0
         type: integer
@@ -951,18 +1002,24 @@ components:
       name: $search
       in: query
       description: Search items by search phrases
+      style: form
+      explode: false
       schema:
         type: string
     filter:
       name: $filter
       in: query
       description: Filter items by property values
+      style: form
+      explode: false
       schema:
         type: string
     count:
       name: $count
       in: query
       description: Include count of items
+      style: form
+      explode: false
       schema:
         type: boolean
   securitySchemes:

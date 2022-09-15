@@ -45,6 +45,10 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/DeviceManagement.Functions.yml"
     },
+    "/deviceManagement/comanagedDevices/{managedDevice-id}/microsoft.graph.retrieveRemoteHelpSession(sessionKey='{sessionKey}')": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Functions.yml"
+    },
     "/deviceManagement/comanagedDevices/microsoft.graph.appDiagnostics(upn='{upn}')": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/DeviceManagement.Functions.yml"
@@ -113,6 +117,10 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/DeviceManagement.Functions.yml"
     },
+    "/deviceManagement/managedDevices/{managedDevice-id}/microsoft.graph.retrieveRemoteHelpSession(sessionKey='{sessionKey}')": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Functions.yml"
+    },
     "/deviceManagement/managedDevices/microsoft.graph.appDiagnostics(upn='{upn}')": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/DeviceManagement.Functions.yml"
@@ -158,6 +166,10 @@
       "originalLocation": "/openApiDocs/beta/DeviceManagement.Functions.yml"
     },
     "/deviceManagement/microsoft.graph.verifyWindowsEnrollmentAutoDiscovery(domainName='{domainName}')": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Functions.yml"
+    },
+    "/deviceManagement/monitoring/alertRecords/microsoft.graph.deviceManagement.getPortalNotifications()": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/DeviceManagement.Functions.yml"
     },
