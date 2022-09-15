@@ -2,7 +2,7 @@
 
 ```powershell
 Connect-MgGraph -Scopes "Policy.Read.PermissionGrant,Policy.ReadWrite.PermissionGrant"  
-Remove-MgPolicyPermissionGrantPolicyExclude -PermissionGrantConditionSetId "66a94faf-9134-4f46-83d2-1aae2eaea98f" -PermissionGrantPolicyId "testtenant-sampleapp-permissions"  
+Remove-MgPolicyPermissionGrantPolicyExclude -PermissionGrantConditionSetId "60ba4fac-d39e-47b3-bd99-4394cb88a2f8" -PermissionGrantPolicyId "testtenant-sampleapp-permissions"  
 ```
 
 This command deletes the specified exclude configuration from the specific permission grant policy in Azure AD.
