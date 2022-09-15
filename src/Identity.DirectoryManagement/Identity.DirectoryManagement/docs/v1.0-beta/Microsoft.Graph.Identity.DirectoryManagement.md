@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Identity.DirectoryManagement
-Module Guid: 8aa12f83-9823-4b95-8902-bfa898df055e
+Module Guid: d4968fd5-b1b0-429a-8ab5-99a2a36bc3d7
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.directorymanagement
 Help Version: 1.0.0.0
 Locale: en-US
@@ -366,7 +366,7 @@ Invoke action getUserOwnedObjects
 Get sharedEmailDomains from directory
 
 ### [Get-MgDomain](Get-MgDomain.md)
-Get entity from domains by key
+Get domain
 
 ### [Get-MgDomainFederationConfiguration](Get-MgDomainFederationConfiguration.md)
 Get federationConfiguration from domains

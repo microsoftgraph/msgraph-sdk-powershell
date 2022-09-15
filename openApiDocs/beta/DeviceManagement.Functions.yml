@@ -307,6 +307,38 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
+  '/deviceManagement/comanagedDevices/microsoft.graph.appDiagnostics(upn=''{upn}'')':
+    get:
+      tags:
+        - deviceManagement.Functions
+      summary: Invoke function appDiagnostics
+      operationId: deviceManagement.comanagedDevices_appDiagnostics
+      parameters:
+        - name: upn
+          in: path
+          description: 'Usage: upn=''{upn}'''
+          required: true
+          schema:
+            type: string
+            nullable: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of managedDevice
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.powerliftIncidentMetadata'
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
   '/deviceManagement/configManagerCollections/microsoft.graph.getPolicySummary(policyId=''{policyId}'')':
     get:
       tags:
@@ -749,6 +781,38 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.oemWarranty'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/deviceManagement/managedDevices/microsoft.graph.appDiagnostics(upn=''{upn}'')':
+    get:
+      tags:
+        - deviceManagement.Functions
+      summary: Invoke function appDiagnostics
+      operationId: deviceManagement.managedDevices_appDiagnostics
+      parameters:
+        - name: upn
+          in: path
+          description: 'Usage: upn=''{upn}'''
+          required: true
+          schema:
+            type: string
+            nullable: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of managedDevice
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.powerliftIncidentMetadata'
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -1737,6 +1801,50 @@ components:
       additionalProperties:
         type: object
       description: OEM Warranty information for a given device
+    microsoft.graph.powerliftIncidentMetadata:
+      title: powerliftIncidentMetadata
+      type: object
+      properties:
+        application:
+          type: string
+          description: 'The name of the application the diagnostic is from. Example: com.microsoft.CompanyPortal'
+          nullable: true
+        clientVersion:
+          type: string
+          description: 'The version of the application. Example: 5.2203.1'
+          nullable: true
+        createdAtDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: 'The time the app diagnostic was created. Example: 2022-04-19T17:24:45.313Z'
+          format: date-time
+          nullable: true
+        easyId:
+          type: string
+          description: 'The unique app diagnostic identifier as a user friendly 8 character hexadecimal string. Example: 8520467A'
+          nullable: true
+        fileNames:
+          type: array
+          items:
+            type: string
+            nullable: true
+          description: A list of files that are associated with the diagnostic.
+        locale:
+          type: string
+          description: 'The locale information of the application. Example: en-US'
+          nullable: true
+        platform:
+          type: string
+          description: 'The device''s OS the diagnostic is from. Example: iOS'
+          nullable: true
+        powerliftId:
+          pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
+          type: string
+          description: 'The unique identifier of the app diagnostic. Example: 8520467a-49a9-44a4-8447-8dfb8bec6726'
+          format: uuid
+      additionalProperties:
+        type: object
+      description: Collection of app diagnostics associated with a user.
     microsoft.graph.configManagerPolicySummary:
       title: configManagerPolicySummary
       type: object
@@ -3094,7 +3202,15 @@ components:
         - insufficientData
         - needsAttention
         - meetingGoals
+        - unknownFutureValue
       type: string
+      x-ms-enum:
+        name: userExperienceAnalyticsHealthState
+        modelAsString: false
+        values:
+          - value: unknownFutureValue
+            description: Evolvable enum member
+            name: unknownFutureValue
     microsoft.graph.userExperienceAnalyticsMetric:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'

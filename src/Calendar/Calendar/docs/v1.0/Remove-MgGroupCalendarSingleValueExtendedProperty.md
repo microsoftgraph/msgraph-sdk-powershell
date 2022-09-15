@@ -8,9 +8,7 @@ schema: 2.0.0
 # Remove-MgGroupCalendarSingleValueExtendedProperty
 
 ## SYNOPSIS
-The collection of single-value extended properties defined for the calendar.
-Read-only.
-Nullable.
+Delete navigation property singleValueExtendedProperties for groups
 
 ## SYNTAX
 
@@ -28,9 +26,7 @@ Remove-MgGroupCalendarSingleValueExtendedProperty -InputObject <ICalendarIdentit
 ```
 
 ## DESCRIPTION
-The collection of single-value extended properties defined for the calendar.
-Read-only.
-Nullable.
+Delete navigation property singleValueExtendedProperties for groups
 
 ## EXAMPLES
 
@@ -170,6 +166,7 @@ INPUTOBJECT <ICalendarIdentity>: Identity Parameter
   - `[CalendarPermissionId <String>]`: key: id of calendarPermission
   - `[EventId <String>]`: key: id of event
   - `[EventId1 <String>]`: key: id of event
+  - `[EventId2 <String>]`: key: id of event
   - `[ExtensionId <String>]`: key: id of extension
   - `[GroupId <String>]`: key: id of group
   - `[MultiValueLegacyExtendedPropertyId <String>]`: key: id of multiValueLegacyExtendedProperty

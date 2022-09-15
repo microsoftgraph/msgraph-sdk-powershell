@@ -8,29 +8,21 @@ schema: 2.0.0
 # Remove-MgUserCalendarMultiValueExtendedProperty
 
 ## SYNOPSIS
-The collection of multi-value extended properties defined for the calendar.
-Read-only.
-Nullable.
+Delete navigation property multiValueExtendedProperties for users
 
 ## SYNTAX
 
-### Delete1 (Default)
+### Delete2 (Default)
 ```
 Remove-MgUserCalendarMultiValueExtendedProperty -MultiValueLegacyExtendedPropertyId <String> -UserId <String>
  [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### Delete2
+### Delete3
 ```
 Remove-MgUserCalendarMultiValueExtendedProperty -CalendarId <String>
  -MultiValueLegacyExtendedPropertyId <String> -UserId <String> [-IfMatch <String>] [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
-```
-
-### DeleteViaIdentity1
-```
-Remove-MgUserCalendarMultiValueExtendedProperty -InputObject <ICalendarIdentity> [-IfMatch <String>]
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity2
@@ -39,10 +31,14 @@ Remove-MgUserCalendarMultiValueExtendedProperty -InputObject <ICalendarIdentity>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
+### DeleteViaIdentity3
+```
+Remove-MgUserCalendarMultiValueExtendedProperty -InputObject <ICalendarIdentity> [-IfMatch <String>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+```
+
 ## DESCRIPTION
-The collection of multi-value extended properties defined for the calendar.
-Read-only.
-Nullable.
+Delete navigation property multiValueExtendedProperties for users
 
 ## EXAMPLES
 
@@ -53,7 +49,7 @@ key: id of calendar
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete2
+Parameter Sets: Delete3
 Aliases:
 
 Required: True
@@ -84,7 +80,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.ICalendarIdentity
-Parameter Sets: DeleteViaIdentity1, DeleteViaIdentity2
+Parameter Sets: DeleteViaIdentity2, DeleteViaIdentity3
 Aliases:
 
 Required: True
@@ -99,7 +95,7 @@ key: id of multiValueLegacyExtendedProperty
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete1, Delete2
+Parameter Sets: Delete2, Delete3
 Aliases:
 
 Required: True
@@ -129,7 +125,7 @@ key: id of user
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete1, Delete2
+Parameter Sets: Delete2, Delete3
 Aliases:
 
 Required: True
@@ -197,6 +193,7 @@ INPUTOBJECT <ICalendarIdentity>: Identity Parameter
   - `[CalendarPermissionId <String>]`: key: id of calendarPermission
   - `[EventId <String>]`: key: id of event
   - `[EventId1 <String>]`: key: id of event
+  - `[EventId2 <String>]`: key: id of event
   - `[ExtensionId <String>]`: key: id of extension
   - `[GroupId <String>]`: key: id of group
   - `[MultiValueLegacyExtendedPropertyId <String>]`: key: id of multiValueLegacyExtendedProperty

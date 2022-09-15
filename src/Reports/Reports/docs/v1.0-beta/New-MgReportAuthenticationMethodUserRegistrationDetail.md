@@ -96,7 +96,8 @@ Accept wildcard characters: False
 ```
 
 ### -IsAdmin
-.
+Whether the user has an admin role in the tenant.
+This value can be used to check the authentication methods that privileged accounts are registered for and capable of.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -328,7 +329,7 @@ BODYPARAMETER <IMicrosoftGraphUserRegistrationDetails>: userRegistrationDetails
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: 
   - `[DefaultMfaMethod <String>]`: defaultMfaMethodType
-  - `[IsAdmin <Boolean?>]`: 
+  - `[IsAdmin <Boolean?>]`: Whether the user has an admin role in the tenant. This value can be used to check the authentication methods that privileged accounts are registered for and capable of.
   - `[IsMfaCapable <Boolean?>]`: Whether the user has registered a strong authentication method for multi-factor authentication. The method must be allowed by the authentication methods policy. Supports $filter (eq).
   - `[IsMfaRegistered <Boolean?>]`: Whether the user has registered a strong authentication method for multi-factor authentication. The method may not necessarily be allowed by the authentication methods policy.  Supports $filter (eq).
   - `[IsPasswordlessCapable <Boolean?>]`: Whether the user has registered a passwordless strong authentication method (including FIDO2, Windows Hello for Business, and Microsoft Authenticator (Passwordless)) that is allowed by the authentication methods policy. Supports $filter (eq).

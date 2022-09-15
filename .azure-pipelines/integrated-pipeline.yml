@@ -41,9 +41,9 @@ trigger:
       - dev
       - releases/*
       - bugfixes/*
-      - features/*
       exclude:
       - DocsGeneration/*
+      - features/2.0
 
 pr:
   branches:

@@ -105,7 +105,7 @@ paths:
     get:
       tags:
         - schemaExtensions.schemaExtension
-      summary: Get entity from schemaExtensions by key
+      summary: Get schemaExtension
       operationId: schemaExtensions.schemaExtension_GetSchemaExtension
       parameters:
         - name: schemaExtension-id
@@ -157,7 +157,7 @@ paths:
     patch:
       tags:
         - schemaExtensions.schemaExtension
-      summary: Update entity in schemaExtensions
+      summary: Update schemaExtension
       operationId: schemaExtensions.schemaExtension_UpdateSchemaExtension
       parameters:
         - name: schemaExtension-id
