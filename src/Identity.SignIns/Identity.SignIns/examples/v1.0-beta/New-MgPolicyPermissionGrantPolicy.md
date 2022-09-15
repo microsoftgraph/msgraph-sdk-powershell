@@ -1,12 +1,17 @@
-### Example 1: Using the New-MgPolicyPermissionGrantPolicy Cmdlet
+### Example 1: Create a permission grant policy
+
 ```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
-$params = @{
-	Id = "my-custom-consent-policy"
-	DisplayName = "Custom application consent policy"
-	Description = "A custom permission grant policy to customize conditions for granting consent."
-}
-New-MgPolicyPermissionGrantPolicy -BodyParameter $params
+Connect-MgGraph -Scopes "Policy.Read.PermissionGrant,Policy.ReadWrite.PermissionGrant"  
+New-MgPolicyPermissionGrantPolicy -Id "testtenant-sampleapp-permissions" -Description "Permissions for sample app in test tenant" -DisplayName "Sample app permissions" | fl
+
+DeletedDateTime      :
+Description          : Permissions for sample app in test tenant
+DisplayName          : Sample app permissions
+Excludes             :
+Id                   : testtenant-sampleapp-permissions
+Includes             :
+AdditionalProperties : {[@odata.context, https://graph.microsoft.com/v1.0/$metadata#policies/permissionGrantPolicies/$entity]}
 ```
-This example shows how to use the New-MgPolicyPermissionGrantPolicy Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+This command creates a new permission grant policy in Azure AD.  Specific include and exclude configurations can be created using the `New-MgPolicyPermissionGrantPolicyInclude` and `New-MgPolicyPermissionGrantPolicyExclude` cmdlets.
+

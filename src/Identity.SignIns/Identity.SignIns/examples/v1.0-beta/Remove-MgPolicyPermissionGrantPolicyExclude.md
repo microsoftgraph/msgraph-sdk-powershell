@@ -1,7 +1,9 @@
-### Example 1: Using the Remove-MgPolicyPermissionGrantPolicyExclude Cmdlet
+### Example 1: Remove a permission grant policy exclude
+
 ```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
-Remove-MgPolicyPermissionGrantPolicyExclude -PermissionGrantPolicyId $permissionGrantPolicyId -PermissionGrantConditionSetId $permissionGrantConditionSetId
+Connect-MgGraph -Scopes "Policy.Read.PermissionGrant,Policy.ReadWrite.PermissionGrant"  
+Remove-MgPolicyPermissionGrantPolicyExclude -PermissionGrantConditionSetId "60ba4fac-d39e-47b3-bd99-4394cb88a2f8" -PermissionGrantPolicyId "testtenant-sampleapp-permissions"  
 ```
-This example shows how to use the Remove-MgPolicyPermissionGrantPolicyExclude Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+This command deletes the specified exclude configuration from the specific permission grant policy in Azure AD.
+

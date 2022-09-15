@@ -1,7 +1,8 @@
-### Example 1: Using the Remove-MgPolicyPermissionGrantPolicy Cmdlet
+### Example 1: Remove a permission grant policy
+
 ```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
-Remove-MgPolicyPermissionGrantPolicy -PermissionGrantPolicyId $permissionGrantPolicyId
+Connect-MgGraph -Scopes "Policy.Read.PermissionGrant,Policy.ReadWrite.PermissionGrant"  
+Remove-MgPolicyPermissionGrantPolicy -PermissionGrantPolicyId "testtenant-sampleapp-permissions"
 ```
-This example shows how to use the Remove-MgPolicyPermissionGrantPolicy Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+This command deletes the specified permission grant policy in Azure AD.

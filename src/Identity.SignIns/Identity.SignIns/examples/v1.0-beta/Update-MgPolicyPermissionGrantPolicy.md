@@ -1,10 +1,9 @@
-### Example 1: Using the Update-MgPolicyPermissionGrantPolicy Cmdlet
+### Example 1: Update a permission grant policy
+
 ```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
-$params = @{
-	DisplayName = "Custom permission grant policy"
-}
-Update-MgPolicyPermissionGrantPolicy -PermissionGrantPolicyId $permissionGrantPolicyId -BodyParameter $params
+Connect-MgGraph -Scopes "Policy.Read.PermissionGrant,Policy.ReadWrite.PermissionGrant"  
+Update-MgPolicyPermissionGrantPolicy -PermissionGrantPolicyId "testtenant-sampleapp-permissions" -Description "Permissions for sample app in test tenant with new updates" -DisplayName "Sample app permissions with new updates"
 ```
-This example shows how to use the Update-MgPolicyPermissionGrantPolicy Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+This command replaces the existing values with the provided new values for the specified properties in the specified permission grant policy in Azure AD.
+
