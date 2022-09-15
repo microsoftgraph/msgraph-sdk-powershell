@@ -9,7 +9,7 @@ AccessPackageCatalog            : Microsoft.Graph.PowerShell.Models.MicrosoftGra
 AccessPackageResourceRoleScopes :
 AccessPackagesIncompatibleWith  :
 CatalogId                       : 54152ecb-c65d-47f2-8a4d-ba2732de0a7b
-CreatedBy                       : admin@M365x814237.onmicrosoft.com
+CreatedBy                       : Contoso.onmicrosoft.com
 CreatedDateTime                 : 11/5/2021 8:03:39 AM
 Description                     :
 DisplayName                     : Marketing Campaign
@@ -18,7 +18,7 @@ IncompatibleAccessPackages      :
 IncompatibleGroups              :
 IsHidden                        : False
 IsRoleScopesVisible             : False
-ModifiedBy                      : admin@M365x814237.onmicrosoft.com
+ModifiedBy                      : Contoso.onmicrosoft.com
 ModifiedDateTime                : 11/5/2021 9:08:44 AM
 AdditionalProperties            : {}
 
@@ -27,7 +27,7 @@ AccessPackageCatalog            : Microsoft.Graph.PowerShell.Models.MicrosoftGra
 AccessPackageResourceRoleScopes :
 AccessPackagesIncompatibleWith  :
 CatalogId                       : 54152ecb-c65d-47f2-8a4d-ba2732de0a7b
-CreatedBy                       : admin@M365x814237.onmicrosoft.com
+CreatedBy                       : Contoso.onmicrosoft.com
 CreatedDateTime                 : 9/15/2021 7:23:44 AM
 Description                     : Access for Sales and Marketing users and guests
 DisplayName                     : Sales and Marketing
@@ -36,7 +36,7 @@ IncompatibleAccessPackages      :
 IncompatibleGroups              :
 IsHidden                        : False
 IsRoleScopesVisible             : False
-ModifiedBy                      : admin@M365x814237.onmicrosoft.com
+ModifiedBy                      : Contoso.onmicrosoft.com
 ModifiedDateTime                : 9/15/2021 7:23:44 AM
 AdditionalProperties            : {}
 ```
@@ -55,7 +55,7 @@ AccessPackageCatalog            : Microsoft.Graph.PowerShell.Models.MicrosoftGra
 AccessPackageResourceRoleScopes :
 AccessPackagesIncompatibleWith  :
 CatalogId                       : 54152ecb-c65d-47f2-8a4d-ba2732de0a7b
-CreatedBy                       : admin@M365x814237.onmicrosoft.com
+CreatedBy                       : Contoso.onmicrosoft.com
 CreatedDateTime                 : 11/5/2021 8:03:39 AM
 Description                     :
 DisplayName                     : Marketing Campaign
@@ -64,7 +64,7 @@ IncompatibleAccessPackages      :
 IncompatibleGroups              :
 IsHidden                        : False
 IsRoleScopesVisible             : False
-ModifiedBy                      : admin@M365x814237.onmicrosoft.com
+ModifiedBy                      : Contoso.onmicrosoft.com
 ModifiedDateTime                : 11/5/2021 9:08:44 AM
 AdditionalProperties            : {[@odata.context, https://graph.microsoft.com/beta/$metadata#identityGovernance/entitlementManagement/accessPackages/$entity]}
 

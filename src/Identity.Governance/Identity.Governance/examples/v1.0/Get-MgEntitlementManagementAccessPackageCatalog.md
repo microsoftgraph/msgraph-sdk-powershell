@@ -1,6 +1,7 @@
-### Example 1: {{ Add title here }}
+### Example 1: Get a list of all access package catalogs
+
 ```powershell
-PS C:\> {{ Add code here }}
+Get-MgEntitlementManagementCatalog
 
 {{ Add output here }}
 ```

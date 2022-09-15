@@ -1,18 +1,11 @@
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
+### Example 1: Get the identity governance settings
 
-{{ Add output here }}
+```powershell
+Get-MgEntitlementManagementSetting
+
+Id        ExternalUserLifecycleAction
+--        ---------------------------
+singleton blockSignInAndDelete
 ```
 
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
+This example returns the identity governance settings.
