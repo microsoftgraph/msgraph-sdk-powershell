@@ -1,7 +1,21 @@
-### Example 1: Using the Get-MgPolicyPermissionGrantPolicyInclude Cmdlet
+### Example 1: Get a permission grant policy include by ID 
+
 ```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
-Get-MgPolicyPermissionGrantPolicyInclude -PermissionGrantPolicyId $permissionGrantPolicyId
+Connect-MgGraph -Scopes "Policy.Read.PermissionGrant" 
+Get-MgPolicyPermissionGrantPolicyInclude -PermissionGrantPolicyId "microsoft-all-application-permissions" | fl  
+
+CertifiedClientApplicationsOnly             : False
+ClientApplicationIds                        : {all}
+ClientApplicationPublisherIds               : {all}
+ClientApplicationTenantIds                  : {all}
+ClientApplicationsFromVerifiedPublisherOnly : False
+Id                                          : bddda1ec-0174-44d5-84e2-47fb0ac01595
+PermissionClassification                    : all
+PermissionType                              : application
+Permissions                                 : {all}
+ResourceApplication                         : any
+AdditionalProperties                        : {[scopeSensitivityLabels, System.Collections.Generic.Dictionary`2[System.String,System.Object]]}
 ```
-This example shows how to use the Get-MgPolicyPermissionGrantPolicyInclude Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+This command retrieves a specified permission grant policy include configuration in Azure AD.
+
