@@ -1,6 +1,8 @@
 ### Example 1: Get a list of all access package catalogs
 
 ```powershell
+Connect-MgGraph -Scopes 'EntitlementManagement.ReadWrite.All'
+
 Get-MgEntitlementManagementCatalog | fl
 
 AccessPackages       :
@@ -20,6 +22,7 @@ This examples gets a list of all the access package catalogs.
 ### Example 2: Get a access package catalog by the AccessPackageCatalogId
 
 ```powershell
+Connect-MgGraph -Scopes 'EntitlementManagement.ReadWrite.All'
 Get-MgEntitlementManagementCatalog -AccessPackageCatalogId '88d3e491-5247-4209-9b56-c4c95d9694e9' |fl
 
 AccessPackages       :

@@ -1,18 +1,9 @@
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
+### Example 1: Remove an access package assignment policy
 
-{{ Add output here }}
+```powershell
+Connect-MgGraph -Scopes 'EntitlementManagement.ReadWrite.All'
+
+Remove-MgEntitlementManagementAssignmentPolicy -AccessPackageAssignmentPolicyId '62073739-d160-40e4-8367-87e88d85d083'
 ```
 
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
+This example removes the specified assignment policy.

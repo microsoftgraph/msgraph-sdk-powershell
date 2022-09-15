@@ -1,6 +1,8 @@
 ### Example 1: Create an access package 
 
 ```powershell
+Connect-MgGraph -Scopes 'EntitlementManagement.ReadWrite.All'
+
 $params = @{
 DisplayName = "Marketing Campaign"
 Description = "Marketing Campaign"
