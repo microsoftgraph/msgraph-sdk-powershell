@@ -1,18 +1,15 @@
-### Example 1: {{ Add title here }}
+### Example 1: Using the New-MgUserProfilePatent Cmdlet
 ```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+Import-Module Microsoft.Graph.People
+$params = @{
+	Description = "Calculating the intent of a user to purchase an item based on the amount of time they hover their mouse over a given pixel."
+	DisplayName = "Inferring User Intent through browsing behaviors"
+	IsPending = $true
+	Number = "USPTO-3954432633"
+	WebUrl = "https://patents.gov/3954432633"
+}
+# A UPN can also be used as -UserId.
+New-MgUserProfilePatent -UserId $userId -BodyParameter $params
 ```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
+This example shows how to use the New-MgUserProfilePatent Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

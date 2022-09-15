@@ -1,18 +1,18 @@
-### Example 1: {{ Add title here }}
+### Example 1: Using the Set-MgDeviceManagementVirtualEndpointUserSetting Cmdlet
 ```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+Import-Module Microsoft.Graph.DeviceManagement.Actions
+$params = @{
+	Assignments = @(
+		@{
+			Id = "b0c2d35f-3385-46c8-a6f5-6c3dfad7708b_64ff06de-9c00-4a5a-98b5-7f5abe26ffff"
+			Target = @{
+				"@odata.type" = "microsoft.graph.cloudPcManagementGroupAssignmentTarget"
+				GroupId = "64ff06de-9c00-4a5a-98b5-7f5abe26ffff"
+			}
+		}
+	)
+}
+Set-MgDeviceManagementVirtualEndpointUserSetting -CloudPcUserSettingId $cloudPcUserSettingId -BodyParameter $params
 ```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
+This example shows how to use the Set-MgDeviceManagementVirtualEndpointUserSetting Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

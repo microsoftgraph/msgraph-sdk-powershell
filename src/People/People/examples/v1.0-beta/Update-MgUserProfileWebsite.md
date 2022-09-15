@@ -1,18 +1,11 @@
-### Example 1: {{ Add title here }}
+### Example 1: Using the Update-MgUserProfileWebsite Cmdlet
 ```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+Import-Module Microsoft.Graph.People
+$params = @{
+	Description = "Lyn Damer play in the Women's 1st Division (Toppserien) in Norway"
+}
+# A UPN can also be used as -UserId.
+Update-MgUserProfileWebsite -UserId $userId -PersonWebsiteId $personWebsiteId -BodyParameter $params
 ```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
+This example shows how to use the Update-MgUserProfileWebsite Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

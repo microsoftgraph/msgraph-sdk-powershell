@@ -1,18 +1,23 @@
-### Example 1: {{ Add title here }}
+### Example 1: Using the New-MgSecurityCaseEdiscoveryCaseLegalHold Cmdlet
 ```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+Import-Module Microsoft.Graph.Security
+$params = @{
+	Displayname = "My legalHold with sources"
+	Description = "Created from Graph API"
+	ContentQuery = "Bazooka"
+	"UserSources@odata.bind" = @(
+		@{
+			"@odata.type" = "microsoft.graph.security.userSource"
+			Email = "SalesTeam@M365x809305.OnMicrosoft.com"
+		}
+	)
+	"SiteSources@odata.bind" = @(
+		@{
+			"@odata.type" = "microsoft.graph.security.siteSource"
+		}
+	)
+}
+New-MgSecurityCaseEdiscoveryCaseLegalHold -EdiscoveryCaseId $ediscoveryCaseId -BodyParameter $params
 ```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
+This example shows how to use the New-MgSecurityCaseEdiscoveryCaseLegalHold Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

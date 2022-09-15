@@ -1,18 +1,42 @@
-### Example 1: {{ Add title here }}
+### Example 1: Using the New-MgTrustFrameworkKeySet Cmdlet
 ```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+Import-Module Microsoft.Graph.Identity.SignIns
+$params = @{
+	Id = "keyset1"
+	Keys = @(
+		@{
+			K = "k-value"
+			X5c = @(
+				"x5c-value"
+			)
+			X5t = "x5t-value"
+			Kty = "kty-value"
+			Use = "use-value"
+			Exp = 99
+			Nbf = 99
+			Kid = "kid-value"
+			E = "e-value"
+			N = "n-value"
+			D = "d-value"
+			P = "p-value"
+			Q = "q-value"
+			Dp = "dp-value"
+			Dq = "dq-value"
+			Qi = "qi-value"
+		}
+	)
+}
+New-MgTrustFrameworkKeySet -BodyParameter $params
 ```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
+This example shows how to use the New-MgTrustFrameworkKeySet Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+### Example 2: Using the New-MgTrustFrameworkKeySet Cmdlet
 ```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+Import-Module Microsoft.Graph.Identity.SignIns
+$params = @{
+	Id = "keyset1"
+}
+New-MgTrustFrameworkKeySet -BodyParameter $params
 ```
-
-{{ Add description here }}
-
+This example shows how to use the New-MgTrustFrameworkKeySet Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
